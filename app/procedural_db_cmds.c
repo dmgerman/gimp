@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"regex.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpregex.h"
 end_include
 
 begin_comment
