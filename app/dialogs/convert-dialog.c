@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c58250108
+DECL|struct|__anon2b9cd1540108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -927,7 +927,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"_Remove unused colors "
-literal|"from final palette."
+literal|"from final palette"
 argument_list|)
 argument_list|)
 expr_stmt|;
