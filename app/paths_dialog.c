@@ -4636,11 +4636,7 @@ operator|!
 name|gdisp
 condition|)
 block|{
-name|g_warning
-argument_list|(
-literal|"Lost image which bezier curve belonged to"
-argument_list|)
-expr_stmt|;
+comment|/*g_warning("Lost image which bezier curve belonged to");*/
 return|return;
 block|}
 name|bezier_paste_bezierselect_to_current
@@ -11933,6 +11929,11 @@ name|last_selected_row
 operator|=
 literal|0
 expr_stmt|;
+comment|/* Only paste if we have an image to paste to! */
+if|if
+condition|(
+name|gdisp
+condition|)
 name|bezier_paste_bezierselect_to_current
 argument_list|(
 name|gdisp
