@@ -5303,6 +5303,7 @@ operator|+
 literal|2
 argument_list|)
 expr_stmt|;
+comment|/* Allocate and initialize the accum buffer */
 for|for
 control|(
 name|i
@@ -5316,50 +5317,21 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
-comment|/* Allocate and initialize the accum buffer */
 name|accum
 index|[
 name|i
 index|]
 operator|=
-operator|(
-name|gulong
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|gulong
-argument_list|)
-operator|*
+argument_list|,
 name|dest
 operator|->
 name|width
 argument_list|)
 expr_stmt|;
-name|memset
-argument_list|(
-name|accum
-index|[
-name|i
-index|]
-argument_list|,
-literal|0
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|gulong
-argument_list|)
-operator|*
-name|dest
-operator|->
-name|width
-argument_list|)
-expr_stmt|;
-block|}
-comment|/* Investigate modifiying kernelgen to make the sum the same     for all kernels. That way kernal_sum becomes a constant*/
+comment|/* Investigate modifiying kernelgen to make the sum the same    *  for all kernels. That way kernal_sum becomes a constant    */
 name|kernel_sum
 operator|=
 literal|0
@@ -5548,10 +5520,6 @@ name|kernel_sum
 expr_stmt|;
 name|rotate_pointers
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|accum
 argument_list|,
 name|KERNEL_HEIGHT
@@ -5573,14 +5541,13 @@ argument_list|(
 name|gulong
 argument_list|)
 operator|*
-operator|(
 name|dest
 operator|->
 name|width
-operator|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* store the rest of the accum buffer into the dest mask */
 while|while
 condition|(
 name|i
@@ -5592,7 +5559,6 @@ operator|->
 name|height
 condition|)
 block|{
-comment|/* store the rest of the accum buffer into the dest mask */
 name|d
 operator|=
 name|mask_buf_data
@@ -5649,10 +5615,6 @@ name|kernel_sum
 expr_stmt|;
 name|rotate_pointers
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|accum
 argument_list|,
 name|KERNEL_HEIGHT
