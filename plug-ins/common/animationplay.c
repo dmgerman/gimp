@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1cb15e0103
+DECL|enum|__anon291e67920103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -786,7 +786,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -891,9 +893,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -3715,9 +3717,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|do_playback (void)
 specifier|static
 name|void
+DECL|function|do_playback (void)
 name|do_playback
 parameter_list|(
 name|void
@@ -4067,7 +4069,6 @@ argument_list|)
 operator|==
 literal|0
 condition|)
-block|{
 name|window_close_callback
 argument_list|(
 name|NULL
@@ -4075,7 +4076,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 operator|(
@@ -7651,6 +7651,8 @@ name|layer_name
 decl_stmt|;
 name|gint
 name|duration
+init|=
+literal|0
 decl_stmt|;
 name|layer_name
 operator|=
@@ -7668,6 +7670,13 @@ operator|)
 index|]
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|layer_name
+operator|!=
+name|NULL
+condition|)
+block|{
 name|duration
 operator|=
 name|parse_ms_tag
@@ -7680,6 +7689,7 @@ argument_list|(
 name|layer_name
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|duration
@@ -7729,6 +7739,8 @@ name|layer_name
 decl_stmt|;
 name|DisposeType
 name|disposal
+init|=
+name|DISPOSE_UNDEFINED
 decl_stmt|;
 name|layer_name
 operator|=
@@ -7746,6 +7758,13 @@ operator|)
 index|]
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|layer_name
+operator|!=
+name|NULL
+condition|)
+block|{
 name|disposal
 operator|=
 name|parse_disposal_tag
@@ -7758,6 +7777,7 @@ argument_list|(
 name|layer_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 operator|(
 name|disposal
