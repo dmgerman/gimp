@@ -3063,10 +3063,6 @@ name|floating_sel
 operator|=
 name|NULL
 expr_stmt|;
-name|item_list
-operator|=
-name|NULL
-expr_stmt|;
 for|for
 control|(
 name|list
@@ -3074,6 +3070,10 @@ operator|=
 name|gimage
 operator|->
 name|layers
+operator|,
+name|item_list
+operator|=
+name|NULL
 init|;
 name|list
 condition|;
@@ -3380,10 +3380,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Switch positions of items if necessary  */
-name|pos
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|list
@@ -3391,6 +3387,10 @@ operator|=
 name|gimage
 operator|->
 name|layers
+operator|,
+name|pos
+operator|=
+literal|0
 init|;
 name|list
 condition|;
@@ -3627,7 +3627,7 @@ decl_stmt|;
 name|gint
 name|alpha
 decl_stmt|;
-name|gint
+name|gboolean
 name|has_alpha
 decl_stmt|;
 name|gint
@@ -5109,12 +5109,12 @@ operator|->
 name|ratio
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|preview_size
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|gimage
 operator|->
@@ -5126,12 +5126,12 @@ operator|->
 name|ratio
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|preview_size
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|gimage
 operator|->
@@ -6021,7 +6021,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Commented out because this piece of code produced strange segfaults static gint layer_dialog_idle_set_active_layer_focus (gpointer data) {   gtk_widget_grab_focus (GTK_WIDGET (data));    return FALSE; } */
+comment|/* Commented out because this piece of code produced strange segfaults  static gint layer_dialog_idle_set_active_layer_focus (gpointer data) {   gtk_widget_grab_focus (GTK_WIDGET (data));    return FALSE; }  */
 end_comment
 
 begin_function
@@ -6980,7 +6980,7 @@ comment|/*  add the 0.001 to insure there are no subtle rounding errors  */
 name|opacity
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|adjustment
@@ -9920,7 +9920,7 @@ argument_list|,
 name|PREVIEW_EVENT_MASK
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -9937,6 +9937,11 @@ name|layer_widget_preview_events
 argument_list|)
 argument_list|,
 name|layer_widget
+argument_list|,
+name|GTK_OBJECT
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_user_data
@@ -10886,7 +10891,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2c23b20108
+DECL|struct|__anon2979ddfe0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -12836,7 +12841,7 @@ literal|0
 operator|)
 condition|)
 block|{
-comment|/* Expose events are optimzed away by GTK+ if the widget is not 		     visible. Therefore, previews not visible in the layers_dialog 		     are not redrawn when they invalidate. Later the preview gets 		     validated by the image_preview in lc_dialog but is never 		     propagated to the layer_pixmap. We work around this by using an 		     additional flag "layer_pixmap_valid" so that the pixmap gets 		     updated once the preview scrolls into sight. 		     We should probably do the same for all drawables (masks,  		     channels), but it is much more difficult to change one of these 		     when it's not visible. 		  */
+comment|/*  	   Expose events are optimzed away by GTK+ if the widget is not 	   visible. Therefore, previews not visible in the layers_dialog 	   are not redrawn when they invalidate. Later the preview gets 	   validated by the image_preview in lc_dialog but is never 	   propagated to the layer_pixmap. We work around this by using an 	   additional flag "layer_pixmap_valid" so that the pixmap gets 	   updated once the preview scrolls into sight. 	   We should probably do the same for all drawables (masks,  	   channels), but it is much more difficult to change one of these 	   when it's not visible. 	 */
 if|if
 condition|(
 name|preview_type
@@ -12848,6 +12853,7 @@ name|layer_widget
 operator|->
 name|layer_pixmap_valid
 condition|)
+block|{
 name|layer_widget_preview_redraw
 argument_list|(
 name|layer_widget
@@ -12855,6 +12861,7 @@ argument_list|,
 name|preview_type
 argument_list|)
 expr_stmt|;
+block|}
 name|gdk_draw_pixmap
 argument_list|(
 name|widget
@@ -12925,7 +12932,8 @@ decl_stmt|;
 name|GdkGC
 modifier|*
 name|gc1
-decl_stmt|,
+decl_stmt|;
+name|GdkGC
 modifier|*
 name|gc2
 decl_stmt|;

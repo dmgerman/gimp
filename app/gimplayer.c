@@ -139,7 +139,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1165520103
+DECL|enum|__anon2985ea400103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -741,21 +741,21 @@ name|GimpImageBaseType
 name|type
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|h
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|s
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|d
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
 for|for
@@ -1196,7 +1196,8 @@ name|len
 decl_stmt|;
 name|PixelRegion
 name|srcPR
-decl_stmt|,
+decl_stmt|;
+name|PixelRegion
 name|destPR
 decl_stmt|;
 comment|/*  formulate the new layer name  */
@@ -1276,7 +1277,7 @@ literal|0
 operator|&&
 operator|(
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|log10
@@ -1794,7 +1795,8 @@ name|new_layer
 decl_stmt|;
 name|PixelRegion
 name|layerPR
-decl_stmt|,
+decl_stmt|;
+name|PixelRegion
 name|bufPR
 decl_stmt|;
 comment|/*  Function copies buffer to a layer    *  taking into consideration the possibility of transforming    *  the contents to meet the requirements of the target image type    */
@@ -2112,7 +2114,8 @@ parameter_list|)
 block|{
 name|PixelRegion
 name|maskPR
-decl_stmt|,
+decl_stmt|;
+name|PixelRegion
 name|layerPR
 decl_stmt|;
 name|LayerMask
@@ -6347,8 +6350,7 @@ argument_list|)
 expr_stmt|;
 name|layer_preview_scale
 argument_list|(
-literal|1
-comment|/* GRAY */
+name|GRAY
 argument_list|,
 name|NULL
 argument_list|,
@@ -6573,16 +6575,23 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|tmp
 operator|=
 name|gimage
 operator|->
 name|layers
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|tmp
-condition|)
+condition|;
+name|tmp
+operator|=
+name|g_slist_next
+argument_list|(
+name|tmp
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -6602,13 +6611,6 @@ name|layer
 argument_list|)
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|tmp
-operator|=
-name|g_slist_next
-argument_list|(
-name|tmp
 argument_list|)
 expr_stmt|;
 block|}

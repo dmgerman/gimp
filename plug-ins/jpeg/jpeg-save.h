@@ -310,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a61c9c0108
+DECL|struct|__anon297daaaa0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -357,7 +357,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a61c9c0208
+DECL|struct|__anon297daaaa0208
 block|{
 DECL|member|run
 name|gint
@@ -372,7 +372,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a61c9c0308
+DECL|struct|__anon297daaaa0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -389,7 +389,7 @@ modifier|*
 name|outfile
 decl_stmt|;
 DECL|member|has_alpha
-name|gint
+name|gboolean
 name|has_alpha
 decl_stmt|;
 DECL|member|rowstride
@@ -508,7 +508,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 name|gchar
@@ -532,7 +532,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|void
@@ -1113,7 +1113,7 @@ decl_stmt|;
 endif|#
 directive|endif
 comment|/* GIMP_HAVE_PARASITES */
-name|gint
+name|gboolean
 name|err
 decl_stmt|;
 name|GimpExportReturnType
@@ -2418,11 +2418,10 @@ name|j_decompress_ptr
 name|cinfo
 parameter_list|)
 block|{
-name|int
+name|gint
 name|length
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 name|ch
 decl_stmt|;
 name|length
@@ -2928,7 +2927,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/* pw - figuring out what the saved values were is non-trivial.      * They don't seem to be in the cinfo structure. For now, I will      * just use the defaults, but if someone figures out how to derive      * them this is the place to store them. */
+comment|/* pw - figuring out what the saved values were is non-trivial.        * They don't seem to be in the cinfo structure. For now, I will        * just use the defaults, but if someone figures out how to derive        * them this is the place to store them. */
 name|local_save_vals
 operator|.
 name|quality
@@ -3172,6 +3171,7 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+break|break;
 block|}
 if|if
 condition|(
@@ -3497,7 +3497,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*       for (i = start; i< end; i++) 	gimp_pixel_rgn_set_row (&pixel_rgn, tilerow[i - start], 0, i, drawable->width); 	*/
 if|if
 condition|(
 name|preview
@@ -3640,6 +3639,7 @@ argument_list|(
 literal|"JPEG - shouldn't have gotten here.  Report to adam@gimp.org"
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
 name|gimp_pixel_rgn_set_rect
@@ -3674,14 +3674,14 @@ block|{
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|cinfo
 operator|.
 name|output_scanline
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|cinfo
 operator|.
@@ -3844,7 +3844,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|background_jpeg_save (PreviewPersistent * pp)
 name|background_jpeg_save
 parameter_list|(
@@ -3890,16 +3890,6 @@ name|image_height
 operator|)
 condition|)
 block|{
-name|struct
-name|stat
-name|buf
-decl_stmt|;
-name|gchar
-name|temp
-index|[
-literal|256
-index|]
-decl_stmt|;
 comment|/* clean up... */
 if|if
 condition|(
@@ -3985,6 +3975,16 @@ operator|->
 name|abort_me
 condition|)
 block|{
+name|struct
+name|stat
+name|buf
+decl_stmt|;
+name|gchar
+name|temp
+index|[
+literal|128
+index|]
+decl_stmt|;
 name|stat
 argument_list|(
 name|pp
@@ -4283,7 +4283,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,gboolean preview)
 name|save_image
 parameter_list|(
@@ -4349,7 +4349,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint
+name|gboolean
 name|has_alpha
 decl_stmt|;
 name|gint
@@ -4563,7 +4563,7 @@ name|bpp
 expr_stmt|;
 name|has_alpha
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 break|break;
 case|case
@@ -4586,7 +4586,7 @@ literal|1
 expr_stmt|;
 name|has_alpha
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -4655,7 +4655,7 @@ operator|&
 name|cinfo
 argument_list|,
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|jsvals
@@ -4675,7 +4675,7 @@ operator|.
 name|smoothing_factor
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|jsvals
@@ -5290,7 +5290,6 @@ name|background_jpeg_save
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 name|pp
 argument_list|)
@@ -5646,6 +5645,7 @@ operator|-
 literal|1
 condition|)
 block|{
+comment|/*  assuming that reference counting is working correctly,  	  we do not need to delete the layer, removing it from 	  the image should be sufficient  */
 name|gimp_image_remove_layer
 argument_list|(
 name|image_ID_global
@@ -5653,7 +5653,6 @@ argument_list|,
 name|layer_ID_global
 argument_list|)
 expr_stmt|;
-comment|/* gimp_layer_delete(layer_ID_global); */
 name|layer_ID_global
 operator|=
 operator|-
@@ -5665,7 +5664,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_dialog (void)
 name|save_dialog
 parameter_list|(
