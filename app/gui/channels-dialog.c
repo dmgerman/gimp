@@ -1774,6 +1774,8 @@ operator|-
 name|channelsD
 operator|->
 name|num_components
+operator|+
+literal|1
 expr_stmt|;
 while|while
 condition|(
