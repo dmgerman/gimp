@@ -204,7 +204,7 @@ modifier|*
 name|tm
 parameter_list|,
 name|gint
-name|time_num
+name|tile_num
 parameter_list|,
 name|Tile
 modifier|*
@@ -545,6 +545,10 @@ name|stride
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*   Fill buffer with the pixeldata for the pixel at coordinates x,y  *   if x,y is outside the area of the tilemanger, nothing is done.  */
+end_comment
 
 begin_function_decl
 name|void
