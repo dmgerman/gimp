@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29daec650103
+DECL|enum|__anon2c623bb80103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -691,9 +691,9 @@ decl_stmt|;
 comment|/*  formulate the new channel name  */
 name|name
 operator|=
-name|drawable_get_name
+name|gimp_object_get_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|channel
 argument_list|)
@@ -989,9 +989,9 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|gimp_drawable_set_name
+name|gimp_object_set_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|channel
 argument_list|)
@@ -1016,9 +1016,9 @@ name|channel
 parameter_list|)
 block|{
 return|return
-name|gimp_drawable_get_name
+name|gimp_object_get_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|channel
 argument_list|)

@@ -866,9 +866,9 @@ argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
-name|drawable_set_name
+name|gimp_object_set_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|gmask
 argument_list|)

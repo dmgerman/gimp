@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1f31cd0103
+DECL|enum|__anon2b64ef5d0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -1114,7 +1114,7 @@ name|bytes
 operator|+
 name|strlen
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)
@@ -1185,7 +1185,7 @@ name|height
 operator|+
 name|strlen
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|channel
 argument_list|)

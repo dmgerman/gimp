@@ -218,7 +218,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ee821e0103
+DECL|enum|__anon2c3c42ad0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ee821e0203
+DECL|enum|__anon2c3c42ad0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -6794,7 +6794,7 @@ operator|->
 name|fp
 argument_list|,
 operator|&
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)
@@ -7091,7 +7091,7 @@ operator|->
 name|fp
 argument_list|,
 operator|&
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|channel
 argument_list|)

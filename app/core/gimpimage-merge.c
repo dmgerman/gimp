@@ -663,7 +663,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9c3dbd0103
+DECL|enum|__anon28812d1c0103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -3294,7 +3294,7 @@ name|operation
 operator|=
 name|valid_combinations
 index|[
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
@@ -3321,7 +3321,7 @@ expr_stmt|;
 return|return;
 block|}
 comment|/*  get the layer offsets  */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -3341,7 +3341,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -3355,7 +3355,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -3373,7 +3373,7 @@ name|w
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -3391,7 +3391,7 @@ name|h
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -3412,7 +3412,7 @@ argument_list|,
 operator|-
 name|offset_x
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3432,7 +3432,7 @@ argument_list|,
 operator|-
 name|offset_y
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3452,7 +3452,7 @@ argument_list|,
 operator|-
 name|offset_x
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3472,7 +3472,7 @@ argument_list|,
 operator|-
 name|offset_y
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3544,7 +3544,7 @@ argument_list|(
 operator|&
 name|src1PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -3573,7 +3573,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -3662,7 +3662,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3854,7 +3854,7 @@ name|operation
 operator|=
 name|valid_combinations
 index|[
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
@@ -3881,7 +3881,7 @@ expr_stmt|;
 return|return;
 block|}
 comment|/*  get the layer offsets  */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -3901,7 +3901,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -3915,7 +3915,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -3933,7 +3933,7 @@ name|w
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -3951,7 +3951,7 @@ name|h
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -3972,7 +3972,7 @@ argument_list|,
 operator|-
 name|offset_x
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3992,7 +3992,7 @@ argument_list|,
 operator|-
 name|offset_y
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4012,7 +4012,7 @@ argument_list|,
 operator|-
 name|offset_x
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4032,7 +4032,7 @@ argument_list|,
 operator|-
 name|offset_y
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4072,7 +4072,7 @@ argument_list|(
 operator|&
 name|src1PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -4101,7 +4101,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -4190,7 +4190,7 @@ argument_list|(
 operator|&
 name|mask2PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6928,7 +6928,7 @@ argument_list|(
 name|layer
 argument_list|)
 operator|&&
-name|drawable_visible
+name|gimp_drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6961,7 +6961,7 @@ name|reverse_list
 operator|->
 name|data
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7007,7 +7007,7 @@ name|CLAMP
 argument_list|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7028,7 +7028,7 @@ name|CLAMP
 argument_list|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7090,7 +7090,7 @@ argument_list|(
 operator|&
 name|src2PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7145,7 +7145,7 @@ argument_list|(
 operator|&
 name|src2PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7196,7 +7196,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7247,7 +7247,7 @@ expr_stmt|;
 comment|/*  Based on the type of the layer, project the layer onto the 	   *  projection image... 	   */
 switch|switch
 condition|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7454,7 +7454,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|drawable_visible
+name|gimp_drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7490,7 +7490,7 @@ argument_list|(
 operator|&
 name|src2PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7634,7 +7634,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7650,7 +7650,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|drawable_visible
+name|gimp_drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7679,7 +7679,7 @@ operator|&&
 operator|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7695,7 +7695,7 @@ operator|&&
 operator|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7854,7 +7854,7 @@ name|preserve_trans
 condition|)
 name|active
 index|[
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -9265,9 +9265,9 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-name|drawable_get_name
+name|gimp_object_get_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|channel
 argument_list|)
@@ -11905,9 +11905,9 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
-name|drawable_get_name
+name|gimp_object_get_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)
@@ -11984,9 +11984,9 @@ operator|)
 argument_list|,
 name|type
 argument_list|,
-name|drawable_get_name
+name|gimp_object_get_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)
@@ -12693,9 +12693,9 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* set the name after the original layers have been removed so we don't      end up with #2 appended to the name */
-name|drawable_set_name
+name|gimp_object_set_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|merge_layer
 argument_list|)

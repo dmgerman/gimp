@@ -147,7 +147,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5cc4c0103
+DECL|enum|__anon276180c30103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -1209,9 +1209,12 @@ decl_stmt|;
 comment|/*  formulate the new layer name  */
 name|name
 operator|=
-name|layer_get_name
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ext
@@ -2170,12 +2173,13 @@ argument_list|(
 literal|"%s mask"
 argument_list|)
 argument_list|,
-name|GIMP_DRAWABLE
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Create the layer mask  */
@@ -5451,9 +5455,9 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|gimp_drawable_set_name
+name|gimp_object_set_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)
@@ -5478,9 +5482,9 @@ name|layer
 parameter_list|)
 block|{
 return|return
-name|gimp_drawable_get_name
+name|gimp_object_get_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)
@@ -7756,12 +7760,13 @@ argument_list|(
 literal|"%s copy"
 argument_list|)
 argument_list|,
-name|GIMP_DRAWABLE
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|layer_mask
 argument_list|)
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  allocate a new layer_mask object  */

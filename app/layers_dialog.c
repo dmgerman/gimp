@@ -10983,7 +10983,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a843600108
+DECL|struct|__anon2a9d77d10108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -16938,7 +16938,7 @@ block|{
 comment|/*  Set the new layer name  */
 if|if
 condition|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)

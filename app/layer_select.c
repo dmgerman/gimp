@@ -1440,9 +1440,9 @@ operator|->
 name|label
 argument_list|)
 argument_list|,
-name|drawable_get_name
+name|gimp_object_get_name
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)
