@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   sharpen()                   - Sharpen an image using a median filter.  *   sharpen_dialog()            - Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_ok_callback()        - Start the filter...  *   gray_filter()               - Sharpen grayscale pixels.  *   graya_filter()              - Sharpen grayscale+alpha pixels.  *   rgb_filter()                - Sharpen RGB pixels.  *   rgba_filter()               - Sharpen RGBA pixels.  *  * Revision History:  *  *   $Log$  *   Revision 1.15  2000/01/08 15:23:28  mitch  *   2000-01-08  Michael Natterer<mitch@gimp.org>  *  *   	* plug-ins/common/Makefile.am  *   	* plug-ins/common/hrz.c  *   	* plug-ins/common/papertile.c  *   	* plug-ins/common/pat.c  *   	* plug-ins/common/pixelize.c  *   	* plug-ins/common/plasma.c  *   	* plug-ins/common/plugindetails.c  *   	* plug-ins/common/png.c  *   	* plug-ins/common/pnm.c  *   	* plug-ins/common/polar.c  *   	* plug-ins/common/ps.c  *   	* plug-ins/common/psp.c  *   	* plug-ins/common/randomize.c  *   	* plug-ins/common/ripple.c  *   	* plug-ins/common/sample_colorize.c  *   	* plug-ins/common/scatter_hsv.c  *   	* plug-ins/common/screenshot.c  *   	* plug-ins/common/sel_gauss.c  *   	* plug-ins/common/sharpen.c  *   	* plug-ins/common/shift.c  *   	* plug-ins/common/smooth_palette.c  *   	* plug-ins/common/snoise.c  *   	* plug-ins/common/sobel.c  *   	* plug-ins/common/sparkle.c  *   	* plug-ins/common/spheredesigner.c  *   	* plug-ins/common/spread.c  *   	* plug-ins/common/sunras.c: more plugins which use the dialog  *   	constructor. Hacked many UIs to look like the app's dialogs.  *  *   Revision 1.14  2000/01/07 17:18:44  yasuhiro  *           * plug-ins/common/scatter_hsv.c  *           * plug-ins/common/semiflatten.c  *           * plug-ins/common/sharpen.c  *           * plug-ins/common/shift.c  *           * plug-ins/common/smooth_palette.c  *           * plug-ins/common/snoise.c  *           * plug-ins/common/sobel.c  *           * plug-ins/common/sparkle.c  *           * plug-ins/common/spread.c  *           * po-plug-ins/POTFILES.in: added gettext support.  *  *   -- yasuhiro  *  *   Revision 1.13  1999/11/23 23:49:42  neo  *   added dots to all menu entries of interactive plug-ins and did the usual  *   action area fixes on lots of them  *  *  *  *   --Sven  *  *   Revision 1.12  1999/10/24 20:48:59  pcg  *   api change #2, fix #1  *  *   Revision 1.11  1999/10/17 00:07:40  pcg  *   API PATCH #2 or so  *  *   Revision 1.10  1999/04/22 14:05:58  asbjoer  *   use MAIN macro  *  *   Revision 1.9  1999/03/28 22:03:12  raph  *   Fixed a silly bug causing sharpen to not work in the non-rgb cases.  *  *   Revision 1.8  1999/03/15 22:38:36  raph  *   Improved the quality of the algorithm in the sharpen plugin.  *  *   Revision 1.7  1998/06/06 23:22:22  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.14  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.13  1998/04/27  15:55:38  mike  *   Sharpen would shift the image down one pixel; was using the wrong "source"  *   row...  *  *   Revision 1.12  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.11  1998/04/27  15:33:45  mike  *   Updated to use LUTs for coefficients.  *   Broke out filter code for GRAY, GRAYA, RGB, RGBA modes.  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.10  1998/04/23  14:39:47  mike  *   Whoops - wasn't copying the preview image over for RGB mode...  *  *   Revision 1.9  1998/04/23  13:56:02  mike  *   Updated preview to do checkerboard pattern for transparency (thanks Yosh!)  *   Added gtk_window_set_wmclass() call to make sure this plug-in gets to use  *   the standard GIMP icon if none is otherwise created...  *  *   Revision 1.8  1998/04/22  16:25:45  mike  *   Fixed RGBA preview problems...  *  *   Revision 1.7  1998/03/12  18:48:52  mike  *   Fixed pixel errors around the edge of the bounding rectangle - the  *   original pixels weren't being written back to the image...  *  *   Revision 1.6  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.5  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.4  1997/09/29  17:16:29  mike  *   To average 8 numbers you do *not* divide by 9!  This caused the brightening  *   problem when sharpening was "turned up".  *  *   Revision 1.2  1997/06/08  22:27:35  mike  *   Updated sharpen code for hard-coded 3x3 convolution matrix.  *  *   Revision 1.1  1997/06/08  16:46:07  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   sharpen()                   - Sharpen an image using a median filter.  *   sharpen_dialog()            - Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ok_callback()        - Start the filter...  *   gray_filter()               - Sharpen grayscale pixels.  *   graya_filter()              - Sharpen grayscale+alpha pixels.  *   rgb_filter()                - Sharpen RGB pixels.  *   rgba_filter()               - Sharpen RGBA pixels.  *  * Revision History:  *  *   $Log$  *   Revision 1.16  2000/01/15 15:32:28  mitch  *   2000-01-15  Michael Natterer<mitch@gimp.org>  *  *   	* libgimp/gimpwidgets.[ch]: added a float adjustment callback.  *  *   	* plug-ins/common/bumpmap.c  *   	* plug-ins/common/depthmerge.c  *   	* plug-ins/common/despeckle.c  *   	* plug-ins/common/destripe.c  *   	* plug-ins/common/gpb.c  *   	* plug-ins/common/iwarp.c  *   	* plug-ins/common/polar.c  *   	* plug-ins/common/sharpen.c  *   	* plug-ins/common/tileit.c  *   	* plug-ins/common/whirlpinch.c  *   	* plug-ins/common/wind.c:  *  *   	- Some more hscale+spinbutton instead of hscale+entry widgets.  *   	- Get the CHECK_SIZE constants from libgimp in some plugins.  *  *   Revision 1.15  2000/01/08 15:23:28  mitch  *   2000-01-08  Michael Natterer<mitch@gimp.org>  *  *   	* plug-ins/common/Makefile.am  *   	* plug-ins/common/hrz.c  *   	* plug-ins/common/papertile.c  *   	* plug-ins/common/pat.c  *   	* plug-ins/common/pixelize.c  *   	* plug-ins/common/plasma.c  *   	* plug-ins/common/plugindetails.c  *   	* plug-ins/common/png.c  *   	* plug-ins/common/pnm.c  *   	* plug-ins/common/polar.c  *   	* plug-ins/common/ps.c  *   	* plug-ins/common/psp.c  *   	* plug-ins/common/randomize.c  *   	* plug-ins/common/ripple.c  *   	* plug-ins/common/sample_colorize.c  *   	* plug-ins/common/scatter_hsv.c  *   	* plug-ins/common/screenshot.c  *   	* plug-ins/common/sel_gauss.c  *   	* plug-ins/common/sharpen.c  *   	* plug-ins/common/shift.c  *   	* plug-ins/common/smooth_palette.c  *   	* plug-ins/common/snoise.c  *   	* plug-ins/common/sobel.c  *   	* plug-ins/common/sparkle.c  *   	* plug-ins/common/spheredesigner.c  *   	* plug-ins/common/spread.c  *   	* plug-ins/common/sunras.c: more plugins which use the dialog  *   	constructor. Hacked many UIs to look like the app's dialogs.  *  *   Revision 1.14  2000/01/07 17:18:44  yasuhiro  *           * plug-ins/common/scatter_hsv.c  *           * plug-ins/common/semiflatten.c  *           * plug-ins/common/sharpen.c  *           * plug-ins/common/shift.c  *           * plug-ins/common/smooth_palette.c  *           * plug-ins/common/snoise.c  *           * plug-ins/common/sobel.c  *           * plug-ins/common/sparkle.c  *           * plug-ins/common/spread.c  *           * po-plug-ins/POTFILES.in: added gettext support.  *  *   -- yasuhiro  *  *   Revision 1.13  1999/11/23 23:49:42  neo  *   added dots to all menu entries of interactive plug-ins and did the usual  *   action area fixes on lots of them  *  *  *  *   --Sven  *  *   Revision 1.12  1999/10/24 20:48:59  pcg  *   api change #2, fix #1  *  *   Revision 1.11  1999/10/17 00:07:40  pcg  *   API PATCH #2 or so  *  *   Revision 1.10  1999/04/22 14:05:58  asbjoer  *   use MAIN macro  *  *   Revision 1.9  1999/03/28 22:03:12  raph  *   Fixed a silly bug causing sharpen to not work in the non-rgb cases.  *  *   Revision 1.8  1999/03/15 22:38:36  raph  *   Improved the quality of the algorithm in the sharpen plugin.  *  *   Revision 1.7  1998/06/06 23:22:22  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.14  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.13  1998/04/27  15:55:38  mike  *   Sharpen would shift the image down one pixel; was using the wrong "source"  *   row...  *  *   Revision 1.12  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.11  1998/04/27  15:33:45  mike  *   Updated to use LUTs for coefficients.  *   Broke out filter code for GRAY, GRAYA, RGB, RGBA modes.  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.10  1998/04/23  14:39:47  mike  *   Whoops - wasn't copying the preview image over for RGB mode...  *  *   Revision 1.9  1998/04/23  13:56:02  mike  *   Updated preview to do checkerboard pattern for transparency (thanks Yosh!)  *   Added gtk_window_set_wmclass() call to make sure this plug-in gets to use  *   the standard GIMP icon if none is otherwise created...  *  *   Revision 1.8  1998/04/22  16:25:45  mike  *   Fixed RGBA preview problems...  *  *   Revision 1.7  1998/03/12  18:48:52  mike  *   Fixed pixel errors around the edge of the bounding rectangle - the  *   original pixels weren't being written back to the image...  *  *   Revision 1.6  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.5  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.4  1997/09/29  17:16:29  mike  *   To average 8 numbers you do *not* divide by 9!  This caused the brightening  *   problem when sharpening was "turned up".  *  *   Revision 1.2  1997/06/08  22:27:35  mike  *   Updated sharpen code for hard-coded 3x3 convolution matrix.  *  *   Revision 1.1  1997/06/08  16:46:07  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -54,38 +54,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<libgimp/gimplimits.h>
 end_include
 
-begin_comment
-comment|/*  * Macros...  */
-end_comment
-
-begin_define
-DECL|macro|MIN (a,b)
-define|#
-directive|define
-name|MIN
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|)
-value|(((a)< (b)) ? (a) : (b))
-end_define
-
-begin_define
-DECL|macro|MAX (a,b)
-define|#
-directive|define
-name|MAX
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|)
-value|(((a)> (b)) ? (a) : (b))
-end_define
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
 
 begin_comment
 comment|/*  * Constants...  */
@@ -120,39 +96,7 @@ DECL|macro|SCALE_WIDTH
 define|#
 directive|define
 name|SCALE_WIDTH
-value|64
-end_define
-
-begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|64
-end_define
-
-begin_define
-DECL|macro|CHECK_SIZE
-define|#
-directive|define
-name|CHECK_SIZE
-value|8
-end_define
-
-begin_define
-DECL|macro|CHECK_DARK
-define|#
-directive|define
-name|CHECK_DARK
-value|85
-end_define
-
-begin_define
-DECL|macro|CHECK_LIGHT
-define|#
-directive|define
-name|CHECK_LIGHT
-value|170
+value|100
 end_define
 
 begin_comment
@@ -174,20 +118,25 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
+name|name
 parameter_list|,
-name|int
-parameter_list|,
-name|GParam
-modifier|*
-parameter_list|,
-name|int
-modifier|*
+name|gint
+name|nparams
 parameter_list|,
 name|GParam
 modifier|*
+name|param
+parameter_list|,
+name|gint
 modifier|*
+name|nreturn_vals
+parameter_list|,
+name|GParam
+modifier|*
+modifier|*
+name|returm_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -225,46 +174,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|dialog_create_ivalue
-parameter_list|(
-name|char
-modifier|*
-parameter_list|,
-name|GtkTable
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|gint
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|dialog_iscale_update
 parameter_list|(
 name|GtkAdjustment
-modifier|*
-parameter_list|,
-name|gint
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|dialog_ientry_update
-parameter_list|(
-name|GtkWidget
 modifier|*
 parameter_list|,
 name|gint
@@ -478,15 +390,15 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -716,19 +628,11 @@ DECL|variable|pos_lut
 comment|/* Positive coefficient LUT */
 end_comment
 
-begin_comment
-comment|/*  * 'main()' - Main entry - just call gimp_main()...  */
-end_comment
-
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
 argument_list|()
 end_macro
-
-begin_comment
-comment|/*  * 'query()' - Respond to a plug-in query...  */
-end_comment
 
 begin_function
 specifier|static
@@ -849,41 +753,32 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'run()' - Run the filter...  */
-end_comment
-
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-comment|/* I - Name of filter program. */
-name|int
+name|gint
 name|nparams
 parameter_list|,
-comment|/* I - Number of parameters passed in */
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-comment|/* I - Parameter values */
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-comment|/* O - Number of return values */
 name|GParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
-comment|/* O - Return values */
 block|{
 name|GRunModeType
 name|run_mode
@@ -898,7 +793,7 @@ modifier|*
 name|values
 decl_stmt|;
 comment|/* Return values */
-comment|/*   * Initialize parameter data...   */
+comment|/*    * Initialize parameter data...    */
 name|status
 operator|=
 name|STATUS_SUCCESS
@@ -953,7 +848,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-comment|/*   * Get drawable information...   */
+comment|/*    * Get drawable information...    */
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -1008,7 +903,7 @@ operator|->
 name|id
 argument_list|)
 expr_stmt|;
-comment|/*   * See how we will run   */
+comment|/*    * See how we will run    */
 switch|switch
 condition|(
 name|run_mode
@@ -1020,7 +915,7 @@ case|:
 name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
-comment|/*         * Possibly retrieve data...         */
+comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1029,7 +924,7 @@ operator|&
 name|sharpen_percent
 argument_list|)
 expr_stmt|;
-comment|/*         * Get information from the dialog...         */
+comment|/*        * Get information from the dialog...        */
 if|if
 condition|(
 operator|!
@@ -1044,7 +939,7 @@ case|:
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-comment|/*         * Make sure all the arguments are present...         */
+comment|/*        * Make sure all the arguments are present...        */
 if|if
 condition|(
 name|nparams
@@ -1074,7 +969,7 @@ case|:
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-comment|/*         * Possibly retrieve data...         */
+comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1093,7 +988,7 @@ break|break;
 empty_stmt|;
 block|}
 empty_stmt|;
-comment|/*   * Sharpen the image...   */
+comment|/*    * Sharpen the image...    */
 if|if
 condition|(
 name|status
@@ -1120,7 +1015,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/*       * Set the tile cache size...       */
+comment|/* 	   * Set the tile cache size... 	   */
 name|gimp_tile_cache_ntiles
 argument_list|(
 literal|2
@@ -1142,11 +1037,11 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*       * Run!       */
+comment|/* 	   * Run! 	   */
 name|sharpen
 argument_list|()
 expr_stmt|;
-comment|/*       * If run mode is interactive, flush displays...       */
+comment|/* 	   * If run mode is interactive, flush displays... 	   */
 if|if
 condition|(
 name|run_mode
@@ -1156,7 +1051,7 @@ condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-comment|/*       * Store data...       */
+comment|/* 	   * Store data... 	   */
 if|if
 condition|(
 name|run_mode
@@ -1184,7 +1079,7 @@ name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/*   * Reset the current run status...   */
+comment|/*    * Reset the current run status...    */
 name|values
 index|[
 literal|0
@@ -1196,7 +1091,7 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-comment|/*   * Detach from the drawable...   */
+comment|/*    * Detach from the drawable...    */
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
@@ -1214,10 +1109,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
-decl_stmt|,
+decl_stmt|;
 comment|/* Looping var */
+name|gint
 name|fact
 decl_stmt|;
 comment|/* 1 - sharpness */
@@ -1381,7 +1277,7 @@ name|filter
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*   * Let the user know what we're doing...   */
+comment|/*    * Let the user know what we're doing...    */
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -1390,7 +1286,7 @@ literal|"Sharpening..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*   * Setup for filter...   */
+comment|/*    * Setup for filter...    */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -1498,7 +1394,7 @@ name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*   * Pre-load the first row for the filter...   */
+comment|/*    * Pre-load the first row for the filter...    */
 name|gimp_pixel_rgn_get_row
 argument_list|(
 operator|&
@@ -1566,7 +1462,7 @@ name|count
 operator|=
 literal|1
 expr_stmt|;
-comment|/*   * Select the filter...   */
+comment|/*    * Select the filter...    */
 switch|switch
 condition|(
 name|img_bpp
@@ -1606,7 +1502,7 @@ expr_stmt|;
 break|break;
 block|}
 empty_stmt|;
-comment|/*   * Sharpen...   */
+comment|/*    * Sharpen...    */
 for|for
 control|(
 name|y
@@ -1621,7 +1517,7 @@ name|y
 operator|++
 control|)
 block|{
-comment|/*     * Load the next pixel row...     */
+comment|/*        * Load the next pixel row...        */
 if|if
 condition|(
 operator|(
@@ -1633,7 +1529,7 @@ operator|<
 name|sel_y2
 condition|)
 block|{
-comment|/*       * Check to see if our src_rows[] array is overflowing yet...       */
+comment|/* 	   * Check to see if our src_rows[] array is overflowing yet... 	   */
 if|if
 condition|(
 name|count
@@ -1643,7 +1539,7 @@ condition|)
 name|count
 operator|--
 expr_stmt|;
-comment|/*       * Grab the next row...       */
+comment|/* 	   * Grab the next row... 	   */
 name|gimp_pixel_rgn_get_row
 argument_list|(
 operator|&
@@ -1721,13 +1617,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*       * No more pixels at the bottom...  Drop the oldest samples...       */
+comment|/* 	   * No more pixels at the bottom...  Drop the oldest samples... 	   */
 name|count
 operator|--
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/*     * Now sharpen pixels and save the results...     */
+comment|/*        * Now sharpen pixels and save the results...        */
 if|if
 condition|(
 name|count
@@ -1795,7 +1691,7 @@ operator|+
 name|img_bpp
 argument_list|)
 expr_stmt|;
-comment|/*       * Set the row...       */
+comment|/* 	   * Set the row... 	   */
 name|gimp_pixel_rgn_set_row
 argument_list|(
 operator|&
@@ -1891,7 +1787,7 @@ argument_list|)
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/*   * OK, we're done.  Free all memory used...   */
+comment|/*    * OK, we're done.  Free all memory used...    */
 for|for
 control|(
 name|row
@@ -1929,7 +1825,7 @@ argument_list|(
 name|dst_row
 argument_list|)
 expr_stmt|;
-comment|/*   * Update the screen...   */
+comment|/*    * Update the screen...    */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable
@@ -1978,44 +1874,43 @@ block|{
 name|GtkWidget
 modifier|*
 name|dialog
-decl_stmt|,
-comment|/* Dialog window */
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|table
-decl_stmt|,
-comment|/* Table "container" for controls */
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|ptable
-decl_stmt|,
-comment|/* Preview table */
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|frame
-decl_stmt|,
-comment|/* Frame for preview */
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|scrollbar
 decl_stmt|;
-comment|/* Horizontal + vertical scroller */
+name|GtkObject
+modifier|*
+name|adj
+decl_stmt|;
 name|gint
 name|argc
 decl_stmt|;
-comment|/* Fake argc for GUI */
 name|gchar
 modifier|*
 modifier|*
 name|argv
 decl_stmt|;
-comment|/* Fake argv for GUI */
 name|guchar
 modifier|*
 name|color_cube
 decl_stmt|;
-comment|/* Preview color cube... */
 name|gchar
 modifier|*
 name|title
 decl_stmt|;
-comment|/*    * Initialize the program's display...    */
 name|argc
 operator|=
 literal|1
@@ -2113,7 +2008,6 @@ name|gtk_preview_get_cmap
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/*    * Dialog window...    */
 name|title
 operator|=
 name|g_strdup_printf
@@ -2205,7 +2099,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*   * Top-level table for dialog...   */
+comment|/*    * Top-level table for dialog...    */
 name|table
 operator|=
 name|gtk_table_new
@@ -2608,29 +2502,63 @@ name|preview_init
 argument_list|()
 expr_stmt|;
 comment|/*    * Sharpness control...    */
-name|dialog_create_ivalue
+name|adj
+operator|=
+name|gimp_scale_entry_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Sharpness:"
-argument_list|)
-argument_list|,
 name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
-operator|&
+name|_
+argument_list|(
+literal|"Sharpness:"
+argument_list|)
+argument_list|,
+name|SCALE_WIDTH
+argument_list|,
+literal|0
+argument_list|,
 name|sharpen_percent
 argument_list|,
 literal|1
 argument_list|,
 literal|99
+argument_list|,
+literal|1
+argument_list|,
+literal|10
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*    * Show it and wait for the user to do something...    */
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|adj
+argument_list|)
+argument_list|,
+literal|"value_changed"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|dialog_iscale_update
+argument_list|)
+argument_list|,
+operator|&
+name|sharpen_percent
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -2645,11 +2573,9 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-comment|/*    * Free the preview data...    */
 name|preview_exit
 argument_list|()
 expr_stmt|;
-comment|/*    * Return ok/cancel...    */
 return|return
 name|run_filter
 return|;
@@ -2657,7 +2583,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'preview_init()' - Initialize the preview window...  */
+comment|/*  preview functions  */
 end_comment
 
 begin_function
@@ -2673,7 +2599,7 @@ name|int
 name|width
 decl_stmt|;
 comment|/* Byte width of the image */
-comment|/*   * Setup for preview filter...   */
+comment|/*    * Setup for preview filter...    */
 name|compute_luts
 argument_list|()
 expr_stmt|;
@@ -2764,10 +2690,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'preview_scroll_callback()' - Update the preview when a scrollbar is moved.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -2826,10 +2748,6 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  * 'preview_update()' - Update the preview window.  */
-end_comment
 
 begin_function
 specifier|static
@@ -3265,23 +3183,27 @@ condition|(
 operator|(
 name|y
 operator|&
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|^
 operator|(
 name|x
 operator|&
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 condition|)
 name|check
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 else|else
 name|check
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 if|if
 condition|(
@@ -3458,23 +3380,27 @@ condition|(
 operator|(
 name|y
 operator|&
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|^
 operator|(
 name|x
 operator|&
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 condition|)
 name|check
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 else|else
 name|check
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 if|if
 condition|(
@@ -3639,10 +3565,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'preview_exit()' - Free all memory used by the preview window...  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -3676,321 +3598,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'dialog_create_ivalue()' - Create an integer value control...  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_create_ivalue (char * title,GtkTable * table,int row,gint * value,int left,int right)
-name|dialog_create_ivalue
-parameter_list|(
-name|char
-modifier|*
-name|title
-parameter_list|,
-comment|/* I - Label for control */
-name|GtkTable
-modifier|*
-name|table
-parameter_list|,
-comment|/* I - Table container to use */
-name|int
-name|row
-parameter_list|,
-comment|/* I - Row # for container */
-name|gint
-modifier|*
-name|value
-parameter_list|,
-comment|/* I - Value holder */
-name|int
-name|left
-parameter_list|,
-comment|/* I - Minimum value for slider */
-name|int
-name|right
-parameter_list|)
-comment|/* I - Maximum value for slider */
-block|{
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|,
-comment|/* Control label */
-modifier|*
-name|scale
-decl_stmt|,
-comment|/* Scale widget */
-modifier|*
-name|entry
-decl_stmt|;
-comment|/* Text widget */
-name|GtkObject
-modifier|*
-name|scale_data
-decl_stmt|;
-comment|/* Scale data */
-name|gchar
-name|buf
-index|[
-literal|256
-index|]
-decl_stmt|;
-comment|/* String buffer */
-comment|/*    * Label...    */
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|title
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|1.0
-argument_list|,
-literal|0.5
-argument_list|)
-expr_stmt|;
-name|gtk_table_attach_defaults
-argument_list|(
-name|table
-argument_list|,
-name|label
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-name|row
-argument_list|,
-name|row
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-comment|/*    * Scale...    */
-name|scale_data
-operator|=
-name|gtk_adjustment_new
-argument_list|(
-operator|*
-name|value
-argument_list|,
-name|left
-argument_list|,
-name|right
-argument_list|,
-literal|1.0
-argument_list|,
-literal|1.0
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|scale_data
-argument_list|)
-argument_list|,
-literal|"value_changed"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_iscale_update
-argument_list|,
-name|value
-argument_list|)
-expr_stmt|;
-name|scale
-operator|=
-name|gtk_hscale_new
-argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
-name|scale_data
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|scale
-argument_list|,
-name|SCALE_WIDTH
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_table_attach
-argument_list|(
-name|table
-argument_list|,
-name|scale
-argument_list|,
-literal|1
-argument_list|,
-literal|2
-argument_list|,
-name|row
-argument_list|,
-name|row
-operator|+
-literal|1
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_FILL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_scale_set_draw_value
-argument_list|(
-name|GTK_SCALE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|GTK_UPDATE_CONTINUOUS
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
-comment|/*    * Text entry...    */
-name|entry
-operator|=
-name|gtk_entry_new
-argument_list|()
-expr_stmt|;
-name|gtk_object_set_user_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-name|scale_data
-argument_list|)
-expr_stmt|;
-name|gtk_object_set_user_data
-argument_list|(
-name|scale_data
-argument_list|,
-name|entry
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|entry
-argument_list|,
-name|ENTRY_WIDTH
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_snprintf
-argument_list|(
-name|buf
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buf
-argument_list|)
-argument_list|,
-literal|"%d"
-argument_list|,
-operator|*
-name|value
-argument_list|)
-expr_stmt|;
-name|gtk_entry_set_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-name|buf
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-literal|"changed"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_ientry_update
-argument_list|,
-name|value
-argument_list|)
-expr_stmt|;
-name|gtk_table_attach_defaults
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-name|entry
-argument_list|,
-literal|2
-argument_list|,
-literal|3
-argument_list|,
-name|row
-argument_list|,
-name|row
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|entry
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * 'dialog_iscale_update()' - Update the value field using the scale.  */
+comment|/*  dialog callbacks  */
 end_comment
 
 begin_function
@@ -4003,93 +3611,14 @@ name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-comment|/* I - New value */
 name|gint
 modifier|*
 name|value
 parameter_list|)
-comment|/* I - Current value */
 block|{
-name|GtkWidget
-modifier|*
-name|entry
-decl_stmt|;
-comment|/* Text entry widget */
-name|gchar
-name|buf
-index|[
-literal|256
-index|]
-decl_stmt|;
-comment|/* Text buffer */
-if|if
-condition|(
-operator|*
-name|value
-operator|!=
-name|adjustment
-operator|->
-name|value
-condition|)
-block|{
-operator|*
-name|value
-operator|=
-name|adjustment
-operator|->
-name|value
-expr_stmt|;
-name|entry
-operator|=
-name|gtk_object_get_user_data
-argument_list|(
-name|GTK_OBJECT
+name|gimp_int_adjustment_update
 argument_list|(
 name|adjustment
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_snprintf
-argument_list|(
-name|buf
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buf
-argument_list|)
-argument_list|,
-literal|"%d"
-argument_list|,
-operator|*
-name|value
-argument_list|)
-expr_stmt|;
-name|gtk_signal_handler_block_by_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-name|value
-argument_list|)
-expr_stmt|;
-name|gtk_entry_set_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-name|buf
-argument_list|)
-expr_stmt|;
-name|gtk_signal_handler_unblock_by_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|entry
-argument_list|)
 argument_list|,
 name|value
 argument_list|)
@@ -4101,125 +3630,7 @@ name|preview_update
 argument_list|()
 expr_stmt|;
 block|}
-empty_stmt|;
-block|}
 end_function
-
-begin_comment
-comment|/*  * 'dialog_ientry_update()' - Update the value field using the text entry.  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_ientry_update (GtkWidget * widget,gint * value)
-name|dialog_ientry_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-comment|/* I - Entry widget */
-name|gint
-modifier|*
-name|value
-parameter_list|)
-comment|/* I - Current value */
-block|{
-name|GtkAdjustment
-modifier|*
-name|adjustment
-decl_stmt|;
-name|gint
-name|new_value
-decl_stmt|;
-name|new_value
-operator|=
-name|atoi
-argument_list|(
-name|gtk_entry_get_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|*
-name|value
-operator|!=
-name|new_value
-condition|)
-block|{
-name|adjustment
-operator|=
-name|gtk_object_get_user_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|(
-name|new_value
-operator|>=
-name|adjustment
-operator|->
-name|lower
-operator|)
-operator|&&
-operator|(
-name|new_value
-operator|<=
-name|adjustment
-operator|->
-name|upper
-operator|)
-condition|)
-block|{
-operator|*
-name|value
-operator|=
-name|new_value
-expr_stmt|;
-name|adjustment
-operator|->
-name|value
-operator|=
-name|new_value
-expr_stmt|;
-name|gtk_signal_emit_by_name
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|adjustment
-argument_list|)
-argument_list|,
-literal|"value_changed"
-argument_list|)
-expr_stmt|;
-name|compute_luts
-argument_list|()
-expr_stmt|;
-name|preview_update
-argument_list|()
-expr_stmt|;
-block|}
-empty_stmt|;
-block|}
-empty_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * 'dialog_ok_callback()' - Start the filter...  */
-end_comment
 
 begin_function
 specifier|static
@@ -4231,11 +3642,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-comment|/* I - OK button widget */
 name|gpointer
 name|data
 parameter_list|)
-comment|/* I - Dialog window */
 block|{
 name|run_filter
 operator|=
@@ -4259,10 +3668,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gray_filter (int width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
+DECL|function|gray_filter (gint width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
 name|gray_filter
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
 comment|/* I - Width of line in pixels */
@@ -4441,10 +3850,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|graya_filter (int width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
+DECL|function|graya_filter (gint width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
 name|graya_filter
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
 comment|/* I - Width of line in pixels */
@@ -4650,10 +4059,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|rgb_filter (int width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
+DECL|function|rgb_filter (gint width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
 name|rgb_filter
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
 comment|/* I - Width of line in pixels */
@@ -5055,10 +4464,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|rgba_filter (int width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
+DECL|function|rgba_filter (gint width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
 name|rgba_filter
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
 comment|/* I - Width of line in pixels */
@@ -5476,10 +4885,6 @@ operator|++
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  * End of "$Id$".  */
-end_comment
 
 end_unit
 

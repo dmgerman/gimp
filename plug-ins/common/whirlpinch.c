@@ -70,6 +70,12 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/gimplimits.h>
+end_include
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -114,30 +120,6 @@ name|ENTRY_WIDTH
 value|60
 end_define
 
-begin_define
-DECL|macro|CHECK_SIZE
-define|#
-directive|define
-name|CHECK_SIZE
-value|8
-end_define
-
-begin_define
-DECL|macro|CHECK_DARK
-define|#
-directive|define
-name|CHECK_DARK
-value|((int) (1.0 / 3.0 * 255))
-end_define
-
-begin_define
-DECL|macro|CHECK_LIGHT
-define|#
-directive|define
-name|CHECK_LIGHT
-value|((int) (2.0 / 3.0 * 255))
-end_define
-
 begin_comment
 comment|/***** Types *****/
 end_comment
@@ -145,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c7d4730108
+DECL|struct|__anon28da4e270108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -168,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c7d4730208
+DECL|struct|__anon28da4e270208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -208,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c7d4730308
+DECL|struct|__anon28da4e270308
 block|{
 DECL|member|col
 DECL|member|row
@@ -3413,7 +3395,7 @@ condition|(
 operator|(
 name|x
 operator|/
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|&
 literal|1
@@ -3426,7 +3408,9 @@ index|[
 name|x
 index|]
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 name|wpint
 operator|.
@@ -3435,7 +3419,9 @@ index|[
 name|x
 index|]
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 block|}
 else|else
@@ -3447,7 +3433,9 @@ index|[
 name|x
 index|]
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 name|wpint
 operator|.
@@ -3456,7 +3444,9 @@ index|[
 name|x
 index|]
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 block|}
 comment|/* Thumbnail image */
@@ -4542,7 +4532,7 @@ condition|(
 operator|(
 name|y
 operator|/
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|&
 literal|1
@@ -4571,7 +4561,7 @@ operator|-
 literal|1
 operator|)
 operator|/
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|&
 literal|1

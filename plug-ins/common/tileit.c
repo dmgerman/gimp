@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -34,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -53,6 +53,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimplimits.h>
 end_include
 
 begin_include
@@ -87,34 +93,6 @@ define|#
 directive|define
 name|ENTRY_WIDTH
 value|25
-end_define
-
-begin_comment
-comment|/* Even more stuff from Quartics plugins */
-end_comment
-
-begin_define
-DECL|macro|CHECK_SIZE
-define|#
-directive|define
-name|CHECK_SIZE
-value|8
-end_define
-
-begin_define
-DECL|macro|CHECK_DARK
-define|#
-directive|define
-name|CHECK_DARK
-value|((int) (1.0 / 3.0 * 255))
-end_define
-
-begin_define
-DECL|macro|CHECK_LIGHT
-define|#
-directive|define
-name|CHECK_LIGHT
-value|((int) (2.0 / 3.0 * 255))
 end_define
 
 begin_define
@@ -154,7 +132,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ec1d250108
+DECL|struct|__anon2939311a0108
 typedef|typedef
 struct|struct
 block|{
@@ -604,7 +582,7 @@ comment|/* The "explict tile"& family */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29ec1d250203
+DECL|enum|__anon2939311a0203
 typedef|typedef
 enum|enum
 block|{
@@ -623,7 +601,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ec1d250308
+DECL|struct|__anon2939311a0308
 typedef|typedef
 struct|struct
 block|{
@@ -709,7 +687,7 @@ comment|/* The reset button needs to know some toggle widgets.. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29ec1d250408
+DECL|struct|__anon2939311a0408
 typedef|typedef
 struct|struct
 block|{
@@ -6705,7 +6683,7 @@ condition|(
 operator|(
 name|y
 operator|/
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|&
 literal|1
@@ -6713,22 +6691,30 @@ condition|)
 block|{
 name|check_0
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 name|check_1
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 block|}
 else|else
 block|{
 name|check_0
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 name|check_1
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 block|}
 name|do_tiles_preview
@@ -6806,7 +6792,7 @@ operator|/
 literal|4
 operator|)
 operator|/
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|&
 literal|1
