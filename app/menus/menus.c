@@ -1853,7 +1853,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_STROKE
+name|GIMP_STOCK_SELECTION_STROKE
 block|}
 block|,
 name|NULL
@@ -5246,7 +5246,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TO_PATH
+name|GIMP_STOCK_SELECTION_TO_PATH
 block|}
 block|,
 name|NULL
@@ -5271,7 +5271,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_STROKE
+name|GIMP_STOCK_PATH_STROKE
 block|}
 block|,
 name|NULL
@@ -5551,7 +5551,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TO_SELECTION
+name|GIMP_STOCK_SELECTION_REPLACE
 block|}
 block|,
 name|NULL
@@ -5576,7 +5576,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TO_PATH
+name|GIMP_STOCK_SELECTION_TO_PATH
 block|}
 block|,
 name|NULL
@@ -5601,7 +5601,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_STROKE
+name|GIMP_STOCK_PATH_STROKE
 block|}
 block|,
 name|NULL

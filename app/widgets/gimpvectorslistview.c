@@ -459,7 +459,7 @@ name|gimp_container_view_add_button
 argument_list|(
 name|container_view
 argument_list|,
-name|GIMP_STOCK_STROKE
+name|GIMP_STOCK_PATH_STROKE
 argument_list|,
 name|_
 argument_list|(

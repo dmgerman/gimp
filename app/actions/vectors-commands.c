@@ -1384,10 +1384,10 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"New Vectors Options"
+literal|"New Path Options"
 argument_list|)
 argument_list|,
-literal|"new_vectors_options"
+literal|"new_path_options"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -1944,14 +1944,14 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Edit Vectors Attributes"
+literal|"Edit Path Attributes"
 argument_list|)
 argument_list|,
-literal|"edit_vectors_attributes"
+literal|"edit_path_attributes"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/vectors/edit_vectors_attributes.html"
+literal|"dialogs/paths/edit_path_attributes.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

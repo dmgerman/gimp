@@ -971,7 +971,7 @@ literal|"gimp:layer-list"
 block|,
 literal|"gimp:channel-list"
 block|,
-literal|"gimp:path-list"
+literal|"gimp:vectors-list"
 block|,
 literal|"gimp:indexed-palette"
 block|}
