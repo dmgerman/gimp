@@ -2445,6 +2445,22 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|text_tool
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+literal|"GtkWindow::auto_shrink"
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* handle the wm close signal */
 name|gtk_signal_connect
 argument_list|(
