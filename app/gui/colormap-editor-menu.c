@@ -169,7 +169,10 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
+name|GIMP_IMAGE_EDITOR
+argument_list|(
 name|editor
+argument_list|)
 operator|->
 name|gimage
 expr_stmt|;

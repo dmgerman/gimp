@@ -6,148 +6,145 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_SELECTION_EDITOR_H__
+name|__GIMP_IMAGE_EDITOR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_SELECTION_EDITOR_H__
+DECL|macro|__GIMP_IMAGE_EDITOR_H__
 define|#
 directive|define
-name|__GIMP_SELECTION_EDITOR_H__
+name|__GIMP_IMAGE_EDITOR_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpimageeditor.h"
+file|"gimpeditor.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_SELECTION_EDITOR
+DECL|macro|GIMP_TYPE_IMAGE_EDITOR
 define|#
 directive|define
-name|GIMP_TYPE_SELECTION_EDITOR
-value|(gimp_selection_editor_get_type ())
+name|GIMP_TYPE_IMAGE_EDITOR
+value|(gimp_image_editor_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_SELECTION_EDITOR (obj)
+DECL|macro|GIMP_IMAGE_EDITOR (obj)
 define|#
 directive|define
-name|GIMP_SELECTION_EDITOR
+name|GIMP_IMAGE_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SELECTION_EDITOR, GimpSelectionEditor))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_EDITOR, GimpImageEditor))
 end_define
 
 begin_define
-DECL|macro|GIMP_SELECTION_EDITOR_CLASS (klass)
+DECL|macro|GIMP_IMAGE_EDITOR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_SELECTION_EDITOR_CLASS
+name|GIMP_IMAGE_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SELECTION_EDITOR, GimpSelectionEditorClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_IMAGE_EDITOR, GimpImageEditorClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_SELECTION_EDITOR (obj)
+DECL|macro|GIMP_IS_IMAGE_EDITOR (obj)
 define|#
 directive|define
-name|GIMP_IS_SELECTION_EDITOR
+name|GIMP_IS_IMAGE_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SELECTION_EDITOR))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_IMAGE_EDITOR))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_SELECTION_EDITOR_CLASS (klass)
+DECL|macro|GIMP_IS_IMAGE_EDITOR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_SELECTION_EDITOR_CLASS
+name|GIMP_IS_IMAGE_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SELECTION_EDITOR))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_IMAGE_EDITOR))
 end_define
 
 begin_define
-DECL|macro|GIMP_SELECTION_EDITOR_GET_CLASS (obj)
+DECL|macro|GIMP_IMAGE_EDITOR_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_SELECTION_EDITOR_GET_CLASS
+name|GIMP_IMAGE_EDITOR_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SELECTION_EDITOR, GimpSelectionEditorClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_IMAGE_EDITOR, GimpImageEditorClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpSelectionEditorClass
+DECL|typedef|GimpImageEditorClass
 typedef|typedef
 name|struct
-name|_GimpSelectionEditorClass
-name|GimpSelectionEditorClass
+name|_GimpImageEditorClass
+name|GimpImageEditorClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpSelectionEditor
+DECL|struct|_GimpImageEditor
 struct|struct
-name|_GimpSelectionEditor
+name|_GimpImageEditor
 block|{
 DECL|member|parent_instance
-name|GimpImageEditor
+name|GimpEditor
 name|parent_instance
 decl_stmt|;
-DECL|member|preview
-name|GtkWidget
+DECL|member|gimage
+name|GimpImage
 modifier|*
-name|preview
-decl_stmt|;
-DECL|member|invert_button
-name|GtkWidget
-modifier|*
-name|invert_button
-decl_stmt|;
-DECL|member|all_button
-name|GtkWidget
-modifier|*
-name|all_button
-decl_stmt|;
-DECL|member|none_button
-name|GtkWidget
-modifier|*
-name|none_button
-decl_stmt|;
-DECL|member|save_button
-name|GtkWidget
-modifier|*
-name|save_button
+name|gimage
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpSelectionEditorClass
+DECL|struct|_GimpImageEditorClass
 struct|struct
-name|_GimpSelectionEditorClass
+name|_GimpImageEditorClass
 block|{
 DECL|member|parent_class
-name|GimpImageEditorClass
+name|GimpEditorClass
 name|parent_class
 decl_stmt|;
+comment|/*  virtual function  */
+DECL|member|set_image
+name|void
+function_decl|(
+modifier|*
+name|set_image
+function_decl|)
+parameter_list|(
+name|GimpImageEditor
+modifier|*
+name|editor
+parameter_list|,
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_selection_editor_get_type
+name|gimp_image_editor_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -156,10 +153,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_selection_editor_new
+name|void
+name|gimp_image_editor_set_image
 parameter_list|(
+name|GimpImageEditor
+modifier|*
+name|editor
+parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
@@ -173,7 +173,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_SELECTION_EDITOR_H__ */
+comment|/* __GIMP_IMAGE_EDITOR_H__ */
 end_comment
 
 end_unit

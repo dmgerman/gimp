@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpeditor.h"
+file|"gimpimageeditor.h"
 end_include
 
 begin_define
@@ -100,13 +100,8 @@ struct|struct
 name|_GimpUndoEditor
 block|{
 DECL|member|parent_instance
-name|GimpEditor
+name|GimpImageEditor
 name|parent_instance
-decl_stmt|;
-DECL|member|gimage
-name|GimpImage
-modifier|*
-name|gimage
 decl_stmt|;
 DECL|member|container
 name|GimpContainer
@@ -143,7 +138,7 @@ struct|struct
 name|_GimpUndoEditorClass
 block|{
 DECL|member|parent_class
-name|GimpEditorClass
+name|GimpImageEditorClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -165,21 +160,6 @@ name|GtkWidget
 modifier|*
 name|gimp_undo_editor_new
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_undo_editor_set_image
-parameter_list|(
-name|GimpUndoEditor
-modifier|*
-name|editor
-parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
