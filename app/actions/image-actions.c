@@ -634,6 +634,26 @@ argument_list|,
 literal|"<Actions>/image/image-new"
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove accel_path hack
+endif|#
+directive|endif
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|action
+argument_list|)
+argument_list|,
+literal|"gimp-accel-path"
+argument_list|,
+literal|"<Actions>/image/image-new"
+argument_list|)
+expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group

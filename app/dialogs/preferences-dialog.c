@@ -1899,11 +1899,7 @@ name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_PREFS_INTERFACE
 argument_list|,
-name|GTK_STOCK_CANCEL
-argument_list|,
-name|GTK_RESPONSE_CANCEL
-argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -7126,7 +7122,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b1ea0ca0108
+DECL|struct|__anon2954310c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8436,7 +8432,7 @@ modifier|*
 name|list
 decl_stmt|;
 enum|enum
-DECL|enum|__anon2b1ea0ca0203
+DECL|enum|__anon2954310c0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -9816,7 +9812,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1ea0ca0308
+DECL|struct|__anon2954310c0308
 block|{
 DECL|member|label
 specifier|const
@@ -9973,7 +9969,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1ea0ca0408
+DECL|struct|__anon2954310c0408
 block|{
 DECL|member|tree_label
 specifier|const
