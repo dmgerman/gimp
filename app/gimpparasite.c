@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -37,6 +37,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
 
 begin_include
 include|#

@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush.h"
 end_include
 
@@ -104,7 +98,7 @@ name|GimpContextPreviewClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon28edb29d0103
+DECL|enum|__anon288d946f0103
 block|{
 DECL|enumerator|GCP_BRUSH
 name|GCP_BRUSH

@@ -52,12 +52,6 @@ directive|include
 file|"tile_manager.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"layerF.h"
-end_include
-
 begin_comment
 comment|/*  structure declarations  */
 end_comment

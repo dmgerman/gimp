@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"gtk/gtk.h"
 end_include
 
 begin_include
@@ -30,7 +30,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0d49ef0103
+DECL|enum|__anon29cf81e60103
 block|{
 DECL|enumerator|HELP_BROWSER_GIMP
 name|HELP_BROWSER_GIMP

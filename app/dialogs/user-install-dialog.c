@@ -59,6 +59,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -648,7 +654,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c5bfb970108
+DECL|struct|__anon2c622a8b0108
 block|{
 DECL|member|directory
 name|gboolean

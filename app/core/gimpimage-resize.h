@@ -31,12 +31,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimageF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"boundary.h"
 end_include
 
@@ -211,7 +205,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b2e765f0103
+DECL|enum|__anon2c012a710103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -230,7 +224,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e765f0203
+DECL|enum|__anon2c012a710203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -249,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e765f0303
+DECL|enum|__anon2c012a710303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -277,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e765f0403
+DECL|enum|__anon2c012a710403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

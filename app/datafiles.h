@@ -22,12 +22,6 @@ directive|include
 file|<time.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
 begin_comment
 comment|/***** Types *****/
 end_comment
@@ -35,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e4670c0103
+DECL|enum|__anon276f8ce40103
 block|{
 DECL|enumerator|INCLUDE_TEMP_DIR
 name|INCLUDE_TEMP_DIR

@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -130,7 +142,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon296e7bef0103
+DECL|enum|__anon291b447b0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED

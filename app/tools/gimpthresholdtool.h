@@ -19,18 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawableF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"image_map.h"
 end_include
 

@@ -6,13 +6,25 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpobjectP.h"
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -41,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d575000103
+DECL|enum|__anon2be758500103
 block|{
 DECL|enumerator|ADD
 name|ADD

@@ -22,11 +22,9 @@ directive|include
 file|<gdk/gdk.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gdisplayF.h"
-end_include
+begin_comment
+comment|/*  eeek */
+end_comment
 
 begin_comment
 comment|/*  Tool control actions  */
@@ -35,7 +33,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296a36040103
+DECL|enum|__anon2b205f980103
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -67,7 +65,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296a36040203
+DECL|enum|__anon2b205f980203
 block|{
 DECL|enumerator|TOOL_TYPE_NONE
 name|TOOL_TYPE_NONE

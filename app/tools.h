@@ -19,18 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"layerF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplayF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -58,12 +46,6 @@ directive|include
 file|"toolsF.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_comment
 comment|/*  The possible states for tools  */
 end_comment
@@ -71,7 +53,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be8f6b60103
+DECL|enum|__anon29fa4ef30103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -102,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be8f6b60203
+DECL|enum|__anon29fa4ef30203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD

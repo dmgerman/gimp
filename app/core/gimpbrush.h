@@ -52,6 +52,15 @@ directive|include
 file|"libgimp/gimpvector.h"
 end_include
 
+begin_typedef
+DECL|typedef|GimpBrushClass
+typedef|typedef
+name|struct
+name|_GimpBrushClass
+name|GimpBrushClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpBrush
 struct|struct

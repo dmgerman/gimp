@@ -6,6 +6,30 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpobject.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsignal.h"
 end_include
 
@@ -48,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c0922a0108
+DECL|struct|__anon2b409bcc0108
 block|{
 DECL|member|object
 name|gpointer
@@ -71,7 +95,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c0922a0203
+DECL|enum|__anon2b409bcc0203
 block|{
 DECL|enumerator|ADD
 name|ADD

@@ -23,25 +23,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gdk/gdk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"path_toolP.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b408b170108
+DECL|struct|__anon291e5b2c0108
 block|{
 DECL|member|x1
 name|gdouble

@@ -19,8 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"gtk/gtk.h"
 end_include
+
+begin_comment
+comment|/*  eeek  */
+end_comment
 
 begin_typedef
 DECL|typedef|PaletteEntries

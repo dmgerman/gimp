@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -219,7 +231,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292c8c350103
+DECL|enum|__anon2c137ebd0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

@@ -31,12 +31,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"parasitelistF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppreviewcache.h"
 end_include
 

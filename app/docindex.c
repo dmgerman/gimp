@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -114,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29406aff0108
+DECL|struct|__anon27cc2ce90108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -135,7 +141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29406aff0208
+DECL|struct|__anon27cc2ce90208
 block|{
 DECL|member|boole
 name|gboolean

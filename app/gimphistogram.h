@@ -28,12 +28,6 @@ directive|include
 file|"gimpdrawable.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimphistogramF.h"
-end_include
-
 begin_define
 DECL|macro|HISTOGRAM_VALUE
 define|#

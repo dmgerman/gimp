@@ -16,18 +16,6 @@ directive|define
 name|__GIMP_SET_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpsetF.h"
-end_include
-
 begin_comment
 comment|/* GimpSet - a (usually) typed set of objects with signals for adding  * and removing of stuff. If it is weak, destroyed objects get removed  * automatically. If it is not, it refs them so they won't be freed  * till they are removed. (Though they can be destroyed, of course).  *  * If GTK_TYPE_NONE is specified at gimpset creation time, no type  * checking is performed by gimp_set_add() and the  * gimp_set_{add,remove}_handler() functions should not be used.  It  * is also illegal to ask for a weak untyped gimpset. */
 end_comment

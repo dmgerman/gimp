@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -226,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af130d70103
+DECL|enum|__anon29ced3ac0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -361,7 +367,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af130d70203
+DECL|enum|__anon29ced3ac0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

@@ -16,18 +16,6 @@ directive|define
 name|__SESSION_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_comment
 comment|/* Structures */
 end_comment

@@ -16,12 +16,6 @@ directive|define
 name|__COMMANDS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_function_decl
 name|void
 name|file_new_cmd_callback

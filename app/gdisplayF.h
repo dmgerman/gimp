@@ -15,7 +15,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4813610103
+DECL|enum|__anon2b8a79e80103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -34,15 +34,6 @@ name|SelectionResume
 DECL|typedef|SelectionControl
 block|}
 name|SelectionControl
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GDisplay
-typedef|typedef
-name|struct
-name|_GDisplay
-name|GDisplay
 typedef|;
 end_typedef
 

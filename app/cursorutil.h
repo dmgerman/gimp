@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -60,19 +60,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"toolsF.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b2c9530108
+DECL|struct|__anon2b205f4b0108
 block|{
 DECL|member|bits
 name|guchar
@@ -122,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b2c9530203
+DECL|enum|__anon2b205f4b0203
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON
@@ -141,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b2c9530303
+DECL|enum|__anon2b205f4b0303
 block|{
 DECL|enumerator|CURSOR_MODIFIER_NONE
 name|CURSOR_MODIFIER_NONE
@@ -187,7 +181,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b2c9530403
+DECL|enum|__anon2b205f4b0403
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR

@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -139,7 +145,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288f58200103
+DECL|enum|__anon28f76e130103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED

@@ -19,19 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
 end_include
 
 begin_include
@@ -47,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d78a480103
+DECL|enum|__anon277358bf0103
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -86,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d78a480203
+DECL|enum|__anon277358bf0203
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER

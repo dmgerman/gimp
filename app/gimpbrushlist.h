@@ -19,19 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpbrushlistF.h"
 end_include
 
 begin_define

@@ -18,7 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -83,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894f7b30103
+DECL|enum|__anon2b7888990103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW

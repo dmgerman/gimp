@@ -82,7 +82,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -236,7 +242,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf8046d0103
+DECL|enum|__anon2a3f76ca0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

@@ -16,22 +16,10 @@ directive|define
 name|__LUT_FUNCS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimplutF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimphistogramF.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c419e300103
+DECL|enum|__anon2b9da62d0103
 block|{
 DECL|enumerator|VALUE_LUT
 name|VALUE_LUT

@@ -55,6 +55,18 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -289,7 +301,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9c45eb0103
+DECL|enum|__anon291d727e0103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -329,7 +341,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c9c45eb0203
+DECL|enum|__anon291d727e0203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -353,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9c45eb0308
+DECL|struct|__anon291d727e0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -636,7 +648,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2c9c45eb0408
+DECL|struct|__anon291d727e0408
 block|{
 DECL|member|r
 DECL|member|g

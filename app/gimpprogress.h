@@ -19,8 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gdisplayF.h"
+file|<gtk/gtk.h>
 end_include
+
+begin_comment
+comment|/*  eeek  */
+end_comment
 
 begin_comment
 comment|/* Progress bars for use internally by the main GIMP application. */
@@ -58,13 +62,13 @@ modifier|*
 name|progress_func_t
 function_decl|)
 parameter_list|(
-name|int
+name|gint
 name|ymin
 parameter_list|,
-name|int
+name|gint
 name|ymax
 parameter_list|,
-name|int
+name|gint
 name|curr_y
 parameter_list|,
 name|gpointer
@@ -86,7 +90,7 @@ name|GDisplay
 modifier|*
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 parameter_list|,
 name|gboolean
@@ -107,7 +111,7 @@ name|gimp_progress
 modifier|*
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 parameter_list|,
 name|GtkSignalFunc
@@ -153,11 +157,11 @@ begin_function_decl
 name|void
 name|progress_update_and_flush
 parameter_list|(
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|gpointer
 parameter_list|)

@@ -6,7 +6,25 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -5245,7 +5263,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c4c930108
+DECL|struct|__anon2948b03b0108
 block|{
 DECL|member|bsp
 name|BrushSelect

@@ -16,22 +16,10 @@ directive|define
 name|__APPENV_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpsetF.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1443a00103
+DECL|enum|__anon29660a390103
 block|{
 DECL|enumerator|MESSAGE_BOX
 name|MESSAGE_BOX

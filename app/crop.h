@@ -19,19 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpimageF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b45b0b60103
+DECL|enum|__anon29b1617e0103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP

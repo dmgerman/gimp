@@ -22,12 +22,6 @@ directive|include
 file|<gtk/gtktypeutils.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpobjectF.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_OBJECT
 define|#

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color_area.h"
 end_include
 
@@ -139,7 +145,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon275aa9650103
+DECL|enum|__anon2ac086290103
 block|{
 DECL|enumerator|BUTTON_ADD
 name|BUTTON_ADD

@@ -421,6 +421,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|UNUSED_CODE
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -668,6 +674,11 @@ expr_stmt|;
 comment|/*<h2v-on>*/
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static

@@ -31,7 +31,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b8032e0103
+DECL|enum|__anon2c4ccb520103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b8032e0203
+DECL|enum|__anon2c4ccb520203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -92,7 +92,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b8032e0303
+DECL|enum|__anon2c4ccb520303
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b8032e0403
+DECL|enum|__anon2c4ccb520403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b8032e0503
+DECL|enum|__anon2c4ccb520503
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -226,7 +226,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b8032e0603
+DECL|enum|__anon2c4ccb520603
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b8032e0703
+DECL|enum|__anon2c4ccb520703
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b8032e0803
+DECL|enum|__anon2c4ccb520803
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -288,7 +288,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon29b8032e0903
+DECL|enum|__anon2c4ccb520903
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -309,7 +309,7 @@ comment|/* gradient paint modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29b8032e0a03
+DECL|enum|__anon2c4ccb520a03
 typedef|typedef
 enum|enum
 block|{
@@ -345,7 +345,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b8032e0b03
+DECL|enum|__anon2c4ccb520b03
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -391,6 +391,24 @@ begin_comment
 DECL|typedef|Channel
 comment|/* convenience */
 end_comment
+
+begin_typedef
+DECL|typedef|GDisplay
+typedef|typedef
+name|struct
+name|_GDisplay
+name|GDisplay
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDrawable
+typedef|typedef
+name|struct
+name|_GimpDrawable
+name|GimpDrawable
+typedef|;
+end_typedef
 
 begin_typedef
 DECL|typedef|GimpLayer
@@ -455,6 +473,50 @@ comment|/* convenience */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpImage
+typedef|typedef
+name|struct
+name|_GimpImage
+name|GimpImage
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSet
+typedef|typedef
+name|struct
+name|_GimpSet
+name|GimpSet
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpList
+typedef|typedef
+name|struct
+name|_GimpList
+name|GimpList
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|Guide
+typedef|typedef
+name|struct
+name|_Guide
+name|Guide
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|Tattoo
+typedef|typedef
+name|guint32
+name|Tattoo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|PaintCore
 typedef|typedef
 name|struct
@@ -473,11 +535,38 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpBrushClass
+DECL|typedef|GimpBrushList
 typedef|typedef
 name|struct
-name|_GimpBrushClass
-name|GimpBrushClass
+name|_GimpBrushList
+name|GimpBrushList
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpObject
+typedef|typedef
+name|struct
+name|_GimpObject
+name|GimpObject
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpHistogram
+typedef|typedef
+name|struct
+name|_GimpHistogram
+name|GimpHistogram
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLut
+typedef|typedef
+name|struct
+name|_GimpLut
+name|GimpLut
 typedef|;
 end_typedef
 
@@ -532,6 +621,15 @@ typedef|typedef
 name|struct
 name|_PlugInProcDef
 name|PlugInProcDef
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|ParasiteList
+typedef|typedef
+name|struct
+name|_ParasiteList
+name|ParasiteList
 typedef|;
 end_typedef
 

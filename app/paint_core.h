@@ -40,12 +40,6 @@ directive|include
 file|"gimpbrush.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdrawableF.h"
-end_include
-
 begin_comment
 comment|/* the different states that the painting function can be called with  */
 end_comment
@@ -145,7 +139,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29a3a5cc0103
+DECL|enum|__anon29e13a670103
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH

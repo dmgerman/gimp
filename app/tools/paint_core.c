@@ -18,17 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<string.h>
 end_include
-
-begin_comment
-comment|/* temporary for debugging */
-end_comment
 
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
 end_include
 
 begin_include

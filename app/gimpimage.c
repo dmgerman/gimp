@@ -18,6 +18,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpobjectP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimageP.h"
 end_include
 
@@ -570,7 +588,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a0f8c3f0103
+DECL|enum|__anon2b9b34f00103
 enum|enum
 block|{
 DECL|enumerator|CLEAN

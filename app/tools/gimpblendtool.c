@@ -18,6 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -352,7 +364,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff8f2c0108
+DECL|struct|__anon2944f6960108
 block|{
 DECL|member|offset
 name|gdouble
@@ -404,7 +416,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff8f2c0208
+DECL|struct|__anon2944f6960208
 block|{
 DECL|member|PR
 name|PixelRegion

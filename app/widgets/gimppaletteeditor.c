@@ -82,6 +82,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -294,7 +306,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ed0f860103
+DECL|enum|__anon2c00a0830103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT

@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -142,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c70d5330103
+DECL|enum|__anon27700cab0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO

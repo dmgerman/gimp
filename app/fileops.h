@@ -16,12 +16,6 @@ directive|define
 name|__FILEOPS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -47,12 +41,6 @@ begin_include
 include|#
 directive|include
 file|"plug_in.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
 end_include
 
 begin_function_decl

@@ -16,22 +16,10 @@ directive|define
 name|SCAN_CONVERT_H
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"channel.h"
-end_include
-
 begin_typedef
-DECL|struct|__anon274a1ce00108
 typedef|typedef
 struct|struct
+DECL|struct|__anon297c40220108
 block|{
 DECL|member|x
 name|gdouble

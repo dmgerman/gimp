@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -6096,7 +6108,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c618eb30103
+DECL|enum|__anon2a32d8740103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -26,7 +26,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gdk/gdkkeysyms.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -231,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6d6b70103
+DECL|enum|__anon2b4107ef0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -257,7 +269,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6d6b70203
+DECL|enum|__anon2b4107ef0203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING

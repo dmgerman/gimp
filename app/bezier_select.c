@@ -18,6 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -277,7 +289,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2ac2d8650108
+DECL|struct|__anon2b8cc1030108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +326,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac2d8650208
+DECL|struct|__anon2b8cc1030208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +381,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac2d8650308
+DECL|struct|__anon2b8cc1030308
 typedef|typedef
 struct|struct
 block|{

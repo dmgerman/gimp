@@ -16,12 +16,6 @@ directive|define
 name|__PALETTE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
 begin_comment
 comment|/*  The states for updating a color in the palette via palette_set_* calls */
 end_comment

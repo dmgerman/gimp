@@ -31,12 +31,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawableF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tile_manager.h"
 end_include
 
@@ -44,12 +38,6 @@ begin_include
 include|#
 directive|include
 file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
 end_include
 
 begin_include

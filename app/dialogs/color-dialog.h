@@ -16,16 +16,10 @@ directive|define
 name|__COLOR_NOTEBOOK_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c4c75a0103
+DECL|enum|__anon2c4240900103
 block|{
 DECL|enumerator|COLOR_NOTEBOOK_OK
 name|COLOR_NOTEBOOK_OK

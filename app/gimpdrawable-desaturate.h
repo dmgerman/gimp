@@ -16,18 +16,6 @@ directive|define
 name|__DESATURATE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawableF.h"
-end_include
-
 begin_comment
 comment|/*  desaturate functions  */
 end_comment

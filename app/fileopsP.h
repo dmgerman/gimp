@@ -16,12 +16,6 @@ directive|define
 name|__FILE_OPS_P_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
 begin_comment
 comment|/* functions that need only be accessed from file_ops_cmds.c */
 end_comment

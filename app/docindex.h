@@ -16,18 +16,6 @@ directive|define
 name|__DOCINDEX_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_function_decl
 name|void
 name|document_index_create

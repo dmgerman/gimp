@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay_color.h"
 end_include
 

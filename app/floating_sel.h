@@ -19,19 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"layerF.h"
+file|"apptypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"boundaryF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawableF.h"
 end_include
 
 begin_comment

@@ -18,6 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -681,7 +693,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon294f45b80103
+DECL|enum|__anon28b6b9c60103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -2034,7 +2046,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon294f45b80208
+DECL|struct|__anon28b6b9c60208
 typedef|typedef
 struct|struct
 block|{

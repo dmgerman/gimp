@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpimageF.h"
+file|"apptypes.h"
 end_include
 
 begin_include

@@ -15,13 +15,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkobject.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpobject.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_struct
@@ -40,7 +34,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796cf520108
+DECL|struct|__anon2754596e0108
 block|{
 DECL|member|parent_class
 name|GtkObjectClass

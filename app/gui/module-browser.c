@@ -65,6 +65,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -139,7 +151,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aab74b40103
+DECL|enum|__anon2743fe680103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -341,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab74b40208
+DECL|struct|__anon2743fe680208
 block|{
 DECL|member|object
 name|GtkObject
@@ -456,7 +468,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab74b40308
+DECL|struct|__anon2743fe680308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1766,7 +1778,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab74b40408
+DECL|struct|__anon2743fe680408
 block|{
 DECL|member|parent_class
 name|GtkObjectClass
@@ -1780,7 +1792,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aab74b40503
+DECL|enum|__anon2743fe680503
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -4636,7 +4648,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab74b40608
+DECL|struct|__anon2743fe680608
 block|{
 DECL|member|search_key
 specifier|const

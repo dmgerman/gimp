@@ -16,18 +16,6 @@ directive|define
 name|__GIMP_LIST_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplistF.h"
-end_include
-
 begin_comment
 comment|/* GimpList - a typed list of objects with signals for adding and  * removing of stuff. If it is weak, destroyed objects get removed  * automatically. If it is not, it refs them so they won't be freed  * till they are removed. (Though they can be destroyed, of course)  */
 end_comment

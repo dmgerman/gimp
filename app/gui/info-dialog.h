@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphelp.h"
 end_include
 
@@ -43,7 +37,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b65eab20103
+DECL|enum|__anon289eb0400103
 block|{
 DECL|enumerator|INFO_LABEL
 name|INFO_LABEL

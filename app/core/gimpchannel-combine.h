@@ -46,12 +46,6 @@ directive|include
 file|"tile_manager.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
-end_include
-
 begin_comment
 comment|/* OPERATIONS */
 end_comment
@@ -59,7 +53,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2911d1640103
+DECL|enum|__anon273d06560103
 block|{
 DECL|enumerator|ADD
 name|ADD

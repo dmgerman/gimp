@@ -6,6 +6,24 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -392,7 +410,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4517d20103
+DECL|enum|__anon2b2b93f20103
 block|{
 DECL|enumerator|GIMP_PLUS_CURSOR
 name|GIMP_PLUS_CURSOR

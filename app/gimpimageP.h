@@ -19,6 +19,16 @@ end_define
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_comment
+comment|/*  eeeek  */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"gimpobjectP.h"
 end_include
 
@@ -50,12 +60,6 @@ begin_include
 include|#
 directive|include
 file|"layer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"parasitelistF.h"
 end_include
 
 begin_include

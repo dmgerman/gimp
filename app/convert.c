@@ -38,6 +38,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -34923,7 +34935,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be264480108
+DECL|struct|__anon291a2bd90108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35000,7 +35012,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be264480208
+DECL|struct|__anon291a2bd90208
 block|{
 DECL|member|ncolors
 name|long
@@ -35019,7 +35031,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be264480308
+DECL|struct|__anon291a2bd90308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38359,7 +38371,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be264480408
+DECL|struct|__anon291a2bd90408
 block|{
 DECL|member|used_count
 name|signed

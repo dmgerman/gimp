@@ -16,16 +16,6 @@ directive|define
 name|__PATHP_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
-end_include
-
-begin_comment
-comment|/* Tattoo   */
-end_comment
-
 begin_struct
 DECL|struct|_PathPoint
 struct|struct

@@ -6,6 +6,24 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -108,7 +126,7 @@ value|0xF
 end_define
 
 begin_enum
-DECL|enum|__anon2944294a0103
+DECL|enum|__anon29e1381f0103
 enum|enum
 block|{
 DECL|enumerator|RANGED

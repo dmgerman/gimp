@@ -6,7 +6,19 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -506,7 +518,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e516160103
+DECL|enum|__anon28cc16d70103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -613,7 +625,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e516160203
+DECL|enum|__anon28cc16d70203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED

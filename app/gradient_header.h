@@ -16,12 +16,6 @@ directive|define
 name|__GRADIENT_HEADER_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_comment
 comment|/***** Types *****/
 end_comment
@@ -33,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ecd32f0103
+DECL|enum|__anon28b3fa580103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -60,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ecd32f0203
+DECL|enum|__anon28b3fa580203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB

@@ -19,18 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpimageF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawableF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpprogress.h"
 end_include
 
@@ -43,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f8894b0103
+DECL|enum|__anon2a3184090103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -91,7 +79,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_MODE>*/
-DECL|enum|__anon28f8894b0203
+DECL|enum|__anon2a3184090203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -117,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f8894b0303
+DECL|enum|__anon2a3184090303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE

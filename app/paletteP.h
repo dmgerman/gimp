@@ -19,18 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palette_entries.h"
 end_include
 

@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"apptypes.h"
 end_include
 
@@ -32,12 +26,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
 end_include
 
 begin_include
@@ -56,12 +44,6 @@ begin_include
 include|#
 directive|include
 file|"toolsF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpobjectP.h"
 end_include
 
 begin_define
@@ -119,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273e2bb00103
+DECL|enum|__anon27e5e04b0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -162,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273e2bb00203
+DECL|enum|__anon27e5e04b0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK

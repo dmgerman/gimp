@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gdisplayF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpcolordisplay.h"
 end_include
 
@@ -47,7 +41,7 @@ name|gpointer
 name|cd_ID
 decl_stmt|;
 DECL|member|cd_name
-name|char
+name|gchar
 modifier|*
 name|cd_name
 decl_stmt|;
@@ -69,7 +63,7 @@ name|GimpCDFunc
 function_decl|)
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -111,7 +105,7 @@ modifier|*
 name|gdisp
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)

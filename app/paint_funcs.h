@@ -32,12 +32,6 @@ directive|include
 file|"pixel_region.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
-end_include
-
 begin_comment
 comment|/*  Called initially to setup accelerated rendering features  */
 end_comment

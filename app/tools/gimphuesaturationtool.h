@@ -19,18 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawableF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"image_map.h"
 end_include
 
@@ -43,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af976e10103
+DECL|enum|__anon2b1df4900103
 block|{
 DECL|enumerator|ALL_HUES
 name|ALL_HUES

@@ -16,22 +16,10 @@ directive|define
 name|__CHANNEL_OPS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpimageF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawableF.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adcc7710103
+DECL|enum|__anon2a2f03980103
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND

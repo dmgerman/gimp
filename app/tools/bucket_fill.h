@@ -19,25 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpimageF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawableF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7b61a90103
+DECL|enum|__anon2c969dcd0103
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL

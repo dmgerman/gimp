@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file_new_dialog.h"
 end_include
 
@@ -66,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c533e680108
+DECL|struct|__anon2bbe4c570108
 block|{
 DECL|member|dlg
 name|GtkWidget
