@@ -794,6 +794,17 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|floating_layer
+condition|)
+name|floating_sel_attach
+argument_list|(
+name|floating_layer
+argument_list|,
+name|new_floating_sel_drawable
+argument_list|)
+expr_stmt|;
 comment|/*  Set active layer, active channel, active vectors  */
 if|if
 condition|(
@@ -826,17 +837,6 @@ argument_list|(
 name|new_gimage
 argument_list|,
 name|active_vectors
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|floating_layer
-condition|)
-name|floating_sel_attach
-argument_list|(
-name|floating_layer
-argument_list|,
-name|new_floating_sel_drawable
 argument_list|)
 expr_stmt|;
 comment|/*  Copy state of all color channels  */

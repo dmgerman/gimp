@@ -6213,7 +6213,6 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  remove the layer  */
 name|gimp_container_remove
 argument_list|(
 name|undo
@@ -6335,19 +6334,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|undo
-operator|->
-name|gimage
-operator|->
-name|active_layer
-operator|=
-name|NULL
-expr_stmt|;
-name|gimp_image_active_layer_changed
+name|gimp_image_set_active_layer
 argument_list|(
 name|undo
 operator|->
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -6441,7 +6434,6 @@ name|floating_sel
 operator|=
 name|layer
 expr_stmt|;
-comment|/*  add the new layer  */
 name|gimp_container_insert
 argument_list|(
 name|undo
@@ -9396,7 +9388,6 @@ argument_list|,
 name|channel
 argument_list|)
 expr_stmt|;
-comment|/*  remove the channel  */
 name|gimp_container_remove
 argument_list|(
 name|undo
@@ -9487,7 +9478,6 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*  add the new channel  */
 name|gimp_container_insert
 argument_list|(
 name|undo
@@ -11063,7 +11053,6 @@ argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
-comment|/*  remove the vectors  */
 name|gimp_container_remove
 argument_list|(
 name|undo
@@ -11097,14 +11086,6 @@ operator|->
 name|gimage
 argument_list|)
 condition|)
-block|{
-if|if
-condition|(
-name|vu
-operator|->
-name|prev_vectors
-condition|)
-block|{
 name|gimp_image_set_active_vectors
 argument_list|(
 name|undo
@@ -11116,26 +11097,6 @@ operator|->
 name|prev_vectors
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|undo
-operator|->
-name|gimage
-operator|->
-name|active_vectors
-operator|=
-name|NULL
-expr_stmt|;
-name|gimp_image_active_vectors_changed
-argument_list|(
-name|undo
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 block|}
 else|else
 block|{
@@ -11166,7 +11127,6 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*  add the new vectors  */
 name|gimp_container_insert
 argument_list|(
 name|undo

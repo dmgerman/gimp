@@ -1840,7 +1840,6 @@ if|if
 condition|(
 name|success
 condition|)
-block|{
 name|gimp_channel_get_color
 argument_list|(
 name|channel
@@ -1849,7 +1848,6 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-block|}
 name|return_args
 operator|=
 name|procedural_db_return_args

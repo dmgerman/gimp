@@ -219,13 +219,6 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Set gimage->floating_sel *before* adding the floating layer to    *  the image so views can recognize the newly added floating layer    *  and treat it accordingly.    */
-name|gimage
-operator|->
-name|floating_sel
-operator|=
-name|layer
-expr_stmt|;
 comment|/*  add the layer to the gimage  */
 name|gimp_image_add_layer
 argument_list|(
