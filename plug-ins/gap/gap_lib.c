@@ -8108,7 +8108,7 @@ name|l_title
 argument_list|,
 name|_
 argument_list|(
-literal|"Duplicate Framerange"
+literal|"Duplicate Frame Range"
 argument_list|)
 argument_list|,
 literal|3

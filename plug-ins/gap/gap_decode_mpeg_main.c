@@ -2825,7 +2825,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Framerange"
+literal|"Select Frame Range"
 argument_list|)
 argument_list|,
 name|ARGC_DIALOG

@@ -501,7 +501,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Perform function on one or more Layer(s)\nin all frames of the selected framerange\n"
+literal|"Perform function on one or more Layer(s)\nin all frames of the selected frame range\n"
 argument_list|)
 expr_stmt|;
 name|p_init_arr_arg

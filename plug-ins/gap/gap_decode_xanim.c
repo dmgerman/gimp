@@ -1473,7 +1473,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Frame range"
+literal|"Select Frame Range"
 argument_list|)
 argument_list|,
 name|XADIALOG_NUM_ARGS

@@ -217,7 +217,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon29a5da470108
+DECL|struct|__anon29201bd40108
 typedef|typedef
 struct|struct
 block|{
@@ -232,7 +232,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a5da470208
+DECL|struct|__anon29201bd40208
 typedef|typedef
 struct|struct
 block|{
@@ -259,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a5da470308
+DECL|struct|__anon29201bd40308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -424,7 +424,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a5da470408
+DECL|struct|__anon29201bd40408
 typedef|typedef
 struct|struct
 block|{
@@ -6962,7 +6962,7 @@ name|option_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Source Object to insert into Framerange"
+literal|"Source Object to insert into Frame Range"
 argument_list|)
 argument_list|,
 name|NULL
