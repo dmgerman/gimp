@@ -263,6 +263,10 @@ literal|"parent"
 argument_list|,
 name|parent
 argument_list|,
+literal|"focus-on-map"
+argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
