@@ -130,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb9a7090103
+DECL|enum|__anon2b0c8ad40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -550,6 +550,8 @@ argument_list|,
 literal|"theme-path"
 argument_list|,
 name|THEME_PATH_BLURB
+argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
 argument_list|,
 name|gimp_config_build_data_path
 argument_list|(

@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afab53a0108
+DECL|struct|__anon27d2f6bf0108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afab53a0208
+DECL|struct|__anon27d2f6bf0208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afab53a0308
+DECL|struct|__anon27d2f6bf0308
 block|{
 DECL|member|ID
 name|gint32
@@ -1582,7 +1582,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF Can't open %s\n"
+name|_
+argument_list|(
+literal|"TIFF: Can't open '%s'"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1604,7 +1607,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Loading '%s' ..."
 argument_list|)
 argument_list|,
 name|filename
@@ -1694,7 +1697,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF Can't get image width\n"
+literal|"TIFF: Can't get image width"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1717,7 +1720,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF Can't get image length\n"
+literal|"TIFF: Can't get image length"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1740,7 +1743,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF Can't get photometric\nAssuming min-is-black\n"
+literal|"TIFF: Can't get photometric\nAssuming min-is-black\n"
 argument_list|)
 expr_stmt|;
 comment|/* old AppleScan software misses out the photometric tag (and      * incidentally assumes min-is-white, but xv assumes min-is-black,      * so we follow xv's lead.  It's not much hardship to invert the      * image later). */
@@ -1933,7 +1936,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF Can't create a new image\n"
+literal|"TIFF: Can't create a new image"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -2198,7 +2201,7 @@ case|:
 comment|/* ImageMagick writes files with this silly resunit */
 name|g_message
 argument_list|(
-literal|"TIFF warning: resolution units meaningless\n"
+literal|"TIFF warning: resolution units meaningless"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2231,7 +2234,7 @@ default|default:
 name|g_message
 argument_list|(
 literal|"TIFF file error: unknown resolution unit type %d, "
-literal|"assuming dpi\n"
+literal|"assuming dpi"
 argument_list|,
 name|read_unit
 argument_list|)
@@ -2245,8 +2248,8 @@ comment|/* no res unit tag */
 comment|/* old AppleScan software produces these */
 name|g_message
 argument_list|(
-literal|"TIFF warning: resolution specified without\n"
-literal|"any units tag, assuming dpi\n"
+literal|"TIFF warning: resolution specified without any units tag, "
+literal|"assuming dpi"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2256,7 +2259,7 @@ block|{
 comment|/* xres but no yres */
 name|g_message
 argument_list|(
-literal|"TIFF warning: no y resolution info, assuming same as x\n"
+literal|"TIFF warning: no y resolution info, assuming same as x"
 argument_list|)
 expr_stmt|;
 name|yres
@@ -2330,7 +2333,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF Can't get colormaps\n"
+literal|"TIFF: Can't get colormaps"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -2571,10 +2574,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"TIFF warning: the image you are loading has 16 bits per"
-literal|"channel.\nGIMP can only handle 8 bit, so it will be"
-literal|"converted for you.\nInformation will be lost because of"
-literal|"this conversion."
+literal|"TIFF warning:\n"
+literal|"The image you are loading has 16 bits per channel. GIMP "
+literal|"can only handle 8 bit, so it will be converted for you. "
+literal|"Information will be lost because of this conversion."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2717,9 +2720,9 @@ name|flip_vertical
 operator|=
 name|FALSE
 expr_stmt|;
-name|printf
+name|g_warning
 argument_list|(
-literal|"Orientation %d not handled yet!\n"
+literal|"Orientation %d not handled yet!"
 argument_list|,
 name|orientation
 argument_list|)
@@ -2964,19 +2967,6 @@ name|buffer
 expr_stmt|;
 if|if
 condition|(
-name|buffer
-operator|==
-name|NULL
-condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"TIFF Unable to allocate temporary buffer\n"
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
 operator|!
 name|TIFFReadRGBAImage
 argument_list|(
@@ -2993,7 +2983,7 @@ argument_list|)
 condition|)
 name|g_message
 argument_list|(
-literal|"TIFF Unsupported layout, no RGBA loader\n"
+literal|"TIFF Unsupported layout, no RGBA loader"
 argument_list|)
 expr_stmt|;
 for|for
@@ -3057,12 +3047,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|row
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|imageLength
 argument_list|)
@@ -6146,7 +6136,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF Unsupported layout\n"
+literal|"TIFF: Unsupported layout"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -7699,7 +7689,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF Failed a scanline write on row %d"
+literal|"TIFF: Failed a scanline write on row %d"
 argument_list|,
 name|row
 argument_list|)
@@ -7718,12 +7708,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|row
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|rows
 argument_list|)
@@ -8230,7 +8220,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF save: Your comment string is too long.\n"
+name|_
+argument_list|(
+literal|"TIFF: Your comment string is too long."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

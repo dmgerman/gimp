@@ -130,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon277f72020103
+DECL|enum|__anon2c45be2c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -391,6 +391,8 @@ literal|"plug-in-path"
 argument_list|,
 name|PLUG_IN_PATH_BLURB
 argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
+argument_list|,
 name|gimp_config_build_plug_in_path
 argument_list|(
 literal|"plug-ins"
@@ -408,6 +410,8 @@ argument_list|,
 literal|"tool-plug-in-path"
 argument_list|,
 name|TOOL_PLUG_IN_PATH_BLURB
+argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
 argument_list|,
 name|gimp_config_build_plug_in_path
 argument_list|(
@@ -427,6 +431,8 @@ literal|"module-path"
 argument_list|,
 name|MODULE_PATH_BLURB
 argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
+argument_list|,
 name|gimp_config_build_plug_in_path
 argument_list|(
 literal|"modules"
@@ -444,6 +450,8 @@ argument_list|,
 literal|"environ-path"
 argument_list|,
 name|ENVIRON_PATH_BLURB
+argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
 argument_list|,
 name|gimp_config_build_plug_in_path
 argument_list|(
@@ -463,6 +471,8 @@ literal|"brush-path"
 argument_list|,
 name|BRUSH_PATH_BLURB
 argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
+argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
 literal|"brushes"
@@ -480,6 +490,8 @@ argument_list|,
 literal|"pattern-path"
 argument_list|,
 name|PATTERN_PATH_BLURB
+argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
 argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
@@ -499,6 +511,8 @@ literal|"palette-path"
 argument_list|,
 name|PALETTE_PATH_BLURB
 argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
+argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
 literal|"palettes"
@@ -516,6 +530,8 @@ argument_list|,
 literal|"gradient-path"
 argument_list|,
 name|GRADIENT_PATH_BLURB
+argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
 argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
@@ -751,6 +767,8 @@ argument_list|,
 literal|"pluginrc-path"
 argument_list|,
 name|PLUGINRC_PATH_BLURB
+argument_list|,
+name|GIMP_PARAM_PATH_FILE
 argument_list|,
 literal|"${gimp_dir}"
 name|G_DIR_SEPARATOR_S

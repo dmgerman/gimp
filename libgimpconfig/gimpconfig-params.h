@@ -48,6 +48,10 @@ name|GIMP_CONFIG_PARAM_FLAGS
 value|(G_PARAM_READWRITE | \                                  G_PARAM_CONSTRUCT | \                                  GIMP_PARAM_SERIALIZE)
 end_define
 
+begin_comment
+comment|/*  * GIMP_TYPE_PARAM_COLOR  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_PARAM_COLOR
 define|#
@@ -107,6 +111,10 @@ name|flags
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  * GIMP_TYPE_PARAM_MEMSIZE  */
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_PARAM_MEMSIZE
@@ -172,6 +180,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  * GIMP_TYPE_PARAM_PATH  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2770f5dd0103
+block|{
+DECL|enumerator|GIMP_PARAM_PATH_FILE
+name|GIMP_PARAM_PATH_FILE
+block|,
+DECL|enumerator|GIMP_PARAM_PATH_FILE_LIST
+name|GIMP_PARAM_PATH_FILE_LIST
+block|,
+DECL|enumerator|GIMP_PARAM_PATH_DIR
+name|GIMP_PARAM_PATH_DIR
+block|,
+DECL|enumerator|GIMP_PARAM_PATH_DIR_LIST
+name|GIMP_PARAM_PATH_DIR_LIST
+DECL|typedef|GimpParamPathType
+block|}
+name|GimpParamPathType
+typedef|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_PARAM_PATH
 define|#
@@ -221,6 +255,9 @@ name|gchar
 modifier|*
 name|blurb
 parameter_list|,
+name|GimpParamPathType
+name|type
+parameter_list|,
 name|gchar
 modifier|*
 name|default_value
@@ -230,6 +267,21 @@ name|flags
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+name|GimpParamPathType
+name|gimp_param_spec_path_type
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  * GIMP_TYPE_PARAM_UNIT  */
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_PARAM_UNIT
@@ -443,12 +495,14 @@ name|class
 parameter_list|,
 name|id
 parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_PATH (class,id,\\\nname,blurb,default,flags)
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_PATH (class,id,\\\nname,blurb,type,default,flags)
 name|name
 parameter_list|,
 name|blurb
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_path (name, NULL, blurb,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+name|type
+parameter_list|,
+define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_path (name, NULL, blurb,\                                    type, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define

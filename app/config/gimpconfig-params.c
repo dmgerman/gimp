@@ -39,6 +39,10 @@ directive|include
 file|"gimpconfig-types.h"
 end_include
 
+begin_comment
+comment|/*  * GIMP_TYPE_PARAM_COLOR  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_PARAM_SPEC_COLOR (pspec)
 define|#
@@ -702,6 +706,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  * GIMP_TYPE_PARAM_MEMSIZE  */
+end_comment
+
 begin_function_decl
 specifier|static
 name|void
@@ -891,6 +899,47 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  * GIMP_TYPE_PARAM_PATH  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_PARAM_SPEC_PATH (pspec)
+define|#
+directive|define
+name|GIMP_PARAM_SPEC_PATH
+parameter_list|(
+name|pspec
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_PATH, GimpParamSpecPath))
+end_define
+
+begin_typedef
+DECL|typedef|GimpParamSpecPath
+typedef|typedef
+name|struct
+name|_GimpParamSpecPath
+name|GimpParamSpecPath
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpParamSpecPath
+struct|struct
+name|_GimpParamSpecPath
+block|{
+DECL|member|parent_instance
+name|GParamSpecString
+name|parent_instance
+decl_stmt|;
+DECL|member|type
+name|GimpParamPathType
+name|type
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function_decl
 specifier|static
 name|void
@@ -949,7 +998,7 @@ name|NULL
 block|,
 sizeof|sizeof
 argument_list|(
-name|GParamSpecString
+name|GimpParamSpecPath
 argument_list|)
 block|,
 literal|0
@@ -1003,7 +1052,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_path (const gchar * name,const gchar * nick,const gchar * blurb,gchar * default_value,GParamFlags flags)
+DECL|function|gimp_param_spec_path (const gchar * name,const gchar * nick,const gchar * blurb,GimpParamPathType type,gchar * default_value,GParamFlags flags)
 name|gimp_param_spec_path
 parameter_list|(
 specifier|const
@@ -1020,6 +1069,9 @@ specifier|const
 name|gchar
 modifier|*
 name|blurb
+parameter_list|,
+name|GimpParamPathType
+name|type
 parameter_list|,
 name|gchar
 modifier|*
@@ -1054,6 +1106,15 @@ name|default_value
 operator|=
 name|default_value
 expr_stmt|;
+name|GIMP_PARAM_SPEC_PATH
+argument_list|(
+name|pspec
+argument_list|)
+operator|->
+name|type
+operator|=
+name|type
+expr_stmt|;
 return|return
 name|G_PARAM_SPEC
 argument_list|(
@@ -1062,6 +1123,41 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_function
+name|GimpParamPathType
+DECL|function|gimp_param_spec_path_type (GParamSpec * pspec)
+name|gimp_param_spec_path_type
+parameter_list|(
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PARAM_SPEC_PATH
+argument_list|(
+name|pspec
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_PARAM_SPEC_PATH
+argument_list|(
+name|pspec
+argument_list|)
+operator|->
+name|type
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  * GIMP_TYPE_PARAM_UNIT  */
+end_comment
 
 begin_function_decl
 specifier|static

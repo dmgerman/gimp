@@ -130,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5bf40b0103
+DECL|enum|__anon2891f2180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -302,6 +302,8 @@ literal|"fractalexplorer-path"
 argument_list|,
 name|FRACTALEXPLORER_PATH_BLURB
 argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
+argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
 literal|"fractalexplorer"
@@ -319,6 +321,8 @@ argument_list|,
 literal|"gfig-path"
 argument_list|,
 name|GFIG_PATH_BLURB
+argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
 argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
@@ -338,6 +342,8 @@ literal|"gflare-path"
 argument_list|,
 name|GFLARE_PATH_BLURB
 argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
+argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
 literal|"gflare"
@@ -356,6 +362,8 @@ literal|"gimpressionist-path"
 argument_list|,
 name|GIMPRESSIONIST_PATH_BLURB
 argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
+argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
 literal|"gimpressionist"
@@ -373,6 +381,8 @@ argument_list|,
 literal|"script-fu-path"
 argument_list|,
 name|SCRIPT_FU_PATH_BLURB
+argument_list|,
+name|GIMP_PARAM_PATH_DIR_LIST
 argument_list|,
 name|gimp_config_build_data_path
 argument_list|(

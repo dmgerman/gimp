@@ -383,10 +383,10 @@ literal|"#\n"
 literal|"# By default everything in this file is commented out. The file then\n"
 literal|"# documents the default values and shows what changes are possible.\n"
 literal|"\n"
-literal|"# The variable gimp_dir is set to either the internal value\n"
-literal|"# @gimpdir@ or the environment variable GIMP_DIRECTORY.  If\n"
-literal|"# the path in GIMP_DIRECTORY is relative, it is considered\n"
-literal|"# relative to your home directory.\n"
+literal|"# The variable ${gimp_dir} is set to the value of the environment\n"
+literal|"# variable GIMP_DIRECTORY or, if that is not set, the compiled-in\n"
+literal|"# default value is used. If GIMP_DIRECTORY is not an absolute path,\n"
+literal|"# it is interpreted relative to your home directory.\n"
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -683,6 +683,25 @@ condition|)
 block|{
 switch|switch
 condition|(
+name|gimp_param_spec_path_type
+argument_list|(
+name|param_spec
+argument_list|)
+condition|)
+block|{
+case|case
+name|GIMP_PARAM_PATH_FILE
+case|:
+name|values
+operator|=
+literal|"This is a single filename."
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PARAM_PATH_FILE_LIST
+case|:
+switch|switch
+condition|(
 name|G_SEARCHPATH_SEPARATOR
 condition|)
 block|{
@@ -691,7 +710,7 @@ literal|':'
 case|:
 name|values
 operator|=
-literal|"This is a colon-separated list of directories to search."
+literal|"This is a colon-separated list of files."
 expr_stmt|;
 break|break;
 case|case
@@ -699,10 +718,58 @@ literal|';'
 case|:
 name|values
 operator|=
-literal|"This is a semicolon-separated list of directories to search."
+literal|"This is a semicolon-separated list of files."
 expr_stmt|;
 break|break;
 default|default:
+name|g_warning
+argument_list|(
+literal|"unhandled G_SEARCHPATH_SEPARATOR value"
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
+break|break;
+case|case
+name|GIMP_PARAM_PATH_DIR
+case|:
+name|values
+operator|=
+literal|"This is a single folder."
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PARAM_PATH_DIR_LIST
+case|:
+switch|switch
+condition|(
+name|G_SEARCHPATH_SEPARATOR
+condition|)
+block|{
+case|case
+literal|':'
+case|:
+name|values
+operator|=
+literal|"This is a colon-separated list of folders to search."
+expr_stmt|;
+break|break;
+case|case
+literal|';'
+case|:
+name|values
+operator|=
+literal|"This is a semicolon-separated list of folders to search."
+expr_stmt|;
+break|break;
+default|default:
+name|g_warning
+argument_list|(
+literal|"unhandled G_SEARCHPATH_SEPARATOR value"
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
 break|break;
 block|}
 block|}
