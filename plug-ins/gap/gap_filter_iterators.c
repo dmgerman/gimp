@@ -105,7 +105,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2918ef020108
+DECL|struct|__anon28ec7bab0108
 typedef|typedef
 struct|struct
 block|{
@@ -123,7 +123,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2918ef020208
+DECL|struct|__anon28ec7bab0208
 typedef|typedef
 struct|struct
 block|{
@@ -1292,7 +1292,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2918ef020308
+DECL|struct|__anon28ec7bab0308
 block|{
 DECL|member|color
 name|double
@@ -1311,7 +1311,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2918ef020408
+DECL|struct|__anon28ec7bab0408
 block|{
 DECL|member|coord
 name|double
@@ -1328,7 +1328,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2918ef020503
+DECL|enum|__anon28ec7bab0503
 typedef|typedef
 enum|enum
 block|{
@@ -1350,7 +1350,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2918ef020603
+DECL|enum|__anon28ec7bab0603
 typedef|typedef
 enum|enum
 block|{
@@ -1368,7 +1368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2918ef020708
+DECL|struct|__anon28ec7bab0708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1403,7 +1403,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2918ef020808
+DECL|struct|__anon28ec7bab0808
 block|{
 DECL|member|type
 name|t_LightType
@@ -1975,7 +1975,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"iter_ALT/mod/plug_in_flame_iter_ALT.inc
+file|"iter_ALT/mod/plug_in_flame_iter_ALT.inc"
 end_include
 
 begin_include
