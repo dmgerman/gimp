@@ -216,6 +216,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimptemplateview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptoolbox.h"
 end_include
 
@@ -3402,8 +3408,10 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-name|gimp_container_tree_view_new
+name|gimp_template_view_new
 argument_list|(
+name|GIMP_VIEW_TYPE_LIST
+argument_list|,
 name|context
 operator|->
 name|gimp
@@ -3414,11 +3422,13 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
-name|TRUE
-argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|factory
+operator|->
+name|menu_factory
 argument_list|)
 expr_stmt|;
 return|return
@@ -3440,7 +3450,7 @@ name|GIMP_STOCK_TEMPLATE
 argument_list|,
 name|dialogs_stock_text_tab_func
 argument_list|,
-name|dialogs_set_view_context_func
+name|dialogs_set_editor_context_func
 argument_list|)
 return|;
 block|}

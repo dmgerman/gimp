@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdocumentview.h"
+file|"widgets/gimptemplateview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"documents-commands.h"
+file|"templates-commands.h"
 end_include
 
 begin_comment
@@ -45,8 +45,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|documents_open_document_cmd_callback (GtkWidget * widget,gpointer data)
-name|documents_open_document_cmd_callback
+DECL|function|templates_new_template_cmd_callback (GtkWidget * widget,gpointer data)
+name|templates_new_template_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -56,13 +56,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpDocumentView
+name|GimpTemplateView
 modifier|*
 name|view
 decl_stmt|;
 name|view
 operator|=
-name|GIMP_DOCUMENT_VIEW
+name|GIMP_TEMPLATE_VIEW
 argument_list|(
 name|data
 argument_list|)
@@ -73,7 +73,7 @@ name|GTK_BUTTON
 argument_list|(
 name|view
 operator|->
-name|open_button
+name|new_button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -82,8 +82,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_raise_or_open_document_cmd_callback (GtkWidget * widget,gpointer data)
-name|documents_raise_or_open_document_cmd_callback
+DECL|function|templates_duplicate_template_cmd_callback (GtkWidget * widget,gpointer data)
+name|templates_duplicate_template_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -93,91 +93,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpDocumentView
+name|GimpTemplateView
 modifier|*
 name|view
 decl_stmt|;
 name|view
 operator|=
-name|GIMP_DOCUMENT_VIEW
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-name|gimp_button_extended_clicked
-argument_list|(
-name|GIMP_BUTTON
-argument_list|(
-name|view
-operator|->
-name|open_button
-argument_list|)
-argument_list|,
-name|GDK_SHIFT_MASK
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|documents_file_open_dialog_cmd_callback (GtkWidget * widget,gpointer data)
-name|documents_file_open_dialog_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpDocumentView
-modifier|*
-name|view
-decl_stmt|;
-name|view
-operator|=
-name|GIMP_DOCUMENT_VIEW
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-name|gimp_button_extended_clicked
-argument_list|(
-name|GIMP_BUTTON
-argument_list|(
-name|view
-operator|->
-name|open_button
-argument_list|)
-argument_list|,
-name|GDK_CONTROL_MASK
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|documents_remove_document_cmd_callback (GtkWidget * widget,gpointer data)
-name|documents_remove_document_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpDocumentView
-modifier|*
-name|view
-decl_stmt|;
-name|view
-operator|=
-name|GIMP_DOCUMENT_VIEW
+name|GIMP_TEMPLATE_VIEW
 argument_list|(
 name|data
 argument_list|)
@@ -188,7 +110,7 @@ name|GTK_BUTTON
 argument_list|(
 name|view
 operator|->
-name|remove_button
+name|duplicate_button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -197,8 +119,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_recreate_preview_cmd_callback (GtkWidget * widget,gpointer data)
-name|documents_recreate_preview_cmd_callback
+DECL|function|templates_create_image_cmd_callback (GtkWidget * widget,gpointer data)
+name|templates_create_image_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -208,13 +130,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpDocumentView
+name|GimpTemplateView
 modifier|*
 name|view
 decl_stmt|;
 name|view
 operator|=
-name|GIMP_DOCUMENT_VIEW
+name|GIMP_TEMPLATE_VIEW
 argument_list|(
 name|data
 argument_list|)
@@ -225,7 +147,7 @@ name|GTK_BUTTON
 argument_list|(
 name|view
 operator|->
-name|refresh_button
+name|create_button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -234,8 +156,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_reload_previews_cmd_callback (GtkWidget * widget,gpointer data)
-name|documents_reload_previews_cmd_callback
+DECL|function|templates_delete_template_cmd_callback (GtkWidget * widget,gpointer data)
+name|templates_delete_template_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -245,66 +167,25 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpDocumentView
+name|GimpTemplateView
 modifier|*
 name|view
 decl_stmt|;
 name|view
 operator|=
-name|GIMP_DOCUMENT_VIEW
+name|GIMP_TEMPLATE_VIEW
 argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_button_extended_clicked
+name|gtk_button_clicked
 argument_list|(
-name|GIMP_BUTTON
+name|GTK_BUTTON
 argument_list|(
 name|view
 operator|->
-name|refresh_button
+name|delete_button
 argument_list|)
-argument_list|,
-name|GDK_SHIFT_MASK
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|documents_delete_dangling_documents_cmd_callback (GtkWidget * widget,gpointer data)
-name|documents_delete_dangling_documents_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpDocumentView
-modifier|*
-name|view
-decl_stmt|;
-name|view
-operator|=
-name|GIMP_DOCUMENT_VIEW
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-name|gimp_button_extended_clicked
-argument_list|(
-name|GIMP_BUTTON
-argument_list|(
-name|view
-operator|->
-name|refresh_button
-argument_list|)
-argument_list|,
-name|GDK_CONTROL_MASK
 argument_list|)
 expr_stmt|;
 block|}

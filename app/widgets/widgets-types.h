@@ -439,6 +439,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpTemplateView
+typedef|typedef
+name|struct
+name|_GimpTemplateView
+name|GimpTemplateView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDataFactoryView
 typedef|typedef
 name|struct

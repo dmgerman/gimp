@@ -174,6 +174,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_list_uniquefy_name
+parameter_list|(
+name|GimpList
+modifier|*
+name|gimp_list
+parameter_list|,
+name|GimpObject
+modifier|*
+name|object
+parameter_list|,
+name|gboolean
+name|use_set_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

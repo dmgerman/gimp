@@ -40,7 +40,7 @@ file|"documents-commands.h"
 end_include
 
 begin_comment
-comment|/*  public functionss */
+comment|/*  public functions */
 end_comment
 
 begin_function
