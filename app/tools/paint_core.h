@@ -58,6 +58,11 @@ name|INIT_PAINT
 value|0
 end_define
 
+begin_comment
+DECL|macro|INIT_PAINT
+comment|/* Setup PaintFunc internals */
+end_comment
+
 begin_define
 DECL|macro|MOTION_PAINT
 define|#
@@ -65,6 +70,11 @@ directive|define
 name|MOTION_PAINT
 value|1
 end_define
+
+begin_comment
+DECL|macro|MOTION_PAINT
+comment|/* PaintFunc performs motion-related rendering */
+end_comment
 
 begin_define
 DECL|macro|PAUSE_PAINT
@@ -74,6 +84,11 @@ name|PAUSE_PAINT
 value|2
 end_define
 
+begin_comment
+DECL|macro|PAUSE_PAINT
+comment|/* Unused. Reserved */
+end_comment
+
 begin_define
 DECL|macro|RESUME_PAINT
 define|#
@@ -81,6 +96,11 @@ directive|define
 name|RESUME_PAINT
 value|3
 end_define
+
+begin_comment
+DECL|macro|RESUME_PAINT
+comment|/* Unused. Reserved */
+end_comment
 
 begin_define
 DECL|macro|FINISH_PAINT
@@ -90,17 +110,52 @@ name|FINISH_PAINT
 value|4
 end_define
 
+begin_comment
+DECL|macro|FINISH_PAINT
+comment|/* Cleanup and/or reset PaintFunc operation */
+end_comment
+
+begin_define
+DECL|macro|PRETRACE_PAINT
+define|#
+directive|define
+name|PRETRACE_PAINT
+value|5
+end_define
+
+begin_comment
+DECL|macro|PRETRACE_PAINT
+comment|/* PaintFunc performs window tracing activity prior to rendering */
+end_comment
+
+begin_define
+DECL|macro|POSTTRACE_PAINT
+define|#
+directive|define
+name|POSTTRACE_PAINT
+value|6
+end_define
+
+begin_comment
+DECL|macro|POSTTRACE_PAINT
+comment|/* PaintFunc performs window tracing activity following rendering */
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28fe4d560103
+DECL|enum|__anon293363250103
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
 init|=
 literal|0x0001
-comment|/* Set for tools that don't mind 					   * if the brush changes while 					   * painting. 					   */
+block|,
+comment|/* Set for tools that don't mind 					    * if the brush changes while 					    * painting. 					    */
+DECL|enumerator|TOOL_TRACES_ON_WINDOW
+name|TOOL_TRACES_ON_WINDOW
+comment|/* Set for tools that perform temporary                                             * rendering directly to the window. These                                             * require sequencing with gdisplay_flush()                                             * routines. See clone.c for example.                                             */
 DECL|typedef|ToolFlags
 block|}
 name|ToolFlags
