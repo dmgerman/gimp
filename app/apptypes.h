@@ -157,19 +157,6 @@ comment|/* convenience */
 end_comment
 
 begin_typedef
-DECL|typedef|LayerMask
-typedef|typedef
-name|GimpLayerMask
-name|LayerMask
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|LayerMask
-comment|/* convenience */
-end_comment
-
-begin_typedef
 DECL|typedef|GimpImage
 typedef|typedef
 name|struct
@@ -641,7 +628,7 @@ begin_typedef
 DECL|typedef|LayerUndo
 typedef|typedef
 name|struct
-name|_layer_undo
+name|_LayerUndo
 name|LayerUndo
 typedef|;
 end_typedef
@@ -650,7 +637,7 @@ begin_typedef
 DECL|typedef|LayerMaskUndo
 typedef|typedef
 name|struct
-name|_layer_mask_undo
+name|_LayerMaskUndo
 name|LayerMaskUndo
 typedef|;
 end_typedef
@@ -659,7 +646,7 @@ begin_typedef
 DECL|typedef|FStoLayerUndo
 typedef|typedef
 name|struct
-name|_fs_to_layer_undo
+name|_FStoLayerUndo
 name|FStoLayerUndo
 typedef|;
 end_typedef

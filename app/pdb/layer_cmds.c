@@ -1179,7 +1179,7 @@ decl_stmt|;
 name|gint32
 name|mask_type
 decl_stmt|;
-name|LayerMask
+name|GimpLayerMask
 modifier|*
 name|mask
 init|=

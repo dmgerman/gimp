@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channel_ops.h"
 end_include
 

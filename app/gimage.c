@@ -208,7 +208,7 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|GImage
+name|GimpImage
 modifier|*
 DECL|function|gimage_new (gint width,gint height,GimpImageBaseType base_type)
 name|gimage_new
@@ -369,7 +369,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Ack, GImages have their own ref counts! This is going to cause    trouble.. It should be pretty easy to convert to proper GtkObject    ref counting, though. */
+comment|/* Ack, GimpImages have their own ref counts! This is going to cause    trouble.. It should be pretty easy to convert to proper GtkObject    ref counting, though. */
 end_comment
 
 begin_comment
@@ -378,10 +378,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimage_delete (GImage * gimage)
+DECL|function|gimage_delete (GimpImage * gimage)
 name|gimage_delete
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -759,12 +759,12 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  shrink wrap and update all views  */
-name|channel_invalidate_previews
+name|gimp_image_invalidate_layer_previews
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|layer_invalidate_previews
+name|gimp_image_invalidate_channel_previews
 argument_list|(
 name|gimage
 argument_list|)
@@ -856,10 +856,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimage_set_layer_mask_apply (GImage * gimage,GimpLayer * layer)
+DECL|function|gimage_set_layer_mask_apply (GimpImage * gimage,GimpLayer * layer)
 name|gimage_set_layer_mask_apply
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -944,10 +944,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_set_layer_mask_edit (GImage * gimage,Layer * layer,gboolean edit)
+DECL|function|gimage_set_layer_mask_edit (GimpImage * gimage,Layer * layer,gboolean edit)
 name|gimage_set_layer_mask_edit
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -983,10 +983,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_set_layer_mask_show (GImage * gimage,GimpLayer * layer)
+DECL|function|gimage_set_layer_mask_show (GimpImage * gimage,GimpLayer * layer)
 name|gimage_set_layer_mask_show
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

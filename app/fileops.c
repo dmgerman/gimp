@@ -3988,12 +3988,12 @@ condition|(
 name|gimage
 condition|)
 block|{
-name|layer_invalidate_previews
+name|gimp_image_invalidate_layer_previews
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|channel_invalidate_previews
+name|gimp_image_invalidate_channel_previews
 argument_list|(
 name|gimage
 argument_list|)

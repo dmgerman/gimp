@@ -3016,7 +3016,7 @@ name|drawable
 init|=
 name|NULL
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 init|=
@@ -3028,13 +3028,13 @@ name|channel
 init|=
 name|NULL
 decl_stmt|;
-name|LayerMask
+name|GimpLayerMask
 modifier|*
 name|layer_mask
 init|=
 name|NULL
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|component
 init|=
@@ -3049,7 +3049,7 @@ decl_stmt|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|gtk_object_get_data
@@ -3081,7 +3081,7 @@ expr_stmt|;
 name|layer_mask
 operator|=
 operator|(
-name|LayerMask
+name|GimpLayerMask
 operator|*
 operator|)
 name|gtk_object_get_data
@@ -3097,7 +3097,7 @@ expr_stmt|;
 name|component
 operator|=
 operator|(
-name|GImage
+name|GimpImage
 operator|*
 operator|)
 name|gtk_object_get_data

@@ -726,7 +726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b4ab220103
+DECL|enum|__anon2bf8e0e30103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -5119,12 +5119,12 @@ name|y2
 argument_list|)
 expr_stmt|;
 comment|/*  shrink wrap and update all views  */
-name|channel_invalidate_previews
+name|gimp_image_invalidate_layer_previews
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|layer_invalidate_previews
+name|gimp_image_invalidate_channel_previews
 argument_list|(
 name|gimage
 argument_list|)

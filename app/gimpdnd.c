@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayermask.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -154,7 +160,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c129a9c0103
+DECL|enum|__anon2b3007cc0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -4095,9 +4101,9 @@ condition|)
 block|{
 name|tmpbuf
 operator|=
-name|layer_mask_preview
+name|gimp_layer_mask_preview
 argument_list|(
-name|layer_mask_get_layer
+name|gimp_layer_mask_get_layer
 argument_list|(
 name|GIMP_LAYER_MASK
 argument_list|(

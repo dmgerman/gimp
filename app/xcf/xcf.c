@@ -136,6 +136,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayermask.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -218,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7ef2c20103
+DECL|enum|__anon28e275e00103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -353,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7ef2c20203
+DECL|enum|__anon28e275e00203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -636,7 +642,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GImage
+name|GimpImage
 modifier|*
 name|xcf_load_image
 parameter_list|(
@@ -725,7 +731,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Layer
+name|GimpLayer
 modifier|*
 name|xcf_load_layer
 parameter_list|(
@@ -759,7 +765,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|LayerMask
+name|GimpLayerMask
 modifier|*
 name|xcf_load_layer_mask
 parameter_list|(
@@ -10935,7 +10941,7 @@ end_function
 
 begin_function
 specifier|static
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|xcf_load_layer (XcfInfo * info,GImage * gimage)
 name|xcf_load_layer
@@ -10949,11 +10955,11 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|LayerMask
+name|GimpLayerMask
 modifier|*
 name|layer_mask
 decl_stmt|;
@@ -11265,7 +11271,7 @@ name|layer
 operator|->
 name|show_mask
 expr_stmt|;
-name|layer_add_mask
+name|gimp_layer_add_mask
 argument_list|(
 name|layer
 argument_list|,
@@ -11587,7 +11593,7 @@ end_function
 
 begin_function
 specifier|static
-name|LayerMask
+name|GimpLayerMask
 modifier|*
 DECL|function|xcf_load_layer_mask (XcfInfo * info,GImage * gimage)
 name|xcf_load_layer_mask
@@ -11601,7 +11607,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|LayerMask
+name|GimpLayerMask
 modifier|*
 name|layer_mask
 decl_stmt|;
@@ -11707,7 +11713,7 @@ expr_stmt|;
 comment|/* create a new layer mask */
 name|layer_mask
 operator|=
-name|layer_mask_new
+name|gimp_layer_mask_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -11828,9 +11834,12 @@ name|layer_mask
 return|;
 name|error
 label|:
-name|layer_mask_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|layer_mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

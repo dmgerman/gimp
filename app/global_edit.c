@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayermask.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"global_edit.h"
 end_include
 
@@ -132,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aefc8650103
+DECL|enum|__anon2bb0a08b0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayermask.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -361,7 +367,7 @@ name|gdouble
 name|ratio
 decl_stmt|;
 DECL|member|active_layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
@@ -371,7 +377,7 @@ modifier|*
 name|active_channel
 decl_stmt|;
 DECL|member|floating_sel
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;
@@ -450,7 +456,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 DECL|member|layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -6773,7 +6779,7 @@ argument_list|)
 argument_list|,
 literal|"gimp_layer_mask"
 argument_list|,
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -9229,18 +9235,18 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|LayerMask
+name|GimpLayerMask
 modifier|*
 name|layer_mask
 decl_stmt|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|gtk_object_get_data
@@ -9256,7 +9262,7 @@ expr_stmt|;
 name|layer_mask
 operator|=
 operator|(
-name|LayerMask
+name|GimpLayerMask
 operator|*
 operator|)
 name|gtk_object_get_data
@@ -9297,7 +9303,7 @@ if|if
 condition|(
 name|layer_mask
 operator|&&
-name|layer_mask_get_layer
+name|gimp_layer_mask_get_layer
 argument_list|(
 name|layer_mask
 argument_list|)
@@ -9535,7 +9541,7 @@ operator|->
 name|layer_mask
 operator|=
 operator|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -10198,7 +10204,7 @@ argument_list|)
 argument_list|,
 literal|"gimp_layer_mask"
 argument_list|,
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -10977,7 +10983,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e0014e0108
+DECL|struct|__anon2c6b74a00108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -13595,7 +13601,7 @@ name|LAYER_PREVIEW
 case|:
 name|preview_buf
 operator|=
-name|layer_preview
+name|gimp_layer_preview
 argument_list|(
 name|layer_widget
 operator|->
@@ -13622,7 +13628,7 @@ name|MASK_PREVIEW
 case|:
 name|preview_buf
 operator|=
-name|layer_mask_preview
+name|gimp_layer_mask_preview
 argument_list|(
 name|layer_widget
 operator|->
@@ -17394,11 +17400,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|LayerMask
+name|GimpLayerMask
 modifier|*
 name|mask
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;

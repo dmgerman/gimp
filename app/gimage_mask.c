@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -55,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayermask.h"
 end_include
 
 begin_include
@@ -1311,7 +1323,7 @@ name|gimp_image_remove_layer_mask
 argument_list|(
 name|gimage
 argument_list|,
-name|layer_mask_get_layer
+name|gimp_layer_mask_get_layer
 argument_list|(
 name|GIMP_LAYER_MASK
 argument_list|(

@@ -4804,7 +4804,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|LayerMask
+name|GimpLayerMask
 modifier|*
 name|mask
 decl_stmt|;
