@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2acef9a70103
+DECL|enum|__anon2921dbfe0103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2acef9a70203
+DECL|enum|__anon2921dbfe0203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2acef9a70303
+DECL|enum|__anon2921dbfe0303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2acef9a70408
+DECL|struct|__anon2921dbfe0408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2acef9a70508
+DECL|struct|__anon2921dbfe0508
 struct|struct
 block|{
 DECL|member|r
@@ -4528,6 +4528,36 @@ argument_list|,
 name|g_editor
 operator|->
 name|list
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_focus_vadjustment
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|g_editor
+operator|->
+name|list
+argument_list|)
+argument_list|,
+name|gtk_scrolled_window_get_vadjustment
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|listbox
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|GTK_WIDGET_UNSET_FLAGS
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|listbox
+argument_list|)
+operator|->
+name|vscrollbar
+argument_list|,
+name|GTK_CAN_FOCUS
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
