@@ -242,7 +242,7 @@ literal|"plug_in_vinvert"
 argument_list|,
 name|_
 argument_list|(
-literal|"Invert the 'value' componant of an indexed/RGB image in HSV colorspace"
+literal|"Invert the 'value' component of an indexed/RGB image in HSV colorspace"
 argument_list|)
 argument_list|,
 name|_
