@@ -2146,7 +2146,7 @@ name|GIMP_UNDO_GROUP_DRAWABLE_VISIBILITY
 block|,
 name|N_
 argument_list|(
-literal|"Drawable Visilibity"
+literal|"Drawable Visibility"
 argument_list|)
 block|,
 literal|"group-drawable-visibility"

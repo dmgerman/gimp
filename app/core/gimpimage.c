@@ -246,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon295708e60103
+DECL|enum|__anon2b3ca0390103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3846,7 +3846,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Change Image Reolution"
+literal|"Change Image Resolution"
 argument_list|)
 argument_list|)
 expr_stmt|;
