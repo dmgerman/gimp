@@ -535,7 +535,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon290ef9ae0108
+DECL|struct|__anon27cb5f570108
 block|{
 DECL|member|randomize
 name|gint
@@ -3428,7 +3428,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Speed:"
+literal|"_Speed:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3525,11 +3525,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Randomize"
+literal|"_Randomize"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3743,11 +3743,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Variation:"
+literal|"_Variation:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3765,6 +3765,16 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|optionmenu
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4495,6 +4505,14 @@ name|main_vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|notebook
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|frame
 decl_stmt|;
 name|GtkWidget
@@ -4893,11 +4911,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Edit Flame"
+literal|"_Edit Flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4943,11 +4961,11 @@ name|load_button
 operator|=
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Load Flame"
+literal|"_Load Flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4993,11 +5011,11 @@ name|save_button
 operator|=
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Flame"
+literal|"_Save Flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5040,15 +5058,10 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|frame
+name|notebook
 operator|=
-name|gtk_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Rendering"
-argument_list|)
-argument_list|)
+name|gtk_notebook_new
+argument_list|()
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -5057,7 +5070,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-name|frame
+name|notebook
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5068,7 +5081,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|frame
+name|notebook
 argument_list|)
 expr_stmt|;
 name|box
@@ -5090,14 +5103,26 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|label
+operator|=
+name|gtk_label_new_with_mnemonic
 argument_list|(
-name|GTK_CONTAINER
+name|_
 argument_list|(
-name|frame
+literal|"_Rendering"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_notebook_append_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
 argument_list|)
 argument_list|,
 name|box
+argument_list|,
+name|label
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5184,7 +5209,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Brightness:"
+literal|"_Brightness:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5272,7 +5297,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Contrast:"
+literal|"Co_ntrast:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5360,7 +5385,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Gamma:"
+literal|"_Gamma:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5448,7 +5473,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Sample Density:"
+literal|"Sample _Density:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5519,7 +5544,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Spatial Oversample:"
+literal|"Spa_tial Oversample:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5590,7 +5615,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Spatial Filter Radius:"
+literal|"Spatial _Filter Radius:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5736,11 +5761,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Colormap:"
+literal|"Color_map:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5784,6 +5809,16 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|option_menu
 argument_list|)
 expr_stmt|;
 name|menu
@@ -6070,37 +6105,6 @@ name|set_cmap_preview
 argument_list|()
 expr_stmt|;
 block|}
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Camera"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|main_vbox
-argument_list|)
-argument_list|,
-name|frame
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -6142,14 +6146,26 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|label
+operator|=
+name|gtk_label_new_with_mnemonic
 argument_list|(
-name|GTK_CONTAINER
+name|_
 argument_list|(
-name|frame
+literal|"C_amera"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_notebook_append_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
 argument_list|)
 argument_list|,
 name|table
+argument_list|,
+name|label
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6172,7 +6188,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Zoom:"
+literal|"_Zoom:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6261,7 +6277,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"X:"
+literal|"_X:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6356,7 +6372,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

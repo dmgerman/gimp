@@ -85,7 +85,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e8fd930103
+DECL|enum|__anon2bbc506d0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e8fd930203
+DECL|enum|__anon2bbc506d0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -15191,7 +15191,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal:"
+literal|"_Horizontal:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -15279,7 +15279,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical:"
+literal|"_Vertical:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -15464,7 +15464,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Bevel Width:"
+literal|"_Bevel Width:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -15552,7 +15552,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Highlight:"
+literal|"H_ighlight:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -15691,7 +15691,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Square"
+literal|"_Square"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -15704,7 +15704,7 @@ name|rbutton1
 argument_list|,
 name|_
 argument_list|(
-literal|"Curved"
+literal|"C_urved"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -15792,11 +15792,11 @@ argument_list|)
 expr_stmt|;
 name|cbutton
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Disable Tooltips"
+literal|"_Disable Tooltips"
 argument_list|)
 argument_list|)
 expr_stmt|;

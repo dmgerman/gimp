@@ -22250,7 +22250,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5596a90108
+DECL|struct|__anon2b576ed60108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22353,7 +22353,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5596a90208
+DECL|struct|__anon2b576ed60208
 block|{
 DECL|member|height
 DECL|member|width
@@ -22432,43 +22432,10 @@ name|params
 typedef|;
 end_typedef
 
-begin_decl_stmt
-DECL|variable|drawable_is_grayscale
-specifier|static
-name|gint
-name|drawable_is_grayscale
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|thePreview
-specifier|static
-name|struct
-name|mwPreview
-modifier|*
-name|thePreview
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|drawable
-specifier|static
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  preview stuff -- to be removed as soon as we have a real libgimp preview  */
-end_comment
-
-begin_struct
-DECL|struct|mwPreview
+begin_typedef
+typedef|typedef
 struct|struct
-name|mwPreview
+DECL|struct|__anon2b576ed60308
 block|{
 DECL|member|width
 name|gint
@@ -22491,9 +22458,43 @@ name|guchar
 modifier|*
 name|bits
 decl_stmt|;
+DECL|typedef|mwPreview
 block|}
-struct|;
-end_struct
+name|mwPreview
+typedef|;
+end_typedef
+
+begin_decl_stmt
+DECL|variable|drawable_is_grayscale
+specifier|static
+name|gint
+name|drawable_is_grayscale
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|thePreview
+specifier|static
+name|mwPreview
+modifier|*
+name|thePreview
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|drawable
+specifier|static
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  preview stuff -- to be removed as soon as we have a real libgimp preview  */
+end_comment
 
 begin_define
 DECL|macro|PREVIEW_SIZE
@@ -22523,7 +22524,6 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -22533,7 +22533,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 name|mw_preview_build_virgin
@@ -26681,7 +26680,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"X Scale:"
+literal|"_X Scale:"
 argument_list|)
 argument_list|,
 literal|140
@@ -26748,7 +26747,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Y Scale:"
+literal|"_Y Scale:"
 argument_list|)
 argument_list|,
 literal|140
@@ -26815,7 +26814,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Complexity:"
+literal|"Co_mplexity:"
 argument_list|)
 argument_list|,
 literal|140
@@ -26979,11 +26978,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Random Seed:"
+literal|"_Random Seed:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -27066,6 +27065,16 @@ argument_list|(
 name|spinbutton
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|spinbutton
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT
@@ -27088,11 +27097,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Force Tiling?"
+literal|"_Force Tiling?"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -27176,7 +27185,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Ideal"
+literal|"_Ideal"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -27188,7 +27197,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Distorted"
+literal|"_Distorted"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -27234,24 +27243,12 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Settings"
+literal|"_Settings"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -27443,7 +27440,7 @@ name|colors
 argument_list|,
 name|_
 argument_list|(
-literal|"Black& White"
+literal|"Bl_ack& White"
 argument_list|)
 argument_list|,
 operator|(
@@ -27455,7 +27452,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Foreground& Background"
+literal|"_Foreground& Background"
 argument_list|)
 argument_list|,
 operator|(
@@ -27467,7 +27464,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Choose here:"
+literal|"C_hoose here:"
 argument_list|)
 argument_list|,
 operator|(
@@ -27782,7 +27779,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"First Color:"
+literal|"F_irst Color:"
 argument_list|)
 argument_list|,
 literal|0
@@ -27869,7 +27866,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Second Color:"
+literal|"S_econd Color:"
 argument_list|)
 argument_list|,
 literal|0
@@ -27948,24 +27945,12 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Colors"
+literal|"Co_lors"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -28111,7 +28096,7 @@ name|colorization
 argument_list|,
 name|_
 argument_list|(
-literal|"Linear"
+literal|"L_inear"
 argument_list|)
 argument_list|,
 operator|(
@@ -28123,7 +28108,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Bilinear"
+literal|"Bili_near"
 argument_list|)
 argument_list|,
 operator|(
@@ -28135,7 +28120,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Sinusoidal"
+literal|"Sin_usoidal"
 argument_list|)
 argument_list|,
 operator|(
@@ -28215,7 +28200,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Exponent:"
+literal|"_Exponent:"
 argument_list|)
 argument_list|,
 literal|0
@@ -28275,24 +28260,12 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Blend"
+literal|"_Blend"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -28416,13 +28389,6 @@ operator|->
 name|bpp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|buf
-operator|!=
-name|NULL
-condition|)
-block|{
 name|p
 operator|.
 name|height
@@ -28508,14 +28474,6 @@ name|p
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"Uh Oh....  Little sinus preview-only problem...\n"
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|y
@@ -28566,17 +28524,6 @@ name|theWidget
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"Not enough mem for sinus Preview...\n"
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 end_function
 
 begin_function
@@ -28614,7 +28561,6 @@ end_function
 
 begin_function
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 DECL|function|mw_preview_build_virgin (GimpDrawable * drw)
@@ -28625,7 +28571,6 @@ modifier|*
 name|drw
 parameter_list|)
 block|{
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -28634,7 +28579,6 @@ name|mwp
 operator|=
 name|g_new
 argument_list|(
-expr|struct
 name|mwPreview
 argument_list|,
 literal|1
@@ -28745,14 +28689,13 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|mw_preview_new (GtkWidget * parent,struct mwPreview * mwp)
+DECL|function|mw_preview_new (GtkWidget * parent,mwPreview * mwp)
 name|mw_preview_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -28931,11 +28874,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Do Preview"
+literal|"Do _Preview"
 argument_list|)
 argument_list|)
 expr_stmt|;

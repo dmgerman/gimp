@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2adb70108
+DECL|struct|__anon275f89440108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2adb70208
+DECL|struct|__anon275f89440208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -1693,7 +1693,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Width:"
+literal|"_Width:"
 argument_list|)
 argument_list|,
 name|width
@@ -1710,7 +1710,7 @@ name|width
 argument_list|,
 name|_
 argument_list|(
-literal|"Height:"
+literal|"_Height:"
 argument_list|)
 argument_list|,
 name|height
@@ -1783,11 +1783,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Create New Image"
+literal|"C_reate New Image"
 argument_list|)
 argument_list|)
 expr_stmt|;
