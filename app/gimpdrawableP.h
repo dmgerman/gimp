@@ -109,7 +109,7 @@ name|gimage
 decl_stmt|;
 comment|/* gimage owner */
 DECL|member|type
-name|int
+name|GimpImageType
 name|type
 decl_stmt|;
 comment|/* type of drawable */
@@ -209,7 +209,7 @@ name|gint
 parameter_list|,
 name|gint
 parameter_list|,
-name|gint
+name|GimpImageType
 parameter_list|,
 name|gchar
 modifier|*

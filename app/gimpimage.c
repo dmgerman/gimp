@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29b43d940103
+DECL|enum|__anon27988c5c0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -1160,7 +1160,7 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_image_new (int width,int height,int base_type)
+DECL|function|gimp_image_new (int width,int height,GimpImageBaseType base_type)
 name|gimp_image_new
 parameter_list|(
 name|int
@@ -1169,7 +1169,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|int
+name|GimpImageBaseType
 name|base_type
 parameter_list|)
 block|{
@@ -2556,7 +2556,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,int undo,int opacity,int mode,TileManager * src1_tiles,int x,int y)
+DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,int undo,int opacity,LayerModeEffects mode,TileManager * src1_tiles,int x,int y)
 name|gimp_image_apply_image
 parameter_list|(
 name|GimpImage
@@ -2577,7 +2577,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
-name|int
+name|LayerModeEffects
 name|mode
 parameter_list|,
 comment|/*  alternative to using drawable tiles as src1: */
@@ -4090,14 +4090,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_color (GimpImage * gimage,int d_type,unsigned char * rgb,unsigned char * src)
+DECL|function|gimp_image_get_color (GimpImage * gimage,GimpImageType d_type,unsigned char * rgb,unsigned char * src)
 name|gimp_image_get_color
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|GimpImageType
 name|d_type
 parameter_list|,
 name|unsigned
@@ -4178,7 +4178,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_transform_color (GimpImage * gimage,GimpDrawable * drawable,unsigned char * src,unsigned char * dest,int type)
+DECL|function|gimp_image_transform_color (GimpImage * gimage,GimpDrawable * drawable,unsigned char * src,unsigned char * dest,GimpImageBaseType type)
 name|gimp_image_transform_color
 parameter_list|(
 name|GimpImage
@@ -4199,7 +4199,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
-name|int
+name|GimpImageBaseType
 name|type
 parameter_list|)
 block|{
@@ -4215,7 +4215,7 @@ parameter_list|,
 name|b
 parameter_list|)
 value|(r * 0.30 + g * 0.59 + b * 0.11 + 0.001)
-name|int
+name|GimpImageType
 name|d_type
 decl_stmt|;
 name|d_type
@@ -5539,7 +5539,7 @@ name|channel
 operator|->
 name|opacity
 argument_list|,
-name|NORMAL
+name|NORMAL_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -5579,7 +5579,7 @@ name|channel
 operator|->
 name|opacity
 argument_list|,
-name|NORMAL
+name|NORMAL_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -10866,7 +10866,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|int
+name|GimpImageType
 name|type
 decl_stmt|;
 name|int
@@ -11624,7 +11624,7 @@ name|layer
 operator|->
 name|mode
 operator|=
-name|NORMAL
+name|NORMAL_MODE
 expr_stmt|;
 name|bottom
 operator|=
@@ -13932,7 +13932,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|GimpImageBaseType
 DECL|function|gimp_image_base_type (GimpImage * gimage)
 name|gimp_image_base_type
 parameter_list|(
@@ -13950,7 +13950,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|GimpImageType
 DECL|function|gimp_image_base_type_with_alpha (GimpImage * gimage)
 name|gimp_image_base_type_with_alpha
 parameter_list|(
@@ -14281,7 +14281,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|GimpImageType
 DECL|function|gimp_image_projection_type (GimpImage * gimage)
 name|gimp_image_projection_type
 parameter_list|(
@@ -14383,7 +14383,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|GimpImageType
 DECL|function|gimp_image_composite_type (GimpImage * gimage)
 name|gimp_image_composite_type
 parameter_list|(

@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -39,7 +45,7 @@ comment|/* adam's extra palette stuff */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b274fdc0103
+DECL|enum|__anon2922cf3c0103
 typedef|typedef
 enum|enum
 block|{
@@ -112,13 +118,13 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|ConvertPaletteType
 parameter_list|)
 function_decl|;
 end_function_decl

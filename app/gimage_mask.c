@@ -1477,7 +1477,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL
+name|NORMAL_MODE
 argument_list|)
 expr_stmt|;
 comment|/*  Set the offsets  */

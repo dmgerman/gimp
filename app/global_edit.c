@@ -112,7 +112,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon27d7eb850103
+DECL|enum|__anon2bba0f850103
 typedef|typedef
 enum|enum
 block|{
@@ -1209,7 +1209,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL
+name|NORMAL_MODE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1478,7 +1478,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL
+name|NORMAL_MODE
 argument_list|)
 expr_stmt|;
 comment|/*  add the new layer to the image  */
@@ -1531,7 +1531,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL
+name|NORMAL_MODE
 argument_list|)
 expr_stmt|;
 comment|/*  add the new floating selection  */

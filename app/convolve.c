@@ -1690,7 +1690,7 @@ name|matrix_size
 argument_list|,
 name|matrix_divisor
 argument_list|,
-name|NORMAL
+name|NORMAL_CONVOL
 argument_list|)
 expr_stmt|;
 if|if

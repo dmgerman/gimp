@@ -260,7 +260,10 @@ parameter_list|)
 block|{
 name|paint_options_reset
 argument_list|(
+operator|&
 name|pencil_options
+operator|->
+name|paint_options
 argument_list|)
 expr_stmt|;
 block|}
@@ -400,6 +403,15 @@ decl_stmt|;
 name|gint
 name|opacity
 decl_stmt|;
+name|PaintApplicationMode
+name|paint_appl_mode
+init|=
+name|increment
+condition|?
+name|INCREMENTAL
+else|:
+name|CONSTANT
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -474,7 +486,7 @@ operator|->
 name|brush
 argument_list|)
 expr_stmt|;
-name|increment
+name|paint_appl_mode
 operator|=
 name|INCREMENTAL
 expr_stmt|;
@@ -561,7 +573,7 @@ argument_list|)
 argument_list|,
 name|HARD
 argument_list|,
-name|increment
+name|paint_appl_mode
 argument_list|)
 expr_stmt|;
 block|}

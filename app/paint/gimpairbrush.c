@@ -344,7 +344,7 @@ modifier|*
 parameter_list|,
 name|double
 parameter_list|,
-name|gboolean
+name|PaintApplicationMode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1139,6 +1139,10 @@ argument_list|,
 name|airbrush_options
 operator|->
 name|incremental
+condition|?
+name|INCREMENTAL
+else|:
+name|CONSTANT
 argument_list|)
 expr_stmt|;
 if|if
@@ -1274,6 +1278,10 @@ argument_list|,
 name|airbrush_options
 operator|->
 name|incremental
+condition|?
+name|INCREMENTAL
+else|:
+name|CONSTANT
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -1301,7 +1309,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|airbrush_motion (PaintCore * paint_core,GimpDrawable * drawable,double pressure,gboolean mode)
+DECL|function|airbrush_motion (PaintCore * paint_core,GimpDrawable * drawable,double pressure,PaintApplicationMode mode)
 name|airbrush_motion
 parameter_list|(
 name|PaintCore
@@ -1315,7 +1323,7 @@ parameter_list|,
 name|double
 name|pressure
 parameter_list|,
-name|gboolean
+name|PaintApplicationMode
 name|mode
 parameter_list|)
 block|{

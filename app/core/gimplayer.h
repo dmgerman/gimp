@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -45,22 +51,6 @@ include|#
 directive|include
 file|"tile_manager.h"
 end_include
-
-begin_typedef
-DECL|enum|__anon2ad5f71c0103
-typedef|typedef
-enum|enum
-block|{
-DECL|enumerator|APPLY
-name|APPLY
-block|,
-DECL|enumerator|DISCARD
-name|DISCARD
-DECL|typedef|MaskApplyMode
-block|}
-name|MaskApplyMode
-typedef|;
-end_typedef
 
 begin_include
 include|#
@@ -314,14 +304,14 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|GimpImageType
 parameter_list|,
 name|char
 modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|LayerModeEffects
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -379,7 +369,7 @@ modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|LayerModeEffects
 parameter_list|)
 function_decl|;
 end_function_decl

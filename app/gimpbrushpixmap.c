@@ -1008,10 +1008,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_BRUSH
-argument_list|(
 name|brush
-argument_list|)
 return|;
 block|}
 end_function

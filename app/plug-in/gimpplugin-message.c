@@ -5498,11 +5498,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_set_menu_sensitivity (int base_type)
+DECL|function|plug_in_set_menu_sensitivity (GimpImageType type)
 name|plug_in_set_menu_sensitivity
 parameter_list|(
-name|int
-name|base_type
+name|GimpImageType
+name|type
 parameter_list|)
 block|{
 name|PlugInProcDef
@@ -5552,7 +5552,7 @@ condition|)
 block|{
 switch|switch
 condition|(
-name|base_type
+name|type
 condition|)
 block|{
 case|case

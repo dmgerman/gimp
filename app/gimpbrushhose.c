@@ -369,7 +369,7 @@ argument_list|)
 expr_stmt|;
 name|brush
 operator|=
-name|GIMP_BRUSH
+name|GIMP_BRUSH_PIXMAP
 argument_list|(
 name|hose
 argument_list|)

@@ -118,7 +118,7 @@ name|unit
 decl_stmt|;
 comment|/*  image unit                   */
 DECL|member|base_type
-name|int
+name|GimpImageBaseType
 name|base_type
 decl_stmt|;
 comment|/*  base gimp_image type         */
@@ -172,7 +172,7 @@ name|construct_flag
 decl_stmt|;
 comment|/*  flag for construction        */
 DECL|member|proj_type
-name|int
+name|GimpImageType
 name|proj_type
 decl_stmt|;
 comment|/*  type of the projection image */

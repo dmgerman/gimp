@@ -15,6 +15,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -114,44 +120,6 @@ parameter_list|)
 value|GTK_CHECK_TYPE (obj, GIMP_TYPE_IMAGE)
 end_define
 
-begin_comment
-comment|/* the image types */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon27b5239c0103
-block|{
-DECL|enumerator|RGB_GIMAGE
-name|RGB_GIMAGE
-block|,
-comment|/*< nick=RGB_IMAGE>*/
-DECL|enumerator|RGBA_GIMAGE
-name|RGBA_GIMAGE
-block|,
-comment|/*< nick=RGBA_IMAGE>*/
-DECL|enumerator|GRAY_GIMAGE
-name|GRAY_GIMAGE
-block|,
-comment|/*< nick=GRAY_IMAGE>*/
-DECL|enumerator|GRAYA_GIMAGE
-name|GRAYA_GIMAGE
-block|,
-comment|/*< nick=GRAYA_IMAGE>*/
-DECL|enumerator|INDEXED_GIMAGE
-name|INDEXED_GIMAGE
-block|,
-comment|/*< nick=INDEXED_IMAGE>*/
-DECL|enumerator|INDEXEDA_GIMAGE
-name|INDEXEDA_GIMAGE
-comment|/*< nick=INDEXEDA_IMAGE>*/
-DECL|typedef|GimpImageType
-block|}
-name|GimpImageType
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|TYPE_HAS_ALPHA (t)
 define|#
@@ -227,25 +195,6 @@ name|ALPHA_I_PIX
 value|1
 end_define
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon27b5239c0203
-block|{
-DECL|enumerator|RGB
-name|RGB
-block|,
-DECL|enumerator|GRAY
-name|GRAY
-block|,
-DECL|enumerator|INDEXED
-name|INDEXED
-DECL|typedef|GimpImageBaseType
-block|}
-name|GimpImageBaseType
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|COLORMAP_SIZE
 define|#
@@ -255,7 +204,7 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon27b5239c0303
+DECL|enum|__anon2b2de5c10103
 typedef|typedef
 enum|enum
 block|{
@@ -274,7 +223,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27b5239c0403
+DECL|enum|__anon2b2de5c10203
 typedef|typedef
 enum|enum
 block|{
@@ -295,7 +244,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b5239c0503
+DECL|enum|__anon2b2de5c10303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -323,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b5239c0603
+DECL|enum|__anon2b2de5c10403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -426,7 +375,7 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|GimpImageBaseType
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -617,7 +566,7 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|LayerModeEffects
 parameter_list|,
 name|TileManager
 modifier|*
@@ -715,7 +664,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpImageType
 parameter_list|,
 name|unsigned
 name|char
@@ -746,7 +695,7 @@ name|unsigned
 name|char
 modifier|*
 parameter_list|,
-name|int
+name|GimpImageBaseType
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1550,7 +1499,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|GimpImageBaseType
 name|gimp_image_base_type
 parameter_list|(
 name|GimpImage
@@ -1560,7 +1509,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|GimpImageType
 name|gimp_image_base_type_with_alpha
 parameter_list|(
 name|GimpImage
@@ -1669,7 +1618,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|GimpImageType
 name|gimp_image_projection_type
 parameter_list|(
 name|GimpImage
@@ -1724,7 +1673,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|GimpImageType
 name|gimp_image_composite_type
 parameter_list|(
 name|GimpImage

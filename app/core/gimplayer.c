@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a9f6adb0103
+DECL|enum|__anon280407a50103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -603,7 +603,7 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|GimpImageBaseType
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -713,38 +713,28 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_color (gimage,layerPR,bufPR,drawable,type)
+DECL|function|transform_color (GImage * gimage,PixelRegion * layerPR,PixelRegion * bufPR,GimpDrawable * drawable,GimpImageBaseType type)
 name|transform_color
 parameter_list|(
-name|gimage
-parameter_list|,
-name|layerPR
-parameter_list|,
-name|bufPR
-parameter_list|,
-name|drawable
-parameter_list|,
-name|type
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|layerPR
-decl_stmt|;
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|bufPR
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
-name|int
+parameter_list|,
+name|GimpImageBaseType
 name|type
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|i
@@ -917,45 +907,32 @@ end_comment
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_new (gimage,width,height,type,name,opacity,mode)
+DECL|function|layer_new (GimpImage * gimage,int width,int height,GimpImageType type,char * name,int opacity,LayerModeEffects mode)
 name|layer_new
 parameter_list|(
-name|gimage
-parameter_list|,
-name|width
-parameter_list|,
-name|height
-parameter_list|,
-name|type
-parameter_list|,
-name|name
-parameter_list|,
-name|opacity
-parameter_list|,
-name|mode
-parameter_list|)
 name|GimpImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|int
 name|width
-decl_stmt|,
-name|height
-decl_stmt|;
+parameter_list|,
 name|int
+name|height
+parameter_list|,
+name|GimpImageType
 name|type
-decl_stmt|;
+parameter_list|,
 name|char
 modifier|*
 name|name
-decl_stmt|;
+parameter_list|,
 name|int
 name|opacity
-decl_stmt|;
-name|int
+parameter_list|,
+name|LayerModeEffects
 name|mode
-decl_stmt|;
+parameter_list|)
 block|{
 name|Layer
 modifier|*
@@ -1196,7 +1173,7 @@ name|Layer
 modifier|*
 name|new_layer
 decl_stmt|;
-name|int
+name|GimpImageType
 name|new_type
 decl_stmt|;
 name|char
@@ -1763,43 +1740,31 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_from_tiles (gimage_ptr,drawable,tiles,name,opacity,mode)
+DECL|function|layer_from_tiles (void * gimage_ptr,GimpDrawable * drawable,TileManager * tiles,char * name,int opacity,LayerModeEffects mode)
 name|layer_from_tiles
 parameter_list|(
-name|gimage_ptr
-parameter_list|,
-name|drawable
-parameter_list|,
-name|tiles
-parameter_list|,
-name|name
-parameter_list|,
-name|opacity
-parameter_list|,
-name|mode
-parameter_list|)
 name|void
 modifier|*
 name|gimage_ptr
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|TileManager
 modifier|*
 name|tiles
-decl_stmt|;
+parameter_list|,
 name|char
 modifier|*
 name|name
-decl_stmt|;
+parameter_list|,
 name|int
 name|opacity
-decl_stmt|;
-name|int
+parameter_list|,
+name|LayerModeEffects
 name|mode
-decl_stmt|;
+parameter_list|)
 block|{
 name|GImage
 modifier|*
@@ -1809,7 +1774,7 @@ name|Layer
 modifier|*
 name|new_layer
 decl_stmt|;
-name|int
+name|GimpImageType
 name|layer_type
 decl_stmt|;
 name|PixelRegion
@@ -3128,7 +3093,7 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
-name|int
+name|GimpImageType
 name|type
 decl_stmt|;
 comment|/*  Don't bother if the layer already has alpha  */
@@ -5205,15 +5170,13 @@ begin_function
 name|unsigned
 name|char
 modifier|*
-DECL|function|layer_data (layer)
+DECL|function|layer_data (Layer * layer)
 name|layer_data
 parameter_list|(
-name|layer
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|)
 block|{
 return|return
 name|NULL
@@ -5224,15 +5187,13 @@ end_function
 begin_function
 name|LayerMask
 modifier|*
-DECL|function|layer_mask (layer)
+DECL|function|layer_mask (Layer * layer)
 name|layer_mask
 parameter_list|(
-name|layer
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|)
 block|{
 return|return
 name|layer
@@ -5244,15 +5205,13 @@ end_function
 
 begin_function
 name|int
-DECL|function|layer_has_alpha (layer)
+DECL|function|layer_has_alpha (Layer * layer)
 name|layer_has_alpha
 parameter_list|(
-name|layer
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -5295,15 +5254,13 @@ end_function
 
 begin_function
 name|int
-DECL|function|layer_is_floating_sel (layer)
+DECL|function|layer_is_floating_sel (Layer * layer)
 name|layer_is_floating_sel
 parameter_list|(
-name|layer
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -5346,24 +5303,19 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|layer_preview (layer,w,h)
+DECL|function|layer_preview (Layer * layer,int w,int h)
 name|layer_preview
 parameter_list|(
-name|layer
-parameter_list|,
-name|w
-parameter_list|,
-name|h
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|,
 name|int
 name|w
-decl_stmt|,
+parameter_list|,
+name|int
 name|h
-decl_stmt|;
+parameter_list|)
 block|{
 name|GImage
 modifier|*

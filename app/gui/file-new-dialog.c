@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cf85be0108
+DECL|struct|__anon2c96442a0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -180,11 +180,11 @@ name|size
 decl_stmt|;
 comment|/* in bytes */
 DECL|member|type
-name|gint
+name|GimpImageBaseType
 name|type
 decl_stmt|;
 DECL|member|fill_type
-name|gint
+name|GimpFillType
 name|fill_type
 decl_stmt|;
 DECL|typedef|NewImageValues
@@ -391,7 +391,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|last_type
 specifier|static
-name|gint
+name|GimpImageBaseType
 name|last_type
 init|=
 name|RGB
@@ -401,7 +401,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|last_fill_type
 specifier|static
-name|gint
+name|GimpFillType
 name|last_fill_type
 init|=
 name|BACKGROUND_FILL
@@ -463,7 +463,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint
+name|GimpImageType
 name|type
 decl_stmt|;
 name|last_width
@@ -637,7 +637,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL
+name|NORMAL_MODE
 argument_list|)
 expr_stmt|;
 if|if

@@ -1770,7 +1770,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278c57e00108
+DECL|struct|__anon2c6c78540108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1847,7 +1847,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278c57e00208
+DECL|struct|__anon2c6c78540208
 block|{
 DECL|member|ncolors
 name|long
@@ -1866,7 +1866,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278c57e00308
+DECL|struct|__anon2c6c78540308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4422,28 +4422,26 @@ end_function
 
 begin_function
 name|void
-DECL|function|convert_image (GImage * gimage,int new_type,int num_cols,int dither,int palette_type)
+DECL|function|convert_image (GImage * gimage,GimpImageBaseType new_type,int num_cols,int dither,ConvertPaletteType palette_type)
 name|convert_image
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|GimpImageBaseType
 name|new_type
 parameter_list|,
+comment|/* The following three params used only for 		* new_type == INDEXED 		*/
 name|int
 name|num_cols
 parameter_list|,
-comment|/*  used only for new_type == INDEXED  */
 name|int
 name|dither
 parameter_list|,
-comment|/*  used only for new_type == INDEXED  */
-name|int
+name|ConvertPaletteType
 name|palette_type
 parameter_list|)
-comment|/*  used only for new_type == INDEXED  */
 block|{
 name|QuantizeObj
 modifier|*
@@ -4457,14 +4455,14 @@ name|Layer
 modifier|*
 name|floating_layer
 decl_stmt|;
-name|int
+name|GimpImageBaseType
 name|old_type
 decl_stmt|;
 name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|int
+name|GimpImageType
 name|new_layer_type
 decl_stmt|;
 name|int

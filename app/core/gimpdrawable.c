@@ -82,7 +82,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c744abc0103
+DECL|enum|__anon287c28b20103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -1152,7 +1152,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|GimpImageType
 DECL|function|gimp_drawable_type (GimpDrawable * drawable)
 name|gimp_drawable_type
 parameter_list|(
@@ -2252,7 +2252,7 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|int
+name|GimpImageType
 name|type
 init|=
 name|gimp_drawable_type
@@ -2978,7 +2978,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,int width,int height,int type,char * name)
+DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,int width,int height,GimpImageType type,char * name)
 name|gimp_drawable_configure
 parameter_list|(
 name|GimpDrawable
@@ -2995,7 +2995,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|int
+name|GimpImageType
 name|type
 parameter_list|,
 name|char

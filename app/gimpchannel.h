@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -53,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a978520103
+DECL|enum|__anon2766a8b00103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -139,37 +145,6 @@ name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHANNEL))
 end_define
-
-begin_typedef
-DECL|typedef|GimpChannel
-typedef|typedef
-name|struct
-name|_GimpChannel
-name|GimpChannel
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpChannelClass
-typedef|typedef
-name|struct
-name|_GimpChannelClass
-name|GimpChannelClass
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|Channel
-typedef|typedef
-name|GimpChannel
-name|Channel
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|Channel
-comment|/* convenience */
-end_comment
 
 begin_function_decl
 name|GtkType

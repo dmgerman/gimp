@@ -74,7 +74,7 @@ value|while (!((context)->field_defined)&& (context)->parent) \           (conte
 end_define
 
 begin_enum
-DECL|enum|__anon2ae855060103
+DECL|enum|__anon2ae25a2a0103
 enum|enum
 block|{
 DECL|enumerator|ARG_0
@@ -96,7 +96,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ae855060203
+DECL|enum|__anon2ae25a2a0203
 enum|enum
 block|{
 DECL|enumerator|OPACITY_CHANGED
@@ -1435,7 +1435,7 @@ comment|/*  paint mode  */
 end_comment
 
 begin_function
-name|gint
+name|LayerModeEffects
 DECL|function|gimp_context_get_paint_mode (GimpContext * context)
 name|gimp_context_get_paint_mode
 parameter_list|(
@@ -1473,14 +1473,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_paint_mode (GimpContext * context,gint paint_mode)
+DECL|function|gimp_context_set_paint_mode (GimpContext * context,LayerModeEffects paint_mode)
 name|gimp_context_set_paint_mode
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gint
+name|LayerModeEffects
 name|paint_mode
 parameter_list|)
 block|{

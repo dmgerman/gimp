@@ -110,13 +110,13 @@ name|opacity
 decl_stmt|;
 comment|/*  layer opacity                */
 DECL|member|mode
-name|int
+name|LayerModeEffects
 name|mode
 decl_stmt|;
 comment|/*  layer combination mode       */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28c85c150108
+DECL|struct|__anon2c3e37630108
 block|{
 DECL|member|backing_store
 name|TileManager

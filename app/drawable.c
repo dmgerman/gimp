@@ -78,14 +78,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_fill (GimpDrawable * drawable,int fill_type)
+DECL|function|drawable_fill (GimpDrawable * drawable,GimpFillType fill_type)
 name|drawable_fill
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|GimpFillType
 name|fill_type
 parameter_list|)
 block|{

@@ -780,11 +780,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_print
-argument_list|(
-literal|"not gimpbrushhose apparently...but why not i have no idea\n"
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 else|else

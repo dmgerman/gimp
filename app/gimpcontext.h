@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ef59c00103
+DECL|enum|__anon2bd261370103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_OPACITY
 name|GIMP_CONTEXT_ARG_OPACITY
@@ -198,7 +198,7 @@ name|gboolean
 name|paint_mode_defined
 decl_stmt|;
 DECL|member|paint_mode
-name|gint
+name|LayerModeEffects
 name|paint_mode
 decl_stmt|;
 DECL|member|image_defined
@@ -504,7 +504,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|LayerModeEffects
 name|gimp_context_get_paint_mode
 parameter_list|(
 name|GimpContext
@@ -522,7 +522,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gint
+name|LayerModeEffects
 name|paint_mode
 parameter_list|)
 function_decl|;

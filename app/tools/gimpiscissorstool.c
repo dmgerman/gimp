@@ -183,7 +183,7 @@ comment|/*  The possible states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27a928700103
+DECL|enum|__anon27ce5ee40103
 typedef|typedef
 enum|enum
 block|{
@@ -209,7 +209,7 @@ comment|/*  The possible drawing states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27a928700203
+DECL|enum|__anon27ce5ee40203
 typedef|typedef
 enum|enum
 block|{
@@ -7950,7 +7950,7 @@ literal|3
 argument_list|,
 literal|32
 argument_list|,
-name|NORMAL
+name|NORMAL_CONVOL
 argument_list|)
 expr_stmt|;
 comment|/*  Set the "src" temp buf up as the new source Pixel Region  */
@@ -7991,7 +7991,7 @@ literal|3
 argument_list|,
 literal|1
 argument_list|,
-name|NEGATIVE
+name|NEGATIVE_CONVOL
 argument_list|)
 expr_stmt|;
 comment|/*  Get the vertical derivative  */
@@ -8015,7 +8015,7 @@ literal|3
 argument_list|,
 literal|1
 argument_list|,
-name|NEGATIVE
+name|NEGATIVE_CONVOL
 argument_list|)
 expr_stmt|;
 comment|/* calculate overall gradient */

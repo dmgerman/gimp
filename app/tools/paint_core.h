@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"draw_core.h"
 end_include
 
@@ -85,60 +91,11 @@ value|4
 end_define
 
 begin_comment
-comment|/* brush application types  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b560e240103
-block|{
-DECL|enumerator|HARD
-name|HARD
-block|,
-comment|/* pencil */
-DECL|enumerator|SOFT
-name|SOFT
-block|,
-comment|/* paintbrush */
-DECL|enumerator|PRESSURE
-name|PRESSURE
-comment|/* paintbrush with variable pressure */
-DECL|typedef|BrushApplicationMode
-block|}
-name|BrushApplicationMode
-typedef|;
-end_typedef
-
-begin_comment
-comment|/* paint application modes  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b560e240203
-block|{
-DECL|enumerator|CONSTANT
-name|CONSTANT
-block|,
-comment|/*< nick=CONTINUOUS>*/
-comment|/* pencil, paintbrush, airbrush, clone */
-DECL|enumerator|INCREMENTAL
-name|INCREMENTAL
-comment|/* convolve, smudge */
-DECL|typedef|PaintApplicationMode
-block|}
-name|PaintApplicationMode
-typedef|;
-end_typedef
-
-begin_comment
 comment|/* gradient paint modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b560e240303
+DECL|enum|__anon2a1b456f0103
 typedef|typedef
 enum|enum
 block|{
@@ -639,11 +596,11 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|LayerModeEffects
 parameter_list|,
-name|int
+name|BrushApplicationMode
 parameter_list|,
-name|int
+name|PaintApplicationMode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -662,9 +619,9 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|BrushApplicationMode
 parameter_list|,
-name|int
+name|PaintApplicationMode
 parameter_list|)
 function_decl|;
 end_function_decl

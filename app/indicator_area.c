@@ -1094,6 +1094,9 @@ name|brush_scale_indicator_bits
 index|[
 name|i
 index|]
+index|[
+literal|0
+index|]
 argument_list|,
 name|offset_x
 argument_list|,

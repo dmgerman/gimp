@@ -40,6 +40,12 @@ directive|include
 file|"gimpprogress.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"drawable.h"
+end_include
+
 begin_define
 DECL|macro|WRITE_BUFFER_SIZE
 define|#
@@ -99,7 +105,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae36bba0103
+DECL|enum|__anon2b144f570103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -118,33 +124,6 @@ literal|2
 DECL|typedef|RunModeType
 block|}
 name|RunModeType
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PlugIn
-typedef|typedef
-name|struct
-name|_PlugIn
-name|PlugIn
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PlugInDef
-typedef|typedef
-name|struct
-name|_PlugInDef
-name|PlugInDef
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PlugInProcDef
-typedef|typedef
-name|struct
-name|_PlugInProcDef
-name|PlugInProcDef
 typedef|;
 end_typedef
 
@@ -622,15 +601,15 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Set the sensitivity for plug-in menu items based on the image  *  base type.  */
+comment|/* Set the sensitivity for plug-in menu items based on the image  * type.  */
 end_comment
 
 begin_function_decl
 name|void
 name|plug_in_set_menu_sensitivity
 parameter_list|(
-name|int
-name|base_type
+name|GimpImageType
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -239,7 +239,7 @@ parameter_list|(
 name|PaintCore
 modifier|*
 parameter_list|,
-name|int
+name|BrushApplicationMode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -262,9 +262,9 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|LayerModeEffects
 parameter_list|,
-name|int
+name|PaintApplicationMode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -287,7 +287,7 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|PaintApplicationMode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -5090,7 +5090,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_paste_canvas (PaintCore * paint_core,GimpDrawable * drawable,int brush_opacity,int image_opacity,int paint_mode,int brush_hardness,int mode)
+DECL|function|paint_core_paste_canvas (PaintCore * paint_core,GimpDrawable * drawable,int brush_opacity,int image_opacity,LayerModeEffects paint_mode,BrushApplicationMode brush_hardness,PaintApplicationMode mode)
 name|paint_core_paste_canvas
 parameter_list|(
 name|PaintCore
@@ -5107,13 +5107,13 @@ parameter_list|,
 name|int
 name|image_opacity
 parameter_list|,
-name|int
+name|LayerModeEffects
 name|paint_mode
 parameter_list|,
-name|int
+name|BrushApplicationMode
 name|brush_hardness
 parameter_list|,
-name|int
+name|PaintApplicationMode
 name|mode
 parameter_list|)
 block|{
@@ -5158,7 +5158,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|paint_core_replace_canvas (PaintCore * paint_core,GimpDrawable * drawable,int brush_opacity,int image_opacity,int brush_hardness,int mode)
+DECL|function|paint_core_replace_canvas (PaintCore * paint_core,GimpDrawable * drawable,int brush_opacity,int image_opacity,BrushApplicationMode brush_hardness,PaintApplicationMode mode)
 name|paint_core_replace_canvas
 parameter_list|(
 name|PaintCore
@@ -5175,10 +5175,10 @@ parameter_list|,
 name|int
 name|image_opacity
 parameter_list|,
-name|int
+name|BrushApplicationMode
 name|brush_hardness
 parameter_list|,
-name|int
+name|PaintApplicationMode
 name|mode
 parameter_list|)
 block|{
@@ -6277,14 +6277,14 @@ begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|paint_core_get_brush_mask (PaintCore * paint_core,int brush_hardness)
+DECL|function|paint_core_get_brush_mask (PaintCore * paint_core,BrushApplicationMode brush_hardness)
 name|paint_core_get_brush_mask
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
+name|BrushApplicationMode
 name|brush_hardness
 parameter_list|)
 block|{
@@ -6378,7 +6378,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_core_paste (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,int brush_opacity,int image_opacity,int paint_mode,int mode)
+DECL|function|paint_core_paste (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,int brush_opacity,int image_opacity,LayerModeEffects paint_mode,PaintApplicationMode mode)
 name|paint_core_paste
 parameter_list|(
 name|PaintCore
@@ -6399,10 +6399,10 @@ parameter_list|,
 name|int
 name|image_opacity
 parameter_list|,
-name|int
+name|LayerModeEffects
 name|paint_mode
 parameter_list|,
-name|int
+name|PaintApplicationMode
 name|mode
 parameter_list|)
 block|{
@@ -6724,7 +6724,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|paint_core_replace (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,int brush_opacity,int image_opacity,int mode)
+DECL|function|paint_core_replace (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,int brush_opacity,int image_opacity,PaintApplicationMode mode)
 name|paint_core_replace
 parameter_list|(
 name|PaintCore
@@ -6745,7 +6745,7 @@ parameter_list|,
 name|int
 name|image_opacity
 parameter_list|,
-name|int
+name|PaintApplicationMode
 name|mode
 parameter_list|)
 block|{

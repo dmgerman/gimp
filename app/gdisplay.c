@@ -7402,12 +7402,12 @@ name|drawable
 init|=
 name|NULL
 decl_stmt|;
-name|gint
+name|GimpImageBaseType
 name|base_type
 init|=
 literal|0
 decl_stmt|;
-name|gint
+name|GimpImageType
 name|type
 init|=
 operator|-

@@ -1965,6 +1965,15 @@ decl_stmt|;
 name|int
 name|mode
 decl_stmt|;
+name|PaintApplicationMode
+name|paint_appl_mode
+init|=
+name|incremental
+condition|?
+name|INCREMENTAL
+else|:
+name|CONSTANT
+decl_stmt|;
 name|position
 operator|=
 literal|0.0
@@ -2177,7 +2186,7 @@ name|b
 expr_stmt|;
 comment|/* always use incremental mode with gradients */
 comment|/* make the gui cool later */
-name|incremental
+name|paint_appl_mode
 operator|=
 name|INCREMENTAL
 expr_stmt|;
@@ -2212,7 +2221,7 @@ operator|->
 name|brush
 argument_list|)
 expr_stmt|;
-name|incremental
+name|paint_appl_mode
 operator|=
 name|INCREMENTAL
 expr_stmt|;
@@ -2270,11 +2279,7 @@ argument_list|)
 argument_list|,
 name|PRESSURE
 argument_list|,
-name|incremental
-condition|?
-name|INCREMENTAL
-else|:
-name|CONSTANT
+name|paint_appl_mode
 argument_list|)
 expr_stmt|;
 block|}

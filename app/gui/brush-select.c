@@ -3476,7 +3476,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon287c173a0108
+DECL|struct|__anon29d7e0990108
 typedef|typedef
 struct|struct
 block|{
@@ -4828,6 +4828,9 @@ argument_list|,
 name|brush_scale_indicator_bits
 index|[
 name|i
+index|]
+index|[
+literal|0
 index|]
 argument_list|,
 name|offset_x

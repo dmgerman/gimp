@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpobject.h"
 end_include
 
@@ -90,36 +96,6 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon296e48790103
-block|{
-DECL|enumerator|FOREGROUND_FILL
-name|FOREGROUND_FILL
-block|,
-comment|/*< nick=FG_IMAGE_FILL>*/
-DECL|enumerator|BACKGROUND_FILL
-name|BACKGROUND_FILL
-block|,
-comment|/*< nick=BG_IMAGE_FILL>*/
-DECL|enumerator|WHITE_FILL
-name|WHITE_FILL
-block|,
-comment|/*< nick=WHITE_IMAGE_FILL>*/
-DECL|enumerator|TRANSPARENT_FILL
-name|TRANSPARENT_FILL
-block|,
-comment|/*< nick=TRANS_IMAGE_FILL>*/
-DECL|enumerator|NO_FILL
-name|NO_FILL
-comment|/*< nick=NO_IMAGE_FILL>*/
-DECL|typedef|GimpFillType
-block|}
-name|GimpFillType
-typedef|;
-end_typedef
 
 begin_comment
 comment|/*  drawable access functions  */
@@ -213,7 +189,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|GimpImageType
 name|gimp_drawable_type
 parameter_list|(
 name|GimpDrawable

@@ -40,7 +40,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|GimpFillType
 name|fill_type
 parameter_list|)
 function_decl|;

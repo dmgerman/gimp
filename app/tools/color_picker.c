@@ -248,7 +248,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sample_type
 specifier|static
-name|gint
+name|GimpImageType
 name|sample_type
 decl_stmt|;
 end_decl_stmt

@@ -201,7 +201,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae7d5120103
+DECL|enum|__anon2a111aca0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -269,6 +269,7 @@ name|LayerMode
 name|layer_modes
 index|[]
 init|=
+comment|/* This must obviously be in the same 				 * order as the corresponding values 				 * in the LayerModeEffects enumeration. 				 */
 block|{
 block|{
 literal|1
@@ -14712,7 +14713,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|convolve_region (PixelRegion * srcR,PixelRegion * destR,int * matrix,int size,int divisor,int mode)
+DECL|function|convolve_region (PixelRegion * srcR,PixelRegion * destR,int * matrix,int size,int divisor,ConvolutionType mode)
 name|convolve_region
 parameter_list|(
 name|PixelRegion
@@ -14733,7 +14734,7 @@ parameter_list|,
 name|int
 name|divisor
 parameter_list|,
-name|int
+name|ConvolutionType
 name|mode
 parameter_list|)
 block|{
@@ -14796,12 +14797,12 @@ decl_stmt|;
 name|int
 name|offset
 decl_stmt|;
-comment|/*  If the mode is NEGATIVE, the offset should be 128  */
+comment|/*  If the mode is NEGATIVE_CONVOL, the offset should be 128  */
 if|if
 condition|(
 name|mode
 operator|==
-name|NEGATIVE
+name|NEGATIVE_CONVOL
 condition|)
 block|{
 name|offset
@@ -14810,7 +14811,7 @@ literal|128
 expr_stmt|;
 name|mode
 operator|=
-literal|0
+name|NORMAL_CONVOL
 expr_stmt|;
 block|}
 else|else
@@ -15114,7 +15115,6 @@ name|divisor
 operator|+
 name|offset
 expr_stmt|;
-comment|/*  only if mode was ABSOLUTE will mode by non-zero here  */
 if|if
 condition|(
 name|total
@@ -15125,6 +15125,8 @@ operator|<
 literal|0
 operator|&&
 name|mode
+operator|!=
+name|NORMAL_CONVOL
 condition|)
 name|total
 index|[
@@ -24925,7 +24927,7 @@ name|int
 name|opacity
 decl_stmt|;
 DECL|member|mode
-name|int
+name|LayerModeEffects
 name|mode
 decl_stmt|;
 DECL|member|affect
@@ -24999,7 +25001,7 @@ decl_stmt|;
 name|int
 name|opacity
 decl_stmt|;
-name|int
+name|LayerModeEffects
 name|mode
 decl_stmt|;
 name|int
@@ -25375,7 +25377,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,unsigned char * data,int opacity,int mode,int * affect,int type)
+DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,unsigned char * data,int opacity,LayerModeEffects mode,int * affect,int type)
 name|initial_region
 parameter_list|(
 name|PixelRegion
@@ -25398,7 +25400,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
-name|int
+name|LayerModeEffects
 name|mode
 parameter_list|,
 name|int
@@ -25475,7 +25477,7 @@ name|int
 name|opacity
 decl_stmt|;
 DECL|member|mode
-name|int
+name|LayerModeEffects
 name|mode
 decl_stmt|;
 DECL|member|affect
@@ -25547,7 +25549,7 @@ decl_stmt|;
 name|int
 name|opacity
 decl_stmt|;
-name|int
+name|LayerModeEffects
 name|mode
 decl_stmt|;
 name|int
@@ -26623,7 +26625,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,unsigned char * data,int opacity,int mode,int * affect,int type)
+DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,unsigned char * data,int opacity,LayerModeEffects mode,int * affect,int type)
 name|combine_regions
 parameter_list|(
 name|PixelRegion
@@ -26650,7 +26652,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
-name|int
+name|LayerModeEffects
 name|mode
 parameter_list|,
 name|int
@@ -28424,7 +28426,7 @@ end_comment
 
 begin_function
 name|int
-DECL|function|apply_layer_mode (unsigned char * src1,unsigned char * src2,unsigned char ** dest,int x,int y,int opacity,int length,int mode,int bytes1,int bytes2,int has_alpha1,int has_alpha2,int * mode_affect)
+DECL|function|apply_layer_mode (unsigned char * src1,unsigned char * src2,unsigned char ** dest,int x,int y,int opacity,int length,LayerModeEffects mode,int bytes1,int bytes2,int has_alpha1,int has_alpha2,int * mode_affect)
 name|apply_layer_mode
 parameter_list|(
 name|unsigned
@@ -28455,7 +28457,7 @@ parameter_list|,
 name|int
 name|length
 parameter_list|,
-name|int
+name|LayerModeEffects
 name|mode
 parameter_list|,
 name|int
@@ -29002,7 +29004,7 @@ end_function
 
 begin_function
 name|int
-DECL|function|apply_indexed_layer_mode (unsigned char * src1,unsigned char * src2,unsigned char ** dest,int mode,int has_alpha1,int has_alpha2)
+DECL|function|apply_indexed_layer_mode (unsigned char * src1,unsigned char * src2,unsigned char ** dest,LayerModeEffects mode,int has_alpha1,int has_alpha2)
 name|apply_indexed_layer_mode
 parameter_list|(
 name|unsigned
@@ -29021,7 +29023,7 @@ modifier|*
 modifier|*
 name|dest
 parameter_list|,
-name|int
+name|LayerModeEffects
 name|mode
 parameter_list|,
 name|int

@@ -578,6 +578,9 @@ name|drawable_fill
 argument_list|(
 name|drawable
 argument_list|,
+operator|(
+name|GimpFillType
+operator|)
 name|fill_type
 argument_list|)
 expr_stmt|;
