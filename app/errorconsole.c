@@ -167,12 +167,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialog_handler.h"
 end_include
 

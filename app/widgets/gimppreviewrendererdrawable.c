@@ -337,6 +337,11 @@ expr_stmt|;
 if|if
 condition|(
 name|gimage
+operator|&&
+operator|!
+name|preview
+operator|->
+name|is_popup
 condition|)
 block|{
 name|gimp_preview_calc_size

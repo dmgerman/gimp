@@ -2082,7 +2082,7 @@ name|GTK_LIST
 argument_list|(
 name|GIMP_CONTAINER_LIST_VIEW
 argument_list|(
-name|GIMP_DATA_FACTORY_VIEW
+name|GIMP_CONTAINER_EDITOR
 argument_list|(
 name|palette_dialog
 operator|->
@@ -5719,7 +5719,7 @@ name|GTK_LIST
 argument_list|(
 name|GIMP_CONTAINER_LIST_VIEW
 argument_list|(
-name|GIMP_DATA_FACTORY_VIEW
+name|GIMP_CONTAINER_EDITOR
 argument_list|(
 name|palette_dialog
 operator|->

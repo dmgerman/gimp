@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -154,14 +160,6 @@ name|gboolean
 name|current_cut_buffer
 init|=
 name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|TileManager
-modifier|*
-name|global_buf
 decl_stmt|;
 end_decl_stmt
 
@@ -605,7 +603,7 @@ block|}
 comment|/*  If a cut buffer exists, default to using its size for the new image    *  also check to see if a new_image has been opened    */
 if|if
 condition|(
-name|global_buf
+name|global_buffer
 operator|&&
 name|current_cut_buffer
 condition|)
@@ -616,7 +614,7 @@ name|width
 operator|=
 name|tile_manager_width
 argument_list|(
-name|global_buf
+name|global_buffer
 argument_list|)
 expr_stmt|;
 name|values
@@ -625,7 +623,7 @@ name|height
 operator|=
 name|tile_manager_height
 argument_list|(
-name|global_buf
+name|global_buffer
 argument_list|)
 expr_stmt|;
 block|}

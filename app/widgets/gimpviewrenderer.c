@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpbuffer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -109,6 +115,12 @@ begin_include
 include|#
 directive|include
 file|"gimpbrushpreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbufferpreview.h"
 end_include
 
 begin_include
@@ -183,7 +195,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b8655f0103
+DECL|enum|__anon2949c2a20103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1309,6 +1321,23 @@ operator|=
 name|gtk_type_new
 argument_list|(
 name|GIMP_TYPE_PALETTE_PREVIEW
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|GIMP_IS_BUFFER
+argument_list|(
+name|viewable
+argument_list|)
+condition|)
+block|{
+name|preview
+operator|=
+name|gtk_type_new
+argument_list|(
+name|GIMP_TYPE_BUFFER_PREVIEW
 argument_list|)
 expr_stmt|;
 block|}

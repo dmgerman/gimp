@@ -29,6 +29,30 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
+comment|/*  *  the global cut buffer  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|TileManager
+modifier|*
+name|global_buffer
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  *  the list of named cut buffers  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GimpContainer
+modifier|*
+name|named_buffers
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  *  the global data factories which contain the global data lists  */
 end_comment
 

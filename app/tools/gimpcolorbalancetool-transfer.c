@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color_transfer.h"
+file|"gimpcolorbalancetool-transfer.h"
 end_include
 
 begin_comment
@@ -101,14 +101,10 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  color transfer functions  */
-end_comment
-
 begin_function
 name|void
-DECL|function|color_transfer_init (void)
-name|color_transfer_init
+DECL|function|gimp_color_balance_tool_transfer_init (void)
+name|gimp_color_balance_tool_transfer_init
 parameter_list|(
 name|void
 parameter_list|)

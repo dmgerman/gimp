@@ -766,7 +766,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8ba720103
+DECL|enum|__anon29490fbf0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4045,7 +4045,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gint undo,gint opacity,LayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
+DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean undo,gint opacity,LayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
 name|gimp_image_apply_image
 parameter_list|(
 name|GimpImage
@@ -4060,7 +4060,7 @@ name|PixelRegion
 modifier|*
 name|src2PR
 parameter_list|,
-name|gint
+name|gboolean
 name|undo
 parameter_list|,
 name|gint
@@ -4604,7 +4604,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_replace_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gint undo,gint opacity,PixelRegion * maskPR,gint x,gint y)
+DECL|function|gimp_image_replace_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean undo,gint opacity,PixelRegion * maskPR,gint x,gint y)
 name|gimp_image_replace_image
 parameter_list|(
 name|GimpImage
@@ -4619,7 +4619,7 @@ name|PixelRegion
 modifier|*
 name|src2PR
 parameter_list|,
-name|gint
+name|gboolean
 name|undo
 parameter_list|,
 name|gint

@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"global_edit.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"qmask.h"
 end_include
 
@@ -122,6 +116,15 @@ include|#
 directive|include
 file|"libgimp/gimpintl.h"
 end_include
+
+begin_typedef
+DECL|typedef|EditQmaskOptions
+typedef|typedef
+name|struct
+name|_EditQmaskOptions
+name|EditQmaskOptions
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_EditQmaskOptions
@@ -151,23 +154,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|EditQmaskOptions
-typedef|typedef
-name|struct
-name|_EditQmaskOptions
-name|EditQmaskOptions
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  Global variables  */
-end_comment
-
-begin_comment
-comment|/*  Static variables  */
-end_comment
 
 begin_comment
 comment|/*  Prototypes */

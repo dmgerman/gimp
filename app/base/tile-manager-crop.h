@@ -6,85 +6,27 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__COLOR_TRANSFER_H__
+name|__TILE_MANAGER_CROP_H__
 end_ifndef
 
 begin_define
-DECL|macro|__COLOR_TRANSFER_H__
+DECL|macro|__TILE_MANAGER_CROP_H__
 define|#
 directive|define
-name|__COLOR_TRANSFER_H__
+name|__TILE_MANAGER_CROP_H__
 end_define
 
-begin_comment
-comment|/*  color transfer data  */
-end_comment
-
-begin_comment
-comment|/*  for lightening  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|gdouble
-name|highlights_add
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gdouble
-name|midtones_add
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gdouble
-name|shadows_add
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  for darkening  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|gdouble
-name|highlights_sub
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gdouble
-name|midtones_sub
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gdouble
-name|shadows_sub
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  color transfer functions  */
-end_comment
-
 begin_function_decl
-name|void
-name|color_transfer_init
+name|TileManager
+modifier|*
+name|tile_manager_crop
 parameter_list|(
-name|void
+name|TileManager
+modifier|*
+name|tiles
+parameter_list|,
+name|gint
+name|border
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -95,7 +37,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __COLOR_TRANSFER_H__  */
+comment|/* __TILE_MANAGER_CROP_H__ */
 end_comment
 
 end_unit

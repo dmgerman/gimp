@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkvbox.h>
+file|"gimpcontainereditor.h"
 end_include
 
 begin_typedef
@@ -36,22 +36,6 @@ modifier|*
 name|data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2a8e29350103
-block|{
-DECL|enumerator|GIMP_VIEW_TYPE_GRID
-name|GIMP_VIEW_TYPE_GRID
-block|,
-DECL|enumerator|GIMP_VIEW_TYPE_LIST
-name|GIMP_VIEW_TYPE_LIST
-DECL|typedef|GimpViewType
-block|}
-name|GimpViewType
-typedef|;
 end_typedef
 
 begin_define
@@ -121,7 +105,7 @@ struct|struct
 name|_GimpDataFactoryView
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GimpContainerEditor
 name|parent_instance
 decl_stmt|;
 DECL|member|factory
@@ -132,16 +116,6 @@ decl_stmt|;
 DECL|member|data_edit_func
 name|GimpDataEditFunc
 name|data_edit_func
-decl_stmt|;
-DECL|member|view
-name|GimpContainerView
-modifier|*
-name|view
-decl_stmt|;
-DECL|member|button_box
-name|GtkWidget
-modifier|*
-name|button_box
 decl_stmt|;
 DECL|member|new_button
 name|GtkWidget
@@ -178,7 +152,7 @@ struct|struct
 name|_GimpDataFactoryViewClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GimpContainerEditorClass
 name|parent_class
 decl_stmt|;
 block|}

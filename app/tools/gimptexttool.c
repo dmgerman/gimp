@@ -95,6 +95,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/tile-manager-crop.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/tile.h"
 end_include
 
@@ -156,12 +162,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"global_edit.h"
 end_include
 
 begin_include
@@ -2521,7 +2521,6 @@ name|scale
 operator|*
 name|scale
 expr_stmt|;
-comment|/* GDK_WINDOWING is defined only with GTk+ 1.3 */
 ifndef|#
 directive|ifndef
 name|GDK_WINDOWING_WIN32
@@ -3459,7 +3458,7 @@ name|newmask
 operator|=
 name|crop
 condition|?
-name|crop_buffer
+name|tile_manager_crop
 argument_list|(
 name|mask
 argument_list|,

@@ -131,12 +131,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_transfer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -168,12 +162,6 @@ begin_include
 include|#
 directive|include
 file|"gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"global_edit.h"
 end_include
 
 begin_include
@@ -749,9 +737,6 @@ operator|=
 name|MESSAGE_BOX
 expr_stmt|;
 block|}
-name|color_transfer_init
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -832,12 +817,6 @@ name|module_db_free
 argument_list|()
 expr_stmt|;
 name|gdisplays_delete
-argument_list|()
-expr_stmt|;
-name|global_edit_free
-argument_list|()
-expr_stmt|;
-name|named_buffers_free
 argument_list|()
 expr_stmt|;
 name|context_manager_free

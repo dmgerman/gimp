@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be16ef30103
+DECL|enum|__anon28d621210103
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -54,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be16ef30203
+DECL|enum|__anon28d621210203
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be16ef30303
+DECL|enum|__anon28d621210303
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -197,7 +197,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be16ef30403
+DECL|enum|__anon28d621210403
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE
@@ -342,6 +342,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpBufferPreview
+typedef|typedef
+name|struct
+name|_GimpBufferPreview
+name|GimpBufferPreview
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerMenu
 typedef|typedef
 name|struct
@@ -396,15 +405,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDataFactoryView
-typedef|typedef
-name|struct
-name|_GimpDataFactoryView
-name|GimpDataFactoryView
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpDrawableListView
 typedef|typedef
 name|struct
@@ -428,6 +428,33 @@ typedef|typedef
 name|struct
 name|_GimpChannelListView
 name|GimpChannelListView
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpContainerEditor
+typedef|typedef
+name|struct
+name|_GimpContainerEditor
+name|GimpContainerEditor
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDataFactoryView
+typedef|typedef
+name|struct
+name|_GimpDataFactoryView
+name|GimpDataFactoryView
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBufferView
+typedef|typedef
+name|struct
+name|_GimpBufferView
+name|GimpBufferView
 typedef|;
 end_typedef
 

@@ -812,7 +812,7 @@ argument_list|(
 name|container_view_scale_callback
 argument_list|)
 argument_list|,
-name|GIMP_DATA_FACTORY_VIEW
+name|GIMP_CONTAINER_EDITOR
 argument_list|(
 name|view
 argument_list|)

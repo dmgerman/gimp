@@ -18,23 +18,6 @@ end_define
 
 begin_function_decl
 name|void
-name|file_new_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|callback_data
-parameter_list|,
-name|guint
-name|callback_action
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|ui_new_image_window_create
 parameter_list|(
 specifier|const
@@ -51,7 +34,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __FILE_NEW_DIALOG_H_H__ */
+comment|/* __FILE_NEW_DIALOG_H__ */
 end_comment
 
 end_unit

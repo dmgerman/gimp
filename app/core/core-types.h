@@ -33,7 +33,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291ffed80103
+DECL|enum|__anon2b98f32b0103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291ffed80203
+DECL|enum|__anon2b98f32b0203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291ffed80303
+DECL|enum|__anon2b98f32b0303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291ffed80403
+DECL|enum|__anon2b98f32b0403
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -199,6 +199,15 @@ typedef|typedef
 name|struct
 name|_GimpViewable
 name|GimpViewable
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBuffer
+typedef|typedef
+name|struct
+name|_GimpBuffer
+name|GimpBuffer
 typedef|;
 end_typedef
 

@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287c6bfa0103
+DECL|enum|__anon2c768a1c0103
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -928,7 +928,7 @@ name|PixelRegion
 modifier|*
 name|src2PR
 parameter_list|,
-name|gint
+name|gboolean
 name|undo
 parameter_list|,
 name|gint
@@ -966,7 +966,7 @@ name|PixelRegion
 modifier|*
 name|src2PR
 parameter_list|,
-name|gint
+name|gboolean
 name|undo
 parameter_list|,
 name|gint

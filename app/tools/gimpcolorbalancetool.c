@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcolorbalancetool-transfer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool_manager.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"color_transfer.h"
 end_include
 
 begin_include
@@ -631,6 +631,9 @@ operator|->
 name|control
 operator|=
 name|gimp_color_balance_tool_control
+expr_stmt|;
+name|gimp_color_balance_tool_transfer_init
+argument_list|()
 expr_stmt|;
 block|}
 end_function

@@ -1657,7 +1657,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  Paint Mode, Opacity and Preservce trans. callbacks  */
+comment|/*  Paint Mode, Opacity and Preserve trans. callbacks  */
 end_comment
 
 begin_define

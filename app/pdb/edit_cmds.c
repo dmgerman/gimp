@@ -71,7 +71,7 @@ begin_decl_stmt
 specifier|extern
 name|TileManager
 modifier|*
-name|global_buf
+name|global_buffer
 decl_stmt|;
 end_decl_stmt
 
@@ -560,7 +560,7 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|global_buf
+name|global_buffer
 argument_list|,
 name|paste_into
 argument_list|)

@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b66cbfe0103
+DECL|enum|__anon2c75150e0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -61,6 +61,9 @@ name|GIMP_DND_TYPE_GRADIENT
 block|,
 DECL|enumerator|GIMP_DND_TYPE_PALETTE
 name|GIMP_DND_TYPE_PALETTE
+block|,
+DECL|enumerator|GIMP_DND_TYPE_BUFFER
+name|GIMP_DND_TYPE_BUFFER
 block|,
 DECL|enumerator|GIMP_DND_TYPE_TOOL
 name|GIMP_DND_TYPE_TOOL
@@ -195,6 +198,15 @@ directive|define
 name|GIMP_TARGET_PALETTE
 define|\
 value|{ "GIMP_PALETTE", 0, GIMP_DND_TYPE_PALETTE }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_BUFFER
+define|#
+directive|define
+name|GIMP_TARGET_BUFFER
+define|\
+value|{ "GIMP_BUFFER", 0, GIMP_DND_TYPE_BUFFER }
 end_define
 
 begin_define
