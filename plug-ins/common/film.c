@@ -113,7 +113,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba253590108
+DECL|struct|__anon292ea2750108
 block|{
 DECL|member|film_height
 name|gint
@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba253590208
+DECL|struct|__anon292ea2750208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -1516,9 +1516,6 @@ decl_stmt|;
 name|gdouble
 name|f
 decl_stmt|;
-name|GimpRGB
-name|foreground
-decl_stmt|;
 name|gint
 name|num_layers
 decl_stmt|;
@@ -1572,17 +1569,21 @@ operator|-
 literal|1
 operator|)
 return|;
+name|gimp_context_push
+argument_list|()
+expr_stmt|;
+name|gimp_context_set_foreground
+argument_list|(
+operator|&
+name|filmvals
+operator|.
+name|number_color
+argument_list|)
+expr_stmt|;
 name|tile_height
 operator|=
 name|gimp_tile_height
 argument_list|()
-expr_stmt|;
-comment|/* Save foreground colour */
-name|gimp_context_get_foreground
-argument_list|(
-operator|&
-name|foreground
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2267,7 +2268,7 @@ name|picture_height
 argument_list|)
 condition|)
 block|{
-name|g_printerr
+name|g_warning
 argument_list|(
 literal|"film: error during scale_layer\n"
 argument_list|)
@@ -2303,14 +2304,6 @@ index|]
 operator|)
 condition|)
 block|{
-name|gimp_context_set_foreground
-argument_list|(
-operator|&
-name|filmvals
-operator|.
-name|number_color
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|filmvals
@@ -2385,12 +2378,6 @@ argument_list|,
 name|number_height
 argument_list|)
 expr_stmt|;
-name|gimp_context_set_foreground
-argument_list|(
-operator|&
-name|foreground
-argument_list|)
-expr_stmt|;
 block|}
 name|picture_x0
 operator|+=
@@ -2440,12 +2427,8 @@ name|image_ID_dst
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Restore foreground */
-name|gimp_context_set_foreground
-argument_list|(
-operator|&
-name|foreground
-argument_list|)
+name|gimp_context_pop
+argument_list|()
 expr_stmt|;
 return|return
 name|image_ID_dst
