@@ -81,15 +81,9 @@ directive|include
 file|"gimptext.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2ac4f46d0103
+DECL|enum|__anon27f0b0c20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -569,12 +563,7 @@ name|PROP_HINTING
 argument_list|,
 literal|"hinting"
 argument_list|,
-name|N_
-argument_list|(
-literal|"Hinting alters the font outline to "
-literal|"produce a crisp bitmap at small "
-literal|"sizes"
-argument_list|)
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -589,12 +578,7 @@ name|PROP_AUTOHINT
 argument_list|,
 literal|"autohint"
 argument_list|,
-name|N_
-argument_list|(
-literal|"If available, hints from the font are "
-literal|"used but you may prefer to always use "
-literal|"the automatic hinter"
-argument_list|)
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
@@ -721,10 +705,7 @@ name|PROP_INDENTATION
 argument_list|,
 literal|"indent"
 argument_list|,
-name|N_
-argument_list|(
-literal|"Indentation of the first line"
-argument_list|)
+name|NULL
 argument_list|,
 operator|-
 literal|8192.0
@@ -744,10 +725,7 @@ name|PROP_LINE_SPACING
 argument_list|,
 literal|"line-spacing"
 argument_list|,
-name|N_
-argument_list|(
-literal|"Modify line spacing"
-argument_list|)
+name|NULL
 argument_list|,
 operator|-
 literal|8192.0
@@ -767,10 +745,7 @@ name|PROP_LETTER_SPACING
 argument_list|,
 literal|"letter-spacing"
 argument_list|,
-name|N_
-argument_list|(
-literal|"Modify letter spacing"
-argument_list|)
+name|NULL
 argument_list|,
 operator|-
 literal|8192.0

@@ -1275,7 +1275,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2912841c0103
+DECL|enum|__anon2c0119ab0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1289,7 +1289,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2912841c0203
+DECL|enum|__anon2c0119ab0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -4747,13 +4747,27 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
+comment|//#if 0
 comment|/*  serialize nothing if the property is not defined  */
-block|if (! ((1<< property_id)& context->defined_props))     return TRUE;
-endif|#
-directive|endif
+if|if
+condition|(
+operator|!
+operator|(
+operator|(
+literal|1
+operator|<<
+name|property_id
+operator|)
+operator|&
+name|context
+operator|->
+name|defined_props
+operator|)
+condition|)
+return|return
+name|TRUE
+return|;
+comment|//#endif
 switch|switch
 condition|(
 name|property_id
@@ -10665,6 +10679,103 @@ block|}
 end_function
 
 begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_context_get_font_name (GimpContext * context)
+name|gimp_context_get_font_name
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|context
+operator|->
+name|font
+condition|?
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|context
+operator|->
+name|font
+argument_list|)
+argument_list|)
+else|:
+name|NULL
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_context_set_font_name (GimpContext * context,const gchar * name)
+name|gimp_context_set_font_name
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+block|{
+name|GimpObject
+modifier|*
+name|font
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|font
+operator|=
+name|gimp_container_get_child_by_name
+argument_list|(
+name|context
+operator|->
+name|gimp
+operator|->
+name|fonts
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+name|gimp_context_set_font
+argument_list|(
+name|context
+argument_list|,
+name|GIMP_FONT
+argument_list|(
+name|font
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_context_font_changed (GimpContext * context)
 name|gimp_context_font_changed
@@ -10702,7 +10813,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  the active palette was modified  */
+comment|/*  the active font was modified  */
 end_comment
 
 begin_function
