@@ -1388,9 +1388,9 @@ argument_list|(
 name|name_buf
 argument_list|)
 expr_stmt|;
-comment|/* Check the footer. */
 if|if
 condition|(
+operator|!
 name|fseek
 argument_list|(
 name|fp
@@ -1400,7 +1400,11 @@ literal|26L
 argument_list|,
 name|SEEK_END
 argument_list|)
-operator|||
+condition|)
+block|{
+comment|/* Is file big enough for a footer? */
+if|if
+condition|(
 name|fread
 argument_list|(
 name|footer
@@ -1433,7 +1437,7 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/* Check the signature. */
+elseif|else
 if|if
 condition|(
 name|memcmp
@@ -1453,6 +1457,7 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/* Check the signature. */
 name|offset
 operator|=
 name|footer
@@ -1531,6 +1536,7 @@ literal|1
 return|;
 block|}
 comment|/* Eventually actually handle version 2 TGA here */
+block|}
 block|}
 if|if
 condition|(
