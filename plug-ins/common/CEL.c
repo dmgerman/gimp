@@ -242,7 +242,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|data_length
 specifier|static
-name|size_t
+name|gsize
 name|data_length
 init|=
 literal|0
@@ -700,7 +700,7 @@ name|data_length
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|size_t
+name|gsize
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -851,7 +851,7 @@ name|data_length
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|size_t
+name|gsize
 argument_list|)
 argument_list|)
 expr_stmt|;
