@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288f62990108
+DECL|struct|__anon28d8205c0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -2520,7 +2520,7 @@ operator|>
 literal|88
 name|pp
 operator|=
-name|png_create_read_struct
+name|png_create_write_struct
 argument_list|(
 name|PNG_LIBPNG_VER_STRING
 argument_list|,
