@@ -237,7 +237,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1ece1d0103
+DECL|enum|__anon27e6bc140103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -761,6 +761,12 @@ name|environ_table
 operator|=
 name|gimp_environ_table_new
 argument_list|()
+expr_stmt|;
+name|gimp
+operator|->
+name|plug_in_debug
+operator|=
+name|NULL
 expr_stmt|;
 name|gimp
 operator|->

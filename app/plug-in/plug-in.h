@@ -101,16 +101,19 @@ DECL|member|pid
 name|pid_t
 name|pid
 decl_stmt|;
-comment|/*  Plug-ins process id                     */
-DECL|member|args
+comment|/*  Plug-in's process id                    */
+DECL|member|name
 name|gchar
 modifier|*
-name|args
-index|[
-literal|7
-index|]
+name|name
 decl_stmt|;
-comment|/*  Plug-ins command line arguments         */
+comment|/*  Plug-in's name                          */
+DECL|member|prog
+name|gchar
+modifier|*
+name|prog
+decl_stmt|;
+comment|/*  Plug-in's full path name                */
 DECL|member|my_read
 name|GIOChannel
 modifier|*
@@ -250,9 +253,10 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
-name|name
+name|prog
 parameter_list|)
 function_decl|;
 end_function_decl

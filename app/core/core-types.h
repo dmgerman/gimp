@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f688e80103
+DECL|enum|__anon2b4a74b10103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -89,7 +89,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon29f688e80203
+DECL|enum|__anon2b4a74b10203
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
@@ -577,6 +577,15 @@ typedef|typedef
 name|struct
 name|_GimpPaletteEntry
 name|GimpPaletteEntry
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPlugInDebug
+typedef|typedef
+name|struct
+name|_GimpPlugInDebug
+name|GimpPlugInDebug
 typedef|;
 end_typedef
 

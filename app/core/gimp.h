@@ -287,6 +287,11 @@ name|GimpEnvironTable
 modifier|*
 name|environ_table
 decl_stmt|;
+DECL|member|plug_in_debug
+name|GimpPlugInDebug
+modifier|*
+name|plug_in_debug
+decl_stmt|;
 DECL|member|images
 name|GimpContainer
 modifier|*

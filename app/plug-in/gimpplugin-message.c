@@ -1941,22 +1941,13 @@ literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
 literal|"which does not take the standard Plug-In args."
 argument_list|,
-name|g_path_get_basename
-argument_list|(
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
+name|name
 argument_list|,
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 argument_list|,
 name|proc_install
 operator|->
@@ -2039,22 +2030,13 @@ literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
 literal|"which does not take the standard Plug-In args."
 argument_list|,
-name|g_path_get_basename
-argument_list|(
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
+name|name
 argument_list|,
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 argument_list|,
 name|proc_install
 operator|->
@@ -2137,22 +2119,13 @@ literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
 literal|"which does not take the standard Plug-In args."
 argument_list|,
-name|g_path_get_basename
-argument_list|(
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
+name|name
 argument_list|,
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 argument_list|,
 name|proc_install
 operator|->
@@ -2261,22 +2234,13 @@ literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
 literal|"which does not take the standard Plug-In args."
 argument_list|,
-name|g_path_get_basename
-argument_list|(
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
+name|name
 argument_list|,
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 argument_list|,
 name|proc_install
 operator|->
@@ -2296,22 +2260,13 @@ literal|"in an invalid menu location.\n"
 literal|"Use either \"<Toolbox>\", \"<Image>\", "
 literal|"\"<Load>\", or \"<Save>\"."
 argument_list|,
-name|g_path_get_basename
-argument_list|(
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
+name|name
 argument_list|,
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 argument_list|,
 name|proc_install
 operator|->
@@ -2407,22 +2362,13 @@ literal|"attempted to install procedure \"%s\"\n"
 literal|"which fails to comply with the array parameter\n"
 literal|"passing standard.  Argument %d is noncompliant."
 argument_list|,
-name|g_path_get_basename
-argument_list|(
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
+name|name
 argument_list|,
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 argument_list|,
 name|proc_install
 operator|->
@@ -2738,22 +2684,13 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install a procedure with invalid UTF-8 strings.\n"
 argument_list|,
-name|g_path_get_basename
-argument_list|(
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
+name|name
 argument_list|,
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3335,10 +3272,7 @@ name|gimp
 argument_list|,
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 argument_list|,
 name|NULL
 argument_list|)
@@ -3351,10 +3285,7 @@ name|gimp
 argument_list|,
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -138,10 +138,7 @@ name|message
 operator|=
 name|plug_in
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 expr_stmt|;
 if|if
 condition|(

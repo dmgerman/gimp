@@ -394,10 +394,7 @@ operator|.
 name|plug_in
 operator|)
 operator|->
-name|args
-index|[
-literal|0
-index|]
+name|prog
 return|;
 default|default:
 break|break;
