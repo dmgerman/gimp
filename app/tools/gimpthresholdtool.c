@@ -1055,7 +1055,7 @@ name|gimp_histogram_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Threshold Range:"
+literal|"Threshold Range"
 argument_list|)
 argument_list|)
 expr_stmt|;
