@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* this file contains code derived from:  *   * remote.c --- remote control of Netscape Navigator for Unix.  * version 1.1.3, for Netscape Navigator 1.1 and newer.  *  * Copyright © 1996 Netscape Communications Corporation, all rights reserved.  * Created: Jamie Zawinski<jwz@netscape.com>, 24-Dec-94.  *  * Permission to use, copy, modify, distribute, and sell this software and its  * documentation for any purpose is hereby granted without fee, provided that  * the above copyright notice appear in all copies and that both that  * copyright notice and this permission notice appear in supporting  * documentation.  No representations are made about the suitability of this  * software for any purpose.  It is provided "as is" without express or   * implied warranty.  */
+comment|/* This file contains code derived from:  *   * remote.c --- remote control of Netscape Navigator for Unix.  * version 1.1.3, for Netscape Navigator 1.1 and newer.  *  * Copyright © 1996 Netscape Communications Corporation, all rights reserved.  * Created: Jamie Zawinski<jwz@netscape.com>, 24-Dec-94.  *  * Permission to use, copy, modify, distribute, and sell this software and its  * documentation for any purpose is hereby granted without fee, provided that  * the above copyright notice appear in all copies and that both that  * copyright notice and this permission notice appear in supporting  * documentation.  No representations are made about the suitability of this  * software for any purpose.  It is provided "as is" without express or   * implied warranty.  */
 end_comment
 
 begin_comment
@@ -326,9 +326,7 @@ name|version
 argument_list|,
 literal|"toolbox"
 argument_list|)
-condition|)
-if|if
-condition|(
+operator|&&
 operator|!
 name|strcmp
 argument_list|(
@@ -506,7 +504,7 @@ parameter_list|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Could not connect to the Gimp. "
+literal|"Could not connect to the Gimp.\n"
 literal|"Make sure that the Toolbox is visible!\n"
 argument_list|)
 expr_stmt|;
@@ -810,14 +808,22 @@ name|gimp_x_window
 operator|==
 name|None
 condition|)
-name|g_error
+block|{
+name|g_printerr
 argument_list|(
-literal|"no gimp window found on display %s\n"
+literal|"No gimp window found on display %s\n"
 argument_list|,
 name|gdk_get_display
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|exit
+argument_list|(
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 name|gdk_drag_get_protocol
 argument_list|(
 name|gimp_x_window
@@ -832,11 +838,19 @@ name|protocol
 operator|!=
 name|GDK_DRAG_PROTO_XDND
 condition|)
-name|g_error
+block|{
+name|g_printerr
 argument_list|(
 literal|"Gimp-Window doesnt use Xdnd-Protocol - huh?\n"
 argument_list|)
 expr_stmt|;
+name|exit
+argument_list|(
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_window
 operator|=
 name|gdk_window_foreign_new
@@ -849,11 +863,19 @@ condition|(
 operator|!
 name|gimp_window
 condition|)
-name|g_error
+block|{
+name|g_printerr
 argument_list|(
 literal|"Couldn't create gdk_window for gimp_x_window\n"
 argument_list|)
 expr_stmt|;
+name|exit
+argument_list|(
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  Problem: If the Toolbox is hidden via Tab (gtk_widget_hide)      *  it does not accept DnD-Operations and gtk_main() will not be      *  terminated. If the Toolbox is simply unmapped (by the Windowmanager)      *  DnD works. But in both cases gdk_window_is_visible () == 0.... :-(       *  To work around this add a timeout and abort after 1.5 seconds.      */
 name|timeout
 operator|=
