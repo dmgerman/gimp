@@ -42,10 +42,10 @@ parameter_list|,
 name|GimpConvertDitherType
 name|dither
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha_dither
 parameter_list|,
-name|gint
+name|gboolean
 name|remove_dups
 parameter_list|,
 name|GimpConvertPaletteType

@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b04699a0103
+DECL|enum|__anon29c8bac00103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1430,7 +1430,7 @@ name|histogram
 decl_stmt|;
 comment|/* holds the histogram               */
 DECL|member|want_alpha_dither
-name|int
+name|gboolean
 name|want_alpha_dither
 decl_stmt|;
 DECL|member|error_freedom
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b04699a0208
+DECL|struct|__anon29c8bac00208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b04699a0308
+DECL|struct|__anon29c8bac00308
 block|{
 DECL|member|ncolors
 name|long
@@ -1544,6 +1544,7 @@ name|void
 name|zero_histogram_gray
 parameter_list|(
 name|CFHistogram
+name|histogram
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1554,6 +1555,7 @@ name|void
 name|zero_histogram_rgb
 parameter_list|(
 name|CFHistogram
+name|histogram
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1564,11 +1566,13 @@ name|void
 name|generate_histogram_gray
 parameter_list|(
 name|CFHistogram
+name|hostogram
 parameter_list|,
 name|GimpLayer
 modifier|*
+name|layer
 parameter_list|,
-name|int
+name|gboolean
 name|alpha_dither
 parameter_list|)
 function_decl|;
@@ -1580,14 +1584,16 @@ name|void
 name|generate_histogram_rgb
 parameter_list|(
 name|CFHistogram
+name|histogram
 parameter_list|,
 name|GimpLayer
 modifier|*
+name|layer
 parameter_list|,
-name|int
+name|gint
 name|col_limit
 parameter_list|,
-name|int
+name|gboolean
 name|alpha_dither
 parameter_list|)
 function_decl|;
@@ -1599,15 +1605,20 @@ name|QuantizeObj
 modifier|*
 name|initialize_median_cut
 parameter_list|(
-name|int
+name|GimpImageBaseType
+name|old_type
 parameter_list|,
-name|int
+name|gint
+name|num_cols
 parameter_list|,
 name|GimpConvertDitherType
+name|dither_type
 parameter_list|,
 name|GimpConvertPaletteType
+name|palette_type
 parameter_list|,
-name|int
+name|gboolean
+name|alpha_dither
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1682,7 +1693,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b04699a0408
+DECL|struct|__anon29c8bac00408
 block|{
 DECL|member|used_count
 name|signed
@@ -2725,7 +2736,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_convert (GimpImage * gimage,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gint alpha_dither,gint remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette)
+DECL|function|gimp_image_convert (GimpImage * gimage,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette)
 name|gimp_image_convert
 parameter_list|(
 name|GimpImage
@@ -2742,10 +2753,10 @@ parameter_list|,
 name|GimpConvertDitherType
 name|dither
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha_dither
 parameter_list|,
-name|gint
+name|gboolean
 name|remove_dups
 parameter_list|,
 name|GimpConvertPaletteType
@@ -2939,7 +2950,7 @@ name|gint
 name|i
 decl_stmt|;
 comment|/* fprintf(stderr, " TO INDEXED(%d) ", num_cols); */
-comment|/* don't dither if the input is grayscale and we are simply          mapping every color */
+comment|/* don't dither if the input is grayscale and we are simply        * mapping every color        */
 if|if
 condition|(
 name|old_type
@@ -3082,22 +3093,16 @@ block|}
 block|}
 if|if
 condition|(
-operator|(
 name|old_type
 operator|==
 name|GIMP_RGB
-operator|)
 operator|&&
-operator|(
 operator|!
 name|needs_quantize
-operator|)
 operator|&&
-operator|(
 name|palette_type
 operator|==
 name|GIMP_MAKE_PALETTE
-operator|)
 condition|)
 block|{
 comment|/* If this is an RGB image, and the user wanted a custom-built            *  generated palette, and this image has no more colours than            *  the user asked for, we don't need the first pass (quantization).            *            * There's also no point in dithering, since there's no error to            *  spread.  So we destroy the old quantobj and make a new one            *  with the remapping function set to a special LUT-based            *  no-dither remapper.            */
@@ -4862,7 +4867,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_histogram_gray (CFHistogram histogram,GimpLayer * layer,int alpha_dither)
+DECL|function|generate_histogram_gray (CFHistogram histogram,GimpLayer * layer,gboolean alpha_dither)
 name|generate_histogram_gray
 parameter_list|(
 name|CFHistogram
@@ -4872,7 +4877,7 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gboolean
 name|alpha_dither
 parameter_list|)
 block|{
@@ -5002,7 +5007,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_histogram_rgb (CFHistogram histogram,GimpLayer * layer,int col_limit,int alpha_dither)
+DECL|function|generate_histogram_rgb (CFHistogram histogram,GimpLayer * layer,gint col_limit,gboolean alpha_dither)
 name|generate_histogram_rgb
 parameter_list|(
 name|CFHistogram
@@ -5012,10 +5017,10 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gint
 name|col_limit
 parameter_list|,
-name|int
+name|gboolean
 name|alpha_dither
 parameter_list|)
 block|{
@@ -11222,7 +11227,7 @@ name|quantobj
 operator|->
 name|index_used_count
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha_dither
 init|=
 name|quantobj
@@ -11624,7 +11629,7 @@ decl_stmt|;
 name|gboolean
 name|has_alpha
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha_dither
 init|=
 name|quantobj
@@ -12115,7 +12120,7 @@ name|alpha_pix
 init|=
 name|ALPHA_PIX
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha_dither
 init|=
 name|quantobj
@@ -12580,7 +12585,7 @@ name|alpha_pix
 init|=
 name|ALPHA_PIX
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha_dither
 init|=
 name|quantobj
@@ -13160,7 +13165,7 @@ decl_stmt|;
 name|gboolean
 name|has_alpha
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha_dither
 init|=
 name|quantobj
@@ -14041,7 +14046,7 @@ name|offsetx
 decl_stmt|,
 name|offsety
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha_dither
 init|=
 name|quantobj
@@ -15205,7 +15210,7 @@ name|offsetx
 decl_stmt|,
 name|offsety
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha_dither
 init|=
 name|quantobj
@@ -16853,13 +16858,13 @@ begin_function
 specifier|static
 name|QuantizeObj
 modifier|*
-DECL|function|initialize_median_cut (int type,int num_colors,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,int want_alpha_dither)
+DECL|function|initialize_median_cut (GimpImageBaseType type,gint num_colors,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,gboolean want_alpha_dither)
 name|initialize_median_cut
 parameter_list|(
-name|int
+name|GimpImageBaseType
 name|type
 parameter_list|,
-name|int
+name|gint
 name|num_colors
 parameter_list|,
 name|GimpConvertDitherType
@@ -16868,7 +16873,7 @@ parameter_list|,
 name|GimpConvertPaletteType
 name|palette_type
 parameter_list|,
-name|int
+name|gboolean
 name|want_alpha_dither
 parameter_list|)
 block|{
@@ -17014,6 +17019,7 @@ name|palette_type
 operator|==
 name|GIMP_CUSTOM_PALETTE
 condition|)
+block|{
 switch|switch
 condition|(
 name|dither_type
@@ -17105,7 +17111,9 @@ name|median_cut_pass2_fixed_dither_rgb
 expr_stmt|;
 break|break;
 block|}
+block|}
 else|else
+block|{
 switch|switch
 condition|(
 name|dither_type
@@ -17196,6 +17204,7 @@ operator|=
 name|median_cut_pass2_fixed_dither_gray
 expr_stmt|;
 break|break;
+block|}
 block|}
 break|break;
 case|case
@@ -17353,6 +17362,8 @@ name|median_cut_pass2_fixed_dither_rgb
 expr_stmt|;
 break|break;
 block|}
+break|break;
+default|default:
 break|break;
 block|}
 name|quantobj
