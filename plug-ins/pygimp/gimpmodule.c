@@ -1458,8 +1458,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Query_images (PyObject * self,PyObject * args)
-name|gimp_Query_images
+DECL|function|pygimp_query_images (PyObject * self,PyObject * args)
+name|pygimp_query_images
 parameter_list|(
 name|PyObject
 modifier|*
@@ -1553,8 +1553,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Install_procedure (PyObject * self,PyObject * args)
-name|gimp_Install_procedure
+DECL|function|pygimp_install_procedure (PyObject * self,PyObject * args)
+name|pygimp_install_procedure
 parameter_list|(
 name|PyObject
 modifier|*
@@ -1932,8 +1932,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Install_temp_proc (PyObject * self,PyObject * args)
-name|gimp_Install_temp_proc
+DECL|function|pygimp_install_temp_proc (PyObject * self,PyObject * args)
+name|pygimp_install_temp_proc
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2313,8 +2313,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Uninstall_temp_proc (PyObject * self,PyObject * args)
-name|gimp_Uninstall_temp_proc
+DECL|function|pygimp_uninstall_temp_proc (PyObject * self,PyObject * args)
+name|pygimp_uninstall_temp_proc
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2365,8 +2365,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Register_magic_load_handler (PyObject * self,PyObject * args)
-name|gimp_Register_magic_load_handler
+DECL|function|pygimp_register_magic_load_handler (PyObject * self,PyObject * args)
+name|pygimp_register_magic_load_handler
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2441,8 +2441,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Register_load_handler (PyObject * self,PyObject * args)
-name|gimp_Register_load_handler
+DECL|function|pygimp_register_load_handler (PyObject * self,PyObject * args)
+name|pygimp_register_load_handler
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2509,8 +2509,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Register_save_handler (PyObject * self,PyObject * args)
-name|gimp_Register_save_handler
+DECL|function|pygimp_register_save_handler (PyObject * self,PyObject * args)
+name|pygimp_register_save_handler
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2577,8 +2577,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Gamma (PyObject * self,PyObject * args)
-name|gimp_Gamma
+DECL|function|pygimp_gamma (PyObject * self,PyObject * args)
+name|pygimp_gamma
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2616,8 +2616,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Install_cmap (PyObject * self,PyObject * args)
-name|gimp_Install_cmap
+DECL|function|pygimp_install_cmap (PyObject * self,PyObject * args)
+name|pygimp_install_cmap
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2655,8 +2655,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Gtkrc (PyObject * self,PyObject * args)
-name|gimp_Gtkrc
+DECL|function|pygimp_gtkrc (PyObject * self,PyObject * args)
+name|pygimp_gtkrc
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2694,8 +2694,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Get_background (PyObject * self,PyObject * args)
-name|gimp_Get_background
+DECL|function|pygimp_get_background (PyObject * self,PyObject * args)
+name|pygimp_get_background
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2778,8 +2778,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Get_foreground (PyObject * self,PyObject * args)
-name|gimp_Get_foreground
+DECL|function|pygimp_get_foreground (PyObject * self,PyObject * args)
+name|pygimp_get_foreground
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2862,8 +2862,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Set_background (PyObject * self,PyObject * args)
-name|gimp_Set_background
+DECL|function|pygimp_set_background (PyObject * self,PyObject * args)
+name|pygimp_set_background
 parameter_list|(
 name|PyObject
 modifier|*
@@ -2963,8 +2963,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Set_foreground (PyObject * self,PyObject * args)
-name|gimp_Set_foreground
+DECL|function|pygimp_set_foreground (PyObject * self,PyObject * args)
+name|pygimp_set_foreground
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3064,8 +3064,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Gradients_get_list (PyObject * self,PyObject * args)
-name|gimp_Gradients_get_list
+DECL|function|pygimp_gradients_get_list (PyObject * self,PyObject * args)
+name|pygimp_gradients_get_list
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3161,8 +3161,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Gradients_get_gradient (PyObject * self,PyObject * args)
-name|gimp_Gradients_get_gradient
+DECL|function|pygimp_gradients_get_gradient (PyObject * self,PyObject * args)
+name|pygimp_gradients_get_gradient
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3200,8 +3200,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Gradients_set_gradient (PyObject * self,PyObject * args)
-name|gimp_Gradients_set_gradient
+DECL|function|pygimp_gradients_set_gradient (PyObject * self,PyObject * args)
+name|pygimp_gradients_set_gradient
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3252,8 +3252,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Gradients_sample_uniform (PyObject * self,PyObject * args)
-name|gimp_Gradients_sample_uniform
+DECL|function|pygimp_gradients_sample_uniform (PyObject * self,PyObject * args)
+name|pygimp_gradients_sample_uniform
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3383,8 +3383,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Gradients_sample_custom (PyObject * self,PyObject * args)
-name|gimp_Gradients_sample_custom
+DECL|function|pygimp_gradients_sample_custom (PyObject * self,PyObject * args)
+name|pygimp_gradients_sample_custom
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3622,8 +3622,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_delete (PyObject * self,PyObject * args)
-name|gimp_delete
+DECL|function|pygimp_delete (PyObject * self,PyObject * args)
+name|pygimp_delete
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3728,8 +3728,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Displays_flush (PyObject * self,PyObject * args)
-name|gimp_Displays_flush
+DECL|function|pygimp_displays_flush (PyObject * self,PyObject * args)
+name|pygimp_displays_flush
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3771,8 +3771,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Tile_cache_size (PyObject * self,PyObject * args)
-name|gimp_Tile_cache_size
+DECL|function|pygimp_tile_cache_size (PyObject * self,PyObject * args)
+name|pygimp_tile_cache_size
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3823,8 +3823,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Tile_cache_ntiles (PyObject * self,PyObject * args)
-name|gimp_Tile_cache_ntiles
+DECL|function|pygimp_tile_cache_ntiles (PyObject * self,PyObject * args)
+name|pygimp_tile_cache_ntiles
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3875,8 +3875,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Tile_width (PyObject * self,PyObject * args)
-name|gimp_Tile_width
+DECL|function|pygimp_tile_width (PyObject * self,PyObject * args)
+name|pygimp_tile_width
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3913,8 +3913,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Tile_height (PyObject * self,PyObject * args)
-name|gimp_Tile_height
+DECL|function|pygimp_tile_height (PyObject * self,PyObject * args)
+name|pygimp_tile_height
 parameter_list|(
 name|PyObject
 modifier|*
@@ -3970,8 +3970,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Extension_ack (PyObject * self,PyObject * args)
-name|gimp_Extension_ack
+DECL|function|pygimp_extension_ack (PyObject * self,PyObject * args)
+name|pygimp_extension_ack
 parameter_list|(
 name|PyObject
 modifier|*
@@ -4013,8 +4013,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Extension_process (PyObject * self,PyObject * args)
-name|gimp_Extension_process
+DECL|function|pygimp_extension_process (PyObject * self,PyObject * args)
+name|pygimp_extension_process
 parameter_list|(
 name|PyObject
 modifier|*
@@ -4135,8 +4135,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Parasite_find (PyObject * self,PyObject * args)
-name|gimp_Parasite_find
+DECL|function|pygimp_parasite_find (PyObject * self,PyObject * args)
+name|pygimp_parasite_find
 parameter_list|(
 name|PyObject
 modifier|*
@@ -4183,8 +4183,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Parasite_attach (PyObject * self,PyObject * args)
-name|gimp_Parasite_attach
+DECL|function|pygimp_parasite_attach (PyObject * self,PyObject * args)
+name|pygimp_parasite_attach
 parameter_list|(
 name|PyObject
 modifier|*
@@ -4240,8 +4240,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Attach_new_parasite (PyObject * self,PyObject * args)
-name|gimp_Attach_new_parasite
+DECL|function|pygimp_attach_new_parasite (PyObject * self,PyObject * args)
+name|pygimp_attach_new_parasite
 parameter_list|(
 name|PyObject
 modifier|*
@@ -4315,8 +4315,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Parasite_detach (PyObject * self,PyObject * args)
-name|gimp_Parasite_detach
+DECL|function|pygimp_parasite_detach (PyObject * self,PyObject * args)
+name|pygimp_parasite_detach
 parameter_list|(
 name|PyObject
 modifier|*
@@ -4367,8 +4367,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Default_display (PyObject * self,PyObject * args)
-name|gimp_Default_display
+DECL|function|pygimp_default_display (PyObject * self,PyObject * args)
+name|pygimp_default_display
 parameter_list|(
 name|PyObject
 modifier|*
@@ -4663,7 +4663,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Query_images
+name|pygimp_query_images
 block|,
 name|METH_VARARGS
 block|}
@@ -4674,7 +4674,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Install_procedure
+name|pygimp_install_procedure
 block|,
 name|METH_VARARGS
 block|}
@@ -4685,7 +4685,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Install_temp_proc
+name|pygimp_install_temp_proc
 block|,
 name|METH_VARARGS
 block|}
@@ -4696,7 +4696,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Uninstall_temp_proc
+name|pygimp_uninstall_temp_proc
 block|,
 name|METH_VARARGS
 block|}
@@ -4707,7 +4707,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Register_magic_load_handler
+name|pygimp_register_magic_load_handler
 block|,
 name|METH_VARARGS
 block|}
@@ -4718,7 +4718,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Register_load_handler
+name|pygimp_register_load_handler
 block|,
 name|METH_VARARGS
 block|}
@@ -4729,7 +4729,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Register_save_handler
+name|pygimp_register_save_handler
 block|,
 name|METH_VARARGS
 block|}
@@ -4740,7 +4740,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Gamma
+name|pygimp_gamma
 block|,
 name|METH_VARARGS
 block|}
@@ -4751,7 +4751,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Install_cmap
+name|pygimp_install_cmap
 block|,
 name|METH_VARARGS
 block|}
@@ -4762,7 +4762,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Gtkrc
+name|pygimp_gtkrc
 block|,
 name|METH_VARARGS
 block|}
@@ -4773,7 +4773,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Get_background
+name|pygimp_get_background
 block|,
 name|METH_VARARGS
 block|}
@@ -4784,7 +4784,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Get_foreground
+name|pygimp_get_foreground
 block|,
 name|METH_VARARGS
 block|}
@@ -4795,7 +4795,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Set_background
+name|pygimp_set_background
 block|,
 name|METH_VARARGS
 block|}
@@ -4806,7 +4806,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Set_foreground
+name|pygimp_set_foreground
 block|,
 name|METH_VARARGS
 block|}
@@ -4817,7 +4817,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Gradients_get_list
+name|pygimp_gradients_get_list
 block|,
 name|METH_VARARGS
 block|}
@@ -4828,7 +4828,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Gradients_get_gradient
+name|pygimp_gradients_get_gradient
 block|,
 name|METH_VARARGS
 block|}
@@ -4839,7 +4839,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Gradients_set_gradient
+name|pygimp_gradients_set_gradient
 block|,
 name|METH_VARARGS
 block|}
@@ -4850,7 +4850,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Gradients_sample_uniform
+name|pygimp_gradients_sample_uniform
 block|,
 name|METH_VARARGS
 block|}
@@ -4861,7 +4861,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Gradients_sample_custom
+name|pygimp_gradients_sample_custom
 block|,
 name|METH_VARARGS
 block|}
@@ -4872,7 +4872,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_delete
+name|pygimp_delete
 block|,
 name|METH_VARARGS
 block|}
@@ -4883,7 +4883,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Displays_flush
+name|pygimp_displays_flush
 block|,
 name|METH_VARARGS
 block|}
@@ -4894,7 +4894,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Tile_cache_size
+name|pygimp_tile_cache_size
 block|,
 name|METH_VARARGS
 block|}
@@ -4905,7 +4905,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Tile_cache_ntiles
+name|pygimp_tile_cache_ntiles
 block|,
 name|METH_VARARGS
 block|}
@@ -4916,7 +4916,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Tile_width
+name|pygimp_tile_width
 block|,
 name|METH_VARARGS
 block|}
@@ -4927,7 +4927,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Tile_height
+name|pygimp_tile_height
 block|,
 name|METH_VARARGS
 block|}
@@ -4938,7 +4938,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Extension_ack
+name|pygimp_extension_ack
 block|,
 name|METH_VARARGS
 block|}
@@ -4949,7 +4949,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Extension_process
+name|pygimp_extension_process
 block|,
 name|METH_VARARGS
 block|}
@@ -4971,7 +4971,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Parasite_find
+name|pygimp_parasite_find
 block|,
 name|METH_VARARGS
 block|}
@@ -4982,7 +4982,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Parasite_attach
+name|pygimp_parasite_attach
 block|,
 name|METH_VARARGS
 block|}
@@ -4993,7 +4993,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Attach_new_parasite
+name|pygimp_attach_new_parasite
 block|,
 name|METH_VARARGS
 block|}
@@ -5004,7 +5004,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Parasite_detach
+name|pygimp_parasite_detach
 block|,
 name|METH_VARARGS
 block|}
@@ -5015,7 +5015,7 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Default_display
+name|pygimp_default_display
 block|,
 name|METH_VARARGS
 block|}
@@ -5450,6 +5450,20 @@ operator|*
 operator|)
 operator|&
 name|PyGimpImage_Type
+argument_list|)
+expr_stmt|;
+name|PyDict_SetItemString
+argument_list|(
+name|d
+argument_list|,
+literal|"Drawable"
+argument_list|,
+operator|(
+name|PyObject
+operator|*
+operator|)
+operator|&
+name|PyGimpDrawable_Type
 argument_list|)
 expr_stmt|;
 name|PyDict_SetItemString
