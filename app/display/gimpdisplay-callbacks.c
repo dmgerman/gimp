@@ -726,6 +726,11 @@ operator|!=
 name|gdisp
 operator|->
 name|ID
+operator|&&
+operator|!
+name|active_tool
+operator|->
+name|preserve
 condition|)
 name|tools_select
 argument_list|(
