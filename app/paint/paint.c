@@ -111,6 +111,11 @@ name|paint_type
 parameter_list|,
 name|GType
 name|paint_options_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blurb
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -265,7 +270,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|paint_register (Gimp * gimp,GType paint_type,GType paint_options_type)
+DECL|function|paint_register (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * blurb)
 name|paint_register
 parameter_list|(
 name|Gimp
@@ -277,6 +282,11 @@ name|paint_type
 parameter_list|,
 name|GType
 name|paint_options_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blurb
 parameter_list|)
 block|{
 name|GimpPaintInfo
@@ -314,6 +324,13 @@ name|paint_options_type
 argument_list|,
 name|GIMP_TYPE_PAINT_OPTIONS
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|blurb
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -435,6 +452,8 @@ argument_list|,
 name|paint_type
 argument_list|,
 name|paint_options_type
+argument_list|,
+name|blurb
 argument_list|,
 name|pdb_string
 argument_list|)

@@ -141,12 +141,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -165,7 +159,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a42bd340108
+DECL|struct|__anon2b9baa000108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -216,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a42bd340208
+DECL|struct|__anon2b9baa000208
 block|{
 DECL|member|clist
 name|GtkCList

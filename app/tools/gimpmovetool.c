@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"gimpmovetool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -930,11 +930,16 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|undo_push_image_guide
+name|gimp_image_undo_push_image_guide
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Guide"
+argument_list|)
 argument_list|,
 name|guide
 argument_list|)
@@ -2483,11 +2488,16 @@ name|disp
 operator|=
 name|gdisp
 expr_stmt|;
-name|undo_push_image_guide
+name|gimp_image_undo_push_image_guide
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Guide"
+argument_list|)
 argument_list|,
 name|move
 operator|->

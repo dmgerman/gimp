@@ -1199,6 +1199,11 @@ name|gimp_image_mask_select_channel
 argument_list|(
 name|gimage
 argument_list|,
+name|_
+argument_list|(
+literal|"Channel to Selection"
+argument_list|)
+argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
 name|viewable

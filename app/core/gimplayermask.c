@@ -60,18 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288840830103
+DECL|enum|__anon28e6d4e60103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED

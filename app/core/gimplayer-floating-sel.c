@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -735,9 +735,14 @@ operator|.
 name|drawable
 argument_list|)
 expr_stmt|;
-name|undo_push_fs_to_layer
+name|gimp_image_undo_push_fs_to_layer
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Floating Selection to Layer"
+argument_list|)
 argument_list|,
 name|layer
 argument_list|,
@@ -1552,7 +1557,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_rigor (GimpLayer * layer,gboolean undo)
+DECL|function|floating_sel_rigor (GimpLayer * layer,gboolean push_undo)
 name|floating_sel_rigor
 parameter_list|(
 name|GimpLayer
@@ -1560,21 +1565,9 @@ modifier|*
 name|layer
 parameter_list|,
 name|gboolean
-name|undo
+name|push_undo
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-decl_stmt|;
 comment|/*  store the affected area from the drawable in the backing store  */
 name|floating_sel_store
 argument_list|(
@@ -1619,40 +1612,10 @@ name|TRUE
 expr_stmt|;
 if|if
 condition|(
-name|undo
+name|push_undo
 condition|)
-name|undo_push_fs_rigor
+name|gimp_image_undo_push_fs_rigor
 argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|ID
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|floating_sel_relax (GimpLayer * layer,gboolean undo)
-name|floating_sel_relax
-parameter_list|(
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|,
-name|gboolean
-name|undo
-parameter_list|)
-block|{
-name|GimpImage
-modifier|*
-name|gimage
-init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -1660,7 +1623,28 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-decl_stmt|;
+argument_list|,
+name|NULL
+argument_list|,
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|floating_sel_relax (GimpLayer * layer,gboolean push_undo)
+name|floating_sel_relax
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|)
+block|{
 comment|/*  restore the contents of drawable the floating layer is attached to  */
 if|if
 condition|(
@@ -1715,18 +1699,21 @@ name|TRUE
 expr_stmt|;
 if|if
 condition|(
-name|undo
+name|push_undo
 condition|)
-name|undo_push_fs_relax
+name|gimp_image_undo_push_fs_relax
 argument_list|(
-name|gimage
-argument_list|,
+name|gimp_item_get_image
+argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|ID
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|layer
 argument_list|)
 expr_stmt|;
 block|}
@@ -1734,7 +1721,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_composite (GimpLayer * layer,gint x,gint y,gint w,gint h,gboolean undo)
+DECL|function|floating_sel_composite (GimpLayer * layer,gint x,gint y,gint w,gint h,gboolean push_undo)
 name|floating_sel_composite
 parameter_list|(
 name|GimpLayer
@@ -1754,7 +1741,7 @@ name|gint
 name|h
 parameter_list|,
 name|gboolean
-name|undo
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
@@ -2189,7 +2176,9 @@ argument_list|,
 operator|&
 name|fsPR
 argument_list|,
-name|undo
+name|push_undo
+argument_list|,
+name|NULL
 argument_list|,
 name|layer
 operator|->

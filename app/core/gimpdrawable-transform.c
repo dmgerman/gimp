@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"gimplayer-floating-sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -3252,9 +3252,14 @@ if|if
 condition|(
 name|layer
 condition|)
-name|undo_push_layer_mod
+name|gimp_image_undo_push_layer_mod
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Transform Layer"
+argument_list|)
 argument_list|,
 name|layer
 argument_list|)
@@ -3264,9 +3269,14 @@ if|if
 condition|(
 name|channel
 condition|)
-name|undo_push_channel_mod
+name|gimp_image_undo_push_channel_mod
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Transform Channel"
+argument_list|)
 argument_list|,
 name|channel
 argument_list|)

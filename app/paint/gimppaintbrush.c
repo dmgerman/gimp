@@ -93,6 +93,12 @@ directive|include
 file|"gimppaintoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -194,6 +200,11 @@ argument_list|,
 name|GIMP_TYPE_PAINTBRUSH
 argument_list|,
 name|GIMP_TYPE_PAINT_OPTIONS
+argument_list|,
+name|_
+argument_list|(
+literal|"Paintbrush"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

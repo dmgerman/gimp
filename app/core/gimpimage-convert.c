@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplist.h"
 end_include
 
@@ -127,12 +133,6 @@ begin_include
 include|#
 directive|include
 file|"gimppalette.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -411,7 +411,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29a5510b0103
+DECL|enum|__anon289140e30103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1439,7 +1439,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a5510b0208
+DECL|struct|__anon289140e30208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1516,7 +1516,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a5510b0308
+DECL|struct|__anon289140e30308
 block|{
 DECL|member|ncolors
 name|long
@@ -1676,7 +1676,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a5510b0408
+DECL|struct|__anon289140e30408
 block|{
 DECL|member|used_count
 name|signed
@@ -2684,6 +2684,13 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+init|=
+name|NULL
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|gimage
@@ -2722,16 +2729,52 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|new_type
+condition|)
+block|{
+case|case
+name|GIMP_RGB
+case|:
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Convert Image to RGB"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_GRAY
+case|:
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Convert Image to Grayscale"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_INDEXED
+case|:
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Convert Image to Indexed"
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
 name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_CONVERT
 argument_list|,
-name|_
-argument_list|(
-literal|"Convert"
-argument_list|)
+name|undo_desc
 argument_list|)
 expr_stmt|;
 comment|/*  Relax the floating selection  */
@@ -2747,9 +2790,11 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Push the image type to the stack  */
-name|undo_push_image_type
+name|gimp_image_undo_push_image_type
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Set the new base type  */
@@ -3229,9 +3274,11 @@ default|default:
 break|break;
 block|}
 comment|/*  Push the layer onto the undo stack  */
-name|undo_push_layer_mod
+name|gimp_image_undo_push_layer_mod
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|,
 name|layer
 argument_list|)

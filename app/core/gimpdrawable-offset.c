@@ -87,6 +87,12 @@ directive|include
 file|"gimpimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 name|void
 DECL|function|gimp_drawable_offset (GimpDrawable * drawable,gboolean wrap_around,GimpOffsetType fill_type,gint offset_x,gint offset_y)
@@ -1403,6 +1409,11 @@ comment|/*  push an undo  */
 name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
+argument_list|,
+name|_
+argument_list|(
+literal|"Offset Drawable"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

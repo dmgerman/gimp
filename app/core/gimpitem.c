@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpitem.h"
 end_include
 
@@ -114,18 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a58f1e10103
+DECL|enum|__anon2b789cb00103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -1790,11 +1790,13 @@ literal|"Attach Parasite"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|undo_push_item_parasite
+name|gimp_image_undo_push_item_parasite
 argument_list|(
 name|item
 operator|->
 name|gimage
+argument_list|,
+name|NULL
 argument_list|,
 name|item
 argument_list|,
@@ -1827,7 +1829,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|undo_push_cantundo
+name|gimp_image_undo_push_cantundo
 argument_list|(
 name|item
 operator|->
@@ -1835,7 +1837,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"parasite attached to item"
+literal|"Attach Parasite to Item"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1978,11 +1980,16 @@ name|parasite
 argument_list|)
 condition|)
 block|{
-name|undo_push_item_parasite_remove
+name|gimp_image_undo_push_item_parasite_remove
 argument_list|(
 name|item
 operator|->
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Remove Parasite from Item"
+argument_list|)
 argument_list|,
 name|item
 argument_list|,
@@ -2002,7 +2009,7 @@ name|parasite
 argument_list|)
 condition|)
 block|{
-name|undo_push_cantundo
+name|gimp_image_undo_push_cantundo
 argument_list|(
 name|item
 operator|->
@@ -2010,7 +2017,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"parasite detached from item"
+literal|"Remove Parasite from Item"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -1095,6 +1101,11 @@ condition|)
 name|gimp_image_mask_select_polygon
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Free Select"
+argument_list|)
 argument_list|,
 name|num_segs
 argument_list|,

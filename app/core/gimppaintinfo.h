@@ -116,6 +116,11 @@ DECL|member|paint_options_type
 name|GType
 name|paint_options_type
 decl_stmt|;
+DECL|member|blurb
+name|gchar
+modifier|*
+name|blurb
+decl_stmt|;
 DECL|member|pdb_string
 name|gchar
 modifier|*
@@ -167,6 +172,11 @@ name|paint_type
 parameter_list|,
 name|GType
 name|paint_options_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blurb
 parameter_list|,
 specifier|const
 name|gchar

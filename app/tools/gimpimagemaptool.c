@@ -684,6 +684,10 @@ name|GimpImageMapTool
 modifier|*
 name|image_map_tool
 decl_stmt|;
+name|GimpToolInfo
+modifier|*
+name|tool_info
+decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -694,6 +698,12 @@ name|GIMP_IMAGE_MAP_TOOL
 argument_list|(
 name|tool
 argument_list|)
+expr_stmt|;
+name|tool_info
+operator|=
+name|tool
+operator|->
+name|tool_info
 expr_stmt|;
 comment|/*  set gdisp so the dialog can be hidden on display destruction  */
 name|tool
@@ -710,10 +720,6 @@ operator|->
 name|shell
 condition|)
 block|{
-name|GimpToolInfo
-modifier|*
-name|tool_info
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|shell
@@ -726,12 +732,6 @@ name|GtkWidget
 modifier|*
 name|toggle
 decl_stmt|;
-name|tool_info
-operator|=
-name|tool
-operator|->
-name|tool_info
-expr_stmt|;
 name|image_map_tool
 operator|->
 name|shell
@@ -966,6 +966,10 @@ argument_list|(
 name|TRUE
 argument_list|,
 name|drawable
+argument_list|,
+name|tool_info
+operator|->
+name|blurb
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

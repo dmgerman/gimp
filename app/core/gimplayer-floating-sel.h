@@ -130,7 +130,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|gboolean
-name|undo
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -144,7 +144,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|gboolean
-name|undo
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -170,7 +170,7 @@ name|gint
 name|h
 parameter_list|,
 name|gboolean
-name|undo
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

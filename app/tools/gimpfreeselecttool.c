@@ -874,6 +874,8 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -890,6 +892,12 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|blurb
 argument_list|,
 name|free_sel
 operator|->

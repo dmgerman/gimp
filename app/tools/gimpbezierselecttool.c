@@ -186,12 +186,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -292,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7aaa20108
+DECL|struct|__anon2797b9b60108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -328,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7aaa20208
+DECL|struct|__anon2797b9b60208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -383,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7aaa20308
+DECL|struct|__anon2797b9b60308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -11300,6 +11294,12 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|blurb
 argument_list|,
 name|bezier_sel
 operator|->

@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -795,6 +789,8 @@ condition|)
 name|gimp_image_mask_clear
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  if there's a drawable, add a new floating selection  */
@@ -1221,6 +1217,11 @@ name|bufPR
 argument_list|,
 name|TRUE
 argument_list|,
+name|_
+argument_list|(
+literal|"Clear"
+argument_list|)
+argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_ERASE_MODE
@@ -1599,6 +1600,11 @@ operator|&
 name|bufPR
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Fill"
+argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,

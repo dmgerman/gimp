@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -132,18 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5f1e6d0103
+DECL|enum|__anon2b1972fd0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2320,9 +2320,14 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|undo_push_layer_mask_add
+name|gimp_image_undo_push_layer_mask_add
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Mask to Layer"
+argument_list|)
 argument_list|,
 name|layer
 argument_list|,
@@ -3051,9 +3056,11 @@ literal|"Apply Layer Mask"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|undo_push_layer_mask_remove
+name|gimp_image_undo_push_layer_mask_remove
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|,
 name|layer
 argument_list|,
@@ -3130,6 +3137,8 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 literal|0
 argument_list|,
@@ -3261,13 +3270,11 @@ if|if
 condition|(
 name|push_undo
 condition|)
-block|{
 name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  If applying actually changed the view  */
 if|if
 condition|(
@@ -3365,7 +3372,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  the undo call goes here  */
-name|undo_push_layer_displace
+name|gimp_image_undo_push_layer_displace
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -3373,6 +3380,11 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Move Layer"
 argument_list|)
 argument_list|,
 name|layer
@@ -3657,7 +3669,7 @@ name|destPR
 argument_list|)
 expr_stmt|;
 comment|/*  Push the layer on the undo stack  */
-name|undo_push_layer_mod
+name|gimp_image_undo_push_layer_mod
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -3665,6 +3677,11 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Alpha Channel"
 argument_list|)
 argument_list|,
 name|layer
@@ -3929,7 +3946,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Push the layer on the undo stack  */
-name|undo_push_layer_mod
+name|gimp_image_undo_push_layer_mod
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -3937,6 +3954,11 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Scale Layer"
 argument_list|)
 argument_list|,
 name|layer
@@ -4971,7 +4993,7 @@ name|destPR
 argument_list|)
 expr_stmt|;
 comment|/*  Push the layer on the undo stack  */
-name|undo_push_layer_mod
+name|gimp_image_undo_push_layer_mod
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -4979,6 +5001,11 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Resize Layer"
 argument_list|)
 argument_list|,
 name|layer

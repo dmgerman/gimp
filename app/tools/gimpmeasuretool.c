@@ -89,6 +89,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -132,12 +138,6 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -1076,11 +1076,16 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_image_guide
+name|gimp_image_undo_push_image_guide
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Horizontal Guide"
+argument_list|)
 argument_list|,
 name|guide
 argument_list|)
@@ -1120,11 +1125,16 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_image_guide
+name|gimp_image_undo_push_image_guide
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Vertical Guide"
+argument_list|)
 argument_list|,
 name|guide
 argument_list|)

@@ -109,6 +109,12 @@ directive|include
 file|"core/gimplayermask.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|drawable_merge_shadow_proc
 specifier|static
@@ -574,6 +580,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|undo
+argument_list|,
+name|_
+argument_list|(
+literal|"Plug-In"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

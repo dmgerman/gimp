@@ -165,6 +165,11 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -204,6 +209,11 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_name
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -109,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -974,6 +974,8 @@ name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
 argument_list|,
+name|NULL
+argument_list|,
 name|x1
 argument_list|,
 name|y1
@@ -1169,6 +1171,8 @@ comment|/*  Clear the region  */
 name|gimp_image_mask_clear
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Update the region  */
@@ -1606,12 +1610,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_push_undo (GimpImage * gimage)
+DECL|function|gimp_image_mask_push_undo (GimpImage * gimage,const gchar * undo_desc)
 name|gimp_image_mask_push_undo
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 block|{
 name|GimpChannel
@@ -1633,9 +1642,11 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_mask
+name|gimp_image_undo_push_mask
 argument_list|(
 name|gimage
+argument_list|,
+name|undo_desc
 argument_list|,
 name|mask
 argument_list|)
@@ -1675,6 +1686,11 @@ expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Feather Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_feather
@@ -1720,6 +1736,11 @@ expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Sharpen Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_sharpen
@@ -1742,12 +1763,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_clear (GimpImage * gimage)
+DECL|function|gimp_image_mask_clear (GimpImage * gimage,const gchar * undo_desc)
 name|gimp_image_mask_clear
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1758,9 +1784,23 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|undo_desc
+condition|)
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Select None"
+argument_list|)
+expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|undo_desc
 argument_list|)
 expr_stmt|;
 name|gimp_channel_clear
@@ -1802,6 +1842,11 @@ expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Select All"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_all
@@ -1843,6 +1888,11 @@ expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Invert Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_invert
@@ -1890,6 +1940,11 @@ expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Border Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_border
@@ -1941,6 +1996,11 @@ expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Grow Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_grow
@@ -1995,6 +2055,11 @@ expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Shrink Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_shrink
@@ -2054,6 +2119,11 @@ expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Selection from Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  load the specified channel to the gimage mask  */
@@ -2104,6 +2174,11 @@ expr_stmt|;
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Translate Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_translate
@@ -2172,6 +2247,11 @@ block|{
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Selection from Alpha"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  load the mask with the given layer's alpha channel  */
@@ -2250,6 +2330,11 @@ block|{
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Selection from Mask"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  load the mask with the given layer's mask  */

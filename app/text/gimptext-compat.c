@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -309,6 +303,8 @@ condition|)
 name|gimp_image_mask_clear
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  If the drawable is NULL, create a new layer  */

@@ -1628,6 +1628,11 @@ parameter_list|,
 name|gboolean
 name|push_undo
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
@@ -1665,6 +1670,11 @@ name|src2PR
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|,
 name|gdouble
 name|opacity

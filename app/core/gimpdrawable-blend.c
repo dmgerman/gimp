@@ -105,6 +105,12 @@ directive|include
 file|"gimpimage-mask.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 DECL|typedef|BlendRepeatFunc
 typedef|typedef
@@ -122,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8f1cc0108
+DECL|struct|__anon2c4868f20108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -179,7 +185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8f1cc0208
+DECL|struct|__anon2c4868f20208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -952,6 +958,11 @@ operator|&
 name|bufPR
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Blend"
+argument_list|)
 argument_list|,
 name|opacity
 argument_list|,

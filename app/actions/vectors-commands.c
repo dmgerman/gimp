@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplist.h"
 end_include
 
@@ -145,12 +151,6 @@ begin_include
 include|#
 directive|include
 file|"vectors-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -1947,11 +1947,16 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|undo_push_item_rename
+name|gimp_image_undo_push_item_rename
 argument_list|(
 name|options
 operator|->
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Rename Path"
+argument_list|)
 argument_list|,
 name|GIMP_ITEM
 argument_list|(

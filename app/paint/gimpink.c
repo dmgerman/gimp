@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -127,12 +133,6 @@ begin_include
 include|#
 directive|include
 file|"gimpinktool-blob.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -2863,6 +2863,11 @@ name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
 argument_list|,
+name|_
+argument_list|(
+literal|"Ink"
+argument_list|)
+argument_list|,
 name|ink_tool
 operator|->
 name|x1
@@ -3168,7 +3173,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c9998be0103
+DECL|enum|__anon2c05638e0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4288,6 +4293,8 @@ operator|&
 name|srcPR
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_context_get_opacity
 argument_list|(

@@ -2025,6 +2025,12 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|blurb
+argument_list|,
 name|iscissors
 operator|->
 name|mask

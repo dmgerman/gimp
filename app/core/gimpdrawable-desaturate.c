@@ -45,6 +45,12 @@ directive|include
 file|"gimpimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 name|void
 DECL|function|gimp_drawable_desaturate (GimpDrawable * drawable)
@@ -404,6 +410,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Desaturate"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update

@@ -1154,6 +1154,8 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -1176,15 +1178,6 @@ operator|=
 name|y1
 operator|+
 name|h
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"rect_select: %d x %d\n"
-argument_list|,
-name|w
-argument_list|,
-name|h
-argument_list|)
 expr_stmt|;
 name|gimp_rect_select_tool_rect_select
 argument_list|(

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -200,9 +200,11 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Push the image size to the stack  */
-name|undo_push_image_size
+name|gimp_image_undo_push_image_size
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Set the new width and height  */
@@ -309,9 +311,11 @@ block|{
 case|case
 name|GIMP_ORIENTATION_HORIZONTAL
 case|:
-name|undo_push_image_guide
+name|gimp_image_undo_push_image_guide
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|,
 name|guide
 argument_list|)
@@ -347,9 +351,11 @@ break|break;
 case|case
 name|GIMP_ORIENTATION_VERTICAL
 case|:
-name|undo_push_image_guide
+name|gimp_image_undo_push_image_guide
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|,
 name|guide
 argument_list|)

@@ -75,6 +75,12 @@ directive|include
 file|"gimpconvolveoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|FIELD_COLS
 define|#
@@ -132,7 +138,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2b3c1d0103
+DECL|enum|__anon2bc48fa60103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -533,6 +539,11 @@ argument_list|,
 name|GIMP_TYPE_CONVOLVE
 argument_list|,
 name|GIMP_TYPE_CONVOLVE_OPTIONS
+argument_list|,
+name|_
+argument_list|(
+literal|"Convolve"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

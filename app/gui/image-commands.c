@@ -132,19 +132,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb5e450108
+DECL|struct|__anon2be03bf90108
 block|{
 DECL|member|resize
 name|Resize

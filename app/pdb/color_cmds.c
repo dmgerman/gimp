@@ -145,6 +145,12 @@ directive|include
 file|"core/gimpimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|brightness_contrast_proc
 specifier|static
@@ -637,6 +643,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Brightness-Contrast"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -1217,6 +1228,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Levels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -1610,6 +1626,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Posterize"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -2580,6 +2601,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Curves"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -3046,6 +3072,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Curves"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -3557,6 +3588,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Color Balance"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -4752,6 +4788,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Hue-Saturation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -5153,6 +5194,11 @@ argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Threshold"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update

@@ -266,6 +266,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
 name|gint
 name|x1
 parameter_list|,
@@ -298,6 +303,11 @@ name|drawable
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 function_decl|;
 end_function_decl

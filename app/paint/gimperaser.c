@@ -69,6 +69,12 @@ directive|include
 file|"gimperaseroptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -170,6 +176,11 @@ argument_list|,
 name|GIMP_TYPE_ERASER
 argument_list|,
 name|GIMP_TYPE_ERASER_OPTIONS
+argument_list|,
+name|_
+argument_list|(
+literal|"Eraser"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

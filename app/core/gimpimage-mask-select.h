@@ -97,6 +97,11 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
 name|gint
 name|n_points
 parameter_list|,
@@ -159,6 +164,11 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|,
 name|GimpChannel
 modifier|*

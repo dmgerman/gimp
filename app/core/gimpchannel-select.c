@@ -69,6 +69,12 @@ directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 name|void
 DECL|function|gimp_image_mask_select_rectangle (GimpImage * gimage,gint x,gint y,gint w,gint h,GimpChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
@@ -121,12 +127,22 @@ condition|)
 name|gimp_image_mask_clear
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Rectangular Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Rectangular Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  if feathering for rect, make a new mask with the    *  rectangle and feather that with the old mask    */
@@ -295,12 +311,22 @@ condition|)
 name|gimp_image_mask_clear
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Ellipse Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Ellipse Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  if feathering for rect, make a new mask with the    *  rectangle and feather that with the old mask    */
@@ -420,12 +446,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_polygon (GimpImage * gimage,gint n_points,GimpVector2 * points,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_polygon (GimpImage * gimage,const gchar * undo_name,gint n_points,GimpVector2 * points,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_polygon
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_name
 parameter_list|,
 name|gint
 name|n_points
@@ -476,12 +507,16 @@ condition|)
 name|gimp_image_mask_clear
 argument_list|(
 name|gimage
+argument_list|,
+name|undo_name
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|undo_name
 argument_list|)
 expr_stmt|;
 DECL|macro|SUPERSAMPLE
@@ -756,6 +791,11 @@ argument_list|)
 operator|->
 name|gimage
 argument_list|,
+name|_
+argument_list|(
+literal|"Selection from Path"
+argument_list|)
+argument_list|,
 name|coords
 operator|->
 name|len
@@ -791,12 +831,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_channel (GimpImage * gimage,GimpChannel * channel,gint offset_x,gint offset_y,GimpChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_channel (GimpImage * gimage,const gchar * undo_desc,GimpChannel * channel,gint offset_x,gint offset_y,GimpChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -847,12 +892,16 @@ condition|)
 name|gimp_image_mask_clear
 argument_list|(
 name|gimage
+argument_list|,
+name|undo_desc
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
+argument_list|,
+name|undo_desc
 argument_list|)
 expr_stmt|;
 if|if
@@ -1018,6 +1067,11 @@ name|gimp_image_mask_select_channel
 argument_list|(
 name|gimage
 argument_list|,
+name|_
+argument_list|(
+literal|"Select Fuzzy"
+argument_list|)
+argument_list|,
 name|mask
 argument_list|,
 name|mask_x
@@ -1167,6 +1221,11 @@ block|}
 name|gimp_image_mask_select_channel
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Select by Color"
+argument_list|)
 argument_list|,
 name|mask
 argument_list|,

@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1325,6 +1319,11 @@ operator|&
 name|bufPR
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Bucket Fill"
+argument_list|)
 argument_list|,
 name|opacity
 argument_list|,

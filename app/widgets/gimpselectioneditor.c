@@ -1376,6 +1376,8 @@ argument_list|(
 name|editor
 operator|->
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

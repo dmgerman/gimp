@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -156,18 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d602470103
+DECL|enum|__anon276862b50103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1338,12 +1338,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_push_undo (GimpDrawable * drawable,gint x1,gint y1,gint x2,gint y2,TileManager * tiles,gboolean sparse)
+DECL|function|gimp_drawable_push_undo (GimpDrawable * drawable,const gchar * undo_desc,gint x1,gint y1,gint x2,gint y2,TileManager * tiles,gboolean sparse)
 name|gimp_drawable_push_undo
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|,
 name|gint
 name|x1
@@ -1378,7 +1383,7 @@ condition|(
 operator|!
 name|tiles
 condition|)
-name|undo_push_image
+name|gimp_image_undo_push_image
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -1387,6 +1392,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+argument_list|,
+name|undo_desc
 argument_list|,
 name|drawable
 argument_list|,
@@ -1400,7 +1407,7 @@ name|y2
 argument_list|)
 expr_stmt|;
 else|else
-name|undo_push_image_mod
+name|gimp_image_undo_push_image_mod
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -1409,6 +1416,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+argument_list|,
+name|undo_desc
 argument_list|,
 name|drawable
 argument_list|,
@@ -1430,7 +1439,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_merge_shadow (GimpDrawable * drawable,gboolean push_undo)
+DECL|function|gimp_drawable_merge_shadow (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc)
 name|gimp_drawable_merge_shadow
 parameter_list|(
 name|GimpDrawable
@@ -1439,6 +1448,11 @@ name|drawable
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 block|{
 name|GimpImage
@@ -1548,6 +1562,8 @@ operator|&
 name|shadowPR
 argument_list|,
 name|push_undo
+argument_list|,
+name|undo_desc
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,

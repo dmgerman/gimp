@@ -997,7 +997,13 @@ name|config
 operator|->
 name|undo_size
 expr_stmt|;
-comment|/*  keep at least undo_levels undo steps  */
+if|#
+directive|if
+literal|0
+block|g_print ("undo_steps: %d    undo_bytes: %d\n",            gimp_container_num_children (container),            gimp_object_get_memsize (GIMP_OBJECT (container)));
+endif|#
+directive|endif
+comment|/*  keep at least min_undo_levels undo steps  */
 if|if
 condition|(
 name|gimp_container_num_children
@@ -1041,6 +1047,12 @@ argument_list|,
 name|GIMP_UNDO_MODE_UNDO
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_print ("freed one step: undo_steps: %d    undo_bytes: %d\n",                gimp_container_num_children (container),                gimp_object_get_memsize (GIMP_OBJECT (container)));
+endif|#
+directive|endif
 name|gimp_image_undo_event
 argument_list|(
 name|gimage

@@ -81,6 +81,12 @@ directive|include
 file|"gimpdodgeburnoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -279,6 +285,11 @@ argument_list|,
 name|GIMP_TYPE_DODGE_BURN
 argument_list|,
 name|GIMP_TYPE_DODGE_BURN_OPTIONS
+argument_list|,
+name|_
+argument_list|(
+literal|"Dodge/Burn"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchannel.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"gimpparasitelist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -204,6 +204,11 @@ parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -810,12 +815,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_push_undo (GimpChannel * mask)
+DECL|function|gimp_channel_push_undo (GimpChannel * mask,const gchar * undo_desc)
 name|gimp_channel_push_undo
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 block|{
 name|GimpImage
@@ -839,9 +849,11 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|undo_push_mask
+name|gimp_image_undo_push_mask
 argument_list|(
 name|gimage
+argument_list|,
+name|undo_desc
 argument_list|,
 name|mask
 argument_list|)
@@ -1466,7 +1478,7 @@ name|interpolation_type
 argument_list|)
 expr_stmt|;
 comment|/*  Push the channel on the undo stack  */
-name|undo_push_channel_mod
+name|gimp_image_undo_push_channel_mod
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -1474,6 +1486,11 @@ name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Scale Channel"
 argument_list|)
 argument_list|,
 name|channel
@@ -1926,7 +1943,7 @@ name|destPR
 argument_list|)
 expr_stmt|;
 comment|/*  Push the channel on the undo stack  */
-name|undo_push_channel_mod
+name|gimp_image_undo_push_channel_mod
 argument_list|(
 name|gimp_item_get_image
 argument_list|(
@@ -1934,6 +1951,11 @@ name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Resize Channel"
 argument_list|)
 argument_list|,
 name|channel
@@ -5976,6 +5998,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Feather Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
@@ -6067,6 +6094,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Sharpen Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
@@ -6176,6 +6208,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Clear Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -6375,6 +6412,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Fill Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  clear the mask  */
@@ -6498,6 +6540,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Invert Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -6772,6 +6819,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Border Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
@@ -7045,6 +7097,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Grow Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  need full extents for grow, not! */
@@ -7270,6 +7327,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Shrink Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
@@ -7388,6 +7450,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Translate Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_bounds
@@ -7834,6 +7901,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Channel Load"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  copy the channel to the mask  */
@@ -7986,6 +8058,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Channel from Alpha"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  clear the mask if it is not already known to be empty  */
@@ -8269,6 +8346,11 @@ condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
+argument_list|,
+name|_
+argument_list|(
+literal|"Channel from Mask"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  clear the mask if it is not already known to be empty  */

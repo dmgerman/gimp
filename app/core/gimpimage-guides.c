@@ -39,12 +39,6 @@ directive|include
 file|"gimpimage-guides.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"undo.h"
-end_include
-
 begin_define
 DECL|macro|GUIDE_EPSILON
 define|#

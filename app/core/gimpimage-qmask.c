@@ -78,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayer-floating-sel.h"
+file|"gimpimage-undo-push.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"gimplayer-floating-sel.h"
 end_include
 
 begin_include
@@ -303,6 +303,8 @@ expr_stmt|;
 name|gimp_image_mask_clear
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Clear the selection */
@@ -347,9 +349,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_image_qmask
+name|gimp_image_undo_push_image_qmask
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
@@ -403,9 +407,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  push the undo here since removing the mask will                *  call the qmask_removed_callback() which will set                *  the qmask_state to FALSE                */
-name|undo_push_image_qmask
+name|gimp_image_undo_push_image_qmask
 argument_list|(
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

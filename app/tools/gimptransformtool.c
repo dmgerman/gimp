@@ -113,6 +113,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -161,25 +167,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptransformtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptransformoptions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
+file|"gimptransformtool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"gimptransformtool-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_manager.h"
 end_include
 
 begin_include
@@ -1296,6 +1302,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|tr_tool
+operator|->
+name|use_grid
+operator|&&
 operator|!
 name|tr_tool
 operator|->
@@ -2671,6 +2681,14 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|tr_tool
+operator|->
+name|use_grid
+condition|)
+return|return;
 name|options
 operator|=
 name|GIMP_TRANSFORM_OPTIONS
@@ -2685,14 +2703,6 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|tr_tool
-operator|->
-name|use_grid
-condition|)
-return|return;
 comment|/*  draw the bounding box  */
 name|gimp_draw_tool_draw_line
 argument_list|(
@@ -3289,10 +3299,11 @@ name|gimage
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|_
-argument_list|(
-literal|"Transform"
-argument_list|)
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|blurb
 argument_list|)
 expr_stmt|;
 comment|/* With the old UI, if original is NULL, then this is the    * first transformation. In the new UI, it is always so, right?    */
@@ -3399,11 +3410,13 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_transform
+name|gimp_transform_tool_push_undo
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|NULL
 argument_list|,
 name|tool
 operator|->

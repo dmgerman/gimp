@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -145,12 +151,6 @@ begin_include
 include|#
 directive|include
 file|"resize-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -3109,11 +3109,16 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
-name|undo_push_item_rename
+name|gimp_image_undo_push_item_rename
 argument_list|(
 name|options
 operator|->
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Rename Layer"
+argument_list|)
 argument_list|,
 name|GIMP_ITEM
 argument_list|(

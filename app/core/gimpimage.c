@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -186,12 +192,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2d03a0103
+DECL|enum|__anon2b4248420103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4596,9 +4596,14 @@ literal|1e-5
 operator|)
 condition|)
 block|{
-name|undo_push_image_resolution
+name|gimp_image_undo_push_image_resolution
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Change Image Reolution"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -4744,9 +4749,14 @@ operator|!=
 name|unit
 condition|)
 block|{
-name|undo_push_image_resolution
+name|gimp_image_undo_push_image_resolution
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Change Image Unit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -7345,7 +7355,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
+DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
 name|gimp_image_apply_image
 parameter_list|(
 name|GimpImage
@@ -7362,6 +7372,11 @@ name|src2PR
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|,
 name|gdouble
 name|opacity
@@ -7655,6 +7670,8 @@ name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
 argument_list|,
+name|undo_desc
+argument_list|,
 name|x1
 argument_list|,
 name|y1
@@ -7914,7 +7931,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_replace_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,gdouble opacity,PixelRegion * maskPR,gint x,gint y)
+DECL|function|gimp_image_replace_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,const gchar * undo_desc,gdouble opacity,PixelRegion * maskPR,gint x,gint y)
 name|gimp_image_replace_image
 parameter_list|(
 name|GimpImage
@@ -7931,6 +7948,11 @@ name|src2PR
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|,
 name|gdouble
 name|opacity
@@ -8226,6 +8248,8 @@ condition|)
 name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
+argument_list|,
+name|undo_desc
 argument_list|,
 name|x1
 argument_list|,
@@ -8802,9 +8826,14 @@ argument_list|(
 name|parasite
 argument_list|)
 condition|)
-name|undo_push_image_parasite
+name|gimp_image_undo_push_image_parasite
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Attach Paraite to Image"
+argument_list|)
 argument_list|,
 name|parasite
 argument_list|)
@@ -8905,9 +8934,14 @@ argument_list|(
 name|p
 argument_list|)
 condition|)
-name|undo_push_image_parasite_remove
+name|gimp_image_undo_push_image_parasite_remove
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Remove Parasite from Image"
+argument_list|)
 argument_list|,
 name|gimp_parasite_name
 argument_list|(
@@ -10919,9 +10953,14 @@ return|return
 name|FALSE
 return|;
 block|}
-name|undo_push_layer_add
+name|gimp_image_undo_push_layer_add
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Layer to Image"
+argument_list|)
 argument_list|,
 name|layer
 argument_list|,
@@ -11208,9 +11247,14 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|undo_push_layer_remove
+name|gimp_image_undo_push_layer_remove
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Remove Layer from Image"
+argument_list|)
 argument_list|,
 name|layer
 argument_list|,
@@ -12024,9 +12068,14 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|undo_push_layer_reposition
+name|gimp_image_undo_push_layer_reposition
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Reorder Layer"
+argument_list|)
 argument_list|,
 name|layer
 argument_list|)
@@ -12193,9 +12242,14 @@ return|return
 name|FALSE
 return|;
 block|}
-name|undo_push_channel_add
+name|gimp_image_undo_push_channel_add
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Channel to Image"
+argument_list|)
 argument_list|,
 name|channel
 argument_list|,
@@ -12372,9 +12426,14 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|undo_push_channel_remove
+name|gimp_image_undo_push_channel_remove
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Remove Layer from Image"
+argument_list|)
 argument_list|,
 name|channel
 argument_list|,
@@ -12789,9 +12848,14 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|undo_push_channel_reposition
+name|gimp_image_undo_push_channel_reposition
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Reorder Channel"
+argument_list|)
 argument_list|,
 name|channel
 argument_list|)
@@ -12939,9 +13003,14 @@ return|return
 name|FALSE
 return|;
 block|}
-name|undo_push_vectors_add
+name|gimp_image_undo_push_vectors_add
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Path to Image"
+argument_list|)
 argument_list|,
 name|vectors
 argument_list|,
@@ -13089,9 +13158,14 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|undo_push_vectors_remove
+name|gimp_image_undo_push_vectors_remove
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Remove Path from Image"
+argument_list|)
 argument_list|,
 name|vectors
 argument_list|,
@@ -13504,9 +13578,14 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|undo_push_vectors_reposition
+name|gimp_image_undo_push_vectors_reposition
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Reorder Path"
+argument_list|)
 argument_list|,
 name|vectors
 argument_list|)
