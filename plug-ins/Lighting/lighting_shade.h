@@ -2,57 +2,15 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|LIGHTINGSHADEH
+name|__LIGHTING_SHADE_H__
 end_ifndef
 
 begin_define
-DECL|macro|LIGHTINGSHADEH
+DECL|macro|__LIGHTING_SHADE_H__
 define|#
 directive|define
-name|LIGHTINGSHADEH
+name|__LIGHTING_SHADE_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lighting_main.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lighting_image.h"
-end_include
 
 begin_typedef
 DECL|typedef|get_ray_func
@@ -65,12 +23,12 @@ function_decl|)
 parameter_list|(
 name|GimpVector3
 modifier|*
+name|vector
 parameter_list|)
 function_decl|;
 end_typedef
 
 begin_function_decl
-specifier|extern
 name|GckRGB
 name|get_ray_color
 parameter_list|(
@@ -82,7 +40,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|GckRGB
 name|get_ray_color_no_bilinear
 parameter_list|(
@@ -94,7 +51,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|GckRGB
 name|get_ray_color_ref
 parameter_list|(
@@ -106,7 +62,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|GckRGB
 name|get_ray_color_no_bilinear_ref
 parameter_list|(
@@ -118,7 +73,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|precompute_init
 parameter_list|(
@@ -132,7 +86,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|precompute_normals
 parameter_list|(
@@ -152,6 +105,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __LIGHTING_SHADE_H__ */
+end_comment
 
 end_unit
 

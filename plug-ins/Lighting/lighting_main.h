@@ -12,24 +12,6 @@ directive|define
 name|__LIGHTING_MAIN_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
 begin_comment
 comment|/* Defines and stuff */
 end_comment
@@ -57,7 +39,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f570e50103
+DECL|enum|__anon2a1bd6230103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -78,7 +60,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f570e50203
+DECL|enum|__anon2a1bd6230203
 block|{
 DECL|enumerator|LINEAR_MAP
 name|LINEAR_MAP
@@ -97,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f570e50303
+DECL|enum|__anon2a1bd6230303
 block|{
 DECL|enumerator|IMAGE_BUMP
 name|IMAGE_BUMP
@@ -111,7 +93,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f570e50408
+DECL|struct|__anon2a1bd6230408
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -146,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f570e50508
+DECL|struct|__anon2a1bd6230508
 block|{
 DECL|member|type
 name|LightType
@@ -177,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f570e50608
+DECL|struct|__anon2a1bd6230608
 block|{
 DECL|member|drawable_id
 name|gint32
@@ -310,6 +292,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __LIGHTING_MAIN_H__ */
+end_comment
 
 end_unit
 

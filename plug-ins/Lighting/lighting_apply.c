@@ -14,6 +14,36 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gck/gck.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_main.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_image.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"lighting_shade.h"
 end_include
 
@@ -37,8 +67,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|init_compute (void)
 name|void
+DECL|function|init_compute (void)
 name|init_compute
 parameter_list|(
 name|void
@@ -46,83 +76,13 @@ parameter_list|)
 block|{ }
 end_function
 
-begin_function
-DECL|function|render (gdouble x,gdouble y,GckRGB * col)
-name|void
-name|render
-parameter_list|(
-name|gdouble
-name|x
-parameter_list|,
-name|gdouble
-name|y
-parameter_list|,
-name|GckRGB
-modifier|*
-name|col
-parameter_list|)
-block|{
-name|GimpVector3
-name|pos
-decl_stmt|;
-name|pos
-operator|=
-name|int_to_pos
-argument_list|(
-name|x
-argument_list|,
-name|y
-argument_list|)
-expr_stmt|;
-operator|*
-name|col
-operator|=
-call|(
-modifier|*
-name|ray_func
-call|)
-argument_list|(
-operator|&
-name|pos
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+begin_comment
+comment|/* static void render (gdouble  x, 	gdouble  y, 	GckRGB  *col) {   GimpVector3 pos;    pos=int_to_pos(x,y);    *col=(*ray_func)(&pos); }  static void show_progress (gint min, 	       gint max, 	       gint curr) {   gimp_progress_update ((gdouble)curr / (gdouble)max); } */
+end_comment
 
 begin_function
-DECL|function|show_progress (gint min,gint max,gint curr)
 name|void
-name|show_progress
-parameter_list|(
-name|gint
-name|min
-parameter_list|,
-name|gint
-name|max
-parameter_list|,
-name|gint
-name|curr
-parameter_list|)
-block|{
-name|gimp_progress_update
-argument_list|(
-operator|(
-name|gdouble
-operator|)
-name|curr
-operator|/
-operator|(
-name|gdouble
-operator|)
-name|max
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 DECL|function|compute_image (void)
-name|void
 name|compute_image
 parameter_list|(
 name|void
@@ -424,7 +384,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -647,7 +607,7 @@ name|row
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|row
 argument_list|)

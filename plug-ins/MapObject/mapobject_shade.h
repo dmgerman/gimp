@@ -2,57 +2,15 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|MAPOBJECTSHADEH
+name|__MAPOBJECT_SHADE_H__
 end_ifndef
 
 begin_define
-DECL|macro|MAPOBJECTSHADEH
+DECL|macro|__MAPOBJECT_SHADE_H__
 define|#
 directive|define
-name|MAPOBJECTSHADEH
+name|__MAPOBJECT_SHADE_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"mapobject_main.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"mapobject_image.h"
-end_include
 
 begin_typedef
 DECL|typedef|get_ray_color_func
@@ -78,7 +36,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-specifier|extern
 name|GckRGB
 name|get_ray_color_plane
 parameter_list|(
@@ -90,7 +47,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|GckRGB
 name|get_ray_color_sphere
 parameter_list|(
@@ -102,7 +58,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|GckRGB
 name|get_ray_color_box
 parameter_list|(
@@ -114,7 +69,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|GckRGB
 name|get_ray_color_cylinder
 parameter_list|(
@@ -126,7 +80,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|compute_bounding_box
 parameter_list|(
@@ -136,7 +89,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|vecmulmat
 parameter_list|(
@@ -158,7 +110,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|rotatemat
 parameter_list|(
@@ -179,7 +130,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|transpose_mat
 parameter_list|(
@@ -193,7 +143,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|matmul
 parameter_list|(
@@ -219,7 +168,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ident_mat
 parameter_list|(
@@ -236,6 +184,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __MAPOBJECT_SHADE_H__ */
+end_comment
 
 end_unit
 

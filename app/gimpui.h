@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimppixmap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpquerybox.h"
 end_include
 

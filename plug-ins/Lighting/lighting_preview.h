@@ -2,87 +2,15 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|LIGHTINGPREVIEWH
+name|__LIGHTING_PREVIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|LIGHTINGPREVIEWH
+DECL|macro|__LIGHTING_PREVIEW_H__
 define|#
 directive|define
-name|LIGHTINGPREVIEWH
+name|__LIGHTING_PREVIEW_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lighting_main.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lighting_ui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lighting_image.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lighting_apply.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lighting_shade.h"
-end_include
 
 begin_define
 DECL|macro|PREVIEW_WIDTH
@@ -103,7 +31,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8fb930108
+DECL|struct|__anon2910a8820108
 block|{
 DECL|member|x
 DECL|member|y
@@ -173,7 +101,6 @@ comment|/* ============================ */
 end_comment
 
 begin_function_decl
-specifier|extern
 name|void
 name|draw_preview_image
 parameter_list|(
@@ -184,7 +111,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|gint
 name|check_light_hit
 parameter_list|(
@@ -198,7 +124,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|update_light
 parameter_list|(
@@ -215,6 +140,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __LIGHTING_PREVIEW_H__ */
+end_comment
 
 end_unit
 

@@ -12,24 +12,6 @@ directive|define
 name|__MAPOBJECT_UI_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gck/gck.h>
-end_include
-
 begin_comment
 comment|/* Externally visible variables */
 end_comment

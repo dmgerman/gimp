@@ -14,6 +14,54 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gck/gck.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_main.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_ui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_image.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_apply.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_shade.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"lighting_preview.h"
 end_include
 
@@ -52,13 +100,17 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|xpostab
-DECL|variable|ypostab
 name|gdouble
 modifier|*
 name|xpostab
 init|=
 name|NULL
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|ypostab
+name|gdouble
 modifier|*
 name|ypostab
 init|=
@@ -68,6 +120,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|xpostab_size
+specifier|static
 name|gint
 name|xpostab_size
 init|=
@@ -83,6 +136,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|ypostab_size
+specifier|static
 name|gint
 name|ypostab_size
 init|=
@@ -100,6 +154,7 @@ comment|/* ====== */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|compute_preview (gint startx,gint starty,gint w,gint h)
 name|compute_preview
@@ -903,28 +958,61 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|blah (void)
-name|blah
-parameter_list|(
-name|void
-parameter_list|)
-block|{
+begin_comment
+comment|/* static void blah (void) { */
+end_comment
+
+begin_comment
 comment|/* First, compute the linear mapping (x,y,x+w,y+h) to (0,0,pw,ph) */
+end_comment
+
+begin_comment
 comment|/* ============================================================== */
+end_comment
+
+begin_comment
 comment|/*  realw=(p2.x-p1.x);   realh=(p2.y-p1.y);    for (xcnt=0;xcnt<pw;xcnt++)     xpostab[xcnt]=p1.x+realw*((double)xcnt/(double)pw);     for (ycnt=0;ycnt<ph;ycnt++)     ypostab[ycnt]=p1.y+realh*((double)ycnt/(double)ph); */
+end_comment
+
+begin_comment
 comment|/* Compute preview using the offset tables */
+end_comment
+
+begin_comment
 comment|/* ======================================= */
+end_comment
+
+begin_comment
 comment|/*  if (mapvals.transparent_background==TRUE)     gck_rgba_set(&background,0.0,0.0,0.0,0.0);   else     {       gimp_palette_get_background(&r,&g,&b);       background.r=(gdouble)r/255.0;       background.g=(gdouble)g/255.0;       background.b=(gdouble)b/255.0;       background.a=1.0;     }    gck_rgb_set(&lightcheck,0.75,0.75,0.75);   gck_rgb_set(&darkcheck, 0.50,0.50,0.50);   gck_vector3_set(&p2,-1.0,-1.0,0.0);    for (ycnt=0;ycnt<ph;ycnt++)     {       for (xcnt=0;xcnt<pw;xcnt++)         {           p1.x=xpostab[xcnt];           p1.y=ypostab[ycnt]; */
+end_comment
+
+begin_comment
 comment|/* If oldpos = newpos => same color, so skip shading */
+end_comment
+
+begin_comment
 comment|/* ================================================= */
+end_comment
+
+begin_comment
 comment|/*          p2=p1;           color=get_ray_color(&p1);            if (color.a<1.0)             {               f1=((xcnt % 32)<16);               f2=((ycnt % 32)<16);               f1=f1^f2;                if (f1)                 {                   if (color.a==0.0)                     color=lightcheck;                   else                     {                       gck_rgb_mul(&color,color.a);                       temp=lightcheck;                       gck_rgb_mul(&temp,1.0-color.a);                       gck_rgb_add(&color,&temp);                     }                 }               else                 {                   if (color.a==0.0)                     color=darkcheck;                   else                     {                       gck_rgb_mul(&color,color.a);                       temp=darkcheck;                       gck_rgb_mul(&temp,1.0-color.a);                       gck_rgb_add(&color,&temp);                     }                 }             }            preview_rgb_data[index++]=(guchar)(color.r*255.0);           preview_rgb_data[index++]=(guchar)(color.g*255.0);           preview_rgb_data[index++]=(guchar)(color.b*255.0);         }     } */
+end_comment
+
+begin_comment
 comment|/* Convert to visual type */
+end_comment
+
+begin_comment
 comment|/* ====================== */
+end_comment
+
+begin_comment
 comment|/*  gck_rgb_to_gdkimage(visinfo,preview_rgb_data,image,pw,ph); */
-block|}
-end_function
+end_comment
+
+begin_comment
+comment|/* } */
+end_comment
 
 begin_comment
 comment|/*************************************************/
@@ -973,30 +1061,48 @@ begin_comment
 comment|/****************************************/
 end_comment
 
-begin_function
-name|void
-DECL|function|draw_light_marker (gint xpos,gint ypos)
-name|draw_light_marker
-parameter_list|(
-name|gint
-name|xpos
-parameter_list|,
-name|gint
-name|ypos
-parameter_list|)
-block|{
+begin_comment
+comment|/* static void draw_light_marker (gint xpos, 		   gint ypos) { */
+end_comment
+
+begin_comment
 comment|/*  gck_gc_set_foreground(visinfo,gc,0,50,255);   gck_gc_set_background(visinfo,gc,0,0,0);    gdk_gc_set_function(gc,GDK_COPY);    if (mapvals.lightsource.type==POINT_LIGHT)     {       lightx=xpos;       lighty=ypos; */
+end_comment
+
+begin_comment
 comment|/* Save background */
+end_comment
+
+begin_comment
 comment|/* =============== */
+end_comment
+
+begin_comment
 comment|/*      backbuf.x=lightx-7;       backbuf.y=lighty-7;       backbuf.w=14;       backbuf.h=14; */
+end_comment
+
+begin_comment
 comment|/* X doesn't like images that's outside a window, make sure */
+end_comment
+
+begin_comment
 comment|/* we get the backbuffer image from within the boundaries   */
+end_comment
+
+begin_comment
 comment|/* ======================================================== */
+end_comment
+
+begin_comment
 comment|/*      if (backbuf.x<0)         backbuf.x=0;       else if ((backbuf.x+backbuf.w)>PREVIEW_WIDTH)         backbuf.w=(PREVIEW_WIDTH-backbuf.x);        if (backbuf.y<0)         backbuf.y=0;       else if ((backbuf.y+backbuf.h)>PREVIEW_HEIGHT)         backbuf.h=(PREVIEW_WIDTH-backbuf.y);         backbuf.image=gdk_image_get(previewarea->window,backbuf.x,backbuf.y,backbuf.w,backbuf.h);       gdk_draw_arc(previewarea->window,gc,TRUE,lightx-7,lighty-7,14,14,0,360*64);     } */
-block|}
-end_function
+end_comment
+
+begin_comment
+comment|/*}*/
+end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|clear_light_marker (void)
 name|clear_light_marker
@@ -1010,17 +1116,9 @@ comment|/*  if (backbuf.image!=NULL)     {       gck_gc_set_foreground(visinfo,g
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|draw_lights (void)
-name|draw_lights
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-comment|/*  gdouble dxpos,dypos;   gint xpos,ypos;    clear_light_marker();     gck_3d_to_2d(startx,starty,pw,ph,&dxpos,&dypos,&mapvals.viewpoint,&mapvals.lightsource.position);    xpos=(gint)(dxpos+0.5);   ypos=(gint)(dypos+0.5);    if (xpos>=0&& xpos<=PREVIEW_WIDTH&& ypos>=0&& ypos<=PREVIEW_HEIGHT)     draw_light_marker(xpos,ypos); */
-block|}
-end_function
+begin_comment
+comment|/* static void draw_lights (void) {   gdouble dxpos,dypos;   gint xpos,ypos;    clear_light_marker();     gck_3d_to_2d(startx,starty,pw,ph,&dxpos,&dypos,&mapvals.viewpoint,&mapvals.lightsource.position);    xpos=(gint)(dxpos+0.5);   ypos=(gint)(dypos+0.5);    if (xpos>=0&& xpos<=PREVIEW_WIDTH&& ypos>=0&& ypos<=PREVIEW_HEIGHT)     draw_light_marker(xpos,ypos); }*/
+end_comment
 
 begin_comment
 comment|/*************************************************/
@@ -1051,6 +1149,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|compute_preview_rectangle (gint * xp,gint * yp,gint * wid,gint * heig)
 name|compute_preview_rectangle

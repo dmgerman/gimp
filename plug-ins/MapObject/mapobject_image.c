@@ -26,6 +26,42 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<gck/gck.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_main.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_preview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_shade.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_ui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"mapobject_image.h"
 end_include
 
@@ -188,8 +224,8 @@ comment|/******************/
 end_comment
 
 begin_function
-DECL|function|peek (gint x,gint y)
 name|GckRGB
+DECL|function|peek (gint x,gint y)
 name|peek
 parameter_list|(
 name|gint
@@ -324,8 +360,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|peek_box_image (gint image,gint x,gint y)
+specifier|static
 name|GckRGB
+DECL|function|peek_box_image (gint image,gint x,gint y)
 name|peek_box_image
 parameter_list|(
 name|gint
@@ -475,8 +512,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|peek_cylinder_image (gint image,gint x,gint y)
+specifier|static
 name|GckRGB
+DECL|function|peek_cylinder_image (gint image,gint x,gint y)
 name|peek_cylinder_image
 parameter_list|(
 name|gint
@@ -626,8 +664,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|poke (gint x,gint y,GckRGB * color)
 name|void
+DECL|function|poke (gint x,gint y,GckRGB * color)
 name|poke
 parameter_list|(
 name|gint
@@ -728,8 +766,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|checkbounds (gint x,gint y)
 name|gint
+DECL|function|checkbounds (gint x,gint y)
 name|checkbounds
 parameter_list|(
 name|gint
@@ -772,8 +810,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|checkbounds_box_image (gint image,gint x,gint y)
+specifier|static
 name|gint
+DECL|function|checkbounds_box_image (gint image,gint x,gint y)
 name|checkbounds_box_image
 parameter_list|(
 name|gint
@@ -842,8 +881,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|checkbounds_cylinder_image (gint image,gint x,gint y)
+specifier|static
 name|gint
+DECL|function|checkbounds_cylinder_image (gint image,gint x,gint y)
 name|checkbounds_cylinder_image
 parameter_list|(
 name|gint
@@ -912,8 +952,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|int_to_pos (gint x,gint y)
 name|GimpVector3
+DECL|function|int_to_pos (gint x,gint y)
 name|int_to_pos
 parameter_list|(
 name|gint
@@ -969,8 +1009,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|pos_to_int (gdouble x,gdouble y,gint * scr_x,gint * scr_y)
 name|void
+DECL|function|pos_to_int (gdouble x,gdouble y,gint * scr_x,gint * scr_y)
 name|pos_to_int
 parameter_list|(
 name|gdouble
@@ -1042,8 +1082,8 @@ comment|/**********************************************/
 end_comment
 
 begin_function
-DECL|function|get_image_color (gdouble u,gdouble v,gint * inside)
 name|GckRGB
+DECL|function|get_image_color (gdouble u,gdouble v,gint * inside)
 name|get_image_color
 parameter_list|(
 name|gdouble
@@ -1380,8 +1420,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_box_image_color (gint image,gdouble u,gdouble v)
 name|GckRGB
+DECL|function|get_box_image_color (gint image,gdouble u,gdouble v)
 name|get_box_image_color
 parameter_list|(
 name|gint
@@ -1598,8 +1638,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_cylinder_image_color (gint image,gdouble u,gdouble v)
 name|GckRGB
+DECL|function|get_cylinder_image_color (gint image,gdouble u,gdouble v)
 name|get_cylinder_image_color
 parameter_list|(
 name|gint
@@ -1828,8 +1868,8 @@ comment|/****************************************/
 end_comment
 
 begin_function
-DECL|function|image_setup (GDrawable * drawable,gint interactive)
 name|gint
+DECL|function|image_setup (GDrawable * drawable,gint interactive)
 name|image_setup
 parameter_list|(
 name|GDrawable
@@ -2004,7 +2044,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 operator|(
 name|size_t

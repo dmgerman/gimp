@@ -2,69 +2,15 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|LIGHTINGIMAGEH
+name|__LIGHTING_IMAGE_H__
 end_ifndef
 
 begin_define
-DECL|macro|LIGHTINGIMAGEH
+DECL|macro|__LIGHTING_IMAGE_H__
 define|#
 directive|define
-name|LIGHTINGIMAGEH
+name|__LIGHTING_IMAGE_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lighting_main.h"
-end_include
 
 begin_decl_stmt
 specifier|extern
@@ -298,7 +244,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|pos_to_int
 parameter_list|(
@@ -320,7 +265,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|pos_to_float
 parameter_list|(
@@ -342,7 +286,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|GckRGB
 name|get_image_color
 parameter_list|(
@@ -360,7 +303,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|gdouble
 name|get_map_value
 parameter_list|(
@@ -382,7 +324,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|gint
 name|image_setup
 parameter_list|(
@@ -400,6 +341,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __LIGHTING_IMAGE_H__ */
+end_comment
 
 end_unit
 

@@ -18,12 +18,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gdk/gdk.h>
 end_include
 
@@ -48,7 +42,25 @@ comment|/* ================ */
 end_comment
 
 begin_decl_stmt
+DECL|variable|qOne
+name|Quat
+name|qOne
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|1
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|center
+specifier|static
 name|HVect
 name|center
 decl_stmt|;
@@ -56,6 +68,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|radius
+specifier|static
 name|double
 name|radius
 decl_stmt|;
@@ -65,6 +78,7 @@ begin_decl_stmt
 DECL|variable|qNow
 DECL|variable|qDown
 DECL|variable|qDrag
+specifier|static
 name|Quat
 name|qNow
 decl_stmt|,
@@ -81,6 +95,7 @@ DECL|variable|vFrom
 DECL|variable|vTo
 DECL|variable|vrFrom
 DECL|variable|vrTo
+specifier|static
 name|HVect
 name|vNow
 decl_stmt|,
@@ -99,6 +114,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|mNow
 DECL|variable|mDown
+specifier|static
 name|HMatrix
 name|mNow
 decl_stmt|,
@@ -109,6 +125,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|showResult
 DECL|variable|dragging
+specifier|static
 name|unsigned
 name|int
 name|showResult
@@ -119,6 +136,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|sets
+specifier|static
 name|ConstraintSet
 name|sets
 index|[
@@ -129,6 +147,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|setSizes
+specifier|static
 name|int
 name|setSizes
 index|[
@@ -139,6 +158,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|axisSet
+specifier|static
 name|AxisSet
 name|axisSet
 decl_stmt|;
@@ -146,6 +166,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|axisIndex
+specifier|static
 name|int
 name|axisIndex
 decl_stmt|;
@@ -153,6 +174,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|mId
+specifier|static
 name|HMatrix
 name|mId
 init|=
@@ -202,6 +224,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|otherAxis
+specifier|static
 name|double
 name|otherAxis
 index|[]
@@ -224,23 +247,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|qOne
-name|Quat
-name|qOne
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|1
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* Externally visible methods */
 end_comment
@@ -252,7 +258,9 @@ end_comment
 begin_function_decl
 name|void
 name|ArcBall_Init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -367,6 +375,7 @@ comment|/* ================ */
 end_comment
 
 begin_function_decl
+specifier|static
 name|void
 name|Qt_ToMatrix
 parameter_list|(
@@ -380,6 +389,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|Quat
 name|Qt_Conj
 parameter_list|(
@@ -390,6 +400,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|Quat
 name|Qt_Mul
 parameter_list|(
@@ -403,6 +414,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|Quat
 name|Qt_FromBallPoints
 parameter_list|(
@@ -416,6 +428,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|Qt_ToBallPoints
 parameter_list|(
@@ -434,6 +447,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|HVect
 name|V3_
 parameter_list|(
@@ -450,6 +464,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|double
 name|V3_Norm
 parameter_list|(
@@ -460,6 +475,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|HVect
 name|V3_Unit
 parameter_list|(
@@ -470,6 +486,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|HVect
 name|V3_Scale
 parameter_list|(
@@ -483,6 +500,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|HVect
 name|V3_Negate
 parameter_list|(
@@ -492,20 +510,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|HVect
-name|V3_Add
-parameter_list|(
-name|HVect
-name|v1
-parameter_list|,
-name|HVect
-name|v2
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* static HVect    V3_Add(HVect v1, HVect v2); */
+end_comment
 
 begin_function_decl
+specifier|static
 name|HVect
 name|V3_Sub
 parameter_list|(
@@ -519,6 +529,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|double
 name|V3_Dot
 parameter_list|(
@@ -531,33 +542,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|HVect
-name|V3_Cross
-parameter_list|(
-name|HVect
-name|v1
-parameter_list|,
-name|HVect
-name|v2
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* static HVect    V3_Cross(HVect v1, HVect v2); static HVect    V3_Bisect(HVect v0, HVect v1); */
+end_comment
 
 begin_function_decl
-name|HVect
-name|V3_Bisect
-parameter_list|(
-name|HVect
-name|v0
-parameter_list|,
-name|HVect
-name|v1
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
+specifier|static
 name|HVect
 name|MouseOnSphere
 parameter_list|(
@@ -574,6 +564,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|HVect
 name|ConstrainToAxis
 parameter_list|(
@@ -587,6 +578,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|int
 name|NearestConstraintAxis
 parameter_list|(
@@ -612,8 +604,8 @@ comment|/* =================================================== */
 end_comment
 
 begin_function
-DECL|function|ArcBall_Init (void)
 name|void
+DECL|function|ArcBall_Init (void)
 name|ArcBall_Init
 parameter_list|(
 name|void
@@ -761,8 +753,8 @@ comment|/* ========================================== */
 end_comment
 
 begin_function
-DECL|function|ArcBall_Place (HVect Center,double Radius)
 name|void
+DECL|function|ArcBall_Place (HVect Center,double Radius)
 name|ArcBall_Place
 parameter_list|(
 name|HVect
@@ -792,8 +784,8 @@ comment|/* =============================== */
 end_comment
 
 begin_function
-DECL|function|ArcBall_Mouse (HVect v_Now)
 name|void
+DECL|function|ArcBall_Mouse (HVect v_Now)
 name|ArcBall_Mouse
 parameter_list|(
 name|HVect
@@ -816,8 +808,8 @@ comment|/* ================================= */
 end_comment
 
 begin_function
-DECL|function|ArcBall_UseSet (AxisSet axis_Set)
 name|void
+DECL|function|ArcBall_UseSet (AxisSet axis_Set)
 name|ArcBall_UseSet
 parameter_list|(
 name|AxisSet
@@ -845,8 +837,8 @@ comment|/* =============================================================== */
 end_comment
 
 begin_function
-DECL|function|ArcBall_Update (void)
 name|void
+DECL|function|ArcBall_Update (void)
 name|ArcBall_Update
 parameter_list|(
 name|void
@@ -1007,8 +999,8 @@ comment|/* ================================================= */
 end_comment
 
 begin_function
-DECL|function|ArcBall_Value (HMatrix m_Now)
 name|void
+DECL|function|ArcBall_Value (HMatrix m_Now)
 name|ArcBall_Value
 parameter_list|(
 name|HMatrix
@@ -1034,8 +1026,8 @@ comment|/* =================================== */
 end_comment
 
 begin_function
-DECL|function|ArcBall_Values (double * alpha,double * beta,double * gamma)
 name|void
+DECL|function|ArcBall_Values (double * alpha,double * beta,double * gamma)
 name|ArcBall_Values
 parameter_list|(
 name|double
@@ -1160,8 +1152,8 @@ comment|/* ==================== */
 end_comment
 
 begin_function
-DECL|function|ArcBall_BeginDrag (void)
 name|void
+DECL|function|ArcBall_BeginDrag (void)
 name|ArcBall_BeginDrag
 parameter_list|(
 name|void
@@ -1187,8 +1179,8 @@ comment|/* =================== */
 end_comment
 
 begin_function
-DECL|function|ArcBall_EndDrag (void)
 name|void
+DECL|function|ArcBall_EndDrag (void)
 name|ArcBall_EndDrag
 parameter_list|(
 name|void
@@ -1241,8 +1233,9 @@ comment|/* ============================================================= */
 end_comment
 
 begin_function
-DECL|function|Qt_Mul (Quat qL,Quat qR)
+specifier|static
 name|Quat
+DECL|function|Qt_Mul (Quat qL,Quat qR)
 name|Qt_Mul
 parameter_list|(
 name|Quat
@@ -1428,8 +1421,9 @@ comment|/* ============================================================== */
 end_comment
 
 begin_function
-DECL|function|Qt_ToMatrix (Quat q,HMatrix out)
+specifier|static
 name|void
+DECL|function|Qt_ToMatrix (Quat q,HMatrix out)
 name|Qt_ToMatrix
 parameter_list|(
 name|Quat
@@ -1783,8 +1777,9 @@ comment|/* =============================== */
 end_comment
 
 begin_function
-DECL|function|Qt_Conj (Quat q)
+specifier|static
 name|Quat
+DECL|function|Qt_Conj (Quat q)
 name|Qt_Conj
 parameter_list|(
 name|Quat
@@ -1846,8 +1841,9 @@ comment|/* ==================================== */
 end_comment
 
 begin_function
-DECL|function|V3_ (double x,double y,double z)
+specifier|static
 name|HVect
+DECL|function|V3_ (double x,double y,double z)
 name|V3_
 parameter_list|(
 name|double
@@ -1904,8 +1900,9 @@ comment|/* ========================================================= */
 end_comment
 
 begin_function
-DECL|function|V3_Norm (HVect v)
+specifier|static
 name|double
+DECL|function|V3_Norm (HVect v)
 name|V3_Norm
 parameter_list|(
 name|HVect
@@ -1951,8 +1948,9 @@ comment|/* ============================================== */
 end_comment
 
 begin_function
-DECL|function|V3_Unit (HVect v)
+specifier|static
 name|HVect
+DECL|function|V3_Unit (HVect v)
 name|V3_Unit
 parameter_list|(
 name|HVect
@@ -2037,8 +2035,9 @@ comment|/* =============================== */
 end_comment
 
 begin_function
-DECL|function|V3_Scale (HVect v,double s)
+specifier|static
 name|HVect
+DECL|function|V3_Scale (HVect v,double s)
 name|V3_Scale
 parameter_list|(
 name|HVect
@@ -2106,8 +2105,9 @@ comment|/* ==================== */
 end_comment
 
 begin_function
-DECL|function|V3_Negate (HVect v)
+specifier|static
 name|HVect
+DECL|function|V3_Negate (HVect v)
 name|V3_Negate
 parameter_list|(
 name|HVect
@@ -2171,75 +2171,9 @@ begin_comment
 comment|/* ======================= */
 end_comment
 
-begin_function
-DECL|function|V3_Add (HVect v1,HVect v2)
-name|HVect
-name|V3_Add
-parameter_list|(
-name|HVect
-name|v1
-parameter_list|,
-name|HVect
-name|v2
-parameter_list|)
-block|{
-specifier|static
-name|HVect
-name|v
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|}
-decl_stmt|;
-name|v
-operator|.
-name|x
-operator|=
-name|v1
-operator|.
-name|x
-operator|+
-name|v2
-operator|.
-name|x
-expr_stmt|;
-name|v
-operator|.
-name|y
-operator|=
-name|v1
-operator|.
-name|y
-operator|+
-name|v2
-operator|.
-name|y
-expr_stmt|;
-name|v
-operator|.
-name|z
-operator|=
-name|v1
-operator|.
-name|z
-operator|+
-name|v2
-operator|.
-name|z
-expr_stmt|;
-return|return
-operator|(
-name|v
-operator|)
-return|;
-block|}
-end_function
+begin_comment
+comment|/* static HVect V3_Add (HVect v1, 	HVect v2) {   static HVect v = {0, 0, 0, 0};   v.x = v1.x+v2.x; v.y = v1.y+v2.y; v.z = v1.z+v2.z;   return (v); } */
+end_comment
 
 begin_comment
 comment|/* Return difference of v1 minus v2 */
@@ -2250,8 +2184,9 @@ comment|/* ================================ */
 end_comment
 
 begin_function
-DECL|function|V3_Sub (HVect v1,HVect v2)
+specifier|static
 name|HVect
+DECL|function|V3_Sub (HVect v1,HVect v2)
 name|V3_Sub
 parameter_list|(
 name|HVect
@@ -2327,89 +2262,9 @@ begin_comment
 comment|/* ========================================= */
 end_comment
 
-begin_function
-DECL|function|V3_Bisect (HVect v0,HVect v1)
-name|HVect
-name|V3_Bisect
-parameter_list|(
-name|HVect
-name|v0
-parameter_list|,
-name|HVect
-name|v1
-parameter_list|)
-block|{
-name|HVect
-name|v
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|}
-decl_stmt|;
-name|double
-name|Nv
-decl_stmt|;
-name|v
-operator|=
-name|V3_Add
-argument_list|(
-name|v0
-argument_list|,
-name|v1
-argument_list|)
-expr_stmt|;
-name|Nv
-operator|=
-name|V3_Norm
-argument_list|(
-name|v
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|Nv
-operator|<
-literal|1.0e-5
-condition|)
-name|v
-operator|=
-name|V3_
-argument_list|(
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-else|else
-name|v
-operator|=
-name|V3_Scale
-argument_list|(
-name|v
-argument_list|,
-literal|1
-operator|/
-name|sqrt
-argument_list|(
-name|Nv
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-name|v
-operator|)
-return|;
-block|}
-end_function
+begin_comment
+comment|/* static HVect V3_Bisect (HVect v0, 	   HVect v1) {   HVect v = {0, 0, 0, 0};   double Nv;    v = V3_Add(v0, v1);   Nv = V3_Norm(v);   if (Nv< 1.0e-5) v = V3_(0, 0, 1);   else v = V3_Scale(v, 1/sqrt(Nv));   return (v); } */
+end_comment
 
 begin_comment
 comment|/* Return dot product of v1 and v2 */
@@ -2420,8 +2275,9 @@ comment|/* =============================== */
 end_comment
 
 begin_function
-DECL|function|V3_Dot (HVect v1,HVect v2)
+specifier|static
 name|double
+DECL|function|V3_Dot (HVect v1,HVect v2)
 name|V3_Dot
 parameter_list|(
 name|HVect
@@ -2469,103 +2325,13 @@ begin_comment
 comment|/* ============================= */
 end_comment
 
-begin_function
-DECL|function|V3_Cross (HVect v1,HVect v2)
-name|HVect
-name|V3_Cross
-parameter_list|(
-name|HVect
-name|v1
-parameter_list|,
-name|HVect
-name|v2
-parameter_list|)
-block|{
-specifier|static
-name|HVect
-name|v
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|}
-decl_stmt|;
-name|v
-operator|.
-name|x
-operator|=
-name|v1
-operator|.
-name|y
-operator|*
-name|v2
-operator|.
-name|z
-operator|-
-name|v1
-operator|.
-name|z
-operator|*
-name|v2
-operator|.
-name|y
-expr_stmt|;
-name|v
-operator|.
-name|y
-operator|=
-name|v1
-operator|.
-name|z
-operator|*
-name|v2
-operator|.
-name|x
-operator|-
-name|v1
-operator|.
-name|x
-operator|*
-name|v2
-operator|.
-name|z
-expr_stmt|;
-name|v
-operator|.
-name|z
-operator|=
-name|v1
-operator|.
-name|x
-operator|*
-name|v2
-operator|.
-name|y
-operator|-
-name|v1
-operator|.
-name|y
-operator|*
-name|v2
-operator|.
-name|x
-expr_stmt|;
-return|return
-operator|(
-name|v
-operator|)
-return|;
-block|}
-end_function
+begin_comment
+comment|/* static HVect V3_Cross (HVect v1, 	  HVect v2) {   static HVect v = {0, 0, 0, 0};   v.x = v1.y*v2.z-v1.z*v2.y;   v.y = v1.z*v2.x-v1.x*v2.z;   v.z = v1.x*v2.y-v1.y*v2.x;   return (v); } */
+end_comment
 
 begin_function
-DECL|function|ArcBall_CopyMat (HMatrix inm,HMatrix outm)
 name|void
+DECL|function|ArcBall_CopyMat (HMatrix inm,HMatrix outm)
 name|ArcBall_CopyMat
 parameter_list|(
 name|HMatrix
@@ -2654,8 +2420,9 @@ comment|/* ================================================= */
 end_comment
 
 begin_function
-DECL|function|MouseOnSphere (HVect mouse,HVect ballCenter,double ballRadius)
+specifier|static
 name|HVect
+DECL|function|MouseOnSphere (HVect mouse,HVect ballCenter,double ballRadius)
 name|MouseOnSphere
 parameter_list|(
 name|HVect
@@ -2797,8 +2564,9 @@ comment|/* ========================================================== */
 end_comment
 
 begin_function
-DECL|function|Qt_FromBallPoints (HVect from,HVect to)
+specifier|static
 name|Quat
+DECL|function|Qt_FromBallPoints (HVect from,HVect to)
 name|Qt_FromBallPoints
 parameter_list|(
 name|HVect
@@ -2916,8 +2684,9 @@ comment|/* ====================================================== */
 end_comment
 
 begin_function
-DECL|function|Qt_ToBallPoints (Quat q,HVect * arcFrom,HVect * arcTo)
+specifier|static
 name|void
+DECL|function|Qt_ToBallPoints (Quat q,HVect * arcFrom,HVect * arcTo)
 name|Qt_ToBallPoints
 parameter_list|(
 name|Quat
@@ -3094,8 +2863,9 @@ comment|/* =============================================== */
 end_comment
 
 begin_function
-DECL|function|ConstrainToAxis (HVect loose,HVect axis)
+specifier|static
 name|HVect
+DECL|function|ConstrainToAxis (HVect loose,HVect axis)
 name|ConstrainToAxis
 parameter_list|(
 name|HVect
@@ -3234,8 +3004,9 @@ comment|/* ========================================== */
 end_comment
 
 begin_function
-DECL|function|NearestConstraintAxis (HVect loose,HVect * axes,int nAxes)
+specifier|static
 name|int
+DECL|function|NearestConstraintAxis (HVect loose,HVect * axes,int nAxes)
 name|NearestConstraintAxis
 parameter_list|(
 name|HVect

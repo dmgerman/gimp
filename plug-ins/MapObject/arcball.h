@@ -2,26 +2,25 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|ARCBALLH
+name|__ARCBALL_H__
 end_ifndef
 
 begin_define
-DECL|macro|ARCBALLH
+DECL|macro|__ARCBALL_H__
 define|#
 directive|define
-name|ARCBALLH
+name|__ARCBALL_H__
 end_define
 
 begin_typedef
-DECL|struct|__anon274c9ff60108
+typedef|typedef
+struct|struct
+DECL|struct|__anon2a2f51a60108
+block|{
 DECL|member|x
 DECL|member|y
 DECL|member|z
 DECL|member|w
-DECL|typedef|Quat
-typedef|typedef
-struct|struct
-block|{
 name|double
 name|x
 decl_stmt|,
@@ -31,6 +30,7 @@ name|z
 decl_stmt|,
 name|w
 decl_stmt|;
+DECL|typedef|Quat
 block|}
 name|Quat
 typedef|;
@@ -38,22 +38,22 @@ end_typedef
 
 begin_enum
 DECL|enum|QuatPart
-DECL|enumerator|X
-DECL|enumerator|Y
-DECL|enumerator|Z
-DECL|enumerator|W
-DECL|enumerator|QuatLen
 enum|enum
 name|QuatPart
 block|{
+DECL|enumerator|X
 name|X
 block|,
+DECL|enumerator|Y
 name|Y
 block|,
+DECL|enumerator|Z
 name|Z
 block|,
+DECL|enumerator|W
 name|W
 block|,
+DECL|enumerator|QuatLen
 name|QuatLen
 block|}
 enum|;
@@ -82,26 +82,26 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|AxisSet
-DECL|enumerator|NoAxes
-DECL|enumerator|CameraAxes
-DECL|enumerator|BodyAxes
-DECL|enumerator|OtherAxes
-DECL|enumerator|NSets
-DECL|typedef|AxisSet
+DECL|enum|AxisSet
 typedef|typedef
 enum|enum
 name|AxisSet
 block|{
+DECL|enumerator|NoAxes
 name|NoAxes
 block|,
+DECL|enumerator|CameraAxes
 name|CameraAxes
 block|,
+DECL|enumerator|BodyAxes
 name|BodyAxes
 block|,
+DECL|enumerator|OtherAxes
 name|OtherAxes
 block|,
+DECL|enumerator|NSets
 name|NSets
+DECL|typedef|AxisSet
 block|}
 name|AxisSet
 typedef|;
@@ -124,15 +124,15 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_Init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_Place
 parameter_list|(
@@ -146,7 +146,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_UseSet
 parameter_list|(
@@ -157,7 +156,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_Update
 parameter_list|(
@@ -167,7 +165,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_Value
 parameter_list|(
@@ -178,7 +175,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_Values
 parameter_list|(
@@ -198,7 +194,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_BeginDrag
 parameter_list|(
@@ -208,7 +203,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_EndDrag
 parameter_list|(
@@ -218,7 +212,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_Mouse
 parameter_list|(
@@ -229,7 +222,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|extern
 name|void
 name|ArcBall_CopyMat
 parameter_list|(
@@ -246,6 +238,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __ARCBALL_H__ */
+end_comment
 
 end_unit
 

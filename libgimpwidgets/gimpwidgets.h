@@ -377,6 +377,16 @@ name|ysize_100
 comment|/* % */
 parameter_list|)
 function_decl|;
+name|GtkWidget
+modifier|*
+name|gimp_pixmap_button_new
+parameter_list|(
+name|gchar
+modifier|*
+modifier|*
+name|xpm_data
+parameter_list|)
+function_decl|;
 comment|/*  *  Standard Callbacks  */
 name|void
 name|gimp_toggle_button_update

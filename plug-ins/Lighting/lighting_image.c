@@ -14,6 +14,30 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gck/gck.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_main.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"lighting_image.h"
 end_include
 
@@ -1592,6 +1616,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|compute_maps (void)
 name|compute_maps

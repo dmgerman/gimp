@@ -14,6 +14,60 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gck/gck.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"arcball.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_main.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_ui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_image.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_apply.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_shade.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"mapobject_preview.h"
 end_include
 
@@ -82,19 +136,7 @@ comment|/* ====== */
 end_comment
 
 begin_function_decl
-name|void
-name|update_light
-parameter_list|(
-name|gint
-name|xpos
-parameter_list|,
-name|gint
-name|ypos
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
+specifier|static
 name|void
 name|draw_light_marker
 parameter_list|(
@@ -108,6 +150,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|clear_light_marker
 parameter_list|(
@@ -117,6 +160,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint
 name|draw_line
 parameter_list|(
@@ -157,6 +201,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|draw_wireframe_plane
 parameter_list|(
@@ -176,6 +221,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|draw_wireframe_sphere
 parameter_list|(
@@ -195,6 +241,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|draw_wireframe_box
 parameter_list|(
@@ -214,6 +261,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|draw_wireframe_cylinder
 parameter_list|(
@@ -228,15 +276,6 @@ name|pw
 parameter_list|,
 name|gint
 name|ph
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|clear_wireframe
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -814,8 +853,8 @@ comment|/**************************************************************/
 end_comment
 
 begin_function
-DECL|function|compute_preview (gint x,gint y,gint w,gint h,gint pw,gint ph)
 name|void
+DECL|function|compute_preview (gint x,gint y,gint w,gint h,gint pw,gint ph)
 name|compute_preview
 parameter_list|(
 name|gint
@@ -1424,8 +1463,8 @@ comment|/*************************************************/
 end_comment
 
 begin_function
-DECL|function|check_light_hit (gint xpos,gint ypos)
 name|gint
+DECL|function|check_light_hit (gint xpos,gint ypos)
 name|check_light_hit
 parameter_list|(
 name|gint
@@ -1528,8 +1567,9 @@ comment|/****************************************/
 end_comment
 
 begin_function
-DECL|function|draw_light_marker (gint xpos,gint ypos)
+specifier|static
 name|void
+DECL|function|draw_light_marker (gint xpos,gint ypos)
 name|draw_light_marker
 parameter_list|(
 name|gint
@@ -1767,10 +1807,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|clear_light_marker ()
+specifier|static
 name|void
+DECL|function|clear_light_marker (void)
 name|clear_light_marker
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 comment|/* Restore background if it has been saved */
 comment|/* ======================================= */
@@ -1867,8 +1910,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|draw_lights (gint startx,gint starty,gint pw,gint ph)
+specifier|static
 name|void
+DECL|function|draw_lights (gint startx,gint starty,gint pw,gint ph)
 name|draw_lights
 parameter_list|(
 name|gint
@@ -1989,8 +2033,8 @@ comment|/*************************************************/
 end_comment
 
 begin_function
-DECL|function|update_light (gint xpos,gint ypos)
 name|void
+DECL|function|update_light (gint xpos,gint ypos)
 name|update_light
 parameter_list|(
 name|gint
@@ -2340,8 +2384,8 @@ comment|/**************************/
 end_comment
 
 begin_function
-DECL|function|draw_preview_wireframe (void)
 name|void
+DECL|function|draw_preview_wireframe (void)
 name|draw_preview_wireframe
 parameter_list|(
 name|void
@@ -2455,8 +2499,8 @@ comment|/****************************/
 end_comment
 
 begin_function
-DECL|function|draw_wireframe (gint startx,gint starty,gint pw,gint ph)
 name|void
+DECL|function|draw_wireframe (gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe
 parameter_list|(
 name|gint
@@ -2544,8 +2588,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|draw_wireframe_plane (gint startx,gint starty,gint pw,gint ph)
+specifier|static
 name|void
+DECL|function|draw_wireframe_plane (gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe_plane
 parameter_list|(
 name|gint
@@ -3356,8 +3401,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|draw_wireframe_sphere (gint startx,gint starty,gint pw,gint ph)
+specifier|static
 name|void
+DECL|function|draw_wireframe_sphere (gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe_sphere
 parameter_list|(
 name|gint
@@ -4573,8 +4619,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|draw_line (gint n,gint startx,gint starty,gint pw,gint ph,gdouble cx1,gdouble cy1,gdouble cx2,gdouble cy2,GimpVector3 a,GimpVector3 b)
+specifier|static
 name|gint
+DECL|function|draw_line (gint n,gint startx,gint starty,gint pw,gint ph,gdouble cx1,gdouble cy1,gdouble cx2,gdouble cy2,GimpVector3 a,GimpVector3 b)
 name|draw_line
 parameter_list|(
 name|gint
@@ -4858,8 +4905,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|draw_wireframe_box (gint startx,gint starty,gint pw,gint ph)
+specifier|static
 name|void
+DECL|function|draw_wireframe_box (gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe_box
 parameter_list|(
 name|gint
@@ -5594,8 +5642,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|draw_wireframe_cylinder (gint startx,gint starty,gint pw,gint ph)
+specifier|static
 name|void
+DECL|function|draw_wireframe_cylinder (gint startx,gint starty,gint pw,gint ph)
 name|draw_wireframe_cylinder
 parameter_list|(
 name|gint
@@ -6071,8 +6120,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|clear_wireframe (void)
 name|void
+DECL|function|clear_wireframe (void)
 name|clear_wireframe
 parameter_list|(
 name|void

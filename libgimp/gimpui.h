@@ -73,6 +73,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppixmap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpquerybox.h"
 end_include
 

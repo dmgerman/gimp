@@ -1,100 +1,78 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*********************************************************************************/
-end_comment
-
-begin_comment
-comment|/* MapObject 1.2.0 -- image filter plug-in for The Gimp program                  */
-end_comment
-
-begin_comment
-comment|/* Copyright (C) 1996-98 Tom Bech                                                */
-end_comment
-
-begin_comment
-comment|/* Copyright (C) 1996-98 Federico Mena Quintero                                  */
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* E-mail: tomb@gimp.org (Tom) or quartic@gimp.org (Federico)                    */
-end_comment
-
-begin_comment
-comment|/* You can contact the original The Gimp authors at gimp@xcf.berkeley.edu        */
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* This program is free software; you can redistribute it and/or modify it under */
-end_comment
-
-begin_comment
-comment|/* the terms of the GNU General Public License as published by the Free Software */
-end_comment
-
-begin_comment
-comment|/* Foundation; either version 2 of the License, or (at your option) any later    */
-end_comment
-
-begin_comment
-comment|/* version.                                                                      */
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* This program is distributed in the hope that it will be useful, but WITHOUT   */
-end_comment
-
-begin_comment
-comment|/* ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS */
-end_comment
-
-begin_comment
-comment|/* FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.*/
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* You should have received a copy of the GNU General Public License along with  */
-end_comment
-
-begin_comment
-comment|/* this program (read the "COPYING" file); if not, write to the Free Software    */
-end_comment
-
-begin_comment
-comment|/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.    */
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* In other words, you can't sue us for whatever happens while using this ;)     */
-end_comment
-
-begin_comment
-comment|/*********************************************************************************/
+comment|/* MapObject 1.2.0 -- image filter plug-in for The Gimp program  *  * Copyright (C) 1996-98 Tom Bech  * Copyright (C) 1996-98 Federico Mena Quintero  *  * E-mail: tomb@gimp.org (Tom) or quartic@gimp.org (Federico)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gck/gck.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"arcball.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_ui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_image.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_apply.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_preview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"mapobject_main.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment

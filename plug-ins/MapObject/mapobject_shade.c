@@ -14,6 +14,36 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gck/gck.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_apply.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_main.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"mapobject_image.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"mapobject_shade.h"
 end_include
 
@@ -41,9 +71,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c1340e30108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c74e74b0108
 block|{
 DECL|member|u
 DECL|member|v
@@ -87,8 +117,9 @@ comment|/*****************/
 end_comment
 
 begin_function
-DECL|function|phong_shade (GimpVector3 * pos,GimpVector3 * viewpoint,GimpVector3 * normal,GimpVector3 * light,GckRGB * diff_col,GckRGB * spec_col,gint type)
+specifier|static
 name|GckRGB
+DECL|function|phong_shade (GimpVector3 * pos,GimpVector3 * viewpoint,GimpVector3 * normal,GimpVector3 * light,GckRGB * diff_col,GckRGB * spec_col,gint type)
 name|phong_shade
 parameter_list|(
 name|GimpVector3
@@ -386,16 +417,15 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|ambientcolor
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|plane_intersect (GimpVector3 * dir,GimpVector3 * viewp,GimpVector3 * ipos,gdouble * u,gdouble * v)
+specifier|static
 name|gint
+DECL|function|plane_intersect (GimpVector3 * dir,GimpVector3 * viewp,GimpVector3 * ipos,gdouble * u,gdouble * v)
 name|plane_intersect
 parameter_list|(
 name|GimpVector3
@@ -471,6 +501,7 @@ comment|/* Compute determinant of the first 3x3 sub matrix (denominator) */
 comment|/* ============================================================= */
 name|det
 operator|=
+operator|(
 name|imat
 index|[
 literal|0
@@ -614,6 +645,7 @@ index|]
 index|[
 literal|0
 index|]
+operator|)
 expr_stmt|;
 comment|/* If the determinant is non-zero, a intersection point exists */
 comment|/* =========================================================== */
@@ -628,6 +660,7 @@ comment|/* Now, lets compute the numerator determinants (wow ;) */
 comment|/* ==================================================== */
 name|det1
 operator|=
+operator|(
 name|imat
 index|[
 literal|0
@@ -771,9 +804,11 @@ index|]
 index|[
 literal|3
 index|]
+operator|)
 expr_stmt|;
 name|det2
 operator|=
+operator|(
 name|imat
 index|[
 literal|0
@@ -917,9 +952,11 @@ index|]
 index|[
 literal|0
 index|]
+operator|)
 expr_stmt|;
 name|det3
 operator|=
+operator|(
 name|imat
 index|[
 literal|0
@@ -1063,6 +1100,7 @@ index|]
 index|[
 literal|0
 index|]
+operator|)
 expr_stmt|;
 comment|/* Now we have the simultanous solutions. Lets compute the unknowns */
 comment|/* (skip u&v if t is<0, this means the intersection is behind us)  */
@@ -1153,35 +1191,23 @@ operator|->
 name|z
 expr_stmt|;
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
 block|}
 block|}
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**********************************************************************************/
-end_comment
-
-begin_comment
-comment|/* These routines computes the color of the surface of the plane at a given point */
-end_comment
-
-begin_comment
-comment|/**********************************************************************************/
+comment|/*****************************************************************************  * These routines computes the color of the surface  * of the plane at a given point  *****************************************************************************/
 end_comment
 
 begin_function
-DECL|function|get_ray_color_plane (GimpVector3 * pos)
 name|GckRGB
+DECL|function|get_ray_color_plane (GimpVector3 * pos)
 name|get_ray_color_plane
 parameter_list|(
 name|GimpVector3
@@ -1357,9 +1383,7 @@ operator|=
 name|background
 expr_stmt|;
 return|return
-operator|(
 name|color
-operator|)
 return|;
 block|}
 end_function
@@ -1381,8 +1405,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|sphere_to_image (GimpVector3 * normal,gdouble * u,gdouble * v)
+specifier|static
 name|void
+DECL|function|sphere_to_image (GimpVector3 * normal,gdouble * u,gdouble * v)
 name|sphere_to_image
 parameter_list|(
 name|GimpVector3
@@ -1452,6 +1477,7 @@ else|else
 block|{
 name|fac
 operator|=
+operator|(
 name|gimp_vector3_inner_product
 argument_list|(
 operator|&
@@ -1466,31 +1492,21 @@ name|sin
 argument_list|(
 name|alpha
 argument_list|)
+operator|)
 expr_stmt|;
 comment|/* Make sure that we map to -1.0..1.0 (take care of rounding errors) */
 comment|/* ================================================================= */
-if|if
-condition|(
-name|fac
-operator|>
-literal|1.0
-condition|)
 name|fac
 operator|=
-literal|1.0
-expr_stmt|;
-elseif|else
-if|if
-condition|(
+name|CLAMP
+argument_list|(
 name|fac
-operator|<
+argument_list|,
 operator|-
 literal|1.0
-condition|)
-name|fac
-operator|=
-operator|-
+argument_list|,
 literal|1.0
+argument_list|)
 expr_stmt|;
 operator|*
 name|u
@@ -1558,8 +1574,9 @@ comment|/***************************************************/
 end_comment
 
 begin_function
-DECL|function|sphere_intersect (GimpVector3 * dir,GimpVector3 * viewp,GimpVector3 * spos1,GimpVector3 * spos2)
+specifier|static
 name|gint
+DECL|function|sphere_intersect (GimpVector3 * dir,GimpVector3 * viewp,GimpVector3 * spos1,GimpVector3 * spos2)
 name|sphere_intersect
 parameter_list|(
 name|GimpVector3
@@ -1778,34 +1795,22 @@ operator|->
 name|z
 expr_stmt|;
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
 block|}
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/***********************************************************************************/
-end_comment
-
-begin_comment
-comment|/* These routines computes the color of the surface of the sphere at a given point */
-end_comment
-
-begin_comment
-comment|/***********************************************************************************/
+comment|/*****************************************************************************  * These routines computes the color of the surface  * of the sphere at a given point  *****************************************************************************/
 end_comment
 
 begin_function
-DECL|function|get_ray_color_sphere (GimpVector3 * pos)
 name|GckRGB
+DECL|function|get_ray_color_sphere (GimpVector3 * pos)
 name|get_ray_color_sphere
 parameter_list|(
 name|GimpVector3
@@ -2410,9 +2415,7 @@ operator|=
 name|background
 expr_stmt|;
 return|return
-operator|(
 name|color
-operator|)
 return|;
 block|}
 end_function
@@ -2430,8 +2433,8 @@ comment|/***************************************************/
 end_comment
 
 begin_function
-DECL|function|compute_bounding_box (void)
 name|void
+DECL|function|compute_bounding_box (void)
 name|compute_bounding_box
 parameter_list|(
 name|void
@@ -2726,8 +2729,8 @@ comment|/* ============================================================ */
 end_comment
 
 begin_function
-DECL|function|vecmulmat (GimpVector3 * u,GimpVector3 * v,gfloat m[16])
 name|void
+DECL|function|vecmulmat (GimpVector3 * u,GimpVector3 * v,gfloat m[16])
 name|vecmulmat
 parameter_list|(
 name|GimpVector3
@@ -2895,8 +2898,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rotatemat (gfloat angle,GimpVector3 * v,gfloat m[16])
 name|void
+DECL|function|rotatemat (gfloat angle,GimpVector3 * v,gfloat m[16])
 name|rotatemat
 parameter_list|(
 name|gfloat
@@ -3413,8 +3416,8 @@ comment|/* ==================================================================== 
 end_comment
 
 begin_function
-DECL|function|transpose_mat (gfloat m[16])
 name|void
+DECL|function|transpose_mat (gfloat m[16])
 name|transpose_mat
 parameter_list|(
 name|gfloat
@@ -3514,8 +3517,8 @@ comment|/* ================================ */
 end_comment
 
 begin_function
-DECL|function|matmul (gfloat a[16],gfloat b[16],gfloat c[16])
 name|void
+DECL|function|matmul (gfloat a[16],gfloat b[16],gfloat c[16])
 name|matmul
 parameter_list|(
 name|gfloat
@@ -3662,8 +3665,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ident_mat (gfloat m[16])
 name|void
+DECL|function|ident_mat (gfloat m[16])
 name|ident_mat
 parameter_list|(
 name|gfloat
@@ -3750,8 +3753,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|intersect_rect (gdouble u,gdouble v,gdouble w,GimpVector3 viewp,GimpVector3 dir,FaceIntersectInfo * face_info)
+specifier|static
 name|gboolean
+DECL|function|intersect_rect (gdouble u,gdouble v,gdouble w,GimpVector3 viewp,GimpVector3 dir,FaceIntersectInfo * face_info)
 name|intersect_rect
 parameter_list|(
 name|gdouble
@@ -3949,8 +3953,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|intersect_box (GimpVector3 scale,GimpVector3 viewp,GimpVector3 dir,FaceIntersectInfo * face_intersect)
+specifier|static
 name|gboolean
+DECL|function|intersect_box (GimpVector3 scale,GimpVector3 viewp,GimpVector3 dir,FaceIntersectInfo * face_intersect)
 name|intersect_box
 parameter_list|(
 name|GimpVector3
@@ -4853,8 +4858,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_ray_color_box (GimpVector3 * pos)
 name|GckRGB
+DECL|function|get_ray_color_box (GimpVector3 * pos)
 name|get_ray_color_box
 parameter_list|(
 name|GimpVector3
@@ -5698,16 +5703,15 @@ literal|0.0
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|color
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|intersect_circle (GimpVector3 vp,GimpVector3 dir,gdouble w,FaceIntersectInfo * face_info)
+specifier|static
 name|gboolean
+DECL|function|intersect_circle (GimpVector3 vp,GimpVector3 dir,gdouble w,FaceIntersectInfo * face_info)
 name|intersect_circle
 parameter_list|(
 name|GimpVector3
@@ -5905,8 +5909,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|compute_angle (gdouble x,gdouble y)
+specifier|static
 name|gdouble
+DECL|function|compute_angle (gdouble x,gdouble y)
 name|compute_angle
 parameter_list|(
 name|gdouble
@@ -6050,8 +6055,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|intersect_cylinder (GimpVector3 vp,GimpVector3 dir,FaceIntersectInfo * face_intersect)
+specifier|static
 name|gboolean
+DECL|function|intersect_cylinder (GimpVector3 vp,GimpVector3 dir,FaceIntersectInfo * face_intersect)
 name|intersect_cylinder
 parameter_list|(
 name|GimpVector3
@@ -6654,8 +6660,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_cylinder_color (gint face,gdouble u,gdouble v)
+specifier|static
 name|GckRGB
+DECL|function|get_cylinder_color (gint face,gdouble u,gdouble v)
 name|get_cylinder_color
 parameter_list|(
 name|gint
@@ -6715,8 +6722,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_ray_color_cylinder (GimpVector3 * pos)
 name|GckRGB
+DECL|function|get_ray_color_cylinder (GimpVector3 * pos)
 name|get_ray_color_cylinder
 parameter_list|(
 name|GimpVector3
@@ -7531,9 +7538,7 @@ literal|0.0
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|color
-operator|)
 return|;
 block|}
 end_function
