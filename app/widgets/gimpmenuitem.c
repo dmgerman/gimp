@@ -720,7 +720,7 @@ name|menu_item
 operator|->
 name|get_name_func
 argument_list|(
-name|GTK_WIDGET
+name|G_OBJECT
 argument_list|(
 name|menu_item
 argument_list|)

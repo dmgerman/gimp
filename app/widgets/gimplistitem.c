@@ -2282,7 +2282,7 @@ name|list_item
 operator|->
 name|get_name_func
 argument_list|(
-name|GTK_WIDGET
+name|G_OBJECT
 argument_list|(
 name|list_item
 argument_list|)

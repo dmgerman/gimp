@@ -1807,7 +1807,7 @@ name|view
 operator|->
 name|get_name_func
 argument_list|(
-name|GTK_WIDGET
+name|G_OBJECT
 argument_list|(
 name|preview
 argument_list|)

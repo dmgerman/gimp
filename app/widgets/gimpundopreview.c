@@ -299,9 +299,11 @@ operator|!
 name|render_buf
 condition|)
 return|return;
-name|gimp_preview_calc_size
+name|gimp_viewable_calc_preview_size
 argument_list|(
 name|preview
+operator|->
+name|viewable
 argument_list|,
 name|render_buf
 operator|->
@@ -314,6 +316,10 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|,
+name|preview
+operator|->
+name|dot_for_dot
 argument_list|,
 literal|1.0
 argument_list|,

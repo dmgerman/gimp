@@ -213,9 +213,9 @@ name|gchar
 modifier|*
 name|gimp_component_list_item_get_name
 parameter_list|(
-name|GtkWidget
+name|GObject
 modifier|*
-name|widget
+name|object
 parameter_list|,
 name|gchar
 modifier|*
@@ -1807,12 +1807,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_component_list_item_get_name (GtkWidget * widget,gchar ** tooltip)
+DECL|function|gimp_component_list_item_get_name (GObject * object,gchar ** tooltip)
 name|gimp_component_list_item_get_name
 parameter_list|(
-name|GtkWidget
+name|GObject
 modifier|*
-name|widget
+name|object
 parameter_list|,
 name|gchar
 modifier|*
@@ -1828,7 +1828,7 @@ name|component_item
 operator|=
 name|GIMP_COMPONENT_LIST_ITEM
 argument_list|(
-name|widget
+name|object
 argument_list|)
 expr_stmt|;
 if|if

@@ -340,6 +340,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpContainerTreeView
+typedef|typedef
+name|struct
+name|_GimpContainerTreeView
+name|GimpContainerTreeView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpItemListView
 typedef|typedef
 name|struct
@@ -644,9 +653,9 @@ modifier|*
 name|GimpItemGetNameFunc
 function_decl|)
 parameter_list|(
-name|GtkWidget
+name|GObject
 modifier|*
-name|widget
+name|object
 parameter_list|,
 name|gchar
 modifier|*

@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276862b50103
+DECL|enum|__anon275820d40103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -491,6 +491,12 @@ operator|->
 name|invalidate_preview
 operator|=
 name|gimp_drawable_invalidate_preview
+expr_stmt|;
+name|viewable_class
+operator|->
+name|get_preview_size
+operator|=
+name|gimp_drawable_get_preview_size
 expr_stmt|;
 name|viewable_class
 operator|->

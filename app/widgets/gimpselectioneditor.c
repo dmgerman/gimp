@@ -1066,9 +1066,11 @@ decl_stmt|;
 name|gboolean
 name|dummy
 decl_stmt|;
-name|gimp_preview_calc_size
+name|gimp_viewable_calc_preview_size
 argument_list|(
 name|preview
+operator|->
+name|viewable
 argument_list|,
 name|image_editor
 operator|->
@@ -1099,6 +1101,10 @@ name|height
 argument_list|,
 name|GIMP_PREVIEW_MAX_SIZE
 argument_list|)
+argument_list|,
+name|preview
+operator|->
+name|dot_for_dot
 argument_list|,
 name|image_editor
 operator|->

@@ -17,8 +17,36 @@ name|__GIMP_DRAWABLE__PREVIEW_H__
 end_define
 
 begin_comment
-comment|/*  *  virtual function of GimpDrawable -- dont't call directly  */
+comment|/*  *  virtual functions of GimpDrawable -- dont't call directly  */
 end_comment
+
+begin_function_decl
+name|void
+name|gimp_drawable_get_preview_size
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|,
+name|gint
+name|size
+parameter_list|,
+name|gboolean
+name|is_popup
+parameter_list|,
+name|gboolean
+name|dot_for_dot
+parameter_list|,
+name|gint
+modifier|*
+name|width
+parameter_list|,
+name|gint
+modifier|*
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|TempBuf
