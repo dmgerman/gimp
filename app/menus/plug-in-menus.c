@@ -194,13 +194,6 @@ name|tmp
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|plug_in_defs
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|std_plugins_domain
 operator|!=
 name|NULL

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig-path.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -372,6 +378,10 @@ name|gchar
 modifier|*
 name|basename
 decl_stmt|;
+name|gchar
+modifier|*
+name|path
+decl_stmt|;
 name|GSList
 modifier|*
 name|tmp
@@ -415,7 +425,9 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/* search for binaries in the plug-in directory path */
-name|gimp_datafiles_read_directories
+name|path
+operator|=
+name|gimp_config_path_expand
 argument_list|(
 name|gimp
 operator|->
@@ -423,11 +435,25 @@ name|config
 operator|->
 name|plug_in_path
 argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_datafiles_read_directories
+argument_list|(
+name|path
+argument_list|,
 name|G_FILE_TEST_IS_EXECUTABLE
 argument_list|,
 name|plug_ins_init_file
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 comment|/* read the pluginrc file for cached data */

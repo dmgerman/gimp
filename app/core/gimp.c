@@ -237,7 +237,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf115a0103
+DECL|enum|__anon2b4e6c370103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -1971,17 +1971,6 @@ name|gboolean
 name|kill_it
 parameter_list|)
 block|{
-name|g_print
-argument_list|(
-literal|"EXIT: gimp_real_exit(%s)\n"
-argument_list|,
-name|kill_it
-condition|?
-literal|"TRUE"
-else|:
-literal|"FALSE"
-argument_list|)
-expr_stmt|;
 name|gimp_modules_unload
 argument_list|(
 name|gimp

@@ -225,26 +225,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* gimprc debugging code, to be removed */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|gimprc_notify_callback
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  global variables  */
 end_comment
 
@@ -392,24 +372,13 @@ argument_list|,
 name|be_verbose
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
 comment|/* solely for debugging */
-name|g_signal_connect
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|gimprc
-argument_list|)
-argument_list|,
-literal|"notify"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimprc_notify_callback
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+block|g_signal_connect (G_OBJECT (gimprc), "notify",                     G_CALLBACK (gimprc_notify_callback),                     NULL);
+endif|#
+directive|endif
 comment|/*  initialize lowlevel stuff  */
 name|base_init
 argument_list|(
@@ -774,17 +743,6 @@ name|gboolean
 name|kill_it
 parameter_list|)
 block|{
-name|g_print
-argument_list|(
-literal|"EXIT: app_exit_callback(%s)\n"
-argument_list|,
-name|kill_it
-condition|?
-literal|"TRUE"
-else|:
-literal|"FALSE"
-argument_list|)
-expr_stmt|;
 name|plug_ins_exit
 argument_list|(
 name|gimp
@@ -823,17 +781,6 @@ name|gboolean
 name|kill_it
 parameter_list|)
 block|{
-name|g_print
-argument_list|(
-literal|"EXIT: app_exit_finish_callback(%s)\n"
-argument_list|,
-name|kill_it
-condition|?
-literal|"TRUE"
-else|:
-literal|"FALSE"
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|G_OBJECT
@@ -861,6 +808,12 @@ return|;
 block|}
 end_function
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_comment
 comment|/****************************************  * gimprc debugging code, to be removed *  ****************************************/
 end_comment
@@ -871,131 +824,11 @@ directive|include
 file|"config/gimpconfig-serialize.h"
 end_include
 
-begin_function
-specifier|static
-name|void
-DECL|function|gimprc_notify_callback (GObject * object,GParamSpec * pspec)
-name|gimprc_notify_callback
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
-parameter_list|)
-block|{
-name|GString
-modifier|*
-name|str
-decl_stmt|;
-name|GValue
-name|value
-init|=
-block|{
-literal|0
-block|, }
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|G_IS_OBJECT
-argument_list|(
-name|object
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|G_IS_PARAM_SPEC
-argument_list|(
-name|pspec
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_value_init
-argument_list|(
-operator|&
-name|value
-argument_list|,
-name|pspec
-operator|->
-name|value_type
-argument_list|)
-expr_stmt|;
-name|g_object_get_property
-argument_list|(
-name|object
-argument_list|,
-name|pspec
-operator|->
-name|name
-argument_list|,
-operator|&
-name|value
-argument_list|)
-expr_stmt|;
-name|str
-operator|=
-name|g_string_new
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_config_serialize_value
-argument_list|(
-operator|&
-name|value
-argument_list|,
-name|str
-argument_list|,
-name|TRUE
-argument_list|)
-condition|)
-block|{
-name|g_print
-argument_list|(
-literal|"  %s -> %s\n"
-argument_list|,
-name|pspec
-operator|->
-name|name
-argument_list|,
-name|str
-operator|->
-name|str
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_print
-argument_list|(
-literal|"  %s changed but we failed to serialize its value!\n"
-argument_list|,
-name|pspec
-operator|->
-name|name
-argument_list|)
-expr_stmt|;
-block|}
-name|g_string_free
-argument_list|(
-name|str
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|g_value_unset
-argument_list|(
-operator|&
-name|value
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+begin_endif
+unit|static void gimprc_notify_callback (GObject    *object, 			GParamSpec *pspec) {   GString *str;   GValue   value = { 0, };    g_return_if_fail (G_IS_OBJECT (object));   g_return_if_fail (G_IS_PARAM_SPEC (pspec));    g_value_init (&value, pspec->value_type);   g_object_get_property (object, pspec->name,&value);    str = g_string_new (NULL);    if (gimp_config_serialize_value (&value, str, TRUE))     {       g_print ("  %s -> %s\n", pspec->name, str->str);     }   else     {       g_print ("  %s changed but we failed to serialize its value!\n",                 pspec->name);     }    g_string_free (str, TRUE);   g_value_unset (&value); }
+endif|#
+directive|endif
+end_endif
 
 end_unit
 

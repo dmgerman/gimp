@@ -424,13 +424,6 @@ argument_list|)
 operator|->
 name|path
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"gimp_item_factory_destroy (%s)\n"
-argument_list|,
-name|factory_path
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|factory_path
@@ -474,18 +467,6 @@ argument_list|(
 name|list
 argument_list|,
 name|factory
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"gimp_item_factory_destroy (%d %s factories remaining)\n"
-argument_list|,
-name|g_list_length
-argument_list|(
-name|list
-argument_list|)
-argument_list|,
-name|factory_path
 argument_list|)
 expr_stmt|;
 if|if
