@@ -342,6 +342,8 @@ literal|"Edward Blevins"
 block|,
 literal|"Roberto Boyd"
 block|,
+literal|"Simon Budig"
+block|,
 literal|"Seth Burgess"
 block|,
 literal|"Brent Burton"
@@ -373,6 +375,8 @@ block|,
 literal|"Michael Hammel"
 block|,
 literal|"Christoph Hoegl"
+block|,
+literal|"Wolfgang Hofer"
 block|,
 literal|"Jan Hubicka"
 block|,
@@ -415,6 +419,8 @@ block|,
 literal|"Adam D. Moss"
 block|,
 literal|"Shuji Narazaki"
+block|,
+literal|"Michael Natterer"
 block|,
 literal|"Sven Neumann"
 block|,
