@@ -128,6 +128,25 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
+name|WAIT_ANY
+end_ifndef
+
+begin_define
+DECL|macro|WAIT_ANY
+define|#
+directive|define
+name|WAIT_ANY
+value|-1
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
 name|G_OS_WIN32
 end_ifndef
 
