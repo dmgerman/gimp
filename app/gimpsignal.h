@@ -45,7 +45,7 @@ comment|/* The arguments are encoded in the names.. */
 end_comment
 
 begin_decl_stmt
-DECL|variable|gimp_sigtype_void
+specifier|extern
 name|GimpSignalType
 modifier|*
 specifier|const
@@ -71,7 +71,7 @@ function_decl|;
 end_typedef
 
 begin_decl_stmt
-DECL|variable|gimp_sigtype_pointer
+specifier|extern
 name|GimpSignalType
 modifier|*
 specifier|const
@@ -99,7 +99,7 @@ function_decl|;
 end_typedef
 
 begin_decl_stmt
-DECL|variable|gimp_sigtype_int
+specifier|extern
 name|GimpSignalType
 modifier|*
 specifier|const
@@ -127,7 +127,7 @@ function_decl|;
 end_typedef
 
 begin_decl_stmt
-DECL|variable|gimp_sigtype_int_int_int_int
+specifier|extern
 name|GimpSignalType
 modifier|*
 specifier|const

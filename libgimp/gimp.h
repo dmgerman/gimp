@@ -1901,6 +1901,13 @@ name|gint
 name|visible
 parameter_list|)
 function_decl|;
+name|gint32
+name|gimp_layer_get_tattoo
+parameter_list|(
+name|gint32
+name|layer_ID
+parameter_list|)
+function_decl|;
 comment|/****************************************  *             Channels                 *  ****************************************/
 name|gint32
 name|gimp_channel_new
@@ -2071,6 +2078,13 @@ name|channel_ID
 parameter_list|,
 name|gint
 name|visible
+parameter_list|)
+function_decl|;
+name|gint32
+name|gimp_channel_get_tattoo
+parameter_list|(
+name|gint32
+name|channel_ID
 parameter_list|)
 function_decl|;
 comment|/****************************************  *             GDrawables                *  ****************************************/
