@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_PANEL, GimpColorPanelCl
 end_define
 
 begin_typedef
-DECL|typedef|GimpColorPanel
-typedef|typedef
-name|struct
-name|_GimpColorPanel
-name|GimpColorPanel
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorPanelClass
 typedef|typedef
 name|struct

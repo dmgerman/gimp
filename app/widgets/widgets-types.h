@@ -674,6 +674,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpToolDialog
+typedef|typedef
+name|struct
+name|_GimpViewableDialog
+name|GimpToolDialog
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpViewableDialog
 typedef|typedef
 name|struct
@@ -715,6 +724,24 @@ typedef|typedef
 name|struct
 name|_GimpColorDisplayEditor
 name|GimpColorDisplayEditor
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpColorFrame
+typedef|typedef
+name|struct
+name|_GimpColorFrame
+name|GimpColorFrame
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpColorPanel
+typedef|typedef
+name|struct
+name|_GimpColorPanel
+name|GimpColorPanel
 typedef|;
 end_typedef
 

@@ -24,7 +24,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c23eed20103
+DECL|enum|__anon2ad3901a0103
 block|{
 DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_0
 name|GIMP_CONTAINER_VIEW_PROP_0
@@ -80,17 +80,6 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_CONTAINER_VIEW, GimpContainerViewInterface))
-end_define
-
-begin_define
-DECL|macro|GIMP_CONTAINER_VIEW_GET_PRIVATE (obj)
-define|#
-directive|define
-name|GIMP_CONTAINER_VIEW_GET_PRIVATE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(gimp_container_view_get_private ((GimpContainerView *) (obj)))
 end_define
 
 begin_typedef

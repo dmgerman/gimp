@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb293f0103
+DECL|enum|__anon2a1ccdd50103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -93,6 +93,17 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
+
+begin_define
+DECL|macro|GIMP_CONTAINER_VIEW_GET_PRIVATE (obj)
+define|#
+directive|define
+name|GIMP_CONTAINER_VIEW_GET_PRIVATE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(gimp_container_view_get_private ((GimpContainerView *) (obj)))
+end_define
 
 begin_typedef
 DECL|typedef|GimpContainerViewPrivate

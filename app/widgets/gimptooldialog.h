@@ -94,15 +94,6 @@ name|GimpToolDialogClass
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpToolDialog
-typedef|typedef
-name|struct
-name|_GimpViewableDialog
-name|GimpToolDialog
-typedef|;
-end_typedef
-
 begin_decl_stmt
 name|GType
 name|gimp_tool_dialog_get_type

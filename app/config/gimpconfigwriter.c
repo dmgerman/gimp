@@ -969,7 +969,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_writer_identifier:  * @writer: a #GimpConfigWriter  * @string: a NUL-terminated string  *  * Writes an identifier to @writer. The @string is *not* quoted and special  * characters are *not* escaped.  **/
+comment|/**  * gimp_config_writer_identifier:  * @writer:     a #GimpConfigWriter  * @identifier: a NUL-terminated string  *  * Writes an identifier to @writer. The @string is *not* quoted and special  * characters are *not* escaped.  **/
 end_comment
 
 begin_function

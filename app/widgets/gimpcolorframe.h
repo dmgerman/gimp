@@ -94,15 +94,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_FRAME, GimpColorFrameCl
 end_define
 
 begin_typedef
-DECL|typedef|GimpColorFrame
-typedef|typedef
-name|struct
-name|_GimpColorFrame
-name|GimpColorFrame
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorFrameClass
 typedef|typedef
 name|struct

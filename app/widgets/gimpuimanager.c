@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977c1460103
+DECL|enum|__anon288c6f780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977c1460203
+DECL|enum|__anon288c6f780203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1405,7 +1405,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ui_manager_new:  * @gimp: the @Gimp instance this ui manager belongs to  *  * Creates a new #GimpUIManager object.  *  * Returns: the new #GimpUIManager  */
+comment|/**  * gimp_ui_manager_new:  * @gimp: the @Gimp instance this ui manager belongs to  * @name: the UI manager's name.  *  * Creates a new #GimpUIManager object.  *  * Returns: the new #GimpUIManager  */
 end_comment
 
 begin_function
@@ -2020,7 +2020,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2977c1460308
+DECL|struct|__anon288c6f780308
 block|{
 DECL|member|x
 name|guint
