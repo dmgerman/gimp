@@ -4,7 +4,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* XPM plugin version 1.2.1 */
+comment|/* XPM plugin version 1.2.2 */
+end_comment
+
+begin_comment
+comment|/* 1.2.2 fixes bug that generated bad digits on images with more than 20000 colors. (thanks, yanele) parses gtkrc (thanks, yosh) doesn't load parameter screen on images that don't have alpha  1.2.1 fixes some minor bugs -- spaces in #XXXXXX strings, small typos in code.  1.2 compute color indexes so that we don't have to use XpmSaveXImage*  Previous...Inherited code from Ray Lehtiniemi, who inherited it from S& P. */
 end_comment
 
 begin_include
@@ -76,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70bfdc0108
+DECL|struct|__anon2c52e45f0108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -91,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70bfdc0208
+DECL|struct|__anon2c52e45f0208
 block|{
 DECL|member|run
 name|gint
@@ -106,7 +110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70bfdc0308
+DECL|struct|__anon2c52e45f0308
 block|{
 DECL|member|r
 name|guchar
@@ -799,6 +803,20 @@ name|xpmvals
 argument_list|)
 expr_stmt|;
 comment|/*  First acquire information with a dialog  */
+if|if
+condition|(
+name|gimp_drawable_has_alpha
+argument_list|(
+name|param
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+argument_list|)
+condition|)
 if|if
 condition|(
 operator|!
@@ -1881,23 +1899,20 @@ for|for
 control|(
 name|i
 operator|=
-name|cpp
-operator|-
-literal|1
+literal|0
 init|;
 name|i
-operator|>
-literal|0
+operator|<
+name|cpp
 condition|;
+operator|++
 name|i
-operator|--
 control|)
 block|{
 name|charnum
 operator|=
 name|indtemp
-operator|/
-operator|(
+operator|%
 operator|(
 sizeof|sizeof
 argument_list|(
@@ -1905,16 +1920,12 @@ name|linenoise
 argument_list|)
 operator|-
 literal|1
-operator|)
-operator|*
-name|i
 operator|)
 expr_stmt|;
 name|indtemp
-operator|-=
-name|charnum
-operator|*
-operator|(
+operator|=
+name|indtemp
+operator|/
 operator|(
 sizeof|sizeof
 argument_list|(
@@ -1922,9 +1933,6 @@ name|linenoise
 argument_list|)
 operator|-
 literal|1
-operator|)
-operator|*
-name|i
 operator|)
 expr_stmt|;
 operator|*
@@ -1937,15 +1945,7 @@ name|charnum
 index|]
 expr_stmt|;
 block|}
-operator|*
-name|p
-operator|++
-operator|=
-name|linenoise
-index|[
-name|indtemp
-index|]
-expr_stmt|;
+comment|/* *p++=linenoise[indtemp]; */
 operator|*
 name|p
 operator|=
