@@ -151,7 +151,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2743fe680103
+DECL|enum|__anon291c5afe0103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -242,22 +242,6 @@ end_function_decl
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_color_display_register
-parameter_list|()
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|extern
-name|void
-name|gimp_color_display_unregister
-parameter_list|()
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|extern
-name|void
 name|dialog_register
 parameter_list|()
 function_decl|;
@@ -309,18 +293,6 @@ name|gimp_color_selector_unregister
 block|}
 block|,
 block|{
-literal|"gimp_color_display_register"
-block|,
-name|gimp_color_display_register
-block|}
-block|,
-block|{
-literal|"gimp_color_display_unregister"
-block|,
-name|gimp_color_display_unregister
-block|}
-block|,
-block|{
 literal|"dialog_register"
 block|,
 name|dialog_register
@@ -353,7 +325,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2743fe680208
+DECL|struct|__anon291c5afe0208
 block|{
 DECL|member|object
 name|GtkObject
@@ -468,7 +440,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2743fe680308
+DECL|struct|__anon291c5afe0308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1778,7 +1750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2743fe680408
+DECL|struct|__anon291c5afe0408
 block|{
 DECL|member|parent_class
 name|GtkObjectClass
@@ -1792,7 +1764,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2743fe680503
+DECL|enum|__anon291c5afe0503
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -4648,7 +4620,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2743fe680608
+DECL|struct|__anon291c5afe0608
 block|{
 DECL|member|search_key
 specifier|const
