@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56a2270103
+DECL|enum|__anon2b519d6a0103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -925,7 +925,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gtk_tree_model_get_iter_root
+name|gtk_tree_model_get_iter_first
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
@@ -1577,7 +1577,7 @@ comment|/* FIXME: Use gtk_list_store_foreach_remove when it becomes available */
 if|if
 condition|(
 operator|!
-name|gtk_tree_model_get_iter_root
+name|gtk_tree_model_get_iter_first
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
