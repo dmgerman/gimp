@@ -97,14 +97,6 @@ name|GtkWidget
 modifier|*
 name|wrapbox
 decl_stmt|;
-DECL|member|preview_width
-name|gint
-name|preview_width
-decl_stmt|;
-DECL|member|preview_height
-name|gint
-name|preview_height
-decl_stmt|;
 block|}
 struct|;
 end_struct
