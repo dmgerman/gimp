@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289af06b0103
+DECL|enum|__anon288c88530103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -576,7 +576,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"loading module: '%s'\n"
+literal|"Loading module: '%s'\n"
 argument_list|)
 argument_list|,
 name|gimp_module
@@ -672,10 +672,7 @@ name|gimp_module_set_last_error
 argument_list|(
 name|gimp_module
 argument_list|,
-name|_
-argument_list|(
 literal|"Missing gimp_module_query() symbol"
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -684,7 +681,7 @@ name|gimp_module
 operator|->
 name|verbose
 condition|)
-name|g_message
+name|g_print
 argument_list|(
 name|_
 argument_list|(
@@ -769,10 +766,7 @@ name|gimp_module_set_last_error
 argument_list|(
 name|gimp_module
 argument_list|,
-name|_
-argument_list|(
 literal|"gimp_module_query() returned NULL"
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -856,10 +850,7 @@ name|gimp_module_set_last_error
 argument_list|(
 name|gimp_module
 argument_list|,
-name|_
-argument_list|(
 literal|"Missing gimp_module_register() symbol"
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1124,7 +1115,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"skipping module: '%s'\n"
+literal|"Skipping module: '%s'\n"
 argument_list|)
 argument_list|,
 name|filename
