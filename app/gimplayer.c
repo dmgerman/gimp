@@ -139,7 +139,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb9a1830103
+DECL|enum|__anon298f6e2c0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -2972,7 +2972,7 @@ name|temporary
 condition|)
 block|{
 comment|/*  invalidate the mask preview  */
-name|drawable_invalidate_preview
+name|gimp_drawable_invalidate_preview
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2980,6 +2980,8 @@ name|layer
 operator|->
 name|mask
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6666,12 +6668,14 @@ name|tmp
 operator|->
 name|data
 expr_stmt|;
-name|drawable_invalidate_preview
+name|gimp_drawable_invalidate_preview
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|tmp

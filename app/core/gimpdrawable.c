@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cf4f7c0103
+DECL|enum|__anon2785448e0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -912,12 +912,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_invalidate_preview (GimpDrawable * drawable)
+DECL|function|gimp_drawable_invalidate_preview (GimpDrawable * drawable,gboolean emit_signal)
 name|gimp_drawable_invalidate_preview
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|emit_signal
 parameter_list|)
 block|{
 name|GimpImage
@@ -938,6 +941,10 @@ name|preview_valid
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|emit_signal
+condition|)
 name|gtk_signal_emit
 argument_list|(
 name|GTK_OBJECT

@@ -219,7 +219,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29426ecc0103
+DECL|enum|__anon2786767d0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -8520,7 +8520,7 @@ case|case
 name|UNDO
 case|:
 comment|/*  Update the preview for the floating sel  */
-name|drawable_invalidate_preview
+name|gimp_drawable_invalidate_preview
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8528,6 +8528,8 @@ name|fsu
 operator|->
 name|layer
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|fsu
@@ -8621,7 +8623,7 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  Update the preview for the gimage and underlying drawable  */
-name|drawable_invalidate_preview
+name|gimp_drawable_invalidate_preview
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8629,6 +8631,8 @@ name|fsu
 operator|->
 name|layer
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -8680,7 +8684,7 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/*  Update the preview for the gimage and underlying drawable  */
-name|drawable_invalidate_preview
+name|gimp_drawable_invalidate_preview
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8688,6 +8692,8 @@ name|fsu
 operator|->
 name|layer
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  clear the selection  */
@@ -8716,7 +8722,7 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/*  Update the fs drawable  */
-name|drawable_invalidate_preview
+name|gimp_drawable_invalidate_preview
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8724,6 +8730,8 @@ name|fsu
 operator|->
 name|layer
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;

@@ -164,6 +164,10 @@ name|gimp_drawable_invalidate_preview
 parameter_list|(
 name|GimpDrawable
 modifier|*
+name|drawable
+parameter_list|,
+name|gboolean
+name|emit_signal
 parameter_list|)
 function_decl|;
 end_function_decl

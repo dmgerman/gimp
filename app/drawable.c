@@ -339,6 +339,8 @@ comment|/*  invalidate the preview  */
 name|gimp_drawable_invalidate_preview
 argument_list|(
 name|drawable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

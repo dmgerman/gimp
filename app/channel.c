@@ -130,7 +130,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c717a890103
+DECL|enum|__anon2967e7940103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -2500,12 +2500,14 @@ name|tmp
 operator|->
 name|data
 expr_stmt|;
-name|drawable_invalidate_preview
+name|gimp_drawable_invalidate_preview
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|channel
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|tmp

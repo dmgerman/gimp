@@ -1133,9 +1133,11 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/*  Invalidate the preview  */
-name|drawable_invalidate_preview
+name|gimp_drawable_invalidate_preview
 argument_list|(
 name|drawable
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

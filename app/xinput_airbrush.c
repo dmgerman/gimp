@@ -5197,9 +5197,11 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/*  invalidate the drawable--have to do it here, because      *  it is not done during the actual painting.      */
-name|drawable_invalidate_preview
+name|gimp_drawable_invalidate_preview
 argument_list|(
 name|drawable
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
