@@ -656,11 +656,9 @@ name|p3
 operator|=
 name|points
 index|[
-operator|(
 name|i
 operator|+
 literal|1
-operator|)
 index|]
 expr_stmt|;
 name|p4
@@ -677,20 +675,16 @@ operator|)
 condition|?
 name|points
 index|[
-operator|(
 name|num_pts
 operator|-
 literal|1
-operator|)
 index|]
 else|:
 name|points
 index|[
-operator|(
 name|i
 operator|+
 literal|2
-operator|)
 index|]
 expr_stmt|;
 name|curves_plot_curve
@@ -726,11 +720,7 @@ control|)
 block|{
 name|gint
 name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-name|x
-operator|=
+init|=
 name|curves
 operator|->
 name|points
@@ -746,9 +736,10 @@ index|]
 index|[
 literal|0
 index|]
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|y
-operator|=
+init|=
 name|curves
 operator|->
 name|points
@@ -764,7 +755,7 @@ index|]
 index|[
 literal|1
 index|]
-expr_stmt|;
+decl_stmt|;
 name|curves
 operator|->
 name|curve
@@ -962,9 +953,7 @@ index|[
 name|index
 index|]
 operator|+
-operator|(
 name|f
-operator|)
 operator|*
 name|curves
 operator|->
@@ -992,6 +981,18 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_comment
+comment|/*  this can be adjusted to give a finer or coarser curve  */
+end_comment
+
+begin_define
+DECL|macro|CURVES_SUBDIVIDE
+define|#
+directive|define
+name|CURVES_SUBDIVIDE
+value|1000
+end_define
 
 begin_function
 specifier|static
@@ -1203,13 +1204,12 @@ name|i
 index|]
 expr_stmt|;
 block|}
-comment|/* subdivide the curve 1000 times */
-comment|/* n can be adjusted to give a finer or coarser curve */
+comment|/* subdivide the curve */
 name|d
 operator|=
 literal|1.0
 operator|/
-literal|1000
+name|CURVES_SUBDIVIDE
 expr_stmt|;
 name|d2
 operator|=
@@ -1225,7 +1225,7 @@ name|d
 operator|*
 name|d
 expr_stmt|;
-comment|/* construct a temporary matrix for determining the forward differencing deltas */
+comment|/* construct a temporary matrix for determining the forward    * differencing deltas    */
 name|tmp2
 index|[
 literal|0
@@ -1537,7 +1537,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|1000
+name|CURVES_SUBDIVIDE
 condition|;
 name|i
 operator|++
@@ -1662,7 +1662,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 for|for
 control|(
 name|j
@@ -1676,7 +1675,6 @@ condition|;
 name|j
 operator|++
 control|)
-block|{
 name|ab
 index|[
 name|i
@@ -1751,8 +1749,6 @@ name|j
 index|]
 operator|)
 expr_stmt|;
-block|}
-block|}
 block|}
 end_function
 
