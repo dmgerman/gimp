@@ -190,10 +190,7 @@ modifier|*
 name|save_proc
 parameter_list|,
 name|gboolean
-name|set_uri_and_proc
-parameter_list|,
-name|gboolean
-name|set_image_clean
+name|save_a_copy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -397,11 +394,7 @@ name|file_proc
 argument_list|,
 name|dialog
 operator|->
-name|set_uri_and_proc
-argument_list|,
-name|dialog
-operator|->
-name|set_image_clean
+name|save_a_copy
 argument_list|)
 condition|)
 block|{
@@ -735,11 +728,7 @@ name|file_proc
 argument_list|,
 name|save_dialog
 operator|->
-name|set_uri_and_proc
-argument_list|,
-name|save_dialog
-operator|->
-name|set_image_clean
+name|save_a_copy
 argument_list|)
 condition|)
 block|{
@@ -784,7 +773,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_uri_and_proc,gboolean set_image_clean)
+DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * save_proc,gboolean save_a_copy)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GtkWidget
@@ -810,10 +799,7 @@ modifier|*
 name|save_proc
 parameter_list|,
 name|gboolean
-name|set_uri_and_proc
-parameter_list|,
-name|gboolean
-name|set_image_clean
+name|save_a_copy
 parameter_list|)
 block|{
 name|GimpPDBStatusType
@@ -851,9 +837,7 @@ name|save_proc
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
-name|set_uri_and_proc
-argument_list|,
-name|set_image_clean
+name|save_a_copy
 argument_list|,
 operator|&
 name|error

@@ -1698,7 +1698,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_file_dialog_set_image (GimpFileDialog * dialog,GimpImage * gimage,gboolean set_uri_and_proc,gboolean set_image_clean)
+DECL|function|gimp_file_dialog_set_image (GimpFileDialog * dialog,GimpImage * gimage,gboolean save_a_copy)
 name|gimp_file_dialog_set_image
 parameter_list|(
 name|GimpFileDialog
@@ -1710,16 +1710,15 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gboolean
-name|set_uri_and_proc
-parameter_list|,
-name|gboolean
-name|set_image_clean
+name|save_a_copy
 parameter_list|)
 block|{
 specifier|const
 name|gchar
 modifier|*
 name|uri
+init|=
+name|NULL
 decl_stmt|;
 name|gboolean
 name|uri_set
@@ -1750,16 +1749,31 @@ name|gimage
 expr_stmt|;
 name|dialog
 operator|->
-name|set_uri_and_proc
+name|save_a_copy
 operator|=
-name|set_uri_and_proc
+name|save_a_copy
 expr_stmt|;
-name|dialog
-operator|->
-name|set_image_clean
+if|if
+condition|(
+name|save_a_copy
+condition|)
+name|uri
 operator|=
-name|set_image_clean
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+literal|"gimp-image-save-a-copy"
+argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|uri
+condition|)
 name|uri
 operator|=
 name|gimp_object_get_name

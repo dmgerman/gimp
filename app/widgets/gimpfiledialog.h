@@ -111,13 +111,9 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-DECL|member|set_uri_and_proc
+DECL|member|save_a_copy
 name|gboolean
-name|set_uri_and_proc
-decl_stmt|;
-DECL|member|set_image_clean
-name|gboolean
-name|set_image_clean
+name|save_a_copy
 decl_stmt|;
 DECL|member|thumb_box
 name|GtkWidget
@@ -279,10 +275,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gboolean
-name|set_uri_and_proc
-parameter_list|,
-name|gboolean
-name|set_image_clean
+name|save_a_copy
 parameter_list|)
 function_decl|;
 end_function_decl

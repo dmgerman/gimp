@@ -208,10 +208,7 @@ modifier|*
 name|title
 parameter_list|,
 name|gboolean
-name|set_uri_and_proc
-parameter_list|,
-name|gboolean
-name|set_image_clean
+name|save_a_copy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -850,9 +847,7 @@ argument_list|(
 literal|"Save Image"
 argument_list|)
 argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -917,9 +912,7 @@ argument_list|(
 literal|"Save a Copy of the Image"
 argument_list|)
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1447,7 +1440,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_dialog_show (GimpImage * gimage,GtkWidget * parent,const gchar * title,gboolean set_uri_and_proc,gboolean set_image_clean)
+DECL|function|file_save_dialog_show (GimpImage * gimage,GtkWidget * parent,const gchar * title,gboolean save_a_copy)
 name|file_save_dialog_show
 parameter_list|(
 name|GimpImage
@@ -1464,10 +1457,7 @@ modifier|*
 name|title
 parameter_list|,
 name|gboolean
-name|set_uri_and_proc
-parameter_list|,
-name|gboolean
-name|set_image_clean
+name|save_a_copy
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1573,9 +1563,7 @@ argument_list|)
 argument_list|,
 name|gimage
 argument_list|,
-name|set_uri_and_proc
-argument_list|,
-name|set_image_clean
+name|save_a_copy
 argument_list|)
 expr_stmt|;
 name|gtk_window_present

@@ -77,10 +77,7 @@ name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gboolean
-name|set_uri_and_proc
-parameter_list|,
-name|gboolean
-name|set_image_clean
+name|save_a_copy
 parameter_list|,
 name|GError
 modifier|*
