@@ -109,7 +109,7 @@ comment|/* ======== */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b213390103
+DECL|enum|__anon29a51cab0103
 typedef|typedef
 enum|enum
 block|{
@@ -128,7 +128,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27b213390203
+DECL|enum|__anon29a51cab0203
 typedef|typedef
 enum|enum
 block|{
@@ -140,6 +140,9 @@ name|MAP_SPHERE
 block|,
 DECL|enumerator|MAP_BOX
 name|MAP_BOX
+block|,
+DECL|enumerator|MAP_CYLINDER
+name|MAP_CYLINDER
 DECL|typedef|MapType
 block|}
 name|MapType
@@ -157,7 +160,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b213390308
+DECL|struct|__anon29a51cab0308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -192,7 +195,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b213390408
+DECL|struct|__anon29a51cab0408
 block|{
 DECL|member|type
 name|LightType
@@ -221,7 +224,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27b213390508
+DECL|struct|__anon29a51cab0508
 typedef|typedef
 struct|struct
 block|{
@@ -284,6 +287,10 @@ DECL|member|tooltips_enabled
 name|gint
 name|tooltips_enabled
 decl_stmt|;
+DECL|member|showcaps
+name|gint
+name|showcaps
+decl_stmt|;
 DECL|member|preview_zoom_factor
 name|glong
 name|preview_zoom_factor
@@ -310,11 +317,26 @@ DECL|member|radius
 name|gdouble
 name|radius
 decl_stmt|;
+DECL|member|cylinder_radius
+name|gdouble
+name|cylinder_radius
+decl_stmt|;
+DECL|member|cylinder_length
+name|gdouble
+name|cylinder_length
+decl_stmt|;
 DECL|member|boxmap_id
 name|gint32
 name|boxmap_id
 index|[
 literal|6
+index|]
+decl_stmt|;
+DECL|member|cylindermap_id
+name|gint32
+name|cylindermap_id
+index|[
+literal|2
 index|]
 decl_stmt|;
 DECL|typedef|MapObjectValues

@@ -115,6 +115,18 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
+name|GckRGB
+name|get_ray_color_cylinder
+parameter_list|(
+name|GckVector3
+modifier|*
+name|pos
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|extern
 name|void
 name|compute_bounding_box
 parameter_list|(

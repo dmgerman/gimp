@@ -4,7 +4,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/* MapObject 1.10 -- image filter plug-in for The Gimp program                   */
+comment|/* MapObject 1.2.0 -- image filter plug-in for The Gimp program                  */
 end_comment
 
 begin_comment
@@ -329,6 +329,18 @@ literal|0.25
 expr_stmt|;
 name|mapvals
 operator|.
+name|cylinder_radius
+operator|=
+literal|0.25
+expr_stmt|;
+name|mapvals
+operator|.
+name|cylinder_length
+operator|=
+literal|1.0
+expr_stmt|;
+name|mapvals
+operator|.
 name|preview_zoom_factor
 operator|=
 literal|0
@@ -464,6 +476,29 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|2
+condition|;
+name|i
+operator|++
+control|)
+name|mapvals
+operator|.
+name|cylindermap_id
+index|[
+name|i
+index|]
+operator|=
+operator|-
+literal|1
+expr_stmt|;
 block|}
 end_function
 
@@ -490,12 +525,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|mapvals
-operator|.
-name|boxmap_id
-index|[
-name|i
-index|]
+literal|6
 condition|;
 name|i
 operator|++
@@ -586,16 +616,118 @@ operator|->
 name|id
 expr_stmt|;
 block|}
+comment|/* Check that cylindermap images are valid */
+comment|/* ======================================= */
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|2
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|mapvals
+operator|.
+name|cylindermap_id
+index|[
+name|i
+index|]
+operator|==
+operator|-
+literal|1
+condition|)
+name|mapvals
+operator|.
+name|cylindermap_id
+index|[
+name|i
+index|]
+operator|=
+name|drawable
+operator|->
+name|id
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|mapvals
+operator|.
+name|cylindermap_id
+index|[
+name|i
+index|]
+operator|!=
+operator|-
+literal|1
+operator|&&
+name|gimp_drawable_image_id
+argument_list|(
+name|mapvals
+operator|.
+name|cylindermap_id
+index|[
+name|i
+index|]
+argument_list|)
+operator|==
+operator|-
+literal|1
+condition|)
+name|mapvals
+operator|.
+name|cylindermap_id
+index|[
+name|i
+index|]
+operator|=
+name|drawable
+operator|->
+name|id
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|gimp_drawable_gray
+argument_list|(
+name|mapvals
+operator|.
+name|cylindermap_id
+index|[
+name|i
+index|]
+argument_list|)
+condition|)
+name|mapvals
+operator|.
+name|cylindermap_id
+index|[
+name|i
+index|]
+operator|=
+name|drawable
+operator|->
+name|id
+expr_stmt|;
+block|}
 block|}
 end_function
 
-begin_macro
-DECL|function|MAIN ()
+begin_expr_stmt
 name|MAIN
 argument_list|()
-end_macro
+expr_stmt|;
+end_expr_stmt
 
 begin_function
+DECL|function|query (void)
 specifier|static
 name|void
 name|query
@@ -638,7 +770,7 @@ name|PARAM_INT32
 block|,
 literal|"maptype"
 block|,
-literal|"Type of mapping (0=plane,1=sphere,2=box)"
+literal|"Type of mapping (0=plane,1=sphere,2=box,3=cylinder)"
 block|}
 block|,
 block|{
@@ -902,7 +1034,7 @@ name|PARAM_FLOAT
 block|,
 literal|"radius"
 block|,
-literal|"Sphere radius (only used when maptype=1)"
+literal|"Sphere/cylinder radius (only used when maptype=1 or 3)"
 block|}
 block|,
 block|{
@@ -930,9 +1062,17 @@ literal|"Box z size (0..->)"
 block|}
 block|,
 block|{
+name|PARAM_FLOAT
+block|,
+literal|"cylinder_length"
+block|,
+literal|"Cylinder length (0..->)"
+block|}
+block|,
+block|{
 name|PARAM_DRAWABLE
 block|,
-literal|"front_drawable"
+literal|"box_front_drawable"
 block|,
 literal|"Box front face (set these to -1 if not used)"
 block|}
@@ -940,7 +1080,7 @@ block|,
 block|{
 name|PARAM_DRAWABLE
 block|,
-literal|"back_drawable"
+literal|"box_back_drawable"
 block|,
 literal|"Box back face"
 block|}
@@ -948,7 +1088,7 @@ block|,
 block|{
 name|PARAM_DRAWABLE
 block|,
-literal|"top_drawable"
+literal|"box_top_drawable"
 block|,
 literal|"Box top face"
 block|}
@@ -956,7 +1096,7 @@ block|,
 block|{
 name|PARAM_DRAWABLE
 block|,
-literal|"bottom_drawable"
+literal|"box_bottom_drawable"
 block|,
 literal|"Box bottom face"
 block|}
@@ -964,7 +1104,7 @@ block|,
 block|{
 name|PARAM_DRAWABLE
 block|,
-literal|"left_drawable"
+literal|"box_left_drawable"
 block|,
 literal|"Box left face"
 block|}
@@ -972,9 +1112,25 @@ block|,
 block|{
 name|PARAM_DRAWABLE
 block|,
-literal|"right_drawable"
+literal|"box_right_drawable"
 block|,
 literal|"Box right face"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"cyl_top_drawable"
+block|,
+literal|"Cylinder top face (set these to -1 if not used)"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"cyl_bottom_drawable"
+block|,
+literal|"Cylinder bottom face"
 block|}
 block|}
 decl_stmt|;
@@ -1012,7 +1168,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_map_object"
 argument_list|,
-literal|"Maps a picture to a object (plane, sphere or box)"
+literal|"Maps a picture to a object (plane, sphere, box or cylinder)"
 argument_list|,
 literal|"No help yet"
 argument_list|,
@@ -1020,7 +1176,7 @@ literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,
 literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,
-literal|"Version 1.10, July 17 1998"
+literal|"Version 1.2.0, July 16 1998"
 argument_list|,
 literal|"<Image>/Filters/Distorts/Map Object"
 argument_list|,
@@ -1227,7 +1383,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|46
+literal|49
 condition|)
 name|status
 operator|=
@@ -1807,6 +1963,19 @@ name|d_float
 expr_stmt|;
 name|mapvals
 operator|.
+name|cylinder_radius
+operator|=
+name|param
+index|[
+literal|36
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+name|mapvals
+operator|.
 name|scale
 operator|.
 name|x
@@ -1850,6 +2019,19 @@ name|data
 operator|.
 name|d_float
 expr_stmt|;
+name|mapvals
+operator|.
+name|cylinder_length
+operator|=
+name|param
+index|[
+literal|40
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1874,7 +2056,43 @@ name|gimp_drawable_get
 argument_list|(
 name|param
 index|[
-literal|40
+literal|41
+operator|+
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_drawable
+argument_list|)
+operator|->
+name|id
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|2
+condition|;
+name|i
+operator|++
+control|)
+name|mapvals
+operator|.
+name|cylindermap_id
+index|[
+name|i
+index|]
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|param
+index|[
+literal|47
 operator|+
 name|i
 index|]
