@@ -794,13 +794,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_mask:  * @layer_ID: The layer.  *  * Get the specified layer's mask if it exists.  *  * This procedure returns the specified layer's mask, or -1 if none  * exists.  *  * Returns: The layer mask.  */
+comment|/**  * gimp_layer_get_mask:  * @layer_ID: The layer.  *  * Get the specified layer's mask if it exists.  *  * This procedure returns the specified layer's mask, or -1 if none  * exists.  *  * Returns: The layer mask.  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_mask (gint32 layer_ID)
-name|gimp_layer_mask
+DECL|function|gimp_layer_get_mask (gint32 layer_ID)
+name|gimp_layer_get_mask
 parameter_list|(
 name|gint32
 name|layer_ID
@@ -823,7 +823,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_layer_mask"
+literal|"gimp_layer_get_mask"
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -19,11 +19,6 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-DECL|macro|gimp_layer_get_mask_id
-define|#
-directive|define
-name|gimp_layer_get_mask_id
-value|gimp_layer_mask
 DECL|macro|gimp_layer_is_floating_selection
 define|#
 directive|define

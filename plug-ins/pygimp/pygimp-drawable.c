@@ -3252,7 +3252,7 @@ block|{
 name|gint32
 name|id
 init|=
-name|gimp_layer_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|self
 operator|->

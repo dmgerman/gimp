@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf0f7d0108
+DECL|struct|__anon2a178e0d0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -471,7 +471,7 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_layer_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layers
 index|[
@@ -2846,7 +2846,7 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_layer_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layers
 index|[

@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6457040108
+DECL|struct|__anon2876a4e60108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6457040208
+DECL|struct|__anon2876a4e60208
 block|{
 DECL|member|y
 name|gint32
@@ -1757,7 +1757,7 @@ return|return
 name|l_nparams
 return|;
 block|}
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Warning: Procedure %s not found.\n"
 argument_list|,
@@ -1791,7 +1791,7 @@ name|angle_deg
 parameter_list|)
 block|{
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|l_rotate_proc
 init|=
@@ -1801,23 +1801,23 @@ name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gdouble
 name|l_angle_rad
 decl_stmt|;
-name|int
+name|gint
 name|l_nparams
 decl_stmt|;
-name|int
+name|gint
 name|l_rc
 decl_stmt|;
 ifdef|#
 directive|ifdef
 name|ROTATE_OPTIMIZE
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|l_rotate_proc2
 init|=
@@ -1977,7 +1977,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-comment|/* use the new Interface (Gimp 1.1 style)           * (1.1 knows the image_id where the drawable belongs to)           */
+comment|/* use the new Interface (Gimp 1.1 style)        * (1.1 knows the image_id where the drawable belongs to)        */
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -2023,15 +2023,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Error: %s call failed %d\n"
 argument_list|,
 name|l_rotate_proc
 argument_list|,
-operator|(
-name|int
-operator|)
 name|return_vals
 index|[
 literal|0
@@ -2053,7 +2050,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Error: Procedure %s not found.\n"
 argument_list|,
@@ -2640,16 +2637,13 @@ if|if
 condition|(
 name|gb_debug
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"\n\nDEBUG: run %s\n"
 argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-comment|/* initialize the return of the status */
 name|values
 index|[
 literal|0
@@ -2732,7 +2726,7 @@ decl_stmt|,
 name|bval_to
 decl_stmt|;
 comment|/* start and end values */
-comment|/* Iterator procedure for animated calls is usually called from          * "plug_in_gap_layers_run_animfilter"          * (always run noninteractive)          */
+comment|/* Iterator procedure for animated calls is usually called from        * "plug_in_gap_layers_run_animfilter"        * (always run noninteractive)        */
 if|if
 condition|(
 operator|(
@@ -2791,7 +2785,7 @@ name|bval
 argument_list|)
 condition|)
 block|{
-comment|/* get _FROM and _TO data,              * This data was stored by plug_in_gap_layers_run_animfilter              */
+comment|/* get _FROM and _TO data,                * This data was stored by plug_in_gap_layers_run_animfilter                */
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_DATA_ITER_FROM
@@ -2832,7 +2826,7 @@ argument_list|,
 name|current_step
 argument_list|)
 expr_stmt|;
-comment|/* note: iteration of curve and points arrays would not give useful results.                 *       (there might be different number of points in the from/to bender values )                 *       the iteration is done later, (see p_bender_calculate_iter_curve)                 *       when the curve is calculated.                 */
+comment|/* note: iteration of curve and points arrays would not give useful results.                *       (there might be different number of points in the from/to bender values )                *       the iteration is done later, (see p_bender_calculate_iter_curve)                *       when the curve is calculated.                */
 name|bval
 operator|.
 name|total_steps
@@ -2860,16 +2854,20 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
+block|}
 else|else
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -2920,7 +2918,7 @@ name|l_layer_id
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2936,7 +2934,7 @@ block|}
 comment|/* check for layermask */
 name|l_layer_mask_id
 operator|=
-name|gimp_layer_get_mask_id
+name|gimp_layer_get_mask
 argument_list|(
 name|l_layer_id
 argument_list|)
@@ -2948,7 +2946,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-comment|/* apply the layermask       *   some transitions (especially rotate) cant operate proper on       *   layers with masks !       */
+comment|/* apply the layermask        *   some transitions (especially rotate) cant operate proper on        *   layers with masks !        */
 name|gimp_image_remove_layer_mask
 argument_list|(
 name|l_image_id
@@ -3114,7 +3112,7 @@ operator|->
 name|curve_type
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|param
 index|[
@@ -3133,9 +3131,6 @@ name|OUTLINE_UPPER
 argument_list|,
 literal|0
 argument_list|,
-operator|(
-name|int
-operator|)
 name|param
 index|[
 literal|8
@@ -3163,9 +3158,6 @@ name|OUTLINE_UPPER
 argument_list|,
 literal|1
 argument_list|,
-operator|(
-name|int
-operator|)
 name|param
 index|[
 literal|10
@@ -3193,9 +3185,6 @@ name|OUTLINE_LOWER
 argument_list|,
 literal|0
 argument_list|,
-operator|(
-name|int
-operator|)
 name|param
 index|[
 literal|12
@@ -3223,9 +3212,6 @@ name|OUTLINE_LOWER
 argument_list|,
 literal|1
 argument_list|,
-operator|(
-name|int
-operator|)
 name|param
 index|[
 literal|14
@@ -3251,9 +3237,6 @@ name|cd
 argument_list|,
 name|OUTLINE_UPPER
 argument_list|,
-operator|(
-name|int
-operator|)
 name|param
 index|[
 literal|16
@@ -3279,9 +3262,6 @@ name|cd
 argument_list|,
 name|OUTLINE_UPPER
 argument_list|,
-operator|(
-name|int
-operator|)
 name|param
 index|[
 literal|18
@@ -3411,9 +3391,8 @@ else|else
 block|{
 name|status
 operator|=
-name|GIMP_PDB_EXECUTION_ERROR
+name|GIMP_PDB_CANCEL
 expr_stmt|;
-comment|/* dialog ended with cancel button */
 block|}
 name|gimp_undo_push_group_end
 argument_list|(

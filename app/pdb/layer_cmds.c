@@ -176,10 +176,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_mask_proc
+DECL|variable|layer_get_mask_proc
 specifier|static
 name|ProcRecord
-name|layer_mask_proc
+name|layer_get_mask_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -382,7 +382,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|layer_mask_proc
+name|layer_get_mask_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -2934,8 +2934,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_mask_invoker (Gimp * gimp,Argument * args)
-name|layer_mask_invoker
+DECL|function|layer_get_mask_invoker (Gimp * gimp,Argument * args)
+name|layer_get_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -2996,7 +2996,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|layer_mask_proc
+name|layer_get_mask_proc
 argument_list|,
 name|success
 argument_list|)
@@ -3038,10 +3038,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|layer_mask_inargs
+DECL|variable|layer_get_mask_inargs
 specifier|static
 name|ProcArg
-name|layer_mask_inargs
+name|layer_get_mask_inargs
 index|[]
 init|=
 block|{
@@ -3057,10 +3057,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_mask_outargs
+DECL|variable|layer_get_mask_outargs
 specifier|static
 name|ProcArg
-name|layer_mask_outargs
+name|layer_get_mask_outargs
 index|[]
 init|=
 block|{
@@ -3076,13 +3076,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_mask_proc
+DECL|variable|layer_get_mask_proc
 specifier|static
 name|ProcRecord
-name|layer_mask_proc
+name|layer_get_mask_proc
 init|=
 block|{
-literal|"gimp_layer_mask"
+literal|"gimp_layer_get_mask"
 block|,
 literal|"Get the specified layer's mask if it exists."
 block|,
@@ -3098,15 +3098,15 @@ name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|layer_mask_inargs
+name|layer_get_mask_inargs
 block|,
 literal|1
 block|,
-name|layer_mask_outargs
+name|layer_get_mask_outargs
 block|,
 block|{
 block|{
-name|layer_mask_invoker
+name|layer_get_mask_invoker
 block|}
 block|}
 block|}
