@@ -3037,7 +3037,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive_glue ("<Channels>", (menu), (condition) != 0)
+value|menus_set_sensitive ("<Channels>/" menu, (condition) != 0)
 DECL|macro|SET_OPS_SENSITIVE (button,condition)
 define|#
 directive|define
@@ -3051,10 +3051,7 @@ define|\
 value|gtk_widget_set_sensitive (channels_ops_buttons[(button)].widget, \                                  (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/New Channel..."
-argument_list|)
+literal|"New Channel..."
 argument_list|,
 operator|!
 name|fs_sens
@@ -3070,10 +3067,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Raise Channel"
-argument_list|)
+literal|"Raise Channel"
 argument_list|,
 operator|!
 name|fs_sens
@@ -3093,10 +3087,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Lower Channel"
-argument_list|)
+literal|"Lower Channel"
 argument_list|,
 operator|!
 name|fs_sens
@@ -3116,10 +3107,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Duplicate Channel"
-argument_list|)
+literal|"Duplicate Channel"
 argument_list|,
 operator|!
 name|fs_sens
@@ -3139,10 +3127,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Channel to Selection"
-argument_list|)
+literal|"Channel to Selection"
 argument_list|,
 name|aux_sens
 argument_list|)
@@ -3156,40 +3141,28 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Add to Selection"
-argument_list|)
+literal|"Add to Selection"
 argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Subtract From Selection"
-argument_list|)
+literal|"Subtract From Selection"
 argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Intersect With Selection"
-argument_list|)
+literal|"Intersect With Selection"
 argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Delete Channel"
-argument_list|)
+literal|"Delete Channel"
 argument_list|,
 operator|!
 name|fs_sens

@@ -5766,7 +5766,6 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"menus_create_item_from_full_path(): "
 literal|"entry refers to unknown item factory: \"%s\""
 argument_list|,
 name|path
@@ -6409,6 +6408,10 @@ argument_list|,
 name|path
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|widget
+condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
 name|widget
@@ -6435,59 +6438,7 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* The following function will enhance our localesystem because    we don't need to have our menuentries twice in our catalog */
-end_comment
-
 begin_function
-name|void
-DECL|function|menus_set_sensitive_glue (gchar * prepath,gchar * path,gboolean sensitive)
-name|menus_set_sensitive_glue
-parameter_list|(
-name|gchar
-modifier|*
-name|prepath
-parameter_list|,
-name|gchar
-modifier|*
-name|path
-parameter_list|,
-name|gboolean
-name|sensitive
-parameter_list|)
-block|{
-name|gchar
-modifier|*
-name|menupath
-decl_stmt|;
-name|menupath
-operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"%s%s"
-argument_list|,
-name|prepath
-argument_list|,
-name|path
-argument_list|)
-expr_stmt|;
-name|menus_set_sensitive
-argument_list|(
-name|menupath
-argument_list|,
-name|sensitive
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|menupath
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|void
 DECL|function|menus_set_state (gchar * path,gboolean state)
 name|menus_set_state
@@ -6576,53 +6527,6 @@ argument_list|(
 literal|"Unable to set state for menu which doesn't exist:\n%s\n"
 argument_list|,
 name|path
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|menus_set_state_glue (gchar * prepath,gchar * path,gboolean state)
-name|menus_set_state_glue
-parameter_list|(
-name|gchar
-modifier|*
-name|prepath
-parameter_list|,
-name|gchar
-modifier|*
-name|path
-parameter_list|,
-name|gboolean
-name|state
-parameter_list|)
-block|{
-name|gchar
-modifier|*
-name|menupath
-decl_stmt|;
-name|menupath
-operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"%s%s"
-argument_list|,
-name|prepath
-argument_list|,
-name|path
-argument_list|)
-expr_stmt|;
-name|menus_set_state
-argument_list|(
-name|menupath
-argument_list|,
-name|state
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|menupath
 argument_list|)
 expr_stmt|;
 block|}
@@ -8556,7 +8460,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|strcmp
 argument_list|(
 name|path
@@ -8564,7 +8467,9 @@ argument_list|,
 name|retval
 argument_list|)
 condition|)
-block|{
+return|return
+name|retval
+return|;
 name|strncpy
 argument_list|(
 name|menupath
@@ -8655,7 +8560,7 @@ name|MENUPATH_SIZE
 operator|-
 literal|1
 operator|-
-sizeof|sizeof
+name|strlen
 argument_list|(
 literal|"<Image>"
 argument_list|)
@@ -8703,7 +8608,7 @@ name|MENUPATH_SIZE
 operator|-
 literal|1
 operator|-
-sizeof|sizeof
+name|strlen
 argument_list|(
 literal|"<Toolbox>"
 argument_list|)
@@ -8723,7 +8628,6 @@ argument_list|(
 literal|"<Toolbox>"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 return|return

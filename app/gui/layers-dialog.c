@@ -5576,7 +5576,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive_glue ("<Layers>", (menu), (condition) != 0)
+value|menus_set_sensitive ("<Layers>/" menu, (condition) != 0)
 DECL|macro|SET_OPS_SENSITIVE (button,condition)
 define|#
 directive|define
@@ -5590,10 +5590,7 @@ define|\
 value|gtk_widget_set_sensitive (layers_ops_buttons[(button)].widget, \                                  (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/New Layer..."
-argument_list|)
+literal|"New Layer..."
 argument_list|,
 name|gimage
 argument_list|)
@@ -5607,10 +5604,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Stack/Previous Layer"
-argument_list|)
+literal|"Stack/Previous Layer"
 argument_list|,
 name|fs
 operator|&&
@@ -5625,10 +5619,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Stack/Next Layer"
-argument_list|)
+literal|"Stack/Next Layer"
 argument_list|,
 name|fs
 operator|&&
@@ -5643,10 +5634,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Stack/Raise Layer"
-argument_list|)
+literal|"Stack/Raise Layer"
 argument_list|,
 name|fs
 operator|&&
@@ -5680,10 +5668,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Stack/Lower Layer"
-argument_list|)
+literal|"Stack/Lower Layer"
 argument_list|,
 name|fs
 operator|&&
@@ -5717,10 +5702,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Stack/Layer to Top"
-argument_list|)
+literal|"Stack/Layer to Top"
 argument_list|,
 name|fs
 operator|&&
@@ -5737,10 +5719,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Stack/Layer to Bottom"
-argument_list|)
+literal|"Stack/Layer to Bottom"
 argument_list|,
 name|fs
 operator|&&
@@ -5757,10 +5736,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Duplicate Layer"
-argument_list|)
+literal|"Duplicate Layer"
 argument_list|,
 name|fs
 operator|&&
@@ -5786,10 +5762,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Anchor Layer"
-argument_list|)
+literal|"Anchor Layer"
 argument_list|,
 operator|!
 name|fs
@@ -5817,10 +5790,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Delete Layer"
-argument_list|)
+literal|"Delete Layer"
 argument_list|,
 name|ac
 operator|&&
@@ -5842,10 +5812,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layer Boundary Size..."
-argument_list|)
+literal|"Layer Boundary Size..."
 argument_list|,
 name|ac
 operator|&&
@@ -5856,10 +5823,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Scale Layer..."
-argument_list|)
+literal|"Scale Layer..."
 argument_list|,
 name|ac
 operator|&&
@@ -5870,10 +5834,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Merge Visible Layers..."
-argument_list|)
+literal|"Merge Visible Layers..."
 argument_list|,
 name|fs
 operator|&&
@@ -5886,10 +5847,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Merge Down"
-argument_list|)
+literal|"Merge Down"
 argument_list|,
 name|fs
 operator|&&
@@ -5902,10 +5860,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Flatten Image"
-argument_list|)
+literal|"Flatten Image"
 argument_list|,
 name|fs
 operator|&&
@@ -5918,10 +5873,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Add Layer Mask..."
-argument_list|)
+literal|"Add Layer Mask..."
 argument_list|,
 name|fs
 operator|&&
@@ -5939,10 +5891,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Apply Layer Mask..."
-argument_list|)
+literal|"Apply Layer Mask..."
 argument_list|,
 name|fs
 operator|&&
@@ -5957,10 +5906,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Mask to Selection"
-argument_list|)
+literal|"Mask to Selection"
 argument_list|,
 name|fs
 operator|&&
@@ -5975,10 +5921,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Add Alpha Channel"
-argument_list|)
+literal|"Add Alpha Channel"
 argument_list|,
 operator|!
 name|alpha
@@ -5986,10 +5929,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Alpha to Selection"
-argument_list|)
+literal|"Alpha to Selection"
 argument_list|,
 name|fs
 operator|&&

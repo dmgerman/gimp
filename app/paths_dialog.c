@@ -1134,7 +1134,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive_glue ("<Paths>", (menu), (condition) != 0)
+value|menus_set_sensitive ("<Paths>/" menu, (condition) != 0)
 DECL|macro|SET_OPS_SENSITIVE (button,condition)
 define|#
 directive|define
@@ -1159,10 +1159,7 @@ define|\
 value|gtk_widget_set_sensitive (point_ops_buttons[(button)].widget, \                                  (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/New Path"
-argument_list|)
+literal|"New Path"
 argument_list|,
 name|gimage
 argument_list|)
@@ -1176,10 +1173,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Duplicate Path"
-argument_list|)
+literal|"Duplicate Path"
 argument_list|,
 name|pp
 argument_list|)
@@ -1193,10 +1187,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Path to Selection"
-argument_list|)
+literal|"Path to Selection"
 argument_list|,
 name|pp
 argument_list|)
@@ -1210,10 +1201,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Selection to Path"
-argument_list|)
+literal|"Selection to Path"
 argument_list|,
 name|gimage
 argument_list|)
@@ -1227,10 +1215,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Stroke Path"
-argument_list|)
+literal|"Stroke Path"
 argument_list|,
 name|pp
 argument_list|)
@@ -1244,10 +1229,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Delete Path"
-argument_list|)
+literal|"Delete Path"
 argument_list|,
 name|pp
 argument_list|)
@@ -1261,20 +1243,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Copy Path"
-argument_list|)
+literal|"Copy Path"
 argument_list|,
 name|pp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Paste Path"
-argument_list|)
+literal|"Paste Path"
 argument_list|,
 name|pp
 operator|&&
@@ -1283,20 +1259,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Import Path..."
-argument_list|)
+literal|"Import Path..."
 argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Export Path..."
-argument_list|)
+literal|"Export Path..."
 argument_list|,
 name|pp
 argument_list|)

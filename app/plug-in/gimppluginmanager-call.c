@@ -5676,26 +5676,16 @@ operator|)
 operator|)
 condition|)
 block|{
-name|menus_set_sensitive_glue
+name|menus_set_sensitive
 argument_list|(
-literal|"<Image>"
-argument_list|,
-name|N_
-argument_list|(
-literal|"/Filters/Repeat last"
-argument_list|)
+literal|"<Image>/Filters/Repeat last"
 argument_list|,
 name|sensitive
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_glue
+name|menus_set_sensitive
 argument_list|(
-literal|"<Image>"
-argument_list|,
-name|N_
-argument_list|(
-literal|"/Filters/Re-show last"
-argument_list|)
+literal|"<Image>/Filters/Re-show last"
 argument_list|,
 name|sensitive
 argument_list|)

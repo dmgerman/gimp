@@ -7766,7 +7766,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive_glue ("<Image>", (menu), (condition) != 0)
+value|menus_set_sensitive ("<Image>/" menu, (condition) != 0)
 DECL|macro|SET_STATE (menu,condition)
 define|#
 directive|define
@@ -7777,63 +7777,45 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_state_glue ("<Image>", (menu), (condition) != 0)
+value|menus_set_state ("<Image>/" menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/File/Save"
-argument_list|)
+literal|"File/Save"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/File/Save as..."
-argument_list|)
+literal|"File/Save as..."
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/File/Revert"
-argument_list|)
+literal|"File/Revert"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/File/Close"
-argument_list|)
+literal|"File/Close"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit"
-argument_list|)
+literal|"Edit"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Buffer"
-argument_list|)
+literal|"Edit/Buffer"
 argument_list|,
 name|gdisp
 argument_list|)
@@ -7845,10 +7827,7 @@ condition|)
 block|{
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Undo"
-argument_list|)
+literal|"Edit/Undo"
 argument_list|,
 name|undo_get_undo_name
 argument_list|(
@@ -7860,10 +7839,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Redo"
-argument_list|)
+literal|"Edit/Redo"
 argument_list|,
 name|undo_get_redo_name
 argument_list|(
@@ -7875,110 +7851,77 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Cut"
-argument_list|)
+literal|"Edit/Cut"
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Copy"
-argument_list|)
+literal|"Edit/Copy"
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Paste"
-argument_list|)
+literal|"Edit/Paste"
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Paste Into"
-argument_list|)
+literal|"Edit/Paste Into"
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Paste As New"
-argument_list|)
+literal|"Edit/Paste As New"
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Buffer/Cut Named..."
-argument_list|)
+literal|"Edit/Buffer/Cut Named..."
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Buffer/Copy Named..."
-argument_list|)
+literal|"Edit/Buffer/Copy Named..."
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Buffer/Paste Named..."
-argument_list|)
+literal|"Edit/Buffer/Paste Named..."
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Clear"
-argument_list|)
+literal|"Edit/Clear"
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Fill"
-argument_list|)
+literal|"Edit/Fill"
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Edit/Stroke"
-argument_list|)
+literal|"Edit/Stroke"
 argument_list|,
 name|lp
 argument_list|)
@@ -7986,10 +7929,7 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Select"
-argument_list|)
+literal|"Select"
 argument_list|,
 name|gdisp
 operator|&&
@@ -7998,10 +7938,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Select/Save To Channel"
-argument_list|)
+literal|"Select/Save To Channel"
 argument_list|,
 operator|!
 name|fs
@@ -8009,20 +7946,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/View"
-argument_list|)
+literal|"View"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/View/Zoom"
-argument_list|)
+literal|"View/Zoom"
 argument_list|,
 name|gdisp
 argument_list|)
@@ -8034,10 +7965,7 @@ condition|)
 block|{
 name|SET_STATE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/View/Toggle Selection"
-argument_list|)
+literal|"View/Toggle Selection"
 argument_list|,
 operator|!
 name|gdisp
@@ -8049,10 +7977,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/View/Toggle Rulers"
-argument_list|)
+literal|"View/Toggle Rulers"
 argument_list|,
 name|GTK_WIDGET_VISIBLE
 argument_list|(
@@ -8068,10 +7993,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/View/Toggle Guides"
-argument_list|)
+literal|"View/Toggle Guides"
 argument_list|,
 name|gdisp
 operator|->
@@ -8080,10 +8002,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/View/Snap To Guides"
-argument_list|)
+literal|"View/Snap To Guides"
 argument_list|,
 name|gdisp
 operator|->
@@ -8092,10 +8011,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/View/Toggle Statusbar"
-argument_list|)
+literal|"View/Toggle Statusbar"
 argument_list|,
 name|GTK_WIDGET_VISIBLE
 argument_list|(
@@ -8111,10 +8027,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/View/Dot for dot"
-argument_list|)
+literal|"View/Dot for dot"
 argument_list|,
 name|gdisp
 operator|->
@@ -8124,70 +8037,49 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image"
-argument_list|)
+literal|"Image"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Mode"
-argument_list|)
+literal|"Image/Mode"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors"
-argument_list|)
+literal|"Image/Colors"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Auto"
-argument_list|)
+literal|"Image/Colors/Auto"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Alpha"
-argument_list|)
+literal|"Image/Alpha"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Transforms"
-argument_list|)
+literal|"Image/Transforms"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Transforms/Rotate"
-argument_list|)
+literal|"Image/Transforms/Rotate"
 argument_list|,
 name|gdisp
 argument_list|)
@@ -8199,10 +8091,7 @@ condition|)
 block|{
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Mode/RGB"
-argument_list|)
+literal|"Image/Mode/RGB"
 argument_list|,
 operator|(
 name|base_type
@@ -8213,10 +8102,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Mode/Grayscale"
-argument_list|)
+literal|"Image/Mode/Grayscale"
 argument_list|,
 operator|(
 name|base_type
@@ -8227,10 +8113,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Mode/Indexed..."
-argument_list|)
+literal|"Image/Mode/Indexed..."
 argument_list|,
 operator|(
 name|base_type
@@ -8241,30 +8124,21 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Histogram..."
-argument_list|)
+literal|"Image/Histogram..."
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors"
-argument_list|)
+literal|"Image/Colors"
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Color Balance..."
-argument_list|)
+literal|"Image/Colors/Color Balance..."
 argument_list|,
 operator|(
 name|base_type
@@ -8275,10 +8149,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Hue-Saturation..."
-argument_list|)
+literal|"Image/Colors/Hue-Saturation..."
 argument_list|,
 operator|(
 name|base_type
@@ -8289,10 +8160,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Brightness-Contrast..."
-argument_list|)
+literal|"Image/Colors/Brightness-Contrast..."
 argument_list|,
 operator|(
 name|base_type
@@ -8303,10 +8171,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Threshold..."
-argument_list|)
+literal|"Image/Colors/Threshold..."
 argument_list|,
 operator|(
 name|base_type
@@ -8317,10 +8182,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Levels..."
-argument_list|)
+literal|"Image/Colors/Levels..."
 argument_list|,
 operator|(
 name|base_type
@@ -8331,10 +8193,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Curves..."
-argument_list|)
+literal|"Image/Colors/Curves..."
 argument_list|,
 operator|(
 name|base_type
@@ -8345,10 +8204,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Desaturate"
-argument_list|)
+literal|"Image/Colors/Desaturate"
 argument_list|,
 operator|(
 name|base_type
@@ -8359,10 +8215,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Posterize..."
-argument_list|)
+literal|"Image/Colors/Posterize..."
 argument_list|,
 operator|(
 name|base_type
@@ -8373,10 +8226,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Invert"
-argument_list|)
+literal|"Image/Colors/Invert"
 argument_list|,
 operator|(
 name|base_type
@@ -8387,10 +8237,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Colors/Auto/Equalize"
-argument_list|)
+literal|"Image/Colors/Auto/Equalize"
 argument_list|,
 operator|(
 name|base_type
@@ -8401,10 +8248,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Alpha/Add Alpha Channel"
-argument_list|)
+literal|"Image/Alpha/Add Alpha Channel"
 argument_list|,
 operator|!
 name|fs
@@ -8423,10 +8267,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Image/Transforms/Offset..."
-argument_list|)
+literal|"Image/Transforms/Offset..."
 argument_list|,
 name|lp
 argument_list|)
@@ -8434,20 +8275,14 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Stack"
-argument_list|)
+literal|"Layers/Stack"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Rotate"
-argument_list|)
+literal|"Layers/Rotate"
 argument_list|,
 name|gdisp
 argument_list|)
@@ -8459,10 +8294,7 @@ condition|)
 block|{
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Stack/Previous Layer"
-argument_list|)
+literal|"Layers/Stack/Previous Layer"
 argument_list|,
 operator|!
 name|fs
@@ -8479,10 +8311,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Stack/Next Layer"
-argument_list|)
+literal|"Layers/Stack/Next Layer"
 argument_list|,
 operator|!
 name|fs
@@ -8503,10 +8332,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Stack/Raise Layer"
-argument_list|)
+literal|"Layers/Stack/Raise Layer"
 argument_list|,
 operator|!
 name|fs
@@ -8525,10 +8351,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Stack/Lower Layer"
-argument_list|)
+literal|"Layers/Stack/Lower Layer"
 argument_list|,
 operator|!
 name|fs
@@ -8551,10 +8374,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Stack/Layer to Top"
-argument_list|)
+literal|"Layers/Stack/Layer to Top"
 argument_list|,
 operator|!
 name|fs
@@ -8573,10 +8393,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Stack/Layer to Bottom"
-argument_list|)
+literal|"Layers/Stack/Layer to Bottom"
 argument_list|,
 operator|!
 name|fs
@@ -8600,10 +8417,7 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Anchor Layer"
-argument_list|)
+literal|"Layers/Anchor Layer"
 argument_list|,
 name|gdisp
 operator|&&
@@ -8617,10 +8431,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Merge Visible Layers..."
-argument_list|)
+literal|"Layers/Merge Visible Layers..."
 argument_list|,
 name|gdisp
 operator|&&
@@ -8635,10 +8446,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Flatten Image"
-argument_list|)
+literal|"Layers/Flatten Image"
 argument_list|,
 name|gdisp
 operator|&&
@@ -8653,10 +8461,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Alpha To Selection"
-argument_list|)
+literal|"Layers/Alpha To Selection"
 argument_list|,
 name|gdisp
 operator|&&
@@ -8670,10 +8475,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Mask To Selection"
-argument_list|)
+literal|"Layers/Mask To Selection"
 argument_list|,
 name|gdisp
 operator|&&
@@ -8687,10 +8489,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Add Alpha Channel"
-argument_list|)
+literal|"Layers/Add Alpha Channel"
 argument_list|,
 name|gdisp
 operator|&&
@@ -8711,10 +8510,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Filters"
-argument_list|)
+literal|"Filters"
 argument_list|,
 name|gdisp
 operator|&&
@@ -8723,10 +8519,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|N_
-argument_list|(
-literal|"/Script-Fu"
-argument_list|)
+literal|"Script-Fu"
 argument_list|,
 name|gdisp
 operator|&&
