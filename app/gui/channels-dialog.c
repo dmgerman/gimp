@@ -8073,6 +8073,11 @@ name|click_widget
 operator|)
 condition|)
 block|{
+comment|/* the user moved the cursor out of the widget before              releasing the button -> cancel the button_press */
+name|button_down
+operator|=
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 name|widget
