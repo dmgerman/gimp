@@ -350,7 +350,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon28944fc30108
+DECL|struct|__anon298b82770108
 typedef|typedef
 struct|struct
 block|{
@@ -479,7 +479,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28944fc30208
+DECL|struct|__anon298b82770208
 typedef|typedef
 struct|struct
 block|{
@@ -508,7 +508,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28944fc30308
+DECL|struct|__anon298b82770308
 typedef|typedef
 struct|struct
 block|{
@@ -527,7 +527,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28944fc30408
+DECL|struct|__anon298b82770408
 typedef|typedef
 struct|struct
 block|{
@@ -8545,8 +8545,8 @@ expr_stmt|;
 if|if
 condition|(
 name|pcount
-operator|==
-literal|0
+operator|<
+literal|2
 condition|)
 return|return;
 name|g_return_if_fail

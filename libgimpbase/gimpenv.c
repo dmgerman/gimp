@@ -217,6 +217,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
 name|g_message
 argument_list|(
 name|_
@@ -225,6 +228,8 @@ literal|"warning: no home directory."
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_dir
 operator|=
 name|g_strconcat

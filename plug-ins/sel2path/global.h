@@ -470,92 +470,40 @@ begin_comment
 comment|/* Declarations for commonly-used routines we provide ourselves.  The    ones here are only needed by us, so we do not provide them in    unprototyped form.  Others are declared both ways in lib.h.  */
 end_comment
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_comment
+comment|/* These aren't actually defined anywhere */
+end_comment
+
 begin_comment
 comment|/* Return the current date and time a la date(1).  */
 end_comment
 
-begin_function_decl
-specifier|extern
-name|string
-name|now
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
+unit|extern string now (void);
 comment|/* Check if a string is a valid floating-point or decimal integer.    Returns false if passed NULL.  */
 end_comment
 
-begin_function_decl
-specifier|extern
-name|boolean
-name|float_ok
-parameter_list|(
-name|string
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|extern
-name|boolean
-name|integer_ok
-parameter_list|(
-name|string
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
+unit|extern boolean float_ok (string); extern boolean integer_ok (string);
 comment|/* Like `atoi', but disallow negative numbers.  */
 end_comment
 
-begin_function_decl
-specifier|extern
-specifier|const
-name|unsigned
-name|atou
-parameter_list|(
-name|string
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
+unit|extern const unsigned atou (string);
 comment|/* The converses of atoi, atou, and atof.  These all return dynamically    allocated strings.  `dtoa' is so-named because `ftoa' is a library    function on some systems (the IBM RT), and the loader complains that    is defined twice, for reasons I don't understand.  */
 end_comment
 
-begin_function_decl
-specifier|extern
-name|string
-name|itoa
-parameter_list|(
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|extern
-name|string
-name|utoa
-parameter_list|(
-name|unsigned
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|extern
-name|string
-name|dtoa
-parameter_list|(
-name|double
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_endif
+unit|extern string itoa (int); extern string utoa (unsigned); extern string dtoa (double);
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* Like their stdio counterparts, but abort on error, after calling    perror(3) with FILENAME as its argument.  */

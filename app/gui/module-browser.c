@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2bb943db0103
+DECL|enum|__anon2a556ab30103
 typedef|typedef
 enum|enum
 block|{
@@ -268,7 +268,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb943db0208
+DECL|struct|__anon2a556ab30208
 typedef|typedef
 struct|struct
 block|{
@@ -385,7 +385,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2bb943db0308
+DECL|struct|__anon2a556ab30308
 typedef|typedef
 struct|struct
 block|{
@@ -1702,7 +1702,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb943db0408
+DECL|struct|__anon2a556ab30408
 typedef|typedef
 struct|struct
 block|{
@@ -1717,7 +1717,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2bb943db0503
+DECL|enum|__anon2a556ab30503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -2132,15 +2132,20 @@ condition|)
 return|return
 name|FALSE
 return|;
-else|#
-directive|else
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|__GNUC__
+argument_list|)
+comment|/* When compiled with gcc on Win32, require modules to be compiled with    * gcc, too. Use the convention that gcc-compiled GIMP modules are named    * *.gcc.dll. Subject to change.    */
 if|if
 condition|(
 name|len
 operator|<
 literal|1
 operator|+
-literal|4
+literal|8
 condition|)
 return|return
 name|FALSE
@@ -2153,9 +2158,39 @@ name|basename
 operator|+
 name|len
 operator|-
-literal|4
+literal|8
 argument_list|,
-literal|".dll"
+literal|".gcc.dll"
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
+else|#
+directive|else
+comment|/* When compiled with MSVC, the modules should be called *.msvc.dll.    */
+if|if
+condition|(
+name|len
+operator|<
+literal|1
+operator|+
+literal|9
+condition|)
+return|return
+name|FALSE
+return|;
+if|if
+condition|(
+name|g_strcasecmp
+argument_list|(
+name|basename
+operator|+
+name|len
+operator|-
+literal|9
+argument_list|,
+literal|".msvc.dll"
 argument_list|)
 condition|)
 return|return
@@ -4579,7 +4614,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bb943db0608
+DECL|struct|__anon2a556ab30608
 typedef|typedef
 struct|struct
 block|{

@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b01fdd50103
+DECL|enum|__anon2b9834ef0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -6620,10 +6620,13 @@ operator|+
 name|h
 operator|)
 condition|)
+block|{
 name|coverage
 operator|=
 literal|1
 expr_stmt|;
+break|break;
+block|}
 name|list
 operator|=
 name|g_slist_next
