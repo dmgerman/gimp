@@ -2209,7 +2209,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|placecenter
+name|placement_center
 operator|=
 name|atoi
 argument_list|(
@@ -4218,7 +4218,7 @@ literal|"placecenter=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|placecenter
+name|placement_center
 argument_list|)
 expr_stmt|;
 name|fprintf

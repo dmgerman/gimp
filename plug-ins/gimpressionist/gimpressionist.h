@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b762c730108
+DECL|struct|__anon27b4fcfb0108
 block|{
 DECL|member|orientnum
 name|int
@@ -269,9 +269,9 @@ DECL|member|numorientvector
 name|int
 name|numorientvector
 decl_stmt|;
-DECL|member|placecenter
+DECL|member|placement_center
 name|int
-name|placecenter
+name|placement_center
 decl_stmt|;
 DECL|member|brushaspect
 name|double
