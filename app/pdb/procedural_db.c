@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-in-run.h"
 end_include
 
 begin_include

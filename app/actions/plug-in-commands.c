@@ -54,13 +54,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-in-run.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"plug-in/plug-in-proc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpitemfactory.h"
 end_include
 
 begin_include
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
 end_include
 
 begin_define
@@ -111,6 +111,14 @@ name|guint
 name|action
 parameter_list|)
 block|{
+name|GtkItemFactory
+modifier|*
+name|item_factory
+decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|GimpDisplay
 modifier|*
 name|gdisplay
@@ -138,6 +146,22 @@ init|=
 literal|0
 decl_stmt|;
 comment|/* calm down a gcc warning.  */
+name|item_factory
+operator|=
+name|gtk_item_factory_from_widget
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|=
+name|GIMP_ITEM_FACTORY
+argument_list|(
+name|item_factory
+argument_list|)
+operator|->
+name|gimp
+expr_stmt|;
 comment|/* get the active gdisplay */
 name|gdisplay
 operator|=
@@ -145,7 +169,7 @@ name|gimp_context_get_display
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -448,7 +472,7 @@ block|}
 comment|/* run the plug-in procedure */
 name|plug_in_run
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|proc_rec
 argument_list|,

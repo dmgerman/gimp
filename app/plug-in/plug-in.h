@@ -78,10 +78,10 @@ name|recurse
 range|:
 literal|1
 decl_stmt|;
-comment|/*  Have we called 'gtk_main' recursively?  */
-DECL|member|busy
+comment|/*  Do we have an own GMainLoop?            */
+DECL|member|in_temp_proc
 name|guint
-name|busy
+name|in_temp_proc
 range|:
 literal|1
 decl_stmt|;
@@ -146,6 +146,22 @@ modifier|*
 name|temp_proc_defs
 decl_stmt|;
 comment|/*  Temporary procedures                    */
+DECL|member|main_loops
+name|GList
+modifier|*
+name|main_loops
+decl_stmt|;
+comment|/*  Stack of recursive main loops           */
+DECL|member|return_vals
+name|Argument
+modifier|*
+name|return_vals
+decl_stmt|;
+comment|/*  The return value we wait for            */
+DECL|member|n_return_vals
+name|gint
+name|n_return_vals
+decl_stmt|;
 DECL|member|progress
 name|GimpProgress
 modifier|*
@@ -175,7 +191,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|plug_in_kill
+name|plug_in_exit
 parameter_list|(
 name|Gimp
 modifier|*
@@ -282,65 +298,44 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Run a plug-in as if it were a procedure database procedure  */
-end_comment
-
 begin_function_decl
-name|Argument
-modifier|*
-name|plug_in_run
+name|void
+name|plug_in_push
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
-parameter_list|,
-name|ProcRecord
-modifier|*
-name|proc_rec
-parameter_list|,
-name|Argument
-modifier|*
-name|args
-parameter_list|,
-name|gint
-name|argc
-parameter_list|,
-name|gboolean
-name|synchronous
-parameter_list|,
-name|gboolean
-name|destroy_values
-parameter_list|,
-name|gint
-name|gdisp_ID
+name|plug_in
 parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Run the last plug-in again with the same arguments. Extensions  *  are exempt from this "privelege".  */
-end_comment
+begin_function_decl
+name|void
+name|plug_in_pop
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
-name|plug_in_repeat
+name|plug_in_main_loop
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
-parameter_list|,
-name|gint
-name|display_ID
-parameter_list|,
-name|gint
-name|image_ID
-parameter_list|,
-name|gint
-name|drawable_ID
-parameter_list|,
-name|gboolean
-name|with_interface
+name|plug_in
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|plug_in_main_loop_quit
+parameter_list|(
+name|PlugIn
+modifier|*
+name|plug_in
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -350,14 +345,6 @@ specifier|extern
 name|PlugIn
 modifier|*
 name|current_plug_in
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-modifier|*
-name|last_plug_in
 decl_stmt|;
 end_decl_stmt
 

@@ -155,6 +155,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in-run.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1287,7 +1293,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|plug_in_kill
+name|plug_in_exit
 argument_list|(
 name|gimp
 argument_list|)

@@ -95,13 +95,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-in-proc.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-proc.h"
+file|"plug-in/plug-in-run.h"
 end_include
 
 begin_include
@@ -999,7 +999,8 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_free
