@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -158,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296239c20103
+DECL|enum|__anon2afa7e1e0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -178,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296239c20203
+DECL|enum|__anon2afa7e1e0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -194,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296239c20308
+DECL|struct|__anon2afa7e1e0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -216,7 +210,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon296239c2040a
+DECL|union|__anon2afa7e1e040a
 block|{
 DECL|member|d
 name|gdouble
@@ -241,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296239c20508
+DECL|struct|__anon2afa7e1e0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -271,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296239c20608
+DECL|struct|__anon2afa7e1e0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -306,7 +300,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296239c20708
+DECL|struct|__anon2afa7e1e0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -342,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296239c20808
+DECL|struct|__anon2afa7e1e0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -409,7 +403,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296239c20908
+DECL|struct|__anon2afa7e1e0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -558,7 +552,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296239c20a08
+DECL|struct|__anon2afa7e1e0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -12463,7 +12457,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|elements
 argument_list|)
