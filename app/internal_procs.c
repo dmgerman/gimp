@@ -91,6 +91,15 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|register_display_procs
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|register_drawable_procs
 parameter_list|(
 name|void
@@ -119,33 +128,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|register_floating_sel_procs
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|register_gdisplay_procs
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|register_gimage_procs
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|register_gimage_mask_procs
 parameter_list|(
 name|void
 parameter_list|)
@@ -191,6 +173,15 @@ end_function_decl
 begin_function_decl
 name|void
 name|register_help_procs
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|register_image_procs
 parameter_list|(
 name|void
 parameter_list|)
@@ -281,6 +272,15 @@ end_function_decl
 begin_function_decl
 name|void
 name|register_procedural_db_procs
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|register_selection_procs
 parameter_list|(
 name|void
 parameter_list|)
@@ -434,10 +434,25 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Drawable procedures"
+literal|"GDisplay procedures"
 argument_list|)
 argument_list|,
 literal|0.143
+argument_list|)
+expr_stmt|;
+name|register_display_procs
+argument_list|()
+expr_stmt|;
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Drawable procedures"
+argument_list|)
+argument_list|,
+literal|0.152
 argument_list|)
 expr_stmt|;
 name|register_drawable_procs
@@ -452,7 +467,7 @@ argument_list|(
 literal|"Edit procedures"
 argument_list|)
 argument_list|,
-literal|0.211
+literal|0.22
 argument_list|)
 expr_stmt|;
 name|register_edit_procs
@@ -467,7 +482,7 @@ argument_list|(
 literal|"File Operations"
 argument_list|)
 argument_list|,
-literal|0.23
+literal|0.239
 argument_list|)
 expr_stmt|;
 name|register_fileops_procs
@@ -482,7 +497,7 @@ argument_list|(
 literal|"Floating selections"
 argument_list|)
 argument_list|,
-literal|0.255
+literal|0.264
 argument_list|)
 expr_stmt|;
 name|register_floating_sel_procs
@@ -494,55 +509,10 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"GDisplay procedures"
-argument_list|)
-argument_list|,
-literal|0.273
-argument_list|)
-expr_stmt|;
-name|register_gdisplay_procs
-argument_list|()
-expr_stmt|;
-name|app_init_update_status
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Image"
-argument_list|)
-argument_list|,
-literal|0.283
-argument_list|)
-expr_stmt|;
-name|register_gimage_procs
-argument_list|()
-expr_stmt|;
-name|app_init_update_status
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Image mask"
-argument_list|)
-argument_list|,
-literal|0.466
-argument_list|)
-expr_stmt|;
-name|register_gimage_mask_procs
-argument_list|()
-expr_stmt|;
-name|app_init_update_status
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
 literal|"Gimprc procedures"
 argument_list|)
 argument_list|,
-literal|0.519
+literal|0.283
 argument_list|)
 expr_stmt|;
 name|register_gimprc_procs
@@ -557,7 +527,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-literal|0.528
+literal|0.292
 argument_list|)
 expr_stmt|;
 name|register_gradient_procs
@@ -572,7 +542,7 @@ argument_list|(
 literal|"Gradient UI"
 argument_list|)
 argument_list|,
-literal|0.543
+literal|0.307
 argument_list|)
 expr_stmt|;
 name|register_gradient_select_procs
@@ -587,7 +557,7 @@ argument_list|(
 literal|"Guide procedures"
 argument_list|)
 argument_list|,
-literal|0.556
+literal|0.32
 argument_list|)
 expr_stmt|;
 name|register_guides_procs
@@ -602,7 +572,7 @@ argument_list|(
 literal|"Help procedures"
 argument_list|)
 argument_list|,
-literal|0.575
+literal|0.339
 argument_list|)
 expr_stmt|;
 name|register_help_procs
@@ -614,10 +584,25 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
+literal|"Image"
+argument_list|)
+argument_list|,
+literal|0.342
+argument_list|)
+expr_stmt|;
+name|register_image_procs
+argument_list|()
+expr_stmt|;
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
 literal|"Layer"
 argument_list|)
 argument_list|,
-literal|0.578
+literal|0.525
 argument_list|)
 expr_stmt|;
 name|register_layer_procs
@@ -632,7 +617,7 @@ argument_list|(
 literal|"Interface"
 argument_list|)
 argument_list|,
-literal|0.674
+literal|0.621
 argument_list|)
 expr_stmt|;
 name|register_message_procs
@@ -647,7 +632,7 @@ argument_list|(
 literal|"Miscellaneous"
 argument_list|)
 argument_list|,
-literal|0.683
+literal|0.63
 argument_list|)
 expr_stmt|;
 name|register_misc_procs
@@ -662,7 +647,7 @@ argument_list|(
 literal|"Palette"
 argument_list|)
 argument_list|,
-literal|0.689
+literal|0.637
 argument_list|)
 expr_stmt|;
 name|register_palette_procs
@@ -677,7 +662,7 @@ argument_list|(
 literal|"Parasite procedures"
 argument_list|)
 argument_list|,
-literal|0.711
+literal|0.658
 argument_list|)
 expr_stmt|;
 name|register_parasite_procs
@@ -692,7 +677,7 @@ argument_list|(
 literal|"Paths"
 argument_list|)
 argument_list|,
-literal|0.748
+literal|0.696
 argument_list|)
 expr_stmt|;
 name|register_paths_procs
@@ -707,7 +692,7 @@ argument_list|(
 literal|"Pattern UI"
 argument_list|)
 argument_list|,
-literal|0.789
+literal|0.736
 argument_list|)
 expr_stmt|;
 name|register_pattern_select_procs
@@ -722,7 +707,7 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 argument_list|,
-literal|0.798
+literal|0.745
 argument_list|)
 expr_stmt|;
 name|register_patterns_procs
@@ -737,7 +722,7 @@ argument_list|(
 literal|"Plug-in"
 argument_list|)
 argument_list|,
-literal|0.811
+literal|0.758
 argument_list|)
 expr_stmt|;
 name|register_plug_in_procs
@@ -752,10 +737,25 @@ argument_list|(
 literal|"Procedural database"
 argument_list|)
 argument_list|,
-literal|0.829
+literal|0.776
 argument_list|)
 expr_stmt|;
 name|register_procedural_db_procs
+argument_list|()
+expr_stmt|;
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Image mask"
+argument_list|)
+argument_list|,
+literal|0.801
+argument_list|)
+expr_stmt|;
+name|register_selection_procs
 argument_list|()
 expr_stmt|;
 name|app_init_update_status

@@ -176,8 +176,8 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_gradients_get_gradient_data (gchar * name,gint sample_size,gint * width,gdouble ** grad_data)
-name|gimp_gradients_get_gradient_data
+DECL|function|_gimp_gradients_get_gradient_data (gchar * name,gint sample_size,gint * width,gdouble ** grad_data)
+name|_gimp_gradients_get_gradient_data
 parameter_list|(
 name|gchar
 modifier|*

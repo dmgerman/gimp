@@ -168,21 +168,11 @@ define|#
 directive|define
 name|gimp_layer_type
 value|gimp_drawable_type
-DECL|macro|gimp_gradient_get_gradient_data (a,b,c,d)
+DECL|macro|gimp_gradient_get_gradient_data
 define|#
 directive|define
 name|gimp_gradient_get_gradient_data
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|,
-name|d
-parameter_list|)
-define|\
-value|gimp_gradients_get_gradient_data (a,c,b,d)
+value|gimp_gradients_get_gradient_data
 DECL|macro|gimp_plugin_help_func
 define|#
 directive|define

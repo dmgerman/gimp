@@ -175,8 +175,8 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_gimage_mask_procs (void)
-name|register_gimage_mask_procs
+DECL|function|register_selection_procs (void)
+name|register_selection_procs
 parameter_list|(
 name|void
 parameter_list|)

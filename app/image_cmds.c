@@ -571,8 +571,8 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_gimage_procs (void)
-name|register_gimage_procs
+DECL|function|register_image_procs (void)
+name|register_image_procs
 parameter_list|(
 name|void
 parameter_list|)

@@ -75,7 +75,7 @@ parameter_list|)
 function_decl|;
 name|gchar
 modifier|*
-name|gimp_gradients_get_gradient_data
+name|_gimp_gradients_get_gradient_data
 parameter_list|(
 name|gchar
 modifier|*

@@ -2341,12 +2341,15 @@ operator|=
 literal|0x20
 expr_stmt|;
 comment|/* Work out whether to save as 8bit or 4bit */
+name|g_free
+argument_list|(
 name|gimp_image_get_cmap
 argument_list|(
 name|image
 argument_list|,
 operator|&
 name|colours
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

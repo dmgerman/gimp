@@ -55,7 +55,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpgradientselect.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpenv.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpimage.h>
 end_include
 
 begin_include
@@ -80,6 +92,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimppixelrgn.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpselection.h>
 end_include
 
 begin_include
@@ -249,6 +267,16 @@ define|#
 directive|define
 name|gimp_image_convert_indexed
 value|gimp_convert_indexed
+DECL|macro|gimp_image_duplicate
+define|#
+directive|define
+name|gimp_image_duplicate
+value|gimp_channel_ops_duplicate
+DECL|macro|gimp_drawable_offset
+define|#
+directive|define
+name|gimp_drawable_offset
+value|gimp_channel_ops_offset
 DECL|variable|gimp_major_version
 name|GIMPVAR
 name|guint
@@ -512,6 +540,10 @@ decl_stmt|;
 DECL|member|d_path
 name|gint32
 name|d_path
+decl_stmt|;
+DECL|member|d_unit
+name|gint32
+name|d_unit
 decl_stmt|;
 DECL|member|d_parasite
 name|GimpParasite
