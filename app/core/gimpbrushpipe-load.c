@@ -823,12 +823,6 @@ name|GRand
 modifier|*
 name|gr
 decl_stmt|;
-comment|/* Initialise random number generator */
-name|gr
-operator|=
-name|g_rand_new
-argument_list|()
-expr_stmt|;
 name|pipe
 operator|=
 name|GIMP_BRUSH_PIPE
@@ -852,6 +846,12 @@ operator|->
 name|current
 argument_list|)
 return|;
+comment|/* Initialise random number generator */
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 name|brushix
 operator|=
 literal|0
