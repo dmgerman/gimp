@@ -158,6 +158,9 @@ decl_stmt|;
 name|GimpCapStyle
 name|cap
 decl_stmt|;
+name|gdouble
+name|miter
+decl_stmt|;
 name|gboolean
 name|antialias
 decl_stmt|;
@@ -279,6 +282,11 @@ literal|"cap-style"
 argument_list|,
 operator|&
 name|cap
+argument_list|,
+literal|"miter"
+argument_list|,
+operator|&
+name|miter
 argument_list|,
 literal|"antialias"
 argument_list|,
@@ -563,7 +571,7 @@ name|join
 argument_list|,
 name|cap
 argument_list|,
-literal|10.0
+name|miter
 argument_list|,
 literal|0.0
 argument_list|,
