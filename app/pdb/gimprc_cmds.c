@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -266,6 +272,14 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|strlen
+argument_list|(
+name|token
+argument_list|)
+condition|)
+block|{
 comment|/*  use edit_config because unknown tokens are set there  */
 name|value
 operator|=
@@ -281,14 +295,14 @@ argument_list|,
 name|token
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|value
-condition|)
+block|}
 name|success
 operator|=
-name|FALSE
+operator|(
+name|value
+operator|!=
+name|NULL
+operator|)
 expr_stmt|;
 block|}
 name|return_args
@@ -512,6 +526,14 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|strlen
+argument_list|(
+name|token
+argument_list|)
+condition|)
+block|{
 comment|/*  use edit_config because that's the one that gets saved  */
 name|gimp_rc_set_unknown_token
 argument_list|(
@@ -526,6 +548,12 @@ name|token
 argument_list|,
 name|value
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
