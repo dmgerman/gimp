@@ -777,6 +777,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpControllerEditor
+typedef|typedef
+name|struct
+name|_GimpControllerEditor
+name|GimpControllerEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDashEditor
 typedef|typedef
 name|struct
