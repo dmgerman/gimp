@@ -2327,6 +2327,21 @@ argument_list|,
 name|NIL
 argument_list|)
 expr_stmt|;
+name|setvar
+argument_list|(
+name|cintern
+argument_list|(
+literal|"SF-PALETTE"
+argument_list|)
+argument_list|,
+name|flocons
+argument_list|(
+name|SF_PALETTE
+argument_list|)
+argument_list|,
+name|NIL
+argument_list|)
+expr_stmt|;
 comment|/* for SF_ADJUSTMENT */
 name|setvar
 argument_list|(

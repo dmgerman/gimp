@@ -67,6 +67,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimppalettemenu.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimppatternmenu.h>
 end_include
 
