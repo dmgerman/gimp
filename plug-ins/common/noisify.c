@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de14210108
+DECL|struct|__anon27746f750108
 block|{
 DECL|member|independent
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de14210208
+DECL|struct|__anon27746f750208
 block|{
 DECL|member|channels
 name|gint
@@ -894,7 +894,6 @@ name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
 condition|)
-block|{
 name|gimp_set_data
 argument_list|(
 literal|"plug_in_noisify"
@@ -908,7 +907,6 @@ name|NoisifyVals
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -963,17 +961,14 @@ name|GRand
 modifier|*
 name|gr
 init|=
-operator|(
-name|GRand
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|gint
 name|noise
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|b
 decl_stmt|;
 if|if
@@ -1293,6 +1288,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
@@ -1304,6 +1300,7 @@ argument_list|,
 name|gr
 argument_list|)
 expr_stmt|;
+block|}
 name|g_rand_free
 argument_list|(
 name|gr

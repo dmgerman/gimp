@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5efa80108
+DECL|struct|__anon29d4ca810108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5efa80208
+DECL|struct|__anon29d4ca810208
 block|{
 DECL|member|run
 name|gboolean
@@ -1829,7 +1829,8 @@ name|gint
 name|i
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|j
 init|=
 literal|0
@@ -2958,9 +2959,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -2971,12 +2972,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

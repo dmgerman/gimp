@@ -56,7 +56,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d2408e0108
+DECL|struct|__anon2c1a9dd60108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -164,7 +164,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|sobel_update_preview
+name|sobel_preview_update
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -797,9 +797,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -810,12 +810,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -892,7 +886,7 @@ literal|"invalidated"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|sobel_update_preview
+name|sobel_preview_update
 argument_list|)
 argument_list|,
 name|NULL
@@ -1052,7 +1046,8 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Keep sign of result (one direction only)"
+literal|"_Keep sign of result "
+literal|"(one direction only)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1153,8 +1148,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|sobel_update_preview (GtkWidget * preview)
-name|sobel_update_preview
+DECL|function|sobel_preview_update (GtkWidget * preview)
+name|sobel_preview_update
 parameter_list|(
 name|GtkWidget
 modifier|*
