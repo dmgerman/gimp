@@ -3907,7 +3907,7 @@ argument_list|(
 name|brush
 argument_list|)
 argument_list|,
-literal|"dirty"
+literal|"invalidate_preview"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(

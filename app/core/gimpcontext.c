@@ -618,7 +618,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781146a0103
+DECL|enum|__anon28a731000103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -725,7 +725,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781146a0203
+DECL|enum|__anon28a731000203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -5512,7 +5512,7 @@ argument_list|(
 name|brush
 argument_list|)
 argument_list|,
-literal|"dirty"
+literal|"invalidate_preview"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(

@@ -699,7 +699,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949ba650103
+DECL|enum|__anon2b6405970103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1693,7 +1693,7 @@ operator|->
 name|data
 argument_list|)
 argument_list|,
-literal|"dirty"
+literal|"invalidate_preview"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -2055,7 +2055,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2949ba650208
+DECL|struct|__anon2b6405970208
 typedef|typedef
 struct|struct
 block|{

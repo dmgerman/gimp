@@ -2139,14 +2139,12 @@ argument_list|(
 name|lookup
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit_by_name
+name|gimp_viewable_invalidate_preview
 argument_list|(
-name|GTK_OBJECT
+name|GIMP_VIEWABLE
 argument_list|(
 name|brush
 argument_list|)
-argument_list|,
-literal|"dirty"
 argument_list|)
 expr_stmt|;
 block|}

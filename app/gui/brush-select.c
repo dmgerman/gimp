@@ -3093,7 +3093,7 @@ argument_list|(
 name|global_brush_list
 argument_list|)
 argument_list|,
-literal|"dirty"
+literal|"invalidate_preview"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -5185,7 +5185,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f1d6e0108
+DECL|struct|__anon2b5edc570108
 block|{
 DECL|member|bsp
 name|BrushSelect

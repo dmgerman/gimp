@@ -138,18 +138,6 @@ DECL|member|parent_class
 name|GimpViewableClass
 name|parent_class
 decl_stmt|;
-DECL|member|dirty
-name|void
-function_decl|(
-modifier|*
-name|dirty
-function_decl|)
-parameter_list|(
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|)
-function_decl|;
 comment|/* FIXME: these are no virtual function pointers but bad hacks: */
 DECL|member|select_brush
 name|GimpBrush
