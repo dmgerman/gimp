@@ -16,6 +16,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -115,7 +127,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2b3a775c0103
+DECL|enum|__anon2ad6d4750103
 typedef|typedef
 enum|enum
 block|{
