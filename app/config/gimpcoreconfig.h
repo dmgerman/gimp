@@ -162,6 +162,11 @@ name|gchar
 modifier|*
 name|default_gradient
 decl_stmt|;
+DECL|member|default_font
+name|gchar
+modifier|*
+name|default_font
+decl_stmt|;
 DECL|member|default_comment
 name|gchar
 modifier|*

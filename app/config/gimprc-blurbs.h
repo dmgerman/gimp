@@ -111,6 +111,15 @@ value|N_("When enabled, this will ensure that each pixel of an image gets " \   
 end_define
 
 begin_define
+DECL|macro|DEFAULT_FONT_BLURB
+define|#
+directive|define
+name|DEFAULT_FONT_BLURB
+define|\
+value|"Specify a default font.  The font is searched for in the " \ "fontconfig font path."
+end_define
+
+begin_define
 DECL|macro|DEFAULT_GRADIENT_BLURB
 define|#
 directive|define

@@ -387,6 +387,11 @@ name|GimpContainer
 modifier|*
 name|named_buffers
 decl_stmt|;
+DECL|member|fonts
+name|GimpContainer
+modifier|*
+name|fonts
+decl_stmt|;
 DECL|member|brush_factory
 name|GimpDataFactory
 modifier|*
