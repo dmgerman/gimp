@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b42533c0103
+DECL|enum|__anon2c765e480103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -728,7 +728,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_save:  * @data:  object whose contents are to be saved.  * @error: place to return error messages.  *  * Save the object.  If the object is marked as "internal", nothing happens.  * Otherwise, it is saved to disk, using the file name set by   * gimp_data_set_filename().  If the save is successful, the  * object is marked as not dirty.  If not, an error message is returned  * using the @error argument.  *  * Returns: %TRUE if the object is internal or the save is successful.   **/
+comment|/**  * gimp_data_save:  * @data:  object whose contents are to be saved.  * @error: return location for errors or %NULL  *  * Save the object.  If the object is marked as "internal", nothing happens.  * Otherwise, it is saved to disk, using the file name set by  * gimp_data_set_filename().  If the save is successful, the  * object is marked as not dirty.  If not, an error message is returned  * using the @error argument.  *  * Returns: %TRUE if the object is internal or the save is successful.  **/
 end_comment
 
 begin_function
@@ -854,7 +854,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_dirty:  * @object: a #GimpData object.  *  * Marks @object as dirty.  Unless the object is frozen, this causes its   * preview to be invalidated, and emits a "dirty" signals that can be handled   * at lower levels of the object hierarchy.  If the object is frozen, the  * function has no effect.  **/
+comment|/**  * gimp_data_dirty:  * @data: a #GimpData object.  *  * Marks @data as dirty.  Unless the object is frozen, this causes  * its preview to be invalidated, and emits a "dirty" signal.  If the  * object is frozen, the function has no effect.  **/
 end_comment
 
 begin_function
@@ -899,7 +899,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_freeze:  * @object: a #GimpData object.  *  * Increments the freeze count for the object.  A positive freeze count  * prevents the object from being treated as dirty.  Any call to this  * function must be followed eventually by a call to gimp_data_thaw().  **/
+comment|/**  * gimp_data_freeze:  * @data: a #GimpData object.  *  * Increments the freeze count for the object.  A positive freeze count  * prevents the object from being treated as dirty.  Any call to this  * function must be followed eventually by a call to gimp_data_thaw().  **/
 end_comment
 
 begin_function
@@ -929,7 +929,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_thaw:  * @object: a #GimpData object.  *  * Decrements the freeze count for the object.  If the freeze count  * drops to zero, the object is marked as dirty, and the "dirty"  * signal is emitted.  It is an error to call this function without  * having previously called gimp_data_freeze().  **/
+comment|/**  * gimp_data_thaw:  * @data: a #GimpData object.  *  * Decrements the freeze count for the object.  If the freeze count  * drops to zero, the object is marked as dirty, and the "dirty"  * signal is emitted.  It is an error to call this function without  * having previously called gimp_data_freeze().  **/
 end_comment
 
 begin_function
@@ -981,7 +981,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_delete_from_disk:  * @data:  a #GimpData object.  * @error: place to return error messages.  *  * Deletes the object from disk.  If the object is marked as "internal",  * nothing happens.  Otherwise, if the file exists whose name has been  * set by gimp_data_set_filename(), it is deleted.  Obviously this is  * a potentially dangerous function, which should be used with care.  *  * Returns: %TRUE if the object is internal to Gimp, or the deletion is  *          successful.  **/
+comment|/**  * gimp_data_delete_from_disk:  * @data:  a #GimpData object.  * @error: return location for errors or %NULL  *  * Deletes the object from disk.  If the object is marked as "internal",  * nothing happens.  Otherwise, if the file exists whose name has been  * set by gimp_data_set_filename(), it is deleted.  Obviously this is  * a potentially dangerous function, which should be used with care.  *  * Returns: %TRUE if the object is internal to Gimp, or the deletion is  *          successful.  **/
 end_comment
 
 begin_function
@@ -1152,7 +1152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_set_filename:  * @data:     A #GimpData object  * @filename: File name to assign to @data.  * @writable: %TRUE if we want to be able to write to this file.  *  * This function assigns a file name to @data, and sets some flags   * according to the properties of the file.  If @writable is %TRUE,  * and the user has permission to write or overwrite the requested file  * name, and a "save" method exists for @data's object type, then  * @data is marked as writable.   *  * The @filename argument is copied, so it can be freed when you  * are done with it.   **/
+comment|/**  * gimp_data_set_filename:  * @data:     A #GimpData object  * @filename: File name to assign to @data.  * @writable: %TRUE if we want to be able to write to this file.  *  * This function assigns a file name to @data, and sets some flags  * according to the properties of the file.  If @writable is %TRUE,  * and the user has permission to write or overwrite the requested file  * name, and a "save" method exists for @data's object type, then  * @data is marked as writable.  **/
 end_comment
 
 begin_function
@@ -1578,7 +1578,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_duplicate:  * @data:              a #GimpData object  * @stingy_memory_use: if %TRUE, use the disk rather than RAM   *                     where possible.  *  * Creates a copy of @data, if possible.  Only the object data is  * copied:  the newly created object is not automatically given an   * object name, file name, preview, etc.  *  * Returns: the newly created copy, or %NULL if @data cannot be copied.  **/
+comment|/**  * gimp_data_duplicate:  * @data:              a #GimpData object  * @stingy_memory_use: if %TRUE, use the disk rather than RAM  *                     where possible.  *  * Creates a copy of @data, if possible.  Only the object data is  * copied:  the newly created object is not automatically given an  * object name, file name, preview, etc.  *  * Returns: the newly created copy, or %NULL if @data cannot be copied.  **/
 end_comment
 
 begin_function
@@ -1634,7 +1634,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_make_internal:  * @data: a #GimpData object.  *  * Mark @data as "internal" to Gimp, which means that it will not be saved  * to disk.  Note that if you do this, later calls to gimp_data_save()  * and gimp_data_delete_from_disk() will automatically return successfully   * without giving any warning.  **/
+comment|/**  * gimp_data_make_internal:  * @data: a #GimpData object.  *  * Mark @data as "internal" to Gimp, which means that it will not be  * saved to disk.  Note that if you do this, later calls to  * gimp_data_save() and gimp_data_delete_from_disk() will  * automatically return successfully without giving any warning.  **/
 end_comment
 
 begin_function
@@ -1756,7 +1756,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_error_quark:  *  * This function is currently not used anywhere.  **/
+comment|/**  * gimp_data_error_quark:  *  * This function is used to implement the GIMP_DATA_ERROR macro. It  * shouldn't be called directly.  *  * Return value: the #GQuark to identify error in the GimpData error domain.  **/
 end_comment
 
 begin_function

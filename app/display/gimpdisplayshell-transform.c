@@ -52,7 +52,7 @@ file|"gimpdisplayshell-transform.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_coords:  * @GimpDisplayShell: a display shell  * @image_coords:     a pointer to a set of image coordinates  * @display_coords:   a pointer to the place to return the corresponding  *                    display coordinates  *  * Transforms from image coordinates to display coordinates, so that objects  * can be rendered at the correct points on the display.  **/
+comment|/**  * gimp_display_shell_transform_coords:  * @shell:          a #GimpDisplayShell  * @image_coords:   image coordinates  * @display_coords: returns the corresponding display coordinates  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
 end_comment
 
 begin_function
@@ -171,7 +171,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_coords:  * @GimpDisplayShell: a display shell  * @display_coords:   a pointer to a set of display coordinates  * @image_coords:     a pointer to the place to return the corresonding  *                    image coordinates  *  * Transforms from display coordinates to image coordinates, so that points  * on the display can be mapped to points in the image.  **/
+comment|/**  * gimp_display_shell_transform_coords:  * @shell:          a #GimpDisplayShell  * @display_coords: display coordinates  * @image_coords:   returns the corresonding image coordinates  *  * Transforms from display coordinates to image coordinates, so that  * points on the display can be mapped to points in the image.  **/
 end_comment
 
 begin_function
@@ -288,7 +288,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_xy:  * @GimpDisplayShell: a display shell  * @x:                x coordinate of point in image coordinates  * @y:                y coordinate of point in image coordinate  * @nx:               place to return the transformed x coordinate  * @ny:               place to return the transformed y coordinate  * @use_offsets:      if %TRUE, add the offsets of the active drawable  *                    in the image that the shell displays.  *  * Transforms from image coordinates to display coordinates, so that objects  * can be rendered at the correct points on the display.  [The argument  * @use_offsets is almost always %FALSE; I have been unable to figure  * out what situations it should be %TRUE in.]  **/
+comment|/**  * gimp_display_shell_transform_xy:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate of point in image coordinates  * @y:           y coordinate of point in image coordinate  * @nx:          returns the transformed x coordinate  * @ny:          returns the transformed y coordinate  * @use_offsets: if %TRUE, add the offsets of the active drawable  *               in the image that the shell displays.  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  [The  * argument @use_offsets is almost always %FALSE; I have been unable  * to figure out what situations it should be %TRUE in.]  **/
 end_comment
 
 begin_function
@@ -479,7 +479,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_untransform_xy:  * @x:           x coordinate in display coordinates  * @y:           y coordinate in display coordinates  * @nx:          place to return x coordinate in image coordinates  * @ny:          place to return y coordinate in image coordinates  * @round:       if %TRUE, round the results to the nearest integer;  *               if %FALSE, simply cast them to @gint.  * @use_offsets: if %TRUE, subtract the offsets of the active drawable  *                    in the image that the shell displays.  *  * Transform from display coordinates to image coordinates, so that  * points on the display can be mapped to the corresponding points  * in the image.  **/
+comment|/**  * gimp_display_shell_untransform_xy:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate in display coordinates  * @y:           y coordinate in display coordinates  * @nx:          returns x oordinate in image coordinates  * @ny:          returns y coordinate in image coordinates  * @round:       if %TRUE, round the results to the nearest integer;  *               if %FALSE, simply cast them to @gint.  * @use_offsets: if %TRUE, subtract the offsets of the active drawable  *                in the image that the shell displays.  *  * Transform from display coordinates to image coordinates, so that  * points on the display can be mapped to the corresponding points  * in the image.  **/
 end_comment
 
 begin_function
@@ -691,7 +691,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_xy_f:  * @GimpDisplayShell: a display shell  * @x:                x coordinate of point in image coordinates  * @y:                y coordinate of point in image coordinate  * @nx:               place to return the transformed x coordinate  * @ny:               place to return the transformed y coordinate  * @use_offsets:      if %TRUE, add the offsets of the active drawable  *                    in the image that the shell displays.  *  * This function is identical to gimp_display_shell_transfrom_xy(),  * except that it returns its results as doubles rather than ints.  **/
+comment|/**  * gimp_display_shell_transform_xy_f:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate of point in image coordinates  * @y:           y coordinate of point in image coordinate  * @nx:          returns the transformed x coordinate  * @ny:          returns the transformed y coordinate  * @use_offsets: if %TRUE, add the offsets of the active drawable  *               in the image that the shell displays.  *  * This function is identical to gimp_display_shell_transfrom_xy(),  * except that it returns its results as doubles rather than ints.  **/
 end_comment
 
 begin_function
@@ -847,7 +847,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_untransform_xy_f:  * @x:           x coordinate in display coordinates  * @y:           y coordinate in display coordinates  * @nx:          place to return x coordinate in image coordinates  * @ny:          place to return y coordinate in image coordinates  * @use_offsets: if %TRUE, subtract the offsets of the active drawable  *                    in the image that the shell displays.  *  * This function is identical to gimp_display_shell_untransform_xy(),  * except that the input and output coordinates are doubles rather than  * ints, and consequently there is no option related to rounding.  **/
+comment|/**  * gimp_display_shell_untransform_xy_f:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate in display coordinates  * @y:           y coordinate in display coordinates  * @nx:          place to return x coordinate in image coordinates  * @ny:          place to return y coordinate in image coordinates  * @use_offsets: if %TRUE, subtract the offsets of the active drawable  *                    in the image that the shell displays.  *  * This function is identical to gimp_display_shell_untransform_xy(),  * except that the input and output coordinates are doubles rather than  * ints, and consequently there is no option related to rounding.  **/
 end_comment
 
 begin_function
@@ -1001,7 +1001,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_untransform_viewport:  * @x:      place to return image x coordinate of display upper left corner   * @y:      place to return image y coordinate of display upper left corner  * @width:  place to return width of display measured in image coordinates  * @height: place to return height of display measured in image coordinates  *  * This function calculates the part of the image, im image coordinates,  * the corresponds to the display viewport.  **/
+comment|/**  * gimp_display_shell_untransform_viewport:  * @shell:  a #GimpDisplayShell  * @x:      returns image x coordinate of display upper left corner  * @y:      returns image y coordinate of display upper left corner  * @width:  returns width of display measured in image coordinates  * @height: returns height of display measured in image coordinates  *  * This function calculates the part of the image, im image coordinates,  * the corresponds to the display viewport.  **/
 end_comment
 
 begin_function
