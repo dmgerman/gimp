@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a08b3920108
+DECL|struct|__anon296a42180108
 block|{
 DECL|member|list_view
 name|GtkTreeView
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a08b3920208
+DECL|struct|__anon296a42180208
 block|{
 DECL|member|menu
 name|gchar
@@ -192,7 +192,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a08b3920303
+DECL|enum|__anon296a42180303
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -217,7 +217,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a08b3920403
+DECL|enum|__anon296a42180403
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -317,7 +317,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|void
 name|list_store_select_callback
 parameter_list|(
 name|GtkTreeSelection
@@ -333,7 +333,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|void
 name|tree_store_select_callback
 parameter_list|(
 name|GtkTreeSelection
@@ -343,6 +343,22 @@ parameter_list|,
 name|PDesc
 modifier|*
 name|pdesc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|procedure_general_select_callback
+parameter_list|(
+name|PDesc
+modifier|*
+name|pdesc
+parameter_list|,
+name|PInfo
+modifier|*
+name|pinfo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -935,7 +951,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|void
 DECL|function|procedure_general_select_callback (PDesc * pdesc,PInfo * pinfo)
 name|procedure_general_select_callback
 parameter_list|(
@@ -1018,22 +1034,18 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|pdesc
 operator|!=
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|pinfo
 operator|!=
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1044,9 +1056,7 @@ name|descr_scroll
 operator|==
 name|NULL
 condition|)
-return|return
-name|FALSE
-return|;
+return|return;
 name|selected_proc_blurb
 operator|=
 name|NULL
@@ -2364,15 +2374,12 @@ argument_list|(
 name|selected_return_vals
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|void
 DECL|function|list_store_select_callback (GtkTreeSelection * selection,PDesc * pdesc)
 name|list_store_select_callback
 parameter_list|(
@@ -2404,13 +2411,11 @@ name|mpath
 init|=
 name|NULL
 decl_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|pdesc
 operator|!=
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2457,9 +2462,7 @@ operator|||
 operator|!
 name|mpath
 condition|)
-return|return
-name|FALSE
-return|;
+return|return;
 name|model
 operator|=
 name|gtk_tree_view_get_model
@@ -2581,20 +2584,19 @@ argument_list|(
 name|mpath
 argument_list|)
 expr_stmt|;
-return|return
 name|procedure_general_select_callback
 argument_list|(
 name|pdesc
 argument_list|,
 name|pinfo
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|void
 DECL|function|tree_store_select_callback (GtkTreeSelection * selection,PDesc * pdesc)
 name|tree_store_select_callback
 parameter_list|(
@@ -2631,13 +2633,11 @@ name|valid
 decl_stmt|,
 name|found
 decl_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|pdesc
 operator|!=
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2684,9 +2684,7 @@ operator|||
 operator|!
 name|mpath
 condition|)
-return|return
-name|FALSE
-return|;
+return|return;
 comment|/* Get the first iter in the list */
 name|model
 operator|=
@@ -2867,14 +2865,13 @@ literal|"Failed to find node in list"
 argument_list|)
 expr_stmt|;
 block|}
-return|return
 name|procedure_general_select_callback
 argument_list|(
 name|pdesc
 argument_list|,
 name|pinfo
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
