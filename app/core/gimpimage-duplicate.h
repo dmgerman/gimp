@@ -31,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae903b30103
+DECL|enum|__anon2adcc7710103
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -85,7 +85,7 @@ parameter_list|,
 name|gboolean
 name|wrap_around
 parameter_list|,
-name|gint
+name|ChannelOffsetType
 name|fill_type
 parameter_list|,
 name|gint

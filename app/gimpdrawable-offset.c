@@ -1024,7 +1024,7 @@ argument_list|(
 name|radio_button
 argument_list|)
 argument_list|,
-literal|"merge_type"
+literal|"fill_type"
 argument_list|,
 operator|(
 name|gpointer
@@ -1046,10 +1046,7 @@ name|GtkSignalFunc
 operator|)
 name|offset_fill_type_update
 argument_list|,
-operator|&
 name|off_d
-operator|->
-name|fill_type
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1057,14 +1054,6 @@ argument_list|(
 name|radio_button
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|drawable_has_alpha
-argument_list|(
-name|drawable
-argument_list|)
-condition|)
-block|{
 name|radio_button
 operator|=
 name|gtk_radio_button_new_with_label
@@ -1110,7 +1099,7 @@ argument_list|(
 name|radio_button
 argument_list|)
 argument_list|,
-literal|"merge_type"
+literal|"fill_type"
 argument_list|,
 operator|(
 name|gpointer
@@ -1132,12 +1121,21 @@ name|GtkSignalFunc
 operator|)
 name|offset_fill_type_update
 argument_list|,
-operator|&
 name|off_d
-operator|->
-name|fill_type
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|radio_button
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -1148,12 +1146,26 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+else|else
+name|gtk_widget_set_sensitive
 argument_list|(
 name|radio_button
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
+name|gtk_widget_show
+argument_list|(
+name|radio_box
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|off_d
+operator|->
+name|fill_options
+argument_list|)
+expr_stmt|;
 comment|/*  The by half height and half width option */
 name|push
 operator|=
@@ -1194,18 +1206,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|push
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|radio_box
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|off_d
-operator|->
-name|fill_options
 argument_list|)
 expr_stmt|;
 comment|/*  Hook up the wrap around  */
@@ -1273,7 +1273,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|offset (GimpImage * gimage,GimpDrawable * drawable,gboolean wrap_around,gint fill_type,gint offset_x,gint offset_y)
+DECL|function|offset (GimpImage * gimage,GimpDrawable * drawable,gboolean wrap_around,ChannelOffsetType fill_type,gint offset_x,gint offset_y)
 name|offset
 parameter_list|(
 name|GimpImage
@@ -1287,7 +1287,7 @@ parameter_list|,
 name|gboolean
 name|wrap_around
 parameter_list|,
-name|gint
+name|ChannelOffsetType
 name|fill_type
 parameter_list|,
 name|gint
