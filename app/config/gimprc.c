@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig.h"
 end_include
 
@@ -31,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"gimpconfig-deserialize.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpconfig-params.h"
 end_include
 
 begin_include
@@ -503,6 +515,10 @@ name|GObjectClass
 modifier|*
 name|klass
 decl_stmt|;
+name|GObject
+modifier|*
+name|rc_object
+decl_stmt|;
 name|GParamSpec
 modifier|*
 modifier|*
@@ -540,6 +556,13 @@ operator|!=
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|rc_object
+operator|=
+name|G_OBJECT
+argument_list|(
+name|rc
 argument_list|)
 expr_stmt|;
 name|klass
@@ -603,7 +626,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|G_PARAM_READABLE
+name|GIMP_PARAM_SERIALIZE
 operator|)
 operator|||
 name|strcmp
@@ -655,10 +678,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
-name|G_OBJECT
-argument_list|(
-name|rc
-argument_list|)
+name|rc_object
 argument_list|,
 name|prop_spec
 operator|->
@@ -712,10 +732,7 @@ name|g_strdup
 argument_list|(
 name|gimp_config_lookup_unknown_token
 argument_list|(
-name|G_OBJECT
-argument_list|(
-name|rc
-argument_list|)
+name|rc_object
 argument_list|,
 name|key
 argument_list|)
