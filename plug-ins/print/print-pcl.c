@@ -1396,7 +1396,11 @@ name|left
 expr_stmt|;
 name|left
 operator|=
+name|page_width
+operator|-
 name|x
+operator|-
+name|out_width
 expr_stmt|;
 block|}
 if|if
@@ -1414,6 +1418,13 @@ name|out_width
 operator|)
 operator|/
 literal|2
+operator|+
+name|page_left
+expr_stmt|;
+else|else
+name|left
+operator|=
+name|left
 operator|+
 name|page_left
 expr_stmt|;

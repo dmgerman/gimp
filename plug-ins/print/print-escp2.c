@@ -715,7 +715,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2acfc6340108
+DECL|struct|__anon28ec10b40108
 typedef|typedef
 struct|struct
 block|{
@@ -2014,6 +2014,41 @@ block|{
 return|return;
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|use_softweave
+condition|)
+block|{
+comment|/*        * In microweave mode, correct for the loss of page height that        * would happen in softweave mode.  The divide by 10 is to convert        * lines into points (Epson printers all have 720 ydpi);        */
+name|int
+name|extra_points
+init|=
+operator|(
+operator|(
+name|escp2_nozzles
+argument_list|(
+name|model
+argument_list|)
+operator|-
+literal|1
+operator|)
+operator|*
+name|escp2_nozzle_separation
+argument_list|(
+name|model
+argument_list|)
+operator|+
+literal|5
+operator|)
+operator|/
+literal|10
+decl_stmt|;
+name|top
+operator|+=
+name|extra_points
+expr_stmt|;
+block|}
 comment|/*   * Compute the output size...   */
 name|landscape
 operator|=
@@ -2331,7 +2366,11 @@ name|left
 expr_stmt|;
 name|left
 operator|=
+name|page_width
+operator|-
 name|x
+operator|-
+name|out_width
 expr_stmt|;
 block|}
 if|if
@@ -2349,6 +2388,13 @@ name|out_width
 operator|)
 operator|/
 literal|2
+operator|+
+name|page_left
+expr_stmt|;
+else|else
+name|left
+operator|=
+name|left
 operator|+
 name|page_left
 expr_stmt|;
@@ -5050,7 +5096,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/* Weave parameters for a specific row */
-DECL|struct|__anon2acfc6340208
+DECL|struct|__anon28ec10b40208
 block|{
 DECL|member|row
 name|int
@@ -5107,7 +5153,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/* Weave parameters for a specific pass */
-DECL|struct|__anon2acfc6340308
+DECL|struct|__anon28ec10b40308
 block|{
 DECL|member|pass
 name|int
@@ -5138,7 +5184,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon2acfc634040a
+DECL|union|__anon28ec10b4040a
 typedef|typedef
 union|union
 block|{
@@ -5151,7 +5197,7 @@ literal|6
 index|]
 decl_stmt|;
 comment|/* (really pass) */
-DECL|struct|__anon2acfc6340508
+DECL|struct|__anon28ec10b40508
 struct|struct
 block|{
 DECL|member|k
@@ -5189,7 +5235,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon2acfc634060a
+DECL|union|__anon28ec10b4060a
 typedef|typedef
 union|union
 block|{
@@ -5203,7 +5249,7 @@ index|[
 literal|6
 index|]
 decl_stmt|;
-DECL|struct|__anon2acfc6340708
+DECL|struct|__anon28ec10b40708
 struct|struct
 block|{
 DECL|member|k
@@ -7590,9 +7636,9 @@ name|escp2_has_cap
 argument_list|(
 name|model
 argument_list|,
-name|MODEL_6COLOR_MASK
+name|MODEL_720DPI_MODE_MASK
 argument_list|,
-name|MODEL_6COLOR_YES
+name|MODEL_720DPI_600
 argument_list|)
 condition|)
 name|fprintf
@@ -7617,39 +7663,25 @@ operator|->
 name|missingstartrows
 argument_list|)
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|escp2_has_cap
-argument_list|(
-name|model
-argument_list|,
-name|MODEL_720DPI_MODE_MASK
-argument_list|,
-name|MODEL_720DPI_600
-argument_list|)
-condition|)
-name|fwrite
-argument_list|(
-literal|"\033.\001\050\005\001"
-argument_list|,
-literal|6
-argument_list|,
-literal|1
-argument_list|,
-name|prn
-argument_list|)
-expr_stmt|;
 else|else
-name|fwrite
+name|fprintf
 argument_list|(
-literal|"\033.\001\005\005\001"
+name|prn
 argument_list|,
-literal|6
+literal|"\033.%c%c%c%c"
 argument_list|,
 literal|1
 argument_list|,
-name|prn
+literal|5
+argument_list|,
+literal|5
+argument_list|,
+operator|*
+name|linecount
+operator|+
+name|pass
+operator|->
+name|missingstartrows
 argument_list|)
 expr_stmt|;
 break|break;
