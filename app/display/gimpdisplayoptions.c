@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2a0caf0103
+DECL|enum|__anon2796d0270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -562,11 +562,11 @@ name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_SHOW_SAMPLE_POINTS
+name|PROP_SHOW_GUIDES
 argument_list|,
-literal|"show-sample-points"
+literal|"show-guides"
 argument_list|,
-name|SHOW_SAMPLE_POINTS_BLURB
+name|SHOW_GUIDES_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -577,11 +577,11 @@ name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_SHOW_GUIDES
+name|PROP_SHOW_SAMPLE_POINTS
 argument_list|,
-literal|"show-guides"
+literal|"show-sample-points"
 argument_list|,
-name|SHOW_GUIDES_BLURB
+name|SHOW_SAMPLE_POINTS_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
