@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc93a60108
+DECL|struct|__anon278ccdb60108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27cc93a6020a
+DECL|union|__anon278ccdb6020a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc93a60308
+DECL|struct|__anon278ccdb60308
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc93a60408
+DECL|struct|__anon278ccdb60408
 block|{
 DECL|member|cc
 name|GtkWidget
@@ -3692,6 +3692,16 @@ operator|=
 name|gtk_dialog_new
 argument_list|()
 expr_stmt|;
+name|gtk_quit_add_destroy
+argument_list|(
+literal|1
+argument_list|,
+name|GTK_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
@@ -4677,11 +4687,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_main
 argument_list|()
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|dlg
-argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
