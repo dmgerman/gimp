@@ -224,12 +224,6 @@ name|DEFAULT_IMAGE_STATUS_FORMAT
 value|"%n (%m)"
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|OS_WIN32
-end_ifdef
-
 begin_define
 DECL|macro|DEFAULT_ACTIVATE_ON_FOCUS
 define|#
@@ -238,27 +232,9 @@ name|DEFAULT_ACTIVATE_ON_FOCUS
 value|TRUE
 end_define
 
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|DEFAULT_ACTIVATE_ON_FOCUS
-define|#
-directive|define
-name|DEFAULT_ACTIVATE_ON_FOCUS
-value|FALSE
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_enum
 enum|enum
-DECL|enum|__anon2b8114df0103
+DECL|enum|__anon2a421d230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
