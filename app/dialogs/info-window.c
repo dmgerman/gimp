@@ -1756,7 +1756,23 @@ name|info_win
 operator|=
 name|info_dialog_notebook_new
 argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+argument_list|,
 name|title
+argument_list|,
+literal|"image_info"
+argument_list|,
+name|GIMP_STOCK_INFO
+argument_list|,
+name|_
+argument_list|(
+literal|"Image Information"
+argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

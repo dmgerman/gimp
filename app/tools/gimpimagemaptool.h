@@ -156,16 +156,6 @@ name|GtkWidget
 modifier|*
 name|shell
 decl_stmt|;
-DECL|member|title_preview
-name|GtkWidget
-modifier|*
-name|title_preview
-decl_stmt|;
-DECL|member|title_label
-name|GtkWidget
-modifier|*
-name|title_label
-decl_stmt|;
 DECL|member|main_vbox
 name|GtkWidget
 modifier|*

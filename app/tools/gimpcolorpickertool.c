@@ -113,6 +113,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/info-dialog.h"
 end_include
 
@@ -1060,9 +1066,20 @@ name|gimp_color_picker_tool_info
 operator|=
 name|info_dialog_new
 argument_list|(
+name|NULL
+argument_list|,
 name|_
 argument_list|(
 literal|"Color Picker"
+argument_list|)
+argument_list|,
+literal|"color_picker"
+argument_list|,
+name|GIMP_STOCK_TOOL_COLOR_PICKER
+argument_list|,
+name|_
+argument_list|(
+literal|"Color Picker Information"
 argument_list|)
 argument_list|,
 name|tool_manager_help_func
@@ -1443,6 +1460,26 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_viewable_dialog_set_viewable
+argument_list|(
+name|GIMP_VIEWABLE_DIALOG
+argument_list|(
+name|gimp_color_picker_tool_info
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|gimp_image_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Keep the coordinates of the target  */
 name|gimp_drawable_offsets
 argument_list|(

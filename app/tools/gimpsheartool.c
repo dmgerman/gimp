@@ -89,6 +89,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -584,9 +590,20 @@ name|info_dialog
 operator|=
 name|info_dialog_new
 argument_list|(
+name|NULL
+argument_list|,
 name|_
 argument_list|(
-literal|"Shear Information"
+literal|"Shear"
+argument_list|)
+argument_list|,
+literal|"shear"
+argument_list|,
+name|GIMP_STOCK_TOOL_SHEAR
+argument_list|,
+name|_
+argument_list|(
+literal|"Shearing Information"
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
@@ -676,6 +693,28 @@ name|transform_tool
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_viewable_dialog_set_viewable
+argument_list|(
+name|GIMP_VIEWABLE_DIALOG
+argument_list|(
+name|transform_tool
+operator|->
+name|info_dialog
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|gimp_image_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|GTK_WIDGET

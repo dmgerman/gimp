@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -596,26 +602,34 @@ name|options
 operator|->
 name|query_box
 operator|=
-name|gimp_dialog_new
+name|gimp_viewable_dialog_new
 argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
-literal|"Edit Qmask Attributes"
+literal|"Qmask Attributes"
 argument_list|)
 argument_list|,
 literal|"edit_qmask_attributes"
 argument_list|,
+name|GIMP_STOCK_QMASK_ON
+argument_list|,
+name|_
+argument_list|(
+literal|"Edit QuickMask Attributes"
+argument_list|)
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/edit_qmask_attributes.html"
-argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

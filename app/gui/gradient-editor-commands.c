@@ -1935,7 +1935,6 @@ operator|!
 name|editor
 condition|)
 return|return;
-comment|/*  Create dialog window  */
 name|dialog
 operator|=
 name|gimp_dialog_new
@@ -2220,7 +2219,6 @@ operator|->
 name|replicate_times
 argument_list|)
 expr_stmt|;
-comment|/*  Show!  */
 name|gtk_widget_show
 argument_list|(
 name|dialog

@@ -131,6 +131,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcroptool.h"
 end_include
 
@@ -182,7 +188,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29358c7b0103
+DECL|enum|__anon27a349180103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -3952,6 +3958,25 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+name|gimp_viewable_dialog_set_viewable
+argument_list|(
+name|GIMP_VIEWABLE_DIALOG
+argument_list|(
+name|crop_info
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|tool
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|G_OBJECT
@@ -4340,6 +4365,17 @@ name|crop_info
 operator|=
 name|info_dialog_new
 argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Crop& Resize"
+argument_list|)
+argument_list|,
+literal|"crop"
+argument_list|,
+name|GIMP_STOCK_TOOL_CROP
+argument_list|,
 name|_
 argument_list|(
 literal|"Crop& Resize Information"

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -132,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a786720108
+DECL|struct|__anon2b31cf580108
 block|{
 DECL|member|resize
 name|Resize
@@ -1038,26 +1044,30 @@ name|options
 operator|->
 name|query_box
 operator|=
-name|gimp_dialog_new
+name|gimp_viewable_dialog_new
 argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Merge Layers"
+argument_list|)
+argument_list|,
+literal|"layers_merge_options"
+argument_list|,
+name|GIMP_STOCK_MERGE_DOWN
+argument_list|,
 name|_
 argument_list|(
 literal|"Layers Merge Options"
 argument_list|)
 argument_list|,
-literal|"layers_merge_options"
-argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/layers/merge_visible_layers.html"
-argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

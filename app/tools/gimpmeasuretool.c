@@ -89,6 +89,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -1454,7 +1460,7 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
-literal|""
+literal|" "
 argument_list|)
 expr_stmt|;
 block|}
@@ -1495,9 +1501,20 @@ name|measure_tool_info
 operator|=
 name|info_dialog_new
 argument_list|(
+name|NULL
+argument_list|,
 name|_
 argument_list|(
 literal|"Measure Tool"
+argument_list|)
+argument_list|,
+literal|"measure"
+argument_list|,
+name|GIMP_STOCK_TOOL_MEASURE
+argument_list|,
+name|_
+argument_list|(
+literal|"Measure Tool Information"
 argument_list|)
 argument_list|,
 name|tool_manager_help_func
@@ -1556,6 +1573,29 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|measure_tool_info
+condition|)
+name|gimp_viewable_dialog_set_viewable
+argument_list|(
+name|GIMP_VIEWABLE_DIALOG
+argument_list|(
+name|measure_tool_info
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|tool
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_activate
 argument_list|(
 name|tool

@@ -493,6 +493,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpViewableDialog
+typedef|typedef
+name|struct
+name|_GimpViewableDialog
+name|GimpViewableDialog
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpFontSelection
 typedef|typedef
 name|struct
