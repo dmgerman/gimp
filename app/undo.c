@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcoreconfig.h"
 end_include
 
@@ -245,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b190b580103
+DECL|enum|__anon2ac054d50103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -1851,7 +1857,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -2070,8 +2076,13 @@ block|{
 comment|/*  Flush any image updates and displays  */
 name|gdisp
 operator|=
-name|gdisplay_active
-argument_list|()
+name|gimp_context_get_display
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

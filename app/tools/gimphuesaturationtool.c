@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -265,6 +259,16 @@ specifier|static
 name|HueSaturationDialog
 modifier|*
 name|hue_saturation_dialog_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|hue_saturation_dialog_hide
 parameter_list|(
 name|void
 parameter_list|)
@@ -1655,31 +1659,6 @@ end_function
 begin_comment
 comment|/*  hue saturation action functions  */
 end_comment
-
-begin_function
-name|void
-DECL|function|hue_saturation_dialog_hide (void)
-name|hue_saturation_dialog_hide
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|hue_saturation_dialog
-condition|)
-name|hue_saturation_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|hue_saturation_dialog
-argument_list|)
-expr_stmt|;
-block|}
-end_function
 
 begin_function
 name|void
@@ -3474,6 +3453,32 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|hue_saturation_dialog_hide (void)
+name|hue_saturation_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|hue_saturation_dialog
+condition|)
+name|hue_saturation_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|hue_saturation_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|hue_saturation_update (HueSaturationDialog * hsd,gint update)
 name|hue_saturation_update
 parameter_list|(
@@ -3995,7 +4000,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|hsd
 operator|->
@@ -4106,7 +4111,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|hsd
 operator|->

@@ -123,7 +123,7 @@ modifier|*
 name|guide
 decl_stmt|;
 DECL|member|disp
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|disp
 decl_stmt|;
@@ -172,7 +172,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -187,7 +187,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

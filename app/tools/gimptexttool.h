@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274f82be0103
+DECL|enum|__anon2bb7e1bb0103
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS
@@ -134,7 +134,7 @@ name|gint
 name|click_y
 decl_stmt|;
 DECL|member|gdisp
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;

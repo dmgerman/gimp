@@ -125,7 +125,7 @@ struct|struct
 name|_RenderInfo
 block|{
 DECL|member|gdisp
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -920,7 +920,7 @@ name|RenderInfo
 modifier|*
 name|info
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1033,10 +1033,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|render_image (GDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|render_image (GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|render_image
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -3404,14 +3404,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_image_init_info (RenderInfo * info,GDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|render_image_init_info (RenderInfo * info,GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|render_image_init_info
 parameter_list|(
 name|RenderInfo
 modifier|*
 name|info
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

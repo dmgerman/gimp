@@ -267,6 +267,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE_LIST_VIEW))
 end_define
 
+begin_define
+DECL|macro|GIMP_DRAWABLE_LIST_VIEW_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_DRAWABLE_LIST_VIEW_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DRAWABLE_LIST_VIEW, GimpDrawableListViewClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpDrawableListViewClass
 typedef|typedef
@@ -291,7 +302,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 DECL|member|drawable_type
-name|GtkType
+name|GType
 name|drawable_type
 decl_stmt|;
 DECL|member|signal_name
@@ -423,7 +434,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GtkType
+name|GType
 name|drawable_type
 parameter_list|,
 specifier|const

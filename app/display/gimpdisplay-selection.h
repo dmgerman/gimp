@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SELECTION_H__
+name|__GIMP_DISPLAY_SELECTION_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SELECTION_H__
+DECL|macro|__GIMP_DISPLAY_SELECTION_H__
 define|#
 directive|define
-name|__SELECTION_H__
+name|__GIMP_DISPLAY_SELECTION_H__
 end_define
 
 begin_struct
@@ -27,19 +27,19 @@ name|GdkWindow
 modifier|*
 name|win
 decl_stmt|;
-comment|/*  Window to draw to                 */
+comment|/*  Window to draw to                    */
 DECL|member|gdisp
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-comment|/*  GDisplay that owns the selection  */
+comment|/*  GimpDisplay that owns the selection  */
 DECL|member|gc_in
 name|GdkGC
 modifier|*
 name|gc_in
 decl_stmt|;
-comment|/*  GC for drawing selection outline  */
+comment|/*  GC for drawing selection outline     */
 DECL|member|gc_out
 name|GdkGC
 modifier|*
@@ -51,7 +51,7 @@ name|GdkGC
 modifier|*
 name|gc_layer
 decl_stmt|;
-comment|/*  GC for current layer outline      */
+comment|/*  GC for current layer outline         */
 comment|/*  This information is for drawing the marching ants around the border  */
 DECL|member|segs_in
 name|GdkSegment
@@ -185,7 +185,7 @@ name|GdkWindow
 modifier|*
 name|window
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -287,7 +287,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SELECTION_H__  */
+comment|/*  __GIMP_DISPLAY_SELECTION_H__  */
 end_comment
 
 end_unit

@@ -120,13 +120,6 @@ range|:
 literal|1
 decl_stmt|;
 comment|/* Is the plug-in open* */
-DECL|member|destroy
-name|guint
-name|destroy
-range|:
-literal|1
-decl_stmt|;
-comment|/* Should the plug-in by destroyed* */
 DECL|member|query
 name|guint
 name|query

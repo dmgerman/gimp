@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e09b1e0103
+DECL|enum|__anon28ee46820103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -521,52 +521,60 @@ operator|!
 name|view_type
 condition|)
 block|{
-name|GtkTypeInfo
+specifier|static
+specifier|const
+name|GTypeInfo
 name|view_info
 init|=
 block|{
-literal|"GimpDrawableListView"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpDrawableListView
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpDrawableListViewClass
 argument_list|)
 block|,
+name|NULL
+block|,
+comment|/* base_init */
+name|NULL
+block|,
+comment|/* base_finalize */
 operator|(
-name|GtkClassInitFunc
+name|GClassInitFunc
 operator|)
 name|gimp_drawable_list_view_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data */
+sizeof|sizeof
+argument_list|(
+name|GimpDrawableListView
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_drawable_list_view_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
-block|}
+block|,       }
 decl_stmt|;
 name|view_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_CONTAINER_LIST_VIEW
 argument_list|,
+literal|"GimpDrawableListView"
+argument_list|,
 operator|&
 name|view_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -597,19 +605,17 @@ name|container_view_class
 decl_stmt|;
 name|object_class
 operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
+name|GTK_OBJECT_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|container_view_class
 operator|=
-operator|(
-name|GimpContainerViewClass
-operator|*
-operator|)
+name|GIMP_CONTAINER_VIEW_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
@@ -1041,7 +1047,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_drawable_list_view_new (gint preview_size,GimpImage * gimage,GtkType drawable_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetDrawableFunc get_drawable_func,GimpSetDrawableFunc set_drawable_func,GimpReorderDrawableFunc reorder_drawable_func,GimpAddDrawableFunc add_drawable_func,GimpRemoveDrawableFunc remove_drawable_func,GimpCopyDrawableFunc copy_drawable_func,GimpNewDrawableFunc new_drawable_func,GimpEditDrawableFunc edit_drawable_func,GimpDrawableContextFunc drawable_context_func)
+DECL|function|gimp_drawable_list_view_new (gint preview_size,GimpImage * gimage,GType drawable_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetDrawableFunc get_drawable_func,GimpSetDrawableFunc set_drawable_func,GimpReorderDrawableFunc reorder_drawable_func,GimpAddDrawableFunc add_drawable_func,GimpRemoveDrawableFunc remove_drawable_func,GimpCopyDrawableFunc copy_drawable_func,GimpNewDrawableFunc new_drawable_func,GimpEditDrawableFunc edit_drawable_func,GimpDrawableContextFunc drawable_context_func)
 name|gimp_drawable_list_view_new
 parameter_list|(
 name|gint
@@ -1051,7 +1057,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GtkType
+name|GType
 name|drawable_type
 parameter_list|,
 specifier|const

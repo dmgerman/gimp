@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__IMAGE_RENDER_H__
+name|__GIMP_DISPLAY_RENDER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__IMAGE_RENDER_H__
+DECL|macro|__GIMP_DISPLAY_RENDER_H__
 define|#
 directive|define
-name|__IMAGE_RENDER_H__
+name|__GIMP_DISPLAY_RENDER_H__
 end_define
 
 begin_comment
@@ -46,7 +46,7 @@ begin_function_decl
 name|void
 name|render_image
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -115,7 +115,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __IMAGE_RENDER_H__  */
+comment|/*  __GIMP_DISPLAY_RENDER_H__  */
 end_comment
 
 end_unit

@@ -24,19 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwidgets-utils.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -124,7 +112,7 @@ modifier|*
 name|filesel
 parameter_list|)
 block|{
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|filesel
 argument_list|)
@@ -143,12 +131,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gdisplay_active
-argument_list|()
-condition|)
-block|{
 name|menus_set_sensitive
 argument_list|(
 literal|"<Image>/File/Save"
@@ -170,10 +152,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
-comment|/*  return FALSE because we are used as "delete_event" handler  */
+comment|/*  return TRUE because we are used as "delete_event" handler  */
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function

@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -545,7 +539,7 @@ name|comment
 decl_stmt|;
 name|comment
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->

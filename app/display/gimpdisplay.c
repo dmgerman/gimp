@@ -190,12 +190,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -269,7 +263,7 @@ file|"pixmaps/wilber.xpm"
 end_include
 
 begin_comment
-comment|/* EEEK, we shouldn't use this, but it will go away when    GDisplay is made a proper GObject */
+comment|/* EEEK, we shouldn't use this, but it will go away when    GimpDisplay is made a proper GObject */
 end_comment
 
 begin_define
@@ -10958,67 +10952,6 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-block|}
-end_function
-
-begin_comment
-comment|/**************************************************/
-end_comment
-
-begin_comment
-comment|/*  Functions independent of a specific gdisplay  */
-end_comment
-
-begin_comment
-comment|/**************************************************/
-end_comment
-
-begin_function
-name|GimpDisplay
-modifier|*
-DECL|function|gdisplay_active (void)
-name|gdisplay_active
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|GdkEvent
-modifier|*
-name|event
-decl_stmt|;
-comment|/*  Whoever finds out why we do this (see below) gets a free beer.    *  Report back the reason to Sven and Mitch ...     */
-name|event
-operator|=
-name|gtk_get_current_event
-argument_list|()
-expr_stmt|;
-if|if
-condition|(
-name|event
-operator|!=
-name|NULL
-condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"gdisplay_active(): deleging current event"
-argument_list|)
-expr_stmt|;
-name|gdk_event_free
-argument_list|(
-name|event
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|gimp_context_get_display
-argument_list|(
-name|gimp_get_user_context
-argument_list|(
-name|the_gimp
-argument_list|)
-argument_list|)
-return|;
 block|}
 end_function
 

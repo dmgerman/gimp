@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -462,6 +456,16 @@ specifier|static
 name|CurvesDialog
 modifier|*
 name|curves_dialog_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|curves_dialog_hide
 parameter_list|(
 name|void
 parameter_list|)
@@ -2672,31 +2676,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|curves_dialog_hide (void)
-name|curves_dialog_hide
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|curves_dialog
-condition|)
-name|curves_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|curves_dialog
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|curves_free (void)
 name|curves_free
 parameter_list|(
@@ -4119,6 +4098,32 @@ expr_stmt|;
 return|return
 name|cd
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|curves_dialog_hide (void)
+name|curves_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|curves_dialog
+condition|)
+name|curves_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|curves_dialog
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -7321,7 +7326,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|cd
 operator|->
@@ -7439,7 +7444,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|cd
 operator|->
@@ -9343,7 +9348,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|file_dlg
 argument_list|)

@@ -63,18 +63,6 @@ directive|include
 file|"app_procs.h"
 end_include
 
-begin_define
-DECL|macro|return_if_no_display (gdisp)
-define|#
-directive|define
-name|return_if_no_display
-parameter_list|(
-name|gdisp
-parameter_list|)
-define|\
-value|gdisp = gdisplay_active (); \         if (!gdisp) return
-end_define
-
 begin_function
 name|void
 DECL|function|tools_default_colors_cmd_callback (GtkWidget * widget,gpointer data)
@@ -245,7 +233,7 @@ name|GimpTool
 modifier|*
 name|active_tool
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -267,8 +255,13 @@ argument_list|)
 expr_stmt|;
 name|gdisp
 operator|=
-name|gdisplay_active
-argument_list|()
+name|gimp_context_get_display
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_context_set_tool
 argument_list|(

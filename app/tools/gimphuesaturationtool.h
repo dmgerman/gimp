@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c59a8280103
+DECL|enum|__anon28a2473d0103
 block|{
 DECL|enumerator|ALL_HUES
 name|ALL_HUES
@@ -268,15 +268,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|hue_saturation_free
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|hue_saturation_dialog_hide
 parameter_list|(
 name|void
 parameter_list|)

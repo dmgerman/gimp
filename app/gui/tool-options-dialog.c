@@ -130,22 +130,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpViewable
-modifier|*
-name|tool_options_dialog_drag_tool
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
 name|tool_options_dialog_drop_tool
 parameter_list|(
@@ -165,8 +149,9 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|tool_options_dialog_reset_callback
+name|GimpViewable
+modifier|*
+name|tool_options_dialog_drag_tool
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -182,6 +167,21 @@ begin_function_decl
 specifier|static
 name|void
 name|tool_options_dialog_close_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|tool_options_dialog_reset_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1059,7 +1059,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|shell
 argument_list|)

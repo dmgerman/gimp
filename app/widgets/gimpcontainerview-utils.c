@@ -183,10 +183,10 @@ end_comment
 
 begin_function
 name|GimpItemGetNameFunc
-DECL|function|gimp_container_view_get_built_in_name_func (GtkType type)
+DECL|function|gimp_container_view_get_built_in_name_func (GType type)
 name|gimp_container_view_get_built_in_name_func
 parameter_list|(
-name|GtkType
+name|GType
 name|type
 parameter_list|)
 block|{

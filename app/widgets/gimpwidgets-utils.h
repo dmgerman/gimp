@@ -50,17 +50,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dialog_hide
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|dialog
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_menu_position
 parameter_list|(
 name|GtkMenu

@@ -135,7 +135,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_gradient_preview_get_type (void)
 name|gimp_gradient_preview_get_type
 parameter_list|(
@@ -143,7 +143,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|preview_type
 init|=
 literal|0
@@ -154,52 +154,60 @@ operator|!
 name|preview_type
 condition|)
 block|{
-name|GtkTypeInfo
+specifier|static
+specifier|const
+name|GTypeInfo
 name|preview_info
 init|=
 block|{
-literal|"GimpGradientPreview"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpGradientPreview
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpGradientPreviewClass
 argument_list|)
 block|,
+name|NULL
+block|,
+comment|/* base_init */
+name|NULL
+block|,
+comment|/* base_finalize */
 operator|(
-name|GtkClassInitFunc
+name|GClassInitFunc
 operator|)
 name|gimp_gradient_preview_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data */
+sizeof|sizeof
+argument_list|(
+name|GimpGradientPreview
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_gradient_preview_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
-block|}
+block|,       }
 decl_stmt|;
 name|preview_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_PREVIEW
 argument_list|,
+literal|"GimpGradientPreview"
+argument_list|,
 operator|&
 name|preview_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -220,35 +228,22 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
-modifier|*
-name|object_class
-decl_stmt|;
 name|GimpPreviewClass
 modifier|*
 name|preview_class
 decl_stmt|;
-name|object_class
-operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
-name|klass
-expr_stmt|;
 name|preview_class
 operator|=
-operator|(
-name|GimpPreviewClass
-operator|*
-operator|)
+name|GIMP_PREVIEW_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|klass
 argument_list|)
 expr_stmt|;
 name|preview_class

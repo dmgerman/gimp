@@ -90,6 +90,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DATA_FACTORY_VIEW))
 end_define
 
+begin_define
+DECL|macro|GIMP_DATA_FACTORY_VIEW_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_DATA_FACTORY_VIEW_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DATA_FACTORY_VIEW, GimpDataFactoryViewClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpDataFactoryViewClass
 typedef|typedef
@@ -160,7 +171,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_data_factory_view_get_type
 parameter_list|(
 name|void

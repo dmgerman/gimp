@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -226,6 +220,16 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|color_balance_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|color_balance_update
 parameter_list|(
 name|ColorBalanceDialog
@@ -233,6 +237,7 @@ modifier|*
 name|cbd
 parameter_list|,
 name|gint
+name|update
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1163,31 +1168,6 @@ operator|->
 name|rowstride
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|color_balance_dialog_hide (void)
-name|color_balance_dialog_hide
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|color_balance_dialog
-condition|)
-name|color_balance_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|color_balance_dialog
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2644,6 +2624,32 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|color_balance_dialog_hide (void)
+name|color_balance_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|color_balance_dialog
+condition|)
+name|color_balance_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|color_balance_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|color_balance_update (ColorBalanceDialog * cbd,gint update)
 name|color_balance_update
 parameter_list|(
@@ -3407,7 +3413,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|cbd
 operator|->
@@ -3519,7 +3525,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|cbd
 operator|->

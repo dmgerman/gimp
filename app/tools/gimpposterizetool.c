@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -224,6 +218,16 @@ specifier|static
 name|PosterizeDialog
 modifier|*
 name|posterize_dialog_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|posterize_dialog_hide
 parameter_list|(
 name|void
 parameter_list|)
@@ -789,31 +793,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|posterize_dialog_hide (void)
-name|posterize_dialog_hide
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|posterize_dialog
-condition|)
-name|posterize_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|posterize_dialog
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
 begin_comment
 comment|/**********************/
 end_comment
@@ -1269,6 +1248,32 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|posterize_dialog_hide (void)
+name|posterize_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|posterize_dialog
+condition|)
+name|posterize_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|posterize_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|posterize_preview (PosterizeDialog * pd)
 name|posterize_preview
 parameter_list|(
@@ -1427,7 +1432,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|pd
 operator|->
@@ -1563,7 +1568,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|pd
 operator|->

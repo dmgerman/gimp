@@ -29,7 +29,7 @@ name|GimpProgress
 modifier|*
 name|progress_start
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

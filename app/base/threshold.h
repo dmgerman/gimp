@@ -159,7 +159,7 @@ modifier|*
 name|high_threshold_data
 decl_stmt|;
 DECL|member|histogram
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
 name|histogram
 decl_stmt|;
@@ -212,15 +212,6 @@ end_function_decl
 begin_function_decl
 name|GType
 name|gimp_threshold_tool_get_type
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|threshold_dialog_hide
 parameter_list|(
 name|void
 parameter_list|)

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__HISTOGRAM_WIDGET_H__
+name|__GIMP_HISTOGRAM_VIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|__HISTOGRAM_WIDGET_H__
+DECL|macro|__GIMP_HISTOGRAM_VIEW_H__
 define|#
 directive|define
-name|__HISTOGRAM_WIDGET_H__
+name|__GIMP_HISTOGRAM_VIEW_H__
 end_define
 
 begin_include
@@ -23,59 +23,81 @@ file|<gtk/gtkdrawingarea.h>
 end_include
 
 begin_define
-DECL|macro|HISTOGRAM_WIDGET_TYPE
+DECL|macro|GIMP_TYPE_HISTOGRAM_VIEW
 define|#
 directive|define
-name|HISTOGRAM_WIDGET_TYPE
-value|(histogram_widget_get_type ())
+name|GIMP_TYPE_HISTOGRAM_VIEW
+value|(gimp_histogram_view_get_type ())
 end_define
 
 begin_define
-DECL|macro|HISTOGRAM_WIDGET (obj)
+DECL|macro|GIMP_HISTOGRAM_VIEW (obj)
 define|#
 directive|define
-name|HISTOGRAM_WIDGET
+name|GIMP_HISTOGRAM_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|G_TYPE_CHECK_INSTANCE_CAST (obj, histogram_widget_get_type (), HistogramWidget)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_HISTOGRAM_VIEW, GimpHistogramView))
 end_define
 
 begin_define
-DECL|macro|IS_HISTOGRAM_WIDGET (obj)
+DECL|macro|GIMP_HISTOGRAM_VIEW_CLASS (klass)
 define|#
 directive|define
-name|IS_HISTOGRAM_WIDGET
-parameter_list|(
-name|obj
-parameter_list|)
-value|G_TYPE_CHECK_INSTANCE_TYPE (obj, histogram_widget_get_type ())
-end_define
-
-begin_define
-DECL|macro|HISTOGRAM_WIDGET_CLASS (klass)
-define|#
-directive|define
-name|HISTOGRAM_WIDGET_CLASS
+name|GIMP_HISTOGRAM_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|G_TYPE_CHECK_CLASS_CAST (klass, histogram_widget_get_type (), HistogramWidget)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HISTOGRAM_VIEW, GimpHistogramViewClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_HISTOGRAM_VIEW (obj)
+define|#
+directive|define
+name|GIMP_IS_HISTOGRAM_VIEW
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_HISTOGRAM_VIEW))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_HISTOGRAM_VIEW_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_HISTOGRAM_VIEW_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HISTOGRAM_VIEW))
+end_define
+
+begin_define
+DECL|macro|GIMP_HISTOGRAM_VIEW_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_HISTOGRAM_VIEW_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_HISTOGRAM_VIEW, GimpHistogramView))
 end_define
 
 begin_typedef
-DECL|typedef|HistogramWidgetClass
+DECL|typedef|GimpHistogramViewClass
 typedef|typedef
 name|struct
-name|_HistogramWidgetClass
-name|HistogramWidgetClass
+name|_GimpHistogramViewClass
+name|GimpHistogramViewClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_HistogramWidget
+DECL|struct|_GimpHistogramView
 struct|struct
-name|_HistogramWidget
+name|_GimpHistogramView
 block|{
 DECL|member|parent_instance
 name|GtkDrawingArea
@@ -103,9 +125,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_HistogramWidgetClass
+DECL|struct|_GimpHistogramViewClass
 struct|struct
-name|_HistogramWidgetClass
+name|_GimpHistogramViewClass
 block|{
 DECL|member|parent_class
 name|GtkDrawingAreaClass
@@ -118,9 +140,9 @@ modifier|*
 name|range_changed
 function_decl|)
 parameter_list|(
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
-name|hw
+name|view
 parameter_list|,
 name|gint
 name|start
@@ -138,8 +160,8 @@ comment|/*  Histogram functions  */
 end_comment
 
 begin_function_decl
-name|GtkType
-name|histogram_widget_get_type
+name|GType
+name|gimp_histogram_view_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -147,9 +169,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
-name|histogram_widget_new
+name|gimp_histogram_view_new
 parameter_list|(
 name|gint
 name|width
@@ -162,11 +184,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|histogram_widget_update
+name|gimp_histogram_view_update
 parameter_list|(
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
-name|hw
+name|view
 parameter_list|,
 name|GimpHistogram
 modifier|*
@@ -177,11 +199,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|histogram_widget_range
+name|gimp_histogram_view_range
 parameter_list|(
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
-name|hw
+name|view
 parameter_list|,
 name|gint
 name|start
@@ -194,11 +216,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|histogram_widget_channel
+name|gimp_histogram_view_channel
 parameter_list|(
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
-name|hw
+name|view
 parameter_list|,
 name|gint
 name|channel
@@ -209,11 +231,11 @@ end_function_decl
 begin_function_decl
 name|GimpHistogram
 modifier|*
-name|histogram_widget_histogram
+name|gimp_histogram_view_histogram
 parameter_list|(
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
-name|hw
+name|view
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -224,7 +246,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __HISTOGRAM_WIDGET_H__ */
+comment|/* __GIMP_HISTOGRAM_VIEW_H__ */
 end_comment
 
 end_unit

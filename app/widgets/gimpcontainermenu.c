@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2973ea2e0103
+DECL|enum|__anon286dea870103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -297,52 +297,60 @@ operator|!
 name|menu_type
 condition|)
 block|{
-name|GtkTypeInfo
+specifier|static
+specifier|const
+name|GTypeInfo
 name|menu_info
 init|=
 block|{
-literal|"GimpContainerMenu"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpContainerMenu
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpContainerMenuClass
 argument_list|)
 block|,
+name|NULL
+block|,
+comment|/* base_init */
+name|NULL
+block|,
+comment|/* base_finalize */
 operator|(
-name|GtkClassInitFunc
+name|GClassInitFunc
 operator|)
 name|gimp_container_menu_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data */
+sizeof|sizeof
+argument_list|(
+name|GimpContainerMenu
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_container_menu_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
-block|}
+block|,       }
 decl_stmt|;
 name|menu_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GTK_TYPE_MENU
 argument_list|,
+literal|"GimpContainerMenu"
+argument_list|,
 operator|&
 name|menu_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -369,11 +377,10 @@ name|object_class
 decl_stmt|;
 name|object_class
 operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
+name|GTK_OBJECT_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
@@ -1849,8 +1856,7 @@ name|menu
 argument_list|,
 name|viewable
 argument_list|,
-operator|-
-literal|1
+name|index
 argument_list|)
 expr_stmt|;
 name|g_hash_table_insert

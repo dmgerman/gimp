@@ -174,7 +174,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon2c1b39380103
+DECL|enum|__anon29e8ea910103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -394,7 +394,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1b39380208
+DECL|struct|__anon29e8ea910208
 block|{
 DECL|member|count
 name|gint
@@ -498,7 +498,7 @@ begin_function_decl
 name|gint
 name|bezier_select_load
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -593,7 +593,7 @@ begin_function_decl
 name|void
 name|bezier_paste_bezierselect_to_current
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -621,7 +621,7 @@ name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -642,7 +642,7 @@ name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -682,7 +682,7 @@ begin_function_decl
 name|void
 name|bezier_draw
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

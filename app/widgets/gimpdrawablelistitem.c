@@ -191,52 +191,58 @@ condition|)
 block|{
 specifier|static
 specifier|const
-name|GtkTypeInfo
+name|GTypeInfo
 name|list_item_info
 init|=
 block|{
-literal|"GimpDrawableListItem"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpDrawableListItem
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpDrawableListItemClass
 argument_list|)
 block|,
+name|NULL
+block|,
+comment|/* base_init */
+name|NULL
+block|,
+comment|/* base_finalize */
 operator|(
-name|GtkClassInitFunc
+name|GClassInitFunc
 operator|)
 name|gimp_drawable_list_item_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data */
+sizeof|sizeof
+argument_list|(
+name|GimpDrawableListItem
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_drawable_list_item_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
 block|,       }
 decl_stmt|;
 name|list_item_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_LIST_ITEM
 argument_list|,
+literal|"GimpDrawableListItem"
+argument_list|,
 operator|&
 name|list_item_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -369,7 +363,7 @@ modifier|*
 name|channel_menu
 decl_stmt|;
 DECL|member|histogram
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
 name|histogram
 decl_stmt|;
@@ -535,6 +529,16 @@ specifier|static
 name|LevelsDialog
 modifier|*
 name|levels_dialog_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|levels_dialog_hide
 parameter_list|(
 name|void
 parameter_list|)
@@ -1492,7 +1496,7 @@ operator|->
 name|hist
 argument_list|)
 expr_stmt|;
-name|histogram_widget_update
+name|gimp_histogram_view_update
 argument_list|(
 name|levels_dialog
 operator|->
@@ -1503,7 +1507,7 @@ operator|->
 name|hist
 argument_list|)
 expr_stmt|;
-name|histogram_widget_range
+name|gimp_histogram_view_range
 argument_list|(
 name|levels_dialog
 operator|->
@@ -1581,31 +1585,6 @@ argument_list|,
 name|action
 argument_list|,
 name|gdisp
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|levels_dialog_hide (void)
-name|levels_dialog_hide
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|levels_dialog
-condition|)
-name|levels_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|levels_dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -2567,7 +2546,7 @@ name|ld
 operator|->
 name|histogram
 operator|=
-name|histogram_widget_new
+name|gimp_histogram_view_new
 argument_list|(
 name|HISTOGRAM_WIDTH
 argument_list|,
@@ -3775,6 +3754,32 @@ expr_stmt|;
 return|return
 name|ld
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|levels_dialog_hide (void)
+name|levels_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|levels_dialog
+condition|)
+name|levels_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|levels_dialog
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -5503,7 +5508,8 @@ name|ld
 operator|->
 name|color
 condition|)
-name|histogram_widget_channel
+block|{
+name|gimp_histogram_view_channel
 argument_list|(
 name|ld
 operator|->
@@ -5514,6 +5520,7 @@ operator|->
 name|channel
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
@@ -5525,7 +5532,7 @@ operator|>
 literal|1
 condition|)
 block|{
-name|histogram_widget_channel
+name|gimp_histogram_view_channel
 argument_list|(
 name|ld
 operator|->
@@ -5543,7 +5550,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|histogram_widget_channel
+name|gimp_histogram_view_channel
 argument_list|(
 name|ld
 operator|->
@@ -5981,7 +5988,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|ld
 operator|->
@@ -6127,7 +6134,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|ld
 operator|->
@@ -8322,7 +8329,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|file_dlg
 argument_list|)

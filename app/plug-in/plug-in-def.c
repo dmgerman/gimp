@@ -403,6 +403,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcoreconfig.h"
 end_include
 
@@ -3807,12 +3813,6 @@ name|FALSE
 expr_stmt|;
 name|plug_in
 operator|->
-name|destroy
-operator|=
-name|FALSE
-expr_stmt|;
-name|plug_in
-operator|->
 name|query
 operator|=
 name|FALSE
@@ -4140,13 +4140,6 @@ condition|)
 name|plug_in_pop
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|plug_in
-operator|->
-name|destroy
-condition|)
 name|g_free
 argument_list|(
 name|plug_in
@@ -5949,7 +5942,7 @@ name|gboolean
 name|with_interface
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisplay
 decl_stmt|;
@@ -5967,8 +5960,13 @@ condition|)
 block|{
 name|gdisplay
 operator|=
-name|gdisplay_active
-argument_list|()
+name|gimp_context_get_display
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -11857,7 +11855,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisplay
 decl_stmt|;
@@ -11887,8 +11885,13 @@ comment|/* calm down a gcc warning.  */
 comment|/* get the active gdisplay */
 name|gdisplay
 operator|=
-name|gdisplay_active
-argument_list|()
+name|gimp_context_get_display
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|proc_rec
 operator|=
@@ -16432,7 +16435,7 @@ name|gint
 name|gdisp_ID
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=

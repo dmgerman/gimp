@@ -21,7 +21,7 @@ name|InfoDialog
 modifier|*
 name|info_window_create
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -43,7 +43,7 @@ begin_function_decl
 name|void
 name|info_window_update
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -54,7 +54,7 @@ begin_function_decl
 name|void
 name|info_window_update_extended
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

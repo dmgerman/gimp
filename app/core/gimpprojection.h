@@ -1387,16 +1387,6 @@ end_function_decl
 begin_function_decl
 name|GimpDisplay
 modifier|*
-name|gdisplay_active
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpDisplay
-modifier|*
 name|gdisplay_get_by_ID
 parameter_list|(
 name|Gimp

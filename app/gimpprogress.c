@@ -51,7 +51,7 @@ struct|struct
 name|_GimpProgress
 block|{
 DECL|member|gdisp
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -124,15 +124,15 @@ end_comment
 begin_function
 name|GimpProgress
 modifier|*
-DECL|function|progress_start (GDisplay * gdisp,const char * message,gboolean important,GCallback cancel_callback,gpointer cancel_data)
+DECL|function|progress_start (GimpDisplay * gdisp,const gchar * message,gboolean important,GCallback cancel_callback,gpointer cancel_data)
 name|progress_start
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,

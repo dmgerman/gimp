@@ -151,15 +151,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|levels_dialog_hide
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|levels_free
 parameter_list|(
 name|void

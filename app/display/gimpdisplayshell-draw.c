@@ -202,7 +202,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -222,7 +222,7 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -475,14 +475,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_destroy (GtkWidget * widget,GDisplay * gdisp)
+DECL|function|gdisplay_destroy (GtkWidget * widget,GimpDisplay * gdisp)
 name|gdisplay_destroy
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -498,7 +498,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gdisplay_delete (GtkWidget * widget,GdkEvent * event,GDisplay * gdisp)
+DECL|function|gdisplay_delete (GtkWidget * widget,GdkEvent * event,GimpDisplay * gdisp)
 name|gdisplay_delete
 parameter_list|(
 name|GtkWidget
@@ -509,7 +509,7 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -537,14 +537,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -566,10 +566,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|create_display_shell (GDisplay * gdisp,gint width,gint height,gchar * title,gint type)
+DECL|function|create_display_shell (GimpDisplay * gdisp,gint width,gint height,gchar * title,gint type)
 name|create_display_shell
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

@@ -183,7 +183,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_brush_factory_view_get_type (void)
 name|gimp_brush_factory_view_get_type
 parameter_list|(
@@ -191,7 +191,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|view_type
 init|=
 literal|0
@@ -202,52 +202,60 @@ operator|!
 name|view_type
 condition|)
 block|{
-name|GtkTypeInfo
+specifier|static
+specifier|const
+name|GTypeInfo
 name|view_info
 init|=
 block|{
-literal|"GimpBrushFactoryView"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpBrushFactoryView
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpBrushFactoryViewClass
 argument_list|)
 block|,
+name|NULL
+block|,
+comment|/* base_init */
+name|NULL
+block|,
+comment|/* base_finalize */
 operator|(
-name|GtkClassInitFunc
+name|GClassInitFunc
 operator|)
 name|gimp_brush_factory_view_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data */
+sizeof|sizeof
+argument_list|(
+name|GimpBrushFactoryView
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_brush_factory_view_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
-block|}
+block|,       }
 decl_stmt|;
 name|view_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_DATA_FACTORY_VIEW
 argument_list|,
+literal|"GimpBrushFactoryView"
+argument_list|,
 operator|&
 name|view_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -278,25 +286,23 @@ name|editor_class
 decl_stmt|;
 name|object_class
 operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
+name|GTK_OBJECT_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|editor_class
 operator|=
-operator|(
-name|GimpContainerEditorClass
-operator|*
-operator|)
+name|GIMP_CONTAINER_EDITOR_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_DATA_FACTORY_VIEW
+name|klass
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -605,15 +611,6 @@ name|GimpContainerEditor
 modifier|*
 name|editor
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|factory
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DATA_FACTORY

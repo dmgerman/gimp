@@ -72,6 +72,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BUFFER_PREVIEW))
+DECL|macro|GIMP_BUFFER_PREVIEW_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_BUFFER_PREVIEW_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BUFFER_PREVIEW, GimpBufferPreviewClass))
 DECL|typedef|GimpBufferPreviewClass
 typedef|typedef
 name|struct
@@ -98,7 +106,7 @@ name|parent_class
 decl_stmt|;
 block|}
 struct|;
-name|GtkType
+name|GType
 name|gimp_buffer_preview_get_type
 parameter_list|(
 name|void

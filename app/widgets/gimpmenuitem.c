@@ -172,52 +172,58 @@ condition|)
 block|{
 specifier|static
 specifier|const
-name|GtkTypeInfo
+name|GTypeInfo
 name|menu_item_info
 init|=
 block|{
-literal|"GimpMenuItem"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpMenuItem
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpMenuItemClass
 argument_list|)
 block|,
+name|NULL
+block|,
+comment|/* base_init */
+name|NULL
+block|,
+comment|/* base_finalize */
 operator|(
-name|GtkClassInitFunc
+name|GClassInitFunc
 operator|)
 name|gimp_menu_item_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data */
+sizeof|sizeof
+argument_list|(
+name|GimpMenuItem
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_menu_item_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
 block|,       }
 decl_stmt|;
 name|menu_item_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GTK_TYPE_MENU_ITEM
 argument_list|,
+literal|"GimpMenuItem"
+argument_list|,
 operator|&
 name|menu_item_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -454,6 +460,20 @@ argument_list|,
 literal|1
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|menu_item
+operator|->
+name|preview
+argument_list|,
+name|menu_item
+operator|->
+name|preview_size
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -60,18 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7522db0103
+DECL|enum|__anon2b8ca7090103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -139,7 +133,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -158,7 +152,7 @@ parameter_list|,
 name|ToolAction
 name|tool_action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -178,7 +172,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -198,7 +192,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -218,7 +212,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -238,7 +232,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -258,7 +252,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -278,7 +272,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -298,7 +292,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -929,14 +923,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_initialize (GimpTool * tool,GDisplay * gdisp)
+DECL|function|gimp_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
 name|gimp_tool_initialize
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -976,7 +970,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|gimp_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|gimp_tool_control
 parameter_list|(
 name|GimpTool
@@ -986,7 +980,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1028,7 +1022,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1039,7 +1033,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1081,7 +1075,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1092,7 +1086,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1134,7 +1128,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1145,7 +1139,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1187,7 +1181,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_tool_arrow_key
 parameter_list|(
 name|GimpTool
@@ -1198,7 +1192,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1240,7 +1234,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -1251,7 +1245,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1293,7 +1287,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1304,7 +1298,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1346,7 +1340,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_oper_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_tool_oper_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -1357,7 +1351,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1404,14 +1398,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_initialize (GimpTool * tool,GDisplay * gdisp)
+DECL|function|gimp_tool_real_initialize (GimpTool * tool,GimpDisplay * gdisp)
 name|gimp_tool_real_initialize
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1421,7 +1415,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_control (GimpTool * tool,ToolAction tool_action,GDisplay * gdisp)
+DECL|function|gimp_tool_real_control (GimpTool * tool,ToolAction tool_action,GimpDisplay * gdisp)
 name|gimp_tool_real_control
 parameter_list|(
 name|GimpTool
@@ -1431,7 +1425,7 @@ parameter_list|,
 name|ToolAction
 name|tool_action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1441,7 +1435,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_tool_real_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_tool_real_button_press
 parameter_list|(
 name|GimpTool
@@ -1452,7 +1446,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1486,7 +1480,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_tool_real_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_tool_real_button_release
 parameter_list|(
 name|GimpTool
@@ -1497,7 +1491,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1514,7 +1508,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_tool_real_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_tool_real_motion
 parameter_list|(
 name|GimpTool
@@ -1525,7 +1519,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1535,7 +1529,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_arrow_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_tool_real_arrow_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_tool_real_arrow_key
 parameter_list|(
 name|GimpTool
@@ -1546,7 +1540,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1556,7 +1550,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_modifier_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_tool_real_modifier_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_tool_real_modifier_key
 parameter_list|(
 name|GimpTool
@@ -1567,7 +1561,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1577,7 +1571,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_tool_real_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_tool_real_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1588,7 +1582,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1612,7 +1606,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_oper_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_tool_real_oper_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_tool_real_oper_update
 parameter_list|(
 name|GimpTool
@@ -1623,37 +1617,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
 block|{ }
-end_function
-
-begin_comment
-comment|/*  Function definitions  */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_tool_help_func (const gchar * help_data)
-name|gimp_tool_help_func
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|help_data
-parameter_list|)
-block|{
-name|gimp_standard_help_func
-argument_list|(
-name|tool_manager_active_get_help_data
-argument_list|(
-name|the_gimp
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 end_function
 
 begin_define

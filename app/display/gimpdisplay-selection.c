@@ -319,14 +319,14 @@ end_comment
 begin_function
 name|Selection
 modifier|*
-DECL|function|selection_create (GdkWindow * win,GDisplay * gdisp,gint size,gint width,gint speed)
+DECL|function|selection_create (GdkWindow * win,GimpDisplay * gdisp,gint size,gint width,gint speed)
 name|selection_create
 parameter_list|(
 name|GdkWindow
 modifier|*
 name|win
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1188,11 +1188,7 @@ modifier|*
 name|select
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1230,21 +1226,13 @@ operator|=
 name|INVISIBLE
 expr_stmt|;
 block|}
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|select
-operator|->
-name|gdisp
-expr_stmt|;
 comment|/*  Find the bounds of the selection  */
 if|if
 condition|(
 name|gdisplay_mask_bounds
 argument_list|(
+name|select
+operator|->
 name|gdisp
 argument_list|,
 operator|&
@@ -1263,6 +1251,8 @@ condition|)
 block|{
 name|gdisplay_expose_area
 argument_list|(
+name|select
+operator|->
 name|gdisp
 argument_list|,
 name|x1
@@ -1370,7 +1360,7 @@ operator|==
 literal|4
 condition|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -2825,10 +2815,6 @@ name|gint
 name|num_segs
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -2837,16 +2823,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|select
-operator|->
-name|gdisp
-expr_stmt|;
 for|for
 control|(
 name|i
@@ -2863,6 +2839,8 @@ control|)
 block|{
 name|gdisplay_transform_coords
 argument_list|(
+name|select
+operator|->
 name|gdisp
 argument_list|,
 name|src_segs
@@ -2908,6 +2886,8 @@ name|y
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|select
+operator|->
 name|gdisp
 argument_list|,
 name|src_segs
@@ -3037,10 +3017,6 @@ modifier|*
 name|select
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|BoundSeg
 modifier|*
 name|segs_in
@@ -3053,19 +3029,11 @@ name|BoundSeg
 modifier|*
 name|segs_layer
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|select
-operator|->
-name|gdisp
-expr_stmt|;
 comment|/*  Ask the gimage for the boundary of its selected region...    *  Then transform that information into a new buffer of XSegments    */
 name|gimage_mask_boundary
 argument_list|(
+name|select
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -3191,6 +3159,8 @@ block|}
 comment|/*  The active layer's boundary  */
 name|gimp_image_layer_boundary
 argument_list|(
+name|select
+operator|->
 name|gdisp
 operator|->
 name|gimage

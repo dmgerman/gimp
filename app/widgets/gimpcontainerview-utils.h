@@ -24,7 +24,7 @@ begin_function_decl
 name|GimpItemGetNameFunc
 name|gimp_container_view_get_built_in_name_func
 parameter_list|(
-name|GtkType
+name|GType
 name|type
 parameter_list|)
 function_decl|;

@@ -162,7 +162,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

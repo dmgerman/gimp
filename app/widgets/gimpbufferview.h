@@ -74,6 +74,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BUFFER_VIEW))
 end_define
 
+begin_define
+DECL|macro|GIMP_BUFFER_VIEW_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_BUFFER_VIEW_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BUFFER_VIEW, GimpBufferViewClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpBufferViewClass
 typedef|typedef
@@ -130,7 +141,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_buffer_view_get_type
 parameter_list|(
 name|void

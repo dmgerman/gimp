@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1cd20d0103
+DECL|enum|__anon2771734c0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -363,52 +363,60 @@ operator|!
 name|view_type
 condition|)
 block|{
-name|GtkTypeInfo
+specifier|static
+specifier|const
+name|GTypeInfo
 name|view_info
 init|=
 block|{
-literal|"GimpContainerView"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpContainerView
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpContainerViewClass
 argument_list|)
 block|,
+name|NULL
+block|,
+comment|/* base_init */
+name|NULL
+block|,
+comment|/* base_finalize */
 operator|(
-name|GtkClassInitFunc
+name|GClassInitFunc
 operator|)
 name|gimp_container_view_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data */
+sizeof|sizeof
+argument_list|(
+name|GimpContainerView
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_container_view_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
-block|}
+block|,       }
 decl_stmt|;
 name|view_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GTK_TYPE_VBOX
 argument_list|,
+literal|"GimpContainerView"
+argument_list|,
 operator|&
 name|view_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -439,19 +447,17 @@ name|widget_class
 decl_stmt|;
 name|object_class
 operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
+name|GTK_OBJECT_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|widget_class
 operator|=
-operator|(
-name|GtkWidgetClass
-operator|*
-operator|)
+name|GTK_WIDGET_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=

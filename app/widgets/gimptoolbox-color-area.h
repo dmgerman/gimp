@@ -55,7 +55,7 @@ end_ifdef
 
 begin_decl_stmt
 specifier|extern
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|color_area_gdisp
 decl_stmt|;

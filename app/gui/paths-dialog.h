@@ -234,7 +234,7 @@ parameter_list|(
 name|GimpBezierSelectTool
 modifier|*
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 parameter_list|)
 function_decl|;
@@ -247,7 +247,7 @@ parameter_list|(
 name|GimpBezierSelectTool
 modifier|*
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 parameter_list|)
 function_decl|;

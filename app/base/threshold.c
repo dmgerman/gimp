@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -248,6 +242,16 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|threshold_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|threshold_update
 parameter_list|(
 name|ThresholdDialog
@@ -383,7 +387,7 @@ specifier|static
 name|void
 name|threshold_histogram_range
 parameter_list|(
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
 parameter_list|,
 name|gint
@@ -816,7 +820,7 @@ argument_list|,
 name|threshold_dialog
 argument_list|)
 expr_stmt|;
-name|histogram_widget_update
+name|gimp_histogram_view_update
 argument_list|(
 name|threshold_dialog
 operator|->
@@ -1241,31 +1245,6 @@ operator|->
 name|rowstride
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|threshold_dialog_hide (void)
-name|threshold_dialog_hide
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|threshold_dialog
-condition|)
-name|threshold_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|threshold_dialog
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1786,7 +1765,7 @@ name|td
 operator|->
 name|histogram
 operator|=
-name|histogram_widget_new
+name|gimp_histogram_view_new
 argument_list|(
 name|HISTOGRAM_WIDTH
 argument_list|,
@@ -1950,6 +1929,32 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|threshold_dialog_hide (void)
+name|threshold_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|threshold_dialog
+condition|)
+name|threshold_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|threshold_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|threshold_update (ThresholdDialog * td,gint update)
 name|threshold_update
 parameter_list|(
@@ -2006,7 +2011,7 @@ operator|&
 name|HISTOGRAM
 condition|)
 block|{
-name|histogram_widget_range
+name|gimp_histogram_view_range
 argument_list|(
 name|td
 operator|->
@@ -2177,7 +2182,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|td
 operator|->
@@ -2213,8 +2218,7 @@ argument_list|,
 name|threshold
 argument_list|,
 operator|(
-name|void
-operator|*
+name|gpointer
 operator|)
 name|td
 argument_list|)
@@ -2289,7 +2293,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gimp_dialog_hide
+name|gtk_widget_hide
 argument_list|(
 name|td
 operator|->
@@ -2592,10 +2596,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|threshold_histogram_range (HistogramWidget * widget,gint start,gint end,gpointer data)
+DECL|function|threshold_histogram_range (GimpHistogramView * widget,gint start,gint end,gpointer data)
 name|threshold_histogram_range
 parameter_list|(
-name|HistogramWidget
+name|GimpHistogramView
 modifier|*
 name|widget
 parameter_list|,

@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"undo.h"
 end_include
 
@@ -132,7 +138,7 @@ parameter_list|(
 name|gdisp
 parameter_list|)
 define|\
-value|gdisp = gdisplay_active (); \         if (!gdisp) return
+value|gdisp = gimp_context_get_display (gimp_get_user_context (the_gimp)); \         if (!gdisp) return
 end_define
 
 begin_comment
