@@ -311,7 +311,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2985f08e0103
+DECL|enum|__anon2b44f2470103
 typedef|typedef
 enum|enum
 block|{
@@ -338,7 +338,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2985f08e0203
+DECL|enum|__anon2b44f2470203
 typedef|typedef
 enum|enum
 block|{
@@ -483,7 +483,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2985f08e0303
+DECL|enum|__anon2b44f2470303
 typedef|typedef
 enum|enum
 block|{
@@ -507,7 +507,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2985f08e0408
+DECL|struct|__anon2b44f2470408
 typedef|typedef
 struct|struct
 block|{
@@ -787,7 +787,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2985f08e0508
+DECL|struct|__anon2b44f2470508
 struct|struct
 block|{
 DECL|member|r
@@ -3923,7 +3923,7 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-literal|"gradiet_editor"
+literal|"gradient_editor"
 argument_list|,
 literal|"Gimp"
 argument_list|)

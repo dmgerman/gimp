@@ -4,7 +4,35 @@ DECL|macro|MAZE_TITLE
 define|#
 directive|define
 name|MAZE_TITLE
-value|"Maze 0.6.1"
+value|"Maze 0.6.2"
+end_define
+
+begin_define
+DECL|macro|MAZE_URL
+define|#
+directive|define
+name|MAZE_URL
+value|"http://www.poboxes.com/kevint/gimp/maze.html"
+end_define
+
+begin_define
+DECL|macro|HELP_OPENS_NEW_WINDOW
+define|#
+directive|define
+name|HELP_OPENS_NEW_WINDOW
+value|FALSE
+end_define
+
+begin_comment
+comment|/* The "divbox" really should look and act more like a spinbutton.   This flag is a small step in the direction toward the former, the   latter leaves much to be desired. */
+end_comment
+
+begin_define
+DECL|macro|DIVBOX_LOOKS_LIKE_SPINBUTTON
+define|#
+directive|define
+name|DIVBOX_LOOKS_LIKE_SPINBUTTON
+value|FALSE
 end_define
 
 begin_include
@@ -14,7 +42,7 @@ file|"gtk/gtk.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b2594d20108
+DECL|struct|__anon29fbe35a0108
 typedef|typedef
 struct|struct
 block|{

@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Written 1997 Jens Ch. Restemeier<jchrr@hrz.uni-bielefeld.de>  * This program is based on an algorithm / article by  * Jörn Loviscach.  *   * It generates one main formula (the middle button) and 8 variations of it.  * If you select a variation it becomes the new main formula. If you  * press "OK" the main formula will be applied to the image.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  */
+comment|/*  * Written 1997 Jens Ch. Restemeier<jchrr@hrz.uni-bielefeld.de>  * This program is based on an algorithm / article by  * Jörn Loviscach.  *  * It appeared in c't 10/95, page 326 and is called   * "Ausgewürfelt - Moderne Kunst algorithmisch erzeugen".  * (~modern art created with algorithms)  *   * It generates one main formula (the middle button) and 8 variations of it.  * If you select a variation it becomes the new main formula. If you  * press "OK" the main formula will be applied to the image.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  */
 end_comment
 
 begin_comment
-comment|/*  * History:  * 1.0 first release  * 1.2 now handles RGB*  * 1.5 fixed a small bug  * 1.6 fixed a bug that was added by v1.5 :-(  * 1.7 added patch from Art Haas to make it compile with HP-UX, a small clean-up  * 1.8 Dscho added transform file load/save, bug-fixes   * 1.9 rewrote renderloop.  * 1.9a fixed a bug.  */
+comment|/*  * History:  * 1.0 first release  * 1.2 now handles RGB*  * 1.5 fixed a small bug  * 1.6 fixed a bug that was added by v1.5 :-(  * 1.7 added patch from Art Haas to make it compile with HP-UX, a small clean-up  * 1.8 Dscho added transform file load/save, bug-fixes   * 1.9 rewrote renderloop.  * 1.9a fixed a bug.  * 1.9b fixed MAIN()  * 1.10 added optimizer  */
 end_comment
 
 begin_include
@@ -84,7 +84,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"November 1997, 1.8"
+value|"March 1998, 1.10"
 end_define
 
 begin_define
@@ -562,6 +562,221 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/*  * Optimizer  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|used_trans_flag
+name|int
+name|used_trans_flag
+index|[
+name|MAX_TRANSFORMS
+index|]
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|used_reg_flag
+name|int
+name|used_reg_flag
+index|[
+name|NUM_REGISTERS
+index|]
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+DECL|function|check_last_modified (s_info info,int p,int n)
+name|void
+name|check_last_modified
+parameter_list|(
+name|s_info
+name|info
+parameter_list|,
+name|int
+name|p
+parameter_list|,
+name|int
+name|n
+parameter_list|)
+block|{
+name|p
+operator|--
+expr_stmt|;
+while|while
+condition|(
+operator|(
+name|p
+operator|>=
+literal|0
+operator|)
+operator|&&
+operator|(
+name|info
+operator|.
+name|dest
+index|[
+name|p
+index|]
+operator|!=
+name|n
+operator|)
+condition|)
+name|p
+operator|--
+expr_stmt|;
+if|if
+condition|(
+name|p
+operator|<
+literal|0
+condition|)
+name|used_reg_flag
+index|[
+name|n
+index|]
+operator|=
+literal|1
+expr_stmt|;
+else|else
+block|{
+name|used_trans_flag
+index|[
+name|p
+index|]
+operator|=
+literal|1
+expr_stmt|;
+name|check_last_modified
+argument_list|(
+name|info
+argument_list|,
+name|p
+argument_list|,
+name|info
+operator|.
+name|source
+index|[
+name|p
+index|]
+argument_list|)
+expr_stmt|;
+name|check_last_modified
+argument_list|(
+name|info
+argument_list|,
+name|p
+argument_list|,
+name|info
+operator|.
+name|control
+index|[
+name|p
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+DECL|function|optimize (s_info info)
+name|void
+name|optimize
+parameter_list|(
+name|s_info
+name|info
+parameter_list|)
+block|{
+name|int
+name|i
+decl_stmt|;
+comment|/* double-arg fix: */
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|MAX_TRANSFORMS
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|used_trans_flag
+index|[
+name|i
+index|]
+operator|=
+literal|0
+expr_stmt|;
+if|if
+condition|(
+name|i
+operator|<
+name|NUM_REGISTERS
+condition|)
+name|used_reg_flag
+index|[
+name|i
+index|]
+operator|=
+literal|0
+expr_stmt|;
+comment|/* double-arg fix: */
+switch|switch
+condition|(
+name|info
+operator|.
+name|transformSequence
+index|[
+name|i
+index|]
+condition|)
+block|{
+case|case
+name|ROTATE
+case|:
+case|case
+name|ROTATE2
+case|:
+case|case
+name|COMPLEMENT
+case|:
+name|info
+operator|.
+name|control
+index|[
+name|i
+index|]
+operator|=
+name|info
+operator|.
+name|dest
+index|[
+name|i
+index|]
+expr_stmt|;
+break|break;
+block|}
+block|}
+comment|/* check for last modified item */
+name|check_last_modified
+argument_list|(
+name|info
+argument_list|,
+name|MAX_TRANSFORMS
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_function
 DECL|function|qbist (s_info info,gchar * buffer,int xp,int yp,int num,int width,int height,int bpp)
 name|void
@@ -647,6 +862,14 @@ name|i
 operator|++
 control|)
 block|{
+if|if
+condition|(
+name|used_reg_flag
+index|[
+name|i
+index|]
+condition|)
+block|{
 name|reg
 index|[
 name|i
@@ -720,6 +943,7 @@ name|NUM_REGISTERS
 operator|)
 expr_stmt|;
 block|}
+block|}
 for|for
 control|(
 name|i
@@ -761,6 +985,13 @@ index|[
 name|i
 index|]
 expr_stmt|;
+if|if
+condition|(
+name|used_trans_flag
+index|[
+name|i
+index|]
+condition|)
 switch|switch
 condition|(
 name|info
@@ -1841,14 +2072,13 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
-DECL|function|query (void)
 name|void
 name|query
 parameter_list|(
@@ -1862,7 +2092,7 @@ argument_list|,
 literal|"Create images based on a random genetic formula"
 argument_list|,
 literal|"This Plug-in is based on an article by "
-literal|"Jörn Loviscach. It generates modern art "
+literal|"Jörn Loviscach (appeared in c't 10/95, page 326). It generates modern art "
 literal|"pictures from a random genetic formula."
 argument_list|,
 literal|"Jörn Loviscach, Jens Ch. Restemeier"
@@ -2259,6 +2489,11 @@ operator|*
 name|img_bpp
 argument_list|)
 expr_stmt|;
+name|optimize
+argument_list|(
+name|qbist_info
+argument_list|)
+expr_stmt|;
 name|gimp_progress_init
 argument_list|(
 literal|"Qbist ..."
@@ -2622,6 +2857,20 @@ name|j
 operator|++
 control|)
 block|{
+name|optimize
+argument_list|(
+name|info
+index|[
+operator|(
+name|j
+operator|+
+literal|5
+operator|)
+operator|%
+literal|9
+index|]
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -2971,16 +3220,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_data (char * name,int k)
+DECL|function|save_data (char * name)
 name|void
 name|save_data
 parameter_list|(
 name|char
 modifier|*
 name|name
-parameter_list|,
-name|int
-name|k
 parameter_list|)
 block|{
 name|int
@@ -3018,7 +3264,7 @@ name|PUTMACUSHORT
 argument_list|(
 name|info
 index|[
-name|k
+literal|0
 index|]
 operator|.
 name|transformSequence
@@ -3046,7 +3292,7 @@ name|PUTMACUSHORT
 argument_list|(
 name|info
 index|[
-name|k
+literal|0
 index|]
 operator|.
 name|source
@@ -3074,7 +3320,7 @@ name|PUTMACUSHORT
 argument_list|(
 name|info
 index|[
-name|k
+literal|0
 index|]
 operator|.
 name|control
@@ -3102,7 +3348,7 @@ name|PUTMACUSHORT
 argument_list|(
 name|info
 index|[
-name|k
+literal|0
 index|]
 operator|.
 name|dest
@@ -3144,9 +3390,6 @@ argument_list|(
 name|file_select
 argument_list|)
 argument_list|)
-argument_list|,
-literal|0
-comment|/* the middle button */
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
@@ -3540,7 +3783,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|"G-Qbist 1.0"
+literal|"G-Qbist 1.10"
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3615,9 +3858,9 @@ argument_list|)
 argument_list|,
 name|table
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)

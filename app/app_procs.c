@@ -1408,6 +1408,10 @@ argument_list|(
 name|idle_tag
 argument_list|)
 expr_stmt|;
+name|gtk_preview_reset
+argument_list|()
+expr_stmt|;
+comment|/* so we can reinit the colormaps */
 block|}
 block|}
 end_function
@@ -1441,9 +1445,6 @@ operator|==
 name|FALSE
 condition|)
 block|{
-name|get_standard_colormaps
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|no_splash
@@ -2169,6 +2170,9 @@ operator|==
 name|FALSE
 condition|)
 block|{
+name|get_standard_colormaps
+argument_list|()
+expr_stmt|;
 name|create_toolbox
 argument_list|()
 expr_stmt|;

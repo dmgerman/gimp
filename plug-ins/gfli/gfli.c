@@ -264,7 +264,7 @@ literal|"fli,flc"
 argument_list|,
 literal|""
 argument_list|,
-literal|"5,byte,175 "
+literal|"4,short,0x11af,4,short,0x12af"
 argument_list|)
 expr_stmt|;
 block|}
