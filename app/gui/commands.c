@@ -309,7 +309,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c501d260108
+DECL|struct|__anon2b1ced480108
 typedef|typedef
 struct|struct
 block|{
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c501d260208
+DECL|struct|__anon2b1ced480208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1354,7 +1354,7 @@ name|data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -3804,7 +3804,7 @@ argument_list|)
 expr_stmt|;
 comment|/* the widget is already destroyed here no need to try again */
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -4509,7 +4509,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2c501d260308
+DECL|struct|__anon2b1ced480308
 struct|struct
 block|{
 DECL|member|label
@@ -4578,7 +4578,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2c501d260408
+DECL|struct|__anon2b1ced480408
 struct|struct
 block|{
 DECL|member|label
@@ -11725,7 +11725,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function

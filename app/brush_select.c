@@ -4168,7 +4168,7 @@ name|data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function

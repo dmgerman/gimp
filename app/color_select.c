@@ -108,7 +108,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon2b260a010103
+DECL|enum|__anon2c2ed92c0103
 typedef|typedef
 enum|enum
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b260a010203
+DECL|enum|__anon2c2ed92c0203
 typedef|typedef
 enum|enum
 block|{
@@ -4664,7 +4664,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function

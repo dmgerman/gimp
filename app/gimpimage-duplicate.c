@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2763c0108
+DECL|struct|__anon2ad71a030108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -2754,7 +2754,7 @@ name|data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function

@@ -311,7 +311,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b44f2470103
+DECL|enum|__anon292e5a2b0103
 typedef|typedef
 enum|enum
 block|{
@@ -338,7 +338,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b44f2470203
+DECL|enum|__anon292e5a2b0203
 typedef|typedef
 enum|enum
 block|{
@@ -483,7 +483,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b44f2470303
+DECL|enum|__anon292e5a2b0303
 typedef|typedef
 enum|enum
 block|{
@@ -507,7 +507,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b44f2470408
+DECL|struct|__anon292e5a2b0408
 typedef|typedef
 struct|struct
 block|{
@@ -787,7 +787,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2b44f2470508
+DECL|struct|__anon292e5a2b0508
 struct|struct
 block|{
 DECL|member|r
@@ -6754,7 +6754,7 @@ name|shell
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function

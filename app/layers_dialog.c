@@ -8803,7 +8803,7 @@ operator|!
 name|lc_shell
 condition|)
 return|return
-name|TRUE
+name|FALSE
 return|;
 if|if
 condition|(
@@ -8829,7 +8829,7 @@ operator|-
 literal|1
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -14074,7 +14074,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -15315,7 +15315,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -15885,7 +15885,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -16661,7 +16661,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -17234,7 +17234,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -17835,7 +17835,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -18337,7 +18337,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function

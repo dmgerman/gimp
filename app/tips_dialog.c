@@ -336,6 +336,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* destroy the tips window if the mainlevel gtk_main() function is left */
+name|gtk_quit_add
+argument_list|(
+literal|1
+argument_list|,
+operator|(
+name|GtkFunction
+operator|)
+name|gtk_widget_destroy
+argument_list|,
+name|tips_dialog
+argument_list|)
+expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -932,7 +945,7 @@ name|remove
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
