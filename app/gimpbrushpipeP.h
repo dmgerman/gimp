@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29574d780103
+DECL|enum|__anon2ae6021f0103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -137,8 +137,16 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|_GimpBrushPixmapClass
+DECL|typedef|GimpBrushPixmapClass
 typedef|typedef
+name|struct
+name|_GimpBrushPixmapClass
+name|GimpBrushPixmapClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpBrushPixmapClass
 struct|struct
 name|_GimpBrushPixmapClass
 block|{
@@ -146,15 +154,21 @@ DECL|member|parent_class
 name|GimpBrushClass
 name|parent_class
 decl_stmt|;
-DECL|typedef|GimpBrushPixmapClass
 block|}
-name|GimpBrushPixmapClass
+struct|;
+end_struct
+
+begin_typedef
+DECL|typedef|GimpBrushPipeClass
+typedef|typedef
+name|struct
+name|_GimpBrushPipeClass
+name|GimpBrushPipeClass
 typedef|;
 end_typedef
 
-begin_typedef
+begin_struct
 DECL|struct|_GimpBrushPipeClass
-typedef|typedef
 struct|struct
 name|_GimpBrushPipeClass
 block|{
@@ -162,11 +176,9 @@ DECL|member|parent_class
 name|GimpBrushPixmapClass
 name|parent_class
 decl_stmt|;
-DECL|typedef|GimpBrushPipeClass
 block|}
-name|GimpBrushPipeClass
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_endif
 endif|#

@@ -117,6 +117,7 @@ function_decl|)
 parameter_list|(
 name|PaintCore
 modifier|*
+name|paint_core
 parameter_list|)
 function_decl|;
 DECL|member|want_null_motion
@@ -128,6 +129,7 @@ function_decl|)
 parameter_list|(
 name|PaintCore
 modifier|*
+name|paint_core
 parameter_list|)
 function_decl|;
 block|}
@@ -142,7 +144,6 @@ name|GIMP_BRUSH_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-define|\
 value|GTK_CHECK_CLASS_CAST (klass, gimp_brush_get_type(), GimpBrushClass)
 end_define
 
@@ -213,7 +214,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_brush_load_brush
 parameter_list|(
 name|GimpBrush
@@ -244,7 +245,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|gimp_brush_get_name
 parameter_list|(
@@ -271,7 +272,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_brush_get_spacing
 parameter_list|(
 name|GimpBrush

@@ -141,7 +141,7 @@ name|GimpBrushPipe
 modifier|*
 name|gimp_brush_pipe_load
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -153,7 +153,7 @@ name|GimpBrushPipe
 modifier|*
 name|gimp_brush_pixmap_load
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -167,12 +167,13 @@ name|gimp_brush_pixmap_pixmap
 parameter_list|(
 name|GimpBrushPixmap
 modifier|*
+name|brush
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* appearantly GIMP_IS_BRUSH_PIPE () returning TRUE is no indication that you really    have a brush_pipe in front of you, so here we introduce a macro that works:        */
+comment|/* appearantly GIMP_IS_BRUSH_PIPE () returning TRUE is no indication  * that you really have a brush_pipe in front of you, so here we introduce  * a macro that works:  */
 end_comment
 
 begin_define

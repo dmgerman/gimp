@@ -1156,7 +1156,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_user_writable_dir:  * @path: A list of directories as returned by gimp_path_parse().  *  * Returns: The first directory in @path where the user has write permission.  *  */
+comment|/**  * gimp_path_get_user_writable_dir:  * @path: A list of directories as returned by gimp_path_parse().  *  * Note that you have to g_free() the returned string.  *  * Returns: The first directory in @path where the user has write permission.  *  */
 end_comment
 
 begin_function

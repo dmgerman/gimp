@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf7547d0103
+DECL|enum|__anon29718eb80103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -183,15 +183,27 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|destroy
+condition|)
+operator|(
+operator|*
+name|GTK_OBJECT_CLASS
 argument_list|(
-name|object
+name|parent_class
 argument_list|)
+operator|->
+name|destroy
+operator|)
+operator|(
+name|object
+operator|)
 expr_stmt|;
 block|}
 end_function
@@ -552,7 +564,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|gimp_brush_get_name (GimpBrush * brush)
 name|gimp_brush_get_name

@@ -301,7 +301,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c50ab820103
+DECL|enum|__anon276d42e70103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -341,7 +341,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c50ab820203
+DECL|enum|__anon276d42e70203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c50ab820308
+DECL|struct|__anon276d42e70308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -648,7 +648,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2c50ab820408
+DECL|struct|__anon276d42e70408
 block|{
 DECL|member|r
 DECL|member|g
@@ -3004,10 +3004,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gradients_init (int no_data)
+DECL|function|gradients_init (gint no_data)
 name|gradients_init
 parameter_list|(
-name|int
+name|gint
 name|no_data
 parameter_list|)
 block|{
@@ -25742,6 +25742,19 @@ argument_list|(
 name|grad
 operator|->
 name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|grad
+operator|->
+name|pixmap
+condition|)
+name|gdk_pixmap_unref
+argument_list|(
+name|grad
+operator|->
+name|pixmap
 argument_list|)
 expr_stmt|;
 name|g_free

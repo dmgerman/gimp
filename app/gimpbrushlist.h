@@ -25,12 +25,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush.h"
 end_include
 

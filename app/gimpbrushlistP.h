@@ -34,21 +34,8 @@ name|GimpList
 name|gimplist
 decl_stmt|;
 DECL|member|num_brushes
-name|int
+name|gint
 name|num_brushes
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_GimpBrushListClass
-struct|struct
-name|_GimpBrushListClass
-block|{
-DECL|member|parent_class
-name|GimpListClass
-name|parent_class
 decl_stmt|;
 block|}
 struct|;
@@ -62,6 +49,19 @@ name|_GimpBrushListClass
 name|GimpBrushListClass
 typedef|;
 end_typedef
+
+begin_struct
+DECL|struct|_GimpBrushListClass
+struct|struct
+name|_GimpBrushListClass
+block|{
+DECL|member|parent_class
+name|GimpListClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_define
 DECL|macro|BRUSH_LIST_CLASS (klass)

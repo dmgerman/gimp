@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpmath.h"
 end_include
 
@@ -109,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/parasiteio.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_decl_stmt
@@ -535,7 +535,7 @@ literal|0
 condition|)
 name|angle
 operator|+=
-literal|2.
+literal|2.0
 operator|*
 name|G_PI
 expr_stmt|;
@@ -544,13 +544,13 @@ if|if
 condition|(
 name|angle
 operator|>
-literal|2.
+literal|2.0
 operator|*
 name|G_PI
 condition|)
 name|angle
 operator|-=
-literal|2.
+literal|2.0
 operator|*
 name|G_PI
 expr_stmt|;
@@ -561,7 +561,7 @@ argument_list|(
 name|angle
 operator|/
 operator|(
-literal|2.
+literal|2.0
 operator|*
 name|G_PI
 operator|)
@@ -787,7 +787,7 @@ name|GimpBrushPipe
 modifier|*
 name|pipe
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|g_return_val_if_fail
