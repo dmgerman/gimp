@@ -99,19 +99,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|WANT_SCALE_BITS
-define|#
-directive|define
-name|WANT_SCALE_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
 begin_comment
 comment|/*  forward function declarations  */
 end_comment
@@ -362,7 +349,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Transform Tools/Transform"
+literal|"/Tools/Transform Tools/Scale"
 argument_list|)
 argument_list|,
 literal|"<shift>T"
@@ -371,20 +358,14 @@ name|NULL
 argument_list|,
 literal|"tools/transform.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|scale_bits
+name|GIMP_STOCK_TOOL_SCALE
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_scale_tool_get_type (void)
 name|gimp_scale_tool_get_type
 parameter_list|(
@@ -392,7 +373,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|tool_type
 init|=
 literal|0
@@ -507,9 +488,9 @@ name|klass
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_TRANSFORM_TOOL
+name|klass
 argument_list|)
 expr_stmt|;
 name|transform_class

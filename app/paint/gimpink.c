@@ -160,19 +160,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_INK_BITS
-define|#
-directive|define
-name|WANT_INK_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|SUBSAMPLE
 define|#
 directive|define
@@ -1054,13 +1041,7 @@ name|NULL
 argument_list|,
 literal|"tools/ink.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|ink_bits
+name|GIMP_STOCK_TOOL_INK
 argument_list|)
 expr_stmt|;
 block|}
@@ -6389,7 +6370,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29371b210103
+DECL|enum|__anon28cad7530103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -117,19 +117,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|WANT_AIRBRUSH_BITS
-define|#
-directive|define
-name|WANT_AIRBRUSH_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
 begin_comment
 comment|/*  The maximum amount of pressure that can be exerted  */
 end_comment
@@ -516,13 +503,7 @@ name|NULL
 argument_list|,
 literal|"tools/airbrush.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|airbrush_bits
+name|GIMP_STOCK_TOOL_AIRBRUSH
 argument_list|)
 expr_stmt|;
 block|}

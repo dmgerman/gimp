@@ -220,8 +220,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-modifier|*
-name|icon_data
+name|stock_id
 parameter_list|)
 function_decl|;
 end_function_decl

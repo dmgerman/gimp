@@ -397,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2dfd0b0108
+DECL|struct|__anon29bb4f140108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2309,7 +2309,7 @@ argument_list|,
 name|dialogs_set_drawable_context_func
 argument_list|)
 expr_stmt|;
-name|dialogs_set_drawable_context_func
+name|gimp_dockable_set_context
 argument_list|(
 name|GIMP_DOCKABLE
 argument_list|(
@@ -2439,7 +2439,7 @@ argument_list|,
 name|dialogs_set_drawable_context_func
 argument_list|)
 expr_stmt|;
-name|dialogs_set_drawable_context_func
+name|gimp_dockable_set_context
 argument_list|(
 name|GIMP_DOCKABLE
 argument_list|(
@@ -2526,7 +2526,7 @@ argument_list|,
 name|dialogs_set_path_context_func
 argument_list|)
 expr_stmt|;
-name|dialogs_set_path_context_func
+name|gimp_dockable_set_context
 argument_list|(
 name|GIMP_DOCKABLE
 argument_list|(

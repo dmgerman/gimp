@@ -112,19 +112,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_ADJUSTMENT_BITS
-define|#
-directive|define
-name|WANT_ADJUSTMENT_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|CYAN_RED
 define|#
 directive|define
@@ -489,13 +476,7 @@ name|NULL
 argument_list|,
 literal|"tools/color_balance.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|adjustment_bits
+name|GIMP_STOCK_TOOL_COLOR_BALANCE
 argument_list|)
 expr_stmt|;
 block|}

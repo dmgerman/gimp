@@ -124,19 +124,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_PAINT_BRUSH_BITS
-define|#
-directive|define
-name|WANT_PAINT_BRUSH_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|PAINT_LEFT_THRESHOLD
 define|#
 directive|define
@@ -312,13 +299,7 @@ name|NULL
 argument_list|,
 literal|"tools/paintbrush.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|paint_brush_bits
+name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|)
 expr_stmt|;
 block|}

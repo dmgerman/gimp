@@ -136,19 +136,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_CLONE_BITS
-define|#
-directive|define
-name|WANT_CLONE_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|TARGET_HEIGHT
 define|#
 directive|define
@@ -191,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1234bf0103
+DECL|enum|__anon2c74145e0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -750,13 +737,7 @@ name|NULL
 argument_list|,
 literal|"tools/clone.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|clone_bits
+name|GIMP_STOCK_TOOL_CLONE
 argument_list|)
 expr_stmt|;
 block|}

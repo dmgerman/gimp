@@ -99,19 +99,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|WANT_COLOR_PICKER_BITS
-define|#
-directive|define
-name|WANT_COLOR_PICKER_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
 begin_comment
 comment|/*  maximum information buffer size  */
 end_comment
@@ -655,13 +642,7 @@ name|NULL
 argument_list|,
 literal|"tools/color_picker.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|color_picker_bits
+name|GIMP_STOCK_TOOL_COLOR_PICKER
 argument_list|)
 expr_stmt|;
 block|}

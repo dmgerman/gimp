@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -8439,7 +8445,17 @@ name|entry
 operator|.
 name|item_type
 operator|=
-name|NULL
+literal|"<StockItem>"
+expr_stmt|;
+name|entry
+operator|.
+name|entry
+operator|.
+name|extra_data
+operator|=
+name|tool_info
+operator|->
+name|stock_id
 expr_stmt|;
 name|entry
 operator|.
@@ -8468,9 +8484,6 @@ argument_list|,
 operator|&
 name|entry
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|tool_info
 argument_list|,
 literal|2

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
 end_include
 
@@ -145,19 +151,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
-end_include
-
-begin_define
-DECL|macro|WANT_ISCISSORS_BITS
-define|#
-directive|define
-name|WANT_ISCISSORS_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
 end_include
 
 begin_struct
@@ -1275,13 +1268,7 @@ name|NULL
 argument_list|,
 literal|"tools/iscissors.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|iscissors_bits
+name|GIMP_STOCK_TOOL_ISCISSORS
 argument_list|)
 expr_stmt|;
 block|}

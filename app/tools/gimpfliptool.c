@@ -129,19 +129,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|WANT_FLIP_BITS
-define|#
-directive|define
-name|WANT_FLIP_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
 begin_comment
 comment|/*  FIXME: Lame - 1 hacks abound since the code assumes certain values for  *  the ORIENTATION_FOO constants.  */
 end_comment
@@ -382,13 +369,7 @@ name|NULL
 argument_list|,
 literal|"tools/flip.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|flip_bits
+name|GIMP_STOCK_TOOL_FLIP
 argument_list|)
 expr_stmt|;
 block|}

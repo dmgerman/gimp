@@ -100,19 +100,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_ERASER_BITS
-define|#
-directive|define
-name|WANT_ERASER_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|ERASER_DEFAULT_HARD
 define|#
 directive|define
@@ -400,13 +387,7 @@ name|NULL
 argument_list|,
 literal|"tools/eraser.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|eraser_bits
+name|GIMP_STOCK_TOOL_ERASER
 argument_list|)
 expr_stmt|;
 block|}

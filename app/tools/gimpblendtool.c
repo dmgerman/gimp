@@ -177,19 +177,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|WANT_BLEND_BITS
-define|#
-directive|define
-name|WANT_BLEND_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
 begin_comment
 comment|/*  target size  */
 end_comment
@@ -348,7 +335,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d2fc70108
+DECL|struct|__anon2782be370108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -405,7 +392,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d2fc70208
+DECL|struct|__anon2782be370208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1166,13 +1153,7 @@ name|NULL
 argument_list|,
 literal|"tools/blend.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|blend_bits
+name|GIMP_STOCK_TOOL_BLEND
 argument_list|)
 expr_stmt|;
 block|}

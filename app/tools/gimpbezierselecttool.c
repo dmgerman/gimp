@@ -172,19 +172,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_BEZIER_SELECT_BITS
-define|#
-directive|define
-name|WANT_BEZIER_SELECT_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|STATUSBAR_SIZE
 define|#
 directive|define
@@ -281,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c364b340108
+DECL|struct|__anon2a08660f0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -317,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c364b340208
+DECL|struct|__anon2a08660f0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -372,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c364b340308
+DECL|struct|__anon2a08660f0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -538,7 +525,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c364b340403
+DECL|enum|__anon2a08660f0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -1256,13 +1243,7 @@ name|NULL
 argument_list|,
 literal|"tools/bezier_select.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|bezier_select_bits
+name|GIMP_STOCK_TOOL_BEZIER_SELECT
 argument_list|)
 expr_stmt|;
 block|}

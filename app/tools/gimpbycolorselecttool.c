@@ -160,19 +160,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_BY_COLOR_SELECT_BITS
-define|#
-directive|define
-name|WANT_BY_COLOR_SELECT_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|PREVIEW_WIDTH
 define|#
 directive|define
@@ -789,13 +776,7 @@ name|NULL
 argument_list|,
 literal|"tools/by_color_select.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|by_color_select_bits
+name|GIMP_STOCK_TOOL_BY_COLOR_SELECT
 argument_list|)
 expr_stmt|;
 block|}

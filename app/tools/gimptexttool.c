@@ -219,19 +219,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_TEXT_BITS
-define|#
-directive|define
-name|WANT_TEXT_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|FOUNDRY
 define|#
 directive|define
@@ -735,13 +722,7 @@ name|NULL
 argument_list|,
 literal|"tools/text.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|text_bits
+name|GIMP_STOCK_TOOL_TEXT
 argument_list|)
 expr_stmt|;
 block|}

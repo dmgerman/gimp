@@ -154,19 +154,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_LEVELS_BITS
-define|#
-directive|define
-name|WANT_LEVELS_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|LOW_INPUT
 define|#
 directive|define
@@ -1021,13 +1008,7 @@ name|NULL
 argument_list|,
 literal|"tools/levels.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|levels_bits
+name|GIMP_STOCK_TOOL_LEVELS
 argument_list|)
 expr_stmt|;
 block|}

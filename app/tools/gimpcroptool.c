@@ -124,19 +124,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_CROP_BITS
-define|#
-directive|define
-name|WANT_CROP_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|STATUSBAR_SIZE
 define|#
 directive|define
@@ -803,13 +790,7 @@ name|NULL
 argument_list|,
 literal|"tools/crop_tool.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|crop_bits
+name|GIMP_STOCK_TOOL_CROP
 argument_list|)
 expr_stmt|;
 block|}

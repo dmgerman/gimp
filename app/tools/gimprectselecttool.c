@@ -130,19 +130,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|WANT_RECT_SELECT_BITS
-define|#
-directive|define
-name|WANT_RECT_SELECT_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
-begin_define
 DECL|macro|STATUSBAR_SIZE
 define|#
 directive|define
@@ -152,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949264b0103
+DECL|enum|__anon2c8498450103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
@@ -377,13 +364,7 @@ name|NULL
 argument_list|,
 literal|"tools/rect_select.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|rect_select_bits
+name|GIMP_STOCK_TOOL_RECT_SELECT
 argument_list|)
 expr_stmt|;
 block|}

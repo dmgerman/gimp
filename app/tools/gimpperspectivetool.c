@@ -93,19 +93,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|WANT_PERSPECTIVE_BITS
-define|#
-directive|define
-name|WANT_PERSPECTIVE_BITS
-end_define
-
-begin_include
-include|#
-directive|include
-file|"icons.h"
-end_include
-
 begin_comment
 comment|/*  forward function declarations  */
 end_comment
@@ -295,13 +282,7 @@ name|NULL
 argument_list|,
 literal|"tools/perspective.html"
 argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|perspective_bits
+name|GIMP_STOCK_TOOL_PERSPECTIVE
 argument_list|)
 expr_stmt|;
 block|}
