@@ -1436,11 +1436,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|loadgbr (char * fn,ppm_t * p)
+DECL|function|loadgbr (const gchar * fn,ppm_t * p)
 name|void
 name|loadgbr
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|fn
 parameter_list|,
@@ -1457,7 +1458,7 @@ name|struct
 name|_BrushHeader
 name|hdr
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|ptr
 decl_stmt|;

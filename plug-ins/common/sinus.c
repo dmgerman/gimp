@@ -92,7 +92,8 @@ end_define
 begin_decl_stmt
 DECL|variable|header_data_cmap
 specifier|static
-name|char
+specifier|const
+name|guchar
 name|header_data_cmap
 index|[
 literal|256
@@ -2156,7 +2157,8 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|logo_data
 specifier|static
-name|char
+specifier|const
+name|guchar
 name|logo_data
 index|[]
 init|=
@@ -22250,7 +22252,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5bf06d0108
+DECL|struct|__anon27bf42180108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22353,7 +22355,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5bf06d0208
+DECL|struct|__anon27bf42180208
 block|{
 DECL|member|height
 DECL|member|width
@@ -22435,7 +22437,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5bf06d0308
+DECL|struct|__anon27bf42180308
 block|{
 DECL|member|width
 name|gint

@@ -56,7 +56,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon296134bc0108
+DECL|struct|__anon2771eed00108
 typedef|typedef
 struct|struct
 block|{
@@ -71,7 +71,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296134bc0208
+DECL|struct|__anon2771eed00208
 typedef|typedef
 struct|struct
 block|{
@@ -105,7 +105,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon296134bc0303
+DECL|enum|__anon2771eed00303
 typedef|typedef
 enum|enum
 block|{
@@ -127,7 +127,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon296134bc0403
+DECL|enum|__anon2771eed00403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -159,7 +159,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon296134bc0503
+DECL|enum|__anon2771eed00503
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -187,7 +187,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon296134bc0603
+DECL|enum|__anon2771eed00603
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -205,7 +205,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon296134bc0703
+DECL|enum|__anon2771eed00703
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -224,7 +224,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon296134bc0808
+DECL|struct|__anon2771eed00808
 typedef|typedef
 struct|struct
 block|{
@@ -270,7 +270,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296134bc0908
+DECL|struct|__anon2771eed00908
 typedef|typedef
 struct|struct
 block|{
@@ -758,7 +758,7 @@ name|GtkWidget
 modifier|*
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -775,7 +775,8 @@ parameter_list|,
 name|GSList
 modifier|*
 parameter_list|,
-name|guchar
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|GtkSignalFunc
@@ -794,7 +795,8 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 parameter_list|,
-name|guchar
+specifier|const
+name|gchar
 modifier|*
 name|label
 parameter_list|,
@@ -817,7 +819,8 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 parameter_list|,
-name|guchar
+specifier|const
+name|gchar
 modifier|*
 name|label
 parameter_list|,

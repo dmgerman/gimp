@@ -470,7 +470,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -495,7 +495,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -520,7 +520,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -545,7 +545,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -1049,7 +1049,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1e9c0f0108
+DECL|struct|__anon2ab4c8760108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1767,7 +1767,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_8 (FILE * fp,gint width,gint height,gchar * buffer,gint bytes)
+DECL|function|load_8 (FILE * fp,gint width,gint height,guchar * buffer,gint bytes)
 name|load_8
 parameter_list|(
 name|FILE
@@ -1780,7 +1780,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -1788,24 +1788,20 @@ name|gint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gint
 name|row
 decl_stmt|;
 name|guchar
 modifier|*
 name|line
-decl_stmt|;
-name|line
-operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+init|=
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bytes
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|row
@@ -1867,7 +1863,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_24 (FILE * fp,gint width,gint height,gchar * buffer,gint bytes)
+DECL|function|load_24 (FILE * fp,gint width,gint height,guchar * buffer,gint bytes)
 name|load_24
 parameter_list|(
 name|FILE
@@ -1880,7 +1876,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -1888,7 +1884,7 @@ name|gint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -1898,20 +1894,14 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|line
-decl_stmt|;
-name|line
-operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+init|=
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bytes
-operator|*
-literal|3
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|y
@@ -2010,7 +2000,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_1 (FILE * fp,gint width,gint height,gchar * buffer,gint bytes)
+DECL|function|load_1 (FILE * fp,gint width,gint height,guchar * buffer,gint bytes)
 name|load_1
 parameter_list|(
 name|FILE
@@ -2023,7 +2013,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -2031,7 +2021,7 @@ name|gint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -2039,18 +2029,14 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|line
-decl_stmt|;
-name|line
-operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+init|=
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bytes
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|y
@@ -2152,7 +2138,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_4 (FILE * fp,gint width,gint height,gchar * buffer,gint bytes)
+DECL|function|load_4 (FILE * fp,gint width,gint height,guchar * buffer,gint bytes)
 name|load_4
 parameter_list|(
 name|FILE
@@ -2165,7 +2151,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -2173,7 +2159,7 @@ name|gint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -2183,18 +2169,14 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|line
-decl_stmt|;
-name|line
-operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+init|=
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bytes
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|y

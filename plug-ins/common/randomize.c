@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d6069c0108
+DECL|struct|__anon27aa32810108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -213,7 +213,7 @@ name|rndm_rcount
 decl_stmt|;
 comment|/* repeat count */
 DECL|member|rndm_seed
-name|gint
+name|guint
 name|rndm_seed
 decl_stmt|;
 comment|/* seed value for g_rand_set_seed() function */
@@ -242,7 +242,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d6069c0208
+DECL|struct|__anon27aa32810208
 block|{
 DECL|member|run
 name|gboolean

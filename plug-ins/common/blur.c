@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298988380108
+DECL|struct|__anon2b44df330108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -148,7 +148,7 @@ name|blur_rcount
 decl_stmt|;
 comment|/* repeat count */
 DECL|member|blur_seed
-name|gint
+name|guint
 name|blur_seed
 decl_stmt|;
 comment|/* seed value for g_random_set_seed() function */
@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298988380208
+DECL|struct|__anon2b44df330208
 block|{
 DECL|member|run
 name|gboolean

@@ -4143,7 +4143,7 @@ name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|guint
+name|gint
 name|num_colors
 decl_stmt|;
 name|guchar

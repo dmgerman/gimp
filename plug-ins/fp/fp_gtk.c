@@ -431,7 +431,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b3239420108
+DECL|struct|__anon299d3fce0108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -3122,7 +3122,7 @@ directive|endif
 end_endif
 
 begin_function
-DECL|function|Create_A_Preview (GtkWidget ** preview,GtkWidget ** frame,int previewWidth,int previewHeight)
+DECL|function|Create_A_Preview (GtkWidget ** preview,GtkWidget ** frame,gint previewWidth,gint previewHeight)
 name|void
 name|Create_A_Preview
 parameter_list|(
@@ -3136,10 +3136,10 @@ modifier|*
 modifier|*
 name|frame
 parameter_list|,
-name|int
+name|gint
 name|previewWidth
 parameter_list|,
-name|int
+name|gint
 name|previewHeight
 parameter_list|)
 block|{
@@ -3219,7 +3219,7 @@ end_function
 begin_function
 name|GSList
 modifier|*
-DECL|function|Button_In_A_Box (GtkWidget * vbox,GSList * group,guchar * label,GtkSignalFunc function,gpointer data,gboolean clicked)
+DECL|function|Button_In_A_Box (GtkWidget * vbox,GSList * group,const gchar * label,GtkSignalFunc function,gpointer data,gboolean clicked)
 name|Button_In_A_Box
 parameter_list|(
 name|GtkWidget
@@ -3230,7 +3230,8 @@ name|GSList
 modifier|*
 name|group
 parameter_list|,
-name|guchar
+specifier|const
+name|gchar
 modifier|*
 name|label
 parameter_list|,
@@ -3318,14 +3319,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|Check_Button_In_A_Box (GtkWidget * vbox,guchar * label,GtkSignalFunc function,gpointer data,gboolean clicked)
+DECL|function|Check_Button_In_A_Box (GtkWidget * vbox,const gchar * label,GtkSignalFunc function,gpointer data,gboolean clicked)
 name|Check_Button_In_A_Box
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|vbox
 parameter_list|,
-name|guchar
+specifier|const
+name|gchar
 modifier|*
 name|label
 parameter_list|,
@@ -3400,14 +3402,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|Frames_Check_Button_In_A_Box (GtkWidget * vbox,guchar * label,GtkSignalFunc function,GtkWidget * frame,gboolean clicked)
+DECL|function|Frames_Check_Button_In_A_Box (GtkWidget * vbox,const gchar * label,GtkSignalFunc function,GtkWidget * frame,gboolean clicked)
 name|Frames_Check_Button_In_A_Box
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|vbox
 parameter_list|,
-name|guchar
+specifier|const
+name|gchar
 modifier|*
 name|label
 parameter_list|,
@@ -5779,7 +5782,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 modifier|*
 name|rangeNames
 index|[]

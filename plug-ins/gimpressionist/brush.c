@@ -1565,12 +1565,12 @@ modifier|*
 name|fn
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|char
+name|guchar
 name|buf
 index|[
 literal|100

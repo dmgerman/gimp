@@ -131,7 +131,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279397750103
+DECL|enum|__anon2a2e6aa30103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279397750208
+DECL|struct|__anon2a2e6aa30208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -568,7 +568,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon279397750308
+DECL|struct|__anon2a2e6aa30308
 block|{
 DECL|member|signature
 name|gchar
@@ -715,11 +715,11 @@ parameter_list|,
 name|long
 name|uclen
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|src
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|dst
 parameter_list|,
@@ -741,11 +741,11 @@ parameter_list|,
 name|long
 name|uclen
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|src
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|dst
 parameter_list|,
@@ -974,7 +974,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|guchar
+name|gchar
 modifier|*
 name|getpascalstring
 parameter_list|(
@@ -9412,7 +9412,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|decode (long clen,long uclen,char * src,char * dst,int step)
+DECL|function|decode (long clen,long uclen,guchar * src,guchar * dst,int step)
 name|decode
 parameter_list|(
 name|long
@@ -9421,11 +9421,11 @@ parameter_list|,
 name|long
 name|uclen
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|src
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|dst
 parameter_list|,
@@ -9589,7 +9589,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|packbitsdecode (long * clenp,long uclen,char * src,char * dst,int step)
+DECL|function|packbitsdecode (long * clenp,long uclen,guchar * src,guchar * dst,int step)
 name|packbitsdecode
 parameter_list|(
 name|long
@@ -9599,11 +9599,11 @@ parameter_list|,
 name|long
 name|uclen
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|src
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|dst
 parameter_list|,
@@ -10232,7 +10232,7 @@ decl_stmt|;
 name|long
 name|n
 decl_stmt|;
-name|char
+name|guchar
 modifier|*
 name|rp
 decl_stmt|,
@@ -10747,7 +10747,7 @@ end_function
 
 begin_function
 specifier|static
-name|guchar
+name|gchar
 modifier|*
 DECL|function|getpascalstring (FILE * fd,gchar * why)
 name|getpascalstring
@@ -10819,6 +10819,10 @@ operator|=
 literal|0
 expr_stmt|;
 return|return
+operator|(
+name|gchar
+operator|*
+operator|)
 name|tmpchunk
 return|;
 comment|/* caller should free memory */

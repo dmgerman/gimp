@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c4310b0103
+DECL|enum|__anon29d07ccc0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -225,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c4310b0208
+DECL|struct|__anon29d07ccc0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c4310b0308
+DECL|struct|__anon29d07ccc0308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -925,14 +925,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|qbist (ExpInfo * info,gchar * buffer,gint xp,gint yp,gint num,gint width,gint height,gint bpp,gint oversampling)
+DECL|function|qbist (ExpInfo * info,guchar * buffer,gint xp,gint yp,gint num,gint width,gint height,gint bpp,gint oversampling)
 name|qbist
 parameter_list|(
 name|ExpInfo
 modifier|*
 name|info
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -2177,7 +2177,7 @@ name|i
 index|]
 operator|=
 call|(
-name|guint8
+name|guchar
 call|)
 argument_list|(
 operator|(
@@ -3102,10 +3102,6 @@ operator|%
 literal|9
 index|]
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|buf
 argument_list|,
 literal|0

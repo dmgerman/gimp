@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b88bf40108
+DECL|struct|__anon2b53f1030108
 block|{
 DECL|member|interlaced
 name|gint
@@ -385,7 +385,6 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|// max of 256 palette entries
 name|gboolean
 name|trans_used
 init|=
@@ -460,7 +459,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-comment|// If there is no transparency, ignore alpha.
+comment|/* If there is no transparency, ignore alpha. */
 if|if
 condition|(
 name|trans_used

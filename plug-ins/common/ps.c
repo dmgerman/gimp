@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e34b50108
+DECL|struct|__anon2ae62e4a0108
 block|{
 DECL|member|resolution
 name|guint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e34b50208
+DECL|struct|__anon2ae62e4a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -287,7 +287,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e34b50308
+DECL|struct|__anon2ae62e4a0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -349,7 +349,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e34b50408
+DECL|struct|__anon2ae62e4a0408
 block|{
 DECL|member|run
 name|gboolean
@@ -897,7 +897,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e34b50508
+DECL|struct|__anon2ae62e4a0508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1768,7 +1768,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e34b50608
+DECL|struct|__anon2ae62e4a0608
 block|{
 DECL|member|eol
 name|long
@@ -11127,7 +11127,7 @@ name|hex
 init|=
 literal|"0123456789abcdef"
 decl_stmt|;
-name|int
+name|gint
 name|level2
 init|=
 operator|(
@@ -11204,12 +11204,10 @@ name|src
 operator|=
 name|data
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|tile_height
 operator|*
 name|width
@@ -11231,12 +11229,10 @@ literal|8
 expr_stmt|;
 name|scanline
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|nbsl
 operator|+
 literal|1
@@ -11244,12 +11240,10 @@ argument_list|)
 expr_stmt|;
 name|hex_scanline
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|nbsl
 operator|+
@@ -11303,12 +11297,10 @@ expr_stmt|;
 comment|/* Allocate buffer for packbits data. Worst case: Less than 1% increase */
 name|packb
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 operator|(
 name|nbsl

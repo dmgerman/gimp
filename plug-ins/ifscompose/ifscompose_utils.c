@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b26eb500108
+DECL|struct|__anon290faea00108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -5253,7 +5253,7 @@ name|prob
 operator|=
 name|g_new
 argument_list|(
-name|gint
+name|guint32
 argument_list|,
 name|num_elements
 argument_list|)

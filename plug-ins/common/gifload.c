@@ -716,7 +716,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1a3f770108
+DECL|struct|__anon2c6574940108
 block|{
 DECL|member|Width
 name|unsigned
@@ -766,7 +766,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1a3f770208
+DECL|struct|__anon2c6574940208
 block|{
 DECL|member|transparent
 name|int
@@ -1952,13 +1952,13 @@ name|label
 parameter_list|)
 block|{
 specifier|static
-name|guchar
+name|gchar
 name|buf
 index|[
 literal|256
 index|]
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|str
 decl_stmt|;

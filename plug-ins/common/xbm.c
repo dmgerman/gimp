@@ -1862,8 +1862,8 @@ name|gint
 name|base
 parameter_list|)
 block|{
-specifier|static
-name|guchar
+specifier|const
+name|gchar
 modifier|*
 name|digits
 init|=
@@ -3578,7 +3578,8 @@ name|data
 decl_stmt|,
 modifier|*
 name|cmap
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|name_buf
 decl_stmt|,

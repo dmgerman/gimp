@@ -329,10 +329,10 @@ name|gpointer
 name|d
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|char
+name|guchar
 name|buf
 index|[
 name|PREVIEWSIZE

@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291391650108
+DECL|struct|__anon2771a4860108
 block|{
 DECL|member|tilable
 name|gint
@@ -116,7 +116,7 @@ name|gint
 name|turbulent
 decl_stmt|;
 DECL|member|seed
-name|gint
+name|guint
 name|seed
 decl_stmt|;
 DECL|member|detail
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291391650208
+DECL|struct|__anon2771a4860208
 block|{
 DECL|member|run
 name|gint

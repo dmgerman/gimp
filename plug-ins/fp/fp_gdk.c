@@ -778,7 +778,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 name|buffer
 index|[
 literal|3

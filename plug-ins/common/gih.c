@@ -185,14 +185,14 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29024af10108
+DECL|struct|__anon29ec7b0e0108
 block|{
 DECL|member|spacing
 name|guint
 name|spacing
 decl_stmt|;
 DECL|member|description
-name|guchar
+name|gchar
 name|description
 index|[
 name|MAXDESCLEN
@@ -242,7 +242,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29024af10208
+DECL|struct|__anon29ec7b0e0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2568,10 +2568,6 @@ argument_list|(
 operator|&
 name|pixel_rgn
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
 name|brush_buf
 argument_list|,
 literal|0
