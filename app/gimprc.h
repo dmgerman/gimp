@@ -155,6 +155,11 @@ name|gchar
 modifier|*
 name|image_title_format
 decl_stmt|;
+DECL|member|image_status_format
+name|gchar
+modifier|*
+name|image_status_format
+decl_stmt|;
 DECL|member|global_paint_options
 name|gboolean
 name|global_paint_options

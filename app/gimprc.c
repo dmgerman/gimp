@@ -238,6 +238,14 @@ value|"%f-%p.%i (%t)"
 end_define
 
 begin_define
+DECL|macro|DEFAULT_IMAGE_STATUS_FORMAT
+define|#
+directive|define
+name|DEFAULT_IMAGE_STATUS_FORMAT
+value|DEFAULT_IMAGE_TITLE_FORMAT
+end_define
+
+begin_define
 DECL|macro|DEFAULT_COMMENT
 define|#
 directive|define
@@ -248,7 +256,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294659050103
+DECL|enum|__anon2975a0310103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1196,6 +1204,9 @@ block|,
 comment|/* image_title_format        */
 name|NULL
 block|,
+comment|/* image_status_format       */
+name|NULL
+block|,
 comment|/* global_paint_options      */
 name|FALSE
 block|,
@@ -1771,6 +1782,19 @@ operator|&
 name|gimprc
 operator|.
 name|image_title_format
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"image-status-format"
+block|,
+name|TT_STRING
+block|,
+operator|&
+name|gimprc
+operator|.
+name|image_status_format
 block|,
 name|NULL
 block|}
@@ -3197,6 +3221,22 @@ operator|=
 name|g_strdup
 argument_list|(
 name|DEFAULT_IMAGE_TITLE_FORMAT
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimprc
+operator|.
+name|image_status_format
+condition|)
+name|gimprc
+operator|.
+name|image_status_format
+operator|=
+name|g_strdup
+argument_list|(
+name|DEFAULT_IMAGE_STATUS_FORMAT
 argument_list|)
 expr_stmt|;
 if|if

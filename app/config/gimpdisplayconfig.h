@@ -140,6 +140,11 @@ name|gchar
 modifier|*
 name|image_title_format
 decl_stmt|;
+DECL|member|image_status_format
+name|gchar
+modifier|*
+name|image_status_format
+decl_stmt|;
 DECL|member|show_rulers
 name|gboolean
 name|show_rulers
