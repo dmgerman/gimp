@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292440b50103
+DECL|enum|__anon2c5cb88d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -499,6 +499,8 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|0
@@ -737,6 +739,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,

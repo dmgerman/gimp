@@ -171,7 +171,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2921144a0103
+DECL|enum|__anon2ad691870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -624,6 +624,8 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
+name|TRUE
+argument_list|,
 name|DEFAULT_FADE_UNIT
 argument_list|,
 literal|0
@@ -672,6 +674,8 @@ argument_list|,
 literal|"gradient-unit"
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,

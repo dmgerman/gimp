@@ -259,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c39dee60103
+DECL|enum|__anon2c6ebf2a0103
 block|{
 DECL|enumerator|GIMP_PARAM_PATH_FILE
 name|GIMP_PARAM_PATH_FILE
@@ -406,6 +406,9 @@ name|blurb
 parameter_list|,
 name|gboolean
 name|allow_pixels
+parameter_list|,
+name|gboolean
+name|allow_percent
 parameter_list|,
 name|GimpUnit
 name|default_value
@@ -619,14 +622,16 @@ name|class
 parameter_list|,
 name|id
 parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_UNIT (class,id,\\\nname,blurb,pixels,default,flags)
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_UNIT (class,id,\\\nname,blurb,pixels,percent,default,flags)
 name|name
 parameter_list|,
 name|blurb
 parameter_list|,
 name|pixels
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_unit (name, NULL, blurb,\                                    pixels, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+name|percent
+parameter_list|,
+define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_unit (name, NULL, blurb,\                                    pixels, percent, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_comment

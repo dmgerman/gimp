@@ -184,7 +184,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c98d520103
+DECL|enum|__anon275e37920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -738,6 +738,8 @@ name|DEFAULT_UNIT_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_UNIT_INCH
 argument_list|,
 literal|0
@@ -790,6 +792,8 @@ argument_list|,
 literal|"default-resolution-unit"
 argument_list|,
 name|DEFAULT_RESOLUTION_UNIT_BLURB
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

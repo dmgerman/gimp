@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97d66b0103
+DECL|enum|__anon279765050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -528,6 +528,8 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|GIMP_UNIT_INCH
 argument_list|,
 literal|0
@@ -580,6 +582,8 @@ argument_list|,
 literal|"resolution-unit"
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
