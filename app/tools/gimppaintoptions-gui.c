@@ -587,7 +587,7 @@ literal|1
 argument_list|,
 name|dialog_factory
 argument_list|,
-literal|"gimp-brush-grid"
+literal|"gimp-brush-grid|gimp-brush-list"
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|,
@@ -658,7 +658,7 @@ literal|1
 argument_list|,
 name|dialog_factory
 argument_list|,
-literal|"gimp-pattern-grid"
+literal|"gimp-pattern-grid|gimp-pattern-list"
 argument_list|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
 argument_list|,
@@ -757,7 +757,7 @@ literal|1
 argument_list|,
 name|dialog_factory
 argument_list|,
-literal|"gimp-gradient-list"
+literal|"gimp-gradient-list|gimp-gradient-grid"
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,

@@ -769,7 +769,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-buffer-list"
+literal|"gimp-buffer-list|gimp-buffer-grid"
 argument_list|,
 operator|-
 literal|1

@@ -372,7 +372,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|identifier
+name|identifiers
 parameter_list|,
 name|gint
 name|preview_size

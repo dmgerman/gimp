@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3651230103
+DECL|enum|__anon2b31322b0103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -152,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3651230203
+DECL|enum|__anon2b31322b0203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1971,7 +1971,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:    a #GimpDialogFactory  * @screen:     the #GdkScreen the dialog should appear on  * @identifier: the identifier of the dialog as registered with  *              gimp_dialog_factory_register_entry()  * @preview_size:  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Implicitly raises singleton dialogs.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @preview_size:  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Implicitly raises singleton dialogs.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
 end_comment
 
 begin_function
@@ -2048,13 +2048,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory   : a #GimpDialogFactory  * @screen:     the #GdkScreen the dialog should appear on  * @identifier: the identifier of the dialog as registered with  *              gimp_dialog_factory_register_entry()  * @preview_size:  *  * Raises an already existing toplevel dialog or #GimpDockable if it was  * already created by this %facory.  *  * Implicitly creates a new dialog if it was not found.  *  * Return value: the raised or newly created dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @preview_size:  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifier,gint preview_size)
+DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifiers,gint preview_size)
 name|gimp_dialog_factory_dialog_raise
 parameter_list|(
 name|GimpDialogFactory
@@ -2068,12 +2068,16 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|identifier
+name|identifiers
 parameter_list|,
 name|gint
 name|preview_size
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|dialog
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DIALOG_FACTORY
@@ -2096,14 +2100,84 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|identifier
+name|identifiers
 operator|!=
 name|NULL
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-return|return
+comment|/*  If the identifier is a list, try to find a matching dialog and    *  raise it. If there's no match, use the first list item.    */
+if|if
+condition|(
+name|strchr
+argument_list|(
+name|identifiers
+argument_list|,
+literal|'|'
+argument_list|)
+condition|)
+block|{
+name|gchar
+modifier|*
+modifier|*
+name|ids
+init|=
+name|g_strsplit
+argument_list|(
+name|identifiers
+argument_list|,
+literal|"|"
+argument_list|,
+literal|0
+argument_list|)
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|ids
+index|[
+name|i
+index|]
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|GimpSessionInfo
+modifier|*
+name|info
+decl_stmt|;
+name|info
+operator|=
+name|gimp_dialog_factory_find_session_info
+argument_list|(
+name|factory
+argument_list|,
+name|ids
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|info
+operator|&&
+name|info
+operator|->
+name|widget
+condition|)
+break|break;
+block|}
+name|dialog
+operator|=
 name|gimp_dialog_factory_dialog_new_internal
 argument_list|(
 name|factory
@@ -2112,18 +2186,60 @@ name|screen
 argument_list|,
 name|NULL
 argument_list|,
-name|identifier
+name|ids
+index|[
+name|i
+index|]
+condition|?
+name|ids
+index|[
+name|i
+index|]
+else|:
+name|ids
+index|[
+literal|0
+index|]
 argument_list|,
 name|preview_size
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+name|g_strfreev
+argument_list|(
+name|ids
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|dialog
+operator|=
+name|gimp_dialog_factory_dialog_new_internal
+argument_list|(
+name|factory
+argument_list|,
+name|screen
+argument_list|,
+name|NULL
+argument_list|,
+name|identifiers
+argument_list|,
+name|preview_size
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|dialog
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dockable_new:  * @factory   : a #GimpDialogFactory  * @dock      : a #GimpDock crated by this %factory.  * @identifier: the identifier of the dialog as registered with  *              gimp_dialog_factory_register_entry()  * @preview_size:  *  * Creates a new #GimpDockable in the context of the #GimpDock it will be  * added to.  *  * Implicitly raises& returns an already existing singleton dockable,  * so callers should check that dockable->dockbook is NULL before trying  * to add it to it's #GimpDockbook.  *  * Return value: the newly created #GimpDockable or an already existing  *               singleton dockable.  **/
+comment|/**  * gimp_dialog_factory_dockable_new:  * @factory:      a #GimpDialogFactory  * @dock:         a #GimpDock crated by this %factory.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @preview_size:  *  * Creates a new #GimpDockable in the context of the #GimpDock it will be  * added to.  *  * Implicitly raises& returns an already existing singleton dockable,  * so callers should check that dockable->dockbook is NULL before trying  * to add it to it's #GimpDockbook.  *  * Return value: the newly created #GimpDockable or an already existing  *               singleton dockable.  **/
 end_comment
 
 begin_function
@@ -2206,7 +2322,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dock_new:  * @factory: a #GimpDialogFacotry  * @screen: the #GdkScreen the dock should appear on  *  * Returns a new #GimpDock in this %factory's context. We use a function  * pointer passed to this %factory's constructor instead of simply  * gimp_dock_new() because we may want different instances of  * #GimpDialogFactory create different subclasses of #GimpDock.  *  * Return value: the newly created #GimpDock.  **/
+comment|/**  * gimp_dialog_factory_dock_new:  * @factory: a #GimpDialogFacotry  * @screen:  the #GdkScreen the dock should appear on  *  * Returns a new #GimpDock in this %factory's context. We use a function  * pointer passed to this %factory's constructor instead of simply  * gimp_dock_new() because we may want different instances of  * #GimpDialogFactory create different subclasses of #GimpDock.  *  * Return value: the newly created #GimpDock.  **/
 end_comment
 
 begin_function

@@ -183,7 +183,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-brush-grid"
+literal|"gimp-brush-grid|gimp-brush-list"
 argument_list|,
 operator|-
 literal|1
@@ -266,7 +266,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-pattern-grid"
+literal|"gimp-pattern-grid|gimp-pattern-list"
 argument_list|,
 operator|-
 literal|1
@@ -349,7 +349,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-gradient-list"
+literal|"gimp-gradient-list|gimp-gradient-grid"
 argument_list|,
 operator|-
 literal|1

@@ -1027,7 +1027,7 @@ argument_list|(
 name|gimp_device_status_preview_clicked
 argument_list|)
 argument_list|,
-literal|"gimp-tool-list"
+literal|"gimp-tool-list|gimp-tool-grid"
 argument_list|)
 expr_stmt|;
 comment|/*  the foreground color  */
@@ -1242,7 +1242,7 @@ argument_list|(
 name|gimp_device_status_preview_clicked
 argument_list|)
 argument_list|,
-literal|"gimp-brush-grid"
+literal|"gimp-brush-grid|gimp-brush-list"
 argument_list|)
 expr_stmt|;
 comment|/*  the pattern  */
@@ -1329,7 +1329,7 @@ argument_list|(
 name|gimp_device_status_preview_clicked
 argument_list|)
 argument_list|,
-literal|"gimp-pattern-grid"
+literal|"gimp-pattern-grid|gimp-pattern-list"
 argument_list|)
 expr_stmt|;
 comment|/*  the gradient  */
@@ -1418,7 +1418,7 @@ argument_list|(
 name|gimp_device_status_preview_clicked
 argument_list|)
 argument_list|,
-literal|"gimp-gradient-list"
+literal|"gimp-gradient-list|gimp-gradient-list"
 argument_list|)
 expr_stmt|;
 name|gimp_device_status_update_entry
