@@ -639,7 +639,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b63f6b30103
+DECL|enum|__anon2781a91d0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -2938,12 +2938,19 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|GdkCursorType
-name|ctype
-decl_stmt|;
 name|Crop
 modifier|*
 name|crop
+decl_stmt|;
+name|GdkCursorType
+name|ctype
+init|=
+name|GIMP_CROSSHAIR_SMALL_CURSOR
+decl_stmt|;
+name|CursorModifier
+name|cmodifier
+init|=
+name|CURSOR_MODIFIER_NONE
 decl_stmt|;
 name|gdisp
 operator|=
@@ -2985,10 +2992,12 @@ operator|!=
 name|gdisp_ptr
 operator|)
 condition|)
+block|{
 name|ctype
 operator|=
-name|GDK_CROSS
+name|GIMP_CROSSHAIR_SMALL_CURSOR
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -3038,10 +3047,16 @@ operator|->
 name|srh
 argument_list|)
 condition|)
+block|{
 name|ctype
 operator|=
-name|GDK_TOP_LEFT_CORNER
+name|GIMP_MOUSE_CURSOR
 expr_stmt|;
+name|cmodifier
+operator|=
+name|CURSOR_MODIFIER_RESIZE
+expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -3091,10 +3106,16 @@ operator|->
 name|y2
 argument_list|)
 condition|)
+block|{
 name|ctype
 operator|=
-name|GDK_BOTTOM_RIGHT_CORNER
+name|GIMP_MOUSE_CURSOR
 expr_stmt|;
+name|cmodifier
+operator|=
+name|CURSOR_MODIFIER_RESIZE
+expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -3144,10 +3165,12 @@ operator|->
 name|y2
 argument_list|)
 condition|)
-name|ctype
+block|{
+name|cmodifier
 operator|=
-name|GDK_FLEUR
+name|CURSOR_MODIFIER_MOVE
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -3197,10 +3220,12 @@ operator|->
 name|srh
 argument_list|)
 condition|)
-name|ctype
+block|{
+name|cmodifier
 operator|=
-name|GDK_FLEUR
+name|CURSOR_MODIFIER_MOVE
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -3237,34 +3262,26 @@ operator|->
 name|y2
 condition|)
 block|{
-if|if
-condition|(
-name|crop_options
-operator|->
-name|type
-operator|==
-name|CROP_CROP
-condition|)
 name|ctype
 operator|=
-name|GDK_ICON
-expr_stmt|;
-else|else
-name|ctype
-operator|=
-name|GDK_SIZING
+name|GIMP_MOUSE_CURSOR
 expr_stmt|;
 block|}
-else|else
-name|ctype
-operator|=
-name|GDK_CROSS
-expr_stmt|;
 name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
 name|ctype
+argument_list|,
+name|CROP
+argument_list|,
+name|cmodifier
+argument_list|,
+name|crop_options
+operator|->
+name|type
+operator|!=
+name|CROP_CROP
 argument_list|)
 expr_stmt|;
 block|}
@@ -3288,11 +3305,6 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|int
-name|inc_x
-decl_stmt|,
-name|inc_y
-decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
@@ -3305,11 +3317,17 @@ name|Crop
 modifier|*
 name|crop
 decl_stmt|;
-name|int
+name|gint
+name|inc_x
+decl_stmt|,
+name|inc_y
+decl_stmt|;
+name|gint
 name|min_x
 decl_stmt|,
 name|min_y
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|max_x
 decl_stmt|,
 name|max_y
@@ -4281,9 +4299,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_crop ()
+DECL|function|tools_new_crop (void)
 name|tools_new_crop
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -4492,29 +4512,29 @@ end_function
 
 begin_function
 name|void
-DECL|function|crop_image (GImage * gimage,int x1,int y1,int x2,int y2,int layer_only,int crop_layers)
+DECL|function|crop_image (GImage * gimage,gint x1,gint y1,gint x2,gint y2,gboolean layer_only,gboolean crop_layers)
 name|crop_image
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|,
-name|int
+name|gboolean
 name|layer_only
 parameter_list|,
-name|int
+name|gboolean
 name|crop_layers
 parameter_list|)
 block|{
@@ -4538,12 +4558,12 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|lx1
 decl_stmt|,
 name|ly1
@@ -4552,12 +4572,12 @@ name|lx2
 decl_stmt|,
 name|ly2
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|int
+name|gint
 name|doff_x
 decl_stmt|,
 name|doff_y
@@ -6195,15 +6215,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_crop_callback (GtkWidget * w,gpointer client_data)
+DECL|function|crop_crop_callback (GtkWidget * widget,gpointer data)
 name|crop_crop_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|Tool
@@ -6285,15 +6305,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_resize_callback (GtkWidget * w,gpointer client_data)
+DECL|function|crop_resize_callback (GtkWidget * widget,gpointer data)
 name|crop_resize_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|Tool
@@ -6375,15 +6395,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_close_callback (GtkWidget * w,gpointer client_data)
+DECL|function|crop_close_callback (GtkWidget * widget,gpointer data)
 name|crop_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|Tool
@@ -6454,15 +6474,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_selection_callback (GtkWidget * w,gpointer client_data)
+DECL|function|crop_selection_callback (GtkWidget * widget,gpointer data)
 name|crop_selection_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|Tool
@@ -6669,15 +6689,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_automatic_callback (GtkWidget * w,gpointer client_data)
+DECL|function|crop_automatic_callback (GtkWidget * widget,gpointer data)
 name|crop_automatic_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|Tool
@@ -6724,7 +6744,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|gint
+name|gboolean
 name|has_alpha
 init|=
 name|FALSE
@@ -7565,7 +7585,7 @@ end_function
 begin_function
 specifier|static
 name|AutoCropType
-DECL|function|crop_guess_bgcolor (GtkObject * get_color_obj,GetColorFunc get_color_func,int bytes,int has_alpha,guchar * color,int x1,int x2,int y1,int y2)
+DECL|function|crop_guess_bgcolor (GtkObject * get_color_obj,GetColorFunc get_color_func,gint bytes,gboolean has_alpha,guchar * color,gint x1,gint x2,gint y1,gint y2)
 name|crop_guess_bgcolor
 parameter_list|(
 name|GtkObject
@@ -7575,26 +7595,26 @@ parameter_list|,
 name|GetColorFunc
 name|get_color_func
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|,
-name|int
+name|gboolean
 name|has_alpha
 parameter_list|,
 name|guchar
 modifier|*
 name|color
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|)
 block|{
@@ -7956,7 +7976,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|crop_colors_equal (guchar * col1,guchar * col2,int bytes)
+DECL|function|crop_colors_equal (guchar * col1,guchar * col2,gint bytes)
 name|crop_colors_equal
 parameter_list|(
 name|guchar
@@ -7967,16 +7987,16 @@ name|guchar
 modifier|*
 name|col2
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gboolean
 name|equal
 init|=
 name|TRUE
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|;
 for|for
@@ -8021,8 +8041,8 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|crop_colors_alpha (guchar * dummy,guchar * col,int bytes)
+name|gboolean
+DECL|function|crop_colors_alpha (guchar * dummy,guchar * col,gint bytes)
 name|crop_colors_alpha
 parameter_list|(
 name|guchar
@@ -8033,7 +8053,7 @@ name|guchar
 modifier|*
 name|col
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
@@ -8061,12 +8081,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_orig_changed (GtkWidget * w,gpointer data)
+DECL|function|crop_orig_changed (GtkWidget * widget,gpointer data)
 name|crop_orig_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -8084,10 +8104,10 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
+name|gint
 name|ox
 decl_stmt|;
-name|int
+name|gint
 name|oy
 decl_stmt|;
 name|tool
@@ -8131,7 +8151,7 @@ name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|0
@@ -8143,7 +8163,7 @@ name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|1
@@ -8245,12 +8265,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_size_changed (GtkWidget * w,gpointer data)
+DECL|function|crop_size_changed (GtkWidget * widget,gpointer data)
 name|crop_size_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -8268,10 +8288,10 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
+name|gint
 name|sx
 decl_stmt|;
-name|int
+name|gint
 name|sy
 decl_stmt|;
 name|tool
@@ -8315,7 +8335,7 @@ name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|0
@@ -8327,7 +8347,7 @@ name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|1
