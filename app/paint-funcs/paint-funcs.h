@@ -91,9 +91,6 @@ name|w
 parameter_list|,
 name|guint
 name|bytes
-parameter_list|,
-name|guint
-name|has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -2133,12 +2133,12 @@ name|srcPR
 operator|.
 name|data
 operator|=
-operator|(
 name|temp_buf_data
 argument_list|(
 name|src
 argument_list|)
 operator|+
+operator|(
 name|y1
 operator|*
 name|srcPR
@@ -2176,12 +2176,12 @@ name|destPR
 operator|.
 name|data
 operator|=
-operator|(
 name|temp_buf_data
 argument_list|(
 name|new
 argument_list|)
 operator|+
+operator|(
 name|dest_y
 operator|*
 name|destPR

@@ -589,7 +589,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|blend_pixels (const guchar * src1,const guchar * src2,guchar * dest,guchar blend,guint w,guint bytes,guint has_alpha)
+DECL|function|blend_pixels (const guchar * src1,const guchar * src2,guchar * dest,guchar blend,guint w,guint bytes)
 name|blend_pixels
 parameter_list|(
 specifier|const
@@ -614,9 +614,6 @@ name|w
 parameter_list|,
 name|guint
 name|bytes
-parameter_list|,
-name|guint
-name|has_alpha
 parameter_list|)
 block|{
 name|guint

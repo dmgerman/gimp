@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aad1c460103
+DECL|enum|__anon2bce5c710103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -9048,8 +9048,6 @@ argument_list|,
 name|src1
 operator|->
 name|bytes
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|s1
