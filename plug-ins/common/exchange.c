@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c36602b0108
+DECL|struct|__anon297a124e0108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -3628,7 +3628,12 @@ name|guchar
 operator|)
 name|new_blue
 expr_stmt|;
-comment|/* copy rest (most likely alpha-channel) */
+comment|/* copy rest (ie the alpha-channel).  But, only if we're not 	   * previewing, otherwise we don't have room for the alpha 	   * and overrun the buffer, causing a segfault on the 	   * g_free() at the bottom of this function.  Maybe we should 	   * convert the alpha and blend in the chequerboard pattern, 	   * but I'll leave that as an excercise for the reader... */
+if|if
+condition|(
+operator|!
+name|do_preview
+condition|)
 for|for
 control|(
 name|rest
