@@ -96,6 +96,14 @@ name|RESPONSE_ABOUT
 value|1
 end_define
 
+begin_define
+DECL|macro|ZOOM_UNDO_SIZE
+define|#
+directive|define
+name|ZOOM_UNDO_SIZE
+value|100
+end_define
+
 begin_decl_stmt
 DECL|variable|gradient_samples
 specifier|static
@@ -174,7 +182,7 @@ specifier|static
 name|explorer_vals_t
 name|zooms
 index|[
-literal|100
+name|ZOOM_UNDO_SIZE
 index|]
 decl_stmt|;
 end_decl_stmt
@@ -185,7 +193,7 @@ specifier|static
 name|gint
 name|zoomindex
 init|=
-literal|1
+literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -195,7 +203,7 @@ specifier|static
 name|gint
 name|zoommax
 init|=
-literal|1
+literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -595,7 +603,7 @@ if|if
 condition|(
 name|zoomindex
 operator|>
-literal|1
+literal|0
 condition|)
 block|{
 name|zooms
@@ -696,7 +704,9 @@ if|if
 condition|(
 name|zoomindex
 operator|<
-name|zoommax
+name|ZOOM_UNDO_SIZE
+operator|-
+literal|1
 condition|)
 block|{
 name|zooms
@@ -710,6 +720,10 @@ name|zoomindex
 operator|++
 expr_stmt|;
 block|}
+name|zoommax
+operator|=
+name|zoomindex
+expr_stmt|;
 name|xdifferenz
 operator|=
 name|wvals
@@ -813,7 +827,9 @@ if|if
 condition|(
 name|zoomindex
 operator|<
-name|zoommax
+name|ZOOM_UNDO_SIZE
+operator|-
+literal|1
 condition|)
 block|{
 name|zooms
@@ -827,6 +843,10 @@ name|zoomindex
 operator|++
 expr_stmt|;
 block|}
+name|zoommax
+operator|=
+name|zoomindex
+expr_stmt|;
 name|xdifferenz
 operator|=
 name|wvals
@@ -1867,6 +1887,15 @@ name|preview_height
 operator|)
 operator|)
 expr_stmt|;
+if|if
+condition|(
+name|zoomindex
+operator|<
+name|ZOOM_UNDO_SIZE
+operator|-
+literal|1
+condition|)
+block|{
 name|zooms
 index|[
 name|zoomindex
@@ -1877,16 +1906,7 @@ expr_stmt|;
 name|zoomindex
 operator|++
 expr_stmt|;
-if|if
-condition|(
-name|zoomindex
-operator|>
-literal|99
-condition|)
-name|zoomindex
-operator|=
-literal|99
-expr_stmt|;
+block|}
 name|zoommax
 operator|=
 name|zoomindex
