@@ -130,6 +130,11 @@ define|#
 directive|define
 name|GIMP_STOCK_COLOR_PICKER_WHITE
 value|"gimp-color-picker-white"
+DECL|macro|GIMP_STOCK_COLOR_TRIANGLE
+define|#
+directive|define
+name|GIMP_STOCK_COLOR_TRIANGLE
+value|"gimp-color-triangle"
 DECL|macro|GIMP_STOCK_CHAR_PICKER
 define|#
 directive|define

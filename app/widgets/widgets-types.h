@@ -214,6 +214,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpColorEditor
+typedef|typedef
+name|struct
+name|_GimpColorEditor
+name|GimpColorEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColormapEditor
 typedef|typedef
 name|struct

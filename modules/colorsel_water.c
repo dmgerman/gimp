@@ -644,6 +644,12 @@ literal|"watercolor.html"
 expr_stmt|;
 name|selector_class
 operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+expr_stmt|;
+name|selector_class
+operator|->
 name|set_color
 operator|=
 name|colorsel_water_set_color

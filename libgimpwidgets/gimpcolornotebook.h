@@ -149,6 +149,24 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_color_notebook_set_has_page
+parameter_list|(
+name|GimpColorNotebook
+modifier|*
+name|notebook
+parameter_list|,
+name|GType
+name|page_type
+parameter_list|,
+name|gboolean
+name|has_page
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
