@@ -284,6 +284,33 @@ value|"\tpmullw    %%"#opr2", %%"#opr1"; " \                   "\tpaddw     %%"#
 end_define
 
 begin_typedef
+DECL|typedef|uint8
+typedef|typedef
+name|unsigned
+name|char
+name|uint8
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|uint16
+typedef|typedef
+name|unsigned
+name|short
+name|uint16
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|uint32
+typedef|typedef
+name|unsigned
+name|long
+name|uint32
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|uint64
 typedef|typedef
 name|unsigned
@@ -294,7 +321,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27c8d4130108
+DECL|struct|__anon2b27a7b40108
 DECL|member|__uint64
 DECL|typedef|uint128
 typedef|typedef

@@ -430,6 +430,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|extern
+name|void
+name|gimp_composite_addition_va8_va8_va8_mmx
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+name|ctx
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -524,7 +524,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"addition failed\n"
+literal|"addition_rgba8_rgba8_rgba8 failed\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -535,7 +535,7 @@ return|;
 block|}
 name|gimp_composite_regression_timer_report
 argument_list|(
-literal|"addition"
+literal|"addition_rgba8_rgba8_rgba8"
 argument_list|,
 name|ft0
 argument_list|,
@@ -674,7 +674,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"darken failed\n"
+literal|"darken_rgba8_rgba8_rgba8 failed\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -685,7 +685,7 @@ return|;
 block|}
 name|gimp_composite_regression_timer_report
 argument_list|(
-literal|"darken"
+literal|"darken_rgba8_rgba8_rgba8"
 argument_list|,
 name|ft0
 argument_list|,
@@ -824,7 +824,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"difference failed\n"
+literal|"difference_rgba8_rgba8_rgba8 failed\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -835,7 +835,7 @@ return|;
 block|}
 name|gimp_composite_regression_timer_report
 argument_list|(
-literal|"difference"
+literal|"difference_rgba8_rgba8_rgba8"
 argument_list|,
 name|ft0
 argument_list|,
@@ -974,7 +974,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"grain_extract failed\n"
+literal|"grain_extract_rgba8_rgba8_rgba8 failed\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -985,7 +985,7 @@ return|;
 block|}
 name|gimp_composite_regression_timer_report
 argument_list|(
-literal|"grain_extract"
+literal|"grain_extract_rgba8_rgba8_rgba8"
 argument_list|,
 name|ft0
 argument_list|,
@@ -1124,7 +1124,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"lighten failed\n"
+literal|"lighten_rgba8_rgba8_rgba8 failed\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1135,7 +1135,7 @@ return|;
 block|}
 name|gimp_composite_regression_timer_report
 argument_list|(
-literal|"lighten"
+literal|"lighten_rgba8_rgba8_rgba8"
 argument_list|,
 name|ft0
 argument_list|,
@@ -1274,7 +1274,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"subtract failed\n"
+literal|"subtract_rgba8_rgba8_rgba8 failed\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1285,7 +1285,7 @@ return|;
 block|}
 name|gimp_composite_regression_timer_report
 argument_list|(
-literal|"subtract"
+literal|"subtract_rgba8_rgba8_rgba8"
 argument_list|,
 name|ft0
 argument_list|,
@@ -1424,7 +1424,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"swap failed\n"
+literal|"swap_rgba8_rgba8_rgba8 failed\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1435,7 +1435,7 @@ return|;
 block|}
 name|gimp_composite_regression_timer_report
 argument_list|(
-literal|"swap"
+literal|"swap_rgba8_rgba8_rgba8"
 argument_list|,
 name|ft0
 argument_list|,

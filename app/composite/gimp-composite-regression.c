@@ -1664,7 +1664,7 @@ name|t1
 parameter_list|,
 name|t2
 parameter_list|)
-value|printf("%-17s %17.7f %17.7f %17.7f%c\n", name, tv_to_secs(t1), tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2)> 1.0 ? ' ' : '*');
+value|printf("%-32s %10.4f %10.4f %10.4f%c\n", name, tv_to_secs(t1), tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2)> 1.0 ? ' ' : '*');
 end_define
 
 begin_comment
@@ -1689,7 +1689,7 @@ parameter_list|)
 block|{
 name|printf
 argument_list|(
-literal|"%-17s %17.7f %17.7f %17.7f%c\n"
+literal|"%-32s %10.4f %10.4f %10.4f%c\n"
 argument_list|,
 name|name
 argument_list|,
