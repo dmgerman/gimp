@@ -772,7 +772,7 @@ name|scale_bits
 block|,
 name|N_
 argument_list|(
-literal|"Transform the layer or selection"
+literal|"Rotation, scaling, shearing, perspective."
 argument_list|)
 block|,
 literal|"tools/transform.html"
