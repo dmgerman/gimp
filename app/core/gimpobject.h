@@ -42,6 +42,17 @@ value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_OBJECT, GimpObject))
 end_define
 
 begin_define
+DECL|macro|GIMP_OBJECT_CLASS (klass)
+define|#
+directive|define
+name|GIMP_OBJECT_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_OBJECT, GimpObjectClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_OBJECT (obj)
 define|#
 directive|define
@@ -53,14 +64,14 @@ value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_OBJECT))
 end_define
 
 begin_define
-DECL|macro|GIMP_OBJECT_CLASS (klass)
+DECL|macro|GIMP_IS_OBJECT_CLASS (klass)
 define|#
 directive|define
-name|GIMP_OBJECT_CLASS
+name|GIMP_IS_OBJECT_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_OBJECT, GimpObjectClass))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_OBJECT))
 end_define
 
 begin_typedef
@@ -81,6 +92,11 @@ DECL|member|object
 name|GtkObject
 name|object
 decl_stmt|;
+DECL|member|name
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -94,6 +110,18 @@ DECL|member|parent_class
 name|GtkObjectClass
 name|parent_class
 decl_stmt|;
+DECL|member|name_changed
+name|void
+function_decl|(
+modifier|*
+name|name_changed
+function_decl|)
+parameter_list|(
+name|GimpObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -103,6 +131,47 @@ name|GtkType
 name|gimp_object_get_type
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_object_set_name
+parameter_list|(
+name|GimpObject
+modifier|*
+name|object
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_object_get_name
+parameter_list|(
+specifier|const
+name|GimpObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_object_name_changed
+parameter_list|(
+name|GimpObject
+modifier|*
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpsignal.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -143,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a97d1a80103
+DECL|enum|__anon292e740f0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
