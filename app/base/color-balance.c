@@ -968,7 +968,7 @@ operator|->
 name|preserve_luminosity
 condition|)
 block|{
-name|gimp_rgb_to_hls_int
+name|gimp_rgb_to_hsl_int
 argument_list|(
 operator|&
 name|r_n
@@ -980,7 +980,7 @@ operator|&
 name|b_n
 argument_list|)
 expr_stmt|;
-name|g_n
+name|b_n
 operator|=
 name|gimp_rgb_to_l_int
 argument_list|(
@@ -991,7 +991,7 @@ argument_list|,
 name|b
 argument_list|)
 expr_stmt|;
-name|gimp_hls_to_rgb_int
+name|gimp_hsl_to_rgb_int
 argument_list|(
 operator|&
 name|r_n

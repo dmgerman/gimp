@@ -267,7 +267,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_rgb_to_hls_int
+name|gimp_rgb_to_hsl_int
 parameter_list|(
 name|gint
 modifier|*
@@ -277,12 +277,12 @@ parameter_list|,
 name|gint
 modifier|*
 name|green
-comment|/* returns lightness  */
+comment|/* returns saturation */
 parameter_list|,
 name|gint
 modifier|*
 name|blue
-comment|/* returns saturation */
+comment|/* returns lightness  */
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -305,7 +305,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_hls_to_rgb_int
+name|gimp_hsl_to_rgb_int
 parameter_list|(
 name|gint
 modifier|*
@@ -314,12 +314,12 @@ comment|/* returns red        */
 parameter_list|,
 name|gint
 modifier|*
-name|lightness
+name|saturation
 comment|/* returns green      */
 parameter_list|,
 name|gint
 modifier|*
-name|saturation
+name|lightness
 comment|/* returns blue       */
 parameter_list|)
 function_decl|;

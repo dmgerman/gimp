@@ -2695,7 +2695,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-name|gimp_rgb_to_hls_int
+name|gimp_rgb_to_hsl_int
 argument_list|(
 operator|&
 name|r1
@@ -2707,7 +2707,7 @@ operator|&
 name|b1
 argument_list|)
 expr_stmt|;
-name|gimp_rgb_to_hls_int
+name|gimp_rgb_to_hsl_int
 argument_list|(
 operator|&
 name|r2
@@ -2724,12 +2724,12 @@ name|r1
 operator|=
 name|r2
 expr_stmt|;
-name|b1
+name|g1
 operator|=
-name|b2
+name|g2
 expr_stmt|;
 comment|/*  set the destination  */
-name|gimp_hls_to_rgb_int
+name|gimp_hsl_to_rgb_int
 argument_list|(
 operator|&
 name|r1

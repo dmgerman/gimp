@@ -587,7 +587,7 @@ index|[
 name|BLUE_PIX
 index|]
 expr_stmt|;
-name|gimp_rgb_to_hls_int
+name|gimp_rgb_to_hsl_int
 argument_list|(
 operator|&
 name|r
@@ -699,7 +699,7 @@ name|g
 operator|=
 name|hs
 operator|->
-name|lightness_transfer
+name|saturation_transfer
 index|[
 name|hue
 index|]
@@ -711,7 +711,7 @@ name|b
 operator|=
 name|hs
 operator|->
-name|saturation_transfer
+name|lightness_transfer
 index|[
 name|hue
 index|]
@@ -719,7 +719,7 @@ index|[
 name|b
 index|]
 expr_stmt|;
-name|gimp_hls_to_rgb_int
+name|gimp_hsl_to_rgb_int
 argument_list|(
 operator|&
 name|r

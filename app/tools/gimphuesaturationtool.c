@@ -965,7 +965,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon28ac418c0108
+DECL|struct|__anon2b1b791f0108
 block|{
 DECL|member|label
 specifier|const
@@ -2246,7 +2246,7 @@ index|[
 name|BLUE_PIX
 index|]
 expr_stmt|;
-name|gimp_rgb_to_hls_int
+name|gimp_rgb_to_hsl_int
 argument_list|(
 name|rgb
 argument_list|,
@@ -2288,7 +2288,7 @@ name|hs_tool
 operator|->
 name|hue_saturation
 operator|->
-name|lightness_transfer
+name|saturation_transfer
 index|[
 name|i
 index|]
@@ -2308,7 +2308,7 @@ name|hs_tool
 operator|->
 name|hue_saturation
 operator|->
-name|saturation_transfer
+name|lightness_transfer
 index|[
 name|i
 index|]
@@ -2319,7 +2319,7 @@ name|BLUE_PIX
 index|]
 index|]
 expr_stmt|;
-name|gimp_hls_to_rgb_int
+name|gimp_hsl_to_rgb_int
 argument_list|(
 name|rgb
 argument_list|,

@@ -2593,13 +2593,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_to_hls_int:  * @red: Red channel, returns Hue channel   * @green: Green channel, returns Lightness channel  * @blue: Blue channel, returns Saturation channel  *   * The arguments are pointers to int representing channel values in the   * RGB colorspace, and the values pointed to are all in the range [0, 255].  *  * The function changes the arguments to point to the corresponding HLS   * value with the values pointed to in the following ranges:  H [0, 360],  * L [0, 255], S [0, 255].  **/
+comment|/**  * gimp_rgb_to_hsl_int:  * @red: Red channel, returns Hue channel   * @green: Green channel, returns Lightness channel  * @blue: Blue channel, returns Saturation channel  *   * The arguments are pointers to int representing channel values in the   * RGB colorspace, and the values pointed to are all in the range [0, 255].  *  * The function changes the arguments to point to the corresponding HLS   * value with the values pointed to in the following ranges:  H [0, 360],  * L [0, 255], S [0, 255].  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_rgb_to_hls_int (gint * red,gint * green,gint * blue)
-name|gimp_rgb_to_hls_int
+DECL|function|gimp_rgb_to_hsl_int (gint * red,gint * green,gint * blue)
+name|gimp_rgb_to_hsl_int
 parameter_list|(
 name|gint
 modifier|*
@@ -2624,9 +2624,9 @@ decl_stmt|;
 name|gdouble
 name|h
 decl_stmt|,
-name|l
-decl_stmt|,
 name|s
+decl_stmt|,
+name|l
 decl_stmt|;
 name|gint
 name|min
@@ -2877,7 +2877,7 @@ name|green
 operator|=
 name|ROUND
 argument_list|(
-name|l
+name|s
 argument_list|)
 expr_stmt|;
 operator|*
@@ -2885,14 +2885,14 @@ name|blue
 operator|=
 name|ROUND
 argument_list|(
-name|s
+name|l
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_to_l_int:  * @red: Red channel  * @green: Green channel  * @blue: Blue channel  *   * Calculates the luminance value of an RGB triplet with the formula   * L = (max(R, G, B) + min (R, G, B)) / 2  *   * Return value: Luminance vaue corresponding to the input RGB value  **/
+comment|/**  * gimp_rgb_to_l_int:  * @red: Red channel  * @green: Green channel  * @blue: Blue channel  *   * Calculates the lightness value of an RGB triplet with the formula   * L = (max(R, G, B) + min (R, G, B)) / 2  *   * Return value: Luminance vaue corresponding to the input RGB value  **/
 end_comment
 
 begin_function
@@ -2980,8 +2980,8 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_hls_value (gdouble n1,gdouble n2,gdouble hue)
-name|gimp_hls_value
+DECL|function|gimp_hsl_value (gdouble n1,gdouble n2,gdouble hue)
+name|gimp_hsl_value
 parameter_list|(
 name|gdouble
 name|n1
@@ -3094,13 +3094,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_hls_to_rgb_int:  * @hue: Hue channel, returns Red channel  * @lightness: Lightness channel, returns Green channel  * @saturation: Saturation channel, returns Blue channel  *   * The arguments are pointers to int, with the values pointed to in the   * following ranges:  H [0, 360], L [0, 255], S [0, 255].  *  * The function changes the arguments to point to the RGB value   * corresponding, with the returned values all in the range [0, 255].  **/
+comment|/**  * gimp_hsl_to_rgb_int:  * @hue: Hue channel, returns Red channel  * @saturation: Saturation channel, returns Green channel  * @lightness: Lightness channel, returns Blue channel  *   * The arguments are pointers to int, with the values pointed to in the   * following ranges:  H [0, 360], L [0, 255], S [0, 255].  *  * The function changes the arguments to point to the RGB value   * corresponding, with the returned values all in the range [0, 255].  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_hls_to_rgb_int (gint * hue,gint * lightness,gint * saturation)
-name|gimp_hls_to_rgb_int
+DECL|function|gimp_hsl_to_rgb_int (gint * hue,gint * saturation,gint * lightness)
+name|gimp_hsl_to_rgb_int
 parameter_list|(
 name|gint
 modifier|*
@@ -3108,34 +3108,34 @@ name|hue
 parameter_list|,
 name|gint
 modifier|*
-name|lightness
+name|saturation
 parameter_list|,
 name|gint
 modifier|*
-name|saturation
+name|lightness
 parameter_list|)
 block|{
 name|gdouble
 name|h
 decl_stmt|,
-name|l
-decl_stmt|,
 name|s
+decl_stmt|,
+name|l
 decl_stmt|;
 name|h
 operator|=
 operator|*
 name|hue
 expr_stmt|;
-name|l
-operator|=
-operator|*
-name|lightness
-expr_stmt|;
 name|s
 operator|=
 operator|*
 name|saturation
+expr_stmt|;
+name|l
+operator|=
+operator|*
+name|lightness
 expr_stmt|;
 if|if
 condition|(
@@ -3221,7 +3221,7 @@ comment|/*  chromatic case  */
 operator|*
 name|hue
 operator|=
-name|gimp_hls_value
+name|gimp_hsl_value
 argument_list|(
 name|m1
 argument_list|,
@@ -3233,9 +3233,9 @@ literal|85
 argument_list|)
 expr_stmt|;
 operator|*
-name|lightness
+name|saturation
 operator|=
-name|gimp_hls_value
+name|gimp_hsl_value
 argument_list|(
 name|m1
 argument_list|,
@@ -3245,9 +3245,9 @@ name|h
 argument_list|)
 expr_stmt|;
 operator|*
-name|saturation
+name|lightness
 operator|=
-name|gimp_hls_value
+name|gimp_hsl_value
 argument_list|(
 name|m1
 argument_list|,
