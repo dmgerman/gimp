@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 1.1.13a;  1999/11/22  hof: first release  */
+comment|/* revision history  * 1.1.14a;  1999/11/22  hof: fixed gcc warning (too many arguments for format)  * 1.1.13a;  1999/11/22  hof: first release  */
 end_comment
 
 begin_comment
@@ -2530,7 +2530,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-comment|/* check overwrire if Destination frame already exsts */
+comment|/* check overwrite if Destination frame already exsts */
 name|l_overwrite_mode
 operator|=
 name|p_overwrite_dialog
@@ -2553,7 +2553,7 @@ name|global_errlist
 argument_list|,
 name|_
 argument_list|(
-literal|"frames are not extracted, because overwrite was cancelled"
+literal|"frames are not extracted, because overwrite of %s was cancelled"
 argument_list|)
 argument_list|,
 name|l_dst_frame

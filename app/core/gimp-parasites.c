@@ -180,9 +180,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|list_func (char * key,Parasite * p,char *** cur)
 specifier|static
 name|void
+DECL|function|list_func (char * key,Parasite * p,char *** cur)
 name|list_func
 parameter_list|(
 name|char
@@ -231,7 +231,7 @@ modifier|*
 name|count
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|list
@@ -289,9 +289,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_func (char * key,Parasite * p,FILE * fp)
 specifier|static
 name|void
+DECL|function|save_func (char * key,Parasite * p,FILE * fp)
 name|save_func
 parameter_list|(
 name|char
@@ -546,9 +546,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_parasiterc_load ()
+DECL|function|gimp_parasiterc_load (void)
 name|gimp_parasiterc_load
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|char
 modifier|*

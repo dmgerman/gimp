@@ -16,7 +16,7 @@ comment|/******************************************************************* ***
 end_comment
 
 begin_comment
-comment|/*  * Changelog:  *  * 1999/11/25 v1.1.11.b: Initial release. [hof]   *                       (based on plug-ins/common/mpeg.c v1.1 99/05/31 by Adam D. Moss)  */
+comment|/*  * Changelog:  *  * 2000/01/06 v1.1.14a:  hof: save thumbnails .xvpics p_gimp_file_save_thumbnail  *                       store framerate in video_info file  * 1999/11/25 v1.1.11.b: Initial release. [hof]   *                       (based on plug-ins/common/mpeg.c v1.1 99/05/31 by Adam D. Moss)  */
 end_comment
 
 begin_comment
@@ -118,6 +118,12 @@ begin_include
 include|#
 directive|include
 file|"gap_arr_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gap_pdb_calls.h"
 end_include
 
 begin_comment
@@ -502,7 +508,7 @@ literal|"Wolfgang Hofer (hof@hotbot.com)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
-literal|"1999/11/18"
+literal|"2000/01/01"
 argument_list|,
 name|N_
 argument_list|(
@@ -540,7 +546,7 @@ literal|"Wolfgang Hofer (hof@hotbot.com)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
-literal|"1999/11/18"
+literal|"2000/01/01"
 argument_list|,
 name|N_
 argument_list|(
@@ -1307,13 +1313,38 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|MPEG_frame_period_ms (gint mpeg_rate_code)
+DECL|function|MPEG_frame_period_ms (gint mpeg_rate_code,char * basename)
 name|MPEG_frame_period_ms
 parameter_list|(
 name|gint
 name|mpeg_rate_code
+parameter_list|,
+name|char
+modifier|*
+name|basename
 parameter_list|)
 block|{
+name|gint
+name|l_rc
+decl_stmt|;
+name|gdouble
+name|l_framerate
+decl_stmt|;
+name|t_video_info
+modifier|*
+name|vin_ptr
+decl_stmt|;
+name|vin_ptr
+operator|=
+name|p_get_video_info
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
+name|l_rc
+operator|=
+literal|0
+expr_stmt|;
 switch|switch
 condition|(
 name|mpeg_rate_code
@@ -1322,59 +1353,99 @@ block|{
 case|case
 literal|1
 case|:
-return|return
+name|l_rc
+operator|=
 literal|44
-return|;
-comment|/* ~23 fps */
+expr_stmt|;
+name|l_framerate
+operator|=
+literal|23.976
+expr_stmt|;
+break|break;
 case|case
 literal|2
 case|:
-return|return
+name|l_rc
+operator|=
 literal|42
-return|;
-comment|/*  24 fps */
+expr_stmt|;
+name|l_framerate
+operator|=
+literal|24.0
+expr_stmt|;
+break|break;
 case|case
 literal|3
 case|:
-return|return
+name|l_rc
+operator|=
 literal|40
-return|;
-comment|/*  25 fps */
+expr_stmt|;
+name|l_framerate
+operator|=
+literal|25.0
+expr_stmt|;
+break|break;
 case|case
 literal|4
 case|:
-return|return
+name|l_rc
+operator|=
 literal|33
-return|;
-comment|/* ~30 fps */
+expr_stmt|;
+name|l_framerate
+operator|=
+literal|29.97
+expr_stmt|;
+break|break;
 case|case
 literal|5
 case|:
-return|return
+name|l_rc
+operator|=
 literal|33
-return|;
-comment|/*  30 fps */
+expr_stmt|;
+name|l_framerate
+operator|=
+literal|30.0
+expr_stmt|;
+break|break;
 case|case
 literal|6
 case|:
-return|return
+name|l_rc
+operator|=
 literal|20
-return|;
-comment|/*  50 fps */
+expr_stmt|;
+name|l_framerate
+operator|=
+literal|50.0
+expr_stmt|;
+break|break;
 case|case
 literal|7
 case|:
-return|return
+name|l_rc
+operator|=
 literal|17
-return|;
-comment|/* ~60 fps */
+expr_stmt|;
+name|l_framerate
+operator|=
+literal|59.94
+expr_stmt|;
+break|break;
 case|case
 literal|8
 case|:
-return|return
+name|l_rc
+operator|=
 literal|17
-return|;
-comment|/*  60 fps */
+expr_stmt|;
+name|l_framerate
+operator|=
+literal|60.0
+expr_stmt|;
+break|break;
 case|case
 literal|0
 case|:
@@ -1385,10 +1456,43 @@ argument_list|(
 literal|"mpeg: warning - this MPEG has undefined timing.\n"
 argument_list|)
 expr_stmt|;
-return|return
-literal|0
-return|;
+break|break;
 block|}
+if|if
+condition|(
+name|vin_ptr
+condition|)
+block|{
+if|if
+condition|(
+name|l_rc
+operator|!=
+literal|0
+condition|)
+name|vin_ptr
+operator|->
+name|framerate
+operator|=
+name|l_framerate
+expr_stmt|;
+name|p_set_video_info
+argument_list|(
+name|vin_ptr
+argument_list|,
+name|basename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|vin_ptr
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+operator|(
+name|l_rc
+operator|)
+return|;
 block|}
 end_function
 
@@ -1676,9 +1780,11 @@ argument_list|(
 name|img
 operator|.
 name|PictureRate
+argument_list|,
+name|basename
 argument_list|)
 expr_stmt|;
-comment|/*   printf("<%d : %d>  %dx%d - d%d - bmp%d - ps%d - s%d\n", 	 img.PictureRate, MPEG_frame_period_ms(img.PictureRate), 	 img.Width,img.Height,img.Depth,img.BitmapPad,img.PixelSize,img.Size); 	 */
+comment|/*   printf("<%d : %d>  %dx%d - d%d - bmp%d - ps%d - s%d\n", 	 img.PictureRate, delay, 	 img.Width,img.Height,img.Depth,img.BitmapPad,img.PixelSize,img.Size); 	 */
 if|if
 condition|(
 name|img
@@ -2178,6 +2284,13 @@ name|framename
 argument_list|,
 comment|/* raw name ? */
 name|PARAM_END
+argument_list|)
+expr_stmt|;
+name|p_gimp_file_save_thumbnail
+argument_list|(
+name|image_ID
+argument_list|,
+name|framename
 argument_list|)
 expr_stmt|;
 block|}

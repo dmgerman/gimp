@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c29cb0103
+DECL|enum|__anon2ac1d49c0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -231,9 +231,11 @@ end_function
 
 begin_function
 name|GtkType
-DECL|function|parasite_list_get_type ()
+DECL|function|parasite_list_get_type (void)
 name|parasite_list_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GtkType
@@ -303,9 +305,11 @@ end_function
 begin_function
 name|ParasiteList
 modifier|*
-DECL|function|parasite_list_new ()
+DECL|function|parasite_list_new (void)
 name|parasite_list_new
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|ParasiteList
 modifier|*
@@ -747,9 +751,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppcount_func (char * key,Parasite * p,int * count)
 specifier|static
 name|void
+DECL|function|ppcount_func (char * key,Parasite * p,int * count)
 name|ppcount_func
 parameter_list|(
 name|char

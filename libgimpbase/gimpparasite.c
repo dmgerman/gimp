@@ -84,9 +84,9 @@ name|DEBUG
 end_ifdef
 
 begin_function
-DECL|function|parasite_print (Parasite * p)
 specifier|static
 name|void
+DECL|function|parasite_print (Parasite * p)
 name|parasite_print
 parameter_list|(
 name|Parasite
@@ -701,9 +701,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|parasite_data (const Parasite * p)
 name|void
 modifier|*
+DECL|function|parasite_data (const Parasite * p)
 name|parasite_data
 parameter_list|(
 specifier|const
@@ -728,8 +728,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|parasite_data_size (const Parasite * p)
 name|long
+DECL|function|parasite_data_size (const Parasite * p)
 name|parasite_data_size
 parameter_list|(
 specifier|const
