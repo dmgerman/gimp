@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* curve_bend plugin for the GIMP (tested with GIMP 1.1.9, requires gtk+ 1.2) */
+comment|/* curve_bend plugin for the GIMP (tested with GIMP 1.1.17, requires gtk+ 1.2) */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (1999/09/13)  v1.01  hof: PDB-calls updated for gimp 1.1.9  *  (1999/05/10)  v1.0   hof: first public release  *  (1999/04/23)  v0.0   hof: coding started,  *                            splines and dialog parts are similar to curves.c  */
+comment|/* Revision history  *  (2000/02/16)  v1.1.17 hof: undo bugfix (#6012)  *                             don't call gimp_undo_push_group_end   *                             after gimp_displays_flush  *  (1999/09/13)  v1.01  hof: PDB-calls updated for gimp 1.1.9  *  (1999/05/10)  v1.0   hof: first public release  *  (1999/04/23)  v0.0   hof: coding started,  *                            splines and dialog parts are similar to curves.c  */
 end_comment
 
 begin_include
@@ -76,7 +76,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v1.01 (1999/09/13)"
+value|"v1.1.17 (2000/02/16)"
 end_define
 
 begin_define
@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c401c820108
+DECL|struct|__anon2aeaf23a0108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c401c820208
+DECL|struct|__anon2aeaf23a0208
 block|{
 DECL|member|y
 name|gint32
@@ -4028,6 +4028,11 @@ name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 comment|/* dialog ended with cancel button */
 block|}
+name|gimp_undo_push_group_end
+argument_list|(
+name|l_image_id
+argument_list|)
+expr_stmt|;
 comment|/* If run mode is interactive, flush displays, else (script) don't        do it, as the screen updates would make the scripts slow */
 if|if
 condition|(
@@ -4037,6 +4042,14 @@ name|RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_undo_push_group_end
+argument_list|(
+name|l_image_id
+argument_list|)
 expr_stmt|;
 block|}
 name|values
@@ -4062,11 +4075,6 @@ operator|=
 name|l_bent_layer_id
 expr_stmt|;
 comment|/* return the id of handled layer */
-name|gimp_undo_push_group_end
-argument_list|(
-name|l_image_id
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gb_debug
@@ -18522,6 +18530,30 @@ argument_list|(
 name|original_drawable
 operator|->
 name|id
+argument_list|)
+expr_stmt|;
+comment|/* set layer invisible and dummyname and      * add at top of the image while working     * (for the case of undo the gimp must know,     *  that the layer was part of the image)     */
+name|gimp_image_add_layer
+argument_list|(
+name|l_image_id
+argument_list|,
+name|l_tmp_layer_id
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_layer_set_visible
+argument_list|(
+name|l_tmp_layer_id
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_layer_set_name
+argument_list|(
+name|l_tmp_layer_id
+argument_list|,
+literal|"curve_bend_dummylayer"
 argument_list|)
 expr_stmt|;
 if|if
