@@ -142,6 +142,11 @@ name|GtkWidget
 modifier|*
 name|memsize_label
 decl_stmt|;
+DECL|member|pixel_label
+name|GtkWidget
+modifier|*
+name|pixel_label
+decl_stmt|;
 DECL|member|resolution_se
 name|GtkWidget
 modifier|*
