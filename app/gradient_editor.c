@@ -299,7 +299,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d97e8c0103
+DECL|enum|__anon2a2a18640103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d97e8c0203
+DECL|enum|__anon2a2a18640203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -2596,9 +2596,9 @@ name|gradient_editor
 operator|->
 name|name
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)

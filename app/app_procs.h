@@ -21,10 +21,12 @@ name|void
 name|gimp_init
 parameter_list|(
 name|gint
+name|gimp_argc
 parameter_list|,
 name|gchar
 modifier|*
 modifier|*
+name|gimp_argv
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -40,9 +42,30 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|app_init_update_status
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|label1
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|label2
+parameter_list|,
+name|gdouble
+name|percentage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|app_exit
 parameter_list|(
 name|gboolean
+name|kill_it
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -57,28 +80,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|app_exit_finish_done
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|app_init_update_status
-parameter_list|(
-name|gchar
-modifier|*
-name|label1val
-parameter_list|,
-name|gchar
-modifier|*
-name|label2val
-parameter_list|,
-name|gfloat
-name|pct_progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -89,7 +94,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* APP_PROCS_H */
+comment|/* __APP_PROCS_H__ */
 end_comment
 
 end_unit

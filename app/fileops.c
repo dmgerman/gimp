@@ -4639,7 +4639,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|file_save_thumbnail (GimpImage * gimage,const char * full_source_filename,TempBuf * tempbuf)
+DECL|function|file_save_thumbnail (GimpImage * gimage,const gchar * full_source_filename,TempBuf * tempbuf)
 name|file_save_thumbnail
 parameter_list|(
 name|GimpImage
@@ -4647,7 +4647,7 @@ modifier|*
 name|gimage
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|full_source_filename
 parameter_list|,

@@ -940,7 +940,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/Brushe List..."
+literal|"/File/Test Dialogs/Brush List..."
 block|,
 name|NULL
 block|,
@@ -1022,7 +1022,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/Brushe Grid..."
+literal|"/File/Test Dialogs/Brush Grid..."
 block|,
 name|NULL
 block|,
