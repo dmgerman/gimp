@@ -177,9 +177,12 @@ modifier|*
 name|help_id
 parameter_list|)
 block|{
+specifier|static
 name|GimpStrokeOptions
 modifier|*
 name|options
+init|=
+name|NULL
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -240,6 +243,11 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|options
+condition|)
 name|options
 operator|=
 name|g_object_new
@@ -369,7 +377,7 @@ argument_list|,
 name|item
 argument_list|)
 expr_stmt|;
-name|g_object_set_data_full
+name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -379,11 +387,6 @@ argument_list|,
 literal|"gimp-stroke-options"
 argument_list|,
 name|options
-argument_list|,
-operator|(
-name|GDestroyNotify
-operator|)
-name|g_object_unref
 argument_list|)
 expr_stmt|;
 name|main_vbox
