@@ -2513,7 +2513,7 @@ name|bgamma
 operator|!=
 literal|1.0
 condition|)
-name|ppmgamma
+name|ppm_apply_gamma
 argument_list|(
 operator|&
 name|brushes
@@ -2664,7 +2664,7 @@ name|col
 operator|=
 name|NULL
 expr_stmt|;
-name|copyppm
+name|ppm_copy
 argument_list|(
 operator|&
 name|brushes
@@ -2750,7 +2750,7 @@ name|runningvals
 operator|.
 name|orientnum
 expr_stmt|;
-name|freerotate
+name|free_rotate
 argument_list|(
 operator|&
 name|brushes
@@ -2817,7 +2817,7 @@ comment|/* Brush-debugging */
 if|#
 directive|if
 literal|0
-block|for(i = 0; i< numbrush; i++) {     char tmp[1000];     g_snprintf (tmp, sizeof (tmp), "/tmp/_brush%03d.ppm", i);     saveppm(&brushes[i], tmp);   }
+block|for(i = 0; i< numbrush; i++) {     char tmp[1000];     g_snprintf (tmp, sizeof (tmp), "/tmp/_brush%03d.ppm", i);     ppm_save(&brushes[i], tmp);   }
 endif|#
 directive|endif
 for|for
@@ -3062,7 +3062,7 @@ name|col
 operator|=
 name|NULL
 expr_stmt|;
-name|copyppm
+name|ppm_copy
 argument_list|(
 operator|&
 name|brushes
@@ -3077,7 +3077,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|ppmgamma
+name|ppm_apply_gamma
 argument_list|(
 operator|&
 name|shadows
@@ -3165,7 +3165,7 @@ comment|/* For extra annoying debugging :-) */
 if|#
 directive|if
 literal|0
-block|saveppm(brushes, "/tmp/__brush.ppm");   if(shadows) saveppm(shadows, "/tmp/__shadow.ppm");   system("xv /tmp/__brush.ppm& xv /tmp/__shadow.ppm& ");
+block|ppm_save(brushes, "/tmp/__brush.ppm");   if(shadows) ppm_save(shadows, "/tmp/__shadow.ppm");   system("xv /tmp/__brush.ppm& xv /tmp/__shadow.ppm& ");
 endif|#
 directive|endif
 if|if
@@ -3235,7 +3235,7 @@ block|,
 literal|255
 block|}
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|atmp
@@ -3260,7 +3260,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|copyppm
+name|ppm_copy
 argument_list|(
 name|a
 argument_list|,
@@ -3285,7 +3285,7 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -3344,7 +3344,7 @@ operator|==
 name|BG_TYPE_KEEP_ORIGINAL
 condition|)
 block|{
-name|copyppm
+name|ppm_copy
 argument_list|(
 name|p
 argument_list|,
@@ -3363,7 +3363,7 @@ name|paperscale
 operator|/
 literal|100.0
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -3377,7 +3377,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|loadppm
+name|ppm_load
 argument_list|(
 name|runningvals
 operator|.
@@ -3411,7 +3411,7 @@ name|runningvals
 operator|.
 name|paperinvert
 condition|)
-name|ppmgamma
+name|ppm_apply_gamma
 argument_list|(
 operator|&
 name|paperppm
@@ -3559,7 +3559,7 @@ block|{
 case|case
 name|ORIENTATION_VALUE
 case|:
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|dirmap
@@ -3683,7 +3683,7 @@ break|break;
 case|case
 name|ORIENTATION_RADIUS
 case|:
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|dirmap
@@ -3796,7 +3796,7 @@ break|break;
 case|case
 name|ORIENTATION_RADIAL
 case|:
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|dirmap
@@ -3896,7 +3896,7 @@ break|break;
 case|case
 name|ORIENTATION_FLOWING
 case|:
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|dirmap
@@ -3994,7 +3994,7 @@ break|break;
 case|case
 name|ORIENTATION_HUE
 case|:
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|dirmap
@@ -4115,7 +4115,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|dirmap
@@ -4142,7 +4142,7 @@ break|break;
 case|case
 name|ORIENTATION_MANUAL
 case|:
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|dirmap
@@ -4281,7 +4281,7 @@ operator|==
 name|SIZE_TYPE_VALUE
 condition|)
 block|{
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|sizmap
@@ -4412,7 +4412,7 @@ operator|==
 name|SIZE_TYPE_RADIUS
 condition|)
 block|{
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|sizmap
@@ -4532,7 +4532,7 @@ operator|==
 name|SIZE_TYPE_RADIAL
 condition|)
 block|{
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|sizmap
@@ -4639,7 +4639,7 @@ operator|==
 name|SIZE_TYPE_FLOWING
 condition|)
 block|{
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|sizmap
@@ -4744,7 +4744,7 @@ operator|==
 name|SIZE_TYPE_HUE
 condition|)
 block|{
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|sizmap
@@ -4871,7 +4871,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|sizmap
@@ -4904,7 +4904,7 @@ operator|==
 name|SIZE_TYPE_MANUAL
 condition|)
 block|{
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|sizmap
@@ -5035,7 +5035,7 @@ block|}
 if|#
 directive|if
 literal|0
-block|saveppm(&sizmap, "/tmp/_sizmap.ppm");
+block|ppm_save(&sizmap, "/tmp/_sizmap.ppm");
 endif|#
 directive|endif
 if|if
@@ -6681,7 +6681,7 @@ name|i
 operator|++
 control|)
 block|{
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|brushes
@@ -6772,7 +6772,7 @@ name|maxbrushheight
 argument_list|)
 expr_stmt|;
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -6806,7 +6806,7 @@ condition|(
 name|img_has_alpha
 condition|)
 block|{
-name|killppm
+name|ppm_kill
 argument_list|(
 name|a
 argument_list|)
@@ -6885,7 +6885,7 @@ name|col
 operator|=
 name|NULL
 expr_stmt|;
-name|loadppm
+name|ppm_load
 argument_list|(
 name|runningvals
 operator|.
@@ -6919,7 +6919,7 @@ name|runningvals
 operator|.
 name|paperinvert
 condition|)
-name|ppmgamma
+name|ppm_apply_gamma
 argument_list|(
 operator|&
 name|tmp
@@ -7290,7 +7290,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|tmp
@@ -7303,7 +7303,7 @@ name|paperppm
 operator|.
 name|col
 condition|)
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|paperppm
@@ -7315,7 +7315,7 @@ name|dirmap
 operator|.
 name|col
 condition|)
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|dirmap
@@ -7327,7 +7327,7 @@ name|sizmap
 operator|.
 name|col
 condition|)
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|sizmap

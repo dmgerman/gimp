@@ -309,7 +309,7 @@ name|p
 argument_list|)
 expr_stmt|;
 else|else
-name|copyppm
+name|ppm_copy
 argument_list|(
 operator|&
 name|brushppm
@@ -570,13 +570,13 @@ name|brushppm
 operator|.
 name|col
 condition|)
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|brushppm
 argument_list|)
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|brushppm
@@ -906,7 +906,7 @@ literal|0
 end_if
 
 begin_endif
-unit|void dummybrushdmenuselect(GtkWidget *w, gpointer data) {   if(brushppm.col)     killppm(&brushppm);   newppm(&brushppm, 10,10);   brush_from_file = 0;   update_brush_preview(NULL); }
+unit|void dummybrushdmenuselect(GtkWidget *w, gpointer data) {   if(brushppm.col)     ppm_kill (&brushppm);   ppm_new (&brushppm, 10,10);   brush_from_file = 0;   update_brush_preview (NULL); }
 endif|#
 directive|endif
 end_endif
@@ -973,7 +973,7 @@ name|dialog
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|saveppm
+name|ppm_save
 argument_list|(
 operator|&
 name|brushppm
@@ -1226,7 +1226,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|cache
@@ -1263,13 +1263,13 @@ name|lastfn
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|cache
 argument_list|)
 expr_stmt|;
-name|loadppm
+name|ppm_load
 argument_list|(
 name|fn
 argument_list|,
@@ -1278,7 +1278,7 @@ name|cache
 argument_list|)
 expr_stmt|;
 block|}
-name|copyppm
+name|ppm_copy
 argument_list|(
 operator|&
 name|cache
@@ -1519,7 +1519,7 @@ name|brushppm
 operator|.
 name|col
 condition|)
-name|copyppm
+name|ppm_copy
 argument_list|(
 operator|&
 name|brushppm
@@ -1755,7 +1755,7 @@ literal|100
 argument_list|)
 expr_stmt|;
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|p

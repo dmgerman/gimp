@@ -349,7 +349,7 @@ operator|.
 name|col
 condition|)
 block|{
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|nsbuffer
@@ -424,7 +424,7 @@ operator|)
 name|OMHEIGHT
 argument_list|)
 decl_stmt|;
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|nsbuffer
@@ -448,7 +448,7 @@ argument_list|,
 name|gray
 argument_list|)
 expr_stmt|;
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|nsbuffer
@@ -472,7 +472,7 @@ argument_list|,
 name|gray
 argument_list|)
 expr_stmt|;
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|nsbuffer
@@ -496,7 +496,7 @@ argument_list|,
 name|gray
 argument_list|)
 expr_stmt|;
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|nsbuffer
@@ -715,7 +715,7 @@ directive|if
 literal|0
 block|if(!infile.col)          updatepreview (NULL, (void *)2);
 comment|/* Force grabarea() */
-block|copyppm(&infile,&backup);
+block|ppm_copy(&infile,&backup);
 else|#
 directive|else
 name|infile_copy_to_ppm
@@ -726,7 +726,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|ppmbrightness
+name|ppm_apply_brightness
 argument_list|(
 operator|&
 name|backup
@@ -769,7 +769,7 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-name|copyppm
+name|ppm_copy
 argument_list|(
 operator|&
 name|backup
@@ -821,7 +821,7 @@ operator|==
 name|selectedsmvector
 condition|)
 block|{
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|sbuffer
@@ -841,7 +841,7 @@ argument_list|,
 name|red
 argument_list|)
 expr_stmt|;
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|sbuffer
@@ -864,7 +864,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|sbuffer
@@ -884,7 +884,7 @@ argument_list|,
 name|gray
 argument_list|)
 expr_stmt|;
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|sbuffer
@@ -905,7 +905,7 @@ name|gray
 argument_list|)
 expr_stmt|;
 block|}
-name|putrgb
+name|ppm_put_rgb
 argument_list|(
 operator|&
 name|sbuffer

@@ -185,7 +185,7 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
-name|loadppm
+name|ppm_load
 argument_list|(
 name|pcvals
 operator|.
@@ -365,7 +365,7 @@ literal|100
 argument_list|)
 expr_stmt|;
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 operator|&
 name|p

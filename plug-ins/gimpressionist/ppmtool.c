@@ -150,9 +150,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|killppm (ppm_t * p)
+DECL|function|ppm_kill (ppm_t * p)
 name|void
-name|killppm
+name|ppm_kill
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -186,9 +186,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|newppm (ppm_t * p,int xs,int ys)
+DECL|function|ppm_new (ppm_t * p,int xs,int ys)
 name|void
-name|newppm
+name|ppm_new
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -329,9 +329,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|getrgb (ppm_t * s,float xo,float yo,guchar * d)
+DECL|function|get_rgb (ppm_t * s,float xo,float yo,guchar * d)
 name|void
-name|getrgb
+name|get_rgb
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -962,7 +962,7 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -1016,7 +1016,7 @@ name|x
 operator|++
 control|)
 block|{
-name|getrgb
+name|get_rgb
 argument_list|(
 name|p
 argument_list|,
@@ -1039,7 +1039,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -1160,7 +1160,7 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -1254,7 +1254,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -1481,9 +1481,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|loadgbr (const gchar * fn,ppm_t * p)
+DECL|function|load_gimp_brush (const gchar * fn,ppm_t * p)
 name|void
-name|loadgbr
+name|load_gimp_brush
 parameter_list|(
 specifier|const
 name|gchar
@@ -1527,7 +1527,7 @@ name|p
 operator|->
 name|col
 condition|)
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -1542,12 +1542,12 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"loadgbr: Unable to open file \"%s\"!\n"
+literal|"load_gimp_brush: Unable to open file \"%s\"!\n"
 argument_list|,
 name|fn
 argument_list|)
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 name|p
 argument_list|,
@@ -1604,7 +1604,7 @@ name|x
 index|]
 argument_list|)
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 name|p
 argument_list|,
@@ -1745,9 +1745,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|loadppm (const char * fn,ppm_t * p)
+DECL|function|ppm_load (const char * fn,ppm_t * p)
 name|void
-name|loadppm
+name|ppm_load
 parameter_list|(
 specifier|const
 name|char
@@ -1796,7 +1796,7 @@ literal|".gbr"
 argument_list|)
 condition|)
 block|{
-name|loadgbr
+name|load_gimp_brush
 argument_list|(
 name|fn
 argument_list|,
@@ -1820,7 +1820,7 @@ name|p
 operator|->
 name|col
 condition|)
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -1835,12 +1835,12 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"loadppm: Unable to open file \"%s\"!\n"
+literal|"ppm_load: Unable to open file \"%s\"!\n"
 argument_list|,
 name|fn
 argument_list|)
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 name|p
 argument_list|,
@@ -1893,7 +1893,7 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"loadppm: File \"%s\" not PPM/PGM? (line=\"%s\")%c\n"
+literal|"ppm_load: File \"%s\" not PPM/PGM? (line=\"%s\")%c\n"
 argument_list|,
 name|fn
 argument_list|,
@@ -1902,7 +1902,7 @@ argument_list|,
 literal|7
 argument_list|)
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 name|p
 argument_list|,
@@ -1979,7 +1979,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"loadppm: File \"%s\" not valid PPM/PGM? (line=\"%s\")%c\n"
+literal|"ppm_load: File \"%s\" not valid PPM/PGM? (line=\"%s\")%c\n"
 argument_list|,
 name|fn
 argument_list|,
@@ -1988,7 +1988,7 @@ argument_list|,
 literal|7
 argument_list|)
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 name|p
 argument_list|,
@@ -2325,9 +2325,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|copyppm (ppm_t * s,ppm_t * p)
+DECL|function|ppm_copy (ppm_t * s,ppm_t * p)
 name|void
-name|copyppm
+name|ppm_copy
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -2344,7 +2344,7 @@ name|p
 operator|->
 name|col
 condition|)
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -2390,9 +2390,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|freerotate (ppm_t * p,double amount)
+DECL|function|free_rotate (ppm_t * p,double amount)
 name|void
-name|freerotate
+name|free_rotate
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -2483,7 +2483,7 @@ name|height
 operator|/
 literal|2
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -2636,7 +2636,7 @@ operator|*
 name|r
 operator|)
 expr_stmt|;
-name|getrgb
+name|get_rgb
 argument_list|(
 name|p
 argument_list|,
@@ -2659,7 +2659,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -2741,7 +2741,7 @@ decl_stmt|;
 name|int
 name|drowstride
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -2830,7 +2830,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -3462,7 +3462,7 @@ name|height
 operator|-
 literal|1
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -3551,7 +3551,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -3625,7 +3625,7 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -3996,7 +3996,7 @@ index|]
 expr_stmt|;
 block|}
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -4029,9 +4029,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|saveppm (ppm_t * p,const char * fn)
+DECL|function|ppm_save (ppm_t * p,const char * fn)
 name|void
-name|saveppm
+name|ppm_save
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -4182,7 +4182,7 @@ name|srowstride
 decl_stmt|,
 name|drowstride
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -4500,7 +4500,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -4533,9 +4533,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppmgamma (ppm_t * p,float e,int r,int g,int b)
+DECL|function|ppm_apply_gamma (ppm_t * p,float e,int r,int g,int b)
 name|void
-name|ppmgamma
+name|ppm_apply_gamma
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -4794,9 +4794,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppmbrightness (ppm_t * p,float e,int r,int g,int b)
+DECL|function|ppm_apply_brightness (ppm_t * p,float e,int r,int g,int b)
 name|void
-name|ppmbrightness
+name|ppm_apply_brightness
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -5022,7 +5022,7 @@ name|width
 operator|*
 literal|3
 decl_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|tmp
@@ -5245,7 +5245,7 @@ name|n
 expr_stmt|;
 block|}
 block|}
-name|killppm
+name|ppm_kill
 argument_list|(
 name|p
 argument_list|)
@@ -5278,9 +5278,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|putrgb_fast (ppm_t * s,float xo,float yo,guchar * d)
+DECL|function|ppm_put_rgb_fast (ppm_t * s,float xo,float yo,guchar * d)
 name|void
-name|putrgb_fast
+name|ppm_put_rgb_fast
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -5367,9 +5367,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|putrgb (ppm_t * s,float xo,float yo,guchar * d)
+DECL|function|ppm_put_rgb (ppm_t * s,float xo,float yo,guchar * d)
 name|void
-name|putrgb
+name|ppm_put_rgb
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -5912,9 +5912,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|drawline (ppm_t * p,float fx,float fy,float tx,float ty,guchar * col)
+DECL|function|ppm_drawline (ppm_t * p,float fx,float fy,float tx,float ty,guchar * col)
 name|void
-name|drawline
+name|ppm_drawline
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -6029,7 +6029,7 @@ operator|+=
 literal|1.0
 control|)
 block|{
-name|putrgb
+name|ppm_put_rgb
 argument_list|(
 name|p
 argument_list|,
@@ -6113,7 +6113,7 @@ operator|+=
 literal|1.0
 control|)
 block|{
-name|putrgb
+name|ppm_put_rgb
 argument_list|(
 name|p
 argument_list|,

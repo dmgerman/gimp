@@ -960,7 +960,7 @@ operator|.
 name|col
 condition|)
 block|{
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|nbuffer
@@ -1057,7 +1057,7 @@ argument_list|)
 operator|*
 literal|4.0
 decl_stmt|;
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|nbuffer
@@ -1081,7 +1081,7 @@ argument_list|,
 name|gray
 argument_list|)
 expr_stmt|;
-name|putrgb
+name|ppm_put_rgb
 argument_list|(
 operator|&
 name|nbuffer
@@ -1345,7 +1345,7 @@ operator|&
 name|backup
 argument_list|)
 expr_stmt|;
-name|ppmbrightness
+name|ppm_apply_brightness
 argument_list|(
 operator|&
 name|backup
@@ -1392,7 +1392,7 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-name|copyppm
+name|ppm_copy
 argument_list|(
 operator|&
 name|backup
@@ -1500,7 +1500,7 @@ name|i
 operator|==
 name|selectedvector
 condition|)
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|buffer
@@ -1525,7 +1525,7 @@ name|red
 argument_list|)
 expr_stmt|;
 else|else
-name|drawline
+name|ppm_drawline
 argument_list|(
 operator|&
 name|buffer
@@ -1549,7 +1549,7 @@ argument_list|,
 name|gray
 argument_list|)
 expr_stmt|;
-name|putrgb
+name|ppm_put_rgb
 argument_list|(
 operator|&
 name|buffer

@@ -57,7 +57,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|killppm
+name|ppm_kill
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -68,7 +68,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|newppm
+name|ppm_new
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -85,7 +85,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|getrgb
+name|get_rgb
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -155,7 +155,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|loadppm
+name|ppm_load
 parameter_list|(
 specifier|const
 name|char
@@ -171,7 +171,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|saveppm
+name|ppm_save
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -187,7 +187,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|copyppm
+name|ppm_copy
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -217,7 +217,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|freerotate
+name|free_rotate
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -317,7 +317,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|ppmgamma
+name|ppm_apply_gamma
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -340,7 +340,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|ppmbrightness
+name|ppm_apply_brightness
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -363,7 +363,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|putrgb_fast
+name|ppm_put_rgb_fast
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -384,7 +384,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|putrgb
+name|ppm_put_rgb
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -405,7 +405,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|drawline
+name|ppm_drawline
 parameter_list|(
 name|ppm_t
 modifier|*

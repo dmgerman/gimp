@@ -214,7 +214,7 @@ block|updatepreview (NULL, (void *)2);
 comment|/* Force grabarea() */
 endif|#
 directive|endif
-name|copyppm
+name|ppm_copy
 argument_list|(
 operator|&
 name|infile
@@ -235,7 +235,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-name|copyppm
+name|ppm_copy
 argument_list|(
 operator|&
 name|inalpha
@@ -829,7 +829,7 @@ literal|1
 else|:
 name|bpp
 expr_stmt|;
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|infile
@@ -853,7 +853,7 @@ condition|(
 name|has_alpha
 condition|)
 block|{
-name|newppm
+name|ppm_new
 argument_list|(
 operator|&
 name|inalpha
