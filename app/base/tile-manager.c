@@ -2739,12 +2739,11 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
+name|tile_is_valid
+argument_list|(
 operator|*
 name|tiles
-operator|)
-operator|->
-name|dirty
+argument_list|)
 condition|)
 name|memsize
 operator|+=
