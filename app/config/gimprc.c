@@ -116,8 +116,8 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b8921e70103
 enum|enum
+DECL|enum|__anon2b0bd5f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1492,8 +1492,6 @@ name|rc
 decl_stmt|;
 name|rc
 operator|=
-name|GIMP_RC
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_RC
@@ -1507,7 +1505,6 @@ argument_list|,
 name|user_gimprc
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|rc
@@ -1979,6 +1976,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_rc_save:  * @rc: a #GimpRc object.  *   * Saves any settings that differ from the system-wide defined  * defaults to the users personal gimprc file.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_rc_save (GimpRc * rc)
@@ -1992,6 +1993,16 @@ block|{
 name|GimpRc
 modifier|*
 name|global
+decl_stmt|;
+name|gchar
+modifier|*
+name|header
+decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
 decl_stmt|;
 specifier|const
 name|gchar
@@ -2019,16 +2030,6 @@ modifier|*
 name|footer
 init|=
 literal|"# end of gimprc\n"
-decl_stmt|;
-name|gchar
-modifier|*
-name|header
-decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
