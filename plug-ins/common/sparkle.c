@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ced7ed0108
+DECL|struct|__anon299e370d0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -3448,7 +3448,7 @@ index|[
 name|alpha
 index|]
 operator|=
-name|src
+name|s
 index|[
 name|alpha
 index|]
@@ -3762,14 +3762,6 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gdouble
-name|random_1
-init|=
-name|g_rand_double
-argument_list|(
-name|gr
-argument_list|)
-decl_stmt|;
 comment|/* major spikes */
 if|if
 condition|(
@@ -3800,7 +3792,10 @@ name|spike_angle
 expr_stmt|;
 if|if
 condition|(
-name|random_1
+name|g_rand_double
+argument_list|(
+name|gr
+argument_list|)
 operator|<=
 name|svals
 operator|.
@@ -4679,7 +4674,7 @@ name|NATURAL
 condition|)
 name|gimp_pixel_rgn_get_pixel
 argument_list|(
-name|src_rgn
+name|dest_rgn
 argument_list|,
 name|pixel
 argument_list|,
@@ -4867,9 +4862,9 @@ argument_list|(
 name|gr
 argument_list|,
 operator|-
-literal|0.5
+literal|1.0
 argument_list|,
-literal|0.5
+literal|1.0
 argument_list|)
 operator|)
 operator|*
@@ -4958,7 +4953,7 @@ name|gdouble
 operator|)
 name|xr
 expr_stmt|;
-comment|/* (gdouble) is needed because some */
+comment|/* (gdouble) is needed because some      */
 name|yrt
 operator|=
 operator|(
