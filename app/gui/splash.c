@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289323e60108
+DECL|struct|__anon2b0b35310108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -1042,7 +1042,7 @@ comment|/*  private functions  */
 end_comment
 
 begin_comment
-comment|/* This function chooses black or white for the text color, based on  * the average intensity of the lower 60 rows of the splash image.  */
+comment|/* This function chooses a gray value for the text color, based on  * the average intensity of the lower 60 rows of the splash image.  */
 end_comment
 
 begin_function
@@ -1085,7 +1085,10 @@ decl_stmt|;
 name|gint
 name|channels
 decl_stmt|;
-name|guint
+name|gint
+name|intensity
+decl_stmt|;
+name|gint
 name|count
 decl_stmt|;
 name|guint
@@ -1101,9 +1104,6 @@ literal|0
 block|,
 literal|0
 block|}
-decl_stmt|;
-name|guchar
-name|intensity
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1287,6 +1287,23 @@ operator|/
 name|count
 argument_list|)
 expr_stmt|;
+name|intensity
+operator|=
+name|CLAMP0255
+argument_list|(
+name|intensity
+operator|>
+literal|127
+condition|?
+name|intensity
+operator|-
+literal|223
+else|:
+name|intensity
+operator|+
+literal|223
+argument_list|)
+expr_stmt|;
 name|color
 operator|->
 name|red
@@ -1301,18 +1318,10 @@ name|blue
 operator|=
 operator|(
 name|intensity
-operator|&
-literal|0x80
-condition|?
-literal|0
-else|:
-operator|(
-literal|1
 operator|<<
-literal|16
-operator|)
-operator|-
-literal|1
+literal|8
+operator||
+name|intensity
 operator|)
 expr_stmt|;
 return|return
