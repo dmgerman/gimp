@@ -503,9 +503,11 @@ modifier|*
 name|help_data
 parameter_list|)
 block|{
-name|_gimp_standard_help_func
+name|gimp_help
 argument_list|(
 name|the_gimp
+argument_list|,
+name|NULL
 argument_list|,
 name|help_data
 argument_list|)

@@ -228,49 +228,6 @@ begin_comment
 comment|/*  public functions  */
 end_comment
 
-begin_comment
-comment|/*  The standard help function  */
-end_comment
-
-begin_function
-name|void
-DECL|function|_gimp_standard_help_func (Gimp * gimp,const gchar * help_data)
-name|_gimp_standard_help_func
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|help_data
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_GIMP
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_help
-argument_list|(
-name|gimp
-argument_list|,
-name|NULL
-argument_list|,
-name|help_data
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  the main help function  */
-end_comment
-
 begin_function
 name|void
 DECL|function|gimp_help (Gimp * gimp,const gchar * help_path,const gchar * help_data)
