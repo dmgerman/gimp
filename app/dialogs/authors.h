@@ -50,7 +50,7 @@ literal|"Hans Breuer"
 block|,
 literal|"Simon Budig"
 block|,
-literal|"Joao S. O. Bueno"
+literal|"JoÃ£o S. O. Bueno Calligaris"
 block|,
 literal|"Carey Bunks"
 block|,
