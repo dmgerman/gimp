@@ -321,7 +321,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29114ef40108
+DECL|struct|__anon2894594f0108
 block|{
 DECL|member|raw
 name|gint
@@ -337,7 +337,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29114ef40208
+DECL|struct|__anon2894594f0208
 block|{
 DECL|member|run
 name|gint
@@ -1161,7 +1161,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_pnm_save"
 argument_list|,
-literal|"pnm,ppm,pgm,pbm"
+literal|"pnm,ppm,pgm"
 argument_list|,
 literal|""
 argument_list|)
