@@ -1254,18 +1254,11 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|tiles
-condition|)
-block|{
-name|GimpBuffer
-modifier|*
-name|buffer
-decl_stmt|;
 comment|/*  Only crop if the gimage mask wasn't empty  */
 if|if
 condition|(
+name|tiles
+operator|&&
 operator|!
 name|empty
 condition|)
@@ -1299,8 +1292,15 @@ name|crop
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|tiles
+condition|)
+block|{
+name|GimpBuffer
+modifier|*
 name|buffer
-operator|=
+init|=
 name|gimp_buffer_new
 argument_list|(
 name|tiles
@@ -1309,7 +1309,7 @@ literal|"Global Buffer"
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_set_global_buffer
 argument_list|(
 name|gimage
