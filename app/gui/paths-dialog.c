@@ -5781,6 +5781,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
 comment|/*  find the sel2path PDB record  */
 if|if
 condition|(
@@ -5895,6 +5899,15 @@ argument_list|)
 operator|->
 name|ID
 expr_stmt|;
+comment|/* get the display by asking the current context */
+name|gdisp
+operator|=
+name|gimp_context_get_display
+argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|plug_in_run
 argument_list|(
 name|proc_rec
@@ -5907,14 +5920,13 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-operator|(
-name|gimage_active_drawable
-argument_list|(
-name|gimage
-argument_list|)
-operator|)
+name|gdisp
+condition|?
+name|gdisp
 operator|->
 name|ID
+else|:
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_free
