@@ -1,13 +1,7 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
 
 begin_include
 include|#
@@ -52,7 +46,7 @@ DECL|macro|BRUSH_EVENT_MASK
 define|#
 directive|define
 name|BRUSH_EVENT_MASK
-value|GDK_EXPOSURE_MASK | \                           GDK_BUTTON_PRESS_MASK | \ 			  GDK_BUTTON_RELEASE_MASK | \                           GDK_BUTTON1_MOTION_MASK
+value|GDK_EXPOSURE_MASK       | \                           GDK_BUTTON_PRESS_MASK   | \ 			  GDK_BUTTON_RELEASE_MASK | \                           GDK_BUTTON1_MOTION_MASK
 end_define
 
 begin_struct
@@ -131,10 +125,10 @@ name|void
 modifier|*
 name|brush_popup_pnt
 decl_stmt|;
-comment|/* POinter use to control the popup */
-DECL|member|udata
+comment|/* Pointer use to control the popup */
+DECL|member|data
 name|gpointer
-name|udata
+name|data
 decl_stmt|;
 block|}
 struct|;
@@ -142,55 +136,55 @@ end_struct
 
 begin_typedef
 DECL|typedef|BSelect
-DECL|typedef|BSelectP
 typedef|typedef
 name|struct
 name|__brushes_sel
 name|BSelect
-typedef|,
-modifier|*
-name|BSelectP
 typedef|;
 end_typedef
 
 begin_function
 specifier|static
 name|void
-DECL|function|brush_popup_open (int x,int y,BSelectP bsel)
+DECL|function|brush_popup_open (gint x,gint y,BSelect * bsel)
 name|brush_popup_open
 parameter_list|(
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|BSelectP
+name|BSelect
+modifier|*
 name|bsel
 parameter_list|)
 block|{
 name|gint
 name|x_org
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|y_org
 decl_stmt|;
 name|gint
 name|scr_w
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|scr_h
 decl_stmt|;
 name|gchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|buf
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|b
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|s
 decl_stmt|;
@@ -215,22 +209,6 @@ operator|=
 name|gtk_window_new
 argument_list|(
 name|GTK_WINDOW_POPUP
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_policy
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|bsel
-operator|->
-name|device_brushpopup
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|frame
@@ -479,8 +457,6 @@ name|width
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*   for (i = 0; i< CELL_SIZE; i++) */
-comment|/*     gtk_preview_draw_row (GTK_PREVIEW(bsel->device_brushpreview), (guchar *)buf, 0, i, CELL_SIZE); */
 name|src
 operator|=
 name|bsel
@@ -591,10 +567,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_popup_close (BSelectP bsel)
+DECL|function|brush_popup_close (BSelect * bsel)
 name|brush_popup_close
 parameter_list|(
-name|BSelectP
+name|BSelect
+modifier|*
 name|bsel
 parameter_list|)
 block|{
@@ -619,7 +596,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|brush_preview_events (GtkWidget * widget,GdkEvent * event,gpointer udata)
+DECL|function|brush_preview_events (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|brush_preview_events
 parameter_list|(
 name|GtkWidget
@@ -631,20 +608,22 @@ modifier|*
 name|event
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|GdkEventButton
 modifier|*
 name|bevent
 decl_stmt|;
-name|BSelectP
+name|BSelect
+modifier|*
 name|bsel
 init|=
 operator|(
-name|BSelectP
+name|BSelect
+operator|*
 operator|)
-name|udata
+name|data
 decl_stmt|;
 if|if
 condition|(
@@ -684,6 +663,11 @@ operator|==
 literal|1
 condition|)
 block|{
+name|gtk_grab_add
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 name|brush_popup_open
 argument_list|(
 name|bevent
@@ -719,15 +703,11 @@ operator|==
 literal|1
 condition|)
 block|{
-comment|/*  Ungrab the pointer  */
-name|gdk_pointer_ungrab
+name|gtk_grab_remove
 argument_list|(
-name|bevent
-operator|->
-name|time
+name|widget
 argument_list|)
 expr_stmt|;
-comment|/*  Close the device preview popup window  */
 name|brush_popup_close
 argument_list|(
 name|bsel
@@ -772,33 +752,36 @@ parameter_list|)
 block|{
 name|gint
 name|y
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|i
 decl_stmt|;
 name|gchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|buf
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|b
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|s
 decl_stmt|;
-name|int
+name|gint
 name|offset_x
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|offset_y
 decl_stmt|;
-name|int
+name|gint
 name|yend
 decl_stmt|;
-name|int
+name|gint
 name|ystart
 decl_stmt|;
 name|gint
@@ -1028,7 +1011,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_select_invoker (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gint closing,gpointer udata)
+DECL|function|brush_select_invoker (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gint closing,gpointer data)
 name|brush_select_invoker
 parameter_list|(
 name|gchar
@@ -1058,19 +1041,21 @@ name|gint
 name|closing
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|gint
 name|mask_d_sz
 decl_stmt|;
-name|BSelectP
+name|BSelect
+modifier|*
 name|bsel
 init|=
 operator|(
-name|BSelectP
+name|BSelect
+operator|*
 operator|)
-name|udata
+name|data
 decl_stmt|;
 if|if
 condition|(
@@ -1194,7 +1179,7 @@ name|closing
 argument_list|,
 name|bsel
 operator|->
-name|udata
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -1235,11 +1220,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|BSelectP
+name|BSelect
+modifier|*
 name|bsel
 init|=
 operator|(
-name|BSelectP
+name|BSelect
+operator|*
 operator|)
 name|data
 decl_stmt|;
@@ -1297,7 +1284,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_brush_select_widget (gchar * dname,gchar * ibrush,gdouble opacity,gint spacing,gint paint_mode,GRunBrushCallback cback,gpointer udata)
+DECL|function|gimp_brush_select_widget (gchar * dname,gchar * ibrush,gdouble opacity,gint spacing,gint paint_mode,GRunBrushCallback cback,gpointer data)
 name|gimp_brush_select_widget
 parameter_list|(
 name|gchar
@@ -1321,7 +1308,7 @@ name|GRunBrushCallback
 name|cback
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1342,12 +1329,14 @@ name|button
 decl_stmt|;
 name|gint
 name|width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|height
 decl_stmt|;
 name|gint
 name|init_spacing
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|init_paint_mode
 decl_stmt|;
 name|gdouble
@@ -1361,19 +1350,19 @@ name|gchar
 modifier|*
 name|brush_name
 decl_stmt|;
-name|BSelectP
+name|BSelect
+modifier|*
 name|bsel
-init|=
+decl_stmt|;
+name|bsel
+operator|=
 name|g_new
 argument_list|(
 name|BSelect
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|BSelect
+literal|1
 argument_list|)
-argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -1479,9 +1468,9 @@ name|cback
 expr_stmt|;
 name|bsel
 operator|->
-name|udata
+name|data
 operator|=
-name|udata
+name|data
 expr_stmt|;
 name|bsel
 operator|->
@@ -1738,36 +1727,40 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_brush_select_widget_close_popup (GtkWidget * w)
+name|gboolean
+DECL|function|gimp_brush_select_widget_close_popup (GtkWidget * widget)
 name|gimp_brush_select_widget_close_popup
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|ret_val
 init|=
 name|FALSE
 decl_stmt|;
-name|BSelectP
+name|BSelect
+modifier|*
 name|bsel
-init|=
+decl_stmt|;
+name|bsel
+operator|=
 operator|(
-name|BSelectP
+name|BSelect
+operator|*
 operator|)
 name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 name|BSEL_DATA_KEY
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|bsel
@@ -1800,13 +1793,13 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_brush_select_widget_set_popup (GtkWidget * w,gchar * bname,gdouble opacity,gint spacing,gint paint_mode)
+name|gboolean
+DECL|function|gimp_brush_select_widget_set_popup (GtkWidget * widget,gchar * bname,gdouble opacity,gint spacing,gint paint_mode)
 name|gimp_brush_select_widget_set_popup
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gchar
 modifier|*
@@ -1822,19 +1815,21 @@ name|gint
 name|paint_mode
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|ret_val
 init|=
 name|FALSE
 decl_stmt|;
 name|gint
 name|width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|height
 decl_stmt|;
 name|gint
 name|init_spacing
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|init_paint_mode
 decl_stmt|;
 name|gdouble
@@ -1848,22 +1843,26 @@ name|gchar
 modifier|*
 name|brush_name
 decl_stmt|;
-name|BSelectP
+name|BSelect
+modifier|*
 name|bsel
-init|=
+decl_stmt|;
+name|bsel
+operator|=
 operator|(
-name|BSelectP
+name|BSelect
+operator|*
 operator|)
 name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 name|BSEL_DATA_KEY
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|bsel
@@ -1953,10 +1952,7 @@ condition|(
 name|bsel
 operator|->
 name|brush_popup_pnt
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|gimp_brush_set_popup
 argument_list|(
 name|bsel
@@ -1972,13 +1968,10 @@ argument_list|,
 name|paint_mode
 argument_list|)
 condition|)
-block|{
 name|ret_val
 operator|=
 name|TRUE
 expr_stmt|;
-block|}
-block|}
 block|}
 return|return
 name|ret_val

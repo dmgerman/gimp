@@ -1,13 +1,7 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
 
 begin_include
 include|#
@@ -53,30 +47,6 @@ define|#
 directive|define
 name|CELL_SIZE_WIDTH
 value|84
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_SIZE_SM
-define|#
-directive|define
-name|GRAD_CHECK_SIZE_SM
-value|4
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_DARK
-define|#
-directive|define
-name|GRAD_CHECK_DARK
-value|(1.0 / 3.0)
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_LIGHT
-define|#
-directive|define
-name|GRAD_CHECK_LIGHT
-value|(2.0 / 3.0)
 end_define
 
 begin_struct
@@ -128,9 +98,9 @@ DECL|member|sample_size
 name|gint
 name|sample_size
 decl_stmt|;
-DECL|member|udata
+DECL|member|data
 name|gpointer
-name|udata
+name|data
 decl_stmt|;
 block|}
 struct|;
@@ -138,14 +108,10 @@ end_struct
 
 begin_typedef
 DECL|typedef|GSelect
-DECL|typedef|GSelectP
 typedef|typedef
 name|struct
 name|__gradients_sel
 name|GSelect
-typedef|,
-modifier|*
-name|GSelectP
 typedef|;
 end_typedef
 
@@ -169,14 +135,15 @@ parameter_list|)
 block|{
 name|gint
 name|x
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|y
 decl_stmt|;
 name|gdouble
 modifier|*
 name|src
 decl_stmt|;
-name|double
+name|gdouble
 name|r
 decl_stmt|,
 name|g
@@ -185,7 +152,7 @@ name|b
 decl_stmt|,
 name|a
 decl_stmt|;
-name|double
+name|gdouble
 name|c0
 decl_stmt|,
 name|c1
@@ -193,23 +160,28 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|p0
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|p1
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|even
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|odd
 decl_stmt|;
 name|gint
 name|width
-init|=
+decl_stmt|;
+name|width
+operator|=
 name|width_data
 operator|/
 literal|4
-decl_stmt|;
+expr_stmt|;
 comment|/*  Draw the gradient  */
 name|src
 operator|=
@@ -300,7 +272,7 @@ condition|(
 operator|(
 name|x
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
@@ -308,25 +280,24 @@ condition|)
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 block|}
 else|else
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 block|}
-comment|/* else */
 operator|*
 name|p0
 operator|++
@@ -436,7 +407,6 @@ operator|*
 literal|255.0
 expr_stmt|;
 block|}
-comment|/* for */
 for|for
 control|(
 name|y
@@ -456,12 +426,11 @@ condition|(
 operator|(
 name|y
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
 condition|)
-block|{
 name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
@@ -490,9 +459,7 @@ else|:
 name|CELL_SIZE_WIDTH
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
@@ -521,7 +488,6 @@ else|:
 name|CELL_SIZE_WIDTH
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|g_free
 argument_list|(
@@ -547,7 +513,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_select_invoker (gchar * name,gint width,gdouble * grad_data,gint closing,gpointer udata)
+DECL|function|gradient_select_invoker (gchar * name,gint width,gdouble * grad_data,gint closing,gpointer data)
 name|gradient_select_invoker
 parameter_list|(
 name|gchar
@@ -565,16 +531,18 @@ name|gint
 name|closing
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
-name|GSelectP
+name|GSelect
+modifier|*
 name|gsel
 init|=
 operator|(
-name|GSelectP
+name|GSelect
+operator|*
 operator|)
-name|udata
+name|data
 decl_stmt|;
 if|if
 condition|(
@@ -690,7 +658,7 @@ name|closing
 argument_list|,
 name|gsel
 operator|->
-name|udata
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -723,11 +691,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GSelectP
+name|GSelect
+modifier|*
 name|gsel
 init|=
 operator|(
-name|GSelectP
+name|GSelect
+operator|*
 operator|)
 name|data
 decl_stmt|;
@@ -777,7 +747,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_gradient_select_widget (gchar * dname,gchar * igradient,GRunGradientCallback cback,gpointer udata)
+DECL|function|gimp_gradient_select_widget (gchar * dname,gchar * igradient,GRunGradientCallback cback,gpointer data)
 name|gimp_gradient_select_widget
 parameter_list|(
 name|gchar
@@ -792,7 +762,7 @@ name|GRunGradientCallback
 name|cback
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -818,19 +788,19 @@ name|gchar
 modifier|*
 name|gradient_name
 decl_stmt|;
-name|GSelectP
+name|GSelect
+modifier|*
 name|gsel
-init|=
+decl_stmt|;
+name|gsel
+operator|=
 name|g_new
 argument_list|(
 name|GSelect
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GSelect
+literal|1
 argument_list|)
-argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -923,9 +893,9 @@ name|cback
 expr_stmt|;
 name|gsel
 operator|->
-name|udata
+name|data
 operator|=
-name|udata
+name|data
 expr_stmt|;
 name|gsel
 operator|->
@@ -1058,36 +1028,40 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_gradient_select_widget_close_popup (GtkWidget * w)
+name|gboolean
+DECL|function|gimp_gradient_select_widget_close_popup (GtkWidget * widget)
 name|gimp_gradient_select_widget_close_popup
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|ret_val
 init|=
 name|FALSE
 decl_stmt|;
-name|GSelectP
+name|GSelect
+modifier|*
 name|gsel
-init|=
+decl_stmt|;
+name|gsel
+operator|=
 operator|(
-name|GSelectP
+name|GSelect
+operator|*
 operator|)
 name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 name|GSEL_DATA_KEY
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|gsel
@@ -1120,20 +1094,20 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_gradient_select_widget_set_popup (GtkWidget * w,gchar * gname)
+name|gboolean
+DECL|function|gimp_gradient_select_widget_set_popup (GtkWidget * widget,gchar * gname)
 name|gimp_gradient_select_widget_set_popup
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gchar
 modifier|*
 name|gname
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|ret_val
 init|=
 name|FALSE
@@ -1149,22 +1123,26 @@ name|gchar
 modifier|*
 name|gradient_name
 decl_stmt|;
-name|GSelectP
+name|GSelect
+modifier|*
 name|gsel
-init|=
+decl_stmt|;
+name|gsel
+operator|=
 operator|(
-name|GSelectP
+name|GSelect
+operator|*
 operator|)
 name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 name|GSEL_DATA_KEY
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|gsel
@@ -1210,10 +1188,7 @@ condition|(
 name|gsel
 operator|->
 name|gradient_popup_pnt
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|gimp_gradient_set_popup
 argument_list|(
 name|gsel
@@ -1223,13 +1198,10 @@ argument_list|,
 name|gname
 argument_list|)
 condition|)
-block|{
 name|ret_val
 operator|=
 name|TRUE
 expr_stmt|;
-block|}
-block|}
 block|}
 block|}
 return|return

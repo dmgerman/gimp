@@ -1,18 +1,12 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  * Copyright (C) 1998 Andy Thomas   *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
+file|"string.h"
 end_include
 
 begin_include
@@ -52,7 +46,7 @@ DECL|macro|PREVIEW_EVENT_MASK
 define|#
 directive|define
 name|PREVIEW_EVENT_MASK
-value|GDK_EXPOSURE_MASK | \                           GDK_BUTTON_PRESS_MASK | \ 			  GDK_BUTTON_RELEASE_MASK | \                           GDK_BUTTON1_MOTION_MASK
+value|GDK_EXPOSURE_MASK       | \                             GDK_BUTTON_PRESS_MASK   | \ 			    GDK_BUTTON_RELEASE_MASK | \                             GDK_BUTTON1_MOTION_MASK
 end_define
 
 begin_struct
@@ -123,10 +117,10 @@ name|void
 modifier|*
 name|pattern_popup_pnt
 decl_stmt|;
-comment|/* POinter use to control the popup */
-DECL|member|udata
+comment|/* Pointer use to control the popup */
+DECL|member|data
 name|gpointer
-name|udata
+name|data
 decl_stmt|;
 block|}
 struct|;
@@ -134,47 +128,47 @@ end_struct
 
 begin_typedef
 DECL|typedef|PSelect
-DECL|typedef|PSelectP
 typedef|typedef
 name|struct
 name|__patterns_sel
 name|PSelect
-typedef|,
-modifier|*
-name|PSelectP
 typedef|;
 end_typedef
 
 begin_function
 specifier|static
 name|void
-DECL|function|pattern_popup_open (int x,int y,PSelectP psel)
+DECL|function|pattern_popup_open (gint x,gint y,PSelect * psel)
 name|pattern_popup_open
 parameter_list|(
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|PSelectP
+name|PSelect
+modifier|*
 name|psel
 parameter_list|)
 block|{
 name|gint
 name|x_org
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|y_org
 decl_stmt|;
 name|gint
 name|scr_w
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|scr_h
 decl_stmt|;
 name|gchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|buf
 decl_stmt|;
@@ -199,22 +193,6 @@ operator|=
 name|gtk_window_new
 argument_list|(
 name|GTK_WINDOW_POPUP
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_policy
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|psel
-operator|->
-name|device_patpopup
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|frame
@@ -668,10 +646,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pattern_popup_close (PSelectP psel)
+DECL|function|pattern_popup_close (PSelect * psel)
 name|pattern_popup_close
 parameter_list|(
-name|PSelectP
+name|PSelect
+modifier|*
 name|psel
 parameter_list|)
 block|{
@@ -696,7 +675,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|pattern_preview_events (GtkWidget * widget,GdkEvent * event,gpointer udata)
+DECL|function|pattern_preview_events (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|pattern_preview_events
 parameter_list|(
 name|GtkWidget
@@ -708,20 +687,22 @@ modifier|*
 name|event
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|GdkEventButton
 modifier|*
 name|bevent
 decl_stmt|;
-name|PSelectP
+name|PSelect
+modifier|*
 name|psel
 init|=
 operator|(
-name|PSelectP
+name|PSelect
+operator|*
 operator|)
-name|udata
+name|data
 decl_stmt|;
 if|if
 condition|(
@@ -761,6 +742,11 @@ operator|==
 literal|1
 condition|)
 block|{
+name|gtk_grab_add
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 name|pattern_popup_open
 argument_list|(
 name|bevent
@@ -796,15 +782,11 @@ operator|==
 literal|1
 condition|)
 block|{
-comment|/*  Ungrab the pointer  */
-name|gdk_pointer_ungrab
+name|gtk_grab_remove
 argument_list|(
-name|bevent
-operator|->
-name|time
+name|widget
 argument_list|)
 expr_stmt|;
-comment|/*  Close the device preview popup window  */
 name|pattern_popup_close
 argument_list|(
 name|psel
@@ -852,13 +834,15 @@ parameter_list|)
 block|{
 name|gint
 name|x
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|y
 decl_stmt|;
 name|gchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|buf
 decl_stmt|;
@@ -1091,7 +1075,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pattern_select_invoker (gchar * name,gint width,gint height,gint bytes,gchar * mask_data,gint closing,gpointer udata)
+DECL|function|pattern_select_invoker (gchar * name,gint width,gint height,gint bytes,gchar * mask_data,gint closing,gpointer data)
 name|pattern_select_invoker
 parameter_list|(
 name|gchar
@@ -1115,19 +1099,21 @@ name|gint
 name|closing
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|gint
 name|mask_d_sz
 decl_stmt|;
-name|PSelectP
+name|PSelect
+modifier|*
 name|psel
 init|=
 operator|(
-name|PSelectP
+name|PSelect
+operator|*
 operator|)
-name|udata
+name|data
 decl_stmt|;
 if|if
 condition|(
@@ -1241,7 +1227,7 @@ name|closing
 argument_list|,
 name|psel
 operator|->
-name|udata
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -1282,11 +1268,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PSelectP
+name|PSelect
+modifier|*
 name|psel
 init|=
 operator|(
-name|PSelectP
+name|PSelect
+operator|*
 operator|)
 name|data
 decl_stmt|;
@@ -1332,7 +1320,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_pattern_select_widget (gchar * dname,gchar * ipattern,GRunPatternCallback cback,gpointer udata)
+DECL|function|gimp_pattern_select_widget (gchar * dname,gchar * ipattern,GRunPatternCallback cback,gpointer data)
 name|gimp_pattern_select_widget
 parameter_list|(
 name|gchar
@@ -1347,7 +1335,7 @@ name|GRunPatternCallback
 name|cback
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1368,9 +1356,11 @@ name|button
 decl_stmt|;
 name|gint
 name|width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|height
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|bytes
 decl_stmt|;
 name|gchar
@@ -1381,19 +1371,19 @@ name|gchar
 modifier|*
 name|pattern_name
 decl_stmt|;
-name|PSelectP
+name|PSelect
+modifier|*
 name|psel
-init|=
+decl_stmt|;
+name|psel
+operator|=
 name|g_new
 argument_list|(
 name|PSelect
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|PSelect
+literal|1
 argument_list|)
-argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -1499,9 +1489,9 @@ name|cback
 expr_stmt|;
 name|psel
 operator|->
-name|udata
+name|data
 operator|=
-name|udata
+name|data
 expr_stmt|;
 name|psel
 operator|->
@@ -1700,7 +1690,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_pattern_select_widget_close_popup (GtkWidget * w)
 name|gimp_pattern_select_widget_close_popup
 parameter_list|(
@@ -1709,16 +1699,20 @@ modifier|*
 name|w
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|ret_val
 init|=
 name|FALSE
 decl_stmt|;
-name|PSelectP
+name|PSelect
+modifier|*
 name|psel
-init|=
+decl_stmt|;
+name|psel
+operator|=
 operator|(
-name|PSelectP
+name|PSelect
+operator|*
 operator|)
 name|gtk_object_get_data
 argument_list|(
@@ -1729,7 +1723,7 @@ argument_list|)
 argument_list|,
 name|PSEL_DATA_KEY
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|psel
@@ -1762,29 +1756,31 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_pattern_select_widget_set_popup (GtkWidget * w,gchar * pname)
+name|gboolean
+DECL|function|gimp_pattern_select_widget_set_popup (GtkWidget * widget,gchar * pname)
 name|gimp_pattern_select_widget_set_popup
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gchar
 modifier|*
 name|pname
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|ret_val
 init|=
 name|FALSE
 decl_stmt|;
 name|gint
 name|width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|height
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|bytes
 decl_stmt|;
 name|gchar
@@ -1795,22 +1791,26 @@ name|gchar
 modifier|*
 name|pattern_name
 decl_stmt|;
-name|PSelectP
+name|PSelect
+modifier|*
 name|psel
-init|=
+decl_stmt|;
+name|psel
+operator|=
 operator|(
-name|PSelectP
+name|PSelect
+operator|*
 operator|)
 name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 name|PSEL_DATA_KEY
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|psel
@@ -1857,10 +1857,7 @@ condition|(
 name|psel
 operator|->
 name|pattern_popup_pnt
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|gimp_pattern_set_popup
 argument_list|(
 name|psel
@@ -1870,13 +1867,10 @@ argument_list|,
 name|pname
 argument_list|)
 condition|)
-block|{
 name|ret_val
 operator|=
 name|TRUE
 expr_stmt|;
-block|}
-block|}
 block|}
 return|return
 name|ret_val
