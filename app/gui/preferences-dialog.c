@@ -4789,7 +4789,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|file_prefs_notebook_append_page (GtkNotebook * notebook,gchar * notebook_label,GtkCTree * ctree,gchar * tree_label,GtkCTreeNode * parent,GtkCTreeNode ** new_node,gint page_index)
+DECL|function|file_prefs_notebook_append_page (GtkNotebook * notebook,gchar * notebook_label,GtkCTree * ctree,gchar * tree_label,gchar * help_data,GtkCTreeNode * parent,GtkCTreeNode ** new_node,gint page_index)
 name|file_prefs_notebook_append_page
 parameter_list|(
 name|GtkNotebook
@@ -4808,6 +4808,10 @@ name|gchar
 modifier|*
 name|tree_label
 parameter_list|,
+name|gchar
+modifier|*
+name|help_data
+parameter_list|,
 name|GtkCTreeNode
 modifier|*
 name|parent
@@ -4821,6 +4825,10 @@ name|gint
 name|page_index
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|event_box
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|out_vbox
@@ -4844,6 +4852,25 @@ index|[
 literal|1
 index|]
 decl_stmt|;
+name|event_box
+operator|=
+name|gtk_event_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|event_box
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|event_box
+argument_list|,
+name|NULL
+argument_list|,
+name|help_data
+argument_list|)
+expr_stmt|;
 name|out_vbox
 operator|=
 name|gtk_vbox_new
@@ -4851,6 +4878,16 @@ argument_list|(
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|event_box
+argument_list|)
+argument_list|,
+name|out_vbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5028,7 +5065,7 @@ name|gtk_notebook_append_page
 argument_list|(
 name|notebook
 argument_list|,
-name|out_vbox
+name|event_box
 argument_list|,
 name|NULL
 argument_list|)
@@ -5205,6 +5242,80 @@ expr_stmt|;
 return|return
 name|vbox2
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|file_prefs_help_func (gchar * help_data)
+name|file_prefs_help_func
+parameter_list|(
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|notebook
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|event_box
+decl_stmt|;
+name|gint
+name|page_num
+decl_stmt|;
+name|notebook
+operator|=
+name|gtk_object_get_user_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|prefs_dlg
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|page_num
+operator|=
+name|gtk_notebook_get_current_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|event_box
+operator|=
+name|gtk_notebook_get_nth_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|page_num
+argument_list|)
+expr_stmt|;
+name|help_data
+operator|=
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|event_box
+argument_list|)
+argument_list|,
+literal|"gimp_help_data"
+argument_list|)
+expr_stmt|;
+name|gimp_help
+argument_list|(
+name|help_data
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -5709,7 +5820,7 @@ argument_list|)
 argument_list|,
 literal|"gimp_preferences"
 argument_list|,
-name|gimp_standard_help_func
+name|file_prefs_help_func
 argument_list|,
 literal|"dialogs/preferences/preferences.html"
 argument_list|,
@@ -5943,6 +6054,16 @@ name|gtk_object_set_user_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
+name|prefs_dlg
+argument_list|)
+argument_list|,
+name|notebook
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_user_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
 name|ctree
 argument_list|)
 argument_list|,
@@ -5994,6 +6115,8 @@ name|_
 argument_list|(
 literal|"New File"
 argument_list|)
+argument_list|,
+literal|"dialogs/preferences/new_file.html"
 argument_list|,
 name|NULL
 argument_list|,
@@ -6827,6 +6950,8 @@ argument_list|(
 literal|"Display"
 argument_list|)
 argument_list|,
+literal|"dialogs/preferences/display.html"
+argument_list|,
 name|NULL
 argument_list|,
 operator|&
@@ -7358,6 +7483,8 @@ name|_
 argument_list|(
 literal|"Interface"
 argument_list|)
+argument_list|,
+literal|"dialogs/preferences/interface.html"
 argument_list|,
 name|NULL
 argument_list|,
@@ -7950,6 +8077,8 @@ argument_list|(
 literal|"Help System"
 argument_list|)
 argument_list|,
+literal|"dialogs/preferences/interface.html#help_system"
+argument_list|,
 name|top_insert
 argument_list|,
 operator|&
@@ -8123,6 +8252,8 @@ name|_
 argument_list|(
 literal|"Image Windows"
 argument_list|)
+argument_list|,
+literal|"dialogs/preferences/interface.html#image_windows"
 argument_list|,
 name|top_insert
 argument_list|,
@@ -8919,6 +9050,8 @@ argument_list|(
 literal|"Tool Options"
 argument_list|)
 argument_list|,
+literal|"dialogs/preferences/interface.html#tool_options"
+argument_list|,
 name|top_insert
 argument_list|,
 operator|&
@@ -9138,6 +9271,8 @@ name|_
 argument_list|(
 literal|"Environment"
 argument_list|)
+argument_list|,
+literal|"dialogs/preferences/environment.html"
 argument_list|,
 name|NULL
 argument_list|,
@@ -10318,6 +10453,8 @@ argument_list|(
 literal|"Session"
 argument_list|)
 argument_list|,
+literal|"dialogs/preferences/session.html"
+argument_list|,
 name|NULL
 argument_list|,
 operator|&
@@ -10653,6 +10790,8 @@ name|_
 argument_list|(
 literal|"Monitor"
 argument_list|)
+argument_list|,
+literal|"dialogs/preferences/monitor.html"
 argument_list|,
 name|NULL
 argument_list|,
@@ -11211,6 +11350,8 @@ argument_list|(
 literal|"Directories"
 argument_list|)
 argument_list|,
+literal|"dialogs/preferences/directories.html"
+argument_list|,
 name|NULL
 argument_list|,
 operator|&
@@ -11231,7 +11372,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1f8b5f0108
+DECL|struct|__anon28f8bc3c0108
 block|{
 DECL|member|label
 name|gchar
@@ -11456,7 +11597,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1f8b5f0208
+DECL|struct|__anon28f8bc3c0208
 block|{
 DECL|member|tree_label
 name|gchar
@@ -11467,6 +11608,11 @@ DECL|member|label
 name|gchar
 modifier|*
 name|label
+decl_stmt|;
+DECL|member|help_data
+name|gchar
+modifier|*
+name|help_data
 decl_stmt|;
 DECL|member|fs_label
 name|gchar
@@ -11495,6 +11641,8 @@ argument_list|(
 literal|"Brushes Directories"
 argument_list|)
 block|,
+literal|"dialogs/preferences/directories.html#brushes"
+block|,
 name|N_
 argument_list|(
 literal|"Select Brushes Dir"
@@ -11514,6 +11662,8 @@ name|N_
 argument_list|(
 literal|"Generated Brushes Directories"
 argument_list|)
+block|,
+literal|"dialogs/preferences/directories.html#generated_brushes"
 block|,
 name|N_
 argument_list|(
@@ -11535,6 +11685,8 @@ argument_list|(
 literal|"Patterns Directories"
 argument_list|)
 block|,
+literal|"dialogs/preferences/directories.html#patterns"
+block|,
 name|N_
 argument_list|(
 literal|"Select Patterns Dir"
@@ -11554,6 +11706,8 @@ name|N_
 argument_list|(
 literal|"Palettes Directories"
 argument_list|)
+block|,
+literal|"dialogs/preferences/directories.html#palettes"
 block|,
 name|N_
 argument_list|(
@@ -11575,6 +11729,8 @@ argument_list|(
 literal|"Gradients Directories"
 argument_list|)
 block|,
+literal|"dialogs/preferences/directories.html#gradients"
+block|,
 name|N_
 argument_list|(
 literal|"Select Gradients Dir"
@@ -11595,6 +11751,8 @@ argument_list|(
 literal|"Plug-Ins Directories"
 argument_list|)
 block|,
+literal|"dialogs/preferences/directories.html#plug_ins"
+block|,
 name|N_
 argument_list|(
 literal|"Select Plug-Ins Dir"
@@ -11614,6 +11772,8 @@ name|N_
 argument_list|(
 literal|"Modules Directories"
 argument_list|)
+block|,
+literal|"dialogs/preferences/directories.html#modules"
 block|,
 name|N_
 argument_list|(
@@ -11689,6 +11849,13 @@ index|]
 operator|.
 name|tree_label
 argument_list|)
+argument_list|,
+name|paths
+index|[
+name|i
+index|]
+operator|.
+name|help_data
 argument_list|,
 name|top_insert
 argument_list|,
