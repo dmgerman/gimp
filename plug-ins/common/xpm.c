@@ -4,11 +4,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* XPM plugin version 1.2.5 */
+comment|/* XPM plugin version 1.2.6 */
 end_comment
 
 begin_comment
-comment|/* 1.2.5 only creates a "None" color entry if the image has alpha (bug #108034)  1.2.4 displays an error message if saving fails (bug #87588)  1.2.3 fixes bug when running in noninteractive mode changes alpha_threshold range from [0, 1] to [0,255] for consistency with the threshold_alpha plugin  1.2.2 fixes bug that generated bad digits on images with more than 20000 colors. (thanks, yanele) parses gtkrc (thanks, yosh) doesn't load parameter screen on images that don't have alpha  1.2.1 fixes some minor bugs -- spaces in #XXXXXX strings, small typos in code.  1.2 compute color indexes so that we don't have to use XpmSaveXImage*  Previous...Inherited code from Ray Lehtiniemi, who inherited it from S& P. */
+comment|/* 1.2.6 fixes crash when saving indexed images (bug #109567)  1.2.5 only creates a "None" color entry if the image has alpha (bug #108034)  1.2.4 displays an error message if saving fails (bug #87588)  1.2.3 fixes bug when running in noninteractive mode changes alpha_threshold range from [0, 1] to [0,255] for consistency with the threshold_alpha plugin  1.2.2 fixes bug that generated bad digits on images with more than 20000 colors. (thanks, yanele) parses gtkrc (thanks, yosh) doesn't load parameter screen on images that don't have alpha  1.2.1 fixes some minor bugs -- spaces in #XXXXXX strings, small typos in code.  1.2 compute color indexes so that we don't have to use XpmSaveXImage*  Previous...Inherited code from Ray Lehtiniemi, who inherited it from S& P. */
 end_comment
 
 begin_include
@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c666e870108
+DECL|struct|__anon2b2b42580108
 block|{
 DECL|member|threshold
 name|gint
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c666e870208
+DECL|struct|__anon2b2b42580208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c666e870308
+DECL|struct|__anon2b2b42580308
 block|{
 DECL|member|r
 name|guchar
@@ -2619,6 +2619,14 @@ operator|&
 name|ncolors
 argument_list|)
 decl_stmt|;
+name|guchar
+modifier|*
+name|c
+decl_stmt|;
+name|c
+operator|=
+name|cmap
+expr_stmt|;
 if|if
 condition|(
 name|alpha
@@ -2705,26 +2713,20 @@ decl_stmt|;
 name|r
 operator|=
 operator|*
-operator|(
-name|cmap
+name|c
 operator|++
-operator|)
 expr_stmt|;
 name|g
 operator|=
 operator|*
-operator|(
-name|cmap
+name|c
 operator|++
-operator|)
 expr_stmt|;
 name|b
 operator|=
 operator|*
-operator|(
-name|cmap
+name|c
 operator|++
-operator|)
 expr_stmt|;
 name|string
 operator|=
