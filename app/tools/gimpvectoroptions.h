@@ -113,8 +113,12 @@ name|GimpSelectionOptions
 name|parent_instance
 decl_stmt|;
 DECL|member|edit_mode
-name|gboolean
+name|GimpVectorMode
 name|edit_mode
+decl_stmt|;
+DECL|member|polygonal
+name|gboolean
+name|polygonal
 decl_stmt|;
 block|}
 struct|;

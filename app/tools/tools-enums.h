@@ -74,7 +74,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6d9dc10103
+DECL|enum|__anon28c8e5690103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -97,7 +97,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b6d9dc10203
+DECL|enum|__anon28c8e5690203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -144,7 +144,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b6d9dc10303
+DECL|enum|__anon28c8e5690303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -168,7 +168,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b6d9dc10403
+DECL|enum|__anon28c8e5690403
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -206,7 +206,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6d9dc10503
+DECL|enum|__anon28c8e5690503
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -247,7 +247,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6d9dc10603
+DECL|enum|__anon28c8e5690603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -263,6 +263,44 @@ comment|/*< desc="Transform Active Path">*/
 DECL|typedef|GimpTransformType
 block|}
 name|GimpTransformType
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_VECTOR_MODE
+define|#
+directive|define
+name|GIMP_TYPE_VECTOR_MODE
+value|(gimp_vector_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_vector_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon28c8e5690703
+block|{
+DECL|enumerator|GIMP_VECTOR_MODE_CREATE
+name|GIMP_VECTOR_MODE_CREATE
+block|,
+comment|/*< desc="Extend Stroke/Move Nodes">*/
+DECL|enumerator|GIMP_VECTOR_MODE_ADJUST
+name|GIMP_VECTOR_MODE_ADJUST
+block|,
+comment|/*< desc="Insert/Delete Nodes">*/
+DECL|typedef|GimpVectorMode
+block|}
+name|GimpVectorMode
 typedef|;
 end_typedef
 
@@ -288,7 +326,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b6d9dc10703
+DECL|enum|__anon28c8e5690803
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
 name|GIMP_TRANSFORM_GRID_TYPE_NONE
@@ -315,7 +353,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b6d9dc10803
+DECL|enum|__anon28c8e5690903
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
