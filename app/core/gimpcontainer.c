@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e98230103
+DECL|enum|__anon2bd160f90103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e98230203
+DECL|enum|__anon2bd160f90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1374,7 +1374,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e98230308
+DECL|struct|__anon2bd160f90308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -1678,6 +1678,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|name
+init|=
+name|NULL
 decl_stmt|;
 name|type
 operator|=
@@ -1796,6 +1798,18 @@ name|G_TOKEN_STRING
 expr_stmt|;
 break|break;
 block|}
+if|if
+condition|(
+operator|!
+name|name
+condition|)
+name|name
+operator|=
+name|g_strdup
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
 name|child
 operator|=
 name|gimp_container_get_child_by_name
@@ -1874,6 +1888,11 @@ name|child
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 block|{
 name|GimpConfigInterface
 modifier|*

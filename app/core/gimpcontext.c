@@ -1243,7 +1243,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b14ddf20103
+DECL|enum|__anon298ec8780103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1257,7 +1257,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b14ddf20203
+DECL|enum|__anon298ec8780203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -4654,7 +4654,6 @@ if|if
 condition|(
 name|serialize_obj
 condition|)
-block|{
 name|gimp_config_writer_string
 argument_list|(
 name|writer
@@ -4665,9 +4664,7 @@ name|serialize_obj
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|gimp_config_writer_print
 argument_list|(
 name|writer
@@ -4677,7 +4674,6 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_config_writer_close
 argument_list|(
 name|writer
@@ -4995,6 +4991,18 @@ name|GimpObject
 modifier|*
 name|deserialize_obj
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|object_name
+condition|)
+name|object_name
+operator|=
+name|g_strdup
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
 name|deserialize_obj
 operator|=
 name|gimp_container_get_child_by_name
@@ -5043,6 +5051,11 @@ argument_list|(
 name|value
 argument_list|,
 name|deserialize_obj
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|object_name
 argument_list|)
 expr_stmt|;
 block|}
