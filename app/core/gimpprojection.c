@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27935fb80103
+DECL|enum|__anon2b72c0230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -505,18 +505,6 @@ operator|->
 name|shell
 operator|=
 name|NULL
-expr_stmt|;
-name|gdisp
-operator|->
-name|draw_guides
-operator|=
-name|TRUE
-expr_stmt|;
-name|gdisp
-operator|->
-name|snap_to_guides
-operator|=
-name|TRUE
 expr_stmt|;
 name|gdisp
 operator|->

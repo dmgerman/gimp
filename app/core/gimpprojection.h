@@ -178,16 +178,6 @@ modifier|*
 name|shell
 decl_stmt|;
 comment|/*  shell widget for this gdisplay          */
-DECL|member|draw_guides
-name|gboolean
-name|draw_guides
-decl_stmt|;
-comment|/*  should the guides be drawn?             */
-DECL|member|snap_to_guides
-name|gboolean
-name|snap_to_guides
-decl_stmt|;
-comment|/*  should the guides be snapped to?        */
 DECL|member|update_areas
 name|GSList
 modifier|*

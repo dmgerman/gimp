@@ -46,6 +46,18 @@ DECL|struct|_GimpDisplayShellVisibility
 struct|struct
 name|_GimpDisplayShellVisibility
 block|{
+DECL|member|selection
+name|gboolean
+name|selection
+decl_stmt|;
+DECL|member|active_layer
+name|gboolean
+name|active_layer
+decl_stmt|;
+DECL|member|guides
+name|gboolean
+name|guides
+decl_stmt|;
 DECL|member|menubar
 name|gboolean
 name|menubar
@@ -366,12 +378,12 @@ DECL|member|disp_width
 name|gint
 name|disp_width
 decl_stmt|;
-comment|/*  width of drawing area   */
+comment|/*  width of drawing area              */
 DECL|member|disp_height
 name|gint
 name|disp_height
 decl_stmt|;
-comment|/*  height of drawing area  */
+comment|/*  height of drawing area             */
 DECL|member|disp_xoffset
 name|gint
 name|disp_xoffset
@@ -384,19 +396,24 @@ DECL|member|proximity
 name|gboolean
 name|proximity
 decl_stmt|;
-comment|/* is a device in proximity           */
+comment|/* is a device in proximity            */
+DECL|member|snap_to_guides
+name|gboolean
+name|snap_to_guides
+decl_stmt|;
+comment|/*  should the guides be snapped to?   */
 DECL|member|select
 name|Selection
 modifier|*
 name|select
 decl_stmt|;
-comment|/*  Selection object    */
+comment|/*  Selection object                   */
 DECL|member|hsbdata
 name|GtkAdjustment
 modifier|*
 name|hsbdata
 decl_stmt|;
-comment|/*  adjustments         */
+comment|/*  adjustments                        */
 DECL|member|vsbdata
 name|GtkAdjustment
 modifier|*
@@ -407,13 +424,13 @@ name|GtkWidget
 modifier|*
 name|canvas
 decl_stmt|;
-comment|/*  canvas widget       */
+comment|/*  canvas widget                      */
 DECL|member|hsb
 name|GtkWidget
 modifier|*
 name|hsb
 decl_stmt|;
-comment|/*  scroll bars         */
+comment|/*  scroll bars                        */
 DECL|member|vsb
 name|GtkWidget
 modifier|*
@@ -424,13 +441,13 @@ name|GtkWidget
 modifier|*
 name|qmask
 decl_stmt|;
-comment|/*  qmask button        */
+comment|/*  qmask button                       */
 DECL|member|hrule
 name|GtkWidget
 modifier|*
 name|hrule
 decl_stmt|;
-comment|/*  rulers              */
+comment|/*  rulers                             */
 DECL|member|vrule
 name|GtkWidget
 modifier|*
@@ -441,13 +458,13 @@ name|GtkWidget
 modifier|*
 name|origin
 decl_stmt|;
-comment|/*  origin button       */
+comment|/*  origin button                      */
 DECL|member|statusbar
 name|GtkWidget
 modifier|*
 name|statusbar
 decl_stmt|;
-comment|/*  statusbar           */
+comment|/*  statusbar                          */
 DECL|member|render_buf
 name|guchar
 modifier|*

@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-appearance.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-selection.h"
 end_include
 
@@ -754,6 +760,10 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gdouble
 name|x1
 decl_stmt|,
@@ -769,6 +779,15 @@ name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|dx
 operator|=
 name|x
@@ -803,11 +822,12 @@ name|dy
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
-operator|->
-name|draw_guides
+name|gimp_display_shell_get_show_guides
+argument_list|(
+name|shell
+argument_list|)
 operator|&&
-name|gdisp
+name|shell
 operator|->
 name|snap_to_guides
 operator|&&

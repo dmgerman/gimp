@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-appearance.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-marching-ants.h"
 end_include
 
@@ -597,13 +603,21 @@ name|new
 operator|->
 name|hidden
 operator|=
-name|FALSE
+operator|!
+name|gimp_display_shell_get_show_selection
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 name|new
 operator|->
 name|layer_hidden
 operator|=
-name|FALSE
+operator|!
+name|gimp_display_shell_get_show_layer
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -1660,13 +1674,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_selection_toggle (Selection * select)
-name|gimp_display_shell_selection_toggle
+DECL|function|gimp_display_shell_selection_set_hidden (Selection * select,gboolean hidden)
+name|gimp_display_shell_selection_set_hidden
 parameter_list|(
 name|Selection
 modifier|*
 name|select
+parameter_list|,
+name|gboolean
+name|hidden
 parameter_list|)
+block|{
+if|if
+condition|(
+name|hidden
+operator|!=
+name|select
+operator|->
+name|hidden
+condition|)
 block|{
 name|gimp_display_shell_selection_invis
 argument_list|(
@@ -1678,18 +1704,11 @@ argument_list|(
 name|select
 argument_list|)
 expr_stmt|;
-comment|/*  toggle the visibility  */
 name|select
 operator|->
 name|hidden
 operator|=
-name|select
-operator|->
 name|hidden
-condition|?
-name|FALSE
-else|:
-name|TRUE
 expr_stmt|;
 name|gimp_display_shell_selection_start
 argument_list|(
@@ -1699,17 +1718,30 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_selection_toggle_layer (Selection * select)
-name|gimp_display_shell_selection_toggle_layer
+DECL|function|gimp_display_shell_selection_layer_set_hidden (Selection * select,gboolean hidden)
+name|gimp_display_shell_selection_layer_set_hidden
 parameter_list|(
 name|Selection
 modifier|*
 name|select
+parameter_list|,
+name|gboolean
+name|hidden
 parameter_list|)
+block|{
+if|if
+condition|(
+name|hidden
+operator|!=
+name|select
+operator|->
+name|layer_hidden
+condition|)
 block|{
 name|gimp_display_shell_selection_invis
 argument_list|(
@@ -1721,18 +1753,11 @@ argument_list|(
 name|select
 argument_list|)
 expr_stmt|;
-comment|/*  toggle the visibility  */
 name|select
 operator|->
 name|layer_hidden
 operator|=
-name|select
-operator|->
-name|layer_hidden
-condition|?
-name|FALSE
-else|:
-name|TRUE
+name|hidden
 expr_stmt|;
 name|gimp_display_shell_selection_start
 argument_list|(
@@ -1741,6 +1766,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -5745,20 +5745,11 @@ name|SET_ACTIVE
 argument_list|(
 literal|"/View/Show Selection"
 argument_list|,
-operator|(
 name|gdisp
 operator|&&
-name|shell
+name|visibility
 operator|->
-name|select
-operator|&&
-operator|!
-name|shell
-operator|->
-name|select
-operator|->
-name|hidden
-operator|)
+name|selection
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -5772,20 +5763,11 @@ name|SET_ACTIVE
 argument_list|(
 literal|"/View/Show Layer Boundary"
 argument_list|,
-operator|(
 name|gdisp
 operator|&&
-name|shell
+name|visibility
 operator|->
-name|select
-operator|&&
-operator|!
-name|shell
-operator|->
-name|select
-operator|->
-name|layer_hidden
-operator|)
+name|active_layer
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -5801,9 +5783,9 @@ literal|"/View/Show Guides"
 argument_list|,
 name|gdisp
 operator|&&
-name|gdisp
+name|visibility
 operator|->
-name|draw_guides
+name|guides
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -5819,7 +5801,7 @@ literal|"/View/Snap to Guides"
 argument_list|,
 name|gdisp
 operator|&&
-name|gdisp
+name|shell
 operator|->
 name|snap_to_guides
 argument_list|)

@@ -269,22 +269,28 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_selection_toggle
+name|gimp_display_shell_selection_set_hidden
 parameter_list|(
 name|Selection
 modifier|*
 name|select
+parameter_list|,
+name|gboolean
+name|hidden
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_selection_toggle_layer
+name|gimp_display_shell_selection_layer_set_hidden
 parameter_list|(
 name|Selection
 modifier|*
 name|select
+parameter_list|,
+name|gboolean
+name|hidden
 parameter_list|)
 function_decl|;
 end_function_decl
