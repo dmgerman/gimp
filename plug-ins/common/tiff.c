@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba570d90108
+DECL|struct|__anon2afb533b0108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba570d90208
+DECL|struct|__anon2afb533b0208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba570d90308
+DECL|struct|__anon2afb533b0308
 block|{
 DECL|member|ID
 name|gint32
@@ -1259,6 +1259,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
