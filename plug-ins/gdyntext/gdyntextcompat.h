@@ -153,7 +153,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b381150103
+DECL|enum|__anon2c3d2f2b0103
 block|{
 DECL|enumerator|C_TEXT
 name|C_TEXT
@@ -221,6 +221,10 @@ name|defined
 argument_list|(
 name|GIMP_HAVE_PARASITES
 argument_list|)
+operator|&&
+name|GIMP_MINOR_VERSION
+operator|<
+literal|2
 operator|&&
 name|GIMP_MICRO_VERSION
 operator|<

@@ -15,7 +15,7 @@ end_define
 begin_typedef
 DECL|typedef|get_ray_func
 typedef|typedef
-name|GckRGB
+name|GimpRGB
 function_decl|(
 modifier|*
 name|get_ray_func
@@ -29,7 +29,7 @@ function_decl|;
 end_typedef
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|get_ray_color
 parameter_list|(
 name|GimpVector3
@@ -40,7 +40,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|get_ray_color_no_bilinear
 parameter_list|(
 name|GimpVector3
@@ -51,7 +51,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|get_ray_color_ref
 parameter_list|(
 name|GimpVector3
@@ -62,7 +62,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|get_ray_color_no_bilinear_ref
 parameter_list|(
 name|GimpVector3

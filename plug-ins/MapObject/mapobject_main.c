@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -31,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gck/gck.h>
 end_include
 
 begin_include
@@ -358,7 +358,7 @@ name|intensity
 operator|=
 literal|1.0
 expr_stmt|;
-name|gck_rgb_set
+name|gimp_rgb_set
 argument_list|(
 operator|&
 name|mapvals

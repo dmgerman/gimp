@@ -106,7 +106,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GckRGB
+name|GimpRGB
 name|background
 decl_stmt|;
 end_decl_stmt
@@ -162,7 +162,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|peek
 parameter_list|(
 name|gint
@@ -175,7 +175,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|peek_env_map
 parameter_list|(
 name|gint
@@ -197,7 +197,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|GckRGB
+name|GimpRGB
 modifier|*
 name|color
 parameter_list|)
@@ -286,7 +286,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|get_image_color
 parameter_list|(
 name|gdouble

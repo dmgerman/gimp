@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b3fa580103
+DECL|enum|__anon29c1762d0103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -54,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b3fa580203
+DECL|enum|__anon29c1762d0203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB
@@ -130,7 +130,7 @@ block|{
 DECL|member|left
 DECL|member|middle
 DECL|member|right
-name|double
+name|gdouble
 name|left
 decl_stmt|,
 name|middle
@@ -142,7 +142,7 @@ DECL|member|r0
 DECL|member|g0
 DECL|member|b0
 DECL|member|a0
-name|double
+name|gdouble
 name|r0
 decl_stmt|,
 name|g0
@@ -156,7 +156,7 @@ DECL|member|r1
 DECL|member|g1
 DECL|member|b1
 DECL|member|a1
-name|double
+name|gdouble
 name|r1
 decl_stmt|,
 name|g1

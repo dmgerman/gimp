@@ -126,7 +126,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GckRGB
+name|GimpRGB
 name|background
 decl_stmt|;
 end_decl_stmt
@@ -229,7 +229,7 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-name|GckRGB
+name|GimpRGB
 name|peek
 parameter_list|(
 name|gint
@@ -252,7 +252,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|GckRGB
+name|GimpRGB
 modifier|*
 name|color
 parameter_list|)
@@ -297,7 +297,7 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-name|GckRGB
+name|GimpRGB
 name|get_image_color
 parameter_list|(
 name|gdouble
@@ -315,7 +315,7 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-name|GckRGB
+name|GimpRGB
 name|get_box_image_color
 parameter_list|(
 name|gint
@@ -332,7 +332,7 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-name|GckRGB
+name|GimpRGB
 name|get_cylinder_image_color
 parameter_list|(
 name|gint

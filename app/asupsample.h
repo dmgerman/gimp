@@ -17,31 +17,6 @@ name|__ASUPSAMPLE_H__
 end_define
 
 begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon27791d3f0108
-block|{
-DECL|member|r
-DECL|member|g
-DECL|member|b
-DECL|member|a
-name|gdouble
-name|r
-decl_stmt|,
-name|g
-decl_stmt|,
-name|b
-decl_stmt|,
-name|a
-decl_stmt|;
-comment|/* Range is [0, 1] */
-DECL|typedef|color_t
-block|}
-name|color_t
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|render_func_t
 typedef|typedef
 name|void
@@ -56,7 +31,7 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|color_t
+name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
@@ -81,7 +56,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|color_t
+name|GimpRGB
 name|color
 parameter_list|,
 name|gpointer

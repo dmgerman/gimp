@@ -26,13 +26,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|<gck/gck.h>
 end_include
 
 begin_include
@@ -897,15 +897,15 @@ name|p1
 decl_stmt|,
 name|p2
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|lightcheck
 decl_stmt|,
 name|darkcheck
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|temp
 decl_stmt|;
 name|guchar
@@ -1063,7 +1063,7 @@ operator|==
 name|TRUE
 condition|)
 block|{
-name|gck_rgba_set
+name|gimp_rgba_set
 argument_list|(
 operator|&
 name|background
@@ -1132,7 +1132,7 @@ operator|=
 literal|1.0
 expr_stmt|;
 block|}
-name|gck_rgb_set
+name|gimp_rgb_set
 argument_list|(
 operator|&
 name|lightcheck
@@ -1144,7 +1144,7 @@ argument_list|,
 literal|0.75
 argument_list|)
 expr_stmt|;
-name|gck_rgb_set
+name|gimp_rgb_set
 argument_list|(
 operator|&
 name|darkcheck
@@ -1291,7 +1291,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|color
@@ -1305,7 +1305,7 @@ name|temp
 operator|=
 name|lightcheck
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|temp
@@ -1317,7 +1317,7 @@ operator|.
 name|a
 argument_list|)
 expr_stmt|;
-name|gck_rgb_add
+name|gimp_rgb_add
 argument_list|(
 operator|&
 name|color
@@ -1346,7 +1346,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|color
@@ -1360,7 +1360,7 @@ name|temp
 operator|=
 name|darkcheck
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|temp
@@ -1372,7 +1372,7 @@ operator|.
 name|a
 argument_list|)
 expr_stmt|;
-name|gck_rgb_add
+name|gimp_rgb_add
 argument_list|(
 operator|&
 name|color

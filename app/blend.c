@@ -400,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efd3ff0108
+DECL|struct|__anon29e6de420108
 block|{
 DECL|member|offset
 name|gdouble
@@ -423,7 +423,7 @@ name|gradient_type
 decl_stmt|;
 DECL|member|fg
 DECL|member|bg
-name|color_t
+name|GimpRGB
 name|fg
 decl_stmt|,
 name|bg
@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efd3ff0208
+DECL|struct|__anon29e6de420208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -699,11 +699,14 @@ name|blend_options_drop_gradient
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gradient_t
 modifier|*
+name|gradient
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -715,10 +718,13 @@ name|blend_options_drop_tool
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|ToolType
+name|gradient
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -995,7 +1001,7 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|color_t
+name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
@@ -1016,7 +1022,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|color_t
+name|GimpRGB
 name|color
 parameter_list|,
 name|gpointer
@@ -2681,7 +2687,7 @@ name|Argument
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 else|#
@@ -4021,10 +4027,6 @@ block|}
 end_function
 
 begin_comment
-comment|/*****/
-end_comment
-
-begin_comment
 comment|/*  The actual blending procedure  */
 end_comment
 
@@ -4365,37 +4367,37 @@ end_function
 
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_conical_sym_factor (double dist,double * axis,double offset,double x,double y)
+name|gdouble
+DECL|function|gradient_calc_conical_sym_factor (gdouble dist,gdouble * axis,gdouble offset,gdouble x,gdouble y)
 name|gradient_calc_conical_sym_factor
 parameter_list|(
-name|double
+name|gdouble
 name|dist
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|axis
 parameter_list|,
-name|double
+name|gdouble
 name|offset
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|vec
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|double
+name|gdouble
 name|r
 decl_stmt|;
-name|double
+name|gdouble
 name|rat
 decl_stmt|;
 if|if
@@ -4404,10 +4406,12 @@ name|dist
 operator|==
 literal|0.0
 condition|)
+block|{
 name|rat
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -4502,7 +4506,7 @@ operator|=
 operator|-
 literal|1.0
 expr_stmt|;
-comment|/* This cool idea is courtesy Josh MacDonald, 	 * Ali Rahimi --- two more XCF losers.  */
+comment|/* This cool idea is courtesy Josh MacDonald,        * Ali Rahimi --- two more XCF losers.  */
 name|rat
 operator|=
 name|acos
@@ -4540,56 +4544,50 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|rat
 operator|=
 literal|0.5
 expr_stmt|;
+block|}
 return|return
 name|rat
 return|;
 block|}
 end_function
 
-begin_comment
-comment|/* gradient_calc_conical_sym_factor */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_conical_asym_factor (double dist,double * axis,double offset,double x,double y)
+name|gdouble
+DECL|function|gradient_calc_conical_asym_factor (gdouble dist,gdouble * axis,gdouble offset,gdouble x,gdouble y)
 name|gradient_calc_conical_asym_factor
 parameter_list|(
-name|double
+name|gdouble
 name|dist
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|axis
 parameter_list|,
-name|double
+name|gdouble
 name|offset
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|ang0
 decl_stmt|,
 name|ang1
 decl_stmt|;
-name|double
+name|gdouble
 name|ang
 decl_stmt|;
-name|double
+name|gdouble
 name|rat
 decl_stmt|;
 if|if
@@ -4598,10 +4596,12 @@ name|dist
 operator|==
 literal|0.0
 condition|)
+block|{
 name|rat
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
@@ -4705,50 +4705,43 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|rat
 operator|=
 literal|0.5
 expr_stmt|;
 comment|/* We are on middle point */
 block|}
-comment|/* else */
+block|}
 return|return
 name|rat
 return|;
 block|}
 end_function
 
-begin_comment
-comment|/* gradient_calc_conical_asym_factor */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_square_factor (double dist,double offset,double x,double y)
+name|gdouble
+DECL|function|gradient_calc_square_factor (gdouble dist,gdouble offset,gdouble x,gdouble y)
 name|gradient_calc_square_factor
 parameter_list|(
-name|double
+name|gdouble
 name|dist
 parameter_list|,
-name|double
+name|gdouble
 name|offset
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|r
 decl_stmt|;
-name|double
+name|gdouble
 name|rat
 decl_stmt|;
 if|if
@@ -4757,10 +4750,12 @@ name|dist
 operator|==
 literal|0.0
 condition|)
+block|{
 name|rat
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 else|else
 block|{
 comment|/* Calculate offset from start as a value in [0, 1] */
@@ -4836,44 +4831,35 @@ name|offset
 operator|)
 expr_stmt|;
 block|}
-comment|/* else */
 return|return
 name|rat
 return|;
 block|}
 end_function
 
-begin_comment
-comment|/* gradient_calc_square_factor */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_radial_factor (double dist,double offset,double x,double y)
+name|gdouble
+DECL|function|gradient_calc_radial_factor (gdouble dist,gdouble offset,gdouble x,gdouble y)
 name|gradient_calc_radial_factor
 parameter_list|(
-name|double
+name|gdouble
 name|dist
 parameter_list|,
-name|double
+name|gdouble
 name|offset
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|r
 decl_stmt|;
-name|double
+name|gdouble
 name|rat
 decl_stmt|;
 if|if
@@ -4882,10 +4868,12 @@ name|dist
 operator|==
 literal|0.0
 condition|)
+block|{
 name|rat
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 else|else
 block|{
 comment|/* Calculate radial offset from start as a value in [0, 1] */
@@ -4961,41 +4949,32 @@ name|offset
 operator|)
 expr_stmt|;
 block|}
-comment|/* else */
 return|return
 name|rat
 return|;
 block|}
 end_function
 
-begin_comment
-comment|/* gradient_calc_radial_factor */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_linear_factor (double dist,double * vec,double offset,double x,double y)
+name|gdouble
+DECL|function|gradient_calc_linear_factor (gdouble dist,gdouble * vec,gdouble offset,gdouble x,gdouble y)
 name|gradient_calc_linear_factor
 parameter_list|(
-name|double
+name|gdouble
 name|dist
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|vec
 parameter_list|,
-name|double
+name|gdouble
 name|offset
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -5011,10 +4990,12 @@ name|dist
 operator|==
 literal|0.0
 condition|)
+block|{
 name|rat
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 else|else
 block|{
 name|offset
@@ -5090,48 +5071,39 @@ name|offset
 operator|)
 expr_stmt|;
 block|}
-comment|/* else */
 return|return
 name|rat
 return|;
 block|}
 end_function
 
-begin_comment
-comment|/* gradient_calc_linear_factor */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_bilinear_factor (double dist,double * vec,double offset,double x,double y)
+name|gdouble
+DECL|function|gradient_calc_bilinear_factor (gdouble dist,gdouble * vec,gdouble offset,gdouble x,gdouble y)
 name|gradient_calc_bilinear_factor
 parameter_list|(
-name|double
+name|gdouble
 name|dist
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|vec
 parameter_list|,
-name|double
+name|gdouble
 name|offset
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|r
 decl_stmt|;
-name|double
+name|gdouble
 name|rat
 decl_stmt|;
 if|if
@@ -5140,10 +5112,12 @@ name|dist
 operator|==
 literal|0.0
 condition|)
+block|{
 name|rat
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 else|else
 block|{
 comment|/* Calculate linear offset from the start line outward */
@@ -5226,54 +5200,49 @@ name|offset
 operator|)
 expr_stmt|;
 block|}
-comment|/* else */
 return|return
 name|rat
 return|;
 block|}
 end_function
 
-begin_comment
-comment|/* gradient_calc_bilinear_factor */
-end_comment
-
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_spiral_factor (double dist,double * axis,double offset,double x,double y,gint cwise)
+name|gdouble
+DECL|function|gradient_calc_spiral_factor (gdouble dist,gdouble * axis,gdouble offset,gdouble x,gdouble y,gint cwise)
 name|gradient_calc_spiral_factor
 parameter_list|(
-name|double
+name|gdouble
 name|dist
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|axis
 parameter_list|,
-name|double
+name|gdouble
 name|offset
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|,
 name|gint
 name|cwise
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|ang0
 decl_stmt|,
 name|ang1
 decl_stmt|;
-name|double
+name|gdouble
 name|ang
 decl_stmt|,
 name|r
 decl_stmt|;
-name|double
+name|gdouble
 name|rat
 decl_stmt|;
 if|if
@@ -5282,10 +5251,12 @@ name|dist
 operator|==
 literal|0.0
 condition|)
+block|{
 name|rat
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
@@ -5413,18 +5384,18 @@ end_function
 
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_shapeburst_angular_factor (double x,double y)
+name|gdouble
+DECL|function|gradient_calc_shapeburst_angular_factor (gdouble x,gdouble y)
 name|gradient_calc_shapeburst_angular_factor
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ix
 decl_stmt|,
 name|iy
@@ -5433,7 +5404,7 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|float
+name|gfloat
 name|value
 decl_stmt|;
 name|ix
@@ -5524,18 +5495,18 @@ end_function
 
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_shapeburst_spherical_factor (double x,double y)
+name|gdouble
+DECL|function|gradient_calc_shapeburst_spherical_factor (gdouble x,gdouble y)
 name|gradient_calc_shapeburst_spherical_factor
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ix
 decl_stmt|,
 name|iy
@@ -5544,7 +5515,7 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|float
+name|gfloat
 name|value
 decl_stmt|;
 name|ix
@@ -5601,7 +5572,7 @@ operator|=
 operator|*
 operator|(
 operator|(
-name|float
+name|gfloat
 operator|*
 operator|)
 name|tile_data_pointer
@@ -5646,18 +5617,18 @@ end_function
 
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_calc_shapeburst_dimpled_factor (double x,double y)
+name|gdouble
+DECL|function|gradient_calc_shapeburst_dimpled_factor (gdouble x,gdouble y)
 name|gradient_calc_shapeburst_dimpled_factor
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ix
 decl_stmt|,
 name|iy
@@ -5666,7 +5637,7 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|float
+name|gfloat
 name|value
 decl_stmt|;
 name|ix
@@ -5766,11 +5737,11 @@ end_function
 
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_repeat_none (double val)
+name|gdouble
+DECL|function|gradient_repeat_none (gdouble val)
 name|gradient_repeat_none
 parameter_list|(
-name|double
+name|gdouble
 name|val
 parameter_list|)
 block|{
@@ -5789,11 +5760,11 @@ end_function
 
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_repeat_sawtooth (double val)
+name|gdouble
+DECL|function|gradient_repeat_sawtooth (gdouble val)
 name|gradient_repeat_sawtooth
 parameter_list|(
-name|double
+name|gdouble
 name|val
 parameter_list|)
 block|{
@@ -5828,15 +5799,15 @@ end_function
 
 begin_function
 specifier|static
-name|double
-DECL|function|gradient_repeat_triangular (double val)
+name|gdouble
+DECL|function|gradient_repeat_triangular (gdouble val)
 name|gradient_repeat_triangular
 parameter_list|(
-name|double
+name|gdouble
 name|val
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ival
 decl_stmt|;
 if|if
@@ -5892,7 +5863,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_precalc_shapeburst (GImage * gimage,GimpDrawable * drawable,PixelRegion * PR,double dist)
+DECL|function|gradient_precalc_shapeburst (GImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gdouble dist)
 name|gradient_precalc_shapeburst
 parameter_list|(
 name|GImage
@@ -5907,7 +5878,7 @@ name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|double
+name|gdouble
 name|dist
 parameter_list|)
 block|{
@@ -5918,22 +5889,20 @@ decl_stmt|;
 name|PixelRegion
 name|tempR
 decl_stmt|;
-name|float
+name|gfloat
 name|max_iteration
 decl_stmt|;
-name|float
+name|gfloat
 modifier|*
 name|distp
 decl_stmt|;
-name|int
+name|gint
 name|size
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|white
 index|[
 literal|1
@@ -5973,7 +5942,7 @@ name|h
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|float
+name|gfloat
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6185,8 +6154,9 @@ name|tempR
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Otherwise, just fill the shapeburst to white  */
 else|else
+block|{
+comment|/*  Otherwise, just fill the shapeburst to white  */
 name|color_region
 argument_list|(
 operator|&
@@ -6195,6 +6165,7 @@ argument_list|,
 name|white
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|pixel_region_init
 argument_list|(
@@ -6314,7 +6285,7 @@ block|{
 name|distp
 operator|=
 operator|(
-name|float
+name|gfloat
 operator|*
 operator|)
 name|distR
@@ -6381,7 +6352,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_render_pixel (double x,double y,color_t * color,void * render_data)
+DECL|function|gradient_render_pixel (double x,double y,GimpRGB * color,gpointer render_data)
 name|gradient_render_pixel
 parameter_list|(
 name|double
@@ -6390,12 +6361,11 @@ parameter_list|,
 name|double
 name|y
 parameter_list|,
-name|color_t
+name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|render_data
 parameter_list|)
 block|{
@@ -6403,7 +6373,7 @@ name|RenderBlendData
 modifier|*
 name|rbd
 decl_stmt|;
-name|double
+name|gdouble
 name|factor
 decl_stmt|;
 name|rbd
@@ -6924,7 +6894,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_put_pixel (int x,int y,color_t color,void * put_pixel_data)
+DECL|function|gradient_put_pixel (int x,int y,GimpRGB color,void * put_pixel_data)
 name|gradient_put_pixel
 parameter_list|(
 name|int
@@ -6933,7 +6903,7 @@ parameter_list|,
 name|int
 name|y
 parameter_list|,
-name|color_t
+name|GimpRGB
 name|color
 parameter_list|,
 name|void
@@ -6945,8 +6915,7 @@ name|PutPixelData
 modifier|*
 name|ppd
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
@@ -7090,7 +7059,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_fill_region (GImage * gimage,GimpDrawable * drawable,PixelRegion * PR,int width,int height,BlendMode blend_mode,GradientType gradient_type,double offset,RepeatMode repeat,int supersample,int max_depth,double threshold,double sx,double sy,double ex,double ey,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gradient_fill_region (GImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gint width,gint height,BlendMode blend_mode,GradientType gradient_type,gdouble offset,RepeatMode repeat,gint supersample,gint max_depth,gdouble threshold,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gradient_fill_region
 parameter_list|(
 name|GImage
@@ -7105,10 +7074,10 @@ name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|BlendMode
@@ -7117,31 +7086,31 @@ parameter_list|,
 name|GradientType
 name|gradient_type
 parameter_list|,
-name|double
+name|gdouble
 name|offset
 parameter_list|,
 name|RepeatMode
 name|repeat
 parameter_list|,
-name|int
+name|gint
 name|supersample
 parameter_list|,
-name|int
+name|gint
 name|max_depth
 parameter_list|,
-name|double
+name|gdouble
 name|threshold
 parameter_list|,
-name|double
+name|gdouble
 name|sx
 parameter_list|,
-name|double
+name|gdouble
 name|sy
 parameter_list|,
-name|double
+name|gdouble
 name|ex
 parameter_list|,
-name|double
+name|gdouble
 name|ey
 parameter_list|,
 name|GimpProgressFunc
@@ -7182,7 +7151,7 @@ name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|color_t
+name|GimpRGB
 name|color
 decl_stmt|;
 comment|/* Get foreground and background colors, normalized */
@@ -7386,7 +7355,7 @@ argument_list|(
 literal|"gradient_fill_region(): Unknown blend mode %d"
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|blend_mode
 argument_list|)
@@ -7583,7 +7552,7 @@ argument_list|(
 literal|"gradient_fill_region(): Unknown gradient type %d"
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|gradient_type
 argument_list|)
@@ -7632,7 +7601,7 @@ argument_list|(
 literal|"gradient_fill_region(): Unknown repeat mode %d"
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|repeat
 argument_list|)
@@ -7759,7 +7728,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|int
+name|gint
 name|max_progress
 init|=
 name|PR
@@ -7770,7 +7739,7 @@ name|PR
 operator|->
 name|h
 decl_stmt|;
-name|int
+name|gint
 name|progress
 init|=
 literal|0
@@ -8002,9 +7971,11 @@ end_comment
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_blend ()
+DECL|function|tools_new_blend (void)
 name|tools_new_blend
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*

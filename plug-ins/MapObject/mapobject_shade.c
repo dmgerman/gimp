@@ -85,7 +85,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb8819e0108
+DECL|struct|__anon2c1937870108
 block|{
 DECL|member|u
 DECL|member|v
@@ -130,8 +130,8 @@ end_comment
 
 begin_function
 specifier|static
-name|GckRGB
-DECL|function|phong_shade (GimpVector3 * pos,GimpVector3 * viewpoint,GimpVector3 * normal,GimpVector3 * light,GckRGB * diff_col,GckRGB * spec_col,gint type)
+name|GimpRGB
+DECL|function|phong_shade (GimpVector3 * pos,GimpVector3 * viewpoint,GimpVector3 * normal,GimpVector3 * light,GimpRGB * diff_col,GimpRGB * spec_col,gint type)
 name|phong_shade
 parameter_list|(
 name|GimpVector3
@@ -150,11 +150,11 @@ name|GimpVector3
 modifier|*
 name|light
 parameter_list|,
-name|GckRGB
+name|GimpRGB
 modifier|*
 name|diff_col
 parameter_list|,
-name|GckRGB
+name|GimpRGB
 modifier|*
 name|spec_col
 parameter_list|,
@@ -162,7 +162,7 @@ name|gint
 name|type
 parameter_list|)
 block|{
-name|GckRGB
+name|GimpRGB
 name|ambientcolor
 decl_stmt|,
 name|diffusecolor
@@ -197,7 +197,7 @@ operator|=
 operator|*
 name|diff_col
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|ambientcolor
@@ -346,7 +346,7 @@ operator|=
 operator|*
 name|diff_col
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|diffusecolor
@@ -358,7 +358,7 @@ operator|.
 name|diffuse_ref
 argument_list|)
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|diffusecolor
@@ -371,7 +371,7 @@ operator|=
 operator|*
 name|spec_col
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|specularcolor
@@ -383,7 +383,7 @@ operator|.
 name|specular_ref
 argument_list|)
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|specularcolor
@@ -391,7 +391,7 @@ argument_list|,
 name|RV
 argument_list|)
 expr_stmt|;
-name|gck_rgb_add
+name|gimp_rgb_add
 argument_list|(
 operator|&
 name|diffusecolor
@@ -400,7 +400,7 @@ operator|&
 name|specularcolor
 argument_list|)
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|diffusecolor
@@ -412,13 +412,13 @@ operator|.
 name|diffuse_int
 argument_list|)
 expr_stmt|;
-name|gck_rgb_clamp
+name|gimp_rgb_clamp
 argument_list|(
 operator|&
 name|diffusecolor
 argument_list|)
 expr_stmt|;
-name|gck_rgb_add
+name|gimp_rgb_add
 argument_list|(
 operator|&
 name|ambientcolor
@@ -1218,7 +1218,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_ray_color_plane (GimpVector3 * pos)
 name|get_ray_color_plane
 parameter_list|(
@@ -1227,7 +1227,7 @@ modifier|*
 name|pos
 parameter_list|)
 block|{
-name|GckRGB
+name|GimpRGB
 name|color
 init|=
 name|background
@@ -1374,7 +1374,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgb_clamp
+name|gimp_rgb_clamp
 argument_list|(
 operator|&
 name|color
@@ -1823,7 +1823,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_ray_color_sphere (GimpVector3 * pos)
 name|get_ray_color_sphere
 parameter_list|(
@@ -1832,13 +1832,13 @@ modifier|*
 name|pos
 parameter_list|)
 block|{
-name|GckRGB
+name|GimpRGB
 name|color
 init|=
 name|background
 decl_stmt|;
 specifier|static
-name|GckRGB
+name|GimpRGB
 name|color2
 decl_stmt|;
 specifier|static
@@ -2038,7 +2038,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color
@@ -2138,7 +2138,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color2
@@ -2336,7 +2336,7 @@ name|color2
 operator|.
 name|a
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color
@@ -2406,7 +2406,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color
@@ -4850,7 +4850,7 @@ block|}
 end_function
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_ray_color_box (GimpVector3 * pos)
 name|get_ray_color_box
 parameter_list|(
@@ -4874,7 +4874,7 @@ name|ns
 decl_stmt|,
 name|nn
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|,
 name|color2
@@ -5300,7 +5300,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color
@@ -5397,7 +5397,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color2
@@ -5595,7 +5595,7 @@ name|color2
 operator|.
 name|a
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color
@@ -5669,7 +5669,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color
@@ -6523,7 +6523,7 @@ end_function
 
 begin_function
 specifier|static
-name|GckRGB
+name|GimpRGB
 DECL|function|get_cylinder_color (gint face,gdouble u,gdouble v)
 name|get_cylinder_color
 parameter_list|(
@@ -6537,7 +6537,7 @@ name|gdouble
 name|v
 parameter_list|)
 block|{
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 name|gint
@@ -6582,7 +6582,7 @@ block|}
 end_function
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_ray_color_cylinder (GimpVector3 * pos)
 name|get_ray_color_cylinder
 parameter_list|(
@@ -6606,7 +6606,7 @@ name|ns
 decl_stmt|,
 name|nn
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|,
 name|color2
@@ -7003,7 +7003,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color
@@ -7100,7 +7100,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color2
@@ -7298,7 +7298,7 @@ name|color2
 operator|.
 name|a
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color
@@ -7372,7 +7372,7 @@ operator|.
 name|type
 argument_list|)
 expr_stmt|;
-name|gck_rgba_clamp
+name|gimp_rgba_clamp
 argument_list|(
 operator|&
 name|color

@@ -165,7 +165,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gck_rgb_set
+name|gimp_rgb_set
 argument_list|(
 operator|&
 name|mapvals

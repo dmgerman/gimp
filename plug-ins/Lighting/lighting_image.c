@@ -163,7 +163,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|background
-name|GckRGB
+name|GimpRGB
 name|background
 decl_stmt|;
 end_decl_stmt
@@ -256,7 +256,7 @@ block|}
 end_function
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|peek (gint x,gint y)
 name|peek
 parameter_list|(
@@ -273,7 +273,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 name|gimp_pixel_rgn_get_pixel
@@ -391,7 +391,7 @@ block|}
 end_function
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|peek_env_map (gint x,gint y)
 name|peek_env_map
 parameter_list|(
@@ -408,7 +408,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 if|if
@@ -531,7 +531,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|poke (gint x,gint y,GckRGB * color)
+DECL|function|poke (gint x,gint y,GimpRGB * color)
 name|poke
 parameter_list|(
 name|gint
@@ -540,7 +540,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|GckRGB
+name|GimpRGB
 modifier|*
 name|color
 parameter_list|)
@@ -1230,7 +1230,7 @@ comment|/**********************************************/
 end_comment
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_image_color (gdouble u,gdouble v,gint * inside)
 name|get_image_color
 parameter_list|(
@@ -1254,7 +1254,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|p
 index|[
 literal|4

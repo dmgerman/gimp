@@ -26,6 +26,16 @@ directive|include
 file|"undo_types.h"
 end_include
 
+begin_comment
+comment|/*  these will go into a general purpose library  */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpcolor.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -61,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0103
+DECL|enum|__anon2b30082c0103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -84,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0203
+DECL|enum|__anon2b30082c0203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -122,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0303
+DECL|enum|__anon2b30082c0303
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -156,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0403
+DECL|enum|__anon2b30082c0403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -230,7 +240,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0503
+DECL|enum|__anon2b30082c0503
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -256,7 +266,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0603
+DECL|enum|__anon2b30082c0603
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -282,7 +292,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0703
+DECL|enum|__anon2b30082c0703
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -301,7 +311,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0803
+DECL|enum|__anon2b30082c0803
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -318,7 +328,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon28ba12dc0903
+DECL|enum|__anon2b30082c0903
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -341,7 +351,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0a03
+DECL|enum|__anon2b30082c0a03
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -375,7 +385,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0b03
+DECL|enum|__anon2b30082c0b03
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -395,7 +405,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ba12dc0c03
+DECL|enum|__anon2b30082c0c03
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -414,7 +424,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0d03
+DECL|enum|__anon2b30082c0d03
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -437,7 +447,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0e03
+DECL|enum|__anon2b30082c0e03
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -520,7 +530,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba12dc0f03
+DECL|enum|__anon2b30082c0f03
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -550,7 +560,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=PDB_>*/
-DECL|enum|__anon28ba12dc1003
+DECL|enum|__anon2b30082c1003
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL
@@ -577,7 +587,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon28ba12dc1103
+DECL|enum|__anon2b30082c1103
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -600,7 +610,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ba12dc1203
+DECL|enum|__anon2b30082c1203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -644,7 +654,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ba12dc1303
+DECL|enum|__anon2b30082c1303
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -668,7 +678,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ba12dc1403
+DECL|enum|__anon2b30082c1403
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -701,7 +711,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ba12dc1503
+DECL|enum|__anon2b30082c1503
 block|{
 DECL|enumerator|TOOL_TYPE_NONE
 name|TOOL_TYPE_NONE
@@ -846,7 +856,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ba12dc1603
+DECL|enum|__anon2b30082c1603
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -879,7 +889,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ba12dc1703
+DECL|enum|__anon2b30082c1703
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT
@@ -902,7 +912,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ba12dc1803
+DECL|enum|__anon2b30082c1803
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON
@@ -922,7 +932,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ba12dc1903
+DECL|enum|__anon2b30082c1903
 block|{
 DECL|enumerator|CURSOR_MODIFIER_NONE
 name|CURSOR_MODIFIER_NONE

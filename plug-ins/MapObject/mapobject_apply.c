@@ -1009,7 +1009,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|render (gdouble x,gdouble y,GckRGB * col)
+DECL|function|render (gdouble x,gdouble y,GimpRGB * col)
 name|render
 parameter_list|(
 name|gdouble
@@ -1018,7 +1018,7 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|GckRGB
+name|GimpRGB
 modifier|*
 name|col
 parameter_list|)
@@ -1126,7 +1126,7 @@ name|xcount
 decl_stmt|,
 name|ycount
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 name|glong

@@ -163,8 +163,8 @@ end_comment
 
 begin_function
 specifier|static
-name|GckRGB
-DECL|function|phong_shade (GimpVector3 * position,GimpVector3 * viewpoint,GimpVector3 * normal,GimpVector3 * lightposition,GckRGB * diff_col,GckRGB * spec_col,LightType light_type)
+name|GimpRGB
+DECL|function|phong_shade (GimpVector3 * position,GimpVector3 * viewpoint,GimpVector3 * normal,GimpVector3 * lightposition,GimpRGB * diff_col,GimpRGB * spec_col,LightType light_type)
 name|phong_shade
 parameter_list|(
 name|GimpVector3
@@ -183,11 +183,11 @@ name|GimpVector3
 modifier|*
 name|lightposition
 parameter_list|,
-name|GckRGB
+name|GimpRGB
 modifier|*
 name|diff_col
 parameter_list|,
-name|GckRGB
+name|GimpRGB
 modifier|*
 name|spec_col
 parameter_list|,
@@ -195,7 +195,7 @@ name|LightType
 name|light_type
 parameter_list|)
 block|{
-name|GckRGB
+name|GimpRGB
 name|ambient_color
 decl_stmt|,
 name|diffuse_color
@@ -230,7 +230,7 @@ operator|=
 operator|*
 name|diff_col
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|ambient_color
@@ -379,7 +379,7 @@ operator|=
 operator|*
 name|diff_col
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|diffuse_color
@@ -391,7 +391,7 @@ operator|.
 name|diffuse_ref
 argument_list|)
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|diffuse_color
@@ -404,7 +404,7 @@ operator|=
 operator|*
 name|spec_col
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|specular_color
@@ -416,7 +416,7 @@ operator|.
 name|specular_ref
 argument_list|)
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|specular_color
@@ -424,7 +424,7 @@ argument_list|,
 name|rv
 argument_list|)
 expr_stmt|;
-name|gck_rgb_add
+name|gimp_rgb_add
 argument_list|(
 operator|&
 name|diffuse_color
@@ -433,7 +433,7 @@ operator|&
 name|specular_color
 argument_list|)
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|diffuse_color
@@ -445,13 +445,13 @@ operator|.
 name|diffuse_int
 argument_list|)
 expr_stmt|;
-name|gck_rgb_clamp
+name|gimp_rgb_clamp
 argument_list|(
 operator|&
 name|diffuse_color
 argument_list|)
 expr_stmt|;
-name|gck_rgb_add
+name|gimp_rgb_add
 argument_list|(
 operator|&
 name|ambient_color
@@ -461,7 +461,7 @@ name|diffuse_color
 argument_list|)
 expr_stmt|;
 block|}
-name|gck_rgb_clamp
+name|gimp_rgb_clamp
 argument_list|(
 operator|&
 name|ambient_color
@@ -1897,7 +1897,7 @@ comment|/*********************************************************************/
 end_comment
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_ray_color (GimpVector3 * position)
 name|get_ray_color
 parameter_list|(
@@ -1906,7 +1906,7 @@ modifier|*
 name|position
 parameter_list|)
 block|{
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 name|gint
@@ -2128,7 +2128,7 @@ block|}
 end_function
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_ray_color_ref (GimpVector3 * position)
 name|get_ray_color_ref
 parameter_list|(
@@ -2137,7 +2137,7 @@ modifier|*
 name|position
 parameter_list|)
 block|{
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|,
 name|env_color
@@ -2428,7 +2428,7 @@ block|}
 end_function
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_ray_color_no_bilinear (GimpVector3 * position)
 name|get_ray_color_no_bilinear
 parameter_list|(
@@ -2437,7 +2437,7 @@ modifier|*
 name|position
 parameter_list|)
 block|{
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 name|gint
@@ -2651,7 +2651,7 @@ block|}
 end_function
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_ray_color_no_bilinear_ref (GimpVector3 * position)
 name|get_ray_color_no_bilinear_ref
 parameter_list|(
@@ -2660,7 +2660,7 @@ modifier|*
 name|position
 parameter_list|)
 block|{
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|,
 name|env_color

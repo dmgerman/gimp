@@ -44,13 +44,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|<gck/gck.h>
 end_include
 
 begin_include
@@ -201,7 +201,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|background
-name|GckRGB
+name|GimpRGB
 name|background
 decl_stmt|;
 end_decl_stmt
@@ -242,7 +242,7 @@ comment|/******************/
 end_comment
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|peek (gint x,gint y)
 name|peek
 parameter_list|(
@@ -260,7 +260,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 name|gimp_pixel_rgn_get_pixel
@@ -379,7 +379,7 @@ end_function
 
 begin_function
 specifier|static
-name|GckRGB
+name|GimpRGB
 DECL|function|peek_box_image (gint image,gint x,gint y)
 name|peek_box_image
 parameter_list|(
@@ -400,7 +400,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 name|gimp_pixel_rgn_get_pixel
@@ -531,7 +531,7 @@ end_function
 
 begin_function
 specifier|static
-name|GckRGB
+name|GimpRGB
 DECL|function|peek_cylinder_image (gint image,gint x,gint y)
 name|peek_cylinder_image
 parameter_list|(
@@ -552,7 +552,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 name|gimp_pixel_rgn_get_pixel
@@ -683,7 +683,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|poke (gint x,gint y,GckRGB * color)
+DECL|function|poke (gint x,gint y,GimpRGB * color)
 name|poke
 parameter_list|(
 name|gint
@@ -692,7 +692,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|GckRGB
+name|GimpRGB
 modifier|*
 name|color
 parameter_list|)
@@ -1086,7 +1086,7 @@ comment|/**********************************************/
 end_comment
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_image_color (gdouble u,gdouble v,gint * inside)
 name|get_image_color
 parameter_list|(
@@ -1110,7 +1110,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|p
 index|[
 literal|4
@@ -1416,7 +1416,7 @@ block|}
 end_function
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_box_image_color (gint image,gdouble u,gdouble v)
 name|get_box_image_color
 parameter_list|(
@@ -1443,7 +1443,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|p
 index|[
 literal|4
@@ -1628,7 +1628,7 @@ block|}
 end_function
 
 begin_function
-name|GckRGB
+name|GimpRGB
 DECL|function|get_cylinder_image_color (gint image,gdouble u,gdouble v)
 name|get_cylinder_image_color
 parameter_list|(
@@ -1655,7 +1655,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|p
 index|[
 literal|4
@@ -1975,7 +1975,7 @@ operator|==
 name|TRUE
 condition|)
 block|{
-name|gck_rgba_set
+name|gimp_rgba_set
 argument_list|(
 operator|&
 name|background

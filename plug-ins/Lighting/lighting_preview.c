@@ -191,7 +191,7 @@ name|index
 init|=
 literal|0
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|,
 name|darkcheck
@@ -372,7 +372,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|gck_rgb_set
+name|gimp_rgb_set
 argument_list|(
 operator|&
 name|lightcheck
@@ -384,7 +384,7 @@ argument_list|,
 literal|0.75
 argument_list|)
 expr_stmt|;
-name|gck_rgb_set
+name|gimp_rgb_set
 argument_list|(
 operator|&
 name|darkcheck
@@ -396,7 +396,7 @@ argument_list|,
 literal|0.50
 argument_list|)
 expr_stmt|;
-name|gck_rgb_set
+name|gimp_rgb_set
 argument_list|(
 operator|&
 name|color
@@ -751,7 +751,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|color
@@ -765,7 +765,7 @@ name|temp
 operator|=
 name|lightcheck
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|temp
@@ -777,7 +777,7 @@ operator|.
 name|a
 argument_list|)
 expr_stmt|;
-name|gck_rgb_add
+name|gimp_rgb_add
 argument_list|(
 operator|&
 name|color
@@ -806,7 +806,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|color
@@ -820,7 +820,7 @@ name|temp
 operator|=
 name|darkcheck
 expr_stmt|;
-name|gck_rgb_mul
+name|gimp_rgb_mul
 argument_list|(
 operator|&
 name|temp
@@ -832,7 +832,7 @@ operator|.
 name|a
 argument_list|)
 expr_stmt|;
-name|gck_rgb_add
+name|gimp_rgb_add
 argument_list|(
 operator|&
 name|color

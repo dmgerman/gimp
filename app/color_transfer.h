@@ -30,7 +30,7 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|highlights_add
 index|[]
 decl_stmt|;
@@ -38,7 +38,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|midtones_add
 index|[]
 decl_stmt|;
@@ -46,7 +46,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|shadows_add
 index|[]
 decl_stmt|;
@@ -58,7 +58,7 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|highlights_sub
 index|[]
 decl_stmt|;
@@ -66,7 +66,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|midtones_sub
 index|[]
 decl_stmt|;
@@ -74,7 +74,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|shadows_sub
 index|[]
 decl_stmt|;

@@ -15,7 +15,7 @@ end_define
 begin_typedef
 DECL|typedef|get_ray_color_func
 typedef|typedef
-name|GckRGB
+name|GimpRGB
 function_decl|(
 modifier|*
 name|get_ray_color_func
@@ -36,7 +36,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|get_ray_color_plane
 parameter_list|(
 name|GimpVector3
@@ -47,7 +47,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|get_ray_color_sphere
 parameter_list|(
 name|GimpVector3
@@ -58,7 +58,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|get_ray_color_box
 parameter_list|(
 name|GimpVector3
@@ -69,7 +69,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckRGB
+name|GimpRGB
 name|get_ray_color_cylinder
 parameter_list|(
 name|GimpVector3

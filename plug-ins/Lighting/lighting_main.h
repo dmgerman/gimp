@@ -39,7 +39,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9e3d170103
+DECL|enum|__anon29b7cdc50103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -60,7 +60,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e3d170203
+DECL|enum|__anon29b7cdc50203
 block|{
 DECL|enumerator|LINEAR_MAP
 name|LINEAR_MAP
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e3d170303
+DECL|enum|__anon29b7cdc50303
 block|{
 DECL|enumerator|IMAGE_BUMP
 name|IMAGE_BUMP
@@ -93,7 +93,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e3d170408
+DECL|struct|__anon29b7cdc50408
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -116,7 +116,7 @@ name|gdouble
 name|highlight
 decl_stmt|;
 DECL|member|color
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 DECL|typedef|MaterialSettings
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e3d170508
+DECL|struct|__anon29b7cdc50508
 block|{
 DECL|member|type
 name|LightType
@@ -143,7 +143,7 @@ name|GimpVector3
 name|direction
 decl_stmt|;
 DECL|member|color
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 DECL|member|intensity
@@ -159,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e3d170608
+DECL|struct|__anon29b7cdc50608
 block|{
 DECL|member|drawable_id
 name|gint32
@@ -279,7 +279,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GckRGB
+name|GimpRGB
 name|background
 decl_stmt|;
 end_decl_stmt

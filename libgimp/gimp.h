@@ -43,6 +43,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpcolor.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpcolorspace.h>
 end_include
 

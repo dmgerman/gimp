@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpcolor.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpcolorspace.h>
 end_include
 
@@ -329,7 +335,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon2a39ffe30103
+DECL|enum|__anon2911cf5c0103
 typedef|typedef
 enum|enum
 block|{

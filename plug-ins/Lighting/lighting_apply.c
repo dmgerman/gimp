@@ -83,7 +83,7 @@ block|{ }
 end_function
 
 begin_comment
-comment|/* static void render (gdouble  x, 	gdouble  y, 	GckRGB  *col) {   GimpVector3 pos;    pos=int_to_pos(x,y);    *col=(*ray_func)(&pos); }  static void show_progress (gint min, 	       gint max, 	       gint curr) {   gimp_progress_update ((gdouble)curr / (gdouble)max); } */
+comment|/* static void render (gdouble  x, 	gdouble  y, 	GimpRGB  *col) {   GimpVector3 pos;    pos=int_to_pos(x,y);    *col=(*ray_func)(&pos); }  static void show_progress (gint min, 	       gint max, 	       gint curr) {   gimp_progress_update ((gdouble)curr / (gdouble)max); } */
 end_comment
 
 begin_function
@@ -99,7 +99,7 @@ name|xcount
 decl_stmt|,
 name|ycount
 decl_stmt|;
-name|GckRGB
+name|GimpRGB
 name|color
 decl_stmt|;
 name|glong
