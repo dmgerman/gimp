@@ -70,14 +70,14 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(GTK_CHECK_TYPE (obj, GIMP_TYPE_SIZE_ENTRY))
-DECL|macro|GIMP_IS_ENTRY_CLASS (klass)
+DECL|macro|GIMP_IS_SIZE_ENTRY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_ENTRY_CLASS
+name|GIMP_IS_SIZE_ENTRY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GTK_TYPE_ENTRY))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SIZE_ENTRY))
 DECL|typedef|GimpSizeEntry
 typedef|typedef
 name|struct
@@ -92,7 +92,7 @@ name|GimpSizeEntryClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b8e01a0103
+DECL|enum|__anon2ad57d850103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -163,7 +163,7 @@ struct|struct
 name|_GimpSizeEntryClass
 block|{
 DECL|member|parent_class
-name|GtkHBoxClass
+name|GtkTableClass
 name|parent_class
 decl_stmt|;
 DECL|member|gimp_size_entry
@@ -297,7 +297,7 @@ name|gfloat
 name|value
 parameter_list|)
 function_decl|;
-comment|/* these functions set/return the value in the 'reference unit' for the  * current update policy  * for GIMP_SIZE_ENTRY_UPDATE_SIZE       it's the value in pixels  * for GIMP_SIZE_ENTRY_UPDATE_RESOLUTION it's the resolution in dpi  * for GIMP_SIZE_ENTRY_UPDATE_NONE       it's up to the caller as he has to  *                                       care for a correct value<->refval  *                                       mapping  */
+comment|/* these functions set/return the value in the 'reference unit' for the  * current update policy  * for GIMP_SIZE_ENTRY_UPDATE_SIZE       it's the value in pixels  * for GIMP_SIZE_ENTRY_UPDATE_RESOLUTION it's the resolution in dpi  * for GIMP_SIZE_ENTRY_UPDATE_NONE       it's up to the caller as he has to  *                                       provide a correct value<->refval  *                                       mapping  */
 name|void
 name|gimp_size_entry_set_refval_boundaries
 parameter_list|(
@@ -313,6 +313,20 @@ name|lower
 parameter_list|,
 name|gfloat
 name|upper
+parameter_list|)
+function_decl|;
+name|void
+name|gimp_size_entry_set_refval_digits
+parameter_list|(
+name|GimpSizeEntry
+modifier|*
+name|gse
+parameter_list|,
+name|gint
+name|field
+parameter_list|,
+name|gint
+name|digits
 parameter_list|)
 function_decl|;
 name|gfloat

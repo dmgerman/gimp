@@ -280,7 +280,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon275dd36a0108
+DECL|struct|__anon2a9a46060108
 typedef|typedef
 struct|struct
 block|{
@@ -378,7 +378,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon275dd36a0208
+DECL|struct|__anon2a9a46060208
 typedef|typedef
 struct|struct
 block|{
@@ -4386,6 +4386,8 @@ literal|"Enter a new name for the path"
 argument_list|)
 argument_list|,
 name|text
+argument_list|,
+name|NULL
 argument_list|,
 name|do_rename_paths_callback
 argument_list|,

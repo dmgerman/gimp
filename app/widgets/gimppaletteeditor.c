@@ -300,7 +300,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275f93360103
+DECL|enum|__anon28eaf1ed0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -5084,6 +5084,8 @@ name|_
 argument_list|(
 literal|"Enter a name for new palette"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -11638,6 +11640,8 @@ name|_
 argument_list|(
 literal|"Enter a name for merged palette"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

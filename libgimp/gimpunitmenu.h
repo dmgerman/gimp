@@ -77,7 +77,7 @@ name|GIMP_IS_UNIT_MENU_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GTK_TYPE_UNIT_MENU))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_UNIT_MENU))
 DECL|typedef|GimpUnitMenu
 typedef|typedef
 name|struct

@@ -3288,6 +3288,13 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|GTK_OBJECT
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+argument_list|,
 name|cut_named_buffer_callback
 argument_list|,
 name|gdisp
@@ -3412,6 +3419,13 @@ literal|"Enter a name for this buffer"
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|GTK_OBJECT
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 argument_list|,
 name|copy_named_buffer_callback
 argument_list|,

@@ -7196,6 +7196,8 @@ argument_list|(
 literal|"untitled"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|ed_do_new_gradient_callback
 argument_list|,
 name|NULL
@@ -7645,6 +7647,8 @@ literal|"Enter a name for the copied gradient"
 argument_list|)
 argument_list|,
 name|name
+argument_list|,
+name|NULL
 argument_list|,
 name|ed_do_copy_gradient_callback
 argument_list|,
@@ -8619,6 +8623,8 @@ argument_list|,
 name|curr_gradient
 operator|->
 name|name
+argument_list|,
+name|NULL
 argument_list|,
 name|ed_do_rename_gradient_callback
 argument_list|,
