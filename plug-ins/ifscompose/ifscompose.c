@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4819150103
+DECL|enum|__anon27bc04e60103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4819150203
+DECL|enum|__anon27bc04e60203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4819150308
+DECL|struct|__anon27bc04e60308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -239,7 +239,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2a481915040a
+DECL|union|__anon27bc04e6040a
 block|{
 DECL|member|d
 name|gdouble
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4819150508
+DECL|struct|__anon27bc04e60508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4819150608
+DECL|struct|__anon27bc04e60608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -329,7 +329,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4819150708
+DECL|struct|__anon27bc04e60708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4819150808
+DECL|struct|__anon27bc04e60808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -432,7 +432,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4819150908
+DECL|struct|__anon27bc04e60908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -634,7 +634,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4819150a08
+DECL|struct|__anon27bc04e60a08
 block|{
 DECL|member|run
 name|gboolean
@@ -13936,12 +13936,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|ifsfile_load_response (GtkFileSelection * file_select,gint response_id,gpointer data)
+DECL|function|ifsfile_load_response (GtkWidget * dialog,gint response_id,gpointer data)
 name|ifsfile_load_response
 parameter_list|(
-name|GtkFileSelection
+name|GtkWidget
 modifier|*
-name|file_select
+name|dialog
 parameter_list|,
 name|gint
 name|response_id
@@ -13957,7 +13957,6 @@ operator|==
 name|GTK_RESPONSE_OK
 condition|)
 block|{
-specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -13985,9 +13984,12 @@ name|i
 decl_stmt|;
 name|filename
 operator|=
-name|gtk_file_selection_get_filename
+name|gtk_file_chooser_get_filename
 argument_list|(
-name|file_select
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -14013,7 +14015,7 @@ name|GTK_MESSAGE_ERROR
 argument_list|,
 name|GTK_WINDOW
 argument_list|(
-name|file_select
+name|dialog
 argument_list|)
 argument_list|,
 name|_
@@ -14029,6 +14031,11 @@ expr_stmt|;
 name|g_error_free
 argument_list|(
 name|error
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 return|return;
@@ -14072,7 +14079,7 @@ name|GTK_MESSAGE_ERROR
 argument_list|,
 name|GTK_WINDOW
 argument_list|(
-name|file_select
+name|dialog
 argument_list|)
 argument_list|,
 name|_
@@ -14081,6 +14088,11 @@ literal|"Open failed"
 argument_list|)
 argument_list|,
 name|message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -14098,6 +14110,11 @@ block|}
 name|g_free
 argument_list|(
 name|buffer
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|undo_begin
@@ -14174,7 +14191,7 @@ name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|file_select
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
