@@ -149,18 +149,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GImage
-modifier|*
-name|gimage_get_named
-parameter_list|(
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_define
 DECL|macro|gimage_set_filename
 define|#

@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6382ec0103
+DECL|enum|__anon27a53ad20103
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL
@@ -265,22 +265,6 @@ block|}
 name|ToolType
 typedef|;
 end_typedef
-
-begin_define
-DECL|macro|XButtonEvent
-define|#
-directive|define
-name|XButtonEvent
-value|GdkEventButton
-end_define
-
-begin_define
-DECL|macro|XMotionEvent
-define|#
-directive|define
-name|XMotionEvent
-value|GdkEventMotion
-end_define
 
 begin_comment
 comment|/*  Structure definitions  */

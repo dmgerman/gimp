@@ -28,6 +28,12 @@ directive|include
 file|"gtk/gtk.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpsetF.h"
+end_include
+
 begin_define
 DECL|macro|DISPLAY
 define|#
@@ -82,7 +88,7 @@ value|((x> y) ? x : y)
 end_define
 
 begin_typedef
-DECL|enum|__anon2c2a1e810103
+DECL|enum|__anon2a4090c50103
 typedef|typedef
 enum|enum
 block|{
@@ -143,6 +149,14 @@ begin_decl_stmt
 specifier|extern
 name|int
 name|console_messages
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GimpSet
+modifier|*
+name|image_context
 decl_stmt|;
 end_decl_stmt
 

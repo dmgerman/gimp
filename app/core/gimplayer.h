@@ -65,7 +65,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb062450103
+DECL|enum|__anon2b4578640103
 block|{
 DECL|enumerator|WhiteMask
 name|WhiteMask
@@ -813,10 +813,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* temp thingies.. dynamic downcast. GTK_NO_CHECK_CASTS must not be    defined */
-end_comment
 
 begin_define
 DECL|macro|drawable_layer

@@ -88,7 +88,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27aa65c40103
+DECL|enum|__anon2b205b320103
 block|{
 DECL|enumerator|BACKGROUND_FILL
 name|BACKGROUND_FILL
@@ -110,29 +110,6 @@ end_typedef
 begin_comment
 comment|/*  drawable access functions  */
 end_comment
-
-begin_function_decl
-name|void
-name|gimp_drawable_apply_image
-parameter_list|(
-name|GimpDrawable
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|TileManager
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|void

@@ -2066,6 +2066,12 @@ name|guide
 operator|=
 name|NULL
 expr_stmt|;
+name|private
+operator|->
+name|disp
+operator|=
+name|NULL
+expr_stmt|;
 return|return
 name|tool
 return|;

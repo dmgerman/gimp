@@ -201,6 +201,14 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|image_context
+name|GimpSet
+modifier|*
+name|image_context
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|message_handler
 name|MessageHandlerType
 name|message_handler

@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpset.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"global_edit.h"
 end_include
 
@@ -2163,6 +2169,16 @@ name|logo_area
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Create the context of all existing images */
+name|image_context
+operator|=
+name|gimp_set_new
+argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/*    *  Initialize the procedural database    *    We need to do this first because any of the init    *    procedures might install or query it as needed.    */
 name|procedural_db_init
 argument_list|()

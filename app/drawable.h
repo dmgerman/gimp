@@ -69,13 +69,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_define
-DECL|macro|drawable_apply_image
-define|#
-directive|define
+begin_function_decl
+name|void
 name|drawable_apply_image
-value|gimp_drawable_apply_image
-end_define
+parameter_list|(
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|TileManager
+modifier|*
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_define
 DECL|macro|drawable_merge_shadow

@@ -433,7 +433,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2ae9e8e80103
+DECL|enum|__anon28c9dac40103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -2317,8 +2317,13 @@ if|if
 condition|(
 name|undo
 condition|)
-name|drawable_apply_image
+name|undo_push_image
 argument_list|(
+name|gimp_drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|drawable
 argument_list|,
 name|x1
@@ -2328,10 +2333,6 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* configure the pixel regions    *  If an alternative to using the drawable's data as src1 was provided...    */
