@@ -195,6 +195,18 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
+name|gimp_image_destroy
+parameter_list|(
+name|GtkObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gimp_image_free_projection
 parameter_list|(
 name|GimpImage
@@ -423,7 +435,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|valid_combinations
-name|int
+name|gint
 name|valid_combinations
 index|[]
 index|[
@@ -552,7 +564,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c4b0b880103
+DECL|enum|__anon2bfa44e80103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -584,17 +596,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_image_destroy
-parameter_list|(
-name|GtkObject
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_decl_stmt
 DECL|variable|gimp_image_signals
@@ -2250,7 +2251,8 @@ name|guide
 decl_stmt|;
 name|gint
 name|old_width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|old_height
 decl_stmt|;
 name|gdouble
@@ -5192,7 +5194,8 @@ name|gchar
 modifier|*
 modifier|*
 name|list
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 modifier|*
 name|cur
@@ -5221,19 +5224,11 @@ name|cur
 operator|=
 name|list
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gchar
 operator|*
-argument_list|)
-operator|*
+argument_list|,
 operator|*
 name|count
 argument_list|)
@@ -5300,7 +5295,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-comment|/*  We used to push an cantundo on te stack here. This made the undo stack       unusable (NULL on the stack) and prevented people from undoing after a        save (since most save plug-ins attach an undoable comment parasite).       Now we simply attach the parasite without pushing an undo. That way it's       undoable but does not block the undo system.   --Sven   else if (gimp_parasite_is_persistent (parasite)&& 	   !gimp_parasite_compare (parasite, 		  		   gimp_image_parasite_find (gimage, 			  				     gimp_parasite_name (parasite))))     undo_push_cantundo (gimage, _("attach parasite to image"));   */
+comment|/*  We used to push an cantundo on te stack here. This made the undo stack       unusable (NULL on the stack) and prevented people from undoing after a        save (since most save plug-ins attach an undoable comment parasite).       Now we simply attach the parasite without pushing an undo. That way it's       undoable but does not block the undo system.   --Sven    */
 name|parasite_list_add
 argument_list|(
 name|gimage
@@ -5399,7 +5394,6 @@ name|p
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  see comment in function gimp_image_parasite_attach()   else if (gimp_parasite_is_persistent (p))     undo_push_cantundo (gimage, _("detach parasite from image"));    */
 name|parasite_list_remove
 argument_list|(
 name|gimage
@@ -5529,22 +5523,23 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|layers
 operator|=
 name|gimage
 operator|->
 name|layers
-expr_stmt|;
-name|channels
-operator|=
-name|gimage
-operator|->
-name|channels
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|layers
-condition|)
+condition|;
+name|layers
+operator|=
+name|g_slist_next
+argument_list|(
+name|layers
+argument_list|)
+control|)
 block|{
 name|Tattoo
 name|ltattoo
@@ -5613,19 +5608,25 @@ name|FALSE
 expr_stmt|;
 comment|/* Oopps duplicated tattoo in layer */
 block|}
-name|layers
+block|}
+comment|/* Now check that the paths channel tattoos don't overlap */
+for|for
+control|(
+name|channels
+operator|=
+name|gimage
+operator|->
+name|channels
+init|;
+name|channels
+condition|;
+name|channels
 operator|=
 name|g_slist_next
 argument_list|(
-name|layers
-argument_list|)
-expr_stmt|;
-block|}
-comment|/* Now check that the paths channel tattoos don't overlap */
-while|while
-condition|(
 name|channels
-condition|)
+argument_list|)
+control|)
 block|{
 name|Tattoo
 name|ctattoo
@@ -5676,13 +5677,6 @@ name|FALSE
 expr_stmt|;
 comment|/* Oopps duplicated tattoo in layer */
 block|}
-name|channels
-operator|=
-name|g_slist_next
-argument_list|(
-name|channels
-argument_list|)
-expr_stmt|;
 block|}
 comment|/* Find the max tatto value in the paths */
 name|plist
@@ -5700,6 +5694,9 @@ operator|->
 name|bz_paths
 condition|)
 block|{
+name|Tattoo
+name|ptattoo
+decl_stmt|;
 name|GSList
 modifier|*
 name|pl
@@ -5707,9 +5704,6 @@ init|=
 name|plist
 operator|->
 name|bz_paths
-decl_stmt|;
-name|Tattoo
-name|ptattoo
 decl_stmt|;
 while|while
 condition|(
@@ -6375,19 +6369,28 @@ block|{
 name|GSList
 modifier|*
 name|list
-init|=
-name|gimage
-operator|->
-name|layers
 decl_stmt|;
 name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
+operator|=
+name|gimage
+operator|->
+name|layers
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -6402,13 +6405,6 @@ expr_stmt|;
 name|layer_delete
 argument_list|(
 name|layer
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
 argument_list|)
 expr_stmt|;
 block|}
@@ -6443,19 +6439,28 @@ block|{
 name|GSList
 modifier|*
 name|list
-init|=
-name|gimage
-operator|->
-name|channels
 decl_stmt|;
 name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
+operator|=
+name|gimage
+operator|->
+name|channels
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|channel
 operator|=
@@ -6470,13 +6475,6 @@ expr_stmt|;
 name|channel_delete
 argument_list|(
 name|channel
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
 argument_list|)
 expr_stmt|;
 block|}
@@ -6540,10 +6538,6 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|list
-init|=
-name|gimage
-operator|->
-name|layers
 decl_stmt|;
 name|GSList
 modifier|*
@@ -6553,7 +6547,8 @@ name|NULL
 decl_stmt|;
 name|gint
 name|off_x
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|off_y
 decl_stmt|;
 comment|/*  composite the floating selection if it exists  */
@@ -6583,14 +6578,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|list
-condition|)
-block|{
-comment|/*      g_warning("g_i_c_l on layerless image."); */
-block|}
 comment|/* Note added by Raph Levien, 27 Jan 1998       This looks it was intended as an optimization, but it seems to      have correctness problems. In particular, if all channels are      turned off, the screen simply does not update the projected      image. It should be black. Turning off this optimization seems to      restore correct behavior. At some future point, it may be      desirable to turn the optimization back on.       */
 if|#
 directive|if
@@ -6599,10 +6586,23 @@ comment|/*  If all channels are not visible, simply return  */
 block|switch (gimp_image_base_type (gimage))     {     case RGB:       if (! gimp_image_get_component_visible (gimage, RED_CHANNEL)&& 	  ! gimp_image_get_component_visible (gimage, GREEN_CHANNEL)&& 	  ! gimp_image_get_component_visible (gimage, BLUE_CHANNEL)) 	return;       break;     case GRAY:       if (! gimp_image_get_component_visible (gimage, GRAY_CHANNEL)) 	return;       break;     case INDEXED:       if (! gimp_image_get_component_visible (gimage, INDEXED_CHANNEL)) 	return;       break;     }
 endif|#
 directive|endif
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
+operator|=
+name|gimage
+operator|->
+name|layers
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -6614,7 +6614,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-comment|/*  only add layers that are visible and not floating selections to the list  */
+comment|/*  only add layers that are visible and not floating selections  	  to the list  */
 if|if
 condition|(
 operator|!
@@ -6638,13 +6638,6 @@ argument_list|(
 name|reverse_list
 argument_list|,
 name|layer
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
 argument_list|)
 expr_stmt|;
 block|}
@@ -7102,10 +7095,6 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|list
-init|=
-name|gimage
-operator|->
-name|channels
 decl_stmt|;
 name|GSList
 modifier|*
@@ -7113,20 +7102,24 @@ name|reverse_list
 init|=
 name|NULL
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|list
-condition|)
-block|{
-comment|/*      g_warning("g_i_c_c on channelless image."); */
-block|}
 comment|/*  reverse the channel list  */
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
-block|{
+operator|=
+name|gimage
+operator|->
+name|channels
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 name|reverse_list
 operator|=
 name|g_slist_prepend
@@ -7138,14 +7131,6 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
-block|}
 while|while
 condition|(
 name|reverse_list
@@ -7310,18 +7295,25 @@ literal|0
 block|}
 decl_stmt|;
 comment|/*  this function determines whether a visible layer    *  provides complete coverage over the image.  If not,    *  the projection is initialized to transparent    */
+for|for
+control|(
 name|list
 operator|=
 name|gimage
 operator|->
 name|layers
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -7417,13 +7409,6 @@ literal|1
 expr_stmt|;
 break|break;
 block|}
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -7614,7 +7599,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|gint xoff, yoff;
+block|gint xoff;   gint yoff;
 comment|/*  set the construct flag, used to determine if anything    *  has been written to the gimage raw image yet.    */
 block|gimage->construct_flag = 0;    if (gimage->layers)     {       gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff);     }    if (
 comment|/*can_use_cowproject&&*/
@@ -7625,14 +7610,14 @@ comment|/* It's the only layer.  */
 block|(layer_has_alpha((Layer*)(gimage->layers->data)))&&
 comment|/* It's !flat.  */
 comment|/* It's visible.         */
-block|(drawable_visible (GIMP_DRAWABLE((Layer*)(gimage->layers->data))))&&       (drawable_width (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) ==        gimage->width)&&       (drawable_height (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) ==        gimage->height)&&
+block|(drawable_visible (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))))&&       (drawable_width (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))) ==        gimage->width)&&       (drawable_height (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))) ==        gimage->height)&&
 comment|/* Covers all.           */
 comment|/* Not indexed.          */
-block|(!drawable_indexed (GIMP_DRAWABLE((Layer*)(gimage->layers->data))))&&       (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
+block|(!drawable_indexed (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))))&&       (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
 comment|/*opaq */
-block|)     {       int xoff, yoff;              gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff);         if ((xoff==0)&& (yoff==0))
+block|)     {       gint xoff;       gint yoff;              gimp_drawable_offsets (GIMP_DRAWABLE ((Layer*)(gimage->layers->data)),&xoff,&yoff);         if ((xoff==0)&& (yoff==0))
 comment|/* Starts at 0,0         */
-block|{ 	  PixelRegion srcPR, destPR; 	  void * pr; 	 	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE 			      ((Layer*)(gimage->layers->data))), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = 1; 	  gimp_image_construct_channels (gimage, x, y, w, h); 	  return; 	}     }
+block|{ 	  PixelRegion srcPR, destPR; 	  gpointer    pr; 	 	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE 			      ((Layer*)(gimage->layers->data))), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = 1; 	  gimp_image_construct_channels (gimage, x, y, w, h);  	  return; 	}     }
 else|#
 directive|else
 name|gimage
@@ -8070,8 +8055,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  invalidate all lower level tiles  */
-comment|/*tile_manager_invalidate_tiles (gimp_image_projection (gimage), tile);*/
 comment|/*  check if the tile is outside the bounds  */
 if|if
 condition|(
@@ -8463,8 +8446,6 @@ name|layers
 decl_stmt|;
 name|gint
 name|index
-init|=
-literal|0
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -8477,16 +8458,30 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|layers
 operator|=
 name|gimage
 operator|->
 name|layers
-expr_stmt|;
-while|while
-condition|(
+operator|,
+name|index
+operator|=
+literal|0
+init|;
 name|layers
-condition|)
+condition|;
+name|layers
+operator|=
+name|g_slist_next
+argument_list|(
+name|layers
+argument_list|)
+operator|,
+name|index
+operator|++
+control|)
 block|{
 name|layer
 operator|=
@@ -8507,16 +8502,6 @@ condition|)
 return|return
 name|index
 return|;
-name|index
-operator|++
-expr_stmt|;
-name|layers
-operator|=
-name|g_slist_next
-argument_list|(
-name|layers
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 operator|-
@@ -8549,8 +8534,6 @@ name|channels
 decl_stmt|;
 name|gint
 name|index
-init|=
-literal|0
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -8563,16 +8546,30 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|channels
 operator|=
 name|gimage
 operator|->
 name|channels
-expr_stmt|;
-while|while
-condition|(
+operator|,
+name|index
+operator|=
+literal|0
+init|;
 name|channels
-condition|)
+condition|;
+name|channels
+operator|=
+name|g_slist_next
+argument_list|(
+name|channels
+argument_list|)
+operator|,
+name|index
+operator|++
+control|)
 block|{
 name|channel
 operator|=
@@ -8593,16 +8590,6 @@ condition|)
 return|return
 name|index
 return|;
-name|index
-operator|++
-expr_stmt|;
-name|channels
-operator|=
-name|g_slist_next
-argument_list|(
-name|channels
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 operator|-
@@ -8701,16 +8688,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|layers
 operator|=
 name|gimage
 operator|->
 name|layers
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|layers
-condition|)
+condition|;
+name|layers
+operator|=
+name|g_slist_next
+argument_list|(
+name|layers
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -8734,13 +8728,6 @@ condition|)
 return|return
 name|layer
 return|;
-name|layers
-operator|=
-name|g_slist_next
-argument_list|(
-name|layers
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|NULL
@@ -8780,16 +8767,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|channels
 operator|=
 name|gimage
 operator|->
 name|channels
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|channels
-condition|)
+condition|;
+name|channels
+operator|=
+name|g_slist_next
+argument_list|(
+name|channels
+argument_list|)
+control|)
 block|{
 name|channel
 operator|=
@@ -8813,13 +8807,6 @@ condition|)
 return|return
 name|channel
 return|;
-name|channels
-operator|=
-name|g_slist_next
-argument_list|(
-name|channels
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|NULL
@@ -8860,16 +8847,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|channels
 operator|=
 name|gimage
 operator|->
 name|channels
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|channels
-condition|)
+condition|;
+name|channels
+operator|=
+name|g_slist_next
+argument_list|(
+name|channels
+argument_list|)
+control|)
 block|{
 name|channel
 operator|=
@@ -8897,13 +8891,6 @@ condition|)
 return|return
 name|channel
 return|;
-name|channels
-operator|=
-name|g_slist_next
-argument_list|(
-name|channels
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|NULL
@@ -11025,7 +11012,7 @@ name|Layer
 modifier|*
 name|bottom
 decl_stmt|;
-name|gint
+name|LayerModeEffects
 name|bottom_mode
 decl_stmt|;
 name|guchar
@@ -11095,7 +11082,7 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -11133,7 +11120,7 @@ name|NULL
 expr_stmt|;
 name|bottom_mode
 operator|=
-literal|0
+name|NORMAL_MODE
 expr_stmt|;
 comment|/*  Get the layer extents  */
 name|count
@@ -11816,7 +11803,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/* set the mode of the bottom layer to normal so that the contents        *  aren't lost when merging with the all-alpha merge_layer        *  Keep a pointer to it so that we can set the mode right after it's been        *  merged so that undo works correctly.        */
+comment|/* set the mode of the bottom layer to normal so that the contents        *  aren't lost when merging with the all-alpha merge_layer        *  Keep a pointer to it so that we can set the mode right after it's        *  been merged so that undo works correctly.        */
 name|bottom
 operator|=
 name|layer
@@ -11827,6 +11814,15 @@ name|bottom
 operator|->
 name|mode
 expr_stmt|;
+comment|/* DISSOLVE_MODE is special since it is the only mode that does not        *  work on the projection with the lower layer, but only locally on        *  the layers alpha channel.         */
+if|if
+condition|(
+name|bottom
+operator|->
+name|mode
+operator|!=
+name|DISSOLVE_MODE
+condition|)
 name|bottom
 operator|->
 name|mode
@@ -13112,7 +13108,8 @@ name|lmu
 decl_stmt|;
 name|gint
 name|off_x
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|off_y
 decl_stmt|;
 name|g_return_val_if_fail
@@ -13729,19 +13726,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|gimage
-operator|->
-name|channels
-expr_stmt|;
-name|list_length
-operator|=
-name|g_slist_length
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 name|next
 operator|=
 name|NULL
@@ -13750,15 +13734,38 @@ name|channel
 operator|=
 name|NULL
 expr_stmt|;
+comment|/* find channel_arg */
+for|for
+control|(
+name|list
+operator|=
+name|gimage
+operator|->
+name|channels
+operator|,
 name|index
 operator|=
 literal|0
-expr_stmt|;
-comment|/* find channel_arg */
-while|while
-condition|(
+operator|,
+name|list_length
+operator|=
+name|g_slist_length
+argument_list|(
 name|list
-condition|)
+argument_list|)
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+operator|,
+name|index
+operator|++
+control|)
 block|{
 name|channel
 operator|=
@@ -13779,16 +13786,6 @@ condition|)
 block|{
 break|break;
 block|}
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
-name|index
-operator|++
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -15461,7 +15458,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/* floating selections are added right above the layer they are attached to */
+comment|/*  floating selections are added right above the layer  	      they are attached to  */
 if|if
 condition|(
 name|layer_is_floating_sel
@@ -15554,7 +15551,7 @@ expr_stmt|;
 name|x
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|ratio
@@ -15567,7 +15564,7 @@ expr_stmt|;
 name|y
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|ratio
@@ -15580,7 +15577,7 @@ expr_stmt|;
 name|w
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|ratio
@@ -15599,7 +15596,7 @@ expr_stmt|;
 name|h
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|ratio
