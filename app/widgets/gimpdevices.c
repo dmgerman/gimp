@@ -3697,7 +3697,7 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
-name|GIMP_COLOR_AREA_SMALL_CHECKS
+name|GIMP_COLOR_AREA_FLAT
 argument_list|,
 name|GDK_BUTTON1_MASK
 operator||
@@ -3793,7 +3793,7 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
-name|GIMP_COLOR_AREA_SMALL_CHECKS
+name|GIMP_COLOR_AREA_FLAT
 argument_list|,
 name|GDK_BUTTON1_MASK
 operator||
@@ -4432,8 +4432,6 @@ decl_stmt|,
 name|green
 decl_stmt|,
 name|blue
-decl_stmt|,
-name|alpha
 decl_stmt|;
 name|gchar
 name|ttbuf
@@ -4762,8 +4760,8 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-comment|/*  Set the tip to be the RGBA value  */
-name|gimp_rgba_get_uchar
+comment|/*  Set the tip to be the RGB value  */
+name|gimp_rgb_get_uchar
 argument_list|(
 operator|&
 name|color
@@ -4776,9 +4774,6 @@ name|green
 argument_list|,
 operator|&
 name|blue
-argument_list|,
-operator|&
-name|alpha
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -4792,7 +4787,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Foreground: %d, %d, %d, %d"
+literal|"Foreground: %d, %d, %d"
 argument_list|)
 argument_list|,
 name|red
@@ -4800,8 +4795,6 @@ argument_list|,
 name|green
 argument_list|,
 name|blue
-argument_list|,
-name|alpha
 argument_list|)
 expr_stmt|;
 name|gtk_widget_add_events
@@ -4869,8 +4862,8 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-comment|/*  Set the tip to be the RGBA value  */
-name|gimp_rgba_get_uchar
+comment|/*  Set the tip to be the RGB value  */
+name|gimp_rgb_get_uchar
 argument_list|(
 operator|&
 name|color
@@ -4883,9 +4876,6 @@ name|green
 argument_list|,
 operator|&
 name|blue
-argument_list|,
-operator|&
-name|alpha
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -4899,7 +4889,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Background: %d, %d, %d, %d"
+literal|"Background: %d, %d, %d"
 argument_list|)
 argument_list|,
 name|red
@@ -4907,8 +4897,6 @@ argument_list|,
 name|green
 argument_list|,
 name|blue
-argument_list|,
-name|alpha
 argument_list|)
 expr_stmt|;
 name|gtk_widget_add_events
