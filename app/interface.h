@@ -56,21 +56,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GdkPixmap
-modifier|*
-name|create_tool_pixmap
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|,
-name|ToolType
-name|type
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|create_toolbox
 parameter_list|(

@@ -168,6 +168,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"interface.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"iscissors.h"
 end_include
 
@@ -343,6 +349,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|options_pixmap
+specifier|static
+name|GtkWidget
+modifier|*
+name|options_pixmap
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|options_reset_button
 specifier|static
 name|GtkWidget
@@ -392,6 +409,8 @@ operator|*
 operator|)
 name|rect_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Select rectangular regions"
@@ -433,6 +452,8 @@ operator|*
 operator|*
 operator|)
 name|circ_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -476,6 +497,8 @@ operator|*
 operator|)
 name|free_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Select hand-drawn regions"
@@ -517,6 +540,8 @@ operator|*
 operator|*
 operator|)
 name|fuzzy_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -560,6 +585,8 @@ operator|*
 operator|)
 name|bezier_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Select regions using Bezier curves"
@@ -601,6 +628,8 @@ operator|*
 operator|*
 operator|)
 name|iscissors_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -644,6 +673,8 @@ operator|*
 operator|)
 name|move_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Move layers& selections"
@@ -685,6 +716,8 @@ operator|*
 operator|*
 operator|)
 name|magnify_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -728,6 +761,8 @@ operator|*
 operator|)
 name|crop_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Crop or resize the image"
@@ -770,6 +805,8 @@ operator|*
 operator|)
 name|scale_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Rotation, scaling, shearing, perspective."
@@ -798,6 +835,8 @@ name|N_
 argument_list|(
 literal|"Transform"
 argument_list|)
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -840,6 +879,8 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Rotation, scaling, shearing, perspective."
@@ -868,6 +909,8 @@ name|N_
 argument_list|(
 literal|"Transform"
 argument_list|)
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -918,6 +961,8 @@ operator|*
 operator|)
 name|flip_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Flip the layer or selection"
@@ -959,6 +1004,8 @@ operator|*
 operator|*
 operator|)
 name|text_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -1002,6 +1049,8 @@ operator|*
 operator|)
 name|colorpicker_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Pick colors from the image"
@@ -1043,6 +1092,8 @@ operator|*
 operator|*
 operator|)
 name|fill_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -1086,6 +1137,8 @@ operator|*
 operator|)
 name|gradient_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Fill with a color gradient"
@@ -1127,6 +1180,8 @@ operator|*
 operator|*
 operator|)
 name|pencil_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -1170,6 +1225,8 @@ operator|*
 operator|)
 name|paint_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Paint fuzzy brush strokes"
@@ -1211,6 +1268,8 @@ operator|*
 operator|*
 operator|)
 name|erase_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -1254,6 +1313,8 @@ operator|*
 operator|)
 name|airbrush_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Airbrush with variable pressure"
@@ -1295,6 +1356,8 @@ operator|*
 operator|*
 operator|)
 name|clone_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -1338,6 +1401,8 @@ operator|*
 operator|)
 name|blur_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Blur or sharpen"
@@ -1379,6 +1444,8 @@ operator|*
 operator|*
 operator|)
 name|ink_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -1422,6 +1489,8 @@ operator|*
 operator|)
 name|dodge_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Dodge or Burn"
@@ -1463,6 +1532,8 @@ operator|*
 operator|*
 operator|)
 name|smudge_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -1506,6 +1577,8 @@ operator|*
 operator|)
 name|xinput_airbrush_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Natural Airbrush"
@@ -1547,6 +1620,8 @@ operator|*
 operator|*
 operator|)
 name|measure_bits
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -1590,6 +1665,8 @@ operator|*
 operator|)
 name|path_tool_bits
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Manipulate paths"
@@ -1623,6 +1700,8 @@ name|N_
 argument_list|(
 literal|"/Select/By Color..."
 argument_list|)
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1665,6 +1744,8 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Adjust color balance"
@@ -1697,6 +1778,8 @@ name|N_
 argument_list|(
 literal|"/Image/Colors/Brightness-Contrast..."
 argument_list|)
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1739,6 +1822,8 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Adjust hue and saturation"
@@ -1771,6 +1856,8 @@ name|N_
 argument_list|(
 literal|"/Image/Colors/Posterize..."
 argument_list|)
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1813,6 +1900,8 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Reduce image to two colors using a threshold"
@@ -1845,6 +1934,8 @@ name|N_
 argument_list|(
 literal|"/Image/Colors/Curves..."
 argument_list|)
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1887,6 +1978,8 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Adjust color levels"
@@ -1919,6 +2012,8 @@ name|N_
 argument_list|(
 literal|"/Image/Histogram..."
 argument_list|)
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -2935,6 +3030,26 @@ operator|->
 name|title
 argument_list|)
 expr_stmt|;
+name|gtk_pixmap_set
+argument_list|(
+name|GTK_PIXMAP
+argument_list|(
+name|options_pixmap
+argument_list|)
+argument_list|,
+name|tool_get_pixmap
+argument_list|(
+name|tool_type
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_queue_draw
+argument_list|(
+name|options_pixmap
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2953,6 +3068,10 @@ block|{
 name|GtkWidget
 modifier|*
 name|frame
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3138,23 +3257,13 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|options_label
+name|hbox
 operator|=
-name|gtk_label_new
+name|gtk_hbox_new
 argument_list|(
-literal|""
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_padding
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|options_label
-argument_list|)
+name|FALSE
 argument_list|,
-literal|1
-argument_list|,
-literal|0
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3164,7 +3273,68 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
+name|hbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
+name|options_pixmap
+operator|=
+name|gtk_pixmap_new
+argument_list|(
+name|tool_get_pixmap
+argument_list|(
+name|RECT_SELECT
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|options_pixmap
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|options_pixmap
+argument_list|)
+expr_stmt|;
 name|options_label
+operator|=
+name|gtk_label_new
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|options_label
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3386,6 +3556,26 @@ operator|.
 name|tool_options
 operator|->
 name|title
+argument_list|)
+expr_stmt|;
+name|gtk_pixmap_set
+argument_list|(
+name|GTK_PIXMAP
+argument_list|(
+name|options_pixmap
+argument_list|)
+argument_list|,
+name|tool_get_pixmap
+argument_list|(
+name|tool_type
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_queue_draw
+argument_list|(
+name|options_pixmap
 argument_list|)
 expr_stmt|;
 if|if
@@ -3689,6 +3879,29 @@ break|break;
 block|}
 return|return
 name|toolStr
+return|;
+block|}
+end_function
+
+begin_function
+name|GdkPixmap
+modifier|*
+DECL|function|tool_get_pixmap (ToolType type)
+name|tool_get_pixmap
+parameter_list|(
+name|ToolType
+name|type
+parameter_list|)
+block|{
+return|return
+operator|(
+name|tool_info
+index|[
+name|type
+index|]
+operator|.
+name|icon_pixmap
+operator|)
 return|;
 block|}
 end_function
