@@ -1,4 +1,17 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__PNODE_H__
+end_ifndef
+
+begin_define
+DECL|macro|__PNODE_H__
+define|#
+directive|define
+name|__PNODE_H__
+end_define
+
 begin_include
 include|#
 directive|include
@@ -29,8 +42,17 @@ name|PRoot
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|Tag
+typedef|typedef
+specifier|const
+name|gconstpointer
+name|Tag
+typedef|;
+end_typedef
+
 begin_decl_stmt
-DECL|variable|p_nil
+specifier|extern
 name|PNode
 modifier|*
 name|p_nil
@@ -238,6 +260,11 @@ name|PRoot
 modifier|*
 name|root
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|tag
+parameter_list|,
 name|PNode
 modifier|*
 name|node
@@ -251,11 +278,20 @@ name|pr_write
 parameter_list|(
 name|PRoot
 modifier|*
-name|root
+name|pr
 parameter_list|,
 name|FILE
 modifier|*
 name|stream
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|tags
+parameter_list|,
+name|gint
+name|n
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -270,6 +306,11 @@ name|root
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 

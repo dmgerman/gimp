@@ -6,7 +6,7 @@ file|"output.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon279e8aa70108
+DECL|struct|__anon2c995de60108
 typedef|typedef
 struct|struct
 block|{
@@ -215,13 +215,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|output_flags_type_init (OutCtx * ctx,FlagsDef * e)
+DECL|function|output_flags_type_init (PRoot * out,FlagsDef * e)
 name|void
 name|output_flags_type_init
 parameter_list|(
-name|OutCtx
+name|PRoot
 modifier|*
-name|ctx
+name|out
 parameter_list|,
 name|FlagsDef
 modifier|*
@@ -241,23 +241,25 @@ name|type
 decl_stmt|;
 name|output_func
 argument_list|(
-name|ctx
+name|out
 argument_list|,
+literal|"type"
+argument_list|,
+name|NULL
+argument_list|,
+name|p_internal_varname
+argument_list|(
 name|t
 argument_list|,
+name|p_str
+argument_list|(
 literal|"init_type"
+argument_list|)
+argument_list|)
+argument_list|,
+name|p_nil
 argument_list|,
 name|NULL
-argument_list|,
-name|type_gtk_type
-argument_list|,
-name|VIS_PUBLIC
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|,
 name|p_fmt
 argument_list|(
@@ -297,7 +299,10 @@ name|p_internal_varname
 argument_list|(
 name|t
 argument_list|,
+name|p_str
+argument_list|(
 literal|"type"
+argument_list|)
 argument_list|)
 argument_list|,
 name|p_primtype
@@ -309,7 +314,10 @@ name|p_internal_varname
 argument_list|(
 name|t
 argument_list|,
+name|p_str
+argument_list|(
 literal|"type"
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|)
@@ -318,13 +326,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|output_flags (OutCtx * ctx,FlagsDef * e)
+DECL|function|output_flags (PRoot * out,FlagsDef * e)
 name|void
 name|output_flags
 parameter_list|(
-name|OutCtx
+name|PRoot
 modifier|*
-name|ctx
+name|out
 parameter_list|,
 name|FlagsDef
 modifier|*
@@ -333,9 +341,9 @@ parameter_list|)
 block|{
 name|pr_add
 argument_list|(
-name|ctx
-operator|->
-name|type_hdr
+name|out
+argument_list|,
+literal|"type"
 argument_list|,
 name|p_flags_decl
 argument_list|(
@@ -345,7 +353,7 @@ argument_list|)
 expr_stmt|;
 name|output_flags_type_init
 argument_list|(
-name|ctx
+name|out
 argument_list|,
 name|e
 argument_list|)

@@ -161,11 +161,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|output_enum_type_init (OutCtx * out,EnumDef * e)
+DECL|function|output_enum_type_init (PRoot * out,EnumDef * e)
 name|void
 name|output_enum_type_init
 parameter_list|(
-name|OutCtx
+name|PRoot
 modifier|*
 name|out
 parameter_list|,
@@ -189,21 +189,23 @@ name|output_func
 argument_list|(
 name|out
 argument_list|,
-name|t
-argument_list|,
-literal|"init_type"
-argument_list|,
-name|NULL
+literal|"type"
 argument_list|,
 name|type_gtk_type
 argument_list|,
-name|TRUE
+name|p_internal_varname
+argument_list|(
+name|t
+argument_list|,
+name|p_str
+argument_list|(
+literal|"init_type"
+argument_list|)
+argument_list|)
+argument_list|,
+name|p_nil
 argument_list|,
 name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|,
 name|p_fmt
 argument_list|(
@@ -211,8 +213,8 @@ literal|"\tstatic GtkEnumValue values[~] = {\n"
 literal|"~"
 literal|"\t\t{0, NULL, NULL}\n"
 literal|"\t};\n"
-literal|"\t%2 = gtk_type_register_enum (\"%1\", values);\n"
-literal|"\treturn %2;\n"
+literal|"\t~ = gtk_type_register_enum (\"~\", values);\n"
+literal|"\treturn ~;\n"
 argument_list|,
 name|p_prf
 argument_list|(
@@ -243,7 +245,10 @@ name|p_internal_varname
 argument_list|(
 name|t
 argument_list|,
+name|p_str
+argument_list|(
 literal|"type"
+argument_list|)
 argument_list|)
 argument_list|,
 name|p_primtype
@@ -255,7 +260,10 @@ name|p_internal_varname
 argument_list|(
 name|t
 argument_list|,
+name|p_str
+argument_list|(
 literal|"type"
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|)
@@ -264,11 +272,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|output_enum (OutCtx * out,EnumDef * e)
+DECL|function|output_enum (PRoot * out,EnumDef * e)
 name|void
 name|output_enum
 parameter_list|(
-name|OutCtx
+name|PRoot
 modifier|*
 name|out
 parameter_list|,
@@ -287,8 +295,8 @@ expr_stmt|;
 name|pr_add
 argument_list|(
 name|out
-operator|->
-name|type_hdr
+argument_list|,
+literal|"type"
 argument_list|,
 name|p_enum_decl
 argument_list|(
