@@ -17,19 +17,19 @@ name|__GDISPLAY_H__
 end_define
 
 begin_comment
-comment|/* FIXME: don't include gdisplay.h from core/ */
+comment|/* FIXME: move the display stuff to display/ */
 end_comment
 
 begin_include
 include|#
 directive|include
-file|"widgets/widgets-types.h"
+file|"display/display-types.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e5ecfd0103
+DECL|enum|__anon2aaae9540103
 block|{
 DECL|enumerator|SELECTION_OFF
 name|SELECTION_OFF

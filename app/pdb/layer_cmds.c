@@ -16,7 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -28,19 +28,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"pdb-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"appenums.h"
 end_include
 
 begin_include
@@ -2172,14 +2166,33 @@ if|if
 condition|(
 name|success
 condition|)
-name|gtk_object_sink
+block|{
+if|if
+condition|(
+operator|!
+name|gimp_drawable_gimage
 argument_list|(
-name|GTK_OBJECT
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(

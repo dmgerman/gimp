@@ -16,6 +16,12 @@ directive|define
 name|__CORE_TYPES_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
 begin_comment
 comment|/* EEK */
 end_comment
@@ -23,27 +29,45 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
+file|"libgimpbase/gimpbasetypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpmath/gimpmath.h"
 end_include
+
+begin_include
+include|#
+directive|include
+file|"base/base-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-in-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo_types.h"
+end_include
+
+begin_comment
+comment|/* EEK */
+end_comment
 
 begin_comment
 comment|/*  enums  */
 end_comment
 
-begin_comment
-comment|/* Base image types */
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f76f920103
+DECL|enum|__anon2c647d080103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -59,14 +83,10 @@ name|GimpImageBaseType
 typedef|;
 end_typedef
 
-begin_comment
-comment|/* Image types */
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f76f920203
+DECL|enum|__anon2c647d080203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -97,14 +117,10 @@ name|GimpImageType
 typedef|;
 end_typedef
 
-begin_comment
-comment|/* Channel types */
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f76f920303
+DECL|enum|__anon2c647d080303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -132,7 +148,33 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f76f920403
+comment|/*< chop=ADD_>*/
+DECL|enum|__anon2c647d080403
+block|{
+DECL|enumerator|ADD_WHITE_MASK
+name|ADD_WHITE_MASK
+block|,
+DECL|enumerator|ADD_BLACK_MASK
+name|ADD_BLACK_MASK
+block|,
+DECL|enumerator|ADD_ALPHA_MASK
+name|ADD_ALPHA_MASK
+block|,
+DECL|enumerator|ADD_SELECTION_MASK
+name|ADD_SELECTION_MASK
+block|,
+DECL|enumerator|ADD_INV_SELECTION_MASK
+name|ADD_INV_SELECTION_MASK
+DECL|typedef|AddMaskType
+block|}
+name|AddMaskType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2c647d080503
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -145,14 +187,76 @@ name|MaskApplyMode
 typedef|;
 end_typedef
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2c647d080603
+block|{
+DECL|enumerator|HORIZONTAL
+name|HORIZONTAL
+block|,
+DECL|enumerator|VERTICAL
+name|VERTICAL
+block|,
+DECL|enumerator|UNKNOWN
+name|UNKNOWN
+DECL|typedef|OrientationType
+block|}
+name|OrientationType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2c647d080703
+block|{
+DECL|enumerator|ORIENTATION_UNKNOWN
+name|ORIENTATION_UNKNOWN
+block|,
+DECL|enumerator|ORIENTATION_HORIZONTAL
+name|ORIENTATION_HORIZONTAL
+block|,
+DECL|enumerator|ORIENTATION_VERTICAL
+name|ORIENTATION_VERTICAL
+DECL|typedef|InternalOrientationType
+block|}
+name|InternalOrientationType
+typedef|;
+end_typedef
+
 begin_comment
-comment|/* Fill types */
+comment|/*  Selection Boolean operations  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f76f920503
+comment|/*< chop=CHANNEL_OP_>*/
+DECL|enum|__anon2c647d080803
+block|{
+DECL|enumerator|CHANNEL_OP_ADD
+name|CHANNEL_OP_ADD
+block|,
+DECL|enumerator|CHANNEL_OP_SUB
+name|CHANNEL_OP_SUB
+block|,
+DECL|enumerator|CHANNEL_OP_REPLACE
+name|CHANNEL_OP_REPLACE
+block|,
+DECL|enumerator|CHANNEL_OP_INTERSECT
+name|CHANNEL_OP_INTERSECT
+DECL|typedef|ChannelOps
+block|}
+name|ChannelOps
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2c647d080903
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -179,15 +283,11 @@ name|GimpFillType
 typedef|;
 end_typedef
 
-begin_comment
-comment|/* Transfer modes */
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon29f76f920603
+DECL|enum|__anon2c647d080a03
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -454,6 +554,24 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  other objects  */
+end_comment
+
+begin_typedef
+DECL|typedef|ImageMap
+typedef|typedef
+name|struct
+name|_ImageMap
+name|ImageMap
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|ImageMap
+comment|/* temp_hack, will be an object */
+end_comment
+
+begin_comment
 comment|/*  non-object types  */
 end_comment
 
@@ -481,6 +599,54 @@ typedef|typedef
 name|struct
 name|_GimpImageNewValues
 name|GimpImageNewValues
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpProgress
+typedef|typedef
+name|struct
+name|_GimpProgress
+name|GimpProgress
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTattoo
+typedef|typedef
+name|guint32
+name|GimpTattoo
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  EEK stuff  */
+end_comment
+
+begin_typedef
+DECL|typedef|Path
+typedef|typedef
+name|struct
+name|_Path
+name|Path
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|PathPoint
+typedef|typedef
+name|struct
+name|_PathPoint
+name|PathPoint
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|PathList
+typedef|typedef
+name|struct
+name|_PathList
+name|PathList
 typedef|;
 end_typedef
 

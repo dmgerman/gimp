@@ -16,20 +16,55 @@ directive|define
 name|__UNDO_TYPES_H__
 end_define
 
+begin_typedef
+DECL|typedef|LayerUndo
+typedef|typedef
+name|struct
+name|_LayerUndo
+name|LayerUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|LayerMaskUndo
+typedef|typedef
+name|struct
+name|_LayerMaskUndo
+name|LayerMaskUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|FStoLayerUndo
+typedef|typedef
+name|struct
+name|_FStoLayerUndo
+name|FStoLayerUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|PathUndo
+typedef|typedef
+name|GSList
+name|PathUndo
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  Undo types  */
 end_comment
 
 begin_comment
-comment|/* NOTE: If you change this list, please update the textual mapping at  * the bottom of undo.c as well. */
+comment|/* NOTE: If you change this list, please update the textual mapping at  *  the bottom of undo.c as well.  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ecdba10103
+DECL|enum|__anon28c9d6240103
 block|{
-comment|/* Type UNDO_NULL (0) is special - in the gimpimage structure it means      * there is no undo group currently being added to. */
+comment|/* Type UNDO_NULL (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
 DECL|enumerator|UNDO_NULL
 name|UNDO_NULL
 init|=

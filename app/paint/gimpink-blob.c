@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -51,17 +51,46 @@ directive|include
 file|"gimpinktool-blob.h"
 end_include
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon29a1e59a0103
+block|{
+DECL|enumerator|EDGE_NONE
+name|EDGE_NONE
+init|=
+literal|0
+block|,
+DECL|enumerator|EDGE_LEFT
+name|EDGE_LEFT
+init|=
+literal|1
+operator|<<
+literal|0
+block|,
+DECL|enumerator|EDGE_RIGHT
+name|EDGE_RIGHT
+init|=
+literal|1
+operator|<<
+literal|1
+DECL|typedef|EdgeType
+block|}
+name|EdgeType
+typedef|;
+end_typedef
+
 begin_function
 specifier|static
 name|Blob
 modifier|*
-DECL|function|blob_new (int y,int height)
+DECL|function|blob_new (gint y,gint height)
 name|blob_new
 parameter_list|(
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
@@ -108,35 +137,6 @@ return|;
 block|}
 end_function
 
-begin_typedef
-DECL|enum|__anon29e948690103
-typedef|typedef
-enum|enum
-block|{
-DECL|enumerator|EDGE_NONE
-name|EDGE_NONE
-init|=
-literal|0
-block|,
-DECL|enumerator|EDGE_LEFT
-name|EDGE_LEFT
-init|=
-literal|1
-operator|<<
-literal|0
-block|,
-DECL|enumerator|EDGE_RIGHT
-name|EDGE_RIGHT
-init|=
-literal|1
-operator|<<
-literal|1
-DECL|typedef|EdgeType
-block|}
-name|EdgeType
-typedef|;
-end_typedef
-
 begin_function
 specifier|static
 name|void
@@ -152,10 +152,10 @@ modifier|*
 name|present
 parameter_list|)
 block|{
-name|int
+name|gint
 name|start
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|x2
@@ -164,7 +164,7 @@ name|i1
 decl_stmt|,
 name|i2
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/* Mark empty lines at top and bottom as unused */
@@ -431,23 +431,23 @@ name|EDGE_LEFT
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|increment
 decl_stmt|;
 comment|/* fractional part */
-name|int
+name|gint
 name|denom
 decl_stmt|;
 comment|/* denominator of fraction */
-name|int
+name|gint
 name|step
 decl_stmt|;
 comment|/* integral step */
-name|int
+name|gint
 name|frac
 decl_stmt|;
 comment|/* fractional step */
-name|int
+name|gint
 name|reverse
 decl_stmt|;
 comment|/* find bottom of gap */

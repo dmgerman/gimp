@@ -28,7 +28,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -48,16 +48,6 @@ include|#
 directive|include
 file|"core/core-types.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_comment
-comment|/* EEK */
-end_comment
 
 begin_include
 include|#
@@ -780,7 +770,7 @@ name|guint32
 name|version
 decl_stmt|;
 comment|/* changed from num_paths */
-name|Tattoo
+name|GimpTattoo
 name|tattoo
 init|=
 literal|0

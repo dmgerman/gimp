@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/pdb-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/tile-manager.h"
 end_include
 
@@ -545,6 +551,12 @@ argument_list|,
 name|GIMP_CONTAINER_POLICY_STRONG
 argument_list|)
 expr_stmt|;
+name|gimp
+operator|->
+name|standard_tool_info
+operator|=
+name|NULL
+expr_stmt|;
 name|gimp_documents_init
 argument_list|(
 name|gimp
@@ -793,6 +805,13 @@ condition|)
 name|gimp_documents_exit
 argument_list|(
 name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_tool_info_set_standard
+argument_list|(
+name|gimp
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

@@ -252,6 +252,11 @@ name|GimpContainer
 modifier|*
 name|tool_info_list
 decl_stmt|;
+DECL|member|standard_tool_info
+name|GimpToolInfo
+modifier|*
+name|standard_tool_info
+decl_stmt|;
 comment|/*  the opened and saved images in MRU order  */
 DECL|member|documents
 name|GimpContainer

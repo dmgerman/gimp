@@ -27,8 +27,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 DECL|member|gdisp
-name|GDisplay
-modifier|*
+name|gpointer
 name|gdisp
 decl_stmt|;
 comment|/* This is a hack.. Needed so we can get back to                       * the same display that these curves were added 		     * too. That way when an entry in the paths dialog 		     * is clicked the bezier tool can be targeted at  		     * correct display. Note this display could have been 		     * deleted (ie different view), but gdisplays_check_valid() 		     * function will take care of that.. In this case we just 		     * pick a display that the gimage is rendered in. 		     */
@@ -53,7 +52,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b589510103
+DECL|enum|__anon298de3020103
 block|{
 DECL|enumerator|BEZIER
 name|BEZIER
@@ -128,7 +127,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Tattoo
+name|GimpTattoo
 name|path_get_tattoo
 parameter_list|(
 name|Path
@@ -147,7 +146,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Tattoo
+name|GimpTattoo
 name|tattoo
 parameter_list|)
 function_decl|;

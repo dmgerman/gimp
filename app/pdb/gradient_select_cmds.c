@@ -34,7 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"pdb-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
 end_include
 
 begin_include

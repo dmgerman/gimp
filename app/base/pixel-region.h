@@ -371,8 +371,9 @@ begin_function_decl
 name|gpointer
 name|pixel_regions_process
 parameter_list|(
-name|gpointer
-name|PRI_ptr
+name|PixelRegionIterator
+modifier|*
+name|PRI
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -381,8 +382,9 @@ begin_function_decl
 name|void
 name|pixel_regions_process_stop
 parameter_list|(
-name|gpointer
-name|PRI_ptr
+name|PixelRegionIterator
+modifier|*
+name|PRI
 parameter_list|)
 function_decl|;
 end_function_decl

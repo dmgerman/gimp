@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2879ee450103
+DECL|enum|__anon27a163860103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_IMAGE
 name|GIMP_CONTEXT_PROP_IMAGE
@@ -74,7 +74,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2879ee450203
+DECL|enum|__anon27a163860203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -303,8 +303,7 @@ modifier|*
 name|image
 decl_stmt|;
 DECL|member|display
-name|GDisplay
-modifier|*
+name|gpointer
 name|display
 decl_stmt|;
 DECL|member|tool_info
@@ -418,8 +417,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GDisplay
-modifier|*
+name|gpointer
 name|display
 parameter_list|)
 function_decl|;

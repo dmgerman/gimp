@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -129,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd541d10103
+DECL|enum|__anon28b9806b0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED

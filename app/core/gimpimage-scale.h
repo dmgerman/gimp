@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cd37710103
+DECL|enum|__anon2901a8d30103
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -235,7 +235,7 @@ name|disp_count
 decl_stmt|;
 comment|/*  number of displays           */
 DECL|member|tattoo_state
-name|Tattoo
+name|GimpTattoo
 name|tattoo_state
 decl_stmt|;
 comment|/*  the next unique tattoo to use*/
@@ -1241,7 +1241,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Tattoo
+name|GimpTattoo
 name|gimp_image_get_new_tattoo
 parameter_list|(
 name|GimpImage
@@ -1259,14 +1259,14 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Tattoo
+name|GimpTattoo
 name|val
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Tattoo
+name|GimpTattoo
 name|gimp_image_get_tattoo_state
 parameter_list|(
 name|GimpImage
@@ -1489,7 +1489,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Tattoo
+name|GimpTattoo
 name|tatoo
 parameter_list|)
 function_decl|;
@@ -1505,7 +1505,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Tattoo
+name|GimpTattoo
 name|tatoo
 parameter_list|)
 function_decl|;

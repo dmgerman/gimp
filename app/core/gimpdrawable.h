@@ -722,7 +722,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Tattoo
+name|GimpTattoo
 name|gimp_drawable_get_tattoo
 parameter_list|(
 specifier|const
@@ -741,7 +741,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|Tattoo
+name|GimpTattoo
 name|tattoo
 parameter_list|)
 function_decl|;

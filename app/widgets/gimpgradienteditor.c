@@ -85,7 +85,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -257,7 +257,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eba0330103
+DECL|enum|__anon2adf7c560103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -297,7 +297,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27eba0330203
+DECL|enum|__anon2adf7c560203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE

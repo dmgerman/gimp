@@ -312,16 +312,10 @@ argument_list|(
 name|help_data
 argument_list|)
 expr_stmt|;
-name|gtk_idle_add
+name|g_idle_add
 argument_list|(
-operator|(
-name|GtkFunction
-operator|)
 name|gimp_idle_help
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|idle_help
 argument_list|)
 expr_stmt|;
@@ -343,7 +337,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|gimp_idle_help (gpointer data)
 name|gimp_idle_help
 parameter_list|(

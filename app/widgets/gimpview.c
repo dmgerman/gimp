@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"image_render.h"
 end_include
 
@@ -195,7 +201,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ed1e20103
+DECL|enum|__anon28d926470103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED

@@ -603,7 +603,7 @@ block|}
 end_function
 
 begin_function
-name|Tattoo
+name|GimpTattoo
 DECL|function|path_get_tattoo (Path * p)
 name|path_get_tattoo
 parameter_list|(
@@ -638,14 +638,14 @@ end_function
 begin_function
 name|Path
 modifier|*
-DECL|function|path_get_path_by_tattoo (GimpImage * gimage,Tattoo tattoo)
+DECL|function|path_get_path_by_tattoo (GimpImage * gimage,GimpTattoo tattoo)
 name|path_get_path_by_tattoo
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Tattoo
+name|GimpTattoo
 name|tattoo
 parameter_list|)
 block|{

@@ -16,12 +16,35 @@ directive|define
 name|__IMAGE_MAP_H__
 end_define
 
+begin_typedef
+DECL|typedef|ImageMapApplyFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|ImageMapApplyFunc
+function_decl|)
+parameter_list|(
+name|PixelRegion
+modifier|*
+name|srcPR
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|destPR
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_comment
 comment|/*  Image Map functions  */
 end_comment
 
 begin_comment
-comment|/*  Successive image map apply functions can be called, but eventually  *   MUST be followed with an image_map_commit or an image_map_abort call  *   The image map is no longer valid after a call to commit or abort.  */
+comment|/*  Successive image map apply functions can be called, but eventually  *  MUST be followed with an image_map_commit or an image_map_abort call  *  The image map is no longer valid after a call to commit or abort.  */
 end_comment
 
 begin_function_decl

@@ -1042,6 +1042,7 @@ name|position
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  Now this is evil: GtkNotebook's menu_item "activate" callback    *  gets it's notebook context from gtk_menu_get_attach_widget()    *  which badly fails because we hijacked the menu and attached it    *  to our own item_factory menu. As a workaround, we disconnect    *  gtk's handler and install our own. --Mitch    */
 block|{
 name|GtkWidget
 modifier|*
@@ -1133,7 +1134,7 @@ operator|)
 name|dockable
 condition|)
 block|{
-comment|/*  EEK: disconnect GtkNotebook's own handler  */
+comment|/*  disconnect GtkNotebook's handler  */
 name|g_signal_handlers_disconnect_matched
 argument_list|(
 name|G_OBJECT
@@ -1154,6 +1155,7 @@ argument_list|,
 name|page
 argument_list|)
 expr_stmt|;
+comment|/*  and install our own  */
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT

@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c78e8f00103
+DECL|enum|__anon2c97c9f30103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -3575,7 +3575,7 @@ block|}
 end_function
 
 begin_function
-name|Tattoo
+name|GimpTattoo
 DECL|function|gimp_drawable_get_tattoo (const GimpDrawable * drawable)
 name|gimp_drawable_get_tattoo
 parameter_list|(
@@ -3605,15 +3605,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_set_tattoo (GimpDrawable * drawable,Tattoo val)
+DECL|function|gimp_drawable_set_tattoo (GimpDrawable * drawable,GimpTattoo tattoo)
 name|gimp_drawable_set_tattoo
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|Tattoo
-name|val
+name|GimpTattoo
+name|tattoo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3628,7 +3628,7 @@ name|drawable
 operator|->
 name|tattoo
 operator|=
-name|val
+name|tattoo
 expr_stmt|;
 block|}
 end_function

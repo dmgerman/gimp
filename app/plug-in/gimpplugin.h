@@ -36,6 +36,16 @@ begin_comment
 comment|/* pid_t  */
 end_comment
 
+begin_comment
+comment|/* FIXME: move the plugin stuff to plug-in/ */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-in-types.h"
+end_include
+
 begin_include
 include|#
 directive|include

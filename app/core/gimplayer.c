@@ -34,16 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_comment
-comment|/* EEK */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -122,16 +112,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_comment
-comment|/* EEK */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -143,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29928e850103
+DECL|enum|__anon2b1f43e00103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -5401,7 +5381,8 @@ name|gdisplays_selection_visibility
 argument_list|(
 name|gimage
 argument_list|,
-name|SELECTION_OFF
+literal|0
+comment|/* SELECTION_OFF */
 argument_list|)
 expr_stmt|;
 comment|/*  clear the affected region surrounding the layer  */
@@ -5409,7 +5390,8 @@ name|gdisplays_selection_visibility
 argument_list|(
 name|gimage
 argument_list|,
-name|SELECTION_LAYER_OFF
+literal|1
+comment|/* SELECTION_LAYER_OFF */
 argument_list|)
 expr_stmt|;
 comment|/*  get the selection mask channel  */

@@ -42,23 +42,6 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_DIRENT_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<dirent.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
 name|HAVE_UNISTD_H
 end_ifdef
 
@@ -161,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -179,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b0f1c10103
+DECL|enum|__anon279ce8f30103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL

@@ -66,7 +66,7 @@ name|locked
 decl_stmt|;
 comment|/* Only bottom bit used */
 DECL|member|tattoo
-name|Tattoo
+name|GimpTattoo
 name|tattoo
 decl_stmt|;
 comment|/* The tattoo for the path */

@@ -1007,7 +1007,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon274e4bf90103
+DECL|enum|__anon296971d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1053,7 +1053,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274e4bf90203
+DECL|enum|__anon296971d20203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -5138,7 +5138,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e4bf90308
+DECL|struct|__anon296971d20308
 block|{
 DECL|member|shell
 name|GObject
@@ -5590,7 +5590,11 @@ argument_list|(
 name|context
 argument_list|,
 name|gimp_tool_info_get_standard
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5696,7 +5700,11 @@ condition|)
 name|standard_tool_info
 operator|=
 name|gimp_tool_info_get_standard
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

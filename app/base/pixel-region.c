@@ -1438,11 +1438,12 @@ end_function
 
 begin_function
 name|gpointer
-DECL|function|pixel_regions_process (gpointer PRI_ptr)
+DECL|function|pixel_regions_process (PixelRegionIterator * PRI)
 name|pixel_regions_process
 parameter_list|(
-name|gpointer
-name|PRI_ptr
+name|PixelRegionIterator
+modifier|*
+name|PRI
 parameter_list|)
 block|{
 name|GSList
@@ -1453,18 +1454,6 @@ name|PixelRegionHolder
 modifier|*
 name|PRH
 decl_stmt|;
-name|PixelRegionIterator
-modifier|*
-name|PRI
-decl_stmt|;
-name|PRI
-operator|=
-operator|(
-name|PixelRegionIterator
-operator|*
-operator|)
-name|PRI_ptr
-expr_stmt|;
 name|PRI
 operator|->
 name|process_count
@@ -1632,11 +1621,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_regions_process_stop (gpointer PRI_ptr)
+DECL|function|pixel_regions_process_stop (PixelRegionIterator * PRI)
 name|pixel_regions_process_stop
 parameter_list|(
-name|gpointer
-name|PRI_ptr
+name|PixelRegionIterator
+modifier|*
+name|PRI
 parameter_list|)
 block|{
 name|GSList
@@ -1647,18 +1637,6 @@ name|PixelRegionHolder
 modifier|*
 name|PRH
 decl_stmt|;
-name|PixelRegionIterator
-modifier|*
-name|PRI
-decl_stmt|;
-name|PRI
-operator|=
-operator|(
-name|PixelRegionIterator
-operator|*
-operator|)
-name|PRI_ptr
-expr_stmt|;
 name|PRI
 operator|->
 name|process_count

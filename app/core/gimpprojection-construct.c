@@ -781,7 +781,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e73100103
+DECL|enum|__anon29b2875b0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -7031,7 +7031,10 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
-operator|&&
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|parasite
 operator|!=
 name|NULL
@@ -7084,23 +7087,33 @@ block|}
 end_function
 
 begin_function
-name|Tattoo
-DECL|function|gimp_image_get_new_tattoo (GimpImage * image)
+name|GimpTattoo
+DECL|function|gimp_image_get_new_tattoo (GimpImage * gimage)
 name|gimp_image_get_new_tattoo
 parameter_list|(
 name|GimpImage
 modifier|*
-name|image
+name|gimage
 parameter_list|)
 block|{
-name|image
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gimage
 operator|->
 name|tattoo_state
 operator|++
 expr_stmt|;
 if|if
 condition|(
-name|image
+name|gimage
 operator|->
 name|tattoo_state
 operator|<=
@@ -7108,11 +7121,11 @@ literal|0
 condition|)
 name|g_warning
 argument_list|(
-literal|"Tattoo state has become corrupt (2.1 billion operation limit exceded)"
+literal|"gimp_image_get_new_tattoo(): Tattoo state has become corrupt (2.1 billion operation limit exceded)"
 argument_list|)
 expr_stmt|;
 return|return
-name|image
+name|gimage
 operator|->
 name|tattoo_state
 return|;
@@ -7120,35 +7133,43 @@ block|}
 end_function
 
 begin_function
-name|Tattoo
-DECL|function|gimp_image_get_tattoo_state (GimpImage * image)
+name|GimpTattoo
+DECL|function|gimp_image_get_tattoo_state (GimpImage * gimage)
 name|gimp_image_get_tattoo_state
 parameter_list|(
 name|GimpImage
 modifier|*
-name|image
+name|gimage
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 return|return
-operator|(
-name|image
+name|gimage
 operator|->
 name|tattoo_state
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_tattoo_state (GimpImage * gimage,Tattoo val)
+DECL|function|gimp_image_set_tattoo_state (GimpImage * gimage,GimpTattoo val)
 name|gimp_image_set_tattoo_state
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Tattoo
+name|GimpTattoo
 name|val
 parameter_list|)
 block|{
@@ -7165,7 +7186,7 @@ name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
-name|Tattoo
+name|GimpTattoo
 name|maxval
 init|=
 literal|0
@@ -7213,7 +7234,7 @@ name|list
 argument_list|)
 control|)
 block|{
-name|Tattoo
+name|GimpTattoo
 name|ltattoo
 decl_stmt|;
 name|ltattoo
@@ -7300,7 +7321,7 @@ name|list
 argument_list|)
 control|)
 block|{
-name|Tattoo
+name|GimpTattoo
 name|ctattoo
 decl_stmt|;
 name|channel
@@ -7369,7 +7390,7 @@ operator|->
 name|bz_paths
 condition|)
 block|{
-name|Tattoo
+name|GimpTattoo
 name|ptattoo
 decl_stmt|;
 name|GSList
@@ -10521,7 +10542,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_get_layer_by_tattoo (const GimpImage * gimage,Tattoo tattoo)
+DECL|function|gimp_image_get_layer_by_tattoo (const GimpImage * gimage,GimpTattoo tattoo)
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
 specifier|const
@@ -10529,7 +10550,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Tattoo
+name|GimpTattoo
 name|tattoo
 parameter_list|)
 block|{
@@ -10609,7 +10630,7 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_get_channel_by_tattoo (const GimpImage * gimage,Tattoo tattoo)
+DECL|function|gimp_image_get_channel_by_tattoo (const GimpImage * gimage,GimpTattoo tattoo)
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
 specifier|const
@@ -10617,7 +10638,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Tattoo
+name|GimpTattoo
 name|tattoo
 parameter_list|)
 block|{

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -336,12 +336,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -391,7 +385,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2c5160108
+DECL|struct|__anon2760bc950108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -991,10 +985,6 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
@@ -1003,9 +993,9 @@ name|GtkWidget
 modifier|*
 name|undo_history
 decl_stmt|;
-name|gdisp
+name|gimage
 operator|=
-name|gimp_context_get_display
+name|gimp_context_get_image
 argument_list|(
 name|context
 argument_list|)
@@ -1013,17 +1003,11 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gdisp
+name|gimage
 condition|)
 return|return
 name|NULL
 return|;
-name|gimage
-operator|=
-name|gdisp
-operator|->
-name|gimage
-expr_stmt|;
 name|undo_history
 operator|=
 name|g_object_get_data

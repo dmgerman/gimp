@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"display/display-types.h"
 end_include
 
 begin_include
@@ -195,29 +195,6 @@ name|GIMP_TARGET_PATTERN
 block|,
 name|GIMP_TARGET_BUFFER
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|display_n_targets
-specifier|static
-name|guint
-name|display_n_targets
-init|=
-operator|(
-sizeof|sizeof
-argument_list|(
-name|display_target_table
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|display_target_table
-index|[
-literal|0
-index|]
-argument_list|)
-operator|)
 decl_stmt|;
 end_decl_stmt
 
@@ -745,7 +722,10 @@ name|GTK_DEST_DEFAULT_ALL
 argument_list|,
 name|display_target_table
 argument_list|,
-name|display_n_targets
+name|G_N_ELEMENTS
+argument_list|(
+name|display_target_table
+argument_list|)
 argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)

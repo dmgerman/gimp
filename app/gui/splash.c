@@ -42,13 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"appenv.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -60,12 +54,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be39bf10103
+DECL|enum|__anon297e67290103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER

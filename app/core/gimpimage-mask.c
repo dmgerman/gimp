@@ -18,13 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pdb/pdb-types.h"
 end_include
 
 begin_include
@@ -98,16 +104,6 @@ include|#
 directive|include
 file|"floating_sel.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_comment
-comment|/* EEK */
-end_comment
 
 begin_include
 include|#
@@ -518,7 +514,8 @@ name|gdisplays_selection_visibility
 argument_list|(
 name|gimage
 argument_list|,
-name|SELECTION_OFF
+literal|0
+comment|/* SELECTION_OFF */
 argument_list|)
 expr_stmt|;
 name|mask

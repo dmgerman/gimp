@@ -57,7 +57,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ad0be40103
+DECL|enum|__anon297a10e10103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA

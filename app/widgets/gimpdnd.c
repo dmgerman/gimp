@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2415f80103
+DECL|enum|__anon2938187d0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE
@@ -5299,7 +5299,9 @@ condition|)
 name|tool_info
 operator|=
 name|gimp_tool_info_get_standard
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 else|else
 name|tool_info
