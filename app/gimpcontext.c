@@ -74,7 +74,7 @@ value|while (!((context)->field_defined)&& (context)->parent) \           (conte
 end_define
 
 begin_enum
-DECL|enum|__anon29d5007f0103
+DECL|enum|__anon2ae855060103
 enum|enum
 block|{
 DECL|enumerator|ARG_0
@@ -96,7 +96,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon29d5007f0203
+DECL|enum|__anon2ae855060203
 enum|enum
 block|{
 DECL|enumerator|OPACITY_CHANGED
@@ -1865,6 +1865,8 @@ argument_list|(
 name|orig
 argument_list|,
 name|display
+operator|->
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gtk_signal_emit
