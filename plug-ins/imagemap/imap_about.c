@@ -101,10 +101,7 @@ name|default_dialog_set_label
 argument_list|(
 name|dialog
 argument_list|,
-name|_
-argument_list|(
 literal|"m.rijk@chello.nl"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_set_label
@@ -113,7 +110,7 @@ name|dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"  Released under the GNU General Public License  "
+literal|"Released under the GNU General Public License"
 argument_list|)
 argument_list|)
 expr_stmt|;
