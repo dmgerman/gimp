@@ -874,6 +874,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
 literal|"gimp:palette-list"
@@ -895,6 +899,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
 literal|"gimp:indexed-palette"
@@ -3515,6 +3523,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
 literal|"gimp:palette-list"
@@ -3536,6 +3548,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
 literal|"gimp:indexed-palette"
@@ -5220,6 +5236,10 @@ block|,
 name|dialogs_add_tab_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
 literal|"gimp:indexed-palette"
@@ -5408,6 +5428,10 @@ block|,
 name|dialogs_add_tab_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
 literal|"gimp:palette-list"
@@ -5429,6 +5453,10 @@ block|,
 name|dialogs_add_tab_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
 literal|"gimp:palette-grid"
