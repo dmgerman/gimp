@@ -88,6 +88,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimputils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -202,24 +214,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimputils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -282,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9f8d490103
+DECL|enum|__anon2c794ea50103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

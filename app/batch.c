@@ -469,7 +469,7 @@ name|pdb_int
 condition|)
 block|{
 case|case
-name|PDB_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 case|:
 name|g_print
 argument_list|(
@@ -478,7 +478,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 case|:
 name|g_print
 argument_list|(
@@ -487,7 +487,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 case|:
 name|g_print
 argument_list|(
@@ -911,7 +911,7 @@ name|pdb_int
 condition|)
 block|{
 case|case
-name|PDB_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 case|:
 name|g_print
 argument_list|(
@@ -920,7 +920,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 case|:
 name|g_print
 argument_list|(
@@ -929,7 +929,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 case|:
 name|g_print
 argument_list|(

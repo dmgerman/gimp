@@ -16,20 +16,10 @@ directive|define
 name|__GIMP_WIDGETS_TYPES_H__
 end_define
 
-begin_comment
-comment|/* EEK */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpunit.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpcolor/gimpcolortypes.h>
+file|<libgimpbase/gimpbasetypes.h>
 end_include
 
 begin_ifdef
@@ -48,7 +38,7 @@ comment|/* __cplusplus */
 comment|/* For information look into the html documentation */
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a9d2c10103
+DECL|enum|__anon288bcdda0103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE

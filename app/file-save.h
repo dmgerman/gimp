@@ -25,7 +25,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|PDBStatusType
+name|GimpPDBStatusType
 name|file_save
 parameter_list|(
 name|GimpImage

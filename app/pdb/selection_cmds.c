@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -505,7 +511,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -524,7 +530,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"non_empty"
 block|,
@@ -532,7 +538,7 @@ literal|"True if there is a selection"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"x1"
 block|,
@@ -540,7 +546,7 @@ literal|"x coordinate of upper left corner of selection bounds"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"y1"
 block|,
@@ -548,7 +554,7 @@ literal|"y coordinate of upper left corner of selection bounds"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"x2"
 block|,
@@ -556,7 +562,7 @@ literal|"x coordinate of lower right corner of selection bounds"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"y2"
 block|,
@@ -585,7 +591,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -728,7 +734,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -736,7 +742,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"x"
 block|,
@@ -744,7 +750,7 @@ literal|"x coordinate of value"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"y"
 block|,
@@ -763,7 +769,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"value"
 block|,
@@ -792,7 +798,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -903,7 +909,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -922,7 +928,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"is_empty"
 block|,
@@ -951,7 +957,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1077,7 +1083,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1085,7 +1091,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offx"
 block|,
@@ -1093,7 +1099,7 @@ literal|"x offset for translation"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offy"
 block|,
@@ -1122,7 +1128,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -1306,7 +1312,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1314,7 +1320,7 @@ literal|"The drawable from which to float selection"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offx"
 block|,
@@ -1322,7 +1328,7 @@ literal|"x offset for translation"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offy"
 block|,
@@ -1341,7 +1347,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -1370,7 +1376,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -1464,7 +1470,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1493,7 +1499,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1587,7 +1593,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1616,7 +1622,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1710,7 +1716,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1739,7 +1745,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1833,7 +1839,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1862,7 +1868,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1956,7 +1962,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1985,7 +1991,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -2107,7 +2113,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2115,7 +2121,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"radius"
 block|,
@@ -2144,7 +2150,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2266,7 +2272,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2274,7 +2280,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"radius"
 block|,
@@ -2303,7 +2309,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2425,7 +2431,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2433,7 +2439,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"steps"
 block|,
@@ -2462,7 +2468,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2586,7 +2592,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2594,7 +2600,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"radius"
 block|,
@@ -2623,7 +2629,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2739,7 +2745,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -2768,7 +2774,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -2915,7 +2921,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_CHANNEL
+name|GIMP_PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
@@ -2944,7 +2950,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -3081,7 +3087,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -3100,7 +3106,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_CHANNEL
+name|GIMP_PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
@@ -3129,7 +3135,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -3344,7 +3350,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_CHANNEL
+name|GIMP_PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
@@ -3352,7 +3358,7 @@ literal|"The channel"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
@@ -3381,7 +3387,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,

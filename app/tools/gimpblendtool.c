@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -348,7 +354,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293362a90108
+DECL|struct|__anon289b4f440108
 block|{
 DECL|member|offset
 name|gdouble
@@ -400,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293362a90208
+DECL|struct|__anon289b4f440208
 block|{
 DECL|member|PR
 name|PixelRegion

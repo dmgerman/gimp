@@ -18,13 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimplimits.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -66,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b2d7e40103
+DECL|enum|__anon29c6b9a20103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED

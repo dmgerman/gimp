@@ -46,6 +46,12 @@ directive|include
 file|<libgimpbase/gimpunit.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimpbase/gimputils.h>
+end_include
+
 begin_endif
 endif|#
 directive|endif

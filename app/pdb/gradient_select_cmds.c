@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -430,7 +436,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"gradients_callback"
 block|,
@@ -438,7 +444,7 @@ literal|"The callback PDB proc to call when gradient selection is made"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"popup_title"
 block|,
@@ -446,7 +452,7 @@ literal|"Title to give the gradient popup window"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"initial_gradient"
 block|,
@@ -454,7 +460,7 @@ literal|"The name of the pattern to set as the first selected"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"sample_size"
 block|,
@@ -483,7 +489,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -648,7 +654,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"gradients_callback"
 block|,
@@ -677,7 +683,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -878,7 +884,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"gradients_callback"
 block|,
@@ -886,7 +892,7 @@ literal|"The name of the callback registered for this popup"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"gradient_name"
 block|,
@@ -915,7 +921,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1259,7 +1265,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -1267,7 +1273,7 @@ literal|"The gradient name (\"\" means current active gradient)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"sample_size"
 block|,
@@ -1286,7 +1292,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -1294,7 +1300,7 @@ literal|"The gradient name"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
@@ -1302,7 +1308,7 @@ literal|"The gradient sample width (r,g,b,a)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"grad_data"
 block|,
@@ -1331,7 +1337,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpwidgetstypes.h"
 end_include
 
@@ -43,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"gimpfileselection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpsizeentry.h"
 end_include
 
 begin_include
@@ -177,7 +165,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon296847430103
+DECL|enum|__anon2b78cc3c0103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED

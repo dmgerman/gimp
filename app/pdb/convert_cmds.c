@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -228,7 +234,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -257,7 +263,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -384,7 +390,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -413,7 +419,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -784,7 +790,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -792,7 +798,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dither_type"
 block|,
@@ -800,7 +806,7 @@ literal|"dither type (0=none, 1=fs, 2=fs/low-bleed 3=fixed)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"palette_type"
 block|,
@@ -808,7 +814,7 @@ literal|"The type of palette to use: { MAKE_PALETTE (0), REUSE_PALETTE (1), WEB_
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_cols"
 block|,
@@ -816,7 +822,7 @@ literal|"the number of colors to quantize to, ignored unless (palette_type == MA
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"alpha_dither"
 block|,
@@ -824,7 +830,7 @@ literal|"dither transparency to fake partial opacity"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"remove_unused"
 block|,
@@ -832,7 +838,7 @@ literal|"remove unused or duplicate colour entries from final palette, ignored i
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"palette"
 block|,
@@ -861,7 +867,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|7
 block|,

@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -137,7 +143,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"version"
 block|,
@@ -166,7 +172,7 @@ literal|"Manish Singh"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -241,7 +247,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"kill"
 block|,
@@ -270,7 +276,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,

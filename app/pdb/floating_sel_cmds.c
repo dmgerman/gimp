@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -237,7 +243,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
@@ -266,7 +272,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -378,7 +384,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
@@ -407,7 +413,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -519,7 +525,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
@@ -548,7 +554,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -676,7 +682,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -684,7 +690,7 @@ literal|"The layer (is attached as floating selection)"
 block|}
 block|,
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -713,7 +719,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -845,7 +851,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
@@ -853,7 +859,7 @@ literal|"The floating selection"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"undo"
 block|,
@@ -882,7 +888,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1014,7 +1020,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
@@ -1022,7 +1028,7 @@ literal|"The floating selection"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"undo"
 block|,
@@ -1051,7 +1057,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,

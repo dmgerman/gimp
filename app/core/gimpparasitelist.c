@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -33,15 +39,9 @@ directive|include
 file|"parasitelist.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpparasite.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon295936220103
+DECL|enum|__anon29e333330103
 block|{
 DECL|enumerator|ADD
 name|ADD

@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -822,7 +828,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -830,7 +836,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
@@ -838,7 +844,7 @@ literal|"The pressure of the airbrush strokes (0<= pressure<= 100)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -846,7 +852,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -875,7 +881,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -1026,7 +1032,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1034,7 +1040,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -1042,7 +1048,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -1071,7 +1077,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -1515,7 +1521,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1523,7 +1529,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"blend_mode"
 block|,
@@ -1531,7 +1537,7 @@ literal|"The type of blend: { FG_BG_RGB (0), FG_BG_HSV (1), FG_TRANS (2), CUSTOM
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
@@ -1539,7 +1545,7 @@ literal|"The paint application mode: { NORMAL_MODE (0), DISSOLVE_MODE (1), BEHIN
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"gradient_type"
 block|,
@@ -1547,7 +1553,7 @@ literal|"The type of gradient: { LINEAR (0), BILINEAR (1), RADIAL (2), SQUARE (3
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -1555,7 +1561,7 @@ literal|"The opacity of the final blend (0<= opacity<= 100)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"offset"
 block|,
@@ -1563,7 +1569,7 @@ literal|"Offset relates to the starting and ending coordinates specified for the
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"repeat"
 block|,
@@ -1571,7 +1577,7 @@ literal|"Repeat mode: { REPEAT_NONE (0), REPEAT_SAWTOOTH (1), REPEAT_TRIANGULAR 
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"supersample"
 block|,
@@ -1579,7 +1585,7 @@ literal|"Do adaptive supersampling (TRUE or FALSE)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"max_depth"
 block|,
@@ -1587,7 +1593,7 @@ literal|"Maximum recursion levels for supersampling"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"threshold"
 block|,
@@ -1595,7 +1601,7 @@ literal|"Supersampling threshold"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x1"
 block|,
@@ -1603,7 +1609,7 @@ literal|"The x coordinate of this blend's starting point"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y1"
 block|,
@@ -1611,7 +1617,7 @@ literal|"The y coordinate of this blend's starting point"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x2"
 block|,
@@ -1619,7 +1625,7 @@ literal|"The x coordinate of this blend's ending point"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y2"
 block|,
@@ -1648,7 +1654,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|14
 block|,
@@ -1932,7 +1938,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1940,7 +1946,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"fill_mode"
 block|,
@@ -1948,7 +1954,7 @@ literal|"The type of fill: { FG_BUCKET_FILL (0), BG_BUCKET_FILL (1), PATTERN_BUC
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
@@ -1956,7 +1962,7 @@ literal|"The paint application mode: { NORMAL_MODE (0), DISSOLVE_MODE (1), BEHIN
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -1964,7 +1970,7 @@ literal|"The opacity of the final bucket fill (0<= opacity<= 100)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"threshold"
 block|,
@@ -1972,7 +1978,7 @@ literal|"The threshold determines how extensive the seed fill will be. It's valu
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"sample_merged"
 block|,
@@ -1980,7 +1986,7 @@ literal|"Use the composite image, not the drawable"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x"
 block|,
@@ -1988,7 +1994,7 @@ literal|"The x coordinate of this bucket fill's application. This parameter is o
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y"
 block|,
@@ -2017,7 +2023,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|8
 block|,
@@ -2303,7 +2309,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -2311,7 +2317,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"color"
 block|,
@@ -2319,7 +2325,7 @@ literal|"The color to select"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"threshold"
 block|,
@@ -2327,7 +2333,7 @@ literal|"Threshold in intensity levels 0<= threshold<= 255"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
@@ -2335,7 +2341,7 @@ literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3)
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"antialias"
 block|,
@@ -2343,7 +2349,7 @@ literal|"Antialiasing (TRUE or FALSE)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"feather"
 block|,
@@ -2351,7 +2357,7 @@ literal|"Feather option for selections"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"feather_radius"
 block|,
@@ -2359,7 +2365,7 @@ literal|"Radius for feather operation"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"sample_merged"
 block|,
@@ -2388,7 +2394,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|8
 block|,
@@ -2631,7 +2637,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -2639,7 +2645,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"src_drawable"
 block|,
@@ -2647,7 +2653,7 @@ literal|"The source drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"clone_type"
 block|,
@@ -2655,7 +2661,7 @@ literal|"The type of clone: { IMAGE_CLONE (0), PATTERN_CLONE (1) }"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"src_x"
 block|,
@@ -2663,7 +2669,7 @@ literal|"The x coordinate in the source image"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"src_y"
 block|,
@@ -2671,7 +2677,7 @@ literal|"The y coordinate in the source image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -2679,7 +2685,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -2708,7 +2714,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
@@ -2859,7 +2865,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -2867,7 +2873,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -2875,7 +2881,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -2904,7 +2910,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -3235,7 +3241,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -3243,7 +3249,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -3251,7 +3257,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x"
 block|,
@@ -3259,7 +3265,7 @@ literal|"x coordinate of upper-left corner of rectangle"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y"
 block|,
@@ -3267,7 +3273,7 @@ literal|"y coordinate of upper-left corner of rectangle"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"sample_merged"
 block|,
@@ -3275,7 +3281,7 @@ literal|"Use the composite image, not the drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"sample_average"
 block|,
@@ -3283,7 +3289,7 @@ literal|"Average the color of all the pixels in a specified radius"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"average_radius"
 block|,
@@ -3291,7 +3297,7 @@ literal|"The radius of pixels to average"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"save_color"
 block|,
@@ -3310,7 +3316,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"color"
 block|,
@@ -3339,7 +3345,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|8
 block|,
@@ -3550,7 +3556,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -3558,7 +3564,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
@@ -3566,7 +3572,7 @@ literal|"The pressure: 0<= pressure<= 100"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"convolve_type"
 block|,
@@ -3574,7 +3580,7 @@ literal|"Convolve type: { BLUR_CONVOLVE (0), SHARPEN_CONVOLVE (1) }"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -3582,7 +3588,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -3611,7 +3617,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|5
 block|,
@@ -3762,7 +3768,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -3770,7 +3776,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -3778,7 +3784,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -3807,7 +3813,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -4054,7 +4060,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -4062,7 +4068,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_width"
 block|,
@@ -4070,7 +4076,7 @@ literal|"New image width: (0< new_width<= width)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_height"
 block|,
@@ -4078,7 +4084,7 @@ literal|"New image height: (0< new_height<= height)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offx"
 block|,
@@ -4086,7 +4092,7 @@ literal|"x offset: (0<= offx<= (width - new_width))"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offy"
 block|,
@@ -4115,7 +4121,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|5
 block|,
@@ -4356,7 +4362,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -4364,7 +4370,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"exposure"
 block|,
@@ -4372,7 +4378,7 @@ literal|"The exposer of the strokes (0<= exposure<= 100)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dodgeburn_type"
 block|,
@@ -4380,7 +4386,7 @@ literal|"The type either dodge or burn: { DODGE (0), BURN (1) }"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dodgeburn_mode"
 block|,
@@ -4388,7 +4394,7 @@ literal|"The mode: { DODGEBURN_HIGHLIGHTS (0), DODGEBURN_MIDTONES (1), DODGEBURN
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -4396,7 +4402,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -4425,7 +4431,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|6
 block|,
@@ -4576,7 +4582,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -4584,7 +4590,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -4592,7 +4598,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -4621,7 +4627,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -4897,7 +4903,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -4905,7 +4911,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x"
 block|,
@@ -4913,7 +4919,7 @@ literal|"x coordinate of upper-left corner of ellipse bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y"
 block|,
@@ -4921,7 +4927,7 @@ literal|"y coordinate of upper-left corner of ellipse bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"width"
 block|,
@@ -4929,7 +4935,7 @@ literal|"The width of the ellipse: 0< width"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"height"
 block|,
@@ -4937,7 +4943,7 @@ literal|"The height of the ellipse: 0< height"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
@@ -4945,7 +4951,7 @@ literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3)
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"antialias"
 block|,
@@ -4953,7 +4959,7 @@ literal|"Antialiasing (TRUE or FALSE)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"feather"
 block|,
@@ -4961,7 +4967,7 @@ literal|"Feather option for selections"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"feather_radius"
 block|,
@@ -4990,7 +4996,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|9
 block|,
@@ -5203,7 +5209,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -5211,7 +5217,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -5219,7 +5225,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -5227,7 +5233,7 @@ literal|"Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y 
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"hardness"
 block|,
@@ -5235,7 +5241,7 @@ literal|"HARD (0) or SOFT (1)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"method"
 block|,
@@ -5264,7 +5270,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|5
 block|,
@@ -5415,7 +5421,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -5423,7 +5429,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -5431,7 +5437,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -5460,7 +5466,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -5739,7 +5745,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -5747,7 +5753,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"flip_type"
 block|,
@@ -5766,7 +5772,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -5795,7 +5801,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -6034,7 +6040,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -6042,7 +6048,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_segs"
 block|,
@@ -6050,7 +6056,7 @@ literal|"Number of points (count 1 coordinate as two points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"segs"
 block|,
@@ -6058,7 +6064,7 @@ literal|"Array of points: { p1.x, p1.y, p2.x, p2.y, ..., pn.x, pn.y}"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
@@ -6066,7 +6072,7 @@ literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3)
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"antialias"
 block|,
@@ -6074,7 +6080,7 @@ literal|"Antialiasing (TRUE or FALSE)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"feather"
 block|,
@@ -6082,7 +6088,7 @@ literal|"Feather option for selections"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"feather_radius"
 block|,
@@ -6111,7 +6117,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
@@ -6427,7 +6433,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -6435,7 +6441,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x"
 block|,
@@ -6443,7 +6449,7 @@ literal|"x coordinate of initial seed fill point: (image coordinates)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y"
 block|,
@@ -6451,7 +6457,7 @@ literal|"y coordinate of initial seed fill point: (image coordinates)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"threshold"
 block|,
@@ -6459,7 +6465,7 @@ literal|"Threshold in intensity levels 0<= threshold<= 255"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
@@ -6467,7 +6473,7 @@ literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3)
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"antialias"
 block|,
@@ -6475,7 +6481,7 @@ literal|"Antialiasing (TRUE or FALSE)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"feather"
 block|,
@@ -6483,7 +6489,7 @@ literal|"Feather option for selections"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"feather_radius"
 block|,
@@ -6491,7 +6497,7 @@ literal|"Radius for feather operation"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"sample_merged"
 block|,
@@ -6521,7 +6527,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|9
 block|,
@@ -6754,7 +6760,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -6762,7 +6768,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"fade_out"
 block|,
@@ -6770,7 +6776,7 @@ literal|"Fade out parameter: 0<= fade_out"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -6778,7 +6784,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -6786,7 +6792,7 @@ literal|"Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y 
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"method"
 block|,
@@ -6794,7 +6800,7 @@ literal|"CONTINUOUS (0) or INCREMENTAL (1)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"gradient_length"
 block|,
@@ -6823,7 +6829,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|6
 block|,
@@ -6974,7 +6980,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -6982,7 +6988,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -6990,7 +6996,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -7019,7 +7025,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -7170,7 +7176,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -7178,7 +7184,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -7186,7 +7192,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -7215,7 +7221,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -7694,7 +7700,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -7702,7 +7708,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
@@ -7710,7 +7716,7 @@ literal|"Whether to use interpolation"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x0"
 block|,
@@ -7718,7 +7724,7 @@ literal|"The new x coordinate of upper-left corner of original bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y0"
 block|,
@@ -7726,7 +7732,7 @@ literal|"The new y coordinate of upper-left corner of original bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x1"
 block|,
@@ -7734,7 +7740,7 @@ literal|"The new x coordinate of upper-right corner of original bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y1"
 block|,
@@ -7742,7 +7748,7 @@ literal|"The new y coordinate of upper-right corner of original bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x2"
 block|,
@@ -7750,7 +7756,7 @@ literal|"The new x coordinate of lower-left corner of original bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y2"
 block|,
@@ -7758,7 +7764,7 @@ literal|"The new y coordinate of lower-left corner of original bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x3"
 block|,
@@ -7766,7 +7772,7 @@ literal|"The new x coordinate of lower-right corner of original bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y3"
 block|,
@@ -7785,7 +7791,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -7815,7 +7821,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|10
 block|,
@@ -8071,7 +8077,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -8079,7 +8085,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x"
 block|,
@@ -8087,7 +8093,7 @@ literal|"x coordinate of upper-left corner of rectangle"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y"
 block|,
@@ -8095,7 +8101,7 @@ literal|"y coordinate of upper-left corner of rectangle"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"width"
 block|,
@@ -8103,7 +8109,7 @@ literal|"The width of the rectangle: 0< width"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"height"
 block|,
@@ -8111,7 +8117,7 @@ literal|"The height of the rectangle: 0< height"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
@@ -8119,7 +8125,7 @@ literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3)
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"feather"
 block|,
@@ -8127,7 +8133,7 @@ literal|"Feather option for selections"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"feather_radius"
 block|,
@@ -8156,7 +8162,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|8
 block|,
@@ -8488,7 +8494,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -8496,7 +8502,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
@@ -8504,7 +8510,7 @@ literal|"Whether to use interpolation"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"angle"
 block|,
@@ -8523,7 +8529,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -8552,7 +8558,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -9007,7 +9013,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -9015,7 +9021,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
@@ -9023,7 +9029,7 @@ literal|"Whether to use interpolation"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x0"
 block|,
@@ -9031,7 +9037,7 @@ literal|"The new x coordinate of upper-left corner of newly scaled region"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y0"
 block|,
@@ -9039,7 +9045,7 @@ literal|"The new y coordinate of upper-left corner of newly scaled region"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x1"
 block|,
@@ -9047,7 +9053,7 @@ literal|"The new x coordinate of lower-right corner of newly scaled region"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y1"
 block|,
@@ -9066,7 +9072,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -9095,7 +9101,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|6
 block|,
@@ -9499,7 +9505,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -9507,7 +9513,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
@@ -9515,7 +9521,7 @@ literal|"Whether to use interpolation"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"shear_type"
 block|,
@@ -9523,7 +9529,7 @@ literal|"Type of shear: HORIZONTAL (0) or VERTICAL (1)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"magnitude"
 block|,
@@ -9542,7 +9548,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -9571,7 +9577,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -9752,7 +9758,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -9760,7 +9766,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
@@ -9768,7 +9774,7 @@ literal|"The pressure of the smudge strokes (0<= pressure<= 100)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -9776,7 +9782,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -9805,7 +9811,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -9956,7 +9962,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -9964,7 +9970,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
@@ -9972,7 +9978,7 @@ literal|"Number of stroke control points (count each coordinate as 2 points)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
@@ -10001,7 +10007,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -10381,7 +10387,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -10389,7 +10395,7 @@ literal|"The affected drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
@@ -10397,7 +10403,7 @@ literal|"Whether to use interpolation"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"source_x"
 block|,
@@ -10405,7 +10411,7 @@ literal|"X coordinate of the transformation center"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"source_y"
 block|,
@@ -10413,7 +10419,7 @@ literal|"Y coordinate of the transformation center"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"scale_x"
 block|,
@@ -10421,7 +10427,7 @@ literal|"Amount to scale in x direction"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"scale_y"
 block|,
@@ -10429,7 +10435,7 @@ literal|"Amount to scale in y direction"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"angle"
 block|,
@@ -10437,7 +10443,7 @@ literal|"The angle of rotation (radians)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"dest_x"
 block|,
@@ -10445,7 +10451,7 @@ literal|"X coordinate of where the centre goes"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"dest_y"
 block|,
@@ -10464,7 +10470,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -10493,7 +10499,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|9
 block|,

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -144,18 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5df5d60103
+DECL|enum|__anon2ad4b99e0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED

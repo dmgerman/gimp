@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -192,12 +198,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -245,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff76cb0103
+DECL|enum|__anon2ad089bd0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

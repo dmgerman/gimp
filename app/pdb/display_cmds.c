@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -232,7 +238,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -251,7 +257,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DISPLAY
+name|GIMP_PDB_DISPLAY
 block|,
 literal|"display"
 block|,
@@ -280,7 +286,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -376,7 +382,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DISPLAY
+name|GIMP_PDB_DISPLAY
 block|,
 literal|"display"
 block|,
@@ -405,7 +411,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -470,7 +476,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,

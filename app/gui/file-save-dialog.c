@@ -595,11 +595,11 @@ if|if
 condition|(
 name|status
 operator|!=
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 operator|&&
 name|status
 operator|!=
-name|PDB_CANCEL
+name|GIMP_PDB_CANCEL
 condition|)
 block|{
 name|g_message
@@ -1645,7 +1645,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 expr_stmt|;
 name|args
 index|[
@@ -1665,7 +1665,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|args
 index|[
@@ -1688,7 +1688,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 expr_stmt|;
 name|args
 index|[

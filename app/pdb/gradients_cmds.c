@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -321,7 +327,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_gradients"
 block|,
@@ -329,7 +335,7 @@ literal|"The number of loaded gradients"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"gradient_names"
 block|,
@@ -358,7 +364,7 @@ literal|"Federico Mena Quintero"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -458,7 +464,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -487,7 +493,7 @@ literal|"Federico Mena Quintero"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -619,7 +625,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -648,7 +654,7 @@ literal|"Federico Mena Quintero"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -889,7 +895,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_samples"
 block|,
@@ -908,7 +914,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"array_length"
 block|,
@@ -916,7 +922,7 @@ literal|"Length of the color_samples array (4 * num_samples)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"color_samples"
 block|,
@@ -945,7 +951,7 @@ literal|"Federico Mena Quintero"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1186,7 +1192,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_samples"
 block|,
@@ -1194,7 +1200,7 @@ literal|"The number of samples to take"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"positions"
 block|,
@@ -1213,7 +1219,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"array_length"
 block|,
@@ -1221,7 +1227,7 @@ literal|"Length of the color_samples array (4 * num_samples)"
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"color_samples"
 block|,
@@ -1250,7 +1256,7 @@ literal|"Federico Mena Quintero"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,

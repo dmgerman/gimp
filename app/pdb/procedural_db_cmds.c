@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -47,12 +53,6 @@ begin_include
 include|#
 directive|include
 file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"appenums.h"
 end_include
 
 begin_ifdef
@@ -87,6 +87,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbasetypes.h"
 end_include
 
 begin_comment
@@ -206,7 +212,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|proc_type_str
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|proc_type_str
 index|[]
@@ -239,58 +245,58 @@ begin_decl_stmt
 DECL|variable|type_str
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 specifier|const
 name|type_str
 index|[]
 init|=
 block|{
-literal|"PDB_INT32"
+literal|"GIMP_PDB_INT32"
 block|,
-literal|"PDB_INT16"
+literal|"GIMP_PDB_INT16"
 block|,
-literal|"PDB_INT8"
+literal|"GIMP_PDB_INT8"
 block|,
-literal|"PDB_FLOAT"
+literal|"GIMP_PDB_FLOAT"
 block|,
-literal|"PDB_STRING"
+literal|"GIMP_PDB_STRING"
 block|,
-literal|"PDB_INT32ARRAY"
+literal|"GIMP_PDB_INT32ARRAY"
 block|,
-literal|"PDB_INT16ARRAY"
+literal|"GIMP_PDB_INT16ARRAY"
 block|,
-literal|"PDB_INT8ARRAY"
+literal|"GIMP_PDB_INT8ARRAY"
 block|,
-literal|"PDB_FLOATARRAY"
+literal|"GIMP_PDB_FLOATARRAY"
 block|,
-literal|"PDB_STRINGARRAY"
+literal|"GIMP_PDB_STRINGARRAY"
 block|,
-literal|"PDB_COLOR"
+literal|"GIMP_PDB_COLOR"
 block|,
-literal|"PDB_REGION"
+literal|"GIMP_PDB_REGION"
 block|,
-literal|"PDB_DISPLAY"
+literal|"GIMP_PDB_DISPLAY"
 block|,
-literal|"PDB_IMAGE"
+literal|"GIMP_PDB_IMAGE"
 block|,
-literal|"PDB_LAYER"
+literal|"GIMP_PDB_LAYER"
 block|,
-literal|"PDB_CHANNEL"
+literal|"GIMP_PDB_CHANNEL"
 block|,
-literal|"PDB_DRAWABLE"
+literal|"GIMP_PDB_DRAWABLE"
 block|,
-literal|"PDB_SELECTION"
+literal|"GIMP_PDB_SELECTION"
 block|,
-literal|"PDB_BOUNDARY"
+literal|"GIMP_PDB_BOUNDARY"
 block|,
-literal|"PDB_PATH"
+literal|"GIMP_PDB_PATH"
 block|,
-literal|"PDB_PARASITE"
+literal|"GIMP_PDB_PARASITE"
 block|,
-literal|"PDB_STATUS"
+literal|"GIMP_PDB_STATUS"
 block|,
-literal|"PDB_END"
+literal|"GIMP_PDB_END"
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1168,7 +1174,7 @@ literal|0
 operator|&&
 name|type
 operator|<=
-name|PDB_END
+name|GIMP_PDB_END
 condition|)
 return|return
 name|type_str
@@ -1296,7 +1302,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -1325,7 +1331,7 @@ literal|"Spencer Kimball& Josh MacDonald& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1803,7 +1809,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -1811,7 +1817,7 @@ literal|"The regex for procedure name"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"blurb"
 block|,
@@ -1819,7 +1825,7 @@ literal|"The regex for procedure blurb"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"help"
 block|,
@@ -1827,7 +1833,7 @@ literal|"The regex for procedure help"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"author"
 block|,
@@ -1835,7 +1841,7 @@ literal|"The regex for procedure author"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"copyright"
 block|,
@@ -1843,7 +1849,7 @@ literal|"The regex for procedure copyright"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"date"
 block|,
@@ -1851,7 +1857,7 @@ literal|"The regex for procedure date"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"proc_type"
 block|,
@@ -1870,7 +1876,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_matches"
 block|,
@@ -1878,7 +1884,7 @@ literal|"The number of matching procedures"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"procedure_names"
 block|,
@@ -1907,7 +1913,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
@@ -2149,7 +2155,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"procedure"
 block|,
@@ -2168,7 +2174,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"blurb"
 block|,
@@ -2176,7 +2182,7 @@ literal|"A short blurb"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"help"
 block|,
@@ -2184,7 +2190,7 @@ literal|"Detailed procedure help"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"author"
 block|,
@@ -2192,7 +2198,7 @@ literal|"Author(s) of the procedure"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"copyright"
 block|,
@@ -2200,7 +2206,7 @@ literal|"The copyright"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"date"
 block|,
@@ -2208,7 +2214,7 @@ literal|"Copyright date"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"proc_type"
 block|,
@@ -2216,7 +2222,7 @@ literal|"The procedure type: { INTERNAL (0), PLUGIN (1), EXTENSION (2), TEMPORAR
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_args"
 block|,
@@ -2224,7 +2230,7 @@ literal|"The number of input arguments"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_values"
 block|,
@@ -2253,7 +2259,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -2466,7 +2472,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"procedure"
 block|,
@@ -2474,7 +2480,7 @@ literal|"The procedure name"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"arg_num"
 block|,
@@ -2493,7 +2499,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"arg_type"
 block|,
@@ -2501,7 +2507,7 @@ literal|"The type of argument { PDB_INT32 (0), PDB_INT16 (1), PDB_INT8 (2), PDB_
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"arg_name"
 block|,
@@ -2509,7 +2515,7 @@ literal|"The name of the argument"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"arg_desc"
 block|,
@@ -2538,7 +2544,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2751,7 +2757,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"procedure"
 block|,
@@ -2759,7 +2765,7 @@ literal|"The procedure name"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"val_num"
 block|,
@@ -2778,7 +2784,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"val_type"
 block|,
@@ -2786,7 +2792,7 @@ literal|"The type of return value { PDB_INT32 (0), PDB_INT16 (1), PDB_INT8 (2), 
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"val_name"
 block|,
@@ -2794,7 +2800,7 @@ literal|"The name of the return value"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"val_desc"
 block|,
@@ -2823,7 +2829,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -3042,7 +3048,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"identifier"
 block|,
@@ -3061,7 +3067,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"bytes"
 block|,
@@ -3069,7 +3075,7 @@ literal|"The number of bytes in the data"
 block|}
 block|,
 block|{
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"data"
 block|,
@@ -3098,7 +3104,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -3274,7 +3280,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"identifier"
 block|,
@@ -3293,7 +3299,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"bytes"
 block|,
@@ -3322,7 +3328,7 @@ literal|"Nick Lamb"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -3597,7 +3603,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"identifier"
 block|,
@@ -3605,7 +3611,7 @@ literal|"The identifier associated with data"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"bytes"
 block|,
@@ -3613,7 +3619,7 @@ literal|"The number of bytes in the data"
 block|}
 block|,
 block|{
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"data"
 block|,
@@ -3642,7 +3648,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,

@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -636,7 +642,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -644,7 +650,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"brightness"
 block|,
@@ -652,7 +658,7 @@ literal|"Brightness adjustment: (-127<= brightness<= 127)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"contrast"
 block|,
@@ -681,7 +687,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -1265,7 +1271,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1273,7 +1279,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
@@ -1281,7 +1287,7 @@ literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLU
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"low_input"
 block|,
@@ -1289,7 +1295,7 @@ literal|"Intensity of lowest input: (0<= low_input<= 255)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"high_input"
 block|,
@@ -1297,7 +1303,7 @@ literal|"Intensity of highest input: (0<= high_input<= 255)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"gamma"
 block|,
@@ -1305,7 +1311,7 @@ literal|"Gamma correction factor: (0.1<= gamma<= 10)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"low_output"
 block|,
@@ -1313,7 +1319,7 @@ literal|"Intensity of lowest output: (0<= low_output<= 255)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"high_output"
 block|,
@@ -1342,7 +1348,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
@@ -1643,7 +1649,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1651,7 +1657,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"levels"
 block|,
@@ -1680,7 +1686,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1788,7 +1794,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1817,7 +1823,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1946,7 +1952,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1954,7 +1960,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mask_only"
 block|,
@@ -1983,7 +1989,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2092,7 +2098,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -2121,7 +2127,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -2688,7 +2694,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -2696,7 +2702,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
@@ -2704,7 +2710,7 @@ literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLU
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_points"
 block|,
@@ -2712,7 +2718,7 @@ literal|"The number of values in the control point array (3< num_points<= 32)"
 block|}
 block|,
 block|{
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"control_pts"
 block|,
@@ -2741,7 +2747,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -3207,7 +3213,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -3215,7 +3221,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
@@ -3223,7 +3229,7 @@ literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLU
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_bytes"
 block|,
@@ -3231,7 +3237,7 @@ literal|"The number of bytes in the new curve (always 256)"
 block|}
 block|,
 block|{
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"curve"
 block|,
@@ -3260,7 +3266,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -3747,7 +3753,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -3755,7 +3761,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"transfer_mode"
 block|,
@@ -3763,7 +3769,7 @@ literal|"Transfer mode: { SHADOWS (0), MIDTONES (1), HIGHLIGHTS (2) }"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"preserve_lum"
 block|,
@@ -3771,7 +3777,7 @@ literal|"Preserve luminosity values at each pixel"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"cyan_red"
 block|,
@@ -3779,7 +3785,7 @@ literal|"Cyan-Red color balance: (-100<= cyan_red<= 100)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"magenta_green"
 block|,
@@ -3787,7 +3793,7 @@ literal|"Magenta-Green color balance: (-100<= magenta_green<= 100)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"yellow_blue"
 block|,
@@ -3816,7 +3822,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|6
 block|,
@@ -4366,7 +4372,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -4374,7 +4380,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
@@ -4382,7 +4388,7 @@ literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLU
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"start_range"
 block|,
@@ -4390,7 +4396,7 @@ literal|"Start of the intensity measurement range"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"end_range"
 block|,
@@ -4409,7 +4415,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"mean"
 block|,
@@ -4417,7 +4423,7 @@ literal|"Mean itensity value"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"std_dev"
 block|,
@@ -4425,7 +4431,7 @@ literal|"Standard deviation of intensity values"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"median"
 block|,
@@ -4433,7 +4439,7 @@ literal|"Median itensity value"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"pixels"
 block|,
@@ -4441,7 +4447,7 @@ literal|"Alpha-weighted pixel count for entire image"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"count"
 block|,
@@ -4449,7 +4455,7 @@ literal|"Alpha-weighted pixel count for range"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"percentile"
 block|,
@@ -4478,7 +4484,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -4942,7 +4948,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -4950,7 +4956,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"hue_range"
 block|,
@@ -4958,7 +4964,7 @@ literal|"Range of affected hues: { ALL_HUES (0), RED_HUES (1), YELLOW_HUES (2), 
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"hue_offset"
 block|,
@@ -4966,7 +4972,7 @@ literal|"Hue offset in degrees: (-180<= hue_offset<= 180)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"lightness"
 block|,
@@ -4974,7 +4980,7 @@ literal|"lightness modification: (-100<= lightness<= 100)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"saturation"
 block|,
@@ -5003,7 +5009,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|5
 block|,
@@ -5335,7 +5341,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -5343,7 +5349,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"low_threshold"
 block|,
@@ -5351,7 +5357,7 @@ literal|"The low threshold value: 0<= low_threshold<= 255"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"high_threshold"
 block|,
@@ -5380,7 +5386,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,

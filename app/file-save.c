@@ -309,7 +309,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|PDBStatusType
+name|GimpPDBStatusType
 DECL|function|file_save (GimpImage * gimage,gchar * filename,gchar * raw_filename,RunModeType run_mode,gboolean set_filename)
 name|file_save
 parameter_list|(
@@ -368,7 +368,7 @@ operator|==
 name|NULL
 condition|)
 return|return
-name|PDB_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 name|file_proc
 operator|=
@@ -409,7 +409,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return
-name|PDB_CANCEL
+name|GIMP_PDB_CANCEL
 return|;
 comment|/* inhibits error messages by caller */
 block|}
@@ -457,7 +457,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return
-name|PDB_CANCEL
+name|GIMP_PDB_CANCEL
 return|;
 comment|/* inhibits error messages by caller */
 block|}
@@ -541,7 +541,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return
-name|PDB_CANCEL
+name|GIMP_PDB_CANCEL
 return|;
 comment|/* inhibits error messages by caller */
 block|}
@@ -694,7 +694,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/*  set this image to clean  */
@@ -826,7 +826,7 @@ block|{
 name|gint
 name|status
 init|=
-name|PDB_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 decl_stmt|;
 name|gboolean
 name|success
@@ -866,7 +866,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|success
 operator|=
@@ -878,11 +878,11 @@ if|if
 condition|(
 name|status
 operator|!=
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 operator|&&
 name|status
 operator|!=
-name|PDB_CANCEL
+name|GIMP_PDB_CANCEL
 condition|)
 name|g_message
 argument_list|(

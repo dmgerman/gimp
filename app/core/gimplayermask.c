@@ -72,18 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c774c6b0103
+DECL|enum|__anon2bcebe6b0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED

@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -184,7 +190,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"prog_name"
 block|,
@@ -192,7 +198,7 @@ literal|"The plug-in's executable name or an empty string"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"help_page"
 block|,
@@ -221,7 +227,7 @@ literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"2000"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,

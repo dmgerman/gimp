@@ -1464,7 +1464,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|gimp_drawable_get_ID
 argument_list|(
@@ -1476,7 +1476,7 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
-name|PDB_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 operator|(
 name|gint32
@@ -1485,7 +1485,7 @@ name|bucket_options
 operator|->
 name|fill_mode
 argument_list|,
-name|PDB_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 operator|(
 name|gint32
@@ -1495,7 +1495,7 @@ argument_list|(
 name|NULL
 argument_list|)
 argument_list|,
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 argument_list|,
 operator|(
 name|gdouble
@@ -1507,7 +1507,7 @@ argument_list|)
 operator|*
 literal|100
 argument_list|,
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 argument_list|,
 operator|(
 name|gdouble
@@ -1516,7 +1516,7 @@ name|bucket_options
 operator|->
 name|threshold
 argument_list|,
-name|PDB_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 operator|(
 name|gint32
@@ -1525,7 +1525,7 @@ name|bucket_options
 operator|->
 name|sample_merged
 argument_list|,
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 argument_list|,
 operator|(
 name|gdouble
@@ -1534,7 +1534,7 @@ name|bucket_tool
 operator|->
 name|target_x
 argument_list|,
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 argument_list|,
 operator|(
 name|gdouble
@@ -1543,7 +1543,7 @@ name|bucket_tool
 operator|->
 name|target_y
 argument_list|,
-name|PDB_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -1559,7 +1559,7 @@ name|value
 operator|.
 name|pdb_int
 operator|==
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|gdisplays_flush
 argument_list|()

@@ -8437,11 +8437,11 @@ if|if
 condition|(
 name|status
 operator|!=
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 operator|&&
 name|status
 operator|!=
-name|PDB_CANCEL
+name|GIMP_PDB_CANCEL
 condition|)
 block|{
 name|g_message

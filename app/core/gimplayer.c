@@ -130,18 +130,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3cc96c0103
+DECL|enum|__anon293202a30103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -191,18 +197,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimplimits.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include
@@ -760,7 +754,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2774d89b0103
+DECL|enum|__anon2a1b47170103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED

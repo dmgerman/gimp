@@ -356,7 +356,7 @@ name|db_info
 operator|.
 name|proc_type
 operator|!=
-name|PDB_EXTENSION
+name|GIMP_EXTENSION
 condition|)
 name|menus_set_sensitive
 argument_list|(

@@ -19,17 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<libgimpcolor/gimpcolortypes.h>
-end_include
-
-begin_comment
-comment|/*  these will go to a separate library soon  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"gimpunit.h"
+file|<libgimpbase/gimpbasetypes.h>
 end_include
 
 begin_ifdef
@@ -99,12 +89,6 @@ typedef|typedef
 name|struct
 name|_GimpParam
 name|GimpParam
-typedef|;
-DECL|typedef|GimpParasite
-typedef|typedef
-name|struct
-name|_GimpParasite
-name|GimpParasite
 typedef|;
 ifdef|#
 directive|ifdef

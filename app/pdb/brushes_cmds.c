@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -295,7 +301,7 @@ literal|"Seth Burgess"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -445,7 +451,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -453,7 +459,7 @@ literal|"The brush name"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
@@ -461,7 +467,7 @@ literal|"The brush width"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
@@ -469,7 +475,7 @@ literal|"The brush height"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spacing"
 block|,
@@ -498,7 +504,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -624,7 +630,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -653,7 +659,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -729,7 +735,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -758,7 +764,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -856,7 +862,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -885,7 +891,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -962,7 +968,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spacing"
 block|,
@@ -991,7 +997,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -1090,7 +1096,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spacing"
 block|,
@@ -1119,7 +1125,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1193,7 +1199,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
@@ -1222,7 +1228,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -1318,7 +1324,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
@@ -1347,7 +1353,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1521,7 +1527,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_brushes"
 block|,
@@ -1529,7 +1535,7 @@ literal|"The number of brushes in the brush list"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"brush_list"
 block|,
@@ -1558,7 +1564,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -1917,7 +1923,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -1936,7 +1942,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -1944,7 +1950,7 @@ literal|"The brush name"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -1952,7 +1958,7 @@ literal|"The brush opacity: 0<= opacity<= 100"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spacing"
 block|,
@@ -1960,7 +1966,7 @@ literal|"The brush spacing: 0<= spacing<= 1000"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
@@ -1968,7 +1974,7 @@ literal|"The paint mode: { NORMAL_MODE (0), DISSOLVE_MODE (1), BEHIND_MODE (2), 
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
@@ -1976,7 +1982,7 @@ literal|"The brush width"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
@@ -1984,7 +1990,7 @@ literal|"The brush height"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"length"
 block|,
@@ -1992,7 +1998,7 @@ literal|"Length of brush mask data"
 block|}
 block|,
 block|{
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"mask_data"
 block|,
@@ -2021,7 +2027,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,

@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -849,7 +855,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -857,7 +863,7 @@ literal|"The image to which to add the layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
@@ -865,7 +871,7 @@ literal|"The layer width: (0< width)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
@@ -873,7 +879,7 @@ literal|"The layer height: (0< height)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
@@ -881,7 +887,7 @@ literal|"The layer type: { RGB_IMAGE (0), RGBA_IMAGE (1), GRAY_IMAGE (2), GRAYA_
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -889,7 +895,7 @@ literal|"The layer name"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -897,7 +903,7 @@ literal|"The layer opacity: (0<= opacity<= 100)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
@@ -916,7 +922,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -945,7 +951,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
@@ -1106,7 +1112,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -1114,7 +1120,7 @@ literal|"The layer to copy"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"add_alpha"
 block|,
@@ -1133,7 +1139,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer_copy"
 block|,
@@ -1162,7 +1168,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1336,7 +1342,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -1344,7 +1350,7 @@ literal|"The layer to which to add the mask"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mask_type"
 block|,
@@ -1363,7 +1369,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_CHANNEL
+name|GIMP_PDB_CHANNEL
 block|,
 literal|"mask"
 block|,
@@ -1392,7 +1398,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1633,7 +1639,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -1641,7 +1647,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_width"
 block|,
@@ -1649,7 +1655,7 @@ literal|"New layer width: (0< new_width)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_height"
 block|,
@@ -1657,7 +1663,7 @@ literal|"New layer height: (0< new_height)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"local_origin"
 block|,
@@ -1686,7 +1692,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -1939,7 +1945,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -1947,7 +1953,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_width"
 block|,
@@ -1955,7 +1961,7 @@ literal|"New layer width: (0< new_width)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_height"
 block|,
@@ -1963,7 +1969,7 @@ literal|"New layer height: (0< new_height)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offx"
 block|,
@@ -1971,7 +1977,7 @@ literal|"x offset between upper left corner of old and new layers: (new - old)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offy"
 block|,
@@ -2000,7 +2006,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|5
 block|,
@@ -2101,7 +2107,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -2130,7 +2136,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -2386,7 +2392,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -2394,7 +2400,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offx"
 block|,
@@ -2402,7 +2408,7 @@ literal|"Offset in x direction"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offy"
 block|,
@@ -2431,7 +2437,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -2529,7 +2535,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -2558,7 +2564,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -2832,7 +2838,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -2840,7 +2846,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offx"
 block|,
@@ -2848,7 +2854,7 @@ literal|"Offset in x direction"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offy"
 block|,
@@ -2877,7 +2883,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -3004,7 +3010,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -3023,7 +3029,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_CHANNEL
+name|GIMP_PDB_CHANNEL
 block|,
 literal|"mask"
 block|,
@@ -3052,7 +3058,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -3167,7 +3173,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -3186,7 +3192,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"is_floating_sel"
 block|,
@@ -3215,7 +3221,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -3333,7 +3339,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -3352,7 +3358,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -3381,7 +3387,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -3510,7 +3516,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -3518,7 +3524,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -3547,7 +3553,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -3662,7 +3668,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -3681,7 +3687,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"visible"
 block|,
@@ -3710,7 +3716,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -3828,7 +3834,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -3836,7 +3842,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"visible"
 block|,
@@ -3865,7 +3871,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -3980,7 +3986,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -3999,7 +4005,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"preserve_trans"
 block|,
@@ -4028,7 +4034,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -4146,7 +4152,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -4154,7 +4160,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"preserve_trans"
 block|,
@@ -4183,7 +4189,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -4298,7 +4304,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -4317,7 +4323,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"apply_mask"
 block|,
@@ -4346,7 +4352,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -4464,7 +4470,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -4472,7 +4478,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"apply_mask"
 block|,
@@ -4501,7 +4507,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -4616,7 +4622,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -4635,7 +4641,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"show_mask"
 block|,
@@ -4664,7 +4670,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -4782,7 +4788,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -4790,7 +4796,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"show_mask"
 block|,
@@ -4819,7 +4825,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -4934,7 +4940,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -4953,7 +4959,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"edit_mask"
 block|,
@@ -4982,7 +4988,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -5100,7 +5106,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -5108,7 +5114,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"edit_mask"
 block|,
@@ -5137,7 +5143,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -5254,7 +5260,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -5273,7 +5279,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -5302,7 +5308,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -5432,7 +5438,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -5440,7 +5446,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -5469,7 +5475,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -5584,7 +5590,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -5603,7 +5609,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
@@ -5632,7 +5638,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -5760,7 +5766,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -5768,7 +5774,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
@@ -5797,7 +5803,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -5912,7 +5918,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -5931,7 +5937,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"linked"
 block|,
@@ -5960,7 +5966,7 @@ literal|"Wolfgang Hofer"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -6078,7 +6084,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -6086,7 +6092,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"linked"
 block|,
@@ -6115,7 +6121,7 @@ literal|"Wolfgang Hofer"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -6230,7 +6236,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -6249,7 +6255,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"tattoo"
 block|,
@@ -6278,7 +6284,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -6402,7 +6408,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
@@ -6410,7 +6416,7 @@ literal|"The layer"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"tattoo"
 block|,
@@ -6439,7 +6445,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -51,22 +57,6 @@ directive|include
 file|"unitrc.h"
 end_include
 
-begin_comment
-comment|/* NOTE:  *  * one of our header files is in libgimp/ (see the note there)  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -80,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9696db0108
+DECL|struct|__anon2b70dfa30108
 block|{
 DECL|member|delete_on_exit
 name|gboolean

@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -1024,7 +1030,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1032,7 +1038,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1040,7 +1046,7 @@ literal|"The affected drawable: (-1 for a new text layer)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x"
 block|,
@@ -1048,7 +1054,7 @@ literal|"The x coordinate for the left of the text bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y"
 block|,
@@ -1056,7 +1062,7 @@ literal|"The y coordinate for the top of the text bounding box"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"text"
 block|,
@@ -1064,7 +1070,7 @@ literal|"The text to generate"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"border"
 block|,
@@ -1072,7 +1078,7 @@ literal|"The size of the border: -1<= border"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"antialias"
 block|,
@@ -1080,7 +1086,7 @@ literal|"Antialiasing (TRUE or FALSE)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"size"
 block|,
@@ -1088,7 +1094,7 @@ literal|"The size of text in either pixels or points"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"size_type"
 block|,
@@ -1096,7 +1102,7 @@ literal|"The units of specified size: PIXELS (0) or POINTS (1)"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"fontname"
 block|,
@@ -1115,7 +1121,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"text_layer"
 block|,
@@ -1145,7 +1151,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|10
 block|,
@@ -1436,7 +1442,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"text"
 block|,
@@ -1444,7 +1450,7 @@ literal|"The text to generate"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"size"
 block|,
@@ -1452,7 +1458,7 @@ literal|"The size of text in either pixels or points"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"size_type"
 block|,
@@ -1460,7 +1466,7 @@ literal|"The units of specified size: PIXELS (0) or POINTS (1)"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"fontname"
 block|,
@@ -1479,7 +1485,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
@@ -1487,7 +1493,7 @@ literal|"The width of the specified font"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
@@ -1495,7 +1501,7 @@ literal|"The height of the specified font"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"ascent"
 block|,
@@ -1503,7 +1509,7 @@ literal|"The ascent of the specified font"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"descent"
 block|,
@@ -1532,7 +1538,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -1853,7 +1859,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|argv
 index|[
@@ -1901,7 +1907,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1909,7 +1915,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1917,7 +1923,7 @@ literal|"The affected drawable: (-1 for a new text layer)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x"
 block|,
@@ -1925,7 +1931,7 @@ literal|"The x coordinate for the left of the text bounding box"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y"
 block|,
@@ -1933,7 +1939,7 @@ literal|"The y coordinate for the top of the text bounding box"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"text"
 block|,
@@ -1941,7 +1947,7 @@ literal|"The text to generate"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"border"
 block|,
@@ -1949,7 +1955,7 @@ literal|"The size of the border: -1<= border"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"antialias"
 block|,
@@ -1957,7 +1963,7 @@ literal|"Antialiasing (TRUE or FALSE)"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"size"
 block|,
@@ -1965,7 +1971,7 @@ literal|"The size of text in either pixels or points"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"size_type"
 block|,
@@ -1973,7 +1979,7 @@ literal|"The units of specified size: PIXELS (0) or POINTS (1)"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"foundry"
 block|,
@@ -1981,7 +1987,7 @@ literal|"The font foundry, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"family"
 block|,
@@ -1989,7 +1995,7 @@ literal|"The font family, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"weight"
 block|,
@@ -1997,7 +2003,7 @@ literal|"The font weight, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"slant"
 block|,
@@ -2005,7 +2011,7 @@ literal|"The font slant, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"set_width"
 block|,
@@ -2013,7 +2019,7 @@ literal|"The font set-width, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"spacing"
 block|,
@@ -2021,7 +2027,7 @@ literal|"The font spacing, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"registry"
 block|,
@@ -2029,7 +2035,7 @@ literal|"The font registry, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"encoding"
 block|,
@@ -2048,7 +2054,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"text_layer"
 block|,
@@ -2078,7 +2084,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|17
 block|,
@@ -2399,7 +2405,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|argv
 index|[
@@ -2447,7 +2453,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"text"
 block|,
@@ -2455,7 +2461,7 @@ literal|"The text to generate"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"size"
 block|,
@@ -2463,7 +2469,7 @@ literal|"The size of text in either pixels or points"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"size_type"
 block|,
@@ -2471,7 +2477,7 @@ literal|"The units of specified size: PIXELS (0) or POINTS (1)"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"foundry"
 block|,
@@ -2479,7 +2485,7 @@ literal|"The font foundry, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"family"
 block|,
@@ -2487,7 +2493,7 @@ literal|"The font family, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"weight"
 block|,
@@ -2495,7 +2501,7 @@ literal|"The font weight, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"slant"
 block|,
@@ -2503,7 +2509,7 @@ literal|"The font slant, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"set_width"
 block|,
@@ -2511,7 +2517,7 @@ literal|"The font set-width, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"spacing"
 block|,
@@ -2519,7 +2525,7 @@ literal|"The font spacing, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"registry"
 block|,
@@ -2527,7 +2533,7 @@ literal|"The font registry, \"*\" for any"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"encoding"
 block|,
@@ -2546,7 +2552,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
@@ -2554,7 +2560,7 @@ literal|"The width of the specified font"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
@@ -2562,7 +2568,7 @@ literal|"The height of the specified font"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"ascent"
 block|,
@@ -2570,7 +2576,7 @@ literal|"The ascent of the specified font"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"descent"
 block|,
@@ -2599,7 +2605,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|11
 block|,

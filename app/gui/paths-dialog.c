@@ -5490,7 +5490,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 expr_stmt|;
 name|args
 index|[
@@ -5510,7 +5510,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|args
 index|[
@@ -5536,7 +5536,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 expr_stmt|;
 name|args
 index|[
@@ -5661,7 +5661,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 expr_stmt|;
 name|args
 index|[
@@ -5681,7 +5681,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|args
 index|[
@@ -5707,7 +5707,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 expr_stmt|;
 name|args
 index|[

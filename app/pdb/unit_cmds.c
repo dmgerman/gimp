@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -34,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
+file|"libgimpbase/gimpunit.h"
 end_include
 
 begin_decl_stmt
@@ -269,7 +275,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_units"
 block|,
@@ -298,7 +304,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -370,7 +376,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_units"
 block|,
@@ -399,7 +405,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -680,7 +686,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"identifier"
 block|,
@@ -688,7 +694,7 @@ literal|"The new unit's identifier"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"factor"
 block|,
@@ -696,7 +702,7 @@ literal|"The new unit's factor"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"digits"
 block|,
@@ -704,7 +710,7 @@ literal|"The new unit's digits"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"symbol"
 block|,
@@ -712,7 +718,7 @@ literal|"The new unit's symbol"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"abbreviation"
 block|,
@@ -720,7 +726,7 @@ literal|"The new unit's abbreviation"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"singular"
 block|,
@@ -728,7 +734,7 @@ literal|"The new unit's singular form"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"plural"
 block|,
@@ -747,7 +753,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -776,7 +782,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
@@ -888,7 +894,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -907,7 +913,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"deletion_flag"
 block|,
@@ -936,7 +942,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1051,7 +1057,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -1059,7 +1065,7 @@ literal|"The unit's integer ID"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"deletion_flag"
 block|,
@@ -1088,7 +1094,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1203,7 +1209,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -1222,7 +1228,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"identifier"
 block|,
@@ -1251,7 +1257,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1363,7 +1369,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -1382,7 +1388,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"factor"
 block|,
@@ -1411,7 +1417,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1523,7 +1529,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -1542,7 +1548,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"digits"
 block|,
@@ -1571,7 +1577,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1686,7 +1692,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -1705,7 +1711,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"symbol"
 block|,
@@ -1734,7 +1740,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1849,7 +1855,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -1868,7 +1874,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"abbreviation"
 block|,
@@ -1897,7 +1903,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -2012,7 +2018,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -2031,7 +2037,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"singular"
 block|,
@@ -2060,7 +2066,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -2175,7 +2181,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit_id"
 block|,
@@ -2194,7 +2200,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"plural"
 block|,
@@ -2223,7 +2229,7 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,

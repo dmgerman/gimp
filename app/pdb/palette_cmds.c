@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -227,7 +233,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"foreground"
 block|,
@@ -256,7 +262,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -338,7 +344,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"background"
 block|,
@@ -367,7 +373,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -449,7 +455,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"foreground"
 block|,
@@ -478,7 +484,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -560,7 +566,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"background"
 block|,
@@ -589,7 +595,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -656,7 +662,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -723,7 +729,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -793,7 +799,7 @@ literal|"Adrian Likins"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,

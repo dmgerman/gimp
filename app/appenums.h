@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa705880103
+DECL|enum|__anon29373b8a0103
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -57,7 +57,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa705880203
+DECL|enum|__anon29373b8a0203
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -83,7 +83,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa705880303
+DECL|enum|__anon29373b8a0303
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -103,7 +103,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2aa705880403
+DECL|enum|__anon29373b8a0403
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa705880503
+DECL|enum|__anon29373b8a0503
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -163,7 +163,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2aa705880603
+DECL|enum|__anon29373b8a0603
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa705880703
+DECL|enum|__anon29373b8a0703
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -202,7 +202,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2aa705880803
+DECL|enum|__anon29373b8a0803
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -216,145 +216,6 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  Procedural database types  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2aa705880903
-block|{
-DECL|enumerator|PDB_INT32
-name|PDB_INT32
-block|,
-DECL|enumerator|PDB_INT16
-name|PDB_INT16
-block|,
-DECL|enumerator|PDB_INT8
-name|PDB_INT8
-block|,
-DECL|enumerator|PDB_FLOAT
-name|PDB_FLOAT
-block|,
-DECL|enumerator|PDB_STRING
-name|PDB_STRING
-block|,
-DECL|enumerator|PDB_INT32ARRAY
-name|PDB_INT32ARRAY
-block|,
-DECL|enumerator|PDB_INT16ARRAY
-name|PDB_INT16ARRAY
-block|,
-DECL|enumerator|PDB_INT8ARRAY
-name|PDB_INT8ARRAY
-block|,
-DECL|enumerator|PDB_FLOATARRAY
-name|PDB_FLOATARRAY
-block|,
-DECL|enumerator|PDB_STRINGARRAY
-name|PDB_STRINGARRAY
-block|,
-DECL|enumerator|PDB_COLOR
-name|PDB_COLOR
-block|,
-DECL|enumerator|PDB_REGION
-name|PDB_REGION
-block|,
-DECL|enumerator|PDB_DISPLAY
-name|PDB_DISPLAY
-block|,
-DECL|enumerator|PDB_IMAGE
-name|PDB_IMAGE
-block|,
-DECL|enumerator|PDB_LAYER
-name|PDB_LAYER
-block|,
-DECL|enumerator|PDB_CHANNEL
-name|PDB_CHANNEL
-block|,
-DECL|enumerator|PDB_DRAWABLE
-name|PDB_DRAWABLE
-block|,
-DECL|enumerator|PDB_SELECTION
-name|PDB_SELECTION
-block|,
-DECL|enumerator|PDB_BOUNDARY
-name|PDB_BOUNDARY
-block|,
-DECL|enumerator|PDB_PATH
-name|PDB_PATH
-block|,
-DECL|enumerator|PDB_PARASITE
-name|PDB_PARASITE
-block|,
-DECL|enumerator|PDB_STATUS
-name|PDB_STATUS
-block|,
-DECL|enumerator|PDB_END
-name|PDB_END
-DECL|typedef|PDBArgType
-block|}
-name|PDBArgType
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  Error types  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2aa705880a03
-block|{
-DECL|enumerator|PDB_EXECUTION_ERROR
-name|PDB_EXECUTION_ERROR
-block|,
-DECL|enumerator|PDB_CALLING_ERROR
-name|PDB_CALLING_ERROR
-block|,
-DECL|enumerator|PDB_PASS_THROUGH
-name|PDB_PASS_THROUGH
-block|,
-DECL|enumerator|PDB_SUCCESS
-name|PDB_SUCCESS
-block|,
-DECL|enumerator|PDB_CANCEL
-name|PDB_CANCEL
-DECL|typedef|PDBStatusType
-block|}
-name|PDBStatusType
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  Procedure types  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< chop=PDB_>*/
-DECL|enum|__anon2aa705880b03
-block|{
-DECL|enumerator|PDB_INTERNAL
-name|PDB_INTERNAL
-block|,
-DECL|enumerator|PDB_PLUGIN
-name|PDB_PLUGIN
-block|,
-DECL|enumerator|PDB_EXTENSION
-name|PDB_EXTENSION
-block|,
-DECL|enumerator|PDB_TEMPORARY
-name|PDB_TEMPORARY
-DECL|typedef|PDBProcType
-block|}
-name|PDBProcType
-typedef|;
-end_typedef
-
-begin_comment
 comment|/*  Selection Boolean operations  */
 end_comment
 
@@ -362,7 +223,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon2aa705880c03
+DECL|enum|__anon29373b8a0903
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -385,7 +246,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2aa705880d03
+DECL|enum|__anon29373b8a0a03
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -428,7 +289,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa705880e03
+DECL|enum|__anon29373b8a0b03
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -454,7 +315,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2aa705880f03
+DECL|enum|__anon29373b8a0c03
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON
@@ -474,7 +335,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2aa705881003
+DECL|enum|__anon29373b8a0d03
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE

@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpbase/gimpbase.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpenums.h>
 end_include
 
@@ -73,12 +79,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpenv.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpimage.h>
 end_include
 
@@ -86,18 +86,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimplayer.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimplimits.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpparasite.h>
 end_include
 
 begin_include
@@ -122,18 +110,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimptile.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpunit.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimputils.h>
 end_include
 
 begin_include
@@ -843,6 +819,25 @@ modifier|*
 name|gimp_get_progname
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+name|void
+name|gimp_attach_new_parasite
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|gint
+name|flags
+parameter_list|,
+name|gint
+name|size
+parameter_list|,
+specifier|const
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 ifdef|#

@@ -839,7 +839,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PDB_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -848,7 +848,7 @@ argument_list|)
 operator|->
 name|name
 argument_list|,
-name|PDB_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|pattern
 operator|->
@@ -856,7 +856,7 @@ name|mask
 operator|->
 name|width
 argument_list|,
-name|PDB_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|pattern
 operator|->
@@ -864,7 +864,7 @@ name|mask
 operator|->
 name|height
 argument_list|,
-name|PDB_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|pattern
 operator|->
@@ -872,7 +872,7 @@ name|mask
 operator|->
 name|bytes
 argument_list|,
-name|PDB_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 operator|(
 name|pattern
@@ -894,7 +894,7 @@ operator|->
 name|width
 operator|)
 argument_list|,
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 argument_list|,
 name|temp_buf_data
 argument_list|(
@@ -903,14 +903,14 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|PDB_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 operator|(
 name|gint
 operator|)
 name|closing
 argument_list|,
-name|PDB_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -927,7 +927,7 @@ name|value
 operator|.
 name|pdb_int
 operator|!=
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|g_warning
 argument_list|(

@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -309,7 +315,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"message"
 block|,
@@ -317,7 +323,7 @@ literal|"Message to use in the progress dialog"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"gdisplay"
 block|,
@@ -346,7 +352,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -443,7 +449,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"percentage"
 block|,
@@ -472,7 +478,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -563,7 +569,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"temp_name"
 block|,
@@ -592,7 +598,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -1200,7 +1206,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"search_string"
 block|,
@@ -1219,7 +1225,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_plugins"
 block|,
@@ -1227,7 +1233,7 @@ literal|"The number of plugins"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"menu_path"
 block|,
@@ -1235,7 +1241,7 @@ literal|"The menu path of the plugin"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_plugins"
 block|,
@@ -1243,7 +1249,7 @@ literal|"The number of plugins"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"plugin_accelerator"
 block|,
@@ -1251,7 +1257,7 @@ literal|"String representing keyboard accelerator (could be empty string)"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_plugins"
 block|,
@@ -1259,7 +1265,7 @@ literal|"The number of plugins"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"plugin_location"
 block|,
@@ -1267,7 +1273,7 @@ literal|"Location of the plugin program"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_plugins"
 block|,
@@ -1275,7 +1281,7 @@ literal|"The number of plugins"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"plugin_image_type"
 block|,
@@ -1283,7 +1289,7 @@ literal|"Type of image that this plugin will work on"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_plugins"
 block|,
@@ -1291,7 +1297,7 @@ literal|"The number of plugins"
 block|}
 block|,
 block|{
-name|PDB_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 block|,
 literal|"plugin_install_time"
 block|,
@@ -1299,7 +1305,7 @@ literal|"Time that the plugin was installed"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_plugins"
 block|,
@@ -1307,7 +1313,7 @@ literal|"The number of plugins"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"plugin_real_name"
 block|,
@@ -1336,7 +1342,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1516,7 +1522,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"domain_name"
 block|,
@@ -1524,7 +1530,7 @@ literal|"The name of the textdomain (must be unique)."
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"domain_path"
 block|,
@@ -1553,7 +1559,7 @@ literal|"Sven Neumann"
 block|,
 literal|"2000"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1687,7 +1693,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"help_path"
 block|,
@@ -1716,7 +1722,7 @@ literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"2000"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,

@@ -373,19 +373,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpparasite.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpprotocol.h"
+file|"libgimpbase/gimpprotocol.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpwire.h"
+file|"libgimpbase/gimpwire.h"
 end_include
 
 begin_include
@@ -1955,7 +1955,7 @@ name|db_info
 operator|.
 name|proc_type
 operator|==
-name|PDB_EXTENSION
+name|GIMP_EXTENSION
 operator|)
 condition|)
 block|{
@@ -5585,7 +5585,7 @@ name|proc_rec
 operator|->
 name|proc_type
 operator|==
-name|PDB_TEMPORARY
+name|GIMP_TEMPORARY
 condition|)
 block|{
 name|return_vals
@@ -5818,7 +5818,7 @@ name|proc_rec
 operator|->
 name|proc_type
 operator|==
-name|PDB_EXTENSION
+name|GIMP_EXTENSION
 operator|)
 operator|&&
 operator|(
@@ -7371,7 +7371,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|return_vals
 index|[
@@ -7382,7 +7382,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|PDB_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 if|if
@@ -7817,7 +7817,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 operator|)
 condition|)
 block|{
@@ -7889,7 +7889,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 operator|)
 operator|||
 operator|(
@@ -7902,7 +7902,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 operator|)
 operator|||
 operator|(
@@ -7915,7 +7915,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 operator|)
 condition|)
 block|{
@@ -7987,7 +7987,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 operator|)
 operator|||
 operator|(
@@ -8000,7 +8000,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 operator|)
 operator|||
 operator|(
@@ -8013,7 +8013,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 operator|)
 condition|)
 block|{
@@ -8085,7 +8085,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 operator|)
 operator|||
 operator|(
@@ -8098,7 +8098,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 operator|)
 operator|||
 operator|(
@@ -8111,7 +8111,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 operator|)
 operator|||
 operator|(
@@ -8124,7 +8124,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 operator|)
 operator|||
 operator|(
@@ -8137,7 +8137,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 operator|)
 condition|)
 block|{
@@ -8236,7 +8236,7 @@ index|]
 operator|.
 name|type
 operator|==
-name|PDB_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 operator|||
 name|proc_install
 operator|->
@@ -8247,7 +8247,7 @@ index|]
 operator|.
 name|type
 operator|==
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 operator|||
 name|proc_install
 operator|->
@@ -8258,7 +8258,7 @@ index|]
 operator|.
 name|type
 operator|==
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 operator|||
 name|proc_install
 operator|->
@@ -8269,7 +8269,7 @@ index|]
 operator|.
 name|type
 operator|==
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 operator|)
 operator|&&
 name|proc_install
@@ -8283,7 +8283,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 condition|)
 block|{
 name|g_message
@@ -8333,10 +8333,10 @@ name|type
 condition|)
 block|{
 case|case
-name|PDB_PLUGIN
+name|GIMP_PLUGIN
 case|:
 case|case
-name|PDB_EXTENSION
+name|GIMP_EXTENSION
 case|:
 name|plug_in_def
 operator|=
@@ -8358,7 +8358,7 @@ name|proc_defs
 expr_stmt|;
 break|break;
 case|case
-name|PDB_TEMPORARY
+name|GIMP_TEMPORARY
 case|:
 name|prog
 operator|=
@@ -8413,7 +8413,7 @@ name|proc_install
 operator|->
 name|type
 operator|==
-name|PDB_TEMPORARY
+name|GIMP_TEMPORARY
 condition|)
 name|plug_in_proc_def_remove
 argument_list|(
@@ -8822,10 +8822,10 @@ name|type
 condition|)
 block|{
 case|case
-name|PDB_PLUGIN
+name|GIMP_PLUGIN
 case|:
 case|case
-name|PDB_EXTENSION
+name|GIMP_EXTENSION
 case|:
 if|if
 condition|(
@@ -8846,7 +8846,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_TEMPORARY
+name|GIMP_TEMPORARY
 case|:
 if|if
 condition|(
@@ -10596,7 +10596,7 @@ name|db_info
 operator|.
 name|proc_type
 operator|!=
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 operator|)
 condition|)
 block|{
@@ -10667,7 +10667,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -10691,7 +10691,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -10713,7 +10713,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -10735,7 +10735,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -11445,7 +11445,7 @@ name|proc_type
 condition|)
 block|{
 case|case
-name|PDB_EXTENSION
+name|GIMP_EXTENSION
 case|:
 comment|/* initialize the first argument  */
 name|args
@@ -11465,7 +11465,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|PDB_PLUGIN
+name|GIMP_PLUGIN
 case|:
 if|if
 condition|(
@@ -11546,7 +11546,7 @@ return|return;
 block|}
 break|break;
 case|case
-name|PDB_TEMPORARY
+name|GIMP_TEMPORARY
 case|:
 name|args
 index|[
@@ -11580,7 +11580,7 @@ index|]
 operator|.
 name|arg_type
 operator|==
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 operator|&&
 name|proc_rec
 operator|->
@@ -11591,7 +11591,7 @@ index|]
 operator|.
 name|arg_type
 operator|==
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 condition|)
 block|{
 if|if
@@ -11696,7 +11696,7 @@ name|proc_rec
 operator|->
 name|proc_type
 operator|==
-name|PDB_PLUGIN
+name|GIMP_PLUGIN
 condition|)
 name|last_plug_in
 operator|=
@@ -12790,7 +12790,7 @@ name|arg_type
 condition|)
 block|{
 case|case
-name|PDB_INT32
+name|GIMP_PDB_INT32
 case|:
 name|args
 index|[
@@ -12812,7 +12812,7 @@ name|d_int32
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT16
+name|GIMP_PDB_INT16
 case|:
 name|args
 index|[
@@ -12834,7 +12834,7 @@ name|d_int16
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT8
+name|GIMP_PDB_INT8
 case|:
 name|args
 index|[
@@ -12856,7 +12856,7 @@ name|d_int8
 expr_stmt|;
 break|break;
 case|case
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 name|args
 index|[
@@ -12878,7 +12878,7 @@ name|d_float
 expr_stmt|;
 break|break;
 case|case
-name|PDB_STRING
+name|GIMP_PDB_STRING
 case|:
 if|if
 condition|(
@@ -12926,7 +12926,7 @@ name|d_string
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 if|if
 condition|(
@@ -13011,7 +13011,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 if|if
 condition|(
@@ -13096,7 +13096,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 if|if
 condition|(
@@ -13179,7 +13179,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 if|if
 condition|(
@@ -13264,7 +13264,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 if|if
 condition|(
@@ -13374,7 +13374,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 case|:
 name|args
 index|[
@@ -13396,7 +13396,7 @@ name|d_color
 expr_stmt|;
 break|break;
 case|case
-name|PDB_REGION
+name|GIMP_PDB_REGION
 case|:
 name|g_message
 argument_list|(
@@ -13405,7 +13405,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 name|args
 index|[
@@ -13427,7 +13427,7 @@ name|d_display
 expr_stmt|;
 break|break;
 case|case
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 name|args
 index|[
@@ -13449,7 +13449,7 @@ name|d_image
 expr_stmt|;
 break|break;
 case|case
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 case|:
 name|args
 index|[
@@ -13471,7 +13471,7 @@ name|d_layer
 expr_stmt|;
 break|break;
 case|case
-name|PDB_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 name|args
 index|[
@@ -13493,7 +13493,7 @@ name|d_channel
 expr_stmt|;
 break|break;
 case|case
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 name|args
 index|[
@@ -13515,7 +13515,7 @@ name|d_drawable
 expr_stmt|;
 break|break;
 case|case
-name|PDB_SELECTION
+name|GIMP_PDB_SELECTION
 case|:
 name|args
 index|[
@@ -13537,7 +13537,7 @@ name|d_selection
 expr_stmt|;
 break|break;
 case|case
-name|PDB_BOUNDARY
+name|GIMP_PDB_BOUNDARY
 case|:
 name|args
 index|[
@@ -13559,7 +13559,7 @@ name|d_boundary
 expr_stmt|;
 break|break;
 case|case
-name|PDB_PATH
+name|GIMP_PDB_PATH
 case|:
 name|args
 index|[
@@ -13581,7 +13581,7 @@ name|d_path
 expr_stmt|;
 break|break;
 case|case
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 case|:
 if|if
 condition|(
@@ -13642,7 +13642,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_STATUS
+name|GIMP_PDB_STATUS
 case|:
 name|args
 index|[
@@ -13664,7 +13664,7 @@ name|d_status
 expr_stmt|;
 break|break;
 case|case
-name|PDB_END
+name|GIMP_PDB_END
 case|:
 break|break;
 block|}
@@ -13764,7 +13764,7 @@ name|arg_type
 condition|)
 block|{
 case|case
-name|PDB_INT32
+name|GIMP_PDB_INT32
 case|:
 name|params
 index|[
@@ -13786,7 +13786,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT16
+name|GIMP_PDB_INT16
 case|:
 name|params
 index|[
@@ -13808,7 +13808,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT8
+name|GIMP_PDB_INT8
 case|:
 name|params
 index|[
@@ -13830,7 +13830,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 name|params
 index|[
@@ -13852,7 +13852,7 @@ name|pdb_float
 expr_stmt|;
 break|break;
 case|case
-name|PDB_STRING
+name|GIMP_PDB_STRING
 case|:
 if|if
 condition|(
@@ -13900,7 +13900,7 @@ name|pdb_pointer
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 if|if
 condition|(
@@ -13990,7 +13990,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 if|if
 condition|(
@@ -14080,7 +14080,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 if|if
 condition|(
@@ -14168,7 +14168,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 if|if
 condition|(
@@ -14258,7 +14258,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 if|if
 condition|(
@@ -14368,7 +14368,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 case|:
 name|params
 index|[
@@ -14390,7 +14390,7 @@ name|pdb_color
 expr_stmt|;
 break|break;
 case|case
-name|PDB_REGION
+name|GIMP_PDB_REGION
 case|:
 name|g_message
 argument_list|(
@@ -14399,7 +14399,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 name|params
 index|[
@@ -14421,7 +14421,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 name|params
 index|[
@@ -14443,7 +14443,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 case|:
 name|params
 index|[
@@ -14465,7 +14465,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 name|params
 index|[
@@ -14487,7 +14487,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 name|params
 index|[
@@ -14509,7 +14509,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_SELECTION
+name|GIMP_PDB_SELECTION
 case|:
 name|params
 index|[
@@ -14531,7 +14531,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_BOUNDARY
+name|GIMP_PDB_BOUNDARY
 case|:
 name|params
 index|[
@@ -14553,7 +14553,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_PATH
+name|GIMP_PDB_PATH
 case|:
 name|params
 index|[
@@ -14575,7 +14575,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 case|:
 if|if
 condition|(
@@ -14795,7 +14795,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_STATUS
+name|GIMP_PDB_STATUS
 case|:
 name|params
 index|[
@@ -14817,7 +14817,7 @@ name|pdb_int
 expr_stmt|;
 break|break;
 case|case
-name|PDB_END
+name|GIMP_PDB_END
 case|:
 break|break;
 block|}
@@ -14875,20 +14875,20 @@ name|type
 condition|)
 block|{
 case|case
-name|PDB_INT32
+name|GIMP_PDB_INT32
 case|:
 case|case
-name|PDB_INT16
+name|GIMP_PDB_INT16
 case|:
 case|case
-name|PDB_INT8
+name|GIMP_PDB_INT8
 case|:
 case|case
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 break|break;
 case|case
-name|PDB_STRING
+name|GIMP_PDB_STRING
 case|:
 if|if
 condition|(
@@ -14908,7 +14908,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 if|if
 condition|(
@@ -14928,7 +14928,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 if|if
 condition|(
@@ -14948,7 +14948,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 if|if
 condition|(
@@ -14968,7 +14968,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 if|if
 condition|(
@@ -14988,7 +14988,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 if|if
 condition|(
@@ -15047,11 +15047,11 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 case|:
 break|break;
 case|case
-name|PDB_REGION
+name|GIMP_PDB_REGION
 case|:
 name|g_message
 argument_list|(
@@ -15060,32 +15060,32 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 case|case
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 case|case
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 case|:
 case|case
-name|PDB_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 case|case
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 case|case
-name|PDB_SELECTION
+name|GIMP_PDB_SELECTION
 case|:
 case|case
-name|PDB_BOUNDARY
+name|GIMP_PDB_BOUNDARY
 case|:
 case|case
-name|PDB_PATH
+name|GIMP_PDB_PATH
 case|:
 break|break;
 case|case
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 case|:
 if|if
 condition|(
@@ -15162,11 +15162,11 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_STATUS
+name|GIMP_PDB_STATUS
 case|:
 break|break;
 case|case
-name|PDB_END
+name|GIMP_PDB_END
 case|:
 break|break;
 block|}
@@ -15234,20 +15234,20 @@ name|arg_type
 condition|)
 block|{
 case|case
-name|PDB_INT32
+name|GIMP_PDB_INT32
 case|:
 case|case
-name|PDB_INT16
+name|GIMP_PDB_INT16
 case|:
 case|case
-name|PDB_INT8
+name|GIMP_PDB_INT8
 case|:
 case|case
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 break|break;
 case|case
-name|PDB_STRING
+name|GIMP_PDB_STRING
 case|:
 if|if
 condition|(
@@ -15267,7 +15267,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 if|if
 condition|(
@@ -15287,7 +15287,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 if|if
 condition|(
@@ -15307,7 +15307,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 if|if
 condition|(
@@ -15327,7 +15327,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 if|if
 condition|(
@@ -15347,7 +15347,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 if|if
 condition|(
@@ -15414,11 +15414,11 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_COLOR
+name|GIMP_PDB_COLOR
 case|:
 break|break;
 case|case
-name|PDB_REGION
+name|GIMP_PDB_REGION
 case|:
 name|g_message
 argument_list|(
@@ -15427,32 +15427,32 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PDB_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 case|case
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 case|case
-name|PDB_LAYER
+name|GIMP_PDB_LAYER
 case|:
 case|case
-name|PDB_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 case|case
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 case|case
-name|PDB_SELECTION
+name|GIMP_PDB_SELECTION
 case|:
 case|case
-name|PDB_BOUNDARY
+name|GIMP_PDB_BOUNDARY
 case|:
 case|case
-name|PDB_PATH
+name|GIMP_PDB_PATH
 case|:
 break|break;
 case|case
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 case|:
 if|if
 condition|(
@@ -15491,11 +15491,11 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PDB_STATUS
+name|GIMP_PDB_STATUS
 case|:
 break|break;
 case|case
-name|PDB_END
+name|GIMP_PDB_END
 case|:
 break|break;
 block|}

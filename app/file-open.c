@@ -354,7 +354,7 @@ decl_stmt|;
 operator|*
 name|status
 operator|=
-name|PDB_CANCEL
+name|GIMP_PDB_CANCEL
 expr_stmt|;
 comment|/* inhibits error messages by caller */
 if|if
@@ -693,7 +693,7 @@ condition|(
 operator|*
 name|status
 operator|==
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 operator|&&
 name|gimage_id
 operator|!=

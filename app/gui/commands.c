@@ -2949,14 +2949,14 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|gimp_drawable_get_ID
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|PDB_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -2973,7 +2973,7 @@ name|value
 operator|.
 name|pdb_int
 operator|!=
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|g_message
 argument_list|(

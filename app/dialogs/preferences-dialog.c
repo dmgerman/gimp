@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimplimits.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
@@ -150,7 +150,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948f50f0103
+DECL|enum|__anon2c5f49530103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12471,7 +12471,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2948f50f0208
+DECL|struct|__anon2c5f49530208
 block|{
 DECL|member|label
 name|gchar
@@ -12700,7 +12700,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2948f50f0308
+DECL|struct|__anon2c5f49530308
 block|{
 DECL|member|tree_label
 name|gchar

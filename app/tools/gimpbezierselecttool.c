@@ -263,7 +263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4c8c60108
+DECL|struct|__anon290785fe0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4c8c60208
+DECL|struct|__anon290785fe0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4c8c60308
+DECL|struct|__anon290785fe0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -520,7 +520,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f4c8c60403
+DECL|enum|__anon290785fe0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -15503,14 +15503,14 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|gimp_drawable_get_ID
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|PDB_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 operator|(
 name|gint32
@@ -15521,13 +15521,13 @@ name|num_stroke_points
 operator|*
 literal|2
 argument_list|,
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 argument_list|,
 name|rpnts
 operator|->
 name|stroke_points
 argument_list|,
-name|PDB_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -15543,7 +15543,7 @@ name|value
 operator|.
 name|pdb_int
 operator|!=
-name|PDB_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|g_message
 argument_list|(

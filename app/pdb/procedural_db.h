@@ -22,7 +22,7 @@ struct|struct
 name|_Argument
 block|{
 DECL|member|arg_type
-name|PDBArgType
+name|GimpPDBArgType
 name|arg_type
 decl_stmt|;
 comment|/*  argument type        */
@@ -216,7 +216,7 @@ struct|struct
 name|_ProcArg
 block|{
 DECL|member|arg_type
-name|PDBArgType
+name|GimpPDBArgType
 name|arg_type
 decl_stmt|;
 comment|/*  Argument type (int, char, char *, etc)  */
@@ -284,7 +284,7 @@ decl_stmt|;
 comment|/*  Date field  */
 comment|/*  Procedure type  */
 DECL|member|proc_type
-name|PDBProcType
+name|GimpPDBProcType
 name|proc_type
 decl_stmt|;
 comment|/*  Type of procedure--Internal, Plug-In, Extension  */
@@ -481,7 +481,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* "type" should really be a PDBArgType, but we can cope with  *  out-of-range values.  */
+comment|/* "type" should really be a GimpPDBArgType, but we can cope with  *  out-of-range values.  */
 end_comment
 
 begin_function_decl

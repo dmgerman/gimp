@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -457,7 +463,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -476,7 +482,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_paths"
 block|,
@@ -484,7 +490,7 @@ literal|"The number of paths returned"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"path_list"
 block|,
@@ -513,7 +519,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -894,7 +900,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -902,7 +908,7 @@ literal|"The ID of the image to list the paths from"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"pathname"
 block|,
@@ -921,7 +927,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"path_type"
 block|,
@@ -929,7 +935,7 @@ literal|"The type of the path. Currently only one type (1 = Bezier) is supported
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"path_closed"
 block|,
@@ -937,7 +943,7 @@ literal|"Return if the path is closed. {0=path open, 1= path closed}"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_path_point_details"
 block|,
@@ -945,7 +951,7 @@ literal|"The number of points returned. Each point is made up of (x,y,pnt_type) 
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"points_pairs"
 block|,
@@ -974,7 +980,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1146,7 +1152,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1165,7 +1171,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"current_path_name"
 block|,
@@ -1194,7 +1200,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1321,7 +1327,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1329,7 +1335,7 @@ literal|"The ID of the image to list set the paths in"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"set_current_path_name"
 block|,
@@ -1358,7 +1364,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1601,7 +1607,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1609,7 +1615,7 @@ literal|"The ID of the image to set the paths in"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"pathname"
 block|,
@@ -1617,7 +1623,7 @@ literal|"The name of the path to create (if it exists then a unique name will be
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"ptype"
 block|,
@@ -1625,7 +1631,7 @@ literal|"The type of the path. Currently only one type (1 = Bezier) is supported
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_path_points"
 block|,
@@ -1633,7 +1639,7 @@ literal|"The number of points in the path. Each point is made up of (x,y,type) o
 block|}
 block|,
 block|{
-name|PDB_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"points_pairs"
 block|,
@@ -1662,7 +1668,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|5
 block|,
@@ -1827,7 +1833,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1856,7 +1862,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -2096,7 +2102,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2104,7 +2110,7 @@ literal|"The ID of the image the paths belongs to"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"distance"
 block|,
@@ -2123,7 +2129,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"x_point"
 block|,
@@ -2131,7 +2137,7 @@ literal|"The x position of the point"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"y_point"
 block|,
@@ -2139,7 +2145,7 @@ literal|"The y position of the point"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"gradient"
 block|,
@@ -2168,7 +2174,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2410,7 +2416,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2418,7 +2424,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"pathname"
 block|,
@@ -2437,7 +2443,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"tattoo"
 block|,
@@ -2466,7 +2472,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2650,7 +2656,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2658,7 +2664,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"tattoo"
 block|,
@@ -2677,7 +2683,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"path_name"
 block|,
@@ -2706,7 +2712,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2833,7 +2839,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2841,7 +2847,7 @@ literal|"The ID of the image to list delete the paths from"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"path_name_to_del"
 block|,
@@ -2870,7 +2876,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -3111,7 +3117,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -3119,7 +3125,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"pathname"
 block|,
@@ -3138,7 +3144,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"lockstatus"
 block|,
@@ -3167,7 +3173,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -3404,7 +3410,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -3412,7 +3418,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"pathname"
 block|,
@@ -3420,7 +3426,7 @@ literal|"the name of the path whose locked status should be set"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"lockstatus"
 block|,
@@ -3449,7 +3455,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -3678,7 +3684,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -3686,7 +3692,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"pathname"
 block|,
@@ -3694,7 +3700,7 @@ literal|"the name of the path whose tattoo should be set"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"tattovalue"
 block|,
@@ -3723,7 +3729,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,

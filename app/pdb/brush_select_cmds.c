@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -457,7 +463,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"brush_callback"
 block|,
@@ -465,7 +471,7 @@ literal|"The callback PDB proc to call when brush selection is made"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"popup_title"
 block|,
@@ -473,7 +479,7 @@ literal|"Title to give the brush popup window"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"initial_brush"
 block|,
@@ -481,7 +487,7 @@ literal|"The name of the brush to set as the first selected"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -489,7 +495,7 @@ literal|"The initial opacity of the brush"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spacing"
 block|,
@@ -497,7 +503,7 @@ literal|"The initial spacing of the brush (if< 0 then use brush default spacing)
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
@@ -526,7 +532,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|6
 block|,
@@ -690,7 +696,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"brush_callback"
 block|,
@@ -719,7 +725,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1004,7 +1010,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"brush_callback"
 block|,
@@ -1012,7 +1018,7 @@ literal|"The name of the callback registered for this popup"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"brush_name"
 block|,
@@ -1020,7 +1026,7 @@ literal|"The name of the brush to set as selected"
 block|}
 block|,
 block|{
-name|PDB_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -1028,7 +1034,7 @@ literal|"The initial opacity of the brush"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spacing"
 block|,
@@ -1036,7 +1042,7 @@ literal|"The initial spacing of the brush (if< 0 then use brush default spacing)
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
@@ -1065,7 +1071,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|5
 block|,

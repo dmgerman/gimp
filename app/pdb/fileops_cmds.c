@@ -74,6 +74,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -325,7 +331,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -333,7 +339,7 @@ literal|"The run mode: RUN_INTERACTIVE (0) or RUN_NONINTERACTIVE (1)"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -341,7 +347,7 @@ literal|"The name of the file to load"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -360,7 +366,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -389,7 +395,7 @@ literal|"Josh MacDonald"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -564,7 +570,7 @@ index|]
 operator|.
 name|arg_type
 operator|==
-name|PDB_STRING
+name|GIMP_PDB_STRING
 condition|)
 name|new_args
 index|[
@@ -612,7 +618,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -620,7 +626,7 @@ literal|"The run mode: RUN_INTERACTIVE (0) or RUN_NONINTERACTIVE (1)"
 block|}
 block|,
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -628,7 +634,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -636,7 +642,7 @@ literal|"Drawable to save"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -644,7 +650,7 @@ literal|"The name of the file to save the image in"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -673,7 +679,7 @@ literal|"Josh MacDonald"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|5
 block|,
@@ -1054,7 +1060,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -1073,7 +1079,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"width"
 block|,
@@ -1081,7 +1087,7 @@ literal|"The width of the thumbnail"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"height"
 block|,
@@ -1089,7 +1095,7 @@ literal|"The height of the thumbnail"
 block|}
 block|,
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"thumbnail_data_count"
 block|,
@@ -1097,7 +1103,7 @@ literal|"The number of bytes in thumbnail data"
 block|}
 block|,
 block|{
-name|PDB_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"thumb_data"
 block|,
@@ -1126,7 +1132,7 @@ literal|"Adam D. Moss, Sven Neumann"
 block|,
 literal|"1999-2000"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1272,7 +1278,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1280,7 +1286,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -1309,7 +1315,7 @@ literal|"Josh MacDonald"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1471,7 +1477,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"extension"
 block|,
@@ -1490,7 +1496,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -1519,7 +1525,7 @@ literal|"Josh MacDonald"
 block|,
 literal|"1997"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1696,7 +1702,7 @@ index|]
 operator|.
 name|arg_type
 operator|!=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 operator|)
 operator|||
 operator|(
@@ -1709,7 +1715,7 @@ index|]
 operator|.
 name|arg_type
 operator|!=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 operator|)
 operator|||
 operator|(
@@ -1722,7 +1728,7 @@ index|]
 operator|.
 name|arg_type
 operator|!=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 operator|)
 operator|||
 operator|(
@@ -1735,7 +1741,7 @@ index|]
 operator|.
 name|arg_type
 operator|!=
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 operator|)
 operator|)
 condition|)
@@ -1829,7 +1835,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"procedure_name"
 block|,
@@ -1837,7 +1843,7 @@ literal|"The name of the procedure to be used for loading"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"extensions"
 block|,
@@ -1845,7 +1851,7 @@ literal|"comma separated list of extensions this handler can load (i.e. \"jpg,jp
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"prefixes"
 block|,
@@ -1853,7 +1859,7 @@ literal|"comma separated list of prefixes this handler can load (i.e. \"http:,ft
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"magics"
 block|,
@@ -1882,7 +1888,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|4
 block|,
@@ -1952,7 +1958,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|argv
 index|[
@@ -1983,7 +1989,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"procedure_name"
 block|,
@@ -1991,7 +1997,7 @@ literal|"The name of the procedure to be used for loading"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"extensions"
 block|,
@@ -1999,7 +2005,7 @@ literal|"comma separated list of extensions this handler can load (i.e. \"jpg,jp
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"prefixes"
 block|,
@@ -2028,7 +2034,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,
@@ -2178,7 +2184,7 @@ index|]
 operator|.
 name|arg_type
 operator|!=
-name|PDB_INT32
+name|GIMP_PDB_INT32
 operator|)
 operator|||
 operator|(
@@ -2191,7 +2197,7 @@ index|]
 operator|.
 name|arg_type
 operator|!=
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 operator|)
 operator|||
 operator|(
@@ -2204,7 +2210,7 @@ index|]
 operator|.
 name|arg_type
 operator|!=
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 operator|)
 operator|||
 operator|(
@@ -2217,7 +2223,7 @@ index|]
 operator|.
 name|arg_type
 operator|!=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 operator|)
 operator|||
 operator|(
@@ -2230,7 +2236,7 @@ index|]
 operator|.
 name|arg_type
 operator|!=
-name|PDB_STRING
+name|GIMP_PDB_STRING
 operator|)
 operator|)
 condition|)
@@ -2324,7 +2330,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"procedure_name"
 block|,
@@ -2332,7 +2338,7 @@ literal|"The name of the procedure to be used for saving"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"extensions"
 block|,
@@ -2340,7 +2346,7 @@ literal|"comma separated list of extensions this handler can save (i.e. \"jpg,jp
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"prefixes"
 block|,
@@ -2369,7 +2375,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|3
 block|,

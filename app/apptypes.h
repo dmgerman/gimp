@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpcolor/gimpcolortypes.h"
 end_include
 
@@ -32,6 +26,12 @@ begin_include
 include|#
 directive|include
 file|"libgimpmath/gimpmathtypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbasetypes.h"
 end_include
 
 begin_include
@@ -98,15 +98,6 @@ typedef|typedef
 name|struct
 name|_GimpImageNewValues
 name|GimpImageNewValues
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpParasite
-typedef|typedef
-name|struct
-name|_GimpParasite
-name|GimpParasite
 typedef|;
 end_typedef
 

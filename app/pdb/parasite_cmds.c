@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -58,7 +64,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpparasite.h"
+file|"libgimpbase/gimpparasite.h"
 end_include
 
 begin_decl_stmt
@@ -358,7 +364,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -377,7 +383,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 block|,
 literal|"parasite"
 block|,
@@ -406,7 +412,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -501,7 +507,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 block|,
 literal|"parasite"
 block|,
@@ -530,7 +536,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -625,7 +631,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -654,7 +660,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -752,7 +758,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_parasites"
 block|,
@@ -760,7 +766,7 @@ literal|"The number of attached parasites"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"parasites"
 block|,
@@ -789,7 +795,7 @@ literal|"Marc Lehmann"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|0
 block|,
@@ -956,7 +962,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -964,7 +970,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -983,7 +989,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 block|,
 literal|"parasite"
 block|,
@@ -1012,7 +1018,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1137,7 +1143,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1145,7 +1151,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 block|,
 literal|"parasite"
 block|,
@@ -1174,7 +1180,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1299,7 +1305,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1307,7 +1313,7 @@ literal|"The drawable"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -1336,7 +1342,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1481,7 +1487,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1500,7 +1506,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_parasites"
 block|,
@@ -1508,7 +1514,7 @@ literal|"The number of attached parasites"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"parasites"
 block|,
@@ -1537,7 +1543,7 @@ literal|"Marc Lehmann"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
@@ -1704,7 +1710,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1712,7 +1718,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -1731,7 +1737,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 block|,
 literal|"parasite"
 block|,
@@ -1760,7 +1766,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -1885,7 +1891,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1893,7 +1899,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_PARASITE
+name|GIMP_PDB_PARASITE
 block|,
 literal|"parasite"
 block|,
@@ -1922,7 +1928,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2047,7 +2053,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2055,7 +2061,7 @@ literal|"The image"
 block|}
 block|,
 block|{
-name|PDB_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
@@ -2084,7 +2090,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
@@ -2229,7 +2235,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2248,7 +2254,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"num_parasites"
 block|,
@@ -2256,7 +2262,7 @@ literal|"The number of attached parasites"
 block|}
 block|,
 block|{
-name|PDB_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"parasites"
 block|,
@@ -2285,7 +2291,7 @@ literal|"Marc Lehmann"
 block|,
 literal|"1999"
 block|,
-name|PDB_INTERNAL
+name|GIMP_INTERNAL
 block|,
 literal|1
 block|,

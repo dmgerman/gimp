@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -2415,7 +2415,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4158200108
+DECL|struct|__anon2ac055b20108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3299,7 +3299,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4158200208
+DECL|struct|__anon2ac055b20208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
