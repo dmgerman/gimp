@@ -1315,7 +1315,7 @@ operator|->
 name|process_count
 operator|++
 expr_stmt|;
-comment|/*  Unref the last referenced tile if the underlying region  	      is a tile manager  */
+comment|/*  Unref the last referenced tile if the underlying region 	      is a tile manager  */
 if|if
 condition|(
 name|PRH
@@ -1498,7 +1498,7 @@ operator|->
 name|process_count
 operator|++
 expr_stmt|;
-comment|/*  Unref the last referenced tile if the underlying region  	      is a tile manager  */
+comment|/*  Unref the last referenced tile if the underlying region 	      is a tile manager  */
 if|if
 condition|(
 name|PRH
@@ -1616,7 +1616,7 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-comment|/*  Find the minimum height to the next vertical tile     *  (in the case of a tile manager) or to the end of the     *  pixel region (in the case of no tile manager)    */
+comment|/*  Find the minimum height to the next vertical tile    *  (in the case of a tile manager) or to the end of the    *  pixel region (in the case of no tile manager)    */
 for|for
 control|(
 name|list
@@ -1791,7 +1791,7 @@ decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
-comment|/*  Find the minimum width to the next vertical tile     *  (in the case of a tile manager) or to the end of     *  the pixel region (in the case of no tile manager)    */
+comment|/*  Find the minimum width to the next vertical tile    *  (in the case of a tile manager) or to the end of    *  the pixel region (in the case of no tile manager)    */
 for|for
 control|(
 name|list

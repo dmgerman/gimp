@@ -1346,7 +1346,7 @@ expr_stmt|;
 name|y_cum
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|src_row
 expr_stmt|;

@@ -4134,10 +4134,6 @@ condition|(
 name|cur_dist
 operator|<
 name|min_dist
-operator|||
-name|min_dist
-operator|<
-literal|0
 condition|)
 block|{
 name|min_dist
