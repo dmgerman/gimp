@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2901f3410108
+DECL|struct|__anon2ae2a9d80108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1253,9 +1253,12 @@ condition|)
 block|{
 name|gtk_tree_model_get
 argument_list|(
+name|GTK_TREE_MODEL
+argument_list|(
 name|dbbrowser
 operator|->
 name|store
+argument_list|)
 argument_list|,
 operator|&
 name|iter
@@ -3265,9 +3268,12 @@ condition|)
 block|{
 name|gtk_tree_model_get_iter_root
 argument_list|(
+name|GTK_TREE_MODEL
+argument_list|(
 name|dbbrowser
 operator|->
 name|store
+argument_list|)
 argument_list|,
 operator|&
 name|iter

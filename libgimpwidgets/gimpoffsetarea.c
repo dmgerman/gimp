@@ -9,29 +9,6 @@ directive|include
 file|<stdio.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -42,6 +19,12 @@ begin_include
 include|#
 directive|include
 file|"gimpwidgetstypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpwidgetsmarshal.h"
 end_include
 
 begin_include
@@ -60,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc9f1e0103
+DECL|enum|__anon29c83f610103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -315,7 +298,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gtk_marshal_VOID__INT_INT
+name|_gimp_widgets_marshal_VOID__INT_INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

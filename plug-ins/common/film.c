@@ -61,6 +61,37 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
+name|GTK_DISABLE_DEPRECATED
+end_ifdef
+
+begin_comment
+comment|/* eeek... really bad hack for the time being */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b6683f40103
+block|{
+DECL|enumerator|GTK_PREVIEW_COLOR
+name|GTK_PREVIEW_COLOR
+block|,
+DECL|enumerator|GTK_PREVIEW_GRAYSCALE
+name|GTK_PREVIEW_GRAYSCALE
+DECL|typedef|GtkPreviewType
+block|}
+name|GtkPreviewType
+typedef|;
+end_typedef
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
 name|__GNUC__
 end_ifdef
 
@@ -144,7 +175,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb43230108
+DECL|struct|__anon2b6683f40208
 block|{
 DECL|member|film_height
 name|gint
@@ -248,7 +279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb43230208
+DECL|struct|__anon2b6683f40308
 block|{
 DECL|member|font_entry
 name|GtkWidget

@@ -69,6 +69,17 @@ directive|define
 name|GTK_DISABLE_DEPRECATED
 end_define
 
+begin_comment
+comment|/* ewww... deprecation hacks again */
+end_comment
+
+begin_define
+DECL|macro|__GIMP_COLOR_AREA_H__
+define|#
+directive|define
+name|__GIMP_COLOR_AREA_H__
+end_define
+
 begin_include
 include|#
 directive|include
@@ -468,7 +479,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291357610108
+DECL|struct|__anon2b8516b40108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -574,7 +585,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291357610208
+DECL|struct|__anon2b8516b40208
 block|{
 DECL|member|menu
 name|gchar

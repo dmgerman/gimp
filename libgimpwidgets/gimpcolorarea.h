@@ -26,6 +26,26 @@ directive|ifdef
 name|GTK_DISABLE_DEPRECATED
 end_ifdef
 
+begin_comment
+comment|/* eeek... really bad hack for the time being */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon291faadc0103
+block|{
+DECL|enumerator|GTK_PREVIEW_COLOR
+name|GTK_PREVIEW_COLOR
+block|,
+DECL|enumerator|GTK_PREVIEW_GRAYSCALE
+name|GTK_PREVIEW_GRAYSCALE
+DECL|typedef|GtkPreviewType
+block|}
+name|GtkPreviewType
+typedef|;
+end_typedef
+
 begin_undef
 undef|#
 directive|undef
