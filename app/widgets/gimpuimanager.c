@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ff95240103
+DECL|enum|__anon297538ad0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ff95240203
+DECL|enum|__anon297538ad0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2050,7 +2050,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff95240308
+DECL|struct|__anon297538ad0308
 block|{
 DECL|member|x
 name|guint
@@ -2547,11 +2547,22 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|manager
+operator|->
+name|gimp
+operator|->
+name|be_verbose
+condition|)
 name|g_print
 argument_list|(
-literal|"loading menu: %s for %s\n"
+literal|"loading menu '%s' for %s\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|entry
 operator|->

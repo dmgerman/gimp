@@ -2176,9 +2176,18 @@ operator|->
 name|pid
 condition|)
 block|{
-name|g_warning
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
 argument_list|(
-literal|"Terminating %s ..."
+name|_
+argument_list|(
+literal|"Terminating plug-in: '%s'\n"
+argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2285,9 +2294,18 @@ operator|==
 name|dwExitCode
 condition|)
 block|{
-name|g_warning
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
 argument_list|(
-literal|"Terminating %s ..."
+name|_
+argument_list|(
+literal|"Terminating plug-in: '%s'\n"
+argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(

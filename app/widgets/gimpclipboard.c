@@ -550,9 +550,15 @@ init|=
 operator|*
 name|type
 decl_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
 name|g_print
 argument_list|(
-literal|"writable pixbuf format: %s\n"
+literal|"GimpClipboard: writable pixbuf format: %s\n"
 argument_list|,
 name|mime_type
 argument_list|)
