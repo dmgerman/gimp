@@ -3552,7 +3552,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c730ff30103
+DECL|enum|__anon2b8ab1c80103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -5563,6 +5563,20 @@ argument_list|(
 name|ink_tool
 operator|->
 name|core
+argument_list|)
+expr_stmt|;
+comment|/*  Free the last blob, if any */
+if|if
+condition|(
+name|ink_tool
+operator|->
+name|last_blob
+condition|)
+name|g_free
+argument_list|(
+name|ink_tool
+operator|->
+name|last_blob
 argument_list|)
 expr_stmt|;
 comment|/*  Cleanup memory  */
