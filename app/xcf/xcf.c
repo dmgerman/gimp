@@ -418,7 +418,10 @@ name|xcf_load_image
 block|,
 comment|/* version 0 */
 name|xcf_load_image
+block|,
 comment|/* version 1 */
+name|xcf_load_image
+comment|/* version 2 */
 block|}
 decl_stmt|;
 end_decl_stmt

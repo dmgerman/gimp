@@ -308,7 +308,7 @@ DECL|macro|DLG_PREVIEW_MASK
 define|#
 directive|define
 name|DLG_PREVIEW_MASK
-value|GDK_EXPOSURE_MASK | \ 			   GDK_BUTTON_PRESS_MASK
+value|GDK_EXPOSURE_MASK | \ 			    GDK_BUTTON_PRESS_MASK
 end_define
 
 begin_define
@@ -364,15 +364,7 @@ DECL|macro|SCALE_WIDTH
 define|#
 directive|define
 name|SCALE_WIDTH
-value|100
-end_define
-
-begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|8
+value|80
 end_define
 
 begin_ifndef
@@ -483,7 +475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b858d0103
+DECL|enum|__anon2b1e169b0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -510,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b858d0203
+DECL|enum|__anon2b1e169b0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -531,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0308
+DECL|struct|__anon2b1e169b0308
 block|{
 DECL|member|name
 name|gchar
@@ -672,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0408
+DECL|struct|__anon2b1e169b0408
 block|{
 DECL|member|fp
 name|FILE
@@ -692,7 +684,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b858d0503
+DECL|enum|__anon2b1e169b0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -720,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0608
+DECL|struct|__anon2b1e169b0608
 block|{
 DECL|member|init
 name|gint
@@ -742,7 +734,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon288b858d0708
+DECL|struct|__anon2b1e169b0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -816,7 +808,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0808
+DECL|struct|__anon2b1e169b0808
 block|{
 DECL|member|init
 name|gint
@@ -886,7 +878,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0908
+DECL|struct|__anon2b1e169b0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -913,7 +905,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0a08
+DECL|struct|__anon2b1e169b0a08
 block|{
 DECL|member|init
 name|gint
@@ -1083,7 +1075,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0b08
+DECL|struct|__anon2b1e169b0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1110,7 +1102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0c08
+DECL|struct|__anon2b1e169b0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1151,7 +1143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0d08
+DECL|struct|__anon2b1e169b0d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1377,7 +1369,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0e08
+DECL|struct|__anon2b1e169b0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1454,7 +1446,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d0f08
+DECL|struct|__anon2b1e169b0f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1512,7 +1504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b858d1008
+DECL|struct|__anon2b1e169b1008
 block|{
 DECL|member|run
 name|gint
@@ -3479,6 +3471,10 @@ specifier|static
 name|void
 name|ed_run
 parameter_list|(
+name|GtkWindow
+modifier|*
+name|parent
+parameter_list|,
 name|GFlare
 modifier|*
 name|target_gflare
@@ -9507,7 +9503,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon288b858d1108
+DECL|struct|__anon2b1e169b1108
 specifier|static
 struct|struct
 block|{
@@ -14955,7 +14951,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-name|ENTRY_WIDTH
+literal|6
 argument_list|,
 name|pvals
 operator|.
@@ -15044,7 +15040,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-name|ENTRY_WIDTH
+literal|6
 argument_list|,
 name|pvals
 operator|.
@@ -15130,7 +15126,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-name|ENTRY_WIDTH
+literal|6
 argument_list|,
 name|pvals
 operator|.
@@ -15216,7 +15212,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-name|ENTRY_WIDTH
+literal|6
 argument_list|,
 name|pvals
 operator|.
@@ -15301,7 +15297,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-name|ENTRY_WIDTH
+literal|6
 argument_list|,
 name|pvals
 operator|.
@@ -15885,7 +15881,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon288b858d1208
+DECL|struct|__anon2b1e169b1208
 block|{
 DECL|member|label
 specifier|const
@@ -15987,7 +15983,7 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|listbox
 argument_list|,
@@ -16637,6 +16633,13 @@ argument_list|)
 expr_stmt|;
 name|ed_run
 argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dlg
+operator|->
+name|shell
+argument_list|)
+argument_list|,
 name|dlg
 operator|->
 name|gflare
@@ -17202,9 +17205,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|ed_run (GFlare * target_gflare,GFlareEditorCallback callback,gpointer calldata)
+DECL|function|ed_run (GtkWindow * parent,GFlare * target_gflare,GFlareEditorCallback callback,gpointer calldata)
 name|ed_run
 parameter_list|(
+name|GtkWindow
+modifier|*
+name|parent
+parameter_list|,
 name|GFlare
 modifier|*
 name|target_gflare
@@ -17321,20 +17328,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_CANCEL
-argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
 name|_
 argument_list|(
 literal|"Rescan Gradients"
@@ -17351,6 +17344,20 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+name|GTK_STOCK_CANCEL
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
@@ -17384,6 +17391,16 @@ name|ed_close_callback
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 comment|/*    *    main hbox    */
@@ -18001,7 +18018,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -18210,7 +18227,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -18419,7 +18436,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -18933,7 +18950,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -19018,7 +19035,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -19104,7 +19121,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -19594,7 +19611,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -19679,7 +19696,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -19765,7 +19782,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -19851,7 +19868,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -19936,7 +19953,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -20458,7 +20475,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -20543,7 +20560,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -20629,7 +20646,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|gflare
 operator|->
@@ -20992,13 +21009,14 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_entry_set_width_chars
+argument_list|(
+name|GTK_ENTRY
 argument_list|(
 name|entry
+argument_list|)
 argument_list|,
-name|ENTRY_WIDTH
-argument_list|,
-literal|0
+literal|4
 argument_list|)
 expr_stmt|;
 name|g_snprintf
