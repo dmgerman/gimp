@@ -241,7 +241,7 @@ literal|"plug_in_zealouscrop"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Crop"
+literal|"<Image>/Image/Crop"
 argument_list|)
 argument_list|)
 expr_stmt|;
