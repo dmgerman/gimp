@@ -479,7 +479,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_FILE_CHOOSER_ACTION_OPEN
+name|GTK_FILE_CHOOSER_ACTION_SAVE
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
