@@ -1163,6 +1163,18 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|dialogs_test_image_container_grid_view_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|dialogs_test_brush_container_list_view_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -1199,7 +1211,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialogs_test_image_container_grid_view_cmd_callback
+name|dialogs_test_palette_container_list_view_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1236,6 +1248,18 @@ end_function_decl
 begin_function_decl
 name|void
 name|dialogs_test_gradient_container_grid_view_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|dialogs_test_palette_container_grid_view_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

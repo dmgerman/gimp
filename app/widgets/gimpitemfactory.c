@@ -840,6 +840,40 @@ block|}
 block|,
 block|{
 block|{
+literal|"/File/Test Dialogs/Grid of all Images..."
+block|,
+name|NULL
+block|,
+name|dialogs_test_image_container_grid_view_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/File/Test Dialogs/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
 literal|"/File/Test Dialogs/List of all Brushes..."
 block|,
 name|NULL
@@ -888,6 +922,22 @@ block|}
 block|,
 block|{
 block|{
+literal|"/File/Test Dialogs/List of all Palettes..."
+block|,
+name|NULL
+block|,
+name|dialogs_test_palette_container_list_view_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
 literal|"/File/Test Dialogs/---"
 block|,
 name|NULL
@@ -897,22 +947,6 @@ block|,
 literal|0
 block|,
 literal|"<Separator>"
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-literal|"/File/Test Dialogs/Grid of all Images..."
-block|,
-name|NULL
-block|,
-name|dialogs_test_image_container_grid_view_cmd_callback
-block|,
-literal|0
 block|}
 block|,
 name|NULL
@@ -959,6 +993,22 @@ block|,
 name|NULL
 block|,
 name|dialogs_test_gradient_container_grid_view_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/File/Test Dialogs/Grid of all Palettes..."
+block|,
+name|NULL
+block|,
+name|dialogs_test_palette_container_grid_view_cmd_callback
 block|,
 literal|0
 block|}
