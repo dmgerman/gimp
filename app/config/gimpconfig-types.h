@@ -25,11 +25,14 @@ value|(gimp_memsize_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_PATH
+DECL|macro|GIMP_VALUE_HOLDS_MEMSIZE (value)
 define|#
 directive|define
-name|GIMP_TYPE_PATH
-value|(gimp_path_get_type ())
+name|GIMP_VALUE_HOLDS_MEMSIZE
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_MEMSIZE))
 end_define
 
 begin_decl_stmt
@@ -41,6 +44,25 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_define
+DECL|macro|GIMP_TYPE_PATH
+define|#
+directive|define
+name|GIMP_TYPE_PATH
+value|(gimp_path_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUE_HOLDS_PATH (value)
+define|#
+directive|define
+name|GIMP_VALUE_HOLDS_PATH
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_PATH))
+end_define
 
 begin_decl_stmt
 name|GType
