@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f1a410108
+DECL|struct|__anon29df679a0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f1a410208
+DECL|struct|__anon29df679a0208
 block|{
 DECL|member|run
 name|gint
@@ -272,7 +272,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|color_comp
 parameter_list|(
 name|guchar
@@ -1940,11 +1940,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Generate Full HTML Document"
+literal|"_Generate Full HTML Document"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2112,11 +2112,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Cellspan"
+literal|"_Use Cellspan"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2196,11 +2196,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Compress TD tags"
+literal|"Co_mpress TD tags"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2281,11 +2281,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Caption"
+literal|"C_aption"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2509,7 +2509,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Cell Content:"
+literal|"C_ell Content:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2691,7 +2691,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Border:"
+literal|"_Border:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2774,7 +2774,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Width:"
+literal|"_Width:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2855,7 +2855,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Height:"
+literal|"_Height:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2935,7 +2935,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Cell-Padding:"
+literal|"Cell-_Padding:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3017,7 +3017,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Cell-Spacing:"
+literal|"Cell-_Spacing:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3091,7 +3091,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|color_comp (guchar * buffer,guchar * buf2)
 name|color_comp
 parameter_list|(
@@ -3104,8 +3104,7 @@ modifier|*
 name|buf2
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
 name|buffer
 index|[
 literal|0
@@ -3135,13 +3134,6 @@ name|buf2
 index|[
 literal|2
 index|]
-condition|)
-return|return
-literal|1
-return|;
-else|else
-return|return
-literal|0
 return|;
 block|}
 end_function

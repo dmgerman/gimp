@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973902d0108
+DECL|struct|__anon2c7ea8940108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973902d0208
+DECL|struct|__anon2c7ea8940208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973902d0308
+DECL|struct|__anon2c7ea8940308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973902d0408
+DECL|struct|__anon2c7ea8940408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973902d0508
+DECL|struct|__anon2c7ea8940508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973902d0608
+DECL|struct|__anon2c7ea8940608
 block|{
 DECL|member|eol
 name|long
@@ -13877,7 +13877,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Width:"
+literal|"_Width:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -13947,7 +13947,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Height:"
+literal|"_Height:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -14946,7 +14946,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Width:"
+literal|"_Width:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15026,7 +15026,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Height:"
+literal|"_Height:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15106,7 +15106,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"X-Offset:"
+literal|"_X-Offset:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15186,7 +15186,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Y-Offset:"
+literal|"_Y-Offset:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15228,7 +15228,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Keep Aspect Ratio"
+literal|"_Keep Aspect Ratio"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15323,7 +15323,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Inch"
+literal|"_Inch"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -15335,7 +15335,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Millimeter"
+literal|"_Millimeter"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -15408,7 +15408,7 @@ operator|.
 name|rotate
 argument_list|)
 argument_list|,
-literal|"0"
+literal|"_0"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
@@ -15417,7 +15417,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-literal|"90"
+literal|"_90"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
@@ -15426,7 +15426,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-literal|"180"
+literal|"_180"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
@@ -15435,7 +15435,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-literal|"270"
+literal|"_270"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
@@ -15542,11 +15542,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"PostScript Level 2"
+literal|"_PostScript Level 2"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15602,11 +15602,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Encapsulated PostScript"
+literal|"_Encapsulated PostScript"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15662,11 +15662,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Preview"
+literal|"P_review"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15823,7 +15823,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Preview Size:"
+literal|"Preview _Size:"
 argument_list|)
 argument_list|,
 literal|1.0

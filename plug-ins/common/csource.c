@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c48475f0108
+DECL|struct|__anon2972a7a70108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3257,7 +3257,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Prefixed Name:"
+literal|"_Prefixed Name:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3308,7 +3308,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Comment:"
+literal|"Co_mment:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3343,11 +3343,11 @@ expr_stmt|;
 comment|/* Use Comment    */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Comment to File"
+literal|"_Save Comment to File"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3404,11 +3404,11 @@ expr_stmt|;
 comment|/* GLib types    */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use GLib Types (guint8*)"
+literal|"_Use GLib Types (guint8*)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3465,11 +3465,11 @@ expr_stmt|;
 comment|/* Use Macros    */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Macros instead of Struct"
+literal|"Us_e Macros instead of Struct"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3526,11 +3526,11 @@ expr_stmt|;
 comment|/* Use RLE    */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use 1 Byte Run-Length-Encoding"
+literal|"Use _1 Byte Run-Length-Encoding"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3587,11 +3587,11 @@ expr_stmt|;
 comment|/* Alpha    */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Alpha Channel (RGBA/RGB)"
+literal|"Sa_ve Alpha Channel (RGBA/RGB)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3703,7 +3703,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Opacity:"
+literal|"Op_acity:"
 argument_list|)
 argument_list|,
 literal|100

@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8140490108
+DECL|struct|__anon2afa723f0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -866,7 +866,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8140490208
+DECL|struct|__anon2afa723f0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -936,7 +936,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"More White (Larger Value)"
+literal|"More _White (Larger Value)"
 argument_list|)
 block|,
 name|initialize_white
@@ -957,7 +957,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"More Black (Smaller Value)"
+literal|"More Blac_k (Smaller Value)"
 argument_list|)
 block|,
 name|initialize_black
@@ -978,7 +978,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"Middle Value to Peaks"
+literal|"_Middle Value to Peaks"
 argument_list|)
 block|,
 name|initialize_middle
@@ -999,7 +999,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"Foreground to Peaks"
+literal|"_Foreground to Peaks"
 argument_list|)
 block|,
 name|initialize_middle
@@ -1018,7 +1018,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"Only Foreground"
+literal|"O_nly Foreground"
 argument_list|)
 block|,
 name|initialize_foreground
@@ -1037,7 +1037,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"Only Background"
+literal|"Only B_ackground"
 argument_list|)
 block|,
 name|initialize_background
@@ -1056,7 +1056,7 @@ name|VP_WITH_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"More Opaque"
+literal|"Mor_e Opaque"
 argument_list|)
 block|,
 name|NULL
@@ -1075,7 +1075,7 @@ name|VP_WITH_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"More Transparent"
+literal|"More T_ransparent"
 argument_list|)
 block|,
 name|NULL
@@ -1091,7 +1091,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8140490308
+DECL|struct|__anon2afa723f0308
 block|{
 DECL|member|run
 name|gint
@@ -3946,7 +3946,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8140490408
+DECL|struct|__anon2afa723f0408
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5827,7 +5827,7 @@ control|)
 block|{
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
@@ -6024,7 +6024,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Lower Threshold:"
+literal|"Lower T_hreshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6088,7 +6088,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Upper Threshold:"
+literal|"_Upper Threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6152,7 +6152,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Propagating Rate:"
+literal|"_Propagating Rate:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6243,7 +6243,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"To Left"
+literal|"To L_eft"
 argument_list|)
 argument_list|,
 literal|0
@@ -6270,7 +6270,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"To Right"
+literal|"To _Right"
 argument_list|)
 argument_list|,
 literal|2
@@ -6297,7 +6297,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"To Top"
+literal|"To _Top"
 argument_list|)
 argument_list|,
 literal|1
@@ -6324,7 +6324,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"To Bottom"
+literal|"To _Bottom"
 argument_list|)
 argument_list|,
 literal|1
@@ -6409,7 +6409,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Propagating Alpha Channel"
+literal|"Propagating _Alpha Channel"
 argument_list|)
 argument_list|,
 literal|0
@@ -6645,7 +6645,7 @@ name|toggle
 decl_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|name
 argument_list|)

@@ -4551,11 +4551,11 @@ expr_stmt|;
 comment|/*  X10 format  */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"X10 Format Bitmap"
+literal|"_X10 Format Bitmap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4702,7 +4702,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Identifier Prefix:"
+literal|"_Identifier Prefix:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4741,11 +4741,11 @@ directive|endif
 comment|/* hotspot toggle */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Write Hot Spot Values"
+literal|"_Write Hot Spot Values"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4916,7 +4916,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Hot Spot X:"
+literal|"Hot Spot _X:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4991,7 +4991,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -5112,11 +5112,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Write Extra Mask File"
+literal|"W_rite Extra Mask File"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5212,7 +5212,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Mask File Extension:"
+literal|"_Mask File Extension:"
 argument_list|)
 argument_list|,
 literal|1.0

@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae663200108
+DECL|struct|__anon29a234a40108
 block|{
 DECL|member|root
 name|gboolean
@@ -1419,13 +1419,13 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"Single Window"
+literal|"_Single Window"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1533,11 +1533,11 @@ argument_list|)
 expr_stmt|;
 name|decor_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"With Decorations"
+literal|"With _Decorations"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1637,13 +1637,13 @@ expr_stmt|;
 comment|/*  root window  */
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"Whole Screen"
+literal|"_Whole Screen"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1760,11 +1760,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"after"
+literal|"_after"
 argument_list|)
 argument_list|)
 expr_stmt|;

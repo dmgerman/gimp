@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2914125b0108
+DECL|struct|__anon2a3608b50108
 block|{
 DECL|member|height
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2914125b0208
+DECL|struct|__anon2a3608b50208
 block|{
 DECL|member|run
 name|gint
@@ -899,11 +899,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Limit Line Width"
+literal|"_Limit Line Width"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -982,7 +982,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Height:"
+literal|"_Height:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1837,7 +1837,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2914125b0308
+DECL|struct|__anon2a3608b50308
 block|{
 DECL|member|x
 DECL|member|y
