@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool-utils.h"
+file|"tools-utils.h"
 end_include
 
 begin_comment
