@@ -423,6 +423,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|gboolean
+name|mask_empty
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|gdisp
