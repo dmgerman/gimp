@@ -230,6 +230,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_rgb_set_gdk_color
+parameter_list|(
+name|GimpRGB
+modifier|*
+name|rgb
+parameter_list|,
+specifier|const
+name|GdkColor
+modifier|*
+name|gdk_color
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

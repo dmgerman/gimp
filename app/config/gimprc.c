@@ -123,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd532790103
+DECL|enum|__anon2a32cf0a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1357,8 +1357,6 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
 name|gimp_config_file_backup_on_error
 argument_list|(
 name|rc
@@ -1368,13 +1366,6 @@ argument_list|,
 literal|"gimprc"
 argument_list|,
 name|NULL
-argument_list|)
-condition|)
-name|unlink
-argument_list|(
-name|rc
-operator|->
-name|user_gimprc
 argument_list|)
 expr_stmt|;
 block|}
