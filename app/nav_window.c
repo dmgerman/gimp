@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2895e9d70103
+DECL|enum|__anon2ac62a8b0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -7126,6 +7126,16 @@ operator|->
 name|gdisp_ptr
 operator|=
 name|NULL
+expr_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|nav_window_auto
+operator|->
+name|shell
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 block|}
