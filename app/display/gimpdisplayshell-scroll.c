@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-scale.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-scroll.h"
 end_include
 
@@ -164,7 +158,6 @@ operator|||
 name|y_offset
 condition|)
 block|{
-comment|/* The call to gimp_display_shell_scale_setup() shouldn't be needed          here if all other places are correct.           gimp_display_shell_scale_setup (shell);       */
 comment|/*  reset the old values so that the tool can accurately redraw  */
 name|shell
 operator|->
@@ -223,6 +216,18 @@ name|offset_y
 operator|+=
 name|y_offset
 expr_stmt|;
+comment|/*  Make sure expose events are processed before scrolling again  */
+name|gdk_window_process_updates
+argument_list|(
+name|shell
+operator|->
+name|canvas
+operator|->
+name|window
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|tool_manager_control_active
 argument_list|(
 name|shell
@@ -240,16 +245,39 @@ operator|->
 name|gdisp
 argument_list|)
 expr_stmt|;
-comment|/*  Make sure expose events are processed before scrolling again  */
-name|gdk_window_process_updates
+comment|/*  Update the scrollbars  */
+name|shell
+operator|->
+name|hsbdata
+operator|->
+name|value
+operator|=
+name|shell
+operator|->
+name|offset_x
+expr_stmt|;
+name|shell
+operator|->
+name|vsbdata
+operator|->
+name|value
+operator|=
+name|shell
+operator|->
+name|offset_y
+expr_stmt|;
+name|gtk_adjustment_changed
 argument_list|(
 name|shell
 operator|->
-name|canvas
+name|hsbdata
+argument_list|)
+expr_stmt|;
+name|gtk_adjustment_changed
+argument_list|(
+name|shell
 operator|->
-name|window
-argument_list|,
-name|FALSE
+name|vsbdata
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scrolled
