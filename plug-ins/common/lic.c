@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2908d9800108
+DECL|struct|__anon29393d7f0108
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3657,9 +3657,6 @@ argument_list|(
 name|new_image_id
 argument_list|)
 expr_stmt|;
-name|gimp_displays_flush
-argument_list|()
-expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
 name|output_drawable
@@ -3671,6 +3668,9 @@ name|new_image_id
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_displays_flush
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
