@@ -23,55 +23,55 @@ file|"gimppainttool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_DODGEBURN_TOOL
+DECL|macro|GIMP_TYPE_DODGE_BURN_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_DODGEBURN_TOOL
-value|(gimp_dodgeburn_tool_get_type ())
+name|GIMP_TYPE_DODGE_BURN_TOOL
+value|(gimp_dodge_burn_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_DODGEBURN_TOOL (obj)
+DECL|macro|GIMP_DODGE_BURN_TOOL (obj)
 define|#
 directive|define
-name|GIMP_DODGEBURN_TOOL
+name|GIMP_DODGE_BURN_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DODGEBURN_TOOL, GimpDodgeBurnTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DODGE_BURN_TOOL, GimpDodgeBurnTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DODGEBURN_TOOL (obj)
+DECL|macro|GIMP_IS_DODGE_BURN_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_DODGEBURN_TOOL
+name|GIMP_IS_DODGE_BURN_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DODGEBURN_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DODGE_BURN_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_DODGEBURN_TOOL_CLASS (klass)
+DECL|macro|GIMP_DODGE_BURN_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_DODGEBURN_TOOL_CLASS
+name|GIMP_DODGE_BURN_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DODGEBURN_TOOL, GimpDodgeBurnToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DODGE_BURN_TOOL, GimpDodgeBurnToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DODGEBURN_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_DODGE_BURN_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_DODGEBURN_TOOL_CLASS
+name|GIMP_IS_DODGE_BURN_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DODGEBURN_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DODGE_BURN_TOOL))
 end_define
 
 begin_typedef
@@ -120,7 +120,7 @@ end_struct
 
 begin_function_decl
 name|void
-name|gimp_dodgeburn_tool_register
+name|gimp_dodge_burn_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
@@ -133,7 +133,7 @@ end_function_decl
 
 begin_decl_stmt
 name|GType
-name|gimp_dodgeburn_tool_get_type
+name|gimp_dodge_burn_tool_get_type
 argument_list|(
 name|void
 argument_list|)

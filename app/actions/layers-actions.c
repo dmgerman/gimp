@@ -361,7 +361,7 @@ name|GIMP_HELP_LAYER_NEXT
 block|}
 block|,
 block|{
-literal|"layer-select-bottom"
+literal|"layers-select-bottom"
 block|,
 name|NULL
 block|,
@@ -647,6 +647,28 @@ name|GIMP_HELP_LAYER_SCALE
 block|}
 block|,
 block|{
+literal|"layers-crop"
+block|,
+name|GIMP_STOCK_TOOL_CROP
+block|,
+name|N_
+argument_list|(
+literal|"Cr_op Layer"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|layers_crop_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_LAYER_CROP
+block|}
+block|,
+block|{
 literal|"layers-mask-add"
 block|,
 name|GIMP_STOCK_LAYER_MASK
@@ -765,7 +787,7 @@ name|GIMP_HELP_LAYER_MASK_SELECTION_REPLACE
 block|}
 block|,
 block|{
-literal|"layer-mask-selection-add"
+literal|"layers-mask-selection-add"
 block|,
 name|GIMP_STOCK_SELECTION_ADD
 block|,
@@ -890,7 +912,7 @@ name|GIMP_HELP_LAYER_ALPHA_SELECTION_SUBTRACT
 block|}
 block|,
 block|{
-literal|"layer-alpha-selection-intersect"
+literal|"layers-alpha-selection-intersect"
 block|,
 name|GIMP_STOCK_SELECTION_INTERSECT
 block|,

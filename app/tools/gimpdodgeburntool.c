@@ -84,7 +84,7 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_tool_class_init
+name|gimp_dodge_burn_tool_class_init
 parameter_list|(
 name|GimpDodgeBurnToolClass
 modifier|*
@@ -96,7 +96,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_tool_init
+name|gimp_dodge_burn_tool_init
 parameter_list|(
 name|GimpDodgeBurnTool
 modifier|*
@@ -108,7 +108,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_tool_modifier_key
+name|gimp_dodge_burn_tool_modifier_key
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -133,7 +133,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_tool_cursor_update
+name|gimp_dodge_burn_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -179,8 +179,8 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_dodgeburn_tool_register (GimpToolRegisterCallback callback,gpointer data)
-name|gimp_dodgeburn_tool_register
+DECL|function|gimp_dodge_burn_tool_register (GimpToolRegisterCallback callback,gpointer data)
+name|gimp_dodge_burn_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
@@ -194,7 +194,7 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|GIMP_TYPE_DODGEBURN_TOOL
+name|GIMP_TYPE_DODGE_BURN_TOOL
 argument_list|,
 name|GIMP_TYPE_DODGE_BURN_OPTIONS
 argument_list|,
@@ -202,7 +202,7 @@ name|gimp_dodge_burn_options_gui
 argument_list|,
 name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
 argument_list|,
-literal|"gimp-dodgeburn-tool"
+literal|"gimp-dodge-burn-tool"
 argument_list|,
 name|_
 argument_list|(
@@ -235,8 +235,8 @@ end_function
 
 begin_function
 name|GType
-DECL|function|gimp_dodgeburn_tool_get_type (void)
-name|gimp_dodgeburn_tool_get_type
+DECL|function|gimp_dodge_burn_tool_get_type (void)
+name|gimp_dodge_burn_tool_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -277,7 +277,7 @@ block|,
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_dodgeburn_tool_class_init
+name|gimp_dodge_burn_tool_class_init
 block|,
 name|NULL
 block|,
@@ -296,7 +296,7 @@ comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_dodgeburn_tool_init
+name|gimp_dodge_burn_tool_init
 block|,       }
 decl_stmt|;
 name|tool_type
@@ -323,8 +323,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_tool_class_init (GimpDodgeBurnToolClass * klass)
-name|gimp_dodgeburn_tool_class_init
+DECL|function|gimp_dodge_burn_tool_class_init (GimpDodgeBurnToolClass * klass)
+name|gimp_dodge_burn_tool_class_init
 parameter_list|(
 name|GimpDodgeBurnToolClass
 modifier|*
@@ -353,13 +353,13 @@ name|tool_class
 operator|->
 name|modifier_key
 operator|=
-name|gimp_dodgeburn_tool_modifier_key
+name|gimp_dodge_burn_tool_modifier_key
 expr_stmt|;
 name|tool_class
 operator|->
 name|cursor_update
 operator|=
-name|gimp_dodgeburn_tool_cursor_update
+name|gimp_dodge_burn_tool_cursor_update
 expr_stmt|;
 block|}
 end_function
@@ -367,8 +367,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_tool_init (GimpDodgeBurnTool * dodgeburn)
-name|gimp_dodgeburn_tool_init
+DECL|function|gimp_dodge_burn_tool_init (GimpDodgeBurnTool * dodgeburn)
+name|gimp_dodge_burn_tool_init
 parameter_list|(
 name|GimpDodgeBurnTool
 modifier|*
@@ -421,8 +421,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
-name|gimp_dodgeburn_tool_modifier_key
+DECL|function|gimp_dodge_burn_tool_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * gdisp)
+name|gimp_dodge_burn_tool_modifier_key
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -537,8 +537,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
-name|gimp_dodgeburn_tool_cursor_update
+DECL|function|gimp_dodge_burn_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+name|gimp_dodge_burn_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*

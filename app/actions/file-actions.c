@@ -188,6 +188,17 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"file-acquire-menu"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"_Acquire"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"file-new"
 block|,
 name|GTK_STOCK_NEW
@@ -470,7 +481,7 @@ name|name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"file-last-opened-%02d"
+literal|"file-open-recent-%02d"
 argument_list|,
 name|i
 operator|+

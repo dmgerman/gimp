@@ -338,7 +338,7 @@ name|GIMP_HELP_SELECTION_DIALOG
 block|}
 block|,
 block|{
-literal|"dialogs-navigations"
+literal|"dialogs-navigation"
 block|,
 name|GIMP_STOCK_NAVIGATION
 block|,

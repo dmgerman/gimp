@@ -604,7 +604,7 @@ name|g_warning
 argument_list|(
 literal|"%s: no entry registered for \"%s\""
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|identifier
 argument_list|)

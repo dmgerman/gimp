@@ -529,7 +529,7 @@ name|GIMP_TYPE_CONVOLVE_TOOL
 operator|||
 name|tool_type
 operator|==
-name|GIMP_TYPE_DODGEBURN_TOOL
+name|GIMP_TYPE_DODGE_BURN_TOOL
 operator|||
 name|tool_type
 operator|==
@@ -981,7 +981,7 @@ name|GIMP_TYPE_CONVOLVE_TOOL
 operator|||
 name|tool_type
 operator|==
-name|GIMP_TYPE_DODGEBURN_TOOL
+name|GIMP_TYPE_DODGE_BURN_TOOL
 operator|||
 name|tool_type
 operator|==
@@ -1221,7 +1221,7 @@ name|GIMP_TYPE_CONVOLVE_TOOL
 operator|||
 name|tool_type
 operator|==
-name|GIMP_TYPE_DODGEBURN_TOOL
+name|GIMP_TYPE_DODGE_BURN_TOOL
 operator|||
 name|tool_type
 operator|==
@@ -1284,7 +1284,7 @@ name|GIMP_TYPE_CLONE_TOOL
 operator|||
 name|tool_type
 operator|==
-name|GIMP_TYPE_DODGEBURN_TOOL
+name|GIMP_TYPE_DODGE_BURN_TOOL
 operator|||
 name|tool_type
 operator|==
@@ -1346,7 +1346,7 @@ name|GIMP_TYPE_CONVOLVE_TOOL
 operator|||
 name|tool_type
 operator|==
-name|GIMP_TYPE_DODGEBURN_TOOL
+name|GIMP_TYPE_DODGE_BURN_TOOL
 operator|||
 name|tool_type
 operator|==
@@ -1453,7 +1453,7 @@ name|GIMP_TYPE_CONVOLVE_TOOL
 operator|||
 name|tool_type
 operator|==
-name|GIMP_TYPE_DODGEBURN_TOOL
+name|GIMP_TYPE_DODGE_BURN_TOOL
 operator|||
 name|tool_type
 operator|==
@@ -1608,7 +1608,7 @@ name|GIMP_TYPE_CONVOLVE_TOOL
 operator|||
 name|tool_type
 operator|==
-name|GIMP_TYPE_DODGEBURN_TOOL
+name|GIMP_TYPE_DODGE_BURN_TOOL
 operator|||
 name|tool_type
 operator|==

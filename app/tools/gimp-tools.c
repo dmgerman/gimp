@@ -408,7 +408,7 @@ block|,
 name|gimp_color_balance_tool_register
 block|,
 comment|/*  paint tools  */
-name|gimp_dodgeburn_tool_register
+name|gimp_dodge_burn_tool_register
 block|,
 name|gimp_smudge_tool_register
 block|,
@@ -1211,7 +1211,7 @@ if|if
 condition|(
 name|tool_type
 operator|==
-name|GIMP_TYPE_DODGEBURN_TOOL
+name|GIMP_TYPE_DODGE_BURN_TOOL
 condition|)
 block|{
 name|paint_core_name

@@ -146,7 +146,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"/_View"
+literal|"_View"
 argument_list|)
 block|}
 block|,
@@ -467,7 +467,7 @@ name|GIMP_HELP_VIEW_SHOW_GUIDES
 block|}
 block|,
 block|{
-literal|"view-snap-to-giudes"
+literal|"view-snap-to-guides"
 block|,
 name|NULL
 block|,

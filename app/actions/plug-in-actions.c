@@ -178,7 +178,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"/Filte_rs"
+literal|"Filte_rs"
 argument_list|)
 block|}
 block|,
@@ -227,7 +227,7 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"pluf-in-edge-detect-menu"
+literal|"plug-in-edge-detect-menu"
 block|,
 name|NULL
 block|,
