@@ -606,9 +606,6 @@ name|preview_size
 argument_list|,
 name|preview_border_width
 argument_list|,
-name|FALSE
-argument_list|,
-comment|/* reorderable */
 name|menu_factory
 argument_list|,
 name|menu_identifier

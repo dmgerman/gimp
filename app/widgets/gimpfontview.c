@@ -324,9 +324,6 @@ name|preview_size
 argument_list|,
 name|preview_border_width
 argument_list|,
-name|FALSE
-argument_list|,
-comment|/* reorderable */
 name|menu_factory
 argument_list|,
 literal|"<Fonts>"
@@ -349,6 +346,18 @@ operator|=
 name|GIMP_CONTAINER_EDITOR
 argument_list|(
 name|font_view
+argument_list|)
+expr_stmt|;
+name|gimp_container_view_set_reorderable
+argument_list|(
+name|GIMP_CONTAINER_VIEW
+argument_list|(
+name|editor
+operator|->
+name|view
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|font_view

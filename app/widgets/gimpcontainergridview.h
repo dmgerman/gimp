@@ -193,9 +193,6 @@ name|preview_size
 parameter_list|,
 name|gint
 name|preview_border_width
-parameter_list|,
-name|gboolean
-name|reorderable
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900b54e0103
+DECL|enum|__anon2c889ba10103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1584,7 +1584,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_tree_view_new (GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,gboolean reorderable)
+DECL|function|gimp_container_tree_view_new (GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width)
 name|gimp_container_tree_view_new
 parameter_list|(
 name|GimpContainer
@@ -1600,9 +1600,6 @@ name|preview_size
 parameter_list|,
 name|gint
 name|preview_border_width
-parameter_list|,
-name|gboolean
-name|reorderable
 parameter_list|)
 block|{
 name|GimpContainerTreeView
@@ -1672,10 +1669,6 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CONTAINER_TREE_VIEW
-argument_list|,
-literal|"reorderable"
-argument_list|,
-name|reorderable
 argument_list|,
 name|NULL
 argument_list|)

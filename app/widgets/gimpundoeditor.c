@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b20d36f0103
+DECL|enum|__anon2b535c340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -521,8 +521,6 @@ operator|->
 name|preview_size
 argument_list|,
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

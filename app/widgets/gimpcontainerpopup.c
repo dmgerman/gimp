@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf085660103
+DECL|enum|__anon2913e2d20103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1943,9 +1943,6 @@ name|popup
 operator|->
 name|preview_border_width
 argument_list|,
-name|FALSE
-argument_list|,
-comment|/* reorderable */
 name|NULL
 argument_list|,
 name|NULL
@@ -1953,16 +1950,27 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_container_box_set_size_request
+name|gimp_container_view_set_reorderable
 argument_list|(
-name|GIMP_CONTAINER_BOX
-argument_list|(
-name|GIMP_CONTAINER_EDITOR
+name|GIMP_CONTAINER_VIEW
 argument_list|(
 name|popup
 operator|->
 name|editor
+operator|->
+name|view
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_container_box_set_size_request
+argument_list|(
+name|GIMP_CONTAINER_BOX
+argument_list|(
+name|popup
+operator|->
+name|editor
 operator|->
 name|view
 argument_list|)

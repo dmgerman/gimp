@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontainer.h"
+file|"core/gimplist.h"
 end_include
 
 begin_include
@@ -488,7 +488,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,gboolean reorderable,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
+DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
 name|gimp_container_editor_construct
 parameter_list|(
 name|GimpContainerEditor
@@ -511,9 +511,6 @@ name|preview_size
 parameter_list|,
 name|gint
 name|preview_border_width
-parameter_list|,
-name|gboolean
-name|reorderable
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -623,8 +620,6 @@ argument_list|,
 name|preview_size
 argument_list|,
 name|preview_border_width
-argument_list|,
-name|reorderable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -647,8 +642,6 @@ argument_list|,
 name|preview_size
 argument_list|,
 name|preview_border_width
-argument_list|,
-name|reorderable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -665,6 +658,31 @@ return|return
 name|FALSE
 return|;
 block|}
+if|if
+condition|(
+name|GIMP_IS_LIST
+argument_list|(
+name|container
+argument_list|)
+condition|)
+name|gimp_container_view_set_reorderable
+argument_list|(
+name|GIMP_CONTAINER_VIEW
+argument_list|(
+name|editor
+operator|->
+name|view
+argument_list|)
+argument_list|,
+operator|!
+name|GIMP_LIST
+argument_list|(
+name|container
+argument_list|)
+operator|->
+name|sort_func
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|menu_factory
