@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27caebd60108
+DECL|struct|__anon294de7b20108
 block|{
 DECL|member|color
 name|guchar
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27caebd60208
+DECL|struct|__anon294de7b20208
 block|{
 DECL|member|run
 name|gint
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27caebd60308
+DECL|struct|__anon294de7b20308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -778,7 +778,14 @@ decl_stmt|,
 name|alpha2
 decl_stmt|,
 name|alpha3
+decl_stmt|,
+name|alpha4
 decl_stmt|;
+name|alpha4
+operator|=
+operator|*
+name|a4
+expr_stmt|;
 if|if
 condition|(
 operator|*
@@ -1035,6 +1042,13 @@ operator|*
 name|a4
 operator|+
 name|c3
+expr_stmt|;
+operator|*
+name|a4
+operator|*=
+name|alpha4
+operator|/
+literal|255.0
 expr_stmt|;
 block|}
 end_function
