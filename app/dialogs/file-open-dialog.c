@@ -159,6 +159,16 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|=
 name|gimp_file_dialog_new
