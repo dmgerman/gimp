@@ -6767,17 +6767,6 @@ operator|->
 name|active_layer
 argument_list|)
 expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/View/Show Guides"
-argument_list|,
-name|gdisp
-operator|&&
-name|gimage
-operator|->
-name|guides
-argument_list|)
-expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
 literal|"/View/Show Guides"
@@ -6785,17 +6774,6 @@ argument_list|,
 name|gdisp
 operator|&&
 name|appearance
-operator|->
-name|guides
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/View/Snap to Guides"
-argument_list|,
-name|gdisp
-operator|&&
-name|gimage
 operator|->
 name|guides
 argument_list|)
@@ -6811,17 +6789,6 @@ operator|->
 name|snap_to_guides
 argument_list|)
 expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/View/Show Grid"
-argument_list|,
-name|gdisp
-operator|&&
-name|gimage
-operator|->
-name|grid
-argument_list|)
-expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
 literal|"/View/Show Grid"
@@ -6829,17 +6796,6 @@ argument_list|,
 name|gdisp
 operator|&&
 name|appearance
-operator|->
-name|grid
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/View/Snap to Grid"
-argument_list|,
-name|gdisp
-operator|&&
-name|gimage
 operator|->
 name|grid
 argument_list|)

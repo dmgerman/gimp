@@ -304,6 +304,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpGridEditor
+typedef|typedef
+name|struct
+name|_GimpGridEditor
+name|GimpGridEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPaletteEditor
 typedef|typedef
 name|struct

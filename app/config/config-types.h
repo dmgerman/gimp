@@ -88,6 +88,15 @@ name|GimpXmlParser
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpGrid
+typedef|typedef
+name|struct
+name|_GimpGrid
+name|GimpGrid
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif

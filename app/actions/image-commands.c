@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfa541e0108
+DECL|struct|__anon2b7a560c0108
 block|{
 DECL|member|resize
 name|Resize
@@ -1101,6 +1101,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
@@ -1117,6 +1121,15 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimage
+operator|=
+name|GIMP_IMAGE
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1131,9 +1144,9 @@ name|grid_dialog
 operator|=
 name|grid_dialog_new
 argument_list|(
-name|GIMP_DISPLAY
+name|GIMP_IMAGE
 argument_list|(
-name|gdisp
+name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;

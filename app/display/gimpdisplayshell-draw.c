@@ -298,7 +298,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27663c8f0103
+DECL|enum|__anon29a2fa460103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -838,7 +838,7 @@ name|shell
 operator|->
 name|snap_to_grid
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
 name|shell
 operator|->
@@ -1101,7 +1101,7 @@ name|appearance
 operator|.
 name|grid
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
 name|shell
 operator|->
@@ -1199,7 +1199,7 @@ name|fullscreen_appearance
 operator|.
 name|grid
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
 name|shell
 operator|->
@@ -6356,7 +6356,7 @@ switch|switch
 condition|(
 name|grid
 operator|->
-name|type
+name|style
 condition|)
 block|{
 case|case
@@ -6529,7 +6529,7 @@ switch|switch
 condition|(
 name|grid
 operator|->
-name|type
+name|style
 condition|)
 block|{
 case|case

@@ -162,6 +162,11 @@ name|gchar
 modifier|*
 name|default_gradient
 decl_stmt|;
+DECL|member|default_grid
+name|GimpGrid
+modifier|*
+name|default_grid
+decl_stmt|;
 DECL|member|default_font
 name|gchar
 modifier|*

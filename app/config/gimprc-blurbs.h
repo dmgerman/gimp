@@ -147,6 +147,15 @@ value|"Specify a default gradient.  The gradient is searched for in the " \ "spe
 end_define
 
 begin_define
+DECL|macro|DEFAULT_GRID_BLURB
+define|#
+directive|define
+name|DEFAULT_GRID_BLURB
+define|\
+value|"Specify a default image grid."
+end_define
+
+begin_define
 DECL|macro|DEFAULT_IMAGE_WIDTH_BLURB
 define|#
 directive|define

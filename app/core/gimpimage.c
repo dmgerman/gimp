@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpgrid.h"
 end_include
 
 begin_include
@@ -234,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3570d0103
+DECL|enum|__anon29503f2f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3899,6 +3911,36 @@ operator|->
 name|config
 operator|->
 name|default_unit
+expr_stmt|;
+name|gimage
+operator|->
+name|grid
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_GRID
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_config_copy_properties
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|config
+operator|->
+name|default_grid
+argument_list|)
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|gimage
+operator|->
+name|grid
+argument_list|)
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(

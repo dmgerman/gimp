@@ -21,9 +21,9 @@ name|GtkWidget
 modifier|*
 name|grid_dialog_new
 parameter_list|(
-name|GimpDisplay
+name|GimpImage
 modifier|*
-name|gdisp
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl

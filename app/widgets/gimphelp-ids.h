@@ -2329,6 +2329,14 @@ value|"gimp-prefs-new-image-comment"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_NEW_IMAGE_GRID
+define|#
+directive|define
+name|GIMP_HELP_PREFS_NEW_IMAGE_GRID
+value|"gimp-prefs-new-image-grid"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_INTERFACE
 define|#
 directive|define
