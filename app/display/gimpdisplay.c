@@ -7548,7 +7548,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive_locale ("<Image>", N_(menu), (condition))
+value|menus_set_sensitive_locale ("<Image>", N_(menu), (condition) != 0)
 DECL|macro|SET_STATE (menu,condition)
 define|#
 directive|define
@@ -7559,7 +7559,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_state_locale ("<Image>", N_(menu), (condition))
+value|menus_set_state_locale ("<Image>", N_(menu), (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
 literal|"/File/Save"
