@@ -602,7 +602,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|is_app_exit_finish_done
 specifier|static
-name|gint
+name|gboolean
 name|is_app_exit_finish_done
 init|=
 name|FALSE
@@ -611,7 +611,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|we_are_exiting
-name|gint
+name|gboolean
 name|we_are_exiting
 init|=
 name|FALSE
