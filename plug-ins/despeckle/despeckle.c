@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   despeckle()                 - Despeckle an image using a median filter.  *   despeckle_dialog()          -  Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_adaptive_callback()  - Update the filter type...  *   dialog_recursive_callback() - Update the filter type...  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.10  1998/04/24 02:18:39  yosh  *   * Added sharpen to stable dist  *  *   * updated sgi and despeckle plugins  *  *   * plug-ins/xd/xd.c: works with xdelta 0.18. The use of xdelta versions prior  *   to this is not-supported.  *  *   * plug-in/gfig/gfig.c: spelling corrections :)  *  *   * app/fileops.c: applied gimp-gord-980420-0, fixes stale save procs in the  *   file dialog  *  *   * app/text_tool.c: applied gimp-egger-980420-0, text tool optimization  *  *   -Yosh  *  *   Revision 1.17  1998/04/23  14:39:47  mike  *   Updated preview code to handle images with alpha (preview now shows checker  *   pattern).  *   Added call to gtk_window_set_wmclass() to make sure the GIMP icon is used  *   by default.  *  *   Revision 1.16  1998/01/22  14:35:03  mike  *   Added black& white level controls.  *   Fixed bug in despeckle code that caused the borders to darken.  *  *   Revision 1.15  1998/01/21  21:33:47  mike  *   Fixed malloc buffer overflow bug - wasn't realloc'ing buffers  *   when the filter radius changed.  *  *   Revision 1.14  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.13  1997/11/12  15:53:34  mike  *   Added<string.h> header file for Digital UNIX...  *  *   Revision 1.12  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.11  1997/06/12  16:58:11  mike  *   Optimized final despeckle - now grab gimp_tile_height() rows at a time  *   for faster filtering.  *  *   Revision 1.10  1997/06/08  23:30:29  mike  *   Improved the preview update speed significantly by loading the entire  *   source (preview) image first.  *  *   Revision 1.9  1997/06/08  16:48:21  mike  *   Renamed "adaptive" argument to "type" (filter type).  *  *   Revision 1.8  1997/06/08  12:45:09  mike  *   Added recursive filter option.  *   Cleaned up UI.  *  *   Revision 1.7  1997/06/08  04:27:19  mike  *   Updated documentation.  *   Moved plug-in back to original location in menu tree.  *  *   Revision 1.6  1997/06/08  04:24:56  mike  *   Added filter type argument& control.  *  *   Revision 1.5  1997/06/08  04:12:36  mike  *   Added preview window.  *  *   Revision 1.4  1997/06/08  02:18:22  mike  *   Updated to adjust the despeckling radius based upon the window's  *   histogram.  This improves filter quality significantly as surface  *   details are preserved and not blurred...  *  *   Revision 1.3  1997/06/07  01:29:47  mike  *   Added some minor optimizations.  *   Updated version to 1.01.  *   Fixed minor bug in dialog_ientry_update() - was using gdouble instead  *   of gint for new_value...  *  *   Revision 1.2  1997/06/07  01:03:07  mike  *   Updated docos, changed maximum radius to 20.  *  *   Revision 1.1  1997/06/07  00:01:15  mike  *   Initial Revision.  */
+comment|/*  * "$Id$"  *  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   despeckle()                 - Despeckle an image using a median filter.  *   despeckle_dialog()          -  Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_adaptive_callback()  - Update the filter type...  *   dialog_recursive_callback() - Update the filter type...  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.11  1998/04/27 22:00:59  neo  *   Updated sharpen and despeckle. Wow, sharpen is balzingly fast now, while  *   despeckle is still sort of lame...  *  *  *   --Sven  *  *   Revision 1.20  1998/04/27  15:59:17  mike  *   Fixed RGB preview problem...  *  *   Revision 1.19  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.18  1998/04/27  15:39:48  mike  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.17  1998/04/23  14:39:47  mike  *   Updated preview code to handle images with alpha (preview now shows checker  *   pattern).  *   Added call to gtk_window_set_wmclass() to make sure the GIMP icon is used  *   by default.  *  *   Revision 1.16  1998/01/22  14:35:03  mike  *   Added black& white level controls.  *   Fixed bug in despeckle code that caused the borders to darken.  *  *   Revision 1.15  1998/01/21  21:33:47  mike  *   Fixed malloc buffer overflow bug - wasn't realloc'ing buffers  *   when the filter radius changed.  *  *   Revision 1.14  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.13  1997/11/12  15:53:34  mike  *   Added<string.h> header file for Digital UNIX...  *  *   Revision 1.12  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.11  1997/06/12  16:58:11  mike  *   Optimized final despeckle - now grab gimp_tile_height() rows at a time  *   for faster filtering.  *  *   Revision 1.10  1997/06/08  23:30:29  mike  *   Improved the preview update speed significantly by loading the entire  *   source (preview) image first.  *  *   Revision 1.9  1997/06/08  16:48:21  mike  *   Renamed "adaptive" argument to "type" (filter type).  *  *   Revision 1.8  1997/06/08  12:45:09  mike  *   Added recursive filter option.  *   Cleaned up UI.  *  *   Revision 1.7  1997/06/08  04:27:19  mike  *   Updated documentation.  *   Moved plug-in back to original location in menu tree.  *  *   Revision 1.6  1997/06/08  04:24:56  mike  *   Added filter type argument& control.  *  *   Revision 1.5  1997/06/08  04:12:36  mike  *   Added preview window.  *  *   Revision 1.4  1997/06/08  02:18:22  mike  *   Updated to adjust the despeckling radius based upon the window's  *   histogram.  This improves filter quality significantly as surface  *   details are preserved and not blurred...  *  *   Revision 1.3  1997/06/07  01:29:47  mike  *   Added some minor optimizations.  *   Updated version to 1.01.  *   Fixed minor bug in dialog_ientry_update() - was using gdouble instead  *   of gint for new_value...  *  *   Revision 1.2  1997/06/07  01:03:07  mike  *   Updated docos, changed maximum radius to 20.  *  *   Revision 1.1  1997/06/07  00:01:15  mike  *   Initial Revision.  */
 end_comment
 
 begin_include
@@ -46,6 +46,36 @@ file|<libgimp/gimpui.h>
 end_include
 
 begin_comment
+comment|/*  * Macros...  */
+end_comment
+
+begin_define
+DECL|macro|MIN (a,b)
+define|#
+directive|define
+name|MIN
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|)
+value|(((a)< (b)) ? (a) : (b))
+end_define
+
+begin_define
+DECL|macro|MAX (a,b)
+define|#
+directive|define
+name|MAX
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|)
+value|(((a)> (b)) ? (a) : (b))
+end_define
+
+begin_comment
 comment|/*  * Constants...  */
 end_comment
 
@@ -62,7 +92,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.3 - 23 April 1998"
+value|"1.3.1 - 27 April 1998"
 end_define
 
 begin_define
@@ -1199,6 +1229,8 @@ block|{
 comment|/*       * Set the tile cache size...       */
 name|gimp_tile_cache_ntiles
 argument_list|(
+literal|2
+operator|*
 operator|(
 name|drawable
 operator|->
@@ -1212,6 +1244,8 @@ operator|)
 operator|/
 name|gimp_tile_width
 argument_list|()
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/*       * Run!       */
@@ -4274,7 +4308,7 @@ name|memcpy
 argument_list|(
 name|rgb_ptr
 argument_list|,
-name|dst_ptr
+name|preview_dst
 argument_list|,
 name|preview_width
 operator|*
@@ -4554,6 +4588,21 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|int
+name|row
+decl_stmt|,
+comment|/* Looping var */
+name|size
+decl_stmt|;
+comment|/* Size of row buffer */
+name|size
+operator|=
+name|MAX_RADIUS
+operator|*
+literal|2
+operator|+
+literal|1
+expr_stmt|;
 name|g_free
 argument_list|(
 name|preview_src
