@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b99bc7e0108
+DECL|struct|__anon29d9f7ab0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b99bc7e0208
+DECL|struct|__anon29d9f7ab0208
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b99bc7e0308
+DECL|struct|__anon29d9f7ab0308
 block|{
 DECL|member|name
 name|gchar
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b99bc7e0408
+DECL|struct|__anon29d9f7ab0408
 block|{
 DECL|member|list
 name|GSList
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b99bc7e050a
+DECL|union|__anon29d9f7ab050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b99bc7e0608
+DECL|struct|__anon29d9f7ab0608
 block|{
 DECL|member|script_name
 name|gchar
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b99bc7e0708
+DECL|struct|__anon29d9f7ab0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4235,21 +4235,7 @@ name|SF_ADJUSTMENT
 case|:
 name|length
 operator|+=
-name|strlen
-argument_list|(
-name|params
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
-argument_list|)
-operator|+
-literal|1
+name|G_ASCII_DTOSTR_BUF_SIZE
 expr_stmt|;
 break|break;
 case|case
@@ -4584,6 +4570,15 @@ name|SF_ADJUSTMENT
 case|:
 name|text
 operator|=
+name|g_ascii_dtostr
+argument_list|(
+name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|,
 name|params
 index|[
 name|i
@@ -4593,7 +4588,8 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_string
+name|d_float
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -7861,9 +7857,8 @@ name|SF_ADJUSTMENT
 case|:
 name|length
 operator|+=
-literal|24
+name|G_ASCII_DTOSTR_BUF_SIZE
 expr_stmt|;
-comment|/*  Maximum size of float value  */
 break|break;
 case|case
 name|SF_FILENAME
