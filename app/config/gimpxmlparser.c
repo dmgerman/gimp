@@ -414,13 +414,6 @@ condition|(
 name|encoding
 condition|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"Charset encoding conversion from '%s' to 'UTF-8'\n"
-argument_list|,
-name|encoding
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
