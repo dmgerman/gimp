@@ -410,22 +410,24 @@ return|return
 name|NULL
 return|;
 comment|/* make sure the file we are reading is the right type */
-name|fscanf
+name|fgets
 argument_list|(
-name|fp
-argument_list|,
-literal|"%8s"
-argument_list|,
 name|string
+argument_list|,
+literal|255
+argument_list|,
+name|fp
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|strcmp
+name|strncmp
 argument_list|(
 name|string
 argument_list|,
 literal|"GIMP-VBR"
+argument_list|,
+literal|8
 argument_list|)
 operator|==
 literal|0
@@ -434,9 +436,18 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* make sure we are reading a compatible version */
-name|fscanf
+name|fgets
 argument_list|(
+name|string
+argument_list|,
+literal|255
+argument_list|,
 name|fp
+argument_list|)
+expr_stmt|;
+name|sscanf
+argument_list|(
+name|string
 argument_list|,
 literal|"%f"
 argument_list|,
@@ -483,14 +494,40 @@ name|brush
 argument_list|)
 expr_stmt|;
 comment|/* read name */
-name|fscanf
+name|fgets
 argument_list|(
+name|string
+argument_list|,
+literal|255
+argument_list|,
 name|fp
-argument_list|,
-literal|"%255s"
-argument_list|,
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|string
+index|[
+name|strlen
+argument_list|(
 name|string
 argument_list|)
+operator|-
+literal|1
+index|]
+operator|==
+literal|'\n'
+condition|)
+name|string
+index|[
+name|strlen
+argument_list|(
+name|string
+argument_list|)
+operator|-
+literal|1
+index|]
+operator|=
+literal|0
 expr_stmt|;
 name|GIMP_BRUSH
 argument_list|(
@@ -641,7 +678,6 @@ modifier|*
 name|file_name
 parameter_list|)
 block|{
-comment|/* WARNING: untested function */
 name|FILE
 modifier|*
 name|fp
@@ -692,7 +728,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%s"
+literal|"%.255s\n"
 argument_list|,
 name|GIMP_BRUSH
 argument_list|(
@@ -707,7 +743,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%f"
+literal|"%f "
 argument_list|,
 operator|(
 name|float
@@ -725,7 +761,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%f"
+literal|"%f "
 argument_list|,
 name|brush
 operator|->
@@ -737,7 +773,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%f"
+literal|"%f "
 argument_list|,
 name|brush
 operator|->
@@ -749,7 +785,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%f"
+literal|"%f "
 argument_list|,
 name|brush
 operator|->
