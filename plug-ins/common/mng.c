@@ -1114,12 +1114,12 @@ block|}
 end_function
 
 begin_comment
-comment|/* Spins the color map (palette) putting the transparent color at  * index 0 if there is space. If there isn't any space, warn the user  * and forget about transparency.  */
+comment|/* Spins the color map (palette) putting the transparent color at  * index 0 if there is space. If there isn't any space, warn the user  * and forget about transparency. Returns TRUE if the colormap has  * been changed and FALSE otherwise.  */
 end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|respin_cmap (png_structp png_ptr,png_infop png_info_ptr,guchar * remap,gint32 image_id,GimpDrawable * drawable)
 name|respin_cmap
 parameter_list|(
@@ -1428,6 +1428,9 @@ argument_list|,
 name|colors
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 else|else
 block|{
@@ -1451,6 +1454,9 @@ name|colors
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
@@ -1561,6 +1567,9 @@ name|layer_mng_compression_type
 decl_stmt|;
 name|guint8
 name|layer_mng_interlace_type
+decl_stmt|;
+name|gboolean
+name|layer_has_unique_palette
 decl_stmt|;
 name|gchar
 name|frame_mode
@@ -2406,6 +2415,87 @@ literal|0
 return|;
 block|}
 block|}
+if|if
+condition|(
+name|gimp_image_base_type
+argument_list|(
+name|image_id
+argument_list|)
+operator|==
+name|GIMP_INDEXED
+condition|)
+block|{
+name|guchar
+modifier|*
+name|palette
+decl_stmt|;
+name|gint
+name|numcolors
+decl_stmt|;
+name|palette
+operator|=
+name|gimp_image_get_cmap
+argument_list|(
+name|image_id
+argument_list|,
+operator|&
+name|numcolors
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|numcolors
+operator|!=
+literal|0
+operator|&&
+operator|(
+name|ret
+operator|=
+name|mng_putchunk_plte
+argument_list|(
+name|handle
+argument_list|,
+name|numcolors
+argument_list|,
+operator|(
+name|mng_palette8e
+operator|*
+operator|)
+name|palette
+argument_list|)
+operator|)
+operator|!=
+name|MNG_NOERROR
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Unable to mng_putchunk_plte() in mng_save_image()"
+argument_list|)
+expr_stmt|;
+name|mng_cleanup
+argument_list|(
+operator|&
+name|handle
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|userdata
+operator|->
+name|fp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|userdata
+argument_list|)
+expr_stmt|;
+return|return
+literal|0
+return|;
+block|}
+block|}
 for|for
 control|(
 name|i
@@ -2486,6 +2576,10 @@ argument_list|,
 operator|&
 name|layer_offset_y
 argument_list|)
+expr_stmt|;
+name|layer_has_unique_palette
+operator|=
+name|TRUE
 expr_stmt|;
 for|for
 control|(
@@ -3402,6 +3496,8 @@ name|color_type
 operator|=
 name|PNG_COLOR_TYPE_PALETTE
 expr_stmt|;
+name|layer_has_unique_palette
+operator|=
 name|respin_cmap
 argument_list|(
 name|png_ptr
@@ -4376,11 +4472,15 @@ name|mng_putchunk_plte
 argument_list|(
 name|handle
 argument_list|,
+name|layer_has_unique_palette
+condition|?
 operator|(
 name|chunksize
 operator|/
 literal|3
 operator|)
+else|:
+literal|0
 argument_list|,
 operator|(
 name|mng_palette8e
@@ -6254,7 +6354,6 @@ literal|"Write tIME (creation time) chunk"
 block|}
 block|}
 decl_stmt|;
-comment|/* As a workaround for http://bugzilla.gnome.org/show_bug.cgi?id=139947 the    * registration for INDEXED* mode has been disabled.  It should be re-added    * to the list of supported modes when the indexed mode really works. */
 name|gimp_install_procedure
 argument_list|(
 literal|"file_mng_save"
@@ -6480,7 +6579,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* GIMP_EXPORT_CAN_HANDLE_INDEXED commented out - see bug #139947 */
 name|export
 operator|=
 name|gimp_export_image
