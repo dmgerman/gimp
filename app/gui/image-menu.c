@@ -3441,14 +3441,6 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Text"
-argument_list|)
-argument_list|)
-block|,
-name|MENU_BRANCH
-argument_list|(
-name|N_
-argument_list|(
 literal|"/Filters/Web"
 argument_list|)
 argument_list|)
