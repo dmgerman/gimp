@@ -191,7 +191,7 @@ name|widget
 parameter_list|,
 name|ResizeDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -213,7 +213,7 @@ name|off_y
 parameter_list|,
 name|ResizeDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -229,7 +229,7 @@ name|widget
 parameter_list|,
 name|ResizeDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1049,7 +1049,7 @@ argument_list|(
 name|offset_update
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|button
@@ -1074,7 +1074,7 @@ operator|->
 name|child
 argument_list|)
 argument_list|,
-literal|4
+literal|2
 argument_list|,
 literal|0
 argument_list|)
@@ -1113,7 +1113,7 @@ argument_list|(
 name|offset_center_clicked
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 comment|/*  frame to hold GimpOffsetArea  */
@@ -1248,11 +1248,6 @@ argument_list|,
 name|pixbuf
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|pixbuf
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|private
@@ -1266,7 +1261,7 @@ argument_list|(
 name|offsets_changed
 argument_list|)
 argument_list|,
-name|dialog
+name|private
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1379,29 +1374,29 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|resize_dialog_reset (ResizeDialog * dialog)
+DECL|function|resize_dialog_reset (ResizeDialog * private)
 name|resize_dialog_reset
 parameter_list|(
 name|ResizeDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|g_object_set
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|box
 argument_list|,
 literal|"width"
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|old_width
 argument_list|,
 literal|"height"
 argument_list|,
-name|dialog
+name|private
 operator|->
 name|old_height
 argument_list|,
@@ -1412,7 +1407,7 @@ name|gimp_offset_area_set_offsets
 argument_list|(
 name|GIMP_OFFSET_AREA
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|offset
 argument_list|)
@@ -1428,12 +1423,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|resize_bound_off_x (ResizeDialog * dialog,gint offset_x)
+DECL|function|resize_bound_off_x (ResizeDialog * private,gint offset_x)
 name|resize_bound_off_x
 parameter_list|(
 name|ResizeDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|,
 name|gint
 name|offset_x
@@ -1445,14 +1440,14 @@ name|box
 init|=
 name|GIMP_SIZE_BOX
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|box
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|dialog
+name|private
 operator|->
 name|old_width
 operator|<=
@@ -1472,7 +1467,7 @@ name|box
 operator|->
 name|width
 operator|-
-name|dialog
+name|private
 operator|->
 name|old_width
 operator|)
@@ -1489,7 +1484,7 @@ name|box
 operator|->
 name|width
 operator|-
-name|dialog
+name|private
 operator|->
 name|old_width
 operator|)
@@ -1503,12 +1498,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|resize_bound_off_y (ResizeDialog * dialog,gint off_y)
+DECL|function|resize_bound_off_y (ResizeDialog * private,gint off_y)
 name|resize_bound_off_y
 parameter_list|(
 name|ResizeDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|,
 name|gint
 name|off_y
@@ -1520,14 +1515,14 @@ name|box
 init|=
 name|GIMP_SIZE_BOX
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|box
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|dialog
+name|private
 operator|->
 name|old_height
 operator|<=
@@ -1547,7 +1542,7 @@ name|box
 operator|->
 name|height
 operator|-
-name|dialog
+name|private
 operator|->
 name|old_height
 operator|)
@@ -1564,7 +1559,7 @@ name|box
 operator|->
 name|height
 operator|-
-name|dialog
+name|private
 operator|->
 name|old_height
 operator|)
@@ -1578,7 +1573,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|offset_update (GtkWidget * widget,ResizeDialog * dialog)
+DECL|function|offset_update (GtkWidget * widget,ResizeDialog * private)
 name|offset_update
 parameter_list|(
 name|GtkWidget
@@ -1587,7 +1582,7 @@ name|widget
 parameter_list|,
 name|ResizeDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|GimpSizeEntry
@@ -1596,7 +1591,7 @@ name|entry
 init|=
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|offset
 argument_list|)
@@ -1611,7 +1606,7 @@ name|off_x
 operator|=
 name|resize_bound_off_x
 argument_list|(
-name|dialog
+name|private
 argument_list|,
 name|RINT
 argument_list|(
@@ -1628,7 +1623,7 @@ name|off_y
 operator|=
 name|resize_bound_off_y
 argument_list|(
-name|dialog
+name|private
 argument_list|,
 name|RINT
 argument_list|(
@@ -1645,9 +1640,9 @@ name|gimp_offset_area_set_offsets
 argument_list|(
 name|GIMP_OFFSET_AREA
 argument_list|(
-name|dialog
+name|private
 operator|->
-name|offset
+name|area
 argument_list|)
 argument_list|,
 name|off_x
@@ -1661,7 +1656,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|offsets_changed (GtkWidget * area,gint off_x,gint off_y,ResizeDialog * dialog)
+DECL|function|offsets_changed (GtkWidget * area,gint off_x,gint off_y,ResizeDialog * private)
 name|offsets_changed
 parameter_list|(
 name|GtkWidget
@@ -1676,14 +1671,14 @@ name|off_y
 parameter_list|,
 name|ResizeDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|offset
 argument_list|)
@@ -1697,7 +1692,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|offset
 argument_list|)
@@ -1713,7 +1708,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|offset_center_clicked (GtkWidget * widget,ResizeDialog * dialog)
+DECL|function|offset_center_clicked (GtkWidget * widget,ResizeDialog * private)
 name|offset_center_clicked
 parameter_list|(
 name|GtkWidget
@@ -1722,7 +1717,7 @@ name|widget
 parameter_list|,
 name|ResizeDialog
 modifier|*
-name|dialog
+name|private
 parameter_list|)
 block|{
 name|GimpSizeBox
@@ -1731,7 +1726,7 @@ name|box
 init|=
 name|GIMP_SIZE_BOX
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|box
 argument_list|)
@@ -1746,14 +1741,14 @@ name|off_x
 operator|=
 name|resize_bound_off_x
 argument_list|(
-name|dialog
+name|private
 argument_list|,
 operator|(
 name|box
 operator|->
 name|width
 operator|-
-name|dialog
+name|private
 operator|->
 name|old_width
 operator|)
@@ -1765,14 +1760,14 @@ name|off_y
 operator|=
 name|resize_bound_off_y
 argument_list|(
-name|dialog
+name|private
 argument_list|,
 operator|(
 name|box
 operator|->
 name|height
 operator|-
-name|dialog
+name|private
 operator|->
 name|old_height
 operator|)
@@ -1784,7 +1779,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|offset
 argument_list|)
@@ -1798,7 +1793,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|offset
 argument_list|)
@@ -1810,7 +1805,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit_by_name
 argument_list|(
-name|dialog
+name|private
 operator|->
 name|offset
 argument_list|,
