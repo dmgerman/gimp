@@ -40,12 +40,9 @@ name|GIMP_HELP_DEFAULT_LOCALE
 value|"en"
 end_define
 
-begin_define
-DECL|macro|GIMP_HELP_DEBUG
-define|#
-directive|define
-name|GIMP_HELP_DEBUG
-end_define
+begin_comment
+comment|/*  #define GIMP_HELP_DEBUG  */
+end_comment
 
 begin_endif
 endif|#

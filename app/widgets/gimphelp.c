@@ -116,12 +116,9 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|DEBUG_HELP
-define|#
-directive|define
-name|DEBUG_HELP
-end_define
+begin_comment
+comment|/*  #define GIMP_HELP_DEBUG  */
+end_comment
 
 begin_typedef
 DECL|typedef|GimpIdleHelp
@@ -390,7 +387,7 @@ name|NULL
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|DEBUG_HELP
+name|GIMP_HELP_DEBUG
 name|g_printerr
 argument_list|(
 literal|"Help Domain: %s\n"
@@ -1113,7 +1110,7 @@ name|n_return_vals
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|DEBUG_HELP
+name|GIMP_HELP_DEBUG
 name|g_printerr
 argument_list|(
 literal|"Calling help via %s: %s %s %s\n"

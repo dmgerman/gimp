@@ -305,7 +305,10 @@ name|g_list_append
 argument_list|(
 name|locales
 argument_list|,
+name|g_strdup
+argument_list|(
 name|GIMP_HELP_DEFAULT_LOCALE
+argument_list|)
 argument_list|)
 expr_stmt|;
 ifdef|#
