@@ -62,12 +62,12 @@ DECL|macro|GIMP_FONT_POPUP_SIZE
 define|#
 directive|define
 name|GIMP_FONT_POPUP_SIZE
-value|(PANGO_SCALE * 32)
+value|(PANGO_SCALE * 20)
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd97020103
+DECL|enum|__anon27df45a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -851,7 +851,7 @@ name|width
 operator|+
 literal|6
 argument_list|,
-name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
+name|GIMP_VIEWABLE_MAX_POPUP_SIZE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -865,7 +865,7 @@ name|height
 operator|+
 literal|6
 argument_list|,
-name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
+name|GIMP_VIEWABLE_MAX_POPUP_SIZE
 argument_list|)
 expr_stmt|;
 name|font
