@@ -89,7 +89,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon2a0528e90103
+DECL|enum|__anon2b7e48d30103
 DECL|enumerator|ON_ANCHOR
 DECL|enumerator|ON_HANDLE
 DECL|enumerator|ON_CURVE
@@ -108,7 +108,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|enum|__anon2a0528e90203
+DECL|enum|__anon2b7e48d30203
 DECL|enumerator|SEGMENT_LINE
 DECL|enumerator|SEGMENT_BEZIER
 DECL|typedef|SegmentType
@@ -132,6 +132,33 @@ name|PathSegment
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|PathCurve
+typedef|typedef
+name|struct
+name|_path_curve
+name|PathCurve
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|Path
+typedef|typedef
+name|struct
+name|_path
+name|Path
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|PathTool
+typedef|typedef
+name|struct
+name|_path_tool
+name|PathTool
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_path_segment
 struct|struct
@@ -150,11 +177,22 @@ decl_stmt|,
 name|y
 decl_stmt|;
 comment|/* location of starting-point in image space  */
+DECL|member|data
+name|gpointer
+name|data
+decl_stmt|;
+comment|/* Additional data, dependant of segment-type */
 DECL|member|flags
 name|guint32
 name|flags
 decl_stmt|;
 comment|/* Various Flags: Is the Segment active? */
+DECL|member|parent
+name|PathCurve
+modifier|*
+name|parent
+decl_stmt|;
+comment|/* the parent Curve */
 DECL|member|next
 name|PathSegment
 modifier|*
@@ -167,23 +205,9 @@ modifier|*
 name|prev
 decl_stmt|;
 comment|/* Previous Segment or NULL */
-DECL|member|data
-name|gpointer
-name|data
-decl_stmt|;
-comment|/* Additional data, dependant of segment-type */
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|PathCurve
-typedef|typedef
-name|struct
-name|_path_curve
-name|PathCurve
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_path_curve
@@ -202,6 +226,12 @@ modifier|*
 name|cur_segment
 decl_stmt|;
 comment|/* the current segment */
+DECL|member|parent
+name|Path
+modifier|*
+name|parent
+decl_stmt|;
+comment|/* the parent Path */
 DECL|member|next
 name|PathCurve
 modifier|*
@@ -217,15 +247,6 @@ comment|/* Previous Curve or NULL */
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|Path
-typedef|typedef
-name|struct
-name|_path
-name|Path
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_path
@@ -255,18 +276,15 @@ name|guint32
 name|state
 decl_stmt|;
 comment|/* is the path locked? */
+DECL|member|path_tool
+name|PathTool
+modifier|*
+name|path_tool
+decl_stmt|;
+comment|/* The parent Path Tool */
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|PathTool
-typedef|typedef
-name|struct
-name|_path_tool
-name|PathTool
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_path_tool
@@ -314,6 +332,18 @@ name|PathSegment
 modifier|*
 name|click_segment
 decl_stmt|;
+DECL|member|active_count
+name|gint
+name|active_count
+decl_stmt|;
+comment|/* How many segments are active?     */
+comment|/*     * WARNING: single_active_segment may contain non NULL Values     * which point to the nirvana. But they are important!     * The pointer is garantueed to be valid, when active_count==1     */
+DECL|member|single_active_segment
+name|PathSegment
+modifier|*
+name|single_active_segment
+decl_stmt|;
+comment|/* The only active segment */
 DECL|member|state
 name|gint
 name|state

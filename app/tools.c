@@ -1523,7 +1523,7 @@ name|char
 operator|*
 operator|*
 operator|)
-name|measure_bits
+name|path_tool_bits
 block|,
 name|N_
 argument_list|(
