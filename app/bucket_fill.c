@@ -112,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274c22ea0103
+DECL|enum|__anon27a234e70103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -3429,9 +3429,11 @@ end_comment
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_bucket_fill ()
+DECL|function|tools_new_bucket_fill (void)
 name|tools_new_bucket_fill
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -4028,7 +4030,7 @@ name|x
 operator|=
 name|args
 index|[
-literal|7
+literal|6
 index|]
 operator|.
 name|value
@@ -4039,7 +4041,7 @@ name|y
 operator|=
 name|args
 index|[
-literal|8
+literal|7
 index|]
 operator|.
 name|value
