@@ -126,19 +126,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolor.h"
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorspace.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include

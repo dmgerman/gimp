@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -169,18 +181,6 @@ begin_include
 include|#
 directive|include
 file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorspace.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -400,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c1aa9c0108
+DECL|struct|__anon28a54f410108
 block|{
 DECL|member|offset
 name|gdouble
@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c1aa9c0208
+DECL|struct|__anon28a54f410208
 block|{
 DECL|member|PR
 name|PixelRegion

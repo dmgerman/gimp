@@ -27,12 +27,6 @@ directive|include
 file|"gimpmath.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpvector.h"
-end_include
-
 begin_comment
 comment|/*************************/
 end_comment

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -156,19 +162,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorspace.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimplimits.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -681,7 +675,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0fd7b40103
+DECL|enum|__anon2b2b9cc80103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN

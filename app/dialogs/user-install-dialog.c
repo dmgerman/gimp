@@ -59,6 +59,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -114,12 +120,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimplimits.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -654,7 +654,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2adeea650108
+DECL|struct|__anon2aed51fd0108
 block|{
 DECL|member|directory
 name|gboolean

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -145,12 +151,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimphelpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -6920,7 +6920,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae220f80108
+DECL|struct|__anon29f807b30108
 block|{
 DECL|member|gimage
 name|GimpImage

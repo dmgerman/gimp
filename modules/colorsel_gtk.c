@@ -24,19 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmodregister.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorspace.h"
 end_include
 
 begin_include
@@ -353,7 +347,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef345f0108
+DECL|struct|__anon2a31d90b0108
 block|{
 DECL|member|selector
 name|GtkWidget

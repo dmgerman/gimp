@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -145,12 +151,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpsizeentry.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -738,7 +738,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7b5f3b0103
+DECL|enum|__anon27d6b0c00103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING

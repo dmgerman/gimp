@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpadaptivesupersample.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpmath.h"
+file|"gimpadaptivesupersample.h"
 end_include
 
 begin_comment

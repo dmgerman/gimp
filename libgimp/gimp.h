@@ -31,6 +31,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpmath/gimpmath.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpenums.h>
 end_include
 
@@ -103,12 +109,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimppalette.h>
 end_include
 
@@ -152,12 +152,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimputils.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpvector.h>
 end_include
 
 begin_include

@@ -214,12 +214,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorspace.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -266,7 +260,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275836350103
+DECL|enum|__anon2902c4290103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

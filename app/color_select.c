@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"color_area.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorspace.h"
 end_include
 
 begin_include
@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad544890103
+DECL|enum|__anon27d4c2b40103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -227,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad544890203
+DECL|enum|__anon27d4c2b40203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -7253,7 +7253,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad544890308
+DECL|struct|__anon27d4c2b40308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -150,12 +156,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294464600108
+DECL|struct|__anon27d5fe600108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294464600208
+DECL|struct|__anon27d5fe600208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294464600308
+DECL|struct|__anon27d5fe600308
 block|{
 DECL|member|curve_count
 name|CountCurves

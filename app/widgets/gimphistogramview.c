@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_define
@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7325660103
+DECL|enum|__anon2a2147690103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED

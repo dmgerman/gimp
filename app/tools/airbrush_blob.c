@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -30,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
@@ -175,7 +181,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon28bf57800103
+DECL|enum|__anon29bcc13a0103
 typedef|typedef
 enum|enum
 block|{

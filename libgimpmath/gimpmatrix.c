@@ -15,12 +15,6 @@ directive|include
 file|"gimpmath.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpmatrix.h"
-end_include
-
 begin_define
 DECL|macro|EPSILON
 define|#

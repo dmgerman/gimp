@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbilinear.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpmath.h"
+file|"gimpbilinear.h"
 end_include
 
 begin_function

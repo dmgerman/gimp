@@ -25,24 +25,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmathtypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpuitypes.h"
 end_include
 
 begin_comment
 comment|/* stuff that will go to general-purpose libraries */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmatrix.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpvector.h"
-end_include
 
 begin_include
 include|#

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -57,7 +57,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|highlights_add
-name|double
+name|gdouble
 name|highlights_add
 index|[
 literal|256
@@ -67,7 +67,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|midtones_add
-name|double
+name|gdouble
 name|midtones_add
 index|[
 literal|256
@@ -77,7 +77,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|shadows_add
-name|double
+name|gdouble
 name|shadows_add
 index|[
 literal|256
@@ -91,7 +91,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|highlights_sub
-name|double
+name|gdouble
 name|highlights_sub
 index|[
 literal|256
@@ -101,7 +101,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|midtones_sub
-name|double
+name|gdouble
 name|midtones_sub
 index|[
 literal|256
@@ -111,7 +111,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|shadows_sub
-name|double
+name|gdouble
 name|shadows_sub
 index|[
 literal|256
@@ -125,11 +125,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|color_transfer_init ()
+DECL|function|color_transfer_init (void)
 name|color_transfer_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -165,7 +167,7 @@ literal|1
 operator|/
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|i
 operator|/
@@ -194,7 +196,7 @@ name|SQR
 argument_list|(
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|i
 operator|-
@@ -224,7 +226,7 @@ name|SQR
 argument_list|(
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|i
 operator|-

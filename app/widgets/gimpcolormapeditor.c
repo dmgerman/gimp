@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -132,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -147,7 +147,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a119b10103
+DECL|enum|__anon2bfa8fb90103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -5610,7 +5610,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a119b10208
+DECL|struct|__anon2bfa8fb90208
 block|{
 DECL|member|def
 name|GimpImage

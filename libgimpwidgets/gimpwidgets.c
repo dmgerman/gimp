@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptypes.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpmath.h"
 end_include
 
 begin_include
@@ -2409,7 +2409,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11d8d80108
+DECL|struct|__anon28ca96f50108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3293,7 +3293,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11d8d80208
+DECL|struct|__anon28ca96f50208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment

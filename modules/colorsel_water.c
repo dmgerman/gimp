@@ -30,19 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpuitypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorspace.h"
 end_include
 
 begin_include
@@ -55,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpmodule.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -96,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7750e80108
+DECL|struct|__anon2941a43b0108
 block|{
 DECL|member|rgb
 name|GimpRGB

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -159,12 +165,6 @@ directive|include
 file|"tile_manager.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
 begin_comment
 comment|/*  local structures  */
 end_comment
@@ -213,7 +213,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299a33430103
+DECL|enum|__anon296bca3c0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -239,7 +239,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299a33430203
+DECL|enum|__anon296bca3c0203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING

@@ -92,6 +92,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -129,12 +135,6 @@ begin_include
 include|#
 directive|include
 file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorspace.h"
 end_include
 
 begin_function_decl

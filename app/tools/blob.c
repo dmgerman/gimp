@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"blob.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_function
@@ -115,7 +115,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon288071150103
+DECL|enum|__anon29dfef740103
 typedef|typedef
 enum|enum
 block|{

@@ -36,6 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -85,18 +97,6 @@ begin_include
 include|#
 directive|include
 file|"tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorspace.h"
 end_include
 
 begin_include
@@ -217,7 +217,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29eb0f220103
+DECL|enum|__anon2add77250103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY

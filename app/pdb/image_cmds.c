@@ -100,7 +100,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_decl_stmt

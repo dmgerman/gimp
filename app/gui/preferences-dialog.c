@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -138,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baa5dfb0103
+DECL|enum|__anon28c8ca4d0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12543,7 +12543,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2baa5dfb0208
+DECL|struct|__anon28c8ca4d0208
 block|{
 DECL|member|label
 name|gchar
@@ -12772,7 +12772,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2baa5dfb0308
+DECL|struct|__anon28c8ca4d0308
 block|{
 DECL|member|tree_label
 name|gchar

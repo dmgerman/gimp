@@ -29,28 +29,7 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
-DECL|typedef|GimpMatrix3
-typedef|typedef
-name|gdouble
-name|GimpMatrix3
-index|[
-literal|3
-index|]
-index|[
-literal|3
-index|]
-typedef|;
-DECL|typedef|GimpMatrix4
-typedef|typedef
-name|gdouble
-name|GimpMatrix4
-index|[
-literal|4
-index|]
-index|[
-literal|4
-index|]
-typedef|;
+comment|/* For information look into the C source or the html documentation */
 name|void
 name|gimp_matrix3_transform_point
 parameter_list|(

@@ -17,10 +17,6 @@ name|__COLOR_TRANSFER_H__
 end_define
 
 begin_comment
-comment|/*************************/
-end_comment
-
-begin_comment
 comment|/*  color transfer data  */
 end_comment
 

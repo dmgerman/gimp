@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -132,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -201,8 +207,10 @@ name|offset_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -214,8 +222,10 @@ name|offset_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -227,8 +237,10 @@ name|offset_halfheight_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -72,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpsizeentry.h"
 end_include
 
@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08dbcf0108
+DECL|struct|__anon29ebd3540108
 block|{
 DECL|member|dlg
 name|GtkWidget

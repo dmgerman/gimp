@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolortypes.h"
 end_include
 
@@ -25,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"gimprgb.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
 end_include
 
 begin_comment

@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -55,16 +61,10 @@ directive|include
 file|"gimpprogress.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796bb8a0108
+DECL|struct|__anon2b86caca0108
 block|{
 DECL|member|ready
 name|gchar
