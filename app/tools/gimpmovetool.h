@@ -139,6 +139,10 @@ DECL|member|guide_orientation
 name|GimpOrientationType
 name|guide_orientation
 decl_stmt|;
+DECL|member|saved_type
+name|GimpTransformType
+name|saved_type
+decl_stmt|;
 block|}
 struct|;
 end_struct

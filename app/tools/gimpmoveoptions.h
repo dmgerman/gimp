@@ -112,13 +112,13 @@ DECL|member|parent_instence
 name|GimpToolOptions
 name|parent_instence
 decl_stmt|;
+DECL|member|move_type
+name|GimpTransformType
+name|move_type
+decl_stmt|;
 DECL|member|move_current
 name|gboolean
 name|move_current
-decl_stmt|;
-DECL|member|move_mask
-name|gboolean
-name|move_mask
 decl_stmt|;
 block|}
 struct|;
