@@ -44,6 +44,15 @@ value|{ "_NETSCAPE_URL", 0, GIMP_DND_TYPE_NETSCAPE_URL }
 end_define
 
 begin_define
+DECL|macro|GIMP_TARGET_XDS
+define|#
+directive|define
+name|GIMP_TARGET_XDS
+define|\
+value|{ "XdndDirectSave0", 0, GIMP_DND_TYPE_XDS }
+end_define
+
+begin_define
 DECL|macro|GIMP_TARGET_COLOR
 define|#
 directive|define
@@ -239,7 +248,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  uri list  dnd functions  */
+comment|/*  uri list dnd functions  */
 end_comment
 
 begin_typedef
@@ -858,6 +867,38 @@ begin_function_decl
 name|GimpViewable
 modifier|*
 name|gimp_dnd_get_drag_data
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  Direct Save Protocol (XDS)  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_dnd_xds_source_add
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GimpDndDragViewableFunc
+name|get_image_func
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dnd_xds_source_remove
 parameter_list|(
 name|GtkWidget
 modifier|*
