@@ -62,7 +62,21 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|ProcRecord
+name|text_tool_proc_ext
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
 name|text_tool_get_extents_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|text_tool_get_extents_proc_ext
 decl_stmt|;
 end_decl_stmt
 
