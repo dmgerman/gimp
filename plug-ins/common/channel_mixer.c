@@ -145,7 +145,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2976759f0103
+DECL|enum|__anon298014890103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976759f0208
+DECL|struct|__anon298014890208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976759f0308
+DECL|struct|__anon298014890308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976759f0408
+DECL|struct|__anon298014890408
 block|{
 DECL|member|width
 name|gint
@@ -3821,7 +3821,7 @@ operator|=
 operator|(
 name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

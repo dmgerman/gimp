@@ -150,66 +150,6 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HACK so we compile with old gtks.  Won't work on machines where the  * size of an int is different from the size of a void*, eg Alphas */
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GINT_TO_POINTER
-end_ifndef
-
-begin_warning
-warning|#
-directive|warning
-warning|glib did not define GINT_TO_POINTER, assuming same size as int
-end_warning
-
-begin_define
-DECL|macro|GINT_TO_POINTER (x)
-define|#
-directive|define
-name|GINT_TO_POINTER
-parameter_list|(
-name|x
-parameter_list|)
-value|((gpointer)(x))
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GPOINTER_TO_INT
-end_ifndef
-
-begin_warning
-warning|#
-directive|warning
-warning|glib did not define GPOINTER_TO_INT, assuming same size as int
-end_warning
-
-begin_define
-DECL|macro|GPOINTER_TO_INT (x)
-define|#
-directive|define
-name|GPOINTER_TO_INT
-parameter_list|(
-name|x
-parameter_list|)
-value|((int)(x))
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
 comment|/*#define TIMINGS*/
 end_comment
 
@@ -455,7 +395,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4989760108
+DECL|struct|__anon2b68ad610108
 block|{
 DECL|member|name
 specifier|const
@@ -715,7 +655,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4989760208
+DECL|struct|__anon2b68ad610208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -788,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4989760308
+DECL|struct|__anon2b68ad610308
 block|{
 DECL|member|input_spi
 name|gint
@@ -818,7 +758,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4989760408
+DECL|struct|__anon2b68ad610408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -925,7 +865,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4989760508
+DECL|struct|__anon2b68ad610508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1096,7 +1036,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4989760608
+DECL|struct|__anon2b68ad610608
 block|{
 DECL|member|name
 specifier|const
@@ -6783,7 +6723,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4989760708
+DECL|struct|__anon2b68ad610708
 block|{
 DECL|member|index
 name|gint
