@@ -950,9 +950,6 @@ specifier|const
 name|gchar
 modifier|*
 name|alternate_gimprc
-parameter_list|,
-name|gboolean
-name|use_cpu_accel
 parameter_list|)
 function_decl|;
 end_function_decl

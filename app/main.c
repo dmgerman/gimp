@@ -169,16 +169,17 @@ else|#
 directive|else
 end_else
 
-begin_function_decl
+begin_decl_stmt
 specifier|static
 name|void
 name|gimp_sigfatal_handler
-parameter_list|(
+argument_list|(
 name|gint
 name|sig_num
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_NORETURN
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -219,16 +220,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 specifier|static
 name|void
 name|gimp_text_console_exit
-parameter_list|(
+argument_list|(
 name|gint
 name|status
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_NORETURN
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  *  argv processing:  *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  *      The exception is the batch switch.  When this is  *      encountered, all remaining args are treated as batch  *      commands.  */
@@ -625,6 +627,9 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
+name|gboolean
+name|success
+decl_stmt|;
 name|g_type_init
 argument_list|()
 expr_stmt|;
@@ -642,12 +647,21 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp_text_console_exit
-argument_list|(
+name|success
+operator|=
 name|gimp_config_dump
 argument_list|(
 name|format
 argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_text_console_exit
+argument_list|(
+name|success
 condition|?
 name|EXIT_SUCCESS
 else|:
@@ -1803,7 +1817,7 @@ argument_list|,
 name|stack_trace_mode
 argument_list|)
 expr_stmt|;
-name|app_init
+name|app_run
 argument_list|(
 name|full_prog_name
 argument_list|,

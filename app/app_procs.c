@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -206,6 +212,17 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|loop
+specifier|static
+name|GMainLoop
+modifier|*
+name|loop
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -239,8 +256,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_init (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_mmx,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
-name|app_init
+DECL|function|app_run (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
+name|app_run
 parameter_list|(
 specifier|const
 name|gchar
@@ -298,7 +315,7 @@ name|gboolean
 name|use_shm
 parameter_list|,
 name|gboolean
-name|use_mmx
+name|use_cpu_accel
 parameter_list|,
 name|gboolean
 name|console_messages
@@ -584,8 +601,19 @@ argument_list|,
 name|alternate_system_gimprc
 argument_list|,
 name|alternate_gimprc
+argument_list|)
+expr_stmt|;
+comment|/*  initialize lowlevel stuff  */
+name|base_init
+argument_list|(
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|the_gimp
+operator|->
+name|config
+argument_list|)
 argument_list|,
-name|use_mmx
+name|use_cpu_accel
 argument_list|)
 expr_stmt|;
 if|if
@@ -870,10 +898,6 @@ condition|(
 name|no_interface
 condition|)
 block|{
-name|GMainLoop
-modifier|*
-name|loop
-decl_stmt|;
 name|loop
 operator|=
 name|g_main_loop_new
@@ -915,6 +939,14 @@ name|gtk_main
 argument_list|()
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|the_gimp
+argument_list|)
+expr_stmt|;
+name|base_exit
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -969,20 +1001,18 @@ argument_list|(
 literal|"EXIT: app_exit_after_callback\n"
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+if|if
+condition|(
+name|loop
+condition|)
+name|g_main_loop_quit
 argument_list|(
-name|gimp
+name|loop
 argument_list|)
 expr_stmt|;
-name|the_gimp
-operator|=
-name|NULL
-expr_stmt|;
-comment|/*  There used to be foo_main_quit() here, but there's a chance    *  that foo_main() was never called before we reach this point. --Sven    */
-name|exit
-argument_list|(
-literal|0
-argument_list|)
+else|else
+name|gtk_main_quit
+argument_list|()
 expr_stmt|;
 return|return
 name|FALSE

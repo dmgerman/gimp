@@ -188,7 +188,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|base_init (GimpBaseConfig * config,gboolean use_mmx)
+DECL|function|base_init (GimpBaseConfig * config,gboolean use_cpu_accel)
 name|base_init
 parameter_list|(
 name|GimpBaseConfig
@@ -196,7 +196,7 @@ modifier|*
 name|config
 parameter_list|,
 name|gboolean
-name|use_mmx
+name|use_cpu_accel
 parameter_list|)
 block|{
 name|gchar
@@ -228,7 +228,10 @@ argument_list|)
 expr_stmt|;
 name|base_config
 operator|=
+name|g_object_ref
+argument_list|(
 name|config
+argument_list|)
 expr_stmt|;
 name|tile_cache_init
 argument_list|(
@@ -337,12 +340,13 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+comment|/*  FIXME: pass use_cpu_accel to GimpComposite  */
 name|gimp_composite_init
 argument_list|()
 expr_stmt|;
 name|paint_funcs_setup
 argument_list|(
-name|use_mmx
+name|use_cpu_accel
 argument_list|)
 expr_stmt|;
 block|}
@@ -356,6 +360,13 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|base_config
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|swapping_free
 argument_list|()
 expr_stmt|;
@@ -375,6 +386,11 @@ argument_list|,
 name|base_tile_cache_size_notify
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|base_config
 argument_list|)
 expr_stmt|;
 name|base_config

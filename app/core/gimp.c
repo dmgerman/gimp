@@ -64,12 +64,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -261,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac7a9e0103
+DECL|enum|__anon298751a20103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1866,9 +1860,6 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|base_exit
-argument_list|()
-expr_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -3341,7 +3332,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_load_config (Gimp * gimp,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,gboolean use_cpu_accel)
+DECL|function|gimp_load_config (Gimp * gimp,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc)
 name|gimp_load_config
 parameter_list|(
 name|Gimp
@@ -3357,9 +3348,6 @@ specifier|const
 name|gchar
 modifier|*
 name|alternate_gimprc
-parameter_list|,
-name|gboolean
-name|use_cpu_accel
 parameter_list|)
 block|{
 name|GimpRc
@@ -3420,17 +3408,6 @@ argument_list|,
 name|gimp
 operator|->
 name|be_verbose
-argument_list|)
-expr_stmt|;
-comment|/*  initialize lowlevel stuff  */
-name|base_init
-argument_list|(
-name|GIMP_BASE_CONFIG
-argument_list|(
-name|gimprc
-argument_list|)
-argument_list|,
-name|use_cpu_accel
 argument_list|)
 expr_stmt|;
 name|gimp

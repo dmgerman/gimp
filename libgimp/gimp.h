@@ -645,15 +645,15 @@ begin_comment
 comment|/* Forcefully causes the gimp library to exit and  *  close down its connection to main gimp application.  */
 end_comment
 
-begin_function_decl
+begin_decl_stmt
 name|void
-name|G_GNUC_NORETURN
 name|gimp_quit
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_NORETURN
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/* Install a procedure in the procedure database.  */

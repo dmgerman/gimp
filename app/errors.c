@@ -138,6 +138,7 @@ end_comment
 
 begin_function_decl
 specifier|static
+name|G_GNUC_NORETURN
 name|void
 name|gimp_eek
 parameter_list|(

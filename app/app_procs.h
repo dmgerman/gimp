@@ -52,7 +52,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|app_init
+name|app_run
 parameter_list|(
 specifier|const
 name|gchar
@@ -110,7 +110,7 @@ name|gboolean
 name|use_shm
 parameter_list|,
 name|gboolean
-name|use_mmx
+name|use_cpu_accel
 parameter_list|,
 name|gboolean
 name|console_messages

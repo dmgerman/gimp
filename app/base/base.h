@@ -25,7 +25,7 @@ modifier|*
 name|config
 parameter_list|,
 name|gboolean
-name|use_mmx
+name|use_cpu_accel
 parameter_list|)
 function_decl|;
 end_function_decl
