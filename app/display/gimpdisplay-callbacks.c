@@ -879,8 +879,6 @@ expr_stmt|;
 name|info_window_update_RGB
 argument_list|(
 name|gdisp
-operator|->
-name|window_info_dialog
 argument_list|,
 operator|-
 literal|1

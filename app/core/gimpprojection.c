@@ -1581,12 +1581,6 @@ argument_list|)
 expr_stmt|;
 comment|/*  remove dialogs before removing the image because they may want to    *  disconnect from image signals    */
 comment|/*  insure that if a window information dialog exists, it is removed  */
-if|if
-condition|(
-name|gdisp
-operator|->
-name|window_info_dialog
-condition|)
 name|info_window_free
 argument_list|(
 name|gdisp
@@ -2951,17 +2945,9 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  update the gdisplay's info dialog  */
-if|if
-condition|(
-name|gdisp
-operator|->
-name|window_info_dialog
-condition|)
 name|info_window_update
 argument_list|(
 name|gdisp
-operator|->
-name|window_info_dialog
 argument_list|)
 expr_stmt|;
 comment|/* update the gdisplay's qmask buttons */
@@ -4842,8 +4828,6 @@ expr_stmt|;
 name|info_window_update_RGB
 argument_list|(
 name|gdisp
-operator|->
-name|window_info_dialog
 argument_list|,
 operator|-
 literal|1
@@ -4954,8 +4938,6 @@ expr_stmt|;
 name|info_window_update_RGB
 argument_list|(
 name|gdisp
-operator|->
-name|window_info_dialog
 argument_list|,
 name|t_x
 argument_list|,
