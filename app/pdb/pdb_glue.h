@@ -65,6 +65,30 @@ value|gimp_object_get_name(GIMP_OBJECT(l))
 end_define
 
 begin_define
+DECL|macro|gimp_layer_get_visible (l)
+define|#
+directive|define
+name|gimp_layer_get_visible
+parameter_list|(
+name|l
+parameter_list|)
+value|gimp_drawable_get_visible(GIMP_DRAWABLE(l))
+end_define
+
+begin_define
+DECL|macro|gimp_layer_set_visible (l,v)
+define|#
+directive|define
+name|gimp_layer_set_visible
+parameter_list|(
+name|l
+parameter_list|,
+name|v
+parameter_list|)
+value|gimp_drawable_set_visible(GIMP_DRAWABLE(l),(v))
+end_define
+
+begin_define
 DECL|macro|gimp_layer_set_tattoo (l,t)
 define|#
 directive|define
@@ -110,6 +134,30 @@ parameter_list|(
 name|c
 parameter_list|)
 value|gimp_object_get_name(GIMP_OBJECT(c))
+end_define
+
+begin_define
+DECL|macro|gimp_channel_get_visible (c)
+define|#
+directive|define
+name|gimp_channel_get_visible
+parameter_list|(
+name|c
+parameter_list|)
+value|gimp_drawable_get_visible(GIMP_DRAWABLE(c))
+end_define
+
+begin_define
+DECL|macro|gimp_channel_set_visible (c,v)
+define|#
+directive|define
+name|gimp_channel_set_visible
+parameter_list|(
+name|c
+parameter_list|,
+name|v
+parameter_list|)
+value|gimp_drawable_set_visible(GIMP_DRAWABLE(c),(v))
 end_define
 
 begin_define

@@ -86,6 +86,11 @@ DECL|member|parent_instance
 name|GimpListItem
 name|parent_instance
 decl_stmt|;
+DECL|member|eye_button
+name|GtkWidget
+modifier|*
+name|eye_button
+decl_stmt|;
 block|}
 struct|;
 DECL|struct|_GimpDrawableListItemClass

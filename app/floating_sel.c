@@ -778,14 +778,15 @@ name|floating_sel
 operator|=
 name|NULL
 expr_stmt|;
+name|gimp_drawable_set_visible
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|visible
-operator|=
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 comment|/*  if the floating selection exceeds the attached layer's extents,       update the new layer  */
 comment|/*  I don't think that the preview is ever valid as is, since the layer       will be added on top of the others.  Revert this if I'm wrong.       msw@gimp.org   */
@@ -1820,7 +1821,7 @@ operator|)
 condition|)
 return|return;
 comment|/*  What this function does is composite the specified area of the    *  drawble with the floating selection.  We do this when the gimage    *  is constructed, before any other composition takes place.    */
-comment|/*  If this isn't the first composite, restore the image underneath  */
+comment|/*  If this isn't the first composite,    *  restore the image underneath    */
 if|if
 condition|(
 operator|!
@@ -1846,12 +1847,13 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
+name|gimp_drawable_get_visible
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|visible
+argument_list|)
 condition|)
 name|layer
 operator|->
@@ -1861,15 +1863,16 @@ name|initial
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  First restore what's behind the image if necessary, then check for visibility  */
+comment|/*  First restore what's behind the image if necessary,    *  then check for visibility    */
 if|if
 condition|(
+name|gimp_drawable_get_visible
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|visible
+argument_list|)
 condition|)
 block|{
 comment|/*  Find the minimum area we need to composite -- in gimage space  */

@@ -5034,12 +5034,13 @@ argument_list|)
 operator|->
 name|height
 operator|&&
+name|gimp_drawable_get_visible
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|visible
+argument_list|)
 condition|)
 block|{
 comment|/*  If the point is inside, and the layer has no        *  alpha channel, success!        */

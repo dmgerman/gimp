@@ -2027,14 +2027,15 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  saved selections are not visible by default  */
+name|gimp_drawable_set_visible
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|new_channel
 argument_list|)
-operator|->
-name|visible
-operator|=
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel
 argument_list|(

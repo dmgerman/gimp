@@ -731,7 +731,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3b02890103
+DECL|enum|__anon2913862c0103
 block|{
 DECL|enumerator|ACTIVE_LAYER_CHANGED
 name|ACTIVE_LAYER_CHANGED
@@ -7085,7 +7085,7 @@ argument_list|(
 name|layer
 argument_list|)
 operator|&&
-name|gimp_drawable_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7093,6 +7093,7 @@ name|layer
 argument_list|)
 argument_list|)
 condition|)
+block|{
 name|reverse_list
 operator|=
 name|g_slist_prepend
@@ -7102,6 +7103,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 while|while
 condition|(
@@ -7616,7 +7618,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7817,7 +7819,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8078,7 +8080,7 @@ comment|/* It's the only layer.  */
 block|(gimp_layer_has_alpha ((GimpLayer *) (gimage->layers->data)))&&
 comment|/* It's !flat.  */
 comment|/* It's visible.         */
-block|(gimp_drawable_visible (GIMP_DRAWABLE (gimage->layers->data)))&&       (gimp_drawable_width (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->width)&&       (gimp_drawable_height (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->height)&&
+block|(gimp_drawable_get_visible (GIMP_DRAWABLE (gimage->layers->data)))&&       (gimp_drawable_width (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->width)&&       (gimp_drawable_height (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->height)&&
 comment|/* Covers all.           */
 comment|/* Not indexed.          */
 block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE (gimage->layers->data)))&&       (((GimpLayer *)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
@@ -11460,7 +11462,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11634,7 +11636,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11809,7 +11811,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13233,14 +13235,15 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Update the gimage  */
+name|gimp_drawable_set_visible
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|merge_layer
 argument_list|)
-operator|->
-name|visible
-operator|=
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 name|gtk_signal_emit
 argument_list|(
@@ -14934,7 +14937,7 @@ expr_stmt|;
 comment|/*  if channel is visible, update the image  */
 if|if
 condition|(
-name|gimp_drawable_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -16532,7 +16535,7 @@ expr_stmt|;
 comment|/*  only add layers that are visible to the list  */
 if|if
 condition|(
-name|gimp_drawable_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
