@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3df26a0103
+DECL|enum|__anon27daba920103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3df26a0208
+DECL|struct|__anon27daba920208
 block|{
 DECL|member|amount
 name|gdouble
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3df26a0308
+DECL|struct|__anon27daba920308
 block|{
 DECL|member|run
 name|gboolean
@@ -641,7 +641,7 @@ condition|(
 name|nparams
 operator|!=
 literal|5
-operator|||
+operator|&&
 name|nparams
 operator|!=
 literal|6
