@@ -198,7 +198,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277b93dc0103
+DECL|enum|__anon2ac2c5500103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -247,6 +247,12 @@ decl_stmt|;
 name|GTokenType
 name|token
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -267,6 +273,9 @@ operator|=
 name|gimp_scanner_new
 argument_list|(
 name|filename
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -511,6 +520,19 @@ literal|"fatal parse error"
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_message
+argument_list|(
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 block|}
