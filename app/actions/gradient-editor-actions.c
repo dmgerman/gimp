@@ -1013,7 +1013,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_Sinusodial"
+literal|"_Sinusoidal"
 argument_list|)
 block|,
 name|NULL

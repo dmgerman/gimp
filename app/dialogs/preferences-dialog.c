@@ -6547,7 +6547,7 @@ literal|"1:1"
 argument_list|,
 name|_
 argument_list|(
-literal|"Inital Zoom Ratio:"
+literal|"Initial Zoom Ratio:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6865,7 +6865,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29d1d0e30108
+DECL|struct|__anon2bf2d0f60108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7253,10 +7253,13 @@ name|iter
 argument_list|,
 literal|0
 argument_list|,
+name|gettext
+argument_list|(
 name|format_names
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|,
 literal|1
 argument_list|,
@@ -9306,7 +9309,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d1d0e30208
+DECL|struct|__anon2bf2d0f60208
 block|{
 DECL|member|label
 specifier|const
@@ -9463,7 +9466,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d1d0e30308
+DECL|struct|__anon2bf2d0f60308
 block|{
 DECL|member|tree_label
 specifier|const

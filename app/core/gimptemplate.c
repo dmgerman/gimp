@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9d8a80103
+DECL|enum|__anon29b3ef750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -477,7 +477,7 @@ literal|"xresolution"
 argument_list|,
 name|N_
 argument_list|(
-literal|"The horizonal image resolution."
+literal|"The horizontal image resolution."
 argument_list|)
 argument_list|,
 literal|72.0
