@@ -392,6 +392,10 @@ operator|=
 name|gtk_dialog_new
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|title
+condition|)
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
@@ -435,7 +439,7 @@ operator|->
 name|action_area
 argument_list|)
 argument_list|,
-literal|2
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_set_homogeneous
@@ -465,7 +469,7 @@ argument_list|(
 name|hbbox
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

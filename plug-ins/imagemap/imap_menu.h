@@ -29,7 +29,7 @@ file|"imap_mru.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon290210f90108
+DECL|struct|__anon2a958c670108
 typedef|typedef
 struct|struct
 block|{
@@ -72,6 +72,11 @@ DECL|member|edit
 name|GtkWidget
 modifier|*
 name|edit
+decl_stmt|;
+DECL|member|deselect_all
+name|GtkWidget
+modifier|*
+name|deselect_all
 decl_stmt|;
 DECL|member|arrow
 name|GtkWidget
@@ -182,6 +187,10 @@ decl_stmt|;
 DECL|member|cmd_select_all
 name|CommandFactory_t
 name|cmd_select_all
+decl_stmt|;
+DECL|member|cmd_deselect_all
+name|CommandFactory_t
+name|cmd_deselect_all
 decl_stmt|;
 DECL|member|cmd_clear
 name|CommandFactory_t
@@ -407,6 +416,20 @@ name|command
 parameter_list|)
 define|\
 value|((menu)->cmd_select_all = (command))
+end_define
+
+begin_define
+DECL|macro|menu_set_deselect_all_command (menu,command)
+define|#
+directive|define
+name|menu_set_deselect_all_command
+parameter_list|(
+name|menu
+parameter_list|,
+name|command
+parameter_list|)
+define|\
+value|((menu)->cmd_deselect_all = (command))
 end_define
 
 begin_define

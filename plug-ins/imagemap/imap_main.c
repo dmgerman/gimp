@@ -5948,6 +5948,27 @@ begin_function
 specifier|static
 name|Command_t
 modifier|*
+DECL|function|factory_deselect_all (void)
+name|factory_deselect_all
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|unselect_all_command_new
+argument_list|(
+name|_shapes
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|Command_t
+modifier|*
 DECL|function|factory_clear (void)
 name|factory_clear
 parameter_list|(
@@ -6614,6 +6635,13 @@ argument_list|(
 name|menu
 argument_list|,
 name|factory_select_all
+argument_list|)
+expr_stmt|;
+name|menu_set_deselect_all_command
+argument_list|(
+name|menu
+argument_list|,
+name|factory_deselect_all
 argument_list|)
 expr_stmt|;
 name|menu_set_clear_command
