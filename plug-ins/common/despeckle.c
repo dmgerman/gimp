@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/*  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -189,7 +189,7 @@ name|a
 parameter_list|,
 name|b
 parameter_list|)
-value|{ register  guchar* t = (a); (a) = (b); (b) = t; }
+value|{ register  guchar *t = (a); (a) = (b); (b) = t; }
 end_define
 
 begin_comment
@@ -2367,10 +2367,11 @@ name|guchar
 modifier|*
 name|pixel
 decl_stmt|;
-name|gdouble
-name|prog
-decl_stmt|,
-name|maxprog
+name|guint
+name|progress
+decl_stmt|;
+name|guint
+name|max_progress
 decl_stmt|;
 if|if
 condition|(
@@ -2392,15 +2393,15 @@ literal|0.0
 argument_list|)
 expr_stmt|;
 block|}
-name|maxprog
+name|progress
+operator|=
+literal|0
+expr_stmt|;
+name|max_progress
 operator|=
 name|width
 operator|*
 name|height
-expr_stmt|;
-name|prog
-operator|=
-literal|0
 expr_stmt|;
 name|diameter
 operator|=
@@ -2480,15 +2481,15 @@ name|x
 operator|>=
 name|radius
 operator|&&
-name|y
-operator|>=
-name|radius
-operator|&&
 name|x
 operator|+
 name|radius
 operator|<
 name|width
+operator|&&
+name|y
+operator|>=
+name|radius
 operator|&&
 name|y
 operator|+
@@ -2806,7 +2807,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|prog
+name|progress
 operator|+=
 name|height
 expr_stmt|;
@@ -2817,15 +2818,21 @@ name|preview
 operator|&&
 name|x
 operator|%
-literal|5
+literal|20
 operator|==
 literal|0
 condition|)
 name|gimp_progress_update
 argument_list|(
-name|prog
+operator|(
+name|gdouble
+operator|)
+name|progress
 operator|/
-name|maxprog
+operator|(
+name|gdouble
+operator|)
+name|max_progress
 argument_list|)
 expr_stmt|;
 block|}

@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287b31af0103
+DECL|enum|__anon28f47ff80103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -43,7 +43,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b31af0208
+DECL|struct|__anon28f47ff80208
 block|{
 DECL|member|evenness
 name|gint
@@ -1094,7 +1094,7 @@ condition|(
 operator|(
 name|row
 operator|%
-literal|5
+literal|20
 operator|)
 operator|==
 literal|0

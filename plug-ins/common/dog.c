@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2798a8db0108
+DECL|struct|__anon2bf8c2ee0108
 block|{
 DECL|member|inner
 name|gdouble
@@ -3089,8 +3089,6 @@ operator|*
 name|width
 operator|*
 name|height
-operator|*
-name|radius
 expr_stmt|;
 comment|/*  First the vertical pass  */
 name|radius
@@ -3545,15 +3543,13 @@ block|{
 name|progress
 operator|+=
 name|height
-operator|*
-name|radius
 expr_stmt|;
 if|if
 condition|(
 operator|(
 name|col
 operator|%
-literal|5
+literal|20
 operator|)
 operator|==
 literal|0
@@ -3565,9 +3561,11 @@ operator|*
 operator|(
 name|pass
 operator|+
+operator|(
 name|progress
 operator|/
 name|max_progress
+operator|)
 operator|)
 argument_list|)
 expr_stmt|;
@@ -3936,15 +3934,13 @@ block|{
 name|progress
 operator|+=
 name|width
-operator|*
-name|radius
 expr_stmt|;
 if|if
 condition|(
 operator|(
 name|row
 operator|%
-literal|5
+literal|20
 operator|)
 operator|==
 literal|0
@@ -3956,9 +3952,11 @@ operator|*
 operator|(
 name|pass
 operator|+
+operator|(
 name|progress
 operator|/
 name|max_progress
+operator|)
 operator|)
 argument_list|)
 expr_stmt|;

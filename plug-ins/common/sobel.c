@@ -50,7 +50,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55f2b70108
+DECL|struct|__anon2c8180a70108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -2010,7 +2010,7 @@ condition|(
 operator|(
 name|row
 operator|%
-literal|5
+literal|20
 operator|)
 operator|==
 literal|0

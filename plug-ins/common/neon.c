@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bb3f3e0108
+DECL|struct|__anon29f4b9f20108
 block|{
 DECL|member|radius
 name|gdouble
@@ -1713,7 +1713,7 @@ condition|(
 operator|(
 name|col
 operator|%
-literal|5
+literal|20
 operator|)
 operator|==
 literal|0
@@ -2265,7 +2265,7 @@ condition|(
 operator|(
 name|row
 operator|%
-literal|5
+literal|20
 operator|)
 operator|==
 literal|0

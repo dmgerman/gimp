@@ -1371,7 +1371,7 @@ condition|(
 operator|(
 name|row
 operator|%
-literal|5
+literal|20
 operator|)
 operator|==
 literal|0
@@ -1777,7 +1777,7 @@ condition|(
 operator|(
 name|row
 operator|%
-literal|5
+literal|20
 operator|)
 operator|==
 literal|0
