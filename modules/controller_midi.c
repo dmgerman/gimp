@@ -39,6 +39,12 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<time.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -96,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298561aa0108
+DECL|struct|__anon2ac633990108
 block|{
 DECL|member|name
 name|gchar
@@ -116,7 +122,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon298561aa0203
+DECL|enum|__anon2ac633990203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
