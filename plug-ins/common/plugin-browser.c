@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ba15a40103
+DECL|enum|__anon2b6f06e50103
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ba15a40203
+DECL|enum|__anon2b6f06e50203
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ba15a40308
+DECL|struct|__anon2b6f06e50308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -191,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ba15a40408
+DECL|struct|__anon2b6f06e50408
 block|{
 DECL|member|menu
 name|gchar
@@ -2821,7 +2821,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Tree view"
+literal|"Tree View"
 argument_list|)
 argument_list|)
 expr_stmt|;
