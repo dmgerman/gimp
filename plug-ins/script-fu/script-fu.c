@@ -633,10 +633,7 @@ argument_list|(
 literal|"A scheme interpreter for scripting GIMP operations"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"More help here later"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5334,13 +5331,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
 literal|"script_fu_refresh"
 argument_list|,
+name|_
+argument_list|(
 literal|"Re-read all available scripts"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Re-read all available scripts"
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5348,7 +5354,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Toolbox>/Xtns/Script-Fu/Refresh"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
