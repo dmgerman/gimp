@@ -165,9 +165,10 @@ DECL|member|thumb_mtime
 name|gint64
 name|thumb_mtime
 decl_stmt|;
-DECL|member|_reserved_1
-name|gpointer
-name|_reserved_1
+DECL|member|image_mimetype
+name|gchar
+modifier|*
+name|image_mimetype
 decl_stmt|;
 DECL|member|_reserved_2
 name|gpointer
