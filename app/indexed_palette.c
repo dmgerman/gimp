@@ -1916,6 +1916,9 @@ if|if
 condition|(
 operator|!
 name|indexedP
+operator|||
+operator|!
+name|gimage
 condition|)
 return|return;
 if|if
@@ -2469,7 +2472,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bff7cf10108
+DECL|struct|__anon29e4c55f0108
 typedef|typedef
 struct|struct
 block|{
