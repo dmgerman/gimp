@@ -296,7 +296,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5073370108
+DECL|struct|__anon2b54bd700108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2807,7 +2807,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2c5073370208
+DECL|struct|__anon2b54bd700208
 struct|struct
 block|{
 DECL|member|label
@@ -2847,7 +2847,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2c5073370308
+DECL|struct|__anon2b54bd700308
 struct|struct
 block|{
 DECL|member|label
@@ -2916,7 +2916,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2c5073370408
+DECL|struct|__anon2b54bd700408
 struct|struct
 block|{
 DECL|member|label
@@ -5697,7 +5697,7 @@ operator|)
 name|file_prefs_spinbutton_callback
 argument_list|,
 operator|&
-name|last_opened_size
+name|edit_last_opened_size
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
