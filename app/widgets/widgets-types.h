@@ -651,6 +651,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpThumbBox
+typedef|typedef
+name|struct
+name|_GimpThumbBox
+name|GimpThumbBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTextEditor
 typedef|typedef
 name|struct
