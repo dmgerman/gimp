@@ -176,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb04bd0103
+DECL|enum|__anon293764690103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1113,7 +1113,7 @@ condition|(
 name|pixmap_buf
 condition|)
 block|{
-comment|/* TODO: the scale function should scale the pixmap and the 	   *  mask in one run 	   */
+comment|/* TODO: the scale function should scale the pixmap and the            *  mask in one run            */
 name|pixmap_buf
 operator|=
 name|brush_scale_pixmap
@@ -1433,6 +1433,8 @@ return|return
 name|gimp_brush_generated_new
 argument_list|(
 name|name
+argument_list|,
+name|GIMP_BRUSH_GENERATED_CIRCLE
 argument_list|,
 literal|5.0
 argument_list|,
@@ -2696,7 +2698,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon28eb04bd020a
+DECL|union|__anon29376469020a
 block|{
 DECL|member|u
 name|guint16

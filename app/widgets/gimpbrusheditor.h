@@ -108,6 +108,11 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+DECL|member|shape_group
+name|GtkWidget
+modifier|*
+name|shape_group
+decl_stmt|;
 DECL|member|options_table
 name|GtkWidget
 modifier|*
