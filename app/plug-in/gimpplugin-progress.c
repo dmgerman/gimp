@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fb9c40103
+DECL|enum|__anon29d0af0f0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -830,7 +830,7 @@ literal|"Message to use in the progress dialog."
 block|}
 block|,
 block|{
-name|PDB_INT8
+name|PDB_INT32
 block|,
 literal|"gdisplay"
 block|,

@@ -296,7 +296,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a27f5f10108
+DECL|struct|__anon2c5c2e9d0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2347,7 +2347,6 @@ name|new_unit
 operator|=
 operator|(
 name|int
-operator|*
 operator|)
 name|data
 expr_stmt|;
@@ -2644,7 +2643,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2a27f5f10208
+DECL|struct|__anon2c5c2e9d0208
 struct|struct
 block|{
 DECL|member|label
@@ -2684,7 +2683,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2a27f5f10308
+DECL|struct|__anon2c5c2e9d0308
 struct|struct
 block|{
 DECL|member|label
@@ -2753,7 +2752,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2a27f5f10408
+DECL|struct|__anon2c5c2e9d0408
 struct|struct
 block|{
 DECL|member|label

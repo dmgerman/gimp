@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<signal.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -130,7 +136,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c40ae8b0108
+DECL|struct|__anon2c1bc0600108
 typedef|typedef
 struct|struct
 block|{
@@ -595,7 +601,7 @@ comment|/* The "explict tile"& family */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c40ae8b0203
+DECL|enum|__anon2c1bc0600203
 typedef|typedef
 enum|enum
 block|{
@@ -614,7 +620,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c40ae8b0308
+DECL|struct|__anon2c1bc0600308
 typedef|typedef
 struct|struct
 block|{
@@ -700,7 +706,7 @@ comment|/* The reset button needs to know some toggle widgets.. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c40ae8b0408
+DECL|struct|__anon2c1bc0600408
 typedef|typedef
 struct|struct
 block|{
@@ -2433,16 +2439,6 @@ name|table3
 argument_list|)
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|xframe
-argument_list|)
-argument_list|,
-name|table3
 argument_list|)
 expr_stmt|;
 name|label

@@ -325,7 +325,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7094e10108
+DECL|struct|__anon2b4b69be0108
 block|{
 DECL|member|command
 name|gchar
@@ -349,7 +349,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7094e10208
+DECL|struct|__anon2b4b69be0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -429,17 +429,6 @@ name|make_socket
 parameter_list|(
 name|guint
 name|port
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|guint
-name|clientname_hash
-parameter_list|(
-name|gpointer
-name|key
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -132,6 +132,12 @@ directive|undef
 name|SRAND_FUNC
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|USE_PTHREADS
+end_undef
+
 begin_comment
 comment|/* #undef PACKAGE */
 end_comment

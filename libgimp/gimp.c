@@ -835,7 +835,7 @@ name|PARAM_STRING
 argument_list|,
 name|message
 argument_list|,
-name|PARAM_INT8
+name|PARAM_INT32
 argument_list|,
 name|_gdisp_ID
 argument_list|,
