@@ -321,7 +321,7 @@ index|]
 operator|.
 name|x1
 operator|+
-name|offset_y
+name|offset_x
 argument_list|)
 expr_stmt|;
 name|points
