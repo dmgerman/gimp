@@ -169,7 +169,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b41c1930103
+DECL|enum|__anon2a9017d50103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -3736,12 +3736,14 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-break|break;
+return|return
+name|TRUE
+return|;
 default|default:
 break|break;
 block|}
 return|return
-name|TRUE
+name|FALSE
 return|;
 block|}
 end_function
