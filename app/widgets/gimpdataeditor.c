@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig-path.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdataeditor.h"
 end_include
 
@@ -1464,7 +1470,7 @@ expr_stmt|;
 name|data
 operator|=
 name|editor
-operator|>
+operator|->
 name|data
 expr_stmt|;
 if|if
