@@ -2747,7 +2747,13 @@ name|list
 operator|->
 name|data
 argument_list|,
+name|list
+operator|->
+name|next
+condition|?
 literal|"\n"
+else|:
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -2772,7 +2778,13 @@ name|list
 operator|->
 name|data
 argument_list|,
+name|list
+operator|->
+name|next
+condition|?
 literal|"\n"
+else|:
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
