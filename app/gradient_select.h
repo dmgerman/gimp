@@ -67,7 +67,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  list of active dialogs    */
+comment|/*  list of active dialogs  */
 end_comment
 
 begin_decl_stmt

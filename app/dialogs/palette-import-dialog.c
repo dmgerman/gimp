@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6fd9c50103
+DECL|enum|__anon2c0840fd0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -2398,11 +2398,6 @@ name|palette
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|palette_insert_all
-argument_list|(
-name|palette
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -3209,11 +3204,6 @@ name|palette
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|palette_insert_all
-argument_list|(
-name|palette
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3739,11 +3729,6 @@ name|GIMP_OBJECT
 argument_list|(
 name|palette
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|palette_insert_all
-argument_list|(
-name|palette
 argument_list|)
 expr_stmt|;
 block|}

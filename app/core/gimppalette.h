@@ -145,12 +145,6 @@ DECL|member|n_columns
 name|gint
 name|n_columns
 decl_stmt|;
-comment|/* EEK */
-DECL|member|pixmap
-name|GdkPixmap
-modifier|*
-name|pixmap
-decl_stmt|;
 block|}
 struct|;
 end_struct

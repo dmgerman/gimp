@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdnd.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpgradient.h"
 end_include
 
@@ -128,25 +122,6 @@ name|gsp
 parameter_list|,
 name|gboolean
 name|closing
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gradient_select_drop_gradient
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GimpViewable
-modifier|*
-name|viewable
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -227,7 +202,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  gradient editor dialog  */
+comment|/*  the main gradient editor dialog  */
 end_comment
 
 begin_decl_stmt
@@ -236,6 +211,8 @@ specifier|static
 name|GradientEditor
 modifier|*
 name|gradient_editor_dialog
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -684,35 +661,6 @@ argument_list|(
 name|gsp
 operator|->
 name|view
-argument_list|)
-expr_stmt|;
-name|gimp_gtk_drag_dest_set_by_type
-argument_list|(
-name|gsp
-operator|->
-name|view
-argument_list|,
-name|GTK_DEST_DEFAULT_ALL
-argument_list|,
-name|GIMP_TYPE_GRADIENT
-argument_list|,
-name|GDK_ACTION_COPY
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_viewable_dest_set
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|gsp
-operator|->
-name|view
-argument_list|)
-argument_list|,
-name|GIMP_TYPE_GRADIENT
-argument_list|,
-name|gradient_select_drop_gradient
-argument_list|,
-name|gsp
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1201,51 +1149,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gradient_select_drop_gradient (GtkWidget * widget,GimpViewable * viewable,gpointer data)
-name|gradient_select_drop_gradient
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GimpViewable
-modifier|*
-name|viewable
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GradientSelect
-modifier|*
-name|gsp
-decl_stmt|;
-name|gsp
-operator|=
-operator|(
-name|GradientSelect
-operator|*
-operator|)
-name|data
-expr_stmt|;
-name|gimp_context_set_gradient
-argument_list|(
-name|gsp
-operator|->
-name|context
-argument_list|,
-name|GIMP_GRADIENT
-argument_list|(
-name|viewable
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

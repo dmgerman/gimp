@@ -299,7 +299,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad42c590103
+DECL|enum|__anon2a0a277a0103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad42c590203
+DECL|enum|__anon2a0a277a0203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -13101,10 +13101,7 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|i
+name|gradient_editor
 argument_list|)
 expr_stmt|;
 comment|/* Set state */
@@ -13199,10 +13196,7 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|i
+name|gradient_editor
 argument_list|)
 expr_stmt|;
 block|}
@@ -13298,10 +13292,7 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|i
+name|gradient_editor
 argument_list|)
 expr_stmt|;
 comment|/* Set state */
@@ -13396,10 +13387,7 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|i
+name|gradient_editor
 argument_list|)
 expr_stmt|;
 block|}
