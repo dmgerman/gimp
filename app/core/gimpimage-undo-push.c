@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-grid.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-guides.h"
 end_include
 
@@ -2644,14 +2650,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: mark image as dirty when grid save functionality is added
-endif|#
-directive|endif
 if|if
 condition|(
 operator|(
@@ -2675,7 +2673,7 @@ name|GIMP_UNDO_IMAGE_GRID
 argument_list|,
 name|undo_desc
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|undo_pop_image_grid
 argument_list|,
