@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd414f00103
+DECL|enum|__anon2a3651230103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -152,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd414f00203
+DECL|enum|__anon2a3651230203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1971,7 +1971,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:    a #GimpDialogFactory  * @identifier: the identifier of the dialog as registered with  *              gimp_dialog_factory_register_entry()  * @preview_size:  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Implicitly raises singleton dialogs.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:    a #GimpDialogFactory  * @screen:     the #GdkScreen the dialog should appear on  * @identifier: the identifier of the dialog as registered with  *              gimp_dialog_factory_register_entry()  * @preview_size:  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Implicitly raises singleton dialogs.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
 end_comment
 
 begin_function
@@ -2048,7 +2048,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory   : a #GimpDialogFactory  * @identifier: the identifier of the dialog as registered with  *              gimp_dialog_factory_register_entry()  * @preview_size:  *  * Raises an already existing toplevel dialog or #GimpDockable if it was  * already created by this %facory.  *  * Implicitly creates a new dialog if it was not found.  *  * Return value: the raised or newly created dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory   : a #GimpDialogFactory  * @screen:     the #GdkScreen the dialog should appear on  * @identifier: the identifier of the dialog as registered with  *              gimp_dialog_factory_register_entry()  * @preview_size:  *  * Raises an already existing toplevel dialog or #GimpDockable if it was  * already created by this %facory.  *  * Implicitly creates a new dialog if it was not found.  *  * Return value: the raised or newly created dialog.  **/
 end_comment
 
 begin_function
@@ -2206,7 +2206,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dock_new:  * @factory: a #GimpDialogFacotry  *  * Returns a new #GimpDock in this %factory's context. We use a function  * pointer passed to this %factory's constructor instead of simply  * gimp_dock_new() because we may want different instances of  * #GimpDialogFactory create different subclasses of #GimpDock.  *  * Return value: the newly created #GimpDock.  **/
+comment|/**  * gimp_dialog_factory_dock_new:  * @factory: a #GimpDialogFacotry  * @screen: the #GdkScreen the dock should appear on  *  * Returns a new #GimpDock in this %factory's context. We use a function  * pointer passed to this %factory's constructor instead of simply  * gimp_dock_new() because we may want different instances of  * #GimpDialogFactory create different subclasses of #GimpDock.  *  * Return value: the newly created #GimpDock.  **/
 end_comment
 
 begin_function
