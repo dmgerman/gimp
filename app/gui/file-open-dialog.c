@@ -349,6 +349,8 @@ name|menu_factory
 argument_list|,
 literal|"<Load>"
 argument_list|,
+literal|"/file-open-popup"
+argument_list|,
 name|_
 argument_list|(
 literal|"Open Image"

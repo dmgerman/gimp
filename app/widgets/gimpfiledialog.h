@@ -106,10 +106,10 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-DECL|member|item_factory
-name|GimpItemFactory
+DECL|member|manager
+name|GimpUIManager
 modifier|*
-name|item_factory
+name|manager
 decl_stmt|;
 DECL|member|file_proc
 name|PlugInProcDef
@@ -185,6 +185,11 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_path
 parameter_list|,
 specifier|const
 name|gchar

@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpmenufactory.h"
 end_include
 
@@ -85,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"gimpthumbbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpuimanager.h"
 end_include
 
 begin_include
@@ -375,19 +375,19 @@ if|if
 condition|(
 name|dialog
 operator|->
-name|item_factory
+name|manager
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
 name|dialog
 operator|->
-name|item_factory
+name|manager
 argument_list|)
 expr_stmt|;
 name|dialog
 operator|->
-name|item_factory
+name|manager
 operator|=
 name|NULL
 expr_stmt|;
@@ -433,7 +433,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_file_dialog_new (Gimp * gimp,GSList * file_procs,GtkFileChooserAction action,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * help_id)
+DECL|function|gimp_file_dialog_new (Gimp * gimp,GSList * file_procs,GtkFileChooserAction action,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_path,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * help_id)
 name|gimp_file_dialog_new
 parameter_list|(
 name|Gimp
@@ -455,6 +455,11 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_path
 parameter_list|,
 specifier|const
 name|gchar
@@ -533,6 +538,15 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|menu_identifier
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|ui_path
 operator|!=
 name|NULL
 argument_list|,
@@ -646,15 +660,13 @@ name|gimp
 expr_stmt|;
 name|dialog
 operator|->
-name|item_factory
+name|manager
 operator|=
-name|gimp_menu_factory_menu_new
+name|gimp_menu_factory_manager_new
 argument_list|(
 name|menu_factory
 argument_list|,
 name|menu_identifier
-argument_list|,
-name|GTK_TYPE_MENU
 argument_list|,
 name|dialog
 argument_list|,
@@ -697,14 +709,14 @@ argument_list|(
 name|option_menu
 argument_list|)
 argument_list|,
-name|GTK_ITEM_FACTORY
+name|gimp_ui_manager_ui_get
 argument_list|(
 name|dialog
 operator|->
-name|item_factory
+name|manager
+argument_list|,
+name|ui_path
 argument_list|)
-operator|->
-name|widget
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -1534,11 +1546,11 @@ argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
-name|gimp_item_factory_update
+name|gimp_ui_manager_update
 argument_list|(
 name|dialog
 operator|->
-name|item_factory
+name|manager
 argument_list|,
 name|gimp_image_active_drawable
 argument_list|(

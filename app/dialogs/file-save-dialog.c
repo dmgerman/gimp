@@ -558,6 +558,8 @@ name|menu_factory
 argument_list|,
 literal|"<Save>"
 argument_list|,
+literal|"/file-save-popup"
+argument_list|,
 name|_
 argument_list|(
 literal|"Save Image"
