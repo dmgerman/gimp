@@ -660,12 +660,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_enum_store_lookup_by_value (GimpEnumStore * store,gint value,GtkTreeIter * iter)
+DECL|function|gimp_enum_store_lookup_by_value (GtkTreeModel * model,gint value,GtkTreeIter * iter)
 name|gimp_enum_store_lookup_by_value
 parameter_list|(
-name|GimpEnumStore
+name|GtkTreeModel
 modifier|*
-name|store
+name|model
 parameter_list|,
 name|gint
 name|value
@@ -675,18 +675,14 @@ modifier|*
 name|iter
 parameter_list|)
 block|{
-name|GtkTreeModel
-modifier|*
-name|model
-decl_stmt|;
 name|gboolean
 name|iter_valid
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_ENUM_STORE
+name|GTK_IS_TREE_MODEL
 argument_list|(
-name|store
+name|model
 argument_list|)
 argument_list|,
 name|FALSE
@@ -699,13 +695,6 @@ operator|!=
 name|NULL
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|model
-operator|=
-name|GTK_TREE_MODEL
-argument_list|(
-name|store
 argument_list|)
 expr_stmt|;
 for|for

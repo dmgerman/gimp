@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e75f6a0103
+DECL|enum|__anon297aa2cb0103
 block|{
 DECL|enumerator|GIMP_ENUM_STORE_VALUE
 name|GIMP_ENUM_STORE_VALUE
@@ -229,9 +229,9 @@ begin_function_decl
 name|gboolean
 name|gimp_enum_store_lookup_by_value
 parameter_list|(
-name|GimpEnumStore
+name|GtkTreeModel
 modifier|*
-name|store
+name|model
 parameter_list|,
 name|gint
 name|value

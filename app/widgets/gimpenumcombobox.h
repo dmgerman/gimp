@@ -198,6 +198,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_enum_combo_box_set_visible
+parameter_list|(
+name|GimpEnumComboBox
+modifier|*
+name|combo_box
+parameter_list|,
+name|GtkTreeModelFilterVisibleFunc
+name|func
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
