@@ -466,8 +466,7 @@ block|{
 return|return
 name|g_strconcat
 argument_list|(
-name|gimp_directory
-argument_list|()
+literal|"${gimp_dir}"
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
@@ -475,8 +474,7 @@ name|name
 argument_list|,
 name|G_SEARCHPATH_SEPARATOR_S
 argument_list|,
-name|gimp_data_directory
-argument_list|()
+literal|"${gimp_data_dir}"
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
@@ -503,8 +501,7 @@ block|{
 return|return
 name|g_strconcat
 argument_list|(
-name|gimp_directory
-argument_list|()
+literal|"${gimp_dir}"
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
@@ -512,8 +509,7 @@ name|name
 argument_list|,
 name|G_SEARCHPATH_SEPARATOR_S
 argument_list|,
-name|gimp_plug_in_directory
-argument_list|()
+literal|"${gimp_plug_in_dir}"
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,

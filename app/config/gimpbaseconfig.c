@@ -124,7 +124,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d30550103
+DECL|enum|__anon2b65a4400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -296,15 +296,9 @@ literal|"temp-path"
 argument_list|,
 name|TEMP_PATH_BLURB
 argument_list|,
-name|g_build_filename
-argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
+literal|"${gimp_dir}"
+name|G_DIR_SEPARATOR_S
 literal|"tmp"
-argument_list|,
-name|NULL
-argument_list|)
 argument_list|,
 name|GIMP_PARAM_RESTART
 argument_list|)
@@ -319,11 +313,7 @@ literal|"swap-path"
 argument_list|,
 name|SWAP_PATH_BLURB
 argument_list|,
-name|g_strdup
-argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|)
+literal|"${gimp_dir}"
 argument_list|,
 name|GIMP_PARAM_RESTART
 argument_list|)

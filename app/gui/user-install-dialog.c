@@ -234,7 +234,7 @@ value|gtk_widget_modify_style (widget, title_style)
 end_define
 
 begin_enum
-DECL|enum|__anon2c54062e0103
+DECL|enum|__anon2c19c3d60103
 enum|enum
 block|{
 DECL|enumerator|DIRENT_COLUMN
@@ -480,7 +480,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c54062e0203
+DECL|enum|__anon2c19c3d60203
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -506,7 +506,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c54062e0308
+DECL|struct|__anon2c19c3d60308
 block|{
 DECL|member|directory
 name|gboolean
@@ -552,9 +552,9 @@ literal|"patterns, plug-ins and modules can also configured\n"
 literal|"here."
 argument_list|)
 block|,
-name|TREE_ITEM_FROM_SYSCONF_DIR
+name|TREE_ITEM_DONT
 block|,
-literal|"gimprc_user"
+name|NULL
 block|}
 block|,
 block|{

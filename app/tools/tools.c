@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig-path.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -459,9 +465,9 @@ block|}
 if|#
 directive|if
 literal|0
-block|if (g_module_supported ())     gimp_datafiles_read_directories (gimp->config->tool_plug_in_path,                                      0
+block|if (g_module_supported ())     {       gchar *path = gimp_config_path_expand (gimp->config->tool_plug_in_path,                                              TRUE, NULL);        gimp_datafiles_read_directories (path,                                        0
 comment|/* no flags */
-block|,                                      cheesey_module_loading_hack,                                      gimp);
+block|,                                        cheesey_module_loading_hack,                                        gimp);        g_free (path);     }
 endif|#
 directive|endif
 block|}

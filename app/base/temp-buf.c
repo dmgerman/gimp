@@ -98,6 +98,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig-path.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixel-region.h"
 end_include
 
@@ -2499,10 +2505,10 @@ comment|/*  a static counter for generating unique filenames  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|swap_index
+DECL|variable|tmp_file_index
 specifier|static
 name|gint
-name|swap_index
+name|tmp_file_index
 init|=
 literal|0
 decl_stmt|;
@@ -2527,13 +2533,12 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|generate_unique_filename (const gchar * temp_path)
-name|generate_unique_filename
+DECL|function|generate_unique_tmp_filename (GimpBaseConfig * config)
+name|generate_unique_tmp_filename
 parameter_list|(
-specifier|const
-name|gchar
+name|GimpBaseConfig
 modifier|*
-name|temp_path
+name|config
 parameter_list|)
 block|{
 name|pid_t
@@ -2541,18 +2546,35 @@ name|pid
 decl_stmt|;
 name|gchar
 modifier|*
-name|swapfile
+name|tmpdir
+decl_stmt|;
+name|gchar
+modifier|*
+name|tmpfile
 decl_stmt|;
 name|gchar
 modifier|*
 name|path
 decl_stmt|;
+name|tmpdir
+operator|=
+name|gimp_config_path_expand
+argument_list|(
+name|config
+operator|->
+name|temp_path
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|pid
 operator|=
 name|getpid
 argument_list|()
 expr_stmt|;
-name|swapfile
+name|tmpfile
 operator|=
 name|g_strdup_printf
 argument_list|(
@@ -2563,7 +2585,7 @@ name|gint
 operator|)
 name|pid
 argument_list|,
-name|swap_index
+name|tmp_file_index
 operator|++
 argument_list|)
 expr_stmt|;
@@ -2571,16 +2593,21 @@ name|path
 operator|=
 name|g_build_filename
 argument_list|(
-name|temp_path
+name|tmpdir
 argument_list|,
-name|swapfile
+name|tmpfile
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|swapfile
+name|tmpfile
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpdir
 argument_list|)
 expr_stmt|;
 return|return
@@ -2661,11 +2688,9 @@ return|return;
 comment|/*  Get a unique filename for caching the data to a UNIX file  */
 name|filename
 operator|=
-name|generate_unique_filename
+name|generate_unique_tmp_filename
 argument_list|(
 name|base_config
-operator|->
-name|temp_path
 argument_list|)
 expr_stmt|;
 comment|/*  Check if generated filename is valid  */
