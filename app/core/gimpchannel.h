@@ -193,6 +193,20 @@ DECL|member|parent_class
 name|GimpDrawableClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
+DECL|member|color_changed
+name|void
+function_decl|(
+modifier|*
+name|color_changed
+function_decl|)
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|)
+function_decl|;
+comment|/*  virtual functions  */
 DECL|member|boundary
 name|gboolean
 function_decl|(
