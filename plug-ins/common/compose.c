@@ -477,7 +477,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c3fac90108
+DECL|struct|__anon28ae52b30108
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +753,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon28c3fac90208
+DECL|struct|__anon28ae52b30208
 typedef|typedef
 struct|struct
 block|{
@@ -784,7 +784,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c3fac90308
+DECL|struct|__anon28ae52b30308
 typedef|typedef
 struct|struct
 block|{
@@ -1260,7 +1260,7 @@ name|run_mode
 operator|==
 name|RUN_INTERACTIVE
 condition|)
-name|g_message
+name|gimp_message
 argument_list|(
 name|message
 argument_list|)
@@ -2914,9 +2914,9 @@ comment|/* but is it available everywhere ?) */
 end_comment
 
 begin_function
-DECL|function|cmp_icase (char * s1,char * s2)
 specifier|static
 name|int
+DECL|function|cmp_icase (char * s1,char * s2)
 name|cmp_icase
 parameter_list|(
 name|char

@@ -743,7 +743,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b888fb90108
+DECL|struct|__anon29617d820108
 typedef|typedef
 struct|struct
 block|{
@@ -1214,7 +1214,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2b888fb90208
+DECL|struct|__anon29617d820208
 typedef|typedef
 struct|struct
 block|{
@@ -1232,7 +1232,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b888fb90308
+DECL|struct|__anon29617d820308
 typedef|typedef
 struct|struct
 block|{
@@ -1500,7 +1500,7 @@ name|run_mode
 operator|==
 name|RUN_INTERACTIVE
 condition|)
-name|g_message
+name|gimp_message
 argument_list|(
 name|message
 argument_list|)
@@ -2773,9 +2773,9 @@ comment|/* but is it available everywhere ?) */
 end_comment
 
 begin_function
-DECL|function|cmp_icase (char * s1,char * s2)
 specifier|static
 name|int
+DECL|function|cmp_icase (char * s1,char * s2)
 name|cmp_icase
 parameter_list|(
 name|char
@@ -2868,9 +2868,9 @@ comment|/* Convert RGB to HSV. This routine was taken from decompose plug-in    
 end_comment
 
 begin_function
-DECL|function|rgb_to_hsv (unsigned char * r,unsigned char * g,unsigned char * b,unsigned char * h,unsigned char * s,unsigned char * v)
 specifier|static
 name|void
+DECL|function|rgb_to_hsv (unsigned char * r,unsigned char * g,unsigned char * b,unsigned char * h,unsigned char * s,unsigned char * v)
 name|rgb_to_hsv
 parameter_list|(
 name|unsigned
@@ -3175,9 +3175,9 @@ comment|/* Extract functions */
 end_comment
 
 begin_function
-DECL|function|extract_rgb (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_rgb (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_rgb
 parameter_list|(
 name|unsigned
@@ -3304,9 +3304,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_red (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_red (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_red
 parameter_list|(
 name|unsigned
@@ -3382,9 +3382,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_green (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_green (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_green
 parameter_list|(
 name|unsigned
@@ -3462,9 +3462,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_blue (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_blue (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_blue
 parameter_list|(
 name|unsigned
@@ -3542,9 +3542,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_alpha (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_alpha (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_alpha
 parameter_list|(
 name|unsigned
@@ -3622,9 +3622,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_cmy (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_cmy (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_cmy
 parameter_list|(
 name|unsigned
@@ -3757,9 +3757,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_hsv (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_hsv (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_hsv
 parameter_list|(
 name|unsigned
@@ -3870,9 +3870,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_hue (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_hue (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_hue
 parameter_list|(
 name|unsigned
@@ -3971,9 +3971,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_sat (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_sat (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_sat
 parameter_list|(
 name|unsigned
@@ -4072,9 +4072,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_val (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_val (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_val
 parameter_list|(
 name|unsigned
@@ -4173,9 +4173,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_cyan (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_cyan (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_cyan
 parameter_list|(
 name|unsigned
@@ -4258,9 +4258,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_magenta (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_magenta (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_magenta
 parameter_list|(
 name|unsigned
@@ -4345,9 +4345,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_yellow (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_yellow (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_yellow
 parameter_list|(
 name|unsigned
@@ -4432,9 +4432,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_cmyk (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_cmyk (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_cmyk
 parameter_list|(
 name|unsigned
@@ -4642,9 +4642,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_cyank (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_cyank (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_cyank
 parameter_list|(
 name|unsigned
@@ -4787,9 +4787,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_magentak (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_magentak (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_magentak
 parameter_list|(
 name|unsigned
@@ -4933,9 +4933,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|extract_yellowk (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 specifier|static
 name|void
+DECL|function|extract_yellowk (unsigned char * src,int bpp,int numpix,unsigned char ** dst)
 name|extract_yellowk
 parameter_list|(
 name|unsigned
