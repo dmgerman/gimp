@@ -180,7 +180,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9510b10103
+DECL|enum|__anon2b2bea360103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -918,6 +918,15 @@ if|if
 condition|(
 name|new_desc
 condition|)
+block|{
+name|pango_font_description_set_size
+argument_list|(
+name|new_desc
+argument_list|,
+literal|12
+argument_list|)
+expr_stmt|;
+comment|/* eeek */
 name|font
 operator|=
 name|pango_context_load_font
@@ -929,6 +938,14 @@ argument_list|,
 name|new_desc
 argument_list|)
 expr_stmt|;
+name|pango_font_description_unset_fields
+argument_list|(
+name|new_desc
+argument_list|,
+name|PANGO_FONT_MASK_SIZE
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|fontsel

@@ -1698,7 +1698,7 @@ name|logo_width
 argument_list|,
 name|logo_height
 argument_list|,
-name|GDK_RGB_DITHER_MAX
+name|GDK_RGB_DITHER_NORMAL
 argument_list|,
 literal|0
 argument_list|,

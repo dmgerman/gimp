@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291409bd0103
+DECL|enum|__anon28ef4f720103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -929,7 +929,7 @@ name|area
 operator|.
 name|height
 argument_list|,
-name|GDK_RGB_DITHER_NORMAL
+name|GDK_RGB_DITHER_MAX
 argument_list|,
 name|buf
 argument_list|,
@@ -1713,7 +1713,11 @@ control|)
 block|{
 if|if
 condition|(
+operator|(
+name|width
+operator|-
 name|x
+operator|)
 operator|*
 name|height
 operator|>
@@ -1759,7 +1763,11 @@ call|(
 name|gdouble
 call|)
 argument_list|(
+operator|(
+name|width
+operator|-
 name|x
+operator|)
 operator|*
 name|height
 argument_list|)
