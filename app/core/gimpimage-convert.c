@@ -399,7 +399,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29b210b90103
+DECL|enum|__anon2bbbea080103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1427,7 +1427,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b210b90208
+DECL|struct|__anon2bbbea080208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1504,7 +1504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b210b90308
+DECL|struct|__anon2bbbea080308
 block|{
 DECL|member|ncolors
 name|long
@@ -1585,9 +1585,9 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|ConvertDitherType
+name|GimpConvertDitherType
 parameter_list|,
-name|ConvertPaletteType
+name|GimpConvertPaletteType
 parameter_list|,
 name|int
 parameter_list|)
@@ -1664,7 +1664,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b210b90408
+DECL|struct|__anon2bbbea080408
 block|{
 DECL|member|used_count
 name|signed
@@ -2615,7 +2615,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_convert (GimpImage * gimage,GimpImageBaseType new_type,gint num_cols,ConvertDitherType dither,gint alpha_dither,gint remdups,ConvertPaletteType palette_type,GimpPalette * custom_palette)
+DECL|function|gimp_image_convert (GimpImage * gimage,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gint alpha_dither,gint remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette)
 name|gimp_image_convert
 parameter_list|(
 name|GimpImage
@@ -2629,16 +2629,16 @@ comment|/* The following three params used only for 		     * new_type == GIMP_IN
 name|gint
 name|num_cols
 parameter_list|,
-name|ConvertDitherType
+name|GimpConvertDitherType
 name|dither
 parameter_list|,
 name|gint
 name|alpha_dither
 parameter_list|,
 name|gint
-name|remdups
+name|remove_dups
 parameter_list|,
-name|ConvertPaletteType
+name|GimpConvertPaletteType
 name|palette_type
 parameter_list|,
 name|GimpPalette
@@ -2764,7 +2764,7 @@ name|int
 name|i
 decl_stmt|;
 comment|/* fprintf(stderr, " TO INDEXED(%d) ", num_cols); */
-comment|/* don't dither if the input is grayscale and we are simply mapping every color */
+comment|/* don't dither if the input is grayscale and we are simply          mapping every color */
 if|if
 condition|(
 name|old_type
@@ -2777,12 +2777,14 @@ literal|256
 operator|&&
 name|palette_type
 operator|==
-name|MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
 condition|)
+block|{
 name|dither
 operator|=
-name|NO_DITHER
+name|GIMP_NO_DITHER
 expr_stmt|;
+block|}
 name|quantobj
 operator|=
 name|initialize_median_cut
@@ -2802,7 +2804,7 @@ if|if
 condition|(
 name|palette_type
 operator|==
-name|MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
 condition|)
 block|{
 if|if
@@ -2919,11 +2921,11 @@ operator|&&
 operator|(
 name|palette_type
 operator|==
-name|MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
 operator|)
 condition|)
 block|{
-comment|/* If this is an RGB image, and the user wanted a custom-built           *  generated palette, and this image has no more colours than           *  the user asked for, we don't need the first pass (quantization).           *           * There's also no point in dithering, since there's no error to           *  spread.  So we destroy the old quantobj and make a new one           *  with the remapping function set to a special LUT-based           *  no-dither remapper.           */
+comment|/* If this is an RGB image, and the user wanted a custom-built            *  generated palette, and this image has no more colours than            *  the user asked for, we don't need the first pass (quantization).            *            * There's also no point in dithering, since there's no error to            *  spread.  So we destroy the old quantobj and make a new one            *  with the remapping function set to a special LUT-based            *  no-dither remapper.            */
 name|quantobj
 operator|->
 name|delete_func
@@ -2939,7 +2941,7 @@ name|old_type
 argument_list|,
 name|num_cols
 argument_list|,
-name|NODESTRUCT_DITHER
+name|GIMP_NODESTRUCT_DITHER
 argument_list|,
 name|palette_type
 argument_list|,
@@ -3297,19 +3299,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|remdups
+name|remove_dups
 operator|&&
 operator|(
 operator|(
 name|palette_type
 operator|==
-name|WEB_PALETTE
+name|GIMP_WEB_PALETTE
 operator|)
 operator|||
 operator|(
 name|palette_type
 operator|==
-name|CUSTOM_PALETTE
+name|GIMP_CUSTOM_PALETTE
 operator|)
 operator|)
 condition|)
@@ -16607,7 +16609,7 @@ begin_function
 specifier|static
 name|QuantizeObj
 modifier|*
-DECL|function|initialize_median_cut (int type,int num_colors,ConvertDitherType dither_type,ConvertPaletteType palette_type,int want_alpha_dither)
+DECL|function|initialize_median_cut (int type,int num_colors,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,int want_alpha_dither)
 name|initialize_median_cut
 parameter_list|(
 name|int
@@ -16616,10 +16618,10 @@ parameter_list|,
 name|int
 name|num_colors
 parameter_list|,
-name|ConvertDitherType
+name|GimpConvertDitherType
 name|dither_type
 parameter_list|,
-name|ConvertPaletteType
+name|GimpConvertPaletteType
 name|palette_type
 parameter_list|,
 name|int
@@ -16649,7 +16651,7 @@ name|GIMP_GRAY
 operator|&&
 name|palette_type
 operator|==
-name|MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
 condition|)
 name|quantobj
 operator|->
@@ -16710,7 +16712,7 @@ name|palette_type
 condition|)
 block|{
 case|case
-name|MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
 case|:
 name|quantobj
 operator|->
@@ -16720,7 +16722,7 @@ name|median_cut_pass1_gray
 expr_stmt|;
 break|break;
 case|case
-name|WEB_PALETTE
+name|GIMP_WEB_PALETTE
 case|:
 name|quantobj
 operator|->
@@ -16730,7 +16732,7 @@ name|webpal_pass1
 expr_stmt|;
 break|break;
 case|case
-name|CUSTOM_PALETTE
+name|GIMP_CUSTOM_PALETTE
 case|:
 name|quantobj
 operator|->
@@ -16744,7 +16746,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|MONO_PALETTE
+name|GIMP_MONO_PALETTE
 case|:
 default|default:
 name|quantobj
@@ -16758,15 +16760,15 @@ if|if
 condition|(
 name|palette_type
 operator|==
-name|WEB_PALETTE
+name|GIMP_WEB_PALETTE
 operator|||
 name|palette_type
 operator|==
-name|MONO_PALETTE
+name|GIMP_MONO_PALETTE
 operator|||
 name|palette_type
 operator|==
-name|CUSTOM_PALETTE
+name|GIMP_CUSTOM_PALETTE
 condition|)
 switch|switch
 condition|(
@@ -16774,7 +16776,7 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|NODESTRUCT_DITHER
+name|GIMP_NODESTRUCT_DITHER
 case|:
 default|default:
 name|g_warning
@@ -16783,7 +16785,7 @@ literal|"Uh-oh, bad dither type, W1"
 argument_list|)
 expr_stmt|;
 case|case
-name|NO_DITHER
+name|GIMP_NO_DITHER
 case|:
 name|quantobj
 operator|->
@@ -16799,7 +16801,7 @@ name|median_cut_pass2_no_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FS_DITHER
+name|GIMP_FS_DITHER
 case|:
 name|quantobj
 operator|->
@@ -16821,7 +16823,7 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FSLOWBLEED_DITHER
+name|GIMP_FSLOWBLEED_DITHER
 case|:
 name|quantobj
 operator|->
@@ -16843,7 +16845,7 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FIXED_DITHER
+name|GIMP_FIXED_DITHER
 case|:
 name|quantobj
 operator|->
@@ -16866,7 +16868,7 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|NODESTRUCT_DITHER
+name|GIMP_NODESTRUCT_DITHER
 case|:
 default|default:
 name|g_warning
@@ -16875,7 +16877,7 @@ literal|"Uh-oh, bad dither type, W2"
 argument_list|)
 expr_stmt|;
 case|case
-name|NO_DITHER
+name|GIMP_NO_DITHER
 case|:
 name|quantobj
 operator|->
@@ -16891,7 +16893,7 @@ name|median_cut_pass2_no_dither_gray
 expr_stmt|;
 break|break;
 case|case
-name|FS_DITHER
+name|GIMP_FS_DITHER
 case|:
 name|quantobj
 operator|->
@@ -16913,7 +16915,7 @@ name|median_cut_pass2_fs_dither_gray
 expr_stmt|;
 break|break;
 case|case
-name|FSLOWBLEED_DITHER
+name|GIMP_FSLOWBLEED_DITHER
 case|:
 name|quantobj
 operator|->
@@ -16935,7 +16937,7 @@ name|median_cut_pass2_fs_dither_gray
 expr_stmt|;
 break|break;
 case|case
-name|FIXED_DITHER
+name|GIMP_FIXED_DITHER
 case|:
 name|quantobj
 operator|->
@@ -16961,7 +16963,7 @@ name|palette_type
 condition|)
 block|{
 case|case
-name|MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
 case|:
 name|quantobj
 operator|->
@@ -16971,7 +16973,7 @@ name|median_cut_pass1_rgb
 expr_stmt|;
 break|break;
 case|case
-name|WEB_PALETTE
+name|GIMP_WEB_PALETTE
 case|:
 name|quantobj
 operator|->
@@ -16985,7 +16987,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|CUSTOM_PALETTE
+name|GIMP_CUSTOM_PALETTE
 case|:
 name|quantobj
 operator|->
@@ -16999,7 +17001,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|MONO_PALETTE
+name|GIMP_MONO_PALETTE
 case|:
 default|default:
 name|quantobj
@@ -17015,7 +17017,7 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|NO_DITHER
+name|GIMP_NO_DITHER
 case|:
 name|quantobj
 operator|->
@@ -17031,7 +17033,7 @@ name|median_cut_pass2_no_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FS_DITHER
+name|GIMP_FS_DITHER
 case|:
 name|quantobj
 operator|->
@@ -17053,7 +17055,7 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FSLOWBLEED_DITHER
+name|GIMP_FSLOWBLEED_DITHER
 case|:
 name|quantobj
 operator|->
@@ -17075,7 +17077,7 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|NODESTRUCT_DITHER
+name|GIMP_NODESTRUCT_DITHER
 case|:
 name|quantobj
 operator|->
@@ -17091,7 +17093,7 @@ name|median_cut_pass2_nodestruct_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FIXED_DITHER
+name|GIMP_FIXED_DITHER
 case|:
 name|quantobj
 operator|->

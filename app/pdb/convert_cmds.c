@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core/core-enums.h"
 end_include
 
 begin_include
@@ -549,11 +549,11 @@ if|if
 condition|(
 name|dither_type
 operator|<
-name|NO_DITHER
+name|GIMP_NO_DITHER
 operator|||
 name|dither_type
 operator|>
-name|NODESTRUCT_DITHER
+name|GIMP_NODESTRUCT_DITHER
 condition|)
 name|success
 operator|=
@@ -669,16 +669,16 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|NO_DITHER
+name|GIMP_NO_DITHER
 case|:
 case|case
-name|FS_DITHER
+name|GIMP_FS_DITHER
 case|:
 case|case
-name|FSLOWBLEED_DITHER
+name|GIMP_FSLOWBLEED_DITHER
 case|:
 case|case
-name|FIXED_DITHER
+name|GIMP_FIXED_DITHER
 case|:
 break|break;
 default|default:
@@ -694,7 +694,7 @@ name|palette_type
 condition|)
 block|{
 case|case
-name|MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
 case|:
 if|if
 condition|(
@@ -712,17 +712,17 @@ name|FALSE
 expr_stmt|;
 break|break;
 case|case
-name|REUSE_PALETTE
+name|GIMP_REUSE_PALETTE
 case|:
 case|case
-name|WEB_PALETTE
+name|GIMP_WEB_PALETTE
 case|:
 case|case
-name|MONO_PALETTE
+name|GIMP_MONO_PALETTE
 case|:
 break|break;
 case|case
-name|CUSTOM_PALETTE
+name|GIMP_CUSTOM_PALETTE
 case|:
 if|if
 condition|(
@@ -844,7 +844,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"palette_type"
 block|,
-literal|"The type of palette to use: { MAKE_PALETTE (0), REUSE_PALETTE (1), WEB_PALETTE (2), MONO_PALETTE (3), CUSTOM_PALETTE (4) }"
+literal|"The type of palette to use: { GIMP_MAKE_PALETTE (0), GIMP_REUSE_PALETTE (1), GIMP_WEB_PALETTE (2), GIMP_MONO_PALETTE (3), GIMP_CUSTOM_PALETTE (4) }"
 block|}
 block|,
 block|{
@@ -852,7 +852,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"num_cols"
 block|,
-literal|"the number of colors to quantize to, ignored unless (palette_type == MAKE_PALETTE)"
+literal|"the number of colors to quantize to, ignored unless (palette_type == GIMP_MAKE_PALETTE)"
 block|}
 block|,
 block|{
@@ -868,7 +868,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"remove_unused"
 block|,
-literal|"remove unused or duplicate colour entries from final palette, ignored if (palette_type == MAKE_PALETTE)"
+literal|"remove unused or duplicate colour entries from final palette, ignored if (palette_type == GIMP_MAKE_PALETTE)"
 block|}
 block|,
 block|{
@@ -876,7 +876,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"palette"
 block|,
-literal|"The name of the custom palette to use, ignored unless (palette_type == CUSTOM_PALETTE)"
+literal|"The name of the custom palette to use, ignored unless (palette_type == GIMP_CUSTOM_PALETTE)"
 block|}
 block|}
 decl_stmt|;

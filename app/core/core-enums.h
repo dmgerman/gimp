@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61aaf90103
+DECL|enum|__anon2b6db1e70103
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -116,7 +116,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b61aaf90203
+DECL|enum|__anon2b6db1e70203
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_NONE
 name|GIMP_PREVIEW_SIZE_NONE
@@ -205,7 +205,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b61aaf90303
+DECL|enum|__anon2b6db1e70303
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -248,7 +248,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61aaf90403
+DECL|enum|__anon2b6db1e70403
 block|{
 DECL|enumerator|GIMP_RED_CHANNEL
 name|GIMP_RED_CHANNEL
@@ -294,7 +294,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61aaf90503
+DECL|enum|__anon2b6db1e70503
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB_MODE
 name|GIMP_FG_BG_RGB_MODE
@@ -338,7 +338,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61aaf90603
+DECL|enum|__anon2b6db1e70603
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -410,7 +410,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61aaf90703
+DECL|enum|__anon2b6db1e70703
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -451,7 +451,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b61aaf90803
+DECL|enum|__anon2b6db1e70803
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD
@@ -474,7 +474,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b61aaf90903
+DECL|enum|__anon2b6db1e70903
 block|{
 DECL|enumerator|GIMP_FG_BUCKET_FILL
 name|GIMP_FG_BUCKET_FILL
@@ -494,7 +494,60 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b61aaf90a03
+DECL|enum|__anon2b6db1e70a03
+block|{
+DECL|enumerator|GIMP_MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
+block|,
+DECL|enumerator|GIMP_REUSE_PALETTE
+name|GIMP_REUSE_PALETTE
+block|,
+DECL|enumerator|GIMP_WEB_PALETTE
+name|GIMP_WEB_PALETTE
+block|,
+DECL|enumerator|GIMP_MONO_PALETTE
+name|GIMP_MONO_PALETTE
+block|,
+DECL|enumerator|GIMP_CUSTOM_PALETTE
+name|GIMP_CUSTOM_PALETTE
+DECL|typedef|GimpConvertPaletteType
+block|}
+name|GimpConvertPaletteType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2b6db1e70b03
+block|{
+DECL|enumerator|GIMP_NO_DITHER
+name|GIMP_NO_DITHER
+block|,
+DECL|enumerator|GIMP_FS_DITHER
+name|GIMP_FS_DITHER
+block|,
+DECL|enumerator|GIMP_FSLOWBLEED_DITHER
+name|GIMP_FSLOWBLEED_DITHER
+block|,
+DECL|enumerator|GIMP_FIXED_DITHER
+name|GIMP_FIXED_DITHER
+block|,
+DECL|enumerator|GIMP_NODESTRUCT_DITHER
+name|GIMP_NODESTRUCT_DITHER
+comment|/* NEVER USE NODESTRUCT_DITHER EXPLICITLY */
+DECL|typedef|GimpConvertDitherType
+block|}
+name|GimpConvertDitherType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2b6db1e70c03
 block|{
 DECL|enumerator|GIMP_FOREGROUND_FILL
 name|GIMP_FOREGROUND_FILL
@@ -521,7 +574,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b61aaf90b03
+DECL|enum|__anon2b6db1e70d03
 block|{
 DECL|enumerator|GIMP_GRAD_LINEAR
 name|GIMP_GRAD_LINEAR
@@ -550,21 +603,19 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b61aaf90c03
+DECL|enum|__anon2b6db1e70e03
 block|{
 DECL|enumerator|GIMP_GRAD_RGB
 name|GIMP_GRAD_RGB
-init|=
-literal|0
 block|,
-comment|/* normal RGB */
+comment|/* normal RGB           */
 DECL|enumerator|GIMP_GRAD_HSV_CCW
 name|GIMP_GRAD_HSV_CCW
 block|,
 comment|/* counterclockwise hue */
 DECL|enumerator|GIMP_GRAD_HSV_CW
 name|GIMP_GRAD_HSV_CW
-comment|/* clockwise hue */
+comment|/* clockwise hue        */
 DECL|typedef|GimpGradientSegmentColor
 block|}
 name|GimpGradientSegmentColor
@@ -575,7 +626,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b61aaf90d03
+DECL|enum|__anon2b6db1e70f03
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -604,7 +655,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b61aaf90e03
+DECL|enum|__anon2b6db1e71003
 block|{
 DECL|enumerator|GIMP_ADD_WHITE_MASK
 name|GIMP_ADD_WHITE_MASK
@@ -636,7 +687,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b61aaf90f03
+DECL|enum|__anon2b6db1e71103
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -653,7 +704,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b61aaf91003
+DECL|enum|__anon2b6db1e71203
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS

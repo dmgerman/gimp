@@ -35,20 +35,20 @@ parameter_list|,
 name|GimpImageBaseType
 name|new_type
 parameter_list|,
-comment|/* The following params used only for                                          * new_type == GIMP_INDEXED                                          */
+comment|/* The following params used only for                                      * new_type == GIMP_INDEXED                                      */
 name|gint
 name|num_cols
 parameter_list|,
-name|ConvertDitherType
+name|GimpConvertDitherType
 name|dither
 parameter_list|,
 name|gint
 name|alpha_dither
 parameter_list|,
 name|gint
-name|remdups
+name|remove_dups
 parameter_list|,
-name|ConvertPaletteType
+name|GimpConvertPaletteType
 name|palette_type
 parameter_list|,
 name|GimpPalette

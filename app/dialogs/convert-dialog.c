@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29252fde0108
+DECL|struct|__anon29d671910108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2670,10 +2670,10 @@ name|IndexedDialog
 modifier|*
 name|dialog
 decl_stmt|;
-name|ConvertPaletteType
+name|GimpConvertPaletteType
 name|palette_type
 decl_stmt|;
-name|ConvertDitherType
+name|GimpConvertDitherType
 name|dither_type
 decl_stmt|;
 name|GimpTool
@@ -2696,7 +2696,7 @@ name|webpal_flag
 condition|)
 name|palette_type
 operator|=
-name|WEB_PALETTE
+name|GIMP_WEB_PALETTE
 expr_stmt|;
 elseif|else
 if|if
@@ -2707,7 +2707,7 @@ name|custompal_flag
 condition|)
 name|palette_type
 operator|=
-name|CUSTOM_PALETTE
+name|GIMP_CUSTOM_PALETTE
 expr_stmt|;
 elseif|else
 if|if
@@ -2718,7 +2718,7 @@ name|monopal_flag
 condition|)
 name|palette_type
 operator|=
-name|MONO_PALETTE
+name|GIMP_MONO_PALETTE
 expr_stmt|;
 elseif|else
 if|if
@@ -2729,12 +2729,12 @@ name|makepal_flag
 condition|)
 name|palette_type
 operator|=
-name|MAKE_PALETTE
+name|GIMP_MAKE_PALETTE
 expr_stmt|;
 else|else
 name|palette_type
 operator|=
-name|REUSE_PALETTE
+name|GIMP_REUSE_PALETTE
 expr_stmt|;
 if|if
 condition|(
@@ -2744,7 +2744,7 @@ name|nodither_flag
 condition|)
 name|dither_type
 operator|=
-name|NO_DITHER
+name|GIMP_NO_DITHER
 expr_stmt|;
 elseif|else
 if|if
@@ -2755,7 +2755,7 @@ name|fsdither_flag
 condition|)
 name|dither_type
 operator|=
-name|FS_DITHER
+name|GIMP_FS_DITHER
 expr_stmt|;
 elseif|else
 if|if
@@ -2766,12 +2766,12 @@ name|fslowbleeddither_flag
 condition|)
 name|dither_type
 operator|=
-name|FSLOWBLEED_DITHER
+name|GIMP_FSLOWBLEED_DITHER
 expr_stmt|;
 else|else
 name|dither_type
 operator|=
-name|FIXED_DITHER
+name|GIMP_FIXED_DITHER
 expr_stmt|;
 comment|/* Close the dialogs when open because they're useless for indexed    *  images and could crash the GIMP when used nevertheless    */
 name|active_tool

@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27680e050103
+DECL|enum|__anon297cffdc0103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -87,7 +87,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27680e050203
+DECL|enum|__anon297cffdc0203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27680e050303
+DECL|enum|__anon297cffdc0303
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27680e050403
+DECL|enum|__anon297cffdc0403
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -148,7 +148,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27680e050503
+DECL|enum|__anon297cffdc0503
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -170,80 +170,9 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27680e050603
-block|{
-DECL|enumerator|MAKE_PALETTE
-name|MAKE_PALETTE
-init|=
-literal|0
-block|,
-DECL|enumerator|REUSE_PALETTE
-name|REUSE_PALETTE
-init|=
-literal|1
-block|,
-DECL|enumerator|WEB_PALETTE
-name|WEB_PALETTE
-init|=
-literal|2
-block|,
-DECL|enumerator|MONO_PALETTE
-name|MONO_PALETTE
-init|=
-literal|3
-block|,
-DECL|enumerator|CUSTOM_PALETTE
-name|CUSTOM_PALETTE
-init|=
-literal|4
-DECL|typedef|ConvertPaletteType
-block|}
-name|ConvertPaletteType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon27680e050703
-block|{
-DECL|enumerator|NO_DITHER
-name|NO_DITHER
-init|=
-literal|0
-block|,
-DECL|enumerator|FS_DITHER
-name|FS_DITHER
-init|=
-literal|1
-block|,
-DECL|enumerator|FSLOWBLEED_DITHER
-name|FSLOWBLEED_DITHER
-init|=
-literal|2
-block|,
-DECL|enumerator|FIXED_DITHER
-name|FIXED_DITHER
-init|=
-literal|3
-block|,
-DECL|enumerator|NODESTRUCT_DITHER
-name|NODESTRUCT_DITHER
-init|=
-literal|4
-comment|/* NEVER USE NODESTRUCT_DITHER EXPLICITLY */
-DECL|typedef|ConvertDitherType
-block|}
-name|ConvertDitherType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon27680e050803
+DECL|enum|__anon297cffdc0603
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
