@@ -812,15 +812,6 @@ name|menu_item
 operator|=
 name|NULL
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"remove %p %p\n"
-argument_list|,
-name|viewable
-argument_list|,
-name|menu_item
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|menu_item

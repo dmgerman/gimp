@@ -92,6 +92,15 @@ DECL|member|parent_instance
 name|GimpDock
 name|parent_instance
 decl_stmt|;
+DECL|member|image_container
+name|GimpContainer
+modifier|*
+name|image_container
+decl_stmt|;
+DECL|member|auto_follow_active
+name|gboolean
+name|auto_follow_active
+decl_stmt|;
 DECL|member|option_menu
 name|GtkWidget
 modifier|*

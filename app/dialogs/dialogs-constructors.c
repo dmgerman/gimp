@@ -418,6 +418,74 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
+name|dialogs_tool_tab_func
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|,
+name|gint
+name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|dialogs_set_view_context_func
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|dialogs_set_data_context_func
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|dialogs_set_drawable_context_func
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GtkWidget
+modifier|*
 name|dialogs_dockable_new
 parameter_list|(
 name|GtkWidget
@@ -436,6 +504,9 @@ name|short_name
 parameter_list|,
 name|GimpDockableGetTabFunc
 name|get_tab_func
+parameter_list|,
+name|GimpDockableSetContextFunc
+name|set_context_func
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -467,12 +538,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_toolbox_get (GimpDialogFactory * factory)
+DECL|function|dialogs_toolbox_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_toolbox_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -485,12 +560,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_lc_get (GimpDialogFactory * factory)
+DECL|function|dialogs_lc_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_lc_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GDisplay
@@ -501,8 +580,6 @@ name|gdisp
 operator|=
 name|gimp_context_get_display
 argument_list|(
-name|factory
-operator|->
 name|context
 argument_list|)
 expr_stmt|;
@@ -524,12 +601,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tool_options_get (GimpDialogFactory * factory)
+DECL|function|dialogs_tool_options_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_tool_options_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -542,12 +623,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_device_status_get (GimpDialogFactory * factory)
+DECL|function|dialogs_device_status_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_device_status_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -560,12 +645,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_brush_select_get (GimpDialogFactory * factory)
+DECL|function|dialogs_brush_select_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_brush_select_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -578,12 +667,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_pattern_select_get (GimpDialogFactory * factory)
+DECL|function|dialogs_pattern_select_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_pattern_select_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -596,12 +689,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_gradient_select_get (GimpDialogFactory * factory)
+DECL|function|dialogs_gradient_select_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_gradient_select_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -614,12 +711,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_get (GimpDialogFactory * factory)
+DECL|function|dialogs_palette_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_palette_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -632,12 +733,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_error_console_get (GimpDialogFactory * factory)
+DECL|function|dialogs_error_console_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_error_console_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -650,12 +755,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_document_index_get (GimpDialogFactory * factory)
+DECL|function|dialogs_document_index_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_document_index_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -668,12 +777,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_preferences_get (GimpDialogFactory * factory)
+DECL|function|dialogs_preferences_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_preferences_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -686,12 +799,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_input_devices_get (GimpDialogFactory * factory)
+DECL|function|dialogs_input_devices_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_input_devices_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -704,12 +821,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_module_browser_get (GimpDialogFactory * factory)
+DECL|function|dialogs_module_browser_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_module_browser_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -722,12 +843,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_indexed_palette_get (GimpDialogFactory * factory)
+DECL|function|dialogs_indexed_palette_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_indexed_palette_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GimpColormapDialog
@@ -772,12 +897,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_undo_history_get (GimpDialogFactory * factory)
+DECL|function|dialogs_undo_history_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_undo_history_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GDisplay
@@ -792,8 +921,6 @@ name|gdisp
 operator|=
 name|gimp_context_get_display
 argument_list|(
-name|factory
-operator|->
 name|context
 argument_list|)
 expr_stmt|;
@@ -838,12 +965,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_display_filters_get (GimpDialogFactory * factory)
+DECL|function|dialogs_display_filters_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_display_filters_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 ifdef|#
@@ -857,8 +988,6 @@ name|gdisp
 operator|=
 name|gimp_context_get_display
 argument_list|(
-name|factory
-operator|->
 name|context
 argument_list|)
 expr_stmt|;
@@ -902,12 +1031,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tips_get (GimpDialogFactory * factory)
+DECL|function|dialogs_tips_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_tips_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -920,12 +1053,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_about_get (GimpDialogFactory * factory)
+DECL|function|dialogs_about_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_about_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -938,12 +1075,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_dock_new (GimpDialogFactory * factory)
+DECL|function|dialogs_dock_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_dock_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 return|return
@@ -960,12 +1101,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_image_list_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_image_list_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_image_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -978,8 +1123,6 @@ name|gimp_container_list_view_new
 argument_list|(
 name|image_context
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -999,6 +1142,8 @@ argument_list|,
 literal|"Images"
 argument_list|,
 name|NULL
+argument_list|,
+name|dialogs_set_view_context_func
 argument_list|)
 return|;
 block|}
@@ -1007,12 +1152,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_brush_list_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_brush_list_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_brush_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1029,8 +1178,6 @@ name|global_brush_factory
 argument_list|,
 name|dialogs_edit_brush_func
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -1050,6 +1197,8 @@ argument_list|,
 literal|"Brushes"
 argument_list|,
 name|dialogs_brush_tab_func
+argument_list|,
+name|dialogs_set_data_context_func
 argument_list|)
 return|;
 block|}
@@ -1058,12 +1207,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_pattern_list_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_pattern_list_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_pattern_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1080,8 +1233,6 @@ name|global_pattern_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -1101,6 +1252,8 @@ argument_list|,
 literal|"Patterns"
 argument_list|,
 name|dialogs_pattern_tab_func
+argument_list|,
+name|dialogs_set_data_context_func
 argument_list|)
 return|;
 block|}
@@ -1109,12 +1262,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_gradient_list_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_gradient_list_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_gradient_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1131,8 +1288,6 @@ name|global_gradient_factory
 argument_list|,
 name|dialogs_edit_gradient_func
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -1152,6 +1307,8 @@ argument_list|,
 literal|"Gradients"
 argument_list|,
 name|dialogs_gradient_tab_func
+argument_list|,
+name|dialogs_set_data_context_func
 argument_list|)
 return|;
 block|}
@@ -1160,12 +1317,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_list_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_palette_list_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_palette_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1182,8 +1343,6 @@ name|global_palette_factory
 argument_list|,
 name|dialogs_edit_palette_func
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -1203,6 +1362,8 @@ argument_list|,
 literal|"Palettes"
 argument_list|,
 name|dialogs_palette_tab_func
+argument_list|,
+name|dialogs_set_data_context_func
 argument_list|)
 return|;
 block|}
@@ -1211,12 +1372,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tool_list_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_tool_list_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_tool_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1229,8 +1394,6 @@ name|gimp_container_list_view_new
 argument_list|(
 name|global_tool_info_list
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|22
@@ -1249,7 +1412,9 @@ literal|"Tool List"
 argument_list|,
 literal|"Tools"
 argument_list|,
-name|NULL
+name|dialogs_tool_tab_func
+argument_list|,
+name|dialogs_set_view_context_func
 argument_list|)
 return|;
 block|}
@@ -1262,12 +1427,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_image_grid_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_image_grid_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_image_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1280,8 +1449,6 @@ name|gimp_container_grid_view_new
 argument_list|(
 name|image_context
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -1301,6 +1468,8 @@ argument_list|,
 literal|"Images"
 argument_list|,
 name|NULL
+argument_list|,
+name|dialogs_set_view_context_func
 argument_list|)
 return|;
 block|}
@@ -1309,12 +1478,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_brush_grid_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_brush_grid_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_brush_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1331,8 +1504,6 @@ name|global_brush_factory
 argument_list|,
 name|dialogs_edit_brush_func
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -1352,6 +1523,8 @@ argument_list|,
 literal|"Brushes"
 argument_list|,
 name|dialogs_brush_tab_func
+argument_list|,
+name|dialogs_set_data_context_func
 argument_list|)
 return|;
 block|}
@@ -1360,12 +1533,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_pattern_grid_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_pattern_grid_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_pattern_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1382,8 +1559,6 @@ name|global_pattern_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -1403,6 +1578,8 @@ argument_list|,
 literal|"Patterns"
 argument_list|,
 name|dialogs_pattern_tab_func
+argument_list|,
+name|dialogs_set_data_context_func
 argument_list|)
 return|;
 block|}
@@ -1411,12 +1588,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_gradient_grid_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_gradient_grid_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_gradient_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1433,8 +1614,6 @@ name|global_gradient_factory
 argument_list|,
 name|dialogs_edit_gradient_func
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -1454,6 +1633,8 @@ argument_list|,
 literal|"Gradients"
 argument_list|,
 name|dialogs_gradient_tab_func
+argument_list|,
+name|dialogs_set_data_context_func
 argument_list|)
 return|;
 block|}
@@ -1462,12 +1643,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_grid_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_palette_grid_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_palette_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1484,8 +1669,6 @@ name|global_palette_factory
 argument_list|,
 name|dialogs_edit_palette_func
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|32
@@ -1505,6 +1688,8 @@ argument_list|,
 literal|"Palettes"
 argument_list|,
 name|dialogs_palette_tab_func
+argument_list|,
+name|dialogs_set_data_context_func
 argument_list|)
 return|;
 block|}
@@ -1513,12 +1698,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tool_grid_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_tool_grid_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_tool_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1531,8 +1720,6 @@ name|gimp_container_grid_view_new
 argument_list|(
 name|global_tool_info_list
 argument_list|,
-name|factory
-operator|->
 name|context
 argument_list|,
 literal|22
@@ -1551,7 +1738,9 @@ literal|"Tool Grid"
 argument_list|,
 literal|"Tools"
 argument_list|,
-name|NULL
+name|dialogs_tool_tab_func
+argument_list|,
+name|dialogs_set_view_context_func
 argument_list|)
 return|;
 block|}
@@ -1564,12 +1753,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_layer_list_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_layer_list_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_layer_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GimpImage
@@ -1584,8 +1777,6 @@ name|gimage
 operator|=
 name|gimp_context_get_image
 argument_list|(
-name|factory
-operator|->
 name|context
 argument_list|)
 expr_stmt|;
@@ -1635,30 +1826,6 @@ operator|)
 name|gimp_layer_copy
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_while_alive
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|factory
-operator|->
-name|context
-argument_list|)
-argument_list|,
-literal|"image_changed"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|dialogs_drawable_view_image_changed
-argument_list|)
-argument_list|,
-name|view
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|view
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 name|dialogs_dockable_new
 argument_list|(
@@ -1669,6 +1836,8 @@ argument_list|,
 literal|"Layers"
 argument_list|,
 name|NULL
+argument_list|,
+name|dialogs_set_drawable_context_func
 argument_list|)
 return|;
 block|}
@@ -1677,12 +1846,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_channel_list_view_new (GimpDialogFactory * factory)
+DECL|function|dialogs_channel_list_view_new (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_channel_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GimpImage
@@ -1697,8 +1870,6 @@ name|gimage
 operator|=
 name|gimp_context_get_image
 argument_list|(
-name|factory
-operator|->
 name|context
 argument_list|)
 expr_stmt|;
@@ -1748,30 +1919,6 @@ operator|)
 name|gimp_channel_copy
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_while_alive
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|factory
-operator|->
-name|context
-argument_list|)
-argument_list|,
-literal|"image_changed"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|dialogs_drawable_view_image_changed
-argument_list|)
-argument_list|,
-name|view
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|view
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 name|dialogs_dockable_new
 argument_list|(
@@ -1782,6 +1929,8 @@ argument_list|,
 literal|"Channels"
 argument_list|,
 name|NULL
+argument_list|,
+name|dialogs_set_drawable_context_func
 argument_list|)
 return|;
 block|}
@@ -2076,8 +2225,6 @@ name|dockbook
 operator|->
 name|dock
 operator|->
-name|factory
-operator|->
 name|context
 expr_stmt|;
 name|preview
@@ -2163,8 +2310,6 @@ operator|=
 name|dockbook
 operator|->
 name|dock
-operator|->
-name|factory
 operator|->
 name|context
 expr_stmt|;
@@ -2252,8 +2397,6 @@ name|dockbook
 operator|->
 name|dock
 operator|->
-name|factory
-operator|->
 name|context
 expr_stmt|;
 name|preview
@@ -2340,8 +2483,6 @@ name|dockbook
 operator|->
 name|dock
 operator|->
-name|factory
-operator|->
 name|context
 expr_stmt|;
 name|preview
@@ -2399,7 +2540,381 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_dockable_new (GtkWidget * widget,const gchar * name,const gchar * short_name,GimpDockableGetTabFunc get_tab_func)
+DECL|function|dialogs_tool_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
+name|dialogs_tool_tab_func
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|,
+name|gint
+name|size
+parameter_list|)
+block|{
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|preview
+decl_stmt|;
+name|context
+operator|=
+name|dockbook
+operator|->
+name|dock
+operator|->
+name|context
+expr_stmt|;
+name|preview
+operator|=
+name|gimp_preview_new_full
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|gimp_context_get_tool
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+argument_list|,
+name|size
+argument_list|,
+name|size
+argument_list|,
+literal|1
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect_object_while_alive
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+literal|"tool_changed"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_preview_set_viewable
+argument_list|)
+argument_list|,
+name|GTK_OBJECT
+argument_list|(
+name|preview
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|preview
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|dialogs_set_view_context_func (GimpDockable * dockable,GimpContext * context)
+name|dialogs_set_view_context_func
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+block|{
+name|GimpContainerView
+modifier|*
+name|view
+decl_stmt|;
+name|view
+operator|=
+operator|(
+name|GimpContainerView
+operator|*
+operator|)
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|,
+literal|"gimp-dialogs-view"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|view
+condition|)
+name|gimp_container_view_set_context
+argument_list|(
+name|view
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|dialogs_set_data_context_func (GimpDockable * dockable,GimpContext * context)
+name|dialogs_set_data_context_func
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+block|{
+name|GimpDataFactoryView
+modifier|*
+name|view
+decl_stmt|;
+name|view
+operator|=
+operator|(
+name|GimpDataFactoryView
+operator|*
+operator|)
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|,
+literal|"gimp-dialogs-view"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|view
+condition|)
+block|{
+comment|/* TODO: gimp_data_factory_view_set_context (view, context); */
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|dialogs_context_disconnect (GimpContext * context,GtkWidget * view)
+name|dialogs_context_disconnect
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|view
+parameter_list|)
+block|{
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+literal|"gimp-dialogs-context"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|dialogs_set_drawable_context_func (GimpDockable * dockable,GimpContext * context)
+name|dialogs_set_drawable_context_func
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+block|{
+name|GimpDrawableListView
+modifier|*
+name|view
+decl_stmt|;
+name|view
+operator|=
+operator|(
+name|GimpDrawableListView
+operator|*
+operator|)
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|,
+literal|"gimp-dialogs-view"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|view
+condition|)
+block|{
+name|GimpContext
+modifier|*
+name|old_context
+decl_stmt|;
+name|old_context
+operator|=
+operator|(
+name|GimpContext
+operator|*
+operator|)
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+literal|"gimp-dialogs-context"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|old_context
+condition|)
+block|{
+name|gtk_signal_disconnect_by_func
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|old_context
+argument_list|)
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|dialogs_drawable_view_image_changed
+argument_list|)
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
+name|gtk_signal_disconnect_by_func
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|old_context
+argument_list|)
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|dialogs_context_disconnect
+argument_list|)
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|context
+condition|)
+block|{
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+literal|"image_changed"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|dialogs_drawable_view_image_changed
+argument_list|)
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|dialogs_context_disconnect
+argument_list|)
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+literal|"gimp-dialogs-context"
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
+block|}
+name|dialogs_drawable_view_image_changed
+argument_list|(
+name|context
+argument_list|,
+name|gimp_context_get_image
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_dockable_new (GtkWidget * widget,const gchar * name,const gchar * short_name,GimpDockableGetTabFunc get_tab_func,GimpDockableSetContextFunc set_context_func)
 name|dialogs_dockable_new
 parameter_list|(
 name|GtkWidget
@@ -2418,6 +2933,9 @@ name|short_name
 parameter_list|,
 name|GimpDockableGetTabFunc
 name|get_tab_func
+parameter_list|,
+name|GimpDockableSetContextFunc
+name|set_context_func
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2433,6 +2951,8 @@ argument_list|,
 name|short_name
 argument_list|,
 name|get_tab_func
+argument_list|,
+name|set_context_func
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2447,6 +2967,18 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|,
+literal|"gimp-dialogs-view"
+argument_list|,
 name|widget
 argument_list|)
 expr_stmt|;

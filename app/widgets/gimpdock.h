@@ -97,6 +97,11 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|main_vbox
 name|GtkWidget
 modifier|*

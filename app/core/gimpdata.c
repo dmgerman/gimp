@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4bb5d0103
+DECL|enum|__anon2a33572a0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -421,6 +421,15 @@ argument_list|,
 name|GTK_TYPE_POINTER
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_object_class_add_signals
+argument_list|(
+name|object_class
+argument_list|,
+name|data_signals
+argument_list|,
+name|LAST_SIGNAL
 argument_list|)
 expr_stmt|;
 name|object_class
