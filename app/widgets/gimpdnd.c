@@ -3855,8 +3855,7 @@ argument_list|(
 name|g_print
 argument_list|(
 literal|"gimp_dnd_open_files: trying to convert "
-operator|\
-literal|"%s\" to an uri.\n"
+literal|"\"%s\" to an uri.\n"
 argument_list|,
 name|dnd_crap
 argument_list|)
@@ -3877,8 +3876,8 @@ if|if
 condition|(
 name|filename
 condition|)
-comment|/*  if we got a correctly encoded "file:" uri  */
 block|{
+comment|/*  if we got a correctly encoded "file:" uri...  */
 name|uri
 operator|=
 name|g_filename_to_uri
@@ -3896,9 +3895,33 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-comment|/*  else to evil things...  */
+elseif|else
+if|if
+condition|(
+name|g_file_test
+argument_list|(
+name|dnd_crap
+argument_list|,
+name|G_FILE_TEST_EXISTS
+argument_list|)
+condition|)
 block|{
+comment|/*  ...else if we got a valid local filename...  */
+name|uri
+operator|=
+name|g_filename_to_uri
+argument_list|(
+name|dnd_crap
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/*  ...otherwise do evil things...  */
 specifier|const
 name|gchar
 modifier|*
