@@ -151,6 +151,22 @@ name|DEFAULT_BUTTON_RELIEF
 value|GTK_RELIEF_NONE
 end_define
 
+begin_define
+DECL|macro|TOOL_BUTTON_DATA_KEY
+define|#
+directive|define
+name|TOOL_BUTTON_DATA_KEY
+value|"gimp-tool-button"
+end_define
+
+begin_define
+DECL|macro|TOOL_INFO_DATA_KEY
+define|#
+directive|define
+name|TOOL_INFO_DATA_KEY
+value|"gimp-tool-info"
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -975,7 +991,7 @@ argument_list|(
 name|tool_info
 argument_list|)
 argument_list|,
-literal|"toolbox-button"
+name|TOOL_BUTTON_DATA_KEY
 argument_list|)
 expr_stmt|;
 if|if
@@ -1376,7 +1392,7 @@ argument_list|(
 name|tool_info
 argument_list|)
 argument_list|,
-literal|"toolbox-button"
+name|TOOL_BUTTON_DATA_KEY
 argument_list|)
 expr_stmt|;
 if|if
@@ -1585,7 +1601,7 @@ argument_list|(
 name|tool_info
 argument_list|)
 argument_list|,
-literal|"toolbox-button"
+name|TOOL_BUTTON_DATA_KEY
 argument_list|)
 expr_stmt|;
 if|if
@@ -2164,7 +2180,7 @@ argument_list|(
 name|tool_button
 argument_list|)
 argument_list|,
-literal|"tool-info"
+name|TOOL_INFO_DATA_KEY
 argument_list|)
 expr_stmt|;
 name|accel_key
@@ -2733,7 +2749,7 @@ argument_list|(
 name|tool_info
 argument_list|)
 argument_list|,
-literal|"toolbox-button"
+name|TOOL_BUTTON_DATA_KEY
 argument_list|,
 name|button
 argument_list|)
@@ -2745,7 +2761,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-literal|"tool-info"
+name|TOOL_INFO_DATA_KEY
 argument_list|,
 name|tool_info
 argument_list|)
@@ -3284,9 +3300,7 @@ block|{
 name|GtkWidget
 modifier|*
 name|toolbox_button
-decl_stmt|;
-name|toolbox_button
-operator|=
+init|=
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -3294,9 +3308,9 @@ argument_list|(
 name|tool_info
 argument_list|)
 argument_list|,
-literal|"toolbox-button"
+name|TOOL_BUTTON_DATA_KEY
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|toolbox_button
