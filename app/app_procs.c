@@ -2431,6 +2431,68 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|app_save_window_positions (void)
+name|app_save_window_positions
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GList
+modifier|*
+name|update
+init|=
+name|NULL
+decl_stmt|;
+comment|/* options that should be updated in .gimprc */
+name|GList
+modifier|*
+name|remove
+init|=
+name|NULL
+decl_stmt|;
+comment|/* options that should be commented out */
+name|update
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"toolbox-position"
+argument_list|)
+expr_stmt|;
+name|update
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"lc-dialog-position"
+argument_list|)
+expr_stmt|;
+name|save_gimprc
+argument_list|(
+operator|&
+name|update
+argument_list|,
+operator|&
+name|remove
+argument_list|)
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|update
+argument_list|)
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|remove
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|int
 DECL|function|app_exit_finish_done (void)
 name|app_exit_finish_done
@@ -2545,6 +2607,15 @@ expr_stmt|;
 name|tools_options_dialog_free
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|save_window_positions_on_exit
+condition|)
+block|{
+name|app_save_window_positions
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 comment|/*  gtk_exit (0); */
 name|gtk_main_quit

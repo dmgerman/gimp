@@ -2195,6 +2195,15 @@ argument_list|,
 literal|"Layers& Channels"
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_uposition
+argument_list|(
+name|lc_shell
+argument_list|,
+name|lc_x
+argument_list|,
+name|lc_y
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_wmclass
 argument_list|(
 name|GTK_WINDOW
@@ -2845,6 +2854,19 @@ operator|==
 name|NULL
 condition|)
 return|return;
+name|gdk_window_get_position
+argument_list|(
+name|lc_shell
+operator|->
+name|window
+argument_list|,
+operator|&
+name|lc_x
+argument_list|,
+operator|&
+name|lc_y
+argument_list|)
+expr_stmt|;
 name|layers_dialog_free
 argument_list|()
 expr_stmt|;

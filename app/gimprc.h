@@ -267,6 +267,15 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|int
+name|lc_x
+decl_stmt|,
+name|lc_y
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
 name|progress_x
 decl_stmt|,
 name|progress_y
@@ -304,6 +313,13 @@ begin_decl_stmt
 specifier|extern
 name|int
 name|confirm_on_close
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|save_window_positions_on_exit
 decl_stmt|;
 end_decl_stmt
 
