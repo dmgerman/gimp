@@ -51,6 +51,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|TempBuf
+modifier|*
+name|gimp_drawable_preview_create_preview
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GtkWidget
+modifier|*
+name|gimp_drawable_preview_create_popup
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
@@ -189,6 +215,34 @@ DECL|function|gimp_drawable_preview_init (GimpDrawablePreview * preview)
 name|gimp_drawable_preview_init
 parameter_list|(
 name|GimpDrawablePreview
+modifier|*
+name|preview
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|TempBuf
+modifier|*
+DECL|function|gimp_drawable_preview_create_preview (GimpPreview * preview)
+name|gimp_drawable_preview_create_preview
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|GtkWidget
+modifier|*
+DECL|function|gimp_drawable_preview_create_popup (GimpPreview * preview)
+name|gimp_drawable_preview_create_popup
+parameter_list|(
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
