@@ -242,7 +242,7 @@ argument_list|)
 block|,
 literal|"Sven Neumann<sven@gimp.org>"
 block|,
-literal|"v0.1"
+literal|"v0.2"
 block|,
 literal|"(c) 2003, released under the GPL"
 block|,
@@ -417,7 +417,7 @@ name|name
 operator|=
 name|_
 argument_list|(
-literal|"_CMYK"
+literal|"CMYK"
 argument_list|)
 expr_stmt|;
 name|selector_class
