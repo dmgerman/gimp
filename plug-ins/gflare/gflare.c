@@ -469,7 +469,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c49b490103
+DECL|enum|__anon286d73a50103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -496,7 +496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c49b490203
+DECL|enum|__anon286d73a50203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -515,7 +515,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c49b490308
+DECL|struct|__anon286d73a50308
 typedef|typedef
 struct|struct
 block|{
@@ -652,7 +652,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c49b490408
+DECL|struct|__anon286d73a50408
 typedef|typedef
 struct|struct
 block|{
@@ -672,7 +672,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29c49b490503
+DECL|enum|__anon286d73a50503
 typedef|typedef
 enum|enum
 block|{
@@ -700,7 +700,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c49b490608
+DECL|struct|__anon286d73a50608
 typedef|typedef
 struct|struct
 block|{
@@ -723,7 +723,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon29c49b490708
+DECL|struct|__anon286d73a50708
 struct|struct
 block|{
 DECL|member|x0
@@ -809,7 +809,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c49b490808
+DECL|struct|__anon286d73a50808
 typedef|typedef
 struct|struct
 block|{
@@ -881,7 +881,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c49b490908
+DECL|struct|__anon286d73a50908
 block|{
 DECL|member|x0
 name|gdouble
@@ -908,7 +908,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c49b490a08
+DECL|struct|__anon286d73a50a08
 block|{
 DECL|member|init
 name|gint
@@ -1078,7 +1078,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c49b490b08
+DECL|struct|__anon286d73a50b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1105,7 +1105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c49b490c08
+DECL|struct|__anon286d73a50c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1146,7 +1146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c49b490d08
+DECL|struct|__anon286d73a50d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1341,11 +1341,11 @@ name|gpointer
 name|deinit_data
 decl_stmt|;
 DECL|member|timeout_tag
-name|gint
+name|guint
 name|timeout_tag
 decl_stmt|;
 DECL|member|idle_tag
-name|gint
+name|guint
 name|idle_tag
 decl_stmt|;
 DECL|member|init_done
@@ -1376,7 +1376,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c49b490e08
+DECL|struct|__anon286d73a50e08
 block|{
 DECL|member|tag
 name|gint
@@ -1451,7 +1451,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon29c49b490f03
+DECL|enum|__anon286d73a50f03
 typedef|typedef
 enum|enum
 block|{
@@ -1485,7 +1485,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c49b491008
+DECL|struct|__anon286d73a51008
 typedef|typedef
 struct|struct
 block|{
@@ -1529,7 +1529,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c49b491108
+DECL|struct|__anon286d73a51108
 typedef|typedef
 struct|struct
 block|{
@@ -1587,7 +1587,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c49b491208
+DECL|struct|__anon286d73a51208
 typedef|typedef
 struct|struct
 block|{
@@ -9665,7 +9665,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon29c49b491308
+DECL|struct|__anon286d73a51308
 specifier|static
 struct|struct
 block|{
@@ -12678,6 +12678,10 @@ decl_stmt|;
 name|int
 name|delta
 decl_stmt|;
+name|h
+operator|=
+literal|0.0
+expr_stmt|;
 name|red
 operator|=
 operator|*
@@ -17077,7 +17081,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon29c49b491408
+DECL|struct|__anon286d73a51408
 specifier|static
 struct|struct
 block|{
@@ -23323,8 +23327,7 @@ name|preview
 operator|->
 name|idle_tag
 operator|=
-operator|-
-literal|1
+literal|0
 expr_stmt|;
 name|preview
 operator|->
@@ -23454,8 +23457,7 @@ name|preview
 operator|->
 name|timeout_tag
 operator|=
-operator|-
-literal|1
+literal|0
 expr_stmt|;
 name|preview
 operator|->
@@ -23492,7 +23494,7 @@ condition|(
 name|preview
 operator|->
 name|timeout_tag
-operator|>=
+operator|>
 literal|0
 condition|)
 block|{
@@ -23507,8 +23509,7 @@ name|preview
 operator|->
 name|timeout_tag
 operator|=
-operator|-
-literal|1
+literal|0
 expr_stmt|;
 block|}
 if|if
@@ -23516,7 +23517,7 @@ condition|(
 name|preview
 operator|->
 name|idle_tag
-operator|>=
+operator|>
 literal|0
 condition|)
 block|{
@@ -23551,8 +23552,7 @@ name|preview
 operator|->
 name|idle_tag
 operator|=
-operator|-
-literal|1
+literal|0
 expr_stmt|;
 name|DEBUG_PRINT
 argument_list|(
