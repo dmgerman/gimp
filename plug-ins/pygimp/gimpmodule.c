@@ -31,6 +31,73 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_comment
+comment|/* maximum bits per pixel ... */
+end_comment
+
+begin_define
+DECL|macro|MAX_BPP
+define|#
+directive|define
+name|MAX_BPP
+value|4
+end_define
+
+begin_comment
+comment|/* part of Hans Breuer's pygimp on win32 patch */
+end_comment
+
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|_MSC_VER
+argument_list|)
+end_if
+
+begin_comment
+comment|/* reduce strict checking in glibconfig.h */
+end_comment
+
+begin_pragma
+pragma|#
+directive|pragma
+name|warning
+name|(
+name|default
+name|:
+name|4047
+name|)
+end_pragma
+
+begin_undef
+undef|#
+directive|undef
+name|PyObject_HEAD_INIT
+end_undef
+
+begin_define
+DECL|macro|PyObject_HEAD_INIT (a)
+define|#
+directive|define
+name|PyObject_HEAD_INIT
+parameter_list|(
+name|a
+parameter_list|)
+define|\
+value|1, NULL,
+end_define
+
+begin_comment
+comment|/* must be set in init function */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_decl_stmt
 DECL|variable|ErrorObject
 specifier|static
@@ -95,7 +162,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb88d560108
+DECL|struct|__anon2b518bca0108
 typedef|typedef
 struct|struct
 block|{
@@ -135,7 +202,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb88d560208
+DECL|struct|__anon2b518bca0208
 typedef|typedef
 struct|struct
 block|{
@@ -244,7 +311,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb88d560308
+DECL|struct|__anon2b518bca0308
 typedef|typedef
 struct|struct
 block|{
@@ -298,7 +365,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb88d560408
+DECL|struct|__anon2b518bca0408
 typedef|typedef
 struct|struct
 block|{
@@ -352,7 +419,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb88d560508
+DECL|struct|__anon2b518bca0508
 typedef|typedef
 struct|struct
 block|{
@@ -476,7 +543,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb88d560608
+DECL|struct|__anon2b518bca0608
 typedef|typedef
 struct|struct
 block|{
@@ -542,7 +609,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb88d560708
+DECL|struct|__anon2b518bca0708
 typedef|typedef
 struct|struct
 block|{
@@ -622,7 +689,7 @@ comment|/* Declarations for objects of type Parasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb88d560808
+DECL|struct|__anon2b518bca0808
 typedef|typedef
 struct|struct
 block|{
@@ -1864,6 +1931,18 @@ name|tmp
 argument_list|,
 name|j
 argument_list|,
+name|params
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_stringarray
+index|[
+name|j
+index|]
+condition|?
 name|PyString_FromString
 argument_list|(
 name|params
@@ -1877,6 +1956,11 @@ name|d_stringarray
 index|[
 name|j
 index|]
+argument_list|)
+else|:
+name|PyString_FromString
+argument_list|(
+literal|""
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7634,8 +7718,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|img_attach_parasite (self,args)
-name|img_attach_parasite
+DECL|function|img_parasite_attach (self,args)
+name|img_parasite_attach
 parameter_list|(
 name|self
 parameter_list|,
@@ -7661,7 +7745,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"O!:attach_parasite"
+literal|"O!:parasite_attach"
 argument_list|,
 operator|&
 name|Paratype
@@ -7782,8 +7866,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|img_detach_parasite (self,args)
-name|img_detach_parasite
+DECL|function|img_parasite_detach (self,args)
+name|img_parasite_detach
 parameter_list|(
 name|self
 parameter_list|,
@@ -7809,7 +7893,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"s:detach_parasite"
+literal|"s:parasite_detach"
 argument_list|,
 operator|&
 name|name
@@ -8591,12 +8675,12 @@ name|METH_VARARGS
 block|}
 block|,
 block|{
-literal|"attach_parasite"
+literal|"parasite_attach"
 block|,
 operator|(
 name|PyCFunction
 operator|)
-name|img_attach_parasite
+name|img_parasite_attach
 block|,
 name|METH_VARARGS
 block|}
@@ -8613,12 +8697,12 @@ name|METH_VARARGS
 block|}
 block|,
 block|{
-literal|"detach_parasite"
+literal|"parasite_detach"
 block|,
 operator|(
 name|PyCFunction
 operator|)
-name|img_detach_parasite
+name|img_parasite_detach
 block|,
 name|METH_VARARGS
 block|}
@@ -10400,20 +10484,18 @@ begin_comment
 comment|/* -------------------------------------------------------- */
 end_comment
 
-begin_expr_stmt
-DECL|function|ensure_drawable (self)
+begin_function
 specifier|static
+name|void
+DECL|function|ensure_drawable (self)
 name|ensure_drawable
-argument_list|(
-argument|self
-argument_list|)
-name|drwobject
-operator|*
+parameter_list|(
 name|self
-expr_stmt|;
-end_expr_stmt
-
-begin_block
+parameter_list|)
+name|drwobject
+modifier|*
+name|self
+decl_stmt|;
 block|{
 if|if
 condition|(
@@ -10434,7 +10516,7 @@ name|ID
 argument_list|)
 expr_stmt|;
 block|}
-end_block
+end_function
 
 begin_function
 specifier|static
@@ -11036,8 +11118,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|drw_attach_parasite (self,args)
-name|drw_attach_parasite
+DECL|function|drw_parasite_attach (self,args)
+name|drw_parasite_attach
 parameter_list|(
 name|self
 parameter_list|,
@@ -11063,7 +11145,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"O!:attach_parasite"
+literal|"O!:parasite_attach"
 argument_list|,
 operator|&
 name|Paratype
@@ -11184,8 +11266,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|drw_detach_parasite (self,args)
-name|drw_detach_parasite
+DECL|function|drw_parasite_detach (self,args)
+name|drw_parasite_detach
 parameter_list|(
 name|self
 parameter_list|,
@@ -11262,7 +11344,7 @@ directive|define
 name|drw_methods
 parameter_list|()
 define|\
-value|{"flush",	(PyCFunction)drw_flush,	METH_VARARGS}, \     {"update",	(PyCFunction)drw_update,	METH_VARARGS}, \     {"merge_shadow",	(PyCFunction)drw_merge_shadow,	METH_VARARGS}, \     {"fill",	(PyCFunction)drw_fill,	METH_VARARGS}, \     {"get_tile",	(PyCFunction)drw_get_tile,	METH_VARARGS}, \     {"get_tile2",	(PyCFunction)drw_get_tile2,	METH_VARARGS}, \     {"get_pixel_rgn", (PyCFunction)drw_get_pixel_rgn, METH_VARARGS}, \     {"parasite_find",       (PyCFunction)img_parasite_find, METH_VARARGS}, \     {"attach_parasite",     (PyCFunction)img_attach_parasite, METH_VARARGS},\     {"attach_new_parasite",(PyCFunction)img_attach_new_parasite,METH_VARARGS},\     {"detach_parasite",     (PyCFunction)img_detach_parasite, METH_VARARGS}
+value|{"flush",	(PyCFunction)drw_flush,	METH_VARARGS}, \     {"update",	(PyCFunction)drw_update,	METH_VARARGS}, \     {"merge_shadow",	(PyCFunction)drw_merge_shadow,	METH_VARARGS}, \     {"fill",	(PyCFunction)drw_fill,	METH_VARARGS}, \     {"get_tile",	(PyCFunction)drw_get_tile,	METH_VARARGS}, \     {"get_tile2",	(PyCFunction)drw_get_tile2,	METH_VARARGS}, \     {"get_pixel_rgn", (PyCFunction)drw_get_pixel_rgn, METH_VARARGS}, \     {"parasite_find",       (PyCFunction)drw_parasite_find, METH_VARARGS}, \     {"parasite_attach",     (PyCFunction)drw_parasite_attach, METH_VARARGS},\     {"attach_new_parasite",(PyCFunction)drw_attach_new_parasite,METH_VARARGS},\     {"parasite_detach",     (PyCFunction)drw_parasite_detach, METH_VARARGS}
 end_define
 
 begin_else
@@ -12261,7 +12343,7 @@ condition|)
 return|return
 name|Py_BuildValue
 argument_list|(
-literal|"[sssssssssssssssssss]"
+literal|"[ssssssssssssssssssss]"
 argument_list|,
 literal|"ID"
 argument_list|,
@@ -12288,6 +12370,8 @@ argument_list|,
 literal|"is_grey"
 argument_list|,
 literal|"is_indexed"
+argument_list|,
+literal|"is_rgb"
 argument_list|,
 literal|"mask"
 argument_list|,
@@ -12463,6 +12547,14 @@ argument_list|(
 name|name
 argument_list|,
 literal|"is_colour"
+argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"is_rgb"
 argument_list|)
 condition|)
 return|return
@@ -13486,6 +13578,14 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
+literal|"is_rgb"
+argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
 literal|"is_gray"
 argument_list|)
 operator|||
@@ -14092,7 +14192,7 @@ condition|)
 return|return
 name|Py_BuildValue
 argument_list|(
-literal|"[ssssssssssssssssssssss]"
+literal|"[ssssssssssssssssssssssss]"
 argument_list|,
 literal|"ID"
 argument_list|,
@@ -14117,6 +14217,10 @@ argument_list|,
 literal|"is_grey"
 argument_list|,
 literal|"is_indexed"
+argument_list|,
+literal|"is_layer_mask"
+argument_list|,
+literal|"is_rgb"
 argument_list|,
 literal|"layer"
 argument_list|,
@@ -14345,6 +14449,14 @@ name|name
 argument_list|,
 literal|"is_colour"
 argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"is_rgb"
+argument_list|)
 condition|)
 return|return
 name|PyInt_FromLong
@@ -14463,6 +14575,14 @@ argument_list|(
 name|name
 argument_list|,
 literal|"layer_mask"
+argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"is_layer_mask"
 argument_list|)
 condition|)
 return|return
@@ -15186,6 +15306,14 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
+literal|"is_rgb"
+argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
 literal|"is_gray"
 argument_list|)
 operator|||
@@ -15203,6 +15331,14 @@ argument_list|(
 name|name
 argument_list|,
 literal|"is_indexed"
+argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"is_layer_mask"
 argument_list|)
 operator|||
 operator|!
@@ -17097,7 +17233,7 @@ block|{
 name|char
 name|buf
 index|[
-name|bpp
+name|MAX_BPP
 index|]
 decl_stmt|;
 name|y1
@@ -17229,9 +17365,14 @@ return|;
 block|}
 else|else
 block|{
-name|char
+name|gchar
+modifier|*
 name|buf
-index|[
+init|=
+name|g_new
+argument_list|(
+name|gchar
+argument_list|,
 name|bpp
 operator|*
 operator|(
@@ -17239,7 +17380,11 @@ name|y2
 operator|-
 name|y1
 operator|)
-index|]
+argument_list|)
+decl_stmt|;
+name|PyObject
+modifier|*
+name|ret
 decl_stmt|;
 if|if
 condition|(
@@ -17268,7 +17413,8 @@ operator|-
 name|y1
 argument_list|)
 expr_stmt|;
-return|return
+name|ret
+operator|=
 name|PyString_FromStringAndSize
 argument_list|(
 name|buf
@@ -17281,6 +17427,14 @@ operator|-
 name|y1
 operator|)
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|buf
+argument_list|)
+expr_stmt|;
+return|return
+name|ret
 return|;
 block|}
 else|else
@@ -17389,16 +17543,12 @@ argument_list|)
 condition|)
 block|{
 name|char
+modifier|*
 name|buf
-index|[
-name|bpp
-operator|*
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
-index|]
+decl_stmt|;
+name|PyObject
+modifier|*
+name|ret
 decl_stmt|;
 name|y1
 operator|=
@@ -17437,6 +17587,21 @@ return|return
 name|NULL
 return|;
 block|}
+name|buf
+operator|=
+name|g_new
+argument_list|(
+name|gchar
+argument_list|,
+name|bpp
+operator|*
+operator|(
+name|x2
+operator|-
+name|x1
+operator|)
+argument_list|)
+expr_stmt|;
 name|gimp_pixel_rgn_get_row
 argument_list|(
 name|pr
@@ -17452,7 +17617,8 @@ operator|-
 name|x1
 argument_list|)
 expr_stmt|;
-return|return
+name|ret
+operator|=
 name|PyString_FromStringAndSize
 argument_list|(
 name|buf
@@ -17465,6 +17631,14 @@ operator|-
 name|x1
 operator|)
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|buf
+argument_list|)
+expr_stmt|;
+return|return
+name|ret
 return|;
 block|}
 elseif|else
@@ -17539,9 +17713,14 @@ return|;
 block|}
 else|else
 block|{
-name|char
+name|gchar
+modifier|*
 name|buf
-index|[
+init|=
+name|g_new
+argument_list|(
+name|gchar
+argument_list|,
 name|bpp
 operator|*
 operator|(
@@ -17555,7 +17734,11 @@ name|y2
 operator|-
 name|y1
 operator|)
-index|]
+argument_list|)
+decl_stmt|;
+name|PyObject
+modifier|*
+name|ret
 decl_stmt|;
 if|if
 condition|(
@@ -17588,7 +17771,8 @@ operator|-
 name|y1
 argument_list|)
 expr_stmt|;
-return|return
+name|ret
+operator|=
 name|PyString_FromStringAndSize
 argument_list|(
 name|buf
@@ -17607,6 +17791,14 @@ operator|-
 name|y1
 operator|)
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|buf
+argument_list|)
+expr_stmt|;
+return|return
+name|ret
 return|;
 block|}
 else|else
@@ -19254,10 +19446,6 @@ modifier|*
 name|name
 decl_stmt|;
 block|{
-name|PyObject
-modifier|*
-name|rv
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -20367,6 +20555,24 @@ return|;
 block|}
 if|if
 condition|(
+name|query
+operator|==
+name|Py_None
+condition|)
+block|{
+name|PyErr_SetString
+argument_list|(
+name|ErrorObject
+argument_list|,
+literal|"a query procedure must be provided."
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
+if|if
+condition|(
 name|ip
 operator|!=
 name|Py_None
@@ -20504,6 +20710,27 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+block|{
+specifier|extern
+name|void
+name|set_gimp_PLUG_IN_INFO_PTR
+argument_list|(
+name|GPlugInInfo
+operator|*
+argument_list|)
+decl_stmt|;
+name|set_gimp_PLUG_IN_INFO_PTR
+argument_list|(
+operator|&
+name|PLUG_IN_INFO
+argument_list|)
+expr_stmt|;
+block|}
+endif|#
+directive|endif
 name|gimp_main
 argument_list|(
 name|argc
@@ -23381,10 +23608,6 @@ end_function
 
 begin_block
 block|{
-name|drwobject
-modifier|*
-name|drw
-decl_stmt|;
 name|imgobject
 modifier|*
 name|img
@@ -23497,10 +23720,6 @@ end_function
 
 begin_block
 block|{
-name|drwobject
-modifier|*
-name|drw
-decl_stmt|;
 name|imgobject
 modifier|*
 name|img
@@ -24270,8 +24489,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Find_parasite (self,args)
-name|gimp_Find_parasite
+DECL|function|gimp_Parasite_find (self,args)
+name|gimp_Parasite_find
 parameter_list|(
 name|self
 parameter_list|,
@@ -24328,8 +24547,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Attach_parasite (self,args)
-name|gimp_Attach_parasite
+DECL|function|gimp_Parasite_attach (self,args)
+name|gimp_Parasite_attach
 parameter_list|(
 name|self
 parameter_list|,
@@ -24357,7 +24576,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"O!:attach_parasite"
+literal|"O!:parasite_attach"
 argument_list|,
 operator|&
 name|Paratype
@@ -24472,8 +24691,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|gimp_Detach_parasite (self,args)
-name|gimp_Detach_parasite
+DECL|function|gimp_Parasite_detach (self,args)
+name|gimp_Parasite_detach
 parameter_list|(
 name|self
 parameter_list|,
@@ -24501,7 +24720,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"s:detach_parasite"
+literal|"s:parasite_detach"
 argument_list|,
 operator|&
 name|name
@@ -25270,18 +25489,18 @@ block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Find_parasite
+name|gimp_Parasite_find
 block|,
 name|METH_VARARGS
 block|}
 block|,
 block|{
-literal|"attach_parasite"
+literal|"parasite_attach"
 block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Attach_parasite
+name|gimp_Parasite_attach
 block|,
 name|METH_VARARGS
 block|}
@@ -25298,12 +25517,12 @@ name|METH_VARARGS
 block|}
 block|,
 block|{
-literal|"detach_parasite"
+literal|"parasite_detach"
 block|,
 operator|(
 name|PyCFunction
 operator|)
-name|gimp_Detach_parasite
+name|gimp_Parasite_detach
 block|,
 name|METH_VARARGS
 block|}
@@ -25387,7 +25606,7 @@ name|char
 name|gimp_module_documentation
 index|[]
 init|=
-literal|""
+literal|"This module provides interfaces to allow you to write gimp plugins"
 decl_stmt|;
 end_decl_stmt
 
@@ -25408,6 +25627,78 @@ name|PyObject
 modifier|*
 name|i
 decl_stmt|;
+if|#
+directive|if
+name|defined
+argument_list|(
+name|_MSC_VER
+argument_list|)
+comment|/* see: Python FAQ 3.24 "Initializer not a constant." */
+name|Pdbtype
+operator|.
+name|ob_type
+operator|=
+operator|&
+name|PyType_Type
+expr_stmt|;
+name|Pftype
+operator|.
+name|ob_type
+operator|=
+operator|&
+name|PyType_Type
+expr_stmt|;
+name|Imgtype
+operator|.
+name|ob_type
+operator|=
+operator|&
+name|PyType_Type
+expr_stmt|;
+name|Disptype
+operator|.
+name|ob_type
+operator|=
+operator|&
+name|PyType_Type
+expr_stmt|;
+name|Laytype
+operator|.
+name|ob_type
+operator|=
+operator|&
+name|PyType_Type
+expr_stmt|;
+name|Chntype
+operator|.
+name|ob_type
+operator|=
+operator|&
+name|PyType_Type
+expr_stmt|;
+name|Tiletype
+operator|.
+name|ob_type
+operator|=
+operator|&
+name|PyType_Type
+expr_stmt|;
+name|Prtype
+operator|.
+name|ob_type
+operator|=
+operator|&
+name|PyType_Type
+expr_stmt|;
+name|Paratype
+operator|.
+name|ob_type
+operator|=
+operator|&
+name|PyType_Type
+expr_stmt|;
+endif|#
+directive|endif
 comment|/* Create the module and add the functions */
 name|m
 operator|=
