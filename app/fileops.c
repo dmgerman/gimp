@@ -3196,6 +3196,11 @@ operator|*
 name|status
 operator|==
 name|PDB_SUCCESS
+operator|&&
+name|gimage_id
+operator|!=
+operator|-
+literal|1
 condition|)
 block|{
 name|layer_invalidate_previews
