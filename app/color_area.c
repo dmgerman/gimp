@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e12a260103
+DECL|enum|__anon28033cb50103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -1662,15 +1662,13 @@ name|TRUE
 expr_stmt|;
 block|}
 else|else
-name|gdk_window_raise
+block|{
+name|color_notebook_show
 argument_list|(
 name|color_notebook
-operator|->
-name|shell
-operator|->
-name|window
 argument_list|)
 expr_stmt|;
+block|}
 name|color_notebook_set_color
 argument_list|(
 name|color_notebook
