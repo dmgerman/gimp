@@ -1625,7 +1625,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot open '%s' for reading: %s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|source
@@ -1669,7 +1669,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot open '%s' for writing: %s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|dest

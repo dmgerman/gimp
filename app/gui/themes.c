@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -592,7 +598,17 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't open themerc"
+name|_
+argument_list|(
+literal|"Could not open '%s' for writing: %s"
+argument_list|)
+argument_list|,
+name|themerc
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
