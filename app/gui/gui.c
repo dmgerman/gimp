@@ -154,7 +154,7 @@ argument_list|,
 name|transparency_size
 argument_list|)
 expr_stmt|;
-name|dialogs_register
+name|dialogs_init
 argument_list|()
 expr_stmt|;
 name|devices_init
@@ -336,6 +336,9 @@ name|tool_options_dialog_free
 argument_list|()
 expr_stmt|;
 name|save_sessionrc
+argument_list|()
+expr_stmt|;
+name|dialogs_exit
 argument_list|()
 expr_stmt|;
 block|}

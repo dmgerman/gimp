@@ -211,7 +211,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_dockable_new
 parameter_list|(
@@ -240,7 +240,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_image_list_view_new (GimpDialogFactory * factory)
 name|dialogs_image_list_view_new
@@ -287,7 +287,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_brush_list_view_new (GimpDialogFactory * factory)
 name|dialogs_brush_list_view_new
@@ -338,7 +338,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_pattern_list_view_new (GimpDialogFactory * factory)
 name|dialogs_pattern_list_view_new
@@ -389,7 +389,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_gradient_list_view_new (GimpDialogFactory * factory)
 name|dialogs_gradient_list_view_new
@@ -440,7 +440,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_palette_list_view_new (GimpDialogFactory * factory)
 name|dialogs_palette_list_view_new
@@ -491,7 +491,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_tool_list_view_new (GimpDialogFactory * factory)
 name|dialogs_tool_list_view_new
@@ -542,7 +542,7 @@ comment|/*  grid views  */
 end_comment
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_image_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_image_grid_view_new
@@ -589,7 +589,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_brush_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_brush_grid_view_new
@@ -640,7 +640,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_pattern_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_pattern_grid_view_new
@@ -691,7 +691,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_gradient_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_gradient_grid_view_new
@@ -742,7 +742,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_palette_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_palette_grid_view_new
@@ -793,7 +793,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_tool_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_tool_grid_view_new
@@ -1196,7 +1196,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDockable
+name|GtkWidget
 modifier|*
 DECL|function|dialogs_dockable_new (GtkWidget * widget,const gchar * name,const gchar * short_name,GimpDockableGetTabFunc get_tab_func)
 name|dialogs_dockable_new
@@ -1250,10 +1250,7 @@ name|widget
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_DOCKABLE
-argument_list|(
 name|dockable
-argument_list|)
 return|;
 block|}
 end_function

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdockable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdockbook.h"
 end_include
 
@@ -83,7 +89,7 @@ operator|&&
 name|action
 condition|)
 block|{
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dockable
 decl_stmt|;
@@ -111,7 +117,10 @@ name|gimp_dockbook_add
 argument_list|(
 name|dockbook
 argument_list|,
+name|GIMP_DOCKABLE
+argument_list|(
 name|dockable
+argument_list|)
 argument_list|,
 operator|-
 literal|1

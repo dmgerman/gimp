@@ -5732,7 +5732,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:image_list"
+literal|"gimp:image-list"
 argument_list|)
 block|}
 block|,
@@ -5754,7 +5754,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:brush_list"
+literal|"gimp:brush-list"
 argument_list|)
 block|}
 block|,
@@ -5776,7 +5776,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:pattern_list"
+literal|"gimp:pattern-list"
 argument_list|)
 block|}
 block|,
@@ -5798,7 +5798,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:gradient_list"
+literal|"gimp:gradient-list"
 argument_list|)
 block|}
 block|,
@@ -5820,7 +5820,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:palette_list"
+literal|"gimp:palette-list"
 argument_list|)
 block|}
 block|,
@@ -5842,7 +5842,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:tool_list"
+literal|"gimp:tool-list"
 argument_list|)
 block|}
 block|,
@@ -5882,7 +5882,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:image_grid"
+literal|"gimp:image-grid"
 argument_list|)
 block|}
 block|,
@@ -5904,7 +5904,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:brush_grid"
+literal|"gimp:brush-grid"
 argument_list|)
 block|}
 block|,
@@ -5926,7 +5926,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:pattern_grid"
+literal|"gimp:pattern-grid"
 argument_list|)
 block|}
 block|,
@@ -5948,7 +5948,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:gradient_grid"
+literal|"gimp:gradient-grid"
 argument_list|)
 block|}
 block|,
@@ -5970,7 +5970,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:palette_grid"
+literal|"gimp:palette-grid"
 argument_list|)
 block|}
 block|,
@@ -5992,7 +5992,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:tool_grid"
+literal|"gimp:tool-grid"
 argument_list|)
 block|}
 block|,

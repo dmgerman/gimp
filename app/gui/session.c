@@ -57,6 +57,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -879,6 +885,11 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_factories_session_save
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 comment|/* save last tip shown */
 name|fprintf
 argument_list|(
@@ -1038,11 +1049,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_factories_session_restore
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/* internal function */
+comment|/*  private functions  */
 end_comment
 
 begin_function

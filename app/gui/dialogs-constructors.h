@@ -17,7 +17,7 @@ name|__DIALOGS_CONSTRUCTORS_H__
 end_define
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_image_list_view_new
 parameter_list|(
@@ -29,7 +29,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_brush_list_view_new
 parameter_list|(
@@ -41,7 +41,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_pattern_list_view_new
 parameter_list|(
@@ -53,7 +53,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_gradient_list_view_new
 parameter_list|(
@@ -65,7 +65,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_palette_list_view_new
 parameter_list|(
@@ -77,7 +77,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_tool_list_view_new
 parameter_list|(
@@ -89,7 +89,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_image_grid_view_new
 parameter_list|(
@@ -101,7 +101,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_brush_grid_view_new
 parameter_list|(
@@ -113,7 +113,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_pattern_grid_view_new
 parameter_list|(
@@ -125,7 +125,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_gradient_grid_view_new
 parameter_list|(
@@ -137,7 +137,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_palette_grid_view_new
 parameter_list|(
@@ -149,7 +149,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockable
+name|GtkWidget
 modifier|*
 name|dialogs_tool_grid_view_new
 parameter_list|(
