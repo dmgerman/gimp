@@ -125,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b715f0103
+DECL|enum|__anon2a230a980103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b715f0208
+DECL|struct|__anon2a230a980208
 block|{
 DECL|member|interlace
 name|gint
@@ -2593,10 +2593,13 @@ control|)
 block|{
 if|if
 condition|(
+operator|(
+name|guchar
+operator|)
 operator|*
 name|c
-operator|<
-literal|0
+operator|>
+literal|127
 condition|)
 block|{
 name|g_message
