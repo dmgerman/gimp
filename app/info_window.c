@@ -330,7 +330,7 @@ name|gdisp_ptr
 expr_stmt|;
 name|title
 operator|=
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(

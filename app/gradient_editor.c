@@ -26013,7 +26013,7 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
-name|prune_filename
+name|g_basename
 argument_list|(
 name|filename
 argument_list|)

@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon28e2b2c60108
+DECL|struct|__anon27ca7e890108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -4105,7 +4105,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"More Saturated:"
+literal|"More Sat:"
 argument_list|,
 name|data
 argument_list|)
@@ -4123,7 +4123,7 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-literal|"Less Saturated:"
+literal|"Less Sat:"
 argument_list|,
 name|data
 argument_list|)

@@ -4451,7 +4451,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29f32f720108
+DECL|struct|__anon2bc331ca0108
 typedef|typedef
 struct|struct
 block|{
@@ -4593,7 +4593,7 @@ expr_stmt|;
 block|}
 name|image_name
 operator|=
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(

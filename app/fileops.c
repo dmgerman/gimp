@@ -2871,7 +2871,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(
@@ -3366,7 +3366,7 @@ argument_list|)
 expr_stmt|;
 name|raw_filename
 operator|=
-name|prune_filename
+name|g_basename
 argument_list|(
 name|filename
 argument_list|)

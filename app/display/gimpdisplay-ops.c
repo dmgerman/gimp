@@ -410,7 +410,7 @@ name|confirm_on_close
 condition|)
 name|gdisplay_close_warning_dialog
 argument_list|(
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(

@@ -1071,7 +1071,7 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(

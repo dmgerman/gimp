@@ -260,7 +260,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0106080103
+DECL|enum|__anon27614e6d0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -3398,7 +3398,7 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
-name|prune_filename
+name|g_basename
 argument_list|(
 name|filename
 argument_list|)
@@ -3686,7 +3686,7 @@ name|strcmp
 argument_list|(
 name|default_palette
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 name|filename
 argument_list|)
@@ -12367,7 +12367,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-%d"
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(
@@ -12423,7 +12423,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-%d"
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(
@@ -12817,7 +12817,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-%d"
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(
@@ -12870,7 +12870,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-%d"
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(

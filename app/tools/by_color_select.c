@@ -4231,7 +4231,7 @@ operator|->
 name|gimage_name
 argument_list|)
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 name|gimage_filename
 argument_list|(

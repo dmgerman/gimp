@@ -2622,7 +2622,7 @@ name|str
 expr_stmt|;
 name|filename
 operator|=
-name|prune_filename
+name|g_basename
 argument_list|(
 name|raw_filename
 argument_list|)
@@ -2724,7 +2724,7 @@ literal|"%d. %s"
 argument_list|,
 name|i
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 operator|(
 operator|(

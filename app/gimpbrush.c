@@ -58,7 +58,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b1fd03d0103
+DECL|enum|__anon28c85c160103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -1080,7 +1080,7 @@ argument_list|)
 expr_stmt|;
 comment|/* Check if the current brush is the default one */
 comment|/* lets see if it works with out this for now */
-comment|/*  if (strcmp(default_brush, prune_filename(filename)) == 0) { 	  active_brush = brush; 	  have_default_brush = 1;   }*/
+comment|/*  if (strcmp(default_brush, g_basename(filename)) == 0) { 	  active_brush = brush; 	  have_default_brush = 1;   }*/
 comment|/* if */
 block|}
 end_function

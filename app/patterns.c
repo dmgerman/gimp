@@ -1039,7 +1039,7 @@ name|strcmp
 argument_list|(
 name|default_pattern
 argument_list|,
-name|prune_filename
+name|g_basename
 argument_list|(
 name|filename
 argument_list|)
