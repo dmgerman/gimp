@@ -108,12 +108,6 @@ name|GimpText
 modifier|*
 name|text
 decl_stmt|;
-DECL|member|context
-name|PangoContext
-modifier|*
-name|context
-decl_stmt|;
-comment|/* should move to GimpImage ? */
 block|}
 struct|;
 end_struct
@@ -152,7 +146,7 @@ name|gimp_text_layer_new
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 parameter_list|,
 name|GimpText
 modifier|*
