@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbb3d6a0108
+DECL|struct|__anon2a121f5f0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -2167,9 +2167,13 @@ expr_stmt|;
 comment|/*  frame for Image Type  */
 name|frame
 operator|=
-name|gimp_enum_radio_frame_new
+name|gimp_enum_radio_frame_new_with_range
 argument_list|(
 name|GIMP_TYPE_IMAGE_BASE_TYPE
+argument_list|,
+name|GIMP_RGB
+argument_list|,
+name|GIMP_GRAY
 argument_list|,
 name|gtk_label_new
 argument_list|(
@@ -2237,9 +2241,13 @@ expr_stmt|;
 comment|/* frame for Fill Type */
 name|frame
 operator|=
-name|gimp_enum_radio_frame_new
+name|gimp_enum_radio_frame_new_with_range
 argument_list|(
 name|GIMP_TYPE_FILL_TYPE
+argument_list|,
+name|GIMP_FOREGROUND_FILL
+argument_list|,
+name|GIMP_TRANSPARENT_FILL
 argument_list|,
 name|gtk_label_new
 argument_list|(

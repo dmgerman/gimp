@@ -2785,9 +2785,13 @@ expr_stmt|;
 comment|/*  The radio frame  */
 name|frame
 operator|=
-name|gimp_enum_radio_frame_new
+name|gimp_enum_radio_frame_new_with_range
 argument_list|(
 name|GIMP_TYPE_FILL_TYPE
+argument_list|,
+name|GIMP_FOREGROUND_FILL
+argument_list|,
+name|GIMP_TRANSPARENT_FILL
 argument_list|,
 name|gtk_label_new
 argument_list|(
