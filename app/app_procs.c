@@ -543,6 +543,8 @@ literal|"Gimp-Config"
 block|,
 literal|"Gimp-Core"
 block|,
+literal|"Gimp-Dialogs"
+block|,
 literal|"Gimp-Display"
 block|,
 literal|"Gimp-File"
