@@ -35,18 +35,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Dobject
-modifier|*
-name|d_load_poly
-parameter_list|(
-name|FILE
-modifier|*
-name|from
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|d_update_poly
 parameter_list|(

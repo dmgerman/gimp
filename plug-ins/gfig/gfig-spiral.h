@@ -74,18 +74,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Dobject
-modifier|*
-name|d_load_spiral
-parameter_list|(
-name|FILE
-modifier|*
-name|from
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|d_spiral_object_class_init
 parameter_list|(

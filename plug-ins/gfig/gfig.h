@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140103
+DECL|enum|__anon2922324b0103
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdf6d140208
+DECL|struct|__anon2922324b0208
 block|{
 DECL|member|gridspacing
 name|gint
@@ -189,7 +189,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140303
+DECL|enum|__anon2922324b0303
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140403
+DECL|enum|__anon2922324b0403
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140503
+DECL|enum|__anon2922324b0503
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -252,7 +252,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140603
+DECL|enum|__anon2922324b0603
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -270,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdf6d140708
+DECL|struct|__anon2922324b0708
 block|{
 DECL|member|type
 name|SelectionType
@@ -321,7 +321,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140803
+DECL|enum|__anon2922324b0803
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -342,7 +342,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140903
+DECL|enum|__anon2922324b0903
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140a03
+DECL|enum|__anon2922324b0a03
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -390,7 +390,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140b03
+DECL|enum|__anon2922324b0b03
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140c03
+DECL|enum|__anon2922324b0c03
 block|{
 DECL|enumerator|STYLE_SOURCE_GIMP
 name|STYLE_SOURCE_GIMP
@@ -438,7 +438,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdf6d140d08
+DECL|struct|__anon2922324b0d08
 block|{
 DECL|member|name
 name|gchar
@@ -541,12 +541,15 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf6d140e03
+DECL|enum|__anon2922324b0e03
 block|{
-DECL|enumerator|LINE
-name|LINE
+DECL|enumerator|OBJ_TYPE_NONE
+name|OBJ_TYPE_NONE
 init|=
 literal|0
+block|,
+DECL|enumerator|LINE
+name|LINE
 block|,
 DECL|enumerator|CIRCLE
 name|CIRCLE
@@ -568,6 +571,9 @@ name|SPIRAL
 block|,
 DECL|enumerator|BEZIER
 name|BEZIER
+block|,
+DECL|enumerator|NUM_OBJ_TYPES
+name|NUM_OBJ_TYPES
 block|,
 DECL|enumerator|MOVE_OBJ
 name|MOVE_OBJ
@@ -621,7 +627,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdf6d140f08
+DECL|struct|__anon2922324b0f08
 block|{
 DECL|member|type
 name|DobjType
@@ -648,21 +654,6 @@ name|DobjGenFunc
 name|copyfunc
 decl_stmt|;
 comment|/* copy */
-DECL|member|loadfunc
-name|DobjLoadFunc
-name|loadfunc
-decl_stmt|;
-comment|/* Load this type of object */
-DECL|member|savefunc
-name|DobjSaveFunc
-name|savefunc
-decl_stmt|;
-comment|/* Save me out */
-DECL|member|createfunc
-name|DobjCreateFunc
-name|createfunc
-decl_stmt|;
-comment|/* create a new one */
 DECL|typedef|DobjClass
 block|}
 name|DobjClass
@@ -1072,7 +1063,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdf6d141008
+DECL|struct|__anon2922324b1008
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1274,7 +1265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdf6d141108
+DECL|struct|__anon2922324b1108
 block|{
 DECL|member|debug_styles
 name|gboolean

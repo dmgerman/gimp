@@ -17,18 +17,6 @@ name|__GFIG_ARC_H__
 end_define
 
 begin_function_decl
-name|Dobject
-modifier|*
-name|d_load_arc
-parameter_list|(
-name|FILE
-modifier|*
-name|from
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|d_update_arc
 parameter_list|(

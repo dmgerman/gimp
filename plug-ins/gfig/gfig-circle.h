@@ -17,18 +17,6 @@ name|__GFIG_CIRCLE_H__
 end_define
 
 begin_function_decl
-name|Dobject
-modifier|*
-name|d_load_circle
-parameter_list|(
-name|FILE
-modifier|*
-name|from
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|d_update_circle
 parameter_list|(
