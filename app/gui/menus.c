@@ -652,6 +652,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_OPTIONS
 block|}
 block|,
 literal|"gimp-tool-options"
@@ -3747,6 +3751,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_OPTIONS
 block|}
 block|,
 literal|"gimp-tool-options"
@@ -5989,9 +5997,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-tool-options"
 argument_list|,
-name|NULL
+literal|"<StockItem>"
 argument_list|,
-name|NULL
+name|GIMP_STOCK_TOOL_OPTIONS
 argument_list|)
 block|,
 name|SEPARATOR

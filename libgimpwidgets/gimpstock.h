@@ -186,6 +186,11 @@ define|#
 directive|define
 name|GIMP_STOCK_QMASK_ON
 value|"gimp-qmask-on"
+DECL|macro|GIMP_STOCK_TOOL_OPTIONS
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_OPTIONS
+value|"gimp-tool-options"
 DECL|macro|GIMP_STOCK_INFO
 define|#
 directive|define
