@@ -235,6 +235,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
