@@ -583,6 +583,11 @@ name|GParamSpec
 modifier|*
 name|prop_spec
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|blurb
+decl_stmt|;
 name|GValue
 name|new_value
 init|=
