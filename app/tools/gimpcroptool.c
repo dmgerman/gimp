@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9bc13a0103
+DECL|enum|__anon28f7e3330103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
