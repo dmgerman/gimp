@@ -45,11 +45,11 @@ function_decl|;
 end_typedef
 
 begin_comment
-comment|// typedef OpsButtonCallback OpsButtonExtCallbacks;
+comment|/* typedef OpsButtonCallback OpsButtonExtCallbacks; */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b5cf6ba0103
+DECL|enum|__anon2c6353ff0103
 typedef|typedef
 enum|enum
 block|{
@@ -71,7 +71,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b5cf6ba0203
+DECL|enum|__anon2c6353ff0203
 typedef|typedef
 enum|enum
 block|{

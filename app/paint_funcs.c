@@ -111,6 +111,31 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_MP
+end_ifdef
+
+begin_comment
+comment|/* pthread.h is only needed because of an apparent bug in the    rand_r function in GNU Libc 2.1 */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<pthread.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* ENABLE_MP */
+end_comment
+
 begin_define
 DECL|macro|STD_BUF_SIZE
 define|#
@@ -223,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297f4e680103
+DECL|enum|__anon2770326e0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -4338,9 +4363,44 @@ decl_stmt|;
 name|int
 name|rand_val
 decl_stmt|;
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+name|defined
+argument_list|(
 name|ENABLE_MP
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|linux
+argument_list|)
+comment|/* rand_r seems to be broken on the linux systems we tried, so      disable it for now */
+comment|/* if we are mult-threaded and can't use rand_r then we must      use a mutex to force single-threaded execution of this function */
+specifier|static
+name|pthread_mutex_t
+name|mutex
+init|=
+name|PTHREAD_MUTEX_INITIALIZER
+decl_stmt|;
+name|pthread_mutex_lock
+argument_list|(
+operator|&
+name|mutex
+argument_list|)
+expr_stmt|;
+block|{
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|ENABLE_MP
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|linux
+argument_list|)
 comment|/* if we are running with multiple threads rand_r give _much_      better performance than rand */
 name|unsigned
 name|int
@@ -4442,9 +4502,18 @@ name|b
 index|]
 expr_stmt|;
 comment|/*  dissolve if random value is> opacity  */
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+name|defined
+argument_list|(
 name|ENABLE_MP
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|linux
+argument_list|)
 name|rand_val
 operator|=
 operator|(
@@ -4520,6 +4589,27 @@ operator|+=
 name|sb
 expr_stmt|;
 block|}
+if|#
+directive|if
+name|defined
+argument_list|(
+name|ENABLE_MP
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|linux
+argument_list|)
+block|}
+name|pthread_mutex_unlock
+argument_list|(
+operator|&
+name|mutex
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* defined(ENABLE_MP)&& !defined(_SGI_REENTRANT_FUNCTIONS) */
 block|}
 end_function
 
@@ -17216,6 +17306,8 @@ name|r
 operator|++
 operator|*
 name|tot_frac
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
@@ -17945,6 +18037,8 @@ name|r
 operator|++
 operator|*
 name|tot_frac
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
