@@ -2828,18 +2828,6 @@ return|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static GtkWidget * prefs_enum_option_menu_add_with_values (GObject     *config,                                         const gchar *property_name,                                         const gchar *label,                                         GtkTable    *table,                                         gint         table_row,                                         gint         n_values,                                         ...) {   GtkWidget  *menu;   va_list     args;    va_start (args, n_values);    menu = gimp_prop_enum_option_menu_new_valist (config, property_name,                                                 n_values, args);    va_end (args);    if (menu)     gimp_table_attach_aligned (table, 0, table_row,                                label, 1.0, 0.5,                                menu, 1, TRUE);    return menu; }
-endif|#
-directive|endif
-end_endif
-
 begin_function
 specifier|static
 name|GtkWidget
@@ -6168,7 +6156,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ae336000108
+DECL|struct|__anon2a0b76cd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7770,7 +7758,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae336000208
+DECL|struct|__anon2a0b76cd0208
 block|{
 DECL|member|label
 specifier|const
@@ -7929,7 +7917,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae336000308
+DECL|struct|__anon2a0b76cd0308
 block|{
 DECL|member|tree_label
 specifier|const
