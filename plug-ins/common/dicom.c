@@ -473,7 +473,7 @@ literal|"2003"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Digital Imaging and Communications in Medicine image"
+literal|"DICOM image"
 argument_list|)
 argument_list|,
 name|NULL
@@ -513,7 +513,7 @@ name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_dicom_load"
 argument_list|,
-literal|"dcm,DCM,dicom,DICOM"
+literal|"dcm,dicom"
 argument_list|,
 literal|""
 argument_list|,
@@ -578,7 +578,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_dicom_save"
 argument_list|,
-literal|"dicom,dcm,DCM,DICOM"
+literal|"dcm,dicom"
 argument_list|,
 literal|""
 argument_list|)

@@ -118,10 +118,6 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -242,16 +238,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_save_dialog_show (GimpImage * gimage,GimpMenuFactory * menu_factory,GtkWidget * parent)
+DECL|function|file_save_dialog_show (GimpImage * gimage,GtkWidget * parent)
 name|file_save_dialog_show
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -263,14 +255,6 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_MENU_FACTORY
-argument_list|(
-name|menu_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -307,8 +291,6 @@ argument_list|(
 name|gimage
 operator|->
 name|gimp
-argument_list|,
-name|menu_factory
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -378,16 +360,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_a_copy_dialog_show (GimpImage * gimage,GimpMenuFactory * menu_factory,GtkWidget * parent)
+DECL|function|file_save_a_copy_dialog_show (GimpImage * gimage,GtkWidget * parent)
 name|file_save_a_copy_dialog_show
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -399,14 +377,6 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_MENU_FACTORY
-argument_list|(
-name|menu_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -443,8 +413,6 @@ argument_list|(
 name|gimage
 operator|->
 name|gimp
-argument_list|,
-name|menu_factory
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -520,39 +488,25 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|file_save_dialog_create (Gimp * gimp,GimpMenuFactory * menu_factory)
+DECL|function|file_save_dialog_create (Gimp * gimp)
 name|file_save_dialog_create
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|save_dialog
+name|dialog
 decl_stmt|;
-name|save_dialog
+name|dialog
 operator|=
 name|gimp_file_dialog_new
 argument_list|(
 name|gimp
 argument_list|,
-name|gimp
-operator|->
-name|save_procs
-argument_list|,
 name|GTK_FILE_CHOOSER_ACTION_SAVE
-argument_list|,
-name|menu_factory
-argument_list|,
-literal|"<Save>"
-argument_list|,
-literal|"/file-save-popup"
 argument_list|,
 name|_
 argument_list|(
@@ -572,12 +526,12 @@ name|global_dialog_factory
 argument_list|,
 literal|"gimp-file-save-dialog"
 argument_list|,
-name|save_dialog
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|save_dialog
+name|dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -590,7 +544,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 return|return
-name|save_dialog
+name|dialog
 return|;
 block|}
 end_function

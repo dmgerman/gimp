@@ -244,8 +244,6 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|global_menu_factory
-argument_list|,
 name|widget
 argument_list|)
 expr_stmt|;
@@ -297,8 +295,6 @@ name|data
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|,
-name|global_menu_factory
 argument_list|,
 name|widget
 argument_list|)
@@ -717,8 +713,6 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|global_menu_factory
-argument_list|,
 name|gdisp
 operator|->
 name|shell
@@ -756,8 +750,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-argument_list|,
-name|global_menu_factory
 argument_list|,
 name|gdisp
 operator|->
@@ -1117,8 +1109,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|uri
-argument_list|,
-name|global_menu_factory
 argument_list|,
 name|parent
 argument_list|)

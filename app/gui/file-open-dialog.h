@@ -33,10 +33,6 @@ name|gchar
 modifier|*
 name|uri
 parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-parameter_list|,
 name|GtkWidget
 modifier|*
 name|parent

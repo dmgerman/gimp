@@ -543,6 +543,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFileProcView
+typedef|typedef
+name|struct
+name|_GimpFileProcView
+name|GimpFileProcView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerEditor
 typedef|typedef
 name|struct

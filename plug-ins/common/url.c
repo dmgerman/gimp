@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -268,6 +274,15 @@ argument_list|,
 literal|""
 argument_list|,
 literal|"http:,https:,ftp:"
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_icon_register
+argument_list|(
+literal|"file_url_load"
+argument_list|,
+name|GIMP_ICON_TYPE_STOCK_ID
+argument_list|,
+name|GIMP_STOCK_WEB
 argument_list|)
 expr_stmt|;
 block|}

@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpmenufactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs.h"
 end_include
 
@@ -112,10 +106,6 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -190,7 +180,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_open_dialog_show (Gimp * gimp,GimpImage * gimage,const gchar * uri,GimpMenuFactory * menu_factory,GtkWidget * parent)
+DECL|function|file_open_dialog_show (Gimp * gimp,GimpImage * gimage,const gchar * uri,GtkWidget * parent)
 name|file_open_dialog_show
 parameter_list|(
 name|Gimp
@@ -205,10 +195,6 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -237,14 +223,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_MENU_FACTORY
-argument_list|(
-name|menu_factory
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|parent
 operator|==
 name|NULL
@@ -265,8 +243,6 @@ operator|=
 name|file_open_dialog_create
 argument_list|(
 name|gimp
-argument_list|,
-name|menu_factory
 argument_list|)
 expr_stmt|;
 name|gimp_file_dialog_set_uri
@@ -317,16 +293,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|file_open_dialog_create (Gimp * gimp,GimpMenuFactory * menu_factory)
+DECL|function|file_open_dialog_create (Gimp * gimp)
 name|file_open_dialog_create
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -339,17 +311,7 @@ name|gimp_file_dialog_new
 argument_list|(
 name|gimp
 argument_list|,
-name|gimp
-operator|->
-name|load_procs
-argument_list|,
 name|GTK_FILE_CHOOSER_ACTION_OPEN
-argument_list|,
-name|menu_factory
-argument_list|,
-literal|"<Load>"
-argument_list|,
-literal|"/file-open-popup"
 argument_list|,
 name|_
 argument_list|(

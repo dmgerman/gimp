@@ -399,7 +399,7 @@ name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_bz2_load"
 argument_list|,
-literal|"xcf.bz2,bz2,xcfbz2"
+literal|"bz2,xcfbz2"
 argument_list|,
 literal|""
 argument_list|,
@@ -452,7 +452,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_bz2_save"
 argument_list|,
-literal|"xcf.bz2,bz2,xcfbz2"
+literal|"bz2,xcfbz2"
 argument_list|,
 literal|""
 argument_list|)
