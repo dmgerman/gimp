@@ -92,6 +92,11 @@ name|GimpHistogram
 modifier|*
 name|hist
 decl_stmt|;
+DECL|member|gradient
+name|GtkWidget
+modifier|*
+name|gradient
+decl_stmt|;
 DECL|member|mean
 name|gdouble
 name|mean

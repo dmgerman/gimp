@@ -313,28 +313,6 @@ block|{ }
 end_function
 
 begin_comment
-comment|/**********************/
-end_comment
-
-begin_comment
-comment|/*  Static variables  */
-end_comment
-
-begin_comment
-comment|/**********************/
-end_comment
-
-begin_decl_stmt
-DECL|variable|channel_get_count
-specifier|static
-name|gint
-name|channel_get_count
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/**************************/
 end_comment
 
@@ -5079,6 +5057,13 @@ literal|255
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+name|g_warning
+argument_list|(
+literal|"Only ADD, REPLACE and SUB are valid for channel_combine!"
+argument_list|)
+expr_stmt|;
+break|break;
 block|}
 block|}
 comment|/*  antialiasing  */
@@ -5299,6 +5284,13 @@ name|last
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+name|g_warning
+argument_list|(
+literal|"Only ADD, REPLACE and SUB are valid for channel_combine!"
+argument_list|)
+expr_stmt|;
+break|break;
 block|}
 block|}
 if|if
@@ -5391,6 +5383,12 @@ operator|-
 name|x0
 argument_list|,
 name|last
+argument_list|)
+expr_stmt|;
+else|else
+name|g_warning
+argument_list|(
+literal|"Only ADD, REPLACE and SUB are valid for channel_combine!"
 argument_list|)
 expr_stmt|;
 block|}

@@ -35,8 +35,8 @@ value|4
 end_define
 
 begin_typedef
-DECL|struct|__anon2762489f0108
-DECL|struct|__anon2762489f0208
+DECL|struct|__anon298e9ed90108
+DECL|struct|__anon298e9ed90208
 typedef|typedef
 struct|struct
 block|{
@@ -81,6 +81,11 @@ name|gchar
 modifier|*
 name|placement
 decl_stmt|;
+DECL|member|free_placement_string
+DECL|member|free_placement_string
+name|gboolean
+name|free_placement_string
+decl_stmt|;
 DECL|member|rank
 DECL|member|rank
 name|gint
@@ -97,6 +102,11 @@ name|selection
 index|[
 name|PIXPIPE_MAXDIM
 index|]
+decl_stmt|;
+DECL|member|free_selection_string
+DECL|member|free_selection_string
+name|gboolean
+name|free_selection_string
 decl_stmt|;
 DECL|typedef|PixPipeParams
 DECL|typedef|PixPipeParams

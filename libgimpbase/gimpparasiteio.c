@@ -100,6 +100,12 @@ name|placement
 operator|=
 literal|"constant"
 expr_stmt|;
+name|params
+operator|->
+name|free_placement_string
+operator|=
+name|FALSE
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -113,6 +119,7 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 name|params
 operator|->
 name|selection
@@ -122,6 +129,13 @@ index|]
 operator|=
 literal|"random"
 expr_stmt|;
+name|params
+operator|->
+name|free_selection_string
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 name|params
 operator|->
 name|rank
@@ -184,6 +198,7 @@ comment|/* Don't you love single-char identifiers?  */
 name|gint
 name|i
 decl_stmt|;
+comment|/*          No, we don't!!<Sven>         */
 name|q
 operator|=
 name|string
@@ -445,6 +460,7 @@ if|if
 condition|(
 name|r
 condition|)
+block|{
 name|params
 operator|->
 name|placement
@@ -456,6 +472,13 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+name|params
+operator|->
+name|free_placement_string
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -571,6 +594,7 @@ name|params
 operator|->
 name|dim
 condition|)
+block|{
 name|params
 operator|->
 name|selection
@@ -585,6 +609,13 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+name|params
+operator|->
+name|free_selection_string
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 block|}
 block|}
 if|if
