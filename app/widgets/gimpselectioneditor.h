@@ -138,6 +138,11 @@ name|GtkWidget
 modifier|*
 name|none_button
 decl_stmt|;
+DECL|member|save_button
+name|GtkWidget
+modifier|*
+name|save_button
+decl_stmt|;
 DECL|member|idle_render_id
 name|guint
 name|idle_render_id

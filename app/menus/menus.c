@@ -1938,6 +1938,10 @@ block|,
 name|select_all_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_ALL
 block|}
 block|,
 name|NULL
@@ -1959,6 +1963,10 @@ block|,
 name|select_none_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_NONE
 block|}
 block|,
 name|NULL
@@ -2048,6 +2056,10 @@ block|,
 name|select_shrink_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SHRINK
 block|}
 block|,
 name|NULL
@@ -2069,6 +2081,10 @@ block|,
 name|select_grow_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_GROW
 block|}
 block|,
 name|NULL
