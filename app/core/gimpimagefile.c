@@ -247,7 +247,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5475440103
+DECL|enum|__anon2c6b93d40103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -261,7 +261,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5475440208
+DECL|struct|__anon2c6b93d40208
 block|{
 DECL|member|dirname
 specifier|const
@@ -384,7 +384,7 @@ modifier|*
 name|imagefile
 parameter_list|,
 name|gint
-name|size
+name|thumb_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -464,7 +464,8 @@ modifier|*
 name|uri
 parameter_list|,
 name|gint
-name|size
+modifier|*
+name|thumb_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -479,9 +480,6 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
-parameter_list|,
-name|gint
-name|size
 parameter_list|,
 name|gint
 modifier|*
@@ -1107,7 +1105,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_imagefile_update (GimpImagefile * imagefile,gint size)
+DECL|function|gimp_imagefile_update (GimpImagefile * imagefile,gint thumb_size)
 name|gimp_imagefile_update
 parameter_list|(
 name|GimpImagefile
@@ -1115,7 +1113,7 @@ modifier|*
 name|imagefile
 parameter_list|,
 name|gint
-name|size
+name|thumb_size
 parameter_list|)
 block|{
 specifier|const
@@ -1131,9 +1129,16 @@ name|imagefile
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|thumb_size
+operator|<=
+literal|256
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|size
+name|thumb_size
 operator|<
 literal|1
 condition|)
@@ -1164,11 +1169,6 @@ modifier|*
 name|thumbname
 init|=
 name|NULL
-decl_stmt|;
-name|gint
-name|thumb_size
-init|=
-name|THUMB_SIZE_FAIL
 decl_stmt|;
 name|off_t
 name|image_size
@@ -1259,8 +1259,6 @@ operator|=
 name|gimp_imagefile_find_png_thumb
 argument_list|(
 name|uri
-argument_list|,
-name|size
 argument_list|,
 operator|&
 name|thumb_size
@@ -1361,7 +1359,7 @@ argument_list|(
 name|documents_imagefile
 argument_list|)
 argument_list|,
-name|size
+name|thumb_size
 argument_list|)
 expr_stmt|;
 block|}
@@ -1395,6 +1393,13 @@ name|imagefile
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|thumb_size
+operator|<=
+literal|256
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|thumb_size
@@ -1412,6 +1417,16 @@ name|imagefile
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|strstr
+argument_list|(
+name|uri
+argument_list|,
+literal|"/.thumbnails/"
+argument_list|)
+condition|)
+return|return;
 if|if
 condition|(
 name|uri
@@ -1532,6 +1547,7 @@ name|gimp_imagefile_png_thumb_path
 argument_list|(
 name|uri
 argument_list|,
+operator|&
 name|thumb_size
 argument_list|)
 expr_stmt|;
@@ -1637,6 +1653,11 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
+name|gint
+name|thumb_size
+init|=
+name|THUMB_SIZE_FAIL
+decl_stmt|;
 name|gchar
 modifier|*
 name|thumb_name
@@ -1675,7 +1696,8 @@ name|gimp_imagefile_png_thumb_path
 argument_list|(
 name|uri
 argument_list|,
-name|THUMB_SIZE_FAIL
+operator|&
+name|thumb_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -1932,6 +1954,15 @@ name|config
 operator|->
 name|thumbnail_size
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|thumb_size
+operator|<=
+literal|256
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|thumb_size
@@ -1978,6 +2009,18 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|strstr
+argument_list|(
+name|uri
+argument_list|,
+literal|"/.thumbnails/"
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|filename
 operator|=
 name|g_filename_from_uri
@@ -2022,6 +2065,7 @@ name|gimp_imagefile_png_thumb_path
 argument_list|(
 name|uri
 argument_list|,
+operator|&
 name|thumb_size
 argument_list|)
 expr_stmt|;
@@ -3064,7 +3108,7 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_imagefile_read_png_thumb (GimpImagefile * imagefile,gint size)
+DECL|function|gimp_imagefile_read_png_thumb (GimpImagefile * imagefile,gint thumb_size)
 name|gimp_imagefile_read_png_thumb
 parameter_list|(
 name|GimpImagefile
@@ -3072,7 +3116,7 @@ modifier|*
 name|imagefile
 parameter_list|,
 name|gint
-name|size
+name|thumb_size
 parameter_list|)
 block|{
 name|GimpImagefileState
@@ -3095,11 +3139,6 @@ modifier|*
 name|thumbname
 init|=
 name|NULL
-decl_stmt|;
-name|gint
-name|thumb_size
-init|=
-name|THUMB_SIZE_FAIL
 decl_stmt|;
 specifier|const
 name|gchar
@@ -3172,8 +3211,6 @@ name|imagefile
 argument_list|)
 operator|->
 name|name
-argument_list|,
-name|size
 argument_list|,
 operator|&
 name|thumb_size
@@ -4177,7 +4214,7 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_imagefile_png_thumb_path (const gchar * uri,gint size)
+DECL|function|gimp_imagefile_png_thumb_path (const gchar * uri,gint * thumb_size)
 name|gimp_imagefile_png_thumb_path
 parameter_list|(
 specifier|const
@@ -4186,7 +4223,8 @@ modifier|*
 name|uri
 parameter_list|,
 name|gint
-name|size
+modifier|*
+name|thumb_size
 parameter_list|)
 block|{
 specifier|const
@@ -4212,21 +4250,9 @@ argument_list|,
 literal|"/.thumbnails/"
 argument_list|)
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Cannot create thumbnail of thumbnail\n%s"
-argument_list|)
-argument_list|,
-name|uri
-argument_list|)
-expr_stmt|;
 return|return
 name|NULL
 return|;
-block|}
 name|name
 operator|=
 name|gimp_imagefile_png_thumb_name
@@ -4236,7 +4262,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|size
+operator|*
+name|thumb_size
 operator|==
 name|THUMB_SIZE_FAIL
 condition|)
@@ -4268,7 +4295,8 @@ index|]
 operator|.
 name|size
 operator|<
-name|size
+operator|*
+name|thumb_size
 condition|;
 name|i
 operator|++
@@ -4288,6 +4316,16 @@ name|i
 operator|--
 expr_stmt|;
 block|}
+operator|*
+name|thumb_size
+operator|=
+name|thumb_sizes
+index|[
+name|i
+index|]
+operator|.
+name|size
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -4403,16 +4441,13 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_imagefile_find_png_thumb (const gchar * uri,gint size,gint * thumb_size)
+DECL|function|gimp_imagefile_find_png_thumb (const gchar * uri,gint * thumb_size)
 name|gimp_imagefile_find_png_thumb
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|uri
-parameter_list|,
-name|gint
-name|size
 parameter_list|,
 name|gint
 modifier|*
@@ -4464,7 +4499,8 @@ index|]
 operator|.
 name|size
 operator|<
-name|size
+operator|*
+name|thumb_size
 condition|;
 name|i
 operator|++

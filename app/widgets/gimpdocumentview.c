@@ -1224,12 +1224,15 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/* FIXME: hardcoded thumbnail size */
 name|gimp_imagefile_create_thumbnail
 argument_list|(
 name|imagefile
 argument_list|,
-name|GIMP_THUMBNAIL_SIZE_NORMAL
+name|editor
+operator|->
+name|view
+operator|->
+name|preview_size
 argument_list|)
 expr_stmt|;
 block|}
@@ -1239,24 +1242,25 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_document_view_delete_dangling_foreach (GimpImagefile * imagefile,GimpContainer * container)
+DECL|function|gimp_document_view_delete_dangling_foreach (GimpImagefile * imagefile,GimpContainerView * container_view)
 name|gimp_document_view_delete_dangling_foreach
 parameter_list|(
 name|GimpImagefile
 modifier|*
 name|imagefile
 parameter_list|,
-name|GimpContainer
+name|GimpContainerView
 modifier|*
-name|container
+name|container_view
 parameter_list|)
 block|{
-comment|/* FIXME: hardcoded thumbnail size */
 name|gimp_imagefile_update
 argument_list|(
 name|imagefile
 argument_list|,
-name|GIMP_THUMBNAIL_SIZE_NORMAL
+name|container_view
+operator|->
+name|preview_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -1270,6 +1274,8 @@ condition|)
 block|{
 name|gimp_container_remove
 argument_list|(
+name|container_view
+operator|->
 name|container
 argument_list|,
 name|GIMP_OBJECT
@@ -1360,7 +1366,14 @@ name|GFunc
 operator|)
 name|gimp_imagefile_update
 argument_list|,
-name|NULL
+operator|(
+name|gpointer
+operator|)
+name|editor
+operator|->
+name|view
+operator|->
+name|preview_size
 argument_list|)
 expr_stmt|;
 block|}
