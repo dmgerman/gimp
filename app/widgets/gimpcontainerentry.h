@@ -22,6 +22,22 @@ directive|include
 file|<gtk/gtkentry.h>
 end_include
 
+begin_enum
+enum|enum
+DECL|enum|__anon29b2036b0103
+block|{
+DECL|enumerator|GIMP_CONTAINER_ENTRY_COLUMN_RENDERER
+name|GIMP_CONTAINER_ENTRY_COLUMN_RENDERER
+block|,
+DECL|enumerator|GIMP_CONTAINER_ENTRY_COLUMN_NAME
+name|GIMP_CONTAINER_ENTRY_COLUMN_NAME
+block|,
+DECL|enumerator|GIMP_CONTAINER_ENTRY_NUM_COLUMNS
+name|GIMP_CONTAINER_ENTRY_NUM_COLUMNS
+block|}
+enum|;
+end_enum
+
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER_ENTRY
 define|#
