@@ -2662,12 +2662,6 @@ name|msg
 operator|->
 name|data
 expr_stmt|;
-if|if
-condition|(
-name|tile_data
-operator|->
-name|data
-condition|)
 name|g_free
 argument_list|(
 name|tile_data
@@ -3025,6 +3019,13 @@ argument_list|,
 name|proc_return
 operator|->
 name|nparams
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_return
+operator|->
+name|name
 argument_list|)
 expr_stmt|;
 name|g_free
