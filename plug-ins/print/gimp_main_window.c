@@ -3909,9 +3909,9 @@ argument_list|)
 argument_list|,
 name|table
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -4000,6 +4000,8 @@ argument_list|,
 name|GTK_FILL
 argument_list|,
 name|GTK_FILL
+operator||
+name|GTK_EXPAND
 argument_list|,
 literal|0
 argument_list|,
