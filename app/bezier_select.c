@@ -328,7 +328,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon29d979e80108
+DECL|struct|__anon27ff513d0108
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29d979e80208
+DECL|struct|__anon27ff513d0208
 typedef|typedef
 struct|struct
 block|{
@@ -420,7 +420,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29d979e80308
+DECL|struct|__anon27ff513d0308
 typedef|typedef
 struct|struct
 block|{
@@ -2952,6 +2952,12 @@ name|points
 expr_stmt|;
 if|if
 condition|(
+name|bezier_sel
+operator|->
+name|cur_control
+operator|->
+name|next
+operator|&&
 name|bezier_sel
 operator|->
 name|cur_control

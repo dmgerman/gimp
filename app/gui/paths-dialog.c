@@ -332,7 +332,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2bbe97ae0108
+DECL|struct|__anon2bd5d5ea0108
 typedef|typedef
 struct|struct
 block|{
@@ -456,7 +456,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2bbe97ae0208
+DECL|struct|__anon2bd5d5ea0208
 typedef|typedef
 struct|struct
 block|{
@@ -485,7 +485,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bbe97ae0308
+DECL|struct|__anon2bd5d5ea0308
 typedef|typedef
 struct|struct
 block|{
@@ -504,7 +504,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bbe97ae0408
+DECL|struct|__anon2bd5d5ea0408
 typedef|typedef
 struct|struct
 block|{
@@ -7215,6 +7215,15 @@ argument_list|,
 name|row
 argument_list|)
 expr_stmt|;
+comment|/* Return if no point list */
+if|if
+condition|(
+operator|!
+name|bzp
+operator|->
+name|path_details
+condition|)
+return|return;
 comment|/* Now do the selection....*/
 name|gdisp
 operator|=
