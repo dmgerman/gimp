@@ -112,6 +112,11 @@ DECL|member|parent_instance
 name|GimpPaintTool
 name|parent_instance
 decl_stmt|;
+DECL|member|src_gdisp
+name|GimpDisplay
+modifier|*
+name|src_gdisp
+decl_stmt|;
 block|}
 struct|;
 end_struct
