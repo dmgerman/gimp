@@ -1463,6 +1463,10 @@ operator|&&
 name|data
 operator|->
 name|dirty
+operator|&&
+name|data
+operator|->
+name|writable
 condition|)
 name|gimp_data_factory_data_save_single
 argument_list|(

@@ -182,7 +182,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbb357d0103
+DECL|enum|__anon28fb6df50103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1499,11 +1499,10 @@ name|dirty
 operator|=
 name|FALSE
 expr_stmt|;
+name|gimp_data_make_internal
+argument_list|(
 name|standard_brush
-operator|->
-name|internal
-operator|=
-name|TRUE
+argument_list|)
 expr_stmt|;
 comment|/*  set ref_count to 2 --> never swap the standard brush  */
 name|g_object_ref
@@ -2709,7 +2708,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2bbb357d020a
+DECL|union|__anon28fb6df5020a
 block|{
 DECL|member|u
 name|guint16

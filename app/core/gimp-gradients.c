@@ -405,14 +405,13 @@ name|stingy_memory_use
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_data_make_internal
+argument_list|(
 name|GIMP_DATA
 argument_list|(
 name|gradient
 argument_list|)
-operator|->
-name|internal
-operator|=
-name|TRUE
+argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
 argument_list|(

@@ -1460,11 +1460,10 @@ name|dirty
 operator|=
 name|FALSE
 expr_stmt|;
+name|gimp_data_make_internal
+argument_list|(
 name|standard_palette
-operator|->
-name|internal
-operator|=
-name|TRUE
+argument_list|)
 expr_stmt|;
 name|g_object_ref
 argument_list|(

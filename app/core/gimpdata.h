@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294892240103
+DECL|enum|__anon29698b660103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -352,6 +352,17 @@ name|data
 parameter_list|,
 name|gboolean
 name|stingy_memory_use
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_data_make_internal
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -1198,11 +1198,10 @@ name|dirty
 operator|=
 name|FALSE
 expr_stmt|;
+name|gimp_data_make_internal
+argument_list|(
 name|standard_pattern
-operator|->
-name|internal
-operator|=
-name|TRUE
+argument_list|)
 expr_stmt|;
 comment|/*  set ref_count to 2 --> never swap the standard pattern  */
 name|g_object_ref
