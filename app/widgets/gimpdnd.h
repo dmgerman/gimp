@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8a67000103
+DECL|enum|__anon2c85935c0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -598,7 +598,7 @@ end_comment
 begin_typedef
 DECL|typedef|GimpDndDragSvgFunc
 typedef|typedef
-name|GimpVectors
+name|guchar
 modifier|*
 function_decl|(
 modifier|*
@@ -608,6 +608,10 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+modifier|*
+name|svg_data_len
 parameter_list|,
 name|gpointer
 name|data
@@ -628,9 +632,13 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpVectors
+specifier|const
+name|guchar
 modifier|*
-name|vectors
+name|svg_data
+parameter_list|,
+name|gint
+name|svg_data_len
 parameter_list|,
 name|gpointer
 name|data
