@@ -710,11 +710,6 @@ name|vruler
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scaled
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 if|#
 directive|if
 literal|0
@@ -1730,6 +1725,11 @@ name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scale_setup
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scaled
 argument_list|(
 name|shell
 argument_list|)

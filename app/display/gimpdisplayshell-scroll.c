@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-scroll.h"
 end_include
 
@@ -188,6 +194,19 @@ operator|->
 name|gdisp
 argument_list|)
 expr_stmt|;
+comment|/*  set the offsets back to the new values  */
+name|shell
+operator|->
+name|offset_x
+operator|+=
+name|x_offset
+expr_stmt|;
+name|shell
+operator|->
+name|offset_y
+operator|+=
+name|y_offset
+expr_stmt|;
 name|gdk_window_scroll
 argument_list|(
 name|shell
@@ -203,19 +222,6 @@ operator|-
 name|y_offset
 argument_list|)
 expr_stmt|;
-comment|/*  set the offsets back to the new values  */
-name|shell
-operator|->
-name|offset_x
-operator|+=
-name|x_offset
-expr_stmt|;
-name|shell
-operator|->
-name|offset_y
-operator|+=
-name|y_offset
-expr_stmt|;
 comment|/*  Make sure expose events are processed before scrolling again  */
 name|gdk_window_process_updates
 argument_list|(
@@ -226,6 +232,12 @@ operator|->
 name|window
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/*  Update scrollbars and rulers  */
+name|gimp_display_shell_scale_setup
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 name|tool_manager_control_active
@@ -243,41 +255,6 @@ argument_list|,
 name|shell
 operator|->
 name|gdisp
-argument_list|)
-expr_stmt|;
-comment|/*  Update the scrollbars  */
-name|shell
-operator|->
-name|hsbdata
-operator|->
-name|value
-operator|=
-name|shell
-operator|->
-name|offset_x
-expr_stmt|;
-name|shell
-operator|->
-name|vsbdata
-operator|->
-name|value
-operator|=
-name|shell
-operator|->
-name|offset_y
-expr_stmt|;
-name|gtk_adjustment_changed
-argument_list|(
-name|shell
-operator|->
-name|hsbdata
-argument_list|)
-expr_stmt|;
-name|gtk_adjustment_changed
-argument_list|(
-name|shell
-operator|->
-name|vsbdata
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scrolled

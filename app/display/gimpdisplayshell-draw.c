@@ -256,7 +256,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0a3b330103
+DECL|enum|__anon295934920103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6411,11 +6411,43 @@ argument_list|,
 name|dy
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
+ifdef|#
+directive|ifdef
+name|STRESS_TEST
 comment|/* Invalidate the projection just after we render it! */
-block|gimp_image_invalidate_without_render (shell->gdisp->gimage,                                                 j - shell->disp_xoffset,                                                 i - shell->disp_yoffset,                                                 dx, dy,                                                 0, 0, 0, 0);
+name|gimp_image_invalidate_without_render
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|j
+operator|-
+name|shell
+operator|->
+name|disp_xoffset
+argument_list|,
+name|i
+operator|-
+name|shell
+operator|->
+name|disp_yoffset
+argument_list|,
+name|dx
+argument_list|,
+name|dy
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 endif|#
 directive|endif
 block|}
