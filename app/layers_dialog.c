@@ -5050,11 +5050,13 @@ name|layers
 argument_list|)
 expr_stmt|;
 block|}
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Stack/Previous Layer"
+literal|"/Stack/Previous Layer"
 argument_list|)
 argument_list|,
 name|fs
@@ -5070,11 +5072,13 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Stack/Next Layer"
+literal|"/Stack/Next Layer"
 argument_list|)
 argument_list|,
 name|fs
@@ -5094,11 +5098,13 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Stack/Raise Layer"
+literal|"/Stack/Raise Layer"
 argument_list|)
 argument_list|,
 name|fs
@@ -5140,11 +5146,13 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Stack/Lower Layer"
+literal|"/Stack/Lower Layer"
 argument_list|)
 argument_list|,
 name|fs
@@ -5190,11 +5198,13 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Stack/Layer to Top"
+literal|"/Stack/Layer to Top"
 argument_list|)
 argument_list|,
 name|fs
@@ -5212,11 +5222,13 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Stack/Layer to Bottom"
+literal|"/Stack/Layer to Bottom"
 argument_list|)
 argument_list|,
 name|fs
@@ -5236,11 +5248,13 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/New Layer"
+literal|"/New Layer"
 argument_list|)
 argument_list|,
 name|gimage
@@ -5258,11 +5272,13 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Duplicate Layer"
+literal|"/Duplicate Layer"
 argument_list|)
 argument_list|,
 name|fs
@@ -5292,11 +5308,13 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Delete Layer"
+literal|"/Delete Layer"
 argument_list|)
 argument_list|,
 name|ac
@@ -5322,11 +5340,13 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Anchor Layer"
+literal|"/Anchor Layer"
 argument_list|)
 argument_list|,
 operator|!
@@ -5358,11 +5378,13 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Scale Layer"
+literal|"/Scale Layer"
 argument_list|)
 argument_list|,
 name|ac
@@ -5372,11 +5394,13 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Resize Layer"
+literal|"/Resize Layer"
 argument_list|)
 argument_list|,
 name|ac
@@ -5386,27 +5410,13 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
-argument_list|(
-literal|"<Layers>/Merge Visible Layers"
-argument_list|)
+literal|"<Layers>"
 argument_list|,
-name|fs
-operator|&&
-name|ac
-operator|&&
-name|gimage
-operator|&&
-name|lp
-argument_list|)
-expr_stmt|;
-name|menus_set_sensitive
+name|N_
 argument_list|(
-name|_
-argument_list|(
-literal|"<Layers>/Merge Down"
+literal|"/Merge Visible Layers"
 argument_list|)
 argument_list|,
 name|fs
@@ -5418,11 +5428,13 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Flatten Image"
+literal|"/Merge Down"
 argument_list|)
 argument_list|,
 name|fs
@@ -5434,11 +5446,31 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Add Layer Mask"
+literal|"/Flatten Image"
+argument_list|)
+argument_list|,
+name|fs
+operator|&&
+name|ac
+operator|&&
+name|gimage
+operator|&&
+name|lp
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive_locale
+argument_list|(
+literal|"<Layers>"
+argument_list|,
+name|N_
+argument_list|(
+literal|"/Add Layer Mask"
 argument_list|)
 argument_list|,
 name|fs
@@ -5455,11 +5487,13 @@ operator|&&
 name|alpha
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Apply Layer Mask"
+literal|"/Apply Layer Mask"
 argument_list|)
 argument_list|,
 name|fs
@@ -5473,11 +5507,13 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Alpha to Selection"
+literal|"/Alpha to Selection"
 argument_list|)
 argument_list|,
 name|fs
@@ -5491,11 +5527,13 @@ operator|&&
 name|alpha
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Mask to Selection"
+literal|"/Mask to Selection"
 argument_list|)
 argument_list|,
 name|fs
@@ -5509,11 +5547,13 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Layers>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Layers>/Add Alpha Channel"
+literal|"/Add Alpha Channel"
 argument_list|)
 argument_list|,
 operator|!

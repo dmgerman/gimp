@@ -5627,12 +5627,9 @@ break|break;
 block|}
 name|menus_set_sensitive
 argument_list|(
-name|gettext
-argument_list|(
 name|proc_def
 operator|->
 name|menu_path
-argument_list|)
 argument_list|,
 name|sensitive
 argument_list|)
@@ -5653,21 +5650,25 @@ operator|)
 operator|)
 condition|)
 block|{
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Image>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Repeat last"
+literal|"/Filters/Repeat last"
 argument_list|)
 argument_list|,
 name|sensitive
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Image>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Re-show last"
+literal|"/Filters/Re-show last"
 argument_list|)
 argument_list|,
 name|sensitive

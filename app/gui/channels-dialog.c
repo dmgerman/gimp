@@ -2552,11 +2552,13 @@ name|aux_sens
 operator|=
 name|FALSE
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Channels>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Channels>/New Channel"
+literal|"/New Channel"
 argument_list|)
 argument_list|,
 operator|!
@@ -2576,11 +2578,13 @@ operator|!
 name|fs_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Channels>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Channels>/Raise Channel"
+literal|"/Raise Channel"
 argument_list|)
 argument_list|,
 operator|!
@@ -2604,11 +2608,13 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Channels>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Channels>/Lower Channel"
+literal|"/Lower Channel"
 argument_list|)
 argument_list|,
 operator|!
@@ -2632,11 +2638,13 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Channels>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Channels>/Duplicate Channel"
+literal|"/Duplicate Channel"
 argument_list|)
 argument_list|,
 operator|!
@@ -2660,11 +2668,13 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Channels>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Channels>/Delete Channel"
+literal|"/Delete Channel"
 argument_list|)
 argument_list|,
 operator|!
@@ -2688,11 +2698,13 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Channels>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Channels>/Channel to Selection"
+literal|"/Channel to Selection"
 argument_list|)
 argument_list|,
 name|aux_sens
@@ -2710,31 +2722,37 @@ argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Channels>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Channels>/Add to Selection"
+literal|"/Add to Selection"
 argument_list|)
 argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Channels>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Channels>/Subtract From Selection"
+literal|"/Subtract From Selection"
 argument_list|)
 argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Channels>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Channels>/Intersect With Selection"
+literal|"/Intersect With Selection"
 argument_list|)
 argument_list|,
 name|aux_sens

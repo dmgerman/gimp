@@ -326,7 +326,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon28d45cf30108
+DECL|struct|__anon29de647e0108
 typedef|typedef
 struct|struct
 block|{
@@ -450,7 +450,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28d45cf30208
+DECL|struct|__anon29de647e0208
 typedef|typedef
 struct|struct
 block|{
@@ -479,7 +479,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45cf30308
+DECL|struct|__anon29de647e0308
 typedef|typedef
 struct|struct
 block|{
@@ -498,7 +498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45cf30408
+DECL|struct|__anon29de647e0408
 typedef|typedef
 struct|struct
 block|{
@@ -1106,11 +1106,13 @@ block|{
 case|case
 name|NEW_PATH_BUTTON
 case|:
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Paths>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Paths>/New Path"
+literal|"/New Path"
 argument_list|)
 argument_list|,
 name|sensitive
@@ -1132,11 +1134,13 @@ break|break;
 case|case
 name|DUP_PATH_BUTTON
 case|:
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Paths>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Paths>/Duplicate Path"
+literal|"/Duplicate Path"
 argument_list|)
 argument_list|,
 name|sensitive
@@ -1158,11 +1162,13 @@ break|break;
 case|case
 name|DEL_PATH_BUTTON
 case|:
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Paths>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Paths>/Delete Path"
+literal|"/Delete Path"
 argument_list|)
 argument_list|,
 name|sensitive
@@ -1184,11 +1190,13 @@ break|break;
 case|case
 name|PATH_TO_SEL_BUTTON
 case|:
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Paths>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Paths>/Path to Selection"
+literal|"/Path to Selection"
 argument_list|)
 argument_list|,
 name|sensitive
@@ -1210,11 +1218,13 @@ break|break;
 case|case
 name|STROKE_PATH_BUTTON
 case|:
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Paths>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Paths>/Stroke Path"
+literal|"/Stroke Path"
 argument_list|)
 argument_list|,
 name|sensitive
@@ -1236,11 +1246,13 @@ break|break;
 case|case
 name|COPY_PATH_BUTTON
 case|:
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Paths>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Paths>/Copy Path"
+literal|"/Copy Path"
 argument_list|)
 argument_list|,
 name|sensitive
@@ -1250,11 +1262,13 @@ break|break;
 case|case
 name|PASTE_PATH_BUTTON
 case|:
-name|menus_set_sensitive
+name|menus_set_sensitive_locale
 argument_list|(
-name|_
+literal|"<Paths>"
+argument_list|,
+name|N_
 argument_list|(
-literal|"<Paths>/Paste Path"
+literal|"/Paste Path"
 argument_list|)
 argument_list|,
 name|sensitive
