@@ -1472,10 +1472,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"  --enable-stack-trace {never|query|always}\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_print
