@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"composite/gimp-composite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs-generic.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-composite.h"
 end_include
 
 begin_define
@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c40329f0103
+DECL|enum|__anon27aabcca0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
