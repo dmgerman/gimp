@@ -15,6 +15,23 @@ directive|include
 file|"globals.c"
 end_include
 
+begin_if
+if|#
+directive|if
+literal|1
+end_if
+
+begin_include
+include|#
+directive|include
+file|"../gimprc.c"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 DECL|function|show_personal (const char * filename)
 name|void
@@ -167,6 +184,14 @@ argument_list|(
 literal|"%-50s = gimp_gtkrc();\n"
 argument_list|,
 name|gimp_gtkrc
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"%-50s = gimp_system_rc_file();\n"
+argument_list|,
+name|gimp_system_rc_file
 argument_list|()
 argument_list|)
 expr_stmt|;
