@@ -304,6 +304,22 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
+name|image_menu_buffer_changed
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpItemFactory
+modifier|*
+name|item_factory
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|image_menu_foreground_changed
 parameter_list|(
 name|GimpContext
@@ -5242,6 +5258,33 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|g_signal_connect_object
+argument_list|(
+name|factory
+operator|->
+name|gimp
+argument_list|,
+literal|"buffer_changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|image_menu_buffer_changed
+argument_list|)
+argument_list|,
+name|factory
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|image_menu_buffer_changed
+argument_list|(
+name|factory
+operator|->
+name|gimp
+argument_list|,
+name|factory
+argument_list|)
+expr_stmt|;
 block|{
 name|GimpContext
 modifier|*
@@ -5979,6 +6022,11 @@ operator|-
 literal|1
 decl_stmt|;
 name|gboolean
+name|ad
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|is_rgb
 init|=
 name|FALSE
@@ -6223,6 +6271,7 @@ if|if
 condition|(
 name|drawable
 condition|)
+block|{
 name|drawable_type
 operator|=
 name|gimp_drawable_type
@@ -6230,6 +6279,11 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|ad
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|lp
@@ -6395,7 +6449,7 @@ literal|"/File/Save"
 argument_list|,
 name|gdisp
 operator|&&
-name|drawable
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -6404,7 +6458,7 @@ literal|"/File/Save as..."
 argument_list|,
 name|gdisp
 operator|&&
-name|drawable
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -6413,7 +6467,7 @@ literal|"/File/Save a Copy..."
 argument_list|,
 name|gdisp
 operator|&&
-name|drawable
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -6596,14 +6650,14 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit/Cut"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit/Copy"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -6630,67 +6684,51 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit/Paste as New"
-argument_list|,
-name|gimp
-operator|->
-name|global_buffer
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"/Edit/Buffer/Cut Named..."
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit/Buffer/Copy Named..."
 argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Edit/Buffer/Paste Named..."
-argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit/Clear"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit/Fill with FG Color"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit/Fill with BG Color"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit/Fill with Pattern"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit/Stroke Selection..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 name|sel
 argument_list|)
@@ -6699,7 +6737,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit/Stroke Path..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 name|vectors
 argument_list|)
@@ -7586,7 +7624,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Color Balance..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 name|is_rgb
 argument_list|)
@@ -7595,7 +7633,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Hue-Saturation..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 name|is_rgb
 argument_list|)
@@ -7604,7 +7642,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Colorize..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 name|is_rgb
 argument_list|)
@@ -7613,7 +7651,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Brightness-Contrast..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 operator|!
 name|is_indexed
@@ -7623,7 +7661,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Threshold..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 operator|!
 name|is_indexed
@@ -7633,7 +7671,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Levels..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 operator|!
 name|is_indexed
@@ -7643,7 +7681,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Curves..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 operator|!
 name|is_indexed
@@ -7653,7 +7691,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Posterize..."
 argument_list|,
-name|lp
+name|ad
 operator|&&
 operator|!
 name|is_indexed
@@ -7663,7 +7701,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Desaturate"
 argument_list|,
-name|lp
+name|ad
 operator|&&
 name|is_rgb
 argument_list|)
@@ -7672,7 +7710,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Invert"
 argument_list|,
-name|lp
+name|ad
 operator|&&
 operator|!
 name|is_indexed
@@ -7682,7 +7720,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Auto/Equalize"
 argument_list|,
-name|lp
+name|ad
 operator|&&
 operator|!
 name|is_indexed
@@ -7692,7 +7730,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Histogram"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -7854,42 +7892,42 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Transform/Flip Horizontally"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Transform/Flip Vertically"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Transform/Rotate 90 degrees CW"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Transform/Rotate 90 degrees CCW"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Image/Transform/Rotate 180 degrees"
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Transform/Offset..."
 argument_list|,
-name|lp
+name|ad
 argument_list|)
 expr_stmt|;
 undef|#
@@ -7920,6 +7958,82 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|image_menu_buffer_changed (Gimp * gimp,GimpItemFactory * item_factory)
+name|image_menu_buffer_changed
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpItemFactory
+modifier|*
+name|item_factory
+parameter_list|)
+block|{
+name|GtkItemFactory
+modifier|*
+name|gtk_factory
+init|=
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|item_factory
+argument_list|)
+decl_stmt|;
+name|gboolean
+name|buf
+init|=
+operator|(
+name|gimp
+operator|->
+name|global_buffer
+operator|!=
+name|NULL
+operator|)
+decl_stmt|;
+if|if
+condition|(
+name|GTK_IS_MENU_BAR
+argument_list|(
+name|gtk_factory
+operator|->
+name|widget
+argument_list|)
+condition|)
+block|{
+name|gimp_item_factory_set_sensitive
+argument_list|(
+name|gtk_factory
+argument_list|,
+literal|"/Edit/Paste"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|gimp_item_factory_set_sensitive
+argument_list|(
+name|gtk_factory
+argument_list|,
+literal|"/Edit/Paste Into"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+block|}
+name|gimp_item_factory_set_sensitive
+argument_list|(
+name|gtk_factory
+argument_list|,
+literal|"/Edit/Paste as New"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
