@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|file_open_menu_init
+name|file_open_dialog_menu_init
 parameter_list|(
 name|void
 parameter_list|)
@@ -27,42 +27,18 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_open_callback
+name|file_open_dialog_menu_reset
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|file_revert_callback
+name|file_open_dialog_show
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
-name|file_open_by_extension_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -74,10 +50,6 @@ parameter_list|(
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gchar
-modifier|*
-name|raw_filename
 parameter_list|)
 function_decl|;
 end_function_decl

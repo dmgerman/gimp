@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PALETTE_H__
+name|__PALETTE_EDITOR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PALETTE_H__
+DECL|macro|__PALETTE_EDITOR_H__
 define|#
 directive|define
-name|__PALETTE_H__
+name|__PALETTE_EDITOR_H__
 end_define
 
 begin_comment
@@ -44,10 +44,19 @@ name|COLOR_UPDATE
 value|2
 end_define
 
+begin_typedef
+DECL|typedef|PaletteEditor
+typedef|typedef
+name|struct
+name|_PaletteEditor
+name|PaletteEditor
+typedef|;
+end_typedef
+
 begin_function_decl
-name|GtkWidget
+name|PaletteEditor
 modifier|*
-name|palette_dialog_create
+name|palette_editor_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -56,20 +65,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|palette_dialog_free
+name|palette_editor_set_palette
 parameter_list|(
-name|void
+name|PaletteEditor
+modifier|*
+name|palette_editor
+parameter_list|,
+name|GimpPalette
+modifier|*
+name|palette
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|palette_dialog_edit_palette
+name|palette_editor_free
 parameter_list|(
-name|GimpData
+name|PaletteEditor
 modifier|*
-name|data
+name|palette_editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -99,7 +114,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PALETTE_H__ */
+comment|/* __PALETTE_EDITOR_H__ */
 end_comment
 
 end_unit

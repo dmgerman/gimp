@@ -131,7 +131,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|dialogs_palette_get
+name|dialogs_palette_select_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*

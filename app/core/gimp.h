@@ -168,7 +168,7 @@ name|GimpContainer
 modifier|*
 name|tool_info_list
 decl_stmt|;
-comment|/* image_new values */
+comment|/*  image_new values  */
 DECL|member|image_base_type_names
 name|GList
 modifier|*
@@ -313,6 +313,10 @@ name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* void          gimp_open_file            (Gimp              *gimp, 					 const gchar       *filename, 					 gboolean           with_display); */
+end_comment
 
 begin_function_decl
 name|GimpContext

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppalette.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -265,6 +271,12 @@ begin_include
 include|#
 directive|include
 file|"palette-editor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"palette-select.h"
 end_include
 
 begin_include
@@ -760,8 +772,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_get (GimpDialogFactory * factory,GimpContext * context)
-name|dialogs_palette_get
+DECL|function|dialogs_palette_select_get (GimpDialogFactory * factory,GimpContext * context)
+name|dialogs_palette_select_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -2480,9 +2492,41 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|palette_dialog_edit_palette
+specifier|static
+name|PaletteEditor
+modifier|*
+name|palette_editor_dialog
+init|=
+name|NULL
+decl_stmt|;
+name|GimpPalette
+modifier|*
+name|palette
+decl_stmt|;
+name|palette
+operator|=
+name|GIMP_PALETTE
 argument_list|(
 name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|palette_editor_dialog
+condition|)
+block|{
+name|palette_editor_dialog
+operator|=
+name|palette_editor_new
+argument_list|()
+expr_stmt|;
+block|}
+name|palette_editor_set_palette
+argument_list|(
+name|palette_editor_dialog
+argument_list|,
+name|palette
 argument_list|)
 expr_stmt|;
 block|}

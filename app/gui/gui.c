@@ -156,7 +156,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette-editor.h"
+file|"palette-select.h"
 end_include
 
 begin_include
@@ -686,10 +686,10 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|file_open_menu_init
+name|file_open_dialog_menu_init
 argument_list|()
 expr_stmt|;
-name|file_save_menu_init
+name|file_save_dialog_menu_init
 argument_list|()
 expr_stmt|;
 name|menus_reorder_plugins

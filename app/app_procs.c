@@ -597,9 +597,6 @@ name|file_open_with_display
 argument_list|(
 operator|*
 name|gimp_argv
-argument_list|,
-operator|*
-name|gimp_argv
 argument_list|)
 expr_stmt|;
 name|gimp_argv

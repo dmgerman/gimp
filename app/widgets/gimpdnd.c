@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298768810103
+DECL|enum|__anon296fb1ec0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE
@@ -2460,8 +2460,6 @@ name|data
 decl_stmt|;
 name|file_open_with_display
 argument_list|(
-name|filename
-argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;

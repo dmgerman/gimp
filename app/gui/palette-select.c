@@ -193,8 +193,81 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
+comment|/*  the main palette selection dialog  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|palette_select_dialog
+name|PaletteSelect
+modifier|*
+name|palette_select_dialog
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  public functions  */
 end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|palette_dialog_create (void)
+name|palette_dialog_create
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|palette_select_dialog
+condition|)
+block|{
+name|palette_select_dialog
+operator|=
+name|palette_select_new
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|palette_select_dialog
+operator|->
+name|shell
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|palette_dialog_free (void)
+name|palette_dialog_free
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|palette_select_dialog
+condition|)
+block|{
+name|palette_select_free
+argument_list|(
+name|palette_select_dialog
+argument_list|)
+expr_stmt|;
+name|palette_select_dialog
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+block|}
+end_function
 
 begin_function
 name|PaletteSelect
@@ -608,6 +681,41 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|palette_select_free (PaletteSelect * psp)
+name|palette_select_free
+parameter_list|(
+name|PaletteSelect
+modifier|*
+name|psp
+parameter_list|)
+block|{
+if|if
+condition|(
+name|psp
+condition|)
+block|{
+comment|/*       if(psp->callback_name) 	g_free (gsp->callback_name);       */
+comment|/* remove from active list */
+name|palette_active_dialogs
+operator|=
+name|g_slist_remove
+argument_list|(
+name|palette_active_dialogs
+argument_list|,
+name|psp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|psp
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
 begin_comment
 comment|/*  local functions  */
 end_comment
@@ -654,42 +762,6 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|palette_select_free (PaletteSelect * psp)
-name|palette_select_free
-parameter_list|(
-name|PaletteSelect
-modifier|*
-name|psp
-parameter_list|)
-block|{
-if|if
-condition|(
-name|psp
-condition|)
-block|{
-comment|/*       if(psp->callback_name) 	g_free (gsp->callback_name);       */
-comment|/* remove from active list */
-name|palette_active_dialogs
-operator|=
-name|g_slist_remove
-argument_list|(
-name|palette_active_dialogs
-argument_list|,
-name|psp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|psp
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 

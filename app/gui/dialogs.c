@@ -159,9 +159,9 @@ name|FALSE
 block|}
 block|,
 block|{
-literal|"gimp:palette-dialog"
+literal|"gimp:palette-select-dialog"
 block|,
-name|dialogs_palette_get
+name|dialogs_palette_select_get
 block|,
 name|TRUE
 block|,
