@@ -32,7 +32,7 @@ comment|/* __cplusplus */
 comment|/* For information look at the html documentation */
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c9bb9a70103
+DECL|enum|__anon29fc498c0103
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -207,10 +207,10 @@ typedef|typedef
 name|gpointer
 name|GimpColorSelectorID
 typedef|;
-ifndef|#
-directive|ifndef
-name|__COLOR_NOTEBOOK_C__
-comment|/*  Bypass when compiling the source for these functions.  */
+include|#
+directive|include
+file|<gmodule.h>
+name|G_MODULE_EXPORT
 name|GimpColorSelectorID
 name|gimp_color_selector_register
 parameter_list|(
@@ -229,6 +229,7 @@ modifier|*
 name|methods
 parameter_list|)
 function_decl|;
+name|G_MODULE_EXPORT
 name|gboolean
 name|gimp_color_selector_unregister
 parameter_list|(
@@ -242,9 +243,6 @@ name|gpointer
 name|finished_data
 parameter_list|)
 function_decl|;
-endif|#
-directive|endif
-comment|/* !__COLOR_NOTEBOOK_C__ */
 ifdef|#
 directive|ifdef
 name|__cplusplus

@@ -89,6 +89,16 @@ begin_comment
 comment|/* For _getpid() */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_comment
+comment|/* for _unlink() */
+end_comment
+
 begin_endif
 endif|#
 directive|endif

@@ -502,7 +502,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb82d6f0108
+DECL|struct|__anon2a09363d0108
 typedef|typedef
 struct|struct
 block|{
@@ -740,6 +740,54 @@ name|hInst
 operator|=
 name|hInstance
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|_DEBUG
+comment|/* When in debug version, we allow different run modes...    * make sure that it is correctly set.    */
+name|setRunMode
+argument_list|(
+name|__argv
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* _DEBUG */
+comment|/*    * Now, call gimp_main... This is what the MAIN() macro    * would usually do.    */
+name|set_gimp_PLUG_IN_INFO_PTR
+argument_list|(
+operator|&
+name|PLUG_IN_INFO
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_main
+argument_list|(
+name|__argc
+argument_list|,
+name|__argv
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  * main  *  * allow to build as console app as well  */
+end_comment
+
+begin_function
+DECL|function|main (int argc,char * argv[])
+name|int
+name|main
+parameter_list|(
+name|int
+name|argc
+parameter_list|,
+name|char
+modifier|*
+name|argv
+index|[]
+parameter_list|)
+block|{
 ifdef|#
 directive|ifdef
 name|_DEBUG
@@ -1827,7 +1875,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb82d6f0208
+DECL|struct|__anon2a09363d0208
 typedef|typedef
 struct|struct
 block|{
