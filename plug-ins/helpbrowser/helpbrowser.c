@@ -142,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0eb1110103
+DECL|enum|__anon27b1e52e0103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -159,14 +159,10 @@ block|}
 enum|;
 end_enum
 
-begin_comment
-comment|/*  structures  */
-end_comment
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0eb1110208
+DECL|struct|__anon27b1e52e0208
 block|{
 DECL|member|title
 specifier|const
@@ -191,12 +187,13 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  constant strings  */
+comment|/* please make sure the translation is a valid and complete HTML snippet */
 end_comment
 
 begin_decl_stmt
 DECL|variable|doc_not_found_format_string
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|doc_not_found_format_string
@@ -212,8 +209,8 @@ literal|"<h3>Couldn't find document</h3>"
 literal|"<tt>%s</tt>"
 literal|"</center>"
 literal|"<p>"
-literal|"<small>This either means that the help for this topic has not been written "
-literal|"yet or that something is wrong with your installation. "
+literal|"<small>This either means that the help for this topic has not been "
+literal|"written yet or that something is wrong with your installation. "
 literal|"Please check carefully before you report this as a bug.</small>"
 literal|"</body>"
 literal|"</html>"
@@ -224,6 +221,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|eek_png_tag
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|eek_png_tag
@@ -407,7 +405,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|void
 name|load_page
 parameter_list|(
 specifier|const
@@ -464,8 +462,78 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  functions  */
+comment|/* Taken from glib/gconvert.c:  * Test of haystack has the needle prefix, comparing case  * insensitive. haystack may be UTF-8, but needle must  * contain only ascii.  */
 end_comment
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|has_case_prefix (const gchar * haystack,const gchar * needle)
+name|has_case_prefix
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|haystack
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|needle
+parameter_list|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|h
+init|=
+name|haystack
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|n
+init|=
+name|needle
+decl_stmt|;
+while|while
+condition|(
+operator|*
+name|n
+operator|&&
+operator|*
+name|h
+operator|&&
+name|g_ascii_tolower
+argument_list|(
+operator|*
+name|n
+argument_list|)
+operator|==
+name|g_ascii_tolower
+argument_list|(
+operator|*
+name|h
+argument_list|)
+condition|)
+block|{
+name|n
+operator|++
+expr_stmt|;
+name|h
+operator|++
+expr_stmt|;
+block|}
+return|return
+operator|(
+operator|*
+name|n
+operator|==
+literal|'\0'
+operator|)
+return|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -561,7 +629,7 @@ name|load_page
 argument_list|(
 literal|"contents.html"
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -572,7 +640,7 @@ name|load_page
 argument_list|(
 literal|"index.html"
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1242,7 +1310,61 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|void
+DECL|function|load_remote_page (const gchar * ref)
+name|load_remote_page
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|ref
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+comment|/*  try to call netscape through the web_browser interface */
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"extension_web_browser"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|GIMP_RUN_NONINTERACTIVE
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|ref
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|load_page (const gchar * ref,gboolean add_to_queue)
 name|load_page
 parameter_list|(
@@ -1258,30 +1380,34 @@ block|{
 name|HtmlDocument
 modifier|*
 name|doc
-decl_stmt|;
-name|gchar
-modifier|*
-name|new_ref
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|ref
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|doc
-operator|=
+init|=
 name|HTML_VIEW
 argument_list|(
 name|html
 argument_list|)
 operator|->
 name|document
-expr_stmt|;
+decl_stmt|;
+name|gchar
+modifier|*
+name|abs
+decl_stmt|;
+name|gchar
+modifier|*
 name|new_ref
+decl_stmt|;
+name|gchar
+modifier|*
+name|anchor
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|ref
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|abs
 operator|=
 name|uri_to_abs
 argument_list|(
@@ -1290,31 +1416,95 @@ argument_list|,
 name|current_ref
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|new_ref
-condition|)
-return|return
-name|FALSE
-return|;
-name|g_print
+name|g_return_if_fail
 argument_list|(
-literal|"load_page %s\n"
-argument_list|,
-name|new_ref
+name|abs
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
+name|anchor
+operator|=
+name|strchr
+argument_list|(
+name|ref
+argument_list|,
+literal|'#'
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|anchor
+operator|&&
+name|anchor
+index|[
+literal|0
+index|]
+operator|&&
+name|anchor
+index|[
+literal|1
+index|]
+condition|)
+block|{
+name|new_ref
+operator|=
+name|g_strconcat
+argument_list|(
+name|abs
+argument_list|,
+name|anchor
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|anchor
+operator|+=
+literal|1
+expr_stmt|;
+block|}
+else|else
+block|{
+name|new_ref
+operator|=
+name|g_strdup
+argument_list|(
+name|abs
+argument_list|)
+expr_stmt|;
+name|anchor
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|strcmp
 argument_list|(
 name|current_ref
 argument_list|,
-name|new_ref
+name|abs
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|has_case_prefix
+argument_list|(
+name|abs
+argument_list|,
+literal|"file:/"
+argument_list|)
+condition|)
+block|{
+name|load_remote_page
+argument_list|(
+name|ref
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|html_document_clear
 argument_list|(
 name|doc
@@ -1344,7 +1534,7 @@ name|request_url
 argument_list|(
 name|doc
 argument_list|,
-name|new_ref
+name|abs
 argument_list|,
 name|doc
 operator|->
@@ -1354,6 +1544,20 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|anchor
+condition|)
+name|html_view_jump_to_anchor
+argument_list|(
+name|HTML_VIEW
+argument_list|(
+name|html
+argument_list|)
+argument_list|,
+name|anchor
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|current_ref
@@ -1377,9 +1581,6 @@ expr_stmt|;
 name|update_toolbar
 argument_list|()
 expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
@@ -1409,14 +1610,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|GimpParam *return_vals;   gint       nreturn_vals;    switch (url_type)     {     case URL_JUMP:       jump_to_anchor (ref);       break;      case URL_FILE_LOCAL:       load_page (ref, TRUE);       break;      default:
-comment|/*  try to call netscape through the web_browser interface */
-block|return_vals = gimp_run_procedure ("extension_web_browser",&nreturn_vals, 					GIMP_PDB_INT32,  GIMP_RUN_NONINTERACTIVE, 					GIMP_PDB_STRING, ref, 					GIMP_PDB_INT32,  FALSE, 					GIMP_PDB_END);        gimp_destroy_params (return_vals, nreturn_vals);       break;     }
-endif|#
-directive|endif
 block|}
 end_function
 
@@ -1556,13 +1749,6 @@ argument_list|(
 name|fd
 argument_list|)
 decl_stmt|;
-name|g_print
-argument_list|(
-literal|"loading %s\n"
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
 name|g_io_channel_set_close_on_unref
 argument_list|(
 name|io
@@ -1599,16 +1785,6 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_print
-argument_list|(
-literal|"no filename for %s\n"
-argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
@@ -1877,7 +2053,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|void
 DECL|function|open_browser_dialog (const gchar * help_path,const gchar * locale,const gchar * help_file)
 name|open_browser_dialog
 parameter_list|(
@@ -2437,7 +2613,7 @@ argument_list|(
 name|combo
 argument_list|)
 argument_list|,
-literal|300
+literal|360
 argument_list|,
 operator|-
 literal|1
@@ -2707,14 +2883,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-return|return
 name|load_page
 argument_list|(
 name|help_file
 argument_list|,
 name|TRUE
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -3197,7 +3372,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|void
 DECL|function|open_url (const gchar * help_path,const gchar * locale,const gchar * help_file)
 name|open_url
 parameter_list|(
@@ -3217,9 +3392,6 @@ modifier|*
 name|help_file
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
 name|open_browser_dialog
 argument_list|(
 name|help_path
@@ -3228,19 +3400,13 @@ name|locale
 argument_list|,
 name|help_file
 argument_list|)
-condition|)
-return|return
-name|FALSE
-return|;
+expr_stmt|;
 name|install_temp_proc
 argument_list|()
 expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
@@ -3609,15 +3775,6 @@ operator|.
 name|d_string
 argument_list|)
 expr_stmt|;
-name|g_strdelimit
-argument_list|(
-name|help_path
-argument_list|,
-literal|"/"
-argument_list|,
-name|G_DIR_SEPARATOR
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -3704,15 +3861,6 @@ operator|.
 name|data
 operator|.
 name|d_string
-argument_list|)
-expr_stmt|;
-name|g_strdelimit
-argument_list|(
-name|help_file
-argument_list|,
-literal|"/"
-argument_list|,
-name|G_DIR_SEPARATOR
 argument_list|)
 expr_stmt|;
 block|}
@@ -3732,9 +3880,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-if|if
-condition|(
-operator|!
 name|open_url
 argument_list|(
 name|help_path
@@ -3743,29 +3888,6 @@ name|locale
 argument_list|,
 name|help_file
 argument_list|)
-condition|)
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|GIMP_PDB_EXECUTION_ERROR
-expr_stmt|;
-else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|GIMP_PDB_SUCCESS
 expr_stmt|;
 name|g_free
 argument_list|(
@@ -3783,7 +3905,6 @@ name|help_file
 argument_list|)
 expr_stmt|;
 block|}
-else|else
 name|values
 index|[
 literal|0
