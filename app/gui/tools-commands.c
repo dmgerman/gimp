@@ -319,18 +319,6 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-comment|/*  setting active_tool->gdisp here is a HACK to allow the tools'    *  dialog windows being hidden if the tool was selected from    *  a tear-off-menu and there was no mouse click in the display    *  before deleting it    */
-name|tool_manager_get_active
-argument_list|(
-name|tool_info
-operator|->
-name|gimp
-argument_list|)
-operator|->
-name|gdisp
-operator|=
-name|gdisp
-expr_stmt|;
 block|}
 end_function
 

@@ -689,6 +689,13 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+comment|/*  set gdisp so the dialog can be hidden on display destruction  */
+name|tool
+operator|->
+name|gdisp
+operator|=
+name|gdisp
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -762,7 +769,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
