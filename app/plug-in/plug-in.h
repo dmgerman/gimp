@@ -39,6 +39,11 @@ DECL|struct|_PlugInProcFrame
 struct|struct
 name|_PlugInProcFrame
 block|{
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|proc_rec
 name|ProcRecord
 modifier|*
@@ -71,11 +76,6 @@ DECL|member|gimp
 name|Gimp
 modifier|*
 name|gimp
-decl_stmt|;
-DECL|member|context
-name|GimpContext
-modifier|*
-name|context
 decl_stmt|;
 DECL|member|ref_count
 name|gint
@@ -377,6 +377,10 @@ parameter_list|(
 name|PlugIn
 modifier|*
 name|plug_in
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|ProcRecord
 modifier|*

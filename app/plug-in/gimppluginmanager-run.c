@@ -131,6 +131,10 @@ name|ProcRecord
 modifier|*
 name|proc_rec
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
@@ -285,6 +289,8 @@ operator|=
 name|plug_in_temp_run
 argument_list|(
 name|proc_rec
+argument_list|,
+name|context
 argument_list|,
 name|progress
 argument_list|,
@@ -1006,12 +1012,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plug_in_temp_run (ProcRecord * proc_rec,GimpProgress * progress,Argument * args,gint argc)
+DECL|function|plug_in_temp_run (ProcRecord * proc_rec,GimpContext * context,GimpProgress * progress,Argument * args,gint argc)
 name|plug_in_temp_run
 parameter_list|(
 name|ProcRecord
 modifier|*
 name|proc_rec
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -1060,6 +1070,8 @@ decl_stmt|;
 name|plug_in_proc_frame_push
 argument_list|(
 name|plug_in
+argument_list|,
+name|context
 argument_list|,
 name|proc_rec
 argument_list|)

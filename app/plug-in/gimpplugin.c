@@ -950,15 +950,6 @@ name|gimp
 expr_stmt|;
 name|plug_in
 operator|->
-name|context
-operator|=
-name|g_object_ref
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-name|plug_in
-operator|->
 name|ref_count
 operator|=
 literal|1
@@ -1065,6 +1056,15 @@ operator|&
 name|plug_in
 operator|->
 name|main_proc_frame
+expr_stmt|;
+name|proc_frame
+operator|->
+name|context
+operator|=
+name|g_object_ref
+argument_list|(
+name|context
+argument_list|)
 expr_stmt|;
 name|proc_frame
 operator|->
@@ -1237,6 +1237,8 @@ name|g_object_unref
 argument_list|(
 name|plug_in
 operator|->
+name|main_proc_frame
+operator|.
 name|context
 argument_list|)
 expr_stmt|;
@@ -3365,12 +3367,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_proc_frame_push (PlugIn * plug_in,ProcRecord * proc_rec)
+DECL|function|plug_in_proc_frame_push (PlugIn * plug_in,GimpContext * context,ProcRecord * proc_rec)
 name|plug_in_proc_frame_push
 parameter_list|(
 name|PlugIn
 modifier|*
 name|plug_in
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|ProcRecord
 modifier|*
@@ -3390,6 +3396,14 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|proc_rec
 operator|!=
 name|NULL
@@ -3402,6 +3416,15 @@ argument_list|(
 name|PlugInProcFrame
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|proc_frame
+operator|->
+name|context
+operator|=
+name|g_object_ref
+argument_list|(
+name|context
 argument_list|)
 expr_stmt|;
 name|proc_frame
@@ -3479,6 +3502,13 @@ operator|->
 name|temp_proc_frames
 argument_list|,
 name|proc_frame
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|proc_frame
+operator|->
+name|context
 argument_list|)
 expr_stmt|;
 name|g_free
