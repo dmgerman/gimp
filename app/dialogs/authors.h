@@ -132,7 +132,7 @@ literal|"Michael Hammel"
 block|,
 literal|"Henrik Hansen"
 block|,
-literal|"Ville HautamÂ¤ki"
+literal|"Ville HautamÃ¤ki"
 block|,
 literal|"James Henstridge"
 block|,
@@ -144,7 +144,7 @@ literal|"Christoph Hoegl"
 block|,
 literal|"Wolfgang Hofer"
 block|,
-literal|"Jan Hubicka"
+literal|"Jan HubiÄka"
 block|,
 literal|"Andreas Hyden"
 block|,
@@ -202,7 +202,7 @@ literal|"Adrian Likins"
 block|,
 literal|"Tor Lillqvist"
 block|,
-literal|"Ingo Luetkebohle"
+literal|"Ingo LÃ¼tkebohle"
 block|,
 literal|"Josh MacDonald"
 block|,
@@ -282,7 +282,7 @@ literal|"Mike Phillips"
 block|,
 literal|"Artur Polaczynski"
 block|,
-literal|"Raphael Quinet"
+literal|"RaphaÃ«l Quinet"
 block|,
 literal|"Tom Rathborne"
 block|,
