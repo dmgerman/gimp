@@ -1258,7 +1258,7 @@ name|width
 argument_list|,
 name|miter
 argument_list|,
-literal|1.0
+literal|0.2
 argument_list|)
 expr_stmt|;
 name|sc

@@ -168,7 +168,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_current:  * @image_ID: The ID of the image to get the current paths from.  *  * The name of the current path. Error if no paths.  *  * The name of the current path. Error if no paths.  *  * Returns: The name of the current path.  */
+comment|/**  * gimp_path_get_current:  * @image_ID: The ID of the image to get the current path from.  *  * The name of the current path. Error if no paths.  *  * The name of the current path. Error if no paths.  *  * Returns: The name of the current path.  */
 end_comment
 
 begin_function
@@ -251,7 +251,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_current:  * @image_ID: The ID of the image to list set the paths in.  * @name: The name of the path to set the current path to.  *  * List the paths associated with the passed image.  *  * List the paths associated with the passed image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_current:  * @image_ID: The ID of the image to list set the paths in.  * @name: The name of the path to set the current path to.  *  * Sets the current path associated with the passed image.  *  * List the paths associated with the passed image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -327,7 +327,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_delete:  * @image_ID: The ID of the image to list delete the paths from.  * @name: The name of the path to delete.  *  * Delete the named paths associated with the passed image.  *  * Delete the named path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_delete:  * @image_ID: The ID of the image to list delete the paths from.  * @name: The name of the path to delete.  *  * Delete the named path associated with the passed image.  *  * Delete the named path.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -940,7 +940,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_tattoo:  * @image_ID: The image.  * @name: the name of the path whose tattoo should be set.  * @tattovalue: The tattoo associated with the name path. Only values returned from 'path_get_tattoo' should be used here.  *  * Sets the tattoo associated with the name path.  *  * This procedure sets the tattoo associated with the specified path. A  * tattoo is a unique and permenant identifier attached to a path that  * can be used to uniquely identify a path within an image even between  * sessions. Note that the value passed to this function must have been  * obtained from a previous call to path_get_tattoo.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_tattoo:  * @image_ID: The image.  * @name: the name of the path whose tattoo should be set.  * @tattovalue: The tattoo associated with the name path. Only values returned from 'path_get_tattoo' should be used here.  *  * Sets the tattoo associated with the named path.  *  * This procedure sets the tattoo associated with the specified path. A  * tattoo is a unique and permenant identifier attached to a path that  * can be used to uniquely identify a path within an image even between  * sessions. Note that the value passed to this function must have been  * obtained from a previous call to path_get_tattoo.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1113,7 +1113,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be obtained.  *  * Returns the locked status associated with the name path.  *  * This procedure returns the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: The lock status associated with the name path. 0 returned if the path is not locked. 1 is returned if the path is locked.  */
+comment|/**  * gimp_path_get_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be obtained.  *  * Returns the locked status associated with the named path.  *  * This procedure returns the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: The lock status associated with the name path. 0 returned if the path is not locked. 1 is returned if the path is locked.  */
 end_comment
 
 begin_function
@@ -1200,7 +1200,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be set.  * @lockstatus: The lock status associated with the name path. 0 if the path is not locked. 1 if the path is to be locked.  *  * Set the locked status associated with the name path.  *  * This procedure sets the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be set.  * @lockstatus: The lock status associated with the name path. 0 if the path is not locked. 1 if the path is to be locked.  *  * Set the locked status associated with the named path.  *  * This procedure sets the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

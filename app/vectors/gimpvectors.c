@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac0b820103
+DECL|enum|__anon27a59ba10103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -888,6 +888,12 @@ operator|->
 name|get_new_preview
 operator|=
 name|gimp_vectors_get_new_preview
+expr_stmt|;
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-path"
 expr_stmt|;
 name|item_class
 operator|->

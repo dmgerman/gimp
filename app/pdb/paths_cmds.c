@@ -725,7 +725,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to get the current paths from"
+literal|"The ID of the image to get the current path from"
 block|}
 block|}
 decl_stmt|;
@@ -964,7 +964,7 @@ init|=
 block|{
 literal|"gimp_path_set_current"
 block|,
-literal|"List the paths associated with the passed image."
+literal|"Sets the current path associated with the passed image."
 block|,
 literal|"List the paths associated with the passed image."
 block|,
@@ -1169,7 +1169,7 @@ init|=
 block|{
 literal|"gimp_path_delete"
 block|,
-literal|"Delete the named paths associated with the passed image."
+literal|"Delete the named path associated with the passed image."
 block|,
 literal|"Delete the named path."
 block|,
@@ -3002,7 +3002,7 @@ init|=
 block|{
 literal|"gimp_path_set_tattoo"
 block|,
-literal|"Sets the tattoo associated with the name path."
+literal|"Sets the tattoo associated with the named path."
 block|,
 literal|"This procedure sets the tattoo associated with the specified path. A tattoo is a unique and permenant identifier attached to a path that can be used to uniquely identify a path within an image even between sessions. Note that the value passed to this function must have been obtained from a previous call to path_get_tattoo."
 block|,
@@ -3490,7 +3490,7 @@ init|=
 block|{
 literal|"gimp_path_get_locked"
 block|,
-literal|"Returns the locked status associated with the name path."
+literal|"Returns the locked status associated with the named path."
 block|,
 literal|"This procedure returns the lock status associated with the specified path. A path can be \"locked\" which means that the transformation tool operations will also apply to the path."
 block|,
@@ -3724,7 +3724,7 @@ init|=
 block|{
 literal|"gimp_path_set_locked"
 block|,
-literal|"Set the locked status associated with the name path."
+literal|"Set the locked status associated with the named path."
 block|,
 literal|"This procedure sets the lock status associated with the specified path. A path can be \"locked\" which means that the transformation tool operations will also apply to the path."
 block|,

@@ -437,7 +437,7 @@ name|gimp_stroke_interpolate
 argument_list|(
 name|stroke
 argument_list|,
-literal|1
+literal|0.2
 argument_list|,
 operator|&
 name|closed
@@ -553,7 +553,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/*   dash_array = g_array_sized_new (FALSE, FALSE, sizeof (gdouble), dashes_len);   dash_array = g_array_prepend_vals (dash_array,&dashes, dashes_len);   */
 name|gimp_scan_convert_stroke
 argument_list|(
 name|scan_convert

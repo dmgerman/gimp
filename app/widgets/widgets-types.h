@@ -146,6 +146,15 @@ name|GimpPreviewRendererImage
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpPreviewRendererVectors
+typedef|typedef
+name|struct
+name|_GimpPreviewRendererVectors
+name|GimpPreviewRendererVectors
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  widgets  */
 end_comment
