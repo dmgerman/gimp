@@ -3201,9 +3201,9 @@ argument_list|(
 literal|"Selection"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_STOCK_TOOL_RECT_SELECT
 argument_list|,
-name|NULL
+name|dialogs_stock_text_tab_func
 argument_list|,
 name|dialogs_set_selection_editor_context_func
 argument_list|)
