@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abde40b0103
+DECL|enum|__anon2c47b67a0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1582,6 +1582,13 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_container_menu_select_item
+argument_list|(
+name|menu
+argument_list|,
+name|viewable
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|menu
@@ -1647,13 +1654,6 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_container_menu_select_item
-argument_list|(
-name|menu
-argument_list|,
-name|viewable
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
