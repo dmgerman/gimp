@@ -174,7 +174,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lc_dialogP.h"
+file|"lc_dialog.h"
 end_include
 
 begin_include
@@ -10116,7 +10116,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd0c020108
+DECL|struct|__anon297490cd0108
 block|{
 DECL|member|gimage
 name|GimpImage

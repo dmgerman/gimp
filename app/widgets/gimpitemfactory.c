@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channels-dialog.h"
+file|"channels-commands.h"
 end_include
 
 begin_include
@@ -5189,7 +5189,7 @@ argument_list|)
 block|,
 literal|"<control>N"
 block|,
-name|channels_dialog_new_channel_callback
+name|channels_new_channel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5208,7 +5208,7 @@ argument_list|)
 block|,
 literal|"<control>F"
 block|,
-name|channels_dialog_raise_channel_callback
+name|channels_raise_channel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5227,7 +5227,7 @@ argument_list|)
 block|,
 literal|"<control>B"
 block|,
-name|channels_dialog_lower_channel_callback
+name|channels_lower_channel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5246,7 +5246,7 @@ argument_list|)
 block|,
 literal|"<control>C"
 block|,
-name|channels_dialog_duplicate_channel_callback
+name|channels_duplicate_channel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5283,7 +5283,7 @@ argument_list|)
 block|,
 literal|"<control>S"
 block|,
-name|channels_dialog_channel_to_sel_callback
+name|channels_channel_to_sel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5302,7 +5302,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|channels_dialog_add_channel_to_sel_callback
+name|channels_add_channel_to_sel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5321,7 +5321,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|channels_dialog_sub_channel_from_sel_callback
+name|channels_sub_channel_from_sel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5340,7 +5340,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|channels_dialog_intersect_channel_with_sel_callback
+name|channels_intersect_channel_with_sel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5377,7 +5377,7 @@ argument_list|)
 block|,
 literal|"<control>X"
 block|,
-name|channels_dialog_delete_channel_callback
+name|channels_delete_channel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5414,7 +5414,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|channels_dialog_edit_channel_attributes_callback
+name|channels_edit_channel_attributes_cmd_callback
 block|,
 literal|0
 block|}

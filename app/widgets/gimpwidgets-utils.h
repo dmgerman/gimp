@@ -114,6 +114,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gpointer
+name|gimp_widget_get_callback_context
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

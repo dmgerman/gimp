@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/paths-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchannel.h"
 end_include
 
@@ -157,12 +163,6 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paths_dialogP.h"
 end_include
 
 begin_include
@@ -274,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc64520108
+DECL|struct|__anon27db6bdd0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -310,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc64520208
+DECL|struct|__anon27db6bdd0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc64520308
+DECL|struct|__anon27db6bdd0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -531,7 +531,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc64520403
+DECL|enum|__anon27db6bdd0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT

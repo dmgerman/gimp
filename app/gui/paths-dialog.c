@@ -138,7 +138,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lc_dialogP.h"
+file|"lc_dialog.h"
 end_include
 
 begin_include
@@ -157,12 +157,6 @@ begin_include
 include|#
 directive|include
 file|"path_transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paths_dialogP.h"
 end_include
 
 begin_include
