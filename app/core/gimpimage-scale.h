@@ -122,7 +122,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_GIMAGE>*/
-DECL|enum|__anon27a386a80103
+DECL|enum|__anon2c1424db0103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -225,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a386a80203
+DECL|enum|__anon2c1424db0203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -250,13 +250,15 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon27a386a80303
+DECL|enum|__anon2c1424db0303
 typedef|typedef
 enum|enum
 block|{
 comment|/*< chop=_GUIDE>*/
 DECL|enumerator|HORIZONTAL_GUIDE
 name|HORIZONTAL_GUIDE
+init|=
+literal|1
 block|,
 DECL|enumerator|VERTICAL_GUIDE
 name|VERTICAL_GUIDE
@@ -269,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a386a80403
+DECL|enum|__anon2c1424db0403
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -297,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a386a80503
+DECL|enum|__anon2c1424db0503
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
