@@ -1019,7 +1019,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1a64c10103
+DECL|enum|__anon2a329c780103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -1044,7 +1044,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a64c10208
+DECL|struct|__anon2a329c780208
 block|{
 DECL|member|filename
 specifier|const
@@ -1465,6 +1465,26 @@ argument_list|(
 name|base_dir
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_HELP_DEBUG
+name|g_printerr
+argument_list|(
+literal|"help (%s): parsing '%s' for domain \"%s\"\n"
+argument_list|,
+name|locale
+operator|->
+name|locale_id
+argument_list|,
+name|filename
+argument_list|,
+name|domain
+operator|->
+name|help_domain
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|io
 operator|=
 name|g_io_channel_new_file
