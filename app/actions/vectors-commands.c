@@ -1827,7 +1827,7 @@ name|push_undo
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_item_set_visible
+name|gimp_item_set_linked
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
