@@ -1341,7 +1341,7 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|unitmenu
+name|menu
 decl_stmt|;
 if|if
 condition|(
@@ -1521,7 +1521,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  the fade-out unitmenu  */
-name|unitmenu
+name|menu
 operator|=
 name|gimp_prop_unit_menu_new
 argument_list|(
@@ -1539,7 +1539,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|unitmenu
+name|menu
 argument_list|,
 literal|2
 argument_list|,
@@ -1564,19 +1564,29 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|unitmenu
+name|menu
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|unitmenu
+name|menu
 argument_list|)
 argument_list|,
 literal|"set_digits"
 argument_list|,
 name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gimp_unit_menu_set_pixel_digits
+argument_list|(
+name|GIMP_UNIT_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -1638,7 +1648,7 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|unitmenu
+name|menu
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1884,7 +1894,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  the gradient unitmenu  */
-name|unitmenu
+name|menu
 operator|=
 name|gimp_prop_unit_menu_new
 argument_list|(
@@ -1902,7 +1912,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|unitmenu
+name|menu
 argument_list|,
 literal|2
 argument_list|,
@@ -1927,19 +1937,29 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|unitmenu
+name|menu
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|unitmenu
+name|menu
 argument_list|)
 argument_list|,
 literal|"set_digits"
 argument_list|,
 name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gimp_unit_menu_set_pixel_digits
+argument_list|(
+name|GIMP_UNIT_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  the repeat type  */

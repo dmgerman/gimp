@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ac72820103
+DECL|enum|__anon299d33da0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2373,6 +2373,16 @@ argument_list|,
 literal|"set_digits"
 argument_list|,
 name|height_spinbutton
+argument_list|)
+expr_stmt|;
+name|gimp_unit_menu_set_pixel_digits
+argument_list|(
+name|GIMP_UNIT_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
