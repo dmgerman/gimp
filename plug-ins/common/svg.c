@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* SVG loading and saving file filter for the GIMP  * -Dom Lachowicz<cinamod@hotmail.com>  *  * TODO:   * 1) size/zoom dialog  * 2) image preview  */
+comment|/* SVG loading and saving file filter for the GIMP  * -Dom Lachowicz<cinamod@hotmail.com>  *  * TODO:   * 1) size/zoom dialog, resultion setting  * 2) image preview  */
 end_comment
 
 begin_include
