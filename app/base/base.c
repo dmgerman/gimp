@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cpu-accel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"temp-buf.h"
 end_include
 
@@ -267,13 +261,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-if|if
-condition|(
-name|use_mmx
-condition|)
-name|cpu_accel_print_results
-argument_list|()
-expr_stmt|;
 endif|#
 directive|endif
 comment|/* odd minor version */
