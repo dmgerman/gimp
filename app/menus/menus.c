@@ -3652,6 +3652,10 @@ block|,
 name|tools_default_colors_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_DEFAULT_COLORS
 block|}
 block|,
 name|NULL
@@ -3673,6 +3677,10 @@ block|,
 name|tools_swap_colors_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SWAP_COLORS
 block|}
 block|,
 name|NULL

@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2439a30103
+DECL|enum|__anon2906c69e0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -1446,7 +1446,7 @@ name|color_area
 argument_list|,
 name|GIMP_STOCK_DEFAULT_COLORS
 argument_list|,
-name|GTK_ICON_SIZE_BUTTON
+name|GTK_ICON_SIZE_MENU
 argument_list|,
 name|NULL
 argument_list|)
@@ -1512,7 +1512,7 @@ name|color_area
 argument_list|,
 name|GIMP_STOCK_SWAP_COLORS
 argument_list|,
-name|GTK_ICON_SIZE_BUTTON
+name|GTK_ICON_SIZE_MENU
 argument_list|,
 name|NULL
 argument_list|)

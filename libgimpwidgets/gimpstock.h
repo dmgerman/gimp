@@ -115,16 +115,6 @@ define|#
 directive|define
 name|GIMP_STOCK_PATH_STROKE
 value|"gimp-path-stroke"
-DECL|macro|GIMP_STOCK_DEFAULT_COLORS
-define|#
-directive|define
-name|GIMP_STOCK_DEFAULT_COLORS
-value|"gimp-default-colors"
-DECL|macro|GIMP_STOCK_SWAP_COLORS
-define|#
-directive|define
-name|GIMP_STOCK_SWAP_COLORS
-value|"gimp-swap-colors"
 comment|/*  only in menu size:  */
 DECL|macro|GIMP_STOCK_CONVERT_RGB
 define|#
@@ -196,6 +186,16 @@ define|#
 directive|define
 name|GIMP_STOCK_QMASK_ON
 value|"gimp-qmask-on"
+DECL|macro|GIMP_STOCK_DEFAULT_COLORS
+define|#
+directive|define
+name|GIMP_STOCK_DEFAULT_COLORS
+value|"gimp-default-colors"
+DECL|macro|GIMP_STOCK_SWAP_COLORS
+define|#
+directive|define
+name|GIMP_STOCK_SWAP_COLORS
+value|"gimp-swap-colors"
 DECL|macro|GIMP_STOCK_TOOL_OPTIONS
 define|#
 directive|define
