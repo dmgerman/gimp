@@ -368,7 +368,7 @@ name|GTK_STOCK_REVERT_TO_SAVED
 block|,
 name|N_
 argument_list|(
-literal|"Re_vert"
+literal|"Re_vert..."
 argument_list|)
 block|,
 name|NULL
