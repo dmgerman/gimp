@@ -86,7 +86,7 @@ name|GimpContextPreviewClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d580120103
+DECL|enum|__anon274d3b4a0103
 block|{
 DECL|enumerator|GCP_BRUSH
 name|GCP_BRUSH
@@ -113,26 +113,42 @@ DECL|member|preview
 name|GtkPreview
 name|preview
 decl_stmt|;
+comment|/*  parent                              */
 DECL|member|data
 name|gpointer
 name|data
 decl_stmt|;
+comment|/*  brush|pattern|gradient              */
 DECL|member|type
 name|GimpContextPreviewType
 name|type
 decl_stmt|;
+comment|/*  GCP_BRUSH|GCP_PATTERN|GCP_GRADIENT  */
 DECL|member|width
 name|gint
 name|width
 decl_stmt|;
+comment|/*  preview width                       */
 DECL|member|height
 name|gint
 name|height
 decl_stmt|;
+comment|/*  preview_height                      */
+DECL|member|show_popup
+name|gboolean
+name|show_popup
+decl_stmt|;
+comment|/*  popup a larger preview on press     */
 DECL|member|show_tooltips
 name|gboolean
 name|show_tooltips
 decl_stmt|;
+comment|/*  install tooltips showing the name   */
+DECL|member|drag_source
+name|gboolean
+name|drag_source
+decl_stmt|;
+comment|/*  make the preview a drag_source      */
 block|}
 struct|;
 DECL|struct|_GimpContextPreviewClass
@@ -177,7 +193,13 @@ name|gint
 name|height
 parameter_list|,
 name|gboolean
+name|show_popup
+parameter_list|,
+name|gboolean
 name|show_tooltips
+parameter_list|,
+name|gboolean
+name|drag_source
 parameter_list|)
 function_decl|;
 name|void

@@ -394,6 +394,10 @@ name|CELL_SIZE
 argument_list|,
 name|CELL_SIZE
 argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -456,6 +460,10 @@ name|CELL_SIZE
 argument_list|,
 name|CELL_SIZE
 argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -517,6 +525,10 @@ argument_list|,
 name|GRAD_CELL_WIDTH
 argument_list|,
 name|GRAD_CELL_HEIGHT
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)

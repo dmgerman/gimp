@@ -1111,7 +1111,7 @@ name|gtk_widget_set_usize
 argument_list|(
 name|window
 argument_list|,
-literal|48
+literal|32
 argument_list|,
 literal|32
 argument_list|)

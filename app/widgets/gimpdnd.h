@@ -30,7 +30,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1516ee0103
+DECL|enum|__anon29ea68db0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -61,6 +61,15 @@ name|GIMP_DND_TYPE_PATH
 block|,
 DECL|enumerator|GIMP_DND_TYPE_COLOR
 name|GIMP_DND_TYPE_COLOR
+block|,
+DECL|enumerator|GIMP_DND_TYPE_BRUSH
+name|GIMP_DND_TYPE_BRUSH
+block|,
+DECL|enumerator|GIMP_DND_TYPE_PATTERN
+name|GIMP_DND_TYPE_PATTERN
+block|,
+DECL|enumerator|GIMP_DND_TYPE_GRADIENT
+name|GIMP_DND_TYPE_GRADIENT
 block|}
 enum|;
 end_enum
@@ -155,10 +164,37 @@ define|\
 value|{ "application/x-color", 0, GIMP_DND_TYPE_COLOR }
 end_define
 
+begin_define
+DECL|macro|GIMP_TARGET_BRUSH
+define|#
+directive|define
+name|GIMP_TARGET_BRUSH
+define|\
+value|{ "GIMP_BRUSH", 0, GIMP_DND_TYPE_BRUSH }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_PATTERN
+define|#
+directive|define
+name|GIMP_TARGET_PATTERN
+define|\
+value|{ "GIMP_PATTERN", 0, GIMP_DND_TYPE_PATTERN }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_GRADIENT
+define|#
+directive|define
+name|GIMP_TARGET_GRADIENT
+define|\
+value|{ "GIMP_GRADIENT", 0, GIMP_DND_TYPE_GRADIENT }
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1516ee0203
+DECL|enum|__anon29ea68db0203
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
