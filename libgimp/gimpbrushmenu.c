@@ -138,7 +138,7 @@ name|gint
 name|spacing
 decl_stmt|;
 DECL|member|paint_mode
-name|gint
+name|GimpLayerModeEffects
 name|paint_mode
 decl_stmt|;
 DECL|member|width
@@ -178,6 +178,18 @@ name|BSelect
 typedef|;
 end_typedef
 
+begin_function_decl
+specifier|static
+name|void
+name|brush_popup_close
+parameter_list|(
+name|BSelect
+modifier|*
+name|bsel
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 specifier|static
 name|void
@@ -195,6 +207,10 @@ name|gint
 name|y
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|frame
+decl_stmt|;
 specifier|const
 name|guchar
 modifier|*
@@ -225,19 +241,32 @@ decl_stmt|;
 name|gint
 name|scr_h
 decl_stmt|;
-comment|/* make sure the popup exists and is not visible */
 if|if
 condition|(
-operator|!
 name|bsel
 operator|->
 name|device_brushpopup
 condition|)
-block|{
-name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|;
+name|brush_popup_close
+argument_list|(
+name|bsel
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|bsel
+operator|->
+name|width
+operator|<=
+name|CELL_SIZE
+operator|&&
+name|bsel
+operator|->
+name|height
+operator|<=
+name|CELL_SIZE
+condition|)
+return|return;
 name|bsel
 operator|->
 name|device_brushpopup
@@ -309,17 +338,6 @@ operator|->
 name|device_brushpreview
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|gtk_widget_hide
-argument_list|(
-name|bsel
-operator|->
-name|device_brushpopup
-argument_list|)
-expr_stmt|;
-block|}
 comment|/* decide where to put the popup */
 name|gdk_window_get_origin
 argument_list|(
@@ -470,13 +488,6 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|bsel
-operator|->
-name|device_brushpopup
-argument_list|)
-expr_stmt|;
 comment|/*  Draw the brush  */
 name|buf
 operator|=
@@ -590,11 +601,11 @@ argument_list|(
 name|buf
 argument_list|)
 expr_stmt|;
-name|gtk_widget_queue_draw
+name|gtk_widget_show
 argument_list|(
 name|bsel
 operator|->
-name|device_brushpreview
+name|device_brushpopup
 argument_list|)
 expr_stmt|;
 block|}
@@ -617,13 +628,21 @@ name|bsel
 operator|->
 name|device_brushpopup
 condition|)
-name|gtk_widget_hide
+block|{
+name|gtk_widget_destroy
 argument_list|(
 name|bsel
 operator|->
 name|device_brushpopup
 argument_list|)
 expr_stmt|;
+name|bsel
+operator|->
+name|device_brushpopup
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1034,7 +1053,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_select_invoker (const gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,const guchar * mask_data,gboolean closing,gpointer data)
+DECL|function|brush_select_invoker (const gchar * name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean closing,gpointer data)
 name|brush_select_invoker
 parameter_list|(
 specifier|const
@@ -1048,7 +1067,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|gint
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|gint

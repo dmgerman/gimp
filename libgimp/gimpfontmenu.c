@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -44,7 +38,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43299c0108
+DECL|struct|__anon2af080520108
 block|{
 DECL|member|title
 name|gchar

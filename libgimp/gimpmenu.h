@@ -79,7 +79,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|gint
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|gint
