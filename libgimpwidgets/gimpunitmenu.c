@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c2e4180103
+DECL|enum|__anon297740890103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c2e4180203
+DECL|enum|__anon297740890203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -2114,9 +2114,7 @@ argument_list|)
 argument_list|,
 literal|"unit_selection"
 argument_list|,
-name|_gimp_eek
-operator|.
-name|standard_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/unit_selection.html"
 argument_list|,

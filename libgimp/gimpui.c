@@ -34,6 +34,27 @@ file|"libgimpwidgets/gimpwidgets-private.h"
 end_include
 
 begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_ui_help_func
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_comment
 comment|/**  * gimp_ui_init:  * @prog_name: The name of the plug-in which will be passed as argv[0] to  *             gtk_init(). It's a convention to use the name of the  *             executable and _not_ the PDB procedure name or something.  * @preview: %TRUE if the plug-in has some kind of preview in it's UI.  *           Note that passing %TRUE is recommended also if one of the  *           used GIMP Library widgets contains a preview (like the image  *           menu returned by gimp_image_menu_new()).  *  * This function initializes GTK+ with gtk_init() and initializes GDK's   * image rendering subsystem (GdkRGB) to follow the GIMP main program's   * colormap allocation/installation policy.  *  * The GIMP's colormap policy can be determinded by the user with the  * gimprc variables @min_colors and @install_cmap.  **/
 end_comment
 
@@ -172,12 +193,6 @@ expr_stmt|;
 comment|/*  Initialize the eeky vtable needed by libgimpwidgets  */
 name|vtable
 operator|.
-name|standard_help_func
-operator|=
-name|gimp_standard_help_func
-expr_stmt|;
-name|vtable
-operator|.
 name|palette_get_background
 operator|=
 name|gimp_palette_get_background
@@ -246,6 +261,8 @@ name|gimp_widgets_init
 argument_list|(
 operator|&
 name|vtable
+argument_list|,
+name|gimp_ui_help_func
 argument_list|)
 expr_stmt|;
 if|if
@@ -260,6 +277,37 @@ expr_stmt|;
 name|initialized
 operator|=
 name|TRUE
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_ui_help_func (const gchar * help_data)
+name|gimp_ui_help_func
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+block|{
+name|gimp_help
+argument_list|(
+name|gimp_get_progname
+argument_list|()
+argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
+name|help_data
+argument_list|)
 expr_stmt|;
 block|}
 end_function

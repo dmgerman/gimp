@@ -75,16 +75,10 @@ directive|include
 file|"gimphelpui.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpwidgets-private.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1f82470103
+DECL|enum|__anon2a1f5d740103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -197,6 +191,16 @@ comment|/*  local variables  */
 end_comment
 
 begin_decl_stmt
+DECL|variable|the_help_func
+specifier|static
+name|GimpHelpFunc
+name|the_help_func
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|tool_tips
 specifier|static
 name|GtkTooltips
@@ -228,12 +232,33 @@ end_comment
 
 begin_function
 name|void
-DECL|function|_gimp_help_init (void)
+DECL|function|_gimp_help_init (GimpHelpFunc standard_help_func)
 name|_gimp_help_init
 parameter_list|(
-name|void
+name|GimpHelpFunc
+name|standard_help_func
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|standard_help_func
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|the_help_func
+condition|)
+name|g_error
+argument_list|(
+literal|"_gimp_help_init() must only be called once!"
+argument_list|)
+expr_stmt|;
+name|the_help_func
+operator|=
+name|standard_help_func
+expr_stmt|;
 name|tool_tips
 operator|=
 name|gtk_tooltips_new
@@ -291,6 +316,42 @@ block|{
 name|gtk_tooltips_disable
 argument_list|(
 name|tool_tips
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_standard_help_func (const gchar * help_data)
+name|gimp_standard_help_func
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|the_help_func
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"gimp_standard_help_func(): you must call _gimp_help_init() "
+literal|"before using the help system"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+call|(
+modifier|*
+name|the_help_func
+call|)
+argument_list|(
+name|help_data
 argument_list|)
 expr_stmt|;
 block|}
@@ -861,9 +922,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|_gimp_eek
-operator|.
-name|standard_help_func
+name|gimp_standard_help_func
 argument_list|(
 name|help_text
 argument_list|)
@@ -877,9 +936,7 @@ block|}
 block|}
 else|else
 block|{
-name|_gimp_eek
-operator|.
-name|standard_help_func
+name|gimp_standard_help_func
 argument_list|(
 name|help_data
 argument_list|)

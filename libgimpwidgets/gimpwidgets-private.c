@@ -60,12 +60,15 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_widgets_init (GimpWidgetsVTable * vtable)
+DECL|function|gimp_widgets_init (GimpWidgetsVTable * vtable,GimpHelpFunc standard_help_func)
 name|gimp_widgets_init
 parameter_list|(
 name|GimpWidgetsVTable
 modifier|*
 name|vtable
+parameter_list|,
+name|GimpHelpFunc
+name|standard_help_func
 parameter_list|)
 block|{
 specifier|static
@@ -110,18 +113,22 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|standard_help_func
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_widgets_initialized
 condition|)
-block|{
 name|g_error
 argument_list|(
 literal|"gimp_widgets_init() must only be called once!"
 argument_list|)
 expr_stmt|;
-return|return;
-block|}
 name|_gimp_eek
 operator|=
 operator|*
@@ -197,7 +204,9 @@ name|icon_list
 argument_list|)
 expr_stmt|;
 name|_gimp_help_init
-argument_list|()
+argument_list|(
+name|standard_help_func
+argument_list|)
 expr_stmt|;
 name|gimp_widgets_initialized
 operator|=

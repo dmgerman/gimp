@@ -22,7 +22,8 @@ comment|/* For information look into the C source or the html documentation */
 name|void
 name|_gimp_help_init
 parameter_list|(
-name|void
+name|GimpHelpFunc
+name|standard_help_func
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -46,7 +47,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  the standard gimp help function  *  (has different implementations in the main app and in libgimp)  */
+comment|/*  the standard gimp help function  */
 end_comment
 
 begin_function_decl

@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -192,12 +198,35 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_comment
+comment|/* FIXME */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gui_help_func
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -526,12 +555,6 @@ return|;
 comment|/*  Initialize the eeky vtable needed by libgimpwidgets  */
 name|vtable
 operator|.
-name|standard_help_func
-operator|=
-name|gimp_standard_help_func
-expr_stmt|;
-name|vtable
-operator|.
 name|palette_get_background
 operator|=
 name|gimp_palette_get_background
@@ -600,6 +623,8 @@ name|gimp_widgets_init
 argument_list|(
 operator|&
 name|vtable
+argument_list|,
+name|gui_help_func
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
@@ -1518,6 +1543,30 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|gui_help_func (const gchar * help_data)
+name|gui_help_func
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+block|{
+name|gimp_help
+argument_list|(
+name|the_gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|help_data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
