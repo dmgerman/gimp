@@ -39,6 +39,12 @@ directive|include
 file|<glib.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG
+end_ifdef
+
 begin_function
 DECL|function|parasite_print (Parasite * p)
 specifier|static
@@ -135,6 +141,11 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|Parasite
