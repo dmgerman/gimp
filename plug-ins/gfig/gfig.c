@@ -1169,7 +1169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750103
+DECL|enum|__anon275f8e700103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1221,7 +1221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750203
+DECL|enum|__anon275f8e700203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1242,7 +1242,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750303
+DECL|enum|__anon275f8e700303
 block|{
 DECL|enumerator|SINGLE_LAYER
 name|SINGLE_LAYER
@@ -1263,7 +1263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750403
+DECL|enum|__anon275f8e700403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1287,7 +1287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750503
+DECL|enum|__anon275f8e700503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1308,7 +1308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750603
+DECL|enum|__anon275f8e700603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1476,7 +1476,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c651e750708
+DECL|struct|__anon275f8e700708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1515,7 +1515,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c651e750808
+DECL|struct|__anon275f8e700808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1564,7 +1564,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c651e750908
+DECL|struct|__anon275f8e700908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1735,7 +1735,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750a03
+DECL|enum|__anon275f8e700a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1765,7 +1765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750b03
+DECL|enum|__anon275f8e700b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1781,7 +1781,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750c03
+DECL|enum|__anon275f8e700c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1806,7 +1806,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c651e750d03
+DECL|enum|__anon275f8e700d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -16329,7 +16329,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Vewry Dark"
+literal|"Very Dark"
 argument_list|)
 argument_list|,
 operator|(
@@ -16523,7 +16523,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Hide Cntr Pnts "
+literal|"Hide Cntr Pnts"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -18280,7 +18280,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"XY Pos: "
+literal|"XY Pos:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -20316,8 +20316,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Unsaved Gfig objects - continue with exiting?\n"
-literal|"Number of objects unsaved = %d"
+literal|"%d unsaved Gfig objects.\nContinue with exiting?"
 argument_list|)
 argument_list|,
 name|count
