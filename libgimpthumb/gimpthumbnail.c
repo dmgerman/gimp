@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ba59f0103
+DECL|enum|__anon28bdbb200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2492,8 +2492,12 @@ expr_stmt|;
 if|if
 condition|(
 name|state
-operator|!=
+operator|<
 name|GIMP_THUMB_STATE_EXISTS
+operator|||
+name|state
+operator|==
+name|GIMP_THUMB_STATE_FAILED
 condition|)
 return|return
 name|NULL
