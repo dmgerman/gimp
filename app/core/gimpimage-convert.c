@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayer-floating-sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppalette.h"
 end_include
 
@@ -430,7 +436,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2aa153dd0103
+DECL|enum|__anon2b4c0d200103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1471,7 +1477,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa153dd0208
+DECL|struct|__anon2b4c0d200208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1548,7 +1554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa153dd0308
+DECL|struct|__anon2b4c0d200308
 block|{
 DECL|member|ncolors
 name|long
@@ -1733,7 +1739,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa153dd0408
+DECL|struct|__anon2b4c0d200408
 block|{
 DECL|member|used_count
 name|signed
@@ -2958,6 +2964,23 @@ argument_list|,
 name|undo_desc
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_image_floating_sel
+argument_list|(
+name|gimage
+argument_list|)
+condition|)
+name|floating_sel_relax
+argument_list|(
+name|gimp_image_floating_sel
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/*  Push the image type to the stack  */
 name|gimp_image_undo_push_image_type
 argument_list|(
@@ -3992,6 +4015,23 @@ operator|->
 name|delete_func
 argument_list|(
 name|quantobj
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_image_floating_sel
+argument_list|(
+name|gimage
+argument_list|)
+condition|)
+name|floating_sel_rigor
+argument_list|(
+name|gimp_image_floating_sel
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
