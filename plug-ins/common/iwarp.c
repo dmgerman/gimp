@@ -43,6 +43,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|MAX_PREVIEW_WIDTH
 define|#
@@ -110,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294078e70108
+DECL|struct|__anon28c161570108
 block|{
 DECL|member|x
 name|gfloat
@@ -129,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294078e70208
+DECL|struct|__anon28c161570208
 block|{
 DECL|member|run
 name|gint
@@ -144,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294078e70308
+DECL|struct|__anon28c161570308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1148,13 +1154,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_iwarp"
 argument_list|,
+name|_
+argument_list|(
 literal|"Interactive warping of the specified drawable"
+argument_list|)
 argument_list|,
-literal|"Interactive warping of the specified drawable "
+name|_
+argument_list|(
+literal|"Interactive warping of the specified drawable"
+argument_list|)
 argument_list|,
 literal|"Norbert Schmitz"
 argument_list|,
@@ -1162,7 +1177,10 @@ literal|"Norbert Schmitz"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Distorts/IWarp..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1287,6 +1305,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_iwarp"
@@ -3526,7 +3547,10 @@ name|do_animate
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Warping ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -4136,7 +4160,10 @@ name|sprintf
 argument_list|(
 name|st
 argument_list|,
+name|_
+argument_list|(
 literal|"Warping Frame Nr %d ..."
+argument_list|)
 argument_list|,
 name|frame_number
 argument_list|)
@@ -4186,14 +4213,20 @@ name|sprintf
 argument_list|(
 name|st
 argument_list|,
+name|_
+argument_list|(
 literal|"Warping Frame Nr %d ..."
+argument_list|)
 argument_list|,
 name|frame_number
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Ping Pong"
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -5110,7 +5143,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Animate"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -5234,7 +5270,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Number of Frames"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5399,7 +5438,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Reverse"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -5459,7 +5501,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Ping Pong"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -5562,7 +5607,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Animate"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5700,7 +5748,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Deform Radius"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5869,7 +5920,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Deform Amount"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6076,8 +6130,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Move"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -6158,8 +6215,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Shrink"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -6240,7 +6300,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Grow"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -6322,7 +6385,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Remove"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -6404,7 +6470,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Swirl CW"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -6486,7 +6555,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Swirl CCW"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -6602,7 +6674,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Bilinear"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -6676,7 +6751,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -6771,7 +6849,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Adaptive Supersample"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -6913,7 +6994,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Max Depth"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7082,7 +7166,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Threshold"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7301,7 +7388,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7490,7 +7580,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"IWarp"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -7596,7 +7689,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -7653,7 +7749,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -41,6 +35,24 @@ begin_include
 include|#
 directive|include
 file|<math.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -217,13 +229,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_laplace"
 argument_list|,
+name|_
+argument_list|(
 literal|"Edge Detection with Laplace Operation"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin creates one-pixel wide edges from the image, with the value proportional to the gradient. It uses the Laplace operator (a 3x3 kernel with -8 in the middle)The image has to be laplacered to get usefull results, a gauss_iir with 1.5 - 5.0 depending on the noise in the image is best"
+argument_list|)
 argument_list|,
 literal|"Thorsten Schnier"
 argument_list|,
@@ -231,7 +252,10 @@ literal|"Thorsten Schnier"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Edge-Detect/Laplace"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -305,6 +329,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 comment|/*  Get the specified drawable  */
 name|drawable
@@ -934,7 +961,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-literal|"Laplace"
+name|_
+argument_list|(
+literal|"Laplace..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Get the size of the input image. (This will/must be the same    *  as the size of the output image.    */
@@ -1527,7 +1557,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-literal|"Cleanup"
+name|_
+argument_list|(
+literal|"Cleanup..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale

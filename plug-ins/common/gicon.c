@@ -111,7 +111,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976e0120108
+DECL|struct|__anon297ebe930108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976e0120208
+DECL|struct|__anon297ebe930208
 block|{
 DECL|member|run
 name|gint
@@ -1099,10 +1099,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"gicon: can't open \"%s\"\n"
-argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1136,10 +1133,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"Not a GIcon file: %s!\n"
-argument_list|)
 argument_list|,
 name|filename
 argument_list|)

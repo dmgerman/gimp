@@ -279,7 +279,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c9cb740108
+DECL|struct|__anon29257c2c0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c9cb740208
+DECL|struct|__anon29257c2c0208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c9cb740308
+DECL|struct|__anon29257c2c0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -3311,10 +3311,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"don't know how to load JPEGs\nwith %d color channels"
-argument_list|)
 argument_list|,
 name|cinfo
 operator|.
@@ -3540,10 +3537,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unknown density unit %d\nassuming dots per inch"
-argument_list|)
 argument_list|,
 name|cinfo
 operator|.
@@ -7402,10 +7396,7 @@ name|add_menu_item
 argument_list|(
 name|menu
 argument_list|,
-name|_
-argument_list|(
 literal|"2x2,1x1,1x1"
-argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -7416,10 +7407,7 @@ name|add_menu_item
 argument_list|(
 name|menu
 argument_list|,
-name|_
-argument_list|(
 literal|"2x1,1x1,1x1 (4:2:2)"
-argument_list|)
 argument_list|,
 literal|1
 argument_list|,
@@ -7430,10 +7418,7 @@ name|add_menu_item
 argument_list|(
 name|menu
 argument_list|,
-name|_
-argument_list|(
 literal|"1x1,1x1,1x1"
-argument_list|)
 argument_list|,
 literal|2
 argument_list|,

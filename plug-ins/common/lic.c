@@ -292,7 +292,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297ada300108
+DECL|struct|__anon2af5812c0108
 block|{
 DECL|member|r
 DECL|member|g
@@ -379,7 +379,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon297ada300208
+DECL|struct|__anon2af5812c0208
 typedef|typedef
 struct|struct
 block|{
@@ -4977,10 +4977,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"LIC: Couldn't allocate temporary buffer - out of memory!\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7890,10 +7887,7 @@ parameter_list|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Noninteractive not yet implemented! Sorry.\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -507,10 +507,7 @@ break|break;
 default|default:
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Aie!  Aie!  Aie!\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -544,10 +541,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Yay... found %d horizontal guides and %d vertical guides.\n"
-argument_list|)
 argument_list|,
 name|num_hguides
 argument_list|,
@@ -559,10 +553,7 @@ else|else
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Poopy, no guides.\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

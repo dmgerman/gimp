@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -33,6 +39,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -47,14 +59,6 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"v0.7 (Dec. 25 1997)"
-end_define
-
-begin_define
-DECL|macro|DIALOG_CAPTION
-define|#
-directive|define
-name|DIALOG_CAPTION
-value|"Illusion"
 end_define
 
 begin_ifndef
@@ -159,7 +163,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b78e060108
+DECL|struct|__anon2b74483c0108
 typedef|typedef
 struct|struct
 block|{
@@ -387,13 +391,22 @@ name|return_vals
 init|=
 name|NULL
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"produce illusion"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"produce illusion"
+argument_list|)
 argument_list|,
 literal|"Hirotsuna Mizuno<s1041150@u-aizu.ac.jp>"
 argument_list|,
@@ -401,7 +414,10 @@ literal|"Hirotsuna Mizuno"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Map/Illusion..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -603,6 +619,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1515,7 +1534,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-name|DIALOG_CAPTION
+name|_
+argument_list|(
+literal|"Illusion"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_init
@@ -1593,7 +1615,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1659,7 +1684,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1788,7 +1816,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"division: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry_division

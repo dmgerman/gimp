@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc8b0d30108
+DECL|struct|__anon2bc2eaa80108
 block|{
 DECL|member|radius
 name|gdouble
@@ -79,7 +79,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc8b0d30208
+DECL|struct|__anon2bc2eaa80208
 block|{
 DECL|member|run
 name|gint
@@ -883,10 +883,7 @@ else|else
 block|{
 name|gimp_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gauss_rle: cannot operate on indexed color images"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|status

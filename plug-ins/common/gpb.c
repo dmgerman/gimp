@@ -113,7 +113,7 @@ comment|/* Parameters applicable each time we save a gpb or gih, saved  * in the
 end_comment
 
 begin_struct
-DECL|struct|__anon2955bb4a0108
+DECL|struct|__anon29871f3f0108
 specifier|static
 struct|struct
 block|{
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955bb4a0208
+DECL|struct|__anon29871f3f0208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -4594,10 +4594,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"GPB: write error"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -5280,10 +5277,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"drawable has no alpha channel -- aborting!\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -5375,10 +5369,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"GPB: can't open \"%s\""
-argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -5566,10 +5557,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"GPB: can't open \"%s\""
-argument_list|)
 argument_list|,
 name|filename
 argument_list|)

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -27,8 +33,14 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_typedef
-DECL|enum|__anon28d9e9990103
+DECL|enum|__anon29b1f1d10103
 DECL|enumerator|BEZIER_1
 DECL|enumerator|BEZIER_2
 DECL|typedef|style_t
@@ -44,7 +56,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28d9e9990203
+DECL|enum|__anon29b1f1d10203
 DECL|enumerator|LEFT
 DECL|enumerator|RIGHT
 DECL|enumerator|UP
@@ -1528,62 +1540,6 @@ value|40
 end_define
 
 begin_define
-DECL|macro|XTILES_TEXT
-define|#
-directive|define
-name|XTILES_TEXT
-value|"Number of pieces going across"
-end_define
-
-begin_define
-DECL|macro|YTILES_TEXT
-define|#
-directive|define
-name|YTILES_TEXT
-value|"Number of pieces going down"
-end_define
-
-begin_define
-DECL|macro|BLEND_LINES_TEXT
-define|#
-directive|define
-name|BLEND_LINES_TEXT
-value|"Degree of slope of each piece's edge"
-end_define
-
-begin_define
-DECL|macro|BLEND_AMOUNT_TEXT
-define|#
-directive|define
-name|BLEND_AMOUNT_TEXT
-value|"The amount of highlighting on the edges of each piece"
-end_define
-
-begin_define
-DECL|macro|SQUARE_TEXT
-define|#
-directive|define
-name|SQUARE_TEXT
-value|"Each piece has straight sides"
-end_define
-
-begin_define
-DECL|macro|CURVE_TEXT
-define|#
-directive|define
-name|CURVE_TEXT
-value|"Each piece has curved sides"
-end_define
-
-begin_define
-DECL|macro|DISABLE_TEXT
-define|#
-directive|define
-name|DISABLE_TEXT
-value|"Toggle Tooltips on/off"
-end_define
-
-begin_define
 DECL|macro|DRAW_POINT (buffer,index)
 define|#
 directive|define
@@ -2126,13 +2082,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_jigsaw"
 argument_list|,
+name|_
+argument_list|(
 literal|"Renders a jigsaw puzzle look"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Jigsaw puzzle look"
+argument_list|)
 argument_list|,
 literal|"Nigel Wetten"
 argument_list|,
@@ -2140,7 +2105,10 @@ literal|"Nigel Wetten"
 argument_list|,
 literal|"1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Render/Jigsaw..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -2264,6 +2232,9 @@ block|{
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -2362,6 +2333,9 @@ break|break;
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_jigsaw"
@@ -2401,7 +2375,10 @@ break|break;
 block|}
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Assembling Jigsaw"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2456,6 +2433,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_jigsaw"
@@ -14583,7 +14563,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
-name|PLUG_IN_NAME
+name|_
+argument_list|(
+literal|"jigsaw"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -14689,7 +14672,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -14746,7 +14732,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -14892,7 +14881,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Number of Tiles"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -14972,7 +14964,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Horizontal:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -15133,7 +15128,10 @@ name|tooltips
 argument_list|,
 name|scale
 argument_list|,
-name|XTILES_TEXT
+name|_
+argument_list|(
+literal|"Number of pieces going across"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -15253,7 +15251,10 @@ name|tooltips
 argument_list|,
 name|entry
 argument_list|,
-name|XTILES_TEXT
+name|_
+argument_list|(
+literal|"Number of pieces going across"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -15263,7 +15264,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Vertical:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -15424,7 +15428,10 @@ name|tooltips
 argument_list|,
 name|scale
 argument_list|,
-name|YTILES_TEXT
+name|_
+argument_list|(
+literal|"Number of pieces going down"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -15544,7 +15551,10 @@ name|tooltips
 argument_list|,
 name|entry
 argument_list|,
-name|YTILES_TEXT
+name|_
+argument_list|(
+literal|"Number of pieces going down"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -15564,7 +15574,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Bevel Edges"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -15644,7 +15657,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Bevel width:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -15805,7 +15821,10 @@ name|tooltips
 argument_list|,
 name|scale
 argument_list|,
-name|BLEND_LINES_TEXT
+name|_
+argument_list|(
+literal|"Degree of slope of each piece's edge"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -15925,7 +15944,10 @@ name|tooltips
 argument_list|,
 name|entry
 argument_list|,
-name|BLEND_LINES_TEXT
+name|_
+argument_list|(
+literal|"Degree of slope of each piece's edge"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -15935,7 +15957,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Highlight:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -16096,7 +16121,10 @@ name|tooltips
 argument_list|,
 name|scale
 argument_list|,
-name|BLEND_AMOUNT_TEXT
+name|_
+argument_list|(
+literal|"The amount of highlighting on the edges of each piece"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -16216,7 +16244,10 @@ name|tooltips
 argument_list|,
 name|entry
 argument_list|,
-name|BLEND_AMOUNT_TEXT
+name|_
+argument_list|(
+literal|"The amount of highlighting on the edges of each piece"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -16266,7 +16297,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Jigsaw Style"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -16342,7 +16376,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Square"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|list
@@ -16432,7 +16469,10 @@ name|tooltips
 argument_list|,
 name|rbutton
 argument_list|,
-name|SQUARE_TEXT
+name|_
+argument_list|(
+literal|"Each piece has straight sides"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -16443,7 +16483,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|list
 argument_list|,
+name|_
+argument_list|(
 literal|"Curved"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|list
@@ -16533,7 +16576,10 @@ name|tooltips
 argument_list|,
 name|rbutton
 argument_list|,
-name|CURVE_TEXT
+name|_
+argument_list|(
+literal|"Each piece has curved sides"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -16589,7 +16635,10 @@ name|cbutton
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Disable Tooltips"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -16666,7 +16715,10 @@ name|tooltips
 argument_list|,
 name|cbutton
 argument_list|,
-name|DISABLE_TEXT
+name|_
+argument_list|(
+literal|"Toggle Tooltips on/off"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc23a870108
+DECL|struct|__anon2bb9653f0108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc23a870208
+DECL|struct|__anon2bb9653f0208
 block|{
 DECL|member|run
 name|gint
@@ -3122,10 +3122,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"GIF: can't open %s\n"
-argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -5868,10 +5865,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"GIF: colorstobpp - Eep! too many colours: %d\n"
-argument_list|)
 argument_list|,
 name|colors
 argument_list|)
@@ -5908,10 +5902,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"GIF: bpptocolors - Eep! bpp==%d !\n"
-argument_list|)
 argument_list|,
 name|bpp
 argument_list|)

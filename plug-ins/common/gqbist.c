@@ -3845,10 +3845,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"G-Qbist 1.10"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
