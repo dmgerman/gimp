@@ -78,6 +78,17 @@ value|(((t) == GIMP_RGB_IMAGE ||         \                                      
 end_define
 
 begin_define
+DECL|macro|GIMP_IMAGE_TYPE_WITHOUT_ALPHA (t)
+define|#
+directive|define
+name|GIMP_IMAGE_TYPE_WITHOUT_ALPHA
+parameter_list|(
+name|t
+parameter_list|)
+value|(((t) == GIMP_RGB_IMAGE ||         \                                             (t) == GIMP_RGBA_IMAGE) ?        \                                            GIMP_RGB_IMAGE :                  \                                            ((t) == GIMP_GRAY_IMAGE ||        \                                             (t) == GIMP_GRAYA_IMAGE) ?       \                                            GIMP_GRAY_IMAGE :                 \                                            ((t) == GIMP_INDEXED_IMAGE ||     \                                             (t) == GIMP_INDEXEDA_IMAGE) ?    \                                            GIMP_INDEXED_IMAGE : -1)
+end_define
+
+begin_define
 DECL|macro|GIMP_IMAGE_TYPE_BYTES (t)
 define|#
 directive|define
