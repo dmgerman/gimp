@@ -418,13 +418,14 @@ operator|=
 name|gtk_handle_box_new
 argument_list|()
 expr_stmt|;
-name|toolbar
-operator|=
-name|gtk_toolbar_new
+name|gtk_toolbar_set_orientation
 argument_list|(
-name|GTK_ORIENTATION_VERTICAL
+name|GTK_TOOLBAR
+argument_list|(
+name|toolbar
+argument_list|)
 argument_list|,
-name|GTK_TOOLBAR_ICONS
+name|GTK_ORIENTATION_VERTICAL
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -437,16 +438,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_toolbar_set_space_size
-argument_list|(
-name|GTK_TOOLBAR
-argument_list|(
-name|toolbar
-argument_list|)
-argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
+comment|/* FIXME: replacement    gtk_toolbar_set_space_size(GTK_TOOLBAR(toolbar), 5); */
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER

@@ -121,6 +121,23 @@ directive|include
 file|<plug-ins/dbbrowser/dbbrowser_utils.h>
 end_include
 
+begin_comment
+comment|/* FIXME: To get the 'broken' GtkText */
+end_comment
+
+begin_define
+DECL|macro|GTK_ENABLE_BROKEN
+define|#
+directive|define
+name|GTK_ENABLE_BROKEN
+end_define
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtktext.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -179,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a23f3580108
+DECL|struct|__anon293e84940108
 block|{
 DECL|member|console
 name|GtkWidget

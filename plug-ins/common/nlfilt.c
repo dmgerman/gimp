@@ -154,7 +154,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b31236a0103
+DECL|enum|__anon2b178e0a0103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -2791,12 +2791,6 @@ name|color_cube
 index|[
 literal|3
 index|]
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gtk_preview_get_visual
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_default_colormap

@@ -50,6 +50,23 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
+comment|/* FIXME: remove usage of the 'broken' GtkText */
+end_comment
+
+begin_define
+DECL|macro|GTK_ENABLE_BROKEN
+define|#
+directive|define
+name|GTK_ENABLE_BROKEN
+end_define
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtktext.h>
+end_include
+
+begin_comment
 comment|/* configuration */
 end_comment
 
@@ -84,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b23ab0108
+DECL|struct|__anon274dc7d90108
 block|{
 DECL|member|label
 name|gchar
@@ -105,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b23ab0208
+DECL|struct|__anon274dc7d90208
 block|{
 DECL|member|dlg
 name|GtkWidget

@@ -45,6 +45,23 @@ directive|include
 file|"imap_table.h"
 end_include
 
+begin_comment
+comment|/* FIXME: remove usage of the 'broken' GtkText */
+end_comment
+
+begin_define
+DECL|macro|GTK_ENABLE_BROKEN
+define|#
+directive|define
+name|GTK_ENABLE_BROKEN
+end_define
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtktext.h>
+end_include
+
 begin_decl_stmt
 DECL|variable|_map_format
 specifier|static

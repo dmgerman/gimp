@@ -132,6 +132,23 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_comment
+comment|/* FIXME: remove usage of the 'broken' GtkText */
+end_comment
+
+begin_define
+DECL|macro|GTK_ENABLE_BROKEN
+define|#
+directive|define
+name|GTK_ENABLE_BROKEN
+end_define
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtktext.h>
+end_include
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -310,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b8a450108
+DECL|struct|__anon2758324e0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -357,7 +374,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b8a450208
+DECL|struct|__anon2758324e0208
 block|{
 DECL|member|run
 name|gint
@@ -372,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b8a450308
+DECL|struct|__anon2758324e0308
 block|{
 DECL|member|cinfo
 name|struct

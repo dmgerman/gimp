@@ -2363,12 +2363,6 @@ name|gimp_gtkrc
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gdk_rgb_get_visual
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_default_colormap
 argument_list|(
 name|gdk_rgb_get_cmap

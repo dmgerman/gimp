@@ -94,6 +94,23 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_comment
+comment|/* FIXME: To get the 'broken' GtkText */
+end_comment
+
+begin_define
+DECL|macro|GTK_ENABLE_BROKEN
+define|#
+directive|define
+name|GTK_ENABLE_BROKEN
+end_define
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtktext.h>
+end_include
+
 begin_include
 include|#
 directive|include
@@ -295,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdff8900108
+DECL|struct|__anon2bd049990108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdff8900208
+DECL|struct|__anon2bd049990208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +382,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdff8900308
+DECL|struct|__anon2bd049990308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +403,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdff8900408
+DECL|struct|__anon2bd049990408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +431,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdff8900508
+DECL|struct|__anon2bd049990508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +451,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2bdff890060a
+DECL|union|__anon2bd04999060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -504,7 +521,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdff8900708
+DECL|struct|__anon2bd049990708
 block|{
 DECL|member|script_name
 name|gchar
@@ -590,7 +607,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdff8900808
+DECL|struct|__anon2bd049990808
 block|{
 DECL|member|args_widgets
 name|GtkWidget

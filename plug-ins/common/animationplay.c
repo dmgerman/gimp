@@ -63,7 +63,7 @@ end_if
 begin_include
 include|#
 directive|include
-file|<gdk/gdkx.h>
+file|<gdk/x11/gdkx.h>
 end_include
 
 begin_elif
@@ -78,7 +78,7 @@ end_elif
 begin_include
 include|#
 directive|include
-file|<gdk/gdkwin32.h>
+file|<gdk/win32/gdkwin32.h>
 end_include
 
 begin_elif
@@ -108,7 +108,7 @@ end_elif
 begin_include
 include|#
 directive|include
-file|<gdk/gdkfb.h>
+file|<gdk/linux-fb/gdkfb.h>
 end_include
 
 begin_endif
@@ -176,7 +176,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d709bc0103
+DECL|enum|__anon289cd4520103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED

@@ -108,6 +108,23 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
+comment|/* FIXME: remove usage of the 'broken' GtkText */
+end_comment
+
+begin_define
+DECL|macro|GTK_ENABLE_BROKEN
+define|#
+directive|define
+name|GTK_ENABLE_BROKEN
+end_define
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtktext.h>
+end_include
+
+begin_comment
 comment|/* uncomment the line below for a little debugging info */
 end_comment
 
@@ -133,7 +150,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afc0e400103
+DECL|enum|__anon2bcd9f250103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -150,7 +167,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc0e400208
+DECL|struct|__anon2bcd9f250208
 block|{
 DECL|member|interlace
 name|gint
@@ -181,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc0e400308
+DECL|struct|__anon2bcd9f250308
 block|{
 DECL|member|run
 name|gint
