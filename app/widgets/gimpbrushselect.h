@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpdataselect.h"
+file|"gimppdbdialog.h"
 end_include
 
 begin_macro
@@ -104,7 +104,7 @@ struct|struct
 name|_GimpBrushSelect
 block|{
 DECL|member|parent_instance
-name|GimpDataSelect
+name|GimpPdbDialog
 name|parent_instance
 decl_stmt|;
 DECL|member|initial_opacity
@@ -139,7 +139,7 @@ struct|struct
 name|_GimpBrushSelectClass
 block|{
 DECL|member|parent_class
-name|GimpDataSelectClass
+name|GimpPdbDialogClass
 name|parent_class
 decl_stmt|;
 block|}

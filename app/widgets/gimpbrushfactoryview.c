@@ -527,7 +527,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_brush_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gboolean change_brush_spacing,gint view_size,gint view_border_width,GimpMenuFactory * menu_factory)
+DECL|function|gimp_brush_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gboolean change_brush_spacing,gint view_size,gint view_border_width,GimpMenuFactory * menu_factory)
 name|gimp_brush_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -536,9 +536,6 @@ parameter_list|,
 name|GimpDataFactory
 modifier|*
 name|factory
-parameter_list|,
-name|GimpDataEditFunc
-name|edit_func
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -630,8 +627,6 @@ argument_list|,
 name|view_type
 argument_list|,
 name|factory
-argument_list|,
-name|edit_func
 argument_list|,
 name|context
 argument_list|,

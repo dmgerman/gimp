@@ -142,9 +142,6 @@ name|GimpDataFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GimpDataEditFunc
-name|edit_func
-parameter_list|,
 name|GimpContext
 modifier|*
 name|context

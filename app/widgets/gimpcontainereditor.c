@@ -901,7 +901,14 @@ argument_list|)
 operator|->
 name|ui_manager
 argument_list|,
+name|GIMP_EDITOR
+argument_list|(
 name|editor
+operator|->
+name|view
+argument_list|)
+operator|->
+name|popup_data
 argument_list|)
 expr_stmt|;
 return|return

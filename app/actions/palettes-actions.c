@@ -109,31 +109,6 @@ name|GIMP_HELP_PALETTE_DIALOG
 block|}
 block|,
 block|{
-literal|"palettes-edit"
-block|,
-name|GIMP_STOCK_EDIT
-block|,
-name|N_
-argument_list|(
-literal|"_Edit Palette..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Edit palette"
-argument_list|)
-block|,
-name|G_CALLBACK
-argument_list|(
-name|data_edit_data_cmd_callback
-argument_list|)
-block|,
-name|GIMP_HELP_PALETTE_EDIT
-block|}
-block|,
-block|{
 literal|"palettes-new"
 block|,
 name|GTK_STOCK_NEW
@@ -286,6 +261,39 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|palettes_edit_actions
+specifier|static
+name|GimpStringActionEntry
+name|palettes_edit_actions
+index|[]
+init|=
+block|{
+block|{
+literal|"palettes-edit"
+block|,
+name|GIMP_STOCK_EDIT
+block|,
+name|N_
+argument_list|(
+literal|"_Edit Palette..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Edit palette"
+argument_list|)
+block|,
+literal|"gimp-palette-editor"
+block|,
+name|GIMP_HELP_PALETTE_EDIT
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|void
 DECL|function|palettes_actions_setup (GimpActionGroup * group)
@@ -305,6 +313,23 @@ argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
 name|palettes_actions
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_action_group_add_string_actions
+argument_list|(
+name|group
+argument_list|,
+name|palettes_edit_actions
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|palettes_edit_actions
+argument_list|)
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|data_edit_data_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;

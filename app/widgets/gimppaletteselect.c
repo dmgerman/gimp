@@ -145,7 +145,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpDataSelectClass
+name|GimpPdbDialogClass
 modifier|*
 name|parent_class
 init|=
@@ -223,7 +223,7 @@ name|dialog_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_DATA_SELECT
+name|GIMP_TYPE_PDB_DIALOG
 argument_list|,
 literal|"GimpPaletteSelect"
 argument_list|,
@@ -368,13 +368,6 @@ operator|->
 name|gimp
 operator|->
 name|palette_factory
-argument_list|,
-name|GIMP_DATA_SELECT
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|edit_func
 argument_list|,
 name|dialog
 operator|->

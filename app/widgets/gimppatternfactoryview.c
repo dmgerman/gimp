@@ -145,7 +145,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_pattern_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory)
+DECL|function|gimp_pattern_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory)
 name|gimp_pattern_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -154,9 +154,6 @@ parameter_list|,
 name|GimpDataFactory
 modifier|*
 name|factory
-parameter_list|,
-name|GimpDataEditFunc
-name|edit_func
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -236,8 +233,6 @@ name|view_type
 argument_list|,
 name|factory
 argument_list|,
-name|edit_func
-argument_list|,
 name|context
 argument_list|,
 name|preview_size
@@ -263,6 +258,16 @@ return|return
 name|NULL
 return|;
 block|}
+name|gtk_widget_hide
+argument_list|(
+name|GIMP_DATA_FACTORY_VIEW
+argument_list|(
+name|factory_view
+argument_list|)
+operator|->
+name|edit_button
+argument_list|)
+expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
 name|GIMP_DATA_FACTORY_VIEW

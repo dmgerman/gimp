@@ -366,7 +366,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
+DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
 name|gimp_data_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -375,9 +375,6 @@ parameter_list|,
 name|GimpDataFactory
 modifier|*
 name|factory
-parameter_list|,
-name|GimpDataEditFunc
-name|edit_func
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -433,8 +430,6 @@ name|view_type
 argument_list|,
 name|factory
 argument_list|,
-name|edit_func
-argument_list|,
 name|context
 argument_list|,
 name|preview_size
@@ -471,7 +466,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
+DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier,const gchar * action_group)
 name|gimp_data_factory_view_construct
 parameter_list|(
 name|GimpDataFactoryView
@@ -484,9 +479,6 @@ parameter_list|,
 name|GimpDataFactory
 modifier|*
 name|factory
-parameter_list|,
-name|GimpDataEditFunc
-name|edit_func
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -577,12 +569,6 @@ operator|->
 name|factory
 operator|=
 name|factory
-expr_stmt|;
-name|factory_view
-operator|->
-name|data_edit_func
-operator|=
-name|edit_func
 expr_stmt|;
 if|if
 condition|(
@@ -699,11 +685,6 @@ name|factory_view
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|edit_func
-condition|)
-block|{
 name|str
 operator|=
 name|g_strdup_printf
@@ -738,7 +719,6 @@ argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|factory_view
@@ -885,12 +865,6 @@ argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|factory_view
-operator|->
-name|edit_button
-condition|)
 name|gimp_container_view_enable_dnd
 argument_list|(
 name|editor

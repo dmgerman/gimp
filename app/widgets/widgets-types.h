@@ -665,15 +665,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDataSelect
-typedef|typedef
-name|struct
-name|_GimpDataSelect
-name|GimpDataSelect
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpBrushSelect
 typedef|typedef
 name|struct
@@ -1159,26 +1150,6 @@ end_typedef
 begin_comment
 comment|/*  function types  */
 end_comment
-
-begin_typedef
-DECL|typedef|GimpDataEditFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpDataEditFunc
-function_decl|)
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_typedef
 
 begin_typedef
 DECL|typedef|GimpActionGroupSetupFunc

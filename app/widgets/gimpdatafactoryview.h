@@ -108,10 +108,6 @@ name|GimpDataFactory
 modifier|*
 name|factory
 decl_stmt|;
-DECL|member|data_edit_func
-name|GimpDataEditFunc
-name|data_edit_func
-decl_stmt|;
 DECL|member|edit_button
 name|GtkWidget
 modifier|*
@@ -176,9 +172,6 @@ name|GimpDataFactory
 modifier|*
 name|factory
 parameter_list|,
-name|GimpDataEditFunc
-name|edit_func
-parameter_list|,
 name|GimpContext
 modifier|*
 name|context
@@ -229,9 +222,6 @@ parameter_list|,
 name|GimpDataFactory
 modifier|*
 name|factory
-parameter_list|,
-name|GimpDataEditFunc
-name|edit_func
 parameter_list|,
 name|GimpContext
 modifier|*
