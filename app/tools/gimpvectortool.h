@@ -29,25 +29,25 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2926f9cf0103
+DECL|enum|__anon2b4c264f0103
 block|{
-DECL|enumerator|VCREATING
-name|VCREATING
+DECL|enumerator|VECTORS_CREATING
+name|VECTORS_CREATING
 block|,
-DECL|enumerator|VADDING
-name|VADDING
+DECL|enumerator|VECTORS_ADDING
+name|VECTORS_ADDING
 block|,
-DECL|enumerator|VMOVING
-name|VMOVING
+DECL|enumerator|VECTORS_MOVING
+name|VECTORS_MOVING
 block|,
-DECL|enumerator|VMOVING_ALL
-name|VMOVING_ALL
+DECL|enumerator|VECTORS_MOVING_ALL
+name|VECTORS_MOVING_ALL
 block|,
-DECL|enumerator|VGUIDING
-name|VGUIDING
+DECL|enumerator|VECTORS_GUIDING
+name|VECTORS_GUIDING
 block|,
-DECL|enumerator|VFINISHED
-name|VFINISHED
+DECL|enumerator|VECTORS_FINISHED
+name|VECTORS_FINISHED
 DECL|typedef|VectorFunction
 block|}
 name|VectorFunction
@@ -148,71 +148,41 @@ DECL|member|function
 name|VectorFunction
 name|function
 decl_stmt|;
-comment|/*  function we're performing  */
+comment|/*  function we're performing     */
 DECL|member|last_x
 name|gint
 name|last_x
 decl_stmt|;
-comment|/*  last x coordinate          */
+comment|/*  last x coordinate             */
 DECL|member|last_y
 name|gint
 name|last_y
 decl_stmt|;
-comment|/*  last y coordinate          */
-DECL|member|point
-name|gint
-name|point
-decl_stmt|;
-comment|/*  what are we manipulating?  */
-DECL|member|num_points
-name|gint
-name|num_points
-decl_stmt|;
-comment|/*  how many points?           */
-DECL|member|x
-name|gint
-name|x
-index|[
-literal|3
-index|]
-decl_stmt|;
-comment|/*  three x coordinates        */
-DECL|member|y
-name|gint
-name|y
-index|[
-literal|3
-index|]
-decl_stmt|;
-comment|/*  three y coordinates        */
-DECL|member|angle1
-name|gdouble
-name|angle1
-decl_stmt|;
-comment|/*  first angle                */
-DECL|member|angle2
-name|gdouble
-name|angle2
-decl_stmt|;
-comment|/*  second angle               */
+comment|/*  last y coordinate             */
 DECL|member|cur_anchor
 name|GimpAnchor
 modifier|*
 name|cur_anchor
 decl_stmt|;
-comment|/*  The current Anchor         */
+comment|/*  The current Anchor            */
 DECL|member|cur_stroke
 name|GimpStroke
 modifier|*
 name|cur_stroke
 decl_stmt|;
-comment|/*  The current Stroke         */
+comment|/*  The current Stroke            */
 DECL|member|vectors
 name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-comment|/*  The current Vector data    */
+comment|/*  The current Vector data       */
+DECL|member|active_anchors
+name|GList
+modifier|*
+name|active_anchors
+decl_stmt|;
+comment|/*  The currently active anchors  */
 block|}
 struct|;
 end_struct
@@ -253,6 +223,21 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_vectors_tool_set_vectors
+parameter_list|(
+name|GimpVectorTool
+modifier|*
+name|vector_tool
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

@@ -1246,8 +1246,9 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_stroke_interpolate (const GimpStroke * stroke,const gdouble precision,const gint max_points,GimpCoords * ret_coords)
+name|GimpCoords
+modifier|*
+DECL|function|gimp_stroke_interpolate (const GimpStroke * stroke,const gdouble precision,gint * ret_numcoords,gboolean * ret_closed)
 name|gimp_stroke_interpolate
 parameter_list|(
 specifier|const
@@ -1259,13 +1260,13 @@ specifier|const
 name|gdouble
 name|precision
 parameter_list|,
-specifier|const
 name|gint
-name|max_points
-parameter_list|,
-name|GimpCoords
 modifier|*
-name|ret_coords
+name|ret_numcoords
+parameter_list|,
+name|gboolean
+modifier|*
+name|ret_closed
 parameter_list|)
 block|{
 name|GimpStrokeClass
@@ -1304,9 +1305,9 @@ name|stroke
 argument_list|,
 name|precision
 argument_list|,
-name|max_points
+name|ret_numcoords
 argument_list|,
-name|ret_coords
+name|ret_closed
 argument_list|)
 return|;
 else|else

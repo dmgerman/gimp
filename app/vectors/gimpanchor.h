@@ -29,10 +29,6 @@ DECL|member|type
 name|gint
 name|type
 decl_stmt|;
-DECL|member|active
-name|gboolean
-name|active
-decl_stmt|;
 block|}
 struct|;
 end_struct
