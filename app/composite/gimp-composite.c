@@ -570,7 +570,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon2b2cd8460108
+DECL|struct|__anon2bf137ac0108
 struct|struct
 block|{
 DECL|member|announce_function
@@ -613,7 +613,7 @@ empty_stmt|;
 end_empty_stmt
 
 begin_function
-name|GimpCompositeFunction
+name|void
 DECL|function|gimp_composite_dispatch (GimpCompositeContext * ctx)
 name|gimp_composite_dispatch
 parameter_list|(
@@ -666,7 +666,6 @@ name|ctx
 argument_list|)
 expr_stmt|;
 else|else
-block|{
 name|printf
 argument_list|(
 literal|"unsupported composite operation %d %d %d (see gimp-composite.h)\n"
@@ -684,7 +683,6 @@ operator|->
 name|pixelformat_B
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
