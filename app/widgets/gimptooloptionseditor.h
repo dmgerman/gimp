@@ -123,6 +123,11 @@ name|GtkWidget
 modifier|*
 name|restore_button
 decl_stmt|;
+DECL|member|delete_button
+name|GtkWidget
+modifier|*
+name|delete_button
+decl_stmt|;
 DECL|member|reset_button
 name|GtkWidget
 modifier|*

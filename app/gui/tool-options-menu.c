@@ -108,7 +108,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_TOOL_OPTIONS_SAVE
 block|,
 name|NULL
 block|}
@@ -276,6 +276,43 @@ end_decl_stmt
 
 begin_function
 name|void
+DECL|function|tool_options_menu_setup (GimpItemFactory * factory)
+name|tool_options_menu_setup
+parameter_list|(
+name|GimpItemFactory
+modifier|*
+name|factory
+parameter_list|)
+block|{
+name|gimp_item_factory_set_sensitive
+argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|factory
+argument_list|)
+argument_list|,
+literal|"/Restore Options from/(None)"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_item_factory_set_sensitive
+argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|factory
+argument_list|)
+argument_list|,
+literal|"/Delete Saved Options/(None)"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|tool_options_menu_update (GtkItemFactory * factory,gpointer data)
 name|tool_options_menu_update
 parameter_list|(
@@ -341,17 +378,6 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_item_factory_set_visible (factory, menu, (condition) != 0)
-DECL|macro|SET_SENSITIVE (menu,condition)
-define|#
-directive|define
-name|SET_SENSITIVE
-parameter_list|(
-name|menu
-parameter_list|,
-name|condition
-parameter_list|)
-define|\
-value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_VISIBLE
 argument_list|(
 literal|"/Save Options to"
@@ -386,20 +412,6 @@ argument_list|,
 name|tool_info
 operator|->
 name|options_presets
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Restore Options from/(None)"
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Delete Saved Options/(None)"
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -460,9 +472,10 @@ argument_list|)
 condition|)
 name|gtk_widget_destroy
 argument_list|(
+name|g_list_next
+argument_list|(
 name|list
-operator|->
-name|next
+argument_list|)
 operator|->
 name|data
 argument_list|)
@@ -490,9 +503,10 @@ argument_list|)
 condition|)
 name|gtk_widget_destroy
 argument_list|(
+name|g_list_next
+argument_list|(
 name|list
-operator|->
-name|next
+argument_list|)
 operator|->
 name|data
 argument_list|)
@@ -520,9 +534,10 @@ argument_list|)
 condition|)
 name|gtk_widget_destroy
 argument_list|(
+name|g_list_next
+argument_list|(
 name|list
-operator|->
-name|next
+argument_list|)
 operator|->
 name|data
 argument_list|)
@@ -623,7 +638,7 @@ name|entry
 operator|.
 name|help_id
 operator|=
-name|NULL
+name|GIMP_HELP_TOOL_OPTIONS_SAVE
 expr_stmt|;
 name|entry
 operator|.
@@ -725,6 +740,12 @@ name|extra_data
 operator|=
 name|GTK_STOCK_REVERT_TO_SAVED
 expr_stmt|;
+name|entry
+operator|.
+name|help_id
+operator|=
+name|GIMP_HELP_TOOL_OPTIONS_RESTORE
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -818,6 +839,12 @@ operator|.
 name|extra_data
 operator|=
 name|GTK_STOCK_DELETE
+expr_stmt|;
+name|entry
+operator|.
+name|help_id
+operator|=
+name|GIMP_HELP_TOOL_OPTIONS_DELETE
 expr_stmt|;
 for|for
 control|(
@@ -925,9 +952,6 @@ block|}
 undef|#
 directive|undef
 name|SET_VISIBLE
-undef|#
-directive|undef
-name|SET_SENSITIVE
 block|}
 end_function
 

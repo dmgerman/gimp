@@ -2257,6 +2257,14 @@ value|"gimp-tool-options-restore"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_OPTIONS_DELETE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_OPTIONS_DELETE
+value|"gimp-tool-options-delete"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_OPTIONS_RESET
 define|#
 directive|define

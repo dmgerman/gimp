@@ -33,6 +33,17 @@ end_decl_stmt
 
 begin_function_decl
 name|void
+name|tool_options_menu_setup
+parameter_list|(
+name|GimpItemFactory
+modifier|*
+name|factory
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|tool_options_menu_update
 parameter_list|(
 name|GtkItemFactory

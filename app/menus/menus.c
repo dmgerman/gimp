@@ -907,7 +907,7 @@ argument_list|)
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_DIALOG
 argument_list|,
-name|NULL
+name|tool_options_menu_setup
 argument_list|,
 name|tool_options_menu_update
 argument_list|,
