@@ -3987,6 +3987,16 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
+comment|/* Can't have ANY tool selected - maybe a plugin running */
+if|if
+condition|(
+name|active_tool
+operator|==
+name|NULL
+condition|)
+return|return
+name|TRUE
+return|;
 name|tc
 operator|=
 operator|(
@@ -4295,6 +4305,16 @@ decl_stmt|;
 name|double
 name|tmp
 decl_stmt|;
+comment|/* Can't have ANY tool selected - maybe a plugin running */
+if|if
+condition|(
+name|active_tool
+operator|==
+name|NULL
+condition|)
+return|return
+name|TRUE
+return|;
 name|pc
 operator|=
 operator|(
