@@ -6242,23 +6242,6 @@ name|prefs_check_button_add
 argument_list|(
 name|object
 argument_list|,
-literal|"global-palette"
-argument_list|,
-name|_
-argument_list|(
-literal|"Pa_lette"
-argument_list|)
-argument_list|,
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|prefs_check_button_add
-argument_list|(
-name|object
-argument_list|,
 literal|"global-gradient"
 argument_list|,
 name|_
@@ -6272,23 +6255,13 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|prefs_check_button_add
-argument_list|(
-name|object
-argument_list|,
-literal|"global-font"
-argument_list|,
-name|_
-argument_list|(
-literal|"_Font"
-argument_list|)
-argument_list|,
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/* Disabled, because they are not yet useful */
+if|#
+directive|if
+literal|0
+block|prefs_check_button_add (object, "global-palette",                           _("Pa_lette"),                           GTK_BOX (vbox2));   prefs_check_button_add (object, "global-font",                           _("_Font"),                           GTK_BOX (vbox2));
+endif|#
+directive|endif
 comment|/*******************************/
 comment|/*  Interface / Input Devices  */
 comment|/*******************************/
@@ -6957,7 +6930,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c0a593b0108
+DECL|struct|__anon2c92f7830108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9398,7 +9371,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c0a593b0208
+DECL|struct|__anon2c92f7830208
 block|{
 DECL|member|label
 specifier|const
@@ -9557,7 +9530,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c0a593b0308
+DECL|struct|__anon2c92f7830308
 block|{
 DECL|member|tree_label
 specifier|const
