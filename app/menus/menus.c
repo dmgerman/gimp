@@ -213,6 +213,8 @@ literal|"<Image>"
 argument_list|,
 literal|"file"
 argument_list|,
+literal|"context"
+argument_list|,
 literal|"debug"
 argument_list|,
 literal|"help"
@@ -277,6 +279,8 @@ argument_list|,
 literal|"<Dock>"
 argument_list|,
 literal|"file"
+argument_list|,
+literal|"context"
 argument_list|,
 literal|"edit"
 argument_list|,

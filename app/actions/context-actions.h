@@ -6,56 +6,34 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TOOLS_COMMANDS_H__
+name|__CONTEXT_ACTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TOOLS_COMMANDS_H__
+DECL|macro|__CONTEXT_ACTIONS_H__
 define|#
 directive|define
-name|__TOOLS_COMMANDS_H__
+name|__CONTEXT_ACTIONS_H__
 end_define
 
 begin_function_decl
 name|void
-name|tools_select_cmd_callback
+name|context_actions_setup
 parameter_list|(
-name|GtkAction
+name|GimpActionGroup
 modifier|*
-name|action
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|value
-parameter_list|,
-name|gpointer
-name|data
+name|group
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|tools_toggle_visibility_cmd_callback
+name|context_actions_update
 parameter_list|(
-name|GtkAction
+name|GimpActionGroup
 modifier|*
-name|action
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_reset_cmd_callback
-parameter_list|(
-name|GtkAction
-modifier|*
-name|action
+name|group
 parameter_list|,
 name|gpointer
 name|data
@@ -69,7 +47,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __TOOLS_COMMANDS_H__ */
+comment|/* __CONTEXT_ACTIONS_H__ */
 end_comment
 
 end_unit

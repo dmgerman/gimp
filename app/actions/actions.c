@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"debug-actions.h"
 end_include
 
@@ -353,6 +359,14 @@ block|,
 name|colormap_editor_actions_setup
 block|,
 name|colormap_editor_actions_update
+block|}
+block|,
+block|{
+literal|"context"
+block|,
+name|context_actions_setup
+block|,
+name|context_actions_update
 block|}
 block|,
 block|{
