@@ -122,15 +122,60 @@ DECL|variable|using565
 specifier|static
 name|gboolean
 name|using565
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+specifier|static
+name|gint32
+name|ReadImage
+parameter_list|(
+name|FILE
+modifier|*
+name|fd
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|,
+name|guchar
+name|cmap
+index|[
+literal|256
+index|]
+index|[
+literal|3
+index|]
+parameter_list|,
+name|gint
+name|ncols
+parameter_list|,
+name|gint
+name|bpp
+parameter_list|,
+name|gint
+name|compression
+parameter_list|,
+name|gint
+name|rowbytes
+parameter_list|,
+name|gboolean
+name|grey
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function
 specifier|static
 name|gint32
-DECL|function|ToL (guchar * puffer)
+DECL|function|ToL (const guchar * puffer)
 name|ToL
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|puffer
@@ -171,9 +216,10 @@ end_function
 begin_function
 specifier|static
 name|gint16
-DECL|function|ToS (guchar * puffer)
+DECL|function|ToS (const guchar * puffer)
 name|ToS
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|puffer
@@ -200,7 +246,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|ReadColorMap (FILE * fd,guchar buffer[256][3],gint number,gint size,gint * grey)
+DECL|function|ReadColorMap (FILE * fd,guchar buffer[256][3],gint number,gint size,gboolean * grey)
 name|ReadColorMap
 parameter_list|(
 name|FILE
@@ -222,7 +268,7 @@ parameter_list|,
 name|gint
 name|size
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
 name|grey
 parameter_list|)
@@ -396,7 +442,8 @@ decl_stmt|,
 name|rowbytes
 decl_stmt|,
 name|Maps
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|Grey
 decl_stmt|;
 name|guchar
@@ -1445,7 +1492,8 @@ directive|ifdef
 name|DEBUG
 name|printf
 argument_list|(
-literal|"\nSize: %u, Colors: %u, Bits: %u, Width: %u, Height: %u, Comp: %u, Zeile: %u\n"
+literal|"\nSize: %u, Colors: %u, Bits: %u, Width: %u, Height: %u, "
+literal|"Comp: %u, Zeile: %u\n"
 argument_list|,
 name|Bitmap_File_Head
 operator|.
@@ -1597,9 +1645,11 @@ expr_stmt|;
 block|}
 name|using565
 operator|=
+operator|(
 name|green
 operator|==
 literal|6
+operator|)
 expr_stmt|;
 block|}
 else|else
@@ -1738,8 +1788,9 @@ block|}
 end_function
 
 begin_function
-name|Image
-DECL|function|ReadImage (FILE * fd,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gint grey)
+specifier|static
+name|gint32
+DECL|function|ReadImage (FILE * fd,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean grey)
 name|ReadImage
 parameter_list|(
 name|FILE
@@ -1773,14 +1824,14 @@ parameter_list|,
 name|gint
 name|rowbytes
 parameter_list|,
-name|gint
+name|gboolean
 name|grey
 parameter_list|)
 block|{
 name|guchar
 name|v
 decl_stmt|,
-name|wieviel
+name|n
 decl_stmt|;
 name|GimpPixelRgn
 name|pixel_rgn
@@ -1789,12 +1840,13 @@ name|gint
 name|xpos
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|ypos
 init|=
 literal|0
 decl_stmt|;
-name|Image
+name|gint32
 name|image
 decl_stmt|;
 name|gint32
@@ -1823,7 +1875,7 @@ decl_stmt|;
 name|gushort
 name|rgb
 decl_stmt|;
-name|long
+name|glong
 name|rowstride
 decl_stmt|,
 name|channels
@@ -1836,8 +1888,6 @@ decl_stmt|,
 name|cur_progress
 decl_stmt|,
 name|max_progress
-decl_stmt|,
-name|unused
 decl_stmt|;
 comment|/* Make a new image in the gimp */
 if|if
@@ -2616,8 +2666,6 @@ operator|==
 name|width
 condition|)
 block|{
-name|unused
-operator|=
 name|ReadOK
 argument_list|(
 name|fd
@@ -2696,8 +2744,6 @@ operator|<=
 name|width
 condition|)
 block|{
-name|unused
-operator|=
 name|ReadOK
 argument_list|(
 name|fd
@@ -2919,7 +2965,7 @@ operator|)
 condition|)
 comment|/* uncompressed record */
 block|{
-name|wieviel
+name|n
 operator|=
 name|buffer
 index|[
@@ -2934,7 +2980,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|wieviel
+name|n
 condition|;
 name|j
 operator|+=
@@ -2945,8 +2991,6 @@ name|bpp
 operator|)
 control|)
 block|{
-name|unused
-operator|=
 name|ReadOK
 argument_list|(
 name|fd
@@ -3062,7 +3106,7 @@ block|}
 if|if
 condition|(
 operator|(
-name|wieviel
+name|n
 operator|%
 literal|2
 operator|)
@@ -3073,13 +3117,13 @@ operator|==
 literal|4
 operator|)
 condition|)
-name|wieviel
+name|n
 operator|++
 expr_stmt|;
 if|if
 condition|(
 operator|(
-name|wieviel
+name|n
 operator|/
 operator|(
 literal|8
@@ -3090,8 +3134,6 @@ operator|)
 operator|%
 literal|2
 condition|)
-name|unused
-operator|=
 name|ReadOK
 argument_list|(
 name|fd
@@ -3224,8 +3266,6 @@ operator|)
 condition|)
 comment|/* Deltarecord */
 block|{
-name|unused
-operator|=
 name|ReadOK
 argument_list|(
 name|fd
@@ -3262,8 +3302,10 @@ block|}
 block|}
 break|break;
 default|default:
-comment|/* This is very bad, we should not be here */
-empty_stmt|;
+name|g_assert_not_reached
+argument_list|()
+expr_stmt|;
+break|break;
 block|}
 name|fclose
 argument_list|(

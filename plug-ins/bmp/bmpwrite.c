@@ -140,7 +140,44 @@ end_decl_stmt
 
 begin_function_decl
 specifier|static
+name|void
+name|WriteImage
+parameter_list|(
+name|FILE
+modifier|*
+name|f
+parameter_list|,
+name|guchar
+modifier|*
+name|src
+parameter_list|,
 name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|,
+name|gint
+name|encoded
+parameter_list|,
+name|gint
+name|channels
+parameter_list|,
+name|gint
+name|bpp
+parameter_list|,
+name|gint
+name|spzeile
+parameter_list|,
+name|gint
+name|MapSize
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|void
@@ -1502,6 +1539,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|WriteImage (FILE * f,guchar * src,gint width,gint height,gint encoded,gint channels,gint bpp,gint spzeile,gint MapSize)
 name|WriteImage
@@ -2766,7 +2804,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_dialog (void)
 name|save_dialog
 parameter_list|(
