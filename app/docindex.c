@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ec8bb0108
+DECL|struct|__anon2c468c320108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ec8bb0208
+DECL|struct|__anon2c468c320208
 block|{
 DECL|member|boole
 name|gboolean
@@ -508,8 +508,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -528,8 +526,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -548,8 +544,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -567,8 +561,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -583,8 +575,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|}
 decl_stmt|;

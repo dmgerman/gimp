@@ -670,8 +670,6 @@ block|,
 literal|"paths/new_path.html"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -689,8 +687,6 @@ block|,
 literal|"paths/duplicate_path.html"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -708,8 +704,6 @@ block|,
 literal|"paths/path_to_selection.html"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -727,8 +721,6 @@ block|,
 literal|"filters/sel2path.html"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -746,8 +738,6 @@ block|,
 literal|"paths/stroke_path.html"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -765,8 +755,6 @@ block|,
 literal|"paths/delete_path.html"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -781,8 +769,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|}
 decl_stmt|;
@@ -811,8 +797,6 @@ block|,
 literal|"#new_point_button"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -830,8 +814,6 @@ block|,
 literal|"#add_point_button"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -849,8 +831,6 @@ block|,
 literal|"#delete_point_button"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -868,8 +848,6 @@ block|,
 literal|"#edit_point_button"
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|,
 block|{
@@ -884,8 +862,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-literal|0
 block|}
 block|}
 decl_stmt|;
