@@ -865,6 +865,24 @@ name|drawable
 operator|->
 name|bpp
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+operator|(
+operator|(
+name|x2
+operator|-
+name|x1
+operator|)
+operator|/
+name|gimp_tile_width
+argument_list|()
+operator|+
+literal|1
+operator|)
+argument_list|)
+expr_stmt|;
 comment|/*  allocate row buffer  */
 name|buffer
 operator|=
