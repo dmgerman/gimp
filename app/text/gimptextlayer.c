@@ -1617,6 +1617,9 @@ name|GIMP_GRAVITY_WEST
 case|:
 break|break;
 case|case
+name|GIMP_GRAVITY_NONE
+case|:
+case|case
 name|GIMP_GRAVITY_CENTER
 case|:
 case|case
@@ -1684,6 +1687,9 @@ case|case
 name|GIMP_GRAVITY_NORTH_EAST
 case|:
 break|break;
+case|case
+name|GIMP_GRAVITY_NONE
+case|:
 case|case
 name|GIMP_GRAVITY_CENTER
 case|:
