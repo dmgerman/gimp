@@ -561,12 +561,6 @@ name|GimpRGB
 name|padding_color
 decl_stmt|;
 comment|/* color of the empty around the image */
-DECL|member|padding_gc
-name|GdkGC
-modifier|*
-name|padding_gc
-decl_stmt|;
-comment|/* GC with padding_color as BG         */
 DECL|member|nav_ebox
 name|GtkWidget
 modifier|*
