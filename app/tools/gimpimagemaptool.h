@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimptool.h"
+file|"gimpcolortool.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpImageMapTool
 block|{
 DECL|member|parent_instance
-name|GimpTool
+name|GimpColorTool
 name|parent_instance
 decl_stmt|;
 DECL|member|drawable
@@ -150,7 +150,7 @@ struct|struct
 name|_GimpImageMapToolClass
 block|{
 DECL|member|parent_class
-name|GimpToolClass
+name|GimpColorToolClass
 name|parent_class
 decl_stmt|;
 comment|/* virtual functions */

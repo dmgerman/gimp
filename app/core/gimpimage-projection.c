@@ -806,7 +806,7 @@ index|[
 literal|3
 index|]
 operator|=
-literal|255
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|dest
 index|[

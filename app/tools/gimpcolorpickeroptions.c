@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2836980103
+DECL|enum|__anon2bf1c9870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -482,6 +482,42 @@ operator|=
 name|gimp_color_options_gui
 argument_list|(
 name|tool_options
+argument_list|)
+expr_stmt|;
+comment|/*  the sample merged toggle button  */
+name|button
+operator|=
+name|gimp_prop_check_button_new
+argument_list|(
+name|config
+argument_list|,
+literal|"sample-merged"
+argument_list|,
+name|_
+argument_list|(
+literal|"Sample Merged"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|button
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|button
 argument_list|)
 expr_stmt|;
 comment|/*  the update active color toggle button  */

@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4c21390103
+DECL|enum|__anon29b6613c0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -4142,7 +4142,7 @@ index|[
 literal|3
 index|]
 operator|=
-literal|255
+name|OPAQUE_OPACITY
 expr_stmt|;
 if|if
 condition|(
