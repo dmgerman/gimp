@@ -23,7 +23,7 @@ file|"tools.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon28d3a4fa0103
+DECL|enum|__anon295d049b0103
 typedef|typedef
 enum|enum
 block|{
@@ -75,8 +75,8 @@ init|=
 literal|1
 operator|<<
 literal|6
-block|, }
 DECL|typedef|DeviceValues
+block|}
 name|DeviceValues
 typedef|;
 end_typedef

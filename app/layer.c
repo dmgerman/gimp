@@ -120,7 +120,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c4cbac20103
+DECL|enum|__anon2a1945240103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -4808,11 +4808,11 @@ name|val
 operator|=
 operator|*
 operator|(
+operator|(
 name|unsigned
 name|char
 operator|*
 operator|)
-operator|(
 name|tile_data_pointer
 argument_list|(
 name|tile

@@ -68,10 +68,9 @@ DECL|member|data
 name|BlobSpan
 name|data
 index|[
-literal|0
+literal|1
 index|]
 decl_stmt|;
-comment|/* slightly in violation of ANSI-C? */
 block|}
 struct|;
 end_struct
@@ -148,8 +147,11 @@ end_function_decl
 begin_endif
 endif|#
 directive|endif
-endif|__BLOB_H__
 end_endif
+
+begin_comment
+comment|/* __BLOB_H__ */
+end_comment
 
 end_unit
 

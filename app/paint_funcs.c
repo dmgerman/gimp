@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d2c19b0103
+DECL|enum|__anon27da81180103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -18355,7 +18355,7 @@ expr_stmt|;
 name|out
 operator|=
 operator|(
-name|char
+name|guchar
 operator|*
 operator|)
 name|g_malloc
@@ -19537,6 +19537,7 @@ operator|==
 literal|0
 condition|)
 block|{
+name|unsigned
 name|char
 name|color
 index|[]
@@ -20073,12 +20074,14 @@ operator|*
 name|radius
 argument_list|)
 expr_stmt|;
-name|bzero
+name|memset
 argument_list|(
 name|transition
 index|[
 name|i
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|src
 operator|->

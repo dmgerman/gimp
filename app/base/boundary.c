@@ -640,6 +640,11 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
+operator|(
+name|unsigned
+name|char
+operator|*
+operator|)
 name|tile_data_pointer
 argument_list|(
 name|tile

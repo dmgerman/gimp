@@ -5632,7 +5632,7 @@ name|int
 name|preview_id
 parameter_list|)
 block|{
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 init|=
@@ -5704,7 +5704,7 @@ name|buffer
 operator|=
 name|g_new
 argument_list|(
-name|gchar
+name|guchar
 argument_list|,
 name|pattern
 operator|->

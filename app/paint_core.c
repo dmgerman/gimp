@@ -3889,6 +3889,11 @@ argument_list|)
 expr_stmt|;
 name|s
 operator|=
+operator|(
+name|unsigned
+name|char
+operator|*
+operator|)
 name|tile_data_pointer
 argument_list|(
 name|undo_tile

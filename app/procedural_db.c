@@ -5201,7 +5201,7 @@ name|id
 init|=
 name|g_new
 argument_list|(
-name|gint
+name|guint
 argument_list|,
 literal|1
 argument_list|)

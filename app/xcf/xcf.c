@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fddd0103
+DECL|enum|__anon273c66bb0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -275,7 +275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f6fddd0203
+DECL|enum|__anon273c66bb0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -5596,6 +5596,10 @@ control|)
 block|{
 name|data
 operator|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|tile_data_pointer
 argument_list|(
 name|tile
@@ -9604,6 +9608,10 @@ control|)
 block|{
 name|data
 operator|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|tile_data_pointer
 argument_list|(
 name|tile

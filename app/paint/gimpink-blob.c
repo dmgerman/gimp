@@ -82,7 +82,11 @@ argument_list|(
 name|BlobSpan
 argument_list|)
 operator|*
+operator|(
 name|height
+operator|-
+literal|1
+operator|)
 argument_list|)
 expr_stmt|;
 name|result
@@ -104,7 +108,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon2758a9150103
+DECL|enum|__anon275eea880103
 typedef|typedef
 enum|enum
 block|{
@@ -126,8 +130,8 @@ init|=
 literal|1
 operator|<<
 literal|1
-block|, }
 DECL|typedef|EdgeType
+block|}
 name|EdgeType
 typedef|;
 end_typedef
