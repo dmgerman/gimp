@@ -710,7 +710,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28fb58ad0108
+DECL|struct|__anon2c5ffd620108
 block|{
 DECL|member|Width
 name|unsigned
@@ -760,7 +760,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28fb58ad0208
+DECL|struct|__anon2c5ffd620208
 block|{
 DECL|member|transparent
 name|int
@@ -1024,7 +1024,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Could not open '%s' for reading: %s"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|,
@@ -1104,7 +1107,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Not a GIF file"
+name|_
+argument_list|(
+literal|"This is not a GIF file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1343,7 +1349,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Warning - non-square pixels"
+name|_
+argument_list|(
+literal|"Non-square pixels.  Image might look squashed."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1444,7 +1453,7 @@ block|{
 comment|/* Not a valid start character */
 name|g_printerr
 argument_list|(
-literal|"GIF: bogus character 0x%02x, ignoring\n"
+literal|"GIF: bogus character 0x%02x, ignoring.\n"
 argument_list|,
 operator|(
 name|int
@@ -3291,7 +3300,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Circular table entry BIG ERROR"
+literal|"Circular table entry.  Corrupt file."
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -3726,7 +3735,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Background (%dms)"
+literal|"Background (%d%s)"
 argument_list|)
 argument_list|,
 literal|10
@@ -3734,6 +3743,8 @@ operator|*
 name|Gif89
 operator|.
 name|delayTime
+argument_list|,
+literal|"ms"
 argument_list|)
 expr_stmt|;
 name|previous_disposal
@@ -3937,7 +3948,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Frame %d (%dms)"
+literal|"Frame %d (%d%s)"
 argument_list|)
 argument_list|,
 name|frame_number
@@ -3947,6 +3958,8 @@ operator|*
 name|Gif89
 operator|.
 name|delayTime
+argument_list|,
+literal|"ms"
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -4068,9 +4081,12 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"Hmm... Composite type %d.  Interesting.\n"
-literal|"Please forward this GIF to the "
-literal|"GIF plugin author!\n  (adam@foxbox.org)"
+name|_
+argument_list|(
+literal|"GIF: Undocumented GIF composite type %d is "
+literal|"not handled.  Animation might not play or "
+literal|"re-save perfectly."
+argument_list|)
 argument_list|,
 name|previous_disposal
 argument_list|)
@@ -4079,7 +4095,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"Something got corrupted."
+literal|"Disposal word got corrupted.  Bug."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4233,10 +4249,11 @@ operator|&&
 name|promote_to_rgb
 condition|)
 block|{
+comment|/* I don't see how one would easily construct a GIF in which  	 this could happen, but it's a mad mad world. */
 name|g_message
 argument_list|(
-literal|"Ouchie! Can't handle non-alpha RGB frames. "
-literal|"Please mail the plugin author.  (adam@gimp.org)"
+literal|"Ouch!  Can't handle non-alpha RGB frames.\n"
+literal|"Please file a bug report in GIMP's bugzilla."
 argument_list|)
 expr_stmt|;
 name|gimp_quit
