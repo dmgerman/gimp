@@ -533,13 +533,9 @@ return|;
 block|}
 name|filename
 operator|=
-name|g_filename_from_uri
+name|file_utils_filename_from_uri
 argument_list|(
 name|uri
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
