@@ -531,11 +531,6 @@ condition|(
 name|timeout_id
 condition|)
 block|{
-name|g_warning
-argument_list|(
-literal|"killing stray timer, please report to lewing@gimp.org"
-argument_list|)
-expr_stmt|;
 name|g_source_remove
 argument_list|(
 name|timeout_id
