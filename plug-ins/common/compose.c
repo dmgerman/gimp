@@ -493,7 +493,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30ffc40108
+DECL|struct|__anon28e895430108
 block|{
 DECL|member|compose_type
 name|gchar
@@ -868,7 +868,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30ffc40208
+DECL|struct|__anon28e895430208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -899,7 +899,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30ffc40308
+DECL|struct|__anon28e895430308
 block|{
 DECL|member|width
 DECL|member|height
@@ -1226,7 +1226,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Mode/Compose..."
+literal|"<Image>/Filters/Colors/Compose..."
 argument_list|)
 argument_list|,
 literal|"GRAY*"

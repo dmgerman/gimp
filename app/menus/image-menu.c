@@ -1879,11 +1879,6 @@ block|,
 name|NULL
 block|}
 block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/Image/Mode/---"
-argument_list|)
-block|,
 comment|/*<Image>/Image/Transform  */
 name|MENU_BRANCH
 argument_list|(

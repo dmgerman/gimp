@@ -232,7 +232,7 @@ literal|"27th March 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Colors/Filter Pack..."
+literal|"<Image>/Filters/Colors/Filter Pack..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
