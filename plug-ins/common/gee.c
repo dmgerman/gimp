@@ -271,16 +271,16 @@ comment|/* RGBX preview data      */
 end_comment
 
 begin_decl_stmt
-DECL|variable|environ
+DECL|variable|env
 specifier|static
 name|guchar
 modifier|*
-name|environ
+name|env
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|environ
+DECL|variable|env
 comment|/* src warping image data */
 end_comment
 
@@ -1698,7 +1698,7 @@ operator|(
 name|guint32
 operator|*
 operator|)
-name|environ
+name|env
 expr_stmt|;
 name|dest
 operator|=
@@ -2546,7 +2546,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|if (frame==0)     {       gint i, bytes;              bytes = IWIDTH*IHEIGHT*4;              for (i=0;i<bytes;i++) 	{ 	  disp[i] = 	    environ[i]; 	}     }
+block|if (frame==0)     {       gint i, bytes;              bytes = IWIDTH*IHEIGHT*4;              for (i=0;i<bytes;i++) 	{ 	  disp[i] = env[i]; 	}     }
 endif|#
 directive|endif
 name|iterate
@@ -2588,7 +2588,7 @@ operator|->
 name|id
 argument_list|)
 expr_stmt|;
-name|environ
+name|env
 operator|=
 name|g_malloc
 argument_list|(
@@ -2771,7 +2771,7 @@ operator|&
 name|pixel_rgn
 argument_list|,
 operator|&
-name|environ
+name|env
 index|[
 operator|(
 literal|256
@@ -2959,7 +2959,7 @@ argument_list|(
 operator|&
 name|pixel_rgn
 argument_list|,
-name|environ
+name|env
 argument_list|,
 name|drawable
 operator|->
@@ -3055,7 +3055,7 @@ name|i
 operator|--
 control|)
 block|{
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3075,7 +3075,7 @@ index|[
 literal|3
 operator|*
 operator|(
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3090,7 +3090,7 @@ operator|+
 literal|2
 index|]
 operator|*
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3111,7 +3111,7 @@ operator|(
 operator|(
 literal|255
 operator|-
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3142,7 +3142,7 @@ operator|)
 operator|/
 literal|255
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3162,7 +3162,7 @@ index|[
 literal|3
 operator|*
 operator|(
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3177,7 +3177,7 @@ operator|+
 literal|1
 index|]
 operator|*
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3198,7 +3198,7 @@ operator|(
 operator|(
 literal|255
 operator|-
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3229,7 +3229,7 @@ operator|)
 operator|/
 literal|255
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3249,7 +3249,7 @@ index|[
 literal|3
 operator|*
 operator|(
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3264,7 +3264,7 @@ operator|+
 literal|0
 index|]
 operator|*
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3285,7 +3285,7 @@ operator|(
 operator|(
 literal|255
 operator|-
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3336,7 +3336,7 @@ name|i
 operator|--
 control|)
 block|{
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3354,7 +3354,7 @@ index|[
 literal|3
 operator|*
 operator|(
-name|environ
+name|env
 index|[
 name|i
 operator|-
@@ -3365,7 +3365,7 @@ operator|+
 literal|2
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3383,7 +3383,7 @@ index|[
 literal|3
 operator|*
 operator|(
-name|environ
+name|env
 index|[
 name|i
 operator|-
@@ -3394,7 +3394,7 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3412,7 +3412,7 @@ index|[
 literal|3
 operator|*
 operator|(
-name|environ
+name|env
 index|[
 name|i
 operator|-
@@ -3450,7 +3450,7 @@ name|i
 operator|++
 control|)
 block|{
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3460,7 +3460,7 @@ literal|2
 index|]
 operator|=
 operator|(
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3469,7 +3469,7 @@ operator|+
 literal|2
 index|]
 operator|*
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3485,7 +3485,7 @@ operator|(
 operator|(
 literal|255
 operator|-
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3512,7 +3512,7 @@ operator|)
 operator|/
 literal|255
 expr_stmt|;
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3522,7 +3522,7 @@ literal|1
 index|]
 operator|=
 operator|(
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3531,7 +3531,7 @@ operator|+
 literal|1
 index|]
 operator|*
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3547,7 +3547,7 @@ operator|(
 operator|(
 literal|255
 operator|-
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3574,7 +3574,7 @@ operator|)
 operator|/
 literal|255
 expr_stmt|;
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3584,7 +3584,7 @@ literal|0
 index|]
 operator|=
 operator|(
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3593,7 +3593,7 @@ operator|+
 literal|0
 index|]
 operator|*
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3609,7 +3609,7 @@ operator|(
 operator|(
 literal|255
 operator|-
-name|environ
+name|env
 index|[
 name|i
 operator|*
@@ -3656,7 +3656,7 @@ name|i
 operator|--
 control|)
 block|{
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3669,7 +3669,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3682,7 +3682,7 @@ operator|+
 literal|2
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3695,7 +3695,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3708,7 +3708,7 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3721,7 +3721,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|environ
+name|env
 index|[
 operator|(
 name|i
@@ -3764,7 +3764,7 @@ name|t
 decl_stmt|;
 name|t
 operator|=
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3775,7 +3775,7 @@ operator|+
 literal|0
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3786,7 +3786,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3805,7 +3805,7 @@ operator|+
 literal|0
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3828,7 +3828,7 @@ name|t
 expr_stmt|;
 name|t
 operator|=
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3839,7 +3839,7 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3850,7 +3850,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3869,7 +3869,7 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3892,7 +3892,7 @@ name|t
 expr_stmt|;
 name|t
 operator|=
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3903,7 +3903,7 @@ operator|+
 literal|2
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3914,7 +3914,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|environ
+name|env
 index|[
 literal|4
 operator|*
@@ -3933,7 +3933,7 @@ operator|+
 literal|2
 index|]
 expr_stmt|;
-name|environ
+name|env
 index|[
 literal|4
 operator|*
