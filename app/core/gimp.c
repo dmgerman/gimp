@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"xcf/xcf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -137,6 +143,12 @@ begin_include
 include|#
 directive|include
 file|"gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpmodules.h"
 end_include
 
 begin_include
@@ -405,6 +417,12 @@ argument_list|)
 expr_stmt|;
 name|gimp
 operator|->
+name|be_verbose
+operator|=
+name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
 name|create_display_func
 operator|=
 name|NULL
@@ -439,6 +457,11 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_parasites_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_modules_init
 argument_list|(
 name|gimp
 argument_list|)
@@ -536,6 +559,11 @@ operator|=
 name|NULL
 expr_stmt|;
 name|procedural_db_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|xcf_init
 argument_list|(
 name|gimp
 argument_list|)
@@ -838,6 +866,11 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|xcf_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp
@@ -1060,6 +1093,17 @@ if|if
 condition|(
 name|gimp
 operator|->
+name|modules
+condition|)
+name|gimp_modules_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
 name|parasites
 condition|)
 name|gimp_parasites_exit
@@ -1094,10 +1138,11 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (void)
+DECL|function|gimp_new (gboolean be_verbose)
 name|gimp_new
 parameter_list|(
-name|void
+name|gboolean
+name|be_verbose
 parameter_list|)
 block|{
 name|Gimp
@@ -1112,6 +1157,16 @@ name|GIMP_TYPE_GIMP
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
+name|be_verbose
+operator|=
+name|be_verbose
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 return|return
 name|gimp
@@ -1600,6 +1655,11 @@ argument_list|,
 literal|1.00
 argument_list|)
 expr_stmt|;
+name|gimp_modules_load
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1619,6 +1679,11 @@ name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_modules_unload
+argument_list|(
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_save

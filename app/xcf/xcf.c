@@ -432,6 +432,14 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* So this is sort of a hack, but its better than it was before.  To do this    * right there would be a file load-save handler type and the whole interface    * would change but there isn't, and currently the plug-in structure contains    * all the load-save info, so it makes sense to use that for the XCF load/save    * handlers, even though they are internal.  The only thing it requires is    * using a PlugInProcDef struct.  -josh    */
 name|procedural_db_register
 argument_list|(
@@ -492,12 +500,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|xcf_exit (void)
+DECL|function|xcf_exit (Gimp * gimp)
 name|xcf_exit
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
-block|{ }
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function

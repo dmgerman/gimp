@@ -118,12 +118,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"xcf/xcf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay-foreach.h"
 end_include
 
@@ -191,12 +185,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"module_db.h"
 end_include
 
 begin_include
@@ -332,7 +320,9 @@ comment|/*  Create an instance of the "Gimp" object which is the root of the    
 name|the_gimp
 operator|=
 name|gimp_new
-argument_list|()
+argument_list|(
+name|be_verbose
+argument_list|)
 expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
 name|gimp_dir
@@ -479,12 +469,6 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
-comment|/*  Initialize the xcf file format routines    */
-name|xcf_init
-argument_list|(
-name|the_gimp
-argument_list|)
-expr_stmt|;
 comment|/*  Now we are ready to draw the splash-screen-image    *  to the start-up window    */
 if|if
 condition|(
@@ -511,10 +495,6 @@ name|plug_in_init
 argument_list|()
 expr_stmt|;
 comment|/*  initialize the plug in structures  */
-name|module_db_init
-argument_list|()
-expr_stmt|;
-comment|/*  load any modules we need           */
 if|if
 condition|(
 operator|!
@@ -667,9 +647,6 @@ name|the_gimp
 argument_list|)
 expr_stmt|;
 block|}
-name|module_db_free
-argument_list|()
-expr_stmt|;
 name|plug_in_kill
 argument_list|()
 expr_stmt|;
@@ -690,9 +667,6 @@ name|the_gimp
 argument_list|)
 expr_stmt|;
 block|}
-name|xcf_exit
-argument_list|()
-expr_stmt|;
 name|gimp_shutdown
 argument_list|(
 name|the_gimp

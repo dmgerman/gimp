@@ -151,6 +151,10 @@ name|GimpCoreConfig
 modifier|*
 name|config
 decl_stmt|;
+DECL|member|be_verbose
+name|gboolean
+name|be_verbose
+decl_stmt|;
 DECL|member|create_display_func
 name|GimpCreateDisplayFunc
 name|create_display_func
@@ -184,6 +188,15 @@ DECL|member|parasites
 name|GimpParasiteList
 modifier|*
 name|parasites
+decl_stmt|;
+DECL|member|modules
+name|GimpContainer
+modifier|*
+name|modules
+decl_stmt|;
+DECL|member|write_modulerc
+name|gboolean
+name|write_modulerc
 decl_stmt|;
 DECL|member|images
 name|GimpContainer
@@ -343,7 +356,8 @@ name|Gimp
 modifier|*
 name|gimp_new
 parameter_list|(
-name|void
+name|gboolean
+name|be_verbose
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -258,6 +258,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"module-browser.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette-editor.h"
 end_include
 
@@ -342,12 +348,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"module_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo_history.h"
 end_include
 
@@ -385,7 +385,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2760bc950108
+DECL|struct|__anon29f3201c0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -964,7 +964,7 @@ name|context
 parameter_list|)
 block|{
 return|return
-name|module_db_browser_new
+name|module_browser_new
 argument_list|()
 return|;
 block|}
