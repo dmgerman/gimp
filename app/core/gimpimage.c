@@ -252,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d683100103
+DECL|enum|__anon289aede70103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -6236,6 +6236,13 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|dest_gimage
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|src_type
+operator|!=
+name|GIMP_INDEXED
 argument_list|)
 expr_stmt|;
 name|dest_type
