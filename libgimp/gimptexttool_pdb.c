@@ -348,7 +348,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text:  * @image_ID: The image.  * @drawable_ID: The affected drawable: (-1 for a new text layer).  * @x: The x coordinate for the left of the text bounding box.  * @y: The y coordinate for the top of the text bounding box.  * @text: The text to generate.  * @border: The size of the border.  * @antialias: Antialiasing.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @foundry: The font foundry.  * @family: The font family.  * @weight: The font weight.  * @slant: The font slant.  * @set_width: The font set-width.  * @spacing: The font spacing.  * @registry: The font registry.  * @encoding: The font encoding.  *  * Add text at the specified location as a floating selection or a new  * layer.  *  * This function is deprecated, use gimp_get_text_fontname() instead.  *  * Returns: The new text layer.  */
+comment|/**  * gimp_text:  * @image_ID: The image.  * @drawable_ID: The affected drawable: (-1 for a new text layer).  * @x: The x coordinate for the left of the text bounding box.  * @y: The y coordinate for the top of the text bounding box.  * @text: The text to generate.  * @border: The size of the border.  * @antialias: Antialiasing.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @foundry: The font foundry.  * @family: The font family.  * @weight: The font weight.  * @slant: The font slant.  * @set_width: The font set-width.  * @spacing: The font spacing.  * @registry: The font registry.  * @encoding: The font encoding.  *  * This procedure is deprecated! Use 'gimp_get_text_fontname' instead.  *  * This procedure is deprecated! Use 'gimp_get_text_fontname' instead.  *  * Returns: The new text layer.  */
 end_comment
 
 begin_function
@@ -557,7 +557,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_get_extents:  * @text: The text to generate.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @foundry: The font foundry.  * @family: The font family.  * @weight: The font weight.  * @slant: The font slant.  * @set_width: The font set-width.  * @spacing: The font spacing.  * @registry: The font registry.  * @encoding: The font encoding.  * @width: The width of the specified font.  * @height: The height of the specified font.  * @ascent: The ascent of the specified font.  * @descent: The descent of the specified font.  *  * Get extents of the bounding box for the specified text.  *  * This function is deprecated, use gimp_get_text_extents_fontname()  * instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_text_get_extents:  * @text: The text to generate.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @foundry: The font foundry.  * @family: The font family.  * @weight: The font weight.  * @slant: The font slant.  * @set_width: The font set-width.  * @spacing: The font spacing.  * @registry: The font registry.  * @encoding: The font encoding.  * @width: The width of the specified font.  * @height: The height of the specified font.  * @ascent: The ascent of the specified font.  * @descent: The descent of the specified font.  *  * This procedure is deprecated! Use 'gimp_get_text_extents_fontname'  * instead.  *  * This procedure is deprecated! Use 'gimp_get_text_extents_fontname'  * instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
