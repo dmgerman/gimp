@@ -5995,7 +5995,7 @@ name|config
 argument_list|,
 name|property_name
 argument_list|,
-name|GIMP_TYPE_PARAM_PATH
+name|GIMP_TYPE_PARAM_CONFIG_PATH
 argument_list|,
 name|G_STRFUNC
 argument_list|)
@@ -6453,7 +6453,7 @@ name|config
 argument_list|,
 name|path_property_name
 argument_list|,
-name|GIMP_TYPE_PARAM_PATH
+name|GIMP_TYPE_PARAM_CONFIG_PATH
 argument_list|,
 name|G_STRFUNC
 argument_list|)
@@ -6479,7 +6479,7 @@ name|config
 argument_list|,
 name|writable_property_name
 argument_list|,
-name|GIMP_TYPE_PARAM_PATH
+name|GIMP_TYPE_PARAM_CONFIG_PATH
 argument_list|,
 name|G_STRFUNC
 argument_list|)

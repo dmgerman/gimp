@@ -300,60 +300,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_type:  *  * Reveals the object type  *  * Returns: the #GType for GimpPath objects  *  * Since: GIMP 2.4  **/
-end_comment
-
-begin_function
-name|GType
-DECL|function|gimp_path_get_type (void)
-name|gimp_path_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GType
-name|path_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|path_type
-condition|)
-block|{
-specifier|static
-specifier|const
-name|GTypeInfo
-name|type_info
-init|=
-block|{
-literal|0
-block|, }
-decl_stmt|;
-name|path_type
-operator|=
-name|g_type_register_static
-argument_list|(
-name|G_TYPE_STRING
-argument_list|,
-literal|"GimpPath"
-argument_list|,
-operator|&
-name|type_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|path_type
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/*  private functions  */
 end_comment
 

@@ -239,14 +239,14 @@ name|class
 parameter_list|,
 name|id
 parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_PATH (class,id,\\\nname,blurb,type,default,flags)
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_PATH (class,id,\\\nname,blurb,path_type,default,flags)
 name|name
 parameter_list|,
 name|blurb
 parameter_list|,
-name|type
+name|path_type
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_path (name, NULL, blurb,\                                    type, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_config_path (name, NULL, blurb,\                                    path_type, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define

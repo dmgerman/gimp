@@ -186,7 +186,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21a0770103
+DECL|enum|__anon2b21464e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -729,7 +729,7 @@ literal|"theme-path"
 argument_list|,
 name|THEME_PATH_BLURB
 argument_list|,
-name|GIMP_PARAM_PATH_DIR_LIST
+name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
@@ -826,7 +826,7 @@ literal|"web-browser"
 argument_list|,
 name|WEB_BROWSER_BLURB
 argument_list|,
-name|GIMP_PARAM_PATH_FILE
+name|GIMP_CONFIG_PATH_FILE
 argument_list|,
 name|DEFAULT_WEB_BROWSER
 argument_list|,

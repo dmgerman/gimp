@@ -1042,7 +1042,7 @@ name|prop_spec
 operator|->
 name|value_type
 operator|==
-name|GIMP_TYPE_PATH
+name|GIMP_TYPE_CONFIG_PATH
 condition|)
 block|{
 return|return
