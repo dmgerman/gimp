@@ -778,7 +778,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_resize_to_layers:  * @image_ID: The image.  *  * Resize the image to fit all layers.  *  * This procedure resizes the image so that it exactly fits all layers  * of the image. All channels within the image are resized to the new  * size; this includes the image selection mask. All layers within the  * image are repositioned to the new image area.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_resize_to_layers:  * @image_ID: The image.  *  * Resize the image to fit all layers.  *  * This procedure resizes the image to the bounding box of all layers  * of the image. All channels within the image are resized to the new  * size; this includes the image selection mask. All layers within the  * image are repositioned to the new image area.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

@@ -3145,7 +3145,7 @@ literal|"gimp_image_resize_to_layers"
 block|,
 literal|"Resize the image to fit all layers."
 block|,
-literal|"This procedure resizes the image so that it exactly fits all layers of the image. All channels within the image are resized to the new size; this includes the image selection mask. All layers within the image are repositioned to the new image area."
+literal|"This procedure resizes the image to the bounding box of all layers of the image. All channels within the image are resized to the new size; this includes the image selection mask. All layers within the image are repositioned to the new image area."
 block|,
 literal|"Simon Budig"
 block|,
