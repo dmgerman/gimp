@@ -4049,7 +4049,7 @@ case|:
 case|case
 name|SIGFPE
 case|:
-name|g_debug
+name|g_on_error_query
 argument_list|(
 name|progname
 argument_list|)

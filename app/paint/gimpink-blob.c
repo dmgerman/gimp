@@ -104,7 +104,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon299b87720103
+DECL|enum|__anon2758a9150103
 typedef|typedef
 enum|enum
 block|{
@@ -3895,9 +3895,9 @@ argument_list|(
 literal|"Colinear points!\n"
 argument_list|)
 expr_stmt|;
-name|g_debug
+name|g_on_error_query
 argument_list|(
-literal|"gsumi"
+literal|"gimp"
 argument_list|)
 expr_stmt|;
 block|}

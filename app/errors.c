@@ -213,7 +213,7 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-name|g_debug
+name|g_on_error_query
 argument_list|(
 name|prog_name
 argument_list|)
@@ -276,7 +276,7 @@ if|if
 condition|(
 name|use_debug_handler
 condition|)
-name|g_debug
+name|g_on_error_query
 argument_list|(
 name|prog_name
 argument_list|)
