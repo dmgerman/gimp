@@ -392,7 +392,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0765430103
+DECL|enum|__anon2c5c28100103
 block|{
 DECL|enumerator|GIMP_PLUS_CURSOR
 name|GIMP_PLUS_CURSOR
@@ -1667,6 +1667,16 @@ expr_stmt|;
 name|gdk_cursor_destroy
 argument_list|(
 name|cursor
+argument_list|)
+expr_stmt|;
+name|gdk_bitmap_unref
+argument_list|(
+name|bitmap
+argument_list|)
+expr_stmt|;
+name|gdk_bitmap_unref
+argument_list|(
+name|mask
 argument_list|)
 expr_stmt|;
 block|}
