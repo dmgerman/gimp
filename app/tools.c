@@ -796,14 +796,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gtk_container_disable_resize
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|options_shell
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -934,14 +926,6 @@ name|type
 index|]
 operator|.
 name|tool_options
-argument_list|)
-expr_stmt|;
-name|gtk_container_enable_resize
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|options_shell
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Update the device-information dialog */
@@ -1321,14 +1305,6 @@ name|type
 index|]
 operator|.
 name|tool_options
-argument_list|)
-expr_stmt|;
-name|gtk_container_enable_resize
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|options_shell
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the paused count variable to 0    */
