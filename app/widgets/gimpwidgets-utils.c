@@ -2988,6 +2988,17 @@ name|GDK_WINDOW_TYPE_HINT_UTILITY
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_WINDOW_HINT_KEEP_ABOVE
+case|:
+name|gtk_window_set_keep_above
+argument_list|(
+name|window
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+break|break;
 block|}
 block|}
 end_function

@@ -6937,7 +6937,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon299f38840108
+DECL|struct|__anon2ab971460108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8246,7 +8246,7 @@ name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Window Type Hints"
+literal|"Window Manager Hints"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -8283,7 +8283,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Window Type Hint for the _Toolbox:"
+literal|"Hint for the _Toolbox:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -8306,7 +8306,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Window Type Hint for the _Docks:"
+literal|"Hint for the _Docks:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9378,7 +9378,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299f38840208
+DECL|struct|__anon2ab971460208
 block|{
 DECL|member|label
 specifier|const
@@ -9537,7 +9537,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299f38840308
+DECL|struct|__anon2ab971460308
 block|{
 DECL|member|tree_label
 specifier|const

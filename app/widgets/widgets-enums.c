@@ -615,6 +615,17 @@ literal|"utility"
 block|}
 block|,
 block|{
+name|GIMP_WINDOW_HINT_KEEP_ABOVE
+block|,
+name|N_
+argument_list|(
+literal|"Keep Above"
+argument_list|)
+block|,
+literal|"keep-above"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
