@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6228230108
+DECL|struct|__anon2abf50550108
 block|{
 DECL|member|film_height
 name|gint
@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6228230208
+DECL|struct|__anon2abf50550208
 block|{
 DECL|member|font_entry
 name|GtkWidget
@@ -7370,6 +7370,7 @@ block|{
 name|gint
 name|num_images
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|s

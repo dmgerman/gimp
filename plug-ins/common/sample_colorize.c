@@ -376,7 +376,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2b7abec00108
+DECL|struct|__anon29c242380108
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7abec00208
+DECL|struct|__anon29c242380208
 typedef|typedef
 struct|struct
 block|{
@@ -563,7 +563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7abec00308
+DECL|struct|__anon29c242380308
 typedef|typedef
 struct|struct
 block|{
@@ -592,7 +592,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7abec00408
+DECL|struct|__anon29c242380408
 typedef|typedef
 struct|struct
 block|{
@@ -619,7 +619,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7abec00508
+DECL|struct|__anon29c242380508
 typedef|typedef
 struct|struct
 block|{
@@ -1485,6 +1485,7 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|l_env

@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b507c170103
+DECL|enum|__anon2c7d58310103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -78,7 +78,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b507c170203
+DECL|enum|__anon2c7d58310203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -15675,7 +15675,10 @@ argument_list|(
 literal|"Jigsaw Style"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|jigsaw_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|config

@@ -327,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2758324e0108
+DECL|struct|__anon2b4317200108
 block|{
 DECL|member|quality
 name|gdouble
@@ -374,7 +374,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2758324e0208
+DECL|struct|__anon2b4317200208
 block|{
 DECL|member|run
 name|gint
@@ -389,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2758324e0308
+DECL|struct|__anon2b4317200308
 block|{
 DECL|member|cinfo
 name|struct
@@ -7101,7 +7101,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|menu_callback
+argument_list|)
 argument_list|,
 operator|&
 name|jsvals
@@ -7179,7 +7182,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|menu_callback
+argument_list|)
 argument_list|,
 operator|&
 name|jsvals

@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b293ec80108
+DECL|struct|__anon2b4ffe820108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b293ec80208
+DECL|struct|__anon2b4ffe820208
 block|{
 DECL|member|col
 DECL|member|row
@@ -3527,7 +3527,10 @@ argument_list|(
 literal|"Blur Type"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|mbvals

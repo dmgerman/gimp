@@ -30500,7 +30500,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c374d30108
+DECL|struct|__anon27c1d1620108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30551,7 +30551,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c374d30208
+DECL|struct|__anon27c1d1620208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -34139,7 +34139,10 @@ argument_list|(
 literal|"Mode"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|alienmap2_radio_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals

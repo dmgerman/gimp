@@ -30504,7 +30504,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2938dae10108
+DECL|struct|__anon2c850cfb0108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30539,7 +30539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2938dae10208
+DECL|struct|__anon2c850cfb0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -33645,7 +33645,10 @@ argument_list|(
 literal|"Red"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|alienmap_toggle_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals
@@ -33785,7 +33788,10 @@ argument_list|(
 literal|"Green"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|alienmap_toggle_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals
@@ -33925,7 +33931,10 @@ argument_list|(
 literal|"Blue"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|alienmap_toggle_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals

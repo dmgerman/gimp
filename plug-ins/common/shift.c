@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f17f5c0108
+DECL|struct|__anon2991588f0108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f17f5c0208
+DECL|struct|__anon2991588f0208
 block|{
 DECL|member|run
 name|gint
@@ -1568,7 +1568,10 @@ argument_list|(
 literal|"Parameter Settings"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|shvals

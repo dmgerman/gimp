@@ -1916,7 +1916,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_menu_item_update
+argument_list|)
 argument_list|,
 operator|&
 name|borderaverage_bucket_exponent

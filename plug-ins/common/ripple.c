@@ -130,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792876e0108
+DECL|struct|__anon294aafa60108
 block|{
 DECL|member|period
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792876e0208
+DECL|struct|__anon294aafa60208
 block|{
 DECL|member|run
 name|gint
@@ -3261,7 +3261,10 @@ argument_list|(
 literal|"Orientation"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|rvals
@@ -3349,7 +3352,10 @@ argument_list|(
 literal|"Edges"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|rvals
@@ -3449,7 +3455,10 @@ argument_list|(
 literal|"Wave Type"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|rvals

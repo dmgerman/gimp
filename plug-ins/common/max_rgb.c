@@ -234,7 +234,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba89b940103
+DECL|enum|__anon2b617ebd0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -252,7 +252,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba89b940208
+DECL|struct|__anon2b617ebd0208
 block|{
 DECL|member|max_p
 name|gint
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba89b940308
+DECL|struct|__anon2b617ebd0308
 block|{
 DECL|member|run
 name|gint
@@ -1848,7 +1848,10 @@ argument_list|(
 literal|"Parameter Settings"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|radio_callback
+argument_list|)
 argument_list|,
 operator|&
 name|pvals

@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d1f5d00103
+DECL|enum|__anon29e23e260103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -156,7 +156,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d1f5d00203
+DECL|enum|__anon29e23e260203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -175,7 +175,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1f5d00308
+DECL|struct|__anon29e23e260308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -234,7 +234,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1f5d00408
+DECL|struct|__anon29e23e260408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1f5d00508
+DECL|struct|__anon29e23e260508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4162,7 +4162,10 @@ argument_list|(
 literal|"Map Type"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|dialog_map_type_callback
+argument_list|)
 argument_list|,
 operator|&
 name|bmvals

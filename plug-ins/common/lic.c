@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a06b70108
+DECL|struct|__anon29bbc6810108
 block|{
 DECL|member|r
 DECL|member|g
@@ -219,7 +219,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a06b70208
+DECL|struct|__anon29bbc6810208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -5073,7 +5073,10 @@ argument_list|(
 literal|"Effect Channel"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|licvals
@@ -5152,7 +5155,10 @@ argument_list|(
 literal|"Effect Operator"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|licvals
@@ -5219,7 +5225,10 @@ argument_list|(
 literal|"Convolve"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|licvals

@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4a3bb0108
+DECL|struct|__anon2b087a560108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1442,7 +1442,10 @@ argument_list|(
 literal|"Orientation"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|blinds_radio_update
+argument_list|)
 argument_list|,
 operator|&
 name|bvals

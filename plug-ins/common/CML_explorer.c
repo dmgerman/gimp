@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c63a5c0108
+DECL|struct|__anon27585a700108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c63a5c0203
+DECL|enum|__anon27585a700203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c63a5c0303
+DECL|enum|__anon27585a700303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c63a5c0403
+DECL|enum|__anon27585a700403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c63a5c0503
+DECL|enum|__anon27585a700503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c63a5c0608
+DECL|struct|__anon27585a700608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c63a5c0708
+DECL|struct|__anon27585a700708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1399,6 +1399,7 @@ specifier|static
 name|gint
 name|force_overwrite
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -1456,6 +1457,7 @@ specifier|static
 name|gint
 name|CML_load_parameter_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -1538,7 +1540,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c63a5c0808
+DECL|struct|__anon27585a700808
 block|{
 DECL|member|run
 name|gint
@@ -1588,7 +1590,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c63a5c0908
+DECL|struct|__anon27585a700908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -7539,7 +7541,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|CML_initial_value_menu_update
+argument_list|)
 argument_list|,
 operator|&
 name|VALS
@@ -8333,7 +8338,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_menu_item_update
+argument_list|)
 argument_list|,
 operator|&
 name|copy_source
@@ -8424,7 +8432,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_menu_item_update
+argument_list|)
 argument_list|,
 operator|&
 name|copy_destination
@@ -8663,7 +8674,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_menu_item_update
+argument_list|)
 argument_list|,
 operator|&
 name|selective_load_source
@@ -8766,7 +8780,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_menu_item_update
+argument_list|)
 argument_list|,
 operator|&
 name|selective_load_destination
@@ -9055,7 +9072,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|CML_explorer_menu_update
+argument_list|)
 argument_list|,
 operator|&
 name|param
@@ -9322,7 +9342,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|CML_explorer_menu_update
+argument_list|)
 argument_list|,
 operator|&
 name|param
@@ -9619,7 +9642,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|CML_explorer_menu_update
+argument_list|)
 argument_list|,
 operator|&
 name|param
@@ -12229,6 +12255,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -12788,22 +12815,14 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-sizeof|sizeof
+name|strncpy
 argument_list|(
 name|VALS
 operator|.
 name|last_file_name
-argument_list|)
-operator|<=
-name|strlen
-argument_list|(
+argument_list|,
 name|filename
-argument_list|)
-condition|)
-name|filename
-index|[
+argument_list|,
 sizeof|sizeof
 argument_list|(
 name|VALS
@@ -12812,17 +12831,6 @@ name|last_file_name
 argument_list|)
 operator|-
 literal|1
-index|]
-operator|=
-literal|'\0'
-expr_stmt|;
-name|strcpy
-argument_list|(
-name|VALS
-operator|.
-name|last_file_name
-argument_list|,
-name|filename
 argument_list|)
 expr_stmt|;
 block|}
@@ -12840,9 +12848,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|force_overwrite (gchar * filename)
+DECL|function|force_overwrite (const gchar * filename)
 name|force_overwrite
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -13256,6 +13265,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -13454,9 +13464,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|CML_load_parameter_file (gchar * filename,gint interactive_mode)
+DECL|function|CML_load_parameter_file (const gchar * filename,gint interactive_mode)
 name|CML_load_parameter_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -14290,22 +14301,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-sizeof|sizeof
+name|strncpy
 argument_list|(
 name|VALS
 operator|.
 name|last_file_name
-argument_list|)
-operator|<=
-name|strlen
-argument_list|(
+argument_list|,
 name|filename
-argument_list|)
-condition|)
-name|filename
-index|[
+argument_list|,
 sizeof|sizeof
 argument_list|(
 name|VALS
@@ -14314,17 +14317,6 @@ name|last_file_name
 argument_list|)
 operator|-
 literal|1
-index|]
-operator|=
-literal|'\0'
-expr_stmt|;
-name|strcpy
-argument_list|(
-name|VALS
-operator|.
-name|last_file_name
-argument_list|,
-name|filename
 argument_list|)
 expr_stmt|;
 block|}

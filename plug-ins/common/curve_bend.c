@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efd6a10108
+DECL|struct|__anon29e725ad0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efd6a10208
+DECL|struct|__anon29e725ad0208
 block|{
 DECL|member|y
 name|gint32
@@ -1655,7 +1655,8 @@ name|BenderDialog
 modifier|*
 name|cd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -3085,7 +3086,8 @@ name|return_vals
 parameter_list|)
 comment|/* out-parameters */
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|l_env
 decl_stmt|;
@@ -4080,14 +4082,15 @@ end_comment
 
 begin_function
 name|int
-DECL|function|p_save_pointfile (BenderDialog * cd,char * filename)
+DECL|function|p_save_pointfile (BenderDialog * cd,const gchar * filename)
 name|p_save_pointfile
 parameter_list|(
 name|BenderDialog
 modifier|*
 name|cd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -4366,14 +4369,15 @@ end_comment
 
 begin_function
 name|int
-DECL|function|p_load_pointfile (BenderDialog * cd,char * filename)
+DECL|function|p_load_pointfile (BenderDialog * cd,const gchar * filename)
 name|p_load_pointfile
 parameter_list|(
 name|BenderDialog
 modifier|*
 name|cd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -11009,6 +11013,7 @@ name|BenderDialog
 modifier|*
 name|cd
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|filename
@@ -11095,6 +11100,7 @@ name|BenderDialog
 modifier|*
 name|cd
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|filename

@@ -173,7 +173,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bef5eb50108
+DECL|struct|__anon2b608a1e0108
 block|{
 DECL|member|spacing
 name|guint
@@ -230,7 +230,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef5eb50208
+DECL|struct|__anon2b608a1e0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3637,6 +3637,7 @@ block|{
 operator|*
 operator|(
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|*

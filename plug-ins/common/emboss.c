@@ -70,7 +70,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae3ed520103
+DECL|enum|__anon2ba95eed0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -2566,7 +2566,10 @@ argument_list|(
 literal|"Function"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|emboss_radio_button_callback
+argument_list|)
 argument_list|,
 operator|&
 name|argp

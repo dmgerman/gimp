@@ -22238,7 +22238,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6a377e0108
+DECL|struct|__anon2c64e5c30108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22341,7 +22341,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6a377e0208
+DECL|struct|__anon2c64e5c30208
 block|{
 DECL|member|height
 DECL|member|width
@@ -27165,7 +27165,10 @@ name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|sinus_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|svals
@@ -27429,7 +27432,10 @@ argument_list|(
 literal|"Colors"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|sinus_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|svals
@@ -28094,7 +28100,10 @@ argument_list|(
 literal|"Gradient"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|sinus_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|svals

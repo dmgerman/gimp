@@ -191,7 +191,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2bbd8b9b0103
+DECL|enum|__anon29ea4d740103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -211,7 +211,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd8b9b0208
+DECL|struct|__anon29ea4d740208
 block|{
 DECL|member|x1
 name|gdouble
@@ -421,7 +421,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd8b9b0308
+DECL|struct|__anon29ea4d740308
 block|{
 DECL|member|x1
 name|gint
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd8b9b0408
+DECL|struct|__anon29ea4d740408
 block|{
 DECL|member|width
 name|gint
@@ -1023,7 +1023,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd8b9b0508
+DECL|struct|__anon29ea4d740508
 block|{
 DECL|member|r
 name|guchar
@@ -2824,7 +2824,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd8b9b0608
+DECL|struct|__anon29ea4d740608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4244,7 +4244,10 @@ argument_list|(
 literal|"Outside Type"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|dialog_outside_type_callback
+argument_list|)
 argument_list|,
 operator|&
 name|parameters

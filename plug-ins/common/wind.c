@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa6a1290103
+DECL|enum|__anon28d936610103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa6a1290203
+DECL|enum|__anon28d936610203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa6a1290303
+DECL|enum|__anon28d936610303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -4986,7 +4986,10 @@ argument_list|(
 literal|"Style"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|radio_callback
+argument_list|)
 argument_list|,
 operator|&
 name|config
@@ -5100,7 +5103,10 @@ argument_list|(
 literal|"Direction"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|radio_callback
+argument_list|)
 argument_list|,
 operator|&
 name|config
@@ -5214,7 +5220,10 @@ argument_list|(
 literal|"Edge Affected"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|radio_callback
+argument_list|)
 argument_list|,
 operator|&
 name|config

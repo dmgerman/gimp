@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27feab140108
+DECL|struct|__anon29da0e140108
 block|{
 DECL|member|raw
 name|gint
@@ -325,7 +325,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27feab140208
+DECL|struct|__anon29da0e140208
 block|{
 DECL|member|run
 name|gint
@@ -4577,7 +4577,10 @@ argument_list|(
 literal|"Data Formatting"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|psvals

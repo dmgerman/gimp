@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b764a3b0103
+DECL|enum|__anon279d0f6e0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -1606,7 +1606,10 @@ argument_list|(
 literal|"Mode"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|waves_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|argp

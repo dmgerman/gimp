@@ -392,7 +392,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1283000108
+DECL|struct|__anon2c29c0620108
 block|{
 DECL|member|receipt
 name|gchar
@@ -2465,7 +2465,10 @@ name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|mail_info

@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce6ad40103
+DECL|enum|__anon2c71b4170103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce6ad40208
+DECL|struct|__anon2c71b4170208
 block|{
 DECL|member|direction
 name|gint
@@ -40917,7 +40917,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce6ad40308
+DECL|struct|__anon2c71b4170308
 block|{
 DECL|member|run
 name|gint
@@ -41758,7 +41758,10 @@ argument_list|(
 literal|"Direction"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|svals

@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c5a43c0108
+DECL|struct|__anon2c7ef5ad0108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c5a43c0208
+DECL|struct|__anon2c7ef5ad0208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c5a43c0308
+DECL|struct|__anon2c7ef5ad0308
 block|{
 DECL|member|ID
 name|gint32
@@ -7539,7 +7539,10 @@ argument_list|(
 literal|"Compression"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|tsvals
@@ -7826,12 +7829,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gint
-name|len
-decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|text
+decl_stmt|;
+name|gint
+name|len
 decl_stmt|;
 name|text
 operator|=

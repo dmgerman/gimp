@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad73a8d0108
+DECL|struct|__anon2bed22260108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad73a8d0208
+DECL|struct|__anon2bed22260208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad73a8d0308
+DECL|struct|__anon2bed22260308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad73a8d0408
+DECL|struct|__anon2bed22260408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad73a8d0508
+DECL|struct|__anon2bed22260508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad73a8d0608
+DECL|struct|__anon2bed22260608
 block|{
 DECL|member|eol
 name|long
@@ -13998,7 +13998,10 @@ argument_list|(
 literal|"Coloring"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|plvals
@@ -14125,7 +14128,10 @@ argument_list|(
 literal|"Text Antialiasing"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|plvals
@@ -14210,7 +14216,10 @@ argument_list|(
 literal|"Graphic Antialiasing"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|plvals
@@ -15203,7 +15212,10 @@ argument_list|(
 literal|"Unit"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|save_unit_toggle_update
+argument_list|)
 argument_list|,
 name|vals
 argument_list|,
@@ -15284,7 +15296,10 @@ argument_list|(
 literal|"Rotation"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|psvals

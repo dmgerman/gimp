@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c4921d0103
+DECL|enum|__anon2be45e920103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c4921d0208
+DECL|struct|__anon2be45e920208
 block|{
 DECL|member|run
 name|gint
@@ -141,7 +141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c4921d0308
+DECL|struct|__anon2be45e920308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -5586,7 +5586,10 @@ name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|iwarp_vals

@@ -154,7 +154,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b178e0a0103
+DECL|enum|__anon276c7c030103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1759,7 +1759,10 @@ argument_list|(
 literal|"Filter"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|nlfilt_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|argp
