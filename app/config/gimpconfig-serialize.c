@@ -1538,6 +1538,18 @@ return|;
 block|}
 end_function
 
+begin_define
+DECL|macro|LINE_LENGTH
+define|#
+directive|define
+name|LINE_LENGTH
+value|75
+end_define
+
+begin_comment
+comment|/**  * gimp_config_serialize_comment:  * @str: a #GString.  * @comment: the comment to serialize  *   * Appends the @comment to @str and inserts linebreaks and hash-marks to  * format it as a comment.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_config_serialize_comment (GString * str,const gchar * comment)
@@ -1601,7 +1613,7 @@ operator|&&
 operator|(
 name|i
 operator|<=
-literal|76
+name|LINE_LENGTH
 operator|||
 name|space
 operator|==
@@ -1636,7 +1648,7 @@ if|if
 condition|(
 name|i
 operator|>
-literal|76
+name|LINE_LENGTH
 operator|&&
 name|space
 operator|&&

@@ -109,7 +109,8 @@ specifier|static
 name|gint
 name|dump_system_gimprc
 parameter_list|(
-name|void
+name|gint
+name|fd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -119,7 +120,8 @@ specifier|static
 name|gint
 name|dump_man_page
 parameter_list|(
-name|void
+name|gint
+name|fd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -128,11 +130,27 @@ begin_function_decl
 specifier|static
 name|gchar
 modifier|*
-name|dump_get_comment
+name|dump_describe_param
 parameter_list|(
 name|GParamSpec
 modifier|*
 name|param_spec
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|dump_with_linebreaks
+parameter_list|(
+name|gint
+name|fd
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|text
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -182,7 +200,9 @@ condition|)
 block|{
 return|return
 name|dump_system_gimprc
-argument_list|()
+argument_list|(
+literal|1
+argument_list|)
 return|;
 block|}
 elseif|else
@@ -203,7 +223,9 @@ condition|)
 block|{
 return|return
 name|dump_man_page
-argument_list|()
+argument_list|(
+literal|1
+argument_list|)
 return|;
 block|}
 elseif|else
@@ -352,10 +374,11 @@ end_decl_stmt
 begin_function
 specifier|static
 name|gint
-DECL|function|dump_system_gimprc (void)
+DECL|function|dump_system_gimprc (gint fd)
 name|dump_system_gimprc
 parameter_list|(
-name|void
+name|gint
+name|fd
 parameter_list|)
 block|{
 name|GObjectClass
@@ -390,7 +413,7 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
-literal|1
+name|fd
 argument_list|,
 name|str
 operator|->
@@ -475,7 +498,7 @@ argument_list|)
 expr_stmt|;
 name|comment
 operator|=
-name|dump_get_comment
+name|dump_describe_param
 argument_list|(
 name|prop_spec
 argument_list|)
@@ -535,7 +558,7 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
-literal|1
+name|fd
 argument_list|,
 name|str
 operator|->
@@ -614,18 +637,80 @@ literal|"\n"
 literal|"Either spaces or tabs may be used to separate the name from the value.\n"
 literal|".PP\n"
 literal|".SH PROPERTIES\n"
-literal|"Valid properties and their types are:\n"
+literal|"Valid properties and their default values are:\n"
 literal|"\n"
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|man_page_path
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|man_page_path
+init|=
+literal|".PP\n"
+literal|".SH PATH EXPANSION\n"
+literal|"Strings of type PATH are expanded in a manner similar to\n"
+literal|".BR bash (1).\n"
+literal|"Specifically: tilde (~) is expanded to the user's home directory. Note that\n"
+literal|"the bash feature of being able to refer to other user's home directories\n"
+literal|"by writing ~userid/ is not valid in this file.\n"
+literal|"\n"
+literal|"${variable} is expanded to the current value of an environment variable.\n"
+literal|"There are a few variables that are pre-defined:\n"
+literal|".TP\n"
+literal|".I gimp_dir\n"
+literal|"The personal gimp directory which is set to the value of the environment\n"
+literal|"variable GIMP_DIRECTORY or to ~/.gimp-1.3.\n"
+literal|".TP\n"
+literal|".I gimp_data_dir\n"
+literal|"Nase for paths to shareable data, which is set to the value of the\n"
+literal|"environment variable GIMP_DATADIR or to a compiled-in default value.\n"
+literal|".TP\n"
+literal|".I gimp_plug_in_dir\n"
+literal|"Base to paths for architecture-specific plugins and modules, which is set\n"
+literal|"to the value of the environment variable GIMP_PLUGINDIR or to a\n"
+literal|"compiled-in default value.\n"
+literal|".TP\n"
+literal|".I gimp_sysconf_dir\n"
+literal|"Path to configuration files, which is set to the value of the environment\n"
+literal|"variable GIMP_SYSCONFDIR or to a compiled-in default value.\n\n"
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|man_page_footer
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|man_page_footer
+init|=
+literal|".SH FILES\n"
+literal|".TP\n"
+literal|".I ${prefix}/etc/gimp/1.3/gimprc\n"
+literal|"System-wide configuration file\n"
+literal|".TP\n"
+literal|".I \\fB$HOME\\fP/.gimp-1.3/gimprc\n"
+literal|"Per-user configuration file\n"
+literal|"\n"
+literal|".SH \"SEE ALSO\"\n"
+literal|".BR gimp (1),\n"
+literal|".BR gimptool (1),\n"
+literal|".BR gimp-remote (1)\n"
 decl_stmt|;
 end_decl_stmt
 
 begin_function
 specifier|static
 name|gint
-DECL|function|dump_man_page (void)
+DECL|function|dump_man_page (gint fd)
 name|dump_man_page
 parameter_list|(
-name|void
+name|gint
+name|fd
 parameter_list|)
 block|{
 name|GObjectClass
@@ -669,7 +754,7 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
-literal|1
+name|fd
 argument_list|,
 name|str
 operator|->
@@ -731,7 +816,7 @@ index|]
 decl_stmt|;
 name|gchar
 modifier|*
-name|comment
+name|desc
 decl_stmt|;
 if|if
 condition|(
@@ -749,19 +834,7 @@ name|g_string_assign
 argument_list|(
 name|str
 argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
-name|comment
-operator|=
-name|dump_get_comment
-argument_list|(
-name|prop_spec
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|comment
+literal|".TP\n"
 argument_list|)
 expr_stmt|;
 if|if
@@ -787,7 +860,7 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
-literal|1
+name|fd
 argument_list|,
 name|str
 operator|->
@@ -796,6 +869,34 @@ argument_list|,
 name|str
 operator|->
 name|len
+argument_list|)
+expr_stmt|;
+name|desc
+operator|=
+name|dump_describe_param
+argument_list|(
+name|prop_spec
+argument_list|)
+expr_stmt|;
+name|dump_with_linebreaks
+argument_list|(
+name|fd
+argument_list|,
+name|desc
+argument_list|)
+expr_stmt|;
+name|write
+argument_list|(
+name|fd
+argument_list|,
+literal|"\n"
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|desc
 argument_list|)
 expr_stmt|;
 block|}
@@ -817,6 +918,30 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|write
+argument_list|(
+name|fd
+argument_list|,
+name|man_page_path
+argument_list|,
+name|strlen
+argument_list|(
+name|man_page_path
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|write
+argument_list|(
+name|fd
+argument_list|,
+name|man_page_footer
+argument_list|,
+name|strlen
+argument_list|(
+name|man_page_footer
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|EXIT_SUCCESS
 return|;
@@ -827,8 +952,8 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|dump_get_comment (GParamSpec * param_spec)
-name|dump_get_comment
+DECL|function|dump_describe_param (GParamSpec * param_spec)
+name|dump_describe_param
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -874,9 +999,14 @@ argument_list|)
 expr_stmt|;
 name|blurb
 operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"The %s property has no description."
+argument_list|,
 name|param_spec
 operator|->
 name|name
+argument_list|)
 expr_stmt|;
 block|}
 name|type
@@ -1249,6 +1379,158 @@ argument_list|,
 name|values
 argument_list|)
 return|;
+block|}
+end_function
+
+begin_define
+DECL|macro|LINE_LENGTH
+define|#
+directive|define
+name|LINE_LENGTH
+value|78
+end_define
+
+begin_function
+specifier|static
+name|void
+DECL|function|dump_with_linebreaks (gint fd,const gchar * text)
+name|dump_with_linebreaks
+parameter_list|(
+name|gint
+name|fd
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|text
+parameter_list|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|t
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|,
+name|len
+decl_stmt|,
+name|space
+decl_stmt|;
+name|len
+operator|=
+name|strlen
+argument_list|(
+name|text
+argument_list|)
+expr_stmt|;
+while|while
+condition|(
+name|len
+operator|>
+literal|0
+condition|)
+block|{
+for|for
+control|(
+name|t
+operator|=
+name|text
+operator|,
+name|i
+operator|=
+literal|0
+operator|,
+name|space
+operator|=
+literal|0
+init|;
+operator|*
+name|t
+operator|!=
+literal|'\n'
+operator|&&
+operator|(
+name|i
+operator|<=
+name|LINE_LENGTH
+operator|||
+name|space
+operator|==
+literal|0
+operator|)
+operator|&&
+name|i
+operator|<
+name|len
+condition|;
+name|t
+operator|++
+operator|,
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|g_ascii_isspace
+argument_list|(
+operator|*
+name|t
+argument_list|)
+condition|)
+name|space
+operator|=
+name|i
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|i
+operator|>
+name|LINE_LENGTH
+operator|&&
+name|space
+operator|&&
+operator|*
+name|t
+operator|!=
+literal|'\n'
+condition|)
+name|i
+operator|=
+name|space
+expr_stmt|;
+name|write
+argument_list|(
+name|fd
+argument_list|,
+name|text
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
+name|write
+argument_list|(
+name|fd
+argument_list|,
+literal|"\n"
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|i
+operator|++
+expr_stmt|;
+name|text
+operator|+=
+name|i
+expr_stmt|;
+name|len
+operator|-=
+name|i
+expr_stmt|;
+block|}
 block|}
 end_function
 
