@@ -3573,6 +3573,11 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
+name|idea_add
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|return_val
 return|;

@@ -258,6 +258,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"docindex.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config.h"
 end_include
 
@@ -2607,9 +2613,14 @@ name|no_interface
 operator|==
 name|FALSE
 condition|)
+block|{
 name|toolbox_free
 argument_list|()
 expr_stmt|;
+name|close_idea_window
+argument_list|()
+expr_stmt|;
+block|}
 else|else
 name|app_exit_finish
 argument_list|()
@@ -2642,6 +2653,9 @@ name|dialog
 argument_list|)
 expr_stmt|;
 name|toolbox_free
+argument_list|()
+expr_stmt|;
+name|close_idea_window
 argument_list|()
 expr_stmt|;
 block|}

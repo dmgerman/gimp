@@ -276,7 +276,7 @@ literal|"/File/Document Index..."
 block|,
 name|NULL
 block|,
-name|open_idea_window
+name|raise_idea_callback
 block|,
 literal|0
 block|}

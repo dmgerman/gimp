@@ -120,6 +120,13 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|close_idea_window
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|idea_add
 parameter_list|(
 name|gchar
