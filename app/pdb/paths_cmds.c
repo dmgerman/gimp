@@ -531,7 +531,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"num_paths"
 block|,
-literal|"The number of paths returned"
+literal|"The number of paths returned."
 block|}
 block|,
 block|{
@@ -539,7 +539,7 @@ name|GIMP_PDB_STRINGARRAY
 block|,
 literal|"path_list"
 block|,
-literal|"List of the paths belonging to this image"
+literal|"List of the paths belonging to this image."
 block|}
 block|}
 decl_stmt|;
@@ -733,7 +733,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to get the current path from"
+literal|"The ID of the image to get the current path from."
 block|}
 block|}
 decl_stmt|;
@@ -752,7 +752,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the current path"
+literal|"The name of the current path."
 block|}
 block|}
 decl_stmt|;
@@ -953,7 +953,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to list set the paths in"
+literal|"The ID of the image in which a path will become current."
 block|}
 block|,
 block|{
@@ -961,7 +961,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the path to set the current path to"
+literal|"The name of the path to make current."
 block|}
 block|}
 decl_stmt|;
@@ -978,7 +978,7 @@ literal|"gimp_path_set_current"
 block|,
 literal|"Sets the current path associated with the passed image."
 block|,
-literal|"List the paths associated with the passed image."
+literal|"Sets a named path as the current path."
 block|,
 literal|"Andy Thomas"
 block|,
@@ -1162,7 +1162,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to list delete the paths from"
+literal|"The ID of the image to delete the path from."
 block|}
 block|,
 block|{
@@ -1170,7 +1170,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the path to delete"
+literal|"The name of the path to delete."
 block|}
 block|}
 decl_stmt|;
@@ -1567,7 +1567,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to list the paths from"
+literal|"The ID of the image to list the paths from."
 block|}
 block|,
 block|{
@@ -1575,7 +1575,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"the name of the path whose points should be listed"
+literal|"The name of the path whose points should be listed."
 block|}
 block|}
 decl_stmt|;
@@ -1610,7 +1610,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"num_path_point_details"
 block|,
-literal|"The number of points returned. Each point is made up of (x, y, pnt_type) of floats"
+literal|"The number of points returned. Each point is made up of (x, y, pnt_type) of floats."
 block|}
 block|,
 block|{
@@ -1618,7 +1618,7 @@ name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"points_pairs"
 block|,
-literal|"The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0 = BEZIER_MOVE). Note all points are returned in pixel resolution"
+literal|"The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0 = BEZIER_MOVE). Note all points are returned in pixel resolution."
 block|}
 block|}
 decl_stmt|;
@@ -2025,7 +2025,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image to set the paths in"
+literal|"The ID of the image to set the paths in."
 block|}
 block|,
 block|{
@@ -2033,7 +2033,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the path to create (if it exists then a unique name will be created - query the list of paths if you want to make sure that the name of the path you create is unique. This will be set as the current path."
+literal|"The name of the path to create. If it exists then a unique name will be created - query the list of paths if you want to make sure that the name of the path you create is unique. This will be set as the current path."
 block|}
 block|,
 block|{
@@ -2041,7 +2041,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"ptype"
 block|,
-literal|"The type of the path. Currently only one type (1 = Bezier) is supported"
+literal|"The type of the path. Currently only one type (1 = Bezier) is supported."
 block|}
 block|,
 block|{
@@ -2049,7 +2049,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"num_path_points"
 block|,
-literal|"The number of points in the path. Each point is made up of (x, y, type) of floats. Currently only the creation of bezier curves is allowed. The type parameter must be set to (1) to indicate a BEZIER type curve. For BEZIERS. Note the that points must be given in the following order... ACCACCAC ... If the path is not closed the last control point is missed off. Points consist of three control points (control/anchor/control) so for a curve that is not closed there must be at least two points passed (2 x,y pairs). If num_path_pnts % 3 = 0 then the path is assumed to be closed and the points are ACCACCACCACC."
+literal|"The number of elements in the array, i.e. the number of points in the path * 3. Each point is made up of (x, y, type) of floats. Currently only the creation of bezier curves is allowed. The type parameter must be set to (1) to indicate a BEZIER type curve. Note that for BEZIER curves, points must be given in the following order: ACCACCAC... If the path is not closed the last control point is missed off. Points consist of three control points (control/anchor/control) so for a curve that is not closed there must be at least two points passed (2 x,y pairs). If (num_path_points/3) % 3 = 0 then the path is assumed to be closed and the points are ACCACCACCACC."
 block|}
 block|,
 block|{
@@ -2057,7 +2057,7 @@ name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"points_pairs"
 block|,
-literal|"The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0= BEZIER_MOVE). Note all points are returned in pixel resolution"
+literal|"The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0= BEZIER_MOVE). Note all points are returned in pixel resolution."
 block|}
 block|}
 decl_stmt|;
@@ -2257,7 +2257,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image which contains the path to stroke"
+literal|"The ID of the image which contains the path to stroke."
 block|}
 block|}
 decl_stmt|;
@@ -2504,7 +2504,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"distance"
 block|,
-literal|"The distance along the path"
+literal|"The distance along the path."
 block|}
 block|}
 decl_stmt|;
@@ -2523,7 +2523,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"x_point"
 block|,
-literal|"The x position of the point"
+literal|"The x position of the point."
 block|}
 block|,
 block|{
@@ -2531,7 +2531,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"y_point"
 block|,
-literal|"The y position of the point"
+literal|"The y position of the point."
 block|}
 block|,
 block|{
@@ -2539,7 +2539,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"gradient"
 block|,
-literal|"The gradient at the specified point"
+literal|"The gradient at the specified point."
 block|}
 block|}
 decl_stmt|;
@@ -2556,7 +2556,7 @@ literal|"gimp_path_get_point_at_dist"
 block|,
 literal|"Get point on a path at a specified distance along the path."
 block|,
-literal|"This will return the x,y position of a point at a given distance along the bezier curve. The distance will the obtained by first digitizing the curve internally an then walking along the curve. For a closed curve the start of the path is the first point on the path that was created. This might not be obvious. Note the current path is used."
+literal|"This will return the x,y position of a point at a given distance along the bezier curve. The distance will be obtained by first digitizing the curve internally and then walking along the curve. For a closed curve the start of the path is the first point on the path that was created. This might not be obvious. Note the current path is used."
 block|,
 literal|"Andy Thomas"
 block|,
@@ -2779,7 +2779,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"the name of the path whose tattoo should be obtained"
+literal|"The name of the path whose tattoo should be obtained."
 block|}
 block|}
 decl_stmt|;
@@ -2798,7 +2798,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"tattoo"
 block|,
-literal|"The tattoo associated with the name path"
+literal|"The tattoo associated with the named path."
 block|}
 block|}
 decl_stmt|;
@@ -3252,7 +3252,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"tattoo"
 block|,
-literal|"The tattoo of the required path"
+literal|"The tattoo of the required path."
 block|}
 block|}
 decl_stmt|;
@@ -3271,7 +3271,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the path with the specified tattoo"
+literal|"The name of the path with the specified tattoo."
 block|}
 block|}
 decl_stmt|;
@@ -3288,7 +3288,7 @@ literal|"gimp_get_path_by_tattoo"
 block|,
 literal|"Return the name of the path with the given tattoo."
 block|,
-literal|"The procedure returns the name of the path in the specified image which has the passed tattoo. The tattoos are unique within the image and will be preserved across sessions and through renaming of the path. An error is returned if no path woth the specified tattoo can be found."
+literal|"The procedure returns the name of the path in the specified image which has the passed tattoo. The tattoos are unique within the image and will be preserved across sessions and through renaming of the path. An error is returned if no path with the specified tattoo can be found."
 block|,
 literal|"Andy Thomas"
 block|,
@@ -3511,7 +3511,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"the name of the path whose locked status should be obtained"
+literal|"The name of the path whose locked status should be obtained."
 block|}
 block|}
 decl_stmt|;
@@ -3530,7 +3530,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"lockstatus"
 block|,
-literal|"The lock status associated with the name path. 0 returned if the path is not locked. 1 is returned if the path is locked"
+literal|"The lock status associated with the name path. 0 is returned if the path is not locked. 1 is returned if the path is locked."
 block|}
 block|}
 decl_stmt|;
@@ -4087,7 +4087,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the path which should be made into selection"
+literal|"The name of the path which should be made into selection."
 block|}
 block|,
 block|{
@@ -4095,7 +4095,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"op"
 block|,
-literal|"The desired operation with current selection"
+literal|"The desired operation with current selection."
 block|}
 block|,
 block|{
@@ -4103,7 +4103,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"antialias"
 block|,
-literal|"Antialias selection"
+literal|"Antialias selection."
 block|}
 block|,
 block|{
@@ -4111,7 +4111,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"feather"
 block|,
-literal|"Feather selection"
+literal|"Feather selection."
 block|}
 block|,
 block|{
@@ -4119,7 +4119,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"feather_radius_x"
 block|,
-literal|"Feather radius x"
+literal|"Feather radius x."
 block|}
 block|,
 block|{
@@ -4127,7 +4127,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"feather_radius_y"
 block|,
-literal|"Feather radius y"
+literal|"Feather radius y."
 block|}
 block|}
 decl_stmt|;
@@ -4353,7 +4353,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"merge"
 block|,
-literal|"Merge paths into a single vectors object"
+literal|"Merge paths into a single vectors object."
 block|}
 block|,
 block|{
@@ -4361,7 +4361,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"scale"
 block|,
-literal|"Scale the SVG to image dimensions"
+literal|"Scale the SVG to image dimensions."
 block|}
 block|}
 decl_stmt|;
@@ -4378,7 +4378,7 @@ literal|"gimp_path_import"
 block|,
 literal|"Import paths from an SVG file."
 block|,
-literal|"This procedure imports path from an SVG file. This is a temporary solution until the new vectors PDB API is in place. Don't rely on this function being available in future GIMP releases."
+literal|"This procedure imports paths from an SVG file. This is a temporary solution until the new vectors PDB API is in place. Don't rely on this function being available in future GIMP releases."
 block|,
 literal|"Sven Neumann"
 block|,
