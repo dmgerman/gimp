@@ -310,7 +310,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2922690a0108
+DECL|struct|__anon2c83a5db0108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2922690a0208
+DECL|struct|__anon2c83a5db0208
 typedef|typedef
 struct|struct
 block|{
@@ -468,7 +468,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2922690a0308
+DECL|struct|__anon2c83a5db0308
 typedef|typedef
 struct|struct
 block|{
@@ -487,7 +487,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2922690a0408
+DECL|struct|__anon2c83a5db0408
 typedef|typedef
 struct|struct
 block|{
@@ -5679,7 +5679,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/paths/rename_path.html"
+literal|"paths/dialogs/rename_path.html"
 argument_list|,
 name|_
 argument_list|(
@@ -9479,9 +9479,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|path_write_current_to_file (FILE * f,PATHP bzp)
 specifier|static
 name|void
+DECL|function|path_write_current_to_file (FILE * f,PATHP bzp)
 name|path_write_current_to_file
 parameter_list|(
 name|FILE
@@ -9618,9 +9618,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|file_ok_callback (GtkWidget * widget,gpointer client_data)
 specifier|static
 name|void
+DECL|function|file_ok_callback (GtkWidget * widget,gpointer client_data)
 name|file_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -10302,9 +10302,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|file_cancel_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|file_cancel_callback (GtkWidget * widget,gpointer data)
 name|file_cancel_callback
 parameter_list|(
 name|GtkWidget
@@ -10324,9 +10324,65 @@ block|}
 end_function
 
 begin_function
-DECL|function|make_file_dlg (gpointer data)
 specifier|static
 name|void
+DECL|function|file_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
+name|file_delete_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|file_cancel_callback
+argument_list|(
+name|widget
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|path_load_save_help_func (gpointer data)
+name|path_load_save_help_func
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+block|{
+if|if
+condition|(
+name|load_store
+condition|)
+name|gimp_help
+argument_list|(
+literal|"paths/dialogs/import_path.html"
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_help
+argument_list|(
+literal|"paths/dialogs/export_path.html"
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|make_file_dlg (gpointer data)
 name|make_file_dlg
 parameter_list|(
 name|gpointer
@@ -10343,7 +10399,7 @@ literal|"Load/Store Bezier Curves"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -10395,6 +10451,33 @@ operator|)
 name|file_ok_callback
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|file_dlg
+argument_list|)
+argument_list|,
+literal|"delete_event"
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|file_delete_callback
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+comment|/*  Connect the "F1" help key  */
+name|gimp_help_connect_help_accel
+argument_list|(
+name|file_dlg
+argument_list|,
+name|path_load_save_help_func
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -10512,7 +10595,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_dialog_import_path_callback (GtkWidget * widget,gpointer udata)
+DECL|function|paths_dialog_import_path_callback (GtkWidget * widget,gpointer data)
 name|paths_dialog_import_path_callback
 parameter_list|(
 name|GtkWidget
@@ -10520,7 +10603,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 comment|/* Read and add at current position */
@@ -10532,7 +10615,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_dialog_export_path_callback (GtkWidget * widget,gpointer udata)
+DECL|function|paths_dialog_export_path_callback (GtkWidget * widget,gpointer data)
 name|paths_dialog_export_path_callback
 parameter_list|(
 name|GtkWidget
@@ -10540,7 +10623,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 comment|/* Export the path to a file */

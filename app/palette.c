@@ -300,7 +300,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1fb7ed0103
+DECL|enum|__anon278401420103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -8641,7 +8641,7 @@ literal|"color_palette_edit"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/palette_editor/index.html"
+literal|"dialogs/palette_editor/palette_editor.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,

@@ -50,6 +50,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -1035,6 +1041,16 @@ expr_stmt|;
 name|old_show_tips
 operator|=
 name|show_tips
+expr_stmt|;
+comment|/*  Connect the "F1" help key  */
+name|gimp_help_connect_help_accel
+argument_list|(
+name|tips_dialog
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/tip_of_the_day.html"
+argument_list|)
 expr_stmt|;
 block|}
 if|if

@@ -333,9 +333,9 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Could not find the GIMP Help Browser procedure\n"
-literal|"Note that you still have to compile this plugin "
-literal|"manually"
+literal|"Could not find the GIMP Help Browser procedure.\n"
+literal|"It probably was not compiled because\n"
+literal|"you don't have GtkXmHTML installed."
 argument_list|)
 argument_list|)
 expr_stmt|;

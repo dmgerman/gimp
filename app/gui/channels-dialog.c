@@ -10351,7 +10351,7 @@ literal|"new_channel_options"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/channels/dialogs/new_channel.html"
+literal|"dialogs/channels/new_channel.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

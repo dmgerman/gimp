@@ -252,7 +252,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|dummyMenus
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|G_GNUC_UNUSED
 name|dummyMenus
@@ -380,7 +380,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"open/index.html"
+literal|"file/open/dialogs/file_open.html"
 block|,
 name|NULL
 block|}
@@ -458,7 +458,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"file/dialogs/preferences.html"
+literal|"file/dialogs/preferences/preferences.html"
 block|,
 name|NULL
 block|}
@@ -686,7 +686,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"file/dialogs/display_filters.html"
+literal|"file/dialogs/display_filters/display_filters.html"
 block|,
 name|NULL
 block|}
@@ -726,7 +726,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"xtns/module_browser.html"
+literal|"dialogs/module_browser.html"
 block|,
 name|NULL
 block|}
@@ -859,7 +859,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"file/dialogs/quit.html"
+literal|"file/quit.html"
 block|,
 name|NULL
 block|}
@@ -949,7 +949,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"open/index.html"
+literal|"file/open/dialogs/file_open.html"
 block|,
 name|NULL
 block|}
@@ -968,7 +968,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"save/index.html"
+literal|"file/save/dialogs/file_save.html"
 block|,
 name|NULL
 block|}
@@ -987,7 +987,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"save/index.html"
+literal|"file/save/dialogs/file_save.html"
 block|,
 name|NULL
 block|}
@@ -1025,7 +1025,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"file/dialogs/preferences.html"
+literal|"file/dialogs/preferences/preferences.html"
 block|,
 name|NULL
 block|}
@@ -1084,7 +1084,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"file/dialogs/quit.html"
+literal|"file/quit.html"
 block|,
 name|NULL
 block|}
@@ -2620,7 +2620,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"layers/dialogs/layers_and_channels.html"
+literal|"dialogs/layers_and_channels.html"
 block|,
 name|NULL
 block|}
@@ -2660,7 +2660,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"layers/stack/index.html#previous_layer"
+literal|"layers/stack/stack.html#previous_layer"
 block|,
 name|NULL
 block|}
@@ -2679,7 +2679,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"layers/stack/index.html#next_layer"
+literal|"layers/stack/stack.html#next_layer"
 block|,
 name|NULL
 block|}
@@ -2698,7 +2698,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"layers/stack/index.html#raise_layer"
+literal|"layers/stack/stack.html#raise_layer"
 block|,
 name|NULL
 block|}
@@ -2717,7 +2717,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"layers/stack/index.html#lower_layer"
+literal|"layers/stack/stack.html#lower_layer"
 block|,
 name|NULL
 block|}
@@ -2736,7 +2736,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"layers/stack/index.html#layer_to_top"
+literal|"layers/stack/stack.html#layer_to_top"
 block|,
 name|NULL
 block|}
@@ -2755,7 +2755,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"layers/stack/index.html#layer_to_bottom"
+literal|"layers/stack/stack.html#layer_to_bottom"
 block|,
 name|NULL
 block|}
@@ -2814,7 +2814,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"layers/dialogs/layers/merge_visible_layers.html"
+literal|"layers/dialogs/merge_visible_layers.html"
 block|,
 name|NULL
 block|}
@@ -2951,7 +2951,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"toolbox/index.html"
+literal|"toolbox/toolbox.html"
 block|,
 name|NULL
 block|}
@@ -2970,7 +2970,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"toolbox/index.html#default_colors"
+literal|"toolbox/toolbox.html#default_colors"
 block|,
 name|NULL
 block|}
@@ -2989,7 +2989,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"toolbox/index.html#swap_colors"
+literal|"toolbox/toolbox.html#swap_colors"
 block|,
 name|NULL
 block|}
@@ -3323,7 +3323,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/display_filters.html"
+literal|"dialogs/display_filters/display_filters.html"
 block|,
 name|NULL
 block|}
@@ -3387,7 +3387,7 @@ block|,
 literal|0
 block|}
 block|,
-name|NULL
+literal|"open_by_extension.html"
 block|,
 name|NULL
 block|}
@@ -3469,7 +3469,7 @@ block|,
 literal|0
 block|}
 block|,
-name|NULL
+literal|"save_by_extension.html"
 block|,
 name|NULL
 block|}
@@ -3551,7 +3551,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/layers/new_layer.html"
+literal|"dialogs/new_layer.html"
 block|,
 name|NULL
 block|}
@@ -3570,7 +3570,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"stack/index.html#previous_layer"
+literal|"stack/stack.html#previous_layer"
 block|,
 name|NULL
 block|}
@@ -3589,7 +3589,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"stack/index.html#next_layer"
+literal|"stack/stack.html#next_layer"
 block|,
 name|NULL
 block|}
@@ -3608,7 +3608,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"stack/index.html#raise_layer"
+literal|"stack/stack.html#raise_layer"
 block|,
 name|NULL
 block|}
@@ -3627,7 +3627,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"stack/index.html#lower_layer"
+literal|"stack/stack.html#lower_layer"
 block|,
 name|NULL
 block|}
@@ -3646,7 +3646,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"stack/index.html#later_to_top"
+literal|"stack/stack.html#later_to_top"
 block|,
 name|NULL
 block|}
@@ -3665,7 +3665,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"stack/index.html#layer_to_bottom"
+literal|"stack/stack.html#layer_to_bottom"
 block|,
 name|NULL
 block|}
@@ -3759,7 +3759,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/layers/scale_layer.html"
+literal|"dialogs/scale_layer.html"
 block|,
 name|NULL
 block|}
@@ -3778,7 +3778,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/layers/resize_layer.html"
+literal|"dialogs/resize_layer.html"
 block|,
 name|NULL
 block|}
@@ -3815,7 +3815,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/layers/merge_visible_layers.html"
+literal|"dialogs/merge_visible_layers.html"
 block|,
 name|NULL
 block|}
@@ -3890,7 +3890,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/layers/add_mask.html"
+literal|"dialogs/add_mask.html"
 block|,
 name|NULL
 block|}
@@ -3909,7 +3909,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/layers/apply_mask.html"
+literal|"dialogs/apply_mask.html"
 block|,
 name|NULL
 block|}
@@ -4030,7 +4030,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"/dialogs/channels/new_channel.html"
+literal|"dialogs/new_channel.html"
 block|,
 name|NULL
 block|}
@@ -4218,7 +4218,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"delete_layer.html"
+literal|"delete_channel.html"
 block|,
 name|NULL
 block|}
@@ -4433,7 +4433,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"import_path.html"
+literal|"dialogs/import_path.html"
 block|,
 name|NULL
 block|}
@@ -4452,7 +4452,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"export_path.html"
+literal|"dialogs/export_path.html"
 block|,
 name|NULL
 block|}

@@ -713,7 +713,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"dialogs/layers/dialogs/scale_layer.html"
+literal|"layers/dialogs/scale_layer.html"
 expr_stmt|;
 name|frame
 operator|=
@@ -781,7 +781,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"dialogs/layers/dialogs/resize_layer.html"
+literal|"layers/dialogs/resize_layer.html"
 expr_stmt|;
 break|break;
 case|case

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1097,6 +1103,18 @@ argument_list|,
 name|x
 argument_list|,
 name|y
+argument_list|)
+expr_stmt|;
+comment|/*  Connect the "F1" help key  */
+name|gimp_help_connect_help_accel
+argument_list|(
+name|ideas
+operator|->
+name|window
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/document_index.html"
 argument_list|)
 expr_stmt|;
 block|}

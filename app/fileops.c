@@ -847,6 +847,8 @@ name|help_page
 operator|=
 name|g_strconcat
 argument_list|(
+literal|"filters/"
+argument_list|,
 name|g_basename
 argument_list|(
 name|file_proc
@@ -956,6 +958,8 @@ name|help_page
 operator|=
 name|g_strconcat
 argument_list|(
+literal|"filters/"
+argument_list|,
 name|g_basename
 argument_list|(
 name|file_proc
@@ -1233,7 +1237,7 @@ name|fileload
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"open/index.html"
+literal|"open/dialogs/file_open.html"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2258,7 +2262,7 @@ name|filesave
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"save/index.html"
+literal|"save/dialogs/file_save.html"
 argument_list|)
 expr_stmt|;
 block|}

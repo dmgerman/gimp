@@ -2857,7 +2857,7 @@ name|window
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"toolbox/index.html"
+literal|"toolbox/toolbox.html"
 argument_list|)
 expr_stmt|;
 name|wbox
@@ -5128,7 +5128,7 @@ name|shell
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"image/index.html"
+literal|"image/image_window.html"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
