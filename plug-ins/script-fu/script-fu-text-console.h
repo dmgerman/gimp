@@ -6,23 +6,39 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__BATCH_H__
+name|__SCRIPT_FU_TEXT_CONSOLE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__BATCH_H__
+DECL|macro|__SCRIPT_FU_TEXT_CONSOLE_H__
 define|#
 directive|define
-name|__BATCH_H__
+name|__SCRIPT_FU_TEXT_CONSOLE_H__
 end_define
 
 begin_function_decl
 name|void
-name|batch_init
+name|script_fu_text_console_run
 parameter_list|(
-name|Gimp
+name|gchar
 modifier|*
-name|gimp
+name|name
+parameter_list|,
+name|gint
+name|nparams
+parameter_list|,
+name|GimpParam
+modifier|*
+name|params
+parameter_list|,
+name|gint
+modifier|*
+name|nreturn_vals
+parameter_list|,
+name|GimpParam
+modifier|*
+modifier|*
+name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -33,7 +49,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __BATCH_H__ */
+comment|/*  __SCRIPT_FU_CONSOLE__  */
 end_comment
 
 end_unit

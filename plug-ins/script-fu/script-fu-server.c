@@ -135,7 +135,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"siod.h"
+file|"siod-wrapper.h"
 end_include
 
 begin_include
@@ -337,7 +337,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c84b430108
+DECL|struct|__anon2ae3c5bc0108
 block|{
 DECL|member|command
 name|gchar
@@ -361,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c84b430208
+DECL|struct|__anon2ae3c5bc0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -495,19 +495,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  *  Global variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|server_mode
-name|gint
-name|server_mode
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  *  Local variables  */
 end_comment
 
@@ -589,6 +576,26 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|script_fu_done
+specifier|static
+name|gboolean
+name|script_fu_done
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|server_mode
+specifier|static
+name|gboolean
+name|server_mode
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|sint
 specifier|static
 name|ServerInterface
@@ -613,31 +620,38 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|gboolean
-name|script_fu_done
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gchar
-name|siod_err_msg
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|LISP
-name|repl_return_val
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  *  Server interface functions  */
 end_comment
+
+begin_function
+name|void
+DECL|function|script_fu_server_quit (void)
+name|script_fu_server_quit
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|script_fu_done
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|script_fu_server_get_mode (void)
+name|script_fu_server_get_mode
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|server_mode
+return|;
+block|}
+end_function
 
 begin_function
 name|void
@@ -1244,6 +1258,7 @@ index|[
 name|RESPONSE_HEADER
 index|]
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|response
@@ -1282,17 +1297,11 @@ expr_stmt|;
 comment|/*  run the command  */
 if|if
 condition|(
-name|repl_c_string
+name|siod_interpret_string
 argument_list|(
 name|cmd
 operator|->
 name|command
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|1
 argument_list|)
 operator|!=
 literal|0
@@ -1302,22 +1311,23 @@ name|error
 operator|=
 name|TRUE
 expr_stmt|;
+name|response
+operator|=
+name|siod_get_error_msg
+argument_list|()
+expr_stmt|;
 name|response_len
 operator|=
 name|strlen
 argument_list|(
-name|siod_err_msg
-argument_list|)
-expr_stmt|;
 name|response
-operator|=
-name|siod_err_msg
+argument_list|)
 expr_stmt|;
 name|server_log
 argument_list|(
 literal|"%s\n"
 argument_list|,
-name|siod_err_msg
+name|response
 argument_list|)
 expr_stmt|;
 block|}
@@ -1327,26 +1337,10 @@ name|error
 operator|=
 name|FALSE
 expr_stmt|;
-if|if
-condition|(
-name|TYPEP
-argument_list|(
-name|repl_return_val
-argument_list|,
-name|tc_string
-argument_list|)
-condition|)
 name|response
 operator|=
-name|get_c_string
-argument_list|(
-name|repl_return_val
-argument_list|)
-expr_stmt|;
-else|else
-name|response
-operator|=
-literal|"Success"
+name|siod_get_success_msg
+argument_list|()
 expr_stmt|;
 name|response_len
 operator|=
