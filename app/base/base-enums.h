@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28b6550e0103
+DECL|enum|__anon2c7f0f540103
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -105,7 +105,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6550e0203
+DECL|enum|__anon2c7f0f540203
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -169,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6550e0303
+DECL|enum|__anon2c7f0f540303
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -181,7 +181,11 @@ block|,
 comment|/*< desc="Linear">*/
 DECL|enumerator|GIMP_INTERPOLATION_CUBIC
 name|GIMP_INTERPOLATION_CUBIC
-comment|/*< desc="Cubic (Best)">*/
+block|,
+comment|/*< desc="Cubic">*/
+DECL|enumerator|GIMP_INTERPOLATION_LANCZOS
+name|GIMP_INTERPOLATION_LANCZOS
+comment|/*< desc="Lanczos (Best)">*/
 DECL|typedef|GimpInterpolationType
 block|}
 name|GimpInterpolationType
@@ -209,7 +213,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6550e0403
+DECL|enum|__anon2c7f0f540403
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -341,7 +345,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6550e0503
+DECL|enum|__anon2c7f0f540503
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -368,7 +372,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28b6550e0603
+DECL|enum|__anon2c7f0f540603
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -391,7 +395,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28b6550e0703
+DECL|enum|__anon2c7f0f540703
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES

@@ -379,6 +379,14 @@ literal|"cubic"
 block|}
 block|,
 block|{
+name|GIMP_INTERPOLATION_LANCZOS
+block|,
+literal|"GIMP_INTERPOLATION_LANCZOS"
+block|,
+literal|"lanczos"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -421,7 +429,18 @@ name|GIMP_INTERPOLATION_CUBIC
 block|,
 name|N_
 argument_list|(
-literal|"Cubic (Best)"
+literal|"Cubic"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_INTERPOLATION_LANCZOS
+block|,
+name|N_
+argument_list|(
+literal|"Lanczos (Best)"
 argument_list|)
 block|,
 name|NULL

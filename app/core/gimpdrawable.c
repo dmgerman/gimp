@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/scale-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -161,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c427b10103
+DECL|enum|__anon2c3b73080103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
