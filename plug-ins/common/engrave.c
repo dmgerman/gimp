@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8401c60108
+DECL|struct|__anon29c23f9e0108
 block|{
 DECL|member|height
 name|gint
@@ -342,10 +342,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_engrave"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1140,7 +1137,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8401c60208
+DECL|struct|__anon29c23f9e0208
 block|{
 DECL|member|x
 DECL|member|y

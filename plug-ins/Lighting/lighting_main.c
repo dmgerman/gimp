@@ -1029,10 +1029,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_lighting"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Light Effects"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

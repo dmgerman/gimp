@@ -195,7 +195,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782d9ab0108
+DECL|struct|__anon2c2cdeb90108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -328,10 +328,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Enhance"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

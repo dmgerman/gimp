@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e278320103
+DECL|enum|__anon28b1d3940103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e278320203
+DECL|enum|__anon28b1d3940203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -2050,10 +2050,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_jigsaw"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Render/Pattern"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

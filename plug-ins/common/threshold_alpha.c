@@ -171,7 +171,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac604420108
+DECL|struct|__anon298d8dc90108
 block|{
 DECL|member|threshold
 name|gint
@@ -287,10 +287,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Layer/Transparency/Modify"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

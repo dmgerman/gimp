@@ -60902,7 +60902,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f2a9e0108
+DECL|struct|__anon2a2068b40108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -61199,10 +61199,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_video"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -70,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0e76fd0103
+DECL|enum|__anon295a58660103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -617,7 +617,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0e76fd0208
+DECL|struct|__anon295a58660208
 block|{
 DECL|member|x
 DECL|member|y
@@ -755,10 +755,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_animationplay"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Animation"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

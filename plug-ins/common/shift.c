@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2924d6520108
+DECL|struct|__anon291223620108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -345,10 +345,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_shift"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

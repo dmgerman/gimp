@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289fe2660103
+DECL|enum|__anon28a74bd50103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -170,7 +170,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289fe2660208
+DECL|struct|__anon28a74bd50208
 block|{
 DECL|member|title
 specifier|const
@@ -370,10 +370,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_unit_editor"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Toolbox>/Xtns/Extensions"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register

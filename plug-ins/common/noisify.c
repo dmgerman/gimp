@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf0168e0108
+DECL|struct|__anon291ffda40108
 block|{
 DECL|member|independent
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf0168e0208
+DECL|struct|__anon291ffda40208
 block|{
 DECL|member|channels
 name|gint
@@ -428,10 +428,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_noisify"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Noise"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -369,7 +369,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db7d510108
+DECL|struct|__anon2a3455c30108
 block|{
 DECL|member|name
 specifier|const
@@ -629,7 +629,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db7d510208
+DECL|struct|__anon2a3455c30208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db7d510308
+DECL|struct|__anon2a3455c30308
 block|{
 DECL|member|input_spi
 name|gint
@@ -732,7 +732,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db7d510408
+DECL|struct|__anon2a3455c30408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -839,7 +839,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db7d510508
+DECL|struct|__anon2a3455c30508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1010,7 +1010,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db7d510608
+DECL|struct|__anon2a3455c30608
 block|{
 DECL|member|name
 specifier|const
@@ -1871,10 +1871,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_newsprint"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -6616,7 +6613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db7d510708
+DECL|struct|__anon2a3455c30708
 block|{
 DECL|member|index
 name|gint

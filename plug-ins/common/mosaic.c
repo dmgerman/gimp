@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0407710108
+DECL|struct|__anon273be6560108
 block|{
 DECL|member|x
 DECL|member|y
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0407710208
+DECL|struct|__anon273be6560208
 block|{
 DECL|member|npts
 name|gint
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0407710308
+DECL|struct|__anon273be6560308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0407710408
+DECL|struct|__anon273be6560408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1443,10 +1443,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_mosaic"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

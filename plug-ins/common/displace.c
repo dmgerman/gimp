@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278444c80108
+DECL|struct|__anon2a0c40300108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -443,10 +443,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_displace"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

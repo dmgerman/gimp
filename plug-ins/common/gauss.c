@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2a4bc00103
+DECL|enum|__anon2bb108380103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a4bc00208
+DECL|struct|__anon2bb108380208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -715,10 +715,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_gauss"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Blur"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -702,7 +702,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd29040108
+DECL|struct|__anon2bd2836c0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -756,7 +756,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd29040208
+DECL|struct|__anon2bd2836c0208
 block|{
 DECL|member|y
 name|gint32
@@ -2391,18 +2391,22 @@ argument_list|,
 name|PLUG_IN_DESCRIPTION
 argument_list|,
 literal|"This plug-in does bend the active layer "
-literal|"If there is a current selection it is copied to floating selection "
-literal|"and the curve_bend distortion is done on the floating selection. "
-literal|"If work_on_copy parameter is TRUE, the curve_bend distortion is done "
-literal|"on a copy of the active layer (or floating selection). "
-literal|"The upper and lower edges are bent in shape of 2 spline curves. "
-literal|"both (upper and lower) curves are determined by upto 17 points "
-literal|"or by 256 Y-Values if curve_type == 1 (freehand mode) "
-literal|"If rotation is not 0, the layer is rotated before "
-literal|"and rotated back after the bend operation. This enables "
-literal|"bending in other directions than vertical."
-literal|"bending usually changes the size of the handled layer."
-literal|"this plugin sets the offsets of the handled layer to keep its center at the same position"
+literal|"If there is a current selection it is copied to "
+literal|"floating selection and the curve_bend distortion "
+literal|"is done on the floating selection. If "
+literal|"work_on_copy parameter is TRUE, the curve_bend "
+literal|"distortion is done on a copy of the active layer "
+literal|"(or floating selection). The upper and lower edges "
+literal|"are bent in shape of 2 spline curves. both (upper "
+literal|"and lower) curves are determined by upto 17 points "
+literal|"or by 256 Y-Values if curve_type == 1 (freehand "
+literal|"mode) If rotation is not 0, the layer is rotated "
+literal|"before and rotated back after the bend operation. "
+literal|"This enables bending in other directions than "
+literal|"vertical. bending usually changes the size of "
+literal|"the handled layer. this plugin sets the offsets "
+literal|"of the handled layer to keep its center at the "
+literal|"same position"
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,
@@ -2438,10 +2442,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* the installation of the Iterator procedure for the bend plugin */
@@ -2449,7 +2450,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_ITER_NAME
 argument_list|,
-literal|"This procedure calculates the modified values for one iterationstep for the call of plug_in_curve_bend"
+literal|"This procedure calculates the modified values "
+literal|"for one iterationstep for the call of "
+literal|"plug_in_curve_bend"
 argument_list|,
 literal|""
 argument_list|,

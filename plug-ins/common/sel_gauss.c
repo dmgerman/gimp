@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bd7ad40108
+DECL|struct|__anon2bba5c3a0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -290,10 +290,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_sel_gauss"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Blur"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

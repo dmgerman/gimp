@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288471ea0108
+DECL|struct|__anon2b9b35d60108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -561,10 +561,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_color_adjust"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors/Map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -609,10 +606,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_color_map"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors/Map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

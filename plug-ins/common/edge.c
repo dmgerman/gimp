@@ -99,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c446f30103
+DECL|enum|__anon27a24e6d0103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c446f30208
+DECL|struct|__anon27a24e6d0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -491,10 +491,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_edge"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Edge-Detect"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

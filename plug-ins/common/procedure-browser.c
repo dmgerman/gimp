@@ -189,10 +189,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_db_browser"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Toolbox>/Xtns/Extensions"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

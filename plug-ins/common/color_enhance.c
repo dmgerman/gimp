@@ -202,10 +202,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_color_enhance"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Layer/Colors/Auto"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -980,7 +977,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28cc38690108
+DECL|struct|__anon2c4b093c0108
 typedef|typedef
 struct|struct
 block|{

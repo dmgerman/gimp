@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac173a0103
+DECL|enum|__anon2b914eaf0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bac173a0208
+DECL|struct|__anon2b914eaf0208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -408,10 +408,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_waves"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

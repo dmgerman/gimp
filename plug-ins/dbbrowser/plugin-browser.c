@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf977350103
+DECL|enum|__anon2c0b7e860103
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf977350203
+DECL|enum|__anon2c0b7e860203
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf977350308
+DECL|struct|__anon2c0b7e860308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -191,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf977350408
+DECL|struct|__anon2c0b7e860408
 block|{
 DECL|member|menu
 name|gchar
@@ -476,10 +476,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_plug_in_details"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Toolbox>/Xtns/Extensions"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register

@@ -40873,7 +40873,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcb3b090103
+DECL|enum|__anon2b9936720103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40893,7 +40893,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcb3b090208
+DECL|struct|__anon2b9936720208
 block|{
 DECL|member|direction
 name|gint
@@ -41135,10 +41135,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_apply_canvas"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Artistic"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

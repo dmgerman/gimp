@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a10d02a0108
+DECL|struct|__anon28dba1f90108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a10d02a0208
+DECL|struct|__anon28dba1f90208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -699,10 +699,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_diffraction"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Render/Pattern"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1145,7 +1142,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a10d02a0308
+DECL|struct|__anon28dba1f90308
 typedef|typedef
 struct|struct
 block|{

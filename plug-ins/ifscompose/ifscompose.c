@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8663600103
+DECL|enum|__anon27a975ad0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8663600203
+DECL|enum|__anon27a975ad0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8663600308
+DECL|struct|__anon27a975ad0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -216,7 +216,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b866360040a
+DECL|union|__anon27a975ad040a
 block|{
 DECL|member|d
 name|gdouble
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8663600508
+DECL|struct|__anon27a975ad0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8663600608
+DECL|struct|__anon27a975ad0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8663600708
+DECL|struct|__anon27a975ad0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -342,7 +342,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8663600808
+DECL|struct|__anon27a975ad0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -409,7 +409,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8663600908
+DECL|struct|__anon27a975ad0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -619,7 +619,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8663600a08
+DECL|struct|__anon27a975ad0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1607,10 +1607,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_ifs_compose"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Render/Nature"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

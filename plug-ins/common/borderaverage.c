@@ -332,10 +332,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_borderaverage"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -698,7 +695,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27a786ba0108
+DECL|struct|__anon2a165a910108
 typedef|typedef
 struct|struct
 block|{

@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7919060108
+DECL|struct|__anon28b85a280108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7919060208
+DECL|struct|__anon28b85a280208
 block|{
 DECL|member|run
 name|gboolean
@@ -496,10 +496,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_unsharp_mask"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Enhance"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

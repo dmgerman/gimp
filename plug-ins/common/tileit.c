@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793aa1a0108
+DECL|struct|__anon2c0a5fdc0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -496,7 +496,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2793aa1a0203
+DECL|enum|__anon2c0a5fdc0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -515,7 +515,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793aa1a0308
+DECL|struct|__anon2c0a5fdc0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -585,7 +585,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793aa1a0408
+DECL|struct|__anon2c0a5fdc0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -831,10 +831,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_small_tiles"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

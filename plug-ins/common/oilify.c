@@ -97,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a55210108
+DECL|struct|__anon27d667910108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -365,10 +365,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_oilify"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Artistic"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290d8a9b0103
+DECL|enum|__anon2ba632720103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -206,7 +206,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290d8a9b0208
+DECL|struct|__anon2ba632720208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290d8a9b0308
+DECL|struct|__anon2ba632720308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2311,10 +2311,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Render/Pattern"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

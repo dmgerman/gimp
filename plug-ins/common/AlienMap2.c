@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aae0e8b0103
+DECL|enum|__anon29fdb89c0103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aae0e8b0208
+DECL|struct|__anon29fdb89c0208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -886,10 +886,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_alienmap2"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors/Map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

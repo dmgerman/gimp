@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5d25380108
+DECL|struct|__anon2b6051390108
 block|{
 DECL|member|receipt
 name|gchar
@@ -545,7 +545,8 @@ literal|"You need to have uuencode and mail installed"
 argument_list|,
 literal|"Adrian Likins, Reagan Blundell"
 argument_list|,
-literal|"Adrian Likins, Reagan Blundell, Daniel Risacher, Spencer Kimball and Peter Mattis"
+literal|"Adrian Likins, Reagan Blundell, Daniel Risacher, "
+literal|"Spencer Kimball and Peter Mattis"
 argument_list|,
 literal|"1995-1997"
 argument_list|,
@@ -574,10 +575,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_mail_image"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/File/Send"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

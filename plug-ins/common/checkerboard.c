@@ -297,10 +297,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_checkerboard"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Render/Pattern"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -610,7 +607,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29747f890108
+DECL|struct|__anon28b288c30108
 typedef|typedef
 struct|struct
 block|{

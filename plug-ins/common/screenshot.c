@@ -315,7 +315,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd27e910108
+DECL|struct|__anon279819d60108
 block|{
 DECL|member|root
 name|gboolean
@@ -647,13 +647,10 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Toolbox>/File/Acquire"
 argument_list|)
-argument_list|)
 expr_stmt|;
-comment|/* gimp_plugin_menu_register (PLUG_IN_NAME, N_("<Image>/File/Acquire")); */
+comment|/* gimp_plugin_menu_register (PLUG_IN_NAME, "<Image>/File/Acquire"); */
 name|gimp_plugin_icon_register
 argument_list|(
 name|PLUG_IN_NAME

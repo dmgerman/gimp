@@ -836,7 +836,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ebe5b20108
+DECL|struct|__anon27c59ea10108
 block|{
 DECL|member|type
 name|gchar
@@ -1457,7 +1457,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ebe5b20208
+DECL|struct|__anon27c59ea10208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1479,7 +1479,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ebe5b20308
+DECL|struct|__anon27c59ea10308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -1701,20 +1701,14 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_decompose"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_decompose"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Image/Mode"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

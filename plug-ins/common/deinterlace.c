@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d97a5c0103
+DECL|enum|__anon29bf092d0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -49,7 +49,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d97a5c0208
+DECL|struct|__anon29bf092d0208
 block|{
 DECL|member|evenness
 name|gint
@@ -271,10 +271,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_deinterlace"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Enhance"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

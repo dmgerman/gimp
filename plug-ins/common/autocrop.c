@@ -256,10 +256,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_autocrop"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Image/Crop"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -301,10 +298,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_autocrop_layer"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Layer/Crop"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a5beab0108
+DECL|struct|__anon2c09e9a30108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -658,10 +658,7 @@ index|[
 literal|0
 index|]
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Noise"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
@@ -671,10 +668,7 @@ index|[
 literal|1
 index|]
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Noise"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
@@ -684,10 +678,7 @@ index|[
 literal|2
 index|]
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Noise"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

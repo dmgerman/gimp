@@ -158,7 +158,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ecc42e0108
+DECL|struct|__anon2956b4940108
 block|{
 DECL|member|division
 name|gint32
@@ -325,10 +325,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -648,7 +645,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29ecc42e0208
+DECL|struct|__anon2956b4940208
 typedef|typedef
 struct|struct
 block|{

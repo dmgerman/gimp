@@ -238,10 +238,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_vinvert"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

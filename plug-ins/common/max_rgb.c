@@ -161,7 +161,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bab50f00103
+DECL|enum|__anon2c5480700103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -179,7 +179,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab50f00208
+DECL|struct|__anon2c5480700208
 block|{
 DECL|member|max_p
 name|gint
@@ -304,10 +304,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -554,7 +551,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bab50f00308
+DECL|struct|__anon2c5480700308
 typedef|typedef
 struct|struct
 block|{

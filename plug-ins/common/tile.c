@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0f52b70108
+DECL|struct|__anon28b0345c0108
 block|{
 DECL|member|new_width
 name|gint
@@ -342,10 +342,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_tile"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

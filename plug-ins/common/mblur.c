@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b652420103
+DECL|enum|__anon2bf612a10103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b652420208
+DECL|struct|__anon2bf612a10208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -551,10 +551,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Blur"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

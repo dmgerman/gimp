@@ -569,10 +569,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_maze"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Render/Pattern"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -245,7 +245,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1cf8c80108
+DECL|struct|__anon27ca5f0f0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -567,10 +567,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_grid"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Render/Pattern"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

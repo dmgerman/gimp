@@ -201,7 +201,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon29f71cf00103
+DECL|enum|__anon2c22f26d0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -221,7 +221,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f71cf00208
+DECL|struct|__anon2c22f26d0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -411,10 +411,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -427,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f71cf00308
+DECL|struct|__anon2c22f26d0308
 block|{
 DECL|member|x1
 name|gint
@@ -470,7 +467,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f71cf00408
+DECL|struct|__anon2c22f26d0408
 block|{
 DECL|member|width
 name|gint
@@ -1025,7 +1022,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f71cf00508
+DECL|struct|__anon2c22f26d0508
 block|{
 DECL|member|r
 name|guchar
@@ -2909,7 +2906,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f71cf00608
+DECL|struct|__anon2c22f26d0608
 block|{
 DECL|member|preview
 name|GtkWidget

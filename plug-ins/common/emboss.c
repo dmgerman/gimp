@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a95a4f30103
+DECL|enum|__anon2bc160b10103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -77,7 +77,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a95a4f30208
+DECL|struct|__anon2bc160b10208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -447,10 +447,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_emboss"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

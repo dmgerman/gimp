@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ed52000103
+DECL|enum|__anon29c8c9750103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ed52000203
+DECL|enum|__anon29c8c9750203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ed52000303
+DECL|enum|__anon29c8c9750303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -641,10 +641,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_wind"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -201,10 +201,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_c_astretch"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Layer/Colors/Auto"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -803,7 +800,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29c1486c0108
+DECL|struct|__anon295808420108
 typedef|typedef
 struct|struct
 block|{

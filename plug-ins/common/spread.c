@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa9e0ac0108
+DECL|struct|__anon2b8619710108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -297,10 +297,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_spread"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Noise"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -665,7 +662,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa9e0ac0208
+DECL|struct|__anon2b8619710208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher

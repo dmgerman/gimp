@@ -104,7 +104,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon28b9f56e0108
+DECL|struct|__anon2afc15570108
 typedef|typedef
 struct|struct
 block|{
@@ -119,7 +119,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b9f56e0208
+DECL|struct|__anon2afc15570208
 typedef|typedef
 struct|struct
 block|{
@@ -153,7 +153,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28b9f56e0303
+DECL|enum|__anon2afc15570303
 typedef|typedef
 enum|enum
 block|{
@@ -175,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon28b9f56e0403
+DECL|enum|__anon2afc15570403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -207,7 +207,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28b9f56e0503
+DECL|enum|__anon2afc15570503
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -226,7 +226,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28b9f56e0603
+DECL|enum|__anon2afc15570603
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -254,7 +254,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28b9f56e0703
+DECL|enum|__anon2afc15570703
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -272,7 +272,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon28b9f56e0808
+DECL|struct|__anon2afc15570808
 typedef|typedef
 struct|struct
 block|{
@@ -318,7 +318,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b9f56e0908
+DECL|struct|__anon2afc15570908
 typedef|typedef
 struct|struct
 block|{
@@ -1272,7 +1272,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28b9f56e0a08
+DECL|struct|__anon2afc15570a08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1564,10 +1564,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_filter_pack"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

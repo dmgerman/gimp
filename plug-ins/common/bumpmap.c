@@ -130,7 +130,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c768d230103
+DECL|enum|__anon27ea1d980103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c768d230203
+DECL|enum|__anon27ea1d980203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -164,7 +164,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c768d230308
+DECL|struct|__anon27ea1d980308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c768d230408
+DECL|struct|__anon27ea1d980408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c768d230508
+DECL|struct|__anon27ea1d980508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -1029,10 +1029,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_bump_map"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure

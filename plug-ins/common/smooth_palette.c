@@ -287,10 +287,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_smooth_palette"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -299,7 +296,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2784ee6a0108
+DECL|struct|__anon27e7cc210108
 block|{
 DECL|member|width
 name|gint

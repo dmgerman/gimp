@@ -505,7 +505,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296240490108
+DECL|struct|__anon28b8af560108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -999,7 +999,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296240490208
+DECL|struct|__anon28b8af560208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1030,7 +1030,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296240490308
+DECL|struct|__anon28b8af560308
 block|{
 DECL|member|width
 DECL|member|height
@@ -1393,20 +1393,14 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_compose"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_compose"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Image/Mode"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
