@@ -119,14 +119,6 @@ name|GIMP_DEVICE_MANAGER_DATA_KEY
 value|"gimp-device-manager"
 end_define
 
-begin_define
-DECL|macro|GIMP_DEVICE_MANAGER_DATA_KEY
-define|#
-directive|define
-name|GIMP_DEVICE_MANAGER_DATA_KEY
-value|"gimp-device-manager"
-end_define
-
 begin_typedef
 DECL|typedef|GimpDeviceManager
 typedef|typedef

@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09a4120103
+DECL|enum|__anon2aad3fd00103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -1610,6 +1610,14 @@ case|:
 name|axis_type
 operator|=
 literal|"ytilt"
+expr_stmt|;
+break|break;
+case|case
+name|GDK_AXIS_WHEEL
+case|:
+name|axis_type
+operator|=
+literal|"wheel"
 expr_stmt|;
 break|break;
 block|}
