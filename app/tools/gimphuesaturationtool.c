@@ -1506,20 +1506,6 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|HueSaturation
-modifier|*
-name|color_bal
-decl_stmt|;
-name|color_bal
-operator|=
-operator|(
-name|HueSaturation
-operator|*
-operator|)
-name|tool
-operator|->
-name|private
-expr_stmt|;
 switch|switch
 condition|(
 name|action
@@ -1540,32 +1526,6 @@ if|if
 condition|(
 name|hue_saturation_dialog
 condition|)
-block|{
-name|active_tool
-operator|->
-name|preserve
-operator|=
-name|TRUE
-expr_stmt|;
-name|image_map_abort
-argument_list|(
-name|hue_saturation_dialog
-operator|->
-name|image_map
-argument_list|)
-expr_stmt|;
-name|active_tool
-operator|->
-name|preserve
-operator|=
-name|FALSE
-expr_stmt|;
-name|hue_saturation_dialog
-operator|->
-name|image_map
-operator|=
-name|NULL
-expr_stmt|;
 name|hue_saturation_cancel_callback
 argument_list|(
 name|NULL
@@ -1576,7 +1536,6 @@ operator|)
 name|hue_saturation_dialog
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 default|default:
 break|break;
@@ -1998,15 +1957,15 @@ block|}
 end_function
 
 begin_comment
-comment|/****************************/
+comment|/***************************/
 end_comment
 
 begin_comment
-comment|/*  Select by Color dialog  */
+comment|/*  Hue-Saturation dialog  */
 end_comment
 
 begin_comment
-comment|/****************************/
+comment|/***************************/
 end_comment
 
 begin_function
@@ -2110,9 +2069,7 @@ decl_stmt|;
 name|char
 modifier|*
 name|hue_partition_names
-index|[
-literal|7
-index|]
+index|[]
 init|=
 block|{
 name|N_
@@ -2153,9 +2110,7 @@ block|}
 decl_stmt|;
 name|ActionCallback
 name|hue_partition_callbacks
-index|[
-literal|7
-index|]
+index|[]
 init|=
 block|{
 name|hue_saturation_master_callback
@@ -4434,16 +4389,16 @@ name|preserve
 operator|=
 name|FALSE
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
-expr_stmt|;
-block|}
 name|hsd
 operator|->
 name|image_map
 operator|=
 name|NULL
 expr_stmt|;
+name|gdisplays_flush
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -1409,9 +1409,7 @@ specifier|static
 name|char
 modifier|*
 name|histogram_info_names
-index|[
-literal|7
-index|]
+index|[]
 init|=
 block|{
 name|N_
