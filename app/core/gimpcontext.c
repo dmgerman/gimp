@@ -675,7 +675,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9ec09f0103
+DECL|enum|__anon2ad2e8530103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -747,7 +747,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9ec09f0203
+DECL|enum|__anon2ad2e8530203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -1854,7 +1854,7 @@ name|gtk_object_add_arg_type
 argument_list|(
 name|gimp_context_arg_names
 index|[
-name|BRUSH_CHANGED
+name|GRADIENT_CHANGED
 index|]
 argument_list|,
 name|GTK_TYPE_POINTER

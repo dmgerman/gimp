@@ -228,7 +228,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b514c460103
+DECL|enum|__anon29ae826a0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b514c460203
+DECL|enum|__anon29ae826a0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1127,7 +1127,7 @@ init|=
 block|{
 literal|"gimp_xcf_load"
 block|,
-literal|"<Load>/XCF"
+literal|"<Load>/XCF (GIMP)"
 block|,
 name|NULL
 block|,
@@ -1242,7 +1242,7 @@ init|=
 block|{
 literal|"gimp_xcf_save"
 block|,
-literal|"<Save>/XCF"
+literal|"<Save>/XCF (GIMP)"
 block|,
 name|NULL
 block|,
