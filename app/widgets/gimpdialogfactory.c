@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278cdc2c0103
+DECL|enum|__anon294684b50103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278cdc2c0203
+DECL|enum|__anon294684b50203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1712,7 +1712,7 @@ name|GtkWidget
 modifier|*
 name|toplevel
 decl_stmt|;
-name|gtk_notebook_set_page
+name|gtk_notebook_set_current_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -4707,7 +4707,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|cursor
 argument_list|)

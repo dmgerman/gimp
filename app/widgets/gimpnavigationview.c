@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43f07d0103
+DECL|enum|__anon28eec7b20103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -1069,7 +1069,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|cursor
 argument_list|)

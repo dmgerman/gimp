@@ -32,7 +32,7 @@ file|"ifscompose.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b1f6ee00103
+DECL|enum|__anon28dc14c10103
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -118,7 +118,7 @@ end_enum
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1f6ee00208
+DECL|struct|__anon28dc14c10208
 block|{
 DECL|member|name
 name|gchar
@@ -1651,11 +1651,7 @@ argument_list|(
 name|NULL
 argument_list|)
 decl_stmt|;
-name|char
-modifier|*
-name|res_str
-decl_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1666,7 +1662,7 @@ operator|->
 name|iterations
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1677,7 +1673,7 @@ operator|->
 name|max_memory
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1688,7 +1684,7 @@ operator|->
 name|subdivide
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1699,7 +1695,7 @@ operator|->
 name|radius
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1710,7 +1706,7 @@ operator|->
 name|aspect_ratio
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1721,7 +1717,7 @@ operator|->
 name|center_x
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1755,7 +1751,7 @@ argument_list|,
 literal|"element {\n"
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1771,7 +1767,7 @@ operator|.
 name|x
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1787,7 +1783,7 @@ operator|.
 name|y
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1803,7 +1799,7 @@ operator|.
 name|theta
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1819,7 +1815,7 @@ operator|.
 name|scale
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1835,7 +1831,7 @@ operator|.
 name|asym
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1851,7 +1847,7 @@ operator|.
 name|shear
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1867,7 +1863,7 @@ operator|.
 name|flip
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1907,7 +1903,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1947,7 +1943,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -1987,7 +1983,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -2027,7 +2023,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -2067,7 +2063,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -2083,7 +2079,7 @@ operator|.
 name|hue_scale
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -2099,7 +2095,7 @@ operator|.
 name|value_scale
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -2115,7 +2111,7 @@ operator|.
 name|simple_color
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|result
 argument_list|,
@@ -2139,21 +2135,13 @@ literal|"}\n"
 argument_list|)
 expr_stmt|;
 block|}
-name|res_str
-operator|=
-name|result
-operator|->
-name|str
-expr_stmt|;
+return|return
 name|g_string_free
 argument_list|(
 name|result
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-return|return
-name|res_str
 return|;
 block|}
 end_function

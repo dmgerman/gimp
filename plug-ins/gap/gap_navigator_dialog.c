@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4041f00103
+DECL|enum|__anon2af2d1690103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4041f00203
+DECL|enum|__anon2af2d1690203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -9863,7 +9863,7 @@ operator|*
 name|pixmap
 condition|)
 block|{
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 operator|*
 name|pixmap
@@ -12112,7 +12112,7 @@ argument_list|(
 name|list_item
 argument_list|)
 expr_stmt|;
-name|gtk_widget_ref
+name|g_object_ref
 argument_list|(
 name|frame_widget
 operator|->
@@ -12185,7 +12185,7 @@ operator|->
 name|frame_pixmap
 condition|)
 block|{
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|fw
 operator|->
@@ -12221,7 +12221,7 @@ name|fw
 argument_list|)
 expr_stmt|;
 comment|/*  Release the widget  */
-name|gtk_widget_unref
+name|g_object_unref
 argument_list|(
 name|fw
 operator|->

@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcebd0d0108
+DECL|struct|__anon2a2d18340108
 block|{
 DECL|member|label
 name|gchar
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcebd0d0208
+DECL|struct|__anon2a2d18340208
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -3005,6 +3005,7 @@ name|gchar
 modifier|*
 name|label
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|query_text

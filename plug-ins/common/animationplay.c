@@ -180,7 +180,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b13b36f0103
+DECL|enum|__anon27db7e3c0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -1180,7 +1180,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|shape_mask
 argument_list|)

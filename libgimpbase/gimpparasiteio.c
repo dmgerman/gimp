@@ -662,7 +662,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|g_string_sprintf
+name|g_string_printf
 argument_list|(
 name|s
 argument_list|,
@@ -718,7 +718,7 @@ name|i
 operator|++
 control|)
 block|{
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|s
 argument_list|,
@@ -734,7 +734,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|g_string_sprintfa
+name|g_string_printfa
 argument_list|(
 name|s
 argument_list|,

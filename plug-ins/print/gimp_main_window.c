@@ -5093,9 +5093,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)
@@ -6580,7 +6580,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_plist_build_combo (GtkWidget * combo,gint num_items,gchar ** items,gchar * cur_item,GtkSignalFunc callback,gint * callback_id)
+DECL|function|gimp_plist_build_combo (GtkWidget * combo,gint num_items,gchar ** items,gchar * cur_item,GCallback callback,gint * callback_id)
 name|gimp_plist_build_combo
 parameter_list|(
 name|GtkWidget
@@ -6603,7 +6603,7 @@ modifier|*
 name|cur_item
 parameter_list|,
 comment|/* I - Current item */
-name|GtkSignalFunc
+name|GCallback
 name|callback
 parameter_list|,
 comment|/* I - Callback */
@@ -8177,7 +8177,10 @@ name|v
 operator|.
 name|media_size
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_media_size_callback
+argument_list|)
 argument_list|,
 operator|&
 name|media_size_callback_id
@@ -8291,7 +8294,10 @@ name|v
 operator|.
 name|media_type
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_media_type_callback
+argument_list|)
 argument_list|,
 operator|&
 name|media_type_callback_id
@@ -8413,7 +8419,10 @@ name|v
 operator|.
 name|media_source
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_media_source_callback
+argument_list|)
 argument_list|,
 operator|&
 name|media_source_callback_id
@@ -8535,7 +8544,10 @@ name|v
 operator|.
 name|ink_type
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_ink_type_callback
+argument_list|)
 argument_list|,
 operator|&
 name|ink_type_callback_id
@@ -8657,7 +8669,10 @@ name|v
 operator|.
 name|resolution
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_resolution_callback
+argument_list|)
 argument_list|,
 operator|&
 name|resolution_callback_id

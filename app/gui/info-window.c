@@ -1659,7 +1659,7 @@ name|main_table
 argument_list|)
 expr_stmt|;
 comment|/* Set back to first page */
-name|gtk_notebook_set_page
+name|gtk_notebook_set_current_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(

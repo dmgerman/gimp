@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29d3dea30108
+DECL|struct|__anon295b1b1b0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -989,7 +989,7 @@ name|eek_xpm
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_notebook_set_page
+name|gtk_notebook_set_current_page
 argument_list|(
 name|notebook
 argument_list|,
@@ -1698,7 +1698,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gtk_notebook_set_page
+name|gtk_notebook_set_current_page
 argument_list|(
 name|notebook
 argument_list|,

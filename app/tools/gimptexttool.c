@@ -3464,7 +3464,7 @@ name|maskPR
 argument_list|)
 expr_stmt|;
 comment|/* free the image */
-name|gdk_image_destroy
+name|gdk_image_unref
 argument_list|(
 name|image
 argument_list|)

@@ -211,7 +211,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29590b990103
+DECL|enum|__anon2aab95090103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -283,7 +283,7 @@ block|,
 name|TRUE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  NORMAL_MODE        */
 block|{
@@ -292,7 +292,7 @@ block|,
 name|TRUE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  DISSOLVE_MODE      */
 block|{
@@ -301,7 +301,7 @@ block|,
 name|TRUE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  BEHIND_MODE        */
 block|{
@@ -310,7 +310,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  MULTIPLY_MODE      */
 block|{
@@ -319,7 +319,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  SCREEN_MODE        */
 block|{
@@ -328,7 +328,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  OVERLAY_MODE       */
 block|{
@@ -337,7 +337,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  DIFFERENCE_MODE    */
 block|{
@@ -346,7 +346,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  ADDITION_MODE      */
 block|{
@@ -355,7 +355,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  SUBTRACT_MODE      */
 block|{
@@ -364,7 +364,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  DARKEN_ONLY_MODE   */
 block|{
@@ -373,7 +373,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  LIGHTEN_ONLY_MODE  */
 block|{
@@ -382,7 +382,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  HUE_MODE           */
 block|{
@@ -391,7 +391,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  SATURATION_MODE    */
 block|{
@@ -400,7 +400,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  COLOR_MODE         */
 block|{
@@ -409,7 +409,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  VALUE_MODE         */
 block|{
@@ -418,7 +418,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  DIVIDE_MODE        */
 block|{
@@ -427,7 +427,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  DODGE_MODE         */
 block|{
@@ -436,7 +436,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  BURN_MODE          */
 block|{
@@ -445,7 +445,7 @@ block|,
 name|FALSE
 block|,
 name|FALSE
-block|, }
+block|}
 block|,
 comment|/*  HARDLIGHT_MODE     */
 block|{
@@ -454,7 +454,7 @@ block|,
 name|FALSE
 block|,
 name|TRUE
-block|,  }
+block|}
 block|,
 comment|/*  ERASE_MODE         */
 block|{
@@ -463,7 +463,7 @@ block|,
 name|TRUE
 block|,
 name|TRUE
-block|,  }
+block|}
 block|,
 comment|/*  REPLACE_MODE       */
 block|{
@@ -472,7 +472,7 @@ block|,
 name|FALSE
 block|,
 name|TRUE
-block|,  }
+block|}
 comment|/*  ANTI_ERASE_MODE    */
 block|}
 decl_stmt|;

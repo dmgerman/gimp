@@ -512,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd35b920108
+DECL|struct|__anon289fea900108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd35b920208
+DECL|struct|__anon289fea900208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd35b920308
+DECL|struct|__anon289fea900308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd35b920408
+DECL|struct|__anon289fea900408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd35b920508
+DECL|struct|__anon289fea900508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd35b920608
+DECL|struct|__anon289fea900608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd35b920708
+DECL|struct|__anon289fea900708
 block|{
 DECL|member|name
 specifier|const
@@ -6541,7 +6541,7 @@ name|new_cs
 index|]
 argument_list|)
 expr_stmt|;
-name|gtk_notebook_set_page
+name|gtk_notebook_set_current_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -6928,7 +6928,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd35b920808
+DECL|struct|__anon289fea900808
 block|{
 DECL|member|index
 name|gint

@@ -8536,7 +8536,7 @@ name|i
 operator|++
 control|)
 block|{
-name|g_string_sprintf
+name|g_string_printf
 argument_list|(
 name|entry_filename
 argument_list|,
@@ -8560,7 +8560,7 @@ name|str
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_string_sprintf
+name|g_string_printf
 argument_list|(
 name|path
 argument_list|,

@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cf9a100103
+DECL|enum|__anon2c61b7d50103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2118,13 +2118,6 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|view
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|GIMP_IS_DRAWABLE_LIST_VIEW
 argument_list|(
 name|view
@@ -2177,13 +2170,6 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|view
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE_LIST_VIEW

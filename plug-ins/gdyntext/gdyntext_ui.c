@@ -208,7 +208,7 @@ file|"graphics/layer_align_9.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2743dd820108
+DECL|struct|__anon2a9fee760108
 typedef|typedef
 struct|struct
 block|{
@@ -1040,12 +1040,12 @@ argument_list|,
 name|glade_mask
 argument_list|)
 expr_stmt|;
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|glade_pixmap
 argument_list|)
 expr_stmt|;
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|glade_mask
 argument_list|)

@@ -912,7 +912,7 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|g_string_sprintf
+name|g_string_printf
 argument_list|(
 name|buf
 argument_list|,

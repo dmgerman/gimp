@@ -533,7 +533,7 @@ control|)
 block|{
 if|if
 condition|(
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 literal|"file:"
 argument_list|,
@@ -877,7 +877,7 @@ block|}
 comment|/* If not already a valid URI */
 if|if
 condition|(
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 literal|"file:"
 argument_list|,
@@ -889,7 +889,7 @@ argument_list|,
 literal|5
 argument_list|)
 operator|&&
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 literal|"ftp:"
 argument_list|,
@@ -901,7 +901,7 @@ argument_list|,
 literal|4
 argument_list|)
 operator|&&
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 literal|"http:"
 argument_list|,

@@ -959,7 +959,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -1255,7 +1255,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -2419,7 +2419,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd61d370108
+DECL|struct|__anon2be64d450108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3299,7 +3299,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd61d370208
+DECL|struct|__anon2be64d450208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment

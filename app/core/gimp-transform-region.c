@@ -227,7 +227,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e289f0103
+DECL|enum|__anon29bdde750103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -4509,20 +4509,11 @@ condition|(
 name|gimp_transform_tool_show_grid
 argument_list|()
 condition|)
-block|{
-comment|/* EEEEEEK!!! */
 name|gimp_transform_tool_setup_grid
 argument_list|(
-name|GIMP_TRANSFORM_TOOL
-argument_list|(
-name|tool_manager_get_active
-argument_list|(
-name|the_gimp
-argument_list|)
-argument_list|)
+name|tr_tool
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -7292,8 +7283,8 @@ comment|/* Equivalent to Gimp 1.1.1 and earlier - some ringing */
 block|result = ((( ( - jm1 + j - jp1 + jp2 ) * dx +                ( jm1 + jm1 - j - j + jp1 - jp2 ) ) * dx +                ( - jm1 + jp1 ) ) * dx + j );
 comment|/* Recommended by Mitchell and Netravali - too blurred? */
 block|result = ((( ( - 7 * jm1 + 21 * j - 21 * jp1 + 7 * jp2 ) * dx +                ( 15 * jm1 - 36 * j + 27 * jp1 - 6 * jp2 ) ) * dx +                ( - 9 * jm1 + 9 * jp1 ) ) * dx + (jm1 + 16 * j + jp1) ) / 18.0;
-else|#
-directive|else
+endif|#
+directive|endif
 comment|/* Catmull-Rom - not bad */
 name|result
 operator|=
@@ -7355,8 +7346,6 @@ operator|)
 operator|/
 literal|2.0
 expr_stmt|;
-endif|#
-directive|endif
 return|return
 name|result
 return|;

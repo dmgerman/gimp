@@ -390,7 +390,7 @@ endif|#
 directive|endif
 block|{
 comment|/*  On Windows, you can't remove open files anyhow, 	     *  so no harm trying. 	     */
-name|g_string_sprintf
+name|g_string_printf
 argument_list|(
 name|filename
 argument_list|,

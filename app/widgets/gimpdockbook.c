@@ -1403,7 +1403,7 @@ name|dockable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_notebook_set_page
+name|gtk_notebook_set_current_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -1606,7 +1606,7 @@ name|dockable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_notebook_set_page
+name|gtk_notebook_set_current_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
