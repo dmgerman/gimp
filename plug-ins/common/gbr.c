@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * gbr plug-in version 1.00  * Loads/saves version 2 GIMP .gbr files, by Tim Newsome<drz@frody.bloke.com>  * Some bits stolen from the .99.7 source tree.  *   * Added in GBR version 1 support after learning that there wasn't a   * tool to read them.    * July 6, 1998 by Seth Burgess<sjburges@gimp.org>  *  * Dec 17, 2000  * Load and save GIMP brushes in GRAY or RGBA.  jtl + neo  *   *  * TODO: Give some better error reporting on not opening files/bad headers  *       etc.   */
+comment|/*  * gbr plug-in version 1.00  * Loads/saves version 2 GIMP .gbr files, by Tim Newsome<drz@frody.bloke.com>  * Some bits stolen from the .99.7 source tree.  *  * Added in GBR version 1 support after learning that there wasn't a  * tool to read them.  * July 6, 1998 by Seth Burgess<sjburges@gimp.org>  *  * Dec 17, 2000  * Load and save GIMP brushes in GRAY or RGBA.  jtl + neo  *  *  * TODO: Give some better error reporting on not opening files/bad headers  *       etc.  */
 end_comment
 
 begin_include
@@ -169,7 +169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5682630108
+DECL|struct|__anon28acce610108
 block|{
 DECL|member|description
 name|gchar
@@ -1063,9 +1063,6 @@ name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|gint
-name|version_extra
-decl_stmt|;
-name|gint
 name|bn_size
 decl_stmt|;
 name|GimpImageBaseType
@@ -1244,11 +1241,6 @@ operator|.
 name|spacing
 argument_list|)
 expr_stmt|;
-comment|/* How much extra to add to the header seek - 1 needs a bit more */
-name|version_extra
-operator|=
-literal|0
-expr_stmt|;
 if|if
 condition|(
 name|bh
@@ -1265,7 +1257,7 @@ name|spacing
 operator|=
 literal|25
 expr_stmt|;
-comment|/* And we need to rewind the handle a bit too */
+comment|/* And we need to rewind the handle, 4 due spacing and 4 due magic */
 name|lseek
 argument_list|(
 name|fd
@@ -1276,8 +1268,10 @@ argument_list|,
 name|SEEK_CUR
 argument_list|)
 expr_stmt|;
-name|version_extra
-operator|=
+name|bh
+operator|.
+name|header_size
+operator|+=
 literal|8
 expr_stmt|;
 block|}
@@ -1763,7 +1757,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*    * Create a new image of the proper size and     * associate the filename with it.    */
+comment|/*    * Create a new image of the proper size and    * associate the filename with it.    */
 switch|switch
 condition|(
 name|bh
