@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f18b50108
+DECL|struct|__anon2911285b0108
 block|{
 DECL|member|list_view
 name|GtkTreeView
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f18b50208
+DECL|struct|__anon2911285b0208
 block|{
 DECL|member|menu
 name|gchar
@@ -182,7 +182,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f18b50303
+DECL|enum|__anon2911285b0303
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -207,7 +207,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f18b50403
+DECL|enum|__anon2911285b0403
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -468,7 +468,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/_Plugin Details"
+literal|"<Toolbox>/Xtns/Extensions/_Plugin Details"
 argument_list|)
 argument_list|,
 literal|""

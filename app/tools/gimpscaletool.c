@@ -400,7 +400,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Transform Tools/_Scale"
+literal|"_Scale"
 argument_list|)
 argument_list|,
 literal|"<shift>T"

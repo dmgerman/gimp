@@ -374,7 +374,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Transform Tools/S_hear"
+literal|"S_hear"
 argument_list|)
 argument_list|,
 literal|"<shift>S"

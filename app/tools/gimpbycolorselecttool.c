@@ -275,7 +275,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Selection Tools/_By Color Select"
+literal|"_By Color Select"
 argument_list|)
 argument_list|,
 name|NULL

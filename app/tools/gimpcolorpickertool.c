@@ -368,7 +368,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/C_olor Picker"
+literal|"C_olor Picker"
 argument_list|)
 argument_list|,
 literal|"O"

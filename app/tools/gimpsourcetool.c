@@ -372,7 +372,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/_Clone"
+literal|"_Clone"
 argument_list|)
 argument_list|,
 literal|"C"

@@ -328,7 +328,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/Blen_d"
+literal|"Blen_d"
 argument_list|)
 argument_list|,
 literal|"L"

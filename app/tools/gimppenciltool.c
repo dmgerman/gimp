@@ -118,7 +118,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/Pe_ncil"
+literal|"Pe_ncil"
 argument_list|)
 argument_list|,
 literal|"N"

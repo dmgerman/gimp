@@ -268,7 +268,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Transform Tools/_Flip"
+literal|"_Flip"
 argument_list|)
 argument_list|,
 literal|"<shift>F"

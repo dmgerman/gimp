@@ -691,7 +691,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/In_k"
+literal|"In_k"
 argument_list|)
 argument_list|,
 literal|"K"
@@ -3141,7 +3141,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c30e98b0103
+DECL|enum|__anon2880f6900103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

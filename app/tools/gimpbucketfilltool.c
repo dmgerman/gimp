@@ -291,7 +291,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/_Bucket Fill"
+literal|"_Bucket Fill"
 argument_list|)
 argument_list|,
 literal|"<shift>B"

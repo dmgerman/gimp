@@ -700,7 +700,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/_Paths"
+literal|"_Paths"
 argument_list|)
 argument_list|,
 literal|"b"

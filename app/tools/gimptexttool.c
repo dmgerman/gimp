@@ -615,7 +615,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Te_xt"
+literal|"Te_xt"
 argument_list|)
 argument_list|,
 literal|"T"
