@@ -47,7 +47,7 @@ file|"appenums.h"
 end_include
 
 begin_comment
-comment|/*  objects  */
+comment|/*  base objects  */
 end_comment
 
 begin_typedef
@@ -58,6 +58,28 @@ name|_GimpObject
 name|GimpObject
 typedef|;
 end_typedef
+
+begin_typedef
+DECL|typedef|GimpContainer
+typedef|typedef
+name|struct
+name|_GimpContainer
+name|GimpContainer
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpContext
+typedef|typedef
+name|struct
+name|_GimpContext
+name|GimpContext
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* TODO: replace these with GimpContainer */
+end_comment
 
 begin_typedef
 DECL|typedef|GimpSet
@@ -86,13 +108,17 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpContext
+DECL|typedef|GimpBrushList
 typedef|typedef
 name|struct
-name|_GimpContext
-name|GimpContext
+name|_GimpBrushList
+name|GimpBrushList
 typedef|;
 end_typedef
+
+begin_comment
+comment|/*  drawable objects  */
+end_comment
 
 begin_typedef
 DECL|typedef|GimpDrawable
@@ -147,21 +173,16 @@ name|GImage
 typedef|;
 end_typedef
 
+begin_comment
+comment|/*  data objects  */
+end_comment
+
 begin_typedef
 DECL|typedef|GimpBrush
 typedef|typedef
 name|struct
 name|_GimpBrush
 name|GimpBrush
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpBrushList
-typedef|typedef
-name|struct
-name|_GimpBrushList
-name|GimpBrushList
 typedef|;
 end_typedef
 
