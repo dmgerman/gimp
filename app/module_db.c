@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon28c1d5eb0103
+DECL|enum|__anon2ae54b320103
 typedef|typedef
 enum|enum
 block|{
@@ -177,15 +177,30 @@ name|statename
 index|[]
 init|=
 block|{
-literal|"ST_MODULE_ERROR"
+name|N_
+argument_list|(
+literal|"Module error"
+argument_list|)
 block|,
-literal|"ST_LOADED_OK"
+name|N_
+argument_list|(
+literal|"Loaded OK"
+argument_list|)
 block|,
-literal|"ST_LOAD_FAILED"
+name|N_
+argument_list|(
+literal|"Load failed"
+argument_list|)
 block|,
-literal|"ST_UNLOAD_REQUESTED"
+name|N_
+argument_list|(
+literal|"Unload requested"
+argument_list|)
 block|,
-literal|"ST_UNLOADED_OK"
+name|N_
+argument_list|(
+literal|"Unloaded OK"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -268,7 +283,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c1d5eb0208
+DECL|struct|__anon2ae54b320208
 typedef|typedef
 struct|struct
 block|{
@@ -385,7 +400,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon28c1d5eb0308
+DECL|struct|__anon2ae54b320308
 typedef|typedef
 struct|struct
 block|{
@@ -1376,11 +1391,17 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gtk_hbox_new
+name|gtk_hbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_box_set_layout
 argument_list|(
-name|FALSE
+name|GTK_BUTTON_BOX
+argument_list|(
+name|hbox
+argument_list|)
 argument_list|,
-literal|10
+name|GTK_BUTTONBOX_SPREAD
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1399,7 +1420,7 @@ name|hbox
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|5
 argument_list|)
@@ -1627,7 +1648,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c1d5eb0408
+DECL|struct|__anon2ae54b320408
 typedef|typedef
 struct|struct
 block|{
@@ -1642,7 +1663,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon28c1d5eb0503
+DECL|enum|__anon2ae54b320503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -3443,12 +3464,15 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s (%s)"
 argument_list|,
+name|gettext
+argument_list|(
 name|statename
 index|[
 name|mod
 operator|->
 name|state
 index|]
+argument_list|)
 argument_list|,
 name|mod
 operator|->
@@ -3461,12 +3485,15 @@ name|status
 operator|=
 name|g_strdup
 argument_list|(
+name|gettext
+argument_list|(
 name|statename
 index|[
 name|mod
 operator|->
 name|state
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4475,7 +4502,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28c1d5eb0608
+DECL|struct|__anon2ae54b320608
 typedef|typedef
 struct|struct
 block|{
