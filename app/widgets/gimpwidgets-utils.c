@@ -921,6 +921,13 @@ argument_list|,
 name|stock_id
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|icon_set
+operator|==
+name|NULL
+condition|)
+return|return;
 name|gtk_icon_set_get_sizes
 argument_list|(
 name|icon_set
@@ -2517,7 +2524,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon29c504b60108
+DECL|struct|__anon2890d88b0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType

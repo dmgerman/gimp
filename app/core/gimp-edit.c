@@ -980,9 +980,9 @@ name|gimp
 argument_list|,
 name|gimage
 argument_list|,
-literal|1.0
-argument_list|,
 name|GIMP_UNIT_PIXEL
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|g_object_unref
