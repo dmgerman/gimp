@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptooloptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdnd.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpeditor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_options.h"
 end_include
 
 begin_include

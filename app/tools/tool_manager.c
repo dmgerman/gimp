@@ -36,18 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -61,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptooloptions.h"
 end_include
 
 begin_include
@@ -138,13 +132,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
+file|"gimptooloptions-gui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tool_options.h"
+file|"tool_manager.h"
 end_include
 
 begin_include

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tool_options.h"
+file|"core/gimptooloptions.h"
 end_include
 
 begin_define
@@ -147,7 +147,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_COLOR_OPTIONS_H__  */
+comment|/* __GIMP_COLOR_OPTIONS_H__ */
 end_comment
 
 end_unit

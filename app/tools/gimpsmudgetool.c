@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptoolcontrol.h"
+file|"gimppaintoptions-gui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"paint_options.h"
+file|"gimptoolcontrol.h"
 end_include
 
 begin_include
@@ -150,7 +150,7 @@ name|GIMP_TYPE_SMUDGE_OPTIONS
 argument_list|,
 name|gimp_smudge_options_gui
 argument_list|,
-name|GIMP_PAINT_TOOL_OPTIONS_MASK
+name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
 argument_list|,
 literal|"gimp-smudge-tool"
 argument_list|,

@@ -6,28 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PAINT_OPTIONS_GUI_H__
+name|__GIMP_TOOL_OPTIONS_GUI_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PAINT_OPTIONS_GUI_H__
+DECL|macro|__GIMP_TOOL_OPTIONS_GUI_H__
 define|#
 directive|define
-name|__GIMP_PAINT_OPTIONS_GUI_H__
-end_define
-
-begin_define
-DECL|macro|GIMP_PAINT_OPTIONS_TABLE_KEY
-define|#
-directive|define
-name|GIMP_PAINT_OPTIONS_TABLE_KEY
-value|"gimp-paint-options-table"
+name|__GIMP_TOOL_OPTIONS_GUI_H__
 end_define
 
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_paint_options_gui
+name|gimp_tool_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -42,7 +34,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PAINT_OPTIONS_GUI_H__ */
+comment|/*  __GIMP_TOOL_OPTIONS_GUI_H__  */
 end_comment
 
 end_unit

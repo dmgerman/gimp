@@ -6,20 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TOOL_OPTIONS_H__
+name|__GIMP_TOOL_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TOOL_OPTIONS_H__
+DECL|macro|__GIMP_TOOL_OPTIONS_H__
 define|#
 directive|define
-name|__TOOL_OPTIONS_H__
+name|__GIMP_TOOL_OPTIONS_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"gimpcontext.h"
 end_include
 
 begin_define
@@ -200,24 +200,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gpointer
-name|gimp_tool_options_gui
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __TOOL_OPTIONS_H__  */
+comment|/*  __GIMP_TOOL_OPTIONS_H__  */
 end_comment
 
 end_unit

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptooloptions-gui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptransformoptions.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd0d2be0103
+DECL|enum|__anon28c01fa30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

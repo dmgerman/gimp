@@ -335,8 +335,6 @@ block|,
 name|gimp_move_tool_register
 block|,
 comment|/*  non-modifying tools  */
-name|gimp_vector_tool_register
-block|,
 name|gimp_measure_tool_register
 block|,
 name|gimp_magnify_tool_register
@@ -347,6 +345,8 @@ name|gimp_color_picker_tool_register
 block|,
 comment|/*  selection tools */
 name|gimp_iscissors_tool_register
+block|,
+name|gimp_vector_tool_register
 block|,
 name|gimp_by_color_select_tool_register
 block|,

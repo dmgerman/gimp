@@ -148,7 +148,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_FLIP_OPTIONS_H__  */
+comment|/* __GIMP_FLIP_OPTIONS_H__ */
 end_comment
 
 end_unit

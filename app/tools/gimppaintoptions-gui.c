@@ -114,6 +114,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpclonetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpconvolvetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdodgeburntool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdodgeburntool.h"
 end_include
 
@@ -138,13 +156,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppenciltool.h"
+file|"gimppaintoptions-gui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdodgeburntool.h"
+file|"gimppenciltool.h"
 end_include
 
 begin_include
@@ -156,19 +174,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpclonetool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconvolvetool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
+file|"gimptooloptions-gui.h"
 end_include
 
 begin_include

@@ -19,8 +19,16 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools/tool_options.h"
+file|"core/gimptooloptions.h"
 end_include
+
+begin_define
+DECL|macro|GIMP_PAINT_OPTIONS_CONTEXT_MASK
+define|#
+directive|define
+name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
+value|GIMP_CONTEXT_OPACITY_MASK    | \                                         GIMP_CONTEXT_PAINT_MODE_MASK | \                                         GIMP_CONTEXT_BRUSH_MASK
+end_define
 
 begin_typedef
 DECL|typedef|GimpPressureOptions

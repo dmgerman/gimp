@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_options.h"
+file|"gimppaintoptions-gui.h"
 end_include
 
 begin_include
@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce1ecf0103
+DECL|enum|__anon2772be9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
