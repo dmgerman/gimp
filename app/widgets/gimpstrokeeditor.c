@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpstrokeeditor.h"
 end_include
 
@@ -65,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5636c30103
+DECL|enum|__anon2c45dd9c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

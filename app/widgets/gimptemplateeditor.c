@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpviewablebutton.h"
 end_include
 
@@ -122,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278d8dd50103
+DECL|enum|__anon28d6ac530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

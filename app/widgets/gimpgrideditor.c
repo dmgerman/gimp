@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropwidgets.h"
+file|"gimpgrideditor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpgrideditor.h"
+file|"gimppropwidgets.h"
 end_include
 
 begin_include
@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c3fd6c0103
+DECL|enum|__anon279f37860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

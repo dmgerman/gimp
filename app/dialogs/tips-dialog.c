@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tips-dialog.h"
 end_include
 

@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpinkoptions-gui.h"
 end_include
 

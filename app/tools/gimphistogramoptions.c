@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimphistogramview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimppropwidgets.h"
 end_include
 
 begin_include
@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4ea49c0103
+DECL|enum|__anon2a23c4800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

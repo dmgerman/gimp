@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpviewablebox.h"
 end_include
 

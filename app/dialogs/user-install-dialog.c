@@ -128,12 +128,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -203,7 +197,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a63890103
+DECL|enum|__anon28720e940103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -228,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a63890203
+DECL|enum|__anon28720e940203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -440,7 +434,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a63890303
+DECL|enum|__anon28720e940303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -462,7 +456,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294a63890408
+DECL|struct|__anon28720e940408
 block|{
 DECL|member|directory
 name|gboolean

@@ -79,12 +79,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpuimanager.h"
 end_include
 
@@ -96,7 +90,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a12ec70103
+DECL|enum|__anon29fc09520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -109,7 +103,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a12ec70203
+DECL|enum|__anon29fc09520203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT

@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -101,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a1a12c0103
+DECL|enum|__anon2ac4c8cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

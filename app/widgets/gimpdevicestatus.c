@@ -108,13 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpview.h"
+file|"gimppropwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppropwidgets.h"
+file|"gimpview.h"
 end_include
 
 begin_include

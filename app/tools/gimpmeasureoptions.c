@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpmeasureoptions.h"
 end_include
 
@@ -65,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279595b90103
+DECL|enum|__anon2bf630c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
