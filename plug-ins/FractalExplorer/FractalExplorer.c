@@ -850,7 +850,15 @@ literal|"blueinvert"
 block|,
 literal|"Green inversion mode (1: enabled; 0: disabled)"
 block|}
-block|,   }
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"ncolors"
+block|,
+literal|"Number of Colors for mapping (2<=ncolors<=8192)"
+block|}
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -1509,6 +1517,8 @@ name|wvals
 operator|.
 name|ncolors
 operator|=
+name|CLAMP
+argument_list|(
 name|param
 index|[
 literal|21
@@ -1516,7 +1526,12 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int8
+name|d_int32
+argument_list|,
+literal|2
+argument_list|,
+name|MAXNCOLORS
+argument_list|)
 expr_stmt|;
 block|}
 name|make_color_map

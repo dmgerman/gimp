@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * illusion.c  -- This is a plug-in for the GIMP 1.0  *                                                                                * Copyright (C) 1997  Hirotsuna Mizuno  *                     s1041150@u-aizu.ac.jp  *  * Preview and new mode added May 2000 by tim copperfield  * 		       timecop@japan.co.jp  * 		       http://www.ne.jp/asahi/linux/timecop  *                                                                                * This program is free software; you can redistribute it and/or modify it  * under the terms of the GNU General Public License as published by the Free  * Software Foundation; either version 2 of the License, or (at your option)  * any later version.  *                                                                                * This program is distributed in the hope that it will be useful, but WITHOUT  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or  * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for  * more details.  *                                                                                * You should have received a copy of the GNU General Public License along with  * this program; if not, write to the Free Software Foundation, Inc.,  * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * illusion.c  -- This is a plug-in for the GIMP 1.0  *    * Copyright (C) 1997  Hirotsuna Mizuno  *                     s1041150@u-aizu.ac.jp  *  * Preview and new mode added May 2000 by tim copperfield  * 		       timecop@japan.co.jp  * 		       http://www.ne.jp/asahi/linux/timecop  *  * This program is free software; you can redistribute it and/or modify it  * under the terms of the GNU General Public License as published by the Free  * Software Foundation; either version 2 of the License, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful, but WITHOUT  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or  * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for  * more details.  *  * You should have received a copy of the GNU General Public License along with  * this program; if not, write to the Free Software Foundation, Inc.,  * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -173,7 +173,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e8a890108
+DECL|struct|__anon2bbfda7c0108
 block|{
 DECL|member|division
 name|gint32
@@ -330,6 +330,22 @@ literal|"division"
 block|,
 literal|"the number of divisions"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"type1"
+block|,
+literal|"Use Type 1 (default=1)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"type2"
+block|,
+literal|"Use Type 2 (default=0)"
+block|}
 block|}
 decl_stmt|;
 specifier|static
@@ -349,7 +365,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
