@@ -23,22 +23,6 @@ file|"gimpimagemaptool.h"
 end_include
 
 begin_define
-DECL|macro|HISTOGRAM_WIDTH
-define|#
-directive|define
-name|HISTOGRAM_WIDTH
-value|256
-end_define
-
-begin_define
-DECL|macro|HISTOGRAM_HEIGHT
-define|#
-directive|define
-name|HISTOGRAM_HEIGHT
-value|150
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_HISTOGRAM_TOOL
 define|#
 directive|define

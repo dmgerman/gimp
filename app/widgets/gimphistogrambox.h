@@ -6,161 +6,137 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_THRESHOLD_TOOL_H__
+name|__GIMP_HISTOGRAM_BOX_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_THRESHOLD_TOOL_H__
+DECL|macro|__GIMP_HISTOGRAM_BOX_H__
 define|#
 directive|define
-name|__GIMP_THRESHOLD_TOOL_H__
-end_define
-
-begin_include
-include|#
-directive|include
-file|"gimpimagemaptool.h"
-end_include
-
-begin_define
-DECL|macro|GIMP_TYPE_THRESHOLD_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_THRESHOLD_TOOL
-value|(gimp_threshold_tool_get_type ())
+name|__GIMP_HISTOGRAM_BOX_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_THRESHOLD_TOOL (obj)
+DECL|macro|GIMP_TYPE_HISTOGRAM_BOX
 define|#
 directive|define
-name|GIMP_THRESHOLD_TOOL
+name|GIMP_TYPE_HISTOGRAM_BOX
+value|(gimp_histogram_box_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_HISTOGRAM_BOX (obj)
+define|#
+directive|define
+name|GIMP_HISTOGRAM_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_THRESHOLD_TOOL, GimpThresholdTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_HISTOGRAM_BOX, GimpHistogramBox))
 end_define
 
 begin_define
-DECL|macro|GIMP_THRESHOLD_TOOL_CLASS (klass)
+DECL|macro|GIMP_HISTOGRAM_BOX_CLASS (klass)
 define|#
 directive|define
-name|GIMP_THRESHOLD_TOOL_CLASS
+name|GIMP_HISTOGRAM_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_THRESHOLD_TOOL, GimpThresholdToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HISTOGRAM_BOX, GimpHistogramBoxClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_THRESHOLD_TOOL (obj)
+DECL|macro|GIMP_IS_HISTOGRAM_BOX (obj)
 define|#
 directive|define
-name|GIMP_IS_THRESHOLD_TOOL
+name|GIMP_IS_HISTOGRAM_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_THRESHOLD_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_HISTOGRAM_BOX))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_THRESHOLD_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_HISTOGRAM_BOX_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_THRESHOLD_TOOL_CLASS
+name|GIMP_IS_HISTOGRAM_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_THRESHOLD_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HISTOGRAM_BOX))
 end_define
 
 begin_define
-DECL|macro|GIMP_THRESHOLD_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_HISTOGRAM_BOX_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_THRESHOLD_TOOL_GET_CLASS
+name|GIMP_HISTOGRAM_BOX_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_THRESHOLD_TOOL, GimpThresholdToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_HISTOGRAM_BOX, GimpHistogramBoxClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpThresholdTool
+DECL|typedef|GimpHistogramBoxClass
 typedef|typedef
 name|struct
-name|_GimpThresholdTool
-name|GimpThresholdTool
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpThresholdToolClass
-typedef|typedef
-name|struct
-name|_GimpThresholdToolClass
-name|GimpThresholdToolClass
+name|_GimpHistogramBoxClass
+name|GimpHistogramBoxClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpThresholdTool
+DECL|struct|_GimpHistogramBox
 struct|struct
-name|_GimpThresholdTool
+name|_GimpHistogramBox
 block|{
 DECL|member|parent_instance
-name|GimpImageMapTool
+name|GtkVBox
 name|parent_instance
 decl_stmt|;
-DECL|member|threshold
-name|Threshold
+DECL|member|label
+name|GtkWidget
 modifier|*
-name|threshold
+name|label
 decl_stmt|;
-comment|/*  dialog  */
-DECL|member|hist
-name|GimpHistogram
+DECL|member|low_adj
+name|GtkAdjustment
 modifier|*
-name|hist
+name|low_adj
 decl_stmt|;
-DECL|member|histogram_box
-name|GimpHistogramBox
+DECL|member|high_adj
+name|GtkAdjustment
 modifier|*
-name|histogram_box
+name|high_adj
+decl_stmt|;
+DECL|member|histogram
+name|GimpHistogramView
+modifier|*
+name|histogram
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpThresholdToolClass
+DECL|struct|_GimpHistogramBoxClass
 struct|struct
-name|_GimpThresholdToolClass
+name|_GimpHistogramBoxClass
 block|{
 DECL|member|parent_class
-name|GimpImageMapToolClass
+name|GtkVBoxClass
 name|parent_class
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|void
-name|gimp_threshold_tool_register
-parameter_list|(
-name|GimpToolRegisterCallback
-name|callback
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 name|GType
-name|gimp_threshold_tool_get_type
+name|gimp_histogram_box_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -168,13 +144,26 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_histogram_box_new
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|label
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_THRESHOLD_TOOL_H__  */
+comment|/*  __GIMP_HISTOGRAM_BOX_H__  */
 end_comment
 
 end_unit

@@ -251,7 +251,7 @@ DECL|macro|DA_WIDTH
 define|#
 directive|define
 name|DA_WIDTH
-value|256
+value|GIMP_HISTOGRAM_VIEW_WIDTH
 end_define
 
 begin_define
@@ -276,22 +276,6 @@ define|#
 directive|define
 name|CONTROL_HEIGHT
 value|DA_HEIGHT - GRADIENT_HEIGHT
-end_define
-
-begin_define
-DECL|macro|HISTOGRAM_WIDTH
-define|#
-directive|define
-name|HISTOGRAM_WIDTH
-value|256
-end_define
-
-begin_define
-DECL|macro|HISTOGRAM_HEIGHT
-define|#
-directive|define
-name|HISTOGRAM_HEIGHT
-value|150
 end_define
 
 begin_define
@@ -1288,7 +1272,7 @@ operator|->
 name|hist
 argument_list|)
 expr_stmt|;
-name|gimp_histogram_view_range
+name|gimp_histogram_view_set_range
 argument_list|(
 name|l_tool
 operator|->
@@ -1776,9 +1760,9 @@ name|histogram
 operator|=
 name|gimp_histogram_view_new
 argument_list|(
-name|HISTOGRAM_WIDTH
+name|GIMP_HISTOGRAM_VIEW_WIDTH
 argument_list|,
-name|HISTOGRAM_HEIGHT
+name|GIMP_HISTOGRAM_VIEW_HEIGHT
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

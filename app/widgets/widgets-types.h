@@ -528,6 +528,15 @@ name|GimpHistogramView
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpHistogramBox
+typedef|typedef
+name|struct
+name|_GimpHistogramBox
+name|GimpHistogramBox
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  function types  */
 end_comment

@@ -23,6 +23,22 @@ file|<gtk/gtkdrawingarea.h>
 end_include
 
 begin_define
+DECL|macro|GIMP_HISTOGRAM_VIEW_WIDTH
+define|#
+directive|define
+name|GIMP_HISTOGRAM_VIEW_WIDTH
+value|256
+end_define
+
+begin_define
+DECL|macro|GIMP_HISTOGRAM_VIEW_HEIGHT
+define|#
+directive|define
+name|GIMP_HISTOGRAM_VIEW_HEIGHT
+value|150
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_HISTOGRAM_VIEW
 define|#
 directive|define
@@ -155,10 +171,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  Histogram functions  */
-end_comment
-
 begin_decl_stmt
 name|GType
 name|gimp_histogram_view_get_type
@@ -200,7 +212,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_histogram_view_range
+name|gimp_histogram_view_set_range
 parameter_list|(
 name|GimpHistogramView
 modifier|*
@@ -232,7 +244,7 @@ end_function_decl
 begin_function_decl
 name|GimpHistogram
 modifier|*
-name|gimp_histogram_view_histogram
+name|gimp_histogram_view_get_histogram
 parameter_list|(
 name|GimpHistogramView
 modifier|*
