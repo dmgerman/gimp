@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2486930103
+DECL|enum|__anon2a0252480103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -5708,22 +5708,6 @@ operator|->
 name|preview_valid
 operator|=
 name|FALSE
-expr_stmt|;
-if|if
-condition|(
-name|gimp_container_num_children
-argument_list|(
-name|gimage
-operator|->
-name|layers
-argument_list|)
-operator|==
-literal|1
-condition|)
-name|gimp_image_alpha_changed
-argument_list|(
-name|gimage
-argument_list|)
 expr_stmt|;
 block|}
 end_function
