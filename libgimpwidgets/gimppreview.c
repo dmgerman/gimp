@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3dcf370103
+DECL|enum|__anon2ab341d70103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3dcf370203
+DECL|enum|__anon2ab341d70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1836,7 +1836,7 @@ name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|toggle
+name|preview
 argument_list|)
 argument_list|,
 literal|"update"
