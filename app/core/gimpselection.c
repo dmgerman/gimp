@@ -1399,15 +1399,6 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GimpChannel
-modifier|*
-name|selection
-init|=
-name|GIMP_CHANNEL
-argument_list|(
-name|drawable
-argument_list|)
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
