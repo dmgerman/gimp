@@ -1292,6 +1292,10 @@ name|brush
 argument_list|)
 condition|)
 block|{
+name|mode
+operator|=
+name|INCREMENTAL
+expr_stmt|;
 name|color_area_with_pixmap
 argument_list|(
 name|paint_core
@@ -1301,11 +1305,9 @@ argument_list|,
 name|drawable
 argument_list|,
 name|area
+argument_list|,
+name|SOFT
 argument_list|)
-expr_stmt|;
-name|mode
-operator|=
-name|INCREMENTAL
 expr_stmt|;
 block|}
 else|else

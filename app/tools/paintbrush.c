@@ -2132,6 +2132,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|area
+argument_list|,
+name|SOFT
 argument_list|)
 expr_stmt|;
 name|paint_appl_mode

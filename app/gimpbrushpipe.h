@@ -190,6 +190,9 @@ parameter_list|,
 name|TempBuf
 modifier|*
 name|area
+parameter_list|,
+name|int
+name|mode
 parameter_list|)
 function_decl|;
 end_function_decl

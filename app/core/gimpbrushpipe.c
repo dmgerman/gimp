@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -116,7 +122,7 @@ value|4
 end_define
 
 begin_struct
-DECL|struct|__anon2c5a2e2f0108
+DECL|struct|__anon2a3469f30108
 specifier|static
 struct|struct
 block|{
@@ -241,6 +247,9 @@ name|bytes
 parameter_list|,
 name|int
 name|width
+parameter_list|,
+name|int
+name|mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2979,7 +2988,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_area_with_pixmap (PaintCore * paint_core,GImage * dest,GimpDrawable * drawable,TempBuf * area)
+DECL|function|color_area_with_pixmap (PaintCore * paint_core,GImage * dest,GimpDrawable * drawable,TempBuf * area,int mode)
 name|color_area_with_pixmap
 parameter_list|(
 name|PaintCore
@@ -2997,6 +3006,9 @@ parameter_list|,
 name|TempBuf
 modifier|*
 name|area
+parameter_list|,
+name|int
+name|mode
 parameter_list|)
 block|{
 name|PixelRegion
@@ -3230,6 +3242,8 @@ argument_list|,
 name|destPR
 operator|.
 name|w
+argument_list|,
+name|mode
 argument_list|)
 expr_stmt|;
 name|d
@@ -3246,7 +3260,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_line_pixmap_mask (GImage * dest,GimpDrawable * drawable,GimpBrushPixmap * brush,guchar * d,int x,int y,int bytes,int width)
+DECL|function|paint_line_pixmap_mask (GImage * dest,GimpDrawable * drawable,GimpBrushPixmap * brush,guchar * d,int x,int y,int bytes,int width,int mode)
 name|paint_line_pixmap_mask
 parameter_list|(
 name|GImage
@@ -3276,6 +3290,9 @@ name|bytes
 parameter_list|,
 name|int
 name|width
+parameter_list|,
+name|int
+name|mode
 parameter_list|)
 block|{
 name|guchar
@@ -3398,6 +3415,13 @@ name|pixmap_mask
 operator|->
 name|width
 expr_stmt|;
+if|if
+condition|(
+name|mode
+operator|==
+name|SOFT
+condition|)
+block|{
 for|for
 control|(
 name|i
@@ -3456,6 +3480,8 @@ expr_stmt|;
 comment|/* multiply alpha into the pixmap data */
 comment|/* maybe we could do this at tool creation or brush switch time? */
 comment|/* and compute it for the whole brush at once and cache it?  */
+if|if
+condition|(
 name|alpha
 operator|=
 name|d
@@ -3466,7 +3492,8 @@ literal|1
 index|]
 operator|*
 name|factor
-expr_stmt|;
+condition|)
+block|{
 name|d
 index|[
 literal|0
@@ -3488,6 +3515,7 @@ index|]
 operator|*=
 name|alpha
 expr_stmt|;
+block|}
 comment|/* printf("i: %i d->r: %i d->g: %i d->b: %i d->a: %i\n",i,(int)d[0], (int)d[1], (int)d[2], (int)d[3]); */
 name|gimage_transform_color
 argument_list|(
@@ -3506,6 +3534,83 @@ name|d
 operator|+=
 name|bytes
 expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|width
+condition|;
+name|i
+operator|++
+control|)
+block|{
+comment|/* attempt to avoid doing this calc twice in the loop */
+name|x_index
+operator|=
+operator|(
+operator|(
+name|i
+operator|+
+name|x
+operator|)
+operator|%
+name|brush
+operator|->
+name|pixmap_mask
+operator|->
+name|width
+operator|)
+expr_stmt|;
+name|p
+operator|=
+name|b
+operator|+
+name|x_index
+operator|*
+name|brush
+operator|->
+name|pixmap_mask
+operator|->
+name|bytes
+expr_stmt|;
+name|d
+index|[
+name|bytes
+operator|-
+literal|1
+index|]
+operator|=
+literal|255
+expr_stmt|;
+comment|/* multiply alpha into the pixmap data */
+comment|/* maybe we could do this at tool creation or brush switch time? */
+comment|/* and compute it for the whole brush at once and cache it?  */
+name|gimage_transform_color
+argument_list|(
+name|dest
+argument_list|,
+name|drawable
+argument_list|,
+name|p
+argument_list|,
+name|d
+argument_list|,
+name|RGB
+argument_list|)
+expr_stmt|;
+name|d
+operator|+=
+name|bytes
+expr_stmt|;
+block|}
 block|}
 block|}
 end_function
