@@ -369,7 +369,7 @@ define|#
 directive|define
 name|DEFAULT_UNIT_BLURB
 define|\
-value|"Set the default unit for new images and for the File/New dialog. " \ "This units will be used for coordinate display when not in dot-for-dot " \ "mode. The default unit can be one of inches , millimeters, points or " \ "picas or the identifier of one of the units defined in your user units " \ "database."
+value|"Set the default unit for new images and for the File/New dialog. " \ "This units will be used for coordinate display when not in dot-for-dot " \ "mode."
 end_define
 
 begin_define
@@ -396,7 +396,7 @@ define|#
 directive|define
 name|DEFAULT_RESOLUTION_UNIT_BLURB
 define|\
-value|"Set the units for the display of the default resolution in the " \ "File/New dialog. The default resolution units can be one of inches, " \ "millimeters, points or picas or the identifier of one of the units " \ "defined in your user unit database. The default is inches."
+value|"Set the units for the display of the default resolution in the " \ "File/New dialog."
 end_define
 
 begin_define
@@ -432,7 +432,7 @@ define|#
 directive|define
 name|IMAGE_TITLE_FORMAT_BLURB
 define|\
-value|"Set the text to appear in image window titles.  Certain % character " \ "sequences are recognised and expanded as follows:\n" \ "\n" \ "%%  literal percent sign\n" \ "%f  bare filename, or \"Untitled\"\n" \ "%F  full path to file, or \"Untitled\"\n" \ "%p  PDB image id\n" \ "%i  view instance number\n" \ "%t  image type (RGB, indexed, greyscale)\n" \ "%z  zoom factor as a percentage\n" \ "%s  source scale factor\n" \ "%d  destination scale factor\n" \ "%Dx expands to x if the image is dirty, the empty string otherwise\n" \ "%Cx expands to x if the image is clean, the empty string otherwise\n" \ "%m  memory used by the image\n" \ "%l  the number of layers\n" \ "%L  the name of the active layer/channel\n" \ "%w  image width in pixels\n" \ "%W  image width in real-world units\n" \ "%h  image height in pixels\n" \ "%H  image height in real-world units\n" \ "%u  unit symbol\n" \ "%U  unit abbreviation\n"
+value|"Set the text to appear in image window titles.  Certain % character " \ "sequences are recognised and expanded as follows:\n" \ "\n" \ "%%  literal percent sign\n" \ "%f  bare filename, or \"Untitled\"\n" \ "%F  full path to file, or \"Untitled\"\n" \ "%p  PDB image id\n" \ "%i  view instance number\n" \ "%t  image type (RGB, indexed, greyscale)\n" \ "%z  zoom factor as a percentage\n" \ "%s  source scale factor\n" \ "%d  destination scale factor\n" \ "%Dx expands to x if the image is dirty, the empty string otherwise\n" \ "%Cx expands to x if the image is clean, the empty string otherwise\n" \ "%m  memory used by the image\n" \ "%l  the number of layers\n" \ "%L  the name of the active layer/channel\n" \ "%w  image width in pixels\n" \ "%W  image width in real-world units\n" \ "%h  image height in pixels\n" \ "%H  image height in real-world units\n" \ "%u  unit symbol\n" \ "%U  unit abbreviation\n\n"
 end_define
 
 begin_define
