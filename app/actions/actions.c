@@ -288,6 +288,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text-editor-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool-options-actions.h"
 end_include
 
@@ -744,6 +750,21 @@ block|,
 name|templates_actions_setup
 block|,
 name|templates_actions_update
+block|}
+block|,
+block|{
+literal|"text-editor"
+block|,
+name|N_
+argument_list|(
+literal|"Text Editor"
+argument_list|)
+block|,
+name|GIMP_STOCK_EDIT
+block|,
+name|text_editor_actions_setup
+block|,
+name|text_editor_actions_update
 block|}
 block|,
 block|{

@@ -289,6 +289,27 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_text_buffer_load
+parameter_list|(
+name|GtkTextBuffer
+modifier|*
+name|buffer
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_text_buffer_save
 parameter_list|(
 name|GtkTextBuffer

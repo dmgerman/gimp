@@ -69,11 +69,6 @@ DECL|member|base_dir
 name|GimpTextDirection
 name|base_dir
 decl_stmt|;
-DECL|member|group
-name|GtkWidget
-modifier|*
-name|group
-decl_stmt|;
 DECL|member|view
 name|GtkWidget
 modifier|*
@@ -83,6 +78,11 @@ DECL|member|file_dialog
 name|GtkWidget
 modifier|*
 name|file_dialog
+decl_stmt|;
+DECL|member|ui_manager
+name|GimpUIManager
+modifier|*
+name|ui_manager
 decl_stmt|;
 block|}
 struct|;
@@ -144,6 +144,10 @@ specifier|const
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl
