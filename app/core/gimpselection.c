@@ -651,6 +651,10 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
+name|GimpViewableClass
+modifier|*
+name|viewable_class
+decl_stmt|;
 name|GimpItemClass
 modifier|*
 name|item_class
@@ -663,6 +667,13 @@ name|GimpChannelClass
 modifier|*
 name|channel_class
 decl_stmt|;
+name|viewable_class
+operator|=
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
 name|item_class
 operator|=
 name|GIMP_ITEM_CLASS
@@ -690,6 +701,12 @@ name|g_type_class_peek_parent
 argument_list|(
 name|klass
 argument_list|)
+expr_stmt|;
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-selection"
 expr_stmt|;
 name|item_class
 operator|->

@@ -89,12 +89,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpchannel-select.h"
 end_include
 
@@ -594,7 +588,7 @@ name|gimp_preview_new_by_types
 argument_list|(
 name|GIMP_TYPE_PREVIEW
 argument_list|,
-name|GIMP_TYPE_DRAWABLE
+name|GIMP_TYPE_SELECTION
 argument_list|,
 name|GIMP_PREVIEW_SIZE_HUGE
 argument_list|,
