@@ -45,7 +45,7 @@ name|GIMP_ADD_WHITE_MASK
 block|,
 name|N_
 argument_list|(
-literal|"_White (Full Opacity)"
+literal|"_White (full opacity)"
 argument_list|)
 block|,
 literal|"white-mask"
@@ -56,7 +56,7 @@ name|GIMP_ADD_BLACK_MASK
 block|,
 name|N_
 argument_list|(
-literal|"_Black (Full Transparency)"
+literal|"_Black (full transparency)"
 argument_list|)
 block|,
 literal|"black-mask"
@@ -67,7 +67,7 @@ name|GIMP_ADD_ALPHA_MASK
 block|,
 name|N_
 argument_list|(
-literal|"Layer's _Alpha Channel"
+literal|"Layer's _alpha channel"
 argument_list|)
 block|,
 literal|"alpha-mask"
@@ -78,7 +78,7 @@ name|GIMP_ADD_ALPHA_TRANSFER_MASK
 block|,
 name|N_
 argument_list|(
-literal|"_Transfer Layer's Alpha Channel"
+literal|"_Transfer layer's alpha channel"
 argument_list|)
 block|,
 literal|"alpha-transfer-mask"
@@ -100,7 +100,7 @@ name|GIMP_ADD_COPY_MASK
 block|,
 name|N_
 argument_list|(
-literal|"_Grayscale Copy of Layer"
+literal|"_Grayscale copy of layer"
 argument_list|)
 block|,
 literal|"copy-mask"
@@ -187,7 +187,7 @@ name|GIMP_FG_TRANSPARENT_MODE
 block|,
 name|N_
 argument_list|(
-literal|"FG to Transparent"
+literal|"FG to transparent"
 argument_list|)
 block|,
 literal|"fg-transparent-mode"
@@ -198,7 +198,7 @@ name|GIMP_CUSTOM_MODE
 block|,
 name|N_
 argument_list|(
-literal|"Custom Gradient"
+literal|"Custom gradient"
 argument_list|)
 block|,
 literal|"custom-mode"
@@ -263,7 +263,7 @@ name|GIMP_FG_BUCKET_FILL
 block|,
 name|N_
 argument_list|(
-literal|"FG Color Fill"
+literal|"FG color fill"
 argument_list|)
 block|,
 literal|"fg-bucket-fill"
@@ -274,7 +274,7 @@ name|GIMP_BG_BUCKET_FILL
 block|,
 name|N_
 argument_list|(
-literal|"BG Color Fill"
+literal|"BG color fill"
 argument_list|)
 block|,
 literal|"bg-bucket-fill"
@@ -285,7 +285,7 @@ name|GIMP_PATTERN_BUCKET_FILL
 block|,
 name|N_
 argument_list|(
-literal|"Pattern Fill"
+literal|"Pattern fill"
 argument_list|)
 block|,
 literal|"pattern-bucket-fill"
@@ -638,7 +638,7 @@ name|GIMP_NO_DITHER
 block|,
 name|N_
 argument_list|(
-literal|"No Color Dithering"
+literal|"No color dithering"
 argument_list|)
 block|,
 literal|"no-dither"
@@ -649,7 +649,7 @@ name|GIMP_FS_DITHER
 block|,
 name|N_
 argument_list|(
-literal|"Floyd-Steinberg Color Dithering (Normal)"
+literal|"Floyd-Steinberg color dithering (normal)"
 argument_list|)
 block|,
 literal|"fs-dither"
@@ -660,7 +660,7 @@ name|GIMP_FSLOWBLEED_DITHER
 block|,
 name|N_
 argument_list|(
-literal|"Floyd-Steinberg Color Dithering (Reduced Color Bleeding)"
+literal|"Floyd-Steinberg color dithering (reduced color bleeding)"
 argument_list|)
 block|,
 literal|"fslowbleed-dither"
@@ -671,7 +671,7 @@ name|GIMP_FIXED_DITHER
 block|,
 name|N_
 argument_list|(
-literal|"Positioned Color Dithering"
+literal|"Positioned color dithering"
 argument_list|)
 block|,
 literal|"fixed-dither"
@@ -870,7 +870,7 @@ name|GIMP_FOREGROUND_FILL
 block|,
 name|N_
 argument_list|(
-literal|"Foreground Color"
+literal|"Foreground color"
 argument_list|)
 block|,
 literal|"foreground-fill"
@@ -881,7 +881,7 @@ name|GIMP_BACKGROUND_FILL
 block|,
 name|N_
 argument_list|(
-literal|"Background Color"
+literal|"Background color"
 argument_list|)
 block|,
 literal|"background-fill"
@@ -1001,7 +1001,7 @@ name|GIMP_GRADIENT_BILINEAR
 block|,
 name|N_
 argument_list|(
-literal|"Bi-Linear"
+literal|"Bi-linear"
 argument_list|)
 block|,
 literal|"bilinear"
@@ -1198,7 +1198,7 @@ name|GIMP_GRID_DOUBLE_DASH
 block|,
 name|N_
 argument_list|(
-literal|"Double Dashed"
+literal|"Double dashed"
 argument_list|)
 block|,
 literal|"double-dash"
@@ -1546,7 +1546,7 @@ name|GIMP_DASH_LONG_DASH
 block|,
 name|N_
 argument_list|(
-literal|"Long Dashes"
+literal|"Long dashes"
 argument_list|)
 block|,
 literal|"long-dash"
@@ -1557,7 +1557,7 @@ name|GIMP_DASH_MEDIUM_DASH
 block|,
 name|N_
 argument_list|(
-literal|"Medium Dashes"
+literal|"Medium dashes"
 argument_list|)
 block|,
 literal|"medium-dash"
@@ -1568,7 +1568,7 @@ name|GIMP_DASH_SHORT_DASH
 block|,
 name|N_
 argument_list|(
-literal|"Short Dashes"
+literal|"Short dashes"
 argument_list|)
 block|,
 literal|"short-dash"
@@ -1579,7 +1579,7 @@ name|GIMP_DASH_SPARSE_DOTS
 block|,
 name|N_
 argument_list|(
-literal|"Sparse Dots"
+literal|"Sparse dots"
 argument_list|)
 block|,
 literal|"sparse-dots"
@@ -1590,7 +1590,7 @@ name|GIMP_DASH_NORMAL_DOTS
 block|,
 name|N_
 argument_list|(
-literal|"Normal Dots"
+literal|"Normal dots"
 argument_list|)
 block|,
 literal|"normal-dots"
@@ -1601,7 +1601,7 @@ name|GIMP_DASH_DENSE_DOTS
 block|,
 name|N_
 argument_list|(
-literal|"Dense Dots"
+literal|"Dense dots"
 argument_list|)
 block|,
 literal|"dense-dots"
@@ -1623,7 +1623,7 @@ name|GIMP_DASH_DASH_DOT
 block|,
 name|N_
 argument_list|(
-literal|"Dash Dot..."
+literal|"Dash dot..."
 argument_list|)
 block|,
 literal|"dash-dot"
@@ -1634,7 +1634,7 @@ name|GIMP_DASH_DASH_DOT_DOT
 block|,
 name|N_
 argument_list|(
-literal|"Dash Dot Dot..."
+literal|"Dash dot dot..."
 argument_list|)
 block|,
 literal|"dash-dot-dot"
@@ -1710,7 +1710,7 @@ name|GIMP_ICON_TYPE_INLINE_PIXBUF
 block|,
 name|N_
 argument_list|(
-literal|"Inline Pixbuf"
+literal|"Inline pixbuf"
 argument_list|)
 block|,
 literal|"inline-pixbuf"
@@ -1721,7 +1721,7 @@ name|GIMP_ICON_TYPE_IMAGE_FILE
 block|,
 name|N_
 argument_list|(
-literal|"Image File"
+literal|"Image file"
 argument_list|)
 block|,
 literal|"image-file"
@@ -1786,7 +1786,7 @@ name|GIMP_RGB
 block|,
 name|N_
 argument_list|(
-literal|"RGB Color"
+literal|"RGB color"
 argument_list|)
 block|,
 literal|"rgb"
@@ -1808,7 +1808,7 @@ name|GIMP_INDEXED
 block|,
 name|N_
 argument_list|(
-literal|"Indexed Color"
+literal|"Indexed color"
 argument_list|)
 block|,
 literal|"indexed"
@@ -1884,7 +1884,7 @@ name|GIMP_RGBA_IMAGE
 block|,
 name|N_
 argument_list|(
-literal|"RGB-Alpha"
+literal|"RGB-alpha"
 argument_list|)
 block|,
 literal|"rgba-image"
@@ -1906,7 +1906,7 @@ name|GIMP_GRAYA_IMAGE
 block|,
 name|N_
 argument_list|(
-literal|"Grayscale-Alpha"
+literal|"Grayscale-alpha"
 argument_list|)
 block|,
 literal|"graya-image"
@@ -1928,7 +1928,7 @@ name|GIMP_INDEXEDA_IMAGE
 block|,
 name|N_
 argument_list|(
-literal|"Indexed-Alpha"
+literal|"Indexed-alpha"
 argument_list|)
 block|,
 literal|"indexeda-image"
@@ -2169,7 +2169,7 @@ name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
 block|,
 name|N_
 argument_list|(
-literal|"Very Small"
+literal|"Very small"
 argument_list|)
 block|,
 literal|"extra-small"
@@ -2213,7 +2213,7 @@ name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
 block|,
 name|N_
 argument_list|(
-literal|"Very Large"
+literal|"Very large"
 argument_list|)
 block|,
 literal|"extra-large"
@@ -2322,7 +2322,7 @@ name|GIMP_REPEAT_SAWTOOTH
 block|,
 name|N_
 argument_list|(
-literal|"Sawtooth Wave"
+literal|"Sawtooth wave"
 argument_list|)
 block|,
 literal|"sawtooth"
@@ -2333,7 +2333,7 @@ name|GIMP_REPEAT_TRIANGULAR
 block|,
 name|N_
 argument_list|(
-literal|"Triangular Wave"
+literal|"Triangular wave"
 argument_list|)
 block|,
 literal|"triangular"
@@ -2492,7 +2492,7 @@ name|GIMP_THUMBNAIL_SIZE_NONE
 block|,
 name|N_
 argument_list|(
-literal|"No Thumbnails"
+literal|"No thumbnails"
 argument_list|)
 block|,
 literal|"none"
@@ -2579,7 +2579,7 @@ name|GIMP_TRANSFORM_FORWARD
 block|,
 name|N_
 argument_list|(
-literal|"Forward (Traditional)"
+literal|"Forward (traditional)"
 argument_list|)
 block|,
 literal|"forward"
@@ -2590,7 +2590,7 @@ name|GIMP_TRANSFORM_BACKWARD
 block|,
 name|N_
 argument_list|(
-literal|"Backward (Corrective)"
+literal|"Backward (corrective)"
 argument_list|)
 block|,
 literal|"backward"
@@ -2854,7 +2854,7 @@ name|GIMP_UNDO_GROUP_IMAGE_SCALE
 block|,
 name|N_
 argument_list|(
-literal|"Scale Image"
+literal|"Scale image"
 argument_list|)
 block|,
 literal|"group-image-scale"
@@ -2865,7 +2865,7 @@ name|GIMP_UNDO_GROUP_IMAGE_RESIZE
 block|,
 name|N_
 argument_list|(
-literal|"Resize Image"
+literal|"Resize image"
 argument_list|)
 block|,
 literal|"group-image-resize"
@@ -2876,7 +2876,7 @@ name|GIMP_UNDO_GROUP_IMAGE_FLIP
 block|,
 name|N_
 argument_list|(
-literal|"Flip Image"
+literal|"Flip image"
 argument_list|)
 block|,
 literal|"group-image-flip"
@@ -2887,7 +2887,7 @@ name|GIMP_UNDO_GROUP_IMAGE_ROTATE
 block|,
 name|N_
 argument_list|(
-literal|"Rotate Image"
+literal|"Rotate image"
 argument_list|)
 block|,
 literal|"group-image-rotate"
@@ -2898,7 +2898,7 @@ name|GIMP_UNDO_GROUP_IMAGE_CONVERT
 block|,
 name|N_
 argument_list|(
-literal|"Convert Image"
+literal|"Convert image"
 argument_list|)
 block|,
 literal|"group-image-convert"
@@ -2909,7 +2909,7 @@ name|GIMP_UNDO_GROUP_IMAGE_CROP
 block|,
 name|N_
 argument_list|(
-literal|"Crop Image"
+literal|"Crop image"
 argument_list|)
 block|,
 literal|"group-image-crop"
@@ -2920,7 +2920,7 @@ name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 block|,
 name|N_
 argument_list|(
-literal|"Merge Layers"
+literal|"Merge layers"
 argument_list|)
 block|,
 literal|"group-image-layers-merge"
@@ -2931,7 +2931,7 @@ name|GIMP_UNDO_GROUP_IMAGE_VECTORS_MERGE
 block|,
 name|N_
 argument_list|(
-literal|"Merge Vectors"
+literal|"Merge vectors"
 argument_list|)
 block|,
 literal|"group-image-vectors-merge"
@@ -2986,7 +2986,7 @@ name|GIMP_UNDO_GROUP_DRAWABLE_MOD
 block|,
 name|N_
 argument_list|(
-literal|"Drawable Mod"
+literal|"Drawable mod"
 argument_list|)
 block|,
 literal|"group-drawable-mod"
@@ -2997,7 +2997,7 @@ name|GIMP_UNDO_GROUP_MASK
 block|,
 name|N_
 argument_list|(
-literal|"Selection Mask"
+literal|"Selection mask"
 argument_list|)
 block|,
 literal|"group-mask"
@@ -3008,7 +3008,7 @@ name|GIMP_UNDO_GROUP_ITEM_VISIBILITY
 block|,
 name|N_
 argument_list|(
-literal|"Item Visibility"
+literal|"Item visibility"
 argument_list|)
 block|,
 literal|"group-item-visibility"
@@ -3019,7 +3019,7 @@ name|GIMP_UNDO_GROUP_ITEM_LINKED
 block|,
 name|N_
 argument_list|(
-literal|"Linked Item"
+literal|"Linked item"
 argument_list|)
 block|,
 literal|"group-item-linked"
@@ -3030,7 +3030,7 @@ name|GIMP_UNDO_GROUP_ITEM_PROPERTIES
 block|,
 name|N_
 argument_list|(
-literal|"Item Properties"
+literal|"Item properties"
 argument_list|)
 block|,
 literal|"group-item-properties"
@@ -3041,7 +3041,7 @@ name|GIMP_UNDO_GROUP_ITEM_DISPLACE
 block|,
 name|N_
 argument_list|(
-literal|"Move Item"
+literal|"Move item"
 argument_list|)
 block|,
 literal|"group-item-displace"
@@ -3052,7 +3052,7 @@ name|GIMP_UNDO_GROUP_ITEM_SCALE
 block|,
 name|N_
 argument_list|(
-literal|"Scale Item"
+literal|"Scale item"
 argument_list|)
 block|,
 literal|"group-item-scale"
@@ -3063,7 +3063,7 @@ name|GIMP_UNDO_GROUP_ITEM_RESIZE
 block|,
 name|N_
 argument_list|(
-literal|"Resize Item"
+literal|"Resize item"
 argument_list|)
 block|,
 literal|"group-item-resize"
@@ -3074,7 +3074,7 @@ name|GIMP_UNDO_GROUP_LAYER_ADD_MASK
 block|,
 name|N_
 argument_list|(
-literal|"Add Layer Mask"
+literal|"Add layer mask"
 argument_list|)
 block|,
 literal|"group-layer-add-mask"
@@ -3085,7 +3085,7 @@ name|GIMP_UNDO_GROUP_LAYER_APPLY_MASK
 block|,
 name|N_
 argument_list|(
-literal|"Apply Layer Mask"
+literal|"Apply layer mask"
 argument_list|)
 block|,
 literal|"group-layer-apply-mask"
@@ -3096,7 +3096,7 @@ name|GIMP_UNDO_GROUP_FS_TO_LAYER
 block|,
 name|N_
 argument_list|(
-literal|"Floating Selection to Layer"
+literal|"Floating selection to layer"
 argument_list|)
 block|,
 literal|"group-fs-to-layer"
@@ -3107,7 +3107,7 @@ name|GIMP_UNDO_GROUP_FS_FLOAT
 block|,
 name|N_
 argument_list|(
-literal|"Float Selection"
+literal|"Float selection"
 argument_list|)
 block|,
 literal|"group-fs-float"
@@ -3118,7 +3118,7 @@ name|GIMP_UNDO_GROUP_FS_ANCHOR
 block|,
 name|N_
 argument_list|(
-literal|"Anchor Floating Selection"
+literal|"Anchor floating selection"
 argument_list|)
 block|,
 literal|"group-fs-anchor"
@@ -3129,7 +3129,7 @@ name|GIMP_UNDO_GROUP_FS_REMOVE
 block|,
 name|N_
 argument_list|(
-literal|"Remove Floating Selection"
+literal|"Remove floating selection"
 argument_list|)
 block|,
 literal|"group-fs-remove"
@@ -3195,7 +3195,7 @@ name|GIMP_UNDO_GROUP_PARASITE_ATTACH
 block|,
 name|N_
 argument_list|(
-literal|"Attach Parasite"
+literal|"Attach parasite"
 argument_list|)
 block|,
 literal|"group-parasite-attach"
@@ -3206,7 +3206,7 @@ name|GIMP_UNDO_GROUP_PARASITE_REMOVE
 block|,
 name|N_
 argument_list|(
-literal|"Remove Parasite"
+literal|"Remove parasite"
 argument_list|)
 block|,
 literal|"group-parasite-remove"
@@ -3217,7 +3217,7 @@ name|GIMP_UNDO_GROUP_VECTORS_IMPORT
 block|,
 name|N_
 argument_list|(
-literal|"Import Paths"
+literal|"Import paths"
 argument_list|)
 block|,
 literal|"group-vectors-import"
@@ -3239,7 +3239,7 @@ name|GIMP_UNDO_IMAGE_TYPE
 block|,
 name|N_
 argument_list|(
-literal|"Image Type"
+literal|"Image type"
 argument_list|)
 block|,
 literal|"image-type"
@@ -3250,7 +3250,7 @@ name|GIMP_UNDO_IMAGE_SIZE
 block|,
 name|N_
 argument_list|(
-literal|"Image Size"
+literal|"Image size"
 argument_list|)
 block|,
 literal|"image-size"
@@ -3261,7 +3261,7 @@ name|GIMP_UNDO_IMAGE_RESOLUTION
 block|,
 name|N_
 argument_list|(
-literal|"Resolution Change"
+literal|"Resolution change"
 argument_list|)
 block|,
 literal|"image-resolution"
@@ -3294,7 +3294,7 @@ name|GIMP_UNDO_IMAGE_COLORMAP
 block|,
 name|N_
 argument_list|(
-literal|"Change Indexed Palette"
+literal|"Change indexed palette"
 argument_list|)
 block|,
 literal|"image-colormap"
@@ -3316,7 +3316,7 @@ name|GIMP_UNDO_DRAWABLE_MOD
 block|,
 name|N_
 argument_list|(
-literal|"Drawable Mod"
+literal|"Drawable mod"
 argument_list|)
 block|,
 literal|"drawable-mod"
@@ -3327,7 +3327,7 @@ name|GIMP_UNDO_MASK
 block|,
 name|N_
 argument_list|(
-literal|"Selection Mask"
+literal|"Selection mask"
 argument_list|)
 block|,
 literal|"mask"
@@ -3338,7 +3338,7 @@ name|GIMP_UNDO_ITEM_RENAME
 block|,
 name|N_
 argument_list|(
-literal|"Rename Item"
+literal|"Rename item"
 argument_list|)
 block|,
 literal|"item-rename"
@@ -3349,7 +3349,7 @@ name|GIMP_UNDO_ITEM_DISPLACE
 block|,
 name|N_
 argument_list|(
-literal|"Move Item"
+literal|"Move item"
 argument_list|)
 block|,
 literal|"item-displace"
@@ -3360,7 +3360,7 @@ name|GIMP_UNDO_ITEM_VISIBILITY
 block|,
 name|N_
 argument_list|(
-literal|"Item Visibility"
+literal|"Item visibility"
 argument_list|)
 block|,
 literal|"item-visibility"
@@ -3371,7 +3371,7 @@ name|GIMP_UNDO_ITEM_LINKED
 block|,
 name|N_
 argument_list|(
-literal|"Set Item Linked"
+literal|"Set item linked"
 argument_list|)
 block|,
 literal|"item-linked"
@@ -3382,7 +3382,7 @@ name|GIMP_UNDO_LAYER_ADD
 block|,
 name|N_
 argument_list|(
-literal|"New Layer"
+literal|"New layer"
 argument_list|)
 block|,
 literal|"layer-add"
@@ -3393,7 +3393,7 @@ name|GIMP_UNDO_LAYER_REMOVE
 block|,
 name|N_
 argument_list|(
-literal|"Delete Layer"
+literal|"Delete layer"
 argument_list|)
 block|,
 literal|"layer-remove"
@@ -3404,7 +3404,7 @@ name|GIMP_UNDO_LAYER_MASK_ADD
 block|,
 name|N_
 argument_list|(
-literal|"Add Layer Mask"
+literal|"Add layer mask"
 argument_list|)
 block|,
 literal|"layer-mask-add"
@@ -3415,7 +3415,7 @@ name|GIMP_UNDO_LAYER_MASK_REMOVE
 block|,
 name|N_
 argument_list|(
-literal|"Delete Layer Mask"
+literal|"Delete layer mask"
 argument_list|)
 block|,
 literal|"layer-mask-remove"
@@ -3426,7 +3426,7 @@ name|GIMP_UNDO_LAYER_REPOSITION
 block|,
 name|N_
 argument_list|(
-literal|"Reposition Layer"
+literal|"Reposition layer"
 argument_list|)
 block|,
 literal|"layer-reposition"
@@ -3437,7 +3437,7 @@ name|GIMP_UNDO_LAYER_MODE
 block|,
 name|N_
 argument_list|(
-literal|"Set Layer Mode"
+literal|"Set layer mode"
 argument_list|)
 block|,
 literal|"layer-mode"
@@ -3448,7 +3448,7 @@ name|GIMP_UNDO_LAYER_OPACITY
 block|,
 name|N_
 argument_list|(
-literal|"Set Layer Opacity"
+literal|"Set layer opacity"
 argument_list|)
 block|,
 literal|"layer-opacity"
@@ -3459,7 +3459,7 @@ name|GIMP_UNDO_LAYER_PRESERVE_TRANS
 block|,
 name|N_
 argument_list|(
-literal|"Set Preserve Trans"
+literal|"Set preserve trans"
 argument_list|)
 block|,
 literal|"layer-preserve-trans"
@@ -3481,7 +3481,7 @@ name|GIMP_UNDO_TEXT_LAYER_MODIFIED
 block|,
 name|N_
 argument_list|(
-literal|"Text Modified"
+literal|"Text modified"
 argument_list|)
 block|,
 literal|"text-layer-modified"
@@ -3492,7 +3492,7 @@ name|GIMP_UNDO_CHANNEL_ADD
 block|,
 name|N_
 argument_list|(
-literal|"New Channel"
+literal|"New channel"
 argument_list|)
 block|,
 literal|"channel-add"
@@ -3503,7 +3503,7 @@ name|GIMP_UNDO_CHANNEL_REMOVE
 block|,
 name|N_
 argument_list|(
-literal|"Delete Channel"
+literal|"Delete channel"
 argument_list|)
 block|,
 literal|"channel-remove"
@@ -3514,7 +3514,7 @@ name|GIMP_UNDO_CHANNEL_REPOSITION
 block|,
 name|N_
 argument_list|(
-literal|"Reposition Channel"
+literal|"Reposition channel"
 argument_list|)
 block|,
 literal|"channel-reposition"
@@ -3525,7 +3525,7 @@ name|GIMP_UNDO_CHANNEL_COLOR
 block|,
 name|N_
 argument_list|(
-literal|"Channel Color"
+literal|"Channel color"
 argument_list|)
 block|,
 literal|"channel-color"
@@ -3536,7 +3536,7 @@ name|GIMP_UNDO_VECTORS_ADD
 block|,
 name|N_
 argument_list|(
-literal|"New Vectors"
+literal|"New vectors"
 argument_list|)
 block|,
 literal|"vectors-add"
@@ -3547,7 +3547,7 @@ name|GIMP_UNDO_VECTORS_REMOVE
 block|,
 name|N_
 argument_list|(
-literal|"Delete Vectors"
+literal|"Delete vectors"
 argument_list|)
 block|,
 literal|"vectors-remove"
@@ -3558,7 +3558,7 @@ name|GIMP_UNDO_VECTORS_MOD
 block|,
 name|N_
 argument_list|(
-literal|"Vectors Mod"
+literal|"Vectors mod"
 argument_list|)
 block|,
 literal|"vectors-mod"
@@ -3569,7 +3569,7 @@ name|GIMP_UNDO_VECTORS_REPOSITION
 block|,
 name|N_
 argument_list|(
-literal|"Reposition Vectors"
+literal|"Reposition vectors"
 argument_list|)
 block|,
 literal|"vectors-reposition"
@@ -3580,7 +3580,7 @@ name|GIMP_UNDO_FS_TO_LAYER
 block|,
 name|N_
 argument_list|(
-literal|"FS to Layer"
+literal|"FS to layer"
 argument_list|)
 block|,
 literal|"fs-to-layer"
@@ -3591,7 +3591,7 @@ name|GIMP_UNDO_FS_RIGOR
 block|,
 name|N_
 argument_list|(
-literal|"FS Rigor"
+literal|"FS rigor"
 argument_list|)
 block|,
 literal|"fs-rigor"
@@ -3602,7 +3602,7 @@ name|GIMP_UNDO_FS_RELAX
 block|,
 name|N_
 argument_list|(
-literal|"FS Relax"
+literal|"FS relax"
 argument_list|)
 block|,
 literal|"fs-relax"
@@ -3635,7 +3635,7 @@ name|GIMP_UNDO_PARASITE_ATTACH
 block|,
 name|N_
 argument_list|(
-literal|"Attach Parasite"
+literal|"Attach parasite"
 argument_list|)
 block|,
 literal|"parasite-attach"
@@ -3646,7 +3646,7 @@ name|GIMP_UNDO_PARASITE_REMOVE
 block|,
 name|N_
 argument_list|(
-literal|"Remove Parasite"
+literal|"Remove parasite"
 argument_list|)
 block|,
 literal|"parasite-remove"

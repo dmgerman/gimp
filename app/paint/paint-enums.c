@@ -45,7 +45,7 @@ name|GIMP_IMAGE_CLONE
 block|,
 name|N_
 argument_list|(
-literal|"Image Source"
+literal|"Image source"
 argument_list|)
 block|,
 literal|"image-clone"
@@ -56,7 +56,7 @@ name|GIMP_PATTERN_CLONE
 block|,
 name|N_
 argument_list|(
-literal|"Pattern Source"
+literal|"Pattern source"
 argument_list|)
 block|,
 literal|"pattern-clone"
@@ -121,7 +121,7 @@ name|GIMP_CLONE_ALIGN_NO
 block|,
 name|N_
 argument_list|(
-literal|"Non Aligned"
+literal|"Non-aligned"
 argument_list|)
 block|,
 literal|"no"

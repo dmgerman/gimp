@@ -115,7 +115,7 @@ name|GIMP_TEXT_DIRECTION_LTR
 block|,
 name|N_
 argument_list|(
-literal|"From Left to Right"
+literal|"From left to right"
 argument_list|)
 block|,
 literal|"ltr"
@@ -126,7 +126,7 @@ name|GIMP_TEXT_DIRECTION_RTL
 block|,
 name|N_
 argument_list|(
-literal|"From Right to Left"
+literal|"From right to left"
 argument_list|)
 block|,
 literal|"rtl"
@@ -191,7 +191,7 @@ name|GIMP_TEXT_JUSTIFY_LEFT
 block|,
 name|N_
 argument_list|(
-literal|"Left Justified"
+literal|"Left justified"
 argument_list|)
 block|,
 literal|"left"
@@ -202,7 +202,7 @@ name|GIMP_TEXT_JUSTIFY_RIGHT
 block|,
 name|N_
 argument_list|(
-literal|"Right Justified"
+literal|"Right justified"
 argument_list|)
 block|,
 literal|"right"

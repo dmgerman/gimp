@@ -45,7 +45,7 @@ name|GIMP_CURSOR_MODE_TOOL_ICON
 block|,
 name|N_
 argument_list|(
-literal|"Tool Icon"
+literal|"Tool icon"
 argument_list|)
 block|,
 literal|"tool-icon"
@@ -56,7 +56,7 @@ name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 block|,
 name|N_
 argument_list|(
-literal|"Tool Icon with Crosshair"
+literal|"Tool icon with crosshair"
 argument_list|)
 block|,
 literal|"tool-crosshair"
@@ -132,7 +132,7 @@ name|GIMP_CANVAS_PADDING_MODE_DEFAULT
 block|,
 name|N_
 argument_list|(
-literal|"From Theme"
+literal|"From theme"
 argument_list|)
 block|,
 literal|"default"
@@ -143,7 +143,7 @@ name|GIMP_CANVAS_PADDING_MODE_LIGHT_CHECK
 block|,
 name|N_
 argument_list|(
-literal|"Light Check Color"
+literal|"Light check color"
 argument_list|)
 block|,
 literal|"light-check"
@@ -154,7 +154,7 @@ name|GIMP_CANVAS_PADDING_MODE_DARK_CHECK
 block|,
 name|N_
 argument_list|(
-literal|"Dark Check Color"
+literal|"Dark check color"
 argument_list|)
 block|,
 literal|"dark-check"
@@ -165,7 +165,7 @@ name|GIMP_CANVAS_PADDING_MODE_CUSTOM
 block|,
 name|N_
 argument_list|(
-literal|"Custom Color"
+literal|"Custom color"
 argument_list|)
 block|,
 literal|"custom"
