@@ -1292,11 +1292,11 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|gulong
-name|progress
-decl_stmt|;
 name|GTimeVal
 name|timeout
+decl_stmt|;
+name|gulong
+name|progress
 decl_stmt|;
 name|g_get_current_time
 argument_list|(
@@ -1371,7 +1371,6 @@ name|threads
 operator|!=
 literal|0
 condition|)
-block|{
 name|g_cond_wait
 argument_list|(
 name|pool_cond
@@ -1379,7 +1378,6 @@ argument_list|,
 name|pool_mutex
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|g_mutex_unlock
 argument_list|(
