@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c842d030108
+DECL|struct|__anon297498610108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c842d030208
+DECL|struct|__anon297498610208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -108,7 +108,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* Declare a local function.  */
+comment|/* Declare local functions.  */
 end_comment
 
 begin_function_decl
@@ -386,14 +386,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_tile"
 argument_list|,
-literal|"Create a new image which is a tiled version of the input drawable"
+literal|"Create a new image which is a tiled version of the "
+literal|"input drawable"
 argument_list|,
 literal|"This function creates a new image with a single "
 literal|"layer sized to the specified 'new_width' and "
 literal|"'new_height' parameters.  The specified drawable "
 literal|"is tiled into this layer.  The new layer will have "
-literal|"the same type as the specified drawable and the new "
-literal|"image will have a corresponding base type"
+literal|"the same type as the specified drawable and the "
+literal|"new image will have a corresponding base type."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -469,7 +470,8 @@ name|new_layer
 decl_stmt|;
 name|gint
 name|width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|height
 decl_stmt|;
 name|run_mode
@@ -867,13 +869,15 @@ parameter_list|)
 block|{
 name|GimpPixelRgn
 name|src_rgn
-decl_stmt|,
+decl_stmt|;
+name|GimpPixelRgn
 name|dest_rgn
 decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|,
+decl_stmt|;
+name|GimpDrawable
 modifier|*
 name|new_layer
 decl_stmt|;
@@ -908,6 +912,33 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
+comment|/* sanity check parameters */
+if|if
+condition|(
+name|tvals
+operator|.
+name|new_width
+operator|<
+literal|1
+operator|||
+name|tvals
+operator|.
+name|new_height
+operator|<
+literal|1
+condition|)
+block|{
+operator|*
+name|layer_id
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 comment|/* initialize */
 name|image_type
 operator|=
@@ -1026,6 +1057,18 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|*
+name|layer_id
+operator|==
+operator|-
+literal|1
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 name|gimp_image_add_layer
 argument_list|(
 name|new_image_id
@@ -1334,12 +1377,12 @@ expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
