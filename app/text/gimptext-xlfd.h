@@ -53,6 +53,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_text_set_font_from_xlfd
+parameter_list|(
+name|GimpText
+modifier|*
+name|text
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|xlfd
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
