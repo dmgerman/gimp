@@ -49,6 +49,26 @@ struct|;
 end_struct
 
 begin_function_decl
+name|GimpArea
+modifier|*
+name|gimp_area_new
+parameter_list|(
+name|gint
+name|x1
+parameter_list|,
+name|gint
+name|y1
+parameter_list|,
+name|gint
+name|x2
+parameter_list|,
+name|gint
+name|y2
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GSList
 modifier|*
 name|gimp_display_area_list_process

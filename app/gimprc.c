@@ -288,7 +288,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc13d590103
+DECL|enum|__anon29c97e820103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1258,7 +1258,10 @@ block|,
 comment|/* default_threshold         */
 literal|15
 block|,
-comment|/* allow_resize_windows      */
+comment|/* resize_windows_on_zoom    */
+name|FALSE
+block|,
+comment|/* resize_windows_on_resize  */
 name|FALSE
 block|,
 comment|/* no_cursor_updating        */
@@ -1506,20 +1509,20 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"allow-resize-windows"
+literal|"resize-windows-on-zoom"
 block|,
 name|TT_BOOLEAN
 block|,
 operator|&
 name|gimprc
 operator|.
-name|allow_resize_windows
+name|resize_windows_on_zoom
 block|,
 name|NULL
 block|}
 block|,
 block|{
-literal|"dont-allow-resize-windows"
+literal|"dont-resize-windows-on-zoom"
 block|,
 name|TT_BOOLEAN
 block|,
@@ -1528,7 +1531,33 @@ block|,
 operator|&
 name|gimprc
 operator|.
-name|allow_resize_windows
+name|resize_windows_on_zoom
+block|}
+block|,
+block|{
+literal|"resize-windows-on-resize"
+block|,
+name|TT_BOOLEAN
+block|,
+operator|&
+name|gimprc
+operator|.
+name|resize_windows_on_resize
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"dont-resize-windows-on-resize"
+block|,
+name|TT_BOOLEAN
+block|,
+name|NULL
+block|,
+operator|&
+name|gimprc
+operator|.
+name|resize_windows_on_resize
 block|}
 block|,
 block|{

@@ -126,6 +126,11 @@ name|gboolean
 name|hidden
 decl_stmt|;
 comment|/*  is the selection hidden?          */
+DECL|member|layer_hidden
+name|gboolean
+name|layer_hidden
+decl_stmt|;
+comment|/*  is the layer boundary hidden?     */
 DECL|member|timeout_id
 name|guint
 name|timeout_id
@@ -273,6 +278,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_display_shell_selection_toggle
+parameter_list|(
+name|Selection
+modifier|*
+name|select
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_selection_toggle_layer
 parameter_list|(
 name|Selection
 modifier|*

@@ -105,7 +105,7 @@ DECL|member|tool_options
 name|GimpToolOptions
 name|tool_options
 decl_stmt|;
-comment|/* gint       allow_resize_windows; (from gimprc) */
+comment|/* gint       resize_windows_on_zoom; (from gimprc) */
 DECL|member|allow_resize_d
 name|gint
 name|allow_resize_d
@@ -803,7 +803,7 @@ name|allow_resize_d
 operator|=
 name|gimprc
 operator|.
-name|allow_resize_windows
+name|resize_windows_on_zoom
 expr_stmt|;
 name|options
 operator|->
@@ -857,7 +857,7 @@ operator|&
 operator|(
 name|gimprc
 operator|.
-name|allow_resize_windows
+name|resize_windows_on_zoom
 operator|)
 argument_list|)
 expr_stmt|;
@@ -872,7 +872,7 @@ argument_list|)
 argument_list|,
 name|gimprc
 operator|.
-name|allow_resize_windows
+name|resize_windows_on_zoom
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1649,7 +1649,7 @@ name|shell
 argument_list|,
 name|gimprc
 operator|.
-name|allow_resize_windows
+name|resize_windows_on_zoom
 argument_list|,
 name|TRUE
 argument_list|)

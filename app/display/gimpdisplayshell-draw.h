@@ -300,33 +300,33 @@ name|GdkPixmap
 modifier|*
 name|icon
 decl_stmt|;
-comment|/*  Pixmap for the icon               */
+comment|/*  Pixmap for the icon                */
 DECL|member|iconmask
 name|GdkBitmap
 modifier|*
 name|iconmask
 decl_stmt|;
-comment|/*  Bitmap for the icon mask          */
+comment|/*  Bitmap for the icon mask           */
 DECL|member|iconsize
 name|guint
 name|iconsize
 decl_stmt|;
-comment|/*  size of the icon pixmap           */
+comment|/*  size of the icon pixmap            */
 DECL|member|icon_needs_update
 name|gboolean
 name|icon_needs_update
 decl_stmt|;
-comment|/*  Do we need to render a new icon?  */
+comment|/*  Do we need to render a new icon?   */
 DECL|member|icon_timeout_id
 name|guint
 name|icon_timeout_id
 decl_stmt|;
-comment|/*  ID of the timeout-function        */
+comment|/*  ID of the timeout-function         */
 DECL|member|icon_idle_id
 name|guint
 name|icon_idle_id
 decl_stmt|;
-comment|/*  ID of the idle-function           */
+comment|/*  ID of the idle-function            */
 DECL|member|current_cursor
 name|GdkCursorType
 name|current_cursor
@@ -346,56 +346,73 @@ DECL|member|override_cursor
 name|GdkCursorType
 name|override_cursor
 decl_stmt|;
-comment|/*  Overriding cursor                 */
+comment|/*  Overriding cursor                  */
 DECL|member|using_override_cursor
 name|gboolean
 name|using_override_cursor
 decl_stmt|;
-comment|/*  is the cursor overridden?     */
+comment|/*  is the cursor overridden?      */
 DECL|member|draw_cursor
 name|gboolean
 name|draw_cursor
 decl_stmt|;
-comment|/* should we draw software cursor ?   */
-DECL|member|cursor_x
-name|gint
-name|cursor_x
-decl_stmt|;
-comment|/* software cursor X value            */
-DECL|member|cursor_y
-name|gint
-name|cursor_y
-decl_stmt|;
-comment|/* software cursor Y value            */
+comment|/* should we draw software cursor ?    */
 DECL|member|have_cursor
 name|gboolean
 name|have_cursor
 decl_stmt|;
-comment|/* is cursor currently drawn ?        */
+comment|/* is cursor currently drawn ?         */
+DECL|member|cursor_x
+name|gint
+name|cursor_x
+decl_stmt|;
+comment|/* software cursor X value             */
+DECL|member|cursor_y
+name|gint
+name|cursor_y
+decl_stmt|;
+comment|/* software cursor Y value             */
+DECL|member|padding_button
+name|GtkWidget
+modifier|*
+name|padding_button
+decl_stmt|;
+comment|/* GimpColorPanel in the NE corner     */
+DECL|member|padding_color
+name|GimpRGB
+name|padding_color
+decl_stmt|;
+comment|/* color of the empty around the image */
+DECL|member|padding_gc
+name|GdkGC
+modifier|*
+name|padding_gc
+decl_stmt|;
+comment|/* GC with padding_color as BG         */
 DECL|member|warning_dialog
 name|GtkWidget
 modifier|*
 name|warning_dialog
 decl_stmt|;
-comment|/*  close warning dialog              */
+comment|/*  close warning dialog               */
 DECL|member|info_dialog
 name|InfoDialog
 modifier|*
 name|info_dialog
 decl_stmt|;
-comment|/*  image information dialog          */
+comment|/*  image information dialog           */
 DECL|member|nav_dialog
 name|NavigationDialog
 modifier|*
 name|nav_dialog
 decl_stmt|;
-comment|/*  image navigation dialog           */
+comment|/*  image navigation dialog            */
 DECL|member|nav_popup
 name|NavigationDialog
 modifier|*
 name|nav_popup
 decl_stmt|;
-comment|/*  navigation popup                  */
+comment|/*  navigation popup                   */
 ifdef|#
 directive|ifdef
 name|DISPLAY_FILTERS
@@ -404,13 +421,13 @@ name|GList
 modifier|*
 name|cd_list
 decl_stmt|;
-comment|/* color display conversion stuff     */
+comment|/* color display conversion stuff      */
 DECL|member|cd_ui
 name|GtkWidget
 modifier|*
 name|cd_ui
 decl_stmt|;
-comment|/* color display filter dialog        */
+comment|/* color display filter dialog         */
 endif|#
 directive|endif
 comment|/* DISPLAY_FILTERS */

@@ -74,9 +74,13 @@ DECL|member|default_threshold
 name|gint
 name|default_threshold
 decl_stmt|;
-DECL|member|allow_resize_windows
+DECL|member|resize_windows_on_zoom
 name|gboolean
-name|allow_resize_windows
+name|resize_windows_on_zoom
+decl_stmt|;
+DECL|member|resize_windows_on_resize
+name|gboolean
+name|resize_windows_on_resize
 decl_stmt|;
 DECL|member|no_cursor_updating
 name|gboolean

@@ -836,7 +836,7 @@ name|shell
 argument_list|,
 name|gimprc
 operator|.
-name|allow_resize_windows
+name|resize_windows_on_zoom
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1200,7 +1200,7 @@ name|shell
 argument_list|,
 name|gimprc
 operator|.
-name|allow_resize_windows
+name|resize_windows_on_zoom
 argument_list|,
 name|TRUE
 argument_list|)

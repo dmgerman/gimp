@@ -618,7 +618,7 @@ name|shell
 argument_list|,
 name|gimprc
 operator|.
-name|allow_resize_windows
+name|resize_windows_on_resize
 argument_list|,
 name|TRUE
 argument_list|)
