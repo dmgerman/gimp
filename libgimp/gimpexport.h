@@ -22,66 +22,57 @@ directive|include
 file|<glib.h>
 end_include
 
-begin_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__cplusplus
+end_ifdef
+
+begin_extern
+extern|extern
+literal|"C"
+block|{
+endif|#
+directive|endif
+comment|/* __cplusplus */
 DECL|macro|CAN_HANDLE_RGB
 define|#
 directive|define
 name|CAN_HANDLE_RGB
 value|1<< 0
-end_define
-
-begin_define
 DECL|macro|CAN_HANDLE_GRAY
 define|#
 directive|define
 name|CAN_HANDLE_GRAY
 value|1<< 1
-end_define
-
-begin_define
 DECL|macro|CAN_HANDLE_INDEXED
 define|#
 directive|define
 name|CAN_HANDLE_INDEXED
 value|1<< 2
-end_define
-
-begin_define
 DECL|macro|CAN_HANDLE_ALPHA
 define|#
 directive|define
 name|CAN_HANDLE_ALPHA
 value|1<< 3
-end_define
-
-begin_define
 DECL|macro|CAN_HANDLE_LAYERS
 define|#
 directive|define
 name|CAN_HANDLE_LAYERS
 value|1<< 4
-end_define
-
-begin_define
 DECL|macro|CAN_HANDLE_LAYERS_AS_ANIMATION
 define|#
 directive|define
 name|CAN_HANDLE_LAYERS_AS_ANIMATION
 value|1<< 5
-end_define
-
-begin_define
 DECL|macro|NEEDS_ALPHA
 define|#
 directive|define
 name|NEEDS_ALPHA
 value|1<< 6
-end_define
-
-begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4260c00103
+DECL|enum|__anon2c168ccf0103
 block|{
 DECL|enumerator|EXPORT_CANCEL
 name|EXPORT_CANCEL
@@ -95,9 +86,6 @@ DECL|typedef|GimpExportReturnType
 block|}
 name|GimpExportReturnType
 typedef|;
-end_typedef
-
-begin_function_decl
 name|GimpExportReturnType
 name|gimp_export_image
 parameter_list|(
@@ -116,10 +104,20 @@ comment|/* format name          */
 name|gint
 parameter_list|)
 function_decl|;
-end_function_decl
+comment|/* plug_in_capabilities */
+ifdef|#
+directive|ifdef
+name|__cplusplus
+block|}
+end_extern
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
-comment|/* plug_in_capabilities */
+comment|/* __cplusplus */
 end_comment
 
 begin_endif
