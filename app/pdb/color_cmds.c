@@ -888,11 +888,11 @@ if|if
 condition|(
 name|channel
 operator|<
-name|GIMP_VALUE_LUT
+name|GIMP_HISTOGRAM_VALUE
 operator|||
 name|channel
 operator|>
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 condition|)
 name|success
 operator|=
@@ -1044,7 +1044,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|==
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 operator|)
 operator|||
 operator|(
@@ -1055,11 +1055,11 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GIMP_GRAY_LUT
+name|GIMP_HISTOGRAM_VALUE
 operator|&&
 name|channel
 operator|!=
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 operator|)
 condition|)
 name|success
@@ -1333,7 +1333,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { GIMP_VALUE_LUT (0), GIMP_RED_LUT (1), GIMP_GREEN_LUT (2), GIMP_BLUE_LUT (3), GIMP_ALPHA_LUT (4) }"
+literal|"The channel to modify: { GIMP_HISTOGRAM_VALUE (0), GIMP_HISTOGRAM_RED (1), GIMP_HISTOGRAM_GREEN (2), GIMP_HISTOGRAM_BLUE (3), GIMP_HISTOGRAM_ALPHA (4) }"
 block|}
 block|,
 block|{
@@ -2753,11 +2753,11 @@ if|if
 condition|(
 name|channel
 operator|<
-name|GIMP_VALUE_LUT
+name|GIMP_HISTOGRAM_VALUE
 operator|||
 name|channel
 operator|>
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 condition|)
 name|success
 operator|=
@@ -2830,7 +2830,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|==
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 operator|)
 operator|||
 operator|(
@@ -2841,11 +2841,11 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GIMP_GRAY_LUT
+name|GIMP_HISTOGRAM_VALUE
 operator|&&
 name|channel
 operator|!=
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 operator|)
 condition|)
 name|success
@@ -3140,7 +3140,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { GIMP_VALUE_LUT (0), GIMP_RED_LUT (1), GIMP_GREEN_LUT (2), GIMP_BLUE_LUT (3), GIMP_ALPHA_LUT (4) }"
+literal|"The channel to modify: { GIMP_HISTOGRAM_VALUE (0), GIMP_HISTOGRAM_RED (1), GIMP_HISTOGRAM_GREEN (2), GIMP_HISTOGRAM_BLUE (3), GIMP_HISTOGRAM_ALPHA (4) }"
 block|}
 block|,
 block|{
@@ -3306,11 +3306,11 @@ if|if
 condition|(
 name|channel
 operator|<
-name|GIMP_VALUE_LUT
+name|GIMP_HISTOGRAM_VALUE
 operator|||
 name|channel
 operator|>
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 condition|)
 name|success
 operator|=
@@ -3379,7 +3379,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|==
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 operator|)
 operator|||
 operator|(
@@ -3390,11 +3390,11 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GIMP_GRAY_LUT
+name|GIMP_HISTOGRAM_VALUE
 operator|&&
 name|channel
 operator|!=
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 operator|)
 condition|)
 name|success
@@ -3650,7 +3650,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { GIMP_VALUE_LUT (0), GIMP_RED_LUT (1), GIMP_GREEN_LUT (2), GIMP_BLUE_LUT (3), GIMP_ALPHA_LUT (4) }"
+literal|"The channel to modify: { GIMP_HISTOGRAM_VALUE (0), GIMP_HISTOGRAM_RED (1), GIMP_HISTOGRAM_GREEN (2), GIMP_HISTOGRAM_BLUE (3), GIMP_HISTOGRAM_ALPHA (4) }"
 block|}
 block|,
 block|{
@@ -4360,11 +4360,11 @@ if|if
 condition|(
 name|channel
 operator|<
-name|GIMP_VALUE_LUT
+name|GIMP_HISTOGRAM_VALUE
 operator|||
 name|channel
 operator|>
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 condition|)
 name|success
 operator|=
@@ -4441,7 +4441,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|==
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 operator|)
 operator|||
 operator|(
@@ -4452,11 +4452,11 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GIMP_GRAY_LUT
+name|GIMP_HISTOGRAM_VALUE
 operator|&&
 name|channel
 operator|!=
-name|GIMP_ALPHA_LUT
+name|GIMP_HISTOGRAM_ALPHA
 operator|)
 condition|)
 name|success
@@ -4678,7 +4678,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { GIMP_VALUE_LUT (0), GIMP_RED_LUT (1), GIMP_GREEN_LUT (2), GIMP_BLUE_LUT (3), GIMP_ALPHA_LUT (4) }"
+literal|"The channel to modify: { GIMP_HISTOGRAM_VALUE (0), GIMP_HISTOGRAM_RED (1), GIMP_HISTOGRAM_GREEN (2), GIMP_HISTOGRAM_BLUE (3), GIMP_HISTOGRAM_ALPHA (4) }"
 block|}
 block|,
 block|{
