@@ -5090,9 +5090,6 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 else|else
 block|{
@@ -5129,6 +5126,11 @@ else|else
 return|return
 name|FALSE
 return|;
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|layer
@@ -5349,26 +5351,10 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  if we were operating on the floating selection, then it's boundary        *  and previews need invalidating        */
-if|if
-condition|(
-name|drawable
-operator|==
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|floating_layer
-condition|)
-name|floating_sel_invalidate
-argument_list|(
-name|floating_layer
-argument_list|)
-expr_stmt|;
+block|}
 return|return
 name|TRUE
 return|;
-block|}
 block|}
 end_function
 
