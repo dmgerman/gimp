@@ -4239,7 +4239,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename -- if it was  * loaded or has since been saved. Otherwise, returns NULL.  *  * Returns: The filename.  */
+comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * or has since been saved. Otherwise, this function returns %NULL.  *  * Returns: The filename.  */
 end_comment
 
 begin_function

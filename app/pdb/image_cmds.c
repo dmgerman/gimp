@@ -13437,7 +13437,7 @@ literal|"gimp_image_get_filename"
 block|,
 literal|"Returns the specified image's filename."
 block|,
-literal|"This procedure returns the specified image's filename -- if it was loaded or has since been saved. Otherwise, returns NULL."
+literal|"This procedure returns the specified image's filename in the filesystem encoding. The image has a filename only if it was loaded or has since been saved. Otherwise, this function returns %NULL."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -13738,16 +13738,49 @@ condition|(
 name|filename
 condition|)
 block|{
-name|name
-operator|=
+name|gchar
+modifier|*
+name|basename
+init|=
 name|g_path_get_basename
 argument_list|(
 name|filename
 argument_list|)
+decl_stmt|;
+name|name
+operator|=
+name|g_filename_to_utf8
+argument_list|(
+name|basename
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|filename
+name|basename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|name
+condition|)
+name|name
+operator|=
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"(invalid UTF-8 string)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
