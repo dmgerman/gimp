@@ -382,11 +382,12 @@ name|display_env
 decl_stmt|;
 endif|#
 directive|endif
-name|g_atexit
-argument_list|(
-name|g_mem_profile
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_mem_set_vtable (glib_mem_profiler_table);   g_atexit (g_mem_profile);
+endif|#
+directive|endif
 comment|/* Initialize variables */
 name|prog_name
 operator|=

@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon290a47f40108
+DECL|struct|__anon29617bf40108
 block|{
 DECL|member|directory
 name|gboolean
@@ -1820,10 +1820,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|user_install_cancel_callback
 argument_list|,

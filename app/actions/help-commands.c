@@ -114,5 +114,24 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|mem_profile_cmd_callback (GtkWidget * widget,gpointer data)
+name|mem_profile_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|g_mem_profile
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 

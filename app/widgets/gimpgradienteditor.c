@@ -269,7 +269,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3b92850103
+DECL|enum|__anon27a1a8230103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3b92850203
+DECL|enum|__anon27a1a8230203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -16394,10 +16394,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|cpopup_split_uniform_cancel_callback
 argument_list|,
@@ -18632,10 +18629,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|cpopup_replicate_cancel_callback
 argument_list|,

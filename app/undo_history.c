@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fd3f80108
+DECL|struct|__anon2782acc60108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fd3f80208
+DECL|struct|__anon2782acc60208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -3482,10 +3482,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|undo_history_close_callback
 argument_list|,

@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c68b720108
+DECL|struct|__anon2b6996b70108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c68b720208
+DECL|struct|__anon2b6996b70208
 block|{
 DECL|member|boole
 name|gboolean
@@ -3233,10 +3233,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|idea_hide_callback
 argument_list|,

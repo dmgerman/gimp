@@ -1663,10 +1663,7 @@ argument_list|(
 literal|"Delete"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|G_OBJECT
 argument_list|(

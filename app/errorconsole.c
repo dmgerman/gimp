@@ -178,7 +178,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a46210103
+DECL|enum|__anon2963a1ce0103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL
@@ -876,16 +876,6 @@ break|break;
 case|case
 literal|3
 case|:
-name|g_signal_stop_emission_by_name
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|text_view
-argument_list|)
-argument_list|,
-literal|"button_press_event"
-argument_list|)
-expr_stmt|;
 name|gtk_menu_popup
 argument_list|(
 name|menu
@@ -1104,10 +1094,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|error_console_close_callback
 argument_list|,
@@ -1210,6 +1197,11 @@ argument_list|,
 name|menuitem
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|menuitem
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|G_OBJECT
@@ -1228,11 +1220,6 @@ name|GINT_TO_POINTER
 argument_list|(
 name|ERRORS_ALL
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menuitem
 argument_list|)
 expr_stmt|;
 name|menuitem
@@ -1255,6 +1242,11 @@ argument_list|,
 name|menuitem
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|menuitem
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|G_OBJECT
@@ -1273,11 +1265,6 @@ name|GINT_TO_POINTER
 argument_list|(
 name|ERRORS_SELECTION
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menuitem
 argument_list|)
 expr_stmt|;
 comment|/*  The output text widget  */

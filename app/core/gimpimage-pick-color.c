@@ -2151,10 +2151,7 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|gimp_color_picker_tool_info_window_close_callback
 argument_list|,

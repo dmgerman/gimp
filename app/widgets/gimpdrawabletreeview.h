@@ -408,7 +408,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_drawable_list_view_get_type
 parameter_list|(
 name|void
