@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279389fa0103
+DECL|enum|__anon2bd175b70103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER
@@ -1264,9 +1264,12 @@ literal|3
 operator|)
 condition|)
 block|{
-name|gtk_widget_destroy
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|preview
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1357,9 +1360,12 @@ argument_list|(
 name|gc
 argument_list|)
 expr_stmt|;
-name|gtk_widget_unref
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|preview
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53a5130103
+DECL|enum|__anon296a0f9b0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -194,6 +194,23 @@ name|tool_tips
 operator|=
 name|gtk_tooltips_new
 argument_list|()
+expr_stmt|;
+comment|/* take ownership of the tooltips */
+name|g_object_ref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|tool_tips
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tool_tips
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
