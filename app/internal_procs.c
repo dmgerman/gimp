@@ -545,6 +545,15 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
+name|paintbrush_extended_gradient_proc
+argument_list|)
+expr_stmt|;
+name|pcount
+operator|++
+expr_stmt|;
+name|procedural_db_register
+argument_list|(
+operator|&
 name|pencil_proc
 argument_list|)
 expr_stmt|;
