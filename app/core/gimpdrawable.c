@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b021a870103
+DECL|enum|__anon2a041d900103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2388,15 +2388,6 @@ name|drawable
 operator|->
 name|bytes
 argument_list|)
-expr_stmt|;
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-operator|->
-name|visible
-operator|=
-name|TRUE
 expr_stmt|;
 comment|/*  preview variables  */
 name|drawable

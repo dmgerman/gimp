@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a20cfa20103
+DECL|enum|__anon27b44b8a0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -774,7 +774,7 @@ name|item
 operator|->
 name|visible
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 name|item
 operator|->
