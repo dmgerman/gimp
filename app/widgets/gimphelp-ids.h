@@ -2457,6 +2457,14 @@ value|"gimp-prefs-help"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_THEME
+define|#
+directive|define
+name|GIMP_HELP_PREFS_THEME
+value|"gimp-prefs-theme"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_TOOL_OPTIONS
 define|#
 directive|define

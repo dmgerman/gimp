@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e5138b0103
+DECL|enum|__anon27e4b6620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -696,10 +696,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|chainbutton
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|expander
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1418,6 +1414,8 @@ literal|"_Advanced Options"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|editor
+operator|->
 name|expander
 operator|=
 name|g_object_new
@@ -1451,6 +1449,8 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
+name|editor
+operator|->
 name|expander
 argument_list|,
 name|TRUE
@@ -1462,6 +1462,8 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|editor
+operator|->
 name|expander
 argument_list|)
 expr_stmt|;
@@ -1476,6 +1478,8 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|editor
+operator|->
 name|expander
 argument_list|)
 argument_list|,
@@ -2831,6 +2835,42 @@ argument_list|(
 name|editor
 argument_list|)
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_template_editor_show_advanced (GimpTemplateEditor * editor,gboolean expanded)
+name|gimp_template_editor_show_advanced
+parameter_list|(
+name|GimpTemplateEditor
+modifier|*
+name|editor
+parameter_list|,
+name|gboolean
+name|expanded
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TEMPLATE_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_expander_set_expanded
+argument_list|(
+name|GTK_EXPANDER
+argument_list|(
+name|editor
+operator|->
+name|expander
+argument_list|)
+argument_list|,
+name|expanded
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
