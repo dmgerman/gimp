@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8c9a0b0103
+DECL|enum|__anon275d2a4d0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -3514,7 +3514,10 @@ argument_list|(
 name|tool_type
 argument_list|)
 argument_list|,
-name|NULL
+name|tool_get_mask
+argument_list|(
+name|tool_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

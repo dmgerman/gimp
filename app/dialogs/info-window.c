@@ -640,7 +640,10 @@ argument_list|(
 name|COLOR_PICKER
 argument_list|)
 argument_list|,
-name|NULL
+name|tool_get_mask
+argument_list|(
+name|COLOR_PICKER
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

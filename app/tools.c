@@ -422,6 +422,8 @@ name|rect_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Select rectangular regions"
@@ -463,6 +465,8 @@ operator|*
 operator|*
 operator|)
 name|circ_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -510,6 +514,8 @@ name|free_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Select hand-drawn regions"
@@ -551,6 +557,8 @@ operator|*
 operator|*
 operator|)
 name|fuzzy_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -598,6 +606,8 @@ name|bezier_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Select regions using Bezier curves"
@@ -639,6 +649,8 @@ operator|*
 operator|*
 operator|)
 name|iscissors_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -686,6 +698,8 @@ name|move_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Move layers& selections"
@@ -727,6 +741,8 @@ operator|*
 operator|*
 operator|)
 name|magnify_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -774,6 +790,8 @@ name|crop_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Crop or resize the image"
@@ -815,6 +833,8 @@ operator|*
 operator|*
 operator|)
 name|scale_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -860,6 +880,8 @@ name|scale_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Rotation, scaling, shearing, perspective."
@@ -902,6 +924,8 @@ name|scale_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Rotation, scaling, shearing, perspective."
@@ -941,6 +965,8 @@ operator|*
 operator|*
 operator|)
 name|scale_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -989,6 +1015,8 @@ name|flip_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Flip the layer or selection"
@@ -1030,6 +1058,8 @@ operator|*
 operator|*
 operator|)
 name|text_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1077,6 +1107,8 @@ name|colorpicker_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Pick colors from the image"
@@ -1118,6 +1150,8 @@ operator|*
 operator|*
 operator|)
 name|fill_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1165,6 +1199,8 @@ name|gradient_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Fill with a color gradient"
@@ -1206,6 +1242,8 @@ operator|*
 operator|*
 operator|)
 name|pencil_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1253,6 +1291,8 @@ name|paint_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Paint fuzzy brush strokes"
@@ -1294,6 +1334,8 @@ operator|*
 operator|*
 operator|)
 name|erase_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1341,6 +1383,8 @@ name|airbrush_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Airbrush with variable pressure"
@@ -1382,6 +1426,8 @@ operator|*
 operator|*
 operator|)
 name|clone_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1429,6 +1475,8 @@ name|blur_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Blur or sharpen"
@@ -1470,6 +1518,8 @@ operator|*
 operator|*
 operator|)
 name|ink_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1517,6 +1567,8 @@ name|dodge_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Dodge or Burn"
@@ -1561,6 +1613,8 @@ name|smudge_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Smudge"
@@ -1581,7 +1635,7 @@ block|,
 name|NULL
 block|}
 block|,
-comment|/*   {     NULL,     N_("Xinput Airbrush"),     N_("/Tools/Paint Tools/XinputAirbrush"),     "<shift>A",     (char **) xinput_airbrush_bits,     NULL,     N_("Natural Airbrush"),     "tools/xinput_airbrush.html",     XINPUT_AIRBRUSH,     tools_new_xinput_airbrush,     tools_free_xinput_airbrush,     NULL,     NULL,     NULL   },           */
+comment|/*   {     NULL,     N_("Xinput Airbrush"),     N_("/Tools/Paint Tools/XinputAirbrush"),     "<shift>A",     (char **) xinput_airbrush_bits,     NULL,     NULL,     N_("Natural Airbrush"),     "tools/xinput_airbrush.html",     XINPUT_AIRBRUSH,     tools_new_xinput_airbrush,     tools_free_xinput_airbrush,     NULL,     NULL,     NULL   },           */
 block|{
 name|NULL
 block|,
@@ -1606,6 +1660,8 @@ name|measure_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Measure distances and angles"
@@ -1626,7 +1682,7 @@ block|,
 name|NULL
 block|}
 block|,
-comment|/*   {     NULL,     N_("Path"),     N_("/Tools/Path"),     "",     (char **) path_tool_bits,     NULL,     N_("Manipulate paths"),     "tools/path.html",     PATH_TOOL,     tools_new_path_tool,     tools_free_path_tool,      NULL,     NULL,     NULL   }, */
+comment|/*   {     NULL,     N_("Path"),     N_("/Tools/Path"),     "",     (char **) path_tool_bits,     NULL,     NULL,     N_("Manipulate paths"),     "tools/path.html",     PATH_TOOL,     tools_new_path_tool,     tools_free_path_tool,      NULL,     NULL,     NULL   }, */
 comment|/*  Non-toolbox tools  */
 block|{
 name|NULL
@@ -1649,6 +1705,8 @@ operator|*
 operator|*
 operator|)
 name|by_color_select_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1696,6 +1754,8 @@ name|adjustment_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Adjust color balance"
@@ -1737,6 +1797,8 @@ operator|*
 operator|*
 operator|)
 name|adjustment_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1784,6 +1846,8 @@ name|adjustment_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Adjust hue and saturation"
@@ -1825,6 +1889,8 @@ operator|*
 operator|*
 operator|)
 name|adjustment_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1872,6 +1938,8 @@ name|levels_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Reduce image to two colors using a threshold"
@@ -1913,6 +1981,8 @@ operator|*
 operator|*
 operator|)
 name|curves_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1960,6 +2030,8 @@ name|levels_bits
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Adjust color levels"
@@ -2001,6 +2073,8 @@ operator|*
 operator|*
 operator|)
 name|histogram_bits
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -3040,7 +3114,10 @@ argument_list|(
 name|tool_type
 argument_list|)
 argument_list|,
-name|NULL
+name|tool_get_mask
+argument_list|(
+name|tool_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
@@ -3336,7 +3413,10 @@ argument_list|(
 name|RECT_SELECT
 argument_list|)
 argument_list|,
-name|NULL
+name|tool_get_mask
+argument_list|(
+name|RECT_SELECT
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3640,7 +3720,10 @@ argument_list|(
 name|tool_type
 argument_list|)
 argument_list|,
-name|NULL
+name|tool_get_mask
+argument_list|(
+name|tool_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
@@ -4026,6 +4109,29 @@ name|type
 index|]
 operator|.
 name|icon_pixmap
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GdkPixmap
+modifier|*
+DECL|function|tool_get_mask (ToolType type)
+name|tool_get_mask
+parameter_list|(
+name|ToolType
+name|type
+parameter_list|)
+block|{
+return|return
+operator|(
+name|tool_info
+index|[
+name|type
+index|]
+operator|.
+name|icon_mask
 operator|)
 return|;
 block|}

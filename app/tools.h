@@ -65,7 +65,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bd76d10103
+DECL|enum|__anon2b16cf380103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bd76d10203
+DECL|enum|__anon2b16cf380203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -293,6 +293,11 @@ name|GdkPixmap
 modifier|*
 name|icon_pixmap
 decl_stmt|;
+DECL|member|icon_mask
+name|GdkBitmap
+modifier|*
+name|icon_mask
+decl_stmt|;
 DECL|member|tool_desc
 name|gchar
 modifier|*
@@ -476,13 +481,24 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* don't unref this pixmap, it is static! */
+comment|/* don't unref this pixmaps, they are static! */
 end_comment
 
 begin_function_decl
 name|GdkPixmap
 modifier|*
 name|tool_get_pixmap
+parameter_list|(
+name|ToolType
+name|tool_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GdkBitmap
+modifier|*
+name|tool_get_mask
 parameter_list|(
 name|ToolType
 name|tool_type
