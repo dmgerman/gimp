@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba8b4a30103
+DECL|enum|__anon2795ef360103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -5460,13 +5460,21 @@ name|crop
 operator|->
 name|crop_info
 condition|)
-name|info_dialog_hide
+block|{
+name|info_dialog_free
 argument_list|(
 name|crop
 operator|->
 name|crop_info
 argument_list|)
 expr_stmt|;
+name|crop
+operator|->
+name|crop_info
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|gimp_draw_tool_is_active
