@@ -508,7 +508,7 @@ name|gimp_enum_stock_box_new
 argument_list|(
 name|GIMP_TYPE_BRUSH_GENERATED_SHAPE
 argument_list|,
-literal|"gimp-brush-generated"
+literal|"gimp-shape"
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|,

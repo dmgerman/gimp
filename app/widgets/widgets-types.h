@@ -705,6 +705,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpBlobEditor
+typedef|typedef
+name|struct
+name|_GimpBlobEditor
+name|GimpBlobEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorBar
 typedef|typedef
 name|struct
