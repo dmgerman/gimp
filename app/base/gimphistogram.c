@@ -1034,6 +1034,12 @@ operator|!
 name|histogram
 operator|->
 name|values
+operator|||
+name|channel
+operator|>=
+name|histogram
+operator|->
+name|n_channels
 condition|)
 return|return
 literal|0.0
@@ -1433,7 +1439,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|double
+name|gdouble
 argument_list|,
 literal|256
 argument_list|)
