@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28991fb70108
+DECL|struct|__anon29fea60e0108
 block|{
 DECL|member|list_view
 name|GtkTreeView
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28991fb70208
+DECL|struct|__anon29fea60e0208
 block|{
 DECL|member|menu
 name|gchar
@@ -182,7 +182,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28991fb70303
+DECL|enum|__anon29fea60e0303
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -207,7 +207,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28991fb70403
+DECL|enum|__anon29fea60e0403
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -502,13 +502,6 @@ argument_list|(
 literal|"plug_in_plug_in_details"
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
-argument_list|,
-name|strlen
-argument_list|(
-name|GIMP_STOCK_PLUGIN
-argument_list|)
-operator|+
-literal|1
 argument_list|,
 name|GIMP_STOCK_PLUGIN
 argument_list|)

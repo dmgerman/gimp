@@ -115,13 +115,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpregioniterator.h>
+file|<libgimp/gimpplugin.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<libgimp/gimpproceduraldb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpregioniterator.h>
 end_include
 
 begin_include

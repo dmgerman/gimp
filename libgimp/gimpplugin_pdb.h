@@ -97,7 +97,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_plugin_icon_register
+name|_gimp_plugin_icon_register
 parameter_list|(
 specifier|const
 name|gchar

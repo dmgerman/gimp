@@ -315,7 +315,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297a0cd40108
+DECL|struct|__anon2b84f4a30108
 block|{
 DECL|member|root
 name|gboolean
@@ -659,13 +659,6 @@ argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
 name|GIMP_ICON_TYPE_INLINE_PIXBUF
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|screenshot_icon
-argument_list|)
-operator|-
-literal|1
 argument_list|,
 name|screenshot_icon
 argument_list|)

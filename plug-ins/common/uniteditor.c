@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aba26f90103
+DECL|enum|__anon2aaf01600103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -170,7 +170,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aba26f90208
+DECL|struct|__anon2aaf01600208
 block|{
 DECL|member|title
 specifier|const
@@ -381,13 +381,6 @@ argument_list|(
 literal|"plug_in_unit_editor"
 argument_list|,
 name|GIMP_ICON_TYPE_STOCK_ID
-argument_list|,
-name|strlen
-argument_list|(
-name|GIMP_STOCK_TOOL_MEASURE
-argument_list|)
-operator|+
-literal|1
 argument_list|,
 name|GIMP_STOCK_TOOL_MEASURE
 argument_list|)

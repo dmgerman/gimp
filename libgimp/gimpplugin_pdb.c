@@ -395,13 +395,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_icon_register:  * @procedure_name: The procedure for which to install the icon.  * @icon_type: The type of the icon.  * @icon_data_length: The length of 'icon_data'.  * @icon_data: The procedure's icon. The format depends on the 'icon_type' parameter.  *  * Register an icon for a plug-in procedure.  *  * This procedure installs an icon for the given procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * _gimp_plugin_icon_register:  * @procedure_name: The procedure for which to install the icon.  * @icon_type: The type of the icon.  * @icon_data_length: The length of 'icon_data'.  * @icon_data: The procedure's icon. The format depends on the 'icon_type' parameter.  *  * Register an icon for a plug-in procedure.  *  * This procedure installs an icon for the given procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_plugin_icon_register (const gchar * procedure_name,GimpIconType icon_type,gint icon_data_length,const guint8 * icon_data)
-name|gimp_plugin_icon_register
+DECL|function|_gimp_plugin_icon_register (const gchar * procedure_name,GimpIconType icon_type,gint icon_data_length,const guint8 * icon_data)
+name|_gimp_plugin_icon_register
 parameter_list|(
 specifier|const
 name|gchar
