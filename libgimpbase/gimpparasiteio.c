@@ -198,11 +198,9 @@ decl_stmt|,
 modifier|*
 name|r
 decl_stmt|;
-comment|/* Don't you love single-char identifiers?  */
 name|gint
 name|i
 decl_stmt|;
-comment|/*          No, we don't!!<Sven>         */
 name|q
 operator|=
 name|string
@@ -319,6 +317,7 @@ if|if
 condition|(
 name|r
 condition|)
+block|{
 name|params
 operator|->
 name|dim
@@ -330,6 +329,22 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+name|params
+operator|->
+name|dim
+operator|=
+name|CLAMP
+argument_list|(
+name|params
+operator|->
+name|dim
+argument_list|,
+literal|1
+argument_list|,
+name|GIMP_PIXPIPE_MAXDIM
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
