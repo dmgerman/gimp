@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a8caab0103
+DECL|enum|__anon28fd5b410103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a8caab0203
+DECL|enum|__anon28fd5b410203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -1789,8 +1789,10 @@ name|globals_t
 name|globals
 init|=
 block|{
+block|{
 literal|0
-block|, }
+block|}
+block|}
 decl_stmt|;
 end_decl_stmt
 
