@@ -85,14 +85,6 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MAGNIFY_TOOL, GimpMagnifyToolClass))
 end_define
 
-begin_define
-DECL|macro|THRESHOLD
-define|#
-directive|define
-name|THRESHOLD
-value|5
-end_define
-
 begin_typedef
 DECL|typedef|GimpMagnifyTool
 typedef|typedef
