@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af514700103
+DECL|enum|__anon28db8a300103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2164,7 +2164,7 @@ name|str
 argument_list|,
 name|_
 argument_list|(
-literal|"No preview available"
+literal|"Click to create preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
