@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c531f460103
+DECL|enum|__anon27aa2edd0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -863,21 +863,21 @@ name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"KiloBytes"
+literal|"Kilobytes"
 argument_list|)
 argument_list|,
 literal|10
 argument_list|,
 name|_
 argument_list|(
-literal|"MegaBytes"
+literal|"Megabytes"
 argument_list|)
 argument_list|,
 literal|20
 argument_list|,
 name|_
 argument_list|(
-literal|"GigaBytes"
+literal|"Gigabytes"
 argument_list|)
 argument_list|,
 literal|30
