@@ -264,7 +264,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcedef90103
+DECL|enum|__anon27e711fe0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -479,7 +479,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gint
-name|ncol
+name|color_index
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3413,7 +3413,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_real_colormap_changed (GimpImage * gimage,gint ncol)
+DECL|function|gimp_image_real_colormap_changed (GimpImage * gimage,gint color_index)
 name|gimp_image_real_colormap_changed
 parameter_list|(
 name|GimpImage
@@ -3421,7 +3421,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gint
-name|ncol
+name|color_index
 parameter_list|)
 block|{
 if|if
@@ -3464,7 +3464,7 @@ name|gimp_image_color_hash_invalidate
 argument_list|(
 name|gimage
 argument_list|,
-name|ncol
+name|color_index
 argument_list|)
 expr_stmt|;
 block|}
@@ -5790,7 +5790,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_colormap_changed (GimpImage * gimage,gint col)
+DECL|function|gimp_image_colormap_changed (GimpImage * gimage,gint color_index)
 name|gimp_image_colormap_changed
 parameter_list|(
 name|GimpImage
@@ -5798,7 +5798,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gint
-name|col
+name|color_index
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -5811,12 +5811,12 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|col
+name|color_index
 operator|>=
 operator|-
 literal|1
 operator|&&
-name|col
+name|color_index
 operator|<
 name|gimage
 operator|->
@@ -5834,7 +5834,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|col
+name|color_index
 argument_list|)
 expr_stmt|;
 block|}
@@ -7683,7 +7683,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Attach Paraite to Image"
+literal|"Attach Parasite to Image"
 argument_list|)
 argument_list|,
 name|parasite
@@ -7851,8 +7851,7 @@ literal|0
 condition|)
 name|g_warning
 argument_list|(
-literal|"%s: Tattoo state corrupted "
-literal|"(integer overflow)."
+literal|"%s: Tattoo state corrupted (integer overflow)."
 argument_list|,
 name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
@@ -7914,10 +7913,6 @@ name|gboolean
 name|retval
 init|=
 name|TRUE
-decl_stmt|;
-name|GimpChannel
-modifier|*
-name|channel
 decl_stmt|;
 name|GimpTattoo
 name|maxval
@@ -8039,23 +8034,15 @@ block|{
 name|GimpTattoo
 name|ctattoo
 decl_stmt|;
-name|channel
-operator|=
-operator|(
-name|GimpChannel
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
 name|ctattoo
 operator|=
 name|gimp_item_get_tattoo
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|channel
+name|list
+operator|->
+name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8084,7 +8071,7 @@ name|FALSE
 expr_stmt|;
 comment|/* Oopps duplicated tattoo in vectors */
 block|}
-comment|/* Find the max tatto value in the vectors */
+comment|/* Find the max tattoo value in the vectors */
 for|for
 control|(
 name|list
@@ -8307,13 +8294,11 @@ block|{
 name|GimpLayer
 modifier|*
 name|layer
-decl_stmt|;
-name|layer
-operator|=
+init|=
 name|gimage
 operator|->
 name|active_layer
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|layer
@@ -8821,19 +8806,13 @@ block|{
 name|GimpLayer
 modifier|*
 name|layer
-decl_stmt|;
-name|layer
-operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
+init|=
 name|gimage
 operator|->
 name|layer_stack
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 name|gimp_image_set_active_layer
 argument_list|(
 name|gimage
@@ -9225,10 +9204,6 @@ name|GimpTattoo
 name|tattoo
 parameter_list|)
 block|{
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -9266,16 +9241,14 @@ name|list
 argument_list|)
 control|)
 block|{
-name|layer
-operator|=
-operator|(
 name|GimpLayer
-operator|*
-operator|)
+modifier|*
+name|layer
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimp_item_get_tattoo
@@ -9313,10 +9286,6 @@ name|GimpTattoo
 name|tattoo
 parameter_list|)
 block|{
-name|GimpChannel
-modifier|*
-name|channel
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -9354,16 +9323,14 @@ name|list
 argument_list|)
 control|)
 block|{
-name|channel
-operator|=
-operator|(
 name|GimpChannel
-operator|*
-operator|)
+modifier|*
+name|channel
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimp_item_get_tattoo
@@ -9401,10 +9368,6 @@ name|GimpTattoo
 name|tattoo
 parameter_list|)
 block|{
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -9442,16 +9405,14 @@ name|list
 argument_list|)
 control|)
 block|{
-name|vectors
-operator|=
-operator|(
 name|GimpVectors
-operator|*
-operator|)
+modifier|*
+name|vectors
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimp_item_get_tattoo
@@ -10192,7 +10153,7 @@ name|layer
 parameter_list|)
 block|{
 name|gint
-name|curpos
+name|index
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -10214,7 +10175,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|curpos
+name|index
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
@@ -10228,10 +10189,9 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* is this the top layer already? */
 if|if
 condition|(
-name|curpos
+name|index
 operator|==
 literal|0
 condition|)
@@ -10248,6 +10208,30 @@ return|return
 name|FALSE
 return|;
 block|}
+if|if
+condition|(
+operator|!
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Cannot raise a layer without alpha."
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 return|return
 name|gimp_image_position_layer
 argument_list|(
@@ -10255,7 +10239,7 @@ name|gimage
 argument_list|,
 name|layer
 argument_list|,
-name|curpos
+name|index
 operator|-
 literal|1
 argument_list|,
@@ -10285,10 +10269,7 @@ name|layer
 parameter_list|)
 block|{
 name|gint
-name|curpos
-decl_stmt|;
-name|gint
-name|length
+name|index
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -10310,7 +10291,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|curpos
+name|index
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
@@ -10324,21 +10305,16 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* is this the bottom layer already? */
-name|length
-operator|=
+if|if
+condition|(
+name|index
+operator|==
 name|gimp_container_num_children
 argument_list|(
 name|gimage
 operator|->
 name|layers
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|curpos
-operator|>=
-name|length
 operator|-
 literal|1
 condition|)
@@ -10362,7 +10338,7 @@ name|gimage
 argument_list|,
 name|layer
 argument_list|,
-name|curpos
+name|index
 operator|+
 literal|1
 argument_list|,
@@ -10392,7 +10368,7 @@ name|layer
 parameter_list|)
 block|{
 name|gint
-name|curpos
+name|index
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -10414,7 +10390,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|curpos
+name|index
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
@@ -10430,7 +10406,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|curpos
+name|index
 operator|==
 literal|0
 condition|)
@@ -10506,7 +10482,7 @@ name|layer
 parameter_list|)
 block|{
 name|gint
-name|curpos
+name|index
 decl_stmt|;
 name|gint
 name|length
@@ -10531,7 +10507,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|curpos
+name|index
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
@@ -10556,8 +10532,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|curpos
-operator|>=
+name|index
+operator|==
 name|length
 operator|-
 literal|1
@@ -10680,27 +10656,18 @@ operator|->
 name|layers
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|new_index
-operator|<
-literal|0
-condition|)
 name|new_index
 operator|=
+name|CLAMP
+argument_list|(
+name|new_index
+argument_list|,
 literal|0
-expr_stmt|;
-if|if
-condition|(
-name|new_index
-operator|>=
-name|num_layers
-condition|)
-name|new_index
-operator|=
+argument_list|,
 name|num_layers
 operator|-
 literal|1
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -12501,10 +12468,6 @@ name|gint
 name|y
 parameter_list|)
 block|{
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -12542,16 +12505,14 @@ name|list
 argument_list|)
 control|)
 block|{
-name|layer
-operator|=
-operator|(
 name|GimpLayer
-operator|*
-operator|)
+modifier|*
+name|layer
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimp_layer_pick_correlate
