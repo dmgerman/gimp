@@ -2489,9 +2489,9 @@ name|nBitsPS
 operator|<=
 literal|8
 condition|?
-name|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 else|:
-name|GIMP_RGB_IMAGE
+name|GIMP_RGBA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
@@ -2918,6 +2918,27 @@ operator|*
 name|bps
 index|]
 expr_stmt|;
+if|if
+condition|(
+name|drawable
+operator|->
+name|bpp
+operator|==
+literal|4
+condition|)
+name|pLine
+index|[
+name|x
+operator|*
+name|drawable
+operator|->
+name|bpp
+operator|+
+literal|3
+index|]
+operator|=
+literal|255
+expr_stmt|;
 block|}
 else|else
 for|for
@@ -3067,6 +3088,27 @@ operator|)
 operator|/
 name|maxB
 expr_stmt|;
+if|if
+condition|(
+name|drawable
+operator|->
+name|bpp
+operator|==
+literal|4
+condition|)
+name|pLine
+index|[
+name|x
+operator|*
+name|drawable
+operator|->
+name|bpp
+operator|+
+literal|3
+index|]
+operator|=
+literal|255
+expr_stmt|;
 block|}
 comment|/* copy data to GIMP */
 name|gimp_pixel_rgn_set_rect
@@ -3112,6 +3154,7 @@ name|int
 name|y
 decl_stmt|;
 comment|/* copy line by line */
+comment|/* This will only be reached for new images, so no need for alpha */
 for|for
 control|(
 name|y
