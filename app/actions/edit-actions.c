@@ -1039,6 +1039,13 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"edit-named-copy"
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"edit-named-paste"
 argument_list|,
 name|drawable
