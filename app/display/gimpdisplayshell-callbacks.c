@@ -1157,6 +1157,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_draw_vectors
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1283,22 +1288,9 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|/*  pause the currently active tool  */
-name|tool_manager_control_active
+name|gimp_display_shell_pause
 argument_list|(
 name|shell
-operator|->
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|,
-name|PAUSE
-argument_list|,
-name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 name|gdk_region_get_rectangles
@@ -1399,22 +1391,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* start the currently active tool */
-name|tool_manager_control_active
+name|gimp_display_shell_resume
 argument_list|(
 name|shell
-operator|->
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|,
-name|RESUME
-argument_list|,
-name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 return|return

@@ -60,18 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -1275,15 +1263,9 @@ operator|->
 name|gimp
 decl_stmt|;
 comment|/* freeze the active tool */
-name|tool_manager_control_active
+name|gimp_display_shell_pause
 argument_list|(
-name|gimp
-argument_list|,
-name|PAUSE
-argument_list|,
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 name|shell
@@ -1319,15 +1301,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* re-enable the active tool */
-name|tool_manager_control_active
+name|gimp_display_shell_resume
 argument_list|(
-name|gimp
-argument_list|,
-name|RESUME
-argument_list|,
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1741,15 +1717,9 @@ operator|->
 name|gimp
 expr_stmt|;
 comment|/* freeze the active tool */
-name|tool_manager_control_active
+name|gimp_display_shell_pause
 argument_list|(
-name|gimp
-argument_list|,
-name|PAUSE
-argument_list|,
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 name|shell
@@ -1780,15 +1750,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* re-enable the active tool */
-name|tool_manager_control_active
+name|gimp_display_shell_resume
 argument_list|(
-name|gimp
-argument_list|,
-name|RESUME
-argument_list|,
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1863,15 +1827,9 @@ operator|->
 name|gimp
 expr_stmt|;
 comment|/* freeze the active tool */
-name|tool_manager_control_active
+name|gimp_display_shell_pause
 argument_list|(
-name|gimp
-argument_list|,
-name|PAUSE
-argument_list|,
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1910,15 +1868,9 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/* re-enable the active tool */
-name|tool_manager_control_active
+name|gimp_display_shell_resume
 argument_list|(
-name|gimp
-argument_list|,
-name|RESUME
-argument_list|,
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
