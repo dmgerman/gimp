@@ -13687,6 +13687,12 @@ argument_list|)
 expr_stmt|;
 while|while
 condition|(
+operator|!
+name|feof
+argument_list|(
+name|fp
+argument_list|)
+operator|&&
 name|strcmp
 argument_list|(
 name|load_buf
@@ -14392,6 +14398,12 @@ argument_list|)
 expr_stmt|;
 while|while
 condition|(
+operator|!
+name|feof
+argument_list|(
+name|fp
+argument_list|)
+operator|&&
 name|strcmp
 argument_list|(
 name|load_buf

@@ -25,6 +25,12 @@ end_decl_stmt
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -40,11 +46,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -109,7 +126,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c740db30108
+DECL|struct|__anon27462c570108
 typedef|typedef
 struct|struct
 block|{
@@ -198,7 +215,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c740db30208
+DECL|struct|__anon27462c570208
 typedef|typedef
 struct|struct
 block|{
@@ -842,7 +859,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c740db30308
+DECL|struct|__anon27462c570308
 block|{
 DECL|member|rle
 name|gint
@@ -858,7 +875,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c740db30408
+DECL|struct|__anon27462c570408
 block|{
 DECL|member|run
 name|gint

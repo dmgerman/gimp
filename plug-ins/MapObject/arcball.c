@@ -367,8 +367,7 @@ comment|/* ================ */
 end_comment
 
 begin_function_decl
-name|HMatrix
-modifier|*
+name|void
 name|Qt_ToMatrix
 parameter_list|(
 name|Quat
@@ -1430,8 +1429,7 @@ end_comment
 
 begin_function
 DECL|function|Qt_ToMatrix (Quat q,HMatrix out)
-name|HMatrix
-modifier|*
+name|void
 name|Qt_ToMatrix
 parameter_list|(
 name|Quat
@@ -1773,16 +1771,6 @@ index|]
 operator|=
 literal|1.0
 expr_stmt|;
-return|return
-operator|(
-operator|(
-name|HMatrix
-operator|*
-operator|)
-operator|&
-name|out
-operator|)
-return|;
 block|}
 end_function
 
