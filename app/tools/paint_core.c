@@ -180,14 +180,6 @@ name|EPSILON
 value|0.00001
 end_define
 
-begin_define
-DECL|macro|COMMON_MODIFIERS_MASK
-define|#
-directive|define
-name|COMMON_MODIFIERS_MASK
-value|(GDK_SHIFT_MASK | GDK_CONTROL_MASK | GDK_MOD1_MASK)
-end_define
-
 begin_comment
 comment|/*  global variables--for use in the various paint tools  */
 end_comment
