@@ -247,7 +247,7 @@ literal|"gimp-image-list"
 block|,
 name|dialogs_image_list_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -263,7 +263,7 @@ literal|"gimp-brush-list"
 block|,
 name|dialogs_brush_list_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -279,7 +279,7 @@ literal|"gimp-pattern-list"
 block|,
 name|dialogs_pattern_list_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -295,7 +295,7 @@ literal|"gimp-gradient-list"
 block|,
 name|dialogs_gradient_list_view_new
 block|,
-literal|16
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -311,7 +311,7 @@ literal|"gimp-palette-list"
 block|,
 name|dialogs_palette_list_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -327,7 +327,7 @@ literal|"gimp-tool-list"
 block|,
 name|dialogs_tool_list_view_new
 block|,
-literal|24
+name|GIMP_PREVIEW_SIZE_SMALL
 block|,
 name|FALSE
 block|,
@@ -343,7 +343,7 @@ literal|"gimp-buffer-list"
 block|,
 name|dialogs_buffer_list_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -359,7 +359,7 @@ literal|"gimp-image-grid"
 block|,
 name|dialogs_image_grid_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -375,7 +375,7 @@ literal|"gimp-brush-grid"
 block|,
 name|dialogs_brush_grid_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -391,7 +391,7 @@ literal|"gimp-pattern-grid"
 block|,
 name|dialogs_pattern_grid_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -407,7 +407,7 @@ literal|"gimp-gradient-grid"
 block|,
 name|dialogs_gradient_grid_view_new
 block|,
-literal|16
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -423,7 +423,7 @@ literal|"gimp-palette-grid"
 block|,
 name|dialogs_palette_grid_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -439,7 +439,7 @@ literal|"gimp-tool-grid"
 block|,
 name|dialogs_tool_grid_view_new
 block|,
-literal|24
+name|GIMP_PREVIEW_SIZE_SMALL
 block|,
 name|FALSE
 block|,
@@ -455,7 +455,7 @@ literal|"gimp-buffer-grid"
 block|,
 name|dialogs_buffer_grid_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -471,7 +471,7 @@ literal|"gimp-image-tree"
 block|,
 name|dialogs_image_tree_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -487,7 +487,7 @@ literal|"gimp-brush-tree"
 block|,
 name|dialogs_brush_tree_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -503,7 +503,7 @@ literal|"gimp-pattern-tree"
 block|,
 name|dialogs_pattern_tree_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -519,7 +519,7 @@ literal|"gimp-gradient-tree"
 block|,
 name|dialogs_gradient_tree_view_new
 block|,
-literal|16
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -535,7 +535,7 @@ literal|"gimp-palette-tree"
 block|,
 name|dialogs_palette_tree_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -551,7 +551,7 @@ literal|"gimp-tool-tree"
 block|,
 name|dialogs_tool_tree_view_new
 block|,
-literal|24
+name|GIMP_PREVIEW_SIZE_SMALL
 block|,
 name|FALSE
 block|,
@@ -567,7 +567,7 @@ literal|"gimp-buffer-tree"
 block|,
 name|dialogs_buffer_tree_view_new
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -711,7 +711,7 @@ literal|"gimp-document-list"
 block|,
 name|dialogs_document_list_new
 block|,
-literal|48
+name|GIMP_PREVIEW_SIZE_LARGE
 block|,
 name|FALSE
 block|,
@@ -727,7 +727,7 @@ literal|"gimp-document-grid"
 block|,
 name|dialogs_document_grid_new
 block|,
-literal|48
+name|GIMP_PREVIEW_SIZE_LARGE
 block|,
 name|FALSE
 block|,
@@ -743,7 +743,7 @@ literal|"gimp-document-tree"
 block|,
 name|dialogs_document_tree_new
 block|,
-literal|48
+name|GIMP_PREVIEW_SIZE_LARGE
 block|,
 name|FALSE
 block|,

@@ -176,7 +176,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2779d5210103
+DECL|enum|__anon2c24c2ae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -896,7 +896,7 @@ name|LAYER_PREVIEW_SIZE_BLURB
 argument_list|,
 name|GIMP_TYPE_PREVIEW_SIZE
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_PREVIEW_SIZE_MEDIUM
 argument_list|,
 literal|0
 argument_list|)
