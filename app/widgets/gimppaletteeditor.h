@@ -76,7 +76,8 @@ begin_function_decl
 name|void
 name|palettes_init
 parameter_list|(
-name|void
+name|int
+name|no_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -301,7 +302,8 @@ begin_function_decl
 name|void
 name|palette_init_palettes
 parameter_list|(
-name|void
+name|int
+name|no_data
 parameter_list|)
 function_decl|;
 end_function_decl

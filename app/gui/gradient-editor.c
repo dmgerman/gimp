@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2945b5980103
+DECL|enum|__anon27457fba0103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2945b5980203
+DECL|enum|__anon27457fba0203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2945b5980303
+DECL|enum|__anon27457fba0303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2945b5980408
+DECL|struct|__anon27457fba0408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2945b5980508
+DECL|struct|__anon27457fba0508
 struct|struct
 block|{
 DECL|member|r
@@ -3131,12 +3131,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gradients_init (void)
+DECL|function|gradients_init (int no_data)
 name|gradients_init
 parameter_list|(
-name|void
+name|int
+name|no_data
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|no_data
+condition|)
 name|datafiles_read_directories
 argument_list|(
 name|gradient_path
@@ -3943,6 +3949,15 @@ return|return;
 block|}
 comment|/* if */
 comment|/* Create editor */
+if|if
+condition|(
+name|no_data
+condition|)
+name|gradients_init
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|g_editor
 operator|=
 name|g_malloc
@@ -8128,7 +8143,9 @@ name|grad_free_gradients
 argument_list|()
 expr_stmt|;
 name|gradients_init
-argument_list|()
+argument_list|(
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|ed_set_list_of_gradients
 argument_list|()

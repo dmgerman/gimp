@@ -903,12 +903,17 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|palettes_init ()
+DECL|function|palettes_init (int no_data)
 name|palettes_init
-parameter_list|()
+parameter_list|(
+name|int
+name|no_data
+parameter_list|)
 block|{
 name|palette_init_palettes
-argument_list|()
+argument_list|(
+name|no_data
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1685,6 +1690,15 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|no_data
+condition|)
+name|palettes_init
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
 comment|/*  The action area  */
 name|action_items
 index|[
@@ -2206,12 +2220,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_init_palettes (void)
+DECL|function|palette_init_palettes (int no_data)
 name|palette_init_palettes
 parameter_list|(
-name|void
+name|int
+name|no_data
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|no_data
+condition|)
 name|datafiles_read_directories
 argument_list|(
 name|palette_path
@@ -4129,7 +4149,9 @@ name|palette_free_palettes
 argument_list|()
 expr_stmt|;
 name|palette_init_palettes
-argument_list|()
+argument_list|(
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|palette_create_palette_menu
 argument_list|(
@@ -4160,7 +4182,9 @@ name|palette_free_palettes
 argument_list|()
 expr_stmt|;
 name|palette_init_palettes
-argument_list|()
+argument_list|(
+name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -4849,7 +4873,9 @@ argument_list|()
 expr_stmt|;
 comment|/*  free palettes, don't save any modified versions  */
 name|palette_init_palettes
-argument_list|()
+argument_list|(
+name|FALSE
+argument_list|)
 expr_stmt|;
 comment|/*  load in brand new palettes  */
 name|palette_create_palette_menu
@@ -6830,7 +6856,9 @@ name|palette_free_palettes
 argument_list|()
 expr_stmt|;
 name|palette_init_palettes
-argument_list|()
+argument_list|(
+name|FALSE
+argument_list|)
 expr_stmt|;
 return|return
 name|procedural_db_return_args

@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9d42e0108
+DECL|struct|__anon29f671920108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9d42e0208
+DECL|struct|__anon29f671920208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9d42e0308
+DECL|struct|__anon29f671920308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3648,7 +3648,9 @@ condition|)
 block|{
 comment|/* fprintf(stderr, "no palette_entries_list, building...\n");*/
 name|palette_init_palettes
-argument_list|()
+argument_list|(
+name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 name|list
@@ -15380,7 +15382,9 @@ operator|!
 name|palette_entries_list
 condition|)
 name|palette_init_palettes
-argument_list|()
+argument_list|(
+name|FALSE
+argument_list|)
 expr_stmt|;
 for|for
 control|(

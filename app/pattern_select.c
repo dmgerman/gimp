@@ -1020,6 +1020,16 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|no_data
+condition|)
+comment|/* if patterns are already loaded, dont do it now... */
+name|patterns_init
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|preview_calc_scrollbar
 argument_list|(
 name|psp
@@ -3626,7 +3636,9 @@ name|client_data
 expr_stmt|;
 comment|/*  re-init the pattern list  */
 name|patterns_init
-argument_list|()
+argument_list|(
+name|FALSE
+argument_list|)
 expr_stmt|;
 comment|/*  recalculate scrollbar extents  */
 name|preview_calc_scrollbar

@@ -281,9 +281,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|brushes_init ()
+DECL|function|brushes_init (int no_data)
 name|brushes_init
-parameter_list|()
+parameter_list|(
+name|int
+name|no_data
+parameter_list|)
 block|{
 name|GSList
 modifier|*
@@ -322,7 +325,11 @@ condition|)
 name|create_default_brush
 argument_list|()
 expr_stmt|;
-else|else
+if|if
+condition|(
+operator|!
+name|no_data
+condition|)
 name|datafiles_read_directories
 argument_list|(
 name|brush_path
@@ -1793,7 +1800,9 @@ operator|=
 name|TRUE
 expr_stmt|;
 name|brushes_init
-argument_list|()
+argument_list|(
+name|TRUE
+argument_list|)
 expr_stmt|;
 return|return
 name|procedural_db_return_args

@@ -259,9 +259,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|patterns_init ()
+DECL|function|patterns_init (int no_data)
 name|patterns_init
-parameter_list|()
+parameter_list|(
+name|int
+name|no_data
+parameter_list|)
 block|{
 name|GSList
 modifier|*
@@ -288,6 +291,11 @@ operator|!
 name|pattern_path
 condition|)
 return|return;
+if|if
+condition|(
+operator|!
+name|no_data
+condition|)
 name|datafiles_read_directories
 argument_list|(
 name|pattern_path

@@ -2122,42 +2122,42 @@ name|xcf_init
 argument_list|()
 expr_stmt|;
 comment|/*  initialize the xcf file format routines */
-if|if
-condition|(
-name|no_data
-operator|==
-name|FALSE
-condition|)
-block|{
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
 name|brushes_init
-argument_list|()
+argument_list|(
+name|no_data
+argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp brushes  */
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
 name|patterns_init
-argument_list|()
+argument_list|(
+name|no_data
+argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp patterns  */
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
 name|palettes_init
-argument_list|()
+argument_list|(
+name|no_data
+argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp palettes  */
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
 name|gradients_init
-argument_list|()
+argument_list|(
+name|no_data
+argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp gradients  */
-block|}
 name|RESET_BAR
 argument_list|()
 expr_stmt|;

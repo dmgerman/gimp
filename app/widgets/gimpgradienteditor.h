@@ -30,7 +30,8 @@ begin_function_decl
 name|void
 name|gradients_init
 parameter_list|(
-name|void
+name|int
+name|no_data
 parameter_list|)
 function_decl|;
 end_function_decl

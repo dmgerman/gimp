@@ -882,6 +882,12 @@ name|TRUE
 expr_stmt|;
 name|bsp
 operator|->
+name|scroll_offset
+operator|=
+literal|0
+expr_stmt|;
+name|bsp
+operator|->
 name|brush_popup
 operator|=
 name|NULL
@@ -1876,6 +1882,16 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/* calculate the scrollbar */
+if|if
+condition|(
+name|no_data
+condition|)
+name|brushes_init
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* This is done by size_allocate anyway, which is much better */
 name|preview_calc_scrollbar
 argument_list|(
 name|bsp
@@ -3569,11 +3585,17 @@ decl_stmt|;
 name|int
 name|max
 decl_stmt|;
+name|int
+name|offs
+decl_stmt|;
+name|int
+name|rowy
+decl_stmt|;
+name|offs
+operator|=
 name|bsp
 operator|->
 name|scroll_offset
-operator|=
-literal|0
 expr_stmt|;
 name|num_rows
 operator|=
@@ -3614,6 +3636,27 @@ name|allocation
 operator|.
 name|height
 expr_stmt|;
+name|page_size
+operator|=
+operator|(
+operator|(
+name|page_size
+operator|<
+name|max
+operator|)
+condition|?
+name|page_size
+else|:
+name|max
+operator|)
+expr_stmt|;
+comment|/*   rowy = (get_active_brush()->index / NUM_BRUSH_COLUMNS) * bsp->cell_width 	 + bsp->cell_width/2;   if((rowy< offs) || (rowy> (offs + page_size)))     offs = rowy - page_size/2;   offs = MIN(MAX(offs, 0), max - page_size);   */
+name|bsp
+operator|->
+name|scroll_offset
+operator|=
+name|offs
+expr_stmt|;
 name|bsp
 operator|->
 name|sbar_data
@@ -3632,12 +3675,14 @@ name|upper
 operator|=
 name|max
 expr_stmt|;
+comment|/* bsp->sbar_data->page_size = page_size; */
 name|bsp
 operator|->
 name|sbar_data
 operator|->
 name|page_size
 operator|=
+operator|(
 operator|(
 name|page_size
 operator|<
@@ -3647,6 +3692,7 @@ condition|?
 name|page_size
 else|:
 name|max
+operator|)
 expr_stmt|;
 name|bsp
 operator|->
@@ -4268,18 +4314,8 @@ name|client_data
 expr_stmt|;
 comment|/*  re-init the brush list  */
 name|brushes_init
-argument_list|()
-expr_stmt|;
-comment|/*  recalculate scrollbar extents  */
-name|preview_calc_scrollbar
 argument_list|(
-name|bsp
-argument_list|)
-expr_stmt|;
-comment|/*  render the brushes into the newly created image structure  */
-name|display_brushes
-argument_list|(
-name|bsp
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  update the active selection  */
@@ -4299,6 +4335,18 @@ argument_list|,
 name|active
 operator|->
 name|index
+argument_list|)
+expr_stmt|;
+comment|/*  recalculate scrollbar extents  */
+name|preview_calc_scrollbar
+argument_list|(
+name|bsp
+argument_list|)
+expr_stmt|;
+comment|/*  render the brushes into the newly created image structure  */
+name|display_brushes
+argument_list|(
+name|bsp
 argument_list|)
 expr_stmt|;
 comment|/*  update the display  */
