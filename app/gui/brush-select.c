@@ -362,21 +362,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  The main brush selection dialog  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|brush_select_dialog
-name|BrushSelect
-modifier|*
-name|brush_select_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  List of active dialogs  */
+comment|/*  list of active dialogs  */
 end_comment
 
 begin_decl_stmt
@@ -384,6 +370,20 @@ DECL|variable|brush_active_dialogs
 name|GSList
 modifier|*
 name|brush_active_dialogs
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  the main brush selection dialog  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|brush_select_dialog
+name|BrushSelect
+modifier|*
+name|brush_select_dialog
 init|=
 name|NULL
 decl_stmt|;
@@ -401,6 +401,10 @@ modifier|*
 name|brush_edit_generated_dialog
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|void
@@ -3131,6 +3135,7 @@ operator|=
 name|brush_edit_generated_new
 argument_list|()
 expr_stmt|;
+block|}
 name|brush_edit_generated_set_brush
 argument_list|(
 name|brush_edit_generated_dialog
@@ -3138,37 +3143,6 @@ argument_list|,
 name|brush
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-if|if
-condition|(
-operator|!
-name|GTK_WIDGET_VISIBLE
-argument_list|(
-name|brush_edit_generated_dialog
-operator|->
-name|shell
-argument_list|)
-condition|)
-name|gtk_widget_show
-argument_list|(
-name|brush_edit_generated_dialog
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
-else|else
-name|gdk_window_raise
-argument_list|(
-name|brush_edit_generated_dialog
-operator|->
-name|shell
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 else|else
 block|{

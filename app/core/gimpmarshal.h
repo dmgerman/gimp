@@ -81,6 +81,27 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_marshal_NONE__OBJECT_INT
+parameter_list|(
+name|GtkObject
+modifier|*
+name|object
+parameter_list|,
+name|GtkSignalFunc
+name|func
+parameter_list|,
+name|gpointer
+name|func_data
+parameter_list|,
+name|GtkArg
+modifier|*
+name|args
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_marshal_NONE__DOUBLE
 parameter_list|(
 name|GtkObject
