@@ -616,6 +616,12 @@ name|rect_select_motion
 expr_stmt|;
 name|tool
 operator|->
+name|modifier_key_func
+operator|=
+name|rect_select_modifier_update
+expr_stmt|;
+name|tool
+operator|->
 name|cursor_update_func
 operator|=
 name|rect_select_cursor_update

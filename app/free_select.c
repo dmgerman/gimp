@@ -130,12 +130,22 @@ name|core
 decl_stmt|;
 comment|/*  Core select object                      */
 DECL|member|op
-name|int
+name|gint
 name|op
 decl_stmt|;
 comment|/*  selection operation (ADD, SUB, etc)     */
+DECL|member|current_x
+name|gint
+name|current_x
+decl_stmt|;
+comment|/*  these values are updated on every motion event  */
+DECL|member|current_y
+name|gint
+name|current_y
+decl_stmt|;
+comment|/*  (enables immediate cursor updating on modifier 			 *   key events).  */
 DECL|member|num_pts
-name|int
+name|gint
 name|num_pts
 decl_stmt|;
 comment|/*  Number of points in the polygon         */
@@ -868,15 +878,6 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-if|if
-condition|(
-name|tool
-operator|->
-name|state
-operator|!=
-name|ACTIVE
-condition|)
-return|return;
 name|gdisp
 operator|=
 operator|(
@@ -895,6 +896,32 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
+comment|/*  needed for immediate cursor update on modifier event  */
+name|free_sel
+operator|->
+name|current_x
+operator|=
+name|mevent
+operator|->
+name|x
+expr_stmt|;
+name|free_sel
+operator|->
+name|current_y
+operator|=
+name|mevent
+operator|->
+name|y
+expr_stmt|;
+if|if
+condition|(
+name|tool
+operator|->
+name|state
+operator|!=
+name|ACTIVE
+condition|)
+return|return;
 if|if
 condition|(
 name|add_point
@@ -1281,6 +1308,12 @@ operator|->
 name|motion_func
 operator|=
 name|free_select_motion
+expr_stmt|;
+name|tool
+operator|->
+name|modifier_key_func
+operator|=
+name|rect_select_modifier_update
 expr_stmt|;
 name|tool
 operator|->

@@ -79,6 +79,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|rect_select_modifier_update
+parameter_list|(
+name|Tool
+modifier|*
+parameter_list|,
+name|GdkEventKey
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|rect_select_cursor_update
 parameter_list|(
 name|Tool
