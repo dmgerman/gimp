@@ -1613,6 +1613,10 @@ expr_stmt|;
 if|if
 condition|(
 name|entry
+operator|<
+literal|0
+operator|||
+name|entry
 operator|>=
 name|palette
 operator|->
@@ -1723,9 +1727,9 @@ init|=
 block|{
 literal|"gimp_palette_get_entry"
 block|,
-literal|"Gets the specified palette entry from the currently active pallette."
+literal|"Gets the specified palette entry from the currently active palette."
 block|,
-literal|"This procedure returns the color of the zero-based entry specifed for the current palette. It returns an error if the entry does not exist."
+literal|"This procedure retrieves the color of the zero-based entry specifed for the current palette. It returns an error if the entry does not exist."
 block|,
 literal|"Nathan Summers<rock@gimp.org>"
 block|,

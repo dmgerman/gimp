@@ -718,7 +718,7 @@ name|i
 operator|++
 control|)
 block|{
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|s
 argument_list|,
@@ -734,7 +734,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|s
 argument_list|,

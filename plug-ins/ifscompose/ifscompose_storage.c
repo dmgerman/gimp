@@ -32,7 +32,7 @@ file|"ifscompose.h"
 end_include
 
 begin_enum
-DECL|enum|__anon28dc14c10103
+DECL|enum|__anon2a054ab30103
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -118,7 +118,7 @@ end_enum
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28dc14c10208
+DECL|struct|__anon2a054ab30208
 block|{
 DECL|member|name
 name|gchar
@@ -1563,9 +1563,11 @@ condition|;
 name|i
 operator|++
 control|)
-name|g_scanner_add_symbol
+name|g_scanner_scope_add_symbol
 argument_list|(
 name|scanner
+argument_list|,
+literal|0
 argument_list|,
 name|symbols
 index|[
@@ -1651,7 +1653,7 @@ argument_list|(
 name|NULL
 argument_list|)
 decl_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1662,7 +1664,7 @@ operator|->
 name|iterations
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1673,7 +1675,7 @@ operator|->
 name|max_memory
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1684,7 +1686,7 @@ operator|->
 name|subdivide
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1695,7 +1697,7 @@ operator|->
 name|radius
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1706,7 +1708,7 @@ operator|->
 name|aspect_ratio
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1717,7 +1719,7 @@ operator|->
 name|center_x
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1751,7 +1753,7 @@ argument_list|,
 literal|"element {\n"
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1767,7 +1769,7 @@ operator|.
 name|x
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1783,7 +1785,7 @@ operator|.
 name|y
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1799,7 +1801,7 @@ operator|.
 name|theta
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1815,7 +1817,7 @@ operator|.
 name|scale
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1831,7 +1833,7 @@ operator|.
 name|asym
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1847,7 +1849,7 @@ operator|.
 name|shear
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1863,7 +1865,7 @@ operator|.
 name|flip
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1903,7 +1905,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1943,7 +1945,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -1983,7 +1985,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -2023,7 +2025,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -2063,7 +2065,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -2079,7 +2081,7 @@ operator|.
 name|hue_scale
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -2095,7 +2097,7 @@ operator|.
 name|value_scale
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
@@ -2111,7 +2113,7 @@ operator|.
 name|simple_color
 argument_list|)
 expr_stmt|;
-name|g_string_printfa
+name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,

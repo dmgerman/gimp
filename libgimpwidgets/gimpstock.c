@@ -99,7 +99,7 @@ argument_list|)
 expr_stmt|;
 name|pixbuf
 operator|=
-name|gdk_pixbuf_new_from_stream
+name|gdk_pixbuf_new_from_inline
 argument_list|(
 operator|-
 literal|1
@@ -488,7 +488,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b291b670108
+DECL|struct|__anon29da9bb30108
 block|{
 DECL|member|stock_id
 specifier|const

@@ -111,12 +111,15 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|GimpRGB
-modifier|*
+name|gboolean
 name|gimp_palette_get_entry
 parameter_list|(
 name|gint
 name|entry_num
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|)
 function_decl|;
 ifdef|#
