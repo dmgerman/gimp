@@ -100,12 +100,11 @@ name|GParamSpec
 modifier|*
 name|param_spec
 parameter_list|,
-name|GString
-modifier|*
-name|str
+name|gint
+name|fd
 parameter_list|,
-name|gboolean
-name|escaped
+name|gint
+name|indent_level
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295560680103
+DECL|enum|__anon28ed95bc0103
 block|{
 DECL|enumerator|GIMP_PARAM_PATH_FILE
 name|GIMP_PARAM_PATH_FILE
@@ -467,28 +467,6 @@ end_define
 begin_define
 define|#
 directive|define
-name|GIMP_CONFIG_INSTALL_PROP_OBJECT
-parameter_list|(
-name|class
-parameter_list|,
-name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_OBJECT (class,id,\\\nname,blurb,object_type,flags)
-name|name
-parameter_list|,
-name|blurb
-parameter_list|,
-name|object_type
-parameter_list|,
-name|flags
-parameter_list|)
-define|\
-value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, blurb,\                                    object_type,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
-end_define
-
-begin_define
-define|#
-directive|define
 name|GIMP_CONFIG_INSTALL_PROP_PATH
 parameter_list|(
 name|class
@@ -560,6 +538,32 @@ parameter_list|,
 name|pixels
 parameter_list|,
 define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_unit (name, NULL, blurb,\                                    pixels, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+end_define
+
+begin_comment
+comment|/*  object properties are _not_ writeable by default  */
+end_comment
+
+begin_define
+define|#
+directive|define
+name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_OBJECT (class,id,\\\nname,blurb,object_type,flags)
+name|name
+parameter_list|,
+name|blurb
+parameter_list|,
+name|object_type
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, blurb,\                                    object_type,\                                    flags |\                                    G_PARAM_READABLE | GIMP_PARAM_SERIALIZE))
 end_define
 
 begin_endif

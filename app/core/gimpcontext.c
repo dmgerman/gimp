@@ -1083,7 +1083,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990c3f30103
+DECL|enum|__anon2b05ad210103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1097,7 +1097,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990c3f30203
+DECL|enum|__anon2b05ad210203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -2325,7 +2325,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_BRUSH
 argument_list|,
-literal|0
+name|G_PARAM_WRITABLE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2343,7 +2343,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PATTERN
 argument_list|,
-literal|0
+name|G_PARAM_WRITABLE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2361,7 +2361,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_GRADIENT
 argument_list|,
-literal|0
+name|G_PARAM_WRITABLE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2379,7 +2379,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_PALETTE
 argument_list|,
-literal|0
+name|G_PARAM_WRITABLE
 argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
