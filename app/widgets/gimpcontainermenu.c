@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6fc2ea0103
+DECL|enum|__anon29a1f13c0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1225,7 +1225,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_VIEWABLE_MAX_POPUP_SIZE
+name|GIMP_VIEWABLE_MAX_MENU_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail

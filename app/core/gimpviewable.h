@@ -45,6 +45,22 @@ value|256
 end_define
 
 begin_define
+DECL|macro|GIMP_VIEWABLE_MAX_BUTTON_SIZE
+define|#
+directive|define
+name|GIMP_VIEWABLE_MAX_BUTTON_SIZE
+value|64
+end_define
+
+begin_define
+DECL|macro|GIMP_VIEWABLE_MAX_MENU_SIZE
+define|#
+directive|define
+name|GIMP_VIEWABLE_MAX_MENU_SIZE
+value|48
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_VIEWABLE
 define|#
 directive|define

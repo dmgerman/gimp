@@ -789,7 +789,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_VIEWABLE_MAX_POPUP_SIZE
+name|GIMP_VIEWABLE_MAX_BUTTON_SIZE
 argument_list|,
 name|NULL
 argument_list|)
