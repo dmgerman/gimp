@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrush.h"
+file|"brushes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
+file|"gimpbrush.h"
 end_include
 
 begin_include
@@ -524,9 +524,9 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|GimpBrush
+name|GimpObject
 modifier|*
-name|brush
+name|object
 decl_stmt|;
 name|name
 operator|=
@@ -558,9 +558,9 @@ condition|(
 name|success
 condition|)
 block|{
-name|brush
+name|object
 operator|=
-name|gimp_brush_list_get_brush
+name|gimp_list_get_child_by_name
 argument_list|(
 name|brush_list
 argument_list|,
@@ -569,13 +569,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|brush
+name|object
 condition|)
 name|gimp_context_set_brush
 argument_list|(
 name|NULL
 argument_list|,
-name|brush
+name|GIMP_BRUSH
+argument_list|(
+name|object
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1373,7 +1376,7 @@ modifier|*
 modifier|*
 name|brushes
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
 name|list
 init|=
@@ -1391,9 +1394,12 @@ argument_list|(
 name|char
 operator|*
 argument_list|,
+name|GIMP_CONTAINER
+argument_list|(
 name|brush_list
+argument_list|)
 operator|->
-name|num_brushes
+name|num_children
 argument_list|)
 expr_stmt|;
 name|success
@@ -1465,9 +1471,12 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|GIMP_CONTAINER
+argument_list|(
 name|brush_list
+argument_list|)
 operator|->
-name|num_brushes
+name|num_children
 expr_stmt|;
 name|return_args
 index|[
@@ -1632,7 +1641,7 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|GSList
+name|GList
 modifier|*
 name|list
 decl_stmt|;
@@ -1655,7 +1664,7 @@ name|list
 condition|;
 name|list
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
 name|list
 argument_list|)

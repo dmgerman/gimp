@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brushes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"fileops.h"
 end_include
 
@@ -72,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -85,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdrawablepreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplist.h"
 end_include
 
 begin_include
@@ -148,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a434a5a0103
+DECL|enum|__anon279f969a0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -2448,7 +2454,11 @@ expr_stmt|;
 else|else
 name|brush
 operator|=
-name|gimp_brush_list_get_brush
+operator|(
+name|GimpBrush
+operator|*
+operator|)
+name|gimp_list_get_child_by_name
 argument_list|(
 name|brush_list
 argument_list|,

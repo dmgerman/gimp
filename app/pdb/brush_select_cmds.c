@@ -46,13 +46,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
+file|"brushes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplist.h"
 end_include
 
 begin_decl_stmt
@@ -879,11 +891,11 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|GimpBrush
+name|GimpObject
 modifier|*
-name|active
+name|object
 init|=
-name|gimp_brush_list_get_brush
+name|gimp_list_get_child_by_name
 argument_list|(
 name|brush_list
 argument_list|,
@@ -892,9 +904,18 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|active
+name|object
 condition|)
 block|{
+name|GimpBrush
+modifier|*
+name|active
+init|=
+name|GIMP_BRUSH
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
 comment|/* Updating the context updates the widgets as well */
 name|gimp_context_set_brush
 argument_list|(

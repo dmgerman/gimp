@@ -4948,7 +4948,7 @@ name|bcd
 operator|->
 name|gimage
 operator|&&
-name|gimp_container_lookup
+name|gimp_container_have
 argument_list|(
 name|image_context
 argument_list|,

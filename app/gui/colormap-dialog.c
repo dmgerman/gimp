@@ -141,7 +141,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f983d0103
+DECL|enum|__anon2978b2750103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -912,13 +912,13 @@ name|NULL
 expr_stmt|;
 name|colormap_dialog
 operator|->
-name|rename_handler
+name|rename_handler_id
 operator|=
 literal|0
 expr_stmt|;
 name|colormap_dialog
 operator|->
-name|cmap_changed_handler
+name|cmap_changed_handler_id
 operator|=
 literal|0
 expr_stmt|;
@@ -1056,7 +1056,7 @@ name|context
 expr_stmt|;
 name|ipal
 operator|->
-name|cmap_changed_handler
+name|cmap_changed_handler_id
 operator|=
 name|gimp_container_add_handler
 argument_list|(
@@ -1071,7 +1071,7 @@ argument_list|)
 expr_stmt|;
 name|ipal
 operator|->
-name|rename_handler
+name|rename_handler_id
 operator|=
 name|gimp_container_add_handler
 argument_list|(
@@ -4736,7 +4736,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimp_container_lookup
+name|gimp_container_have
 argument_list|(
 name|ipal
 operator|->
@@ -5607,7 +5607,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f983d0208
+DECL|struct|__anon2978b2750208
 block|{
 DECL|member|def
 name|GimpImage

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brushes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"context_manager.h"
 end_include
 
@@ -48,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimplist.h"
 end_include
 
 begin_include
@@ -534,7 +540,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fad3d30103
+DECL|enum|__anon2a9e5d7a0103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -641,7 +647,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fad3d30203
+DECL|enum|__anon2a9e5d7a0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -3336,12 +3342,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_image_removed (GimpSet * set,GimpImage * image,GimpContext * context)
+DECL|function|gimp_context_image_removed (GimpContainer * container,GimpImage * image,GimpContext * context)
 name|gimp_context_image_removed
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -5104,10 +5110,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_brush_removed (GimpBrushList * brush_list,GimpBrush * brush,GimpContext * context)
+DECL|function|gimp_context_brush_removed (GimpContainer * brush_list,GimpBrush * brush,GimpContext * context)
 name|gimp_context_brush_removed
 parameter_list|(
-name|GimpBrushList
+name|GimpContainer
 modifier|*
 name|brush_list
 parameter_list|,
@@ -5550,7 +5556,11 @@ condition|(
 operator|(
 name|brush
 operator|=
-name|gimp_brush_list_get_brush
+operator|(
+name|GimpBrush
+operator|*
+operator|)
+name|gimp_list_get_child_by_name
 argument_list|(
 name|brush_list
 argument_list|,
@@ -5572,20 +5582,26 @@ return|return;
 block|}
 if|if
 condition|(
-name|gimp_brush_list_length
+name|gimp_container_num_children
+argument_list|(
+name|GIMP_CONTAINER
 argument_list|(
 name|brush_list
+argument_list|)
 argument_list|)
 condition|)
 name|gimp_context_real_set_brush
 argument_list|(
 name|context
 argument_list|,
-name|gimp_brush_list_get_brush_by_index
+name|GIMP_BRUSH
+argument_list|(
+name|gimp_list_get_child_by_index
 argument_list|(
 name|brush_list
 argument_list|,
 literal|0
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

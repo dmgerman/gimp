@@ -1497,7 +1497,7 @@ name|gimage_to_update
 operator|==
 name|gimage
 operator|&&
-name|gimp_container_lookup
+name|gimp_container_have
 argument_list|(
 name|image_context
 argument_list|,
@@ -1736,7 +1736,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ff3690108
+DECL|struct|__anon2b79f6f40108
 block|{
 DECL|member|def
 name|GImage
@@ -3209,7 +3209,7 @@ if|if
 condition|(
 name|gimage
 operator|&&
-name|gimp_container_lookup
+name|gimp_container_have
 argument_list|(
 name|image_context
 argument_list|,

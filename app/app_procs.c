@@ -156,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brushes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color_transfer.h"
 end_include
 
@@ -199,12 +205,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay_ops.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpbrushlist.h"
 end_include
 
 begin_include

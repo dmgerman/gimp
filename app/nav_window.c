@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2991b0220103
+DECL|enum|__anon2c038f2c0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -6025,7 +6025,7 @@ if|if
 condition|(
 name|gimage
 operator|&&
-name|gimp_container_lookup
+name|gimp_container_have
 argument_list|(
 name|image_context
 argument_list|,

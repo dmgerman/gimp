@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brushes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"devices.h"
 end_include
 
@@ -84,13 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimplist.h"
 end_include
 
 begin_include
@@ -1902,7 +1908,11 @@ name|brush
 decl_stmt|;
 name|brush
 operator|=
-name|gimp_brush_list_get_brush
+operator|(
+name|GimpBrush
+operator|*
+operator|)
+name|gimp_list_get_child_by_name
 argument_list|(
 name|brush_list
 argument_list|,

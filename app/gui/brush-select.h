@@ -189,6 +189,14 @@ name|gboolean
 name|freeze
 decl_stmt|;
 comment|/*  so we don't waste so much time during refresh  */
+DECL|member|name_changed_handler_id
+name|GQuark
+name|name_changed_handler_id
+decl_stmt|;
+DECL|member|dirty_handler_id
+name|GQuark
+name|dirty_handler_id
+decl_stmt|;
 block|}
 struct|;
 end_struct

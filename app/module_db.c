@@ -107,7 +107,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainer.h"
+file|"gimplist.h"
 end_include
 
 begin_include
@@ -145,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288a75920103
+DECL|enum|__anon2a1a949a0103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -319,7 +319,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288a75920208
+DECL|struct|__anon2a1a949a0208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -434,7 +434,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288a75920308
+DECL|struct|__anon2a1a949a0308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -902,11 +902,14 @@ expr_stmt|;
 comment|/* Load and initialize gimp modules */
 name|modules
 operator|=
-name|gimp_container_new
+name|GIMP_CONTAINER
+argument_list|(
+name|gimp_list_new
 argument_list|(
 name|MODULE_INFO_TYPE
 argument_list|,
 name|GIMP_CONTAINER_POLICY_WEAK
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1744,7 +1747,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a75920403
+DECL|enum|__anon2a1a949a0403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -4686,7 +4689,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288a75920508
+DECL|struct|__anon2a1a949a0508
 block|{
 DECL|member|search_key
 specifier|const

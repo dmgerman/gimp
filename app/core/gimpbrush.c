@@ -131,12 +131,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -176,7 +170,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4251960103
+DECL|enum|__anon275d9e710103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY

@@ -69,36 +69,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpContext
-typedef|typedef
-name|struct
-name|_GimpContext
-name|GimpContext
-typedef|;
-end_typedef
-
-begin_comment
-comment|/* TODO: replace these with GimpContainer */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpSet
-typedef|typedef
-name|struct
-name|_GimpSet
-name|GimpSet
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpSetHandlerId
-typedef|typedef
-name|guint
-name|GimpSetHandlerId
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpList
 typedef|typedef
 name|struct
@@ -108,11 +78,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpBrushList
+DECL|typedef|GimpDataList
 typedef|typedef
 name|struct
-name|_GimpBrushList
-name|GimpBrushList
+name|_GimpDataList
+name|GimpDataList
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpContext
+typedef|typedef
+name|struct
+name|_GimpContext
+name|GimpContext
 typedef|;
 end_typedef
 
