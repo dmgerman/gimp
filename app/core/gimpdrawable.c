@@ -82,7 +82,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c05bd8b0103
+DECL|enum|__anon27aee2c60103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -1834,6 +1834,12 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|gimp_drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
+operator|||
+operator|!
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
