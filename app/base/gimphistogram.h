@@ -28,6 +28,12 @@ directive|include
 file|"gimpdrawable.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimphistogramF.h"
+end_include
+
 begin_define
 DECL|macro|HISTOGRAM_VALUE
 define|#
@@ -67,15 +73,6 @@ directive|define
 name|HISTOGRAM_ALPHA
 value|4
 end_define
-
-begin_typedef
-DECL|typedef|GimpHistogram
-typedef|typedef
-name|struct
-name|_GimpHistogram
-name|GimpHistogram
-typedef|;
-end_typedef
 
 begin_function_decl
 name|GimpHistogram
