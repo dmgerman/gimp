@@ -957,6 +957,16 @@ name|tool_info
 condition|)
 return|return;
 comment|/*  Need to reset the tool-options since only the changes    *  from the default values are written to disk.    */
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_tool_options_reset
 argument_list|(
 name|tool_info
@@ -973,6 +983,16 @@ argument_list|,
 literal|"user"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
