@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/temp-buf.h"
 end_include
 

@@ -43,12 +43,6 @@ directive|include
 file|"core/gimp.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbasetypes.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|message_proc
 specifier|static

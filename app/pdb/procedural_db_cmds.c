@@ -95,12 +95,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbasetypes.h"
-end_include
-
 begin_comment
 comment|/*  Query structure  */
 end_comment

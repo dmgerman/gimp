@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -143,12 +137,6 @@ begin_include
 include|#
 directive|include
 file|"paint/gimpsmudgeoptions.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint/paint-enums.h"
 end_include
 
 begin_include
