@@ -74,8 +74,7 @@ ifdef|#
 directive|ifdef
 name|ENABLE_MP
 DECL|member|mutex
-name|GMutex
-modifier|*
+name|GStaticMutex
 name|mutex
 decl_stmt|;
 DECL|member|num_slots
@@ -212,13 +211,6 @@ directive|ifdef
 name|ENABLE_MP
 name|histogram
 operator|->
-name|mutex
-operator|=
-name|g_mutex_new
-argument_list|()
-expr_stmt|;
-name|histogram
-operator|->
 name|num_slots
 operator|=
 name|config
@@ -282,13 +274,6 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_MP
-name|g_mutex_free
-argument_list|(
-name|histogram
-operator|->
-name|mutex
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|histogram
@@ -2116,8 +2101,9 @@ init|=
 literal|0
 decl_stmt|;
 comment|/* find an unused temporary slot to put our results in and lock it */
-name|g_mutex_lock
+name|g_static_mutex_lock
 argument_list|(
+operator|&
 name|histogram
 operator|->
 name|mutex
@@ -2153,8 +2139,9 @@ index|]
 operator|=
 literal|1
 expr_stmt|;
-name|g_mutex_unlock
+name|g_static_mutex_unlock
 argument_list|(
+operator|&
 name|histogram
 operator|->
 name|mutex
@@ -2954,8 +2941,9 @@ directive|ifdef
 name|ENABLE_MP
 comment|/* unlock this slot */
 comment|/* we shouldn't have to use mutex locks here */
-name|g_mutex_lock
+name|g_static_mutex_lock
 argument_list|(
+operator|&
 name|histogram
 operator|->
 name|mutex
@@ -2970,8 +2958,9 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|g_mutex_unlock
+name|g_static_mutex_unlock
 argument_list|(
+operator|&
 name|histogram
 operator|->
 name|mutex

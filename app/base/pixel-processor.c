@@ -214,8 +214,7 @@ ifdef|#
 directive|ifdef
 name|ENABLE_MP
 DECL|member|mutex
-name|GMutex
-modifier|*
+name|GStaticMutex
 name|mutex
 decl_stmt|;
 DECL|member|threads
@@ -271,8 +270,9 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|g_mutex_lock
+name|g_static_mutex_lock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -309,8 +309,9 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_mutex_unlock
+name|g_static_mutex_unlock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -391,8 +392,9 @@ name|curtile
 argument_list|)
 expr_stmt|;
 block|}
-name|g_mutex_unlock
+name|g_static_mutex_unlock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -642,8 +644,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|g_mutex_lock
+name|g_static_mutex_lock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -722,8 +725,9 @@ argument_list|)
 operator|)
 condition|)
 do|;
-name|g_mutex_unlock
+name|g_static_mutex_unlock
 argument_list|(
+operator|&
 name|processor
 operator|->
 name|mutex
@@ -1360,13 +1364,6 @@ directive|ifdef
 name|ENABLE_MP
 name|processor
 operator|.
-name|mutex
-operator|=
-name|g_mutex_new
-argument_list|()
-expr_stmt|;
-name|processor
-operator|.
 name|threads
 operator|=
 literal|0
@@ -1379,18 +1376,6 @@ operator|&
 name|processor
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_MP
-name|g_mutex_free
-argument_list|(
-name|processor
-operator|.
-name|mutex
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
