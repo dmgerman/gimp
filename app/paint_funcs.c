@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28db90610103
+DECL|enum|__anon2a8d1bc10103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -2664,7 +2664,7 @@ operator|&
 name|g1
 argument_list|,
 operator|&
-name|bytes1
+name|b1
 argument_list|)
 expr_stmt|;
 name|dest
@@ -19449,7 +19449,7 @@ name|char
 name|color
 index|[]
 init|=
-literal|"\0\0\0"
+literal|"\0\0\0\0"
 decl_stmt|;
 name|color_region
 argument_list|(
@@ -19466,7 +19466,7 @@ name|radius
 operator|==
 literal|1
 condition|)
-comment|/* optomize this case specificaly */
+comment|/* optimize this case specifically */
 block|{
 name|guchar
 modifier|*
