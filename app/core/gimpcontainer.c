@@ -159,7 +159,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae221e0103
+DECL|enum|__anon2c7ebaf70103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -184,7 +184,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae221e0203
+DECL|enum|__anon2c7ebaf70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1359,7 +1359,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bae221e0308
+DECL|struct|__anon2c7ebaf70308
 block|{
 DECL|member|fd
 name|gint
@@ -1935,26 +1935,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|child
 condition|)
 block|{
-name|g_print
-argument_list|(
-literal|"found child \"%s\"\n"
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_print
-argument_list|(
-literal|"creating child \"%s\"\n"
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_GIMP
@@ -2022,16 +2006,23 @@ argument_list|)
 expr_stmt|;
 block|}
 block|{
-if|#
-directive|if
-literal|0
-block|GimpConfigInterface *config_iface;                config_iface = GIMP_GET_CONFIG_INTERFACE (child);
-endif|#
-directive|endif
+name|GimpConfigInterface
+modifier|*
+name|config_iface
+decl_stmt|;
+name|config_iface
+operator|=
+name|GIMP_GET_CONFIG_INTERFACE
+argument_list|(
+name|child
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_deserialize_properties
+name|config_iface
+operator|->
+name|deserialize
 argument_list|(
 name|G_OBJECT
 argument_list|(

@@ -1785,7 +1785,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb806c00103
+DECL|enum|__anon2955e0040103
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
@@ -2361,6 +2361,13 @@ return|return
 name|token
 return|;
 block|}
+name|g_value_set_boxed_take_ownership
+argument_list|(
+name|value
+argument_list|,
+name|array
+argument_list|)
+expr_stmt|;
 return|return
 name|G_TOKEN_RIGHT_PAREN
 return|;
