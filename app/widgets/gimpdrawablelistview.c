@@ -144,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixmaps/pennorm.xpm"
+file|"pixmaps/edit.xpm"
 end_include
 
 begin_function_decl
@@ -1166,7 +1166,7 @@ name|pixmap
 operator|=
 name|gimp_pixmap_new
 argument_list|(
-name|pennorm_xpm
+name|edit_xpm
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

@@ -743,7 +743,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f36480103
+DECL|enum|__anon292f85ba0103
 block|{
 DECL|enumerator|ACTIVE_LAYER_CHANGED
 name|ACTIVE_LAYER_CHANGED
@@ -16272,24 +16272,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|w
-operator|=
-name|MAX
-argument_list|(
-literal|1
-argument_list|,
-name|width
-argument_list|)
-expr_stmt|;
-name|h
-operator|=
-name|MAX
-argument_list|(
-literal|1
-argument_list|,
-name|height
-argument_list|)
-expr_stmt|;
 name|x1
 operator|=
 name|CLAMP
@@ -16394,6 +16376,7 @@ name|src1PR
 operator|.
 name|data
 operator|=
+operator|(
 name|temp_buf_data
 argument_list|(
 name|comp
@@ -16410,6 +16393,7 @@ operator|*
 name|src1PR
 operator|.
 name|bytes
+operator|)
 expr_stmt|;
 name|layer_buf
 operator|=
@@ -16481,6 +16465,7 @@ name|src2PR
 operator|.
 name|data
 operator|=
+operator|(
 name|temp_buf_data
 argument_list|(
 name|layer_buf
@@ -16505,6 +16490,7 @@ operator|*
 name|src2PR
 operator|.
 name|bytes
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -16555,6 +16541,7 @@ name|maskPR
 operator|.
 name|data
 operator|=
+operator|(
 name|mask_buf_data
 argument_list|(
 name|mask_buf
@@ -16579,6 +16566,7 @@ operator|*
 name|maskPR
 operator|.
 name|bytes
+operator|)
 expr_stmt|;
 name|mask
 operator|=

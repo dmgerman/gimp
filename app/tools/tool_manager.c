@@ -473,6 +473,10 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdisp
+condition|)
 name|active_tool
 operator|->
 name|drawable
