@@ -47,6 +47,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile.h"
+end_include
+
 begin_typedef
 DECL|typedef|TileLink
 typedef|typedef
@@ -115,6 +121,14 @@ range|:
 literal|1
 decl_stmt|;
 comment|/* is the tile valid? */
+comment|/* An array of hints for rendering purposes */
+DECL|member|rowhint
+name|TileRowHint
+name|rowhint
+index|[
+name|TILE_HEIGHT
+index|]
+decl_stmt|;
 DECL|member|data
 name|guchar
 modifier|*

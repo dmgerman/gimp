@@ -32,6 +32,14 @@ begin_comment
 comment|/* Uncomment for verbose debugging on copy-on-write logic #define TILE_DEBUG */
 end_comment
 
+begin_comment
+comment|/* sanity checking on new tile hinting code */
+end_comment
+
+begin_comment
+comment|/* #define HINTS_SANITY */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -56,6 +64,39 @@ typedef|typedef
 name|struct
 name|_Tile
 name|Tile
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon29d9de250103
+block|{
+DECL|enumerator|TILEROWHINT_BROKEN
+name|TILEROWHINT_BROKEN
+init|=
+literal|0
+block|,
+DECL|enumerator|TILEROWHINT_OPAQUE
+name|TILEROWHINT_OPAQUE
+block|,
+DECL|enumerator|TILEROWHINT_TRANSPARENT
+name|TILEROWHINT_TRANSPARENT
+block|,
+DECL|enumerator|TILEROWHINT_MIXED
+name|TILEROWHINT_MIXED
+block|,
+DECL|enumerator|TILEROWHINT_OUTOFRANGE
+name|TILEROWHINT_OUTOFRANGE
+block|,
+DECL|enumerator|TILEROWHINT_UNDEFINED
+name|TILEROWHINT_UNDEFINED
+block|,
+DECL|enumerator|TILEROWHINT_UNKNOWN
+name|TILEROWHINT_UNKNOWN
+DECL|typedef|TileRowHint
+block|}
+name|TileRowHint
 typedef|;
 end_typedef
 
@@ -184,6 +225,41 @@ parameter_list|(
 name|Tile
 modifier|*
 name|tile
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* DOCUMENT ME -- adm */
+end_comment
+
+begin_function_decl
+name|TileRowHint
+name|tile_get_rowhint
+parameter_list|(
+name|Tile
+modifier|*
+name|tile
+parameter_list|,
+name|int
+name|yoff
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tile_set_rowhint
+parameter_list|(
+name|Tile
+modifier|*
+name|tile
+parameter_list|,
+name|int
+name|yoff
+parameter_list|,
+name|TileRowHint
+name|rowhint
 parameter_list|)
 function_decl|;
 end_function_decl
