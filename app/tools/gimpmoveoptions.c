@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294102bc0103
+DECL|enum|__anon2c9a9efa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -326,7 +326,7 @@ literal|"change-active"
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
