@@ -143,6 +143,11 @@ index|[
 literal|5
 index|]
 decl_stmt|;
+DECL|member|hist
+name|GimpHistogram
+modifier|*
+name|hist
+decl_stmt|;
 DECL|member|channel_menu
 name|GtkWidget
 modifier|*

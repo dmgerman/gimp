@@ -137,6 +137,11 @@ name|GdkGC
 modifier|*
 name|range_gc
 decl_stmt|;
+comment|/* hack */
+DECL|member|light_histogram
+name|gboolean
+name|light_histogram
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4104100103
+DECL|enum|__anon2afd7e420103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4104100203
+DECL|enum|__anon2afd7e420203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1420,6 +1420,19 @@ name|widget
 operator|->
 name|window
 argument_list|,
+name|view
+operator|->
+name|light_histogram
+condition|?
+name|widget
+operator|->
+name|style
+operator|->
+name|mid_gc
+index|[
+name|GTK_STATE_NORMAL
+index|]
+else|:
 name|widget
 operator|->
 name|style
@@ -1937,7 +1950,6 @@ if|if
 condition|(
 name|range
 condition|)
-block|{
 name|gtk_widget_add_events
 argument_list|(
 name|view
@@ -1949,30 +1961,6 @@ operator||
 name|GDK_BUTTON1_MOTION_MASK
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|GIMP_HISTOGRAM_VIEW
-argument_list|(
-name|view
-argument_list|)
-operator|->
-name|start
-operator|=
-operator|-
-literal|1
-expr_stmt|;
-name|GIMP_HISTOGRAM_VIEW
-argument_list|(
-name|view
-argument_list|)
-operator|->
-name|end
-operator|=
-operator|-
-literal|1
-expr_stmt|;
-block|}
 return|return
 name|view
 return|;
