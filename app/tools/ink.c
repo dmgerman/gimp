@@ -263,6 +263,10 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* Tiles used to render the stroke at 1 byte/pp */
+end_comment
+
 begin_decl_stmt
 DECL|variable|canvas_tiles
 specifier|static
@@ -275,7 +279,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  paint buffer */
+comment|/* Flat buffer that is used to used to render the dirty region  * for composition onto the destination drawable  */
 end_comment
 
 begin_decl_stmt
@@ -4025,7 +4029,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon28dae8380103
+DECL|enum|__anon2ad4160c0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4223,19 +4227,14 @@ condition|)
 block|{
 operator|*
 name|dest
-operator|+=
-operator|(
-operator|(
-literal|256
-operator|-
+operator|=
+name|MAX
+argument_list|(
 operator|*
 name|dest
-operator|)
-operator|*
+argument_list|,
 name|alpha
-operator|)
-operator|>>
-literal|8
+argument_list|)
 expr_stmt|;
 name|dest
 operator|++
@@ -4729,34 +4728,30 @@ name|i
 operator|++
 expr_stmt|;
 block|}
-comment|/* Fill in the pixel */
 name|dest
 index|[
 name|cur_x
 index|]
-operator|+=
-operator|(
-operator|(
-literal|256
-operator|-
+operator|=
+name|MAX
+argument_list|(
 name|dest
 index|[
 name|cur_x
 index|]
-operator|)
-operator|*
+argument_list|,
+operator|(
 name|pixel
 operator|*
 literal|255
 operator|)
 operator|/
 operator|(
-literal|256
-operator|*
 name|SUBSAMPLE
 operator|*
 name|SUBSAMPLE
 operator|)
+argument_list|)
 expr_stmt|;
 name|last_x
 operator|=
@@ -5274,6 +5269,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/* This routine a) updates the representation of the stroke  * in the canvas tiles, then renders the dirty bit of it  * into canvas_buf.  */
+end_comment
 
 begin_function
 specifier|static
