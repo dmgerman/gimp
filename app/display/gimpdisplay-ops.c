@@ -626,7 +626,7 @@ name|s_width
 operator|-
 name|shell_width
 argument_list|,
-literal|0
+name|border_x
 argument_list|,
 name|s_width
 argument_list|)
@@ -644,7 +644,7 @@ name|s_height
 operator|-
 name|shell_height
 argument_list|,
-literal|0
+name|border_y
 argument_list|,
 name|s_height
 argument_list|)
@@ -787,7 +787,7 @@ name|s_width
 operator|-
 name|shell_width
 argument_list|,
-literal|0
+name|border_x
 argument_list|,
 name|s_width
 argument_list|)
@@ -805,7 +805,7 @@ name|s_height
 operator|-
 name|shell_height
 argument_list|,
-literal|0
+name|border_y
 argument_list|,
 name|s_height
 argument_list|)
