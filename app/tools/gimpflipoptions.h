@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tool_options.h"
+file|"gimptransformoptions.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpFlipOptions
 block|{
 DECL|member|parent_instance
-name|GimpToolOptions
+name|GimpTransformOptions
 name|parent_instance
 decl_stmt|;
 DECL|member|flip_type

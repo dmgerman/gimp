@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpToolOptions
 name|parent_instance
 decl_stmt|;
+DECL|member|type
+name|GimpTransformType
+name|type
+decl_stmt|;
 DECL|member|direction
 name|GimpTransformDirection
 name|direction
@@ -131,10 +135,6 @@ decl_stmt|;
 DECL|member|grid_size
 name|gint
 name|grid_size
-decl_stmt|;
-DECL|member|show_path
-name|gboolean
-name|show_path
 decl_stmt|;
 DECL|member|constrain_1
 name|gboolean

@@ -79,7 +79,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a1ec14a0103
+DECL|enum|__anon2b065e1d0103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -103,7 +103,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2a1ec14a0203
+DECL|enum|__anon2b065e1d0203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -151,7 +151,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2a1ec14a0303
+DECL|enum|__anon2b065e1d0303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -176,7 +176,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2a1ec14a0403
+DECL|enum|__anon2b065e1d0403
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -214,7 +214,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a1ec14a0503
+DECL|enum|__anon2b065e1d0503
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -230,6 +230,47 @@ comment|/*< desc="Fixed Aspect Ratio">*/
 DECL|typedef|GimpRectSelectMode
 block|}
 name|GimpRectSelectMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_TRANSFORM_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_TRANSFORM_TYPE
+value|(gimp_transform_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_transform_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2b065e1d0603
+block|{
+DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
+name|GIMP_TRANSFORM_TYPE_LAYER
+block|,
+comment|/*< desc="Transform Active Layer">*/
+DECL|enumerator|GIMP_TRANSFORM_TYPE_SELECTION
+name|GIMP_TRANSFORM_TYPE_SELECTION
+block|,
+comment|/*< desc="Transform Selection">*/
+DECL|enumerator|GIMP_TRANSFORM_TYPE_PATH
+name|GIMP_TRANSFORM_TYPE_PATH
+comment|/*< desc="Transform Active Path">*/
+DECL|typedef|GimpTransformType
+block|}
+name|GimpTransformType
 typedef|;
 end_typedef
 
@@ -255,7 +296,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a1ec14a0603
+DECL|enum|__anon2b065e1d0703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
 name|GIMP_TRANSFORM_GRID_TYPE_NONE
@@ -283,7 +324,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2a1ec14a0703
+DECL|enum|__anon2b065e1d0803
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

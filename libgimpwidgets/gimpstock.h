@@ -175,6 +175,11 @@ define|#
 directive|define
 name|GIMP_STOCK_VCHAIN_BROKEN
 value|"gimp-vchain-broken"
+DECL|macro|GIMP_STOCK_SELECTION
+define|#
+directive|define
+name|GIMP_STOCK_SELECTION
+value|"gimp-selection"
 DECL|macro|GIMP_STOCK_SELECTION_REPLACE
 define|#
 directive|define
@@ -586,6 +591,11 @@ define|#
 directive|define
 name|GIMP_STOCK_CHANNEL_ALPHA
 value|"gimp-channel-alpha"
+DECL|macro|GIMP_STOCK_PATH
+define|#
+directive|define
+name|GIMP_STOCK_PATH
+value|"gimp-path"
 DECL|macro|GIMP_STOCK_TEMPLATE
 define|#
 directive|define

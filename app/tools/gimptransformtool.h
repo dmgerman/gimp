@@ -299,9 +299,9 @@ DECL|member|notify_connected
 name|gboolean
 name|notify_connected
 decl_stmt|;
-DECL|member|show_path
-name|gboolean
-name|show_path
+DECL|member|type
+name|GimpTransformType
+name|type
 decl_stmt|;
 comment|/*  transform info dialog  */
 DECL|member|shell_identifier
@@ -412,6 +412,10 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tool
+parameter_list|,
+name|GimpItem
+modifier|*
+name|item
 parameter_list|,
 name|GimpDisplay
 modifier|*
