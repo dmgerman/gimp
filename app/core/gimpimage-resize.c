@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -546,7 +552,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon292c2a410103
+DECL|enum|__anon2944d0120103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -4440,18 +4446,6 @@ name|GimpImageBaseType
 name|type
 parameter_list|)
 block|{
-DECL|macro|INTENSITY (r,g,b)
-define|#
-directive|define
-name|INTENSITY
-parameter_list|(
-name|r
-parameter_list|,
-name|g
-parameter_list|,
-name|b
-parameter_list|)
-value|(r * 0.30 + g * 0.59 + b * 0.11 + 0.001)
 name|GimpImageType
 name|d_type
 decl_stmt|;

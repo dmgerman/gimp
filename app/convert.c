@@ -110,6 +110,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -245,6 +251,10 @@ name|B_SHIFT
 value|(BITS_IN_SAMPLE-PRECISION_B)
 end_define
 
+begin_comment
+comment|/* this has to match the INTENSITY definition in libgimp/gimpcolorspace.h */
+end_comment
+
 begin_define
 DECL|macro|R_SCALE
 define|#
@@ -281,23 +291,8 @@ end_define
 
 begin_comment
 DECL|macro|B_SCALE
-comment|/*  and B by this much  */
+comment|/*  and B by this much              */
 end_comment
-
-begin_define
-DECL|macro|INTENSITY (r,g,b)
-define|#
-directive|define
-name|INTENSITY
-parameter_list|(
-name|r
-parameter_list|,
-name|g
-parameter_list|,
-name|b
-parameter_list|)
-value|(r * 0.30 + g * 0.59 + b * 0.11 + 0.001)
-end_define
 
 begin_decl_stmt
 DECL|variable|webpal
@@ -34893,7 +34888,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f508e0108
+DECL|struct|__anon28c255410108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34970,7 +34965,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f508e0208
+DECL|struct|__anon28c255410208
 block|{
 DECL|member|ncolors
 name|long
@@ -34989,7 +34984,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f508e0308
+DECL|struct|__anon28c255410308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38284,7 +38279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f508e0408
+DECL|struct|__anon28c255410408
 block|{
 DECL|member|used_count
 name|signed

@@ -93,7 +93,7 @@ name|LUMINOSITY
 parameter_list|(
 name|X
 parameter_list|)
-value|(X[0] * 0.30 + X[1] * 0.59 + X[2] * 0.11)
+value|(INTENSITY (X[0], X[1], X[2]))
 end_define
 
 begin_comment

@@ -164,6 +164,49 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  Map RGB to intensity  */
+end_comment
+
+begin_define
+DECL|macro|INTENSITY_RED
+define|#
+directive|define
+name|INTENSITY_RED
+value|0.30
+end_define
+
+begin_define
+DECL|macro|INTENSITY_GREEN
+define|#
+directive|define
+name|INTENSITY_GREEN
+value|0.59
+end_define
+
+begin_define
+DECL|macro|INTENSITY_BLUE
+define|#
+directive|define
+name|INTENSITY_BLUE
+value|0.11
+end_define
+
+begin_define
+DECL|macro|INTENSITY (r,g,b)
+define|#
+directive|define
+name|INTENSITY
+parameter_list|(
+name|r
+parameter_list|,
+name|g
+parameter_list|,
+name|b
+parameter_list|)
+value|((r) * INTENSITY_RED   + \ 			  (g) * INTENSITY_GREEN + \ 			  (b) * INTENSITY_BLUE  + 0.001)
+end_define
+
 begin_endif
 endif|#
 directive|endif

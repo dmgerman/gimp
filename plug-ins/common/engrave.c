@@ -69,25 +69,10 @@ name|TILE_CACHE_SIZE
 value|16
 end_define
 
-begin_define
-DECL|macro|INTENSITY (r,g,b)
-define|#
-directive|define
-name|INTENSITY
-parameter_list|(
-name|r
-parameter_list|,
-name|g
-parameter_list|,
-name|b
-parameter_list|)
-value|(r * 0.30 + g * 0.59 + b * 0.11)
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c310a0108
+DECL|struct|__anon2c6bd6780108
 block|{
 DECL|member|height
 name|gint
@@ -106,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c310a0208
+DECL|struct|__anon2c6bd6780208
 block|{
 DECL|member|run
 name|gint
@@ -1937,7 +1922,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c310a0308
+DECL|struct|__anon2c6bd6780308
 block|{
 DECL|member|x
 DECL|member|y

@@ -362,25 +362,6 @@ value|(((a)+(b)> 0xff)? 0xff : (a) + (b))
 end_define
 
 begin_comment
-comment|/* Ideally, this would be in a common header file somewhere.  This was  * nicked from app/convert.c */
-end_comment
-
-begin_define
-DECL|macro|INTENSITY (r,g,b)
-define|#
-directive|define
-name|INTENSITY
-parameter_list|(
-name|r
-parameter_list|,
-name|g
-parameter_list|,
-name|b
-parameter_list|)
-value|(r * 0.30 + g * 0.59 + b * 0.11 + 0.001)
-end_define
-
-begin_comment
 comment|/* Bartlett window supersampling weight function.  See table 4.1, page  * 123 of Alan Watt and Mark Watt, Advanced Animation and Rendering  * Techniques, theory and practice. Addison-Wesley, 1992. ISBN  * 0-201-54412-1 */
 end_comment
 
@@ -531,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875d5ef0108
+DECL|struct|__anon2ae824c40108
 block|{
 DECL|member|name
 specifier|const
@@ -791,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875d5ef0208
+DECL|struct|__anon2ae824c40208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -864,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875d5ef0308
+DECL|struct|__anon2ae824c40308
 block|{
 DECL|member|input_spi
 name|gint
@@ -890,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875d5ef0408
+DECL|struct|__anon2ae824c40408
 block|{
 DECL|member|run
 name|gint
@@ -909,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875d5ef0508
+DECL|struct|__anon2ae824c40508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1016,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875d5ef0608
+DECL|struct|__anon2ae824c40608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1200,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875d5ef0708
+DECL|struct|__anon2ae824c40708
 block|{
 DECL|member|name
 specifier|const
@@ -7025,7 +7006,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2875d5ef0808
+DECL|struct|__anon2ae824c40808
 block|{
 DECL|member|index
 name|gint

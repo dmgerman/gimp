@@ -86,36 +86,6 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_comment
-comment|/* Misc functions */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_function
-DECL|function|R (float X)
-specifier|inline
-name|int
-name|R
-parameter_list|(
-name|float
-name|X
-parameter_list|)
-block|{
-return|return
-name|X
-operator|+
-literal|0.5
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Drawing routines */
 end_comment
 
@@ -124,8 +94,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_draw_little_circle (GdkWindow * window,GdkGC * color,float hue,float satur)
 name|void
+DECL|function|rcm_draw_little_circle (GdkWindow * window,GdkGC * color,float hue,float satur)
 name|rcm_draw_little_circle
 parameter_list|(
 name|GdkWindow
@@ -213,8 +183,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_draw_large_circle (GdkWindow * window,GdkGC * color,float gray_sat)
 name|void
+DECL|function|rcm_draw_large_circle (GdkWindow * window,GdkGC * color,float gray_sat)
 name|rcm_draw_large_circle
 parameter_list|(
 name|GdkWindow
@@ -250,7 +220,7 @@ name|color
 argument_list|,
 literal|0
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|x
 operator|-
@@ -259,7 +229,7 @@ operator|*
 name|gray_sat
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|y
 operator|-
@@ -268,7 +238,7 @@ operator|*
 name|gray_sat
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 literal|2
 operator|*
@@ -277,7 +247,7 @@ operator|*
 name|gray_sat
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 literal|2
 operator|*
@@ -325,8 +295,8 @@ value|10
 end_define
 
 begin_function
-DECL|function|rcm_draw_arrows (GdkWindow * window,GdkGC * color,RcmAngle * angle)
 name|void
+DECL|function|rcm_draw_arrows (GdkWindow * window,GdkGC * color,RcmAngle * angle)
 name|rcm_draw_arrows
 parameter_list|(
 name|GdkWindow
@@ -404,7 +374,7 @@ name|CENTER
 argument_list|,
 name|CENTER
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|+
@@ -416,7 +386,7 @@ name|alpha
 argument_list|)
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|-
@@ -453,7 +423,7 @@ argument_list|(
 name|alpha
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|+
@@ -469,7 +439,7 @@ name|DEL
 argument_list|)
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|-
@@ -510,7 +480,7 @@ argument_list|(
 name|alpha
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|+
@@ -526,7 +496,7 @@ name|DEL
 argument_list|)
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|-
@@ -553,7 +523,7 @@ name|CENTER
 argument_list|,
 name|CENTER
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|+
@@ -565,7 +535,7 @@ name|beta
 argument_list|)
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|-
@@ -602,7 +572,7 @@ argument_list|(
 name|beta
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|+
@@ -618,7 +588,7 @@ name|DEL
 argument_list|)
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|-
@@ -659,7 +629,7 @@ argument_list|(
 name|beta
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|+
@@ -675,7 +645,7 @@ name|DEL
 argument_list|)
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|-
@@ -722,7 +692,7 @@ argument_list|(
 name|beta
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|+
@@ -743,7 +713,7 @@ name|beta
 argument_list|)
 argument_list|)
 argument_list|,
-name|R
+name|ROUND
 argument_list|(
 name|CENTER
 operator|-
@@ -771,7 +741,7 @@ literal|180
 operator|*
 literal|64
 operator|/
-name|PI
+name|G_PI
 expr_stmt|;
 name|delta
 operator|*=
@@ -779,7 +749,7 @@ literal|180
 operator|*
 literal|64
 operator|/
-name|PI
+name|G_PI
 expr_stmt|;
 name|gdk_draw_arc
 argument_list|(

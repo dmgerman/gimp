@@ -98,8 +98,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_units_factor (gint units)
 name|float
+DECL|function|rcm_units_factor (gint units)
 name|rcm_units_factor
 parameter_list|(
 name|gint
@@ -117,7 +117,7 @@ case|:
 return|return
 literal|180.0
 operator|/
-name|PI
+name|G_PI
 return|;
 case|case
 name|RADIANS
@@ -131,7 +131,7 @@ case|:
 return|return
 literal|1.0
 operator|/
-name|PI
+name|G_PI
 return|;
 default|default:
 return|return
@@ -143,9 +143,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_units_string (gint units)
 name|gchar
 modifier|*
+DECL|function|rcm_units_string (gint units)
 name|rcm_units_string
 parameter_list|(
 name|gint
@@ -184,8 +184,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_set_pixmap (GtkWidget ** widget,GtkWidget * parent,GtkWidget * label_box,char ** pixmap_data)
 name|void
+DECL|function|rcm_set_pixmap (GtkWidget ** widget,GtkWidget * parent,GtkWidget * label_box,char ** pixmap_data)
 name|rcm_set_pixmap
 parameter_list|(
 name|GtkWidget
@@ -313,8 +313,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_ok_callback (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|rcm_ok_callback (GtkWidget * widget,gpointer data)
 name|rcm_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -355,8 +355,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_360_degrees (GtkWidget * button,RcmCircle * circle)
 name|void
+DECL|function|rcm_360_degrees (GtkWidget * button,RcmCircle * circle)
 name|rcm_360_degrees
 parameter_list|(
 name|GtkWidget
@@ -445,8 +445,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_cw_ccw (GtkWidget * button,RcmCircle * circle)
 name|void
+DECL|function|rcm_cw_ccw (GtkWidget * button,RcmCircle * circle)
 name|rcm_cw_ccw
 parameter_list|(
 name|GtkWidget
@@ -540,8 +540,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_a_to_b (GtkWidget * button,RcmCircle * circle)
 name|void
+DECL|function|rcm_a_to_b (GtkWidget * button,RcmCircle * circle)
 name|rcm_a_to_b
 parameter_list|(
 name|GtkWidget
@@ -637,9 +637,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_spinbutton_to_degrees (GtkWidget * button,float value,GtkWidget * label)
 specifier|static
 name|void
+DECL|function|rcm_spinbutton_to_degrees (GtkWidget * button,float value,GtkWidget * label)
 name|rcm_spinbutton_to_degrees
 parameter_list|(
 name|GtkWidget
@@ -728,8 +728,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_switch_to_degrees (GtkWidget * button,gpointer * value)
 name|void
+DECL|function|rcm_switch_to_degrees (GtkWidget * button,gpointer * value)
 name|rcm_switch_to_degrees
 parameter_list|(
 name|GtkWidget
@@ -903,9 +903,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_spinbutton_to_radians (GtkWidget * button,float value,GtkWidget * label)
 specifier|static
 name|void
+DECL|function|rcm_spinbutton_to_radians (GtkWidget * button,float value,GtkWidget * label)
 name|rcm_spinbutton_to_radians
 parameter_list|(
 name|GtkWidget
@@ -994,8 +994,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_switch_to_radians (GtkWidget * button,gpointer * value)
 name|void
+DECL|function|rcm_switch_to_radians (GtkWidget * button,gpointer * value)
 name|rcm_switch_to_radians
 parameter_list|(
 name|GtkWidget
@@ -1169,9 +1169,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_spinbutton_to_radians_over_PI (GtkWidget * button,float value,GtkWidget * label)
 specifier|static
 name|void
+DECL|function|rcm_spinbutton_to_radians_over_PI (GtkWidget * button,float value,GtkWidget * label)
 name|rcm_spinbutton_to_radians_over_PI
 parameter_list|(
 name|GtkWidget
@@ -1260,8 +1260,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_switch_to_radians_over_PI (GtkWidget * button,gpointer * value)
 name|void
+DECL|function|rcm_switch_to_radians_over_PI (GtkWidget * button,gpointer * value)
 name|rcm_switch_to_radians_over_PI
 parameter_list|(
 name|GtkWidget
@@ -1443,8 +1443,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_switch_to_gray_to (GtkWidget * button,gpointer * value)
 name|void
+DECL|function|rcm_switch_to_gray_to (GtkWidget * button,gpointer * value)
 name|rcm_switch_to_gray_to
 parameter_list|(
 name|GtkWidget
@@ -1488,8 +1488,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_switch_to_gray_from (GtkWidget * button,gpointer * value)
 name|void
+DECL|function|rcm_switch_to_gray_from (GtkWidget * button,gpointer * value)
 name|rcm_switch_to_gray_from
 parameter_list|(
 name|GtkWidget
@@ -1547,8 +1547,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_preview_as_you_drag (GtkWidget * button,gpointer * value)
 name|void
+DECL|function|rcm_preview_as_you_drag (GtkWidget * button,gpointer * value)
 name|rcm_preview_as_you_drag
 parameter_list|(
 name|GtkWidget
@@ -1590,9 +1590,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_change_preview (void)
 specifier|static
 name|void
+DECL|function|rcm_change_preview (void)
 name|rcm_change_preview
 parameter_list|(
 name|void
@@ -1735,8 +1735,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_selection_in_context (GtkWidget * button,gpointer * value)
 name|void
+DECL|function|rcm_selection_in_context (GtkWidget * button,gpointer * value)
 name|rcm_selection_in_context
 parameter_list|(
 name|GtkWidget
@@ -1774,8 +1774,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_selection (GtkWidget * button,gpointer * value)
 name|void
+DECL|function|rcm_selection (GtkWidget * button,gpointer * value)
 name|rcm_selection
 parameter_list|(
 name|GtkWidget
@@ -1813,8 +1813,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rcm_entire_image (GtkWidget * button,gpointer * value)
 name|void
+DECL|function|rcm_entire_image (GtkWidget * button,gpointer * value)
 name|rcm_entire_image
 parameter_list|(
 name|GtkWidget
@@ -1864,8 +1864,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_expose_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|gint
+DECL|function|rcm_expose_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|rcm_expose_event
 parameter_list|(
 name|GtkWidget
@@ -1946,8 +1946,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_button_press_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|gint
+DECL|function|rcm_button_press_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|rcm_button_press_event
 parameter_list|(
 name|GtkWidget
@@ -2045,7 +2045,7 @@ condition|(
 operator|(
 name|sqrt
 argument_list|(
-name|sqr
+name|SQR
 argument_list|(
 name|bevent
 operator|->
@@ -2054,7 +2054,7 @@ operator|-
 name|CENTER
 argument_list|)
 operator|+
-name|sqr
+name|SQR
 argument_list|(
 name|bevent
 operator|->
@@ -2081,7 +2081,7 @@ argument_list|,
 name|clicked_angle
 argument_list|)
 operator|<
-name|PI
+name|G_PI
 operator|/
 literal|12
 operator|)
@@ -2236,8 +2236,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_release_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|gint
+DECL|function|rcm_release_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|rcm_release_event
 parameter_list|(
 name|GtkWidget
@@ -2315,8 +2315,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_motion_notify_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|gint
+DECL|function|rcm_motion_notify_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|rcm_motion_notify_event
 parameter_list|(
 name|GtkWidget
@@ -2774,8 +2774,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_gray_button_press_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
 name|gint
+DECL|function|rcm_gray_button_press_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
 name|rcm_gray_button_press_event
 parameter_list|(
 name|GtkWidget
@@ -2854,12 +2854,12 @@ name|satur
 operator|=
 name|sqrt
 argument_list|(
-name|sqr
+name|SQR
 argument_list|(
 name|x
 argument_list|)
 operator|+
-name|sqr
+name|SQR
 argument_list|(
 name|y
 argument_list|)
@@ -2995,8 +2995,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_gray_release_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
 name|gint
+DECL|function|rcm_gray_release_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
 name|rcm_gray_release_event
 parameter_list|(
 name|GtkWidget
@@ -3078,8 +3078,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_gray_motion_notify_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
 name|gint
+DECL|function|rcm_gray_motion_notify_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
 name|rcm_gray_motion_notify_event
 parameter_list|(
 name|GtkWidget
@@ -3259,12 +3259,12 @@ name|satur
 operator|=
 name|sqrt
 argument_list|(
-name|sqr
+name|SQR
 argument_list|(
 name|x
 argument_list|)
 operator|+
-name|sqr
+name|SQR
 argument_list|(
 name|y
 argument_list|)
@@ -3374,8 +3374,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_set_alpha (GtkWidget * entry,gpointer data)
 name|void
+DECL|function|rcm_set_alpha (GtkWidget * entry,gpointer data)
 name|rcm_set_alpha
 parameter_list|(
 name|GtkWidget
@@ -3477,8 +3477,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_set_beta (GtkWidget * entry,gpointer data)
 name|void
+DECL|function|rcm_set_beta (GtkWidget * entry,gpointer data)
 name|rcm_set_beta
 parameter_list|(
 name|GtkWidget
@@ -3580,8 +3580,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_set_hue (GtkWidget * entry,gpointer data)
 name|void
+DECL|function|rcm_set_hue (GtkWidget * entry,gpointer data)
 name|rcm_set_hue
 parameter_list|(
 name|GtkWidget
@@ -3706,8 +3706,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_set_satur (GtkWidget * entry,gpointer data)
 name|void
+DECL|function|rcm_set_satur (GtkWidget * entry,gpointer data)
 name|rcm_set_satur
 parameter_list|(
 name|GtkWidget
@@ -3825,8 +3825,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_set_gray_sat (GtkWidget * entry,gpointer data)
 name|void
+DECL|function|rcm_set_gray_sat (GtkWidget * entry,gpointer data)
 name|rcm_set_gray_sat
 parameter_list|(
 name|GtkWidget

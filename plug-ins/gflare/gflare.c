@@ -200,7 +200,7 @@ name|LUMINOSITY
 parameter_list|(
 name|PIX
 parameter_list|)
-value|(PIX[0] * 0.30 + PIX[1] * 0.59 + PIX[2] * 0.11)
+value|(INTENSITY (PIX[0], PIX[1], PIX[2]))
 end_define
 
 begin_define
@@ -468,7 +468,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278f60ca0103
+DECL|enum|__anon291faf500103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -495,7 +495,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278f60ca0203
+DECL|enum|__anon291faf500203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -514,7 +514,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278f60ca0308
+DECL|struct|__anon291faf500308
 typedef|typedef
 struct|struct
 block|{
@@ -651,7 +651,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278f60ca0408
+DECL|struct|__anon291faf500408
 typedef|typedef
 struct|struct
 block|{
@@ -671,7 +671,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon278f60ca0503
+DECL|enum|__anon291faf500503
 typedef|typedef
 enum|enum
 block|{
@@ -699,7 +699,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278f60ca0608
+DECL|struct|__anon291faf500608
 typedef|typedef
 struct|struct
 block|{
@@ -722,7 +722,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon278f60ca0708
+DECL|struct|__anon291faf500708
 struct|struct
 block|{
 DECL|member|x0
@@ -808,7 +808,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278f60ca0808
+DECL|struct|__anon291faf500808
 typedef|typedef
 struct|struct
 block|{
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f60ca0908
+DECL|struct|__anon291faf500908
 block|{
 DECL|member|x0
 name|gdouble
@@ -907,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f60ca0a08
+DECL|struct|__anon291faf500a08
 block|{
 DECL|member|init
 name|gint
@@ -1077,7 +1077,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f60ca0b08
+DECL|struct|__anon291faf500b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1104,7 +1104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f60ca0c08
+DECL|struct|__anon291faf500c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1145,7 +1145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f60ca0d08
+DECL|struct|__anon291faf500d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1375,7 +1375,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f60ca0e08
+DECL|struct|__anon291faf500e08
 block|{
 DECL|member|tag
 name|gint
@@ -1450,7 +1450,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon278f60ca0f03
+DECL|enum|__anon291faf500f03
 typedef|typedef
 enum|enum
 block|{
@@ -1484,7 +1484,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278f60ca1008
+DECL|struct|__anon291faf501008
 typedef|typedef
 struct|struct
 block|{
@@ -1528,7 +1528,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278f60ca1108
+DECL|struct|__anon291faf501108
 typedef|typedef
 struct|struct
 block|{
@@ -1586,7 +1586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278f60ca1208
+DECL|struct|__anon291faf501208
 typedef|typedef
 struct|struct
 block|{
@@ -6454,25 +6454,20 @@ index|[
 literal|0
 index|]
 operator|=
-operator|(
+name|INTENSITY
+argument_list|(
 name|color
 operator|.
 name|r
-operator|*
-literal|0.30
-operator|+
+argument_list|,
 name|color
 operator|.
 name|g
-operator|*
-literal|0.59
-operator|+
+argument_list|,
 name|color
 operator|.
 name|b
-operator|*
-literal|0.11
-operator|)
+argument_list|)
 operator|*
 literal|255
 expr_stmt|;
@@ -9714,7 +9709,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon278f60ca1308
+DECL|struct|__anon291faf501308
 specifier|static
 struct|struct
 block|{
@@ -16589,7 +16584,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon278f60ca1408
+DECL|struct|__anon291faf501408
 specifier|static
 struct|struct
 block|{

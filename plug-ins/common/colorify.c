@@ -218,7 +218,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be6e2cc0108
+DECL|struct|__anon2b52c8040108
 block|{
 DECL|member|color
 name|guchar
@@ -236,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be6e2cc0208
+DECL|struct|__anon2b52c8040208
 block|{
 DECL|member|run
 name|gint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be6e2cc0308
+DECL|struct|__anon2b52c8040308
 block|{
 DECL|member|red
 name|guchar
@@ -1002,7 +1002,7 @@ index|]
 operator|=
 name|i
 operator|*
-literal|0.30
+name|INTENSITY_RED
 expr_stmt|;
 name|lum_green_lookup
 index|[
@@ -1011,7 +1011,7 @@ index|]
 operator|=
 name|i
 operator|*
-literal|0.59
+name|INTENSITY_GREEN
 expr_stmt|;
 name|lum_blue_lookup
 index|[
@@ -1020,7 +1020,7 @@ index|]
 operator|=
 name|i
 operator|*
-literal|0.11
+name|INTENSITY_BLUE
 expr_stmt|;
 name|final_red_lookup
 index|[

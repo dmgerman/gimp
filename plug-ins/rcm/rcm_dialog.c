@@ -110,7 +110,7 @@ DECL|macro|INITIAL_BETA
 define|#
 directive|define
 name|INITIAL_BETA
-value|(PI/2.0)
+value|G_PI_2
 end_define
 
 begin_define

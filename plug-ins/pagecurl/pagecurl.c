@@ -130,36 +130,13 @@ value|256
 end_define
 
 begin_comment
-comment|/***** Macros *****/
-end_comment
-
-begin_comment
-comment|/* Convert color to Gray ala Gimp... */
-end_comment
-
-begin_define
-DECL|macro|INTENSITY (r,g,b)
-define|#
-directive|define
-name|INTENSITY
-parameter_list|(
-name|r
-parameter_list|,
-name|g
-parameter_list|,
-name|b
-parameter_list|)
-value|(r * 0.30 + g * 0.59 + b * 0.11 + 0.001)
-end_define
-
-begin_comment
 comment|/***** Types *****/
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2880820108
+DECL|struct|__anon29a9c7660108
 block|{
 DECL|member|x
 DECL|member|y
@@ -177,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2880820208
+DECL|struct|__anon29a9c7660208
 block|{
 DECL|member|do_curl_shade
 name|gint

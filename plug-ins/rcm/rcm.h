@@ -19,31 +19,12 @@ begin_comment
 comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|PI
-end_ifndef
-
-begin_define
-DECL|macro|PI
-define|#
-directive|define
-name|PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|TP
 define|#
 directive|define
 name|TP
-value|(2*PI)
+value|(2*G_PI)
 end_define
 
 begin_comment
@@ -59,7 +40,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_enum
-DECL|enum|__anon28f660300103
+DECL|enum|__anon2c3e05ca0103
 DECL|enumerator|ENTIRE_IMAGE
 DECL|enumerator|SELECTION
 DECL|enumerator|SELECTION_IN_CONTEXT
@@ -78,7 +59,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28f660300203
+DECL|enum|__anon2c3e05ca0203
 DECL|enumerator|EACH
 DECL|enumerator|BOTH
 DECL|enumerator|DEGREES
@@ -112,7 +93,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|enum|__anon28f660300303
+DECL|enum|__anon2c3e05ca0303
 DECL|enumerator|VIRGIN
 DECL|enumerator|DRAG_START
 DECL|enumerator|DRAGING
@@ -134,17 +115,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|hsv
-typedef|typedef
-name|double
-name|hsv
-typedef|;
-end_typedef
-
-begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f660300408
+DECL|struct|__anon2c3e05ca0408
 block|{
 DECL|member|alpha
 name|float
@@ -167,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f660300508
+DECL|struct|__anon2c3e05ca0508
 block|{
 DECL|member|width
 name|gint
@@ -183,7 +156,7 @@ modifier|*
 name|rgb
 decl_stmt|;
 DECL|member|hsv
-name|hsv
+name|gdouble
 modifier|*
 name|hsv
 decl_stmt|;
@@ -201,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f660300608
+DECL|struct|__anon2c3e05ca0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -319,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f660300708
+DECL|struct|__anon2c3e05ca0708
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -350,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f660300808
+DECL|struct|__anon2c3e05ca0808
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -407,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f660300908
+DECL|struct|__anon2c3e05ca0908
 block|{
 DECL|member|Slctn
 name|gint
