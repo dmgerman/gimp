@@ -51,6 +51,12 @@ directive|include
 file|"gimppaintcore-stroke.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppaintoptions.h"
+end_include
+
 begin_function
 name|gboolean
 DECL|function|gimp_paint_core_stroke (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * strokes,gint n_strokes)
@@ -98,9 +104,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PAINT_OPTIONS
+argument_list|(
 name|paint_options
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -315,9 +322,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_PAINT_OPTIONS
+argument_list|(
 name|paint_options
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
