@@ -368,9 +368,16 @@ name|tool_manager_register_tool
 argument_list|(
 name|GIMP_TYPE_MOVE_TOOL
 argument_list|,
-name|N_
+literal|"gimp:move_tool"
+argument_list|,
+name|_
 argument_list|(
-literal|"Move"
+literal|"Move Tool"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Move layers& selections"
 argument_list|)
 argument_list|,
 name|N_
@@ -379,11 +386,6 @@ literal|"/Tools/Transform Tools/Move"
 argument_list|)
 argument_list|,
 literal|"M"
-argument_list|,
-name|N_
-argument_list|(
-literal|"Move layers& selections"
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -596,14 +598,19 @@ block|{
 name|move_options
 operator|=
 name|tool_options_new
+argument_list|()
+expr_stmt|;
+name|tool_manager_register_tool_options
 argument_list|(
-name|_
-argument_list|(
-literal|"Move Tool"
-argument_list|)
+name|GIMP_TYPE_MOVE_TOOL
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|move_options
 argument_list|)
 expr_stmt|;
-comment|/* tools_register (MOVE, (ToolOptions *) move_options); */
 block|}
 name|move_tool
 operator|->

@@ -949,7 +949,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b60526c0103
+DECL|enum|__anon2934a3870103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -992,7 +992,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b60526c0203
+DECL|enum|__anon2934a3870203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -4965,6 +4965,17 @@ begin_comment
 comment|/*  tool  ********************************************************************/
 end_comment
 
+begin_decl_stmt
+DECL|variable|standard_tool_info
+specifier|static
+name|GimpToolInfo
+modifier|*
+name|standard_tool_info
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|GimpToolInfo
 modifier|*
@@ -5266,10 +5277,10 @@ name|gimp_context_real_set_tool
 argument_list|(
 name|context
 argument_list|,
-name|NULL
+name|gimp_tool_info_get_standard
+argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: GIMP_TOOL_INFO (gimp_tool_info_get_standard ())); */
 block|}
 end_function
 
@@ -5365,7 +5376,16 @@ modifier|*
 name|tool_info
 parameter_list|)
 block|{
-comment|/* FIXME   if (! standard_tool_info)     standard_tool_info = GIMP_TOOL_INFO (gimp_tool_info_get_standard ());   */
+if|if
+condition|(
+operator|!
+name|standard_tool_info
+condition|)
+name|standard_tool_info
+operator|=
+name|gimp_tool_info_get_standard
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|context
@@ -5380,7 +5400,10 @@ condition|(
 name|context
 operator|->
 name|tool_name
-comment|/* FIXME&& tool_info != standard_tool_info*/
+operator|&&
+name|tool_info
+operator|!=
+name|standard_tool_info
 condition|)
 block|{
 name|g_free
@@ -5483,7 +5506,12 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-comment|/* FIXME if (tool_info != standard_tool_info) */
+if|if
+condition|(
+name|tool_info
+operator|!=
+name|standard_tool_info
+condition|)
 name|context
 operator|->
 name|tool_name
@@ -5538,7 +5566,12 @@ operator|!
 name|src
 operator|->
 name|tool_info
-comment|/* FIXME || src->tool_info == standard_tool_info */
+operator|||
+name|src
+operator|->
+name|tool_info
+operator|==
+name|standard_tool_info
 operator|)
 operator|&&
 name|src
@@ -6380,6 +6413,19 @@ modifier|*
 name|context
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+operator|!
+name|context
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NORMAL_MODE
+argument_list|)
+expr_stmt|;
 name|context_check_current
 argument_list|(
 name|context
@@ -6413,6 +6459,17 @@ name|LayerModeEffects
 name|paint_mode
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+operator|!
+name|context
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|context_check_current
 argument_list|(
 name|context
@@ -6450,6 +6507,17 @@ modifier|*
 name|context
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+operator|!
+name|context
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|context_check_current
 argument_list|(
 name|context
@@ -6574,6 +6642,19 @@ modifier|*
 name|context
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+operator|!
+name|context
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|context_check_current
 argument_list|(
 name|context
@@ -6608,6 +6689,28 @@ modifier|*
 name|brush
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+operator|!
+name|context
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+operator|!
+name|brush
+operator|||
+name|GIMP_IS_BRUSH
+argument_list|(
+name|brush
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|context_check_current
 argument_list|(
 name|context
@@ -6645,6 +6748,17 @@ modifier|*
 name|context
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+operator|!
+name|context
+operator|||
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|context_check_current
 argument_list|(
 name|context

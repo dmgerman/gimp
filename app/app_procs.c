@@ -2844,36 +2844,6 @@ block|}
 name|tool_options_dialog_new
 argument_list|()
 expr_stmt|;
-comment|/*  EEK: force signal emission  */
-if|if
-condition|(
-name|gimp_context_get_tool
-argument_list|(
-name|gimp_context_get_user
-argument_list|()
-argument_list|)
-operator|==
-name|RECT_SELECT
-condition|)
-block|{
-name|gimp_context_tool_changed
-argument_list|(
-name|gimp_context_get_user
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|gimp_context_set_tool
-argument_list|(
-name|gimp_context_get_user
-argument_list|()
-argument_list|,
-name|RECT_SELECT
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  FIXME: This needs to go in preferences  */
 name|message_handler
 operator|=

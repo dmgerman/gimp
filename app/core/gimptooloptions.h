@@ -22,58 +22,6 @@ directive|include
 file|"gimpobject.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_TYPE_TOOL_OPTIONS
-define|#
-directive|define
-name|GIMP_TYPE_TOOL_OPTIONS
-value|(gimp_tool_options_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_TOOL_OPTIONS (obj)
-define|#
-directive|define
-name|GIMP_TOOL_OPTIONS
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_TOOL_OPTIONS, GimpToolOptions))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_TOOL_OPTIONS (obj)
-define|#
-directive|define
-name|GIMP_IS_TOOL_OPTIONS
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_TOOL_OPTIONS))
-end_define
-
-begin_define
-DECL|macro|GIMP_TOOL_OPTIONS_CLASS (klass)
-define|#
-directive|define
-name|GIMP_TOOL_OPTIONS_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TOOL_OPTIONS, GimpToolOptionsClass))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_TOOL_OPTIONS_CLASS (klass)
-define|#
-directive|define
-name|GIMP_IS_TOOL_OPTIONS_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TOOL_OPTIONS))
-end_define
-
 begin_comment
 comment|/*  the tool options structures  */
 end_comment
@@ -83,19 +31,10 @@ DECL|struct|_ToolOptions
 struct|struct
 name|_ToolOptions
 block|{
-DECL|member|parent_instance
-name|GimpObject
-name|parent_instance
-decl_stmt|;
 DECL|member|main_vbox
 name|GtkWidget
 modifier|*
 name|main_vbox
-decl_stmt|;
-DECL|member|title
-name|gchar
-modifier|*
-name|title
 decl_stmt|;
 DECL|member|reset_func
 name|ToolOptionsResetFunc
@@ -136,10 +75,7 @@ name|ToolOptions
 modifier|*
 name|tool_options_new
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|title
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -155,11 +91,6 @@ parameter_list|(
 name|ToolOptions
 modifier|*
 name|options
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|title
 parameter_list|,
 name|ToolOptionsResetFunc
 name|reset_func

@@ -36,13 +36,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"selection_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_manager.h"
 end_include
 
 begin_include
@@ -53,14 +65,14 @@ end_include
 
 begin_function
 name|void
-DECL|function|selection_options_init (SelectionOptions * options,ToolType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|selection_options_init (SelectionOptions * options,GtkType tool_type,ToolOptionsResetFunc reset_func)
 name|selection_options_init
 parameter_list|(
 name|SelectionOptions
 modifier|*
 name|options
 parameter_list|,
-name|ToolType
+name|GtkType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc
@@ -99,99 +111,6 @@ name|ToolOptions
 operator|*
 operator|)
 name|options
-argument_list|,
-operator|(
-operator|(
-name|tool_type
-operator|==
-name|RECT_SELECT
-operator|)
-condition|?
-name|_
-argument_list|(
-literal|"Rectangular Selection"
-argument_list|)
-else|:
-operator|(
-operator|(
-name|tool_type
-operator|==
-name|ELLIPSE_SELECT
-operator|)
-condition|?
-name|_
-argument_list|(
-literal|"Elliptical Selection"
-argument_list|)
-else|:
-operator|(
-operator|(
-name|tool_type
-operator|==
-name|FREE_SELECT
-operator|)
-condition|?
-name|_
-argument_list|(
-literal|"Free-Hand Selection"
-argument_list|)
-else|:
-operator|(
-operator|(
-name|tool_type
-operator|==
-name|FUZZY_SELECT
-operator|)
-condition|?
-name|_
-argument_list|(
-literal|"Fuzzy Selection"
-argument_list|)
-else|:
-operator|(
-operator|(
-name|tool_type
-operator|==
-name|BEZIER_SELECT
-operator|)
-condition|?
-name|_
-argument_list|(
-literal|"Bezier Selection"
-argument_list|)
-else|:
-operator|(
-operator|(
-name|tool_type
-operator|==
-name|ISCISSORS
-operator|)
-condition|?
-name|_
-argument_list|(
-literal|"Intelligent Scissors"
-argument_list|)
-else|:
-operator|(
-operator|(
-name|tool_type
-operator|==
-name|BY_COLOR_SELECT
-operator|)
-condition|?
-name|_
-argument_list|(
-literal|"By-Color Selection"
-argument_list|)
-else|:
-literal|"ERROR: Unknown Select Tool Type"
-operator|)
-operator|)
-operator|)
-operator|)
-operator|)
-operator|)
-operator|)
 argument_list|,
 name|reset_func
 argument_list|)
@@ -738,7 +657,7 @@ if|if
 condition|(
 name|tool_type
 operator|!=
-name|RECT_SELECT
+name|GIMP_TYPE_RECT_SELECT_TOOL
 condition|)
 block|{
 name|options
@@ -816,33 +735,29 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  a separator between the common and tool-specific selection options  */
-switch|switch
+if|if
 condition|(
 name|tool_type
+operator|==
+name|GIMP_TYPE_ISCISSORS_TOOL
+operator|||
+name|tool_type
+operator|==
+name|GIMP_TYPE_RECT_SELECT_TOOL
+operator|||
+name|tool_type
+operator|==
+name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
+operator|||
+name|tool_type
+operator|==
+name|GIMP_TYPE_FUZZY_SELECT_TOOL
+operator|||
+name|tool_type
+operator|==
+name|GIMP_TYPE_BY_COLOR_SELECT_TOOL
 condition|)
 block|{
-case|case
-name|FREE_SELECT
-case|:
-case|case
-name|BEZIER_SELECT
-case|:
-break|break;
-case|case
-name|ISCISSORS
-case|:
-case|case
-name|RECT_SELECT
-case|:
-case|case
-name|ELLIPSE_SELECT
-case|:
-case|case
-name|FUZZY_SELECT
-case|:
-case|case
-name|BY_COLOR_SELECT
-case|:
 name|separator
 operator|=
 name|gtk_hseparator_new
@@ -869,16 +784,13 @@ argument_list|(
 name|separator
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
-break|break;
 block|}
 comment|/* selection tool with an interactive boundary that can be toggled */
 if|if
 condition|(
 name|tool_type
 operator|==
-name|ISCISSORS
+name|GIMP_TYPE_ISCISSORS_TOOL
 condition|)
 block|{
 name|options
@@ -960,7 +872,7 @@ if|if
 condition|(
 name|tool_type
 operator|==
-name|FUZZY_SELECT
+name|GIMP_TYPE_FUZZY_SELECT_TOOL
 condition|)
 block|{
 name|GtkWidget
@@ -1215,11 +1127,11 @@ if|if
 condition|(
 name|tool_type
 operator|==
-name|RECT_SELECT
+name|GIMP_TYPE_RECT_SELECT_TOOL
 operator|||
 name|tool_type
 operator|==
-name|ELLIPSE_SELECT
+name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
 condition|)
 block|{
 name|GtkWidget
@@ -1750,10 +1662,10 @@ end_function
 begin_function
 name|SelectionOptions
 modifier|*
-DECL|function|selection_options_new (ToolType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|selection_options_new (GtkType tool_type,ToolOptionsResetFunc reset_func)
 name|selection_options_new
 parameter_list|(
-name|ToolType
+name|GtkType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc

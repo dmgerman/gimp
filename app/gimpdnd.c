@@ -190,7 +190,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b54482b0103
+DECL|enum|__anon2acbe30f0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -4623,7 +4623,23 @@ operator|*
 operator|)
 name|vals
 expr_stmt|;
-comment|/* FIXME   if (strcmp (name, "Standard") == 0)     palette = GIMP_PALETTE (gimp_palette_get_standard ());   else   */
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"gimp:standard_tool"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|tool_info
+operator|=
+name|gimp_tool_info_get_standard
+argument_list|()
+expr_stmt|;
+else|else
 name|tool_info
 operator|=
 operator|(

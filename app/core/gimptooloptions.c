@@ -30,28 +30,17 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_function
 name|void
-DECL|function|tool_options_init (ToolOptions * options,const gchar * title,ToolOptionsResetFunc reset_func)
+DECL|function|tool_options_init (ToolOptions * options,ToolOptionsResetFunc reset_func)
 name|tool_options_init
 parameter_list|(
 name|ToolOptions
 modifier|*
 name|options
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|title
 parameter_list|,
 name|ToolOptionsResetFunc
 name|reset_func
@@ -70,15 +59,6 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|->
-name|title
-operator|=
-name|g_strdup
-argument_list|(
-name|title
-argument_list|)
-expr_stmt|;
-name|options
-operator|->
 name|reset_func
 operator|=
 name|reset_func
@@ -89,13 +69,10 @@ end_function
 begin_function
 name|ToolOptions
 modifier|*
-DECL|function|tool_options_new (const gchar * title)
+DECL|function|tool_options_new (void)
 name|tool_options_new
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|title
+name|void
 parameter_list|)
 block|{
 name|ToolOptions
@@ -108,7 +85,7 @@ name|label
 decl_stmt|;
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|ToolOptions
 argument_list|,
@@ -118,8 +95,6 @@ expr_stmt|;
 name|tool_options_init
 argument_list|(
 name|options
-argument_list|,
-name|title
 argument_list|,
 name|NULL
 argument_list|)

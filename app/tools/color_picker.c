@@ -680,9 +680,16 @@ name|tool_manager_register_tool
 argument_list|(
 name|GIMP_TYPE_COLOR_PICKER
 argument_list|,
-name|N_
+literal|"gimp:color_picker_tool"
+argument_list|,
+name|_
 argument_list|(
 literal|"Color Picker"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Pick colors from the image"
 argument_list|)
 argument_list|,
 name|N_
@@ -691,11 +698,6 @@ literal|"/Tools/Color Picker"
 argument_list|)
 argument_list|,
 literal|"O"
-argument_list|,
-name|N_
-argument_list|(
-literal|"Pick colors from the image"
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -909,8 +911,17 @@ operator|=
 name|color_picker_options_new
 argument_list|()
 expr_stmt|;
-comment|/* OBSOLETE? */
-comment|/* tools_register (COLOR_PICKER, (ToolOptions *) color_picker_options); */
+name|tool_manager_register_tool_options
+argument_list|(
+name|GIMP_TYPE_COLOR_PICKER
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|color_picker_options
+argument_list|)
+expr_stmt|;
 block|}
 name|color_picker
 operator|->
@@ -1154,11 +1165,6 @@ name|ToolOptions
 operator|*
 operator|)
 name|options
-argument_list|,
-name|_
-argument_list|(
-literal|"Color Picker"
-argument_list|)
 argument_list|,
 name|color_picker_options_reset
 argument_list|)

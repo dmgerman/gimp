@@ -101,7 +101,17 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|tool_name
+name|identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blurb
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help
 parameter_list|,
 specifier|const
 name|gchar
@@ -112,11 +122,6 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_accel
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|tool_desc
 parameter_list|,
 specifier|const
 name|gchar
@@ -133,6 +138,20 @@ name|gchar
 modifier|*
 modifier|*
 name|icon_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tool_manager_register_tool_options
+parameter_list|(
+name|GtkType
+name|tool_type
+parameter_list|,
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -161,6 +180,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|tool_manager_active_get_PDB_string
@@ -171,6 +191,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|tool_manager_active_get_help_data
@@ -201,14 +222,6 @@ specifier|extern
 name|GimpTool
 modifier|*
 name|active_tool
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|registered_tools
 decl_stmt|;
 end_decl_stmt
 

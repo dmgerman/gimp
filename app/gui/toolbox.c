@@ -1338,12 +1338,9 @@ name|gimp_help_set_help_data
 argument_list|(
 name|button
 argument_list|,
-name|gettext
-argument_list|(
 name|tool_info
 operator|->
-name|tool_desc
-argument_list|)
+name|help
 argument_list|,
 name|tool_info
 operator|->

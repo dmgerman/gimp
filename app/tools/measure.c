@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixmaps2.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"cursors/measure_small_mask.xbm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -505,9 +505,16 @@ name|tool_manager_register_tool
 argument_list|(
 name|GIMP_TYPE_MEASURE_TOOL
 argument_list|,
-name|N_
+literal|"gimp:measure_tool"
+argument_list|,
+name|_
 argument_list|(
-literal|"Measure"
+literal|"Measure Tool"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Measure angles and legnths"
 argument_list|)
 argument_list|,
 name|N_
@@ -516,11 +523,6 @@ literal|"/Tools/Measure"
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|,
-name|N_
-argument_list|(
-literal|"Measure angles and legnths"
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -735,8 +737,17 @@ operator|=
 name|measure_tool_options_new
 argument_list|()
 expr_stmt|;
-comment|/* OBSOLETE */
-comment|/* tools_register (MEASURE, (ToolOptions *) measure_tool_options); */
+name|tool_manager_register_tool_options
+argument_list|(
+name|GIMP_TYPE_MEASURE_TOOL
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|measure_tool_options
+argument_list|)
+expr_stmt|;
 block|}
 name|measure_tool
 operator|->
@@ -903,11 +914,6 @@ name|ToolOptions
 operator|*
 operator|)
 name|options
-argument_list|,
-name|_
-argument_list|(
-literal|"Measure Tool"
-argument_list|)
 argument_list|,
 name|measure_tool_options_reset
 argument_list|)
