@@ -311,7 +311,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon292e5a2b0103
+DECL|enum|__anon2774dc100103
 typedef|typedef
 enum|enum
 block|{
@@ -338,7 +338,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon292e5a2b0203
+DECL|enum|__anon2774dc100203
 typedef|typedef
 enum|enum
 block|{
@@ -483,7 +483,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon292e5a2b0303
+DECL|enum|__anon2774dc100303
 typedef|typedef
 enum|enum
 block|{
@@ -507,7 +507,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292e5a2b0408
+DECL|struct|__anon2774dc100408
 typedef|typedef
 struct|struct
 block|{
@@ -787,7 +787,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon292e5a2b0508
+DECL|struct|__anon2774dc100508
 struct|struct
 block|{
 DECL|member|r
@@ -6943,6 +6943,13 @@ name|char
 modifier|*
 name|name
 decl_stmt|;
+if|if
+condition|(
+name|curr_gradient
+operator|==
+name|NULL
+condition|)
+return|return;
 name|name
 operator|=
 name|g_malloc
@@ -7866,6 +7873,13 @@ name|GtkWidget
 modifier|*
 name|window
 decl_stmt|;
+if|if
+condition|(
+name|curr_gradient
+operator|==
+name|NULL
+condition|)
+return|return;
 name|window
 operator|=
 name|gtk_file_selection_new
@@ -8886,6 +8900,16 @@ name|GdkEventButton
 modifier|*
 name|bevent
 decl_stmt|;
+comment|/* ignore events when no gradient is present */
+if|if
+condition|(
+name|curr_gradient
+operator|==
+name|NULL
+condition|)
+return|return
+name|FALSE
+return|;
 switch|switch
 condition|(
 name|event
@@ -9364,7 +9388,14 @@ name|pwidth
 decl_stmt|,
 name|pheight
 decl_stmt|;
-comment|/* We only update if we can draw to the widget */
+comment|/* We only update if we can draw to the widget and a gradient is present */
+if|if
+condition|(
+name|curr_gradient
+operator|==
+name|NULL
+condition|)
+return|return;
 if|if
 condition|(
 operator|!
@@ -12359,7 +12390,14 @@ name|GtkAdjustment
 modifier|*
 name|adjustment
 decl_stmt|;
-comment|/* We only update if we can redraw */
+comment|/* We only update if we can redraw and a gradient is present */
+if|if
+condition|(
+name|curr_gradient
+operator|==
+name|NULL
+condition|)
+return|return;
 if|if
 condition|(
 operator|!
