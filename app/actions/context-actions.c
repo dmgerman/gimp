@@ -1104,7 +1104,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"context-tool-first"
+literal|"context-tool-select-first"
 block|,
 name|GTK_STOCK_GOTO_FIRST
 block|,
@@ -1120,7 +1120,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-tool-last"
+literal|"context-tool-select-last"
 block|,
 name|GTK_STOCK_GOTO_LAST
 block|,
@@ -1136,7 +1136,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-tool-previous"
+literal|"context-tool-select-previous"
 block|,
 name|GTK_STOCK_GO_BACK
 block|,
@@ -1152,7 +1152,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-tool-next"
+literal|"context-tool-select-next"
 block|,
 name|GTK_STOCK_GO_FORWARD
 block|,
@@ -1179,7 +1179,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"context-brush-first"
+literal|"context-brush-select-first"
 block|,
 name|GTK_STOCK_GOTO_FIRST
 block|,
@@ -1195,7 +1195,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-brush-last"
+literal|"context-brush-select-last"
 block|,
 name|GTK_STOCK_GOTO_LAST
 block|,
@@ -1211,7 +1211,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-brush-previous"
+literal|"context-brush-select-previous"
 block|,
 name|GTK_STOCK_GO_BACK
 block|,
@@ -1227,7 +1227,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-brush-next"
+literal|"context-brush-select-next"
 block|,
 name|GTK_STOCK_GO_FORWARD
 block|,
@@ -1254,7 +1254,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"context-pattern-first"
+literal|"context-pattern-select-first"
 block|,
 name|GTK_STOCK_GOTO_FIRST
 block|,
@@ -1270,7 +1270,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-pattern-last"
+literal|"context-pattern-select-last"
 block|,
 name|GTK_STOCK_GOTO_LAST
 block|,
@@ -1286,7 +1286,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-pattern-previous"
+literal|"context-pattern-select-previous"
 block|,
 name|GTK_STOCK_GO_BACK
 block|,
@@ -1302,7 +1302,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-pattern-next"
+literal|"context-pattern-select-next"
 block|,
 name|GTK_STOCK_GO_FORWARD
 block|,
@@ -1329,7 +1329,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"context-palette-first"
+literal|"context-palette-select-first"
 block|,
 name|GTK_STOCK_GOTO_FIRST
 block|,
@@ -1345,7 +1345,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-palette-last"
+literal|"context-palette-select-last"
 block|,
 name|GTK_STOCK_GOTO_LAST
 block|,
@@ -1361,7 +1361,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-palette-previous"
+literal|"context-palette-select-previous"
 block|,
 name|GTK_STOCK_GO_BACK
 block|,
@@ -1377,7 +1377,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-palette-next"
+literal|"context-palette-select-next"
 block|,
 name|GTK_STOCK_GO_FORWARD
 block|,
@@ -1404,7 +1404,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"context-gradient-first"
+literal|"context-gradient-select-first"
 block|,
 name|GTK_STOCK_GOTO_FIRST
 block|,
@@ -1420,7 +1420,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-gradient-last"
+literal|"context-gradient-select-last"
 block|,
 name|GTK_STOCK_GOTO_LAST
 block|,
@@ -1436,7 +1436,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-gradient-previous"
+literal|"context-gradient-select-previous"
 block|,
 name|GTK_STOCK_GO_BACK
 block|,
@@ -1452,7 +1452,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-gradient-next"
+literal|"context-gradient-select-next"
 block|,
 name|GTK_STOCK_GO_FORWARD
 block|,
@@ -1479,7 +1479,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"context-font-first"
+literal|"context-font-select-first"
 block|,
 name|GTK_STOCK_GOTO_FIRST
 block|,
@@ -1495,7 +1495,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-font-last"
+literal|"context-font-select-last"
 block|,
 name|GTK_STOCK_GOTO_LAST
 block|,
@@ -1511,7 +1511,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-font-previous"
+literal|"context-font-select-previous"
 block|,
 name|GTK_STOCK_GO_BACK
 block|,
@@ -1527,7 +1527,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"context-font-next"
+literal|"context-font-select-next"
 block|,
 name|GTK_STOCK_GO_FORWARD
 block|,
