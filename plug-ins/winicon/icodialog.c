@@ -15,6 +15,23 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_undef
 undef|#
 directive|undef
@@ -24,15 +41,8 @@ end_undef
 begin_include
 include|#
 directive|include
-file|<gtk/gtkpreview.h>
+file|<gtk/gtk.h>
 end_include
-
-begin_define
-DECL|macro|GTK_DISABLE_DEPRECATED
-define|#
-directive|define
-name|GTK_DISABLE_DEPRECATED
-end_define
 
 begin_include
 include|#
