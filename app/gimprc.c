@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b6784e80103
+DECL|enum|__anon27b7a86f0103
 typedef|typedef
 enum|enum
 block|{
@@ -3321,6 +3321,12 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
+name|gchar
+name|tokname
+index|[
+literal|51
+index|]
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp_new
@@ -3541,7 +3547,7 @@ name|find_token
 argument_list|(
 name|cur_line
 argument_list|,
-name|name
+name|tokname
 argument_list|,
 literal|50
 argument_list|)
@@ -3555,7 +3561,7 @@ name|g_strcasecmp
 argument_list|(
 name|token
 argument_list|,
-name|name
+name|tokname
 argument_list|)
 condition|)
 comment|/* if they match */
@@ -3880,6 +3886,12 @@ name|char
 modifier|*
 name|name
 decl_stmt|;
+name|char
+name|tokname
+index|[
+literal|51
+index|]
+decl_stmt|;
 name|FILE
 modifier|*
 name|fp_new
@@ -4089,7 +4101,7 @@ name|find_token
 argument_list|(
 name|cur_line
 argument_list|,
-name|name
+name|tokname
 argument_list|,
 literal|50
 argument_list|)
@@ -4103,7 +4115,7 @@ argument_list|(
 operator|*
 name|updated_options
 argument_list|,
-name|name
+name|tokname
 argument_list|)
 expr_stmt|;
 if|if
@@ -4173,7 +4185,7 @@ name|str
 operator|=
 name|value_to_str
 argument_list|(
-name|name
+name|tokname
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -4182,7 +4194,7 @@ name|fp_new
 argument_list|,
 literal|"(%s %s)\n"
 argument_list|,
-name|name
+name|tokname
 argument_list|,
 name|str
 argument_list|)
@@ -4234,7 +4246,7 @@ argument_list|(
 operator|*
 name|conflicting_options
 argument_list|,
-name|name
+name|tokname
 argument_list|)
 expr_stmt|;
 if|if
