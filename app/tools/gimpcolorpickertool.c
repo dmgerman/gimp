@@ -591,7 +591,7 @@ argument_list|(
 literal|"/Tools/Color Picker"
 argument_list|)
 argument_list|,
-literal|"<shift>O"
+literal|"O"
 argument_list|,
 name|NULL
 argument_list|,
