@@ -1528,8 +1528,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_activate
 argument_list|(
-name|tool_widgets
-index|[
 name|tool_info
 index|[
 operator|(
@@ -1540,8 +1538,7 @@ operator|->
 name|tool
 index|]
 operator|.
-name|toolbar_position
-index|]
+name|tool_widget
 argument_list|)
 expr_stmt|;
 name|palette_set_foreground
@@ -3588,6 +3585,18 @@ name|device_info
 operator|->
 name|tool
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_draw
+argument_list|(
+name|deviceD
+operator|->
+name|tools
+index|[
+name|i
+index|]
 argument_list|,
 name|NULL
 argument_list|)

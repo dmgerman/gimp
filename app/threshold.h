@@ -56,7 +56,7 @@ begin_function_decl
 name|void
 name|threshold_initialize
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
 parameter_list|)
 function_decl|;

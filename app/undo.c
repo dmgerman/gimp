@@ -3690,12 +3690,8 @@ name|gimage
 operator|->
 name|by_color_select
 condition|)
-name|by_color_select_initialize
+name|by_color_select_initialize_by_image
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gimage
 argument_list|)
 expr_stmt|;

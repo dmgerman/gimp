@@ -56,7 +56,17 @@ begin_function_decl
 name|void
 name|by_color_select_initialize
 parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
+name|by_color_select_initialize_by_image
+parameter_list|(
+name|GImage
 modifier|*
 parameter_list|)
 function_decl|;

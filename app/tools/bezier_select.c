@@ -978,15 +978,12 @@ expr_stmt|;
 comment|/*  select the bezier tool  */
 name|gtk_widget_activate
 argument_list|(
-name|tool_widgets
-index|[
 name|tool_info
 index|[
 name|BEZIER_SELECT
 index|]
 operator|.
-name|toolbar_position
-index|]
+name|tool_widget
 argument_list|)
 expr_stmt|;
 name|tool

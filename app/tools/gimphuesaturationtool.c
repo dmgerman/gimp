@@ -1948,29 +1948,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|hue_saturation_initialize (void * gdisp_ptr)
+DECL|function|hue_saturation_initialize (GDisplay * gdisp)
 name|hue_saturation_initialize
 parameter_list|(
-name|void
-modifier|*
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|int
 name|i
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2080,7 +2068,7 @@ name|image_map
 operator|=
 name|image_map_create
 argument_list|(
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|hue_saturation_dialog
 operator|->

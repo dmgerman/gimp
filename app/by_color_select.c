@@ -2460,26 +2460,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|by_color_select_initialize (void * gimage_ptr)
-name|by_color_select_initialize
+DECL|function|by_color_select_initialize_by_image (GImage * gimage)
+name|by_color_select_initialize_by_image
 parameter_list|(
-name|void
+name|GImage
 modifier|*
-name|gimage_ptr
+name|gimage
 parameter_list|)
 block|{
-name|GImage
-modifier|*
-name|gimage
-decl_stmt|;
-name|gimage
-operator|=
-operator|(
-name|GImage
-operator|*
-operator|)
-name|gimage_ptr
-expr_stmt|;
 comment|/*  update the preview window  */
 if|if
 condition|(
@@ -2513,6 +2501,27 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|by_color_select_initialize (GDisplay * gdisp)
+name|by_color_select_initialize
+parameter_list|(
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+block|{
+comment|/* wrap this call so the tool_info->init_func works  */
+name|by_color_select_initialize_by_image
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -1813,8 +1813,6 @@ name|data
 expr_stmt|;
 name|gtk_widget_activate
 argument_list|(
-name|tool_widgets
-index|[
 name|tool_info
 index|[
 operator|(
@@ -1823,8 +1821,7 @@ operator|)
 name|MOVE
 index|]
 operator|.
-name|toolbar_position
-index|]
+name|tool_widget
 argument_list|)
 expr_stmt|;
 name|move_tool_start_hguide
@@ -1884,8 +1881,6 @@ name|data
 expr_stmt|;
 name|gtk_widget_activate
 argument_list|(
-name|tool_widgets
-index|[
 name|tool_info
 index|[
 operator|(
@@ -1894,8 +1889,7 @@ operator|)
 name|MOVE
 index|]
 operator|.
-name|toolbar_position
-index|]
+name|tool_widget
 argument_list|)
 expr_stmt|;
 name|move_tool_start_vguide

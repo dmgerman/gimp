@@ -1847,31 +1847,19 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|curves_initialize (void * gdisp_ptr)
+DECL|function|curves_initialize (GDisplay * gdisp)
 name|curves_initialize
 parameter_list|(
-name|void
-modifier|*
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|int
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 if|if
 condition|(
 name|drawable_indexed
@@ -2107,7 +2095,7 @@ name|image_map
 operator|=
 name|image_map_create
 argument_list|(
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|curves_dialog
 operator|->

@@ -1098,26 +1098,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|posterize_initialize (void * gdisp_ptr)
+DECL|function|posterize_initialize (GDisplay * gdisp)
 name|posterize_initialize
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 if|if
 condition|(
 name|drawable_indexed
@@ -1184,7 +1172,7 @@ name|image_map
 operator|=
 name|image_map_create
 argument_list|(
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|posterize_dialog
 operator|->
