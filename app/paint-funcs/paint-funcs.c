@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2d9840103
+DECL|enum|__anon278ec8ba0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -12798,6 +12798,7 @@ name|gdouble
 operator|)
 name|width
 expr_stmt|;
+comment|/* we can overflow src's boundaries, so we expect our caller to have      allocated extra space for us to do so safely (see scale_region ()) */
 comment|/* this could be optimized much more by precalculating the coefficients for      each x */
 switch|switch
 condition|(
@@ -12853,6 +12854,7 @@ operator|)
 operator|-
 name|src_col
 expr_stmt|;
+comment|/* cast bytes to signed int to make sure the result is signed */
 name|s
 operator|=
 operator|&
@@ -12860,6 +12862,9 @@ name|src
 index|[
 name|src_col
 operator|*
+operator|(
+name|int
+operator|)
 name|bytes
 index|]
 expr_stmt|;
@@ -12969,6 +12974,7 @@ operator|)
 operator|-
 name|src_col
 expr_stmt|;
+comment|/* cast bytes to signed int to make sure the result is signed */
 name|s
 operator|=
 operator|&
@@ -12976,6 +12982,9 @@ name|src
 index|[
 name|src_col
 operator|*
+operator|(
+name|int
+operator|)
 name|bytes
 index|]
 expr_stmt|;
