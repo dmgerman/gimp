@@ -348,7 +348,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon275d72b30103
+DECL|enum|__anon2a16a9460103
 typedef|typedef
 enum|enum
 block|{
@@ -375,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon275d72b30203
+DECL|enum|__anon2a16a9460203
 typedef|typedef
 enum|enum
 block|{
@@ -520,7 +520,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon275d72b30303
+DECL|enum|__anon2a16a9460303
 typedef|typedef
 enum|enum
 block|{
@@ -544,7 +544,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275d72b30408
+DECL|struct|__anon2a16a9460408
 typedef|typedef
 struct|struct
 block|{
@@ -829,7 +829,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon275d72b30508
+DECL|struct|__anon2a16a9460508
 struct|struct
 block|{
 DECL|member|r
@@ -29322,6 +29322,12 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/* Select that gradient in the listbox */
+comment|/* Only if gradient editor has been created */
+if|if
+condition|(
+name|g_editor
+condition|)
+block|{
 name|gtk_clist_select_row
 argument_list|(
 name|GTK_CLIST
@@ -29355,6 +29361,38 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* force internal structs to use selected gradient */
+name|GSList
+modifier|*
+name|tmp
+init|=
+name|g_slist_nth
+argument_list|(
+name|gradients_list
+argument_list|,
+name|n
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|tmp
+condition|)
+name|curr_gradient
+operator|=
+operator|(
+name|gradient_t
+operator|*
+operator|)
+operator|(
+name|tmp
+operator|->
+name|data
+operator|)
+expr_stmt|;
+block|}
 break|break;
 block|}
 comment|/* if */
