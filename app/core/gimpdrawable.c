@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c5357000103
+DECL|enum|__anon2a4db5050103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -1276,6 +1276,12 @@ name|char
 modifier|*
 name|ext
 decl_stmt|;
+name|char
+name|numberbuf
+index|[
+literal|20
+index|]
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
@@ -1449,36 +1455,29 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|&
-name|ext
-index|[
-call|(
-name|int
-call|)
+comment|/* Check if there really was the number we think after the # */
+name|sprintf
 argument_list|(
-name|log10
-argument_list|(
+name|numberbuf
+argument_list|,
+literal|"#%d"
+argument_list|,
 name|number
 argument_list|)
-operator|+
-literal|1
-argument_list|)
-index|]
-operator|!=
-operator|&
-name|newname
-index|[
-name|strlen
+expr_stmt|;
+if|if
+condition|(
+name|strcmp
 argument_list|(
-name|newname
+name|ext
+argument_list|,
+name|numberbuf
 argument_list|)
-operator|-
-literal|1
-index|]
+operator|!=
+literal|0
 condition|)
 block|{
+comment|/* No, so just ignore the # */
 name|number
 operator|=
 literal|1
@@ -1577,10 +1576,12 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+comment|/* Rescan from beginning */
 name|listb
 operator|=
 name|base_list
 expr_stmt|;
+continue|continue;
 block|}
 name|listb
 operator|=
