@@ -90,7 +90,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon279433be0103
+DECL|enum|__anon2af73c5b0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -205,12 +205,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_unit_menu_class_init (GimpUnitMenuClass * class)
+DECL|function|gimp_unit_menu_class_init (GimpUnitMenuClass * klass)
 name|gimp_unit_menu_class_init
 parameter_list|(
 name|GimpUnitMenuClass
 modifier|*
-name|class
+name|klass
 parameter_list|)
 block|{
 name|GtkObjectClass
@@ -223,7 +223,7 @@ operator|(
 name|GtkObjectClass
 operator|*
 operator|)
-name|class
+name|klass
 expr_stmt|;
 name|parent_class
 operator|=
@@ -271,7 +271,7 @@ argument_list|,
 name|LAST_SIGNAL
 argument_list|)
 expr_stmt|;
-name|class
+name|klass
 operator|->
 name|unit_changed
 operator|=

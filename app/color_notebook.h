@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b54c5a60103
+DECL|enum|__anon2ae627250103
 block|{
 DECL|enumerator|COLOR_NOTEBOOK_OK
 name|COLOR_NOTEBOOK_OK
@@ -71,15 +71,6 @@ typedef|typedef
 name|struct
 name|_ColorSelectorInstance
 name|ColorSelectorInstance
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|ColorNotebook
-typedef|typedef
-name|struct
-name|_ColorNotebook
-name|ColorNotebook
 typedef|;
 end_typedef
 

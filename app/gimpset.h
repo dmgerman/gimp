@@ -169,14 +169,6 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|typedef|GimpSetHandlerId
-typedef|typedef
-name|guint
-name|GimpSetHandlerId
-typedef|;
-end_typedef
-
 begin_function_decl
 name|GtkType
 name|gimp_set_get_type
