@@ -834,27 +834,18 @@ argument_list|(
 name|GParamDef
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Combine two images using corresponding "
 literal|"depth maps (z-buffers)"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Taking as input two full-color, full-alpha "
 literal|"images and two corresponding grayscale depth "
 literal|"maps, this plug-in combines the images based "
 literal|"on which is closer (has a lower depth map value) "
 literal|"at each point."
-argument_list|)
 argument_list|,
 literal|"Sean Cier"
 argument_list|,

@@ -191,7 +191,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2a1caee50103
+DECL|enum|__anon2ae2f6350103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -211,7 +211,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1caee50208
+DECL|struct|__anon2ae2f6350208
 block|{
 DECL|member|x1
 name|gdouble
@@ -379,22 +379,13 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"transform image with the Mandelbrot Fractal"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"transform image with the Mandelbrot Fractal"
-argument_list|)
 argument_list|,
 literal|"Hirotsuna Mizuno<s1041150@u-aizu.ac.jp>"
 argument_list|,
@@ -430,7 +421,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1caee50308
+DECL|struct|__anon2ae2f6350308
 block|{
 DECL|member|x1
 name|gint
@@ -473,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1caee50408
+DECL|struct|__anon2ae2f6350408
 block|{
 DECL|member|width
 name|gint
@@ -1032,7 +1023,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1caee50508
+DECL|struct|__anon2ae2f6350508
 block|{
 DECL|member|r
 name|guchar
@@ -2833,7 +2824,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1caee50608
+DECL|struct|__anon2ae2f6350608
 block|{
 DECL|member|preview
 name|GtkWidget

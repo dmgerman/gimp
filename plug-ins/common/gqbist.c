@@ -2082,22 +2082,13 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Create images based on a random genetic formula"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This Plug-in is based on an article by Jörn Loviscach (appeared in c't 10/95, page 326). It generates modern art pictures from a random genetic formula."
-argument_list|)
 argument_list|,
 literal|"Jörn Loviscach, Jens Ch. Restemeier"
 argument_list|,

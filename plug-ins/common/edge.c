@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b45bc0103
+DECL|enum|__anon275bcae00103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -112,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b45bc0208
+DECL|struct|__anon275bcae00208
 block|{
 DECL|member|amount
 name|gdouble
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b45bc0308
+DECL|struct|__anon275bcae00308
 block|{
 DECL|member|run
 name|gint
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b45bc0408
+DECL|struct|__anon275bcae00408
 block|{
 DECL|member|tile
 name|GTile
@@ -472,14 +472,8 @@ name|gchar
 modifier|*
 name|help_string
 init|=
-name|_
-argument_list|(
 literal|" Perform edge detection on the contents of the specified drawable. It applies, I think, convolution with 3x3 kernel. AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in (useful for tilable image)."
-argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_edge"
