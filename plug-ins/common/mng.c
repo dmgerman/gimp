@@ -1301,6 +1301,7 @@ if|if
 condition|(
 name|transparent
 operator|!=
+operator|-
 literal|1
 condition|)
 block|{
@@ -2237,7 +2238,7 @@ return|return
 literal|0
 return|;
 block|}
-comment|/*	how do we get this to work?  	if (mng_data.bkgd) 	{ 		GimpRGB bgcolor; 		guchar red, green, blue;  		gimp_palette_get_background(&bgcolor); 		gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);  		if ((ret = mng_putchunk_back(handle, red, green, blue, MNG_BACKGROUNDCOLOR_MANDATORY, 0, MNG_BACKGROUNDIMAGE_NOTILE)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_back() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		}  		if ((ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0, gimp_rgb_intensity_uchar(&bgcolor), red, green, blue)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
+comment|/*      how do we get this to work?          if (mng_data.bkgd)         {                 GimpRGB bgcolor;                 guchar red, green, blue;                  gimp_palette_get_background(&bgcolor);                 gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);                  if ((ret = mng_putchunk_back(handle, red, green, blue, MNG_BACKGROUNDCOLOR_MANDATORY, 0, MNG_BACKGROUNDIMAGE_NOTILE)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_back() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }                  if ((ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0, gimp_rgb_intensity_uchar(&bgcolor), red, green, blue)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }         } */
 if|if
 condition|(
 name|mng_data
@@ -2312,7 +2313,7 @@ literal|0
 return|;
 block|}
 block|}
-comment|/*	how do we get this to work?  	if (mng_data.phys) 	{ 		gimp_image_get_resolution(original_image_id,&xres,&yres);  		if ((ret = mng_putchunk_phyg(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phyg() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		}  		if ((ret = mng_putchunk_phys(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phys() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
+comment|/*      how do we get this to work?          if (mng_data.phys)         {                 gimp_image_get_resolution(original_image_id,&xres,&yres);                  if ((ret = mng_putchunk_phyg(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_phyg() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }                  if ((ret = mng_putchunk_phys(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_phys() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }         } */
 if|if
 condition|(
 name|mng_data
@@ -6275,7 +6276,7 @@ argument_list|(
 literal|"MNG animation"
 argument_list|)
 argument_list|,
-literal|"RGB*,GRAY*"
+literal|"RGB*,GRAY*,INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -6497,7 +6498,8 @@ name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
-comment|/* GIMP_EXPORT_CAN_HANDLE_INDEXED | */
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
+operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_LAYERS_AS_ANIMATION
