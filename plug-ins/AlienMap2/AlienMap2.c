@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5a7050108
+DECL|struct|__anon2ae7c4970108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5a7050208
+DECL|struct|__anon2ae7c4970208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3449,6 +3449,12 @@ literal|1
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change frequency of the red/hue channel"
@@ -3513,6 +3519,12 @@ literal|15
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change angle of the red/hue channel"
@@ -3576,6 +3588,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -3642,6 +3660,12 @@ literal|15
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change angle of the green/saturation channel"
@@ -3705,6 +3729,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -3770,6 +3800,12 @@ argument_list|,
 literal|15
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(

@@ -512,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d98960108
+DECL|struct|__anon296a41900108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d98960208
+DECL|struct|__anon296a41900208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d98960308
+DECL|struct|__anon296a41900308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d98960408
+DECL|struct|__anon296a41900408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d98960508
+DECL|struct|__anon296a41900508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d98960608
+DECL|struct|__anon296a41900608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d98960708
+DECL|struct|__anon296a41900708
 block|{
 DECL|member|name
 specifier|const
@@ -3998,6 +3998,12 @@ literal|15
 argument_list|,
 literal|1
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -5282,6 +5288,12 @@ literal|10.0
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -5345,6 +5357,12 @@ literal|10.0
 argument_list|,
 literal|1
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -5405,6 +5423,12 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|5.0
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,
@@ -5618,6 +5642,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|10
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,
@@ -6369,6 +6399,12 @@ literal|5.0
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -7000,7 +7036,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d98960808
+DECL|struct|__anon296a41900808
 block|{
 DECL|member|index
 name|gint

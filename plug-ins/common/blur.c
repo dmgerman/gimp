@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2fcfc90108
+DECL|struct|__anon2909338f0108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -184,7 +184,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2fcfc90208
+DECL|struct|__anon2909338f0208
 block|{
 DECL|member|run
 name|gint
@@ -2705,10 +2705,14 @@ name|pivals
 operator|.
 name|blur_seed
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|pivals
 operator|.
 name|seed_type
+argument_list|,
+name|NULL
 argument_list|,
 name|SEED_TIME
 argument_list|,
@@ -2779,6 +2783,12 @@ literal|10.0
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Percentage of pixels to be filtered"
@@ -2841,6 +2851,12 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|10.0
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

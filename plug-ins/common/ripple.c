@@ -130,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5e35040108
+DECL|struct|__anon2bf5708e0108
 block|{
 DECL|member|period
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5e35040208
+DECL|struct|__anon2bf5708e0208
 block|{
 DECL|member|run
 name|gint
@@ -524,13 +524,6 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
 name|gint
 name|nargs
 init|=
@@ -546,12 +539,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -581,11 +568,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -735,16 +722,13 @@ name|nparams
 operator|!=
 literal|10
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|rvals
 operator|.
@@ -857,14 +841,8 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-block|}
 if|if
 condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-operator|&&
-operator|(
 name|rvals
 operator|.
 name|edges
@@ -876,12 +854,12 @@ operator|.
 name|edges
 operator|>
 name|BLACK
-operator|)
 condition|)
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -1165,6 +1143,7 @@ name|rvals
 operator|.
 name|period
 operator|=
+operator|(
 name|width
 operator|/
 operator|(
@@ -1200,6 +1179,7 @@ name|orientation
 operator|==
 name|VERTICAL
 operator|)
+operator|)
 expr_stmt|;
 block|}
 name|progress
@@ -1220,7 +1200,7 @@ operator|-
 name|y1
 operator|)
 expr_stmt|;
-comment|/* Ripple the image.  It's a pretty simple algorithm.  If horizontal      is selected, then every row is displaced a number of pixels that      follows the pattern of the waveform selected.  The effect is      just reproduced with columns if vertical is selected. */
+comment|/* Ripple the image.  It's a pretty simple algorithm.  If horizontal      is selected, then every row is displaced a number of pixels that      follows the pattern of the waveform selected.  The effect is      just reproduced with columns if vertical is selected.   */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -1710,7 +1690,6 @@ operator|=
 name|val
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
 else|else
 block|{
@@ -1930,9 +1909,7 @@ operator|=
 name|val
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
-comment|/* else */
 block|}
 comment|/* antialias */
 else|else
@@ -2473,7 +2450,6 @@ operator|=
 name|val
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
 else|else
 block|{
@@ -2693,9 +2669,7 @@ operator|=
 name|val
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
-comment|/* else */
 block|}
 comment|/* antialias */
 else|else
@@ -3780,6 +3754,12 @@ literal|10
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -3839,6 +3819,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|10
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

@@ -113,7 +113,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf151750108
+DECL|struct|__anon2c11cbf40108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -176,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf151750208
+DECL|struct|__anon2c11cbf40208
 block|{
 DECL|member|run
 name|gint
@@ -1788,6 +1788,12 @@ literal|0.01
 argument_list|,
 literal|3
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Adjust the Luminosity Threshold"
@@ -1851,6 +1857,12 @@ argument_list|,
 literal|0.1
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -1916,6 +1928,12 @@ literal|10
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Adjust the Spike Length"
@@ -1977,6 +1995,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|4
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,
@@ -2045,6 +2069,12 @@ literal|15
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Adjust the Spike Angle "
@@ -2110,6 +2140,12 @@ literal|0.1
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Adjust the Spike Density"
@@ -2173,6 +2209,12 @@ argument_list|,
 literal|0.1
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -2238,6 +2280,12 @@ literal|0.1
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Adjust the Value how much the Hue should "
@@ -2302,6 +2350,12 @@ argument_list|,
 literal|0.1
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(

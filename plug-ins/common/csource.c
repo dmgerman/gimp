@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b058bdc0108
+DECL|struct|__anon2b6939580108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3818,6 +3818,12 @@ argument_list|,
 literal|10
 argument_list|,
 literal|1
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|FALSE
 argument_list|,

@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290223ab0108
+DECL|struct|__anon2a4fca810108
 block|{
 DECL|member|circle
 name|gdouble
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290223ab0208
+DECL|struct|__anon2a4fca810208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290223ab0308
+DECL|struct|__anon2a4fca810308
 block|{
 DECL|member|col
 DECL|member|row
@@ -516,15 +516,15 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -759,14 +759,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -781,12 +774,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -822,11 +809,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1222,16 +1209,13 @@ name|nparams
 operator|!=
 literal|8
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|pcvals
 operator|.
@@ -4938,6 +4922,12 @@ literal|10.0
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -4998,6 +4988,12 @@ argument_list|,
 literal|15.0
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|,

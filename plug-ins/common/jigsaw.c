@@ -46,7 +46,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2a2c48dc0103
+DECL|enum|__anon2b2dfdbd0103
 DECL|enumerator|BEZIER_1
 DECL|enumerator|BEZIER_2
 DECL|typedef|style_t
@@ -62,7 +62,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a2c48dc0203
+DECL|enum|__anon2b2dfdbd0203
 DECL|enumerator|LEFT
 DECL|enumerator|RIGHT
 DECL|enumerator|UP
@@ -14357,6 +14357,12 @@ literal|4.0
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Number of pieces going across"
@@ -14419,6 +14425,12 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|4.0
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,
@@ -14584,6 +14596,12 @@ literal|2.0
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Degree of slope of each piece's edge"
@@ -14648,6 +14666,12 @@ argument_list|,
 literal|0.1
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(

@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3ed1c70103
+DECL|enum|__anon295b45bc0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -112,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ed1c70208
+DECL|struct|__anon295b45bc0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ed1c70308
+DECL|struct|__anon295b45bc0308
 block|{
 DECL|member|run
 name|gint
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ed1c70408
+DECL|struct|__anon295b45bc0408
 block|{
 DECL|member|tile
 name|GTile
@@ -2917,6 +2917,12 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|,

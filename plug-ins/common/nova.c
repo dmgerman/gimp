@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7af14e0108
+DECL|struct|__anon27596adb0108
 block|{
 DECL|member|xcenter
 DECL|member|ycenter
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7af14e0208
+DECL|struct|__anon27596adb0208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7af14e0308
+DECL|struct|__anon27596adb0308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1628,6 +1628,12 @@ literal|10
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -1689,6 +1695,12 @@ literal|16
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -1747,6 +1759,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|15
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

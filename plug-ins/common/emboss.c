@@ -70,7 +70,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5083240103
+DECL|enum|__anon289f16c40103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -2678,7 +2678,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Parameters"
+literal|"Parameter Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2800,6 +2800,12 @@ literal|10.0
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -2861,6 +2867,12 @@ literal|10.0
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -2919,6 +2931,12 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|5.0
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

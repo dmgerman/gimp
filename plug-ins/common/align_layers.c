@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1597480103
+DECL|enum|__anon29e61f000103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1597480203
+DECL|enum|__anon29e61f000203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1597480303
+DECL|enum|__anon29e61f000303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1597480403
+DECL|enum|__anon29e61f000403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1597480508
+DECL|struct|__anon29e61f000508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1597480608
+DECL|struct|__anon29e61f000608
 block|{
 DECL|member|run
 name|gint
@@ -2388,6 +2388,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|10
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

@@ -128,18 +128,18 @@ begin_function_decl
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -159,16 +159,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -182,7 +182,9 @@ end_macro
 begin_function
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GParamDef
 name|args
@@ -214,13 +216,7 @@ literal|"Input drawable"
 block|}
 block|,   }
 decl_stmt|;
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -235,11 +231,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-name|int
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -263,17 +254,17 @@ argument_list|(
 literal|"<Image>/Image/Colors/Filter Pack..."
 argument_list|)
 argument_list|,
-literal|"RGB*,INDEXED*,GRAY*"
+literal|"RGB*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -285,21 +276,21 @@ end_comment
 
 begin_function
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,

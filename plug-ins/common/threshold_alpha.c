@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb878630108
+DECL|struct|__anon2b5241f80108
 block|{
 DECL|member|threshold
 name|gint
@@ -203,7 +203,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb878630208
+DECL|struct|__anon2b5241f80208
 block|{
 DECL|member|run
 name|gint
@@ -523,16 +523,13 @@ name|nparams
 operator|!=
 literal|4
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|VALS
 operator|.
@@ -568,6 +565,7 @@ name|status
 operator|==
 name|STATUS_SUCCESS
 condition|)
+block|{
 name|status
 operator|=
 name|threshold_alpha
@@ -607,6 +605,7 @@ name|ValueType
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -1320,6 +1319,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|8
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

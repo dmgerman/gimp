@@ -50,7 +50,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b639560108
+DECL|struct|__anon27611e9c0108
 block|{
 DECL|member|xblock
 name|gint
@@ -69,7 +69,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b639560208
+DECL|struct|__anon27611e9c0208
 block|{
 DECL|member|run
 name|gint
@@ -1002,6 +1002,12 @@ literal|5
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -1061,6 +1067,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|5
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900252a0108
+DECL|struct|__anon2c4574290108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -348,7 +348,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900252a0208
+DECL|struct|__anon2c4574290208
 block|{
 DECL|member|run
 name|gint
@@ -2431,6 +2431,12 @@ literal|2
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -2489,6 +2495,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|8
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,
@@ -2553,6 +2565,12 @@ literal|8
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -2611,6 +2629,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|8
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

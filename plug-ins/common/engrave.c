@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8f6770108
+DECL|struct|__anon2749a4e20108
 block|{
 DECL|member|height
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8f6770208
+DECL|struct|__anon2749a4e20208
 block|{
 DECL|member|run
 name|gint
@@ -1085,6 +1085,12 @@ literal|4.0
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -1916,7 +1922,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8f6770308
+DECL|struct|__anon2749a4e20308
 block|{
 DECL|member|x
 DECL|member|y

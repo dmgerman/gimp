@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e950000108
+DECL|struct|__anon29af517d0108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e950000208
+DECL|struct|__anon29af517d0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3171,6 +3171,12 @@ literal|8
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change intensity of the red channel"
@@ -3235,6 +3241,12 @@ literal|8
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change intensity of the green channel"
@@ -3298,6 +3310,12 @@ argument_list|,
 literal|8
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(

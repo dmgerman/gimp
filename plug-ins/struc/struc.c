@@ -61,7 +61,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e728c0103
+DECL|enum|__anon296e67ee0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -81,7 +81,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e728c0208
+DECL|struct|__anon296e67ee0208
 block|{
 DECL|member|direction
 name|gint
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e728c0308
+DECL|struct|__anon296e67ee0308
 block|{
 DECL|member|run
 name|gint
@@ -1155,6 +1155,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|5
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b39890108
+DECL|struct|__anon2c51d70c0108
 block|{
 DECL|member|run
 name|gint
@@ -1721,6 +1721,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|10
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

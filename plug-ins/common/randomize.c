@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5c5ba0108
+DECL|struct|__anon2c7694eb0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5c5ba0208
+DECL|struct|__anon2c7694eb0208
 block|{
 DECL|member|run
 name|gint
@@ -487,13 +487,6 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
 name|gint
 name|nargs
 init|=
@@ -509,12 +502,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 specifier|const
 name|gchar
@@ -630,11 +617,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -685,11 +672,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -740,11 +727,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2671,10 +2658,14 @@ name|pivals
 operator|.
 name|rndm_seed
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|pivals
 operator|.
 name|seed_type
+argument_list|,
+name|NULL
 argument_list|,
 name|SEED_TIME
 argument_list|,
@@ -2745,6 +2736,12 @@ literal|10.0
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Percentage of pixels to be filtered"
@@ -2807,6 +2804,12 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|10.0
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

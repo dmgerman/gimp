@@ -2237,6 +2237,12 @@ literal|0.01
 argument_list|,
 literal|5
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change the first (minimal) x-coordinate "
@@ -2306,6 +2312,12 @@ argument_list|,
 literal|0.01
 argument_list|,
 literal|5
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -2377,6 +2389,12 @@ literal|0.01
 argument_list|,
 literal|5
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change the first (minimal) y-coordinate "
@@ -2447,6 +2465,12 @@ literal|0.01
 argument_list|,
 literal|5
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change the second (maximal) y-coordinate "
@@ -2515,6 +2539,12 @@ argument_list|,
 literal|10
 argument_list|,
 literal|5
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -2587,6 +2617,12 @@ literal|0.01
 argument_list|,
 literal|5
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change the CX value (changes aspect of "
@@ -2657,6 +2693,12 @@ argument_list|,
 literal|0.01
 argument_list|,
 literal|5
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -3628,6 +3670,12 @@ literal|10
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change the number of colors in the mapping"
@@ -3876,6 +3924,12 @@ literal|0.1
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change the intensity of the red channel"
@@ -3944,6 +3998,12 @@ literal|0.1
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Change the intensity of the green channel"
@@ -4011,6 +4071,12 @@ argument_list|,
 literal|0.1
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|_
 argument_list|(

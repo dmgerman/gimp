@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c145f820108
+DECL|struct|__anon2757f3e50108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1890,6 +1890,12 @@ literal|15
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -1948,6 +1954,12 @@ argument_list|,
 literal|1
 argument_list|,
 literal|2
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291bc66b0108
+DECL|struct|__anon2b697e9b0108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291bc66b0208
+DECL|struct|__anon2b697e9b0208
 block|{
 DECL|member|col
 DECL|member|row
@@ -3964,6 +3964,12 @@ literal|8.0
 argument_list|,
 literal|0
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -4019,6 +4025,12 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|15.0
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

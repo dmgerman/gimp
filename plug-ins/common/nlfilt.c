@@ -150,7 +150,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41bfeb0103
+DECL|enum|__anon27fe74320103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1790,7 +1790,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Parameters"
+literal|"Parameter Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1912,6 +1912,12 @@ literal|0.1
 argument_list|,
 literal|2
 argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -1974,6 +1980,12 @@ argument_list|,
 literal|0.1
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|,

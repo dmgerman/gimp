@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d43f0e0108
+DECL|struct|__anon2921a7660108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d43f0e0208
+DECL|struct|__anon2921a7660208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d43f0e0308
+DECL|struct|__anon2921a7660308
 block|{
 DECL|member|r
 name|guchar
@@ -3430,6 +3430,12 @@ argument_list|,
 literal|0.1
 argument_list|,
 literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
