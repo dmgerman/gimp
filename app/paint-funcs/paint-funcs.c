@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29edfd8d0103
+DECL|enum|__anon29fc45bb0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -13621,7 +13621,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|scale_region (PixelRegion * srcPR,PixelRegion * destPR,GimpInterpolationType interpolation_type)
+DECL|function|scale_region (PixelRegion * srcPR,PixelRegion * destPR,GimpInterpolationType interpolation,GimpProgressFunc progress_callback,gpointer progress_data)
 name|scale_region
 parameter_list|(
 name|PixelRegion
@@ -13633,7 +13633,13 @@ modifier|*
 name|destPR
 parameter_list|,
 name|GimpInterpolationType
-name|interpolation_type
+name|interpolation
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 block|{
 name|gdouble
@@ -13695,7 +13701,7 @@ name|y
 decl_stmt|;
 if|if
 condition|(
-name|interpolation_type
+name|interpolation
 operator|==
 name|GIMP_INTERPOLATION_NONE
 condition|)
@@ -13867,6 +13873,31 @@ control|)
 block|{
 if|if
 condition|(
+name|progress_callback
+operator|&&
+operator|!
+operator|(
+name|y
+operator|&
+literal|0xf
+operator|)
+condition|)
+call|(
+modifier|*
+name|progress_callback
+call|)
+argument_list|(
+literal|0
+argument_list|,
+name|height
+argument_list|,
+name|y
+argument_list|,
+name|progress_data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|height
 operator|<
 name|orig_height
@@ -13911,7 +13942,7 @@ name|row
 argument_list|,
 name|src_tmp
 argument_list|,
-name|interpolation_type
+name|interpolation
 argument_list|)
 expr_stmt|;
 name|new_y
@@ -14005,7 +14036,7 @@ name|row
 argument_list|,
 name|src_tmp
 argument_list|,
-name|interpolation_type
+name|interpolation
 argument_list|)
 expr_stmt|;
 while|while
@@ -14062,7 +14093,7 @@ name|row
 argument_list|,
 name|src_tmp
 argument_list|,
-name|interpolation_type
+name|interpolation
 argument_list|)
 expr_stmt|;
 name|max
@@ -14181,7 +14212,7 @@ name|row
 argument_list|,
 name|src_tmp
 argument_list|,
-name|interpolation_type
+name|interpolation
 argument_list|)
 expr_stmt|;
 name|old_y
@@ -14190,7 +14221,7 @@ expr_stmt|;
 block|}
 switch|switch
 condition|(
-name|interpolation_type
+name|interpolation
 condition|)
 block|{
 case|case
@@ -14439,7 +14470,7 @@ name|row
 argument_list|,
 name|src_tmp
 argument_list|,
-name|interpolation_type
+name|interpolation
 argument_list|)
 expr_stmt|;
 name|memcpy

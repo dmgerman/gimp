@@ -347,6 +347,10 @@ argument_list|,
 literal|0
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -416,6 +420,10 @@ argument_list|,
 literal|0
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -458,6 +466,10 @@ argument_list|,
 literal|0
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -525,6 +537,10 @@ argument_list|,
 name|img_scale_h
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{

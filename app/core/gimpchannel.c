@@ -304,6 +304,12 @@ name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
 name|interp_type
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2236,7 +2242,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type)
+DECL|function|gimp_channel_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_channel_scale
 parameter_list|(
 name|GimpItem
@@ -2257,6 +2263,12 @@ name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 block|{
 name|GimpChannel
@@ -2320,6 +2332,10 @@ argument_list|,
 name|new_offset_y
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|progress_callback
+argument_list|,
+name|progress_data
 argument_list|)
 expr_stmt|;
 comment|/*  bounds are now unknown  */

@@ -1841,6 +1841,10 @@ name|config
 operator|->
 name|interpolation_type
 argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
 name|local_origin
 argument_list|)
 expr_stmt|;

@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e84b20103
+DECL|enum|__anon2b1ebb3e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -371,6 +371,12 @@ name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
 name|interp_type
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2472,7 +2478,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type)
+DECL|function|gimp_layer_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_layer_scale
 parameter_list|(
 name|GimpItem
@@ -2493,6 +2499,12 @@ name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 block|{
 name|GimpLayer
@@ -2563,6 +2575,10 @@ argument_list|,
 name|new_offset_y
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|progress_callback
+argument_list|,
+name|progress_data
 argument_list|)
 expr_stmt|;
 comment|/*  If there is a layer mask, make sure it gets scaled also  */
@@ -2591,6 +2607,10 @@ argument_list|,
 name|new_offset_y
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end

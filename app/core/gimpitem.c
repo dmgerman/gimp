@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab1122d0103
+DECL|enum|__anon2927454f0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -336,6 +336,12 @@ name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1514,7 +1520,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_real_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation)
+DECL|function|gimp_item_real_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_item_real_scale
 parameter_list|(
 name|GimpItem
@@ -1535,6 +1541,12 @@ name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 block|{
 name|item
@@ -2461,7 +2473,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation)
+DECL|function|gimp_item_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_item_scale
 parameter_list|(
 name|GimpItem
@@ -2482,6 +2494,12 @@ name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 block|{
 name|GimpItemClass
@@ -2529,18 +2547,22 @@ argument_list|,
 name|new_offset_y
 argument_list|,
 name|interpolation
+argument_list|,
+name|progress_callback
+argument_list|,
+name|progress_data
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_scale_by_factors:  * @item:     Item to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  * @interpolation:  *  * Scales item dimensions and offsets by uniform width and  * height factors.  *  * Use gimp_item_scale_by_factors() in circumstances when the  * same width and height scaling factors are to be uniformly  * applied to a set of items. In this context, the item's  * dimensions and offsets from the sides of the containing  * image all change by these predetermined factors. By fiat,  * the fixed point of the transform is the upper left hand  * corner of the image. Returns gboolean FALSE if a requested  * scale factor is zero or if a scaling zero's out a item  * dimension; returns #TRUE otherwise.  *  * Use gimp_item_scale() in circumstances where new item width  * and height dimensions are predetermined instead.  *  * Side effects: Undo set created for item. Old item imagery  *               scaled& painted to new item tiles.  *  * Returns: #TRUE, if the scaled item has positive dimensions  *          #FALSE if the scaled item has at least one zero dimension  **/
+comment|/**  * gimp_item_scale_by_factors:  * @item:     Item to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  * @interpolation:  * @progress_callback:  * @progress_data:  *  * Scales item dimensions and offsets by uniform width and  * height factors.  *  * Use gimp_item_scale_by_factors() in circumstances when the  * same width and height scaling factors are to be uniformly  * applied to a set of items. In this context, the item's  * dimensions and offsets from the sides of the containing  * image all change by these predetermined factors. By fiat,  * the fixed point of the transform is the upper left hand  * corner of the image. Returns gboolean FALSE if a requested  * scale factor is zero or if a scaling zero's out a item  * dimension; returns #TRUE otherwise.  *  * Use gimp_item_scale() in circumstances where new item width  * and height dimensions are predetermined instead.  *  * Side effects: Undo set created for item. Old item imagery  *               scaled& painted to new item tiles.  *  * Returns: #TRUE, if the scaled item has positive dimensions  *          #FALSE if the scaled item has at least one zero dimension  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_scale_by_factors (GimpItem * item,gdouble w_factor,gdouble h_factor,GimpInterpolationType interpolation)
+DECL|function|gimp_item_scale_by_factors (GimpItem * item,gdouble w_factor,gdouble h_factor,GimpInterpolationType interpolation,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_item_scale_by_factors
 parameter_list|(
 name|GimpItem
@@ -2555,6 +2577,12 @@ name|h_factor
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 block|{
 name|gint
@@ -2677,6 +2705,10 @@ argument_list|,
 name|new_offset_y
 argument_list|,
 name|interpolation
+argument_list|,
+name|progress_callback
+argument_list|,
+name|progress_data
 argument_list|)
 expr_stmt|;
 return|return
@@ -2690,12 +2722,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_scale_by_origin:  * @item:         The item to be transformed by width& height scale factors  * @new_width:    The width that item will acquire  * @new_height:   The height that the item will acquire  * @interpolation:  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets item dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * TRUE, the fixed point of the scaling transform coincides  * with the item's center point.  Otherwise, the fixed  * point is taken to be [-item->offset_x, -item->offset_y].  *  * Since this function derives scale factors from new and  * current item dimensions, these factors will vary from  * item to item because of aliasing artifacts; factor  * variations among items can be quite large where item  * dimensions approach pixel dimensions. Use  * gimp_item_scale_by_factors() where constant scales are to  * be uniformly applied to a number of items.  *  * Side effects: undo set created for item.  *               Old item imagery scaled  *& painted to new item tiles  **/
+comment|/**  * gimp_item_scale_by_origin:  * @item:         The item to be transformed by width& height scale factors  * @new_width:    The width that item will acquire  * @new_height:   The height that the item will acquire  * @interpolation:  * @progress_callback:  * @progress_data:  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets item dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * TRUE, the fixed point of the scaling transform coincides  * with the item's center point.  Otherwise, the fixed  * point is taken to be [-item->offset_x, -item->offset_y].  *  * Since this function derives scale factors from new and  * current item dimensions, these factors will vary from  * item to item because of aliasing artifacts; factor  * variations among items can be quite large where item  * dimensions approach pixel dimensions. Use  * gimp_item_scale_by_factors() where constant scales are to  * be uniformly applied to a number of items.  *  * Side effects: undo set created for item.  *               Old item imagery scaled  *& painted to new item tiles  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_item_scale_by_origin (GimpItem * item,gint new_width,gint new_height,GimpInterpolationType interpolation,gboolean local_origin)
+DECL|function|gimp_item_scale_by_origin (GimpItem * item,gint new_width,gint new_height,GimpInterpolationType interpolation,GimpProgressFunc progress_callback,gpointer progress_data,gboolean local_origin)
 name|gimp_item_scale_by_origin
 parameter_list|(
 name|GimpItem
@@ -2710,6 +2742,12 @@ name|new_height
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|,
 name|gboolean
 name|local_origin
@@ -2860,6 +2898,10 @@ argument_list|,
 name|new_offset_y
 argument_list|,
 name|interpolation
+argument_list|,
+name|progress_callback
+argument_list|,
+name|progress_data
 argument_list|)
 expr_stmt|;
 block|}
