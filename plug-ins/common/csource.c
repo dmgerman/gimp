@@ -34,7 +34,7 @@ file|<gtk/gtk.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon2abe13e50108
+DECL|struct|__anon28949a020108
 typedef|typedef
 struct|struct
 block|{
@@ -61,13 +61,13 @@ DECL|member|glib_types
 name|gboolean
 name|glib_types
 decl_stmt|;
-DECL|member|stringify
-name|gboolean
-name|stringify
-decl_stmt|;
 DECL|member|alpha
 name|gboolean
 name|alpha
+decl_stmt|;
+DECL|member|use_macros
+name|gboolean
+name|use_macros
 decl_stmt|;
 DECL|member|opacity
 name|gdouble
@@ -444,20 +444,29 @@ init|=
 block|{
 name|NULL
 block|,
+comment|/* file_name */
 literal|"gimp_image"
 block|,
+comment|/* prefixed_name */
 name|NULL
 block|,
+comment|/* comment */
 name|FALSE
 block|,
+comment|/* use_comment */
 name|TRUE
 block|,
-name|TRUE
-block|,
+comment|/* glib_types */
 name|FALSE
 block|,
+comment|/* alpha */
+name|FALSE
+block|,
+comment|/* use_macros */
 literal|100.0
-block|,       }
+block|,
+comment|/* opacity */
+block|}
 decl_stmt|;
 name|config
 operator|.
@@ -672,9 +681,10 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|guint
-DECL|function|save_uchar_n (FILE * fp,guint c,guint8 d)
-name|save_uchar_n
+DECL|function|save_uchar (FILE * fp,guint c,guint8 d,Config * config)
+name|save_uchar
 parameter_list|(
 name|FILE
 modifier|*
@@ -685,77 +695,10 @@ name|c
 parameter_list|,
 name|guint8
 name|d
-parameter_list|)
-block|{
-if|if
-condition|(
-name|c
-operator|>
-literal|74
-condition|)
-block|{
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|"\n   "
-argument_list|)
-expr_stmt|;
-name|c
-operator|=
-literal|3
-expr_stmt|;
-block|}
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|" %u,"
-argument_list|,
-name|d
-argument_list|)
-expr_stmt|;
-name|c
-operator|+=
-literal|1
-operator|+
-operator|(
-name|d
-operator|>
-literal|99
-operator|)
-operator|+
-operator|(
-name|d
-operator|>
-literal|9
-operator|)
-operator|+
-literal|1
-operator|+
-literal|1
-expr_stmt|;
-return|return
-name|c
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|guint
-DECL|function|save_uchar_s (FILE * fp,guint c,guint8 d)
-name|save_uchar_s
-parameter_list|(
-name|FILE
+parameter_list|,
+name|Config
 modifier|*
-name|fp
-parameter_list|,
-name|guint
-name|c
-parameter_list|,
-name|guint8
-name|d
+name|config
 parameter_list|)
 block|{
 specifier|static
@@ -771,6 +714,14 @@ operator|>
 literal|74
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|config
+operator|->
+name|use_macros
+condition|)
+block|{
 name|fprintf
 argument_list|(
 name|fp
@@ -782,6 +733,21 @@ name|c
 operator|=
 literal|3
 expr_stmt|;
+block|}
+else|else
+block|{
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"\"\n \""
+argument_list|)
+expr_stmt|;
+name|c
+operator|=
+literal|2
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -972,9 +938,6 @@ modifier|*
 name|s_uint_32
 decl_stmt|,
 modifier|*
-name|s_int
-decl_stmt|,
-modifier|*
 name|s_uint
 decl_stmt|,
 modifier|*
@@ -990,20 +953,10 @@ decl_stmt|;
 name|guint
 name|c
 decl_stmt|;
-name|guint
-function_decl|(
+name|gchar
 modifier|*
-name|save_uchar
-function_decl|)
-parameter_list|(
-name|FILE
-modifier|*
-parameter_list|,
-name|guint
-parameter_list|,
-name|guint8
-parameter_list|)
-function_decl|;
+name|macro_name
+decl_stmt|;
 name|fp
 operator|=
 name|fopen
@@ -1049,21 +1002,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|config
 operator|->
-name|stringify
-condition|)
-name|save_uchar
-operator|=
-name|save_uchar_s
-expr_stmt|;
-else|else
-name|save_uchar
-operator|=
-name|save_uchar_n
-expr_stmt|;
-if|if
-condition|(
+name|use_macros
+operator|&&
 name|config
 operator|->
 name|glib_types
@@ -1081,10 +1024,6 @@ name|s_uint
 operator|=
 literal|"guint  "
 expr_stmt|;
-name|s_int
-operator|=
-literal|"gint   "
-expr_stmt|;
 name|s_char
 operator|=
 literal|"gchar  "
@@ -1094,7 +1033,14 @@ operator|=
 literal|"NULL"
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+operator|!
+name|config
+operator|->
+name|use_macros
+condition|)
 block|{
 name|s_uint_8
 operator|=
@@ -1108,10 +1054,6 @@ name|s_uint
 operator|=
 literal|"unsigned int "
 expr_stmt|;
-name|s_int
-operator|=
-literal|"int          "
-expr_stmt|;
 name|s_char
 operator|=
 literal|"char         "
@@ -1121,6 +1063,77 @@ operator|=
 literal|"(char*) 0"
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+name|config
+operator|->
+name|use_macros
+operator|&&
+name|config
+operator|->
+name|glib_types
+condition|)
+block|{
+name|s_uint_8
+operator|=
+literal|"guint8"
+expr_stmt|;
+name|s_uint_32
+operator|=
+literal|"guint32"
+expr_stmt|;
+name|s_uint
+operator|=
+literal|"guint"
+expr_stmt|;
+name|s_char
+operator|=
+literal|"gchar"
+expr_stmt|;
+name|s_null
+operator|=
+literal|"NULL"
+expr_stmt|;
+block|}
+else|else
+comment|/* config->use_macros&& !config->glib_types */
+block|{
+name|s_uint_8
+operator|=
+literal|"unsigned char"
+expr_stmt|;
+name|s_uint_32
+operator|=
+literal|"unsigned int"
+expr_stmt|;
+name|s_uint
+operator|=
+literal|"unsigned int"
+expr_stmt|;
+name|s_char
+operator|=
+literal|"char"
+expr_stmt|;
+name|s_null
+operator|=
+literal|"(char*) 0"
+expr_stmt|;
+block|}
+name|macro_name
+operator|=
+name|g_strdup
+argument_list|(
+name|config
+operator|->
+name|prefixed_name
+argument_list|)
+expr_stmt|;
+name|g_strup
+argument_list|(
+name|macro_name
+argument_list|)
+expr_stmt|;
 name|fprintf
 argument_list|(
 name|fp
@@ -1135,11 +1148,22 @@ literal|"RGBA"
 else|:
 literal|"RGB"
 argument_list|,
+name|g_basename
+argument_list|(
 name|config
 operator|->
 name|file_name
 argument_list|)
+argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|config
+operator|->
+name|use_macros
+condition|)
+block|{
 name|fprintf
 argument_list|(
 name|fp
@@ -1248,6 +1272,54 @@ else|:
 literal|3
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+comment|/* use macros */
+block|{
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"#define %s_WIDTH (%u)\n"
+argument_list|,
+name|macro_name
+argument_list|,
+name|drawable
+operator|->
+name|width
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"#define %s_HEIGHT (%u)\n"
+argument_list|,
+name|macro_name
+argument_list|,
+name|drawable
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"#define %s_BYTES_PER_PIXEL (%u)\n"
+argument_list|,
+name|macro_name
+argument_list|,
+name|config
+operator|->
+name|alpha
+condition|?
+literal|4
+else|:
+literal|3
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|config
@@ -1259,6 +1331,14 @@ name|config
 operator|->
 name|comment
 condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|config
+operator|->
+name|use_macros
+condition|)
 name|fprintf
 argument_list|(
 name|fp
@@ -1268,6 +1348,20 @@ argument_list|,
 name|s_null
 argument_list|)
 expr_stmt|;
+else|else
+comment|/* use macros */
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"#define %s_COMMENT (%s)\n"
+argument_list|,
+name|macro_name
+argument_list|,
+name|s_null
+argument_list|)
+expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -1286,6 +1380,21 @@ name|comment
 operator|-
 literal|1
 decl_stmt|;
+if|if
+condition|(
+name|config
+operator|->
+name|use_macros
+condition|)
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"#define %s_COMMENT \\\n"
+argument_list|,
+name|macro_name
+argument_list|)
+expr_stmt|;
 name|fprintf
 argument_list|(
 name|fp
@@ -1347,7 +1456,15 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\\n\"\n  \""
+literal|"\\n\"%s\n  \""
+argument_list|,
+name|config
+operator|->
+name|use_macros
+condition|?
+literal|" \\"
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -1444,6 +1561,13 @@ operator|*
 name|p
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|config
+operator|->
+name|use_macros
+condition|)
 name|fprintf
 argument_list|(
 name|fp
@@ -1451,13 +1575,75 @@ argument_list|,
 literal|"\",\n"
 argument_list|)
 expr_stmt|;
+else|else
+comment|/* use macros */
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"\"\n"
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
 name|config
 operator|->
-name|stringify
+name|use_macros
 condition|)
+block|{
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"#define %s_PIXEL_DATA (%s_pixel_data)\n"
+argument_list|,
+name|macro_name
+argument_list|,
+name|macro_name
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"static const %s %s_pixel_data[%u * %u * %u] = \n"
+argument_list|,
+name|s_uint_8
+argument_list|,
+name|macro_name
+argument_list|,
+name|drawable
+operator|->
+name|width
+argument_list|,
+name|drawable
+operator|->
+name|height
+argument_list|,
+name|config
+operator|->
+name|alpha
+condition|?
+literal|4
+else|:
+literal|3
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"(\""
+argument_list|)
+expr_stmt|;
+name|c
+operator|=
+literal|2
+expr_stmt|;
+block|}
+else|else
+block|{
 name|fprintf
 argument_list|(
 name|fp
@@ -1465,18 +1651,11 @@ argument_list|,
 literal|"  \""
 argument_list|)
 expr_stmt|;
-else|else
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|"  {"
-argument_list|)
-expr_stmt|;
 name|c
 operator|=
 literal|3
 expr_stmt|;
+block|}
 switch|switch
 condition|(
 name|drawable_type
@@ -1584,6 +1763,8 @@ name|d
 index|[
 literal|0
 index|]
+argument_list|,
+name|config
 argument_list|)
 expr_stmt|;
 name|c
@@ -1598,6 +1779,8 @@ name|d
 index|[
 literal|1
 index|]
+argument_list|,
+name|config
 argument_list|)
 expr_stmt|;
 name|c
@@ -1612,6 +1795,8 @@ name|d
 index|[
 literal|2
 index|]
+argument_list|,
+name|config
 argument_list|)
 expr_stmt|;
 if|if
@@ -1654,6 +1839,8 @@ argument_list|,
 name|alpha
 operator|+
 literal|0.5
+argument_list|,
+name|config
 argument_list|)
 expr_stmt|;
 block|}
@@ -1679,9 +1866,10 @@ return|;
 block|}
 if|if
 condition|(
+operator|!
 name|config
 operator|->
-name|stringify
+name|use_macros
 condition|)
 name|fprintf
 argument_list|(
@@ -1691,11 +1879,12 @@ literal|"\",\n};\n\n"
 argument_list|)
 expr_stmt|;
 else|else
+comment|/* use macros */
 name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n  },\n};\n\n"
+literal|"\");\n\n"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1763,6 +1952,9 @@ name|centry
 decl_stmt|,
 modifier|*
 name|alpha
+decl_stmt|,
+modifier|*
+name|use_macros
 decl_stmt|,
 modifier|*
 name|gtype
@@ -2199,6 +2391,62 @@ argument_list|(
 name|gtype
 argument_list|)
 expr_stmt|;
+comment|/* Use Macros    */
+name|hbox
+operator|=
+name|gtk_widget_new
+argument_list|(
+name|GTK_TYPE_HBOX
+argument_list|,
+literal|"visible"
+argument_list|,
+name|TRUE
+argument_list|,
+literal|"parent"
+argument_list|,
+name|vbox
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|use_macros
+operator|=
+name|gtk_widget_new
+argument_list|(
+name|GTK_TYPE_CHECK_BUTTON
+argument_list|,
+literal|"label"
+argument_list|,
+literal|"Use macros instead of struct"
+argument_list|,
+literal|"visible"
+argument_list|,
+name|TRUE
+argument_list|,
+literal|"parent"
+argument_list|,
+name|hbox
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|use_macros
+argument_list|)
+argument_list|,
+name|config
+operator|->
+name|use_macros
+argument_list|)
+expr_stmt|;
+name|gtk_widget_ref
+argument_list|(
+name|use_macros
+argument_list|)
+expr_stmt|;
 comment|/* Alpha    */
 name|hbox
 operator|=
@@ -2374,6 +2622,17 @@ argument_list|)
 expr_stmt|;
 name|config
 operator|->
+name|use_macros
+operator|=
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|use_macros
+argument_list|)
+operator|->
+name|active
+expr_stmt|;
+name|config
+operator|->
 name|alpha
 operator|=
 name|GTK_TOGGLE_BUTTON
@@ -2444,6 +2703,11 @@ expr_stmt|;
 name|gtk_widget_unref
 argument_list|(
 name|alpha
+argument_list|)
+expr_stmt|;
+name|gtk_widget_unref
+argument_list|(
+name|use_macros
 argument_list|)
 expr_stmt|;
 name|gtk_widget_unref
