@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bbded0108
+DECL|struct|__anon28e71ad00108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bbded0208
+DECL|struct|__anon28e71ad00208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bbded0308
+DECL|struct|__anon28e71ad00308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bbded0408
+DECL|struct|__anon28e71ad00408
 block|{
 DECL|member|run
 name|gint
@@ -350,7 +350,7 @@ comment|/* Unit is mm */
 literal|1
 block|,
 comment|/* Keep edge ratio */
-literal|90
+literal|0
 block|,
 comment|/* Rotate */
 literal|2
@@ -860,7 +860,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bbded0508
+DECL|struct|__anon28e71ad00508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1748,13 +1748,13 @@ condition|(
 operator|(
 name|xres
 operator|<
-literal|1e-5
+name|GIMP_MIN_RESOLUTION
 operator|)
 operator|||
 operator|(
 name|yres
 operator|<
-literal|1e-5
+name|GIMP_MIN_RESOLUTION
 operator|)
 condition|)
 block|{
@@ -13093,9 +13093,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -13627,7 +13627,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
