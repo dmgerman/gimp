@@ -410,7 +410,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Module Browser..."
+literal|"/Xtns/Module Browser"
 argument_list|)
 block|,
 name|NULL

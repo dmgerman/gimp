@@ -111,7 +111,7 @@ file|"libgimp/gimpmodule.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2a4798bc0103
+DECL|enum|__anon27bc3bcd0103
 typedef|typedef
 enum|enum
 block|{
@@ -242,7 +242,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a4798bc0208
+DECL|struct|__anon27bc3bcd0208
 typedef|typedef
 struct|struct
 block|{
@@ -354,7 +354,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2a4798bc0308
+DECL|struct|__anon27bc3bcd0308
 typedef|typedef
 struct|struct
 block|{
@@ -411,8 +411,66 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
+comment|/* debug control: */
+end_comment
+
+begin_comment
 comment|/*#define DUMP_DB*/
 end_comment
+
+begin_comment
+comment|/*#define DEBUG*/
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG
+end_ifdef
+
+begin_undef
+undef|#
+directive|undef
+name|DUMP_DB
+end_undef
+
+begin_define
+DECL|macro|DUMP_DB
+define|#
+directive|define
+name|DUMP_DB
+end_define
+
+begin_define
+DECL|macro|TRC (x)
+define|#
+directive|define
+name|TRC
+parameter_list|(
+name|x
+parameter_list|)
+value|printf x
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|TRC (x)
+define|#
+directive|define
+name|TRC
+parameter_list|(
+name|x
+parameter_list|)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* prototypes */
@@ -816,30 +874,11 @@ operator|==
 name|ST_LOADED_OK
 condition|)
 block|{
-name|mod
-operator|->
-name|state
-operator|=
-name|ST_UNLOAD_REQUESTED
-expr_stmt|;
-name|gimp_module_ref
+name|mod_unload
 argument_list|(
 name|mod
-argument_list|)
-expr_stmt|;
-name|mod
-operator|->
-name|unload
-argument_list|(
-name|mod
-operator|->
-name|info
-operator|->
-name|shutdown_data
 argument_list|,
-name|free_a_single_module_cb
-argument_list|,
-name|mod
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1452,7 +1491,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a4798bc0408
+DECL|struct|__anon27bc3bcd0408
 typedef|typedef
 struct|struct
 block|{
@@ -1467,7 +1506,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2a4798bc0503
+DECL|enum|__anon27bc3bcd0503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -1510,6 +1549,16 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+comment|/* if this trips, then we're onto some serious lossage in a moment */
+name|g_return_if_fail
+argument_list|(
+name|mod
+operator|->
+name|refs
+operator|==
+literal|0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|mod
@@ -1804,24 +1853,10 @@ name|len
 decl_stmt|;
 name|basename
 operator|=
-name|strrchr
+name|g_basename
 argument_list|(
 name|filename
-argument_list|,
-name|G_DIR_SEPARATOR
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|basename
-condition|)
-name|basename
-operator|++
-expr_stmt|;
-else|else
-name|basename
-operator|=
-name|filename
 expr_stmt|;
 name|len
 operator|=
@@ -1888,6 +1923,17 @@ name|FALSE
 return|;
 else|#
 directive|else
+if|if
+condition|(
+name|len
+operator|<
+literal|1
+operator|+
+literal|4
+condition|)
+return|return
+name|FALSE
+return|;
 if|if
 condition|(
 name|g_strcasecmp
@@ -1964,6 +2010,13 @@ operator|->
 name|ondisk
 operator|=
 name|TRUE
+expr_stmt|;
+comment|/* Count of times main gimp is within the module.  Normally, this    * will be 1, and we assume that the module won't call its    * unload callback until it is satisfied that it's not in use any    * more.  refs can be 2 temporarily while we're running the module's    * unload function, to stop the module attempting to unload    * itself. */
+name|mod
+operator|->
+name|refs
+operator|=
+literal|0
 expr_stmt|;
 if|if
 condition|(
@@ -2234,6 +2287,12 @@ name|info
 operator|=
 name|NULL
 expr_stmt|;
+name|gimp_module_ref
+argument_list|(
+name|mod
+argument_list|)
+expr_stmt|;
+comment|/* loaded modules are assumed to have a ref of 1 */
 if|if
 condition|(
 name|mod
@@ -2255,18 +2314,10 @@ name|state
 operator|=
 name|ST_LOAD_FAILED
 expr_stmt|;
-name|g_module_close
+name|gimp_module_unref
 argument_list|(
 name|mod
-operator|->
-name|module
 argument_list|)
-expr_stmt|;
-name|mod
-operator|->
-name|module
-operator|=
-name|NULL
 expr_stmt|;
 name|mod
 operator|->
@@ -2282,6 +2333,19 @@ operator|->
 name|state
 operator|=
 name|ST_LOADED_OK
+expr_stmt|;
+name|TRC
+argument_list|(
+operator|(
+literal|"loaded module %s, state at %p\n"
+operator|,
+name|mod
+operator|->
+name|fullpath
+operator|,
+name|mod
+operator|)
+argument_list|)
 expr_stmt|;
 comment|/* do we have an unload function? */
 if|if
@@ -2340,29 +2404,12 @@ operator|==
 name|ST_UNLOAD_REQUESTED
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|mod
-operator|->
-name|refs
-operator|==
-literal|0
-condition|)
-block|{
-name|g_module_close
+comment|/* lose the ref we gave this module when we loaded it,    * since the module's now happy to be unloaded. */
+name|gimp_module_unref
 argument_list|(
 name|mod
-operator|->
-name|module
 argument_list|)
 expr_stmt|;
-name|mod
-operator|->
-name|module
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|mod
 operator|->
 name|info
@@ -2374,6 +2421,15 @@ operator|->
 name|state
 operator|=
 name|ST_UNLOADED_OK
+expr_stmt|;
+name|TRC
+argument_list|(
+operator|(
+literal|"module unload completed callback for %p\n"
+operator|,
+name|mod
+operator|)
+argument_list|)
 expr_stmt|;
 name|module_info_modified
 argument_list|(
@@ -2430,7 +2486,16 @@ name|state
 operator|=
 name|ST_UNLOAD_REQUESTED
 expr_stmt|;
-comment|/* send the unload request.  Need to ref the module so we don't    * accidentally unload it while this call is in progress (eg if the    * callback is called before the unload function returns). */
+name|TRC
+argument_list|(
+operator|(
+literal|"module unload requested for %p\n"
+operator|,
+name|mod
+operator|)
+argument_list|)
+expr_stmt|;
+comment|/* Send the unload request.  Need to ref the module so we don't    * accidentally unload it while this call is in progress (eg if the    * callback is called before the unload function returns). */
 name|gimp_module_ref
 argument_list|(
 name|mod
@@ -3887,7 +3952,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a4798bc0608
+DECL|struct|__anon27bc3bcd0608
 typedef|typedef
 struct|struct
 block|{
@@ -4145,6 +4210,15 @@ operator|==
 literal|0
 condition|)
 block|{
+name|TRC
+argument_list|(
+operator|(
+literal|"module %p refs hit 0, g_module_closing it\n"
+operator|,
+name|mod
+operator|)
+argument_list|)
+expr_stmt|;
 name|g_module_close
 argument_list|(
 name|mod
