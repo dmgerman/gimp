@@ -673,18 +673,16 @@ block|{
 name|GimpThresholdTool
 modifier|*
 name|t_tool
+init|=
+name|GIMP_THRESHOLD_TOOL
+argument_list|(
+name|tool
+argument_list|)
 decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|t_tool
-operator|=
-name|GIMP_THRESHOLD_TOOL
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
 name|drawable
 operator|=
 name|gimp_image_active_drawable
@@ -694,6 +692,12 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|drawable
+condition|)
+return|return;
 if|if
 condition|(
 name|gimp_drawable_is_indexed
@@ -706,7 +710,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Threshold does not operate on indexed drawables."
+literal|"Threshold does not operate on indexed layers."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -929,6 +933,11 @@ block|{
 name|GimpThresholdTool
 modifier|*
 name|t_tool
+init|=
+name|GIMP_THRESHOLD_TOOL
+argument_list|(
+name|image_map_tool
+argument_list|)
 decl_stmt|;
 name|GimpToolOptions
 modifier|*
@@ -938,13 +947,6 @@ name|GtkWidget
 modifier|*
 name|box
 decl_stmt|;
-name|t_tool
-operator|=
-name|GIMP_THRESHOLD_TOOL
-argument_list|(
-name|image_map_tool
-argument_list|)
-expr_stmt|;
 name|box
 operator|=
 name|gimp_histogram_box_new
