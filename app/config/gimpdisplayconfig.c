@@ -213,7 +213,7 @@ DECL|macro|DEFAULT_IMAGE_TITLE_FORMAT
 define|#
 directive|define
 name|DEFAULT_IMAGE_TITLE_FORMAT
-value|"%D*%f-%p.%i (%t, %L) %z%%"
+value|"%D*%f-%p.%i (%t, %L) %wx%h"
 end_define
 
 begin_define
@@ -234,7 +234,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e6d5090103
+DECL|enum|__anon29d7e4900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -4881,9 +4881,9 @@ argument_list|)
 argument_list|,
 name|editor
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -6893,7 +6893,7 @@ literal|"%f-%p.%i (%t) %z%%"
 block|,
 literal|"%f-%p.%i (%t) %d:%s"
 block|,
-literal|"%f-%p.%i (%t) %s:%d"
+literal|"%f-%p.%i (%t) %wx%h"
 block|,
 literal|"%f-%p.%i (%t) %m"
 block|}
@@ -6927,7 +6927,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Show reversed zoom ratio"
+literal|"Show image size"
 argument_list|)
 block|,
 name|N_
@@ -6937,7 +6937,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28c671a90108
+DECL|struct|__anon28c257460108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9378,7 +9378,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28c671a90208
+DECL|struct|__anon28c257460208
 block|{
 DECL|member|label
 specifier|const
@@ -9537,7 +9537,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28c671a90308
+DECL|struct|__anon28c257460308
 block|{
 DECL|member|tree_label
 specifier|const
