@@ -2187,7 +2187,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Translate Selection"
+literal|"Move Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2197,11 +2197,14 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_channel_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|,
 name|off_x

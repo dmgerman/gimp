@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291135f90103
+DECL|enum|__anon299296e60103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -258,6 +258,9 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1266,7 +1269,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_real_translate (GimpItem * item,gint offset_x,gint offset_y)
+DECL|function|gimp_item_real_translate (GimpItem * item,gint offset_x,gint offset_y,gboolean push_undo)
 name|gimp_item_real_translate
 parameter_list|(
 name|GimpItem
@@ -1278,6 +1281,9 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|item
@@ -1996,24 +2002,6 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|push_undo
-condition|)
-name|gimp_image_undo_push_item_displace
-argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-argument_list|,
-name|item_class
-operator|->
-name|translate_desc
-argument_list|,
-name|item
-argument_list|)
-expr_stmt|;
 name|item_class
 operator|->
 name|translate
@@ -2023,6 +2011,8 @@ argument_list|,
 name|off_x
 argument_list|,
 name|off_y
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 block|}

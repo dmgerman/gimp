@@ -737,26 +737,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_channel_translate
-parameter_list|(
-name|GimpChannel
-modifier|*
-name|mask
-parameter_list|,
-name|gint
-name|off_x
-parameter_list|,
-name|gint
-name|off_y
-parameter_list|,
-name|gboolean
-name|push_undo
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_channel_load
 parameter_list|(
 name|GimpChannel
