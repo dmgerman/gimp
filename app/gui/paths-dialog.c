@@ -1271,6 +1271,13 @@ argument_list|,
 name|pp
 argument_list|)
 expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"Edit Path Attributes..."
+argument_list|,
+name|pp
+argument_list|)
+expr_stmt|;
 comment|/*  new point  */
 name|SET_POINT_SENSITIVE
 argument_list|(
@@ -5324,7 +5331,7 @@ name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Rename path"
+literal|"Edit Path Attributes"
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
@@ -7215,6 +7222,37 @@ operator|->
 name|current_path_list
 argument_list|,
 name|bzp
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|paths_dialog_edit_path_attributes_callback (GtkWidget * widget,gpointer data)
+name|paths_dialog_edit_path_attributes_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+if|if
+condition|(
+name|paths_dialog
+operator|&&
+name|paths_dialog
+operator|->
+name|paths_list
+condition|)
+name|paths_dialog_edit_path_query
+argument_list|(
+name|paths_dialog
+operator|->
+name|paths_list
 argument_list|)
 expr_stmt|;
 block|}
