@@ -1498,6 +1498,15 @@ operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
+name|gtk_widget_set_name
+argument_list|(
+name|gdisp
+operator|->
+name|canvas
+argument_list|,
+literal|"gimp-canvas"
+argument_list|)
+expr_stmt|;
 name|gtk_drawing_area_size
 argument_list|(
 name|GTK_DRAWING_AREA

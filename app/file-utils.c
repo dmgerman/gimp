@@ -2674,12 +2674,11 @@ argument_list|)
 expr_stmt|;
 name|filename
 operator|=
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|full_source_filename
 argument_list|)
 expr_stmt|;
-comment|/* Don't free! */
 name|xvpathname
 operator|=
 name|g_strconcat
@@ -2745,6 +2744,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|pathname
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|g_free

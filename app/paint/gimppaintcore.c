@@ -245,7 +245,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef113b0103
+DECL|enum|__anon2b4108160103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -1467,28 +1467,33 @@ name|draw_line
 operator|=
 name|FALSE
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME tilt, pressure
+warning|FIXME: tilt, pressure
+endif|#
+directive|endif
 name|paint_tool
 operator|->
 name|curpressure
 operator|=
-literal|0
+literal|1.0
 expr_stmt|;
 comment|/* bevent->pressure; */
 name|paint_tool
 operator|->
 name|curxtilt
 operator|=
-literal|0
+literal|0.5
 expr_stmt|;
 comment|/* bevent->xtilt; */
 name|paint_tool
 operator|->
 name|curytilt
 operator|=
-literal|0
+literal|0.5
 expr_stmt|;
 comment|/* bevent->ytilt; */
 name|paint_tool
@@ -2449,28 +2454,33 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+ifdef|#
+directive|ifdef
+name|__GNUC__
 warning|#
 directive|warning
 warning|FIXME: tilt, pressure
+endif|#
+directive|endif
 name|paint_tool
 operator|->
 name|curpressure
 operator|=
-literal|0
+literal|1.0
 expr_stmt|;
 comment|/* mevent->pressure; */
 name|paint_tool
 operator|->
 name|curxtilt
 operator|=
-literal|0
+literal|0.5
 expr_stmt|;
 comment|/* mevent->xtilt; */
 name|paint_tool
 operator|->
 name|curytilt
 operator|=
-literal|0
+literal|0.5
 expr_stmt|;
 comment|/* mevent->ytilt; */
 name|paint_tool

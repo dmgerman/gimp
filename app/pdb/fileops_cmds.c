@@ -842,7 +842,7 @@ argument_list|)
 expr_stmt|;
 name|fname
 operator|=
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|filename
 argument_list|)
@@ -867,6 +867,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|pname
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|fname
 argument_list|)
 expr_stmt|;
 name|raw_thumb

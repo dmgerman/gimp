@@ -4895,11 +4895,11 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-literal|0
+literal|1.0
 argument_list|,
-literal|0
+literal|0.5
 argument_list|,
-literal|0
+literal|0.5
 argument_list|,
 comment|/* bevent->pressure, bevent->xtilt, bevent->ytilt, */
 literal|10.0
@@ -5640,7 +5640,7 @@ directive|warning
 warning|FIXME: tilt, pressure
 name|pressure
 operator|=
-literal|0
+literal|1.0
 expr_stmt|;
 comment|/* mevent->pressure; */
 name|velocity
@@ -5676,9 +5676,9 @@ name|y
 argument_list|,
 name|pressure
 argument_list|,
-literal|0
+literal|0.5
 argument_list|,
-literal|0
+literal|0.5
 argument_list|,
 comment|/* mevent->xtilt, mevent->ytilt, */
 name|velocity
@@ -6389,7 +6389,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29e9b1470103
+DECL|enum|__anon29371b210103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
