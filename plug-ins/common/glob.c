@@ -193,7 +193,9 @@ literal|"This can be useful in scripts and other plugins "
 literal|"(e.g., batch-conversion). See the glob(7) manpage "
 literal|"for more info. Note however that this isn't a "
 literal|"full-featured glob implementation. It only handles "
-literal|"simple patterns like \"/home/foo/bar/*.jpg\"."
+literal|"simple patterns like \"/home/foo/bar/*.jpg\". "
+literal|"The pattern is expected to be in UTF-8 encoding "
+literal|"and all returned names are UTF-8 encoded as well."
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
