@@ -1214,12 +1214,31 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Save As..."
+literal|"/File/Save as..."
 argument_list|)
 block|,
 name|NULL
 block|,
 name|file_save_as_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+literal|"file/dialogs/file_save.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/File/Save a Copy as..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|file_save_a_copy_as_cmd_callback
 block|,
 literal|0
 block|}

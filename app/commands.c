@@ -240,6 +240,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layers_dialogP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"module_db.h"
 end_include
 
@@ -347,23 +353,6 @@ parameter_list|)
 define|\
 value|gdisp = gdisplay_active (); \         if (!gdisp) return
 end_define
-
-begin_comment
-comment|/*  external functions  */
-end_comment
-
-begin_function_decl
-specifier|extern
-name|void
-name|layers_dialog_layer_merge_query
-parameter_list|(
-name|GImage
-modifier|*
-parameter_list|,
-name|gboolean
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  local functions  */
@@ -581,6 +570,29 @@ name|client_data
 parameter_list|)
 block|{
 name|file_save_as_callback
+argument_list|(
+name|widget
+argument_list|,
+name|client_data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|file_save_a_copy_as_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|file_save_a_copy_as_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|file_save_a_copy_as_callback
 argument_list|(
 name|widget
 argument_list|,

@@ -8027,7 +8027,16 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"File/Save As..."
+literal|"File/Save as..."
+argument_list|,
+name|gdisp
+operator|&&
+name|drawable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"File/Save a Copy as..."
 argument_list|,
 name|gdisp
 operator|&&
