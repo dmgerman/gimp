@@ -2572,6 +2572,16 @@ name|widget
 operator|->
 name|window
 argument_list|,
+operator|(
+name|dockable
+operator|->
+name|blink_counter
+operator|&
+literal|1
+operator|)
+condition|?
+name|GTK_STATE_SELECTED
+else|:
 name|widget
 operator|->
 name|state
