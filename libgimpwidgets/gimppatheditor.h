@@ -160,13 +160,13 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+comment|/* For information look into the C source or the html documentation */
 name|GtkType
 name|gimp_path_editor_get_type
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-comment|/*  creates a new GimpPathEditor widget  */
 name|GtkWidget
 modifier|*
 name|gimp_path_editor_new
@@ -180,7 +180,6 @@ modifier|*
 name|path
 parameter_list|)
 function_decl|;
-comment|/*  it's up to the caller to g_free() the returned string  */
 name|gchar
 modifier|*
 name|gimp_path_editor_get_path

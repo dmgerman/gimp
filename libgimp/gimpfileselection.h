@@ -89,7 +89,7 @@ struct|struct
 name|_GimpFileSelection
 block|{
 DECL|member|hbox
-name|GtkVBox
+name|GtkHBox
 name|hbox
 decl_stmt|;
 DECL|member|file_exists
@@ -169,13 +169,13 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+comment|/* For information look into the C source or the html documentation */
 name|GtkType
 name|gimp_file_selection_get_type
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-comment|/*  creates a new GimpFileSelection widget  *  *  dir_only    == TRUE  will allow only directories  *  check_valid == TRUE  will show a pixmap which indicates if  *                       the filename is valid  */
 name|GtkWidget
 modifier|*
 name|gimp_file_selection_new
@@ -195,7 +195,6 @@ name|gboolean
 name|check_valid
 parameter_list|)
 function_decl|;
-comment|/*  it's up to the caller to g_free() the returned string  */
 name|gchar
 modifier|*
 name|gimp_file_selection_get_filename

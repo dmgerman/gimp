@@ -159,7 +159,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa4f3720103
+DECL|enum|__anon29696a090103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -759,6 +759,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_path_editor_new:  * @filesel_title: The title of the #GtkFileSelection dialog which can be  *                 popped up by the attached #GimpFileSelection.  * @path: The initial search path.  *  * Creates a new #GimpPathEditor widget.  *  * The elements of the initial search path must be separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Returns: A pointer to the new #GimpPathEditor widget.  *  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -1100,7 +1104,6 @@ name|GtkWidget
 modifier|*
 name|gtk_pixmap
 decl_stmt|;
-comment|/* GList          *list = NULL; */
 name|gpe
 operator|=
 name|GIMP_PATH_EDITOR
@@ -1399,6 +1402,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_path_editor_get_path:  * @gpe: The path editor you want to get the search path from.  *  * The elements of the returned search path string are separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Note that you have to g_free() the returned string.  *  * Returns: The search path the user has selected in the path editor.  *  */
+end_comment
 
 begin_function
 name|gchar
@@ -1916,7 +1923,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* gtk_editable_select_region (GTK_EDITABLE (gpe->entry), 0, -1); */
 name|gtk_widget_grab_focus
 argument_list|(
 name|GTK_WIDGET
