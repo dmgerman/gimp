@@ -3355,6 +3355,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|active_drawable
+condition|)
+block|{
+if|if
+condition|(
 name|t_x
 operator|<
 literal|0
@@ -3416,6 +3421,7 @@ argument_list|,
 name|buffer
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gdisp
 operator|->
