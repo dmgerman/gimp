@@ -208,8 +208,8 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
-name|tool_action
+name|GimpToolAction
+name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -710,14 +710,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_move_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
 name|gimp_move_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay

@@ -208,7 +208,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -651,14 +651,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_paint_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
 name|gimp_paint_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -734,6 +734,15 @@ operator|->
 name|core
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/*  evil hack i'm thinking about...  --mitch  */
+block|{
+comment|/*  HALT means the current display is going to go away (TM),          *  so try to find another display of the same image to make          *  straight line drawing continue to work...          */
+block|GSList *list;          for (list = display_list; list; list = g_slist_next (list))           {             GimpDisplay *tmp_disp;              tmp_disp = (GimpDisplay *) list->data;              if (tmp_disp != gdisp&& tmp_disp->gimage == gdisp->gimage)               {                 tool->gdisp = tmp_disp;                 break;               }           }       }
+endif|#
+directive|endif
 break|break;
 default|default:
 break|break;
@@ -800,15 +809,17 @@ name|GimpBrush
 modifier|*
 name|current_brush
 decl_stmt|;
-name|gboolean
-name|draw_line
-decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 name|GimpCoords
 name|curr_coords
+decl_stmt|;
+name|gboolean
+name|draw_line
+init|=
+name|FALSE
 decl_stmt|;
 name|draw_tool
 operator|=
@@ -899,6 +910,37 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|tool
+operator|->
+name|gdisp
+operator|&&
+name|tool
+operator|->
+name|gdisp
+operator|!=
+name|gdisp
+operator|&&
+name|tool
+operator|->
+name|gdisp
+operator|->
+name|gimage
+operator|==
+name|gdisp
+operator|->
+name|gimage
+condition|)
+block|{
+comment|/*  if this is a different display, but the same image, HACK around        *  in tool internals AFTER stopping the current draw_tool, so        *  straight line drawing works across different views of the        *  same image.        */
+name|tool
+operator|->
+name|gdisp
+operator|=
+name|gdisp
+expr_stmt|;
+block|}
+if|if
+condition|(
 operator|!
 name|gimp_paint_core_start
 argument_list|(
@@ -911,10 +953,6 @@ name|curr_coords
 argument_list|)
 condition|)
 return|return;
-name|draw_line
-operator|=
-name|FALSE
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -998,12 +1036,6 @@ operator|->
 name|gdisp
 operator|=
 name|gdisp
-expr_stmt|;
-name|tool
-operator|->
-name|paused_count
-operator|=
-literal|0
 expr_stmt|;
 comment|/*  pause the current selection  */
 name|gimp_image_selection_control
@@ -1658,6 +1690,37 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tool
+operator|->
+name|gdisp
+operator|&&
+name|tool
+operator|->
+name|gdisp
+operator|!=
+name|gdisp
+operator|&&
+name|tool
+operator|->
+name|gdisp
+operator|->
+name|gimage
+operator|==
+name|gdisp
+operator|->
+name|gimage
+condition|)
+block|{
+comment|/*  if this is a different display, but the same image, HACK around        *  in tool internals AFTER stopping the current draw_tool, so        *  straight line drawing works across different views of the        *  same image.        */
+name|tool
+operator|->
+name|gdisp
+operator|=
+name|gdisp
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|(

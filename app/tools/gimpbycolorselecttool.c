@@ -340,7 +340,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -943,14 +943,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
+DECL|function|by_color_select_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
 name|by_color_select_control
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -992,6 +992,20 @@ break|break;
 default|default:
 break|break;
 block|}
+name|GIMP_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|control
+argument_list|(
+name|tool
+argument_list|,
+name|action
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

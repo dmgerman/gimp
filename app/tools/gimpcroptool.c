@@ -159,7 +159,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5d105b0103
+DECL|enum|__anon28a7d7e20103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -288,7 +288,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -1076,14 +1076,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_crop_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
 name|gimp_crop_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay

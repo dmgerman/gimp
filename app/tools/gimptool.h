@@ -140,54 +140,54 @@ DECL|member|ID
 name|gint
 name|ID
 decl_stmt|;
-comment|/*  unique tool ID                              */
+comment|/*  unique tool ID                             */
 DECL|member|state
-name|ToolState
+name|GimpToolState
 name|state
 decl_stmt|;
-comment|/*  state of tool activity                      */
+comment|/*  state of tool activity                     */
 DECL|member|paused_count
 name|gint
 name|paused_count
 decl_stmt|;
-comment|/*  paused control count                        */
-DECL|member|scroll_lock
-name|gboolean
-name|scroll_lock
-decl_stmt|;
-comment|/*  allow scrolling or not                      */
-DECL|member|auto_snap_to
-name|gboolean
-name|auto_snap_to
-decl_stmt|;
-comment|/*  snap to guides automatically                */
-DECL|member|handle_empty_image
-name|gboolean
-name|handle_empty_image
-decl_stmt|;
-comment|/*  invoke the tool on images without                                      *  active drawable                                      */
-DECL|member|perfectmouse
-name|gboolean
-name|perfectmouse
-decl_stmt|;
-comment|/*  tool is affected by gimprc's                                      *  "prefectmouse" setting                                      */
-DECL|member|preserve
-name|gboolean
-name|preserve
-decl_stmt|;
-comment|/*  Preserve this tool across drawable changes  */
+comment|/*  paused control count                       */
 DECL|member|gdisp
 name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-comment|/*  pointer to currently active gdisp           */
+comment|/*  pointer to currently active gdisp          */
 DECL|member|drawable
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-comment|/*  pointer to the tool's current drawable      */
+comment|/*  pointer to the tool's current drawable     */
+DECL|member|scroll_lock
+name|gboolean
+name|scroll_lock
+decl_stmt|;
+comment|/*  allow scrolling or not               */
+DECL|member|auto_snap_to
+name|gboolean
+name|auto_snap_to
+decl_stmt|;
+comment|/*  snap to guides automatically         */
+DECL|member|preserve
+name|gboolean
+name|preserve
+decl_stmt|;
+comment|/*  Preserve this tool across drawable   *                                       *  changes                              */
+DECL|member|handle_empty_image
+name|gboolean
+name|handle_empty_image
+decl_stmt|;
+comment|/*  invoke the tool on images without    *                                       *  active drawable                      */
+DECL|member|perfectmouse
+name|gboolean
+name|perfectmouse
+decl_stmt|;
+comment|/*  tool is affected by gimprc's         *                                       *  "prefectmouse" setting               */
 DECL|member|cursor
 name|GdkCursorType
 name|cursor
@@ -257,7 +257,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -471,7 +471,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay

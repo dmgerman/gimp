@@ -411,8 +411,8 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
-name|tool_action
+name|GimpToolAction
+name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1392,14 +1392,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ink_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_ink_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
 name|gimp_ink_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -1441,6 +1441,20 @@ break|break;
 default|default:
 break|break;
 block|}
+name|GIMP_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|control
+argument_list|(
+name|tool
+argument_list|,
+name|action
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1539,12 +1553,6 @@ operator|->
 name|gdisp
 operator|=
 name|gdisp
-expr_stmt|;
-name|tool
-operator|->
-name|paused_count
-operator|=
-literal|0
 expr_stmt|;
 comment|/*  pause the current selection  */
 name|gimp_image_selection_control
@@ -4631,7 +4639,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon277d131f0103
+DECL|enum|__anon2a954f5f0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c137bd90108
+DECL|struct|__anon29c754360108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c137bd90208
+DECL|struct|__anon29c754360208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c137bd90308
+DECL|struct|__anon29c754360308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -511,7 +511,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -7016,14 +7016,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bezier_select_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_bezier_select_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
 name|gimp_bezier_select_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -10887,12 +10887,6 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
-expr_stmt|;
-name|tool
-operator|->
-name|paused_count
-operator|=
-literal|0
 expr_stmt|;
 name|bezier_select_reset
 argument_list|(

@@ -128,7 +128,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay

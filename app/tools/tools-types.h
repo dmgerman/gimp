@@ -246,7 +246,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c04ec8e0103
+DECL|enum|__anon2b79f9370103
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -290,16 +290,16 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c04ec8e0203
+DECL|enum|__anon2b79f9370203
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
 block|,
 DECL|enumerator|ACTIVE
 name|ACTIVE
-DECL|typedef|ToolState
+DECL|typedef|GimpToolState
 block|}
-name|ToolState
+name|GimpToolState
 typedef|;
 end_typedef
 
@@ -311,7 +311,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c04ec8e0303
+DECL|enum|__anon2b79f9370303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -321,9 +321,9 @@ name|RESUME
 block|,
 DECL|enumerator|HALT
 name|HALT
-DECL|typedef|ToolAction
+DECL|typedef|GimpToolAction
 block|}
-name|ToolAction
+name|GimpToolAction
 typedef|;
 end_typedef
 
@@ -335,7 +335,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c04ec8e0403
+DECL|enum|__anon2b79f9370403
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -368,7 +368,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c04ec8e0503
+DECL|enum|__anon2b79f9370503
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

@@ -261,7 +261,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -936,14 +936,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_hue_saturation_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_hue_saturation_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
 name|gimp_hue_saturation_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -974,15 +974,6 @@ break|break;
 default|default:
 break|break;
 block|}
-if|if
-condition|(
-name|GIMP_TOOL_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|control
-condition|)
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class

@@ -124,8 +124,8 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
-name|tool_action
+name|GimpToolAction
+name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -518,40 +518,6 @@ literal|0
 expr_stmt|;
 name|tool
 operator|->
-name|scroll_lock
-operator|=
-name|FALSE
-expr_stmt|;
-comment|/*  Allow scrolling  */
-name|tool
-operator|->
-name|auto_snap_to
-operator|=
-name|TRUE
-expr_stmt|;
-comment|/*  Snap to guides   */
-name|tool
-operator|->
-name|handle_empty_image
-operator|=
-name|FALSE
-expr_stmt|;
-comment|/*  Don't work without                                           *  active drawable                                           */
-name|tool
-operator|->
-name|perfectmouse
-operator|=
-name|FALSE
-expr_stmt|;
-name|tool
-operator|->
-name|preserve
-operator|=
-name|TRUE
-expr_stmt|;
-comment|/*  Preserve across drawable                                           *  changes                                           */
-name|tool
-operator|->
 name|gdisp
 operator|=
 name|NULL
@@ -562,6 +528,41 @@ name|drawable
 operator|=
 name|NULL
 expr_stmt|;
+name|tool
+operator|->
+name|scroll_lock
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  Allow scrolling                  */
+name|tool
+operator|->
+name|auto_snap_to
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/*  Snap to guides                   */
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/*  Preserve across drawable change  */
+name|tool
+operator|->
+name|handle_empty_image
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  Require active drawable          */
+name|tool
+operator|->
+name|perfectmouse
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  Use MOTION_HINT compression      */
 name|tool
 operator|->
 name|cursor
@@ -646,14 +647,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
+DECL|function|gimp_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
 name|gimp_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
+name|GimpToolAction
 name|action
 parameter_list|,
 name|GimpDisplay
@@ -669,6 +670,23 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|action
+condition|)
+block|{
+case|case
+name|PAUSE
+case|:
+if|if
+condition|(
+name|tool
+operator|->
+name|paused_count
+operator|==
+literal|0
+condition|)
+block|{
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -683,6 +701,96 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+block|}
+name|tool
+operator|->
+name|paused_count
+operator|++
+expr_stmt|;
+break|break;
+case|case
+name|RESUME
+case|:
+if|if
+condition|(
+name|tool
+operator|->
+name|paused_count
+operator|>
+literal|0
+condition|)
+block|{
+name|tool
+operator|->
+name|paused_count
+operator|--
+expr_stmt|;
+if|if
+condition|(
+name|tool
+operator|->
+name|paused_count
+operator|==
+literal|0
+condition|)
+block|{
+name|GIMP_TOOL_GET_CLASS
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|control
+argument_list|(
+name|tool
+argument_list|,
+name|action
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|g_warning
+argument_list|(
+literal|"gimp_tool_control(): "
+literal|"unable to RESUME tool with tool->paused_count == 0"
+argument_list|)
+expr_stmt|;
+block|}
+break|break;
+case|case
+name|HALT
+case|:
+name|GIMP_TOOL_GET_CLASS
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|control
+argument_list|(
+name|tool
+argument_list|,
+name|action
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|tool
+operator|->
+name|state
+operator|=
+name|INACTIVE
+expr_stmt|;
+name|tool
+operator|->
+name|paused_count
+operator|=
+literal|0
+expr_stmt|;
+break|break;
+block|}
 block|}
 end_function
 
@@ -1444,15 +1552,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_control (GimpTool * tool,ToolAction tool_action,GimpDisplay * gdisp)
+DECL|function|gimp_tool_real_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
 name|gimp_tool_real_control
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|ToolAction
-name|tool_action
+name|GimpToolAction
+name|action
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1717,45 +1825,6 @@ expr_stmt|;
 block|}
 block|}
 end_function
-
-begin_define
-DECL|macro|STUB (x)
-define|#
-directive|define
-name|STUB
-parameter_list|(
-name|x
-parameter_list|)
-value|void * x (void){g_message ("stub function %s called",#x); return NULL;}
-end_define
-
-begin_macro
-name|STUB
-argument_list|(
-argument|clone_non_gui
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|clone_non_gui_default
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|convolve_non_gui
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|convolve_non_gui_default
-argument_list|)
-end_macro
 
 end_unit
 
