@@ -245,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad089bd0103
+DECL|enum|__anon2b656fed0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -4722,18 +4722,6 @@ operator|->
 name|bounds_known
 operator|=
 name|TRUE
-expr_stmt|;
-comment|/*  if there is a "by color" selection dialog active    *  for this gimage's mask, send it an update notice    *    *  This should never happen... we should be using a signal to     *  do this.    */
-if|if
-condition|(
-name|gimage
-operator|->
-name|by_color_select
-condition|)
-name|gimp_by_color_select_tool_initialize_by_image
-argument_list|(
-name|gimage
-argument_list|)
 expr_stmt|;
 return|return
 name|TRUE

@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296cbca10103
+DECL|enum|__anon2b89fa910103
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -344,12 +344,6 @@ name|MAX_CHANNELS
 index|]
 decl_stmt|;
 comment|/*  active channels              */
-DECL|member|by_color_select
-name|gboolean
-name|by_color_select
-decl_stmt|;
-comment|/*  TRUE if there's an active    */
-comment|/*  "by color" selection dialog  */
 DECL|member|qmask_state
 name|gboolean
 name|qmask_state
@@ -537,6 +531,18 @@ name|gimage
 parameter_list|,
 name|ChannelType
 name|channel
+parameter_list|)
+function_decl|;
+DECL|member|mask_changed
+name|void
+function_decl|(
+modifier|*
+name|mask_changed
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 DECL|member|clean
@@ -1338,6 +1344,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_image_floating_selection_changed
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_mask_changed
 parameter_list|(
 name|GimpImage
 modifier|*

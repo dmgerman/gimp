@@ -583,6 +583,12 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+comment|/* Issue the MASK_CHANGED signal here */
+name|gimp_image_mask_changed
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
