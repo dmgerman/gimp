@@ -116,6 +116,10 @@ DECL|member|color
 name|gboolean
 name|color
 decl_stmt|;
+DECL|member|alpha
+name|gboolean
+name|alpha
+decl_stmt|;
 DECL|member|channel
 name|GimpHistogramChannel
 name|channel

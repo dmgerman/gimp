@@ -121,6 +121,10 @@ DECL|member|color
 name|gboolean
 name|color
 decl_stmt|;
+DECL|member|alpha
+name|gboolean
+name|alpha
+decl_stmt|;
 DECL|member|levels
 name|Levels
 modifier|*

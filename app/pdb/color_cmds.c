@@ -1078,6 +1078,11 @@ name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
+operator|&&
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 name|channel
 operator|=
@@ -2864,6 +2869,11 @@ name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
+operator|&&
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 name|channel
 operator|=
@@ -3410,6 +3420,11 @@ comment|/* FIXME: hack */
 if|if
 condition|(
 name|gimp_drawable_is_gray
+argument_list|(
+name|drawable
+argument_list|)
+operator|&&
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
