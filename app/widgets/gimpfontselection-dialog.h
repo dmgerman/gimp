@@ -16,19 +16,7 @@ directive|define
 name|__GIMP_FONT_SELECTION_DIALOG_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
 name|GimpFontSelectionDialog
 modifier|*
 name|gimp_font_selection_dialog_new
@@ -38,6 +26,9 @@ modifier|*
 name|fontsel
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_font_selection_dialog_destroy
 parameter_list|(
@@ -46,6 +37,9 @@ modifier|*
 name|dialog
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_font_selection_dialog_show
 parameter_list|(
@@ -54,6 +48,9 @@ modifier|*
 name|dialog
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_font_selection_dialog_set_font_desc
 parameter_list|(
@@ -66,20 +63,7 @@ modifier|*
 name|new_desc
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+end_function_decl
 
 begin_endif
 endif|#

@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278b4b680103
+DECL|enum|__anon2accfba30103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -443,7 +443,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_cclosure_marshal_VOID__INT_INT
+name|gimp_marshal_VOID__INT_INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -481,7 +481,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__INT
+name|gimp_marshal_VOID__INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -517,7 +517,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__ENUM
+name|gimp_marshal_VOID__ENUM
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

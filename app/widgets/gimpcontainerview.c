@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6c7e70103
+DECL|enum|__anon2b73eebf0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -493,7 +493,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_cclosure_marshal_VOID__OBJECT_POINTER
+name|gimp_marshal_VOID__OBJECT_POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -531,7 +531,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_cclosure_marshal_VOID__OBJECT_POINTER
+name|gimp_marshal_VOID__OBJECT_POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -569,7 +569,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_cclosure_marshal_VOID__OBJECT_POINTER
+name|gimp_marshal_VOID__OBJECT_POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

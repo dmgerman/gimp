@@ -16,60 +16,79 @@ directive|define
 name|__GIMP_PARASITE_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_define
 DECL|macro|GIMP_PARASITE_PERSISTENT
 define|#
 directive|define
 name|GIMP_PARASITE_PERSISTENT
 value|1
+end_define
+
+begin_define
 DECL|macro|GIMP_PARASITE_UNDOABLE
 define|#
 directive|define
 name|GIMP_PARASITE_UNDOABLE
 value|2
+end_define
+
+begin_define
 DECL|macro|GIMP_PARASITE_ATTACH_PARENT
 define|#
 directive|define
 name|GIMP_PARASITE_ATTACH_PARENT
 value|(0x80<< 8)
+end_define
+
+begin_define
 DECL|macro|GIMP_PARASITE_PARENT_PERSISTENT
 define|#
 directive|define
 name|GIMP_PARASITE_PARENT_PERSISTENT
 value|(GIMP_PARASITE_PERSISTENT<< 8)
+end_define
+
+begin_define
 DECL|macro|GIMP_PARASITE_PARENT_UNDOABLE
 define|#
 directive|define
 name|GIMP_PARASITE_PARENT_UNDOABLE
 value|(GIMP_PARASITE_UNDOABLE<< 8)
+end_define
+
+begin_define
 DECL|macro|GIMP_PARASITE_ATTACH_GRANDPARENT
 define|#
 directive|define
 name|GIMP_PARASITE_ATTACH_GRANDPARENT
 value|(0x80<< 16)
+end_define
+
+begin_define
 DECL|macro|GIMP_PARASITE_GRANDPARENT_PERSISTENT
 define|#
 directive|define
 name|GIMP_PARASITE_GRANDPARENT_PERSISTENT
 value|(GIMP_PARASITE_PERSISTENT<< 16)
+end_define
+
+begin_define
 DECL|macro|GIMP_PARASITE_GRANDPARENT_UNDOABLE
 define|#
 directive|define
 name|GIMP_PARASITE_GRANDPARENT_UNDOABLE
 value|(GIMP_PARASITE_UNDOABLE<< 16)
+end_define
+
+begin_struct
 DECL|struct|_GimpParasite
 struct|struct
 name|_GimpParasite
@@ -97,6 +116,9 @@ decl_stmt|;
 comment|/* a pointer to the data.  plugin is              * 		     * responsible for tracking byte order            */
 block|}
 struct|;
+end_struct
+
+begin_function_decl
 name|GimpParasite
 modifier|*
 name|gimp_parasite_new
@@ -117,6 +139,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_parasite_free
 parameter_list|(
@@ -125,6 +150,9 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpParasite
 modifier|*
 name|gimp_parasite_copy
@@ -135,6 +163,9 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_parasite_compare
 parameter_list|(
@@ -149,6 +180,9 @@ modifier|*
 name|b
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_parasite_is_type
 parameter_list|(
@@ -163,6 +197,9 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_parasite_is_persistent
 parameter_list|(
@@ -172,6 +209,9 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_parasite_is_undoable
 parameter_list|(
@@ -181,6 +221,9 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_parasite_has_flag
 parameter_list|(
@@ -193,6 +236,9 @@ name|gulong
 name|flag
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gulong
 name|gimp_parasite_flags
 parameter_list|(
@@ -202,6 +248,9 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|gchar
 modifier|*
@@ -213,6 +262,9 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gpointer
 name|gimp_parasite_data
 parameter_list|(
@@ -222,6 +274,9 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|glong
 name|gimp_parasite_data_size
 parameter_list|(
@@ -231,20 +286,11 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

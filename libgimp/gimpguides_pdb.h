@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_GUIDES_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gint32
 name|gimp_image_add_hguide
@@ -44,6 +33,9 @@ name|gint
 name|yposition
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_add_vguide
 parameter_list|(
@@ -54,6 +46,9 @@ name|gint
 name|xposition
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_delete_guide
 parameter_list|(
@@ -64,6 +59,9 @@ name|gint32
 name|guide_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_find_next_guide
 parameter_list|(
@@ -74,6 +72,9 @@ name|gint32
 name|guide_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpOrientationType
 name|gimp_image_get_guide_orientation
 parameter_list|(
@@ -84,6 +85,9 @@ name|gint32
 name|guide_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_image_get_guide_position
 parameter_list|(
@@ -94,20 +98,11 @@ name|gint32
 name|guide_ID
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

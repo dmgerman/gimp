@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b5d51d0103
+DECL|enum|__anon2abd831f0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -632,7 +632,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

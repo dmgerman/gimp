@@ -16,20 +16,15 @@ directive|define
 name|__GIMP_TILE_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_struct
 DECL|struct|_GimpTile
 struct|struct
 name|_GimpTile
@@ -87,6 +82,9 @@ decl_stmt|;
 comment|/* the drawable this tile came from */
 block|}
 struct|;
+end_struct
+
+begin_function_decl
 name|void
 name|gimp_tile_ref
 parameter_list|(
@@ -95,6 +93,9 @@ modifier|*
 name|tile
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_tile_ref_zero
 parameter_list|(
@@ -103,6 +104,9 @@ modifier|*
 name|tile
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_tile_unref
 parameter_list|(
@@ -114,6 +118,9 @@ name|gboolean
 name|dirty
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_tile_flush
 parameter_list|(
@@ -122,6 +129,9 @@ modifier|*
 name|tile
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_tile_cache_size
 parameter_list|(
@@ -129,6 +139,9 @@ name|gulong
 name|kilobytes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_tile_cache_ntiles
 parameter_list|(
@@ -136,32 +149,29 @@ name|gulong
 name|ntiles
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|guint
 name|gimp_tile_width
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|guint
 name|gimp_tile_height
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

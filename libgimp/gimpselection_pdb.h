@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_SELECTION_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_selection_bounds
@@ -61,6 +50,9 @@ modifier|*
 name|y2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_selection_value
 parameter_list|(
@@ -74,6 +66,9 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_is_empty
 parameter_list|(
@@ -81,6 +76,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_translate
 parameter_list|(
@@ -94,6 +92,9 @@ name|gint
 name|offy
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|_gimp_selection_float
 parameter_list|(
@@ -107,6 +108,9 @@ name|gint
 name|offy
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_clear
 parameter_list|(
@@ -114,6 +118,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_invert
 parameter_list|(
@@ -121,6 +128,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_sharpen
 parameter_list|(
@@ -128,6 +138,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_all
 parameter_list|(
@@ -135,6 +148,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_none
 parameter_list|(
@@ -142,6 +158,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_feather
 parameter_list|(
@@ -152,6 +171,9 @@ name|gdouble
 name|radius
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_border
 parameter_list|(
@@ -162,6 +184,9 @@ name|gint
 name|radius
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_grow
 parameter_list|(
@@ -172,6 +197,9 @@ name|gint
 name|steps
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_shrink
 parameter_list|(
@@ -182,6 +210,9 @@ name|gint
 name|radius
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_layer_alpha
 parameter_list|(
@@ -189,6 +220,9 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_load
 parameter_list|(
@@ -196,6 +230,9 @@ name|gint32
 name|channel_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_selection_save
 parameter_list|(
@@ -203,6 +240,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_selection_combine
 parameter_list|(
@@ -213,20 +253,11 @@ name|GimpChannelOps
 name|operation
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

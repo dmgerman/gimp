@@ -4900,7 +4900,7 @@ name|gchar
 modifier|*
 name|path
 init|=
-name|gimp_strescape
+name|g_strescape
 argument_list|(
 literal|"${gimp_dir}"
 name|G_DIR_SEPARATOR_S

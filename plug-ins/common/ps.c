@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a073e140108
+DECL|struct|__anon2b9367070108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a073e140208
+DECL|struct|__anon2b9367070208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a073e140308
+DECL|struct|__anon2b9367070308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a073e140408
+DECL|struct|__anon2b9367070408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a073e140508
+DECL|struct|__anon2b9367070508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a073e140608
+DECL|struct|__anon2b9367070608
 block|{
 DECL|member|eol
 name|long
@@ -6206,7 +6206,7 @@ name|filename
 operator|=
 name|fnbuf
 operator|=
-name|gimp_strescape
+name|g_strescape
 argument_list|(
 name|filename
 argument_list|,

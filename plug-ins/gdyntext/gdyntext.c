@@ -1389,7 +1389,7 @@ name|gchar
 modifier|*
 name|text
 init|=
-name|gimp_strcompress
+name|g_strcompress
 argument_list|(
 name|data
 operator|->
@@ -1467,7 +1467,7 @@ name|parasite
 decl_stmt|;
 name|text
 operator|=
-name|gimp_strescape
+name|g_strescape
 argument_list|(
 name|data
 operator|->

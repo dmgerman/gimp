@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_TRANSFORM_TOOLS_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gint32
 name|gimp_flip
@@ -44,6 +33,9 @@ name|GimpOrientationType
 name|flip_type
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_perspective
 parameter_list|(
@@ -78,6 +70,9 @@ name|gdouble
 name|y3
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_rotate
 parameter_list|(
@@ -91,6 +86,9 @@ name|gdouble
 name|angle
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_scale
 parameter_list|(
@@ -113,6 +111,9 @@ name|gdouble
 name|y1
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_shear
 parameter_list|(
@@ -129,6 +130,9 @@ name|gdouble
 name|magnitude
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_transform_2d
 parameter_list|(
@@ -160,20 +164,11 @@ name|gdouble
 name|dest_y
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -184,19 +184,8 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_decl_stmt
+name|G_BEGIN_DECLS
 DECL|macro|gimp_get_data
 define|#
 directive|define
@@ -217,22 +206,34 @@ name|GIMPVAR
 name|guint
 name|gimp_major_version
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|gimp_minor_version
 name|GIMPVAR
 name|guint
 name|gimp_minor_version
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|gimp_micro_version
 name|GIMPVAR
 name|guint
 name|gimp_micro_version
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|_readchannel
 name|GIMPVAR
 name|GIOChannel
 modifier|*
 name|_readchannel
 decl_stmt|;
+end_decl_stmt
+
+begin_typedef
 DECL|typedef|GimpInitProc
 typedef|typedef
 name|void
@@ -244,6 +245,9 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpQuitProc
 typedef|typedef
 name|void
@@ -255,6 +259,9 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpQueryProc
 typedef|typedef
 name|void
@@ -266,6 +273,9 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpRunProc
 typedef|typedef
 name|void
@@ -295,6 +305,9 @@ modifier|*
 name|return_vals
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpPlugInInfo
 struct|struct
 name|_GimpPlugInInfo
@@ -321,6 +334,9 @@ name|run_proc
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpParamDef
 struct|struct
 name|_GimpParamDef
@@ -341,6 +357,9 @@ name|description
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpParamRegion
 struct|struct
 name|_GimpParamRegion
@@ -363,6 +382,9 @@ name|height
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_union
 DECL|union|_GimpParamData
 union|union
 name|_GimpParamData
@@ -476,6 +498,9 @@ name|d_status
 decl_stmt|;
 block|}
 union|;
+end_union
+
+begin_struct
 DECL|struct|_GimpParam
 struct|struct
 name|_GimpParam
@@ -490,17 +515,15 @@ name|data
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_ifdef
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-ifdef|#
-directive|ifdef
-name|__cplusplus
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
+end_ifdef
+
+begin_function_decl
 name|void
 name|set_gimp_PLUG_IN_INFO_PTR
 parameter_list|(
@@ -508,28 +531,43 @@ name|GimpPlugInInfo
 modifier|*
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-endif|#
-directive|endif
+end_function_decl
+
+begin_comment
 comment|/* Define WinMain() because plug-ins are built as GUI applications. Also  * define a main() in case some plug-in still is built as a console  * application.  */
+end_comment
+
+begin_ifdef
 ifdef|#
 directive|ifdef
 name|__GNUC__
+end_ifdef
+
+begin_ifndef
 ifndef|#
 directive|ifndef
 name|_stdcall
+end_ifndef
+
+begin_define
 DECL|macro|_stdcall
 define|#
 directive|define
 name|_stdcall
 value|__attribute__((stdcall))
+end_define
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_define
 DECL|macro|MAIN ()
 define|#
 directive|define
@@ -537,11 +575,20 @@ name|MAIN
 parameter_list|()
 define|\
 value|static int				\    win32_gimp_main (int argc, char **argv)	\    {					\      set_gimp_PLUG_IN_INFO_PTR(&PLUG_IN_INFO);	\      return gimp_main (argc, argv);	\    }					\ 					\    struct HINSTANCE__;			\    int _stdcall				\    WinMain (struct HINSTANCE__ *hInstance, \ 	    struct HINSTANCE__ *hPrevInstance,	\ 	    char *lpszCmdLine,		\ 	    int   nCmdShow)		\    {					\      return win32_gimp_main (__argc, __argv);	\    }					\ 					\    int					\    main (int argc, char *argv[])	\    {					\      return win32_gimp_main (argc, argv);	\    }
+end_define
+
+begin_else
 else|#
 directive|else
+end_else
+
+begin_ifndef
 ifndef|#
 directive|ifndef
 name|__EMX__
+end_ifndef
+
+begin_define
 DECL|macro|MAIN ()
 define|#
 directive|define
@@ -549,8 +596,14 @@ name|MAIN
 parameter_list|()
 define|\
 value|int					\    main (int argc, char *argv[])	\    {					\      return gimp_main (argc, argv);	\    }
+end_define
+
+begin_else
 else|#
 directive|else
+end_else
+
+begin_define
 DECL|macro|MAIN ()
 define|#
 directive|define
@@ -558,11 +611,23 @@ name|MAIN
 parameter_list|()
 define|\
 value|int						\    main (int argc, char *argv[])		\    {						\      set_gimp_PLUG_IN_INFO(&PLUG_IN_INFO);	\      return gimp_main (argc, argv);		\    }
+end_define
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_comment
 comment|/* The main procedure that should be called with the  *  'argc' and 'argv' that are passed to "main".  */
+end_comment
+
+begin_function_decl
 name|gint
 name|gimp_main
 parameter_list|(
@@ -575,7 +640,13 @@ name|argv
 index|[]
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Forcefully causes the gimp library to exit and  *  close down its connection to main gimp application.  */
+end_comment
+
+begin_function_decl
 name|void
 name|G_GNUC_NORETURN
 name|gimp_quit
@@ -583,14 +654,26 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Returns the default gdisplay (given at plug-in config time).  */
+end_comment
+
+begin_function_decl
 name|gint32
 name|gimp_default_display
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Install a procedure in the procedure database.  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_install_procedure
 parameter_list|(
@@ -644,7 +727,13 @@ modifier|*
 name|return_vals
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Install a temporary procedure in the procedure database.  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_install_temp_proc
 parameter_list|(
@@ -701,7 +790,13 @@ name|GimpRunProc
 name|run_proc
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Uninstall a temporary procedure  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_uninstall_temp_proc
 parameter_list|(
@@ -710,7 +805,13 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Run a procedure in the procedure database. The parameters are  *  specified via the variable length argument list. The return  *  values are returned in the 'GimpParam*' array.  */
+end_comment
+
+begin_function_decl
 name|GimpParam
 modifier|*
 name|gimp_run_procedure
@@ -726,7 +827,13 @@ parameter_list|,
 modifier|...
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Run a procedure in the procedure database. The parameters are  *  specified as an array of GimpParam.  The return  *  values are returned in the 'GimpParam*' array.  */
+end_comment
+
+begin_function_decl
 name|GimpParam
 modifier|*
 name|gimp_run_procedure2
@@ -747,7 +854,13 @@ modifier|*
 name|params
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Destroy the an array of parameters. This is useful for  *  destroying the return values returned by a call to  *  'gimp_run_procedure'.  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_destroy_params
 parameter_list|(
@@ -759,7 +872,13 @@ name|gint
 name|nparams
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Destroy the an array of GimpParamDef's. This is useful for  *  destroying the return values returned by a call to  *  'gimp_query_procedure'.  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_destroy_paramdefs
 parameter_list|(
@@ -771,24 +890,36 @@ name|gint
 name|nparams
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_gamma
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_install_cmap
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_min_colors
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_get_progname
@@ -796,6 +927,9 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_attach_new_parasite
 parameter_list|(
@@ -815,20 +949,11 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

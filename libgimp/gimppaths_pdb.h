@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_PATHS_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gchar
 modifier|*
@@ -47,6 +36,9 @@ modifier|*
 name|num_paths
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_path_get_points
 parameter_list|(
@@ -71,6 +63,9 @@ modifier|*
 name|points_pairs
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_path_get_current
@@ -79,6 +74,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_path_set_current
 parameter_list|(
@@ -90,6 +88,9 @@ modifier|*
 name|set_current_path_name
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_path_set_points
 parameter_list|(
@@ -111,6 +112,9 @@ modifier|*
 name|points_pairs
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_path_stroke_current
 parameter_list|(
@@ -118,6 +122,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_path_get_point_at_dist
 parameter_list|(
@@ -136,6 +143,9 @@ modifier|*
 name|gradient
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_path_get_tattoo
 parameter_list|(
@@ -147,6 +157,9 @@ modifier|*
 name|pathname
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_get_path_by_tattoo
@@ -158,6 +171,9 @@ name|gint
 name|tattoo
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_path_delete
 parameter_list|(
@@ -169,6 +185,9 @@ modifier|*
 name|path_name_to_del
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_path_get_locked
 parameter_list|(
@@ -180,6 +199,9 @@ modifier|*
 name|pathname
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_path_set_locked
 parameter_list|(
@@ -194,6 +216,9 @@ name|gint
 name|lockstatus
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_path_set_tattoo
 parameter_list|(
@@ -208,20 +233,11 @@ name|gint
 name|tattovalue
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -16,27 +16,28 @@ directive|define
 name|__GIMP_COLOR_TYPES_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_comment
 comment|/*  usually we don't keep the structure definitions in the types file  *  but GimpRGB appears in too many header files...  */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpRGB
 typedef|typedef
 name|struct
 name|_GimpRGB
 name|GimpRGB
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpRGB
 struct|struct
 name|_GimpRGB
@@ -56,12 +57,18 @@ name|a
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_typedef
 DECL|typedef|GimpHSV
 typedef|typedef
 name|struct
 name|_GimpHSV
 name|GimpHSV
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpHSV
 struct|struct
 name|_GimpHSV
@@ -81,6 +88,9 @@ name|a
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_typedef
 DECL|typedef|GimpRenderFunc
 typedef|typedef
 name|void
@@ -103,6 +113,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPutPixelFunc
 typedef|typedef
 name|void
@@ -125,6 +138,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpProgressFunc
 typedef|typedef
 name|void
@@ -146,20 +162,11 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_typedef
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

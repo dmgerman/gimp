@@ -16,19 +16,8 @@ directive|define
 name|__GIMP_COLOR_SPACE_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 comment|/*  Color conversion routines  */
 comment|/*  GimpRGB function  */
@@ -45,6 +34,9 @@ modifier|*
 name|hsv
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_to_hsl
 parameter_list|(
@@ -66,6 +58,9 @@ modifier|*
 name|lightness
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_hsv_to_rgb
 parameter_list|(
@@ -79,6 +74,9 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_hsl_to_rgb
 parameter_list|(
@@ -96,6 +94,9 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_to_hwb
 parameter_list|(
@@ -117,6 +118,9 @@ modifier|*
 name|blackness
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_hwb_to_rgb
 parameter_list|(
@@ -134,7 +138,13 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  gint functions  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_rgb_to_hsv_int
 parameter_list|(
@@ -154,6 +164,9 @@ name|blue
 comment|/* returns value      */
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_hsv_to_rgb_int
 parameter_list|(
@@ -173,6 +186,9 @@ name|value
 comment|/* returns blue       */
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_to_hls_int
 parameter_list|(
@@ -192,6 +208,9 @@ name|blue
 comment|/* returns saturation */
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_rgb_to_l_int
 parameter_list|(
@@ -205,6 +224,9 @@ name|gint
 name|blue
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_hls_to_rgb_int
 parameter_list|(
@@ -224,7 +246,13 @@ name|saturation
 comment|/* returns blue       */
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  gdouble functions  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_rgb_to_hsv_double
 parameter_list|(
@@ -244,6 +272,9 @@ name|blue
 comment|/* returns value      */
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_hsv_to_rgb_double
 parameter_list|(
@@ -263,6 +294,9 @@ name|value
 comment|/* returns blue       */
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_to_hsv4
 parameter_list|(
@@ -283,6 +317,9 @@ modifier|*
 name|blue
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_hsv_to_rgb4
 parameter_list|(
@@ -300,20 +337,11 @@ name|gdouble
 name|value
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

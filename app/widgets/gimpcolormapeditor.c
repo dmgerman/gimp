@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-render.h"
 end_include
 
@@ -123,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb1ad2b0103
+DECL|enum|__anon2c37d8430103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -629,7 +635,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

@@ -1828,9 +1828,12 @@ literal|3
 operator|)
 condition|)
 block|{
-name|gtk_widget_destroy
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|preview
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1923,9 +1926,12 @@ argument_list|(
 name|gc
 argument_list|)
 expr_stmt|;
-name|gtk_widget_unref
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|preview
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -147,14 +147,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|GType
 name|gimp_pencil_tool_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/* FIXME: Get rid of this non_gui stuff someday.  Preferably make  *        everything use it interally for ease of macro recording.  */

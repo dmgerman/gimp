@@ -20,24 +20,19 @@ directive|define
 name|__GIMP_CHAIN_BUTTON_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_CHAIN_BUTTON
 define|#
 directive|define
 name|GIMP_TYPE_CHAIN_BUTTON
 value|(gimp_chain_button_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_CHAIN_BUTTON (obj)
 define|#
 directive|define
@@ -46,6 +41,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CHAIN_BUTTON, GimpChainButton))
+end_define
+
+begin_define
 DECL|macro|GIMP_CHAIN_BUTTON_CLASS (klass)
 define|#
 directive|define
@@ -54,6 +52,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CHAIN_BUTTON, GimpChainButtonClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_CHAIN_BUTTON (obj)
 define|#
 directive|define
@@ -62,6 +63,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CHAIN_BUTTON))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_CHAIN_BUTTON_CLASS (klass)
 define|#
 directive|define
@@ -70,6 +74,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHAIN_BUTTON))
+end_define
+
+begin_define
 DECL|macro|GIMP_CHAIN_BUTTON_GET_CLASS (obj)
 define|#
 directive|define
@@ -78,15 +85,21 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CHAIN_BUTTON, GimpChainButtonClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpChainButtonClass
 typedef|typedef
 name|struct
 name|_GimpChainButtonClass
 name|GimpChainButtonClass
 typedef|;
+end_typedef
+
+begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3e778d0103
+DECL|enum|__anon2c37fe970103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -103,6 +116,9 @@ DECL|typedef|GimpChainPosition
 block|}
 name|GimpChainPosition
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpChainButton
 struct|struct
 name|_GimpChainButton
@@ -161,6 +177,9 @@ name|active
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpChainButtonClass
 struct|struct
 name|_GimpChainButtonClass
@@ -183,12 +202,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_chain_button_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_chain_button_new
@@ -197,6 +223,9 @@ name|GimpChainPosition
 name|position
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_chain_button_set_active
 parameter_list|(
@@ -208,6 +237,9 @@ name|gboolean
 name|is_active
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_chain_button_get_active
 parameter_list|(
@@ -216,20 +248,11 @@ modifier|*
 name|gcb
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

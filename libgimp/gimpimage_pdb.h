@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_IMAGE_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gint
 modifier|*
@@ -43,6 +32,9 @@ modifier|*
 name|num_images
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_new
 parameter_list|(
@@ -56,6 +48,9 @@ name|GimpImageBaseType
 name|type
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_resize
 parameter_list|(
@@ -75,6 +70,9 @@ name|gint
 name|offy
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_scale
 parameter_list|(
@@ -88,6 +86,9 @@ name|gint
 name|new_height
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_crop
 parameter_list|(
@@ -107,6 +108,9 @@ name|gint
 name|offy
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_delete
 parameter_list|(
@@ -114,6 +118,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_free_shadow
 parameter_list|(
@@ -121,6 +128,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 modifier|*
 name|gimp_image_get_layers
@@ -133,6 +143,9 @@ modifier|*
 name|num_layers
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 modifier|*
 name|gimp_image_get_channels
@@ -145,6 +158,9 @@ modifier|*
 name|num_channels
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_unset_active_channel
 parameter_list|(
@@ -152,6 +168,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_pick_correlate_layer
 parameter_list|(
@@ -165,6 +184,9 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_raise_layer
 parameter_list|(
@@ -175,6 +197,9 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_lower_layer
 parameter_list|(
@@ -185,6 +210,9 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_raise_layer_to_top
 parameter_list|(
@@ -195,6 +223,9 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_lower_layer_to_bottom
 parameter_list|(
@@ -205,6 +236,9 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_merge_visible_layers
 parameter_list|(
@@ -215,6 +249,9 @@ name|GimpMergeType
 name|merge_type
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_merge_down
 parameter_list|(
@@ -228,6 +265,9 @@ name|GimpMergeType
 name|merge_type
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_flatten
 parameter_list|(
@@ -235,6 +275,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_add_layer
 parameter_list|(
@@ -248,6 +291,9 @@ name|gint
 name|position
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_remove_layer
 parameter_list|(
@@ -258,6 +304,9 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_add_layer_mask
 parameter_list|(
@@ -271,6 +320,9 @@ name|gint32
 name|mask_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_remove_layer_mask
 parameter_list|(
@@ -284,6 +336,9 @@ name|GimpMaskApplyMode
 name|mode
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_raise_channel
 parameter_list|(
@@ -294,6 +349,9 @@ name|gint32
 name|channel_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_lower_channel
 parameter_list|(
@@ -304,6 +362,9 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_add_channel
 parameter_list|(
@@ -317,6 +378,9 @@ name|gint
 name|position
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_remove_channel
 parameter_list|(
@@ -327,6 +391,9 @@ name|gint32
 name|channel_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_active_drawable
 parameter_list|(
@@ -334,6 +401,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImageBaseType
 name|gimp_image_base_type
 parameter_list|(
@@ -341,6 +411,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|guint8
 modifier|*
 name|_gimp_image_get_cmap
@@ -353,6 +426,9 @@ modifier|*
 name|num_bytes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|_gimp_image_set_cmap
 parameter_list|(
@@ -367,6 +443,9 @@ modifier|*
 name|cmap
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_undo_is_enabled
 parameter_list|(
@@ -374,6 +453,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_undo_enable
 parameter_list|(
@@ -381,6 +463,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_undo_disable
 parameter_list|(
@@ -388,6 +473,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_undo_freeze
 parameter_list|(
@@ -395,6 +483,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_undo_thaw
 parameter_list|(
@@ -402,6 +493,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_clean_all
 parameter_list|(
@@ -409,6 +503,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_floating_selection
 parameter_list|(
@@ -416,6 +513,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_floating_sel_attached_to
 parameter_list|(
@@ -423,6 +523,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|_gimp_image_thumbnail
 parameter_list|(
@@ -457,6 +560,9 @@ modifier|*
 name|thumbnail_data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_set_tattoo_state
 parameter_list|(
@@ -467,6 +573,9 @@ name|gint
 name|tattoo
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_image_get_tattoo_state
 parameter_list|(
@@ -474,6 +583,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_duplicate
 parameter_list|(
@@ -481,6 +593,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_image_width
 parameter_list|(
@@ -488,6 +603,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_image_height
 parameter_list|(
@@ -495,6 +613,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_get_active_layer
 parameter_list|(
@@ -502,6 +623,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_set_active_layer
 parameter_list|(
@@ -512,6 +636,9 @@ name|gint32
 name|active_layer_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_get_active_channel
 parameter_list|(
@@ -519,6 +646,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_set_active_channel
 parameter_list|(
@@ -529,6 +659,9 @@ name|gint32
 name|active_channel_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_get_selection
 parameter_list|(
@@ -536,6 +669,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_get_component_active
 parameter_list|(
@@ -546,6 +682,9 @@ name|GimpChannelType
 name|component
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_set_component_active
 parameter_list|(
@@ -559,6 +698,9 @@ name|gboolean
 name|active
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_get_component_visible
 parameter_list|(
@@ -569,6 +711,9 @@ name|GimpChannelType
 name|component
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_set_component_visible
 parameter_list|(
@@ -582,6 +727,9 @@ name|gboolean
 name|visible
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_image_get_filename
@@ -590,6 +738,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_set_filename
 parameter_list|(
@@ -601,6 +752,9 @@ modifier|*
 name|filename
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_get_resolution
 parameter_list|(
@@ -616,6 +770,9 @@ modifier|*
 name|yresolution
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_set_resolution
 parameter_list|(
@@ -629,6 +786,9 @@ name|gdouble
 name|yresolution
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpUnit
 name|gimp_image_get_unit
 parameter_list|(
@@ -636,6 +796,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_image_set_unit
 parameter_list|(
@@ -646,6 +809,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
@@ -656,6 +822,9 @@ name|gint
 name|tattoo
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
@@ -666,20 +835,11 @@ name|gint
 name|tattoo
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -22,10 +22,6 @@ directive|include
 file|"gimppreview.h"
 end_include
 
-begin_macro
-name|G_BEGIN_DECLS
-end_macro
-
 begin_define
 DECL|macro|GIMP_TYPE_IMAGEFILE_PREVIEW
 define|#
@@ -133,10 +129,6 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_macro
-name|G_END_DECLS
-end_macro
 
 begin_endif
 endif|#

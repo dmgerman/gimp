@@ -22,30 +22,28 @@ directive|include
 file|<libgimpcolor/gimpcolortypes.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpParasite
 typedef|typedef
 name|struct
 name|_GimpParasite
 name|GimpParasite
 typedef|;
+end_typedef
+
+begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon276856720103
+DECL|enum|__anon2c6ea0b90103
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -86,10 +84,13 @@ DECL|typedef|GimpUnit
 block|}
 name|GimpUnit
 typedef|;
+end_typedef
+
+begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon276856720203
+DECL|enum|__anon2c6ea0b90203
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -163,10 +164,13 @@ DECL|typedef|GimpPDBArgType
 block|}
 name|GimpPDBArgType
 typedef|;
+end_typedef
+
+begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon276856720303
+DECL|enum|__anon2c6ea0b90303
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -183,10 +187,13 @@ DECL|typedef|GimpPDBProcType
 block|}
 name|GimpPDBProcType
 typedef|;
+end_typedef
+
+begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon276856720403
+DECL|enum|__anon2c6ea0b90403
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -206,20 +213,11 @@ DECL|typedef|GimpPDBStatusType
 block|}
 name|GimpPDBStatusType
 typedef|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_typedef
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

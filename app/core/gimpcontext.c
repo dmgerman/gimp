@@ -1107,7 +1107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955c14f0103
+DECL|enum|__anon2bac0b690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1156,7 +1156,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955c14f0203
+DECL|enum|__anon2bac0b690203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -1601,7 +1601,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1640,7 +1640,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1679,7 +1679,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1718,7 +1718,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1757,7 +1757,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1796,7 +1796,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__DOUBLE
+name|gimp_marshal_VOID__DOUBLE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1835,7 +1835,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__INT
+name|gimp_marshal_VOID__INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1874,7 +1874,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1913,7 +1913,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1952,7 +1952,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1991,7 +1991,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2030,7 +2030,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -2069,7 +2069,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -5456,7 +5456,7 @@ endif|#
 directive|endif
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955c14f0308
+DECL|struct|__anon2bac0b690308
 block|{
 DECL|member|foo
 name|GimpObject

@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_DRAWABLE_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_drawable_merge_shadow
@@ -44,6 +33,9 @@ name|gboolean
 name|undo
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_fill
 parameter_list|(
@@ -54,6 +46,9 @@ name|GimpFillType
 name|fill_type
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_update
 parameter_list|(
@@ -73,6 +68,9 @@ name|gint
 name|height
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_mask_bounds
 parameter_list|(
@@ -96,6 +94,9 @@ modifier|*
 name|y2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_drawable_image
 parameter_list|(
@@ -103,6 +104,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImageType
 name|gimp_drawable_type
 parameter_list|(
@@ -110,6 +114,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_has_alpha
 parameter_list|(
@@ -117,6 +124,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImageType
 name|gimp_drawable_type_with_alpha
 parameter_list|(
@@ -124,6 +134,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_is_rgb
 parameter_list|(
@@ -131,6 +144,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_is_gray
 parameter_list|(
@@ -138,6 +154,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_is_indexed
 parameter_list|(
@@ -145,6 +164,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_drawable_bytes
 parameter_list|(
@@ -152,6 +174,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_drawable_width
 parameter_list|(
@@ -159,6 +184,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_drawable_height
 parameter_list|(
@@ -166,6 +194,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_offsets
 parameter_list|(
@@ -181,6 +212,9 @@ modifier|*
 name|offset_y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_is_layer
 parameter_list|(
@@ -188,6 +222,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_is_layer_mask
 parameter_list|(
@@ -195,6 +232,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_is_channel
 parameter_list|(
@@ -202,6 +242,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|_gimp_drawable_thumbnail
 parameter_list|(
@@ -236,6 +279,9 @@ modifier|*
 name|thumbnail_data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_offset
 parameter_list|(
@@ -255,20 +301,11 @@ name|gint
 name|offset_y
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

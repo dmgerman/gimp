@@ -22,24 +22,15 @@ directive|include
 file|<gtk/gtkmenuitem.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_MENU_ITEM
 define|#
 directive|define
 name|GIMP_TYPE_MENU_ITEM
 value|(gimp_menu_item_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_MENU_ITEM (obj)
 define|#
 directive|define
@@ -48,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MENU_ITEM, GimpMenuItem))
+end_define
+
+begin_define
 DECL|macro|GIMP_MENU_ITEM_CLASS (klass)
 define|#
 directive|define
@@ -56,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MENU_ITEM, GimpMenuItemClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_MENU_ITEM (obj)
 define|#
 directive|define
@@ -64,6 +61,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MENU_ITEM))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_MENU_ITEM_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MENU_ITEM))
+end_define
+
+begin_define
 DECL|macro|GIMP_MENU_ITEM_GET_CLASS (obj)
 define|#
 directive|define
@@ -80,12 +83,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MENU_ITEM, GimpMenuItemClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpMenuItemClass
 typedef|typedef
 name|struct
 name|_GimpMenuItemClass
 name|GimpMenuItemClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpMenuItem
 struct|struct
 name|_GimpMenuItem
@@ -121,6 +130,9 @@ name|get_name_func
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpMenuItemClass
 struct|struct
 name|_GimpMenuItemClass
@@ -148,12 +160,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_menu_item_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_menu_item_new
@@ -166,6 +185,9 @@ name|gint
 name|preview_size
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_menu_item_set_name_func
 parameter_list|(
@@ -177,20 +199,7 @@ name|GimpItemGetNameFunc
 name|get_name_func
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+end_function_decl
 
 begin_endif
 endif|#

@@ -16,33 +16,34 @@ directive|define
 name|__COLOR_SELECTOR_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look at the html documentation */
+end_comment
+
+begin_define
 DECL|macro|GIMP_COLOR_SELECTOR_SIZE
 define|#
 directive|define
 name|GIMP_COLOR_SELECTOR_SIZE
 value|150
+end_define
+
+begin_define
 DECL|macro|GIMP_COLOR_SELECTOR_BAR_SIZE
 define|#
 directive|define
 name|GIMP_COLOR_SELECTOR_BAR_SIZE
 value|15
+end_define
+
+begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7622980103
+DECL|enum|__anon279fd1630103
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -68,6 +69,9 @@ DECL|typedef|GimpColorSelectorChannelType
 block|}
 name|GimpColorSelectorChannelType
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorSelectorCallback
 typedef|typedef
 name|void
@@ -90,6 +94,9 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorSelectorNewFunc
 typedef|typedef
 name|GtkWidget
@@ -123,6 +130,9 @@ modifier|*
 name|selector_data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorSelectorFreeFunc
 typedef|typedef
 name|void
@@ -135,6 +145,9 @@ name|gpointer
 name|selector_data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorSelectorSetColorFunc
 typedef|typedef
 name|void
@@ -157,6 +170,9 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorSelectorSetChannelFunc
 typedef|typedef
 name|void
@@ -172,6 +188,9 @@ name|GimpColorSelectorChannelType
 name|type
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorSelectorFinishedCB
 typedef|typedef
 name|void
@@ -184,12 +203,18 @@ name|gpointer
 name|finished_data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorSelectorMethods
 typedef|typedef
 name|struct
 name|_GimpColorSelectorMethods
 name|GimpColorSelectorMethods
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpColorSelectorMethods
 struct|struct
 name|_GimpColorSelectorMethods
@@ -212,14 +237,23 @@ name|set_channel
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_typedef
 DECL|typedef|GimpColorSelectorID
 typedef|typedef
 name|gpointer
 name|GimpColorSelectorID
 typedef|;
+end_typedef
+
+begin_include
 include|#
 directive|include
 file|<gmodule.h>
+end_include
+
+begin_function_decl
 name|G_MODULE_EXPORT
 name|GimpColorSelectorID
 name|gimp_color_selector_register
@@ -239,6 +273,9 @@ modifier|*
 name|methods
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|G_MODULE_EXPORT
 name|gboolean
 name|gimp_color_selector_unregister
@@ -253,20 +290,11 @@ name|gpointer
 name|finished_data
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

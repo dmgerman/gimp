@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c47a9b0108
+DECL|struct|__anon294a679e0108
 block|{
 DECL|member|dirname
 specifier|const
@@ -495,6 +495,27 @@ expr_stmt|;
 return|return
 name|imagefile
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_imagefile_update_thumbnail (GimpImagefile * imagefile)
+name|gimp_imagefile_update_thumbnail
+parameter_list|(
+name|GimpImagefile
+modifier|*
+name|imagefile
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGEFILE
+argument_list|(
+name|imagefile
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

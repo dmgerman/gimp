@@ -2,22 +2,28 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_MARSHAL_H__
+name|__gimp_marshal_MARSHAL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_MARSHAL_H__
+DECL|macro|__gimp_marshal_MARSHAL_H__
 define|#
 directive|define
-name|__GIMP_MARSHAL_H__
+name|__gimp_marshal_MARSHAL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|<glib-object.h>
+end_include
 
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* BOOLEAN:OBJECT (./gimpmarshal.list:25) */
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_BOOLEAN__OBJECT
+name|gimp_marshal_BOOLEAN__OBJECT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -51,7 +57,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_BOOLEAN__POINTER
+name|gimp_marshal_BOOLEAN__POINTER
 parameter_list|(
 name|GClosure
 modifier|*
@@ -85,7 +91,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_BOOLEAN__VOID
+name|gimp_marshal_BOOLEAN__VOID
 parameter_list|(
 name|GClosure
 modifier|*
@@ -119,7 +125,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_INT__OBJECT
+name|gimp_marshal_INT__OBJECT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -153,7 +159,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_INT__POINTER
+name|gimp_marshal_INT__POINTER
 parameter_list|(
 name|GClosure
 modifier|*
@@ -187,7 +193,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_OBJECT__INT
+name|gimp_marshal_OBJECT__INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -221,7 +227,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_OBJECT__POINTER
+name|gimp_marshal_OBJECT__POINTER
 parameter_list|(
 name|GClosure
 modifier|*
@@ -255,7 +261,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_POINTER__INT
+name|gimp_marshal_POINTER__INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -289,7 +295,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_POINTER__INT_INT
+name|gimp_marshal_POINTER__INT_INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -323,7 +329,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_POINTER__OBJECT_INT
+name|gimp_marshal_POINTER__OBJECT_INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -357,7 +363,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_POINTER__POINTER
+name|gimp_marshal_POINTER__POINTER
 parameter_list|(
 name|GClosure
 modifier|*
@@ -391,7 +397,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_POINTER__POINTER_INT
+name|gimp_marshal_POINTER__POINTER_INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -425,7 +431,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_POINTER__POINTER_INT_INT
+name|gimp_marshal_POINTER__POINTER_INT_INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -459,7 +465,7 @@ end_comment
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_POINTER__VOID
+name|gimp_marshal_POINTER__VOID
 parameter_list|(
 name|GClosure
 modifier|*
@@ -490,10 +496,46 @@ begin_comment
 comment|/* VOID:DOUBLE (./gimpmarshal.list:43) */
 end_comment
 
+begin_define
+DECL|macro|gimp_marshal_VOID__DOUBLE
+define|#
+directive|define
+name|gimp_marshal_VOID__DOUBLE
+value|g_cclosure_marshal_VOID__DOUBLE
+end_define
+
+begin_comment
+comment|/* VOID:ENUM (./gimpmarshal.list:44) */
+end_comment
+
+begin_define
+DECL|macro|gimp_marshal_VOID__ENUM
+define|#
+directive|define
+name|gimp_marshal_VOID__ENUM
+value|g_cclosure_marshal_VOID__ENUM
+end_define
+
+begin_comment
+comment|/* VOID:INT (./gimpmarshal.list:45) */
+end_comment
+
+begin_define
+DECL|macro|gimp_marshal_VOID__INT
+define|#
+directive|define
+name|gimp_marshal_VOID__INT
+value|g_cclosure_marshal_VOID__INT
+end_define
+
+begin_comment
+comment|/* VOID:INT,BOOLEAN,INT,OBJECT (./gimpmarshal.list:46) */
+end_comment
+
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__DOUBLE
+name|gimp_marshal_VOID__INT_BOOLEAN_INT_OBJECT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -521,13 +563,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:INT,BOOLEAN,INT,OBJECT (./gimpmarshal.list:44) */
+comment|/* VOID:INT,INT (./gimpmarshal.list:47) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__INT_BOOLEAN_INT_OBJECT
+name|gimp_marshal_VOID__INT_INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -555,13 +597,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:INT,INT (./gimpmarshal.list:45) */
+comment|/* VOID:INT,INT,INT (./gimpmarshal.list:48) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__INT_INT
+name|gimp_marshal_VOID__INT_INT_INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -589,13 +631,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:INT,INT,INT (./gimpmarshal.list:46) */
+comment|/* VOID:INT,INT,INT,INT (./gimpmarshal.list:49) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__INT_INT_INT
+name|gimp_marshal_VOID__INT_INT_INT_INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -623,13 +665,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:INT,INT,INT,INT (./gimpmarshal.list:47) */
+comment|/* VOID:INT,OBJECT (./gimpmarshal.list:50) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__INT_INT_INT_INT
+name|gimp_marshal_VOID__INT_OBJECT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -657,13 +699,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:INT,OBJECT (./gimpmarshal.list:48) */
+comment|/* VOID:INT,POINTER (./gimpmarshal.list:51) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__INT_OBJECT
+name|gimp_marshal_VOID__INT_POINTER
 parameter_list|(
 name|GClosure
 modifier|*
@@ -691,13 +733,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:INT,POINTER (./gimpmarshal.list:49) */
+comment|/* VOID:INT,POINTER,POINTER (./gimpmarshal.list:52) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__INT_POINTER
+name|gimp_marshal_VOID__INT_POINTER_POINTER
 parameter_list|(
 name|GClosure
 modifier|*
@@ -725,13 +767,25 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:INT,POINTER,POINTER (./gimpmarshal.list:50) */
+comment|/* VOID:OBJECT (./gimpmarshal.list:53) */
+end_comment
+
+begin_define
+DECL|macro|gimp_marshal_VOID__OBJECT
+define|#
+directive|define
+name|gimp_marshal_VOID__OBJECT
+value|g_cclosure_marshal_VOID__OBJECT
+end_define
+
+begin_comment
+comment|/* VOID:OBJECT,INT (./gimpmarshal.list:54) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__INT_POINTER_POINTER
+name|gimp_marshal_VOID__OBJECT_INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -759,13 +813,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:OBJECT,INT (./gimpmarshal.list:51) */
+comment|/* VOID:OBJECT,INT,POINTER (./gimpmarshal.list:55) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__OBJECT_INT
+name|gimp_marshal_VOID__OBJECT_INT_POINTER
 parameter_list|(
 name|GClosure
 modifier|*
@@ -793,13 +847,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:OBJECT,INT,POINTER (./gimpmarshal.list:52) */
+comment|/* VOID:OBJECT,POINTER (./gimpmarshal.list:56) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__OBJECT_INT_POINTER
+name|gimp_marshal_VOID__OBJECT_POINTER
 parameter_list|(
 name|GClosure
 modifier|*
@@ -827,13 +881,25 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:OBJECT,POINTER (./gimpmarshal.list:53) */
+comment|/* VOID:POINTER (./gimpmarshal.list:57) */
+end_comment
+
+begin_define
+DECL|macro|gimp_marshal_VOID__POINTER
+define|#
+directive|define
+name|gimp_marshal_VOID__POINTER
+value|g_cclosure_marshal_VOID__POINTER
+end_define
+
+begin_comment
+comment|/* VOID:POINTER,INT (./gimpmarshal.list:58) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__OBJECT_POINTER
+name|gimp_marshal_VOID__POINTER_INT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -861,13 +927,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:POINTER,INT (./gimpmarshal.list:54) */
+comment|/* VOID:POINTER,INT,OBJECT (./gimpmarshal.list:59) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__POINTER_INT
+name|gimp_marshal_VOID__POINTER_INT_OBJECT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -895,13 +961,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:POINTER,INT,OBJECT (./gimpmarshal.list:55) */
+comment|/* VOID:POINTER,OBJECT (./gimpmarshal.list:60) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__POINTER_INT_OBJECT
+name|gimp_marshal_VOID__POINTER_OBJECT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -929,13 +995,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:POINTER,OBJECT (./gimpmarshal.list:56) */
+comment|/* VOID:POINTER,POINTER (./gimpmarshal.list:61) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__POINTER_OBJECT
+name|gimp_marshal_VOID__POINTER_POINTER
 parameter_list|(
 name|GClosure
 modifier|*
@@ -963,13 +1029,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:POINTER,POINTER (./gimpmarshal.list:57) */
+comment|/* VOID:POINTER,UINT,INT,OBJECT (./gimpmarshal.list:62) */
 end_comment
 
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_cclosure_marshal_VOID__POINTER_POINTER
+name|gimp_marshal_VOID__POINTER_UINT_INT_OBJECT
 parameter_list|(
 name|GClosure
 modifier|*
@@ -997,38 +1063,28 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* VOID:POINTER,UINT,INT,OBJECT (./gimpmarshal.list:58) */
+comment|/* VOID:UINT (./gimpmarshal.list:63) */
 end_comment
 
-begin_function_decl
-specifier|extern
-name|void
-name|gimp_cclosure_marshal_VOID__POINTER_UINT_INT_OBJECT
-parameter_list|(
-name|GClosure
-modifier|*
-name|closure
-parameter_list|,
-name|GValue
-modifier|*
-name|return_value
-parameter_list|,
-name|guint
-name|n_param_values
-parameter_list|,
-specifier|const
-name|GValue
-modifier|*
-name|param_values
-parameter_list|,
-name|gpointer
-name|invocation_hint
-parameter_list|,
-name|gpointer
-name|marshal_data
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_define
+DECL|macro|gimp_marshal_VOID__UINT
+define|#
+directive|define
+name|gimp_marshal_VOID__UINT
+value|g_cclosure_marshal_VOID__UINT
+end_define
+
+begin_comment
+comment|/* VOID:VOID (./gimpmarshal.list:64) */
+end_comment
+
+begin_define
+DECL|macro|gimp_marshal_VOID__VOID
+define|#
+directive|define
+name|gimp_marshal_VOID__VOID
+value|g_cclosure_marshal_VOID__VOID
+end_define
 
 begin_macro
 name|G_END_DECLS
@@ -1040,7 +1096,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_MARSHAL_H__ */
+comment|/* __gimp_marshal_MARSHAL_H__ */
 end_comment
 
 end_unit

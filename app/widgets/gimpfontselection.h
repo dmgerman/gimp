@@ -16,24 +16,21 @@ directive|define
 name|__GIMP_FONT_SELECTION_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_include
+include|#
+directive|include
+file|<gtk/gtkhbox.h>
+end_include
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_FONT_SELECTION
 define|#
 directive|define
 name|GIMP_TYPE_FONT_SELECTION
 value|(gimp_font_selection_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_FONT_SELECTION (obj)
 define|#
 directive|define
@@ -42,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_FONT_SELECTION, GimpFontSelection))
+end_define
+
+begin_define
 DECL|macro|GIMP_FONT_SELECTION_CLASS (klass)
 define|#
 directive|define
@@ -50,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FONT_SELECTION, GimpFontSelectionClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_FONT_SELECTION (obj)
 define|#
 directive|define
@@ -58,6 +61,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_FONT_SELECTION))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_FONT_SELECTION_CLASS (klass)
 define|#
 directive|define
@@ -66,12 +72,18 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FONT_SELECTION))
+end_define
+
+begin_typedef
 DECL|typedef|GimpFontSelectionClass
 typedef|typedef
 name|struct
 name|_GimpFontSelectionClass
 name|GimpFontSelectionClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpFontSelection
 struct|struct
 name|_GimpFontSelection
@@ -107,6 +119,9 @@ name|dialog
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpFontSelectionClass
 struct|struct
 name|_GimpFontSelectionClass
@@ -129,12 +144,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_font_selection_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_font_selection_new
@@ -144,6 +166,9 @@ modifier|*
 name|context
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_font_selection_set_fontname
 parameter_list|(
@@ -157,6 +182,9 @@ modifier|*
 name|fontname
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|gchar
 modifier|*
@@ -167,6 +195,9 @@ modifier|*
 name|fontsel
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_font_selection_set_font_desc
 parameter_list|(
@@ -180,6 +211,9 @@ modifier|*
 name|font_desc
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|PangoFontDescription
 modifier|*
 name|gimp_font_selection_get_font_desc
@@ -189,6 +223,9 @@ modifier|*
 name|fontsel
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_font_selection_font_changed
 parameter_list|(
@@ -197,20 +234,7 @@ modifier|*
 name|fontsel
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+end_function_decl
 
 begin_endif
 endif|#

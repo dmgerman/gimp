@@ -22,24 +22,15 @@ directive|include
 file|"gtkhwrapbox.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_CONSTRAINED_HWRAP_BOX
 define|#
 directive|define
 name|GIMP_TYPE_CONSTRAINED_HWRAP_BOX
 value|(gimp_constrained_hwrap_box_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_CONSTRAINED_HWRAP_BOX (obj)
 define|#
 directive|define
@@ -48,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CONSTRAINED_HWRAP_BOX, GimpConstrainedHWrapBox))
+end_define
+
+begin_define
 DECL|macro|GIMP_CONSTRAINED_HWRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -56,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONSTRAINED_HWRAP_BOX, GimpConstrainedHWrapBoxClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_CONSTRAINED_HWRAP_BOX (obj)
 define|#
 directive|define
@@ -64,6 +61,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONSTRAINED_HWRAP_BOX))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_CONSTRAINED_HWRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONSTRAINED_HWRAP_BOX))
+end_define
+
+begin_define
 DECL|macro|GIMP_CONSTRAINED_HWRAP_BOX_GET_CLASS (obj)
 define|#
 directive|define
@@ -80,18 +83,27 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(GIMP_CONSTRAINED_HWRAP_BOX_CLASS (((GtkObject *) (obj))->klass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpConstrainedHWrapBox
 typedef|typedef
 name|struct
 name|_GimpConstrainedHWrapBox
 name|GimpConstrainedHWrapBox
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpConstrainedHWrapBoxClass
 typedef|typedef
 name|struct
 name|_GimpConstrainedHWrapBoxClass
 name|GimpConstrainedHWrapBoxClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpConstrainedHWrapBox
 struct|struct
 name|_GimpConstrainedHWrapBox
@@ -110,6 +122,9 @@ name|columns
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpConstrainedHWrapBoxClass
 struct|struct
 name|_GimpConstrainedHWrapBoxClass
@@ -120,12 +135,19 @@ name|parent_class
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GtkType
 name|gimp_constrained_hwrap_box_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_constrained_hwrap_box_new
@@ -134,20 +156,7 @@ name|gboolean
 name|homogeneous
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+end_function_decl
 
 begin_endif
 endif|#

@@ -16,20 +16,15 @@ directive|define
 name|__GIMP_PIXEL_RGN_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_struct
 DECL|struct|_GimpPixelRgn
 struct|struct
 name|_GimpPixelRgn
@@ -93,6 +88,9 @@ decl_stmt|;
 comment|/* used internally */
 block|}
 struct|;
+end_struct
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_init
 parameter_list|(
@@ -123,6 +121,9 @@ name|gint
 name|shadow
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_resize
 parameter_list|(
@@ -143,6 +144,9 @@ name|gint
 name|height
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_get_pixel
 parameter_list|(
@@ -161,6 +165,9 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_get_row
 parameter_list|(
@@ -182,6 +189,9 @@ name|gint
 name|width
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_get_col
 parameter_list|(
@@ -203,6 +213,9 @@ name|gint
 name|height
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_get_rect
 parameter_list|(
@@ -227,6 +240,9 @@ name|gint
 name|height
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_set_pixel
 parameter_list|(
@@ -245,6 +261,9 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_set_row
 parameter_list|(
@@ -266,6 +285,9 @@ name|gint
 name|width
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_set_col
 parameter_list|(
@@ -287,6 +309,9 @@ name|gint
 name|height
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixel_rgn_set_rect
 parameter_list|(
@@ -311,6 +336,9 @@ name|gint
 name|height
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gpointer
 name|gimp_pixel_rgns_register
 parameter_list|(
@@ -320,6 +348,9 @@ parameter_list|,
 modifier|...
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gpointer
 name|gimp_pixel_rgns_register2
 parameter_list|(
@@ -332,6 +363,9 @@ modifier|*
 name|prs
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gpointer
 name|gimp_pixel_rgns_process
 parameter_list|(
@@ -339,20 +373,11 @@ name|gpointer
 name|pri_ptr
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -16,25 +16,23 @@ directive|define
 name|__GIMP_PATH_EDITOR_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_define
 DECL|macro|GIMP_TYPE_PATH_EDITOR
 define|#
 directive|define
 name|GIMP_TYPE_PATH_EDITOR
 value|(gimp_path_editor_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_PATH_EDITOR (obj)
 define|#
 directive|define
@@ -43,6 +41,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PATH_EDITOR, GimpPathEditor))
+end_define
+
+begin_define
 DECL|macro|GIMP_PATH_EDITOR_CLASS (klass)
 define|#
 directive|define
@@ -51,6 +52,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PATH_EDITOR, GimpPathEditorClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PATH_EDITOR (obj)
 define|#
 directive|define
@@ -59,6 +63,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_PATH_EDITOR))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PATH_EDITOR_CLASS (klass)
 define|#
 directive|define
@@ -67,6 +74,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PATH_EDITOR))
+end_define
+
+begin_define
 DECL|macro|GIMP_PATH_EDITOR_GET_CLASS (obj)
 define|#
 directive|define
@@ -75,12 +85,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PATH_EDITOR, GimpPathEditorClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpPathEditorClass
 typedef|typedef
 name|struct
 name|_GimpPathEditorClass
 name|GimpPathEditorClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpPathEditor
 struct|struct
 name|_GimpPathEditor
@@ -135,6 +151,9 @@ name|number_of_items
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpPathEditorClass
 struct|struct
 name|_GimpPathEditorClass
@@ -157,13 +176,23 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_decl_stmt
 name|GType
 name|gimp_path_editor_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_path_editor_new
@@ -179,6 +208,9 @@ modifier|*
 name|path
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_path_editor_get_path
@@ -188,20 +220,11 @@ modifier|*
 name|gpe
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

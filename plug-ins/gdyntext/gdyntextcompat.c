@@ -815,7 +815,7 @@ name|gchar
 modifier|*
 name|text
 init|=
-name|gimp_strcompress
+name|g_strcompress
 argument_list|(
 name|data
 operator|->

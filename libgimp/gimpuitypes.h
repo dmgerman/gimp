@@ -16,35 +16,12 @@ directive|define
 name|__GIMP_UI_TYPES_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_expr_stmt
+name|G_BEGIN_DECLS
 comment|/* For information look into the html documentation */
 comment|/* empty at the moment because most stuff went to libgimpwidgets.  *  * left here because it will contain stuff again  --Mitch  */
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+name|G_END_DECLS
+end_expr_stmt
 
 begin_endif
 endif|#

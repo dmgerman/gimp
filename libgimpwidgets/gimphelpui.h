@@ -16,19 +16,8 @@ directive|define
 name|__GIMP_HELP_UI_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|void
 name|gimp_help_init
@@ -36,25 +25,40 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_help_free
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_help_enable_tooltips
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_help_disable_tooltips
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  the standard gimp help function  *  (has different implementations in the main app and in libgimp)  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_standard_help_func
 parameter_list|(
@@ -64,7 +68,13 @@ modifier|*
 name|help_data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  connect the help callback of a window  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_help_connect
 parameter_list|(
@@ -81,7 +91,13 @@ modifier|*
 name|help_data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  set help data for non-window widgets  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_help_set_help_data
 parameter_list|(
@@ -100,27 +116,24 @@ modifier|*
 name|help_data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  activate the context help inspector  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_context_help
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

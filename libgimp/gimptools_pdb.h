@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_TOOLS_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_airbrush
@@ -51,6 +40,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_airbrush_default
 parameter_list|(
@@ -65,6 +57,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_blend
 parameter_list|(
@@ -111,6 +106,9 @@ name|gdouble
 name|y2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_bucket_fill
 parameter_list|(
@@ -139,6 +137,9 @@ name|gdouble
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_clone
 parameter_list|(
@@ -165,6 +166,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_clone_default
 parameter_list|(
@@ -179,6 +183,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_color_picker
 parameter_list|(
@@ -211,6 +218,9 @@ modifier|*
 name|color
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_convolve
 parameter_list|(
@@ -231,6 +241,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_convolve_default
 parameter_list|(
@@ -245,6 +258,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_dodgeburn
 parameter_list|(
@@ -268,6 +284,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_dodgeburn_default
 parameter_list|(
@@ -282,6 +301,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_eraser
 parameter_list|(
@@ -302,6 +324,9 @@ name|GimpPaintApplicationMode
 name|method
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_eraser_default
 parameter_list|(
@@ -316,6 +341,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_paintbrush
 parameter_list|(
@@ -339,6 +367,9 @@ name|gdouble
 name|gradient_length
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_paintbrush_default
 parameter_list|(
@@ -353,6 +384,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_pencil
 parameter_list|(
@@ -367,6 +401,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_smudge
 parameter_list|(
@@ -384,6 +421,9 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_smudge_default
 parameter_list|(
@@ -398,20 +438,11 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -210,17 +210,6 @@ comment|/* G_OS_WIN32 */
 end_comment
 
 begin_define
-DECL|macro|ESCAPE (string)
-define|#
-directive|define
-name|ESCAPE
-parameter_list|(
-name|string
-parameter_list|)
-value|gimp_strescape (string, NULL)
-end_define
-
-begin_define
 DECL|macro|TEXT_WIDTH
 define|#
 directive|define
@@ -295,7 +284,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c3e0a0108
+DECL|struct|__anon2790e6400108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c3e0a0208
+DECL|struct|__anon2790e6400208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c3e0a0308
+DECL|struct|__anon2790e6400308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +375,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c3e0a0408
+DECL|struct|__anon2790e6400408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +403,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c3e0a0508
+DECL|struct|__anon2790e6400508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +423,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b0c3e0a060a
+DECL|union|__anon2790e640060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -504,7 +493,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c3e0a0708
+DECL|struct|__anon2790e6400708
 block|{
 DECL|member|script_name
 name|gchar
@@ -590,7 +579,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c3e0a0808
+DECL|struct|__anon2790e6400808
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -1429,9 +1418,11 @@ name|gchar
 modifier|*
 name|qf
 init|=
-name|ESCAPE
+name|g_strescape
 argument_list|(
 name|filename
+argument_list|,
+name|NULL
 argument_list|)
 decl_stmt|;
 ifdef|#
@@ -4708,7 +4699,7 @@ name|SF_DIRNAME
 case|:
 name|escaped
 operator|=
-name|ESCAPE
+name|g_strescape
 argument_list|(
 name|params
 index|[
@@ -4720,6 +4711,8 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|length
@@ -5046,7 +5039,7 @@ name|SF_DIRNAME
 case|:
 name|escaped
 operator|=
-name|ESCAPE
+name|g_strescape
 argument_list|(
 name|params
 index|[
@@ -5058,6 +5051,8 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -8885,7 +8880,7 @@ name|SF_STRING
 case|:
 name|escaped
 operator|=
-name|ESCAPE
+name|g_strescape
 argument_list|(
 name|gtk_entry_get_text
 argument_list|(
@@ -8899,6 +8894,8 @@ name|i
 index|]
 argument_list|)
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|length
@@ -8933,7 +8930,7 @@ name|SF_DIRNAME
 case|:
 name|escaped
 operator|=
-name|ESCAPE
+name|g_strescape
 argument_list|(
 name|script
 operator|->
@@ -8945,6 +8942,8 @@ operator|.
 name|sfa_file
 operator|.
 name|filename
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|length
@@ -9352,9 +9351,11 @@ argument_list|)
 expr_stmt|;
 name|escaped
 operator|=
-name|ESCAPE
+name|g_strescape
 argument_list|(
 name|text
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -9520,7 +9521,7 @@ name|SF_DIRNAME
 case|:
 name|escaped
 operator|=
-name|ESCAPE
+name|g_strescape
 argument_list|(
 name|script
 operator|->
@@ -9532,6 +9533,8 @@ operator|.
 name|sfa_file
 operator|.
 name|filename
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_snprintf

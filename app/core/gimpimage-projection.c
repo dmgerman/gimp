@@ -789,7 +789,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a150d370103
+DECL|enum|__anon292b9bc30103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1038,7 +1038,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1072,7 +1072,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1106,7 +1106,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1140,7 +1140,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1174,7 +1174,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1208,7 +1208,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__INT
+name|gimp_marshal_VOID__INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1244,7 +1244,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__INT
+name|gimp_marshal_VOID__INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1280,7 +1280,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1314,7 +1314,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1348,7 +1348,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1382,7 +1382,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1416,7 +1416,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__INT
+name|gimp_marshal_VOID__INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1452,7 +1452,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1486,7 +1486,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1520,7 +1520,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_cclosure_marshal_VOID__INT_INT_INT_INT
+name|gimp_marshal_VOID__INT_INT_INT_INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1562,7 +1562,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1598,7 +1598,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__INT
+name|gimp_marshal_VOID__INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -1634,7 +1634,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__INT
+name|gimp_marshal_VOID__INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

@@ -16,25 +16,23 @@ directive|define
 name|__GIMP_PIXMAP_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_define
 DECL|macro|GIMP_TYPE_PIXMAP
 define|#
 directive|define
 name|GIMP_TYPE_PIXMAP
 value|(gimp_pixmap_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_PIXMAP (obj)
 define|#
 directive|define
@@ -43,6 +41,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PIXMAP, GimpPixmap))
+end_define
+
+begin_define
 DECL|macro|GIMP_PIXMAP_CLASS (klass)
 define|#
 directive|define
@@ -51,6 +52,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PIXMAP, GimpPixmapClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PIXMAP (obj)
 define|#
 directive|define
@@ -59,6 +63,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PIXMAP))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PIXMAP_CLASS (klass)
 define|#
 directive|define
@@ -67,6 +74,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PIXMAP))
+end_define
+
+begin_define
 DECL|macro|GIMP_PIXMAP_GET_CLASS (obj)
 define|#
 directive|define
@@ -75,12 +85,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PIXMAP, GimpPixmapClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpPixmapClass
 typedef|typedef
 name|struct
 name|_GimpPixmapClass
 name|GimpPixmapClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpPixmap
 struct|struct
 name|_GimpPixmap
@@ -97,6 +113,9 @@ name|xpm_data
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpPixmapClass
 struct|struct
 name|_GimpPixmapClass
@@ -107,12 +126,19 @@ name|parent_class
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_pixmap_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_pixmap_new
@@ -123,6 +149,9 @@ modifier|*
 name|xpm_data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pixmap_set
 parameter_list|(
@@ -136,20 +165,11 @@ modifier|*
 name|xpm_data
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

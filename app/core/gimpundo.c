@@ -36,12 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpundo.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ec1a90103
+DECL|enum|__anon2a2457020103
 block|{
 DECL|enumerator|PUSH
 name|PUSH
@@ -322,7 +328,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -358,7 +364,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

@@ -288,7 +288,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c97e820103
+DECL|enum|__anon29c3ecb90103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -3965,7 +3965,7 @@ expr_stmt|;
 block|}
 name|str
 operator|=
-name|gimp_strescape
+name|g_strescape
 argument_list|(
 name|value
 argument_list|,
@@ -4085,7 +4085,7 @@ argument_list|)
 expr_stmt|;
 name|str
 operator|=
-name|gimp_strescape
+name|g_strescape
 argument_list|(
 name|value
 argument_list|,
@@ -13878,7 +13878,7 @@ name|gchar
 modifier|*
 name|str
 init|=
-name|gimp_strescape
+name|g_strescape
 argument_list|(
 operator|*
 operator|(
@@ -14696,7 +14696,7 @@ name|gchar
 modifier|*
 name|str
 init|=
-name|gimp_strescape
+name|g_strescape
 argument_list|(
 operator|*
 operator|(

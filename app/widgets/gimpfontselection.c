@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpfontselection.h"
 end_include
 
@@ -174,7 +180,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon297421d90103
+DECL|enum|__anon2b9510b10103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -360,7 +366,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

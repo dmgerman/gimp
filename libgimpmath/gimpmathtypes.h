@@ -16,19 +16,11 @@ directive|define
 name|__GIMP_MATH_TYPES_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_typedef
 DECL|typedef|GimpMatrix3
 typedef|typedef
 name|gdouble
@@ -40,6 +32,9 @@ index|[
 literal|3
 index|]
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpMatrix4
 typedef|typedef
 name|gdouble
@@ -51,24 +46,36 @@ index|[
 literal|4
 index|]
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpVector2
 typedef|typedef
 name|struct
 name|_GimpVector2
 name|GimpVector2
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpVector3
 typedef|typedef
 name|struct
 name|_GimpVector3
 name|GimpVector3
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpVector4
 typedef|typedef
 name|struct
 name|_GimpVector4
 name|GimpVector4
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpVector2
 struct|struct
 name|_GimpVector2
@@ -82,6 +89,9 @@ name|y
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpVector3
 struct|struct
 name|_GimpVector3
@@ -98,6 +108,9 @@ name|z
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpVector4
 struct|struct
 name|_GimpVector4
@@ -117,20 +130,11 @@ name|w
 decl_stmt|;
 block|}
 struct|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_struct
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

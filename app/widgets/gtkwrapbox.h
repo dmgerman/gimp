@@ -22,25 +22,23 @@ directive|include
 file|<gtk/gtkcontainer.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* --- type macros --- */
+end_comment
+
+begin_define
 DECL|macro|GTK_TYPE_WRAP_BOX
 define|#
 directive|define
 name|GTK_TYPE_WRAP_BOX
 value|(gtk_wrap_box_get_type ())
+end_define
+
+begin_define
 DECL|macro|GTK_WRAP_BOX (obj)
 define|#
 directive|define
@@ -49,6 +47,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(GTK_CHECK_CAST ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBox))
+end_define
+
+begin_define
 DECL|macro|GTK_WRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -57,6 +58,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_CAST ((klass), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
+end_define
+
+begin_define
 DECL|macro|GTK_IS_WRAP_BOX (obj)
 define|#
 directive|define
@@ -65,6 +69,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(GTK_CHECK_TYPE ((obj), GTK_TYPE_WRAP_BOX))
+end_define
+
+begin_define
 DECL|macro|GTK_IS_WRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -73,6 +80,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GTK_TYPE_WRAP_BOX))
+end_define
+
+begin_define
 DECL|macro|GTK_WRAP_BOX_GET_CLASS (obj)
 define|#
 directive|define
@@ -81,26 +91,44 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(GTK_CHECK_GET_CLASS ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
+end_define
+
+begin_comment
 comment|/* --- typedefs --- */
+end_comment
+
+begin_typedef
 DECL|typedef|GtkWrapBox
 typedef|typedef
 name|struct
 name|_GtkWrapBox
 name|GtkWrapBox
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GtkWrapBoxClass
 typedef|typedef
 name|struct
 name|_GtkWrapBoxClass
 name|GtkWrapBoxClass
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GtkWrapBoxChild
 typedef|typedef
 name|struct
 name|_GtkWrapBoxChild
 name|GtkWrapBoxChild
 typedef|;
+end_typedef
+
+begin_comment
 comment|/* --- GtkWrapBox --- */
+end_comment
+
+begin_struct
 DECL|struct|_GtkWrapBox
 struct|struct
 name|_GtkWrapBox
@@ -155,6 +183,9 @@ name|child_limit
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GtkWrapBoxClass
 struct|struct
 name|_GtkWrapBoxClass
@@ -195,6 +226,9 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GtkWrapBoxChild
 struct|struct
 name|_GtkWrapBoxChild
@@ -241,23 +275,39 @@ name|next
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_define
 DECL|macro|GTK_JUSTIFY_TOP
 define|#
 directive|define
 name|GTK_JUSTIFY_TOP
 value|GTK_JUSTIFY_LEFT
+end_define
+
+begin_define
 DECL|macro|GTK_JUSTIFY_BOTTOM
 define|#
 directive|define
 name|GTK_JUSTIFY_BOTTOM
 value|GTK_JUSTIFY_RIGHT
+end_define
+
+begin_comment
 comment|/* --- prototypes --- */
+end_comment
+
+begin_decl_stmt
 name|GtkType
 name|gtk_wrap_box_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_set_homogeneous
 parameter_list|(
@@ -269,6 +319,9 @@ name|gboolean
 name|homogeneous
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_set_hspacing
 parameter_list|(
@@ -280,6 +333,9 @@ name|guint
 name|hspacing
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_set_vspacing
 parameter_list|(
@@ -291,6 +347,9 @@ name|guint
 name|vspacing
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_set_justify
 parameter_list|(
@@ -302,6 +361,9 @@ name|GtkJustification
 name|justify
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_set_line_justify
 parameter_list|(
@@ -313,6 +375,9 @@ name|GtkJustification
 name|line_justify
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_set_aspect_ratio
 parameter_list|(
@@ -324,6 +389,9 @@ name|gfloat
 name|aspect_ratio
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_pack
 parameter_list|(
@@ -348,6 +416,9 @@ name|gboolean
 name|vfill
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_pack_wrapped
 parameter_list|(
@@ -375,6 +446,9 @@ name|gboolean
 name|wrapped
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_reorder_child
 parameter_list|(
@@ -390,6 +464,9 @@ name|gint
 name|position
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_query_child_packing
 parameter_list|(
@@ -422,6 +499,9 @@ modifier|*
 name|wrapped
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gtk_wrap_box_set_child_packing
 parameter_list|(
@@ -449,6 +529,9 @@ name|gboolean
 name|wrapped
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|guint
 modifier|*
 name|gtk_wrap_box_query_line_lengths
@@ -462,20 +545,11 @@ modifier|*
 name|n_lines
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2aa030103
+DECL|enum|__anon29f823290103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -245,7 +245,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -279,7 +279,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

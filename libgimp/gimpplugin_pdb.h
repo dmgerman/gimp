@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_PLUG_IN_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_progress_init
@@ -42,6 +31,9 @@ modifier|*
 name|message
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_progress_update
 parameter_list|(
@@ -49,6 +41,9 @@ name|gdouble
 name|percentage
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_temp_PDB_name
@@ -56,6 +51,9 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_plugin_domain_register
 parameter_list|(
@@ -68,6 +66,9 @@ modifier|*
 name|domain_path
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_plugin_help_register
 parameter_list|(
@@ -76,20 +77,11 @@ modifier|*
 name|help_path
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

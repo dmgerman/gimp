@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_COLOR_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_brightness_contrast
@@ -47,6 +36,9 @@ name|gint
 name|contrast
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_levels
 parameter_list|(
@@ -72,6 +64,9 @@ name|gint
 name|high_output
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_posterize
 parameter_list|(
@@ -82,6 +77,9 @@ name|gint
 name|levels
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_desaturate
 parameter_list|(
@@ -89,6 +87,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_equalize
 parameter_list|(
@@ -99,6 +100,9 @@ name|gboolean
 name|mask_only
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_invert
 parameter_list|(
@@ -106,6 +110,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_curves_spline
 parameter_list|(
@@ -123,6 +130,9 @@ modifier|*
 name|control_pts
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_curves_explicit
 parameter_list|(
@@ -140,6 +150,9 @@ modifier|*
 name|curve
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_color_balance
 parameter_list|(
@@ -162,6 +175,9 @@ name|gdouble
 name|yellow_blue
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_histogram
 parameter_list|(
@@ -202,6 +218,9 @@ modifier|*
 name|percentile
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_hue_saturation
 parameter_list|(
@@ -221,6 +240,9 @@ name|gdouble
 name|saturation
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_threshold
 parameter_list|(
@@ -234,20 +256,11 @@ name|gint
 name|high_threshold
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

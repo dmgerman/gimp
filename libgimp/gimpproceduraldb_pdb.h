@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_PROCEDURAL_DB_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_procedural_db_dump
@@ -42,6 +31,9 @@ modifier|*
 name|filename
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_procedural_db_query
 parameter_list|(
@@ -84,6 +76,9 @@ modifier|*
 name|procedure_names
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|_gimp_procedural_db_proc_info
 parameter_list|(
@@ -129,6 +124,9 @@ modifier|*
 name|num_values
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_procedural_db_proc_arg
 parameter_list|(
@@ -154,6 +152,9 @@ modifier|*
 name|arg_desc
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_procedural_db_proc_val
 parameter_list|(
@@ -179,6 +180,9 @@ modifier|*
 name|val_desc
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|_gimp_procedural_db_get_data
 parameter_list|(
@@ -196,6 +200,9 @@ modifier|*
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_procedural_db_get_data_size
 parameter_list|(
@@ -204,6 +211,9 @@ modifier|*
 name|identifier
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|_gimp_procedural_db_set_data
 parameter_list|(
@@ -219,20 +229,11 @@ modifier|*
 name|data
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

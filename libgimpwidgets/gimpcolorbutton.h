@@ -26,24 +26,19 @@ directive|include
 file|<libgimpwidgets/gimpbutton.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_COLOR_BUTTON
 define|#
 directive|define
 name|GIMP_TYPE_COLOR_BUTTON
 value|(gimp_color_button_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_COLOR_BUTTON (obj)
 define|#
 directive|define
@@ -52,6 +47,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLOR_BUTTON, GimpColorButton))
+end_define
+
+begin_define
 DECL|macro|GIMP_COLOR_BUTTON_CLASS (klass)
 define|#
 directive|define
@@ -60,6 +58,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_BUTTON, GimpColorButtonClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_COLOR_BUTTON (obj)
 define|#
 directive|define
@@ -68,6 +69,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLOR_BUTTON))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_COLOR_BUTTON_CLASS (klass)
 define|#
 directive|define
@@ -76,6 +80,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_BUTTON))
+end_define
+
+begin_define
 DECL|macro|GIMP_COLOR_BUTTON_GET_CLASS (obj)
 define|#
 directive|define
@@ -84,12 +91,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_BUTTON, GimpColorButtonClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpColorButtonClass
 typedef|typedef
 name|struct
 name|_GimpColorButtonClass
 name|GimpColorButtonClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpColorButton
 struct|struct
 name|_GimpColorButton
@@ -120,6 +133,9 @@ name|item_factory
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpColorButtonClass
 struct|struct
 name|_GimpColorButtonClass
@@ -142,12 +158,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_color_button_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_color_button_new
@@ -172,6 +195,9 @@ name|GimpColorAreaType
 name|type
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_color_button_set_color
 parameter_list|(
@@ -185,6 +211,9 @@ modifier|*
 name|color
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_color_button_get_color
 parameter_list|(
@@ -197,6 +226,9 @@ modifier|*
 name|color
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_color_button_has_alpha
 parameter_list|(
@@ -205,6 +237,9 @@ modifier|*
 name|gcb
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_color_button_set_type
 parameter_list|(
@@ -216,20 +251,11 @@ name|GimpColorAreaType
 name|type
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_GNUC_CONST
+end_macro
 
 begin_endif
 endif|#

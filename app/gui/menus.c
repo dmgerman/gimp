@@ -7802,7 +7802,7 @@ argument_list|(
 literal|"menurc"
 argument_list|)
 expr_stmt|;
-name|gtk_item_factory_parse_rc
+name|gtk_accel_map_load
 argument_list|(
 name|filename
 argument_list|)
@@ -7926,13 +7926,9 @@ argument_list|(
 literal|"menurc"
 argument_list|)
 expr_stmt|;
-name|gtk_item_factory_dump_rc
+name|gtk_accel_map_save
 argument_list|(
 name|filename
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_free

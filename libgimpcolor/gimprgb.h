@@ -16,24 +16,22 @@ directive|define
 name|__GIMP_RGB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_comment
 comment|/*  RGB and RGBA color types and operations taken from LibGCK  */
+end_comment
+
+begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297e7ade0103
+DECL|enum|__anon2ad53b810103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -49,6 +47,9 @@ DECL|typedef|GimpRGBCompositeMode
 block|}
 name|GimpRGBCompositeMode
 typedef|;
+end_typedef
+
+begin_function_decl
 name|void
 name|gimp_rgb_set
 parameter_list|(
@@ -66,6 +67,9 @@ name|gdouble
 name|b
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_set_alpha
 parameter_list|(
@@ -77,6 +81,9 @@ name|gdouble
 name|a
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_set_uchar
 parameter_list|(
@@ -94,6 +101,9 @@ name|guchar
 name|b
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_get_uchar
 parameter_list|(
@@ -115,6 +125,9 @@ modifier|*
 name|b
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_add
 parameter_list|(
@@ -128,6 +141,9 @@ modifier|*
 name|rgb2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_subtract
 parameter_list|(
@@ -141,6 +157,9 @@ modifier|*
 name|rgb2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_multiply
 parameter_list|(
@@ -152,6 +171,9 @@ name|gdouble
 name|factor
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_rgb_distance
 parameter_list|(
@@ -166,6 +188,9 @@ modifier|*
 name|rgb2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_rgb_max
 parameter_list|(
@@ -175,6 +200,9 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_rgb_min
 parameter_list|(
@@ -184,6 +212,9 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_clamp
 parameter_list|(
@@ -192,6 +223,9 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_gamma
 parameter_list|(
@@ -203,6 +237,9 @@ name|gdouble
 name|gamma
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_rgb_intensity
 parameter_list|(
@@ -212,6 +249,9 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|guchar
 name|gimp_rgb_intensity_uchar
 parameter_list|(
@@ -221,6 +261,9 @@ modifier|*
 name|rgb
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgb_composite
 parameter_list|(
@@ -237,6 +280,9 @@ name|GimpRGBCompositeMode
 name|mode
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgba_set
 parameter_list|(
@@ -257,6 +303,9 @@ name|gdouble
 name|a
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgba_set_uchar
 parameter_list|(
@@ -277,6 +326,9 @@ name|guchar
 name|a
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgba_get_uchar
 parameter_list|(
@@ -302,6 +354,9 @@ modifier|*
 name|a
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgba_add
 parameter_list|(
@@ -315,6 +370,9 @@ modifier|*
 name|rgba2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgba_subtract
 parameter_list|(
@@ -328,6 +386,9 @@ modifier|*
 name|rgba2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_rgba_multiply
 parameter_list|(
@@ -339,6 +400,9 @@ name|gdouble
 name|factor
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_rgba_distance
 parameter_list|(
@@ -353,22 +417,37 @@ modifier|*
 name|rgba2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  Map RGB to intensity  */
+end_comment
+
+begin_define
 DECL|macro|INTENSITY_RED
 define|#
 directive|define
 name|INTENSITY_RED
 value|0.30
+end_define
+
+begin_define
 DECL|macro|INTENSITY_GREEN
 define|#
 directive|define
 name|INTENSITY_GREEN
 value|0.59
+end_define
+
+begin_define
 DECL|macro|INTENSITY_BLUE
 define|#
 directive|define
 name|INTENSITY_BLUE
 value|0.11
+end_define
+
+begin_define
 DECL|macro|INTENSITY (r,g,b)
 define|#
 directive|define
@@ -381,20 +460,11 @@ parameter_list|,
 name|b
 parameter_list|)
 value|((r) * INTENSITY_RED   + \ 			  (g) * INTENSITY_GREEN + \ 			  (b) * INTENSITY_BLUE  + 0.001)
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_define
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

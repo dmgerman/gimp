@@ -22,33 +22,46 @@ directive|include
 file|<signal.h>
 end_include
 
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
+
+begin_comment
+comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_comment
+comment|/* A gimp-level interface to a Posix.1-compliant signal package lives here  * For 1.2, this gimp-level interface mostly passes through to posix calls  * without modification. Certain calls manipulate struct sigaction in  * ways useful to Gimp.  */
+end_comment
+
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|__cplusplus
+name|__EMX__
 end_ifdef
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
-comment|/* For information look into the C source or the html documentation */
-comment|/* A gimp-level interface to a Posix.1-compliant signal package lives here  * For 1.2, this gimp-level interface mostly passes through to posix calls  * without modification. Certain calls manipulate struct sigaction in  * ways useful to Gimp.  */
-ifdef|#
-directive|ifdef
-name|__EMX__
+begin_comment
 comment|/* hope this is right for OS/2 */
+end_comment
+
+begin_define
 DECL|macro|SA_RESTART
 define|#
 directive|define
 name|SA_RESTART
 value|SA_SYSV
+end_define
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_comment
 comment|/* GimpSignalHandlerFunc is a reference to a (signal handler) function   * that takes a signal ID and returns void.   * signal(2) returns such references; so does gimp_signal_private.  */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpSignalHandlerFunc
 typedef|typedef
 name|void
@@ -61,7 +74,13 @@ name|gint
 name|signum
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_comment
 comment|/* Internal implementation that can be DEFINEd into various flavors of  * signal(2) lookalikes.  */
+end_comment
+
+begin_function_decl
 name|GimpSignalHandlerFunc
 name|gimp_signal_private
 parameter_list|(
@@ -75,7 +94,13 @@ name|gint
 name|flags
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* the gimp_signal_syscallrestart() lookalike looks like signal(2) but  * quietly requests the restarting of system calls. Addresses #2742  */
+end_comment
+
+begin_define
 DECL|macro|gimp_signal_syscallrestart (signum,handler)
 define|#
 directive|define
@@ -86,20 +111,11 @@ parameter_list|,
 name|handler
 parameter_list|)
 value|gimp_signal_private ((signum), (handler), SA_RESTART)
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_define
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

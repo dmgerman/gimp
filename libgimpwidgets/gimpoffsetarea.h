@@ -16,25 +16,23 @@ directive|define
 name|__GIMP_OFFSET_AREA_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_define
 DECL|macro|GIMP_TYPE_OFFSET_AREA
 define|#
 directive|define
 name|GIMP_TYPE_OFFSET_AREA
 value|(gimp_offset_area_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_OFFSET_AREA (obj)
 define|#
 directive|define
@@ -43,6 +41,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OFFSET_AREA, GimpOffsetArea))
+end_define
+
+begin_define
 DECL|macro|GIMP_OFFSET_AREA_CLASS (klass)
 define|#
 directive|define
@@ -51,6 +52,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_OFFSET_AREA, GimpOffsetAreaClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_OFFSET_AREA (obj)
 define|#
 directive|define
@@ -59,6 +63,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OFFSET_AREA))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_OFFSET_AREA_CLASS (klass)
 define|#
 directive|define
@@ -67,6 +74,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_OFFSET_AREA))
+end_define
+
+begin_define
 DECL|macro|GIMP_OFFSET_AREA_GET_CLASS (obj)
 define|#
 directive|define
@@ -75,12 +85,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_OFFSET_AREA, GimpOffsetAreaClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpOffsetAreaClass
 typedef|typedef
 name|struct
 name|_GimpOffsetAreaClass
 name|GimpOffsetAreaClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpOffsetArea
 struct|struct
 name|_GimpOffsetArea
@@ -123,6 +139,9 @@ name|display_ratio_y
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpOffsetAreaClass
 struct|struct
 name|_GimpOffsetAreaClass
@@ -151,12 +170,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_offset_area_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_offset_area_new
@@ -168,6 +194,9 @@ name|gint
 name|orig_height
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_offset_area_set_size
 parameter_list|(
@@ -182,6 +211,9 @@ name|gint
 name|height
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_offset_area_set_offsets
 parameter_list|(
@@ -196,20 +228,11 @@ name|gint
 name|offset_y
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

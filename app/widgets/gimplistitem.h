@@ -22,24 +22,15 @@ directive|include
 file|<gtk/gtklistitem.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_LIST_ITEM
 define|#
 directive|define
 name|GIMP_TYPE_LIST_ITEM
 value|(gimp_list_item_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_LIST_ITEM (obj)
 define|#
 directive|define
@@ -48,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_LIST_ITEM, GimpListItem))
+end_define
+
+begin_define
 DECL|macro|GIMP_LIST_ITEM_CLASS (klass)
 define|#
 directive|define
@@ -56,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_LIST_ITEM, GimpListItemClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_LIST_ITEM (obj)
 define|#
 directive|define
@@ -64,6 +61,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_LIST_ITEM))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_LIST_ITEM_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LIST_ITEM))
+end_define
+
+begin_define
 DECL|macro|GIMP_LIST_ITEM_GET_CLASS (obj)
 define|#
 directive|define
@@ -80,12 +83,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_LIST_ITEM, GimpListItemClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpListItemClass
 typedef|typedef
 name|struct
 name|_GimpListItemClass
 name|GimpListItemClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpListItem
 struct|struct
 name|_GimpListItem
@@ -134,6 +143,9 @@ name|get_name_func
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpListItemClass
 struct|struct
 name|_GimpListItemClass
@@ -173,12 +185,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_list_item_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_list_item_new
@@ -191,6 +210,9 @@ name|gint
 name|preview_size
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_list_item_set_viewable
 parameter_list|(
@@ -203,6 +225,9 @@ modifier|*
 name|viewable
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_list_item_set_preview_size
 parameter_list|(
@@ -214,6 +239,9 @@ name|gint
 name|preview_size
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_list_item_set_reorderable
 parameter_list|(
@@ -229,6 +257,9 @@ modifier|*
 name|container
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_list_item_set_name_func
 parameter_list|(
@@ -240,7 +271,13 @@ name|GimpItemGetNameFunc
 name|get_name_func
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  protected  */
+end_comment
+
+begin_function_decl
 name|gboolean
 name|gimp_list_item_check_drag
 parameter_list|(
@@ -276,6 +313,9 @@ modifier|*
 name|drop_type
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_list_item_button_realize
 parameter_list|(
@@ -287,6 +327,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_list_item_button_state_changed
 parameter_list|(
@@ -301,20 +344,7 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+end_function_decl
 
 begin_endif
 endif|#

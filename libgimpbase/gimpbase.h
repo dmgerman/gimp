@@ -49,12 +49,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpbase/gimputils.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimpbase/gimpversion.h>
 end_include
 

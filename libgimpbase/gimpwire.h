@@ -16,26 +16,24 @@ directive|define
 name|__GIMP_WIRE_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_typedef
 DECL|typedef|WireMessage
 typedef|typedef
 name|struct
 name|_WireMessage
 name|WireMessage
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|WireReadFunc
 typedef|typedef
 name|void
@@ -53,6 +51,9 @@ modifier|*
 name|msg
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|WireWriteFunc
 typedef|typedef
 name|void
@@ -70,6 +71,9 @@ modifier|*
 name|msg
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|WireDestroyFunc
 typedef|typedef
 name|void
@@ -83,6 +87,9 @@ modifier|*
 name|msg
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|WireIOFunc
 typedef|typedef
 name|gboolean
@@ -103,6 +110,9 @@ name|gulong
 name|count
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|WireFlushFunc
 typedef|typedef
 name|gboolean
@@ -116,6 +126,9 @@ modifier|*
 name|channel
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_struct
 DECL|struct|_WireMessage
 struct|struct
 name|_WireMessage
@@ -130,6 +143,9 @@ name|data
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_function_decl
 name|void
 name|wire_register
 parameter_list|(
@@ -146,6 +162,9 @@ name|WireDestroyFunc
 name|destroy_func
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|wire_set_reader
 parameter_list|(
@@ -153,6 +172,9 @@ name|WireIOFunc
 name|read_func
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|wire_set_writer
 parameter_list|(
@@ -160,6 +182,9 @@ name|WireIOFunc
 name|write_func
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|wire_set_flusher
 parameter_list|(
@@ -167,6 +192,9 @@ name|WireFlushFunc
 name|flush_func
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_read
 parameter_list|(
@@ -182,6 +210,9 @@ name|gsize
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_write
 parameter_list|(
@@ -197,6 +228,9 @@ name|gsize
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_flush
 parameter_list|(
@@ -205,18 +239,27 @@ modifier|*
 name|channel
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_error
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|wire_clear_error
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_read_msg
 parameter_list|(
@@ -229,6 +272,9 @@ modifier|*
 name|msg
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_write_msg
 parameter_list|(
@@ -241,6 +287,9 @@ modifier|*
 name|msg
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|wire_destroy
 parameter_list|(
@@ -249,6 +298,9 @@ modifier|*
 name|msg
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_read_int32
 parameter_list|(
@@ -264,6 +316,9 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_read_int16
 parameter_list|(
@@ -279,6 +334,9 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_read_int8
 parameter_list|(
@@ -294,6 +352,9 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_read_double
 parameter_list|(
@@ -309,6 +370,9 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_read_string
 parameter_list|(
@@ -325,6 +389,9 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_write_int32
 parameter_list|(
@@ -340,6 +407,9 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_write_int16
 parameter_list|(
@@ -355,6 +425,9 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_write_int8
 parameter_list|(
@@ -370,6 +443,9 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_write_double
 parameter_list|(
@@ -385,6 +461,9 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|wire_write_string
 parameter_list|(
@@ -401,20 +480,11 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

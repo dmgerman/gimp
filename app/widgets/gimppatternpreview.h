@@ -22,24 +22,15 @@ directive|include
 file|"gimppreview.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_PATTERN_PREVIEW
 define|#
 directive|define
 name|GIMP_TYPE_PATTERN_PREVIEW
 value|(gimp_pattern_preview_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_PATTERN_PREVIEW (obj)
 define|#
 directive|define
@@ -48,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PATTERN_PREVIEW, GimpPatternPreview))
+end_define
+
+begin_define
 DECL|macro|GIMP_PATTERN_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -56,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PATTERN_PREVIEW, GimpPatternPreviewClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PATTERN_PREVIEW (obj)
 define|#
 directive|define
@@ -64,6 +61,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_PATTERN_PREVIEW))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PATTERN_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PATTERN_PREVIEW))
+end_define
+
+begin_define
 DECL|macro|GIMP_PATTERN_PREVIEW_GET_CLASS (obj)
 define|#
 directive|define
@@ -80,12 +83,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PATTERN_PREVIEW, GimpPatternPreviewClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpPatternPreviewClass
 typedef|typedef
 name|struct
 name|_GimpPatternPreviewClass
 name|GimpPatternPreviewClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpPatternPreview
 struct|struct
 name|_GimpPatternPreview
@@ -96,6 +105,9 @@ name|parent_instance
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpPatternPreviewClass
 struct|struct
 name|_GimpPatternPreviewClass
@@ -106,26 +118,17 @@ name|parent_class
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_pattern_preview_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#

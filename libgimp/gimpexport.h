@@ -16,23 +16,18 @@ directive|define
 name|__GIMP_EXPORT_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cdda9c0103
+DECL|enum|__anon2b458cf30103
 block|{
 DECL|enumerator|GIMP_EXPORT_CAN_HANDLE_RGB
 name|GIMP_EXPORT_CAN_HANDLE_RGB
@@ -86,9 +81,12 @@ DECL|typedef|GimpExportCapabilities
 block|}
 name|GimpExportCapabilities
 typedef|;
+end_typedef
+
+begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cdda9c0203
+DECL|enum|__anon2b458cf30203
 block|{
 DECL|enumerator|GIMP_EXPORT_CANCEL
 name|GIMP_EXPORT_CANCEL
@@ -102,6 +100,9 @@ DECL|typedef|GimpExportReturnType
 block|}
 name|GimpExportReturnType
 typedef|;
+end_typedef
+
+begin_function_decl
 name|GimpExportReturnType
 name|gimp_export_image
 parameter_list|(
@@ -122,20 +123,11 @@ name|GimpExportCapabilities
 name|capabilities
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

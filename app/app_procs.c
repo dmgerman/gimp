@@ -392,6 +392,10 @@ name|the_gimp
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  initialize lowlevel stuff  */
+name|base_init
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -418,10 +422,6 @@ name|no_splash_image
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  initialize lowlevel stuff  */
-name|base_init
-argument_list|()
-expr_stmt|;
 comment|/*  Create all members of the global Gimp instance which need an already    *  parsed gimprc, e.g. the data factories    */
 name|gimp_initialize
 argument_list|(
@@ -441,20 +441,6 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
-comment|/*  Now we are ready to draw the splash-screen-image        *  to the start-up window        */
-if|if
-condition|(
-operator|!
-name|no_splash
-operator|&&
-operator|!
-name|no_splash_image
-condition|)
-block|{
-name|splash_logo_load
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 comment|/*  Load all data files    */
 name|gimp_restore

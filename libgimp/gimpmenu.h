@@ -16,19 +16,11 @@ directive|define
 name|__GIMP_MENU_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_typedef
 DECL|typedef|GimpConstraintFunc
 typedef|typedef
 name|gint
@@ -47,6 +39,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpMenuCallback
 typedef|typedef
 name|void
@@ -62,7 +57,13 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_comment
 comment|/* Popup the brush dialog interactively */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpRunBrushCallback
 typedef|typedef
 name|void
@@ -101,7 +102,13 @@ name|gpointer
 name|user_data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_comment
 comment|/* Popup the pattern dialog */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpRunPatternCallback
 typedef|typedef
 name|void
@@ -134,7 +141,13 @@ name|gpointer
 name|user_data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_comment
 comment|/* Popup the gradient dialog */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpRunGradientCallback
 typedef|typedef
 name|void
@@ -161,6 +174,9 @@ name|gpointer
 name|user_data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_image_menu_new
@@ -178,6 +194,9 @@ name|gint32
 name|active_image
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_layer_menu_new
@@ -195,6 +214,9 @@ name|gint32
 name|active_layer
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_channel_menu_new
@@ -212,6 +234,9 @@ name|gint32
 name|active_channel
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_drawable_menu_new
@@ -229,6 +254,9 @@ name|gint32
 name|active_drawable
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_interactive_selection_brush
@@ -257,6 +285,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_brush_select_widget
@@ -285,6 +316,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_brush_select_widget_set_popup
 parameter_list|(
@@ -306,6 +340,9 @@ name|gint
 name|paint_mode
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_brush_select_widget_close_popup
 parameter_list|(
@@ -314,6 +351,9 @@ modifier|*
 name|widget
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_interactive_selection_pattern
@@ -333,6 +373,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_pattern_select_widget
@@ -352,6 +395,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pattern_select_widget_close_popup
 parameter_list|(
@@ -360,6 +406,9 @@ modifier|*
 name|widget
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_pattern_select_widget_set_popup
 parameter_list|(
@@ -372,6 +421,9 @@ modifier|*
 name|pname
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_interactive_selection_gradient
@@ -394,6 +446,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_gradient_select_widget
@@ -413,6 +468,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_gradient_select_widget_close_popup
 parameter_list|(
@@ -421,6 +479,9 @@ modifier|*
 name|widget
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_gradient_select_widget_set_popup
 parameter_list|(
@@ -433,20 +494,11 @@ modifier|*
 name|gname
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

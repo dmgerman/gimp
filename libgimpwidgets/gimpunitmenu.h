@@ -16,25 +16,23 @@ directive|define
 name|__GIMP_UNIT_MENU_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_define
 DECL|macro|GIMP_TYPE_UNIT_MENU
 define|#
 directive|define
 name|GIMP_TYPE_UNIT_MENU
 value|(gimp_unit_menu_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_UNIT_MENU (obj)
 define|#
 directive|define
@@ -43,6 +41,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_UNIT_MENU, GimpUnitMenu))
+end_define
+
+begin_define
 DECL|macro|GIMP_UNIT_MENU_CLASS (klass)
 define|#
 directive|define
@@ -51,6 +52,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_UNIT_MENU, GimpUnitMenuClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_UNIT_MENU (obj)
 define|#
 directive|define
@@ -59,6 +63,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_UNIT_MENU))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_UNIT_MENU_CLASS (klass)
 define|#
 directive|define
@@ -67,6 +74,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_UNIT_MENU))
+end_define
+
+begin_define
 DECL|macro|GIMP_UNIT_MENU_GET_CLASS (obj)
 define|#
 directive|define
@@ -75,12 +85,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_UNIT_MENU, GimpUnitMenuClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpUnitMenuClass
 typedef|typedef
 name|struct
 name|_GimpUnitMenuClass
 name|GimpUnitMenuClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpUnitMenu
 struct|struct
 name|_GimpUnitMenu
@@ -120,6 +136,9 @@ name|tv
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpUnitMenuClass
 struct|struct
 name|_GimpUnitMenuClass
@@ -142,12 +161,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_unit_menu_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_unit_menu_new
@@ -170,6 +196,9 @@ name|gboolean
 name|show_custom
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_unit_menu_set_unit
 parameter_list|(
@@ -181,6 +210,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpUnit
 name|gimp_unit_menu_get_unit
 parameter_list|(
@@ -189,20 +221,11 @@ modifier|*
 name|gum
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

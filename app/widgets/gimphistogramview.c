@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7331d0103
+DECL|enum|__anon2c7f32190103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -292,7 +292,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_cclosure_marshal_VOID__INT_INT
+name|gimp_marshal_VOID__INT_INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

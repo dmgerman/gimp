@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_UNIT_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gint
 name|gimp_unit_get_number_of_units
@@ -40,12 +29,18 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_unit_get_number_of_built_in_units
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpUnit
 name|gimp_unit_new
 parameter_list|(
@@ -76,6 +71,9 @@ modifier|*
 name|plural
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_unit_get_deletion_flag
 parameter_list|(
@@ -83,6 +81,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_unit_set_deletion_flag
 parameter_list|(
@@ -93,6 +94,9 @@ name|gboolean
 name|deletion_flag
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_unit_get_factor
 parameter_list|(
@@ -100,6 +104,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_unit_get_digits
 parameter_list|(
@@ -107,6 +114,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_unit_get_identifier
@@ -115,6 +125,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_unit_get_symbol
@@ -123,6 +136,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_unit_get_abbreviation
@@ -131,6 +147,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_unit_get_singular
@@ -139,6 +158,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_unit_get_plural
@@ -147,20 +169,11 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

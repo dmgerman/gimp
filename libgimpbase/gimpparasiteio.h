@@ -16,30 +16,34 @@ directive|define
 name|__GIMP_PARASITE_IO_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_comment
 comment|/*  Data structures for various standard parasites used by plug-ins and  *  the GIMP core, and functions to build and parse their string  *  representations.  */
+end_comment
+
+begin_comment
 comment|/*  *  Pixmap brush pipes.  */
+end_comment
+
+begin_define
 DECL|macro|GIMP_PIXPIPE_MAXDIM
 define|#
 directive|define
 name|GIMP_PIXPIPE_MAXDIM
 value|4
+end_define
+
+begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958248d0108
+DECL|struct|__anon2931f0160108
 block|{
 DECL|member|step
 name|gint
@@ -101,7 +105,13 @@ DECL|typedef|GimpPixPipeParams
 block|}
 name|GimpPixPipeParams
 typedef|;
+end_typedef
+
+begin_comment
 comment|/* Initalize with dummy values */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_pixpipe_params_init
 parameter_list|(
@@ -110,7 +120,13 @@ modifier|*
 name|params
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Parse a string into a GimpPixPipeParams */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_pixpipe_params_parse
 parameter_list|(
@@ -123,7 +139,13 @@ modifier|*
 name|params
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Build a string representation of GimpPixPipeParams */
+end_comment
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_pixpipe_params_build
@@ -133,20 +155,11 @@ modifier|*
 name|params
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask            */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon290209210108
+DECL|struct|__anon29089d650108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -302,14 +302,15 @@ begin_comment
 comment|/*  function declarations  */
 end_comment
 
-begin_function_decl
+begin_decl_stmt
 name|GType
 name|gimp_layer_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|GimpLayer

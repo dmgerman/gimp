@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277112e20103
+DECL|enum|__anon279130e70103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -342,7 +342,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -376,7 +376,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_cclosure_marshal_BOOLEAN__VOID
+name|gimp_marshal_BOOLEAN__VOID
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
@@ -410,7 +410,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_cclosure_marshal_POINTER__VOID
+name|gimp_marshal_POINTER__VOID
 argument_list|,
 name|G_TYPE_POINTER
 argument_list|,
@@ -444,7 +444,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_cclosure_marshal_POINTER__VOID
+name|gimp_marshal_POINTER__VOID
 argument_list|,
 name|G_TYPE_POINTER
 argument_list|,

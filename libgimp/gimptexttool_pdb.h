@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_TEXT_TOOL_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gint32
 name|gimp_text_fontname
@@ -70,6 +59,9 @@ modifier|*
 name|fontname
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_text_get_extents_fontname
 parameter_list|(
@@ -104,6 +96,9 @@ modifier|*
 name|descent
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_text
 parameter_list|(
@@ -168,6 +163,9 @@ modifier|*
 name|encoding
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_text_get_extents
 parameter_list|(
@@ -230,20 +228,11 @@ modifier|*
 name|descent
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -28,15 +28,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|splash_logo_load
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|splash_destroy
 parameter_list|(
 name|void

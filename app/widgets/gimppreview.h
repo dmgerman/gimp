@@ -22,24 +22,15 @@ directive|include
 file|<gtk/gtkpreview.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_PREVIEW
 define|#
 directive|define
 name|GIMP_TYPE_PREVIEW
 value|(gimp_preview_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_PREVIEW (obj)
 define|#
 directive|define
@@ -48,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PREVIEW, GimpPreview))
+end_define
+
+begin_define
 DECL|macro|GIMP_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -56,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PREVIEW, GimpPreviewClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PREVIEW (obj)
 define|#
 directive|define
@@ -64,6 +61,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_PREVIEW))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PREVIEW))
+end_define
+
+begin_define
 DECL|macro|GIMP_PREVIEW_GET_CLASS (obj)
 define|#
 directive|define
@@ -80,12 +83,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PREVIEW, GimpPreviewClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpPreviewClass
 typedef|typedef
 name|struct
 name|_GimpPreviewClass
 name|GimpPreviewClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpPreview
 struct|struct
 name|_GimpPreview
@@ -162,6 +171,9 @@ name|popup_y
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpPreviewClass
 struct|struct
 name|_GimpPreviewClass
@@ -285,12 +297,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_preview_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_preview_new
@@ -309,6 +328,9 @@ name|gboolean
 name|is_popup
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_preview_new_full
@@ -336,6 +358,9 @@ name|gboolean
 name|show_popup
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_preview_set_viewable
 parameter_list|(
@@ -348,6 +373,9 @@ modifier|*
 name|viewable
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_preview_set_size
 parameter_list|(
@@ -362,6 +390,9 @@ name|gint
 name|border_width
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_preview_set_size_full
 parameter_list|(
@@ -379,6 +410,9 @@ name|gint
 name|border_width
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_preview_set_dot_for_dot
 parameter_list|(
@@ -390,6 +424,9 @@ name|gboolean
 name|dot_for_dot
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_preview_set_border_color
 parameter_list|(
@@ -403,6 +440,9 @@ modifier|*
 name|border_color
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_preview_render
 parameter_list|(
@@ -411,7 +451,13 @@ modifier|*
 name|preview
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  protected  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_preview_calc_size
 parameter_list|(
@@ -450,6 +496,9 @@ modifier|*
 name|scaling_up
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_preview_render_and_flush
 parameter_list|(
@@ -465,20 +514,7 @@ name|gint
 name|channel
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+end_function_decl
 
 begin_endif
 endif|#

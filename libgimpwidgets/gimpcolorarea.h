@@ -26,24 +26,19 @@ directive|include
 file|<gtk/gtkpreview.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_COLOR_AREA
 define|#
 directive|define
 name|GIMP_TYPE_COLOR_AREA
 value|(gimp_color_area_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_COLOR_AREA (obj)
 define|#
 directive|define
@@ -52,6 +47,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLOR_AREA, GimpColorArea))
+end_define
+
+begin_define
 DECL|macro|GIMP_COLOR_AREA_CLASS (klass)
 define|#
 directive|define
@@ -60,6 +58,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_AREA, GimpColorAreaClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_COLOR_AREA (obj)
 define|#
 directive|define
@@ -68,6 +69,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLOR_AREA))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_COLOR_AREA_CLASS (klass)
 define|#
 directive|define
@@ -76,6 +80,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_AREA))
+end_define
+
+begin_define
 DECL|macro|GIMP_COLOR_AREA_GET_CLASS (obj)
 define|#
 directive|define
@@ -84,12 +91,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_AREA, GimpColorAreaClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpColorAreaClass
 typedef|typedef
 name|struct
 name|_GimpColorAreaClass
 name|GimpColorAreaClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpColorArea
 struct|struct
 name|_GimpColorArea
@@ -113,6 +126,9 @@ name|idle_id
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpColorAreaClass
 struct|struct
 name|_GimpColorAreaClass
@@ -135,12 +151,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_color_area_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_color_area_new
@@ -157,6 +180,9 @@ name|GdkModifierType
 name|drag_mask
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_color_area_set_color
 parameter_list|(
@@ -170,6 +196,9 @@ modifier|*
 name|color
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_color_area_get_color
 parameter_list|(
@@ -182,6 +211,9 @@ modifier|*
 name|color
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_color_area_has_alpha
 parameter_list|(
@@ -190,6 +222,9 @@ modifier|*
 name|gca
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_color_area_set_type
 parameter_list|(
@@ -201,20 +236,11 @@ name|GimpColorAreaType
 name|type
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

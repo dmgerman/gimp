@@ -16,19 +16,8 @@ directive|define
 name|__GIMP_MATRIX_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|void
 name|gimp_matrix3_transform_point
@@ -51,6 +40,9 @@ modifier|*
 name|newy
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix3_mult
 parameter_list|(
@@ -61,6 +53,9 @@ name|GimpMatrix3
 name|matrix2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix3_identity
 parameter_list|(
@@ -68,6 +63,9 @@ name|GimpMatrix3
 name|matrix
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix3_translate
 parameter_list|(
@@ -81,6 +79,9 @@ name|gdouble
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix3_scale
 parameter_list|(
@@ -94,6 +95,9 @@ name|gdouble
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix3_rotate
 parameter_list|(
@@ -104,6 +108,9 @@ name|gdouble
 name|theta
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix3_xshear
 parameter_list|(
@@ -114,6 +121,9 @@ name|gdouble
 name|amount
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix3_yshear
 parameter_list|(
@@ -124,6 +134,9 @@ name|gdouble
 name|amount
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_matrix3_determinant
 parameter_list|(
@@ -131,6 +144,9 @@ name|GimpMatrix3
 name|matrix
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix3_invert
 parameter_list|(
@@ -141,6 +157,9 @@ name|GimpMatrix3
 name|matrix_inv
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix3_duplicate
 parameter_list|(
@@ -151,6 +170,9 @@ name|GimpMatrix3
 name|target
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_matrix3_is_diagonal
 parameter_list|(
@@ -158,6 +180,9 @@ name|GimpMatrix3
 name|matrix
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_matrix3_is_identity
 parameter_list|(
@@ -165,6 +190,9 @@ name|GimpMatrix3
 name|matrix
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_matrix3_is_simple
 parameter_list|(
@@ -172,6 +200,9 @@ name|GimpMatrix3
 name|matrix
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_matrix4_to_deg
 parameter_list|(
@@ -191,20 +222,11 @@ modifier|*
 name|c
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

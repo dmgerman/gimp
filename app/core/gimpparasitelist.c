@@ -36,12 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpparasitelist.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0ec2890103
+DECL|enum|__anon2b68945d0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -277,7 +283,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -313,7 +319,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

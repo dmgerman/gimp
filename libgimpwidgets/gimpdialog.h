@@ -22,25 +22,23 @@ directive|include
 file|<gtk/gtkdialog.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_define
 DECL|macro|GIMP_TYPE_DIALOG
 define|#
 directive|define
 name|GIMP_TYPE_DIALOG
 value|(gimp_dialog_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_DIALOG (obj)
 define|#
 directive|define
@@ -49,6 +47,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DIALOG, GimpDialog))
+end_define
+
+begin_define
 DECL|macro|GIMP_DIALOG_CLASS (klass)
 define|#
 directive|define
@@ -57,6 +58,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DIALOG, GimpDialogClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_DIALOG (obj)
 define|#
 directive|define
@@ -65,6 +69,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DIALOG))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_DIALOG_CLASS (klass)
 define|#
 directive|define
@@ -73,6 +80,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DIALOG))
+end_define
+
+begin_define
 DECL|macro|GIMP_DIALOG_GET_CLASS (obj)
 define|#
 directive|define
@@ -81,12 +91,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DIALOG, GimpDialogClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpDialogClass
 typedef|typedef
 name|struct
 name|_GimpDialogClass
 name|GimpDialogClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpDialog
 struct|struct
 name|_GimpDialog
@@ -97,6 +113,9 @@ name|parent_instance
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpDialogClass
 struct|struct
 name|_GimpDialogClass
@@ -107,12 +126,19 @@ name|parent_class
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_dialog_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_dialog_new
@@ -151,6 +177,9 @@ comment|/* specify action area buttons 					      * as va_list: 					      *  co
 modifier|...
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_dialog_newv
@@ -189,6 +218,9 @@ name|va_list
 name|args
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_dialog_create_action_area
 parameter_list|(
@@ -200,6 +232,9 @@ comment|/* specify action area buttons 					      * as va_list: 					      *  co
 modifier|...
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_dialog_create_action_areav
 parameter_list|(
@@ -211,6 +246,9 @@ name|va_list
 name|args
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_dialog_set_icon
 parameter_list|(
@@ -219,20 +257,11 @@ modifier|*
 name|dialog
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

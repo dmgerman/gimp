@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c1e8610103
+DECL|enum|__anon2c0a32c60103
 block|{
 DECL|enumerator|IMAGE_CLONE
 name|IMAGE_CLONE
@@ -159,14 +159,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|GType
 name|gimp_clone_tool_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/* FIXME: Old style functions in need of a replacement. The only   * time these are used is to stroke paths or fill selections  * They should be somewhere else.  */

@@ -16,30 +16,31 @@ directive|define
 name|__GIMP_DRAWABLE_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_define
 DECL|macro|gimp_drawable_image_id
 define|#
 directive|define
 name|gimp_drawable_image_id
 value|gimp_drawable_image
+end_define
+
+begin_define
 DECL|macro|gimp_drawable_bpp
 define|#
 directive|define
 name|gimp_drawable_bpp
 value|gimp_drawable_bytes
+end_define
+
+begin_struct
 DECL|struct|_GimpDrawable
 struct|struct
 name|_GimpDrawable
@@ -88,6 +89,9 @@ decl_stmt|;
 comment|/* the shadow tiles */
 block|}
 struct|;
+end_struct
+
+begin_function_decl
 name|GimpDrawable
 modifier|*
 name|gimp_drawable_get
@@ -96,6 +100,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_drawable_detach
 parameter_list|(
@@ -104,6 +111,9 @@ modifier|*
 name|drawable
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_drawable_flush
 parameter_list|(
@@ -112,6 +122,9 @@ modifier|*
 name|drawable
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_drawable_delete
 parameter_list|(
@@ -120,6 +133,9 @@ modifier|*
 name|drawable
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_drawable_name
@@ -128,6 +144,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_drawable_visible
 parameter_list|(
@@ -135,6 +154,9 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_drawable_set_name
 parameter_list|(
@@ -146,6 +168,9 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_drawable_set_visible
 parameter_list|(
@@ -156,6 +181,9 @@ name|gboolean
 name|visible
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpTile
 modifier|*
 name|gimp_drawable_get_tile
@@ -174,6 +202,9 @@ name|gint
 name|col
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpTile
 modifier|*
 name|gimp_drawable_get_tile2
@@ -192,6 +223,9 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|guchar
 modifier|*
 name|gimp_drawable_get_thumbnail_data
@@ -212,6 +246,9 @@ modifier|*
 name|bpp
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_drawable_attach_new_parasite
 parameter_list|(
@@ -234,20 +271,11 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

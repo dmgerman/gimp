@@ -30,12 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpobject.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27815b0e0103
+DECL|enum|__anon27dfba7d0103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -51,7 +57,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27815b0e0203
+DECL|enum|__anon27dfba7d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -326,7 +332,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -360,7 +366,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__VOID
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,

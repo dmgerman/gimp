@@ -22,24 +22,15 @@ directive|include
 file|"gimplistitem.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_DRAWABLE_LIST_ITEM
 define|#
 directive|define
 name|GIMP_TYPE_DRAWABLE_LIST_ITEM
 value|(gimp_drawable_list_item_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_DRAWABLE_LIST_ITEM (obj)
 define|#
 directive|define
@@ -48,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE_LIST_ITEM, GimpDrawableListItem))
+end_define
+
+begin_define
 DECL|macro|GIMP_DRAWABLE_LIST_ITEM_CLASS (klass)
 define|#
 directive|define
@@ -56,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE_LIST_ITEM, GimpDrawableListItemClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_DRAWABLE_LIST_ITEM (obj)
 define|#
 directive|define
@@ -64,6 +61,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DRAWABLE_LIST_ITEM))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_DRAWABLE_LIST_ITEM_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE_LIST_ITEM))
+end_define
+
+begin_define
 DECL|macro|GIMP_DRAWABLE_LIST_ITEM_GET_CLASS (obj)
 define|#
 directive|define
@@ -80,12 +83,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DRAWABLE_LIST_ITEM, GimpDrawableListItemClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpDrawableListItemClass
 typedef|typedef
 name|struct
 name|_GimpDrawableListItemClass
 name|GimpDrawableListItemClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpDrawableListItem
 struct|struct
 name|_GimpDrawableListItem
@@ -101,6 +110,9 @@ name|eye_button
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpDrawableListItemClass
 struct|struct
 name|_GimpDrawableListItemClass
@@ -111,26 +123,17 @@ name|parent_class
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_drawable_list_item_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#

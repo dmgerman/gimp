@@ -16,26 +16,24 @@ directive|define
 name|__GSERIALIZE_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_include
 include|#
 directive|include
 file|<glib.h>
+end_include
+
+begin_include
 include|#
 directive|include
 file|<stdarg.h>
-DECL|enum|__anon2c1afe3b0103
+end_include
+
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
+
+begin_typedef
+DECL|enum|__anon2c2420140103
 typedef|typedef
 enum|enum
 block|{
@@ -110,18 +108,27 @@ DECL|typedef|GSerialType
 block|}
 name|GSerialType
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GSerialItem
 typedef|typedef
 name|struct
 name|_GSerialItem
 name|GSerialItem
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GSerialDescription
 typedef|typedef
 name|struct
 name|_GSerialDescription
 name|GSerialDescription
 typedef|;
+end_typedef
+
+begin_function_decl
 name|GSerialItem
 modifier|*
 name|g_new_serial_item
@@ -139,6 +146,9 @@ name|gulong
 name|length_offset
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_define
 DECL|macro|g_serial_item (type,struct_,member)
 define|#
 directive|define
@@ -152,6 +162,9 @@ name|member
 parameter_list|)
 define|\
 value|g_new_serial_item(type, G_STRUCT_OFFSET(struct_, member), 0, 0)
+end_define
+
+begin_define
 DECL|macro|g_serial_array (type,struct_,member,length)
 define|#
 directive|define
@@ -167,6 +180,9 @@ name|length
 parameter_list|)
 define|\
 value|g_new_serial_item(type, G_STRUCT_OFFSET(struct_, member), length, 0)
+end_define
+
+begin_define
 DECL|macro|g_serial_vlen_array (type,struct_,member,length_member)
 define|#
 directive|define
@@ -182,6 +198,9 @@ name|length_member
 parameter_list|)
 define|\
 value|g_new_serial_item(type, G_STRUCT_OFFSET(struct_, member), -1,   \ 		    G_STRUCT_OFFSET(struct_, length_member))
+end_define
+
+begin_function_decl
 name|GSerialDescription
 modifier|*
 name|g_new_serial_description
@@ -193,7 +212,13 @@ parameter_list|,
 modifier|...
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* pass it g_serial_s.  null terminated */
+end_comment
+
+begin_function_decl
 name|void
 name|g_free_serial_description
 parameter_list|(
@@ -201,6 +226,9 @@ name|GSerialDescription
 modifier|*
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|long
 name|g_serialize
 parameter_list|(
@@ -218,7 +246,13 @@ modifier|*
 name|struct_data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* returns the length of the serialized data.       g_mallocs space for the data and stores a pointer to it in output */
+end_comment
+
+begin_function_decl
 name|long
 name|g_deserialize
 parameter_list|(
@@ -235,21 +269,15 @@ modifier|*
 name|serial
 parameter_list|)
 function_decl|;
-comment|/* output must be a preallocated area large enough to hold the       deserialized struct. */
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+end_function_decl
 
 begin_comment
-comment|/* __cplusplus */
+comment|/* output must be a preallocated area large enough to hold the       deserialized struct. */
 end_comment
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -16,19 +16,8 @@ directive|define
 name|__GIMP_VECTOR_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 comment|/* Two dimensional vector functions */
 comment|/* ================================ */
@@ -44,6 +33,9 @@ modifier|*
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_vector2_inner_product_val
 parameter_list|(
@@ -54,6 +46,9 @@ name|GimpVector2
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_vector2_cross_product
 parameter_list|(
@@ -66,6 +61,9 @@ modifier|*
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_vector2_cross_product_val
 parameter_list|(
@@ -76,6 +74,9 @@ name|GimpVector2
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_vector2_length
 parameter_list|(
@@ -84,6 +85,9 @@ modifier|*
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_vector2_length_val
 parameter_list|(
@@ -91,6 +95,9 @@ name|GimpVector2
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector2_normalize
 parameter_list|(
@@ -99,6 +106,9 @@ modifier|*
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_vector2_normalize_val
 parameter_list|(
@@ -106,6 +116,9 @@ name|GimpVector2
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector2_mul
 parameter_list|(
@@ -117,6 +130,9 @@ name|gdouble
 name|factor
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_vector2_mul_val
 parameter_list|(
@@ -127,6 +143,9 @@ name|gdouble
 name|factor
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector2_sub
 parameter_list|(
@@ -143,6 +162,9 @@ modifier|*
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_vector2_sub_val
 parameter_list|(
@@ -153,6 +175,9 @@ name|GimpVector2
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector2_set
 parameter_list|(
@@ -167,6 +192,9 @@ name|gdouble
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_vector2_new_val
 parameter_list|(
@@ -177,6 +205,9 @@ name|gdouble
 name|y
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector2_add
 parameter_list|(
@@ -193,6 +224,9 @@ modifier|*
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_vector2_add_val
 parameter_list|(
@@ -203,6 +237,9 @@ name|GimpVector2
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector2_neg
 parameter_list|(
@@ -211,6 +248,9 @@ modifier|*
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_vector2_neg_val
 parameter_list|(
@@ -218,6 +258,9 @@ name|GimpVector2
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector2_rotate
 parameter_list|(
@@ -229,6 +272,9 @@ name|gdouble
 name|alpha
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector2
 name|gimp_vector2_rotate_val
 parameter_list|(
@@ -239,8 +285,17 @@ name|gdouble
 name|alpha
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Three dimensional vector functions */
+end_comment
+
+begin_comment
 comment|/* ================================== */
+end_comment
+
+begin_function_decl
 name|gdouble
 name|gimp_vector3_inner_product
 parameter_list|(
@@ -253,6 +308,9 @@ modifier|*
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_vector3_inner_product_val
 parameter_list|(
@@ -263,6 +321,9 @@ name|GimpVector3
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector3_cross_product
 parameter_list|(
@@ -275,6 +336,9 @@ modifier|*
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector3_cross_product_val
 parameter_list|(
@@ -285,6 +349,9 @@ name|GimpVector3
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_vector3_length
 parameter_list|(
@@ -293,6 +360,9 @@ modifier|*
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_vector3_length_val
 parameter_list|(
@@ -300,6 +370,9 @@ name|GimpVector3
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector3_normalize
 parameter_list|(
@@ -308,6 +381,9 @@ modifier|*
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector3_normalize_val
 parameter_list|(
@@ -315,6 +391,9 @@ name|GimpVector3
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector3_mul
 parameter_list|(
@@ -326,6 +405,9 @@ name|gdouble
 name|factor
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector3_mul_val
 parameter_list|(
@@ -336,6 +418,9 @@ name|gdouble
 name|factor
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector3_sub
 parameter_list|(
@@ -352,6 +437,9 @@ modifier|*
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector3_sub_val
 parameter_list|(
@@ -362,6 +450,9 @@ name|GimpVector3
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector3_set
 parameter_list|(
@@ -379,6 +470,9 @@ name|gdouble
 name|z
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector3_new
 parameter_list|(
@@ -392,6 +486,9 @@ name|gdouble
 name|z
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector3_add
 parameter_list|(
@@ -408,6 +505,9 @@ modifier|*
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector3_add_val
 parameter_list|(
@@ -418,6 +518,9 @@ name|GimpVector3
 name|vector2
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector3_neg
 parameter_list|(
@@ -426,6 +529,9 @@ modifier|*
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector3_neg_val
 parameter_list|(
@@ -433,6 +539,9 @@ name|GimpVector3
 name|vector
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector3_rotate
 parameter_list|(
@@ -450,6 +559,9 @@ name|gdouble
 name|gamma
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector3_rotate_val
 parameter_list|(
@@ -466,8 +578,17 @@ name|gdouble
 name|gamma
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* 2d<-> 3d Vector projection functions */
+end_comment
+
+begin_comment
 comment|/* ===================================== */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_vector_2d_to_3d
 parameter_list|(
@@ -498,6 +619,9 @@ modifier|*
 name|p
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVector3
 name|gimp_vector_2d_to_3d_val
 parameter_list|(
@@ -526,6 +650,9 @@ name|GimpVector3
 name|p
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vector_3d_to_2d
 parameter_list|(
@@ -558,20 +685,11 @@ modifier|*
 name|p
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

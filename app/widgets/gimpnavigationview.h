@@ -22,24 +22,15 @@ directive|include
 file|"gimpimagepreview.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_NAVIGATION_PREVIEW
 define|#
 directive|define
 name|GIMP_TYPE_NAVIGATION_PREVIEW
 value|(gimp_navigation_preview_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_NAVIGATION_PREVIEW (obj)
 define|#
 directive|define
@@ -48,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_NAVIGATION_PREVIEW, GimpNavigationPreview))
+end_define
+
+begin_define
 DECL|macro|GIMP_NAVIGATION_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -56,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_NAVIGATION_PREVIEW, GimpNavigationPreviewClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_NAVIGATION_PREVIEW (obj)
 define|#
 directive|define
@@ -64,6 +61,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_NAVIGATION_PREVIEW))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_NAVIGATION_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_NAVIGATION_PREVIEW))
+end_define
+
+begin_define
 DECL|macro|GIMP_NAVIGATION_PREVIEW_GET_CLASS (obj)
 define|#
 directive|define
@@ -80,12 +83,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_NAVIGATION_PREVIEW, GimpNavigationPreviewClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpNavigationPreviewClass
 typedef|typedef
 name|struct
 name|_GimpNavigationPreviewClass
 name|GimpNavigationPreviewClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpNavigationPreview
 struct|struct
 name|_GimpNavigationPreview
@@ -147,6 +156,9 @@ name|gc
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpNavigationPreviewClass
 struct|struct
 name|_GimpNavigationPreviewClass
@@ -205,12 +217,19 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_navigation_preview_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_navigation_preview_new
@@ -223,6 +242,9 @@ name|gint
 name|size
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_navigation_preview_set_marker
 parameter_list|(
@@ -243,20 +265,7 @@ name|gint
 name|height
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+end_function_decl
 
 begin_endif
 endif|#

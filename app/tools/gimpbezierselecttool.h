@@ -174,7 +174,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon29d323e20103
+DECL|enum|__anon2920ab230103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -370,7 +370,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d323e20208
+DECL|struct|__anon2920ab230208
 block|{
 DECL|member|count
 name|gint
@@ -400,14 +400,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|GType
 name|gimp_bezier_select_tool_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|gboolean

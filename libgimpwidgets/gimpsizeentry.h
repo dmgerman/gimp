@@ -16,25 +16,23 @@ directive|define
 name|__GIMP_SIZE_ENTRY_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_define
 DECL|macro|GIMP_TYPE_SIZE_ENTRY
 define|#
 directive|define
 name|GIMP_TYPE_SIZE_ENTRY
 value|(gimp_size_entry_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_SIZE_ENTRY (obj)
 define|#
 directive|define
@@ -43,6 +41,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SIZE_ENTRY, GimpSizeEntry))
+end_define
+
+begin_define
 DECL|macro|GIMP_SIZE_ENTRY_CLASS (klass)
 define|#
 directive|define
@@ -51,6 +52,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SIZE_ENTRY, GimpSizeEntryClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_SIZE_ENTRY (obj)
 define|#
 directive|define
@@ -59,6 +63,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_SIZE_ENTRY))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_SIZE_ENTRY_CLASS (klass)
 define|#
 directive|define
@@ -67,6 +74,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SIZE_ENTRY))
+end_define
+
+begin_define
 DECL|macro|GIMP_SIZE_ENTRY_GET_CLASS (obj)
 define|#
 directive|define
@@ -75,18 +85,27 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SIZE_ENTRY, GimpSizeEntryClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpSizeEntryClass
 typedef|typedef
 name|struct
 name|_GimpSizeEntryClass
 name|GimpSizeEntryClass
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpSizeEntryField
 typedef|typedef
 name|struct
 name|_GimpSizeEntryField
 name|GimpSizeEntryField
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpSizeEntry
 struct|struct
 name|_GimpSizeEntry
@@ -131,6 +150,9 @@ name|update_policy
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpSizeEntryClass
 struct|struct
 name|_GimpSizeEntryClass
@@ -177,13 +199,23 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_comment
 comment|/* For information look into the C source or the html documentation */
+end_comment
+
+begin_decl_stmt
 name|GType
 name|gimp_size_entry_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_size_entry_new
@@ -215,6 +247,9 @@ name|GimpSizeEntryUpdatePolicy
 name|update_policy
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_add_field
 parameter_list|(
@@ -231,6 +266,9 @@ modifier|*
 name|refval_spinbutton
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_attach_label
 parameter_list|(
@@ -253,6 +291,9 @@ name|gfloat
 name|alignment
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_set_resolution
 parameter_list|(
@@ -270,6 +311,9 @@ name|gboolean
 name|keep_size
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_set_size
 parameter_list|(
@@ -287,6 +331,9 @@ name|gdouble
 name|upper
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_set_value_boundaries
 parameter_list|(
@@ -304,6 +351,9 @@ name|gdouble
 name|upper
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_size_entry_get_value
 parameter_list|(
@@ -315,6 +365,9 @@ name|gint
 name|field
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_set_value
 parameter_list|(
@@ -329,6 +382,9 @@ name|gdouble
 name|value
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_set_refval_boundaries
 parameter_list|(
@@ -346,6 +402,9 @@ name|gdouble
 name|upper
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_set_refval_digits
 parameter_list|(
@@ -360,6 +419,9 @@ name|gint
 name|digits
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_size_entry_get_refval
 parameter_list|(
@@ -371,6 +433,9 @@ name|gint
 name|field
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_set_refval
 parameter_list|(
@@ -385,6 +450,9 @@ name|gdouble
 name|refval
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpUnit
 name|gimp_size_entry_get_unit
 parameter_list|(
@@ -393,6 +461,9 @@ modifier|*
 name|gse
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_set_unit
 parameter_list|(
@@ -404,6 +475,9 @@ name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_size_entry_grab_focus
 parameter_list|(
@@ -412,20 +486,11 @@ modifier|*
 name|gse
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

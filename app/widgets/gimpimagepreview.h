@@ -22,24 +22,15 @@ directive|include
 file|"gimppreview.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_IMAGE_PREVIEW
 define|#
 directive|define
 name|GIMP_TYPE_IMAGE_PREVIEW
 value|(gimp_image_preview_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_IMAGE_PREVIEW (obj)
 define|#
 directive|define
@@ -48,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_PREVIEW, GimpImagePreview))
+end_define
+
+begin_define
 DECL|macro|GIMP_IMAGE_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -56,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_IMAGE_PREVIEW, GimpImagePreviewClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_IMAGE_PREVIEW (obj)
 define|#
 directive|define
@@ -64,6 +61,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_IMAGE_PREVIEW))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_IMAGE_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_IMAGE_PREVIEW))
+end_define
+
+begin_define
 DECL|macro|GIMP_IMAGE_PREVIEW_GET_CLASS (obj)
 define|#
 directive|define
@@ -80,12 +83,18 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_IMAGE_PREVIEW, GimpImagePreviewClass))
+end_define
+
+begin_typedef
 DECL|typedef|GimpImagePreviewClass
 typedef|typedef
 name|struct
 name|_GimpImagePreviewClass
 name|GimpImagePreviewClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpImagePreview
 struct|struct
 name|_GimpImagePreview
@@ -100,6 +109,9 @@ name|channel
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpImagePreviewClass
 struct|struct
 name|_GimpImagePreviewClass
@@ -110,26 +122,17 @@ name|parent_class
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_image_preview_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#

@@ -20,19 +20,8 @@ directive|define
 name|__GIMP_SELECTION_TOOLS_PDB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_by_color_select
@@ -63,6 +52,9 @@ name|gboolean
 name|sample_merged
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_ellipse_select
 parameter_list|(
@@ -94,6 +86,9 @@ name|gdouble
 name|feather_radius
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_free_select
 parameter_list|(
@@ -120,6 +115,9 @@ name|gdouble
 name|feather_radius
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_fuzzy_select
 parameter_list|(
@@ -151,6 +149,9 @@ name|gboolean
 name|sample_merged
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_rect_select
 parameter_list|(
@@ -179,20 +180,11 @@ name|gdouble
 name|feather_radius
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

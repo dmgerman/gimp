@@ -74,64 +74,9 @@ directive|include
 file|<libgimpmath/gimpvector.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_expr_stmt
+name|G_BEGIN_DECLS
 comment|/* Some portability enhancing stuff. For use both by the gimp app  * as well as plug-ins and modules.  *  * Include this instead of just<math.h>.  */
-ifndef|#
-directive|ifndef
-name|G_PI
-comment|/* G_PI will be in GLib eventually */
-DECL|macro|G_PI
-define|#
-directive|define
-name|G_PI
-value|3.14159265358979323846
-endif|#
-directive|endif
-ifndef|#
-directive|ifndef
-name|G_PI_2
-comment|/* As will G_PI_2 */
-DECL|macro|G_PI_2
-define|#
-directive|define
-name|G_PI_2
-value|1.57079632679489661923
-endif|#
-directive|endif
-ifndef|#
-directive|ifndef
-name|G_PI_4
-comment|/* As will G_PI_4 */
-DECL|macro|G_PI_4
-define|#
-directive|define
-name|G_PI_4
-value|0.78539816339744830962
-endif|#
-directive|endif
-ifndef|#
-directive|ifndef
-name|G_SQRT2
-comment|/* As will G_SQRT2 */
-DECL|macro|G_SQRT2
-define|#
-directive|define
-name|G_SQRT2
-value|1.4142135623730951
-endif|#
-directive|endif
 ifndef|#
 directive|ifndef
 name|RAND_MAX
@@ -282,20 +227,8 @@ comment|/* HAVE_ISFINITE */
 endif|#
 directive|endif
 comment|/* HAVE_FINITE */
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+name|G_END_DECLS
+end_expr_stmt
 
 begin_endif
 endif|#

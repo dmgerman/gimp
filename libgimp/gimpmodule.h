@@ -22,23 +22,18 @@ directive|include
 file|<gmodule.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_comment
 comment|/* For information look at the html documentation */
+end_comment
+
+begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29da66510103
+DECL|enum|__anon27852f9a0103
 block|{
 DECL|enumerator|GIMP_MODULE_OK
 name|GIMP_MODULE_OK
@@ -49,12 +44,18 @@ DECL|typedef|GimpModuleStatus
 block|}
 name|GimpModuleStatus
 typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpModuleInfo
 typedef|typedef
 name|struct
 name|_GimpModuleInfo
 name|GimpModuleInfo
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GimpModuleInfo
 struct|struct
 name|_GimpModuleInfo
@@ -95,7 +96,13 @@ name|date
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_comment
 comment|/*  Module initialization  */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpModuleInitFunc
 typedef|typedef
 name|GimpModuleStatus
@@ -110,18 +117,39 @@ modifier|*
 name|module_info
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_ifndef
 ifndef|#
 directive|ifndef
 name|MODULE_COMPILATION
+end_ifndef
+
+begin_comment
 comment|/*  On Win32 this declaration clashes with the definition  *  (which uses G_MODULE_EXPORT) and thus should be bypassed  *  when compiling the module itself.  */
+end_comment
+
+begin_decl_stmt
 DECL|variable|module_init
 name|GimpModuleInitFunc
 name|module_init
 decl_stmt|;
+end_decl_stmt
+
+begin_endif
 endif|#
 directive|endif
+end_endif
+
+begin_comment
 comment|/* ! MODULE_COMPILATION */
+end_comment
+
+begin_comment
 comment|/*  Module unload  */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpModuleCompletedCB
 typedef|typedef
 name|void
@@ -134,6 +162,9 @@ name|gpointer
 name|completed_data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpModuleUnloadFunc
 typedef|typedef
 name|void
@@ -152,22 +183,24 @@ name|gpointer
 name|completed_data
 parameter_list|)
 function_decl|;
+end_typedef
+
+begin_ifndef
 ifndef|#
 directive|ifndef
 name|MODULE_COMPILATION
+end_ifndef
+
+begin_comment
 comment|/*  The same as for module_init.  */
+end_comment
+
+begin_decl_stmt
 DECL|variable|module_unload
 name|GimpModuleUnloadFunc
 name|module_unload
 decl_stmt|;
-endif|#
-directive|endif
-comment|/* ! MODULE_COMPILATION */
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_decl_stmt
 
 begin_endif
 endif|#
@@ -175,8 +208,12 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __cplusplus */
+comment|/* ! MODULE_COMPILATION */
 end_comment
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#
