@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275d14680103
+DECL|enum|__anon2abdec600103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -549,7 +549,7 @@ literal|"June 20th, 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Colorcube A_nalysis..."
+literal|"Colorcube A_nalysis..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -577,7 +577,17 @@ literal|"plug_in_ccanalyze"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Colors/Info/Colorcube A_nalysis..."
+literal|"<Image>/Filters/Colors"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_ccanalyze"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Layer/Colors/Info"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -142,7 +142,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e405be0108
+DECL|struct|__anon29c153a80108
 block|{
 DECL|member|root
 name|gboolean
@@ -448,7 +448,7 @@ literal|"v0.9.7 (2003/11/15)"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/File/Acquire/_Screen Shot..."
+literal|"_Screen Shot..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -476,10 +476,11 @@ name|PLUG_IN_NAME
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Acquire/_Screen Shot..."
+literal|"<Toolbox>/File/Acquire"
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* gimp_plugin_menu_register (PLUG_IN_NAME, N_("<Image>/File/Acquire")); */
 block|}
 end_function
 

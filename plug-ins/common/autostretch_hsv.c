@@ -204,7 +204,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Colors/Auto/Stretch _HSV"
+literal|"Stretch _HSV"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
@@ -221,6 +221,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_autostretch_hsv"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Layer/Colors/Auto"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -444,7 +454,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c36e10a0108
+DECL|struct|__anon2bb98d600108
 typedef|typedef
 struct|struct
 block|{

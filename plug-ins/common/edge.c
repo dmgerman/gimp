@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c7ccd60103
+DECL|enum|__anon29b41d270103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c7ccd60208
+DECL|struct|__anon29b41d270208
 block|{
 DECL|member|amount
 name|gdouble
@@ -421,6 +421,7 @@ literal|"Edge detection algorithm: { SOBEL (0), PREWITT (1), GRADIENT (2), ROBER
 block|}
 block|}
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|help_string
@@ -447,7 +448,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Edge-Detect/_Edge..."
+literal|"_Edge..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -464,6 +465,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_edge"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Edge-Detect"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

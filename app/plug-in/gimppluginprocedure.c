@@ -278,6 +278,13 @@ operator|->
 name|prog
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_def
+operator|->
+name|menu_label
+argument_list|)
+expr_stmt|;
 name|g_list_foreach
 argument_list|(
 name|proc_def

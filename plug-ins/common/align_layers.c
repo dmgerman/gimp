@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bb1f70103
+DECL|enum|__anon27f04fe70103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bb1f70203
+DECL|enum|__anon27f04fe70203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bb1f70303
+DECL|enum|__anon27f04fe70303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -145,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bb1f70403
+DECL|enum|__anon27f04fe70403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -268,7 +268,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289bb1f70508
+DECL|struct|__anon27f04fe70508
 block|{
 DECL|member|h_style
 name|gint
@@ -405,7 +405,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Align _Visible Layers..."
+literal|"Align _Visible Layers..."
 argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*"
@@ -422,6 +422,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -95,7 +95,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c47e8fc0108
+DECL|struct|__anon299bbac50108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -544,7 +544,7 @@ literal|"June 17th, 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/_Color Exchange..."
+literal|"_Color Exchange..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -561,6 +561,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_exchange"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6153e10108
+DECL|struct|__anon2b96c3220108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -420,7 +420,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/_Displace..."
+literal|"_Displace..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -437,6 +437,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_displace"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

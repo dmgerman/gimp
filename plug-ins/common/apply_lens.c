@@ -154,7 +154,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdfc0c20108
+DECL|struct|__anon29b5dea10108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -291,7 +291,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Glass Effects/Apply _Lens..."
+literal|"Apply _Lens..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -308,6 +308,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_applylens"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Glass Effects"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

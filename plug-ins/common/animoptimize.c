@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a30fa10103
+DECL|enum|__anon27498b590103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a30fa10203
+DECL|enum|__anon27498b590203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -505,7 +505,7 @@ literal|"1997-2003"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/Optimize (for _GIF)"
+literal|"Optimize (for _GIF)"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -548,7 +548,7 @@ literal|"1997-2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/_Optimize (Difference)"
+literal|"_Optimize (Difference)"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -590,7 +590,7 @@ literal|"1997-2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/_UnOptimize"
+literal|"_UnOptimize"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -610,6 +610,36 @@ argument_list|,
 name|args
 argument_list|,
 name|return_args
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_animationoptimize"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Animation"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_animationoptimize_diff"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Animation"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_animationunoptimize"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Animation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -633,7 +663,7 @@ literal|"2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/_Remove Backdrop"
+literal|"_Remove Backdrop"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -674,7 +704,7 @@ literal|"2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/_Find Backdrop"
+literal|"_Find Backdrop"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -694,6 +724,26 @@ argument_list|,
 name|args
 argument_list|,
 name|return_args
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_animation_remove_backdrop"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Animation"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_animation_find_backdrop"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Animation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 endif|#

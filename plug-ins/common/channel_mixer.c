@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1ea8f30103
+DECL|enum|__anon2a048f5a0103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -171,7 +171,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1ea8f30208
+DECL|struct|__anon2a048f5a0208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1ea8f30308
+DECL|struct|__anon2a048f5a0308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1ea8f30408
+DECL|struct|__anon2a048f5a0408
 block|{
 DECL|member|width
 name|gint
@@ -942,7 +942,7 @@ literal|"2002"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Channel Mi_xer.."
+literal|"Channel Mi_xer.."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -959,6 +959,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

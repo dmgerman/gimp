@@ -746,7 +746,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b567f7c0108
+DECL|struct|__anon28b87ed30108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -800,7 +800,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b567f7c0208
+DECL|struct|__anon28b87ed30208
 block|{
 DECL|member|y
 name|gint32
@@ -2456,7 +2456,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/_Curve Bend..."
+literal|"_Curve Bend..."
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
@@ -2476,6 +2476,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* the installation of the Iterator procedure for the bend plugin */

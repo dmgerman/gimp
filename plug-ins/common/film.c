@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3038240108
+DECL|struct|__anon2c5c94b90108
 block|{
 DECL|member|film_height
 name|gint
@@ -213,7 +213,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3038240208
+DECL|struct|__anon2c5c94b90208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -906,7 +906,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Combine/_Film..."
+literal|"_Film..."
 argument_list|)
 argument_list|,
 literal|"INDEXED*, GRAY*, RGB*"
@@ -926,6 +926,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_film"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Combine"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

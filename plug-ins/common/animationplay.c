@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f398b0103
+DECL|enum|__anon2bc0c7ca0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -623,7 +623,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f398b0208
+DECL|struct|__anon2bc0c7ca0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -738,7 +738,7 @@ literal|"1997, 1998..."
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/_Playback..."
+literal|"_Playback..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -755,6 +755,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_animationplay"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Animation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

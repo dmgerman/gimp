@@ -46,6 +46,11 @@ name|gchar
 modifier|*
 name|prog
 decl_stmt|;
+DECL|member|menu_label
+name|gchar
+modifier|*
+name|menu_label
+decl_stmt|;
 DECL|member|menu_paths
 name|GList
 modifier|*

@@ -290,7 +290,7 @@ literal|"1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/_Border Average..."
+literal|"_Border Average..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -310,6 +310,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_borderaverage"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

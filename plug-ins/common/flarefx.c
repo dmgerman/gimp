@@ -112,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad4adc0108
+DECL|struct|__anon2ade54bf0108
 block|{
 DECL|member|posx
 name|gint
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad4adc0208
+DECL|struct|__anon2ade54bf0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -842,10 +842,9 @@ argument_list|,
 comment|/* Copyright */
 literal|"May 2000"
 argument_list|,
-comment|/* don't translate '<Image>' entry,                            * it is keyword for the gtk toolkit */
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Light Effects/_FlareFX..."
+literal|"_FlareFX..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -862,6 +861,17 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_flarefx"
+argument_list|,
+comment|/* don't translate '<Image>' */
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Light Effects"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

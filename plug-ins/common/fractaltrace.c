@@ -224,7 +224,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon29107ae90103
+DECL|enum|__anon2943092e0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -244,7 +244,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29107ae90208
+DECL|struct|__anon2943092e0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -411,7 +411,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/_Fractal Trace..."
+literal|"_Fractal Trace..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -430,6 +430,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Map"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -440,7 +450,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29107ae90308
+DECL|struct|__anon2943092e0308
 block|{
 DECL|member|x1
 name|gint
@@ -483,7 +493,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29107ae90408
+DECL|struct|__anon2943092e0408
 block|{
 DECL|member|width
 name|gint
@@ -1038,7 +1048,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29107ae90508
+DECL|struct|__anon2943092e0508
 block|{
 DECL|member|r
 name|guchar
@@ -2922,7 +2932,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29107ae90608
+DECL|struct|__anon2943092e0608
 block|{
 DECL|member|preview
 name|GtkWidget

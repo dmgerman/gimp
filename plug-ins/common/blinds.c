@@ -141,7 +141,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b523200108
+DECL|struct|__anon29b5be7a0108
 block|{
 DECL|member|img_bpp
 name|gint
@@ -467,7 +467,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/_Blinds..."
+literal|"_Blinds..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -484,6 +484,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_blinds"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

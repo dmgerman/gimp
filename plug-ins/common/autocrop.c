@@ -246,7 +246,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Crop/_Autocrop"
+literal|"_Autocrop"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -263,6 +263,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_autocrop"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Image/Crop"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
