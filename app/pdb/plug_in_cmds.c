@@ -1424,10 +1424,6 @@ name|gchar
 modifier|*
 name|domain_path
 decl_stmt|;
-name|PlugInDef
-modifier|*
-name|plug_in_def
-decl_stmt|;
 name|domain_name
 operator|=
 operator|(
@@ -1603,10 +1599,6 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|help_path
-decl_stmt|;
-name|PlugInDef
-modifier|*
-name|plug_in_def
 decl_stmt|;
 name|help_path
 operator|=

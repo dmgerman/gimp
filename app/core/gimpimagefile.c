@@ -59,6 +59,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294a679e0108
+DECL|struct|__anon29bb4dde0108
 block|{
 DECL|member|dirname
 specifier|const

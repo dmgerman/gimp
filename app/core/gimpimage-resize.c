@@ -789,7 +789,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aad5e430103
+DECL|enum|__anon2988d21e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1902,8 +1902,7 @@ name|gimage
 operator|->
 name|construct_flag
 operator|=
-operator|-
-literal|1
+name|FALSE
 expr_stmt|;
 name|gimage
 operator|->
@@ -9520,8 +9519,6 @@ decl_stmt|;
 name|GList
 modifier|*
 name|reverse_list
-init|=
-name|NULL
 decl_stmt|;
 name|gint
 name|off_x
@@ -9556,14 +9553,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Note added by Raph Levien, 27 Jan 1998       This looks it was intended as an optimization, but it seems to      have correctness problems. In particular, if all channels are      turned off, the screen simply does not update the projected      image. It should be black. Turning off this optimization seems to      restore correct behavior. At some future point, it may be      desirable to turn the optimization back on.       */
-if|#
-directive|if
-literal|0
-comment|/*  If all channels are not visible, simply return  */
-block|switch (gimp_image_base_type (gimage))     {     case RGB:       if (! gimp_image_get_component_visible (gimage, RED_CHANNEL)&& 	  ! gimp_image_get_component_visible (gimage, GREEN_CHANNEL)&& 	  ! gimp_image_get_component_visible (gimage, BLUE_CHANNEL)) 	return;       break;     case GRAY:       if (! gimp_image_get_component_visible (gimage, GRAY_CHANNEL)) 	return;       break;     case INDEXED:       if (! gimp_image_get_component_visible (gimage, INDEXED_CHANNEL)) 	return;       break;     }
-endif|#
-directive|endif
+name|reverse_list
+operator|=
+name|NULL
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -10041,7 +10034,7 @@ name|gimage
 operator|->
 name|construct_flag
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 comment|/*  something was projected  */
 block|}
@@ -10232,7 +10225,7 @@ name|gimage
 operator|->
 name|construct_flag
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 block|}
 block|}
@@ -10609,28 +10602,30 @@ directive|if
 literal|0
 block|gint xoff;   gint yoff;
 comment|/*  set the construct flag, used to determine if anything    *  has been written to the gimage raw image yet.    */
-block|gimage->construct_flag = 0;    if (gimage->layers)     {       gimp_drawable_offsets (GIMP_DRAWABLE ((GimpLayer*) gimage->layers->data),&xoff,&yoff);     }    if ((gimage->layers)&&
+block|gimage->construct_flag = FALSE;    if (gimage->layers)     {       gimp_drawable_offsets (GIMP_DRAWABLE ((GimpLayer*) gimage->layers->data),&xoff,&yoff);     }    if ((gimage->layers)&&
 comment|/* There's a layer.      */
 block|(! g_slist_next (gimage->layers))&&
 comment|/* It's the only layer.  */
 block|(gimp_layer_has_alpha ((GimpLayer *) (gimage->layers->data)))&&
-comment|/* It's !flat.  */
+comment|/* It's !flat.           */
+block|(gimp_drawable_get_visible (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* It's visible.         */
-block|(gimp_drawable_get_visible (GIMP_DRAWABLE (gimage->layers->data)))&&       (gimp_drawable_width (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->width)&&       (gimp_drawable_height (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->height)&&
+block|(gimp_drawable_width (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->width)&&       (gimp_drawable_height (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->height)&&
 comment|/* Covers all.           */
+block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* Not indexed.          */
-block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE (gimage->layers->data)))&&       (((GimpLayer *)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
-comment|/*opaq */
+block|(((GimpLayer *)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
+comment|/* Opaque                */
 block|)     {       gint xoff;       gint yoff;              gimp_drawable_offsets (GIMP_DRAWABLE (gimage->layers->data),&xoff,&yoff);        if ((xoff==0)&& (yoff==0))
 comment|/* Starts at 0,0         */
-block|{ 	  PixelRegion srcPR, destPR; 	  gpointer    pr; 	 	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE (gimage->layers->data)), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = 1; 	  gimp_image_construct_channels (gimage, x, y, w, h);  	  return; 	}     }
+block|{ 	  PixelRegion srcPR, destPR; 	  gpointer    pr; 	 	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE (gimage->layers->data)), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = TRUE; 	  gimp_image_construct_channels (gimage, x, y, w, h);  	  return; 	}     }
 else|#
 directive|else
 name|gimage
 operator|->
 name|construct_flag
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 endif|#
 directive|endif

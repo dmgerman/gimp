@@ -152,7 +152,7 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-comment|/* The GIMP we image belongs to  */
+comment|/*  the GIMP the image belongs to*/
 DECL|member|ID
 name|gint
 name|ID
@@ -236,7 +236,7 @@ decl_stmt|;
 comment|/*  shadow buffer tiles          */
 comment|/*  Projection attributes  */
 DECL|member|construct_flag
-name|gint
+name|gboolean
 name|construct_flag
 decl_stmt|;
 comment|/*  flag for construction        */

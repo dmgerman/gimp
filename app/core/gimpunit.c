@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a21b5750108
+DECL|struct|__anon2b2df91c0108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
