@@ -169,50 +169,6 @@ name|NODESTRUCTDITHER
 value|2
 end_define
 
-begin_comment
-comment|/* adam's extra palette stuff */
-end_comment
-
-begin_define
-DECL|macro|MAKE_PALETTE
-define|#
-directive|define
-name|MAKE_PALETTE
-value|0
-end_define
-
-begin_define
-DECL|macro|REUSE_PALETTE
-define|#
-directive|define
-name|REUSE_PALETTE
-value|1
-end_define
-
-begin_define
-DECL|macro|WEB_PALETTE
-define|#
-directive|define
-name|WEB_PALETTE
-value|2
-end_define
-
-begin_define
-DECL|macro|MONO_PALETTE
-define|#
-directive|define
-name|MONO_PALETTE
-value|3
-end_define
-
-begin_define
-DECL|macro|CUSTOM_PALETTE
-define|#
-directive|define
-name|CUSTOM_PALETTE
-value|4
-end_define
-
 begin_define
 DECL|macro|PRECISION_R
 define|#
@@ -1828,7 +1784,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ffbb710108
+DECL|struct|__anon2ab165a80108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1905,7 +1861,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ffbb710208
+DECL|struct|__anon2ab165a80208
 block|{
 DECL|member|ncolors
 name|long
@@ -1924,7 +1880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ffbb710308
+DECL|struct|__anon2ab165a80308
 block|{
 DECL|member|shell
 name|GtkWidget

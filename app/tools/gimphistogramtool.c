@@ -2809,10 +2809,6 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|void
-modifier|*
-name|pr
-decl_stmt|;
 name|drawable
 operator|=
 name|NULL

@@ -34,11 +34,12 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274d09340108
+DECL|struct|__anon28c2d8b00108
 typedef|typedef
 struct|struct
 block|{
 DECL|member|label
+specifier|const
 name|char
 modifier|*
 name|label

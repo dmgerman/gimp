@@ -252,10 +252,6 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|void
-modifier|*
-name|pr
-decl_stmt|;
 name|int
 name|x1
 decl_stmt|,

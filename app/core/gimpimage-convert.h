@@ -35,6 +35,35 @@ file|"palette_entries.h"
 end_include
 
 begin_comment
+comment|/* adam's extra palette stuff */
+end_comment
+
+begin_typedef
+DECL|enum|__anon296734120103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|MAKE_PALETTE
+name|MAKE_PALETTE
+block|,
+DECL|enumerator|REUSE_PALETTE
+name|REUSE_PALETTE
+block|,
+DECL|enumerator|WEB_PALETTE
+name|WEB_PALETTE
+block|,
+DECL|enumerator|MONO_PALETTE
+name|MONO_PALETTE
+block|,
+DECL|enumerator|CUSTOM_PALETTE
+name|CUSTOM_PALETTE
+DECL|typedef|ConvertPaletteType
+block|}
+name|ConvertPaletteType
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  convert functions  */
 end_comment
 

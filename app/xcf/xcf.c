@@ -228,7 +228,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a5578b0103
+DECL|enum|__anon289390d10103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a5578b0203
+DECL|enum|__anon289390d10203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -7681,8 +7681,6 @@ name|int
 name|i
 decl_stmt|,
 name|j
-decl_stmt|,
-name|k
 decl_stmt|;
 name|int
 name|len
@@ -12359,9 +12357,6 @@ name|count
 decl_stmt|;
 name|int
 name|length
-decl_stmt|;
-name|int
-name|tmp
 decl_stmt|;
 name|int
 name|bpp

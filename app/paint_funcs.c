@@ -248,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2770326e0103
+DECL|enum|__anon29f61a350103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -25067,17 +25067,9 @@ name|type
 parameter_list|)
 block|{
 name|int
-name|h
-decl_stmt|;
-name|int
 name|has_alpha1
 decl_stmt|,
 name|has_alpha2
-decl_stmt|;
-name|unsigned
-name|char
-modifier|*
-name|buf
 decl_stmt|;
 name|struct
 name|combine_regions_struct

@@ -3043,6 +3043,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|row
+init|=
+name|NULL
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -4817,7 +4819,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29b3bcba0108
+DECL|struct|__anon29b3a7f90108
 typedef|typedef
 struct|struct
 block|{

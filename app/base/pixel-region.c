@@ -1984,10 +1984,6 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|PixelRegionIterator
-modifier|*
-name|PRI
-decl_stmt|;
 name|struct
 name|parallel_struct
 name|p_s
@@ -2000,9 +1996,10 @@ name|IF_THREAD
 argument_list|(
 argument|pthread_attr_t pthread_attr;
 argument_list|)
-name|int
-name|nthreads
-decl_stmt|;
+name|IF_THREAD
+argument_list|(
+argument|int nthreads;
+argument_list|)
 name|va_list
 name|ap
 decl_stmt|;

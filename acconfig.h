@@ -186,12 +186,6 @@ directive|undef
 name|USE_PTHREADS
 end_undef
 
-begin_undef
-undef|#
-directive|undef
-name|WITH_SYMBOL_UNDERSCORE
-end_undef
-
 begin_escape
 end_escape
 

@@ -495,6 +495,7 @@ name|b
 operator|->
 name|size
 condition|)
+block|{
 if|if
 condition|(
 name|a
@@ -543,6 +544,7 @@ condition|)
 return|return
 name|TRUE
 return|;
+block|}
 return|return
 name|FALSE
 return|;

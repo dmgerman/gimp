@@ -1039,6 +1039,7 @@ index|]
 operator|!=
 literal|0.0
 condition|)
+block|{
 if|if
 condition|(
 name|inten
@@ -1084,6 +1085,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  determine the output intensity  */
 if|if
 condition|(

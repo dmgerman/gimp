@@ -3226,10 +3226,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|void
-modifier|*
-name|pr
-decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable

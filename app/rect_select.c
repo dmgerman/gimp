@@ -344,10 +344,6 @@ name|GtkWidget
 modifier|*
 name|sample_merged_toggle
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|bezier_toggle
-decl_stmt|;
 name|GtkObject
 modifier|*
 name|feather_scale_data
