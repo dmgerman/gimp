@@ -184,7 +184,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to load"
+literal|"The name of the file to load, in the on-disk character set and encoding"
 block|}
 block|,
 block|{
@@ -192,7 +192,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
-literal|"The name of the file to load"
+literal|"The basename of the file, in UTF-8"
 block|}
 block|, }
 decl_stmt|;
@@ -323,7 +323,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name of the file to save the image in, in the on-disk character set and encoding"
 block|}
 block|,
 block|{
@@ -331,7 +331,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
-literal|"The name of the file to load"
+literal|"The basename of the file, in UTF-8"
 block|}
 block|, }
 decl_stmt|;
@@ -1079,6 +1079,24 @@ block|}
 block|}
 else|else
 block|{
+name|gchar
+modifier|*
+name|utf8_filename
+init|=
+name|g_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
 name|g_message
 argument_list|(
 name|_
@@ -1086,12 +1104,17 @@ argument_list|(
 literal|"open failed on %s: %s\n"
 argument_list|)
 argument_list|,
-name|filename
+name|utf8_filename
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|utf8_filename
 argument_list|)
 expr_stmt|;
 block|}

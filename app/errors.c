@@ -529,9 +529,16 @@ name|MessageBox
 argument_list|(
 name|NULL
 argument_list|,
-name|message
+name|g_strdup_printf
+argument_list|(
+literal|"%s: %s"
 argument_list|,
-name|prog_name
+name|reason
+argument_list|,
+name|message
+argument_list|)
+argument_list|,
+name|full_prog_name
 argument_list|,
 name|MB_OK
 operator||
