@@ -396,7 +396,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'load_image()' - Load a PNG image into a new image window.  */
+comment|/*  * 'load_image()' - Load a SVG image into a new image window.  */
 end_comment
 
 begin_function
