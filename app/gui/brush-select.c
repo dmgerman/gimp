@@ -3864,7 +3864,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a3b910c0108
+DECL|struct|__anon2bcf1ad30108
 typedef|typedef
 struct|struct
 block|{
@@ -4673,6 +4673,22 @@ name|mask
 expr_stmt|;
 if|if
 condition|(
+name|GIMP_IS_BRUSH_PIXMAP
+argument_list|(
+name|brush
+argument_list|)
+condition|)
+name|pixmap_buf
+operator|=
+name|GIMP_BRUSH_PIXMAP
+argument_list|(
+name|brush
+argument_list|)
+operator|->
+name|pixmap_mask
+expr_stmt|;
+if|if
+condition|(
 name|mask_buf
 operator|->
 name|width
@@ -4770,12 +4786,7 @@ name|pixmap_buf
 operator|=
 name|brush_scale_pixmap
 argument_list|(
-name|GIMP_BRUSH_PIXMAP
-argument_list|(
-name|brush
-argument_list|)
-operator|->
-name|pixmap_mask
+name|pixmap_buf
 argument_list|,
 name|mask_buf
 operator|->
