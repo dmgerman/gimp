@@ -655,7 +655,7 @@ argument_list|,
 name|preview_size
 argument_list|)
 expr_stmt|;
-comment|/* Maybe gimp_dialog_factory_dockable_new() returned                    *  an already existing singleton dockable, so check                    *  if it already is attached to a dockbook.                    */
+comment|/*  Maybe gimp_dialog_factory_dockable_new() returned                    *  an already existing singleton dockable, so check                    *  if it already is attached to a dockbook.                    */
 if|if
 condition|(
 name|new_dockable
@@ -821,7 +821,6 @@ if|if
 condition|(
 name|view
 condition|)
-block|{
 name|gimp_container_view_set_preview_size
 argument_list|(
 name|view
@@ -829,7 +828,6 @@ argument_list|,
 name|preview_size
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}

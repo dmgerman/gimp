@@ -122,7 +122,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   if (! gdisp) \     return
+value|if (GIMP_IS_DISPLAY (data)) \     gdisp = data; \   else if (GIMP_IS_GIMP (data)) \     gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   else \     gdisp = NULL; \   if (! gdisp) \     return
 end_define
 
 begin_function
@@ -693,6 +693,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|GimpDisplayConfig
+modifier|*
+name|config
+decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
@@ -707,6 +711,19 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|config
+operator|=
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
 argument_list|)
 expr_stmt|;
 if|if
@@ -726,10 +743,17 @@ name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|shell
 operator|->
-name|origin
+name|hrule
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|config
+operator|->
+name|menu_bar_per_display
+condition|)
 name|gtk_widget_hide
 argument_list|(
 name|shell
@@ -774,10 +798,17 @@ name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|shell
 operator|->
-name|origin
+name|hrule
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|config
+operator|->
+name|menu_bar_per_display
+condition|)
 name|gtk_widget_show
 argument_list|(
 name|shell

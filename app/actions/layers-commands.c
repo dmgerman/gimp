@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layers-commands.h"
 end_include
 
@@ -202,19 +208,21 @@ function_decl|;
 end_function_decl
 
 begin_define
-DECL|macro|return_if_no_image (gimage)
+DECL|macro|return_if_no_image (gimage,data)
 define|#
 directive|define
 name|return_if_no_image
 parameter_list|(
 name|gimage
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|gimage = (GimpImage *) gimp_widget_get_callback_context (widget); \   if (! GIMP_IS_IMAGE (gimage)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   if (! gimage) \     return
+value|gimage = (GimpImage *) gimp_widget_get_callback_context (widget); \   if (! GIMP_IS_IMAGE (gimage)) { \     if (GIMP_IS_DISPLAY (data)) \       gimage = ((GimpDisplay *) data)->gimage; \     else if (GIMP_IS_GIMP (data)) \       gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   } \   if (! gimage) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_layer (gimage,layer)
+DECL|macro|return_if_no_layer (gimage,layer,data)
 define|#
 directive|define
 name|return_if_no_layer
@@ -222,9 +230,11 @@ parameter_list|(
 name|gimage
 parameter_list|,
 name|layer
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|return_if_no_image (gimage); \   layer = gimp_image_get_active_layer (gimage); \   if (! layer) \     return
+value|return_if_no_image (gimage,data); \   layer = gimp_image_get_active_layer (gimage); \   if (! layer) \     return
 end_define
 
 begin_comment
@@ -258,6 +268,8 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|current_layer
@@ -345,6 +357,8 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|current_layer
@@ -422,6 +436,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_raise_layer
@@ -465,6 +481,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_lower_layer
@@ -508,6 +526,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_raise_layer_to_top
@@ -551,6 +571,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_lower_layer_to_bottom
@@ -588,6 +610,8 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|layers_new_layer_query
@@ -632,6 +656,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|new_layer
@@ -692,6 +718,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|layers_anchor_layer
@@ -728,6 +756,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_merge_down
@@ -773,6 +803,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -829,6 +861,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|layers_resize_layer_query
@@ -867,6 +901,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_layer_resize_to_image
@@ -908,6 +944,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|layers_scale_layer_query
@@ -960,6 +998,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -1106,6 +1146,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|layers_add_mask_query
@@ -1142,6 +1184,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -1218,6 +1262,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -1293,6 +1339,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -1345,6 +1393,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_mask_layer_alpha
@@ -1388,6 +1438,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -1442,6 +1494,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|layers_edit_layer_query

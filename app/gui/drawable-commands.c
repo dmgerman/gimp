@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable-commands.h"
 end_include
 
@@ -106,19 +112,21 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|return_if_no_image (gimage)
+DECL|macro|return_if_no_image (gimage,data)
 define|#
 directive|define
 name|return_if_no_image
 parameter_list|(
 name|gimage
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|gimage = (GimpImage *) gimp_widget_get_callback_context (widget); \   if (! GIMP_IS_IMAGE (gimage)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   if (! gimage) \     return
+value|gimage = (GimpImage *) gimp_widget_get_callback_context (widget); \   if (! GIMP_IS_IMAGE (gimage)) { \     if (GIMP_IS_DISPLAY (data)) \       gimage = ((GimpDisplay *) data)->gimage; \     else if (GIMP_IS_GIMP (data)) \       gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   } \   if (! gimage) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_drawable (gimage,drawable)
+DECL|macro|return_if_no_drawable (gimage,drawable,data)
 define|#
 directive|define
 name|return_if_no_drawable
@@ -126,9 +134,11 @@ parameter_list|(
 name|gimage
 parameter_list|,
 name|drawable
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|return_if_no_image (gimage); \   drawable = gimp_image_active_drawable (gimage); \   if (! drawable) \     return
+value|return_if_no_image (gimage,data); \   drawable = gimp_image_active_drawable (gimage); \   if (! drawable) \     return
 end_define
 
 begin_comment
@@ -161,6 +171,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_drawable
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -221,6 +233,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_drawable
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -280,6 +294,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_drawable
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -341,6 +357,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_drawable
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|offset_dialog_create

@@ -176,6 +176,10 @@ DECL|member|canvas_padding_color
 name|GimpRGB
 name|canvas_padding_color
 decl_stmt|;
+DECL|member|menu_bar_per_display
+name|gboolean
+name|menu_bar_per_display
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channels-commands.h"
 end_include
 
@@ -158,19 +164,21 @@ function_decl|;
 end_function_decl
 
 begin_define
-DECL|macro|return_if_no_image (gimage)
+DECL|macro|return_if_no_image (gimage,data)
 define|#
 directive|define
 name|return_if_no_image
 parameter_list|(
 name|gimage
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|gimage = (GimpImage *) gimp_widget_get_callback_context (widget); \   if (! GIMP_IS_IMAGE (gimage)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   if (! gimage) \     return
+value|gimage = (GimpImage *) gimp_widget_get_callback_context (widget); \   if (! GIMP_IS_IMAGE (gimage)) { \     if (GIMP_IS_DISPLAY (data)) \       gimage = ((GimpDisplay *) data)->gimage; \     else if (GIMP_IS_GIMP (data)) \       gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   } \   if (! gimage) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_channel (gimage,channel)
+DECL|macro|return_if_no_channel (gimage,channel,data)
 define|#
 directive|define
 name|return_if_no_channel
@@ -178,9 +186,11 @@ parameter_list|(
 name|gimage
 parameter_list|,
 name|channel
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|return_if_no_image (gimage); \   channel = gimp_image_get_active_channel (gimage); \   if (! channel) \     return
+value|return_if_no_image (gimage,data); \   channel = gimp_image_get_active_channel (gimage); \   if (! channel) \     return
 end_define
 
 begin_comment
@@ -207,6 +217,8 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|channels_new_channel_query
@@ -247,6 +259,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_channel
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_raise_channel
@@ -290,6 +304,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_channel
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_lower_channel
@@ -337,6 +353,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_channel
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|new_channel
@@ -397,6 +415,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_channel
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_remove_channel
@@ -444,6 +464,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_channel
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_mask_select_channel
@@ -599,6 +621,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_channel
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|channels_edit_channel_query

@@ -2845,6 +2845,12 @@ argument_list|,
 name|toolbox
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|item_factory
+condition|)
+continue|continue;
 name|menu_item
 operator|=
 name|gtk_item_factory_get_widget

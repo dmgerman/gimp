@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289f9cf20108
+DECL|struct|__anon2a0f49270108
 block|{
 DECL|member|resize
 name|Resize
@@ -172,7 +172,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   if (! gdisp) \     return
+value|if (GIMP_IS_DISPLAY (data)) \     gdisp = data; \   else if (GIMP_IS_GIMP (data)) \     gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   else \     gdisp = NULL; \   if (! gdisp) \     return
 end_define
 
 begin_define
@@ -186,7 +186,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   if (! gimage) \     return
+value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else \     gimage = NULL; \   if (! gimage) \     return
 end_define
 
 begin_comment

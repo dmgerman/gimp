@@ -342,12 +342,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"module-browser.h"
 end_include
 

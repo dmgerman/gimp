@@ -81,6 +81,20 @@ directive|include
 file|"app_procs.h"
 end_include
 
+begin_define
+DECL|macro|return_if_no_display (gdisp,data)
+define|#
+directive|define
+name|return_if_no_display
+parameter_list|(
+name|gdisp
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|if (GIMP_IS_DISPLAY (data)) \     gdisp = data; \   else if (GIMP_IS_GIMP (data)) \     gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   else \     gdisp = NULL; \   if (! gdisp) \     return
+end_define
+
 begin_function
 name|void
 DECL|function|plug_in_run_cmd_callback (GtkWidget * widget,gpointer data,guint action)
@@ -496,25 +510,13 @@ decl_stmt|;
 name|gboolean
 name|interactive
 decl_stmt|;
+name|return_if_no_display
+argument_list|(
 name|gdisp
-operator|=
-name|gimp_context_get_display
-argument_list|(
-name|gimp_get_user_context
-argument_list|(
-name|GIMP
-argument_list|(
+argument_list|,
 name|data
 argument_list|)
-argument_list|)
-argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gdisp
-condition|)
-return|return;
 name|drawable
 operator|=
 name|gimp_image_active_drawable

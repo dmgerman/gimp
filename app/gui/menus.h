@@ -49,6 +49,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* FIXME: remove this and add a GimpMenuFactory class which produces  *        GimpItemFactories on demand  */
+end_comment
+
+begin_function_decl
+name|GimpItemFactory
+modifier|*
+name|menus_get_new_image_factory
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gpointer
+name|callback_data
+parameter_list|,
+name|gboolean
+name|menu_bar
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

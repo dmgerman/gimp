@@ -102,6 +102,31 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|plug_ins_proc_def_add
+parameter_list|(
+name|PlugInProcDef
+modifier|*
+name|proc_def
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|locale_domain
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_path
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|plug_ins_proc_def_remove
 parameter_list|(
 name|PlugInProcDef
@@ -132,14 +157,40 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/* Retrieve a plug-ins locale domain */
+end_comment
+
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|plug_ins_locale_domain
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|prog_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|locale_path
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Retrieve a plug-ins help path */
 end_comment
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|plug_ins_help_path
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|prog_name
@@ -190,15 +241,6 @@ specifier|extern
 name|GSList
 modifier|*
 name|proc_defs
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-specifier|const
-name|gchar
-modifier|*
-name|std_plugins_domain
 decl_stmt|;
 end_decl_stmt
 

@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimppainttool.h"
 end_include
 
@@ -160,19 +166,21 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|return_if_no_image (gimage)
+DECL|macro|return_if_no_image (gimage,data)
 define|#
 directive|define
 name|return_if_no_image
 parameter_list|(
 name|gimage
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|gimage = (GimpImage *) gimp_widget_get_callback_context (widget); \   if (! GIMP_IS_IMAGE (gimage)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   if (! gimage) \     return
+value|gimage = (GimpImage *) gimp_widget_get_callback_context (widget); \   if (! GIMP_IS_IMAGE (gimage)) { \     if (GIMP_IS_DISPLAY (data)) \       gimage = ((GimpDisplay *) data)->gimage; \     else if (GIMP_IS_GIMP (data)) \       gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \     else \       gimage = NULL; \   } \   if (! gimage) \     return
 end_define
 
 begin_define
-DECL|macro|return_if_no_vectors (gimage,vectors)
+DECL|macro|return_if_no_vectors (gimage,vectors,data)
 define|#
 directive|define
 name|return_if_no_vectors
@@ -180,9 +188,11 @@ parameter_list|(
 name|gimage
 parameter_list|,
 name|vectors
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|return_if_no_image (gimage); \   vectors = gimp_image_get_active_vectors (gimage); \   if (! vectors) \     return
+value|return_if_no_image (gimage,data); \   vectors = gimp_image_get_active_vectors (gimage); \   if (! vectors) \     return
 end_define
 
 begin_comment
@@ -209,6 +219,8 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|vectors_new_vectors_query
@@ -249,6 +261,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_raise_vectors
@@ -292,6 +306,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_lower_vectors
@@ -339,12 +355,22 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|new_vectors
 operator|=
 name|NULL
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: need gimp_vectors_copy()
+endif|#
+directive|endif
 if|#
 directive|if
 literal|0
@@ -380,6 +406,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_remove_vectors
@@ -427,6 +455,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_image_mask_select_vectors
@@ -574,9 +604,18 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
-comment|/* TODO */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: need gimp_vectors_from_mask(or something)
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -606,6 +645,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|vectors_stroke_vectors
@@ -642,9 +683,18 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
-comment|/* TODO */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: need vectors clipoard
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -668,9 +718,18 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
-comment|/* TODO */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: need vectors clipoard
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -694,9 +753,18 @@ decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
-comment|/* TODO */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: need vectors import/export
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -726,9 +794,18 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
-comment|/* TODO */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: need vectors import/export
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -758,6 +835,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|vectors_vectors_tool
@@ -794,6 +873,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|vectors_edit_vectors_query

@@ -144,6 +144,20 @@ value|"revert-confirm-dialog"
 end_define
 
 begin_define
+DECL|macro|return_if_no_gimp (gimp,data)
+define|#
+directive|define
+name|return_if_no_gimp
+parameter_list|(
+name|gimp
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|if (GIMP_IS_DISPLAY (data)) \     gimp = ((GimpDisplay *) data)->gimage->gimp; \   else if (GIMP_IS_GIMP (data)) \     gimp = data; \   else \     gimp = NULL; \   if (! gimp) \     return
+end_define
+
+begin_define
 DECL|macro|return_if_no_display (gdisp,data)
 define|#
 directive|define
@@ -154,7 +168,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   if (!gdisp) return
+value|if (GIMP_IS_DISPLAY (data)) \     gdisp = data; \   else if (GIMP_IS_GIMP (data)) \     gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   else \     gdisp = NULL; \   if (! gdisp) \     return
 end_define
 
 begin_comment
@@ -206,13 +220,11 @@ decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
-init|=
-name|NULL
 decl_stmt|;
-name|gimp
-operator|=
-name|GIMP
+name|return_if_no_gimp
 argument_list|(
+name|gimp
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -230,6 +242,11 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|)
+expr_stmt|;
+else|else
+name|gimage
+operator|=
+name|NULL
 expr_stmt|;
 name|file_new_dialog_create
 argument_list|(
@@ -286,13 +303,11 @@ decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
-init|=
-name|NULL
 decl_stmt|;
-name|gimp
-operator|=
-name|GIMP
+name|return_if_no_gimp
 argument_list|(
+name|gimp
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -310,6 +325,11 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|)
+expr_stmt|;
+else|else
+name|gimage
+operator|=
+name|NULL
 expr_stmt|;
 name|file_open_dialog_show
 argument_list|(
@@ -350,10 +370,10 @@ decl_stmt|;
 name|guint
 name|num_entries
 decl_stmt|;
-name|gimp
-operator|=
-name|GIMP
+name|return_if_no_gimp
 argument_list|(
+name|gimp
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -917,12 +937,20 @@ name|guint
 name|action
 parameter_list|)
 block|{
-name|gimp_exit
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|return_if_no_gimp
 argument_list|(
-name|GIMP
-argument_list|(
+name|gimp
+argument_list|,
 name|data
 argument_list|)
+expr_stmt|;
+name|gimp_exit
+argument_list|(
+name|gimp
 argument_list|,
 name|FALSE
 argument_list|)

@@ -605,6 +605,14 @@ value|NULL
 end_define
 
 begin_define
+DECL|macro|MENU_BAR_PER_DISPLAY_BLURB
+define|#
+directive|define
+name|MENU_BAR_PER_DISPLAY_BLURB
+value|NULL
+end_define
+
+begin_define
 DECL|macro|HELP_BROWSER_BLURB
 define|#
 directive|define

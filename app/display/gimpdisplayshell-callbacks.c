@@ -477,6 +477,18 @@ decl_stmt|;
 case|case
 name|GDK_KEY_PRESS
 case|:
+if|if
+condition|(
+operator|!
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|menu_bar_per_display
+condition|)
 block|{
 name|gchar
 modifier|*
@@ -549,7 +561,7 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
-comment|/* FIXME this is wrong, needs to be in the global accel resolution              * thing, to properly consider i18n etc., but that probably requires              * AccelGroup changes etc.              */
+comment|/* FIXME this is wrong, needs to be in the global accel                * resolution thing, to properly consider i18n etc., but                * that probably requires AccelGroup changes etc.                */
 if|if
 condition|(
 name|kevent
@@ -589,6 +601,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/* fallthru */
 case|case
 name|GDK_KEY_RELEASE
 case|:
@@ -2141,6 +2154,20 @@ name|state
 operator||=
 name|GDK_BUTTON3_MASK
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|menu_bar_per_display
+condition|)
 name|gimp_item_factory_popup_with_data
 argument_list|(
 name|shell
