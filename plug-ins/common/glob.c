@@ -83,6 +83,9 @@ name|gchar
 modifier|*
 name|pattern
 parameter_list|,
+name|gboolean
+name|filename_encoding
+parameter_list|,
 name|gint
 modifier|*
 name|num_matches
@@ -158,6 +161,15 @@ literal|"pattern"
 block|,
 literal|"The glob pattern (in UTF-8 encoding)"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"encoding"
+block|,
+literal|"Encoding of the returned names: "
+literal|"{ UTF-8 (0), filename encoding (1) }"
+block|}
 block|}
 decl_stmt|;
 specifier|static
@@ -193,9 +205,7 @@ literal|"This can be useful in scripts and other plugins "
 literal|"(e.g., batch-conversion). See the glob(7) manpage "
 literal|"for more info. Note however that this isn't a "
 literal|"full-featured glob implementation. It only handles "
-literal|"simple patterns like \"/home/foo/bar/*.jpg\". "
-literal|"The pattern is expected to be in UTF-8 encoding "
-literal|"and all returned names are UTF-8 encoded as well."
+literal|"simple patterns like \"/home/foo/bar/*.jpg\"."
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
@@ -303,6 +313,10 @@ name|PROCEDURE_NAME
 argument_list|)
 operator|==
 literal|0
+operator|&&
+name|nparams
+operator|>=
+literal|1
 condition|)
 block|{
 name|gchar
@@ -313,6 +327,32 @@ decl_stmt|;
 name|gint
 name|num_matches
 decl_stmt|;
+name|gboolean
+name|filename_encoding
+init|=
+name|FALSE
+decl_stmt|;
+if|if
+condition|(
+name|nparams
+operator|>
+literal|1
+condition|)
+name|filename_encoding
+operator|=
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -326,6 +366,8 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+name|filename_encoding
 argument_list|,
 operator|&
 name|num_matches
@@ -420,13 +462,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|glob_match (const gchar * pattern,gint * num_matches,gchar *** matches)
+DECL|function|glob_match (const gchar * pattern,gboolean filename_encoding,gint * num_matches,gchar *** matches)
 name|glob_match
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|pattern
+parameter_list|,
+name|gboolean
+name|filename_encoding
 parameter_list|,
 name|gint
 modifier|*
@@ -621,17 +666,18 @@ control|)
 block|{
 name|gchar
 modifier|*
+name|path
+decl_stmt|;
+name|gchar
+modifier|*
 name|name
 decl_stmt|;
 if|if
 condition|(
 name|dirname
 condition|)
-block|{
-name|gchar
-modifier|*
 name|path
-init|=
+operator|=
 name|g_build_filename
 argument_list|(
 name|dirname
@@ -640,36 +686,20 @@ name|filename
 argument_list|,
 name|NULL
 argument_list|)
-decl_stmt|;
-name|name
-operator|=
-name|g_filename_to_utf8
-argument_list|(
-name|path
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
-block|}
 else|else
-block|{
-name|name
+name|path
 operator|=
-name|g_filename_to_utf8
+name|g_strdup
 argument_list|(
 name|filename
+argument_list|)
+expr_stmt|;
+name|name
+operator|=
+name|g_filename_to_utf8
+argument_list|(
+name|path
 argument_list|,
 operator|-
 literal|1
@@ -681,7 +711,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|name
@@ -693,6 +722,26 @@ argument_list|,
 name|name
 argument_list|)
 condition|)
+block|{
+if|if
+condition|(
+name|filename_encoding
+condition|)
+block|{
+name|g_ptr_array_add
+argument_list|(
+name|array
+argument_list|,
+name|path
+argument_list|)
+expr_stmt|;
+name|path
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+else|else
+block|{
 name|g_ptr_array_add
 argument_list|(
 name|array
@@ -700,7 +749,17 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-else|else
+name|name
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+block|}
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|name
