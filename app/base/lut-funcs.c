@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -43,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"gimphistogram.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_comment
@@ -943,7 +943,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0e5c30108
+DECL|struct|__anon2a1149b40108
 block|{
 DECL|member|gamma
 name|double
