@@ -18,6 +18,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -51,6 +57,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Wear your GIMP with pride! */
 end_comment
@@ -61,14 +73,6 @@ define|#
 directive|define
 name|DEFAULT_USE_COMMENT
 value|TRUE
-end_define
-
-begin_define
-DECL|macro|DEFAULT_COMMENT
-define|#
-directive|define
-name|DEFAULT_COMMENT
-value|"Made with GIMP"
 end_define
 
 begin_define
@@ -160,7 +164,7 @@ name|XBMSaveVals
 name|xsvals
 init|=
 block|{
-name|DEFAULT_COMMENT
+literal|"###"
 block|,
 comment|/* comment */
 name|DEFAULT_X10_FORMAT
@@ -610,9 +614,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xbm_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"Load a file in X10 or X11 bitmap (XBM) file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Load a file in X10 or X11 bitmap (XBM) file format.  XBM is a lossless format for flat black-and-white (two color indexed) images."
+argument_list|)
 argument_list|,
 literal|"Gordon Matzigkeit"
 argument_list|,
@@ -837,6 +847,23 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|strncpy
+argument_list|(
+name|xsvals
+operator|.
+name|comment
+argument_list|,
+name|_
+argument_list|(
+literal|"Made with Gimp"
+argument_list|)
+argument_list|,
+name|MAX_COMMENT
+argument_list|)
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1952,9 +1979,12 @@ operator|!
 name|fp
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"XBM: cannot open \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1980,7 +2010,10 @@ name|sprintf
 argument_list|(
 name|name_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2189,9 +2222,12 @@ operator|==
 name|EOF
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"XBM: cannot read header (ftell == %ld)\n"
+argument_list|)
 argument_list|,
 name|ftell
 argument_list|(
@@ -2211,9 +2247,12 @@ operator|==
 literal|0
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"XBM: no image width specified\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2228,9 +2267,12 @@ operator|==
 literal|0
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"XBM: no image height specified\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2245,9 +2287,12 @@ operator|==
 literal|0
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"XBM: no image data type specified\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2289,7 +2334,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -2604,9 +2652,14 @@ operator|!
 name|gtk_initialized
 condition|)
 block|{
-name|printf
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+name|_
 argument_list|(
 literal|"XBM: can only save two color indexed images\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2623,7 +2676,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"XBM Warning"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2675,7 +2731,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2813,10 +2872,13 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"The image which you are trying to save as\n"
 literal|"an XBM contains more than two colors.\n\n"
 literal|"Please convert it to a black and white\n"
 literal|"(1-bit) indexed image and try again."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3030,7 +3092,10 @@ name|sprintf
 argument_list|(
 name|name_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -3166,9 +3231,12 @@ operator|!
 name|fp
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"XBM: cannot create \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -3803,7 +3871,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save as XBM"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3855,7 +3926,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3917,7 +3991,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3978,7 +4055,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"XBM Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4096,7 +4176,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Description: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4196,7 +4279,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"X10 format bitmap"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4292,7 +4378,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Identifier prefix: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

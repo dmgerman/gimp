@@ -62,6 +62,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -93,6 +99,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -370,11 +382,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gif_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of Compuserve GIF file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for gif_load"
 argument_list|,
@@ -503,6 +521,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -737,7 +758,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27a0e0b70108
+DECL|struct|__anon29590bfe0108
 block|{
 DECL|member|Width
 name|unsigned
@@ -787,7 +808,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27a0e0b70208
+DECL|struct|__anon29590bfe0208
 block|{
 DECL|member|transparent
 name|int
@@ -1049,7 +1070,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: can't open \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1082,7 +1106,10 @@ name|sprintf
 argument_list|(
 name|name_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1113,7 +1140,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: error reading magic number\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1141,7 +1171,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: not a GIF file\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1198,7 +1231,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: bad version number, not '87a' or '89a'\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1221,7 +1257,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: failed to read screen descriptor\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1354,7 +1393,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: error reading global colormap\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1380,7 +1422,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: warning - non-square pixels\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1410,7 +1455,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: EOF / read error on image data\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1454,7 +1502,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: OF / read error on extention function code\n"
+name|_
+argument_list|(
+literal|"GIF: OF / read error on extension function code\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1481,7 +1532,10 @@ block|{
 comment|/* Not a valid start character */
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: bogus character 0x%02x, ignoring\n"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -1509,7 +1563,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: couldn't read left/top/width/height\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1570,7 +1627,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: error reading local colormap\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1880,7 +1940,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: bad colormap\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2495,7 +2558,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: error in getting DataBlock size\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2532,7 +2598,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: error in reading DataBlock\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2638,7 +2707,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: ran off the end of by bits\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -3229,7 +3301,10 @@ literal|0
 condition|)
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: missing EOD in data stream (common occurence)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3293,7 +3368,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: circular table entry BIG ERROR\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -3553,7 +3631,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: EOF / read error on image data\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3577,7 +3658,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: error while reading\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3716,7 +3800,10 @@ name|strcpy
 argument_list|(
 name|framename
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -3724,7 +3811,10 @@ name|sprintf
 argument_list|(
 name|framename
 argument_list|,
+name|_
+argument_list|(
 literal|"Background (%dms)"
+argument_list|)
 argument_list|,
 literal|10
 operator|*
@@ -3923,7 +4013,10 @@ name|sprintf
 argument_list|(
 name|framename
 argument_list|,
+name|_
+argument_list|(
 literal|"Frame %d"
+argument_list|)
 argument_list|,
 name|frame_number
 argument_list|)
@@ -3933,7 +4026,10 @@ name|sprintf
 argument_list|(
 name|framename
 argument_list|,
+name|_
+argument_list|(
 literal|"Frame %d (%dms)"
+argument_list|)
 argument_list|,
 name|frame_number
 argument_list|,
@@ -3961,7 +4057,10 @@ name|strcat
 argument_list|(
 name|framename
 argument_list|,
+name|_
+argument_list|(
 literal|" (combine)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3972,7 +4071,10 @@ name|strcat
 argument_list|(
 name|framename
 argument_list|,
+name|_
+argument_list|(
 literal|" (replace)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3983,7 +4085,10 @@ name|strcat
 argument_list|(
 name|framename
 argument_list|,
+name|_
+argument_list|(
 literal|" (combine)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4003,20 +4108,29 @@ name|strcat
 argument_list|(
 name|framename
 argument_list|,
+name|_
+argument_list|(
 literal|" (unknown disposal)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: Hmm... please forward this GIF to the "
 literal|"GIF plugin author!\n  (adam@foxbox.org)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: Something got corrupted.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4142,7 +4256,10 @@ name|verbose
 condition|)
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: reading %d by %d%s GIF image, ncols=%d\n"
+argument_list|)
 argument_list|,
 name|len
 argument_list|,
@@ -4150,7 +4267,10 @@ name|height
 argument_list|,
 name|interlace
 condition|?
+name|_
+argument_list|(
 literal|" interlaced"
+argument_list|)
 else|:
 literal|""
 argument_list|,
@@ -4167,7 +4287,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: Ouchie!  Can't handle non-alpha RGB frames.\n     Please mail the plugin author.  (adam@gimp.org)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|exit
@@ -4580,7 +4703,10 @@ literal|0
 condition|)
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: too much input data, ignoring extra...\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init

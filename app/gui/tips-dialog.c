@@ -72,11 +72,11 @@ file|"libgimp/gimpenv.h"
 end_include
 
 begin_define
-DECL|macro|TIPS_FILE_NAME
+DECL|macro|TIPS_DIR_NAME
 define|#
 directive|define
-name|TIPS_FILE_NAME
-value|"gimp_tips.txt"
+name|TIPS_DIR_NAME
+value|"tips"
 end_define
 
 begin_function_decl
@@ -278,13 +278,14 @@ operator|=
 name|g_strdup_printf
 argument_list|(
 literal|"%s"
-name|G_DIR_SEPARATOR_S
+argument|G_DIR_SEPARATOR_S TIPS_DIR_NAME                               G_DIR_SEPARATOR_S
 literal|"%s"
 argument_list|,
-name|gimp_data_directory
-argument_list|()
+argument|gimp_data_directory ()
 argument_list|,
-name|TIPS_FILE_NAME
+argument|_(
+literal|"gimp_tips.txt"
+argument|)
 argument_list|)
 expr_stmt|;
 name|read_tips_file
@@ -1370,9 +1371,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Your GIMP tips file appears to be missing!\n"
-literal|"There should be a file called "
-name|TIPS_FILE_NAME
-literal|" in the\n"
+literal|"There should be a file called gimp_tips.txt in the\n"
 literal|"GIMP data directory.  Please check your installation."
 argument_list|)
 argument_list|)

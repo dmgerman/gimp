@@ -238,13 +238,25 @@ name|light_labels
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Point light"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Directional light"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spot light"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"No light"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -259,9 +271,15 @@ name|maptype_labels
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"From image"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Waves"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -276,13 +294,25 @@ name|curvetype_labels
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Linear"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Logarithmic"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Sinusoidal"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spherical"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -2680,7 +2710,10 @@ name|frame
 operator|=
 name|gck_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"General options"
+argument_list|)
 argument_list|,
 name|page
 argument_list|,
@@ -2718,7 +2751,10 @@ name|togglebump
 operator|=
 name|gck_checkbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Use bump mapping"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -2736,7 +2772,10 @@ name|toggleenvironment
 operator|=
 name|gck_checkbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Use environment mapping"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -2755,7 +2794,10 @@ name|toggletrans
 operator|=
 name|gck_checkbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Transparent background"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -2773,7 +2815,10 @@ name|toggleimage
 operator|=
 name|gck_checkbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Create new image"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -2791,7 +2836,10 @@ name|togglequality
 operator|=
 name|gck_checkbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"High preview quality"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -2809,7 +2857,10 @@ name|toggletips
 operator|=
 name|gck_checkbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Enable tooltips"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -2829,7 +2880,10 @@ name|tooltips
 argument_list|,
 name|togglebump
 argument_list|,
+name|_
+argument_list|(
 literal|"Enable/disable bump-mapping (image depth)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2840,7 +2894,10 @@ name|tooltips
 argument_list|,
 name|toggleenvironment
 argument_list|,
+name|_
+argument_list|(
 literal|"Enable/disable environment mapping (reflection)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2852,7 +2909,10 @@ name|tooltips
 argument_list|,
 name|toggletrans
 argument_list|,
+name|_
+argument_list|(
 literal|"Make destination image transparent where bump height is zero"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2863,7 +2923,10 @@ name|tooltips
 argument_list|,
 name|toggleimage
 argument_list|,
+name|_
+argument_list|(
 literal|"Create a new image when applying filter"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2874,7 +2937,10 @@ name|tooltips
 argument_list|,
 name|togglequality
 argument_list|,
+name|_
+argument_list|(
 literal|"Enable/disable high quality previews"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2885,7 +2951,10 @@ name|tooltips
 argument_list|,
 name|toggletips
 argument_list|,
+name|_
+argument_list|(
 literal|"Enable/disable tooltip messages"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3043,7 +3112,10 @@ name|frame
 operator|=
 name|gck_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Antialiasing options"
+argument_list|)
 argument_list|,
 name|page
 argument_list|,
@@ -3081,7 +3153,10 @@ name|toggleanti
 operator|=
 name|gck_checkbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Enable antialiasing"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -3119,7 +3194,10 @@ name|tooltips
 argument_list|,
 name|toggleanti
 argument_list|,
+name|_
+argument_list|(
 literal|"Enable/disable jagged edges removal (antialiasing)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3200,7 +3278,10 @@ name|label
 operator|=
 name|gck_label_aligned_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Depth:"
+argument_list|)
 argument_list|,
 name|frame
 argument_list|,
@@ -3242,7 +3323,10 @@ name|label
 operator|=
 name|gck_label_aligned_new
 argument_list|(
-literal|"Treshold:"
+name|_
+argument_list|(
+literal|"Threshold:"
+argument_list|)
 argument_list|,
 name|frame
 argument_list|,
@@ -3362,7 +3446,10 @@ name|tooltips
 argument_list|,
 name|widget1
 argument_list|,
+name|_
+argument_list|(
 literal|"Antialiasing quality. Higher is better, but slower"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3373,7 +3460,10 @@ name|tooltips
 argument_list|,
 name|widget2
 argument_list|,
+name|_
+argument_list|(
 literal|"Stop when pixel differences are smaller than this value"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3465,7 +3555,10 @@ name|frame
 operator|=
 name|gck_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Light settings"
+argument_list|)
 argument_list|,
 name|page
 argument_list|,
@@ -3508,7 +3601,10 @@ name|widget1
 operator|=
 name|gck_option_menu_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Lightsource type:"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -3551,7 +3647,10 @@ name|widget2
 operator|=
 name|gck_pushbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Lightsource color"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -3588,7 +3687,10 @@ name|tooltips
 argument_list|,
 name|widget1
 argument_list|,
+name|_
+argument_list|(
 literal|"Type of light source to apply"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3599,7 +3701,10 @@ name|tooltips
 argument_list|,
 name|widget2
 argument_list|,
+name|_
+argument_list|(
 literal|"Set light source color (white is default)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3608,7 +3713,10 @@ name|pointlightwid
 operator|=
 name|gck_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Position"
+argument_list|)
 argument_list|,
 name|page
 argument_list|,
@@ -3646,7 +3754,10 @@ name|xentry
 operator|=
 name|gck_entryfield_new
 argument_list|(
+name|_
+argument_list|(
 literal|"X:"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -3667,8 +3778,11 @@ expr_stmt|;
 name|yentry
 operator|=
 name|gck_entryfield_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Y:"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -3690,7 +3804,10 @@ name|zentry
 operator|=
 name|gck_entryfield_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Z:"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -3780,7 +3897,10 @@ name|tooltips
 argument_list|,
 name|xentry
 argument_list|,
+name|_
+argument_list|(
 literal|"Light source X position in XYZ space"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3791,7 +3911,10 @@ name|tooltips
 argument_list|,
 name|yentry
 argument_list|,
+name|_
+argument_list|(
 literal|"Light source Y position in XYZ space"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3802,7 +3925,10 @@ name|tooltips
 argument_list|,
 name|zentry
 argument_list|,
+name|_
+argument_list|(
 literal|"Light source Z position in XYZ space"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3841,7 +3967,10 @@ name|dirlightwid
 operator|=
 name|gck_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Direction vector"
+argument_list|)
 argument_list|,
 name|page
 argument_list|,
@@ -3879,7 +4008,10 @@ name|widget1
 operator|=
 name|gck_entryfield_new
 argument_list|(
+name|_
+argument_list|(
 literal|"X:"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -3901,7 +4033,10 @@ name|widget2
 operator|=
 name|gck_entryfield_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Y:"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -3923,7 +4058,10 @@ name|widget3
 operator|=
 name|gck_entryfield_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Z:"
+argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
@@ -3947,7 +4085,10 @@ name|tooltips
 argument_list|,
 name|widget1
 argument_list|,
+name|_
+argument_list|(
 literal|"Light source X direction in XYZ space"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3958,7 +4099,10 @@ name|tooltips
 argument_list|,
 name|widget2
 argument_list|,
+name|_
+argument_list|(
 literal|"Light source Y direction in XYZ space"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3969,7 +4113,10 @@ name|tooltips
 argument_list|,
 name|widget3
 argument_list|,
+name|_
+argument_list|(
 literal|"Light source Z direction in XYZ space"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4151,7 +4298,10 @@ name|frame
 operator|=
 name|gck_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Intensity levels"
+argument_list|)
 argument_list|,
 name|page
 argument_list|,
@@ -4191,7 +4341,10 @@ name|label1
 operator|=
 name|gck_label_aligned_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Ambient:"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4204,7 +4357,10 @@ name|label2
 operator|=
 name|gck_label_aligned_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Diffuse:"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4680,7 +4836,10 @@ name|tooltips
 argument_list|,
 name|widget1
 argument_list|,
+name|_
+argument_list|(
 literal|"Amount of original color to show where no direct light falls"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4691,7 +4850,10 @@ name|tooltips
 argument_list|,
 name|widget2
 argument_list|,
+name|_
+argument_list|(
 literal|"Intensity of original color when lit by a light source"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4740,7 +4902,10 @@ name|frame
 operator|=
 name|gck_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Reflectivity"
+argument_list|)
 argument_list|,
 name|page
 argument_list|,
@@ -4780,7 +4945,10 @@ name|label1
 operator|=
 name|gck_label_aligned_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Diffuse:"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4793,7 +4961,10 @@ name|label2
 operator|=
 name|gck_label_aligned_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Specular:"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4806,7 +4977,10 @@ name|label3
 operator|=
 name|gck_label_aligned_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Hightlight:"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -5049,7 +5223,10 @@ name|tooltips
 argument_list|,
 name|widget1
 argument_list|,
+name|_
+argument_list|(
 literal|"Higher values makes the object reflect more light (appear lighter)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -5060,7 +5237,10 @@ name|tooltips
 argument_list|,
 name|widget2
 argument_list|,
+name|_
+argument_list|(
 literal|"Controls how intense the highlights will be"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -5071,7 +5251,10 @@ name|tooltips
 argument_list|,
 name|widget3
 argument_list|,
+name|_
+argument_list|(
 literal|"Higher values makes the highlights more focused"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -5649,7 +5832,10 @@ name|frame
 operator|=
 name|gck_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Bumpmap settings"
+argument_list|)
 argument_list|,
 name|page
 argument_list|,
@@ -5725,7 +5911,10 @@ name|label
 operator|=
 name|gck_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Bumpmap image:"
+argument_list|)
 argument_list|,
 name|widget1
 argument_list|)
@@ -5841,7 +6030,10 @@ name|widget1
 operator|=
 name|gck_entryfield_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Minimum height:"
+argument_list|)
 argument_list|,
 name|imagewid
 argument_list|,
@@ -5859,7 +6051,10 @@ name|widget2
 operator|=
 name|gck_entryfield_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Maximum height:"
+argument_list|)
 argument_list|,
 name|imagewid
 argument_list|,
@@ -5923,7 +6118,10 @@ name|widget1
 operator|=
 name|gck_checkbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Autostretch to fit value range"
+argument_list|)
 argument_list|,
 name|imagewid
 argument_list|,
@@ -6042,7 +6240,10 @@ name|frame
 operator|=
 name|gck_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Environment settings"
+argument_list|)
 argument_list|,
 name|page
 argument_list|,
@@ -6116,7 +6317,10 @@ argument_list|)
 expr_stmt|;
 name|gck_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Environment image:"
+argument_list|)
 argument_list|,
 name|widget1
 argument_list|)
@@ -6269,7 +6473,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6295,7 +6502,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Light"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6321,7 +6531,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Material"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6356,7 +6569,10 @@ name|bump_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Bump"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6401,7 +6617,10 @@ name|env_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Env"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6510,7 +6729,10 @@ name|appwin
 operator|=
 name|gck_application_window_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Lighting effects"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_realize
@@ -6601,7 +6823,10 @@ name|applybutton
 operator|=
 name|gck_pushbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Apply"
+argument_list|)
 argument_list|,
 name|actionbox
 argument_list|,
@@ -6621,7 +6846,10 @@ name|cancelbutton
 operator|=
 name|gck_pushbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|actionbox
 argument_list|,
@@ -6641,7 +6869,10 @@ name|helpbutton
 operator|=
 name|gck_pushbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Help"
+argument_list|)
 argument_list|,
 name|actionbox
 argument_list|,
@@ -6693,7 +6924,10 @@ name|tooltips
 argument_list|,
 name|applybutton
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply filter with current settings"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -6704,7 +6938,10 @@ name|tooltips
 argument_list|,
 name|cancelbutton
 argument_list|,
+name|_
+argument_list|(
 literal|"Close filter without doing anything"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -6855,7 +7092,10 @@ name|wid
 operator|=
 name|gck_pushbutton_new
 argument_list|(
+name|_
+argument_list|(
 literal|"  Preview!  "
+argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
@@ -6877,7 +7117,10 @@ name|tooltips
 argument_list|,
 name|wid
 argument_list|,
+name|_
+argument_list|(
 literal|"Recompute preview image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -6927,7 +7170,10 @@ name|tooltips
 argument_list|,
 name|wid
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom in (make image bigger)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -6958,7 +7204,10 @@ name|tooltips
 argument_list|,
 name|wid
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom out (make image smaller)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon274ed0060103
+DECL|enum|__anon27a144960103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -4868,10 +4868,7 @@ literal|0
 condition|)
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"Tattoo state has become corrupt (2.1 billion operation limit exceded)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

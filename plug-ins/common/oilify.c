@@ -33,6 +33,18 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|ENTRY_WIDTH
 define|#
@@ -85,7 +97,7 @@ value|((unsigned int) (p[0]*77+p[1]*150+p[2]*29)>> 8)
 end_define
 
 begin_typedef
-DECL|struct|__anon27adf4470108
+DECL|struct|__anon2afc705a0108
 typedef|typedef
 struct|struct
 block|{
@@ -104,7 +116,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27adf4470208
+DECL|struct|__anon2afc705a0208
 typedef|typedef
 struct|struct
 block|{
@@ -438,13 +450,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_oilify"
 argument_list|,
+name|_
+argument_list|(
 literal|"Modify the specified drawable to resemble an oil painting"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This function performs the well-known oil-paint effect on the specified drawable.  The size of the input mask is specified by 'mask_size'."
+argument_list|)
 argument_list|,
 literal|"Torsten Martinsen"
 argument_list|,
@@ -452,7 +473,10 @@ literal|"Torsten Martinsen"
 argument_list|,
 literal|"1996"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Artistic/Oilify"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -516,6 +540,9 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -735,7 +762,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Oil Painting..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -2244,7 +2274,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Oilify"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2279,7 +2312,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2341,7 +2377,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2402,7 +2441,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2481,7 +2523,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Use intensity algorithm"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2549,7 +2594,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Mask Size"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(

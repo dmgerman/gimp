@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -26,7 +32,7 @@ comment|/*  internal structures  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b81f3520108
+DECL|struct|__anon296a9f100108
 typedef|typedef
 struct|struct
 block|{

@@ -40,6 +40,12 @@ end_decl_stmt
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -79,6 +85,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -111,7 +123,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cd2880108
+DECL|struct|__anon297a988e0108
 block|{
 DECL|member|resolution
 name|guint
@@ -163,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cd2880208
+DECL|struct|__anon297a988e0208
 block|{
 DECL|member|run
 name|gint
@@ -229,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cd2880308
+DECL|struct|__anon297a988e0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -286,7 +298,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cd2880408
+DECL|struct|__anon297a988e0408
 block|{
 DECL|member|run
 name|gint
@@ -797,7 +809,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cd2880508
+DECL|struct|__anon297a988e0508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -901,7 +913,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cd2880608
+DECL|struct|__anon297a988e0608
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1379,13 +1391,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_ps_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"load file of PostScript/PDF file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"load file of PostScript/PDF file format"
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner<pkirchg@aol.com>"
 argument_list|,
@@ -1441,9 +1462,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_ps_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"save file in PostScript file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"PostScript saving handles all image types except \ those with alpha channels."
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner<pkirchg@aol.com>"
 argument_list|,
@@ -1596,6 +1623,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1782,6 +1812,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -2462,7 +2495,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"can't open file for reading"
+name|_
+argument_list|(
+literal|"PS: can't open file for reading"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2486,7 +2522,10 @@ condition|)
 block|{
 name|format
 operator|=
+name|_
+argument_list|(
 literal|"Interpreting and Loading %s:"
+argument_list|)
 expr_stmt|;
 name|temp
 operator|=
@@ -2555,7 +2594,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"can't interprete file"
+name|_
+argument_list|(
+literal|"PS: can't interprete file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2590,7 +2632,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"out of memory"
+name|_
+argument_list|(
+literal|"PS: out of memory"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2972,7 +3017,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"PostScript save cannot handle images with alpha channels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2997,7 +3045,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"cannot operate on unknown image types"
+name|_
+argument_list|(
+literal|"PS: cannot operate on unknown image types"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3025,7 +3076,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"cant open file for writing"
+name|_
+argument_list|(
+literal|"PS: can't open file for writing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3057,7 +3111,10 @@ name|sprintf
 argument_list|(
 name|temp
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -10712,7 +10769,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"write error occured"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -10802,13 +10862,25 @@ name|label_text
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Resolution:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Width:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Height:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pages:"
+argument_list|)
 block|}
 decl_stmt|;
 specifier|static
@@ -10818,13 +10890,25 @@ name|radio_text
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"b/w"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"gray"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"colour"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"automatic"
+argument_list|)
 block|}
 decl_stmt|;
 specifier|static
@@ -10834,11 +10918,20 @@ name|alias_text
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"none"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"weak"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"strong"
+argument_list|)
 block|}
 decl_stmt|;
 name|int
@@ -10917,7 +11010,10 @@ operator|->
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Load PostScript"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -10956,7 +11052,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -11020,7 +11119,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -11132,7 +11234,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Rendering"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -11286,10 +11391,13 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|label_text
 index|[
 name|j
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -11522,7 +11630,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"try BoundingBox"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -11607,7 +11718,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Colouring"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -11699,10 +11813,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|radio_text
 index|[
 name|j
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -11895,9 +12012,15 @@ name|gtk_frame_new
 argument_list|(
 name|alias
 condition|?
+name|_
+argument_list|(
 literal|"Graphic antialiasing"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"Text antialiasing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -11989,10 +12112,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|alias_text
 index|[
 name|j
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -12616,13 +12742,25 @@ name|label_text
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Width:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Height:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"X-offset:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Y-offset:"
+argument_list|)
 block|}
 decl_stmt|;
 specifier|static
@@ -12632,13 +12770,25 @@ name|radio_text
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"0"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"90"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"180"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"270"
+argument_list|)
 block|}
 decl_stmt|;
 specifier|static
@@ -12648,9 +12798,15 @@ name|unit_text
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Inch"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Millimeter"
+argument_list|)
 block|}
 decl_stmt|;
 name|char
@@ -12733,7 +12889,10 @@ operator|->
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save PostScript"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -12772,7 +12931,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -12836,7 +12998,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -13026,7 +13191,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Image Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -13168,10 +13336,13 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|label_text
 index|[
 name|j
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -13376,7 +13547,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"keep aspect ratio"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -13451,7 +13625,10 @@ name|uframe
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Unit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -13543,10 +13720,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|unit_text
 index|[
 name|j
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -13688,7 +13868,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Rotation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -13893,7 +14076,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Output"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -13968,7 +14154,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Encapsulated PostScript"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -14042,7 +14231,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -14169,7 +14361,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

@@ -67,6 +67,18 @@ begin_comment
 comment|/* for seed of random number */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -296,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c69a730108
+DECL|struct|__anon277eccd90108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -324,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c69a730208
+DECL|struct|__anon277eccd90208
 block|{
 DECL|member|name
 name|gchar
@@ -1008,7 +1020,10 @@ directive|define
 name|CML_KEEP_VALUES
 value|0
 block|{
+name|N_
+argument_list|(
 literal|"Keep image's values"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1019,7 +1034,10 @@ directive|define
 name|CML_KEEP_FIRST
 value|1
 block|{
+name|N_
+argument_list|(
 literal|"Keep the first value"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1030,7 +1048,10 @@ directive|define
 name|CML_FILL
 value|2
 block|{
+name|N_
+argument_list|(
 literal|"Fill with parameter k"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1041,7 +1062,10 @@ directive|define
 name|CML_LOGIST
 value|3
 block|{
+name|N_
+argument_list|(
 literal|"k{x(1-x)}^p"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1052,7 +1076,10 @@ directive|define
 name|CML_LOGIST_STEP
 value|4
 block|{
+name|N_
+argument_list|(
 literal|"k{x(1-x)}^p stepped"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1063,7 +1090,10 @@ directive|define
 name|CML_POWER
 value|5
 block|{
+name|N_
+argument_list|(
 literal|"kx^p"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1074,7 +1104,10 @@ directive|define
 name|CML_POWER_STEP
 value|6
 block|{
+name|N_
+argument_list|(
 literal|"kx^p stepped"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1085,7 +1118,10 @@ directive|define
 name|CML_REV_POWER
 value|7
 block|{
+name|N_
+argument_list|(
 literal|"k(1 - x^p)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1096,7 +1132,10 @@ directive|define
 name|CML_REV_POWER_STEP
 value|8
 block|{
+name|N_
+argument_list|(
 literal|"k(1 - x^p) stepped"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1107,7 +1146,10 @@ directive|define
 name|CML_DELTA
 value|9
 block|{
+name|N_
+argument_list|(
 literal|"Delta function"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1118,7 +1160,10 @@ directive|define
 name|CML_DELTA_STEP
 value|10
 block|{
+name|N_
+argument_list|(
 literal|"Delta function stepped"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1129,7 +1174,10 @@ directive|define
 name|CML_SIN_CURVE
 value|11
 block|{
+name|N_
+argument_list|(
 literal|"sin^p-based function"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1140,7 +1188,10 @@ directive|define
 name|CML_SIN_CURVE_STEP
 value|12
 block|{
+name|N_
+argument_list|(
 literal|"sin^p, stepped"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1161,7 +1212,10 @@ directive|define
 name|COMP_NONE
 value|0
 block|{
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1172,7 +1226,10 @@ directive|define
 name|COMP_MAX_LINEAR
 value|1
 block|{
+name|N_
+argument_list|(
 literal|"Max (x, -)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1183,7 +1240,10 @@ directive|define
 name|COMP_MAX_LINEAR_P1
 value|2
 block|{
+name|N_
+argument_list|(
 literal|"Max (x+d, -)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1194,7 +1254,10 @@ directive|define
 name|COMP_MAX_LINEAR_M1
 value|3
 block|{
+name|N_
+argument_list|(
 literal|"Max (x-d, -)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1205,7 +1268,10 @@ directive|define
 name|COMP_MIN_LINEAR
 value|4
 block|{
+name|N_
+argument_list|(
 literal|"Mix (x, -)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1216,7 +1282,10 @@ directive|define
 name|COMP_MIN_LINEAR_P1
 value|5
 block|{
+name|N_
+argument_list|(
 literal|"Min (x+d, -)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1227,7 +1296,10 @@ directive|define
 name|COMP_MIN_LINEAR_M1
 value|6
 block|{
+name|N_
+argument_list|(
 literal|"Min (x-d, -)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1238,7 +1310,10 @@ directive|define
 name|COMP_MAX_LINEAR_P1L
 value|7
 block|{
+name|N_
+argument_list|(
 literal|"Max (x+d, -), (x< 0.5)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1249,7 +1324,10 @@ directive|define
 name|COMP_MAX_LINEAR_P1U
 value|8
 block|{
+name|N_
+argument_list|(
 literal|"Max (x+d, -), (0.5< x)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1260,7 +1338,10 @@ directive|define
 name|COMP_MAX_LINEAR_M1L
 value|9
 block|{
+name|N_
+argument_list|(
 literal|"Max (x-d, -), (x< 0.5)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1271,7 +1352,10 @@ directive|define
 name|COMP_MAX_LINEAR_M1U
 value|10
 block|{
+name|N_
+argument_list|(
 literal|"Max (x-d, -), (0.5< x)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1282,7 +1366,10 @@ directive|define
 name|COMP_MIN_LINEAR_P1L
 value|11
 block|{
+name|N_
+argument_list|(
 literal|"Min (x+d, -), (x< 0.5)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1293,7 +1380,10 @@ directive|define
 name|COMP_MIN_LINEAR_P1U
 value|12
 block|{
+name|N_
+argument_list|(
 literal|"Min (x+d, -), (0.5< x)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1304,7 +1394,10 @@ directive|define
 name|COMP_MIN_LINEAR_M1L
 value|13
 block|{
+name|N_
+argument_list|(
 literal|"Min (x-d, -), (x< 0.5)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1315,7 +1408,10 @@ directive|define
 name|COMP_MIN_LINEAR_M1U
 value|14
 block|{
+name|N_
+argument_list|(
 literal|"Min (x-d, -), (0.5< x)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1336,7 +1432,10 @@ directive|define
 name|STANDARD
 value|0
 block|{
+name|N_
+argument_list|(
 literal|"Standard"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1347,7 +1446,10 @@ directive|define
 name|AVERAGE
 value|1
 block|{
+name|N_
+argument_list|(
 literal|"Use average value"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1358,7 +1460,10 @@ directive|define
 name|ANTILOG
 value|2
 block|{
+name|N_
+argument_list|(
 literal|"Use reverse value"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1369,7 +1474,10 @@ directive|define
 name|RAND_POWER0
 value|3
 block|{
+name|N_
+argument_list|(
 literal|"With random power (0,10)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1380,7 +1488,10 @@ directive|define
 name|RAND_POWER1
 value|4
 block|{
+name|N_
+argument_list|(
 literal|"With random power (0,1)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1391,7 +1502,10 @@ directive|define
 name|RAND_POWER2
 value|5
 block|{
+name|N_
+argument_list|(
 literal|"With gradient power (0,1)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1402,7 +1516,10 @@ directive|define
 name|MULTIPLY_RANDOM0
 value|6
 block|{
+name|N_
+argument_list|(
 literal|"Multiply rand. value (0,1)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1413,7 +1530,10 @@ directive|define
 name|MULTIPLY_RANDOM1
 value|7
 block|{
+name|N_
+argument_list|(
 literal|"Multiply rand. value (0,2)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1424,7 +1544,10 @@ directive|define
 name|MULTIPLY_GRADIENT
 value|8
 block|{
+name|N_
+argument_list|(
 literal|"Multiply gradient (0,1)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1435,7 +1558,10 @@ directive|define
 name|RAND_AND_P
 value|9
 block|{
+name|N_
+argument_list|(
 literal|"With p and random (0,1)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1451,42 +1577,60 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"All black"
+argument_list|)
 block|,
 name|NULL
 block|}
 block|,
 comment|/* 0 */
 block|{
+name|N_
+argument_list|(
 literal|"All gray"
+argument_list|)
 block|,
 name|NULL
 block|}
 block|,
 comment|/* 1 */
 block|{
+name|N_
+argument_list|(
 literal|"All white"
+argument_list|)
 block|,
 name|NULL
 block|}
 block|,
 comment|/* 2 */
 block|{
+name|N_
+argument_list|(
 literal|"The first row of the image"
+argument_list|)
 block|,
 name|NULL
 block|}
 block|,
 comment|/* 3 */
 block|{
+name|N_
+argument_list|(
 literal|"Continuous gradient"
+argument_list|)
 block|,
 name|NULL
 block|}
 block|,
 comment|/* 4 */
 block|{
+name|N_
+argument_list|(
 literal|"Continuous grad. w/o gap"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1498,7 +1642,10 @@ directive|define
 name|CML_INITIAL_RANDOM_INDEPENDENT
 value|6
 block|{
+name|N_
+argument_list|(
 literal|"Random, ch. independent"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1509,7 +1656,10 @@ directive|define
 name|CML_INITIAL_RANDOM_SHARED
 value|7
 block|{
+name|N_
+argument_list|(
 literal|"Random shared"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1520,7 +1670,10 @@ directive|define
 name|CML_INITIAL_RANDOM_FROM_SEED
 value|8
 block|{
+name|N_
+argument_list|(
 literal|"Randoms from seed"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1531,7 +1684,10 @@ directive|define
 name|CML_INITIAL_RANDOM_FROM_SEED_SHARED
 value|9
 block|{
+name|N_
+argument_list|(
 literal|"Randoms from seed (shared)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -1550,7 +1706,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c69a730308
+DECL|struct|__anon277eccd90308
 block|{
 DECL|member|function
 name|gint
@@ -1623,7 +1779,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c69a730408
+DECL|struct|__anon277eccd90408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1795,7 +1951,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Hue"
+argument_list|)
 block|,
 operator|(
 name|gpointer
@@ -1807,7 +1966,10 @@ name|hue
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 block|,
 operator|(
 name|gpointer
@@ -1819,7 +1981,10 @@ name|sat
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Value"
+argument_list|)
 block|,
 operator|(
 name|gpointer
@@ -1841,25 +2006,37 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"NULL"
+argument_list|)
 block|,
 name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Hue"
+argument_list|)
 block|,
 name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 block|,
 name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Value"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -2389,7 +2566,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c69a730508
+DECL|struct|__anon277eccd90508
 block|{
 DECL|member|run
 name|gint
@@ -2437,7 +2614,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c69a730608
+DECL|struct|__anon277eccd90608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2705,13 +2882,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Make an image of Coupled-Map Lattice"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Make an image of Coupled-Map Lattice (CML). CML is a kind of Cellula Automata on continuous (value) domain. In RUN_NONINTERACTIVE, the name of a prameter file is passed as the 4th arg. You can control CML_explorer via parameter file."
+argument_list|)
 argument_list|,
 comment|/*  Or do you want to call me with over 50 args? */
 literal|"Shuji Narazaki (narazaki@InetQ.or.jp); http://www.inetq.or.jp/~narazaki/TheGIMP/"
@@ -8028,7 +8214,10 @@ name|dlg
 operator|=
 name|gtkW_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Coupled-Map-Lattice Explorer"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -8115,7 +8304,10 @@ name|gtkW_frame_new
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -8376,7 +8568,10 @@ name|gtkW_table_add_button
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"New seed"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -8417,7 +8612,10 @@ name|gtkW_table_add_button
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Fix seed"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -8458,7 +8656,10 @@ name|gtkW_table_add_button
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Random seed"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -8535,7 +8736,10 @@ name|gtkW_table_add_button
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Load"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -8556,7 +8760,10 @@ name|gtkW_table_add_button
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Save"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -8639,7 +8846,10 @@ name|CML_dialog_sub_panel_new
 argument_list|(
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue settings"
+argument_list|)
 argument_list|,
 operator|&
 name|VALS
@@ -8660,7 +8870,10 @@ name|page
 argument_list|,
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Hue"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8670,7 +8883,10 @@ name|CML_dialog_sub_panel_new
 argument_list|(
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Saturation settings"
+argument_list|)
 argument_list|,
 operator|&
 name|VALS
@@ -8691,7 +8907,10 @@ name|page
 argument_list|,
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8701,7 +8920,10 @@ name|CML_dialog_sub_panel_new
 argument_list|(
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Value (grayimage) settings"
+argument_list|)
 argument_list|,
 operator|&
 name|VALS
@@ -8722,7 +8944,10 @@ name|page
 argument_list|,
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Value"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8732,7 +8957,10 @@ name|CML_dialog_advanced_panel_new
 argument_list|(
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Advanced settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -8746,7 +8974,10 @@ name|page
 argument_list|,
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Advanced"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8787,7 +9018,10 @@ name|gtkW_frame_new
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Other parameter settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -8818,7 +9052,10 @@ name|gtkW_frame_new
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Channel independed parameters"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|box
@@ -8847,7 +9084,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Initial value"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -8893,7 +9133,10 @@ name|gtkW_table_add_iscale_entry
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom scale"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -8935,7 +9178,10 @@ name|gtkW_table_add_iscale_entry
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Start offset"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -9066,7 +9312,10 @@ name|gtkW_frame_new
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Seed of random (only for \"from seed\" modes)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|box
@@ -9095,7 +9344,10 @@ name|gtkW_table_add_iscale_entry
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Seed"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -9164,7 +9416,10 @@ name|gtkW_vbox_add_button
 argument_list|(
 name|box
 argument_list|,
+name|_
+argument_list|(
 literal|"Switch to \"from seed\" with the last seed"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -9206,7 +9461,10 @@ name|tooltips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"\"Fix seed\" button is an alias of me.\nThe same seed produces the same image, if (1) the widths of images are same (this is the reason why image on drawable is different from preview), and (2) all mutation rates equal to zero."
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -9308,7 +9566,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Others"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -9355,7 +9616,10 @@ name|gtkW_frame_new
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Misc operations"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -9386,7 +9650,10 @@ name|gtkW_frame_new
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Copy settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|box
@@ -9415,7 +9682,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Source ch."
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -9452,7 +9722,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Destination ch."
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -9489,7 +9762,10 @@ name|gtkW_table_add_button
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Do copy parameters"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -9598,7 +9874,10 @@ name|gtkW_frame_new
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Selective load settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|box
@@ -9627,7 +9906,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Source ch. in file"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -9664,7 +9946,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Destination ch."
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -9786,7 +10071,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Misc ops."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -9907,7 +10195,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Function type"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -9955,7 +10246,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Composition"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10003,7 +10297,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Misc arrange"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10051,7 +10348,10 @@ name|gtkW_table_add_toggle
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Use cyclic range"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10084,7 +10384,10 @@ name|gtkW_table_add_dscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Mod. rate"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10128,7 +10431,10 @@ name|gtkW_table_add_dscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Env. sensitivity"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10172,7 +10478,10 @@ name|gtkW_table_add_iscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Diffusion dist."
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10216,7 +10525,10 @@ name|gtkW_table_add_iscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"# of subranges"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10260,7 +10572,10 @@ name|gtkW_table_add_dscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"P(ower factor)"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10304,7 +10619,10 @@ name|gtkW_table_add_dscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Parameter k"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10348,7 +10666,10 @@ name|gtkW_table_add_dscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Range low"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10392,7 +10713,10 @@ name|gtkW_table_add_dscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Range high"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10524,7 +10848,10 @@ name|gtkW_table_add_button
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Plot the graph of the settings"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10598,11 +10925,20 @@ name|ch_name
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Hue"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Value"
+argument_list|)
 block|}
 decl_stmt|;
 name|CML_PARAM
@@ -10660,10 +10996,13 @@ name|gtkW_frame_new
 argument_list|(
 name|NULL
 argument_list|,
+name|gettext
+argument_list|(
 name|ch_name
 index|[
 name|channel_id
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -10713,7 +11052,10 @@ name|gtkW_table_add_dscale_entry
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Ch. sensitivity"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10759,7 +11101,10 @@ name|gtkW_table_add_dscale_entry
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Mutation rate"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10805,7 +11150,10 @@ name|gtkW_table_add_dscale_entry
 argument_list|(
 name|subtable
 argument_list|,
+name|_
+argument_list|(
 literal|"Mutation dist."
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10946,7 +11294,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Graph of the current settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -10981,7 +11332,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -11053,7 +11407,10 @@ argument_list|)
 operator|->
 name|vbox
 argument_list|,
+name|_
+argument_list|(
 literal|"The Graph"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -11648,7 +12005,10 @@ name|gtkW_message_dialog
 argument_list|(
 name|TRUE
 argument_list|,
+name|_
+argument_list|(
 literal|"Warning: the source and the destination are the same channel."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_flush
@@ -12108,7 +12468,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Execute"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -12170,7 +12533,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Execute and Exit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -12227,7 +12593,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Exit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -12316,7 +12685,10 @@ name|filesel
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save parameters to"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -12635,7 +13007,10 @@ name|sprintf
 argument_list|(
 name|buffer
 argument_list|,
+name|_
+argument_list|(
 literal|"Error: could not open \"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -13101,7 +13476,10 @@ name|dlg
 operator|=
 name|gtkW_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"CML file operation warning"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -13150,7 +13528,10 @@ name|sprintf
 argument_list|(
 name|buffer
 argument_list|,
+name|_
+argument_list|(
 literal|"%s exists, overwrite?"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -13349,7 +13730,10 @@ name|filesel
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load parameters from"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -13357,7 +13741,10 @@ name|filesel
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Selective load from"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -13758,7 +14145,10 @@ name|sprintf
 argument_list|(
 name|buffer
 argument_list|,
+name|_
+argument_list|(
 literal|"Error: could not open \"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -13863,7 +14253,10 @@ name|gtkW_message_dialog
 argument_list|(
 name|TRUE
 argument_list|,
+name|_
+argument_list|(
 literal|"Error: it's not CML parameter file."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -13890,7 +14283,10 @@ name|gtkW_message_dialog
 argument_list|(
 name|TRUE
 argument_list|,
+name|_
+argument_list|(
 literal|"Warning: it's an old format file."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -13903,7 +14299,10 @@ name|gtkW_message_dialog
 argument_list|(
 name|TRUE
 argument_list|,
+name|_
+argument_list|(
 literal|"Warning: Hmmm, it's a parameter file for newer CML_explorer than me."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -15761,7 +16160,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -15823,7 +16225,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -16248,7 +16653,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -17450,12 +17858,15 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|item
 index|[
 name|i
 index|]
 operator|.
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append

@@ -69,6 +69,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -136,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d796990108
+DECL|struct|__anon28c0890c0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -163,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d796990208
+DECL|struct|__anon28c0890c0208
 block|{
 DECL|member|run
 name|gint
@@ -593,11 +599,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_jpeg_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the jpeg file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for jpeg_load"
 argument_list|,
@@ -782,6 +794,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -871,6 +886,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|image_ID
 operator|=
 name|param
@@ -1902,7 +1920,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"can't open \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1934,7 +1955,10 @@ name|sprintf
 argument_list|(
 name|name
 argument_list|,
+name|_
+argument_list|(
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2257,7 +2281,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"don't know how to load JPEGs\nwith %d color channels"
+argument_list|)
 argument_list|,
 name|cinfo
 operator|.
@@ -2296,7 +2323,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|cinfo
 operator|.
@@ -2434,7 +2464,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unknown density unit %d\nassuming dots per inch"
+argument_list|)
 argument_list|,
 name|cinfo
 operator|.
@@ -2798,7 +2831,10 @@ name|sprintf
 argument_list|(
 name|name
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -3574,7 +3610,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save as Jpeg"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3609,7 +3648,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3671,7 +3713,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3732,7 +3777,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3811,7 +3859,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Quality"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3984,7 +4035,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Smoothing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4157,7 +4211,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Optimize"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4224,7 +4281,10 @@ name|progressive
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Progressive"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4303,7 +4363,10 @@ name|com_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Image Comments"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type

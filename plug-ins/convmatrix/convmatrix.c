@@ -68,8 +68,14 @@ directive|include
 file|"gtk/gtk.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_typedef
-DECL|enum|__anon2a1547900103
+DECL|enum|__anon2b31435d0103
 typedef|typedef
 enum|enum
 block|{
@@ -107,15 +113,30 @@ name|channel_labels
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Grey"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Red"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Green"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Blue"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Alpha"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -129,11 +150,20 @@ name|bmode_labels
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Extend"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Wrap"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Crop"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -263,7 +293,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a1547900208
+DECL|struct|__anon2b31435d0208
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +449,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2a1547900308
+DECL|struct|__anon2b31435d0308
 struct|struct
 block|{
 DECL|member|matrix
@@ -560,11 +590,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_convmatrix"
 argument_list|,
+name|_
+argument_list|(
 literal|"A generic 5x5 convolution matrix"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -574,7 +610,10 @@ literal|"Lauri Alanko"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Generic/Convolution Matrix"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -639,6 +678,9 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|(
 name|void
 operator|)
@@ -908,7 +950,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Applying convolution"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -3679,7 +3724,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Convolution Matrix"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3718,7 +3766,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3783,7 +3834,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Defaults"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3843,7 +3897,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3961,7 +4018,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Matrix"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4254,7 +4314,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Divisor"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4342,7 +4405,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Offset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4474,7 +4540,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Automatic"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4527,7 +4596,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Alpha-weighting"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4629,7 +4701,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Border"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4719,10 +4794,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|bmode_labels
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -4797,7 +4875,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Channels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4881,10 +4962,13 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|channel_labels
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

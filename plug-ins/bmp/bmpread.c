@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -45,6 +51,12 @@ begin_include
 include|#
 directive|include
 file|"bmp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function
@@ -119,7 +131,10 @@ name|sprintf
 argument_list|(
 name|temp_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -155,9 +170,12 @@ operator|!
 name|fd
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"%s: can't open \"%s\"\n"
+argument_list|)
 argument_list|,
 name|prog_name
 argument_list|,
@@ -194,9 +212,12 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"%s: not a valid BMP file %s\n"
+argument_list|)
 argument_list|,
 name|prog_name
 argument_list|,
@@ -222,9 +243,12 @@ literal|0x10
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"%s: error reading bitmap file header\n"
+name|_
+argument_list|(
+literal|"%s: error reading BMP file header\n"
+argument_list|)
 argument_list|,
 name|prog_name
 argument_list|)
@@ -234,7 +258,7 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/* bring them to the rigth byreorder. Not too nice, but it should work */
+comment|/* bring them to the right byteorder. Not too nice, but it should work */
 name|Bitmap_File_Head
 operator|.
 name|bfSize
@@ -297,9 +321,12 @@ operator|!=
 literal|40
 condition|)
 block|{
-name|printf
+name|g_warning
 argument_list|(
-literal|"\nos2 unsupported!\n"
+name|_
+argument_list|(
+literal|"OS/2 unsupported!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -317,9 +344,12 @@ name|biSize
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"%s: error reading bitmap header\n"
+name|_
+argument_list|(
+literal|"%s: error reading BMP file header\n"
+argument_list|)
 argument_list|,
 name|prog_name
 argument_list|)
@@ -465,9 +495,12 @@ literal|36
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"\n%s: error reading bitmap header\n"
+name|_
+argument_list|(
+literal|"%s: error reading BMP file header\n"
+argument_list|)
 argument_list|,
 name|prog_name
 argument_list|)
@@ -634,9 +667,12 @@ operator|>
 literal|24
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"\n%s: to many colors: %u\n"
+name|_
+argument_list|(
+literal|"%s: too many colors: %u\n"
+argument_list|)
 argument_list|,
 name|prog_name
 argument_list|,
@@ -942,9 +978,12 @@ name|size
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"%s: bad colormap\n"
+argument_list|)
 argument_list|,
 name|prog_name
 argument_list|)
@@ -1232,7 +1271,10 @@ name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|len
 argument_list|,
@@ -1276,7 +1318,10 @@ name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|len
 argument_list|,
@@ -1313,7 +1358,10 @@ name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|len
 argument_list|,
@@ -1344,11 +1392,9 @@ operator|+
 literal|10
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|strcpy
 argument_list|(
 name|name_buf
-argument_list|,
-literal|"%s"
 argument_list|,
 name|filename
 argument_list|)

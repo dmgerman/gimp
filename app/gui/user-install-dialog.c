@@ -474,7 +474,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon2c5d107a0108
+DECL|struct|__anon2b3875960108
 specifier|static
 specifier|const
 struct|struct
@@ -523,32 +523,8 @@ block|,
 name|N_
 argument_list|(
 literal|"This program is free software; you can redistribute it and/or modify\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"it under the terms of the GNU General Public License as published by\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"the Free Software Foundation; either version 2 of the License, or\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"(at your option) any later version.\n"
 argument_list|)
 block|}
@@ -565,32 +541,8 @@ block|,
 name|N_
 argument_list|(
 literal|"This program is distributed in the hope that it will be useful,\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"See the GNU General Public License for more details.\n"
 argument_list|)
 block|}
@@ -607,24 +559,9 @@ block|,
 name|N_
 argument_list|(
 literal|"You should have received a copy of the GNU General Public License\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"along with this program; if not, write to the Free Software\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
-literal|"Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
+literal|"Foundation, Inc., 59 Temple Place - Suite 330, Boston,\n"
+literal|"MA 02111-1307, USA.\n"
 argument_list|)
 block|}
 block|,
@@ -665,14 +602,6 @@ block|,
 name|N_
 argument_list|(
 literal|" needs to be created.  This\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"subdirectory will contain a number of important files:\n\n"
 argument_list|)
 block|}
@@ -692,32 +621,8 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThe gimprc is used to store personal preferences\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tsuch as default GIMP behaviors& plug-in hotkeys.\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tPaths to search for brushes, palettes, gradients\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tpatterns, plug-ins and modules are also configured here.\n"
 argument_list|)
 block|}
@@ -737,41 +642,9 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThe unitrc is used to store your user units database.\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tYou can define additional units and use them just\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tlike you use the built-in units inches, millimeters,\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tpoints and picas. This file is overwritten each time\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tyou quit the GIMP.\n"
 argument_list|)
 block|}
@@ -791,50 +664,10 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tPlug-ins and extensions are external programs run by\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tthe GIMP which provide additional functionality.\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tThese programs are searched for at run-time and\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tinformation about their functionality and mod-times\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tis cached in this file.  This file is intended to\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tbe GIMP-readable only, and should not be edited.\n"
 argument_list|)
 block|}
@@ -854,41 +687,9 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tuser defined brushes.  The default gimprc file\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tchecks this subdirectory in addition to the system-\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\twide gimp brushes installation when searching for\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tbrushes.\n"
 argument_list|)
 block|}
@@ -907,43 +708,7 @@ literal|0
 block|,
 name|N_
 argument_list|(
-literal|"\t\tThis is a subdirectory which can be used to store\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
-literal|"\t\tuser defined gradients.  The default gimprc file\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
-literal|"\t\tchecks this subdirectory in addition to the system-\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
-literal|"\t\twide gimp gradients installation when searching for\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
-literal|"\t\tgradients.\n"
+literal|"\t\tThis is a subdirectory which can be used to store\n\t\tuser defined gradients.  The default gimprc file\n\t\tchecks this subdirectory in addition to the system-\n\t\twide gimp gradients installation when searching for\n\t\tgradients.\n"
 argument_list|)
 block|}
 block|,
@@ -962,41 +727,9 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tuser defined figures to be used by the gfig plug-in.\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tThe default gimprc file checks this subdirectory in\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\taddition to the systemwide gimp gfig installation\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\twhen searching for gfig figures.\n"
 argument_list|)
 block|}
@@ -1016,41 +749,9 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tuser defined gflares to be used by the gflare plug-in.\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tThe default gimprc file checks this subdirectory in\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\taddition to the systemwide gimp gflares installation\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\twhen searching for gflares.\n"
 argument_list|)
 block|}
@@ -1070,41 +771,9 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tuser defined fractals to be used by the FractalExplorer plug-in.\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tThe default gimprc file checks this subdirectory in\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\taddition to the systemwide gimp FractalExplorer installation\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\twhen searching for fractals.\n"
 argument_list|)
 block|}
@@ -1124,68 +793,12 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tuser defined palettes.  The default gimprc file\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tchecks only this subdirectory (not the system-wide\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tinstallation) when searching for palettes.  During\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tinstallation, the system palettes will be copied\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\there.  This is done to allow modifications made to\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tpalettes during GIMP execution to persist across\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tsessions.\n"
 argument_list|)
 block|}
@@ -1205,41 +818,9 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tuser defined patterns.  The default gimprc file\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tchecks this subdirectory in addition to the system-\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\twide gimp patterns installation when searching for\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tpatterns.\n"
 argument_list|)
 block|}
@@ -1259,50 +840,10 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tuser created, temporary, or otherwise non-system-\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tsupported plug-ins.  The default gimprc file\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tchecks this subdirectory in addition to the system-\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\twide GIMP plug-in directories when searching for\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tplug-ins.\n"
 argument_list|)
 block|}
@@ -1322,41 +863,9 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis subdirectory can be used to store user created,\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\ttemporary, or otherwise non-system-supported DLL modules.\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tThe default gimprc file checks this subdirectory\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tin addition to the system-wide GIMP module directory\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\twhen searching for modules to load when initialising.\n"
 argument_list|)
 block|}
@@ -1376,32 +885,8 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis subdirectory is used by the GIMP to store \n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tuser created and installed scripts. The default gimprc\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tfile checks this subdirectory in addition to the system\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\t-wide gimp scripts subdirectory when searching for scripts\n"
 argument_list|)
 block|}
@@ -1421,41 +906,9 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis subdirectory is used by the GIMP to temporarily\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tstore undo buffers to reduce memory usage.  If GIMP is\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tunceremoniously killed, files may persist in this directory\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tof the form: gimp<#>.<#>.  These files are useless across\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
 literal|"\t\tGIMP sessions and can be destroyed with impunity.\n"
 argument_list|)
 block|}

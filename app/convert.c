@@ -1776,7 +1776,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29782f7d0108
+DECL|struct|__anon2c5f3ca50108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1853,7 +1853,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29782f7d0208
+DECL|struct|__anon2c5f3ca50208
 block|{
 DECL|member|ncolors
 name|long
@@ -1872,7 +1872,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29782f7d0308
+DECL|struct|__anon2c5f3ca50308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -12988,11 +12988,8 @@ block|}
 block|}
 name|g_error
 argument_list|(
-name|_
-argument_list|(
 literal|"Non-existant colour was expected to "
 literal|"be in non-destructive colourmap."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|got_colour

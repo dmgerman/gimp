@@ -11408,11 +11408,8 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"control_do_hint: oops, in_handle is true "
 literal|"yet we got handle type %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -11737,11 +11734,8 @@ return|return;
 default|default:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"control_button_press(): oops, in_handle is true "
 literal|"yet we got handle type %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -11896,10 +11890,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"control_point_in_handle(): oops, can not handle drag mode %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -12343,10 +12334,7 @@ break|break;
 default|default:
 name|fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"control_motion(): aieee, attempt to move bogus handle %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int

@@ -78,6 +78,18 @@ directive|include
 file|"lighting_preview.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Defines and stuff */
 end_comment
@@ -103,7 +115,7 @@ comment|/* ======== */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bc3b08d0103
+DECL|enum|__anon2c86e5fc0103
 typedef|typedef
 enum|enum
 block|{
@@ -125,7 +137,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2bc3b08d0203
+DECL|enum|__anon2c86e5fc0203
 enum|enum
 block|{
 DECL|enumerator|IMAGE_BUMP
@@ -140,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3b08d0308
+DECL|struct|__anon2c86e5fc0308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -175,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3b08d0408
+DECL|struct|__anon2c86e5fc0408
 block|{
 DECL|member|type
 name|LightType
@@ -204,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bc3b08d0508
+DECL|struct|__anon2c86e5fc0508
 typedef|typedef
 struct|struct
 block|{

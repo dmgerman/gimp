@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpunitmenu.h"
 end_include
 
@@ -52,7 +58,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2bbb69ab0103
+DECL|enum|__anon2b4bd7e00103
 enum|enum
 block|{
 DECL|enumerator|GUM_UNIT_CHANGED_SIGNAL

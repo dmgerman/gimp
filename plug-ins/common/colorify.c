@@ -37,6 +37,18 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -92,7 +104,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c2392670108
+DECL|struct|__anon2b7918d10108
 typedef|typedef
 struct|struct
 block|{
@@ -110,7 +122,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c2392670208
+DECL|struct|__anon2b7918d10208
 typedef|typedef
 struct|struct
 block|{
@@ -125,7 +137,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c2392670308
+DECL|struct|__anon2b7918d10308
 typedef|typedef
 struct|struct
 block|{
@@ -471,13 +483,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_colorify"
 argument_list|,
+name|_
+argument_list|(
 literal|"Similar to the \"Color\" mode for layers."
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Makes an average of the RGB channels and uses it to set the color"
+argument_list|)
 argument_list|,
 literal|"Francisco Bustamante"
 argument_list|,
@@ -485,7 +506,10 @@ literal|"Francisco Bustamante"
 argument_list|,
 literal|"0.0.1"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Colors/Colorify"
+argument_list|)
 argument_list|,
 literal|"RGB"
 argument_list|,
@@ -585,6 +609,9 @@ name|GDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|status
 operator|=
 name|STATUS_SUCCESS
@@ -821,7 +848,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Colorifying..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|colorify
@@ -1450,7 +1480,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Colorify"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1484,7 +1517,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Ok"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1546,7 +1582,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1606,7 +1645,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1715,7 +1757,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Custom Color: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2286,7 +2331,10 @@ name|c_dialog
 operator|=
 name|gtk_color_selection_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Colorify Custom Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|csd

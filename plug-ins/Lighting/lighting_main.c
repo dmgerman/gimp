@@ -829,13 +829,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_lighting"
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply various lighting effects to an image"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"No help yet"
+argument_list|)
 argument_list|,
 literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,
@@ -843,7 +852,10 @@ literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,
 literal|"Version 0.2.0, March 15 1998"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Light Effects/Lighting Effects"
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -907,6 +919,9 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1647,8 +1662,10 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|printf
+name|fprintf
 argument_list|(
+name|stderr
+argument_list|,
 literal|"Noninteractive not yet implemented! Sorry.\n"
 argument_list|)
 expr_stmt|;

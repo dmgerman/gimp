@@ -39,6 +39,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Some useful macros */
 end_comment
@@ -167,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beda1450108
+DECL|struct|__anon27958eb50108
 block|{
 DECL|member|x
 DECL|member|y
@@ -185,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beda1450208
+DECL|struct|__anon27958eb50208
 block|{
 DECL|member|npts
 name|gint
@@ -207,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beda1450308
+DECL|struct|__anon27958eb50308
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -230,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beda1450408
+DECL|struct|__anon27958eb50408
 block|{
 DECL|member|run
 name|gint
@@ -749,11 +755,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_cubism"
 argument_list|,
+name|_
+argument_list|(
 literal|"Convert the input drawable into a collection of rotated squares"
+argument_list|)
 argument_list|,
 literal|"Help not yet written for this plug-in"
 argument_list|,
@@ -763,7 +775,10 @@ literal|"Spencer Kimball& Tracy Scott"
 argument_list|,
 literal|"1996"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Artistic/Cubism"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -827,6 +842,9 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1239,7 +1257,10 @@ literal|0
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Cubistic Transformation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  render the cubism  */
@@ -1387,7 +1408,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Cubism"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1422,7 +1446,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1484,7 +1511,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1545,7 +1575,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1624,7 +1657,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Use Background Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1698,7 +1734,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tile Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1867,7 +1906,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tile Saturation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

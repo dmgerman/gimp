@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                   - Main entry - just call gimp_main()...  *   query()                  - Respond to a plug-in query...  *   run()                    - Run the plug-in...  *   print_dialog()           - Pop up the print dialog...  *   dialog_create_ivalue()   - Create an integer value control...  *   dialog_iscale_update()   - Update the value field using the scale.  *   dialog_ientry_update()   - Update the value field using the text entry.  *   print_driver_callback()  - Update the current printer driver...  *   media_size_callback()    - Update the current media size...  *   print_command_callback() - Update the print command...  *   output_type_callback()   - Update the current output type...  *   print_callback()         - Start the print...  *   cancel_callback()        - Cancel the print...  *   close_callback()         - Exit the print dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.12  1999/05/01 17:53:52  asbjoer  *   os2 printing  *  *   Revision 1.11  1999/01/15 17:34:25  unammx  *   1999-01-15  Federico Mena Quintero<federico@nuclecu.unam.mx>  *  *   	* Updated gtk_toggle_button_set_state() to  *   	gtk_toggle_button_set_active() in all the files.  *  *   Revision 1.10  1998/05/17 07:16:50  yosh  *   0.99.31 fun  *  *   updated print plugin  *  *   -Yosh  *  *   Revision 1.21  1998/05/16  18:51:16  mike  *   Updated LaserJet and PostScript profiles.  *  *   Revision 1.20  1998/05/16  18:27:59  mike  *   Updated brightness LUT generation for correct calibration values.  *   Updated Stylus Color density - a little too high.  *  *   Revision 1.19  1998/05/16  16:45:24  mike  *   Added RGB/Grayscale gamma correction using the brightness (as well as the  *   CMY[K] gamma correction for each printer)  *  *   Revision 1.18  1998/05/15  21:01:51  mike  *   Top/left need to be in points.  *   All code in preview_motion_callback() was still commented out...  *   Updated DeskJet and Stylus color calibration values.  *  *   Revision 1.17  1998/05/11  23:56:05  mike  *   Miscellaneous portability changes.  *  *   Revision 1.16  1998/05/08  20:52:55  mike  *   Whoops, wasn't showing/hiding PPD file browse button.  *  *   Revision 1.15  1998/05/08  19:20:50  mike  *   Updated for new driver interface.  *   Added GUI for printer driver setup, PPD files.  *   Now display file chooser when user selects "print to file"  *   Added PPI/percent-of-page toggle for scaling.  *   Added options for media type, resolution, and media source.  *  *   Revision 1.14  1998/03/01  17:29:42  mike  *   Added LPC/LPR/LP/LPSTAT_COMMAND definitions for portability.  *  *   Revision 1.13  1998/01/22  15:06:31  mike  *   Added "file" printer for printing to file.  *   Now you don't need the "|" in front of print commands.  *   Now "remembers" last selected printer.  *  *   Revision 1.12  1998/01/21  21:33:47  mike  *   Added Level 2 PostScript driver.  *   Fixed bug in dialog - didn't display correct output file/command  *   and driver for the default printer.  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.9  1997/10/22  13:07:20  mike  *   Fixed typo in run() return status (thanks Michael Schubart!)  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *   Added first cut at preview window.  *  *   Revision 1.5  1997/07/26  18:38:23  mike  *   Whoops - wasn't grabbing the colormap for indexed images properly...  *  *   Revision 1.4  1997/07/03  13:13:26  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.3  1997/07/03  13:07:05  mike  *   Updated EPSON driver short names.  *   Changed brightness lut formula for better control.  *  *   Revision 1.2  1997/07/02  15:22:17  mike  *   Added GUI with printer/media/output selection controls.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Print plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                   - Main entry - just call gimp_main()...  *   query()                  - Respond to a plug-in query...  *   run()                    - Run the plug-in...  *   print_dialog()           - Pop up the print dialog...  *   dialog_create_ivalue()   - Create an integer value control...  *   dialog_iscale_update()   - Update the value field using the scale.  *   dialog_ientry_update()   - Update the value field using the text entry.  *   print_driver_callback()  - Update the current printer driver...  *   media_size_callback()    - Update the current media size...  *   print_command_callback() - Update the print command...  *   output_type_callback()   - Update the current output type...  *   print_callback()         - Start the print...  *   cancel_callback()        - Cancel the print...  *   close_callback()         - Exit the print dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.13  1999/05/29 16:35:30  yosh  *   * configure.in  *   * Makefile.am: removed tips files, AC_SUBST GIMP_PLUGINS and  *   GIMP_MODULES so you can easily skip those parts of the build  *  *   * acinclude.m4  *   * config.sub  *   * config.guess  *   * ltconfig  *   * ltmain.sh: libtool 1.3.2  *  *   * app/fileops.c: shuffle #includes to avoid warning about MIN and  *   MAX  *  *   [ The following is a big i18n patch from David Monniaux  *<david.monniaux@ens.fr> ]  *  *   * tips/gimp_conseils.fr.txt  *   * tips/gimp_tips.txt  *   * tips/Makefile.am  *   * configure.in: moved tips to separate dir  *  *   * po-plugins: new dir for plug-in translation files  *  *   * configure.in: add po-plugins dir and POTFILES processing  *  *   * app/boundary.c  *   * app/brightness_contrast.c  *   * app/by_color_select.c  *   * app/color_balance.c  *   * app/convert.c  *   * app/curves.c  *   * app/free_select.c  *   * app/gdisplay.c  *   * app/gimpimage.c  *   * app/gimpunit.c  *   * app/gradient.c  *   * app/gradient_select.c  *   * app/install.c  *   * app/session.c: various i18n tweaks  *  *   * app/tips_dialog.c: localize tips filename  *  *   * libgimp/gimpunit.c  *   * libgimp/gimpunitmenu.c: #include "config.h"  *  *   * plug-ins/CEL  *   * plug-ins/CML_explorer  *   * plug-ins/Lighting  *   * plug-ins/apply_lens  *   * plug-ins/autostretch_hsv  *   * plug-ins/blur  *   * plug-ins/bmp  *   * plug-ins/borderaverage  *   * plug-ins/bumpmap  *   * plug-ins/bz2  *   * plug-ins/checkerboard  *   * plug-ins/colorify  *   * plug-ins/compose  *   * plug-ins/convmatrix  *   * plug-ins/cubism  *   * plug-ins/depthmerge  *   * plug-ins/destripe  *   * plug-ins/gif  *   * plug-ins/gifload  *   * plug-ins/jpeg  *   * plug-ins/mail  *   * plug-ins/oilify  *   * plug-ins/png  *   * plug-ins/print  *   * plug-ins/ps  *   * plug-ins/xbm  *   * plug-ins/xpm  *   * plug-ins/xwd: plug-in i18n stuff  *  *   -Yosh  *  *   Revision 1.12  1999/05/01 17:53:52  asbjoer  *   os2 printing  *  *   Revision 1.11  1999/01/15 17:34:25  unammx  *   1999-01-15  Federico Mena Quintero<federico@nuclecu.unam.mx>  *  *   	* Updated gtk_toggle_button_set_state() to  *   	gtk_toggle_button_set_active() in all the files.  *  *   Revision 1.10  1998/05/17 07:16:50  yosh  *   0.99.31 fun  *  *   updated print plugin  *  *   -Yosh  *  *   Revision 1.21  1998/05/16  18:51:16  mike  *   Updated LaserJet and PostScript profiles.  *  *   Revision 1.20  1998/05/16  18:27:59  mike  *   Updated brightness LUT generation for correct calibration values.  *   Updated Stylus Color density - a little too high.  *  *   Revision 1.19  1998/05/16  16:45:24  mike  *   Added RGB/Grayscale gamma correction using the brightness (as well as the  *   CMY[K] gamma correction for each printer)  *  *   Revision 1.18  1998/05/15  21:01:51  mike  *   Top/left need to be in points.  *   All code in preview_motion_callback() was still commented out...  *   Updated DeskJet and Stylus color calibration values.  *  *   Revision 1.17  1998/05/11  23:56:05  mike  *   Miscellaneous portability changes.  *  *   Revision 1.16  1998/05/08  20:52:55  mike  *   Whoops, wasn't showing/hiding PPD file browse button.  *  *   Revision 1.15  1998/05/08  19:20:50  mike  *   Updated for new driver interface.  *   Added GUI for printer driver setup, PPD files.  *   Now display file chooser when user selects "print to file"  *   Added PPI/percent-of-page toggle for scaling.  *   Added options for media type, resolution, and media source.  *  *   Revision 1.14  1998/03/01  17:29:42  mike  *   Added LPC/LPR/LP/LPSTAT_COMMAND definitions for portability.  *  *   Revision 1.13  1998/01/22  15:06:31  mike  *   Added "file" printer for printing to file.  *   Now you don't need the "|" in front of print commands.  *   Now "remembers" last selected printer.  *  *   Revision 1.12  1998/01/21  21:33:47  mike  *   Added Level 2 PostScript driver.  *   Fixed bug in dialog - didn't display correct output file/command  *   and driver for the default printer.  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.9  1997/10/22  13:07:20  mike  *   Fixed typo in run() return status (thanks Michael Schubart!)  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *   Added first cut at preview window.  *  *   Revision 1.5  1997/07/26  18:38:23  mike  *   Whoops - wasn't grabbing the colormap for indexed images properly...  *  *   Revision 1.4  1997/07/03  13:13:26  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.3  1997/07/03  13:07:05  mike  *   Updated EPSON driver short names.  *   Changed brightness lut formula for better control.  *  *   Revision 1.2  1997/07/02  15:22:17  mike  *   Added GUI with printer/media/output selection controls.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -52,6 +52,18 @@ endif|#
 directive|endif
 end_endif
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/*  * Constants for GUI...  */
 end_comment
@@ -101,7 +113,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon2a096aee0108
+DECL|struct|__anon2b511caf0108
 block|{
 DECL|member|name
 name|char
@@ -591,7 +603,7 @@ end_decl_stmt
 begin_struct
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon2a096aee0208
+DECL|struct|__anon2b511caf0208
 block|{
 DECL|member|output_to
 name|char
@@ -1122,7 +1134,10 @@ init|=
 comment|/* List of supported printer types */
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"PostScript Level 1"
+argument_list|)
 block|,
 literal|"ps"
 block|,
@@ -1144,7 +1159,10 @@ name|ps_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"PostScript Level 2"
+argument_list|)
 block|,
 literal|"ps2"
 block|,
@@ -1166,7 +1184,10 @@ name|ps_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP DeskJet 500, 520"
+argument_list|)
 block|,
 literal|"pcl-500"
 block|,
@@ -1188,7 +1209,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP DeskJet 500C, 540C"
+argument_list|)
 block|,
 literal|"pcl-501"
 block|,
@@ -1210,7 +1234,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP DeskJet 550C, 560C"
+argument_list|)
 block|,
 literal|"pcl-550"
 block|,
@@ -1232,7 +1259,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP DeskJet 600 series"
+argument_list|)
 block|,
 literal|"pcl-600"
 block|,
@@ -1254,7 +1284,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP DeskJet 800 series"
+argument_list|)
 block|,
 literal|"pcl-800"
 block|,
@@ -1276,7 +1309,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP DeskJet 1100C, 1120C"
+argument_list|)
 block|,
 literal|"pcl-1100"
 block|,
@@ -1298,7 +1334,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP DeskJet 1200C, 1600C"
+argument_list|)
 block|,
 literal|"pcl-1200"
 block|,
@@ -1320,7 +1359,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP LaserJet II series"
+argument_list|)
 block|,
 literal|"pcl-2"
 block|,
@@ -1342,7 +1384,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP LaserJet III series"
+argument_list|)
 block|,
 literal|"pcl-3"
 block|,
@@ -1364,7 +1409,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP LaserJet 4 series"
+argument_list|)
 block|,
 literal|"pcl-4"
 block|,
@@ -1386,7 +1434,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP LaserJet 4V, 4Si"
+argument_list|)
 block|,
 literal|"pcl-4v"
 block|,
@@ -1408,7 +1459,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP LaserJet 5 series"
+argument_list|)
 block|,
 literal|"pcl-5"
 block|,
@@ -1430,7 +1484,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP LaserJet 5Si"
+argument_list|)
 block|,
 literal|"pcl-5si"
 block|,
@@ -1452,7 +1509,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HP LaserJet 6 series"
+argument_list|)
 block|,
 literal|"pcl-6"
 block|,
@@ -1474,7 +1534,10 @@ name|pcl_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color"
+argument_list|)
 block|,
 literal|"escp2"
 block|,
@@ -1496,7 +1559,10 @@ name|escp2_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color Pro"
+argument_list|)
 block|,
 literal|"escp2-pro"
 block|,
@@ -1518,7 +1584,10 @@ name|escp2_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color Pro XL"
+argument_list|)
 block|,
 literal|"escp2-proxl"
 block|,
@@ -1540,7 +1609,10 @@ name|escp2_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color 1500"
+argument_list|)
 block|,
 literal|"escp2-1500"
 block|,
@@ -1562,7 +1634,10 @@ name|escp2_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color 400"
+argument_list|)
 block|,
 literal|"escp2-400"
 block|,
@@ -1584,7 +1659,10 @@ name|escp2_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color 500"
+argument_list|)
 block|,
 literal|"escp2-500"
 block|,
@@ -1606,7 +1684,10 @@ name|escp2_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color 600"
+argument_list|)
 block|,
 literal|"escp2-600"
 block|,
@@ -1628,7 +1709,10 @@ name|escp2_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color 800"
+argument_list|)
 block|,
 literal|"escp2-800"
 block|,
@@ -1650,7 +1734,10 @@ name|escp2_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color 1520"
+argument_list|)
 block|,
 literal|"escp2-1520"
 block|,
@@ -1672,7 +1759,10 @@ name|escp2_print
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"EPSON Stylus Color 3000"
+argument_list|)
 block|,
 literal|"escp2-3000"
 block|,
@@ -1897,13 +1987,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_print"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plug-in prints images from The GIMP."
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Prints images to PostScript, PCL, or ESC/P2 printers."
+argument_list|)
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>"
 argument_list|,
@@ -1911,7 +2010,10 @@ literal|"Copyright 1997-1998 by Michael Sweet"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/File/Print"
+argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"
 argument_list|,
@@ -2140,6 +2242,9 @@ decl_stmt|;
 comment|/* temp filename */
 endif|#
 directive|endif
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*   * Initialize parameter data...   */
 name|run_mode
 operator|=
@@ -3280,12 +3385,27 @@ index|[]
 init|=
 comment|/* Orientation strings */
 block|{
+name|N_
+argument_list|(
 literal|"Auto"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Portrait"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Landscape"
+argument_list|)
 block|}
+decl_stmt|;
+name|char
+name|plug_in_name
+index|[
+literal|80
+index|]
 decl_stmt|;
 comment|/*   * Initialize the program's display...   */
 name|argc
@@ -3359,6 +3479,18 @@ operator|=
 name|gtk_dialog_new
 argument_list|()
 expr_stmt|;
+name|sprintf
+argument_list|(
+name|plug_in_name
+argument_list|,
+name|_
+argument_list|(
+literal|"Print v%s"
+argument_list|)
+argument_list|,
+name|PLUG_IN_VERSION
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
@@ -3366,8 +3498,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|"Print "
-name|PLUG_IN_VERSION
+name|plug_in_name
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_wmclass
@@ -3651,7 +3782,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Media Size:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3765,7 +3899,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Media Type:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3879,7 +4016,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Media Source:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3993,7 +4133,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Orientation:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4078,10 +4221,13 @@ name|item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|orients
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -4220,7 +4366,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Resolution:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4334,7 +4483,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Output Type:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4428,7 +4580,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"B&W"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -4508,7 +4663,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4575,7 +4733,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Scaling:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4878,7 +5039,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Percent"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -4955,7 +5119,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"PPI"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5019,7 +5186,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Brightness:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5288,7 +5458,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Printer:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5357,12 +5530,15 @@ name|item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|plist
 index|[
 name|i
 index|]
 operator|.
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -5492,7 +5668,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|" Setup "
+name|_
+argument_list|(
+literal|"Setup"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5568,7 +5747,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|" Cancel "
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5625,7 +5807,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|" Print "
+name|_
+argument_list|(
+literal|"Print"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5698,7 +5883,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Setup"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_wmclass
@@ -5823,7 +6011,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Driver:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5908,12 +6099,15 @@ name|item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|printers
 index|[
 name|i
 index|]
 operator|.
 name|long_name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -6006,7 +6200,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"PPD File:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6126,7 +6323,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|" Browse "
+name|_
+argument_list|(
+literal|"Browse"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6172,7 +6372,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Command:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6291,7 +6494,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|" Cancel "
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -6348,7 +6554,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|" OK "
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -6411,7 +6620,10 @@ name|file_browser
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Print To File?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -6463,7 +6675,10 @@ name|ppd_browser
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"PPD File?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_file_selection_hide_fileop_buttons
@@ -7161,10 +7376,13 @@ name|item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|items
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -10703,7 +10921,10 @@ index|]
 operator|.
 name|name
 argument_list|,
+name|_
+argument_list|(
 literal|"File"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plist

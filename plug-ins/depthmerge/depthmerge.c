@@ -43,6 +43,18 @@ directive|include
 file|"libgimp/gimpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|DEBUG
 define|#
@@ -104,14 +116,6 @@ define|#
 directive|define
 name|PLUG_IN_NAME
 value|"plug_in_depth_merge"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_TITLE
-define|#
-directive|define
-name|PLUG_IN_TITLE
-value|"Depth Merge"
 end_define
 
 begin_define
@@ -969,15 +973,25 @@ argument_list|(
 name|GParamDef
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Combine two images using corresponding depth maps (z-buffers)"
+argument_list|)
 argument_list|,
-literal|"Taking as input two full-colour, full-alpha images and two corresponding "
-literal|"grayscale depth maps, this plug-in combines the images based on which "
-literal|"is closer (has a lower depth map value) at each point."
+name|_
+argument_list|(
+literal|"Taking as input two full-colour, full-alpha images and two "
+literal|"corresponding grayscale depth maps, this plug-in combines the "
+literal|"images based on which is closer (has a lower depth map value) "
+literal|"at each point."
+argument_list|)
 argument_list|,
 literal|"Sean Cier"
 argument_list|,
@@ -985,7 +999,10 @@ literal|"Sean Cier"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Combine/Depth Merge"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1046,6 +1063,9 @@ decl_stmt|;
 name|DepthMerge
 name|dm
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|runMode
 operator|=
 operator|(
@@ -2098,7 +2118,10 @@ literal|0
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Depth-merging..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|resultRow
@@ -4080,7 +4103,10 @@ operator|->
 name|dialog
 argument_list|)
 argument_list|,
-name|PLUG_IN_TITLE
+name|_
+argument_list|(
+literal|"Depth Merge"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -4397,7 +4423,10 @@ name|tempLabel
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Source 1"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4519,7 +4548,10 @@ name|tempLabel
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Depth Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4641,7 +4673,10 @@ name|tempLabel
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Source 2"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4763,7 +4798,10 @@ name|tempLabel
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Depth Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4948,7 +4986,10 @@ name|DepthMerge_createValueEdit
 argument_list|(
 name|dm
 argument_list|,
+name|_
+argument_list|(
 literal|"Overlap"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4985,7 +5026,10 @@ name|DepthMerge_createValueEdit
 argument_list|(
 name|dm
 argument_list|,
+name|_
+argument_list|(
 literal|"Offset"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -5023,7 +5067,10 @@ name|DepthMerge_createValueEdit
 argument_list|(
 name|dm
 argument_list|,
+name|_
+argument_list|(
 literal|"Scale 1"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -5061,7 +5108,10 @@ name|DepthMerge_createValueEdit
 argument_list|(
 name|dm
 argument_list|,
+name|_
+argument_list|(
 literal|"Scale 2"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -5113,7 +5163,10 @@ name|tempButton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5179,7 +5232,10 @@ name|tempButton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -8125,7 +8181,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Warning: I don't _like_ this color space.  This is a suggestion, not a threat.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

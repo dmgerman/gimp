@@ -96,6 +96,18 @@ directive|include
 file|"libgimp/gimpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -192,7 +204,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon2ba5cc550103
+DECL|enum|__anon2925dfc00103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -210,7 +222,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ba5cc550203
+DECL|enum|__anon2925dfc00203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -228,7 +240,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2ba5cc550308
+DECL|struct|__anon2925dfc00308
 typedef|typedef
 struct|struct
 block|{
@@ -283,7 +295,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba5cc550408
+DECL|struct|__anon2925dfc00408
 typedef|typedef
 struct|struct
 block|{
@@ -328,7 +340,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba5cc550508
+DECL|struct|__anon2925dfc00508
 typedef|typedef
 struct|struct
 block|{
@@ -1167,11 +1179,20 @@ name|map_types
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Linear map"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spherical map"
+argument_list|)
 block|,
-literal|"Sinuosidal map"
+name|N_
+argument_list|(
+literal|"Sinusoidal map"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1402,24 +1423,35 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Create an embossing effect using an image as a bump map"
+argument_list|)
 argument_list|,
+operator|(
 literal|"This plug-in uses the algorithm described by John Schlag, "
 literal|"\"Fast Embossing Effects on Raster Image Data\" in Graphics GEMS IV "
 literal|"(ISBN 0-12-336155-9). It takes a grayscale image to be applied as "
 literal|"a bump map to another image and produces a nice embossing effect."
+operator|)
 argument_list|,
-literal|"Federico Mena Quintero and Jens Lautenbacher"
+literal|"Federico Mena Quintero& Jens Lautenbacher"
 argument_list|,
-literal|"Federico Mena Quintero and Jens Lautenbacher"
+literal|"Federico Mena Quintero& Jens Lautenbacher"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Map/Bump Map"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1485,6 +1517,9 @@ decl_stmt|;
 name|GStatusType
 name|status
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|status
 operator|=
 name|STATUS_SUCCESS
@@ -2007,7 +2042,10 @@ endif|#
 directive|endif
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Bump-mapping..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Get the bumpmap drawable */
@@ -3754,7 +3792,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Bump map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -4119,7 +4160,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Compensate for darkening"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4195,7 +4239,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Invert bumpmap"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4388,10 +4435,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|map_types
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -4530,7 +4580,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Bump map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4649,7 +4702,10 @@ expr_stmt|;
 comment|/* Controls */
 name|dialog_create_dvalue
 argument_list|(
+name|_
+argument_list|(
 literal|"Azimuth"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4670,7 +4726,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_dvalue
 argument_list|(
+name|_
+argument_list|(
 literal|"Elevation"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4691,7 +4750,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_ivalue
 argument_list|(
+name|_
+argument_list|(
 literal|"Depth"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4714,7 +4776,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_ivalue
 argument_list|(
+name|_
+argument_list|(
 literal|"X offset"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4738,7 +4803,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_ivalue
 argument_list|(
+name|_
+argument_list|(
 literal|"Y offset"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4762,7 +4830,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_ivalue
 argument_list|(
+name|_
+argument_list|(
 literal|"Waterlevel"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4785,7 +4856,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_ivalue
 argument_list|(
+name|_
+argument_list|(
 literal|"Ambient"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4826,7 +4900,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4888,7 +4965,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

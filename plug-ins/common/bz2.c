@@ -114,6 +114,18 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -515,6 +527,9 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1156,7 +1171,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: fork failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1194,7 +1212,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: fopen failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1229,7 +1250,10 @@ argument_list|)
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: dup2 failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1253,7 +1277,10 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: exec failed: bzip2: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1323,7 +1350,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: bzip2 exited abnormally on file %s\n"
+argument_list|)
 argument_list|,
 name|tmpname
 argument_list|)
@@ -1444,7 +1474,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: fork failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1487,7 +1520,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: fopen failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1522,7 +1558,10 @@ argument_list|)
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: dup2 failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1546,7 +1585,10 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: exec failed: bunzip2: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1617,7 +1659,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: bzip2 exited abnormally on file %s\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1836,7 +1881,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"bz2: can't open bzip2ed file without a sensible extension\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

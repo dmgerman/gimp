@@ -86,6 +86,12 @@ directive|include
 file|"bmp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|pixels
 name|guchar
@@ -111,7 +117,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2745e4600108
+DECL|struct|__anon27cb8e300108
 block|{
 DECL|member|run
 name|gint
@@ -347,9 +353,12 @@ name|INDEXED_IMAGE
 case|:
 break|break;
 default|default:
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"bmp: cannot operate on unknown image types or alpha images"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -598,11 +607,12 @@ operator|!
 name|outfile
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
+name|_
+argument_list|(
 literal|"can't open %s\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -674,7 +684,10 @@ name|sprintf
 argument_list|(
 name|temp_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2666,7 +2679,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save as BMP"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2701,7 +2717,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2763,7 +2782,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2824,7 +2846,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2901,7 +2926,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"RLE encoded"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

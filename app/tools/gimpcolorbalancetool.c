@@ -3737,10 +3737,7 @@ name|image_map
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"color_balance_preview(): No image map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|active_tool

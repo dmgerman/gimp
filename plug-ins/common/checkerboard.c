@@ -27,6 +27,18 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Variables set in dialog box */
 end_comment
@@ -52,7 +64,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d59eac0108
+DECL|struct|__anon28c9714a0108
 typedef|typedef
 struct|struct
 block|{
@@ -338,11 +350,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_checkerboard"
 argument_list|,
+name|_
+argument_list|(
 literal|"Adds a checkerboard pattern to an image"
+argument_list|)
 argument_list|,
 literal|"More here later"
 argument_list|,
@@ -352,7 +370,10 @@ literal|"Brent Burton& the Edward Blevins"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Render/Checkerboard"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -416,6 +437,9 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -584,7 +608,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Adding Checkerboard..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|check
@@ -1628,7 +1655,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Checkerboard"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1663,7 +1693,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1725,7 +1758,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1786,7 +1822,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1865,7 +1904,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Psychobilly"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1937,7 +1979,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Check Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

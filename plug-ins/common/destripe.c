@@ -62,6 +62,12 @@ endif|#
 directive|endif
 end_endif
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/*  * Constants...  */
 end_comment
@@ -554,13 +560,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Destripe filter, used to remove vertical stripes caused by cheap scanners."
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plug-in tries to remove vertical stripes from an image."
+argument_list|)
 argument_list|,
 literal|"Marc Lehmann<pcg@goof.com>"
 argument_list|,
@@ -568,7 +583,10 @@ literal|"Marc Lehmann<pcg@goof.com>"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Enhance/Destripe"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -638,6 +656,9 @@ literal|1
 index|]
 decl_stmt|;
 comment|/* Return values */
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*   * Initialize parameter data...   */
 name|status
 operator|=
@@ -1223,7 +1244,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Destriping..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|progress
@@ -2287,7 +2311,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Destripe"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2802,7 +2829,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Histogram"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2875,7 +2905,10 @@ comment|/*  button = gtk_check_button_new_with_label("Recursive");   gtk_table_a
 comment|/*   * Box size (radius) control...   */
 name|dialog_create_ivalue
 argument_list|(
+name|_
+argument_list|(
 literal|"Width"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -2912,7 +2945,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2974,7 +3010,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

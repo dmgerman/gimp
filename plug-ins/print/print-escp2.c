@@ -1,12 +1,18 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in EPSON ESC/P2 driver for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   escp2_parameters()     - Return the parameter values for the given  *                            parameter.  *   escp2_imageable_area() - Return the imageable area of the page.  *   escp2_print()          - Print an image to an EPSON printer.  *   escp2_write()          - Send ESC/P2 graphics using TIFF packbits compression.  *  * Revision History:  *  *   $Log$  *   Revision 1.10  1998/08/28 23:01:44  yosh  *   * acconfig.h  *   * configure.in  *   * app/main.c: added check for putenv and #ifdefed it's usage since NeXTStep is  *   lame  *  *   * libgimp/gimp.c  *   * app/main.c  *   * app/plug_in.c: conditionally compile shared mem stuff so platforms without  *   it can still work  *  *   * plug-ins/CEL/CEL.c  *   * plug-ins/palette/palette.c  *   * plug-ins/print/print-escp2.c  *   * plug-ins/print/print-pcl.c  *   * plug-ins/print/print-ps.c: s/strdup/g_strdup/ for portability  *  *   -Yosh  *  *   Revision 1.9  1998/05/17 07:16:45  yosh  *   0.99.31 fun  *  *   updated print plugin  *  *   -Yosh  *  *   Revision 1.11  1998/05/15  21:01:51  mike  *   Updated image positioning code (invert top and center left/top independently)  *  *   Revision 1.10  1998/05/08  21:18:34  mike  *   Now enable microweaving in 720 DPI mode.  *  *   Revision 1.9  1998/05/08  20:49:43  mike  *   Updated to support media size, imageable area, and parameter functions.  *   Added support for scaling modes - scale by percent or scale by PPI.  *  *   Revision 1.8  1998/01/21  21:33:47  mike  *   Updated copyright.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.5  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *  *   Revision 1.4  1997/07/15  20:57:11  mike  *   Updated ESC 800/1520/3000 output code to use vertical spacing of 5 instead of 40.  *  *   Revision 1.3  1997/07/03  13:21:15  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Print plug-in EPSON ESC/P2 driver for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   escp2_parameters()     - Return the parameter values for the given  *                            parameter.  *   escp2_imageable_area() - Return the imageable area of the page.  *   escp2_print()          - Print an image to an EPSON printer.  *   escp2_write()          - Send ESC/P2 graphics using TIFF packbits compression.  *  * Revision History:  *  *   $Log$  *   Revision 1.11  1999/05/29 16:35:26  yosh  *   * configure.in  *   * Makefile.am: removed tips files, AC_SUBST GIMP_PLUGINS and  *   GIMP_MODULES so you can easily skip those parts of the build  *  *   * acinclude.m4  *   * config.sub  *   * config.guess  *   * ltconfig  *   * ltmain.sh: libtool 1.3.2  *  *   * app/fileops.c: shuffle #includes to avoid warning about MIN and  *   MAX  *  *   [ The following is a big i18n patch from David Monniaux  *<david.monniaux@ens.fr> ]  *  *   * tips/gimp_conseils.fr.txt  *   * tips/gimp_tips.txt  *   * tips/Makefile.am  *   * configure.in: moved tips to separate dir  *  *   * po-plugins: new dir for plug-in translation files  *  *   * configure.in: add po-plugins dir and POTFILES processing  *  *   * app/boundary.c  *   * app/brightness_contrast.c  *   * app/by_color_select.c  *   * app/color_balance.c  *   * app/convert.c  *   * app/curves.c  *   * app/free_select.c  *   * app/gdisplay.c  *   * app/gimpimage.c  *   * app/gimpunit.c  *   * app/gradient.c  *   * app/gradient_select.c  *   * app/install.c  *   * app/session.c: various i18n tweaks  *  *   * app/tips_dialog.c: localize tips filename  *  *   * libgimp/gimpunit.c  *   * libgimp/gimpunitmenu.c: #include "config.h"  *  *   * plug-ins/CEL  *   * plug-ins/CML_explorer  *   * plug-ins/Lighting  *   * plug-ins/apply_lens  *   * plug-ins/autostretch_hsv  *   * plug-ins/blur  *   * plug-ins/bmp  *   * plug-ins/borderaverage  *   * plug-ins/bumpmap  *   * plug-ins/bz2  *   * plug-ins/checkerboard  *   * plug-ins/colorify  *   * plug-ins/compose  *   * plug-ins/convmatrix  *   * plug-ins/cubism  *   * plug-ins/depthmerge  *   * plug-ins/destripe  *   * plug-ins/gif  *   * plug-ins/gifload  *   * plug-ins/jpeg  *   * plug-ins/mail  *   * plug-ins/oilify  *   * plug-ins/png  *   * plug-ins/print  *   * plug-ins/ps  *   * plug-ins/xbm  *   * plug-ins/xpm  *   * plug-ins/xwd: plug-in i18n stuff  *  *   -Yosh  *  *   Revision 1.10  1998/08/28 23:01:44  yosh  *   * acconfig.h  *   * configure.in  *   * app/main.c: added check for putenv and #ifdefed it's usage since NeXTStep is  *   lame  *  *   * libgimp/gimp.c  *   * app/main.c  *   * app/plug_in.c: conditionally compile shared mem stuff so platforms without  *   it can still work  *  *   * plug-ins/CEL/CEL.c  *   * plug-ins/palette/palette.c  *   * plug-ins/print/print-escp2.c  *   * plug-ins/print/print-pcl.c  *   * plug-ins/print/print-ps.c: s/strdup/g_strdup/ for portability  *  *   -Yosh  *  *   Revision 1.9  1998/05/17 07:16:45  yosh  *   0.99.31 fun  *  *   updated print plugin  *  *   -Yosh  *  *   Revision 1.11  1998/05/15  21:01:51  mike  *   Updated image positioning code (invert top and center left/top independently)  *  *   Revision 1.10  1998/05/08  21:18:34  mike  *   Now enable microweaving in 720 DPI mode.  *  *   Revision 1.9  1998/05/08  20:49:43  mike  *   Updated to support media size, imageable area, and parameter functions.  *   Added support for scaling modes - scale by percent or scale by PPI.  *  *   Revision 1.8  1998/01/21  21:33:47  mike  *   Updated copyright.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.5  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *  *   Revision 1.4  1997/07/15  20:57:11  mike  *   Updated ESC 800/1520/3000 output code to use vertical spacing of 5 instead of 40.  *  *   Revision 1.3  1997/07/03  13:21:15  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
 end_comment
 
 begin_include
 include|#
 directive|include
 file|"print.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -91,17 +97,35 @@ name|media_sizes
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Letter"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Legal"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"A4"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Tabloid"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"A3"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"12x18"
+argument_list|)
 block|}
 decl_stmt|;
 specifier|static
@@ -111,9 +135,15 @@ name|resolutions
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"360 DPI"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"720 DPI"
+argument_list|)
 block|}
 decl_stmt|;
 if|if
@@ -1079,7 +1109,10 @@ expr_stmt|;
 comment|/*   * Let the user know what we're doing...   */
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Printing..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*   * Send ESC/P2 initialization commands...   */

@@ -1054,10 +1054,7 @@ literal|0
 case|:
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"image-title-format string ended within %%-sequence"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1267,10 +1264,7 @@ comment|/* other cool things to be added: 	   * %m = memory used by picture 	   
 default|default:
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"image-title-format contains unknown format sequence '%%%c'"
-argument_list|)
 argument_list|,
 operator|*
 name|format
@@ -2476,10 +2470,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"Wanted to start idlerender thread with no update_areas. (+memleak)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

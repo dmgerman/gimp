@@ -78,6 +78,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -109,6 +115,12 @@ begin_include
 include|#
 directive|include
 file|"bmp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_decl_stmt
@@ -392,9 +404,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_bmp_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"Loads files of Windows BMP file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Loads files of Windows BMP file format"
+argument_list|)
 argument_list|,
 literal|"Alexander Schulz"
 argument_list|,
@@ -421,9 +439,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_bmp_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"Saves files in Windows BMP file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Saves files in Windows BMP file format"
+argument_list|)
 argument_list|,
 literal|"Alexander Schulz"
 argument_list|,
@@ -567,6 +591,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -689,6 +716,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode

@@ -62,6 +62,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -95,6 +101,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* uncomment the line below for a little debugging info */
 end_comment
@@ -102,18 +114,6 @@ end_comment
 begin_comment
 comment|/* #define GIFDEBUG yesplease */
 end_comment
-
-begin_comment
-comment|/* Wear your GIMP with pride! */
-end_comment
-
-begin_define
-DECL|macro|DEFAULT_COMMENT
-define|#
-directive|define
-name|DEFAULT_COMMENT
-value|"Made with GIMP"
-end_define
 
 begin_comment
 comment|/* Does the version of GIMP we're compiling for support    data attachments to images?  ('Parasites') */
@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b51b1710108
+DECL|struct|__anon297f8c8d0108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b51b1710208
+DECL|struct|__anon297f8c8d0208
 block|{
 DECL|member|run
 name|gint
@@ -676,11 +676,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gif_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files in Compuserve GIF file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for gif_save"
 argument_list|,
@@ -840,6 +846,9 @@ name|g_strdup
 argument_list|(
 literal|"gif"
 argument_list|)
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 name|gtk_init
 argument_list|(
@@ -1989,7 +1998,10 @@ return|;
 block|}
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: Couldn't simply reduce colours further.  Saving as opaque.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2982,7 +2994,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: Sorry, can't save RGB images as GIFs - convert to INDEXED\nor GRAY first.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3048,7 +3063,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: can't open %s\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -3450,8 +3468,11 @@ endif|#
 directive|endif
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Transparent colour *might* be incorrect on viewers which"
 literal|" don't support transparency."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3828,7 +3849,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Crop"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3890,7 +3914,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4026,12 +4053,15 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"The image which you are trying to save as a GIF\n"
 literal|"contains layers which extend beyond the actual\n"
 literal|"borders of the image.  This isn't allowed in GIFs,\n"
 literal|"I'm afraid.\n\n"
 literal|"You may choose whether to crop all of the layers to\n"
 literal|"the image borders, or cancel this save."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4190,7 +4220,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save as GIF"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -4242,7 +4275,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4363,7 +4399,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4440,7 +4479,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Interlace"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4535,7 +4577,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF Comment: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4738,7 +4783,10 @@ literal|1
 operator|+
 name|strlen
 argument_list|(
-name|DEFAULT_COMMENT
+name|_
+argument_list|(
+literal|"Made with GIMP"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4746,7 +4794,10 @@ name|strcpy
 argument_list|(
 name|globalcomment
 argument_list|,
-name|DEFAULT_COMMENT
+name|_
+argument_list|(
+literal|"Made with GIMP"
+argument_list|)
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -4873,7 +4924,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Animated GIF Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4950,7 +5004,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Loop forever"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5036,7 +5093,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Delay between frames where unspecified: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5137,7 +5197,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|" milliseconds"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5196,7 +5259,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Frame disposal where unspecified: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5240,7 +5306,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"I don't care"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5283,7 +5352,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cumulative layers (combine)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5326,7 +5398,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"One frame per layer (replace)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5562,7 +5637,10 @@ else|else
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: colorstobpp - Eep! too many colours: %d\n"
+argument_list|)
 argument_list|,
 name|colors
 argument_list|)
@@ -5599,7 +5677,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: bpptocolors - Eep! bpp==%d !\n"
+argument_list|)
 argument_list|,
 name|bpp
 argument_list|)

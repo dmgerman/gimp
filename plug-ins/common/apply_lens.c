@@ -45,6 +45,18 @@ directive|include
 file|"gtk/gtk.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -167,7 +179,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5e3210108
+DECL|struct|__anon278021300108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -212,7 +224,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5e3210208
+DECL|struct|__anon278021300208
 block|{
 DECL|member|run
 name|gint
@@ -344,13 +356,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_applylens"
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply a lens effect"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plug-in uses Snell's law to draw an ellipsoid lens over the image"
+argument_list|)
 argument_list|,
 literal|"Morten Eriksen"
 argument_list|,
@@ -358,7 +379,10 @@ literal|"Morten Eriksen"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Glass Effects/Apply Lens"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -422,6 +446,9 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -628,7 +655,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Applying lens..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|drawlens
@@ -1944,7 +1974,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Lens effect"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1978,7 +2011,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2040,7 +2076,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2100,7 +2139,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2179,7 +2221,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Keep original surroundings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -2259,9 +2304,15 @@ name|drawtype
 operator|==
 name|INDEXED_IMAGE
 condition|?
+name|_
+argument_list|(
 literal|"Set surroundings to index 0"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"Set surroundings to background color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -2354,7 +2405,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Make surroundings transparent"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -2450,7 +2504,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Lens refraction index: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

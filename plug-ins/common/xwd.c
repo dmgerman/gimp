@@ -25,6 +25,12 @@ end_decl_stmt
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -50,6 +56,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
@@ -80,7 +92,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ade43710108
+DECL|struct|__anon2c5d8fbf0108
 typedef|typedef
 struct|struct
 block|{
@@ -214,7 +226,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ade43710208
+DECL|struct|__anon2c5d8fbf0208
 typedef|typedef
 struct|struct
 block|{
@@ -272,7 +284,7 @@ value|((1<< MAPPERBITS)-1)
 end_define
 
 begin_typedef
-DECL|struct|__anon2ade43710308
+DECL|struct|__anon2c5d8fbf0308
 typedef|typedef
 struct|struct
 block|{
@@ -298,7 +310,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ade43710408
+DECL|struct|__anon2c5d8fbf0408
 typedef|typedef
 struct|struct
 block|{
@@ -1017,13 +1029,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_xwd_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"load file of the XWD file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"load file of the XWD file format"
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -1050,9 +1071,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xwd_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files in the XWD file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"XWD saving handles all image types except \ those with alpha channels."
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -1201,6 +1228,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -1278,6 +1308,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1425,7 +1458,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"can't open file for reading"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1490,7 +1526,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"can't open file as XWD file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1557,7 +1596,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-literal|"cant get memory for colormap"
+name|_
+argument_list|(
+literal|"can't get memory for colormap"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1680,7 +1722,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-literal|"cant read colour entries"
+name|_
+argument_list|(
+literal|"can't read color entries"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2021,7 +2066,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"this image depth/format is not supported"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2031,7 +2079,10 @@ name|sprintf
 argument_list|(
 name|temp
 argument_list|,
+name|_
+argument_list|(
 literal|"load_image (xwd): XWD-file %s has format %d, depth %d\n\ and bits per pixel %d.\nCurrently this is not supported.\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|,
@@ -2122,7 +2173,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"XWD save cannot handle images with alpha channels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2147,7 +2201,10 @@ break|break;
 default|default:
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"cannot operate on unknown image types"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2175,7 +2232,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-literal|"cant open file for writing"
+name|_
+argument_list|(
+literal|"can't open file for writing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2207,7 +2267,10 @@ name|sprintf
 argument_list|(
 name|temp
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -6193,7 +6256,10 @@ name|err
 condition|)
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"EOF encountered on "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
@@ -6690,7 +6756,10 @@ name|err
 condition|)
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"EOF encountered on reading"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
@@ -6926,7 +6995,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"No memory for mapping colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -7621,7 +7693,10 @@ name|err
 condition|)
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"EOF encountered on reading"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
@@ -8813,7 +8888,10 @@ name|err
 condition|)
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"EOF encountered on reading"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
@@ -10222,7 +10300,10 @@ name|err
 condition|)
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"EOF encountered on reading"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
@@ -10967,7 +11048,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error during writing indexed/grey image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11462,7 +11546,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error during writing rgb image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

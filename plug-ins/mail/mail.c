@@ -150,6 +150,18 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -454,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad1d9960108
+DECL|struct|__anon29808bbf0108
 block|{
 DECL|member|receipt
 name|char
@@ -666,13 +678,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_mail_image"
 argument_list|,
+name|_
+argument_list|(
 literal|"pipe files to uuencode then mail them"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"You need to have uuencode and mail installed"
+argument_list|)
 argument_list|,
 literal|"Adrian Likins, Reagan Blundell"
 argument_list|,
@@ -680,7 +701,10 @@ literal|"Adrian Likins, Reagan Blundell, Daniel Risacher, Spencer Kimball and Pe
 argument_list|,
 literal|"1995-1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/File/Mail image"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -746,6 +770,9 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1819,7 +1846,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Send to mail"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1845,7 +1875,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1908,7 +1941,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2573,7 +2609,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Filename:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2906,7 +2945,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Encapsulation:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2951,7 +2993,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Uuencode"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -2970,7 +3015,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"MIME"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3450,7 +3498,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"mail: some sort of error with the file extension or lack thereof \n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -59,6 +65,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|linenoise
 specifier|static
@@ -86,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ec2df0108
+DECL|struct|__anon2900212f0108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -101,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ec2df0208
+DECL|struct|__anon2900212f0208
 block|{
 DECL|member|run
 name|gint
@@ -116,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ec2df0308
+DECL|struct|__anon2900212f0308
 block|{
 DECL|member|r
 name|guchar
@@ -524,11 +536,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_xpm_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the xpm file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for xpm_load"
 argument_list|,
@@ -557,7 +575,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xpm_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files in the xpm file format (if you're on a 16 bit display...)"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for xpm"
 argument_list|,
@@ -690,6 +711,9 @@ operator|.
 name|d_status
 operator|=
 name|STATUS_CALLING_ERROR
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -1040,7 +1064,10 @@ name|sprintf
 argument_list|(
 name|name
 argument_list|,
+name|_
+argument_list|(
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1495,7 +1522,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Color"
+argument_list|)
 argument_list|,
 name|xpm_image
 operator|->
@@ -2425,7 +2455,10 @@ name|sprintf
 argument_list|(
 name|name
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -3189,7 +3222,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save as Xpm"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3224,7 +3260,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3286,7 +3325,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3347,7 +3389,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3426,7 +3471,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Alpha Threshold"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

@@ -64,6 +64,18 @@ directive|include
 file|"libgimp/gimpmenu.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Declare local functions  */
 end_comment
@@ -418,7 +430,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b6bb940108
+DECL|struct|__anon2af81ce90108
 typedef|typedef
 struct|struct
 block|{
@@ -490,18 +502,33 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"RGB"
+argument_list|)
 block|,
 literal|3
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Red:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Green:     "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Blue:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"N/A"
+argument_list|)
 block|}
 block|,
 literal|"rgb-compose"
@@ -510,18 +537,33 @@ name|compose_rgb
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"RGBA"
+argument_list|)
 block|,
 literal|4
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Red:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Green:     "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Blue:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Alpha:"
+argument_list|)
 block|}
 block|,
 literal|"rgba-compose"
@@ -530,18 +572,33 @@ name|compose_rgba
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"HSV"
+argument_list|)
 block|,
 literal|3
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Hue:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Saturation:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Value:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"N/A"
+argument_list|)
 block|}
 block|,
 literal|"hsv-compose"
@@ -550,18 +607,33 @@ name|compose_hsv
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"CMY"
+argument_list|)
 block|,
 literal|3
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cyan:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Magenta:   "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Yellow:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"N/A"
+argument_list|)
 block|}
 block|,
 literal|"cmy-compose"
@@ -570,18 +642,33 @@ name|compose_cmy
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"CMYK"
+argument_list|)
 block|,
 literal|4
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cyan:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Magenta:   "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Yellow:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Black:"
+argument_list|)
 block|}
 block|,
 literal|"cmyk-compose"
@@ -601,7 +688,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon29b6bb940208
+DECL|struct|__anon2af81ce90208
 typedef|typedef
 struct|struct
 block|{
@@ -632,7 +719,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b6bb940308
+DECL|struct|__anon2af81ce90308
 typedef|typedef
 struct|struct
 block|{
@@ -871,13 +958,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_compose"
 argument_list|,
+name|_
+argument_list|(
 literal|"Compose an image from different types of channels"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This function creates a new image from\  different channel informations kept in gray images"
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -885,7 +981,10 @@ literal|"Peter Kirchgessner (pkirchg@aol.com)"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Image/Channel Ops/Compose"
+argument_list|)
 argument_list|,
 literal|"GRAY"
 argument_list|,
@@ -945,6 +1044,9 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1203,7 +1305,10 @@ name|RUN_NONINTERACTIVE
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Composing..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|image_ID
@@ -2124,7 +2229,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -3213,7 +3321,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Compose"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3248,7 +3359,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3310,7 +3424,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3417,7 +3534,10 @@ name|left_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Compose channels:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3493,7 +3613,10 @@ name|right_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Channel representations:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3824,12 +3947,15 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|compose_dsc
 index|[
 name|j
 index|]
 operator|.
 name|compose_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
