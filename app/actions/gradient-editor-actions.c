@@ -415,7 +415,7 @@ parameter_list|,
 name|magic
 parameter_list|)
 define|\
-value|{ "gradient-editor-load-left-" num, NULL, \     num, NULL, NULL, \     (magic), \     GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD }
+value|{ "gradient-editor-load-left-" num, NULL, \     num, NULL, NULL, \     (magic), FALSE, \     GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD }
 end_define
 
 begin_define
@@ -429,7 +429,7 @@ parameter_list|,
 name|magic
 parameter_list|)
 define|\
-value|{ "gradient-editor-save-left-" num, NULL, \     num, NULL, NULL, \     (magic), \     GIMP_HELP_GRADIENT_EDITOR_LEFT_SAVE }
+value|{ "gradient-editor-save-left-" num, NULL, \     num, NULL, NULL, \     (magic), FALSE, \     GIMP_HELP_GRADIENT_EDITOR_LEFT_SAVE }
 end_define
 
 begin_define
@@ -443,7 +443,7 @@ parameter_list|,
 name|magic
 parameter_list|)
 define|\
-value|{ "gradient-editor-load-right-" num, NULL, \     num, NULL, NULL, \     (magic), \     GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD }
+value|{ "gradient-editor-load-right-" num, NULL, \     num, NULL, NULL, \     (magic), FALSE, \     GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD }
 end_define
 
 begin_define
@@ -457,7 +457,7 @@ parameter_list|,
 name|magic
 parameter_list|)
 define|\
-value|{ "gradient-editor-save-right-" num, NULL, \     num, NULL, NULL, \     (magic), \     GIMP_HELP_GRADIENT_EDITOR_RIGHT_SAVE }
+value|{ "gradient-editor-save-right-" num, NULL, \     num, NULL, NULL, \     (magic), FALSE, \     GIMP_HELP_GRADIENT_EDITOR_RIGHT_SAVE }
 end_define
 
 begin_decl_stmt
@@ -484,6 +484,8 @@ name|NULL
 block|,
 literal|0
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD
 block|}
 block|,
@@ -502,6 +504,8 @@ block|,
 name|NULL
 block|,
 literal|1
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD
 block|}
@@ -522,6 +526,8 @@ name|NULL
 block|,
 literal|2
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD
 block|}
 block|,
@@ -540,6 +546,8 @@ block|,
 name|NULL
 block|,
 literal|3
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD
 block|}
@@ -722,6 +730,8 @@ name|NULL
 block|,
 literal|0
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD
 block|}
 block|,
@@ -740,6 +750,8 @@ block|,
 name|NULL
 block|,
 literal|1
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD
 block|}
@@ -760,6 +772,8 @@ name|NULL
 block|,
 literal|2
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD
 block|}
 block|,
@@ -778,6 +792,8 @@ block|,
 name|NULL
 block|,
 literal|3
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD
 block|}
@@ -1201,6 +1217,8 @@ argument_list|)
 block|,
 name|GIMP_ZOOM_IN
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_GRADIENT_EDITOR_ZOOM_IN
 block|}
 block|,
@@ -1223,6 +1241,8 @@ argument_list|)
 block|,
 name|GIMP_ZOOM_OUT
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_GRADIENT_EDITOR_ZOOM_OUT
 block|}
 block|,
@@ -1244,8 +1264,10 @@ literal|"Zoom all"
 argument_list|)
 block|,
 name|GIMP_ZOOM_TO
-block|,
 comment|/* abused */
+block|,
+name|FALSE
+block|,
 name|GIMP_HELP_GRADIENT_EDITOR_ZOOM_ALL
 block|}
 block|}

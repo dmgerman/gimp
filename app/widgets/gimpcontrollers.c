@@ -1311,6 +1311,13 @@ name|GIMP_IS_ENUM_ACTION
 argument_list|(
 name|action
 argument_list|)
+operator|&&
+name|GIMP_ENUM_ACTION
+argument_list|(
+name|action
+argument_list|)
+operator|->
+name|value_variable
 condition|)
 block|{
 name|gdouble

@@ -342,6 +342,10 @@ DECL|member|value
 name|gint
 name|value
 decl_stmt|;
+DECL|member|value_variable
+name|gboolean
+name|value_variable
+decl_stmt|;
 DECL|member|help_id
 specifier|const
 name|gchar

@@ -507,6 +507,8 @@ name|NULL
 block|,
 name|GIMP_FOREGROUND_FILL
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_EDIT_FILL_FG
 block|}
 block|,
@@ -526,6 +528,8 @@ name|NULL
 block|,
 name|GIMP_BACKGROUND_FILL
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_EDIT_FILL_BG
 block|}
 block|,
@@ -544,6 +548,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_PATTERN_FILL
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_EDIT_FILL_PATTERN
 block|}

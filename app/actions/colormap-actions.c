@@ -157,6 +157,8 @@ argument_list|)
 block|,
 name|FALSE
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_INDEXED_PALETTE_ADD
 block|}
 block|,
@@ -178,6 +180,8 @@ literal|"Add color from BG"
 argument_list|)
 block|,
 name|TRUE
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_INDEXED_PALETTE_ADD
 block|}

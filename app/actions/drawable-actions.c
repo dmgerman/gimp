@@ -291,6 +291,8 @@ name|NULL
 block|,
 name|GIMP_ORIENTATION_HORIZONTAL
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_FLIP_HORIZONTAL
 block|}
 block|,
@@ -309,6 +311,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ORIENTATION_VERTICAL
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_FLIP_VERTICAL
 block|}
@@ -340,6 +344,8 @@ name|NULL
 block|,
 name|GIMP_ROTATE_90
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_ROTATE_90
 block|}
 block|,
@@ -359,6 +365,8 @@ name|NULL
 block|,
 name|GIMP_ROTATE_180
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_ROTATE_180
 block|}
 block|,
@@ -377,6 +385,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ROTATE_270
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_ROTATE_270
 block|}

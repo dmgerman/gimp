@@ -107,6 +107,10 @@ DECL|member|value
 name|gint
 name|value
 decl_stmt|;
+DECL|member|value_variable
+name|gboolean
+name|value_variable
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -175,6 +179,9 @@ name|stock_id
 parameter_list|,
 name|gint
 name|value
+parameter_list|,
+name|gboolean
+name|value_variable
 parameter_list|)
 function_decl|;
 end_function_decl

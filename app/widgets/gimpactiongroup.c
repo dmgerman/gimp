@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ac48850103
+DECL|enum|__anon2c54ccfe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2076,6 +2076,13 @@ name|i
 index|]
 operator|.
 name|value
+argument_list|,
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|value_variable
 argument_list|)
 expr_stmt|;
 if|if

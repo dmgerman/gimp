@@ -145,6 +145,8 @@ argument_list|)
 block|,
 name|FALSE
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_ERRORS_SAVE
 block|}
 block|,
@@ -166,6 +168,8 @@ literal|"Save selection"
 argument_list|)
 block|,
 name|TRUE
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_ERRORS_SAVE
 block|}

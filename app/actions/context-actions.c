@@ -343,6 +343,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -358,6 +360,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -375,6 +379,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -390,6 +396,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -407,6 +415,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -423,6 +433,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -438,6 +450,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -466,6 +480,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -481,6 +497,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -498,6 +516,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -513,6 +533,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -530,6 +552,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -546,6 +570,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -561,6 +587,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -589,6 +617,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -604,6 +634,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -621,6 +653,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -636,6 +670,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -653,6 +689,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -669,6 +707,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -684,6 +724,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -712,6 +754,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -727,6 +771,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -744,6 +790,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -759,6 +807,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -776,6 +826,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -792,6 +844,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -807,6 +861,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -835,6 +891,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -850,6 +908,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -867,6 +927,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -882,6 +944,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -899,6 +963,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -915,6 +981,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -930,6 +998,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -958,6 +1028,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -973,6 +1045,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -990,6 +1064,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1005,6 +1081,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1022,6 +1100,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1038,6 +1118,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1053,6 +1135,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1081,6 +1165,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -1096,6 +1182,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1113,6 +1201,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1128,6 +1218,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1145,6 +1237,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1161,6 +1255,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1176,6 +1272,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1204,6 +1302,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1219,6 +1319,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1236,6 +1338,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1251,6 +1355,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1279,6 +1385,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1294,6 +1402,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1311,6 +1421,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1326,6 +1438,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1354,6 +1468,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1369,6 +1485,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1386,6 +1504,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1401,6 +1521,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1429,6 +1551,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1444,6 +1568,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1461,6 +1587,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1476,6 +1604,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1504,6 +1634,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1519,6 +1651,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1536,6 +1670,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1551,6 +1687,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1579,6 +1717,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1594,6 +1734,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1611,6 +1753,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1626,6 +1770,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1654,6 +1800,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1669,6 +1817,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1686,6 +1836,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1701,6 +1853,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1729,6 +1883,8 @@ name|NULL
 block|,
 name|GIMP_BRUSH_GENERATED_CIRCLE
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1745,6 +1901,8 @@ name|NULL
 block|,
 name|GIMP_BRUSH_GENERATED_SQUARE
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1760,6 +1918,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_BRUSH_GENERATED_DIAMOND
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1788,6 +1948,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -1803,6 +1965,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1820,6 +1984,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1835,6 +2001,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1852,6 +2020,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1868,6 +2038,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1883,6 +2055,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1911,6 +2085,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -1926,6 +2102,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1943,6 +2121,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1958,6 +2138,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1975,6 +2157,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -1991,6 +2175,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2006,6 +2192,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -2034,6 +2222,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -2049,6 +2239,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -2066,6 +2258,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2081,6 +2275,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -2098,6 +2294,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2114,6 +2312,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2129,6 +2329,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -2157,6 +2359,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -2172,6 +2376,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -2189,6 +2395,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2204,6 +2412,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -2221,6 +2431,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2237,6 +2449,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2252,6 +2466,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -2280,6 +2496,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|NULL
 block|}
 block|,
@@ -2295,6 +2513,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -2312,6 +2532,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2327,6 +2549,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -2344,6 +2568,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2360,6 +2586,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|NULL
 block|}
 block|,
@@ -2375,6 +2603,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}

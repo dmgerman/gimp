@@ -862,6 +862,8 @@ name|NULL
 block|,
 name|GIMP_MASK_APPLY
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_MASK_APPLY
 block|}
 block|,
@@ -880,6 +882,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_MASK_DISCARD
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_MASK_DELETE
 block|}
@@ -911,6 +915,8 @@ name|NULL
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_MASK_SELECTION_REPLACE
 block|}
 block|,
@@ -929,6 +935,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_CHANNEL_OP_ADD
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_MASK_SELECTION_ADD
 block|}
@@ -949,6 +957,8 @@ name|NULL
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_MASK_SELECTION_SUBTRACT
 block|}
 block|,
@@ -967,6 +977,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_MASK_SELECTION_INTERSECT
 block|}
@@ -998,6 +1010,8 @@ name|NULL
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_ALPHA_SELECTION_REPLACE
 block|}
 block|,
@@ -1016,6 +1030,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_CHANNEL_OP_ADD
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_ALPHA_SELECTION_ADD
 block|}
@@ -1036,6 +1052,8 @@ name|NULL
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_ALPHA_SELECTION_SUBTRACT
 block|}
 block|,
@@ -1054,6 +1072,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_ALPHA_SELECTION_INTERSECT
 block|}
@@ -1085,6 +1105,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_TOP
 block|}
 block|,
@@ -1103,6 +1125,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_BOTTOM
 block|}
@@ -1123,6 +1147,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_PREVIOUS
 block|}
 block|,
@@ -1141,6 +1167,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_NEXT
 block|}
@@ -1172,6 +1200,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
+name|TRUE
+block|,
 name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
@@ -1187,6 +1217,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_OPACITY
 block|}
@@ -1204,6 +1236,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
@@ -1219,6 +1253,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_OPACITY
 block|}
@@ -1236,6 +1272,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
@@ -1252,6 +1290,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
@@ -1267,6 +1307,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_OPACITY
 block|}
@@ -1295,6 +1337,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_MODE
 block|}
 block|,
@@ -1310,6 +1354,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_MODE
 block|}
@@ -1327,6 +1373,8 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_LAYER_MODE
 block|}
 block|,
@@ -1342,6 +1390,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_LAYER_MODE
 block|}

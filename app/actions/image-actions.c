@@ -482,6 +482,8 @@ name|NULL
 block|,
 name|GIMP_RGB
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_IMAGE_CONVERT_RGB
 block|}
 block|,
@@ -501,6 +503,8 @@ name|NULL
 block|,
 name|GIMP_GRAY
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_IMAGE_CONVERT_GRAYSCALE
 block|}
 block|,
@@ -519,6 +523,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_INDEXED
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_IMAGE_CONVERT_INDEXED
 block|}
@@ -550,6 +556,8 @@ name|NULL
 block|,
 name|GIMP_ORIENTATION_HORIZONTAL
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_IMAGE_FLIP_HORIZONTAL
 block|}
 block|,
@@ -568,6 +576,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ORIENTATION_VERTICAL
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_IMAGE_FLIP_VERTICAL
 block|}
@@ -600,6 +610,8 @@ name|NULL
 block|,
 name|GIMP_ROTATE_90
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_IMAGE_ROTATE_90
 block|}
 block|,
@@ -619,6 +631,8 @@ name|NULL
 block|,
 name|GIMP_ROTATE_180
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_IMAGE_ROTATE_180
 block|}
 block|,
@@ -637,6 +651,8 @@ block|,
 name|NULL
 block|,
 name|GIMP_ROTATE_270
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_IMAGE_ROTATE_270
 block|}

@@ -363,6 +363,8 @@ argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_CHANNEL_SELECTION_REPLACE
 block|}
 block|,
@@ -384,6 +386,8 @@ literal|"Add"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_ADD
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_CHANNEL_SELECTION_ADD
 block|}
@@ -407,6 +411,8 @@ argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_CHANNEL_SELECTION_SUBTRACT
 block|}
 block|,
@@ -428,6 +434,8 @@ literal|"Intersect"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_CHANNEL_SELECTION_INTERSECT
 block|}

@@ -182,6 +182,8 @@ argument_list|)
 block|,
 name|FALSE
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_PALETTE_EDITOR_NEW
 block|}
 block|,
@@ -203,6 +205,8 @@ literal|"New color from BG"
 argument_list|)
 block|,
 name|TRUE
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_PALETTE_EDITOR_NEW
 block|}
@@ -237,6 +241,8 @@ argument_list|)
 block|,
 name|GIMP_ZOOM_IN
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_PALETTE_EDITOR_ZOOM_IN
 block|}
 block|,
@@ -259,6 +265,8 @@ argument_list|)
 block|,
 name|GIMP_ZOOM_OUT
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_PALETTE_EDITOR_ZOOM_OUT
 block|}
 block|,
@@ -280,8 +288,10 @@ literal|"Zoom all"
 argument_list|)
 block|,
 name|GIMP_ZOOM_TO
-block|,
 comment|/* abused */
+block|,
+name|FALSE
+block|,
 name|GIMP_HELP_PALETTE_EDITOR_ZOOM_ALL
 block|}
 block|}

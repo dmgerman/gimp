@@ -457,6 +457,8 @@ name|NULL
 block|,
 name|FALSE
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_FILTER_REPEAT
 block|}
 block|,
@@ -475,6 +477,8 @@ block|,
 name|NULL
 block|,
 name|TRUE
+block|,
+name|FALSE
 block|,
 name|GIMP_HELP_FILTER_RESHOW
 block|}

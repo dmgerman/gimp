@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e05130103
+DECL|enum|__anon2a4415f00103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,13 +48,16 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e05130203
+DECL|enum|__anon2a4415f00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
 DECL|enumerator|PROP_VALUE
 name|PROP_VALUE
+block|,
+DECL|enumerator|PROP_VALUE_VARIABLE
+name|PROP_VALUE_VARIABLE
 block|}
 enum|;
 end_enum
@@ -334,6 +337,26 @@ name|G_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_VALUE_VARIABLE
+argument_list|,
+name|g_param_spec_boolean
+argument_list|(
+literal|"value-variable"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|G_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|action_signals
 index|[
 name|SELECTED
@@ -390,6 +413,12 @@ name|value
 operator|=
 literal|0
 expr_stmt|;
+name|action
+operator|->
+name|value_variable
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -439,6 +468,19 @@ argument_list|,
 name|action
 operator|->
 name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_VALUE_VARIABLE
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|action
+operator|->
+name|value_variable
 argument_list|)
 expr_stmt|;
 break|break;
@@ -507,6 +549,19 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_VALUE_VARIABLE
+case|:
+name|action
+operator|->
+name|value_variable
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -525,7 +580,7 @@ end_function
 begin_function
 name|GimpEnumAction
 modifier|*
-DECL|function|gimp_enum_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * stock_id,gint value)
+DECL|function|gimp_enum_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * stock_id,gint value,gboolean value_variable)
 name|gimp_enum_action_new
 parameter_list|(
 specifier|const
@@ -550,6 +605,9 @@ name|stock_id
 parameter_list|,
 name|gint
 name|value
+parameter_list|,
+name|gboolean
+name|value_variable
 parameter_list|)
 block|{
 return|return
@@ -576,6 +634,10 @@ argument_list|,
 literal|"value"
 argument_list|,
 name|value
+argument_list|,
+literal|"value-variable"
+argument_list|,
+name|value_variable
 argument_list|,
 name|NULL
 argument_list|)
