@@ -18,17 +18,6 @@ end_define
 
 begin_function_decl
 name|void
-name|image_desaturate
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_drawable_desaturate
 parameter_list|(
 name|GimpDrawable
