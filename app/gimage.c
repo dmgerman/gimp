@@ -9029,6 +9029,12 @@ condition|(
 name|merge_type
 operator|==
 name|FlattenImage
+operator|||
+operator|!
+name|layer_has_alpha
+argument_list|(
+name|layer
+argument_list|)
 condition|)
 block|{
 switch|switch
