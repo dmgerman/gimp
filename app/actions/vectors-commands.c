@@ -822,6 +822,8 @@ condition|(
 operator|!
 name|gimp_vectors_export
 argument_list|(
+name|gimage
+argument_list|,
 name|active_vectors
 argument_list|,
 literal|"path-export.svg"
