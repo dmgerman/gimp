@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289addd80108
+DECL|struct|__anon2c53ffbc0108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289addd80208
+DECL|struct|__anon2c53ffbc0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -904,7 +904,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289addd80308
+DECL|struct|__anon2c53ffbc0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1760,7 +1760,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289addd80408
+DECL|struct|__anon2c53ffbc0408
 block|{
 DECL|member|eol
 name|long
@@ -7022,7 +7022,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error starting ghostscript (%s)"
+literal|"Error starting ghostscript: %s"
 argument_list|)
 argument_list|,
 name|Gerr
