@@ -53,7 +53,7 @@ name|_
 parameter_list|(
 name|String
 parameter_list|)
-value|dgettext ("gimp-libgimp", String)
+value|dgettext ("gimp14-libgimp", String)
 end_define
 
 begin_undef
@@ -70,7 +70,7 @@ name|gettext
 parameter_list|(
 name|String
 parameter_list|)
-value|dgettext ("gimp-libgimp", String)
+value|dgettext ("gimp14-libgimp", String)
 end_define
 
 begin_ifdef

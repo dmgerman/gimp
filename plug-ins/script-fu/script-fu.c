@@ -346,7 +346,7 @@ block|}
 decl_stmt|;
 name|gimp_plugin_domain_register
 argument_list|(
-literal|"gimp-script-fu"
+literal|"gimp14-script-fu"
 argument_list|,
 name|NULL
 argument_list|)
