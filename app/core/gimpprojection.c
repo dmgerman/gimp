@@ -516,7 +516,7 @@ name|gdisp
 operator|->
 name|dot_for_dot
 operator|=
-name|TRUE
+name|default_dot_for_dot
 expr_stmt|;
 name|gdisp
 operator|->

@@ -212,7 +212,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2bf40b200103
+DECL|enum|__anon288964af0103
 typedef|typedef
 enum|enum
 block|{
@@ -829,6 +829,15 @@ name|GUnit
 name|default_resolution_units
 init|=
 name|UNIT_INCH
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|default_dot_for_dot
+name|int
+name|default_dot_for_dot
+init|=
+name|TRUE
 decl_stmt|;
 end_decl_stmt
 
@@ -2422,6 +2431,17 @@ name|TT_XUNIT
 block|,
 operator|&
 name|default_resolution_units
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"default-dot-for-dot"
+block|,
+name|TT_BOOLEAN
+block|,
+operator|&
+name|default_dot_for_dot
 block|,
 name|NULL
 block|}

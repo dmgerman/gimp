@@ -352,6 +352,13 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|int
+name|default_dot_for_dot
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
 name|save_session_info
 decl_stmt|;
 end_decl_stmt

@@ -64,6 +64,51 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
+comment|/*  declared extern in paint_options.h  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|non_gui_pressure_options
+name|PaintPressureOptions
+name|non_gui_pressure_options
+init|=
+block|{
+name|NULL
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|,
+name|NULL
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|,
+name|NULL
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|,
+name|NULL
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|,
+name|NULL
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  a list of all PaintOptions  */
 end_comment
 
