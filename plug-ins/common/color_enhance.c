@@ -21,14 +21,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -263,6 +255,9 @@ name|GimpPDBStatusType
 name|status
 init|=
 name|GIMP_PDB_SUCCESS
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -985,7 +980,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29e12dc40108
+DECL|struct|__anon28cc38690108
 typedef|typedef
 struct|struct
 block|{
@@ -1195,7 +1190,8 @@ name|gimp_rgn_iterate1
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|find_vhi_vlo
 argument_list|,
@@ -1207,7 +1203,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|color_enhance_func
 argument_list|,

@@ -89,14 +89,6 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
@@ -264,6 +256,9 @@ name|GimpPDBStatusType
 name|status
 init|=
 name|GIMP_PDB_SUCCESS
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -438,7 +433,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2afb16510108
+DECL|struct|__anon2bc260260108
 typedef|typedef
 struct|struct
 block|{
@@ -865,7 +860,8 @@ name|gimp_rgn_iterate1
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 operator|(
 name|GimpRgnFunc1
@@ -880,7 +876,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 operator|(
 name|GimpRgnFunc2

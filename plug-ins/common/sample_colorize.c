@@ -347,7 +347,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b280f1c0108
+DECL|struct|__anon2bbfd1220108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -416,7 +416,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b280f1c0208
+DECL|struct|__anon2bbfd1220208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -524,7 +524,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b280f1c0308
+DECL|struct|__anon2bbfd1220308
 block|{
 DECL|member|color
 name|guchar
@@ -553,7 +553,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b280f1c0408
+DECL|struct|__anon2bbfd1220408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -580,7 +580,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b280f1c0508
+DECL|struct|__anon2bbfd1220508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -671,14 +671,6 @@ end_typedef
 begin_comment
 comment|/*  * Some globals  */
 end_comment
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_di
@@ -1436,6 +1428,9 @@ specifier|const
 name|gchar
 modifier|*
 name|l_env
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -14749,7 +14744,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|colorize_func
 argument_list|,

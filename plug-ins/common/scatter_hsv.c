@@ -281,14 +281,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
@@ -313,7 +305,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e3b21c0108
+DECL|struct|__anon275e492b0108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -619,6 +611,9 @@ name|GimpPDBStatusType
 name|status
 init|=
 name|GIMP_PDB_EXECUTION_ERROR
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -997,7 +992,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|scatter_hsv_func
 argument_list|,

@@ -147,14 +147,6 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
@@ -179,7 +171,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a76300108
+DECL|struct|__anon2ac604420108
 block|{
 DECL|member|threshold
 name|gint
@@ -344,6 +336,9 @@ name|GimpPDBStatusType
 name|status
 init|=
 name|GIMP_PDB_SUCCESS
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|gint
 name|drawable_id
@@ -728,7 +723,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|threshold_alpha_func
 argument_list|,

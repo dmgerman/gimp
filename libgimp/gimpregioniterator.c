@@ -56,10 +56,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-DECL|member|run_mode
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -145,7 +141,7 @@ end_comment
 begin_function
 name|GimpRgnIterator
 modifier|*
-DECL|function|gimp_rgn_iterator_new (GimpDrawable * drawable,GimpRunMode run_mode)
+DECL|function|gimp_rgn_iterator_new (GimpDrawable * drawable,GimpRunMode unused)
 name|gimp_rgn_iterator_new
 parameter_list|(
 name|GimpDrawable
@@ -153,7 +149,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|GimpRunMode
-name|run_mode
+name|unused
 parameter_list|)
 block|{
 name|GimpRgnIterator
@@ -172,12 +168,6 @@ operator|->
 name|drawable
 operator|=
 name|drawable
-expr_stmt|;
-name|iter
-operator|->
-name|run_mode
-operator|=
-name|run_mode
 expr_stmt|;
 name|gimp_drawable_mask_bounds
 argument_list|(
@@ -785,7 +775,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rgn_iterate1 (GimpDrawable * drawable,GimpRunMode run_mode,GimpRgnFunc1 func,gpointer data)
+DECL|function|gimp_rgn_iterate1 (GimpDrawable * drawable,GimpRunMode unused,GimpRgnFunc1 func,gpointer data)
 name|gimp_rgn_iterate1
 parameter_list|(
 name|GimpDrawable
@@ -793,7 +783,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|GimpRunMode
-name|run_mode
+name|unused
 parameter_list|,
 name|GimpRgnFunc1
 name|func
@@ -1038,7 +1028,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rgn_iterate2 (GimpDrawable * drawable,GimpRunMode run_mode,GimpRgnFunc2 func,gpointer data)
+DECL|function|gimp_rgn_iterate2 (GimpDrawable * drawable,GimpRunMode unused,GimpRgnFunc2 func,gpointer data)
 name|gimp_rgn_iterate2
 parameter_list|(
 name|GimpDrawable
@@ -1046,7 +1036,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|GimpRunMode
-name|run_mode
+name|unused
 parameter_list|,
 name|GimpRgnFunc2
 name|func

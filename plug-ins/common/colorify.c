@@ -141,7 +141,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bc7b720108
+DECL|struct|__anon2b529fea0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -251,14 +251,6 @@ block|,
 literal|1.0
 block|}
 block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
 decl_stmt|;
 end_decl_stmt
 
@@ -501,6 +493,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -686,11 +681,9 @@ name|run_mode
 operator|!=
 name|GIMP_RUN_NONINTERACTIVE
 condition|)
-block|{
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 name|gimp_drawable_detach
 argument_list|(
@@ -910,7 +903,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|colorify_func
 argument_list|,

@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b1a4880103
+DECL|enum|__anon2c71457d0103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1a4880208
+DECL|struct|__anon2c71457d0208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1a4880308
+DECL|struct|__anon2c71457d0308
 block|{
 DECL|member|run
 name|gint
@@ -352,14 +352,6 @@ end_function_decl
 begin_comment
 comment|/***** Variables *****/
 end_comment
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
 
 begin_define
 DECL|macro|PREVIEW_SIZE
@@ -1361,6 +1353,9 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -1852,7 +1847,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|alienmap2_func
 argument_list|,

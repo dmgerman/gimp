@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbcebb50108
+DECL|struct|__anon279417080108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -197,7 +197,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbcebb50208
+DECL|struct|__anon279417080208
 block|{
 DECL|member|width
 DECL|member|height
@@ -220,7 +220,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbcebb50308
+DECL|struct|__anon279417080308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -483,18 +483,6 @@ name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* The run mode */
-end_comment
-
-begin_decl_stmt
-DECL|variable|l_run_mode
-specifier|static
-name|GimpRunMode
-name|l_run_mode
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|csel_title
@@ -1562,26 +1550,12 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|guchar
-modifier|*
-name|c
-decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
-name|c
-operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|ident
-expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-name|l_run_mode
-operator|=
 name|run_mode
 operator|=
 name|param
@@ -3298,7 +3272,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|l_run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|mapcolor_func
 argument_list|,

@@ -183,7 +183,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|GimpRunMode
-name|run_mode
+name|unused
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -259,7 +259,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|GimpRunMode
-name|run_mode
+name|unused
 parameter_list|,
 name|GimpRgnFunc1
 name|func
@@ -279,7 +279,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|GimpRunMode
-name|run_mode
+name|unused
 parameter_list|,
 name|GimpRgnFunc2
 name|func

@@ -104,7 +104,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon2b2ca5890108
+DECL|struct|__anon28b9f56e0108
 typedef|typedef
 struct|struct
 block|{
@@ -119,7 +119,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b2ca5890208
+DECL|struct|__anon28b9f56e0208
 typedef|typedef
 struct|struct
 block|{
@@ -153,7 +153,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b2ca5890303
+DECL|enum|__anon28b9f56e0303
 typedef|typedef
 enum|enum
 block|{
@@ -175,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b2ca5890403
+DECL|enum|__anon28b9f56e0403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -207,7 +207,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b2ca5890503
+DECL|enum|__anon28b9f56e0503
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -226,7 +226,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b2ca5890603
+DECL|enum|__anon28b9f56e0603
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -254,7 +254,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b2ca5890703
+DECL|enum|__anon28b9f56e0703
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -272,7 +272,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2b2ca5890808
+DECL|struct|__anon28b9f56e0808
 typedef|typedef
 struct|struct
 block|{
@@ -318,7 +318,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b2ca5890908
+DECL|struct|__anon28b9f56e0908
 typedef|typedef
 struct|struct
 block|{
@@ -1272,7 +1272,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b2ca5890a08
+DECL|struct|__anon28b9f56e0a08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1416,14 +1416,6 @@ name|drawable
 decl_stmt|,
 modifier|*
 name|mask
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
 decl_stmt|;
 end_decl_stmt
 
@@ -1624,6 +1616,9 @@ name|GimpPDBStatusType
 name|status
 init|=
 name|GIMP_PDB_SUCCESS
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 operator|*
 name|nreturn_vals
@@ -2337,7 +2332,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|fp_func
 argument_list|,

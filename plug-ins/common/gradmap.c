@@ -56,14 +56,6 @@ value|256
 end_define
 
 begin_define
-DECL|macro|TILE_CACHE_SIZE
-define|#
-directive|define
-name|TILE_CACHE_SIZE
-value|32
-end_define
-
-begin_define
 DECL|macro|LUMINOSITY (X)
 define|#
 directive|define
@@ -73,14 +65,6 @@ name|X
 parameter_list|)
 value|(GIMP_RGB_INTENSITY (X[0], X[1], X[2]) + 0.5)
 end_define
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/* Declare a local function.  */
@@ -183,7 +167,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GimpParamDef
@@ -223,7 +209,7 @@ argument_list|,
 literal|"Map the contents of the specified drawable with "
 literal|"active gradient"
 argument_list|,
-literal|" This plug-in maps the contents of the specified "
+literal|"This plug-in maps the contents of the specified "
 literal|"drawable with active gradient. It calculates "
 literal|"luminosity of each pixel and replaces the pixel "
 literal|"by the sample of active gradient at the position "
@@ -318,6 +304,9 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -377,7 +366,7 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
-comment|/*  Make sure that the drawable is gray or RGB color	*/
+comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
 name|gimp_drawable_is_rgb
@@ -405,7 +394,18 @@ argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
 argument_list|(
-name|TILE_CACHE_SIZE
+literal|2
+operator|*
+operator|(
+name|drawable
+operator|->
+name|width
+operator|/
+name|gimp_tile_width
+argument_list|()
+operator|+
+literal|1
+operator|)
 argument_list|)
 expr_stmt|;
 name|gradmap
@@ -451,9 +451,9 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29741b250108
 typedef|typedef
 struct|struct
+DECL|struct|__anon27f1676d0108
 block|{
 DECL|member|samples
 name|guchar
@@ -468,9 +468,9 @@ DECL|member|has_alpha
 name|gboolean
 name|has_alpha
 decl_stmt|;
-DECL|typedef|GradMapParam_t
+DECL|typedef|GradMapParam
 block|}
-name|GradMapParam_t
+name|GradMapParam
 typedef|;
 end_typedef
 
@@ -496,14 +496,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GradMapParam_t
+name|GradMapParam
 modifier|*
 name|param
 init|=
-operator|(
-name|GradMapParam_t
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|gint
@@ -644,7 +640,7 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GradMapParam_t
+name|GradMapParam
 name|param
 decl_stmt|;
 name|param
@@ -682,7 +678,8 @@ name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
+comment|/* unused */
 argument_list|,
 name|gradmap_func
 argument_list|,
