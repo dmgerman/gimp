@@ -648,7 +648,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a1bc65e0108
+DECL|struct|__anon2c5bfb970108
 block|{
 DECL|member|directory
 name|gboolean
@@ -4069,8 +4069,10 @@ name|quoted_sysconf_dir
 operator|=
 name|quote_spaces
 argument_list|(
-argument|gimp_sysconf_directory ()
+name|gimp_sysconf_directory
+argument_list|()
 argument_list|)
+expr_stmt|;
 comment|/* The Microsoft _popen doesn't work in Windows applications, sigh.        * Do the installation by calling system(). The user_install.bat        * ends with a pause command, so the user has to press enter in        * the console window to continue, and thus has a chance to read        * at the window contents.        */
 name|AllocConsole
 argument_list|()
