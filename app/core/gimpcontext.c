@@ -1275,7 +1275,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0119ab0103
+DECL|enum|__anon298d0c630103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1289,7 +1289,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0119ab0203
+DECL|enum|__anon298d0c630203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -4735,19 +4735,16 @@ block|{
 name|GimpContext
 modifier|*
 name|context
+init|=
+name|GIMP_CONTEXT
+argument_list|(
+name|config
+argument_list|)
 decl_stmt|;
 name|GimpObject
 modifier|*
 name|serialize_obj
 decl_stmt|;
-name|context
-operator|=
-name|GIMP_CONTEXT
-argument_list|(
-name|config
-argument_list|)
-expr_stmt|;
-comment|//#if 0
 comment|/*  serialize nothing if the property is not defined  */
 if|if
 condition|(
@@ -4767,7 +4764,6 @@ condition|)
 return|return
 name|TRUE
 return|;
-comment|//#endif
 switch|switch
 condition|(
 name|property_id
@@ -4881,6 +4877,11 @@ block|{
 name|GimpContext
 modifier|*
 name|context
+init|=
+name|GIMP_CONTEXT
+argument_list|(
+name|object
+argument_list|)
 decl_stmt|;
 name|GimpContainer
 modifier|*
@@ -4904,13 +4905,6 @@ name|gchar
 modifier|*
 name|object_name
 decl_stmt|;
-name|context
-operator|=
-name|GIMP_CONTEXT
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|property_id
