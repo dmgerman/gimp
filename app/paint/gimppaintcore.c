@@ -536,6 +536,12 @@ name|get_paint_area
 operator|=
 name|gimp_paint_core_real_get_paint_area
 expr_stmt|;
+name|klass
+operator|->
+name|push_undo
+operator|=
+name|gimp_paint_core_real_push_undo
+expr_stmt|;
 block|}
 end_function
 
@@ -1367,13 +1373,18 @@ literal|"Paint"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_paint_core_push_undo
+name|GIMP_PAINT_CORE_GET_CLASS
 argument_list|(
+name|core
+argument_list|)
+operator|->
+name|push_undo
+argument_list|(
+name|core
+argument_list|,
 name|gimage
 argument_list|,
 name|NULL
-argument_list|,
-name|core
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_push_undo

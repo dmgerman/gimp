@@ -268,6 +268,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|Blob
+modifier|*
+name|blob_duplicate
+parameter_list|(
+name|Blob
+modifier|*
+name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

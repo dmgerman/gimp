@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PAINT_CORE_UNDO_H__
+name|__GIMP_INK_UNDO_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PAINT_CORE_UNDO_H__
+DECL|macro|__GIMP_INK_UNDO_H__
 define|#
 directive|define
-name|__GIMP_PAINT_CORE_UNDO_H__
+name|__GIMP_INK_UNDO_H__
 end_define
 
 begin_function_decl
 name|gboolean
-name|gimp_paint_core_real_push_undo
+name|gimp_ink_push_undo
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -42,7 +42,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PAINT_CORE_UNDO_H__ */
+comment|/* __GIMP_INK_UNDO_H__ */
 end_comment
 
 end_unit

@@ -134,10 +134,16 @@ DECL|member|parent_instance
 name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
-DECL|member|blob
+DECL|member|start_blob
 name|Blob
 modifier|*
-name|blob
+name|start_blob
+decl_stmt|;
+comment|/*  starting blob (for undo)       */
+DECL|member|cur_blob
+name|Blob
+modifier|*
+name|cur_blob
 decl_stmt|;
 comment|/*  current blob                   */
 DECL|member|last_blob
@@ -174,15 +180,7 @@ DECL|member|last_time
 name|guint32
 name|last_time
 decl_stmt|;
-comment|/*  previous time of a motion event      */
-DECL|member|lastx
-DECL|member|lasty
-name|gdouble
-name|lastx
-decl_stmt|,
-name|lasty
-decl_stmt|;
-comment|/*  previous position of a motion event  */
+comment|/*  previous time of a motion event  */
 DECL|member|init_velocity
 name|gboolean
 name|init_velocity

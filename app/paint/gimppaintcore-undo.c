@@ -126,9 +126,13 @@ end_function_decl
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_push_undo (GimpImage * gimage,const gchar * undo_desc,GimpPaintCore * core)
-name|gimp_paint_core_push_undo
+DECL|function|gimp_paint_core_real_push_undo (GimpPaintCore * core,GimpImage * gimage,const gchar * undo_desc)
+name|gimp_paint_core_real_push_undo
 parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
+parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
@@ -137,10 +141,6 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
-parameter_list|,
-name|GimpPaintCore
-modifier|*
-name|core
 parameter_list|)
 block|{
 name|GimpUndo
@@ -149,9 +149,9 @@ name|new
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE
+name|GIMP_IS_PAINT_CORE
 argument_list|(
-name|gimage
+name|core
 argument_list|)
 argument_list|,
 name|FALSE
@@ -159,9 +159,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_PAINT_CORE
+name|GIMP_IS_IMAGE
 argument_list|(
-name|core
+name|gimage
 argument_list|)
 argument_list|,
 name|FALSE
