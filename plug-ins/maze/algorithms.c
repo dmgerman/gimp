@@ -1894,7 +1894,7 @@ condition|(
 operator|!
 name|mvals
 operator|.
-name|timeseed
+name|defaultseed
 condition|)
 name|g_rand_set_seed
 argument_list|(

@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf3f1ef0108
+DECL|struct|__anon2ac16d390108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1303,7 +1303,7 @@ argument_list|,
 operator|&
 name|mvals
 operator|.
-name|timeseed
+name|defaultseed
 argument_list|,
 name|TRUE
 argument_list|,
