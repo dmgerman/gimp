@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b9834ef0103
+DECL|enum|__anon2a4592500103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -731,9 +731,9 @@ comment|/* static functions */
 end_comment
 
 begin_function
-DECL|function|gimp_image_init (GimpImage * gimage)
 specifier|static
 name|void
+DECL|function|gimp_image_init (GimpImage * gimage)
 name|gimp_image_init
 parameter_list|(
 name|GimpImage
@@ -931,8 +931,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_image_get_type (void)
 name|GtkType
+DECL|function|gimp_image_get_type (void)
 name|gimp_image_get_type
 parameter_list|(
 name|void
@@ -1740,10 +1740,6 @@ name|Guide
 modifier|*
 name|guide
 decl_stmt|;
-name|GList
-modifier|*
-name|next
-decl_stmt|;
 name|guide
 operator|=
 operator|(
@@ -1754,7 +1750,7 @@ name|guide_list
 operator|->
 name|data
 expr_stmt|;
-name|next
+name|guide_list
 operator|=
 name|g_list_next
 argument_list|(
@@ -1837,10 +1833,6 @@ literal|"Unknown guide orientation I.\n"
 argument_list|)
 expr_stmt|;
 block|}
-name|guide_list
-operator|=
-name|next
-expr_stmt|;
 block|}
 comment|/*  Don't forget the selection mask!  */
 name|channel_resize
@@ -4811,7 +4803,7 @@ modifier|*
 name|parasite
 parameter_list|)
 block|{
-comment|/* only set the dirty bit manually if we can be saved and the new      parasite differs from the current one and we arn't undoable */
+comment|/* only set the dirty bit manually if we can be saved and the new      parasite differs from the current one and we aren't undoable */
 if|if
 condition|(
 name|parasite_is_undoable

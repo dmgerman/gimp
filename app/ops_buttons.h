@@ -45,7 +45,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bcd873f0103
+DECL|enum|__anon2b44b34b0103
 typedef|typedef
 enum|enum
 block|{
@@ -73,7 +73,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bcd873f0203
+DECL|enum|__anon2b44b34b0203
 typedef|typedef
 enum|enum
 block|{
@@ -99,16 +99,18 @@ modifier|*
 modifier|*
 name|xpm_data
 decl_stmt|;
-comment|/* xpm data for the button */
+comment|/*  xpm data for the button  */
 DECL|member|callback
 name|OpsButtonCallback
 name|callback
 decl_stmt|;
+comment|/*  callback function        */
 DECL|member|ext_callbacks
 name|OpsButtonCallback
 modifier|*
 name|ext_callbacks
 decl_stmt|;
+comment|/*  callback functions when modifiers are pressed  */
 DECL|member|tooltip
 name|char
 modifier|*
@@ -119,7 +121,7 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
-comment|/* the button widget */
+comment|/*  the button widget        */
 DECL|member|modifier
 name|gint
 name|modifier

@@ -61,9 +61,9 @@ function_decl|;
 end_function_decl
 
 begin_function
-DECL|function|ops_button_box_new (GtkWidget * parent,GtkTooltips * tool_tips,OpsButton * ops_button,OpsButtonType ops_type)
 name|GtkWidget
 modifier|*
+DECL|function|ops_button_box_new (GtkWidget * parent,GtkTooltips * tool_tips,OpsButton * ops_button,OpsButtonType ops_type)
 name|ops_button_box_new
 parameter_list|(
 name|GtkWidget

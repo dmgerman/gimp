@@ -577,9 +577,11 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimage_image_count ()
+DECL|function|gimage_image_count (void)
 name|gimage_image_count
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GSList
 modifier|*
@@ -649,7 +651,7 @@ argument_list|()
 operator|==
 literal|1
 condition|)
-comment|/* This is the last image */
+comment|/*  This is the last image  */
 block|{
 name|dialog_show_toolbox
 argument_list|()
@@ -659,9 +661,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimage_cmap_change_handler (GimpImage * gimage,gint ncol,gpointer user_data)
 specifier|static
 name|void
+DECL|function|gimage_cmap_change_handler (GimpImage * gimage,gint ncol,gpointer user_data)
 name|gimage_cmap_change_handler
 parameter_list|(
 name|GimpImage

@@ -3256,6 +3256,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|update_active_brush_field
+argument_list|(
+name|bsp
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -3429,7 +3434,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2950d6420108
+DECL|struct|__anon2881ed0b0108
 typedef|typedef
 struct|struct
 block|{

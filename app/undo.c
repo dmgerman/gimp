@@ -9116,9 +9116,6 @@ decl_stmt|;
 name|int
 name|tmp
 decl_stmt|;
-name|int
-name|tmp_ref
-decl_stmt|;
 name|data
 operator|=
 name|data_ptr

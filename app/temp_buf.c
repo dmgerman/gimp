@@ -193,15 +193,13 @@ specifier|static
 name|unsigned
 name|char
 modifier|*
-DECL|function|temp_buf_allocate (size)
+DECL|function|temp_buf_allocate (unsigned int size)
 name|temp_buf_allocate
 parameter_list|(
-name|size
-parameter_list|)
 name|unsigned
 name|int
 name|size
-decl_stmt|;
+parameter_list|)
 block|{
 name|unsigned
 name|char
@@ -233,21 +231,17 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|temp_buf_to_color (src_buf,dest_buf)
+DECL|function|temp_buf_to_color (TempBuf * src_buf,TempBuf * dest_buf)
 name|temp_buf_to_color
 parameter_list|(
+name|TempBuf
+modifier|*
 name|src_buf
 parameter_list|,
+name|TempBuf
+modifier|*
 name|dest_buf
 parameter_list|)
-name|TempBuf
-modifier|*
-name|src_buf
-decl_stmt|;
-name|TempBuf
-modifier|*
-name|dest_buf
-decl_stmt|;
 block|{
 name|unsigned
 name|char
@@ -334,21 +328,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|temp_buf_to_gray (src_buf,dest_buf)
+DECL|function|temp_buf_to_gray (TempBuf * src_buf,TempBuf * dest_buf)
 name|temp_buf_to_gray
 parameter_list|(
+name|TempBuf
+modifier|*
 name|src_buf
 parameter_list|,
+name|TempBuf
+modifier|*
 name|dest_buf
 parameter_list|)
-name|TempBuf
-modifier|*
-name|src_buf
-decl_stmt|;
-name|TempBuf
-modifier|*
-name|dest_buf
-decl_stmt|;
 block|{
 name|unsigned
 name|char
@@ -450,40 +440,29 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_new (width,height,bytes,x,y,col)
+DECL|function|temp_buf_new (int width,int height,int bytes,int x,int y,unsigned char * col)
 name|temp_buf_new
 parameter_list|(
-name|width
-parameter_list|,
-name|height
-parameter_list|,
-name|bytes
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|col
-parameter_list|)
 name|int
 name|width
-decl_stmt|;
+parameter_list|,
 name|int
 name|height
-decl_stmt|;
+parameter_list|,
 name|int
 name|bytes
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|unsigned
 name|char
 modifier|*
 name|col
-decl_stmt|;
+parameter_list|)
 block|{
 name|long
 name|i
@@ -794,21 +773,17 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_copy (src,dest)
+DECL|function|temp_buf_copy (TempBuf * src,TempBuf * dest)
 name|temp_buf_copy
 parameter_list|(
+name|TempBuf
+modifier|*
 name|src
 parameter_list|,
+name|TempBuf
+modifier|*
 name|dest
 parameter_list|)
-name|TempBuf
-modifier|*
-name|src
-decl_stmt|;
-name|TempBuf
-modifier|*
-name|dest
-decl_stmt|;
 block|{
 name|TempBuf
 modifier|*
@@ -988,38 +963,28 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_resize (buf,bytes,x,y,w,h)
+DECL|function|temp_buf_resize (TempBuf * buf,int bytes,int x,int y,int w,int h)
 name|temp_buf_resize
 parameter_list|(
-name|buf
-parameter_list|,
-name|bytes
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|w
-parameter_list|,
-name|h
-parameter_list|)
 name|TempBuf
 modifier|*
 name|buf
-decl_stmt|;
+parameter_list|,
 name|int
 name|bytes
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|int
 name|w
-decl_stmt|,
+parameter_list|,
+name|int
 name|h
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|size
@@ -1139,44 +1104,32 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_copy_area (src,dest,x,y,w,h,border)
+DECL|function|temp_buf_copy_area (TempBuf * src,TempBuf * dest,int x,int y,int w,int h,int border)
 name|temp_buf_copy_area
 parameter_list|(
+name|TempBuf
+modifier|*
 name|src
 parameter_list|,
+name|TempBuf
+modifier|*
 name|dest
 parameter_list|,
+name|int
 name|x
 parameter_list|,
+name|int
 name|y
 parameter_list|,
+name|int
 name|w
 parameter_list|,
+name|int
 name|h
 parameter_list|,
+name|int
 name|border
 parameter_list|)
-name|TempBuf
-modifier|*
-name|src
-decl_stmt|;
-name|TempBuf
-modifier|*
-name|dest
-decl_stmt|;
-name|int
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-name|int
-name|w
-decl_stmt|,
-name|h
-decl_stmt|;
-name|int
-name|border
-decl_stmt|;
 block|{
 name|TempBuf
 modifier|*
@@ -1527,15 +1480,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|temp_buf_free (temp_buf)
+DECL|function|temp_buf_free (TempBuf * temp_buf)
 name|temp_buf_free
 parameter_list|(
-name|temp_buf
-parameter_list|)
 name|TempBuf
 modifier|*
 name|temp_buf
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -1573,15 +1524,13 @@ begin_function
 name|unsigned
 name|char
 modifier|*
-DECL|function|temp_buf_data (temp_buf)
+DECL|function|temp_buf_data (TempBuf * temp_buf)
 name|temp_buf_data
 parameter_list|(
-name|temp_buf
-parameter_list|)
 name|TempBuf
 modifier|*
 name|temp_buf
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -1609,19 +1558,15 @@ end_comment
 begin_function
 name|MaskBuf
 modifier|*
-DECL|function|mask_buf_new (width,height)
+DECL|function|mask_buf_new (int width,int height)
 name|mask_buf_new
 parameter_list|(
+name|int
 name|width
 parameter_list|,
+name|int
 name|height
 parameter_list|)
-name|int
-name|width
-decl_stmt|;
-name|int
-name|height
-decl_stmt|;
 block|{
 specifier|static
 name|unsigned
@@ -1654,15 +1599,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|mask_buf_free (mask)
+DECL|function|mask_buf_free (MaskBuf * mask)
 name|mask_buf_free
 parameter_list|(
-name|mask
-parameter_list|)
 name|MaskBuf
 modifier|*
 name|mask
-decl_stmt|;
+parameter_list|)
 block|{
 name|temp_buf_free
 argument_list|(
@@ -1680,15 +1623,13 @@ begin_function
 name|unsigned
 name|char
 modifier|*
-DECL|function|mask_buf_data (mask_buf)
+DECL|function|mask_buf_data (MaskBuf * mask_buf)
 name|mask_buf_data
 parameter_list|(
-name|mask_buf
-parameter_list|)
 name|MaskBuf
 modifier|*
 name|mask_buf
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -1714,7 +1655,7 @@ comment|/******************************************************************  *  
 end_comment
 
 begin_comment
-comment|/*  NOTES:  *  Disk caching is setup as follows:  *    On a call to temp_buf_swap, the TempBuf parameter is stored  *    in a temporary variable called cached_in_memory.  *    On the next call to temp_buf_swap, if cached_in_memory is non-null,  *    cached_in_memory is moved to disk, and the latest TempBuf parameter  *    is stored in cached_in_memory.  This method keeps the latest TempBuf  *    structure in memory instead of moving it directly to disk as requested.  *    On a call to temp_buf_unswap, if cached_in_memory is non-null, it is  *    compared against the requested TempBuf.  If they are the same, nothing  *    must be moved in from disk since it still resides in memory.  However,  *    if the two pointers are different, the requested TempBuf is retrieved  *    from disk.  In the former case, cached_in_memory is set to NULL;  *    in the latter case, cached_in_memory is left unchanged.  *    If temp_buf_swap_free is called, cached_in_memory must be checked  *    against the temp buf being freed.  If they are the same, then cached_in_memory  *    must be set to NULL;  *  *  In the case where memory usage is set to "stingy":  *    temp bufs are not cached in memory at all, they go right to disk.  */
+comment|/*  NOTES:  *  Disk caching is setup as follows:  *    On a call to temp_buf_swap, the TempBuf parameter is stored  *    in a temporary variable called cached_in_memory.  *    On the next call to temp_buf_swap, if cached_in_memory is non-null,  *    cached_in_memory is moved to disk, and the latest TempBuf parameter  *    is stored in cached_in_memory.  This method keeps the latest TempBuf  *    structure in memory instead of moving it directly to disk as requested.  *    On a call to temp_buf_unswap, if cached_in_memory is non-null, it is  *    compared against the requested TempBuf.  If they are the same, nothing  *    must be moved in from disk since it still resides in memory.  However,  *    if the two pointers are different, the requested TempBuf is retrieved  *    from disk.  In the former case, cached_in_memory is set to NULL;  *    in the latter case, cached_in_memory is left unchanged.  *    If temp_buf_swap_free is called, cached_in_memory must be checked  *    against the temp buf being freed.  If they are the same, then   *    cached_in_memory must be set to NULL;  *  *  In the case where memory usage is set to "stingy":  *    temp bufs are not cached in memory at all, they go right to disk.  */
 end_comment
 
 begin_comment
@@ -1787,15 +1728,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|temp_buf_swap (buf)
+DECL|function|temp_buf_swap (TempBuf * buf)
 name|temp_buf_swap
 parameter_list|(
-name|buf
-parameter_list|)
 name|TempBuf
 modifier|*
 name|buf
-decl_stmt|;
+parameter_list|)
 block|{
 name|TempBuf
 modifier|*
@@ -2059,15 +1998,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|temp_buf_unswap (buf)
+DECL|function|temp_buf_unswap (TempBuf * buf)
 name|temp_buf_unswap
 parameter_list|(
-name|buf
-parameter_list|)
 name|TempBuf
 modifier|*
 name|buf
-decl_stmt|;
+parameter_list|)
 block|{
 name|struct
 name|stat
@@ -2266,15 +2203,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|temp_buf_swap_free (buf)
+DECL|function|temp_buf_swap_free (TempBuf * buf)
 name|temp_buf_swap_free
 parameter_list|(
-name|buf
-parameter_list|)
 name|TempBuf
 modifier|*
 name|buf
-decl_stmt|;
+parameter_list|)
 block|{
 name|struct
 name|stat

@@ -218,44 +218,32 @@ end_comment
 
 begin_function
 name|void
-DECL|function|pixel_region_init (PR,tiles,x,y,w,h,dirty)
+DECL|function|pixel_region_init (PixelRegion * PR,TileManager * tiles,int x,int y,int w,int h,int dirty)
 name|pixel_region_init
 parameter_list|(
-name|PR
-parameter_list|,
-name|tiles
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|w
-parameter_list|,
-name|h
-parameter_list|,
-name|dirty
-parameter_list|)
 name|PixelRegion
 modifier|*
 name|PR
-decl_stmt|;
+parameter_list|,
 name|TileManager
 modifier|*
 name|tiles
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|int
 name|w
-decl_stmt|,
+parameter_list|,
+name|int
 name|h
-decl_stmt|;
+parameter_list|,
 name|int
 name|dirty
-decl_stmt|;
+parameter_list|)
 block|{
 name|PR
 operator|->
@@ -328,33 +316,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_resize (PR,x,y,w,h)
+DECL|function|pixel_region_resize (PixelRegion * PR,int x,int y,int w,int h)
 name|pixel_region_resize
 parameter_list|(
-name|PR
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|w
-parameter_list|,
-name|h
-parameter_list|)
 name|PixelRegion
 modifier|*
 name|PR
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|int
 name|w
-decl_stmt|,
+parameter_list|,
+name|int
 name|h
-decl_stmt|;
+parameter_list|)
 block|{
 comment|/*  If the data is non-null, data is contiguous--need to advance  */
 if|if
@@ -424,40 +404,30 @@ block|}
 end_function
 
 begin_comment
-comment|/* request that tiles within a region be fetched asynchronously  */
+comment|/* request that tiles within a region be fetched asynchronously */
 end_comment
 
 begin_function
 name|void
-DECL|function|pixel_region_get_async (PR,ulx,uly,lrx,lry)
+DECL|function|pixel_region_get_async (PixelRegion * PR,int ulx,int uly,int lrx,int lry)
 name|pixel_region_get_async
 parameter_list|(
-name|PR
-parameter_list|,
-name|ulx
-parameter_list|,
-name|uly
-parameter_list|,
-name|lrx
-parameter_list|,
-name|lry
-parameter_list|)
 name|PixelRegion
 modifier|*
 name|PR
-decl_stmt|;
+parameter_list|,
 name|int
 name|ulx
-decl_stmt|;
+parameter_list|,
 name|int
 name|uly
-decl_stmt|;
+parameter_list|,
 name|int
 name|lrx
-decl_stmt|;
+parameter_list|,
 name|int
 name|lry
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|x
@@ -508,41 +478,30 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_get_row (PR,x,y,w,data,subsample)
+DECL|function|pixel_region_get_row (PixelRegion * PR,int x,int y,int w,unsigned char * data,int subsample)
 name|pixel_region_get_row
 parameter_list|(
-name|PR
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|w
-parameter_list|,
-name|data
-parameter_list|,
-name|subsample
-parameter_list|)
 name|PixelRegion
 modifier|*
 name|PR
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|int
 name|w
-decl_stmt|;
+parameter_list|,
 name|unsigned
 name|char
 modifier|*
 name|data
-decl_stmt|;
+parameter_list|,
 name|int
 name|subsample
-decl_stmt|;
+parameter_list|)
 block|{
 name|Tile
 modifier|*
@@ -765,36 +724,27 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_set_row (PR,x,y,w,data)
+DECL|function|pixel_region_set_row (PixelRegion * PR,int x,int y,int w,unsigned char * data)
 name|pixel_region_set_row
 parameter_list|(
-name|PR
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|w
-parameter_list|,
-name|data
-parameter_list|)
 name|PixelRegion
 modifier|*
 name|PR
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|int
 name|w
-decl_stmt|;
+parameter_list|,
 name|unsigned
 name|char
 modifier|*
 name|data
-decl_stmt|;
+parameter_list|)
 block|{
 name|Tile
 modifier|*
@@ -939,41 +889,30 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_get_col (PR,x,y,h,data,subsample)
+DECL|function|pixel_region_get_col (PixelRegion * PR,int x,int y,int h,unsigned char * data,int subsample)
 name|pixel_region_get_col
 parameter_list|(
-name|PR
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|h
-parameter_list|,
-name|data
-parameter_list|,
-name|subsample
-parameter_list|)
 name|PixelRegion
 modifier|*
 name|PR
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|int
 name|h
-decl_stmt|;
+parameter_list|,
 name|unsigned
 name|char
 modifier|*
 name|data
-decl_stmt|;
+parameter_list|,
 name|int
 name|subsample
-decl_stmt|;
+parameter_list|)
 block|{
 name|Tile
 modifier|*
@@ -1151,36 +1090,27 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_set_col (PR,x,y,h,data)
+DECL|function|pixel_region_set_col (PixelRegion * PR,int x,int y,int h,unsigned char * data)
 name|pixel_region_set_col
 parameter_list|(
-name|PR
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|h
-parameter_list|,
-name|data
-parameter_list|)
 name|PixelRegion
 modifier|*
 name|PR
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|int
 name|h
-decl_stmt|;
+parameter_list|,
 name|unsigned
 name|char
 modifier|*
 name|data
-decl_stmt|;
+parameter_list|)
 block|{
 name|Tile
 modifier|*
@@ -1577,15 +1507,13 @@ end_function
 begin_function
 name|void
 modifier|*
-DECL|function|pixel_regions_process (PRI_ptr)
+DECL|function|pixel_regions_process (void * PRI_ptr)
 name|pixel_regions_process
 parameter_list|(
-name|PRI_ptr
-parameter_list|)
 name|void
 modifier|*
 name|PRI_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|GSList
 modifier|*
@@ -1769,15 +1697,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_regions_process_stop (PRI_ptr)
+DECL|function|pixel_regions_process_stop (void * PRI_ptr)
 name|pixel_regions_process_stop
 parameter_list|(
-name|PRI_ptr
-parameter_list|)
 name|void
 modifier|*
 name|PRI_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|GSList
 modifier|*
@@ -1960,15 +1886,13 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|get_portion_height (PRI)
+DECL|function|get_portion_height (PixelRegionIterator * PRI)
 name|get_portion_height
 parameter_list|(
-name|PRI
-parameter_list|)
 name|PixelRegionIterator
 modifier|*
 name|PRI
-decl_stmt|;
+parameter_list|)
 block|{
 name|GSList
 modifier|*
@@ -2137,15 +2061,13 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|get_portion_width (PRI)
+DECL|function|get_portion_width (PixelRegionIterator * PRI)
 name|get_portion_width
 parameter_list|(
-name|PRI
-parameter_list|)
 name|PixelRegionIterator
 modifier|*
 name|PRI
-decl_stmt|;
+parameter_list|)
 block|{
 name|GSList
 modifier|*
@@ -2315,15 +2237,13 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|pixel_regions_configure (PRI)
+DECL|function|pixel_regions_configure (PixelRegionIterator * PRI)
 name|pixel_regions_configure
 parameter_list|(
-name|PRI
-parameter_list|)
 name|PixelRegionIterator
 modifier|*
 name|PRI
-decl_stmt|;
+parameter_list|)
 block|{
 name|PixelRegionHolder
 modifier|*
@@ -2499,21 +2419,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pixel_region_configure (PRH,PRI)
+DECL|function|pixel_region_configure (PixelRegionHolder * PRH,PixelRegionIterator * PRI)
 name|pixel_region_configure
 parameter_list|(
-name|PRH
-parameter_list|,
-name|PRI
-parameter_list|)
 name|PixelRegionHolder
 modifier|*
 name|PRH
-decl_stmt|;
+parameter_list|,
 name|PixelRegionIterator
 modifier|*
 name|PRI
-decl_stmt|;
+parameter_list|)
 block|{
 comment|/*  Configure the rowstride and data pointer for the pixel region    *  based on the current offsets into the region and whether the    *  region is represented by a tile manager or not    */
 if|if
