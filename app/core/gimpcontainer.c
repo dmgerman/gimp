@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b92f0500103
+DECL|enum|__anon29abf1840103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -167,7 +167,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b92f0500203
+DECL|enum|__anon29abf1840203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1279,7 +1279,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b92f0500308
+DECL|struct|__anon29abf1840308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -3367,6 +3367,26 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|callback
+operator|!=
+name|NULL
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|strncmp
+argument_list|(
+name|signame
+argument_list|,
+literal|"notify::"
+argument_list|,
+literal|8
+argument_list|)
+condition|)
+name|g_return_val_if_fail
+argument_list|(
 name|g_signal_lookup
 argument_list|(
 name|signame
@@ -3375,15 +3395,6 @@ name|container
 operator|->
 name|children_type
 argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|callback
-operator|!=
-name|NULL
 argument_list|,
 literal|0
 argument_list|)
