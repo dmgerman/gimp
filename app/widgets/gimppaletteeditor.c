@@ -500,6 +500,19 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|palette_refresh_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|palette_edit_callback
 parameter_list|(
 name|GtkWidget
@@ -722,6 +735,30 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  Color select dialog  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|color_select
+specifier|static
+name|ColorSelectP
+name|color_select
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|color_select_active
+specifier|static
+name|int
+name|color_select_active
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_decl_stmt
 DECL|variable|action_items
 specifier|static
@@ -798,13 +835,13 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"Merge Palette"
+literal|"Delete Palette"
 block|,
 literal|0
 block|,
 literal|0
 block|,
-name|palette_merge_entries_callback
+name|palette_delete_entries_callback
 block|,
 name|NULL
 block|,
@@ -814,13 +851,13 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"Delete Palette"
+literal|"Refresh Pallettes"
 block|,
 literal|0
 block|,
 literal|0
 block|,
-name|palette_delete_entries_callback
+name|palette_refresh_callback
 block|,
 name|NULL
 block|,
@@ -3634,19 +3671,6 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
-if|if
-condition|(
-name|bevent
-operator|->
-name|button
-operator|==
-literal|1
-operator|&&
-name|palette
-operator|->
-name|entries
-condition|)
-block|{
 name|width
 operator|=
 name|palette
@@ -3747,6 +3771,19 @@ name|COLUMNS
 operator|+
 name|col
 expr_stmt|;
+if|if
+condition|(
+name|bevent
+operator|->
+name|button
+operator|==
+literal|1
+operator|&&
+name|palette
+operator|->
+name|entries
+condition|)
+block|{
 name|tmp_link
 operator|=
 name|g_slist_nth
@@ -4057,6 +4094,49 @@ condition|)
 name|palette_delete_entry
 argument_list|(
 name|palette
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|palette_refresh_callback (GtkWidget * w,gpointer client_data)
+name|palette_refresh_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|w
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|PaletteP
+name|palette
+decl_stmt|;
+name|palette
+operator|=
+name|client_data
+expr_stmt|;
+if|if
+condition|(
+name|palette
+condition|)
+block|{
+name|palette_free_palettes
+argument_list|()
+expr_stmt|;
+name|palette_init_palettes
+argument_list|()
+expr_stmt|;
+block|}
+name|palette_create_palette_menu
+argument_list|(
+name|palette
+argument_list|,
+name|default_palette_entries
 argument_list|)
 expr_stmt|;
 block|}
@@ -6703,6 +6783,86 @@ end_comment
 begin_comment
 comment|/*  PALETTE_GET_FOREGROUND  */
 end_comment
+
+begin_function
+specifier|static
+name|Argument
+modifier|*
+DECL|function|palette_refresh_invoker (Argument * args)
+name|palette_refresh_invoker
+parameter_list|(
+name|Argument
+modifier|*
+name|args
+parameter_list|)
+block|{
+comment|/* FIXME: I've hardcoded success to be 1, because brushes_init() is a     *        void function right now.  It'd be nice if it returned a value at     *        some future date, so we could tell if things blew up when reparsing    *        the list (for whatever reason).     *                       - Seth "Yes, this is a kludge" Burgess    *<sjburges@ou.edu>    *   -and shaemlessly stolen by Adrian Likins for use here...    */
+name|int
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+if|if
+condition|(
+name|palette
+condition|)
+name|palette_free_palettes
+argument_list|()
+expr_stmt|;
+name|palette_init_palettes
+argument_list|()
+expr_stmt|;
+return|return
+name|procedural_db_return_args
+argument_list|(
+operator|&
+name|palette_refresh_proc
+argument_list|,
+name|success
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_decl_stmt
+DECL|variable|palette_refresh_proc
+name|ProcRecord
+name|palette_refresh_proc
+init|=
+block|{
+literal|"gimp_palette_refresh"
+block|,
+literal|"Refreshes current palettes"
+block|,
+literal|"This procedure incorporates all palettes currently in the users palette path. "
+block|,
+literal|"Adrian Likins<adrain@gimp.org>"
+block|,
+literal|"Adrian Likins"
+block|,
+literal|"1998"
+block|,
+name|PDB_INTERNAL
+block|,
+comment|/* input aarguments */
+literal|0
+block|,
+name|NULL
+block|,
+comment|/* Output arguments */
+literal|0
+block|,
+name|NULL
+block|,
+comment|/* Exec mehtos  */
+block|{
+block|{
+name|palette_refresh_invoker
+block|}
+block|}
+block|, }
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 specifier|static
