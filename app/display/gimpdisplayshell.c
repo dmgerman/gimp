@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b9bc70103
+DECL|enum|__anon28fcdf0e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b9bc70203
+DECL|enum|__anon28fcdf0e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5321,6 +5321,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_display_shell_pause:  * @shell: a display shell  *  * This function increments the pause count or the display shell.  * If it was zero coming in, then the function pauses the active tool,   * so that operations on the display can take place without corrupting   * anything that the tool has drawn.  It "undraws" the current tool   * drawing, and must be followed by gimp_display_shell_resume() after   * the operation in question is completed.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_display_shell_pause (GimpDisplayShell * shell)
@@ -5379,6 +5383,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_display_shell_pause:  * @shell: a display shell  *  * This function decrements the pause count for the display shell.  * If this brings it to zero, then the current tool is resumed.  * It is an error to call this function without having previously  * called gimp_display_shell_pause().  **/
+end_comment
 
 begin_function
 name|void
