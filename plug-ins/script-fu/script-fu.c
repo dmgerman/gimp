@@ -5080,6 +5080,14 @@ return|;
 block|}
 block|}
 break|break;
+case|case
+name|GIMP_PDB_PASS_THROUGH
+case|:
+case|case
+name|GIMP_PDB_CANCEL
+case|:
+comment|/*  should we do something here?  */
+break|break;
 block|}
 comment|/*  free up the executed procedure return values  */
 name|gimp_destroy_params
