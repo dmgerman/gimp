@@ -71,62 +71,8 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|<direct.h>
+file|<libgimpbase/gimpwin32-io.h>
 end_include
-
-begin_define
-DECL|macro|mkdir (n,a)
-define|#
-directive|define
-name|mkdir
-parameter_list|(
-name|n
-parameter_list|,
-name|a
-parameter_list|)
-value|_mkdir(n)
-end_define
-
-begin_include
-include|#
-directive|include
-file|<io.h>
-end_include
-
-begin_define
-DECL|macro|chmod (n,f)
-define|#
-directive|define
-name|chmod
-parameter_list|(
-name|n
-parameter_list|,
-name|f
-parameter_list|)
-value|_chmod(n,f)
-end_define
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|S_ISREG
-end_ifndef
-
-begin_define
-DECL|macro|S_ISREG (m)
-define|#
-directive|define
-name|S_ISREG
-parameter_list|(
-name|m
-parameter_list|)
-value|(((m)& _S_IFMT) == _S_IFREG)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_endif
 endif|#
@@ -279,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcc69730103
+DECL|enum|__anon29114b3f0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -293,7 +239,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcc69730208
+DECL|struct|__anon29114b3f0208
 block|{
 DECL|member|dirname
 specifier|const

@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b503dd0103
+DECL|enum|__anon2c755bf40103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -5042,11 +5042,9 @@ decl_stmt|;
 name|gint
 name|tileByteSize
 init|=
-name|gimp_tile_width
-argument_list|()
+name|_tile_width
 operator|*
-name|gimp_tile_height
-argument_list|()
+name|_tile_height
 operator|*
 literal|4
 decl_stmt|;

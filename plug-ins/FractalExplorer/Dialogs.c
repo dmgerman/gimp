@@ -94,11 +94,15 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_comment
+comment|//def G_OS_WIN32
+end_comment
 
 begin_include
 include|#
@@ -113,7 +117,6 @@ name|W_OK
 end_ifndef
 
 begin_define
-DECL|macro|W_OK
 define|#
 directive|define
 name|W_OK
@@ -132,7 +135,6 @@ name|S_ISDIR
 end_ifndef
 
 begin_define
-DECL|macro|S_ISDIR (m)
 define|#
 directive|define
 name|S_ISDIR
@@ -154,7 +156,6 @@ name|S_ISREG
 end_ifndef
 
 begin_define
-DECL|macro|S_ISREG (m)
 define|#
 directive|define
 name|S_ISREG

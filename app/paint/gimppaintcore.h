@@ -46,7 +46,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bfee0a10103
+DECL|enum|__anon29604ec00103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -85,7 +85,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bfee0a10203
+DECL|enum|__anon29604ec00203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -300,7 +300,6 @@ index|[
 name|PAINT_CORE_SOLID_SUBSAMPLE
 index|]
 decl_stmt|;
-empty_stmt|;
 DECL|member|last_solid_brush
 name|MaskBuf
 modifier|*

@@ -103,45 +103,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<io.h>
-end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|S_ISREG
-end_ifndef
-
-begin_define
-DECL|macro|S_ISREG (m)
-define|#
-directive|define
-name|S_ISREG
-parameter_list|(
-name|m
-parameter_list|)
-value|((m)& _S_IFREG)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -537,7 +498,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon27c48dde0108
+DECL|struct|__anon2a1d68070108
 block|{
 DECL|member|randomize
 name|gint

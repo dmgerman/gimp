@@ -119,45 +119,6 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<io.h>
-end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|S_ISREG
-end_ifndef
-
-begin_define
-DECL|macro|S_ISREG (m)
-define|#
-directive|define
-name|S_ISREG
-parameter_list|(
-name|m
-parameter_list|)
-value|((m)& _S_IFREG)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -475,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e0d9560103
+DECL|enum|__anon294797d80103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -502,7 +463,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e0d9560203
+DECL|enum|__anon294797d80203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -523,7 +484,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560308
+DECL|struct|__anon294797d80308
 block|{
 DECL|member|name
 name|gchar
@@ -660,7 +621,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560408
+DECL|struct|__anon294797d80408
 block|{
 DECL|member|fp
 name|FILE
@@ -680,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e0d9560503
+DECL|enum|__anon294797d80503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -708,7 +669,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560608
+DECL|struct|__anon294797d80608
 block|{
 DECL|member|init
 name|gint
@@ -730,7 +691,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27e0d9560708
+DECL|struct|__anon294797d80708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -804,7 +765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560808
+DECL|struct|__anon294797d80808
 block|{
 DECL|member|init
 name|gint
@@ -874,7 +835,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560908
+DECL|struct|__anon294797d80908
 block|{
 DECL|member|x0
 name|gdouble
@@ -901,7 +862,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560a08
+DECL|struct|__anon294797d80a08
 block|{
 DECL|member|init
 name|gint
@@ -1071,7 +1032,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560b08
+DECL|struct|__anon294797d80b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1098,7 +1059,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560c08
+DECL|struct|__anon294797d80c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1333,7 +1294,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560d08
+DECL|struct|__anon294797d80d08
 block|{
 DECL|member|tag
 name|gint
@@ -1410,7 +1371,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560e08
+DECL|struct|__anon294797d80e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1468,7 +1429,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0d9560f08
+DECL|struct|__anon294797d80f08
 block|{
 DECL|member|run
 name|gboolean
@@ -8566,7 +8527,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon27e0d9561008
+DECL|struct|__anon294797d81008
 specifier|static
 struct|struct
 block|{
@@ -14551,7 +14512,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon27e0d9561108
+DECL|struct|__anon294797d81108
 block|{
 DECL|member|label
 specifier|const
