@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c49e2f20103
+DECL|enum|__anon27830a7e0103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -453,6 +453,28 @@ modifier|*
 name|vsbdata
 decl_stmt|;
 comment|/*  vertical data information               */
+DECL|member|icon
+name|GdkPixmap
+modifier|*
+name|icon
+decl_stmt|;
+comment|/*  Pixmap for the icon                     */
+DECL|member|iconmask
+name|GdkBitmap
+modifier|*
+name|iconmask
+decl_stmt|;
+comment|/*  Bitmap for the icon mask                */
+DECL|member|iconsize
+name|guint
+name|iconsize
+decl_stmt|;
+comment|/*  The size of the icon pixmap             */
+DECL|member|icon_needs_update
+name|guint
+name|icon_needs_update
+decl_stmt|;
+comment|/*  Do we need to render a new icon?        */
 DECL|member|gimage
 name|GimpImage
 modifier|*
@@ -944,6 +966,16 @@ end_function_decl
 begin_function_decl
 name|void
 name|gdisplay_flush_now
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_update_icon
 parameter_list|(
 name|GDisplay
 modifier|*
