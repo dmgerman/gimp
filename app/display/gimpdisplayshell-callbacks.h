@@ -208,7 +208,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_color_button_default
+name|gimp_display_shell_color_button_menu_callback
 parameter_list|(
 name|gpointer
 name|data

@@ -542,6 +542,15 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_dialog_factories_session_clear
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_dialog_factories_toggle
 parameter_list|(
 name|GimpDialogFactory

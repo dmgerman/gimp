@@ -168,6 +168,14 @@ DECL|member|nav_preview_size
 name|GimpPreviewSize
 name|nav_preview_size
 decl_stmt|;
+DECL|member|canvas_padding_mode
+name|GimpDisplayPaddingMode
+name|canvas_padding_mode
+decl_stmt|;
+DECL|member|canvas_padding_color
+name|GimpRGB
+name|canvas_padding_color
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -172,14 +172,6 @@ name|instance
 decl_stmt|;
 comment|/*  the instance # of this gdisplay as      */
 comment|/*  taken from the gimage at creation       */
-DECL|member|monitor_xres
-name|gdouble
-name|monitor_xres
-decl_stmt|;
-DECL|member|monitor_yres
-name|gdouble
-name|monitor_yres
-decl_stmt|;
 DECL|member|shell
 name|GtkWidget
 modifier|*

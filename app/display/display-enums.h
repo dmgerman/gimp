@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2c75660103
+DECL|enum|__anon2a17394a0103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -53,6 +53,50 @@ comment|/*< desc="Crosshair only">*/
 DECL|typedef|GimpCursorMode
 block|}
 name|GimpCursorMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_DISPLAY_PADDING_MODE
+define|#
+directive|define
+name|GIMP_TYPE_DISPLAY_PADDING_MODE
+value|(gimp_display_padding_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_display_padding_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2a17394a0203
+block|{
+DECL|enumerator|GIMP_DISPLAY_PADDING_MODE_DEFAULT
+name|GIMP_DISPLAY_PADDING_MODE_DEFAULT
+block|,
+comment|/*< desc="From Theme">*/
+DECL|enumerator|GIMP_DISPLAY_PADDING_MODE_LIGHT_CHECK
+name|GIMP_DISPLAY_PADDING_MODE_LIGHT_CHECK
+block|,
+comment|/*< desc="Light Check Color">*/
+DECL|enumerator|GIMP_DISPLAY_PADDING_MODE_DARK_CHECK
+name|GIMP_DISPLAY_PADDING_MODE_DARK_CHECK
+block|,
+comment|/*< desc="Dark Check Color">*/
+DECL|enumerator|GIMP_DISPLAY_PADDING_MODE_CUSTOM
+name|GIMP_DISPLAY_PADDING_MODE_CUSTOM
+comment|/*< desc="Custom Color">*/
+DECL|typedef|GimpDisplayPaddingMode
+block|}
+name|GimpDisplayPaddingMode
 typedef|;
 end_typedef
 

@@ -74,7 +74,7 @@ name|SCREEN_XRES
 parameter_list|(
 name|s
 parameter_list|)
-value|(s->dot_for_dot ? \                            s->gdisp->gimage->xresolution : s->gdisp->monitor_xres)
+value|(s->dot_for_dot ? \                            s->gdisp->gimage->xresolution : s->monitor_xres)
 end_define
 
 begin_define
@@ -85,7 +85,7 @@ name|SCREEN_YRES
 parameter_list|(
 name|s
 parameter_list|)
-value|(s->dot_for_dot ? \                            s->gdisp->gimage->yresolution : s->gdisp->monitor_yres)
+value|(s->dot_for_dot ? \                            s->gdisp->gimage->yresolution : s->monitor_yres)
 end_define
 
 begin_comment
@@ -295,6 +295,14 @@ name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
+DECL|member|monitor_xres
+name|gdouble
+name|monitor_xres
+decl_stmt|;
+DECL|member|monitor_yres
+name|gdouble
+name|monitor_yres
+decl_stmt|;
 DECL|member|scale
 name|gint
 name|scale
@@ -484,6 +492,14 @@ modifier|*
 name|padding_button
 decl_stmt|;
 comment|/* GimpColorPanel in the NE corner     */
+DECL|member|padding_mode
+name|GimpDisplayPaddingMode
+name|padding_mode
+decl_stmt|;
+DECL|member|padding_mode_set
+name|gboolean
+name|padding_mode_set
+decl_stmt|;
 DECL|member|padding_color
 name|GimpRGB
 name|padding_color
@@ -1091,6 +1107,24 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_set_padding
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|GimpDisplayPaddingMode
+name|mode
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|)
 function_decl|;
 end_function_decl

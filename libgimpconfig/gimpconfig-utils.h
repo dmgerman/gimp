@@ -17,23 +17,6 @@ name|__GIMP_CONFIG_UTILS_H__
 end_define
 
 begin_function_decl
-name|gboolean
-name|gimp_config_values_equal
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|a
-parameter_list|,
-specifier|const
-name|GValue
-modifier|*
-name|b
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_config_copy_properties
 parameter_list|(
