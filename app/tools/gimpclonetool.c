@@ -984,6 +984,16 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpToolOptions
+modifier|*
+name|options
+init|=
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|tool_options
+decl_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -1002,7 +1012,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
+name|GIMP_CLONE_OPTIONS
+argument_list|(
+name|options
+argument_list|)
+operator|->
+name|clone_type
+operator|==
+name|GIMP_IMAGE_CLONE
+operator|&&
 name|GIMP_CLONE
 argument_list|(
 name|GIMP_PAINT_TOOL
@@ -1014,7 +1032,10 @@ name|core
 argument_list|)
 operator|->
 name|src_drawable
+operator|==
+name|NULL
 condition|)
+block|{
 name|gimp_paint_tool_replace_status
 argument_list|(
 name|tool
@@ -1027,6 +1048,7 @@ literal|"Ctrl-Click to set a clone source."
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
