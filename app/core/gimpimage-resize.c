@@ -439,7 +439,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2befc22b0103
+DECL|enum|__anon2ab211d90103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -7494,7 +7494,7 @@ index|]
 argument_list|,
 name|x1
 argument_list|,
-name|x2
+name|y1
 argument_list|,
 name|x2
 operator|-
