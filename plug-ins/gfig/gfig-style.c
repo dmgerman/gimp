@@ -849,10 +849,8 @@ argument_list|)
 condition|)
 block|{
 comment|/* no style data */
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"No style data\n"
 argument_list|)
 expr_stmt|;
@@ -875,10 +873,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Loading style '%s' -- "
 argument_list|,
 name|name
@@ -1127,10 +1123,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"done\n"
 argument_list|)
 expr_stmt|;
@@ -1287,10 +1281,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Loading global styles -- "
 argument_list|)
 expr_stmt|;
@@ -1311,10 +1303,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"done\n"
 argument_list|)
 expr_stmt|;
@@ -1379,10 +1369,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Saving style %s, brush name '%s'\n"
 argument_list|,
 name|style
@@ -1666,10 +1654,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Saving style %s as attributes\n"
 argument_list|,
 name|style
@@ -1857,10 +1843,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Saving global styles.\n"
 argument_list|)
 expr_stmt|;
@@ -1934,10 +1918,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Setting foreground color from color selector\n"
 argument_list|)
 expr_stmt|;
@@ -2464,10 +2446,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Copying style %s as style %s\n"
 argument_list|,
 name|style0
@@ -2599,10 +2579,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Applying style '%s' -- "
 argument_list|,
 name|style
@@ -2675,10 +2653,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"done.\n"
 argument_list|)
 expr_stmt|;
@@ -2752,10 +2728,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Reading Gimp settings as style %s\n"
 argument_list|,
 name|name
@@ -2904,10 +2878,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Setting context from style '%s' -- "
 argument_list|,
 name|style
@@ -3041,10 +3013,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"done.\n"
 argument_list|)
 expr_stmt|;
@@ -3130,10 +3100,8 @@ name|gfig_context
 operator|->
 name|debug_styles
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Setting foreground color to %lg %lg %lg\n"
 argument_list|,
 name|color
