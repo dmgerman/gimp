@@ -166,7 +166,7 @@ literal|"23th june 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/_DB Browser..."
+literal|"<Toolbox>/Xtns/_DB Browser"
 argument_list|)
 argument_list|,
 literal|""

@@ -80,7 +80,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit Color..."
+literal|"/_Edit Color"
 argument_list|)
 block|,
 name|NULL
@@ -246,7 +246,7 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Color..."
+literal|"/Edit Color"
 argument_list|,
 name|gimage
 operator|&&

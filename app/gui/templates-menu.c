@@ -172,7 +172,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit Template..."
+literal|"/_Edit Template"
 argument_list|)
 block|,
 literal|""
@@ -197,7 +197,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Delete Template..."
+literal|"/_Delete Template"
 argument_list|)
 block|,
 literal|""
@@ -305,14 +305,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Template..."
+literal|"/Edit Template"
 argument_list|,
 name|template
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Delete Template..."
+literal|"/Delete Template"
 argument_list|,
 name|template
 argument_list|)

@@ -104,7 +104,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit Brush..."
+literal|"/_Edit Brush"
 argument_list|)
 block|,
 name|NULL
@@ -184,7 +184,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Delete Brush..."
+literal|"/_Delete Brush"
 argument_list|)
 block|,
 literal|""
@@ -318,7 +318,7 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Brush..."
+literal|"/Edit Brush"
 argument_list|,
 name|brush
 operator|&&
@@ -346,7 +346,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Delete Brush..."
+literal|"/Delete Brush"
 argument_list|,
 name|brush
 operator|&&

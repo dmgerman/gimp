@@ -142,7 +142,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File Open _Dialog..."
+literal|"/File Open _Dialog"
 argument_list|)
 block|,
 literal|""
@@ -348,7 +348,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/File Open Dialog..."
+literal|"/File Open Dialog"
 argument_list|,
 name|TRUE
 argument_list|)

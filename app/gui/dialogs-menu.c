@@ -213,7 +213,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Tool _Options..."
+literal|"/Add Tab/Tool _Options"
 argument_list|)
 argument_list|,
 literal|"gimp-tool-options"
@@ -227,7 +227,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Device Status..."
+literal|"/Add Tab/_Device Status"
 argument_list|)
 argument_list|,
 literal|"gimp-device-status"
@@ -246,7 +246,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Layers..."
+literal|"/Add Tab/_Layers"
 argument_list|)
 argument_list|,
 literal|"gimp-layer-list"
@@ -260,7 +260,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Channels..."
+literal|"/Add Tab/_Channels"
 argument_list|)
 argument_list|,
 literal|"gimp-channel-list"
@@ -274,7 +274,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Paths..."
+literal|"/Add Tab/_Paths"
 argument_list|)
 argument_list|,
 literal|"gimp-vectors-list"
@@ -288,7 +288,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Indexed Palette..."
+literal|"/Add Tab/_Indexed Palette"
 argument_list|)
 argument_list|,
 literal|"gimp-indexed-palette"
@@ -302,7 +302,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Selection Editor..."
+literal|"/Add Tab/_Selection Editor"
 argument_list|)
 argument_list|,
 literal|"gimp-selection-editor"
@@ -316,7 +316,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Na_vigation..."
+literal|"/Add Tab/Na_vigation"
 argument_list|)
 argument_list|,
 literal|"gimp-navigation-view"
@@ -330,7 +330,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Undo History..."
+literal|"/Add Tab/_Undo History"
 argument_list|)
 argument_list|,
 literal|"gimp-undo-history"
@@ -349,7 +349,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Colo_rs..."
+literal|"/Add Tab/Colo_rs"
 argument_list|)
 argument_list|,
 literal|"gimp-color-editor"
@@ -363,7 +363,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Brus_hes..."
+literal|"/Add Tab/Brus_hes"
 argument_list|)
 argument_list|,
 literal|"gimp-brush-grid"
@@ -377,7 +377,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/P_atterns..."
+literal|"/Add Tab/P_atterns"
 argument_list|)
 argument_list|,
 literal|"gimp-pattern-grid"
@@ -391,7 +391,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Gradients..."
+literal|"/Add Tab/_Gradients"
 argument_list|)
 argument_list|,
 literal|"gimp-gradient-list"
@@ -405,7 +405,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Pal_ettes..."
+literal|"/Add Tab/Pal_ettes"
 argument_list|)
 argument_list|,
 literal|"gimp-palette-list"
@@ -419,7 +419,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Fonts..."
+literal|"/Add Tab/_Fonts"
 argument_list|)
 argument_list|,
 literal|"gimp-font-list"
@@ -433,7 +433,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Buffers..."
+literal|"/Add Tab/_Buffers"
 argument_list|)
 argument_list|,
 literal|"gimp-buffer-list"
@@ -452,7 +452,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/I_mages..."
+literal|"/Add Tab/I_mages"
 argument_list|)
 argument_list|,
 literal|"gimp-image-list"
@@ -466,7 +466,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Document Histor_y..."
+literal|"/Add Tab/Document Histor_y"
 argument_list|)
 argument_list|,
 literal|"gimp-document-list"
@@ -480,7 +480,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Templates..."
+literal|"/Add Tab/_Templates"
 argument_list|)
 argument_list|,
 literal|"gimp-template-list"
@@ -494,7 +494,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Error Co_nsole..."
+literal|"/Add Tab/Error Co_nsole"
 argument_list|)
 argument_list|,
 literal|"gimp-error-console"
@@ -513,7 +513,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Tools..."
+literal|"/Add Tab/Tools"
 argument_list|)
 argument_list|,
 literal|"gimp-tool-list"

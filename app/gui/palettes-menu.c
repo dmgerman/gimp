@@ -236,7 +236,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Delete Palette..."
+literal|"/_Delete Palette"
 argument_list|)
 block|,
 literal|""
@@ -406,7 +406,7 @@ expr_stmt|;
 comment|/* FIXME palette&& GIMP_IS_CONTAINER_LIST_VIEW (editor->view)); */
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Delete Palette..."
+literal|"/Delete Palette"
 argument_list|,
 name|palette
 operator|&&

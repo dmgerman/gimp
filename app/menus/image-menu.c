@@ -406,7 +406,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Open Recent/Document _History..."
+literal|"/File/Open Recent/Document _History"
 argument_list|)
 block|,
 literal|"foo"
@@ -528,7 +528,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Re_vert..."
+literal|"/File/Re_vert"
 argument_list|)
 block|,
 name|NULL
@@ -672,7 +672,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/Undo _History..."
+literal|"/Edit/Undo _History"
 argument_list|)
 block|,
 name|NULL
@@ -1791,7 +1791,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/_Info Window..."
+literal|"/View/_Info Window"
 argument_list|)
 block|,
 literal|"<control><shift>I"
@@ -1816,7 +1816,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Na_vigation Window..."
+literal|"/View/Na_vigation Window"
 argument_list|)
 block|,
 literal|"<control><shift>N"
@@ -1841,7 +1841,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Display _Filters..."
+literal|"/View/Display _Filters"
 argument_list|)
 block|,
 name|NULL
@@ -2546,7 +2546,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Image/Configure G_rid..."
+literal|"/Image/Configure G_rid"
 argument_list|)
 block|,
 name|NULL
@@ -3207,7 +3207,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Colors/_Histogram..."
+literal|"/Layer/Colors/_Histogram"
 argument_list|)
 block|,
 name|NULL
@@ -3991,7 +3991,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Create New Dock/_Layers, Channels& Paths..."
+literal|"/Dialogs/Create New Dock/_Layers, Channels& Paths"
 argument_list|)
 block|,
 name|NULL
@@ -4012,7 +4012,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Create New Dock/_Brushes, Patterns& Gradients..."
+literal|"/Dialogs/Create New Dock/_Brushes, Patterns& Gradients"
 argument_list|)
 block|,
 name|NULL
@@ -4033,7 +4033,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Create New Dock/_Misc. Stuff..."
+literal|"/Dialogs/Create New Dock/_Misc. Stuff"
 argument_list|)
 block|,
 name|NULL
@@ -4054,7 +4054,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Tool _Options..."
+literal|"/Dialogs/Tool _Options"
 argument_list|)
 block|,
 name|NULL
@@ -4079,7 +4079,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Device Status..."
+literal|"/Dialogs/_Device Status"
 argument_list|)
 block|,
 name|NULL
@@ -4109,7 +4109,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Layers..."
+literal|"/Dialogs/_Layers"
 argument_list|)
 block|,
 literal|"<control>L"
@@ -4134,7 +4134,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Channels..."
+literal|"/Dialogs/_Channels"
 argument_list|)
 block|,
 name|NULL
@@ -4159,7 +4159,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Paths..."
+literal|"/Dialogs/_Paths"
 argument_list|)
 block|,
 name|NULL
@@ -4184,7 +4184,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Indexed Palette..."
+literal|"/Dialogs/_Indexed Palette"
 argument_list|)
 block|,
 name|NULL
@@ -4209,7 +4209,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Selection Editor..."
+literal|"/Dialogs/_Selection Editor"
 argument_list|)
 block|,
 name|NULL
@@ -4234,7 +4234,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Na_vigation..."
+literal|"/Dialogs/Na_vigation"
 argument_list|)
 block|,
 name|NULL
@@ -4259,7 +4259,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Undo History..."
+literal|"/Dialogs/_Undo History"
 argument_list|)
 block|,
 name|NULL
@@ -4289,7 +4289,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Colo_rs..."
+literal|"/Dialogs/Colo_rs"
 argument_list|)
 block|,
 name|NULL
@@ -4314,7 +4314,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Brus_hes..."
+literal|"/Dialogs/Brus_hes"
 argument_list|)
 block|,
 literal|"<control><shift>B"
@@ -4339,7 +4339,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/P_atterns..."
+literal|"/Dialogs/P_atterns"
 argument_list|)
 block|,
 literal|"<control><shift>P"
@@ -4364,7 +4364,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Gradients..."
+literal|"/Dialogs/_Gradients"
 argument_list|)
 block|,
 literal|"<control>G"
@@ -4389,7 +4389,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Pal_ettes..."
+literal|"/Dialogs/Pal_ettes"
 argument_list|)
 block|,
 literal|"<control>P"
@@ -4414,7 +4414,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Fonts..."
+literal|"/Dialogs/_Fonts"
 argument_list|)
 block|,
 name|NULL
@@ -4439,7 +4439,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Buffers..."
+literal|"/Dialogs/_Buffers"
 argument_list|)
 block|,
 literal|"foo"
@@ -4469,7 +4469,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/I_mages..."
+literal|"/Dialogs/I_mages"
 argument_list|)
 block|,
 name|NULL
@@ -4494,7 +4494,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Document Histor_y..."
+literal|"/Dialogs/Document Histor_y"
 argument_list|)
 block|,
 literal|""
@@ -4519,7 +4519,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Templates..."
+literal|"/Dialogs/_Templates"
 argument_list|)
 block|,
 name|NULL
@@ -4544,7 +4544,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Error Co_nsole..."
+literal|"/Dialogs/Error Co_nsole"
 argument_list|)
 block|,
 name|NULL
@@ -6195,7 +6195,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/File/Revert..."
+literal|"/File/Revert"
 argument_list|,
 name|gdisp
 operator|&&
@@ -6718,21 +6718,21 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Info Window..."
+literal|"/View/Info Window"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Navigation Window..."
+literal|"/View/Navigation Window"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Display Filters..."
+literal|"/View/Display Filters"
 argument_list|,
 name|gdisp
 argument_list|)
@@ -7084,7 +7084,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Image/Configure Grid..."
+literal|"/Image/Configure Grid"
 argument_list|,
 name|gdisp
 argument_list|)
@@ -7455,7 +7455,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Layer/Colors/Histogram..."
+literal|"/Layer/Colors/Histogram"
 argument_list|,
 name|lp
 argument_list|)

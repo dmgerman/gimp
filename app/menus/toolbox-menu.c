@@ -204,7 +204,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Open Recent/Document _History..."
+literal|"/File/Open Recent/Document _History"
 argument_list|)
 block|,
 literal|"foo"
@@ -243,7 +243,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Preferences..."
+literal|"/File/_Preferences"
 argument_list|)
 block|,
 name|NULL
@@ -285,7 +285,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Create New Dock/_Layers, Channels& Paths..."
+literal|"/File/Dialogs/Create New Dock/_Layers, Channels& Paths"
 argument_list|)
 block|,
 name|NULL
@@ -306,7 +306,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Create New Dock/_Brushes, Patterns& Gradients..."
+literal|"/File/Dialogs/Create New Dock/_Brushes, Patterns& Gradients"
 argument_list|)
 block|,
 name|NULL
@@ -327,7 +327,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Create New Dock/_Misc. Stuff..."
+literal|"/File/Dialogs/Create New Dock/_Misc. Stuff"
 argument_list|)
 block|,
 name|NULL
@@ -348,7 +348,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Tool _Options..."
+literal|"/File/Dialogs/Tool _Options"
 argument_list|)
 block|,
 literal|"<control><shift>T"
@@ -373,7 +373,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Device Status..."
+literal|"/File/Dialogs/_Device Status"
 argument_list|)
 block|,
 name|NULL
@@ -403,7 +403,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Layers..."
+literal|"/File/Dialogs/_Layers"
 argument_list|)
 block|,
 literal|"<control>L"
@@ -428,7 +428,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Channels..."
+literal|"/File/Dialogs/_Channels"
 argument_list|)
 block|,
 name|NULL
@@ -453,7 +453,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Paths..."
+literal|"/File/Dialogs/_Paths"
 argument_list|)
 block|,
 name|NULL
@@ -478,7 +478,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Indexed Palette..."
+literal|"/File/Dialogs/_Indexed Palette"
 argument_list|)
 block|,
 name|NULL
@@ -503,7 +503,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Selection Editor..."
+literal|"/File/Dialogs/_Selection Editor"
 argument_list|)
 block|,
 name|NULL
@@ -528,7 +528,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Na_vigation..."
+literal|"/File/Dialogs/Na_vigation"
 argument_list|)
 block|,
 name|NULL
@@ -553,7 +553,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Undo History..."
+literal|"/File/Dialogs/_Undo History"
 argument_list|)
 block|,
 name|NULL
@@ -583,7 +583,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Colo_rs..."
+literal|"/File/Dialogs/Colo_rs"
 argument_list|)
 block|,
 name|NULL
@@ -608,7 +608,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Brus_hes..."
+literal|"/File/Dialogs/Brus_hes"
 argument_list|)
 block|,
 literal|"<control><shift>B"
@@ -633,7 +633,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/P_atterns..."
+literal|"/File/Dialogs/P_atterns"
 argument_list|)
 block|,
 literal|"<control><shift>P"
@@ -658,7 +658,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Gradients..."
+literal|"/File/Dialogs/_Gradients"
 argument_list|)
 block|,
 literal|"<control>G"
@@ -683,7 +683,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Pal_ettes..."
+literal|"/File/Dialogs/Pal_ettes"
 argument_list|)
 block|,
 literal|"<control>P"
@@ -708,7 +708,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Fonts..."
+literal|"/File/Dialogs/_Fonts"
 argument_list|)
 block|,
 name|NULL
@@ -733,7 +733,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Buffers..."
+literal|"/File/Dialogs/_Buffers"
 argument_list|)
 block|,
 literal|"foo"
@@ -763,7 +763,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/I_mages..."
+literal|"/File/Dialogs/I_mages"
 argument_list|)
 block|,
 name|NULL
@@ -788,7 +788,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Document Histor_y..."
+literal|"/File/Dialogs/Document Histor_y"
 argument_list|)
 block|,
 literal|""
@@ -813,7 +813,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Templates..."
+literal|"/File/Dialogs/_Templates"
 argument_list|)
 block|,
 literal|""
@@ -838,7 +838,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Error Co_nsole..."
+literal|"/File/Dialogs/Error Co_nsole"
 argument_list|)
 block|,
 name|NULL
@@ -951,7 +951,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Xtns/_Module Manager..."
+literal|"/Xtns/_Module Manager"
 argument_list|)
 block|,
 name|NULL
@@ -986,7 +986,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Help/_Help..."
+literal|"/Help/_Help"
 argument_list|)
 block|,
 literal|"F1"
@@ -1011,7 +1011,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Help/_Context Help..."
+literal|"/Help/_Context Help"
 argument_list|)
 block|,
 literal|"<shift>F1"
@@ -1036,7 +1036,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Help/_Tip of the Day..."
+literal|"/Help/_Tip of the Day"
 argument_list|)
 block|,
 name|NULL
@@ -1061,7 +1061,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Help/_About..."
+literal|"/Help/_About"
 argument_list|)
 block|,
 name|NULL
@@ -1163,7 +1163,7 @@ argument_list|(
 name|factory
 argument_list|)
 argument_list|,
-literal|"/Xtns/Module Manager..."
+literal|"/Xtns/Module Manager"
 argument_list|)
 expr_stmt|;
 if|if
