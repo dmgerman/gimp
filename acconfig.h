@@ -57,6 +57,12 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_MMAP
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_NDIR_H
 end_undef
 
