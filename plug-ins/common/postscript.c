@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7ea8940108
+DECL|struct|__anon276adff80108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7ea8940208
+DECL|struct|__anon276adff80208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7ea8940308
+DECL|struct|__anon276adff80308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7ea8940408
+DECL|struct|__anon276adff80408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7ea8940508
+DECL|struct|__anon276adff80508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7ea8940608
+DECL|struct|__anon276adff80608
 block|{
 DECL|member|eol
 name|long
@@ -15224,7 +15224,7 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
