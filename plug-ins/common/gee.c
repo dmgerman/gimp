@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Adam D. Moss : 1998/1999 : adam@gimp.org : adam@foxbox.org  *  * This is part of the GIMP package and is released under the GNU  * Public License.  */
+comment|/*  * Adam D. Moss : 1998-2000 : adam@gimp.org : adam@foxbox.org  *  * This is part of the GIMP package and is released under the GNU  * Public License.  */
 end_comment
 
 begin_comment
-comment|/*  * Version 1.04 : 99.03.29  *  * 1.04:  * Wigglyness and button-click fun.  *  * 1.03:  * Fix for pseudocolor displays w/gdkrgb.  *  * 1.02:  * Massive speedup if you have a very recent version of GTK 1.1.  * Removed possible div-by-0 errors, took the plugin out  * of hiding (guess we need a new easter-egg for GIMP 1.2!)  */
+comment|/*  * Version 1.05 : 2000-12-11  *  * 1.05:  * Sub-pixel jitter is now less severe and less coarse.  *  * 1.04:  * Wigglyness and button-click fun.  *  * 1.03:  * Fix for pseudocolor displays w/gdkrgb.  *  * 1.02:  * Massive speedup if you have a very recent version of GTK 1.1.  * Removed possible div-by-0 errors, took the plugin out  * of hiding (guess we need a new easter-egg for GIMP 1.2!)  */
 end_comment
 
 begin_include
@@ -1553,13 +1553,15 @@ operator|(
 name|RAND_FUNC
 argument_list|()
 operator|%
-literal|89
-operator|)
+operator|(
+literal|29
 operator|<<
 literal|19
 operator|)
+operator|)
 operator|/
 name|bycxmcybx
+operator|)
 operator|)
 operator|+
 operator|(
@@ -1593,13 +1595,15 @@ operator|(
 name|RAND_FUNC
 argument_list|()
 operator|%
-literal|89
-operator|)
+operator|(
+literal|29
 operator|<<
 literal|19
 operator|)
+operator|)
 operator|/
 name|bycxmcybx
+operator|)
 operator|)
 operator|+
 operator|(
