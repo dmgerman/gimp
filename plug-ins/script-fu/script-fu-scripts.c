@@ -166,7 +166,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793634d0108
+DECL|struct|__anon29ce02be0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -210,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793634d0208
+DECL|struct|__anon29ce02be0208
 block|{
 DECL|member|file_entry
 name|GtkWidget
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793634d0308
+DECL|struct|__anon29ce02be0308
 block|{
 DECL|member|name
 name|gchar
@@ -259,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793634d0408
+DECL|struct|__anon29ce02be0408
 block|{
 DECL|member|list
 name|GSList
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2793634d050a
+DECL|union|__anon29ce02be050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793634d0608
+DECL|struct|__anon29ce02be0608
 block|{
 DECL|member|script_name
 name|gchar
@@ -436,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793634d0708
+DECL|struct|__anon29ce02be0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -8961,6 +8961,10 @@ block|{
 name|GtkWidget
 modifier|*
 name|dialog
+init|=
+name|sf_interface
+operator|->
+name|about_dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -8997,9 +9001,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|sf_interface
-operator|->
-name|about_dialog
+name|dialog
 condition|)
 block|{
 name|sf_interface
@@ -9647,9 +9649,7 @@ name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|sf_interface
-operator|->
-name|about_dialog
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
