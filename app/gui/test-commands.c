@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainerlistview.h"
+file|"widgets/gimpcontainertreeview.h"
 end_include
 
 begin_include
@@ -150,7 +150,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdrawablelistview.h"
+file|"widgets/gimpdrawabletreeview.h"
 end_include
 
 begin_include
@@ -424,7 +424,7 @@ condition|)
 block|{
 name|view
 operator|=
-name|gimp_container_list_view_new
+name|gimp_container_tree_view_new
 argument_list|(
 name|container
 argument_list|,

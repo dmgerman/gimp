@@ -623,29 +623,6 @@ block|,
 name|NULL
 block|}
 block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/View as Tree"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_toggle_view_cmd_callback
-block|,
-name|GIMP_VIEW_TYPE_TREE
-block|,
-literal|"/View as List"
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
 name|MENU_SEPARATOR
 argument_list|(
 literal|"/image-menu-separator"
@@ -783,11 +760,6 @@ name|grid_view_available
 init|=
 name|FALSE
 decl_stmt|;
-name|gboolean
-name|tree_view_available
-init|=
-name|FALSE
-decl_stmt|;
 name|GimpPreviewSize
 name|preview_size
 init|=
@@ -891,24 +863,6 @@ name|view_type
 operator|=
 name|GIMP_VIEW_TYPE_LIST
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|(
-name|substring
-operator|=
-name|strstr
-argument_list|(
-name|identifier
-argument_list|,
-literal|"tree"
-argument_list|)
-operator|)
-condition|)
-name|view_type
-operator|=
-name|GIMP_VIEW_TYPE_TREE
-expr_stmt|;
 if|if
 condition|(
 name|substring
@@ -963,32 +917,6 @@ name|identifier
 argument_list|)
 condition|)
 name|grid_view_available
-operator|=
-name|TRUE
-expr_stmt|;
-name|memcpy
-argument_list|(
-name|substring
-argument_list|,
-literal|"tree"
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_dialog_factory_find_entry
-argument_list|(
-name|dockbook
-operator|->
-name|dock
-operator|->
-name|dialog_factory
-argument_list|,
-name|identifier
-argument_list|)
-condition|)
-name|tree_view_available
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1246,16 +1174,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|SET_VISIBLE
-argument_list|(
-literal|"/View as Tree"
-argument_list|,
-name|view_type
-operator|!=
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|view_type
@@ -1277,24 +1195,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|view_type
-operator|==
-name|GIMP_VIEW_TYPE_GRID
-condition|)
-name|SET_ACTIVE
-argument_list|(
-literal|"/View as Grid"
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 else|else
 name|SET_ACTIVE
 argument_list|(
-literal|"/View as Tree"
+literal|"/View as Grid"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1311,13 +1215,6 @@ argument_list|(
 literal|"/View as List"
 argument_list|,
 name|list_view_available
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/View as Tree"
-argument_list|,
-name|tree_view_available
 argument_list|)
 expr_stmt|;
 block|}
