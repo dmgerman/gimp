@@ -93,7 +93,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd495500103
+DECL|enum|__anon2afc2e920103
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -137,22 +137,22 @@ name|DrawCore
 modifier|*
 name|core
 decl_stmt|;
-comment|/*  Core select object          */
+comment|/*  Core select object         */
 DECL|member|startx
 name|double
 name|startx
 decl_stmt|;
-comment|/*  starting x coord            */
+comment|/*  starting x coord           */
 DECL|member|starty
 name|double
 name|starty
 decl_stmt|;
-comment|/*  starting y coord            */
+comment|/*  starting y coord           */
 DECL|member|startpressure
 name|double
 name|startpressure
 decl_stmt|;
-comment|/* starting pressure          */
+comment|/* starting pressure           */
 DECL|member|startxtilt
 name|double
 name|startxtilt
@@ -162,72 +162,72 @@ DECL|member|startytilt
 name|double
 name|startytilt
 decl_stmt|;
-comment|/* starting ytilt                */
+comment|/* starting ytilt              */
 DECL|member|curx
 name|double
 name|curx
 decl_stmt|;
-comment|/*  current x coord             */
+comment|/*  current x coord            */
 DECL|member|cury
 name|double
 name|cury
 decl_stmt|;
-comment|/*  current y coord             */
+comment|/*  current y coord            */
 DECL|member|curpressure
 name|double
 name|curpressure
 decl_stmt|;
-comment|/*  current pressure            */
+comment|/*  current pressure           */
 DECL|member|curxtilt
 name|double
 name|curxtilt
 decl_stmt|;
-comment|/*  current xtilt               */
+comment|/*  current xtilt              */
 DECL|member|curytilt
 name|double
 name|curytilt
 decl_stmt|;
-comment|/*  current ytilt               */
+comment|/*  current ytilt              */
 DECL|member|lastx
 name|double
 name|lastx
 decl_stmt|;
-comment|/*  last x coord                */
+comment|/*  last x coord               */
 DECL|member|lasty
 name|double
 name|lasty
 decl_stmt|;
-comment|/*  last y coord                */
+comment|/*  last y coord               */
 DECL|member|lastpressure
 name|double
 name|lastpressure
 decl_stmt|;
-comment|/* last pressure               */
+comment|/*  last pressure              */
 DECL|member|lastxtilt
 name|double
 name|lastxtilt
 decl_stmt|;
-comment|/* last xtilt                  */
+comment|/*  last xtilt                 */
 DECL|member|lastytilt
 name|double
 name|lastytilt
 decl_stmt|;
-comment|/* last ytilt                  */
+comment|/*  last ytilt                 */
 DECL|member|state
 name|int
 name|state
 decl_stmt|;
-comment|/*  state of buttons and keys   */
+comment|/*  state of buttons and keys  */
 DECL|member|distance
 name|double
 name|distance
 decl_stmt|;
-comment|/*  distance traveled by brush  */
+comment|/*  distance traveled by brush */
 DECL|member|spacing
 name|double
 name|spacing
 decl_stmt|;
-comment|/*  distance traveled by brush  */
+comment|/*  distance traveled by brush */
 DECL|member|x1
 DECL|member|y1
 name|int
@@ -235,7 +235,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  image space coordinate      */
+comment|/*  image space coordinate     */
 DECL|member|x2
 DECL|member|y2
 name|int
@@ -243,7 +243,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  image space coords          */
+comment|/*  image space coords         */
 DECL|member|brush
 name|GimpBrush
 modifier|*
@@ -254,22 +254,27 @@ DECL|member|paint_func
 name|PaintFunc
 name|paint_func
 decl_stmt|;
-comment|/*  painting function           */
+comment|/*  painting function          */
 DECL|member|pick_colors
 name|int
 name|pick_colors
 decl_stmt|;
-comment|/*  pick color if ctl or alt is pressed  */
+comment|/*  pick color if ctrl or alt is pressed  */
 DECL|member|pick_state
 name|int
 name|pick_state
 decl_stmt|;
-comment|/*  was ctl or alt pressed when clicked?  */
+comment|/*  was ctrl or alt pressed when clicked? */
 DECL|member|flags
 name|int
 name|flags
 decl_stmt|;
-comment|/*  tool flags, see ToolFlags above */
+comment|/*  tool flags, see ToolFlags above       */
+DECL|member|context_id
+name|guint
+name|context_id
+decl_stmt|;
+comment|/*  for the statusbar          */
 block|}
 struct|;
 end_struct
