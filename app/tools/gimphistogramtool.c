@@ -48,6 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpbaseconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -1386,7 +1398,16 @@ operator|->
 name|hist
 operator|=
 name|gimp_histogram_new
-argument_list|()
+argument_list|(
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|)
 expr_stmt|;
 comment|/*  The shell and main vbox  */
 name|htd

@@ -101,6 +101,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpbaseconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -120,6 +132,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimagemap.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_include
@@ -968,6 +986,10 @@ name|GimpImageMapTool
 modifier|*
 name|image_map_tool
 decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|image_map_tool
 operator|=
 name|GIMP_IMAGE_MAP_TOOL
@@ -983,6 +1005,17 @@ name|_
 argument_list|(
 literal|"Adjust Color Levels"
 argument_list|)
+expr_stmt|;
+name|gimp
+operator|=
+name|GIMP_TOOL
+argument_list|(
+name|l_tool
+argument_list|)
+operator|->
+name|tool_info
+operator|->
+name|gimp
 expr_stmt|;
 name|l_tool
 operator|->
@@ -1007,7 +1040,14 @@ operator|->
 name|hist
 operator|=
 name|gimp_histogram_new
-argument_list|()
+argument_list|(
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|l_tool
 operator|->

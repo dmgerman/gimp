@@ -106,6 +106,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpbaseconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable-desaturate.h"
 end_include
 
@@ -4032,7 +4044,14 @@ comment|/* Apply the image transformation to the pixels */
 name|histogram
 operator|=
 name|gimp_histogram_new
-argument_list|()
+argument_list|(
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
