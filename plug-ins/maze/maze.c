@@ -533,7 +533,10 @@ name|help
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Generates a maze using either the depth-first search method or Prim's algorithm.  Can make tileable mazes too.  See %s for more help."
+argument_list|)
 argument_list|,
 name|MAZE_URL
 argument_list|)
@@ -542,7 +545,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_maze"
 argument_list|,
+name|_
+argument_list|(
 literal|"Draws a maze."
+argument_list|)
 argument_list|,
 name|help
 argument_list|,

@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2936081c0108
+DECL|struct|__anon2947fed00108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -587,7 +587,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 name|MAZE_TITLE
+argument_list|)
 argument_list|,
 literal|"maze"
 argument_list|,

@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27681ea90103
+DECL|enum|__anon2bfa0a680103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -225,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27681ea90208
+DECL|struct|__anon2bfa0a680208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27681ea90308
+DECL|struct|__anon2bfa0a680308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -4097,7 +4097,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"G-Qbist 1.12"
+literal|"G-Qbist"
 argument_list|)
 argument_list|,
 literal|"gqbist"

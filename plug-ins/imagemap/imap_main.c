@@ -2722,7 +2722,7 @@ name|title
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s - ImageMap 2.0"
+literal|"%s - ImageMap"
 argument_list|,
 name|p
 argument_list|)
