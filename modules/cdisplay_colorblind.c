@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4b9a1e0103
+DECL|enum|__anon27e84cbe0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b9a1e0203
+DECL|enum|__anon27e84cbe0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1130,7 +1130,7 @@ name|offset
 init|=
 literal|127
 decl_stmt|;
-name|gint
+name|guchar
 name|step
 init|=
 literal|64
