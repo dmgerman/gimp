@@ -317,7 +317,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4da5a10108
+DECL|struct|__anon2c58a9260108
 block|{
 DECL|member|url
 name|char
@@ -459,7 +459,7 @@ literal|"Misha Dynin, Jamie Zawinski, Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Toolbox>/Xtns/Web Browser/Open URL..."
 argument_list|)
