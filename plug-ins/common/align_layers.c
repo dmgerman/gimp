@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a1de10103
+DECL|enum|__anon275b8b390103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a1de10203
+DECL|enum|__anon275b8b390203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a1de10303
+DECL|enum|__anon275b8b390303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a1de10403
+DECL|enum|__anon275b8b390403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297a1de10508
+DECL|struct|__anon275b8b390508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297a1de10608
+DECL|struct|__anon275b8b390608
 block|{
 DECL|member|run
 name|gint
@@ -2188,7 +2188,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal Base:"
+literal|"Vertical Base:"
 argument_list|)
 argument_list|,
 literal|1.0
