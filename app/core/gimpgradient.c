@@ -2522,7 +2522,7 @@ name|type
 condition|)
 block|{
 case|case
-name|GRAD_LINEAR
+name|GIMP_GRAD_LINEAR
 case|:
 name|factor
 operator|=
@@ -2535,7 +2535,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAD_CURVED
+name|GIMP_GRAD_CURVED
 case|:
 name|factor
 operator|=
@@ -2548,7 +2548,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAD_SINE
+name|GIMP_GRAD_SINE
 case|:
 name|factor
 operator|=
@@ -2561,7 +2561,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAD_SPHERE_INCREASING
+name|GIMP_GRAD_SPHERE_INCREASING
 case|:
 name|factor
 operator|=
@@ -2574,7 +2574,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAD_SPHERE_DECREASING
+name|GIMP_GRAD_SPHERE_DECREASING
 case|:
 name|factor
 operator|=
@@ -2633,7 +2633,7 @@ name|seg
 operator|->
 name|color
 operator|==
-name|GRAD_RGB
+name|GIMP_GRAD_RGB
 condition|)
 block|{
 name|rgb
@@ -2793,7 +2793,7 @@ name|color
 condition|)
 block|{
 case|case
-name|GRAD_HSV_CCW
+name|GIMP_GRAD_HSV_CCW
 case|:
 if|if
 condition|(
@@ -2862,7 +2862,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GRAD_HSV_CW
+name|GIMP_GRAD_HSV_CW
 case|:
 if|if
 condition|(
@@ -3411,13 +3411,13 @@ name|seg
 operator|->
 name|type
 operator|=
-name|GRAD_LINEAR
+name|GIMP_GRAD_LINEAR
 expr_stmt|;
 name|seg
 operator|->
 name|color
 operator|=
-name|GRAD_RGB
+name|GIMP_GRAD_RGB
 expr_stmt|;
 name|seg
 operator|->

@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287f4b5a0103
+DECL|enum|__anon2ba89a4a0103
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -116,7 +116,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon287f4b5a0203
+DECL|enum|__anon2ba89a4a0203
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_NONE
 name|GIMP_PREVIEW_SIZE_NONE
@@ -181,7 +181,150 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon287f4b5a0303
+DECL|enum|__anon2ba89a4a0303
+block|{
+DECL|enumerator|GIMP_LINEAR
+name|GIMP_LINEAR
+block|,
+DECL|enumerator|GIMP_BILINEAR
+name|GIMP_BILINEAR
+block|,
+DECL|enumerator|GIMP_RADIAL
+name|GIMP_RADIAL
+block|,
+DECL|enumerator|GIMP_SQUARE
+name|GIMP_SQUARE
+block|,
+DECL|enumerator|GIMP_CONICAL_SYMMETRIC
+name|GIMP_CONICAL_SYMMETRIC
+block|,
+DECL|enumerator|GIMP_CONICAL_ASYMMETRIC
+name|GIMP_CONICAL_ASYMMETRIC
+block|,
+DECL|enumerator|GIMP_SHAPEBURST_ANGULAR
+name|GIMP_SHAPEBURST_ANGULAR
+block|,
+DECL|enumerator|GIMP_SHAPEBURST_SPHERICAL
+name|GIMP_SHAPEBURST_SPHERICAL
+block|,
+DECL|enumerator|GIMP_SHAPEBURST_DIMPLED
+name|GIMP_SHAPEBURST_DIMPLED
+block|,
+DECL|enumerator|GIMP_SPIRAL_CLOCKWISE
+name|GIMP_SPIRAL_CLOCKWISE
+block|,
+DECL|enumerator|GIMP_SPIRAL_ANTICLOCKWISE
+name|GIMP_SPIRAL_ANTICLOCKWISE
+DECL|typedef|GimpGradientType
+block|}
+name|GimpGradientType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+comment|/*< skip>*/
+DECL|enum|__anon2ba89a4a0403
+block|{
+DECL|enumerator|GIMP_GRAD_LINEAR
+name|GIMP_GRAD_LINEAR
+init|=
+literal|0
+block|,
+DECL|enumerator|GIMP_GRAD_CURVED
+name|GIMP_GRAD_CURVED
+block|,
+DECL|enumerator|GIMP_GRAD_SINE
+name|GIMP_GRAD_SINE
+block|,
+DECL|enumerator|GIMP_GRAD_SPHERE_INCREASING
+name|GIMP_GRAD_SPHERE_INCREASING
+block|,
+DECL|enumerator|GIMP_GRAD_SPHERE_DECREASING
+name|GIMP_GRAD_SPHERE_DECREASING
+DECL|typedef|GimpGradientSegmentType
+block|}
+name|GimpGradientSegmentType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+comment|/*< skip>*/
+DECL|enum|__anon2ba89a4a0503
+block|{
+DECL|enumerator|GIMP_GRAD_RGB
+name|GIMP_GRAD_RGB
+init|=
+literal|0
+block|,
+comment|/* normal RGB */
+DECL|enumerator|GIMP_GRAD_HSV_CCW
+name|GIMP_GRAD_HSV_CCW
+block|,
+comment|/* counterclockwise hue */
+DECL|enumerator|GIMP_GRAD_HSV_CW
+name|GIMP_GRAD_HSV_CW
+comment|/* clockwise hue */
+DECL|typedef|GimpGradientSegmentColor
+block|}
+name|GimpGradientSegmentColor
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< chop=_MODE>*/
+comment|/*< skip>*/
+DECL|enum|__anon2ba89a4a0603
+block|{
+DECL|enumerator|GIMP_FG_BG_RGB_MODE
+name|GIMP_FG_BG_RGB_MODE
+block|,
+DECL|enumerator|GIMP_FG_BG_HSV_MODE
+name|GIMP_FG_BG_HSV_MODE
+block|,
+DECL|enumerator|GIMP_FG_TRANS_MODE
+name|GIMP_FG_TRANS_MODE
+block|,
+DECL|enumerator|GIMP_CUSTOM_MODE
+name|GIMP_CUSTOM_MODE
+DECL|typedef|GimpBlendMode
+block|}
+name|GimpBlendMode
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2ba89a4a0703
+block|{
+DECL|enumerator|GIMP_REPEAT_NONE
+name|GIMP_REPEAT_NONE
+block|,
+DECL|enumerator|GIMP_REPEAT_SAWTOOTH
+name|GIMP_REPEAT_SAWTOOTH
+block|,
+DECL|enumerator|GIMP_REPEAT_TRIANGULAR
+name|GIMP_REPEAT_TRIANGULAR
+DECL|typedef|GimpRepeatMode
+block|}
+name|GimpRepeatMode
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2ba89a4a0803
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -211,7 +354,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon287f4b5a0403
+DECL|enum|__anon2ba89a4a0903
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -237,7 +380,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon287f4b5a0503
+DECL|enum|__anon2ba89a4a0a03
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -258,7 +401,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon287f4b5a0603
+DECL|enum|__anon2ba89a4a0b03
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD

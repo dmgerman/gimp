@@ -106,12 +106,12 @@ file|"gimpimage-mask.h"
 end_include
 
 begin_typedef
-DECL|typedef|RepeatFunc
+DECL|typedef|BlendRepeatFunc
 typedef|typedef
 name|gdouble
 function_decl|(
 modifier|*
-name|RepeatFunc
+name|BlendRepeatFunc
 function_decl|)
 parameter_list|(
 name|gdouble
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be505d90108
+DECL|struct|__anon2bd377f20108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -141,11 +141,11 @@ decl_stmt|,
 name|sy
 decl_stmt|;
 DECL|member|blend_mode
-name|BlendMode
+name|GimpBlendMode
 name|blend_mode
 decl_stmt|;
 DECL|member|gradient_type
-name|GradientType
+name|GimpGradientType
 name|gradient_type
 decl_stmt|;
 DECL|member|fg
@@ -167,7 +167,7 @@ literal|2
 index|]
 decl_stmt|;
 DECL|member|repeat_func
-name|RepeatFunc
+name|BlendRepeatFunc
 name|repeat_func
 decl_stmt|;
 DECL|typedef|RenderBlendData
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be505d90208
+DECL|struct|__anon2bd377f20208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -535,16 +535,16 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|BlendMode
+name|GimpBlendMode
 name|blend_mode
 parameter_list|,
-name|GradientType
+name|GimpGradientType
 name|gradient_type
 parameter_list|,
 name|gdouble
 name|offset
 parameter_list|,
-name|RepeatMode
+name|GimpRepeatMode
 name|repeat
 parameter_list|,
 name|gint
@@ -622,20 +622,20 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_blend (GimpDrawable * drawable,BlendMode blend_mode,int paint_mode,GradientType gradient_type,gdouble opacity,gdouble offset,RepeatMode repeat,gint supersample,gint max_depth,gdouble threshold,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpBlendMode blend_mode,int paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gint supersample,gint max_depth,gdouble threshold,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_blend
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|BlendMode
+name|GimpBlendMode
 name|blend_mode
 parameter_list|,
 name|int
 name|paint_mode
 parameter_list|,
-name|GradientType
+name|GimpGradientType
 name|gradient_type
 parameter_list|,
 name|gdouble
@@ -644,7 +644,7 @@ parameter_list|,
 name|gdouble
 name|offset
 parameter_list|,
-name|RepeatMode
+name|GimpRepeatMode
 name|repeat
 parameter_list|,
 name|gint
@@ -710,39 +710,6 @@ name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|gradient_type
-operator|>=
-name|LINEAR
-operator|&&
-name|gradient_type
-operator|<=
-name|SPIRAL_ANTICLOCKWISE
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|blend_mode
-operator|>=
-name|FG_BG_RGB_MODE
-operator|&&
-name|blend_mode
-operator|<=
-name|CUSTOM_MODE
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|repeat
-operator|>=
-name|REPEAT_NONE
-operator|&&
-name|repeat
-operator|<=
-name|REPEAT_TRIANGULAR
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -3045,7 +3012,7 @@ name|gradient_type
 condition|)
 block|{
 case|case
-name|LINEAR
+name|GIMP_LINEAR
 case|:
 name|factor
 operator|=
@@ -3078,7 +3045,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|BILINEAR
+name|GIMP_BILINEAR
 case|:
 name|factor
 operator|=
@@ -3111,7 +3078,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RADIAL
+name|GIMP_RADIAL
 case|:
 name|factor
 operator|=
@@ -3140,7 +3107,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SQUARE
+name|GIMP_SQUARE
 case|:
 name|factor
 operator|=
@@ -3169,7 +3136,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CONICAL_SYMMETRIC
+name|GIMP_CONICAL_SYMMETRIC
 case|:
 name|factor
 operator|=
@@ -3202,7 +3169,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CONICAL_ASYMMETRIC
+name|GIMP_CONICAL_ASYMMETRIC
 case|:
 name|factor
 operator|=
@@ -3235,7 +3202,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHAPEBURST_ANGULAR
+name|GIMP_SHAPEBURST_ANGULAR
 case|:
 name|factor
 operator|=
@@ -3248,7 +3215,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHAPEBURST_SPHERICAL
+name|GIMP_SHAPEBURST_SPHERICAL
 case|:
 name|factor
 operator|=
@@ -3261,7 +3228,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHAPEBURST_DIMPLED
+name|GIMP_SHAPEBURST_DIMPLED
 case|:
 name|factor
 operator|=
@@ -3274,7 +3241,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SPIRAL_CLOCKWISE
+name|GIMP_SPIRAL_CLOCKWISE
 case|:
 name|factor
 operator|=
@@ -3309,7 +3276,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SPIRAL_ANTICLOCKWISE
+name|GIMP_SPIRAL_ANTICLOCKWISE
 case|:
 name|factor
 operator|=
@@ -3369,7 +3336,7 @@ name|rbd
 operator|->
 name|blend_mode
 operator|==
-name|CUSTOM_MODE
+name|GIMP_CUSTOM_MODE
 condition|)
 block|{
 name|gimp_gradient_get_color_at
@@ -3497,7 +3464,7 @@ name|rbd
 operator|->
 name|blend_mode
 operator|==
-name|FG_BG_HSV_MODE
+name|GIMP_FG_BG_HSV_MODE
 condition|)
 name|gimp_hsv_to_rgb_double
 argument_list|(
@@ -3690,7 +3657,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_fill_region (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gint width,gint height,BlendMode blend_mode,GradientType gradient_type,gdouble offset,RepeatMode repeat,gint supersample,gint max_depth,gdouble threshold,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gradient_fill_region (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gint width,gint height,GimpBlendMode blend_mode,GimpGradientType gradient_type,gdouble offset,GimpRepeatMode repeat,gint supersample,gint max_depth,gdouble threshold,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gradient_fill_region
 parameter_list|(
 name|GimpImage
@@ -3711,16 +3678,16 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|BlendMode
+name|GimpBlendMode
 name|blend_mode
 parameter_list|,
-name|GradientType
+name|GimpGradientType
 name|gradient_type
 parameter_list|,
 name|gdouble
 name|offset
 parameter_list|,
-name|RepeatMode
+name|GimpRepeatMode
 name|repeat
 parameter_list|,
 name|gint
@@ -3830,11 +3797,11 @@ name|blend_mode
 condition|)
 block|{
 case|case
-name|FG_BG_RGB_MODE
+name|GIMP_FG_BG_RGB_MODE
 case|:
 break|break;
 case|case
-name|FG_BG_HSV_MODE
+name|GIMP_FG_BG_HSV_MODE
 case|:
 comment|/* Convert to HSV */
 name|gimp_rgb_to_hsv_double
@@ -3887,7 +3854,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|FG_TRANS_MODE
+name|GIMP_FG_TRANS_MODE
 case|:
 comment|/* Color does not change, just the opacity */
 name|rbd
@@ -3909,7 +3876,7 @@ expr_stmt|;
 comment|/* transparent */
 break|break;
 case|case
-name|CUSTOM_MODE
+name|GIMP_CUSTOM_MODE
 case|:
 break|break;
 default|default:
@@ -3925,7 +3892,7 @@ name|gradient_type
 condition|)
 block|{
 case|case
-name|RADIAL
+name|GIMP_RADIAL
 case|:
 name|rbd
 operator|.
@@ -3950,7 +3917,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SQUARE
+name|GIMP_SQUARE
 case|:
 name|rbd
 operator|.
@@ -3975,22 +3942,22 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CONICAL_SYMMETRIC
+name|GIMP_CONICAL_SYMMETRIC
 case|:
 case|case
-name|CONICAL_ASYMMETRIC
+name|GIMP_CONICAL_ASYMMETRIC
 case|:
 case|case
-name|SPIRAL_CLOCKWISE
+name|GIMP_SPIRAL_CLOCKWISE
 case|:
 case|case
-name|SPIRAL_ANTICLOCKWISE
+name|GIMP_SPIRAL_ANTICLOCKWISE
 case|:
 case|case
-name|LINEAR
+name|GIMP_LINEAR
 case|:
 case|case
-name|BILINEAR
+name|GIMP_BILINEAR
 case|:
 name|rbd
 operator|.
@@ -4059,13 +4026,13 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|SHAPEBURST_ANGULAR
+name|GIMP_SHAPEBURST_ANGULAR
 case|:
 case|case
-name|SHAPEBURST_SPHERICAL
+name|GIMP_SHAPEBURST_SPHERICAL
 case|:
 case|case
-name|SHAPEBURST_DIMPLED
+name|GIMP_SHAPEBURST_DIMPLED
 case|:
 name|rbd
 operator|.
@@ -4115,7 +4082,7 @@ name|repeat
 condition|)
 block|{
 case|case
-name|REPEAT_NONE
+name|GIMP_REPEAT_NONE
 case|:
 name|rbd
 operator|.
@@ -4125,7 +4092,7 @@ name|gradient_repeat_none
 expr_stmt|;
 break|break;
 case|case
-name|REPEAT_SAWTOOTH
+name|GIMP_REPEAT_SAWTOOTH
 case|:
 name|rbd
 operator|.
@@ -4135,7 +4102,7 @@ name|gradient_repeat_sawtooth
 expr_stmt|;
 break|break;
 case|case
-name|REPEAT_TRIANGULAR
+name|GIMP_REPEAT_TRIANGULAR
 case|:
 name|rbd
 operator|.

@@ -6741,7 +6741,7 @@ name|NULL
 block|,
 name|gradient_editor_blending_func_cmd_callback
 block|,
-name|GRAD_LINEAR
+name|GIMP_GRAD_LINEAR
 block|,
 literal|"<RadioItem>"
 block|}
@@ -6764,7 +6764,7 @@ name|NULL
 block|,
 name|gradient_editor_blending_func_cmd_callback
 block|,
-name|GRAD_CURVED
+name|GIMP_GRAD_CURVED
 block|,
 literal|"/blendingfunction/Linear"
 block|}
@@ -6787,7 +6787,7 @@ name|NULL
 block|,
 name|gradient_editor_blending_func_cmd_callback
 block|,
-name|GRAD_SINE
+name|GIMP_GRAD_SINE
 block|,
 literal|"/blendingfunction/Linear"
 block|}
@@ -6810,7 +6810,7 @@ name|NULL
 block|,
 name|gradient_editor_blending_func_cmd_callback
 block|,
-name|GRAD_SPHERE_INCREASING
+name|GIMP_GRAD_SPHERE_INCREASING
 block|,
 literal|"/blendingfunction/Linear"
 block|}
@@ -6833,7 +6833,7 @@ name|NULL
 block|,
 name|gradient_editor_blending_func_cmd_callback
 block|,
-name|GRAD_SPHERE_DECREASING
+name|GIMP_GRAD_SPHERE_DECREASING
 block|,
 literal|"/blendingfunction/Linear"
 block|}
@@ -6879,7 +6879,7 @@ name|NULL
 block|,
 name|gradient_editor_coloring_type_cmd_callback
 block|,
-name|GRAD_RGB
+name|GIMP_GRAD_RGB
 block|,
 literal|"<RadioItem>"
 block|}
@@ -6902,7 +6902,7 @@ name|NULL
 block|,
 name|gradient_editor_coloring_type_cmd_callback
 block|,
-name|GRAD_HSV_CCW
+name|GIMP_GRAD_HSV_CCW
 block|,
 literal|"/coloringtype/RGB"
 block|}
@@ -6925,7 +6925,7 @@ name|NULL
 block|,
 name|gradient_editor_coloring_type_cmd_callback
 block|,
-name|GRAD_HSV_CW
+name|GIMP_GRAD_HSV_CW
 block|,
 literal|"/coloringtype/RGB"
 block|}

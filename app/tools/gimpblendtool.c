@@ -181,11 +181,11 @@ modifier|*
 name|offset_w
 decl_stmt|;
 DECL|member|blend_mode
-name|BlendMode
+name|GimpBlendMode
 name|blend_mode
 decl_stmt|;
 DECL|member|blend_mode_d
-name|BlendMode
+name|GimpBlendMode
 name|blend_mode_d
 decl_stmt|;
 DECL|member|blend_mode_w
@@ -194,11 +194,11 @@ modifier|*
 name|blend_mode_w
 decl_stmt|;
 DECL|member|gradient_type
-name|GradientType
+name|GimpGradientType
 name|gradient_type
 decl_stmt|;
 DECL|member|gradient_type_d
-name|GradientType
+name|GimpGradientType
 name|gradient_type_d
 decl_stmt|;
 DECL|member|gradient_type_w
@@ -207,11 +207,11 @@ modifier|*
 name|gradient_type_w
 decl_stmt|;
 DECL|member|repeat
-name|RepeatMode
+name|GimpRepeatMode
 name|repeat
 decl_stmt|;
 DECL|member|repeat_d
-name|RepeatMode
+name|GimpRepeatMode
 name|repeat_d
 decl_stmt|;
 DECL|member|repeat_w
@@ -2255,7 +2255,7 @@ name|options
 operator|->
 name|blend_mode_d
 operator|=
-name|FG_BG_RGB_MODE
+name|GIMP_FG_BG_RGB_MODE
 expr_stmt|;
 name|options
 operator|->
@@ -2265,7 +2265,7 @@ name|options
 operator|->
 name|gradient_type_d
 operator|=
-name|LINEAR
+name|GIMP_LINEAR
 expr_stmt|;
 name|options
 operator|->
@@ -2275,7 +2275,7 @@ name|options
 operator|->
 name|repeat_d
 operator|=
-name|REPEAT_NONE
+name|GIMP_REPEAT_NONE
 expr_stmt|;
 name|options
 operator|->
@@ -2560,7 +2560,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|FG_BG_RGB_MODE
+name|GIMP_FG_BG_RGB_MODE
 argument_list|)
 argument_list|,
 name|NULL
@@ -2572,7 +2572,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|FG_BG_HSV_MODE
+name|GIMP_FG_BG_HSV_MODE
 argument_list|)
 argument_list|,
 name|NULL
@@ -2584,7 +2584,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|FG_TRANS_MODE
+name|GIMP_FG_TRANS_MODE
 argument_list|)
 argument_list|,
 name|NULL
@@ -2596,7 +2596,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|CUSTOM_MODE
+name|GIMP_CUSTOM_MODE
 argument_list|)
 argument_list|,
 name|NULL
@@ -2663,7 +2663,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|LINEAR
+name|GIMP_LINEAR
 argument_list|)
 argument_list|,
 name|NULL
@@ -2675,7 +2675,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BILINEAR
+name|GIMP_BILINEAR
 argument_list|)
 argument_list|,
 name|NULL
@@ -2687,7 +2687,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|RADIAL
+name|GIMP_RADIAL
 argument_list|)
 argument_list|,
 name|NULL
@@ -2699,7 +2699,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SQUARE
+name|GIMP_SQUARE
 argument_list|)
 argument_list|,
 name|NULL
@@ -2711,7 +2711,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|CONICAL_SYMMETRIC
+name|GIMP_CONICAL_SYMMETRIC
 argument_list|)
 argument_list|,
 name|NULL
@@ -2723,7 +2723,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|CONICAL_ASYMMETRIC
+name|GIMP_CONICAL_ASYMMETRIC
 argument_list|)
 argument_list|,
 name|NULL
@@ -2735,7 +2735,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SHAPEBURST_ANGULAR
+name|GIMP_SHAPEBURST_ANGULAR
 argument_list|)
 argument_list|,
 name|NULL
@@ -2747,7 +2747,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SHAPEBURST_SPHERICAL
+name|GIMP_SHAPEBURST_SPHERICAL
 argument_list|)
 argument_list|,
 name|NULL
@@ -2759,7 +2759,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SHAPEBURST_DIMPLED
+name|GIMP_SHAPEBURST_DIMPLED
 argument_list|)
 argument_list|,
 name|NULL
@@ -2771,7 +2771,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SPIRAL_CLOCKWISE
+name|GIMP_SPIRAL_CLOCKWISE
 argument_list|)
 argument_list|,
 name|NULL
@@ -2783,7 +2783,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SPIRAL_ANTICLOCKWISE
+name|GIMP_SPIRAL_ANTICLOCKWISE
 argument_list|)
 argument_list|,
 name|NULL
@@ -2853,7 +2853,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|REPEAT_NONE
+name|GIMP_REPEAT_NONE
 argument_list|)
 argument_list|,
 name|NULL
@@ -2865,7 +2865,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|REPEAT_SAWTOOTH
+name|GIMP_REPEAT_SAWTOOTH
 argument_list|)
 argument_list|,
 name|NULL
@@ -2877,7 +2877,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|REPEAT_TRIANGULAR
+name|GIMP_REPEAT_TRIANGULAR
 argument_list|)
 argument_list|,
 name|NULL
@@ -3641,14 +3641,14 @@ operator|->
 name|blend_mode_w
 argument_list|)
 argument_list|,
-name|CUSTOM_MODE
+name|GIMP_CUSTOM_MODE
 argument_list|)
 expr_stmt|;
 name|options
 operator|->
 name|blend_mode
 operator|=
-name|CUSTOM_MODE
+name|GIMP_CUSTOM_MODE
 expr_stmt|;
 block|}
 end_function

@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-enums.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -269,11 +275,11 @@ if|if
 condition|(
 name|blend_mode
 operator|<
-name|FG_BG_RGB_MODE
+name|GIMP_FG_BG_RGB_MODE
 operator|||
 name|blend_mode
 operator|>
-name|CUSTOM_MODE
+name|GIMP_CUSTOM_MODE
 condition|)
 name|success
 operator|=
@@ -319,11 +325,11 @@ if|if
 condition|(
 name|gradient_type
 operator|<
-name|LINEAR
+name|GIMP_LINEAR
 operator|||
 name|gradient_type
 operator|>
-name|SPIRAL_ANTICLOCKWISE
+name|GIMP_SPIRAL_ANTICLOCKWISE
 condition|)
 name|success
 operator|=
@@ -390,11 +396,11 @@ if|if
 condition|(
 name|repeat
 operator|<
-name|REPEAT_NONE
+name|GIMP_REPEAT_NONE
 operator|||
 name|repeat
 operator|>
-name|REPEAT_TRIANGULAR
+name|GIMP_REPEAT_TRIANGULAR
 condition|)
 name|success
 operator|=
@@ -610,7 +616,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"blend_mode"
 block|,
-literal|"The type of blend: { FG_BG_RGB (0), FG_BG_HSV (1), FG_TRANS (2), CUSTOM (3) }"
+literal|"The type of blend: { GIMP_FG_BG_RGB (0), GIMP_FG_BG_HSV (1), GIMP_FG_TRANS (2), GIMP_CUSTOM (3) }"
 block|}
 block|,
 block|{
@@ -626,7 +632,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"gradient_type"
 block|,
-literal|"The type of gradient: { LINEAR (0), BILINEAR (1), RADIAL (2), SQUARE (3), CONICAL_SYMMETRIC (4), CONICAL_ASYMMETRIC (5), SHAPEBURST_ANGULAR (6), SHAPEBURST_SPHERICAL (7), SHAPEBURST_DIMPLED (8), SPIRAL_CLOCKWISE (9), SPIRAL_ANTICLOCKWISE (10) }"
+literal|"The type of gradient: { GIMP_LINEAR (0), GIMP_BILINEAR (1), GIMP_RADIAL (2), GIMP_SQUARE (3), GIMP_CONICAL_SYMMETRIC (4), GIMP_CONICAL_ASYMMETRIC (5), GIMP_SHAPEBURST_ANGULAR (6), GIMP_SHAPEBURST_SPHERICAL (7), GIMP_SHAPEBURST_DIMPLED (8), GIMP_SPIRAL_CLOCKWISE (9), GIMP_SPIRAL_ANTICLOCKWISE (10) }"
 block|}
 block|,
 block|{
@@ -650,7 +656,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"repeat"
 block|,
-literal|"Repeat mode: { REPEAT_NONE (0), REPEAT_SAWTOOTH (1), REPEAT_TRIANGULAR (2) }"
+literal|"Repeat mode: { GIMP_REPEAT_NONE (0), GIMP_REPEAT_SAWTOOTH (1), GIMP_REPEAT_TRIANGULAR (2) }"
 block|}
 block|,
 block|{

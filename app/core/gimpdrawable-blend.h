@@ -24,13 +24,13 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|BlendMode
+name|GimpBlendMode
 name|blend_mode
 parameter_list|,
 name|gint
 name|paint_mode
 parameter_list|,
-name|GradientType
+name|GimpGradientType
 name|gradient_type
 parameter_list|,
 name|gdouble
@@ -39,7 +39,7 @@ parameter_list|,
 name|gdouble
 name|offset
 parameter_list|,
-name|RepeatMode
+name|GimpRepeatMode
 name|repeat
 parameter_list|,
 name|gint
