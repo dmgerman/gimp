@@ -31,6 +31,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<errno.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -167,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4160030103
+DECL|enum|__anon2a47c3b80103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -187,7 +193,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4160030203
+DECL|enum|__anon2a47c3b80203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -203,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4160030308
+DECL|struct|__anon2a47c3b80308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -225,7 +231,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2a416003040a
+DECL|union|__anon2a47c3b8040a
 block|{
 DECL|member|d
 name|gdouble
@@ -254,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4160030508
+DECL|struct|__anon2a47c3b80508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -284,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4160030608
+DECL|struct|__anon2a47c3b80608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -319,7 +325,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4160030708
+DECL|struct|__anon2a47c3b80708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -355,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4160030808
+DECL|struct|__anon2a47c3b80808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -422,7 +428,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4160030908
+DECL|struct|__anon2a47c3b80908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -624,7 +630,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4160030a08
+DECL|struct|__anon2a47c3b80a08
 block|{
 DECL|member|run
 name|gboolean
