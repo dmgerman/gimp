@@ -1252,19 +1252,12 @@ name|p2
 operator|+
 literal|1
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"adding plug-in action '%s' (%s)\n"
-argument_list|,
-name|proc_def
-operator|->
-name|db_info
-operator|.
-name|name
-argument_list|,
-name|label
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_print ("adding plug-in action '%s' (%s)\n",                proc_def->db_info.name, label);
+endif|#
+directive|endif
 name|action
 operator|=
 name|gimp_plug_in_action_new
@@ -1414,17 +1407,12 @@ condition|(
 name|action
 condition|)
 block|{
-name|g_print
-argument_list|(
-literal|"removing plug-in action '%s'\n"
-argument_list|,
-name|proc_def
-operator|->
-name|db_info
-operator|.
-name|name
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_print ("removing plug-in action '%s'\n",                proc_def->db_info.name);
+endif|#
+directive|endif
 name|gtk_action_group_remove_action
 argument_list|(
 name|GTK_ACTION_GROUP
@@ -1589,15 +1577,12 @@ name|p2
 operator|+
 literal|1
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"adding plug-in submenu '%s' (%s)\n"
-argument_list|,
-name|path_original
-argument_list|,
-name|label
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_print ("adding plug-in submenu '%s' (%s)\n",                path_original, label);
+endif|#
+directive|endif
 name|action
 operator|=
 name|gtk_action_new

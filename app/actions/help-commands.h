@@ -20,9 +20,9 @@ begin_function_decl
 name|void
 name|help_help_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -34,9 +34,9 @@ begin_function_decl
 name|void
 name|help_context_help_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

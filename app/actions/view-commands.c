@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpactiongroup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdock.h"
 end_include
 
@@ -102,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpitemfactory.h"
+file|"widgets/gimpuimanager.h"
 end_include
 
 begin_include
@@ -144,6 +150,24 @@ value|if (GIMP_IS_DISPLAY (data)) \     gdisp = data; \   else if (GIMP_IS_GIMP 
 end_define
 
 begin_define
+DECL|macro|SET_ACTIVE (manager,group_name,action_name,active)
+define|#
+directive|define
+name|SET_ACTIVE
+parameter_list|(
+name|manager
+parameter_list|,
+name|group_name
+parameter_list|,
+name|action_name
+parameter_list|,
+name|active
+parameter_list|)
+define|\
+value|{ GimpActionGroup *group = \       gimp_ui_manager_get_action_group (manager, group_name); \     gimp_action_group_set_action_active (group, action_name, active); }
+end_define
+
+begin_define
 DECL|macro|IS_ACTIVE_DISPLAY (gdisp)
 define|#
 directive|define
@@ -157,12 +181,12 @@ end_define
 
 begin_function
 name|void
-DECL|function|view_zoom_out_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_zoom_out_cmd_callback (GtkAction * action,gpointer data)
 name|view_zoom_out_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -198,12 +222,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_in_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_zoom_in_cmd_callback (GtkAction * action,gpointer data)
 name|view_zoom_in_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -239,12 +263,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_fit_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_zoom_fit_cmd_callback (GtkAction * action,gpointer data)
 name|view_zoom_fit_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -276,18 +300,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_cmd_callback (GtkWidget * widget,gpointer data,guint scale)
+DECL|function|view_zoom_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
 name|view_zoom_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|GtkAction
+modifier|*
+name|current
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|scale
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -298,6 +323,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|gint
+name|value
+decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
@@ -305,17 +333,6 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-return|return;
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
@@ -325,11 +342,48 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+name|value
+operator|=
+name|gtk_radio_action_get_current_value
+argument_list|(
+name|GTK_RADIO_ACTION
+argument_list|(
+name|action
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|value
+operator|==
+literal|0
+comment|/* Other... */
+condition|)
+block|{
+comment|/* check if we are activated by the user        * or from view_actions_set_zoom()        */
+if|if
+condition|(
+name|shell
+operator|->
+name|scale
+operator|!=
+name|shell
+operator|->
+name|other_scale
+condition|)
+name|gimp_display_shell_scale_dialog
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 if|if
 condition|(
 name|fabs
 argument_list|(
-name|scale
+name|value
 operator|-
 name|shell
 operator|->
@@ -347,89 +401,23 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
-name|scale
+name|value
 operator|/
 literal|10000
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-name|void
-DECL|function|view_zoom_other_cmd_callback (GtkWidget * widget,gpointer data)
-name|view_zoom_other_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
-name|return_if_no_display
-argument_list|(
-name|gdisp
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-return|return;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
-comment|/*  check if we are activated by the user or from image_menu_set_zoom()  */
-if|if
-condition|(
-name|shell
-operator|->
-name|scale
-operator|!=
-name|shell
-operator|->
-name|other_scale
-condition|)
-name|gimp_display_shell_scale_dialog
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|view_dot_for_dot_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_dot_for_dot_cmd_callback (GtkAction * action,gpointer data)
 name|view_dot_for_dot_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -442,6 +430,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -459,42 +450,41 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+name|active
+operator|!=
 name|shell
 operator|->
 name|dot_for_dot
-operator|!=
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
 condition|)
 block|{
 name|gimp_display_shell_scale_set_dot_for_dot
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
-name|gimp_item_factory_set_active
-argument_list|(
-name|GTK_ITEM_FACTORY
+name|SET_ACTIVE
 argument_list|(
 name|shell
 operator|->
-name|menubar_factory
-argument_list|)
+name|menubar_manager
 argument_list|,
-literal|"/View/Dot for Dot"
+literal|"view"
+argument_list|,
+literal|"view-dot-for-dot"
 argument_list|,
 name|shell
 operator|->
@@ -508,16 +498,15 @@ argument_list|(
 name|gdisp
 argument_list|)
 condition|)
-name|gimp_item_factory_set_active
-argument_list|(
-name|GTK_ITEM_FACTORY
+name|SET_ACTIVE
 argument_list|(
 name|shell
 operator|->
-name|popup_factory
-argument_list|)
+name|popup_manager
 argument_list|,
-literal|"/View/Dot for Dot"
+literal|"view"
+argument_list|,
+literal|"view-dot-for-dot"
 argument_list|,
 name|shell
 operator|->
@@ -530,12 +519,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_info_window_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_info_window_cmd_callback (GtkAction * action,gpointer data)
 name|view_info_window_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -628,12 +617,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_navigation_window_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_navigation_window_cmd_callback (GtkAction * action,gpointer data)
 name|view_navigation_window_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -669,7 +658,9 @@ name|global_dock_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
-name|widget
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 argument_list|,
 literal|"gimp-navigation-view"
@@ -683,12 +674,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_display_filters_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_display_filters_cmd_callback (GtkAction * action,gpointer data)
 name|view_display_filters_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -770,12 +761,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_selection_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_toggle_selection_cmd_callback (GtkAction * action,gpointer data)
 name|view_toggle_selection_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -788,6 +779,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -803,17 +797,22 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_selection
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -822,12 +821,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_layer_boundary_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_toggle_layer_boundary_cmd_callback (GtkAction * action,gpointer data)
 name|view_toggle_layer_boundary_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -840,6 +839,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -855,17 +857,22 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_layer
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -874,12 +881,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_menubar_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_toggle_menubar_cmd_callback (GtkAction * action,gpointer data)
 name|view_toggle_menubar_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -892,6 +899,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -907,17 +917,22 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_menubar
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -926,12 +941,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_rulers_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_toggle_rulers_cmd_callback (GtkAction * action,gpointer data)
 name|view_toggle_rulers_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -944,6 +959,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -959,17 +977,22 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_rulers
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -978,12 +1001,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_scrollbars_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_toggle_scrollbars_cmd_callback (GtkAction * action,gpointer data)
 name|view_toggle_scrollbars_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -996,6 +1019,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -1011,17 +1037,22 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_scrollbars
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -1030,12 +1061,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_statusbar_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_toggle_statusbar_cmd_callback (GtkAction * action,gpointer data)
 name|view_toggle_statusbar_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1048,6 +1079,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -1063,17 +1097,22 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_statusbar
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -1082,12 +1121,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_guides_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_toggle_guides_cmd_callback (GtkAction * action,gpointer data)
 name|view_toggle_guides_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1100,6 +1139,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -1115,17 +1157,22 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_guides
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -1134,12 +1181,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_guides_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_snap_to_guides_cmd_callback (GtkAction * action,gpointer data)
 name|view_snap_to_guides_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1152,6 +1199,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -1169,82 +1219,34 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
-name|snap_to_guides
-operator|!=
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
-condition|)
-block|{
-name|shell
-operator|->
-name|snap_to_guides
 operator|=
-name|GTK_CHECK_MENU_ITEM
+name|gtk_toggle_action_get_active
 argument_list|(
-name|widget
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
 argument_list|)
-operator|->
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_set_snap_to_guides
+argument_list|(
+name|shell
+argument_list|,
 name|active
-expr_stmt|;
-name|gimp_item_factory_set_active
-argument_list|(
-name|GTK_ITEM_FACTORY
-argument_list|(
-name|shell
-operator|->
-name|menubar_factory
-argument_list|)
-argument_list|,
-literal|"/View/Snap to Guides"
-argument_list|,
-name|shell
-operator|->
-name|snap_to_guides
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|IS_ACTIVE_DISPLAY
-argument_list|(
-name|gdisp
-argument_list|)
-condition|)
-name|gimp_item_factory_set_active
-argument_list|(
-name|GTK_ITEM_FACTORY
-argument_list|(
-name|shell
-operator|->
-name|popup_factory
-argument_list|)
-argument_list|,
-literal|"/View/Snap to Guides"
-argument_list|,
-name|shell
-operator|->
-name|snap_to_guides
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|view_toggle_grid_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_toggle_grid_cmd_callback (GtkAction * action,gpointer data)
 name|view_toggle_grid_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1257,6 +1259,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -1272,17 +1277,22 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_grid
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -1291,12 +1301,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_snap_to_grid_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_snap_to_grid_cmd_callback (GtkAction * action,gpointer data)
 name|view_snap_to_grid_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1309,6 +1319,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -1326,82 +1339,34 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
-name|snap_to_grid
-operator|!=
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
-condition|)
-block|{
-name|shell
-operator|->
-name|snap_to_grid
 operator|=
-name|GTK_CHECK_MENU_ITEM
+name|gtk_toggle_action_get_active
 argument_list|(
-name|widget
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
 argument_list|)
-operator|->
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_set_snap_to_grid
+argument_list|(
+name|shell
+argument_list|,
 name|active
-expr_stmt|;
-name|gimp_item_factory_set_active
-argument_list|(
-name|GTK_ITEM_FACTORY
-argument_list|(
-name|shell
-operator|->
-name|menubar_factory
-argument_list|)
-argument_list|,
-literal|"/View/Snap to Grid"
-argument_list|,
-name|shell
-operator|->
-name|snap_to_grid
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|IS_ACTIVE_DISPLAY
-argument_list|(
-name|gdisp
-argument_list|)
-condition|)
-name|gimp_item_factory_set_active
-argument_list|(
-name|GTK_ITEM_FACTORY
-argument_list|(
-name|shell
-operator|->
-name|popup_factory
-argument_list|)
-argument_list|,
-literal|"/View/Snap to Grid"
-argument_list|,
-name|shell
-operator|->
-name|snap_to_grid
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|view_new_view_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_new_view_cmd_callback (GtkAction * action,gpointer data)
 name|view_new_view_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1445,12 +1410,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_shrink_wrap_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_shrink_wrap_cmd_callback (GtkAction * action,gpointer data)
 name|view_shrink_wrap_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1482,12 +1447,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_fullscreen_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_fullscreen_cmd_callback (GtkAction * action,gpointer data)
 name|view_fullscreen_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1500,6 +1465,9 @@ decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|gboolean
 name|fullscreen
@@ -1520,15 +1488,20 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_set_fullscreen
 argument_list|(
 name|shell
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -1546,26 +1519,20 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|fullscreen
-operator|!=
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
+operator|!=
+name|fullscreen
 condition|)
 block|{
-name|gimp_item_factory_set_active
-argument_list|(
-name|GTK_ITEM_FACTORY
+name|SET_ACTIVE
 argument_list|(
 name|shell
 operator|->
-name|menubar_factory
-argument_list|)
+name|menubar_manager
 argument_list|,
-literal|"/View/Fullscreen"
+literal|"view"
+argument_list|,
+literal|"view-fullscreen"
 argument_list|,
 name|fullscreen
 argument_list|)
@@ -1577,16 +1544,15 @@ argument_list|(
 name|gdisp
 argument_list|)
 condition|)
-name|gimp_item_factory_set_active
-argument_list|(
-name|GTK_ITEM_FACTORY
+name|SET_ACTIVE
 argument_list|(
 name|shell
 operator|->
-name|popup_factory
-argument_list|)
+name|popup_manager
 argument_list|,
-literal|"/View/Fullscreen"
+literal|"view"
+argument_list|,
+literal|"view-fullscreen"
 argument_list|,
 name|fullscreen
 argument_list|)
@@ -1680,12 +1646,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_change_screen_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|view_change_screen_cmd_callback (GtkAction * action,gpointer data)
 name|view_change_screen_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

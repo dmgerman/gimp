@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channels-commands.h"
 end_include
 
@@ -193,18 +199,32 @@ define|\
 value|return_if_no_image (gimage,data); \   channel = gimp_image_get_active_channel (gimage); \   if (! channel) \     return
 end_define
 
+begin_define
+DECL|macro|return_if_no_widget (widget,data)
+define|#
+directive|define
+name|return_if_no_widget
+parameter_list|(
+name|widget
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|if (GIMP_IS_DISPLAY (data)) \     widget = ((GimpDisplay *) data)->shell; \   else if (GIMP_IS_GIMP (data)) \     widget = dialogs_get_toolbox (); \   else if (GIMP_IS_DOCK (data)) \     widget = data; \   else if (GIMP_IS_COMPONENT_EDITOR (data)) \     widget = data; \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     widget = data; \   else \     widget = NULL; \   \   if (! widget) \     return
+end_define
+
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|channels_new_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|channels_new_cmd_callback (GtkAction * action,gpointer data)
 name|channels_new_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -214,9 +234,20 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -237,12 +268,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_raise_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|channels_raise_cmd_callback (GtkAction * action,gpointer data)
 name|channels_raise_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -282,12 +313,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_raise_to_top_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|channels_raise_to_top_cmd_callback (GtkAction * action,gpointer data)
 name|channels_raise_to_top_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -327,12 +358,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lower_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|channels_lower_cmd_callback (GtkAction * action,gpointer data)
 name|channels_lower_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -372,12 +403,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lower_to_bottom_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|channels_lower_to_bottom_cmd_callback (GtkAction * action,gpointer data)
 name|channels_lower_to_bottom_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -417,12 +448,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_duplicate_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|channels_duplicate_cmd_callback (GtkAction * action,gpointer data)
 name|channels_duplicate_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -619,12 +650,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_delete_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|channels_delete_cmd_callback (GtkAction * action,gpointer data)
 name|channels_delete_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -664,18 +695,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_to_selection_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|channels_to_selection_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|channels_to_selection_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpChannelOps
@@ -690,7 +721,7 @@ operator|=
 operator|(
 name|GimpChannelOps
 operator|)
-name|action
+name|value
 expr_stmt|;
 if|if
 condition|(
@@ -791,12 +822,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_edit_attributes_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|channels_edit_attributes_cmd_callback (GtkAction * action,gpointer data)
 name|channels_edit_attributes_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -810,11 +841,22 @@ name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|gimage
 argument_list|,
 name|active_channel
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)

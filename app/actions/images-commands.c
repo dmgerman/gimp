@@ -63,12 +63,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|images_raise_views_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|images_raise_views_cmd_callback (GtkAction * action,gpointer data)
 name|images_raise_views_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -107,12 +107,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|images_new_view_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|images_new_view_cmd_callback (GtkAction * action,gpointer data)
 name|images_new_view_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -151,12 +151,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|images_delete_image_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|images_delete_image_cmd_callback (GtkAction * action,gpointer data)
 name|images_delete_image_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

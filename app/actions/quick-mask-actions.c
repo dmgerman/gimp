@@ -375,12 +375,16 @@ argument_list|(
 literal|"qmask-toggle"
 argument_list|,
 name|gimage
+operator|&&
+name|gimage
 operator|->
 name|qmask_state
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimage
+operator|&&
 name|gimage
 operator|->
 name|qmask_inverted
@@ -400,6 +404,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimage
+condition|)
 name|SET_COLOR
 argument_list|(
 literal|"qmask-configure"

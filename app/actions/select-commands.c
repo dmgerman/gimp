@@ -295,12 +295,12 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|select_invert_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_invert_cmd_callback (GtkAction * action,gpointer data)
 name|select_invert_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -337,12 +337,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_all_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_all_cmd_callback (GtkAction * action,gpointer data)
 name|select_all_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -379,12 +379,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_none_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_none_cmd_callback (GtkAction * action,gpointer data)
 name|select_none_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -423,12 +423,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_from_vectors_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_from_vectors_cmd_callback (GtkAction * action,gpointer data)
 name|select_from_vectors_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -497,12 +497,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_float_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_float_cmd_callback (GtkAction * action,gpointer data)
 name|select_float_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -555,12 +555,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_feather_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_feather_cmd_callback (GtkAction * action,gpointer data)
 name|select_feather_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -667,12 +667,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_sharpen_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_sharpen_cmd_callback (GtkAction * action,gpointer data)
 name|select_sharpen_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -709,12 +709,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_shrink_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_shrink_cmd_callback (GtkAction * action,gpointer data)
 name|select_shrink_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -882,12 +882,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_grow_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_grow_cmd_callback (GtkAction * action,gpointer data)
 name|select_grow_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -994,12 +994,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_border_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_border_cmd_callback (GtkAction * action,gpointer data)
 name|select_border_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1106,24 +1106,24 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_save_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_save_cmd_callback (GtkAction * action,gpointer data)
 name|select_save_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|gimage
+name|gdisp
 decl_stmt|;
-name|return_if_no_image
+name|return_if_no_display
 argument_list|(
-name|gimage
+name|gdisp
 argument_list|,
 name|data
 argument_list|)
@@ -1132,12 +1132,16 @@ name|gimp_selection_save
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
+name|gdisp
+operator|->
 name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
+name|gdisp
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -1147,7 +1151,9 @@ name|global_dock_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
-name|widget
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 argument_list|,
 literal|"gimp-channel-list"
@@ -1161,12 +1167,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_toggle_quickmask_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|select_toggle_quickmask_cmd_callback (GtkAction * action,gpointer data)
 name|select_toggle_quickmask_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

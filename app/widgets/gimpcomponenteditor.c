@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpmenufactory.h"
 end_include
 
@@ -95,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a2f0f0103
+DECL|enum|__anon297d2f9b0103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -2082,20 +2076,38 @@ break|break;
 case|case
 literal|3
 case|:
-if|#
-directive|if
-literal|0
-block|gimp_ui_manager_update (GIMP_EDITOR (editor)->ui_manager,                                   GIMP_EDITOR (editor)->popup_data);           gimp_ui_manager_ui_popup (GIMP_EDITOR (editor)->ui_manager,                                     GIMP_EDITOR (editor)->ui_identifier,                                     GIMP_EDITOR (editor)->popup_data,                                     GTK_WIDGET (editor),                                     NULL, NULL, NULL);
-else|#
-directive|else
-name|gimp_item_factory_popup_with_data
+name|gimp_ui_manager_update
 argument_list|(
 name|GIMP_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|item_factory
+name|ui_manager
+argument_list|,
+name|GIMP_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|popup_data
+argument_list|)
+expr_stmt|;
+name|gimp_ui_manager_ui_popup
+argument_list|(
+name|GIMP_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|ui_manager
+argument_list|,
+name|GIMP_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|ui_path
 argument_list|,
 name|GIMP_EDITOR
 argument_list|(
@@ -2116,8 +2128,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 break|break;
 default|default:
 break|break;

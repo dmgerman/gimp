@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b17db0103
+DECL|enum|__anon2c1668da0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1867,6 +1867,10 @@ argument_list|,
 literal|"visible"
 argument_list|,
 name|visible
+condition|?
+name|TRUE
+else|:
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)
@@ -1948,6 +1952,10 @@ argument_list|,
 literal|"sensitive"
 argument_list|,
 name|sensitive
+condition|?
+name|TRUE
+else|:
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2051,6 +2059,10 @@ name|action
 argument_list|)
 argument_list|,
 name|active
+condition|?
+name|TRUE
+else|:
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2985,6 +2997,10 @@ argument_list|,
 literal|"is-important"
 argument_list|,
 name|is_important
+condition|?
+name|TRUE
+else|:
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)

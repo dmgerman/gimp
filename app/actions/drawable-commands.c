@@ -108,13 +108,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable-commands.h"
+file|"gui/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gui/offset-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable-commands.h"
 end_include
 
 begin_include
@@ -153,18 +159,32 @@ define|\
 value|return_if_no_image (gimage,data); \   drawable = gimp_image_active_drawable (gimage); \   if (! drawable) \     return
 end_define
 
+begin_define
+DECL|macro|return_if_no_widget (widget,data)
+define|#
+directive|define
+name|return_if_no_widget
+parameter_list|(
+name|widget
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|if (GIMP_IS_DISPLAY (data)) \     widget = ((GimpDisplay *) data)->shell; \   else if (GIMP_IS_GIMP (data)) \     widget = dialogs_get_toolbox (); \   else if (GIMP_IS_DOCK (data)) \     widget = data; \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     widget = data; \   else \     widget = NULL; \   \   if (! widget) \     return
+end_define
+
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|drawable_desaturate_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|drawable_desaturate_cmd_callback (GtkAction * action,gpointer data)
 name|drawable_desaturate_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -221,12 +241,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_invert_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|drawable_invert_cmd_callback (GtkAction * action,gpointer data)
 name|drawable_invert_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -282,12 +302,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_equalize_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|drawable_equalize_cmd_callback (GtkAction * action,gpointer data)
 name|drawable_equalize_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -345,18 +365,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_flip_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|drawable_flip_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|drawable_flip_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpImage
@@ -417,7 +437,7 @@ condition|(
 operator|(
 name|GimpOrientationType
 operator|)
-name|action
+name|value
 condition|)
 block|{
 case|case
@@ -506,7 +526,7 @@ argument_list|,
 operator|(
 name|GimpOrientationType
 operator|)
-name|action
+name|value
 argument_list|,
 name|axis
 argument_list|,
@@ -553,18 +573,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_rotate_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|drawable_rotate_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|drawable_rotate_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpImage
@@ -695,7 +715,7 @@ argument_list|,
 operator|(
 name|GimpRotationType
 operator|)
-name|action
+name|value
 argument_list|,
 name|center_x
 argument_list|,
@@ -721,7 +741,7 @@ argument_list|,
 operator|(
 name|GimpRotationType
 operator|)
-name|action
+name|value
 argument_list|,
 name|center_x
 argument_list|,
@@ -746,12 +766,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_offset_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|drawable_offset_cmd_callback (GtkAction * action,gpointer data)
 name|drawable_offset_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -767,6 +787,10 @@ name|drawable
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|widget
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|dialog
 decl_stmt|;
 name|return_if_no_drawable
@@ -774,6 +798,13 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)

@@ -97,18 +97,15 @@ end_define
 
 begin_function
 name|void
-DECL|function|tools_default_colors_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tools_default_colors_cmd_callback (GtkAction * action,gpointer data)
 name|tools_default_colors_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|Gimp
@@ -135,18 +132,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_swap_colors_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tools_swap_colors_cmd_callback (GtkAction * action,gpointer data)
 name|tools_swap_colors_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|Gimp
@@ -173,18 +167,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_select_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tools_select_cmd_callback (GtkAction * action,const gchar * value,gpointer data)
 name|tools_select_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|Gimp
@@ -203,26 +199,11 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|identifier
-decl_stmt|;
 name|return_if_no_gimp
 argument_list|(
 name|gimp
 argument_list|,
 name|data
-argument_list|)
-expr_stmt|;
-name|identifier
-operator|=
-name|g_quark_to_string
-argument_list|(
-operator|(
-name|GQuark
-operator|)
-name|action
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -237,7 +218,7 @@ name|gimp
 operator|->
 name|tool_info_list
 argument_list|,
-name|identifier
+name|value
 argument_list|)
 expr_stmt|;
 name|context

@@ -227,7 +227,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|ui_identifier
+name|ui_path
 parameter_list|)
 function_decl|;
 end_function_decl

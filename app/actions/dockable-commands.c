@@ -93,18 +93,20 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dockable_add_tab_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|dockable_add_tab_cmd_callback (GtkAction * action,const gchar * value,gpointer data)
 name|dockable_add_tab_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDockbook
@@ -118,33 +120,13 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|action
+name|value
 condition|)
 block|{
 name|GtkWidget
 modifier|*
 name|dockable
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|identifier
-decl_stmt|;
-name|identifier
-operator|=
-name|g_quark_to_string
-argument_list|(
-operator|(
-name|GQuark
-operator|)
-name|action
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|identifier
-condition|)
-block|{
 name|dockable
 operator|=
 name|gimp_dialog_factory_dockable_new
@@ -159,13 +141,13 @@ name|dockbook
 operator|->
 name|dock
 argument_list|,
-name|identifier
+name|value
 argument_list|,
 operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*  Maybe gimp_dialog_factory_dockable_new() returned an already 	   *  existing singleton dockable, so check if it already is 	   *  attached to a dockbook. 	   */
+comment|/*  Maybe gimp_dialog_factory_dockable_new() returned an already        *  existing singleton dockable, so check if it already is        *  attached to a dockbook.        */
 if|if
 condition|(
 name|dockable
@@ -193,17 +175,16 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
 end_function
 
 begin_function
 name|void
-DECL|function|dockable_close_tab_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|dockable_close_tab_cmd_callback (GtkAction * action,gpointer data)
 name|dockable_close_tab_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -267,12 +248,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_detach_tab_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|dockable_detach_tab_cmd_callback (GtkAction * action,gpointer data)
 name|dockable_detach_tab_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -334,18 +315,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_toggle_view_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|dockable_toggle_view_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
 name|dockable_toggle_view_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|GtkAction
+modifier|*
+name|current
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDockbook
@@ -367,23 +349,18 @@ decl_stmt|;
 name|gint
 name|page_num
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-return|return;
 name|view_type
 operator|=
 operator|(
 name|GimpViewType
 operator|)
+name|gtk_radio_action_get_current_value
+argument_list|(
+name|GTK_RADIO_ACTION
+argument_list|(
 name|action
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|page_num
 operator|=
@@ -641,18 +618,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_preview_size_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|dockable_preview_size_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
 name|dockable_preview_size_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|GtkAction
+modifier|*
+name|current
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDockbook
@@ -674,23 +652,15 @@ decl_stmt|;
 name|gint
 name|page_num
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-return|return;
 name|preview_size
 operator|=
-operator|(
-name|gint
-operator|)
+name|gtk_radio_action_get_current_value
+argument_list|(
+name|GTK_RADIO_ACTION
+argument_list|(
 name|action
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|page_num
 operator|=
@@ -761,18 +731,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_tab_style_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|dockable_tab_style_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
 name|dockable_tab_style_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|GtkAction
+modifier|*
+name|current
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDockbook
@@ -794,23 +765,18 @@ decl_stmt|;
 name|gint
 name|page_num
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-return|return;
 name|tab_style
 operator|=
 operator|(
-name|gint
+name|GimpTabStyle
 operator|)
+name|gtk_radio_action_get_current_value
+argument_list|(
+name|GTK_RADIO_ACTION
+argument_list|(
 name|action
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|page_num
 operator|=
@@ -889,12 +855,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_toggle_image_menu_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|dockable_toggle_image_menu_cmd_callback (GtkAction * action,gpointer data)
 name|dockable_toggle_image_menu_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -909,6 +875,19 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+name|gboolean
+name|active
+decl_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_IMAGE_DOCK
@@ -927,11 +906,6 @@ operator|->
 name|dock
 argument_list|)
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -940,12 +914,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_toggle_auto_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|dockable_toggle_auto_cmd_callback (GtkAction * action,gpointer data)
 name|dockable_toggle_auto_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -960,6 +934,19 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+name|gboolean
+name|active
+decl_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_IMAGE_DOCK
@@ -978,11 +965,6 @@ operator|->
 name|dock
 argument_list|)
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -1074,12 +1056,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_change_screen_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|dockable_change_screen_cmd_callback (GtkAction * action,gpointer data)
 name|dockable_change_screen_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

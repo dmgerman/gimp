@@ -213,6 +213,20 @@ define|\
 value|if (GIMP_IS_DISPLAY (data)) \     gdisp = data; \   else if (GIMP_IS_GIMP (data)) \     gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_DOCK (data)) \     gdisp = gimp_context_get_display (((GimpDock *) data)->context); \   else \     gdisp = NULL; \   if (! gdisp) \     return
 end_define
 
+begin_define
+DECL|macro|return_if_no_widget (widget,data)
+define|#
+directive|define
+name|return_if_no_widget
+parameter_list|(
+name|widget
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|if (GIMP_IS_DISPLAY (data)) \     widget = ((GimpDisplay *) data)->shell; \   else if (GIMP_IS_GIMP (data)) \     widget = dialogs_get_toolbox (); \   else if (GIMP_IS_DOCK (data)) \     widget = data; \   else \     widget = NULL; \   if (! widget) \     return
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -261,18 +275,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_new_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|file_new_cmd_callback (GtkAction * action,gpointer data)
 name|file_new_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|Gimp
@@ -285,6 +296,10 @@ name|gimage
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|widget
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|dialog
 decl_stmt|;
 name|return_if_no_gimp
@@ -294,10 +309,20 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
 comment|/*  if called from the image menu  */
 if|if
 condition|(
-name|action
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|data
+argument_list|)
 condition|)
 name|gimage
 operator|=
@@ -349,12 +374,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_type_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_type_cmd_callback (GtkAction * action,gpointer data)
 name|file_type_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -371,7 +396,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|widget
+name|action
 argument_list|)
 argument_list|,
 literal|"file-proc"
@@ -383,18 +408,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|file_open_cmd_callback (GtkAction * action,gpointer data)
 name|file_open_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|Gimp
@@ -405,6 +427,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_gimp
 argument_list|(
 name|gimp
@@ -412,10 +438,20 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
 comment|/*  if called from the image menu  */
 if|if
 condition|(
-name|action
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|data
+argument_list|)
 condition|)
 name|gimage
 operator|=
@@ -450,18 +486,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_last_opened_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|file_last_opened_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|file_last_opened_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|Gimp
@@ -472,7 +508,7 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
-name|guint
+name|gint
 name|num_entries
 decl_stmt|;
 name|return_if_no_gimp
@@ -493,7 +529,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|action
+name|value
 operator|>=
 name|num_entries
 condition|)
@@ -510,7 +546,7 @@ name|gimp
 operator|->
 name|documents
 argument_list|,
-name|action
+name|value
 argument_list|)
 expr_stmt|;
 if|if
@@ -614,12 +650,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_save_cmd_callback (GtkAction * action,gpointer data)
 name|file_save_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -695,7 +731,7 @@ condition|)
 block|{
 name|file_save_as_cmd_callback
 argument_list|(
-name|widget
+name|action
 argument_list|,
 name|data
 argument_list|)
@@ -790,12 +826,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_as_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_save_as_cmd_callback (GtkAction * action,gpointer data)
 name|file_save_as_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -820,7 +856,9 @@ name|gimage
 argument_list|,
 name|global_menu_factory
 argument_list|,
-name|widget
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
@@ -828,12 +866,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_a_copy_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_save_a_copy_cmd_callback (GtkAction * action,gpointer data)
 name|file_save_a_copy_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -858,7 +896,9 @@ name|gimage
 argument_list|,
 name|global_menu_factory
 argument_list|,
-name|widget
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
@@ -866,12 +906,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_template_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_save_template_cmd_callback (GtkAction * action,gpointer data)
 name|file_save_template_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -942,12 +982,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_revert_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_revert_cmd_callback (GtkAction * action,gpointer data)
 name|file_revert_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1156,12 +1196,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_close_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_close_cmd_callback (GtkAction * action,gpointer data)
 name|file_close_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1195,12 +1235,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_quit_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_quit_cmd_callback (GtkAction * action,gpointer data)
 name|file_quit_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1395,15 +1435,12 @@ block|{
 name|GimpImage
 modifier|*
 name|old_gimage
-decl_stmt|;
-name|old_gimage
-operator|=
-operator|(
-name|GimpImage
-operator|*
-operator|)
+init|=
+name|GIMP_IMAGE
+argument_list|(
 name|data
-expr_stmt|;
+argument_list|)
+decl_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT

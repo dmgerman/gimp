@@ -45,12 +45,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|buffers_paste_buffer_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|buffers_paste_buffer_cmd_callback (GtkAction * action,gpointer data)
 name|buffers_paste_buffer_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -80,12 +80,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|buffers_paste_buffer_into_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|buffers_paste_buffer_into_cmd_callback (GtkAction * action,gpointer data)
 name|buffers_paste_buffer_into_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -115,12 +115,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|buffers_paste_buffer_as_new_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|buffers_paste_buffer_as_new_cmd_callback (GtkAction * action,gpointer data)
 name|buffers_paste_buffer_as_new_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -150,12 +150,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|buffers_delete_buffer_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|buffers_delete_buffer_cmd_callback (GtkAction * action,gpointer data)
 name|buffers_delete_buffer_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

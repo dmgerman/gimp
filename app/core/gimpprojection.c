@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpuimanager.h"
 end_include
 
@@ -137,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2c1ea90103
+DECL|enum|__anon2a46a5f40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -702,7 +696,7 @@ end_function
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_new (GimpImage * gimage,gdouble scale,GimpMenuFactory * menu_factory,GimpItemFactory * popup_factory)
+DECL|function|gimp_display_new (GimpImage * gimage,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager)
 name|gimp_display_new
 parameter_list|(
 name|GimpImage
@@ -716,9 +710,9 @@ name|GimpMenuFactory
 modifier|*
 name|menu_factory
 parameter_list|,
-name|GimpItemFactory
+name|GimpUIManager
 modifier|*
-name|popup_factory
+name|popup_manager
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -788,7 +782,7 @@ name|scale
 argument_list|,
 name|menu_factory
 argument_list|,
-name|popup_factory
+name|popup_manager
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1828,21 +1822,15 @@ name|GimpContext
 modifier|*
 name|user_context
 decl_stmt|;
-name|gimp_item_factory_update
+name|gimp_ui_manager_update
 argument_list|(
 name|shell
 operator|->
-name|menubar_factory
+name|menubar_manager
 argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gimp_ui_manager_update (shell->menubar_manager, shell);
-endif|#
-directive|endif
 name|user_context
 operator|=
 name|gimp_get_user_context
@@ -1863,11 +1851,11 @@ argument_list|(
 name|user_context
 argument_list|)
 condition|)
-name|gimp_item_factory_update
+name|gimp_ui_manager_update
 argument_list|(
 name|shell
 operator|->
-name|popup_factory
+name|popup_manager
 argument_list|,
 name|shell
 argument_list|)

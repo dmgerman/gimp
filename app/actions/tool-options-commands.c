@@ -84,13 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpitemfactory.h"
+file|"widgets/gimptooloptionseditor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimptooloptionseditor.h"
+file|"widgets/gimpuimanager.h"
 end_include
 
 begin_include
@@ -155,12 +155,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tool_options_save_to_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tool_options_save_to_cmd_callback (GtkAction * action,gpointer data)
 name|tool_options_save_to_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -231,12 +231,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_save_new_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tool_options_save_new_cmd_callback (GtkAction * action,gpointer data)
 name|tool_options_save_new_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -269,7 +269,7 @@ name|gimp_get_user_context
 argument_list|(
 name|editor
 operator|->
-name|item_factory
+name|ui_manager
 operator|->
 name|gimp
 argument_list|)
@@ -328,12 +328,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_restore_from_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tool_options_restore_from_cmd_callback (GtkAction * action,gpointer data)
 name|tool_options_restore_from_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -372,12 +372,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_rename_saved_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tool_options_rename_saved_cmd_callback (GtkAction * action,gpointer data)
 name|tool_options_rename_saved_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -405,7 +405,8 @@ argument_list|(
 literal|"Rename Saved Tool Options"
 argument_list|)
 argument_list|,
-name|widget
+name|NULL
+comment|/* FIXME */
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -442,12 +443,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_delete_saved_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tool_options_delete_saved_cmd_callback (GtkAction * action,gpointer data)
 name|tool_options_delete_saved_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -481,12 +482,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_reset_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tool_options_reset_cmd_callback (GtkAction * action,gpointer data)
 name|tool_options_reset_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -525,12 +526,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_reset_all_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tool_options_reset_all_cmd_callback (GtkAction * action,gpointer data)
 name|tool_options_reset_all_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

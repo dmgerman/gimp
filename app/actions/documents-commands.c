@@ -45,12 +45,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|documents_open_document_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|documents_open_document_cmd_callback (GtkAction * action,gpointer data)
 name|documents_open_document_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -80,12 +80,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_raise_or_open_document_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|documents_raise_or_open_document_cmd_callback (GtkAction * action,gpointer data)
 name|documents_raise_or_open_document_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -117,12 +117,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_file_open_dialog_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|documents_file_open_dialog_cmd_callback (GtkAction * action,gpointer data)
 name|documents_file_open_dialog_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -154,12 +154,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_remove_document_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|documents_remove_document_cmd_callback (GtkAction * action,gpointer data)
 name|documents_remove_document_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -189,12 +189,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_recreate_preview_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|documents_recreate_preview_cmd_callback (GtkAction * action,gpointer data)
 name|documents_recreate_preview_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -224,12 +224,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_reload_previews_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|documents_reload_previews_cmd_callback (GtkAction * action,gpointer data)
 name|documents_reload_previews_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -261,12 +261,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_delete_dangling_documents_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|documents_delete_dangling_documents_cmd_callback (GtkAction * action,gpointer data)
 name|documents_delete_dangling_documents_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

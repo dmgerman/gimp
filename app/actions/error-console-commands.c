@@ -45,12 +45,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|error_console_clear_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|error_console_clear_cmd_callback (GtkAction * action,gpointer data)
 name|error_console_clear_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -89,12 +89,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_save_all_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|error_console_save_all_cmd_callback (GtkAction * action,gpointer data)
 name|error_console_save_all_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -133,12 +133,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_save_selection_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|error_console_save_selection_cmd_callback (GtkAction * action,gpointer data)
 name|error_console_save_selection_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

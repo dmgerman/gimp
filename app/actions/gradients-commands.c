@@ -110,12 +110,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gradients_save_as_pov_ray_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradients_save_as_pov_ray_cmd_callback (GtkAction * action,gpointer data)
 name|gradients_save_as_pov_ray_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

@@ -45,9 +45,9 @@ begin_function_decl
 name|void
 name|debug_dump_menus_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -59,9 +59,9 @@ begin_function_decl
 name|void
 name|debug_mem_profile_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

@@ -241,12 +241,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|edit_undo_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_undo_cmd_callback (GtkAction * action,gpointer data)
 name|edit_undo_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -280,12 +280,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_redo_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_redo_cmd_callback (GtkAction * action,gpointer data)
 name|edit_redo_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -319,12 +319,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_cut_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_cut_cmd_callback (GtkAction * action,gpointer data)
 name|edit_cut_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -373,12 +373,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_copy_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_copy_cmd_callback (GtkAction * action,gpointer data)
 name|edit_copy_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -538,12 +538,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_paste_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_paste_cmd_callback (GtkAction * action,gpointer data)
 name|edit_paste_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -572,12 +572,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_paste_into_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_paste_into_cmd_callback (GtkAction * action,gpointer data)
 name|edit_paste_into_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -606,12 +606,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_paste_as_new_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_paste_as_new_cmd_callback (GtkAction * action,gpointer data)
 name|edit_paste_as_new_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -666,12 +666,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_named_cut_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_named_cut_cmd_callback (GtkAction * action,gpointer data)
 name|edit_named_cut_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -742,12 +742,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_named_copy_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_named_copy_cmd_callback (GtkAction * action,gpointer data)
 name|edit_named_copy_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -818,24 +818,37 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_named_paste_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_named_paste_cmd_callback (GtkAction * action,gpointer data)
 name|edit_named_paste_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GimpDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|gdisp
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
-name|widget
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 argument_list|,
 literal|"gimp-buffer-list|gimp-buffer-grid"
@@ -849,12 +862,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_clear_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_clear_cmd_callback (GtkAction * action,gpointer data)
 name|edit_clear_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -901,18 +914,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_fill_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|edit_fill_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|edit_fill_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpImage
@@ -940,7 +953,7 @@ operator|=
 operator|(
 name|GimpFillType
 operator|)
-name|action
+name|value
 expr_stmt|;
 name|gimp_edit_fill
 argument_list|(
@@ -968,17 +981,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_stroke_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|edit_stroke_cmd_callback (GtkAction * action,gpointer data)
 name|edit_stroke_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GimpDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
@@ -987,6 +1004,13 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|gdisp
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
 name|return_if_no_drawable
 argument_list|(
 name|gimage
@@ -1006,7 +1030,9 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
-name|widget
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 block|}

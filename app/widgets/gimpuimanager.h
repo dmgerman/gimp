@@ -235,6 +235,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpActionGroup
+modifier|*
+name|gimp_ui_manager_get_action_group
+parameter_list|(
+name|GimpUIManager
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_ui_manager_ui_register
 parameter_list|(

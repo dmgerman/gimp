@@ -192,7 +192,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68b70e0108
+DECL|struct|__anon2bcfb4d80108
 block|{
 DECL|member|resize
 name|Resize
@@ -335,12 +335,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|image_convert_rgb_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_convert_rgb_cmd_callback (GtkAction * action,gpointer data)
 name|image_convert_rgb_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -386,12 +386,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_convert_grayscale_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_convert_grayscale_cmd_callback (GtkAction * action,gpointer data)
 name|image_convert_grayscale_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -437,28 +437,28 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_convert_indexed_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_convert_indexed_cmd_callback (GtkAction * action,gpointer data)
 name|image_convert_indexed_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|gimage
+name|gdisp
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-name|return_if_no_image
+name|return_if_no_display
 argument_list|(
-name|gimage
+name|gdisp
 argument_list|,
 name|data
 argument_list|)
@@ -467,9 +467,13 @@ name|dialog
 operator|=
 name|convert_dialog_new
 argument_list|(
+name|gdisp
+operator|->
 name|gimage
 argument_list|,
-name|widget
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -482,12 +486,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_resize_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_resize_cmd_callback (GtkAction * action,gpointer data)
 name|image_resize_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -646,12 +650,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_scale_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_scale_cmd_callback (GtkAction * action,gpointer data)
 name|image_scale_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -810,18 +814,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_flip_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|image_flip_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|image_flip_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -875,7 +879,7 @@ argument_list|,
 operator|(
 name|GimpOrientationType
 operator|)
-name|action
+name|value
 argument_list|,
 name|gimp_progress_update_and_flush
 argument_list|,
@@ -899,18 +903,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_rotate_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|image_rotate_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|image_rotate_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -964,7 +968,7 @@ argument_list|,
 operator|(
 name|GimpRotationType
 operator|)
-name|action
+name|value
 argument_list|,
 name|gimp_progress_update_and_flush
 argument_list|,
@@ -988,12 +992,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_crop_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_crop_cmd_callback (GtkAction * action,gpointer data)
 name|image_crop_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1095,12 +1099,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_duplicate_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_duplicate_cmd_callback (GtkAction * action,gpointer data)
 name|image_duplicate_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1149,35 +1153,39 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_merge_layers_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_merge_layers_cmd_callback (GtkAction * action,gpointer data)
 name|image_merge_layers_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|gimage
+name|gdisp
 decl_stmt|;
-name|return_if_no_image
+name|return_if_no_display
 argument_list|(
-name|gimage
+name|gdisp
 argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
 name|image_layers_merge_query
 argument_list|(
+name|gdisp
+operator|->
 name|gimage
 argument_list|,
 name|TRUE
 argument_list|,
-name|widget
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
@@ -1185,12 +1193,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_flatten_image_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_flatten_image_cmd_callback (GtkAction * action,gpointer data)
 name|image_flatten_image_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1229,12 +1237,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_configure_grid_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|image_configure_grid_cmd_callback (GtkAction * action,gpointer data)
 name|image_configure_grid_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1270,12 +1278,9 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
-name|GIMP_IMAGE
-argument_list|(
 name|gdisp
 operator|->
 name|gimage
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1291,12 +1296,13 @@ name|grid_dialog
 operator|=
 name|grid_dialog_new
 argument_list|(
-name|GIMP_IMAGE
-argument_list|(
+name|gdisp
+operator|->
 name|gimage
-argument_list|)
 argument_list|,
-name|widget
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_transient_for
@@ -1310,6 +1316,8 @@ argument_list|)
 argument_list|,
 name|GTK_WINDOW
 argument_list|(
+name|gdisp
+operator|->
 name|shell
 argument_list|)
 argument_list|)

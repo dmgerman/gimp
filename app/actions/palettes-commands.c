@@ -129,12 +129,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palettes_import_palette_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|palettes_import_palette_cmd_callback (GtkAction * action,gpointer data)
 name|palettes_import_palette_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -143,14 +143,12 @@ block|{
 name|GimpContainerEditor
 modifier|*
 name|editor
-decl_stmt|;
-name|editor
-operator|=
+init|=
 name|GIMP_CONTAINER_EDITOR
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|palette_import_dialog_show
 argument_list|(
 name|editor
@@ -167,12 +165,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|palettes_merge_palettes_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|palettes_merge_palettes_cmd_callback (GtkAction * action,gpointer data)
 name|palettes_merge_palettes_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -181,14 +179,12 @@ block|{
 name|GimpContainerEditor
 modifier|*
 name|editor
-decl_stmt|;
-name|editor
-operator|=
+init|=
 name|GIMP_CONTAINER_EDITOR
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|palettes_merge_palettes_query
 argument_list|(
 name|editor

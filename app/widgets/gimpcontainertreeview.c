@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppreviewrenderer.h"
 end_include
 
@@ -107,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bd98d10103
+DECL|enum|__anon291aab190103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1530,26 +1524,32 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
-condition|)
-block|{
-if|#
-directive|if
-literal|0
-block|if (editor->ui_manager)         {           gimp_ui_manager_update (editor->ui_manager,                                   editor->popup_data);           gimp_ui_manager_ui_popup (editor->ui_manager,                                     editor->ui_identifier,                                     editor->popup_data,                                     GTK_WIDGET (editor),                                     gimp_container_tree_view_menu_position,                                     editor,                                     NULL);           return TRUE;         }
-endif|#
-directive|endif
-if|if
-condition|(
+operator|&&
 name|editor
 operator|->
-name|item_factory
+name|ui_manager
 condition|)
 block|{
-name|gimp_item_factory_popup_with_data
+name|gimp_ui_manager_update
 argument_list|(
 name|editor
 operator|->
-name|item_factory
+name|ui_manager
+argument_list|,
+name|editor
+operator|->
+name|popup_data
+argument_list|)
+expr_stmt|;
+name|gimp_ui_manager_ui_popup
+argument_list|(
+name|editor
+operator|->
+name|ui_manager
+argument_list|,
+name|editor
+operator|->
+name|ui_path
 argument_list|,
 name|editor
 operator|->
@@ -1570,7 +1570,6 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
-block|}
 block|}
 return|return
 name|FALSE

@@ -20,9 +20,9 @@ begin_function_decl
 name|void
 name|images_raise_views_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -34,9 +34,9 @@ begin_function_decl
 name|void
 name|images_new_view_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -48,9 +48,9 @@ begin_function_decl
 name|void
 name|images_delete_image_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

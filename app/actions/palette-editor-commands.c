@@ -45,12 +45,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palette_editor_edit_color_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|palette_editor_edit_color_cmd_callback (GtkAction * action,gpointer data)
 name|palette_editor_edit_color_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -89,12 +89,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_new_color_fg_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|palette_editor_new_color_fg_cmd_callback (GtkAction * action,gpointer data)
 name|palette_editor_new_color_fg_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -135,12 +135,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_new_color_bg_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|palette_editor_new_color_bg_cmd_callback (GtkAction * action,gpointer data)
 name|palette_editor_new_color_bg_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -181,12 +181,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_delete_color_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|palette_editor_delete_color_cmd_callback (GtkAction * action,gpointer data)
 name|palette_editor_delete_color_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -225,12 +225,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_zoom_in_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|palette_editor_zoom_in_cmd_callback (GtkAction * action,gpointer data)
 name|palette_editor_zoom_in_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -269,12 +269,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_zoom_out_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|palette_editor_zoom_out_cmd_callback (GtkAction * action,gpointer data)
 name|palette_editor_zoom_out_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -313,12 +313,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_zoom_all_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|palette_editor_zoom_all_cmd_callback (GtkAction * action,gpointer data)
 name|palette_editor_zoom_all_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

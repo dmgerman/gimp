@@ -72,7 +72,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"/_Help"
+literal|"_Help"
 argument_list|)
 block|}
 block|,

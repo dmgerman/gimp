@@ -232,9 +232,9 @@ name|GimpMenuFactory
 modifier|*
 name|menu_factory
 parameter_list|,
-name|GimpItemFactory
+name|GimpUIManager
 modifier|*
-name|popup_factory
+name|popup_manager
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -20,9 +20,9 @@ begin_function_decl
 name|void
 name|gradients_save_as_pov_ray_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/stroke-dialog.h"
 end_include
 
@@ -207,6 +213,20 @@ define|\
 value|return_if_no_image (gimage,data); \   vectors = gimp_image_get_active_vectors (gimage); \   if (! vectors) \     return
 end_define
 
+begin_define
+DECL|macro|return_if_no_widget (widget,data)
+define|#
+directive|define
+name|return_if_no_widget
+parameter_list|(
+name|widget
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|if (GIMP_IS_DISPLAY (data)) \     widget = ((GimpDisplay *) data)->shell; \   else if (GIMP_IS_GIMP (data)) \     widget = dialogs_get_toolbox (); \   else if (GIMP_IS_DOCK (data)) \     widget = data; \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     widget = data; \   else \     widget = NULL; \   if (! widget) \     return
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -249,12 +269,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|vectors_new_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_new_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_new_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -264,9 +284,20 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -287,12 +318,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_raise_to_top_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_raise_to_top_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_raise_to_top_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -332,12 +363,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_raise_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_raise_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_raise_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -377,12 +408,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_lower_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_lower_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_lower_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -422,12 +453,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_lower_to_bottom_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_lower_to_bottom_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_lower_to_bottom_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -467,12 +498,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_duplicate_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_duplicate_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_duplicate_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -539,12 +570,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_delete_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_delete_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_delete_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -584,12 +615,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_merge_visible_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_merge_visible_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_merge_visible_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -627,18 +658,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_to_selection_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|vectors_to_selection_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|vectors_to_selection_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpChannelOps
@@ -666,7 +697,7 @@ operator|=
 operator|(
 name|GimpChannelOps
 operator|)
-name|action
+name|value
 expr_stmt|;
 name|gimp_channel_select_vectors
 argument_list|(
@@ -703,12 +734,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_selection_to_vectors_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_selection_to_vectors_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_selection_to_vectors_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -737,12 +768,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_stroke_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_stroke_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_stroke_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -756,11 +787,22 @@ name|GimpVectors
 modifier|*
 name|active_vectors
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -780,12 +822,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_copy_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_copy_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_copy_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -821,12 +863,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_paste_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_paste_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_paste_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -856,12 +898,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_import_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_import_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_import_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -871,9 +913,20 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -890,12 +943,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_export_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_export_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_export_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -909,11 +962,22 @@ name|GimpVectors
 modifier|*
 name|active_vectors
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -932,12 +996,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_vectors_tool_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_vectors_tool_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_vectors_tool_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -970,12 +1034,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_edit_attributes_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|vectors_edit_attributes_cmd_callback (GtkAction * action,gpointer data)
 name|vectors_edit_attributes_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -989,11 +1053,22 @@ name|GimpVectors
 modifier|*
 name|active_vectors
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)

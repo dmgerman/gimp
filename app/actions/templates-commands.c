@@ -129,12 +129,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|templates_new_template_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|templates_new_template_cmd_callback (GtkAction * action,gpointer data)
 name|templates_new_template_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -164,12 +164,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_duplicate_template_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|templates_duplicate_template_cmd_callback (GtkAction * action,gpointer data)
 name|templates_duplicate_template_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -199,12 +199,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_edit_template_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|templates_edit_template_cmd_callback (GtkAction * action,gpointer data)
 name|templates_edit_template_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -234,12 +234,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_create_image_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|templates_create_image_cmd_callback (GtkAction * action,gpointer data)
 name|templates_create_image_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -269,12 +269,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_delete_template_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|templates_delete_template_cmd_callback (GtkAction * action,gpointer data)
 name|templates_delete_template_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

@@ -41,12 +41,12 @@ end_include
 
 begin_function
 name|void
-DECL|function|data_new_data_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|data_new_data_cmd_callback (GtkAction * action,gpointer data)
 name|data_new_data_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -85,12 +85,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_duplicate_data_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|data_duplicate_data_cmd_callback (GtkAction * action,gpointer data)
 name|data_duplicate_data_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -129,12 +129,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_edit_data_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|data_edit_data_cmd_callback (GtkAction * action,gpointer data)
 name|data_edit_data_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -173,12 +173,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_delete_data_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|data_delete_data_cmd_callback (GtkAction * action,gpointer data)
 name|data_delete_data_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -217,12 +217,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_refresh_data_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|data_refresh_data_cmd_callback (GtkAction * action,gpointer data)
 name|data_refresh_data_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

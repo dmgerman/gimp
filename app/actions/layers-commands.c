@@ -192,6 +192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/resize-dialog.h"
 end_include
 
@@ -307,18 +313,32 @@ define|\
 value|return_if_no_image (gimage,data); \   layer = gimp_image_get_active_layer (gimage); \   if (! layer) \     return
 end_define
 
+begin_define
+DECL|macro|return_if_no_widget (widget,data)
+define|#
+directive|define
+name|return_if_no_widget
+parameter_list|(
+name|widget
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|if (GIMP_IS_DISPLAY (data)) \     widget = ((GimpDisplay *) data)->shell; \   else if (GIMP_IS_GIMP (data)) \     widget = dialogs_get_toolbox (); \   else if (GIMP_IS_DOCK (data)) \     widget = data; \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     widget = data; \   else \     widget = NULL; \   if (! widget) \     return
+end_define
+
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|layers_select_previous_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_select_previous_cmd_callback (GtkAction * action,gpointer data)
 name|layers_select_previous_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -402,12 +422,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_select_next_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_select_next_cmd_callback (GtkAction * action,gpointer data)
 name|layers_select_next_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -482,12 +502,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_select_top_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_select_top_cmd_callback (GtkAction * action,gpointer data)
 name|layers_select_top_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -546,12 +566,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_select_bottom_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_select_bottom_cmd_callback (GtkAction * action,gpointer data)
 name|layers_select_bottom_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -632,12 +652,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_raise_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_raise_cmd_callback (GtkAction * action,gpointer data)
 name|layers_raise_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -677,12 +697,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_lower_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_lower_cmd_callback (GtkAction * action,gpointer data)
 name|layers_lower_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -722,12 +742,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_raise_to_top_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_raise_to_top_cmd_callback (GtkAction * action,gpointer data)
 name|layers_raise_to_top_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -767,12 +787,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_lower_to_bottom_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_lower_to_bottom_cmd_callback (GtkAction * action,gpointer data)
 name|layers_lower_to_bottom_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -812,12 +832,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_new_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_new_cmd_callback (GtkAction * action,gpointer data)
 name|layers_new_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -827,9 +847,20 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -850,12 +881,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_duplicate_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_duplicate_cmd_callback (GtkAction * action,gpointer data)
 name|layers_duplicate_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -922,12 +953,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_anchor_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_anchor_cmd_callback (GtkAction * action,gpointer data)
 name|layers_anchor_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -974,12 +1005,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_merge_down_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_merge_down_cmd_callback (GtkAction * action,gpointer data)
 name|layers_merge_down_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1028,12 +1059,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_delete_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_delete_cmd_callback (GtkAction * action,gpointer data)
 name|layers_delete_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1086,12 +1117,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_text_discard_cmd_callback (GtkWidget * widet,gpointer data)
+DECL|function|layers_text_discard_cmd_callback (GtkAction * action,gpointer data)
 name|layers_text_discard_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widet
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1134,12 +1165,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_resize_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_resize_cmd_callback (GtkAction * action,gpointer data)
 name|layers_resize_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1153,11 +1184,22 @@ name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_layer
 argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -1176,12 +1218,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_resize_to_image_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_resize_to_image_cmd_callback (GtkAction * action,gpointer data)
 name|layers_resize_to_image_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1226,12 +1268,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_scale_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_scale_cmd_callback (GtkAction * action,gpointer data)
 name|layers_scale_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1245,11 +1287,22 @@ name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_layer
 argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -1277,12 +1330,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_crop_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_crop_cmd_callback (GtkAction * action,gpointer data)
 name|layers_crop_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1429,12 +1482,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_add_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_mask_add_cmd_callback (GtkAction * action,gpointer data)
 name|layers_mask_add_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1448,11 +1501,22 @@ name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_layer
 argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -1469,12 +1533,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_apply_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_mask_apply_cmd_callback (GtkAction * action,gpointer data)
 name|layers_mask_apply_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1525,12 +1589,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_delete_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_mask_delete_cmd_callback (GtkAction * action,gpointer data)
 name|layers_mask_delete_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1581,18 +1645,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_mask_to_selection_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|layers_mask_to_selection_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|layers_mask_to_selection_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpChannelOps
@@ -1624,7 +1688,7 @@ operator|=
 operator|(
 name|GimpChannelOps
 operator|)
-name|action
+name|value
 expr_stmt|;
 name|mask
 operator|=
@@ -1698,12 +1762,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_alpha_add_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_alpha_add_cmd_callback (GtkAction * action,gpointer data)
 name|layers_alpha_add_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1754,18 +1818,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_alpha_to_selection_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|layers_alpha_to_selection_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|layers_alpha_to_selection_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpChannelOps
@@ -1793,7 +1857,7 @@ operator|=
 operator|(
 name|GimpChannelOps
 operator|)
-name|action
+name|value
 expr_stmt|;
 name|gimp_channel_select_alpha
 argument_list|(
@@ -1826,12 +1890,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_merge_layers_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_merge_layers_cmd_callback (GtkAction * action,gpointer data)
 name|layers_merge_layers_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1841,9 +1905,20 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -1862,12 +1937,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_flatten_image_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_flatten_image_cmd_callback (GtkAction * action,gpointer data)
 name|layers_flatten_image_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1906,12 +1981,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_text_tool_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_text_tool_cmd_callback (GtkAction * action,gpointer data)
 name|layers_text_tool_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1925,11 +2000,22 @@ name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_layer
 argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -1946,12 +2032,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_edit_attributes_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|layers_edit_attributes_cmd_callback (GtkAction * action,gpointer data)
 name|layers_edit_attributes_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1965,11 +2051,22 @@ name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_layer
 argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)

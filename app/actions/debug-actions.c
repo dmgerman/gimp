@@ -58,7 +58,7 @@ literal|"debug-menu"
 block|,
 name|NULL
 block|,
-literal|"/File/D_ebug"
+literal|"D_ebug"
 block|}
 block|,
 block|{

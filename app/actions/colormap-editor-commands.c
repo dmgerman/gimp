@@ -45,12 +45,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|colormap_editor_edit_color_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|colormap_editor_edit_color_cmd_callback (GtkAction * action,gpointer data)
 name|colormap_editor_edit_color_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -89,18 +89,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|colormap_editor_add_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|colormap_editor_add_color_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|colormap_editor_add_color_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpColormapEditor
@@ -130,7 +130,7 @@ operator|->
 name|add_button
 argument_list|)
 argument_list|,
-name|action
+name|value
 condition|?
 name|GDK_CONTROL_MASK
 else|:

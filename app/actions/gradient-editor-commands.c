@@ -216,12 +216,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gradient_editor_left_color_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_left_color_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_left_color_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -339,23 +339,28 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_load_left_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_load_left_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|gradient_editor_load_left_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -372,16 +377,6 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -408,16 +403,9 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|i
-operator|=
-operator|(
-name|gint
-operator|)
-name|action
-expr_stmt|;
 switch|switch
 condition|(
-name|i
+name|value
 condition|)
 block|{
 case|case
@@ -607,7 +595,7 @@ name|editor
 operator|->
 name|saved_colors
 index|[
-name|i
+name|value
 operator|-
 literal|4
 index|]
@@ -639,36 +627,34 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_save_left_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_save_left_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|gradient_editor_save_left_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
-decl_stmt|;
-name|editor
-operator|=
+init|=
 name|GIMP_GRADIENT_EDITOR
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|editor
 operator|->
 name|saved_colors
 index|[
-name|action
+name|value
 index|]
 operator|=
 name|editor
@@ -682,12 +668,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_right_color_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_right_color_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_right_color_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -696,18 +682,16 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -805,23 +789,28 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_load_right_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_load_right_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|gradient_editor_load_right_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -838,16 +827,6 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -874,16 +853,9 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|i
-operator|=
-operator|(
-name|gint
-operator|)
-name|action
-expr_stmt|;
 switch|switch
 condition|(
-name|i
+name|value
 condition|)
 block|{
 case|case
@@ -1080,7 +1052,7 @@ name|editor
 operator|->
 name|saved_colors
 index|[
-name|i
+name|value
 operator|-
 literal|4
 index|]
@@ -1105,36 +1077,34 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_save_right_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_save_right_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|gradient_editor_save_right_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
-decl_stmt|;
-name|editor
-operator|=
+init|=
 name|GIMP_GRADIENT_EDITOR
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|editor
 operator|->
 name|saved_colors
 index|[
-name|action
+name|value
 index|]
 operator|=
 name|editor
@@ -1148,23 +1118,29 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blending_func_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_blending_func_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
 name|gradient_editor_blending_func_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|GtkAction
+modifier|*
+name|current
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -1180,24 +1156,6 @@ decl_stmt|,
 modifier|*
 name|aseg
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-return|return;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -1215,7 +1173,13 @@ operator|=
 operator|(
 name|GimpGradientSegmentType
 operator|)
+name|gtk_radio_action_get_current_value
+argument_list|(
+name|GTK_RADIO_ACTION
+argument_list|(
 name|action
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|seg
 operator|=
@@ -1264,23 +1228,29 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_coloring_type_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_coloring_type_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
 name|gradient_editor_coloring_type_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|GtkAction
+modifier|*
+name|current
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -1296,24 +1266,6 @@ decl_stmt|,
 modifier|*
 name|aseg
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-return|return;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -1331,7 +1283,13 @@ operator|=
 operator|(
 name|GimpGradientSegmentColor
 operator|)
+name|gtk_radio_action_get_current_value
+argument_list|(
+name|GTK_RADIO_ACTION
+argument_list|(
 name|action
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|seg
 operator|=
@@ -1380,12 +1338,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_flip_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_flip_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_flip_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1394,6 +1352,11 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -1428,13 +1391,6 @@ name|left
 decl_stmt|,
 name|right
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -1805,12 +1761,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_replicate_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_replicate_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_replicate_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -1819,6 +1775,11 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1850,13 +1811,6 @@ name|gchar
 modifier|*
 name|desc
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|editor
@@ -2165,12 +2119,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_split_midpoint_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_split_midpoint_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_split_midpoint_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -2179,6 +2133,11 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -2194,13 +2153,6 @@ decl_stmt|,
 modifier|*
 name|rseg
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -2274,12 +2226,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_split_uniformly_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_split_uniformly_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_split_uniformly_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -2288,6 +2240,11 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2319,13 +2276,6 @@ name|gchar
 modifier|*
 name|desc
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|editor
@@ -2636,12 +2586,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_delete_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_delete_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_delete_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -2650,6 +2600,11 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -2674,13 +2629,6 @@ decl_stmt|;
 name|gdouble
 name|join
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -2929,12 +2877,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_recenter_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_recenter_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_recenter_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -2943,6 +2891,11 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -2955,13 +2908,6 @@ decl_stmt|,
 modifier|*
 name|aseg
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -3036,12 +2982,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_redistribute_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_redistribute_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_redistribute_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -3050,6 +2996,11 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -3075,13 +3026,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -3261,12 +3205,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blend_color_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_blend_color_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_blend_color_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -3275,14 +3219,12 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
-decl_stmt|;
-name|editor
-operator|=
+init|=
 name|GIMP_GRADIENT_EDITOR
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_gradient_segments_blend_endpoints
 argument_list|(
 name|editor
@@ -3327,12 +3269,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blend_opacity_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|gradient_editor_blend_opacity_cmd_callback (GtkAction * action,gpointer data)
 name|gradient_editor_blend_opacity_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -3341,14 +3283,12 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
-decl_stmt|;
-name|editor
-operator|=
+init|=
 name|GIMP_GRADIENT_EDITOR
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_gradient_segments_blend_endpoints
 argument_list|(
 name|editor

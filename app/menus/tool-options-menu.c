@@ -87,6 +87,18 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|MENU_BRANCH (path)
+define|#
+directive|define
+name|MENU_BRANCH
+parameter_list|(
+name|path
+parameter_list|)
+define|\
+value|{ { (path), NULL, NULL, 0, "<Branch>" }, NULL, NULL, NULL }
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment

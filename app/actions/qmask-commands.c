@@ -248,12 +248,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|qmask_toggle_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|qmask_toggle_cmd_callback (GtkAction * action,gpointer data)
 name|qmask_toggle_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
@@ -263,6 +263,9 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|gboolean
+name|active
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
@@ -270,13 +273,18 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|active
+operator|=
+name|gtk_toggle_action_get_active
+argument_list|(
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 operator|!=
 name|gimp_image_get_qmask_state
@@ -289,11 +297,6 @@ name|gimp_image_set_qmask_state
 argument_list|(
 name|gimage
 argument_list|,
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -308,18 +311,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_invert_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|qmask_invert_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|qmask_invert_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpImage
@@ -335,17 +338,18 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_CHECK_MENU_ITEM
+name|gtk_toggle_action_get_active
 argument_list|(
-name|widget
+name|GTK_TOGGLE_ACTION
+argument_list|(
+name|action
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 if|if
 condition|(
-name|action
+name|value
 operator|!=
 name|gimage
 operator|->
@@ -376,12 +380,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_configure_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|qmask_configure_cmd_callback (GtkAction * action,gpointer data)
 name|qmask_configure_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data

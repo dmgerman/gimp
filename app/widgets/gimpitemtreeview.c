@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdb1ac30103
+DECL|enum|__anon275e70b50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdb1ac30203
+DECL|enum|__anon275e70b50203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3643,6 +3643,11 @@ block|{
 name|GimpEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_EDITOR
+argument_list|(
+name|view
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -3667,30 +3672,33 @@ argument_list|,
 name|insert_data
 argument_list|)
 expr_stmt|;
-name|editor
-operator|=
-name|GIMP_EDITOR
-argument_list|(
-name|view
-argument_list|)
-expr_stmt|;
-if|#
-directive|if
-literal|0
-block|if (editor->ui_manager)     {       gimp_ui_manager_update (editor->ui_manager,                               editor->popup_data);       gimp_ui_manager_ui_popup (editor->ui_manager,                                 editor->ui_identifier,                                 editor->popup_data,                                 GTK_WIDGET (editor),                                 NULL, NULL, NULL);     }
-else|#
-directive|else
 if|if
 condition|(
 name|editor
 operator|->
-name|item_factory
+name|ui_manager
 condition|)
-name|gimp_item_factory_popup_with_data
+block|{
+name|gimp_ui_manager_update
 argument_list|(
 name|editor
 operator|->
-name|item_factory
+name|ui_manager
+argument_list|,
+name|editor
+operator|->
+name|popup_data
+argument_list|)
+expr_stmt|;
+name|gimp_ui_manager_ui_popup
+argument_list|(
+name|editor
+operator|->
+name|ui_manager
+argument_list|,
+name|editor
+operator|->
+name|ui_path
 argument_list|,
 name|editor
 operator|->
@@ -3708,8 +3716,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
+block|}
 block|}
 end_function
 

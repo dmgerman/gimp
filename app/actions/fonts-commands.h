@@ -20,9 +20,9 @@ begin_function_decl
 name|void
 name|fonts_refresh_cmd_callback
 parameter_list|(
-name|GtkWidget
+name|GtkAction
 modifier|*
-name|widget
+name|action
 parameter_list|,
 name|gpointer
 name|data
