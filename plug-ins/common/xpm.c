@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e07ebd0108
+DECL|struct|__anon287cf0b80108
 block|{
 DECL|member|threshold
 name|gint
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e07ebd0208
+DECL|struct|__anon287cf0b80208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e07ebd0308
+DECL|struct|__anon287cf0b80308
 block|{
 DECL|member|r
 name|guchar
@@ -154,6 +154,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|color
+specifier|static
 name|gboolean
 name|color
 decl_stmt|;
@@ -165,6 +166,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|cpp
+specifier|static
 name|gint
 name|cpp
 decl_stmt|;
@@ -226,17 +228,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|guchar
+modifier|*
 name|parse_colors
 parameter_list|(
 name|XpmImage
 modifier|*
 name|xpm_image
-parameter_list|,
-name|guchar
-modifier|*
-modifier|*
-name|cmap
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1069,23 +1067,13 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* parse out the colors into a cmap */
+name|cmap
+operator|=
 name|parse_colors
 argument_list|(
 operator|&
 name|xpm_image
-argument_list|,
-operator|&
-name|cmap
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|cmap
-operator|==
-name|NULL
-condition|)
-name|gimp_quit
-argument_list|()
 expr_stmt|;
 comment|/* create the new image */
 name|image_ID
@@ -1136,18 +1124,14 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|parse_colors (XpmImage * xpm_image,guchar ** cmap)
+name|guchar
+modifier|*
+DECL|function|parse_colors (XpmImage * xpm_image)
 name|parse_colors
 parameter_list|(
 name|XpmImage
 modifier|*
 name|xpm_image
-parameter_list|,
-name|guchar
-modifier|*
-modifier|*
-name|cmap
 parameter_list|)
 block|{
 name|Display
@@ -1161,6 +1145,10 @@ name|gint
 name|i
 decl_stmt|,
 name|j
+decl_stmt|;
+name|guchar
+modifier|*
+name|cmap
 decl_stmt|;
 comment|/* open the display and get the default color map */
 name|display
@@ -1183,49 +1171,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* alloc a buffer to hold the parsed colors */
-operator|*
 name|cmap
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|guchar
 argument_list|,
-literal|4
-operator|*
-name|xpm_image
-operator|->
-name|ncolors
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|(
-operator|*
-name|cmap
-operator|)
-operator|!=
-name|NULL
-condition|)
-block|{
-comment|/* default to black transparent */
-name|memset
-argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
-operator|(
-operator|*
-name|cmap
-operator|)
-argument_list|,
-literal|0
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
-operator|*
 literal|4
 operator|*
 name|xpm_image
@@ -1331,7 +1282,7 @@ name|xpm_color
 operator|->
 name|m_color
 expr_stmt|;
-comment|/* parse if it's not transparent.  the assumption is that              g_new will memset the buffer to zeros */
+comment|/* parse if it's not transparent.  the assumption is that 	 g_new will memset the buffer to zeros */
 if|if
 condition|(
 name|strcmp
@@ -1356,10 +1307,7 @@ operator|&
 name|xcolor
 argument_list|)
 expr_stmt|;
-operator|(
-operator|*
 name|cmap
-operator|)
 index|[
 name|j
 operator|++
@@ -1371,10 +1319,7 @@ name|red
 operator|>>
 literal|8
 expr_stmt|;
-operator|(
-operator|*
 name|cmap
-operator|)
 index|[
 name|j
 operator|++
@@ -1386,10 +1331,7 @@ name|green
 operator|>>
 literal|8
 expr_stmt|;
-operator|(
-operator|*
 name|cmap
-operator|)
 index|[
 name|j
 operator|++
@@ -1401,10 +1343,7 @@ name|blue
 operator|>>
 literal|8
 expr_stmt|;
-operator|(
-operator|*
 name|cmap
-operator|)
 index|[
 name|j
 operator|++
@@ -1422,12 +1361,14 @@ literal|4
 expr_stmt|;
 block|}
 block|}
-block|}
 name|XCloseDisplay
 argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
+return|return
+name|cmap
+return|;
 block|}
 end_function
 
@@ -1571,13 +1512,6 @@ operator|*
 literal|4
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|buf
-operator|!=
-name|NULL
-condition|)
-block|{
 name|src
 operator|=
 name|xpm_image
@@ -1750,7 +1684,6 @@ argument_list|(
 name|buf
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
@@ -1760,6 +1693,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|guint
 DECL|function|rgbhash (rgbkey * c)
 name|rgbhash
@@ -1801,6 +1735,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|guint
 DECL|function|compare (rgbkey * c1,rgbkey * c2)
 name|compare
@@ -1849,6 +1784,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|set_XpmImage (XpmColor * array,guint index,gchar * colorstring)
 name|set_XpmImage
@@ -2032,6 +1968,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|create_colormap_from_hash (gpointer gkey,gpointer value,gpointer user_data)
 name|create_colormap_from_hash
@@ -2204,129 +2141,28 @@ init|=
 name|FALSE
 decl_stmt|;
 comment|/* get some basic stats about the image */
-switch|switch
-condition|(
-name|gimp_drawable_type
-argument_list|(
-name|drawable_ID
-argument_list|)
-condition|)
-block|{
-case|case
-name|GIMP_RGBA_IMAGE
-case|:
-case|case
-name|GIMP_INDEXEDA_IMAGE
-case|:
-case|case
-name|GIMP_GRAYA_IMAGE
-case|:
 name|alpha
 operator|=
-name|TRUE
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_RGB_IMAGE
-case|:
-case|case
-name|GIMP_INDEXED_IMAGE
-case|:
-case|case
-name|GIMP_GRAY_IMAGE
-case|:
-name|alpha
-operator|=
-name|FALSE
-expr_stmt|;
-break|break;
-default|default:
-return|return
-name|FALSE
-return|;
-block|}
-switch|switch
-condition|(
-name|gimp_drawable_type
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable_ID
 argument_list|)
-condition|)
-block|{
-case|case
-name|GIMP_GRAYA_IMAGE
-case|:
-case|case
-name|GIMP_GRAY_IMAGE
-case|:
+expr_stmt|;
 name|color
 operator|=
-name|FALSE
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_RGBA_IMAGE
-case|:
-case|case
-name|GIMP_RGB_IMAGE
-case|:
-case|case
-name|GIMP_INDEXED_IMAGE
-case|:
-case|case
-name|GIMP_INDEXEDA_IMAGE
-case|:
-name|color
-operator|=
-name|TRUE
-expr_stmt|;
-break|break;
-default|default:
-return|return
-name|FALSE
-return|;
-block|}
-switch|switch
-condition|(
-name|gimp_drawable_type
+operator|!
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable_ID
 argument_list|)
-condition|)
-block|{
-case|case
-name|GIMP_GRAYA_IMAGE
-case|:
-case|case
-name|GIMP_GRAY_IMAGE
-case|:
-case|case
-name|GIMP_RGBA_IMAGE
-case|:
-case|case
-name|GIMP_RGB_IMAGE
-case|:
+expr_stmt|;
 name|indexed
 operator|=
-name|FALSE
+name|gimp_drawable_is_indexed
+argument_list|(
+name|drawable_ID
+argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_INDEXED_IMAGE
-case|:
-case|case
-name|GIMP_INDEXEDA_IMAGE
-case|:
-name|indexed
-operator|=
-name|TRUE
-expr_stmt|;
-break|break;
-default|default:
-return|return
-name|FALSE
-return|;
-block|}
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -2422,9 +2258,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* allocate a pixel region to work with */
-if|if
-condition|(
-operator|(
 name|buffer
 operator|=
 name|g_new
@@ -2440,13 +2273,7 @@ name|drawable
 operator|->
 name|bpp
 argument_list|)
-operator|)
-operator|==
-name|NULL
-condition|)
-return|return
-literal|0
-return|;
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -3056,10 +2883,6 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|ibuff
-condition|)
 name|g_free
 argument_list|(
 name|ibuff
@@ -3295,7 +3118,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Alpha Threshold:"
+literal|"_Alpha Threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

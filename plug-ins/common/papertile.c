@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af0e2f60103
+DECL|enum|__anon2b71e1840103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af0e2f60203
+DECL|enum|__anon2b71e1840203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -190,7 +190,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2af0e2f60308
+DECL|struct|__anon2b71e1840308
 block|{
 DECL|member|params
 name|PluginParams
@@ -210,7 +210,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2af0e2f60408
+DECL|struct|__anon2b71e1840408
 block|{
 DECL|member|x0
 name|gint
@@ -577,7 +577,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2af0e2f60508
+DECL|struct|__anon2b71e1840508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -1301,7 +1301,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"X:"
+literal|"_X:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1381,7 +1381,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1470,7 +1470,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Size:"
+literal|"_Size:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1537,7 +1537,7 @@ name|fractional_type
 argument_list|,
 name|_
 argument_list|(
-literal|"Background"
+literal|"_Background"
 argument_list|)
 argument_list|,
 operator|(
@@ -1549,7 +1549,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Ignore"
+literal|"_Ignore"
 argument_list|)
 argument_list|,
 operator|(
@@ -1561,7 +1561,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Force"
+literal|"_Force"
 argument_list|)
 argument_list|,
 operator|(
@@ -1632,11 +1632,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Centering"
+literal|"C_entering"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1856,7 +1856,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Max (%):"
+literal|"_Max (%):"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1894,11 +1894,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Wrap Around"
+literal|"_Wrap Around"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1995,7 +1995,7 @@ name|background_type
 argument_list|,
 name|_
 argument_list|(
-literal|"Transparent"
+literal|"_Transparent"
 argument_list|)
 argument_list|,
 operator|(
@@ -2007,7 +2007,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Inverted Image"
+literal|"I_nverted Image"
 argument_list|)
 argument_list|,
 operator|(
@@ -2019,7 +2019,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Image"
+literal|"Im_age"
 argument_list|)
 argument_list|,
 operator|(
@@ -2031,7 +2031,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Foreground Color"
+literal|"Fo_reground Color"
 argument_list|)
 argument_list|,
 operator|(
@@ -2043,7 +2043,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Background Color"
+literal|"Bac_kground Color"
 argument_list|)
 argument_list|,
 operator|(
@@ -2209,16 +2209,8 @@ comment|/*======================================================================
 end_comment
 
 begin_typedef
-DECL|typedef|Tile
-typedef|typedef
-name|struct
-name|_Tile
-name|Tile
-typedef|;
-end_typedef
-
-begin_struct
 DECL|struct|_Tile
+typedef|typedef
 struct|struct
 name|_Tile
 block|{
@@ -2250,9 +2242,11 @@ DECL|member|move_y
 name|gint
 name|move_y
 decl_stmt|;
+DECL|typedef|Tile
 block|}
-struct|;
-end_struct
+name|Tile
+typedef|;
+end_typedef
 
 begin_function
 specifier|static
@@ -2294,10 +2288,6 @@ name|z
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -2404,10 +2394,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -2785,10 +2771,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 specifier|inline
@@ -2863,10 +2845,6 @@ name|y
 decl_stmt|;
 name|gint
 name|move_max_pixels
-decl_stmt|;
-name|guchar
-modifier|*
-name|row_buffer
 decl_stmt|;
 name|gint
 name|clear_x0
@@ -2964,25 +2942,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|row_buffer
-operator|=
-name|g_new
-argument_list|(
-name|guchar
-argument_list|,
-name|p
-operator|.
-name|drawable
-operator|->
-name|bpp
-operator|*
-name|p
-operator|.
-name|drawable
-operator|->
-name|width
 argument_list|)
 expr_stmt|;
 name|pixels
@@ -3601,60 +3560,30 @@ argument_list|,
 name|tile_compare
 argument_list|)
 expr_stmt|;
-comment|/* CLEAR PIXELS */
-for|for
-control|(
-name|y
-operator|=
+name|gimp_pixel_rgn_get_rect
+argument_list|(
+operator|&
+name|src
+argument_list|,
+name|pixels
+argument_list|,
 literal|0
-init|;
-name|y
-operator|<
+argument_list|,
+literal|0
+argument_list|,
+name|p
+operator|.
+name|drawable
+operator|->
+name|width
+argument_list|,
 name|p
 operator|.
 name|drawable
 operator|->
 name|height
-condition|;
-name|y
-operator|++
-control|)
-block|{
-name|gimp_pixel_rgn_get_row
-argument_list|(
-operator|&
-name|src
-argument_list|,
-operator|&
-name|pixels
-index|[
-name|p
-operator|.
-name|drawable
-operator|->
-name|bpp
-operator|*
-name|p
-operator|.
-name|drawable
-operator|->
-name|width
-operator|*
-name|y
-index|]
-argument_list|,
-literal|0
-argument_list|,
-name|y
-argument_list|,
-name|p
-operator|.
-name|drawable
-operator|->
-name|width
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|p
@@ -4573,86 +4502,33 @@ operator|(
 name|gdouble
 operator|)
 name|numof_tiles
-operator|/
-literal|2.0
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* SEND IT */
-for|for
-control|(
-name|y
-operator|=
-literal|0
-init|;
-name|y
-operator|<
-name|p
-operator|.
-name|drawable
-operator|->
-name|height
-condition|;
-name|y
-operator|++
-control|)
-block|{
-name|gimp_pixel_rgn_set_row
+name|gimp_pixel_rgn_set_rect
 argument_list|(
 operator|&
 name|dst
 argument_list|,
-operator|&
 name|pixels
-index|[
-name|p
-operator|.
-name|drawable
-operator|->
-name|bpp
-operator|*
-name|p
-operator|.
-name|drawable
-operator|->
-name|width
-operator|*
-name|y
-index|]
 argument_list|,
 literal|0
 argument_list|,
-name|y
+literal|0
 argument_list|,
 name|p
 operator|.
 name|drawable
 operator|->
 name|width
-argument_list|)
-expr_stmt|;
-name|gimp_progress_update
-argument_list|(
-operator|(
-name|gdouble
-operator|)
-name|y
-operator|/
-operator|(
-name|gdouble
-operator|)
+argument_list|,
 name|p
 operator|.
 name|drawable
 operator|->
 name|height
-operator|/
-literal|2.0
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_drawable_flush
 argument_list|(
 name|p
@@ -4704,7 +4580,6 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* FREE */
 name|g_free
 argument_list|(
 name|buffer
@@ -4718,11 +4593,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|tiles
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|row_buffer
 argument_list|)
 expr_stmt|;
 block|}
