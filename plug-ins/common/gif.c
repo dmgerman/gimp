@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e2aec60103
+DECL|enum|__anon2aa958b60103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2aec60208
+DECL|struct|__anon2aa958b60208
 block|{
 DECL|member|interlace
 name|gint
@@ -167,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2aec60308
+DECL|struct|__anon2aa958b60308
 block|{
 DECL|member|run
 name|gboolean
@@ -1181,20 +1181,20 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|find_unused_ia_colour
 parameter_list|(
 name|guchar
 modifier|*
 name|pixels
 parameter_list|,
-name|int
+name|gint
 name|numpixels
 parameter_list|,
-name|int
+name|gint
 name|num_indices
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|colors
 parameter_list|)
@@ -1202,6 +1202,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|special_flatten_indexed_alpha
 parameter_list|(
@@ -1209,15 +1210,15 @@ name|guchar
 modifier|*
 name|pixels
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|transparent
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|colors
 parameter_list|,
-name|int
+name|gint
 name|numpixels
 parameter_list|)
 function_decl|;
@@ -1391,8 +1392,10 @@ parameter_list|(
 name|FILE
 modifier|*
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
+name|comment
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1525,22 +1528,22 @@ function_decl|;
 end_function_decl
 
 begin_function
-DECL|function|find_unused_ia_colour (guchar * pixels,int numpixels,int num_indices,int * colors)
 specifier|static
-name|int
+name|gint
+DECL|function|find_unused_ia_colour (guchar * pixels,gint numpixels,gint num_indices,gint * colors)
 name|find_unused_ia_colour
 parameter_list|(
 name|guchar
 modifier|*
 name|pixels
 parameter_list|,
-name|int
+name|gint
 name|numpixels
 parameter_list|,
-name|int
+name|gint
 name|num_indices
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|colors
 parameter_list|)
@@ -1755,6 +1758,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|special_flatten_indexed_alpha (guchar * pixels,int * transparent,int * colors,int numpixels)
 name|special_flatten_indexed_alpha
@@ -1888,6 +1892,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|int
 DECL|function|parse_ms_tag (char * str)
 name|parse_ms_tag
@@ -2061,6 +2066,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|int
 DECL|function|parse_disposal_tag (char * str)
 name|parse_disposal_tag
@@ -2536,6 +2542,74 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+comment|/* The GIF spec says 7bit ASCII for the comment block. */
+if|if
+condition|(
+name|gsvals
+operator|.
+name|save_comment
+operator|&&
+name|globalcomment
+condition|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|c
+init|=
+name|globalcomment
+decl_stmt|;
+name|gint
+name|len
+decl_stmt|;
+for|for
+control|(
+name|len
+operator|=
+name|strlen
+argument_list|(
+name|c
+argument_list|)
+init|;
+name|len
+condition|;
+name|c
+operator|++
+operator|,
+name|len
+operator|--
+control|)
+block|{
+if|if
+condition|(
+operator|*
+name|c
+operator|<
+literal|0
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"The GIF format only supports comments in\n"
+literal|"7bit ASCII encoding. No comment is saved."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|globalcomment
+argument_list|)
+expr_stmt|;
+name|globalcomment
+operator|=
+name|NULL
+expr_stmt|;
+break|break;
+block|}
+block|}
+block|}
 comment|/* get a list of layers for this image_ID */
 name|layers
 operator|=
@@ -6245,16 +6319,17 @@ block|}
 end_function
 
 begin_function
-DECL|function|GIFEncodeCommentExt (FILE * fp,char * comment)
 specifier|static
 name|void
+DECL|function|GIFEncodeCommentExt (FILE * fp,const gchar * comment)
 name|GIFEncodeCommentExt
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|comment
 parameter_list|)
@@ -6313,11 +6388,6 @@ argument_list|)
 expr_stmt|;
 name|fputs
 argument_list|(
-operator|(
-specifier|const
-name|char
-operator|*
-operator|)
 name|comment
 argument_list|,
 name|fp
