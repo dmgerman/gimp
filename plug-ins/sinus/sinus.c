@@ -214,7 +214,7 @@ value|1
 end_define
 
 begin_typedef
-DECL|struct|__anon2c425bbe0108
+DECL|struct|__anon2b92fecd0108
 typedef|typedef
 struct|struct
 block|{
@@ -315,7 +315,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c425bbe0208
+DECL|struct|__anon2b92fecd0208
 typedef|typedef
 struct|struct
 block|{
@@ -1039,7 +1039,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|16
+literal|14
 condition|)
 name|status
 operator|=
@@ -1463,7 +1463,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2c425bbe0308
+DECL|struct|__anon2b92fecd0308
 DECL|member|r
 DECL|member|g
 DECL|member|b

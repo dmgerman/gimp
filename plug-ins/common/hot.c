@@ -131,7 +131,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon28a6752c0103
+DECL|enum|__anon295fb5c60103
 typedef|typedef
 enum|enum
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28a6752c0203
+DECL|enum|__anon295fb5c60203
 typedef|typedef
 enum|enum
 block|{
@@ -206,7 +206,7 @@ comment|/*  * RGB to YIQ encoding matrix.  */
 end_comment
 
 begin_struct
-DECL|struct|__anon28a6752c0308
+DECL|struct|__anon295fb5c60308
 struct|struct
 block|{
 DECL|member|pedestal
@@ -647,10 +647,21 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
-literal|3
+sizeof|sizeof
+argument_list|(
+name|args
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -920,7 +931,7 @@ if|if
 condition|(
 name|nparam
 operator|!=
-literal|3
+literal|6
 condition|)
 block|{
 name|rvals
@@ -947,7 +958,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_drawable
+name|d_int32
 expr_stmt|;
 name|args
 operator|.
@@ -960,7 +971,20 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_drawable
+name|d_int32
+expr_stmt|;
+name|args
+operator|.
+name|new_layerp
+operator|=
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
 expr_stmt|;
 if|if
 condition|(

@@ -52,7 +52,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon2c8361f20108
+DECL|struct|__anon2be38ab70108
 typedef|typedef
 struct|struct
 block|{
@@ -107,7 +107,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c8361f20208
+DECL|struct|__anon2be38ab70208
 typedef|typedef
 struct|struct
 block|{
@@ -750,7 +750,7 @@ name|mode
 operator|=
 name|param
 index|[
-literal|3
+literal|7
 index|]
 operator|.
 name|data
@@ -765,7 +765,7 @@ name|signature
 argument_list|,
 name|param
 index|[
-literal|4
+literal|3
 index|]
 operator|.
 name|data
@@ -783,7 +783,7 @@ name|email
 argument_list|,
 name|param
 index|[
-literal|5
+literal|4
 index|]
 operator|.
 name|data
@@ -801,7 +801,7 @@ name|homepage
 argument_list|,
 name|param
 index|[
-literal|6
+literal|5
 index|]
 operator|.
 name|data
@@ -819,7 +819,7 @@ name|date
 argument_list|,
 name|param
 index|[
-literal|7
+literal|6
 index|]
 operator|.
 name|data
@@ -1236,7 +1236,7 @@ name|finished_atleast_once
 init|=
 literal|0
 decl_stmt|;
-DECL|struct|__anon2c8361f20308
+DECL|struct|__anon2be38ab70308
 typedef|typedef
 struct|struct
 block|{
@@ -2160,7 +2160,7 @@ name|char
 modifier|*
 name|point2
 decl_stmt|;
-DECL|struct|__anon2c8361f20408
+DECL|struct|__anon2be38ab70408
 typedef|typedef
 struct|struct
 block|{
