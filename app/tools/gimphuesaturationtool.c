@@ -457,7 +457,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Layer/Colors/Hue-Saturation..."
+literal|"/Tools/Color Tools/Hue-Saturation..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -965,7 +965,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2a1ac40a0108
+DECL|struct|__anon2a1838890108
 block|{
 DECL|member|label
 specifier|const

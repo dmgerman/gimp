@@ -311,7 +311,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Layer/Colors/Threshold..."
+literal|"/Tools/Color Tools/Threshold..."
 argument_list|)
 argument_list|,
 name|NULL

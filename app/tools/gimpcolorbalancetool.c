@@ -378,7 +378,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Layer/Colors/Color Balance..."
+literal|"/Tools/Color Tools/Color Balance..."
 argument_list|)
 argument_list|,
 name|NULL

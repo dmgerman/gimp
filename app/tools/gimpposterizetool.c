@@ -249,7 +249,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Layer/Colors/Posterize..."
+literal|"/Tools/Color Tools/Posterize..."
 argument_list|)
 argument_list|,
 name|NULL
