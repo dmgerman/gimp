@@ -1321,14 +1321,10 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|gdisp
-condition|?
 name|GIMP_PROGRESS
 argument_list|(
 name|gdisp
 argument_list|)
-else|:
-name|NULL
 argument_list|,
 name|proc_rec
 argument_list|,
