@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpdrawtool.h"
+file|"gimpselectiontool.h"
 end_include
 
 begin_comment
@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279786f00103
+DECL|enum|__anon2bf266430103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -42,9 +42,9 @@ name|SEED_ADJUSTMENT
 block|,
 DECL|enumerator|WAITING
 name|WAITING
-DECL|typedef|Iscissors_state
+DECL|typedef|IscissorsState
 block|}
-name|Iscissors_state
+name|IscissorsState
 typedef|;
 end_typedef
 
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279786f00203
+DECL|enum|__anon2bf266430203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -81,18 +81,38 @@ DECL|enumerator|DRAW_LIVEWIRE
 name|DRAW_LIVEWIRE
 init|=
 literal|0x8
-block|,
-DECL|enumerator|DRAW_ALL
-name|DRAW_ALL
-init|=
-operator|(
-name|DRAW_CURRENT_SEED
-operator||
-name|DRAW_CURVE
-operator|)
-DECL|typedef|Iscissors_draw
+DECL|typedef|IscissorsDraw
 block|}
-name|Iscissors_draw
+name|IscissorsDraw
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  For oper_update& cursor_update  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bf266430303
+block|{
+DECL|enumerator|ISCISSORS_OP_NONE
+name|ISCISSORS_OP_NONE
+block|,
+DECL|enumerator|ISCISSORS_OP_SELECT
+name|ISCISSORS_OP_SELECT
+block|,
+DECL|enumerator|ISCISSORS_OP_MOVE_POINT
+name|ISCISSORS_OP_MOVE_POINT
+block|,
+DECL|enumerator|ISCISSORS_OP_ADD_POINT
+name|ISCISSORS_OP_ADD_POINT
+block|,
+DECL|enumerator|ISCISSORS_OP_IMPOSSIBLE
+name|ISCISSORS_OP_IMPOSSIBLE
+block|, }
+DECL|typedef|IscissorsOps
+name|IscissorsOps
 typedef|;
 end_typedef
 
@@ -192,11 +212,11 @@ struct|struct
 name|_GimpIscissorsTool
 block|{
 DECL|member|parent_instance
-name|GimpDrawTool
+name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
 DECL|member|op
-name|SelectOps
+name|IscissorsOps
 name|op
 decl_stmt|;
 DECL|member|x
@@ -264,12 +284,12 @@ name|connected
 decl_stmt|;
 comment|/*  is the region closed?                 */
 DECL|member|state
-name|Iscissors_state
+name|IscissorsState
 name|state
 decl_stmt|;
 comment|/*  state of iscissors                    */
 DECL|member|draw
-name|Iscissors_draw
+name|IscissorsDraw
 name|draw
 decl_stmt|;
 comment|/*  items to draw on a draw request       */
@@ -296,7 +316,7 @@ struct|struct
 name|_GimpIscissorsToolClass
 block|{
 DECL|member|parent_class
-name|GimpDrawToolClass
+name|GimpSelectionToolClass
 name|parent_class
 decl_stmt|;
 block|}

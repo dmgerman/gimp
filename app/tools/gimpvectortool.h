@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpdrawtool.h"
+file|"gimpselectiontool.h"
 end_include
 
 begin_comment
@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d218e0103
+DECL|enum|__anon27d4f2170103
 block|{
 DECL|enumerator|VECTORS_CREATING
 name|VECTORS_CREATING
@@ -141,7 +141,7 @@ struct|struct
 name|_GimpVectorTool
 block|{
 DECL|member|parent_instance
-name|GimpDrawTool
+name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
 DECL|member|function
@@ -193,7 +193,7 @@ struct|struct
 name|_GimpVectorToolClass
 block|{
 DECL|member|parent_class
-name|GimpDrawToolClass
+name|GimpSelectionToolClass
 name|parent_class
 decl_stmt|;
 block|}

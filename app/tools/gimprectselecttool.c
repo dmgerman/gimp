@@ -425,7 +425,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  private funuctions  */
+comment|/*  private functions  */
 end_comment
 
 begin_function

@@ -434,11 +434,11 @@ name|gimp_image_mask_select_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
 name|active_channel
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|op
 argument_list|,

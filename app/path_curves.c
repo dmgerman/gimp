@@ -769,6 +769,8 @@ argument_list|,
 name|num_pts
 argument_list|,
 name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_free

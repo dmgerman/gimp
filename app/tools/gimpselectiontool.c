@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpeditselectiontool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpselectiontool.h"
 end_include
 
@@ -302,6 +308,12 @@ operator|->
 name|modifier_key
 operator|=
 name|gimp_selection_tool_modifier_key
+expr_stmt|;
+name|tool_class
+operator|->
+name|arrow_key
+operator|=
+name|gimp_edit_selection_tool_arrow_key
 expr_stmt|;
 name|tool_class
 operator|->
@@ -601,15 +613,6 @@ name|tool_info
 operator|->
 name|tool_options
 expr_stmt|;
-if|if
-condition|(
-name|tool
-operator|->
-name|state
-operator|==
-name|ACTIVE
-condition|)
-return|return;
 name|layer
 operator|=
 name|gimp_image_pick_correlate_layer

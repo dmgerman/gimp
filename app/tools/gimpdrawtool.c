@@ -2596,7 +2596,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,gdouble * points,gint npoints,gint filled)
+DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,gdouble * points,gint n_points,gboolean filled,gboolean use_offsets)
 name|gimp_draw_tool_draw_lines
 parameter_list|(
 name|GimpDrawTool
@@ -2608,10 +2608,13 @@ modifier|*
 name|points
 parameter_list|,
 name|gint
-name|npoints
+name|n_points
 parameter_list|,
-name|gint
+name|gboolean
 name|filled
+parameter_list|,
+name|gboolean
+name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2647,7 +2650,7 @@ name|g_new
 argument_list|(
 name|GdkPoint
 argument_list|,
-name|npoints
+name|n_points
 argument_list|)
 expr_stmt|;
 for|for
@@ -2658,7 +2661,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|npoints
+name|n_points
 condition|;
 name|i
 operator|++
@@ -2692,7 +2695,7 @@ argument_list|,
 operator|&
 name|sy
 argument_list|,
-name|TRUE
+name|use_offsets
 argument_list|)
 expr_stmt|;
 name|coords
@@ -2739,7 +2742,7 @@ name|TRUE
 argument_list|,
 name|coords
 argument_list|,
-name|npoints
+name|n_points
 argument_list|)
 expr_stmt|;
 block|}
@@ -2757,7 +2760,7 @@ name|gc
 argument_list|,
 name|coords
 argument_list|,
-name|npoints
+name|n_points
 argument_list|)
 expr_stmt|;
 block|}
@@ -2771,7 +2774,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_strokes (GimpDrawTool * draw_tool,GimpCoords * points,gint npoints,gint filled)
+DECL|function|gimp_draw_tool_draw_strokes (GimpDrawTool * draw_tool,GimpCoords * points,gint n_points,gboolean filled,gboolean use_offsets)
 name|gimp_draw_tool_draw_strokes
 parameter_list|(
 name|GimpDrawTool
@@ -2783,10 +2786,13 @@ modifier|*
 name|points
 parameter_list|,
 name|gint
-name|npoints
+name|n_points
 parameter_list|,
-name|gint
+name|gboolean
 name|filled
+parameter_list|,
+name|gboolean
+name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2822,7 +2828,7 @@ name|g_new
 argument_list|(
 name|GdkPoint
 argument_list|,
-name|npoints
+name|n_points
 argument_list|)
 expr_stmt|;
 for|for
@@ -2833,7 +2839,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|npoints
+name|n_points
 condition|;
 name|i
 operator|++
@@ -2865,7 +2871,7 @@ argument_list|,
 operator|&
 name|sy
 argument_list|,
-name|TRUE
+name|use_offsets
 argument_list|)
 expr_stmt|;
 name|coords
@@ -2912,7 +2918,7 @@ name|TRUE
 argument_list|,
 name|coords
 argument_list|,
-name|npoints
+name|n_points
 argument_list|)
 expr_stmt|;
 block|}
@@ -2930,7 +2936,7 @@ name|gc
 argument_list|,
 name|coords
 argument_list|,
-name|npoints
+name|n_points
 argument_list|)
 expr_stmt|;
 block|}
