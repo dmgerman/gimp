@@ -825,7 +825,7 @@ name|_
 argument_list|(
 literal|"Name of a videofile to READ by xanim.\n"
 literal|"Frames are extracted from the videofile\n"
-literal|"and written to seprate diskfiles.\n"
+literal|"and written to separate diskfiles.\n"
 literal|"xanim exporting edition is required."
 argument_list|)
 expr_stmt|;

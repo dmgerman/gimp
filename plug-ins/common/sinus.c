@@ -22238,7 +22238,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea3dc40108
+DECL|struct|__anon290f2d710108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22341,7 +22341,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea3dc40208
+DECL|struct|__anon290f2d710208
 block|{
 DECL|member|height
 DECL|member|width
@@ -28123,7 +28123,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Sinusodial"
+literal|"Sinusoidal"
 argument_list|)
 argument_list|,
 operator|(
