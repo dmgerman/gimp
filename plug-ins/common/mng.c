@@ -375,7 +375,7 @@ comment|/* quality */
 literal|0.0
 block|,
 comment|/* smoothing */
-literal|6
+literal|9
 block|,
 comment|/* compression_level */
 name|TRUE
@@ -6267,6 +6267,7 @@ literal|"Write tIME (creation time) chunk"
 block|}
 block|}
 decl_stmt|;
+comment|/* As a workaround for http://bugzilla.gnome.org/show_bug.cgi?id=139947 the    * registration for INDEXED* mode has been disabled.  It should be re-added    * to the list of supported modes when the indexed mode really works. */
 name|gimp_install_procedure
 argument_list|(
 literal|"file_mng_save"
@@ -6285,7 +6286,7 @@ literal|"November 19, 2002"
 argument_list|,
 literal|"<Save>/MNG"
 argument_list|,
-literal|"RGB*,GRAY*,INDEXED*"
+literal|"RGB*,GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -6475,6 +6476,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* GIMP_EXPORT_CAN_HANDLE_INDEXED commented out - see bug #139947 */
 name|export
 operator|=
 name|gimp_export_image
@@ -6492,8 +6494,7 @@ name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
-name|GIMP_EXPORT_CAN_HANDLE_INDEXED
-operator||
+comment|/* GIMP_EXPORT_CAN_HANDLE_INDEXED | */
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_LAYERS_AS_ANIMATION
