@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"vectors-types.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpunit.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file/file-utils.h"
 end_include
 
 begin_include

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core-types.h"
 end_include
 

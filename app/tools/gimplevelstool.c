@@ -149,12 +149,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpenummenu.h"
 end_include
 

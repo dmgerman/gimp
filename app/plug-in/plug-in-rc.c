@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-ins.h"
 end_include
 
@@ -195,7 +189,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d900710103
+DECL|enum|__anon2791ee450103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION

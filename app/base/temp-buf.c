@@ -86,6 +86,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -105,12 +111,6 @@ begin_include
 include|#
 directive|include
 file|"config/gimpconfig-path.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file/file-utils.h"
 end_include
 
 begin_include

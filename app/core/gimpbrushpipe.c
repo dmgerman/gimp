@@ -107,13 +107,19 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimpbase/gimpparasiteio.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
@@ -126,12 +132,6 @@ begin_include
 include|#
 directive|include
 file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file/file-utils.h"
 end_include
 
 begin_include

@@ -86,13 +86,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
@@ -117,12 +117,6 @@ begin_include
 include|#
 directive|include
 file|"config/gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file/file-utils.h"
 end_include
 
 begin_include
@@ -209,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2d9b130103
+DECL|enum|__anon28b225630103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -237,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2d9b130203
+DECL|enum|__anon28b225630203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -448,7 +442,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2d9b130303
+DECL|enum|__anon28b225630303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -471,7 +465,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a2d9b130408
+DECL|struct|__anon28b225630408
 block|{
 DECL|member|directory
 name|gboolean

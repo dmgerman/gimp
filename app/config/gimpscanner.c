@@ -100,12 +100,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config-types.h"
 end_include
 
@@ -130,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b2a170108
+DECL|struct|__anon27a73f2f0108
 block|{
 DECL|member|fd
 name|gint
@@ -1020,7 +1014,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b2a170203
+DECL|enum|__anon27a73f2f0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

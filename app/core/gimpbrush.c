@@ -153,12 +153,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush.h"
 end_include
 
@@ -188,7 +182,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b01eae40103
+DECL|enum|__anon2c4a8fa70103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -2757,7 +2751,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b01eae4020a
+DECL|union|__anon2c4a8fa7020a
 block|{
 DECL|member|u
 name|guint16

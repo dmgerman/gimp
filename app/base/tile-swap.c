@@ -83,6 +83,12 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -92,7 +98,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|<libgimpbase/gimpwin32-io.h>
+file|"libgimpbase/gimpwin32-io.h"
 end_include
 
 begin_endif
@@ -143,12 +149,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|"file/file-utils.h"
-end_include
 
 begin_include
 include|#

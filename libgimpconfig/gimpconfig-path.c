@@ -30,13 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file/file-utils.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -569,6 +563,10 @@ operator|+
 literal|1
 index|]
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|gimp_filename_to_utf8
 argument_list|(
 name|s
