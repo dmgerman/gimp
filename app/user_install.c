@@ -422,7 +422,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon2a4536c50108
+DECL|struct|__anon28e6d9de0108
 specifier|static
 specifier|const
 struct|struct
@@ -834,7 +834,7 @@ literal|"\t\tThis subdirectory can be used to store user created,\n"
 literal|"\t\ttemporary, or otherwise non-system-supported DLL modules.\n"
 literal|"\t\tThe default gimprc file checks this subdirectory\n"
 literal|"\t\tin addition to the system-wide GIMP module directory\n"
-literal|"\t\twhen searching for modules to load when initialising.\n"
+literal|"\t\twhen searching for modules to load when initializing.\n"
 argument_list|)
 block|}
 block|,
@@ -1141,9 +1141,12 @@ argument_list|)
 expr_stmt|;
 name|font_strong
 operator|=
-name|gdk_font_load
+name|gdk_fontset_load
 argument_list|(
-literal|"-*-helvetica-bold-r-normal-*-*-120-*-*-*-*-*-*"
+name|_
+argument_list|(
+literal|"-*-helvetica-bold-r-normal-*-*-120-*-*-*-*-*-*,*"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|font_emphasis
@@ -1155,9 +1158,12 @@ argument_list|)
 expr_stmt|;
 name|font
 operator|=
-name|gdk_font_load
+name|gdk_fontset_load
 argument_list|(
-literal|"-*-helvetica-medium-r-normal-*-*-100-*-*-*-*-*-*"
+name|_
+argument_list|(
+literal|"-*-helvetica-medium-r-normal-*-*-100-*-*-*-*-*-*,*"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Realize the widget before allowing new text to be inserted  */
@@ -1853,16 +1859,22 @@ argument_list|)
 expr_stmt|;
 name|font_strong
 operator|=
-name|gdk_font_load
+name|gdk_fontset_load
 argument_list|(
-literal|"-*-helvetica-bold-r-normal-*-*-120-*-*-*-*-*-*"
+name|_
+argument_list|(
+literal|"-*-helvetica-bold-r-normal-*-*-120-*-*-*-*-*-*,*"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|font
 operator|=
-name|gdk_font_load
+name|gdk_fontset_load
 argument_list|(
-literal|"-*-helvetica-medium-r-normal-*-*-120-*-*-*-*-*-*"
+name|_
+argument_list|(
+literal|"-*-helvetica-medium-r-normal-*-*-120-*-*-*-*-*-*,*"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Realize the text widget before inserting text strings  */
