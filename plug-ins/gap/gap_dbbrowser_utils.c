@@ -503,7 +503,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Search :"
+literal|"Search:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -730,7 +730,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Search by name"
+literal|"Search by Name"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -802,7 +802,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Search by blurb"
+literal|"Search by Blurb"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1632,7 +1632,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Name :"
+literal|"Name:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1755,7 +1755,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Blurb :"
+literal|"Blurb:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1923,7 +1923,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"In :"
+literal|"In:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2270,7 +2270,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Out :"
+literal|"Out:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2630,7 +2630,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Help :"
+literal|"Help:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2931,7 +2931,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Author :"
+literal|"Author:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3047,7 +3047,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Date :"
+literal|"Date:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3163,7 +3163,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Copyright :"
+literal|"Copyright:"
 argument_list|)
 argument_list|)
 expr_stmt|;

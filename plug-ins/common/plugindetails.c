@@ -447,7 +447,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a661280108
+DECL|struct|__anon2c302e4a0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -553,7 +553,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a661280208
+DECL|struct|__anon2c302e4a0208
 block|{
 DECL|member|menu
 name|gchar
@@ -1233,7 +1233,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|" Number of Plugin Interfaces: %d"
+literal|"Number of Plugin Interfaces: %d"
 argument_list|)
 argument_list|,
 name|pdesc
