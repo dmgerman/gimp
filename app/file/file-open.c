@@ -935,7 +935,7 @@ name|proc
 operator|->
 name|num_values
 operator|>=
-literal|2
+literal|1
 condition|)
 block|{
 name|GimpPDBStatusType
@@ -1096,7 +1096,7 @@ name|proc
 operator|->
 name|num_values
 operator|>=
-literal|4
+literal|3
 condition|)
 block|{
 operator|*
