@@ -1606,9 +1606,9 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_object_set_name
+name|gimp_item_rename
 argument_list|(
-name|GIMP_OBJECT
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
