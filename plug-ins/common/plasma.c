@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f53200108
+DECL|struct|__anon2a0b2f9f0108
 block|{
 DECL|member|seed
 name|guint32
@@ -1668,11 +1668,6 @@ operator|=
 name|gimp_pixel_fetcher_new
 argument_list|(
 name|drawable
-argument_list|)
-expr_stmt|;
-name|gimp_pixel_fetcher_set_shadow
-argument_list|(
-name|pft
 argument_list|,
 name|TRUE
 argument_list|)

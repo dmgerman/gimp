@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979ddd80108
+DECL|struct|__anon296decd30108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -519,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2979ddd80203
+DECL|enum|__anon296decd30203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979ddd80308
+DECL|struct|__anon296decd30308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -608,7 +608,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979ddd80408
+DECL|struct|__anon296decd30408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -4596,12 +4596,12 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|nc
 decl_stmt|,
 name|nr
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|GimpPixelFetcher
@@ -4614,6 +4614,8 @@ operator|=
 name|gimp_pixel_fetcher_new
 argument_list|(
 name|tileitdrawable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
@@ -4749,7 +4751,7 @@ name|col
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|an_action
 decl_stmt|;
 name|an_action
@@ -4816,7 +4818,6 @@ if|if
 condition|(
 name|has_alpha
 condition|)
-block|{
 operator|*
 name|dest
 operator|++
@@ -4832,7 +4833,6 @@ operator|)
 operator|/
 literal|100
 expr_stmt|;
-block|}
 block|}
 name|dest_row
 operator|+=
@@ -5044,7 +5044,7 @@ name|py
 operator|=
 operator|(
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|pyr
@@ -5085,7 +5085,7 @@ name|px
 operator|=
 operator|(
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|pxr

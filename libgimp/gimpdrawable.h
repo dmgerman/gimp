@@ -151,6 +151,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_drawable_get_color_uchar
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
+name|guchar
+modifier|*
+name|color_uchar
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|guchar
 modifier|*
 name|gimp_drawable_get_thumbnail_data

@@ -70,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b8f8520108
+DECL|struct|__anon2c6a83890108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -750,6 +750,8 @@ operator|=
 name|gimp_pixel_fetcher_new
 argument_list|(
 name|drawable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_mask_bounds

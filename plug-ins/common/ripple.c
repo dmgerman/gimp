@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cecec30108
+DECL|struct|__anon2ad603a30108
 block|{
 DECL|member|period
 name|gint
@@ -904,7 +904,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27cecec30208
+DECL|struct|__anon2ad603a30208
 typedef|typedef
 struct|struct
 block|{
@@ -1659,6 +1659,8 @@ operator|=
 name|gimp_pixel_fetcher_new
 argument_list|(
 name|drawable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|param

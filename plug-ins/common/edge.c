@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a43322c0103
+DECL|enum|__anon28c7ccd60103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43322c0208
+DECL|struct|__anon28c7ccd60208
 block|{
 DECL|member|amount
 name|gdouble
@@ -941,6 +941,8 @@ operator|=
 name|gimp_pixel_fetcher_new
 argument_list|(
 name|drawable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_fetcher_set_edge_mode
@@ -1264,7 +1266,7 @@ index|[
 literal|9
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j

@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2dd740108
+DECL|struct|__anon2c4f41760108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -2108,6 +2108,8 @@ operator|=
 name|gimp_pixel_fetcher_new
 argument_list|(
 name|drawable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_fetcher_set_edge_mode
