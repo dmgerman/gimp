@@ -5412,6 +5412,10 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+comment|/* never reached */
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -5792,8 +5796,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s: the gimp is using an older version of the "
-literal|"plug-in protocol than this plug-in\n"
+literal|"%s:\nThe GIMP is using an older version of the "
+literal|"plug-in protocol than this plug-in."
 argument_list|,
 name|progname
 argument_list|)
@@ -5814,8 +5818,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s: the gimp is using a newer version of the "
-literal|"plug-in protocol than this plug-in\n"
+literal|"%s:\nThe GIMP is using a newer version of the "
+literal|"plug-in protocol than this plug-in."
 argument_list|,
 name|progname
 argument_list|)
@@ -5938,9 +5942,14 @@ operator|*
 literal|4
 decl_stmt|;
 comment|/* From the id, derive the file map name */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|fileMapName
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|fileMapName
+argument_list|)
 argument_list|,
 literal|"GIMP%d.SHM"
 argument_list|,
