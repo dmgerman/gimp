@@ -469,34 +469,11 @@ begin_comment
 comment|/*  * 'main()' - Main entry - just call gimp_main()...  */
 end_comment
 
-begin_function
-name|int
-DECL|function|main (int argc,char * argv[])
-name|main
-parameter_list|(
-name|int
-name|argc
-parameter_list|,
-comment|/* I - Number of command-line args */
-name|char
-modifier|*
-name|argv
-index|[]
-parameter_list|)
-comment|/* I - Command-line args */
-block|{
-return|return
-operator|(
-name|gimp_main
-argument_list|(
-name|argc
-argument_list|,
-name|argv
-argument_list|)
-operator|)
-return|;
-block|}
-end_function
+begin_macro
+DECL|function|MAIN ()
+name|MAIN
+argument_list|()
+end_macro
 
 begin_comment
 comment|/*  * 'query()' - Respond to a plug-in query...  */
@@ -505,7 +482,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|query (void)
 name|query
 parameter_list|(
 name|void
