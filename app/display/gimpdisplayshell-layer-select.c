@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimppreviewrenderer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-layer-select.h"
 end_include
 
@@ -910,7 +916,7 @@ name|current_layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_size
+name|gimp_preview_renderer_set_size
 argument_list|(
 name|GIMP_PREVIEW
 argument_list|(
@@ -918,6 +924,8 @@ name|layer_select
 operator|->
 name|preview
 argument_list|)
+operator|->
+name|renderer
 argument_list|,
 name|gimage
 operator|->

@@ -134,10 +134,10 @@ DECL|member|border_color
 name|GimpRGB
 name|border_color
 decl_stmt|;
-DECL|member|border_gc
+DECL|member|gc
 name|GdkGC
 modifier|*
-name|border_gc
+name|gc
 decl_stmt|;
 comment|/*< private>*/
 DECL|member|buffer
@@ -157,6 +157,11 @@ DECL|member|no_preview_pixbuf
 name|GdkPixbuf
 modifier|*
 name|no_preview_pixbuf
+decl_stmt|;
+DECL|member|bg_stock_id
+name|gchar
+modifier|*
+name|bg_stock_id
 decl_stmt|;
 DECL|member|size
 name|gint
@@ -348,6 +353,22 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|border_color
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_preview_renderer_set_background
+parameter_list|(
+name|GimpPreviewRenderer
+modifier|*
+name|renderer
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|)
 function_decl|;
 end_function_decl

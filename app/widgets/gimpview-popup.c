@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppreviewrenderer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreview-popup.h"
 end_include
 
@@ -613,12 +619,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_dot_for_dot
+name|gimp_preview_renderer_set_dot_for_dot
 argument_list|(
 name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
+operator|->
+name|renderer
 argument_list|,
 name|popup
 operator|->

@@ -3054,12 +3054,6 @@ operator|=
 name|gimp_selection_editor_new
 argument_list|(
 name|gimage
-argument_list|,
-name|context
-operator|->
-name|gimp
-operator|->
-name|config
 argument_list|)
 expr_stmt|;
 name|dockable
