@@ -298,6 +298,9 @@ name|channel
 parameter_list|,
 name|gdouble
 name|opacity
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af766a20103
+DECL|enum|__anon293e0b410103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -6305,7 +6305,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_opacity (GimpLayer * layer,gdouble opacity)
+DECL|function|gimp_layer_set_opacity (GimpLayer * layer,gdouble opacity,gboolean push_undo)
 name|gimp_layer_set_opacity
 parameter_list|(
 name|GimpLayer
@@ -6314,6 +6314,9 @@ name|layer
 parameter_list|,
 name|gdouble
 name|opacity
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -6344,6 +6347,37 @@ operator|!=
 name|opacity
 condition|)
 block|{
+if|if
+condition|(
+name|push_undo
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|gimage
+condition|)
+name|gimp_image_undo_push_layer_opacity
+argument_list|(
+name|gimage
+argument_list|,
+name|NULL
+argument_list|,
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
 name|layer
 operator|->
 name|opacity
@@ -6423,7 +6457,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_mode (GimpLayer * layer,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_set_mode (GimpLayer * layer,GimpLayerModeEffects mode,gboolean push_undo)
 name|gimp_layer_set_mode
 parameter_list|(
 name|GimpLayer
@@ -6432,6 +6466,9 @@ name|layer
 parameter_list|,
 name|GimpLayerModeEffects
 name|mode
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -6451,6 +6488,37 @@ operator|!=
 name|mode
 condition|)
 block|{
+if|if
+condition|(
+name|push_undo
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|gimage
+condition|)
+name|gimp_image_undo_push_layer_mode
+argument_list|(
+name|gimage
+argument_list|,
+name|NULL
+argument_list|,
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
 name|layer
 operator|->
 name|mode
@@ -6530,7 +6598,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_preserve_trans (GimpLayer * layer,gboolean preserve)
+DECL|function|gimp_layer_set_preserve_trans (GimpLayer * layer,gboolean preserve,gboolean push_undo)
 name|gimp_layer_set_preserve_trans
 parameter_list|(
 name|GimpLayer
@@ -6539,6 +6607,9 @@ name|layer
 parameter_list|,
 name|gboolean
 name|preserve
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -6558,6 +6629,37 @@ operator|!=
 name|preserve
 condition|)
 block|{
+if|if
+condition|(
+name|push_undo
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|gimage
+condition|)
+name|gimp_image_undo_push_layer_preserve_trans
+argument_list|(
+name|gimage
+argument_list|,
+name|NULL
+argument_list|,
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
 name|layer
 operator|->
 name|preserve_trans
@@ -6615,7 +6717,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_linked (GimpLayer * layer,gboolean linked)
+DECL|function|gimp_layer_set_linked (GimpLayer * layer,gboolean linked,gboolean push_undo)
 name|gimp_layer_set_linked
 parameter_list|(
 name|GimpLayer
@@ -6624,6 +6726,9 @@ name|layer
 parameter_list|,
 name|gboolean
 name|linked
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -6643,6 +6748,37 @@ operator|!=
 name|linked
 condition|)
 block|{
+if|if
+condition|(
+name|push_undo
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|gimage
+condition|)
+name|gimp_image_undo_push_layer_linked
+argument_list|(
+name|gimage
+argument_list|,
+name|NULL
+argument_list|,
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
 name|layer
 operator|->
 name|linked

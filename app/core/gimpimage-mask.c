@@ -2437,6 +2437,8 @@ name|new_channel
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64c23e0103
+DECL|enum|__anon28b7708e0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -3014,9 +3014,13 @@ name|g_signal_emit_by_name
 argument_list|(
 name|toggled_cell
 argument_list|,
-literal|"toggled"
+literal|"clicked"
 argument_list|,
 name|path_str
+argument_list|,
+name|bevent
+operator|->
+name|state
 argument_list|)
 expr_stmt|;
 block|}

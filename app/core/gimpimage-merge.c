@@ -2040,12 +2040,6 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-comment|/*  End the merge undo group  */
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_set_visible
 argument_list|(
 name|GIMP_DRAWABLE
@@ -2054,6 +2048,14 @@ name|merge_layer
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/*  End the merge undo group  */
+name|gimp_image_undo_group_end
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update

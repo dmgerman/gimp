@@ -2926,6 +2926,8 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3465,6 +3467,8 @@ name|visible
 condition|?
 name|TRUE
 else|:
+name|FALSE
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

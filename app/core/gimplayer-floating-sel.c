@@ -185,6 +185,8 @@ argument_list|(
 name|layer
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|layer
@@ -735,14 +737,23 @@ operator|.
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_image_undo_push_fs_to_layer
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
+argument_list|,
+name|GIMP_UNDO_GROUP_FS_TO_LAYER
 argument_list|,
 name|_
 argument_list|(
 literal|"Floating Selection to Layer"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_push_fs_to_layer
+argument_list|(
+name|gimage
+argument_list|,
+name|NULL
 argument_list|,
 name|layer
 argument_list|,
@@ -782,6 +793,13 @@ name|layer
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_group_end
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
@@ -2117,6 +2135,8 @@ argument_list|(
 name|d_layer
 argument_list|,
 name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2213,6 +2233,8 @@ argument_list|(
 name|d_layer
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  restore gimage active channels  */

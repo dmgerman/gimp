@@ -2131,6 +2131,17 @@ literal|"group-item-properties"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_DRAWABLE_VISIBILITY
+block|,
+name|N_
+argument_list|(
+literal|"Drawable Visilibity"
+argument_list|)
+block|,
+literal|"group-drawable-visibility"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_LAYER_SCALE
 block|,
 name|N_
@@ -2183,6 +2194,17 @@ literal|"Apply Layer Mask"
 argument_list|)
 block|,
 literal|"group-layer-apply-mask"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_FS_TO_LAYER
+block|,
+name|N_
+argument_list|(
+literal|"Floating Selection to Layer"
+argument_list|)
+block|,
+literal|"group-fs-to-layer"
 block|}
 block|,
 block|{
@@ -2406,6 +2428,17 @@ literal|"item-rename"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_DRAWABLE_VISIBILITY
+block|,
+name|N_
+argument_list|(
+literal|"Drawable Visibility"
+argument_list|)
+block|,
+literal|"drawable-visibility"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_LAYER_ADD
 block|,
 name|N_
@@ -2465,7 +2498,7 @@ name|GIMP_UNDO_LAYER_REPOSITION
 block|,
 name|N_
 argument_list|(
-literal|"Layer Reposition"
+literal|"Reposition Layer"
 argument_list|)
 block|,
 literal|"layer-reposition"
@@ -2476,10 +2509,54 @@ name|GIMP_UNDO_LAYER_DISPLACE
 block|,
 name|N_
 argument_list|(
-literal|"Layer Move"
+literal|"Move Layer"
 argument_list|)
 block|,
 literal|"layer-displace"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_LAYER_MODE
+block|,
+name|N_
+argument_list|(
+literal|"Set Layer Mode"
+argument_list|)
+block|,
+literal|"layer-mode"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_LAYER_OPACITY
+block|,
+name|N_
+argument_list|(
+literal|"Set Layer Opacity"
+argument_list|)
+block|,
+literal|"layer-opacity"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_LAYER_PRESERVE_TRANS
+block|,
+name|N_
+argument_list|(
+literal|"Set Preserve Trans"
+argument_list|)
+block|,
+literal|"layer-preserve-trans"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_LAYER_LINKED
+block|,
+name|N_
+argument_list|(
+literal|"Set Layer Linked"
+argument_list|)
+block|,
+literal|"layer-linked"
 block|}
 block|,
 block|{
@@ -2520,7 +2597,7 @@ name|GIMP_UNDO_CHANNEL_REPOSITION
 block|,
 name|N_
 argument_list|(
-literal|"Channel Reposition"
+literal|"Reposition Channel"
 argument_list|)
 block|,
 literal|"channel-reposition"
@@ -2575,7 +2652,7 @@ name|GIMP_UNDO_VECTORS_REPOSITION
 block|,
 name|N_
 argument_list|(
-literal|"Vectors Reposition"
+literal|"Reposition Vectors"
 argument_list|)
 block|,
 literal|"vectors-reposition"

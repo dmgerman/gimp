@@ -1683,6 +1683,8 @@ argument_list|(
 name|layer
 argument_list|,
 name|mode
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|UNBLOCK
@@ -1781,6 +1783,8 @@ argument_list|(
 name|layer
 argument_list|,
 name|preserve_trans
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|UNBLOCK
@@ -1873,6 +1877,8 @@ argument_list|(
 name|layer
 argument_list|,
 name|opacity
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|UNBLOCK

@@ -1079,23 +1079,20 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|state
-operator|&
-name|GDK_SHIFT_MASK
-condition|)
-name|gimp_layer_set_linked
-argument_list|(
-name|layer
-argument_list|,
-operator|!
-name|gimp_layer_get_linked
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: gimp_layer_set_linked()
+endif|#
+directive|endif
+if|#
+directive|if
+literal|0
+block|if (state& GDK_SHIFT_MASK)                 gimp_layer_set_linked (layer, ! gimp_layer_get_linked (layer));
+endif|#
+directive|endif
 name|init_edit_selection
 argument_list|(
 name|tool

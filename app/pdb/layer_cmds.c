@@ -4311,6 +4311,8 @@ name|layer
 argument_list|)
 argument_list|,
 name|visible
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -4645,6 +4647,8 @@ argument_list|(
 name|layer
 argument_list|,
 name|preserve_trans
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -5995,6 +5999,8 @@ argument_list|,
 name|opacity
 operator|/
 literal|100.0
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -6339,6 +6345,8 @@ argument_list|(
 name|layer
 argument_list|,
 name|mode
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -6673,6 +6681,8 @@ argument_list|(
 name|layer
 argument_list|,
 name|linked
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return

@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e0b6170103
+DECL|enum|__anon2c477cb40103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -2670,7 +2670,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_set_visible (GimpDrawable * drawable,gboolean visible)
+DECL|function|gimp_drawable_set_visible (GimpDrawable * drawable,gboolean visible,gboolean push_undo)
 name|gimp_drawable_set_visible
 parameter_list|(
 name|GimpDrawable
@@ -2679,6 +2679,9 @@ name|drawable
 parameter_list|,
 name|gboolean
 name|visible
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2689,14 +2692,6 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|visible
-operator|=
-name|visible
-condition|?
-name|TRUE
-else|:
-name|FALSE
-expr_stmt|;
 if|if
 condition|(
 name|drawable
@@ -2706,11 +2701,46 @@ operator|!=
 name|visible
 condition|)
 block|{
+if|if
+condition|(
+name|push_undo
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|gimage
+condition|)
+name|gimp_image_undo_push_drawable_visibility
+argument_list|(
+name|gimage
+argument_list|,
+name|NULL
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
+block|}
 name|drawable
 operator|->
 name|visible
 operator|=
 name|visible
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|g_signal_emit
 argument_list|(

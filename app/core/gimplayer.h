@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon27b07c3a0108
+DECL|struct|__anon2bc131fb0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -593,6 +593,9 @@ name|layer
 parameter_list|,
 name|gdouble
 name|opacity
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -619,6 +622,9 @@ name|layer
 parameter_list|,
 name|GimpLayerModeEffects
 name|mode
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -645,6 +651,9 @@ name|layer
 parameter_list|,
 name|gboolean
 name|preserve
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -671,6 +680,9 @@ name|layer
 parameter_list|,
 name|gboolean
 name|linked
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

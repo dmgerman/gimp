@@ -786,6 +786,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|visible
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
