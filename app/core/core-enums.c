@@ -3286,6 +3286,14 @@ literal|"group-image-convert"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_IMAGE_ITEM_REMOVE
+block|,
+literal|"GIMP_UNDO_GROUP_IMAGE_ITEM_REMOVE"
+block|,
+literal|"group-image-item-remove"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 block|,
 literal|"GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE"
@@ -3957,6 +3965,17 @@ block|,
 name|N_
 argument_list|(
 literal|"Convert image"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_IMAGE_ITEM_REMOVE
+block|,
+name|N_
+argument_list|(
+literal|"Remove item"
 argument_list|)
 block|,
 name|NULL
