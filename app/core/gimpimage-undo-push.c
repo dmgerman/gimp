@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29eba0380103
+DECL|enum|__anon28a36c6d0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -6501,7 +6501,17 @@ operator|->
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  set the previous layer  */
+comment|/*  if exists, set the previous layer                                           */
+comment|/* (counterexample: result layer added after a merge op has no previous layer.) */
+if|if
+condition|(
+name|GIMP_IS_LAYER
+argument_list|(
+name|lu
+operator|->
+name|prev_layer
+argument_list|)
+condition|)
 name|gimp_image_set_active_layer
 argument_list|(
 name|gimage

@@ -1227,7 +1227,13 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/*  Start a merge undo group  */
+comment|/* Tell any listeners about impending layer merges */
+name|gimp_image_layer_merge
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+comment|/*  Start a merge undo group. */
 name|undo_push_group_start
 argument_list|(
 name|gimage
@@ -1544,7 +1550,8 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* set the mode of the bottom layer to normal so that the contents        *  aren't lost when merging with the all-alpha merge_layer        *  Keep a pointer to it so that we can set the mode right after it's        *  been merged so that undo works correctly.        */
+block|}
+comment|/* set the mode of the bottom layer to normal so that the contents    *  aren't lost when merging with the all-alpha merge_layer    *  Keep a pointer to it so that we can set the mode right after it's    *  been merged so that undo works correctly.    */
 name|bottom_layer
 operator|=
 name|layer
@@ -1555,7 +1562,7 @@ name|bottom_layer
 operator|->
 name|mode
 expr_stmt|;
-comment|/* DISSOLVE_MODE is special since it is the only mode that does not        *  work on the projection with the lower layer, but only locally on        *  the layers alpha channel.         */
+comment|/* DISSOLVE_MODE is special since it is the only mode that does not    *  work on the projection with the lower layer, but only locally on    *  the layers alpha channel.     */
 if|if
 condition|(
 name|bottom_layer
@@ -1571,7 +1578,6 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* Copy the tattoo and parasites of the bottom layer to the new layer */
 name|gimp_item_set_tattoo
 argument_list|(

@@ -1369,6 +1369,19 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+comment|/* Paranoia: Widget realized in a window? */
+if|if
+condition|(
+name|G_IS_OBJECT
+argument_list|(
+name|widget
+operator|->
+name|window
+argument_list|)
+operator|==
+name|TRUE
+condition|)
+block|{
 comment|/* Synthesize delete_event to close dialog. */
 name|event
 operator|.
@@ -1420,6 +1433,7 @@ name|window
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
