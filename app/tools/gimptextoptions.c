@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d760920103
+DECL|enum|__anon27cf41c70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -954,7 +954,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Font:"
+literal|"_Font:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -990,7 +990,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Font:"
+literal|"Font:"
 argument_list|)
 argument_list|,
 literal|1.0
