@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon276058740108
+DECL|struct|__anon287701c40108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -732,7 +732,7 @@ literal|"Copyright 1999 Tor Lillqvist"
 argument_list|,
 literal|"$Id$"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/File/Print"
 argument_list|)
@@ -770,7 +770,7 @@ literal|"Copyright 1999 Tor Lillqvist"
 argument_list|,
 literal|"$Id$"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/File/Page Setup"
 argument_list|)

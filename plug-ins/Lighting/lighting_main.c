@@ -852,9 +852,9 @@ literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,
 literal|"Version 0.2.0, March 15 1998"
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Light Effects/Lighting Effects"
+literal|"<Image>/Filters/Light Effects/Lighting Effects..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c881e580108
+DECL|struct|__anon2c6649070108
 block|{
 DECL|member|angle
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c881e580208
+DECL|struct|__anon2c6649070208
 block|{
 DECL|member|ID
 name|gint32
@@ -472,7 +472,7 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Layers/Rotate/90 degrees"
 argument_list|)
@@ -510,7 +510,7 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Layers/Rotate/180 degrees"
 argument_list|)
@@ -548,7 +548,7 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Layers/Rotate/270 degrees"
 argument_list|)
@@ -586,7 +586,7 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Image/Transforms/Rotate/90 degrees"
 argument_list|)
@@ -624,7 +624,7 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Image/Transforms/Rotate/180 degrees"
 argument_list|)
@@ -662,7 +662,7 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Image/Transforms/Rotate/270 degrees"
 argument_list|)
