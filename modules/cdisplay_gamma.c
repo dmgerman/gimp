@@ -1180,7 +1180,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2901be380103
+DECL|enum|__anon2ac6224c0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_FIRST
 name|COLORBLIND_DEFICIENCY_FIRST
@@ -2088,7 +2088,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2216,9 +2216,9 @@ name|colorblind
 operator|->
 name|combo
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)

@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad413550103
+DECL|enum|__anon2c3846480103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -73,7 +73,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad413550203
+DECL|enum|__anon2c3846480203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -539,7 +539,17 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|6
+literal|12
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -746,7 +756,7 @@ name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -790,11 +800,11 @@ name|editor
 operator|->
 name|add_button
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|16
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -888,7 +898,7 @@ name|editor
 operator|->
 name|remove_button
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1326,9 +1336,9 @@ name|editor
 operator|->
 name|config_frame
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
