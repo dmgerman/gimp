@@ -992,7 +992,7 @@ modifier|*
 name|previous
 parameter_list|)
 block|{
-comment|/*  for "label_spacing"  */
+comment|/*  font changes invalidate the indentation  */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -1003,11 +1003,6 @@ argument_list|,
 name|GIMP_FRAME_INDENT_KEY
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_queue_resize
-argument_list|(
-name|widget
 argument_list|)
 expr_stmt|;
 comment|/*  for "label_bold"  */
