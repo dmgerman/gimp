@@ -183,6 +183,24 @@ value|N_("Tools such as fuzzy-select and bucket fill find regions based on a " \
 end_define
 
 begin_define
+DECL|macro|DEFAULT_VIEW_BLURB
+define|#
+directive|define
+name|DEFAULT_VIEW_BLURB
+define|\
+value|"Sets the default settings for the image view."
+end_define
+
+begin_define
+DECL|macro|DEFAULT_FULLSCREEN_VIEW_BLURB
+define|#
+directive|define
+name|DEFAULT_FULLSCREEN_VIEW_BLURB
+define|\
+value|"Sets the default settings used when an image is viewed in fullscreen mode."
+end_define
+
+begin_define
 DECL|macro|ENVIRON_PATH_BLURB
 define|#
 directive|define

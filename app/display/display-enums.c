@@ -119,16 +119,16 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gimp_display_padding_mode_enum_values
+DECL|variable|gimp_canvas_padding_mode_enum_values
 specifier|static
 specifier|const
 name|GEnumValue
-name|gimp_display_padding_mode_enum_values
+name|gimp_canvas_padding_mode_enum_values
 index|[]
 init|=
 block|{
 block|{
-name|GIMP_DISPLAY_PADDING_MODE_DEFAULT
+name|GIMP_CANVAS_PADDING_MODE_DEFAULT
 block|,
 name|N_
 argument_list|(
@@ -139,7 +139,7 @@ literal|"default"
 block|}
 block|,
 block|{
-name|GIMP_DISPLAY_PADDING_MODE_LIGHT_CHECK
+name|GIMP_CANVAS_PADDING_MODE_LIGHT_CHECK
 block|,
 name|N_
 argument_list|(
@@ -150,7 +150,7 @@ literal|"light-check"
 block|}
 block|,
 block|{
-name|GIMP_DISPLAY_PADDING_MODE_DARK_CHECK
+name|GIMP_CANVAS_PADDING_MODE_DARK_CHECK
 block|,
 name|N_
 argument_list|(
@@ -161,7 +161,7 @@ literal|"dark-check"
 block|}
 block|,
 block|{
-name|GIMP_DISPLAY_PADDING_MODE_CUSTOM
+name|GIMP_CANVAS_PADDING_MODE_CUSTOM
 block|,
 name|N_
 argument_list|(
@@ -184,8 +184,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_display_padding_mode_get_type (void)
-name|gimp_display_padding_mode_get_type
+DECL|function|gimp_canvas_padding_mode_get_type (void)
+name|gimp_canvas_padding_mode_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -205,9 +205,9 @@ name|enum_type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpDisplayPaddingMode"
+literal|"GimpCanvasPaddingMode"
 argument_list|,
-name|gimp_display_padding_mode_enum_values
+name|gimp_canvas_padding_mode_enum_values
 argument_list|)
 expr_stmt|;
 return|return

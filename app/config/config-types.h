@@ -112,6 +112,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDisplayOptions
+typedef|typedef
+name|struct
+name|_GimpDisplayOptions
+name|GimpDisplayOptions
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGrid
 typedef|typedef
 name|struct
