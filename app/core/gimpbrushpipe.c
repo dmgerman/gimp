@@ -1903,10 +1903,26 @@ modifier|*
 name|p
 decl_stmt|;
 name|int
+name|x_index
+decl_stmt|;
+name|gdouble
 name|alpha
 decl_stmt|;
-name|int
+name|gdouble
+name|factor
+init|=
+literal|0.00392156986
+decl_stmt|;
+comment|/* 1.0/255.0 */
+name|gint
 name|i
+decl_stmt|;
+name|gint
+name|j
+decl_stmt|;
+name|guchar
+modifier|*
+name|mask
 decl_stmt|;
 comment|/*  Make sure x, y are positive  */
 while|while
@@ -1969,6 +1985,36 @@ name|pixmap_mask
 operator|->
 name|bytes
 expr_stmt|;
+comment|/* ditto, except for the brush mask, so we can pre-multiply the alpha value */
+name|mask
+operator|=
+name|temp_buf_data
+argument_list|(
+operator|(
+name|brush
+operator|->
+name|gbrush
+operator|)
+operator|.
+name|mask
+argument_list|)
+operator|+
+operator|(
+name|y
+operator|%
+name|brush
+operator|->
+name|pixmap_mask
+operator|->
+name|height
+operator|)
+operator|*
+name|brush
+operator|->
+name|pixmap_mask
+operator|->
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1983,10 +2029,9 @@ name|i
 operator|++
 control|)
 block|{
-name|p
+comment|/* attempt to avoid doing this calc twice in the loop */
+name|x_index
 operator|=
-name|b
-operator|+
 operator|(
 operator|(
 name|i
@@ -2000,6 +2045,12 @@ name|pixmap_mask
 operator|->
 name|width
 operator|)
+expr_stmt|;
+name|p
+operator|=
+name|b
+operator|+
+name|x_index
 operator|*
 name|brush
 operator|->
@@ -2014,7 +2065,45 @@ operator|-
 literal|1
 index|]
 operator|=
-name|OPAQUE_OPACITY
+name|mask
+index|[
+name|x_index
+index|]
+expr_stmt|;
+comment|/* multiply alpha into the pixmap data */
+comment|/* maybe we could do this at tool creation or brush switch time? */
+comment|/* and compute it for the whole brush at once and cache it?  */
+name|alpha
+operator|=
+name|d
+index|[
+name|bytes
+operator|-
+literal|1
+index|]
+operator|*
+name|factor
+expr_stmt|;
+name|d
+index|[
+literal|0
+index|]
+operator|*=
+name|alpha
+expr_stmt|;
+name|d
+index|[
+literal|1
+index|]
+operator|*=
+name|alpha
+expr_stmt|;
+name|d
+index|[
+literal|2
+index|]
+operator|*=
+name|alpha
 expr_stmt|;
 comment|/* printf("i: %i d->r: %i d->g: %i d->b: %i d->a: %i\n",i,(int)d[0], (int)d[1], (int)d[2], (int)d[3]); */
 name|gimage_transform_color
