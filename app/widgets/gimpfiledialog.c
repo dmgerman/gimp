@@ -829,7 +829,11 @@ name|uri
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+if|if
+condition|(
+operator|!
+name|real_uri
+condition|)
 block|{
 name|gchar
 modifier|*
