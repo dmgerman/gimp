@@ -83,7 +83,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fb38b0103
+DECL|enum|__anon2c88189a0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fb38b0203
+DECL|enum|__anon2c88189a0203
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fb38b0303
+DECL|enum|__anon2c88189a0303
 block|{
 DECL|enumerator|XLFD_NONE
 name|XLFD_NONE
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fb38b0403
+DECL|enum|__anon2c88189a0403
 block|{
 DECL|enumerator|LA_NONE
 name|LA_NONE
@@ -301,7 +301,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c2fb38b0508
+DECL|struct|__anon2c88189a0508
 typedef|typedef
 struct|struct
 block|{
@@ -391,12 +391,6 @@ begin_include
 include|#
 directive|include
 file|"gdyntext_ui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdyntextutil.h"
 end_include
 
 begin_include

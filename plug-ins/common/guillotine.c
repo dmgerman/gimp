@@ -20,12 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -425,13 +419,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|GParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
 name|num_vguides
 operator|=
 literal|0
@@ -518,7 +505,7 @@ operator|+
 name|num_hguides
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"Yay... found %d horizontal guides and %d vertical guides.\n"
 argument_list|,
@@ -530,7 +517,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"Poopy, no guides.\n"
 argument_list|)
@@ -657,7 +644,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|g_print
 argument_list|(
 literal|"Aie!  Aie!  Aie!  Too!\n"
 argument_list|)
@@ -749,7 +736,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|printf
+name|g_print
 argument_list|(
 literal|"%d,"
 argument_list|,
@@ -759,7 +746,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -777,7 +764,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|printf
+name|g_print
 argument_list|(
 literal|"%d,"
 argument_list|,
@@ -787,7 +774,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -828,49 +815,22 @@ block|{
 name|gint32
 name|new_image
 decl_stmt|;
-name|return_vals
+name|new_image
 operator|=
-name|gimp_run_procedure
+name|gimp_channel_ops_duplicate
 argument_list|(
-literal|"gimp_channel_ops_duplicate"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
 name|image_ID
-argument_list|,
-name|PARAM_END
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|STATUS_SUCCESS
-condition|)
 name|new_image
-operator|=
-name|return_vals
-index|[
+operator|==
+operator|-
 literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-else|else
+condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"Aie3!\n"
 argument_list|)
@@ -887,20 +847,10 @@ comment|/* 	  printf("(%dx%d:%d,%d:%d,%d)\n", */
 comment|/* 		 (vguides[x+1]-vguides[x]), */
 comment|/* 		 (hguides[y+1]-hguides[y]), */
 comment|/* 		 vguides[x], hguides[y],x, y);  */
-name|gimp_run_procedure
+name|gimp_crop
 argument_list|(
-literal|"gimp_crop"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
 name|new_image
 argument_list|,
-name|PARAM_INT32
-argument_list|,
-operator|(
 name|vguides
 index|[
 name|x
@@ -912,11 +862,7 @@ name|vguides
 index|[
 name|x
 index|]
-operator|)
 argument_list|,
-name|PARAM_INT32
-argument_list|,
-operator|(
 name|hguides
 index|[
 name|y
@@ -928,23 +874,16 @@ name|hguides
 index|[
 name|y
 index|]
-operator|)
-argument_list|,
-name|PARAM_INT32
 argument_list|,
 name|vguides
 index|[
 name|x
 index|]
 argument_list|,
-name|PARAM_INT32
-argument_list|,
 name|hguides
 index|[
 name|y
 index|]
-argument_list|,
-name|PARAM_END
 argument_list|)
 expr_stmt|;
 comment|/*  	  gimp_undo_push_group_end (new_image); */
@@ -954,9 +893,14 @@ name|new_image
 argument_list|)
 expr_stmt|;
 comment|/* show the rough coordinates of the image in the title */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|filename
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|filename
+argument_list|)
 argument_list|,
 literal|"%s-(%i,%i)"
 argument_list|,

@@ -295,7 +295,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b0fe70108
+DECL|struct|__anon28ff08fc0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b0fe70208
+DECL|struct|__anon28ff08fc0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b0fe70308
+DECL|struct|__anon28ff08fc0308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b0fe70408
+DECL|struct|__anon28ff08fc0408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b0fe70508
+DECL|struct|__anon28ff08fc0508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon291b0fe7060a
+DECL|union|__anon28ff08fc060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -507,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b0fe70708
+DECL|struct|__anon28ff08fc0708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -599,7 +599,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b0fe70808
+DECL|struct|__anon28ff08fc0808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -1175,13 +1175,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
 name|gchar
 modifier|*
 name|path_str
@@ -1281,46 +1274,12 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_gimprc_query"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_STRING
-argument_list|,
-literal|"script-fu-path"
-argument_list|,
-name|PARAM_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|STATUS_SUCCESS
-condition|)
-block|{
 name|path_str
 operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
+name|gimp_gimprc_query
+argument_list|(
+literal|"script-fu-path"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1329,7 +1288,7 @@ operator|==
 name|NULL
 condition|)
 return|return;
-comment|/* Set local path to contain temp_path, where (supposedly)        * there may be working files.        */
+comment|/* Set local path to contain temp_path, where (supposedly)    * there may be working files.    */
 name|home
 operator|=
 name|g_get_home_dir
@@ -1605,7 +1564,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-comment|/* No, I don't know why, but this is  			       * necessary on NT 4.0. 			       */
+comment|/* No, I don't know why, but this is  			   * necessary on NT 4.0. 			   */
 name|Sleep
 argument_list|(
 literal|0
@@ -1657,12 +1616,9 @@ argument_list|(
 name|local_path
 argument_list|)
 expr_stmt|;
-block|}
-name|gimp_destroy_params
+name|g_free
 argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
+name|path_str
 argument_list|)
 expr_stmt|;
 comment|/*  now that all scripts are read in and sorted, tell gimp about them  */

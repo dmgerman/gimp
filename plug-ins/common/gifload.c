@@ -766,7 +766,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2992a3e30108
+DECL|struct|__anon2c6c47a60108
 block|{
 DECL|member|Width
 name|unsigned
@@ -816,7 +816,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2992a3e30208
+DECL|struct|__anon2c6c47a60208
 block|{
 DECL|member|transparent
 name|int
@@ -3554,9 +3554,6 @@ name|alpha_frame
 init|=
 name|FALSE
 decl_stmt|;
-name|int
-name|nreturn_vals
-decl_stmt|;
 specifier|static
 name|int
 name|previous_disposal
@@ -3929,18 +3926,9 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|gimp_run_procedure
+name|gimp_convert_rgb
 argument_list|(
-literal|"gimp_convert_rgb"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
 name|image_ID
-argument_list|,
-name|PARAM_END
 argument_list|)
 expr_stmt|;
 break|break;

@@ -780,7 +780,7 @@ name|gchar
 modifier|*
 name|text
 init|=
-name|strunescape
+name|gimp_strcompress
 argument_list|(
 name|data
 operator|->

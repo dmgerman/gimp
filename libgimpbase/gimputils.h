@@ -30,7 +30,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-comment|/*    *  Right now all you find here is the g_strescape function out of   *  glib-1.3. We need its functionality, but don't want to rely on  *  that version being installed   */
+comment|/*    *  Right now all you find here are the g_strescape and g_strcompress   *  function out of glib-1.3. We need their functionality, but don't   *  want to rely on that version being installed   */
 if|#
 directive|if
 operator|(
@@ -58,6 +58,14 @@ parameter_list|,
 name|exceptions
 parameter_list|)
 value|g_strescape (string, exceptions)
+DECL|macro|gimp_strcompress (string)
+define|#
+directive|define
+name|gimp_strcompress
+parameter_list|(
+name|string
+parameter_list|)
+value|g_strcompress (string)
 else|#
 directive|else
 name|gchar
@@ -73,6 +81,16 @@ specifier|const
 name|gchar
 modifier|*
 name|exceptions
+parameter_list|)
+function_decl|;
+name|gchar
+modifier|*
+name|gimp_strcompress
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|source
 parameter_list|)
 function_decl|;
 endif|#
