@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"devices.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"eraser.h"
 end_include
 
@@ -255,6 +261,16 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|active_tool_type
+name|ToolType
+name|active_tool_type
+init|=
+operator|-
+literal|1
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* Local Data */
 end_comment
@@ -278,17 +294,6 @@ modifier|*
 name|options_vbox
 init|=
 name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|active_tool_type
-specifier|static
-name|ToolType
-name|active_tool_type
-init|=
-operator|-
-literal|1
 decl_stmt|;
 end_decl_stmt
 
@@ -1378,6 +1383,12 @@ name|GTK_CONTAINER
 argument_list|(
 name|options_shell
 argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* Update the device-information dialog */
+name|device_status_update
+argument_list|(
+name|current_device
 argument_list|)
 expr_stmt|;
 comment|/*  Set the paused count variable to 0    */

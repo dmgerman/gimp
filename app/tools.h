@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af189440103
+DECL|enum|__anon27aea0d80103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
@@ -530,6 +530,13 @@ specifier|extern
 name|Tool
 modifier|*
 name|active_tool
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ToolType
+name|active_tool_type
 decl_stmt|;
 end_decl_stmt
 

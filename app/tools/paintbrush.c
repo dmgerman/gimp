@@ -913,7 +913,7 @@ argument_list|,
 name|get_brush_paint_mode
 argument_list|()
 argument_list|,
-name|SOFT
+name|PRESSURE
 argument_list|,
 name|incremental
 condition|?

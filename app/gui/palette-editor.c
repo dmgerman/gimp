@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"devices.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"errors.h"
 end_include
 
@@ -2007,6 +2013,11 @@ argument_list|)
 expr_stmt|;
 name|color_area_update
 argument_list|()
+expr_stmt|;
+name|device_status_update
+argument_list|(
+name|current_device
+argument_list|)
 expr_stmt|;
 block|}
 block|}

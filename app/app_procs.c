@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"devices.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -2370,6 +2376,9 @@ name|FALSE
 condition|)
 block|{
 name|get_standard_colormaps
+argument_list|()
+expr_stmt|;
+name|devices_init
 argument_list|()
 expr_stmt|;
 name|create_toolbox

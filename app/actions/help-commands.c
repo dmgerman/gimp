@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"devices.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channel_ops.h"
 end_include
 
@@ -309,7 +315,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bba50490108
+DECL|struct|__anon2b2125170108
 typedef|typedef
 struct|struct
 block|{
@@ -353,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba50490208
+DECL|struct|__anon2b2125170208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4551,7 +4557,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2bba50490308
+DECL|struct|__anon2b2125170308
 struct|struct
 block|{
 DECL|member|label
@@ -4620,7 +4626,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2bba50490408
+DECL|struct|__anon2b2125170408
 struct|struct
 block|{
 DECL|member|label
@@ -11600,6 +11606,44 @@ name|client_data
 parameter_list|)
 block|{
 name|tools_options_dialog_show
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|dialogs_input_devices_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|dialogs_input_devices_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|create_input_dialog
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|dialogs_device_status_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|dialogs_device_status_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|create_device_status
 argument_list|()
 expr_stmt|;
 block|}

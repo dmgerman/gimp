@@ -285,6 +285,26 @@ name|NULL
 block|}
 block|,
 block|{
+literal|"<Toolbox>/File/Dialogs/Input Devices..."
+block|,
+name|NULL
+block|,
+name|dialogs_input_devices_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"<Toolbox>/File/Dialogs/Device Status..."
+block|,
+name|NULL
+block|,
+name|dialogs_device_status_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"<Toolbox>/File/<separator>"
 block|,
 name|NULL
@@ -1612,6 +1632,26 @@ block|,
 name|NULL
 block|,
 name|dialogs_tools_options_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"<Image>/Dialogs/Input Devices..."
+block|,
+name|NULL
+block|,
+name|dialogs_input_devices_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"<Image>/Dialogs/Device Status..."
+block|,
+name|NULL
+block|,
+name|dialogs_device_status_cmd_callback
 block|,
 name|NULL
 block|}

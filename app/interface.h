@@ -16,6 +16,12 @@ directive|define
 name|__INTERFACE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
 begin_comment
 comment|/* typedefs */
 end_comment
@@ -87,6 +93,19 @@ parameter_list|,
 name|int
 parameter_list|,
 name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GdkPixmap
+modifier|*
+name|create_tool_pixmap
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|ToolType
 parameter_list|)
 function_decl|;
 end_function_decl

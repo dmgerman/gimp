@@ -102,6 +102,19 @@ DECL|macro|SOFT
 comment|/* paintbrush */
 end_comment
 
+begin_define
+DECL|macro|PRESSURE
+define|#
+directive|define
+name|PRESSURE
+value|2
+end_define
+
+begin_comment
+DECL|macro|PRESSURE
+comment|/* paintbrush with variable pressure */
+end_comment
+
 begin_comment
 comment|/* paint application modes  */
 end_comment
@@ -183,6 +196,21 @@ name|double
 name|starty
 decl_stmt|;
 comment|/*  starting y coord            */
+DECL|member|startpressure
+name|double
+name|startpressure
+decl_stmt|;
+comment|/* starting pressure          */
+DECL|member|startxtilt
+name|double
+name|startxtilt
+decl_stmt|;
+comment|/* starting xtilt              */
+DECL|member|startytilt
+name|double
+name|startytilt
+decl_stmt|;
+comment|/* starting ytilt                */
 DECL|member|curx
 name|double
 name|curx
@@ -193,6 +221,21 @@ name|double
 name|cury
 decl_stmt|;
 comment|/*  current y coord             */
+DECL|member|curpressure
+name|double
+name|curpressure
+decl_stmt|;
+comment|/*  current pressure            */
+DECL|member|curxtilt
+name|double
+name|curxtilt
+decl_stmt|;
+comment|/*  current xtilt               */
+DECL|member|curytilt
+name|double
+name|curytilt
+decl_stmt|;
+comment|/*  current ytilt               */
 DECL|member|lastx
 name|double
 name|lastx
@@ -203,6 +246,21 @@ name|double
 name|lasty
 decl_stmt|;
 comment|/*  last y coord                */
+DECL|member|lastpressure
+name|double
+name|lastpressure
+decl_stmt|;
+comment|/* last pressure               */
+DECL|member|lastxtilt
+name|double
+name|lastxtilt
+decl_stmt|;
+comment|/* last xtilt                  */
+DECL|member|lastytilt
+name|double
+name|lastytilt
+decl_stmt|;
+comment|/* last ytilt                  */
 DECL|member|state
 name|int
 name|state
@@ -285,6 +343,18 @@ decl_stmt|;
 DECL|member|lasty
 name|double
 name|lasty
+decl_stmt|;
+DECL|member|lastpressure
+name|double
+name|lastpressure
+decl_stmt|;
+DECL|member|lastxtilt
+name|double
+name|lastxtilt
+decl_stmt|;
+DECL|member|lastytilt
+name|double
+name|lastytilt
 decl_stmt|;
 block|}
 struct|;

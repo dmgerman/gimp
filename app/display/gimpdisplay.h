@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b736bd0103
+DECL|enum|__anon2bdca5a80103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -312,6 +312,31 @@ name|GdkCursorType
 name|current_cursor
 decl_stmt|;
 comment|/*  Currently installed cursor              */
+DECL|member|draw_cursor
+name|short
+name|draw_cursor
+decl_stmt|;
+comment|/* should we draw software cursor ? */
+DECL|member|cursor_x
+name|int
+name|cursor_x
+decl_stmt|;
+comment|/* software cursor X value */
+DECL|member|cursor_y
+name|int
+name|cursor_y
+decl_stmt|;
+comment|/* software cursor Y value */
+DECL|member|proximity
+name|short
+name|proximity
+decl_stmt|;
+comment|/* is a device in proximity of gdisplay ? */
+DECL|member|have_cursor
+name|short
+name|have_cursor
+decl_stmt|;
+comment|/* is cursor currently drawn ? */
 block|}
 struct|;
 end_struct
@@ -600,14 +625,14 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|double
 parameter_list|,
-name|int
+name|double
 parameter_list|,
-name|int
+name|double
 modifier|*
 parameter_list|,
-name|int
+name|double
 modifier|*
 parameter_list|)
 function_decl|;
@@ -633,6 +658,20 @@ modifier|*
 parameter_list|,
 name|int
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_update_cursor
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|int
 parameter_list|)
 function_decl|;
 end_function_decl
