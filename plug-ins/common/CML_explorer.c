@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fa7600108
+DECL|struct|__anon2a397afa0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -229,7 +229,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon294fa7600203
+DECL|enum|__anon2a397afa0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -352,7 +352,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon294fa7600303
+DECL|enum|__anon2a397afa0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -491,7 +491,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon294fa7600403
+DECL|enum|__anon2a397afa0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon294fa7600503
+DECL|enum|__anon2a397afa0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -682,7 +682,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fa7600608
+DECL|struct|__anon2a397afa0608
 block|{
 DECL|member|function
 name|gint
@@ -755,7 +755,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fa7600708
+DECL|struct|__anon2a397afa0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1533,7 +1533,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fa7600808
+DECL|struct|__anon2a397afa0808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1663,7 +1663,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|CML_preview_defer
 specifier|static
-name|gint
+name|gboolean
 name|CML_preview_defer
 init|=
 name|FALSE
@@ -2125,22 +2125,22 @@ name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
-name|gint
+name|gboolean
 name|dest_has_alpha
 init|=
 name|FALSE
 decl_stmt|;
-name|gint
+name|gboolean
 name|dest_is_gray
 init|=
 name|FALSE
 decl_stmt|;
-name|gint
+name|gboolean
 name|src_has_alpha
 init|=
 name|FALSE
 decl_stmt|;
-name|gint
+name|gboolean
 name|src_is_gray
 init|=
 name|FALSE
@@ -3943,6 +3943,7 @@ block|}
 block|}
 name|dest_offset
 operator|=
+operator|(
 name|offset_y
 operator|*
 name|dest_bpl
@@ -3958,6 +3959,7 @@ name|offset_x
 operator|)
 operator|*
 name|dest_bpp
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -10535,9 +10537,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|CML_preview_defer
-operator|==
-name|FALSE
 condition|)
 name|CML_main_function
 argument_list|(
@@ -12849,7 +12850,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|CML_load_parameter_file (const gchar * filename,gboolean interactive_mode)
 name|CML_load_parameter_file
 parameter_list|(
@@ -13526,9 +13527,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
 name|flag
-operator|==
-name|FALSE
 condition|)
 block|{
 if|if
@@ -13767,13 +13767,12 @@ literal|0
 return|;
 block|}
 else|else
+block|{
 name|str
 operator|++
 expr_stmt|;
+block|}
 return|return
-operator|(
-name|gint
-operator|)
 name|atoi
 argument_list|(
 name|str
@@ -13816,7 +13815,7 @@ operator|*
 name|flag
 condition|)
 return|return
-literal|0
+literal|0.0
 return|;
 if|if
 condition|(
@@ -13841,7 +13840,7 @@ name|FALSE
 expr_stmt|;
 comment|/* set FALSE if fail to parse */
 return|return
-literal|0
+literal|0.0
 return|;
 block|}
 name|str
@@ -13873,22 +13872,23 @@ operator|=
 name|FALSE
 expr_stmt|;
 return|return
-literal|0
+literal|0.0
 return|;
 block|}
 else|else
+block|{
 name|str
 operator|++
 expr_stmt|;
+block|}
 return|return
-operator|(
-name|gdouble
-operator|)
-name|atof
+name|g_ascii_strtod
 argument_list|(
 name|str
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
