@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb16d820103
+DECL|enum|__anon2b96be7e0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb16d820203
+DECL|enum|__anon2b96be7e0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb16d820308
+DECL|struct|__anon2b96be7e0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -216,7 +216,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2bb16d82040a
+DECL|union|__anon2b96be7e040a
 block|{
 DECL|member|d
 name|gdouble
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb16d820508
+DECL|struct|__anon2b96be7e0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb16d820608
+DECL|struct|__anon2b96be7e0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb16d820708
+DECL|struct|__anon2b96be7e0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -342,7 +342,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb16d820808
+DECL|struct|__anon2b96be7e0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -409,7 +409,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb16d820908
+DECL|struct|__anon2b96be7e0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -562,7 +562,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb16d820a08
+DECL|struct|__anon2b96be7e0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -6133,7 +6133,10 @@ literal|"select-all"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Select _All"
+argument_list|)
 block|,
 literal|"<control>A"
 block|,
@@ -6150,7 +6153,10 @@ literal|"center"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Recompute _Center"
+argument_list|)
 block|,
 literal|"<control>C"
 block|,
