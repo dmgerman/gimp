@@ -435,7 +435,7 @@ default|default :
 name|scalesrc
 operator|=
 name|dir
-operator|/
+operator|%
 literal|100
 expr_stmt|;
 if|if
@@ -462,7 +462,7 @@ expr_stmt|;
 name|scaledest
 operator|=
 name|dir
-operator|%
+operator|/
 literal|100
 expr_stmt|;
 if|if
