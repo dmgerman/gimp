@@ -285,6 +285,42 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  special form of gimp_prop_scale_entry_new() for GParamDouble  */
+end_comment
+
+begin_function_decl
+name|GtkObject
+modifier|*
+name|gimp_prop_opacity_entry_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+name|GtkTable
+modifier|*
+name|table
+parameter_list|,
+name|gint
+name|column
+parameter_list|,
+name|gint
+name|row
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|label
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  GimpParamMemsize  */
 end_comment
 

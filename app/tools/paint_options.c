@@ -375,7 +375,7 @@ name|table
 argument_list|)
 expr_stmt|;
 comment|/*  the opacity scale  */
-name|gimp_prop_scale_entry_new
+name|gimp_prop_opacity_entry_new
 argument_list|(
 name|config
 argument_list|,
@@ -394,18 +394,6 @@ name|_
 argument_list|(
 literal|"Opacity:"
 argument_list|)
-argument_list|,
-literal|1.0
-argument_list|,
-literal|10.0
-argument_list|,
-literal|1
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
 argument_list|)
 expr_stmt|;
 comment|/*  the paint mode menu  */
