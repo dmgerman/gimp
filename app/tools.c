@@ -297,16 +297,6 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|active_tool_type
-name|ToolType
-name|active_tool_type
-init|=
-operator|-
-literal|1
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* Local Data */
 end_comment
@@ -1947,13 +1937,7 @@ operator|=
 name|global_tool_ID
 operator|++
 expr_stmt|;
-name|active_tool_type
-operator|=
-name|active_tool
-operator|->
-name|type
-expr_stmt|;
-comment|/* Update the device-information dialog */
+comment|/*  Update the device-information dialog  */
 name|device_status_update
 argument_list|(
 name|current_device
@@ -2201,12 +2185,6 @@ name|ID
 operator|=
 name|global_tool_ID
 operator|++
-expr_stmt|;
-name|active_tool_type
-operator|=
-name|active_tool
-operator|->
-name|type
 expr_stmt|;
 block|}
 end_function
@@ -3044,10 +3022,8 @@ name|client_data
 expr_stmt|;
 if|if
 condition|(
-name|active_tool_type
-operator|==
-operator|-
-literal|1
+operator|!
+name|active_tool
 condition|)
 return|return;
 if|if
@@ -3057,7 +3033,9 @@ index|[
 operator|(
 name|int
 operator|)
-name|active_tool_type
+name|active_tool
+operator|->
+name|type
 index|]
 operator|.
 name|tool_options
@@ -3071,7 +3049,9 @@ index|[
 operator|(
 name|int
 operator|)
-name|active_tool_type
+name|active_tool
+operator|->
+name|type
 index|]
 operator|.
 name|tool_options

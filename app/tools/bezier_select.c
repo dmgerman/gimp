@@ -328,7 +328,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2b83ef130108
+DECL|struct|__anon27bb981d0108
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b83ef130208
+DECL|struct|__anon27bb981d0208
 typedef|typedef
 struct|struct
 block|{
@@ -420,7 +420,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b83ef130308
+DECL|struct|__anon27bb981d0308
 typedef|typedef
 struct|struct
 block|{
@@ -10329,7 +10329,11 @@ parameter_list|()
 block|{
 return|return
 operator|(
-name|active_tool_type
+name|active_tool
+operator|&&
+name|active_tool
+operator|->
+name|type
 operator|==
 name|BEZIER_SELECT
 operator|&&
@@ -10384,7 +10388,11 @@ comment|/*   printSel(bsel); */
 comment|/*  If the tool was being used before clear it */
 if|if
 condition|(
-name|active_tool_type
+name|active_tool
+operator|&&
+name|active_tool
+operator|->
+name|type
 operator|==
 name|BEZIER_SELECT
 operator|&&

@@ -259,7 +259,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  TODO: - gimp_context_set_parent ()  *        - gimp_context_get_parent ()  *        - gimp_context_find ()  *        - gimp_context_get_name ()  *  *        probably interacting with the context manager:  *        - gimp_context_push () which will call gimp_context_set_parent()  *        - gimp_context_push_new () to do a GL-style push  *        - gimp_context_pop ()  *  *        a proper mechanism to prevent silly operations like pushing  *        the user context to some client stack etc.  */
+comment|/*  TODO: - gimp_context_set_parent ()  *        - gimp_context_get_parent ()  *        - gimp_context_find ()  *  *        probably interacting with the context manager:  *        - gimp_context_push () which will call gimp_context_set_parent()  *        - gimp_context_push_new () to do a GL-style push  *        - gimp_context_pop ()  *  *        a proper mechanism to prevent silly operations like pushing  *        the user context to some client stack etc.  */
 end_comment
 
 begin_comment
@@ -346,6 +346,45 @@ end_function_decl
 begin_comment
 comment|/*  functions for manipulating a single context  *  *  FIXME: this interface may be ok but the implementation is  *         ugly code duplication. There needs to be a generic way.  */
 end_comment
+
+begin_function_decl
+name|gchar
+modifier|*
+name|gimp_context_get_name
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpContext
+modifier|*
+name|gimp_context_get_parent
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_set_parent
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpContext
+modifier|*
+name|parent
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gdouble
