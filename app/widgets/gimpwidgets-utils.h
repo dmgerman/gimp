@@ -283,6 +283,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_dialog_set_sensitive
+parameter_list|(
+name|GtkDialog
+modifier|*
+name|dialog
+parameter_list|,
+name|gboolean
+name|sensitive
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
