@@ -31,6 +31,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpthumb/gimpthumb-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/base-types.h"
 end_include
 
@@ -67,7 +73,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2985ace50103
+DECL|enum|__anon2c64e8470103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS

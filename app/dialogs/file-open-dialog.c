@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpthumb/gimpthumb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -1875,9 +1881,11 @@ if|if
 condition|(
 name|imagefile
 operator|->
-name|state
+name|thumbnail
+operator|->
+name|thumb_state
 operator|<
-name|GIMP_IMAGEFILE_STATE_THUMBNAIL_FAILED
+name|GIMP_THUMB_STATE_FAILED
 condition|)
 name|gimp_imagefile_create_thumbnail
 argument_list|(

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpthumb/gimpthumb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -1443,9 +1449,11 @@ if|if
 condition|(
 name|imagefile
 operator|->
-name|state
+name|thumbnail
+operator|->
+name|image_state
 operator|==
-name|GIMP_IMAGEFILE_STATE_NOT_FOUND
+name|GIMP_THUMB_STATE_NOT_FOUND
 condition|)
 block|{
 name|gimp_container_remove

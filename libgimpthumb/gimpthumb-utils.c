@@ -264,6 +264,15 @@ name|enum_class
 operator|->
 name|n_values
 expr_stmt|;
+name|thumb_sizes
+operator|=
+name|g_new
+argument_list|(
+name|gint
+argument_list|,
+name|thumb_num_sizes
+argument_list|)
+expr_stmt|;
 name|thumb_subdirs
 operator|=
 name|g_new
@@ -641,8 +650,8 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_thumb_find_png_thumb (const gchar * uri,GimpThumbSize * size)
-name|gimp_thumb_find_png_thumb
+DECL|function|gimp_thumb_find_thumb (const gchar * uri,GimpThumbSize * size)
+name|gimp_thumb_find_thumb
 parameter_list|(
 specifier|const
 name|gchar
