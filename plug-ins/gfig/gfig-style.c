@@ -2960,12 +2960,6 @@ operator|->
 name|fill_type
 argument_list|)
 expr_stmt|;
-name|gfig_context
-operator|->
-name|enable_repaint
-operator|=
-name|enable_repaint
-expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -2979,6 +2973,12 @@ name|style
 operator|->
 name|paint_type
 argument_list|)
+expr_stmt|;
+name|gfig_context
+operator|->
+name|enable_repaint
+operator|=
+name|enable_repaint
 expr_stmt|;
 block|}
 end_function
