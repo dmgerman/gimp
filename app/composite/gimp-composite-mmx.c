@@ -1490,9 +1490,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("movq           %0,%%mm2\n"                     "\tmovq      %%mm2,%%mm1\n"                     "\tpunpcklbw %%mm0,%%mm1\n"                     "\tmovq      %%mm3,%%mm5\n"                      "\t" pmulwX(mm5,mm1,mm7) "\n"                      "\tmovq      %%mm2,%%mm4\n"                     "\tpunpckhbw %%mm0,%%mm4\n"                     "\tmovq      %%mm3,%%mm5\n"                      "\t" pmulwX(mm5,mm4,mm7) "\n"                      "\tpackuswb  %%mm4,%%mm1\n"                      "\tmovq    %%mm1,%1\n"                     :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.D)                     : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|("movq           %1,%%mm2\n"                     "\tmovq      %%mm2,%%mm1\n"                     "\tpunpcklbw %%mm0,%%mm1\n"                     "\tmovq      %%mm3,%%mm5\n"                      "\t" pmulwX(mm5,mm1,mm7) "\n"                      "\tmovq      %%mm2,%%mm4\n"                     "\tpunpckhbw %%mm0,%%mm4\n"                     "\tmovq      %%mm3,%%mm5\n"                      "\t" pmulwX(mm5,mm4,mm7) "\n"                      "\tpackuswb  %%mm4,%%mm1\n"                      "\tmovq    %%mm1,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A)                     : "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
 name|op
 operator|.
 name|A
@@ -1515,9 +1513,7 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("movd           %0,%%mm2\n"                   "\tmovq      %%mm2,%%mm1\n"                   "\tpunpcklbw %%mm0,%%mm1\n"                   "\tmovq      %%mm3,%%mm5\n"                    "\t" pmulwX(mm5,mm1,mm7) "\n"                    "\tpackuswb  %%mm0,%%mm1\n"                   "\tmovd      %%mm1,%1\n"                   :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.D)                   : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|("movd           %1,%%mm2\n"                     "\tmovq      %%mm2,%%mm1\n"                     "\tpunpcklbw %%mm0,%%mm1\n"                     "\tmovq      %%mm3,%%mm5\n"                      "\t" pmulwX(mm5,mm1,mm7) "\n"                      "\tpackuswb  %%mm0,%%mm1\n"                     "\tmovd      %%mm1,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A)                     : "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
 block|}
 asm|asm("emms");
 block|}
@@ -1642,9 +1638,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq       %0,%%mm2\n"                     "\tmovq       %1,%%mm3\n"                      "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                      "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                      "\t" pminub(mm3,mm2,mm4) "\n"                      "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovq    %%mm1,%2\n"                     :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|("  movq       %1,%%mm2\n"                     "\tmovq       %2,%%mm3\n"                      "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                      "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                      "\t" pminub(mm3,mm2,mm4) "\n"                      "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovq    %%mm1,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 name|op
 operator|.
 name|A

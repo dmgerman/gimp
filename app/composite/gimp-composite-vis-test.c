@@ -425,7 +425,7 @@ literal|1
 expr_stmt|;
 name|n_pixels
 operator|=
-literal|163921
+literal|1048593
 expr_stmt|;
 name|argv
 operator|++

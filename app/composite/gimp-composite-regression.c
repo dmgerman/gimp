@@ -737,7 +737,7 @@ name|u_long
 name|length
 parameter_list|)
 block|{
-name|int
+name|u_long
 name|i
 decl_stmt|;
 name|int
@@ -1307,10 +1307,10 @@ end_function
 
 begin_function
 name|double
-DECL|function|gimp_composite_regression_time_function (int iterations,void (* func)(),GimpCompositeContext * ctx)
+DECL|function|gimp_composite_regression_time_function (u_long iterations,void (* func)(),GimpCompositeContext * ctx)
 name|gimp_composite_regression_time_function
 parameter_list|(
-name|int
+name|u_long
 name|iterations
 parameter_list|,
 name|void
@@ -1337,7 +1337,7 @@ name|struct
 name|timeval
 name|tv_elapsed
 decl_stmt|;
-name|int
+name|u_long
 name|i
 decl_stmt|;
 name|gettimeofday
@@ -1405,11 +1405,10 @@ end_function
 begin_function
 name|gimp_rgba8_t
 modifier|*
-DECL|function|gimp_composite_regression_random_rgba8 (unsigned long n_pixels)
+DECL|function|gimp_composite_regression_random_rgba8 (u_long n_pixels)
 name|gimp_composite_regression_random_rgba8
 parameter_list|(
-name|unsigned
-name|long
+name|u_long
 name|n_pixels
 parameter_list|)
 block|{
@@ -1417,7 +1416,7 @@ name|gimp_rgba8_t
 modifier|*
 name|rgba8
 decl_stmt|;
-name|int
+name|u_long
 name|i
 decl_stmt|;
 if|if
@@ -1516,11 +1515,10 @@ end_function
 begin_function
 name|gimp_rgba8_t
 modifier|*
-DECL|function|gimp_composite_regression_fixed_rgba8 (unsigned long n_pixels)
+DECL|function|gimp_composite_regression_fixed_rgba8 (u_long n_pixels)
 name|gimp_composite_regression_fixed_rgba8
 parameter_list|(
-name|unsigned
-name|long
+name|u_long
 name|n_pixels
 parameter_list|)
 block|{
@@ -1528,10 +1526,10 @@ name|gimp_rgba8_t
 modifier|*
 name|rgba8
 decl_stmt|;
-name|int
+name|u_long
 name|i
 decl_stmt|;
-name|int
+name|u_long
 name|v
 decl_stmt|;
 if|if

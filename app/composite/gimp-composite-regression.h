@@ -19,7 +19,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0108
+DECL|struct|__anon2b43bcbf0108
 block|{
 DECL|member|v
 name|guint8
@@ -34,7 +34,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0208
+DECL|struct|__anon2b43bcbf0208
 block|{
 DECL|member|v
 name|guint8
@@ -53,7 +53,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0308
+DECL|struct|__anon2b43bcbf0308
 block|{
 DECL|member|r
 name|guint8
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0408
+DECL|struct|__anon2b43bcbf0408
 block|{
 DECL|member|r
 name|guint8
@@ -109,7 +109,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0508
+DECL|struct|__anon2b43bcbf0508
 block|{
 DECL|member|v
 name|guint16
@@ -124,7 +124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0608
+DECL|struct|__anon2b43bcbf0608
 block|{
 DECL|member|v
 name|guint16
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0708
+DECL|struct|__anon2b43bcbf0708
 block|{
 DECL|member|r
 name|guint16
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0808
+DECL|struct|__anon2b43bcbf0808
 block|{
 DECL|member|r
 name|guint16
@@ -204,7 +204,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0908
+DECL|struct|__anon2b43bcbf0908
 block|{
 DECL|member|v
 name|guint32
@@ -219,7 +219,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0a08
+DECL|struct|__anon2b43bcbf0a08
 block|{
 DECL|member|v
 name|guint32
@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0b08
+DECL|struct|__anon2b43bcbf0b08
 block|{
 DECL|member|r
 name|guint32
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5a81a0c08
+DECL|struct|__anon2b43bcbf0c08
 block|{
 DECL|member|r
 name|guint32
@@ -295,7 +295,7 @@ specifier|extern
 name|double
 name|gimp_composite_regression_time_function
 parameter_list|(
-name|int
+name|u_long
 parameter_list|,
 name|void
 function_decl|(
@@ -435,8 +435,7 @@ name|gimp_rgba8_t
 modifier|*
 name|gimp_composite_regression_random_rgba8
 parameter_list|(
-name|unsigned
-name|long
+name|u_long
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -447,8 +446,7 @@ name|gimp_rgba8_t
 modifier|*
 name|gimp_composite_regression_fixed_rgba8
 parameter_list|(
-name|unsigned
-name|long
+name|u_long
 parameter_list|)
 function_decl|;
 end_function_decl
