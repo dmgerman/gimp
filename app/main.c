@@ -823,31 +823,6 @@ argument_list|(
 literal|"  --display<display>    Use the designated X display.\n\n"
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"Valid debugging options are:\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"  --sync                 Send X commands synchronously.\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"  --show-events          Show GDK events.\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"  --no-show-events       Don't show GDK events.\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"  --debug-level<level>  Provide debug output at designated level.\n"
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
