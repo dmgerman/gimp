@@ -798,7 +798,7 @@ operator|->
 name|config
 argument_list|)
 argument_list|,
-literal|"notify::monitor-xresolutuion"
+literal|"notify::monitor-xresolution"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -819,7 +819,7 @@ operator|->
 name|config
 argument_list|)
 argument_list|,
-literal|"notify::monitor-yresolutuion"
+literal|"notify::monitor-yresolution"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1824,6 +1824,7 @@ name|shell
 operator|->
 name|dot_for_dot
 condition|)
+block|{
 name|gimp_display_shell_scale_setup
 argument_list|(
 name|shell
@@ -1839,6 +1840,17 @@ name|statusbar
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_flush
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
