@@ -787,7 +787,7 @@ name|options
 operator|->
 name|aligned
 operator|==
-name|ALIGN_REGISTERED
+name|GIMP_CLONE_ALIGN_REGISTERED
 condition|)
 block|{
 name|offset_x
@@ -918,7 +918,7 @@ name|options
 operator|->
 name|aligned
 operator|==
-name|ALIGN_NO
+name|GIMP_CLONE_ALIGN_NO
 condition|)
 block|{
 name|first
@@ -1006,7 +1006,7 @@ name|options
 operator|->
 name|aligned
 operator|==
-name|ALIGN_NO
+name|GIMP_CLONE_ALIGN_NO
 operator|&&
 operator|!
 name|first
@@ -2421,7 +2421,7 @@ DECL|macro|CLONE_DEFAULT_ALIGNED
 define|#
 directive|define
 name|CLONE_DEFAULT_ALIGNED
-value|ALIGN_NO
+value|GIMP_CLONE_ALIGN_NO
 end_define
 
 begin_function

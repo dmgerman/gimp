@@ -165,9 +165,6 @@ DECL|member|type_w
 name|GtkWidget
 modifier|*
 name|type_w
-index|[
-literal|2
-index|]
 decl_stmt|;
 DECL|member|rate
 name|gdouble

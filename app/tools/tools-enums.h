@@ -16,11 +16,100 @@ directive|define
 name|__TOOLS_ENUMS_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"core/core-enums.h"
+end_include
+
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_comment
+unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and gimp-mkenums. All enums that are not marked with
+comment|/*< pdb-skip>*/
+end_comment
+
+begin_comment
+unit|are exported to libgimp and the PDB. Enums that are not marked with
+comment|/*< skip>*/
+end_comment
+
+begin_comment
+unit|are registered with the GType system. If you want the    enum to be skipped by both scripts, you have to use
+comment|/*< pdb-skip>*/
+end_comment
+
+begin_comment
+unit|_before_
+comment|/*< skip>*/
+end_comment
+
+begin_comment
+unit|.      All enum values that are marked with
+comment|/*< skip>*/
+end_comment
+
+begin_endif
+unit|are skipped for    both targets.
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*   * these enums that are registered with the type system  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_CROP_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_CROP_TYPE
+value|(gimp_crop_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_crop_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon296a1b900103
+DECL|enum|__anon2ab134300103
+block|{
+DECL|enumerator|GIMP_CROP
+name|GIMP_CROP
+block|,
+comment|/*< desc="Crop">*/
+DECL|enumerator|GIMP_RESIZE
+name|GIMP_RESIZE
+comment|/*< desc="Resize">*/
+DECL|typedef|GimpCropType
+block|}
+name|GimpCropType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  * non-registered enums; register them if needed  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+comment|/*< skip>*/
+DECL|enum|__anon2ab134300203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -64,7 +153,8 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon296a1b900203
+comment|/*< skip>*/
+DECL|enum|__anon2ab134300303
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -85,7 +175,8 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon296a1b900303
+comment|/*< skip>*/
+DECL|enum|__anon2ab134300403
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -109,7 +200,8 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon296a1b900403
+comment|/*< skip>*/
+DECL|enum|__anon2ab134300503
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -133,7 +225,8 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon296a1b900503
+comment|/*< skip>*/
+DECL|enum|__anon2ab134300603
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -166,7 +259,8 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon296a1b900603
+comment|/*< skip>*/
+DECL|enum|__anon2ab134300703
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

@@ -54,6 +54,207 @@ directive|endif
 end_endif
 
 begin_comment
+comment|/*   * these enums that are registered with the type system  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_CLONE_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_CLONE_TYPE
+value|(gimp_clone_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_clone_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27d4ae300103
+block|{
+DECL|enumerator|GIMP_IMAGE_CLONE
+name|GIMP_IMAGE_CLONE
+block|,
+comment|/*< desc="Image Source">*/
+DECL|enumerator|GIMP_PATTERN_CLONE
+name|GIMP_PATTERN_CLONE
+comment|/*< desc="Pattern Source">*/
+DECL|typedef|GimpCloneType
+block|}
+name|GimpCloneType
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_CLONE_ALIGN_MODE
+define|#
+directive|define
+name|GIMP_TYPE_CLONE_ALIGN_MODE
+value|(gimp_clone_align_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_clone_align_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon27d4ae300203
+block|{
+DECL|enumerator|GIMP_CLONE_ALIGN_NO
+name|GIMP_CLONE_ALIGN_NO
+block|,
+comment|/*< desc="Non Aligned">*/
+DECL|enumerator|GIMP_CLONE_ALIGN_YES
+name|GIMP_CLONE_ALIGN_YES
+block|,
+comment|/*< desc="Aligned">*/
+DECL|enumerator|GIMP_CLONE_ALIGN_REGISTERED
+name|GIMP_CLONE_ALIGN_REGISTERED
+comment|/*< desc="Registered">*/
+DECL|typedef|GimpCloneAlignMode
+block|}
+name|GimpCloneAlignMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_DODGE_BURN_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_DODGE_BURN_TYPE
+value|(gimp_dodge_burn_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_dodge_burn_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27d4ae300303
+block|{
+DECL|enumerator|GIMP_DODGE
+name|GIMP_DODGE
+block|,
+comment|/*< desc="Dodge">*/
+DECL|enumerator|GIMP_BURN
+name|GIMP_BURN
+comment|/*< desc="Burn">*/
+DECL|typedef|GimpDodgeBurnType
+block|}
+name|GimpDodgeBurnType
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_GRADIENT_PAINT_MODE
+define|#
+directive|define
+name|GIMP_TYPE_GRADIENT_PAINT_MODE
+value|(gimp_gradient_paint_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_gradient_paint_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27d4ae300403
+block|{
+DECL|enumerator|GIMP_GRADIENT_ONCE_FORWARD
+name|GIMP_GRADIENT_ONCE_FORWARD
+block|,
+comment|/*< desc="Once Forward">*/
+DECL|enumerator|GIMP_GRADIENT_ONCE_BACKWARD
+name|GIMP_GRADIENT_ONCE_BACKWARD
+block|,
+comment|/*< desc="Once Backward">*/
+DECL|enumerator|GIMP_GRADIENT_LOOP_SAWTOOTH
+name|GIMP_GRADIENT_LOOP_SAWTOOTH
+block|,
+comment|/*< desc="Loop Sawtooth">*/
+DECL|enumerator|GIMP_GRADIENT_LOOP_TRIANGLE
+name|GIMP_GRADIENT_LOOP_TRIANGLE
+comment|/*< desc="Loop Triangle">*/
+DECL|typedef|GimpGradientPaintMode
+block|}
+name|GimpGradientPaintMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_CONVOLVE_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_CONVOLVE_TYPE
+value|(gimp_convolve_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_convolve_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27d4ae300503
+block|{
+DECL|enumerator|GIMP_BLUR_CONVOLVE
+name|GIMP_BLUR_CONVOLVE
+block|,
+comment|/*< desc="Blur">*/
+DECL|enumerator|GIMP_SHARPEN_CONVOLVE
+name|GIMP_SHARPEN_CONVOLVE
+block|,
+comment|/*< desc="Sharpen">*/
+DECL|enumerator|GIMP_CUSTOM_CONVOLVE
+name|GIMP_CUSTOM_CONVOLVE
+comment|/*< skip>*/
+DECL|typedef|GimpConvolveType
+block|}
+name|GimpConvolveType
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
 
@@ -61,19 +262,17 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b3b5d170103
+DECL|enum|__anon27d4ae300603
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
 block|,
-comment|/* pencil */
 DECL|enumerator|GIMP_BRUSH_SOFT
 name|GIMP_BRUSH_SOFT
 block|,
-comment|/* paintbrush */
 DECL|enumerator|GIMP_BRUSH_PRESSURE
 name|GIMP_BRUSH_PRESSURE
-comment|/* paintbrush with variable pressure */
+comment|/*< skip>*/
 DECL|typedef|GimpBrushApplicationMode
 block|}
 name|GimpBrushApplicationMode
@@ -84,95 +283,16 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b3b5d170203
+DECL|enum|__anon27d4ae300703
 block|{
 DECL|enumerator|GIMP_PAINT_CONSTANT
 name|GIMP_PAINT_CONSTANT
 block|,
-comment|/* pencil, paintbrush, airbrush, clone */
 DECL|enumerator|GIMP_PAINT_INCREMENTAL
 name|GIMP_PAINT_INCREMENTAL
-comment|/* convolve, smudge */
 DECL|typedef|GimpPaintApplicationMode
 block|}
 name|GimpPaintApplicationMode
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2b3b5d170303
-block|{
-DECL|enumerator|GIMP_GRADIENT_ONCE_FORWARD
-name|GIMP_GRADIENT_ONCE_FORWARD
-block|,
-DECL|enumerator|GIMP_GRADIENT_ONCE_BACKWARD
-name|GIMP_GRADIENT_ONCE_BACKWARD
-block|,
-DECL|enumerator|GIMP_GRADIENT_LOOP_SAWTOOTH
-name|GIMP_GRADIENT_LOOP_SAWTOOTH
-block|,
-DECL|enumerator|GIMP_GRADIENT_LOOP_TRIANGLE
-name|GIMP_GRADIENT_LOOP_TRIANGLE
-DECL|typedef|GimpGradientPaintMode
-block|}
-name|GimpGradientPaintMode
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2b3b5d170403
-block|{
-DECL|enumerator|GIMP_DODGE
-name|GIMP_DODGE
-block|,
-DECL|enumerator|GIMP_BURN
-name|GIMP_BURN
-DECL|typedef|GimpDodgeBurnType
-block|}
-name|GimpDodgeBurnType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2b3b5d170503
-block|{
-DECL|enumerator|GIMP_BLUR_CONVOLVE
-name|GIMP_BLUR_CONVOLVE
-block|,
-DECL|enumerator|GIMP_SHARPEN_CONVOLVE
-name|GIMP_SHARPEN_CONVOLVE
-block|,
-DECL|enumerator|GIMP_CUSTOM_CONVOLVE
-name|GIMP_CUSTOM_CONVOLVE
-DECL|typedef|GimpConvolveType
-block|}
-name|GimpConvolveType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2b3b5d170603
-block|{
-DECL|enumerator|GIMP_IMAGE_CLONE
-name|GIMP_IMAGE_CLONE
-block|,
-DECL|enumerator|GIMP_PATTERN_CLONE
-name|GIMP_PATTERN_CLONE
-DECL|typedef|GimpCloneType
-block|}
-name|GimpCloneType
 typedef|;
 end_typedef
 

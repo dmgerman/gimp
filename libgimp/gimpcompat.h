@@ -56,7 +56,7 @@ directive|define
 name|gimp_gradients_set_active
 value|gimp_gradients_set_gradient
 name|enum
-DECL|enum|__anon2ba4c3400103
+DECL|enum|__anon28b7f27c0103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -97,7 +97,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon2ba4c3400203
+DECL|enum|__anon28b7f27c0203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba4c3400303
+DECL|enum|__anon28b7f27c0303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba4c3400403
+DECL|enum|__anon28b7f27c0403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba4c3400503
+DECL|enum|__anon28b7f27c0503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -200,7 +200,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba4c3400603
+DECL|enum|__anon28b7f27c0603
 block|{
 DECL|enumerator|GIMP_ONCE_FORWARD
 name|GIMP_ONCE_FORWARD
@@ -221,18 +221,13 @@ DECL|enumerator|GIMP_LOOP_TRIANGLE
 name|GIMP_LOOP_TRIANGLE
 init|=
 name|GIMP_GRADIENT_LOOP_TRIANGLE
-block|,
-DECL|enumerator|GIMP_ONCE_END_COLOR
-name|GIMP_ONCE_END_COLOR
-init|=
-name|GIMP_GRADIENT_ONCE_FORWARD
-block|}
+block|, }
 enum|;
 end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba4c3400703
+DECL|enum|__anon28b7f27c0703
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -243,18 +238,13 @@ DECL|enumerator|GIMP_SOFT
 name|GIMP_SOFT
 init|=
 name|GIMP_BRUSH_SOFT
-block|,
-DECL|enumerator|GIMP_PRESSURE
-name|GIMP_PRESSURE
-init|=
-name|GIMP_BRUSH_PRESSURE
-block|}
+block|, }
 enum|;
 end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba4c3400803
+DECL|enum|__anon28b7f27c0803
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS

@@ -28,27 +28,6 @@ directive|include
 file|"gimppaintoptions.h"
 end_include
 
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-comment|/*< pdb-skip>*/
-DECL|enum|__anon274ee3480103
-block|{
-DECL|enumerator|ALIGN_NO
-name|ALIGN_NO
-block|,
-DECL|enumerator|ALIGN_YES
-name|ALIGN_YES
-block|,
-DECL|enumerator|ALIGN_REGISTERED
-name|ALIGN_REGISTERED
-DECL|typedef|AlignType
-block|}
-name|AlignType
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_CLONE
 define|#
@@ -267,28 +246,20 @@ DECL|member|type_w
 name|GtkWidget
 modifier|*
 name|type_w
-index|[
-literal|2
-index|]
 decl_stmt|;
-comment|/* 2 radio buttons */
 DECL|member|aligned
-name|AlignType
+name|GimpCloneAlignMode
 name|aligned
 decl_stmt|;
 DECL|member|aligned_d
-name|AlignType
+name|GimpCloneAlignMode
 name|aligned_d
 decl_stmt|;
 DECL|member|aligned_w
 name|GtkWidget
 modifier|*
 name|aligned_w
-index|[
-literal|3
-index|]
 decl_stmt|;
-comment|/* 3 radio buttons */
 block|}
 struct|;
 end_struct

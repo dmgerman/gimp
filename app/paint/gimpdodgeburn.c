@@ -1564,7 +1564,7 @@ DECL|macro|DODGEBURN_DEFAULT_MODE
 define|#
 directive|define
 name|DODGEBURN_DEFAULT_MODE
-value|GIMP_HIGHLIGHTS
+value|GIMP_MIDTONES
 end_define
 
 begin_function

@@ -22,26 +22,6 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
-begin_comment
-comment|/* XXX Used? */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon27e6b7220103
-block|{
-DECL|enumerator|CROP_CROP
-name|CROP_CROP
-block|,
-DECL|enumerator|RESIZE_CROP
-name|RESIZE_CROP
-DECL|typedef|CropType
-block|}
-name|CropType
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_CROP_TOOL
 define|#
