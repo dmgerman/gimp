@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4b5a170108
+DECL|struct|__anon29c61a320108
 block|{
 DECL|member|code
 name|__u16
@@ -309,6 +309,9 @@ literal|"Button Forward"
 argument_list|)
 block|}
 block|,
+ifdef|#
+directive|ifdef
+name|BTN_WHEEL
 block|{
 name|BTN_WHEEL
 block|,
@@ -320,6 +323,11 @@ literal|"Button Wheel"
 argument_list|)
 block|}
 block|,
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|BTN_GEAR_DOWN
 block|{
 name|BTN_GEAR_DOWN
 block|,
@@ -331,6 +339,11 @@ literal|"Button Gear Down"
 argument_list|)
 block|}
 block|,
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|BTN_GEAR_UP
 block|{
 name|BTN_GEAR_UP
 block|,
@@ -341,6 +354,8 @@ argument_list|(
 literal|"Button Gear Up"
 argument_list|)
 block|}
+endif|#
+directive|endif
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -403,7 +418,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4b5a170203
+DECL|enum|__anon29c61a320203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1561,7 +1576,7 @@ name|struct
 name|input_event
 name|ev
 decl_stmt|;
-name|gint
+name|gsize
 name|n_bytes
 decl_stmt|;
 name|gint
