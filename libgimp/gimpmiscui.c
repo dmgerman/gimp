@@ -1953,9 +1953,9 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-name|x2
+name|width
 argument_list|,
-name|y2
+name|height
 argument_list|,
 name|FALSE
 argument_list|,
