@@ -389,18 +389,6 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|display_list
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* from gdisplay.c */
-end_comment
-
 begin_comment
 comment|/*  public functions  */
 end_comment

@@ -1572,6 +1572,8 @@ name|bsp
 operator|->
 name|context
 argument_list|)
+operator|*
+literal|100.0
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
