@@ -947,6 +947,10 @@ name|gtk_preview_get_cmap
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|/* so we can reinit the colormaps */
+name|gtk_preview_reset
+argument_list|()
+expr_stmt|;
 name|info
 operator|=
 name|gtk_preview_get_info

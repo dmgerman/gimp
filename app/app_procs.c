@@ -1408,10 +1408,6 @@ argument_list|(
 name|idle_tag
 argument_list|)
 expr_stmt|;
-name|gtk_preview_reset
-argument_list|()
-expr_stmt|;
-comment|/* so we can reinit the colormaps */
 block|}
 block|}
 end_function
