@@ -1589,6 +1589,9 @@ break|break;
 case|case
 name|SF_STRING
 case|:
+case|case
+name|SF_TEXT
+case|:
 if|if
 condition|(
 operator|!
@@ -3764,6 +3767,9 @@ case|case
 name|SF_STRING
 case|:
 case|case
+name|SF_TEXT
+case|:
+case|case
 name|SF_FILENAME
 case|:
 case|case
@@ -4193,6 +4199,9 @@ name|SF_VALUE
 case|:
 case|case
 name|SF_STRING
+case|:
+case|case
+name|SF_TEXT
 case|:
 name|g_free
 argument_list|(
