@@ -90,12 +90,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptooloptions-gui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7324f10103
+DECL|enum|__anon2c01af860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -791,6 +797,10 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|button
 decl_stmt|;
 name|gchar
@@ -859,6 +869,22 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+name|hbox
+operator|=
+name|gimp_tool_options_pattern_box_new
+argument_list|(
+name|tool_options
+argument_list|)
+expr_stmt|;
+name|gimp_tool_options_radio_frame_add_box
+argument_list|(
+name|frame
+argument_list|,
+name|hbox
+argument_list|,
+name|GIMP_PATTERN_BUCKET_FILL
 argument_list|)
 expr_stmt|;
 comment|/*  fill selection  */
