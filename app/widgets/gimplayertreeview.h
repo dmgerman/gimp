@@ -154,13 +154,13 @@ DECL|member|preserve_trans_changed_handler_id
 name|GQuark
 name|preserve_trans_changed_handler_id
 decl_stmt|;
-DECL|member|linked_changed_handler_id
-name|GQuark
-name|linked_changed_handler_id
-decl_stmt|;
 DECL|member|mask_changed_handler_id
 name|GQuark
 name|mask_changed_handler_id
+decl_stmt|;
+DECL|member|alpha_changed_handler_id
+name|GQuark
+name|alpha_changed_handler_id
 decl_stmt|;
 block|}
 struct|;

@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4b14d70103
+DECL|enum|__anon2b212d2c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -4682,6 +4682,14 @@ operator|->
 name|preview_valid
 operator|=
 name|FALSE
+expr_stmt|;
+name|gimp_drawable_alpha_changed
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimage
 operator|=

@@ -127,6 +127,10 @@ DECL|member|model_column_name
 name|gint
 name|model_column_name
 decl_stmt|;
+DECL|member|model_column_name_attributes
+name|gint
+name|model_column_name_attributes
+decl_stmt|;
 DECL|member|view
 name|GtkTreeView
 modifier|*

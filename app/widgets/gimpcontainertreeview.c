@@ -95,13 +95,16 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e0f6c0103
+DECL|enum|__anon2b614c730103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
 block|,
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
+block|,
+DECL|enumerator|COLUMN_NAME_ATTRIBUTES
+name|COLUMN_NAME_ATTRIBUTES
 block|,
 DECL|enumerator|NUM_COLUMNS
 name|NUM_COLUMNS
@@ -609,6 +612,15 @@ name|G_TYPE_STRING
 expr_stmt|;
 name|tree_view
 operator|->
+name|model_columns
+index|[
+name|COLUMN_NAME_ATTRIBUTES
+index|]
+operator|=
+name|PANGO_TYPE_ATTR_LIST
+expr_stmt|;
+name|tree_view
+operator|->
 name|model_column_renderer
 operator|=
 name|COLUMN_RENDERER
@@ -618,6 +630,12 @@ operator|->
 name|model_column_name
 operator|=
 name|COLUMN_NAME
+expr_stmt|;
+name|tree_view
+operator|->
+name|model_column_name_attributes
+operator|=
+name|COLUMN_NAME_ATTRIBUTES
 expr_stmt|;
 name|gtk_scrolled_window_set_shadow_type
 argument_list|(
@@ -906,6 +924,10 @@ argument_list|,
 literal|"text"
 argument_list|,
 name|COLUMN_NAME
+argument_list|,
+literal|"attributes"
+argument_list|,
+name|COLUMN_NAME_ATTRIBUTES
 argument_list|,
 name|NULL
 argument_list|)
