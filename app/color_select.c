@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk/gdkkeysyms.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -144,7 +150,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a190c390103
+DECL|enum|__anon2bad4e630103
 block|{
 DECL|enumerator|COLOR_SELECT_OK
 name|COLOR_SELECT_OK
@@ -163,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a190c390203
+DECL|enum|__anon2bad4e630203
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -211,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a190c390303
+DECL|enum|__anon2bad4e630303
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -779,7 +785,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|color_select_hex_entry_leave
+name|color_select_hex_entry_events
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2582,7 +2588,26 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|color_select_hex_entry_leave
+name|color_select_hex_entry_events
+argument_list|,
+name|csp
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|csp
+operator|->
+name|hex_entry
+argument_list|)
+argument_list|,
+literal|"key_press_event"
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|color_select_hex_entry_events
 argument_list|,
 name|csp
 argument_list|)
@@ -7317,8 +7342,8 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|color_select_hex_entry_leave (GtkWidget * widget,GdkEvent * event,gpointer data)
-name|color_select_hex_entry_leave
+DECL|function|color_select_hex_entry_events (GtkWidget * widget,GdkEvent * event,gpointer data)
+name|color_select_hex_entry_events
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -7359,9 +7384,41 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
+return|return
+name|FALSE
+return|;
+switch|switch
+condition|(
+name|event
+operator|->
+name|type
+condition|)
 block|{
+case|case
+name|GDK_KEY_PRESS
+case|:
+if|if
+condition|(
+operator|(
+operator|(
+name|GdkEventKey
+operator|*
+operator|)
+name|event
+operator|)
+operator|->
+name|keyval
+operator|!=
+name|GDK_Return
+condition|)
+break|break;
+comment|/*  else fall through  */
+case|case
+name|GDK_FOCUS_CHANGE
+case|:
 name|hex_color
 operator|=
 name|g_strdup
@@ -7492,6 +7549,10 @@ argument_list|(
 name|hex_color
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
+comment|/*  do nothing  */
+break|break;
 block|}
 return|return
 name|FALSE
@@ -10926,7 +10987,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a190c390408
+DECL|struct|__anon2bad4e630408
 block|{
 DECL|member|callback
 name|GimpColorSelector_Callback
