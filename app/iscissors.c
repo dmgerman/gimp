@@ -138,6 +138,29 @@ begin_comment
 comment|/* M_PI */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI_4
+end_ifndef
+
+begin_define
+DECL|macro|M_PI_4
+define|#
+directive|define
+name|M_PI_4
+value|0.78539816339744830962
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI_4 */
+end_comment
+
 begin_comment
 comment|/*  local structures  */
 end_comment
