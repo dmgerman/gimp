@@ -188,7 +188,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3ecdfb0103
+DECL|enum|__anon2ae0e4210103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1339,7 +1339,9 @@ name|scale
 operator|=
 name|paint_tool
 operator|->
-name|curpressure
+name|cur_coords
+operator|.
+name|pressure
 expr_stmt|;
 else|else
 name|scale
@@ -1472,7 +1474,9 @@ literal|2.0
 operator|*
 name|paint_tool
 operator|->
-name|curpressure
+name|cur_coords
+operator|.
+name|pressure
 expr_stmt|;
 name|calculate_matrix
 argument_list|(
@@ -1493,7 +1497,9 @@ name|gint
 operator|)
 name|paint_tool
 operator|->
-name|curx
+name|cur_coords
+operator|.
+name|x
 operator|-
 name|paint_tool
 operator|->
@@ -1553,7 +1559,9 @@ name|gint
 operator|)
 name|paint_tool
 operator|->
-name|cury
+name|cur_coords
+operator|.
+name|y
 operator|-
 name|paint_tool
 operator|->
@@ -1870,7 +1878,9 @@ name|gint
 operator|)
 name|paint_tool
 operator|->
-name|curx
+name|cur_coords
+operator|.
+name|x
 argument_list|,
 literal|0
 argument_list|,
@@ -1889,7 +1899,9 @@ name|gint
 operator|)
 name|paint_tool
 operator|->
-name|cury
+name|cur_coords
+operator|.
+name|y
 argument_list|,
 literal|0
 argument_list|,
@@ -2737,7 +2749,7 @@ comment|/* Leave these to the STUBs */
 end_comment
 
 begin_endif
-unit|static gpointer convolve_non_gui_paint_func (GimpPaintTool    *paint_tool, 			     GimpDrawable *drawable, 			     PaintState    state) {   convolve_motion (paint_tool, drawable,&non_gui_pressure_options, 		   non_gui_type, non_gui_rate);    return NULL; }  gboolean convolve_non_gui_default (GimpDrawable *drawable, 			  gint          num_strokes, 			  gdouble      *stroke_array) {   gdouble          rate    = DEFAULT_CONVOLVE_RATE;   ConvolveType     type    = DEFAULT_CONVOLVE_TYPE;   ConvolveOptions *options = convolve_options;    if (options)     {       rate = options->rate;       type = options->type;     }    return convolve_non_gui (drawable, rate, type, num_strokes, stroke_array); }  gboolean convolve_non_gui (GimpDrawable *drawable,     		  gdouble       rate, 		  ConvolveType  type, 		  gint          num_strokes, 		  gdouble      *stroke_array) {   gint i;    if (gimp_paint_tool_init (&non_gui_paint_core, drawable, 			    stroke_array[0], stroke_array[1]))     {       non_gui_type = type;       non_gui_rate = rate;        non_gui_paint_core.startx = non_gui_paint_core.lastx = stroke_array[0];       non_gui_paint_core.starty = non_gui_paint_core.lasty = stroke_array[1];        convolve_non_gui_paint_func (&non_gui_paint_core, drawable, 0);        for (i = 1; i< num_strokes; i++) 	{ 	  non_gui_paint_core.curx = stroke_array[i * 2 + 0]; 	  non_gui_paint_core.cury = stroke_array[i * 2 + 1];  	  paint_core_interpolate (&non_gui_paint_core, drawable);  	  non_gui_paint_core.lastx = non_gui_paint_core.curx; 	  non_gui_paint_core.lasty = non_gui_paint_core.cury; 	}        paint_core_finish (&non_gui_paint_core, drawable, -1);        paint_core_cleanup ();        return TRUE;     }    return FALSE; }
+unit|static gpointer convolve_non_gui_paint_func (GimpPaintTool    *paint_tool, 			     GimpDrawable *drawable, 			     PaintState    state) {   convolve_motion (paint_tool, drawable,&non_gui_pressure_options, 		   non_gui_type, non_gui_rate);    return NULL; }  gboolean convolve_non_gui_default (GimpDrawable *drawable, 			  gint          num_strokes, 			  gdouble      *stroke_array) {   gdouble          rate    = DEFAULT_CONVOLVE_RATE;   ConvolveType     type    = DEFAULT_CONVOLVE_TYPE;   ConvolveOptions *options = convolve_options;    if (options)     {       rate = options->rate;       type = options->type;     }    return convolve_non_gui (drawable, rate, type, num_strokes, stroke_array); }  gboolean convolve_non_gui (GimpDrawable *drawable,     		  gdouble       rate, 		  ConvolveType  type, 		  gint          num_strokes, 		  gdouble      *stroke_array) {   gint i;    if (gimp_paint_tool_init (&non_gui_paint_core, drawable, 			    stroke_array[0], stroke_array[1]))     {       non_gui_type = type;       non_gui_rate = rate;        non_gui_paint_core.startx = non_gui_paint_core.lastx = stroke_array[0];       non_gui_paint_core.starty = non_gui_paint_core.lasty = stroke_array[1];        convolve_non_gui_paint_func (&non_gui_paint_core, drawable, 0);        for (i = 1; i< num_strokes; i++) 	{ 	  non_gui_paint_core.cur_coords.x = stroke_array[i * 2 + 0]; 	  non_gui_paint_core.cur_coords.y = stroke_array[i * 2 + 1];  	  paint_core_interpolate (&non_gui_paint_core, drawable);  	  non_gui_paint_core.last_coords.x = non_gui_paint_core.cur_coords.x; 	  non_gui_paint_core.last_coords.y = non_gui_paint_core.cur_coords.y; 	}        paint_core_finish (&non_gui_paint_core, drawable, -1);        paint_core_cleanup ();        return TRUE;     }    return FALSE; }
 endif|#
 directive|endif
 end_endif

@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2796d6970103
+DECL|enum|__anon2894c2a40103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2796d6970203
+DECL|enum|__anon2894c2a40203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -167,81 +167,21 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|startx
-name|gdouble
-name|startx
+DECL|member|start_coords
+name|GimpCoords
+name|start_coords
 decl_stmt|;
-comment|/*  starting x coord           */
-DECL|member|starty
-name|gdouble
-name|starty
+comment|/*  starting coords            */
+DECL|member|cur_coords
+name|GimpCoords
+name|cur_coords
 decl_stmt|;
-comment|/*  starting y coord           */
-DECL|member|startpressure
-name|gdouble
-name|startpressure
+comment|/*  current coords             */
+DECL|member|last_coords
+name|GimpCoords
+name|last_coords
 decl_stmt|;
-comment|/*  starting pressure          */
-DECL|member|startxtilt
-name|gdouble
-name|startxtilt
-decl_stmt|;
-comment|/*  starting xtilt             */
-DECL|member|startytilt
-name|gdouble
-name|startytilt
-decl_stmt|;
-comment|/*  starting ytilt             */
-DECL|member|curx
-name|gdouble
-name|curx
-decl_stmt|;
-comment|/*  current x coord            */
-DECL|member|cury
-name|gdouble
-name|cury
-decl_stmt|;
-comment|/*  current y coord            */
-DECL|member|curpressure
-name|gdouble
-name|curpressure
-decl_stmt|;
-comment|/*  current pressure           */
-DECL|member|curxtilt
-name|gdouble
-name|curxtilt
-decl_stmt|;
-comment|/*  current xtilt              */
-DECL|member|curytilt
-name|gdouble
-name|curytilt
-decl_stmt|;
-comment|/*  current ytilt              */
-DECL|member|lastx
-name|gdouble
-name|lastx
-decl_stmt|;
-comment|/*  last x coord               */
-DECL|member|lasty
-name|gdouble
-name|lasty
-decl_stmt|;
-comment|/*  last y coord               */
-DECL|member|lastpressure
-name|gdouble
-name|lastpressure
-decl_stmt|;
-comment|/*  last pressure              */
-DECL|member|lastxtilt
-name|gdouble
-name|lastxtilt
-decl_stmt|;
-comment|/*  last xtilt                 */
-DECL|member|lastytilt
-name|gdouble
-name|lastytilt
-decl_stmt|;
-comment|/*  last ytilt                 */
+comment|/*  last coords                */
 DECL|member|state
 name|gint
 name|state
@@ -366,25 +306,9 @@ DECL|member|tool_type
 name|GType
 name|tool_type
 decl_stmt|;
-DECL|member|lastx
-name|gdouble
-name|lastx
-decl_stmt|;
-DECL|member|lasty
-name|gdouble
-name|lasty
-decl_stmt|;
-DECL|member|lastpressure
-name|gdouble
-name|lastpressure
-decl_stmt|;
-DECL|member|lastxtilt
-name|gdouble
-name|lastxtilt
-decl_stmt|;
-DECL|member|lastytilt
-name|gdouble
-name|lastytilt
+DECL|member|last_coords
+name|GimpCoords
+name|last_coords
 decl_stmt|;
 block|}
 struct|;

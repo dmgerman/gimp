@@ -184,7 +184,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be7005b0103
+DECL|enum|__anon27ca0b2b0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -1209,25 +1209,33 @@ name|x1
 operator|=
 name|paint_tool
 operator|->
-name|curx
+name|cur_coords
+operator|.
+name|x
 expr_stmt|;
 name|y1
 operator|=
 name|paint_tool
 operator|->
-name|cury
+name|cur_coords
+operator|.
+name|y
 expr_stmt|;
 name|x2
 operator|=
 name|paint_tool
 operator|->
-name|lastx
+name|last_coords
+operator|.
+name|x
 expr_stmt|;
 name|y2
 operator|=
 name|paint_tool
 operator|->
-name|lasty
+name|last_coords
+operator|.
+name|y
 expr_stmt|;
 comment|/*  If the control key is down, move the src target and return */
 if|if
@@ -1366,13 +1374,17 @@ name|src_x
 operator|=
 name|paint_tool
 operator|->
-name|curx
+name|cur_coords
+operator|.
+name|x
 expr_stmt|;
 name|src_y
 operator|=
 name|paint_tool
 operator|->
-name|cury
+name|cur_coords
+operator|.
+name|y
 expr_stmt|;
 name|first
 operator|=
@@ -2027,7 +2039,9 @@ name|scale
 operator|=
 name|paint_tool
 operator|->
-name|curpressure
+name|cur_coords
+operator|.
+name|pressure
 expr_stmt|;
 else|else
 name|scale
@@ -2725,7 +2739,9 @@ literal|2.0
 operator|*
 name|paint_tool
 operator|->
-name|curpressure
+name|cur_coords
+operator|.
+name|pressure
 expr_stmt|;
 comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|gimp_paint_tool_paste_canvas
@@ -3122,7 +3138,7 @@ comment|/* Set the paint core's paint func */
 end_comment
 
 begin_comment
-unit|non_gui_paint_core.paint_func = clone_non_gui_paint_func;              non_gui_type = clone_type;        non_gui_src_drawable = src_drawable;        non_gui_paint_core.startx = non_gui_paint_core.lastx = stroke_array[0];       non_gui_paint_core.starty = non_gui_paint_core.lasty = stroke_array[1];        non_gui_offset_x = (int) (src_x - non_gui_paint_core.startx);       non_gui_offset_y = (int) (src_y - non_gui_paint_core.starty);        clone_non_gui_paint_func (&non_gui_paint_core, drawable, 0);        for (i = 1; i< num_strokes; i++) 	{ 	  non_gui_paint_core.curx = stroke_array[i * 2 + 0]; 	  non_gui_paint_core.cury = stroke_array[i * 2 + 1];  	  paint_core_interpolate (&non_gui_paint_core, drawable);  	  non_gui_paint_core.lastx = non_gui_paint_core.curx; 	  non_gui_paint_core.lasty = non_gui_paint_core.cury; 	}
+unit|non_gui_paint_core.paint_func = clone_non_gui_paint_func;              non_gui_type = clone_type;        non_gui_src_drawable = src_drawable;        non_gui_paint_core.startx = non_gui_paint_core.lastx = stroke_array[0];       non_gui_paint_core.starty = non_gui_paint_core.lasty = stroke_array[1];        non_gui_offset_x = (int) (src_x - non_gui_paint_core.start_coords.x);       non_gui_offset_y = (int) (src_y - non_gui_paint_core.start_coords.y);        clone_non_gui_paint_func (&non_gui_paint_core, drawable, 0);        for (i = 1; i< num_strokes; i++) 	{ 	  non_gui_paint_core.cur_coords.x = stroke_array[i * 2 + 0]; 	  non_gui_paint_core.cur_coords.y = stroke_array[i * 2 + 1];  	  paint_core_interpolate (&non_gui_paint_core, drawable);  	  non_gui_paint_core.last_coords.x = non_gui_paint_core.cur_coords.x; 	  non_gui_paint_core.last_coords.y = non_gui_paint_core.cur_coords.y; 	}
 comment|/* Finish the painting */
 end_comment
 
