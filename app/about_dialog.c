@@ -310,6 +310,8 @@ literal|"Tom Bech"
 block|,
 literal|"Marc Bless"
 block|,
+literal|"Edward Blevins"
+block|,
 literal|"Roberto Boyd"
 block|,
 literal|"Seth Burgess"
@@ -347,6 +349,8 @@ block|,
 literal|"Karl LaRocca"
 block|,
 literal|"Jens Lautenbacher"
+block|,
+literal|"Laramie Leavitt"
 block|,
 literal|"Raph Levien"
 block|,

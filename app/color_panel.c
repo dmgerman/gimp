@@ -681,6 +681,8 @@ argument_list|,
 name|color_panel_select_callback
 argument_list|,
 name|color_panel
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|private

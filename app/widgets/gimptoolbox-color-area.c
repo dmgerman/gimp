@@ -975,6 +975,8 @@ argument_list|,
 name|color_area_select_callback
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|color_select_active

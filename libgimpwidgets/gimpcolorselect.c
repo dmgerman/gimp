@@ -108,7 +108,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon2b205f5a0103
+DECL|enum|__anon2b260a010103
 typedef|typedef
 enum|enum
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b205f5a0203
+DECL|enum|__anon2b260a010203
 typedef|typedef
 enum|enum
 block|{
@@ -773,7 +773,7 @@ end_decl_stmt
 
 begin_function
 name|ColorSelectP
-DECL|function|color_select_new (int r,int g,int b,ColorSelectCallback callback,void * client_data)
+DECL|function|color_select_new (int r,int g,int b,ColorSelectCallback callback,void * client_data,int wants_updates)
 name|color_select_new
 parameter_list|(
 name|int
@@ -791,6 +791,9 @@ parameter_list|,
 name|void
 modifier|*
 name|client_data
+parameter_list|,
+name|int
+name|wants_updates
 parameter_list|)
 block|{
 comment|/*  static char *toggle_titles[6] = { "Hue", "Saturation", "Value", "Red", "Green", "Blue" }; */
@@ -949,6 +952,12 @@ operator|->
 name|gc
 operator|=
 name|NULL
+expr_stmt|;
+name|csp
+operator|->
+name|wants_updates
+operator|=
+name|wants_updates
 expr_stmt|;
 name|csp
 operator|->
@@ -2149,6 +2158,53 @@ name|user_data
 operator|=
 name|csp
 expr_stmt|;
+if|if
+condition|(
+name|csp
+operator|->
+name|wants_updates
+condition|)
+block|{
+name|action_items
+index|[
+literal|0
+index|]
+operator|.
+name|label
+operator|=
+literal|"Close"
+expr_stmt|;
+name|action_items
+index|[
+literal|1
+index|]
+operator|.
+name|label
+operator|=
+literal|"Revert to Old Color"
+expr_stmt|;
+block|}
+else|else
+block|{
+name|action_items
+index|[
+literal|0
+index|]
+operator|.
+name|label
+operator|=
+literal|"OK"
+expr_stmt|;
+name|action_items
+index|[
+literal|1
+index|]
+operator|.
+name|label
+operator|=
+literal|"Cancel"
+expr_stmt|;
+block|}
 name|build_action_area
 argument_list|(
 name|GTK_DIALOG
@@ -2622,6 +2678,10 @@ block|{
 if|if
 condition|(
 name|csp
+operator|&&
+name|csp
+operator|->
+name|wants_updates
 operator|&&
 name|csp
 operator|->

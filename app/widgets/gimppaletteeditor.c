@@ -4074,6 +4074,8 @@ argument_list|,
 name|palette_select_callback
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|palette

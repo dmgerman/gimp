@@ -17,7 +17,7 @@ name|__COLOR_SELECT_H__
 end_define
 
 begin_typedef
-DECL|enum|__anon2bf5f50f0103
+DECL|enum|__anon295bd4a70103
 typedef|typedef
 enum|enum
 block|{
@@ -163,6 +163,10 @@ name|void
 modifier|*
 name|client_data
 decl_stmt|;
+DECL|member|wants_updates
+name|int
+name|wants_updates
+decl_stmt|;
 DECL|member|gc
 name|GdkGC
 modifier|*
@@ -186,6 +190,8 @@ name|ColorSelectCallback
 parameter_list|,
 name|void
 modifier|*
+parameter_list|,
+name|int
 parameter_list|)
 function_decl|;
 end_function_decl
