@@ -540,9 +540,9 @@ name|temp_proc_ht
 operator|=
 name|g_hash_table_new
 argument_list|(
-name|g_string_hash
+name|g_str_hash
 argument_list|,
-name|g_string_equal
+name|g_str_equal
 argument_list|)
 expr_stmt|;
 name|gimp_loop
