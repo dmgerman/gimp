@@ -957,7 +957,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0103
+DECL|enum|__anon29b329a80103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1009,7 +1009,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0203
+DECL|enum|__anon29b329a80203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1030,7 +1030,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0303
+DECL|enum|__anon29b329a80303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1051,7 +1051,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0403
+DECL|enum|__anon29b329a80403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1078,7 +1078,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0503
+DECL|enum|__anon29b329a80503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1099,7 +1099,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0603
+DECL|enum|__anon29b329a80603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1267,7 +1267,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d38a3b0708
+DECL|struct|__anon29b329a80708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1278,19 +1278,19 @@ name|GridType
 name|gridtype
 decl_stmt|;
 DECL|member|drawgrid
-name|gint
+name|gboolean
 name|drawgrid
 decl_stmt|;
 DECL|member|snap2grid
-name|gint
+name|gboolean
 name|snap2grid
 decl_stmt|;
 DECL|member|lockongrid
-name|gint
+name|gboolean
 name|lockongrid
 decl_stmt|;
 DECL|member|showcontrol
-name|gint
+name|gboolean
 name|showcontrol
 decl_stmt|;
 DECL|typedef|GfigOpts
@@ -1306,7 +1306,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d38a3b0808
+DECL|struct|__anon29b329a80808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1355,14 +1355,14 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d38a3b0908
+DECL|struct|__anon29b329a80908
 block|{
 DECL|member|opts
 name|GfigOpts
 name|opts
 decl_stmt|;
 DECL|member|showimage
-name|gint
+name|gboolean
 name|showimage
 decl_stmt|;
 DECL|member|maxundo
@@ -1370,7 +1370,7 @@ name|gint
 name|maxundo
 decl_stmt|;
 DECL|member|showpos
-name|gint
+name|gboolean
 name|showpos
 decl_stmt|;
 DECL|member|brushfade
@@ -1398,11 +1398,11 @@ name|PaintType
 name|painttype
 decl_stmt|;
 DECL|member|reverselines
-name|gint
+name|gboolean
 name|reverselines
 decl_stmt|;
 DECL|member|scaletoimage
-name|gint
+name|gboolean
 name|scaletoimage
 decl_stmt|;
 DECL|member|scaletoimagefp
@@ -1410,7 +1410,7 @@ name|gdouble
 name|scaletoimagefp
 decl_stmt|;
 DECL|member|approxcircles
-name|gint
+name|gboolean
 name|approxcircles
 decl_stmt|;
 DECL|member|brshtype
@@ -1453,21 +1453,20 @@ comment|/* Gridspacing */
 name|RECT_GRID
 block|,
 comment|/* Default to rectangle type */
-literal|0
+name|FALSE
 block|,
 comment|/* drawgrid */
-literal|0
+name|FALSE
 block|,
 comment|/* snap2grid */
-literal|0
+name|FALSE
 block|,
 comment|/* lockongrid */
-literal|1
-block|,
+name|TRUE
 comment|/* show control points */
 block|}
 block|,
-literal|0
+name|FALSE
 block|,
 comment|/* show image */
 name|MIN_UNDO
@@ -1493,9 +1492,6 @@ comment|/* Brush gradient */
 literal|20.0
 block|,
 comment|/* Air bursh pressure */
-name|TRUE
-block|,
-comment|/* show Tool tips */
 name|ORIGINAL_LAYER
 block|,
 comment|/* Draw all objects on one layer */
@@ -1529,7 +1525,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0a03
+DECL|enum|__anon29b329a80a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1553,7 +1549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0b03
+DECL|enum|__anon29b329a80b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1571,7 +1567,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0c03
+DECL|enum|__anon29b329a80c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1592,7 +1588,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d38a3b0d03
+DECL|enum|__anon29b329a80d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
