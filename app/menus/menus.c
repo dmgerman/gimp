@@ -1092,6 +1092,21 @@ block|,
 block|{
 name|N_
 argument_list|(
+literal|"/View/Dot for dot"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|view_dot_for_dot_callback
+block|,
+literal|0
+block|,
+literal|"<ToggleItem>"
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
 literal|"/View/Window Info..."
 argument_list|)
 block|,

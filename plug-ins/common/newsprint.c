@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * version 0.50  * This version requires gtk-1.0.4 or above.  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  *  */
+comment|/*  * version 0.51  * This version requires gtk-1.0.4 or above.  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  *  */
 end_comment
 
 begin_include
@@ -70,7 +70,7 @@ DECL|macro|VERSION
 define|#
 directive|define
 name|VERSION
-value|"v0.50"
+value|"v0.51"
 end_define
 
 begin_comment
@@ -540,7 +540,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c9a61a50108
+DECL|struct|__anon275750700108
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +785,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9a61a50208
+DECL|struct|__anon275750700208
 typedef|typedef
 struct|struct
 block|{
@@ -858,7 +858,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9a61a50308
+DECL|struct|__anon275750700308
 typedef|typedef
 struct|struct
 block|{
@@ -884,7 +884,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c9a61a50408
+DECL|struct|__anon275750700408
 typedef|typedef
 struct|struct
 block|{
@@ -917,7 +917,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c9a61a50503
+DECL|enum|__anon275750700503
 typedef|typedef
 enum|enum
 block|{
@@ -933,7 +933,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c9a61a50608
+DECL|struct|__anon275750700608
 typedef|typedef
 struct|struct
 block|{
@@ -991,7 +991,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9a61a50708
+DECL|struct|__anon275750700708
 typedef|typedef
 struct|struct
 block|{
@@ -1093,7 +1093,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9a61a50808
+DECL|struct|__anon275750700808
 typedef|typedef
 struct|struct
 block|{
@@ -1281,7 +1281,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9a61a50908
+DECL|struct|__anon275750700908
 typedef|typedef
 struct|struct
 block|{
@@ -3411,7 +3411,7 @@ name|in_progress
 init|=
 name|FALSE
 decl_stmt|;
-comment|/* we shouldn't need recursion protection, but if lock_channels is      * set, and gtk_option_menu_set_history ever generates an      * "activated" signmal, then we'll get back here.  So we've defensive. */
+comment|/* we shouldn't need recursion protection, but if lock_channels is      * set, and gtk_option_menu_set_history ever generates an      * "activated" signal, then we'll get back here.  So we've defensive. */
 if|if
 condition|(
 name|in_progress
@@ -4748,14 +4748,6 @@ argument_list|(
 name|ct
 argument_list|)
 expr_stmt|;
-comment|/* only link in the menuitem if we're doing multiple channels */
-if|if
-condition|(
-name|st
-operator|->
-name|channel_menu
-condition|)
-block|{
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -4778,6 +4770,14 @@ argument_list|,
 name|st
 argument_list|)
 expr_stmt|;
+comment|/* only link in the menuitem if we're doing multiple channels */
+if|if
+condition|(
+name|st
+operator|->
+name|channel_menu
+condition|)
+block|{
 name|gtk_menu_append
 argument_list|(
 name|GTK_MENU
@@ -6459,6 +6459,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* select the first channel to edit */
+if|if
+condition|(
+name|st
+operator|.
+name|channel_option
+condition|)
 name|gtk_option_menu_set_history
 argument_list|(
 name|GTK_OPTION_MENU
@@ -7357,7 +7363,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9a61a50a08
+DECL|struct|__anon275750700a08
 typedef|typedef
 struct|struct
 block|{

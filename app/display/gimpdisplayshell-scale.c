@@ -74,7 +74,7 @@ name|sy
 decl_stmt|;
 name|sx
 operator|=
-name|SCALE
+name|SCALEX
 argument_list|(
 name|gdisp
 argument_list|,
@@ -87,7 +87,7 @@ argument_list|)
 expr_stmt|;
 name|sy
 operator|=
-name|SCALE
+name|SCALEY
 argument_list|(
 name|gdisp
 argument_list|,
@@ -310,6 +310,7 @@ name|sx
 decl_stmt|,
 name|sy
 decl_stmt|;
+comment|/* user zoom control, so resolution versions not needed -- austin */
 name|scalesrc
 operator|=
 name|SCALESRC
@@ -645,11 +646,13 @@ decl_stmt|,
 name|sy
 decl_stmt|;
 name|gfloat
-name|step
+name|stepx
+decl_stmt|,
+name|stepy
 decl_stmt|;
 name|sx
 operator|=
-name|SCALE
+name|SCALEX
 argument_list|(
 name|gdisp
 argument_list|,
@@ -662,7 +665,7 @@ argument_list|)
 expr_stmt|;
 name|sy
 operator|=
-name|SCALE
+name|SCALEY
 argument_list|(
 name|gdisp
 argument_list|,
@@ -673,9 +676,18 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|step
+name|stepx
 operator|=
-name|SCALE
+name|SCALEX
+argument_list|(
+name|gdisp
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|stepy
+operator|=
+name|SCALEY
 argument_list|(
 name|gdisp
 argument_list|,
@@ -735,7 +747,7 @@ name|hsbdata
 operator|->
 name|step_increment
 operator|=
-name|step
+name|stepx
 expr_stmt|;
 name|gdisp
 operator|->
@@ -790,7 +802,7 @@ name|vsbdata
 operator|->
 name|step_increment
 operator|=
-name|step
+name|stepy
 expr_stmt|;
 name|gtk_signal_emit_by_name
 argument_list|(
@@ -844,7 +856,7 @@ name|hruler
 operator|->
 name|upper
 operator|=
-name|UNSCALE
+name|UNSCALEX
 argument_list|(
 name|gdisp
 argument_list|,
@@ -882,7 +894,7 @@ name|vruler
 operator|->
 name|upper
 operator|=
-name|UNSCALE
+name|UNSCALEY
 argument_list|(
 name|gdisp
 argument_list|,
@@ -937,7 +949,7 @@ name|hruler
 operator|->
 name|lower
 operator|-=
-name|UNSCALE
+name|UNSCALEX
 argument_list|(
 name|gdisp
 argument_list|,
@@ -953,7 +965,7 @@ name|hruler
 operator|->
 name|upper
 operator|-=
-name|UNSCALE
+name|UNSCALEX
 argument_list|(
 name|gdisp
 argument_list|,
@@ -978,7 +990,7 @@ name|hruler
 operator|->
 name|lower
 operator|+=
-name|UNSCALE
+name|UNSCALEX
 argument_list|(
 name|gdisp
 argument_list|,
@@ -994,7 +1006,7 @@ name|hruler
 operator|->
 name|upper
 operator|+=
-name|UNSCALE
+name|UNSCALEX
 argument_list|(
 name|gdisp
 argument_list|,
@@ -1034,7 +1046,7 @@ name|vruler
 operator|->
 name|lower
 operator|-=
-name|UNSCALE
+name|UNSCALEY
 argument_list|(
 name|gdisp
 argument_list|,
@@ -1050,7 +1062,7 @@ name|vruler
 operator|->
 name|upper
 operator|-=
-name|UNSCALE
+name|UNSCALEY
 argument_list|(
 name|gdisp
 argument_list|,
@@ -1075,7 +1087,7 @@ name|vruler
 operator|->
 name|lower
 operator|+=
-name|UNSCALE
+name|UNSCALEY
 argument_list|(
 name|gdisp
 argument_list|,
@@ -1091,7 +1103,7 @@ name|vruler
 operator|->
 name|upper
 operator|+=
-name|UNSCALE
+name|UNSCALEY
 argument_list|(
 name|gdisp
 argument_list|,

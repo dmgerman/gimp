@@ -48,6 +48,10 @@ begin_comment
 comment|/*  some useful macros  */
 end_comment
 
+begin_comment
+comment|/* unpacking the user scale level (char) */
+end_comment
+
 begin_define
 DECL|macro|SCALESRC (g)
 define|#
@@ -70,30 +74,116 @@ parameter_list|)
 value|(g->scale>> 8)
 end_define
 
+begin_comment
+comment|/* finding the effective screen resolution (float) */
+end_comment
+
 begin_define
-DECL|macro|SCALE (g,x)
+DECL|macro|SCREEN_XRES (g)
 define|#
 directive|define
-name|SCALE
+name|SCREEN_XRES
 parameter_list|(
 name|g
-parameter_list|,
-name|x
 parameter_list|)
-value|((x * SCALEDEST(g)) / SCALESRC(g))
+value|(g->dot_for_dot? g->gimage->xresolution : monitor_xres)
 end_define
 
 begin_define
-DECL|macro|UNSCALE (g,x)
+DECL|macro|SCREEN_YRES (g)
 define|#
 directive|define
-name|UNSCALE
+name|SCREEN_YRES
+parameter_list|(
+name|g
+parameter_list|)
+value|(g->dot_for_dot? g->gimage->yresolution : monitor_yres)
+end_define
+
+begin_comment
+comment|/* calculate scale factors (float) */
+end_comment
+
+begin_define
+DECL|macro|SCALEFACTOR_X (g)
+define|#
+directive|define
+name|SCALEFACTOR_X
+parameter_list|(
+name|g
+parameter_list|)
+value|((SCALEDEST(g) * SCREEN_XRES(g)) /          \ 			    (SCALESRC(g) * g->gimage->xresolution))
+end_define
+
+begin_define
+DECL|macro|SCALEFACTOR_Y (g)
+define|#
+directive|define
+name|SCALEFACTOR_Y
+parameter_list|(
+name|g
+parameter_list|)
+value|((SCALEDEST(g) * SCREEN_YRES(g)) /          \ 			    (SCALESRC(g) * g->gimage->yresolution))
+end_define
+
+begin_comment
+comment|/* scale values */
+end_comment
+
+begin_define
+DECL|macro|SCALEX (g,x)
+define|#
+directive|define
+name|SCALEX
 parameter_list|(
 name|g
 parameter_list|,
 name|x
 parameter_list|)
-value|((x * SCALESRC(g)) / SCALEDEST(g))
+value|((int)(x * SCALEFACTOR_X(g)))
+end_define
+
+begin_define
+DECL|macro|SCALEY (g,y)
+define|#
+directive|define
+name|SCALEY
+parameter_list|(
+name|g
+parameter_list|,
+name|y
+parameter_list|)
+value|((int)(y * SCALEFACTOR_Y(g)))
+end_define
+
+begin_comment
+comment|/* unscale values */
+end_comment
+
+begin_define
+DECL|macro|UNSCALEX (g,x)
+define|#
+directive|define
+name|UNSCALEX
+parameter_list|(
+name|g
+parameter_list|,
+name|x
+parameter_list|)
+value|((int)(x / SCALEFACTOR_X(g)))
+end_define
+
+begin_define
+DECL|macro|UNSCALEY (g,y)
+define|#
+directive|define
+name|UNSCALEY
+parameter_list|(
+name|g
+parameter_list|,
+name|y
+parameter_list|)
+value|((int)(y / SCALEFACTOR_Y(g)))
 end_define
 
 begin_define
@@ -338,6 +428,11 @@ name|int
 name|scale
 decl_stmt|;
 comment|/*  scale factor from original raw image    */
+DECL|member|dot_for_dot
+name|int
+name|dot_for_dot
+decl_stmt|;
+comment|/*  is monitor resolution being ignored?    */
 DECL|member|draw_guides
 name|short
 name|draw_guides
@@ -750,6 +845,18 @@ name|GDisplay
 modifier|*
 parameter_list|,
 name|int
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_set_dot_for_dot
+parameter_list|(
+name|GDisplay
+modifier|*
 parameter_list|,
 name|int
 parameter_list|)

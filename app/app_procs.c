@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay_ops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"colormaps.h"
 end_include
 
@@ -2240,6 +2246,32 @@ name|restore_session
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/* make sure the monitor resolution is valid */
+if|if
+condition|(
+name|monitor_xres
+operator|<
+literal|1e-5
+operator|||
+name|monitor_yres
+operator|<
+literal|1e-5
+condition|)
+block|{
+name|gdisplay_xserver_resolution
+argument_list|(
+operator|&
+name|monitor_xres
+argument_list|,
+operator|&
+name|monitor_yres
+argument_list|)
+expr_stmt|;
+name|using_xserver_resolution
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 comment|/* Now we are ready to draw the splash-screen-image to the start-up window */
 if|if
 condition|(

@@ -1002,6 +1002,7 @@ name|y1
 operator|+
 name|h
 expr_stmt|;
+comment|/* these change the user zoom level, so should not be changed to        * the resolution-aware scale macros -- austin */
 name|scalesrc
 operator|=
 name|SCALESRC

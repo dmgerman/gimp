@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1493,7 +1499,7 @@ name|select
 expr_stmt|;
 name|diff_x
 operator|=
-name|SCALE
+name|SCALEX
 argument_list|(
 name|gdisp
 argument_list|,
@@ -1510,7 +1516,7 @@ argument_list|)
 expr_stmt|;
 name|diff_y
 operator|=
-name|SCALE
+name|SCALEY
 argument_list|(
 name|gdisp
 argument_list|,

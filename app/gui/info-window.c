@@ -822,7 +822,7 @@ operator|->
 name|yresolution
 argument_list|)
 expr_stmt|;
-comment|/*  zoom ratio  */
+comment|/*  user zoom ratio  */
 name|sprintf
 argument_list|(
 name|iwd

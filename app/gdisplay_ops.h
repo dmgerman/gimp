@@ -70,6 +70,19 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gdisplay_xserver_resolution
+parameter_list|(
+name|float
+modifier|*
+parameter_list|,
+name|float
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gdisplay_new_view
 parameter_list|(
 name|GDisplay
