@@ -3,6 +3,23 @@ begin_comment
 comment|/*  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * SphereDesigner v0.3 - creates textured spheres  * by Vidar Madsen<vidar@prosalg.no>  *  * Status: Aug 31 1999 - Messy source, will clean up later.  *  * Todo:  * - Editing of lights  * - Non-interactive mode  * - Saving / Loading of presets  * - Transparency in textures (preliminary work started)  * - (Probably more. ;-)  */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -93,6 +110,10 @@ end_endif
 
 begin_comment
 comment|/* Tor Lillqvist used these, but they're not defined on my system? -Vidar */
+end_comment
+
+begin_comment
+comment|/* They are in GIMP's config.h. --tml */
 end_comment
 
 begin_ifndef
@@ -270,7 +291,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2778cb7a0103
+DECL|enum|__anon28a4cd9f0103
 enum|enum
 block|{
 DECL|enumerator|TRIANGLE
@@ -295,7 +316,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2778cb7a0203
+DECL|enum|__anon28a4cd9f0203
 enum|enum
 block|{
 DECL|enumerator|SOLID
@@ -344,7 +365,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2778cb7a0303
+DECL|enum|__anon28a4cd9f0303
 enum|enum
 block|{
 DECL|enumerator|PERSPECTIVE
@@ -360,7 +381,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2778cb7a0403
+DECL|enum|__anon28a4cd9f0403
 enum|enum
 block|{
 DECL|enumerator|FOG
@@ -406,7 +427,7 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon2778cb7a0508
+DECL|struct|__anon28a4cd9f0508
 typedef|typedef
 struct|struct
 block|{
@@ -430,7 +451,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0608
+DECL|struct|__anon28a4cd9f0608
 typedef|typedef
 struct|struct
 block|{
@@ -454,7 +475,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0708
+DECL|struct|__anon28a4cd9f0708
 typedef|typedef
 struct|struct
 block|{
@@ -483,7 +504,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0808
+DECL|struct|__anon28a4cd9f0808
 typedef|typedef
 struct|struct
 block|{
@@ -575,7 +596,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0908
+DECL|struct|__anon28a4cd9f0908
 typedef|typedef
 struct|struct
 block|{
@@ -602,7 +623,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0a08
+DECL|struct|__anon28a4cd9f0a08
 typedef|typedef
 struct|struct
 block|{
@@ -644,7 +665,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0b08
+DECL|struct|__anon28a4cd9f0b08
 typedef|typedef
 struct|struct
 block|{
@@ -669,7 +690,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0c08
+DECL|struct|__anon28a4cd9f0c08
 typedef|typedef
 struct|struct
 block|{
@@ -695,7 +716,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0d08
+DECL|struct|__anon28a4cd9f0d08
 typedef|typedef
 struct|struct
 block|{
@@ -718,7 +739,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0e08
+DECL|struct|__anon28a4cd9f0e08
 typedef|typedef
 struct|struct
 block|{
@@ -743,7 +764,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a0f08
+DECL|struct|__anon28a4cd9f0f08
 typedef|typedef
 struct|struct
 block|{
@@ -766,7 +787,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a1008
+DECL|struct|__anon28a4cd9f1008
 typedef|typedef
 struct|struct
 block|{
@@ -789,7 +810,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2778cb7a1108
+DECL|struct|__anon28a4cd9f1108
 typedef|typedef
 struct|struct
 block|{
@@ -815,7 +836,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon2778cb7a120a
+DECL|union|__anon28a4cd9f120a
 typedef|typedef
 union|union
 block|{
@@ -1124,7 +1145,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2778cb7a1308
+DECL|struct|__anon28a4cd9f1308
 struct|struct
 block|{
 DECL|member|solid
