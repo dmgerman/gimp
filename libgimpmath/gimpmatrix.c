@@ -2523,6 +2523,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix4_to_deg:  * @matrix:  * @a:  * @b:  * @c:  *  *  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_matrix4_to_deg (const GimpMatrix4 * matrix,gdouble * a,gdouble * b,gdouble * c)
