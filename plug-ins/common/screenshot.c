@@ -134,7 +134,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c88c6c0108
+DECL|struct|__anon2b74921c0108
 block|{
 DECL|member|root
 name|gboolean
@@ -144,9 +144,13 @@ DECL|member|window_id
 name|guint
 name|window_id
 decl_stmt|;
-DECL|member|delay
+DECL|member|select_delay
 name|guint
-name|delay
+name|select_delay
+decl_stmt|;
+DECL|member|grab_delay
+name|guint
+name|grab_delay
 decl_stmt|;
 DECL|typedef|ScreenShotValues
 block|}
@@ -163,13 +167,16 @@ init|=
 block|{
 name|FALSE
 block|,
-comment|/* root window */
+comment|/* root window  */
 literal|0
 block|,
-comment|/* window ID   */
+comment|/* window ID    */
 literal|0
 block|,
-comment|/* delay       */
+comment|/* select delay */
+literal|0
+block|,
+comment|/* grab delay   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -418,17 +425,18 @@ name|PLUG_IN_NAME
 argument_list|,
 literal|"Creates a screenshot of a single window or the whole screen"
 argument_list|,
-literal|"After specifying some options the user selects a window and "
-literal|"a time out is started. At the end of the time out the window "
-literal|"is grabbed and the image is loaded into The GIMP. Alternatively "
-literal|"the whole screen can be grabbed. When called non-interactively "
-literal|"it may grab the root window or use the window-id passed as a parameter."
+literal|"After a user specified time out the user selects a window and "
+literal|"another time out is started. At the end of the second time out "
+literal|"the window is grabbed and the image is loaded into The GIMP. "
+literal|"Alternatively the whole screen can be grabbed. When called "
+literal|"non-interactively it may grab the root window or use the "
+literal|"window-id passed as a parameter."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, Henrik Brix Andersen<brix@gimp.org>"
 argument_list|,
 literal|"1998 - 2003"
 argument_list|,
-literal|"v0.9.6 (2003/08/28)"
+literal|"v0.9.7 (2003/11/15)"
 argument_list|,
 name|N_
 argument_list|(
@@ -621,7 +629,13 @@ name|d_int32
 expr_stmt|;
 name|shootvals
 operator|.
-name|delay
+name|select_delay
+operator|=
+literal|0
+expr_stmt|;
+name|shootvals
+operator|.
+name|grab_delay
 operator|=
 literal|0
 expr_stmt|;
@@ -673,7 +687,7 @@ if|if
 condition|(
 name|shootvals
 operator|.
-name|delay
+name|grab_delay
 operator|>
 literal|0
 condition|)
@@ -681,7 +695,7 @@ name|shoot_delay
 argument_list|(
 name|shootvals
 operator|.
-name|delay
+name|grab_delay
 argument_list|)
 expr_stmt|;
 comment|/* Run the main function */
@@ -1031,7 +1045,7 @@ argument_list|(
 name|GDK_WINDOWING_WIN32
 argument_list|)
 comment|/* MS Windows specific code goes here (yet to be written) */
-comment|/* basically the code should grab the pointer using a crosshair      cursor, allow the user to click on a window and return the      obtained HWND (as a GdkNativeWindow) - for more details consult      the X11 specific code below */
+comment|/* basically the code should grab the pointer using a crosshair      cursor, allow the user to click on a window and return the      obtained HWND (as a GdkNativeWindow) - for more details consult      the X11 specific code above */
 comment|/* note to self: take a look at the winsnap plug-in for example      code */
 warning|#
 directive|warning
@@ -2008,6 +2022,170 @@ operator|.
 name|root
 argument_list|)
 expr_stmt|;
+comment|/*  select window delay  */
+name|hbox
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|label
+operator|=
+name|gtk_label_new_with_mnemonic
+argument_list|(
+name|_
+argument_list|(
+literal|"S_elect Window After"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|label
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
+name|adj
+operator|=
+name|gtk_adjustment_new
+argument_list|(
+name|shootvals
+operator|.
+name|select_delay
+argument_list|,
+literal|0.0
+argument_list|,
+literal|100.0
+argument_list|,
+literal|1.0
+argument_list|,
+literal|5.0
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
+name|spinner
+operator|=
+name|gtk_spin_button_new
+argument_list|(
+name|GTK_ADJUSTMENT
+argument_list|(
+name|adj
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|spinner
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|spinner
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|adj
+argument_list|,
+literal|"value_changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_int_adjustment_update
+argument_list|)
+argument_list|,
+operator|&
+name|shootvals
+operator|.
+name|select_delay
+argument_list|)
+expr_stmt|;
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Seconds Delay"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|label
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
 comment|/*  root window  */
 name|button
 operator|=
@@ -2106,7 +2284,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/*  with delay  */
+comment|/*  grab delay  */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -2138,7 +2316,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_after"
+literal|"Grab _After"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2169,7 +2347,7 @@ name|gtk_adjustment_new
 argument_list|(
 name|shootvals
 operator|.
-name|delay
+name|grab_delay
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2231,7 +2409,7 @@ argument_list|,
 operator|&
 name|shootvals
 operator|.
-name|delay
+name|grab_delay
 argument_list|)
 expr_stmt|;
 name|label
@@ -2325,6 +2503,22 @@ name|shootvals
 operator|.
 name|window_id
 condition|)
+block|{
+if|if
+condition|(
+name|shootvals
+operator|.
+name|select_delay
+operator|>
+literal|0
+condition|)
+name|shoot_delay
+argument_list|(
+name|shootvals
+operator|.
+name|select_delay
+argument_list|)
+expr_stmt|;
 name|selected_native
 operator|=
 name|select_window
@@ -2332,6 +2526,7 @@ argument_list|(
 name|cur_screen
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|run
