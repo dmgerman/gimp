@@ -2826,6 +2826,12 @@ name|auto_snap_to
 operator|=
 literal|0
 expr_stmt|;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
+expr_stmt|;
 name|last_tool
 operator|=
 name|tool
