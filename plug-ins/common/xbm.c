@@ -2931,9 +2931,7 @@ argument_list|,
 name|vbox
 argument_list|)
 expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -3877,6 +3875,10 @@ argument_list|(
 name|gimp_gtkrc
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|gtk_initialized
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function
