@@ -317,13 +317,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_menu_add:  * @procedure_name: The procedure for which to install the menu path.  * @menu_path: The procedure's additional menu path.  *  * Register an additional menu path for a plug-in procedure.  *  * This procedure installs an additional menu entry for the given  * procedure.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_plugin_menu_register:  * @procedure_name: The procedure for which to install the menu path.  * @menu_path: The procedure's additional menu path.  *  * Register an additional menu path for a plug-in procedure.  *  * This procedure installs an additional menu entry for the given  * procedure.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_plugin_menu_add (const gchar * procedure_name,const gchar * menu_path)
-name|gimp_plugin_menu_add
+DECL|function|gimp_plugin_menu_register (const gchar * procedure_name,const gchar * menu_path)
+name|gimp_plugin_menu_register
 parameter_list|(
 specifier|const
 name|gchar
@@ -352,7 +352,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_plugin_menu_add"
+literal|"gimp_plugin_menu_register"
 argument_list|,
 operator|&
 name|nreturn_vals

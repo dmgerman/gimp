@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b77fd50103
+DECL|enum|__anon275d14680103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -571,7 +571,7 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_add
+name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_ccanalyze"
 argument_list|,

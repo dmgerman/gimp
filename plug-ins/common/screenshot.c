@@ -142,7 +142,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b06e5880108
+DECL|struct|__anon27e405be0108
 block|{
 DECL|member|root
 name|gboolean
@@ -470,7 +470,7 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_add
+name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,

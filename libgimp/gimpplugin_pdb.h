@@ -80,7 +80,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_plugin_menu_add
+name|gimp_plugin_menu_register
 parameter_list|(
 specifier|const
 name|gchar

@@ -160,10 +160,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|plugin_menu_add_proc
+DECL|variable|plugin_menu_register_proc
 specifier|static
 name|ProcRecord
-name|plugin_menu_add_proc
+name|plugin_menu_register_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -222,7 +222,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|plugin_menu_add_proc
+name|plugin_menu_register_proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -1804,8 +1804,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_menu_add_invoker (Gimp * gimp,GimpContext * context,Argument * args)
-name|plugin_menu_add_invoker
+DECL|function|plugin_menu_register_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+name|plugin_menu_register_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -2006,7 +2006,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|plugin_menu_add_proc
+name|plugin_menu_register_proc
 argument_list|,
 name|success
 argument_list|)
@@ -2015,10 +2015,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|plugin_menu_add_inargs
+DECL|variable|plugin_menu_register_inargs
 specifier|static
 name|ProcArg
-name|plugin_menu_add_inargs
+name|plugin_menu_register_inargs
 index|[]
 init|=
 block|{
@@ -2042,13 +2042,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|plugin_menu_add_proc
+DECL|variable|plugin_menu_register_proc
 specifier|static
 name|ProcRecord
-name|plugin_menu_add_proc
+name|plugin_menu_register_proc
 init|=
 block|{
-literal|"gimp_plugin_menu_add"
+literal|"gimp_plugin_menu_register"
 block|,
 literal|"Register an additional menu path for a plug-in procedure."
 block|,
@@ -2064,7 +2064,7 @@ name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
-name|plugin_menu_add_inargs
+name|plugin_menu_register_inargs
 block|,
 literal|0
 block|,
@@ -2072,7 +2072,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|plugin_menu_add_invoker
+name|plugin_menu_register_invoker
 block|}
 block|}
 block|}
