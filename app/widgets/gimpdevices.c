@@ -1039,6 +1039,13 @@ operator|->
 name|next
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|device_info
+operator|==
+name|NULL
+condition|)
+return|return;
 name|suppress_update
 operator|=
 name|TRUE
