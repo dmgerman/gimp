@@ -775,6 +775,22 @@ argument_list|,
 name|box
 argument_list|)
 expr_stmt|;
+name|g_signal_connect_swapped
+argument_list|(
+name|view
+argument_list|,
+literal|"notify::channel"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gtk_widget_queue_draw
+argument_list|)
+argument_list|,
+name|box
+operator|->
+name|gradient
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1484,13 +1500,6 @@ operator|->
 name|histogram
 argument_list|,
 name|channel
-argument_list|)
-expr_stmt|;
-name|gtk_widget_queue_draw
-argument_list|(
-name|box
-operator|->
-name|gradient
 argument_list|)
 expr_stmt|;
 block|}

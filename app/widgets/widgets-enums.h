@@ -45,7 +45,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a411dd0103
+DECL|enum|__anon29f280f60103
 block|{
 DECL|enumerator|GIMP_HELP_BROWSER_GIMP
 name|GIMP_HELP_BROWSER_GIMP
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a411dd0203
+DECL|enum|__anon29f280f60203
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -96,6 +96,42 @@ name|GimpZoomType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_HISTOGRAM_SCALE
+define|#
+directive|define
+name|GIMP_TYPE_HISTOGRAM_SCALE
+value|(gimp_histogram_scale_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_histogram_scale_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon29f280f60303
+block|{
+DECL|enumerator|GIMP_HISTOGRAM_SCALE_LINEAR
+name|GIMP_HISTOGRAM_SCALE_LINEAR
+block|,
+comment|/*< desc="Linear">*/
+DECL|enumerator|GIMP_HISTOGRAM_SCALE_LOGARITHMIC
+name|GIMP_HISTOGRAM_SCALE_LOGARITHMIC
+comment|/*< desc="Logarithmic">*/
+DECL|typedef|GimpHistogramScale
+block|}
+name|GimpHistogramScale
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -104,7 +140,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27a411dd0303
+DECL|enum|__anon29f280f60403
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_GRID
 name|GIMP_VIEW_TYPE_GRID
@@ -121,7 +157,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27a411dd0403
+DECL|enum|__anon29f280f60503
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -141,7 +177,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27a411dd0503
+DECL|enum|__anon29f280f60603
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
@@ -176,7 +212,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, proxy-resume>*/
-DECL|enum|__anon27a411dd0603
+DECL|enum|__anon29f280f60703
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -283,7 +319,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27a411dd0703
+DECL|enum|__anon29f280f60803
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE
@@ -333,7 +369,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, proxy-skip>*/
-DECL|enum|__anon27a411dd0803
+DECL|enum|__anon29f280f60903
 block|{
 DECL|enumerator|GIMP_DEVICE_VALUE_MODE
 name|GIMP_DEVICE_VALUE_MODE
