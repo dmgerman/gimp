@@ -386,13 +386,13 @@ name|help_func
 argument_list|,
 name|help_id
 argument_list|,
-name|GTK_STOCK_CANCEL
-argument_list|,
-name|GTK_RESPONSE_CANCEL
-argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,
 name|RESPONSE_RESET
+argument_list|,
+name|GTK_STOCK_CANCEL
+argument_list|,
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GIMP_STOCK_SCALE
 argument_list|,
