@@ -40,6 +40,22 @@ name|GIMP_HELP_DEFAULT_LOCALE
 value|"en"
 end_define
 
+begin_define
+DECL|macro|GIMP_HELP_PREFIX
+define|#
+directive|define
+name|GIMP_HELP_PREFIX
+value|"help"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_ENV_URI
+define|#
+directive|define
+name|GIMP_HELP_ENV_URI
+value|"GIMP2_HELP_URI"
+end_define
+
 begin_comment
 comment|/*  #define GIMP_HELP_DEBUG  */
 end_comment

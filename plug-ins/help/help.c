@@ -75,26 +75,10 @@ name|GIMP_HELP_TEMP_EXT_NAME
 value|"extension_gimp_help_temp"
 end_define
 
-begin_define
-DECL|macro|GIMP_HELP_PREFIX
-define|#
-directive|define
-name|GIMP_HELP_PREFIX
-value|"help"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_ENV_URI
-define|#
-directive|define
-name|GIMP_HELP_ENV_URI
-value|"GIMP2_HELP_URI"
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b05e040108
+DECL|struct|__anon2c751b340108
 block|{
 DECL|member|procedure
 name|gchar
