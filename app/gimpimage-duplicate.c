@@ -905,7 +905,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill Options"
+literal|"Fill Type"
 argument_list|)
 argument_list|,
 name|gimp_radio_button_update

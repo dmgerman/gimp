@@ -74,12 +74,6 @@ directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|parasites
 specifier|static
@@ -492,11 +486,9 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-name|_
-argument_list|(
 literal|"# GIMP parasiterc\n"
-literal|"# This file will be entirely rewritten every time you quit the gimp.\n\n"
-argument_list|)
+literal|"# This file will be entirely rewritten every time you "
+literal|"quit the gimp.\n\n"
 argument_list|)
 expr_stmt|;
 name|parasite_list_foreach
