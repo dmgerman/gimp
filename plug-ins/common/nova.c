@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d8eeb0108
+DECL|struct|__anon29ec8dea0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d8eeb0208
+DECL|struct|__anon29ec8dea0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2428,7 +2428,7 @@ name|gdk_cursor_new_for_display
 argument_list|(
 name|display
 argument_list|,
-name|GDK_HAND2
+name|GDK_CROSSHAIR
 argument_list|)
 decl_stmt|;
 name|gimp_preview_set_default_cursor
