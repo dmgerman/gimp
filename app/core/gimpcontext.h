@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a05196b0103
+DECL|enum|__anon2b67dbff0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a05196b0203
+DECL|enum|__anon2b67dbff0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -781,7 +781,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|guint32
+name|GimpContextArgMask
 name|args_mask
 parameter_list|,
 name|gboolean
@@ -861,6 +861,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_context_image_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  display  */
 end_comment
@@ -892,6 +903,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_context_display_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  tool  */
 end_comment
@@ -917,6 +939,17 @@ name|context
 parameter_list|,
 name|ToolType
 name|tool_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_tool_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -968,6 +1001,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_context_foreground_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  background color  */
 end_comment
@@ -1011,6 +1055,17 @@ name|g
 parameter_list|,
 name|gint
 name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_background_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1070,6 +1125,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_context_opacity_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  paint mode  */
 end_comment
@@ -1095,6 +1161,17 @@ name|context
 parameter_list|,
 name|LayerModeEffects
 name|paint_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_paint_mode_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1126,6 +1203,17 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_brush_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1166,6 +1254,17 @@ parameter_list|,
 name|GPattern
 modifier|*
 name|pattern
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_pattern_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1217,6 +1316,17 @@ parameter_list|,
 name|gradient_t
 modifier|*
 name|gradient
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_gradient_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
