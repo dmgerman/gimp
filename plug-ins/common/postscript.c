@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279858090108
+DECL|struct|__anon2a1063990108
 block|{
 DECL|member|resolution
 name|guint
@@ -299,24 +299,24 @@ init|=
 block|{
 literal|100
 block|,
-comment|/* 100 dpi */
+comment|/* 100 dpi                        */
 literal|826
 block|,
 literal|1170
 block|,
-comment|/* default width/height (A4) */
+comment|/* default width/height (A4)      */
 literal|1
 block|,
-comment|/* try to use BoundingBox */
-literal|"1-99"
+comment|/* try to use BoundingBox         */
+literal|"1"
 block|,
-comment|/* pages to load */
+comment|/* pages to load                  */
 literal|6
 block|,
-comment|/* use ppm (colour) */
+comment|/* use ppm (colour)               */
 literal|1
 block|,
-comment|/* dont use text antialiasing */
+comment|/* dont use text antialiasing     */
 literal|1
 comment|/* dont use graphics antialiasing */
 block|}
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279858090208
+DECL|struct|__anon2a1063990208
 block|{
 DECL|member|width
 DECL|member|height
@@ -904,7 +904,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279858090308
+DECL|struct|__anon2a1063990308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1760,7 +1760,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279858090408
+DECL|struct|__anon2a1063990408
 block|{
 DECL|member|eol
 name|long
@@ -13988,7 +13988,7 @@ name|adj
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|pages_entry
+name|entry
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -14418,14 +14418,14 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|pages_entry
+name|entry
 operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
-name|pages_entry
+name|entry
 argument_list|,
 literal|80
 argument_list|,
@@ -14437,7 +14437,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|pages_entry
+name|entry
 argument_list|)
 argument_list|,
 name|plvals
@@ -14465,7 +14465,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|pages_entry
+name|entry
 argument_list|,
 literal|1
 argument_list|,
@@ -14474,13 +14474,28 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|pages_entry
+name|entry
 argument_list|,
 literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|load_pages_entry_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Pages to load (e.g.: 1-4 or 1,3,5-7)"
 argument_list|)
 argument_list|,
 name|NULL
@@ -14868,7 +14883,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gint
+name|gsize
 name|nelem
 init|=
 sizeof|sizeof
