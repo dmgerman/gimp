@@ -743,7 +743,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27602c940103
+DECL|enum|__anon2a1f36480103
 block|{
 DECL|enumerator|ACTIVE_LAYER_CHANGED
 name|ACTIVE_LAYER_CHANGED
@@ -12821,11 +12821,12 @@ name|mode
 operator|!=
 name|DISSOLVE_MODE
 condition|)
+name|gimp_layer_set_mode
+argument_list|(
 name|bottom
-operator|->
-name|mode
-operator|=
+argument_list|,
 name|NORMAL_MODE
+argument_list|)
 expr_stmt|;
 block|}
 comment|/* Copy the tattoo and parasites of the bottom layer to the new layer */
@@ -13188,11 +13189,12 @@ if|if
 condition|(
 name|bottom
 condition|)
+name|gimp_layer_set_mode
+argument_list|(
 name|bottom
-operator|->
-name|mode
-operator|=
+argument_list|,
 name|bottom_mode
+argument_list|)
 expr_stmt|;
 name|g_slist_free
 argument_list|(

@@ -422,6 +422,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpLayerListView
+typedef|typedef
+name|struct
+name|_GimpLayerListView
+name|GimpLayerListView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpListItem
 typedef|typedef
 name|struct

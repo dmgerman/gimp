@@ -406,6 +406,9 @@ parameter_list|,
 name|gpointer
 name|data
 parameter_list|,
+name|gboolean
+name|with_behind_mode
+parameter_list|,
 name|LayerModeEffects
 name|initial
 parameter_list|)

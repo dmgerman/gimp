@@ -4215,7 +4215,14 @@ argument_list|,
 name|tool_info
 argument_list|)
 expr_stmt|;
-comment|/* #warning FIXME (let the tool manager to this stuff) */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME (let the tool manager to this stuff)
+endif|#
+directive|endif
 comment|/*  Paranoia  */
 name|active_tool
 operator|->

@@ -9338,7 +9338,14 @@ name|INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* #warning FIXME (set_menu_sensitivity) */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME (set_menu_sensitivity)
+endif|#
+directive|endif
 if|#
 directive|if
 literal|0

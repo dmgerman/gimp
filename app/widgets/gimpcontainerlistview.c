@@ -848,6 +848,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  GimpContainerView methods  */
+end_comment
+
 begin_function
 specifier|static
 name|gpointer
@@ -1586,6 +1590,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  GtkClist callbacks  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1634,6 +1642,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  GtkListItem callbacks  */
+end_comment
 
 begin_function
 specifier|static

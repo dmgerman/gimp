@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29da09b40103
+DECL|enum|__anon2a1ffa6d0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -5379,7 +5379,14 @@ name|gpointer
 name|tu_ptr
 parameter_list|)
 block|{
-comment|/* #warning very bogus */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|very bogus
+endif|#
+directive|endif
 if|#
 directive|if
 literal|0
@@ -5540,9 +5547,22 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/* #warning super bogosity error */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|super bogosity error
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static

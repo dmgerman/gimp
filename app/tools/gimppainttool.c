@@ -215,7 +215,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3aaa850103
+DECL|enum|__anon29a06beb0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -2795,7 +2795,14 @@ operator|->
 name|context_id
 argument_list|)
 expr_stmt|;
-comment|/* #warning this doesnt belong here           */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|this doesnt belong here
+endif|#
+directive|endif
 comment|/* Set toggle cursors for various paint tools */
 if|if
 condition|(
@@ -4079,7 +4086,14 @@ name|cury
 operator|=
 name|y
 expr_stmt|;
-comment|/* #warning (FIX non-gui paint tools)   */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|(FIX non-gui paint tools)
+endif|#
+directive|endif
 if|#
 directive|if
 literal|0

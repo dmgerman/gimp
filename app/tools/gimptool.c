@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcc71a80103
+DECL|enum|__anon28b8cd370103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -379,9 +379,22 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* #warning FIXME: check what global_tool_ID was used for */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: check what global_tool_ID was used for
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* static gint global_tool_ID = 0; */
@@ -1559,6 +1572,12 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+name|tool
+operator|->
+name|state
+operator|=
+name|ACTIVE
+expr_stmt|;
 block|}
 end_function
 
@@ -1580,7 +1599,14 @@ name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|)
-block|{ }
+block|{
+name|tool
+operator|->
+name|state
+operator|=
+name|INACTIVE
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -1671,7 +1697,9 @@ name|gdisp
 argument_list|,
 name|GDK_TOP_LEFT_ARROW
 argument_list|,
-name|GIMP_TOOL_CURSOR_NONE
+name|tool
+operator|->
+name|tool_cursor
 argument_list|,
 name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
@@ -2271,9 +2299,22 @@ argument|path_transform_xy
 argument_list|)
 end_macro
 
-begin_comment
-comment|/* #warning obsolete crap */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|obsolete crap
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/tool_manager.h"
 end_include
 
@@ -3643,6 +3649,10 @@ decl_stmt|;
 name|PixelRegion
 name|bufPR
 decl_stmt|;
+name|GimpToolInfo
+modifier|*
+name|tool_info
+decl_stmt|;
 name|GimpContext
 modifier|*
 name|context
@@ -3713,21 +3723,37 @@ name|gimp_add_busy_cursors
 argument_list|()
 expr_stmt|;
 comment|/*  Get the bucket fill context  */
-if|#
-directive|if
-literal|0
-block|if (! global_paint_options)
-warning|#
-directive|warning
-warning|FIXME    context = tool_info[BUCKET_FILL].tool_context;
-block|else
-endif|#
-directive|endif
+name|tool_info
+operator|=
+name|tool_manager_get_info_by_type
+argument_list|(
+name|GIMP_TYPE_BUCKET_FILL_TOOL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tool_info
+operator|&&
+name|tool_info
+operator|->
+name|context
+condition|)
+block|{
+name|context
+operator|=
+name|tool_info
+operator|->
+name|context
+expr_stmt|;
+block|}
+else|else
+block|{
 name|context
 operator|=
 name|gimp_context_get_user
 argument_list|()
 expr_stmt|;
+block|}
 comment|/*  Transform the passed data for the dest image  */
 if|if
 condition|(

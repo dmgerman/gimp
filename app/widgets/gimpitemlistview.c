@@ -72,6 +72,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayerlistview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplistitem.h"
 end_include
 
@@ -1375,81 +1387,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
-name|gpointer
-DECL|function|gimp_drawable_list_view_insert_item (GimpContainerView * view,GimpViewable * viewable,gint index)
-name|gimp_drawable_list_view_insert_item
-parameter_list|(
-name|GimpContainerView
-modifier|*
-name|view
-parameter_list|,
-name|GimpViewable
-modifier|*
-name|viewable
-parameter_list|,
-name|gint
-name|index
-parameter_list|)
-block|{
-name|gpointer
-name|list_item
-init|=
-name|NULL
-decl_stmt|;
-if|if
-condition|(
-name|GIMP_CONTAINER_VIEW_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|insert_item
-condition|)
-name|list_item
-operator|=
-name|GIMP_CONTAINER_VIEW_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|insert_item
-argument_list|(
-name|view
-argument_list|,
-name|viewable
-argument_list|,
-name|index
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|list_item
-condition|)
-name|gimp_list_item_set_reorderable
-argument_list|(
-name|GIMP_LIST_ITEM
-argument_list|(
-name|list_item
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|,
-name|view
-operator|->
-name|container
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-name|gpointer
-operator|)
-name|list_item
-return|;
-block|}
-end_function
-
-begin_function
 name|GtkWidget
 modifier|*
 DECL|function|gimp_drawable_list_view_new (GimpImage * gimage,GtkType drawable_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetDrawableFunc get_drawable_func,GimpSetDrawableFunc set_drawable_func,GimpReorderDrawableFunc reorder_drawable_func,GimpAddDrawableFunc add_drawable_func,GimpRemoveDrawableFunc remove_drawable_func,GimpCopyDrawableFunc copy_drawable_func)
@@ -1582,6 +1519,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|drawable_type
+operator|==
+name|GIMP_TYPE_LAYER
+condition|)
+block|{
+name|list_view
+operator|=
+name|gtk_type_new
+argument_list|(
+name|GIMP_TYPE_LAYER_LIST_VIEW
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|list_view
 operator|=
 name|gtk_type_new
@@ -1589,6 +1543,7 @@ argument_list|(
 name|GIMP_TYPE_DRAWABLE_LIST_VIEW
 argument_list|)
 expr_stmt|;
+block|}
 name|view
 operator|=
 name|GIMP_CONTAINER_VIEW
@@ -1951,6 +1906,15 @@ argument_list|,
 name|view
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_list_view_drawable_changed
+argument_list|(
+name|view
+operator|->
+name|gimage
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -1967,6 +1931,82 @@ name|NULL
 operator|)
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  GimpContainerView methods  */
+end_comment
+
+begin_function
+specifier|static
+name|gpointer
+DECL|function|gimp_drawable_list_view_insert_item (GimpContainerView * view,GimpViewable * viewable,gint index)
+name|gimp_drawable_list_view_insert_item
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|,
+name|gint
+name|index
+parameter_list|)
+block|{
+name|gpointer
+name|list_item
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+name|GIMP_CONTAINER_VIEW_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|insert_item
+condition|)
+name|list_item
+operator|=
+name|GIMP_CONTAINER_VIEW_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|insert_item
+argument_list|(
+name|view
+argument_list|,
+name|viewable
+argument_list|,
+name|index
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|list_item
+condition|)
+name|gimp_list_item_set_reorderable
+argument_list|(
+name|GIMP_LIST_ITEM
+argument_list|(
+name|list_item
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|view
+operator|->
+name|container
+argument_list|)
+expr_stmt|;
+return|return
+name|list_item
+return|;
 block|}
 end_function
 
@@ -2270,6 +2310,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  "New" functions  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -2398,6 +2442,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  "Duplicate" functions  */
+end_comment
 
 begin_function
 specifier|static
@@ -2552,6 +2600,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  "Raise/Lower" functions  */
+end_comment
 
 begin_function
 specifier|static
@@ -2735,6 +2787,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/*  "Edit" functions  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -2868,6 +2924,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  "Delete" functions  */
+end_comment
 
 begin_function
 specifier|static
@@ -3004,6 +3064,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  GimpImage callbacks  */
+end_comment
 
 begin_function
 specifier|static

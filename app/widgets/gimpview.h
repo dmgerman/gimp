@@ -103,13 +103,9 @@ DECL|member|border_width
 name|gint
 name|border_width
 decl_stmt|;
-comment|/* TEMP HACK: */
 DECL|member|border_color
-name|guchar
+name|GimpRGB
 name|border_color
-index|[
-literal|3
-index|]
 decl_stmt|;
 DECL|member|is_popup
 name|gboolean
@@ -123,6 +119,7 @@ DECL|member|show_popup
 name|gboolean
 name|show_popup
 decl_stmt|;
+comment|/*< private>*/
 DECL|member|in_button
 name|gboolean
 name|in_button
@@ -291,6 +288,18 @@ name|show_popup
 parameter_list|)
 function_decl|;
 name|void
+name|gimp_preview_set_viewable
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+function_decl|;
+name|void
 name|gimp_preview_set_size
 parameter_list|(
 name|GimpPreview
@@ -322,15 +331,16 @@ name|border_width
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_preview_set_viewable
+name|gimp_preview_set_border_color
 parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
 parameter_list|,
-name|GimpViewable
+specifier|const
+name|GimpRGB
 modifier|*
-name|viewable
+name|border_color
 parameter_list|)
 function_decl|;
 name|void
@@ -341,7 +351,7 @@ modifier|*
 name|preview
 parameter_list|)
 function_decl|;
-comment|/*  private  */
+comment|/*  protected  */
 name|void
 name|gimp_preview_render_and_flush
 parameter_list|(

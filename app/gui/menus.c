@@ -9687,7 +9687,14 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  reorder<Image>/Image/Colors  */
-comment|/*#warning FIXME (reorder<Image>/Image/Colors) */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME (reorder<Image>/Image/Colors)
+endif|#
+directive|endif
 if|#
 directive|if
 literal|0

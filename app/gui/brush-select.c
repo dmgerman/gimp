@@ -1215,6 +1215,8 @@ name|gpointer
 operator|)
 name|bsp
 argument_list|,
+name|TRUE
+argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(
 name|bsp

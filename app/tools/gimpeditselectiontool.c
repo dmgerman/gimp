@@ -1923,7 +1923,7 @@ name|gimage
 operator|->
 name|active_layer
 operator|||
-name|gimp_layer_linked
+name|gimp_layer_get_linked
 argument_list|(
 name|layer
 argument_list|)
@@ -2851,7 +2851,7 @@ operator|->
 name|active_layer
 operator|)
 operator|&&
-name|gimp_layer_linked
+name|gimp_layer_get_linked
 argument_list|(
 name|layer
 argument_list|)
@@ -3964,7 +3964,7 @@ operator|->
 name|active_layer
 operator|)
 operator|||
-name|gimp_layer_linked
+name|gimp_layer_get_linked
 argument_list|(
 name|layer
 argument_list|)

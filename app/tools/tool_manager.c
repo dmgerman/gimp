@@ -361,7 +361,14 @@ operator|!
 name|gdisp
 condition|)
 block|{
-comment|/* #warning FIXME   tool_type = RECT_SELECT; */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME   tool_type = RECT_SELECT;
+endif|#
+directive|endif
 block|}
 comment|/*  Force the emission of the "tool_changed" signal    */
 name|tool_info
@@ -657,9 +664,22 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/* #warning bogosity alert */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|bogosity alert
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_if
 if|#

@@ -45,14 +45,10 @@ directive|include
 file|"temp_buf.h"
 end_include
 
-begin_comment
-comment|/* FIXME: include rect_select.h here */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|"gimpcolorpickertool.h"
+file|"gimprectselecttool.h"
 end_include
 
 begin_function_decl
@@ -970,7 +966,7 @@ name|standard_tool_info
 operator|=
 name|gimp_tool_info_new
 argument_list|(
-name|GIMP_TYPE_COLOR_PICKER_TOOL
+name|GIMP_TYPE_RECT_SELECT_TOOL
 argument_list|,
 name|FALSE
 argument_list|,
