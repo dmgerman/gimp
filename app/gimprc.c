@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon29740ec20103
+DECL|enum|__anon2c90cc2e0103
 typedef|typedef
 enum|enum
 block|{
@@ -874,6 +874,14 @@ name|int
 name|global_paint_options
 init|=
 name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|char
+modifier|*
+name|module_db_load_inhibit
 decl_stmt|;
 end_decl_stmt
 
@@ -2314,6 +2322,17 @@ name|NULL
 block|,
 operator|&
 name|global_paint_options
+block|}
+block|,
+block|{
+literal|"module-load-inhibit"
+block|,
+name|TT_PATH
+block|,
+operator|&
+name|module_db_load_inhibit
+block|,
+name|NULL
 block|}
 block|}
 decl_stmt|;
