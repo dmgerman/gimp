@@ -315,7 +315,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296895a70108
+DECL|struct|__anon278299470108
 block|{
 DECL|member|root
 name|gboolean
@@ -2034,7 +2034,10 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"Grab"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
