@@ -2495,7 +2495,7 @@ name|f
 init|=
 name|amount
 operator|*
-name|G_PI
+name|M_PI
 operator|*
 literal|2
 operator|/

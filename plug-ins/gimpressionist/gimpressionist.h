@@ -5,12 +5,6 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -69,6 +63,52 @@ directive|define
 name|MAXSIZEVECT
 value|50
 end_define
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI_2
+end_ifndef
+
+begin_define
+DECL|macro|M_PI_2
+define|#
+directive|define
+name|M_PI_2
+value|(M_PI / 2.0)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI_2 */
+end_comment
 
 begin_comment
 comment|/* Type declaration and definitions */
@@ -134,7 +174,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2a16691f0108
+DECL|struct|__anon27a01e660108
 typedef|typedef
 struct|struct
 block|{
@@ -323,9 +363,13 @@ DECL|member|generalshadowblur
 name|int
 name|generalshadowblur
 decl_stmt|;
-DECL|member|coloracc
+DECL|member|colortype
 name|int
-name|coloracc
+name|colortype
+decl_stmt|;
+DECL|member|colornoise
+name|double
+name|colornoise
 decl_stmt|;
 DECL|typedef|gimpressionist_vals_t
 block|}
@@ -665,9 +709,17 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+name|GtkWidget
+modifier|*
+name|colortype
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
 name|GtkObject
 modifier|*
-name|coloraccadjust
+name|colornoiseadjust
 decl_stmt|;
 end_decl_stmt
 
@@ -788,6 +840,16 @@ end_function_decl
 begin_function_decl
 name|void
 name|create_placementpage
+parameter_list|(
+name|GtkNotebook
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|create_colorpage
 parameter_list|(
 name|GtkNotebook
 modifier|*
@@ -951,6 +1013,24 @@ end_function_decl
 begin_function_decl
 name|void
 name|placechange
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|wg
+parameter_list|,
+name|void
+modifier|*
+name|d
+parameter_list|,
+name|int
+name|num
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|colorchange
 parameter_list|(
 name|GtkWidget
 modifier|*

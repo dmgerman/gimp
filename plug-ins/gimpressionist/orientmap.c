@@ -220,7 +220,7 @@ name|d
 operator|/
 literal|180.0
 operator|*
-name|G_PI
+name|M_PI
 return|;
 block|}
 end_function
@@ -239,7 +239,7 @@ name|v
 init|=
 name|d
 operator|/
-name|G_PI
+name|M_PI
 operator|*
 literal|180.0
 decl_stmt|;
@@ -791,7 +791,7 @@ name|sin
 argument_list|(
 name|a
 operator|+
-name|G_PI_2
+name|M_PI_2
 argument_list|)
 expr_stmt|;
 name|ty
@@ -800,7 +800,7 @@ name|cos
 argument_list|(
 name|a
 operator|+
-name|G_PI_2
+name|M_PI_2
 argument_list|)
 expr_stmt|;
 block|}
@@ -866,7 +866,7 @@ name|sin
 argument_list|(
 name|a
 operator|+
-name|G_PI_2
+name|M_PI_2
 argument_list|)
 expr_stmt|;
 name|ty
@@ -875,7 +875,7 @@ name|cos
 argument_list|(
 name|a
 operator|+
-name|G_PI_2
+name|M_PI_2
 argument_list|)
 expr_stmt|;
 block|}
@@ -943,7 +943,7 @@ name|sin
 argument_list|(
 name|a
 operator|+
-name|G_PI_2
+name|M_PI_2
 argument_list|)
 expr_stmt|;
 name|ty
@@ -952,7 +952,7 @@ name|cos
 argument_list|(
 name|a
 operator|+
-name|G_PI_2
+name|M_PI_2
 argument_list|)
 expr_stmt|;
 block|}

@@ -315,6 +315,10 @@ block|,
 literal|10
 block|,
 literal|4
+block|,
+literal|0
+block|,
+literal|0.0
 block|}
 decl_stmt|;
 end_decl_stmt
