@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4ed9990103
+DECL|enum|__anon298b9bc70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4ed9990203
+DECL|enum|__anon298b9bc70203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2172,7 +2172,7 @@ operator|->
 name|gdisp
 condition|)
 return|return;
-name|gimp_display_shell_update_title
+name|gimp_display_shell_title_update
 argument_list|(
 name|shell
 argument_list|)
@@ -4128,6 +4128,11 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_title_init
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(
@@ -5242,7 +5247,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimp_display_shell_update_title
+name|gimp_display_shell_title_update
 argument_list|(
 name|shell
 argument_list|)

@@ -1101,7 +1101,7 @@ operator|&
 name|padding_color
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_update_title
+name|gimp_display_shell_title_update
 argument_list|(
 name|shell
 argument_list|)

@@ -1453,7 +1453,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_update_title
+name|gimp_display_shell_title_update
 argument_list|(
 name|shell
 argument_list|)
@@ -1483,7 +1483,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_update_title
+name|gimp_display_shell_title_update
 argument_list|(
 name|shell
 argument_list|)
@@ -1562,7 +1562,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_update_title
+name|gimp_display_shell_title_update
 argument_list|(
 name|shell
 argument_list|)
@@ -2137,7 +2137,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_update_title
+name|gimp_display_shell_title_update
 argument_list|(
 name|shell
 argument_list|)
