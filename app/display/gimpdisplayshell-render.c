@@ -13073,9 +13073,11 @@ condition|)
 return|return
 name|NULL
 return|;
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|tile
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|data
@@ -13240,9 +13242,11 @@ condition|)
 return|return
 name|tile_buf
 return|;
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|tile
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|data

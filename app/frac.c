@@ -1423,9 +1423,11 @@ name|XCFFileInfo
 operator|=
 name|info
 expr_stmt|;
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|tile
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|frac_file
@@ -2032,9 +2034,11 @@ name|i
 decl_stmt|,
 name|num_channels
 decl_stmt|;
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|tile
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

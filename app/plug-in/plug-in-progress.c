@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbf44ff0103
+DECL|enum|__anon295d14ae0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -5666,9 +5666,11 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|tile
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -5894,9 +5896,11 @@ name|FALSE
 else|:
 name|TRUE
 expr_stmt|;
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|tile
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

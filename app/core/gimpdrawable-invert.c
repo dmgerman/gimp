@@ -653,10 +653,17 @@ name|int_value
 argument_list|)
 operator|)
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"bleep1\n"
+argument_list|)
+expr_stmt|;
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 block|}
 comment|/*  the drawable  */
 if|if
@@ -695,10 +702,17 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"bleep2\n"
+argument_list|)
+expr_stmt|;
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 block|}
 comment|/*  make sure the drawable is not indexed color  */
 if|if

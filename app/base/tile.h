@@ -28,12 +28,9 @@ name|TILE_HEIGHT
 value|64
 end_define
 
-begin_define
-DECL|macro|TILE_DEBUG
-define|#
-directive|define
-name|TILE_DEBUG
-end_define
+begin_comment
+comment|/* Uncomment for verbose debugging on copy-on-write logic #define TILE_DEBUG */
+end_comment
 
 begin_include
 include|#
@@ -103,6 +100,24 @@ range|:
 literal|1
 decl_stmt|;
 comment|/* is the tile valid? */
+DECL|member|data
+name|guchar
+modifier|*
+name|data
+decl_stmt|;
+comment|/* the data for the tile. this may be NULL in which 		       *  case the tile data is on disk. 		       */
+DECL|member|real_tile_ptr
+name|Tile
+modifier|*
+name|real_tile_ptr
+decl_stmt|;
+comment|/* if this tile's 'data' pointer is just a copy-on-write 		       *  mirror of another's, this is that source tile. 		       *  (real_tile itself can actually be a virtual tile 		       *  too.)  This is NULL if this tile is not a virtual 		       *  tile. 		       */
+DECL|member|mirrored_by
+name|Tile
+modifier|*
+name|mirrored_by
+decl_stmt|;
+comment|/* If another tile is mirroring this one, this is 		       *  a pointer to that tile, otherwise this is NULL. 		       *  Note that only one tile may be _directly_ mirroring 		       *  another given tile.  This ensures that the graph 		       *  of mirrorings is no more complex than a linked 		       *  list. 		       */
 DECL|member|ewidth
 name|int
 name|ewidth
@@ -113,7 +128,7 @@ name|int
 name|eheight
 decl_stmt|;
 comment|/* the effective height of the tile */
-comment|/* a tiles effective width and height may be smaller 		       *  (but not larger) than TILE_WIDTH and TILE_HEIGHT. 		       * this is to handle edge tiles of a drawable. 		       */
+comment|/*  a tile's effective width and height may be smaller 		       *  (but not larger) than TILE_WIDTH and TILE_HEIGHT. 		       *  this is to handle edge tiles of a drawable. 		       */
 DECL|member|bpp
 name|int
 name|bpp
@@ -124,12 +139,6 @@ name|int
 name|tile_num
 decl_stmt|;
 comment|/* the number of this tile within the drawable */
-DECL|member|data
-name|guchar
-modifier|*
-name|data
-decl_stmt|;
-comment|/* the data for the tile. this may be NULL in which 		       *  case the tile data is on disk. 		       */
 DECL|member|swap_num
 name|int
 name|swap_num
@@ -139,7 +148,7 @@ DECL|member|swap_offset
 name|off_t
 name|swap_offset
 decl_stmt|;
-comment|/* the offset within the swap file of the tile data. 		       * if the tile data is in memory this will be set to -1. 		       */
+comment|/* the offset within the swap file of the tile data. 		       *  if the tile data is in memory this will be set to -1. 		       */
 DECL|member|tm
 name|void
 modifier|*
@@ -195,7 +204,26 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Referencing a tile causes the reference count to be incremented.  *  If the reference count was previously 0 the tile will will be  *  swapped into memory from disk.  */
+comment|/*  * c-o-w  */
+end_comment
+
+begin_function_decl
+name|void
+name|tile_mirror
+parameter_list|(
+name|Tile
+modifier|*
+name|dest_tile
+parameter_list|,
+name|Tile
+modifier|*
+name|src_tile
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Referencing a tile causes the reference count to be incremented.  *  If the reference count was previously 0 the tile will will be  *  swapped into memory from disk.  *  * tile_ref2 is a new tile-referencing interface through which you  *  should register your intent to dirty the tile.  This will facilitate  *  copy-on-write tile semantics.  */
 end_comment
 
 begin_if
@@ -238,6 +266,37 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_define
+DECL|macro|tile_ref2 (t,d)
+define|#
+directive|define
+name|tile_ref2
+parameter_list|(
+name|t
+parameter_list|,
+name|d
+parameter_list|)
+value|_tile_ref2 (t, d, __PRETTY_FUNCTION__)
+end_define
+
+begin_function_decl
+name|void
+name|_tile_ref2
+parameter_list|(
+name|Tile
+modifier|*
+name|tile
+parameter_list|,
+name|int
+name|dirty
+parameter_list|,
+name|char
+modifier|*
+name|func_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_else
 else|#
 directive|else
@@ -254,13 +313,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|tile_ref2
+parameter_list|(
+name|Tile
+modifier|*
+name|tile
+parameter_list|,
+name|int
+name|dirty
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/* Unrefercing a tile causes the reference count to be decremented.  *  When the reference count reaches 0 the tile data will be swapped  *  out to disk. Note that the tile may be in the tile cache which  *  also references the tile causing the reference count not to  *  fall below 1 until the tile is removed from the cache.  *  The dirty flag indicates whether the tile data has been dirtied  *  while referenced.  */
+comment|/* Unreferencing a tile causes the reference count to be decremented.  *  When the reference count reaches 0 the tile data will be swapped  *  out to disk. Note that the tile may be in the tile cache which  *  also references the tile causing the reference count not to  *  fall below 1 until the tile is removed from the cache.  *  The dirty flag indicates whether the tile data has been dirtied  *  while referenced.  */
 end_comment
 
 begin_if

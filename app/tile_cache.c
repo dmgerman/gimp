@@ -20,6 +20,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile_cache.h"
 end_include
 

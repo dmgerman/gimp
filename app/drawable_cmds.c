@@ -3675,9 +3675,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|tile
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|x
@@ -4045,9 +4047,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|tile
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|x

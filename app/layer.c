@@ -86,7 +86,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2a587ae80103
+DECL|enum|__anon2772ff210103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -4668,9 +4668,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|tile
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|val
@@ -4733,9 +4735,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|tile_ref
+name|tile_ref2
 argument_list|(
 name|mask_tile
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|val
