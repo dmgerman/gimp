@@ -1009,9 +1009,6 @@ operator|)
 name|key
 argument_list|)
 expr_stmt|;
-operator|*
-name|index
-operator|=
 operator|(
 operator|*
 name|index
