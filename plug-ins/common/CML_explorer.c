@@ -164,7 +164,7 @@ DECL|macro|RANDOM
 define|#
 directive|define
 name|RANDOM
-value|((gdouble) ((double) rand ()/((double) G_MAXRAND)))
+value|((gdouble) ((gdouble) rand ()/((gdouble) G_MAXRAND)))
 end_define
 
 begin_define
@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6f17b0108
+DECL|struct|__anon2c8546cf0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6f17b0203
+DECL|enum|__anon2c8546cf0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6f17b0303
+DECL|enum|__anon2c8546cf0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6f17b0403
+DECL|enum|__anon2c8546cf0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6f17b0503
+DECL|enum|__anon2c8546cf0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6f17b0608
+DECL|struct|__anon2c8546cf0608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6f17b0708
+DECL|struct|__anon2c8546cf0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1538,7 +1538,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6f17b0808
+DECL|struct|__anon2c8546cf0808
 block|{
 DECL|member|run
 name|gint
@@ -1588,7 +1588,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6f17b0908
+DECL|struct|__anon2c8546cf0908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2441,6 +2441,15 @@ name|height_by_pixel
 operator|*
 name|width_by_pixel
 expr_stmt|;
+if|if
+condition|(
+name|total
+operator|<
+literal|1
+condition|)
+return|return
+name|GIMP_PDB_EXECUTION_ERROR
+return|;
 name|keep_height
 operator|=
 name|VALS
@@ -4058,6 +4067,8 @@ operator|(
 name|total
 operator|/
 name|PROGRESS_UPDATE_NUM
+operator|+
+literal|1
 operator|)
 operator|)
 operator|==
@@ -4066,12 +4077,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|processed
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|total
 argument_list|)

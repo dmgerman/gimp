@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293b5f390108
+DECL|struct|__anon2b3c316c0108
 block|{
 DECL|member|threshold
 name|gint
@@ -203,7 +203,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293b5f390208
+DECL|struct|__anon2b3c316c0208
 block|{
 DECL|member|run
 name|gint
@@ -745,6 +745,15 @@ operator|-
 name|y1
 operator|)
 expr_stmt|;
+if|if
+condition|(
+name|total
+operator|<
+literal|1
+condition|)
+return|return
+name|GIMP_PDB_EXECUTION_ERROR
+return|;
 name|gimp_tile_cache_ntiles
 argument_list|(
 literal|2
@@ -967,6 +976,8 @@ operator|(
 name|total
 operator|/
 name|PROGRESS_UPDATE_NUM
+operator|+
+literal|1
 operator|)
 operator|)
 operator|==
@@ -975,12 +986,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|processed
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|total
 argument_list|)

@@ -228,7 +228,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d74a80103
+DECL|enum|__anon2a03ab5c0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -246,7 +246,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3d74a80208
+DECL|struct|__anon2a03ab5c0208
 block|{
 DECL|member|max_p
 name|gint
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3d74a80308
+DECL|struct|__anon2a03ab5c0308
 block|{
 DECL|member|run
 name|gint
@@ -960,10 +960,19 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
+name|total
+operator|<
+literal|1
+condition|)
+return|return
+name|GIMP_PDB_EXECUTION_ERROR
+return|;
+if|if
+condition|(
 name|preview_mode
 condition|)
 block|{
-comment|/* preview mode.  here we go again. see nova.c  	I just don't want to write a prev_pixel_rgn_process 	and then find out someone else coded a much cooler 	preview widget / functions for GIMP */
+comment|/* preview mode.  here we go again. see nova.c  	 I just don't want to write a prev_pixel_rgn_process 	 and then find out someone else coded a much cooler 	 preview widget / functions for GIMP */
 name|src_data
 operator|=
 name|g_malloc
@@ -1437,6 +1446,8 @@ operator|(
 name|total
 operator|/
 name|PROGRESS_UPDATE_NUM
+operator|+
+literal|1
 operator|)
 operator|)
 operator|==

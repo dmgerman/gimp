@@ -150,7 +150,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2930115b0103
+DECL|enum|__anon28a202ee0103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -979,6 +979,8 @@ operator|=
 name|width
 operator|/
 literal|20
+operator|+
+literal|1
 expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
