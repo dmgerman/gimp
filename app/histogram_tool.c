@@ -1245,7 +1245,7 @@ operator|->
 name|mean
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -1272,7 +1272,7 @@ operator|->
 name|std_dev
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -1299,7 +1299,7 @@ operator|->
 name|median
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -1326,7 +1326,7 @@ operator|->
 name|pixels
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -1369,7 +1369,7 @@ argument_list|,
 name|end
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -1396,7 +1396,7 @@ operator|->
 name|count
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -1425,7 +1425,7 @@ operator|*
 literal|100
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

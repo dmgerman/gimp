@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * version 0.51  * This version requires gtk-1.0.4 or above.  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  *  */
+comment|/*  * version 0.52  * This version requires gtk-1.0.4 or above.  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  *  *  * 0.52: 10 Jan 1999<austin@greenend.org.uk>  *    gtk_label_set() -> gtk_label_set_text()  */
 end_comment
 
 begin_include
@@ -70,7 +70,7 @@ DECL|macro|VERSION
 define|#
 directive|define
 name|VERSION
-value|"v0.51"
+value|"v0.52"
 end_define
 
 begin_comment
@@ -540,7 +540,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon275750700108
+DECL|struct|__anon2780f4d70108
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +785,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon275750700208
+DECL|struct|__anon2780f4d70208
 typedef|typedef
 struct|struct
 block|{
@@ -858,7 +858,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275750700308
+DECL|struct|__anon2780f4d70308
 typedef|typedef
 struct|struct
 block|{
@@ -884,7 +884,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275750700408
+DECL|struct|__anon2780f4d70408
 typedef|typedef
 struct|struct
 block|{
@@ -917,7 +917,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon275750700503
+DECL|enum|__anon2780f4d70503
 typedef|typedef
 enum|enum
 block|{
@@ -933,7 +933,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275750700608
+DECL|struct|__anon2780f4d70608
 typedef|typedef
 struct|struct
 block|{
@@ -991,7 +991,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275750700708
+DECL|struct|__anon2780f4d70708
 typedef|typedef
 struct|struct
 block|{
@@ -1093,7 +1093,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon275750700808
+DECL|struct|__anon2780f4d70808
 typedef|typedef
 struct|struct
 block|{
@@ -1281,7 +1281,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275750700908
+DECL|struct|__anon2780f4d70908
 typedef|typedef
 struct|struct
 block|{
@@ -3360,7 +3360,7 @@ literal|100
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -7363,7 +7363,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275750700a08
+DECL|struct|__anon2780f4d70a08
 typedef|typedef
 struct|struct
 block|{

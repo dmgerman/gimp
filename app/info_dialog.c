@@ -435,7 +435,7 @@ name|callback
 operator|==
 name|NULL
 condition|)
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

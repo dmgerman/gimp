@@ -5151,7 +5151,7 @@ name|brush
 condition|)
 return|return;
 comment|/*  Set brush name  */
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -5185,7 +5185,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

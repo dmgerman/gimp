@@ -8250,7 +8250,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b725ec00108
+DECL|struct|__anon292b9cee0108
 block|{
 DECL|member|color_string
 name|gchar
@@ -23214,7 +23214,7 @@ argument_list|,
 name|x_pos_val
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -23249,7 +23249,7 @@ argument_list|,
 name|y_pos_val
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -23340,12 +23340,12 @@ comment|/* NOT USED */
 end_comment
 
 begin_comment
-unit|static void gfig_obj_size_update(gint sz) {   static gchar buf[256];      sprintf(buf,"%6d",sz);   gtk_label_set(GTK_LABEL(obj_size_label),buf); }    static GtkWidget * gfig_obj_size_label(void) {   GtkWidget *label;   GtkWidget *hbox;   gchar buf[256];    hbox = gtk_hbox_new (FALSE,0);
+unit|static void gfig_obj_size_update(gint sz) {   static gchar buf[256];      sprintf(buf,"%6d",sz);   gtk_label_set_text(GTK_LABEL(obj_size_label),buf); }    static GtkWidget * gfig_obj_size_label(void) {   GtkWidget *label;   GtkWidget *hbox;   gchar buf[256];    hbox = gtk_hbox_new (FALSE,0);
 comment|/* Position labels */
 end_comment
 
 begin_endif
-unit|label = gtk_label_new("Size:- ");   gtk_widget_show(label);   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);    obj_size_label = gtk_label_new("");   gtk_misc_set_alignment (GTK_MISC (obj_size_label), 0.5, 0.5);       gtk_widget_show(obj_size_label);   gtk_box_pack_start (GTK_BOX (hbox), obj_size_label, FALSE, FALSE, 0);    gtk_widget_show(hbox);    sprintf(buf,"%6d",0);   gtk_label_set(GTK_LABEL(obj_size_label),buf);    return(hbox); }
+unit|label = gtk_label_new("Size:- ");   gtk_widget_show(label);   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);    obj_size_label = gtk_label_new("");   gtk_misc_set_alignment (GTK_MISC (obj_size_label), 0.5, 0.5);       gtk_widget_show(obj_size_label);   gtk_box_pack_start (GTK_BOX (hbox), obj_size_label, FALSE, FALSE, 0);    gtk_widget_show(hbox);    sprintf(buf,"%6d",0);   gtk_label_set_text(GTK_LABEL(obj_size_label),buf);    return(hbox); }
 endif|#
 directive|endif
 end_endif
@@ -23518,7 +23518,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -23537,7 +23537,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -27443,7 +27443,7 @@ endif|#
 directive|endif
 comment|/* DEBUG */
 comment|/* Need to reorder the list */
-comment|/* gtk_label_set (GTK_LABEL (options->layer_widget->label), layer->name);*/
+comment|/* gtk_label_set_text (GTK_LABEL (options->layer_widget->label), layer->name);*/
 name|pos
 operator|=
 name|gtk_list_child_position
@@ -31436,7 +31436,7 @@ argument_list|,
 literal|"<NONE>"
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -31600,7 +31600,7 @@ argument_list|,
 literal|"<NONE>"
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
