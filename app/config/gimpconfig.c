@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Config file serialization and deserialization interface  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Config file serialization and deserialization interface  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -76,7 +76,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*   * The GimpConfig serialization and deserialization interface.  */
+comment|/*  * The GimpConfig serialization and deserialization interface.  */
 end_comment
 
 begin_function_decl
@@ -613,7 +613,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_file:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error:  *   * Serializes the object properties of @object to the file specified  * by @filename. If a file with that name already exists, it is   * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_serialize_to_file:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error:  *  * Serializes the object properties of @object to the file specified  * by @filename. If a file with that name already exists, it is  * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
@@ -850,7 +850,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_string:  * @object: a #GObject that implements the #GimpConfigInterface.  * @data: user data passed to the serialize implementation.  *   * Serializes the object properties of @object to a string.  *  * Return value: a newly allocated %NUL-terminated string.  **/
+comment|/**  * gimp_config_serialize_to_string:  * @object: a #GObject that implements the #GimpConfigInterface.  * @data: user data passed to the serialize implementation.  *  * Serializes the object properties of @object to a string.  *  * Return value: a newly allocated %NUL-terminated string.  **/
 end_comment
 
 begin_function
@@ -951,7 +951,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the deserialize implementation.  * @error:   *   * Opens the file specified by @filename, reads configuration data  * from it and configures @object accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @object's #GimpConfigInterface.  *   * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.   **/
+comment|/**  * gimp_config_deserialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the deserialize implementation.  * @error:  *  * Opens the file specified by @filename, reads configuration data  * from it and configures @object accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
@@ -1098,7 +1098,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_string:  * @object: a #GObject that implements the #GimpConfigInterface.  * @text: string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @error:   *   * Configures @object from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @object's #GimpConfigInterface.  *   * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.   **/
+comment|/**  * gimp_config_deserialize_string:  * @object: a #GObject that implements the #GimpConfigInterface.  * @text: string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @error:  *  * Configures @object from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
@@ -1466,7 +1466,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_duplicate:  * @object: a #GObject that implements the #GimpConfigInterface.  *   * Creates a copy of the passed object by copying all object  * properties. The default implementation of the #GimpConfigInterface  * only works for objects that are completely defined by their  * properties.  *   * Return value: the duplicated #GObject.  **/
+comment|/**  * gimp_config_duplicate:  * @object: a #GObject that implements the #GimpConfigInterface.  *  * Creates a copy of the passed object by copying all object  * properties. The default implementation of the #GimpConfigInterface  * only works for objects that are completely defined by their  * properties.  *  * Return value: the duplicated #GObject.  **/
 end_comment
 
 begin_function
@@ -1522,7 +1522,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_is_equal_to:  * @a: a #GObject that implements the #GimpConfigInterface.  * @b: another #GObject of the same type as @a.  *   * Compares the two objects. The default implementation of the  * #GimpConfigInterface compares the object properties and thus only  * works for objects that are completely defined by their  * properties.  *   * Return value: %TRUE if the two objects are equal.  **/
+comment|/**  * gimp_config_is_equal_to:  * @a: a #GObject that implements the #GimpConfigInterface.  * @b: another #GObject of the same type as @a.  *  * Compares the two objects. The default implementation of the  * #GimpConfigInterface compares the object properties and thus only  * works for objects that are completely defined by their  * properties.  *  * Return value: %TRUE if the two objects are equal.  **/
 end_comment
 
 begin_function
@@ -1608,7 +1608,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset:  * @object: a #GObject that implements the #GimpConfigInterface.  *   * Resets the object to its default state. The default implementation of the  * #GimpConfigInterface only works for objects that are completely defined by  * their properties.  **/
+comment|/**  * gimp_config_reset:  * @object: a #GObject that implements the #GimpConfigInterface.  *  * Resets the object to its default state. The default implementation of the  * #GimpConfigInterface only works for objects that are completely defined by  * their properties.  **/
 end_comment
 
 begin_function
@@ -1647,19 +1647,18 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-return|return
 name|gimp_config_iface
 operator|->
 name|reset
 argument_list|(
 name|object
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/*   * Code to store and lookup unknown tokens (string key/value pairs).  */
+comment|/*  * Code to store and lookup unknown tokens (string key/value pairs).  */
 end_comment
 
 begin_define
@@ -1673,7 +1672,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be079500108
+DECL|struct|__anon2c77ee780108
 block|{
 DECL|member|key
 name|gchar
@@ -1704,7 +1703,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_add_unknown_token:  * @object: a #GObject.  * @key: a nul-terminated string to identify the value.  * @value: a nul-terminated string representing the value.  *   * This function allows to add arbitrary key/value pairs to a GObject.  * It's purpose is to attach additional data to a #GimpConfig object  * that can be stored along with the object properties when  * serializing the object to a configuration file. Please note however  * that the default gimp_config_serialize() implementation does not  * serialize unknown tokens.  *  * If you want to remove a key/value pair from the object, call this  * function with a %NULL @value.   **/
+comment|/**  * gimp_config_add_unknown_token:  * @object: a #GObject.  * @key: a nul-terminated string to identify the value.  * @value: a nul-terminated string representing the value.  *  * This function allows to add arbitrary key/value pairs to a GObject.  * It's purpose is to attach additional data to a #GimpConfig object  * that can be stored along with the object properties when  * serializing the object to a configuration file. Please note however  * that the default gimp_config_serialize() implementation does not  * serialize unknown tokens.  *  * If you want to remove a key/value pair from the object, call this  * function with a %NULL @value.  **/
 end_comment
 
 begin_function
@@ -1953,7 +1952,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_lookup_unknown_token:  * @object: a #GObject.  * @key: a nul-terminated string to identify the value.  *   * This function retrieves data that was previously attached using  * gimp_config_add_unknown_token(). You should not free or modify  * the returned string.  **/
+comment|/**  * gimp_config_lookup_unknown_token:  * @object: a #GObject.  * @key: a nul-terminated string to identify the value.  *  * This function retrieves data that was previously attached using  * gimp_config_add_unknown_token(). You should not free or modify  * the returned string.  **/
 end_comment
 
 begin_function
@@ -2069,7 +2068,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_foreach_unknown_token:  * @object: a #GObject.  * @func: a function to call for each key/value pair.  * @user_data: data to pass to @func.  *   * Calls @func for each key/value stored with the @object using  * gimp_config_add_unknown_token().  **/
+comment|/**  * gimp_config_foreach_unknown_token:  * @object: a #GObject.  * @func: a function to call for each key/value pair.  * @user_data: data to pass to @func.  *  * Calls @func for each key/value stored with the @object using  * gimp_config_add_unknown_token().  **/
 end_comment
 
 begin_function
