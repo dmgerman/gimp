@@ -69,6 +69,12 @@ directive|include
 file|"transform_tool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 DECL|typedef|TransformOptions
 typedef|typedef
@@ -395,13 +401,25 @@ literal|4
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Rotation"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Scaling"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Shearing"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Perspective"
+argument_list|)
 block|}
 decl_stmt|;
 name|char
@@ -412,9 +430,15 @@ literal|2
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Traditional"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Corrective"
+argument_list|)
 block|}
 decl_stmt|;
 comment|/*  the new options structure  */
@@ -483,7 +507,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Transform Tool Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -564,7 +591,10 @@ name|radio_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Transform"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -707,7 +737,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Smoothing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -799,7 +832,10 @@ name|radio_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tool paradigm"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -940,7 +976,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Show grid"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1032,7 +1071,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Grid density: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1141,7 +1183,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Clip result"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -89,8 +89,14 @@ directive|include
 file|"gdisplay.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
-DECL|struct|__anon2b4aa37c0108
+DECL|struct|__anon29740c200108
 typedef|typedef
 struct|struct
 block|{
@@ -715,7 +721,10 @@ name|height
 argument_list|,
 name|type
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
@@ -2373,7 +2382,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"New Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2429,7 +2441,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2493,7 +2508,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2652,7 +2670,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Width"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2691,7 +2712,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Height"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3276,7 +3300,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Pixels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3336,7 +3363,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"inches"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -3375,7 +3405,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"cm"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -3465,7 +3498,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Resolution"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3633,7 +3669,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|" pixels per  "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3668,7 +3707,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"inch"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -3707,7 +3749,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"cm"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3824,7 +3869,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Image Type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3889,7 +3937,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"RGB"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -3980,7 +4031,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Grayscale"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -4070,7 +4124,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fill Type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4134,8 +4191,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Foreground"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -4225,8 +4285,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -4316,8 +4379,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"White"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -4407,7 +4473,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Transparent"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group

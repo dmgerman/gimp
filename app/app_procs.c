@@ -279,6 +279,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|LOGO_WIDTH_MIN
 define|#
@@ -482,7 +488,10 @@ name|PDB_INT32
 block|,
 literal|"kill"
 block|,
+name|N_
+argument_list|(
 literal|"Flag specifying whether to kill the gimp process or exit normally"
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -497,13 +506,25 @@ init|=
 block|{
 literal|"gimp_quit"
 block|,
+name|N_
+argument_list|(
 literal|"Causes the gimp to exit gracefully"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"The internal procedure which can either be used to make the gimp quit normally, or to have the gimp clean up its resources and exit immediately. The normaly shutdown process allows for querying the user to save any dirty images."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
+argument_list|)
 block|,
 literal|"1995-1996"
 block|,
@@ -2127,7 +2148,10 @@ operator|)
 condition|)
 name|g_print
 argument_list|(
-literal|"parsing \"%s\"\n"
+name|_
+argument_list|(
+literal|"parsing %s\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2253,9 +2277,15 @@ expr_stmt|;
 comment|/*  initialize the xcf file format routines */
 name|app_init_update_status
 argument_list|(
+name|_
+argument_list|(
 literal|"Looking for data files"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Brushes"
+argument_list|)
 argument_list|,
 literal|0.00
 argument_list|)
@@ -2270,7 +2300,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Patterns"
+argument_list|)
 argument_list|,
 literal|0.25
 argument_list|)
@@ -2285,7 +2318,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Palettes"
+argument_list|)
 argument_list|,
 literal|0.50
 argument_list|)
@@ -2300,7 +2336,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradients"
+argument_list|)
 argument_list|,
 literal|0.75
 argument_list|)
@@ -2697,14 +2736,20 @@ parameter_list|)
 block|{
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Toolbox>/File/Quit"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/File/Quit"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2773,14 +2818,20 @@ name|label
 decl_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Toolbox>/File/Quit"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/File/Quit"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2809,7 +2860,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Really Quit?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2858,7 +2912,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Yes"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2920,7 +2977,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"No"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2977,7 +3037,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Some files unsaved.  Quit the GIMP?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding

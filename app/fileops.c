@@ -129,6 +129,12 @@ directive|include
 file|"docindex.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 DECL|typedef|OverwriteBox
 typedef|typedef
@@ -577,7 +583,10 @@ name|PDB_INT32
 block|,
 literal|"run_mode"
 block|,
+name|N_
+argument_list|(
 literal|"Interactive, non-interactive."
+argument_list|)
 block|}
 block|,
 block|{
@@ -585,7 +594,10 @@ name|PDB_STRING
 block|,
 literal|"filename"
 block|,
+name|N_
+argument_list|(
 literal|"The name of the file to load."
+argument_list|)
 block|}
 block|,
 block|{
@@ -593,7 +605,10 @@ name|PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
+name|N_
+argument_list|(
 literal|"The name entered."
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -612,7 +627,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"Output image."
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -627,9 +645,15 @@ init|=
 block|{
 literal|"gimp_file_load"
 block|,
+name|N_
+argument_list|(
 literal|"Loads a file by extension"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure invokes the correct file load handler according to the file's extension and/or prefix.  The name of the file to load is typically a full pathname, and the name entered is what the user actually typed before prepending a directory path.  The reason for this is that if the user types http://www.xcf/~gimp he wants to fetch a URL, and the full pathname will not look like a URL."
+argument_list|)
 block|,
 literal|"Josh MacDonald"
 block|,
@@ -673,7 +697,10 @@ name|PDB_INT32
 block|,
 literal|"run_mode"
 block|,
+name|N_
+argument_list|(
 literal|"Interactive, non-interactive"
+argument_list|)
 block|}
 block|,
 block|{
@@ -681,7 +708,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"Input image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -689,7 +719,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"Drawable to save"
+argument_list|)
 block|}
 block|,
 block|{
@@ -697,7 +730,10 @@ name|PDB_STRING
 block|,
 literal|"filename"
 block|,
+name|N_
+argument_list|(
 literal|"The name of the file to save the image in"
+argument_list|)
 block|}
 block|,
 block|{
@@ -705,7 +741,10 @@ name|PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
+name|N_
+argument_list|(
 literal|"The name of the file to save the image in"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -720,9 +759,15 @@ init|=
 block|{
 literal|"gimp_file_save"
 block|,
+name|N_
+argument_list|(
 literal|"Saves a file by extension"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure invokes the correct file save handler according to the file's extension and/or prefix.  The name of the file to save is typically a full pathname, and the name entered is what the user actually typed before prepending a directory path.  The reason for this is that if the user types http://www.xcf/~gimp he wants to fetch a URL, and the full pathname will not look like a URL."
+argument_list|)
 block|,
 literal|"Josh MacDonald"
 block|,
@@ -766,7 +811,10 @@ name|PDB_STRING
 block|,
 literal|"extension"
 block|,
+name|N_
+argument_list|(
 literal|"The extension the file will have."
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -785,7 +833,10 @@ name|PDB_STRING
 block|,
 literal|"name"
 block|,
+name|N_
+argument_list|(
 literal|"The temp name."
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -800,9 +851,15 @@ init|=
 block|{
 literal|"gimp_temp_name"
 block|,
+name|N_
+argument_list|(
 literal|"Generates a unique filename."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Generates a unique filename using the temp path supplied in the user's gimprc."
+argument_list|)
 block|,
 literal|"Josh MacDonald"
 block|,
@@ -846,7 +903,10 @@ name|PDB_STRING
 block|,
 literal|"procedure_name"
 block|,
+name|N_
+argument_list|(
 literal|"the name of the procedure to be used for loading"
+argument_list|)
 block|}
 block|,
 block|{
@@ -854,7 +914,10 @@ name|PDB_STRING
 block|,
 literal|"extensions"
 block|,
+name|N_
+argument_list|(
 literal|"comma separated list of extensions this handler can load (ie. \"jpeg,jpg\")"
+argument_list|)
 block|}
 block|,
 block|{
@@ -862,7 +925,10 @@ name|PDB_STRING
 block|,
 literal|"prefixes"
 block|,
+name|N_
+argument_list|(
 literal|"comma separated list of prefixes this handler can load (ie. \"http:,ftp:\")"
+argument_list|)
 block|}
 block|,
 block|{
@@ -870,7 +936,10 @@ name|PDB_STRING
 block|,
 literal|"magics"
 block|,
+name|N_
+argument_list|(
 literal|"comma separated list of magic file information this handler can load (ie. \"0,string,GIF\")"
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -885,9 +954,15 @@ init|=
 block|{
 literal|"gimp_register_magic_load_handler"
 block|,
+name|N_
+argument_list|(
 literal|"Registers a file load handler procedure"
+argument_list|)
 block|,
-literal|"Registers a procedural database procedure to be called to load files of a \ particular file format using magic file information."
+name|N_
+argument_list|(
+literal|"Registers a procedural database procedure to be called to load files of a \       particular file format using magic file information."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -931,7 +1006,10 @@ name|PDB_STRING
 block|,
 literal|"procedure_name"
 block|,
+name|N_
+argument_list|(
 literal|"the name of the procedure to be used for loading"
+argument_list|)
 block|}
 block|,
 block|{
@@ -939,7 +1017,10 @@ name|PDB_STRING
 block|,
 literal|"extensions"
 block|,
+name|N_
+argument_list|(
 literal|"comma separated list of extensions this handler can load (ie. \"jpeg,jpg\")"
+argument_list|)
 block|}
 block|,
 block|{
@@ -947,7 +1028,10 @@ name|PDB_STRING
 block|,
 literal|"prefixes"
 block|,
+name|N_
+argument_list|(
 literal|"comma separated list of prefixes this handler can load (ie. \"http:,ftp:\")"
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -962,9 +1046,15 @@ init|=
 block|{
 literal|"gimp_register_load_handler"
 block|,
+name|N_
+argument_list|(
 literal|"Registers a file load handler procedure"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Registers a procedural database procedure to be called to load files of a particular file format."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1008,7 +1098,10 @@ name|PDB_STRING
 block|,
 literal|"procedure_name"
 block|,
+name|N_
+argument_list|(
 literal|"the name of the procedure to be used for saving"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1016,7 +1109,10 @@ name|PDB_STRING
 block|,
 literal|"extensions"
 block|,
+name|N_
+argument_list|(
 literal|"comma separated list of extensions this handler can save (ie. \"jpeg,jpg\")"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1024,7 +1120,10 @@ name|PDB_STRING
 block|,
 literal|"prefixes"
 block|,
+name|N_
+argument_list|(
 literal|"comma separated list of prefixes this handler can save (ie. \"http:,ftp:\")"
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -1039,9 +1138,15 @@ init|=
 block|{
 literal|"gimp_register_save_handler"
 block|,
+name|N_
+argument_list|(
 literal|"Registers a file save handler procedure"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Registers a procedural database procedure to be called to save files in a particular file format."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1564,7 +1669,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"load handler \"%s\" does not take the standard load handler args"
+argument_list|)
 argument_list|,
 operator|(
 name|char
@@ -1649,7 +1757,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"attempt to register non-existant load handler \"%s\""
+argument_list|)
 argument_list|,
 operator|(
 name|char
@@ -1831,7 +1942,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"save handler \"%s\" does not take the standard save handler args"
+argument_list|)
 argument_list|,
 operator|(
 name|char
@@ -1905,7 +2019,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"attempt to register non-existant save handler \"%s\""
+argument_list|)
 argument_list|,
 operator|(
 name|char
@@ -1999,7 +2116,10 @@ name|fileload
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2151,7 +2271,10 @@ argument_list|(
 name|fileload
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Load Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2170,7 +2293,10 @@ name|open_options
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Open Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2221,7 +2347,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Determine file type:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2455,7 +2584,10 @@ name|filesave
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_wmclass
@@ -2592,7 +2724,10 @@ argument_list|(
 name|filesave
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2617,7 +2752,10 @@ name|save_options
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2668,7 +2806,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Determine file type:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3835,7 +3976,10 @@ name|s
 operator|=
 name|g_string_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Open failed: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_string_append
@@ -4062,7 +4206,10 @@ name|s
 operator|=
 name|g_string_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Open failed: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_string_append
@@ -4315,7 +4462,10 @@ name|g_string_sprintf
 argument_list|(
 name|s
 argument_list|,
+name|_
+argument_list|(
 literal|"%s is an irregular file (%s)"
+argument_list|)
 argument_list|,
 name|raw_filename
 argument_list|,
@@ -4374,7 +4524,10 @@ name|s
 operator|=
 name|g_string_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save failed: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_string_append
@@ -4416,28 +4569,40 @@ parameter_list|)
 block|{
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Toolbox>/File/Open"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/File/Open"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/File/Save"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/File/Save as"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4468,28 +4633,40 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Toolbox>/File/Open"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/File/Open"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/File/Save"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/File/Save as"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4524,7 +4701,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Yes"
+argument_list|)
 block|,
 name|file_overwrite_yes_callback
 block|,
@@ -4534,7 +4714,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"No"
+argument_list|)
 block|,
 name|file_overwrite_no_callback
 block|,
@@ -4584,7 +4767,10 @@ name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
+name|_
+argument_list|(
 literal|" exists, overwrite?"
+argument_list|)
 argument_list|)
 operator|+
 name|strlen
@@ -4599,7 +4785,10 @@ name|sprintf
 argument_list|(
 name|overwrite_text
 argument_list|,
+name|_
+argument_list|(
 literal|"%s exists, overwrite?"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -4646,7 +4835,10 @@ operator|->
 name|obox
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"File Exists!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -4893,7 +5085,10 @@ name|s
 operator|=
 name|g_string_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save failed: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_string_append

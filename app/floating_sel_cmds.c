@@ -51,6 +51,12 @@ directive|include
 file|"floating_sel_cmds.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|int_value
 specifier|static
@@ -183,7 +189,10 @@ name|PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
+name|N_
+argument_list|(
 literal|"the floating selection"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -197,9 +206,15 @@ init|=
 block|{
 literal|"gimp_floating_sel_remove"
 block|,
+name|N_
+argument_list|(
 literal|"Remove the specified floating selection from its associated drawable"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure removes the floating selection completely, without any side effects.  The associated drawable is then set to active."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -345,7 +360,10 @@ name|PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
+name|N_
+argument_list|(
 literal|"the floating selection"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -359,9 +377,15 @@ init|=
 block|{
 literal|"gimp_floating_sel_anchor"
 block|,
+name|N_
+argument_list|(
 literal|"Anchor the specified floating selection to its associated drawable"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure anchors the floating selection to its associated drawable.  This is similar to merging with a merge type of ClipToBottomLayer.  The floating selection layer is no longer valid after this operation."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -507,7 +531,10 @@ name|PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
+name|N_
+argument_list|(
 literal|"the floating selection"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -521,9 +548,15 @@ init|=
 block|{
 literal|"gimp_floating_sel_to_layer"
 block|,
+name|N_
+argument_list|(
 literal|"Transforms the specified floating selection into a layer"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure transforms the specified floating selection into a layer with the same offsets and extents.  The composited image will look precisely the same, but the floating selection layer will no longer be clipped to the extents of the drawable it was attached to.  The floating selection will become the active layer.  This procedure will not work if the floating selection has a different base type from the underlying image.  This might be the case if the floating selection is above an auxillary channel or a layer mask."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

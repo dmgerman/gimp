@@ -57,6 +57,12 @@ directive|include
 file|"gimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -126,7 +132,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Desaturate operates only on RGB color drawables."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -539,7 +548,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -547,7 +559,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the drawable"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -561,9 +576,15 @@ init|=
 block|{
 literal|"gimp_desaturate"
 block|,
+name|N_
+argument_list|(
 literal|"Desaturate the contents of the specified drawable"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure desaturates the contents of the specified drawable.  This procedure only works on drawables of type RGB color."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

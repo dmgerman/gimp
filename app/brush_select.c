@@ -105,6 +105,12 @@ directive|include
 file|"session.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|STD_CELL_WIDTH
 define|#
@@ -538,7 +544,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Normal"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -557,7 +566,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Dissolve"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -576,7 +588,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Behind"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -595,7 +610,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Multiply (Burn)"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -614,7 +632,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Divide (Dodge)"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -633,7 +654,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Screen"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -652,7 +676,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Overlay"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -671,7 +698,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Difference"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -690,7 +720,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Addition"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -709,7 +742,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Subtract"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -728,7 +764,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Darken Only"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -747,7 +786,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Lighten Only"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -766,7 +808,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Hue"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -785,7 +830,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -804,7 +852,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Color"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -823,7 +874,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Value"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -873,7 +927,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|brush_select_close_callback
 block|,
@@ -883,7 +940,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Refresh"
+argument_list|)
 block|,
 name|brush_select_refresh_callback
 block|,
@@ -1206,7 +1266,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Brush Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|session_set_window_geometry
@@ -1681,7 +1744,10 @@ name|brush_name
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Active"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1780,7 +1846,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Mode:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1889,7 +1958,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Opacity:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2046,7 +2118,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Spacing:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2200,7 +2275,10 @@ name|edit_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Edit Brush"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2245,7 +2323,10 @@ name|button2
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"New Brush"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2951,7 +3032,10 @@ name|PDB_SUCCESS
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"failed to run brush callback function"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args
@@ -5559,8 +5643,11 @@ block|}
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"We are all fresh out of brush editors today,\n"
 literal|"please write your own or try back tomorrow\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -6512,7 +6599,10 @@ name|PDB_STRING
 block|,
 literal|"brush_callback"
 block|,
+name|N_
+argument_list|(
 literal|"the callback PDB proc to call when brush selection is made"
+argument_list|)
 block|}
 block|,
 block|{
@@ -6520,7 +6610,10 @@ name|PDB_STRING
 block|,
 literal|"popup title"
 block|,
+name|N_
+argument_list|(
 literal|"title to give the popup window"
+argument_list|)
 block|,   }
 block|,
 block|{
@@ -6528,7 +6621,10 @@ name|PDB_STRING
 block|,
 literal|"initial brush"
 block|,
+name|N_
+argument_list|(
 literal|"The name of the brush to set as the first selected"
+argument_list|)
 block|,   }
 block|,
 block|{
@@ -6536,7 +6632,10 @@ name|PDB_FLOAT
 block|,
 literal|"initial opacity"
 block|,
+name|N_
+argument_list|(
 literal|"The initial opacity of the brush"
+argument_list|)
 block|,   }
 block|,
 block|{
@@ -6544,7 +6643,10 @@ name|PDB_INT32
 block|,
 literal|"initial spacing"
 block|,
+name|N_
+argument_list|(
 literal|"The initial spacing of the brush (if< 0 then use brush default spacing)"
+argument_list|)
 block|,   }
 block|,
 block|{
@@ -6552,7 +6654,10 @@ name|PDB_INT32
 block|,
 literal|"initial paint mode"
 block|,
+name|N_
+argument_list|(
 literal|"The initial paint mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
+argument_list|)
 block|,   }
 block|, }
 decl_stmt|;
@@ -6566,9 +6671,15 @@ init|=
 block|{
 literal|"gimp_brushes_popup"
 block|,
+name|N_
+argument_list|(
 literal|"Invokes the Gimp brush selection"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure popups the brush selection dialog"
+argument_list|)
 block|,
 literal|"Andy Thomas"
 block|,

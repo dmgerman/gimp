@@ -303,10 +303,16 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278a9a070108
+DECL|struct|__anon2a433c500108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1289,9 +1295,15 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Border Selection"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Border selection by:"
+argument_list|)
 argument_list|,
 name|initial
 argument_list|,
@@ -1344,9 +1356,15 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Feather Selection"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Feather selection by:"
+argument_list|)
 argument_list|,
 name|initial
 argument_list|,
@@ -1399,9 +1417,15 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Grow Selection"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Grow selection by:"
+argument_list|)
 argument_list|,
 name|initial
 argument_list|,
@@ -1454,9 +1478,15 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Shrink Selection"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Shrink selection by:"
+argument_list|)
 argument_list|,
 name|initial
 argument_list|,
@@ -2629,7 +2659,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|image_resize_callback
 block|,
@@ -2639,7 +2672,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|image_cancel_callback
 block|,
@@ -2741,7 +2777,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Image Resize"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -2935,7 +2974,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|image_scale_callback
 block|,
@@ -2945,7 +2987,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|image_cancel_callback
 block|,
@@ -3047,7 +3092,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Image Scale"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -4087,7 +4135,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Resize Error: Both width and height must be greater than zero."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4202,7 +4253,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Scale Error: Both width and height must be greater than zero."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

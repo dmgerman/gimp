@@ -87,6 +87,12 @@ directive|include
 file|"actionarea.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/* Bezier extensions made by Raphael FRANCOIS (fraph@ibm.net)    BEZIER_EXTENDS VER 1.0     - work as the cut/copy/paste named functions.   - allow to add/remove/replace bezier curves   - allow to modify the control/anchor points even if the selection is made   - allow to add/remove control/anchor points on a curve   - allow to update a previous saved curve    - cannot operate on open or multiple curves simultaneously */
 end_comment
@@ -849,7 +855,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2948a11c0103
+DECL|enum|__anon2c1b8e6e0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -2188,7 +2194,10 @@ name|closed
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"tried to edit on open bezier curve in edit selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* erase the handles */
@@ -3580,7 +3589,10 @@ name|anchor
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Encountered orphaned bezier control point"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5027,7 +5039,10 @@ name|points
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"bad bezier segment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -5126,7 +5141,10 @@ break|break;
 default|default:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"unknown coordinate space: %d"
+argument_list|)
 argument_list|,
 name|space
 argument_list|)
@@ -5911,7 +5929,10 @@ name|closed
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"tried to convert an open bezier curve"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* destroy previous mask */
@@ -8482,7 +8503,10 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"reading %s\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -8519,7 +8543,7 @@ name|draw
 decl_stmt|,
 name|state
 decl_stmt|;
-comment|/* 	    fscanf(f, "%s", txt); 	    if (strcmp("BEZIER_EXTENDS",txt)) 	    { 	    GString *s; 	     	    fclose(f); 	    s = g_string_new ("Open failed: "); 	     	    g_string_append (s, "Bezier Load"); 	     	    g_message (s->str); 	       	    g_string_free (s, TRUE); 	    return; 	    } 	    */
+comment|/* 	    fscanf(f, "%s", txt); 	    if (strcmp("BEZIER_EXTENDS",txt)) 	    { 	    GString *s; 	     	    fclose(f); 	    s = g_string_new (_("Open failed: ")); 	     	    g_string_append (s, _("Bezier Load")); 	     	    g_message (s->str); 	       	    g_string_free (s, TRUE); 	    return; 	    } 	    */
 name|fscanf
 argument_list|(
 name|f
@@ -8948,7 +8972,10 @@ name|file_dlg
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load/Store Bezier Curves"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -9052,7 +9079,10 @@ argument_list|(
 name|file_dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Load Bezier Curves"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|load_store
@@ -9111,7 +9141,10 @@ argument_list|(
 name|file_dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Store Bezier Curves"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|load_store
@@ -9496,9 +9529,15 @@ name|client_data
 expr_stmt|;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Named Bezier Buffer"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Enter a name for this buffer"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -9646,7 +9685,7 @@ modifier|*
 name|box
 parameter_list|)
 block|{
-DECL|struct|__anon2948a11c0208
+DECL|struct|__anon2c1b8e6e0208
 specifier|static
 struct|struct
 block|{
@@ -9665,19 +9704,28 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Edit Curve"
+argument_list|)
 block|,
 name|EXTEND_EDIT
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Add Point"
+argument_list|)
 block|,
 name|EXTEND_ADD
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Remove Point"
+argument_list|)
 block|,
 name|EXTEND_REMOVE
 block|}
@@ -9741,7 +9789,10 @@ name|w
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Mode :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -9926,7 +9977,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"New"
+argument_list|)
 block|,
 name|bezier_new_curve_callback
 block|,
@@ -9936,7 +9990,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Add"
+argument_list|)
 block|,
 name|bezier_add_callback
 block|,
@@ -9946,7 +10003,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Replace"
+argument_list|)
 block|,
 name|bezier_replace_callback
 block|,
@@ -9956,7 +10016,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Paste"
+argument_list|)
 block|,
 name|bezier_buffer_paste_callback
 block|,
@@ -9966,7 +10029,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Delete"
+argument_list|)
 block|,
 name|bezier_buffer_delete_callback
 block|,
@@ -9976,7 +10042,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Load"
+argument_list|)
 block|,
 name|load_callback
 block|,
@@ -9986,7 +10055,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Save"
+argument_list|)
 block|,
 name|store_callback
 block|,
@@ -10063,7 +10135,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Paste Bezier Named Buffer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -10129,7 +10204,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Select a buffer to operate:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -10444,7 +10522,10 @@ name|points
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"bad bezier segment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -10543,7 +10624,10 @@ break|break;
 default|default:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"unknown coordinate space: %d"
+argument_list|)
 argument_list|,
 name|space
 argument_list|)

@@ -245,6 +245,12 @@ begin_comment
 comment|/* ick. */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|SEPARATE_PROGRESS_BAR
 define|#
@@ -264,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a4050d0103
+DECL|enum|__anon29c85c460103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -945,7 +951,10 @@ name|PDB_STRING
 block|,
 literal|"message"
 block|,
+name|N_
+argument_list|(
 literal|"Message to use in the progress dialog."
+argument_list|)
 block|}
 block|,
 block|{
@@ -953,7 +962,10 @@ name|PDB_INT32
 block|,
 literal|"gdisplay"
 block|,
+name|N_
+argument_list|(
 literal|"GDisplay to update progressbar in, or -1 for a seperate window"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -968,9 +980,15 @@ init|=
 block|{
 literal|"gimp_progress_init"
 block|,
+name|N_
+argument_list|(
 literal|"Initializes the progress bar for the current plug-in"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Initializes the progress bar for the current plug-in. It is only valid to call this procedure from a plug-in."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1010,7 +1028,10 @@ name|PDB_FLOAT
 block|,
 literal|"percentage"
 block|,
+name|N_
+argument_list|(
 literal|"Percentage of progress completed"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1025,9 +1046,15 @@ init|=
 block|{
 literal|"gimp_progress_update"
 block|,
+name|N_
+argument_list|(
 literal|"Updates the progress bar for the current plug-in"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Updates the progress bar for the current plug-in. It is only valid to call this procedure from a plug-in."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1067,7 +1094,10 @@ name|PDB_STRING
 block|,
 literal|"message"
 block|,
+name|N_
+argument_list|(
 literal|"Message to display in the dialog."
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1082,9 +1112,15 @@ init|=
 block|{
 literal|"gimp_message"
 block|,
+name|N_
+argument_list|(
 literal|"Displays a dialog box with a message"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Displays a dialog box with a message. Useful for status or error reporting."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1124,7 +1160,10 @@ name|PDB_INT32
 block|,
 literal|"handler"
 block|,
+name|N_
+argument_list|(
 literal|"the current handler type: { MESSAGE_BOX (0), CONSOLE (1) }"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1139,9 +1178,15 @@ init|=
 block|{
 literal|"gimp_message_handler_get"
 block|,
+name|N_
+argument_list|(
 literal|"Returns the current state of where warning messages are displayed."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure returns the way g_message warnings are displayed. They can be shown in a dialog box or printed on the console where gimp was started."
+argument_list|)
 block|,
 literal|"Manish Singh"
 block|,
@@ -1181,7 +1226,10 @@ name|PDB_INT32
 block|,
 literal|"handler"
 block|,
+name|N_
+argument_list|(
 literal|"the new handler type: { MESSAGE_BOX (0), CONSOLE (1) }"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1196,9 +1244,15 @@ init|=
 block|{
 literal|"gimp_message_handler_set"
 block|,
+name|N_
+argument_list|(
 literal|"Controls where warning messages are displayed."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure controls how g_message warnings are displayed. They can be shown in a dialog box or printed on the console where gimp was started."
+argument_list|)
 block|,
 literal|"Manish Singh"
 block|,
@@ -1238,7 +1292,10 @@ name|PDB_STRING
 block|,
 literal|"Temp name"
 block|,
+name|N_
+argument_list|(
 literal|"A unique temporary name for a temporary PDB entry name"
+argument_list|)
 block|,   }
 block|, }
 decl_stmt|;
@@ -1253,9 +1310,15 @@ init|=
 block|{
 literal|"gimp_temp_PDB_name"
 block|,
+name|N_
+argument_list|(
 literal|"Generates a unique temporary PDB name"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure generates a temporary PDB entry name that is guaranteed to be unique. It is many used by the interactive popup dialogs to generate a PDB entry name."
+argument_list|)
 block|,
 literal|"Andy Thomas"
 block|,
@@ -1406,7 +1469,10 @@ literal|1
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"shmget failed...disabling shared memory tile transport\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1440,7 +1506,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"shmat failed...disabling shared memory tile transport\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|shm_ID
@@ -1535,7 +1604,10 @@ argument_list|)
 expr_stmt|;
 name|app_init_update_status
 argument_list|(
+name|_
+argument_list|(
 literal|"Resource configuration"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|,
@@ -1555,7 +1627,10 @@ name|plug_in_defs
 expr_stmt|;
 name|app_init_update_status
 argument_list|(
+name|_
+argument_list|(
 literal|"Plug-ins"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1617,7 +1692,10 @@ operator|)
 condition|)
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"query plug-in: \"%s\"\n"
+argument_list|)
 argument_list|,
 name|plug_in_def
 operator|->
@@ -1769,7 +1847,10 @@ operator|)
 condition|)
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"writing \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1809,12 +1890,18 @@ operator|)
 condition|)
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"Starting extensions: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|app_init_update_status
 argument_list|(
+name|_
+argument_list|(
 literal|"Extensions"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -3022,7 +3109,10 @@ name|TRUE
 expr_stmt|;
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"\"%s\" executable not found\n"
+argument_list|)
 argument_list|,
 name|plug_in_def
 operator|->
@@ -3230,7 +3320,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unable to locate plug-in: \"%s\""
+argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -3745,7 +3838,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unable to open pipe"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3966,7 +4062,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unable to run plug-in: %s\n"
+argument_list|)
 argument_list|,
 name|plug_in
 operator|->
@@ -5275,14 +5374,20 @@ condition|)
 block|{
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Filters/Repeat last"
+argument_list|)
 argument_list|,
 name|sensitive
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Filters/Re-show last"
+argument_list|)
 argument_list|,
 name|sensitive
 argument_list|)
@@ -5416,7 +5521,10 @@ name|GP_CONFIG
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_message(): received a config message (should not happen)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5443,7 +5551,10 @@ name|GP_TILE_ACK
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_message(): received a config message (should not happen)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5459,7 +5570,10 @@ name|GP_TILE_DATA
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_message(): received a config message (should not happen)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5504,7 +5618,10 @@ name|GP_TEMP_PROC_RUN
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_message(): received a temp proc run message (should not happen)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5690,7 +5807,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5716,7 +5836,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5739,7 +5862,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"expected tile data and received: %d\n"
+argument_list|)
 argument_list|,
 name|msg
 operator|.
@@ -5800,7 +5926,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug-in requested invalid drawable (killing)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5835,7 +5964,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug-in requested invalid tile (killing)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5918,7 +6050,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5972,7 +6107,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug-in requested invalid drawable (killing)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6007,7 +6145,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug-in requested invalid tile (killing)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6138,7 +6279,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6171,7 +6315,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6194,7 +6341,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"expected tile ack and received: %d\n"
+argument_list|)
 argument_list|,
 name|msg
 operator|.
@@ -6283,7 +6433,10 @@ block|{
 comment|/* THIS IS PROBABLY NOT CORRECT -josh */
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"PDB lookup failed on %s\n"
+argument_list|)
 argument_list|,
 name|proc_run
 operator|->
@@ -6396,7 +6549,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_proc_run: ERROR"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6602,7 +6758,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in_handle_proc_run: ERROR"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6743,8 +6902,11 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
 literal|"does not take the standard plug-in args"
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -6830,8 +6992,11 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
 literal|"does not take the standard plug-in args"
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -6917,8 +7082,11 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
 literal|"does not take the standard plug-in args"
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7030,8 +7198,11 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
 literal|"does not take the standard plug-in args"
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7052,9 +7223,12 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" in "
 literal|"an invalid menu location.  Use either \"<Toolbox>\", \"<Image>\", "
 literal|"\"<Load>\", or \"<Save>\"."
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7152,9 +7326,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"plug_in \"%s\" attempted to install procedure \"%s\" "
 literal|"which fails to comply with the array parameter "
 literal|"passing standard.  Argument %d is noncompliant."
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -9034,7 +9211,10 @@ condition|)
 block|{
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"duplicate plug-in: \"%s\" (skipping)\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -9782,7 +9962,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Uh-oh, no active gdisplay for the plug-in!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -9889,7 +10072,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Uh-oh, no active gdisplay for the temporary procedure!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -9904,7 +10090,10 @@ break|break;
 default|default:
 name|g_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Unknown procedure type."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -11590,7 +11779,10 @@ name|PDB_REGION
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"the \"region\" arg type is not currently supported"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12678,7 +12870,10 @@ name|PDB_REGION
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"the \"region\" arg type is not currently supported"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -13339,7 +13534,10 @@ name|PDB_REGION
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"the \"region\" arg type is not currently supported"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -13718,7 +13916,10 @@ name|PDB_REGION
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"the \"region\" arg type is not currently supported"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -14603,7 +14804,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object

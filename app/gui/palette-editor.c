@@ -251,6 +251,11 @@ name|GtkWidget
 modifier|*
 name|palette_ops
 decl_stmt|;
+DECL|member|clist
+name|GtkWidget
+modifier|*
+name|clist
+decl_stmt|;
 DECL|member|gc
 name|GdkGC
 modifier|*
@@ -738,6 +743,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|p_entries
+specifier|static
+name|PaletteEntriesP
+name|p_entries
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  Color select dialog  */
 end_comment
@@ -923,6 +938,7 @@ DECL|function|palette_create ()
 name|palette_create
 parameter_list|()
 block|{
+comment|/* why isnt this stuff in the Palette struct? */
 name|GtkWidget
 modifier|*
 name|vbox
@@ -942,6 +958,10 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|options_box
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|clist_box
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1018,6 +1038,7 @@ name|gc
 operator|=
 name|NULL
 expr_stmt|;
+block|\
 name|palette
 operator|->
 name|updating
@@ -1166,6 +1187,32 @@ name|vbox
 argument_list|)
 argument_list|,
 name|options_box
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+comment|/* the clist box */
+name|clist_box
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|clist_box
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1376,24 +1423,56 @@ argument_list|(
 name|menu_bar
 argument_list|)
 expr_stmt|;
-comment|/*  The option menu  */
+comment|/* the clist  */
 name|palette
 operator|->
-name|option_menu
+name|clist
 operator|=
-name|gtk_option_menu_new
-argument_list|()
+name|gtk_clist_new
+argument_list|(
+literal|1
+argument_list|)
 expr_stmt|;
+comment|/* one column */
+comment|/* dont forget the callback */
+comment|/* It isn't necessary to shadow the border, but it looks nice :) */
+name|gtk_clist_set_border
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|palette
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_OUT
+argument_list|)
+expr_stmt|;
+name|gtk_clist_set_column_width
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|palette
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|100
+argument_list|)
+expr_stmt|;
+comment|/* slap the clist in place of the option menu for testing */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|options_box
+name|clist_box
 argument_list|)
 argument_list|,
 name|palette
 operator|->
-name|option_menu
+name|clist
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1406,12 +1485,40 @@ name|gtk_widget_show
 argument_list|(
 name|palette
 operator|->
-name|option_menu
+name|clist
 argument_list|)
 expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|palette
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+literal|"select_row"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|palette_entries_set_callback
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|p_entries
+argument_list|)
+expr_stmt|;
+comment|/*  The option menu  */
+comment|/* slap both of them into that box for now... */
+comment|/*       palette->option_menu = gtk_option_menu_new ();   */
+comment|/*       gtk_box_pack_start (GTK_BOX (options_box), palette->option_menu, TRUE, TRUE, 0);  */
+comment|/*       gtk_widget_show (palette->option_menu);  */
+comment|/*     gtk_widget_show (options_box); */
 name|gtk_widget_show
 argument_list|(
-name|options_box
+name|clist_box
 argument_list|)
 expr_stmt|;
 comment|/*  The active color name  */
@@ -2406,11 +2513,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|PaletteEntriesP
-name|p_entries
-init|=
-name|NULL
-decl_stmt|;
+comment|/*  PaletteEntriesP p_entries = NULL;  */
 name|PaletteEntriesP
 name|found_entries
 init|=
@@ -2492,52 +2595,32 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-name|menu_item
-operator|=
-name|gtk_menu_item_new_with_label
+comment|/* add each palette to the clist  */
+comment|/* casting? */
+name|gtk_clist_append
 argument_list|(
+operator|(
+name|GtkCList
+operator|*
+operator|)
+operator|(
+name|palette
+operator|->
+name|clist
+operator|)
+argument_list|,
+operator|&
 name|p_entries
 operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|menu_item
-argument_list|)
-argument_list|,
-literal|"activate"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|palette_entries_set_callback
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|p_entries
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|palette
-operator|->
-name|menu
-argument_list|)
-argument_list|,
-name|menu_item
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menu_item
-argument_list|)
-expr_stmt|;
+comment|/*  menu_item = gtk_menu_item_new_with_label (p_entries->name); */
+comment|/*       gtk_signal_connect (GTK_OBJECT (menu_item), "activate", */
+comment|/* 			  (GtkSignalFunc) palette_entries_set_callback, */
+comment|/* 			  (gpointer) p_entries); */
+comment|/*       gtk_container_add (GTK_CONTAINER (palette->menu), menu_item); */
+comment|/*       gtk_widget_show (menu_item); */
 name|i
 operator|++
 expr_stmt|;

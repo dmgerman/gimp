@@ -53,6 +53,12 @@ directive|include
 file|"wilber.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|TIPS_FILE_NAME
 define|#
@@ -347,7 +353,10 @@ argument_list|(
 name|tips_dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GIMP Tip of the day"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -660,7 +669,10 @@ name|button_close
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -705,7 +717,10 @@ name|button_next
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Next Tip"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -753,7 +768,10 @@ name|button_prev
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Prev. Tip"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -801,7 +819,10 @@ name|button_check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Show tip next time"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -1192,11 +1213,14 @@ condition|)
 block|{
 name|store_tip
 argument_list|(
+name|_
+argument_list|(
 literal|"Your GIMP tips file appears to be missing!\n"
 literal|"There should be a file called "
 name|TIPS_FILE_NAME
 literal|" in the\n"
 literal|"GIMP data directory.  Please check your installation."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

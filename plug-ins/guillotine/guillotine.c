@@ -401,6 +401,12 @@ name|gint
 modifier|*
 name|vguides
 decl_stmt|;
+name|gchar
+name|filename
+index|[
+literal|1024
+index|]
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
@@ -879,7 +885,10 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
-comment|/*	  printf("(%dx%d:%d,%d)\n", 		 (vguides[x+1]-vguides[x]), 		 (hguides[y+1]-hguides[y]), 		 vguides[x], hguides[y]); */
+comment|/* 	  printf("(%dx%d:%d,%d:%d,%d)\n", */
+comment|/* 		 (vguides[x+1]-vguides[x]), */
+comment|/* 		 (hguides[y+1]-hguides[y]), */
+comment|/* 		 vguides[x], hguides[y],x, y);  */
 name|gimp_run_procedure
 argument_list|(
 literal|"gimp_crop"
@@ -957,6 +966,30 @@ expr_stmt|;
 name|gimp_image_enable_undo
 argument_list|(
 name|new_image
+argument_list|)
+expr_stmt|;
+comment|/* show the rough coordinates of the image in the title */
+name|sprintf
+argument_list|(
+name|filename
+argument_list|,
+literal|"%s-(%i,%i)"
+argument_list|,
+name|gimp_image_get_filename
+argument_list|(
+name|image_ID
+argument_list|)
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|)
+expr_stmt|;
+name|gimp_image_set_filename
+argument_list|(
+name|new_image
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_display_new

@@ -52,6 +52,12 @@ endif|#
 directive|endif
 end_endif
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|MAX_OPEN_SWAP_FILES
 define|#
@@ -710,7 +716,10 @@ literal|0
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"tile ref count balance: %d\n"
+argument_list|)
 argument_list|,
 name|tile_ref_count
 argument_list|)
@@ -745,7 +754,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"swap file not empty: \"%s\"\n"
+argument_list|)
 argument_list|,
 name|swap_file
 operator|->
@@ -1332,7 +1344,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"could not find swap file for tile"
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -1506,7 +1521,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unable to open swap file...BAD THINGS WILL HAPPEN SOON"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1625,7 +1643,10 @@ name|SWAP_COMPRESS
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"tile_swap_default: SWAP_COMPRESS: UNFINISHED"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1828,7 +1849,10 @@ name|seek_err_msg
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unable to seek to tile location on disk: %d"
+argument_list|)
 argument_list|,
 name|err
 argument_list|)
@@ -1920,7 +1944,10 @@ name|read_err_msg
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unable to read tile data from disk: %d/%d ( %d ) bytes read"
+argument_list|)
 argument_list|,
 name|err
 argument_list|,
@@ -2076,7 +2103,10 @@ name|seek_err_msg
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unable to seek to tile location on disk: %d"
+argument_list|)
 argument_list|,
 name|errno
 argument_list|)
@@ -2129,7 +2159,10 @@ name|write_err_msg
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unable to write tile data to disk: %d ( %d ) bytes written"
+argument_list|)
 argument_list|,
 name|err
 argument_list|,

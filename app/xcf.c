@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable_pvt.h"
 end_include
 
@@ -164,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bf07a0103
+DECL|enum|__anon29f6fddd0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -269,7 +275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bf07a0203
+DECL|enum|__anon29f6fddd0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -937,7 +943,10 @@ name|PDB_INT32
 block|,
 literal|"dummy_param"
 block|,
+name|N_
+argument_list|(
 literal|"dummy parameter"
+argument_list|)
 block|}
 block|,
 block|{
@@ -945,7 +954,10 @@ name|PDB_STRING
 block|,
 literal|"filename"
 block|,
+name|N_
+argument_list|(
 literal|"The name of the file to load"
+argument_list|)
 block|}
 block|,
 block|{
@@ -953,7 +965,10 @@ name|PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
+name|N_
+argument_list|(
 literal|"The name of the file to load"
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -972,7 +987,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"Output image"
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -1006,13 +1024,25 @@ comment|/* ignored for load */
 block|{
 literal|"gimp_xcf_load"
 block|,
+name|N_
+argument_list|(
 literal|"loads file saved in the .xcf file format"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"The xcf file format has been designed specifically for loading and saving tiled and layered images in the GIMP. This procedure will load the specified file."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
+argument_list|)
 block|,
 literal|"1995-1996"
 block|,
@@ -1055,7 +1085,10 @@ name|PDB_INT32
 block|,
 literal|"dummy_param"
 block|,
+name|N_
+argument_list|(
 literal|"dummy parameter"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1063,7 +1096,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"Input image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1071,7 +1107,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"Active drawable of input image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1079,7 +1118,10 @@ name|PDB_STRING
 block|,
 literal|"filename"
 block|,
+name|N_
+argument_list|(
 literal|"The name of the file to save the image in"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1087,7 +1129,10 @@ name|PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
+name|N_
+argument_list|(
 literal|"The name of the file to load"
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -1120,13 +1165,25 @@ comment|/* fill me in at runtime */
 block|{
 literal|"gimp_xcf_save"
 block|,
+name|N_
+argument_list|(
 literal|"saves file in the .xcf file format"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"The xcf file format has been designed specifically for loading and saving tiled and layered images in the GIMP. This procedure will save the specified image in the xcf file format."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
+argument_list|)
 block|,
 literal|"1995-1996"
 block|,
@@ -1526,7 +1583,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"XCF error: unsupported XCF file version %d encountered"
+argument_list|)
 argument_list|,
 name|info
 operator|.
@@ -1750,7 +1810,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"open failed on %s: %s\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|,
@@ -5302,7 +5365,10 @@ name|COMPRESS_ZLIB
 case|:
 name|g_error
 argument_list|(
+name|_
+argument_list|(
 literal|"xcf: zlib compression unimplemented"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5987,7 +6053,10 @@ operator|)
 condition|)
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"xcf: uh oh! xcf rle tile saving error: %d\n"
+argument_list|)
 argument_list|,
 name|count
 argument_list|)
@@ -6482,9 +6551,12 @@ name|i
 decl_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"XCF warning: version 0 of XCF file format\n"
 literal|"did not save indexed colormaps correctly.\n"
 literal|"Substituting grayscale map."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|info
@@ -6716,7 +6788,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unknown compression type: %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -6877,7 +6952,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unexpected/unknown image property: %d (skipping)"
+argument_list|)
 argument_list|,
 name|prop_type
 argument_list|)
@@ -7311,7 +7389,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unexpected/unknown layer property: %d (skipping)"
+argument_list|)
 argument_list|,
 name|prop_type
 argument_list|)
@@ -7583,7 +7664,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unexpected/unknown channel property: %d (skipping)"
+argument_list|)
 argument_list|,
 name|prop_type
 argument_list|)
@@ -9030,7 +9114,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"not enough tiles found in level"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -9115,7 +9202,10 @@ name|COMPRESS_ZLIB
 case|:
 name|g_error
 argument_list|(
+name|_
+argument_list|(
 literal|"xcf: zlib compression unimplemented"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fail
@@ -9128,7 +9218,10 @@ name|COMPRESS_FRACTAL
 case|:
 name|g_error
 argument_list|(
+name|_
+argument_list|(
 literal|"xcf: fractal compression unimplemented"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fail
@@ -9298,7 +9391,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"encountered garbage after reading level: %d"
+argument_list|)
 argument_list|,
 name|offset
 argument_list|)
@@ -9751,7 +9847,10 @@ literal|0
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"xcf: uh oh! xcf rle tile loading error: %d"
+argument_list|)
 argument_list|,
 name|count
 argument_list|)
@@ -9939,7 +10038,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"unable to read tile data from xcf file: %d ( %d ) bytes read"
+argument_list|)
 argument_list|,
 name|err
 argument_list|,

@@ -75,6 +75,12 @@ directive|include
 file|"threshold.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|TEXT_WIDTH
 define|#
@@ -1325,7 +1331,10 @@ name|tools_register_no_options
 argument_list|(
 name|THRESHOLD
 argument_list|,
+name|_
+argument_list|(
 literal|"Threshold Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  The threshold dialog  */
@@ -1540,7 +1549,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Threshold does not operate on indexed drawables."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1682,7 +1694,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|threshold_ok_callback
 block|,
@@ -1692,7 +1707,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|threshold_cancel_callback
 block|,
@@ -1795,7 +1813,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Threshold"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* handle the wm close signal */
@@ -1890,7 +1911,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Threshold Range: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2211,7 +2235,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -2363,7 +2390,10 @@ name|image_map
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"threshold_preview(): No image map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|image_map_apply
@@ -2886,7 +2916,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2894,7 +2927,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2902,7 +2938,10 @@ name|PDB_INT32
 block|,
 literal|"low_threshold"
 block|,
+name|N_
+argument_list|(
 literal|"the low threshold value: (0<= low_threshold<= 255)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2910,7 +2949,10 @@ name|PDB_INT32
 block|,
 literal|"high_threshold"
 block|,
+name|N_
+argument_list|(
 literal|"the high threshold value: (0<= high_threshold<= 255)"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2924,9 +2966,15 @@ init|=
 block|{
 literal|"gimp_threshold"
 block|,
+name|N_
+argument_list|(
 literal|"Threshold the specified drawable"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedures generates a threshold map of the specified drawable.  All pixels between the values of 'low_threshold' and 'high_threshold' are replaced with white, and all other pixels with black."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

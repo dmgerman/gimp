@@ -57,6 +57,12 @@ directive|include
 file|"gimprc.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -199,7 +205,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"No home directory--skipping GIMP user installation."
+argument_list|)
 argument_list|)
 expr_stmt|;
 call|(
@@ -247,17 +256,26 @@ condition|)
 block|{
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"The GIMP is not properly installed for the current user\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"User installation was skipped because the '--nointerface' flag was encountered\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"To perform user installation, run the GIMP without the '--nointerface' flag\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 call|(
@@ -303,7 +321,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Install"
+argument_list|)
 block|,
 name|help_install_callback
 block|,
@@ -313,7 +334,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Ignore"
+argument_list|)
 block|,
 name|help_ignore_callback
 block|,
@@ -323,7 +347,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Quit"
+argument_list|)
 block|,
 name|help_quit_callback
 block|,
@@ -402,7 +429,10 @@ argument_list|(
 name|help_widget
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GIMP Installation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -681,7 +711,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"The GIMP - GNU Image Manipulation Program\n\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -700,7 +733,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Copyright (C) 1995 Spencer Kimball and Peter Mattis\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -738,7 +774,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"This program is free software; you can redistribute it and/or modify\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -757,7 +796,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"it under the terms of the GNU General Public License as published by\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -776,7 +818,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"the Free Software Foundation; either version 2 of the License, or\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -795,7 +840,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"(at your option) any later version.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -833,7 +881,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"This program is distributed in the hope that it will be useful,\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -852,7 +903,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -871,7 +925,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -890,7 +947,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"See the GNU General Public License for more details.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -928,7 +988,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"You should have received a copy of the GNU General Public License\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -947,7 +1010,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"along with this program; if not, write to the Free Software\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -966,7 +1032,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1004,7 +1073,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Personal GIMP Installation\n\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1023,7 +1095,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"For a proper GIMP installation, a subdirectory called\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1062,7 +1137,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|" needs to be created.  This\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1081,7 +1159,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"subdirectory will contain a number of important files:\n\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1100,7 +1181,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"gimprc\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1119,7 +1203,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThe gimprc is used to store personal preferences\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1138,7 +1225,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tsuch as default GIMP behaviors& plug-in hotkeys.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1157,7 +1247,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tPaths to search for brushes, palettes, gradients\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1176,7 +1269,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tpatterns, and plug-ins are also configured here.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1195,7 +1291,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"pluginrc\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1214,7 +1313,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tPlug-ins and extensions are extern programs run by\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1233,7 +1335,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tthe GIMP which provide additional functionality.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1252,7 +1357,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThese programs are searched for at run-time and\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1271,7 +1379,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tinformation about their functionality and mod-times\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1290,7 +1401,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tis cached in this file.  This file is intended to\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1309,7 +1423,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tbe GIMP-readable only, and should not be edited.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1328,7 +1445,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"brushes\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1347,7 +1467,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1366,7 +1489,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tuser defined brushes.  The default gimprc file\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1385,7 +1511,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tchecks this subdirectory in addition to the system-\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1404,7 +1533,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\twide gimp brushes installation when searching for\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1423,7 +1555,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tbrushes.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1442,7 +1577,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"gradients\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1461,7 +1599,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1480,7 +1621,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tuser defined gradients.  The default gimprc file\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1499,7 +1643,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tchecks this subdirectory in addition to the system-\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1518,7 +1665,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\twide gimp gradients installation when searching for\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1537,7 +1687,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tgradients.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1556,7 +1709,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"gfig\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1575,7 +1731,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1594,7 +1753,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tuser defined figures to be used by the gfig plug-in.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1613,7 +1775,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThe default gimprc file checks this subdirectory in\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1632,7 +1797,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\taddition to the systemwide gimp gfig installation\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1651,7 +1819,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\twhen searching for gfig figures.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1670,7 +1841,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"gflares\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1689,7 +1863,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1708,7 +1885,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tuser defined gflares to be used by the gflare plug-in.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1727,7 +1907,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThe default gimprc file checks this subdirectory in\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1746,7 +1929,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\taddition to the systemwide gimp gflares installation\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1765,7 +1951,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\twhen searching for gflares.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1784,7 +1973,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"palettes\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1803,7 +1995,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1822,7 +2017,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tuser defined palettes.  The default gimprc file\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1841,7 +2039,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tchecks only this subdirectory (not the system-wide\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1860,7 +2061,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tinstallation) when searching for palettes.  During\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1879,7 +2083,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tinstallation, the system palettes will be copied\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1898,7 +2105,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\there.  This is done to allow modifications made to\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1917,7 +2127,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tpalettes during GIMP execution to persist across\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1936,7 +2149,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tsessions.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1955,7 +2171,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"patterns\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1974,7 +2193,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -1993,7 +2215,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tuser defined patterns.  The default gimprc file\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2012,7 +2237,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tchecks this subdirectory in addition to the system-\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2031,7 +2259,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\twide gimp patterns installation when searching for\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2050,7 +2281,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tpatterns.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2069,7 +2303,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"plug-ins\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2088,7 +2325,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2107,7 +2347,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tuser created, temporary, or otherwise non-system-\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2126,7 +2369,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tsupported plug-ins.  The default gimprc file\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2145,7 +2391,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tchecks this subdirectory in addition to the system-\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2164,7 +2413,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\twide GIMP plug-in directories when searching for\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2183,7 +2435,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tplug-ins.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2202,7 +2457,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"scripts\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2221,7 +2479,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThis subdirectory is used by the GIMP to store \n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2240,7 +2501,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tuser created and installed scripts. The default gimprc\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2259,7 +2523,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tfile checks this subdirectory in addition to the system\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2278,7 +2545,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\t-wide gimp scripts subdirectory when searching for scripts\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2297,7 +2567,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"tmp\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2316,7 +2589,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tThis subdirectory is used by the GIMP to temporarily\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2335,7 +2611,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tstore undo buffers to reduce memory usage.  If GIMP is\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2354,7 +2633,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tunceremoniously killed, files may persist in this directory\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2373,7 +2655,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tof the form: gimp<#>.<#>.  These files are useless across\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2392,7 +2677,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\t\tGIMP sessions and can be destroyed with impunity.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2540,7 +2828,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Continue"
+argument_list|)
 block|,
 name|install_continue_callback
 block|,
@@ -2550,7 +2841,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Quit"
+argument_list|)
 block|,
 name|install_quit_callback
 block|,
@@ -2651,7 +2945,10 @@ argument_list|(
 name|install_widget
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Installation Log"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2900,7 +3197,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"User Installation Log\n\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2988,7 +3288,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|" does not exist.  Cannot install.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -3053,7 +3356,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|" has invalid permissions.\nCannot install."
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -3168,7 +3474,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\nInstallation successful!\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -3200,7 +3509,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"\nInstallation failed.  Contact system administrator.\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1

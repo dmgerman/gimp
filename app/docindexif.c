@@ -15,6 +15,12 @@ directive|include
 file|"docindexif.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 name|void
 DECL|function|raise_if_match (gpointer data,gpointer user_data)
@@ -232,9 +238,15 @@ argument_list|(
 name|toolbar
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Open"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Open a file"
+argument_list|)
 argument_list|,
 literal|"Toolbar/Open"
 argument_list|,
@@ -255,9 +267,15 @@ argument_list|(
 name|toolbar
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Up"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Move the selected entry up in the index"
+argument_list|)
 argument_list|,
 literal|"Toolbar/Up"
 argument_list|,
@@ -278,9 +296,15 @@ argument_list|(
 name|toolbar
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Down"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Move the selected entry down in the index"
+argument_list|)
 argument_list|,
 literal|"Toolbar/Down"
 argument_list|,
@@ -301,9 +325,15 @@ argument_list|(
 name|toolbar
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Remove"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Remove the selected entry from the index"
+argument_list|)
 argument_list|,
 literal|"Toolbar/Remove"
 argument_list|,
@@ -324,9 +354,15 @@ argument_list|(
 name|toolbar
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Close the Document Index"
+argument_list|)
 argument_list|,
 literal|"Toolbar/Hide"
 argument_list|,

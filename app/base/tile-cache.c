@@ -65,6 +65,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"stdio.h"
 end_include
 
@@ -535,7 +541,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"cache: unable to find room for a tile"
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -1051,7 +1060,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"starting tile preswapper\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|count

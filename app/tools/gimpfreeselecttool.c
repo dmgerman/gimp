@@ -63,6 +63,12 @@ directive|include
 file|"rect_select.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 DECL|typedef|FreeSelect
 typedef|typedef
@@ -277,7 +283,10 @@ name|global_pts
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to reallocate points array in free_select."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1205,7 +1214,10 @@ name|list
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Cannot properly scanline convert polygon!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -2568,7 +2580,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The image"
+name|N_
+argument_list|(
+literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2576,7 +2591,10 @@ name|PDB_INT32
 block|,
 literal|"num_pts"
 block|,
+name|N_
+argument_list|(
 literal|"number of points (count 1 coordinate as two points)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2584,7 +2602,10 @@ name|PDB_FLOATARRAY
 block|,
 literal|"segs"
 block|,
+name|N_
+argument_list|(
 literal|"array of points: { p1.x, p1.y, p2.x, p2.y, ..., pn.x, pn.y}"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2592,7 +2613,10 @@ name|PDB_INT32
 block|,
 literal|"operation"
 block|,
+name|N_
+argument_list|(
 literal|"the selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2600,7 +2624,10 @@ name|PDB_INT32
 block|,
 literal|"antialias"
 block|,
+name|N_
+argument_list|(
 literal|"antialiasing option for selections"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2608,7 +2635,10 @@ name|PDB_INT32
 block|,
 literal|"feather"
 block|,
+name|N_
+argument_list|(
 literal|"feather option for selections"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2616,7 +2646,10 @@ name|PDB_FLOAT
 block|,
 literal|"feather_radius"
 block|,
+name|N_
+argument_list|(
 literal|"radius for feather operation"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2630,9 +2663,15 @@ init|=
 block|{
 literal|"gimp_free_select"
 block|,
+name|N_
+argument_list|(
 literal|"Create a polygonal selection over the specified image"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This tool creates a polygonal selection over the specified image.  The polygonal region can be either added to, subtracted from, or replace the contents of the previous selection mask.  The polygon is specified through an array of floating point numbers and its length.  The length of array must be 2n, where n is the number of points.  Each point is defined by 2 floating point values which correspond to the x and y coordinates.  If the final point does not connect to the starting point, a connecting segment is automatically added.  If the feather option is enabled, the resulting selection is blurred before combining.  The blur is a gaussian blur with the specified feather radius."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

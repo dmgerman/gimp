@@ -39,6 +39,12 @@ directive|include
 file|"docindexif.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|ideas
 name|idea_manager
@@ -760,7 +766,10 @@ name|title
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Document Index"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Set the GtkWindow title */
@@ -792,7 +801,10 @@ name|ideas
 operator|->
 name|contextid
 argument_list|,
+name|_
+argument_list|(
 literal|"GTK successfully started"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Connect the signals */
@@ -2628,7 +2640,10 @@ name|ideas
 operator|->
 name|contextid
 argument_list|,
+name|_
+argument_list|(
 literal|"This file cannot be moved up."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2646,7 +2661,10 @@ name|ideas
 operator|->
 name|contextid
 argument_list|,
+name|_
+argument_list|(
 literal|"There's no selection to move up."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2720,7 +2738,10 @@ name|ideas
 operator|->
 name|contextid
 argument_list|,
+name|_
+argument_list|(
 literal|"This file cannot be moved down."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2738,7 +2759,10 @@ name|ideas
 operator|->
 name|contextid
 argument_list|,
+name|_
+argument_list|(
 literal|"There's no selection to move down."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2806,7 +2830,10 @@ name|ideas
 operator|->
 name|contextid
 argument_list|,
+name|_
+argument_list|(
 literal|"There's no selection to remove."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

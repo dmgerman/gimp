@@ -87,6 +87,12 @@ directive|include
 file|"tile_manager_pvt.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|X1
 define|#
@@ -365,14 +371,20 @@ name|transform_info
 operator|=
 name|info_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Scaling Information"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
 argument_list|(
 name|transform_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Original Width: "
+argument_list|)
 argument_list|,
 name|orig_width_buf
 argument_list|,
@@ -385,7 +397,10 @@ name|info_dialog_add_field
 argument_list|(
 name|transform_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Original Height: "
+argument_list|)
 argument_list|,
 name|orig_height_buf
 argument_list|,
@@ -398,7 +413,10 @@ name|info_dialog_add_field
 argument_list|(
 name|transform_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Current Width: "
+argument_list|)
 argument_list|,
 name|width_buf
 argument_list|,
@@ -411,7 +429,10 @@ name|info_dialog_add_field
 argument_list|(
 name|transform_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Current Height: "
+argument_list|)
 argument_list|,
 name|height_buf
 argument_list|,
@@ -424,7 +445,10 @@ name|info_dialog_add_field
 argument_list|(
 name|transform_info
 argument_list|,
+name|_
+argument_list|(
 literal|"X Scale Ratio: "
+argument_list|)
 argument_list|,
 name|x_ratio_buf
 argument_list|,
@@ -437,7 +461,10 @@ name|info_dialog_add_field
 argument_list|(
 name|transform_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Y Scale Ratio: "
+argument_list|)
 argument_list|,
 name|y_ratio_buf
 argument_list|,
@@ -2497,7 +2524,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2505,7 +2535,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the affected drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2513,7 +2546,10 @@ name|PDB_INT32
 block|,
 literal|"interpolation"
 block|,
+name|N_
+argument_list|(
 literal|"whether to use interpolation"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2521,7 +2557,10 @@ name|PDB_FLOAT
 block|,
 literal|"x1"
 block|,
+name|N_
+argument_list|(
 literal|"the x coordinate of the upper-left corner of newly scaled region"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2529,7 +2568,10 @@ name|PDB_FLOAT
 block|,
 literal|"y1"
 block|,
+name|N_
+argument_list|(
 literal|"the y coordinate of the upper-left corner of newly scaled region"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2537,7 +2579,10 @@ name|PDB_FLOAT
 block|,
 literal|"x2"
 block|,
+name|N_
+argument_list|(
 literal|"the x coordinate of the lower-right corner of newly scaled region"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2545,7 +2590,10 @@ name|PDB_FLOAT
 block|,
 literal|"y2"
 block|,
+name|N_
+argument_list|(
 literal|"the y coordinate of the lower-right corner of newly scaled region"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2563,7 +2611,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the scaled drawable"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2577,9 +2628,15 @@ init|=
 block|{
 literal|"gimp_scale"
 block|,
+name|N_
+argument_list|(
 literal|"Scale the specified drawable"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This tool scales the specified drawable if no selection exists.  If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then scaled by the specified amount.  The interpolation parameter can be set to TRUE to indicate that either linear or cubic interpolation should be used to smooth the resulting scaled drawable.  The return value is the ID of the scaled drawable.  If there was no selection, this will be equal to the drawable ID supplied as input.  Otherwise, this will be the newly created and scaled drawable."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

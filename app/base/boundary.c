@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
@@ -841,7 +847,10 @@ name|tmp_segs
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to reallocate segments array for mask boundary."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1072,7 +1081,10 @@ name|empty_segs_c
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to reallocate empty segments array for mask boundary."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2262,7 +2274,10 @@ name|starty
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"sort_boundary(): Unconnected boundary group!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Mark the end of a group  */

@@ -37,6 +37,12 @@ begin_comment
 comment|/* ick. */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|int
@@ -1353,7 +1359,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"tile_manager_map_tile: tile co-ord out of range."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1467,7 +1476,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"tile_manager_map: tile out of range."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1712,7 +1724,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"tile_manager_map: nonconformant map (%p -> %p)"
+argument_list|)
 argument_list|,
 name|srctile
 argument_list|,
@@ -2007,7 +2022,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"tile_manager_get_tile_coordinates: tile not attached to manager"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2103,7 +2121,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"tile_manager_map_over_tile: tile not attached to manager"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

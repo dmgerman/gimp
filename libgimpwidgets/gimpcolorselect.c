@@ -67,6 +67,12 @@ begin_comment
 comment|/* for color_area_draw_rect */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|XY_DEF_WIDTH
 define|#
@@ -124,7 +130,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon2c83286e0103
+DECL|enum|__anon28b581310103
 typedef|typedef
 enum|enum
 block|{
@@ -172,7 +178,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c83286e0203
+DECL|enum|__anon28b581310203
 typedef|typedef
 enum|enum
 block|{
@@ -783,7 +789,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|color_select_ok_callback
 block|,
@@ -793,7 +802,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|color_select_cancel_callback
 block|,
@@ -1089,7 +1101,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Color Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -2319,7 +2334,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Hex Triplet:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -2376,7 +2394,10 @@ index|]
 operator|.
 name|label
 operator|=
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 expr_stmt|;
 name|action_items
 index|[
@@ -2385,7 +2406,10 @@ index|]
 operator|.
 name|label
 operator|=
+name|_
+argument_list|(
 literal|"Revert to Old Color"
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -2397,7 +2421,10 @@ index|]
 operator|.
 name|label
 operator|=
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 expr_stmt|;
 name|action_items
 index|[
@@ -2406,7 +2433,10 @@ index|]
 operator|.
 name|label
 operator|=
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 expr_stmt|;
 block|}
 name|build_action_area

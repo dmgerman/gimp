@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channel_pvt.h"
 end_include
 
@@ -420,7 +426,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image to which to add the channel"
+argument_list|)
 block|}
 block|,
 block|{
@@ -428,7 +437,10 @@ name|PDB_INT32
 block|,
 literal|"width"
 block|,
+name|N_
+argument_list|(
 literal|"the channel width: (width> 0)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -436,7 +448,10 @@ name|PDB_INT32
 block|,
 literal|"height"
 block|,
+name|N_
+argument_list|(
 literal|"the channel height: (height> 0)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -444,7 +459,10 @@ name|PDB_STRING
 block|,
 literal|"name"
 block|,
+name|N_
+argument_list|(
 literal|"the channel name"
+argument_list|)
 block|}
 block|,
 block|{
@@ -452,7 +470,10 @@ name|PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
+name|N_
+argument_list|(
 literal|"the channel opacity: (0<= opacity<= 100)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -460,7 +481,10 @@ name|PDB_COLOR
 block|,
 literal|"color"
 block|,
+name|N_
+argument_list|(
 literal|"the channel compositing color"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -478,7 +502,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the newly created channel"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -492,9 +519,15 @@ init|=
 block|{
 literal|"gimp_channel_new"
 block|,
+name|N_
+argument_list|(
 literal|"Create a new channel"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure creates a new channel with the specified width and height.  Name, opacity, and color are also supplied parameters.  The new channel still needs to be added to the image, as this is not automatic.  Add the new channel with the 'gimp_image_add_channel' command.  Other attributes such as channel show masked, should be set with explicit procedure calls.  The channel's contents are undefined initially."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -669,7 +702,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel to copy"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -687,7 +723,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel_copy"
 block|,
+name|N_
+argument_list|(
 literal|"the newly copied channel"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -701,9 +740,15 @@ init|=
 block|{
 literal|"gimp_channel_copy"
 block|,
+name|N_
+argument_list|(
 literal|"Copy a channel"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure copies the specified channel and returns the copy."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -832,7 +877,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel to delete"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -846,9 +894,15 @@ init|=
 block|{
 literal|"gimp_channel_delete"
 block|,
+name|N_
+argument_list|(
 literal|"Delete a channel"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure deletes the specified channel.  This does not need to be done if a gimage containing this channel was already deleted."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1012,7 +1066,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1030,7 +1087,10 @@ name|PDB_STRING
 block|,
 literal|"name"
 block|,
+name|N_
+argument_list|(
 literal|"the channel name"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1044,9 +1104,15 @@ init|=
 block|{
 literal|"gimp_channel_get_name"
 block|,
+name|N_
+argument_list|(
 literal|"Get the name of the specified channel."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure returns the specified channel's name."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1198,7 +1264,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1206,7 +1275,10 @@ name|PDB_STRING
 block|,
 literal|"name"
 block|,
+name|N_
+argument_list|(
 literal|"the new channel name"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1220,9 +1292,15 @@ init|=
 block|{
 literal|"gimp_channel_set_name"
 block|,
+name|N_
+argument_list|(
 literal|"Set the name of the specified channel."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure sets the specified channel's name to the supplied name."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1380,7 +1458,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1398,7 +1479,10 @@ name|PDB_INT32
 block|,
 literal|"visible"
 block|,
+name|N_
+argument_list|(
 literal|"the channel visibility"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1412,9 +1496,15 @@ init|=
 block|{
 literal|"gimp_channel_get_visible"
 block|,
+name|N_
+argument_list|(
 literal|"Get the visibility of the specified channel."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure returns the specified channel's visibility."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1569,7 +1659,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1577,7 +1670,10 @@ name|PDB_INT32
 block|,
 literal|"visible"
 block|,
+name|N_
+argument_list|(
 literal|"the new channel visibility"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1591,9 +1687,15 @@ init|=
 block|{
 literal|"gimp_channel_set_visible"
 block|,
+name|N_
+argument_list|(
 literal|"Set the visibility of the specified channel."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure sets the specified channel's visibility."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1748,7 +1850,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1766,7 +1871,10 @@ name|PDB_INT32
 block|,
 literal|"show_masked"
 block|,
+name|N_
+argument_list|(
 literal|"composite method for channel"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1780,9 +1888,15 @@ init|=
 block|{
 literal|"gimp_channel_get_show_masked"
 block|,
+name|N_
+argument_list|(
 literal|"Get the composite type for the channel"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure returns the specified channel's composite type.  If it is non-zero, then the channel is composited with the image so that masked regions are shown.  Otherwise, selected regions are shown."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1934,7 +2048,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1942,7 +2059,10 @@ name|PDB_INT32
 block|,
 literal|"show_masked"
 block|,
+name|N_
+argument_list|(
 literal|"the new channel show_masked value"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1956,9 +2076,15 @@ init|=
 block|{
 literal|"gimp_channel_set_show_masked"
 block|,
+name|N_
+argument_list|(
 literal|"Set the composite type for the specified channel."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure sets the specified channel's composite type.  If it is non-zero, then the channel is composited with the image so that masked regions are shown.  Otherwise, selected regions are shown."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2121,7 +2247,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2139,7 +2268,10 @@ name|PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
+name|N_
+argument_list|(
 literal|"the channel opacity"
+argument_list|)
 block|,   }
 block|}
 decl_stmt|;
@@ -2153,9 +2285,15 @@ init|=
 block|{
 literal|"gimp_channel_get_opacity"
 block|,
+name|N_
+argument_list|(
 literal|"Get the opacity of the specified channel."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure returns the specified channel's opacity."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2312,7 +2450,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2320,7 +2461,10 @@ name|PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
+name|N_
+argument_list|(
 literal|"the new channel opacity: (0<= opacity<= 100)"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2334,9 +2478,15 @@ init|=
 block|{
 literal|"gimp_channel_set_opacity"
 block|,
+name|N_
+argument_list|(
 literal|"Set the opacity of the specified channel."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure sets the specified channel's opacity."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2537,7 +2687,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2555,7 +2708,10 @@ name|PDB_COLOR
 block|,
 literal|"color"
 block|,
+name|N_
+argument_list|(
 literal|"the channel's composite color"
+argument_list|)
 block|,   }
 block|}
 decl_stmt|;
@@ -2569,9 +2725,15 @@ init|=
 block|{
 literal|"gimp_channel_get_color"
 block|,
+name|N_
+argument_list|(
 literal|"Get the compositing color of the specified channel."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure returns the specified channel's compositing color."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2746,7 +2908,10 @@ name|PDB_CHANNEL
 block|,
 literal|"channel"
 block|,
+name|N_
+argument_list|(
 literal|"the channel"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2754,7 +2919,10 @@ name|PDB_COLOR
 block|,
 literal|"color"
 block|,
+name|N_
+argument_list|(
 literal|"the composite color"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2768,9 +2936,15 @@ init|=
 block|{
 literal|"gimp_channel_set_color"
 block|,
+name|N_
+argument_list|(
 literal|"Set the compositing color of the specified channel."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure sets the specified channel's compositing color."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

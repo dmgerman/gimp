@@ -99,6 +99,12 @@ directive|include
 file|"gimprc.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -1122,7 +1128,10 @@ name|mbox
 decl_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/File/Close"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1197,7 +1206,10 @@ name|mbox
 decl_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/File/Close"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1238,7 +1250,10 @@ parameter_list|)
 block|{
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/File/Close"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1294,7 +1309,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|gdisplay_close_warning_callback
 block|,
@@ -1304,7 +1322,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|gdisplay_cancel_warning_callback
 block|,
@@ -1350,7 +1371,10 @@ return|return;
 block|}
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/File/Close"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1504,7 +1528,10 @@ name|sprintf
 argument_list|(
 name|warning_buf
 argument_list|,
-literal|"Changes made to %s.  Close anyway?"
+name|_
+argument_list|(
+literal|"Changes were made to %s.  Close anyway?"
+argument_list|)
 argument_list|,
 name|image_name
 argument_list|)

@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
@@ -204,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5697980103
+DECL|enum|__anon2c6dc80b0103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -241,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5697980203
+DECL|enum|__anon2c6dc80b0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -263,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5697980303
+DECL|enum|__anon2c6dc80b0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -407,7 +413,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2b5697980408
+DECL|struct|__anon2c6dc80b0408
 typedef|typedef
 struct|struct
 block|{
@@ -459,7 +465,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b5697980508
+DECL|struct|__anon2c6dc80b0508
 typedef|typedef
 struct|struct
 block|{
@@ -1181,7 +1187,10 @@ index|[]
 init|=
 block|{
 block|{
-literal|"FG to BG (RGB)"
+name|N_
+argument_list|(
+literal|"FG to BG RGB"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1200,7 +1209,10 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"FG to BG (HSV)"
+name|N_
+argument_list|(
+literal|"FG to BG HSV"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1219,7 +1231,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"FG to Transparent"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1238,7 +1253,10 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"Custom (from editor)"
+name|N_
+argument_list|(
+literal|"Custom from editor"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1288,7 +1306,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Linear"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1307,7 +1328,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Bi-Linear"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1326,7 +1350,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Radial"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1345,7 +1372,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Square"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1364,7 +1394,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Conical (symmetric)"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1383,7 +1416,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Conical (asymmetric)"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1402,7 +1438,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Shapeburst (angular)"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1421,7 +1460,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Shapeburst (spherical)"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1440,7 +1482,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Shapeburst (dimpled)"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1505,7 +1550,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1524,7 +1572,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Sawtooth wave"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1543,7 +1594,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Triangular wave"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2018,7 +2072,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blend Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2085,7 +2142,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Opacity:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2242,7 +2302,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Offset:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2399,7 +2462,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Mode:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2503,7 +2569,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blend:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2607,7 +2676,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Gradient:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2711,7 +2783,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Repeat:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2827,7 +2902,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Adaptive supersampling"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2949,7 +3027,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Max depth:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3106,7 +3187,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Threshold:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3403,7 +3487,10 @@ name|INDEXEDA_GIMAGE
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Blend: Invalid for indexed images."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3523,7 +3610,10 @@ name|blend_tool
 operator|->
 name|context_id
 argument_list|,
+name|_
+argument_list|(
 literal|"Blend: 0, 0"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Start drawing the blend tool  */
@@ -3845,7 +3935,10 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Blend operation failed."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args
@@ -3967,7 +4060,10 @@ name|vector
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
+name|_
+argument_list|(
 literal|"Blend: %d, %d"
+argument_list|)
 argument_list|,
 name|abs
 argument_list|(
@@ -6811,7 +6907,10 @@ break|break;
 default|default:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"gradient_render_pixel(): unknown gradient type %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -7466,7 +7565,10 @@ break|break;
 default|default:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"gradient_fill_region(): unknown blend mode %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -7657,7 +7759,10 @@ break|break;
 default|default:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"gradient_fill_region(): unknown gradient type %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -7706,7 +7811,10 @@ break|break;
 default|default:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"gradient_fill_region(): unknown repeat mode %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -8809,7 +8917,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"The image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8817,7 +8928,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"The affected drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8825,7 +8939,10 @@ name|PDB_INT32
 block|,
 literal|"blend_mode"
 block|,
+name|N_
+argument_list|(
 literal|"The type of blend: { FG-BG-RGB (0), FG-BG-HSV (1), FG-TRANS (2), CUSTOM (3) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8833,7 +8950,10 @@ name|PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
+name|N_
+argument_list|(
 literal|"the paint application mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8841,7 +8961,10 @@ name|PDB_INT32
 block|,
 literal|"gradient_type"
 block|,
+name|N_
+argument_list|(
 literal|"The type of gradient: { LINEAR (0), BILINEAR (1), RADIAL (2), SQUARE (3), CONICAL-SYMMETRIC (4), CONICAL-ASYMMETRIC (5), SHAPEBURST-ANGULAR (6), SHAPEBURST-SPHERICAL (7), SHAPEBURST-DIMPLED (8) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8849,7 +8972,10 @@ name|PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
+name|N_
+argument_list|(
 literal|"The opacity of the final blend (0<= opacity<= 100)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8857,7 +8983,10 @@ name|PDB_FLOAT
 block|,
 literal|"offset"
 block|,
+name|N_
+argument_list|(
 literal|"Offset relates to the starting and ending coordinates specified for the blend.  This parameter is mode depndent (0<= offset)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8865,7 +8994,10 @@ name|PDB_INT32
 block|,
 literal|"repeat"
 block|,
+name|N_
+argument_list|(
 literal|"Repeat mode: { REPEAT-NONE (0), REPEAT-SAWTOOTH (1), REPEAT-TRIANGULAR (2) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8873,7 +9005,10 @@ name|PDB_INT32
 block|,
 literal|"supersample"
 block|,
+name|N_
+argument_list|(
 literal|"Do adaptive supersampling (true / false)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8881,7 +9016,10 @@ name|PDB_INT32
 block|,
 literal|"max_depth"
 block|,
+name|N_
+argument_list|(
 literal|"Maximum recursion levels for supersampling"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8889,7 +9027,10 @@ name|PDB_FLOAT
 block|,
 literal|"threshold"
 block|,
+name|N_
+argument_list|(
 literal|"Supersampling threshold"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8897,7 +9038,10 @@ name|PDB_FLOAT
 block|,
 literal|"x1"
 block|,
+name|N_
+argument_list|(
 literal|"The x coordinate of this blend's starting point"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8905,7 +9049,10 @@ name|PDB_FLOAT
 block|,
 literal|"y1"
 block|,
+name|N_
+argument_list|(
 literal|"The y coordinate of this blend's starting point"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8913,7 +9060,10 @@ name|PDB_FLOAT
 block|,
 literal|"x2"
 block|,
+name|N_
+argument_list|(
 literal|"The x coordinate of this blend's ending point"
+argument_list|)
 block|}
 block|,
 block|{
@@ -8921,7 +9071,10 @@ name|PDB_FLOAT
 block|,
 literal|"y2"
 block|,
+name|N_
+argument_list|(
 literal|"The y coordinate of this blend's ending point"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -8935,9 +9088,15 @@ init|=
 block|{
 literal|"gimp_blend"
 block|,
+name|N_
+argument_list|(
 literal|"Blend between the starting and ending coordinates with the specified blend mode and gradient type."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This tool requires information on the paint application mode, the blend mode, and the gradient type.  It creates the specified variety of blend using the starting and ending coordinates as defined for each gradient type."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis& Federico Mena Quintero"
 block|,

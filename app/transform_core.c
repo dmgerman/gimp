@@ -151,6 +151,12 @@ begin_comment
 comment|/* ick. */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|SQR (x)
 define|#
@@ -481,7 +487,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Reset"
+argument_list|)
 block|,
 name|transform_reset_callback
 block|,
@@ -504,13 +513,25 @@ literal|4
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Rotate"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Scale"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Shear"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Transform"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1083,7 +1104,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Transformations do not work on\nlayers that contain layer masks."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool
@@ -5440,7 +5464,10 @@ literal|0.0
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"homogeneous coordinate = 0...\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 elseif|else

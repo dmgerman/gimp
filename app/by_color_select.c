@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
@@ -2586,13 +2592,25 @@ literal|4
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Replace"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Add"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Subtract"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Intersect"
+argument_list|)
 block|}
 decl_stmt|;
 name|int
@@ -2670,7 +2688,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"By Color Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -2986,7 +3007,10 @@ name|gimage_name
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Inactive"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3024,7 +3048,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Selection Mode"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3202,7 +3229,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fuzziness Threshold"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3323,7 +3353,10 @@ name|push_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3388,7 +3421,10 @@ name|push_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4950,7 +4986,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4958,7 +4997,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4966,7 +5008,10 @@ name|PDB_COLOR
 block|,
 literal|"color"
 block|,
+name|N_
+argument_list|(
 literal|"the color to select"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4974,7 +5019,10 @@ name|PDB_INT32
 block|,
 literal|"threshold"
 block|,
+name|N_
+argument_list|(
 literal|"threshold in intensity levels: 0<= threshold<= 255"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4982,7 +5030,10 @@ name|PDB_INT32
 block|,
 literal|"operation"
 block|,
+name|N_
+argument_list|(
 literal|"the selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4990,7 +5041,10 @@ name|PDB_INT32
 block|,
 literal|"antialias"
 block|,
+name|N_
+argument_list|(
 literal|"antialiasing On/Off"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4998,7 +5052,10 @@ name|PDB_INT32
 block|,
 literal|"feather"
 block|,
+name|N_
+argument_list|(
 literal|"feather option for selections"
+argument_list|)
 block|}
 block|,
 block|{
@@ -5006,7 +5063,10 @@ name|PDB_FLOAT
 block|,
 literal|"feather_radius"
 block|,
+name|N_
+argument_list|(
 literal|"radius for feather operation"
+argument_list|)
 block|}
 block|,
 block|{
@@ -5014,7 +5074,10 @@ name|PDB_INT32
 block|,
 literal|"sample_merged"
 block|,
+name|N_
+argument_list|(
 literal|"use the composite image, not the drawable"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -5028,9 +5091,15 @@ init|=
 block|{
 literal|"gimp_by_color_select"
 block|,
+name|N_
+argument_list|(
 literal|"Create a selection by selecting all pixels (in the specified drawable) with the same (or similar) color to that specified."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This tool creates a selection over the specified image.  A by-color selection is determined by the supplied color under the constraints of the specified threshold.  Essentially, all pixels (in the drawable) that have color sufficiently close to the specified color (as determined by the threshold value) are included in the selection.  The antialiasing parameter allows the final selection mask to contain intermediate values based on close misses to the threshold bar.  Feathering can be enabled optionally and is controlled with the \"feather_radius\" paramter.  If the sample_merged parameter is non-zero, the data of the composite image will be used instead of that for the specified drawable.  This is equivalent to sampling for colors after merging all visible layers.  In the case of a merged sampling, the supplied drawable is ignored."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

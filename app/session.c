@@ -61,6 +61,12 @@ directive|include
 file|"session.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -626,49 +632,70 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
+name|_
+argument_list|(
 literal|"# GIMP sessionrc\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|fp
 argument_list|,
+name|_
+argument_list|(
 literal|"# This file takes session-specific info (that is info,\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|fp
 argument_list|,
+name|_
+argument_list|(
 literal|"# you want to keep between two gimp-sessions). You are\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|fp
 argument_list|,
+name|_
+argument_list|(
 literal|"# not supposed to edit it manually, but of course you\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|fp
 argument_list|,
+name|_
+argument_list|(
 literal|"# can do. This file will be entirely rewritten every time\n"
 argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|"# you quit the gimp. If this file isn't found, defaults\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|fp
 argument_list|,
+name|_
+argument_list|(
+literal|"# you quit the gimp. If this file isn't found, defaults\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+name|_
+argument_list|(
 literal|"# are used.\n\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* save window geometries */

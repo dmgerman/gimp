@@ -81,6 +81,12 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|CELL_SIZE
 define|#
@@ -517,7 +523,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|devices_close_callback
 block|,
@@ -527,7 +536,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Save"
+argument_list|)
 block|,
 operator|(
 name|ActionCallback
@@ -1586,7 +1598,10 @@ else|else
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"devices_rc_update called multiple times for not present device\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2840,7 +2855,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Device Status"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -5077,7 +5095,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Failed to find device_info\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

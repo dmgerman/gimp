@@ -960,7 +960,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Spencer Kimball and Peter Mattis"
+literal|"Spencer Kimball& Peter Mattis"
 argument_list|)
 argument_list|)
 expr_stmt|;

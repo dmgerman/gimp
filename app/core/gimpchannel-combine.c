@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channel_pvt.h"
 end_include
 
@@ -681,7 +687,10 @@ operator|-
 literal|4
 index|]
 argument_list|,
+name|_
+argument_list|(
 literal|"copy"
+argument_list|)
 argument_list|)
 operator|==
 literal|0
@@ -740,7 +749,10 @@ name|sprintf
 argument_list|(
 name|channel_name
 argument_list|,
+name|N_
+argument_list|(
 literal|"%s copy"
+argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -2260,7 +2272,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
+name|_
+argument_list|(
 literal|"Selection Mask"
+argument_list|)
 argument_list|,
 literal|127
 argument_list|,

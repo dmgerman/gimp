@@ -75,6 +75,12 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|EDIT_SELECT_SCROLL_LOCK
 define|#
@@ -699,7 +705,10 @@ name|edit_select
 operator|.
 name|context_id
 argument_list|,
+name|_
+argument_list|(
 literal|"Move: 0, 0"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Create and start the selection core  */
@@ -1348,7 +1357,10 @@ name|offset
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
+name|_
+argument_list|(
 literal|"Move: %d, %d"
+argument_list|)
 argument_list|,
 operator|(
 name|edit_select

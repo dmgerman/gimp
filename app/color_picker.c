@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
@@ -513,7 +519,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color Picker Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -542,7 +551,10 @@ name|sample_merged_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Sample Merged"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -621,7 +633,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|color_picker_info_window_close_callback
 block|,
@@ -707,7 +722,10 @@ name|color_picker_info
 operator|=
 name|info_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color Picker"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|active_drawable
@@ -738,7 +756,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Red"
+argument_list|)
 argument_list|,
 name|red_buf
 argument_list|,
@@ -751,7 +772,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Green"
+argument_list|)
 argument_list|,
 name|green_buf
 argument_list|,
@@ -764,7 +788,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Blue"
+argument_list|)
 argument_list|,
 name|blue_buf
 argument_list|,
@@ -777,7 +804,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Alpha"
+argument_list|)
 argument_list|,
 name|alpha_buf
 argument_list|,
@@ -790,7 +820,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Hex Triplet"
+argument_list|)
 argument_list|,
 name|hex_buf
 argument_list|,
@@ -810,7 +843,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Index"
+argument_list|)
 argument_list|,
 name|index_buf
 argument_list|,
@@ -823,7 +859,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Alpha"
+argument_list|)
 argument_list|,
 name|alpha_buf
 argument_list|,
@@ -836,7 +875,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Red"
+argument_list|)
 argument_list|,
 name|red_buf
 argument_list|,
@@ -849,7 +891,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Green"
+argument_list|)
 argument_list|,
 name|green_buf
 argument_list|,
@@ -862,7 +907,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Blue"
+argument_list|)
 argument_list|,
 name|blue_buf
 argument_list|,
@@ -875,7 +923,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Hex Triplet"
+argument_list|)
 argument_list|,
 name|hex_buf
 argument_list|,
@@ -895,7 +946,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Intensity"
+argument_list|)
 argument_list|,
 name|gray_buf
 argument_list|,
@@ -908,7 +962,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Alpha"
+argument_list|)
 argument_list|,
 name|alpha_buf
 argument_list|,
@@ -921,7 +978,10 @@ name|info_dialog_add_field
 argument_list|(
 name|color_picker_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Hex Triplet"
+argument_list|)
 argument_list|,
 name|hex_buf
 argument_list|,
@@ -1876,49 +1936,70 @@ name|sprintf
 argument_list|(
 name|red_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|green_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|blue_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|alpha_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|index_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|gray_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|hex_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1994,7 +2075,10 @@ name|sprintf
 argument_list|(
 name|alpha_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sprintf
@@ -2061,7 +2145,10 @@ name|sprintf
 argument_list|(
 name|alpha_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sprintf
@@ -2164,7 +2251,10 @@ name|sprintf
 argument_list|(
 name|alpha_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sprintf
@@ -2363,7 +2453,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2371,7 +2464,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2379,7 +2475,10 @@ name|PDB_FLOAT
 block|,
 literal|"x"
 block|,
+name|N_
+argument_list|(
 literal|"x coordinate of upper-left corner of rectangle"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2387,7 +2486,10 @@ name|PDB_FLOAT
 block|,
 literal|"y"
 block|,
+name|N_
+argument_list|(
 literal|"y coordinate of upper-left corner of rectangle"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2395,7 +2497,10 @@ name|PDB_INT32
 block|,
 literal|"sample_merged"
 block|,
+name|N_
+argument_list|(
 literal|"use the composite image, not the drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2403,7 +2508,10 @@ name|PDB_INT32
 block|,
 literal|"save_color"
 block|,
+name|N_
+argument_list|(
 literal|"save the color to the active palette"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2421,7 +2529,10 @@ name|PDB_COLOR
 block|,
 literal|"color"
 block|,
+name|N_
+argument_list|(
 literal|"the return color"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2435,9 +2546,15 @@ init|=
 block|{
 literal|"gimp_color_picker"
 block|,
+name|N_
+argument_list|(
 literal|"Determine the color at the given drawable coordinates"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This tool determines the color at the specified coordinates.  The returned color is an RGB triplet even for grayscale and indexed drawables.  If the coordinates lie outside of the extents of the specified drawable, then an error is returned.  If the drawable has an alpha channel, the algorithm examines the alpha value of the drawable at the coordinates.  If the alpha value is completely transparent (0), then an error is returned.  If the sample_merged parameter is non-zero, the data of the composite image will be used instead of that for the specified drawable.  This is equivalent to sampling for colors after merging all visible layers.  In the case of a merged sampling, the supplied drawable is ignored."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

@@ -169,6 +169,12 @@ begin_comment
 comment|/* ick. */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|OVERHEAD
 define|#
@@ -796,9 +802,15 @@ operator|(
 name|empty
 operator|)
 condition|?
+name|_
+argument_list|(
 literal|"RGB-empty"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"RGB"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -810,9 +822,15 @@ operator|(
 name|empty
 operator|)
 condition|?
+name|_
+argument_list|(
 literal|"grayscale-empty"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"grayscale"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -824,9 +842,15 @@ operator|(
 name|empty
 operator|)
 condition|?
+name|_
+argument_list|(
 literal|"indexed-empty"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"indexed"
+argument_list|)
 expr_stmt|;
 break|break;
 default|default:
@@ -968,7 +992,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Deleted idlerendering gdisp %p...\n"
+argument_list|)
 argument_list|,
 name|gdisp
 argument_list|)
@@ -980,7 +1007,10 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"\tIdlerender stops now!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fflush
@@ -1007,7 +1037,10 @@ name|FALSE
 expr_stmt|;
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"\tDeletion finished.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fflush
@@ -2061,7 +2094,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Wanted to start idlerender thread with no update_areas. (+memleak)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6491,7 +6527,10 @@ expr_stmt|;
 block|}
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Layers/Raise Layer"
+argument_list|)
 argument_list|,
 operator|!
 name|fs
@@ -6505,8 +6544,11 @@ name|alpha
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Layers/Lower Layer"
+argument_list|)
 argument_list|,
 operator|!
 name|fs
@@ -6520,8 +6562,11 @@ name|alpha
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Layers/Anchor Layer"
+argument_list|)
 argument_list|,
 name|fs
 operator|&&
@@ -6532,8 +6577,11 @@ name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Layers/Merge Visible Layers"
+argument_list|)
 argument_list|,
 operator|!
 name|fs
@@ -6545,8 +6593,11 @@ name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Layers/Flatten Image"
+argument_list|)
 argument_list|,
 operator|!
 name|fs
@@ -6558,8 +6609,11 @@ name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Layers/Alpha To Selection"
+argument_list|)
 argument_list|,
 operator|!
 name|aux
@@ -6571,7 +6625,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Layers/Mask To Selection"
+argument_list|)
 argument_list|,
 operator|!
 name|aux
@@ -6583,7 +6640,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Layers/Add Alpha Channel"
+argument_list|)
 argument_list|,
 operator|!
 name|fs
@@ -6602,7 +6662,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Image/RGB"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6613,7 +6676,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Image/Grayscale"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6624,7 +6690,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Image/Indexed"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6634,8 +6703,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors/Threshold"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6645,8 +6717,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors/Posterize"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6656,8 +6731,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors/Equalize"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6667,8 +6745,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors/Invert"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6678,8 +6759,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors/Color Balance"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6689,8 +6773,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors/Brightness-Contrast"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6700,8 +6787,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors/Hue-Saturation"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6711,8 +6801,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors/Curves"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6722,8 +6815,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors/Levels"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6734,7 +6830,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Image/Colors/Desaturate"
+argument_list|)
 argument_list|,
 operator|(
 name|base_type
@@ -6745,7 +6844,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Image/Alpha/Add Alpha Channel"
+argument_list|)
 argument_list|,
 operator|!
 name|fs
@@ -6764,105 +6866,150 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Select"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Cut"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Copy"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Paste"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Paste Into"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Clear"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Fill"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Stroke"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Cut Named"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Copy Named"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Edit/Paste Named"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Colors"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Channel Ops/Offset"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
+argument_list|(
+name|_
 argument_list|(
 literal|"<Image>/Image/Histogram"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Filters"
+argument_list|)
 argument_list|,
 name|lp
 argument_list|)
@@ -6870,7 +7017,10 @@ expr_stmt|;
 comment|/* save selection to channel */
 name|menus_set_sensitive
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/Select/Save To Channel"
+argument_list|)
 argument_list|,
 operator|!
 name|fs
@@ -6878,7 +7028,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_state
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/View/Toggle Rulers"
+argument_list|)
 argument_list|,
 name|GTK_WIDGET_VISIBLE
 argument_list|(
@@ -6894,7 +7047,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_state
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/View/Toggle Guides"
+argument_list|)
 argument_list|,
 name|gdisp
 operator|->
@@ -6903,7 +7059,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_state
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/View/Snap To Guides"
+argument_list|)
 argument_list|,
 name|gdisp
 operator|->
@@ -6912,7 +7071,10 @@ argument_list|)
 expr_stmt|;
 name|menus_set_state
 argument_list|(
+name|_
+argument_list|(
 literal|"<Image>/View/Toggle Statusbar"
+argument_list|)
 argument_list|,
 name|GTK_WIDGET_VISIBLE
 argument_list|(
@@ -8166,7 +8328,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"gdisplays_flush() called recursively."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

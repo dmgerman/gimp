@@ -17,7 +17,7 @@ DECL|macro|LOCALEDIR
 define|#
 directive|define
 name|LOCALEDIR
-value|LIBDIR "/locale"
+value|"/usr/local/share/locale"
 end_define
 
 begin_comment

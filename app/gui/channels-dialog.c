@@ -210,6 +210,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channel_pvt.h"
 end_include
 
@@ -916,7 +922,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"New Channel"
+argument_list|)
 block|,
 literal|'N'
 block|,
@@ -932,7 +941,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Raise Channel"
+argument_list|)
 block|,
 literal|'F'
 block|,
@@ -948,7 +960,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Lower Channel"
+argument_list|)
 block|,
 literal|'B'
 block|,
@@ -964,7 +979,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Duplicate Channel"
+argument_list|)
 block|,
 literal|'C'
 block|,
@@ -980,7 +998,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Delete Channel"
+argument_list|)
 block|,
 literal|'X'
 block|,
@@ -996,7 +1017,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Channel To Selection"
+argument_list|)
 block|,
 literal|'S'
 block|,
@@ -1049,7 +1073,10 @@ name|new_is_xpm
 block|,
 name|channels_dialog_new_channel_callback
 block|,
+name|N_
+argument_list|(
 literal|"New Channel"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1071,7 +1098,10 @@ name|raise_is_xpm
 block|,
 name|channels_dialog_raise_channel_callback
 block|,
+name|N_
+argument_list|(
 literal|"Raise Channel"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1093,7 +1123,10 @@ name|lower_is_xpm
 block|,
 name|channels_dialog_lower_channel_callback
 block|,
+name|N_
+argument_list|(
 literal|"Lower Channel"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1115,7 +1148,10 @@ name|duplicate_is_xpm
 block|,
 name|channels_dialog_duplicate_channel_callback
 block|,
+name|N_
+argument_list|(
 literal|"Duplicate Channel"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1137,7 +1173,10 @@ name|delete_is_xpm
 block|,
 name|channels_dialog_delete_channel_callback
 block|,
+name|N_
+argument_list|(
 literal|"Delete Channel"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -3169,7 +3208,10 @@ name|Auxillary
 case|:
 name|g_error
 argument_list|(
+name|_
+argument_list|(
 literal|"error in %s at %d: this shouldn't happen."
+argument_list|)
 argument_list|,
 name|__FILE__
 argument_list|,
@@ -3404,7 +3446,10 @@ name|Auxillary
 case|:
 name|g_error
 argument_list|(
+name|_
+argument_list|(
 literal|"error in %s at %d: this shouldn't happen."
+argument_list|)
 argument_list|,
 name|__FILE__
 argument_list|,
@@ -5003,7 +5048,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Red"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5016,7 +5064,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Green"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5029,7 +5080,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blue"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5042,7 +5096,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Gray"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5055,7 +5112,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Indexed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -8065,7 +8125,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|new_channel_query_ok_callback
 block|,
@@ -8075,7 +8138,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|new_channel_query_cancel_callback
 block|,
@@ -8180,7 +8246,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"New Channel Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -8291,7 +8360,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Channel name: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -8403,7 +8475,10 @@ name|channel_name
 condition|?
 name|channel_name
 else|:
+name|_
+argument_list|(
 literal|"New Channel"
+argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
@@ -8419,7 +8494,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fill Opacity: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -9050,7 +9128,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|edit_channel_query_ok_callback
 block|,
@@ -9060,7 +9141,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|edit_channel_query_cancel_callback
 block|,
@@ -9216,7 +9300,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit Channel Attributes"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -9354,7 +9441,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Channel name:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -9474,7 +9564,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fill Opacity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

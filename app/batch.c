@@ -59,6 +59,12 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -130,7 +136,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"script-fu not available: batch mode disabled\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -177,7 +186,10 @@ condition|)
 block|{
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"reading batch commands from stdin\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_input_add
@@ -347,7 +359,10 @@ name|PDB_EXECUTION_ERROR
 case|:
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"batch command: experienced an execution error.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -356,7 +371,10 @@ name|PDB_CALLING_ERROR
 case|:
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"batch command: experienced a calling error.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -365,7 +383,10 @@ name|PDB_SUCCESS
 case|:
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"batch command: executed successfully.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

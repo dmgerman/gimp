@@ -93,6 +93,12 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|TARGET_HEIGHT
 define|#
@@ -112,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e4508d0103
+DECL|enum|__anon293ff50e0103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -592,9 +598,15 @@ literal|2
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Image Source"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern Source"
+argument_list|)
 block|}
 decl_stmt|;
 comment|/*  the new options structure  */
@@ -639,7 +651,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Clone Tool Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -668,7 +683,10 @@ name|radio_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Source"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -806,7 +824,10 @@ name|aligned_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Aligned"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1118,7 +1139,10 @@ argument_list|()
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"No patterns available for this operation."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2644,7 +2668,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2652,7 +2679,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2660,7 +2690,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"src_drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the source drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2668,7 +2701,10 @@ name|PDB_INT32
 block|,
 literal|"clone_type"
 block|,
+name|N_
+argument_list|(
 literal|"the type of clone: { IMAGE-CLONE (0), PATTERN-CLONE (1) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2676,7 +2712,10 @@ name|PDB_FLOAT
 block|,
 literal|"src_x"
 block|,
+name|N_
+argument_list|(
 literal|"the x coordinate in the source image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2684,7 +2723,10 @@ name|PDB_FLOAT
 block|,
 literal|"src_y"
 block|,
+name|N_
+argument_list|(
 literal|"the y coordinate in the source image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2692,7 +2734,10 @@ name|PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
+name|N_
+argument_list|(
 literal|"number of stroke control points (count each coordinate as 2 points)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -2700,7 +2745,10 @@ name|PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
+name|N_
+argument_list|(
 literal|"array of stroke coordinates: {s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y}"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2714,9 +2762,15 @@ init|=
 block|{
 literal|"gimp_clone"
 block|,
+name|N_
+argument_list|(
 literal|"Clone from the source to the dest drawable using the current brush"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This tool clones (copies) from the source drawable starting at the specified source coordinates to the dest drawable.  If the \"clone_type\" argument is set to PATTERN-CLONE, then the current pattern is used as the source and the \"src_drawable\" argument is ignored.  Pattern cloning assumes a tileable pattern and mods the sum of the src coordinates and subsequent stroke offsets with the width and height of the pattern.  For image cloning, if the sum of the src coordinates and subsequent stroke offsets exceeds the extents of the src drawable, then no paint is transferred.  The clone tool is capable of transforming between any image types including RGB->Indexed--although converting from any type to indexed is significantly slower."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

@@ -81,6 +81,12 @@ directive|include
 file|"interface.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|TEXT_WIDTH
 define|#
@@ -1576,7 +1582,10 @@ name|tools_register_no_options
 argument_list|(
 name|COLOR_BALANCE
 argument_list|,
+name|_
+argument_list|(
 literal|"Color Balance Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool
@@ -1778,7 +1787,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Color balance operates only on RGB color drawables."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1920,7 +1932,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|color_balance_ok_callback
 block|,
@@ -1930,7 +1945,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|color_balance_cancel_callback
 block|,
@@ -2011,11 +2029,20 @@ literal|3
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Shadows"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Midtones"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Highlights"
+argument_list|)
 block|}
 decl_stmt|;
 name|ActionCallback
@@ -2091,7 +2118,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|N_
+argument_list|(
 literal|"Color Balance"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* handle the wm close signal */
@@ -2186,7 +2216,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color Levels: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2449,7 +2482,10 @@ name|start_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Cyan"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2616,7 +2652,10 @@ name|end_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Red"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2681,7 +2720,10 @@ name|start_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Magenta"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2848,7 +2890,10 @@ name|end_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Green"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2913,7 +2958,10 @@ name|start_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Yellow"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3080,7 +3128,10 @@ name|end_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blue"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3171,7 +3222,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -3229,7 +3283,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preserve Luminosity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -3711,7 +3768,10 @@ name|image_map
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"color_balance_preview(): No image map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|active_tool
@@ -4801,7 +4861,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4809,7 +4872,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4817,7 +4883,10 @@ name|PDB_INT32
 block|,
 literal|"transfer_mode"
 block|,
+name|N_
+argument_list|(
 literal|"Transfer mode: { SHADOWS (0), MIDTONES (1), HIGHLIGHTS (2) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4825,7 +4894,10 @@ name|PDB_INT32
 block|,
 literal|"preserve_lum"
 block|,
+name|N_
+argument_list|(
 literal|"Preserve luminosity values at each pixel"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4833,7 +4905,10 @@ name|PDB_FLOAT
 block|,
 literal|"cyan_red"
 block|,
+name|N_
+argument_list|(
 literal|"Cyan-Red color balance: (-100<= cyan_red<= 100)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4841,7 +4916,10 @@ name|PDB_FLOAT
 block|,
 literal|"magenta_green"
 block|,
+name|N_
+argument_list|(
 literal|"Magenta-Green color balance: (-100<= magenta_green<= 100)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -4849,7 +4927,10 @@ name|PDB_FLOAT
 block|,
 literal|"yellow_blue"
 block|,
+name|N_
+argument_list|(
 literal|"Yellow-Blue color balance: (-100<= yellow_blue<= 100)"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4863,9 +4944,15 @@ init|=
 block|{
 literal|"gimp_color_balance"
 block|,
+name|N_
+argument_list|(
 literal|"Modify the color balance of the specified drawable"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Modify the color balance of the specified drawable.  There are three axis which can be modified: cyan-red, magenta-green, and yellow-blue.  Negative values increase the amount of the former, positive values increase the amount of the latter.  Color balance can be controlled with the 'transfer_mode' setting, which allows shadows, midtones, and highlights in an image to be affected differently.  The 'preserve_lum' parameter, if non-zero, ensures that the luminosity of each pixel remains fixed."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

@@ -93,6 +93,12 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/*  the Bucket Fill structures  */
 end_comment
@@ -100,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be5813d0103
+DECL|enum|__anon2a1fb9a20103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -624,9 +630,15 @@ literal|2
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Color Fill"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern Fill"
+argument_list|)
 block|}
 decl_stmt|;
 comment|/*  the new options structure  */
@@ -689,7 +701,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Bucket Fill Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -743,7 +758,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fill Opacity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -890,7 +908,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fill Threshold"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1047,7 +1068,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Mode:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1116,7 +1140,10 @@ name|radio_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fill Type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1272,7 +1299,10 @@ name|sample_merged_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Sample Merged"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1704,7 +1734,10 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Bucket Fill operation failed."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args
@@ -2129,7 +2162,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"No available patterns for this operation."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3564,7 +3600,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The image"
+name|N_
+argument_list|(
+literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3572,7 +3611,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"The affected drawable"
+name|N_
+argument_list|(
+literal|"the affected drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3580,7 +3622,10 @@ name|PDB_INT32
 block|,
 literal|"fill_mode"
 block|,
-literal|"The type of fill: { FG-BUCKET-FILL (0), BG-BUCKET-FILL (1), PATTERN-BUCKET-FILL (2) }"
+name|N_
+argument_list|(
+literal|"the type of fill: { FG-BUCKET-FILL (0), BG-BUCKET-FILL (1), PATTERN-BUCKET-FILL (2) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3588,7 +3633,10 @@ name|PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
+name|N_
+argument_list|(
 literal|"the paint application mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3596,7 +3644,10 @@ name|PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
-literal|"The opacity of the final bucket fill (0<= opacity<= 100)"
+name|N_
+argument_list|(
+literal|"the opacity of the final bucket fill (0<= opacity<= 100)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3604,7 +3655,10 @@ name|PDB_FLOAT
 block|,
 literal|"threshold"
 block|,
-literal|"The threshold determines how extensive the seed fill will be.  It's value is specified in terms of intensity levels (0<= threshold<= 255).  This parameter is only valid when there is no selection in the specified image."
+name|N_
+argument_list|(
+literal|"the threshold determines how extensive the seed fill will be.  It's value is specified in terms of intensity levels (0<= threshold<= 255).  This parameter is only valid when there is no selection in the specified image."
+argument_list|)
 block|}
 block|,
 block|{
@@ -3612,7 +3666,10 @@ name|PDB_INT32
 block|,
 literal|"sample_merged"
 block|,
+name|N_
+argument_list|(
 literal|"use the composite image, not the drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3620,7 +3677,10 @@ name|PDB_FLOAT
 block|,
 literal|"x"
 block|,
-literal|"The x coordinate of this bucket fill's application.  This parameter is only valid when there is no selection in the specified image."
+name|N_
+argument_list|(
+literal|"the x coordinate of this bucket fill's application.  This parameter is only valid when there is no selection in the specified image."
+argument_list|)
 block|}
 block|,
 block|{
@@ -3628,7 +3688,10 @@ name|PDB_FLOAT
 block|,
 literal|"y"
 block|,
-literal|"The y coordinate of this bucket fill's application.  This parameter is only valid when there is no selection in the specified image."
+name|N_
+argument_list|(
+literal|"the y coordinate of this bucket fill's application.  This parameter is only valid when there is no selection in the specified image."
+argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -3642,9 +3705,15 @@ init|=
 block|{
 literal|"gimp_bucket_fill"
 block|,
+name|N_
+argument_list|(
 literal|"Fill the area specified either by the current selection if there is one, or by a seed fill starting at the specified coordinates."
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This tool requires information on the paint application mode, and the fill mode, which can either be in the foreground color, or in the currently active pattern.  If there is no selection, a seed fill is executed at the specified coordinates and extends outward in keeping with the threshold parameter.  If there is a selection in the target image, the threshold, sample merged, x, and y arguments are unused.  If the sample_merged parameter is non-zero, the data of the composite image will be used instead of that for the specified drawable.  This is equivalent to sampling for colors after merging all visible layers.  In the case of merged sampling, the x,y coordinates are relative to the image's origin; otherwise, they are relative to the drawable's origin."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

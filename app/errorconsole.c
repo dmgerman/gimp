@@ -69,6 +69,12 @@ directive|include
 file|"session.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|ERRORS_ALL
 define|#
@@ -469,7 +475,10 @@ name|g_string_sprintf
 argument_list|(
 name|string
 argument_list|,
+name|_
+argument_list|(
 literal|"Error opening file %s: %s"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|,
@@ -540,7 +549,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Can't save, nothing selected!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -549,7 +561,10 @@ name|filesel
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save error log to file..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -794,7 +809,10 @@ argument_list|(
 name|error_console
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GIMP Error console"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|session_set_window_geometry
@@ -883,7 +901,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -938,7 +959,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Write all errors to file..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -980,7 +1004,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Write selection to file..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append

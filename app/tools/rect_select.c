@@ -51,6 +51,12 @@ directive|include
 file|"rect_selectP.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|NO
 define|#
@@ -438,7 +444,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Rectangular Select Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -449,7 +458,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Elliptical Selection Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -460,7 +472,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Free-hand Selection Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -471,7 +486,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fuzzy Selection Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -482,7 +500,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Bezier Selection Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -493,7 +514,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Intelligent Scissors Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -504,7 +528,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"By-Color Select Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -564,7 +591,10 @@ name|sample_merged_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Sample Merged"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -635,7 +665,10 @@ name|bezier_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Bezier Extends"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -704,7 +737,10 @@ name|antialias_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Antialiasing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -777,7 +813,10 @@ name|fixed_size_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Fixed size / aspect ratio"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -862,7 +901,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|" Width: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1024,7 +1066,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|" Height: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1163,7 +1208,10 @@ name|feather_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Feather"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1249,7 +1297,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Feather Radius"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2008,7 +2059,10 @@ name|select_mode
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
+name|_
+argument_list|(
 literal|"Selection: ADD"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2021,7 +2075,10 @@ name|select_mode
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
+name|_
+argument_list|(
 literal|"Selection: SUBTRACT"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2034,7 +2091,10 @@ name|select_mode
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
+name|_
+argument_list|(
 literal|"Selection: INTERSECT"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2047,7 +2107,10 @@ name|select_mode
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
+name|_
+argument_list|(
 literal|"Selection: REPLACE"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2999,7 +3062,10 @@ name|size
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
+name|_
+argument_list|(
 literal|"Selection: %d x %d"
+argument_list|)
 argument_list|,
 name|abs
 argument_list|(
@@ -3655,7 +3721,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The image"
+name|N_
+argument_list|(
+literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3663,7 +3732,10 @@ name|PDB_FLOAT
 block|,
 literal|"x"
 block|,
+name|N_
+argument_list|(
 literal|"x coordinate of upper-left corner of rectangle"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3671,7 +3743,10 @@ name|PDB_FLOAT
 block|,
 literal|"y"
 block|,
+name|N_
+argument_list|(
 literal|"y coordinate of upper-left corner of rectangle"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3679,7 +3754,10 @@ name|PDB_FLOAT
 block|,
 literal|"width"
 block|,
+name|N_
+argument_list|(
 literal|"the width of the rectangle: width> 0"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3687,7 +3765,10 @@ name|PDB_FLOAT
 block|,
 literal|"height"
 block|,
+name|N_
+argument_list|(
 literal|"the height of the rectangle: height> 0"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3695,7 +3776,10 @@ name|PDB_INT32
 block|,
 literal|"operation"
 block|,
+name|N_
+argument_list|(
 literal|"the selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3) }"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3703,7 +3787,10 @@ name|PDB_INT32
 block|,
 literal|"feather"
 block|,
+name|N_
+argument_list|(
 literal|"feather option for selections"
+argument_list|)
 block|}
 block|,
 block|{
@@ -3711,7 +3798,10 @@ name|PDB_FLOAT
 block|,
 literal|"feather_radius"
 block|,
+name|N_
+argument_list|(
 literal|"radius for feather operation"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -3725,9 +3815,15 @@ init|=
 block|{
 literal|"gimp_rect_select"
 block|,
+name|N_
+argument_list|(
 literal|"Create a rectangular selection over the specified image"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This tool creates a rectangular selection over the specified image.  The rectangular region can be either added to, subtracted from, or replace the contents of the previous selection mask.  If the feather option is enabled, the resulting selection is blurred before combining.  The blur is a gaussian blur with the specified feather radius."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

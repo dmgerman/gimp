@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d1bc10103
+DECL|enum|__anon2c744fc20103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -419,6 +419,20 @@ name|char
 name|no_mask
 init|=
 name|OPAQUE_OPACITY
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|add_lut
+specifier|static
+name|int
+name|add_lut
+index|[
+literal|256
+index|]
+index|[
+literal|256
+index|]
 decl_stmt|;
 end_decl_stmt
 
@@ -1165,6 +1179,14 @@ block|{
 name|int
 name|i
 decl_stmt|;
+name|int
+name|j
+decl_stmt|,
+name|k
+decl_stmt|;
+name|int
+name|tmp_sum
+decl_stmt|;
 comment|/*  allocate the temporary buffer  */
 name|tmp_buffer
 operator|=
@@ -1296,6 +1318,75 @@ operator|=
 name|tmp
 expr_stmt|;
 block|}
+for|for
+control|(
+name|j
+operator|=
+literal|0
+init|;
+name|j
+operator|<
+literal|256
+condition|;
+name|j
+operator|++
+control|)
+block|{
+comment|//rows
+for|for
+control|(
+name|k
+operator|=
+literal|0
+init|;
+name|k
+operator|<
+literal|256
+condition|;
+name|k
+operator|++
+control|)
+block|{
+comment|//column
+name|tmp_sum
+operator|=
+name|j
+operator|+
+name|k
+expr_stmt|;
+comment|//	  printf("tmp_sum: %d", tmp_sum);
+if|if
+condition|(
+name|tmp_sum
+operator|>
+literal|255
+condition|)
+name|tmp_sum
+operator|=
+literal|255
+expr_stmt|;
+comment|//	  printf("  max: %d  \n", add_lut[j][k]);
+name|add_lut
+index|[
+name|j
+index|]
+index|[
+name|k
+index|]
+operator|=
+name|tmp_sum
+expr_stmt|;
+block|}
+block|}
+comment|/*   for (j = 0; j< 255; j++) */
+comment|/*     {    //rows */
+comment|/*       for (k = 0; k< 255; k++) */
+comment|/* 	{   //column */
+comment|/* 	  printf ("%d",add_lut[j][k]); */
+comment|/* 	  printf(" "); */
+comment|/* 	} */
+comment|/*       printf("\n"); */
+comment|/*     } */
 block|}
 end_function
 
@@ -3534,28 +3625,31 @@ name|b
 operator|++
 control|)
 block|{
-name|sum
-operator|=
-name|src1
-index|[
-name|b
-index|]
-operator|+
-name|src2
-index|[
-name|b
-index|]
-expr_stmt|;
+comment|//	  sum = src1[b] + src2[b];
 name|dest
 index|[
 name|b
 index|]
 operator|=
-name|MAX255
-argument_list|(
-name|sum
-argument_list|)
+name|add_lut
+index|[
+operator|(
+name|src1
+index|[
+name|b
+index|]
+operator|)
+index|]
+index|[
+operator|(
+name|src2
+index|[
+name|b
+index|]
+operator|)
+index|]
 expr_stmt|;
+comment|//	  dest[b] = MAX255 (sum);
 comment|/* dest[b] = sum | ((sum&256) - ((sum&256)>> 8)); */
 comment|/* dest[b] = (sum> 255) ? 255 : sum; */
 comment|/* older, little slower */

@@ -81,6 +81,12 @@ directive|include
 file|"gimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 DECL|typedef|AirbrushTimeout
 typedef|typedef
@@ -373,7 +379,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Airbrush Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -432,7 +441,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Rate"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -579,7 +591,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Pressure"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -757,7 +772,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"killing stray timer, please report to lewing@gimp.org"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_timeout_remove
@@ -1223,7 +1241,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1231,7 +1252,10 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
+name|N_
+argument_list|(
 literal|"the drawable"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1239,7 +1263,10 @@ name|PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
+name|N_
+argument_list|(
 literal|"The pressure of the airbrush strokes: 0<= pressure<= 100"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1247,7 +1274,10 @@ name|PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
+name|N_
+argument_list|(
 literal|"number of stroke control points (count each coordinate as 2 points)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -1255,7 +1285,10 @@ name|PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
+name|N_
+argument_list|(
 literal|"array of stroke coordinates: {s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y}"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1269,9 +1302,15 @@ init|=
 block|{
 literal|"gimp_airbrush"
 block|,
+name|N_
+argument_list|(
 literal|"Paint in the current brush with varying pressure.  Paint application is time-dependent"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This tool simulates the use of an airbrush.  Paint pressure represents the relative intensity of the paint application.  High pressure results in a thicker layer of paint while low pressure results in a thinner layer."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

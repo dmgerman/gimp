@@ -293,10 +293,16 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb00a380108
+DECL|struct|__anon2a57fe990108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1033,7 +1039,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error: Levels of undo must be zero or greater."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|levels_of_undo
@@ -1051,7 +1060,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error: Marching speed must be 50 or greater."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|marching_speed
@@ -1069,7 +1081,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error: Default width must be one or greater."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_width
@@ -1087,7 +1102,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error: Default height must be one or greater."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_height
@@ -2044,7 +2062,10 @@ name|restart_notification
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"You will need to restart GIMP for these changes to take effect."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_list_free
@@ -2960,17 +2981,35 @@ name|transparencies
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Light Checks"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Mid-Tone Checks"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Dark Checks"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"White Only"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Gray Only"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Black Only"
+argument_list|)
 block|,   }
 decl_stmt|;
 name|char
@@ -2979,11 +3018,20 @@ name|checks
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Small Checks"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Medium Checks"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Large Checks"
+argument_list|)
 block|,   }
 decl_stmt|;
 name|int
@@ -3016,7 +3064,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2bb00a380208
+DECL|struct|__anon2a57fe990208
 struct|struct
 block|{
 DECL|member|label
@@ -3034,19 +3082,28 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Bytes"
+argument_list|)
 block|,
 literal|1
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"KiloBytes"
+argument_list|)
 block|,
 literal|1024
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"MegaBytes"
+argument_list|)
 block|,
 operator|(
 literal|1024
@@ -3056,7 +3113,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2bb00a380308
+DECL|struct|__anon2a57fe990308
 struct|struct
 block|{
 DECL|member|label
@@ -3076,56 +3133,77 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Temp dir:"
+argument_list|)
 block|,
 operator|&
 name|edit_temp_path
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Swap dir:"
+argument_list|)
 block|,
 operator|&
 name|edit_swap_path
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Brushes dir:"
+argument_list|)
 block|,
 operator|&
 name|edit_brush_path
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Gradients dir:"
+argument_list|)
 block|,
 operator|&
 name|edit_gradient_path
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Patterns dir:"
+argument_list|)
 block|,
 operator|&
 name|edit_pattern_path
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Palette dir:"
+argument_list|)
 block|,
 operator|&
 name|edit_palette_path
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Plug-in dir:"
+argument_list|)
 block|,
 operator|&
 name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2bb00a380408
+DECL|struct|__anon2a57fe990408
 struct|struct
 block|{
 DECL|member|label
@@ -3143,25 +3221,37 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Small"
+argument_list|)
 block|,
 literal|32
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Medium"
+argument_list|)
 block|,
 literal|64
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Large"
+argument_list|)
 block|,
 literal|128
 block|}
@@ -3557,7 +3647,10 @@ argument_list|(
 name|prefs_dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Preferences"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* handle the wm close signal */
@@ -3598,7 +3691,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3660,7 +3756,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3722,7 +3821,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3806,7 +3908,10 @@ name|out_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Display settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -3892,7 +3997,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Default image size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4006,7 +4114,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Width:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4056,7 +4167,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Height:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4324,7 +4438,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Default image type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4388,7 +4505,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"RGB"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -4475,7 +4595,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Grayscale"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -4590,7 +4713,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview size:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4765,7 +4891,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cubic interpolation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -4851,7 +4980,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Transparency Type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5033,7 +5165,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Check Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5215,7 +5350,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Display"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -5235,7 +5373,10 @@ name|out_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Interface settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -5291,7 +5432,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Resize window on zoom"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -5346,9 +5490,12 @@ expr_stmt|;
 name|button
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Perfect-but-slow pointer tracking"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
 argument_list|(
@@ -5399,13 +5546,16 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/* Don't show the Auto-save button until we really  	 have auto-saving in the gimp.        	 button = gtk_check_button_new_with_label("Auto save"); 	 gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (button),                                    auto_save); 	 gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 0); 	 gtk_signal_connect (GTK_OBJECT (button), "toggled", 	                           (GtkSignalFunc) file_prefs_toggle_callback,&auto_save);          gtk_widget_show (button);       */
+comment|/* Don't show the Auto-save button until we really  	 have auto-saving in the gimp.        	 button = gtk_check_button_new_with_label(_("Auto save")); 	 gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (button),                                    auto_save); 	 gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 0); 	 gtk_signal_connect (GTK_OBJECT (button), "toggled", 	                           (GtkSignalFunc) file_prefs_toggle_callback,&auto_save);          gtk_widget_show (button);       */
 name|button
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Disable cursor updating"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
 argument_list|(
@@ -5459,9 +5609,12 @@ expr_stmt|;
 name|button
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Show tool tips"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
 argument_list|(
@@ -5515,9 +5668,12 @@ expr_stmt|;
 name|button
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Show rulers"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
 argument_list|(
@@ -5572,7 +5728,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Show statusbar"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -5658,7 +5817,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Levels of undo:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5816,7 +5978,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Marching ants speed:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5974,7 +6139,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Recent Documents list size:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6102,7 +6270,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Interface"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -6122,7 +6293,10 @@ name|out_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Environment settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -6187,7 +6361,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Conservative memory usage"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -6273,7 +6450,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tile cache size:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6549,7 +6729,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Install colormap (8-bit only)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -6623,7 +6806,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Colormap cycling (8-bit only)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -6697,7 +6883,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Environment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -6717,7 +6906,10 @@ name|out_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Session managment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -6782,7 +6974,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save window positions on exit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -6878,7 +7073,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Clear saved window positions"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6923,7 +7121,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Always try to restore session"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -6979,7 +7180,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save device status on exit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -7035,7 +7239,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Session"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -7060,7 +7267,10 @@ name|out_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Directories settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -7340,7 +7550,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Directories"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page

@@ -252,6 +252,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixmaps2.h"
 end_include
 
@@ -335,11 +341,17 @@ block|{
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Rect Select"
+argument_list|)
 block|,
 literal|0
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Rect Select"
+argument_list|)
 block|,
 literal|"R"
 block|,
@@ -350,7 +362,10 @@ operator|*
 operator|)
 name|rect_bits
 block|,
+name|N_
+argument_list|(
 literal|"Select rectangular regions"
+argument_list|)
 block|,
 literal|"ContextHelp/rect-select"
 block|,
@@ -366,11 +381,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Ellipse Select"
+argument_list|)
 block|,
 literal|1
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Ellipse Select"
+argument_list|)
 block|,
 literal|"E"
 block|,
@@ -381,7 +402,10 @@ operator|*
 operator|)
 name|circ_bits
 block|,
+name|N_
+argument_list|(
 literal|"Select elliptical regions"
+argument_list|)
 block|,
 literal|"ContextHelp/ellipse-select"
 block|,
@@ -397,11 +421,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Free Select"
+argument_list|)
 block|,
 literal|2
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Free Select"
+argument_list|)
 block|,
 literal|"F"
 block|,
@@ -412,7 +442,10 @@ operator|*
 operator|)
 name|free_bits
 block|,
+name|N_
+argument_list|(
 literal|"Select hand-drawn regions"
+argument_list|)
 block|,
 literal|"ContextHelp/free-select"
 block|,
@@ -428,11 +461,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Fuzzy Select"
+argument_list|)
 block|,
 literal|3
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Fuzzy Select"
+argument_list|)
 block|,
 literal|"Z"
 block|,
@@ -443,7 +482,10 @@ operator|*
 operator|)
 name|fuzzy_bits
 block|,
+name|N_
+argument_list|(
 literal|"Select contiguous regions"
+argument_list|)
 block|,
 literal|"ContextHelp/fuzzy-select"
 block|,
@@ -459,11 +501,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Bezier Select"
+argument_list|)
 block|,
 literal|4
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Bezier Select"
+argument_list|)
 block|,
 literal|"B"
 block|,
@@ -474,7 +522,10 @@ operator|*
 operator|)
 name|bezier_bits
 block|,
+name|N_
+argument_list|(
 literal|"Select regions using Bezier curves"
+argument_list|)
 block|,
 literal|"ContextHelp/bezier-select"
 block|,
@@ -490,11 +541,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Intelligent Scissors"
+argument_list|)
 block|,
 literal|5
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Intelligent Scissors"
+argument_list|)
 block|,
 literal|"I"
 block|,
@@ -505,7 +562,10 @@ operator|*
 operator|)
 name|iscissors_bits
 block|,
+name|N_
+argument_list|(
 literal|"Select shapes from image"
+argument_list|)
 block|,
 literal|"ContextHelp/iscissors"
 block|,
@@ -521,11 +581,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Move"
+argument_list|)
 block|,
 literal|6
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Move"
+argument_list|)
 block|,
 literal|"M"
 block|,
@@ -536,7 +602,10 @@ operator|*
 operator|)
 name|move_bits
 block|,
+name|N_
+argument_list|(
 literal|"Move layers& selections"
+argument_list|)
 block|,
 literal|"ContextHelp/move"
 block|,
@@ -552,11 +621,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Magnify"
+argument_list|)
 block|,
 literal|7
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Magnify"
+argument_list|)
 block|,
 literal|"<shift>M"
 block|,
@@ -567,7 +642,10 @@ operator|*
 operator|)
 name|magnify_bits
 block|,
+name|N_
+argument_list|(
 literal|"Zoom in& out"
+argument_list|)
 block|,
 literal|"ContextHelp/magnify"
 block|,
@@ -583,11 +661,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Crop"
+argument_list|)
 block|,
 literal|8
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Crop"
+argument_list|)
 block|,
 literal|"<shift>C"
 block|,
@@ -598,7 +682,10 @@ operator|*
 operator|)
 name|crop_bits
 block|,
+name|N_
+argument_list|(
 literal|"Crop the image"
+argument_list|)
 block|,
 literal|"ContextHelp/crop"
 block|,
@@ -614,11 +701,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Transform"
+argument_list|)
 block|,
 literal|9
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Transform"
+argument_list|)
 block|,
 literal|"<shift>T"
 block|,
@@ -629,7 +722,10 @@ operator|*
 operator|)
 name|scale_bits
 block|,
+name|N_
+argument_list|(
 literal|"Transform the layer or selection"
+argument_list|)
 block|,
 literal|"ContextHelp/rotate"
 block|,
@@ -646,7 +742,10 @@ comment|/* rotate */
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Transform"
+argument_list|)
 block|,
 literal|9
 block|,
@@ -673,7 +772,10 @@ comment|/* scale */
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Transform"
+argument_list|)
 block|,
 literal|9
 block|,
@@ -700,7 +802,10 @@ comment|/* shear */
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Transform"
+argument_list|)
 block|,
 literal|9
 block|,
@@ -727,11 +832,17 @@ comment|/* perspective */
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Flip"
+argument_list|)
 block|,
 literal|10
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Flip"
+argument_list|)
 block|,
 literal|"<shift>F"
 block|,
@@ -742,7 +853,10 @@ operator|*
 operator|)
 name|horizflip_bits
 block|,
+name|N_
+argument_list|(
 literal|"Flip the layer or selection"
+argument_list|)
 block|,
 literal|"ContextHelp/flip"
 block|,
@@ -759,7 +873,10 @@ comment|/* horizontal */
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Flip"
+argument_list|)
 block|,
 literal|10
 block|,
@@ -786,11 +903,17 @@ comment|/* vertical */
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Text"
+argument_list|)
 block|,
 literal|11
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Text"
+argument_list|)
 block|,
 literal|"T"
 block|,
@@ -801,7 +924,10 @@ operator|*
 operator|)
 name|text_bits
 block|,
+name|N_
+argument_list|(
 literal|"Add text to the image"
+argument_list|)
 block|,
 literal|"ContextHelp/text"
 block|,
@@ -817,11 +943,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Color Picker"
+argument_list|)
 block|,
 literal|12
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Color Picker"
+argument_list|)
 block|,
 literal|"O"
 block|,
@@ -832,7 +964,10 @@ operator|*
 operator|)
 name|colorpicker_bits
 block|,
+name|N_
+argument_list|(
 literal|"Pick colors from the image"
+argument_list|)
 block|,
 literal|"ContextHelp/color-picker"
 block|,
@@ -848,11 +983,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Bucket Fill"
+argument_list|)
 block|,
 literal|13
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Bucket Fill"
+argument_list|)
 block|,
 literal|"<shift>B"
 block|,
@@ -863,7 +1004,10 @@ operator|*
 operator|)
 name|fill_bits
 block|,
+name|N_
+argument_list|(
 literal|"Fill with a color or pattern"
+argument_list|)
 block|,
 literal|"ContextHelp/bucket-fill"
 block|,
@@ -879,11 +1023,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Blend"
+argument_list|)
 block|,
 literal|14
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Blend"
+argument_list|)
 block|,
 literal|"L"
 block|,
@@ -894,7 +1044,10 @@ operator|*
 operator|)
 name|gradient_bits
 block|,
+name|N_
+argument_list|(
 literal|"Fill with a color gradient"
+argument_list|)
 block|,
 literal|"ContextHelp/gradient"
 block|,
@@ -910,11 +1063,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Pencil"
+argument_list|)
 block|,
 literal|15
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Pencil"
+argument_list|)
 block|,
 literal|"<shift>P"
 block|,
@@ -925,7 +1084,10 @@ operator|*
 operator|)
 name|pencil_bits
 block|,
+name|N_
+argument_list|(
 literal|"Draw sharp pencil strokes"
+argument_list|)
 block|,
 literal|"ContextHelp/pencil"
 block|,
@@ -941,11 +1103,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Paintbrush"
+argument_list|)
 block|,
 literal|16
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Paintbrush"
+argument_list|)
 block|,
 literal|"P"
 block|,
@@ -956,7 +1124,10 @@ operator|*
 operator|)
 name|paint_bits
 block|,
+name|N_
+argument_list|(
 literal|"Paint fuzzy brush strokes"
+argument_list|)
 block|,
 literal|"ContextHelp/paintbrush"
 block|,
@@ -972,11 +1143,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Eraser"
+argument_list|)
 block|,
 literal|17
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Eraser"
+argument_list|)
 block|,
 literal|"<shift>E"
 block|,
@@ -987,7 +1164,10 @@ operator|*
 operator|)
 name|erase_bits
 block|,
+name|N_
+argument_list|(
 literal|"Erase to background or transparency"
+argument_list|)
 block|,
 literal|"ContextHelp/eraser"
 block|,
@@ -1003,11 +1183,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Airbrush"
+argument_list|)
 block|,
 literal|18
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Airbrush"
+argument_list|)
 block|,
 literal|"A"
 block|,
@@ -1018,7 +1204,10 @@ operator|*
 operator|)
 name|airbrush_bits
 block|,
+name|N_
+argument_list|(
 literal|"Airbrush with variable pressure"
+argument_list|)
 block|,
 literal|"ContextHelp/airbrush"
 block|,
@@ -1034,11 +1223,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Clone"
+argument_list|)
 block|,
 literal|19
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Clone"
+argument_list|)
 block|,
 literal|"C"
 block|,
@@ -1049,7 +1244,10 @@ operator|*
 operator|)
 name|clone_bits
 block|,
+name|N_
+argument_list|(
 literal|"Paint using patterns or image regions"
+argument_list|)
 block|,
 literal|"ContextHelp/clone"
 block|,
@@ -1065,11 +1263,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Convolve"
+argument_list|)
 block|,
 literal|20
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Convolve"
+argument_list|)
 block|,
 literal|"V"
 block|,
@@ -1080,7 +1284,10 @@ operator|*
 operator|)
 name|blur_bits
 block|,
+name|N_
+argument_list|(
 literal|"Blur or sharpen"
+argument_list|)
 block|,
 literal|"ContextHelp/convolve"
 block|,
@@ -1096,11 +1303,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Ink"
+argument_list|)
 block|,
 literal|21
 block|,
+name|N_
+argument_list|(
 literal|"/Tools/Ink"
+argument_list|)
 block|,
 literal|"K"
 block|,
@@ -1111,7 +1324,10 @@ operator|*
 operator|)
 name|ink_bits
 block|,
+name|N_
+argument_list|(
 literal|"Draw in ink"
+argument_list|)
 block|,
 literal|"ContextHelp/ink"
 block|,
@@ -1128,11 +1344,17 @@ comment|/*  Non-toolbox tools  */
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"By Color Select"
+argument_list|)
 block|,
 literal|22
 block|,
+name|N_
+argument_list|(
 literal|"/Select/By Color..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1154,11 +1376,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Color Balance"
+argument_list|)
 block|,
 literal|23
 block|,
+name|N_
+argument_list|(
 literal|"/Image/Colors/Color Balance"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1180,11 +1408,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Brightness-Contrast"
+argument_list|)
 block|,
 literal|24
 block|,
+name|N_
+argument_list|(
 literal|"/Image/Colors/Brightness-Contrast"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1206,11 +1440,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Hue-Saturation"
+argument_list|)
 block|,
 literal|25
 block|,
+name|N_
+argument_list|(
 literal|"/Image/Colors/Hue-Saturation"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1232,11 +1472,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Posterize"
+argument_list|)
 block|,
 literal|26
 block|,
+name|N_
+argument_list|(
 literal|"/Image/Colors/Posterize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1258,11 +1504,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Threshold"
+argument_list|)
 block|,
 literal|27
 block|,
+name|N_
+argument_list|(
 literal|"/Image/Colors/Threshold"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1284,11 +1536,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Curves"
+argument_list|)
 block|,
 literal|28
 block|,
+name|N_
+argument_list|(
 literal|"/Image/Colors/Curves"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1310,11 +1568,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Levels"
+argument_list|)
 block|,
 literal|29
 block|,
+name|N_
+argument_list|(
 literal|"/Image/Colors/Levels"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1336,11 +1600,17 @@ block|,
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Histogram"
+argument_list|)
 block|,
 literal|30
 block|,
+name|N_
+argument_list|(
 literal|"/Image/Histogram"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1787,7 +2057,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|tools_options_dialog_callback
 block|,
@@ -1822,7 +2095,10 @@ argument_list|(
 name|options_shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Tool Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -2121,7 +2397,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"This tool has no options."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

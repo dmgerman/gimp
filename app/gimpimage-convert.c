@@ -104,6 +104,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer_pvt.h"
 end_include
 
@@ -1822,7 +1828,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a439aa50108
+DECL|struct|__anon2c53ec630108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1869,7 +1875,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a439aa50208
+DECL|struct|__anon2c53ec630208
 block|{
 DECL|member|ncolors
 name|long
@@ -1888,7 +1894,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a439aa50308
+DECL|struct|__anon2c53ec630308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2408,7 +2414,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|indexed_ok_callback
 block|,
@@ -2418,7 +2427,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|indexed_cancel_callback
 block|,
@@ -2636,7 +2648,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Indexed Color Conversion"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2662,7 +2677,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Palette Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2810,7 +2828,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Generate optimal palette: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -2882,7 +2903,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"# of colors: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3141,7 +3165,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Use custom palette"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -3301,7 +3328,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Use WWW-optimised palette"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|{
@@ -3410,7 +3440,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Use black/white (1-bit) palette"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -3487,7 +3520,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Dither Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|{
@@ -3599,7 +3635,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Enable Floyd-Steinberg dithering"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -3705,7 +3744,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|" [ Warning ] "
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|{
@@ -6860,7 +6902,7 @@ name|needs_quantize
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*			  g_print ("\nmax colours exceeded - needs quantize.\n");*/
+comment|/*			  g_print (_("\nmax colours exceeded - needs quantize.\n"));*/
 goto|goto
 name|already_found
 goto|;
@@ -12343,8 +12385,11 @@ block|}
 block|}
 name|g_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Non-existant colour was expected to "
 literal|"be in non-destructive colourmap."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|got_colour
@@ -14956,7 +15001,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -14970,9 +15018,15 @@ init|=
 block|{
 literal|"gimp_convert_rgb"
 block|,
+name|N_
+argument_list|(
 literal|"Convert specified image to RGB color"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure converts the specified image to RGB color.  This process requires an image of type GRAY or INDEXED.  No image content is lost in this process aside from the colormap for an indexed image."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -15125,7 +15179,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -15139,9 +15196,15 @@ init|=
 block|{
 literal|"gimp_convert_grayscale"
 block|,
+name|N_
+argument_list|(
 literal|"Convert specified image to grayscale (256 intensity levels)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure converts the specified image to grayscale with 8 bits per pixel (256 intensity levels).  This process requires an image of type RGB or INDEXED."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -15294,7 +15357,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -15302,7 +15368,10 @@ name|PDB_INT32
 block|,
 literal|"dither"
 block|,
+name|N_
+argument_list|(
 literal|"Floyd-Steinberg dithering"
+argument_list|)
 block|}
 block|,
 block|{
@@ -15310,7 +15379,10 @@ name|PDB_INT32
 block|,
 literal|"num_cols"
 block|,
+name|N_
+argument_list|(
 literal|"the number of colors to quantize to"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -15324,9 +15396,15 @@ init|=
 block|{
 literal|"gimp_convert_indexed"
 block|,
+name|N_
+argument_list|(
 literal|"Convert specified image to indexed color"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure converts the specified image to indexed color.  This process requires an image of type GRAY or RGB.  The 'num_cols' arguments specifies how many colors the resulting image should be quantized to (1-256)."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -15537,7 +15615,10 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
+name|N_
+argument_list|(
 literal|"the image"
+argument_list|)
 block|}
 block|,
 block|{
@@ -15545,7 +15626,10 @@ name|PDB_INT32
 block|,
 literal|"dither"
 block|,
+name|N_
+argument_list|(
 literal|"Floyd-Steinberg dithering"
+argument_list|)
 block|}
 block|,
 block|{
@@ -15553,7 +15637,10 @@ name|PDB_INT32
 block|,
 literal|"palette_type"
 block|,
+name|N_
+argument_list|(
 literal|"The type of palette to use, (0 optimal) (1 reuse) (2 WWW) (3 Mono) (4 Custom)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -15561,7 +15648,10 @@ name|PDB_INT32
 block|,
 literal|"num_cols"
 block|,
+name|N_
+argument_list|(
 literal|"the number of colors to quantize to, ignored unless (palette_type == 0)"
+argument_list|)
 block|}
 block|,
 block|{
@@ -15569,7 +15659,10 @@ name|PDB_STRING
 block|,
 literal|"palette"
 block|,
+name|N_
+argument_list|(
 literal|"The name of the custom palette to use, ignored unless (palette_type == 4)"
+argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -15583,9 +15676,15 @@ init|=
 block|{
 literal|"gimp_convert_indexed_palette"
 block|,
+name|N_
+argument_list|(
 literal|"Convert specified image to indexed color"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"This procedure converts the specified image to indexed color.  This process requires an image of type GRAY or RGB.  The `palette_type' specifies what kind of palette to use, A type of `0' means to use an optimal palette of `num_cols' generated from the colors in the image.  A type of `1' means to re-use the previous palette.  A type of `2' means to use the WWW-optimized palette.  Type `3' means to use only black and white colors.  A type of `4' means to use a palette from the gimp palettes directories."
+argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -15812,7 +15911,7 @@ name|value
 operator|.
 name|pdb_pointer
 expr_stmt|;
-comment|/*         fprintf(stderr, "looking for palette `%s'\n", palette_name); */
+comment|/*         fprintf(stderr, _("looking for palette `%s'\n"), palette_name); */
 if|if
 condition|(
 operator|!
