@@ -48,42 +48,6 @@ comment|/*  * these enums that are registered with the type system  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_CLONE_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_CLONE_TYPE
-value|(gimp_clone_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_clone_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon29a0008b0103
-block|{
-DECL|enumerator|GIMP_IMAGE_CLONE
-name|GIMP_IMAGE_CLONE
-block|,
-comment|/*< desc="Image source">*/
-DECL|enumerator|GIMP_PATTERN_CLONE
-name|GIMP_PATTERN_CLONE
-comment|/*< desc="Pattern source">*/
-DECL|typedef|GimpCloneType
-block|}
-name|GimpCloneType
-typedef|;
-end_typedef
-
-begin_define
 DECL|macro|GIMP_TYPE_CLONE_ALIGN_MODE
 define|#
 directive|define
@@ -105,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29a0008b0203
+DECL|enum|__anon28b8fec60103
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -121,42 +85,6 @@ comment|/*< desc="Registered">*/
 DECL|typedef|GimpCloneAlignMode
 block|}
 name|GimpCloneAlignMode
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_DODGE_BURN_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_DODGE_BURN_TYPE
-value|(gimp_dodge_burn_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_dodge_burn_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon29a0008b0303
-block|{
-DECL|enumerator|GIMP_DODGE
-name|GIMP_DODGE
-block|,
-comment|/*< desc="Dodge">*/
-DECL|enumerator|GIMP_BURN
-name|GIMP_BURN
-comment|/*< desc="Burn">*/
-DECL|typedef|GimpDodgeBurnType
-block|}
-name|GimpDodgeBurnType
 typedef|;
 end_typedef
 
@@ -181,7 +109,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a0008b0403
+DECL|enum|__anon28b8fec60203
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -222,7 +150,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29a0008b0503
+DECL|enum|__anon28b8fec60303
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -238,42 +166,6 @@ name|GimpInkBlobType
 typedef|;
 end_typedef
 
-begin_define
-DECL|macro|GIMP_TYPE_PAINT_APPLICATION_MODE
-define|#
-directive|define
-name|GIMP_TYPE_PAINT_APPLICATION_MODE
-value|(gimp_paint_application_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_paint_application_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon29a0008b0603
-block|{
-DECL|enumerator|GIMP_PAINT_CONSTANT
-name|GIMP_PAINT_CONSTANT
-block|,
-comment|/*< desc="Constant">*/
-DECL|enumerator|GIMP_PAINT_INCREMENTAL
-name|GIMP_PAINT_INCREMENTAL
-comment|/*< desc="Incremental">*/
-DECL|typedef|GimpPaintApplicationMode
-block|}
-name|GimpPaintApplicationMode
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -282,7 +174,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29a0008b0703
+DECL|enum|__anon28b8fec60403
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -303,7 +195,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, pdb-skip>*/
-DECL|enum|__anon29a0008b0803
+DECL|enum|__anon28b8fec60503
 block|{
 DECL|enumerator|GIMP_PAINT_STATE_INIT
 name|GIMP_PAINT_STATE_INIT
