@@ -1495,12 +1495,9 @@ argument_list|(
 name|chooser
 argument_list|)
 argument_list|,
-name|gtk_window_get_screen
+name|gtk_widget_get_screen
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|console
-argument_list|)
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
