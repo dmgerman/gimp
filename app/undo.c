@@ -213,7 +213,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon293e49bf0103
+DECL|enum|__anon2a4ea7420103
 typedef|typedef
 enum|enum
 block|{
@@ -7353,12 +7353,15 @@ end_comment
 
 begin_function
 name|int
-DECL|function|undo_push_channel (GImage * gimage,void * cu_ptr)
+DECL|function|undo_push_channel (GImage * gimage,UndoType type,void * cu_ptr)
 name|undo_push_channel
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -7376,6 +7379,19 @@ decl_stmt|;
 name|int
 name|size
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|type
+operator|==
+name|CHANNEL_ADD_UNDO
+operator|||
+name|type
+operator|==
+name|CHANNEL_REMOVE_UNDO
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|cu
 operator|=
 operator|(
@@ -7409,7 +7425,7 @@ name|gimage
 argument_list|,
 name|size
 argument_list|,
-name|CHANNEL_UNDO
+name|type
 argument_list|,
 name|TRUE
 argument_list|)
@@ -7442,9 +7458,7 @@ else|else
 block|{
 if|if
 condition|(
-name|cu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|CHANNEL_REMOVE_UNDO
 condition|)
@@ -7508,9 +7522,7 @@ name|state
 operator|==
 name|UNDO
 operator|&&
-name|cu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|CHANNEL_ADD_UNDO
 operator|)
@@ -7520,9 +7532,7 @@ name|state
 operator|==
 name|REDO
 operator|&&
-name|cu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|CHANNEL_REMOVE_UNDO
 operator|)
@@ -7721,9 +7731,7 @@ name|state
 operator|==
 name|REDO
 operator|&&
-name|cu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|CHANNEL_ADD_UNDO
 operator|)
@@ -7733,9 +7741,7 @@ name|state
 operator|==
 name|UNDO
 operator|&&
-name|cu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|CHANNEL_REMOVE_UNDO
 operator|)
@@ -11188,7 +11194,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon293e49bf0208
+DECL|struct|__anon2a4ea7420208
 typedef|typedef
 struct|struct
 block|{
@@ -11781,11 +11787,20 @@ block|}
 block|,
 comment|/* unused? */
 block|{
-name|CHANNEL_UNDO
+name|CHANNEL_ADD_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"channel"
+literal|"new channel"
+argument_list|)
+block|}
+block|,
+block|{
+name|CHANNEL_REMOVE_UNDO
+block|,
+name|N_
+argument_list|(
+literal|"delete channel"
 argument_list|)
 block|}
 block|,

@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon28c9c2a60103
+DECL|enum|__anon29475fc10103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -13873,15 +13873,11 @@ name|gimage
 operator|->
 name|active_channel
 expr_stmt|;
-name|cu
-operator|->
-name|undo_type
-operator|=
-literal|0
-expr_stmt|;
 name|undo_push_channel
 argument_list|(
 name|gimage
+argument_list|,
+name|CHANNEL_ADD_UNDO
 argument_list|,
 name|cu
 argument_list|)
@@ -14015,12 +14011,6 @@ name|gimage
 operator|->
 name|active_channel
 expr_stmt|;
-name|cu
-operator|->
-name|undo_type
-operator|=
-literal|1
-expr_stmt|;
 name|gimage
 operator|->
 name|channels
@@ -14117,6 +14107,8 @@ comment|/*  Important to push the undo here in case the push fails  */
 name|undo_push_channel
 argument_list|(
 name|gimage
+argument_list|,
+name|CHANNEL_REMOVE_UNDO
 argument_list|,
 name|cu
 argument_list|)
