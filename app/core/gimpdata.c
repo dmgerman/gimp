@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc258540103
+DECL|enum|__anon275a9df80103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -1316,7 +1316,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_data_create_filename (GimpData * data,const gchar * basename,const gchar * dest_dir)
+DECL|function|gimp_data_create_filename (GimpData * data,const gchar * dest_dir)
 name|gimp_data_create_filename
 parameter_list|(
 name|GimpData
@@ -1326,14 +1326,13 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|basename
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
 name|dest_dir
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|safename
+decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -1341,10 +1340,6 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|fullpath
-decl_stmt|;
-name|gchar
-modifier|*
-name|safe_name
 decl_stmt|;
 name|gint
 name|i
@@ -1364,13 +1359,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|basename
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|dest_dir
 operator|!=
 name|NULL
@@ -1384,23 +1372,38 @@ name|dest_dir
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|safe_name
+name|safename
 operator|=
-name|g_strdup
+name|g_filename_from_utf8
 argument_list|(
-name|basename
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|safe_name
+name|safename
 index|[
 literal|0
 index|]
 operator|==
 literal|'.'
 condition|)
-name|safe_name
+name|safename
 index|[
 literal|0
 index|]
@@ -1413,7 +1416,7 @@ name|i
 operator|=
 literal|0
 init|;
-name|safe_name
+name|safename
 index|[
 name|i
 index|]
@@ -1423,7 +1426,7 @@ operator|++
 control|)
 if|if
 condition|(
-name|safe_name
+name|safename
 index|[
 name|i
 index|]
@@ -1432,13 +1435,13 @@ name|G_DIR_SEPARATOR
 operator|||
 name|g_ascii_isspace
 argument_list|(
-name|safe_name
+name|safename
 index|[
 name|i
 index|]
 argument_list|)
 condition|)
-name|safe_name
+name|safename
 index|[
 name|i
 index|]
@@ -1449,7 +1452,7 @@ name|filename
 operator|=
 name|g_strconcat
 argument_list|(
-name|safe_name
+name|safename
 argument_list|,
 name|gimp_data_get_extension
 argument_list|(
@@ -1496,7 +1499,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s-%d%s"
 argument_list|,
-name|safe_name
+name|safename
 argument_list|,
 name|unum
 operator|++
@@ -1526,7 +1529,7 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|safe_name
+name|safename
 argument_list|)
 expr_stmt|;
 name|gimp_data_set_filename

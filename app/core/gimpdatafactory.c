@@ -1046,13 +1046,6 @@ name|gimp_data_create_filename
 argument_list|(
 name|data
 argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|data
-argument_list|)
-operator|->
-name|name
-argument_list|,
 name|writable_dir
 argument_list|)
 expr_stmt|;
@@ -1912,13 +1905,6 @@ condition|)
 name|gimp_data_create_filename
 argument_list|(
 name|data
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|data
-argument_list|)
-operator|->
-name|name
 argument_list|,
 name|writable_dir
 argument_list|)
