@@ -589,7 +589,7 @@ block|{
 operator|*
 name|nreturn_vals
 operator|=
-literal|1
+literal|2
 expr_stmt|;
 name|values
 index|[
@@ -772,7 +772,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b7a49920108
+DECL|struct|__anon28bee3b90108
 block|{
 DECL|member|Width
 name|unsigned
@@ -822,7 +822,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b7a49920208
+DECL|struct|__anon28bee3b90208
 block|{
 DECL|member|transparent
 name|int
