@@ -49,8 +49,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2f0c930103
+DECL|enum|__anon27dfca720103
 block|{
 DECL|enumerator|INITIAL_CHANNEL_MASK
 name|INITIAL_CHANNEL_MASK
@@ -84,8 +83,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2f0c930203
+DECL|enum|__anon27dfca720203
 block|{
 DECL|enumerator|NO_COMBINATION
 name|NO_COMBINATION
