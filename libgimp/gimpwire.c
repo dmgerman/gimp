@@ -406,7 +406,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"wire_read: error"
+literal|"%s: wire_read: error"
+argument_list|,
+name|g_get_prgname
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -474,7 +477,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"wire_read: error"
+literal|"%s: wire_read: error"
+argument_list|,
+name|g_get_prgname
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -494,7 +500,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"wire_read: unexpected EOF (plug-in crashed?)"
+literal|"%s: wire_read: unexpected EOF"
+argument_list|,
+name|g_get_prgname
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -561,7 +570,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"wire_write: error"
+literal|"%s: wire_write: error"
+argument_list|,
+name|g_get_prgname
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -629,7 +641,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"wire_write: error"
+literal|"%s: wire_write: error"
+argument_list|,
+name|g_get_prgname
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|wire_error_val

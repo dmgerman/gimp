@@ -135,7 +135,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2afb781d0103
+DECL|enum|__anon2be5289c0103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -151,7 +151,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2afb781d0203
+DECL|enum|__anon2be5289c0203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb781d0308
+DECL|struct|__anon2be5289c0308
 block|{
 DECL|member|index
 name|gint
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb781d0408
+DECL|struct|__anon2be5289c0408
 block|{
 DECL|member|title
 name|gchar
@@ -2910,7 +2910,7 @@ name|i
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"webbrowser"
+literal|"helpbrowser"
 argument_list|,
 name|TRUE
 argument_list|)
