@@ -108,13 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplist.h"
+file|"gimplayer-floating-sel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
+file|"gimplist.h"
 end_include
 
 begin_include

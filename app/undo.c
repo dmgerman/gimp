@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer-floating-sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayermask.h"
 end_include
 
@@ -181,12 +187,6 @@ begin_include
 include|#
 directive|include
 file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"floating_sel.h"
 end_include
 
 begin_include
@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dec9bf0103
+DECL|enum|__anon2a0425ae0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

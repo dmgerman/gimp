@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer-floating-sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"selection_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"floating_sel.h"
 end_include
 
 begin_include

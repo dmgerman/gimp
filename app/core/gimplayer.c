@@ -106,6 +106,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayer-floating-sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayermask.h"
 end_include
 
@@ -124,12 +130,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5a97190103
+DECL|enum|__anon2b3023f50103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

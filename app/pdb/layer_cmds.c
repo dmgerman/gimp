@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer-floating-sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -89,12 +95,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"floating_sel.h"
 end_include
 
 begin_include

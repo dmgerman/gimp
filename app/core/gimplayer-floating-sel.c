@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -54,31 +54,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask.h"
+file|"gimpimage-mask.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimplayer.h"
+file|"gimplayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimplayermask.h"
+file|"gimplayer-floating-sel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
+file|"gimplayermask.h"
 end_include
 
 begin_include

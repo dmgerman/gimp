@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpprogress.h"
 end_include
 

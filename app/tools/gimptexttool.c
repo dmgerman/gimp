@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/base-types.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint-funcs/paint-funcs.h"
 end_include
 
 begin_include
@@ -97,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimplayer-floating-sel.h"
 end_include
 
 begin_include
@@ -144,19 +150,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
+file|"gimprc.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include

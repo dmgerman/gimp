@@ -84,13 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplist.h"
+file|"gimplayer-floating-sel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
+file|"gimplist.h"
 end_include
 
 begin_include
@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6545a90103
+DECL|enum|__anon2ad56aed0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
