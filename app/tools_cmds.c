@@ -5127,6 +5127,8 @@ argument_list|,
 name|hardness
 argument_list|,
 name|method
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return

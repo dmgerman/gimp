@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrushpixmap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -69,6 +75,16 @@ directive|include
 file|"pencil.h"
 end_include
 
+begin_comment
+comment|/* for color_area_with_pixmap */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"pixmapbrush.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -91,10 +107,45 @@ begin_comment
 comment|/*  the pencil tool options  */
 end_comment
 
+begin_typedef
+DECL|typedef|PencilOptions
+typedef|typedef
+name|struct
+name|_PencilOptions
+name|PencilOptions
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_PencilOptions
+struct|struct
+name|_PencilOptions
+block|{
+DECL|member|paint_options
+name|PaintOptions
+name|paint_options
+decl_stmt|;
+DECL|member|incremental
+name|gboolean
+name|incremental
+decl_stmt|;
+DECL|member|incremental_d
+name|gboolean
+name|incremental_d
+decl_stmt|;
+DECL|member|incremental_w
+name|GtkWidget
+modifier|*
+name|incremental_w
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_decl_stmt
 DECL|variable|pencil_options
 specifier|static
-name|PaintOptions
+name|PencilOptions
 modifier|*
 name|pencil_options
 init|=
@@ -116,9 +167,29 @@ modifier|*
 parameter_list|,
 name|GimpDrawable
 modifier|*
+parameter_list|,
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_decl_stmt
+DECL|variable|non_gui_incremental
+specifier|static
+name|gboolean
+name|non_gui_incremental
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_define
+DECL|macro|PENCIL_INCREMENTAL_DEFAULT
+define|#
+directive|define
+name|PENCIL_INCREMENTAL_DEFAULT
+value|FALSE
+end_define
 
 begin_comment
 comment|/*  functions  */
@@ -159,6 +230,10 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+name|pencil_options
+operator|->
+name|incremental
 argument_list|)
 expr_stmt|;
 break|break;
@@ -292,7 +367,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pencil_motion (PaintCore * paint_core,GimpDrawable * drawable)
+DECL|function|pencil_motion (PaintCore * paint_core,GimpDrawable * drawable,gboolean increment)
 name|pencil_motion
 parameter_list|(
 name|PaintCore
@@ -302,6 +377,9 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|increment
 parameter_list|)
 block|{
 name|GImage
@@ -372,6 +450,37 @@ index|]
 operator|=
 name|OPAQUE_OPACITY
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_IS_BRUSH_PIXMAP
+argument_list|(
+name|paint_core
+operator|->
+name|brush
+argument_list|)
+condition|)
+block|{
+comment|/* if its a pixmap, do pixmap stuff */
+name|color_area_with_pixmap
+argument_list|(
+name|gimage
+argument_list|,
+name|drawable
+argument_list|,
+name|area
+argument_list|,
+name|paint_core
+operator|->
+name|brush
+argument_list|)
+expr_stmt|;
+name|increment
+operator|=
+name|INCREMENTAL
+expr_stmt|;
+block|}
+else|else
+block|{
 comment|/*  color the pixels  */
 name|color_pixels
 argument_list|(
@@ -395,6 +504,7 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*Make the opacity dependent on the current pressure      This makes a more natural pencil since light pressure     on a graphite pen will give transparent line */
 name|opacity
 operator|=
@@ -451,7 +561,7 @@ argument_list|)
 argument_list|,
 name|HARD
 argument_list|,
-name|CONSTANT
+name|increment
 argument_list|)
 expr_stmt|;
 block|}
@@ -481,6 +591,8 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+name|non_gui_incremental
 argument_list|)
 expr_stmt|;
 return|return

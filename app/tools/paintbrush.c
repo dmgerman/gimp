@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrushlist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradient.h"
 end_include
 
@@ -85,6 +91,12 @@ begin_include
 include|#
 directive|include
 file|"paintbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixmapbrush.h"
 end_include
 
 begin_include
@@ -924,11 +936,11 @@ name|fade_out_d
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1000.0
+literal|50.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|1.0
+literal|0.1
 argument_list|,
 literal|0.0
 argument_list|)
@@ -1973,6 +1985,8 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
+comment|/* silly hack to be removed later */
+comment|/* paint_core->brush = gimp_brush_list_get_brush_by_index(brush_list,(rand()% gimp_brush_list_length(brush_list))); */
 comment|/*  Get a region which can be used to paint to  */
 if|if
 condition|(
@@ -2165,6 +2179,40 @@ block|}
 comment|/* just leave this because I know as soon as i delete it i'll find a bug */
 comment|/*          printf("temp_blend: %u grad_len: %f distance: %f \n",temp_blend, gradient_length, distance); */
 comment|/*  color the pixels  */
+if|if
+condition|(
+name|GIMP_IS_BRUSH_PIXMAP
+argument_list|(
+name|paint_core
+operator|->
+name|brush
+argument_list|)
+operator|&&
+operator|!
+name|gradient_length
+condition|)
+block|{
+name|color_area_with_pixmap
+argument_list|(
+name|gimage
+argument_list|,
+name|drawable
+argument_list|,
+name|area
+argument_list|,
+name|paint_core
+operator|->
+name|brush
+argument_list|)
+expr_stmt|;
+name|mode
+operator|=
+name|INCREMENTAL
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/*  color the pixels  */
 name|color_pixels
 argument_list|(
 name|temp_buf_data
@@ -2187,6 +2235,9 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+block|}
+comment|/*      color_pixels (temp_buf_data (area), col, */
+comment|/* 		    area->width * area->height, area->bytes); */
 comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|paint_core_paste_canvas
 argument_list|(
