@@ -573,8 +573,6 @@ literal|"select-save"
 argument_list|,
 name|drawable
 operator|&&
-name|sel
-operator|&&
 operator|!
 name|fs
 argument_list|)
