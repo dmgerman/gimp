@@ -276,6 +276,11 @@ name|by_color_select
 decl_stmt|;
 comment|/*  TRUE if there's an active    */
 comment|/*  "by color" selection dialog  */
+DECL|member|qmask_state
+name|int
+name|qmask_state
+decl_stmt|;
+comment|/* TRUE if qmask is on           */
 comment|/*  Undo apparatus  */
 DECL|member|undo_stack
 name|GSList

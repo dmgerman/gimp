@@ -287,6 +287,14 @@ value|33
 end_define
 
 begin_define
+DECL|macro|QMASK_UNDO
+define|#
+directive|define
+name|QMASK_UNDO
+value|34
+end_define
+
+begin_define
 DECL|macro|MISC_UNDO
 define|#
 directive|define
@@ -624,6 +632,18 @@ parameter_list|,
 specifier|const
 name|char
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
+name|undo_push_qmask
+parameter_list|(
+name|GImage
+modifier|*
+parameter_list|,
+name|int
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -122,7 +122,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_GIMAGE>*/
-DECL|enum|__anon275a2a4c0103
+DECL|enum|__anon28c5dcd50103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -225,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275a2a4c0203
+DECL|enum|__anon28c5dcd50203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -250,7 +250,7 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon275a2a4c0303
+DECL|enum|__anon28c5dcd50303
 typedef|typedef
 enum|enum
 block|{
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275a2a4c0403
+DECL|enum|__anon28c5dcd50403
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275a2a4c0503
+DECL|enum|__anon28c5dcd50503
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -975,6 +975,20 @@ name|GimpImage
 modifier|*
 parameter_list|,
 name|Tattoo
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|Channel
+modifier|*
+name|gimp_image_get_channel_by_name
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|char
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

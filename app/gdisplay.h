@@ -342,6 +342,16 @@ modifier|*
 name|vsb
 decl_stmt|;
 comment|/*  widgets for scroll bars                 */
+DECL|member|qmaskoff
+DECL|member|qmaskon
+name|GtkWidget
+modifier|*
+name|qmaskoff
+decl_stmt|,
+modifier|*
+name|qmaskon
+decl_stmt|;
+comment|/*  widgets for qmask buttons               */
 DECL|member|hrule
 DECL|member|vrule
 name|GtkWidget

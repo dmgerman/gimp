@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"draw_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -138,19 +144,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"draw_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"bezier_selectP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug_in.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"qmask.h"
 end_include
 
 begin_include
@@ -180,11 +180,17 @@ end_include
 begin_include
 include|#
 directive|include
+file|"bezier_selectP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer_pvt.h"
 end_include
 
 begin_comment
-comment|/* ick. */
+comment|/* ick. (not alone either) */
 end_comment
 
 begin_include
@@ -712,6 +718,12 @@ condition|?
 name|GRAY
 else|:
 name|RGB
+expr_stmt|;
+comment|/* set the qmask buttons */
+name|qmask_buttons_update
+argument_list|(
+name|gdisp
+argument_list|)
 expr_stmt|;
 comment|/*  set the user data  */
 if|if
@@ -2854,6 +2866,12 @@ operator|(
 name|void
 operator|*
 operator|)
+name|gdisp
+argument_list|)
+expr_stmt|;
+comment|/* update the gdisplay's qmask buttons */
+name|qmask_buttons_update
+argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
