@@ -928,7 +928,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|//  g_return_val_if_fail (bevent != NULL, FALSE);
+comment|/*  g_return_val_if_fail (bevent != NULL, FALSE); */
 name|g_return_val_if_fail
 argument_list|(
 name|dbbrowser
