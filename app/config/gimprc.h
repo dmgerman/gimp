@@ -139,6 +139,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gchar
+modifier|*
+name|gimp_rc_query
+parameter_list|(
+name|GimpRc
+modifier|*
+name|rc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|key
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_rc_write_changes
 parameter_list|(

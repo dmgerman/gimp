@@ -262,6 +262,13 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+name|g_string_append_c
+argument_list|(
+name|str
+argument_list|,
+literal|' '
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_config_serialize_value
@@ -574,6 +581,13 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+name|g_string_append_c
+argument_list|(
+name|str
+argument_list|,
+literal|' '
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_config_serialize_value
@@ -671,7 +685,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #Gstring.  *   * This utility function appends a string representation of #GValue to @str.  *   * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #Gstring.  *  * This utility function appends a string representation of #GValue to @str.  *   * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
@@ -713,9 +727,9 @@ name|str
 argument_list|,
 name|bool
 condition|?
-literal|" yes"
+literal|"yes"
 else|:
-literal|" no"
+literal|"no"
 argument_list|)
 expr_stmt|;
 return|return
@@ -772,13 +786,6 @@ operator|->
 name|value_nick
 condition|)
 block|{
-name|g_string_append_c
-argument_list|(
-name|str
-argument_list|,
-literal|' '
-argument_list|)
-expr_stmt|;
 name|g_string_append
 argument_list|(
 name|str
@@ -852,7 +859,7 @@ name|g_string_append_printf
 argument_list|(
 name|str
 argument_list|,
-literal|" \"%s\""
+literal|"\"%s\""
 argument_list|,
 name|escaped
 argument_list|)
@@ -927,13 +934,6 @@ argument_list|,
 name|v_double
 argument_list|)
 expr_stmt|;
-name|g_string_append_c
-argument_list|(
-name|str
-argument_list|,
-literal|' '
-argument_list|)
-expr_stmt|;
 name|g_string_append
 argument_list|(
 name|str
@@ -979,13 +979,6 @@ name|value
 argument_list|,
 operator|&
 name|tmp_value
-argument_list|)
-expr_stmt|;
-name|g_string_append_c
-argument_list|(
-name|str
-argument_list|,
-literal|' '
 argument_list|)
 expr_stmt|;
 name|g_string_append

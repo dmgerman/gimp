@@ -298,7 +298,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29de58d60103
+DECL|enum|__anon28a146520103
 block|{
 DECL|enumerator|GIMP_CONFIG_ERROR_FILE_ENOENT
 name|GIMP_CONFIG_ERROR_FILE_ENOENT
