@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8291f00103
+DECL|enum|__anon27b5239c0103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -230,7 +230,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8291f00203
+DECL|enum|__anon27b5239c0203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -255,7 +255,7 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon2b8291f00303
+DECL|enum|__anon27b5239c0303
 typedef|typedef
 enum|enum
 block|{
@@ -267,6 +267,25 @@ name|ORIENTATION_HORIZONTAL
 block|,
 DECL|enumerator|ORIENTATION_VERTICAL
 name|ORIENTATION_VERTICAL
+DECL|typedef|InternalOrientationType
+block|}
+name|InternalOrientationType
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|enum|__anon27b5239c0403
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|HORIZONTAL
+name|HORIZONTAL
+block|,
+DECL|enumerator|VERTICAL
+name|VERTICAL
+block|,
+DECL|enumerator|UNKNOWN
+name|UNKNOWN
 DECL|typedef|OrientationType
 block|}
 name|OrientationType
@@ -276,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8291f00403
+DECL|enum|__anon27b5239c0503
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -304,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8291f00503
+DECL|enum|__anon27b5239c0603
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

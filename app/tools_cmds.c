@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint_core.h"
 end_include
 
@@ -5505,11 +5511,11 @@ if|if
 condition|(
 name|flip_type
 operator|<
-literal|0
+name|VERTICAL
 operator|||
 name|flip_type
 operator|>
-literal|1
+name|UNKNOWN
 condition|)
 name|success
 operator|=
@@ -5552,6 +5558,17 @@ name|new_layer
 argument_list|)
 expr_stmt|;
 comment|/* flip the buffer */
+switch|switch
+condition|(
+name|flip_type
+condition|)
+block|{
+case|case
+name|ORIENTATION_HORIZONTAL
+case|:
+case|case
+name|ORIENTATION_VERTICAL
+case|:
 name|new_tiles
 operator|=
 name|flip_tool_flip
@@ -5566,14 +5583,16 @@ operator|-
 literal|1
 argument_list|,
 name|flip_type
-operator|==
-literal|1
-condition|?
-name|ORIENTATION_VERTICAL
-else|:
-name|ORIENTATION_HORIZONTAL
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
+name|new_tiles
+operator|=
+name|NULL
+expr_stmt|;
+break|break;
+block|}
 comment|/* free the cut/copied buffer */
 name|tile_manager_destroy
 argument_list|(
@@ -5677,7 +5696,7 @@ name|PDB_INT32
 block|,
 literal|"flip_type"
 block|,
-literal|"Type of flip: HORIZONTAL (0) or VERTICAL (1)"
+literal|"Type of flip: HORIZONTAL (0), VERTICAL (1), UNKNOWN (2)"
 block|}
 block|}
 decl_stmt|;
@@ -9138,11 +9157,11 @@ if|if
 condition|(
 name|shear_type
 operator|<
-literal|0
+name|VERTICAL
 operator|||
 name|shear_type
 operator|>
-literal|1
+name|UNKNOWN
 condition|)
 name|success
 operator|=
@@ -9240,7 +9259,7 @@ if|if
 condition|(
 name|shear_type
 operator|==
-literal|0
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|gimp_matrix_xshear
 argument_list|(
@@ -9258,7 +9277,7 @@ if|if
 condition|(
 name|shear_type
 operator|==
-literal|1
+name|ORIENTATION_VERTICAL
 condition|)
 name|gimp_matrix_yshear
 argument_list|(
@@ -9409,7 +9428,7 @@ name|PDB_INT32
 block|,
 literal|"shear_type"
 block|,
-literal|"Type of shear: HORIZONTAL (0) or VERTICAL (1)"
+literal|"Type of shear: HORIZONTAL (0), VERTICAL (1), UNKNOWN (2)"
 block|}
 block|,
 block|{

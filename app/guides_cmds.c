@@ -1374,6 +1374,8 @@ name|data
 operator|)
 operator|->
 name|orientation
+operator|-
+literal|1
 expr_stmt|;
 name|success
 operator|=
@@ -1460,7 +1462,7 @@ name|PDB_INT32
 block|,
 literal|"orientation"
 block|,
-literal|"The guide's orientation: { ORIENTATION_HORIZONTAL (1), ORIENTATION_VERTICAL (2) }"
+literal|"The guide's orientation: { HORIZONTAL (0), VERTICAL (1), UNKNOWN (2) }"
 block|}
 block|}
 decl_stmt|;
