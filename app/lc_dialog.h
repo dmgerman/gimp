@@ -42,18 +42,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  implies free& create  */
+end_comment
+
 begin_function_decl
 name|void
 name|lc_dialog_rebuild
 parameter_list|(
-name|int
+name|gint
+name|new_preview_size
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  implies free& create  */
-end_comment
 
 begin_function_decl
 name|void

@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a85a580108
+DECL|struct|__anon2c6428c20108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -1064,13 +1064,14 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|export_dialog (GSList * actions,gchar * format)
+DECL|function|export_dialog (GSList * actions,const gchar * format)
 name|export_dialog
 parameter_list|(
 name|GSList
 modifier|*
 name|actions
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|format
@@ -1779,12 +1780,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_image:  * @image_ID: Pointer to the image_ID.  * @drawable_ID: Pointer to the drawable_ID.  * @format_name: The (short) name of the image_format (e.g. JPEG or GIF).  * @capabilities: What can the image_format do?  *  * Takes an image and a drawable to be saved together with a  * description of the capabilities of the image_format. If the  * type of image doesn't match the capabilities of the format  * a dialog is opened that informs the user that the image has  * to be exported and offers to do the necessary conversions.  *  * If the user chooses to export the image, a copy is created.  * This copy is then converted, the image_ID and drawable_ID  * are changed to point to the new image and the procedure returns  * GIMP_EXPORT_EXPORT. The save_plugin has to take care of deleting the  * created image using gimp_image_delete() when it has saved it.  *  * If the user chooses to Ignore the export problem, the image_ID  * and drawable_ID is not altered, GIMP_EXPORT_IGNORE is returned and   * the save_plugin should try to save the original image. If the   * user chooses Cancel, GIMP_EXPORT_CANCEL is returned and the   * save_plugin should quit itself with status #STATUS_CANCEL.  *  * Returns: An enum of #GimpExportReturnType describing the user_action.  */
+comment|/**  * gimp_export_image:  * @image_ID: Pointer to the image_ID.  * @drawable_ID: Pointer to the drawable_ID.  * @format_name: The (short) name of the image_format (e.g. JPEG or GIF).  * @capabilities: What can the image_format do?  *  * Takes an image and a drawable to be saved together with a  * description of the capabilities of the image_format. If the  * type of image doesn't match the capabilities of the format  * a dialog is opened that informs the user that the image has  * to be exported and offers to do the necessary conversions.  *  * If the user chooses to export the image, a copy is created.  * This copy is then converted, the image_ID and drawable_ID  * are changed to point to the new image and the procedure returns  * GIMP_EXPORT_EXPORT. The save_plugin has to take care of deleting the  * created image using gimp_image_delete() when it has saved it.  *  * If the user chooses to Ignore the export problem, the image_ID  * and drawable_ID is not altered, GIMP_EXPORT_IGNORE is returned and   * the save_plugin should try to save the original image. If the   * user chooses Cancel, GIMP_EXPORT_CANCEL is returned and the   * save_plugin should quit itself with status #STATUS_CANCEL.  *  * Returns: An enum of #GimpExportReturnType describing the user_action.  **/
 end_comment
 
 begin_function
 name|GimpExportReturnType
-DECL|function|gimp_export_image (gint32 * image_ID,gint32 * drawable_ID,gchar * format_name,GimpExportCapabilities capabilities)
+DECL|function|gimp_export_image (gint32 * image_ID,gint32 * drawable_ID,const gchar * format_name,GimpExportCapabilities capabilities)
 name|gimp_export_image
 parameter_list|(
 name|gint32
@@ -1795,6 +1796,7 @@ name|gint32
 modifier|*
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|format_name

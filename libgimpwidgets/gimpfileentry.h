@@ -174,10 +174,12 @@ name|GtkWidget
 modifier|*
 name|gimp_file_selection_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -205,6 +207,7 @@ name|GimpFileSelection
 modifier|*
 name|gfs
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename

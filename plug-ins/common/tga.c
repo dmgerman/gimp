@@ -1314,12 +1314,14 @@ name|header
 index|[
 literal|18
 index|]
-decl_stmt|,
+decl_stmt|;
+name|guchar
 name|footer
 index|[
 literal|26
 index|]
-decl_stmt|,
+decl_stmt|;
+name|guchar
 name|extension
 index|[
 literal|495
@@ -2200,9 +2202,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|rle_write (FILE * fp,guchar * buffer,guint width,guint bytes)
 specifier|static
 name|void
+DECL|function|rle_write (FILE * fp,guchar * buffer,guint width,guint bytes)
 name|rle_write
 parameter_list|(
 name|FILE
@@ -2220,11 +2222,12 @@ name|guint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gint
 name|repeat
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|direct
 init|=
 literal|0
@@ -2235,7 +2238,7 @@ name|from
 init|=
 name|buffer
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|;
 for|for
@@ -2507,9 +2510,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|rle_read (FILE * fp,guchar * buffer,tga_info * info)
 specifier|static
-name|int
+name|gint
+DECL|function|rle_read (FILE * fp,guchar * buffer,tga_info * info)
 name|rle_read
 parameter_list|(
 name|FILE
@@ -2526,11 +2529,13 @@ name|info
 parameter_list|)
 block|{
 specifier|static
-name|int
+name|gint
 name|repeat
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+specifier|static
+name|gint
 name|direct
 init|=
 literal|0
@@ -2542,10 +2547,10 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|head
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|k
@@ -2719,9 +2724,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|flip_line (guchar * buffer,tga_info * info)
 specifier|static
 name|void
+DECL|function|flip_line (guchar * buffer,tga_info * info)
 name|flip_line
 parameter_list|(
 name|guchar
@@ -2735,11 +2740,12 @@ parameter_list|)
 block|{
 name|guchar
 name|temp
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|alt
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|s
@@ -2842,9 +2848,9 @@ comment|/* Some people write 16-bit RGB TGA files. The spec would probably    al
 end_comment
 
 begin_function
-DECL|function|upsample (guchar * dest,guchar * src,guint width,guint bytes)
 specifier|static
 name|void
+DECL|function|upsample (guchar * dest,guchar * src,guint width,guint bytes)
 name|upsample
 parameter_list|(
 name|guchar
@@ -2862,7 +2868,7 @@ name|guint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|;
 for|for
@@ -3001,9 +3007,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|bgr2rgb (guchar * dest,guchar * src,guint width,guint bytes,guint alpha)
 specifier|static
 name|void
+DECL|function|bgr2rgb (guchar * dest,guchar * src,guint width,guint bytes,guint alpha)
 name|bgr2rgb
 parameter_list|(
 name|guchar
@@ -3155,9 +3161,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_line (FILE * fp,guchar * row,guchar * buffer,tga_info * info,GimpDrawable * drawable)
 specifier|static
 name|void
+DECL|function|read_line (FILE * fp,guchar * row,guchar * buffer,tga_info * info,GimpDrawable * drawable)
 name|read_line
 parameter_list|(
 name|FILE
@@ -3314,7 +3320,7 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|ReadImage (FILE * fp,tga_info * info,char * filename)
+DECL|function|ReadImage (FILE * fp,tga_info * info,gchar * filename)
 name|ReadImage
 parameter_list|(
 name|FILE
@@ -3325,7 +3331,7 @@ name|tga_info
 modifier|*
 name|info
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -3356,16 +3362,20 @@ name|row
 decl_stmt|;
 name|GimpImageType
 name|dtype
+init|=
+literal|0
 decl_stmt|;
 name|GimpImageBaseType
 name|itype
+init|=
+literal|0
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|max_tileheight
 decl_stmt|,
 name|tileheight
@@ -4059,9 +4069,10 @@ decl_stmt|;
 name|GimpImageType
 name|dtype
 decl_stmt|;
-name|int
+name|gint
 name|width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|height
 decl_stmt|;
 name|FILE
@@ -4072,16 +4083,20 @@ name|guchar
 modifier|*
 name|name_buf
 decl_stmt|;
-name|int
+name|gint
 name|tileheight
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|out_bpp
-decl_stmt|,
+init|=
+literal|0
+decl_stmt|;
+name|gboolean
 name|status
 init|=
 name|TRUE
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|row
@@ -4091,7 +4106,8 @@ name|header
 index|[
 literal|18
 index|]
-decl_stmt|,
+decl_stmt|;
+name|guchar
 name|footer
 index|[
 literal|26
@@ -4100,7 +4116,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|pixels
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
@@ -4110,6 +4127,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|gimp_cmap
+init|=
+name|NULL
 decl_stmt|;
 name|drawable
 operator|=
@@ -4152,7 +4171,7 @@ expr_stmt|;
 name|gimp_progress_init
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|name_buf
@@ -4842,12 +4861,12 @@ block|}
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|row
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|height
 argument_list|)

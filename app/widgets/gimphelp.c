@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimphelp.c  * Copyright (C) 1999 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimphelp.c  * Copyright (C) 1999-2000 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -157,14 +157,17 @@ specifier|static
 name|gboolean
 name|gimp_help_internal
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_path
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|current_locale
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -177,14 +180,17 @@ specifier|static
 name|void
 name|gimp_help_netscape
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_path
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|current_locale
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -210,9 +216,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_standard_help_func (gchar * help_data)
+DECL|function|gimp_standard_help_func (const gchar * help_data)
 name|gimp_standard_help_func
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -234,13 +241,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help (gchar * help_path,gchar * help_data)
+DECL|function|gimp_help (const gchar * help_path,const gchar * help_data)
 name|gimp_help
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_path
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -579,17 +588,20 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_help_internal (gchar * help_path,gchar * current_locale,gchar * help_data)
+DECL|function|gimp_help_internal (const gchar * help_path,const gchar * current_locale,const gchar * help_data)
 name|gimp_help_internal
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_path
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|current_locale
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -740,6 +752,9 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
+operator|(
+name|gpointer
+operator|)
 name|help_path
 expr_stmt|;
 name|args
@@ -760,6 +775,9 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
+operator|(
+name|gpointer
+operator|)
 name|current_locale
 expr_stmt|;
 name|args
@@ -780,6 +798,9 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
+operator|(
+name|gpointer
+operator|)
 name|help_data
 expr_stmt|;
 name|plug_in_run
@@ -853,17 +874,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_netscape (gchar * help_path,gchar * current_locale,gchar * help_data)
+DECL|function|gimp_help_netscape (const gchar * help_path,const gchar * current_locale,const gchar * help_data)
 name|gimp_help_netscape
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_path
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|current_locale
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data

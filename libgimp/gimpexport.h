@@ -32,7 +32,7 @@ comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1dda760103
+DECL|enum|__anon29cdda9c0103
 block|{
 DECL|enumerator|GIMP_EXPORT_CAN_HANDLE_RGB
 name|GIMP_EXPORT_CAN_HANDLE_RGB
@@ -88,7 +88,7 @@ name|GimpExportCapabilities
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1dda760203
+DECL|enum|__anon29cdda9c0203
 block|{
 DECL|enumerator|GIMP_EXPORT_CANCEL
 name|GIMP_EXPORT_CANCEL
@@ -113,6 +113,7 @@ name|gint32
 modifier|*
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|format_name

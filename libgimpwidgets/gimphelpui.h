@@ -38,6 +38,7 @@ modifier|*
 name|GimpHelpFunc
 function_decl|)
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -71,6 +72,7 @@ comment|/*  the standard gimp help function  *  (has different implementations i
 name|void
 name|gimp_standard_help_func
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -87,6 +89,7 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -105,6 +108,7 @@ name|gchar
 modifier|*
 name|tooltip
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data

@@ -156,6 +156,7 @@ name|GtkWidget
 modifier|*
 name|gimp_unit_menu_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|format

@@ -102,18 +102,15 @@ argument_list|)
 operator|->
 name|destroy
 condition|)
-operator|(
-operator|*
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|destroy
-operator|)
-operator|(
+argument_list|(
 name|object
-operator|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -273,7 +270,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixmap_new:  * @xpm_data: A pointer to a XPM data structure as found in XPM files.  *  * Creates a new #GimpPixmap widget.  *  * Returns: A pointer to the new #GimpPixmap widget.  *  */
+comment|/**  * gimp_pixmap_new:  * @xpm_data: A pointer to a XPM data structure as found in XPM files.  *  * Creates a new #GimpPixmap widget.  *  * Returns: A pointer to the new #GimpPixmap widget.  **/
 end_comment
 
 begin_function
@@ -327,7 +324,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixmap_set:  * @pixmap: The pixmap widget you want to set the new xpm_data for.  * @xpm_data: A pointer to a XPM data structure as found in XPM files.  *  * Sets a new image for an existing #GimpPixmap widget.  *  */
+comment|/**  * gimp_pixmap_set:  * @pixmap: The pixmap widget you want to set the new xpm_data for.  * @xpm_data: A pointer to a XPM data structure as found in XPM files.  *  * Sets a new image for an existing #GimpPixmap widget.  **/
 end_comment
 
 begin_function
@@ -513,18 +510,15 @@ argument_list|)
 operator|->
 name|realize
 condition|)
-operator|(
-operator|*
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|realize
-operator|)
-operator|(
+argument_list|(
 name|widget
-operator|)
+argument_list|)
 expr_stmt|;
 name|gimp_pixmap_create_from_xpm_d
 argument_list|(

@@ -4823,9 +4823,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_help_func (gchar * help_data)
+DECL|function|tools_help_func (const gchar * help_data)
 name|tools_help_func
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_data

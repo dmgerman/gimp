@@ -87,7 +87,7 @@ name|GimpSizeEntryClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2894432b0103
+DECL|enum|__anon2a1dcbc60103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -220,6 +220,7 @@ parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|unit_format
@@ -263,6 +264,7 @@ name|GimpSizeEntry
 modifier|*
 name|gse
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text

@@ -114,6 +114,7 @@ name|GtkWidget
 modifier|*
 name|gimp_color_button_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -136,6 +137,7 @@ name|GtkWidget
 modifier|*
 name|gimp_color_button_double_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title

@@ -41,6 +41,7 @@ name|GtkItemFactoryEntry
 name|entry
 decl_stmt|;
 DECL|member|help_page
+specifier|const
 name|gchar
 modifier|*
 name|help_page

@@ -506,7 +506,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29372c360103
+DECL|enum|__anon29e516160103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -613,7 +613,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29372c360203
+DECL|enum|__anon29e516160203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -2304,9 +2304,10 @@ end_function
 begin_function
 name|GimpContext
 modifier|*
-DECL|function|gimp_context_new (gchar * name,GimpContext * template)
+DECL|function|gimp_context_new (const gchar * name,GimpContext * template)
 name|gimp_context_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -2570,13 +2571,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_name (GimpContext * context,gchar * name)
+DECL|function|gimp_context_set_name (GimpContext * context,const gchar * name)
 name|gimp_context_set_name
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

@@ -141,6 +141,7 @@ name|GtkWidget
 modifier|*
 name|gimp_query_string_box
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -148,14 +149,17 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|message
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|initial
@@ -164,6 +168,7 @@ name|GtkObject
 modifier|*
 name|object
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|signal
@@ -179,6 +184,7 @@ name|GtkWidget
 modifier|*
 name|gimp_query_int_box
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -186,11 +192,13 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|message
 parameter_list|,
@@ -207,6 +215,7 @@ name|GtkObject
 modifier|*
 name|object
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|signal
@@ -222,6 +231,7 @@ name|GtkWidget
 modifier|*
 name|gimp_query_double_box
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -229,10 +239,12 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|message
@@ -253,6 +265,7 @@ name|GtkObject
 modifier|*
 name|object
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|signal
@@ -268,6 +281,7 @@ name|GtkWidget
 modifier|*
 name|gimp_query_size_box
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -275,10 +289,12 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|message
@@ -308,6 +324,7 @@ name|GtkObject
 modifier|*
 name|object
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|signal
@@ -323,6 +340,7 @@ name|GtkWidget
 modifier|*
 name|gimp_query_boolean_box
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -330,6 +348,7 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -337,14 +356,17 @@ parameter_list|,
 name|gboolean
 name|eek
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|message
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|true_button
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|false_button
@@ -353,6 +375,7 @@ name|GtkObject
 modifier|*
 name|object
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|signal

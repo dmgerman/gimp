@@ -192,7 +192,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_new (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,gchar * help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,...)
+DECL|function|gimp_dialog_new (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,const gchar * help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,...)
 name|gimp_dialog_new
 parameter_list|(
 specifier|const
@@ -208,6 +208,7 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -224,7 +225,7 @@ parameter_list|,
 name|gint
 name|auto_shrink
 parameter_list|,
-comment|/* specify action area buttons as va_list: 		  *  gchar          *label, 		  *  GtkSignalFunc   callback, 		  *  gpointer        data, 		  *  GtkObject      *slot_object, 		  *  GtkWidget     **widget_ptr, 		  *  gboolean        default_action, 		  *  gboolean        connect_delete, 		  */
+comment|/* specify action area buttons as va_list: 		  *  const gchar    *label, 		  *  GtkSignalFunc   callback, 		  *  gpointer        data, 		  *  GtkObject      *slot_object, 		  *  GtkWidget     **widget_ptr, 		  *  gboolean        default_action, 		  *  gboolean        connect_delete, 		  */
 modifier|...
 parameter_list|)
 block|{
@@ -283,7 +284,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_newv (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,gchar * help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,va_list args)
+DECL|function|gimp_dialog_newv (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,const gchar * help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,va_list args)
 name|gimp_dialog_newv
 parameter_list|(
 specifier|const
@@ -299,6 +300,7 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -504,7 +506,7 @@ name|GtkDialog
 modifier|*
 name|dialog
 parameter_list|,
-comment|/* specify action area buttons as va_list: 				 *  gchar          *label, 				 *  GtkSignalFunc   callback, 				 *  gpointer        data, 				 *  GtkObject      *slot_object, 				 *  GtkWidget     **widget_ptr, 				 *  gboolean        default_action, 				 *  gboolean        connect_delete, 				 */
+comment|/* specify action area buttons as va_list: 				 *  const gchar    *label, 				 *  GtkSignalFunc   callback, 				 *  gpointer        data, 				 *  GtkObject      *slot_object, 				 *  GtkWidget     **widget_ptr, 				 *  gboolean        default_action, 				 *  gboolean        connect_delete, 				 */
 modifier|...
 parameter_list|)
 block|{
@@ -561,6 +563,7 @@ modifier|*
 name|button
 decl_stmt|;
 comment|/*  action area variables  */
+specifier|const
 name|gchar
 modifier|*
 name|label
@@ -613,6 +616,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
+specifier|const
 name|gchar
 operator|*
 argument_list|)

@@ -48,7 +48,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a348b760103
+DECL|enum|__anon2a8b670e0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -691,7 +691,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_size_entry_new (gint number_of_fields,GimpUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,gint spinbutton_usize,GimpSizeEntryUpdatePolicy update_policy)
+DECL|function|gimp_size_entry_new (gint number_of_fields,GimpUnit unit,const gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,gint spinbutton_usize,GimpSizeEntryUpdatePolicy update_policy)
 name|gimp_size_entry_new
 parameter_list|(
 name|gint
@@ -700,6 +700,7 @@ parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|unit_format
@@ -1739,13 +1740,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_size_entry_attach_label (GimpSizeEntry * gse,gchar * text,gint row,gint column,gfloat alignment)
+DECL|function|gimp_size_entry_attach_label (GimpSizeEntry * gse,const gchar * text,gint row,gint column,gfloat alignment)
 name|gimp_size_entry_attach_label
 parameter_list|(
 name|GimpSizeEntry
 modifier|*
 name|gse
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text

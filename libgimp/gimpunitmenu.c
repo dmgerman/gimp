@@ -44,6 +44,7 @@ name|gchar
 modifier|*
 name|gimp_unit_menu_build_string
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|format
@@ -71,7 +72,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27af6ba70103
+DECL|enum|__anon2c08deae0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -400,9 +401,10 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_unit_menu_new (gchar * format,GimpUnit unit,gboolean show_pixels,gboolean show_percent,gboolean show_custom)
+DECL|function|gimp_unit_menu_new (const gchar * format,GimpUnit unit,gboolean show_pixels,gboolean show_percent,gboolean show_custom)
 name|gimp_unit_menu_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|format
@@ -1533,9 +1535,10 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_unit_menu_build_string (gchar * format,GimpUnit unit)
+DECL|function|gimp_unit_menu_build_string (const gchar * format,GimpUnit unit)
 name|gimp_unit_menu_build_string
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|format

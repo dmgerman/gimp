@@ -53,6 +53,7 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -69,7 +70,7 @@ parameter_list|,
 name|gint
 name|auto_shrink
 parameter_list|,
-comment|/* specify action area buttons 					      * as va_list: 					      *  gchar          *label, 					      *  GtkSignalFunc   callback, 					      *  gpointer        data, 					      *  GtkObject      *slot_object, 					      *  GtkWidget     **widget_ptr, 					      *  gboolean        default_action, 					      *  gboolean        connect_delete, 					      */
+comment|/* specify action area buttons 					      * as va_list: 					      *  const gchar    *label, 					      *  GtkSignalFunc   callback, 					      *  gpointer        data, 					      *  GtkObject      *slot_object, 					      *  GtkWidget     **widget_ptr, 					      *  gboolean        default_action, 					      *  gboolean        connect_delete, 					      */
 modifier|...
 parameter_list|)
 function_decl|;
@@ -90,6 +91,7 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -125,7 +127,7 @@ name|GtkDialog
 modifier|*
 name|dialog
 parameter_list|,
-comment|/* specify action area buttons 					      * as va_list: 					      *  gchar          *label, 					      *  GtkSignalFunc   callback, 					      *  gpointer        data, 					      *  GtkObject      *slot_object, 					      *  GtkWidget     **widget_ptr, 					      *  gboolean        default_action, 					      *  gboolean        connect_delete, 					      */
+comment|/* specify action area buttons 					      * as va_list: 					      *  const gchar    *label, 					      *  GtkSignalFunc   callback, 					      *  gpointer        data, 					      *  GtkObject      *slot_object, 					      *  GtkWidget     **widget_ptr, 					      *  gboolean        default_action, 					      *  gboolean        connect_delete, 					      */
 modifier|...
 parameter_list|)
 function_decl|;

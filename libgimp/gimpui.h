@@ -117,6 +117,7 @@ comment|/* For information look into the C source or the html documentation */
 name|void
 name|gimp_ui_init
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|prog_name

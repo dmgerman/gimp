@@ -471,8 +471,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2ba586de0103
 enum|enum
+DECL|enum|__anon2a20d8010103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -584,18 +584,15 @@ argument_list|)
 operator|->
 name|destroy
 condition|)
-operator|(
-operator|*
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|destroy
-operator|)
-operator|(
+argument_list|(
 name|object
-operator|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -615,13 +612,13 @@ name|GtkObjectClass
 modifier|*
 name|object_class
 decl_stmt|;
-name|GtkButtonClass
-modifier|*
-name|button_class
-decl_stmt|;
 name|GtkWidgetClass
 modifier|*
 name|widget_class
+decl_stmt|;
+name|GtkButtonClass
+modifier|*
+name|button_class
 decl_stmt|;
 name|object_class
 operator|=
@@ -631,18 +628,18 @@ operator|*
 operator|)
 name|class
 expr_stmt|;
-name|button_class
-operator|=
-operator|(
-name|GtkButtonClass
-operator|*
-operator|)
-name|class
-expr_stmt|;
 name|widget_class
 operator|=
 operator|(
 name|GtkWidgetClass
+operator|*
+operator|)
+name|class
+expr_stmt|;
+name|button_class
+operator|=
+operator|(
+name|GtkButtonClass
 operator|*
 operator|)
 name|class
@@ -705,17 +702,17 @@ name|destroy
 operator|=
 name|gimp_color_button_destroy
 expr_stmt|;
-name|button_class
-operator|->
-name|clicked
-operator|=
-name|gimp_color_button_clicked
-expr_stmt|;
 name|widget_class
 operator|->
 name|state_changed
 operator|=
 name|gimp_color_button_state_changed
+expr_stmt|;
+name|button_class
+operator|->
+name|clicked
+operator|=
+name|gimp_color_button_clicked
 expr_stmt|;
 block|}
 end_function
@@ -868,12 +865,13 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|_gimp_color_button_new (gboolean double_color,gchar * title,gint width,gint height,gpointer color,gint bpp)
+DECL|function|_gimp_color_button_new (gboolean double_color,const gchar * title,gint width,gint height,gpointer color,gint bpp)
 name|_gimp_color_button_new
 parameter_list|(
 name|gboolean
 name|double_color
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -1337,26 +1335,25 @@ argument_list|)
 expr_stmt|;
 comment|/* end of DND */
 return|return
-operator|(
 name|GTK_WIDGET
 argument_list|(
 name|gcb
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_new:  * @title: String that will be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: An array of guchar holding the color (RGB or RGBA)  * @bpp: May be 3 for RGB or 4 for RGBA.  *   * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color_changed"  * signal is emitted.  *   * Returns: Pointer to the new #GimpColorButton widget.  */
+comment|/**  * gimp_color_button_new:  * @title: String that will be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: An array of guchar holding the color (RGB or RGBA)  * @bpp: May be 3 for RGB or 4 for RGBA.  *   * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color_changed"  * signal is emitted.  *   * Returns: Pointer to the new #GimpColorButton widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_color_button_new (gchar * title,gint width,gint height,guchar * color,gint bpp)
+DECL|function|gimp_color_button_new (const gchar * title,gint width,gint height,guchar * color,gint bpp)
 name|gimp_color_button_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -1398,15 +1395,16 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_double_new:  * @title: String that wil be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: An array of gdouble holding the color (RGB or RGBA)  * @bpp: May be 3 for RGB or 4 for RGBA.  *   * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color_changed"  * signal is emitted.  *   * Returns: Pointer to the new GimpColorButton widget.  */
+comment|/**  * gimp_color_button_double_new:  * @title: String that wil be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: An array of gdouble holding the color (RGB or RGBA)  * @bpp: May be 3 for RGB or 4 for RGBA.  *   * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color_changed"  * signal is emitted.  *   * Returns: Pointer to the new GimpColorButton widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_color_button_double_new (gchar * title,gint width,gint height,gdouble * color,gint bpp)
+DECL|function|gimp_color_button_double_new (const gchar * title,gint width,gint height,gdouble * color,gint bpp)
 name|gimp_color_button_double_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -1448,7 +1446,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_update:  * @gcb: Pointer to a #GimpColorButton.  *   * Should be used after the color controlled by a #GimpColorButton  * was changed. The color is then reread and the change is propagated  * to the preview and the GtkColorSelectionDialog if one is open.  */
+comment|/**  * gimp_color_button_update:  * @gcb: Pointer to a #GimpColorButton.  *   * Should be used after the color controlled by a #GimpColorButton  * was changed. The color is then reread and the change is propagated  * to the preview and the GtkColorSelectionDialog if one is open.  **/
 end_comment
 
 begin_function
@@ -1464,6 +1462,13 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gcb
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON
@@ -1607,6 +1612,13 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
+name|widget
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|GIMP_IS_COLOR_BUTTON
 argument_list|(
 name|widget
@@ -1647,20 +1659,17 @@ argument_list|)
 operator|->
 name|state_changed
 condition|)
-operator|(
-operator|*
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|state_changed
-operator|)
-operator|(
+argument_list|(
 name|widget
-operator|,
+argument_list|,
 name|previous_state
-operator|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1697,6 +1706,15 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|data
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON
@@ -1814,6 +1832,13 @@ name|GtkColorSelection
 modifier|*
 name|colorsel
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|button
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON
@@ -2050,6 +2075,13 @@ decl_stmt|,
 modifier|*
 name|p1
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gcb
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON
@@ -2393,6 +2425,13 @@ name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|data
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|GIMP_IS_COLOR_BUTTON
 argument_list|(
 name|data
@@ -2632,6 +2671,13 @@ name|gcb
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|data
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|GIMP_IS_COLOR_BUTTON
 argument_list|(
 name|data
@@ -2685,6 +2731,13 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|callback_data
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON
@@ -2843,6 +2896,13 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|callback_data
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON

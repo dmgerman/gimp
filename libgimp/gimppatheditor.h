@@ -166,10 +166,12 @@ name|GtkWidget
 modifier|*
 name|gimp_path_editor_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filesel_title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|path

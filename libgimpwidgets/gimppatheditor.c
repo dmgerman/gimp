@@ -153,7 +153,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b17a60103
+DECL|enum|__anon28b2fa0a0103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -762,19 +762,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_editor_new:  * @filesel_title: The title of the #GtkFileSelection dialog which can be  *                 popped up by the attached #GimpFileSelection.  * @path: The initial search path.  *  * Creates a new #GimpPathEditor widget.  *  * The elements of the initial search path must be separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Returns: A pointer to the new #GimpPathEditor widget.  *  */
+comment|/**  * gimp_path_editor_new:  * @filesel_title: The title of the #GtkFileSelection dialog which can be  *                 popped up by the attached #GimpFileSelection.  * @path: The initial search path.  *  * Creates a new #GimpPathEditor widget.  *  * The elements of the initial search path must be separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Returns: A pointer to the new #GimpPathEditor widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_path_editor_new (gchar * filesel_title,gchar * path)
+DECL|function|gimp_path_editor_new (const gchar * filesel_title,const gchar * path)
 name|gimp_path_editor_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filesel_title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|path
@@ -795,6 +797,10 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|directory
+decl_stmt|;
+name|gchar
+modifier|*
+name|mypath
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -902,7 +908,7 @@ name|NULL
 expr_stmt|;
 name|directory
 operator|=
-name|path
+name|mypath
 operator|=
 name|g_strdup
 argument_list|(
@@ -1047,7 +1053,7 @@ break|break;
 block|}
 name|g_free
 argument_list|(
-name|path
+name|mypath
 argument_list|)
 expr_stmt|;
 if|if
@@ -1076,7 +1082,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_editor_get_path:  * @gpe: The path editor you want to get the search path from.  *  * The elements of the returned search path string are separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Note that you have to g_free() the returned string.  *  * Returns: The search path the user has selected in the path editor.  *  */
+comment|/**  * gimp_path_editor_get_path:  * @gpe: The path editor you want to get the search path from.  *  * The elements of the returned search path string are separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Note that you have to g_free() the returned string.  *  * Returns: The search path the user has selected in the path editor.  **/
 end_comment
 
 begin_function

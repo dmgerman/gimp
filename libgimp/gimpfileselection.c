@@ -222,7 +222,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2966f38e0103
+DECL|enum|__anon2aad9f540103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -383,18 +383,15 @@ argument_list|)
 operator|->
 name|destroy
 condition|)
-operator|(
-operator|*
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|destroy
-operator|)
-operator|(
+argument_list|(
 name|object
-operator|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -783,19 +780,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_selection_new:  * @title: The title of the #GtkFileSelection dialog.  * @filename: The initial filename.  * @dir_only: #TRUE if the file selection should accept directories only.  * @check_valid: #TRUE if the widget should check if the entered file  *               really exists.  *  * Creates a new #GimpFileSelection widget.  *  * Returns: A pointer to the new #GimpFileSelection widget.  *  */
+comment|/**  * gimp_file_selection_new:  * @title: The title of the #GtkFileSelection dialog.  * @filename: The initial filename.  * @dir_only: #TRUE if the file selection should accept directories only.  * @check_valid: #TRUE if the widget should check if the entered file  *               really exists.  *  * Creates a new #GimpFileSelection widget.  *  * Returns: A pointer to the new #GimpFileSelection widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_file_selection_new (gchar * title,gchar * filename,gboolean dir_only,gboolean check_valid)
+DECL|function|gimp_file_selection_new (const gchar * title,const gchar * filename,gboolean dir_only,gboolean check_valid)
 name|gimp_file_selection_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -857,7 +856,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_selection_get_filename:  * @gfs: The file selection you want to know the filename from.  *  * Note that you have to g_free() the returned string.  *  * Returns: The file or directory the user has entered.  *  */
+comment|/**  * gimp_file_selection_get_filename:  * @gfs: The file selection you want to know the filename from.  *  * Note that you have to g_free() the returned string.  *  * Returns: The file or directory the user has entered.  **/
 end_comment
 
 begin_function
@@ -921,13 +920,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_file_selection_set_filename (GimpFileSelection * gfs,gchar * filename)
+DECL|function|gimp_file_selection_set_filename (GimpFileSelection * gfs,const gchar * filename)
 name|gimp_file_selection_set_filename
 parameter_list|(
 name|GimpFileSelection
 modifier|*
 name|gfs
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename

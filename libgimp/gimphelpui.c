@@ -155,7 +155,7 @@ comment|/**********************/
 end_comment
 
 begin_comment
-comment|/**  * gimp_help_init:  *  * This function initializes GIMP's help system.  *  * Currently it only creates a #GtkTooltips object with gtk_tooltips_new()  * which will be used by gimp_help_set_help_data().  *  */
+comment|/**  * gimp_help_init:  *  * This function initializes GIMP's help system.  *  * Currently it only creates a #GtkTooltips object with gtk_tooltips_new()  * which will be used by gimp_help_set_help_data().  **/
 end_comment
 
 begin_function
@@ -175,7 +175,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_free:  *  * This function frees the memory used by the #GtkTooltips created by  * gimp_help_init().  *  */
+comment|/**  * gimp_help_free:  *  * This function frees the memory used by the #GtkTooltips created by  * gimp_help_init().  **/
 end_comment
 
 begin_function
@@ -206,7 +206,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_enable_tooltips:  *  * This function calls gtk_tooltips_enable().  *  */
+comment|/**  * gimp_help_enable_tooltips:  *  * This function calls gtk_tooltips_enable().  **/
 end_comment
 
 begin_function
@@ -226,7 +226,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_disable_tooltips:  *  * This function calls gtk_tooltips_disable().  *  */
+comment|/**  * gimp_help_disable_tooltips:  *  * This function calls gtk_tooltips_disable().  **/
 end_comment
 
 begin_function
@@ -246,12 +246,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_connect_help_accel:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  *  * Note that this function is automatically called by all libgimp dialog  * constructors. You only have to call it for windows/dialogs you created  * "manually".  *  * For convenience, gimp_help_connect_help_accel() calls  * gimp_dialog_set_icon() if the passed widget is a #GtkWindow, so you  * don't have to worry about this.  *  */
+comment|/**  * gimp_help_connect_help_accel:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  *  * Note that this function is automatically called by all libgimp dialog  * constructors. You only have to call it for windows/dialogs you created  * "manually".  *  * For convenience, gimp_help_connect_help_accel() calls  * gimp_dialog_set_icon() if the passed widget is a #GtkWindow, so you  * don't have to worry about this.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help_connect_help_accel (GtkWidget * widget,GimpHelpFunc help_func,gchar * help_data)
+DECL|function|gimp_help_connect_help_accel (GtkWidget * widget,GimpHelpFunc help_func,const gchar * help_data)
 name|gimp_help_connect_help_accel
 parameter_list|(
 name|GtkWidget
@@ -261,6 +261,7 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -292,7 +293,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  set up the help signals and tips query widget  */
+comment|/*  set up the help signals and tips query widget    */
 if|if
 condition|(
 operator|!
@@ -522,12 +523,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_set_help_data:  * @widget: The #GtkWidget you want to set a @tooltip and/or @help_data for.  * @tooltip: The text for this widget's tooltip.  * @help_data: The @help_data for the #GtkTipsQuery tooltips inspector.  *  * The reason why we don't use gtk_tooltips_set_tip() is that it's  * impossible to set a @private_tip (aka @help_data) without a visible  * @tooltip.  *  * This function can be called with @tooltip == #NULL. Use this feature  * if you want to set a HTML help link for a widget which shouldn't have  * a visible tooltip.  *  * You can e.g. set a @help_data string to a complete HTML page for a  * container widget (e.g. a #GtkBox). For the widgets inside the box  * you can set HTML anchors which point inside the container widget's  * help page by setting @help_data strings starting with "#".  *  * If the tooltips inspector (Shift + "F1") is invoked and the user  * clicks on one of the widgets which only contain a "#" link, the  * help system will automatically ascend the widget hierarchy until it  * finds another widget with @help_data attached and concatenates both  * to a complete help path.  *  */
+comment|/**  * gimp_help_set_help_data:  * @widget: The #GtkWidget you want to set a @tooltip and/or @help_data for.  * @tooltip: The text for this widget's tooltip.  * @help_data: The @help_data for the #GtkTipsQuery tooltips inspector.  *  * The reason why we don't use gtk_tooltips_set_tip() is that it's  * impossible to set a @private_tip (aka @help_data) without a visible  * @tooltip.  *  * This function can be called with @tooltip == #NULL. Use this feature  * if you want to set a HTML help link for a widget which shouldn't have  * a visible tooltip.  *  * You can e.g. set a @help_data string to a complete HTML page for a  * container widget (e.g. a #GtkBox). For the widgets inside the box  * you can set HTML anchors which point inside the container widget's  * help page by setting @help_data strings starting with "#".  *  * If the tooltips inspector (Shift + "F1") is invoked and the user  * clicks on one of the widgets which only contain a "#" link, the  * help system will automatically ascend the widget hierarchy until it  * finds another widget with @help_data attached and concatenates both  * to a complete help path.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help_set_help_data (GtkWidget * widget,const gchar * tooltip,gchar * help_data)
+DECL|function|gimp_help_set_help_data (GtkWidget * widget,const gchar * tooltip,const gchar * help_data)
 name|gimp_help_set_help_data
 parameter_list|(
 name|GtkWidget
@@ -539,6 +540,7 @@ name|gchar
 modifier|*
 name|tooltip
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -563,6 +565,7 @@ if|if
 condition|(
 name|tooltip
 condition|)
+block|{
 name|gtk_tooltips_set_tip
 argument_list|(
 name|tool_tips
@@ -571,14 +574,19 @@ name|widget
 argument_list|,
 name|tooltip
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|help_data
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
 name|help_data
 condition|)
+block|{
 name|gtk_object_set_data
 argument_list|(
 name|GTK_OBJECT
@@ -588,14 +596,18 @@ argument_list|)
 argument_list|,
 literal|"gimp_help_data"
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|help_data
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_help:  *  * This function invokes the #GtkTipsQuery tooltips inspector.  *  * The mouse cursor will turn turn into a question mark and the user can  * click on any widget of the application which started the inspector.  *  * If the widget the user clicked on has a @help_data string attached  * (see gimp_help_set_help_data()), the corresponding HTML page will  * be displayed. Otherwise the help system will ascend the widget hierarchy  * until it finds an attached @help_data string (which should be the  * case at least for every window/dialog).  *   */
+comment|/**  * gimp_context_help:  *  * This function invokes the #GtkTipsQuery tooltips inspector.  *  * The mouse cursor will turn turn into a question mark and the user can  * click on any widget of the application which started the inspector.  *  * If the widget the user clicked on has a @help_data string attached  * (see gimp_help_set_help_data()), the corresponding HTML page will  * be displayed. Otherwise the help system will ascend the widget hierarchy  * until it finds an attached @help_data string (which should be the  * case at least for every window/dialog).  **/
 end_comment
 
 begin_function
@@ -649,6 +661,7 @@ block|{
 name|GimpHelpFunc
 name|help_function
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -663,6 +676,7 @@ expr_stmt|;
 name|help_data
 operator|=
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)

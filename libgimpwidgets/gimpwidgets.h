@@ -87,11 +87,12 @@ parameter_list|(
 name|gboolean
 name|in_frame
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|frame_title
 parameter_list|,
-comment|/* specify radio buttons as va_list: 				     *  gchar          *label, 				     *  GtkSignalFunc   callback, 				     *  gpointer        data, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active, 				     */
+comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  GtkSignalFunc   callback, 				     *  gpointer        data, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active, 				     */
 modifier|...
 parameter_list|)
 function_decl|;
@@ -102,6 +103,7 @@ parameter_list|(
 name|gboolean
 name|in_frame
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|frame_title
@@ -116,7 +118,7 @@ name|gpointer
 name|initial
 parameter_list|,
 comment|/* user_data */
-comment|/* specify radio buttons as va_list: 				     *  gchar          *label, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     */
+comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     */
 modifier|...
 parameter_list|)
 function_decl|;
@@ -214,6 +216,7 @@ parameter_list|,
 name|gint
 name|row
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -251,10 +254,12 @@ parameter_list|,
 name|gfloat
 name|unconstrained_upper
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|tooltip
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_data
@@ -322,6 +327,7 @@ parameter_list|(
 name|GimpUnit
 name|unit
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|unit_format
@@ -344,6 +350,7 @@ parameter_list|,
 name|gboolean
 name|chain_constrains_ratio
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|xlabel
@@ -368,6 +375,7 @@ name|gdouble
 name|xsize_100
 parameter_list|,
 comment|/* % */
+specifier|const
 name|gchar
 modifier|*
 name|ylabel
@@ -438,6 +446,7 @@ modifier|*
 modifier|*
 name|xpm_data
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -554,6 +563,7 @@ parameter_list|,
 name|gint
 name|row
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|label_text

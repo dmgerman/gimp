@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3850f30103
+DECL|enum|__anon2be8f6b60103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3850f30203
+DECL|enum|__anon2be8f6b60203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -319,6 +319,7 @@ modifier|*
 name|tool_desc
 decl_stmt|;
 DECL|member|private_tip
+specifier|const
 name|gchar
 modifier|*
 name|private_tip
@@ -445,6 +446,7 @@ begin_function_decl
 name|void
 name|tools_help_func
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_data
