@@ -858,6 +858,7 @@ argument_list|(
 name|brush
 argument_list|)
 expr_stmt|;
+block|}
 name|gtk_widget_set_sensitive
 argument_list|(
 name|brush_editor
@@ -869,19 +870,6 @@ operator|->
 name|data_editable
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|gtk_widget_set_sensitive
-argument_list|(
-name|brush_editor
-operator|->
-name|options_table
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
 name|gtk_adjustment_set_value
 argument_list|(
 name|brush_editor

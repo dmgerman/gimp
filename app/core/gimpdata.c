@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baa43af0103
+DECL|enum|__anon28f737b60103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -487,7 +487,13 @@ name|NULL
 expr_stmt|;
 name|data
 operator|->
-name|writeable
+name|writable
+operator|=
+name|FALSE
+expr_stmt|;
+name|data
+operator|->
+name|deletable
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1073,7 +1079,13 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|->
-name|writeable
+name|writable
+operator|=
+name|FALSE
+expr_stmt|;
+name|data
+operator|->
+name|deletable
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1115,7 +1127,7 @@ operator|==
 literal|0
 operator|)
 operator|||
-comment|/* and is writeable            */
+comment|/* and is writable             */
 operator|(
 name|access
 argument_list|(
@@ -1141,7 +1153,13 @@ comment|/* and we can write to its dir */
 block|{
 name|data
 operator|->
-name|writeable
+name|writable
+operator|=
+name|TRUE
+expr_stmt|;
+name|data
+operator|->
+name|deletable
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1150,6 +1168,23 @@ name|g_free
 argument_list|(
 name|dirname
 argument_list|)
+expr_stmt|;
+comment|/*  if we can't save, we are not writable  */
+if|if
+condition|(
+operator|!
+name|GIMP_DATA_GET_CLASS
+argument_list|(
+name|data
+argument_list|)
+operator|->
+name|save
+condition|)
+name|data
+operator|->
+name|writable
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 block|}

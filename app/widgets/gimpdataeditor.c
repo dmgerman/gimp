@@ -1008,14 +1008,7 @@ name|editor
 operator|->
 name|data
 operator|->
-name|writeable
-operator|&&
-operator|!
-name|editor
-operator|->
-name|data
-operator|->
-name|internal
+name|writable
 operator|)
 expr_stmt|;
 name|gtk_widget_set_sensitive

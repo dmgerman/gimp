@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2934403c0103
+DECL|enum|__anon294892240103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -134,9 +134,15 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-DECL|member|writeable
+DECL|member|writable
 name|guint
-name|writeable
+name|writable
+range|:
+literal|1
+decl_stmt|;
+DECL|member|deletable
+name|guint
+name|deletable
 range|:
 literal|1
 decl_stmt|;

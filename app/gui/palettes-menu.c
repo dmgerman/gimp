@@ -412,12 +412,7 @@ name|palette
 operator|&&
 name|data
 operator|->
-name|writeable
-operator|&&
-operator|!
-name|data
-operator|->
-name|internal
+name|deletable
 argument_list|)
 expr_stmt|;
 undef|#
