@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c059ad20103
+DECL|enum|__anon28ed18e40103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -842,6 +842,26 @@ name|gboolean
 name|_show_tool_tips
 init|=
 name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_check_size
+specifier|static
+name|GimpCheckSize
+name|_check_size
+init|=
+name|GIMP_CHECK_SIZE_MEDIUM_CHECKS
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_check_type
+specifier|static
+name|GimpCheckType
+name|_check_type
+init|=
+name|GIMP_CHECK_TYPE_GRAY_CHECKS
 decl_stmt|;
 end_decl_stmt
 
@@ -3951,6 +3971,42 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_check_size:  *  * Returns the size of the checkerboard to be used in previews.  * This is a constant value given at Plug-In config time.  *  * Return value: the check_size value  *  * Since: GIMP 2.2  **/
+end_comment
+
+begin_function
+name|GimpCheckSize
+DECL|function|gimp_check_size (void)
+name|gimp_check_size
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_check_size
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_check_type:  *  * Returns the type of the checkerboard to be used in previews.  * This is a constant value given at Plug-In config time.  *  * Return value: the check_type value  *  * Since: GIMP 2.2  **/
+end_comment
+
+begin_function
+name|GimpCheckType
+DECL|function|gimp_check_type (void)
+name|gimp_check_type
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_check_type
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_default_display:  *  * Returns the default display ID. This corresponds to the display the  * running procedure's menu entry was invoked from. This is a  * constant value given at Plug-In config time.  *  * Return value: the default display ID  **/
 end_comment
 
@@ -5247,12 +5303,6 @@ name|config
 operator|->
 name|shm_ID
 expr_stmt|;
-name|_gamma_val
-operator|=
-name|config
-operator|->
-name|gamma
-expr_stmt|;
 name|_install_cmap
 operator|=
 name|config
@@ -5264,6 +5314,18 @@ operator|=
 name|config
 operator|->
 name|show_tool_tips
+expr_stmt|;
+name|_check_size
+operator|=
+name|config
+operator|->
+name|check_size
+expr_stmt|;
+name|_check_type
+operator|=
+name|config
+operator|->
+name|check_type
 expr_stmt|;
 name|_min_colors
 operator|=

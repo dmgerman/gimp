@@ -1052,6 +1052,26 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+name|GimpCheckSize
+name|gimp_check_size
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+name|GimpCheckType
+name|gimp_check_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 name|gint32
 name|gimp_default_display
 argument_list|(
