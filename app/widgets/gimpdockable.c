@@ -613,7 +613,7 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GIMP_STOCK_MENU
+name|GIMP_STOCK_MENU_LEFT
 argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
