@@ -49,8 +49,7 @@ end_struct
 
 begin_function_decl
 specifier|static
-name|gchar
-modifier|*
+name|gboolean
 name|parse_encoding
 parameter_list|(
 specifier|const
@@ -60,6 +59,11 @@ name|text
 parameter_list|,
 name|gint
 name|text_len
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|encodind
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -231,7 +235,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_xml_parser_parse_io_channel:  * @parser: a #GimpXmlParser  * @io: a #GIOChannel  * @error: return location for possible errors  *  * Makes @parser read from the specified @io channel. This function  * returns when the GIOChannel becomes empty (end of file) or an  * error occurs, either reading from @io or parsing the read data.  *  * This function tries to determine the character encoding from the  * XML header and converts the content to UTF-8 for you.  *  * Return value: %TRUE on success, %FALSE otherwise  **/
+comment|/**  * gimp_xml_parser_parse_io_channel:  * @parser: a #GimpXmlParser  * @io: a #GIOChannel  * @error: return location for possible errors  *  * Makes @parser read from the specified @io channel. This function  * returns when the GIOChannel becomes empty (end of file) or an  * error occurs, either reading from @io or parsing the read data.  *  * This function tries to determine the character encoding from the  * XML header and converts the content to UTF-8 for you. For this  * feature to work, the XML header with the encoding attribute must be  * contained in the first 4096 bytes read. Otherwise UTF-8 encoding  * will be assumed and parsing may break later if this assumption  * was wrong.  *  * Return value: %TRUE on success, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -259,7 +263,7 @@ decl_stmt|;
 name|guchar
 name|buffer
 index|[
-literal|8196
+literal|4096
 index|]
 decl_stmt|;
 name|gsize
@@ -351,9 +355,6 @@ sizeof|sizeof
 argument_list|(
 name|buffer
 argument_list|)
-operator|&&
-operator|!
-name|encoding
 condition|)
 block|{
 name|status
@@ -394,21 +395,32 @@ operator|==
 name|G_IO_STATUS_EOF
 condition|)
 break|break;
-name|encoding
-operator|=
+if|if
+condition|(
 name|parse_encoding
 argument_list|(
 name|buffer
 argument_list|,
 name|len
+argument_list|,
+operator|&
+name|encoding
 argument_list|)
-expr_stmt|;
+condition|)
+break|break;
 block|}
 if|if
 condition|(
 name|encoding
 condition|)
 block|{
+name|g_printerr
+argument_list|(
+literal|"Charset encoding conversion from '%s' to 'UTF-8'\n"
+argument_list|,
+name|encoding
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -545,11 +557,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Try to determine encoding from XML header.  This function returns    FALSE when it doesn't have enough text to parse.  It returns TRUE    and sets encoding when the XML header has been parsed.  */
+end_comment
+
 begin_function
 specifier|static
-name|gchar
-modifier|*
-DECL|function|parse_encoding (const gchar * text,gint text_len)
+name|gboolean
+DECL|function|parse_encoding (const gchar * text,gint text_len,gchar ** encoding)
 name|parse_encoding
 parameter_list|(
 specifier|const
@@ -559,6 +574,11 @@ name|text
 parameter_list|,
 name|gint
 name|text_len
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|encoding
 parameter_list|)
 block|{
 specifier|const
@@ -578,7 +598,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|text
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -588,7 +608,7 @@ operator|<
 literal|20
 condition|)
 return|return
-name|NULL
+name|FALSE
 return|;
 name|start
 operator|=
@@ -607,7 +627,7 @@ operator|!
 name|start
 condition|)
 return|return
-name|NULL
+name|FALSE
 return|;
 name|end
 operator|=
@@ -632,8 +652,13 @@ operator|!
 name|end
 condition|)
 return|return
-name|NULL
+name|FALSE
 return|;
+operator|*
+name|encoding
+operator|=
+name|NULL
+expr_stmt|;
 name|text_len
 operator|=
 name|end
@@ -647,7 +672,7 @@ operator|<
 literal|12
 condition|)
 return|return
-name|NULL
+name|TRUE
 return|;
 name|start
 operator|=
@@ -661,7 +686,7 @@ name|text_len
 operator|-
 literal|1
 argument_list|,
-literal|"encoding="
+literal|"encoding"
 argument_list|)
 expr_stmt|;
 if|if
@@ -670,11 +695,52 @@ operator|!
 name|start
 condition|)
 return|return
-name|NULL
+name|TRUE
 return|;
 name|start
 operator|+=
-literal|9
+literal|8
+expr_stmt|;
+while|while
+condition|(
+name|start
+operator|<
+name|end
+operator|&&
+operator|*
+name|start
+operator|==
+literal|' '
+condition|)
+name|start
+operator|++
+expr_stmt|;
+if|if
+condition|(
+operator|*
+name|start
+operator|!=
+literal|'='
+condition|)
+return|return
+name|TRUE
+return|;
+name|start
+operator|++
+expr_stmt|;
+while|while
+condition|(
+name|start
+operator|<
+name|end
+operator|&&
+operator|*
+name|start
+operator|==
+literal|' '
+condition|)
+name|start
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -689,7 +755,7 @@ operator|!=
 literal|'\''
 condition|)
 return|return
-name|NULL
+name|TRUE
 return|;
 name|text_len
 operator|=
@@ -704,7 +770,7 @@ operator|<
 literal|1
 condition|)
 return|return
-name|NULL
+name|TRUE
 return|;
 for|for
 control|(
@@ -743,9 +809,11 @@ operator|<
 literal|3
 condition|)
 return|return
-name|NULL
+name|TRUE
 return|;
-return|return
+operator|*
+name|encoding
+operator|=
 name|g_strndup
 argument_list|(
 name|start
@@ -756,6 +824,9 @@ name|i
 operator|-
 literal|1
 argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
 return|;
 block|}
 end_function
