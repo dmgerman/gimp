@@ -7680,7 +7680,9 @@ argument_list|)
 operator|->
 name|tool_info
 operator|->
-name|help_data
+name|help_id
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -638,7 +638,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_dialog_new (GimpViewable * viewable,const gchar * title,const gchar * wmclass_name,const gchar * stock_id,const gchar * desc,GimpHelpFunc help_func,const gchar * help_data,...)
+DECL|function|gimp_viewable_dialog_new (GimpViewable * viewable,const gchar * title,const gchar * wmclass_name,const gchar * stock_id,const gchar * desc,GimpHelpFunc help_func,const gchar * help_id,...)
 name|gimp_viewable_dialog_new
 parameter_list|(
 name|GimpViewable
@@ -671,7 +671,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|,
 comment|/* specify action area buttons                            * as va_list:                            *  const gchar    *label,                            *  GCallback       callback,                            *  gpointer        callback_data,                            *  GObject        *slot_object,                            *  GtkWidget     **widget_ptr,                            *  gboolean        default_action,                            *  gboolean        connect_delete,                            */
 modifier|...
@@ -761,14 +761,16 @@ argument_list|)
 argument_list|,
 name|help_func
 argument_list|,
-name|help_data
+name|help_id
+argument_list|,
+name|dialog
 argument_list|)
 expr_stmt|;
 name|va_start
 argument_list|(
 name|args
 argument_list|,
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_create_action_areav

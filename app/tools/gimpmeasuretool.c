@@ -1479,7 +1479,7 @@ name|tool
 operator|->
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_label

@@ -5009,11 +5009,11 @@ name|identifier
 expr_stmt|;
 name|entry
 operator|.
-name|help_page
+name|help_id
 operator|=
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 expr_stmt|;
 name|entry
 operator|.

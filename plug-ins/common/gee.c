@@ -675,10 +675,6 @@ name|GtkWidget
 modifier|*
 name|hbox2
 decl_stmt|;
-name|GtkTooltips
-modifier|*
-name|tooltips
-decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"gee"
@@ -735,6 +731,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/geeslime.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Action area - 'close' button only. */
@@ -800,31 +798,17 @@ argument_list|,
 name|dlg
 argument_list|)
 expr_stmt|;
-name|tooltips
-operator|=
-name|gtk_tooltips_new
-argument_list|()
-expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|GTK_TOOLTIPS
-argument_list|(
-name|tooltips
-argument_list|)
-argument_list|,
 name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"A less-obsolete creation of Adam D. Moss / adam@gimp.org / adam@foxbox.org / 1998-2000"
+literal|"A less-obsolete creation of Adam D. Moss / "
+literal|"adam@gimp.org / adam@foxbox.org / 1998-2000"
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_tooltips_enable
-argument_list|(
-name|tooltips
 argument_list|)
 expr_stmt|;
 comment|/* The 'fun' half of the dialog */
@@ -1180,7 +1164,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* k = i + RINT (((double)LIGHT) * pow(((double)i / 255.0), 0.5));  	 k = i + ((LIGHT*i)/255); */
+comment|/* k = i + RINT (((double)LIGHT) * pow(((double)i / 255.0), 0.5)); 	 k = i + ((LIGHT*i)/255); */
 name|k
 operator|=
 name|i
@@ -1691,7 +1675,7 @@ name|bump1
 expr_stmt|;
 comment|/* WARP DISTORTION MAP (plughole-effect) */
 comment|/* this setup obsolete, tranformation is constant */
-comment|/*if ((cx+bx) == 0)     cx++;          if ((cy+by) == 0)     by++;    bycxmcybx = (by*cx-cy*bx);    if (bycxmcybx == 0)     bycxmcybx = 1;    bx2 = ((bx)<<19)/bycxmcybx;   cx2 = ((cx)<<19)/bycxmcybx;   by2 = ((by)<<19)/bycxmcybx;   cy2 = ((cy)<<19)/bycxmcybx;   */
+comment|/*if ((cx+bx) == 0)     cx++;      if ((cy+by) == 0)     by++;    bycxmcybx = (by*cx-cy*bx);    if (bycxmcybx == 0)     bycxmcybx = 1;    bx2 = ((bx)<<19)/bycxmcybx;   cx2 = ((cx)<<19)/bycxmcybx;   by2 = ((by)<<19)/bycxmcybx;   cy2 = ((cy)<<19)/bycxmcybx;   */
 comment|/* A little sub-pixel jitter to liven things up. */
 name|basesx
 operator|=
@@ -2509,7 +2493,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|if (frame==0)     {       gint i, bytes;              bytes = IWIDTH*IHEIGHT*4;              for (i=0;i<bytes;i++) 	{ 	  disp[i] = env[i]; 	}     }
+block|if (frame==0)     {       gint i, bytes;        bytes = IWIDTH*IHEIGHT*4;        for (i=0;i<bytes;i++) 	{ 	  disp[i] = env[i]; 	}     }
 endif|#
 directive|endif
 name|iterate

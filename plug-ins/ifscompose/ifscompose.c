@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27614e720103
+DECL|enum|__anon278e9b7d0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27614e720203
+DECL|enum|__anon278e9b7d0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27614e720308
+DECL|struct|__anon278e9b7d0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -201,7 +201,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon27614e72040a
+DECL|union|__anon278e9b7d040a
 block|{
 DECL|member|d
 name|gdouble
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27614e720508
+DECL|struct|__anon278e9b7d0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27614e720608
+DECL|struct|__anon278e9b7d0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -295,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27614e720708
+DECL|struct|__anon278e9b7d0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27614e720808
+DECL|struct|__anon278e9b7d0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27614e720908
+DECL|struct|__anon278e9b7d0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -600,7 +600,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27614e720a08
+DECL|struct|__anon278e9b7d0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -14545,6 +14545,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/ifscompose.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -14641,6 +14643,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/ifscompose.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -56,6 +56,9 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|help_id
+parameter_list|,
+name|gpointer
 name|help_data
 parameter_list|)
 function_decl|;
@@ -79,6 +82,9 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|help_id
+parameter_list|,
+name|gpointer
 name|help_data
 parameter_list|)
 function_decl|;
@@ -104,7 +110,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|)
 function_decl|;
 end_function_decl

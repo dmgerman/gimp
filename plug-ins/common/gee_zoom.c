@@ -776,10 +776,6 @@ name|GtkWidget
 modifier|*
 name|hbox2
 decl_stmt|;
-name|GtkTooltips
-modifier|*
-name|tooltips
-decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"gee_zoom"
@@ -836,6 +832,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gee.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Action area - 'close' button only. */
@@ -901,31 +899,17 @@ argument_list|,
 name|dlg
 argument_list|)
 expr_stmt|;
-name|tooltips
-operator|=
-name|gtk_tooltips_new
-argument_list|()
-expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|GTK_TOOLTIPS
-argument_list|(
-name|tooltips
-argument_list|)
-argument_list|,
 name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"An obsolete creation of Adam D. Moss / adam@gimp.org / adam@foxbox.org / 1998-2000"
+literal|"An obsolete creation of Adam D. Moss / "
+literal|"adam@gimp.org / adam@foxbox.org / 1998-2000"
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_tooltips_enable
-argument_list|(
-name|tooltips
 argument_list|)
 expr_stmt|;
 comment|/* The 'fun' half of the dialog */

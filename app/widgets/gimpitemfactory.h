@@ -35,11 +35,11 @@ name|gchar
 modifier|*
 name|quark_string
 decl_stmt|;
-DECL|member|help_page
+DECL|member|help_id
 specifier|const
 name|gchar
 modifier|*
-name|help_page
+name|help_id
 decl_stmt|;
 DECL|member|description
 specifier|const
@@ -193,11 +193,6 @@ specifier|const
 name|gchar
 modifier|*
 name|factory_path
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|help_path
 parameter_list|,
 name|GimpItemFactoryUpdateFunc
 name|update_func

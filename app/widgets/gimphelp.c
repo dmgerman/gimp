@@ -95,6 +95,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -145,10 +151,10 @@ name|gchar
 modifier|*
 name|help_locale
 decl_stmt|;
-DECL|member|help_data
+DECL|member|help_id
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 decl_stmt|;
 block|}
 struct|;
@@ -191,7 +197,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -218,7 +224,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -229,7 +235,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help (Gimp * gimp,const gchar * help_path,const gchar * help_data)
+DECL|function|gimp_help (Gimp * gimp,const gchar * help_path,const gchar * help_id)
 name|gimp_help
 parameter_list|(
 name|Gimp
@@ -244,7 +250,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -315,20 +321,20 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|help_data
+name|help_id
 operator|&&
 name|strlen
 argument_list|(
-name|help_data
+name|help_id
 argument_list|)
 condition|)
 name|idle_help
 operator|->
-name|help_data
+name|help_id
 operator|=
 name|g_strdup
 argument_list|(
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|g_idle_add
@@ -412,21 +418,21 @@ if|if
 condition|(
 name|idle_help
 operator|->
-name|help_data
+name|help_id
 condition|)
 name|g_print
 argument_list|(
-literal|"Help Page: %s\n"
+literal|"Help ID: %s\n"
 argument_list|,
 name|idle_help
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 else|else
 name|g_print
 argument_list|(
-literal|"Help Page: NULL\n"
+literal|"Help ID: NULL\n"
 argument_list|)
 expr_stmt|;
 name|g_print
@@ -463,7 +469,7 @@ name|help_locale
 argument_list|,
 name|idle_help
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 condition|)
 break|break;
@@ -486,7 +492,7 @@ name|help_locale
 argument_list|,
 name|idle_help
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 break|break;
@@ -511,7 +517,7 @@ name|g_free
 argument_list|(
 name|idle_help
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -577,7 +583,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_help_internal (Gimp * gimp,const gchar * help_path,const gchar * current_locale,const gchar * help_data)
+DECL|function|gimp_help_internal (Gimp * gimp,const gchar * help_path,const gchar * current_locale,const gchar * help_id)
 name|gimp_help_internal
 parameter_list|(
 name|Gimp
@@ -597,7 +603,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|)
 block|{
 name|ProcRecord
@@ -823,7 +829,7 @@ operator|=
 operator|(
 name|gpointer
 operator|)
-name|help_data
+name|help_id
 expr_stmt|;
 name|plug_in_run
 argument_list|(
@@ -879,7 +885,7 @@ name|current_locale
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|help_data
+name|help_id
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -905,7 +911,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_netscape (Gimp * gimp,const gchar * help_path,const gchar * current_locale,const gchar * help_data)
+DECL|function|gimp_help_netscape (Gimp * gimp,const gchar * help_path,const gchar * current_locale,const gchar * help_id)
 name|gimp_help_netscape
 parameter_list|(
 name|Gimp
@@ -925,7 +931,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|)
 block|{
 name|Argument
@@ -942,15 +948,15 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|help_data
+name|help_id
 condition|)
-name|help_data
+name|help_id
 operator|=
-literal|"introduction.html"
+name|GIMP_HELP_MAIN
 expr_stmt|;
 if|if
 condition|(
-name|help_data
+name|help_id
 index|[
 literal|0
 index|]
@@ -965,7 +971,7 @@ name|g_strconcat
 argument_list|(
 literal|"file:"
 argument_list|,
-name|help_data
+name|help_id
 argument_list|,
 name|NULL
 argument_list|)
@@ -994,7 +1000,7 @@ name|current_locale
 argument_list|,
 literal|"/"
 argument_list|,
-name|help_data
+name|help_id
 argument_list|,
 name|NULL
 argument_list|)
@@ -1016,7 +1022,7 @@ name|current_locale
 argument_list|,
 literal|"/"
 argument_list|,
-name|help_data
+name|help_id
 argument_list|,
 name|NULL
 argument_list|)

@@ -56,7 +56,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|,
 name|GCallback
 name|ok_callback

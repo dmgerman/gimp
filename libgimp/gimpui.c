@@ -45,6 +45,9 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|help_id
+parameter_list|,
+name|gpointer
 name|help_data
 parameter_list|)
 function_decl|;
@@ -280,12 +283,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ui_help_func (const gchar * help_data)
+DECL|function|gimp_ui_help_func (const gchar * help_id,gpointer help_data)
 name|gimp_ui_help_func
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|help_id
+parameter_list|,
+name|gpointer
 name|help_data
 parameter_list|)
 block|{
@@ -294,11 +300,7 @@ argument_list|(
 name|gimp_get_progname
 argument_list|()
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 block|}

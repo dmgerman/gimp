@@ -1001,7 +1001,7 @@ name|tool
 operator|->
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_create_action_area

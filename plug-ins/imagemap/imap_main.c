@@ -6294,6 +6294,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/imagemap.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position

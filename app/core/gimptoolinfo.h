@@ -145,10 +145,10 @@ name|gchar
 modifier|*
 name|help_domain
 decl_stmt|;
-DECL|member|help_data
+DECL|member|help_id
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 decl_stmt|;
 DECL|member|in_toolbox
 name|gboolean
@@ -242,7 +242,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|,
 specifier|const
 name|gchar

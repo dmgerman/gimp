@@ -389,13 +389,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_new:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func:    The function which will be called if the user presses "F1".  * @help_data:    The data pointer which will be passed to @help_func.  * @position:     The dialog's initial position which will be set with  *                gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow:   ... it't @allow_grow flag and ...  * @auto_shrink:  ... it's @auto_shrink flag which will all be set with  *                gtk_window_set_policy().  * @...:          A %NULL-terminated @va_list destribing the  *                action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to gimp_dialog_newv().  *  * For a description of the format of the @va_list describing the  * action_area buttons see gimp_dialog_create_action_areav().  *  * Returns: A #GimpDialog.  **/
+comment|/**  * gimp_dialog_new:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func:    The function which will be called if the user presses "F1".  * @help_id:      The help_id which will be passed to @help_func.  * @position:     The dialog's initial position which will be set with  *                gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow:   ... it't @allow_grow flag and ...  * @auto_shrink:  ... it's @auto_shrink flag which will all be set with  *                gtk_window_set_policy().  * @...:          A %NULL-terminated @va_list destribing the  *                action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to gimp_dialog_newv().  *  * For a description of the format of the @va_list describing the  * action_area buttons see gimp_dialog_create_action_areav().  *  * Returns: A #GimpDialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_new (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,const gchar * help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,...)
+DECL|function|gimp_dialog_new (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,const gchar * help_id,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,...)
 name|gimp_dialog_new
 parameter_list|(
 specifier|const
@@ -414,7 +414,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|,
 name|GtkWindowPosition
 name|position
@@ -456,7 +456,7 @@ name|wmclass_name
 argument_list|,
 name|help_func
 argument_list|,
-name|help_data
+name|help_id
 argument_list|,
 name|position
 argument_list|,
@@ -481,13 +481,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_newv:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func:    The function which will be called if the user presses "F1".  * @help_data:    The data pointer which will be passed to @help_func.  * @position:     The dialog's initial position which will be set with  *                gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow:   ... it't @allow_grow flag and ...  * @auto_shrink:  ... it's @auto_shrink flag which will all be set with  *                gtk_window_set_policy().  * @args:         A @va_list as obtained with va_start() describing the  *                action_area buttons.  *  * This function performs all neccessary setps to set up a standard GIMP  * dialog.  *  * The @va_list describing the action_area buttons will be passed to  * gimp_dialog_create_action_areav().  *  * Returns: A #GimpDialog.  **/
+comment|/**  * gimp_dialog_newv:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func:    The function which will be called if the user presses "F1".  * @help_id:      The help_id which will be passed to @help_func.  * @position:     The dialog's initial position which will be set with  *                gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow:   ... it't @allow_grow flag and ...  * @auto_shrink:  ... it's @auto_shrink flag which will all be set with  *                gtk_window_set_policy().  * @args:         A @va_list as obtained with va_start() describing the  *                action_area buttons.  *  * This function performs all neccessary setps to set up a standard GIMP  * dialog.  *  * The @va_list describing the action_area buttons will be passed to  * gimp_dialog_create_action_areav().  *  * Returns: A #GimpDialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_newv (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,const gchar * help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,va_list args)
+DECL|function|gimp_dialog_newv (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,const gchar * help_id,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,va_list args)
 name|gimp_dialog_newv
 parameter_list|(
 specifier|const
@@ -506,7 +506,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|,
 name|GtkWindowPosition
 name|position
@@ -631,7 +631,9 @@ name|dialog
 argument_list|,
 name|help_func
 argument_list|,
-name|help_data
+name|help_id
+argument_list|,
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return

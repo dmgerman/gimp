@@ -4163,7 +4163,7 @@ name|help
 argument_list|,
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 block|}

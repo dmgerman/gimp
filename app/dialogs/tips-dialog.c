@@ -1121,7 +1121,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  Connect the "F1" help key  */
 name|gimp_help_connect
 argument_list|(
 name|tips_dialog
@@ -1129,6 +1128,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_TIPS_DIALOG
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|tips_set_labels

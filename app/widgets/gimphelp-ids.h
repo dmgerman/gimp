@@ -17,6 +17,14 @@ name|__GIMP_HELP_IDS_H__
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_MAIN
+define|#
+directive|define
+name|GIMP_HELP_MAIN
+value|"index.html"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILE_NEW
 define|#
 directive|define

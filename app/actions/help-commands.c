@@ -30,18 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpobject.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"help-commands.h"
 end_include
 
@@ -63,6 +51,8 @@ parameter_list|)
 block|{
 name|gimp_standard_help_func
 argument_list|(
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

@@ -390,8 +390,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<Toolbox>"
 argument_list|,
-literal|"toolbox"
-argument_list|,
 name|toolbox_menu_setup
 argument_list|,
 name|NULL
@@ -408,8 +406,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Image>"
-argument_list|,
-literal|"image"
 argument_list|,
 name|image_menu_setup
 argument_list|,
@@ -428,8 +424,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<Load>"
 argument_list|,
-literal|"open"
-argument_list|,
 name|file_open_menu_setup
 argument_list|,
 name|NULL
@@ -446,8 +440,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Save>"
-argument_list|,
-literal|"save"
 argument_list|,
 name|file_save_menu_setup
 argument_list|,
@@ -466,8 +458,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<Layers>"
 argument_list|,
-literal|"layers"
-argument_list|,
 name|NULL
 argument_list|,
 name|layers_menu_update
@@ -484,8 +474,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Channels>"
-argument_list|,
-literal|"channels"
 argument_list|,
 name|NULL
 argument_list|,
@@ -504,8 +492,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<Vectors>"
 argument_list|,
-literal|"vectors"
-argument_list|,
 name|NULL
 argument_list|,
 name|vectors_menu_update
@@ -522,8 +508,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Dialogs>"
-argument_list|,
-literal|"dialogs"
 argument_list|,
 name|NULL
 argument_list|,
@@ -542,8 +526,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<Brushes>"
 argument_list|,
-literal|"brushes"
-argument_list|,
 name|NULL
 argument_list|,
 name|brushes_menu_update
@@ -560,8 +542,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Patterns>"
-argument_list|,
-literal|"patterns"
 argument_list|,
 name|NULL
 argument_list|,
@@ -580,8 +560,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<Gradients>"
 argument_list|,
-literal|"gradients"
-argument_list|,
 name|NULL
 argument_list|,
 name|gradients_menu_update
@@ -598,8 +576,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Palettes>"
-argument_list|,
-literal|"palettes"
 argument_list|,
 name|NULL
 argument_list|,
@@ -618,8 +594,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<Buffers>"
 argument_list|,
-literal|"buffers"
-argument_list|,
 name|NULL
 argument_list|,
 name|buffers_menu_update
@@ -636,8 +610,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Documents>"
-argument_list|,
-literal|"documents"
 argument_list|,
 name|NULL
 argument_list|,
@@ -656,8 +628,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<Templates>"
 argument_list|,
-literal|"templates"
-argument_list|,
 name|NULL
 argument_list|,
 name|templates_menu_update
@@ -674,8 +644,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Images>"
-argument_list|,
-literal|"images"
 argument_list|,
 name|NULL
 argument_list|,
@@ -694,8 +662,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<GradientEditor>"
 argument_list|,
-literal|"gradient_editor"
-argument_list|,
 name|NULL
 argument_list|,
 name|gradient_editor_menu_update
@@ -712,8 +678,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<PaletteEditor>"
-argument_list|,
-literal|"palette_editor"
 argument_list|,
 name|NULL
 argument_list|,
@@ -732,8 +696,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<ColormapEditor>"
 argument_list|,
-literal|"colormap_editor"
-argument_list|,
 name|NULL
 argument_list|,
 name|colormap_editor_menu_update
@@ -751,8 +713,6 @@ name|global_menu_factory
 argument_list|,
 literal|"<QMask>"
 argument_list|,
-literal|"qmask"
-argument_list|,
 name|NULL
 argument_list|,
 name|qmask_menu_update
@@ -769,8 +729,6 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<ErrorConsole>"
-argument_list|,
-literal|"error_console"
 argument_list|,
 name|NULL
 argument_list|,
@@ -1131,7 +1089,7 @@ index|[
 name|i
 index|]
 operator|.
-name|help_page
+name|help_id
 operator|=
 name|GIMP_HELP_FILE_OPEN_RECENT
 expr_stmt|;

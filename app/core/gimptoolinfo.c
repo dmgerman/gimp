@@ -337,7 +337,7 @@ name|NULL
 expr_stmt|;
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 operator|=
 name|NULL
 expr_stmt|;
@@ -493,19 +493,19 @@ if|if
 condition|(
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 operator|=
 name|NULL
 expr_stmt|;
@@ -595,7 +595,7 @@ end_function
 begin_function
 name|GimpToolInfo
 modifier|*
-DECL|function|gimp_tool_info_new (Gimp * gimp,GType tool_type,GType tool_options_type,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * paint_core_name,const gchar * stock_id)
+DECL|function|gimp_tool_info_new (Gimp * gimp,GType tool_type,GType tool_options_type,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_id,const gchar * paint_core_name,const gchar * stock_id)
 name|gimp_tool_info_new
 parameter_list|(
 name|Gimp
@@ -644,7 +644,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -861,11 +861,11 @@ argument_list|)
 expr_stmt|;
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 operator|=
 name|g_strdup
 argument_list|(
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|gimp_viewable_set_stock_id

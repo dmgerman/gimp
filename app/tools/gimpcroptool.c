@@ -200,7 +200,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279850e30103
+DECL|enum|__anon27eb41370103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4424,7 +4424,7 @@ name|tool
 operator|->
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_create_action_area

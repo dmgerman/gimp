@@ -438,7 +438,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a50be760108
+DECL|struct|__anon2c1223c30108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1409,6 +1409,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fp.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
@@ -2274,6 +2276,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fp.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
@@ -2599,6 +2603,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fp.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
@@ -5865,6 +5871,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fp.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title

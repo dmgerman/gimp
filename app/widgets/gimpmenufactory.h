@@ -41,11 +41,6 @@ name|gchar
 modifier|*
 name|identifier
 decl_stmt|;
-DECL|member|help_path
-name|gchar
-modifier|*
-name|help_path
-decl_stmt|;
 DECL|member|setup_func
 name|GimpItemFactorySetupFunc
 name|setup_func
@@ -213,11 +208,6 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|help_path
 parameter_list|,
 name|GimpItemFactorySetupFunc
 name|setup_func

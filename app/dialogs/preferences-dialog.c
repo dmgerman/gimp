@@ -1852,7 +1852,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|prefs_notebook_append_page (Gimp * gimp,GtkNotebook * notebook,const gchar * notebook_label,const gchar * notebook_icon,GtkTreeStore * tree,const gchar * tree_label,const gchar * help_data,GtkTreeIter * parent,GtkTreeIter * iter,gint page_index)
+DECL|function|prefs_notebook_append_page (Gimp * gimp,GtkNotebook * notebook,const gchar * notebook_label,const gchar * notebook_icon,GtkTreeStore * tree,const gchar * tree_label,const gchar * help_id,GtkTreeIter * parent,GtkTreeIter * iter,gint page_index)
 name|prefs_notebook_append_page
 parameter_list|(
 name|Gimp
@@ -1885,7 +1885,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|,
 name|GtkTreeIter
 modifier|*
@@ -1944,7 +1944,7 @@ name|event_box
 argument_list|,
 name|NULL
 argument_list|,
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -3381,19 +3381,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|prefs_help_func (const gchar * help_data)
+DECL|function|prefs_help_func (const gchar * help_id,gpointer help_data)
 name|prefs_help_func
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|help_id
+parameter_list|,
+name|gpointer
 name|help_data
 parameter_list|)
-block|{
-if|if
-condition|(
-name|prefs_dialog
-condition|)
 block|{
 name|GtkWidget
 modifier|*
@@ -3412,7 +3410,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|prefs_dialog
+name|help_data
 argument_list|)
 argument_list|,
 literal|"notebook"
@@ -3440,7 +3438,7 @@ argument_list|,
 name|page_num
 argument_list|)
 expr_stmt|;
-name|help_data
+name|help_id
 operator|=
 name|g_object_get_data
 argument_list|(
@@ -3449,15 +3447,16 @@ argument_list|(
 name|event_box
 argument_list|)
 argument_list|,
-literal|"gimp_help_data"
+literal|"gimp-help-id"
 argument_list|)
 expr_stmt|;
 name|gimp_standard_help_func
 argument_list|(
-name|help_data
+name|help_id
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -7016,7 +7015,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29be1a060108
+DECL|struct|__anon292eec0d0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8657,7 +8656,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29be1a060208
+DECL|struct|__anon292eec0d0208
 block|{
 DECL|member|label
 specifier|const
@@ -8816,7 +8815,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29be1a060308
+DECL|struct|__anon292eec0d0308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -78,7 +78,7 @@ end_include
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|file_dialog_new (Gimp * gimp,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * title,const gchar * wmclass_name,const gchar * help_data,GCallback ok_callback)
+DECL|function|file_dialog_new (Gimp * gimp,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * title,const gchar * wmclass_name,const gchar * help_id,GCallback ok_callback)
 name|file_dialog_new
 parameter_list|(
 name|Gimp
@@ -116,7 +116,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|,
 name|GCallback
 name|ok_callback
@@ -198,7 +198,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|help_data
+name|help_id
 operator|!=
 name|NULL
 argument_list|,
@@ -268,7 +268,9 @@ name|filesel
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|help_data
+name|help_id
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

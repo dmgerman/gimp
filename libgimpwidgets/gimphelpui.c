@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimphelpui.c  * Copyright (C) 2000 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *               * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimphelpui.c  * Copyright (C) 2000 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkkeysyms.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_ifdef
@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fefe190103
+DECL|enum|__anon2b552f270103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -115,6 +115,10 @@ name|GtkWidget
 modifier|*
 modifier|*
 name|help_widget
+parameter_list|,
+name|gpointer
+modifier|*
+name|ret_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -310,13 +314,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_standard_help_func (const gchar * help_data)
+DECL|function|gimp_standard_help_func (const gchar * help_id,gpointer data)
 name|gimp_standard_help_func
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 if|if
@@ -338,19 +345,21 @@ modifier|*
 name|_gimp_standard_help_func
 call|)
 argument_list|(
-name|help_data
+name|help_id
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_connect:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  *  * Note that this function is automatically called by all libgimp dialog  * constructors. You only have to call it for windows/dialogs you created  * "manually".  **/
+comment|/**  * gimp_help_connect:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_id:   The help_id which will be passed to @help_func.  * @help_data: The help_data pointer which will be passed to @help_func.  *  * Note that this function is automatically called by all libgimp dialog  * constructors. You only have to call it for windows/dialogs you created  * "manually".  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help_connect (GtkWidget * widget,GimpHelpFunc help_func,const gchar * help_data)
+DECL|function|gimp_help_connect (GtkWidget * widget,GimpHelpFunc help_func,const gchar * help_id,gpointer help_data)
 name|gimp_help_connect
 parameter_list|(
 name|GtkWidget
@@ -363,6 +372,9 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|help_id
+parameter_list|,
+name|gpointer
 name|help_data
 parameter_list|)
 block|{
@@ -485,6 +497,18 @@ name|widget
 argument_list|,
 name|NULL
 argument_list|,
+name|help_id
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"gimp-help-data"
+argument_list|,
 name|help_data
 argument_list|)
 expr_stmt|;
@@ -513,12 +537,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_set_help_data:  * @widget: The #GtkWidget you want to set a @tooltip and/or @help_data for.  * @tooltip: The text for this widget's tooltip (or %NULL).  * @help_data: The @help_data for the #GtkTipsQuery tooltips inspector.  *  * The reason why we don't use gtk_tooltips_set_tip() is that it's  * impossible to set a @private_tip (aka @help_data) without a visible  * @tooltip.  *  * This function can be called with %NULL for @tooltip. Use this feature  * if you want to set a HTML help link for a widget which shouldn't have  * a visible tooltip.  *  * You can e.g. set a @help_data string to a complete HTML page for a  * container widget (e.g. a #GtkBox). For the widgets inside the box  * you can set HTML anchors which point inside the container widget's  * help page by setting @help_data strings starting with "#".  *  * If the tooltips inspector (Shift + "F1") is invoked and the user  * clicks on one of the widgets which only contain a "#" link, the  * help system will automatically ascend the widget hierarchy until it  * finds another widget with @help_data attached and concatenates both  * to a complete help path.  **/
+comment|/**  * gimp_help_set_help_data:  * @widget:  The #GtkWidget you want to set a @tooltip and/or @help_data for.  * @tooltip: The text for this widget's tooltip (or %NULL).  * @help_id: The @help_id for the #GtkTipsQuery tooltips inspector.  *  * The reason why we don't use gtk_tooltips_set_tip() is that it's  * impossible to set a @private_tip (aka @help_id) without a visible  * @tooltip.  *  * This function can be called with %NULL for @tooltip. Use this feature  * if you want to set a help link for a widget which shouldn't have  * a visible tooltip.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help_set_help_data (GtkWidget * widget,const gchar * tooltip,const gchar * help_data)
+DECL|function|gimp_help_set_help_data (GtkWidget * widget,const gchar * tooltip,const gchar * help_id)
 name|gimp_help_set_help_data
 parameter_list|(
 name|GtkWidget
@@ -533,7 +557,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -548,7 +572,6 @@ if|if
 condition|(
 name|tooltip
 condition|)
-block|{
 name|gtk_tooltips_set_tip
 argument_list|(
 name|tool_tips
@@ -557,16 +580,10 @@ name|widget
 argument_list|,
 name|tooltip
 argument_list|,
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|help_data
-condition|)
-block|{
+else|else
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -574,20 +591,19 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp_help_data"
+literal|"gimp-help-id"
 argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_help:  *  * This function invokes the #GtkTipsQuery tooltips inspector.  *  * The mouse cursor will turn turn into a question mark and the user can  * click on any widget of the application which started the inspector.  *  * If the widget the user clicked on has a @help_data string attached  * (see gimp_help_set_help_data()), the corresponding HTML page will  * be displayed. Otherwise the help system will ascend the widget hierarchy  * until it finds an attached @help_data string (which should be the  * case at least for every window/dialog).  **/
+comment|/**  * gimp_context_help:  *  * This function invokes the #GtkTipsQuery tooltips inspector.  *  * The mouse cursor will turn turn into a question mark and the user can  * click on any widget of the application which started the inspector.  *  * If the widget the user clicked on has a @help_id string attached  * (see gimp_help_set_help_data()), the corresponding help page will  * be displayed. Otherwise the help system will ascend the widget hierarchy  * until it finds an attached @help_id string (which should be the  * case at least for every window/dialog).  **/
 end_comment
 
 begin_function
@@ -623,7 +639,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_help_get_help_data (GtkWidget * widget,GtkWidget ** help_widget)
+DECL|function|gimp_help_get_help_data (GtkWidget * widget,GtkWidget ** help_widget,gpointer * ret_data)
 name|gimp_help_get_help_data
 parameter_list|(
 name|GtkWidget
@@ -634,6 +650,10 @@ name|GtkWidget
 modifier|*
 modifier|*
 name|help_widget
+parameter_list|,
+name|gpointer
+modifier|*
+name|ret_data
 parameter_list|)
 block|{
 name|GtkTooltipsData
@@ -642,6 +662,11 @@ name|tooltips_data
 decl_stmt|;
 name|gchar
 modifier|*
+name|help_id
+init|=
+name|NULL
+decl_stmt|;
+name|gpointer
 name|help_data
 init|=
 name|NULL
@@ -674,7 +699,7 @@ operator|->
 name|tip_private
 condition|)
 block|{
-name|help_data
+name|help_id
 operator|=
 name|tooltips_data
 operator|->
@@ -683,6 +708,19 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|help_id
+operator|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"gimp-help-id"
+argument_list|)
+expr_stmt|;
+block|}
 name|help_data
 operator|=
 name|g_object_get_data
@@ -692,13 +730,12 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp_help_data"
+literal|"gimp-help-data"
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
-name|help_data
+name|help_id
 condition|)
 block|{
 if|if
@@ -710,13 +747,22 @@ name|help_widget
 operator|=
 name|widget
 expr_stmt|;
+if|if
+condition|(
+name|ret_data
+condition|)
+operator|*
+name|ret_data
+operator|=
+name|help_data
+expr_stmt|;
 return|return
 operator|(
 specifier|const
 name|gchar
 operator|*
 operator|)
-name|help_data
+name|help_id
 return|;
 block|}
 block|}
@@ -756,10 +802,59 @@ condition|(
 name|help_func
 condition|)
 block|{
+name|GtkTooltipsData
+modifier|*
+name|tooltips_data
+decl_stmt|;
 name|gchar
 modifier|*
-name|help_data
+name|help_id
+init|=
+name|NULL
 decl_stmt|;
+name|gpointer
+name|help_data
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+operator|(
+name|tooltips_data
+operator|=
+name|gtk_tooltips_data_get
+argument_list|(
+name|widget
+argument_list|)
+operator|)
+operator|&&
+name|tooltips_data
+operator|->
+name|tip_private
+condition|)
+block|{
+name|help_id
+operator|=
+name|tooltips_data
+operator|->
+name|tip_private
+expr_stmt|;
+block|}
+else|else
+block|{
+name|help_id
+operator|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"gimp-help-id"
+argument_list|)
+expr_stmt|;
+block|}
 name|help_data
 operator|=
 name|g_object_get_data
@@ -769,7 +864,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp_help_data"
+literal|"gimp-help-data"
 argument_list|)
 expr_stmt|;
 call|(
@@ -777,6 +872,8 @@ modifier|*
 name|help_func
 call|)
 argument_list|(
+name|help_id
+argument_list|,
 name|help_data
 argument_list|)
 expr_stmt|;
@@ -837,11 +934,16 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
+name|help_id
+init|=
+name|NULL
+decl_stmt|;
+name|gpointer
 name|help_data
 init|=
 name|NULL
 decl_stmt|;
-name|help_data
+name|help_id
 operator|=
 name|gimp_help_get_help_data
 argument_list|(
@@ -852,84 +954,22 @@ argument_list|)
 argument_list|,
 operator|&
 name|help_widget
+argument_list|,
+operator|&
+name|help_data
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|help_data
+name|help_id
 condition|)
-block|{
-if|if
-condition|(
-name|help_data
-index|[
-literal|0
-index|]
-operator|==
-literal|'#'
-condition|)
-block|{
-specifier|const
-name|gchar
-modifier|*
-name|help_index
-decl_stmt|;
-name|help_index
-operator|=
-name|help_data
-expr_stmt|;
-name|help_data
-operator|=
-name|gimp_help_get_help_data
-argument_list|(
-name|help_widget
-operator|->
-name|parent
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|help_data
-condition|)
-block|{
-name|gchar
-modifier|*
-name|help_text
-decl_stmt|;
-name|help_text
-operator|=
-name|g_strconcat
-argument_list|(
-name|help_data
-argument_list|,
-name|help_index
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gimp_standard_help_func
 argument_list|(
-name|help_text
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|help_text
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-else|else
-block|{
-name|gimp_standard_help_func
-argument_list|(
+name|help_id
+argument_list|,
 name|help_data
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 return|return
 name|FALSE
 return|;

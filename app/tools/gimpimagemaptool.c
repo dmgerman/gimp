@@ -849,7 +849,7 @@ name|gimp_standard_help_func
 argument_list|,
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,

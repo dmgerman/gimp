@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf57a490103
+DECL|enum|__anon2925fb9a0103
 block|{
 DECL|enumerator|DIR_CHANGED
 name|DIR_CHANGED
@@ -608,6 +608,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/text_editor.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_create_action_area

@@ -1438,7 +1438,7 @@ name|gimp_standard_help_func
 argument_list|,
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

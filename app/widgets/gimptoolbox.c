@@ -777,6 +777,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_TOOLBOX
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toolbox
@@ -2490,7 +2492,7 @@ name|tooltip
 argument_list|,
 name|tool_info
 operator|->
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 name|g_free

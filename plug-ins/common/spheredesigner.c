@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9d1140103
+DECL|enum|__anon29da6fdf0103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -247,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9d1140203
+DECL|enum|__anon29da6fdf0203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9d1140303
+DECL|enum|__anon29da6fdf0303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -312,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9d1140403
+DECL|enum|__anon29da6fdf0403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -322,7 +322,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9d1140503
+DECL|enum|__anon29da6fdf0503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -375,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140608
+DECL|struct|__anon29da6fdf0608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140708
+DECL|struct|__anon29da6fdf0708
 block|{
 DECL|member|numcol
 name|gshort
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140808
+DECL|struct|__anon29da6fdf0808
 block|{
 DECL|member|majtype
 name|gint
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140908
+DECL|struct|__anon29da6fdf0908
 block|{
 DECL|member|type
 name|gshort
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140a08
+DECL|struct|__anon29da6fdf0a08
 block|{
 DECL|member|type
 name|gshort
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140b08
+DECL|struct|__anon29da6fdf0b08
 block|{
 DECL|member|com
 name|common
@@ -615,7 +615,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140c08
+DECL|struct|__anon29da6fdf0c08
 block|{
 DECL|member|com
 name|common
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140d08
+DECL|struct|__anon29da6fdf0d08
 block|{
 DECL|member|com
 name|common
@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140e08
+DECL|struct|__anon29da6fdf0e08
 block|{
 DECL|member|com
 name|common
@@ -689,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1140f08
+DECL|struct|__anon29da6fdf0f08
 block|{
 DECL|member|com
 name|common
@@ -712,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1141008
+DECL|struct|__anon29da6fdf1008
 block|{
 DECL|member|com
 name|common
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9d1141108
+DECL|struct|__anon29da6fdf1108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -761,7 +761,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2ba9d114120a
+DECL|union|__anon29da6fdf120a
 block|{
 DECL|member|com
 name|common
@@ -1077,7 +1077,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2ba9d1141308
+DECL|struct|__anon29da6fdf1308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -7318,7 +7318,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*     Quality:    0 = Color only    1 = Textures    2 = Light + Normals    3 = Shadows    4 = Phong    5 = Reflection + Refraction  */
+comment|/*    Quality:    0 = Color only    1 = Textures    2 = Light + Normals    3 = Shadows    4 = Phong    5 = Reflection + Refraction  */
 end_comment
 
 begin_function
@@ -13205,6 +13205,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/spheredesigner.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -13278,7 +13280,7 @@ name|r
 operator|=
 literal|4.0
 expr_stmt|;
-comment|/* not: world.obj[0] = s;     * s is a sphere so error C2115: '=' : incompatible types    */
+comment|/* not: world.obj[0] = s;    * s is a sphere so error C2115: '=' : incompatible types    */
 name|memcpy
 argument_list|(
 operator|&
