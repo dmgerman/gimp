@@ -214,7 +214,7 @@ DECL|macro|POINT_WIDTH
 define|#
 directive|define
 name|POINT_WIDTH
-value|8
+value|9
 end_define
 
 begin_comment
