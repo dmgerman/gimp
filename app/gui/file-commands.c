@@ -963,8 +963,8 @@ name|_
 argument_list|(
 literal|"Revert '%s' to\n"
 literal|"'%s'?\n\n"
-literal|"(You will lose all your changes,\n"
-literal|"including all undo information)"
+literal|"You will lose all your changes, "
+literal|"including all undo information."
 argument_list|)
 argument_list|,
 name|basename
@@ -1031,6 +1031,21 @@ argument_list|,
 name|REVERT_DATA_KEY
 argument_list|,
 name|query_box
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|query_box
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

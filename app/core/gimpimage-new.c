@@ -180,6 +180,12 @@ operator|=
 name|GIMP_RGB
 expr_stmt|;
 comment|/* no indexed images */
+name|values
+operator|->
+name|fill_type
+operator|=
+name|GIMP_BACKGROUND_FILL
+expr_stmt|;
 block|}
 else|else
 block|{
