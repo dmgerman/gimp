@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpnavigationpreview.h"
+file|"widgets/gimpnavigationview.h"
 end_include
 
 begin_include
@@ -228,9 +228,9 @@ specifier|static
 name|void
 name|gimp_navigation_editor_marker_changed
 parameter_list|(
-name|GimpNavigationPreview
+name|GimpNavigationView
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|gdouble
 name|x
@@ -250,9 +250,9 @@ specifier|static
 name|void
 name|gimp_navigation_editor_zoom
 parameter_list|(
-name|GimpNavigationPreview
+name|GimpNavigationView
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|GimpZoomType
 name|direction
@@ -269,9 +269,9 @@ specifier|static
 name|void
 name|gimp_navigation_editor_scroll
 parameter_list|(
-name|GimpNavigationPreview
+name|GimpNavigationView
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|GdkScrollDirection
 name|direction
@@ -691,7 +691,7 @@ name|view
 operator|=
 name|gimp_view_new_by_types
 argument_list|(
-name|GIMP_TYPE_NAVIGATION_PREVIEW
+name|GIMP_TYPE_NAVIGATION_VIEW
 argument_list|,
 name|GIMP_TYPE_IMAGE
 argument_list|,
@@ -1281,9 +1281,9 @@ name|GimpNavigationEditor
 modifier|*
 name|editor
 decl_stmt|;
-name|GimpNavigationPreview
+name|GimpNavigationView
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|GdkScreen
 modifier|*
@@ -1482,9 +1482,9 @@ argument_list|,
 name|screen
 argument_list|)
 expr_stmt|;
-name|preview
+name|view
 operator|=
-name|GIMP_NAVIGATION_PREVIEW
+name|GIMP_NAVIGATION_VIEW
 argument_list|(
 name|editor
 operator|->
@@ -1517,14 +1517,14 @@ name|x_org
 operator|+
 name|click_x
 operator|-
-name|preview
+name|view
 operator|->
 name|p_x
 operator|-
 literal|0.5
 operator|*
 operator|(
-name|preview
+name|view
 operator|->
 name|p_width
 operator|-
@@ -1547,14 +1547,14 @@ name|y_org
 operator|+
 name|click_y
 operator|-
-name|preview
+name|view
 operator|->
 name|p_y
 operator|-
 literal|0.5
 operator|*
 operator|(
-name|preview
+name|view
 operator|->
 name|p_height
 operator|-
@@ -1587,7 +1587,7 @@ argument_list|)
 operator|-
 name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -1620,7 +1620,7 @@ argument_list|)
 operator|-
 name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -1662,28 +1662,28 @@ name|gdk_flush
 argument_list|()
 expr_stmt|;
 comment|/* fill in then grab pointer */
-name|preview
+name|view
 operator|->
 name|motion_offset_x
 operator|=
 literal|0.5
 operator|*
 operator|(
-name|preview
+name|view
 operator|->
 name|p_width
 operator|-
 name|BORDER_PEN_WIDTH
 operator|)
 expr_stmt|;
-name|preview
+name|view
 operator|->
 name|motion_offset_y
 operator|=
 literal|0.5
 operator|*
 operator|(
-name|preview
+name|view
 operator|->
 name|p_height
 operator|-
@@ -1693,9 +1693,9 @@ expr_stmt|;
 undef|#
 directive|undef
 name|BORDER_PEN_WIDTH
-name|gimp_navigation_preview_grab_pointer
+name|gimp_navigation_view_grab_pointer
 argument_list|(
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 block|}
@@ -2271,12 +2271,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_editor_marker_changed (GimpNavigationPreview * preview,gdouble x,gdouble y,GimpNavigationEditor * editor)
+DECL|function|gimp_navigation_editor_marker_changed (GimpNavigationView * view,gdouble x,gdouble y,GimpNavigationEditor * editor)
 name|gimp_navigation_editor_marker_changed
 parameter_list|(
-name|GimpNavigationPreview
+name|GimpNavigationView
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|gdouble
 name|x
@@ -2374,12 +2374,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_editor_zoom (GimpNavigationPreview * preview,GimpZoomType direction,GimpNavigationEditor * editor)
+DECL|function|gimp_navigation_editor_zoom (GimpNavigationView * view,GimpZoomType direction,GimpNavigationEditor * editor)
 name|gimp_navigation_editor_zoom
 parameter_list|(
-name|GimpNavigationPreview
+name|GimpNavigationView
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|GimpZoomType
 name|direction
@@ -2421,12 +2421,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_editor_scroll (GimpNavigationPreview * preview,GdkScrollDirection direction,GimpNavigationEditor * editor)
+DECL|function|gimp_navigation_editor_scroll (GimpNavigationView * view,GdkScrollDirection direction,GimpNavigationEditor * editor)
 name|gimp_navigation_editor_scroll
 parameter_list|(
-name|GimpNavigationPreview
+name|GimpNavigationView
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|GdkScrollDirection
 name|direction
@@ -3076,9 +3076,9 @@ operator|->
 name|dot_for_dot
 argument_list|)
 expr_stmt|;
-name|gimp_navigation_preview_set_marker
+name|gimp_navigation_view_set_marker
 argument_list|(
-name|GIMP_NAVIGATION_PREVIEW
+name|GIMP_NAVIGATION_VIEW
 argument_list|(
 name|editor
 operator|->

@@ -880,11 +880,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpNavigationPreview
+DECL|typedef|GimpNavigationView
 typedef|typedef
 name|struct
-name|_GimpNavigationPreview
-name|GimpNavigationPreview
+name|_GimpNavigationView
+name|GimpNavigationView
 typedef|;
 end_typedef
 
