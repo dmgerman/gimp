@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276054140108
+DECL|struct|__anon2c6100f80108
 block|{
 DECL|member|code
 name|__u16
@@ -414,7 +414,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon276054140203
+DECL|enum|__anon2c6100f80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1816,6 +1816,7 @@ operator|&
 name|cevent
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 break|break;
 default|default:
