@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40004d0103
+DECL|enum|__anon29d1835e0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4495,9 +4495,9 @@ argument_list|,
 literal|0
 argument_list|,
 operator|-
-literal|65536
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-literal|65536
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
@@ -4512,9 +4512,9 @@ argument_list|,
 literal|1
 argument_list|,
 operator|-
-literal|65536
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-literal|65536
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|)
 expr_stmt|;
 name|spinbutton
@@ -4631,10 +4631,9 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-operator|-
-literal|65536
+name|GIMP_MIN_IMAGE_SIZE
 argument_list|,
-literal|65536
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
@@ -4648,10 +4647,9 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-operator|-
-literal|65536
+name|GIMP_MIN_IMAGE_SIZE
 argument_list|,
-literal|65536
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
