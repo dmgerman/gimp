@@ -368,7 +368,7 @@ define|#
 directive|define
 name|HELP_LOCALES_BLURB
 define|\
-value|"Specifies the language preferences used by the help system. This is a" \ "colon-separated list of language identifiers with decreasing priority. " \ "If empty, the language is taken from the user's locale setting."
+value|"Specifies the language preferences used by the help system. This is a " \ "colon-separated list of language identifiers with decreasing priority. " \ "If empty, the language is taken from the user's locale setting."
 end_define
 
 begin_define

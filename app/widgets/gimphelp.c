@@ -9,33 +9,10 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"sys/types.h"
 end_include
 
 begin_include
@@ -309,6 +286,13 @@ condition|(
 name|config
 operator|->
 name|help_locales
+operator|&&
+name|strlen
+argument_list|(
+name|config
+operator|->
+name|help_locales
+argument_list|)
 condition|)
 name|idle_help
 operator|->

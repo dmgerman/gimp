@@ -192,7 +192,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4bbf40103
+DECL|enum|__anon2bbca0890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -751,7 +751,7 @@ literal|"help-locales"
 argument_list|,
 name|HELP_LOCALES_BLURB
 argument_list|,
-name|NULL
+literal|""
 argument_list|,
 literal|0
 argument_list|)
