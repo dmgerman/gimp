@@ -80,10 +80,10 @@ modifier|*
 name|proc_name
 parameter_list|)
 block|{
-name|int
+name|gint
 name|l_nparams
 decl_stmt|;
-name|int
+name|gint
 name|l_nreturn_vals
 decl_stmt|;
 name|GimpPDBProcType

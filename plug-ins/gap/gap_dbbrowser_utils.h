@@ -77,7 +77,7 @@ file|"gap_filter.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon290186c10108
+DECL|struct|__anon275b85850108
 typedef|typedef
 struct|struct
 block|{
@@ -98,7 +98,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290186c10208
+DECL|struct|__anon275b85850208
 typedef|typedef
 struct|struct
 block|{
@@ -189,24 +189,24 @@ modifier|*
 name|selected_proc_date
 decl_stmt|;
 DECL|member|selected_proc_type
-name|int
+name|GimpPDBProcType
 name|selected_proc_type
 decl_stmt|;
 DECL|member|selected_nparams
-name|int
+name|gint
 name|selected_nparams
 decl_stmt|;
 DECL|member|selected_nreturn_vals
-name|int
+name|gint
 name|selected_nreturn_vals
 decl_stmt|;
 DECL|member|selected_params
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|selected_params
 decl_stmt|;
 DECL|member|selected_return_vals
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|selected_return_vals
 decl_stmt|;

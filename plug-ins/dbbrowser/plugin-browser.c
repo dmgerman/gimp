@@ -447,7 +447,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4fdf20108
+DECL|struct|__anon29b1d7320108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -553,7 +553,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4fdf20208
+DECL|struct|__anon29b1d7320208
 block|{
 DECL|member|menu
 name|gchar
@@ -1018,7 +1018,7 @@ name|gchar
 modifier|*
 name|selected_proc_date
 decl_stmt|;
-name|gint
+name|GimpPDBProcType
 name|selected_proc_type
 decl_stmt|;
 name|gint
@@ -1027,11 +1027,11 @@ decl_stmt|;
 name|gint
 name|selected_nreturn_vals
 decl_stmt|;
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|selected_params
 decl_stmt|;
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|selected_return_vals
 decl_stmt|;
