@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimpfonts.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xcf/xcf.h"
 end_include
 
@@ -249,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcb294e0103
+DECL|enum|__anon2b0ad6a10103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -2160,6 +2166,11 @@ operator|->
 name|palette_factory
 argument_list|)
 expr_stmt|;
+name|gimp_fonts_reset
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp_documents_save
 argument_list|(
 name|gimp
@@ -3334,28 +3345,9 @@ argument_list|,
 literal|0.70
 argument_list|)
 expr_stmt|;
-name|gimp_container_freeze
+name|gimp_fonts_init
 argument_list|(
 name|gimp
-operator|->
-name|fonts
-argument_list|)
-expr_stmt|;
-name|gimp_font_list_restore
-argument_list|(
-name|GIMP_FONT_LIST
-argument_list|(
-name|gimp
-operator|->
-name|fonts
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_container_thaw
-argument_list|(
-name|gimp
-operator|->
-name|fonts
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the document history  */

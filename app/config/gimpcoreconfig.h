@@ -137,6 +137,11 @@ name|gchar
 modifier|*
 name|gradient_path
 decl_stmt|;
+DECL|member|font_path
+name|gchar
+modifier|*
+name|font_path
+decl_stmt|;
 DECL|member|default_brush
 name|gchar
 modifier|*

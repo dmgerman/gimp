@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b567bfb0103
+DECL|enum|__anon28e956370103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b567bfb0203
+DECL|enum|__anon28e956370203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b567bfb0303
+DECL|enum|__anon28e956370303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b567bfb0408
+DECL|struct|__anon28e956370408
 block|{
 DECL|member|directory
 name|gboolean
@@ -682,11 +682,31 @@ block|,
 block|{
 name|TRUE
 block|,
+literal|"fonts"
+block|,
+name|N_
+argument_list|(
+literal|"This folder is used to store fonts you only want\n"
+literal|"visible in the GIMP. The GIMP checks this folder in\n"
+literal|"addition to the system-wide GIMP fonts installation\n"
+literal|"when searching for fonts. Use this only if you really\n"
+literal|"want to have GIMP-only fonts, otherwise put things\n"
+literal|"in your global font directory."
+argument_list|)
+block|,
+name|TREE_ITEM_MKDIR_ONLY
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|TRUE
+block|,
 literal|"gradients"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user defined gradients\n"
+literal|"This folder is used to store user defined gradients.\n"
 literal|"The GIMP checks this folder in addition to the system-\n"
 literal|"wide GIMP gradients installation when searching for\n"
 literal|"gradients."

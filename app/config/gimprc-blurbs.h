@@ -312,6 +312,15 @@ value|"Sets the gradient search path."
 end_define
 
 begin_define
+DECL|macro|FONT_PATH_BLURB
+define|#
+directive|define
+name|FONT_PATH_BLURB
+define|\
+value|"Where to look for fonts."
+end_define
+
+begin_define
 DECL|macro|HELP_BROWSER_BLURB
 define|#
 directive|define
