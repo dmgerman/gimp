@@ -1093,13 +1093,6 @@ argument_list|(
 name|startup_id
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|desktop_startup_id
-argument_list|)
-expr_stmt|;
 name|gtk_init
 argument_list|(
 operator|&
@@ -1409,19 +1402,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|query
 condition|)
 block|{
-name|exit
-argument_list|(
-name|gimp_window
-condition|?
-name|EXIT_SUCCESS
-else|:
-name|EXIT_FAILURE
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|gimp_window
@@ -1480,7 +1464,7 @@ return|return
 name|EXIT_FAILURE
 return|;
 block|}
-comment|/*  Problem: If the Toolbox is hidden via Tab (gtk_widget_hide)        *  it does not accept DnD-Operations and gtk_main() will not be        *  terminated. If the Toolbox is simply unmapped (by the WM)        *  DnD works. But in both cases gdk_window_is_visible() returns        *  FALSE. To work around this we add a timeout and abort after        *  1.5 seconds.        */
+comment|/*  Problem: If the Toolbox is hidden via Tab (gtk_widget_hide)            *  it does not accept DnD-Operations and gtk_main() will not be            *  terminated. If the Toolbox is simply unmapped (by the WM)            *  DnD works. But in both cases gdk_window_is_visible() returns            *  FALSE. To work around this we add a timeout and abort after            *  1.5 seconds.            */
 name|timeout
 operator|=
 name|g_timeout_add
@@ -1521,7 +1505,7 @@ argument_list|(
 name|source
 argument_list|)
 expr_stmt|;
-comment|/*  specify the id and the content-type of the selection used to        *  pass the URIs to Gimp.        */
+comment|/*  specify the id and the content-type of the selection used to            *  pass the URIs to Gimp.            */
 name|sel_id
 operator|=
 name|gdk_atom_intern
@@ -1621,17 +1605,13 @@ name|timeout
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
+elseif|else
 if|if
 condition|(
+operator|!
 name|existing
 condition|)
-name|exit
-argument_list|(
-name|EXIT_FAILURE
-argument_list|)
-expr_stmt|;
+block|{
 name|start_new_gimp
 argument_list|(
 name|screen
@@ -1647,6 +1627,10 @@ name|file_list
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+name|gdk_notify_startup_complete
+argument_list|()
+expr_stmt|;
 name|g_string_free
 argument_list|(
 name|file_list
@@ -1659,11 +1643,14 @@ argument_list|(
 name|desktop_startup_id
 argument_list|)
 expr_stmt|;
-name|gdk_notify_startup_complete
-argument_list|()
-expr_stmt|;
 return|return
+operator|(
+name|gimp_window
+condition|?
 name|EXIT_SUCCESS
+else|:
+name|EXIT_FAILURE
+operator|)
 return|;
 block|}
 end_function
