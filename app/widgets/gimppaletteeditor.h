@@ -32,25 +32,6 @@ begin_comment
 comment|/* FIXME */
 end_comment
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon29d490f80103
-block|{
-DECL|enumerator|GIMP_UPDATE_COLOR_STATE_NEW
-name|GIMP_UPDATE_COLOR_STATE_NEW
-block|,
-DECL|enumerator|GIMP_UPDATE_COLOR_STATE_UPDATE_NEW
-name|GIMP_UPDATE_COLOR_STATE_UPDATE_NEW
-block|,
-DECL|enumerator|GIMP_UPDATE_COLOR_STATE_UPDATE
-name|GIMP_UPDATE_COLOR_STATE_UPDATE
-DECL|typedef|GimpUpdateColorState
-block|}
-name|GimpUpdateColorState
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_PALETTE_EDITOR
 define|#
@@ -263,19 +244,19 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_palette_editor_update_color
+name|gimp_palette_editor_pick_color
 parameter_list|(
-name|GimpContext
+name|GimpPaletteEditor
 modifier|*
-name|context
+name|editor
 parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|GimpUpdateColorState
-name|state
+name|GimpColorPickState
+name|pick_state
 parameter_list|)
 function_decl|;
 end_function_decl

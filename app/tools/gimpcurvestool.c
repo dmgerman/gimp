@@ -350,6 +350,9 @@ name|GimpColorTool
 modifier|*
 name|color_tool
 parameter_list|,
+name|GimpColorPickState
+name|pick_state
+parameter_list|,
 name|GimpImageType
 name|sample_type
 parameter_list|,
@@ -1538,12 +1541,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_curves_tool_color_picked (GimpColorTool * color_tool,GimpImageType sample_type,GimpRGB * color,gint color_index)
+DECL|function|gimp_curves_tool_color_picked (GimpColorTool * color_tool,GimpColorPickState pick_state,GimpImageType sample_type,GimpRGB * color,gint color_index)
 name|gimp_curves_tool_color_picked
 parameter_list|(
 name|GimpColorTool
 modifier|*
 name|color_tool
+parameter_list|,
+name|GimpColorPickState
+name|pick_state
 parameter_list|,
 name|GimpImageType
 name|sample_type

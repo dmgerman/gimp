@@ -180,6 +180,9 @@ name|GimpColorTool
 modifier|*
 name|tool
 parameter_list|,
+name|GimpColorPickState
+name|pick_state
+parameter_list|,
 name|GimpImageType
 name|sample_type
 parameter_list|,
