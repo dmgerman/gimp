@@ -1672,7 +1672,7 @@ if|if
 condition|(
 name|tool_type
 operator|==
-name|GIMP_TYPE_RECT_SELECT_TOOL
+name|GIMP_TYPE_PAINTBRUSH_TOOL
 condition|)
 name|gimp_tool_info_set_standard
 argument_list|(
