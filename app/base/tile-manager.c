@@ -3160,6 +3160,8 @@ operator|(
 name|y2
 operator|-
 name|y
+operator|+
+literal|1
 operator|)
 condition|)
 name|rows
@@ -3167,6 +3169,8 @@ operator|=
 name|y2
 operator|-
 name|y
+operator|+
+literal|1
 expr_stmt|;
 name|cols
 operator|=
@@ -3187,6 +3191,8 @@ operator|(
 name|x2
 operator|-
 name|x
+operator|+
+literal|1
 operator|)
 condition|)
 name|cols
@@ -3194,6 +3200,8 @@ operator|=
 name|x2
 operator|-
 name|x
+operator|+
+literal|1
 expr_stmt|;
 name|srcstride
 operator|=
@@ -3411,6 +3419,8 @@ operator|(
 name|y2
 operator|-
 name|y
+operator|+
+literal|1
 operator|)
 condition|)
 name|rows
@@ -3418,6 +3428,8 @@ operator|=
 name|y2
 operator|-
 name|y
+operator|+
+literal|1
 expr_stmt|;
 name|cols
 operator|=
@@ -3438,6 +3450,8 @@ operator|(
 name|x2
 operator|-
 name|x
+operator|+
+literal|1
 operator|)
 condition|)
 name|cols
@@ -3445,6 +3459,8 @@ operator|=
 name|x2
 operator|-
 name|x
+operator|+
+literal|1
 expr_stmt|;
 name|dststride
 operator|=
