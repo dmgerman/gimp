@@ -136,7 +136,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27830cf80108
+DECL|struct|__anon2b3c21cb0108
 block|{
 DECL|member|run
 name|gint
@@ -155,7 +155,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27830cf80203
+DECL|enum|__anon2b3c21cb0203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27830cf80303
+DECL|enum|__anon2b3c21cb0303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -351,8 +351,8 @@ DECL|enumerator|PTYP_3xFLT
 name|PTYP_3xFLT
 init|=
 literal|8
-block|, }
 DECL|typedef|t_param_typ
+block|}
 name|t_param_typ
 typedef|;
 end_typedef
@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27830cf80408
+DECL|struct|__anon2b3c21cb0408
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -396,7 +396,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27830cf80508
+DECL|struct|__anon2b3c21cb0508
 block|{
 DECL|member|int_val1
 name|gint32
@@ -436,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27830cf80608
+DECL|struct|__anon2b3c21cb0608
 block|{
 DECL|member|active_channel
 name|gint
@@ -510,7 +510,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27830cf80708
+DECL|struct|__anon2b3c21cb0708
 block|{
 DECL|member|active_layer
 name|gint
@@ -595,7 +595,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27830cf80808
+DECL|struct|__anon2b3c21cb0808
 block|{
 DECL|member|position
 name|gint32
@@ -617,7 +617,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27830cf80908
+DECL|struct|__anon2b3c21cb0908
 typedef|typedef
 struct|struct
 block|{
