@@ -1306,6 +1306,11 @@ index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -1362,6 +1367,13 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Fill with FG Color"
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_BACKGROUND_FILL
@@ -1373,6 +1385,13 @@ argument_list|,
 name|drawable
 argument_list|,
 name|col
+argument_list|)
+expr_stmt|;
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Fill with BG Color"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1399,6 +1418,13 @@ name|BLUE_PIX
 index|]
 operator|=
 literal|255
+expr_stmt|;
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Fill with White"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1444,6 +1470,13 @@ index|]
 operator|=
 name|TRANSPARENT_OPACITY
 expr_stmt|;
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Fill with Transparency"
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_NO_FILL
@@ -1467,6 +1500,13 @@ argument_list|,
 name|drawable
 argument_list|,
 name|col
+argument_list|)
+expr_stmt|;
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Fill with BG Color"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1601,10 +1641,7 @@ name|bufPR
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
-argument_list|(
-literal|"Fill"
-argument_list|)
+name|undo_desc
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,

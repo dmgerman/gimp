@@ -130,7 +130,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Rectangular Selection"
+literal|"Rect Select"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -141,7 +141,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Rectangular Selection"
+literal|"Rect Select"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -314,7 +314,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Ellipse Selection"
+literal|"Ellipse Select"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -325,7 +325,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Ellipse Selection"
+literal|"Ellipse Select"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1069,7 +1069,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Fuzzy"
+literal|"Fuzzy Select"
 argument_list|)
 argument_list|,
 name|mask
