@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fcf8a80103
+DECL|enum|__anon2910b9610103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -303,7 +303,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcf8a80208
+DECL|struct|__anon2910b9610208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -458,7 +458,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29fcf8a80308
+DECL|struct|__anon2910b9610308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -1079,14 +1079,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -2069,7 +2069,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|sx1
@@ -2121,7 +2121,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 for|for
@@ -2171,7 +2171,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|chanmask
@@ -2662,7 +2662,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2671,7 +2671,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|sx1
 argument_list|,
@@ -3329,7 +3329,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|my_config
@@ -3349,7 +3349,7 @@ name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 for|for
@@ -3382,7 +3382,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{

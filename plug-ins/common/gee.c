@@ -2588,7 +2588,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|env
@@ -2830,7 +2830,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 index|]
 argument_list|,

@@ -1473,7 +1473,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|output_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1482,7 +1482,7 @@ name|gimp_drawable_update
 argument_list|(
 name|output_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,

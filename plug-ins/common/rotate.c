@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fe16500108
+DECL|struct|__anon2c70bc950108
 block|{
 DECL|member|angle
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fe16500208
+DECL|struct|__anon2c70bc950208
 block|{
 DECL|member|ID
 name|gint32
@@ -1314,7 +1314,7 @@ name|gimp_layer_get_preserve_transparency
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -1326,7 +1326,7 @@ name|gimp_layer_set_preserve_transparency
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1551,7 +1551,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1560,7 +1560,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,
@@ -1597,7 +1597,7 @@ name|gimp_layer_resize
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|longside
 argument_list|,
@@ -1614,7 +1614,7 @@ name|gimp_drawable_get
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
@@ -1870,7 +1870,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1879,7 +1879,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,
@@ -1894,7 +1894,7 @@ name|gimp_layer_resize
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|height
 argument_list|,
@@ -1911,7 +1911,7 @@ name|gimp_drawable_get
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
@@ -1923,7 +1923,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,
@@ -1939,7 +1939,7 @@ name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|offsetx
@@ -1975,7 +1975,7 @@ name|gimp_layer_set_offsets
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|offsetx
 argument_list|,
@@ -1990,7 +1990,7 @@ name|gimp_layer_set_preserve_transparency
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2091,7 +2091,7 @@ name|gimp_layer_is_floating_selection
 argument_list|(
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -2121,7 +2121,7 @@ name|gimp_drawable_is_layer
 argument_list|(
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -2594,7 +2594,7 @@ name|gimp_layer_is_floating_selection
 argument_list|(
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|active_drawable
@@ -2607,7 +2607,7 @@ name|image_ID
 argument_list|,
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,

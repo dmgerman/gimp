@@ -160,7 +160,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293242320108
+DECL|struct|__anon2be7157c0108
 block|{
 DECL|member|posx
 name|gint
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293242320208
+DECL|struct|__anon2be7157c0208
 block|{
 DECL|member|run
 name|gint
@@ -250,7 +250,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293242320308
+DECL|struct|__anon2be7157c0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1254,14 +1254,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -1770,7 +1770,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -2444,7 +2444,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2453,7 +2453,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,
@@ -5036,7 +5036,7 @@ name|gimp_drawable_width
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|center
@@ -5047,7 +5047,7 @@ name|gimp_drawable_height
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|center
@@ -5058,7 +5058,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -5067,7 +5067,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|center
@@ -5882,7 +5882,7 @@ name|preview
 argument_list|,
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|size

@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec6bd60103
+DECL|enum|__anon2aa6a1290103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec6bd60203
+DECL|enum|__anon2aa6a1290203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec6bd60303
+DECL|enum|__anon2aa6a1290303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -1827,7 +1827,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -2242,7 +2242,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2251,7 +2251,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,
@@ -2426,7 +2426,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -2720,7 +2720,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2729,7 +2729,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,
@@ -5700,7 +5700,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -5761,7 +5761,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if

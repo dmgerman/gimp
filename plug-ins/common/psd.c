@@ -149,7 +149,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bac60190103
+DECL|enum|__anon2bcdab530103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bac60190208
+DECL|struct|__anon2bcdab530208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -589,7 +589,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bac60190308
+DECL|struct|__anon2bcdab530308
 block|{
 DECL|member|signature
 name|gchar
@@ -9811,7 +9811,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}

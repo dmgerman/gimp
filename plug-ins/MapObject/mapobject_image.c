@@ -487,7 +487,7 @@ index|[
 name|image
 index|]
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|color
@@ -639,7 +639,7 @@ index|[
 name|image
 index|]
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|color
@@ -1870,7 +1870,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|border_x1
@@ -1982,7 +1982,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|input_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|==
 name|TRUE

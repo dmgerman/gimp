@@ -288,7 +288,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b7f6c80108
+DECL|struct|__anon2a0ebbd10108
 block|{
 DECL|member|width
 name|gint
@@ -618,7 +618,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -1000,7 +1000,7 @@ name|gimp_drawable_type
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 argument_list|,
 literal|100
@@ -1886,7 +1886,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|new_layer
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1895,7 +1895,7 @@ name|gimp_drawable_update
 argument_list|(
 name|new_layer
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,

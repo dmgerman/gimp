@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296ec6980103
+DECL|enum|__anon27c4cda10103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296ec6980203
+DECL|enum|__anon27c4cda10203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -1034,7 +1034,7 @@ name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|rawx
@@ -1049,7 +1049,7 @@ name|gimp_drawable_height
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* this frame has nothing to give us for this row; return */
@@ -1072,7 +1072,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|rawwidth
@@ -1081,7 +1081,7 @@ name|gimp_drawable_width
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|has_alpha
@@ -1090,7 +1090,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -2686,7 +2686,7 @@ name|gimp_drawable_width
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|==
 literal|0

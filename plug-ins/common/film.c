@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7f09e10108
+DECL|struct|__anon2b6228230108
 block|{
 DECL|member|film_height
 name|gint
@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7f09e10208
+DECL|struct|__anon2b6228230208
 block|{
 DECL|member|font_entry
 name|GtkWidget
@@ -2668,7 +2668,7 @@ name|gimp_drawable_type
 argument_list|(
 name|srcdrawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -2874,7 +2874,7 @@ name|gimp_drawable_image_id
 argument_list|(
 name|srcdrawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 argument_list|,
 operator|&
@@ -3860,7 +3860,7 @@ name|gimp_drawable_width
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 decl_stmt|;
 name|gint

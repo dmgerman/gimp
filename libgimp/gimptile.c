@@ -568,7 +568,7 @@ name|tile
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 name|tile_req
 operator|.
@@ -625,7 +625,7 @@ name|tile
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 operator|)
 operator|||
 operator|(
@@ -864,7 +864,7 @@ name|tile
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 name|tile_data
 operator|.

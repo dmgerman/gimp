@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29561a560108
+DECL|struct|__anon2a08741a0108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29561a560208
+DECL|struct|__anon2a08741a0208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29561a560308
+DECL|struct|__anon2a08741a0308
 block|{
 DECL|member|run
 name|gint
@@ -901,14 +901,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|)
 condition|)
@@ -1033,7 +1033,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -1095,7 +1095,7 @@ name|gimp_drawable_type
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -1189,7 +1189,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1198,7 +1198,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,
@@ -1812,7 +1812,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|bytes
@@ -1825,7 +1825,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -2789,7 +2789,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1

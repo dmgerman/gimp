@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7b4f160103
+DECL|enum|__anon2a297d400103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -106,7 +106,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b4f160208
+DECL|struct|__anon2a297d400208
 block|{
 DECL|member|amount
 name|gdouble
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b4f160308
+DECL|struct|__anon2a297d400308
 block|{
 DECL|member|run
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b4f160408
+DECL|struct|__anon2a297d400408
 block|{
 DECL|member|tile
 name|GimpTile
@@ -705,14 +705,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -836,7 +836,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|buf
@@ -880,7 +880,7 @@ name|gimp_drawable_width
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|buf
@@ -891,7 +891,7 @@ name|gimp_drawable_height
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -1657,7 +1657,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -1678,7 +1678,7 @@ name|gimp_drawable_width
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|height
@@ -1687,7 +1687,7 @@ name|gimp_drawable_height
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|alpha
@@ -1696,7 +1696,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|has_alpha
@@ -1705,7 +1705,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -2485,7 +2485,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2494,7 +2494,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,

@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c316c0108
+DECL|struct|__anon2b4d4d3b0108
 block|{
 DECL|member|threshold
 name|gint
@@ -203,7 +203,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c316c0208
+DECL|struct|__anon2b4d4d3b0208
 block|{
 DECL|member|run
 name|gint
@@ -1013,7 +1013,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1022,7 +1022,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,

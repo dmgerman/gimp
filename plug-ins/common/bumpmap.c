@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28de1d890103
+DECL|enum|__anon28d1f5d00103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -156,7 +156,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28de1d890203
+DECL|enum|__anon28d1f5d00203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -175,7 +175,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de1d890308
+DECL|struct|__anon28d1f5d00308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -234,7 +234,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de1d890408
+DECL|struct|__anon28d1f5d00408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de1d890508
+DECL|struct|__anon28d1f5d00508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1410,7 +1410,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|sel_x1
@@ -1443,7 +1443,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|img_has_alpha
@@ -1452,7 +1452,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* See how we will run */
@@ -1702,14 +1702,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|)
 condition|)
@@ -1898,7 +1898,7 @@ name|gimp_drawable_width
 argument_list|(
 name|bm_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|bm_height
@@ -1907,7 +1907,7 @@ name|gimp_drawable_height
 argument_list|(
 name|bm_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|bm_bpp
@@ -1916,7 +1916,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|bm_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|bm_has_alpha
@@ -1925,7 +1925,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|bm_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* Set the tile cache size */
@@ -2454,7 +2454,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2463,7 +2463,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|sel_x1
 argument_list|,
@@ -6173,7 +6173,7 @@ name|bmint
 operator|.
 name|bm_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|bmint
@@ -6186,7 +6186,7 @@ name|bmint
 operator|.
 name|bm_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|bmint
@@ -6199,7 +6199,7 @@ name|bmint
 operator|.
 name|bm_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|bmint
@@ -6212,7 +6212,7 @@ name|bmint
 operator|.
 name|bm_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -6226,7 +6226,7 @@ name|bmint
 operator|.
 name|bm_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|bump_offset_x
@@ -6239,7 +6239,7 @@ name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|draw_offset_x

@@ -56,7 +56,7 @@ name|GimpMenuCallback
 function_decl|)
 parameter_list|(
 name|gint32
-name|id
+name|any_id
 parameter_list|,
 name|gpointer
 name|data

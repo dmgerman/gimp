@@ -376,7 +376,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon27afeab60108
+DECL|struct|__anon2b7abec00108
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27afeab60208
+DECL|struct|__anon2b7abec00208
 typedef|typedef
 struct|struct
 block|{
@@ -563,7 +563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27afeab60308
+DECL|struct|__anon2b7abec00308
 typedef|typedef
 struct|struct
 block|{
@@ -592,7 +592,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27afeab60408
+DECL|struct|__anon2b7abec00408
 typedef|typedef
 struct|struct
 block|{
@@ -619,7 +619,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27afeab60508
+DECL|struct|__anon2b7abec00508
 typedef|typedef
 struct|struct
 block|{
@@ -1657,14 +1657,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|dst_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|dst_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -13350,7 +13350,7 @@ name|gdrw
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -13554,7 +13554,7 @@ name|int
 operator|)
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gdrw
@@ -13617,7 +13617,7 @@ name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|l_offsetx
@@ -13631,7 +13631,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|gdrw
@@ -13669,7 +13669,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -13701,7 +13701,7 @@ name|gimp_layer_get_image_id
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* check and see if we have a selection mask */
@@ -15817,7 +15817,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|l_x1
@@ -15950,7 +15950,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -16140,7 +16140,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -16149,7 +16149,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|l_x1
 argument_list|,
@@ -16443,7 +16443,7 @@ name|p_colorize_drawable
 argument_list|(
 name|dst_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}

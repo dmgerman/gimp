@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a959f0d0108
+DECL|struct|__anon2782a2670108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -199,7 +199,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a959f0d0208
+DECL|struct|__anon2782a2670208
 block|{
 DECL|member|run
 name|gint
@@ -970,7 +970,7 @@ name|gimp_drawable_type
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 decl_stmt|;
 name|GimpPixelRgn
@@ -1079,7 +1079,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -1638,7 +1638,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1647,7 +1647,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,
@@ -1762,7 +1762,7 @@ name|gimp_drawable_type
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_ui_init

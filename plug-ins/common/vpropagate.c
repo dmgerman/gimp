@@ -690,7 +690,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c71f3d80108
+DECL|struct|__anon279075fa0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -842,7 +842,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c71f3d80208
+DECL|struct|__anon279075fa0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1067,7 +1067,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c71f3d80308
+DECL|struct|__anon279075fa0308
 block|{
 DECL|member|run
 name|gint
@@ -1919,7 +1919,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|begx
@@ -2562,7 +2562,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2571,7 +2571,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|begx
 argument_list|,
@@ -3622,7 +3622,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c71f3d80408
+DECL|struct|__anon279075fa0408
 block|{
 DECL|member|min_modified
 name|gshort

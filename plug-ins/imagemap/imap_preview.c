@@ -615,7 +615,7 @@ name|srcrgn
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -635,7 +635,7 @@ name|srcrgn
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 argument_list|,
 operator|&
@@ -1031,7 +1031,7 @@ name|srcrgn
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -1435,7 +1435,7 @@ name|srcrgn
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -2211,7 +2211,7 @@ name|gimp_drawable_width
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|data
@@ -2222,7 +2222,7 @@ name|gimp_drawable_height
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gtk_preview_size

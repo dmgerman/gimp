@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2fb1d0103
+DECL|enum|__anon2bce6ad40103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2fb1d0208
+DECL|struct|__anon2bce6ad40208
 block|{
 DECL|member|direction
 name|gint
@@ -40917,7 +40917,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2fb1d0308
+DECL|struct|__anon2bce6ad40308
 block|{
 DECL|member|run
 name|gint
@@ -41455,14 +41455,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -42074,7 +42074,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -42734,7 +42734,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -42743,7 +42743,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,

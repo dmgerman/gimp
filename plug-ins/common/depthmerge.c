@@ -1450,7 +1450,7 @@ name|dm
 operator|->
 name|resultDrawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 operator|(
@@ -1515,7 +1515,7 @@ name|dm
 operator|->
 name|resultDrawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|dm
@@ -2045,7 +2045,7 @@ name|dm
 operator|->
 name|source1Drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
@@ -2156,7 +2156,7 @@ name|dm
 operator|->
 name|source2Drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
@@ -2267,7 +2267,7 @@ name|dm
 operator|->
 name|depthMap1Drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
@@ -2343,7 +2343,7 @@ name|dm
 operator|->
 name|depthMap2Drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
@@ -2785,7 +2785,7 @@ name|dm
 operator|->
 name|resultDrawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2796,7 +2796,7 @@ name|dm
 operator|->
 name|resultDrawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|dm
 operator|->
@@ -7042,7 +7042,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|sourceDrawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 for|for

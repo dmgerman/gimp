@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c40ef70103
+DECL|enum|__anon27ce4f3b0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c40ef70208
+DECL|struct|__anon27ce4f3b0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c40ef70308
+DECL|struct|__anon27ce4f3b0308
 block|{
 DECL|member|run
 name|gint
@@ -1533,7 +1533,7 @@ name|gimp_layer_get_image_id
 argument_list|(
 name|map_x
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_detach
@@ -3730,7 +3730,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -4284,7 +4284,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4293,7 +4293,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,
@@ -4828,7 +4828,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -4869,7 +4869,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* -- Add two layers: X and Y Displacement vectors -- */
@@ -4880,7 +4880,7 @@ name|gimp_layer_get_image_id
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|layer_active
@@ -6581,7 +6581,7 @@ name|gimp_drawable_update
 argument_list|(
 name|draw_xd
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,
@@ -6604,7 +6604,7 @@ name|gimp_drawable_update
 argument_list|(
 name|draw_yd
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,
@@ -6861,7 +6861,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|orig_draw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -6900,7 +6900,7 @@ name|gimp_drawable_type
 argument_list|(
 name|orig_draw
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 operator|*
@@ -6925,7 +6925,7 @@ name|gimp_layer_get_image_id
 argument_list|(
 name|orig_draw
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/*   gimp_image_lower_layer(orig_image_id, new_layer_id); */
@@ -7011,7 +7011,7 @@ name|gimp_drawable_update
 argument_list|(
 name|orig_draw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,
@@ -7360,7 +7360,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|draw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -7541,7 +7541,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|map_x
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|xm_alpha
@@ -7554,7 +7554,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|map_x
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
@@ -7591,7 +7591,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|map_y
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|ym_alpha
@@ -7604,7 +7604,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|map_y
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -7650,7 +7650,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|mag_draw
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|mmag_alpha
@@ -7663,7 +7663,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|mag_draw
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|pr
@@ -9083,7 +9083,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|draw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|(
 name|first_time

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7756590103
+DECL|enum|__anon2b764a3b0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -1174,7 +1174,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1183,7 +1183,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,

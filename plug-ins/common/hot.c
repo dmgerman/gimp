@@ -145,7 +145,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7819d40103
+DECL|enum|__anon2be4f0130103
 block|{
 DECL|enumerator|act_lredux
 name|act_lredux
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7819d40203
+DECL|enum|__anon2be4f0130203
 block|{
 DECL|enumerator|mode_ntsc
 name|mode_ntsc
@@ -219,7 +219,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c7819d40308
+DECL|struct|__anon2be4f0130308
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2307,7 +2307,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2316,7 +2316,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,

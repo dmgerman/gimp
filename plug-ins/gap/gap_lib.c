@@ -4039,7 +4039,7 @@ name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|l_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -4080,7 +4080,7 @@ name|int
 operator|)
 name|l_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|(
 name|int

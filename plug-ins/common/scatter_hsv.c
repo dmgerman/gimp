@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c15d3550108
+DECL|struct|__anon2770147d0108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -348,7 +348,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c15d3550208
+DECL|struct|__anon2770147d0208
 block|{
 DECL|member|run
 name|gint
@@ -1328,7 +1328,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1337,7 +1337,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,

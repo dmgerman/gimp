@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2d7fc0108
+DECL|struct|__anon274a06b70108
 block|{
 DECL|member|r
 DECL|member|g
@@ -219,7 +219,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2d7fc0208
+DECL|struct|__anon274a06b70208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -869,7 +869,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|border_x1
@@ -940,7 +940,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|input_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|in_channels
@@ -3337,7 +3337,7 @@ name|glong
 operator|)
 name|h
 expr_stmt|;
-comment|/* gimp_drawable_mask_bounds (drawable->id,&border_x1,&border_y1,&border_x2,&border_y2); */
+comment|/* gimp_drawable_mask_bounds (drawable->drawable_id,&border_x1,&border_y1,&border_x2,&border_y2); */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -3542,7 +3542,7 @@ name|glong
 operator|)
 name|h
 expr_stmt|;
-comment|/* gimp_drawable_mask_bounds (drawable->id,&border_x1,&border_y1,&border_x2,&border_y2); */
+comment|/* gimp_drawable_mask_bounds (drawable->drawable_id,&border_x1,&border_y1,&border_x2,&border_y2); */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -3747,7 +3747,7 @@ name|glong
 operator|)
 name|h
 expr_stmt|;
-comment|/* gimp_drawable_mask_bounds (drawable->id,&border_x1,&border_y1,&border_x2,&border_y2); */
+comment|/* gimp_drawable_mask_bounds (drawable->drawable_id,&border_x1,&border_y1,&border_x2,&border_y2); */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -4607,7 +4607,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|output_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4616,7 +4616,7 @@ name|gimp_drawable_update
 argument_list|(
 name|output_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,
@@ -6226,7 +6226,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{

@@ -70,7 +70,7 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|->
-name|id
+name|drawable_id
 operator|=
 name|drawable_ID
 expr_stmt|;
@@ -388,14 +388,14 @@ name|gimp_drawable_is_layer
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|gimp_layer_delete
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 else|else
@@ -403,7 +403,7 @@ name|gimp_channel_delete
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}

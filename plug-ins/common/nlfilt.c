@@ -154,7 +154,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc51d80103
+DECL|enum|__anon2b31236a0103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1376,7 +1376,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1385,7 +1385,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,

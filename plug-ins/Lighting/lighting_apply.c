@@ -160,7 +160,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|input_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|)
 condition|)
@@ -395,7 +395,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|output_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|has_alpha
@@ -404,7 +404,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|output_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|row
@@ -629,7 +629,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|output_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -638,7 +638,7 @@ name|gimp_drawable_update
 argument_list|(
 name|output_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,

@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbfadd0103
+DECL|enum|__anon2b1481440103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dbfadd0203
+DECL|enum|__anon2b1481440203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbfadd0308
+DECL|struct|__anon2b1481440308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon28dbfadd040a
+DECL|union|__anon2b148144040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbfadd0508
+DECL|struct|__anon2b1481440508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbfadd0608
+DECL|struct|__anon2b1481440608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbfadd0708
+DECL|struct|__anon2b1481440708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbfadd0808
+DECL|struct|__anon2b1481440808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbfadd0908
+DECL|struct|__anon2b1481440908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -553,7 +553,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbfadd0a08
+DECL|struct|__anon2b1481440a08
 block|{
 DECL|member|run
 name|gint
@@ -1728,7 +1728,7 @@ name|gimp_drawable_parasite_find
 argument_list|(
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|IFSCOMPOSE_PARASITE
 argument_list|)
@@ -1930,14 +1930,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|)
 condition|)
@@ -2044,7 +2044,7 @@ name|gimp_drawable_parasite_attach
 argument_list|(
 name|active_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|parasite
 argument_list|)
@@ -7326,7 +7326,7 @@ name|gimp_drawable_type
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 decl_stmt|;
 name|gchar
@@ -8235,7 +8235,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -8244,7 +8244,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,

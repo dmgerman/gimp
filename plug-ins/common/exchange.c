@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0de5e40108
+DECL|struct|__anon2985e7c10108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -705,7 +705,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|sel_x1
@@ -768,7 +768,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -975,7 +975,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -3938,7 +3938,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3947,7 +3947,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drw
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,

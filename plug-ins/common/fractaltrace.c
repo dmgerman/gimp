@@ -191,7 +191,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2c098a4a0103
+DECL|enum|__anon2bbd8b9b0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -211,7 +211,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c098a4a0208
+DECL|struct|__anon2bbd8b9b0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -421,7 +421,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c098a4a0308
+DECL|struct|__anon2bbd8b9b0308
 block|{
 DECL|member|x1
 name|gint
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c098a4a0408
+DECL|struct|__anon2bbd8b9b0408
 block|{
 DECL|member|width
 name|gint
@@ -589,7 +589,7 @@ name|gimp_drawable_width
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|image
@@ -600,7 +600,7 @@ name|gimp_drawable_height
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|image
@@ -611,7 +611,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|image
@@ -622,14 +622,14 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|selection
@@ -722,7 +722,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|&&
 operator|!
@@ -730,7 +730,7 @@ name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -1023,7 +1023,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c098a4a0508
+DECL|struct|__anon2bbd8b9b0508
 block|{
 DECL|member|r
 name|guchar
@@ -2778,7 +2778,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2787,7 +2787,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|selection
 operator|.
@@ -2824,7 +2824,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c098a4a0608
+DECL|struct|__anon2bbd8b9b0608
 block|{
 DECL|member|preview
 name|GtkWidget

@@ -518,7 +518,7 @@ name|d_drawable
 operator|=
 name|l_drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 comment|/* run the plug-in procedure */
 name|l_ret_params

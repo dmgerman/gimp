@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fe8c3a0108
+DECL|struct|__anon2b4baeec0108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -1000,14 +1000,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|)
 operator|&&
@@ -1015,7 +1015,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -3412,7 +3412,7 @@ name|gimp_layer_add_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* Image parameters */
@@ -3444,7 +3444,7 @@ index|]
 operator|!=
 name|drawable
 operator|->
-name|id
+name|drawable_id
 condition|)
 name|drawable_position
 operator|++
@@ -3473,7 +3473,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|sel_x1
@@ -3957,7 +3957,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|curl_layer
@@ -3995,7 +3995,7 @@ name|image_id
 argument_list|,
 name|curl_layer
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|drawable_position
 argument_list|)
@@ -4004,13 +4004,13 @@ name|curl_layer_ID
 operator|=
 name|curl_layer
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -4023,7 +4023,7 @@ name|gimp_layer_set_offsets
 argument_list|(
 name|curl_layer
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|sel_x1
 operator|+
@@ -4195,7 +4195,7 @@ name|gimp_drawable_update
 argument_list|(
 name|curl_layer
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,
@@ -5115,7 +5115,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|curl_layer
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5124,7 +5124,7 @@ name|gimp_drawable_update
 argument_list|(
 name|curl_layer
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 literal|0
 argument_list|,
@@ -5651,7 +5651,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -5660,7 +5660,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|sel_x1
 argument_list|,
@@ -5719,7 +5719,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Returns NGRADSAMPLES samples of active gradient.   Each sample has (gimp_drawable_bpp (drawable->id)) bytes.   "ripped" from gradmap.c.  */
+comment|/*   Returns NGRADSAMPLES samples of active gradient.   Each sample has (gimp_drawable_bpp (drawable->drawable_id)) bytes.   "ripped" from gradmap.c.  */
 end_comment
 
 begin_function
@@ -5777,7 +5777,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|color
@@ -5786,7 +5786,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|has_alpha
@@ -5795,7 +5795,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|alpha

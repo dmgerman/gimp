@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c3d6cb0108
+DECL|struct|__anon278bd7030108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c3d6cb0208
+DECL|struct|__anon278bd7030208
 block|{
 DECL|member|run
 name|gint
@@ -2331,7 +2331,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|x1
@@ -2441,7 +2441,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|map_x
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|xm_alpha
@@ -2454,7 +2454,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|map_x
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -2520,7 +2520,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|map_y
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|ym_alpha
@@ -2533,7 +2533,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|map_y
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -3240,7 +3240,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3249,7 +3249,7 @@ name|gimp_drawable_update
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|x1
 argument_list|,

@@ -44,9 +44,9 @@ DECL|struct|_GimpDrawable
 struct|struct
 name|_GimpDrawable
 block|{
-DECL|member|id
+DECL|member|drawable_id
 name|gint32
-name|id
+name|drawable_id
 decl_stmt|;
 comment|/* drawable ID */
 DECL|member|width

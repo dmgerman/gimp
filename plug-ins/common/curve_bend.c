@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b57ec460108
+DECL|struct|__anon27efd6a10108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b57ec460208
+DECL|struct|__anon27efd6a10208
 block|{
 DECL|member|y
 name|gint32
@@ -6047,7 +6047,7 @@ name|cd
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|cd
@@ -14163,7 +14163,7 @@ name|gdrw
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -14272,7 +14272,7 @@ name|int
 operator|)
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gdrw
@@ -14335,7 +14335,7 @@ name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|l_offsetx
@@ -14349,7 +14349,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|gdrw
@@ -14387,7 +14387,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -14442,7 +14442,7 @@ name|gimp_layer_get_image_id
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* check and see if we have a selection mask */
@@ -15605,7 +15605,7 @@ name|gimp_layer_get_image_id
 argument_list|(
 name|src_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 argument_list|)
 argument_list|)
@@ -15621,7 +15621,7 @@ name|gimp_drawable_type
 argument_list|(
 name|src_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -15927,7 +15927,7 @@ name|gimp_layer_get_image_id
 argument_list|(
 name|src_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|stack_position
@@ -15942,7 +15942,7 @@ name|gimp_drawable_type
 argument_list|(
 name|src_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|l_visible
@@ -15951,7 +15951,7 @@ name|gimp_layer_get_visible
 argument_list|(
 name|src_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -15967,7 +15967,7 @@ name|gimp_layer_get_name
 argument_list|(
 name|src_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -15979,7 +15979,7 @@ name|gimp_layer_get_name
 argument_list|(
 name|src_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|l_name
@@ -16026,7 +16026,7 @@ name|gimp_layer_get_mode
 argument_list|(
 name|src_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|l_opacity
@@ -16035,7 +16035,7 @@ name|gimp_layer_get_opacity
 argument_list|(
 name|src_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* full opacity */
@@ -17697,7 +17697,7 @@ name|src_gdrw
 operator|->
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -18341,14 +18341,14 @@ name|gimp_layer_get_image_id
 argument_list|(
 name|original_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
 name|original_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|l_offset_x
@@ -18366,7 +18366,7 @@ name|gimp_drawable_width
 argument_list|(
 name|original_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|/
 literal|2
@@ -18381,7 +18381,7 @@ name|gimp_drawable_height
 argument_list|(
 name|original_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|/
 literal|2
@@ -18394,7 +18394,7 @@ name|gimp_layer_copy
 argument_list|(
 name|original_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* set layer invisible and dummyname and      * add at top of the image while working     * (for the case of undo the gimp must know,     *  that the layer was part of the image)     */
@@ -18630,7 +18630,7 @@ name|gimp_layer_resize
 argument_list|(
 name|original_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|src_drawable
 operator|->
@@ -18659,7 +18659,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|original_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -18668,7 +18668,7 @@ name|gimp_layer_add_alpha
 argument_list|(
 name|original_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -18678,7 +18678,7 @@ name|gimp_drawable_get
 argument_list|(
 name|original_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -18758,7 +18758,7 @@ name|l_image_id
 argument_list|,
 name|dst_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|l_interpolation
 argument_list|,
@@ -18786,7 +18786,7 @@ name|gimp_drawable_width
 argument_list|(
 name|dst_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|/
 literal|2
@@ -18801,7 +18801,7 @@ name|gimp_drawable_height
 argument_list|(
 name|dst_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|/
 literal|2
@@ -18811,7 +18811,7 @@ name|gimp_layer_set_offsets
 argument_list|(
 name|dst_drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|l_offset_x
 argument_list|,
@@ -18858,7 +18858,7 @@ expr_stmt|;
 return|return
 name|dst_drawable
 operator|->
-name|id
+name|drawable_id
 return|;
 block|}
 end_function

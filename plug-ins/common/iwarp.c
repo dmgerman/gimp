@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8cb2bb0103
+DECL|enum|__anon29c4921d0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8cb2bb0208
+DECL|struct|__anon29c4921d0208
 block|{
 DECL|member|run
 name|gint
@@ -141,7 +141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8cb2bb0308
+DECL|struct|__anon29c4921d0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1124,14 +1124,14 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{
@@ -3688,7 +3688,7 @@ name|gimp_drawable_merge_shadow
 argument_list|(
 name|destdrawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3697,7 +3697,7 @@ name|gimp_drawable_update
 argument_list|(
 name|destdrawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 name|xl
 argument_list|,
@@ -4404,7 +4404,7 @@ name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|,
 operator|&
 name|xl
@@ -4437,7 +4437,7 @@ name|gimp_drawable_bpp
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -4446,7 +4446,7 @@ name|gimp_drawable_is_layer
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 name|preserve_trans
@@ -4456,7 +4456,7 @@ name|gimp_layer_get_preserve_transparency
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 operator|)
 expr_stmt|;

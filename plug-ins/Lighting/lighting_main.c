@@ -919,7 +919,7 @@ name|drawable_id
 operator|=
 name|drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 name|check_drawables
 argument_list|()
@@ -939,7 +939,7 @@ name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
-name|id
+name|drawable_id
 argument_list|)
 condition|)
 block|{

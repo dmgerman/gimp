@@ -42,7 +42,7 @@ name|GIMP_COLOR_SELECTOR_BAR_SIZE
 value|15
 typedef|typedef
 enum|enum
-DECL|enum|__anon293119df0103
+DECL|enum|__anon2b7622980103
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -244,7 +244,7 @@ name|gboolean
 name|gimp_color_selector_unregister
 parameter_list|(
 name|GimpColorSelectorID
-name|id
+name|selector_id
 parameter_list|,
 name|GimpColorSelectorFinishedCB
 name|finished_cb

@@ -516,7 +516,7 @@ index|]
 operator|=
 name|drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 elseif|else
 if|if
@@ -553,7 +553,7 @@ index|]
 operator|=
 name|drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 elseif|else
 if|if
@@ -577,7 +577,7 @@ index|]
 operator|=
 name|drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 block|}
 comment|/* Check that cylindermap images are valid */
@@ -617,7 +617,7 @@ index|]
 operator|=
 name|drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 elseif|else
 if|if
@@ -654,7 +654,7 @@ index|]
 operator|=
 name|drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 elseif|else
 if|if
@@ -678,7 +678,7 @@ index|]
 operator|=
 name|drawable
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 block|}
 block|}
@@ -1992,7 +1992,7 @@ operator|.
 name|d_drawable
 argument_list|)
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 for|for
 control|(
@@ -2028,7 +2028,7 @@ operator|.
 name|d_drawable
 argument_list|)
 operator|->
-name|id
+name|drawable_id
 expr_stmt|;
 name|check_drawables
 argument_list|(
