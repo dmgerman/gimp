@@ -91,7 +91,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|layers_lower_cmd_callback
+name|layers_raise_to_top_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -105,7 +105,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|layers_raise_to_top_cmd_callback
+name|layers_lower_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -388,6 +388,37 @@ name|action
 parameter_list|,
 name|gint
 name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|layers_paint_mode_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gint
+name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|layers_preserve_trans_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
 parameter_list|,
 name|gpointer
 name|data
