@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54d3720103
+DECL|enum|__anon2bd4a6b50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -571,7 +571,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_action_group_new:  * @name: the name of the action group.  *  * Creates a new #GimpActionGroup object. The name of the action group  * is used when associating<link linkend="Action-Accel">keybindings</link>  * with the actions.  *  * Returns: the new #GimpActionGroup  */
+comment|/**  * gimp_action_group_new:  * @gimp: the @Gimp instance this action group belongs to  * @name: the name of the action group.  *  * Creates a new #GimpActionGroup object. The name of the action group  * is used when associating<link linkend="Action-Accel">keybindings</link>  * with the actions.  *  * Returns: the new #GimpActionGroup  */
 end_comment
 
 begin_function

@@ -832,7 +832,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_lookup_by_value:  * @store:        a #GimpEnumStore  * @widget:       the widget used to create the icon pixbufs  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix inserting a hyphen  * between them. If an icon is registered for the resulting stock ID,  * it is rendered by @widget (which should be the @combo_box using  * this @store as it's model). The rendered pixbuf is then added to  * the @store in the %GIMP_ENUM_STORE_PIXBUF column.  **/
+comment|/**  * gimp_enum_store_set_icons:  * @store:        a #GimpEnumStore  * @widget:       the widget used to create the icon pixbufs  * @stock_prefix: a prefix to create icon stock ID from enum values  * @size:         the size to create the icons in  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix inserting a hyphen  * between them. If an icon is registered for the resulting stock ID,  * it is rendered by @widget (which should be the @combo_box using  * this @store as it's model). The rendered pixbuf is then added to  * the @store in the %GIMP_ENUM_STORE_PIXBUF column.  **/
 end_comment
 
 begin_function

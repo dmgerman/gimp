@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abfdeba0103
+DECL|enum|__anon29e7b5e50103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abfdeba0203
+DECL|enum|__anon29e7b5e50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,11 +324,11 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
-argument_list|,
 name|G_MININT
 argument_list|,
 name|G_MAXINT
+argument_list|,
+literal|0
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
