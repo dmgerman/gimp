@@ -2327,7 +2327,7 @@ literal|"R_eset Channel"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -2375,7 +2375,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Modify Curves for Channel:"
+literal|"Channel:"
 argument_list|)
 argument_list|,
 literal|1.0
