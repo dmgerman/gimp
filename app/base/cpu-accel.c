@@ -53,31 +53,10 @@ directive|ifdef
 name|ARCH_X86
 end_ifdef
 
-begin_if
-if|#
-directive|if
-name|GLIB_SIZEOF_LONG
-operator|==
-literal|8
-end_if
-
-begin_define
-DECL|macro|ARCH_X86_64
-define|#
-directive|define
-name|ARCH_X86_64
-value|1
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7215480103
+DECL|enum|__anon27dee1cf0103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -124,7 +103,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7215480203
+DECL|enum|__anon27dee1cf0203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
