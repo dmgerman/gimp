@@ -19,10 +19,6 @@ begin_comment
 comment|/* updated 11/04/97:    Use 8-pixel neighbourhood to create outline,    use min-max operation for local gradient,    don't use rint;    if gamma-channel: set to white if at least one colour channel is>15 */
 end_comment
 
-begin_comment
-comment|/* update 03/10/97    #ifdef MAX and MIN */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -33,12 +29,6 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
 end_include
 
 begin_include

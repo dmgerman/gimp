@@ -22,42 +22,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -1153,7 +1124,7 @@ comment|/* Counters */
 comment|/* Open the file for reading */
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|file
 argument_list|,
@@ -2591,7 +2562,7 @@ expr_stmt|;
 comment|/* Open the file for writing */
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|file
 argument_list|,

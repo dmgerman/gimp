@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -84,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298c1f970108
+DECL|struct|__anon28d84ee70108
 block|{
 DECL|member|console
 name|GtkTextBuffer

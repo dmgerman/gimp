@@ -20,24 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -139,7 +121,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2779ea510108
+DECL|struct|__anon27d82d360108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -248,7 +230,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2779ea510208
+DECL|struct|__anon27d82d360208
 block|{
 DECL|member|height
 DECL|member|width
@@ -330,7 +312,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2779ea510308
+DECL|struct|__anon27d82d360308
 block|{
 DECL|member|width
 name|gint

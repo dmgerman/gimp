@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<errno.h>
 end_include
 
@@ -33,39 +39,10 @@ directive|include
 file|<fcntl.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -1101,7 +1078,7 @@ name|image_type
 decl_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
@@ -1709,7 +1686,7 @@ name|pixel_rgn
 decl_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,

@@ -20,25 +20,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -58,28 +40,6 @@ include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|RCSID
-end_ifdef
-
-begin_decl_stmt
-DECL|variable|rcsid
-specifier|static
-name|char
-name|rcsid
-index|[]
-init|=
-literal|"$Id$"
-decl_stmt|;
-end_decl_stmt
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* Some useful macros */
@@ -112,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289fa1240108
+DECL|struct|__anon27e9480b0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -131,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289fa1240208
+DECL|struct|__anon27e9480b0208
 block|{
 DECL|member|x
 DECL|member|y

@@ -7,17 +7,6 @@ begin_comment
 comment|/*  * This plug-in generates a film roll with several images  */
 end_comment
 
-begin_decl_stmt
-DECL|variable|ident
-specifier|static
-name|char
-name|ident
-index|[]
-init|=
-literal|"@(#) GIMP Film plug-in v1.04 1999-10-08"
-decl_stmt|;
-end_decl_stmt
-
 begin_include
 include|#
 directive|include
@@ -27,25 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -113,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4eb7c90108
+DECL|struct|__anon2b66da160108
 block|{
 DECL|member|film_height
 name|gint
@@ -217,7 +188,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4eb7c90208
+DECL|struct|__anon2b66da160208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -3050,14 +3021,7 @@ name|src
 decl_stmt|,
 modifier|*
 name|tmp
-init|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|ident
 decl_stmt|;
-comment|/* Just to satisfy gcc */
 name|gint32
 name|tmp_image
 decl_stmt|,

@@ -16,25 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -122,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f2bb6a0108
+DECL|struct|__anon2b0cea460108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -504,7 +486,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f2bb6a0203
+DECL|enum|__anon2b0cea460203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -523,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f2bb6a0308
+DECL|struct|__anon2b0cea460308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -593,7 +575,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f2bb6a0408
+DECL|struct|__anon2b0cea460408
 block|{
 DECL|member|htoggle
 name|GtkWidget

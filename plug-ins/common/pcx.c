@@ -50,25 +50,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -1069,7 +1057,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28cff37a0108
+DECL|struct|__anon29a42fa50108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1193,7 +1181,7 @@ index|]
 decl_stmt|;
 name|fd
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -2724,7 +2712,7 @@ condition|(
 operator|(
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

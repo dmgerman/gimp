@@ -48,42 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -130,7 +95,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e6d17d0103
+DECL|enum|__anon277014410103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -148,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e6d17d0203
+DECL|enum|__anon277014410203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -164,7 +129,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e6d17d0308
+DECL|struct|__anon277014410308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -223,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e6d17d0408
+DECL|struct|__anon277014410408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -268,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e6d17d0508
+DECL|struct|__anon277014410508
 block|{
 DECL|member|mouse_x
 name|gint

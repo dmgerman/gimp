@@ -12,25 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -195,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b72e0950108
+DECL|struct|__anon2acad7da0108
 block|{
 DECL|member|histogram
 name|gboolean

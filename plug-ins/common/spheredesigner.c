@@ -20,18 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -41,27 +29,10 @@ directive|include
 file|<errno.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -230,7 +201,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64a8970103
+DECL|enum|__anon29e34e290103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -255,7 +226,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64a8970203
+DECL|enum|__anon29e34e290203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -304,7 +275,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64a8970303
+DECL|enum|__anon29e34e290303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -320,7 +291,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64a8970403
+DECL|enum|__anon29e34e290403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -330,7 +301,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64a8970503
+DECL|enum|__anon29e34e290503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -383,7 +354,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970608
+DECL|struct|__anon29e34e290608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -406,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970708
+DECL|struct|__anon29e34e290708
 block|{
 DECL|member|numcol
 name|gshort
@@ -435,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970808
+DECL|struct|__anon29e34e290808
 block|{
 DECL|member|majtype
 name|gint
@@ -530,7 +501,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970908
+DECL|struct|__anon29e34e290908
 block|{
 DECL|member|type
 name|gshort
@@ -557,7 +528,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970a08
+DECL|struct|__anon29e34e290a08
 block|{
 DECL|member|type
 name|gshort
@@ -598,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970b08
+DECL|struct|__anon29e34e290b08
 block|{
 DECL|member|com
 name|common
@@ -623,7 +594,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970c08
+DECL|struct|__anon29e34e290c08
 block|{
 DECL|member|com
 name|common
@@ -649,7 +620,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970d08
+DECL|struct|__anon29e34e290d08
 block|{
 DECL|member|com
 name|common
@@ -672,7 +643,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970e08
+DECL|struct|__anon29e34e290e08
 block|{
 DECL|member|com
 name|common
@@ -697,7 +668,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8970f08
+DECL|struct|__anon29e34e290f08
 block|{
 DECL|member|com
 name|common
@@ -720,7 +691,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8971008
+DECL|struct|__anon29e34e291008
 block|{
 DECL|member|com
 name|common
@@ -743,7 +714,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64a8971108
+DECL|struct|__anon29e34e291108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -769,7 +740,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b64a897120a
+DECL|union|__anon29e34e29120a
 block|{
 DECL|member|com
 name|common
@@ -1085,7 +1056,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b64a8971308
+DECL|struct|__anon29e34e291308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -6774,16 +6745,9 @@ expr_stmt|;
 comment|/* fixme */
 break|break;
 default|default:
-name|fprintf
+name|g_error
 argument_list|(
-name|stderr
-argument_list|,
 literal|"objnormal(): Unsupported object type!?\n"
-argument_list|)
-expr_stmt|;
-name|exit
-argument_list|(
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -8442,16 +8406,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
+name|g_error
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Illegal object!!\n"
-argument_list|)
-expr_stmt|;
-name|exit
-argument_list|(
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -11517,7 +11474,7 @@ name|type
 decl_stmt|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fn
 argument_list|,
@@ -12250,7 +12207,7 @@ index|]
 decl_stmt|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fn
 argument_list|,

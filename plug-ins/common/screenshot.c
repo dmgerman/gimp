@@ -22,12 +22,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -315,7 +309,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fc8d80108
+DECL|struct|__anon276ed0080108
 block|{
 DECL|member|root
 name|gboolean

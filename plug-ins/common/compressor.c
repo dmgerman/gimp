@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<errno.h>
 end_include
 
 begin_include
@@ -103,12 +103,6 @@ directive|include
 file|<sys/stat.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -129,7 +123,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<errno.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -1280,7 +1274,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|unlink
+name|g_unlink
 argument_list|(
 name|tmpname
 argument_list|)
@@ -1351,7 +1345,7 @@ operator|!
 operator|(
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -1556,7 +1550,7 @@ name|processinfo
 decl_stmt|;
 name|in
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|tmpname
 argument_list|,
@@ -1565,7 +1559,7 @@ argument_list|)
 expr_stmt|;
 name|out
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -1746,7 +1740,7 @@ block|}
 endif|#
 directive|endif
 comment|/* G_OS_WIN32 */
-name|unlink
+name|g_unlink
 argument_list|(
 name|tmpname
 argument_list|)
@@ -1901,7 +1895,7 @@ operator|!
 operator|(
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|tmpname
 argument_list|,
@@ -2122,7 +2116,7 @@ name|processinfo
 decl_stmt|;
 name|in
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -2131,7 +2125,7 @@ argument_list|)
 expr_stmt|;
 name|out
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|tmpname
 argument_list|,
@@ -2330,7 +2324,7 @@ argument_list|,
 name|tmpname
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|tmpname
 argument_list|)

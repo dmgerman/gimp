@@ -15,17 +15,6 @@ begin_comment
 comment|/* Features  *  - loads and saves  *    - 24-bit (.pix)  *    - 8-bit (.matte, .alpha, or .mask) images  *  * NOTE: pix and matte files do not support alpha channels or indexed  *       colour, so neither does this plug-in  */
 end_comment
 
-begin_decl_stmt
-DECL|variable|ident
-specifier|static
-name|char
-name|ident
-index|[]
-init|=
-literal|"@(#) GIMP Alias|Wavefront pix image file-plugin v1.0  24-jun-97"
-decl_stmt|;
-end_decl_stmt
-
 begin_include
 include|#
 directive|include
@@ -41,37 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -998,7 +963,7 @@ expr_stmt|;
 comment|/* Open the file */
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -1755,7 +1720,7 @@ expr_stmt|;
 comment|/* Open the output file. */
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

@@ -12,19 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -112,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6c5a860108
+DECL|struct|__anon289f87440108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6c5a860208
+DECL|struct|__anon289f87440208
 block|{
 DECL|member|tile_size
 name|gdouble

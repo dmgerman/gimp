@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -104,7 +98,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon2ac260890108
+DECL|struct|__anon2c65f6e10108
 typedef|typedef
 struct|struct
 block|{
@@ -119,7 +113,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac260890208
+DECL|struct|__anon2c65f6e10208
 typedef|typedef
 struct|struct
 block|{
@@ -153,7 +147,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ac260890303
+DECL|enum|__anon2c65f6e10303
 typedef|typedef
 enum|enum
 block|{
@@ -175,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2ac260890403
+DECL|enum|__anon2c65f6e10403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -207,7 +201,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ac260890503
+DECL|enum|__anon2c65f6e10503
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -226,7 +220,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ac260890603
+DECL|enum|__anon2c65f6e10603
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -254,7 +248,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ac260890703
+DECL|enum|__anon2c65f6e10703
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -272,7 +266,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2ac260890808
+DECL|struct|__anon2c65f6e10808
 typedef|typedef
 struct|struct
 block|{
@@ -318,7 +312,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac260890908
+DECL|struct|__anon2c65f6e10908
 typedef|typedef
 struct|struct
 block|{
@@ -1272,7 +1266,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ac260890a08
+DECL|struct|__anon2c65f6e10a08
 block|{
 DECL|member|bna
 name|GtkWidget

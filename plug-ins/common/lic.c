@@ -12,24 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -89,7 +71,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294b38ed0103
+DECL|enum|__anon2b4f728a0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -137,7 +119,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294b38ed0208
+DECL|struct|__anon2b4f728a0208
 block|{
 DECL|member|filtlen
 name|gdouble

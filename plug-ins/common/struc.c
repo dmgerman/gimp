@@ -22,12 +22,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -40881,7 +40875,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2969b6580103
+DECL|enum|__anon292ef49a0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40901,7 +40895,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2969b6580208
+DECL|struct|__anon292ef49a0208
 block|{
 DECL|member|direction
 name|gint

@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -37,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|<time.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef
@@ -225,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a98ee9f0103
+DECL|enum|__anon2bcacc6b0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -244,7 +244,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a98ee9f0203
+DECL|enum|__anon2bcacc6b0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -1933,7 +1933,7 @@ name|userdata
 operator|->
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -3356,7 +3356,7 @@ condition|(
 operator|(
 name|outfile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|temp_file_name
 argument_list|,
@@ -3385,7 +3385,7 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|temp_file_name
 argument_list|)
@@ -3451,7 +3451,7 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|temp_file_name
 argument_list|)
@@ -3513,7 +3513,7 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|temp_file_name
 argument_list|)
@@ -3573,7 +3573,7 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|temp_file_name
 argument_list|)
@@ -4220,7 +4220,7 @@ condition|(
 operator|(
 name|infile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|temp_file_name
 argument_list|,
@@ -4249,7 +4249,7 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|temp_file_name
 argument_list|)
@@ -4928,7 +4928,7 @@ argument_list|(
 name|infile
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|temp_file_name
 argument_list|)

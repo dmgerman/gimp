@@ -18,19 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<fcntl.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<fcntl.h>
 end_include
 
 begin_include
@@ -45,10 +39,27 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -80,7 +91,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276d15e40103
+DECL|enum|__anon2a07308a0103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -106,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276d15e40203
+DECL|enum|__anon2a07308a0203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -124,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d15e40308
+DECL|struct|__anon2a07308a0308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -165,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d15e40408
+DECL|struct|__anon2a07308a0408
 block|{
 DECL|member|fp
 name|FILE
@@ -891,7 +902,7 @@ argument_list|)
 expr_stmt|;
 name|preview_fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|param
 index|[
@@ -1820,7 +1831,7 @@ condition|)
 block|{
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|palette_file
 argument_list|,
@@ -2229,7 +2240,7 @@ argument_list|)
 expr_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -2331,7 +2342,7 @@ name|temp
 decl_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|newfile
 argument_list|,
@@ -2820,7 +2831,7 @@ name|data
 operator|->
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -3732,7 +3743,7 @@ name|fd
 decl_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|palfile
 argument_list|,

@@ -51,29 +51,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_comment
-comment|/* We want glib.h first because of some 				 * pretty obscure Win32 compilation issues. 				 */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -85,25 +63,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<zlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -143,7 +109,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0103
+DECL|enum|__anon2afc9a9e0103
 typedef|typedef
 enum|enum
 block|{
@@ -207,7 +173,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0203
+DECL|enum|__anon2afc9a9e0203
 typedef|typedef
 enum|enum
 block|{
@@ -247,7 +213,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0303
+DECL|enum|__anon2afc9a9e0303
 typedef|typedef
 enum|enum
 block|{
@@ -279,7 +245,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0403
+DECL|enum|__anon2afc9a9e0403
 typedef|typedef
 enum|enum
 block|{
@@ -307,7 +273,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0503
+DECL|enum|__anon2afc9a9e0503
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +301,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0603
+DECL|enum|__anon2afc9a9e0603
 typedef|typedef
 enum|enum
 block|{
@@ -357,7 +323,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0703
+DECL|enum|__anon2afc9a9e0703
 typedef|typedef
 enum|enum
 block|{
@@ -393,7 +359,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0803
+DECL|enum|__anon2afc9a9e0803
 typedef|typedef
 enum|enum
 block|{
@@ -413,7 +379,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0903
+DECL|enum|__anon2afc9a9e0903
 typedef|typedef
 enum|enum
 block|{
@@ -461,7 +427,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0a03
+DECL|enum|__anon2afc9a9e0a03
 typedef|typedef
 enum|enum
 block|{
@@ -485,7 +451,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0b03
+DECL|enum|__anon2afc9a9e0b03
 typedef|typedef
 enum|enum
 block|{
@@ -546,7 +512,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf8256e0c03
+DECL|enum|__anon2afc9a9e0c03
 typedef|typedef
 enum|enum
 block|{
@@ -619,7 +585,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8256e0d08
+DECL|struct|__anon2afc9a9e0d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -771,7 +737,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8256e0e08
+DECL|struct|__anon2afc9a9e0e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -6136,7 +6102,7 @@ literal|1
 return|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

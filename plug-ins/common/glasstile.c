@@ -22,12 +22,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -50,7 +44,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c150bf0108
+DECL|struct|__anon2be38da50108
 block|{
 DECL|member|xblock
 name|gint
@@ -78,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c150bf0208
+DECL|struct|__anon2be38da50208
 block|{
 DECL|member|gval
 name|GlassValues

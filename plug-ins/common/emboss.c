@@ -12,31 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -59,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2d45040103
+DECL|enum|__anon2c264b090103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -77,7 +53,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d45040208
+DECL|struct|__anon2c264b090208
 block|{
 DECL|member|azimuth
 name|gdouble

@@ -12,25 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -54,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b25c2620103
+DECL|enum|__anon29ad57450103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -70,7 +52,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b25c2620203
+DECL|enum|__anon29ad57450203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -3256,10 +3238,8 @@ argument_list|(
 literal|"draw_jigsaw: bad style\n"
 argument_list|)
 expr_stmt|;
-name|exit
-argument_list|(
-literal|1
-argument_list|)
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 name|g_free

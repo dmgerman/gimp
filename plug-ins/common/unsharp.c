@@ -18,24 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -86,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef5ecd0108
+DECL|struct|__anon2bb9cc830108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef5ecd0208
+DECL|struct|__anon2bb9cc830208
 block|{
 DECL|member|run
 name|gboolean

@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -36,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -224,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e238b0103
+DECL|enum|__anon29549ee10103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -353,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e238b0203
+DECL|enum|__anon29549ee10203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +492,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e238b0303
+DECL|enum|__anon29549ee10303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -603,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e238b0403
+DECL|enum|__anon29549ee10403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -701,7 +695,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e238b0508
+DECL|struct|__anon29549ee10508
 block|{
 DECL|member|function
 name|gint
@@ -774,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e238b0608
+DECL|struct|__anon29549ee10608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1586,7 +1580,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e238b0708
+DECL|struct|__anon29549ee10708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -11213,7 +11207,7 @@ condition|)
 return|return;
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -12373,7 +12367,7 @@ block|}
 decl_stmt|;
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

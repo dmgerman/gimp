@@ -11,17 +11,6 @@ begin_comment
 comment|/* Event history:  * PK = Peter Kirchgessner, ME = Mattias Engdegård  * V 1.00, PK, xx-Aug-96: First try  * V 1.01, PK, 03-Sep-96: Check for bitmap_bit_order  * V 1.90, PK, 17-Mar-97: Upgrade to work with GIMP V0.99  *                        Use visual class 3 to write indexed image  *                        Set gimp b/w-colormap if no xwdcolormap present  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.93, PK, 11-Apr-98: Fix problem with overwriting memory  * V 1.94, ME, 27-Feb-00: Remove superfluous little-endian support (format is                           specified as big-endian). Trim magic header  * V 1.95, PK, 02-Jul-01: Fix problem with 8 bit image  */
 end_comment
 
-begin_decl_stmt
-DECL|variable|ident
-specifier|static
-name|char
-name|ident
-index|[]
-init|=
-literal|"@(#) GIMP XWD file-plugin v1.95  02-Jul-2001"
-decl_stmt|;
-end_decl_stmt
-
 begin_include
 include|#
 directive|include
@@ -37,42 +26,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -120,7 +80,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cea0a50108
+DECL|struct|__anon2892f0a80108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -254,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cea0a50208
+DECL|struct|__anon2892f0a80208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -312,7 +272,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cea0a50308
+DECL|struct|__anon2892f0a80308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cea0a50408
+DECL|struct|__anon2892f0a80408
 block|{
 DECL|member|npixel
 name|gint
@@ -1503,7 +1463,7 @@ name|NULL
 decl_stmt|;
 name|ifp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -2160,7 +2120,7 @@ block|}
 comment|/* Open the output file. */
 name|ofp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -5540,10 +5500,7 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|temp
-init|=
-name|ident
 decl_stmt|;
-comment|/* Just to satisfy lint/gcc */
 name|guchar
 name|bit2byte
 index|[

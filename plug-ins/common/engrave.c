@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -56,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d513140108
+DECL|struct|__anon2a0fbfcd0108
 block|{
 DECL|member|height
 name|gint
@@ -1152,7 +1146,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d513140208
+DECL|struct|__anon2a0fbfcd0208
 block|{
 DECL|member|x
 DECL|member|y

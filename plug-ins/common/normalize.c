@@ -22,12 +22,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -490,7 +484,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"normalize: cmap was NULL!  Quitting...\n"
 argument_list|)
@@ -788,7 +782,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6713fc0108
+DECL|struct|__anon275882900108
 block|{
 DECL|member|lut
 name|guchar

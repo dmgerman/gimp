@@ -20,25 +20,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -51,12 +33,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpmath/gimpmath.h>
 end_include
 
 begin_include
@@ -535,7 +511,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ed4390108
+DECL|struct|__anon2af76c620108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1032,7 +1008,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ed4390208
+DECL|struct|__anon2af76c620208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1072,7 +1048,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ed4390308
+DECL|struct|__anon2af76c620308
 block|{
 DECL|member|width
 DECL|member|height

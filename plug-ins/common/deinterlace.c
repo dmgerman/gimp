@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -35,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cc2dd00103
+DECL|enum|__anon287b31af0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -49,7 +43,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cc2dd00208
+DECL|struct|__anon287b31af0208
 block|{
 DECL|member|evenness
 name|gint

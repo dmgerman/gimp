@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -49,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c3d2e0103
+DECL|enum|__anon2a40dd390103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -93,7 +87,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c3d2e0208
+DECL|struct|__anon2a40dd390208
 block|{
 DECL|member|title
 specifier|const

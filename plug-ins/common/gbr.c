@@ -12,17 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<errno.h>
 end_include
-
-begin_comment
-comment|/* Include early for G_OS_WIN32 */
-end_comment
 
 begin_include
 include|#
 directive|include
-file|<errno.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -63,25 +59,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
+file|<glib.h>
 end_include
 
 begin_ifdef
@@ -123,12 +107,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -159,7 +137,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d2cfc70108
+DECL|struct|__anon297906280108
 block|{
 DECL|member|description
 name|gchar
@@ -1199,7 +1177,7 @@ name|size
 decl_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
@@ -1978,7 +1956,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon28d2cfc7020a
+DECL|union|__anon29790628020a
 block|{
 DECL|member|u
 name|guint16
@@ -2362,7 +2340,7 @@ return|;
 block|}
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,

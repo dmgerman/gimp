@@ -40,24 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -201,7 +183,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon28cb71cd0103
+DECL|enum|__anon2c4c4df30103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -221,7 +203,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb71cd0208
+DECL|struct|__anon2c4c4df30208
 block|{
 DECL|member|x1
 name|gdouble
@@ -424,7 +406,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb71cd0308
+DECL|struct|__anon2c4c4df30308
 block|{
 DECL|member|x1
 name|gint
@@ -467,7 +449,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb71cd0408
+DECL|struct|__anon2c4c4df30408
 block|{
 DECL|member|width
 name|gint
@@ -1022,7 +1004,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb71cd0508
+DECL|struct|__anon2c4c4df30508
 block|{
 DECL|member|r
 name|guchar
@@ -1614,12 +1596,6 @@ break|break;
 block|}
 block|}
 end_function
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
 
 begin_function
 specifier|static
@@ -2906,7 +2882,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb71cd0608
+DECL|struct|__anon2c4c4df30608
 block|{
 DECL|member|preview
 name|GtkWidget

@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -29,12 +23,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -54,28 +42,6 @@ include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|RCSID
-end_ifdef
-
-begin_decl_stmt
-DECL|variable|rcsid
-specifier|static
-name|char
-name|rcsid
-index|[]
-init|=
-literal|"$Id$"
-decl_stmt|;
-end_decl_stmt
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_define
 DECL|macro|VERSION
@@ -369,7 +335,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4cc2520108
+DECL|struct|__anon2c1bfa050108
 block|{
 DECL|member|name
 specifier|const
@@ -629,7 +595,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4cc2520208
+DECL|struct|__anon2c1bfa050208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -702,7 +668,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4cc2520308
+DECL|struct|__anon2c1bfa050308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -736,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4cc2520408
+DECL|struct|__anon2c1bfa050408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -843,7 +809,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4cc2520508
+DECL|struct|__anon2c1bfa050508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -1011,7 +977,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4cc2520608
+DECL|struct|__anon2c1bfa050608
 block|{
 DECL|member|name
 specifier|const
@@ -7078,7 +7044,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4cc2520708
+DECL|struct|__anon2c1bfa050708
 block|{
 DECL|member|index
 name|gint

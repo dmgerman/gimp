@@ -12,24 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -161,7 +143,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29acc1fe0103
+DECL|enum|__anon2c1abaa40103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -179,7 +161,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29acc1fe0208
+DECL|struct|__anon2c1abaa40208
 block|{
 DECL|member|max_p
 name|gint
@@ -551,7 +533,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29acc1fe0308
+DECL|struct|__anon2c1abaa40308
 typedef|typedef
 struct|struct
 block|{

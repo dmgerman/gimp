@@ -12,25 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -54,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d501160108
+DECL|struct|__anon2a109f390108
 block|{
 DECL|member|file_name
 name|gchar
@@ -1635,7 +1623,7 @@ name|basename
 decl_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|config
 operator|->

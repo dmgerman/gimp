@@ -86,31 +86,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -121,7 +98,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -143,7 +120,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be160010103
+DECL|enum|__anon2b80a3f70103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -331,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be160010208
+DECL|struct|__anon2b80a3f70208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -580,7 +557,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2be160010308
+DECL|struct|__anon2b80a3f70308
 block|{
 DECL|member|signature
 name|gchar
@@ -7479,7 +7456,7 @@ argument_list|)
 decl_stmt|;
 name|fd
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|name
 argument_list|,

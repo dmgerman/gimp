@@ -11,17 +11,6 @@ begin_comment
 comment|/* Event history:  * V 1.00, PK, 25-Jul-96: First try  * V 1.90, PK, 15-Mar-97: Upgrade to work with GIMP V0.99  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 18-May-97: Ignore EOF-error on reading image data  * V 1.93, PK, 05-Oct-97: Parse rc file  * V 1.94, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.95, nn, 20-Dec-97: Initialize some variable  * V 1.96, PK, 21-Nov-99: Internationalization  * V 1.97, PK, 20-Dec-00: Recognize extensions .rs and .ras too  */
 end_comment
 
-begin_decl_stmt
-DECL|variable|ident
-specifier|static
-name|char
-name|ident
-index|[]
-init|=
-literal|"@(#) GIMP SunRaster file-plugin v1.97  20-Dec-00"
-decl_stmt|;
-end_decl_stmt
-
 begin_include
 include|#
 directive|include
@@ -37,42 +26,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -143,7 +103,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6e83d0108
+DECL|struct|__anon2b1ce34b0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +192,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6e83d0208
+DECL|struct|__anon2b1ce34b0208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +787,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6e83d0308
+DECL|struct|__anon2b1ce34b0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1555,7 +1515,7 @@ name|NULL
 decl_stmt|;
 name|ifp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -2105,7 +2065,7 @@ block|}
 comment|/* Open the output file. */
 name|ofp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -333,7 +327,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8053460108
+DECL|struct|__anon29a3baee0108
 block|{
 DECL|member|sharpen_percent
 name|gint

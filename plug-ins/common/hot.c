@@ -1,9 +1,5 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * file: hot/hot.c  *  * $Id$  */
-end_comment
-
-begin_comment
 comment|/*  * hot.c - Scan an image for pixels with RGB values that will give  *	"unsafe" values of chrominance signal or composite signal  *	amplitude when encoded into an NTSC or PAL colour signal.  *	(This happens for certain high-intensity high-saturation colours  *	that are rare in real scenes, but can easily be present  *	in synthetic images.)  *  * 	Such pixels can be flagged so the user may then choose other  *	colours.  Or, the offending pixels can be made "safe"  *	in a manner that preserves hue.  *  *	There are two reasonable ways to make a pixel "safe":  *	We can reduce its intensity (luminance) while leaving  *	hue and saturation the same.  Or, we can reduce saturation  *	while leaving hue and luminance the same.  A #define selects  *	which strategy to use.  *  * Note to the user: You must add your own read_pixel() and write_pixel()  *	routines.  You may have to modify pix_decode() and pix_encode().  *	MAXPIX, WID, and HGT are likely to need modification.  */
 end_comment
 
@@ -28,25 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -70,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba612e80108
+DECL|struct|__anon2c83fdc90108
 block|{
 DECL|member|image
 name|gint32
@@ -101,7 +79,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba612e80203
+DECL|enum|__anon2c83fdc90203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -120,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba612e80303
+DECL|enum|__anon2c83fdc90303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -165,7 +143,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2ba612e80408
+DECL|struct|__anon2c83fdc90408
 block|{
 DECL|member|pedestal
 name|gdouble

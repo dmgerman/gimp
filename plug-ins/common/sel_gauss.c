@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -36,7 +30,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2901d3db0108
+DECL|struct|__anon299962fa0108
 block|{
 DECL|member|radius
 name|gdouble

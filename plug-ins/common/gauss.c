@@ -12,25 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -54,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f4ced70103
+DECL|enum|__anon2bc1508b0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -70,7 +52,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4ced70208
+DECL|struct|__anon2bc1508b0208
 block|{
 DECL|member|horizontal
 name|gdouble

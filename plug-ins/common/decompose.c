@@ -20,18 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -45,12 +33,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpmath/gimpmath.h>
 end_include
 
 begin_include
@@ -850,7 +832,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ad8440108
+DECL|struct|__anon2891f96f0108
 block|{
 DECL|member|type
 name|gchar
@@ -1471,7 +1453,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ad8440208
+DECL|struct|__anon2891f96f0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1493,7 +1475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ad8440308
+DECL|struct|__anon2891f96f0308
 block|{
 DECL|member|extract_flag
 name|gint

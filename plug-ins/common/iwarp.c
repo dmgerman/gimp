@@ -16,25 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -106,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2913e7540103
+DECL|enum|__anon2b4bacf50103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -134,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2913e7540208
+DECL|struct|__anon2b4bacf50208
 block|{
 DECL|member|run
 name|gboolean
@@ -149,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2913e7540308
+DECL|struct|__anon2b4bacf50308
 block|{
 DECL|member|deform_area_radius
 name|gint

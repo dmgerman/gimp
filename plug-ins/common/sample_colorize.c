@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -29,12 +23,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -347,7 +335,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298720430108
+DECL|struct|__anon2acf0db40108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -416,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298720430208
+DECL|struct|__anon2acf0db40208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -524,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298720430308
+DECL|struct|__anon2acf0db40308
 block|{
 DECL|member|color
 name|guchar
@@ -553,7 +541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298720430408
+DECL|struct|__anon2acf0db40408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -580,7 +568,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298720430508
+DECL|struct|__anon2acf0db40508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -12784,18 +12772,11 @@ block|{
 comment|/* selection is TRUE */
 name|l_sel_gdrw
 operator|=
-operator|(
-name|t_GDRW
-operator|*
-operator|)
-name|calloc
+name|g_new0
 argument_list|(
-literal|1
+name|t_GDRW
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|t_GDRW
-argument_list|)
+literal|1
 argument_list|)
 expr_stmt|;
 name|l_sel_gdrw

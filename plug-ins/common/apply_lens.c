@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -142,7 +136,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92fe0108
+DECL|struct|__anon276b0f290108
 block|{
 DECL|member|refraction
 name|gdouble

@@ -54,19 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -125,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bccc37c0103
+DECL|enum|__anon2c2910260103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bccc37c0208
+DECL|struct|__anon2c2910260208
 block|{
 DECL|member|interlace
 name|gint
@@ -2961,7 +2955,7 @@ block|}
 comment|/* open the destination file for writing */
 name|outfile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -44,7 +38,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f68f240108
+DECL|struct|__anon298f7c520108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -669,7 +663,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f68f240208
+DECL|struct|__anon298f7c520208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher

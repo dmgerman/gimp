@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -357,7 +351,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2987dd490108
+DECL|struct|__anon28f4d8f50108
 typedef|typedef
 struct|struct
 block|{
@@ -404,7 +398,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2987dd490208
+DECL|struct|__anon28f4d8f50208
 typedef|typedef
 struct|struct
 block|{

@@ -24,30 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -99,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296cfc690103
+DECL|enum|__anon2bd42a160103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -125,7 +101,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296cfc690208
+DECL|struct|__anon2bd42a160208
 block|{
 DECL|member|amount
 name|gdouble

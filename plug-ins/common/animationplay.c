@@ -20,25 +20,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -70,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f9799b0103
+DECL|enum|__anon28f7005a0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -617,7 +599,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f9799b0208
+DECL|struct|__anon28f7005a0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -2658,11 +2640,8 @@ operator|)
 name|total_frames
 argument_list|)
 expr_stmt|;
-name|exit
-argument_list|(
-operator|-
-literal|1
-argument_list|)
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 name|drawable

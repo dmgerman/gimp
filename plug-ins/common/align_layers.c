@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -67,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9bab60103
+DECL|enum|__anon2c6089640103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -89,7 +83,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9bab60203
+DECL|enum|__anon2c6089640203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -105,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9bab60303
+DECL|enum|__anon2c6089640303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -127,7 +121,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9bab60403
+DECL|enum|__anon2c6089640403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -250,7 +244,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d9bab60508
+DECL|struct|__anon2c6089640508
 block|{
 DECL|member|h_style
 name|gint

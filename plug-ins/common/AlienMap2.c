@@ -16,24 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -72,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bd3de0103
+DECL|enum|__anon2b1cfd980103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -96,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1bd3de0208
+DECL|struct|__anon2b1cfd980208
 block|{
 DECL|member|redfrequency
 name|gdouble

@@ -20,25 +20,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef
@@ -132,7 +120,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd8fbc0108
+DECL|struct|__anon277035e50108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd8fbc0208
+DECL|struct|__anon277035e50208
 block|{
 DECL|member|r
 name|guchar

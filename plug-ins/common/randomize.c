@@ -7,51 +7,16 @@ begin_comment
 comment|/****************************************************************************  * Randomize:  *  * randomize version 1.7 (1 May 1998, MEO)  *  * Please send any patches or suggestions to the author: meo@rru.com .  *  * This plug-in adds a user-defined amount of randomization to an  * image.  Variations include:  *  *  - hurling (spewing random colors)  *  - picking a nearby pixel at random  *  - slurring (a crude form of melting)  *  * In any case, for each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  Picking  * one selects the new pixel value at random from the current and  * adjacent pixels.  Hurling assigns a random value to the pixel.  * Slurring sort of melts downwards; if a pixel is to be slurred,  * there is an 80% chance the pixel above be used; otherwise, one  * of the pixels adjacent to the one above is used (even odds as  * to which it will be).  *  * Picking, hurling and slurring work with any image type.  *  * This plug-in's effectiveness varies a lot with the type  * and clarity of the image being "randomized".  *  * Hurling more than 75% or so onto an existing image will  * make the image nearly unrecognizable.  By 90% hurl, most  * images are indistinguishable from random noise.  *  * The repeat count is especially useful with slurring.  *  * TODO List  *  *  - add a real melt function  ****************************************************************************/
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"config.h"
 end_include
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
 begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<time.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -217,7 +182,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c620a0f0108
+DECL|struct|__anon2ac3abf10108
 block|{
 DECL|member|rndm_pct
 name|gdouble

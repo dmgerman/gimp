@@ -22,19 +22,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<stdlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -71,6 +65,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
 
 begin_include
 include|#
@@ -113,12 +113,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
 
 begin_include
 include|#
@@ -179,7 +173,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2af1a3360108
+DECL|struct|__anon275c7f560108
 block|{
 DECL|member|spacing
 name|guint
@@ -252,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1a3360208
+DECL|struct|__anon275c7f560208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2728,7 +2722,7 @@ name|pipe_parasite
 decl_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
@@ -6025,7 +6019,7 @@ argument_list|)
 expr_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,

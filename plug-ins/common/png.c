@@ -12,31 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<time.h>
+file|<errno.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -126,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf89cc50108
+DECL|struct|__anon2b6109490108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf89cc50208
+DECL|struct|__anon2b6109490208
 block|{
 DECL|member|run
 name|gboolean
@@ -2185,7 +2173,7 @@ expr_stmt|;
 comment|/*    * Open the file and initialize the PNG read "engine"...    */
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -4146,7 +4134,7 @@ expr_stmt|;
 comment|/*    * Open the file and initialize the PNG write "engine"...    */
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

@@ -16,19 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -68,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eeda50108
+DECL|struct|__anon2c06953c0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -107,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eeda50208
+DECL|struct|__anon2c06953c0208
 block|{
 DECL|member|drawable
 name|GimpDrawable

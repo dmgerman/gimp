@@ -16,24 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libwmf/api.h>
 end_include
 
@@ -46,18 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpmath/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -65,6 +35,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpmath/gimpmath.h>
 end_include
 
 begin_include
@@ -100,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abc4ff60108
+DECL|struct|__anon28a65c4c0108
 block|{
 DECL|member|resolution
 name|gdouble

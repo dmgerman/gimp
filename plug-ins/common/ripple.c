@@ -12,24 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -124,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c3e0b50108
+DECL|struct|__anon2792dda20108
 block|{
 DECL|member|period
 name|gint
@@ -923,7 +905,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27c3e0b50208
+DECL|struct|__anon2792dda20208
 typedef|typedef
 struct|struct
 block|{

@@ -12,25 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -296,7 +278,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2964fd190108
+DECL|struct|__anon29c5c88b0108
 block|{
 DECL|member|width
 name|gint

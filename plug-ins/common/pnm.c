@@ -26,6 +26,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -67,19 +73,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -309,7 +303,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a22e4d70108
+DECL|struct|__anon2bed50d70108
 block|{
 DECL|member|raw
 name|gint
@@ -1744,7 +1738,7 @@ decl_stmt|;
 comment|/* open the file */
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
@@ -3963,7 +3957,7 @@ block|}
 comment|/* open the file */
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,

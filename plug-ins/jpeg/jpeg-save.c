@@ -142,7 +142,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e9e2b0108
+DECL|struct|__anon29a3d75a0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -462,7 +462,7 @@ index|[
 literal|128
 index|]
 decl_stmt|;
-name|stat
+name|g_stat
 argument_list|(
 name|pp
 operator|->
@@ -4480,7 +4480,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e9e2b0208
+DECL|struct|__anon29a3d75a0208
 block|{
 DECL|member|pub
 name|struct

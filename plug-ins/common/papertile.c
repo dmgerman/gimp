@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -82,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292f88f10103
+DECL|enum|__anon2b665b2e0103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -110,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292f88f10203
+DECL|enum|__anon2b665b2e0203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -198,7 +192,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon292f88f10308
+DECL|struct|__anon2b665b2e0308
 block|{
 DECL|member|params
 name|PluginParams
@@ -218,7 +212,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon292f88f10408
+DECL|struct|__anon2b665b2e0408
 block|{
 DECL|member|x0
 name|gint
@@ -585,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon292f88f10508
+DECL|struct|__anon2b665b2e0508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject

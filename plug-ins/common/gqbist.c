@@ -3,51 +3,16 @@ begin_comment
 comment|/*  * Written 1997 Jens Ch. Restemeier<jrestemeier@currantbun.com>  * This program is based on an algorithm / article by  * Jörn Loviscach.  *  * It appeared in c't 10/95, page 326 and is called  * "Ausgewürfelt - Moderne Kunst algorithmisch erzeugen"  * (~modern art created with algorithms).  *  * It generates one main formula (the middle button) and 8 variations of it.  * If you select a variation it becomes the new main formula. If you  * press "OK" the main formula will be applied to the image.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"config.h"
 end_include
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
 begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<time.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -161,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28af27b90103
+DECL|enum|__anon2976bdbd0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -206,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28af27b90208
+DECL|struct|__anon2976bdbd0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -245,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28af27b90308
+DECL|struct|__anon2976bdbd0308
 block|{
 DECL|member|info
 name|ExpInfo

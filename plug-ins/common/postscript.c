@@ -26,17 +26,6 @@ literal|"v1.17  19-Sep-2004"
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|ident
-specifier|static
-name|char
-name|ident
-index|[]
-init|=
-literal|"@(#) GIMP PostScript/PDF file-plugin v1.17  19-Sep-2004"
-decl_stmt|;
-end_decl_stmt
-
 begin_include
 include|#
 directive|include
@@ -47,18 +36,6 @@ begin_include
 include|#
 directive|include
 file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -95,6 +72,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
 
 begin_include
 include|#
@@ -241,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278db3ce0108
+DECL|struct|__anon279e715a0108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +313,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278db3ce0208
+DECL|struct|__anon279e715a0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -904,7 +887,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278db3ce0308
+DECL|struct|__anon279e715a0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1760,7 +1743,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278db3ce0408
+DECL|struct|__anon279e715a0408
 block|{
 DECL|member|eol
 name|long
@@ -4010,7 +3993,7 @@ directive|endif
 comment|/* Try to see if PostScript file is available */
 name|ifp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -4565,7 +4548,7 @@ block|}
 comment|/* Open the output file. */
 name|ofp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -5981,10 +5964,12 @@ modifier|*
 name|ChildPidPtr
 parameter_list|)
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|gs
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|driver
 decl_stmt|;
@@ -6114,7 +6099,7 @@ literal|0
 expr_stmt|;
 name|eps_file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -6635,7 +6620,7 @@ endif|#
 directive|endif
 name|gs
 operator|=
-name|getenv
+name|g_getenv
 argument_list|(
 literal|"GS_PROG"
 argument_list|)
@@ -6808,7 +6793,7 @@ expr_stmt|;
 comment|/* If no additional options specified, use at least -dSAFER */
 if|if
 condition|(
-name|getenv
+name|g_getenv
 argument_list|(
 literal|"GS_OPTIONS"
 argument_list|)
@@ -7179,7 +7164,7 @@ argument_list|(
 name|Gerr
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|pnmfile
 argument_list|)
@@ -7192,7 +7177,7 @@ comment|/* Don't care about exit status of ghostscript. */
 comment|/* Just try to read what it wrote. */
 name|fd_popen
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|pnmfile
 argument_list|,
@@ -7360,7 +7345,7 @@ argument_list|(
 name|ifp
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|pnmfile
 argument_list|)

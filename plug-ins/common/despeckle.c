@@ -12,25 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -54,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2794c1640103
+DECL|enum|__anon2c6179540103
 block|{
 DECL|enumerator|MEDIAN
 name|MEDIAN
@@ -67,7 +49,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794c1640208
+DECL|struct|__anon2c6179540208
 block|{
 DECL|member|diameter
 name|gint

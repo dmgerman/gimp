@@ -16,13 +16,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<errno.h>
 end_include
 
 begin_include
@@ -49,11 +49,11 @@ directive|include
 file|<sys/stat.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
 
 begin_include
 include|#
@@ -61,16 +61,15 @@ directive|include
 file|<unistd.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<errno.h>
-end_include
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -230,7 +229,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b44d7430103
+DECL|enum|__anon2ac6fc1c0103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -268,7 +267,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44d7430208
+DECL|struct|__anon2ac6fc1c0208
 block|{
 DECL|member|receipt
 name|gchar
@@ -1424,7 +1423,7 @@ block|{
 comment|/* This must be MIME stuff. Base64 away... */
 name|infile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|tmpname
 argument_list|,
@@ -1490,7 +1489,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/* delete the tmpfile that was generated */
-name|unlink
+name|g_unlink
 argument_list|(
 name|tmpname
 argument_list|)

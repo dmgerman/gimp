@@ -20,12 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -44,7 +38,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -694,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9946540108
+DECL|struct|__anon2b436e940108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -748,7 +742,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9946540208
+DECL|struct|__anon2b436e940208
 block|{
 DECL|member|y
 name|gint32
@@ -3494,7 +3488,7 @@ name|l_fp
 decl_stmt|;
 name|l_fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -3809,7 +3803,7 @@ name|l_ily
 decl_stmt|;
 name|l_fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

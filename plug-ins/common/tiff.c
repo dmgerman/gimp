@@ -22,12 +22,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -35,12 +29,6 @@ begin_include
 include|#
 directive|include
 file|<tiffio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -64,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2ea5a80108
+DECL|struct|__anon289439210108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +75,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2ea5a80208
+DECL|struct|__anon289439210208
 block|{
 DECL|member|ID
 name|gint32

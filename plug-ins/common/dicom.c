@@ -22,13 +22,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -1010,7 +1010,7 @@ decl_stmt|;
 comment|/* open the file */
 name|DICOM
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -2586,7 +2586,7 @@ expr_stmt|;
 comment|/* Open the output file. */
 name|DICOM
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

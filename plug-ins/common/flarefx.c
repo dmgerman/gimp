@@ -22,12 +22,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -50,7 +44,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274968db0108
+DECL|struct|__anon29a065ce0108
 block|{
 DECL|member|posx
 name|gint
@@ -105,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274968db0208
+DECL|struct|__anon29a065ce0208
 block|{
 DECL|member|drawable
 name|GimpDrawable

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -25,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -110,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c89ae150103
+DECL|enum|__anon276acb4c0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -126,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c89ae150203
+DECL|enum|__anon276acb4c0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -142,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c89ae150303
+DECL|enum|__anon276acb4c0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH

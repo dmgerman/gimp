@@ -12,25 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -158,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c4fd470108
+DECL|struct|__anon29fce70f0108
 block|{
 DECL|member|division
 name|gint32
@@ -645,7 +627,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28c4fd470208
+DECL|struct|__anon29fce70f0208
 typedef|typedef
 struct|struct
 block|{

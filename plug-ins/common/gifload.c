@@ -54,25 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -720,7 +708,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28afea310108
+DECL|struct|__anon27bf9fde0108
 block|{
 DECL|member|Width
 name|unsigned
@@ -770,7 +758,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28afea310208
+DECL|struct|__anon27bf9fde0208
 block|{
 DECL|member|transparent
 name|int
@@ -1019,7 +1007,7 @@ literal|1
 decl_stmt|;
 name|fd
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

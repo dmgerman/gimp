@@ -22,13 +22,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/stat.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -1814,7 +1808,7 @@ condition|(
 name|filename
 operator|&&
 operator|!
-name|stat
+name|g_stat
 argument_list|(
 name|filename
 argument_list|,
