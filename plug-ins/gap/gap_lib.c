@@ -2769,7 +2769,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"ERROR p_dir_ainfo: cant read directory %s\n"
+literal|"ERROR p_dir_ainfo: can't read directory %s\n"
 argument_list|,
 name|l_dirname_ptr
 argument_list|)
@@ -4600,7 +4600,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"ERROR in p_save_named_frame: cant rename %s to %s\n"
+literal|"ERROR in p_save_named_frame: can't rename %s to %s\n"
 argument_list|,
 name|l_tmpname
 argument_list|,
@@ -9614,7 +9614,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"ERROR p_vid_edit_clear: cant read directory %s\n"
+literal|"ERROR p_vid_edit_clear: can't read directory %s\n"
 argument_list|,
 name|l_dir
 argument_list|)
@@ -11386,7 +11386,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Cant execute more than 1 Video Function\n"
+literal|"Can't execute more than 1 Video Function\n"
 literal|"on the same AnimFrame Image at the same time\n"
 literal|"LOCK ID:%s\n"
 argument_list|)

@@ -559,7 +559,10 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Toys/Gee-Zoom"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,

@@ -489,7 +489,10 @@ name|NULL
 argument_list|,
 else|#
 directive|else
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Toys/Gee-Slime"
+argument_list|)
 argument_list|,
 endif|#
 directive|endif
