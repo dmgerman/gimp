@@ -1841,15 +1841,6 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM
 argument_list|(
 name|drawable
@@ -1901,12 +1892,6 @@ name|tile_manager_unref
 argument_list|(
 name|new_tiles
 argument_list|)
-expr_stmt|;
-name|layer
-operator|->
-name|modified
-operator|=
-name|FALSE
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
@@ -1980,10 +1965,11 @@ argument_list|(
 name|layout
 argument_list|)
 expr_stmt|;
-name|gimp_image_flush
-argument_list|(
-name|image
-argument_list|)
+name|layer
+operator|->
+name|modified
+operator|=
+name|FALSE
 expr_stmt|;
 return|return
 operator|(

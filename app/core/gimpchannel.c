@@ -3391,11 +3391,6 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|GIMP_DRAWABLE_CLASS
 argument_list|(
 name|parent_class

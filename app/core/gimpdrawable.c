@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2797ba7e0103
+DECL|enum|__anon2782a3440103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2404,6 +2404,11 @@ expr_stmt|;
 name|old_has_alpha
 operator|=
 name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_invalidate_boundary
 argument_list|(
 name|drawable
 argument_list|)

@@ -5837,15 +5837,6 @@ argument_list|)
 operator|->
 name|offset_y
 expr_stmt|;
-comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM
 argument_list|(
 name|layer

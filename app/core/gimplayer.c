@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0252480103
+DECL|enum|__anon2a3952930103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2784,15 +2784,6 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2918,15 +2909,6 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3024,15 +3006,6 @@ expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
-argument_list|)
-expr_stmt|;
-comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3139,15 +3112,6 @@ expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
-argument_list|)
-expr_stmt|;
-comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3284,15 +3248,6 @@ expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
-argument_list|)
-expr_stmt|;
-comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -5158,11 +5158,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|layer

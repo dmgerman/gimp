@@ -1753,6 +1753,19 @@ name|pending
 operator|=
 name|NULL
 expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|text_tool
+operator|->
+name|layer
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

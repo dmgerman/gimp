@@ -4025,15 +4025,6 @@ argument_list|(
 name|new_tiles
 argument_list|)
 expr_stmt|;
-name|GIMP_CHANNEL
-argument_list|(
-name|active_item
-argument_list|)
-operator|->
-name|bounds_known
-operator|=
-name|FALSE
-expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
