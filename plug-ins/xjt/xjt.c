@@ -243,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c8d0da0103
+DECL|enum|__anon2b3c9a550103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c8d0da0203
+DECL|enum|__anon2b3c9a550203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -503,7 +503,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c8d0da0303
+DECL|enum|__anon2b3c9a550303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c8d0da0403
+DECL|enum|__anon2b3c9a550403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c8d0da0503
+DECL|enum|__anon2b3c9a550503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c8d0da0603
+DECL|enum|__anon2b3c9a550603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -610,7 +610,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c8d0da0703
+DECL|enum|__anon2b3c9a550703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8d0da0808
+DECL|struct|__anon2b3c9a550808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -771,7 +771,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8d0da0908
+DECL|struct|__anon2b3c9a550908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -820,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8d0da0a08
+DECL|struct|__anon2b3c9a550a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8d0da0b08
+DECL|struct|__anon2b3c9a550b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -907,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8d0da0c08
+DECL|struct|__anon2b3c9a550c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -981,7 +981,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8d0da0d08
+DECL|struct|__anon2b3c9a550d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1066,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8d0da0e08
+DECL|struct|__anon2b3c9a550e08
 block|{
 DECL|member|position
 name|gint32
@@ -1090,7 +1090,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8d0da0f08
+DECL|struct|__anon2b3c9a550f08
 block|{
 DECL|member|version
 name|gchar
@@ -14969,10 +14969,8 @@ literal|0
 condition|)
 block|{
 comment|/* attach the layer_mask to the layer (with identical offsets) */
-name|gimp_image_add_layer_mask
+name|gimp_layer_add_mask
 argument_list|(
-name|l_image_id
-argument_list|,
 name|l_layer_id
 argument_list|,
 name|l_channel_id

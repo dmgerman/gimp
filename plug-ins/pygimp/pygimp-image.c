@@ -208,12 +208,8 @@ return|;
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_image_add_layer_mask
+name|gimp_layer_add_mask
 argument_list|(
-name|self
-operator|->
-name|ID
-argument_list|,
 name|lay
 operator|->
 name|ID
@@ -1085,12 +1081,8 @@ return|;
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_image_remove_layer_mask
+name|gimp_layer_remove_mask
 argument_list|(
-name|self
-operator|->
-name|ID
-argument_list|,
 name|lay
 operator|->
 name|ID

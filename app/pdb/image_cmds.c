@@ -7998,15 +7998,15 @@ init|=
 block|{
 literal|"gimp_image_add_layer_mask"
 block|,
-literal|"Add a layer mask to the specified layer."
+literal|"This procedure is deprecated! Use the procedure returned as 'help' instead."
 block|,
-literal|"This procedure adds a layer mask to the specified layer. Layer masks serve as an additional alpha channel for a layer. This procedure will fail if a number of prerequisites aren't met. The layer cannot already have a layer mask. The specified mask must exist and have the same dimensions as the layer. Both the mask and the layer must have been created for use with the specified image."
+literal|"gimp_layer_add_mask"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -8213,15 +8213,15 @@ init|=
 block|{
 literal|"gimp_image_remove_layer_mask"
 block|,
-literal|"Remove the specified layer mask from the layer."
+literal|"This procedure is deprecated! Use the procedure returned as 'help' instead."
 block|,
-literal|"This procedure removes the specified layer mask from the layer. If the mask doesn't exist, an error is returned."
+literal|"gimp_layer_remove_mask"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
 name|GIMP_INTERNAL
 block|,

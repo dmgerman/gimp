@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3bcaa50108
+DECL|struct|__anon2b6799b90108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3bcaa50208
+DECL|struct|__anon2b6799b90208
 block|{
 DECL|member|y
 name|gint32
@@ -2947,10 +2947,8 @@ literal|0
 condition|)
 block|{
 comment|/* apply the layermask        *   some transitions (especially rotate) cant operate proper on        *   layers with masks !        */
-name|gimp_image_remove_layer_mask
+name|gimp_layer_remove_mask
 argument_list|(
-name|l_image_id
-argument_list|,
 name|l_layer_id
 argument_list|,
 literal|0

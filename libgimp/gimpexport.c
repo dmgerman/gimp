@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a178e0d0108
+DECL|struct|__anon29d3ac4a0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -482,10 +482,8 @@ operator|!=
 operator|-
 literal|1
 condition|)
-name|gimp_image_remove_layer_mask
+name|gimp_layer_remove_mask
 argument_list|(
-name|image_ID
-argument_list|,
 name|layers
 index|[
 name|i

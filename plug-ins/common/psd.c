@@ -131,7 +131,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fbc2890103
+DECL|enum|__anon2a4ab3450103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fbc2890208
+DECL|struct|__anon2a4ab3450208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -568,7 +568,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27fbc2890308
+DECL|struct|__anon2a4ab3450308
 block|{
 DECL|member|signature
 name|gchar
@@ -8521,10 +8521,8 @@ name|layer_ID
 argument_list|)
 expr_stmt|;
 comment|/* Add layer mask */
-name|gimp_image_add_layer_mask
+name|gimp_layer_add_mask
 argument_list|(
-name|image_ID
-argument_list|,
 name|layer_ID
 argument_list|,
 name|mask_id
