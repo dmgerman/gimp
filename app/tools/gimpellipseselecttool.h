@@ -6,15 +6,135 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__ELLIPSE_SELECT_H__
+name|__GIMP_ELLIPSE_SELECT_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__ELLIPSE_SELECT_H__
+DECL|macro|__GIMP_ELLIPSE_SELECT_TOOL_H__
 define|#
 directive|define
-name|__ELLIPSE_SELECT_H__
+name|__GIMP_ELLIPSE_SELECT_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimprectselecttool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_ELLIPSE_SELECT_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
+value|(gimp_ellipse_select_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_ELLIPSE_SELECT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_ELLIPSE_SELECT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_ELLIPSE_SELECT_TOOL, GimpEllipseSelectTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_ELLIPSE_SELECT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_ELLIPSE_SELECT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_ELLIPSE_SELECT_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_ELLIPSE_SELECT_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_ELLIPSE_SELECT_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_ELLIPSE_SELECT_TOOL, GimpEllipseSelectToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_ELLIPSE_SELECT_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_ELLIPSE_SELECT_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_ELLIPSE_SELECT_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpEllipseSelectTool
+typedef|typedef
+name|struct
+name|_GimpEllipseSelectTool
+name|GimpEllipseSelectTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpEllipseSelectToolClass
+typedef|typedef
+name|struct
+name|_GimpEllipseSelectToolClass
+name|GimpEllipseSelectToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpEllipseSelectTool
+struct|struct
+name|_GimpEllipseSelectTool
+block|{
+DECL|member|parent_instance
+name|GimpRectSelectTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpEllipseSelectToolClass
+struct|struct
+name|_GimpEllipseSelectToolClass
+block|{
+DECL|member|parent_class
+name|GimpRectSelectToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|void
+name|gimp_ellipse_select_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkType
+name|gimp_ellipse_select_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
@@ -51,45 +171,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|ellipse_select_draw
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_ellipse_select
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_ellipse_select
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __ELLIPSE_SELECT_H__  */
+comment|/*  __GIMP_ELLIPSE_SELECT_TOOL_H__  */
 end_comment
 
 end_unit

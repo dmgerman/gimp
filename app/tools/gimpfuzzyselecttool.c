@@ -131,12 +131,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprectselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptool.h"
 end_include
 

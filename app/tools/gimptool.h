@@ -23,26 +23,10 @@ file|"gimpobject.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_RECT_SELECT_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_RECT_SELECT_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_ISCISSORS_TOOL
 define|#
 directive|define
 name|GIMP_TYPE_ISCISSORS_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
-DECL|macro|GIMP_TYPE_ELLIPSE_SELECT_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
 value|GTK_TYPE_NONE
 end_define
 
