@@ -67,6 +67,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FILE_SELECTION))
+DECL|macro|GIMP_FILE_SELECTION_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_FILE_SELECTION_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_FILE_SELECTION, GimpFileSelectionClass))
 DECL|typedef|GimpFileSelectionClass
 typedef|typedef
 name|struct
@@ -77,9 +85,9 @@ DECL|struct|_GimpFileSelection
 struct|struct
 name|_GimpFileSelection
 block|{
-DECL|member|hbox
+DECL|member|parent_instance
 name|GtkHBox
-name|hbox
+name|parent_instance
 decl_stmt|;
 DECL|member|file_exists
 name|GtkWidget

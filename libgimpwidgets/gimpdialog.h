@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_DIALOG_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtkdialog.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -30,6 +36,83 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
+DECL|macro|GIMP_TYPE_DIALOG
+define|#
+directive|define
+name|GIMP_TYPE_DIALOG
+value|(gimp_dialog_get_type ())
+DECL|macro|GIMP_DIALOG (obj)
+define|#
+directive|define
+name|GIMP_DIALOG
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DIALOG, GimpDialog))
+DECL|macro|GIMP_DIALOG_CLASS (klass)
+define|#
+directive|define
+name|GIMP_DIALOG_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DIALOG, GimpDialogClass))
+DECL|macro|GIMP_IS_DIALOG (obj)
+define|#
+directive|define
+name|GIMP_IS_DIALOG
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DIALOG))
+DECL|macro|GIMP_IS_DIALOG_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_DIALOG_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DIALOG))
+DECL|macro|GIMP_DIALOG_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_DIALOG_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DIALOG, GimpDialogClass))
+DECL|typedef|GimpDialogClass
+typedef|typedef
+name|struct
+name|_GimpDialogClass
+name|GimpDialogClass
+typedef|;
+DECL|struct|_GimpDialog
+struct|struct
+name|_GimpDialog
+block|{
+DECL|member|parent_instance
+name|GtkDialog
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+DECL|struct|_GimpDialogClass
+struct|struct
+name|_GimpDialogClass
+block|{
+DECL|member|parent_class
+name|GtkDialogClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+name|GType
+name|gimp_dialog_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
 name|GtkWidget
 modifier|*
 name|gimp_dialog_new
@@ -107,17 +190,9 @@ name|args
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_dialog_set_icon
-parameter_list|(
-name|GtkWindow
-modifier|*
-name|dialog
-parameter_list|)
-function_decl|;
-name|void
 name|gimp_dialog_create_action_area
 parameter_list|(
-name|GtkDialog
+name|GimpDialog
 modifier|*
 name|dialog
 parameter_list|,
@@ -128,12 +203,20 @@ function_decl|;
 name|void
 name|gimp_dialog_create_action_areav
 parameter_list|(
-name|GtkDialog
+name|GimpDialog
 modifier|*
 name|dialog
 parameter_list|,
 name|va_list
 name|args
+parameter_list|)
+function_decl|;
+name|void
+name|gimp_dialog_set_icon
+parameter_list|(
+name|GtkWindow
+modifier|*
+name|dialog
 parameter_list|)
 function_decl|;
 ifdef|#

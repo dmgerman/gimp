@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_BUTTON_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtkbutton.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -67,6 +73,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BUTTON))
+DECL|macro|GIMP_BUTTON_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_BUTTON_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BUTTON, GimpButtonClass))
 DECL|typedef|GimpButtonClass
 typedef|typedef
 name|struct

@@ -227,7 +227,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baa716e0103
+DECL|enum|__anon293f4f250103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -2006,7 +2006,7 @@ name|tool_type
 expr_stmt|;
 name|gimp_dialog_create_action_area
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|transform_info
 operator|->

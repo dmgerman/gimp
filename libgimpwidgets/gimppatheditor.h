@@ -67,6 +67,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PATH_EDITOR))
+DECL|macro|GIMP_PATH_EDITOR_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_PATH_EDITOR_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PATH_EDITOR, GimpPathEditorClass))
 DECL|typedef|GimpPathEditorClass
 typedef|typedef
 name|struct
@@ -77,9 +85,9 @@ DECL|struct|_GimpPathEditor
 struct|struct
 name|_GimpPathEditor
 block|{
-DECL|member|vbox
+DECL|member|parent_instance
 name|GtkVBox
-name|vbox
+name|parent_instance
 decl_stmt|;
 DECL|member|upper_hbox
 name|GtkWidget

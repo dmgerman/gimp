@@ -133,6 +133,19 @@ endif|#
 directive|endif
 end_endif
 
+begin_enum
+enum|enum
+DECL|enum|__anon2c7c3c280103
+block|{
+DECL|enumerator|FILENAME_CHANGED
+name|FILENAME_CHANGED
+block|,
+DECL|enumerator|LAST_SIGNAL
+name|LAST_SIGNAL
+block|}
+enum|;
+end_enum
+
 begin_function_decl
 specifier|static
 name|void
@@ -218,10 +231,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  private functions  */
-end_comment
-
 begin_function_decl
 specifier|static
 name|void
@@ -233,19 +242,6 @@ name|gfs
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_enum
-enum|enum
-DECL|enum|__anon2a420ed10103
-block|{
-DECL|enumerator|FILENAME_CHANGED
-name|FILENAME_CHANGED
-block|,
-DECL|enumerator|LAST_SIGNAL
-name|LAST_SIGNAL
-block|}
-enum|;
-end_enum
 
 begin_decl_stmt
 DECL|variable|gimp_file_selection_signals

@@ -70,6 +70,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHAIN_BUTTON))
+DECL|macro|GIMP_CHAIN_BUTTON_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_CHAIN_BUTTON_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CHAIN_BUTTON, GimpChainButtonClass))
 DECL|typedef|GimpChainButtonClass
 typedef|typedef
 name|struct
@@ -78,7 +86,7 @@ name|GimpChainButtonClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon288cb2d50103
+DECL|enum|__anon2a3e778d0103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -99,9 +107,9 @@ DECL|struct|_GimpChainButton
 struct|struct
 name|_GimpChainButton
 block|{
-DECL|member|table
+DECL|member|parent_instance
 name|GtkTable
-name|table
+name|parent_instance
 decl_stmt|;
 DECL|member|position
 name|GimpChainPosition
@@ -175,7 +183,7 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-name|GtkType
+name|GType
 name|gimp_chain_button_get_type
 parameter_list|(
 name|void

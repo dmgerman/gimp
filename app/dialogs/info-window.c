@@ -1774,7 +1774,7 @@ expr_stmt|;
 comment|/*  create the action area  */
 name|gimp_dialog_create_action_area
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|info_win
 operator|->

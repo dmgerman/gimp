@@ -1663,7 +1663,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_create_action_area
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|measure_tool_info
 operator|->

@@ -23,7 +23,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpcolorarea.h"
+file|<libgimpwidgets/gimpbutton.h>
 end_include
 
 begin_ifdef
@@ -76,6 +76,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_BUTTON))
+DECL|macro|GIMP_COLOR_BUTTON_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_COLOR_BUTTON_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_BUTTON, GimpColorButtonClass))
 DECL|typedef|GimpColorButtonClass
 typedef|typedef
 name|struct
@@ -86,9 +94,9 @@ DECL|struct|_GimpColorButton
 struct|struct
 name|_GimpColorButton
 block|{
-DECL|member|button
-name|GtkButton
-name|button
+DECL|member|parent_instance
+name|GimpButton
+name|parent_instance
 decl_stmt|;
 DECL|member|title
 name|gchar
@@ -117,7 +125,7 @@ struct|struct
 name|_GimpColorButtonClass
 block|{
 DECL|member|parent_class
-name|GtkButtonClass
+name|GimpButtonClass
 name|parent_class
 decl_stmt|;
 DECL|member|color_changed
@@ -134,7 +142,7 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-name|GtkType
+name|GType
 name|gimp_color_button_get_type
 parameter_list|(
 name|void

@@ -727,8 +727,12 @@ literal|0
 expr_stmt|;
 name|shell
 operator|=
-name|gtk_dialog_new
-argument_list|()
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_DIALOG
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_window_set_wmclass
 argument_list|(

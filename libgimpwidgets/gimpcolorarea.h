@@ -76,24 +76,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_AREA))
-typedef|typedef
-enum|enum
-DECL|enum|__anon29634cb10103
-block|{
-DECL|enumerator|GIMP_COLOR_AREA_FLAT
-name|GIMP_COLOR_AREA_FLAT
-init|=
-literal|0
-block|,
-DECL|enumerator|GIMP_COLOR_AREA_SMALL_CHECKS
-name|GIMP_COLOR_AREA_SMALL_CHECKS
-block|,
-DECL|enumerator|GIMP_COLOR_AREA_LARGE_CHECKS
-name|GIMP_COLOR_AREA_LARGE_CHECKS
-DECL|typedef|GimpColorAreaType
-block|}
-name|GimpColorAreaType
-typedef|;
+DECL|macro|GIMP_COLOR_AREA_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_COLOR_AREA_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_AREA, GimpColorAreaClass))
 DECL|typedef|GimpColorAreaClass
 typedef|typedef
 name|struct
@@ -104,9 +94,9 @@ DECL|struct|_GimpColorArea
 struct|struct
 name|_GimpColorArea
 block|{
-DECL|member|preview
+DECL|member|parent_instance
 name|GtkPreview
-name|preview
+name|parent_instance
 decl_stmt|;
 comment|/*< private>*/
 DECL|member|type
@@ -145,7 +135,7 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-name|GtkType
+name|GType
 name|gimp_color_area_get_type
 parameter_list|(
 name|void
