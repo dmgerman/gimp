@@ -4946,9 +4946,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*********************************/
-comment|/*  New Image / Default Grid  */
-comment|/*********************************/
+comment|/******************/
+comment|/*  Default Grid  */
+comment|/******************/
 name|vbox
 operator|=
 name|prefs_notebook_append_page
@@ -4979,11 +4979,10 @@ argument_list|)
 argument_list|,
 name|GIMP_HELP_PREFS_NEW_IMAGE_GRID
 argument_list|,
-operator|&
-name|top_iter
+name|NULL
 argument_list|,
 operator|&
-name|child_iter
+name|top_iter
 argument_list|,
 name|page_index
 operator|++
@@ -6798,7 +6797,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b1d88b50108
+DECL|struct|__anon2b1898660108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9239,7 +9238,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1d88b50208
+DECL|struct|__anon2b1898660208
 block|{
 DECL|member|label
 specifier|const
@@ -9398,7 +9397,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1d88b50308
+DECL|struct|__anon2b1898660308
 block|{
 DECL|member|tree_label
 specifier|const
