@@ -2523,10 +2523,6 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
 name|dialog
 operator|->
 name|file_proc
@@ -2541,14 +2537,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|dialog
-operator|->
-name|file_proc
+name|name
 condition|)
-return|return;
+block|{
+name|gchar
+modifier|*
 name|label
-operator|=
+init|=
 name|g_strdup_printf
 argument_list|(
 name|_
@@ -2558,7 +2553,7 @@ argument_list|)
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_expander_set_label
 argument_list|(
 name|GTK_EXPANDER
@@ -2581,6 +2576,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gtk_file_chooser_get_action
@@ -2601,6 +2597,8 @@ name|file_proc
 decl_stmt|;
 if|if
 condition|(
+name|proc
+operator|&&
 name|proc
 operator|->
 name|extensions_list
