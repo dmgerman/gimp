@@ -498,6 +498,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpChannelListView
+typedef|typedef
+name|struct
+name|_GimpChannelListView
+name|GimpChannelListView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpListItem
 typedef|typedef
 name|struct
@@ -521,6 +530,15 @@ typedef|typedef
 name|struct
 name|_GimpLayerListItem
 name|GimpLayerListItem
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpComponentListItem
+typedef|typedef
+name|struct
+name|_GimpComponentListItem
+name|GimpComponentListItem
 typedef|;
 end_typedef
 

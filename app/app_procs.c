@@ -186,12 +186,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/color-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/file-open-dialog.h"
 end_include
 

@@ -160,7 +160,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_drop_viewable
+name|gdisplay_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*

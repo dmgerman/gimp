@@ -4228,8 +4228,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_drop_viewable (GtkWidget * widget,GimpViewable * viewable,gpointer data)
-name|gdisplay_drop_viewable
+DECL|function|gdisplay_drop_pattern (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+name|gdisplay_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -702,7 +702,7 @@ literal|"realize"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_drawable_list_item_button_realize
+name|gimp_list_item_button_realize
 argument_list|)
 argument_list|,
 name|list_item
@@ -721,7 +721,7 @@ literal|"state_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_drawable_list_item_button_state_changed
+name|gimp_list_item_button_state_changed
 argument_list|)
 argument_list|,
 name|list_item
@@ -2361,6 +2361,11 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
+name|gboolean
+name|flush
+init|=
+name|FALSE
+decl_stmt|;
 if|if
 condition|(
 name|state
@@ -2378,6 +2383,10 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|flush
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 elseif|else
@@ -2399,7 +2408,18 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|flush
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
+if|if
+condition|(
+name|flush
+condition|)
+name|gdisplays_flush
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 

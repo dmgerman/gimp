@@ -86,6 +86,10 @@ DECL|member|parent_instance
 name|GimpPreview
 name|parent_instance
 decl_stmt|;
+DECL|member|channel
+name|gint
+name|channel
+decl_stmt|;
 block|}
 struct|;
 DECL|struct|_GimpImagePreviewClass
