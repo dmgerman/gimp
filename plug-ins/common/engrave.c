@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b8f340108
+DECL|struct|__anon29410fd90108
 block|{
 DECL|member|height
 name|gint
@@ -1636,7 +1636,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b8f340208
+DECL|struct|__anon29410fd90208
 block|{
 DECL|member|x
 DECL|member|y

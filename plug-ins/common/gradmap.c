@@ -75,7 +75,7 @@ name|LUMINOSITY
 parameter_list|(
 name|X
 parameter_list|)
-value|(GIMP_RGB_INTENSITY (X[0], X[1], X[2]))
+value|(GIMP_RGB_INTENSITY (X[0], X[1], X[2]) + 0.5)
 end_define
 
 begin_decl_stmt
@@ -445,7 +445,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29d8ff4c0108
+DECL|struct|__anon29af88390108
 typedef|typedef
 struct|struct
 block|{

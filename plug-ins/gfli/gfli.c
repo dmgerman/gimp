@@ -2512,6 +2512,8 @@ name|green
 argument_list|,
 name|blue
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 break|break;
 case|case

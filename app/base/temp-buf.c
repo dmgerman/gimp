@@ -486,6 +486,8 @@ index|[
 literal|2
 index|]
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 operator|*
 name|dest
@@ -539,6 +541,8 @@ index|[
 literal|2
 index|]
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 operator|*
 name|dest

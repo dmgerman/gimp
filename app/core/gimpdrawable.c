@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4095240103
+DECL|enum|__anon27dbf1390103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3184,6 +3184,8 @@ index|[
 name|BLUE_PIX
 index|]
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 name|c
 index|[

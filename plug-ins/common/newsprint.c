@@ -455,7 +455,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c633c20108
+DECL|struct|__anon2c4989760108
 block|{
 DECL|member|name
 specifier|const
@@ -715,7 +715,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c633c20208
+DECL|struct|__anon2c4989760208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -788,7 +788,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c633c20308
+DECL|struct|__anon2c4989760308
 block|{
 DECL|member|input_spi
 name|gint
@@ -818,7 +818,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c633c20408
+DECL|struct|__anon2c4989760408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -925,7 +925,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c633c20508
+DECL|struct|__anon2c4989760508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1096,7 +1096,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c633c20608
+DECL|struct|__anon2c4989760608
 block|{
 DECL|member|name
 specifier|const
@@ -6783,7 +6783,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c633c20708
+DECL|struct|__anon2c4989760708
 block|{
 DECL|member|index
 name|gint
@@ -8190,6 +8190,8 @@ index|[
 literal|2
 index|]
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 break|break;
 default|default:

@@ -1183,6 +1183,8 @@ index|[
 literal|2
 index|]
 argument_list|)
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1220,9 +1222,10 @@ argument_list|,
 name|y
 argument_list|,
 operator|(
-operator|(
+call|(
 name|guchar
-operator|)
+call|)
+argument_list|(
 name|GIMP_RGB_INTENSITY
 argument_list|(
 name|p
@@ -1239,6 +1242,9 @@ name|p
 index|[
 literal|2
 index|]
+argument_list|)
+operator|+
+literal|0.5
 argument_list|)
 operator|*
 operator|(

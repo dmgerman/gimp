@@ -258,7 +258,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937837b0103
+DECL|enum|__anon27b7aee50103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -6837,6 +6837,8 @@ index|[
 name|BLUE_PIX
 index|]
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 break|break;
 case|case

@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4cf9750108
+DECL|struct|__anon2c4ecd530108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -3638,6 +3638,8 @@ index|[
 literal|2
 index|]
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 name|back_grayval
 operator|=
@@ -3658,6 +3660,8 @@ index|[
 literal|2
 index|]
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 comment|/* Gradient Samples */
 if|if
