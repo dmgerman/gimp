@@ -2825,6 +2825,14 @@ value|"gimp-dock"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DOCK_CLOSE
+define|#
+directive|define
+name|GIMP_HELP_DOCK_CLOSE
+value|"gimp-dock-close"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DOCK_IMAGE_MENU
 define|#
 directive|define

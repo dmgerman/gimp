@@ -168,6 +168,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dock-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dockable-actions.h"
 end_include
 
@@ -450,6 +456,21 @@ block|,
 name|dialogs_actions_setup
 block|,
 name|dialogs_actions_update
+block|}
+block|,
+block|{
+literal|"dock"
+block|,
+name|N_
+argument_list|(
+literal|"Dock"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dock_actions_setup
+block|,
+name|dock_actions_update
 block|}
 block|,
 block|{

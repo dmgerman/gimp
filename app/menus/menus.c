@@ -346,6 +346,8 @@ literal|"plug-in"
 argument_list|,
 literal|"qmask"
 argument_list|,
+literal|"dock"
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
