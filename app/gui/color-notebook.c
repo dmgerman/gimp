@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3e72860103
+DECL|enum|__anon298a51590103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -382,9 +382,9 @@ specifier|static
 name|void
 name|color_notebook_notebook_changed
 parameter_list|(
-name|GimpColorNotebook
+name|GimpColorSelector
 modifier|*
-name|notebook
+name|selector
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -408,9 +408,9 @@ specifier|static
 name|void
 name|color_notebook_switch_page
 parameter_list|(
-name|GimpColorNotebook
+name|GtkWidget
 modifier|*
-name|notebook
+name|widget
 parameter_list|,
 name|GtkNotebookPage
 modifier|*
@@ -1437,31 +1437,9 @@ name|cnp
 operator|->
 name|notebook
 operator|=
-name|gimp_color_notebook_new
-argument_list|()
-expr_stmt|;
-name|gimp_color_notebook_set_channel
+name|gimp_color_selector_new
 argument_list|(
-name|GIMP_COLOR_NOTEBOOK
-argument_list|(
-name|cnp
-operator|->
-name|notebook
-argument_list|)
-argument_list|,
-name|cnp
-operator|->
-name|active_channel
-argument_list|)
-expr_stmt|;
-name|gimp_color_notebook_set_color
-argument_list|(
-name|GIMP_COLOR_NOTEBOOK
-argument_list|(
-name|cnp
-operator|->
-name|notebook
-argument_list|)
+name|GIMP_TYPE_COLOR_NOTEBOOK
 argument_list|,
 operator|&
 name|cnp
@@ -1472,6 +1450,10 @@ operator|&
 name|cnp
 operator|->
 name|hsv
+argument_list|,
+name|cnp
+operator|->
+name|active_channel
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1518,11 +1500,16 @@ argument_list|,
 name|cnp
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_after
+name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
+name|GIMP_COLOR_NOTEBOOK
+argument_list|(
 name|cnp
+operator|->
+name|notebook
+argument_list|)
 operator|->
 name|notebook
 argument_list|)
@@ -2696,13 +2683,9 @@ name|cnp
 operator|->
 name|callback
 condition|)
-block|{
-call|(
-modifier|*
 name|cnp
 operator|->
 name|callback
-call|)
 argument_list|(
 name|cnp
 argument_list|,
@@ -2718,7 +2701,6 @@ operator|->
 name|client_data
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -2743,13 +2725,9 @@ name|cnp
 operator|->
 name|callback
 condition|)
-block|{
-call|(
-modifier|*
 name|cnp
 operator|->
 name|callback
-call|)
 argument_list|(
 name|cnp
 argument_list|,
@@ -2765,7 +2743,6 @@ operator|->
 name|client_data
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -2795,9 +2772,9 @@ name|update
 operator|&
 name|UPDATE_NOTEBOOK
 condition|)
-name|gimp_color_notebook_set_color
+name|gimp_color_selector_set_color
 argument_list|(
-name|GIMP_COLOR_NOTEBOOK
+name|GIMP_COLOR_SELECTOR
 argument_list|(
 name|cnp
 operator|->
@@ -2821,9 +2798,9 @@ name|update
 operator|&
 name|UPDATE_CHANNEL
 condition|)
-name|gimp_color_notebook_set_channel
+name|gimp_color_selector_set_channel
 argument_list|(
-name|GIMP_COLOR_NOTEBOOK
+name|GIMP_COLOR_SELECTOR
 argument_list|(
 name|cnp
 operator|->
@@ -2950,12 +2927,9 @@ name|cnp
 operator|->
 name|callback
 condition|)
-call|(
-modifier|*
 name|cnp
 operator|->
 name|callback
-call|)
 argument_list|(
 name|cnp
 argument_list|,
@@ -3193,18 +3167,18 @@ block|}
 end_function
 
 begin_comment
-comment|/*  color notebook callback  */
+comment|/*  color notebook callbacks  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|color_notebook_notebook_changed (GimpColorNotebook * notebook,const GimpRGB * rgb,const GimpHSV * hsv,ColorNotebook * cnp)
+DECL|function|color_notebook_notebook_changed (GimpColorSelector * selector,const GimpRGB * rgb,const GimpHSV * hsv,ColorNotebook * cnp)
 name|color_notebook_notebook_changed
 parameter_list|(
-name|GimpColorNotebook
+name|GimpColorSelector
 modifier|*
-name|notebook
+name|selector
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -3252,12 +3226,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_notebook_switch_page (GimpColorNotebook * notebook,GtkNotebookPage * page,guint page_num,ColorNotebook * cnp)
+DECL|function|color_notebook_switch_page (GtkWidget * widget,GtkNotebookPage * page,guint page_num,ColorNotebook * cnp)
 name|color_notebook_switch_page
 parameter_list|(
-name|GimpColorNotebook
+name|GtkWidget
 modifier|*
-name|notebook
+name|widget
 parameter_list|,
 name|GtkNotebookPage
 modifier|*
@@ -3271,9 +3245,22 @@ modifier|*
 name|cnp
 parameter_list|)
 block|{
+name|GimpColorNotebook
+modifier|*
+name|notebook
+decl_stmt|;
 name|gboolean
 name|set_channel
 decl_stmt|;
+name|notebook
+operator|=
+name|GIMP_COLOR_NOTEBOOK
+argument_list|(
+name|cnp
+operator|->
+name|notebook
+argument_list|)
+expr_stmt|;
 name|set_channel
 operator|=
 operator|(
