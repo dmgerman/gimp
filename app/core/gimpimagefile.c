@@ -247,7 +247,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b93d40103
+DECL|enum|__anon29bc7fbd0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -261,7 +261,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b93d40208
+DECL|struct|__anon29bc7fbd0208
 block|{
 DECL|member|dirname
 specifier|const
@@ -1988,7 +1988,7 @@ name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|imagefile
+name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
