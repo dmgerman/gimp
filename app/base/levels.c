@@ -317,6 +317,8 @@ name|gimp_histogram_get_count
 argument_list|(
 name|hist
 argument_list|,
+name|channel
+argument_list|,
 literal|0
 argument_list|,
 literal|255

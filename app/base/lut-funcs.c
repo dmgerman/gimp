@@ -1151,7 +1151,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bacb5620108
+DECL|struct|__anon2bc06fd10108
 block|{
 DECL|member|histogram
 name|GimpHistogram
@@ -1347,6 +1347,8 @@ operator|=
 name|gimp_histogram_get_count
 argument_list|(
 name|hist
+argument_list|,
+name|GIMP_HISTOGRAM_VALUE
 argument_list|,
 literal|0
 argument_list|,

@@ -881,12 +881,15 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_histogram_get_count (GimpHistogram * histogram,gint start,gint end)
+DECL|function|gimp_histogram_get_count (GimpHistogram * histogram,GimpHistogramChannel channel,gint start,gint end)
 name|gimp_histogram_get_count
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
+parameter_list|,
+name|GimpHistogramChannel
+name|channel
 parameter_list|,
 name|gint
 name|start
@@ -931,7 +934,7 @@ name|histogram
 operator|->
 name|values
 index|[
-literal|0
+name|channel
 index|]
 index|[
 name|i
@@ -1015,6 +1018,8 @@ name|gimp_histogram_get_count
 argument_list|(
 name|histogram
 argument_list|,
+name|channel
+argument_list|,
 name|start
 argument_list|,
 name|end
@@ -1082,6 +1087,8 @@ operator|=
 name|gimp_histogram_get_count
 argument_list|(
 name|histogram
+argument_list|,
+name|channel
 argument_list|,
 name|start
 argument_list|,
@@ -1193,6 +1200,8 @@ operator|=
 name|gimp_histogram_get_count
 argument_list|(
 name|histogram
+argument_list|,
+name|channel
 argument_list|,
 name|start
 argument_list|,

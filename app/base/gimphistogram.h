@@ -80,6 +80,9 @@ name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
+name|GimpHistogramChannel
+name|channel
+parameter_list|,
 name|gint
 name|start
 parameter_list|,

@@ -4572,6 +4572,8 @@ name|gimp_histogram_get_count
 argument_list|(
 name|histogram
 argument_list|,
+name|channel
+argument_list|,
 literal|0
 argument_list|,
 literal|255
@@ -4582,6 +4584,8 @@ operator|=
 name|gimp_histogram_get_count
 argument_list|(
 name|histogram
+argument_list|,
+name|channel
 argument_list|,
 name|start_range
 argument_list|,
