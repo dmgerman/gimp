@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3043920108
+DECL|struct|__anon2abaefb20108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -242,7 +242,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3043920208
+DECL|struct|__anon2abaefb20208
 block|{
 DECL|member|run
 name|gint
@@ -1306,7 +1306,7 @@ decl_stmt|;
 if|if
 condition|(
 name|y
-operator|==
+operator|<=
 literal|0
 condition|)
 block|{
@@ -1332,7 +1332,7 @@ elseif|else
 if|if
 condition|(
 name|y
-operator|==
+operator|>=
 name|pixel_rgn
 operator|->
 name|h
@@ -2678,7 +2678,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_int_adjustment_update
+name|gimp_double_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
