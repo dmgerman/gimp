@@ -2022,7 +2022,7 @@ expr_stmt|;
 if|if
 condition|(
 name|radius
-operator|<=
+operator|<
 literal|0.0
 condition|)
 name|success
@@ -2181,7 +2181,7 @@ expr_stmt|;
 if|if
 condition|(
 name|radius
-operator|<=
+operator|<
 literal|0
 condition|)
 name|success
@@ -2340,7 +2340,7 @@ expr_stmt|;
 if|if
 condition|(
 name|steps
-operator|<=
+operator|<
 literal|0
 condition|)
 name|success
@@ -2499,7 +2499,7 @@ expr_stmt|;
 if|if
 condition|(
 name|radius
-operator|<=
+operator|<
 literal|0
 condition|)
 name|success
