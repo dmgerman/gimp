@@ -673,6 +673,10 @@ name|GIMP_TYPE_INK_OPTIONS
 argument_list|,
 name|gimp_ink_options_gui
 argument_list|,
+name|GIMP_CONTEXT_FOREGROUND_MASK
+operator||
+name|GIMP_CONTEXT_BACKGROUND_MASK
+operator||
 name|GIMP_CONTEXT_OPACITY_MASK
 operator||
 name|GIMP_CONTEXT_PAINT_MODE_MASK
@@ -3141,7 +3145,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2880f6900103
+DECL|enum|__anon2c2b41450103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

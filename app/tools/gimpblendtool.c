@@ -308,6 +308,10 @@ name|GIMP_TYPE_BLEND_OPTIONS
 argument_list|,
 name|gimp_blend_options_gui
 argument_list|,
+name|GIMP_CONTEXT_FOREGROUND_MASK
+operator||
+name|GIMP_CONTEXT_BACKGROUND_MASK
+operator||
 name|GIMP_CONTEXT_OPACITY_MASK
 operator||
 name|GIMP_CONTEXT_PAINT_MODE_MASK

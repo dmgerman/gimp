@@ -1788,6 +1788,15 @@ name|global_props
 init|=
 literal|0
 decl_stmt|;
+comment|/*  FG and BG are always shared between all tools  */
+name|global_props
+operator||=
+name|GIMP_CONTEXT_FOREGROUND_MASK
+expr_stmt|;
+name|global_props
+operator||=
+name|GIMP_CONTEXT_BACKGROUND_MASK
+expr_stmt|;
 if|if
 condition|(
 name|config
