@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3613d0108
+DECL|struct|__anon2950c3a10108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3613d0208
+DECL|struct|__anon2950c3a10208
 block|{
 DECL|member|run
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3613d0308
+DECL|struct|__anon2950c3a10308
 block|{
 DECL|member|r
 name|guchar
@@ -858,7 +858,7 @@ name|drawable_ID
 operator|=
 name|param
 index|[
-literal|1
+literal|2
 index|]
 operator|.
 name|data
