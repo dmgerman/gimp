@@ -1287,6 +1287,7 @@ argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
+comment|/* Red */
 name|label
 operator|=
 name|gtk_label_new
@@ -1344,6 +1345,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+comment|/* Green */
 name|label
 operator|=
 name|gtk_label_new
@@ -1401,6 +1403,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+comment|/* Blue */
 name|label
 operator|=
 name|gtk_label_new
@@ -1458,6 +1461,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+comment|/* Alpha */
 name|label
 operator|=
 name|gtk_label_new
@@ -1820,7 +1824,7 @@ name|info_win
 argument_list|,
 name|_
 argument_list|(
-literal|"Dimensions (w x h):"
+literal|"Dimensions (W x H):"
 argument_list|)
 argument_list|,
 name|iwd

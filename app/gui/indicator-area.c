@@ -501,7 +501,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"The active brush.\n"
-literal|"Click to open the Brushes Dialog."
+literal|"Click to open the Brush Dialog."
 argument_list|)
 argument_list|,
 name|NULL
@@ -624,7 +624,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"The active pattern.\n"
-literal|"Click to open the Patterns Dialog."
+literal|"Click to open the Pattern Dialog."
 argument_list|)
 argument_list|,
 name|NULL
@@ -747,7 +747,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"The active gradient.\n"
-literal|"Click to open the Gradients Dialog."
+literal|"Click to open the Gradient Dialog."
 argument_list|)
 argument_list|,
 name|NULL

@@ -596,7 +596,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Unknown info_dialog field type."
+literal|"%s: Unknown info_dialog field type."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 break|break;

@@ -466,7 +466,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"adding theme \"%s\" (%s)\n"
+literal|"Adding theme '%s' (%s)\n"
 argument_list|)
 argument_list|,
 name|basename
@@ -689,7 +689,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"parsing \"%s\"\n"
+literal|"Parsing '%s'\n"
 argument_list|)
 argument_list|,
 name|gtkrc
@@ -723,7 +723,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"parsing \"%s\"\n"
+literal|"Parsing '%s'\n"
 argument_list|)
 argument_list|,
 name|gtkrc
@@ -1349,7 +1349,7 @@ name|gimp_query_boolean_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Quit the GIMP?"
+literal|"Quit The GIMP?"
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
@@ -1360,7 +1360,8 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Some files unsaved.\n\nQuit the GIMP?"
+literal|"Some files are unsaved.\n"
+literal|"\nReally quit The GIMP?"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_QUIT
