@@ -1672,11 +1672,7 @@ if|if
 condition|(
 name|cpu
 operator|&
-name|CPU_ACCEL_X86_SSE
-operator|||
-name|cpu
-operator|&
-name|CPU_ACCEL_X86_MMXEXT
+name|CPU_ACCEL_X86_SSE2
 condition|)
 block|{
 return|return
