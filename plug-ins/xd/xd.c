@@ -246,16 +246,15 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
 parameter_list|()
 block|{
@@ -2045,6 +2044,10 @@ name|key
 operator|.
 name|dptr
 operator|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|req
 expr_stmt|;
 name|key

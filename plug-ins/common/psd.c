@@ -88,7 +88,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d5709f0103
+DECL|enum|__anon29469dfd0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -312,7 +312,7 @@ name|gboolean
 name|visible
 decl_stmt|;
 DECL|member|name
-name|guchar
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -407,12 +407,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon27d5709f0208
+DECL|struct|__anon29469dfd0208
 specifier|static
 struct|struct
 block|{
 DECL|member|signature
-name|guchar
+name|gchar
 name|signature
 index|[
 literal|4
@@ -560,7 +560,7 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|dst
 parameter_list|,
@@ -586,7 +586,7 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|dst
 parameter_list|,
@@ -779,7 +779,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|guchar
+name|gchar
 modifier|*
 name|getpascalstring
 parameter_list|(
@@ -787,7 +787,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -805,7 +805,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -823,7 +823,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -5912,7 +5912,9 @@ decl_stmt|;
 name|char
 modifier|*
 name|name_buf
-decl_stmt|,
+decl_stmt|;
+name|unsigned
+name|char
 modifier|*
 name|cmykbuf
 decl_stmt|;
@@ -5922,13 +5924,13 @@ name|number
 init|=
 literal|1
 decl_stmt|;
-name|unsigned
 name|char
 modifier|*
-name|dest
-decl_stmt|,
-modifier|*
 name|temp
+decl_stmt|;
+name|guchar
+modifier|*
+name|dest
 decl_stmt|;
 name|long
 name|channels
@@ -8094,7 +8096,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|decode (long clen,long uclen,char * src,char * dst,int step)
+DECL|function|decode (long clen,long uclen,char * src,guchar * dst,int step)
 name|decode
 parameter_list|(
 name|long
@@ -8107,7 +8109,7 @@ name|char
 modifier|*
 name|src
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|dst
 parameter_list|,
@@ -8264,7 +8266,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|packbitsdecode (long * clenp,long uclen,char * src,char * dst,int step)
+DECL|function|packbitsdecode (long * clenp,long uclen,char * src,guchar * dst,int step)
 name|packbitsdecode
 parameter_list|(
 name|long
@@ -8278,7 +8280,7 @@ name|char
 modifier|*
 name|src
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|dst
 parameter_list|,
@@ -8885,7 +8887,7 @@ decl_stmt|;
 name|long
 name|n
 decl_stmt|;
-name|char
+name|guchar
 modifier|*
 name|rp
 decl_stmt|,
@@ -9108,7 +9110,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|dumpchunk (size_t n,FILE * fd,guchar * why)
+DECL|function|dumpchunk (size_t n,FILE * fd,gchar * why)
 name|dumpchunk
 parameter_list|(
 name|size_t
@@ -9118,7 +9120,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -9171,7 +9173,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|throwchunk (size_t n,FILE * fd,guchar * why)
+DECL|function|throwchunk (size_t n,FILE * fd,gchar * why)
 name|throwchunk
 parameter_list|(
 name|size_t
@@ -9181,12 +9183,12 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 modifier|*
 name|tmpchunk
 decl_stmt|;
@@ -9244,21 +9246,21 @@ end_endif
 
 begin_function
 specifier|static
-name|guchar
+name|gchar
 modifier|*
-DECL|function|getpascalstring (FILE * fd,guchar * why)
+DECL|function|getpascalstring (FILE * fd,gchar * why)
 name|getpascalstring
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 modifier|*
 name|tmpchunk
 decl_stmt|;

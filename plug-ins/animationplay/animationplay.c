@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294905f50103
+DECL|enum|__anon2b165bc50103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -451,7 +451,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|shape_preview_mask
-name|guchar
+name|gchar
 modifier|*
 name|shape_preview_mask
 decl_stmt|;
@@ -1042,10 +1042,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|reshape_from_bitmap (guchar * bitmap)
+DECL|function|reshape_from_bitmap (gchar * bitmap)
 name|reshape_from_bitmap
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|bitmap
 parameter_list|)
