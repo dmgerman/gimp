@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -6382,7 +6376,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2b05764d0103
+DECL|enum|__anon295a9d950103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

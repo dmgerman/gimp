@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a54176a0103
+DECL|enum|__anon29e62cec0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -2055,7 +2055,7 @@ name|yoff
 init|=
 literal|0
 decl_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 name|gdisp
@@ -2934,10 +2934,8 @@ argument_list|(
 name|preview_buf_notdot
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 block|}
 end_function

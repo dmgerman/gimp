@@ -60,15 +60,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpBitmapCursor
-typedef|typedef
-name|struct
-name|_GimpBitmapCursor
-name|GimpBitmapCursor
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|BoundSeg
 typedef|typedef
 name|struct

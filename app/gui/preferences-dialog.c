@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -150,7 +144,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294d23c90103
+DECL|enum|__anon27f5ec710103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12429,7 +12423,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon294d23c90208
+DECL|struct|__anon27f5ec710208
 block|{
 DECL|member|label
 name|gchar
@@ -12658,7 +12652,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon294d23c90308
+DECL|struct|__anon27f5ec710308
 block|{
 DECL|member|tree_label
 name|gchar

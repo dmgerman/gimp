@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"context_manager.h"
 end_include
 
@@ -89,12 +95,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"cursorutil.h"
 end_include
 
 begin_include
@@ -1613,7 +1613,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimp_add_busy_cursors_until_idle
+name|gimp_set_busy_until_idle
 argument_list|()
 expr_stmt|;
 name|gimp_image_resize
@@ -1829,7 +1829,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimp_add_busy_cursors_until_idle
+name|gimp_set_busy_until_idle
 argument_list|()
 expr_stmt|;
 name|gimp_image_scale

@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -115,6 +109,12 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -233,7 +233,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d2d9c0103
+DECL|enum|__anon29a2f1b30103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -2266,7 +2266,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 name|tool
@@ -2630,10 +2630,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()

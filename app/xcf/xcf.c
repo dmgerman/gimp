@@ -142,7 +142,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -236,7 +236,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275b35950103
+DECL|enum|__anon28ef71550103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275b35950203
+DECL|enum|__anon28ef71550203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1455,7 +1455,7 @@ index|[
 literal|14
 index|]
 decl_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 name|gimage
@@ -1745,10 +1745,8 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 return|return
 name|return_args
@@ -1786,7 +1784,7 @@ decl_stmt|;
 name|gboolean
 name|success
 decl_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 name|success
@@ -1952,10 +1950,8 @@ argument_list|,
 name|success
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 return|return
 name|return_args

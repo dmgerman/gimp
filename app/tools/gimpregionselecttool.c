@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"boundary.h"
+file|"app_procs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"boundary.h"
 end_include
 
 begin_include
@@ -2734,7 +2734,7 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 name|use_offsets
@@ -3020,10 +3020,8 @@ argument_list|(
 name|bsegs
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 return|return
 name|segs

@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"devices.h"
 end_include
 
@@ -151,6 +145,12 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -3516,7 +3516,7 @@ operator|!
 name|drawable
 condition|)
 return|return;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 comment|/*  Get the bucket fill context  */
@@ -3950,10 +3950,8 @@ argument_list|(
 name|pat_buf
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 block|}
 end_function

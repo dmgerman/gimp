@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -127,6 +121,12 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -704,7 +704,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29aec55d0103
+DECL|enum|__anon278c75330103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -4384,7 +4384,7 @@ operator|&&
 name|height
 condition|)
 block|{
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 if|if
@@ -4912,10 +4912,8 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()
@@ -6586,7 +6584,7 @@ argument_list|(
 name|draw
 argument_list|)
 expr_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 comment|/* You should always keep in mind that crop->tx2 and crop->ty2 are the NOT the      coordinates of the bottomright corner of the area to be cropped. They point       at the pixel located one to the right and one to the bottom.      */
@@ -7332,10 +7330,8 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(

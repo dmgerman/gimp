@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
+file|"appenv.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"colormaps.h"
 end_include
 
 begin_include

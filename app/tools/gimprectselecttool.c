@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -139,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c4f0a0103
+DECL|enum|__anon2b20ee210103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT

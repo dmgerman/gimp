@@ -16,10 +16,20 @@ directive|define
 name|__GDISPLAY_H__
 end_define
 
+begin_comment
+comment|/* FIXME: don't include gdisplay.h from core/ */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"widgets/widgets-types.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c67d1b0103
+DECL|enum|__anon2ab493c10103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff

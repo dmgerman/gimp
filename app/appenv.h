@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290763c40103
+DECL|enum|__anon29db0acd0103
 block|{
 DECL|enumerator|MESSAGE_BOX
 name|MESSAGE_BOX
@@ -102,6 +102,17 @@ begin_decl_stmt
 specifier|extern
 name|MessageHandlerType
 name|message_handler
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* FIXME: gimp_busy HACK */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|gimp_busy
 decl_stmt|;
 end_decl_stmt
 

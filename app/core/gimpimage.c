@@ -58,7 +58,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -753,7 +753,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff37970103
+DECL|enum|__anon29c44f7a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -2898,7 +2898,7 @@ name|GList
 modifier|*
 name|guide_list
 decl_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 name|g_assert
@@ -3223,10 +3223,8 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -3317,7 +3315,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 comment|/*  Get the floating layer if one exists  */
@@ -3684,10 +3682,8 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -9371,7 +9367,7 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|gimp_add_busy_cursors_until_idle
+name|gimp_set_busy_until_idle
 argument_list|()
 expr_stmt|;
 comment|/*  Get the gimage from the tilemanager  */
@@ -12227,7 +12223,7 @@ operator|->
 name|next
 condition|)
 block|{
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 name|layer
@@ -12246,10 +12242,8 @@ argument_list|(
 name|merge_list
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 return|return
 name|layer
@@ -12321,7 +12315,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 comment|/* if there's a floating selection, anchor it */
@@ -12413,10 +12407,8 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 return|return
 name|layer
@@ -12586,7 +12578,7 @@ argument_list|,
 name|current_layer
 argument_list|)
 expr_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 name|layer
@@ -12605,10 +12597,8 @@ argument_list|(
 name|merge_list
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 return|return
 name|layer

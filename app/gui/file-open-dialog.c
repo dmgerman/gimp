@@ -118,7 +118,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -3011,7 +3011,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -3353,10 +3353,8 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 block|}
 end_function

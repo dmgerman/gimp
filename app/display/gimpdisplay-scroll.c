@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcursor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimptool.h"
 end_include
 
@@ -43,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"cursorutil.h"
 end_include
 
 begin_include
@@ -125,6 +125,10 @@ modifier|*
 name|bevent
 parameter_list|)
 block|{
+name|GdkCursor
+modifier|*
+name|cursor
+decl_stmt|;
 name|startx
 operator|=
 name|bevent
@@ -145,7 +149,18 @@ name|gdisp
 operator|->
 name|offset_y
 expr_stmt|;
-name|gimp_change_win_cursor
+name|cursor
+operator|=
+name|gimp_cursor_new
+argument_list|(
+name|GDK_FLEUR
+argument_list|,
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|)
+expr_stmt|;
+name|gdk_window_set_cursor
 argument_list|(
 name|gdisp
 operator|->
@@ -153,11 +168,12 @@ name|canvas
 operator|->
 name|window
 argument_list|,
-name|GDK_FLEUR
-argument_list|,
-name|GIMP_TOOL_CURSOR_NONE
-argument_list|,
-name|GIMP_CURSOR_MODIFIER_NONE
+name|cursor
+argument_list|)
+expr_stmt|;
+name|gdk_cursor_destroy
+argument_list|(
+name|cursor
 argument_list|)
 expr_stmt|;
 block|}

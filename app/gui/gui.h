@@ -63,6 +63,24 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gui_set_busy
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gui_unset_busy
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|really_quit_dialog
 parameter_list|(
 name|void

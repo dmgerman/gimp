@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"devices.h"
 end_include
 
@@ -239,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b72d8d10103
+DECL|enum|__anon29b638490103
 block|{
 DECL|enumerator|PAINT
 name|PAINT

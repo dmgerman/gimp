@@ -48,19 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"cursorutil.h"
+file|"paint-funcs/paint-funcs.h"
 end_include
 
 begin_include
@@ -102,6 +90,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"boundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -115,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint-funcs/paint-funcs.h"
 end_include
 
 begin_include

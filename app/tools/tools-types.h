@@ -22,6 +22,12 @@ directive|include
 file|"core/core-types.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"widgets/widgets-types.h"
+end_include
+
 begin_comment
 comment|/*  tools  */
 end_comment
@@ -156,7 +162,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28e4a7960103
+DECL|enum|__anon28ca20810103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -180,7 +186,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28e4a7960203
+DECL|enum|__anon28ca20810203
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -210,7 +216,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28e4a7960303
+DECL|enum|__anon28ca20810303
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -243,7 +249,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28e4a7960403
+DECL|enum|__anon28ca20810403
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

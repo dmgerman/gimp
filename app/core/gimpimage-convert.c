@@ -62,7 +62,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -35088,7 +35088,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3958670108
+DECL|struct|__anon2a2defff0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35165,7 +35165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3958670208
+DECL|struct|__anon2a2defff0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35356,7 +35356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3958670308
+DECL|struct|__anon2a2defff0308
 block|{
 DECL|member|used_count
 name|signed
@@ -36398,7 +36398,7 @@ name|theCustomPalette
 operator|=
 name|custom_palette
 expr_stmt|;
-name|gimp_add_busy_cursors
+name|gimp_set_busy
 argument_list|()
 expr_stmt|;
 comment|/*  Get the floating layer if one exists  */
@@ -37469,10 +37469,8 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_remove_busy_cursors
-argument_list|(
-name|NULL
-argument_list|)
+name|gimp_unset_busy
+argument_list|()
 expr_stmt|;
 block|}
 end_function

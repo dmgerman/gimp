@@ -145,12 +145,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
 end_include
 
@@ -281,7 +275,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7475a20103
+DECL|enum|__anon299299710103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -321,7 +315,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7475a20203
+DECL|enum|__anon299299710203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -58,13 +64,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"cursorutil.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -259,7 +259,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_add_busy_cursors_until_idle
+name|gimp_set_busy_until_idle
 argument_list|()
 expr_stmt|;
 comment|/*  Create a new image  */
