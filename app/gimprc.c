@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon289cfa0a0103
+DECL|enum|__anon279060fe0103
 typedef|typedef
 enum|enum
 block|{
@@ -695,15 +695,6 @@ name|int
 name|auto_save
 init|=
 name|TRUE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|cubic_interpolation
-name|int
-name|cubic_interpolation
-init|=
-name|FALSE
 decl_stmt|;
 end_decl_stmt
 
