@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0347b50103
+DECL|enum|__anon2a8bfc8d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1232,7 +1232,7 @@ name|g_object_set
 argument_list|(
 name|item
 argument_list|,
-literal|"auto_rename"
+literal|"auto-rename"
 argument_list|,
 name|FALSE
 argument_list|,
