@@ -1467,7 +1467,7 @@ name|filename
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"gimp_temp.%d%d.%s"
+literal|"gimp_temp_%d%d.%s"
 argument_list|,
 name|pid
 argument_list|,
