@@ -20,7 +20,8 @@ file|"libgimp/gimp.h"
 end_include
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|gimp_db_browser
 parameter_list|(
 name|void

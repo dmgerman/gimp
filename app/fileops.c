@@ -2019,7 +2019,7 @@ literal|"delete_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gtk_widget_delete_hides
+name|gtk_widget_hide_on_delete
 argument_list|)
 argument_list|,
 name|NULL
@@ -2440,7 +2440,7 @@ literal|"delete_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gtk_widget_delete_hides
+name|gtk_widget_hide_on_delete
 argument_list|)
 argument_list|,
 name|NULL

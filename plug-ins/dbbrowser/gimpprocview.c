@@ -14,7 +14,8 @@ file|"dbbrowser_utils.h"
 end_include
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|gimp_db_browser (void (* apply_callback)(gchar * selected_proc_name,gchar * selected_scheme_proc_name,gchar * selected_proc_blurb,gchar * selected_proc_help,gchar * selected_proc_author,gchar * selected_proc_copyright,gchar * selected_proc_date,int selected_proc_type,int selected_nparams,int selected_nreturn_vals,GParamDef * selected_params,GParamDef * selected_return_vals))
 name|gimp_db_browser
 parameter_list|(
@@ -909,6 +910,11 @@ operator|)
 name|dbbrowser
 argument_list|)
 expr_stmt|;
+return|return
+name|dbbrowser
+operator|->
+name|dlg
+return|;
 block|}
 end_function
 
