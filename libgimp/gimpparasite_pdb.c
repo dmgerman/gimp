@@ -233,7 +233,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_detach_parasite"
+literal|"gimp_detach_parasite"
 argument_list|,
 operator|&
 name|nreturn_vals
