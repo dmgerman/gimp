@@ -153,6 +153,9 @@ name|GtkAction
 modifier|*
 name|action
 parameter_list|,
+name|gint
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a734200103
+DECL|enum|__anon2ab306b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a734200203
+DECL|enum|__anon2ab306b20203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2548,7 +2548,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_item_tree_view_new (gint preview_size,gint preview_border_width,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpEditItemFunc edit_item_func,GimpNewItemFunc new_item_func,GimpActivateItemFunc activate_item_func,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
+DECL|function|gimp_item_tree_view_new (gint preview_size,gint preview_border_width,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpEditItemFunc edit_item_func,GimpNewItemFunc new_item_func,GimpActivateItemFunc activate_item_func,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_path)
 name|gimp_item_tree_view_new
 parameter_list|(
 name|gint
@@ -2590,7 +2590,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|ui_identifier
+name|ui_path
 parameter_list|)
 block|{
 name|GimpItemTreeView
@@ -2697,7 +2697,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|ui_identifier
+name|ui_path
 operator|!=
 name|NULL
 argument_list|,
@@ -2768,6 +2768,18 @@ literal|"reorderable"
 argument_list|,
 name|TRUE
 argument_list|,
+literal|"menu-factory"
+argument_list|,
+name|menu_factory
+argument_list|,
+literal|"menu-identifier"
+argument_list|,
+name|menu_identifier
+argument_list|,
+literal|"ui-path"
+argument_list|,
+name|ui_path
+argument_list|,
 literal|"item-type"
 argument_list|,
 name|item_type
@@ -2808,22 +2820,6 @@ operator|->
 name|activate_item_func
 operator|=
 name|activate_item_func
-expr_stmt|;
-name|gimp_editor_create_menu
-argument_list|(
-name|GIMP_EDITOR
-argument_list|(
-name|item_view
-argument_list|)
-argument_list|,
-name|menu_factory
-argument_list|,
-name|menu_identifier
-argument_list|,
-name|ui_identifier
-argument_list|,
-name|item_view
-argument_list|)
 expr_stmt|;
 name|gimp_item_tree_view_set_image
 argument_list|(
@@ -3036,6 +3032,21 @@ argument_list|(
 name|view
 operator|->
 name|gimage
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_ui_manager_update
+argument_list|(
+name|GIMP_EDITOR
+argument_list|(
+name|view
+argument_list|)
+operator|->
+name|ui_manager
 argument_list|,
 name|view
 argument_list|)
@@ -3539,6 +3550,18 @@ operator|->
 name|delete_button
 argument_list|,
 name|delete_sensitive
+argument_list|)
+expr_stmt|;
+name|gimp_ui_manager_update
+argument_list|(
+name|GIMP_EDITOR
+argument_list|(
+name|tree_view
+argument_list|)
+operator|->
+name|ui_manager
+argument_list|,
+name|tree_view
 argument_list|)
 expr_stmt|;
 return|return

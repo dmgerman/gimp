@@ -172,6 +172,10 @@ parameter_list|(
 name|GimpCoreConfig
 modifier|*
 name|config
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl

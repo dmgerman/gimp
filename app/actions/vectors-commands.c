@@ -688,12 +688,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_selection_to_vectors_cmd_callback (GtkAction * action,gpointer data)
+DECL|function|vectors_selection_to_vectors_cmd_callback (GtkAction * action,gint value,gpointer data)
 name|vectors_selection_to_vectors_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -714,7 +717,7 @@ name|vectors_selection_to_vectors
 argument_list|(
 name|gimage
 argument_list|,
-name|FALSE
+name|value
 argument_list|)
 expr_stmt|;
 block|}

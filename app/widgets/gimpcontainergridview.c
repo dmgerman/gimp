@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296832fc0103
+DECL|enum|__anon2aa6db270103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR

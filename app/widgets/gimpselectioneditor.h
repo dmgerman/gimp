@@ -103,14 +103,6 @@ DECL|member|parent_instance
 name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
-DECL|member|stroke_item_func
-name|GimpStrokeItemFunc
-name|stroke_item_func
-decl_stmt|;
-DECL|member|selection_to_vectors_func
-name|GimpSelectionToVectorsFunc
-name|selection_to_vectors_func
-decl_stmt|;
 DECL|member|preview
 name|GtkWidget
 modifier|*
@@ -181,6 +173,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl

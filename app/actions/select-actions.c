@@ -96,6 +96,25 @@ index|[]
 init|=
 block|{
 block|{
+literal|"selection-editor-popup"
+block|,
+name|GIMP_STOCK_TOOL_RECT_SELECT
+block|,
+name|N_
+argument_list|(
+literal|"Selection Editor Menu"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_SELECTION_DIALOG
+block|}
+block|,
+block|{
 literal|"select-menu"
 block|,
 name|NULL
@@ -118,7 +137,10 @@ argument_list|)
 block|,
 literal|"<control>A"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Select all"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -140,7 +162,10 @@ argument_list|)
 block|,
 literal|"<control><shift>A"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Select none"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -162,7 +187,10 @@ argument_list|)
 block|,
 literal|"<control>I"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Invert selection"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -339,7 +367,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Save selection to channel"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -347,6 +378,31 @@ name|select_save_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_SELECTION_TO_CHANNEL
+block|}
+block|,
+block|{
+literal|"select-stroke"
+block|,
+name|GIMP_STOCK_SELECTION_STROKE
+block|,
+name|N_
+argument_list|(
+literal|"_Stroke Selection..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Stroke selection"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|select_stroke_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_SELECTION_STROKE
 block|}
 block|,
 block|{
@@ -361,7 +417,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Selection to path"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -416,6 +475,12 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+init|=
+name|NULL
+decl_stmt|;
 name|GimpVectors
 modifier|*
 name|vectors
@@ -424,11 +489,6 @@ name|NULL
 decl_stmt|;
 name|gboolean
 name|fs
-init|=
-name|FALSE
-decl_stmt|;
-name|gboolean
-name|lp
 init|=
 name|FALSE
 decl_stmt|;
@@ -449,6 +509,20 @@ condition|(
 name|gimage
 condition|)
 block|{
+name|drawable
+operator|=
+name|gimp_image_active_drawable
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+name|vectors
+operator|=
+name|gimp_image_get_active_vectors
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|fs
 operator|=
 operator|(
@@ -460,14 +534,6 @@ operator|!=
 name|NULL
 operator|)
 expr_stmt|;
-name|lp
-operator|=
-operator|!
-name|gimp_image_is_empty
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 name|sel
 operator|=
 operator|!
@@ -477,13 +543,6 @@ name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|vectors
-operator|=
-name|gimp_image_get_active_vectors
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 block|}
@@ -502,14 +561,14 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-all"
 argument_list|,
-name|lp
+name|drawable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"select-none"
 argument_list|,
-name|lp
+name|drawable
 operator|&&
 name|sel
 argument_list|)
@@ -518,7 +577,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-invert"
 argument_list|,
-name|lp
+name|drawable
 operator|&&
 name|sel
 argument_list|)
@@ -527,8 +586,6 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-from-vectors"
 argument_list|,
-name|lp
-operator|&&
 name|vectors
 argument_list|)
 expr_stmt|;
@@ -536,7 +593,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-float"
 argument_list|,
-name|lp
+name|drawable
 operator|&&
 name|sel
 argument_list|)
@@ -545,7 +602,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-feather"
 argument_list|,
-name|lp
+name|drawable
 operator|&&
 name|sel
 argument_list|)
@@ -554,7 +611,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-sharpen"
 argument_list|,
-name|lp
+name|drawable
 operator|&&
 name|sel
 argument_list|)
@@ -563,7 +620,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-shrink"
 argument_list|,
-name|lp
+name|drawable
 operator|&&
 name|sel
 argument_list|)
@@ -572,7 +629,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-grow"
 argument_list|,
-name|lp
+name|drawable
 operator|&&
 name|sel
 argument_list|)
@@ -581,7 +638,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-border"
 argument_list|,
-name|lp
+name|drawable
 operator|&&
 name|sel
 argument_list|)
@@ -590,6 +647,8 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"select-save"
 argument_list|,
+name|drawable
+operator|&&
 name|sel
 operator|&&
 operator|!
@@ -598,8 +657,19 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"select-stroke"
+argument_list|,
+name|drawable
+operator|&&
+name|sel
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"select-to-vectors"
 argument_list|,
+name|drawable
+operator|&&
 name|sel
 operator|&&
 operator|!

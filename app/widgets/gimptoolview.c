@@ -394,6 +394,8 @@ argument_list|,
 literal|"tools"
 argument_list|,
 literal|"tools-reset"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_ui_manager_update

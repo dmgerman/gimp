@@ -3929,6 +3929,8 @@ expr_stmt|;
 if|if
 condition|(
 name|dialog_ui_manager
+operator|&&
+name|dialog_ui_path
 condition|)
 block|{
 name|GtkWidget
@@ -4040,6 +4042,8 @@ expr_stmt|;
 if|if
 condition|(
 name|dialog_ui_manager
+operator|&&
+name|dialog_ui_path
 condition|)
 block|{
 name|GtkWidget

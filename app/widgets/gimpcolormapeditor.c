@@ -211,7 +211,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0ba3cb0103
+DECL|enum|__anon2ac1d73e0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1310,8 +1310,9 @@ name|table
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-operator|!
 name|gimage
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
@@ -1337,23 +1338,19 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_COLORMAP_EDITOR
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_editor_create_menu
-argument_list|(
-name|GIMP_EDITOR
-argument_list|(
-name|editor
-argument_list|)
+literal|"menu-factory"
 argument_list|,
 name|menu_factory
 argument_list|,
+literal|"menu-identifier"
+argument_list|,
 literal|"<ColormapEditor>"
+argument_list|,
+literal|"ui-path"
 argument_list|,
 literal|"/colormap-editor-popup"
 argument_list|,
-name|editor
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  The palette frame  */
@@ -3853,7 +3850,7 @@ argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|ui_manager
+name|popup_data
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

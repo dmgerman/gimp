@@ -108,6 +108,11 @@ name|GimpMenuFactory
 modifier|*
 name|menu_factory
 decl_stmt|;
+DECL|member|menu_identifier
+name|gchar
+modifier|*
+name|menu_identifier
+decl_stmt|;
 DECL|member|ui_manager
 name|GimpUIManager
 modifier|*
@@ -187,7 +192,7 @@ modifier|*
 name|ui_path
 parameter_list|,
 name|gpointer
-name|callback_data
+name|popup_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -272,6 +277,8 @@ specifier|const
 name|gchar
 modifier|*
 name|action_name
+parameter_list|,
+modifier|...
 parameter_list|)
 function_decl|;
 end_function_decl
