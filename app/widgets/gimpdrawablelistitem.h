@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimplistitem.h"
+file|"gimpitemlistitem.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpDrawableListItem
 block|{
 DECL|member|parent_instance
-name|GimpListItem
+name|GimpItemListItem
 name|parent_instance
 decl_stmt|;
 DECL|member|eye_button
@@ -118,7 +118,7 @@ struct|struct
 name|_GimpDrawableListItemClass
 block|{
 DECL|member|parent_class
-name|GimpListItemClass
+name|GimpItemListItemClass
 name|parent_class
 decl_stmt|;
 block|}
