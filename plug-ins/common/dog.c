@@ -16,18 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -58,7 +46,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2938dade0108
+DECL|struct|__anon2b86b4910108
 block|{
 DECL|member|inner
 name|gdouble
@@ -101,7 +89,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2938dade0208
+DECL|struct|__anon2b86b4910208
 block|{
 DECL|member|gimpimageid
 name|gint32
@@ -2027,16 +2015,12 @@ argument_list|,
 name|show_progress
 argument_list|)
 expr_stmt|;
-name|_gimp_tile_cache_flush_drawable
-argument_list|(
-name|drawable1
-argument_list|)
-expr_stmt|;
-name|_gimp_tile_cache_flush_drawable
-argument_list|(
-name|drawable2
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|_gimp_tile_cache_flush_drawable (drawable1);   _gimp_tile_cache_flush_drawable (drawable2);
+endif|#
+directive|endif
 name|compute_difference
 argument_list|(
 name|drawable
@@ -2133,11 +2117,12 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|_gimp_tile_cache_flush_drawable
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|_gimp_tile_cache_flush_drawable (drawable);
+endif|#
+directive|endif
 block|}
 if|if
 condition|(
