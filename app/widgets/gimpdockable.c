@@ -105,7 +105,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -357,6 +357,12 @@ name|NULL
 expr_stmt|;
 name|dockable
 operator|->
+name|stock_id
+operator|=
+name|NULL
+expr_stmt|;
+name|dockable
+operator|->
 name|dockbook
 operator|=
 name|NULL
@@ -455,6 +461,27 @@ expr_stmt|;
 name|dockable
 operator|->
 name|short_name
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|dockable
+operator|->
+name|stock_id
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|dockable
+operator|->
+name|stock_id
+argument_list|)
+expr_stmt|;
+name|dockable
+operator|->
+name|stock_id
 operator|=
 name|NULL
 expr_stmt|;
@@ -564,7 +591,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_new (const gchar * name,const gchar * short_name,GimpDockableGetTabFunc get_tab_func,GimpDockableSetContextFunc set_context_func)
+DECL|function|gimp_dockable_new (const gchar * name,const gchar * short_name,const gchar * stock_id,GimpDockableGetTabFunc get_tab_func,GimpDockableSetContextFunc set_context_func)
 name|gimp_dockable_new
 parameter_list|(
 specifier|const
@@ -576,6 +603,11 @@ specifier|const
 name|gchar
 modifier|*
 name|short_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 name|GimpDockableGetTabFunc
 name|get_tab_func
@@ -635,6 +667,15 @@ argument_list|)
 expr_stmt|;
 name|dockable
 operator|->
+name|stock_id
+operator|=
+name|g_strdup
+argument_list|(
+name|stock_id
+argument_list|)
+expr_stmt|;
+name|dockable
+operator|->
 name|get_tab_func
 operator|=
 name|get_tab_func
@@ -657,7 +698,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_get_tab_widget (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
+DECL|function|gimp_dockable_get_tab_widget (GimpDockable * dockable,GimpDockbook * dockbook,GtkIconSize size)
 name|gimp_dockable_get_tab_widget
 parameter_list|(
 name|GimpDockable
@@ -668,7 +709,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 block|{
@@ -688,20 +729,6 @@ name|GIMP_IS_DOCKBOOK
 argument_list|(
 name|dockbook
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|size
-operator|>=
-operator|-
-literal|1
-operator|&&
-name|size
-operator|<
-literal|64
 argument_list|,
 name|NULL
 argument_list|)
@@ -786,7 +813,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_real_get_tab_widget (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
+DECL|function|gimp_dockable_real_get_tab_widget (GimpDockable * dockable,GimpDockbook * dockbook,GtkIconSize size)
 name|gimp_dockable_real_get_tab_widget
 parameter_list|(
 name|GimpDockable
@@ -797,7 +824,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 block|{
@@ -817,20 +844,6 @@ name|GIMP_IS_DOCKBOOK
 argument_list|(
 name|dockbook
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|size
-operator|>=
-operator|-
-literal|1
-operator|&&
-name|size
-operator|<
-literal|64
 argument_list|,
 name|NULL
 argument_list|)
@@ -855,6 +868,22 @@ name|size
 argument_list|)
 return|;
 block|}
+if|if
+condition|(
+name|dockable
+operator|->
+name|stock_id
+condition|)
+return|return
+name|gtk_image_new_from_stock
+argument_list|(
+name|dockable
+operator|->
+name|stock_id
+argument_list|,
+name|size
+argument_list|)
+return|;
 return|return
 name|gtk_label_new
 argument_list|(

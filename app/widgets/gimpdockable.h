@@ -40,7 +40,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -157,6 +157,11 @@ name|gchar
 modifier|*
 name|short_name
 decl_stmt|;
+DECL|member|stock_id
+name|gchar
+modifier|*
+name|stock_id
+decl_stmt|;
 DECL|member|dockbook
 name|GimpDockbook
 modifier|*
@@ -204,7 +209,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -253,6 +258,11 @@ name|gchar
 modifier|*
 name|short_name
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
+parameter_list|,
 name|GimpDockableGetTabFunc
 name|get_tab_func
 parameter_list|,
@@ -275,7 +285,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;

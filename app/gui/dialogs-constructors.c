@@ -433,7 +433,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -453,7 +453,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -473,7 +473,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -493,7 +493,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -513,7 +513,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -533,7 +533,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -543,7 +543,7 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
-name|dialogs_navigation_tab_func
+name|dialogs_stock_text_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -553,7 +553,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 function_decl|;
@@ -674,6 +674,11 @@ specifier|const
 name|gchar
 modifier|*
 name|short_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 name|GimpDockableGetTabFunc
 name|get_tab_func
@@ -1235,6 +1240,8 @@ argument_list|(
 literal|"Tool Options"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_tool_options_tab_func
 argument_list|,
 name|NULL
@@ -1317,6 +1324,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -1388,6 +1397,8 @@ name|_
 argument_list|(
 literal|"Images"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1464,6 +1475,8 @@ argument_list|(
 literal|"Brushes"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_brush_tab_func
 argument_list|,
 name|dialogs_set_editor_context_func
@@ -1536,6 +1549,8 @@ name|_
 argument_list|(
 literal|"Patterns"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|dialogs_pattern_tab_func
 argument_list|,
@@ -1610,6 +1625,8 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_gradient_tab_func
 argument_list|,
 name|dialogs_set_editor_context_func
@@ -1683,6 +1700,8 @@ argument_list|(
 literal|"Palettes"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_palette_tab_func
 argument_list|,
 name|dialogs_set_editor_context_func
@@ -1748,6 +1767,8 @@ name|_
 argument_list|(
 literal|"Tools"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|dialogs_tool_tab_func
 argument_list|,
@@ -1820,7 +1841,9 @@ argument_list|(
 literal|"Buffers"
 argument_list|)
 argument_list|,
-name|NULL
+name|GTK_STOCK_PASTE
+argument_list|,
+name|dialogs_stock_text_tab_func
 argument_list|,
 name|dialogs_set_editor_context_func
 argument_list|)
@@ -1897,6 +1920,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_set_editor_context_func
 argument_list|)
 return|;
@@ -1969,6 +1994,8 @@ name|_
 argument_list|(
 literal|"Brushes"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|dialogs_brush_tab_func
 argument_list|,
@@ -2043,6 +2070,8 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_pattern_tab_func
 argument_list|,
 name|dialogs_set_editor_context_func
@@ -2115,6 +2144,8 @@ name|_
 argument_list|(
 literal|"Gradients"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|dialogs_gradient_tab_func
 argument_list|,
@@ -2189,6 +2220,8 @@ argument_list|(
 literal|"Palettes"
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_palette_tab_func
 argument_list|,
 name|dialogs_set_editor_context_func
@@ -2254,6 +2287,8 @@ name|_
 argument_list|(
 literal|"Tools"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|dialogs_tool_tab_func
 argument_list|,
@@ -2326,7 +2361,9 @@ argument_list|(
 literal|"Buffers"
 argument_list|)
 argument_list|,
-name|NULL
+name|GTK_STOCK_PASTE
+argument_list|,
+name|dialogs_stock_text_tab_func
 argument_list|,
 name|dialogs_set_editor_context_func
 argument_list|)
@@ -2483,6 +2520,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_set_image_item_context_func
 argument_list|)
 expr_stmt|;
@@ -2627,6 +2666,8 @@ name|_
 argument_list|(
 literal|"Channels"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -2842,6 +2883,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_set_image_item_context_func
 argument_list|)
 expr_stmt|;
@@ -2935,6 +2978,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|dialogs_set_path_context_func
 argument_list|)
 expr_stmt|;
@@ -3013,6 +3058,8 @@ name|_
 argument_list|(
 literal|"Colormap"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -3119,7 +3166,9 @@ argument_list|(
 literal|"History"
 argument_list|)
 argument_list|,
-name|NULL
+name|GTK_STOCK_OPEN
+argument_list|,
+name|dialogs_stock_text_tab_func
 argument_list|,
 name|dialogs_set_editor_context_func
 argument_list|)
@@ -3190,6 +3239,8 @@ name|_
 argument_list|(
 literal|"Brush Editor"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -3292,6 +3343,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -3386,6 +3439,8 @@ name|_
 argument_list|(
 literal|"Palette Editor"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -3503,7 +3558,9 @@ argument_list|(
 literal|"Navigation"
 argument_list|)
 argument_list|,
-name|dialogs_navigation_tab_func
+name|GIMP_STOCK_TOOL_MOVE
+argument_list|,
+name|dialogs_stock_text_tab_func
 argument_list|,
 name|dialogs_set_navigation_context_func
 argument_list|)
@@ -3655,7 +3712,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_brush_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
+DECL|function|dialogs_brush_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,GtkIconSize size)
 name|dialogs_brush_tab_func
 parameter_list|(
 name|GimpDockable
@@ -3666,7 +3723,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 block|{
@@ -3678,6 +3735,12 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
 name|context
 operator|=
 name|dockbook
@@ -3685,6 +3748,17 @@ operator|->
 name|dock
 operator|->
 name|context
+expr_stmt|;
+name|gtk_icon_size_lookup
+argument_list|(
+name|size
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
 expr_stmt|;
 name|preview
 operator|=
@@ -3698,9 +3772,9 @@ name|context
 argument_list|)
 argument_list|)
 argument_list|,
-name|size
+name|width
 argument_list|,
-name|size
+name|height
 argument_list|,
 literal|1
 argument_list|,
@@ -3743,7 +3817,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_pattern_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
+DECL|function|dialogs_pattern_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,GtkIconSize size)
 name|dialogs_pattern_tab_func
 parameter_list|(
 name|GimpDockable
@@ -3754,7 +3828,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 block|{
@@ -3766,6 +3840,12 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
 name|context
 operator|=
 name|dockbook
@@ -3773,6 +3853,17 @@ operator|->
 name|dock
 operator|->
 name|context
+expr_stmt|;
+name|gtk_icon_size_lookup
+argument_list|(
+name|size
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
 expr_stmt|;
 name|preview
 operator|=
@@ -3786,9 +3877,9 @@ name|context
 argument_list|)
 argument_list|)
 argument_list|,
-name|size
+name|width
 argument_list|,
-name|size
+name|height
 argument_list|,
 literal|1
 argument_list|,
@@ -3831,7 +3922,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_gradient_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
+DECL|function|dialogs_gradient_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,GtkIconSize size)
 name|dialogs_gradient_tab_func
 parameter_list|(
 name|GimpDockable
@@ -3842,7 +3933,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 block|{
@@ -3854,6 +3945,12 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
 name|context
 operator|=
 name|dockbook
@@ -3861,6 +3958,17 @@ operator|->
 name|dock
 operator|->
 name|context
+expr_stmt|;
+name|gtk_icon_size_lookup
+argument_list|(
+name|size
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
 expr_stmt|;
 name|preview
 operator|=
@@ -3874,9 +3982,9 @@ name|context
 argument_list|)
 argument_list|)
 argument_list|,
-name|size
+name|width
 argument_list|,
-name|size
+name|height
 argument_list|,
 literal|1
 argument_list|,
@@ -3919,7 +4027,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
+DECL|function|dialogs_palette_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,GtkIconSize size)
 name|dialogs_palette_tab_func
 parameter_list|(
 name|GimpDockable
@@ -3930,7 +4038,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 block|{
@@ -3942,6 +4050,12 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
 name|context
 operator|=
 name|dockbook
@@ -3949,6 +4063,17 @@ operator|->
 name|dock
 operator|->
 name|context
+expr_stmt|;
+name|gtk_icon_size_lookup
+argument_list|(
+name|size
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
 expr_stmt|;
 name|preview
 operator|=
@@ -3962,9 +4087,9 @@ name|context
 argument_list|)
 argument_list|)
 argument_list|,
-name|size
+name|width
 argument_list|,
-name|size
+name|height
 argument_list|,
 literal|1
 argument_list|,
@@ -4007,7 +4132,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tool_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
+DECL|function|dialogs_tool_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,GtkIconSize size)
 name|dialogs_tool_tab_func
 parameter_list|(
 name|GimpDockable
@@ -4018,7 +4143,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 block|{
@@ -4030,6 +4155,12 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
 name|context
 operator|=
 name|dockbook
@@ -4037,6 +4168,17 @@ operator|->
 name|dock
 operator|->
 name|context
+expr_stmt|;
+name|gtk_icon_size_lookup
+argument_list|(
+name|size
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
 expr_stmt|;
 name|preview
 operator|=
@@ -4050,19 +4192,9 @@ name|context
 argument_list|)
 argument_list|)
 argument_list|,
-name|MIN
-argument_list|(
-name|size
+name|width
 argument_list|,
-literal|22
-argument_list|)
-argument_list|,
-name|MIN
-argument_list|(
-name|size
-argument_list|,
-literal|22
-argument_list|)
+name|height
 argument_list|,
 literal|1
 argument_list|,
@@ -4177,7 +4309,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tool_options_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
+DECL|function|dialogs_tool_options_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,GtkIconSize size)
 name|dialogs_tool_options_tab_func
 parameter_list|(
 name|GimpDockable
@@ -4188,7 +4320,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 block|{
@@ -4216,6 +4348,12 @@ name|gchar
 modifier|*
 name|text
 decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
 name|context
 operator|=
 name|dockbook
@@ -4223,6 +4361,17 @@ operator|->
 name|dock
 operator|->
 name|context
+expr_stmt|;
+name|gtk_icon_size_lookup
+argument_list|(
+name|size
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
 expr_stmt|;
 name|tool_info
 operator|=
@@ -4249,19 +4398,9 @@ argument_list|(
 name|tool_info
 argument_list|)
 argument_list|,
-name|MIN
-argument_list|(
-name|size
+name|width
 argument_list|,
-literal|22
-argument_list|)
-argument_list|,
-name|MIN
-argument_list|(
-name|size
-argument_list|,
-literal|22
-argument_list|)
+name|height
 argument_list|,
 literal|0
 argument_list|,
@@ -4392,122 +4531,10 @@ end_function
 
 begin_function
 specifier|static
-name|GtkIconSize
-DECL|function|gimp_preview_size_to_gtk_icon_size (GimpPreviewSize preview_size)
-name|gimp_preview_size_to_gtk_icon_size
-parameter_list|(
-name|GimpPreviewSize
-name|preview_size
-parameter_list|)
-block|{
-name|GtkIconSize
-name|gtk_size
-decl_stmt|;
-name|gint
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
-name|GtkIconSize
-name|best_match
-decl_stmt|;
-name|gint
-name|diff
-decl_stmt|;
-name|gtk_icon_size_lookup
-argument_list|(
-name|GTK_ICON_SIZE_MENU
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
-name|best_match
-operator|=
-name|GTK_ICON_SIZE_MENU
-expr_stmt|;
-name|diff
-operator|=
-name|abs
-argument_list|(
-name|preview_size
-operator|-
-name|height
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|gtk_size
-operator|=
-name|GTK_ICON_SIZE_MENU
-operator|+
-literal|1
-init|;
-name|gtk_size
-operator|<=
-name|GTK_ICON_SIZE_DIALOG
-condition|;
-name|gtk_size
-operator|++
-control|)
-block|{
-if|if
-condition|(
-name|gtk_icon_size_lookup
-argument_list|(
-name|gtk_size
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
-name|abs
-argument_list|(
-name|preview_size
-operator|-
-name|height
-argument_list|)
-operator|<
-name|diff
-condition|)
-block|{
-name|best_match
-operator|=
-name|gtk_size
-expr_stmt|;
-name|diff
-operator|=
-name|abs
-argument_list|(
-name|preview_size
-operator|-
-name|height
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-block|}
-return|return
-name|best_match
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_navigation_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
-name|dialogs_navigation_tab_func
+DECL|function|dialogs_stock_text_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,GtkIconSize size)
+name|dialogs_stock_text_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -4517,7 +4544,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|,
-name|gint
+name|GtkIconSize
 name|size
 parameter_list|)
 block|{
@@ -4558,12 +4585,11 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GIMP_STOCK_TOOL_MOVE
+name|dockable
+operator|->
+name|stock_id
 argument_list|,
-name|gimp_preview_size_to_gtk_icon_size
-argument_list|(
 name|size
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5179,7 +5205,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_dockable_new (GtkWidget * widget,const gchar * name,const gchar * short_name,GimpDockableGetTabFunc get_tab_func,GimpDockableSetContextFunc set_context_func)
+DECL|function|dialogs_dockable_new (GtkWidget * widget,const gchar * name,const gchar * short_name,const gchar * stock_id,GimpDockableGetTabFunc get_tab_func,GimpDockableSetContextFunc set_context_func)
 name|dialogs_dockable_new
 parameter_list|(
 name|GtkWidget
@@ -5195,6 +5221,11 @@ specifier|const
 name|gchar
 modifier|*
 name|short_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 name|GimpDockableGetTabFunc
 name|get_tab_func
@@ -5214,6 +5245,8 @@ argument_list|(
 name|name
 argument_list|,
 name|short_name
+argument_list|,
+name|stock_id
 argument_list|,
 name|get_tab_func
 argument_list|,

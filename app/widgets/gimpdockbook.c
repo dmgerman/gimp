@@ -84,11 +84,11 @@ value|0
 end_define
 
 begin_define
-DECL|macro|DEFAULT_TAB_HEIGHT
+DECL|macro|DEFAULT_TAB_SIZE
 define|#
 directive|define
-name|DEFAULT_TAB_HEIGHT
-value|24
+name|DEFAULT_TAB_SIZE
+value|GTK_ICON_SIZE_BUTTON
 end_define
 
 begin_define
@@ -96,7 +96,7 @@ DECL|macro|DND_WIDGET_SIZE
 define|#
 directive|define
 name|DND_WIDGET_SIZE
-value|32
+value|GTK_ICON_SIZE_DND
 end_define
 
 begin_define
@@ -104,7 +104,7 @@ DECL|macro|MENU_WIDGET_SIZE
 define|#
 directive|define
 name|MENU_WIDGET_SIZE
-value|16
+value|GTK_ICON_SIZE_MENU
 end_define
 
 begin_define
@@ -500,19 +500,17 @@ name|gtk_widget_class_install_style_property
 argument_list|(
 name|widget_class
 argument_list|,
-name|g_param_spec_int
+name|g_param_spec_enum
 argument_list|(
-literal|"tab_height"
+literal|"tab_size"
 argument_list|,
 name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|GTK_TYPE_ICON_SIZE
 argument_list|,
-name|G_MAXINT
-argument_list|,
-name|DEFAULT_TAB_HEIGHT
+name|DEFAULT_TAB_SIZE
 argument_list|,
 name|G_PARAM_READABLE
 argument_list|)
@@ -987,6 +985,11 @@ name|GIMP_IS_PREVIEW
 argument_list|(
 name|menu_widget
 argument_list|)
+operator|||
+name|GTK_IS_IMAGE
+argument_list|(
+name|menu_widget
+argument_list|)
 condition|)
 block|{
 name|GtkWidget
@@ -1456,8 +1459,10 @@ name|GtkWidget
 modifier|*
 name|tab_widget
 decl_stmt|;
-name|gint
-name|tab_height
+name|GtkIconSize
+name|tab_size
+init|=
+name|DEFAULT_TAB_SIZE
 decl_stmt|;
 name|gtk_widget_style_get
 argument_list|(
@@ -1466,10 +1471,10 @@ argument_list|(
 name|dockbook
 argument_list|)
 argument_list|,
-literal|"tab_height"
+literal|"tab_size"
 argument_list|,
 operator|&
-name|tab_height
+name|tab_size
 argument_list|,
 name|NULL
 argument_list|)
@@ -1482,7 +1487,7 @@ name|dockable
 argument_list|,
 name|dockbook
 argument_list|,
-name|tab_height
+name|tab_size
 argument_list|)
 expr_stmt|;
 if|if
