@@ -242,7 +242,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon27edfe400103
+DECL|enum|__anon27a6dbf40103
 enum|enum
 block|{
 DECL|enumerator|TRIANGLE
@@ -267,7 +267,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27edfe400203
+DECL|enum|__anon27a6dbf40203
 enum|enum
 block|{
 DECL|enumerator|SOLID
@@ -316,7 +316,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27edfe400303
+DECL|enum|__anon27a6dbf40303
 enum|enum
 block|{
 DECL|enumerator|PERSPECTIVE
@@ -332,7 +332,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27edfe400403
+DECL|enum|__anon27a6dbf40403
 enum|enum
 block|{
 DECL|enumerator|FOG
@@ -378,7 +378,7 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon27edfe400508
+DECL|struct|__anon27a6dbf40508
 typedef|typedef
 struct|struct
 block|{
@@ -402,7 +402,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400608
+DECL|struct|__anon27a6dbf40608
 typedef|typedef
 struct|struct
 block|{
@@ -426,7 +426,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400708
+DECL|struct|__anon27a6dbf40708
 typedef|typedef
 struct|struct
 block|{
@@ -455,7 +455,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400808
+DECL|struct|__anon27a6dbf40808
 typedef|typedef
 struct|struct
 block|{
@@ -551,7 +551,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400908
+DECL|struct|__anon27a6dbf40908
 typedef|typedef
 struct|struct
 block|{
@@ -578,7 +578,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400a08
+DECL|struct|__anon27a6dbf40a08
 typedef|typedef
 struct|struct
 block|{
@@ -620,7 +620,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400b08
+DECL|struct|__anon27a6dbf40b08
 typedef|typedef
 struct|struct
 block|{
@@ -645,7 +645,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400c08
+DECL|struct|__anon27a6dbf40c08
 typedef|typedef
 struct|struct
 block|{
@@ -671,7 +671,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400d08
+DECL|struct|__anon27a6dbf40d08
 typedef|typedef
 struct|struct
 block|{
@@ -694,7 +694,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400e08
+DECL|struct|__anon27a6dbf40e08
 typedef|typedef
 struct|struct
 block|{
@@ -719,7 +719,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe400f08
+DECL|struct|__anon27a6dbf40f08
 typedef|typedef
 struct|struct
 block|{
@@ -742,7 +742,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe401008
+DECL|struct|__anon27a6dbf41008
 typedef|typedef
 struct|struct
 block|{
@@ -765,7 +765,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27edfe401108
+DECL|struct|__anon27a6dbf41108
 typedef|typedef
 struct|struct
 block|{
@@ -791,7 +791,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon27edfe40120a
+DECL|union|__anon27a6dbf4120a
 typedef|typedef
 union|union
 block|{
@@ -1127,7 +1127,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon27edfe401308
+DECL|struct|__anon27a6dbf41308
 struct|struct
 block|{
 DECL|member|solid
@@ -16797,10 +16797,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|colorbutton1
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -17980,10 +17977,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|rotxscale
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

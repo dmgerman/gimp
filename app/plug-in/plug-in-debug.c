@@ -146,13 +146,6 @@ name|debug_string
 decl_stmt|;
 name|gchar
 modifier|*
-name|name
-decl_stmt|;
-name|guint
-name|flags
-decl_stmt|;
-name|gchar
-modifier|*
 modifier|*
 name|args
 decl_stmt|;
