@@ -52,7 +52,7 @@ DECL|macro|SELECTION_BORDER
 define|#
 directive|define
 name|SELECTION_BORDER
-value|10
+value|2
 end_define
 
 begin_function_decl
