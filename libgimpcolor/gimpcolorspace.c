@@ -1956,10 +1956,10 @@ name|f
 operator|=
 name|h
 operator|-
-name|ROUND
-argument_list|(
+operator|(
+name|gint
+operator|)
 name|h
-argument_list|)
 expr_stmt|;
 name|p
 operator|=
@@ -2005,10 +2005,10 @@ operator|)
 expr_stmt|;
 switch|switch
 condition|(
-name|ROUND
-argument_list|(
+operator|(
+name|gint
+operator|)
 name|h
-argument_list|)
 condition|)
 block|{
 case|case
