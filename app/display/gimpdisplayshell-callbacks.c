@@ -1505,12 +1505,6 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/* and the cursor (if we have a software cursor) */
-if|if
-condition|(
-name|shell
-operator|->
-name|have_cursor
-condition|)
 name|gimp_display_shell_draw_cursor
 argument_list|(
 name|shell

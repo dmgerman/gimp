@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277086d10103
+DECL|enum|__anon2b0afa0a0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4762,7 +4762,7 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy
@@ -4779,7 +4779,7 @@ name|x2
 argument_list|,
 name|y2
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure the extents are within bounds  */
@@ -6927,6 +6927,12 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|have_cursor
+condition|)
 name|gimp_canvas_draw_cursor
 argument_list|(
 name|GIMP_CANVAS
