@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b063870103
+DECL|enum|__anon2c7908420103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b063870203
+DECL|enum|__anon2c7908420203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1393,7 +1393,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selection_get_color:  * @selection: A #GimpColorSelection widget.  * @color:     Return location for the @selection's current @color.  *  * Returns the #GimpColorSelection's current color.  **/
+comment|/**  * gimp_color_selection_get_color:  * @selection: A #GimpColorSelection widget.  * @color:     Return location for the @selection's current @color.  *  * This function returns the #GimpColorSelection's current color.  **/
 end_comment
 
 begin_function
@@ -1485,7 +1485,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selection_get_old_color:  * @selection: A #GimpColorSelection widget.  * @color:     Return location for the @selection's old @color.  *  * Returns the #GimpColorSelection's old color.  **/
+comment|/**  * gimp_color_selection_get_old_color:  * @selection: A #GimpColorSelection widget.  * @color:     Return location for the @selection's old @color.  *  * This function returns the #GimpColorSelection's old color.  **/
 end_comment
 
 begin_function

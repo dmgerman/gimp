@@ -770,7 +770,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be168fb0108
+DECL|struct|__anon29f238bb0108
 block|{
 DECL|member|dialog
 name|GtkDialog
