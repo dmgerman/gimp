@@ -1355,9 +1355,6 @@ modifier|*
 name|button
 decl_stmt|;
 name|gint
-name|length
-decl_stmt|;
-name|gint
 name|width
 decl_stmt|;
 name|gint
@@ -1365,6 +1362,9 @@ name|height
 decl_stmt|;
 name|gint
 name|bytes
+decl_stmt|;
+name|gint
+name|mask_data_size
 decl_stmt|;
 name|guint8
 modifier|*
@@ -1544,9 +1544,6 @@ argument_list|(
 name|ipattern
 argument_list|,
 operator|&
-name|length
-argument_list|,
-operator|&
 name|width
 argument_list|,
 operator|&
@@ -1554,6 +1551,9 @@ name|height
 argument_list|,
 operator|&
 name|bytes
+argument_list|,
+operator|&
+name|mask_data_size
 argument_list|,
 operator|&
 name|mask_data
@@ -1766,9 +1766,6 @@ name|pname
 parameter_list|)
 block|{
 name|gint
-name|length
-decl_stmt|;
-name|gint
 name|width
 decl_stmt|;
 name|gint
@@ -1776,6 +1773,9 @@ name|height
 decl_stmt|;
 name|gint
 name|bytes
+decl_stmt|;
+name|gint
+name|mask_data_size
 decl_stmt|;
 name|guint8
 modifier|*
@@ -1817,9 +1817,6 @@ argument_list|(
 name|pname
 argument_list|,
 operator|&
-name|length
-argument_list|,
-operator|&
 name|width
 argument_list|,
 operator|&
@@ -1827,6 +1824,9 @@ name|height
 argument_list|,
 operator|&
 name|bytes
+argument_list|,
+operator|&
+name|mask_data_size
 argument_list|,
 operator|&
 name|mask_data

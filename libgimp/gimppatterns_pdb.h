@@ -43,10 +43,6 @@ name|name
 parameter_list|,
 name|gint
 modifier|*
-name|length
-parameter_list|,
-name|gint
-modifier|*
 name|width
 parameter_list|,
 name|gint
@@ -56,6 +52,10 @@ parameter_list|,
 name|gint
 modifier|*
 name|mask_bpp
+parameter_list|,
+name|gint
+modifier|*
+name|mask_data_size
 parameter_list|,
 name|guint8
 modifier|*

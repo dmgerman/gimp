@@ -62,6 +62,10 @@ name|gint
 modifier|*
 name|height
 parameter_list|,
+name|gint
+modifier|*
+name|mask_data_size
+parameter_list|,
 name|guint8
 modifier|*
 modifier|*

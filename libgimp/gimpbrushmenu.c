@@ -1342,6 +1342,9 @@ decl_stmt|;
 name|gdouble
 name|init_opacity
 decl_stmt|;
+name|gint
+name|mask_data_size
+decl_stmt|;
 name|guint8
 modifier|*
 name|mask_data
@@ -1533,6 +1536,9 @@ name|width
 argument_list|,
 operator|&
 name|height
+argument_list|,
+operator|&
+name|mask_data_size
 argument_list|,
 operator|&
 name|mask_data
@@ -1820,6 +1826,10 @@ decl_stmt|;
 name|gdouble
 name|init_opacity
 decl_stmt|;
+name|gint
+modifier|*
+name|mask_data_size
+decl_stmt|;
 name|guint8
 modifier|*
 name|mask_data
@@ -1873,6 +1883,9 @@ name|width
 argument_list|,
 operator|&
 name|height
+argument_list|,
+operator|&
+name|mask_data_size
 argument_list|,
 operator|&
 name|mask_data

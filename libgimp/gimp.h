@@ -305,6 +305,11 @@ define|#
 directive|define
 name|gimp_drawable_bpp
 value|gimp_drawable_bytes
+DECL|macro|gimp_channel_get_image_id
+define|#
+directive|define
+name|gimp_channel_get_image_id
+value|gimp_drawable_image
 DECL|macro|gimp_layer_get_mask_id
 define|#
 directive|define

@@ -12,7 +12,7 @@ end_include
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_brushes_get_brush_data (gchar * brush_name,gdouble * opacity,gint * spacing,GimpLayerModeEffects * paint_mode,gint * width,gint * height,guint8 ** mask_data)
+DECL|function|gimp_brushes_get_brush_data (gchar * brush_name,gdouble * opacity,gint * spacing,GimpLayerModeEffects * paint_mode,gint * width,gint * height,gint * mask_data_size,guint8 ** mask_data)
 name|gimp_brushes_get_brush_data
 parameter_list|(
 name|gchar
@@ -39,6 +39,10 @@ name|gint
 modifier|*
 name|height
 parameter_list|,
+name|gint
+modifier|*
+name|mask_data_size
+parameter_list|,
 name|guint8
 modifier|*
 modifier|*
@@ -51,9 +55,6 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
-decl_stmt|;
-name|gint
-name|num_mask_data
 decl_stmt|;
 name|return_vals
 operator|=
@@ -72,6 +73,26 @@ name|PARAM_END
 argument_list|)
 expr_stmt|;
 name|brush_name
+operator|=
+name|NULL
+expr_stmt|;
+operator|*
+name|width
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|height
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|mask_data_size
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|mask_data
 operator|=
 name|NULL
 expr_stmt|;
@@ -163,7 +184,8 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|num_mask_data
+operator|*
+name|mask_data_size
 operator|=
 name|return_vals
 index|[
@@ -181,7 +203,8 @@ name|g_new
 argument_list|(
 name|guint8
 argument_list|,
-name|num_mask_data
+operator|*
+name|mask_data_size
 argument_list|)
 expr_stmt|;
 name|memcpy
@@ -198,7 +221,8 @@ name|data
 operator|.
 name|d_int8array
 argument_list|,
-name|num_mask_data
+operator|*
+name|mask_data_size
 operator|*
 sizeof|sizeof
 argument_list|(

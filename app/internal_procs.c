@@ -145,7 +145,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|register_gradient_procs
+name|register_gradients_procs
 parameter_list|(
 name|void
 parameter_list|)
@@ -530,7 +530,7 @@ argument_list|,
 literal|0.292
 argument_list|)
 expr_stmt|;
-name|register_gradient_procs
+name|register_gradients_procs
 argument_list|()
 expr_stmt|;
 name|app_init_update_status
