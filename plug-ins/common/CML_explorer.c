@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1ca970108
+DECL|struct|__anon2bfeb0140108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac1ca970203
+DECL|enum|__anon2bfeb0140203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac1ca970303
+DECL|enum|__anon2bfeb0140303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac1ca970403
+DECL|enum|__anon2bfeb0140403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac1ca970503
+DECL|enum|__anon2bfeb0140503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1ca970608
+DECL|struct|__anon2bfeb0140608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1ca970708
+DECL|struct|__anon2bfeb0140708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1538,7 +1538,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1ca970808
+DECL|struct|__anon2bfeb0140808
 block|{
 DECL|member|run
 name|gint
@@ -1588,7 +1588,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1ca970908
+DECL|struct|__anon2bfeb0140908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1840,7 +1840,7 @@ literal|"parameter_file_name"
 block|,
 literal|"The name of parameter file. CML_explorer makes an image with its settings."
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -1865,10 +1865,15 @@ name|PLUG_IN_NAME
 argument_list|,
 literal|"Make an image of Coupled-Map Lattice"
 argument_list|,
-literal|"Make an image of Coupled-Map Lattice (CML). CML is a kind of Cellula Automata on continuous (value) domain. In RUN_NONINTERACTIVE, the name of a prameter file is passed as the 4th arg. You can control CML_explorer via parameter file."
+literal|"Make an image of Coupled-Map Lattice (CML). CML is "
+literal|"a kind of Cellula Automata on continuous (value) "
+literal|"domain. In RUN_NONINTERACTIVE, the name of a "
+literal|"prameter file is passed as the 4th arg. You can "
+literal|"control CML_explorer via parameter file."
 argument_list|,
 comment|/*  Or do you want to call me with over 50 args? */
-literal|"Shuji Narazaki (narazaki@InetQ.or.jp); http://www.inetq.or.jp/~narazaki/TheGIMP/"
+literal|"Shuji Narazaki (narazaki@InetQ.or.jp); "
+literal|"http://www.inetq.or.jp/~narazaki/TheGIMP/"
 argument_list|,
 literal|"Shuji Narazaki"
 argument_list|,
@@ -6526,113 +6531,11 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|guchar
-modifier|*
-name|color_cube
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 name|SHORT_NAME
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_gamma
-argument_list|(
-name|gimp_gamma
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_install_cmap
-argument_list|(
-name|gimp_install_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|color_cube
-operator|=
-name|gimp_color_cube
-argument_list|()
-expr_stmt|;
-name|gtk_preview_set_color_cube
-argument_list|(
-name|color_cube
-index|[
-literal|0
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|1
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|2
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|3
-index|]
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gtk_preview_get_visual
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gtk_preview_get_cmap
-argument_list|()
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|dlg

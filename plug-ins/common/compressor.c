@@ -396,7 +396,7 @@ literal|"raw_filename"
 block|,
 literal|"The name entered"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -513,9 +513,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gz_load"

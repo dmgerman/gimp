@@ -77,12 +77,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app/brush_header.h"
 end_include
 
@@ -90,6 +84,12 @@ begin_include
 include|#
 directive|include
 file|"app/pattern_header.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -115,7 +115,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ba3df4a0108
+DECL|struct|__anon28d07dc60108
 block|{
 comment|/* Use by both gpb and gih: */
 DECL|member|spacing
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba3df4a0208
+DECL|struct|__anon28d07dc60208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -290,16 +290,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|init_gtk
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GPlugInInfo
@@ -397,7 +387,7 @@ literal|"description"
 block|,
 literal|"Short description of the brush"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -479,7 +469,7 @@ literal|"description"
 block|,
 literal|"Short description of the brush pipe"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -500,9 +490,6 @@ index|]
 argument_list|)
 operator|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gpb_save"
@@ -577,65 +564,6 @@ argument_list|,
 literal|"gih"
 argument_list|,
 literal|""
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|init_gtk (void)
-name|init_gtk
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"gpb"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -4854,8 +4782,12 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
-name|init_gtk
-argument_list|()
+name|gimp_ui_init
+argument_list|(
+literal|"gpb"
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|export
 operator|=
@@ -5101,8 +5033,12 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
-name|init_gtk
-argument_list|()
+name|gimp_ui_init
+argument_list|(
+literal|"gpb"
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|export
 operator|=

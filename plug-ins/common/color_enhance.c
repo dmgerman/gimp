@@ -56,7 +56,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -110,16 +110,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -167,14 +167,7 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -193,22 +186,21 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_color_enhance"
 argument_list|,
-literal|"Automatically stretch the saturation of the specified drawable to cover all possible ranges."
+literal|"Automatically stretch the saturation of the "
+literal|"specified drawable to cover all possible ranges."
 argument_list|,
-literal|"This simple plug-in does an automatic saturation stretch.  For each channel in the image, it finds the minimum and maximum values... it uses those values to stretch the individual histograms to the full range.  For some images it may do just what you want; for others it may be total crap :).  This version differs from Contrast Autostretch in that it works in HSV space, and preserves hue."
+literal|"This simple plug-in does an automatic saturation "
+literal|"stretch.  For each channel in the image, it finds "
+literal|"the minimum and maximum values... it uses those "
+literal|"values to stretch the individual histograms to the "
+literal|"full range.  For some images it may do just what "
+literal|"you want; for others it may be total crap :).  "
+literal|"This version differs from Contrast Autostretch in "
+literal|"that it works in HSV space, and preserves hue."
 argument_list|,
 literal|"Martin Weber"
 argument_list|,
@@ -227,11 +219,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -240,10 +232,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -411,7 +403,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* gimp_message ("Color_Enhance: cannot operate on indexed color images"); */
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR

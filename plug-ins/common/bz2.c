@@ -295,7 +295,7 @@ literal|"raw_filename"
 block|,
 literal|"The name entered"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -310,7 +310,7 @@ literal|"image"
 block|,
 literal|"Output image"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint

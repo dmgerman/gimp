@@ -189,7 +189,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27949ae10103
+DECL|enum|__anon295a5c600103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -530,16 +530,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -550,6 +550,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|preview_data
+specifier|static
 name|guchar
 modifier|*
 name|preview_data
@@ -586,6 +587,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|shape_drawing_area_data
+specifier|static
 name|guchar
 modifier|*
 name|shape_drawing_area_data
@@ -596,6 +598,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawing_area_data
+specifier|static
 name|guchar
 modifier|*
 name|drawing_area_data
@@ -627,6 +630,7 @@ end_endif
 
 begin_decl_stmt
 DECL|variable|progress
+specifier|static
 name|GtkProgressBar
 modifier|*
 name|progress
@@ -636,6 +640,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|width
 DECL|variable|height
+specifier|static
 name|guint
 name|width
 decl_stmt|,
@@ -645,6 +650,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_alpha1_data
+specifier|static
 name|guchar
 modifier|*
 name|preview_alpha1_data
@@ -653,6 +659,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_alpha2_data
+specifier|static
 name|guchar
 modifier|*
 name|preview_alpha2_data
@@ -661,6 +668,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|image_id
+specifier|static
 name|gint32
 name|image_id
 decl_stmt|;
@@ -668,6 +676,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|total_frames
+specifier|static
 name|gint32
 name|total_frames
 decl_stmt|;
@@ -675,6 +684,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|frame_number
+specifier|static
 name|guint
 name|frame_number
 decl_stmt|;
@@ -682,6 +692,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|layers
+specifier|static
 name|gint32
 modifier|*
 name|layers
@@ -690,6 +701,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawable
+specifier|static
 name|GDrawable
 modifier|*
 name|drawable
@@ -698,6 +710,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|playing
+specifier|static
 name|gboolean
 name|playing
 init|=
@@ -707,7 +720,8 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|timer
-name|int
+specifier|static
+name|gint
 name|timer
 init|=
 literal|0
@@ -716,6 +730,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|imagetype
+specifier|static
 name|GImageType
 name|imagetype
 decl_stmt|;
@@ -723,6 +738,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|palette
+specifier|static
 name|guchar
 modifier|*
 name|palette
@@ -731,6 +747,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|ncolours
+specifier|static
 name|gint
 name|ncolours
 decl_stmt|;
@@ -738,6 +755,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|psbutton
+specifier|static
 name|GtkWidget
 modifier|*
 name|psbutton
@@ -750,6 +768,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|shape_preview_mask
+specifier|static
 name|gchar
 modifier|*
 name|shape_preview_mask
@@ -758,6 +777,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|shape_window
+specifier|static
 name|GtkWidget
 modifier|*
 name|shape_window
@@ -777,6 +797,7 @@ end_else
 
 begin_decl_stmt
 DECL|variable|shape_fixed
+specifier|static
 name|GtkWidget
 modifier|*
 name|shape_fixed
@@ -785,6 +806,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|shape_preview
+specifier|static
 name|GtkPreview
 modifier|*
 name|shape_preview
@@ -793,6 +815,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|shape_pixmap
+specifier|static
 name|GdkPixmap
 modifier|*
 name|shape_pixmap
@@ -825,6 +848,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|shaping
+specifier|static
 name|gint
 name|shaping
 init|=
@@ -886,17 +910,10 @@ literal|"drawable"
 block|,
 literal|"Input drawable (unused)"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -912,15 +929,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_animationplay"
@@ -946,11 +954,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2097,14 +2105,6 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|gchar
-modifier|*
 name|windowname
 decl_stmt|;
 name|CursorOffset
@@ -2151,139 +2151,13 @@ name|GdkCursor
 modifier|*
 name|cursor
 decl_stmt|;
-ifndef|#
-directive|ifndef
-name|RAPH_IS_HOME
-name|guchar
-modifier|*
-name|color_cube
-decl_stmt|;
-endif|#
-directive|endif
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"animationplay"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
+name|TRUE
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|RAPH_IS_HOME
-name|gdk_rgb_init
-argument_list|()
-expr_stmt|;
-endif|#
-directive|endif
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|RAPH_IS_HOME
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gdk_rgb_get_visual
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gdk_rgb_get_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-else|#
-directive|else
-name|gtk_preview_set_gamma
-argument_list|(
-name|gimp_gamma
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_install_cmap
-argument_list|(
-name|gimp_install_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|color_cube
-operator|=
-name|gimp_color_cube
-argument_list|()
-expr_stmt|;
-name|gtk_preview_set_color_cube
-argument_list|(
-name|color_cube
-index|[
-literal|0
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|1
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|2
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|3
-index|]
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gtk_preview_get_visual
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gtk_preview_get_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|windowname
 operator|=
 name|g_strconcat

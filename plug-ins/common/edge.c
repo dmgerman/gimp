@@ -32,12 +32,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -95,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275bcae00103
+DECL|enum|__anon28fc854e0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -112,7 +106,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bcae00208
+DECL|struct|__anon28fc854e0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -131,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bcae00308
+DECL|struct|__anon28fc854e0308
 block|{
 DECL|member|run
 name|gint
@@ -146,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bcae00408
+DECL|struct|__anon28fc854e0408
 block|{
 DECL|member|tile
 name|GTile
@@ -389,7 +383,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -439,13 +435,6 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
 name|gint
 name|nargs
 init|=
@@ -462,17 +451,13 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 name|gchar
 modifier|*
 name|help_string
 init|=
-literal|" Perform edge detection on the contents of the specified drawable. It applies, I think, convolution with 3x3 kernel. AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in (useful for tilable image)."
+literal|"Perform edge detection on the contents of the specified drawable. It "
+literal|"applies, I think, convolution with 3x3 kernel. AMOUNT is an arbitrary "
+literal|"constant, WRAPMODE is like displace plug-in (useful for tilable image)."
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
@@ -499,11 +484,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2615,14 +2600,6 @@ name|group
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
 name|gint
 name|use_wrap
 init|=
@@ -2656,43 +2633,11 @@ operator|==
 name|BLACK
 operator|)
 decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"edge"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

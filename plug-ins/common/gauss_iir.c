@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286c9d980108
+DECL|struct|__anon2bf7e0e50108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286c9d980208
+DECL|struct|__anon2bf7e0e50208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286c9d980308
+DECL|struct|__anon2bf7e0e50308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -419,7 +419,7 @@ literal|"vertical"
 block|,
 literal|"Blur in vertical direction"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -502,16 +502,23 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gauss_iir"
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
-literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  Horizontal and vertical blurring can be independently invoked by specifying only one to run.  The IIR gaussian blurring works best for large radius values and for images which are not computer-generated.  Values for radius less than 1.0 are invalid as they will generate spurious results."
+literal|"Applies a gaussian blur to the drawable, with "
+literal|"specified radius of affect.  The standard deviation "
+literal|"of the normal distribution used to modify pixel "
+literal|"values is calculated based on the supplied radius.  "
+literal|"Horizontal and vertical blurring can be "
+literal|"independently invoked by specifying only one to "
+literal|"run.  The IIR gaussian blurring works best for "
+literal|"large radius values and for images which are not "
+literal|"computer-generated.  Values for radius less than "
+literal|"1.0 are invalid as they will generate spurious "
+literal|"results."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -540,7 +547,18 @@ literal|"plug_in_gauss_iir2"
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
-literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  This radius can be specified indepently on for the horizontal and the vertical direction. The IIR gaussian blurring works best for large radius values and for images which are not computer-generated.  Values for radii less than 1.0 would generate spurious results. Therefore they are interpreted as 0.0, which means that the computation for this orientation is skipped."
+literal|"Applies a gaussian blur to the drawable, with "
+literal|"specified radius of affect.  The standard deviation "
+literal|"of the normal distribution used to modify pixel "
+literal|"values is calculated based on the supplied radius.  "
+literal|"This radius can be specified indepently on for the "
+literal|"horizontal and the vertical direction. The IIR "
+literal|"gaussian blurring works best for large radius "
+literal|"values and for images which are not "
+literal|"computer-generated.  Values for radii less than "
+literal|"1.0 would generate spurious results. Therefore "
+literal|"they are interpreted as 0.0, which means that the "
+literal|"computation for this orientation is skipped."
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis& Sven Neumann"
 argument_list|,
@@ -1255,51 +1273,11 @@ name|GtkWidget
 modifier|*
 name|hbox
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"gauss_iir"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -1778,51 +1756,11 @@ decl_stmt|;
 name|gdouble
 name|yres
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"gauss_iir2"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

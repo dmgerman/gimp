@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -26,13 +32,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -58,31 +58,20 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|guillotine
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -90,6 +79,17 @@ name|GParam
 modifier|*
 modifier|*
 name|return_vals
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|guillotine
+parameter_list|(
+name|gint32
+name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -102,16 +102,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -159,17 +159,10 @@ literal|"drawable"
 block|,
 literal|"Input drawable (unused)"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -185,15 +178,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_guillotine"
@@ -219,11 +203,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -232,21 +216,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -355,8 +339,9 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|gint
 DECL|function|unexciting (const void * a,const void * b)
-name|int
 name|unexciting
 parameter_list|(
 specifier|const
@@ -499,7 +484,7 @@ operator|++
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|g_print
 argument_list|(
 literal|"Aie!  Aie!  Aie!\n"
 argument_list|)

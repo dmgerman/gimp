@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -22,19 +28,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -171,16 +165,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -226,14 +220,7 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,    }
-decl_stmt|;
-specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -252,22 +239,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gradmap"
 argument_list|,
-literal|"Map the contents of the specified drawable with active gradient"
+literal|"Map the contents of the specified drawable with "
+literal|"active gradient"
 argument_list|,
-literal|" This plug-in maps the contents of the specified drawable with active gradient. It calculates luminosity of each pixel and replaces the pixel by the sample of active gradient at the position proportional to that luminosity. Complete black pixel becomes the leftmost color of the gradient, and complete white becomes the rightmost. Works on both Grayscale and RGB image with/without alpha channel."
+literal|" This plug-in maps the contents of the specified "
+literal|"drawable with active gradient. It calculates "
+literal|"luminosity of each pixel and replaces the pixel "
+literal|"by the sample of active gradient at the position "
+literal|"proportional to that luminosity. Complete black "
+literal|"pixel becomes the leftmost color of the gradient, "
+literal|"and complete white becomes the rightmost. Works on "
+literal|"both Grayscale and RGB image with/without alpha "
+literal|"channel."
 argument_list|,
 literal|"Eiichi Takamori"
 argument_list|,
@@ -286,11 +273,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -449,7 +436,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* gimp_message ("gradmap: cannot operate on indexed color images"); */
+comment|/* g_message ("gradmap: cannot operate on indexed color images"); */
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR

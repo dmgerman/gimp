@@ -135,16 +135,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce6ee40108
+DECL|struct|__anon2804dda00108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -199,7 +199,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce6ee40208
+DECL|struct|__anon2804dda00208
 block|{
 DECL|member|run
 name|gint
@@ -299,17 +299,10 @@ literal|"set_transparent"
 block|,
 literal|"Set lens surroundings transparent"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -325,15 +318,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_applylens"
@@ -359,11 +343,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1750,14 +1734,6 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
 name|GSList
 modifier|*
 name|group
@@ -1776,43 +1752,11 @@ operator|->
 name|id
 argument_list|)
 expr_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"apply_lens"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

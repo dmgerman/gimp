@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad517920108
+DECL|struct|__anon275684fa0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad517920208
+DECL|struct|__anon275684fa0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad517920308
+DECL|struct|__anon275684fa0308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -390,7 +390,7 @@ literal|"vertical"
 block|,
 literal|"Blur in vertical direction"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -473,29 +473,23 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gauss_rle"
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
-literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  Horizontal and vertical blurring can be independently invoked by specifying only one to run.  The RLE gaussian blurring performs most efficiently on computer-generated images or images with large areas of constant intensity.  Values for radii less than 1.0 are invalid as they would generate spurious results."
+literal|"Applies a gaussian blur to the drawable, with "
+literal|"specified radius of affect.  The standard deviation "
+literal|"of the normal distribution used to modify pixel "
+literal|"values is calculated based on the supplied radius.  "
+literal|"Horizontal and vertical blurring can be "
+literal|"independently invoked by specifying only one to "
+literal|"run.  The RLE gaussian blurring performs most "
+literal|"efficiently on computer-generated images or images "
+literal|"with large areas of constant intensity.  Values for "
+literal|"radii less than 1.0 are invalid as they would "
+literal|"generate spurious results."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -511,11 +505,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -524,7 +518,19 @@ literal|"plug_in_gauss_rle2"
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
-literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  This radius can be specified indepently on for the horizontal and the vertical direction. The RLE gaussian blurring performs most efficiently on computer-generated images or images with large areas of constant intensity.  Values for radii less than 1.0 would generate spurious results. Therefore they are interpreted as 0.0, which means that the computation for this orientation is skipped."
+literal|"Applies a gaussian blur to the drawable, with "
+literal|"specified radius of affect.  The standard deviation "
+literal|"of the normal distribution used to modify pixel "
+literal|"values is calculated based on the supplied radius.  "
+literal|"This radius can be specified indepently on for the "
+literal|"horizontal and the vertical direction. The RLE "
+literal|"gaussian blurring performs most efficiently on "
+literal|"computer-generated images or images with large "
+literal|"areas of constant intensity.  Values for radii "
+literal|"less than 1.0 would generate spurious results. "
+literal|"Therefore they are interpreted as 0.0, which means "
+literal|"that the computation for this orientation is "
+literal|"skipped."
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis& Sven Neumann"
 argument_list|,
@@ -543,11 +549,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs2
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args2
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -839,7 +845,7 @@ name|vertical
 operator|)
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -1239,51 +1245,11 @@ name|GtkWidget
 modifier|*
 name|hbox
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"gauss_rle"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -1762,51 +1728,11 @@ decl_stmt|;
 name|gdouble
 name|yres
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"gauss_rle2"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

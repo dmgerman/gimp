@@ -34,13 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -164,16 +164,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -222,7 +222,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1b54c50108
+DECL|struct|__anon2ac257730108
 block|{
 DECL|member|hwidth
 name|gint
@@ -511,14 +511,7 @@ literal|"iopacity"
 block|,
 literal|"Intersection Opacity (0...255)"
 block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -537,15 +530,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_grid"
@@ -572,11 +556,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3100,51 +3084,11 @@ decl_stmt|;
 name|gdouble
 name|yres
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"grid"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

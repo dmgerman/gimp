@@ -282,7 +282,7 @@ literal|"palette_filename"
 block|,
 literal|"Filename to load palette from"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -297,7 +297,7 @@ literal|"image"
 block|,
 literal|"Output image"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -407,9 +407,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_cel_load"
@@ -2858,53 +2855,15 @@ modifier|*
 name|title
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-init|=
-literal|1
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-name|argv
-operator|=
-name|g_new
+name|gimp_ui_init
 argument_list|(
-name|gchar
-operator|*
+literal|"CEL"
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"CEL file-filter"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog

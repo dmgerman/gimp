@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4489ca0103
+DECL|enum|__anon27eab0970103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4489ca0203
+DECL|enum|__anon27eab0970203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4489ca0303
+DECL|enum|__anon27eab0970303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4489ca0403
+DECL|enum|__anon27eab0970403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4489ca0508
+DECL|struct|__anon27eab0970508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4489ca0608
+DECL|struct|__anon27eab0970608
 block|{
 DECL|member|run
 name|gint
@@ -419,7 +419,7 @@ literal|"use-bottom"
 block|,
 literal|"use the bottom layer as the base of alignment"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -438,9 +438,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -1627,51 +1624,11 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
+name|gimp_ui_init
 argument_list|(
-name|gchar
-operator|*
+name|SHORT_NAME
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-name|PLUG_IN_NAME
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -1683,7 +1640,7 @@ argument_list|(
 literal|"Align Visible Layers"
 argument_list|)
 argument_list|,
-literal|"align_layers"
+name|SHORT_NAME
 argument_list|,
 name|gimp_plugin_help_func
 argument_list|,

@@ -18,6 +18,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -42,13 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acf310f0103
+DECL|enum|__anon27db05d70103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -101,18 +101,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -271,16 +271,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -292,6 +292,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|width
 DECL|variable|height
+specifier|static
 name|guint
 name|width
 decl_stmt|,
@@ -301,6 +302,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|image_id
+specifier|static
 name|gint32
 name|image_id
 decl_stmt|;
@@ -308,6 +310,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|new_image_id
+specifier|static
 name|gint32
 name|new_image_id
 decl_stmt|;
@@ -315,20 +318,15 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|total_frames
+specifier|static
 name|gint32
 name|total_frames
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|frame_number
-name|guint
-name|frame_number
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|layers
+specifier|static
 name|gint32
 modifier|*
 name|layers
@@ -337,6 +335,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawable
+specifier|static
 name|GDrawable
 modifier|*
 name|drawable
@@ -344,16 +343,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|playing
-name|gboolean
-name|playing
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|imagetype
+specifier|static
 name|GImageType
 name|imagetype
 decl_stmt|;
@@ -361,6 +352,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawabletype_alpha
+specifier|static
 name|GDrawableType
 name|drawabletype_alpha
 decl_stmt|;
@@ -368,6 +360,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|pixelstep
+specifier|static
 name|guchar
 name|pixelstep
 decl_stmt|;
@@ -375,6 +368,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|palette
+specifier|static
 name|guchar
 modifier|*
 name|palette
@@ -383,6 +377,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|ncolours
+specifier|static
 name|gint
 name|ncolours
 decl_stmt|;
@@ -390,6 +385,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|optimize
+specifier|static
 name|gboolean
 name|optimize
 decl_stmt|;
@@ -405,7 +401,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -436,7 +434,7 @@ literal|"drawable"
 block|,
 literal|"Input drawable (unused)"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -451,10 +449,10 @@ literal|"result"
 block|,
 literal|"Resulting image"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -471,7 +469,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nreturn_args
 init|=
 sizeof|sizeof
@@ -487,9 +485,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_animationoptimize"
@@ -563,23 +558,23 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint n_params,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|n_params
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,

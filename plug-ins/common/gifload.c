@@ -333,7 +333,7 @@ literal|"raw_filename"
 block|,
 literal|"The name entered"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -348,7 +348,7 @@ literal|"image"
 block|,
 literal|"Output image"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -386,9 +386,6 @@ index|]
 argument_list|)
 operator|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gif_load"
@@ -769,7 +766,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9c85080108
+DECL|struct|__anon289171bf0108
 block|{
 DECL|member|Width
 name|unsigned
@@ -819,7 +816,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9c85080208
+DECL|struct|__anon289171bf0208
 block|{
 DECL|member|transparent
 name|int
