@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ffd2a70108
+DECL|struct|__anon2b85d1d60108
 block|{
 DECL|member|hwidth
 name|gint
@@ -383,7 +383,7 @@ name|PARAM_INT32
 block|,
 literal|"hspace"
 block|,
-literal|"Horizontal Spacing (>= 0)"
+literal|"Horizontal Spacing (>= 1)"
 block|}
 block|,
 block|{
@@ -423,7 +423,7 @@ name|PARAM_INT32
 block|,
 literal|"vspace"
 block|,
-literal|"Vertical Spacing (>= 0)"
+literal|"Vertical Spacing (>= 1)"
 block|}
 block|,
 block|{
@@ -463,7 +463,7 @@ name|PARAM_INT32
 block|,
 literal|"ispace"
 block|,
-literal|"Intersection Spacing (>= 0)"
+literal|"Intersection Spacing (>= 1)"
 block|}
 block|,
 block|{
@@ -705,7 +705,7 @@ name|hspace
 operator|=
 name|MAX
 argument_list|(
-literal|0
+literal|1
 argument_list|,
 name|param
 index|[
@@ -829,7 +829,7 @@ name|vspace
 operator|=
 name|MAX
 argument_list|(
-literal|0
+literal|1
 argument_list|,
 name|param
 index|[
@@ -953,7 +953,7 @@ name|ispace
 operator|=
 name|MAX
 argument_list|(
-literal|0
+literal|1
 argument_list|,
 name|param
 index|[
@@ -3439,7 +3439,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 call|(
 name|gdouble
@@ -3460,7 +3460,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 call|(
 name|gdouble
@@ -3481,7 +3481,7 @@ argument_list|)
 argument_list|,
 literal|2
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 call|(
 name|gdouble
