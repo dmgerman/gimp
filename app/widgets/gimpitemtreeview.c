@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fbec100103
+DECL|enum|__anon298072820103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1538,6 +1538,12 @@ modifier|*
 name|docked_iface
 parameter_list|)
 block|{
+name|docked_iface
+operator|->
+name|get_preview
+operator|=
+name|NULL
+expr_stmt|;
 name|docked_iface
 operator|->
 name|set_context

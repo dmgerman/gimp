@@ -1746,6 +1746,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_define
+DECL|macro|AUX_INFO_ZOOM_FACTOR
+define|#
+directive|define
+name|AUX_INFO_ZOOM_FACTOR
+value|"zoom-factor"
+end_define
+
 begin_function
 specifier|static
 name|void
@@ -1822,7 +1830,7 @@ name|aux
 operator|->
 name|name
 argument_list|,
-literal|"zoom-factor"
+name|AUX_INFO_ZOOM_FACTOR
 argument_list|)
 condition|)
 block|{
@@ -1939,7 +1947,7 @@ name|aux
 operator|=
 name|gimp_session_info_aux_new
 argument_list|(
-literal|"zoom-factor"
+name|AUX_INFO_ZOOM_FACTOR
 argument_list|,
 name|value
 argument_list|)

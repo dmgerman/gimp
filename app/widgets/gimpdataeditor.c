@@ -624,6 +624,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_define
+DECL|macro|AUX_INFO_CURRENT_DATA
+define|#
+directive|define
+name|AUX_INFO_CURRENT_DATA
+value|"current-data"
+end_define
+
 begin_function
 specifier|static
 name|void
@@ -685,7 +693,7 @@ name|aux
 operator|->
 name|name
 argument_list|,
-literal|"current-data"
+name|AUX_INFO_CURRENT_DATA
 argument_list|)
 condition|)
 block|{
@@ -787,7 +795,7 @@ name|aux
 operator|=
 name|gimp_session_info_aux_new
 argument_list|(
-literal|"current-data"
+name|AUX_INFO_CURRENT_DATA
 argument_list|,
 name|value
 argument_list|)

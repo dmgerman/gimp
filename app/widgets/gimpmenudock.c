@@ -1187,6 +1187,22 @@ block|}
 block|}
 end_function
 
+begin_define
+DECL|macro|AUX_INFO_SHOW_IMAGE_MENU
+define|#
+directive|define
+name|AUX_INFO_SHOW_IMAGE_MENU
+value|"show-image-menu"
+end_define
+
+begin_define
+DECL|macro|AUX_INFO_FOLLOW_ACTIVE_IMAGE
+define|#
+directive|define
+name|AUX_INFO_FOLLOW_ACTIVE_IMAGE
+value|"follow-active-image"
+end_define
+
 begin_function
 specifier|static
 name|void
@@ -1262,7 +1278,7 @@ name|aux
 operator|->
 name|name
 argument_list|,
-literal|"show-image-menu"
+name|AUX_INFO_SHOW_IMAGE_MENU
 argument_list|)
 condition|)
 block|{
@@ -1289,7 +1305,7 @@ name|aux
 operator|->
 name|name
 argument_list|,
-literal|"follow-active-image"
+name|AUX_INFO_FOLLOW_ACTIVE_IMAGE
 argument_list|)
 condition|)
 block|{
@@ -1375,7 +1391,7 @@ name|aux
 operator|=
 name|gimp_session_info_aux_new
 argument_list|(
-literal|"show-image-menu"
+name|AUX_INFO_SHOW_IMAGE_MENU
 argument_list|,
 name|image_dock
 operator|->
@@ -1399,7 +1415,7 @@ name|aux
 operator|=
 name|gimp_session_info_aux_new
 argument_list|(
-literal|"follow-auctive-image"
+name|AUX_INFO_FOLLOW_ACTIVE_IMAGE
 argument_list|,
 name|image_dock
 operator|->
