@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpselectiontool.h"
+file|"gimprectangletool.h"
 end_include
 
 begin_define
@@ -132,116 +132,8 @@ struct|struct
 name|_GimpNewRectSelectTool
 block|{
 DECL|member|parent_instance
-name|GimpSelectionTool
+name|GimpRectangleTool
 name|parent_instance
-decl_stmt|;
-DECL|member|startx
-name|gint
-name|startx
-decl_stmt|;
-comment|/*  starting x coord            */
-DECL|member|starty
-name|gint
-name|starty
-decl_stmt|;
-comment|/*  starting y coord            */
-DECL|member|lastx
-name|gint
-name|lastx
-decl_stmt|;
-comment|/*  previous x coord            */
-DECL|member|lasty
-name|gint
-name|lasty
-decl_stmt|;
-comment|/*  previous y coord            */
-DECL|member|x1
-DECL|member|y1
-name|gint
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|;
-comment|/*  upper left hand coordinate  */
-DECL|member|x2
-DECL|member|y2
-name|gint
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
-comment|/*  lower right hand coords     */
-DECL|member|function
-name|guint
-name|function
-decl_stmt|;
-comment|/*  moving or resizing          */
-DECL|member|dx1
-DECL|member|dy1
-name|gint
-name|dx1
-decl_stmt|,
-name|dy1
-decl_stmt|;
-comment|/*  display coords              */
-DECL|member|dx2
-DECL|member|dy2
-name|gint
-name|dx2
-decl_stmt|,
-name|dy2
-decl_stmt|;
-comment|/*                              */
-DECL|member|dcw
-DECL|member|dch
-name|gint
-name|dcw
-decl_stmt|,
-name|dch
-decl_stmt|;
-comment|/*  width and height of corners */
-comment|/* the dialog */
-DECL|member|rect_select_info
-name|InfoDialog
-modifier|*
-name|rect_select_info
-decl_stmt|;
-DECL|member|orig_vals
-name|gdouble
-name|orig_vals
-index|[
-literal|2
-index|]
-decl_stmt|;
-DECL|member|size_vals
-name|gdouble
-name|size_vals
-index|[
-literal|2
-index|]
-decl_stmt|;
-DECL|member|aspect_ratio
-name|gdouble
-name|aspect_ratio
-decl_stmt|;
-DECL|member|change_aspect_ratio
-name|gboolean
-name|change_aspect_ratio
-decl_stmt|;
-comment|/* Boolean for the new_rect_select_info_update function */
-comment|/* aspect_ratio should not be chaget whith   */
-comment|/* new_rect_select_info_update when is called from      */
-comment|/* new_rect_select_aspect_changed, due to the innacurate*/
-comment|/* decimal precision                         */
-DECL|member|origin_sizeentry
-name|GtkWidget
-modifier|*
-name|origin_sizeentry
-decl_stmt|;
-DECL|member|size_sizeentry
-name|GtkWidget
-modifier|*
-name|size_sizeentry
 decl_stmt|;
 block|}
 struct|;
@@ -253,34 +145,9 @@ struct|struct
 name|_GimpNewRectSelectToolClass
 block|{
 DECL|member|parent_class
-name|GimpSelectionToolClass
+name|GimpRectangleToolClass
 name|parent_class
 decl_stmt|;
-comment|/*  virtual function  */
-DECL|member|rect_select
-name|void
-function_decl|(
-modifier|*
-name|rect_select
-function_decl|)
-parameter_list|(
-name|GimpNewRectSelectTool
-modifier|*
-name|rect_tool
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|w
-parameter_list|,
-name|gint
-name|h
-parameter_list|)
-function_decl|;
 block|}
 struct|;
 end_struct
