@@ -28,7 +28,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c17ede70103
+DECL|enum|__anon27796af40103
 block|{
 DECL|enumerator|INVISIBLE
 name|INVISIBLE
@@ -38,8 +38,8 @@ name|VISIBLE
 block|,
 DECL|enumerator|UNKNOWN
 name|UNKNOWN
-block|, }
 DECL|typedef|VisibilityState
+block|}
 name|VisibilityState
 typedef|;
 end_typedef
@@ -72,17 +72,13 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  This keeps track of the state the dialogs are in  */
-end_comment
-
-begin_comment
-comment|/*  ie how many times we have pressed the tab key     */
+comment|/*  This keeps track of the state the dialogs are in  *  ie how many times we have pressed the tab key  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c17ede70203
+DECL|enum|__anon27796af40203
 block|{
 DECL|enumerator|SHOW_ALL
 name|SHOW_ALL
@@ -95,8 +91,8 @@ name|SHOW_TOOLBOX
 block|,
 DECL|enumerator|LAST_SHOW_STATE
 name|LAST_SHOW_STATE
-block|, }
 DECL|typedef|ShowState
+block|}
 name|ShowState
 typedef|;
 end_typedef
@@ -171,7 +167,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Private */
+comment|/*  Private  */
 end_comment
 
 begin_comment
@@ -869,15 +865,12 @@ block|{
 if|if
 condition|(
 name|doing_update
-operator|==
-name|FALSE
 condition|)
+return|return;
 name|doing_update
 operator|=
 name|TRUE
 expr_stmt|;
-else|else
-return|return;
 switch|switch
 condition|(
 name|dialogs_showing

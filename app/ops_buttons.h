@@ -17,18 +17,9 @@ name|__OPS_BUTTONS_H__
 end_define
 
 begin_typedef
-DECL|typedef|OpsButton
-typedef|typedef
-name|struct
-name|_OpsButton
-name|OpsButton
-typedef|;
-end_typedef
-
-begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0686460103
+DECL|enum|__anon2c7418bb0103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -56,16 +47,25 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0686460203
+DECL|enum|__anon2c7418bb0203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
 block|,
 DECL|enumerator|OPS_BUTTON_RADIO
 name|OPS_BUTTON_RADIO
-block|, }
 DECL|typedef|OpsButtonType
+block|}
 name|OpsButtonType
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|OpsButton
+typedef|typedef
+name|struct
+name|_OpsButton
+name|OpsButton
 typedef|;
 end_typedef
 
@@ -91,7 +91,7 @@ name|GtkSignalFunc
 modifier|*
 name|ext_callbacks
 decl_stmt|;
-comment|/*  callback functions when modifiers are pressed  */
+comment|/*  callback functions when 				   *  modifiers are pressed    */
 DECL|member|tooltip
 name|gchar
 modifier|*
