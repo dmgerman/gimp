@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|HAVE_ASOUNDLIB_H
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -48,7 +42,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_ASOUNDLIB_H
+name|HAVE_ALSA
 end_ifdef
 
 begin_include
@@ -95,7 +89,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7bc9e40108
+DECL|struct|__anon27ba86620108
 block|{
 DECL|member|name
 name|gchar
@@ -115,7 +109,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7bc9e40203
+DECL|enum|__anon27ba86620203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -228,7 +222,7 @@ name|io_id
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_ASOUNDLIB_H
+name|HAVE_ALSA
 DECL|member|sequencer
 name|snd_seq_t
 modifier|*
@@ -485,7 +479,7 @@ end_function_decl
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_ASOUNDLIB_H
+name|HAVE_ALSA
 end_ifdef
 
 begin_function_decl
@@ -583,6 +577,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* HAVE_ALSA */
+end_comment
 
 begin_decl_stmt
 DECL|variable|midi_info
@@ -961,7 +959,7 @@ literal|0
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_ASOUNDLIB_H
+name|HAVE_ALSA
 name|midi
 operator|->
 name|sequencer
@@ -1589,7 +1587,7 @@ expr_stmt|;
 block|}
 ifdef|#
 directive|ifdef
-name|HAVE_ASOUNDLIB_H
+name|HAVE_ALSA
 if|if
 condition|(
 name|midi
@@ -1626,6 +1624,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+comment|/* HAVE_ALSA */
 if|if
 condition|(
 name|midi
@@ -1667,7 +1666,7 @@ name|fd
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_ASOUNDLIB_H
+name|HAVE_ALSA
 if|if
 condition|(
 operator|!
@@ -1902,6 +1901,7 @@ return|;
 block|}
 endif|#
 directive|endif
+comment|/* HAVE_ALSA */
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
@@ -3238,7 +3238,7 @@ end_function
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_ASOUNDLIB_H
+name|HAVE_ALSA
 end_ifdef
 
 begin_function
@@ -3563,6 +3563,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* HAVE_ALSA */
+end_comment
 
 end_unit
 
