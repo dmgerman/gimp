@@ -1940,8 +1940,6 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_drawable_get
-argument_list|(
 name|param
 index|[
 literal|41
@@ -1952,9 +1950,6 @@ operator|.
 name|data
 operator|.
 name|d_drawable
-argument_list|)
-operator|->
-name|drawable_id
 expr_stmt|;
 for|for
 control|(
@@ -1976,8 +1971,6 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_drawable_get
-argument_list|(
 name|param
 index|[
 literal|47
@@ -1988,9 +1981,6 @@ operator|.
 name|data
 operator|.
 name|d_drawable
-argument_list|)
-operator|->
-name|drawable_id
 expr_stmt|;
 name|check_drawables
 argument_list|(
