@@ -351,7 +351,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2895bb2b0108
+DECL|struct|__anon27a2c5220108
 block|{
 DECL|member|old_name
 specifier|const
@@ -1056,7 +1056,7 @@ directive|endif
 if|#
 directive|if
 literal|0
-block|if (procedure == NULL) 	{ 	  g_warning ("PDB calling error %s not found", name);  	  return_args = g_new (Argument, 1); 	  return_args->arg_type      = GIMP_PDB_STATUS; 	  return_args->value.pdb_int = GIMP_PDB_CALLING_ERROR;  	  return return_args; 	}
+block|if (procedure == NULL)         {           g_warning ("PDB calling error %s not found", name);            return_args = g_new (Argument, 1);           return_args->arg_type      = GIMP_PDB_STATUS;           return_args->value.pdb_int = GIMP_PDB_CALLING_ERROR;            return return_args;         }
 endif|#
 directive|endif
 name|g_return_val_if_fail
