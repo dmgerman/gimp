@@ -2623,6 +2623,15 @@ expr_stmt|;
 name|pcount
 operator|++
 expr_stmt|;
+name|procedural_db_register
+argument_list|(
+operator|&
+name|gimprc_set_proc
+argument_list|)
+expr_stmt|;
+name|pcount
+operator|++
+expr_stmt|;
 name|app_init_update_status
 argument_list|(
 name|NULL
