@@ -41,7 +41,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 block|,
 name|N_
 argument_list|(
@@ -52,7 +52,7 @@ literal|"horizontal"
 block|}
 block|,
 block|{
-name|GIMP_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 block|,
 name|N_
 argument_list|(
@@ -63,7 +63,7 @@ literal|"vertical"
 block|}
 block|,
 block|{
-name|GIMP_UNKNOWN
+name|GIMP_ORIENTATION_UNKNOWN
 block|,
 name|N_
 argument_list|(

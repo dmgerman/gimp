@@ -64,7 +64,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2baa905d0108
+DECL|struct|__anon27a15adf0108
 typedef|typedef
 struct|struct
 block|{
@@ -381,7 +381,7 @@ argument_list|,
 name|guide_num
 argument_list|)
 operator|==
-name|GIMP_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 block|{
 name|hguides
@@ -401,7 +401,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* GIMP_VERTICAL */
+comment|/* GIMP_ORIENTATION_VERTICAL */
 name|vguides
 operator|=
 name|g_slist_insert_sorted
@@ -1216,7 +1216,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2baa905d0208
+DECL|struct|__anon27a15adf0208
 typedef|typedef
 struct|struct
 block|{

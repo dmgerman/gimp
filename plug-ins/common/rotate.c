@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8d5e8e0108
+DECL|struct|__anon29ad0db00108
 block|{
 DECL|member|angle
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8d5e8e0208
+DECL|struct|__anon29ad0db00208
 block|{
 DECL|member|ID
 name|gint32
@@ -2401,7 +2401,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|GIMP_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|gimp_image_add_vguide
 argument_list|(
@@ -2465,7 +2465,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|GIMP_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|gimp_image_add_hguide
 argument_list|(
@@ -2531,7 +2531,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|GIMP_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|gimp_image_add_vguide
 argument_list|(

@@ -377,7 +377,7 @@ decl_stmt|;
 name|GimpOrientationType
 name|orientation
 init|=
-name|GIMP_UNKNOWN
+name|GIMP_ORIENTATION_UNKNOWN
 decl_stmt|;
 name|return_vals
 operator|=

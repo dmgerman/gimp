@@ -1027,7 +1027,7 @@ if|if
 condition|(
 name|orientation
 operator|==
-name|GIMP_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 condition|)
 block|{
 name|l_add_guide_proc

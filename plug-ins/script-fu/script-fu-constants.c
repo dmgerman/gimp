@@ -1810,7 +1810,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"HORIZONTAL"
+literal|"ORIENTATION-HORIZONTAL"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1825,7 +1825,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"VERTICAL"
+literal|"ORIENTATION-VERTICAL"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1840,7 +1840,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"UNKNOWN"
+literal|"ORIENTATION-UNKNOWN"
 argument_list|)
 argument_list|,
 name|flocons

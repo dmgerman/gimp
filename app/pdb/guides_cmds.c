@@ -1469,8 +1469,6 @@ name|data
 operator|)
 operator|->
 name|orientation
-operator|-
-literal|1
 expr_stmt|;
 name|success
 operator|=
@@ -1557,7 +1555,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"orientation"
 block|,
-literal|"The guide's orientation: { GIMP_HORIZONTAL (0), GIMP_VERTICAL (1), GIMP_ }"
+literal|"The guide's orientation: { GIMP_ORIENTATION_HORIZONTAL (0), GIMP_ORIENTATION_VERTICAL (1) }"
 block|}
 block|}
 decl_stmt|;

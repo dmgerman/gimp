@@ -476,7 +476,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|GIMP_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|hguides
 operator|=
@@ -494,7 +494,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|vguides
 operator|=
@@ -512,7 +512,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_UNKNOWN
+name|GIMP_ORIENTATION_UNKNOWN
 case|:
 name|g_assert_not_reached
 argument_list|()

@@ -267,11 +267,11 @@ if|if
 condition|(
 name|flip_type
 operator|<
-name|GIMP_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 operator|||
 name|flip_type
 operator|>
-name|GIMP_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 condition|)
 name|success
 operator|=
@@ -350,7 +350,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"flip_type"
 block|,
-literal|"Type of flip: GIMP_HORIZONTAL (0), GIMP_VERTICAL (1), GIMP_"
+literal|"Type of flip: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
 block|}
 block|}
 decl_stmt|;
@@ -1775,11 +1775,11 @@ if|if
 condition|(
 name|shear_type
 operator|<
-name|GIMP_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 operator|||
 name|shear_type
 operator|>
-name|GIMP_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 condition|)
 name|success
 operator|=
@@ -1936,7 +1936,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"shear_type"
 block|,
-literal|"Type of shear: GIMP_HORIZONTAL (0), GIMP_VERTICAL (1), GIMP_"
+literal|"Type of shear: GIMP_ORIENTATION_HORIZONTAL (0) or GIMP_ORIENTATION_VERTICAL (1)"
 block|}
 block|,
 block|{

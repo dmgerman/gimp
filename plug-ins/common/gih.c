@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ae9e7880108
+DECL|struct|__anon2a043c5e0108
 block|{
 DECL|member|spacing
 name|guint
@@ -236,7 +236,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae9e7880208
+DECL|struct|__anon2a043c5e0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3219,7 +3219,7 @@ name|adj
 operator|->
 name|orientation
 operator|==
-name|GIMP_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 condition|)
 block|{
 name|size
@@ -4103,7 +4103,7 @@ name|cellw_adjust
 operator|.
 name|orientation
 operator|=
-name|GIMP_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 expr_stmt|;
 name|cellw_adjust
 operator|.
@@ -4240,7 +4240,7 @@ name|cellh_adjust
 operator|.
 name|orientation
 operator|=
-name|GIMP_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 expr_stmt|;
 name|cellh_adjust
 operator|.

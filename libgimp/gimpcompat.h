@@ -62,7 +62,7 @@ name|gimp_help_free
 parameter_list|()
 value|((void) 0)
 name|enum
-DECL|enum|__anon29d688430103
+DECL|enum|__anon2792fdba0103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -103,7 +103,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon29d688430203
+DECL|enum|__anon2792fdba0203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d688430303
+DECL|enum|__anon2792fdba0303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d688430403
+DECL|enum|__anon2792fdba0403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d688430503
+DECL|enum|__anon2792fdba0503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -206,7 +206,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d688430603
+DECL|enum|__anon2792fdba0603
 block|{
 DECL|enumerator|GIMP_ONCE_FORWARD
 name|GIMP_ONCE_FORWARD
@@ -233,7 +233,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d688430703
+DECL|enum|__anon2792fdba0703
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -250,7 +250,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d688430803
+DECL|enum|__anon2792fdba0803
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -262,6 +262,30 @@ name|GIMP_INCREMENTAL
 init|=
 name|GIMP_PAINT_INCREMENTAL
 block|}
+enum|;
+end_enum
+
+begin_enum
+enum|enum
+DECL|enum|__anon2792fdba0903
+block|{
+DECL|enumerator|GIMP_HORIZONTAL
+name|GIMP_HORIZONTAL
+init|=
+name|GIMP_ORIENTATION_HORIZONTAL
+block|,
+DECL|enumerator|GIMP_VERTICAL
+name|GIMP_VERTICAL
+init|=
+name|GIMP_ORIENTATION_VERTICAL
+block|,
+DECL|enumerator|GIMP_UNKNOWN
+name|GIMP_UNKNOWN
+init|=
+name|GIMP_ORIENTATION_UNKNOWN
+DECL|variable|GimpOrientationType
+block|}
+name|GimpOrientationType
 enum|;
 end_enum
 
