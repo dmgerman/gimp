@@ -182,7 +182,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e7c680103
+DECL|enum|__anon29628b660103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -2727,7 +2727,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2a0e7c68020a
+DECL|union|__anon29628b66020a
 block|{
 DECL|member|u
 name|guint16
@@ -3009,11 +3009,11 @@ literal|"Unsupported brush depth %d\n"
 literal|"GIMP brushes must be GRAY or RGBA."
 argument_list|)
 argument_list|,
+name|filename
+argument_list|,
 name|header
 operator|.
 name|bytes
-argument_list|,
-name|filename
 argument_list|)
 expr_stmt|;
 name|g_free
