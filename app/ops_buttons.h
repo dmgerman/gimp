@@ -59,14 +59,7 @@ modifier|*
 modifier|*
 name|xpm_data
 decl_stmt|;
-comment|/* xpm data for the button in sensitive state */
-DECL|member|xpm_is_data
-name|gchar
-modifier|*
-modifier|*
-name|xpm_is_data
-decl_stmt|;
-comment|/* xpm data for the button in insensitive state */
+comment|/* xpm data for the button */
 DECL|member|callback
 name|OpsButtonCallback
 name|callback
@@ -76,32 +69,6 @@ name|char
 modifier|*
 name|tooltip
 decl_stmt|;
-DECL|member|pixmap
-name|GdkPixmap
-modifier|*
-name|pixmap
-decl_stmt|;
-DECL|member|mask
-name|GdkBitmap
-modifier|*
-name|mask
-decl_stmt|;
-DECL|member|is_pixmap
-name|GdkPixmap
-modifier|*
-name|is_pixmap
-decl_stmt|;
-DECL|member|is_mask
-name|GdkBitmap
-modifier|*
-name|is_mask
-decl_stmt|;
-DECL|member|pixmapwid
-name|GtkWidget
-modifier|*
-name|pixmapwid
-decl_stmt|;
-comment|/* the pixmap widget */
 DECL|member|widget
 name|GtkWidget
 modifier|*
@@ -140,17 +107,6 @@ name|ops_button_box_set_insensitive
 parameter_list|(
 name|OpsButton
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|ops_button_set_sensitive
-parameter_list|(
-name|OpsButton
-parameter_list|,
-name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
