@@ -123,6 +123,12 @@ directive|include
 file|"gimprc.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"docindex.h"
+end_include
+
 begin_typedef
 DECL|typedef|OverwriteBox
 typedef|typedef
@@ -3291,6 +3297,11 @@ literal|0x0101
 argument_list|)
 expr_stmt|;
 block|}
+name|idea_add
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 name|return_val
 return|;

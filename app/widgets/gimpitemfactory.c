@@ -93,6 +93,12 @@ directive|include
 file|"gdisplay.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"docindex.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -263,6 +269,16 @@ block|,
 literal|0
 block|,
 literal|"<Separator>"
+block|}
+block|,
+block|{
+literal|"/File/Document Index..."
+block|,
+name|NULL
+block|,
+name|open_idea_window
+block|,
+literal|0
 block|}
 block|,
 block|{
