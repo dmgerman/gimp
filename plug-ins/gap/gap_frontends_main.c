@@ -129,6 +129,33 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* for i18n */
+end_comment
+
+begin_decl_stmt
+DECL|variable|dummy_entries
+specifier|static
+name|gchar
+name|G_GNUC_UNUSED
+modifier|*
+name|dummy_entries
+index|[]
+init|=
+block|{
+name|N_
+argument_list|(
+literal|"<Image>/Video"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"<Image>/Video/Encode"
+argument_list|)
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 specifier|static
 name|void
@@ -506,7 +533,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95a5900108
+DECL|struct|__anon2aa884880108
 block|{
 DECL|member|lock
 name|long
