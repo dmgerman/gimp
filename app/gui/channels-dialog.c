@@ -3704,7 +3704,13 @@ condition|)
 return|return;
 if|if
 condition|(
+operator|(
 name|new_index
+operator|+
+name|channelsD
+operator|->
+name|num_components
+operator|)
 operator|==
 name|g_slist_index
 argument_list|(
