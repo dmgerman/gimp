@@ -29,6 +29,23 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -111,6 +128,12 @@ begin_include
 include|#
 directive|include
 file|"gtkmultioptionmenu.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -469,7 +492,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e4550f0103
+DECL|enum|__anon2b49bcdb0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -496,7 +519,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e4550f0203
+DECL|enum|__anon2b49bcdb0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -515,7 +538,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e4550f0308
+DECL|struct|__anon2b49bcdb0308
 typedef|typedef
 struct|struct
 block|{
@@ -652,7 +675,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e4550f0408
+DECL|struct|__anon2b49bcdb0408
 typedef|typedef
 struct|struct
 block|{
@@ -672,7 +695,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28e4550f0503
+DECL|enum|__anon2b49bcdb0503
 typedef|typedef
 enum|enum
 block|{
@@ -700,7 +723,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e4550f0608
+DECL|struct|__anon2b49bcdb0608
 typedef|typedef
 struct|struct
 block|{
@@ -723,7 +746,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon28e4550f0708
+DECL|struct|__anon2b49bcdb0708
 struct|struct
 block|{
 DECL|member|x0
@@ -809,7 +832,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e4550f0808
+DECL|struct|__anon2b49bcdb0808
 typedef|typedef
 struct|struct
 block|{
@@ -881,7 +904,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4550f0908
+DECL|struct|__anon2b49bcdb0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -908,7 +931,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4550f0a08
+DECL|struct|__anon2b49bcdb0a08
 block|{
 DECL|member|init
 name|gint
@@ -1078,7 +1101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4550f0b08
+DECL|struct|__anon2b49bcdb0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1105,7 +1128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4550f0c08
+DECL|struct|__anon2b49bcdb0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1146,7 +1169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4550f0d08
+DECL|struct|__anon2b49bcdb0d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1376,7 +1399,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4550f0e08
+DECL|struct|__anon2b49bcdb0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1451,7 +1474,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon28e4550f0f03
+DECL|enum|__anon2b49bcdb0f03
 typedef|typedef
 enum|enum
 block|{
@@ -1485,7 +1508,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e4550f1008
+DECL|struct|__anon2b49bcdb1008
 typedef|typedef
 struct|struct
 block|{
@@ -1529,7 +1552,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e4550f1108
+DECL|struct|__anon2b49bcdb1108
 typedef|typedef
 struct|struct
 block|{
@@ -1587,7 +1610,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e4550f1208
+DECL|struct|__anon2b49bcdb1208
 typedef|typedef
 struct|struct
 block|{
@@ -2501,6 +2524,14 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* These are keywords to be written to disk files specifying flares. */
+end_comment
+
+begin_comment
+comment|/* They are not translated since we want gflare files to be compatible    across languages. */
+end_comment
+
 begin_decl_stmt
 DECL|variable|gflare_modes
 specifier|static
@@ -2533,6 +2564,42 @@ block|{
 literal|"CIRCLE"
 block|,
 literal|"POLYGON"
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* These are for menu entries, so they are translated. */
+end_comment
+
+begin_decl_stmt
+DECL|variable|gflare_menu_modes
+specifier|static
+name|gchar
+modifier|*
+name|gflare_menu_modes
+index|[]
+init|=
+block|{
+name|N_
+argument_list|(
+literal|"Normal"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Addition"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Overlay"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Screen"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -4609,28 +4676,46 @@ name|gchar
 modifier|*
 name|help_string
 init|=
+name|_
+argument_list|(
 literal|" This plug-in produces a lense flare effect using custom gradients."
 literal|" In interactive call, the user can edit his/her own favorite lense flare"
 literal|" (GFlare) and render it. Edited gflare is saved automatically to"
 literal|" the directory in gflare-path, if it is defined in gimprc."
 literal|" In non-interactive call, the user can only render one of GFlare"
 literal|" which has been stored in gflare-path already."
+argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gflare"
 argument_list|,
+name|_
+argument_list|(
 literal|"Produce lense flare effect using custom gradients"
+argument_list|)
 argument_list|,
 name|help_string
 argument_list|,
+name|_
+argument_list|(
 literal|"Eiichi Takamori"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Eiichi Takamori, and a lot of GIMP people"
+argument_list|)
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Light Effects/GFlare..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -4840,6 +4925,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -5094,7 +5182,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Gradient Flare..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plugin_do
@@ -7238,7 +7329,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"not valid GFlare file: %s"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -7593,7 +7687,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"invalid formatted GFlare file: %s\n"
+name|_
+argument_list|(
+literal|"invalid formatted GFlare file: %s\n)"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -8026,15 +8123,17 @@ name|message_ok
 init|=
 name|FALSE
 decl_stmt|;
-specifier|static
 name|char
 modifier|*
 name|message
 init|=
+name|_
+argument_list|(
 literal|"GFlare `%s' is not saved.	If you add a new entry in gimprc, like:\n"
 literal|"(gflare-path \"${gimp_dir}/gflare\")\n"
 literal|"and make a directory ~/.gimp/gflare, then you can save your own GFlare's\n"
 literal|"into that directory."
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -8135,7 +8234,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"could not open \"%s\""
+argument_list|)
 argument_list|,
 name|gflare
 operator|->
@@ -8939,7 +9041,10 @@ name|dir
 condition|)
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"error reading GFlare directory \"%s\""
+argument_list|)
 argument_list|,
 name|path
 argument_list|)
@@ -9673,7 +9778,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon28e4550f1308
+DECL|struct|__anon2b49bcdb1308
 specifier|static
 struct|struct
 block|{
@@ -13489,7 +13594,10 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GFlare"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -13524,7 +13632,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -13694,7 +13805,10 @@ name|outer_prv_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -14064,7 +14178,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"`Default' is created."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -14073,7 +14190,10 @@ name|gflare
 operator|=
 name|gflare_new_with_default
 argument_list|(
+name|_
+argument_list|(
 literal|"Default"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gflares_list_insert
@@ -15689,7 +15809,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Center X:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -15834,7 +15957,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Center Y:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -15983,7 +16109,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Radius:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -16021,7 +16150,10 @@ literal|0
 argument_list|,
 literal|3
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotation:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -16056,7 +16188,10 @@ literal|0
 argument_list|,
 literal|4
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue Rotation:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -16091,7 +16226,10 @@ literal|0
 argument_list|,
 literal|5
 argument_list|,
+name|_
+argument_list|(
 literal|"Vector Angle:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -16125,7 +16263,10 @@ literal|0
 argument_list|,
 literal|6
 argument_list|,
+name|_
+argument_list|(
 literal|"Vector Length:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -16156,7 +16297,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Adaptive Supersampling"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -16288,7 +16432,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Max depth:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -16446,7 +16593,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Threshold:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -16640,7 +16790,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Auto update preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -16711,7 +16864,10 @@ name|note_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -17089,7 +17245,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon28e4550f1408
+DECL|struct|__anon2b49bcdb1408
 specifier|static
 struct|struct
 block|{
@@ -17280,12 +17436,15 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|buttons
 index|[
 name|i
 index|]
 operator|.
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -17360,7 +17519,10 @@ name|note_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Selector"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -17688,11 +17850,20 @@ parameter_list|)
 block|{
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"New GFlare"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Enter a name for the new GFlare"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"untitled"
+argument_list|)
 argument_list|,
 name|dlg_selector_new_ok_callback
 argument_list|,
@@ -17750,7 +17921,10 @@ block|{
 comment|/* message_box (); */
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"The name `%s' is used already!"
+argument_list|)
 argument_list|,
 name|new_name
 argument_list|)
@@ -17936,9 +18110,15 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Copy GFlare"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Enter a name for the copied GFlare"
+argument_list|)
 argument_list|,
 name|name
 argument_list|,
@@ -17998,7 +18178,10 @@ block|{
 comment|/* message_box (); */
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"The name `%s' is used already!"
+argument_list|)
 argument_list|,
 name|copy_name
 argument_list|)
@@ -18085,7 +18268,7 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|str
 decl_stmt|;
@@ -18099,7 +18282,10 @@ block|{
 comment|/* message_box () */
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Cannot delete!! There must be at least one GFlare."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -18116,7 +18302,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete GFlare"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -18185,74 +18374,15 @@ name|vbox
 argument_list|)
 expr_stmt|;
 comment|/* Question */
-name|label
+name|str
 operator|=
-name|gtk_label_new
+name|g_strdup_printf
+argument_list|(
+name|_
 argument_list|(
 literal|"Are you sure you want to delete"
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-name|str
-operator|=
-name|g_malloc
-argument_list|(
-operator|(
-name|strlen
-argument_list|(
-name|dlg
-operator|->
-name|gflare
-operator|->
-name|name
-argument_list|)
-operator|+
-literal|32
-operator|*
-sizeof|sizeof
-argument_list|(
-name|char
-argument_list|)
-operator|)
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|str
-argument_list|,
 literal|"\"%s\" from the list and from disk?"
+argument_list|)
 argument_list|,
 name|dlg
 operator|->
@@ -18266,39 +18396,6 @@ operator|=
 name|gtk_label_new
 argument_list|(
 name|str
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -18306,12 +18403,48 @@ argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|label
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
 comment|/* Buttons */
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Delete"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -18376,7 +18509,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -18622,7 +18758,10 @@ block|}
 else|else
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"not found %s in gflares_list"
+argument_list|)
 argument_list|,
 name|dlg
 operator|->
@@ -18811,7 +18950,10 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GFlare Editor"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -18846,7 +18988,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -18908,7 +19053,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -18968,7 +19116,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Rescan Gradients"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -19133,7 +19284,10 @@ name|outer_prv_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -19587,7 +19741,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Glow Opacity (%):"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -19631,7 +19788,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Glow Mode:"
+argument_list|)
 argument_list|,
 name|option_menu
 argument_list|)
@@ -19644,7 +19804,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Rays Opacity (%):"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -19688,7 +19851,10 @@ literal|0
 argument_list|,
 literal|3
 argument_list|,
+name|_
+argument_list|(
 literal|"Rays Mode:"
+argument_list|)
 argument_list|,
 name|option_menu
 argument_list|)
@@ -19701,7 +19867,10 @@ literal|0
 argument_list|,
 literal|4
 argument_list|,
+name|_
+argument_list|(
 literal|"Second Flares Opacity (%):"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -19745,7 +19914,10 @@ literal|0
 argument_list|,
 literal|5
 argument_list|,
+name|_
+argument_list|(
 literal|"Second Flares Mode:"
+argument_list|)
 argument_list|,
 name|option_menu
 argument_list|)
@@ -19776,7 +19948,10 @@ name|note_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"General"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -19953,7 +20128,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Radial Gradient:"
+argument_list|)
 argument_list|,
 name|gm
 argument_list|)
@@ -19985,7 +20163,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Angular Gradient:"
+argument_list|)
 argument_list|,
 name|gm
 argument_list|)
@@ -20017,7 +20198,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Angular Size Gradient:"
+argument_list|)
 argument_list|,
 name|gm
 argument_list|)
@@ -20093,7 +20277,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Size (%):"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -20127,7 +20314,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotation:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -20162,7 +20352,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue Rotation:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -20215,7 +20408,10 @@ name|note_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Glow"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -20392,7 +20588,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Radial Gradient:"
+argument_list|)
 argument_list|,
 name|gm
 argument_list|)
@@ -20424,7 +20623,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Angular Gradient:"
+argument_list|)
 argument_list|,
 name|gm
 argument_list|)
@@ -20456,7 +20658,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Angular Size Gradient:"
+argument_list|)
 argument_list|,
 name|gm
 argument_list|)
@@ -20532,7 +20737,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Size (%):"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -20566,7 +20774,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotation:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -20601,7 +20812,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue Rotation:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -20636,7 +20850,10 @@ literal|0
 argument_list|,
 literal|3
 argument_list|,
+name|_
+argument_list|(
 literal|"# of Spikes:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_INT
 argument_list|,
@@ -20670,7 +20887,10 @@ literal|0
 argument_list|,
 literal|4
 argument_list|,
+name|_
+argument_list|(
 literal|"Spike Thickness:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -20722,7 +20942,10 @@ name|note_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Rays"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -20939,7 +21162,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Radial Gradient:"
+argument_list|)
 argument_list|,
 name|gm
 argument_list|)
@@ -20971,7 +21197,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Size Factor Gradient:"
+argument_list|)
 argument_list|,
 name|gm
 argument_list|)
@@ -21003,7 +21232,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Probability Gradient:"
+argument_list|)
 argument_list|,
 name|gm
 argument_list|)
@@ -21079,7 +21311,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Size (%):"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -21113,7 +21348,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotation:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -21148,7 +21386,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue Rotation:"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -21212,7 +21453,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|shape_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Circle"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|shape_group
@@ -21290,7 +21534,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|shape_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Polygon"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|shape_group
@@ -21477,7 +21724,10 @@ name|shape_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Shape of Second Flares"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -21535,7 +21785,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Random Seed (-1 means current time):"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -21673,7 +21926,10 @@ name|note_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Second Flares"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -21758,14 +22014,6 @@ name|menuitem
 decl_stmt|;
 name|gint
 name|i
-decl_stmt|,
-name|j
-decl_stmt|;
-name|gchar
-name|buf
-index|[
-literal|256
-index|]
 decl_stmt|;
 name|GFlareMode
 name|mode
@@ -21794,83 +22042,17 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* Capitalize */
-name|strcpy
-argument_list|(
-name|buf
-argument_list|,
-name|gflare_modes
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|islower
-argument_list|(
-name|buf
-index|[
-literal|0
-index|]
-argument_list|)
-condition|)
-comment|/* for BSD? */
-name|buf
-index|[
-literal|0
-index|]
-operator|=
-name|toupper
-argument_list|(
-name|buf
-index|[
-literal|0
-index|]
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|j
-operator|=
-literal|1
-init|;
-name|buf
-index|[
-name|j
-index|]
-condition|;
-name|j
-operator|++
-control|)
-if|if
-condition|(
-name|isupper
-argument_list|(
-name|buf
-index|[
-name|j
-index|]
-argument_list|)
-condition|)
-name|buf
-index|[
-name|j
-index|]
-operator|=
-name|tolower
-argument_list|(
-name|buf
-index|[
-name|j
-index|]
-argument_list|)
-expr_stmt|;
 name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
-name|buf
+name|gettext
+argument_list|(
+name|gflare_menu_modes
+index|[
+name|i
+index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_user_data
@@ -24485,7 +24667,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"none"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -24554,7 +24739,10 @@ index|]
 expr_stmt|;
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Not found \"%s\": used \"%s\" instead"
+argument_list|)
 argument_list|,
 name|default_gradient_name
 argument_list|,
@@ -24870,7 +25058,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"More..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -28559,7 +28750,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -28621,7 +28815,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
