@@ -2717,16 +2717,13 @@ return|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-end_ifdef
-
 begin_function
 specifier|static
 name|AirBlob
 modifier|*
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
 DECL|function|xinput_airbrush_pen_ellipse (XinputAirbrushTool * xinput_airbrush_tool,gdouble x_center,gdouble y_center,gdouble pressure,gdouble xtiltv,gdouble ytiltv,gdouble wheel)
 name|xinput_airbrush_pen_ellipse
 parameter_list|(
