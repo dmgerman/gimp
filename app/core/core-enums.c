@@ -2619,6 +2619,17 @@ literal|"group-parasite-remove"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_VECTORS_IMPORT
+block|,
+name|N_
+argument_list|(
+literal|"Import Paths"
+argument_list|)
+block|,
+literal|"group-vectors-import"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_MISC
 block|,
 name|N_

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbezierstroke.h"
 end_include
 
@@ -714,6 +720,18 @@ operator|.
 name|paths
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_group_start
+argument_list|(
+name|image
+argument_list|,
+name|GIMP_UNDO_GROUP_VECTORS_IMPORT
+argument_list|,
+name|_
+argument_list|(
+literal|"Import Paths"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|vectors
 operator|=
 name|gimp_vectors_new
@@ -820,6 +838,11 @@ name|vectors
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_group_end
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -2335,7 +2358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ac6170108
+DECL|struct|__anon2b4178ee0108
 block|{
 DECL|member|strokes
 name|GList
