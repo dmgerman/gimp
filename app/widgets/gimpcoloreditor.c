@@ -912,7 +912,7 @@ name|name
 argument_list|,
 name|selector_class
 operator|->
-name|help_page
+name|help_id
 argument_list|)
 expr_stmt|;
 name|g_object_set_data

@@ -1446,7 +1446,7 @@ operator|->
 name|cur_page
 argument_list|)
 operator|->
-name|help_page
+name|help_id
 expr_stmt|;
 name|gimp_standard_help_func
 argument_list|(

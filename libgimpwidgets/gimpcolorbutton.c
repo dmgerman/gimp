@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3cd7c40103
+DECL|enum|__anon2ba00b310103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3cd7c40203
+DECL|enum|__anon2ba00b310203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2317,7 +2317,7 @@ operator|->
 name|cur_page
 argument_list|)
 operator|->
-name|help_page
+name|help_id
 expr_stmt|;
 name|gimp_standard_help_func
 argument_list|(

@@ -634,9 +634,9 @@ argument_list|)
 expr_stmt|;
 name|selector_class
 operator|->
-name|help_page
+name|help_id
 operator|=
-literal|"triangle.html"
+literal|"gimp-colorselector-triangle"
 expr_stmt|;
 name|selector_class
 operator|->

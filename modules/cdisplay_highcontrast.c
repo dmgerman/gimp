@@ -577,9 +577,9 @@ argument_list|)
 expr_stmt|;
 name|display_class
 operator|->
-name|help_page
+name|help_id
 operator|=
-literal|"modules/contrast.html"
+literal|"gimp-colordisplay-contrast"
 expr_stmt|;
 name|display_class
 operator|->
@@ -845,7 +845,7 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
-comment|/* You will not be using the entire buffer most of the time.     * Hence, the simplistic code for this is as follows:    *    * for (j = 0; j< height; j++)    *   {    *     for (i = 0; i< width * bpp; i++)    *       buf[i] = lookup[buf[i]];    *     buf += bpl;    *   }    */
+comment|/* You will not be using the entire buffer most of the time.    * Hence, the simplistic code for this is as follows:    *    * for (j = 0; j< height; j++)    *   {    *     for (i = 0; i< width * bpp; i++)    *       buf[i] = lookup[buf[i]];    *     buf += bpl;    *   }    */
 name|width
 operator|*=
 name|bpp

@@ -124,11 +124,11 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-DECL|member|help_page
+DECL|member|help_id
 specifier|const
 name|gchar
 modifier|*
-name|help_page
+name|help_id
 decl_stmt|;
 comment|/*  virtual functions  */
 DECL|member|clone

@@ -577,9 +577,9 @@ argument_list|)
 expr_stmt|;
 name|display_class
 operator|->
-name|help_page
+name|help_id
 operator|=
-literal|"modules/gamma.html"
+literal|"gimp-colordisplay-gamma"
 expr_stmt|;
 name|display_class
 operator|->

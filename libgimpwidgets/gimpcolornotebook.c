@@ -454,9 +454,9 @@ literal|"Notebook"
 expr_stmt|;
 name|selector_class
 operator|->
-name|help_page
+name|help_id
 operator|=
-literal|"notebook.html"
+literal|"gimp-colorselector-notebook"
 expr_stmt|;
 name|selector_class
 operator|->

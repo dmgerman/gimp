@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c030bff0103
+DECL|enum|__anon2b1b10d00103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1381,7 +1381,7 @@ name|module
 operator|->
 name|filename
 argument_list|,
-name|G_MODULE_BIND_LAZY
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
