@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * PSD Plugin version 1.9.9.9 (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/*  * PSD Plugin version 1.9.9.9b (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
 begin_comment
@@ -8,11 +8,11 @@ comment|/*  * Adobe and Adobe Photoshop are trademarks of Adobe Systems  * Incor
 end_comment
 
 begin_comment
-comment|/*  * Revision history:  *  *  98.04.28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  98.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  98.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  98.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  98.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  97.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  97.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
+comment|/*  * Revision history:  *  *  98.05.04 / v1.9.9.9b / Adam D. Moss  *       Changed the Pascal-style string-reading stuff.  That fixed  *       some file-padding problems.  Made all debugging output  *       compile-time optional (please leave it enabled for now).  *       Reduced memory requirements; still much room for improvement.  *  *  98.04.28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  98.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  98.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  98.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  98.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  97.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  97.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
 end_comment
 
 begin_comment
-comment|/*  * TODO:  *  *      Crush 16bpp channels  *	CMYK -> RGB  *	Load BITMAP mode  *  *      File saving.  (I am not going to be able to do this for  *         practical reasons.  Suggest someone works on it as a  *         separate plugin - please let me know.)  *  *      Reduce memory requirements!  */
+comment|/*  * TODO:  *  *      Crush 16bpp channels  *	CMYK -> RGB  *	Load BITMAP mode  *  *      File saving.  (I am unlikely to be able to do this for  *         practical reasons.  Suggest someone works on it as a  *         separate plugin - please let me know.)  *  *      Reduce memory requirements!  */
 end_comment
 
 begin_comment
@@ -22,6 +22,18 @@ end_comment
 begin_comment
 comment|/* *** DEFINES *** */
 end_comment
+
+begin_comment
+comment|/* set to TRUE if you want debugging, FALSE otherwise */
+end_comment
+
+begin_define
+DECL|macro|PSD_DEBUG
+define|#
+directive|define
+name|PSD_DEBUG
+value|TRUE
+end_define
 
 begin_comment
 comment|/* the max number of layers that this plugin should try to load */
@@ -51,6 +63,14 @@ begin_comment
 comment|/* *** END OF DEFINES *** */
 end_comment
 
+begin_define
+DECL|macro|IFDBG
+define|#
+directive|define
+name|IFDBG
+value|if (PSD_DEBUG)
+end_define
+
 begin_include
 include|#
 directive|include
@@ -66,13 +86,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<unistd.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<unistd.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -94,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afa67e50103
+DECL|enum|__anon2a57a69d0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -318,7 +338,7 @@ name|gboolean
 name|visible
 decl_stmt|;
 DECL|member|name
-name|guchar
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -413,12 +433,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2afa67e50208
+DECL|struct|__anon2a57a69d0208
 specifier|static
 struct|struct
 block|{
 DECL|member|signature
-name|guchar
+name|gchar
 name|signature
 index|[
 literal|4
@@ -819,7 +839,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -837,7 +857,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -855,7 +875,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -1821,11 +1841,12 @@ literal|0x07d0
 operator|)
 condition|)
 block|{
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tPath data is irrelevant to GIMP at this time.\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -1858,11 +1879,12 @@ name|remaining
 init|=
 name|Size
 decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tALPHA CHANNEL NAMES:\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|Size
@@ -1872,9 +1894,6 @@ condition|)
 block|{
 do|do
 block|{
-name|guint32
-name|alpha_name_len
-decl_stmt|;
 name|psd_image
 operator|.
 name|aux_channel
@@ -1893,6 +1912,32 @@ argument_list|,
 literal|"alpha channel name"
 argument_list|)
 expr_stmt|;
+operator|(
+operator|*
+name|offset
+operator|)
+operator|++
+expr_stmt|;
+name|remaining
+operator|--
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|aux_channel
+index|[
+name|psd_image
+operator|.
+name|num_aux_channels
+index|]
+operator|.
+name|name
+condition|)
+block|{
+name|guint32
+name|alpha_name_len
+decl_stmt|;
 name|alpha_name_len
 operator|=
 name|strlen
@@ -1909,6 +1954,7 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\tname: \"%s\"\n"
@@ -1924,7 +1970,19 @@ index|]
 operator|.
 name|name
 argument_list|)
+decl_stmt|;
+operator|(
+operator|*
+name|offset
+operator|)
+operator|+=
+name|alpha_name_len
 expr_stmt|;
+name|remaining
+operator|-=
+name|alpha_name_len
+expr_stmt|;
+block|}
 name|psd_image
 operator|.
 name|num_aux_channels
@@ -1948,21 +2006,6 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
-operator|(
-operator|*
-name|offset
-operator|)
-operator|+=
-name|alpha_name_len
-operator|+
-literal|1
-expr_stmt|;
-name|remaining
-operator|-=
-name|alpha_name_len
-operator|+
-literal|1
-expr_stmt|;
 block|}
 do|while
 condition|(
@@ -1990,11 +2033,12 @@ break|break;
 case|case
 literal|0x03ef
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tDISPLAYINFO STRUCTURE: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2017,9 +2061,6 @@ literal|0x03f0
 case|:
 comment|/* FIXME: untested */
 block|{
-name|guint32
-name|caption_len
-decl_stmt|;
 name|psd_image
 operator|.
 name|caption
@@ -2031,15 +2072,20 @@ argument_list|,
 literal|"caption string"
 argument_list|)
 expr_stmt|;
-name|caption_len
-operator|=
-name|strlen
-argument_list|(
+operator|(
+operator|*
+name|offset
+operator|)
+operator|++
+expr_stmt|;
+if|if
+condition|(
 name|psd_image
 operator|.
 name|caption
-argument_list|)
-expr_stmt|;
+condition|)
+block|{
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\tcontent: \"%s\"\n"
@@ -2048,26 +2094,31 @@ name|psd_image
 operator|.
 name|caption
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 operator|(
 operator|*
 name|offset
 operator|)
 operator|+=
-name|caption_len
-operator|+
-literal|1
+name|strlen
+argument_list|(
+name|psd_image
+operator|.
+name|caption
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
 literal|0x03f2
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tBACKGROUND COLOR: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2088,11 +2139,12 @@ break|break;
 case|case
 literal|0x03f4
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tGREY/MULTICHANNEL HALFTONING INFO: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2113,11 +2165,12 @@ break|break;
 case|case
 literal|0x03f5
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tCOLOUR HALFTONING INFO: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2138,11 +2191,12 @@ break|break;
 case|case
 literal|0x03f6
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tDUOTONE HALFTONING INFO: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2163,11 +2217,12 @@ break|break;
 case|case
 literal|0x03f7
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tGREYSCALE/MULTICHANNEL TRANSFER FUNCTION: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2188,11 +2243,12 @@ break|break;
 case|case
 literal|0x03f8
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tCOLOUR TRANSFER FUNCTION: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2213,11 +2269,12 @@ break|break;
 case|case
 literal|0x03f9
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tDUOTONE TRANSFER FUNCTION: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2238,11 +2295,12 @@ break|break;
 case|case
 literal|0x03fa
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tDUOTONE IMAGE INFO: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2263,11 +2321,12 @@ break|break;
 case|case
 literal|0x03fb
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tEFFECTIVE BLACK/WHITE VALUES: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2288,11 +2347,12 @@ break|break;
 case|case
 literal|0x03fe
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tQUICK MASK INFO: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2314,11 +2374,12 @@ case|case
 literal|0x0400
 case|:
 block|{
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tLAYER STATE INFO:\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|psd_image
 operator|.
 name|active_layer_num
@@ -2330,6 +2391,7 @@ argument_list|,
 literal|"ID target_layer_num"
 argument_list|)
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\ttarget: %d\n"
@@ -2341,7 +2403,7 @@ name|psd_image
 operator|.
 name|active_layer_num
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 operator|(
 operator|*
 name|offset
@@ -2354,11 +2416,13 @@ break|break;
 case|case
 literal|0x0402
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tLAYER GROUP INFO: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t(Inferred number of layers: %d)\n"
@@ -2372,7 +2436,7 @@ operator|/
 literal|2
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2393,11 +2457,12 @@ break|break;
 case|case
 literal|0x0405
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tIMAGE MODE FOR RAW FORMAT: unhandled\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2445,11 +2510,12 @@ case|:
 case|case
 literal|0x2710
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t<Field is irrelevant to GIMP at this time.>\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2473,11 +2539,12 @@ case|:
 case|case
 literal|0x03eb
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t<Obsolete Photoshop 2.0 field.>\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2504,11 +2571,12 @@ case|:
 case|case
 literal|0x0403
 case|:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t<Obsolete field.>\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2527,11 +2595,12 @@ name|Size
 expr_stmt|;
 break|break;
 default|default:
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t<Undocumented field.>\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|throwchunk
 argument_list|(
 name|Size
@@ -2602,6 +2671,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\tLAYER RECORD (layer %d)\n"
@@ -2611,7 +2681,7 @@ name|int
 operator|)
 name|layernum
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|/* table 11-12 */
 name|top
 operator|=
@@ -2725,6 +2795,7 @@ name|bottom
 operator|-
 name|top
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\tLayer extents: (%d,%d) -> (%d,%d)\n"
@@ -2737,7 +2808,7 @@ name|right
 argument_list|,
 name|bottom
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|psd_image
 operator|.
 name|layer
@@ -2784,6 +2855,7 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\tNumber of channels: %d\n"
@@ -2800,7 +2872,7 @@ index|]
 operator|.
 name|num_channels
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -2823,13 +2895,14 @@ operator|++
 control|)
 block|{
 comment|/* table 11-13 */
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\tCHANNEL LENGTH INFO (%d)\n"
 argument_list|,
 name|i
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|psd_image
 operator|.
 name|layer
@@ -2858,6 +2931,7 @@ operator|)
 operator|+=
 literal|2
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\t\tChannel TYPE: %d\n"
@@ -2876,7 +2950,7 @@ index|]
 operator|.
 name|type
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|psd_image
 operator|.
 name|layer
@@ -2905,6 +2979,7 @@ operator|)
 operator|+=
 literal|4
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\t\tChannel Data Length: %d\n"
@@ -2923,7 +2998,7 @@ index|]
 operator|.
 name|compressedsize
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 block|}
 name|xfread
 argument_list|(
@@ -2991,6 +3066,7 @@ operator|)
 operator|+=
 literal|4
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\tBlend type: PSD(\"%c%c%c%c\") = GIMP(%d)\n"
@@ -3055,7 +3131,7 @@ operator|.
 name|blendkey
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|psd_image
 operator|.
 name|layer
@@ -3078,6 +3154,7 @@ name|offset
 operator|)
 operator|++
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\tLayer Opacity: %d\n"
@@ -3091,7 +3168,7 @@ index|]
 operator|.
 name|opacity
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|psd_image
 operator|.
 name|layer
@@ -3114,6 +3191,7 @@ name|offset
 operator|)
 operator|++
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\tLayer Clipping: %d (%s)\n"
@@ -3142,7 +3220,7 @@ literal|"base"
 else|:
 literal|"non-base"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|flags
 operator|=
 name|getguchar
@@ -3158,6 +3236,7 @@ name|offset
 operator|)
 operator|++
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\tLayer Flags: %d (%s, %s)\n"
@@ -3180,7 +3259,7 @@ literal|"visible"
 else|:
 literal|"not visible"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|psd_image
 operator|.
 name|layer
@@ -3248,13 +3327,14 @@ operator|)
 operator|+=
 literal|4
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\tEXTRA DATA SIZE: %d\n"
 argument_list|,
 name|extradatasize
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|/* FIXME: should do something with this data */
 comment|/*throwchunk(extradatasize, fd, "layer extradata throw");   (*offset) += extradatasize;*/
 name|totaloff
@@ -3283,13 +3363,14 @@ operator|)
 operator|+=
 literal|4
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\t\tLAYER MASK DATA SIZE: %d\n"
 argument_list|,
 name|layermaskdatasize
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|layermaskdatasize
@@ -3439,13 +3520,14 @@ operator|)
 operator|+=
 literal|4
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\t\t\tLAYER RANGES DATA SIZE: %d\n"
 argument_list|,
 name|layermaskdatasize
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|layerrangesdatasize
@@ -3488,6 +3570,24 @@ operator|(
 operator|*
 name|offset
 operator|)
+operator|++
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|layernum
+index|]
+operator|.
+name|name
+condition|)
+block|{
+operator|(
+operator|*
+name|offset
+operator|)
 operator|+=
 name|strlen
 argument_list|(
@@ -3500,10 +3600,8 @@ index|]
 operator|.
 name|name
 argument_list|)
-operator|+
-literal|1
 expr_stmt|;
-comment|/*  offset += ((strlen(psd_image.layer[layernum].name)+1)-1)/4 + 4;*/
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\t\t\tLAYER NAME: '%s'\n"
@@ -3517,7 +3615,8 @@ index|]
 operator|.
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+block|}
 if|if
 condition|(
 name|totaloff
@@ -3529,6 +3628,8 @@ operator|)
 operator|>
 literal|0
 condition|)
+block|{
+name|IFDBG
 block|{
 name|printf
 argument_list|(
@@ -3549,6 +3650,24 @@ argument_list|,
 literal|"layer record dross throw"
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|throwchunk
+argument_list|(
+name|totaloff
+operator|-
+operator|(
+operator|*
+name|offset
+operator|)
+argument_list|,
+name|fd
+argument_list|,
+literal|"layer record dross throw"
+argument_list|)
+expr_stmt|;
+block|}
 operator|(
 operator|*
 name|offset
@@ -3578,11 +3697,12 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tLAYER STRUCTURE SECTION\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|psd_image
 operator|.
 name|num_layers
@@ -3601,6 +3721,7 @@ operator|)
 operator|+=
 literal|2
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\tCanonical number of layers: %d%s\n"
@@ -3635,7 +3756,7 @@ literal|""
 else|:
 literal|" (absolute/alpha)"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|psd_image
@@ -3886,6 +4007,7 @@ operator|)
 operator|+=
 literal|2
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\tLayer (%d) Channel (%d:%d) Compression: %d (%s)\n"
@@ -3926,7 +4048,8 @@ else|:
 literal|"UNKNOWN!"
 operator|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\tLoading channel data (%d bytes)...\n"
@@ -3935,7 +4058,7 @@ name|width
 operator|*
 name|height
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|psd_image
 operator|.
 name|layer
@@ -4125,6 +4248,7 @@ name|width
 argument_list|)
 expr_stmt|;
 block|}
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\t\t\t\tActual compressed size was %d bytes\n"
@@ -4136,7 +4260,7 @@ operator|)
 operator|-
 name|blockread
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 block|}
 break|break;
 default|default:
@@ -4196,18 +4320,20 @@ operator|)
 operator|+=
 literal|4
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\tLAYER INFO SECTION\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\t\tSECTION LENGTH: %u\n"
 argument_list|,
 name|section_length
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|do_layer_struct
 argument_list|(
 name|fd
@@ -4256,18 +4382,20 @@ argument_list|(
 name|fd
 argument_list|)
 decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"LAYER AND MASK INFO\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\tSECTION LENGTH: %u\n"
 argument_list|,
 name|Size
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|Size
@@ -4289,6 +4417,8 @@ name|offset
 operator|<
 name|Size
 condition|)
+block|{
+name|IFDBG
 block|{
 name|printf
 argument_list|(
@@ -4328,6 +4458,7 @@ argument_list|(
 literal|"     That sounds strange to me.\n"
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*      if ((getguchar(fd, "mask info throw")!=0) || 	  (getguchar(fd, "mask info throw")!=0) || 	  (getguchar(fd, "mask info throw")!=0) || 	  (getguchar(fd, "mask info throw")!=0)) 	{ 	  printf("*** This mask info block looks pretty bogus.\n"); 	}*/
 block|}
 else|else
@@ -4377,11 +4508,12 @@ name|offset
 init|=
 literal|0
 decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"IMAGE RESOURCE BLOCK:\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|/* FIXME: too trusting that the file isn't corrupt */
 while|while
 condition|(
@@ -4452,13 +4584,14 @@ name|offset
 operator|+=
 literal|2
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\tID: 0x%04x / "
 argument_list|,
 name|ID
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|Name
 operator|=
 name|getpascalstring
@@ -4469,23 +4602,39 @@ literal|"ID name"
 argument_list|)
 expr_stmt|;
 name|offset
+operator|++
+expr_stmt|;
+if|if
+condition|(
+name|Name
+condition|)
+block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\"%s\" "
+argument_list|,
+name|Name
+argument_list|)
+decl_stmt|;
+name|offset
 operator|+=
 name|strlen
 argument_list|(
 name|Name
 argument_list|)
-operator|+
-literal|1
 expr_stmt|;
 if|if
 condition|(
 operator|!
+operator|(
 name|strlen
 argument_list|(
 name|Name
 argument_list|)
 operator|&
 literal|1
+operator|)
 condition|)
 block|{
 name|throwchunk
@@ -4506,6 +4655,22 @@ argument_list|(
 name|Name
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|throwchunk
+argument_list|(
+literal|1
+argument_list|,
+name|fd
+argument_list|,
+literal|"ID name throw2"
+argument_list|)
+expr_stmt|;
+name|offset
+operator|++
+expr_stmt|;
+block|}
 name|Size
 operator|=
 name|getglong
@@ -4519,13 +4684,14 @@ name|offset
 operator|+=
 literal|4
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"Size: %d\n"
 argument_list|,
 name|Size
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|dispatch_resID
 argument_list|(
 name|ID
@@ -4545,6 +4711,12 @@ operator|&
 literal|1
 condition|)
 block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"+1"
+argument_list|)
+decl_stmt|;
 name|throwchunk
 argument_list|(
 literal|1
@@ -5174,6 +5346,7 @@ decl_stmt|;
 name|GPixelRgn
 name|pixel_rgn
 decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"Extracting primary channel data (%d channels)\n"
@@ -5185,7 +5358,7 @@ name|psstep
 operator|-
 name|gimpstep
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|primary_data
 operator|=
 name|xmalloc
@@ -5504,11 +5677,12 @@ argument_list|(
 name|aux_data
 argument_list|)
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"Done with that.\n\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 block|}
 end_function
 
@@ -5545,6 +5719,7 @@ decl_stmt|;
 name|GPixelRgn
 name|pixel_rgn
 decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"Extracting %d/%d auxiliary channels.\n"
@@ -5553,7 +5728,7 @@ name|num_wanted
 argument_list|,
 name|psstep
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|aux_data
 operator|=
 name|xmalloc
@@ -5751,11 +5926,12 @@ argument_list|(
 name|aux_data
 argument_list|)
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"Done with that.\n\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 block|}
 end_function
 
@@ -5797,6 +5973,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"--> %p %p : %d %d . %d %d . %d %d\n"
@@ -5817,7 +5994,7 @@ name|dest_w
 argument_list|,
 name|dest_h
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|y
@@ -5944,7 +6121,8 @@ decl_stmt|;
 name|char
 modifier|*
 name|name_buf
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|cmykbuf
 decl_stmt|;
@@ -5954,8 +6132,7 @@ name|number
 init|=
 literal|1
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
@@ -6003,13 +6180,14 @@ decl_stmt|;
 name|gint32
 name|iter
 decl_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"------- %s ---------------------------------\n"
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|name_buf
 operator|=
 name|xmalloc
@@ -6183,13 +6361,14 @@ index|]
 operator|.
 name|num_channels
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"Hey, it's a LAYER with %d channels!\n"
 argument_list|,
 name|numc
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|gimagetype
@@ -6199,11 +6378,12 @@ case|case
 name|GRAY
 case|:
 block|{
+name|IFDBG
 name|printf
 argument_list|(
 literal|"It's GRAY.\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -6279,6 +6459,39 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|data
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -6331,6 +6544,72 @@ name|lnum
 index|]
 operator|.
 name|height
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|1
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|1
+index|]
+operator|.
+name|data
 argument_list|)
 expr_stmt|;
 block|}
@@ -6416,11 +6695,12 @@ case|case
 name|RGB
 case|:
 block|{
+name|IFDBG
 name|printf
 argument_list|(
 literal|"It's RGB.\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -6499,6 +6779,105 @@ name|lnum
 index|]
 operator|.
 name|height
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|1
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|1
+index|]
+operator|.
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|2
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|2
+index|]
+operator|.
+name|data
 argument_list|)
 expr_stmt|;
 block|}
@@ -6581,6 +6960,138 @@ name|lnum
 index|]
 operator|.
 name|height
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|1
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|1
+index|]
+operator|.
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|2
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|2
+index|]
+operator|.
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|3
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+literal|3
+index|]
+operator|.
+name|data
 argument_list|)
 expr_stmt|;
 block|}
@@ -6852,6 +7363,41 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
+comment|/* won't be needing the original data any more */
+if|if
+condition|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+name|iter
+index|]
+operator|.
+name|data
+condition|)
+name|g_free
+argument_list|(
+name|psd_image
+operator|.
+name|layer
+index|[
+name|lnum
+index|]
+operator|.
+name|channel
+index|[
+name|iter
+index|]
+operator|.
+name|data
+argument_list|)
+expr_stmt|;
+comment|/* give it to GIMP */
 name|mask_id
 operator|=
 name|gimp_layer_create_mask
@@ -7144,11 +7690,12 @@ name|want_aux
 operator|=
 name|TRUE
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"::::::::::: WANT AUX :::::::::::::::::::::::::::::::::::::::\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 block|}
 else|else
 block|{
@@ -7171,6 +7718,7 @@ operator|)
 condition|)
 comment|/* PS2-style - NO LAYERS. */
 block|{
+name|IFDBG
 name|printf
 argument_list|(
 literal|"Image data %ld chars\n"
@@ -7179,7 +7727,7 @@ name|PSDheader
 operator|.
 name|imgdatalen
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|step
 operator|=
 name|PSDheader
@@ -7357,6 +7905,7 @@ literal|1
 operator|)
 return|;
 block|}
+name|IFDBG
 name|printf
 argument_list|(
 literal|"psd:%d gimp:%d gimpbase:%d\n"
@@ -7373,7 +7922,7 @@ argument_list|(
 name|imagetype
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -8044,11 +8593,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|IFDBG
 name|printf
 argument_list|(
 literal|"Uhhh... uhm... extra channels... heavy...\n"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|extract_data_and_channels
 argument_list|(
 name|dest
@@ -8098,6 +8648,7 @@ block|}
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"--- %d layers : pos %ld : a-alph %d ---\n"
@@ -8119,7 +8670,7 @@ name|psd_image
 operator|.
 name|absolute_alpha
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 return|return
 operator|(
 name|image_ID
@@ -8284,13 +8835,14 @@ name|step
 argument_list|)
 expr_stmt|;
 block|}
+name|IFDBG
 name|printf
 argument_list|(
 literal|"clen %ld\n"
 argument_list|,
 name|clen
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 block|}
 end_function
 
@@ -9145,7 +9697,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|dumpchunk (size_t n,FILE * fd,guchar * why)
+DECL|function|dumpchunk (size_t n,FILE * fd,gchar * why)
 name|dumpchunk
 parameter_list|(
 name|size_t
@@ -9155,7 +9707,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -9208,7 +9760,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|throwchunk (size_t n,FILE * fd,guchar * why)
+DECL|function|throwchunk (size_t n,FILE * fd,gchar * why)
 name|throwchunk
 parameter_list|(
 name|size_t
@@ -9218,7 +9770,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -9269,7 +9821,7 @@ literal|0
 end_if
 
 begin_comment
-unit|static guchar * getchunk(size_t n, FILE * fd, char *why) {   guchar *tmpchunk;    tmpchunk = xmalloc(n);   xfread(fd, tmpchunk, n, why);   return(tmpchunk);
+unit|static guchar * getchunk(size_t n, FILE * fd, gchar *why) {   guchar *tmpchunk;    tmpchunk = xmalloc(n);   xfread(fd, tmpchunk, n, why);   return(tmpchunk);
 comment|/* caller should free memory */
 end_comment
 
@@ -9283,14 +9835,14 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|getpascalstring (FILE * fd,guchar * why)
+DECL|function|getpascalstring (FILE * fd,gchar * why)
 name|getpascalstring
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -9314,6 +9866,20 @@ argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|len
+operator|==
+literal|0
+condition|)
+block|{
+return|return
+operator|(
+name|NULL
+operator|)
+return|;
+comment|/*      tmpchunk[0]=0;       return (tmpchunk);*/
+block|}
 name|tmpchunk
 operator|=
 name|xmalloc
@@ -9323,26 +9889,6 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|len
-operator|==
-literal|0
-condition|)
-block|{
-name|tmpchunk
-index|[
-literal|0
-index|]
-operator|=
-literal|0
-expr_stmt|;
-return|return
-operator|(
-name|tmpchunk
-operator|)
-return|;
-block|}
 name|xfread
 argument_list|(
 name|fd
@@ -9373,14 +9919,14 @@ end_function
 begin_function
 specifier|static
 name|guchar
-DECL|function|getguchar (FILE * fd,char * why)
+DECL|function|getguchar (FILE * fd,gchar * why)
 name|getguchar
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -9426,14 +9972,14 @@ end_function
 begin_function
 specifier|static
 name|gshort
-DECL|function|getgshort (FILE * fd,char * why)
+DECL|function|getgshort (FILE * fd,gchar * why)
 name|getgshort
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -9488,14 +10034,14 @@ end_function
 begin_function
 specifier|static
 name|glong
-DECL|function|getglong (FILE * fd,char * why)
+DECL|function|getglong (FILE * fd,gchar * why)
 name|getglong
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -9589,7 +10135,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xfread (FILE * fd,void * buf,long len,char * why)
+DECL|function|xfread (FILE * fd,void * buf,long len,gchar * why)
 name|xfread
 parameter_list|(
 name|FILE
@@ -9603,7 +10149,7 @@ parameter_list|,
 name|long
 name|len
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|why
 parameter_list|)
@@ -9693,7 +10239,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"PSD: Stern warning: data size is not a factor of step size.\n"
+literal|"PSD: Stern warning: data size is not a factor of step size!\n"
 argument_list|)
 expr_stmt|;
 block|}
@@ -9774,7 +10320,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"\nWARNING: %s: xmalloc asked for zero-sized chunk\n"
+literal|"PSD: WARNING: %s: xmalloc asked for zero-sized chunk\n"
 argument_list|,
 name|prog_name
 argument_list|)
@@ -10071,6 +10617,7 @@ argument_list|,
 literal|"compression"
 argument_list|)
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"<<compr:%d>>"
@@ -10082,7 +10629,7 @@ name|PSDheader
 operator|.
 name|compression
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|PSDheader
@@ -10240,6 +10787,7 @@ name|PSDheader
 operator|.
 name|mode
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"HEAD:\n"
@@ -10279,8 +10827,9 @@ name|psd_image
 operator|.
 name|colmaplen
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|/*    printf("\tImage resource length: %lu\n", PSDheader.imgreslen);*/
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\tLayer/Mask Data length: %lu\n"
@@ -10289,13 +10838,14 @@ name|PSDheader
 operator|.
 name|miscsizelen
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|w
 operator|=
 name|PSDheader
 operator|.
 name|compression
 expr_stmt|;
+name|IFDBG
 name|printf
 argument_list|(
 literal|"\tCompression %d (%s)\n"
@@ -10308,7 +10858,7 @@ literal|"RLE"
 else|:
 literal|"raw"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 block|}
 end_function
 
