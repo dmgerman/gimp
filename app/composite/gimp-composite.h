@@ -1,68 +1,25 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Gimp Image Compositing  * Copyright (C) 2003  Helvetix Victorinox, a pseudonym,<helvetix@gimp.org>  * $Id$  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Gimp Image Compositing  * Copyright (C) 2003  Helvetix Victorinox, a pseudonym,<helvetix@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|gimp_composite_h
+name|__GIMP_COMPOSITE_H__
 end_ifndef
 
 begin_define
-DECL|macro|gimp_composite_h
+DECL|macro|__GIMP_COMPOSITE_H__
 define|#
 directive|define
-name|gimp_composite_h
+name|__GIMP_COMPOSITE_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"base/base-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint-funcs/paint-funcs-types.h"
-end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|NULL
-end_ifndef
-
-begin_define
-DECL|macro|NULL
-define|#
-directive|define
-name|NULL
-value|((void) 0)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_typedef
-DECL|enum|__anon29a10a8e0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2afb19f80103
 block|{
 DECL|enumerator|GIMP_PIXELFORMAT_V8
 name|GIMP_PIXELFORMAT_V8
@@ -105,12 +62,12 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a10a8e0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2afb19f80208
 block|{
 DECL|member|v
-name|u_int8_t
+name|guint8
 name|v
 decl_stmt|;
 DECL|typedef|gimp_v8_t
@@ -120,16 +77,16 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a10a8e0308
 typedef|typedef
 struct|struct
+DECL|struct|__anon2afb19f80308
 block|{
 DECL|member|v
-name|u_int8_t
+name|guint8
 name|v
 decl_stmt|;
 DECL|member|a
-name|u_int8_t
+name|guint8
 name|a
 decl_stmt|;
 DECL|typedef|gimp_va8_t
@@ -139,20 +96,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a10a8e0408
 typedef|typedef
 struct|struct
+DECL|struct|__anon2afb19f80408
 block|{
 DECL|member|r
-name|u_int8_t
+name|guint8
 name|r
 decl_stmt|;
 DECL|member|g
-name|u_int8_t
+name|guint8
 name|g
 decl_stmt|;
 DECL|member|b
-name|u_int8_t
+name|guint8
 name|b
 decl_stmt|;
 DECL|typedef|gimp_rgb8_t
@@ -162,24 +119,24 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a10a8e0508
 typedef|typedef
 struct|struct
+DECL|struct|__anon2afb19f80508
 block|{
 DECL|member|r
-name|u_int8_t
+name|guint8
 name|r
 decl_stmt|;
 DECL|member|g
-name|u_int8_t
+name|guint8
 name|g
 decl_stmt|;
 DECL|member|b
-name|u_int8_t
+name|guint8
 name|b
 decl_stmt|;
 DECL|member|a
-name|u_int8_t
+name|guint8
 name|a
 decl_stmt|;
 DECL|typedef|gimp_rgba8_t
@@ -195,12 +152,12 @@ name|GIMP_16BITCOLOUR
 end_ifdef
 
 begin_typedef
-DECL|struct|__anon29a10a8e0608
 typedef|typedef
 struct|struct
+DECL|struct|__anon2afb19f80608
 block|{
 DECL|member|v
-name|u_int16_t
+name|guint16
 name|v
 decl_stmt|;
 DECL|typedef|gimp_v16_t
@@ -210,16 +167,16 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a10a8e0708
 typedef|typedef
 struct|struct
+DECL|struct|__anon2afb19f80708
 block|{
 DECL|member|v
-name|u_int16_t
+name|guint16
 name|v
 decl_stmt|;
 DECL|member|a
-name|u_int16_t
+name|guint16
 name|a
 decl_stmt|;
 DECL|typedef|gimp_va16_t
@@ -229,20 +186,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a10a8e0808
 typedef|typedef
 struct|struct
+DECL|struct|__anon2afb19f80808
 block|{
 DECL|member|r
-name|u_int16_t
+name|guint16
 name|r
 decl_stmt|;
 DECL|member|g
-name|u_int16_t
+name|guint16
 name|g
 decl_stmt|;
 DECL|member|b
-name|u_int16_t
+name|guint16
 name|b
 decl_stmt|;
 DECL|typedef|gimp_rgb16_t
@@ -252,24 +209,24 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a10a8e0908
 typedef|typedef
 struct|struct
+DECL|struct|__anon2afb19f80908
 block|{
 DECL|member|r
-name|u_int16_t
+name|guint16
 name|r
 decl_stmt|;
 DECL|member|g
-name|u_int16_t
+name|guint16
 name|g
 decl_stmt|;
 DECL|member|b
-name|u_int16_t
+name|guint16
 name|b
 decl_stmt|;
 DECL|member|a
-name|u_int16_t
+name|guint16
 name|a
 decl_stmt|;
 DECL|typedef|gimp_rgba16_t
@@ -283,24 +240,15 @@ endif|#
 directive|endif
 end_endif
 
-begin_decl_stmt
-specifier|extern
-name|unsigned
-name|char
-name|gimp_composite_pixel_bpp
-index|[]
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* bytes per-pixel for each of the pixel formats */
 end_comment
 
 begin_decl_stmt
 specifier|extern
-name|unsigned
-name|char
-name|gimp_composite_pixel_alphap
+specifier|const
+name|guchar
+name|gimp_composite_pixel_bpp
 index|[]
 decl_stmt|;
 end_decl_stmt
@@ -311,8 +259,9 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|GimpPixelFormat
-name|gimp_composite_pixel_alpha
+specifier|const
+name|guchar
+name|gimp_composite_pixel_alphap
 index|[]
 decl_stmt|;
 end_decl_stmt
@@ -320,6 +269,15 @@ end_decl_stmt
 begin_comment
 comment|/* converter between alpha and non-alpha pixel formats */
 end_comment
+
+begin_decl_stmt
+specifier|extern
+specifier|const
+name|GimpPixelFormat
+name|gimp_composite_pixel_alpha
+index|[]
+decl_stmt|;
+end_decl_stmt
 
 begin_define
 DECL|macro|GIMP_COMPOSITE_ALPHA_OPAQUE
@@ -342,9 +300,9 @@ comment|/*  * This is the enumeration of all the supported compositing  * operat
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a10a8e0a03
 typedef|typedef
 enum|enum
+DECL|enum|__anon2afb19f80a03
 block|{
 DECL|enumerator|GIMP_COMPOSITE_NORMAL
 name|GIMP_COMPOSITE_NORMAL
@@ -505,18 +463,15 @@ struct|struct
 name|GimpCompositeOperationEffects
 block|{
 DECL|member|affect_opacity
-name|unsigned
-name|char
+name|guchar
 name|affect_opacity
 decl_stmt|;
 DECL|member|increase_opacity
-name|unsigned
-name|char
+name|guchar
 name|increase_opacity
 decl_stmt|;
 DECL|member|decrease_opacity
-name|unsigned
-name|char
+name|guchar
 name|decrease_opacity
 decl_stmt|;
 block|}
@@ -537,41 +492,36 @@ comment|/*  * This is structure for communicating all that is necessary to a  * 
 end_comment
 
 begin_typedef
-DECL|struct|__anon29a10a8e0b08
 typedef|typedef
 struct|struct
+DECL|struct|__anon2afb19f80b08
 block|{
 DECL|member|A
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|A
 decl_stmt|;
-comment|/* Source A */
+comment|/* Source A    */
 DECL|member|B
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|B
 decl_stmt|;
-comment|/* Source B */
+comment|/* Source B    */
 DECL|member|D
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|D
 decl_stmt|;
 comment|/* Destination */
 DECL|member|M
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|M
 decl_stmt|;
-comment|/* Mask */
+comment|/* Mask        */
 DECL|member|n_pixels
-name|unsigned
-name|long
+name|gulong
 name|n_pixels
 decl_stmt|;
 DECL|member|pixelformat_A
@@ -590,57 +540,57 @@ DECL|member|pixelformat_M
 name|GimpPixelFormat
 name|pixelformat_M
 decl_stmt|;
-DECL|struct|__anon29a10a8e0c08
+DECL|struct|__anon2afb19f80c08
 DECL|member|opacity
 DECL|member|affect
 DECL|member|replace
 struct|struct
 block|{
-name|int
+name|gint
 name|opacity
 decl_stmt|;
-name|char
+name|gchar
 name|affect
 decl_stmt|;
 block|}
 name|replace
 struct|;
-DECL|struct|__anon29a10a8e0d08
+DECL|struct|__anon2afb19f80d08
 DECL|member|scale
 DECL|member|scale
 struct|struct
 block|{
-name|int
+name|gint
 name|scale
 decl_stmt|;
 block|}
 name|scale
 struct|;
-DECL|struct|__anon29a10a8e0e08
+DECL|struct|__anon2afb19f80e08
 DECL|member|blend
 DECL|member|blend
 struct|struct
 block|{
-name|int
+name|gint
 name|blend
 decl_stmt|;
 block|}
 name|blend
 struct|;
-DECL|struct|__anon29a10a8e0f08
+DECL|struct|__anon2afb19f80f08
 DECL|member|x
 DECL|member|y
 DECL|member|opacity
 DECL|member|dissolve
 struct|struct
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|;
-name|int
+name|gint
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|opacity
 decl_stmt|;
 block|}
@@ -694,6 +644,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GIMP_COMPOSITE_H__  */
+end_comment
 
 end_unit
 

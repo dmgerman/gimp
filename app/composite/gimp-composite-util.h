@@ -2,43 +2,35 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|gimp_composite_util
+name|__GIMP_COMPOSITE_UTIL_H__
 end_ifndef
 
 begin_define
-DECL|macro|gimp_composite_util
+DECL|macro|__GIMP_COMPOSITE_UTIL_H__
 define|#
 directive|define
-name|gimp_composite_util
+name|__GIMP_COMPOSITE_UTIL_H__
 end_define
 
-begin_comment
-comment|/*  *  */
-end_comment
-
 begin_typedef
-DECL|struct|__anon29aa8fbd0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon27d4799e0108
 block|{
 DECL|member|r
-name|unsigned
-name|char
+name|guchar
 name|r
 decl_stmt|;
 DECL|member|g
-name|unsigned
-name|char
+name|guchar
 name|g
 decl_stmt|;
 DECL|member|b
-name|unsigned
-name|char
+name|guchar
 name|b
 decl_stmt|;
 DECL|member|a
-name|unsigned
-name|char
+name|guchar
 name|a
 decl_stmt|;
 DECL|typedef|rgba8_t
@@ -48,23 +40,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29aa8fbd0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon27d4799e0208
 block|{
 DECL|member|r
-name|unsigned
-name|char
+name|guchar
 name|r
 decl_stmt|;
 DECL|member|g
-name|unsigned
-name|char
+name|guchar
 name|g
 decl_stmt|;
 DECL|member|b
-name|unsigned
-name|char
+name|guchar
 name|b
 decl_stmt|;
 DECL|typedef|rgb8_t
@@ -74,13 +63,12 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29aa8fbd0308
 typedef|typedef
 struct|struct
+DECL|struct|__anon27d4799e0308
 block|{
 DECL|member|v
-name|unsigned
-name|char
+name|guchar
 name|v
 decl_stmt|;
 DECL|typedef|v8_t
@@ -90,18 +78,16 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29aa8fbd0408
 typedef|typedef
 struct|struct
+DECL|struct|__anon27d4799e0408
 block|{
 DECL|member|v
-name|unsigned
-name|char
+name|guchar
 name|v
 decl_stmt|;
 DECL|member|a
-name|unsigned
-name|char
+name|guchar
 name|a
 decl_stmt|;
 DECL|typedef|va8_t
@@ -122,6 +108,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GIMP_COMPOSITE_UTIL_H__ */
+end_comment
 
 end_unit
 

@@ -10,31 +10,31 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"glib/grand.h"
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"glib/gtypes.h"
+file|"base/base-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpcolor/gimpcolortypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpcolor/gimpcolorspace.h"
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
