@@ -170,6 +170,10 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GSList
+modifier|*
+name|file_procs
+parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory

@@ -691,6 +691,10 @@ name|gimp_file_dialog_new
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp
+operator|->
+name|save_procs
+argument_list|,
 name|menu_factory
 argument_list|,
 literal|"<Save>"

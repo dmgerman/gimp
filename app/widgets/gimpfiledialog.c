@@ -431,12 +431,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_file_dialog_new (Gimp * gimp,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * help_id)
+DECL|function|gimp_file_dialog_new (Gimp * gimp,GSList * file_procs,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * help_id)
 name|gimp_file_dialog_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GSList
+modifier|*
+name|file_procs
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -490,6 +494,15 @@ name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|file_procs
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
