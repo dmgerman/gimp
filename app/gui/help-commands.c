@@ -321,6 +321,10 @@ directive|include
 file|"undo_history.h"
 end_include
 
+begin_comment
+comment|/* for the example dialogs */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -5163,9 +5167,9 @@ literal|"Brush Grid"
 argument_list|,
 name|global_brush_list
 argument_list|,
-literal|24
+literal|32
 argument_list|,
-literal|24
+literal|32
 argument_list|)
 expr_stmt|;
 block|}

@@ -92,10 +92,10 @@ DECL|member|parent_instance
 name|GimpContainerView
 name|parent_instance
 decl_stmt|;
-DECL|member|wrapbox
+DECL|member|wrap_box
 name|GtkWidget
 modifier|*
-name|wrapbox
+name|wrap_box
 decl_stmt|;
 block|}
 struct|;
