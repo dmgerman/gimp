@@ -10,14 +10,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PATTERNS_H__
+name|__GIMP_PATTERNS_PDB_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PATTERNS_H__
+DECL|macro|__GIMP_PATTERNS_PDB_H__
 define|#
 directive|define
-name|__GIMP_PATTERNS_H__
+name|__GIMP_PATTERNS_PDB_H__
 end_define
 
 begin_ifdef
@@ -33,6 +33,7 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 name|gchar
 modifier|*
 name|gimp_patterns_get_pattern_data
@@ -55,7 +56,7 @@ name|mask_bpp
 parameter_list|,
 name|gint
 modifier|*
-name|mask_data_size
+name|length
 parameter_list|,
 name|guint8
 modifier|*
@@ -84,7 +85,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PATTERNS_H__ */
+comment|/* __GIMP_PATTERNS_PDB_H__ */
 end_comment
 
 end_unit

@@ -40,7 +40,7 @@ name|gimp_brushes_get_brush_data
 parameter_list|(
 name|gchar
 modifier|*
-name|brush_name
+name|name
 parameter_list|,
 name|gdouble
 modifier|*
@@ -64,7 +64,7 @@ name|height
 parameter_list|,
 name|gint
 modifier|*
-name|mask_data_size
+name|length
 parameter_list|,
 name|guint8
 modifier|*

@@ -16,7 +16,7 @@ end_include
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_patterns_get_pattern_data (gchar * name,gint * width,gint * height,gint * mask_bpp,gint * mask_data_size,guint8 ** mask_data)
+DECL|function|gimp_patterns_get_pattern_data (gchar * name,gint * width,gint * height,gint * mask_bpp,gint * length,guint8 ** mask_data)
 name|gimp_patterns_get_pattern_data
 parameter_list|(
 name|gchar
@@ -37,7 +37,7 @@ name|mask_bpp
 parameter_list|,
 name|gint
 modifier|*
-name|mask_data_size
+name|length
 parameter_list|,
 name|guint8
 modifier|*
@@ -51,6 +51,12 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gchar
+modifier|*
+name|ret_name
+init|=
+name|NULL
 decl_stmt|;
 name|return_vals
 operator|=
@@ -68,34 +74,10 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|name
-operator|=
-name|NULL
-expr_stmt|;
 operator|*
-name|width
+name|length
 operator|=
 literal|0
-expr_stmt|;
-operator|*
-name|height
-operator|=
-literal|0
-expr_stmt|;
-operator|*
-name|mask_bpp
-operator|=
-literal|0
-expr_stmt|;
-operator|*
-name|mask_data_size
-operator|=
-literal|0
-expr_stmt|;
-operator|*
-name|mask_data
-operator|=
-name|NULL
 expr_stmt|;
 if|if
 condition|(
@@ -111,7 +93,7 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|name
+name|ret_name
 operator|=
 name|g_strdup
 argument_list|(
@@ -162,7 +144,7 @@ operator|.
 name|d_int32
 expr_stmt|;
 operator|*
-name|mask_data_size
+name|length
 operator|=
 name|return_vals
 index|[
@@ -181,7 +163,7 @@ argument_list|(
 name|guint8
 argument_list|,
 operator|*
-name|mask_data_size
+name|length
 argument_list|)
 expr_stmt|;
 name|memcpy
@@ -199,7 +181,7 @@ operator|.
 name|d_int8array
 argument_list|,
 operator|*
-name|mask_data_size
+name|length
 operator|*
 sizeof|sizeof
 argument_list|(
@@ -216,7 +198,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|name
+name|ret_name
 return|;
 block|}
 end_function
