@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d711070108
+DECL|struct|__anon2c3fea130108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d711070208
+DECL|struct|__anon2c3fea130208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d711070308
+DECL|struct|__anon2c3fea130308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d711070408
+DECL|struct|__anon2c3fea130408
 block|{
 DECL|member|run
 name|gint
@@ -854,7 +854,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d711070508
+DECL|struct|__anon2c3fea130508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1725,7 +1725,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d711070608
+DECL|struct|__anon2c3fea130608
 block|{
 DECL|member|eol
 name|long
@@ -14149,6 +14149,9 @@ decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
+name|gimp_help_init
+argument_list|()
+expr_stmt|;
 name|vals
 operator|=
 name|g_new
@@ -14821,6 +14824,19 @@ literal|"Keep Aspect Ratio"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"When toggled, the resulting image will be scaled to fit "
+literal|"into the given size without changing the aspect ratio."
+argument_list|)
+argument_list|,
+literal|"#keep_aspect_ratio"
+argument_list|)
+operator|,
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
