@@ -1501,7 +1501,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  Create a new layer from the buffer  */
+comment|/* Create a new layer from the buffer, using the drawable's type    *  because it may be different from the image's type if we cut from    *  a channel or layer mask    */
 name|layer
 operator|=
 name|gimp_layer_new_from_tiles
@@ -1510,9 +1510,9 @@ name|tiles
 argument_list|,
 name|gimage
 argument_list|,
-name|gimp_image_base_type_with_alpha
+name|gimp_drawable_type_with_alpha
 argument_list|(
-name|gimage
+name|drawable
 argument_list|)
 argument_list|,
 name|_
