@@ -1781,13 +1781,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"Resize Error: Both width and height must be "
-literal|"greater than zero."
-argument_list|)
+literal|"Resize Error: "
+literal|"Both width and height must be greater than zero."
 argument_list|)
 expr_stmt|;
 block|}
@@ -1826,6 +1823,27 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|xresolution
+operator|==
+name|image
+operator|->
+name|xresolution
+operator|&&
+name|yresolution
+operator|==
+name|image
+operator|->
+name|yresolution
+operator|&&
+name|resolution_unit
+operator|==
+name|image
+operator|->
+name|resolution_unit
+condition|)
+return|return;
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -2051,13 +2069,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Scale Error: "
 literal|"Both width and height must be greater than zero."
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
