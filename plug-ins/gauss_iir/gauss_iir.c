@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ecae40108
+DECL|struct|__anon2a067e9f0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -73,7 +73,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ecae40208
+DECL|struct|__anon2a067e9f0208
 block|{
 DECL|member|run
 name|gint
@@ -444,7 +444,7 @@ literal|"plug_in_gauss_iir"
 argument_list|,
 literal|"Applies a gaussian blur to the specified drawable."
 argument_list|,
-literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  Horizontal and vertical blurring can be independent ly invoked by specifying only one to run.  The IIR gaussian blurring works best for large radius values and for images which are not computer-generated.  Values for radius less than 1.0 are invalid as they will generate spurious results."
+literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  Horizontal and vertical blurring can be independently invoked by specifying only one to run.  The IIR gaussian blurring works best for large radius values and for images which are not computer-generated.  Values for radius less than 1.0 are invalid as they will generate spurious results."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
