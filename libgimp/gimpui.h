@@ -25,7 +25,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmenu.h>
+file|"libgimp/gimpmenu.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpexport.h"
 end_include
 
 begin_endif

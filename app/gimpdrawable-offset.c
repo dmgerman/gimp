@@ -3067,6 +3067,31 @@ argument_list|(
 name|new_gimage
 argument_list|)
 expr_stmt|;
+comment|/*  Copy resolution and unit information  */
+name|new_gimage
+operator|->
+name|xresolution
+operator|=
+name|gimage
+operator|->
+name|xresolution
+expr_stmt|;
+name|new_gimage
+operator|->
+name|yresolution
+operator|=
+name|gimage
+operator|->
+name|yresolution
+expr_stmt|;
+name|new_gimage
+operator|->
+name|unit
+operator|=
+name|gimage
+operator|->
+name|unit
+expr_stmt|;
 comment|/*  Copy-on-write the projection tilemanager so we don't have    *  to reproject the new gimage - since if we do the duplicate    *  operation correctly, the projection for the new gimage is    *  identical to that of the source.    */
 name|new_gimage
 operator|->
