@@ -336,6 +336,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -474,6 +476,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -663,6 +667,8 @@ literal|"Raphael Quinet"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -849,6 +855,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1037,6 +1045,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -1224,6 +1234,8 @@ literal|"Adam D. Moss"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -1410,6 +1422,8 @@ block|,
 literal|"Adam D. Moss"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

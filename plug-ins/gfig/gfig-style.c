@@ -2672,6 +2672,9 @@ modifier|*
 name|name
 parameter_list|)
 block|{
+name|gint
+name|dummy
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2744,6 +2747,12 @@ operator|&
 name|style
 operator|->
 name|brush_height
+argument_list|,
+operator|&
+name|dummy
+argument_list|,
+operator|&
+name|dummy
 argument_list|)
 expr_stmt|;
 name|gimp_brush_get_spacing
@@ -3205,6 +3214,9 @@ init|=
 name|gimp_context_get_brush
 argument_list|()
 decl_stmt|;
+name|gint
+name|dummy
+decl_stmt|;
 if|if
 condition|(
 name|name
@@ -3216,6 +3228,12 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|,
+operator|&
+name|dummy
+argument_list|,
+operator|&
+name|dummy
 argument_list|)
 condition|)
 block|{

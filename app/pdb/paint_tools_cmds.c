@@ -825,6 +825,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|4
@@ -1089,6 +1091,8 @@ block|,
 literal|"Andy Thomas"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1515,6 +1519,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|7
@@ -1779,6 +1785,8 @@ block|,
 literal|"Andy Thomas"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2132,6 +2140,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|5
@@ -2396,6 +2406,8 @@ block|,
 literal|"Andy Thomas"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2789,6 +2801,8 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|6
@@ -3053,6 +3067,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3406,6 +3422,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|5
@@ -3670,6 +3688,8 @@ block|,
 literal|"Andy Thomas"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -4067,6 +4087,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|6
@@ -4332,6 +4354,8 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|3
@@ -4596,6 +4620,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -4909,6 +4935,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|4
@@ -5173,6 +5201,8 @@ block|,
 literal|"Andy Thomas"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

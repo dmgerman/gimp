@@ -295,6 +295,11 @@ modifier|*
 name|date
 decl_stmt|;
 comment|/*  Date field  */
+DECL|member|deprecated
+name|gboolean
+name|deprecated
+decl_stmt|;
+comment|/*  Is the procedure deprecated?  */
 comment|/*  Procedure type  */
 DECL|member|proc_type
 name|GimpPDBProcType

@@ -237,6 +237,8 @@ literal|"Michael Natterer"
 block|,
 literal|"2002"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|0
@@ -465,6 +467,8 @@ block|,
 literal|"Federico Mena Quintero"
 block|,
 literal|"1997"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -802,6 +806,8 @@ block|,
 literal|""
 block|,
 literal|""
+block|,
+name|TRUE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1147,6 +1153,8 @@ block|,
 literal|""
 block|,
 literal|""
+block|,
+name|TRUE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1605,6 +1613,8 @@ block|,
 literal|""
 block|,
 literal|""
+block|,
+name|TRUE
 block|,
 name|GIMP_INTERNAL
 block|,

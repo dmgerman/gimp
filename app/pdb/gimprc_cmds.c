@@ -393,6 +393,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -614,6 +616,8 @@ literal|"Seth Burgess"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
@@ -742,6 +746,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -902,6 +908,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|0
@@ -1027,6 +1035,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1155,6 +1165,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

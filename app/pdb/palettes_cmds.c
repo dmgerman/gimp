@@ -227,6 +227,8 @@ literal|"Adrian Likins"
 block|,
 literal|"1998"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|0
@@ -456,6 +458,8 @@ literal|"Nathan Summers"
 block|,
 literal|"2001"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -624,6 +628,8 @@ block|,
 literal|""
 block|,
 literal|""
+block|,
+name|TRUE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -984,6 +990,8 @@ block|,
 literal|""
 block|,
 literal|""
+block|,
+name|TRUE
 block|,
 name|GIMP_INTERNAL
 block|,

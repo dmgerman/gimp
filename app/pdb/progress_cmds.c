@@ -324,6 +324,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
@@ -470,6 +472,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -643,6 +647,8 @@ literal|"Michael Natterer"
 block|,
 literal|"2004"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -815,6 +821,8 @@ literal|"Michael Natterer"
 block|,
 literal|"2004"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -986,6 +994,8 @@ block|,
 literal|"Michael Natterer"
 block|,
 literal|"2004"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

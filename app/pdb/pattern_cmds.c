@@ -368,6 +368,8 @@ literal|"Michael Natterer"
 block|,
 literal|"2004"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -425,13 +427,13 @@ modifier|*
 name|name
 decl_stmt|;
 name|gint32
-name|num_mask_bytes
+name|num_color_bytes
 init|=
 literal|0
 decl_stmt|;
 name|guint8
 modifier|*
-name|mask_bytes
+name|color_bytes
 init|=
 name|NULL
 decl_stmt|;
@@ -504,7 +506,7 @@ condition|(
 name|pattern
 condition|)
 block|{
-name|num_mask_bytes
+name|num_color_bytes
 operator|=
 name|pattern
 operator|->
@@ -524,7 +526,7 @@ name|mask
 operator|->
 name|bytes
 expr_stmt|;
-name|mask_bytes
+name|color_bytes
 operator|=
 name|g_memdup
 argument_list|(
@@ -535,7 +537,7 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
-name|num_mask_bytes
+name|num_color_bytes
 argument_list|)
 expr_stmt|;
 block|}
@@ -614,7 +616,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|num_mask_bytes
+name|num_color_bytes
 expr_stmt|;
 name|return_args
 index|[
@@ -625,7 +627,7 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
-name|mask_bytes
+name|color_bytes
 expr_stmt|;
 block|}
 return|return
@@ -688,17 +690,17 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_mask_bytes"
+literal|"num_color_bytes"
 block|,
-literal|"Length of pattern mask data"
+literal|"Number of pattern bytes"
 block|}
 block|,
 block|{
 name|GIMP_PDB_INT8ARRAY
 block|,
-literal|"mask_bytes"
+literal|"color_bytes"
 block|,
-literal|"The pattern mask data"
+literal|"The pattern data."
 block|}
 block|}
 decl_stmt|;
@@ -722,6 +724,8 @@ block|,
 literal|"Michael Natterer"
 block|,
 literal|"2004"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

@@ -621,6 +621,8 @@ literal|"Josh MacDonald"
 block|,
 literal|"1997"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|3
@@ -945,6 +947,8 @@ block|,
 literal|"Josh MacDonald"
 block|,
 literal|"1997"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1392,6 +1396,8 @@ literal|"Adam D. Moss, Sven Neumann"
 block|,
 literal|"1999-2003"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -1676,6 +1682,8 @@ literal|"Josh MacDonald"
 block|,
 literal|"1997"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
@@ -1938,6 +1946,8 @@ block|,
 literal|"Josh MacDonald"
 block|,
 literal|"1997"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2335,6 +2345,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|4
@@ -2498,6 +2510,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2873,6 +2887,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|3
@@ -3079,6 +3095,8 @@ block|,
 literal|"Sven Neumann"
 block|,
 literal|"2004"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

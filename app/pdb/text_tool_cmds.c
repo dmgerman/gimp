@@ -685,6 +685,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998- 2001"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|10
@@ -1101,6 +1103,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998- 2001"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1916,6 +1920,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998"
 block|,
+name|TRUE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|17
@@ -2580,6 +2586,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998"
+block|,
+name|TRUE
 block|,
 name|GIMP_INTERNAL
 block|,

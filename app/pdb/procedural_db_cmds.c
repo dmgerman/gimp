@@ -1609,6 +1609,8 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|0
@@ -1781,6 +1783,8 @@ block|,
 literal|"Spencer Kimball& Josh MacDonald& Peter Mattis"
 block|,
 literal|"1995-1996"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2401,6 +2405,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|7
@@ -2883,6 +2889,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -3228,6 +3236,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3575,6 +3585,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
@@ -3829,6 +3841,8 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -4043,6 +4057,8 @@ literal|"Nick Lamb"
 block|,
 literal|"1998"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -4254,6 +4270,8 @@ block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1997"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

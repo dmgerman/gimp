@@ -1066,6 +1066,8 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -1277,6 +1279,8 @@ block|,
 literal|"Sven Neumann"
 block|,
 literal|"2000"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1510,6 +1514,8 @@ block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"2000"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1924,6 +1930,8 @@ literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"2004"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
@@ -2328,6 +2336,8 @@ block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"2004"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

@@ -69,12 +69,12 @@ name|bpp
 parameter_list|,
 name|gint
 modifier|*
-name|num_mask_bytes
+name|num_color_bytes
 parameter_list|,
 name|guint8
 modifier|*
 modifier|*
-name|mask_bytes
+name|color_bytes
 parameter_list|)
 function_decl|;
 end_function_decl

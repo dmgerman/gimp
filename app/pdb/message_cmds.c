@@ -276,6 +276,8 @@ literal|"Manish Singh"
 block|,
 literal|"1998"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -389,6 +391,8 @@ block|,
 literal|"Manish Singh"
 block|,
 literal|"1998"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -525,6 +529,8 @@ block|,
 literal|"Manish Singh"
 block|,
 literal|"1998"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

@@ -160,6 +160,8 @@ literal|"Sven Neumann"
 block|,
 literal|"2003"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|0
@@ -386,6 +388,8 @@ block|,
 literal|"Sven Neumann"
 block|,
 literal|"2003"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

@@ -164,12 +164,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pattern_get_pixels:  * @name: The pattern name.  * @width: The pattern width.  * @height: The pattern height.  * @bpp: The pattern bpp.  * @num_mask_bytes: Length of pattern mask data.  * @mask_bytes: The pattern mask data.  *  * Retrieve information about the specified pattern (including pixels).  *  * This procedure retrieves information about the specified. This  * includes the pattern extents (width and height), its bpp and its  * pixel data.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_pattern_get_pixels:  * @name: The pattern name.  * @width: The pattern width.  * @height: The pattern height.  * @bpp: The pattern bpp.  * @num_color_bytes: Number of pattern bytes.  * @color_bytes: The pattern data.  *  * Retrieve information about the specified pattern (including pixels).  *  * This procedure retrieves information about the specified. This  * includes the pattern extents (width and height), its bpp and its  * pixel data.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_pattern_get_pixels (const gchar * name,gint * width,gint * height,gint * bpp,gint * num_mask_bytes,guint8 ** mask_bytes)
+DECL|function|gimp_pattern_get_pixels (const gchar * name,gint * width,gint * height,gint * bpp,gint * num_color_bytes,guint8 ** color_bytes)
 name|gimp_pattern_get_pixels
 parameter_list|(
 specifier|const
@@ -191,12 +191,12 @@ name|bpp
 parameter_list|,
 name|gint
 modifier|*
-name|num_mask_bytes
+name|num_color_bytes
 parameter_list|,
 name|guint8
 modifier|*
 modifier|*
-name|mask_bytes
+name|color_bytes
 parameter_list|)
 block|{
 name|GimpParam
@@ -243,12 +243,12 @@ operator|=
 literal|0
 expr_stmt|;
 operator|*
-name|num_mask_bytes
+name|num_color_bytes
 operator|=
 literal|0
 expr_stmt|;
 operator|*
-name|mask_bytes
+name|color_bytes
 operator|=
 name|NULL
 expr_stmt|;
@@ -307,7 +307,7 @@ operator|.
 name|d_int32
 expr_stmt|;
 operator|*
-name|num_mask_bytes
+name|num_color_bytes
 operator|=
 name|return_vals
 index|[
@@ -319,20 +319,20 @@ operator|.
 name|d_int32
 expr_stmt|;
 operator|*
-name|mask_bytes
+name|color_bytes
 operator|=
 name|g_new
 argument_list|(
 name|guint8
 argument_list|,
 operator|*
-name|num_mask_bytes
+name|num_color_bytes
 argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
 operator|*
-name|mask_bytes
+name|color_bytes
 argument_list|,
 name|return_vals
 index|[
@@ -344,7 +344,7 @@ operator|.
 name|d_int8array
 argument_list|,
 operator|*
-name|num_mask_bytes
+name|num_color_bytes
 operator|*
 sizeof|sizeof
 argument_list|(

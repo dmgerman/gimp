@@ -344,6 +344,8 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|0
@@ -458,6 +460,8 @@ block|,
 literal|"Michael Natterer"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -905,6 +909,8 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|7
@@ -1081,6 +1087,8 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -1248,6 +1256,8 @@ block|,
 literal|"Michael Natterer"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1428,6 +1438,8 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -1604,6 +1616,8 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -1779,6 +1793,8 @@ block|,
 literal|"Michael Natterer"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1959,6 +1975,8 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -2137,6 +2155,8 @@ block|,
 literal|"Michael Natterer"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2317,6 +2337,8 @@ literal|"Michael Natterer"
 block|,
 literal|"1999"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
@@ -2495,6 +2517,8 @@ block|,
 literal|"Michael Natterer"
 block|,
 literal|"1999"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,

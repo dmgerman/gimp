@@ -390,6 +390,8 @@ literal|"Adam D. Moss"
 block|,
 literal|"1998"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
@@ -641,6 +643,8 @@ literal|"Adam D. Moss"
 block|,
 literal|"1998"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
@@ -871,6 +875,8 @@ block|,
 literal|"Adam D. Moss"
 block|,
 literal|"1998"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1199,6 +1205,8 @@ literal|"Adam D. Moss"
 block|,
 literal|"1998"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
@@ -1474,6 +1482,8 @@ literal|"Adam D. Moss"
 block|,
 literal|"1998"
 block|,
+name|FALSE
+block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
@@ -1748,6 +1758,8 @@ block|,
 literal|"Adam D. Moss"
 block|,
 literal|"1998"
+block|,
+name|FALSE
 block|,
 name|GIMP_INTERNAL
 block|,
