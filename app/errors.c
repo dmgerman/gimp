@@ -550,7 +550,7 @@ directive|endif
 comment|/* ! G_OS_WIN32 */
 name|exit
 argument_list|(
-literal|1
+name|EXIT_FAILURE
 argument_list|)
 expr_stmt|;
 block|}

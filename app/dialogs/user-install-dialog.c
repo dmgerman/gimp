@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7630060103
+DECL|enum|__anon2bf5edc20103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7630060203
+DECL|enum|__anon2bf5edc20203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7630060303
+DECL|enum|__anon2bf5edc20303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b7630060408
+DECL|struct|__anon2bf5edc20408
 block|{
 DECL|member|directory
 name|gboolean
@@ -1335,7 +1335,7 @@ name|timeout_id
 condition|)
 name|exit
 argument_list|(
-literal|0
+name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy

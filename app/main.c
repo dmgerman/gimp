@@ -1633,7 +1633,7 @@ name|restore_session
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|EXIT_SUCCESS
 return|;
 block|}
 end_function
@@ -1895,9 +1895,9 @@ name|exit
 argument_list|(
 name|fail
 condition|?
-literal|1
+name|EXIT_FAILURE
 else|:
-literal|0
+name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 block|}
