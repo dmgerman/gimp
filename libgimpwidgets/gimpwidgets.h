@@ -109,6 +109,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpframe.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimphelpui.h>
 end_include
 
