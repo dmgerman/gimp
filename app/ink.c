@@ -3738,7 +3738,13 @@ name|state
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*  theoretically, this should work. Dunno why it doesn't --Michael       gdk_pointer_grab (brush_widget->widget->window, TRUE, 			GDK_POINTER_MOTION_HINT_MASK | 			GDK_BUTTON1_MOTION_MASK | 			GDK_BUTTON_RELEASE_MASK, 			NULL, NULL, event->time);       */
+name|gtk_grab_add
+argument_list|(
+name|brush_widget
+operator|->
+name|widget
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -3768,7 +3774,13 @@ name|state
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*   gdk_pointer_ungrab (event->time);   */
+name|gtk_grab_remove
+argument_list|(
+name|brush_widget
+operator|->
+name|widget
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -6451,7 +6463,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2a52b2490103
+DECL|enum|__anon28931b450103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

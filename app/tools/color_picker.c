@@ -6,18 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -128,11 +116,11 @@ name|ToolOptions
 name|tool_options
 decl_stmt|;
 DECL|member|sample_merged
-name|int
+name|gint
 name|sample_merged
 decl_stmt|;
 DECL|member|sample_merged_d
-name|int
+name|gint
 name|sample_merged_d
 decl_stmt|;
 DECL|member|sample_merged_w
@@ -141,11 +129,11 @@ modifier|*
 name|sample_merged_w
 decl_stmt|;
 DECL|member|sample_average
-name|int
+name|gint
 name|sample_average
 decl_stmt|;
 DECL|member|sample_average_d
-name|int
+name|gint
 name|sample_average_d
 decl_stmt|;
 DECL|member|sample_average_w
@@ -154,11 +142,11 @@ modifier|*
 name|sample_average_w
 decl_stmt|;
 DECL|member|average_radius
-name|double
+name|gdouble
 name|average_radius
 decl_stmt|;
 DECL|member|average_radius_d
-name|double
+name|gdouble
 name|average_radius_d
 decl_stmt|;
 DECL|member|average_radius_w
@@ -171,18 +159,18 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|ColourPickerTool
+DECL|typedef|ColorPickerTool
 typedef|typedef
 name|struct
-name|_ColourPickerTool
-name|ColourPickerTool
+name|_ColorPickerTool
+name|ColorPickerTool
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_ColourPickerTool
+DECL|struct|_ColorPickerTool
 struct|struct
-name|_ColourPickerTool
+name|_ColorPickerTool
 block|{
 DECL|member|core
 name|DrawCore
@@ -191,12 +179,12 @@ name|core
 decl_stmt|;
 comment|/*  Core select object          */
 DECL|member|centerx
-name|int
+name|gint
 name|centerx
 decl_stmt|;
 comment|/*  starting x coord            */
 DECL|member|centery
-name|int
+name|gint
 name|centery
 decl_stmt|;
 comment|/*  starting y coord            */
@@ -225,7 +213,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|col_value
-name|int
+name|gint
 name|col_value
 index|[
 literal|5
@@ -250,18 +238,9 @@ comment|/*  the color picker dialog  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|active_drawable
-specifier|static
-name|GimpDrawable
-modifier|*
-name|active_drawable
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|update_type
 specifier|static
-name|int
+name|gint
 name|update_type
 decl_stmt|;
 end_decl_stmt
@@ -269,7 +248,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sample_type
 specifier|static
-name|int
+name|gint
 name|sample_type
 decl_stmt|;
 end_decl_stmt
@@ -288,7 +267,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|red_buf
 specifier|static
-name|char
+name|gchar
 name|red_buf
 index|[
 name|MAX_INFO_BUF
@@ -299,7 +278,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|green_buf
 specifier|static
-name|char
+name|gchar
 name|green_buf
 index|[
 name|MAX_INFO_BUF
@@ -310,7 +289,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|blue_buf
 specifier|static
-name|char
+name|gchar
 name|blue_buf
 index|[
 name|MAX_INFO_BUF
@@ -321,7 +300,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|alpha_buf
 specifier|static
-name|char
+name|gchar
 name|alpha_buf
 index|[
 name|MAX_INFO_BUF
@@ -332,7 +311,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|index_buf
 specifier|static
-name|char
+name|gchar
 name|index_buf
 index|[
 name|MAX_INFO_BUF
@@ -343,7 +322,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gray_buf
 specifier|static
-name|char
+name|gchar
 name|gray_buf
 index|[
 name|MAX_INFO_BUF
@@ -354,7 +333,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|hex_buf
 specifier|static
-name|char
+name|gchar
 name|hex_buf
 index|[
 name|MAX_INFO_BUF
@@ -466,7 +445,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -572,16 +551,11 @@ decl_stmt|;
 comment|/*  the new color picker tool options structure  */
 name|options
 operator|=
-operator|(
-name|ColorPickerOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ColorPickerOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|tool_options_init
@@ -1121,11 +1095,11 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|ColourPickerTool
+name|ColorPickerTool
 modifier|*
 name|cp_tool
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -1161,48 +1135,44 @@ expr_stmt|;
 name|cp_tool
 operator|=
 operator|(
-name|ColourPickerTool
+name|ColorPickerTool
 operator|*
 operator|)
 name|tool
 operator|->
 name|private
 expr_stmt|;
-comment|/*  If this is the first invocation of the tool, or a different gdisplay,    *  create (or recreate) the info dialog...    */
-if|if
-condition|(
-name|tool
-operator|->
-name|state
-operator|==
-name|INACTIVE
-operator|||
-name|gdisp_ptr
-operator|!=
+comment|/*  Make the tool active and set it's gdisplay& drawable  */
 name|tool
 operator|->
 name|gdisp_ptr
-operator|||
-name|active_drawable
-operator|!=
+operator|=
+name|gdisp
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
 name|gimage_active_drawable
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|)
-condition|)
-block|{
-comment|/*  if the dialog exists, free it  */
+expr_stmt|;
+name|tool
+operator|->
+name|state
+operator|=
+name|ACTIVE
+expr_stmt|;
+comment|/*  create the info dialog if it doesn't exist  */
 if|if
 condition|(
+operator|!
 name|color_picker_info
 condition|)
-name|info_dialog_free
-argument_list|(
-name|color_picker_info
-argument_list|)
-expr_stmt|;
+block|{
 name|color_picker_info
 operator|=
 name|info_dialog_new
@@ -1213,21 +1183,14 @@ literal|"Color Picker"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|active_drawable
-operator|=
-name|gimage_active_drawable
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  if the gdisplay is for a color image, the dialog must have RGB  */
 switch|switch
 condition|(
 name|drawable_type
 argument_list|(
-name|active_drawable
+name|tool
+operator|->
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1505,19 +1468,6 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
-comment|/*  Make the tool active and set the gdisplay which owns it  */
-name|tool
-operator|->
-name|gdisp_ptr
-operator|=
-name|gdisp_ptr
-expr_stmt|;
-name|tool
-operator|->
-name|state
-operator|=
-name|ACTIVE
-expr_stmt|;
 comment|/*  First, transform the coordinates to gimp image space  */
 name|gdisplay_untransform_coords
 argument_list|(
@@ -1562,7 +1512,9 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|active_drawable
+name|tool
+operator|->
+name|drawable
 argument_list|,
 name|x
 argument_list|,
@@ -1601,7 +1553,9 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|active_drawable
+name|tool
+operator|->
+name|drawable
 argument_list|,
 name|x
 argument_list|,
@@ -1628,7 +1582,7 @@ operator|=
 name|COLOR_UPDATE
 expr_stmt|;
 block|}
-comment|/*  Start drawing the colourpicker tool  */
+comment|/*  Start drawing the colorpicker tool  */
 name|draw_core_start
 argument_list|(
 name|cp_tool
@@ -1669,11 +1623,11 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|ColourPickerTool
+name|ColorPickerTool
 modifier|*
 name|cp_tool
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -1699,7 +1653,7 @@ expr_stmt|;
 name|cp_tool
 operator|=
 operator|(
-name|ColourPickerTool
+name|ColorPickerTool
 operator|*
 operator|)
 name|tool
@@ -1740,7 +1694,9 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|active_drawable
+name|tool
+operator|->
+name|drawable
 argument_list|,
 name|x
 argument_list|,
@@ -1802,7 +1758,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|ColourPickerTool
+name|ColorPickerTool
 modifier|*
 name|cp_tool
 decl_stmt|;
@@ -1822,7 +1778,7 @@ expr_stmt|;
 name|cp_tool
 operator|=
 operator|(
-name|ColourPickerTool
+name|ColorPickerTool
 operator|*
 operator|)
 name|tool
@@ -1900,7 +1856,9 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|active_drawable
+name|tool
+operator|->
+name|drawable
 argument_list|,
 name|x
 argument_list|,
@@ -2041,14 +1999,14 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|ColourPickerTool
+name|ColorPickerTool
 modifier|*
 name|cp_tool
 decl_stmt|;
 name|cp_tool
 operator|=
 operator|(
-name|ColourPickerTool
+name|ColorPickerTool
 operator|*
 operator|)
 name|tool
@@ -2126,8 +2084,8 @@ function_decl|;
 end_typedef
 
 begin_function
-name|int
-DECL|function|pick_color (GimpImage * gimage,GimpDrawable * drawable,int x,int y,gboolean sample_merged,gboolean sample_average,double average_radius,int final)
+name|gboolean
+DECL|function|pick_color (GimpImage * gimage,GimpDrawable * drawable,gint x,gint y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,gint final)
 name|pick_color
 parameter_list|(
 name|GimpImage
@@ -2138,10 +2096,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
 name|gboolean
@@ -2150,10 +2108,10 @@ parameter_list|,
 name|gboolean
 name|sample_average
 parameter_list|,
-name|double
+name|gdouble
 name|average_radius
 parameter_list|,
-name|int
+name|gint
 name|final
 parameter_list|)
 block|{
@@ -2161,15 +2119,15 @@ name|guchar
 modifier|*
 name|color
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy
 decl_stmt|;
-name|int
+name|gint
 name|has_alpha
 decl_stmt|;
-name|int
+name|gint
 name|is_indexed
 decl_stmt|;
 name|GetColorFunc
@@ -2306,17 +2264,17 @@ condition|(
 name|sample_average
 condition|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|count
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|color_avg
 index|[
 literal|4
@@ -2336,11 +2294,11 @@ name|guchar
 modifier|*
 name|tmp_color
 decl_stmt|;
-name|int
+name|gint
 name|radius
 init|=
 operator|(
-name|int
+name|gint
 operator|)
 name|average_radius
 decl_stmt|;
@@ -2619,8 +2577,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colourpicker_draw (Tool * tool)
-name|colourpicker_draw
+DECL|function|colorpicker_draw (Tool * tool)
+name|colorpicker_draw
 parameter_list|(
 name|Tool
 modifier|*
@@ -2631,21 +2589,21 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|ColourPickerTool
+name|ColorPickerTool
 modifier|*
 name|cp_tool
 decl_stmt|;
-name|int
+name|gint
 name|tx
 decl_stmt|,
 name|ty
 decl_stmt|;
-name|int
+name|gint
 name|radiusx
 decl_stmt|,
 name|radiusy
 decl_stmt|;
-name|int
+name|gint
 name|cx
 decl_stmt|,
 name|cy
@@ -2671,7 +2629,7 @@ expr_stmt|;
 name|cp_tool
 operator|=
 operator|(
-name|ColourPickerTool
+name|ColorPickerTool
 operator|*
 operator|)
 name|tool
@@ -2696,7 +2654,7 @@ argument_list|,
 operator|&
 name|ty
 argument_list|,
-literal|1
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|radiusx
@@ -2840,14 +2798,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_info_update (Tool * tool,int valid)
+DECL|function|color_picker_info_update (Tool * tool,gboolean valid)
 name|color_picker_info_update
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|gboolean
 name|valid
 parameter_list|)
 block|{
@@ -3269,6 +3227,32 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|color_picker_info_window_close_callback (GtkWidget * widget,gpointer client_data)
+name|color_picker_info_window_close_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|info_dialog_popdown
+argument_list|(
+operator|(
+name|InfoDialog
+operator|*
+operator|)
+name|client_data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|Tool
 modifier|*
 DECL|function|tools_new_color_picker ()
@@ -3279,7 +3263,7 @@ name|Tool
 modifier|*
 name|tool
 decl_stmt|;
-name|ColourPickerTool
+name|ColorPickerTool
 modifier|*
 name|private
 decl_stmt|;
@@ -3316,16 +3300,11 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-operator|(
-name|ColourPickerTool
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|ColourPickerTool
-argument_list|)
+name|ColorPickerTool
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|private
@@ -3334,9 +3313,16 @@ name|core
 operator|=
 name|draw_core_new
 argument_list|(
-name|colourpicker_draw
+name|colorpicker_draw
 argument_list|)
 expr_stmt|;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  Don't preserve on drawable change  */
 name|tool
 operator|->
 name|private
@@ -3393,14 +3379,14 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|ColourPickerTool
+name|ColorPickerTool
 modifier|*
 name|cp_tool
 decl_stmt|;
 name|cp_tool
 operator|=
 operator|(
-name|ColourPickerTool
+name|ColorPickerTool
 operator|*
 operator|)
 name|tool
@@ -3449,32 +3435,6 @@ block|}
 name|g_free
 argument_list|(
 name|cp_tool
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|color_picker_info_window_close_callback (GtkWidget * widget,gpointer client_data)
-name|color_picker_info_window_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-block|{
-name|info_dialog_popdown
-argument_list|(
-operator|(
-name|InfoDialog
-operator|*
-operator|)
-name|client_data
 argument_list|)
 expr_stmt|;
 block|}
