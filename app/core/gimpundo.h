@@ -22,6 +22,14 @@ directive|include
 file|"gimpviewable.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_UNDO_PREVIEW_SIZE
+define|#
+directive|define
+name|GIMP_UNDO_PREVIEW_SIZE
+value|GIMP_PREVIEW_SIZE_EXTRA_LARGE
+end_define
+
 begin_struct
 DECL|struct|_GimpUndoAccumulator
 struct|struct

@@ -356,7 +356,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_UNDO_PREVIEW_SIZE
 argument_list|,
 name|FALSE
 argument_list|,
