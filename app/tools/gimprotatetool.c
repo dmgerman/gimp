@@ -1737,16 +1737,26 @@ operator|->
 name|value
 argument_list|)
 expr_stmt|;
+DECL|macro|ANGLE_EPSILON
+define|#
+directive|define
+name|ANGLE_EPSILON
+value|0.0001
 if|if
 condition|(
+name|ABS
+argument_list|(
 name|value
-operator|!=
+operator|-
 name|transform_tool
 operator|->
 name|trans_info
 index|[
 name|ANGLE
 index|]
+argument_list|)
+operator|>
+name|ANGLE_EPSILON
 condition|)
 block|{
 name|gimp_draw_tool_pause
@@ -1784,6 +1794,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+undef|#
+directive|undef
+name|ANGLE_EPSILON
 block|}
 end_function
 

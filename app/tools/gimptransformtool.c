@@ -1599,6 +1599,10 @@ operator|->
 name|function
 operator|==
 name|TRANSFORM_CREATING
+operator|&&
+name|tr_tool
+operator|->
+name|use_grid
 condition|)
 return|return;
 comment|/*  if the 3rd button isn't pressed, transform the selected mask  */
@@ -1773,6 +1777,11 @@ operator|->
 name|function
 operator|==
 name|TRANSFORM_CREATING
+operator|||
+operator|!
+name|tr_tool
+operator|->
+name|use_grid
 condition|)
 return|return;
 name|gimp_draw_tool_pause
@@ -2014,6 +2023,14 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|tr_tool
+operator|->
+name|use_grid
+condition|)
+return|return;
 if|if
 condition|(
 name|gdisp
