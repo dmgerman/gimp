@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f1b540103
+DECL|enum|__anon27d423be0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4396,7 +4396,7 @@ argument_list|)
 expr_stmt|;
 name|uri
 operator|=
-name|gimp_object_get_name
+name|gimp_image_get_uri
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -4404,14 +4404,15 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+name|g_return_val_if_fail
+argument_list|(
 name|uri
-condition|)
-return|return
+operator|!=
 name|NULL
-return|;
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_filename_from_uri
 argument_list|(
