@@ -532,6 +532,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|palette
+operator|->
+name|n_colors
+condition|)
+return|return
+name|FALSE
+return|;
+if|if
+condition|(
 name|palette
 operator|->
 name|n_columns
