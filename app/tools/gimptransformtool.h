@@ -341,11 +341,6 @@ name|gboolean
 name|interactive
 decl_stmt|;
 comment|/*  tool is interactive         */
-DECL|member|bpressed
-name|gboolean
-name|bpressed
-decl_stmt|;
-comment|/*  Bug work around make sure we have  				 *  a button pressed before we deal with 				 *  motion events. ALT. 				 */
 DECL|member|ngx
 DECL|member|ngy
 name|gint

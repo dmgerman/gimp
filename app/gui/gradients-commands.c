@@ -865,7 +865,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"\t[%f color rgbt<%f, %f, %f, %f>]\n"
+literal|"\t[%f color rgbt<%s, %s, %s, %s>]\n"
 argument_list|,
 name|seg
 operator|->
@@ -971,7 +971,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"\t[%f color rgbt<%f, %f, %f, %f>]\n"
+literal|"\t[%f color rgbt<%s, %s, %s, %s>]\n"
 argument_list|,
 name|seg
 operator|->

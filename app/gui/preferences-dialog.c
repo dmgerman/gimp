@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"resolution-calibrate-dialog.h"
 end_include
 
@@ -168,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3f2bf50103
+DECL|enum|__anon2ba9d4070103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -4215,10 +4209,20 @@ operator|!=
 name|old_preview_size
 condition|)
 block|{
-comment|/* lc_dialog_rebuild (old_preview_size); FIXME: update preview size */
-name|layer_select_update_preview_size
-argument_list|()
-expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: update preview size
+endif|#
+directive|endif
+if|#
+directive|if
+literal|0
+block|lc_dialog_rebuild (old_preview_size);
+endif|#
+directive|endif
 block|}
 if|if
 condition|(
@@ -4475,6 +4479,26 @@ operator|=
 name|gtk_widget_get_toplevel
 argument_list|(
 name|widget
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GTK_IS_MENU_SHELL
+argument_list|(
+name|dialog
+argument_list|)
+condition|)
+name|dialog
+operator|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|gtk_menu_get_attach_widget
+argument_list|(
+name|GTK_MENU
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -4845,9 +4869,6 @@ literal|0
 block|lc_dialog_rebuild ((long) g_object_get_data (G_OBJECT (widget), "user_data"));
 endif|#
 directive|endif
-name|layer_select_update_preview_size
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -13714,7 +13735,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3f2bf50208
+DECL|struct|__anon2ba9d4070208
 block|{
 DECL|member|label
 name|gchar
@@ -13943,7 +13964,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c3f2bf50308
+DECL|struct|__anon2ba9d4070308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -23,16 +23,6 @@ file|"core/gimpobject.h"
 end_include
 
 begin_comment
-comment|/* FIXME move all GTK stuff to gimpdisplayshell */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
-begin_comment
 comment|/*  some useful macros  */
 end_comment
 

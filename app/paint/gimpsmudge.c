@@ -360,6 +360,8 @@ specifier|static
 name|guchar
 modifier|*
 name|accum_data
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 

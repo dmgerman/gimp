@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9a8cd90103
+DECL|enum|__anon2ac5d4120103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP
@@ -157,35 +157,43 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  lower right hand coords     */
-DECL|member|srw
-DECL|member|srh
+DECL|member|cw
+DECL|member|ch
 name|gint
-name|srw
+name|cw
 decl_stmt|,
-name|srh
+name|ch
 decl_stmt|;
-comment|/*  width and height of corners */
-DECL|member|tx1
-DECL|member|ty1
-name|gint
-name|tx1
-decl_stmt|,
-name|ty1
-decl_stmt|;
-comment|/*  transformed coords          */
-DECL|member|tx2
-DECL|member|ty2
-name|gint
-name|tx2
-decl_stmt|,
-name|ty2
-decl_stmt|;
-comment|/*                              */
+comment|/*  corners in image  coords    */
 DECL|member|function
 name|guint
 name|function
 decl_stmt|;
 comment|/*  moving or resizing          */
+DECL|member|dx1
+DECL|member|dy1
+name|gint
+name|dx1
+decl_stmt|,
+name|dy1
+decl_stmt|;
+comment|/*  display coords              */
+DECL|member|dx2
+DECL|member|dy2
+name|gint
+name|dx2
+decl_stmt|,
+name|dy2
+decl_stmt|;
+comment|/*                             */
+DECL|member|dcw
+DECL|member|dch
+name|gint
+name|dcw
+decl_stmt|,
+name|dch
+decl_stmt|;
+comment|/*  width and height of corners */
 DECL|member|context_id
 name|guint
 name|context_id

@@ -2547,7 +2547,7 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|path_tool_cursor_position (NPath * path,gdouble x,gdouble y,gint halfwidth,NPath ** pathP,PathCurve ** curveP,PathSegment ** segmentP,gdouble * positionP,gint * handle_idP)
+DECL|function|path_tool_cursor_position (NPath * path,gdouble x,gdouble y,gint halfwidth,gint halfheight,NPath ** pathP,PathCurve ** curveP,PathSegment ** segmentP,gdouble * positionP,gint * handle_idP)
 name|path_tool_cursor_position
 parameter_list|(
 name|NPath
@@ -2562,6 +2562,9 @@ name|y
 parameter_list|,
 name|gint
 name|halfwidth
+parameter_list|,
+name|gint
+name|halfheight
 parameter_list|,
 name|NPath
 modifier|*
@@ -3079,7 +3082,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e8c2b0108
+DECL|struct|__anon2c5ef1430108
 typedef|typedef
 struct|struct
 block|{
@@ -3437,7 +3440,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e8c2b0208
+DECL|struct|__anon2c5ef1430208
 typedef|typedef
 struct|struct
 block|{
@@ -3779,7 +3782,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e8c2b0308
+DECL|struct|__anon2c5ef1430308
 typedef|typedef
 struct|struct
 block|{
@@ -4097,7 +4100,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e8c2b0408
+DECL|struct|__anon2c5ef1430408
 typedef|typedef
 struct|struct
 block|{
@@ -4255,7 +4258,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e8c2b0508
+DECL|struct|__anon2c5ef1430508
 typedef|typedef
 struct|struct
 block|{

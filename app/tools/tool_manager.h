@@ -107,15 +107,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_manager_initialize_tool
+name|tool_manager_initialize_active
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpTool
-modifier|*
-name|tool
 parameter_list|,
 name|GimpDisplay
 modifier|*

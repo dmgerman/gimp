@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2927610103
+DECL|enum|__anon2bfa8f540103
 block|{
 DECL|enumerator|EDIT_MASK_TRANSLATE
 name|EDIT_MASK_TRANSLATE
@@ -50,9 +50,9 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|GdkEventButton
+name|GimpCoords
 modifier|*
-name|bevent
+name|coords
 parameter_list|,
 name|EditType
 name|edit_type

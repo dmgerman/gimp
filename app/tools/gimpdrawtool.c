@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2966dfa20103
+DECL|enum|__anon2a5342c80103
 block|{
 DECL|enumerator|DRAW
 name|DRAW
@@ -494,15 +494,6 @@ break|break;
 default|default:
 break|break;
 block|}
-if|if
-condition|(
-name|GIMP_TOOL_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|control
-condition|)
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class

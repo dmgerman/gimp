@@ -24,7 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontainer.h"
 end_include
 
 begin_include
@@ -42,19 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimppreview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer-select.h"
+file|"gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-layer-select.h"
 end_include
 
 begin_include
@@ -68,14 +74,6 @@ include|#
 directive|include
 file|"libgimp/gimpintl.h"
 end_include
-
-begin_define
-DECL|macro|PREVIEW_EVENT_MASK
-define|#
-directive|define
-name|PREVIEW_EVENT_MASK
-value|GDK_EXPOSURE_MASK | GDK_ENTER_NOTIFY_MASK
-end_define
 
 begin_typedef
 DECL|typedef|LayerSelect
@@ -121,7 +119,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  layer widget function prototypes  */
+comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
@@ -135,30 +133,6 @@ name|layer_select
 parameter_list|,
 name|gint
 name|move
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|layer_select_forward
-parameter_list|(
-name|LayerSelect
-modifier|*
-name|layer_select
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|layer_select_backward
-parameter_list|(
-name|LayerSelect
-modifier|*
-name|layer_select
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -181,7 +155,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|layer_select_set_gimage
+name|layer_select_set_image
 parameter_list|(
 name|LayerSelect
 modifier|*
@@ -211,11 +185,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  *  Local variables  */
+comment|/*  private variables  */
 end_comment
 
 begin_decl_stmt
 DECL|variable|layer_select
+specifier|static
 name|LayerSelect
 modifier|*
 name|layer_select
@@ -225,21 +200,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**********************/
-end_comment
-
-begin_comment
-comment|/*  Public functions  */
-end_comment
-
-begin_comment
-comment|/**********************/
+comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|layer_select_init (GimpImage * gimage,gint move,guint32 time)
-name|layer_select_init
+DECL|function|gimp_display_shell_layer_select_init (GimpImage * gimage,gint move,guint32 time)
+name|gimp_display_shell_layer_select_init
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -272,6 +239,14 @@ name|GtkWidget
 modifier|*
 name|alignment
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|layer
 operator|=
 name|gimp_image_get_active_layer
@@ -329,7 +304,7 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|layer_select_set_gimage
+name|layer_select_set_image
 argument_list|(
 name|layer_select
 argument_list|,
@@ -613,7 +588,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|layer_select_set_gimage
+name|layer_select_set_image
 argument_list|(
 name|layer_select
 argument_list|,
@@ -661,51 +636,8 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|layer_select_update_preview_size (void)
-name|layer_select_update_preview_size
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|layer_select
-operator|!=
-name|NULL
-condition|)
-block|{
-name|gimp_preview_set_size
-argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
-name|layer_select
-operator|->
-name|preview
-argument_list|)
-argument_list|,
-name|gimprc
-operator|.
-name|preview_size
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
 begin_comment
-comment|/***********************/
-end_comment
-
-begin_comment
-comment|/*  Private functions  */
-end_comment
-
-begin_comment
-comment|/***********************/
+comment|/*  private functions  */
 end_comment
 
 begin_function
@@ -722,23 +654,12 @@ name|gint
 name|move
 parameter_list|)
 block|{
-name|gint
-name|index
-decl_stmt|;
-name|gint
-name|count
-decl_stmt|;
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
-name|GSList
-modifier|*
-name|nth
-decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
+decl_stmt|;
+name|gint
+name|index
 decl_stmt|;
 name|index
 operator|=
@@ -762,56 +683,24 @@ name|gimage
 argument_list|)
 condition|)
 return|return;
-for|for
-control|(
-name|list
+name|index
 operator|=
+name|gimp_container_get_child_index
+argument_list|(
 name|layer_select
 operator|->
 name|gimage
 operator|->
-name|layer_stack
-operator|,
-name|count
-operator|=
-literal|0
-init|;
-name|list
-condition|;
-name|list
-operator|=
-name|g_slist_next
+name|layers
+argument_list|,
+name|GIMP_OBJECT
 argument_list|(
-name|list
-argument_list|)
-operator|,
-name|count
-operator|++
-control|)
-block|{
-name|layer
-operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|layer
-operator|==
 name|layer_select
 operator|->
 name|current_layer
-condition|)
-name|index
-operator|=
-name|count
+argument_list|)
+argument_list|)
 expr_stmt|;
-block|}
 name|index
 operator|+=
 name|move
@@ -824,39 +713,46 @@ name|index
 argument_list|,
 literal|0
 argument_list|,
-name|count
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|nth
-operator|=
-name|g_slist_nth
+name|gimp_container_num_children
 argument_list|(
 name|layer_select
 operator|->
 name|gimage
 operator|->
-name|layer_stack
-argument_list|,
-name|index
+name|layers
+argument_list|)
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|nth
-condition|)
-block|{
 name|layer
 operator|=
 operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|nth
+name|gimp_container_get_child_by_index
+argument_list|(
+name|layer_select
 operator|->
-name|data
+name|gimage
+operator|->
+name|layers
+argument_list|,
+name|index
+argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|layer
+operator|&&
+name|layer
+operator|!=
+name|layer_select
+operator|->
+name|current_layer
+condition|)
+block|{
 name|layer_select
 operator|->
 name|current_layer
@@ -900,49 +796,6 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|layer_select_forward (LayerSelect * layer_select)
-name|layer_select_forward
-parameter_list|(
-name|LayerSelect
-modifier|*
-name|layer_select
-parameter_list|)
-block|{
-name|layer_select_advance
-argument_list|(
-name|layer_select
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|layer_select_backward (LayerSelect * layer_select)
-name|layer_select_backward
-parameter_list|(
-name|LayerSelect
-modifier|*
-name|layer_select
-parameter_list|)
-block|{
-name|layer_select_advance
-argument_list|(
-name|layer_select
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1008,8 +861,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layer_select_set_gimage (LayerSelect * layer_select,GimpImage * gimage)
-name|layer_select_set_gimage
+DECL|function|layer_select_set_image (LayerSelect * layer_select,GimpImage * gimage)
+name|layer_select_set_image
 parameter_list|(
 name|LayerSelect
 modifier|*
@@ -1170,9 +1023,11 @@ name|state
 operator|&
 name|GDK_MOD1_MASK
 condition|)
-name|layer_select_forward
+name|layer_select_advance
 argument_list|(
 name|layer_select
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -1184,9 +1039,12 @@ name|state
 operator|&
 name|GDK_CONTROL_MASK
 condition|)
-name|layer_select_backward
+name|layer_select_advance
 argument_list|(
 name|layer_select
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1239,6 +1097,20 @@ name|state
 operator|&=
 operator|~
 name|GDK_CONTROL_MASK
+expr_stmt|;
+break|break;
+case|case
+name|GDK_Shift_L
+case|:
+case|case
+name|GDK_Shift_R
+case|:
+name|kevent
+operator|->
+name|state
+operator|&=
+operator|~
+name|GDK_SHIFT_MASK
 expr_stmt|;
 break|break;
 block|}

@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable-bucket-fill.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -89,12 +95,6 @@ begin_include
 include|#
 directive|include
 file|"tools/gimpblendtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpbucketfilltool.h"
 end_include
 
 begin_include
@@ -1667,10 +1667,6 @@ decl_stmt|;
 name|gdouble
 name|y
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get_by_ID
@@ -1839,8 +1835,9 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimage
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
@@ -1848,11 +1845,17 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
-name|bucket_fill
+block|}
+else|else
+block|{
+name|gimp_drawable_bucket_fill
 argument_list|(
-name|gimage
-argument_list|,
 name|drawable
 argument_list|,
 name|fill_mode
@@ -1870,6 +1873,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|procedural_db_return_args

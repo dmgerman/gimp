@@ -113,7 +113,7 @@ name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
 DECL|member|points
-name|GdkPoint
+name|GimpVector2
 modifier|*
 name|points
 decl_stmt|;

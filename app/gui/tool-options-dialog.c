@@ -383,7 +383,7 @@ name|GTK_STOCK_CLOSE
 argument_list|,
 name|tool_options_dialog_close_callback
 argument_list|,
-name|gimp
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

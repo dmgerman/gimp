@@ -434,6 +434,9 @@ parameter_list|,
 name|gint
 name|halfwidth
 parameter_list|,
+name|gint
+name|halfheight
+parameter_list|,
 name|NPath
 modifier|*
 modifier|*

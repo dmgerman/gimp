@@ -106,6 +106,15 @@ comment|/*  stuff  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpCoords
+typedef|typedef
+name|struct
+name|_GimpCoords
+name|GimpCoords
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|SelectionOptions
 typedef|typedef
 name|struct
@@ -145,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf3c1090103
+DECL|enum|__anon287cbbfd0103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -171,7 +180,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf3c1090203
+DECL|enum|__anon287cbbfd0203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -194,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf3c1090303
+DECL|enum|__anon287cbbfd0303
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -225,7 +234,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bf3c1090403
+DECL|enum|__anon287cbbfd0403
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -269,7 +278,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bf3c1090503
+DECL|enum|__anon287cbbfd0503
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -293,7 +302,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bf3c1090603
+DECL|enum|__anon287cbbfd0603
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -303,12 +312,6 @@ name|RESUME
 block|,
 DECL|enumerator|HALT
 name|HALT
-block|,
-DECL|enumerator|DESTROY
-name|DESTROY
-block|,
-DECL|enumerator|RECREATE
-name|RECREATE
 DECL|typedef|ToolAction
 block|}
 name|ToolAction
@@ -323,7 +326,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bf3c1090703
+DECL|enum|__anon287cbbfd0703
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -356,7 +359,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bf3c1090803
+DECL|enum|__anon287cbbfd0803
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

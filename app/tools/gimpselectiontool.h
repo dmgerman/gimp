@@ -117,16 +117,6 @@ name|SelectOps
 name|op
 decl_stmt|;
 comment|/*  selection operation (SELECTION_ADD etc.)  */
-DECL|member|current_x
-name|gint
-name|current_x
-decl_stmt|;
-comment|/*  these values are updated on every motion event  */
-DECL|member|current_y
-name|gint
-name|current_y
-decl_stmt|;
-comment|/*  (enables immediate cursor updating on modifier 			    *   key events). 			    */
 block|}
 struct|;
 end_struct

@@ -128,6 +128,10 @@ DECL|member|click_halfwidth
 name|gint
 name|click_halfwidth
 decl_stmt|;
+DECL|member|click_halfheight
+name|gint
+name|click_halfheight
+decl_stmt|;
 DECL|member|click_modifier
 name|guint
 name|click_modifier

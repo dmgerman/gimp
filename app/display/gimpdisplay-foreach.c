@@ -394,11 +394,9 @@ name|display_list
 operator|->
 name|data
 expr_stmt|;
-name|gtk_widget_destroy
+name|gdisplay_delete
 argument_list|(
 name|gdisp
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 block|}
