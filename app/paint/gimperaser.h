@@ -172,6 +172,9 @@ name|method
 parameter_list|,
 name|gboolean
 name|anti_erase
+parameter_list|,
+name|gboolean
+name|color_erase
 parameter_list|)
 function_decl|;
 end_function_decl
