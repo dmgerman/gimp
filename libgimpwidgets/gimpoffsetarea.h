@@ -239,6 +239,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_offset_area_set_pixbuf
+parameter_list|(
+name|GimpOffsetArea
+modifier|*
+name|offset_area
+parameter_list|,
+name|GdkPixbuf
+modifier|*
+name|pixbuf
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_offset_area_set_size
 parameter_list|(
 name|GimpOffsetArea
