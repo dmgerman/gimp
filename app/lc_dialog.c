@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -1381,7 +1387,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b309f220108
+DECL|struct|__anon2c52c0560108
 block|{
 DECL|member|def
 name|GImage

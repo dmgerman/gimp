@@ -1872,6 +1872,8 @@ argument_list|(
 name|options_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 name|tool_info
 index|[
 operator|(
@@ -1885,6 +1887,7 @@ operator|.
 name|tool_options
 operator|->
 name|title
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2114,6 +2117,8 @@ argument_list|(
 name|options_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 name|tool_info
 index|[
 operator|(
@@ -2127,6 +2132,7 @@ operator|.
 name|tool_options
 operator|->
 name|title
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2713,9 +2719,12 @@ argument_list|(
 name|options_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 name|tool_options
 operator|->
 name|title
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -137,6 +137,12 @@ directive|include
 file|"temp_buf.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|unsigned
@@ -932,7 +938,10 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Cannot convert from indexed color."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1884,7 +1893,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error in temp buf caching: \"%s\" is a directory (cannot overwrite)"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1974,7 +1986,10 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Cannot write \"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2004,7 +2019,10 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Cannot write \"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2223,7 +2241,10 @@ name|succ
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error in temp buf caching: information swapped to disk was lost!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

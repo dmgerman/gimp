@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -142,7 +148,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon288d25130103
+DECL|enum|__anon29f5643d0103
 typedef|typedef
 enum|enum
 block|{
@@ -190,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon288d25130203
+DECL|enum|__anon29f5643d0203
 typedef|typedef
 enum|enum
 block|{
@@ -10939,7 +10945,7 @@ comment|/* Colour notebook glue      */
 end_comment
 
 begin_typedef
-DECL|struct|__anon288d25130308
+DECL|struct|__anon29f5643d0308
 typedef|typedef
 struct|struct
 block|{

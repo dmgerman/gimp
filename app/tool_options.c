@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brush_select.h"
 end_include
 
@@ -624,7 +630,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -828,7 +837,10 @@ name|options
 operator|->
 name|title
 operator|=
+name|_
+argument_list|(
 name|title
+argument_list|)
 expr_stmt|;
 name|options
 operator|->
@@ -980,7 +992,7 @@ operator|==
 name|RECT_SELECT
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Rectangular Select Options"
 argument_list|)
@@ -992,7 +1004,7 @@ operator|==
 name|ELLIPSE_SELECT
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Elliptical Selection Options"
 argument_list|)
@@ -1004,7 +1016,7 @@ operator|==
 name|FREE_SELECT
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Free-hand Selection Options"
 argument_list|)
@@ -1016,7 +1028,7 @@ operator|==
 name|FUZZY_SELECT
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Fuzzy Selection Options"
 argument_list|)
@@ -1028,7 +1040,7 @@ operator|==
 name|BEZIER_SELECT
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Bezier Selection Options"
 argument_list|)
@@ -1040,7 +1052,7 @@ operator|==
 name|ISCISSORS
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Intelligent Scissors Options"
 argument_list|)
@@ -1052,12 +1064,12 @@ operator|==
 name|BY_COLOR_SELECT
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"By-Color Select Options"
 argument_list|)
 else|:
-name|_
+name|N_
 argument_list|(
 literal|"ERROR: Unknown Selection Type"
 argument_list|)
@@ -2925,7 +2937,7 @@ operator|==
 name|BUCKET_FILL
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Bucket Fill Options"
 argument_list|)
@@ -2937,7 +2949,7 @@ operator|==
 name|BLEND
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Blend Options"
 argument_list|)
@@ -2949,7 +2961,7 @@ operator|==
 name|PENCIL
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Pencil Options"
 argument_list|)
@@ -2961,7 +2973,7 @@ operator|==
 name|PAINTBRUSH
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Paintbrush Options"
 argument_list|)
@@ -2973,7 +2985,7 @@ operator|==
 name|ERASER
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Erazer Options"
 argument_list|)
@@ -2985,7 +2997,7 @@ operator|==
 name|AIRBRUSH
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Airbrush Options"
 argument_list|)
@@ -2997,7 +3009,7 @@ operator|==
 name|CLONE
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Clone Tool Options"
 argument_list|)
@@ -3009,7 +3021,7 @@ operator|==
 name|CONVOLVE
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Convolver Options"
 argument_list|)
@@ -3021,12 +3033,12 @@ operator|==
 name|INK
 operator|)
 condition|?
-name|_
+name|N_
 argument_list|(
 literal|"Ink Options"
 argument_list|)
 else|:
-name|_
+name|N_
 argument_list|(
 literal|"ERROR: Unknown Paint Type"
 argument_list|)
