@@ -72,10 +72,16 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b9ca3c0108
+DECL|struct|__anon27b7d6270108
 block|{
 DECL|member|img
 name|gint32
@@ -106,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b9ca3c0203
+DECL|enum|__anon27b7d6270203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim

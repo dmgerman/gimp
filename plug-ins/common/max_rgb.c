@@ -45,6 +45,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_comment
 comment|/* Replace them with the right ones */
 end_comment
@@ -171,7 +177,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ecaa30103
+DECL|enum|__anon2a362ec60103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -189,7 +195,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1ecaa30208
+DECL|struct|__anon2a362ec60208
 block|{
 DECL|member|max_p
 name|gint
@@ -562,7 +568,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c1ecaa30308
+DECL|struct|__anon2a362ec60308
 typedef|typedef
 struct|struct
 block|{

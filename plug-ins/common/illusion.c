@@ -51,6 +51,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -144,7 +150,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2893247c0108
+DECL|struct|__anon2b1cda090108
 block|{
 DECL|member|division
 name|gint32
@@ -636,7 +642,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2893247c0208
+DECL|struct|__anon2b1cda090208
 typedef|typedef
 struct|struct
 block|{

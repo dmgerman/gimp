@@ -45,9 +45,15 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2a47bd6a0103
+DECL|enum|__anon2888061b0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -61,7 +67,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a47bd6a0208
+DECL|struct|__anon2888061b0208
 block|{
 DECL|member|amplitude
 name|gdouble

@@ -55,6 +55,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_define
 DECL|macro|SPIN_BUTTON_WIDTH
 define|#
@@ -255,7 +261,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5aedcc0108
+DECL|struct|__anon28ae19c70108
 block|{
 DECL|member|hwidth
 name|gint

@@ -51,6 +51,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -110,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf9fcf80103
+DECL|enum|__anon2b1572670103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -126,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf9fcf80203
+DECL|enum|__anon2b1572670203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -142,7 +148,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf9fcf80303
+DECL|enum|__anon2b1572670303
 block|{
 DECL|enumerator|BOTH
 name|BOTH

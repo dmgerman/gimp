@@ -72,6 +72,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_define
 DECL|macro|RESPONSE_ABOUT
 define|#
@@ -30523,7 +30529,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b63d260108
+DECL|struct|__anon2b7b0ef60108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30574,7 +30580,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b63d260208
+DECL|struct|__anon2b7b0ef60208
 block|{
 DECL|member|run
 name|gint

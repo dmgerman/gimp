@@ -55,6 +55,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -135,7 +141,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c97a50108
+DECL|struct|__anon276eaa520108
 block|{
 DECL|member|img_bpp
 name|gint

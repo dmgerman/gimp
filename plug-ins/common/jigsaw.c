@@ -51,10 +51,16 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d5db170103
+DECL|enum|__anon2c2a7c1b0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -70,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d5db170203
+DECL|enum|__anon2c2a7c1b0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT

@@ -61,6 +61,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -161,7 +167,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2accd74a0108
+DECL|struct|__anon28e862140108
 block|{
 DECL|member|xcenter
 name|gint
@@ -196,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2accd74a0208
+DECL|struct|__anon28e862140208
 block|{
 DECL|member|drawable
 name|GimpDrawable

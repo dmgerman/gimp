@@ -70,6 +70,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_define
 DECL|macro|WITHIN (a,b,c)
 define|#
@@ -128,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a422a490108
+DECL|struct|__anon2af189960108
 block|{
 DECL|member|circle
 name|gdouble

@@ -49,6 +49,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_comment
 comment|/* --- Typedefs --- */
 end_comment
@@ -56,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c7ba30108
+DECL|struct|__anon2a28c8260108
 block|{
 DECL|member|xblock
 name|gint

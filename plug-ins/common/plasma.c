@@ -61,6 +61,12 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpoldpreview.h"
+end_include
+
 begin_comment
 comment|/* Some useful macros */
 end_comment
@@ -92,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c82e6a0108
+DECL|struct|__anon2b8b1ca00108
 block|{
 DECL|member|seed
 name|guint32
