@@ -998,6 +998,8 @@ operator|->
 name|gimage
 operator|->
 name|gimp
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1418,6 +1420,8 @@ operator|->
 name|gimage
 operator|->
 name|gimp
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|tool
