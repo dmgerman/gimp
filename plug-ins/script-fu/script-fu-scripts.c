@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292b00150108
+DECL|struct|__anon27b688210108
 block|{
 DECL|member|script
 name|SFScript
@@ -3778,21 +3778,18 @@ case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/*  Determine whether the script is image based (runs on an image) */
+comment|/*  Determine whether the script is image based (runs on an image).            *  When being called from an image, nparams is 3, otherwise it's 1.            */
 if|if
 condition|(
-name|strncmp
-argument_list|(
+name|nparams
+operator|==
+literal|3
+operator|&&
 name|script
 operator|->
-name|menu_path
-argument_list|,
-literal|"<Image>"
-argument_list|,
-literal|7
-argument_list|)
-operator|==
-literal|0
+name|num_args
+operator|>=
+literal|2
 condition|)
 block|{
 name|script
@@ -3839,12 +3836,14 @@ name|TRUE
 expr_stmt|;
 block|}
 else|else
+block|{
 name|script
 operator|->
 name|image_based
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 comment|/*  First acquire information with a dialog  */
 comment|/*  Skip this part if the script takes no parameters */
 name|min_args
@@ -3936,13 +3935,6 @@ operator|->
 name|script_name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|script
-operator|->
-name|num_args
-condition|)
-block|{
 for|for
 control|(
 name|i
@@ -4011,7 +4003,7 @@ name|param
 operator|->
 name|data
 operator|.
-name|d_image
+name|d_int32
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4220,7 +4212,6 @@ expr_stmt|;
 break|break;
 default|default:
 break|break;
-block|}
 block|}
 block|}
 name|g_string_append_c
