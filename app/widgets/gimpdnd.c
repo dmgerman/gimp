@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2798059d0103
+DECL|enum|__anon2baf55df0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -2764,7 +2764,7 @@ index|]
 operator|=
 name|r
 operator|*
-literal|0xff
+literal|0x100
 expr_stmt|;
 name|vals
 index|[
@@ -2773,7 +2773,7 @@ index|]
 operator|=
 name|g
 operator|*
-literal|0xff
+literal|0x100
 expr_stmt|;
 name|vals
 index|[
@@ -2782,7 +2782,7 @@ index|]
 operator|=
 name|b
 operator|*
-literal|0xff
+literal|0x100
 expr_stmt|;
 name|vals
 index|[
@@ -2886,7 +2886,7 @@ index|[
 literal|0
 index|]
 operator|/
-literal|0xff
+literal|0x100
 expr_stmt|;
 name|g
 operator|=
@@ -2895,7 +2895,7 @@ index|[
 literal|1
 index|]
 operator|/
-literal|0xff
+literal|0x100
 expr_stmt|;
 name|b
 operator|=
@@ -2904,7 +2904,7 @@ index|[
 literal|2
 index|]
 operator|/
-literal|0xff
+literal|0x100
 expr_stmt|;
 operator|(
 operator|*
