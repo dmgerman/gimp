@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6649070108
+DECL|struct|__anon28fa512a0108
 block|{
 DECL|member|angle
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6649070208
+DECL|struct|__anon28fa512a0208
 block|{
 DECL|member|ID
 name|gint32
@@ -1900,7 +1900,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|row
+name|col
 operator|%
 literal|5
 operator|)
@@ -1912,12 +1912,12 @@ argument_list|(
 operator|(
 name|double
 operator|)
-name|row
+name|col
 operator|/
 operator|(
 name|double
 operator|)
-name|height
+name|width
 argument_list|)
 expr_stmt|;
 block|}

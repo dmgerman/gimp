@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27eebb2d0103
+DECL|enum|__anon2bdf23a90103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27eebb2d0203
+DECL|enum|__anon2bdf23a90203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -1444,7 +1444,7 @@ literal|"Playback         \n"
 literal|"<Shift> optimized"
 argument_list|)
 block|,
-literal|"video/frames/play_frame.html"
+literal|"#playback"
 block|,
 name|NULL
 block|,
@@ -1464,7 +1464,7 @@ literal|"Smart Update .xvpics\n"
 literal|"<Shift> forced upd"
 argument_list|)
 block|,
-literal|"video/frames/play_frame.html"
+literal|"#update"
 block|,
 name|NULL
 block|,
@@ -1483,7 +1483,7 @@ argument_list|(
 literal|"Duplicate selected Frames"
 argument_list|)
 block|,
-literal|"video/frames/duplicate_frame.html"
+literal|"#duplicate"
 block|,
 name|NULL
 block|,
@@ -1502,7 +1502,7 @@ argument_list|(
 literal|"Delete selected Frames"
 argument_list|)
 block|,
-literal|"video/frames/delete_frame.html"
+literal|"#delete"
 block|,
 name|NULL
 block|,
@@ -1548,7 +1548,7 @@ argument_list|(
 literal|"Goto 1.st Frame"
 argument_list|)
 block|,
-literal|"video/frames/goto_frame.html"
+literal|"#goto_first"
 block|,
 name|NULL
 block|,
@@ -1568,7 +1568,7 @@ literal|"Goto prev Frame\n"
 literal|"<Shift> use timezoom stepsize"
 argument_list|)
 block|,
-literal|"video/frames/goto_frame.html"
+literal|"#goto_previous"
 block|,
 name|NULL
 block|,
@@ -1588,7 +1588,7 @@ literal|"Goto next Frame\n"
 literal|"<Shift> use timezoom stepsize"
 argument_list|)
 block|,
-literal|"video/frames/goto_frame.html"
+literal|"#goto_next"
 block|,
 name|NULL
 block|,
@@ -1607,7 +1607,7 @@ argument_list|(
 literal|"Goto last Frame"
 argument_list|)
 block|,
-literal|"video/frames/goto_frame.html"
+literal|"#goto_last"
 block|,
 name|NULL
 block|,
