@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293ec24f0103
+DECL|enum|__anon27f05ccd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1813,7 +1813,7 @@ condition|)
 block|{
 name|GimpContext
 modifier|*
-name|context
+name|user_context
 decl_stmt|;
 name|gimp_item_factory_update
 argument_list|(
@@ -1824,9 +1824,9 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|context
+name|user_context
 operator|=
-name|gimp_get_current_context
+name|gimp_get_user_context
 argument_list|(
 name|gdisp
 operator|->
@@ -1841,7 +1841,7 @@ name|gdisp
 operator|==
 name|gimp_context_get_display
 argument_list|(
-name|context
+name|user_context
 argument_list|)
 condition|)
 name|gimp_item_factory_update

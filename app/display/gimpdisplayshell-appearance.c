@@ -36,6 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -107,7 +119,20 @@ name|GET_OPTIONS
 parameter_list|(
 name|shell
 parameter_list|)
-value|(gimp_display_shell_get_fullscreen (shell) ? \                             shell->fullscreen_options : shell->options)
+define|\
+value|(gimp_display_shell_get_fullscreen (shell) ? \    shell->fullscreen_options : shell->options)
+end_define
+
+begin_define
+DECL|macro|IS_ACTIVE_DISPLAY (shell)
+define|#
+directive|define
+name|IS_ACTIVE_DISPLAY
+parameter_list|(
+name|shell
+parameter_list|)
+define|\
+value|((shell)->gdisp == \    gimp_context_get_display (gimp_get_user_context \                              ((shell)->gdisp->gimage->gimp)))
 end_define
 
 begin_function
@@ -329,6 +354,13 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -539,6 +571,13 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -785,6 +824,13 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -951,6 +997,13 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -1072,6 +1125,13 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -1193,6 +1253,13 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -1313,6 +1380,13 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -1415,6 +1489,13 @@ argument_list|,
 name|snap
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -1533,6 +1614,13 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY

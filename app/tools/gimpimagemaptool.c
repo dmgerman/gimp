@@ -30,6 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -1373,7 +1385,7 @@ break|break;
 case|case
 name|GTK_RESPONSE_OK
 case|:
-comment|/* Fix for bug #126524 - only set shell in the case         * where we need it */
+comment|/* Fix for bug #126524 - only set shell in the case        * where we need it */
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
@@ -1454,6 +1466,26 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|gdisp
+operator|==
+name|gimp_context_get_display
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+argument_list|)
+condition|)
 name|gimp_item_factory_update
 argument_list|(
 name|shell

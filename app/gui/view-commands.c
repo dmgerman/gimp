@@ -131,6 +131,18 @@ define|\
 value|if (GIMP_IS_DISPLAY (data)) \     gdisp = data; \   else if (GIMP_IS_GIMP (data)) \     gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   else \     gdisp = NULL; \   if (! gdisp) \     return
 end_define
 
+begin_define
+DECL|macro|IS_ACTIVE_DISPLAY (gdisp)
+define|#
+directive|define
+name|IS_ACTIVE_DISPLAY
+parameter_list|(
+name|gdisp
+parameter_list|)
+define|\
+value|((gdisp) == \    gimp_context_get_display (gimp_get_user_context ((gdisp)->gimage->gimp)))
+end_define
+
 begin_function
 name|void
 DECL|function|view_zoom_out_cmd_callback (GtkWidget * widget,gpointer data)
@@ -501,6 +513,13 @@ operator|->
 name|dot_for_dot
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -1165,6 +1184,13 @@ operator|->
 name|snap_to_guides
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -1315,6 +1341,13 @@ operator|->
 name|snap_to_grid
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -1511,6 +1544,13 @@ argument_list|,
 name|fullscreen
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+condition|)
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
