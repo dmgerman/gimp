@@ -608,6 +608,8 @@ block|,
 name|GIMP_TARGET_CHANNEL
 block|,
 name|GIMP_TARGET_LAYER_MASK
+block|,
+name|GIMP_TARGET_COLOR
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -3452,6 +3454,17 @@ name|GTK_SIGNAL_FUNC
 argument_list|(
 name|gdisplay_drag_drop
 argument_list|)
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|gimp_dnd_color_dest_set
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|,
+name|gdisplay_set_color
 argument_list|,
 name|gdisp
 argument_list|)
