@@ -512,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c940f270108
+DECL|struct|__anon2a39f3370108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c940f270208
+DECL|struct|__anon2a39f3370208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c940f270308
+DECL|struct|__anon2a39f3370308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c940f270408
+DECL|struct|__anon2a39f3370408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c940f270508
+DECL|struct|__anon2a39f3370508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c940f270608
+DECL|struct|__anon2a39f3370608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c940f270708
+DECL|struct|__anon2a39f3370708
 block|{
 DECL|member|name
 specifier|const
@@ -1925,16 +1925,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_newsprint"
 argument_list|,
 literal|"Re-sample the image to give a newspaper-like effect"
 argument_list|,
-literal|"Halftone the image, trading off resolution to represent colors or grey levels using the process described both in the PostScript language definition, and also by Robert Ulichney, \"Digital halftoning\", MIT Press, 1987."
+literal|"Halftone the image, trading off resolution to "
+literal|"represent colors or grey levels using the process "
+literal|"described both in the PostScript language "
+literal|"definition, and also by Robert Ulichney, \"Digital "
+literal|"halftoning\", MIT Press, 1987."
 argument_list|,
 literal|"Austin Donnelly"
 argument_list|,
@@ -4804,121 +4805,19 @@ name|group
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|guchar
-modifier|*
-name|color_cube
-decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"newsprint"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
+name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_gamma
-argument_list|(
-name|gimp_gamma
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_install_cmap
-argument_list|(
-name|gimp_install_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|color_cube
-operator|=
-name|gimp_color_cube
-argument_list|()
-expr_stmt|;
-name|gtk_preview_set_color_cube
-argument_list|(
-name|color_cube
-index|[
-literal|0
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|1
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|2
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|3
-index|]
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gtk_preview_get_visual
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gtk_preview_get_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-if|#
-directive|if
-literal|0
-block|g_print ("newsprint: waiting... (pid %d)\n", getpid ());   kill (getpid (), 19);
-endif|#
-directive|endif
 comment|/* flag values to say we haven't filled these channel    * states in yet */
 for|for
 control|(
@@ -7036,7 +6935,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c940f270808
+DECL|struct|__anon2a39f3370808
 block|{
 DECL|member|index
 name|gint

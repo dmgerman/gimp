@@ -145,7 +145,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8bb98f0103
+DECL|enum|__anon299216e50103
 block|{
 DECL|enumerator|act_lredux
 name|act_lredux
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8bb98f0203
+DECL|enum|__anon299216e50203
 block|{
 DECL|enumerator|mode_ntsc
 name|mode_ntsc
@@ -219,7 +219,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a8bb98f0308
+DECL|struct|__anon299216e50308
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -349,6 +349,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|tab
+specifier|static
 name|gint
 name|tab
 index|[
@@ -372,6 +373,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|chroma_lim
+specifier|static
 name|gdouble
 name|chroma_lim
 decl_stmt|;
@@ -384,6 +386,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|compos_lim
+specifier|static
 name|gdouble
 name|compos_lim
 decl_stmt|;
@@ -396,6 +399,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|ichroma_lim2
+specifier|static
 name|glong
 name|ichroma_lim2
 decl_stmt|;
@@ -408,6 +412,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|icompos_lim
+specifier|static
 name|gint
 name|icompos_lim
 decl_stmt|;
@@ -577,16 +582,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init  */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit  */
+comment|/* quit_proc  */
 name|query
 block|,
-comment|/* query */
+comment|/* query_proc */
 name|run
 block|,
-comment|/* run   */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -658,7 +663,7 @@ literal|"new_layerp"
 block|,
 literal|"Create a new layer iff True"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -677,29 +682,18 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|GParamDef
-modifier|*
-name|rets
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
-name|nrets
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_hot"
 argument_list|,
 literal|"Look for hot NTSC or PAL pixels "
 argument_list|,
-literal|"hot scans an image for pixels that will give unsave values of chrominance or composite signale amplitude when encoded into an NTSC or PAL signal.  Three actions can be performed on these ``hot'' pixels. (0) reduce luminance, (1) reduce saturation, or (2) Blacken."
+literal|"hot scans an image for pixels that will give unsave "
+literal|"values of chrominance or composite signale "
+literal|"amplitude when encoded into an NTSC or PAL signal.  "
+literal|"Three actions can be performed on these ``hot'' "
+literal|"pixels. (0) reduce luminance, (1) reduce "
+literal|"saturation, or (2) Blacken."
 argument_list|,
 literal|"Eric L. Hernes, Alan Wm Paeth"
 argument_list|,
@@ -718,11 +712,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nrets
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|rets
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2413,51 +2407,11 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"hot"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

@@ -103,7 +103,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0558fc0108
+DECL|struct|__anon2a8b71390108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0558fc0208
+DECL|struct|__anon2a8b71390208
 block|{
 DECL|member|run
 name|gint
@@ -354,16 +354,16 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_oilify"
 argument_list|,
-literal|"Modify the specified drawable to resemble an oil painting"
+literal|"Modify the specified drawable to resemble an oil "
+literal|"painting"
 argument_list|,
-literal|"This function performs the well-known oil-paint effect on the specified drawable.  The size of the input mask is specified by 'mask_size'."
+literal|"This function performs the well-known oil-paint "
+literal|"effect on the specified drawable.  The size of the "
+literal|"input mask is specified by 'mask_size'."
 argument_list|,
 literal|"Torsten Martinsen"
 argument_list|,
@@ -2106,51 +2106,11 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"oilify"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e53d620108
+DECL|struct|__anon28dad31d0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e53d620208
+DECL|struct|__anon28dad31d0208
 block|{
 DECL|member|run
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e53d620308
+DECL|struct|__anon28dad31d0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -304,15 +304,15 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -408,13 +408,6 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
 name|gint
 name|nargs
 init|=
@@ -431,15 +424,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_pixelize"
@@ -465,11 +449,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -769,7 +753,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* gimp_message ("pixelize: cannot operate on indexed color images"); */
+comment|/* g_message ("pixelize: cannot operate on indexed color images"); */
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
@@ -820,51 +804,11 @@ name|GtkObject
 modifier|*
 name|adjustment
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"pixelize"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -1883,7 +1827,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*    This function operates on PixelArea, whose width and height are    multiply of pixel width, and less than the tile size (to enhance    its speed).     If any coordinates of mask boundary is not multiply of pixel width    ( e.g.  x1 % pixelwidth != 0 ), operates on the region whose width    or height is the remainder.  */
+comment|/*    This function operates on PixelArea, whose width and height are    multiply of pixel width, and less than the tile size (to enhance    its speed).     If any coordinates of mask boundary is not multiply of pixel width    (e.g.  x1 % pixelwidth != 0), operates on the region whose width    or height is the remainder.  */
 end_comment
 
 begin_function

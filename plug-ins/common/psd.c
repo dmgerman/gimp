@@ -149,7 +149,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a28a600103
+DECL|enum|__anon2a24217c0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a28a600208
+DECL|struct|__anon2a24217c0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -587,9 +587,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon29a28a600308
 specifier|static
 struct|struct
+DECL|struct|__anon2a24217c0308
 block|{
 DECL|member|signature
 name|gchar
@@ -1108,7 +1108,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -1139,7 +1141,7 @@ literal|"raw_filename"
 block|,
 literal|"The name of the file to load"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -1154,10 +1156,10 @@ literal|"image"
 block|,
 literal|"Output image"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -1174,9 +1176,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -1189,10 +1192,8 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_psd_load"

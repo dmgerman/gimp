@@ -22,6 +22,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -34,19 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -74,18 +68,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -122,13 +116,13 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 function_decl|;
@@ -142,16 +136,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -166,7 +160,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -197,17 +193,10 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -223,22 +212,18 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_laplace"
 argument_list|,
 literal|"Edge Detection with Laplace Operation"
 argument_list|,
-literal|"This plugin creates one-pixel wide edges from the image, with the value proportional to the gradient. It uses the Laplace operator (a 3x3 kernel with -8 in the middle). The image has to be laplacered to get useful results, a gauss_iir with 1.5 - 5.0 depending on the noise in the image is best."
+literal|"This plugin creates one-pixel wide edges from the "
+literal|"image, with the value proportional to the gradient. "
+literal|"It uses the Laplace operator (a 3x3 kernel with -8 "
+literal|"in the middle). The image has to be laplacered to "
+literal|"get useful results, a gauss_iir with 1.5 - 5.0 "
+literal|"depending on the noise in the image is best."
 argument_list|,
 literal|"Thorsten Schnier"
 argument_list|,
@@ -257,11 +242,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -270,21 +255,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -440,7 +425,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|laplace_prepare_row (GPixelRgn * pixel_rgn,guchar * data,int x,int y,int w)
+DECL|function|laplace_prepare_row (GPixelRgn * pixel_rgn,guchar * data,gint x,gint y,gint w)
 name|laplace_prepare_row
 parameter_list|(
 name|GPixelRgn
@@ -451,17 +436,17 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 block|{
-name|int
+name|gint
 name|b
 decl_stmt|;
 if|if
@@ -616,54 +601,6 @@ parameter_list|)
 value|(sqrt (pow ((a),2) + pow ((b), 2)))
 end_define
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|MAX
-end_ifndef
-
-begin_define
-DECL|macro|MAX (a,b)
-define|#
-directive|define
-name|MAX
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|)
-value|(((a)> (b)) ? (a) : (b))
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|MIN
-end_ifndef
-
-begin_define
-DECL|macro|MIN (a,b)
-define|#
-directive|define
-name|MIN
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|)
-value|(((a)< (b)) ? (a) : (b))
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|BLACK_REGION (val)
 define|#
@@ -687,9 +624,9 @@ value|((val)<= 128)
 end_define
 
 begin_function
-DECL|function|minmax (gint x1,gint x2,gint x3,gint x4,gint x5,gint * min_result,gint * max_result)
 specifier|static
 name|void
+DECL|function|minmax (gint x1,gint x2,gint x3,gint x4,gint x5,gint * min_result,gint * max_result)
 name|minmax
 parameter_list|(
 name|gint

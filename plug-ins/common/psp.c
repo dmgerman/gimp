@@ -121,7 +121,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/stdplugins-intl.h>
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -137,7 +137,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930103
+DECL|enum|__anon2a224ab90103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +201,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930203
+DECL|enum|__anon2a224ab90203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +241,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930303
+DECL|enum|__anon2a224ab90303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +273,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930403
+DECL|enum|__anon2a224ab90403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +301,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930503
+DECL|enum|__anon2a224ab90503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +329,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930603
+DECL|enum|__anon2a224ab90603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +351,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930703
+DECL|enum|__anon2a224ab90703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +387,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930803
+DECL|enum|__anon2a224ab90803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +407,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930903
+DECL|enum|__anon2a224ab90903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +455,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930a03
+DECL|enum|__anon2a224ab90a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +479,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930b03
+DECL|enum|__anon2a224ab90b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +540,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c600c930c03
+DECL|enum|__anon2a224ab90c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c600c930d08
+DECL|struct|__anon2a224ab90d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c600c930e08
+DECL|struct|__anon2a224ab90e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +776,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c600c930f08
+DECL|struct|__anon2a224ab90f08
 block|{
 DECL|member|run
 name|gint
@@ -875,7 +875,7 @@ literal|"raw_filename"
 block|,
 literal|"The name of the file to load"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -890,7 +890,7 @@ literal|"image"
 block|,
 literal|"Output image"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -939,9 +939,6 @@ comment|/*      { PARAM_INT32, "compression", "Specify 0 for no compression, " *
 comment|/*        "1 for RLE, and 2 for LZ77" } */
 comment|/*    }; */
 comment|/*    static gint nsave_args = sizeof (save_args) / sizeof (save_args[0]); */
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_psp_load"
@@ -1016,65 +1013,6 @@ name|GTK_WIDGET
 argument_list|(
 name|data
 argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|init_gtk (void)
-name|init_gtk
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"psp"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -7308,8 +7246,12 @@ case|:
 name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
-name|init_gtk
-argument_list|()
+name|gimp_ui_init
+argument_list|(
+literal|"psp"
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|export
 operator|=

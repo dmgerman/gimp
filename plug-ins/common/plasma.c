@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2801b42b0108
+DECL|struct|__anon29782f070108
 block|{
 DECL|member|seed
 name|gint
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2801b42b0208
+DECL|struct|__anon29782f070208
 block|{
 DECL|member|run
 name|gint
@@ -500,9 +500,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_plasma"
@@ -902,51 +899,11 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"plasma"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -1332,6 +1289,7 @@ DECL|variable|ix1
 DECL|variable|iy1
 DECL|variable|ix2
 DECL|variable|iy2
+specifier|static
 name|gint
 name|ix1
 decl_stmt|,
@@ -1353,6 +1311,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|tile
+specifier|static
 name|GTile
 modifier|*
 name|tile
@@ -1364,6 +1323,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tile_row
 DECL|variable|tile_col
+specifier|static
 name|gint
 name|tile_row
 decl_stmt|,
@@ -1374,6 +1334,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tile_width
 DECL|variable|tile_height
+specifier|static
 name|gint
 name|tile_width
 decl_stmt|,
@@ -1383,6 +1344,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|tile_dirty
+specifier|static
 name|gint
 name|tile_dirty
 decl_stmt|;
@@ -1392,6 +1354,7 @@ begin_decl_stmt
 DECL|variable|bpp
 DECL|variable|has_alpha
 DECL|variable|alpha
+specifier|static
 name|gint
 name|bpp
 decl_stmt|,
@@ -1403,6 +1366,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|turbulence
+specifier|static
 name|gdouble
 name|turbulence
 decl_stmt|;
@@ -1411,6 +1375,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|max_progress
 DECL|variable|progress
+specifier|static
 name|glong
 name|max_progress
 decl_stmt|,

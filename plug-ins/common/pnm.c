@@ -321,7 +321,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c4fca0108
+DECL|struct|__anon2b803e670108
 block|{
 DECL|member|raw
 name|gint
@@ -337,7 +337,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c4fca0208
+DECL|struct|__anon2b803e670208
 block|{
 DECL|member|run
 name|gint
@@ -439,16 +439,6 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|init_gtk
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -973,7 +963,7 @@ literal|"raw_filename"
 block|,
 literal|"The name of the file to load"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -988,7 +978,7 @@ literal|"image"
 block|,
 literal|"Output image"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -1098,9 +1088,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_pnm_load"
@@ -1409,8 +1396,12 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
-name|init_gtk
-argument_list|()
+name|gimp_ui_init
+argument_list|(
+literal|"pnm"
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|export
 operator|=
@@ -4489,65 +4480,6 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|init_gtk (void)
-name|init_gtk
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"pnm"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

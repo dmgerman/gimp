@@ -19,12 +19,6 @@ directive|include
 file|<stdlib.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<signal.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -117,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1278830108
+DECL|struct|__anon28fd1cd20108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -140,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1278830208
+DECL|struct|__anon28fd1cd20208
 block|{
 DECL|member|col
 DECL|member|row
@@ -560,16 +554,8 @@ literal|"Angle"
 block|}
 block|}
 decl_stmt|;
-comment|/* args */
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -585,23 +571,15 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
 literal|"Motion blur of image"
 argument_list|,
-literal|"This plug-in simulates the effect seen when photographing a moving object "
-literal|"at a slow shutter speed. Done by adding multiple displaced copies."
+literal|"This plug-in simulates the effect seen when "
+literal|"photographing a moving object at a slow shutter "
+literal|"speed. Done by adding multiple displaced copies."
 argument_list|,
 literal|"Torsten Martinsen, Federico Mena Quintero and Daniel Skarda"
 argument_list|,
@@ -620,11 +598,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -670,12 +648,6 @@ decl_stmt|;
 name|GStatusType
 name|status
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|g_print ("Waiting... (pid %d)\n", getpid ());   kill (getpid (), SIGSTOP);
-endif|#
-directive|endif
 name|status
 operator|=
 name|STATUS_SUCCESS
@@ -3582,57 +3554,11 @@ name|GtkObject
 modifier|*
 name|adjustment
 decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"mblur"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dialog
