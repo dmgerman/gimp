@@ -2286,6 +2286,17 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* If we're in interactive mode, we need to copy the current    *  selection to the transform tool's private selection pointer, so    *  that the original source can be repeatedly modified.    */
+name|tool
+operator|->
+name|drawable
+operator|=
+name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 name|transform_core
 operator|->
 name|original
@@ -2296,12 +2307,9 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
-argument_list|(
-name|gdisp
+name|tool
 operator|->
-name|gimage
-argument_list|)
+name|drawable
 argument_list|,
 operator|&
 name|new_layer
@@ -2360,18 +2368,16 @@ name|new_tiles
 condition|)
 block|{
 comment|/*  paste the new transformed image to the gimage...also implement        *  undo...        */
+comment|/*  FIXME: we should check if the drawable is still valid  */
 name|transform_core_paste
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
-argument_list|(
-name|gdisp
+name|tool
 operator|->
-name|gimage
-argument_list|)
+name|drawable
 argument_list|,
 name|new_tiles
 argument_list|,
