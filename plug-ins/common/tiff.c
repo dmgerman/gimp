@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  * The TIFF loading code has been completely revamped by Nick Lamb  * njl195@zepler.org.uk -- 18 May 1998  * And it now gains support for tiles (and doubtless a zillion bugs)  * njl195@zepler.org.uk -- 12 June 1999  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  */
+comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  * The TIFF loading code has been completely revamped by Nick Lamb  * njl195@zepler.org.uk -- 18 May 1998  * And it now gains support for tiles (and doubtless a zillion bugs)  * njl195@zepler.org.uk -- 12 June 1999  * LZW patent fuss continues :(  * njl195@zepler.org.uk -- 20 April 2000  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  */
 end_comment
 
 begin_comment
@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb533b0108
+DECL|struct|__anon2b0e37bd0108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb533b0208
+DECL|struct|__anon2b0e37bd0208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb533b0308
+DECL|struct|__anon2b0e37bd0308
 block|{
 DECL|member|ID
 name|gint32
@@ -508,7 +508,7 @@ name|TiffSaveVals
 name|tsvals
 init|=
 block|{
-name|COMPRESSION_LZW
+name|COMPRESSION_NONE
 block|,
 comment|/*  compression  */
 block|}
@@ -686,7 +686,7 @@ name|PARAM_INT32
 block|,
 literal|"compression"
 block|,
-literal|"Compression type: { NONE (0), LZW (1), PACKBITS (2)"
+literal|"Compression type: { NONE (0), LZW (1), PACKBITS (2), DEFLATE (3), JPEG (4)"
 block|}
 block|,   }
 decl_stmt|;
@@ -722,7 +722,7 @@ literal|"Spencer Kimball, Peter Mattis& Nick Lamb"
 argument_list|,
 literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
-literal|"1995-1996,1998-1999"
+literal|"1995-1996,1998-2000"
 argument_list|,
 literal|"<Load>/Tiff"
 argument_list|,
@@ -751,7 +751,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
-literal|"1995-1996"
+literal|"1995-1996,2000"
 argument_list|,
 literal|"<Save>/Tiff"
 argument_list|,
@@ -1249,6 +1249,26 @@ operator|.
 name|compression
 operator|=
 name|COMPRESSION_PACKBITS
+expr_stmt|;
+break|break;
+case|case
+literal|3
+case|:
+name|tsvals
+operator|.
+name|compression
+operator|=
+name|COMPRESSION_DEFLATE
+expr_stmt|;
+break|break;
+case|case
+literal|4
+case|:
+name|tsvals
+operator|.
+name|compression
+operator|=
+name|COMPRESSION_JPEG
 expr_stmt|;
 break|break;
 default|default:
@@ -1974,7 +1994,7 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/* attach a parasite containing the compression/fillorder */
+comment|/* attach a parasite containing the compression */
 if|if
 condition|(
 operator|!
@@ -5837,9 +5857,6 @@ decl_stmt|,
 name|i
 decl_stmt|;
 name|long
-name|g3options
-decl_stmt|;
-name|long
 name|rowsperstrip
 decl_stmt|;
 name|unsigned
@@ -5919,17 +5936,35 @@ name|tsvals
 operator|.
 name|compression
 expr_stmt|;
-name|g3options
+if|if
+condition|(
+name|TIFFFindCODEC
+argument_list|(
+operator|(
+name|uint16
+operator|)
+name|compression
+argument_list|)
+operator|==
+name|NULL
+condition|)
+name|compression
 operator|=
-literal|0
+name|COMPRESSION_NONE
 expr_stmt|;
+comment|/* CODEC not available */
 name|predictor
 operator|=
 literal|0
 expr_stmt|;
+name|tile_height
+operator|=
+name|gimp_tile_height
+argument_list|()
+expr_stmt|;
 name|rowsperstrip
 operator|=
-literal|0
+name|tile_height
 expr_stmt|;
 name|TIFFSetWarningHandler
 argument_list|(
@@ -6253,32 +6288,6 @@ return|return
 literal|0
 return|;
 block|}
-if|if
-condition|(
-name|rowsperstrip
-operator|==
-literal|0
-condition|)
-name|rowsperstrip
-operator|=
-operator|(
-literal|8
-operator|*
-literal|1024
-operator|)
-operator|/
-name|bytesperrow
-expr_stmt|;
-if|if
-condition|(
-name|rowsperstrip
-operator|==
-literal|0
-condition|)
-name|rowsperstrip
-operator|=
-literal|1
-expr_stmt|;
 comment|/* Set TIFF parameters. */
 name|TIFFSetField
 argument_list|(
@@ -6340,6 +6349,10 @@ operator|(
 name|compression
 operator|==
 name|COMPRESSION_LZW
+operator|||
+name|compression
+operator|==
+name|COMPRESSION_DEFLATE
 operator|)
 operator|&&
 operator|(
@@ -6348,6 +6361,7 @@ operator|!=
 literal|0
 operator|)
 condition|)
+block|{
 name|TIFFSetField
 argument_list|(
 name|tif
@@ -6357,6 +6371,7 @@ argument_list|,
 name|predictor
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|alpha
@@ -6663,11 +6678,6 @@ name|blu
 argument_list|)
 expr_stmt|;
 comment|/* array to rearrange data */
-name|tile_height
-operator|=
-name|gimp_tile_height
-argument_list|()
-expr_stmt|;
 name|src
 operator|=
 name|g_new
@@ -7368,6 +7378,30 @@ operator|(
 name|gpointer
 operator|)
 name|COMPRESSION_PACKBITS
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Deflate"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|COMPRESSION_DEFLATE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"JPEG"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|COMPRESSION_JPEG
 argument_list|,
 name|NULL
 argument_list|,
