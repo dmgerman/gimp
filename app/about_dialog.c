@@ -1844,9 +1844,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|about_dialog_destroy ()
+DECL|function|about_dialog_destroy (void)
 name|about_dialog_destroy
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|about_dialog
 operator|=
@@ -1861,9 +1863,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|about_dialog_unmap ()
+DECL|function|about_dialog_unmap (void)
 name|about_dialog_unmap
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(

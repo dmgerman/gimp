@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -352,7 +358,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276e42480108
+DECL|struct|__anon29b6767f0108
 block|{
 DECL|member|offset
 name|double
@@ -404,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276e42480208
+DECL|struct|__anon29b6767f0208
 block|{
 DECL|member|PR
 name|PixelRegion

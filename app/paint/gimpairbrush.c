@@ -861,9 +861,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_airbrush ()
+DECL|function|tools_new_airbrush (void)
 name|tools_new_airbrush
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*

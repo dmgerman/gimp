@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon294d8a920103
+DECL|enum|__anon2b5d3d840103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -152,9 +152,11 @@ end_decl_stmt
 
 begin_function
 name|GtkType
-DECL|function|gimp_drawable_get_type ()
+DECL|function|gimp_drawable_get_type (void)
 name|gimp_drawable_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GtkType
