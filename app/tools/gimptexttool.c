@@ -27,11 +27,22 @@ directive|include
 file|<gdk/gdk.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
+end_ifndef
+
 begin_include
 include|#
 directive|include
 file|<gdk/gdkx.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -2566,10 +2577,15 @@ name|void
 modifier|*
 name|pr
 decl_stmt|;
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
 name|XFontStruct
 modifier|*
 name|xfs
 decl_stmt|;
+endif|#
+directive|endif
 name|char
 modifier|*
 name|fname
@@ -2635,6 +2651,9 @@ name|gdk_error_code
 operator|=
 literal|0
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
 name|font
 operator|=
 name|gdk_font_load
@@ -2691,6 +2710,18 @@ name|fname
 argument_list|)
 expr_stmt|;
 block|}
+else|#
+directive|else
+comment|/* Just use gdk_fontset_load all the time. IMHO it could be like    * this on all platforms?    */
+name|font
+operator|=
+name|gdk_fontset_load
+argument_list|(
+name|fontname
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|gdk_error_warnings
 operator|=
 literal|1
