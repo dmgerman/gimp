@@ -1124,13 +1124,8 @@ name|context
 argument_list|)
 expr_stmt|;
 return|return
-name|g_strdup_printf
+name|g_strdup
 argument_list|(
-name|_
-argument_list|(
-literal|"%s Options"
-argument_list|)
-argument_list|,
 name|tool_info
 operator|->
 name|blurb

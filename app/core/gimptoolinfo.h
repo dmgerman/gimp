@@ -100,7 +100,7 @@ struct|struct
 name|_GimpToolInfo
 block|{
 DECL|member|parent_instance
-name|GimpData
+name|GimpViewable
 name|parent_instance
 decl_stmt|;
 DECL|member|gimp
@@ -179,7 +179,7 @@ struct|struct
 name|_GimpToolInfoClass
 block|{
 DECL|member|parent_class
-name|GimpDataClass
+name|GimpViewableClass
 name|parent_class
 decl_stmt|;
 block|}

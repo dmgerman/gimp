@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29096b980103
+DECL|enum|__anon28d35ae10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -198,7 +198,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpDataClass
+name|GimpViewableClass
 modifier|*
 name|parent_class
 init|=
@@ -276,7 +276,7 @@ name|tool_info_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_DATA
+name|GIMP_TYPE_VIEWABLE
 argument_list|,
 literal|"GimpToolInfo"
 argument_list|,
