@@ -137,6 +137,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"vectors/gimpvectors.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcolorpanel.h"
 end_include
 
@@ -256,7 +262,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0abefb0103
+DECL|enum|__anon2956d1310103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1273,6 +1279,20 @@ argument_list|,
 name|GIMP_TYPE_CHANNEL
 argument_list|,
 name|gimp_display_shell_drop_drawable
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_dnd_viewable_dest_add
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|GIMP_TYPE_VECTORS
+argument_list|,
+name|gimp_display_shell_drop_vectors
 argument_list|,
 name|shell
 argument_list|)
