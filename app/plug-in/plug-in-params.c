@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277c2d680103
+DECL|enum|__anon2b8e02500103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -6566,10 +6566,7 @@ name|PDB_TEMPORARY
 case|:
 name|prog
 operator|=
-name|g_strdup
-argument_list|(
 literal|"none"
-argument_list|)
 expr_stmt|;
 name|tmp
 operator|=
@@ -7101,12 +7098,9 @@ name|entry
 operator|.
 name|path
 operator|=
-name|g_strdup
-argument_list|(
 name|proc_install
 operator|->
 name|menu_path
-argument_list|)
 expr_stmt|;
 name|entry
 operator|.

@@ -762,6 +762,12 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+name|wire_destroy
+argument_list|(
+operator|&
+name|msg
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1027,6 +1033,12 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
+name|wire_destroy
+argument_list|(
+operator|&
+name|msg
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

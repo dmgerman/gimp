@@ -3209,6 +3209,13 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|proc_return
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_return
 argument_list|)
 expr_stmt|;
 return|return
