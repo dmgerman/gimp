@@ -7971,11 +7971,11 @@ argument_list|(
 operator|&
 name|adjustment
 argument_list|,
-name|last_opened_size
+name|edit_last_opened_size
 argument_list|,
 literal|0.0
 argument_list|,
-literal|256.0
+literal|16.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -9545,7 +9545,7 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|adjustment
+name|tile_cache_size_adjustment
 argument_list|)
 argument_list|,
 literal|"value_changed"
@@ -11043,7 +11043,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon29907cb70108
+DECL|struct|__anon2965889c0108
 specifier|static
 specifier|const
 struct|struct
@@ -11268,7 +11268,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon29907cb70208
+DECL|struct|__anon2965889c0208
 specifier|static
 specifier|const
 struct|struct
