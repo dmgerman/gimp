@@ -444,8 +444,6 @@ name|cset_identifier_first
 operator|=
 operator|(
 name|G_CSET_a_2_z
-literal|"-"
-name|G_CSET_A_2_Z
 operator|)
 expr_stmt|;
 name|scanner
@@ -456,8 +454,7 @@ name|cset_identifier_nth
 operator|=
 operator|(
 name|G_CSET_a_2_z
-literal|"-"
-name|G_CSET_A_2_Z
+literal|"-_"
 operator|)
 expr_stmt|;
 name|g_scanner_input_file
@@ -517,7 +514,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af57c510108
+DECL|struct|__anon2ac01dba0108
 block|{
 DECL|member|key
 name|gchar

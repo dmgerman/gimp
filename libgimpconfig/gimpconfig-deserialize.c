@@ -471,7 +471,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"parse error"
+literal|"Fatal parse error; I'm giving up."
 argument_list|,
 name|TRUE
 argument_list|)
@@ -741,7 +741,15 @@ condition|(
 name|token
 operator|==
 name|G_TOKEN_RIGHT_PAREN
+operator|&&
+name|g_scanner_peek_next_token
+argument_list|(
+name|scanner
+argument_list|)
+operator|==
+name|token
 condition|)
+block|{
 name|g_object_set_property
 argument_list|(
 name|object
@@ -754,7 +762,9 @@ operator|&
 name|value
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|g_warning
 argument_list|(
 literal|"Couldn't deserialize property %s::%s of type %s."
@@ -779,6 +789,7 @@ name|value_type
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|g_value_unset
 argument_list|(
 operator|&
