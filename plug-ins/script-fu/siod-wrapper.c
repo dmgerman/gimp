@@ -344,10 +344,10 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|siod_init (gint local_register_scripts)
+DECL|function|siod_init (gboolean local_register_scripts)
 name|siod_init
 parameter_list|(
-name|gint
+name|gboolean
 name|local_register_scripts
 parameter_list|)
 block|{
