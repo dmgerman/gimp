@@ -105,7 +105,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b1d93470108
+DECL|struct|__anon29f799c00108
 typedef|typedef
 struct|struct
 block|{
@@ -123,7 +123,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1d93470208
+DECL|struct|__anon29f799c00208
 typedef|typedef
 struct|struct
 block|{
@@ -1347,7 +1347,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d93470308
+DECL|struct|__anon29f799c00308
 block|{
 DECL|member|color
 name|double
@@ -1366,7 +1366,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d93470408
+DECL|struct|__anon29f799c00408
 block|{
 DECL|member|coord
 name|double
@@ -1383,7 +1383,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b1d93470503
+DECL|enum|__anon29f799c00503
 typedef|typedef
 enum|enum
 block|{
@@ -1405,7 +1405,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b1d93470603
+DECL|enum|__anon29f799c00603
 typedef|typedef
 enum|enum
 block|{
@@ -1423,7 +1423,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d93470708
+DECL|struct|__anon29f799c00708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1458,7 +1458,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d93470808
+DECL|struct|__anon29f799c00808
 block|{
 DECL|member|type
 name|t_LightType
@@ -2109,12 +2109,6 @@ begin_include
 include|#
 directive|include
 file|"iter_ALT/mod/plug_in_sparkle_iter_ALT.inc"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"iter_ALT/old/Colorify_iter_ALT.inc"
 end_include
 
 begin_include
