@@ -32,7 +32,7 @@ DECL|macro|PSD_DEBUG
 define|#
 directive|define
 name|PSD_DEBUG
-value|FALSE
+value|TRUE
 end_define
 
 begin_comment
@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29229cc30103
+DECL|enum|__anon28f66aa00103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -433,7 +433,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon29229cc30208
+DECL|struct|__anon28f66aa00208
 specifier|static
 struct|struct
 block|{
@@ -1933,6 +1933,38 @@ name|num_aux_channels
 index|]
 operator|.
 name|name
+operator|==
+name|NULL
+condition|)
+block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\tNull channel name %d.\n"
+argument_list|,
+name|psd_image
+operator|.
+name|num_aux_channels
+argument_list|)
+decl_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|psd_image
+operator|.
+name|aux_channel
+index|[
+name|psd_image
+operator|.
+name|num_aux_channels
+index|]
+operator|.
+name|name
 condition|)
 block|{
 name|guint32
@@ -2601,7 +2633,7 @@ argument_list|(
 literal|"\t\t<Undocumented field.>\n"
 argument_list|)
 decl_stmt|;
-name|throwchunk
+name|dumpchunk
 argument_list|(
 name|Size
 argument_list|,
@@ -8751,9 +8783,9 @@ if|if
 condition|(
 name|l
 condition|)
-name|printf
+name|g_warning
 argument_list|(
-literal|"*** %ld should be zero\n"
+literal|"decode: %ld should be zero\n"
 argument_list|,
 operator|(
 name|long
@@ -9873,12 +9905,12 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|//      xfread(fd,&len, 1, why); /* Throw away a byte? */
 return|return
 operator|(
 name|NULL
 operator|)
 return|;
-comment|/*      tmpchunk[0]=0;       return (tmpchunk);*/
 block|}
 name|tmpchunk
 operator|=
