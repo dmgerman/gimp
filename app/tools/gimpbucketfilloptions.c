@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aae10690103
+DECL|enum|__anon2b5daf5d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1030,16 +1030,6 @@ argument_list|(
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

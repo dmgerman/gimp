@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2998f5260103
+DECL|enum|__anon2a2d1bf80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1779,16 +1779,6 @@ operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox2
-argument_list|)
 argument_list|,
 literal|2
 argument_list|)

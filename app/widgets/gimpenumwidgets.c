@@ -359,13 +359,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_radio_frame_new:  * @enum_type: the #GType of an enum.  * @label_widget: a widget to put into the frame that will hold the radio box.  * @border_width: the border_width of the vbox inside the frame.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Calls gimp_enum_radio_box_new() and puts the resulting vbox into a  * #GtkFrame.  *  * Return value: a new #GtkFrame holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_radio_frame_new:  * @enum_type: the #GType of an enum.  * @label_widget: a widget to put into the frame that will hold the radio box.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Calls gimp_enum_radio_box_new() and puts the resulting vbox into a  * #GtkFrame.  *  * Return value: a new #GtkFrame holding a group of #GtkRadioButtons.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_enum_radio_frame_new (GType enum_type,GtkWidget * label_widget,gint border_width,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
+DECL|function|gimp_enum_radio_frame_new (GType enum_type,GtkWidget * label_widget,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
 name|gimp_enum_radio_frame_new
 parameter_list|(
 name|GType
@@ -374,9 +374,6 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 name|label_widget
-parameter_list|,
-name|gint
-name|border_width
 parameter_list|,
 name|GCallback
 name|callback
@@ -463,16 +460,6 @@ argument_list|,
 name|first_button
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|radio_box
-argument_list|)
-argument_list|,
-name|border_width
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -497,7 +484,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_enum_radio_frame_new_with_range (GType enum_type,gint minimum,gint maximum,GtkWidget * label_widget,gint border_width,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
+DECL|function|gimp_enum_radio_frame_new_with_range (GType enum_type,gint minimum,gint maximum,GtkWidget * label_widget,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
 name|gimp_enum_radio_frame_new_with_range
 parameter_list|(
 name|GType
@@ -512,9 +499,6 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 name|label_widget
-parameter_list|,
-name|gint
-name|border_width
 parameter_list|,
 name|GCallback
 name|callback
@@ -603,16 +587,6 @@ argument_list|,
 name|callback_data
 argument_list|,
 name|first_button
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|radio_box
-argument_list|)
-argument_list|,
-name|border_width
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

@@ -1192,8 +1192,6 @@ literal|"Select Range to Modify"
 argument_list|)
 argument_list|)
 argument_list|,
-literal|2
-argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|color_balance_range_callback
@@ -1268,16 +1266,6 @@ argument_list|(
 name|FALSE
 argument_list|,
 literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

@@ -2336,8 +2336,6 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|2
-argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_prop_radio_button_callback
@@ -2364,8 +2362,6 @@ name|gtk_label_new
 argument_list|(
 name|label
 argument_list|)
-argument_list|,
-literal|2
 argument_list|,
 name|G_CALLBACK
 argument_list|(

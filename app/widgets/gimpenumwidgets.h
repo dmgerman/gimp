@@ -78,9 +78,6 @@ name|GtkWidget
 modifier|*
 name|label_widget
 parameter_list|,
-name|gint
-name|border_width
-parameter_list|,
 name|GCallback
 name|callback
 parameter_list|,
@@ -112,9 +109,6 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 name|label_widget
-parameter_list|,
-name|gint
-name|border_width
 parameter_list|,
 name|GCallback
 name|callback

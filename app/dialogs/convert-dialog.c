@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e0b5760108
+DECL|struct|__anon289a48860108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -656,8 +656,6 @@ argument_list|(
 literal|"Palette"
 argument_list|)
 argument_list|)
-argument_list|,
-literal|2
 argument_list|,
 name|G_CALLBACK
 argument_list|(
