@@ -673,6 +673,15 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|token
+operator|==
+name|G_TOKEN_NONE
+condition|)
+return|return
+name|FALSE
+return|;
 comment|/* If store_unknown_tokens is TRUE but the unknown token value couldn't      be parsed the default error message is rather confusing.      We try to produce something more meaningful here ... */
 if|if
 condition|(

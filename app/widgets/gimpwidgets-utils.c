@@ -267,7 +267,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"%s: %s\n"
+literal|"%s: %s\n\n"
 argument_list|,
 name|domain
 argument_list|,
@@ -500,7 +500,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"%s: %s\n"
+literal|"%s: %s\n\n"
 argument_list|,
 name|domain
 argument_list|,

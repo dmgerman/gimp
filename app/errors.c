@@ -59,6 +59,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpversion.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -179,6 +185,34 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+operator|(
+name|GIMP_MINOR_VERSION
+operator|%
+literal|2
+operator|)
+operator|==
+literal|1
+name|g_printerr
+argument_list|(
+literal|"This is a development version of the GIMP\n"
+literal|"Debug messages may appear here.\n\n"
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|g_printerr
+argument_list|(
+literal|"You can minimize this window, but don't close it.\n\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|#
+directive|endif
+comment|/* odd minor version */
 name|use_debug_handler
 operator|=
 name|_use_debug_handler
@@ -260,7 +294,7 @@ return|return;
 block|}
 name|g_printerr
 argument_list|(
-literal|"%s: %s\n"
+literal|"%s: %s\n\n"
 argument_list|,
 name|full_prog_name
 argument_list|,

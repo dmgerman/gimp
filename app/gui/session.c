@@ -42,13 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpguiconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp.h"
+file|"config/gimpconfig-utils.h"
 end_include
 
 begin_include
@@ -60,7 +54,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpscanner.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274d7c2d0103
+DECL|enum|__anon29327f850103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -167,19 +173,17 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|scanner
 condition|)
 block|{
-comment|/*  always show L&C&P, Tool Options and Brushes on first invocation  */
-comment|/* TODO */
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|g_scanner_scope_add_symbol
@@ -473,10 +477,24 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
+name|gimp_config_file_backup_on_error
+argument_list|(
+name|filename
+argument_list|,
+literal|"sessionrc"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_scanner_destroy
 argument_list|(
 name|scanner
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 block|}

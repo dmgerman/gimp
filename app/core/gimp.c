@@ -261,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28820e880103
+DECL|enum|__anon27c6a3da0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4199,18 +4199,16 @@ block|}
 block|}
 name|g_printerr
 argument_list|(
-literal|"%s: %s\n"
+literal|"%s: %s\n\n"
 argument_list|,
 name|domain
 condition|?
 name|domain
 else|:
-name|GIMP_OBJECT
+name|_
 argument_list|(
-name|gimp
+literal|"GIMP"
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|message
 argument_list|)
