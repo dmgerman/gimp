@@ -82,7 +82,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2b4220ad0103
+DECL|enum|__anon2ab14abd0103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -101,7 +101,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b4220ad0208
+DECL|struct|__anon2ab14abd0208
 typedef|typedef
 struct|struct
 block|{
@@ -970,12 +970,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|snap
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1095,10 +1092,7 @@ name|button
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1157,10 +1151,7 @@ name|button
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1229,10 +1220,7 @@ name|button
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1390,12 +1378,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|width
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1463,12 +1448,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|height
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1665,12 +1647,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|left
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1724,12 +1703,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|top
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1800,12 +1776,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|preview
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

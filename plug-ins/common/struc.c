@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce58270103
+DECL|enum|__anon2b6817910103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce58270208
+DECL|struct|__anon2b6817910208
 block|{
 DECL|member|direction
 name|gint
@@ -40917,7 +40917,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce58270308
+DECL|struct|__anon2b6817910308
 block|{
 DECL|member|run
 name|gint
@@ -41631,10 +41631,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -41918,10 +41915,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

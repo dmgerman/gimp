@@ -4450,10 +4450,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -4597,10 +4594,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -4724,10 +4718,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -4744,7 +4735,7 @@ if|#
 directive|if
 literal|0
 comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
-block|entry = gtk_entry_new ();   gtk_entry_set_max_length (GTK_ENTRY (entry), MAX_COMMENT);   gtk_widget_set_size_request (entry, 240, -1);   gtk_entry_set_text (GTK_ENTRY (entry), xsvals.comment);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Comment:"), 1.0, 0.5, 			     entry, 1, TRUE);   g_signal_connect (G_OBJECT (entry), "changed",                     G_CALLBACK (comment_entry_callback),                     NULL);
+block|entry = gtk_entry_new ();   gtk_entry_set_max_length (GTK_ENTRY (entry), MAX_COMMENT);   gtk_widget_set_size_request (entry, 240, -1);   gtk_entry_set_text (GTK_ENTRY (entry), xsvals.comment);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Comment:"), 1.0, 0.5, 			     entry, 1, TRUE);   g_signal_connect (entry, "changed",                     G_CALLBACK (comment_entry_callback),                     NULL);
 endif|#
 directive|endif
 comment|/* hotspot toggle */
@@ -4793,10 +4784,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -4944,10 +4932,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -5022,10 +5007,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -5175,10 +5157,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -5249,10 +5228,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,

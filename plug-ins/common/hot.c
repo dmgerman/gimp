@@ -70,7 +70,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5eae970108
+DECL|struct|__anon2774e7b40108
 block|{
 DECL|member|image
 name|gint32
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5eae970203
+DECL|enum|__anon2774e7b40203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5eae970303
+DECL|enum|__anon2774e7b40303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -165,7 +165,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c5eae970408
+DECL|struct|__anon2774e7b40408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2437,10 +2437,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -2572,10 +2569,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

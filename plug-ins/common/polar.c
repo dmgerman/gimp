@@ -165,7 +165,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b021ce50108
+DECL|struct|__anon2bd296330108
 block|{
 DECL|member|circle
 name|gdouble
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b021ce50208
+DECL|struct|__anon2bd296330208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3587,10 +3587,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -3962,10 +3959,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4029,10 +4023,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4131,10 +4122,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -4208,10 +4196,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -4285,10 +4270,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b26ebe0108
+DECL|struct|__anon2ae663200108
 block|{
 DECL|member|root
 name|gboolean
@@ -1294,10 +1294,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1493,10 +1490,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1594,10 +1588,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|decor_button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1711,10 +1702,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1857,10 +1845,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

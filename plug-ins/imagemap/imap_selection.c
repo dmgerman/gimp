@@ -2214,10 +2214,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
-argument_list|)
 argument_list|,
 literal|"drag_data_received"
 argument_list|,
@@ -2232,10 +2229,7 @@ expr_stmt|;
 comment|/* Callbacks we are interested in */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
-argument_list|)
 argument_list|,
 literal|"click_column"
 argument_list|,
@@ -2249,10 +2243,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
-argument_list|)
 argument_list|,
 literal|"select_row"
 argument_list|,
@@ -2266,10 +2257,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
-argument_list|)
 argument_list|,
 literal|"unselect_row"
 argument_list|,
@@ -2283,10 +2271,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
-argument_list|)
 argument_list|,
 literal|"row_move"
 argument_list|,
@@ -2301,10 +2286,7 @@ expr_stmt|;
 comment|/* For handling doubleclick */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -2318,10 +2300,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
-argument_list|)
 argument_list|,
 literal|"button_release_event"
 argument_list|,

@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794d2a30108
+DECL|struct|__anon2a2e898b0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1141,10 +1141,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1596,10 +1593,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1796,10 +1790,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|size_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1863,10 +1854,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|size_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

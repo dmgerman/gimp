@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f17b210108
+DECL|struct|__anon2a2de6770108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -2795,10 +2795,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -3073,10 +3070,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3140,10 +3134,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

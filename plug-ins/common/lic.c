@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2119640108
+DECL|struct|__anon299289870108
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -4592,10 +4592,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4660,10 +4657,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4728,10 +4722,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4797,10 +4788,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4865,10 +4853,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

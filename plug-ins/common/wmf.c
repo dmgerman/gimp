@@ -2945,7 +2945,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0108
+DECL|struct|__anon2aa10f960108
 block|{
 DECL|member|scale
 name|double
@@ -2973,7 +2973,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0208
+DECL|struct|__anon2aa10f960208
 block|{
 DECL|member|run
 name|gint
@@ -3000,7 +3000,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0308
+DECL|struct|__anon2aa10f960308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3021,7 +3021,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba70a0a0403
+DECL|enum|__anon2aa10f960403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -3052,7 +3052,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0508
+DECL|struct|__anon2aa10f960508
 block|{
 DECL|member|dummy
 name|int
@@ -3067,7 +3067,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0608
+DECL|struct|__anon2aa10f960608
 block|{
 DECL|member|color
 name|GdkColor
@@ -3094,7 +3094,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0708
+DECL|struct|__anon2aa10f960708
 block|{
 DECL|member|dummy
 name|int
@@ -3109,7 +3109,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0808
+DECL|struct|__anon2aa10f960808
 block|{
 DECL|member|color
 name|GdkColor
@@ -3136,7 +3136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0908
+DECL|struct|__anon2aa10f960908
 block|{
 DECL|member|font
 name|GdkFont
@@ -3152,7 +3152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0a08
+DECL|struct|__anon2aa10f960a08
 block|{
 DECL|member|dummy
 name|int
@@ -3167,14 +3167,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0b08
+DECL|struct|__anon2aa10f960b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2ba70a0a0c0a
+DECL|union|__anon2aa10f960c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -3213,7 +3213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0d08
+DECL|struct|__anon2aa10f960d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -3266,7 +3266,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0e08
+DECL|struct|__anon2aa10f960e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -3317,7 +3317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba70a0a0f08
+DECL|struct|__anon2aa10f960f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -3639,12 +3639,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|vals
 operator|->
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,

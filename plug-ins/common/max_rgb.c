@@ -198,7 +198,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c144e70103
+DECL|enum|__anon2b289e290103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -216,7 +216,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c144e70208
+DECL|struct|__anon2b289e290208
 block|{
 DECL|member|max_p
 name|gint
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c144e70308
+DECL|struct|__anon2b289e290308
 block|{
 DECL|member|run
 name|gint
@@ -1527,10 +1527,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,

@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7cfef00103
+DECL|enum|__anon29c0422f0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -1742,10 +1742,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
@@ -1976,10 +1973,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|psbutton
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -2024,10 +2018,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -2072,10 +2063,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -2429,10 +2417,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|shape_window
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -2446,10 +2431,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|shape_window
-argument_list|)
 argument_list|,
 literal|"button_release_event"
 argument_list|,
@@ -2463,10 +2445,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|shape_window
-argument_list|)
 argument_list|,
 literal|"motion_notify_event"
 argument_list|,
@@ -2503,10 +2482,7 @@ block|}
 comment|/*  gtk_widget_show (shape_window);*/
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|eventbox
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -2520,10 +2496,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|drawing_area
-argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
@@ -2537,10 +2510,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|shape_drawing_area
-argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,

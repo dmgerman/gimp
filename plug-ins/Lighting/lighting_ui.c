@@ -1043,7 +1043,7 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/*   toggle = gtk_check_button_new_with_label (_("Use Bump Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.bump_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (G_OBJECT (toggle), "toggled", 		    G_CALLBACK (togglebump_update),&mapvals.bump_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable bump-mapping (image depth)"), 			   NULL);      toggle = gtk_check_button_new_with_label (_("Use Environment Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.env_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (G_OBJECT (toggle), "toggled", 		    G_CALLBACK (toggleenvironment_update),&mapvals.env_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable environment mapping (reflection)"), 			   NULL);   */
+comment|/*   toggle = gtk_check_button_new_with_label (_("Use Bump Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.bump_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled", 		    G_CALLBACK (togglebump_update),&mapvals.bump_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable bump-mapping (image depth)"), 			   NULL);      toggle = gtk_check_button_new_with_label (_("Use Environment Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.env_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled", 		    G_CALLBACK (toggleenvironment_update),&mapvals.env_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable environment mapping (reflection)"), 			   NULL);   */
 name|toggle
 operator|=
 name|gtk_check_button_new_with_mnemonic
@@ -1084,10 +1084,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1160,10 +1157,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1235,10 +1229,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1338,10 +1329,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1486,10 +1474,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1557,10 +1542,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1575,7 +1557,7 @@ operator|.
 name|pixel_treshold
 argument_list|)
 expr_stmt|;
-comment|/*   spinbutton = gimp_spin_button_new (&adj, mapvals.pixel_treshold, 				     0.001, 1000, 0.1, 1, 1, 0, 3);   g_signal_connect (G_OBJECT (adj), "value_changed", 		    G_CALLBACK (gimp_double_adjustment_update),&mapvals.pixel_treshold);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Threshold:"), 1.0, 1.0, 			     spinbutton, 1, TRUE);    gimp_help_set_help_data (spinbutton, 			   _("Stop when pixel differences are smaller than " 			     "this value"), NULL);   */
+comment|/*   spinbutton = gimp_spin_button_new (&adj, mapvals.pixel_treshold, 				     0.001, 1000, 0.1, 1, 1, 0, 3);   g_signal_connect (adj, "value_changed", 		    G_CALLBACK (gimp_double_adjustment_update),&mapvals.pixel_treshold);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Threshold:"), 1.0, 1.0, 			     spinbutton, 1, TRUE);    gimp_help_set_help_data (spinbutton, 			   _("Stop when pixel differences are smaller than " 			     "this value"), NULL);   */
 name|gtk_widget_show
 argument_list|(
 name|page
@@ -1870,10 +1852,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|colorbutton
-argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
@@ -1892,10 +1871,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|colorbutton
-argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
@@ -2103,10 +2079,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2127,10 +2100,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2214,10 +2184,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2238,10 +2205,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2325,10 +2289,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2349,10 +2310,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2533,10 +2491,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2557,10 +2512,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2644,10 +2596,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2668,10 +2617,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2755,10 +2701,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2779,10 +2722,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3094,10 +3034,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3116,10 +3053,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3298,10 +3232,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3320,10 +3251,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3609,10 +3537,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3631,10 +3556,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3813,10 +3735,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3835,10 +3754,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4016,10 +3932,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4038,10 +3951,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4265,10 +4175,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -4585,10 +4492,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4670,10 +4574,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4742,10 +4643,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -4908,10 +4806,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -5559,10 +5454,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|previewarea
-argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
@@ -5632,10 +5524,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -5704,10 +5593,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -5724,10 +5610,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

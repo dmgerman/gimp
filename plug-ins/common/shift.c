@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db6a030108
+DECL|struct|__anon2ac0b2600108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db6a030208
+DECL|struct|__anon2ac0b2600208
 block|{
 DECL|member|run
 name|gint
@@ -1294,10 +1294,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1581,10 +1578,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|size_entry
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

@@ -2955,10 +2955,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|omwindow
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -2973,10 +2970,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|omwindow
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
@@ -3462,10 +3456,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tmpw
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -3526,10 +3517,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tmpw
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -3593,10 +3581,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tmpw
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -3660,10 +3645,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tmpw
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -3893,10 +3875,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tmpw
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,

@@ -431,7 +431,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2aa60a040108
+DECL|struct|__anon2b3239420108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1429,10 +1429,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|win
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
@@ -1568,10 +1565,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2300,10 +2294,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|win
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
@@ -2628,10 +2619,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|win
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
@@ -3292,10 +3280,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -3388,10 +3373,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -3489,10 +3471,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -3717,10 +3696,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -5243,10 +5219,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -5903,12 +5876,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|AW
 operator|.
 name|window
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
@@ -6465,12 +6435,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|AW
 operator|.
 name|aliasingGraph
-argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
@@ -6590,10 +6557,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|smoothnessData
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -6798,10 +6762,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|smoothnessData
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

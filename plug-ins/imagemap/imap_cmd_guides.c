@@ -52,7 +52,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29b4aad90108
+DECL|struct|__anon2aadee990108
 typedef|typedef
 struct|struct
 block|{
@@ -882,12 +882,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|width
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -941,12 +938,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|left
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1000,12 +994,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|height
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1059,12 +1050,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|top
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1118,12 +1106,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|horz_spacing
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1177,12 +1162,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|no_across
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1236,12 +1218,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|vert_spacing
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1295,12 +1274,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|no_down
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1573,7 +1549,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29b4aad90208
+DECL|struct|__anon2aadee990208
 typedef|typedef
 struct|struct
 block|{

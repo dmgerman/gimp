@@ -162,7 +162,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3e32d0108
+DECL|struct|__anon27a986a60108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3e32d0208
+DECL|struct|__anon27a986a60208
 block|{
 DECL|member|run
 name|gboolean
@@ -328,11 +328,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|custum_color_button
+DECL|variable|custom_color_button
 specifier|static
 name|GtkWidget
 modifier|*
-name|custum_color_button
+name|custom_color_button
 init|=
 name|NULL
 decl_stmt|;
@@ -1055,10 +1055,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1223,7 +1220,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|custum_color_button
+name|custom_color_button
 operator|=
 name|gimp_color_button_new
 argument_list|(
@@ -1243,10 +1240,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
-name|custum_color_button
-argument_list|)
+name|custom_color_button
 argument_list|,
 literal|"color_changed"
 argument_list|,
@@ -1265,7 +1259,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|custum_color_button
+name|custom_color_button
 argument_list|,
 literal|6
 argument_list|,
@@ -1286,7 +1280,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|custum_color_button
+name|custom_color_button
 argument_list|)
 expr_stmt|;
 for|for
@@ -1347,10 +1341,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1473,7 +1464,7 @@ name|gimp_color_button_set_color
 argument_list|(
 name|GIMP_COLOR_BUTTON
 argument_list|(
-name|custum_color_button
+name|custom_color_button
 argument_list|)
 argument_list|,
 operator|(

@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ef0560108
+DECL|struct|__anon29b3754e0108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -656,10 +656,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1111,10 +1108,7 @@ operator|++
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1200,10 +1194,7 @@ operator|++
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1272,10 +1263,7 @@ operator|++
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tilecheck
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1966,10 +1954,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
 name|buttonl
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1983,11 +1968,8 @@ name|div_entry
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
-argument_list|(
-name|GTK_OBJECT
 argument_list|(
 name|buttonr
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -2002,11 +1984,8 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
 operator|*
 name|div_entry
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -2656,11 +2635,8 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 operator|*
 name|div_entry
-argument_list|)
 argument_list|,
 name|entscale_int_entry_update
 argument_list|,
@@ -2680,11 +2656,8 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 operator|*
 name|div_entry
-argument_list|)
 argument_list|,
 name|entscale_int_entry_update
 argument_list|,
@@ -3253,10 +3226,7 @@ expr_stmt|;
 comment|/* now ready for signals */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -3270,10 +3240,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -3287,10 +3254,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -3551,10 +3515,7 @@ expr_stmt|;
 comment|/* avoid infinite loop (scale, entry, scale, entry ...) */
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
-argument_list|)
 argument_list|,
 name|entscale_int_entry_update
 argument_list|,
@@ -3570,10 +3531,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
-argument_list|)
 argument_list|,
 name|entscale_int_entry_update
 argument_list|,
@@ -3728,10 +3686,7 @@ name|constraint_val
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adjustment
-argument_list|)
 argument_list|,
 name|entscale_int_scale_update
 argument_list|,
@@ -3745,10 +3700,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adjustment
-argument_list|)
 argument_list|,
 name|entscale_int_scale_update
 argument_list|,

@@ -73,7 +73,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon295b68400108
+DECL|struct|__anon289adcbd0108
 typedef|typedef
 struct|struct
 block|{
@@ -433,10 +433,7 @@ name|count
 decl_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 name|select_motion
 argument_list|,
@@ -445,10 +442,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 name|select_release
 argument_list|,
@@ -610,12 +604,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|command
 operator|->
 name|widget
-argument_list|)
 argument_list|,
 literal|"button_release_event"
 argument_list|,
@@ -629,12 +620,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|command
 operator|->
 name|widget
-argument_list|)
 argument_list|,
 literal|"motion_notify_event"
 argument_list|,

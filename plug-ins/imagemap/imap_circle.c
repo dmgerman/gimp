@@ -1307,7 +1307,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon287e1e5e0108
+DECL|struct|__anon277c21260108
 typedef|typedef
 struct|struct
 block|{
@@ -1655,12 +1655,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|props
 operator|->
 name|x
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1730,12 +1727,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|props
 operator|->
 name|y
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1803,12 +1797,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|props
 operator|->
 name|r
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

@@ -52,7 +52,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29dad3380108
+DECL|struct|__anon2b15a8470108
 typedef|typedef
 struct|struct
 block|{
@@ -767,12 +767,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|ncsa
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -830,12 +827,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|cern
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -893,12 +887,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
 operator|->
 name|csim
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

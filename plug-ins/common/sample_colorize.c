@@ -391,7 +391,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon28795ea70108
+DECL|struct|__anon2a3ef6bb0108
 typedef|typedef
 struct|struct
 block|{
@@ -460,7 +460,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28795ea70208
+DECL|struct|__anon2a3ef6bb0208
 typedef|typedef
 struct|struct
 block|{
@@ -578,7 +578,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28795ea70308
+DECL|struct|__anon2a3ef6bb0308
 typedef|typedef
 struct|struct
 block|{
@@ -607,7 +607,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28795ea70408
+DECL|struct|__anon2a3ef6bb0408
 typedef|typedef
 struct|struct
 block|{
@@ -634,7 +634,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28795ea70508
+DECL|struct|__anon2a3ef6bb0508
 typedef|typedef
 struct|struct
 block|{
@@ -6715,10 +6715,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -7159,10 +7156,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menu_item
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -7205,10 +7199,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menu_item
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -7302,10 +7293,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|check_button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -7366,10 +7354,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|check_button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -7472,10 +7457,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|check_button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -7536,10 +7518,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|check_button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -7882,12 +7861,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|g_di
 operator|.
 name|in_lvl_gray_preview
-argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
@@ -7955,12 +7931,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|g_di
 operator|.
 name|in_lvl_drawarea
-argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
@@ -8151,12 +8124,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|g_di
 operator|.
 name|sample_drawarea
-argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
@@ -8329,12 +8299,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|g_di
 operator|.
 name|adj_lvl_in_min
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -8425,12 +8392,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|g_di
 operator|.
 name|adj_lvl_in_gamma
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -8521,12 +8485,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|g_di
 operator|.
 name|adj_lvl_in_max
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -8691,12 +8652,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|g_di
 operator|.
 name|adj_lvl_out_min
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -8787,12 +8745,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|g_di
 operator|.
 name|adj_lvl_out_max
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -8889,10 +8844,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|check_button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -8970,10 +8922,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|check_button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -9076,10 +9025,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|check_button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -9140,10 +9086,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|check_button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

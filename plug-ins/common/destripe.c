@@ -2101,10 +2101,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -2399,10 +2396,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|hscroll_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2502,10 +2496,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|vscroll_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2708,10 +2699,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -2723,7 +2711,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  button = gtk_check_button_new_with_label("Recursive");   gtk_table_attach_defaults (GTK_TABLE (table), button, 0, 1, 1, 2);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),                                 (filter_type& FILTER_RECURSIVE) ? TRUE : FALSE);   g_signal_connect (G_OBJECT (button), "toggled", 	            G_CALLBACK (dialog_recursive_callback), 		    NULL);   gtk_widget_show (button);*/
+comment|/*  button = gtk_check_button_new_with_label("Recursive");   gtk_table_attach_defaults (GTK_TABLE (table), button, 0, 1, 1, 2);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),                                 (filter_type& FILTER_RECURSIVE) ? TRUE : FALSE);   g_signal_connect (button, "toggled", 	            G_CALLBACK (dialog_recursive_callback), 		    NULL);   gtk_widget_show (button);*/
 comment|/*    * Box size (radius) control...    */
 name|adj
 operator|=
@@ -2772,10 +2760,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

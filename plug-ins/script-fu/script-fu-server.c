@@ -359,7 +359,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d497a0108
+DECL|struct|__anon2b1478200108
 block|{
 DECL|member|command
 name|gchar
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d497a0208
+DECL|struct|__anon2b1478200208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2184,10 +2184,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,

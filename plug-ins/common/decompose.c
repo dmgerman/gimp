@@ -735,7 +735,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292b66420108
+DECL|struct|__anon2bff031e0108
 block|{
 DECL|member|type
 name|gchar
@@ -1347,7 +1347,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292b66420208
+DECL|struct|__anon2bff031e0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1365,7 +1365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292b66420308
+DECL|struct|__anon2bff031e0308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -5997,10 +5997,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -6197,10 +6194,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

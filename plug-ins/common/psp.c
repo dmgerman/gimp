@@ -137,7 +137,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30103
+DECL|enum|__anon29bbcf3c0103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +201,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30203
+DECL|enum|__anon29bbcf3c0203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +241,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30303
+DECL|enum|__anon29bbcf3c0303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +273,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30403
+DECL|enum|__anon29bbcf3c0403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +301,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30503
+DECL|enum|__anon29bbcf3c0503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +329,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30603
+DECL|enum|__anon29bbcf3c0603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +351,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30703
+DECL|enum|__anon29bbcf3c0703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +387,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30803
+DECL|enum|__anon29bbcf3c0803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +407,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30903
+DECL|enum|__anon29bbcf3c0903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +455,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30a03
+DECL|enum|__anon29bbcf3c0a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +479,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30b03
+DECL|enum|__anon29bbcf3c0b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +540,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon295335d30c03
+DECL|enum|__anon29bbcf3c0c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295335d30d08
+DECL|struct|__anon29bbcf3c0d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295335d30e08
+DECL|struct|__anon29bbcf3c0e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +776,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295335d30f08
+DECL|struct|__anon29bbcf3c0f08
 block|{
 DECL|member|run
 name|gint
@@ -1061,10 +1061,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1544,25 +1541,9 @@ index|[
 literal|6
 index|]
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|G_HAVE_GINT64
-name|gint64
+name|guint64
 name|res
-index|[
-literal|1
-index|]
 decl_stmt|;
-else|#
-directive|else
-name|guchar
-name|res
-index|[
-literal|8
-index|]
-decl_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|init_len
@@ -1640,6 +1621,7 @@ literal|1
 operator|||
 name|fread
 argument_list|(
+operator|&
 name|res
 argument_list|,
 literal|8
@@ -1815,135 +1797,13 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|G_HAVE_GINT64
 name|res
-index|[
-literal|0
-index|]
 operator|=
 name|GUINT64_FROM_LE
 argument_list|(
 name|res
-index|[
-literal|0
-index|]
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-if|#
-directive|if
-name|G_BYTE_ORDER
-operator|==
-name|G_BIG_ENDIAN
-block|{
-comment|/* Swap bytes in the double */
-name|guchar
-name|t
-decl_stmt|;
-name|t
-operator|=
-name|res
-index|[
-literal|0
-index|]
-expr_stmt|;
-name|res
-index|[
-literal|0
-index|]
-operator|=
-name|res
-index|[
-literal|7
-index|]
-expr_stmt|;
-name|res
-index|[
-literal|7
-index|]
-operator|=
-name|t
-expr_stmt|;
-name|t
-operator|=
-name|res
-index|[
-literal|1
-index|]
-expr_stmt|;
-name|res
-index|[
-literal|1
-index|]
-operator|=
-name|res
-index|[
-literal|6
-index|]
-expr_stmt|;
-name|res
-index|[
-literal|6
-index|]
-operator|=
-name|t
-expr_stmt|;
-name|t
-operator|=
-name|res
-index|[
-literal|2
-index|]
-expr_stmt|;
-name|res
-index|[
-literal|2
-index|]
-operator|=
-name|res
-index|[
-literal|5
-index|]
-expr_stmt|;
-name|res
-index|[
-literal|5
-index|]
-operator|=
-name|t
-expr_stmt|;
-name|t
-operator|=
-name|res
-index|[
-literal|3
-index|]
-expr_stmt|;
-name|res
-index|[
-literal|3
-index|]
-operator|=
-name|res
-index|[
-literal|4
-index|]
-expr_stmt|;
-name|res
-index|[
-literal|4
-index|]
-operator|=
-name|t
-expr_stmt|;
-block|}
-endif|#
-directive|endif
-endif|#
-directive|endif
 name|memcpy
 argument_list|(
 operator|&
@@ -1951,6 +1811,7 @@ name|ia
 operator|->
 name|resolution
 argument_list|,
+operator|&
 name|res
 argument_list|,
 literal|8

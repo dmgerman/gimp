@@ -306,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5f4070108
+DECL|struct|__anon2b05585e0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5f4070208
+DECL|struct|__anon2b05585e0208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5f4070308
+DECL|struct|__anon2b05585e0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -5770,10 +5770,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -5934,10 +5931,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -5954,10 +5948,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -6279,10 +6270,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -6299,10 +6287,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -6473,10 +6458,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -6493,10 +6475,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -6591,10 +6570,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|restart
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -6761,10 +6737,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|scale_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -6854,10 +6827,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -6874,10 +6844,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -6944,10 +6911,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|progressive
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -6964,10 +6928,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|progressive
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -7046,10 +7007,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|baseline
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -7066,10 +7024,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|baseline
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -7425,10 +7380,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|text_buffer
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* pw - mild hack here.  I didn't like redoing the comment string    * each time a character was typed, so I associated the text area    * with the dialog.  That way, just before the dialog destroys    * itself (once the ok button is hit) it can save whatever was in    * the comment text area to the comment string.  See the    * save-ok-callback for more details.      * [DindinX 2001-09-04]: this comment is still true with the text_buffer...    */

@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7297b00108
+DECL|struct|__anon2c643e6a0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -592,12 +592,9 @@ expr_stmt|;
 block|}
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dbbrowser
 operator|->
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -814,12 +811,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dbbrowser
 operator|->
 name|sel
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -3271,12 +3265,9 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dbbrowser
 operator|->
 name|store
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -493,7 +493,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c149a40108
+DECL|struct|__anon2b30ffc40108
 block|{
 DECL|member|compose_type
 name|gchar
@@ -868,7 +868,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c149a40208
+DECL|struct|__anon2b30ffc40208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -899,7 +899,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c149a40308
+DECL|struct|__anon2b30ffc40308
 block|{
 DECL|member|width
 DECL|member|height
@@ -5473,10 +5473,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -6045,10 +6042,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

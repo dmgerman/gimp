@@ -121,7 +121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a433c9c0108
+DECL|struct|__anon2c5ccbd90108
 block|{
 DECL|member|run
 name|gint
@@ -1536,7 +1536,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|WriteImage (FILE * f,guchar * src,gint width,gint height,gint encoded,gint channels,gint bpp,gint spzeile,gint MapSize)
 name|WriteImage
@@ -2902,10 +2901,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -3031,10 +3027,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

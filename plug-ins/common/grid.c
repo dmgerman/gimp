@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2d4bb0108
+DECL|struct|__anon2ab082050108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3203,10 +3203,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dlg
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -3562,10 +3559,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -4053,10 +4047,7 @@ expr_stmt|;
 comment|/* connect to the 'value_changed' signal because we have to take care     * of keeping the entries in sync when the chainbutton is active    */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|width
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4458,10 +4449,7 @@ expr_stmt|;
 comment|/* connect to the 'value_changed' and "unit_changed" signals because    * we have to take care of keeping the entries in sync when the    * chainbutton is active    */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|space
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4475,10 +4463,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|space
-argument_list|)
 argument_list|,
 literal|"unit_changed"
 argument_list|,
@@ -4934,10 +4919,7 @@ expr_stmt|;
 comment|/* connect to the 'value_changed' and "unit_changed" signals because    * we have to take care of keeping the entries in sync when the    * chainbutton is active    */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|offset
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -4951,10 +4933,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|offset
-argument_list|)
 argument_list|,
 literal|"unit_changed"
 argument_list|,
@@ -5099,10 +5078,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|hcolor_button
-argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
@@ -5119,10 +5095,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|hcolor_button
-argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
@@ -5208,10 +5181,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|vcolor_button
-argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
@@ -5228,10 +5198,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|vcolor_button
-argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
@@ -5317,10 +5284,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,

@@ -972,7 +972,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80103
+DECL|enum|__anon2a8f4cdc0103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1024,7 +1024,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80203
+DECL|enum|__anon2a8f4cdc0203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1045,7 +1045,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80303
+DECL|enum|__anon2a8f4cdc0303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1066,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80403
+DECL|enum|__anon2a8f4cdc0403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1093,7 +1093,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80503
+DECL|enum|__anon2a8f4cdc0503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1114,7 +1114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80603
+DECL|enum|__anon2a8f4cdc0603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1282,7 +1282,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280016a80708
+DECL|struct|__anon2a8f4cdc0708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1321,7 +1321,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280016a80808
+DECL|struct|__anon2a8f4cdc0808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1370,7 +1370,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280016a80908
+DECL|struct|__anon2a8f4cdc0908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1548,7 +1548,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80a03
+DECL|enum|__anon2a8f4cdc0a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1572,7 +1572,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80b03
+DECL|enum|__anon2a8f4cdc0b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1590,7 +1590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80c03
+DECL|enum|__anon2a8f4cdc0c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1611,7 +1611,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280016a80d03
+DECL|enum|__anon2a8f4cdc0d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -8725,10 +8725,7 @@ expr_stmt|;
 block|}
 name|g_signal_connect_after
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|pic_preview
-argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
@@ -18615,10 +18612,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gfig_preview
-argument_list|)
 argument_list|,
 literal|"motion_notify_event"
 argument_list|,
@@ -21884,15 +21878,12 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
 name|window
 argument_list|)
 operator|->
 name|cancel_button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,

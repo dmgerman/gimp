@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf2262d0103
+DECL|enum|__anon2c90ce7e0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -2258,10 +2258,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|main_dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -2462,10 +2459,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|rend
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -2904,10 +2898,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -2966,10 +2957,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
