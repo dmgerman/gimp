@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<pango/pangoft2.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"text-types.h"
 end_include
 
