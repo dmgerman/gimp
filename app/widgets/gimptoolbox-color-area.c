@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c04e5f30103
+DECL|enum|__anon2b9bad3e0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -1730,6 +1730,16 @@ name|edit_color
 operator|=
 name|active_color
 expr_stmt|;
+DECL|macro|FG_TITLE
+define|#
+directive|define
+name|FG_TITLE
+value|_("Change Foreground Color")
+DECL|macro|BG_TITLE
+define|#
+directive|define
+name|BG_TITLE
+value|_("Change Background Color")
 if|if
 condition|(
 operator|!
@@ -1740,10 +1750,13 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Color Selection"
-argument_list|)
+name|active_color
+operator|==
+name|FOREGROUND
+condition|?
+name|FG_TITLE
+else|:
+name|BG_TITLE
 argument_list|,
 operator|(
 specifier|const
@@ -1769,6 +1782,27 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|color_notebook_set_title
+argument_list|(
+name|color_notebook
+argument_list|,
+name|active_color
+operator|==
+name|FOREGROUND
+condition|?
+name|FG_TITLE
+else|:
+name|BG_TITLE
+argument_list|)
+expr_stmt|;
+name|color_notebook_set_color
+argument_list|(
+name|color_notebook
+argument_list|,
+operator|&
+name|color
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1793,15 +1827,13 @@ name|color_notebook
 argument_list|)
 expr_stmt|;
 block|}
-name|color_notebook_set_color
-argument_list|(
-name|color_notebook
-argument_list|,
-operator|&
-name|color
-argument_list|)
-expr_stmt|;
 block|}
+undef|#
+directive|undef
+name|FG_TITLE
+undef|#
+directive|undef
+name|BG_TITLE
 block|}
 end_function
 
