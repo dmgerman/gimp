@@ -2627,12 +2627,12 @@ block|,
 name|NULL
 block|}
 block|,
-comment|/*<Image>/Layer/Alpha  */
+comment|/*<Image>/Layer/Transparency  */
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Alpha/Add Alpha Channel"
+literal|"/Layer/Transparency/Add Alpha Channel"
 argument_list|)
 block|,
 name|NULL
@@ -2653,7 +2653,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Alpha/Alpha to Selection"
+literal|"/Layer/Transparency/Alpha to Selection"
 argument_list|)
 block|,
 name|NULL
@@ -2676,7 +2676,7 @@ block|}
 block|,
 name|MENU_SEPARATOR
 argument_list|(
-literal|"/Layer/Alpha/---"
+literal|"/Layer/Transparency/---"
 argument_list|)
 block|,
 name|MENU_SEPARATOR
@@ -6218,7 +6218,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Layer/Alpha/Alpha to Selection"
+literal|"/Layer/Transparency/Alpha to Selection"
 argument_list|,
 name|lp
 operator|&&
@@ -6230,7 +6230,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Layer/Alpha/Add Alpha Channel"
+literal|"/Layer/Transparency/Add Alpha Channel"
 argument_list|,
 name|lp
 operator|&&
