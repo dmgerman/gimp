@@ -43,6 +43,12 @@ directive|include
 file|<libgimp/gimpmodule.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"modregister.h"
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -317,6 +323,9 @@ block|{
 name|GimpColorSelectorID
 name|id
 decl_stmt|;
+ifndef|#
+directive|ifndef
+name|__EMX__
 name|id
 operator|=
 name|gimp_color_selector_register
@@ -329,6 +338,22 @@ operator|&
 name|methods
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|id
+operator|=
+name|mod_color_selector_register
+argument_list|(
+literal|"Watercolor"
+argument_list|,
+literal|"watercolor.html"
+argument_list|,
+operator|&
+name|methods
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|id
@@ -384,6 +409,9 @@ modifier|*
 name|completed_data
 parameter_list|)
 block|{
+ifndef|#
+directive|ifndef
+name|__EMX__
 name|gimp_color_selector_unregister
 argument_list|(
 name|shutdown_data
@@ -393,6 +421,19 @@ argument_list|,
 name|completed_data
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|mod_color_selector_unregister
+argument_list|(
+name|shutdown_data
+argument_list|,
+name|completed_cb
+argument_list|,
+name|completed_data
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -446,7 +487,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon2a4d6d6a0108
+DECL|struct|__anon29e5122f0108
 typedef|typedef
 struct|struct
 block|{
