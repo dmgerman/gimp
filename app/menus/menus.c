@@ -2417,7 +2417,7 @@ argument_list|(
 name|widget
 argument_list|)
 condition|)
-name|gtk_check_menu_item_set_state
+name|gtk_check_menu_item_set_active
 argument_list|(
 name|GTK_CHECK_MENU_ITEM
 argument_list|(
