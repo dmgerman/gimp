@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c03333b0108
+DECL|struct|__anon2773f4150108
 block|{
 DECL|member|announce_function
 name|gchar
@@ -1390,9 +1390,12 @@ literal|16
 argument_list|)
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_printerr
 argument_list|(
-literal|"gimp_composite: use=%s, verbose=%s"
+literal|"gimp_composite: use=%s, verbose=%s\n"
 argument_list|,
 operator|(
 name|gimp_composite_options
@@ -1419,6 +1422,8 @@ else|:
 literal|"no"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_composite_generic_install
 argument_list|()
 expr_stmt|;
@@ -1465,108 +1470,101 @@ name|gboolean
 name|gimp_composite_vis_install
 parameter_list|()
 function_decl|;
-if|if
-condition|(
+name|gboolean
+name|can_use_mmx
+decl_stmt|;
+name|gboolean
+name|can_use_sse
+decl_stmt|;
+name|gboolean
+name|can_use_sse2
+decl_stmt|;
+name|gboolean
+name|can_use_3dnow
+decl_stmt|;
+name|gboolean
+name|can_use_altivec
+decl_stmt|;
+name|gboolean
+name|can_use_vis
+decl_stmt|;
+name|can_use_mmx
+operator|=
 name|gimp_composite_mmx_install
 argument_list|()
-condition|)
-name|g_printerr
-argument_list|(
-literal|" +mmx"
-argument_list|)
 expr_stmt|;
-else|else
-name|g_printerr
-argument_list|(
-literal|" -mmx"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+name|can_use_sse
+operator|=
 name|gimp_composite_sse_install
 argument_list|()
-condition|)
-name|g_printerr
-argument_list|(
-literal|" +sse"
-argument_list|)
 expr_stmt|;
-else|else
-name|g_printerr
-argument_list|(
-literal|" -sse"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+name|can_use_sse2
+operator|=
 name|gimp_composite_sse2_install
 argument_list|()
-condition|)
-name|g_printerr
-argument_list|(
-literal|" +sse2"
-argument_list|)
 expr_stmt|;
-else|else
-name|g_printerr
-argument_list|(
-literal|" -sse2"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+name|can_use_3dnow
+operator|=
 name|gimp_composite_3dnow_install
 argument_list|()
-condition|)
-name|g_printerr
-argument_list|(
-literal|" +3dnow"
-argument_list|)
 expr_stmt|;
-else|else
-name|g_printerr
-argument_list|(
-literal|" -3dnow"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+name|can_use_altivec
+operator|=
 name|gimp_composite_altivec_install
 argument_list|()
-condition|)
-name|g_printerr
-argument_list|(
-literal|" +altivec"
-argument_list|)
 expr_stmt|;
-else|else
-name|g_printerr
-argument_list|(
-literal|" -altivec"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+name|can_use_vis
+operator|=
 name|gimp_composite_vis_install
 argument_list|()
-condition|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_printerr
 argument_list|(
-literal|" +vis"
+literal|"supported by gimp_composite: %cmmx %csse %csse2 %c3dnow %caltivec %cvis\n"
+argument_list|,
+name|can_use_mmx
+condition|?
+literal|'+'
+else|:
+literal|'-'
+argument_list|,
+name|can_use_sse
+condition|?
+literal|'+'
+else|:
+literal|'-'
+argument_list|,
+name|can_use_sse2
+condition|?
+literal|'+'
+else|:
+literal|'-'
+argument_list|,
+name|can_use_3dnow
+condition|?
+literal|'+'
+else|:
+literal|'-'
+argument_list|,
+name|can_use_altivec
+condition|?
+literal|'+'
+else|:
+literal|'-'
+argument_list|,
+name|can_use_vis
+condition|?
+literal|'+'
+else|:
+literal|'-'
 argument_list|)
 expr_stmt|;
-else|else
-name|g_printerr
-argument_list|(
-literal|" -vis"
-argument_list|)
-expr_stmt|;
+endif|#
+directive|endif
 block|}
-name|g_printerr
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

@@ -193,15 +193,9 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-operator|(
-name|GIMP_MINOR_VERSION
-operator|%
-literal|2
-operator|)
-operator|==
-literal|1
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_printerr
 argument_list|(
 literal|"This is a development version of The GIMP.\n"
@@ -220,7 +214,7 @@ endif|#
 directive|endif
 endif|#
 directive|endif
-comment|/* odd minor version */
+comment|/* GIMP_UNSTABLE */
 name|use_debug_handler
 operator|=
 name|_use_debug_handler
