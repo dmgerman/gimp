@@ -919,7 +919,7 @@ name|GIMP_INTERPOLATION_NONE
 operator|||
 name|interpolation
 operator|>
-name|GIMP_INTERPOLATION_CUBIC
+name|GIMP_INTERPOLATION_LANCZOS
 condition|)
 name|success
 operator|=
@@ -1198,7 +1198,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2) }"
+literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
 block|}
 block|,
 block|{
@@ -2020,7 +2020,7 @@ name|GIMP_INTERPOLATION_NONE
 operator|||
 name|interpolation
 operator|>
-name|GIMP_INTERPOLATION_CUBIC
+name|GIMP_INTERPOLATION_LANCZOS
 condition|)
 name|success
 operator|=
@@ -2363,7 +2363,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2) }"
+literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
 block|}
 block|,
 block|{
@@ -3647,7 +3647,7 @@ name|GIMP_INTERPOLATION_NONE
 operator|||
 name|interpolation
 operator|>
-name|GIMP_INTERPOLATION_CUBIC
+name|GIMP_INTERPOLATION_LANCZOS
 condition|)
 name|success
 operator|=
@@ -3937,7 +3937,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2) }"
+literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
 block|}
 block|,
 block|{
@@ -4718,7 +4718,7 @@ name|GIMP_INTERPOLATION_NONE
 operator|||
 name|interpolation
 operator|>
-name|GIMP_INTERPOLATION_CUBIC
+name|GIMP_INTERPOLATION_LANCZOS
 condition|)
 name|success
 operator|=
@@ -5041,7 +5041,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2) }"
+literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
 block|}
 block|,
 block|{
@@ -5837,7 +5837,7 @@ name|GIMP_INTERPOLATION_NONE
 operator|||
 name|interpolation
 operator|>
-name|GIMP_INTERPOLATION_CUBIC
+name|GIMP_INTERPOLATION_LANCZOS
 condition|)
 name|success
 operator|=
@@ -6096,7 +6096,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2) }"
+literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
 block|}
 block|,
 block|{
@@ -6864,7 +6864,7 @@ name|GIMP_INTERPOLATION_NONE
 operator|||
 name|interpolation
 operator|>
-name|GIMP_INTERPOLATION_CUBIC
+name|GIMP_INTERPOLATION_LANCZOS
 condition|)
 name|success
 operator|=
@@ -7191,7 +7191,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2) }"
+literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
 block|}
 block|,
 block|{
@@ -8111,7 +8111,7 @@ name|GIMP_INTERPOLATION_NONE
 operator|||
 name|interpolation
 operator|>
-name|GIMP_INTERPOLATION_CUBIC
+name|GIMP_INTERPOLATION_LANCZOS
 condition|)
 name|success
 operator|=
@@ -8516,7 +8516,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"interpolation"
 block|,
-literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2) }"
+literal|"Type of interpolation: { GIMP_INTERPOLATION_NONE (0), GIMP_INTERPOLATION_LINEAR (1), GIMP_INTERPOLATION_CUBIC (2), GIMP_INTERPOLATION_LANCZOS (3) }"
 block|}
 block|,
 block|{
