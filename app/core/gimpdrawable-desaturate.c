@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
 end_include
 
 begin_include

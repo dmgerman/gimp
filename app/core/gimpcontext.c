@@ -24,31 +24,23 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
 end_include
+
+begin_comment
+comment|/* FIXME: make a GimpToolFactory out of the tool_manager and put it here */
+end_comment
 
 begin_include
 include|#
 directive|include
-file|"tools/gimptoolinfo.h"
+file|"tools/tools-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -103,6 +95,24 @@ begin_include
 include|#
 directive|include
 file|"gimppattern.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -949,7 +959,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bca0e6e0103
+DECL|enum|__anon298a00170103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -992,7 +1002,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bca0e6e0203
+DECL|enum|__anon298a00170203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include

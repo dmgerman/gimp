@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdnd.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"asupsample.h"
 end_include
 
 begin_include
@@ -163,12 +163,6 @@ begin_include
 include|#
 directive|include
 file|"gimpblendtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimptoolinfo.h"
 end_include
 
 begin_include
@@ -353,7 +347,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14180b0108
+DECL|struct|__anon28837cbc0108
 block|{
 DECL|member|offset
 name|gdouble
@@ -405,7 +399,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14180b0208
+DECL|struct|__anon28837cbc0208
 block|{
 DECL|member|PR
 name|PixelRegion

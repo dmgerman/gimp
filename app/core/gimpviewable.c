@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f2ac80103
+DECL|enum|__anon28c3e46b0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b158bbe0103
+DECL|enum|__anon2b30b5220103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP

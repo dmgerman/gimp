@@ -18,19 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"tools/tools-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -42,13 +42,23 @@ end_include
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
+file|"context_manager.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimprectselecttool.h"
+file|"temp_buf.h"
+end_include
+
+begin_comment
+comment|/* GRMPF */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/gimprectselecttool.h"
 end_include
 
 begin_function_decl

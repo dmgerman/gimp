@@ -59,7 +59,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core-types.h"
 end_include
 
 begin_include
@@ -74,15 +80,9 @@ directive|include
 file|"gimpmarshal.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2a33572a0103
+DECL|enum|__anon2bd3b05c0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY

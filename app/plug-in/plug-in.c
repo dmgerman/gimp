@@ -345,7 +345,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -1522,7 +1522,7 @@ name|plug_in_init_shm
 argument_list|()
 expr_stmt|;
 comment|/* search for binaries in the plug-in directory path */
-name|datafiles_read_directories
+name|gimp_datafiles_read_directories
 argument_list|(
 name|plug_in_path
 argument_list|,
@@ -10364,7 +10364,7 @@ name|plug_in_def
 operator|->
 name|mtime
 operator|=
-name|datafile_mtime
+name|gimp_datafile_mtime
 argument_list|()
 expr_stmt|;
 name|plug_in_def

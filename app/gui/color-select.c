@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5e4af10103
+DECL|enum|__anon2ad51b9c0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5e4af10203
+DECL|enum|__anon2ad51b9c0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -7235,7 +7235,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5e4af10308
+DECL|struct|__anon2ad51b9c0308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

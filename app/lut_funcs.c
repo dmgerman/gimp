@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -943,7 +943,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec2b020108
+DECL|struct|__anon2b7ac3c60108
 block|{
 DECL|member|gamma
 name|double

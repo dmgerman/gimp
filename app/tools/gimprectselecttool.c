@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -61,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_include
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"gimprectselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimptoolinfo.h"
 end_include
 
 begin_include
@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bef71970103
+DECL|enum|__anon275c4f0a0103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT

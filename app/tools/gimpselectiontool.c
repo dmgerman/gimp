@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -42,25 +42,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawtool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gimpselectiontool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpselectiontool.h"
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_function_decl

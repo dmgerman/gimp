@@ -42,7 +42,17 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
+end_include
+
+begin_comment
+comment|/* FIXME: remove the Path<-> BezierSelect dependency */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include

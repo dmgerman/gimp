@@ -94,7 +94,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -230,7 +236,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c848b1a0103
+DECL|enum|__anon275b35950103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -365,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c848b1a0203
+DECL|enum|__anon275b35950203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

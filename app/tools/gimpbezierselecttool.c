@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -139,12 +139,6 @@ begin_include
 include|#
 directive|include
 file|"gimpbezierselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimptoolinfo.h"
 end_include
 
 begin_include
@@ -274,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a754ee0108
+DECL|struct|__anon28af30390108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -310,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a754ee0208
+DECL|struct|__anon28af30390208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -365,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a754ee0308
+DECL|struct|__anon28af30390308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -531,7 +525,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a754ee0403
+DECL|enum|__anon28af30390403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT

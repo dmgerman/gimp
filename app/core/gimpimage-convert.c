@@ -56,7 +56,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -35088,7 +35088,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291bd0d70108
+DECL|struct|__anon2b3958670108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35165,7 +35165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291bd0d70208
+DECL|struct|__anon2b3958670208
 block|{
 DECL|member|ncolors
 name|long
@@ -35356,7 +35356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291bd0d70308
+DECL|struct|__anon2b3958670308
 block|{
 DECL|member|used_count
 name|signed

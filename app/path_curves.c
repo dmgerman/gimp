@@ -6,25 +6,31 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gdk/gdk.h>
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include

@@ -30,7 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -78,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -97,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gtkhwrapbox.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimptoolinfo.h"
 end_include
 
 begin_include

@@ -25,6 +25,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpcolor/gimpadaptivesupersample.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpcolor/gimpbilinear.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpcolor/gimpcolorspace.h>
 end_include
 

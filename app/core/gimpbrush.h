@@ -22,6 +22,16 @@ directive|include
 file|"gimpdata.h"
 end_include
 
+begin_comment
+comment|/* FIXME: remove the GimpPaintTool dependency  */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_BRUSH_FILE_EXTENSION
 define|#

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -31,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage.h"
 end_include
 
 begin_include

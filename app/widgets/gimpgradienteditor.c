@@ -91,7 +91,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -281,7 +281,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d90e0a0103
+DECL|enum|__anon2b7475a20103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -321,7 +321,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d90e0a0203
+DECL|enum|__anon2b7475a20203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE

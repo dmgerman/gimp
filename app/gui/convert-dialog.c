@@ -24,7 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -102,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ea68a50108
+DECL|struct|__anon2a300ab40108
 block|{
 DECL|member|shell
 name|GtkWidget

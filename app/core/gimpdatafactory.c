@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -564,7 +564,7 @@ operator|->
 name|data_path
 condition|)
 block|{
-name|datafiles_read_directories
+name|gimp_datafiles_read_directories
 argument_list|(
 operator|*
 name|factory
@@ -1032,7 +1032,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|datafiles_check_extension
+name|gimp_datafiles_check_extension
 argument_list|(
 name|filename
 argument_list|,

@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -36,12 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
+file|"gdisplay.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4e210d0103
+DECL|enum|__anon297a4b480103
 block|{
 DECL|enumerator|DRAW
 name|DRAW

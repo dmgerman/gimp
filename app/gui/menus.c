@@ -48,7 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -60,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptoolinfo.h"
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_include

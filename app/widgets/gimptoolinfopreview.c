@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptoolinfo.h"
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_include

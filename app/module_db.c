@@ -77,7 +77,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -131,7 +131,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc3927b0103
+DECL|enum|__anon2b5714f80103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -305,7 +305,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3927b0208
+DECL|struct|__anon2b5714f80208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -420,7 +420,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3927b0308
+DECL|struct|__anon2b5714f80308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -903,7 +903,7 @@ condition|(
 name|g_module_supported
 argument_list|()
 condition|)
-name|datafiles_read_directories
+name|gimp_datafiles_read_directories
 argument_list|(
 name|module_path
 argument_list|,
@@ -1735,7 +1735,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3927b0403
+DECL|enum|__anon2b5714f80403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -4680,7 +4680,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3927b0508
+DECL|struct|__anon2b5714f80508
 block|{
 DECL|member|search_key
 specifier|const
@@ -4843,7 +4843,7 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/* walk filesystem and add new things we find */
-name|datafiles_read_directories
+name|gimp_datafiles_read_directories
 argument_list|(
 name|module_path
 argument_list|,

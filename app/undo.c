@@ -30,7 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -239,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac480cc0103
+DECL|enum|__anon2766bc940103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

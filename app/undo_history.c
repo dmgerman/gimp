@@ -28,7 +28,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac6f510108
+DECL|struct|__anon28d2097d0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ac6f510208
+DECL|struct|__anon28d2097d0208
 block|{
 DECL|member|clist
 name|GtkCList

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DATAFILES_H__
+name|__GIMP_DATAFILES_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DATAFILES_H__
+DECL|macro|__GIMP_DATAFILES_H__
 define|#
 directive|define
-name|__DATAFILES_H__
+name|__GIMP_DATAFILES_H__
 end_define
 
 begin_include
@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27946b780103
+DECL|enum|__anon298797650103
 block|{
 DECL|enumerator|INCLUDE_TEMP_DIR
 name|INCLUDE_TEMP_DIR
@@ -48,7 +48,7 @@ end_typedef
 
 begin_function_decl
 name|gboolean
-name|datafiles_check_extension
+name|gimp_datafiles_check_extension
 parameter_list|(
 specifier|const
 name|gchar
@@ -65,7 +65,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|datafiles_read_directories
+name|gimp_datafiles_read_directories
 parameter_list|(
 specifier|const
 name|gchar
@@ -90,7 +90,7 @@ end_comment
 
 begin_function_decl
 name|time_t
-name|datafile_atime
+name|gimp_datafile_atime
 parameter_list|(
 name|void
 parameter_list|)
@@ -99,7 +99,7 @@ end_function_decl
 
 begin_function_decl
 name|time_t
-name|datafile_mtime
+name|gimp_datafile_mtime
 parameter_list|(
 name|void
 parameter_list|)
@@ -108,7 +108,7 @@ end_function_decl
 
 begin_function_decl
 name|time_t
-name|datafile_ctime
+name|gimp_datafile_ctime
 parameter_list|(
 name|void
 parameter_list|)
@@ -121,7 +121,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __DATAFILES_H__ */
+comment|/*  __GIMP_DATAFILES_H__ */
 end_comment
 
 end_unit

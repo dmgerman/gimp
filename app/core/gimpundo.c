@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"gimpundo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpundo.h"
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d505120103
+DECL|enum|__anon2aafd8c60103
 block|{
 DECL|enumerator|PUSH
 name|PUSH

@@ -94,7 +94,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -106,13 +112,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptool.h"
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/gimptoolinfo.h"
+file|"tools/gimptool.h"
 end_include
 
 begin_include
@@ -282,7 +288,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b394a0c0103
+DECL|enum|__anon2bc0a6690103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

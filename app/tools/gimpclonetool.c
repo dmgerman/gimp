@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -208,7 +208,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5f395e0103
+DECL|enum|__anon2be2d7b90103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO

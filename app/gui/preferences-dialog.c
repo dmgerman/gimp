@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3859c20103
+DECL|enum|__anon2797ca4a0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12452,7 +12452,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3859c20208
+DECL|struct|__anon2797ca4a0208
 block|{
 DECL|member|label
 name|gchar
@@ -12681,7 +12681,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3859c20308
+DECL|struct|__anon2797ca4a0308
 block|{
 DECL|member|tree_label
 name|gchar

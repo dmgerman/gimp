@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -147,7 +147,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2797c3350103
+DECL|enum|__anon290d73930103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

@@ -7,26 +7,22 @@ begin_comment
 comment|/*  * Complete new path-tool by Simon Budig<Simon.Budig@unix-ag.org>  *   * a path manipulation core independent of the underlying formula:  * implement bezier-curves, intelligent scissors-curves, splines...  *   * A Path is a collection of curves, which are constructed from  * segments between two anchors.  */
 end_comment
 
-begin_comment
-comment|/* #include<math.h>   #include "path_curves.h" #include "config.h" #include "libgimp/gimpintl.h" */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gdk/gdk.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -45,6 +41,12 @@ begin_include
 include|#
 directive|include
 file|"gimppathtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -3154,7 +3156,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon295c20c90108
+DECL|struct|__anon299ac1690108
 typedef|typedef
 struct|struct
 block|{
@@ -3512,7 +3514,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon295c20c90208
+DECL|struct|__anon299ac1690208
 typedef|typedef
 struct|struct
 block|{
@@ -3854,7 +3856,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon295c20c90308
+DECL|struct|__anon299ac1690308
 typedef|typedef
 struct|struct
 block|{
@@ -4172,7 +4174,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon295c20c90408
+DECL|struct|__anon299ac1690408
 typedef|typedef
 struct|struct
 block|{
@@ -4330,7 +4332,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon295c20c90508
+DECL|struct|__anon299ac1690508
 typedef|typedef
 struct|struct
 block|{

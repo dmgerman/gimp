@@ -231,19 +231,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"docindex.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/menus.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -256,6 +244,18 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"docindex.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/menus.h"
 end_include
 
 begin_include

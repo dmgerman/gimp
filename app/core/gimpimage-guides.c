@@ -36,7 +36,17 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
+end_include
+
+begin_comment
+comment|/* FIXME: remove the Path<-> BezierSelect dependency */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -743,7 +753,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2796aebb0103
+DECL|enum|__anon29ff37970103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED

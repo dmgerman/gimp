@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b6e0ae0103
+DECL|enum|__anon2a3da0bd0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -5601,7 +5601,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b6e0ae0208
+DECL|struct|__anon2a3da0bd0208
 block|{
 DECL|member|def
 name|GimpImage

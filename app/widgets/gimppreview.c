@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptoolinfo.h"
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_include
@@ -183,7 +183,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa7b2f10103
+DECL|enum|__anon29bdc9340103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED

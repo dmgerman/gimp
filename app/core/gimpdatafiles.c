@@ -149,7 +149,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -360,8 +360,8 @@ end_endif
 
 begin_function
 name|gboolean
-DECL|function|datafiles_check_extension (const gchar * filename,const gchar * extension)
-name|datafiles_check_extension
+DECL|function|gimp_datafiles_check_extension (const gchar * filename,const gchar * extension)
+name|gimp_datafiles_check_extension
 parameter_list|(
 specifier|const
 name|gchar
@@ -453,8 +453,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|datafiles_read_directories (const gchar * path_str,GimpDataFileFlags flags,GimpDataFileLoaderFunc loader_func,gpointer loader_data)
-name|datafiles_read_directories
+DECL|function|gimp_datafiles_read_directories (const gchar * path_str,GimpDataFileFlags flags,GimpDataFileLoaderFunc loader_func,gpointer loader_data)
+name|gimp_datafiles_read_directories
 parameter_list|(
 specifier|const
 name|gchar
@@ -734,8 +734,8 @@ end_function
 
 begin_function
 name|time_t
-DECL|function|datafile_atime (void)
-name|datafile_atime
+DECL|function|gimp_datafile_atime (void)
+name|gimp_datafile_atime
 parameter_list|(
 name|void
 parameter_list|)
@@ -757,8 +757,8 @@ end_function
 
 begin_function
 name|time_t
-DECL|function|datafile_mtime (void)
-name|datafile_mtime
+DECL|function|gimp_datafile_mtime (void)
+name|gimp_datafile_mtime
 parameter_list|(
 name|void
 parameter_list|)
@@ -780,8 +780,8 @@ end_function
 
 begin_function
 name|time_t
-DECL|function|datafile_ctime (void)
-name|datafile_ctime
+DECL|function|gimp_datafile_ctime (void)
+name|gimp_datafile_ctime
 parameter_list|(
 name|void
 parameter_list|)

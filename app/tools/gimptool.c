@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3875a60103
+DECL|enum|__anon296bb38b0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE

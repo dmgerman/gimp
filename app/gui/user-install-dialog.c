@@ -77,7 +77,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -661,7 +661,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon277e07f50108
+DECL|struct|__anon2a5001840108
 block|{
 DECL|member|directory
 name|gboolean

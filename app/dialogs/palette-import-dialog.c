@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796a1bf0103
+DECL|enum|__anon28b804040103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT

@@ -18,31 +18,23 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
+end_include
+
+begin_comment
+comment|/* FIXME: move the "stroke" stuff into the core entirely */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimptool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimppainttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/paint_options.h"
 end_include
 
 begin_include

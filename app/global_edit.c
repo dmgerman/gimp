@@ -30,7 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -144,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e8daf0103
+DECL|enum|__anon2c0a23be0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
