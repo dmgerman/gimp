@@ -17,7 +17,7 @@ name|__XCF_SEEK_H__
 end_define
 
 begin_function_decl
-name|void
+name|gboolean
 name|xcf_seek_pos
 parameter_list|(
 name|XcfInfo
@@ -26,17 +26,27 @@ name|info
 parameter_list|,
 name|guint
 name|pos
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|xcf_seek_end
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -1394,13 +1394,21 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* seek to the layer offset */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|offset
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+goto|goto
+name|error
+goto|;
 comment|/* read in the layer */
 name|layer
 operator|=
@@ -1446,13 +1454,21 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* restore the saved position so we'll be ready to        *  read the next offset.        */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|saved_pos
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+goto|goto
+name|error
+goto|;
 block|}
 while|while
 condition|(
@@ -1492,13 +1508,21 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* seek to the channel offset */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|offset
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+goto|goto
+name|error
+goto|;
 comment|/* read in the layer */
 name|channel
 operator|=
@@ -1540,13 +1564,21 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* restore the saved position so we'll be ready to        *  read the next offset.        */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|saved_pos
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+goto|goto
+name|error
+goto|;
 block|}
 if|if
 condition|(
@@ -1748,6 +1780,9 @@ operator|*
 literal|3
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
@@ -1759,8 +1794,13 @@ operator|+
 name|gimage
 operator|->
 name|num_cols
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+return|return
+name|FALSE
+return|;
 for|for
 control|(
 name|i
@@ -3978,13 +4018,21 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* read in the hierarchy */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|hierarchy_offset
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+goto|goto
+name|error
+goto|;
 if|if
 condition|(
 operator|!
@@ -4011,13 +4059,21 @@ operator|!=
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|layer_mask_offset
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+goto|goto
+name|error
+goto|;
 name|layer_mask
 operator|=
 name|xcf_load_layer_mask
@@ -4335,13 +4391,21 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* read in the hierarchy */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|hierarchy_offset
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+goto|goto
+name|error
+goto|;
 if|if
 condition|(
 operator|!
@@ -4592,13 +4656,21 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* read in the hierarchy */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|hierarchy_offset
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+goto|goto
+name|error
+goto|;
 if|if
 condition|(
 operator|!
@@ -4836,13 +4908,21 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* seek to the level offset */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|offset
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+return|return
+name|FALSE
+return|;
 comment|/* read in the level */
 if|if
 condition|(
@@ -4858,13 +4938,21 @@ return|return
 name|FALSE
 return|;
 comment|/* restore the saved position so we'll be ready to    *  read the next offset.    */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|saved_pos
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+return|return
+name|FALSE
+return|;
 return|return
 name|TRUE
 return|;
@@ -5096,13 +5184,21 @@ literal|1.5
 expr_stmt|;
 comment|/* 1.5 is probably more 					   than we need to allow */
 comment|/* seek to the tile offset */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|offset
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+return|return
+name|FALSE
+return|;
 comment|/* get the tile from the tile manager */
 name|tile
 operator|=
@@ -5319,13 +5415,21 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* restore the saved position so we'll be ready to        *  read the next offset.        */
+if|if
+condition|(
+operator|!
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|saved_pos
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+return|return
+name|FALSE
+return|;
 comment|/* read in the offset of the next tile */
 name|info
 operator|->

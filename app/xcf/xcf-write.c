@@ -28,6 +28,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -37,9 +43,15 @@ directive|include
 file|"xcf-write.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 name|guint
-DECL|function|xcf_write_int32 (FILE * fp,guint32 * data,gint count)
+DECL|function|xcf_write_int32 (FILE * fp,guint32 * data,gint count,GError ** error)
 name|xcf_write_int32
 parameter_list|(
 name|FILE
@@ -52,8 +64,19 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
+name|GError
+modifier|*
+name|tmp_error
+init|=
+name|NULL
+decl_stmt|;
 name|guint32
 name|tmp
 decl_stmt|;
@@ -103,8 +126,29 @@ operator|&
 name|tmp
 argument_list|,
 literal|4
+argument_list|,
+operator|&
+name|tmp_error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tmp_error
+condition|)
+block|{
+name|g_propagate_error
+argument_list|(
+name|error
+argument_list|,
+name|tmp_error
+argument_list|)
+expr_stmt|;
+return|return
+name|i
+operator|*
+literal|4
+return|;
+block|}
 block|}
 block|}
 return|return
@@ -117,7 +161,7 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_float (FILE * fp,gfloat * data,gint count)
+DECL|function|xcf_write_float (FILE * fp,gfloat * data,gint count,GError ** error)
 name|xcf_write_float
 parameter_list|(
 name|FILE
@@ -130,10 +174,14 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 return|return
-operator|(
 name|xcf_write_int32
 argument_list|(
 name|fp
@@ -151,15 +199,16 @@ name|data
 operator|)
 argument_list|,
 name|count
+argument_list|,
+name|error
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_int8 (FILE * fp,guint8 * data,gint count)
+DECL|function|xcf_write_int8 (FILE * fp,guint8 * data,gint count,GError ** error)
 name|xcf_write_int8
 parameter_list|(
 name|FILE
@@ -172,6 +221,11 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|guint
@@ -211,6 +265,39 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|bytes
+operator|==
+literal|0
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Error writing XCF: %s"
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|total
+return|;
+block|}
 name|count
 operator|-=
 name|bytes
@@ -228,7 +315,7 @@ end_function
 
 begin_function
 name|guint
-DECL|function|xcf_write_string (FILE * fp,gchar ** data,gint count)
+DECL|function|xcf_write_string (FILE * fp,gchar ** data,gint count,GError ** error)
 name|xcf_write_string
 parameter_list|(
 name|FILE
@@ -242,8 +329,19 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
+name|GError
+modifier|*
+name|tmp_error
+init|=
+name|NULL
+decl_stmt|;
 name|guint32
 name|tmp
 decl_stmt|;
@@ -303,8 +401,27 @@ operator|&
 name|tmp
 argument_list|,
 literal|1
+argument_list|,
+operator|&
+name|tmp_error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tmp_error
+condition|)
+block|{
+name|g_propagate_error
+argument_list|(
+name|error
+argument_list|,
+name|tmp_error
+argument_list|)
+expr_stmt|;
+return|return
+name|total
+return|;
+block|}
 if|if
 condition|(
 name|tmp
@@ -325,8 +442,27 @@ name|i
 index|]
 argument_list|,
 name|tmp
+argument_list|,
+operator|&
+name|tmp_error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tmp_error
+condition|)
+block|{
+name|g_propagate_error
+argument_list|(
+name|error
+argument_list|,
+name|tmp_error
+argument_list|)
+expr_stmt|;
+return|return
+name|total
+return|;
+block|}
 name|total
 operator|+=
 literal|4

@@ -30,6 +30,11 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -48,6 +53,11 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -66,6 +76,11 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -85,6 +100,11 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
