@@ -99,6 +99,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|colspan
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

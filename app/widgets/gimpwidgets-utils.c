@@ -991,7 +991,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_table_attach_stock (GtkTable * table,gint row,const gchar * label_text,gdouble yalign,GtkWidget * widget,const gchar * stock_id)
+DECL|function|gimp_table_attach_stock (GtkTable * table,gint row,const gchar * label_text,gdouble yalign,GtkWidget * widget,gint colspan,const gchar * stock_id)
 name|gimp_table_attach_stock
 parameter_list|(
 name|GtkTable
@@ -1012,6 +1012,9 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|colspan
 parameter_list|,
 specifier|const
 name|gchar
@@ -1122,7 +1125,9 @@ name|widget
 argument_list|,
 literal|1
 argument_list|,
-literal|3
+literal|1
+operator|+
+name|colspan
 argument_list|,
 name|row
 argument_list|,
@@ -1191,9 +1196,13 @@ name|table
 argument_list|,
 name|image
 argument_list|,
-literal|3
+literal|1
+operator|+
+name|colspan
 argument_list|,
-literal|4
+literal|2
+operator|+
+name|colspan
 argument_list|,
 name|row
 argument_list|,
@@ -1201,7 +1210,7 @@ name|row
 operator|+
 literal|1
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
