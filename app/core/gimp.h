@@ -240,6 +240,11 @@ name|PlugInShm
 modifier|*
 name|plug_in_shm
 decl_stmt|;
+DECL|member|interpreter_db
+name|GimpInterpreterDB
+modifier|*
+name|interpreter_db
+decl_stmt|;
 DECL|member|environ_table
 name|GimpEnvironTable
 modifier|*

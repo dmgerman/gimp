@@ -481,6 +481,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpInterpreterDB
+typedef|typedef
+name|struct
+name|_GimpInterpreterDB
+name|GimpInterpreterDB
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpParasiteList
 typedef|typedef
 name|struct

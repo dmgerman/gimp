@@ -8278,7 +8278,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28c7a64d0108
+DECL|struct|__anon2acc6cd10108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9435,7 +9435,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28c7a64d0208
+DECL|struct|__anon2acc6cd10208
 block|{
 DECL|member|label
 specifier|const
@@ -10363,7 +10363,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28c7a64d0308
+DECL|struct|__anon2acc6cd10308
 block|{
 DECL|member|label
 specifier|const
@@ -10520,7 +10520,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28c7a64d0408
+DECL|struct|__anon2acc6cd10408
 block|{
 DECL|member|tree_label
 specifier|const
@@ -10765,6 +10765,31 @@ literal|"Select Module Folders"
 argument_list|)
 block|,
 literal|"module-path"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Interpreters"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Interpreter Folders"
+argument_list|)
+block|,
+literal|"folders-interp.png"
+block|,
+name|GIMP_HELP_PREFS_FOLDERS_INTERPRETERS
+block|,
+name|N_
+argument_list|(
+literal|"Select Interpreter Folders"
+argument_list|)
+block|,
+literal|"interpreter-path"
 block|,
 name|NULL
 block|}

@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4ca6a40103
+DECL|enum|__anon2c87e6830103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -228,7 +228,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4ca6a40203
+DECL|enum|__anon2c87e6830203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -440,7 +440,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4ca6a40303
+DECL|enum|__anon2c87e6830303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -462,7 +462,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a4ca6a40408
+DECL|struct|__anon2c87e6830408
 block|{
 DECL|member|directory
 name|gboolean
@@ -708,6 +708,24 @@ literal|"or otherwise non-system-supported DLL modules.  The "
 literal|"GIMP checks this folder in addition to the system-wide "
 literal|"GIMP module folder when searching for modules to load "
 literal|"during initialization."
+argument_list|)
+block|,
+name|TREE_ITEM_MKDIR
+block|}
+block|,
+block|{
+name|TRUE
+block|,
+literal|"interpreters"
+block|,
+name|N_
+argument_list|(
+literal|"This folder is used to store configuration for user "
+literal|"created, temporary, or otherwise non-system-supported "
+literal|"plug-in interpreters.  The GIMP checks this folder in "
+literal|"addition to the system-wide GIMP interpreters folder "
+literal|"when searching for plug-in interpreter configuration "
+literal|"files."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR

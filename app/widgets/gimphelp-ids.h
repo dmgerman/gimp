@@ -2785,6 +2785,14 @@ value|"gimp-prefs-folders-modules"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_INTERPRETERS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_INTERPRETERS
+value|"gimp-prefs-folders-interpreters"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_FOLDERS_ENVIRONMENT
 define|#
 directive|define

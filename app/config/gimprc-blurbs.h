@@ -444,6 +444,15 @@ value|N_("Sets the level of interpolation used for scaling and other " \    "tra
 end_define
 
 begin_define
+DECL|macro|INTERPRETER_PATH_BLURB
+define|#
+directive|define
+name|INTERPRETER_PATH_BLURB
+define|\
+value|"Sets the interpreter search path."
+end_define
+
+begin_define
 DECL|macro|LAST_OPENED_SIZE_BLURB
 define|#
 directive|define

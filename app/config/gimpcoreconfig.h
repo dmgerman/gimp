@@ -112,6 +112,11 @@ name|gchar
 modifier|*
 name|module_path
 decl_stmt|;
+DECL|member|interpreter_path
+name|gchar
+modifier|*
+name|interpreter_path
+decl_stmt|;
 DECL|member|environ_path
 name|gchar
 modifier|*
