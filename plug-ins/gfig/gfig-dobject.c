@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -24,73 +30,67 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gfig_arc.h"
+file|"gfig-arc.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gfig_bezier.h"
+file|"gfig-bezier.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gfig_circle.h"
+file|"gfig-circle.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gfig_dobject.h"
+file|"gfig-dobject.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gfig_ellipse.h"
+file|"gfig-ellipse.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gfig_line.h"
+file|"gfig-line.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gfig_poly.h"
+file|"gfig-poly.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gfig_spiral.h"
+file|"gfig-spiral.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gfig_star.h"
+file|"gfig-star.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_decl_stmt
@@ -328,58 +328,52 @@ decl_stmt|;
 name|DobjPoints
 modifier|*
 name|pnt2copy
-init|=
-name|pnts
 decl_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|pnt2copy
-condition|)
+operator|=
+name|pnts
+init|;
+name|pnt2copy
+condition|;
+name|pnt2copy
+operator|=
+name|pnt2copy
+operator|->
+name|next
+control|)
 block|{
 name|newpnt
 operator|=
-name|g_new0
+name|new_dobjpoint
 argument_list|(
-name|DobjPoints
+name|pnt2copy
+operator|->
+name|pnt
+operator|.
+name|x
 argument_list|,
-literal|1
+name|pnt2copy
+operator|->
+name|pnt
+operator|.
+name|y
 argument_list|)
-expr_stmt|;
-name|newpnt
-operator|->
-name|pnt
-operator|.
-name|x
-operator|=
-name|pnt2copy
-operator|->
-name|pnt
-operator|.
-name|x
-expr_stmt|;
-name|newpnt
-operator|->
-name|pnt
-operator|.
-name|y
-operator|=
-name|pnt2copy
-operator|->
-name|pnt
-operator|.
-name|y
 expr_stmt|;
 if|if
 condition|(
 operator|!
 name|ret
 condition|)
+block|{
 name|head
 operator|=
 name|ret
 operator|=
 name|newpnt
 expr_stmt|;
+block|}
 else|else
 block|{
 name|head
@@ -393,12 +387,6 @@ operator|=
 name|newpnt
 expr_stmt|;
 block|}
-name|pnt2copy
-operator|=
-name|pnt2copy
-operator|->
-name|next
-expr_stmt|;
 block|}
 return|return
 name|ret
@@ -410,18 +398,18 @@ begin_function
 specifier|static
 name|DobjPoints
 modifier|*
-DECL|function|get_diffs (Dobject * obj,gint16 * xdiff,gint16 * ydiff,GdkPoint * to_pnt)
+DECL|function|get_diffs (Dobject * obj,gint * xdiff,gint * ydiff,GdkPoint * to_pnt)
 name|get_diffs
 parameter_list|(
 name|Dobject
 modifier|*
 name|obj
 parameter_list|,
-name|gint16
+name|gint
 modifier|*
 name|xdiff
 parameter_list|,
-name|gint16
+name|gint
 modifier|*
 name|ydiff
 parameter_list|,
@@ -518,28 +506,28 @@ name|testpnt
 parameter_list|)
 block|{
 comment|/* Return TRUE if testpnt is near cpnt */
-name|gint16
+name|gint
 name|x
 init|=
 name|cpnt
 operator|->
 name|x
 decl_stmt|;
-name|gint16
+name|gint
 name|y
 init|=
 name|cpnt
 operator|->
 name|y
 decl_stmt|;
-name|gint16
+name|gint
 name|tx
 init|=
 name|testpnt
 operator|->
 name|x
 decl_stmt|;
-name|gint16
+name|gint
 name|ty
 init|=
 name|testpnt
@@ -572,7 +560,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|scan_obj_points (DobjPoints * opnt,GdkPoint * pnt)
 name|scan_obj_points
 parameter_list|(
@@ -670,16 +658,22 @@ condition|)
 return|return
 name|NULL
 return|;
+for|for
+control|(
 name|all
 operator|=
 name|obj
 operator|->
 name|obj_list
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|all
-condition|)
+condition|;
+name|all
+operator|=
+name|all
+operator|->
+name|next
+control|)
 block|{
 name|test_obj
 operator|=
@@ -714,12 +708,6 @@ return|return
 name|test_obj
 return|;
 block|}
-name|all
-operator|=
-name|all
-operator|->
-name|next
-expr_stmt|;
 name|count
 operator|++
 expr_stmt|;
@@ -1273,17 +1261,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|update_pnts (Dobject * obj,gint16 xdiff,gint16 ydiff)
+DECL|function|update_pnts (Dobject * obj,gint xdiff,gint ydiff)
 name|update_pnts
 parameter_list|(
 name|Dobject
 modifier|*
 name|obj
 parameter_list|,
-name|gint16
+name|gint
 name|xdiff
 parameter_list|,
-name|gint16
+name|gint
 name|ydiff
 parameter_list|)
 block|{
@@ -1390,17 +1378,6 @@ name|del_obj
 condition|)
 block|{
 comment|/* Found the one to delete */
-ifdef|#
-directive|ifdef
-name|DEBUG
-name|printf
-argument_list|(
-literal|"Found the one to delete\n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DEBUG */
 if|if
 condition|(
 name|prev_all
@@ -1496,7 +1473,7 @@ parameter_list|)
 block|{
 comment|/* Move all objects in one go */
 comment|/* Undraw/then draw in new pos */
-name|gint16
+name|gint
 name|xdiff
 init|=
 name|move_all_pnt
@@ -1507,7 +1484,7 @@ name|to_pnt
 operator|->
 name|x
 decl_stmt|;
-name|gint16
+name|gint
 name|ydiff
 init|=
 name|move_all_pnt
@@ -1661,12 +1638,12 @@ parameter_list|)
 block|{
 comment|/* Move the whole line - undraw the line to start with */
 comment|/* Then draw in new pos */
-name|gint16
+name|gint
 name|xdiff
 init|=
 literal|0
 decl_stmt|;
-name|gint16
+name|gint
 name|ydiff
 init|=
 literal|0
@@ -1737,12 +1714,12 @@ name|DobjPoints
 modifier|*
 name|spnt
 decl_stmt|;
-name|gint16
+name|gint
 name|xdiff
 init|=
 literal|0
 decl_stmt|;
-name|gint16
+name|gint
 name|ydiff
 init|=
 literal|0

@@ -17,7 +17,7 @@ name|__GFIG_STAR_H__
 end_define
 
 begin_function_decl
-name|gint
+name|gboolean
 name|star_button_press
 parameter_list|(
 name|GtkWidget
