@@ -48,6 +48,11 @@ name|defined
 argument_list|(
 name|__INTEL_COMPILER
 argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|USE_INTEL_COMPILER_ANYWAY
+argument_list|)
 end_if
 
 begin_if

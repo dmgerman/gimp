@@ -162,7 +162,7 @@ DECL|macro|pdivwqX_clobber
 define|#
 directive|define
 name|pdivwqX_clobber
-value|"%eax", "%ecx", "%edx"
+value|"%eax", "%ecx", "%edx", "%cc"
 end_define
 
 begin_comment
@@ -321,7 +321,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b27a7b40108
+DECL|struct|__anon2aaab7f70108
 DECL|member|__uint64
 DECL|typedef|uint128
 typedef|typedef
