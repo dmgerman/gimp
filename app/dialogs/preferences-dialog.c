@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -84,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpchainbutton.h"
 end_include
 
@@ -124,7 +124,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2c8024320103
+DECL|enum|__anon2b0e460f0103
 typedef|typedef
 enum|enum
 block|{
@@ -256,19 +256,6 @@ name|void
 name|file_prefs_mem_size_unit_callback
 parameter_list|(
 name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|file_prefs_int_adjustment_callback
-parameter_list|(
-name|GtkAdjustment
 modifier|*
 parameter_list|,
 name|gpointer
@@ -1015,7 +1002,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Some information regarding preferences, compiled by Raph Levien 11/3/97.    updated by Michael Natterer 27/3/99     The following preference items cannot be set on the fly (at least    according to the existing pref code - it may be that changing them    so they're set on the fly is not hard).     stingy-memory-use    tile-cache-size    install-cmap    cycled-marching-ants    last-opened-size    num-processors    temp-path    swap-path    plug-in-path    module-path    brush-path    pattern-path    palette-path    gradient-path    nav-window-per-display     All of these now have variables of the form edit_temp_path, which    are copied from the actual variables (e.g. temp_path) the first time    the dialog box is started.     Variables of the form old_temp_path represent the values at the    time the dialog is opened - a cancel copies them back from old to    the real variables or the edit variables, depending on whether they    can be set on the fly.     Here are the remaining issues as I see them:     Still no settings for default-gradient, default-palette,    gamma-correction, color-cube.     No widget for confirm-on-close although a lot of stuff is there.     The semantics of "save" are a little funny - it only saves the    settings that are different from the way they were when the dialog    was opened. So you can set something, close the window, open it    up again, click "save" and have nothing happen. To change this    to more intuitive semantics, we should have a whole set of init_    variables that are set the first time the dialog is opened (along    with the edit_ variables that are currently set). Then, the save    callback checks against the init_ variable rather than the old_. */
+comment|/* Some information regarding preferences, compiled by Raph Levien 11/3/97.    updated by Michael Natterer 27/3/99     The following preference items cannot be set on the fly (at least    according to the existing pref code - it may be that changing them    so they're set on the fly is not hard).     stingy-memory-use    tile-cache-size    install-cmap    cycled-marching-ants    last-opened-size    num-processors    temp-path    swap-path    plug-in-path    module-path    brush-path    pattern-path    palette-path    gradient-path    nav-window-per-display    info_window_follows_mouse     All of these now have variables of the form edit_temp_path, which    are copied from the actual variables (e.g. temp_path) the first time    the dialog box is started.     Variables of the form old_temp_path represent the values at the    time the dialog is opened - a cancel copies them back from old to    the real variables or the edit variables, depending on whether they    can be set on the fly.     Here are the remaining issues as I see them:     Still no settings for default-gradient, default-palette,    gamma-correction, color-cube.     No widget for confirm-on-close although a lot of stuff is there.     The semantics of "save" are a little funny - it only saves the    settings that are different from the way they were when the dialog    was opened. So you can set something, close the window, open it    up again, click "save" and have nothing happen. To change this    to more intuitive semantics, we should have a whole set of init_    variables that are set the first time the dialog is opened (along    with the edit_ variables that are currently set). Then, the save    callback checks against the init_ variable rather than the old_. */
 end_comment
 
 begin_comment
@@ -1582,34 +1569,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_restart_notification_close_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_restart_notification_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|file_prefs_restart_notification_save_callback (GtkWidget * widget,gpointer data)
 name|file_prefs_restart_notification_save_callback
 parameter_list|(
@@ -1628,11 +1587,12 @@ argument_list|,
 name|prefs_dlg
 argument_list|)
 expr_stmt|;
-name|file_prefs_restart_notification_close_callback
+name|gtk_widget_destroy
 argument_list|(
-name|widget
-argument_list|,
+name|GTK_WIDGET
+argument_list|(
 name|data
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1708,17 +1668,34 @@ argument_list|(
 literal|"Close"
 argument_list|)
 argument_list|,
-name|file_prefs_restart_notification_close_callback
+name|gtk_widget_destroy
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|1
 argument_list|,
 name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4492,41 +4469,6 @@ name|gpointer
 operator|)
 name|mem_size_unit
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|file_prefs_int_adjustment_callback (GtkAdjustment * adj,gpointer data)
-name|file_prefs_int_adjustment_callback
-parameter_list|(
-name|GtkAdjustment
-modifier|*
-name|adj
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gint
-modifier|*
-name|val
-decl_stmt|;
-name|val
-operator|=
-name|data
-expr_stmt|;
-operator|*
-name|val
-operator|=
-operator|(
-name|int
-operator|)
-name|adj
-operator|->
-name|value
 expr_stmt|;
 block|}
 end_function
@@ -8577,7 +8519,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_int_adjustment_callback
+name|gimp_int_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
@@ -9513,7 +9455,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_int_adjustment_callback
+name|gimp_int_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
@@ -10338,10 +10280,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|file_prefs_int_adjustment_callback
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_int_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|levels_of_undo
@@ -10673,7 +10615,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_int_adjustment_callback
+name|gimp_int_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
@@ -12068,7 +12010,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8024320208
+DECL|struct|__anon2b0e460f0208
 block|{
 DECL|member|label
 name|gchar
@@ -12293,7 +12235,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8024320308
+DECL|struct|__anon2b0e460f0308
 block|{
 DECL|member|tree_label
 name|gchar
