@@ -8,7 +8,7 @@ comment|/********************************************************************** 
 end_comment
 
 begin_comment
-comment|/**********************************************************************    Some code has been 'stolen' from:         - Peter Kirchgessner (Pkirchg@aol.com) 	- Scott Draves (spot@cs.cmu.edu) 	- Andy Thomas (alt@picnic.demon.co.uk) 	   . 	   . 	   .  **********************************************************************    "If you steal from one author it's plagiarism; if you steal from    many it's research."  --Wilson Mizner  *********************************************************************/
+comment|/**********************************************************************    Some code has been 'stolen' from:         - Peter Kirchgessner (Pkirchg@aol.com)         - Scott Draves (spot@cs.cmu.edu)         - Andy Thomas (alt@picnic.demon.co.uk)            .            .            .  **********************************************************************    "If you steal from one author it's plagiarism; if you steal from    many it's research."  --Wilson Mizner  *********************************************************************/
 end_comment
 
 begin_comment
@@ -904,7 +904,15 @@ name|GIMP_PDB_INT8
 block|,
 literal|"fractaltype"
 block|,
-literal|"0: Mandelbrot; 1: Julia; 2: Barnsley 1; 3: Barnsley 2; 4: Barnsley 3; 5: Spider; 6: ManOWar; 7: Lambda; 8: Sierpinski"
+literal|"0: Mandelbrot; "
+literal|"1: Julia; "
+literal|"2: Barnsley 1; "
+literal|"3: Barnsley 2; "
+literal|"4: Barnsley 3; "
+literal|"5: Spider; "
+literal|"6: ManOWar; "
+literal|"7: Lambda; "
+literal|"8: Sierpinski"
 block|}
 block|,
 block|{
@@ -968,7 +976,8 @@ name|GIMP_PDB_INT8
 block|,
 literal|"colormode"
 block|,
-literal|"0: Apply colormap as specified by the parameters below; 1: Apply active gradient to final image"
+literal|"0: Apply colormap as specified by the parameters below; "
+literal|"1: Apply active gradient to final image"
 block|}
 block|,
 block|{
@@ -1885,36 +1894,24 @@ expr_stmt|;
 comment|/*  allocate row buffers  */
 name|src_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
-operator|(
+name|guchar
+argument_list|,
 name|x2
 operator|-
 name|x1
-operator|)
-operator|*
-name|bytes
 argument_list|)
 expr_stmt|;
 name|dest_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
-operator|(
+name|guchar
+argument_list|,
 name|x2
 operator|-
 name|x1
-operator|)
-operator|*
-name|bytes
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the pixel regions  */
@@ -2976,6 +2973,8 @@ index|[
 name|col
 operator|*
 name|bytes
+operator|+
+literal|0
 index|]
 operator|=
 name|colormap
@@ -3120,10 +3119,6 @@ name|selection
 expr_stmt|;
 name|sel_obj
 operator|=
-operator|(
-name|fractalexplorerOBJ
-operator|*
-operator|)
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -3175,7 +3170,7 @@ argument_list|,
 name|sel_obj
 argument_list|)
 expr_stmt|;
-comment|/* 	if(sel_obj == current_obj) 	{ 	clear_undo(); 	}       */
+comment|/*         if(sel_obj == current_obj)         {         clear_undo();         }       */
 comment|/* Free current obj */
 name|fractalexplorer_free_everything
 argument_list|(
@@ -3211,7 +3206,7 @@ operator|)
 condition|)
 block|{
 comment|/*gtk_widget_sed_sensitive ();*/
-comment|/* Warning - we have a problem here 	   * since we are not really "creating an entry" 	   * why call fractalexplorer_new? 	   */
+comment|/* Warning - we have a problem here            * since we are not really "creating an entry"            * why call fractalexplorer_new?            */
 name|new_button_press
 argument_list|(
 name|NULL
@@ -3320,10 +3315,6 @@ name|selection
 expr_stmt|;
 name|sel_obj
 operator|=
-operator|(
-name|fractalexplorerOBJ
-operator|*
-operator|)
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -4057,7 +4048,7 @@ block|{
 name|gint
 name|n
 decl_stmt|;
-comment|/*    *	Insert fractalexplorers in alphabetical order    */
+comment|/*    *    Insert fractalexplorers in alphabetical order    */
 name|n
 operator|=
 name|fractalexplorer_list_pos
