@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b97e3d00108
+DECL|struct|__anon295c5df00108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b97e3d00208
+DECL|struct|__anon295c5df00208
 block|{
 DECL|member|run
 name|gint
@@ -931,7 +931,7 @@ literal|"24th April 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Alien Map _2..."
+literal|"Alien Map _2..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -948,6 +948,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_alienmap2"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

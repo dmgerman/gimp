@@ -104,7 +104,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon2ac3778b0108
+DECL|struct|__anon29d24ef50108
 typedef|typedef
 struct|struct
 block|{
@@ -119,7 +119,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac3778b0208
+DECL|struct|__anon29d24ef50208
 typedef|typedef
 struct|struct
 block|{
@@ -153,7 +153,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ac3778b0303
+DECL|enum|__anon29d24ef50303
 typedef|typedef
 enum|enum
 block|{
@@ -175,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2ac3778b0403
+DECL|enum|__anon29d24ef50403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -207,7 +207,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ac3778b0503
+DECL|enum|__anon29d24ef50503
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -226,7 +226,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ac3778b0603
+DECL|enum|__anon29d24ef50603
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -254,7 +254,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ac3778b0703
+DECL|enum|__anon29d24ef50703
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -272,7 +272,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2ac3778b0808
+DECL|struct|__anon29d24ef50808
 typedef|typedef
 struct|struct
 block|{
@@ -318,7 +318,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac3778b0908
+DECL|struct|__anon29d24ef50908
 typedef|typedef
 struct|struct
 block|{
@@ -1286,7 +1286,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ac3778b0a08
+DECL|struct|__anon29d24ef50a08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1563,7 +1563,7 @@ literal|"27th March 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/_Filter Pack..."
+literal|"_Filter Pack..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -1580,6 +1580,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_filter_pack"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

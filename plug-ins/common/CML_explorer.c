@@ -210,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27978d570108
+DECL|struct|__anon2b6869f20108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -237,7 +237,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27978d570203
+DECL|enum|__anon2b6869f20203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -366,7 +366,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27978d570303
+DECL|enum|__anon2b6869f20303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -511,7 +511,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27978d570403
+DECL|enum|__anon2b6869f20403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -616,7 +616,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27978d570503
+DECL|enum|__anon2b6869f20503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -714,7 +714,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27978d570608
+DECL|struct|__anon2b6869f20608
 block|{
 DECL|member|function
 name|gint
@@ -787,7 +787,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27978d570708
+DECL|struct|__anon2b6869f20708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1599,7 +1599,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27978d570808
+DECL|struct|__anon2b6869f20808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1874,7 +1874,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/CML _Explorer..."
+literal|"CML _Explorer..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -1891,6 +1891,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Render/Pattern"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc0c7ca0103
+DECL|enum|__anon2c1285c40103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -623,7 +623,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0c7ca0208
+DECL|struct|__anon2c1285c40208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1678,8 +1678,10 @@ name|g_strconcat
 argument_list|(
 name|_
 argument_list|(
-literal|"Animation Playback: "
+literal|"Animation Playback:"
 argument_list|)
+argument_list|,
+literal|" "
 argument_list|,
 name|imagename
 argument_list|,
@@ -1742,8 +1744,10 @@ name|g_strconcat
 argument_list|(
 name|_
 argument_list|(
-literal|"Playback: "
+literal|"Playback:"
 argument_list|)
+argument_list|,
+literal|" "
 argument_list|,
 name|imagename
 argument_list|,

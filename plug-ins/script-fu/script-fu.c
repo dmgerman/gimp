@@ -372,7 +372,8 @@ literal|"plug_in_script_fu_console"
 argument_list|,
 literal|"Provides a console mode for script-fu development"
 argument_list|,
-literal|"Provides an interface which allows interactive scheme development."
+literal|"Provides an interface which allows interactive "
+literal|"scheme development."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -382,7 +383,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu/Script-Fu _Console"
+literal|"Script-Fu _Console"
 argument_list|)
 argument_list|,
 name|NULL
@@ -401,13 +402,25 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_script_fu_console"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/Xtns/Script-Fu"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_script_fu_text_console"
 argument_list|,
-literal|"Provides a text console mode for script-fu development"
+literal|"Provides a text console mode for script-fu "
+literal|"development"
 argument_list|,
-literal|"Provides an interface which allows interactive scheme development."
+literal|"Provides an interface which allows interactive "
+literal|"scheme development."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -452,7 +465,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu/_Start Server..."
+literal|"_Start Server..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -471,6 +484,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_script_fu_server"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/Xtns/Script-Fu"
+argument_list|)
+argument_list|)
+expr_stmt|;
 endif|#
 directive|endif
 name|gimp_install_procedure
@@ -479,7 +502,8 @@ literal|"plug_in_script_fu_eval"
 argument_list|,
 literal|"Evaluate scheme code"
 argument_list|,
-literal|"Evaluate the code under the scheme interpeter (primarily for batch mode)"
+literal|"Evaluate the code under the scheme interpeter "
+literal|"(primarily for batch mode)"
 argument_list|,
 literal|"Manish Singh"
 argument_list|,

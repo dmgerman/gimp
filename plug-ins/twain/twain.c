@@ -159,27 +159,11 @@ value|"twain-acquire-dump"
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_D_MENU_PATH
-define|#
-directive|define
-name|PLUG_IN_D_MENU_PATH
-value|"<Toolbox>/File/Acquire/TWAIN (Dump)..."
-end_define
-
-begin_define
 DECL|macro|PLUG_IN_R_NAME
 define|#
 directive|define
 name|PLUG_IN_R_NAME
 value|"twain-acquire-read"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_R_MENU_PATH
-define|#
-directive|define
-name|PLUG_IN_R_MENU_PATH
-value|"<Toolbox>/File/Acquire/TWAIN (Read)..."
 end_define
 
 begin_endif
@@ -497,7 +481,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b40f13f0108
+DECL|struct|__anon2c76bee20108
 typedef|typedef
 struct|struct
 block|{
@@ -1450,6 +1434,7 @@ name|twain_run_mode
 operator|==
 name|RUN_DUMP
 condition|)
+block|{
 comment|/* the installation of the plugin */
 name|gimp_install_procedure
 argument_list|(
@@ -1465,7 +1450,10 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|PLUG_IN_D_MENU_PATH
+name|N_
+argument_list|(
+literal|"TWAIN (Dump)..."
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1480,6 +1468,17 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_D_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/File/Acquire"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -1487,6 +1486,7 @@ name|twain_run_mode
 operator|==
 name|RUN_READDUMP
 condition|)
+block|{
 comment|/* the installation of the plugin */
 name|gimp_install_procedure
 argument_list|(
@@ -1502,7 +1502,10 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|PLUG_IN_R_MENU_PATH
+name|N_
+argument_list|(
+literal|"TWAIN (Read)..."
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1517,10 +1520,22 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_R_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/File/Acquire"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 else|else
 endif|#
 directive|endif
 comment|/* _DEBUG */
+block|{
 comment|/* the installation of the plugin */
 name|gimp_install_procedure
 argument_list|(
@@ -1538,7 +1553,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/File/Acquire/_TWAIN..."
+literal|"_TWAIN..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -1554,6 +1569,17 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/File/Acquire"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1861,7 +1887,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b40f13f0208
+DECL|struct|__anon2c76bee20208
 typedef|typedef
 struct|struct
 block|{
