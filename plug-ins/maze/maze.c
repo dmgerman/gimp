@@ -544,17 +544,11 @@ name|gchar
 modifier|*
 name|help
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|help
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Generates a maze using either the depth-first search method or Prim's algorithm.  Can make tileable mazes too.  See %s for more help."
-argument_list|)
 argument_list|,
 name|MAZE_URL
 argument_list|)

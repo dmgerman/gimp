@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6bfe00108
+DECL|struct|__anon2c5c6ef60108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1123,7 +1123,10 @@ literal|0
 argument_list|,
 name|trow
 argument_list|,
+name|_
+argument_list|(
 literal|"Width (Pixels):"
+argument_list|)
 argument_list|,
 operator|&
 name|mvals
