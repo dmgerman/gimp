@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e51df0103
+DECL|enum|__anon2a153e4f0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -210,7 +210,7 @@ name|mwPreview
 modifier|*
 name|mw_preview_build
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -249,7 +249,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -257,7 +257,7 @@ name|gint
 modifier|*
 name|nretvals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|retvals
@@ -387,7 +387,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -422,13 +422,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -436,7 +436,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -444,7 +444,7 @@ literal|"The Image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -452,7 +452,7 @@ literal|"The Drawable"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"amplitude"
 block|,
@@ -460,7 +460,7 @@ literal|"The Amplitude of the Waves"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"phase"
 block|,
@@ -468,7 +468,7 @@ literal|"The Phase of the Waves"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"wavelength"
 block|,
@@ -476,7 +476,7 @@ literal|"The Wavelength of the Waves"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
@@ -484,7 +484,7 @@ literal|"Type of waves, black/smeared"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"reflective"
 block|,
@@ -530,7 +530,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -547,7 +547,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparam,GParam * param,gint * nretvals,GParam ** retvals)
+DECL|function|run (gchar * name,gint nparam,GimpParam * param,gint * nretvals,GimpParam ** retvals)
 name|run
 parameter_list|(
 name|gchar
@@ -557,7 +557,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -565,14 +565,14 @@ name|gint
 modifier|*
 name|nretvals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|retvals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|rvals
 index|[
 literal|1
@@ -631,7 +631,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|rvals
 index|[
@@ -642,7 +642,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 switch|switch
 condition|(
@@ -656,12 +656,12 @@ operator|.
 name|d_int32
 condition|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -759,7 +759,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -781,7 +781,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -803,7 +803,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 block|}
@@ -902,13 +902,13 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 break|break;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -944,7 +944,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 break|break;
@@ -972,11 +972,11 @@ name|retval
 init|=
 literal|0
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drw
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPr
 decl_stmt|,
 name|dstPr
@@ -2339,10 +2339,10 @@ specifier|static
 name|struct
 name|mwPreview
 modifier|*
-DECL|function|mw_preview_build_virgin (GDrawable * drawable)
+DECL|function|mw_preview_build_virgin (GimpDrawable * drawable)
 name|mw_preview_build_virgin
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -2468,10 +2468,10 @@ specifier|static
 name|struct
 name|mwPreview
 modifier|*
-DECL|function|mw_preview_build (GDrawable * drawable)
+DECL|function|mw_preview_build (GimpDrawable * drawable)
 name|mw_preview_build
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -2496,7 +2496,7 @@ name|guchar
 modifier|*
 name|drawableBits
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pr
 decl_stmt|;
 name|mwp

@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * version 1.200  * This plug-in requires GIMP v0.99.10 or above.  *  * This plug-in produces an effect like a supernova burst.  *  *      Eiichi Takamori<taka@ma1.seikyou.ne.jp>  *      http://ha1.seikyou.ne.jp/home/taka/gimp/  *  *      Preview render mode by timecop@japan.co.jp  *      http://www.ne.jp/asahi/linux/timecop  *  * Changes from version 1.122 to version 1.200 by tim copperfield:  * - preview mode now previews the nova with scale;  * - toggle for cursor show/hide during preview  *   * Changes from version 1.1115 to version 1.122 by Martin Weber:  * - Little bug fixes  * - Added random hue  * - Freeing memory  *  * Changes from version 1.1114 to version 1.1115:  * - Added gtk_rc_parse  * - Fixed bug that drawing preview of small height image  *   (maybe image height< PREVIEW_SIZE) caused core dump.  * - Changed default value.  * - Moved to<Image>/Filters/Effects.  right?  * - etc...  *  * Changes from version 1.1112 to version 1.1114:  * - Modified proc args to PARAM_COLOR, also included nspoke.  * - nova_int_entryscale_new(): Fixed caption was guchar -> gchar, etc.  * - Now nova renders properly with alpha channel.  *   (Very thanks to Spencer Kimball and Federico Mena !)  *  * TODO:  * - clean up the code more  * - add notebook interface and so on  */
+comment|/*  * version 1.200  * This plug-in requires GIMP v0.99.10 or above.  *  * This plug-in produces an effect like a supernova burst.  *  *      Eiichi Takamori<taka@ma1.seikyou.ne.jp>  *      http://ha1.seikyou.ne.jp/home/taka/gimp/  *  *      Preview render mode by timecop@japan.co.jp  *      http://www.ne.jp/asahi/linux/timecop  *  * Changes from version 1.122 to version 1.200 by tim copperfield:  * - preview mode now previews the nova with scale;  * - toggle for cursor show/hide during preview  *   * Changes from version 1.1115 to version 1.122 by Martin Weber:  * - Little bug fixes  * - Added random hue  * - Freeing memory  *  * Changes from version 1.1114 to version 1.1115:  * - Added gtk_rc_parse  * - Fixed bug that drawing preview of small height image  *   (maybe image height< PREVIEW_SIZE) caused core dump.  * - Changed default value.  * - Moved to<Image>/Filters/Effects.  right?  * - etc...  *  * Changes from version 1.1112 to version 1.1114:  * - Modified proc args to GIMP_PDB_COLOR, also included nspoke.  * - nova_int_entryscale_new(): Fixed caption was guchar -> gchar, etc.  * - Now nova renders properly with alpha channel.  *   (Very thanks to Spencer Kimball and Federico Mena !)  *  * TODO:  * - clean up the code more  * - add notebook interface and so on  */
 end_comment
 
 begin_include
@@ -238,7 +238,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c850eb70108
+DECL|struct|__anon2c720ce60108
 block|{
 DECL|member|xcenter
 DECL|member|ycenter
@@ -275,7 +275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c850eb70208
+DECL|struct|__anon2c720ce60208
 block|{
 DECL|member|run
 name|gint
@@ -290,10 +290,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c850eb70308
+DECL|struct|__anon2c720ce60308
 block|{
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -374,7 +374,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -382,7 +382,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -411,7 +411,7 @@ name|GtkWidget
 modifier|*
 name|preview_widget
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -423,7 +423,7 @@ specifier|static
 name|void
 name|nova
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -438,7 +438,7 @@ specifier|static
 name|gint
 name|nova_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -466,7 +466,7 @@ name|GtkWidget
 modifier|*
 name|nova_center_create
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -570,7 +570,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -651,13 +651,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -665,7 +665,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -673,7 +673,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -681,7 +681,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"xcenter"
 block|,
@@ -689,7 +689,7 @@ literal|"X coordinates of the center of supernova"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"ycenter"
 block|,
@@ -697,7 +697,7 @@ literal|"Y coordinates of the center of supernova"
 block|}
 block|,
 block|{
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"color"
 block|,
@@ -705,7 +705,7 @@ literal|"Color of supernova"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"radius"
 block|,
@@ -713,7 +713,7 @@ literal|"Radius of supernova"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"nspoke"
 block|,
@@ -721,7 +721,7 @@ literal|"Number of spokes"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"randomhue"
 block|,
@@ -771,7 +771,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -788,7 +788,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -798,7 +798,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -806,30 +806,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|INIT_I18N_UI
 argument_list|()
@@ -862,7 +862,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -896,7 +896,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -926,7 +926,7 @@ return|return;
 block|}
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
 if|if
@@ -937,13 +937,13 @@ literal|9
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|pvals
@@ -1071,7 +1071,7 @@ condition|(
 operator|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 operator|)
 operator|&&
 name|pvals
@@ -1082,11 +1082,11 @@ literal|0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -1105,7 +1105,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
@@ -1150,7 +1150,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1160,7 +1160,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1187,7 +1187,7 @@ block|{
 comment|/* gimp_message ("nova: cannot operate on indexed color images"); */
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -1214,10 +1214,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|preview_widget (GDrawable * drawable)
+DECL|function|preview_widget (GimpDrawable * drawable)
 name|preview_widget
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -1923,10 +1923,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|nova_dialog (GDrawable * drawable)
+DECL|function|nova_dialog (GimpDrawable * drawable)
 name|nova_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -2577,10 +2577,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|nova_center_create (GDrawable * drawable)
+DECL|function|nova_center_create (GimpDrawable * drawable)
 name|nova_center_create
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -4225,10 +4225,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|nova (GDrawable * drawable,gboolean preview_mode)
+DECL|function|nova (GimpDrawable * drawable,gboolean preview_mode)
 name|nova
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -4236,7 +4236,7 @@ name|gboolean
 name|preview_mode
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|,
 name|dest_rgn

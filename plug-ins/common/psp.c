@@ -137,7 +137,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640103
+DECL|enum|__anon2b6e01f80103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +201,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640203
+DECL|enum|__anon2b6e01f80203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +241,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640303
+DECL|enum|__anon2b6e01f80303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +273,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640403
+DECL|enum|__anon2b6e01f80403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +301,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640503
+DECL|enum|__anon2b6e01f80503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +329,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640603
+DECL|enum|__anon2b6e01f80603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +351,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640703
+DECL|enum|__anon2b6e01f80703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +387,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640803
+DECL|enum|__anon2b6e01f80803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +407,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640903
+DECL|enum|__anon2b6e01f80903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +455,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640a03
+DECL|enum|__anon2b6e01f80a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +479,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640b03
+DECL|enum|__anon2b6e01f80b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +540,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb915640c03
+DECL|enum|__anon2b6e01f80c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb915640d08
+DECL|struct|__anon2b6e01f80d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -682,7 +682,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -690,7 +690,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -734,7 +734,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb915640e08
+DECL|struct|__anon2b6e01f80e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +776,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb915640f08
+DECL|struct|__anon2b6e01f80f08
 block|{
 DECL|member|run
 name|gint
@@ -847,13 +847,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -861,7 +861,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -869,7 +869,7 @@ literal|"The name of the file to load"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -878,13 +878,13 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -928,14 +928,14 @@ index|]
 argument_list|)
 operator|)
 decl_stmt|;
-comment|/*    static GParamDef save_args[] = */
+comment|/*    static GimpParamDef save_args[] = */
 comment|/*    { */
-comment|/*      { PARAM_INT32, "run_mode", "Interactive, non-interactive" }, */
-comment|/*      { PARAM_IMAGE, "image", "Input image" }, */
-comment|/*      { PARAM_DRAWABLE, "drawable", "Drawable to save" }, */
-comment|/*      { PARAM_STRING, "filename", "The name of the file to save the image in" }, */
-comment|/*      { PARAM_STRING, "raw_filename", "The name of the file to save the image in" }, */
-comment|/*      { PARAM_INT32, "compression", "Specify 0 for no compression, " */
+comment|/*      { GIMP_PDB_INT32, "run_mode", "Interactive, non-interactive" }, */
+comment|/*      { GIMP_PDB_IMAGE, "image", "Input image" }, */
+comment|/*      { GIMP_PDB_DRAWABLE, "drawable", "Drawable to save" }, */
+comment|/*      { GIMP_PDB_STRING, "filename", "The name of the file to save the image in" }, */
+comment|/*      { GIMP_PDB_STRING, "raw_filename", "The name of the file to save the image in" }, */
+comment|/*      { GIMP_PDB_INT32, "compression", "Specify 0 for no compression, " */
 comment|/*        "1 for RLE, and 2 for LZ77" } */
 comment|/*    }; */
 comment|/*    static gint nsave_args = sizeof (save_args) / sizeof (save_args[0]); */
@@ -960,7 +960,7 @@ literal|"<Load>/PSP"
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nload_args
 argument_list|,
@@ -971,7 +971,7 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_install_procedure ("file_psp_save",                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in " 			  "Paint Shop Pro's native PSP format. " 			  "Vector layers aren't handled. Saving isn't " 			  "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           "<Save>/PSP", 			  "RGB*, GRAY*, INDEXED*",                           PROC_PLUG_IN,                           nsave_args, 0,                           save_args, NULL); */
+comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_install_procedure ("file_psp_save",                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in " 			  "Paint Shop Pro's native PSP format. " 			  "Vector layers aren't handled. Saving isn't " 			  "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           "<Save>/PSP", 			  "RGB*, GRAY*, INDEXED*",                           GIMP_PLUGIN,                           nsave_args, 0,                           save_args, NULL); */
 name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_psp_load"
@@ -2860,7 +2860,7 @@ end_function
 
 begin_function
 specifier|static
-name|GLayerMode
+name|GimpLayerModeEffects
 DECL|function|gimp_layer_mode_from_psp_blend_mode (PSPLayerBlendModes mode)
 name|gimp_layer_mode_from_psp_blend_mode
 parameter_list|(
@@ -2877,68 +2877,68 @@ case|case
 name|PSP_BLEND_NORMAL
 case|:
 return|return
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 return|;
 case|case
 name|PSP_BLEND_DARKEN
 case|:
 return|return
-name|DARKEN_ONLY_MODE
+name|GIMP_DARKEN_ONLY_MODE
 return|;
 case|case
 name|PSP_BLEND_LIGHTEN
 case|:
 return|return
-name|LIGHTEN_ONLY_MODE
+name|GIMP_LIGHTEN_ONLY_MODE
 return|;
 case|case
 name|PSP_BLEND_HUE
 case|:
 return|return
-name|HUE_MODE
+name|GIMP_HUE_MODE
 return|;
 case|case
 name|PSP_BLEND_SATURATION
 case|:
 return|return
-name|SATURATION_MODE
+name|GIMP_SATURATION_MODE
 return|;
 case|case
 name|PSP_BLEND_COLOR
 case|:
 return|return
-name|COLOR_MODE
+name|GIMP_COLOR_MODE
 return|;
 case|case
 name|PSP_BLEND_LUMINANCE
 case|:
 return|return
-name|VALUE_MODE
+name|GIMP_VALUE_MODE
 return|;
 comment|/* ??? */
 case|case
 name|PSP_BLEND_MULTIPLY
 case|:
 return|return
-name|MULTIPLY_MODE
+name|GIMP_MULTIPLY_MODE
 return|;
 case|case
 name|PSP_BLEND_SCREEN
 case|:
 return|return
-name|SCREEN_MODE
+name|GIMP_SCREEN_MODE
 return|;
 case|case
 name|PSP_BLEND_DISSOLVE
 case|:
 return|return
-name|DISSOLVE_MODE
+name|GIMP_DISSOLVE_MODE
 return|;
 case|case
 name|PSP_BLEND_OVERLAY
 case|:
 return|return
-name|OVERLAY_MODE
+name|GIMP_OVERLAY_MODE
 return|;
 case|case
 name|PSP_BLEND_HARD_LIGHT
@@ -2954,7 +2954,7 @@ case|case
 name|PSP_BLEND_DIFFERENCE
 case|:
 return|return
-name|DIFFERENCE_MODE
+name|GIMP_DIFFERENCE_MODE
 return|;
 case|case
 name|PSP_BLEND_DODGE
@@ -3273,7 +3273,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|read_channel_data (FILE * f,PSPimage * ia,guchar ** pixels,guint bytespp,guint offset,GDrawable * drawable,guint32 compressed_len)
+DECL|function|read_channel_data (FILE * f,PSPimage * ia,guchar ** pixels,guint bytespp,guint offset,GimpDrawable * drawable,guint32 compressed_len)
 name|read_channel_data
 parameter_list|(
 name|FILE
@@ -3295,7 +3295,7 @@ parameter_list|,
 name|guint
 name|offset
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -4018,7 +4018,7 @@ name|bitmap_count
 decl_stmt|,
 name|channel_count
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|drawable_type
 decl_stmt|;
 name|guint32
@@ -4026,7 +4026,7 @@ name|layer_ID
 init|=
 literal|0
 decl_stmt|;
-name|GLayerMode
+name|GimpLayerModeEffects
 name|layer_mode
 decl_stmt|;
 name|guint32
@@ -4061,11 +4061,11 @@ decl_stmt|,
 modifier|*
 name|pixel
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|block_start
@@ -4816,7 +4816,7 @@ argument_list|)
 expr_stmt|;
 name|layer_mode
 operator|=
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 expr_stmt|;
 name|visibility
 operator|=
@@ -5010,7 +5010,7 @@ literal|1
 condition|)
 name|drawable_type
 operator|=
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 operator|,
 name|bytespp
 operator|=
@@ -5019,7 +5019,7 @@ expr_stmt|;
 else|else
 name|drawable_type
 operator|=
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 operator|,
 name|bytespp
 operator|=
@@ -5037,7 +5037,7 @@ literal|1
 condition|)
 name|drawable_type
 operator|=
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 operator|,
 name|bytespp
 operator|=
@@ -5046,7 +5046,7 @@ expr_stmt|;
 else|else
 name|drawable_type
 operator|=
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 operator|,
 name|bytespp
 operator|=
@@ -6726,9 +6726,9 @@ name|ia
 operator|.
 name|greyscale
 condition|?
-name|GRAY
+name|GIMP_GRAY
 else|:
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 if|if
@@ -7035,7 +7035,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -7045,7 +7045,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -7053,26 +7053,26 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -7118,7 +7118,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -7129,7 +7129,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -7177,7 +7177,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -7195,7 +7195,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -7241,10 +7241,10 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -7297,7 +7297,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CANCEL
+name|GIMP_PDB_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -7311,7 +7311,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -7331,11 +7331,11 @@ argument_list|()
 condition|)
 name|status
 operator|=
-name|STATUS_CANCEL
+name|GIMP_PDB_CANCEL
 expr_stmt|;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
 if|if
@@ -7347,7 +7347,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -7397,11 +7397,11 @@ name|PSP_COMP_LZ77
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
@@ -7419,7 +7419,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 if|if
@@ -7459,7 +7459,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -7479,7 +7479,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 name|values

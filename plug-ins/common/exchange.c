@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297eb9fd0108
+DECL|struct|__anon2be497000108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -144,7 +144,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -152,7 +152,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -254,7 +254,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|drw
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drw
 decl_stmt|;
@@ -309,7 +309,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|origregion
 specifier|static
-name|GPixelRgn
+name|GimpPixelRgn
 name|origregion
 decl_stmt|;
 end_decl_stmt
@@ -391,7 +391,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -434,13 +434,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -448,7 +448,7 @@ literal|"Interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -456,7 +456,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -464,7 +464,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"fromred"
 block|,
@@ -472,7 +472,7 @@ literal|"Red value (from)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"fromgreen"
 block|,
@@ -480,7 +480,7 @@ literal|"Green value (from)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"fromblue"
 block|,
@@ -488,7 +488,7 @@ literal|"Blue value (from)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"tored"
 block|,
@@ -496,7 +496,7 @@ literal|"Red value (to)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"togreen"
 block|,
@@ -504,7 +504,7 @@ literal|"Green value (to)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"toblue"
 block|,
@@ -512,7 +512,7 @@ literal|"Blue value (to)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"red_threshold"
 block|,
@@ -520,7 +520,7 @@ literal|"Red threshold"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"green_threshold"
 block|,
@@ -528,7 +528,7 @@ literal|"Green threshold"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"blue_threshold"
 block|,
@@ -575,7 +575,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -596,7 +596,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -606,7 +606,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -614,26 +614,26 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|runmode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 operator|*
 name|nreturn_vals
@@ -652,7 +652,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -717,7 +717,7 @@ name|runmode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -830,7 +830,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -864,7 +864,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -878,7 +878,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -1009,7 +1009,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 if|if
@@ -1059,7 +1059,7 @@ if|if
 condition|(
 name|runmode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1079,7 +1079,7 @@ if|if
 condition|(
 name|runmode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1088,7 +1088,7 @@ block|}
 else|else
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -3036,7 +3036,7 @@ name|gboolean
 name|do_preview
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR

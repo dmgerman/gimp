@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61e31d0108
+DECL|struct|__anon2773f42f0108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -184,7 +184,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61e31d0208
+DECL|struct|__anon2773f42f0208
 block|{
 DECL|member|run
 name|gint
@@ -235,7 +235,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -243,7 +243,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -253,7 +253,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -278,7 +278,7 @@ specifier|static
 name|void
 name|blur
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -291,7 +291,7 @@ specifier|inline
 name|void
 name|blur_prepare_row
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pixel_rgn
 parameter_list|,
@@ -359,13 +359,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_ni
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -373,7 +373,7 @@ literal|"non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -381,7 +381,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -407,13 +407,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -421,7 +421,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -429,7 +429,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -437,7 +437,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"blur_pct"
 block|,
@@ -445,7 +445,7 @@ literal|"Randomization percentage (1 - 100)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"blur_rcount"
 block|,
@@ -453,7 +453,7 @@ literal|"Repeat count(1 - 100)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"seed_type"
 block|,
@@ -461,7 +461,7 @@ literal|"Seed type (10 = current time, 11 = seed value)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"blur_seed"
 block|,
@@ -562,7 +562,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -611,7 +611,7 @@ name|NULL
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_ni
 argument_list|,
@@ -632,7 +632,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -642,7 +642,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -650,23 +650,23 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 comment|/* assume the best! */
 name|gchar
@@ -676,7 +676,7 @@ literal|32
 index|]
 decl_stmt|;
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
@@ -718,7 +718,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -766,7 +766,7 @@ condition|)
 block|{
 comment|/* 	   *  If we're running interactively, pop up the dialog box. 	   */
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
@@ -787,7 +787,7 @@ return|return;
 break|break;
 comment|/* 	   *  If we're not interactive (probably scripting), we 	   *  get the parameters from the param[] array, since 	   *  we don't use the dialog box.  Make sure all 	   *  parameters have legitimate values. 	   */
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
@@ -1036,13 +1036,13 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 break|break;
 comment|/* 	   *  If we're running with the last set of values, get those values. 	   */
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
@@ -1061,7 +1061,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/* 	   *  JUST DO IT! 	   */
@@ -1128,7 +1128,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|gimp_displays_flush
@@ -1140,7 +1140,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gimp_set_data
@@ -1164,7 +1164,7 @@ block|{
 comment|/*        *  If we got the wrong drawable type, we need to complain.        */
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 comment|/*    *  DONE!    *  Set the status where the GIMP can see it, and let go    *  of the drawable.    */
@@ -1195,10 +1195,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|blur_prepare_row (GPixelRgn * pixel_rgn,guchar * data,int x,int y,int w)
+DECL|function|blur_prepare_row (GimpPixelRgn * pixel_rgn,guchar * data,int x,int y,int w)
 name|blur_prepare_row
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pixel_rgn
 parameter_list|,
@@ -1360,15 +1360,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|blur (GDrawable * drawable)
+DECL|function|blur (GimpDrawable * drawable)
 name|blur
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR

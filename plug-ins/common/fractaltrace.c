@@ -91,7 +91,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -99,7 +99,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -112,7 +112,7 @@ specifier|static
 name|void
 name|filter
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -124,7 +124,7 @@ specifier|static
 name|void
 name|pixels_init
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -167,7 +167,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -191,7 +191,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon29433d470103
+DECL|enum|__anon2b8a7ca20103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -211,7 +211,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29433d470208
+DECL|struct|__anon2b8a7ca20208
 block|{
 DECL|member|x1
 name|gdouble
@@ -283,13 +283,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -297,7 +297,7 @@ literal|"interactive / non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -305,7 +305,7 @@ literal|"input image (not used)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -313,7 +313,7 @@ literal|"input drawable"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"xmin"
 block|,
@@ -321,7 +321,7 @@ literal|"xmin fractal image delimiter"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"xmax"
 block|,
@@ -329,7 +329,7 @@ literal|"xmax fractal image delimiter"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"ymin"
 block|,
@@ -337,7 +337,7 @@ literal|"ymin fractal image delimiter"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"ymax"
 block|,
@@ -345,7 +345,7 @@ literal|"ymax fractal image delimiter"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"depth"
 block|,
@@ -353,7 +353,7 @@ literal|"trace depth"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"outside_type"
 block|,
@@ -400,7 +400,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -421,7 +421,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29433d470308
+DECL|struct|__anon2b8a7ca20308
 block|{
 DECL|member|x1
 name|gint
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29433d470408
+DECL|struct|__anon2b8a7ca20408
 block|{
 DECL|member|width
 name|gint
@@ -511,7 +511,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint argc,GParam * args,gint * retc,GParam ** rets)
+DECL|function|run (gchar * name,gint argc,GimpParam * args,gint * retc,GimpParam ** rets)
 name|run
 parameter_list|(
 name|gchar
@@ -521,7 +521,7 @@ parameter_list|,
 name|gint
 name|argc
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|args
 parameter_list|,
@@ -529,24 +529,24 @@ name|gint
 modifier|*
 name|retc
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|rets
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 decl_stmt|;
 specifier|static
-name|GParam
+name|GimpParam
 name|returns
 index|[
 literal|1
@@ -565,7 +565,7 @@ name|d_int32
 expr_stmt|;
 name|status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 name|drawable
 operator|=
@@ -736,7 +736,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 switch|switch
@@ -745,7 +745,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -760,7 +760,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -782,7 +782,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 break|break;
 block|}
@@ -801,7 +801,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
@@ -812,7 +812,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -905,7 +905,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|gimp_tile_cache_ntiles
@@ -933,7 +933,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -954,7 +954,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|returns
 index|[
@@ -1007,7 +1007,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sPR
 specifier|static
-name|GPixelRgn
+name|GimpPixelRgn
 name|sPR
 decl_stmt|;
 end_decl_stmt
@@ -1015,7 +1015,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dPR
 specifier|static
-name|GPixelRgn
+name|GimpPixelRgn
 name|dPR
 decl_stmt|;
 end_decl_stmt
@@ -1023,7 +1023,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29433d470508
+DECL|struct|__anon2b8a7ca20508
 block|{
 DECL|member|r
 name|guchar
@@ -1050,10 +1050,10 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|pixels_init (GDrawable * drawable)
+DECL|function|pixels_init (GimpDrawable * drawable)
 name|pixels_init
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -2375,10 +2375,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|filter (GDrawable * drawable)
+DECL|function|filter (GimpDrawable * drawable)
 name|filter
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -2824,7 +2824,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29433d470608
+DECL|struct|__anon2b8a7ca20608
 block|{
 DECL|member|preview
 name|GtkWidget

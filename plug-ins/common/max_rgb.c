@@ -103,7 +103,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -111,7 +111,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -140,7 +140,7 @@ name|GtkWidget
 modifier|*
 name|preview_widget
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -149,10 +149,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GStatusType
+name|GimpPDBStatusType
 name|main_function
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -167,7 +167,7 @@ specifier|static
 name|gint
 name|dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -206,7 +206,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -228,7 +228,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3193aa0103
+DECL|enum|__anon2c3d74a80103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -246,7 +246,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3193aa0208
+DECL|struct|__anon2c3d74a80208
 block|{
 DECL|member|max_p
 name|gint
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3193aa0308
+DECL|struct|__anon2c3d74a80308
 block|{
 DECL|member|run
 name|gint
@@ -331,13 +331,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -345,7 +345,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -353,7 +353,7 @@ literal|"Input image (not used)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -361,7 +361,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"max_p"
 block|,
@@ -410,7 +410,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -427,7 +427,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -437,7 +437,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -445,29 +445,29 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|run_mode
@@ -512,7 +512,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -531,7 +531,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -577,7 +577,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -585,7 +585,7 @@ expr_stmt|;
 comment|/* You must copy the values of parameters to pvals or dialog variables. */
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -613,7 +613,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -622,11 +622,11 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 operator|&&
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -653,7 +653,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -671,11 +671,11 @@ end_function
 
 begin_function
 specifier|static
-name|GStatusType
-DECL|function|main_function (GDrawable * drawable,gboolean preview_mode)
+name|GimpPDBStatusType
+DECL|function|main_function (GimpDrawable * drawable,gboolean preview_mode)
 name|main_function
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -683,7 +683,7 @@ name|gboolean
 name|preview_mode
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|,
 name|dest_rgn
@@ -1507,7 +1507,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 return|;
 block|}
 end_function
@@ -1519,10 +1519,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|dialog (GDrawable * drawable)
+DECL|function|dialog (GimpDrawable * drawable)
 name|dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -1956,7 +1956,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -2035,10 +2035,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|preview_widget (GDrawable * drawable)
+DECL|function|preview_widget (GimpDrawable * drawable)
 name|preview_widget
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)

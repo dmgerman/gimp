@@ -198,7 +198,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -206,7 +206,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -216,7 +216,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GStatusType
+name|GimpPDBStatusType
 name|save_image
 parameter_list|(
 name|gchar
@@ -369,7 +369,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -392,7 +392,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed8f0e0108
+DECL|struct|__anon2b9a1d020108
 block|{
 DECL|member|receipt
 name|gchar
@@ -500,13 +500,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -514,7 +514,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -522,7 +522,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -530,7 +530,7 @@ literal|"Drawable to save"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -538,7 +538,7 @@ literal|"The name of the file to save the image in"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"receipt"
 block|,
@@ -546,7 +546,7 @@ literal|"The email address to send to"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"from"
 block|,
@@ -554,7 +554,7 @@ literal|"The email address for the From: field"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"subject"
 block|,
@@ -562,7 +562,7 @@ literal|"The subject"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"comment"
 block|,
@@ -570,7 +570,7 @@ literal|"The Comment"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"encapsulation"
 block|,
@@ -616,7 +616,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -633,7 +633,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -643,7 +643,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -651,26 +651,26 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -731,7 +731,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -742,7 +742,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -762,7 +762,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
@@ -780,11 +780,11 @@ argument_list|()
 condition|)
 name|status
 operator|=
-name|STATUS_CANCEL
+name|GIMP_PDB_CANCEL
 expr_stmt|;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
 if|if
@@ -796,7 +796,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -908,7 +908,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
@@ -926,7 +926,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|status
@@ -948,7 +948,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -969,7 +969,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -988,7 +988,7 @@ end_function
 
 begin_function
 specifier|static
-name|GStatusType
+name|GimpPDBStatusType
 DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
 name|save_image
 parameter_list|(
@@ -1006,7 +1006,7 @@ name|gint32
 name|run_mode
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 decl_stmt|;
@@ -1058,7 +1058,7 @@ argument_list|)
 operator|)
 condition|)
 return|return
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 return|;
 comment|/* get a temp name with the right extension and save into it. */
 name|params
@@ -1070,13 +1070,13 @@ argument_list|,
 operator|&
 name|retvals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|ext
 operator|+
 literal|1
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|tmpname
@@ -1170,27 +1170,27 @@ argument_list|,
 operator|&
 name|retvals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|run_mode
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|tmpname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|tmpname
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 comment|/*  need to figure a way to make sure the user is trying to save    *  in an approriate format but this can wait....    */
@@ -1215,7 +1215,7 @@ argument_list|)
 operator|||
 name|status
 operator|!=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|unlink
@@ -1273,7 +1273,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 elseif|else
@@ -1413,7 +1413,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 name|fcntl
@@ -1482,7 +1482,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 endif|#
@@ -1527,7 +1527,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 block|}
@@ -1582,7 +1582,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 return|;
 block|}
 end_function

@@ -101,7 +101,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -109,7 +109,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -157,7 +157,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -190,13 +190,13 @@ name|query
 parameter_list|()
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|copy_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -204,7 +204,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -212,7 +212,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -258,7 +258,7 @@ argument_list|)
 argument_list|,
 literal|"INDEXED*, RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|ncopy_args
 argument_list|,
@@ -290,7 +290,7 @@ argument_list|)
 argument_list|,
 literal|"INDEXED*, RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|ncopy_args
 argument_list|,
@@ -322,7 +322,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|ncopy_args
 argument_list|,
@@ -339,7 +339,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -349,7 +349,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -357,20 +357,20 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|run_mode
@@ -401,7 +401,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -412,7 +412,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -438,7 +438,7 @@ if|if
 condition|(
 name|CB_CopyImage
 argument_list|(
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 operator|==
 name|run_mode
 argument_list|,
@@ -470,7 +470,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 else|else
 name|values
@@ -482,7 +482,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 elseif|else
@@ -507,7 +507,7 @@ if|if
 condition|(
 name|CB_PasteImage
 argument_list|(
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 operator|==
 name|run_mode
 argument_list|,
@@ -539,7 +539,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 else|else
 name|values
@@ -551,7 +551,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 elseif|else
@@ -576,7 +576,7 @@ if|if
 condition|(
 name|CB_PasteImage
 argument_list|(
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 operator|==
 name|run_mode
 argument_list|,
@@ -594,7 +594,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 else|else
 name|values
@@ -606,7 +606,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -632,14 +632,14 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|drawable_type
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|gchar
@@ -711,7 +711,7 @@ expr_stmt|;
 comment|/* allocate room for DIB */
 if|if
 condition|(
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 operator|==
 name|drawable_type
 condition|)
@@ -882,7 +882,7 @@ operator|->
 name|biBitCount
 operator|=
 operator|(
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 operator|==
 name|drawable_type
 condition|?
@@ -921,7 +921,7 @@ operator|->
 name|biClrUsed
 operator|=
 operator|(
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 operator|==
 name|drawable_type
 condition|?
@@ -961,7 +961,7 @@ condition|(
 name|bRet
 operator|&&
 operator|(
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 operator|==
 name|drawable_type
 operator|)
@@ -1247,7 +1247,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 operator|==
 name|drawable_type
 condition|)
@@ -1945,18 +1945,18 @@ name|nHeight
 operator|)
 condition|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|char
 modifier|*
 name|pData
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 decl_stmt|;
@@ -2063,13 +2063,13 @@ name|nBitsPS
 operator|<=
 literal|8
 condition|?
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 else|:
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2095,13 +2095,13 @@ name|nBitsPS
 operator|<=
 literal|8
 condition|?
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 else|:
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|bIsNewImage

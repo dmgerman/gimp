@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b8e180103
+DECL|enum|__anon2befa7880103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b8e180203
+DECL|enum|__anon2befa7880203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -144,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b8e180303
+DECL|enum|__anon2befa7880303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -182,7 +182,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -190,7 +190,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -203,7 +203,7 @@ specifier|static
 name|void
 name|dialog_box
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -245,7 +245,7 @@ specifier|static
 name|gint
 name|render_effect
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -260,7 +260,7 @@ specifier|static
 name|void
 name|render_wind
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -287,7 +287,7 @@ specifier|static
 name|void
 name|render_blast
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -453,7 +453,7 @@ name|GtkWidget
 modifier|*
 name|preview_widget
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -466,7 +466,7 @@ name|GtkWidget
 modifier|*
 name|preview_widget
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -475,7 +475,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -629,13 +629,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -643,7 +643,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -651,7 +651,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -659,7 +659,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"threshold"
 block|,
@@ -667,7 +667,7 @@ literal|"Controls where blending will be done>= 0"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"direction"
 block|,
@@ -675,7 +675,7 @@ literal|"Left or Right: 0 or 1"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"strength"
 block|,
@@ -683,7 +683,7 @@ literal|"Controls the extent of the blending> 1"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"alg"
 block|,
@@ -691,7 +691,7 @@ literal|"WIND, BLAST"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"edge"
 block|,
@@ -737,7 +737,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -754,7 +754,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -764,7 +764,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -772,30 +772,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|run_mode
 operator|=
@@ -844,7 +844,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -858,7 +858,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -942,12 +942,12 @@ literal|1
 condition|)
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -975,7 +975,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 break|break;
 block|}
@@ -994,7 +994,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 block|}
@@ -1021,7 +1021,7 @@ argument_list|()
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -1049,7 +1049,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 name|gimp_message
 argument_list|(
@@ -1086,7 +1086,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1106,10 +1106,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|render_effect (GDrawable * drawable,gboolean preview_mode)
+DECL|function|render_effect (GimpDrawable * drawable,gboolean preview_mode)
 name|render_effect
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -1663,10 +1663,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_blast (GDrawable * drawable,gint threshold,gint strength,direction_t direction,edge_t edge,gboolean preview_mode)
+DECL|function|render_blast (GimpDrawable * drawable,gint threshold,gint strength,direction_t direction,edge_t edge,gboolean preview_mode)
 name|render_blast
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -1712,7 +1712,7 @@ name|guchar
 modifier|*
 name|buffer
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_region
 decl_stmt|,
 name|dest_region
@@ -2268,10 +2268,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_wind (GDrawable * drawable,gint threshold,gint strength,direction_t direction,edge_t edge,gboolean preview_mode)
+DECL|function|render_wind (GimpDrawable * drawable,gint threshold,gint strength,direction_t direction,edge_t edge,gboolean preview_mode)
 name|render_wind
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -2291,7 +2291,7 @@ name|gboolean
 name|preview_mode
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_region
 decl_stmt|,
 name|dest_region
@@ -4453,7 +4453,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -4506,10 +4506,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_box (GDrawable * drawable)
+DECL|function|dialog_box (GimpDrawable * drawable)
 name|dialog_box
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -5593,10 +5593,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|preview_widget (GDrawable * drawable)
+DECL|function|preview_widget (GimpDrawable * drawable)
 name|preview_widget
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -5643,19 +5643,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fill_preview (GtkWidget * widget,GDrawable * drawable)
+DECL|function|fill_preview (GtkWidget * widget,GimpDrawable * drawable)
 name|fill_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|;
 name|gint

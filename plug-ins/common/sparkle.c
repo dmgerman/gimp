@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae24c40108
+DECL|struct|__anon2ad7c9da0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae24c40208
+DECL|struct|__anon2ad7c9da0208
 block|{
 DECL|member|run
 name|gint
@@ -220,7 +220,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -228,7 +228,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -284,7 +284,7 @@ specifier|static
 name|gint
 name|compute_lum_threshold
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -299,7 +299,7 @@ specifier|static
 name|void
 name|sparkle
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -314,11 +314,11 @@ specifier|static
 name|void
 name|fspike
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|src_rgn
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|dest_rgn
 parameter_list|,
@@ -363,15 +363,15 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GTile
+name|GimpTile
 modifier|*
 name|rpnt
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|,
@@ -424,7 +424,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -529,13 +529,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -543,7 +543,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -551,7 +551,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -559,7 +559,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"lum_threshold"
 block|,
@@ -567,7 +567,7 @@ literal|"Luminosity threshold (0.0 - 1.0)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"flare_inten"
 block|,
@@ -575,7 +575,7 @@ literal|"Flare intensity (0.0 - 1.0)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spike_len"
 block|,
@@ -583,7 +583,7 @@ literal|"Spike length (in pixels)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spike_pts"
 block|,
@@ -591,7 +591,7 @@ literal|"# of spike points"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spike_angle"
 block|,
@@ -599,7 +599,7 @@ literal|"Spike angle (0-360 degrees, -1: random)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"density"
 block|,
@@ -607,7 +607,7 @@ literal|"Spike density (0.0 - 1.0)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -615,7 +615,7 @@ literal|"Opacity (0.0 - 1.0)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"random_hue"
 block|,
@@ -623,7 +623,7 @@ literal|"Random hue (0.0 - 1.0)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"random_saturation"
 block|,
@@ -631,7 +631,7 @@ literal|"Random saturation (0.0 - 1.0)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"preserve_luminosity"
 block|,
@@ -639,7 +639,7 @@ literal|"Preserve luminosity (TRUE/FALSE)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"invers"
 block|,
@@ -647,7 +647,7 @@ literal|"Invers (TRUE/FALSE)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"border"
 block|,
@@ -655,7 +655,7 @@ literal|"Add border (TRUE/FALSE)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"colortype"
 block|,
@@ -701,7 +701,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -718,7 +718,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -728,7 +728,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -736,30 +736,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint
 name|threshold
@@ -800,7 +800,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -819,7 +819,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -843,7 +843,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -858,7 +858,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -1066,7 +1066,7 @@ literal|1.0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 elseif|else
 if|if
@@ -1085,7 +1085,7 @@ literal|1.0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 elseif|else
 if|if
@@ -1098,7 +1098,7 @@ literal|0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 elseif|else
 if|if
@@ -1111,7 +1111,7 @@ literal|0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 elseif|else
 if|if
@@ -1131,7 +1131,7 @@ literal|360
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 elseif|else
 if|if
@@ -1150,7 +1150,7 @@ literal|1.0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 elseif|else
 if|if
@@ -1169,7 +1169,7 @@ literal|1.0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 elseif|else
 if|if
@@ -1188,7 +1188,7 @@ literal|1.0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 elseif|else
 if|if
@@ -1207,7 +1207,7 @@ literal|1.0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 elseif|else
 if|if
@@ -1226,12 +1226,12 @@ name|BACKGROUND
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -1377,7 +1377,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1387,7 +1387,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1408,7 +1408,7 @@ block|{
 comment|/* gimp_message ("sparkle: cannot operate on indexed color images"); */
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -3027,10 +3027,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|compute_lum_threshold (GDrawable * drawable,gdouble percentile)
+DECL|function|compute_lum_threshold (GimpDrawable * drawable,gdouble percentile)
 name|compute_lum_threshold
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -3038,7 +3038,7 @@ name|gdouble
 name|percentile
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|;
 name|gpointer
@@ -3299,10 +3299,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|sparkle (GDrawable * drawable,gint threshold)
+DECL|function|sparkle (GimpDrawable * drawable,gint threshold)
 name|sparkle
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -3310,7 +3310,7 @@ name|gint
 name|threshold
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|,
 name|dest_rgn
@@ -4125,16 +4125,16 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|GTile
+name|GimpTile
 modifier|*
-DECL|function|rpnt (GDrawable * drawable,GTile * tile,gint x1,gint y1,gint x2,gint y2,gdouble xr,gdouble yr,gint tile_width,gint tile_height,gint * row,gint * col,gint bytes,gdouble inten,guchar color[MAX_CHANNELS])
+DECL|function|rpnt (GimpDrawable * drawable,GimpTile * tile,gint x1,gint y1,gint x2,gint y2,gdouble xr,gdouble yr,gint tile_width,gint tile_height,gint * row,gint * col,gint bytes,gdouble inten,guchar color[MAX_CHANNELS])
 name|rpnt
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|,
@@ -4560,14 +4560,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fspike (GPixelRgn * src_rgn,GPixelRgn * dest_rgn,gint gray,gint x1,gint y1,gint x2,gint y2,gint xr,gint yr,gint tile_width,gint tile_height,gdouble inten,gdouble length,gdouble angle)
+DECL|function|fspike (GimpPixelRgn * src_rgn,GimpPixelRgn * dest_rgn,gint gray,gint x1,gint y1,gint x2,gint y2,gint xr,gint yr,gint tile_width,gint tile_height,gdouble inten,gdouble length,gdouble angle)
 name|fspike
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|src_rgn
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|dest_rgn
 parameter_list|,
@@ -4642,7 +4642,7 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 init|=

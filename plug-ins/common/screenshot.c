@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3040010108
+DECL|struct|__anon2baec02c0108
 block|{
 DECL|member|root
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3040010208
+DECL|struct|__anon2baec02c0208
 block|{
 DECL|member|decor_button
 name|GtkWidget
@@ -231,7 +231,7 @@ name|gint
 name|nparams
 parameter_list|,
 comment|/* number of parameters passed in */
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -241,7 +241,7 @@ modifier|*
 name|nreturn_vals
 parameter_list|,
 comment|/* number of parameters returned */
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -331,7 +331,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -383,13 +383,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -397,7 +397,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"root"
 block|,
@@ -405,7 +405,7 @@ literal|"Root window { TRUE, FALSE }"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"window_id"
 block|,
@@ -431,13 +431,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -490,7 +490,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|nargs
 argument_list|,
@@ -507,7 +507,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -517,7 +517,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -525,14 +525,14 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 comment|/* Get the runmode from the in-parameters */
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 init|=
 name|param
@@ -545,14 +545,14 @@ operator|.
 name|d_int32
 decl_stmt|;
 comment|/* status variable, use it to check for errors in invocation usualy only     * during non-interactive calling    */
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 comment|/* always return at least the status to the caller. */
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
@@ -566,7 +566,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -596,7 +596,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/* Possibly retrieve data from a previous run */
 name|gimp_get_data
@@ -626,7 +626,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
@@ -684,11 +684,11 @@ block|}
 else|else
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/* Possibly retrieve data from a previous run */
 name|gimp_get_data
@@ -707,7 +707,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 if|if
@@ -739,22 +739,22 @@ operator|-
 literal|1
 operator|)
 condition|?
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 else|:
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 comment|/* Store variable states for next run */
@@ -791,7 +791,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -832,7 +832,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 decl_stmt|;
@@ -877,11 +877,11 @@ argument_list|,
 operator|&
 name|retvals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 literal|"xwd"
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|tmpname
@@ -1131,19 +1131,19 @@ argument_list|,
 operator|&
 name|retvals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|1
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|tmpname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|tmpname
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -1157,7 +1157,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_ID

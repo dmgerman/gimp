@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277fd7730108
+DECL|struct|__anon2bd2d7fc0108
 block|{
 DECL|member|r
 DECL|member|g
@@ -219,7 +219,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277fd7730208
+DECL|struct|__anon2bd2d7fc0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -339,7 +339,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|input_drawable
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|input_drawable
 decl_stmt|;
@@ -348,7 +348,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|output_drawable
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|output_drawable
 decl_stmt|;
@@ -357,7 +357,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|source_region
 specifier|static
-name|GPixelRgn
+name|GimpPixelRgn
 name|source_region
 decl_stmt|;
 end_decl_stmt
@@ -365,7 +365,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dest_region
 specifier|static
-name|GPixelRgn
+name|GimpPixelRgn
 name|dest_region
 decl_stmt|;
 end_decl_stmt
@@ -844,10 +844,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|image_setup (GDrawable * drawable,gint interactive)
+DECL|function|image_setup (GimpDrawable * drawable,gint interactive)
 name|image_setup
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -3266,10 +3266,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rgb_to_hue (GDrawable * image,guchar ** map)
+DECL|function|rgb_to_hue (GimpDrawable * image,guchar ** map)
 name|rgb_to_hue
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|image
 parameter_list|,
@@ -3310,7 +3310,7 @@ name|index
 init|=
 literal|0
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|region
 decl_stmt|;
 name|w
@@ -3471,10 +3471,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rgb_to_saturation (GDrawable * image,guchar ** map)
+DECL|function|rgb_to_saturation (GimpDrawable * image,guchar ** map)
 name|rgb_to_saturation
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|image
 parameter_list|,
@@ -3515,7 +3515,7 @@ name|index
 init|=
 literal|0
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|region
 decl_stmt|;
 name|w
@@ -3676,10 +3676,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rgb_to_brightness (GDrawable * image,guchar ** map)
+DECL|function|rgb_to_brightness (GimpDrawable * image,guchar ** map)
 name|rgb_to_brightness
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|image
 parameter_list|,
@@ -3720,7 +3720,7 @@ name|index
 init|=
 literal|0
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|region
 decl_stmt|;
 name|w
@@ -4345,7 +4345,7 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|effect
 decl_stmt|;
@@ -4366,7 +4366,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable
@@ -4391,11 +4391,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 argument_list|,
 literal|100.0
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
@@ -5888,7 +5888,7 @@ specifier|static
 name|void
 name|lic_interactive
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -5896,7 +5896,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* static void lic_noninteractive (GDrawable *drawable); */
+comment|/* static void lic_noninteractive (GimpDrawable *drawable); */
 end_comment
 
 begin_comment
@@ -5994,13 +5994,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -6008,7 +6008,7 @@ literal|"Interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -6016,7 +6016,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -6062,7 +6062,7 @@ argument_list|)
 argument_list|,
 literal|"RGB"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -6079,7 +6079,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -6089,7 +6089,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -6097,30 +6097,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|run_mode
 operator|=
@@ -6137,7 +6137,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|INIT_I18N_UI
@@ -6167,7 +6167,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -6215,7 +6215,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/* Make sure that the drawable is RGBA or RGB color */
@@ -6243,7 +6243,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|lic_interactive
 argument_list|(
@@ -6265,7 +6265,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|image_setup
 argument_list|(
@@ -6285,7 +6285,7 @@ block|}
 else|else
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -6309,7 +6309,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -6332,10 +6332,10 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|lic_interactive (GDrawable * drawable)
+DECL|function|lic_interactive (GimpDrawable * drawable)
 name|lic_interactive
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -6373,7 +6373,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* static void lic_noninteractive (GDrawable *drawable) {   g_message ("Noninteractive not yet implemented! Sorry.\n"); } */
+comment|/* static void lic_noninteractive (GimpDrawable *drawable) {   g_message ("Noninteractive not yet implemented! Sorry.\n"); } */
 end_comment
 
 begin_macro

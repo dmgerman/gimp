@@ -167,7 +167,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -175,7 +175,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -185,7 +185,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GStatusType
+name|GimpPDBStatusType
 name|value_propagate
 parameter_list|(
 name|gint
@@ -210,7 +210,7 @@ specifier|static
 name|int
 name|vpropagate_dialog
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|)
 function_decl|;
@@ -221,7 +221,7 @@ specifier|static
 name|void
 name|prepare_row
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pixel_rgn
 parameter_list|,
@@ -310,7 +310,7 @@ specifier|static
 name|void
 name|set_value
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -334,7 +334,7 @@ specifier|static
 name|void
 name|initialize_white
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -356,7 +356,7 @@ specifier|static
 name|void
 name|propagate_white
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -380,7 +380,7 @@ specifier|static
 name|void
 name|initialize_black
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -402,7 +402,7 @@ specifier|static
 name|void
 name|propagate_black
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -426,7 +426,7 @@ specifier|static
 name|void
 name|initialize_middle
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -448,7 +448,7 @@ specifier|static
 name|void
 name|propagate_middle
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -472,7 +472,7 @@ specifier|static
 name|void
 name|set_middle_to_peak
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -496,7 +496,7 @@ specifier|static
 name|void
 name|set_foreground_to_peak
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -520,7 +520,7 @@ specifier|static
 name|void
 name|initialize_foreground
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -542,7 +542,7 @@ specifier|static
 name|void
 name|initialize_background
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -564,7 +564,7 @@ specifier|static
 name|void
 name|propagate_a_color
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -588,7 +588,7 @@ specifier|static
 name|void
 name|propagate_opaque
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -612,7 +612,7 @@ specifier|static
 name|void
 name|propagate_transparent
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
@@ -633,7 +633,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4cf6d0108
+DECL|struct|__anon29017ec10108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -844,7 +844,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4cf6d0208
+DECL|struct|__anon29017ec10208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1069,7 +1069,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4cf6d0308
+DECL|struct|__anon29017ec10308
 block|{
 DECL|member|run
 name|gint
@@ -1116,13 +1116,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1130,7 +1130,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1138,7 +1138,7 @@ literal|"Input image (not used)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1146,7 +1146,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"propagate-mode"
 block|,
@@ -1154,7 +1154,7 @@ literal|"propagate 0:white, 1:black, 2:middle value 3:foreground to peak, 4:fore
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"propagating-channel"
 block|,
@@ -1162,7 +1162,7 @@ literal|"channels which values are propagated"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"propagating-rate"
 block|,
@@ -1170,7 +1170,7 @@ literal|"0.0<= propagatating_rate<= 1.0"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"direction-mask"
 block|,
@@ -1178,7 +1178,7 @@ literal|"0<= direction-mask<= 15"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"lower-limit"
 block|,
@@ -1186,7 +1186,7 @@ literal|"0<= lower-limit<= 255"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"upper-limit"
 block|,
@@ -1232,7 +1232,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -1249,7 +1249,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -1259,7 +1259,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1267,25 +1267,25 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|run_mode
@@ -1327,7 +1327,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1346,7 +1346,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -1441,7 +1441,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -1526,7 +1526,7 @@ name|d_int32
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -1552,7 +1552,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1561,11 +1561,11 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 operator|&&
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1587,7 +1587,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1609,7 +1609,7 @@ end_comment
 
 begin_function
 specifier|static
-name|GStatusType
+name|GimpPDBStatusType
 DECL|function|value_propagate (gint drawable_id)
 name|value_propagate
 parameter_list|(
@@ -1636,7 +1636,7 @@ condition|)
 block|{
 comment|/* gimp_message ("No channel selected."); */
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 if|if
@@ -1650,7 +1650,7 @@ condition|)
 block|{
 comment|/* gimp_message ("No direction selected."); */
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 if|if
@@ -1700,7 +1700,7 @@ condition|)
 block|{
 comment|/* gimp_message ("Limit values are not valid."); */
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 name|value_propagate_body
@@ -1709,7 +1709,7 @@ name|drawable_id
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 return|;
 block|}
 end_function
@@ -1724,17 +1724,17 @@ name|gint
 name|drawable_id
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GImageType
+name|GimpImageBaseType
 name|dtype
 decl_stmt|;
 name|ModeParam
 name|operation
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcRgn
 decl_stmt|,
 name|destRgn
@@ -2582,10 +2582,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|prepare_row (GPixelRgn * pixel_rgn,guchar * data,gint x,gint y,gint w)
+DECL|function|prepare_row (GimpPixelRgn * pixel_rgn,guchar * data,gint x,gint y,gint w)
 name|prepare_row
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pixel_rgn
 parameter_list|,
@@ -2737,10 +2737,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_value (GImageType dtype,gint bytes,guchar * best,guchar * here,guchar * dest,void * tmp)
+DECL|function|set_value (GimpImageBaseType dtype,gint bytes,guchar * best,guchar * here,guchar * dest,void * tmp)
 name|set_value
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|dtype
 parameter_list|,
 name|gint
@@ -2782,7 +2782,7 @@ name|dtype
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -2790,7 +2790,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -2802,7 +2802,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -2810,7 +2810,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -3048,10 +3048,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_white (GImageType dtype,gint bytes,CH * best,CH * here,void ** tmp)
+DECL|function|initialize_white (GimpImageBaseType dtype,gint bytes,CH * best,CH * here,void ** tmp)
 name|initialize_white
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|dtype
 parameter_list|,
 name|gint
@@ -3154,10 +3154,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_white (GImageType dtype,gint bytes,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_white (GimpImageBaseType dtype,gint bytes,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_white
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|dtype
 parameter_list|,
 name|gint
@@ -3189,10 +3189,10 @@ name|dtype
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|v_here
 operator|=
@@ -3292,10 +3292,10 @@ comment|/* alpha channel holds old value */
 block|}
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 if|if
 condition|(
@@ -3330,10 +3330,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_black (GImageType dtype,gint channels,CH * best,CH * here,void ** tmp)
+DECL|function|initialize_black (GimpImageBaseType dtype,gint channels,CH * best,CH * here,void ** tmp)
 name|initialize_black
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|dtype
 parameter_list|,
 name|gint
@@ -3436,10 +3436,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_black (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_black (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_black
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -3471,10 +3471,10 @@ name|image_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|v_here
 operator|=
@@ -3574,10 +3574,10 @@ comment|/* alpha channel holds old value */
 block|}
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 if|if
 condition|(
@@ -3612,7 +3612,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4cf6d0408
+DECL|struct|__anon29017ec10408
 block|{
 DECL|member|min_modified
 name|gshort
@@ -3657,10 +3657,10 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_middle (GImageType image_type,gint channels,CH * best,CH * here,void ** tmp)
+DECL|function|initialize_middle (GimpImageBaseType image_type,gint channels,CH * best,CH * here,void ** tmp)
 name|initialize_middle
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -3755,10 +3755,10 @@ name|image_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|data
 operator|->
@@ -3814,10 +3814,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|data
 operator|->
@@ -3858,10 +3858,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_middle (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_middle (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_middle
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -3905,10 +3905,10 @@ name|image_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|v_here
 operator|=
@@ -4058,10 +4058,10 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 if|if
 condition|(
@@ -4155,10 +4155,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_middle_to_peak (GImageType image_type,gint channels,CH * here,CH * best,CH * dest,void * tmp)
+DECL|function|set_middle_to_peak (GimpImageBaseType image_type,gint channels,CH * here,CH * best,CH * dest,void * tmp)
 name|set_middle_to_peak
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -4278,7 +4278,7 @@ name|image_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -4286,7 +4286,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -4298,7 +4298,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -4306,7 +4306,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -4460,10 +4460,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_foreground_to_peak (GImageType image_type,gint channels,CH * here,CH * best,CH * dest,void * tmp)
+DECL|function|set_foreground_to_peak (GimpImageBaseType image_type,gint channels,CH * here,CH * best,CH * dest,void * tmp)
 name|set_foreground_to_peak
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -4580,7 +4580,7 @@ name|image_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -4588,7 +4588,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -4600,7 +4600,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -4608,7 +4608,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 name|value_chs
 operator|=
@@ -4693,10 +4693,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_foreground (GImageType image_type,gint channels,CH * here,CH * best,void ** tmp)
+DECL|function|initialize_foreground (GimpImageBaseType image_type,gint channels,CH * here,CH * best,void ** tmp)
 name|initialize_foreground
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -4779,10 +4779,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_background (GImageType image_type,gint channels,CH * here,CH * best,void ** tmp)
+DECL|function|initialize_background (GimpImageBaseType image_type,gint channels,CH * here,CH * best,void ** tmp)
 name|initialize_background
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -4865,10 +4865,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_a_color (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_a_color (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_a_color
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -4907,10 +4907,10 @@ name|image_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 if|if
 condition|(
@@ -4972,10 +4972,10 @@ comment|/* alpha channel holds old value */
 block|}
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 break|break;
 default|default:
@@ -4987,10 +4987,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_opaque (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_opaque (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_opaque
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -5019,7 +5019,7 @@ name|image_type
 condition|)
 block|{
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 if|if
 condition|(
@@ -5058,7 +5058,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 if|if
 condition|(
@@ -5105,10 +5105,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_transparent (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_transparent (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_transparent
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|,
 name|gint
@@ -5137,7 +5137,7 @@ name|image_type
 condition|)
 block|{
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 if|if
 condition|(
@@ -5176,7 +5176,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 if|if
 condition|(
@@ -5227,10 +5227,10 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|vpropagate_dialog (GImageType image_type)
+DECL|function|vpropagate_dialog (GimpImageBaseType image_type)
 name|vpropagate_dialog
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 parameter_list|)
 block|{
@@ -6011,13 +6011,13 @@ condition|(
 operator|(
 name|image_type
 operator|==
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 operator|)
 operator||
 operator|(
 name|image_type
 operator|==
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 operator|)
 condition|)
 block|{

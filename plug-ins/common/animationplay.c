@@ -189,7 +189,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4fdc040103
+DECL|enum|__anon2b0631210103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -237,7 +237,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -245,7 +245,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -524,7 +524,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -702,7 +702,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -731,7 +731,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|imagetype
 specifier|static
-name|GImageType
+name|GimpImageBaseType
 name|imagetype
 decl_stmt|;
 end_decl_stmt
@@ -882,13 +882,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -896,7 +896,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -904,7 +904,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -950,7 +950,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -967,7 +967,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint n_params,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint n_params,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -977,7 +977,7 @@ parameter_list|,
 name|gint
 name|n_params
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -985,26 +985,26 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 operator|*
 name|nreturn_vals
@@ -1031,7 +1031,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -1043,7 +1043,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 name|INIT_I18N
@@ -1060,7 +1060,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -1081,7 +1081,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1094,7 +1094,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -2092,10 +2092,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|build_dialog (GImageType basetype,char * imagename)
+DECL|function|build_dialog (GimpImageBaseType basetype,char * imagename)
 name|build_dialog
 parameter_list|(
-name|GImageType
+name|GimpImageBaseType
 name|basetype
 parameter_list|,
 name|char
@@ -3313,7 +3313,7 @@ if|if
 condition|(
 name|imagetype
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 name|palette
 operator|=
@@ -3330,7 +3330,7 @@ if|if
 condition|(
 name|imagetype
 operator|==
-name|GRAY
+name|GIMP_GRAY
 condition|)
 block|{
 comment|/* This is a bit sick, until this plugin ever gets 	 real GRAY support (not worth it?) */
@@ -3495,7 +3495,7 @@ name|gint32
 name|whichframe
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 specifier|static
@@ -3851,7 +3851,7 @@ name|imagetype
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 if|if
 condition|(
@@ -5213,10 +5213,10 @@ block|}
 block|}
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 if|if
 condition|(

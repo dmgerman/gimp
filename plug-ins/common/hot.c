@@ -145,7 +145,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3de4250103
+DECL|enum|__anon2c7819d40103
 block|{
 DECL|enumerator|act_lredux
 name|act_lredux
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3de4250203
+DECL|enum|__anon2c7819d40203
 block|{
 DECL|enumerator|mode_ntsc
 name|mode_ntsc
@@ -219,7 +219,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a3de4250308
+DECL|struct|__anon2c7819d40308
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -445,7 +445,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -453,7 +453,7 @@ name|gint
 modifier|*
 name|nretvals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|retvals
@@ -576,7 +576,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -611,13 +611,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -625,7 +625,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -633,7 +633,7 @@ literal|"The Image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -641,7 +641,7 @@ literal|"The Drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
@@ -649,7 +649,7 @@ literal|"Mode -- NTSC/PAL"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"action"
 block|,
@@ -657,7 +657,7 @@ literal|"The action to perform"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_layerp"
 block|,
@@ -708,7 +708,7 @@ argument_list|)
 argument_list|,
 literal|"RGB"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -725,7 +725,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparam,GParam * param,gint * nretvals,GParam ** retvals)
+DECL|function|run (gchar * name,gint nparam,GimpParam * param,gint * nretvals,GimpParam ** retvals)
 name|run
 parameter_list|(
 name|gchar
@@ -735,7 +735,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -743,14 +743,14 @@ name|gint
 modifier|*
 name|nretvals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|retvals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|rvals
 index|[
 literal|1
@@ -835,7 +835,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|rvals
 index|[
@@ -846,7 +846,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 switch|switch
 condition|(
@@ -861,7 +861,7 @@ name|d_int32
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -917,7 +917,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|gimp_set_data
@@ -936,7 +936,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -958,7 +958,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 block|}
@@ -1022,13 +1022,13 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 break|break;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -1055,7 +1055,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 break|break;
@@ -1075,7 +1075,7 @@ modifier|*
 name|argp
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drw
 decl_stmt|,
@@ -1084,7 +1084,7 @@ name|ndrw
 init|=
 name|NULL
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPr
 decl_stmt|,
 name|dstPr
@@ -1292,14 +1292,14 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 argument_list|,
 operator|(
 name|gdouble
 operator|)
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|ndrw
@@ -1313,7 +1313,7 @@ name|gimp_drawable_fill
 argument_list|(
 name|nl
 argument_list|,
-name|TRANS_IMAGE_FILL
+name|GIMP_TRANS_IMAGE_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

@@ -532,7 +532,7 @@ modifier|*
 name|filesel
 decl_stmt|;
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -771,15 +771,15 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0032b0108
+DECL|struct|__anon28ecab5f0108
 block|{
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 DECL|member|pr
-name|GPixelRgn
+name|GimpPixelRgn
 name|pr
 decl_stmt|;
 DECL|member|x1
@@ -808,7 +808,7 @@ name|gint
 name|bpp
 decl_stmt|;
 DECL|member|tile
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0032b0208
+DECL|struct|__anon28ecab5f0208
 block|{
 DECL|member|y
 name|gint32
@@ -902,7 +902,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -910,7 +910,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -924,7 +924,7 @@ name|BenderDialog
 modifier|*
 name|bender_new_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 parameter_list|)
 function_decl|;
@@ -1286,7 +1286,7 @@ name|BenderDialog
 modifier|*
 name|do_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 parameter_list|)
 function_decl|;
@@ -1312,7 +1312,7 @@ name|t_GDRW
 modifier|*
 name|gdrw
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -1345,7 +1345,7 @@ parameter_list|(
 name|BenderDialog
 modifier|*
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 parameter_list|,
 name|gint
@@ -1358,7 +1358,7 @@ specifier|static
 name|gint32
 name|p_create_pv_image
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|src_drawable
 parameter_list|,
@@ -1668,7 +1668,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -2040,7 +2040,7 @@ name|l_rotate_proc
 init|=
 literal|"gimp_rotate"
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2145,28 +2145,28 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|drawable_id
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|l_angle_step
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|FALSE
 argument_list|,
 comment|/* dont rotate the whole image */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -2180,7 +2180,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 return|return
@@ -2230,19 +2230,19 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|drawable_id
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|interpolation
 argument_list|,
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 argument_list|,
 name|l_angle_rad
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -2256,7 +2256,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|l_rc
@@ -2339,7 +2339,7 @@ name|l_procname
 init|=
 literal|"gimp_edit_copy"
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2365,11 +2365,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|drawable_id
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -2383,7 +2383,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|gimp_destroy_params
@@ -2456,7 +2456,7 @@ name|l_procname
 init|=
 literal|"gimp_edit_paste"
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2485,15 +2485,15 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|drawable_id
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|paste_into
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -2507,7 +2507,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|fsel_layer_id
@@ -2703,13 +2703,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -2717,7 +2717,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -2725,7 +2725,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -2733,7 +2733,7 @@ literal|"Input drawable (must be a layer without layermask)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"rotation"
 block|,
@@ -2741,7 +2741,7 @@ literal|"Direction {angle 0 to 360 degree } of the bend effect"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"smoothing"
 block|,
@@ -2749,7 +2749,7 @@ literal|"Smoothing { TRUE, FALSE }"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"antialias"
 block|,
@@ -2757,7 +2757,7 @@ literal|"Antialias { TRUE, FALSE }"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"work_on_copy"
 block|,
@@ -2765,7 +2765,7 @@ literal|"{ TRUE, FALSE } TRUE: copy the drawable and bend the copy"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"curve_type"
 block|,
@@ -2773,7 +2773,7 @@ literal|" { 0, 1 } 0 == smooth (use 17 points), 1 == freehand (use 256 val_y) "
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"argc_upper_point_x"
 block|,
@@ -2781,7 +2781,7 @@ literal|"{2<= argc<= 17} "
 block|}
 block|,
 block|{
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"upper_point_x"
 block|,
@@ -2789,7 +2789,7 @@ literal|"array of 17 x point_koords { 0.0<= x<= 1.0 or -1 for unused point }"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"argc_upper_point_y"
 block|,
@@ -2797,7 +2797,7 @@ literal|"{2<= argc<= 17} "
 block|}
 block|,
 block|{
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"upper_point_y"
 block|,
@@ -2805,7 +2805,7 @@ literal|"array of 17 y point_koords { 0.0<= y<= 1.0 or -1 for unused point }"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"argc_lower_point_x"
 block|,
@@ -2813,7 +2813,7 @@ literal|"{2<= argc<= 17} "
 block|}
 block|,
 block|{
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"lower_point_x"
 block|,
@@ -2821,7 +2821,7 @@ literal|"array of 17 x point_koords { 0.0<= x<= 1.0 or -1 for unused point }"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"argc_lower_point_y"
 block|,
@@ -2829,7 +2829,7 @@ literal|"{2<= argc<= 17} "
 block|}
 block|,
 block|{
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"lower_point_y"
 block|,
@@ -2837,7 +2837,7 @@ literal|"array of 17 y point_koords { 0.0<= y<= 1.0 or -1 for unused point }"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"argc_upper_val_y"
 block|,
@@ -2845,7 +2845,7 @@ literal|"{ 256 } "
 block|}
 block|,
 block|{
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"upper_val_y"
 block|,
@@ -2853,7 +2853,7 @@ literal|"array of 256 y freehand koord { 0<= y<= 255 }"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"argc_lower_val_y"
 block|,
@@ -2861,7 +2861,7 @@ literal|"{ 256 } "
 block|}
 block|,
 block|{
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"lower_val_y"
 block|,
@@ -2887,13 +2887,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"bent_layer"
 block|,
@@ -2919,13 +2919,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_iter
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -2933,7 +2933,7 @@ literal|"non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"total_steps"
 block|,
@@ -2941,7 +2941,7 @@ literal|"total number of steps (# of layers-1 to apply the related plug-in)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"current_step"
 block|,
@@ -2949,7 +2949,7 @@ literal|"current (for linear iterations this is the layerstack position, otherwi
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"len_struct"
 block|,
@@ -3008,7 +3008,7 @@ argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -3039,7 +3039,7 @@ argument_list|,
 comment|/* do not appear in menus */
 name|NULL
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|nargs_iter
 argument_list|,
@@ -3056,7 +3056,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -3068,7 +3068,7 @@ name|int
 name|nparams
 parameter_list|,
 comment|/* number of in-paramters */
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -3078,7 +3078,7 @@ modifier|*
 name|nreturn_vals
 parameter_list|,
 comment|/* number of out-parameters */
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -3093,7 +3093,7 @@ name|BenderDialog
 modifier|*
 name|cd
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|l_active_drawable
 init|=
@@ -3124,7 +3124,7 @@ operator|-
 literal|1
 decl_stmt|;
 comment|/* Get the runmode from the in-parameters */
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 init|=
 name|param
@@ -3137,14 +3137,14 @@ operator|.
 name|d_int32
 decl_stmt|;
 comment|/* status variable, use it to check for errors in invocation usualy only      during non-interactive calling */
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 comment|/*always return at least the status to the caller. */
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
@@ -3154,7 +3154,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|INIT_I18N_UI
@@ -3227,7 +3227,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -3247,7 +3247,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 expr_stmt|;
 name|values
 index|[
@@ -3308,7 +3308,7 @@ condition|(
 operator|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 operator|)
 operator|&&
 operator|(
@@ -3442,13 +3442,13 @@ block|}
 else|else
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 name|values
 index|[
@@ -3515,7 +3515,7 @@ argument_list|)
 expr_stmt|;
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 comment|/* check for layermask */
@@ -3563,7 +3563,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/* how are we running today? */
@@ -3573,7 +3573,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/* Possibly retrieve data from a previous run */
 comment|/* gimp_get_data (PLUG_IN_NAME,&g_bndvals); */
@@ -3593,7 +3593,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/* check to see if invoked with the correct number of parameters */
 if|if
@@ -3892,12 +3892,12 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|cd
 operator|=
@@ -3947,14 +3947,14 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/* Run the main function */
@@ -3985,7 +3985,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|p_store_values
@@ -3999,7 +3999,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 comment|/* dialog ended with cancel button */
 block|}
@@ -4013,7 +4013,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -5710,10 +5710,10 @@ end_comment
 begin_function
 name|BenderDialog
 modifier|*
-DECL|function|do_dialog (GDrawable * drawable)
+DECL|function|do_dialog (GimpDrawable * drawable)
 name|do_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -5895,10 +5895,10 @@ begin_function
 specifier|static
 name|BenderDialog
 modifier|*
-DECL|function|bender_new_dialog (GDrawable * drawable)
+DECL|function|bender_new_dialog (GimpDrawable * drawable)
 name|bender_new_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -13003,7 +13003,7 @@ name|guchar
 modifier|*
 name|l_ptr
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|l_pv_drawable
 decl_stmt|;
@@ -14225,14 +14225,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|p_init_gdrw (t_GDRW * gdrw,GDrawable * drawable,int dirty,int shadow)
+DECL|function|p_init_gdrw (t_GDRW * gdrw,GimpDrawable * drawable,int dirty,int shadow)
 name|p_init_gdrw
 parameter_list|(
 name|t_GDRW
 modifier|*
 name|gdrw
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -15413,15 +15413,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|p_clear_drawable (GDrawable * drawable)
+DECL|function|p_clear_drawable (GimpDrawable * drawable)
 name|p_clear_drawable
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|gpointer
@@ -15543,10 +15543,10 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|p_create_pv_image (GDrawable * src_drawable,gint32 * layer_id)
+DECL|function|p_create_pv_image (GimpDrawable * src_drawable,gint32 * layer_id)
 name|p_create_pv_image
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|src_drawable
 parameter_list|,
@@ -15564,7 +15564,7 @@ decl_stmt|;
 name|guint
 name|l_new_height
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|l_type
 decl_stmt|;
 name|gint
@@ -15581,7 +15581,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|dst_drawable
 decl_stmt|;
@@ -15871,9 +15871,9 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-name|GDrawable
+name|GimpDrawable
 modifier|*
-DECL|function|p_add_layer (gint width,gint height,GDrawable * src_drawable)
+DECL|function|p_add_layer (gint width,gint height,GimpDrawable * src_drawable)
 name|p_add_layer
 parameter_list|(
 name|gint
@@ -15882,16 +15882,16 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|src_drawable
 parameter_list|)
 block|{
-name|GDrawableType
+name|GimpImageType
 name|l_type
 decl_stmt|;
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|l_new_drawable
 decl_stmt|;
@@ -15909,7 +15909,7 @@ decl_stmt|;
 name|gdouble
 name|l_opacity
 decl_stmt|;
-name|GLayerMode
+name|GimpLayerModeEffects
 name|l_mode
 decl_stmt|;
 name|gint
@@ -15938,7 +15938,7 @@ comment|/* TODO:  should be same as src_layer */
 comment|/* copy type, name, opacity and mode from src_drawable */
 name|l_type
 operator|=
-name|gimp_layer_type
+name|gimp_drawable_type
 argument_list|(
 name|src_drawable
 operator|->
@@ -18273,14 +18273,14 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|p_main_bend (BenderDialog * cd,GDrawable * original_drawable,gint work_on_copy)
+DECL|function|p_main_bend (BenderDialog * cd,GimpDrawable * original_drawable,gint work_on_copy)
 name|p_main_bend
 parameter_list|(
 name|BenderDialog
 modifier|*
 name|cd
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|original_drawable
 parameter_list|,
@@ -18294,11 +18294,11 @@ decl_stmt|;
 name|t_GDRW
 name|l_dst_gdrw
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|dst_drawable
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|src_drawable
 decl_stmt|;

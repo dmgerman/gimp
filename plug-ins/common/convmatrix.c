@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f666f40103
+DECL|enum|__anon274ceb5d0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -104,7 +104,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -200,7 +200,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -208,7 +208,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -248,7 +248,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -303,7 +303,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f666f40208
+DECL|struct|__anon274ceb5d0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -458,7 +458,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29f666f40308
+DECL|struct|__anon274ceb5d0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -533,13 +533,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -547,7 +547,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -555,13 +555,13 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-comment|/*	{ PARAM_FLOATARRAY, "matrix", "The 5x5 convolution matrix" }, 	{ PARAM_INT32, "alpha_alg", "Enable weighting by alpha channel" }, 	{ PARAM_FLOAT, "divisor", "Divisor" }, 	{ PARAM_FLOAT, "offset", "Offset" },  	{ PARAM_INT32ARRAY, "channels", "Mask of the channels to be filtered" }, 	{ PARAM_INT32, "bmode", "Mode for treating image borders" }     */
+comment|/*	{ GIMP_PDB_FLOATARRAY, "matrix", "The 5x5 convolution matrix" }, 	{ GIMP_PDB_INT32, "alpha_alg", "Enable weighting by alpha channel" }, 	{ GIMP_PDB_FLOAT, "divisor", "Divisor" }, 	{ GIMP_PDB_FLOAT, "offset", "Offset" },  	{ GIMP_PDB_INT32ARRAY, "channels", "Mask of the channels to be filtered" }, 	{ GIMP_PDB_INT32, "bmode", "Mode for treating image borders" }     */
 block|}
 decl_stmt|;
 specifier|static
@@ -602,7 +602,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -619,7 +619,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -629,7 +629,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -637,26 +637,26 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|int
 name|x
@@ -716,7 +716,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -727,7 +727,7 @@ literal|9
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 else|else
 block|{
@@ -886,7 +886,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 comment|/*  Oh boy. We get to do a dialog box, because we can't really 	   *  expect the user to set us up with the right values using gdb. 	   */
@@ -903,7 +903,7 @@ block|{
 comment|/* The dialog was closed, or something similarly evil happened. */
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -912,7 +912,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
@@ -964,7 +964,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -973,7 +973,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -993,7 +993,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|gimp_drawable_detach
@@ -1009,7 +1009,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1032,10 +1032,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|my_get_row (GPixelRgn * PR,guchar * dest,int x,int y,int w)
+DECL|function|my_get_row (GimpPixelRgn * PR,guchar * dest,int x,int y,int w)
 name|my_get_row
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|PR
 parameter_list|,
@@ -1855,7 +1855,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR

@@ -307,7 +307,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|nargs
 argument_list|,
@@ -452,7 +452,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d865a0108
+DECL|struct|__anon27ce52040108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -558,7 +558,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d865a0208
+DECL|struct|__anon27ce52040208
 block|{
 DECL|member|menu
 name|gchar
@@ -3612,7 +3612,7 @@ modifier|*
 name|search_text
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -3682,11 +3682,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|search_text
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -3700,7 +3700,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|int

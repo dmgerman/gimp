@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * version 1.04  * This version requires GIMP v0.99.10 or above.  *  * This plug-in "pixelizes" the image.  *  *	Eiichi Takamori<taka@ma1.seikyou.ne.jp>  *	http://ha1.seikyou.ne.jp/home/taka/gimp/  *  * Changes from version 1.03 to version 1.04:  * - Added gtk_rc_parse  * - Added entry with scale  * - Fixed bug that large pixelwidth>=64 sometimes caused core dump  *  * Changes from gimp-0.99.9/plug-ins/pixelize.c to version 1.03:  * - Fixed comments and help strings  * - Fixed `RGB, GRAY' to `RGB*, GRAY*'  * - Fixed procedure db name `pixelize' to `plug_in_pixelize'  *  * Differences from Tracy Scott's original `pixelize' plug-in:  *  * - Algorithm is modified to work around with the tile management.  *   The way of pixelizing is switched by the value of pixelwidth.  If  *   pixelwidth is greater than (or equal to) tile width, then this  *   plug-in makes GPixelRgn with that width and proceeds. Otherwise,  *   it makes the region named `PixelArea', whose size is smaller than  *   tile width and is multiply of pixel width, and acts onto it.  */
+comment|/*  * version 1.04  * This version requires GIMP v0.99.10 or above.  *  * This plug-in "pixelizes" the image.  *  *	Eiichi Takamori<taka@ma1.seikyou.ne.jp>  *	http://ha1.seikyou.ne.jp/home/taka/gimp/  *  * Changes from version 1.03 to version 1.04:  * - Added gtk_rc_parse  * - Added entry with scale  * - Fixed bug that large pixelwidth>=64 sometimes caused core dump  *  * Changes from gimp-0.99.9/plug-ins/pixelize.c to version 1.03:  * - Fixed comments and help strings  * - Fixed `RGB, GRAY' to `RGB*, GRAY*'  * - Fixed procedure db name `pixelize' to `plug_in_pixelize'  *  * Differences from Tracy Scott's original `pixelize' plug-in:  *  * - Algorithm is modified to work around with the tile management.  *   The way of pixelizing is switched by the value of pixelwidth.  If  *   pixelwidth is greater than (or equal to) tile width, then this  *   plug-in makes GimpPixelRgn with that width and proceeds. Otherwise,  *   it makes the region named `PixelArea', whose size is smaller than  *   tile width and is multiply of pixel width, and acts onto it.  */
 end_comment
 
 begin_comment
@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0668ed0108
+DECL|struct|__anon2a3d06b10108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0668ed0208
+DECL|struct|__anon2a3d06b10208
 block|{
 DECL|member|run
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0668ed0308
+DECL|struct|__anon2a3d06b10308
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +192,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -200,7 +200,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -238,7 +238,7 @@ specifier|static
 name|void
 name|pixelize
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -250,7 +250,7 @@ specifier|static
 name|void
 name|pixelize_large
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -265,7 +265,7 @@ specifier|static
 name|void
 name|pixelize_small
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -298,7 +298,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -369,13 +369,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -383,7 +383,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -391,7 +391,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -399,7 +399,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"pixelwidth"
 block|,
@@ -445,7 +445,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -462,7 +462,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -472,7 +472,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -480,30 +480,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|run_mode
 operator|=
@@ -533,7 +533,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -567,7 +567,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -598,7 +598,7 @@ return|return;
 block|}
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -612,13 +612,13 @@ literal|4
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|pvals
@@ -643,7 +643,7 @@ condition|(
 operator|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 operator|)
 operator|&&
 name|pvals
@@ -654,11 +654,11 @@ literal|0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -680,7 +680,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
@@ -725,7 +725,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -735,7 +735,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -756,7 +756,7 @@ block|{
 comment|/* g_message ("pixelize: cannot operate on indexed color images"); */
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -1119,10 +1119,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|pixelize (GDrawable * drawable)
+DECL|function|pixelize (GimpDrawable * drawable)
 name|pixelize
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -1192,16 +1192,16 @@ block|}
 end_function
 
 begin_comment
-comment|/*   This function operates on the image when pixelwidth>= tile_width.   It simply sets the size of GPixelRgn as pixelwidth and proceeds.  */
+comment|/*   This function operates on the image when pixelwidth>= tile_width.   It simply sets the size of GimpPixelRgn as pixelwidth and proceeds.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|pixelize_large (GDrawable * drawable,gint pixelwidth)
+DECL|function|pixelize_large (GimpDrawable * drawable,gint pixelwidth)
 name|pixelize_large
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -1209,7 +1209,7 @@ name|gint
 name|pixelwidth
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|,
 name|dest_rgn
@@ -1833,10 +1833,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|pixelize_small (GDrawable * drawable,gint pixelwidth,gint tile_width)
+DECL|function|pixelize_small (GimpDrawable * drawable,gint pixelwidth,gint tile_width)
 name|pixelize_small
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -1847,7 +1847,7 @@ name|gint
 name|tile_width
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|,
 name|dest_rgn

@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cbf0a40108
+DECL|struct|__anon2af394890108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cbf0a40208
+DECL|struct|__anon2af394890208
 block|{
 DECL|member|run
 name|gint
@@ -86,19 +86,19 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cbf0a40308
+DECL|struct|__anon2af394890308
 block|{
 DECL|member|ID
 name|gint32
 name|ID
 decl_stmt|;
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 DECL|member|pixel_rgn
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 DECL|member|pixels
@@ -143,7 +143,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -151,7 +151,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -471,7 +471,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -544,13 +544,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -558,7 +558,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -566,7 +566,7 @@ literal|"The name of the file to load"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -575,13 +575,13 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -626,13 +626,13 @@ argument_list|)
 operator|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|save_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -640,7 +640,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -648,7 +648,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -656,7 +656,7 @@ literal|"Drawable to save"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -664,7 +664,7 @@ literal|"The name of the file to save the image in"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -672,7 +672,7 @@ literal|"The name of the file to save the image in"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"compression"
 block|,
@@ -715,7 +715,7 @@ literal|"<Load>/Tiff"
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nload_args
 argument_list|,
@@ -744,7 +744,7 @@ literal|"<Save>/Tiff"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nsave_args
 argument_list|,
@@ -781,7 +781,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -791,7 +791,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -799,26 +799,26 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 ifdef|#
 directive|ifdef
@@ -872,7 +872,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -883,7 +883,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -934,7 +934,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -952,7 +952,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -1001,10 +1001,10 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -1055,7 +1055,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CANCEL
+name|GIMP_PDB_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -1114,7 +1114,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -1176,11 +1176,11 @@ argument_list|()
 condition|)
 name|status
 operator|=
-name|STATUS_CANCEL
+name|GIMP_PDB_CANCEL
 expr_stmt|;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -1195,7 +1195,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -1265,14 +1265,14 @@ break|break;
 default|default:
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 block|}
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -1333,7 +1333,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 if|if
@@ -1376,7 +1376,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -1396,7 +1396,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -1518,14 +1518,14 @@ name|image
 decl_stmt|,
 name|image_type
 init|=
-name|RGB
+name|GIMP_RGB
 decl_stmt|;
 name|gint
 name|layer
 decl_stmt|,
 name|layer_type
 init|=
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 decl_stmt|;
 name|gushort
 name|extra
@@ -1890,7 +1890,7 @@ name|PHOTOMETRIC_MINISWHITE
 case|:
 name|image_type
 operator|=
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 name|layer_type
 operator|=
@@ -1898,9 +1898,9 @@ operator|(
 name|alpha
 operator|)
 condition|?
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 else|:
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -1908,7 +1908,7 @@ name|PHOTOMETRIC_RGB
 case|:
 name|image_type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 name|layer_type
 operator|=
@@ -1916,9 +1916,9 @@ operator|(
 name|alpha
 operator|)
 condition|?
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 else|:
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -1926,7 +1926,7 @@ name|PHOTOMETRIC_PALETTE
 case|:
 name|image_type
 operator|=
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 name|layer_type
 operator|=
@@ -1934,9 +1934,9 @@ operator|(
 name|alpha
 operator|)
 condition|?
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 else|:
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 expr_stmt|;
 break|break;
 default|default:
@@ -1952,11 +1952,11 @@ condition|)
 block|{
 name|image_type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 name|layer_type
 operator|=
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 expr_stmt|;
 block|}
 if|if
@@ -2020,7 +2020,7 @@ directive|ifdef
 name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"icc-profile"
 argument_list|,
@@ -2038,7 +2038,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -2375,7 +2375,7 @@ if|if
 condition|(
 name|image_type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 if|if
@@ -2514,7 +2514,7 @@ name|layer_type
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|channel
@@ -5951,14 +5951,14 @@ decl_stmt|;
 name|gint
 name|success
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|drawable_type
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|gint
@@ -6114,7 +6114,7 @@ name|drawable_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 name|predictor
 operator|=
@@ -6144,7 +6144,7 @@ literal|0
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|samplesperpixel
 operator|=
@@ -6168,7 +6168,7 @@ literal|0
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|predictor
 operator|=
@@ -6198,7 +6198,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 name|samplesperpixel
 operator|=
@@ -6224,7 +6224,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 name|samplesperpixel
 operator|=
@@ -6312,7 +6312,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 return|return
 literal|0
@@ -6700,7 +6700,7 @@ ifdef|#
 directive|ifdef
 name|TIFFTAG_ICCPROFILE
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -6727,14 +6727,14 @@ condition|)
 block|{
 name|profile_size
 operator|=
-name|parasite_data_size
+name|gimp_parasite_data_size
 argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
 name|icc_profile
 operator|=
-name|parasite_data
+name|gimp_parasite_data
 argument_list|(
 name|parasite
 argument_list|)
@@ -6750,7 +6750,7 @@ argument_list|,
 name|icc_profile
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -6765,7 +6765,7 @@ if|if
 condition|(
 name|drawable_type
 operator|==
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 condition|)
 name|TIFFSetField
 argument_list|(
@@ -6882,7 +6882,7 @@ name|drawable_type
 condition|)
 block|{
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 name|success
 operator|=
@@ -6903,7 +6903,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|success
 operator|=
@@ -6924,7 +6924,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 for|for
 control|(
@@ -7004,7 +7004,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 name|success
 operator|=
@@ -7025,7 +7025,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 for|for
 control|(

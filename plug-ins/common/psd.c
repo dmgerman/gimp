@@ -8,7 +8,7 @@ comment|/*  * Adobe and Adobe Photoshop are trademarks of Adobe Systems  * Incor
 end_comment
 
 begin_comment
-comment|/*  * Revision history:  *  *  1999.11.14 / v2.0.5 / Adam D. Moss  *       Applied patch by Andy Hefner to load 1-bit images.  *  *  1999.08.13 / v2.0.4 / Adam D. Moss  *       Allowed NULL layer names again, whee.  *  *  1999.08.20 / v2.0.3 / Adam D. Moss  *       Ensure that NULL name does not get passed to gimp_layer_new(),  *       or it will fail to create the layer and cause problems down  *       the line (only since April 1999).  *  *  1999.01.18 / v2.0.2 / Adam D. Moss  *       Better guess at how PSD files store Guide position precision.  *  *  1999.01.10 / v2.0.1 / Adam D. Moss  *       Greatly reduced memory requirements for layered image loading -  *       we now do just-in-time channel unpacking.  Some little  *       cleanups too.  *  *  1998.09.04 / v2.0.0 / Adam D. Moss  *       Now recognises and loads the new Guides extensions written  *       by Photoshop 4 and 5.  *  *  1998.07.31 / v1.9.9.9f / Adam D. Moss  *       Use OVERLAY_MODE if available.  *  *  1998.07.31 / v1.9.9.9e / Adam D. Moss  *       Worked around some buggy PSD savers (suspect PS4 on Mac) - ugh.  *       Fixed a bug when loading layer masks of certain dimensions.  *  *  1998.05.04 / v1.9.9.9b / Adam D. Moss  *       Changed the Pascal-style string-reading stuff.  That fixed  *       some file-padding problems.  Made all debugging output  *       compile-time optional (please leave it enabled for now).  *       Reduced memory requirements; still much room for improvement.  *  *  1998.04.28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  1998.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  1998.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  1998.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  1998.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  1997.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  1997.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
+comment|/*  * Revision history:  *  *  1999.11.14 / v2.0.5 / Adam D. Moss  *       Applied patch by Andy Hefner to load 1-bit images.  *  *  1999.08.13 / v2.0.4 / Adam D. Moss  *       Allowed NULL layer names again, whee.  *  *  1999.08.20 / v2.0.3 / Adam D. Moss  *       Ensure that NULL name does not get passed to gimp_layer_new(),  *       or it will fail to create the layer and cause problems down  *       the line (only since April 1999).  *  *  1999.01.18 / v2.0.2 / Adam D. Moss  *       Better guess at how PSD files store Guide position precision.  *  *  1999.01.10 / v2.0.1 / Adam D. Moss  *       Greatly reduced memory requirements for layered image loading -  *       we now do just-in-time channel unpacking.  Some little  *       cleanups too.  *  *  1998.09.04 / v2.0.0 / Adam D. Moss  *       Now recognises and loads the new Guides extensions written  *       by Photoshop 4 and 5.  *  *  1998.07.31 / v1.9.9.9f / Adam D. Moss  *       Use GIMP_OVERLAY_MODE if available.  *  *  1998.07.31 / v1.9.9.9e / Adam D. Moss  *       Worked around some buggy PSD savers (suspect PS4 on Mac) - ugh.  *       Fixed a bug when loading layer masks of certain dimensions.  *  *  1998.05.04 / v1.9.9.9b / Adam D. Moss  *       Changed the Pascal-style string-reading stuff.  That fixed  *       some file-padding problems.  Made all debugging output  *       compile-time optional (please leave it enabled for now).  *       Reduced memory requirements; still much room for improvement.  *  *  1998.04.28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  1998.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  1998.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  1998.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  1998.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  1997.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  1997.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
 end_comment
 
 begin_comment
@@ -149,7 +149,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a24217c0103
+DECL|enum|__anon274f169d0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a24217c0208
+DECL|struct|__anon274f169d0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -477,7 +477,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -485,7 +485,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -495,7 +495,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GDrawableType
+name|GimpImageType
 name|psd_type_to_gimp_type
 parameter_list|(
 name|psd_imagetype
@@ -506,7 +506,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GImageType
+name|GimpImageBaseType
 name|psd_type_to_gimp_base_type
 parameter_list|(
 name|psd_imagetype
@@ -517,7 +517,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GLayerMode
+name|GimpLayerModeEffects
 name|psd_lmode_to_gimp_lmode
 parameter_list|(
 name|gchar
@@ -558,7 +558,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -589,7 +589,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a24217c0308
+DECL|struct|__anon274f169d0308
 block|{
 DECL|member|signature
 name|gchar
@@ -1113,13 +1113,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1127,7 +1127,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -1135,7 +1135,7 @@ literal|"The name of the file to load"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -1144,13 +1144,13 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1212,7 +1212,7 @@ literal|"<Load>/PSD"
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nload_args
 argument_list|,
@@ -1240,7 +1240,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -1250,7 +1250,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1258,23 +1258,23 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-comment|/*  GStatusType status = STATUS_SUCCESS;*/
+comment|/*  GimpPDBStatusType status = GIMP_PDB_SUCCESS;*/
 name|gint32
 name|image_ID
 decl_stmt|;
@@ -1306,7 +1306,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1317,7 +1317,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -1367,7 +1367,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 name|values
 index|[
@@ -1376,7 +1376,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -1401,7 +1401,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -1410,7 +1410,7 @@ end_function
 
 begin_function
 specifier|static
-name|GDrawableType
+name|GimpImageType
 DECL|function|psd_type_to_gimp_type (psd_imagetype psdtype)
 name|psd_type_to_gimp_type
 parameter_list|(
@@ -1428,7 +1428,7 @@ name|PSD_RGBA_IMAGE
 case|:
 return|return
 operator|(
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 operator|)
 return|;
 case|case
@@ -1436,7 +1436,7 @@ name|PSD_RGB_IMAGE
 case|:
 return|return
 operator|(
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 operator|)
 return|;
 case|case
@@ -1444,7 +1444,7 @@ name|PSD_GRAYA_IMAGE
 case|:
 return|return
 operator|(
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 operator|)
 return|;
 case|case
@@ -1452,7 +1452,7 @@ name|PSD_GRAY_IMAGE
 case|:
 return|return
 operator|(
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 operator|)
 return|;
 case|case
@@ -1460,7 +1460,7 @@ name|PSD_INDEXEDA_IMAGE
 case|:
 return|return
 operator|(
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 operator|)
 return|;
 case|case
@@ -1468,7 +1468,7 @@ name|PSD_INDEXED_IMAGE
 case|:
 return|return
 operator|(
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 operator|)
 return|;
 case|case
@@ -1476,13 +1476,13 @@ name|PSD_BITMAP_IMAGE
 case|:
 return|return
 operator|(
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 operator|)
 return|;
 default|default:
 return|return
 operator|(
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 operator|)
 return|;
 block|}
@@ -1491,7 +1491,7 @@ end_function
 
 begin_function
 specifier|static
-name|GLayerMode
+name|GimpLayerModeEffects
 DECL|function|psd_lmode_to_gimp_lmode (gchar modekey[4])
 name|psd_lmode_to_gimp_lmode
 parameter_list|(
@@ -1517,7 +1517,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 operator|)
 return|;
 if|if
@@ -1535,7 +1535,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|DARKEN_ONLY_MODE
+name|GIMP_DARKEN_ONLY_MODE
 operator|)
 return|;
 if|if
@@ -1553,7 +1553,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|LIGHTEN_ONLY_MODE
+name|GIMP_LIGHTEN_ONLY_MODE
 operator|)
 return|;
 if|if
@@ -1571,7 +1571,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|HUE_MODE
+name|GIMP_HUE_MODE
 operator|)
 return|;
 if|if
@@ -1589,7 +1589,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|SATURATION_MODE
+name|GIMP_SATURATION_MODE
 operator|)
 return|;
 if|if
@@ -1607,7 +1607,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|COLOR_MODE
+name|GIMP_COLOR_MODE
 operator|)
 return|;
 if|if
@@ -1625,7 +1625,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|MULTIPLY_MODE
+name|GIMP_MULTIPLY_MODE
 operator|)
 return|;
 if|if
@@ -1643,7 +1643,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|SCREEN_MODE
+name|GIMP_SCREEN_MODE
 operator|)
 return|;
 if|if
@@ -1661,7 +1661,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|DISSOLVE_MODE
+name|GIMP_DISSOLVE_MODE
 operator|)
 return|;
 if|if
@@ -1679,7 +1679,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|DIFFERENCE_MODE
+name|GIMP_DIFFERENCE_MODE
 operator|)
 return|;
 if|if
@@ -1697,7 +1697,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|VALUE_MODE
+name|GIMP_VALUE_MODE
 operator|)
 return|;
 if|#
@@ -1728,7 +1728,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|OVERLAY_MODE
+name|GIMP_OVERLAY_MODE
 operator|)
 return|;
 name|printf
@@ -1773,7 +1773,7 @@ condition|)
 return|return
 operator|(
 comment|/**/
-name|OVERLAY_MODE
+name|GIMP_OVERLAY_MODE
 operator|)
 return|;
 if|if
@@ -1792,7 +1792,7 @@ condition|)
 return|return
 operator|(
 comment|/**/
-name|OVERLAY_MODE
+name|GIMP_OVERLAY_MODE
 operator|)
 return|;
 else|#
@@ -1838,7 +1838,7 @@ literal|0
 condition|)
 return|return
 operator|(
-name|ADDITION_MODE
+name|GIMP_ADDITION_MODE
 operator|)
 return|;
 comment|/* ? */
@@ -1858,7 +1858,7 @@ condition|)
 return|return
 operator|(
 comment|/**/
-name|ADDITION_MODE
+name|GIMP_ADDITION_MODE
 operator|)
 return|;
 if|if
@@ -1877,7 +1877,7 @@ condition|)
 return|return
 operator|(
 comment|/**/
-name|ADDITION_MODE
+name|GIMP_ADDITION_MODE
 operator|)
 return|;
 endif|#
@@ -1889,7 +1889,7 @@ argument_list|)
 expr_stmt|;
 return|return
 operator|(
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 operator|)
 return|;
 block|}
@@ -1897,7 +1897,7 @@ end_function
 
 begin_function
 specifier|static
-name|GImageType
+name|GimpImageBaseType
 DECL|function|psd_type_to_gimp_base_type (psd_imagetype psdtype)
 name|psd_type_to_gimp_base_type
 parameter_list|(
@@ -1918,7 +1918,7 @@ name|PSD_RGB_IMAGE
 case|:
 return|return
 operator|(
-name|RGB
+name|GIMP_RGB
 operator|)
 return|;
 case|case
@@ -1932,7 +1932,7 @@ name|PSD_GRAY_IMAGE
 case|:
 return|return
 operator|(
-name|GRAY
+name|GIMP_GRAY
 operator|)
 return|;
 case|case
@@ -1943,7 +1943,7 @@ name|PSD_INDEXED_IMAGE
 case|:
 return|return
 operator|(
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 return|;
 default|default:
@@ -1957,7 +1957,7 @@ argument_list|()
 expr_stmt|;
 return|return
 operator|(
-name|RGB
+name|GIMP_RGB
 operator|)
 return|;
 block|}
@@ -2025,7 +2025,7 @@ block|}
 end_function
 
 begin_function
-name|GImageType
+name|GimpImageBaseType
 DECL|function|psd_mode_to_gimp_base_type (gushort psdtype)
 name|psd_mode_to_gimp_base_type
 parameter_list|(
@@ -2043,7 +2043,7 @@ literal|1
 case|:
 return|return
 operator|(
-name|GRAY
+name|GIMP_GRAY
 operator|)
 return|;
 case|case
@@ -2051,7 +2051,7 @@ literal|2
 case|:
 return|return
 operator|(
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 return|;
 case|case
@@ -2059,7 +2059,7 @@ literal|3
 case|:
 return|return
 operator|(
-name|RGB
+name|GIMP_RGB
 operator|)
 return|;
 default|default:
@@ -2073,7 +2073,7 @@ argument_list|()
 expr_stmt|;
 return|return
 operator|(
-name|RGB
+name|GIMP_RGB
 operator|)
 return|;
 block|}
@@ -6638,7 +6638,7 @@ end_function
 
 begin_function
 specifier|static
-DECL|function|extract_data_and_channels (guchar * src,gint gimpstep,gint psstep,gint32 image_ID,GDrawable * drawable,gint width,gint height)
+DECL|function|extract_data_and_channels (guchar * src,gint gimpstep,gint psstep,gint32 image_ID,GimpDrawable * drawable,gint width,gint height)
 name|void
 name|extract_data_and_channels
 parameter_list|(
@@ -6655,7 +6655,7 @@ parameter_list|,
 name|gint32
 name|image_ID
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -6674,7 +6674,7 @@ name|guchar
 modifier|*
 name|aux_data
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|IFDBG
@@ -6835,7 +6835,7 @@ decl_stmt|;
 name|gint32
 name|channel_ID
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|chdrawable
 decl_stmt|;
@@ -7063,7 +7063,7 @@ name|guchar
 modifier|*
 name|aux_data
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|IFDBG
@@ -7094,7 +7094,7 @@ decl_stmt|;
 name|gint32
 name|channel_ID
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|chdrawable
 decl_stmt|;
@@ -7526,13 +7526,13 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 init|=
 name|NULL
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|gint32
@@ -7616,7 +7616,7 @@ block|{
 name|int
 name|lnum
 decl_stmt|;
-name|GImageType
+name|GimpImageBaseType
 name|gimagetype
 decl_stmt|;
 name|gimagetype
@@ -7752,7 +7752,7 @@ name|gimagetype
 condition|)
 block|{
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 block|{
 name|IFDBG
@@ -8056,9 +8056,9 @@ operator|==
 literal|1
 operator|)
 condition|?
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 else|:
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 argument_list|,
 operator|(
 literal|100.0
@@ -8094,9 +8094,9 @@ expr_stmt|;
 block|}
 empty_stmt|;
 break|break;
-comment|/* case GRAY */
+comment|/* case GIMP_GRAY */
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 block|{
 name|IFDBG
@@ -8643,9 +8643,9 @@ operator|==
 literal|3
 operator|)
 condition|?
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 else|:
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 argument_list|,
 operator|(
 literal|100.0
@@ -8689,7 +8689,7 @@ decl_stmt|;
 block|}
 empty_stmt|;
 break|break;
-comment|/* case RGB */
+comment|/* case GIMP_RGB */
 default|default:
 block|{
 name|printf
@@ -9570,7 +9570,7 @@ argument_list|(
 name|imagetype
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 if|if
@@ -9677,7 +9677,7 @@ argument_list|)
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -10156,7 +10156,7 @@ argument_list|(
 name|imagetype
 argument_list|)
 operator|==
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 condition|)
 block|{
 name|printf

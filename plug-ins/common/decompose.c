@@ -113,7 +113,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -121,7 +121,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -166,19 +166,19 @@ parameter_list|,
 name|guint
 name|height
 parameter_list|,
-name|GImageType
+name|GimpImageBaseType
 name|type
 parameter_list|,
 name|gint32
 modifier|*
 name|layer_ID
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 modifier|*
 name|drawable
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pixel_rgn
 parameter_list|)
@@ -620,7 +620,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cbda9d0108
+DECL|struct|__anon2b40bc050108
 block|{
 DECL|member|type
 name|gchar
@@ -1089,7 +1089,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cbda9d0208
+DECL|struct|__anon2b40bc050208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1107,7 +1107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cbda9d0308
+DECL|struct|__anon2b40bc050308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -1128,7 +1128,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -1182,7 +1182,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 end_decl_stmt
@@ -1202,13 +1202,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1216,7 +1216,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1224,7 +1224,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1232,7 +1232,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"decompose_type"
 block|,
@@ -1241,13 +1241,13 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"new_image"
 block|,
@@ -1255,7 +1255,7 @@ literal|"Output gray image"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"new_image"
 block|,
@@ -1263,7 +1263,7 @@ literal|"Output gray image (N/A for single channel extract)"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"new_image"
 block|,
@@ -1271,7 +1271,7 @@ literal|"Output gray image (N/A for single channel extract)"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"new_image"
 block|,
@@ -1335,7 +1335,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -1352,7 +1352,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -1362,7 +1362,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1370,14 +1370,14 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 name|MAX_EXTRACT_IMAGES
@@ -1385,12 +1385,12 @@ operator|+
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|drawable_type
 decl_stmt|;
 name|gint32
@@ -1438,7 +1438,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1474,7 +1474,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -1497,7 +1497,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -1518,7 +1518,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
 if|if
@@ -1530,7 +1530,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -1577,7 +1577,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -1612,13 +1612,13 @@ condition|(
 operator|(
 name|drawable_type
 operator|!=
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 operator|)
 operator|&&
 operator|(
 name|drawable_type
 operator|!=
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 operator|)
 condition|)
 block|{
@@ -1629,21 +1629,21 @@ argument_list|)
 expr_stmt|;
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_progress_init
 argument_list|(
@@ -1691,7 +1691,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -1746,7 +1746,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_display_new
 argument_list|(
@@ -1762,7 +1762,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1864,7 +1864,7 @@ index|[
 name|MAX_EXTRACT_IMAGES
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable_src
 decl_stmt|,
@@ -1874,7 +1874,7 @@ index|[
 name|MAX_EXTRACT_IMAGES
 index|]
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn_src
 decl_stmt|,
 name|pixel_rgn_dst
@@ -2211,7 +2211,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GRAY
+name|GIMP_GRAY
 argument_list|,
 name|layer_ID_dst
 operator|+
@@ -2366,7 +2366,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -2453,7 +2453,7 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|create_new_image (gchar * filename,guint width,guint height,GImageType type,gint32 * layer_ID,GDrawable ** drawable,GPixelRgn * pixel_rgn)
+DECL|function|create_new_image (gchar * filename,guint width,guint height,GimpImageBaseType type,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
 name|create_new_image
 parameter_list|(
 name|gchar
@@ -2466,19 +2466,19 @@ parameter_list|,
 name|guint
 name|height
 parameter_list|,
-name|GImageType
+name|GimpImageBaseType
 name|type
 parameter_list|,
 name|gint32
 modifier|*
 name|layer_ID
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 modifier|*
 name|drawable
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pixel_rgn
 parameter_list|)
@@ -2486,34 +2486,34 @@ block|{
 name|gint32
 name|image_ID
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|gdtype
 decl_stmt|;
 if|if
 condition|(
 name|type
 operator|==
-name|GRAY
+name|GIMP_GRAY
 condition|)
 name|gdtype
 operator|=
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 expr_stmt|;
 elseif|else
 if|if
 condition|(
 name|type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 name|gdtype
 operator|=
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 expr_stmt|;
 else|else
 name|gdtype
 operator|=
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 expr_stmt|;
 name|image_ID
 operator|=
@@ -2553,7 +2553,7 @@ name|gdtype
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76d1800108
+DECL|struct|__anon27b8f62d0108
 block|{
 DECL|member|angle
 name|gint
@@ -93,7 +93,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76d1800208
+DECL|struct|__anon27b8f62d0208
 block|{
 DECL|member|ID
 name|gint32
@@ -293,7 +293,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -301,7 +301,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -309,7 +309,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -317,7 +317,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"angle"
 block|,
@@ -325,7 +325,7 @@ literal|"Angle { 90 (1), 180 (2), 270 (3) } degrees"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"everything"
 block|,
@@ -357,7 +357,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -365,7 +365,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -373,7 +373,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -419,7 +419,7 @@ name|NULL
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -451,7 +451,7 @@ argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nmenuargs
 argument_list|,
@@ -483,7 +483,7 @@ argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nmenuargs
 argument_list|,
@@ -515,7 +515,7 @@ argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nmenuargs
 argument_list|,
@@ -547,7 +547,7 @@ argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nmenuargs
 argument_list|,
@@ -579,7 +579,7 @@ argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nmenuargs
 argument_list|,
@@ -611,7 +611,7 @@ argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nmenuargs
 argument_list|,
@@ -669,7 +669,7 @@ comment|/* status variable, use it to check for errors in invocation usualy only
 name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 comment|/*always return at least the status to the caller. */
 specifier|static
@@ -687,7 +687,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -758,10 +758,10 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/* check to see if invoked with the correct number of parameters */
 if|if
@@ -831,11 +831,11 @@ block|}
 else|else
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/* Possibly retrieve data from a previous run */
 name|gimp_get_data
@@ -1020,13 +1020,13 @@ block|}
 else|else
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/* Run the main function */
@@ -1038,7 +1038,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1228,10 +1228,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rotate_drawable (GDrawable * drawable)
+DECL|function|rotate_drawable (GimpDrawable * drawable)
 name|rotate_drawable
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -2401,7 +2401,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_HORIZONTAL
 condition|)
 name|gimp_image_add_vguide
 argument_list|(
@@ -2465,7 +2465,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_HORIZONTAL
 condition|)
 name|gimp_image_add_hguide
 argument_list|(
@@ -2531,7 +2531,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_HORIZONTAL
 condition|)
 name|gimp_image_add_vguide
 argument_list|(

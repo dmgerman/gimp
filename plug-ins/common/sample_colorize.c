@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c7788a60108
+DECL|struct|__anon295560060108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c7788a60208
+DECL|struct|__anon295560060208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c7788a60308
+DECL|struct|__anon295560060308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c7788a60408
+DECL|struct|__anon295560060408
 typedef|typedef
 struct|struct
 block|{
@@ -613,12 +613,12 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c7788a60508
+DECL|struct|__anon295560060508
 typedef|typedef
 struct|struct
 block|{
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -628,7 +628,7 @@ modifier|*
 name|sel_gdrw
 decl_stmt|;
 DECL|member|pr
-name|GPixelRgn
+name|GimpPixelRgn
 name|pr
 decl_stmt|;
 DECL|member|x1
@@ -657,7 +657,7 @@ name|gint
 name|bpp
 decl_stmt|;
 DECL|member|tile
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -884,7 +884,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -892,7 +892,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -1068,7 +1068,7 @@ name|t_GDRW
 modifier|*
 name|gdrw
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -1198,7 +1198,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -1233,13 +1233,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1247,7 +1247,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1255,7 +1255,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"dst_drawable"
 block|,
@@ -1263,7 +1263,7 @@ literal|"The drawable to be colorized (Type GRAY* or RGB*)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"sample_drawable"
 block|,
@@ -1271,7 +1271,7 @@ literal|"Sample drawable (should be of Type RGB or RGBA)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"hold_inten"
 block|,
@@ -1279,7 +1279,7 @@ literal|"hold brightness intensity levels (TRUE, FALSE)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"orig_inten"
 block|,
@@ -1287,7 +1287,7 @@ literal|"TRUE: hold brightness of original intensity levels. FALSE: Hold Intensi
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"rnd_subcolors"
 block|,
@@ -1295,7 +1295,7 @@ literal|"TRUE: Use all subcolors of same intensity, FALSE: use only one color pe
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"guess_missing"
 block|,
@@ -1303,7 +1303,7 @@ literal|"TRUE: guess samplecolors for the missing intensity values FALSE: use on
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"in_low"
 block|,
@@ -1311,7 +1311,7 @@ literal|"intensity of lowest input (0<= in_low<= 254)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"in_high"
 block|,
@@ -1319,7 +1319,7 @@ literal|"intensity of highest input (1<= in_high<= 255)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"gamma"
 block|,
@@ -1327,7 +1327,7 @@ literal|"gamma correction factor (0.1<= gamma<= 10) where 1.0 is linear"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"out_low"
 block|,
@@ -1335,7 +1335,7 @@ literal|"lowest sample color intensity (0<= out_low<= 254)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"out_high"
 block|,
@@ -1419,7 +1419,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -1436,7 +1436,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -1446,7 +1446,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1454,30 +1454,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|dst_drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1559,7 +1559,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1671,7 +1671,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|INIT_I18N_UI
@@ -1703,7 +1703,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|INIT_I18N
@@ -1851,7 +1851,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -1859,7 +1859,7 @@ if|if
 condition|(
 name|status
 operator|!=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 condition|)
 block|{
 name|p_main_colorize
@@ -1876,7 +1876,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|gimp_displays_flush
@@ -1889,7 +1889,7 @@ block|{
 comment|/* gimp_message ("Sample Colorize: cannot operate on indexed color images"); */
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -4404,7 +4404,7 @@ modifier|*
 name|id_ptr
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -13178,7 +13178,7 @@ comment|/* gimp_layer_get_image_id:  crash in gimp 1.1.2 if called with invalid 
 comment|/*  *   if(gimp_layer_get_image_id(drawable_id)< 0)  *   {  *      printf("sample colorize: invalid image_id (maybe Image was closed)\n");  *      return (-1);  *   }  */
 name|images
 operator|=
-name|gimp_query_images
+name|gimp_image_list
 argument_list|(
 operator|&
 name|nimages
@@ -13480,14 +13480,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|p_init_gdrw (t_GDRW * gdrw,GDrawable * drawable,gint dirty,gint shadow)
+DECL|function|p_init_gdrw (t_GDRW * gdrw,GimpDrawable * drawable,gint dirty,gint shadow)
 name|p_init_gdrw
 parameter_list|(
 name|t_GDRW
 modifier|*
 name|gdrw
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -15728,14 +15728,14 @@ name|gint32
 name|drawable_id
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|shadow_rgn
 decl_stmt|;
 name|gpointer
@@ -16178,11 +16178,11 @@ name|gint
 name|mc_flags
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|dst_drawable
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|sample_drawable
 decl_stmt|;

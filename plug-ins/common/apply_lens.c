@@ -87,7 +87,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -95,7 +95,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -108,7 +108,7 @@ specifier|static
 name|void
 name|drawlens
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -120,7 +120,7 @@ specifier|static
 name|gint
 name|lens_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -129,7 +129,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2919a6220108
+DECL|struct|__anon2c94ea010108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -199,7 +199,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2919a6220208
+DECL|struct|__anon2c94ea010208
 block|{
 DECL|member|run
 name|gint
@@ -239,13 +239,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -253,7 +253,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -261,7 +261,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -269,7 +269,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"refraction"
 block|,
@@ -277,7 +277,7 @@ literal|"Lens refraction index"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"keep_surroundings"
 block|,
@@ -285,7 +285,7 @@ literal|"Keep lens surroundings"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"set_background"
 block|,
@@ -293,7 +293,7 @@ literal|"Set lens surroundings to bkgr value"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"set_transparent"
 block|,
@@ -339,7 +339,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -356,7 +356,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -366,7 +366,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -374,30 +374,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|INIT_I18N_UI
 argument_list|()
@@ -420,7 +420,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -463,7 +463,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
@@ -484,7 +484,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
@@ -494,13 +494,13 @@ literal|7
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|lvals
@@ -560,7 +560,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 operator|&&
 operator|(
 name|lvals
@@ -572,11 +572,11 @@ operator|)
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
@@ -623,7 +623,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -632,7 +632,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -955,15 +955,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|drawlens (GDrawable * drawable)
+DECL|function|drawlens (GimpDrawable * drawable)
 name|drawlens
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR
@@ -1040,7 +1040,7 @@ name|bgr_green
 decl_stmt|,
 name|alphaval
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|drawtype
 init|=
 name|gimp_drawable_type
@@ -1463,7 +1463,7 @@ name|drawtype
 condition|)
 block|{
 case|case
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 name|dest
 index|[
@@ -1475,7 +1475,7 @@ operator|=
 name|alphaval
 expr_stmt|;
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 name|dest
 index|[
@@ -1488,7 +1488,7 @@ literal|0
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|dest
 index|[
@@ -1500,7 +1500,7 @@ operator|=
 name|alphaval
 expr_stmt|;
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 name|dest
 index|[
@@ -1531,7 +1531,7 @@ name|bgr_blue
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 name|dest
 index|[
@@ -1543,7 +1543,7 @@ operator|=
 name|alphaval
 expr_stmt|;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|dest
 index|[
@@ -1690,10 +1690,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|lens_dialog (GDrawable * drawable)
+DECL|function|lens_dialog (GimpDrawable * drawable)
 name|lens_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -1740,7 +1740,7 @@ name|group
 init|=
 name|NULL
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|drawtype
 decl_stmt|;
 name|drawtype
@@ -1999,11 +1999,11 @@ name|group
 argument_list|,
 name|drawtype
 operator|==
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 operator|||
 name|drawtype
 operator|==
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 condition|?
 name|_
 argument_list|(
@@ -2084,19 +2084,19 @@ condition|(
 operator|(
 name|drawtype
 operator|==
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 operator|)
 operator|||
 operator|(
 name|drawtype
 operator|==
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 operator|)
 operator|||
 operator|(
 name|drawtype
 operator|==
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 operator|)
 condition|)
 block|{

@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d9c9b70103
+DECL|enum|__anon28d703320103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d9c9b70203
+DECL|enum|__anon28d703320203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -193,7 +193,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28d9c9b70308
+DECL|struct|__anon28d703320308
 block|{
 DECL|member|params
 name|PluginParams
@@ -204,7 +204,7 @@ name|gint32
 name|image
 decl_stmt|;
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -213,7 +213,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28d9c9b70408
+DECL|struct|__anon28d703320408
 block|{
 DECL|member|x0
 name|gint
@@ -244,7 +244,7 @@ block|}
 name|selection
 struct|;
 DECL|member|run_mode
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 DECL|member|run
@@ -317,7 +317,7 @@ literal|0
 block|}
 block|,
 comment|/* selection             */
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 block|,
 comment|/* run_mode              */
 name|FALSE
@@ -579,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28d9c9b70508
+DECL|struct|__anon28d703320508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -2793,10 +2793,10 @@ name|guchar
 modifier|*
 parameter_list|)
 function_decl|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|src
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|dst
 decl_stmt|;
 name|guchar
@@ -4737,13 +4737,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -4751,7 +4751,7 @@ literal|"run mode"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -4759,7 +4759,7 @@ literal|"input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -4767,7 +4767,7 @@ literal|"input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"tile_size"
 block|,
@@ -4775,7 +4775,7 @@ literal|"tile size (pixels)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"move_max"
 block|,
@@ -4783,7 +4783,7 @@ literal|"max move rate (%)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"fractional_type"
 block|,
@@ -4791,7 +4791,7 @@ literal|"0:Background 1:Ignore 2:Force"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"wrap_around"
 block|,
@@ -4799,7 +4799,7 @@ literal|"wrap around (bool)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"centering"
 block|,
@@ -4807,7 +4807,7 @@ literal|"centering (bool)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"background_type"
 block|,
@@ -4815,7 +4815,7 @@ literal|"0:Transparent 1:Inverted 2:Image? 3:FG 4:BG 5:Color"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"background_color"
 block|,
@@ -4823,7 +4823,7 @@ literal|"background color (for bg-type 5)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"background_alpha"
 block|,
@@ -4868,7 +4868,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|numof_args
 argument_list|,
@@ -4885,7 +4885,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plugin_run (gchar * name,gint numof_params,GParam * params,gint * numof_return_vals,GParam ** return_vals)
+DECL|function|plugin_run (gchar * name,gint numof_params,GimpParam * params,gint * numof_return_vals,GimpParam ** return_vals)
 name|plugin_run
 parameter_list|(
 name|gchar
@@ -4895,7 +4895,7 @@ parameter_list|,
 name|gint
 name|numof_params
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -4903,13 +4903,13 @@ name|gint
 modifier|*
 name|numof_return_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 decl_stmt|;
 name|INIT_I18N_UI
@@ -4917,7 +4917,7 @@ argument_list|()
 expr_stmt|;
 name|status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 name|p
 operator|.
@@ -5073,7 +5073,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|params_load_from_gimp
 argument_list|()
@@ -5083,7 +5083,7 @@ argument_list|()
 expr_stmt|;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
@@ -5313,12 +5313,12 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|params_load_from_gimp
 argument_list|()
@@ -5336,14 +5336,14 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 operator|&&
 name|p
 operator|.
@@ -5356,7 +5356,7 @@ name|p
 operator|.
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|params_save_to_gimp
@@ -5379,7 +5379,7 @@ name|p
 operator|.
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gimp_undo_push_group_end
@@ -5396,7 +5396,7 @@ block|}
 block|}
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|return_value
 index|[
 literal|1
@@ -5409,7 +5409,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|return_value
 index|[
@@ -5438,7 +5438,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{

@@ -270,27 +270,27 @@ name|DepthMergeParams
 name|params
 decl_stmt|;
 DECL|member|resultDrawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|resultDrawable
 decl_stmt|;
 DECL|member|source1Drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|source1Drawable
 decl_stmt|;
 DECL|member|source2Drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|source2Drawable
 decl_stmt|;
 DECL|member|depthMap1Drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|depthMap1Drawable
 decl_stmt|;
 DECL|member|depthMap2Drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|depthMap2Drawable
 decl_stmt|;
@@ -599,7 +599,7 @@ parameter_list|,
 name|gint
 name|destHasAlpha
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|sourceDrawable
 parameter_list|,
@@ -674,7 +674,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -682,7 +682,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -692,7 +692,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -726,13 +726,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -740,7 +740,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -748,7 +748,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"result"
 block|,
@@ -756,7 +756,7 @@ literal|"Result"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"source1"
 block|,
@@ -764,7 +764,7 @@ literal|"Source 1"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"source2"
 block|,
@@ -772,7 +772,7 @@ literal|"Source 2"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"depthMap1"
 block|,
@@ -780,7 +780,7 @@ literal|"Depth map 1"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"depthMap2"
 block|,
@@ -788,7 +788,7 @@ literal|"Depth map 2"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"overlap"
 block|,
@@ -796,7 +796,7 @@ literal|"Overlap"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"offset"
 block|,
@@ -804,7 +804,7 @@ literal|"Depth relative offset"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"scale1"
 block|,
@@ -812,7 +812,7 @@ literal|"Depth relative scale 1"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"scale2"
 block|,
@@ -831,7 +831,7 @@ argument_list|)
 operator|/
 sizeof|sizeof
 argument_list|(
-name|GParamDef
+name|GimpParamDef
 argument_list|)
 decl_stmt|;
 name|gimp_install_procedure
@@ -860,7 +860,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|numArgs
 argument_list|,
@@ -877,7 +877,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint numParams,GParam * param,gint * numReturnVals,GParam ** returnVals)
+DECL|function|run (gchar * name,gint numParams,GimpParam * param,gint * numReturnVals,GimpParam ** returnVals)
 name|run
 parameter_list|(
 name|gchar
@@ -887,7 +887,7 @@ parameter_list|,
 name|gint
 name|numParams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -895,23 +895,23 @@ name|gint
 modifier|*
 name|numReturnVals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|returnVals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|runMode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 decl_stmt|;
 name|DepthMerge
@@ -923,7 +923,7 @@ expr_stmt|;
 name|runMode
 operator|=
 operator|(
-name|GRunModeType
+name|GimpRunModeType
 operator|)
 name|param
 index|[
@@ -936,7 +936,7 @@ name|d_int32
 expr_stmt|;
 name|status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 operator|*
 name|numReturnVals
@@ -954,7 +954,7 @@ name|runMode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|DepthMerge_initParams
 argument_list|(
@@ -1012,7 +1012,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1023,13 +1023,13 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 return|return;
 block|}
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|DepthMerge_initParams
 argument_list|(
@@ -1045,7 +1045,7 @@ literal|11
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 else|else
 block|{
@@ -1193,7 +1193,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|DepthMerge_initParams
 argument_list|(
@@ -1223,14 +1223,14 @@ break|break;
 default|default:
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|gimp_tile_cache_ntiles
@@ -1263,7 +1263,7 @@ argument_list|)
 condition|)
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 else|else
 block|{
@@ -1271,7 +1271,7 @@ if|if
 condition|(
 name|runMode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1280,7 +1280,7 @@ if|if
 condition|(
 name|runMode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1878,7 +1878,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|source1Rgn
 decl_stmt|,
 name|source2Rgn
@@ -6847,7 +6847,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|util_fillReducedBuffer (guchar * dest,gint destWidth,gint destHeight,gint destBPP,gint destHasAlpha,GDrawable * sourceDrawable,gint x0,gint y0,gint sourceWidth,gint sourceHeight)
+DECL|function|util_fillReducedBuffer (guchar * dest,gint destWidth,gint destHeight,gint destBPP,gint destHasAlpha,GimpDrawable * sourceDrawable,gint x0,gint y0,gint sourceWidth,gint sourceHeight)
 name|util_fillReducedBuffer
 parameter_list|(
 name|guchar
@@ -6866,7 +6866,7 @@ parameter_list|,
 name|gint
 name|destHasAlpha
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|sourceDrawable
 parameter_list|,
@@ -6883,7 +6883,7 @@ name|gint
 name|sourceHeight
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|rgn
 decl_stmt|;
 name|guchar

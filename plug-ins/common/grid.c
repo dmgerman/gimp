@@ -99,7 +99,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -107,7 +107,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -142,7 +142,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -160,7 +160,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -173,7 +173,7 @@ name|GtkWidget
 modifier|*
 name|preview_widget
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -189,7 +189,7 @@ name|GtkWidget
 modifier|*
 name|preview_widget
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -198,7 +198,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -282,7 +282,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a74150108
+DECL|struct|__anon276adf9e0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -423,13 +423,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -437,7 +437,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -445,7 +445,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -453,7 +453,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"hwidth"
 block|,
@@ -461,7 +461,7 @@ literal|"Horizontal Width   (>= 0)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"hspace"
 block|,
@@ -469,7 +469,7 @@ literal|"Horizontal Spacing (>= 1)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"hoffset"
 block|,
@@ -477,7 +477,7 @@ literal|"Horizontal Offset  (>= 0)"
 block|}
 block|,
 block|{
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"hcolor"
 block|,
@@ -485,7 +485,7 @@ literal|"Horizontal Colour"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"hopacity"
 block|,
@@ -493,7 +493,7 @@ literal|"Horizontal Opacity (0...255)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"vwidth"
 block|,
@@ -501,7 +501,7 @@ literal|"Vertical Width   (>= 0)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"vspace"
 block|,
@@ -509,7 +509,7 @@ literal|"Vertical Spacing (>= 1)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"voffset"
 block|,
@@ -517,7 +517,7 @@ literal|"Vertical Offset  (>= 0)"
 block|}
 block|,
 block|{
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"vcolor"
 block|,
@@ -525,7 +525,7 @@ literal|"Vertical Colour"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"vopacity"
 block|,
@@ -533,7 +533,7 @@ literal|"Vertical Opacity (0...255)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"iwidth"
 block|,
@@ -541,7 +541,7 @@ literal|"Intersection Width   (>= 0)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"ispace"
 block|,
@@ -549,7 +549,7 @@ literal|"Intersection Spacing (>= 0)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"ioffset"
 block|,
@@ -557,7 +557,7 @@ literal|"Intersection Offset  (>= 0)"
 block|}
 block|,
 block|{
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"icolor"
 block|,
@@ -565,7 +565,7 @@ literal|"Intersection Colour"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"iopacity"
 block|,
@@ -612,7 +612,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -629,7 +629,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint n_params,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint n_params,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -639,7 +639,7 @@ parameter_list|,
 name|gint
 name|n_params
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -647,33 +647,33 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 operator|*
 name|nreturn_vals
@@ -728,7 +728,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -739,13 +739,13 @@ literal|18
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|grid_cfg
@@ -1138,7 +1138,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 if|if
@@ -1155,7 +1155,7 @@ block|{
 comment|/* The dialog was closed, or something similarly evil happened. */
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|g_free
@@ -1181,14 +1181,14 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|gimp_progress_init
@@ -1228,7 +1228,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1237,7 +1237,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1265,7 +1265,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1569,13 +1569,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|doit (gint32 image_ID,GDrawable * drawable,gboolean preview_mode)
+DECL|function|doit (gint32 image_ID,GimpDrawable * drawable,gboolean preview_mode)
 name|doit
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -1583,7 +1583,7 @@ name|gboolean
 name|preview_mode
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR
@@ -3292,7 +3292,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -3553,13 +3553,13 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|dialog (gint32 image_ID,GDrawable * drawable)
+DECL|function|dialog (gint32 image_ID,GimpDrawable * drawable)
 name|dialog
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -5989,10 +5989,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|preview_widget (GDrawable * drawable)
+DECL|function|preview_widget (GimpDrawable * drawable)
 name|preview_widget
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -6064,19 +6064,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fill_preview (GtkWidget * widget,GDrawable * drawable)
+DECL|function|fill_preview (GtkWidget * widget,GimpDrawable * drawable)
 name|fill_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|;
 name|gint

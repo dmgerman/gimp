@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3a94330108
+DECL|struct|__anon2b16391d0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3a94330208
+DECL|struct|__anon2b16391d0208
 block|{
 DECL|member|run
 name|gint
@@ -202,7 +202,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -210,7 +210,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -289,10 +289,10 @@ specifier|static
 name|void
 name|unsharp_region
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPTR
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 name|dstPTR
 parameter_list|,
 name|gint
@@ -330,7 +330,7 @@ specifier|static
 name|void
 name|unsharp_mask
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -613,7 +613,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -648,13 +648,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -662,7 +662,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -670,7 +670,7 @@ literal|"(unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -678,7 +678,7 @@ literal|"Drawable to draw on"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"radius"
 block|,
@@ -686,7 +686,7 @@ literal|"Radius of gaussian blur (in pixels> 1.0)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"amount"
 block|,
@@ -694,7 +694,7 @@ literal|"Strength of effect"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"threshold"
 block|,
@@ -746,7 +746,7 @@ argument_list|)
 argument_list|,
 literal|"GRAY*, RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -767,7 +767,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -777,7 +777,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -785,30 +785,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 ifdef|#
 directive|ifdef
@@ -836,7 +836,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -868,7 +868,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
@@ -887,7 +887,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
@@ -898,7 +898,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -963,12 +963,12 @@ operator|)
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
@@ -986,7 +986,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|drawable
@@ -1087,10 +1087,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|unsharp_mask (GDrawable * drawable,gint radius,gdouble amount)
+DECL|function|unsharp_mask (GimpDrawable * drawable,gint radius,gdouble amount)
 name|unsharp_mask
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -1101,7 +1101,7 @@ name|gdouble
 name|amount
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR
@@ -1282,13 +1282,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|unsharp_region (GPixelRgn srcPR,GPixelRgn destPR,gint width,gint height,gint bytes,gdouble radius,gdouble amount,gint x1,gint x2,gint y1,gint y2)
+DECL|function|unsharp_region (GimpPixelRgn srcPR,GimpPixelRgn destPR,gint width,gint height,gint bytes,gdouble radius,gdouble amount,gint x1,gint x2,gint y1,gint y2)
 name|unsharp_region
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 name|destPR
 parameter_list|,
 name|gint

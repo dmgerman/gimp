@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276c31810103
+DECL|enum|__anon2bc426260103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c31810208
+DECL|struct|__anon2bc426260208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c31810308
+DECL|struct|__anon2bc426260308
 block|{
 DECL|member|run
 name|gint
@@ -232,7 +232,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -240,7 +240,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -253,7 +253,7 @@ specifier|static
 name|void
 name|blur16
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -265,7 +265,7 @@ specifier|static
 name|void
 name|diff
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -285,7 +285,7 @@ specifier|static
 name|void
 name|diff_prepare_row
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pixel_rgn
 parameter_list|,
@@ -310,23 +310,23 @@ specifier|static
 name|void
 name|warp_one
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|draw
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|new
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|map_x
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|map_y
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|mag_draw
 parameter_list|,
@@ -344,16 +344,16 @@ specifier|static
 name|void
 name|warp
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 modifier|*
 name|map_x_p
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 modifier|*
 name|map_y_p
@@ -366,7 +366,7 @@ specifier|static
 name|gint
 name|warp_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -375,15 +375,15 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GTile
+name|GimpTile
 modifier|*
 name|warp_pixel
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|,
@@ -582,7 +582,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -715,7 +715,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 end_decl_stmt
@@ -774,13 +774,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -788,7 +788,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -796,7 +796,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -804,7 +804,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"amount"
 block|,
@@ -812,7 +812,7 @@ literal|"Pixel displacement multiplier"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"warp_map"
 block|,
@@ -820,7 +820,7 @@ literal|"Displacement control map"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"iter"
 block|,
@@ -828,7 +828,7 @@ literal|"Iteration count (last required argument)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"dither"
 block|,
@@ -836,7 +836,7 @@ literal|"Random dither amount (first optional argument)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"angle"
 block|,
@@ -844,7 +844,7 @@ literal|"Angle of gradient vector rotation"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"wrap_type"
 block|,
@@ -852,7 +852,7 @@ literal|"Edge behavior: { WRAP (0), SMEAR (1), BLACK (2), COLOR (3) }"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"mag_map"
 block|,
@@ -860,7 +860,7 @@ literal|"Magnitude control map"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mag_use"
 block|,
@@ -868,7 +868,7 @@ literal|"Use magnitude map: { FALSE (0), TRUE (1) }"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"substeps"
 block|,
@@ -876,7 +876,7 @@ literal|"Substeps between image updates"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"grad_map"
 block|,
@@ -884,7 +884,7 @@ literal|"Gradient control map"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"grad_scale"
 block|,
@@ -892,7 +892,7 @@ literal|"Scaling factor for gradient map (0=don't use)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"vector_map"
 block|,
@@ -900,7 +900,7 @@ literal|"Fixed vector control map"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"vector_scale"
 block|,
@@ -908,7 +908,7 @@ literal|"Scaling factor for fixed vector map (0=don't use)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"vector_angle"
 block|,
@@ -957,7 +957,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -974,7 +974,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -984,7 +984,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -992,31 +992,31 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|map_x
 init|=
 name|NULL
 decl_stmt|;
 comment|/* satisfy compiler complaints */
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|map_y
 init|=
@@ -1026,10 +1026,10 @@ name|gint32
 name|image_ID
 decl_stmt|;
 comment|/* image id of drawable */
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint
 name|pcnt
@@ -1111,7 +1111,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1130,7 +1130,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -1156,7 +1156,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -1171,7 +1171,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -1443,7 +1443,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -1462,7 +1462,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/*  set the tile cache size  */
@@ -1488,7 +1488,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1547,7 +1547,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1558,10 +1558,10 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|warp_dialog (GDrawable * drawable)
+DECL|function|warp_dialog (GimpDrawable * drawable)
 name|warp_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -3632,16 +3632,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|blur16 (GDrawable * drawable)
+DECL|function|blur16 (GimpDrawable * drawable)
 name|blur16
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
 comment|/*  blur a 2-or-more byte-per-pixel drawable,    *  1st 2 bytes interpreted as a 16-bit height field.    */
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR
@@ -4343,10 +4343,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|diff_prepare_row (GPixelRgn * pixel_rgn,guchar * data,int x,int y,int w)
+DECL|function|diff_prepare_row (GimpPixelRgn * pixel_rgn,guchar * data,int x,int y,int w)
 name|diff_prepare_row
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pixel_rgn
 parameter_list|,
@@ -4510,10 +4510,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|diff (GDrawable * drawable,gint32 * xl_id,gint32 * yl_id)
+DECL|function|diff (GimpDrawable * drawable,gint32 * xl_id,gint32 * yl_id)
 name|diff
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -4526,7 +4526,7 @@ modifier|*
 name|yl_id
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|draw_xd
 decl_stmt|,
@@ -4534,7 +4534,7 @@ modifier|*
 name|draw_yd
 decl_stmt|;
 comment|/* vector disp. drawables */
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|mdraw
 decl_stmt|,
@@ -4562,14 +4562,14 @@ decl_stmt|,
 name|ylayer_id
 decl_stmt|;
 comment|/* individual X and Y layer ID numbers */
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destxPR
 decl_stmt|,
 name|destyPR
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|vecPR
 decl_stmt|,
 name|magPR
@@ -4890,7 +4890,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 comment|/* create new image for X,Y diff */
@@ -4906,11 +4906,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 argument_list|,
 literal|100.0
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|ylayer_id
@@ -4925,11 +4925,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 argument_list|,
 literal|100.0
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|draw_yd
@@ -4968,14 +4968,14 @@ name|gimp_drawable_fill
 argument_list|(
 name|xlayer_id
 argument_list|,
-name|BG_IMAGE_FILL
+name|GIMP_BG_IMAGE_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_fill
 argument_list|(
 name|ylayer_id
 argument_list|,
-name|BG_IMAGE_FILL
+name|GIMP_BG_IMAGE_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_layer
@@ -6731,30 +6731,30 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|warp (GDrawable * orig_draw,GDrawable ** map_x,GDrawable ** map_y)
+DECL|function|warp (GimpDrawable * orig_draw,GimpDrawable ** map_x,GimpDrawable ** map_y)
 name|warp
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|orig_draw
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 modifier|*
 name|map_x
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 modifier|*
 name|map_y
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|disp_map
 decl_stmt|;
 comment|/* Displacement map, ie, control array */
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|mag_draw
 decl_stmt|;
@@ -6943,7 +6943,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|string
@@ -7026,7 +7026,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -7053,26 +7053,26 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|warp_one (GDrawable * draw,GDrawable * new,GDrawable * map_x,GDrawable * map_y,GDrawable * mag_draw,gint first_time,gint step)
+DECL|function|warp_one (GimpDrawable * draw,GimpDrawable * new,GimpDrawable * map_x,GimpDrawable * map_y,GimpDrawable * mag_draw,gint first_time,gint step)
 name|warp_one
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|draw
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|new
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|map_x
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|map_y
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|mag_draw
 parameter_list|,
@@ -7083,34 +7083,34 @@ name|gint
 name|step
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|dest_rgn
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|map_x_rgn
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|map_y_rgn
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|mag_rgn
 decl_stmt|;
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 init|=
 name|NULL
 decl_stmt|;
-name|GTile
+name|GimpTile
 modifier|*
 name|xtile
 init|=
 name|NULL
 decl_stmt|;
-name|GTile
+name|GimpTile
 modifier|*
 name|ytile
 init|=
@@ -9189,16 +9189,16 @@ end_function
 
 begin_function
 specifier|static
-name|GTile
+name|GimpTile
 modifier|*
-DECL|function|warp_pixel (GDrawable * drawable,GTile * tile,gint width,gint height,gint x1,gint y1,gint x2,gint y2,gint x,gint y,gint * row,gint * col,guchar * pixel)
+DECL|function|warp_pixel (GimpDrawable * drawable,GimpTile * tile,gint width,gint height,gint x1,gint y1,gint x2,gint y2,gint x,gint y,gint * row,gint * col,guchar * pixel)
 name|warp_pixel
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|,
@@ -9855,14 +9855,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 name|drawable
 operator|=
 operator|(
-name|GDrawable
+name|GimpDrawable
 operator|*
 operator|)
 name|data

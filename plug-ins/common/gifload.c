@@ -168,7 +168,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -176,7 +176,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -213,7 +213,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 end_decl_stmt
@@ -255,7 +255,7 @@ end_ifdef
 
 begin_decl_stmt
 DECL|variable|comment_parasite
-name|Parasite
+name|GimpParasite
 modifier|*
 name|comment_parasite
 init|=
@@ -270,7 +270,7 @@ end_endif
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -305,13 +305,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -319,7 +319,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -327,7 +327,7 @@ literal|"The name of the file to load"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -336,13 +336,13 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -404,7 +404,7 @@ literal|"<Load>/GIF"
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nload_args
 argument_list|,
@@ -432,7 +432,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -442,7 +442,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -450,23 +450,23 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -499,7 +499,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -510,7 +510,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -592,7 +592,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -610,7 +610,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -618,7 +618,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -766,7 +766,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c6c47a60108
+DECL|struct|__anon2b8521790108
 block|{
 DECL|member|Width
 name|unsigned
@@ -816,7 +816,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c6c47a60208
+DECL|struct|__anon2b8521790208
 block|{
 DECL|member|transparent
 name|int
@@ -1092,7 +1092,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|name_buf
@@ -1811,7 +1811,7 @@ argument_list|,
 name|comment_parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|comment_parasite
 argument_list|)
@@ -2242,7 +2242,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|comment_parasite
 argument_list|)
@@ -2250,11 +2250,11 @@ expr_stmt|;
 block|}
 name|comment_parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -3498,10 +3498,10 @@ decl_stmt|;
 name|gint32
 name|layer_ID
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -3622,7 +3622,7 @@ name|screenwidth
 argument_list|,
 name|screenheight
 argument_list|,
-name|INDEXED
+name|GIMP_INDEXED
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
@@ -3789,11 +3789,11 @@ name|len
 argument_list|,
 name|height
 argument_list|,
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3811,11 +3811,11 @@ name|len
 argument_list|,
 name|height
 argument_list|,
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|alpha_frame
@@ -4129,13 +4129,13 @@ name|height
 argument_list|,
 name|promote_to_rgb
 condition|?
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 else|:
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|alpha_frame
@@ -4614,7 +4614,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|cur_progress
