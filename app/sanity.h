@@ -39,8 +39,7 @@ name|gchar
 modifier|*
 name|sanity_check
 parameter_list|(
-name|gboolean
-name|no_interface
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

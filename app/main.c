@@ -802,9 +802,7 @@ block|}
 name|abort_message
 operator|=
 name|sanity_check
-argument_list|(
-name|no_interface
-argument_list|)
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
