@@ -3369,13 +3369,13 @@ operator|<
 literal|0
 operator|||
 name|t_x
-operator|>
+operator|>=
 name|active_drawable
 operator|->
 name|width
 operator|||
 name|t_y
-operator|>
+operator|>=
 name|active_drawable
 operator|->
 name|height
