@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adf3e9c0103
+DECL|enum|__anon288a7fc80103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1625,6 +1625,12 @@ name|wire_set_flusher
 argument_list|(
 name|gimp_flush
 argument_list|)
+expr_stmt|;
+name|g_type_init
+argument_list|()
+expr_stmt|;
+name|_gimp_enums_init
+argument_list|()
 expr_stmt|;
 comment|/*  initialize units  */
 block|{

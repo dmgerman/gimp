@@ -19,7 +19,6 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-comment|/*  * these enums that are registered with the type system  */
 DECL|macro|GIMP_TYPE_CHECK_SIZE
 define|#
 directive|define
@@ -38,7 +37,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29f66ff60103
+DECL|enum|__anon278ad59c0103
 block|{
 DECL|enumerator|GIMP_CHECK_SIZE_SMALL_CHECKS
 name|GIMP_CHECK_SIZE_SMALL_CHECKS
@@ -85,7 +84,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29f66ff60203
+DECL|enum|__anon278ad59c0203
 block|{
 DECL|enumerator|GIMP_CHECK_TYPE_LIGHT_CHECKS
 name|GIMP_CHECK_TYPE_LIGHT_CHECKS
@@ -149,7 +148,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f66ff60303
+DECL|enum|__anon278ad59c0303
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -189,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f66ff60403
+DECL|enum|__anon278ad59c0403
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -220,15 +219,11 @@ name|GimpImageType
 typedef|;
 end_typedef
 
-begin_comment
-comment|/*  * non-registered enums  */
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f66ff60503
+DECL|enum|__anon278ad59c0503
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -271,11 +266,28 @@ name|GimpUnit
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_PDB_ARG_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_PDB_ARG_TYPE
+value|(gimp_pdb_arg_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_pdb_arg_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon29f66ff60603
+DECL|enum|__anon278ad59c0603
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -351,11 +363,28 @@ name|GimpPDBArgType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_PDB_PROC_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_PDB_PROC_TYPE
+value|(gimp_pdb_proc_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_pdb_proc_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon29f66ff60703
+DECL|enum|__anon278ad59c0703
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -374,11 +403,28 @@ name|GimpPDBProcType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_PDB_STATUS_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_PDB_STATUS_TYPE
+value|(gimp_pdb_status_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_pdb_status_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon29f66ff60803
+DECL|enum|__anon278ad59c0803
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -400,11 +446,28 @@ name|GimpPDBStatusType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_MESSAGE_HANDLER_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_MESSAGE_HANDLER_TYPE
+value|(gimp_message_handler_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_message_handler_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon29f66ff60903
+DECL|enum|__anon278ad59c0903
 block|{
 DECL|enumerator|GIMP_MESSAGE_BOX
 name|GIMP_MESSAGE_BOX
@@ -420,11 +483,28 @@ name|GimpMessageHandlerType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_STACK_TRACE_MODE
+define|#
+directive|define
+name|GIMP_TYPE_STACK_TRACE_MODE
+value|(gimp_stack_trace_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_stack_trace_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon29f66ff60a03
+DECL|enum|__anon278ad59c0a03
 block|{
 DECL|enumerator|GIMP_STACK_TRACE_NEVER
 name|GIMP_STACK_TRACE_NEVER
@@ -440,11 +520,28 @@ name|GimpStackTraceMode
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_PROGRESS_COMMAND
+define|#
+directive|define
+name|GIMP_TYPE_PROGRESS_COMMAND
+value|(gimp_progress_command_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_progress_command_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon29f66ff60b03
+DECL|enum|__anon278ad59c0b03
 block|{
 DECL|enumerator|GIMP_PROGRESS_COMMAND_START
 name|GIMP_PROGRESS_COMMAND_START

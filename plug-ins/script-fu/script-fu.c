@@ -77,12 +77,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"script-fu-constants.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"script-fu-scripts.h"
 end_include
 
