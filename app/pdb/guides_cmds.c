@@ -1013,7 +1013,13 @@ condition|)
 block|{
 name|success
 operator|=
-name|FALSE
+operator|(
+name|gimage
+operator|->
+name|guides
+operator|==
+name|NULL
+operator|)
 expr_stmt|;
 name|guide_found
 operator|=
