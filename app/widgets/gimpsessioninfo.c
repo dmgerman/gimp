@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275510030103
+DECL|enum|__anon2b77895d0103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1851,6 +1851,17 @@ name|open
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/*  for backward compatibility  */
+if|if
+condition|(
+name|g_scanner_peek_next_token
+argument_list|(
+name|scanner
+argument_list|)
+operator|==
+name|G_TOKEN_RIGHT_PAREN
+condition|)
+break|break;
 name|token
 operator|=
 name|G_TOKEN_INT
