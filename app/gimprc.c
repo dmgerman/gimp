@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -118,7 +124,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2890be5f0103
+DECL|enum|__anon2ad12b8d0103
 typedef|typedef
 enum|enum
 block|{
