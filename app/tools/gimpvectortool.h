@@ -1,0 +1,261 @@
+begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__GIMP_VECTOR_TOOL_H__
+end_ifndef
+
+begin_define
+DECL|macro|__GIMP_VECTOR_TOOL_H__
+define|#
+directive|define
+name|__GIMP_VECTOR_TOOL_H__
+end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawtool.h"
+end_include
+
+begin_comment
+comment|/*  possible vector functions  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27437e270103
+block|{
+DECL|enumerator|VCREATING
+name|VCREATING
+block|,
+DECL|enumerator|VADDING
+name|VADDING
+block|,
+DECL|enumerator|VMOVING
+name|VMOVING
+block|,
+DECL|enumerator|VMOVING_ALL
+name|VMOVING_ALL
+block|,
+DECL|enumerator|VGUIDING
+name|VGUIDING
+block|,
+DECL|enumerator|VFINISHED
+name|VFINISHED
+DECL|typedef|VectorFunction
+block|}
+name|VectorFunction
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_VECTOR_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_VECTOR_TOOL
+value|(gimp_vector_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_VECTOR_TOOL (obj)
+define|#
+directive|define
+name|GIMP_VECTOR_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_VECTOR_TOOL, GimpVectorTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_VECTOR_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_VECTOR_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_VECTOR_TOOL, GimpVectorToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_VECTOR_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_VECTOR_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_VECTOR_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_VECTOR_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_VECTOR_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_VECTOR_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_VECTOR_TOOL_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_VECTOR_TOOL_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VECTOR_TOOL, GimpVectorToolClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpVectorTool
+typedef|typedef
+name|struct
+name|_GimpVectorTool
+name|GimpVectorTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpVectorToolClass
+typedef|typedef
+name|struct
+name|_GimpVectorToolClass
+name|GimpVectorToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpVectorTool
+struct|struct
+name|_GimpVectorTool
+block|{
+DECL|member|parent_instance
+name|GimpDrawTool
+name|parent_instance
+decl_stmt|;
+DECL|member|function
+name|VectorFunction
+name|function
+decl_stmt|;
+comment|/*  function we're performing  */
+DECL|member|last_x
+name|gint
+name|last_x
+decl_stmt|;
+comment|/*  last x coordinate          */
+DECL|member|last_y
+name|gint
+name|last_y
+decl_stmt|;
+comment|/*  last y coordinate          */
+DECL|member|point
+name|gint
+name|point
+decl_stmt|;
+comment|/*  what are we manipulating?  */
+DECL|member|num_points
+name|gint
+name|num_points
+decl_stmt|;
+comment|/*  how many points?           */
+DECL|member|x
+name|gint
+name|x
+index|[
+literal|3
+index|]
+decl_stmt|;
+comment|/*  three x coordinates        */
+DECL|member|y
+name|gint
+name|y
+index|[
+literal|3
+index|]
+decl_stmt|;
+comment|/*  three y coordinates        */
+DECL|member|angle1
+name|gdouble
+name|angle1
+decl_stmt|;
+comment|/*  first angle                */
+DECL|member|angle2
+name|gdouble
+name|angle2
+decl_stmt|;
+comment|/*  second angle               */
+DECL|member|cur_anchor
+name|GimpAnchor
+modifier|*
+name|cur_anchor
+decl_stmt|;
+comment|/*  The current Anchor         */
+DECL|member|vectors
+name|GimpVectors
+modifier|*
+name|vectors
+decl_stmt|;
+comment|/*  The current Vector data    */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpVectorToolClass
+struct|struct
+name|_GimpVectorToolClass
+block|{
+DECL|member|parent_class
+name|GimpDrawToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|void
+name|gimp_vector_tool_register
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_decl_stmt
+name|GType
+name|gimp_vector_tool_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*  __GIMP_VECTOR_TOOL_H__  */
+end_comment
+
+end_unit
+

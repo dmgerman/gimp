@@ -49,6 +49,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"vectors/vectors-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"undo_types.h"
 end_include
 
@@ -70,7 +76,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon292d97b10103
+DECL|enum|__anon29d2715e0103
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -101,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d97b10203
+DECL|enum|__anon29d2715e0203
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -117,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d97b10303
+DECL|enum|__anon29d2715e0303
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -137,7 +143,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon292d97b10403
+DECL|enum|__anon29d2715e0403
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -161,7 +167,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon292d97b10503
+DECL|enum|__anon29d2715e0503
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -183,7 +189,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d97b10603
+DECL|enum|__anon29d2715e0603
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -213,7 +219,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d97b10703
+DECL|enum|__anon29d2715e0703
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -229,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d97b10803
+DECL|enum|__anon29d2715e0803
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -251,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d97b10903
+DECL|enum|__anon29d2715e0903
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -286,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d97b10a03
+DECL|enum|__anon29d2715e0a03
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -322,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d97b10b03
+DECL|enum|__anon29d2715e0b03
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL

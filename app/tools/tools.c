@@ -293,6 +293,12 @@ directive|include
 file|"gimptoolmodule.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpvectortool.h"
+end_include
+
 begin_function
 name|void
 DECL|function|cheesey_module_loading_hack (const gchar * filename,gpointer loader_data)
@@ -401,6 +407,8 @@ name|gimp_move_tool_register
 block|,
 comment|/*  non-modifying tools  */
 name|gimp_path_tool_register
+block|,
+name|gimp_vector_tool_register
 block|,
 name|gimp_measure_tool_register
 block|,
