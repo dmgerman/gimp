@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GFlare plug-in -- lense flare effect by using custom gradients  * Copyright (C) 1997 Eiichi Takamori<taka@ma1.sekyou.ne.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  *  * A fair proportion of this code was taken from GIMP& Script-fu  * copyrighted by Spencer Kimball and Peter Mattis, and from Gradient  * Editor copyrighted by Federico Mena Quintero. (See copyright notice  * below) Thanks for senior GIMP hackers!!  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Gradient editor module copyight (C) 1996-1997 Federico Mena Quintero  * federico@nuclecu.unam.mx  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GFlare plug-in -- lense flare effect by using custom gradients  * Copyright (C) 1997 Eiichi Takamori<taka@ma1.sekyou.ne.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  *  * A fair proportion of this code was taken from GIMP& Script-fu  * copyrighted by Spencer Kimball and Peter Mattis, and from Gradient  * Editor copyrighted by Federico Mena Quintero. (See copyright notice  * below) Thanks for senior GIMP hackers!!  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Gradient editor module copyight (C) 1996-1997 Federico Mena Quintero  * federico@nuclecu.unam.mx  */
 end_comment
 
 begin_include
@@ -67,29 +67,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
 
 begin_include
 include|#
@@ -263,7 +240,7 @@ DECL|macro|DLG_PREVIEW_MASK
 define|#
 directive|define
 name|DLG_PREVIEW_MASK
-value|GDK_EXPOSURE_MASK | \ 			    GDK_BUTTON_PRESS_MASK
+value|GDK_EXPOSURE_MASK | \                             GDK_BUTTON_PRESS_MASK
 end_define
 
 begin_define
@@ -430,7 +407,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c36a5b0103
+DECL|enum|__anon2bb069810103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -457,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c36a5b0203
+DECL|enum|__anon2bb069810203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -478,7 +455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0308
+DECL|struct|__anon2bb069810308
 block|{
 DECL|member|name
 name|gchar
@@ -619,7 +596,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0408
+DECL|struct|__anon2bb069810408
 block|{
 DECL|member|fp
 name|FILE
@@ -639,7 +616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c36a5b0503
+DECL|enum|__anon2bb069810503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -667,7 +644,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0608
+DECL|struct|__anon2bb069810608
 block|{
 DECL|member|init
 name|gint
@@ -689,7 +666,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27c36a5b0708
+DECL|struct|__anon2bb069810708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -709,7 +686,7 @@ block|}
 name|pwin
 struct|;
 DECL|member|update_preview
-name|gint
+name|gboolean
 name|update_preview
 decl_stmt|;
 DECL|member|notebook
@@ -728,9 +705,14 @@ modifier|*
 name|asupsample_frame
 decl_stmt|;
 DECL|member|selector_list
-name|GtkWidget
+name|GtkListStore
 modifier|*
 name|selector_list
+decl_stmt|;
+DECL|member|selection
+name|GtkTreeSelection
+modifier|*
+name|selection
 decl_stmt|;
 DECL|member|init_params_done
 name|gint
@@ -763,7 +745,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0808
+DECL|struct|__anon2bb069810808
 block|{
 DECL|member|init
 name|gint
@@ -833,7 +815,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0908
+DECL|struct|__anon2bb069810908
 block|{
 DECL|member|x0
 name|gdouble
@@ -860,7 +842,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0a08
+DECL|struct|__anon2bb069810a08
 block|{
 DECL|member|init
 name|gint
@@ -1030,7 +1012,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0b08
+DECL|struct|__anon2bb069810b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1057,7 +1039,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0c08
+DECL|struct|__anon2bb069810c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1298,7 +1280,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0d08
+DECL|struct|__anon2bb069810d08
 block|{
 DECL|member|tag
 name|gint
@@ -1375,7 +1357,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36a5b0e08
+DECL|struct|__anon2bb069810e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -2091,7 +2073,7 @@ comment|/* *** INSERT-FILE-END *** */
 end_comment
 
 begin_comment
-comment|/** ***	Variables **/
+comment|/** ***     Variables **/
 end_comment
 
 begin_decl_stmt
@@ -2572,7 +2554,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/** ***	+++ Static Functions Prototypes **/
+comment|/** ***     +++ Static Functions Prototypes **/
 end_comment
 
 begin_function_decl
@@ -3123,32 +3105,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|dlg_selector_insert
-parameter_list|(
-name|GFlare
-modifier|*
-name|gflare
-parameter_list|,
-name|gint
-name|pos
-parameter_list|,
-name|gint
-name|select
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|dlg_selector_list_item_callback
 parameter_list|(
-name|GtkWidget
+name|GtkTreeSelection
 modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|selection
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3886,15 +3847,15 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
-comment|/**		+++ Plug-in Interfaces					**/
+comment|/**             +++ Plug-in Interfaces                                  **/
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
@@ -4178,7 +4139,7 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-comment|/*    *	Get the specified drawable and its info (global variable)    */
+comment|/*    *    Get the specified drawable and its info (global variable)    */
 name|image_ID
 operator|=
 name|param
@@ -4267,11 +4228,11 @@ operator|=
 name|gimp_tile_height
 argument_list|()
 expr_stmt|;
-comment|/*    *	Start gradient caching    */
+comment|/*    *    Start gradient caching    */
 name|gradient_init
 argument_list|()
 expr_stmt|;
-comment|/*    *	Parse gflare path from gimprc and load gflares    */
+comment|/*    *    Parse gflare path from gimprc and load gflares    */
 name|gflare_path
 operator|=
 name|gimp_gimprc_query
@@ -4701,7 +4662,7 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-comment|/*    *	Deinitialization    */
+comment|/*    *    Deinitialization    */
 name|gradient_free
 argument_list|()
 expr_stmt|;
@@ -5732,15 +5693,15 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
-comment|/**		+++ GFlare Routines					**/
+comment|/**             +++ GFlare Routines                                     **/
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
@@ -5748,7 +5709,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/*  *	These code are more or less based on Quartic's gradient.c,  *	other gimp sources, and script-fu.  */
+comment|/*  *      These code are more or less based on Quartic's gradient.c,  *      other gimp sources, and script-fu.  */
 end_comment
 
 begin_function
@@ -7645,15 +7606,15 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
-comment|/**		+++ GFlares List					**/
+comment|/**             +++ GFlares List                                        **/
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
@@ -8021,15 +7982,15 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
-comment|/**		+++ Calculator						**/
+comment|/**             +++ Calculator                                          **/
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
@@ -8578,7 +8539,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon27c36a5b0f08
+DECL|struct|__anon2bb069810f08
 specifier|static
 struct|struct
 block|{
@@ -8894,7 +8855,7 @@ argument_list|,
 name|GRADIENT_RESOLUTION
 argument_list|)
 expr_stmt|;
-comment|/* 	   * Do hue rotation, if needed 	   */
+comment|/*            * Do hue rotation, if needed            */
 if|if
 condition|(
 name|table
@@ -9096,7 +9057,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/* 	   *	Grayfy gradient, if needed 	   */
+comment|/*            *    Grayfy gradient, if needed            */
 if|if
 condition|(
 name|table
@@ -9679,7 +9640,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  Get sample value at specified position of a gradient  *  *  gradient samples are stored into array at the time of  *  calc_sample_one_gradients (), and it is now linear interpolated.  *  *  INPUT:  *	guchar	gradient[4*GRADIENT_RESOLUTION]		gradient array(RGBA)  *	gdouble pos					position (0<=pos<=1)  *  OUTPUT:  *	guchar	pix[4]  */
+comment|/*  *  Get sample value at specified position of a gradient  *  *  gradient samples are stored into array at the time of  *  calc_sample_one_gradients (), and it is now linear interpolated.  *  *  INPUT:  *      guchar  gradient[4*GRADIENT_RESOLUTION]         gradient array(RGBA)  *      gdouble pos                                     position (0<=pos<=1)  *  OUTPUT:  *      guchar  pix[4]  */
 end_comment
 
 begin_function
@@ -9845,7 +9806,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  Calc glow's pixel (RGBA) value  *  INPUT:  *	gdouble x, y			image coordinates  *  OUTPUT:  *	guchar	pix[4]  */
+comment|/*  *  Calc glow's pixel (RGBA) value  *  INPUT:  *      gdouble x, y                    image coordinates  *  OUTPUT:  *      guchar  pix[4]  */
 end_comment
 
 begin_function
@@ -10936,7 +10897,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* 	Paint func routines, such as Normal, Addition, ...  */
+comment|/*         Paint func routines, such as Normal, Addition, ...  */
 end_comment
 
 begin_function
@@ -11517,19 +11478,19 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
-comment|/**			Main Dialog					**/
+comment|/**                     Main Dialog                                     **/
 end_comment
 
 begin_comment
-comment|/**			+++ dlg						**/
+comment|/**                     +++ dlg                                         **/
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
@@ -11537,7 +11498,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/* 	This is gflare main dialog, one which opens in first.  */
+comment|/*         This is gflare main dialog, one which opens in first.  */
 end_comment
 
 begin_function
@@ -11589,7 +11550,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*    *	Init Main Dialog    */
+comment|/*    *    Init Main Dialog    */
 name|dlg
 operator|=
 name|g_new0
@@ -11645,7 +11606,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*    *	Dialog Shell    */
+comment|/*    *    Dialog Shell    */
 name|shell
 operator|=
 name|dlg
@@ -11726,7 +11687,7 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*    *	Preview    */
+comment|/*    *    Preview    */
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -11973,7 +11934,7 @@ operator|->
 name|update_preview
 argument_list|)
 expr_stmt|;
-comment|/*    *	Notebook    */
+comment|/*    *    Notebook    */
 name|notebook
 operator|=
 name|dlg
@@ -12023,7 +11984,7 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/*    *	Initialization done    */
+comment|/*    *    Initialization done    */
 name|dlg
 operator|->
 name|init
@@ -12157,7 +12118,7 @@ comment|/***********************************/
 end_comment
 
 begin_comment
-comment|/**	Main Dialog / Preview	  **/
+comment|/**     Main Dialog / Preview     **/
 end_comment
 
 begin_comment
@@ -12165,7 +12126,7 @@ comment|/***********************************/
 end_comment
 
 begin_comment
-comment|/*  *	Calculate preview's window, ie. translation of preview widget and  *	drawable.  *  *	x0, x1, y0, y1 are drawable coord, corresponding with top left  *	corner of preview widget, etc.  */
+comment|/*  *      Calculate preview's window, ie. translation of preview widget and  *      drawable.  *  *      x0, x1, y0, y1 are drawable coord, corresponding with top left  *      corner of preview widget, etc.  */
 end_comment
 
 begin_function
@@ -12817,7 +12778,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*	preview callbacks	*/
+comment|/*      preview callbacks       */
 end_comment
 
 begin_function
@@ -13288,7 +13249,7 @@ comment|/*****************************************/
 end_comment
 
 begin_comment
-comment|/**	Main Dialog / Settings Page	**/
+comment|/**     Main Dialog / Settings Page     **/
 end_comment
 
 begin_comment
@@ -14029,7 +13990,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/**   ***	Asupsample settings   ***	This code is stolen from gimp-0.99.x/app/blend.c   **/
+comment|/**   ***   Asupsample settings   ***   This code is stolen from gimp-0.99.x/app/blend.c   **/
 comment|/*  asupsample frame */
 name|frame
 operator|=
@@ -14462,7 +14423,7 @@ comment|/*****************************************/
 end_comment
 
 begin_comment
-comment|/**	Main Dialog / Selector Page	**/
+comment|/**     Main Dialog / Selector Page     **/
 end_comment
 
 begin_comment
@@ -14496,9 +14457,21 @@ name|GtkWidget
 modifier|*
 name|listbox
 decl_stmt|;
-name|GtkWidget
+name|GtkListStore
 modifier|*
 name|list
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|listview
+decl_stmt|;
+name|GtkCellRenderer
+modifier|*
+name|renderer
+decl_stmt|;
+name|GtkTreeViewColumn
+modifier|*
+name|column
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -14509,7 +14482,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon27c36a5b1008
+DECL|struct|__anon2bb069811008
 block|{
 DECL|member|label
 specifier|const
@@ -14589,7 +14562,7 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-comment|/*    *	List Box    */
+comment|/*    *    List Box    */
 name|listbox
 operator|=
 name|gtk_scrolled_window_new
@@ -14642,17 +14615,43 @@ name|dlg
 operator|->
 name|selector_list
 operator|=
-name|gtk_list_new
-argument_list|()
-expr_stmt|;
-name|gtk_scrolled_window_add_with_viewport
+name|gtk_list_store_new
 argument_list|(
-name|GTK_SCROLLED_WINDOW
+literal|2
+argument_list|,
+name|G_TYPE_STRING
+argument_list|,
+name|G_TYPE_POINTER
+argument_list|)
+expr_stmt|;
+name|listview
+operator|=
+name|gtk_tree_view_new_with_model
+argument_list|(
+name|GTK_TREE_MODEL
+argument_list|(
+name|list
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_tree_view_set_headers_visible
+argument_list|(
+name|GTK_TREE_VIEW
+argument_list|(
+name|listview
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
 argument_list|(
 name|listbox
 argument_list|)
 argument_list|,
-name|list
+name|listview
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -14660,25 +14659,83 @@ argument_list|(
 name|listbox
 argument_list|)
 expr_stmt|;
-name|gtk_list_set_selection_mode
+name|dlg
+operator|->
+name|selection
+operator|=
+name|gtk_tree_view_get_selection
 argument_list|(
-name|GTK_LIST
+name|GTK_TREE_VIEW
 argument_list|(
-name|list
+name|listview
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_tree_selection_set_mode
+argument_list|(
+name|dlg
+operator|->
+name|selection
 argument_list|,
 name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|list
+name|listview
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|dlg
+operator|->
+name|selection
+argument_list|,
+literal|"changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|dlg_selector_list_item_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|renderer
+operator|=
+name|gtk_cell_renderer_text_new
+argument_list|()
+expr_stmt|;
+comment|/* Note: the title isn't shown, so it doesn't need to be translated. */
+name|column
+operator|=
+name|gtk_tree_view_column_new_with_attributes
+argument_list|(
+literal|"GFlare"
+argument_list|,
+name|renderer
+argument_list|,
+literal|"text"
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_tree_view_append_column
+argument_list|(
+name|GTK_TREE_VIEW
+argument_list|(
+name|listview
+argument_list|)
+argument_list|,
+name|column
 argument_list|)
 expr_stmt|;
 name|dlg_selector_setup_listbox
 argument_list|()
 expr_stmt|;
-comment|/*    *	The buttons for the possible listbox operations    */
+comment|/*    *    The buttons for the possible listbox operations    */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -14808,7 +14865,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *	Set up selector's listbox, according to gflares_list  */
+comment|/*  *      Set up selector's listbox, according to gflares_list  */
 end_comment
 
 begin_function
@@ -14844,13 +14901,49 @@ condition|(
 name|list
 condition|)
 block|{
+name|GtkTreeIter
+name|iter
+decl_stmt|;
 name|gflare
 operator|=
 name|list
 operator|->
 name|data
 expr_stmt|;
-comment|/* 	dlg->gflare should be valid (ie. not NULL) here. 	*/
+comment|/*         dlg->gflare should be valid (ie. not NULL) here.         */
+name|gtk_list_store_append
+argument_list|(
+name|dlg
+operator|->
+name|selector_list
+argument_list|,
+operator|&
+name|iter
+argument_list|)
+expr_stmt|;
+name|gtk_list_store_set
+argument_list|(
+name|dlg
+operator|->
+name|selector_list
+argument_list|,
+operator|&
+name|iter
+argument_list|,
+literal|0
+argument_list|,
+name|gflare
+operator|->
+name|name
+argument_list|,
+literal|1
+argument_list|,
+name|gflare
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gflare
@@ -14859,23 +14952,14 @@ name|dlg
 operator|->
 name|gflare
 condition|)
-name|dlg_selector_insert
+name|gtk_tree_selection_select_iter
 argument_list|(
-name|gflare
+name|dlg
+operator|->
+name|selection
 argument_list|,
-name|n
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-else|else
-name|dlg_selector_insert
-argument_list|(
-name|gflare
-argument_list|,
-name|n
-argument_list|,
-literal|0
+operator|&
+name|iter
 argument_list|)
 expr_stmt|;
 name|list
@@ -14891,147 +14975,65 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/*  *	Insert new list_item to selector's listbox  */
-end_comment
-
 begin_function
 specifier|static
 name|void
-DECL|function|dlg_selector_insert (GFlare * gflare,gint pos,gint select)
-name|dlg_selector_insert
+DECL|function|dlg_selector_list_item_callback (GtkTreeSelection * selection)
+name|dlg_selector_list_item_callback
 parameter_list|(
-name|GFlare
+name|GtkTreeSelection
 modifier|*
-name|gflare
-parameter_list|,
-name|gint
-name|pos
-parameter_list|,
-name|gint
-name|select
+name|selection
 parameter_list|)
 block|{
-name|GtkWidget
-modifier|*
-name|list_item
+name|GtkTreeIter
+name|iter
 decl_stmt|;
-name|GList
-modifier|*
-name|list
-decl_stmt|;
-name|list_item
-operator|=
-name|gtk_list_item_new_with_label
-argument_list|(
-name|gflare
-operator|->
-name|name
-argument_list|)
-expr_stmt|;
-comment|/* gflare->list_item = list_item; */
-name|g_signal_connect
-argument_list|(
-name|list_item
-argument_list|,
-literal|"select"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|dlg_selector_list_item_callback
-argument_list|)
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|gflare
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|list_item
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_list_append
-argument_list|(
-name|NULL
-argument_list|,
-name|list_item
-argument_list|)
-expr_stmt|;
-name|gtk_list_insert_items
-argument_list|(
-name|GTK_LIST
-argument_list|(
-name|dlg
-operator|->
-name|selector_list
-argument_list|)
-argument_list|,
-name|list
-argument_list|,
-name|pos
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|select
-condition|)
-name|gtk_list_select_item
+name|gtk_tree_selection_get_selected
 argument_list|(
-name|GTK_LIST
+name|selection
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|iter
+argument_list|)
+condition|)
+block|{
+name|gtk_tree_model_get
+argument_list|(
+name|GTK_TREE_MODEL
 argument_list|(
 name|dlg
 operator|->
 name|selector_list
 argument_list|)
 argument_list|,
-name|pos
+operator|&
+name|iter
+argument_list|,
+literal|1
+argument_list|,
+operator|&
+name|dlg
+operator|->
+name|gflare
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|dlg_selector_list_item_callback (GtkWidget * widget,gpointer data)
-name|dlg_selector_list_item_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-if|if
-condition|(
-name|widget
-operator|->
-name|state
-operator|==
-name|GTK_STATE_SELECTED
-condition|)
-block|{
-name|dlg
-operator|->
-name|gflare
-operator|=
-name|data
-expr_stmt|;
 name|dlg_preview_update
 argument_list|()
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_comment
-comment|/*  *	"New" button in Selector page  */
+comment|/*  *      "New" button in Selector page  */
 end_comment
 
 begin_function
@@ -15120,6 +15122,9 @@ name|GFlare
 modifier|*
 name|gflare
 decl_stmt|;
+name|GtkTreeIter
+name|iter
+decl_stmt|;
 name|gint
 name|pos
 decl_stmt|;
@@ -15164,13 +15169,49 @@ argument_list|(
 name|gflare
 argument_list|)
 expr_stmt|;
-name|dlg_selector_insert
+name|gtk_list_store_insert
 argument_list|(
-name|gflare
+name|dlg
+operator|->
+name|selector_list
+argument_list|,
+operator|&
+name|iter
 argument_list|,
 name|pos
+argument_list|)
+expr_stmt|;
+name|gtk_list_store_set
+argument_list|(
+name|dlg
+operator|->
+name|selector_list
+argument_list|,
+operator|&
+name|iter
+argument_list|,
+literal|0
+argument_list|,
+name|gflare
+operator|->
+name|name
 argument_list|,
 literal|1
+argument_list|,
+name|gflare
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_tree_selection_select_iter
+argument_list|(
+name|dlg
+operator|->
+name|selection
+argument_list|,
+operator|&
+name|iter
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -15390,6 +15431,9 @@ name|GFlare
 modifier|*
 name|gflare
 decl_stmt|;
+name|GtkTreeIter
+name|iter
+decl_stmt|;
 name|gint
 name|pos
 decl_stmt|;
@@ -15438,13 +15482,49 @@ argument_list|(
 name|gflare
 argument_list|)
 expr_stmt|;
-name|dlg_selector_insert
+name|gtk_list_store_insert
 argument_list|(
-name|gflare
+name|dlg
+operator|->
+name|selector_list
+argument_list|,
+operator|&
+name|iter
 argument_list|,
 name|pos
+argument_list|)
+expr_stmt|;
+name|gtk_list_store_set
+argument_list|(
+name|dlg
+operator|->
+name|selector_list
+argument_list|,
+operator|&
+name|iter
+argument_list|,
+literal|0
+argument_list|,
+name|gflare
+operator|->
+name|name
 argument_list|,
 literal|1
+argument_list|,
+name|gflare
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_tree_selection_select_iter
+argument_list|(
+name|dlg
+operator|->
+name|selection
+argument_list|,
+operator|&
+name|iter
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -15467,7 +15547,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *	"Delete" button in Selector page  */
+comment|/*  *      "Delete" button in Selector page  */
 end_comment
 
 begin_function
@@ -15612,6 +15692,9 @@ name|i
 decl_stmt|,
 name|new_i
 decl_stmt|;
+name|GtkTreeIter
+name|iter
+decl_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|dlg
@@ -15664,20 +15747,42 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/* Remove from listbox */
-name|gtk_list_clear_items
+if|if
+condition|(
+operator|!
+name|gtk_tree_model_iter_nth_child
 argument_list|(
-name|GTK_LIST
+name|GTK_TREE_MODEL
 argument_list|(
 name|dlg
 operator|->
 name|selector_list
 argument_list|)
 argument_list|,
-name|i
+operator|&
+name|iter
+argument_list|,
+name|NULL
 argument_list|,
 name|i
-operator|+
-literal|1
+argument_list|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Unsynchronized lists. Bad things will happen!"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+name|gtk_list_store_remove
+argument_list|(
+name|dlg
+operator|->
+name|selector_list
+argument_list|,
+operator|&
+name|iter
 argument_list|)
 expr_stmt|;
 comment|/* Calculate new position of gflare and select it */
@@ -15716,16 +15821,42 @@ name|tmp
 operator|->
 name|data
 expr_stmt|;
-name|gtk_list_select_item
+if|if
+condition|(
+operator|!
+name|gtk_tree_model_iter_nth_child
 argument_list|(
-name|GTK_LIST
+name|GTK_TREE_MODEL
 argument_list|(
 name|dlg
 operator|->
 name|selector_list
 argument_list|)
 argument_list|,
-name|new_i
+operator|&
+name|iter
+argument_list|,
+name|NULL
+argument_list|,
+name|i
+argument_list|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Unsynchronized lists. Bad things will happen!"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+name|gtk_tree_selection_select_iter
+argument_list|(
+name|dlg
+operator|->
+name|selection
+argument_list|,
+operator|&
+name|iter
 argument_list|)
 expr_stmt|;
 comment|/* Delete old one from disk and memory */
@@ -15777,19 +15908,19 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
-comment|/**			GFlare Editor					**/
+comment|/**                     GFlare Editor                                   **/
 end_comment
 
 begin_comment
-comment|/**			+++ ed						**/
+comment|/**                     +++ ed                                          **/
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
@@ -15797,7 +15928,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/* 	This is gflare editor dilaog, one which opens by clicking 	"Edit" button on the selector page in the main dialog.  */
+comment|/*         This is gflare editor dilaog, one which opens by clicking         "Edit" button on the selector page in the main dialog.  */
 end_comment
 
 begin_function
@@ -15898,7 +16029,7 @@ name|calldata
 operator|=
 name|calldata
 expr_stmt|;
-comment|/*    *	Dialog Shell    */
+comment|/*    *    Dialog Shell    */
 name|shell
 operator|=
 name|ed
@@ -16017,7 +16148,7 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*    *	Preview    */
+comment|/*    *    Preview    */
 name|abox
 operator|=
 name|gtk_alignment_new
@@ -16156,7 +16287,7 @@ expr_stmt|;
 name|ed_preview_calc_window
 argument_list|()
 expr_stmt|;
-comment|/*    *	Notebook    */
+comment|/*    *    Notebook    */
 name|notebook
 operator|=
 name|ed
@@ -17940,7 +18071,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*    *	Scales    */
+comment|/*    *    Scales    */
 name|frame
 operator|=
 name|gimp_frame_new
@@ -18750,7 +18881,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*    *	Scales    */
+comment|/*    *    Scales    */
 name|frame
 operator|=
 name|gimp_frame_new
@@ -19071,7 +19202,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*    *	Shape Radio Button Frame    */
+comment|/*    *    Shape Radio Button Frame    */
 name|frame
 operator|=
 name|gimp_frame_new
@@ -19141,7 +19272,7 @@ argument_list|)
 expr_stmt|;
 name|shape_group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -19264,7 +19395,7 @@ argument_list|)
 expr_stmt|;
 name|shape_group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -19445,7 +19576,7 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-comment|/*    *	Random Seed Entry    */
+comment|/*    *    Random Seed Entry    */
 name|seed_hbox
 operator|=
 name|gtk_hbox_new
@@ -20661,15 +20792,15 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
-comment|/**			+++ Preview					**/
+comment|/**                     +++ Preview                                     **/
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
@@ -20677,7 +20808,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/* 	this is generic preview routines.  */
+comment|/*         this is generic preview routines.  */
 end_comment
 
 begin_comment
@@ -20735,18 +20866,6 @@ name|widget
 operator|=
 name|gimp_preview_area_new
 argument_list|()
-expr_stmt|;
-name|gtk_object_set_user_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|preview
-operator|->
-name|widget
-argument_list|)
-argument_list|,
-name|preview
-argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
@@ -21275,7 +21394,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Convert RGBA to RGB with rendering gray check if needed. 	(from nova.c)   input:  guchar src[4]		RGBA pixel   output: guchar dest[3]	RGB pixel  */
+comment|/*   Convert RGBA to RGB with rendering gray check if needed.         (from nova.c)   input:  guchar src[4]         RGBA pixel   output: guchar dest[3]        RGB pixel  */
 end_comment
 
 begin_function
@@ -21462,19 +21581,19 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
-comment|/**			+++ Gradient Menu				**/
+comment|/**                     +++ Gradient Menu                               **/
 end_comment
 
 begin_comment
-comment|/**			+++ gm						**/
+comment|/**                     +++ gm                                          **/
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
@@ -22417,15 +22536,15 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
-comment|/**			+++ Gradients					**/
+comment|/**                     +++ Gradients                                   **/
 end_comment
 
 begin_comment
-comment|/**									**/
+comment|/**                                                                     **/
 end_comment
 
 begin_comment
@@ -23464,7 +23583,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Caching gradients is really needed. It really takes 0.2 seconds each   time to resample an external gradient. (And this plug-in has   currently 6 gradient menus.)    However, this caching routine is not too good. It picks up just   GRADIENT_RESOLUTION samples everytime, and rescales it later.	 And   cached values are stored in guchar array. No accuracy.  */
+comment|/*   Caching gradients is really needed. It really takes 0.2 seconds each   time to resample an external gradient. (And this plug-in has   currently 6 gradient menus.)    However, this caching routine is not too good. It picks up just   GRADIENT_RESOLUTION samples everytime, and rescales it later.  And   cached values are stored in guchar array. No accuracy.  */
 end_comment
 
 begin_function
