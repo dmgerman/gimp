@@ -68,7 +68,7 @@ DECL|macro|SVG_DEFAULT_RESOLUTION
 define|#
 directive|define
 name|SVG_DEFAULT_RESOLUTION
-value|72.0
+value|90.0
 end_define
 
 begin_define
@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a17d5090108
+DECL|struct|__anon2ae6fbbd0108
 block|{
 DECL|member|resolution
 name|gdouble
