@@ -758,7 +758,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon297c54700108
+DECL|struct|__anon2bbff1470108
 block|{
 DECL|member|Width
 name|unsigned
@@ -808,7 +808,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon297c54700208
+DECL|struct|__anon2bbff1470208
 block|{
 DECL|member|transparent
 name|int
@@ -3537,12 +3537,6 @@ name|gchar
 modifier|*
 name|framename
 decl_stmt|;
-name|gchar
-modifier|*
-name|framenamedisp
-init|=
-name|NULL
-decl_stmt|;
 name|gboolean
 name|alpha_frame
 init|=
@@ -3993,7 +3987,7 @@ comment|/* 'don't care' */
 case|case
 literal|0x01
 case|:
-name|framenamedisp
+name|framename
 operator|=
 name|g_strconcat
 argument_list|(
@@ -4011,7 +4005,7 @@ break|break;
 case|case
 literal|0x02
 case|:
-name|framenamedisp
+name|framename
 operator|=
 name|g_strconcat
 argument_list|(
@@ -4029,7 +4023,7 @@ break|break;
 case|case
 literal|0x03
 case|:
-name|framenamedisp
+name|framename
 operator|=
 name|g_strconcat
 argument_list|(
@@ -4056,7 +4050,7 @@ case|:
 case|case
 literal|0x07
 case|:
-name|framenamedisp
+name|framename
 operator|=
 name|g_strconcat
 argument_list|(
@@ -4083,13 +4077,6 @@ argument_list|(
 literal|"GIF: Something got corrupted.\n"
 argument_list|)
 expr_stmt|;
-name|framenamedisp
-operator|=
-name|g_strdup
-argument_list|(
-name|framename
-argument_list|)
-expr_stmt|;
 break|break;
 block|}
 name|previous_disposal
@@ -4098,18 +4085,13 @@ name|Gif89
 operator|.
 name|disposal
 expr_stmt|;
-name|g_free
-argument_list|(
-name|framename
-argument_list|)
-expr_stmt|;
 name|layer_ID
 operator|=
 name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
-name|framenamedisp
+name|framename
 argument_list|,
 name|len
 argument_list|,
@@ -4132,7 +4114,7 @@ name|TRUE
 expr_stmt|;
 name|g_free
 argument_list|(
-name|framenamedisp
+name|framename
 argument_list|)
 expr_stmt|;
 block|}
