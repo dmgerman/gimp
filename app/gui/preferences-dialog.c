@@ -6798,7 +6798,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27e660d10108
+DECL|struct|__anon2bb7f4e50108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8059,9 +8059,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/********************/
-comment|/*  Window Manager  */
-comment|/********************/
+comment|/***********************/
+comment|/*  Window Management  */
+comment|/***********************/
 name|vbox
 operator|=
 name|prefs_notebook_append_page
@@ -8075,10 +8075,10 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Window Manager"
+literal|"Window Management"
 argument_list|)
 argument_list|,
-literal|"window-manager.png"
+literal|"window-management.png"
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
@@ -8087,10 +8087,10 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Window Manager"
+literal|"Window Management"
 argument_list|)
 argument_list|,
-name|GIMP_HELP_PREFS_WINDOW_MANAGER
+name|GIMP_HELP_PREFS_WINDOW_MANAGEMENT
 argument_list|,
 name|NULL
 argument_list|,
@@ -8107,7 +8107,7 @@ name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Decorations"
+literal|"Window Type Hints"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -9239,7 +9239,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27e660d10208
+DECL|struct|__anon2bb7f4e50208
 block|{
 DECL|member|label
 specifier|const
@@ -9398,7 +9398,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27e660d10308
+DECL|struct|__anon2bb7f4e50308
 block|{
 DECL|member|tree_label
 specifier|const
