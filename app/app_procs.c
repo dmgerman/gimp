@@ -2531,10 +2531,6 @@ name|xcf_init
 argument_list|()
 expr_stmt|;
 comment|/*  initialize the xcf file format routines */
-name|register_tools
-argument_list|()
-expr_stmt|;
-comment|/* register internal tools */
 comment|/*  initialize  the global parasite table  */
 name|app_init_update_status
 argument_list|(

@@ -242,6 +242,15 @@ comment|/*  tools  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpToolInfo
+typedef|typedef
+name|struct
+name|_GimpToolInfo
+name|GimpToolInfo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTool
 typedef|typedef
 name|struct

@@ -42,6 +42,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/bucket_fill.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/move.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -169,24 +187,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/bucket_fill.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/move.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
 end_include
 
 begin_include
@@ -1015,11 +1015,6 @@ block|{
 case|case
 literal|1
 case|:
-name|g_message
-argument_list|(
-literal|"disp_callbacks button pressed"
-argument_list|)
-expr_stmt|;
 name|state
 operator||=
 name|GDK_BUTTON1_MASK
@@ -1055,7 +1050,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* FIXME!!! This code is ugly, and active_tool shouldn't be referenced directly */
+comment|/* FIXME!!! This code is ugly, and active_tool shouldn't be referenced  * directly  */
 if|if
 condition|(
 name|active_tool
@@ -1151,7 +1146,7 @@ operator|->
 name|preserve
 condition|)
 block|{
-name|gimp_tool_old_initialize
+name|tool_manager_initialize_tool
 argument_list|(
 name|active_tool
 argument_list|,
@@ -1181,7 +1176,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_tool_emit_button_press
+name|gimp_tool_button_press
 argument_list|(
 name|active_tool
 argument_list|,
@@ -1591,7 +1586,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|gimp_tool_emit_button_release
+name|gimp_tool_button_release
 argument_list|(
 name|active_tool
 argument_list|,
@@ -1927,7 +1922,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|gimp_tool_emit_motion
+name|gimp_tool_motion
 argument_list|(
 name|active_tool
 argument_list|,
@@ -1984,7 +1979,7 @@ condition|)
 block|{
 comment|/* ...then preconditions to modify a tool */
 comment|/* operator state have been met.          */
-name|gimp_tool_emit_oper_update
+name|gimp_tool_oper_update
 argument_list|(
 name|active_tool
 argument_list|,
@@ -2051,7 +2046,7 @@ operator|->
 name|gimage
 argument_list|)
 condition|)
-name|gimp_tool_emit_arrow_keys
+name|gimp_tool_arrow_key
 argument_list|(
 name|active_tool
 argument_list|,
@@ -2232,7 +2227,7 @@ directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 argument_list|)
 expr_stmt|;
-name|gimp_tool_emit_modifier_key
+name|gimp_tool_modifier_key
 argument_list|(
 name|active_tool
 argument_list|,
@@ -2370,7 +2365,7 @@ directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 argument_list|)
 expr_stmt|;
-name|gimp_tool_emit_modifier_key
+name|gimp_tool_modifier_key
 argument_list|(
 name|active_tool
 argument_list|,
@@ -2460,7 +2455,7 @@ name|state
 operator|=
 name|state
 expr_stmt|;
-name|gimp_tool_emit_cursor_update
+name|gimp_tool_cursor_update
 argument_list|(
 name|active_tool
 argument_list|,
@@ -3661,15 +3656,21 @@ name|gimp_add_busy_cursors
 argument_list|()
 expr_stmt|;
 comment|/*  Get the bucket fill context  */
-warning|#
-directive|warning
-warning|I like cheese
 if|#
 directive|if
 literal|0
-block|if (! global_paint_options)     context = tool_info[BUCKET_FILL].tool_context;   else     context = gimp_context_get_user ();
+block|if (! global_paint_options)
+warning|#
+directive|warning
+warning|FIXME    context = tool_info[BUCKET_FILL].tool_context;
+block|else
 endif|#
 directive|endif
+name|context
+operator|=
+name|gimp_context_get_user
+argument_list|()
+expr_stmt|;
 comment|/*  Transform the passed data for the dest image  */
 if|if
 condition|(

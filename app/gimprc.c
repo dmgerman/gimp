@@ -100,6 +100,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -190,12 +202,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
@@ -276,7 +282,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be7210f0103
+DECL|enum|__anon2c3f12cd0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -10547,9 +10553,11 @@ name|keys
 init|=
 name|NULL
 decl_stmt|;
-name|GimpTool
+name|gchar
 modifier|*
-name|tool
+name|tool_name
+init|=
+name|NULL
 decl_stmt|;
 name|GimpRGB
 name|foreground
@@ -11124,25 +11132,13 @@ operator|=
 name|get_next_token
 argument_list|()
 expr_stmt|;
-comment|/* FIXME: this shouldn't be hard coded like this */
-warning|#
-directive|warning
-warning|deep bogosity error
-if|#
-directive|if
-literal|0
-block|for (tool = FIRST_TOOLBOX_TOOL; tool<= LAST_TOOLBOX_TOOL; tool++) 	    { 	      if (!strcmp (tool_info[tool].tool_name, token_str)) 		break; 	    }
-endif|#
-directive|endif
-if|if
-condition|(
-name|tool
-operator|>
-name|LAST_TOOLBOX_TOOL
-condition|)
-goto|goto
-name|error
-goto|;
+name|tool_name
+operator|=
+name|g_strdup
+argument_list|(
+name|token_str
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -11424,7 +11420,7 @@ name|num_keys
 argument_list|,
 name|keys
 argument_list|,
-name|tool
+name|tool_name
 argument_list|,
 operator|&
 name|foreground
@@ -11437,6 +11433,11 @@ argument_list|,
 name|pattern_name
 argument_list|,
 name|gradient_name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tool_name
 argument_list|)
 expr_stmt|;
 name|g_free

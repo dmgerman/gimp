@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c5d07f0103
+DECL|enum|__anon275c8a0f0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c5d07f0203
+DECL|enum|__anon275c8a0f0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -279,10 +279,15 @@ name|GDisplay
 modifier|*
 name|display
 decl_stmt|;
-DECL|member|tool
-name|GimpTool
+DECL|member|tool_info
+name|GimpToolInfo
 modifier|*
-name|tool
+name|tool_info
+decl_stmt|;
+DECL|member|tool_name
+name|gchar
+modifier|*
+name|tool_name
 decl_stmt|;
 DECL|member|foreground
 name|GimpRGB
@@ -396,8 +401,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|ToolType
-name|tool
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 DECL|member|foreground_changed
@@ -968,7 +974,7 @@ comment|/*  tool  */
 end_comment
 
 begin_function_decl
-name|GimpTool
+name|GimpToolInfo
 modifier|*
 name|gimp_context_get_tool
 parameter_list|(
@@ -987,9 +993,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpTool
+name|GimpToolInfo
 modifier|*
-name|tool_type
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -245,8 +251,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ToolType
-name|tool
+name|GimpViewable
+modifier|*
+name|viewable
 parameter_list|,
 name|gpointer
 name|data
@@ -534,46 +541,6 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  dnd stuff  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|tool_target_table
-specifier|static
-name|GtkTargetEntry
-name|tool_target_table
-index|[]
-init|=
-block|{
-name|GIMP_TARGET_TOOL
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|n_tool_targets
-specifier|static
-name|guint
-name|n_tool_targets
-init|=
-operator|(
-sizeof|sizeof
-argument_list|(
-name|tool_target_table
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|tool_target_table
-index|[
-literal|0
-index|]
-argument_list|)
-operator|)
-decl_stmt|;
-end_decl_stmt
-
 begin_decl_stmt
 DECL|variable|drop_text
 specifier|static
@@ -800,7 +767,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  dnd stuff  */
-name|gtk_drag_dest_set
+name|gimp_gtk_drag_dest_set_by_type
 argument_list|(
 name|about_dialog
 argument_list|,
@@ -808,16 +775,16 @@ name|GTK_DEST_DEFAULT_MOTION
 operator||
 name|GTK_DEST_DEFAULT_DROP
 argument_list|,
-name|tool_target_table
-argument_list|,
-name|n_tool_targets
+name|GIMP_TYPE_TOOL_INFO
 argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_tool_dest_set
+name|gimp_dnd_viewable_dest_set
 argument_list|(
 name|about_dialog
+argument_list|,
+name|GIMP_TYPE_TOOL_INFO
 argument_list|,
 name|about_dialog_tool_drop
 argument_list|,
@@ -2550,15 +2517,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|about_dialog_tool_drop (GtkWidget * widget,ToolType tool,gpointer data)
+DECL|function|about_dialog_tool_drop (GtkWidget * widget,GimpViewable * viewable,gpointer data)
 name|about_dialog_tool_drop
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ToolType
-name|tool
+name|GimpViewable
+modifier|*
+name|viewable
 parameter_list|,
 name|gpointer
 name|data

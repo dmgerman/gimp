@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"context_manager.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
 end_include
 
 begin_comment
@@ -411,7 +411,7 @@ name|gimage
 operator|==
 name|gimage
 condition|)
-name|gimp_tool_old_initialize
+name|tool_manager_initialize_tool
 argument_list|(
 name|active_tool
 argument_list|,
@@ -419,7 +419,7 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_tool_old_initialize
+name|tool_manager_initialize_tool
 argument_list|(
 name|active_tool
 argument_list|,

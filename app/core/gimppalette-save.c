@@ -77,12 +77,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"temp_buf.h"
 end_include
 

@@ -54,6 +54,30 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tool_options_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"about_dialog.h"
 end_include
 
@@ -387,18 +411,6 @@ end_endif
 begin_comment
 comment|/* DISPLAY_FILTERS */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_options_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool.h"
-end_include
 
 begin_include
 include|#
@@ -4082,40 +4094,86 @@ name|guint
 name|callback_action
 parameter_list|)
 block|{
-name|ToolType
-name|tool_type
+name|GimpToolInfo
+modifier|*
+name|tool_info
 decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|tool_type
+name|tool_info
 operator|=
-operator|(
-name|ToolType
-operator|)
+name|GIMP_TOOL_INFO
+argument_list|(
 name|callback_action
+argument_list|)
 expr_stmt|;
 name|gdisp
 operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
+name|gimp_context_set_tool
+argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
+name|tool_info
+argument_list|)
+expr_stmt|;
 warning|#
 directive|warning
-warning|fix tools_select_cmd_callback
-if|#
-directive|if
-literal|0
-block|gimp_context_set_tool (gimp_context_get_user (), tool_type);
+warning|FIXME (let the tool manager to this stuff)
 comment|/*  Paranoia  */
-block|active_tool->drawable = NULL;
+name|active_tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
 comment|/*  Complete the initialisation by doing the same stuff    *  tools_initialize() does after it did what tools_select() does    */
-block|if (tool_info[tool_type].init_func)     {       (* tool_info[tool_type].init_func) (gdisp);        active_tool->drawable = gimp_image_active_drawable (gdisp->gimage);     }
+if|if
+condition|(
+name|GIMP_TOOL_CLASS
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|active_tool
+argument_list|)
+operator|->
+name|klass
+argument_list|)
+operator|->
+name|initialize
+condition|)
+block|{
+name|gimp_tool_initialize
+argument_list|(
+name|active_tool
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|active_tool
+operator|->
+name|drawable
+operator|=
+name|gimp_image_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  setting the tool->gdisp here is a HACK to allow the tools'    *  dialog windows being hidden if the tool was selected from    *  a tear-off-menu and there was no mouse click in the display    *  before deleting it    */
-block|active_tool->gdisp = gdisp;
-endif|#
-directive|endif
+name|active_tool
+operator|->
+name|gdisp
+operator|=
+name|gdisp
+expr_stmt|;
 block|}
 end_function
 

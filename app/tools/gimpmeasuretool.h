@@ -22,76 +22,6 @@ directive|include
 file|"tool.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_TYPE_MEASURE
-define|#
-directive|define
-name|GIMP_TYPE_MEASURE
-value|(gimp_measure_tool_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_MEASURE (obj)
-define|#
-directive|define
-name|GIMP_MEASURE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_MEASURE, GimpMeasureTool))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_MEASURE (obj)
-define|#
-directive|define
-name|GIMP_IS_MEASURE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_MEASURE))
-end_define
-
-begin_define
-DECL|macro|GIMP_MEASURE_CLASS (klass)
-define|#
-directive|define
-name|GIMP_MEASURE_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MEASURE, GimpMeasureToolClass))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_MEASURE_CLASS (klass)
-define|#
-directive|define
-name|GIMP_IS_MEASURE_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MEASURE))
-end_define
-
-begin_typedef
-DECL|typedef|GimpMeasureTool
-typedef|typedef
-name|struct
-name|_GimpMeasureTool
-name|GimpMeasureTool
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpMeasureToolClass
-typedef|typedef
-name|struct
-name|_GimpMeasureToolClass
-name|GimpMeasureToolClass
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  possible measure functions  */
 end_comment
@@ -99,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcc3d610103
+DECL|enum|__anon2ae2c5d10103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -121,6 +51,76 @@ name|FINISHED
 DECL|typedef|MeasureFunction
 block|}
 name|MeasureFunction
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_MEASURE_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_MEASURE_TOOL
+value|(gimp_measure_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_MEASURE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_MEASURE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_MEASURE_TOOL, GimpMeasureTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_MEASURE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_MEASURE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_MEASURE_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_MEASURE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_MEASURE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MEASURE_TOOL, GimpMeasureToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_MEASURE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_MEASURE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MEASURE_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpMeasureTool
+typedef|typedef
+name|struct
+name|_GimpMeasureTool
+name|GimpMeasureTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpMeasureToolClass
+typedef|typedef
+name|struct
+name|_GimpMeasureToolClass
+name|GimpMeasureToolClass
 typedef|;
 end_typedef
 
@@ -225,6 +225,15 @@ end_function_decl
 begin_function_decl
 name|GtkType
 name|gimp_measure_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_measure_tool_register
 parameter_list|(
 name|void
 parameter_list|)
