@@ -568,9 +568,11 @@ if|if
 condition|(
 name|dockable
 condition|)
-block|{
-comment|/* TODO */
-block|}
+name|gimp_dockable_detach
+argument_list|(
+name|dockable
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
