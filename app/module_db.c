@@ -139,7 +139,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b2f96d0103
+DECL|enum|__anon2aab74b40103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -341,7 +341,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2f96d0208
+DECL|struct|__anon2aab74b40208
 block|{
 DECL|member|object
 name|GtkObject
@@ -456,7 +456,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2f96d0308
+DECL|struct|__anon2aab74b40308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -641,6 +641,18 @@ name|mod
 parameter_list|,
 name|gboolean
 name|verbose
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|mod_idle_unref
+parameter_list|(
+name|ModuleInfo
+modifier|*
+name|mod
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1754,7 +1766,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2f96d0408
+DECL|struct|__anon2aab74b40408
 block|{
 DECL|member|parent_class
 name|GtkObjectClass
@@ -1768,7 +1780,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2f96d0503
+DECL|enum|__anon2aab74b40503
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -2992,11 +3004,41 @@ argument_list|,
 name|mod
 argument_list|)
 expr_stmt|;
+name|gtk_idle_add
+argument_list|(
+operator|(
+name|GtkFunction
+operator|)
+name|mod_idle_unref
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|mod
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|mod_idle_unref (ModuleInfo * mod)
+name|mod_idle_unref
+parameter_list|(
+name|ModuleInfo
+modifier|*
+name|mod
+parameter_list|)
+block|{
 name|gimp_module_unref
 argument_list|(
 name|mod
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
@@ -4594,7 +4636,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b2f96d0608
+DECL|struct|__anon2aab74b40608
 block|{
 DECL|member|search_key
 specifier|const

@@ -130,7 +130,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2967e7940103
+DECL|enum|__anon292c8c0c0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -2479,6 +2479,13 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|tmp
 operator|=
 name|gimage
