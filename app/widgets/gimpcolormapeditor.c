@@ -187,7 +187,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276099ec0103
+DECL|enum|__anon27c5aba30103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -429,6 +429,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -3769,12 +3775,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_colormap_preview_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
+DECL|function|gimp_colormap_preview_drop_color (GtkWidget * widget,gint x,gint y,const GimpRGB * color,gpointer data)
 name|gimp_colormap_preview_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 specifier|const
 name|GimpRGB

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7172080103
+DECL|enum|__anon2ad27c920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7172080203
+DECL|enum|__anon2ad27c920203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7172080303
+DECL|enum|__anon2ad27c920303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -300,6 +300,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -2477,12 +2483,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_fg_bg_editor_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
+DECL|function|gimp_fg_bg_editor_drop_color (GtkWidget * widget,gint x,gint y,const GimpRGB * color,gpointer data)
 name|gimp_fg_bg_editor_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 specifier|const
 name|GimpRGB

@@ -246,6 +246,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
@@ -1220,12 +1226,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_editor_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
+DECL|function|gimp_selection_editor_drop_color (GtkWidget * widget,gint x,gint y,const GimpRGB * color,gpointer data)
 name|gimp_selection_editor_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 specifier|const
 name|GimpRGB

@@ -281,6 +281,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GCallback
 name|set_data_func
 parameter_list|,
@@ -420,6 +426,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GCallback
 name|set_uri_list_func
 parameter_list|,
@@ -466,6 +478,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_color_func
@@ -514,6 +532,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GCallback
 name|set_stream_func
 parameter_list|,
@@ -560,6 +584,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_image_func
@@ -608,6 +638,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GCallback
 name|set_item_func
 parameter_list|,
@@ -655,6 +691,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GCallback
 name|set_brush_func
 parameter_list|,
@@ -676,6 +718,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_pattern_func
@@ -699,6 +747,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GCallback
 name|set_gradient_func
 parameter_list|,
@@ -720,6 +774,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_palette_func
@@ -743,6 +803,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GCallback
 name|set_font_func
 parameter_list|,
@@ -764,6 +830,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_buffer_func
@@ -787,6 +859,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GCallback
 name|set_imagefile_func
 parameter_list|,
@@ -809,6 +887,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GCallback
 name|set_template_func
 parameter_list|,
@@ -830,6 +914,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_tool_func
@@ -2020,6 +2110,10 @@ name|set_data_func
 argument_list|(
 name|widget
 argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|,
 name|set_data_func
 argument_list|,
 name|set_data_data
@@ -2913,12 +3007,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_uri_list_data (GtkWidget * widget,GCallback set_uri_list_func,gpointer set_uri_list_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_uri_list_data (GtkWidget * widget,gint x,gint y,GCallback set_uri_list_func,gpointer set_uri_list_data,GtkSelectionData * selection)
 name|gimp_dnd_set_uri_list_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_uri_list_func
@@ -2957,6 +3057,10 @@ name|set_uri_list_func
 operator|)
 operator|(
 name|widget
+operator|,
+name|x
+operator|,
+name|y
 operator|,
 name|uri_list
 operator|,
@@ -3334,12 +3438,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_color_data (GtkWidget * widget,GCallback set_color_func,gpointer set_color_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_color_data (GtkWidget * widget,gint x,gint y,GCallback set_color_func,gpointer set_color_data,GtkSelectionData * selection)
 name|gimp_dnd_set_color_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_color_func
@@ -3378,6 +3488,10 @@ name|set_color_func
 operator|)
 operator|(
 name|widget
+operator|,
+name|x
+operator|,
+name|y
 operator|,
 operator|&
 name|color
@@ -3618,12 +3732,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_stream_data (GtkWidget * widget,GCallback set_stream_func,gpointer set_stream_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_stream_data (GtkWidget * widget,gint x,gint y,GCallback set_stream_func,gpointer set_stream_data,GtkSelectionData * selection)
 name|gimp_dnd_set_stream_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_stream_func
@@ -3671,6 +3791,10 @@ name|set_stream_func
 operator|)
 operator|(
 name|widget
+operator|,
+name|x
+operator|,
+name|y
 operator|,
 name|stream
 operator|,
@@ -4801,12 +4925,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_image_data (GtkWidget * widget,GCallback set_image_func,gpointer set_image_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_image_data (GtkWidget * widget,gint x,gint y,GCallback set_image_func,gpointer set_image_data,GtkSelectionData * selection)
 name|gimp_dnd_set_image_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_image_func
@@ -4847,6 +4977,10 @@ name|set_image_func
 operator|)
 operator|(
 name|widget
+operator|,
+name|x
+operator|,
+name|y
 operator|,
 name|GIMP_VIEWABLE
 argument_list|(
@@ -4940,12 +5074,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_item_data (GtkWidget * widget,GCallback set_item_func,gpointer set_item_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_item_data (GtkWidget * widget,gint x,gint y,GCallback set_item_func,gpointer set_item_data,GtkSelectionData * selection)
 name|gimp_dnd_set_item_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_item_func
@@ -4986,6 +5126,10 @@ name|set_item_func
 operator|)
 operator|(
 name|widget
+operator|,
+name|x
+operator|,
+name|y
 operator|,
 name|GIMP_VIEWABLE
 argument_list|(
@@ -5094,12 +5238,18 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_brush_data (GtkWidget * widget,GCallback set_brush_func,gpointer set_brush_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_brush_data (GtkWidget * widget,gint x,gint y,GCallback set_brush_func,gpointer set_brush_data,GtkSelectionData * selection)
 name|gimp_dnd_set_brush_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_brush_func
@@ -5141,6 +5291,10 @@ operator|)
 operator|(
 name|widget
 operator|,
+name|x
+operator|,
+name|y
+operator|,
 name|GIMP_VIEWABLE
 argument_list|(
 name|brush
@@ -5170,12 +5324,18 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_pattern_data (GtkWidget * widget,GCallback set_pattern_func,gpointer set_pattern_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_pattern_data (GtkWidget * widget,gint x,gint y,GCallback set_pattern_func,gpointer set_pattern_data,GtkSelectionData * selection)
 name|gimp_dnd_set_pattern_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_pattern_func
@@ -5217,6 +5377,10 @@ operator|)
 operator|(
 name|widget
 operator|,
+name|x
+operator|,
+name|y
+operator|,
 name|GIMP_VIEWABLE
 argument_list|(
 name|pattern
@@ -5246,12 +5410,18 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_gradient_data (GtkWidget * widget,GCallback set_gradient_func,gpointer set_gradient_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_gradient_data (GtkWidget * widget,gint x,gint y,GCallback set_gradient_func,gpointer set_gradient_data,GtkSelectionData * selection)
 name|gimp_dnd_set_gradient_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_gradient_func
@@ -5293,6 +5463,10 @@ operator|)
 operator|(
 name|widget
 operator|,
+name|x
+operator|,
+name|y
+operator|,
 name|GIMP_VIEWABLE
 argument_list|(
 name|gradient
@@ -5322,12 +5496,18 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_palette_data (GtkWidget * widget,GCallback set_palette_func,gpointer set_palette_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_palette_data (GtkWidget * widget,gint x,gint y,GCallback set_palette_func,gpointer set_palette_data,GtkSelectionData * selection)
 name|gimp_dnd_set_palette_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_palette_func
@@ -5369,6 +5549,10 @@ operator|)
 operator|(
 name|widget
 operator|,
+name|x
+operator|,
+name|y
+operator|,
 name|GIMP_VIEWABLE
 argument_list|(
 name|palette
@@ -5398,12 +5582,18 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_font_data (GtkWidget * widget,GCallback set_font_func,gpointer set_font_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_font_data (GtkWidget * widget,gint x,gint y,GCallback set_font_func,gpointer set_font_data,GtkSelectionData * selection)
 name|gimp_dnd_set_font_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_font_func
@@ -5445,6 +5635,10 @@ operator|)
 operator|(
 name|widget
 operator|,
+name|x
+operator|,
+name|y
+operator|,
 name|GIMP_VIEWABLE
 argument_list|(
 name|font
@@ -5474,12 +5668,18 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_buffer_data (GtkWidget * widget,GCallback set_buffer_func,gpointer set_buffer_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_buffer_data (GtkWidget * widget,gint x,gint y,GCallback set_buffer_func,gpointer set_buffer_data,GtkSelectionData * selection)
 name|gimp_dnd_set_buffer_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_buffer_func
@@ -5521,6 +5721,10 @@ operator|)
 operator|(
 name|widget
 operator|,
+name|x
+operator|,
+name|y
+operator|,
 name|GIMP_VIEWABLE
 argument_list|(
 name|buffer
@@ -5550,12 +5754,18 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_imagefile_data (GtkWidget * widget,GCallback set_imagefile_func,gpointer set_imagefile_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_imagefile_data (GtkWidget * widget,gint x,gint y,GCallback set_imagefile_func,gpointer set_imagefile_data,GtkSelectionData * selection)
 name|gimp_dnd_set_imagefile_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_imagefile_func
@@ -5597,6 +5807,10 @@ operator|)
 operator|(
 name|widget
 operator|,
+name|x
+operator|,
+name|y
+operator|,
 name|GIMP_VIEWABLE
 argument_list|(
 name|imagefile
@@ -5626,12 +5840,18 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_template_data (GtkWidget * widget,GCallback set_template_func,gpointer set_template_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_template_data (GtkWidget * widget,gint x,gint y,GCallback set_template_func,gpointer set_template_data,GtkSelectionData * selection)
 name|gimp_dnd_set_template_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_template_func
@@ -5673,6 +5893,10 @@ operator|)
 operator|(
 name|widget
 operator|,
+name|x
+operator|,
+name|y
+operator|,
 name|GIMP_VIEWABLE
 argument_list|(
 name|template
@@ -5702,12 +5926,18 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_tool_data (GtkWidget * widget,GCallback set_tool_func,gpointer set_tool_data,GtkSelectionData * selection)
+DECL|function|gimp_dnd_set_tool_data (GtkWidget * widget,gint x,gint y,GCallback set_tool_func,gpointer set_tool_data,GtkSelectionData * selection)
 name|gimp_dnd_set_tool_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GCallback
 name|set_tool_func
@@ -5748,6 +5978,10 @@ name|set_tool_func
 operator|)
 operator|(
 name|widget
+operator|,
+name|x
+operator|,
+name|y
 operator|,
 name|GIMP_VIEWABLE
 argument_list|(

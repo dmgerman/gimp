@@ -195,12 +195,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_preview_drop_brush (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|brush_preview_drop_brush (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|brush_preview_drop_brush
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -276,12 +282,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pattern_preview_drop_pattern (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|pattern_preview_drop_pattern (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|pattern_preview_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -357,12 +369,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_preview_drop_gradient (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gradient_preview_drop_gradient (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gradient_preview_drop_gradient
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*

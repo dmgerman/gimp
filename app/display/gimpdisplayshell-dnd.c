@@ -214,12 +214,18 @@ end_endif
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_drawable (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_display_shell_drop_drawable (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_display_shell_drop_drawable
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -462,12 +468,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_vectors (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_display_shell_drop_vectors (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_display_shell_drop_vectors
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -602,12 +614,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_svg (GtkWidget * widget,const guchar * svg_data,gsize svg_data_len,gpointer data)
+DECL|function|gimp_display_shell_drop_svg (GtkWidget * widget,gint x,gint y,const guchar * svg_data,gsize svg_data_len,gpointer data)
 name|gimp_display_shell_drop_svg
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 specifier|const
 name|guchar
@@ -874,12 +892,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_pattern (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_display_shell_drop_pattern (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_display_shell_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -926,12 +950,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
+DECL|function|gimp_display_shell_drop_color (GtkWidget * widget,gint x,gint y,const GimpRGB * color,gpointer data)
 name|gimp_display_shell_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -969,12 +999,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_buffer (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_display_shell_drop_buffer (GtkWidget * widget,gint drop_x,gint drop_y,GimpViewable * viewable,gpointer data)
 name|gimp_display_shell_drop_buffer
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|drop_x
+parameter_list|,
+name|gint
+name|drop_y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -1104,12 +1140,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_uri_list (GtkWidget * widget,GList * uri_list,gpointer data)
+DECL|function|gimp_display_shell_drop_uri_list (GtkWidget * widget,gint x,gint y,GList * uri_list,gpointer data)
 name|gimp_display_shell_drop_uri_list
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GList
 modifier|*

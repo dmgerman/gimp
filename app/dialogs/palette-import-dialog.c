@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c35734c0103
+DECL|enum|__anon2b77d2080103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -344,6 +344,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -2292,12 +2298,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|import_dialog_drop_callback (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|import_dialog_drop_callback (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|import_dialog_drop_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*

@@ -280,6 +280,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -1464,12 +1470,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_options_editor_drop_tool (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_tool_options_editor_drop_tool (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_tool_options_editor_drop_tool
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*

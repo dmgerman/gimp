@@ -10867,6 +10867,12 @@ name|GtkWidget
 modifier|*
 name|menu
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -11105,12 +11111,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_preview_drop (GtkWidget * preview,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_prop_preview_drop (GtkWidget * preview,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_prop_preview_drop
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|preview
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*

@@ -214,6 +214,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -232,6 +238,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -775,12 +787,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_tree_view_new_dropped (GimpItemTreeView * view,GimpBucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern)
+DECL|function|gimp_drawable_tree_view_new_dropped (GimpItemTreeView * view,gint x,gint y,GimpBucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern)
 name|gimp_drawable_tree_view_new_dropped
 parameter_list|(
 name|GimpItemTreeView
 modifier|*
 name|view
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpBucketFillMode
 name|fill_mode
@@ -949,12 +967,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_tree_view_new_pattern_dropped (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_drawable_tree_view_new_pattern_dropped (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_drawable_tree_view_new_pattern_dropped
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -970,6 +994,10 @@ name|GIMP_ITEM_TREE_VIEW
 argument_list|(
 name|data
 argument_list|)
+argument_list|,
+name|x
+argument_list|,
+name|y
 argument_list|,
 name|GIMP_PATTERN_BUCKET_FILL
 argument_list|,
@@ -987,12 +1015,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_tree_view_new_color_dropped (GtkWidget * widget,const GimpRGB * color,gpointer data)
+DECL|function|gimp_drawable_tree_view_new_color_dropped (GtkWidget * widget,gint x,gint y,const GimpRGB * color,gpointer data)
 name|gimp_drawable_tree_view_new_color_dropped
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -1009,6 +1043,10 @@ name|GIMP_ITEM_TREE_VIEW
 argument_list|(
 name|data
 argument_list|)
+argument_list|,
+name|x
+argument_list|,
+name|y
 argument_list|,
 name|GIMP_FG_BUCKET_FILL
 argument_list|,

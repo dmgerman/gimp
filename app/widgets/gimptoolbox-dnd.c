@@ -136,6 +136,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GList
 modifier|*
 name|uri_list
@@ -154,6 +160,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -174,6 +186,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -192,6 +210,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -348,12 +372,18 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_toolbox_drop_uri_list (GtkWidget * widget,GList * uri_list,gpointer data)
+DECL|function|gimp_toolbox_drop_uri_list (GtkWidget * widget,gint x,gint y,GList * uri_list,gpointer data)
 name|gimp_toolbox_drop_uri_list
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GList
 modifier|*
@@ -487,12 +517,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_toolbox_drop_drawable (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_toolbox_drop_drawable (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_toolbox_drop_drawable
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -783,12 +819,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_toolbox_drop_tool (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_toolbox_drop_tool (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_toolbox_drop_tool
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -823,12 +865,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_toolbox_drop_buffer (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_toolbox_drop_buffer (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_toolbox_drop_buffer
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*

@@ -302,6 +302,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -2672,12 +2678,18 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_editor_drop_gradient (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gradient_editor_drop_gradient (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gradient_editor_drop_gradient
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*

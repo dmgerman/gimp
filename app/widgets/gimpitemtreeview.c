@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dffd2a0103
+DECL|enum|__anon2ba4ef840103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -460,6 +460,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -3187,12 +3193,18 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_new_dropped (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_item_tree_view_new_dropped (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_item_tree_view_new_dropped
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*

@@ -147,12 +147,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_preview_drop_image (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|image_preview_drop_image (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|image_preview_drop_image
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*

@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2779d4100103
+DECL|enum|__anon2c53fbf70103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2779d4100203
+DECL|enum|__anon2c53fbf70203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -504,7 +504,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void   gimp_color_select_drop_color      (GtkWidget          *widget,                                                  const GimpRGB      *color,                                                  gpointer            data);
+unit|static void   gimp_color_select_drop_color      (GtkWidget          *widget,                                                  gint                x,                                                  gint                y,                                                  const GimpRGB      *color,                                                  gpointer            data);
 endif|#
 directive|endif
 end_endif
@@ -2970,7 +2970,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void gimp_color_select_drop_color (GtkWidget     *widget,                               const GimpRGB *color,                               gpointer       data) {   GimpColorSelect *select = GIMP_COLOR_SELECT (data);    select->rgb = *color;    gimp_color_select_update_hsv_values (select);    gimp_color_select_update (select,                             UPDATE_POS | UPDATE_XY_COLOR | UPDATE_Z_COLOR |                             UPDATE_CALLER); }
+unit|static void gimp_color_select_drop_color (GtkWidget     *widget,                               gint           x,                               gint           y,                               const GimpRGB *color,                               gpointer       data) {   GimpColorSelect *select = GIMP_COLOR_SELECT (data);    select->rgb = *color;    gimp_color_select_update_hsv_values (select);    gimp_color_select_update (select,                             UPDATE_POS | UPDATE_XY_COLOR | UPDATE_Z_COLOR |                             UPDATE_CALLER); }
 endif|#
 directive|endif
 end_endif

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895f69c0103
+DECL|enum|__anon29e133260103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -381,6 +381,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
@@ -399,6 +405,12 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -3739,12 +3751,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_view_viewable_dropped (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_container_view_viewable_dropped (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_container_view_viewable_dropped
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -3807,12 +3825,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_view_button_viewable_dropped (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+DECL|function|gimp_container_view_button_viewable_dropped (GtkWidget * widget,gint x,gint y,GimpViewable * viewable,gpointer data)
 name|gimp_container_view_button_viewable_dropped
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GimpViewable
 modifier|*
