@@ -1337,9 +1337,13 @@ operator|->
 name|gdisp_ptr
 condition|)
 block|{
-name|printf
+name|draw_core_stop
 argument_list|(
-literal|"Reset!\n"
+name|bezier_sel
+operator|->
+name|core
+argument_list|,
+name|tool
 argument_list|)
 expr_stmt|;
 name|bezier_select_reset

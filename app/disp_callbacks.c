@@ -745,41 +745,8 @@ name|ty
 expr_stmt|;
 block|}
 comment|/* reset the current tool if we're changing gdisplays */
-if|if
-condition|(
-name|active_tool
-operator|->
-name|gdisp_ptr
-condition|)
-block|{
-name|tool_gdisp
-operator|=
-name|active_tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
-if|if
-condition|(
-name|tool_gdisp
-operator|->
-name|ID
-operator|!=
-name|gdisp
-operator|->
-name|ID
-condition|)
-name|tools_initialize
-argument_list|(
-name|active_tool
-operator|->
-name|type
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
-comment|/* Reset the current tool if we're changing drawables... */
-block|}
-elseif|else
+comment|/* 		if (active_tool->gdisp_ptr) { 		  tool_gdisp = active_tool->gdisp_ptr; 		  if (tool_gdisp->ID != gdisp->ID) { 		    tools_initialize (active_tool->type, gdisp); 		    active_tool->drawable = gimage_active_drawable(gdisp->gimage); 		  } 		} else 		*/
+comment|/* reset the current tool if we're changing drawables */
 if|if
 condition|(
 name|active_tool
