@@ -530,6 +530,10 @@ operator|=
 name|gimp_stroke_editor_new
 argument_list|(
 name|options
+argument_list|,
+name|image
+operator|->
+name|yresolution
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

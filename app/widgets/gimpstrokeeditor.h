@@ -108,6 +108,10 @@ name|GimpStrokeOptions
 modifier|*
 name|options
 decl_stmt|;
+DECL|member|resolution
+name|gdouble
+name|resolution
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -143,6 +147,9 @@ parameter_list|(
 name|GimpStrokeOptions
 modifier|*
 name|options
+parameter_list|,
+name|gdouble
+name|resolution
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -485,6 +485,43 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  GParamInt, GParamDouble   unit: GimpParamUnit  */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_size_entry_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|unit_property_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|unit_format
+parameter_list|,
+name|GimpSizeEntryUpdatePolicy
+name|update_policy
+parameter_list|,
+name|gdouble
+name|resolution
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  x,y: GParamInt, GParamDouble   unit: GimpParamUnit  */
 end_comment
 
@@ -534,7 +571,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_prop_size_entry_connect
+name|gimp_prop_coordinates_connect
 parameter_list|(
 name|GObject
 modifier|*

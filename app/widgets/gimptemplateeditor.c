@@ -1511,7 +1511,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the sizeentry  */
-name|gimp_prop_size_entry_connect
+name|gimp_prop_coordinates_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -2021,7 +2021,7 @@ argument_list|(
 name|chainbutton
 argument_list|)
 expr_stmt|;
-name|gimp_prop_size_entry_connect
+name|gimp_prop_coordinates_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
