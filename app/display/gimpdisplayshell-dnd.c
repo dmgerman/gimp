@@ -736,6 +736,8 @@ return|return;
 comment|/* FIXME: there should be a virtual method for this that the      GimpTextLayer can override. */
 if|if
 condition|(
+name|color
+operator|&&
 name|GIMP_IS_TEXT_LAYER
 argument_list|(
 name|drawable
