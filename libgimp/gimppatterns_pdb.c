@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_patterns_refresh:  *  * Refresh current patterns.  *  * This procedure retrieves all patterns currently in the user's  * pattern path and updates the pattern dialogs accordingly.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_patterns_refresh:  *  * Refresh current patterns. This function always succeeds.  *  * This procedure retrieves all patterns currently in the user's  * pattern path and updates the pattern dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -411,7 +411,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_patterns_get_pattern_data:  * @name: the pattern name (\"\" means currently active pattern).  * @width: The pattern width.  * @height: The pattern height.  * @mask_bpp: Pattern bytes per pixel.  * @length: Length of pattern mask data.  * @mask_data: The pattern mask data.  *  * Retrieve information about the currently active pattern (including  * data).  *  * This procedure retrieves information about the currently active  * pattern. This includes the pattern name, and the pattern extents  * (width and height). It also returns the pattern data.  *  * Returns: The pattern name.  */
+comment|/**  * gimp_patterns_get_pattern_data:  * @name: The pattern name (\"\" means currently active pattern).  * @width: The pattern width.  * @height: The pattern height.  * @mask_bpp: Pattern bytes per pixel.  * @length: Length of pattern mask data.  * @mask_data: The pattern mask data.  *  * Retrieve information about the currently active pattern (including  * data).  *  * This procedure retrieves information about the currently active  * pattern. This includes the pattern name, and the pattern extents  * (width and height). It also returns the pattern data.  *  * Returns: The pattern name.  */
 end_comment
 
 begin_function

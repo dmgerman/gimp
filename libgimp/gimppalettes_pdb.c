@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_palettes_refresh:  *  * Refreshes current palettes.  *  * This procedure incorporates all palettes currently in the users  * palette path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_palettes_refresh:  *  * Refreshes current palettes. This function always succeeds.  *  * This procedure incorporates all palettes currently in the users  * palette path.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

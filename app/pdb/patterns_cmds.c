@@ -231,7 +231,7 @@ init|=
 block|{
 literal|"gimp_patterns_refresh"
 block|,
-literal|"Refresh current patterns."
+literal|"Refresh current patterns. This function always succeeds."
 block|,
 literal|"This procedure retrieves all patterns currently in the user's pattern path and updates the pattern dialogs accordingly."
 block|,
@@ -757,14 +757,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
-operator|(
-name|pattern
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
 if|if
 condition|(
 name|success
@@ -778,6 +770,11 @@ argument_list|)
 argument_list|,
 name|pattern
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -975,17 +972,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|success
-operator|=
-operator|(
-name|pattern
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
 if|if
 condition|(
-name|success
+name|pattern
 condition|)
 block|{
 name|length
@@ -1023,6 +1012,11 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 name|return_args
 operator|=
@@ -1145,7 +1139,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"the pattern name (\"\" means currently active pattern)"
+literal|"The pattern name (\"\" means currently active pattern)"
 block|}
 block|}
 decl_stmt|;

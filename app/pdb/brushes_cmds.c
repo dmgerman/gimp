@@ -290,7 +290,6 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-comment|/* FIXME: I've hardcoded success to be 1, because brushes_init() is a     *        void function right now.  It'd be nice if it returned a value at     *        some future date, so we could tell if things blew up when reparsing    *        the list (for whatever reason).     *                       - Seth "Yes, this is a kludge" Burgess    *<sjburges@gimp.org>    */
 name|gimp_data_factory_data_save
 argument_list|(
 name|gimp
@@ -328,7 +327,7 @@ init|=
 block|{
 literal|"gimp_brushes_refresh"
 block|,
-literal|"Refresh current brushes."
+literal|"Refresh current brushes. This function always succeeds."
 block|,
 literal|"This procedure retrieves all brushes currently in the user's brush path and updates the brush dialog accordingly."
 block|,
@@ -875,14 +874,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
-operator|(
-name|brush
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
 if|if
 condition|(
 name|brush
@@ -896,6 +887,11 @@ argument_list|)
 argument_list|,
 name|brush
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -1829,17 +1825,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|success
-operator|=
-operator|(
-name|brush
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
 if|if
 condition|(
-name|success
+name|brush
 condition|)
 block|{
 name|length
@@ -1871,6 +1859,11 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 name|return_args
 operator|=
@@ -2013,7 +2006,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"the brush name (\"\" means current active pattern)"
+literal|"The brush name (\"\" means current active brush)"
 block|}
 block|}
 decl_stmt|;

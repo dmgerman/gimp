@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_brushes_refresh:  *  * Refresh current brushes.  *  * This procedure retrieves all brushes currently in the user's brush  * path and updates the brush dialog accordingly.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_brushes_refresh:  *  * Refresh current brushes. This function always succeeds.  *  * This procedure retrieves all brushes currently in the user's brush  * path and updates the brush dialog accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -847,7 +847,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_brush_data:  * @name: the brush name (\"\" means current active pattern).  * @opacity: The brush opacity.  * @spacing: The brush spacing.  * @paint_mode: The paint mode.  * @width: The brush width.  * @height: The brush height.  * @length: Length of brush mask data.  * @mask_data: The brush mask data.  *  * Retrieve information about the currently active brush (including  * data).  *  * This procedure retrieves information about the currently active  * brush. This includes the brush name, and the brush extents (width  * and height). It also returns the brush data.  *  * Returns: The brush name.  */
+comment|/**  * gimp_brushes_get_brush_data:  * @name: The brush name (\"\" means current active brush).  * @opacity: The brush opacity.  * @spacing: The brush spacing.  * @paint_mode: The paint mode.  * @width: The brush width.  * @height: The brush height.  * @length: Length of brush mask data.  * @mask_data: The brush mask data.  *  * Retrieve information about the currently active brush (including  * data).  *  * This procedure retrieves information about the currently active  * brush. This includes the brush name, and the brush extents (width  * and height). It also returns the brush data.  *  * Returns: The brush name.  */
 end_comment
 
 begin_function

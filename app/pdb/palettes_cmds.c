@@ -194,7 +194,13 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-comment|/* FIXME: I've hardcoded success to be TRUE, because brushes_init() is a     *        void function right now.  It'd be nice if it returned a value at     *        some future date, so we could tell if things blew up when reparsing    *        the list (for whatever reason).     *                       - Seth "Yes, this is a kludge" Burgess    *<sjburges@ou.edu>    *   -and shamelessly stolen by Adrian Likins for use here...    */
+name|gimp_data_factory_data_save
+argument_list|(
+name|gimp
+operator|->
+name|palette_factory
+argument_list|)
+expr_stmt|;
 name|gimp_data_factory_data_init
 argument_list|(
 name|gimp
@@ -225,7 +231,7 @@ init|=
 block|{
 literal|"gimp_palettes_refresh"
 block|,
-literal|"Refreshes current palettes."
+literal|"Refreshes current palettes. This function always succeeds."
 block|,
 literal|"This procedure incorporates all palettes currently in the users palette path."
 block|,
@@ -726,17 +732,9 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
-operator|(
-name|palette
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
 if|if
 condition|(
-name|success
+name|palette
 condition|)
 name|gimp_context_set_palette
 argument_list|(
@@ -747,6 +745,11 @@ argument_list|)
 argument_list|,
 name|palette
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -950,17 +953,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|success
-operator|=
-operator|(
-name|palette
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
 if|if
 condition|(
-name|success
+name|palette
 condition|)
 block|{
 if|if
@@ -1010,6 +1005,11 @@ name|color
 expr_stmt|;
 block|}
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 name|return_args
 operator|=

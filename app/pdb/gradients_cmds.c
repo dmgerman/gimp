@@ -263,7 +263,7 @@ init|=
 block|{
 literal|"gimp_gradients_refresh"
 block|,
-literal|"Refresh current gradients."
+literal|"Refresh current gradients. This function always succeeds."
 block|,
 literal|"This procedure retrieves all gradients currently in the user's gradient path and updates the gradient dialogs accordingly."
 block|,
@@ -739,15 +739,10 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
 if|if
 condition|(
 name|gradient
 condition|)
-block|{
 name|gimp_context_set_gradient
 argument_list|(
 name|gimp_get_current_context
@@ -758,11 +753,11 @@ argument_list|,
 name|gradient
 argument_list|)
 expr_stmt|;
+else|else
 name|success
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
-block|}
 block|}
 return|return
 name|procedural_db_return_args
@@ -1641,10 +1636,6 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
 name|gradient
 operator|=
 operator|(
@@ -1680,14 +1671,6 @@ block|}
 if|if
 condition|(
 name|gradient
-condition|)
-name|success
-operator|=
-name|TRUE
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 block|{
 name|gdouble
@@ -1792,6 +1775,11 @@ name|delta
 expr_stmt|;
 block|}
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 name|return_args
 operator|=

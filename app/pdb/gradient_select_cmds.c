@@ -350,12 +350,10 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 block|}
 return|return
 name|procedural_db_return_args
@@ -559,12 +557,10 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 block|}
 return|return
 name|procedural_db_return_args

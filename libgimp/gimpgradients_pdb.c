@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_gradients_refresh:  *  * Refresh current gradients.  *  * This procedure retrieves all gradients currently in the user's  * gradient path and updates the gradient dialogs accordingly.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gradients_refresh:  *  * Refresh current gradients. This function always succeeds.  *  * This procedure retrieves all gradients currently in the user's  * gradient path and updates the gradient dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

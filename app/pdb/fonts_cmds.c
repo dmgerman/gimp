@@ -148,7 +148,7 @@ init|=
 block|{
 literal|"gimp_fonts_refresh"
 block|,
-literal|"Refresh current fonts."
+literal|"Refresh current fonts. This function always succeeds."
 block|,
 literal|"This procedure retrieves all fonts currently in the user's font path and updates the font dialogs accordingly."
 block|,
