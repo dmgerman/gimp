@@ -376,7 +376,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"passed pointer is no XPM data"
+literal|"%s: passed pointer is no XPM data"
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 block|}
