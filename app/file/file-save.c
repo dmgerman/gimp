@@ -822,6 +822,7 @@ condition|(
 name|save_a_copy
 condition|)
 block|{
+comment|/*  remember the "save-a-copy" filename for the next invocation  */
 name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
@@ -845,6 +846,33 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/*  reset the "save-a-copy" filename when the image URI changes  */
+if|if
+condition|(
+name|uri
+operator|&&
+name|strcmp
+argument_list|(
+name|uri
+argument_list|,
+name|gimp_image_get_uri
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+condition|)
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+literal|"gimp-image-save-a-copy"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_image_set_uri
 argument_list|(
 name|gimage
