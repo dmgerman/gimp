@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279f79360103
+DECL|enum|__anon28f4c5af0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279f79360203
+DECL|enum|__anon28f4c5af0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -966,21 +966,21 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|x_offset
+name|width
 condition|)
 operator|*
-name|x_offset
+name|width
 operator|=
-literal|0
+name|calc_width
 expr_stmt|;
 if|if
 condition|(
-name|y_offset
+name|height
 condition|)
 operator|*
-name|y_offset
+name|height
 operator|=
-literal|0
+name|calc_height
 expr_stmt|;
 if|if
 condition|(
@@ -1073,24 +1073,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-name|width
-condition|)
-operator|*
-name|width
-operator|=
-name|calc_width
-expr_stmt|;
-if|if
-condition|(
-name|height
-condition|)
-operator|*
-name|height
-operator|=
-name|calc_height
-expr_stmt|;
 block|}
 end_function
 
