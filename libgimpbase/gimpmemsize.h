@@ -16,15 +16,13 @@ directive|define
 name|__GIMP_MEMSIZE_H__
 end_define
 
-begin_define
+begin_decl_stmt
+name|G_BEGIN_DECLS
 DECL|macro|GIMP_TYPE_MEMSIZE
 define|#
 directive|define
 name|GIMP_TYPE_MEMSIZE
 value|(gimp_memsize_get_type ())
-end_define
-
-begin_define
 DECL|macro|GIMP_VALUE_HOLDS_MEMSIZE (value)
 define|#
 directive|define
@@ -33,9 +31,6 @@ parameter_list|(
 name|value
 parameter_list|)
 value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_MEMSIZE))
-end_define
-
-begin_decl_stmt
 name|GType
 name|gimp_memsize_get_type
 argument_list|(
@@ -82,6 +77,10 @@ name|memsize
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

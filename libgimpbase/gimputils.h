@@ -17,6 +17,7 @@ name|__GIMP_UTILS_H__
 end_define
 
 begin_function_decl
+name|G_BEGIN_DECLS
 name|gchar
 modifier|*
 name|gimp_utf8_strtrim
@@ -275,6 +276,10 @@ name|flags_value
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -22,6 +22,10 @@ directive|include
 file|<time.h>
 end_include
 
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
+
 begin_struct
 DECL|struct|_GimpDatafileData
 struct|struct
@@ -98,6 +102,10 @@ name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -16,72 +16,41 @@ directive|define
 name|__GIMP_LIMITS_H__
 end_define
 
-begin_comment
+begin_expr_stmt
+name|G_BEGIN_DECLS
 comment|/*  pixel sizes  */
-end_comment
-
-begin_define
 DECL|macro|GIMP_MIN_IMAGE_SIZE
 define|#
 directive|define
 name|GIMP_MIN_IMAGE_SIZE
 value|1
-end_define
-
-begin_define
 DECL|macro|GIMP_MAX_IMAGE_SIZE
 define|#
 directive|define
 name|GIMP_MAX_IMAGE_SIZE
 value|262144
-end_define
-
-begin_comment
-DECL|macro|GIMP_MAX_IMAGE_SIZE
 comment|/*  2^18  */
-end_comment
-
-begin_comment
 comment|/*  dots per inch  */
-end_comment
-
-begin_define
 DECL|macro|GIMP_MIN_RESOLUTION
 define|#
 directive|define
 name|GIMP_MIN_RESOLUTION
 value|5e-3
-end_define
-
-begin_comment
-DECL|macro|GIMP_MIN_RESOLUTION
 comment|/*  shouldn't display as 0.000  */
-end_comment
-
-begin_define
 DECL|macro|GIMP_MAX_RESOLUTION
 define|#
 directive|define
 name|GIMP_MAX_RESOLUTION
 value|65536.0
-end_define
-
-begin_comment
 comment|/*  memory sizes  */
-end_comment
-
-begin_define
 DECL|macro|GIMP_MAX_MEMSIZE
 define|#
 directive|define
 name|GIMP_MAX_MEMSIZE
 value|((guint64) 1<< 42)
-end_define
-
-begin_comment
-DECL|macro|GIMP_MAX_MEMSIZE
 comment|/*  4 terabyte;                                                   *  needs a 64bit variable                                                   *  and must be< G_MAXDOUBLE                                                   */
-end_comment
+name|G_END_DECLS
+end_expr_stmt
 
 begin_endif
 endif|#

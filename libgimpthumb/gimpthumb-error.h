@@ -16,10 +16,14 @@ directive|define
 name|__GIMP_THUMB_ERROR_H__
 end_define
 
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290a97830103
+DECL|enum|__anon2af073b60103
 block|{
 DECL|enumerator|GIMP_THUMB_ERROR_OPEN
 name|GIMP_THUMB_ERROR_OPEN
@@ -55,6 +59,10 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

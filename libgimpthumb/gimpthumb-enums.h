@@ -16,15 +16,13 @@ directive|define
 name|__GIMP_THUMB_ENUMS_H__
 end_define
 
-begin_define
+begin_decl_stmt
+name|G_BEGIN_DECLS
 DECL|macro|GIMP_TYPE_THUMB_FILE_TYPE
 define|#
 directive|define
 name|GIMP_TYPE_THUMB_FILE_TYPE
 value|(gimp_thumb_file_type_get_type ())
-end_define
-
-begin_decl_stmt
 name|GType
 name|gimp_thumb_file_type_get_type
 argument_list|(
@@ -37,7 +35,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2953261e0103
+DECL|enum|__anon2b06129b0103
 block|{
 DECL|enumerator|GIMP_THUMB_FILE_TYPE_NONE
 name|GIMP_THUMB_FILE_TYPE_NONE
@@ -77,7 +75,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2953261e0203
+DECL|enum|__anon2b06129b0203
 block|{
 DECL|enumerator|GIMP_THUMB_SIZE_FAIL
 name|GIMP_THUMB_SIZE_FAIL
@@ -120,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2953261e0303
+DECL|enum|__anon2b06129b0303
 block|{
 DECL|enumerator|GIMP_THUMB_STATE_UNKNOWN
 name|GIMP_THUMB_STATE_UNKNOWN
@@ -153,6 +151,10 @@ block|}
 name|GimpThumbState
 typedef|;
 end_typedef
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

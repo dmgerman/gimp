@@ -17,6 +17,7 @@ name|__GIMP_UNIT_CACHE_H__
 end_define
 
 begin_function_decl
+name|G_BEGIN_DECLS
 name|gint
 name|_gimp_unit_cache_get_number_of_units
 parameter_list|(
@@ -169,6 +170,10 @@ name|unit
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#
