@@ -219,7 +219,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  *  argv processing:   *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  *      The exception is the batch switch.  When this is  *      encountered, all remaining args are treated as batch  *      commands.  */
+comment|/*  *  argv processing:  *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  *      The exception is the batch switch.  When this is  *      encountered, all remaining args are treated as batch  *      commands.  */
 end_comment
 
 begin_function
@@ -236,8 +236,67 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|alternate_system_gimprc
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+name|alternate_gimprc
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+modifier|*
+name|batch_cmds
+init|=
+name|NULL
+decl_stmt|;
 name|gboolean
 name|show_help
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|no_interface
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|no_data
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|no_splash
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|no_splash_image
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|be_verbose
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|use_shm
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|use_mmx
+init|=
+name|TRUE
+decl_stmt|;
+name|gboolean
+name|restore_session
 init|=
 name|FALSE
 decl_stmt|;
@@ -1364,7 +1423,7 @@ block|}
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-comment|/* Common windoze apps don't have a console at all. So does Gimp     * - if appropiate. This allows to compile as console application    * with all it's benefits (like inheriting the console) but hide    * it, if the user doesn't want it.    */
+comment|/* Common windoze apps don't have a console at all. So does Gimp    * - if appropiate. This allows to compile as console application    * with all it's benefits (like inheriting the console) but hide    * it, if the user doesn't want it.    */
 if|if
 condition|(
 operator|!
@@ -1403,7 +1462,7 @@ block|}
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
-comment|/* No use catching these on Win32, the user won't get any     * stack trace from glib anyhow. It's better to let Windows inform    * about the program error, and offer debugging (if the user    * has installed MSVC or some other compiler that knows how to    * install itself as a handler for program errors).    */
+comment|/* No use catching these on Win32, the user won't get any    * stack trace from glib anyhow. It's better to let Windows inform    * about the program error, and offer debugging (if the user    * has installed MSVC or some other compiler that knows how to    * install itself as a handler for program errors).    */
 comment|/* Handle fatal signals */
 comment|/* these are handled by gimp_terminate() */
 name|gimp_signal_private
@@ -1520,6 +1579,34 @@ argument_list|,
 name|argv
 operator|+
 literal|1
+argument_list|,
+name|alternate_system_gimprc
+argument_list|,
+name|alternate_gimprc
+argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|*
+operator|)
+name|batch_cmds
+argument_list|,
+name|no_interface
+argument_list|,
+name|no_data
+argument_list|,
+name|no_splash
+argument_list|,
+name|no_splash_image
+argument_list|,
+name|be_verbose
+argument_list|,
+name|use_shm
+argument_list|,
+name|use_mmx
+argument_list|,
+name|restore_session
 argument_list|)
 expr_stmt|;
 return|return

@@ -119,17 +119,6 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|batch_cmds
-name|gchar
-modifier|*
-modifier|*
-name|batch_cmds
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|eval_proc
 specifier|static
 name|ProcRecord
