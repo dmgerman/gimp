@@ -659,10 +659,6 @@ argument_list|(
 literal|"Cannot create a new layer from the floating\n"
 literal|"selection because it belongs to a\n"
 literal|"layer mask or channel."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;
