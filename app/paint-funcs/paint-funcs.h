@@ -2645,11 +2645,27 @@ value|25
 end_define
 
 begin_define
+DECL|macro|ANTI_ERASE_INTEN
+define|#
+directive|define
+name|ANTI_ERASE_INTEN
+value|26
+end_define
+
+begin_define
+DECL|macro|ANTI_ERASE_INDEXED
+define|#
+directive|define
+name|ANTI_ERASE_INDEXED
+value|27
+end_define
+
+begin_define
 DECL|macro|NO_COMBINATION
 define|#
 directive|define
 name|NO_COMBINATION
-value|26
+value|28
 end_define
 
 begin_function_decl
@@ -2820,7 +2836,7 @@ comment|/*  Layer Modes  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9318520103
+DECL|enum|__anon2c50271e0103
 typedef|typedef
 enum|enum
 block|{
@@ -2878,6 +2894,10 @@ block|,
 comment|/*< skip>*/
 DECL|enumerator|REPLACE_MODE
 name|REPLACE_MODE
+block|,
+comment|/*< skip>*/
+DECL|enumerator|ANTI_ERASE_MODE
+name|ANTI_ERASE_MODE
 block|,
 comment|/*< skip>*/
 DECL|typedef|LayerModeEffects
