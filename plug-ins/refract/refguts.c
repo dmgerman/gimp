@@ -24,7 +24,7 @@ file|"libgimp/gimp.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bef12540108
+DECL|struct|__anon29c3a7610108
 typedef|typedef
 struct|struct
 block|{
@@ -480,7 +480,7 @@ name|gimp_drawable_get
 argument_list|(
 name|refractvals
 operator|.
-name|lensmap
+name|lens_id
 argument_list|)
 expr_stmt|;
 comment|/* Fortunately, this isn't really run repeatedly, so it's OK if         it's not all that compact, right? */
@@ -1996,16 +1996,6 @@ name|na
 argument_list|)
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|REFRACT_DEBUG
-name|puts
-argument_list|(
-literal|"!"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 return|return
 name|FALSE
 return|;
@@ -2036,7 +2026,7 @@ operator|-
 operator|(
 name|refractvals
 operator|.
-name|dist
+name|refr_dist
 operator|+
 name|height
 operator|)

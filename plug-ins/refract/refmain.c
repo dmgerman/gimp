@@ -123,7 +123,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2c86ae440108
+DECL|struct|__anon2c280e570108
 typedef|typedef
 struct|struct
 block|{
@@ -362,12 +362,19 @@ operator|-
 literal|1
 block|,
 comment|/* Lens map ID */
+operator|-
+literal|1
+block|,
+comment|/* Reflection source ID */
 literal|32
 block|,
 comment|/* lens thickness */
 literal|0
 block|,
-comment|/* distance */
+comment|/* lens to image distance */
+literal|64
+block|,
+comment|/* lens to reflection source distance */
 literal|1.0003
 block|,
 comment|/* index a */
@@ -449,9 +456,17 @@ comment|/* If we did have parameters, these be them: */
 block|{
 name|PARAM_DRAWABLE
 block|,
-literal|"lensmap"
+literal|"lens_id"
 block|,
 literal|"Lens map drawable"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"refl_id"
+block|,
+literal|"Reflection source drawable."
 block|}
 block|,
 block|{
@@ -465,9 +480,17 @@ block|,
 block|{
 name|PARAM_INT32
 block|,
-literal|"dist"
+literal|"refr_dist"
 block|,
 literal|"Lens distance from image"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"refl_dist"
+block|,
+literal|"Lens distance from reflection source"
 block|}
 block|,
 block|{
@@ -644,6 +667,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+comment|/*  values=g_new(GParam,1); */
 name|run_mode
 operator|=
 name|param
@@ -744,7 +768,7 @@ condition|)
 block|{
 name|refractvals
 operator|.
-name|lensmap
+name|lens_id
 operator|=
 name|param
 index|[
@@ -757,7 +781,7 @@ name|d_drawable
 expr_stmt|;
 name|refractvals
 operator|.
-name|thick
+name|refl_id
 operator|=
 name|param
 index|[
@@ -770,7 +794,7 @@ name|d_int32
 expr_stmt|;
 name|refractvals
 operator|.
-name|dist
+name|thick
 operator|=
 name|param
 index|[
@@ -783,7 +807,7 @@ name|d_int32
 expr_stmt|;
 name|refractvals
 operator|.
-name|na
+name|refr_dist
 operator|=
 name|param
 index|[
@@ -796,7 +820,7 @@ name|d_float
 expr_stmt|;
 name|refractvals
 operator|.
-name|nb
+name|refl_dist
 operator|=
 name|param
 index|[
@@ -809,7 +833,7 @@ name|d_float
 expr_stmt|;
 name|refractvals
 operator|.
-name|edge
+name|na
 operator|=
 name|param
 index|[
@@ -822,7 +846,7 @@ name|d_int32
 expr_stmt|;
 name|refractvals
 operator|.
-name|newl
+name|nb
 operator|=
 name|param
 index|[
@@ -835,7 +859,7 @@ name|d_int32
 expr_stmt|;
 name|refractvals
 operator|.
-name|xofs
+name|edge
 operator|=
 name|param
 index|[
@@ -848,11 +872,37 @@ name|d_int32
 expr_stmt|;
 name|refractvals
 operator|.
-name|yofs
+name|newl
 operator|=
 name|param
 index|[
 literal|11
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|refractvals
+operator|.
+name|xofs
+operator|=
+name|param
+index|[
+literal|12
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|refractvals
+operator|.
+name|yofs
+operator|=
+name|param
+index|[
+literal|13
 index|]
 operator|.
 name|data
@@ -1319,7 +1369,7 @@ name|NULL
 argument_list|,
 name|refractvals
 operator|.
-name|lensmap
+name|lens_id
 argument_list|)
 expr_stmt|;
 name|gtk_option_menu_set_menu
@@ -1450,7 +1500,7 @@ argument_list|,
 operator|&
 name|refractvals
 operator|.
-name|dist
+name|refr_dist
 argument_list|)
 expr_stmt|;
 comment|/* a entry/scale/drop-menu for each index */
@@ -2258,7 +2308,7 @@ parameter_list|)
 block|{
 name|refractvals
 operator|.
-name|lensmap
+name|lens_id
 operator|=
 name|id
 expr_stmt|;

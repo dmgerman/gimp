@@ -9,12 +9,6 @@ directive|ifndef
 name|REFRACT_DEBUG
 end_ifndef
 
-begin_warning
-warning|#
-directive|warning
-literal|"REFRACT_DEBUG flag is Off."
-end_warning
-
 begin_define
 DECL|macro|REFRACT_TITLE
 define|#
@@ -27,12 +21,6 @@ begin_else
 else|#
 directive|else
 end_else
-
-begin_warning
-warning|#
-directive|warning
-literal|"REFRACT_DEBUG flag is On."
-end_warning
 
 begin_define
 DECL|macro|REFRACT_TITLE
@@ -154,25 +142,35 @@ file|"gtk/gtk.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29f2052f0108
+DECL|struct|__anon2b8db4990108
 typedef|typedef
 struct|struct
 block|{
-DECL|member|lensmap
+DECL|member|lens_id
 name|gint32
-name|lensmap
+name|lens_id
 decl_stmt|;
 comment|/* lens map id */
+DECL|member|refl_id
+name|gint32
+name|refl_id
+decl_stmt|;
+comment|/* Reflection source ID */
 DECL|member|thick
 name|gint32
 name|thick
 decl_stmt|;
 comment|/* lens thickness */
-DECL|member|dist
+DECL|member|refr_dist
 name|gint32
-name|dist
+name|refr_dist
 decl_stmt|;
-comment|/* distance */
+comment|/* distance from lens to image. */
+DECL|member|refl_dist
+name|gint32
+name|refl_dist
+decl_stmt|;
+comment|/* Distance from lens/mirror to reflection source. */
 DECL|member|na
 name|gdouble
 name|na
@@ -184,22 +182,22 @@ name|nb
 decl_stmt|;
 comment|/* index b */
 DECL|member|edge
-name|gint
+name|gint32
 name|edge
 decl_stmt|;
 comment|/* wrap/transparent */
 DECL|member|newl
-name|gint
+name|gint32
 name|newl
 decl_stmt|;
 comment|/* new layer? */
 DECL|member|xofs
-name|gint
+name|gint32
 name|xofs
 decl_stmt|;
 comment|/* offset x */
 DECL|member|yofs
-name|gint
+name|gint32
 name|yofs
 decl_stmt|;
 comment|/* offset y */
