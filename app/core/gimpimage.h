@@ -1207,27 +1207,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_get_active_components
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-specifier|const
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-modifier|*
-name|active
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_image_set_component_visible
 parameter_list|(
 name|GimpImage
