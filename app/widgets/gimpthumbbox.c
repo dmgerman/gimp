@@ -716,8 +716,10 @@ literal|"%s  Click to force update even "
 literal|"if preview is up-to-date"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data

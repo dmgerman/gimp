@@ -707,8 +707,10 @@ literal|"Save all errors\n"
 literal|"%s  Save selection"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_shift
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_SHIFT_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|console

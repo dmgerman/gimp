@@ -415,11 +415,15 @@ literal|"%s  Raise window if already open\n"
 literal|"%s  Open image dialog"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_shift
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_SHIFT_MASK
+argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|document_view
@@ -529,11 +533,15 @@ literal|"%s  Reload all previews\n"
 literal|"%s  Remove Dangling Entries"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_shift
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_SHIFT_MASK
+argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|document_view

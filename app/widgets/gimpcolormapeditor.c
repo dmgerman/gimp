@@ -205,7 +205,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b16b14e0103
+DECL|enum|__anon297715ce0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -964,8 +964,10 @@ argument_list|(
 literal|"Add color from FG\n%s  from BG"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|editor

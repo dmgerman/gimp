@@ -627,8 +627,10 @@ argument_list|(
 literal|"Anti erase  %s"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_alt
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_MOD1_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|button

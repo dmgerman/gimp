@@ -810,8 +810,10 @@ literal|"Reset to default values\n"
 literal|"%s  Reset all Tool Options"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_shift
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_SHIFT_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|editor

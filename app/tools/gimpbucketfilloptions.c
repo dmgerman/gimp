@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2951babf0103
+DECL|enum|__anon2a5605d40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -880,10 +880,12 @@ argument_list|(
 literal|"Fill Type  %s"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
 argument_list|)
-expr_stmt|;
+argument_list|)
+operator|,
 name|frame
 operator|=
 name|gimp_prop_enum_radio_frame_new
@@ -935,8 +937,10 @@ argument_list|(
 literal|"Affected Area  %s"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_shift
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_SHIFT_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|frame

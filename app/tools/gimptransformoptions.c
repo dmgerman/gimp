@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c286c8a0103
+DECL|enum|__anon279333820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1756,22 +1756,6 @@ name|GtkWidget
 modifier|*
 name|vbox3
 decl_stmt|;
-name|gchar
-modifier|*
-name|str
-decl_stmt|;
-name|gchar
-modifier|*
-name|str1
-decl_stmt|;
-name|gchar
-modifier|*
-name|str2
-decl_stmt|;
-name|gchar
-modifier|*
-name|str3
-decl_stmt|;
 comment|/*  the constraints frame  */
 name|frame
 operator|=
@@ -1849,6 +1833,10 @@ operator|==
 name|GIMP_TYPE_ROTATE_TOOL
 condition|)
 block|{
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|str
 operator|=
 name|g_strdup_printf
@@ -1858,8 +1846,10 @@ argument_list|(
 literal|"15 degrees  %s"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|button
@@ -1912,6 +1902,18 @@ operator|==
 name|GIMP_TYPE_SCALE_TOOL
 condition|)
 block|{
+name|gchar
+modifier|*
+name|str1
+decl_stmt|;
+name|gchar
+modifier|*
+name|str2
+decl_stmt|;
+name|gchar
+modifier|*
+name|str3
+decl_stmt|;
 name|g_object_set
 argument_list|(
 name|config
@@ -1936,8 +1938,10 @@ argument_list|(
 literal|"Keep height  %s"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_SHIFT_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|str2
@@ -1949,8 +1953,10 @@ argument_list|(
 literal|"Keep width  %s"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_alt
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_MOD1_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|str3
@@ -1959,14 +1965,15 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Keep aspect  %s-%s"
+literal|"Keep aspect  %s"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
-argument_list|,
-name|gimp_get_mod_name_alt
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
+operator||
+name|GDK_MOD1_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vbox3

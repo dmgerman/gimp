@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c435050103
+DECL|enum|__anon27a8ef370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -781,8 +781,10 @@ argument_list|(
 literal|"Tool Toggle  %s"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
-argument_list|()
+name|gimp_get_mod_string
+argument_list|(
+name|GDK_CONTROL_MASK
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|frame
