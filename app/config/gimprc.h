@@ -102,6 +102,10 @@ name|gchar
 modifier|*
 name|system_gimprc
 decl_stmt|;
+DECL|member|verbose
+name|gboolean
+name|verbose
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -143,14 +147,14 @@ comment|/* NULL for default */
 specifier|const
 name|gchar
 modifier|*
-name|user__gimprc
+name|user_gimprc
+parameter_list|,
+comment|/* NULL for default */
+name|gboolean
+name|verbose
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* NULL for default */
-end_comment
 
 begin_function_decl
 name|void

@@ -236,7 +236,7 @@ value|gtk_widget_modify_style (widget, title_style)
 end_define
 
 begin_enum
-DECL|enum|__anon27b449160103
+DECL|enum|__anon2890f8930103
 enum|enum
 block|{
 DECL|enumerator|DIRENT_COLUMN
@@ -482,7 +482,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27b449160208
+DECL|struct|__anon2890f8930208
 block|{
 DECL|member|directory
 name|gboolean
@@ -1764,7 +1764,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|user_install_dialog_create (const gchar * alternate_system_gimprc,const gchar * alternate_gimprc)
+DECL|function|user_install_dialog_create (const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,gboolean verbose)
 name|user_install_dialog_create
 parameter_list|(
 specifier|const
@@ -1776,6 +1776,9 @@ specifier|const
 name|gchar
 modifier|*
 name|alternate_gimprc
+parameter_list|,
+name|gboolean
+name|verbose
 parameter_list|)
 block|{
 name|GimpRc
@@ -1833,6 +1836,8 @@ argument_list|(
 name|alternate_system_gimprc
 argument_list|,
 name|alternate_gimprc
+argument_list|,
+name|verbose
 argument_list|)
 expr_stmt|;
 name|dialog

@@ -116,7 +116,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b81f4f90103
+DECL|enum|__anon293d87fa0103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -1086,9 +1086,18 @@ name|rc
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_printerr
+if|if
+condition|(
+name|rc
+operator|->
+name|verbose
+condition|)
+name|g_print
 argument_list|(
-literal|"parsing '%s'\n"
+name|_
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|)
 argument_list|,
 name|rc
 operator|->
@@ -1138,9 +1147,18 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-name|g_printerr
+if|if
+condition|(
+name|rc
+operator|->
+name|verbose
+condition|)
+name|g_print
 argument_list|(
-literal|"parsing '%s'\n"
+name|_
+argument_list|(
+literal|"Parsing '%s'\n"
+argument_list|)
 argument_list|,
 name|rc
 operator|->
@@ -1196,7 +1214,7 @@ end_function
 begin_function
 name|GimpRc
 modifier|*
-DECL|function|gimp_rc_new (const gchar * system_gimprc,const gchar * user_gimprc)
+DECL|function|gimp_rc_new (const gchar * system_gimprc,const gchar * user_gimprc,gboolean verbose)
 name|gimp_rc_new
 parameter_list|(
 specifier|const
@@ -1208,6 +1226,9 @@ specifier|const
 name|gchar
 modifier|*
 name|user_gimprc
+parameter_list|,
+name|gboolean
+name|verbose
 parameter_list|)
 block|{
 name|GimpRc
@@ -1261,6 +1282,16 @@ argument_list|,
 name|NULL
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|rc
+operator|->
+name|verbose
+operator|=
+name|verbose
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|gimp_rc_load
 argument_list|(
@@ -1631,9 +1662,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_printerr
+if|if
+condition|(
+name|rc
+operator|->
+name|verbose
+condition|)
+name|g_print
 argument_list|(
-literal|"saving '%s'\n"
+name|_
+argument_list|(
+literal|"Saving '%s'\n"
+argument_list|)
 argument_list|,
 name|rc
 operator|->

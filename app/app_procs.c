@@ -353,17 +353,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  this needs to be done before gimprc loading  */
-name|gimp_unitrc_load
-argument_list|(
-name|the_gimp
-argument_list|)
-expr_stmt|;
 name|user_install_dialog_create
 argument_list|(
 name|alternate_system_gimprc
 argument_list|,
 name|alternate_gimprc
+argument_list|,
+name|be_verbose
 argument_list|)
 expr_stmt|;
 name|gtk_main
@@ -371,7 +367,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/*  this needs to be done before gimprc loading  */
+comment|/*  this needs to be done before gimprc loading because gimprc can    *  use user defined units    */
 name|gimp_unitrc_load
 argument_list|(
 name|the_gimp
@@ -388,6 +384,8 @@ argument_list|(
 name|alternate_system_gimprc
 argument_list|,
 name|alternate_gimprc
+argument_list|,
+name|be_verbose
 argument_list|)
 argument_list|)
 expr_stmt|;
