@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4f57b0108
+DECL|struct|__anon2c7919060108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4f57b0208
+DECL|struct|__anon2c7919060208
 block|{
 DECL|member|run
 name|gboolean
@@ -241,9 +241,11 @@ name|void
 name|unsharp_region
 parameter_list|(
 name|GimpPixelRgn
+modifier|*
 name|srcPTR
 parameter_list|,
 name|GimpPixelRgn
+modifier|*
 name|dstPTR
 parameter_list|,
 name|gint
@@ -314,7 +316,7 @@ specifier|static
 name|void
 name|preview_update
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -981,8 +983,10 @@ argument_list|)
 expr_stmt|;
 name|unsharp_region
 argument_list|(
+operator|&
 name|srcPR
 argument_list|,
+operator|&
 name|destPR
 argument_list|,
 name|width
@@ -1053,13 +1057,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|unsharp_region (GimpPixelRgn srcPR,GimpPixelRgn destPR,gint width,gint height,gint bytes,gdouble radius,gdouble amount,gint x1,gint x2,gint y1,gint y2,gboolean show_progress)
+DECL|function|unsharp_region (GimpPixelRgn * srcPR,GimpPixelRgn * destPR,gint width,gint height,gint bytes,gdouble radius,gdouble amount,gint x1,gint x2,gint y1,gint y2,gboolean show_progress)
 name|unsharp_region
 parameter_list|(
 name|GimpPixelRgn
+modifier|*
 name|srcPR
 parameter_list|,
 name|GimpPixelRgn
+modifier|*
 name|destPR
 parameter_list|,
 name|gint
@@ -1236,7 +1242,6 @@ control|)
 block|{
 name|gimp_pixel_rgn_get_row
 argument_list|(
-operator|&
 name|destPR
 argument_list|,
 name|dest_row
@@ -1267,7 +1272,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_set_row
 argument_list|(
-operator|&
 name|destPR
 argument_list|,
 name|dest_row
@@ -1303,7 +1307,6 @@ control|)
 block|{
 name|gimp_pixel_rgn_get_row
 argument_list|(
-operator|&
 name|srcPR
 argument_list|,
 name|cur_row
@@ -1319,7 +1322,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_get_row
 argument_list|(
-operator|&
 name|destPR
 argument_list|,
 name|dest_row
@@ -1352,7 +1354,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_set_row
 argument_list|(
-operator|&
 name|destPR
 argument_list|,
 name|dest_row
@@ -1431,7 +1432,6 @@ control|)
 block|{
 name|gimp_pixel_rgn_get_col
 argument_list|(
-operator|&
 name|destPR
 argument_list|,
 name|cur_col
@@ -1447,7 +1447,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_get_col
 argument_list|(
-operator|&
 name|destPR
 argument_list|,
 name|dest_col
@@ -1480,7 +1479,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_set_col
 argument_list|(
-operator|&
 name|destPR
 argument_list|,
 name|dest_col
@@ -1562,7 +1560,6 @@ expr_stmt|;
 comment|/* get source row */
 name|gimp_pixel_rgn_get_row
 argument_list|(
-operator|&
 name|srcPR
 argument_list|,
 name|cur_row
@@ -1579,7 +1576,6 @@ expr_stmt|;
 comment|/* get dest row */
 name|gimp_pixel_rgn_get_row
 argument_list|(
-operator|&
 name|destPR
 argument_list|,
 name|dest_row
@@ -1724,7 +1720,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_set_row
 argument_list|(
-operator|&
 name|destPR
 argument_list|,
 name|dest_row
@@ -3341,10 +3336,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preview_update (GimpDrawablePreview * preview)
+DECL|function|preview_update (GimpPreview * preview)
 name|preview_update
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -3367,13 +3362,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|guchar
-modifier|*
-name|render_buffer
-init|=
-name|NULL
-decl_stmt|;
-comment|/* Buffer to hold rendered image */
 name|gint
 name|preview_x1
 decl_stmt|;
@@ -3421,16 +3409,6 @@ decl_stmt|,
 name|destPR
 decl_stmt|;
 comment|/* Pixel regions */
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-comment|/* Current location in image */
-name|gint
-name|offset
-decl_stmt|;
-comment|/* Preview loop control      */
 if|if
 condition|(
 operator|!
@@ -3443,7 +3421,10 @@ name|drawable
 operator|=
 name|gimp_drawable_preview_get_drawable
 argument_list|(
+name|GIMP_DRAWABLE_PREVIEW
+argument_list|(
 name|preview
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Get drawable info */
@@ -3475,10 +3456,7 @@ expr_stmt|;
 comment|/*    * Setup for filter...    */
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_x1
@@ -3489,10 +3467,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_x2
@@ -3595,20 +3570,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|render_buffer
-operator|=
-name|g_new
-argument_list|(
-name|guchar
-argument_list|,
-name|preview_buf_width
-operator|*
-name|preview_buf_height
-operator|*
-name|bytes
-argument_list|)
-expr_stmt|;
-comment|/* render image */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -3631,8 +3592,10 @@ argument_list|)
 expr_stmt|;
 name|unsharp_region
 argument_list|(
+operator|&
 name|srcPR
 argument_list|,
+operator|&
 name|destPR
 argument_list|,
 name|preview_buf_width
@@ -3660,67 +3623,15 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_get_rect
+name|gimp_drawable_preview_draw_region
 argument_list|(
-operator|&
-name|destPR
-argument_list|,
-name|render_buffer
-argument_list|,
-name|preview_buf_x1
-argument_list|,
-name|preview_buf_y1
-argument_list|,
-name|preview_buf_width
-argument_list|,
-name|preview_buf_height
-argument_list|)
-expr_stmt|;
-comment|/*    * Draw the preview image on the screen...    */
-name|y
-operator|=
-name|preview_y1
-operator|-
-name|preview_buf_y1
-expr_stmt|;
-name|x
-operator|=
-name|preview_x1
-operator|-
-name|preview_buf_x1
-expr_stmt|;
-name|offset
-operator|=
-operator|(
-name|x
-operator|*
-name|bytes
-operator|)
-operator|+
-operator|(
-name|y
-operator|*
-name|preview_buf_width
-operator|*
-name|bytes
-operator|)
-expr_stmt|;
-name|gimp_drawable_preview_draw_buffer
+name|GIMP_DRAWABLE_PREVIEW
 argument_list|(
 name|preview
-argument_list|,
-name|render_buffer
-operator|+
-name|offset
-argument_list|,
-name|preview_buf_width
-operator|*
-name|bytes
 argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|render_buffer
+argument_list|,
+operator|&
+name|destPR
 argument_list|)
 expr_stmt|;
 block|}
