@@ -1619,6 +1619,16 @@ name|Bitmap_Head
 operator|.
 name|biBitCnt
 expr_stmt|;
+if|if
+condition|(
+name|ColormapSize
+operator|>
+literal|256
+condition|)
+name|ColormapSize
+operator|=
+literal|256
+expr_stmt|;
 comment|/* Sanity checks */
 if|if
 condition|(
@@ -1682,10 +1692,6 @@ return|;
 block|}
 if|if
 condition|(
-name|ColormapSize
-operator|>
-literal|256
-operator|||
 name|Bitmap_Head
 operator|.
 name|biClrUsed
