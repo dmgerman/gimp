@@ -2358,6 +2358,7 @@ name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
