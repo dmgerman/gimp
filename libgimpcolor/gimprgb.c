@@ -896,6 +896,24 @@ case|case
 name|GIMP_RGB_COMPOSITE_NORMAL
 case|:
 comment|/*  put color2 on top of color1  */
+if|if
+condition|(
+name|color2
+operator|->
+name|a
+operator|==
+literal|1.0
+condition|)
+block|{
+operator|*
+name|color1
+operator|=
+operator|*
+name|color2
+expr_stmt|;
+block|}
+else|else
+block|{
 name|factor
 operator|=
 name|color1
@@ -974,11 +992,21 @@ name|color2
 operator|->
 name|a
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_RGB_COMPOSITE_BEHIND
 case|:
 comment|/*  put color2 below color1  */
+if|if
+condition|(
+name|color1
+operator|->
+name|a
+operator|<
+literal|1.0
+condition|)
+block|{
 name|factor
 operator|=
 name|color2
@@ -1057,6 +1085,7 @@ name|color1
 operator|->
 name|a
 expr_stmt|;
+block|}
 break|break;
 block|}
 block|}

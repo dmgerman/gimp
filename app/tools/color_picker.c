@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorarea.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -103,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"tool_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpcolorarea.h"
 end_include
 
 begin_include
