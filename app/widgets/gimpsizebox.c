@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e990460103
+DECL|enum|__anon2c42f7990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1057,7 +1057,7 @@ name|FALSE
 argument_list|,
 name|SB_WIDTH
 argument_list|,
-name|GIMP_SIZE_ENTRY_UPDATE_SIZE
+name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
 argument_list|,
 name|TRUE
 argument_list|,
