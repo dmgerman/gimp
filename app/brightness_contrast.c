@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -185,7 +179,7 @@ name|_BrightnessContrast
 block|{
 DECL|member|x
 DECL|member|y
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -859,12 +853,11 @@ block|}
 decl_stmt|;
 name|bcd
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|BrightnessContrastDialog
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|bcd
@@ -917,7 +910,7 @@ literal|"Brightness-Contrast"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* handle wm close signal */
+comment|/*  handle wm close signal  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -956,9 +949,9 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -971,12 +964,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  The table containing sliders  */
@@ -1697,14 +1684,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_update (BrightnessContrastDialog * bcd,int update)
+DECL|function|brightness_contrast_update (BrightnessContrastDialog * bcd,gint update)
 name|brightness_contrast_update
 parameter_list|(
 name|BrightnessContrastDialog
 modifier|*
 name|bcd
 parameter_list|,
-name|int
+name|gint
 name|update
 parameter_list|)
 block|{
@@ -1781,9 +1768,14 @@ operator|&
 name|BRIGHTNESS_TEXT
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%0.0f"
 argument_list|,
@@ -1812,9 +1804,14 @@ operator|&
 name|CONTRAST_TEXT
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%0.0f"
 argument_list|,
@@ -1857,11 +1854,14 @@ name|bcd
 operator|->
 name|image_map
 condition|)
+block|{
 name|g_message
 argument_list|(
 literal|"brightness_contrast_preview(): No image map"
 argument_list|)
 expr_stmt|;
+return|return;
+block|}
 name|active_tool
 operator|->
 name|preserve
@@ -2069,26 +2069,26 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|brightness_contrast_delete_callback (GtkWidget * w,GdkEvent * e,gpointer d)
+DECL|function|brightness_contrast_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|brightness_contrast_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
-name|d
+name|data
 parameter_list|)
 block|{
 name|brightness_contrast_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
-name|d
+name|data
 argument_list|)
 expr_stmt|;
 return|return
@@ -2100,7 +2100,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_cancel_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|brightness_contrast_cancel_callback (GtkWidget * widget,gpointer data)
 name|brightness_contrast_cancel_callback
 parameter_list|(
 name|GtkWidget
@@ -2108,7 +2108,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|BrightnessContrastDialog
@@ -2121,7 +2121,7 @@ operator|(
 name|BrightnessContrastDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -2193,12 +2193,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_preview_update (GtkWidget * w,gpointer data)
+DECL|function|brightness_contrast_preview_update (GtkWidget * widget,gpointer data)
 name|brightness_contrast_preview_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -2220,7 +2220,7 @@ if|if
 condition|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|w
+name|widget
 argument_list|)
 operator|->
 name|active
@@ -2385,12 +2385,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_brightness_text_update (GtkWidget * w,gpointer data)
+DECL|function|brightness_contrast_brightness_text_update (GtkWidget * widget,gpointer data)
 name|brightness_contrast_brightness_text_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -2400,11 +2400,11 @@ name|BrightnessContrastDialog
 modifier|*
 name|bcd
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|int
+name|gint
 name|value
 decl_stmt|;
 name|str
@@ -2413,7 +2413,7 @@ name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2488,12 +2488,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_contrast_text_update (GtkWidget * w,gpointer data)
+DECL|function|brightness_contrast_contrast_text_update (GtkWidget * widget,gpointer data)
 name|brightness_contrast_contrast_text_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -2503,11 +2503,11 @@ name|BrightnessContrastDialog
 modifier|*
 name|bcd
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|int
+name|gint
 name|value
 decl_stmt|;
 name|str
@@ -2516,7 +2516,7 @@ name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
