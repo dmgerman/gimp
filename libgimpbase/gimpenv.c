@@ -605,8 +605,6 @@ decl_stmt|;
 if|if
 condition|(
 name|toplevel
-operator|!=
-name|NULL
 condition|)
 return|return
 name|toplevel
@@ -629,7 +627,7 @@ literal|0
 condition|)
 name|g_error
 argument_list|(
-literal|"GetModuleFilename failed\n"
+literal|"GetModuleFilename failed"
 argument_list|)
 expr_stmt|;
 comment|/* If the executable file name is of the format    *<foobar>\bin\*.exe or    *<foobar>\lib\gimp\GIMP_MAJOR_VERSION.GIMP_MINOR_VERSION\plug-ins\*.exe,    * use<foobar>. Otherwise, use the directory where the    * executable is.    */
@@ -793,11 +791,9 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|gimp_data_dir
 condition|)
-return|return
-name|gimp_data_dir
-return|;
 name|gimp_data_dir
 operator|=
 name|gimp_env_get_dir
@@ -836,13 +832,9 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|gimp_locale_dir
-operator|!=
-name|NULL
 condition|)
-return|return
-name|gimp_locale_dir
-return|;
 name|gimp_locale_dir
 operator|=
 name|gimp_env_get_dir
@@ -881,13 +873,9 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|gimp_sysconf_dir
-operator|!=
-name|NULL
 condition|)
-return|return
-name|gimp_sysconf_dir
-return|;
 name|gimp_sysconf_dir
 operator|=
 name|gimp_env_get_dir
@@ -926,11 +914,9 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|gimp_plug_in_dir
 condition|)
-return|return
-name|gimp_plug_in_dir
-return|;
 name|gimp_plug_in_dir
 operator|=
 name|gimp_env_get_dir
@@ -972,7 +958,6 @@ condition|(
 operator|!
 name|gimp_gtkrc_filename
 condition|)
-block|{
 name|gimp_gtkrc_filename
 operator|=
 name|g_build_filename
@@ -989,7 +974,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|gimp_gtkrc_filename
 return|;
@@ -1494,6 +1478,18 @@ name|list
 argument_list|)
 control|)
 block|{
+name|gchar
+modifier|*
+name|dir
+init|=
+operator|(
+name|gchar
+operator|*
+operator|)
+name|list
+operator|->
+name|data
+decl_stmt|;
 if|if
 condition|(
 name|str
@@ -1510,13 +1506,7 @@ name|g_string_append
 argument_list|(
 name|str
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
-name|list
-operator|->
-name|data
+name|dir
 argument_list|)
 expr_stmt|;
 block|}
@@ -1526,13 +1516,7 @@ name|str
 operator|=
 name|g_string_new
 argument_list|(
-operator|(
-name|gchar
-operator|*
-operator|)
-name|list
-operator|->
-name|data
+name|dir
 argument_list|)
 expr_stmt|;
 block|}
@@ -1541,13 +1525,8 @@ if|if
 condition|(
 name|str
 condition|)
-block|{
 name|retval
 operator|=
-name|str
-operator|->
-name|str
-expr_stmt|;
 name|g_string_free
 argument_list|(
 name|str
@@ -1555,7 +1534,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|retval
 return|;
@@ -1563,7 +1541,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_free:  * @path: A list of directories as returned by gimp_path_parse().  *  * This function frees the memory allocated for the list and it's strings.  **/
+comment|/**  * gimp_path_free:  * @path: A list of directories as returned by gimp_path_parse().  *  * This function frees the memory allocated for the list and the strings  * it contains.  **/
 end_comment
 
 begin_function
@@ -1576,34 +1554,18 @@ modifier|*
 name|path
 parameter_list|)
 block|{
-name|GList
-modifier|*
-name|list
-decl_stmt|;
-for|for
-control|(
-name|list
-operator|=
+name|g_list_foreach
+argument_list|(
 name|path
-init|;
-name|list
-condition|;
-name|list
-operator|=
-name|g_list_next
-argument_list|(
-name|list
-argument_list|)
-control|)
-block|{
+argument_list|,
+operator|(
+name|GFunc
+operator|)
 name|g_free
-argument_list|(
-name|list
-operator|->
-name|data
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 name|g_list_free
 argument_list|(
 name|path
@@ -1682,9 +1644,7 @@ block|{
 name|gchar
 modifier|*
 name|dir
-decl_stmt|;
-name|dir
-operator|=
+init|=
 operator|(
 name|gchar
 operator|*
@@ -1692,7 +1652,7 @@ operator|)
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 comment|/*  check if directory exists  */
 name|err
 operator|=
