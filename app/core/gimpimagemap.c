@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29735d240103
+DECL|enum|__anon2b888f960103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1826,9 +1826,9 @@ operator|->
 name|drawable
 argument_list|)
 argument_list|,
-name|dest
-argument_list|,
 name|src
+argument_list|,
+name|dest
 argument_list|)
 expr_stmt|;
 if|if

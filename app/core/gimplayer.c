@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b52bd2f0103
+DECL|enum|__anon28d2401c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2941,16 +2941,6 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|src
-operator|+
-operator|(
-name|i
-operator|*
-name|bufPR
-operator|->
-name|bytes
-operator|)
-argument_list|,
 name|dest
 operator|+
 operator|(
@@ -2962,6 +2952,16 @@ name|bytes
 operator|)
 argument_list|,
 name|type
+argument_list|,
+name|src
+operator|+
+operator|(
+name|i
+operator|*
+name|bufPR
+operator|->
+name|bytes
+operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  copy alpha channel  */

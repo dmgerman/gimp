@@ -9444,11 +9444,11 @@ name|dest
 argument_list|,
 name|drawable
 argument_list|,
-name|p
-argument_list|,
 name|d
 argument_list|,
 name|GIMP_RGB
+argument_list|,
+name|p
 argument_list|)
 expr_stmt|;
 name|d
@@ -9516,11 +9516,11 @@ name|dest
 argument_list|,
 name|drawable
 argument_list|,
-name|p
-argument_list|,
 name|d
 argument_list|,
 name|GIMP_RGB
+argument_list|,
+name|p
 argument_list|)
 expr_stmt|;
 name|d

@@ -770,9 +770,9 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|dest
-argument_list|,
 name|src
+argument_list|,
+name|dest
 argument_list|)
 expr_stmt|;
 if|if

@@ -1048,34 +1048,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  variable source to RGB color mapping  *  src_type == 0  (RGB)  *  src_type == 1  (GRAY)  *  src_type == 2  (INDEXED)  */
-end_comment
-
-begin_function_decl
-name|void
-name|map_to_color
-parameter_list|(
-name|guint
-name|src_type
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|cmap
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|src
-parameter_list|,
-name|guchar
-modifier|*
-name|rgb
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  Region functions  */
 end_comment
 

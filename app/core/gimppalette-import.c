@@ -1286,9 +1286,9 @@ name|gimage
 argument_list|,
 name|d_type
 argument_list|,
-name|rgb
-argument_list|,
 name|idata
+argument_list|,
+name|rgb
 argument_list|)
 expr_stmt|;
 name|memcpy

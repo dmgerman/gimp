@@ -600,17 +600,13 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Update the region  */
-name|gimp_image_update
+name|gimp_drawable_update
 argument_list|(
-name|gimage
+name|drawable
 argument_list|,
 name|x1
-operator|+
-name|off_x
 argument_list|,
 name|y1
-operator|+
-name|off_y
 argument_list|,
 operator|(
 name|x2
@@ -623,15 +619,6 @@ name|y2
 operator|-
 name|y1
 operator|)
-argument_list|)
-expr_stmt|;
-comment|/*  Invalidate the preview  */
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

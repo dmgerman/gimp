@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc8c360103
+DECL|enum|__anon2c0697bd0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -2933,12 +2933,12 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|c
-argument_list|,
 operator|&
 name|i
 argument_list|,
 name|GIMP_RGB
+argument_list|,
+name|c
 argument_list|)
 expr_stmt|;
 name|c
@@ -4195,9 +4195,9 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|dest
-argument_list|,
 name|src
+argument_list|,
+name|dest
 argument_list|)
 expr_stmt|;
 if|if

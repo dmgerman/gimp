@@ -624,11 +624,11 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|tmp_col
-argument_list|,
 name|col
 argument_list|,
 name|GIMP_RGB
+argument_list|,
+name|tmp_col
 argument_list|)
 expr_stmt|;
 block|}
@@ -920,8 +920,6 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|d1
-argument_list|,
 name|d2
 argument_list|,
 operator|(
@@ -937,6 +935,8 @@ condition|?
 name|GIMP_RGB
 else|:
 name|GIMP_GRAY
+argument_list|,
+name|d1
 argument_list|)
 expr_stmt|;
 comment|/* Handle alpha */

@@ -141,11 +141,7 @@ parameter_list|)
 block|{
 name|TileManager
 modifier|*
-name|cut
-decl_stmt|;
-name|TileManager
-modifier|*
-name|cropped_cut
+name|tiles
 decl_stmt|;
 name|gboolean
 name|empty
@@ -195,7 +191,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Next, cut the mask portion from the gimage  */
-name|cut
+name|tiles
 operator|=
 name|gimp_image_mask_extract
 argument_list|(
@@ -212,7 +208,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cut
+name|tiles
 condition|)
 name|gimage
 operator|->
@@ -225,53 +221,43 @@ expr_stmt|;
 comment|/*  Only crop if the gimage mask wasn't empty  */
 if|if
 condition|(
-name|cut
+name|tiles
 operator|&&
 operator|!
 name|empty
 condition|)
 block|{
-name|cropped_cut
+name|TileManager
+modifier|*
+name|crop
+decl_stmt|;
+name|crop
 operator|=
 name|tile_manager_crop
 argument_list|(
-name|cut
+name|tiles
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cropped_cut
+name|crop
 operator|!=
-name|cut
+name|tiles
 condition|)
 block|{
 name|tile_manager_unref
 argument_list|(
-name|cut
+name|tiles
 argument_list|)
 expr_stmt|;
-name|cut
+name|tiles
 operator|=
-name|NULL
+name|crop
 expr_stmt|;
 block|}
 block|}
-elseif|else
-if|if
-condition|(
-name|cut
-condition|)
-name|cropped_cut
-operator|=
-name|cut
-expr_stmt|;
-else|else
-name|cropped_cut
-operator|=
-name|NULL
-expr_stmt|;
 comment|/*  end the group undo  */
 name|gimp_image_undo_group_end
 argument_list|(
@@ -280,7 +266,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cropped_cut
+name|tiles
 condition|)
 block|{
 comment|/*  Free the old global edit buffer  */
@@ -310,7 +296,7 @@ name|global_buffer
 operator|=
 name|gimp_buffer_new
 argument_list|(
-name|cropped_cut
+name|tiles
 argument_list|,
 literal|"Global Buffer"
 argument_list|,
@@ -349,11 +335,7 @@ parameter_list|)
 block|{
 name|TileManager
 modifier|*
-name|copy
-decl_stmt|;
-name|TileManager
-modifier|*
-name|cropped_copy
+name|tiles
 decl_stmt|;
 name|gboolean
 name|empty
@@ -403,7 +385,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  First, copy the masked portion of the gimage  */
-name|copy
+name|tiles
 operator|=
 name|gimp_image_mask_extract
 argument_list|(
@@ -420,7 +402,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|copy
+name|tiles
 condition|)
 name|gimage
 operator|->
@@ -433,53 +415,43 @@ expr_stmt|;
 comment|/*  Only crop if the gimage mask wasn't empty  */
 if|if
 condition|(
-name|copy
+name|tiles
 operator|&&
 operator|!
 name|empty
 condition|)
 block|{
-name|cropped_copy
+name|TileManager
+modifier|*
+name|crop
+decl_stmt|;
+name|crop
 operator|=
 name|tile_manager_crop
 argument_list|(
-name|copy
+name|tiles
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cropped_copy
+name|crop
 operator|!=
-name|copy
+name|tiles
 condition|)
 block|{
 name|tile_manager_unref
 argument_list|(
-name|copy
+name|tiles
 argument_list|)
 expr_stmt|;
-name|copy
+name|tiles
 operator|=
-name|NULL
+name|crop
 expr_stmt|;
 block|}
 block|}
-elseif|else
-if|if
-condition|(
-name|copy
-condition|)
-name|cropped_copy
-operator|=
-name|copy
-expr_stmt|;
-else|else
-name|cropped_copy
-operator|=
-name|NULL
-expr_stmt|;
 comment|/*  end the group undo  */
 name|gimp_image_undo_group_end
 argument_list|(
@@ -488,7 +460,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cropped_copy
+name|tiles
 condition|)
 block|{
 comment|/*  Free the old global edit buffer  */
@@ -518,7 +490,7 @@ name|global_buffer
 operator|=
 name|gimp_buffer_new
 argument_list|(
-name|cropped_copy
+name|tiles
 argument_list|,
 literal|"Global Buffer"
 argument_list|,
@@ -1368,6 +1340,13 @@ literal|1
 index|]
 operator|=
 name|OPAQUE_OPACITY
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"fill_type: %d\n"
+argument_list|,
+name|fill_type
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
