@@ -291,19 +291,11 @@ value|0xFFF
 end_define
 
 begin_define
-DECL|macro|DA_WIDTH
+DECL|macro|HISTOGRAM_WIDTH
 define|#
 directive|define
-name|DA_WIDTH
-value|GIMP_HISTOGRAM_VIEW_WIDTH
-end_define
-
-begin_define
-DECL|macro|DA_HEIGHT
-define|#
-directive|define
-name|DA_HEIGHT
-value|25
+name|HISTOGRAM_WIDTH
+value|256
 end_define
 
 begin_define
@@ -311,7 +303,7 @@ DECL|macro|GRADIENT_HEIGHT
 define|#
 directive|define
 name|GRADIENT_HEIGHT
-value|15
+value|12
 end_define
 
 begin_define
@@ -319,7 +311,7 @@ DECL|macro|CONTROL_HEIGHT
 define|#
 directive|define
 name|CONTROL_HEIGHT
-value|DA_HEIGHT - GRADIENT_HEIGHT
+value|8
 end_define
 
 begin_define
@@ -1098,14 +1090,12 @@ block|{
 name|GimpLevelsTool
 modifier|*
 name|l_tool
-decl_stmt|;
-name|l_tool
-operator|=
+init|=
 name|GIMP_LEVELS_TOOL
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|l_tool
@@ -1711,9 +1701,9 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -1931,9 +1921,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -1973,7 +1963,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -2033,9 +2023,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2051,10 +2041,6 @@ name|hist_view
 operator|=
 name|gimp_histogram_view_new
 argument_list|(
-name|GIMP_HISTOGRAM_VIEW_WIDTH
-argument_list|,
-name|GIMP_HISTOGRAM_VIEW_HEIGHT
-argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -2125,7 +2111,7 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2223,7 +2209,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 argument_list|,
 name|GRADIENT_HEIGHT
 argument_list|)
@@ -2309,7 +2295,7 @@ index|[
 literal|1
 index|]
 argument_list|,
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 argument_list|,
 name|CONTROL_HEIGHT
 argument_list|)
@@ -3042,7 +3028,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 argument_list|,
 name|GRADIENT_HEIGHT
 argument_list|)
@@ -3133,7 +3119,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 argument_list|,
 name|CONTROL_HEIGHT
 argument_list|)
@@ -4279,7 +4265,7 @@ block|{
 name|guchar
 name|buf
 index|[
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|*
 literal|3
 index|]
@@ -4310,7 +4296,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 condition|;
 name|i
 operator|++
@@ -4398,7 +4384,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 condition|;
 name|i
 operator|++
@@ -4503,7 +4489,7 @@ literal|0
 argument_list|,
 name|i
 argument_list|,
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 argument_list|)
 expr_stmt|;
 for|for
@@ -4514,7 +4500,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 condition|;
 name|i
 operator|++
@@ -4587,7 +4573,7 @@ literal|0
 argument_list|,
 name|i
 argument_list|,
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 argument_list|)
 expr_stmt|;
 if|if
@@ -4617,7 +4603,7 @@ block|{
 name|guchar
 name|buf
 index|[
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|*
 literal|3
 index|]
@@ -4697,7 +4683,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 condition|;
 name|i
 operator|++
@@ -4774,7 +4760,7 @@ literal|0
 argument_list|,
 name|i
 argument_list|,
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 argument_list|)
 expr_stmt|;
 if|if
@@ -4872,7 +4858,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|*
 operator|(
 operator|(
@@ -4899,7 +4885,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|*
 operator|(
 operator|(
@@ -5170,7 +5156,7 @@ index|[
 literal|3
 index|]
 operator|=
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|*
 operator|(
 operator|(
@@ -5197,7 +5183,7 @@ index|[
 literal|4
 index|]
 operator|=
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|*
 operator|(
 operator|(
@@ -6428,7 +6414,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|)
 operator|*
 literal|255.0
@@ -6624,7 +6610,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|)
 operator|*
 literal|255.0
@@ -6954,7 +6940,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|)
 operator|*
 literal|255.0
@@ -7013,7 +6999,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|DA_WIDTH
+name|HISTOGRAM_WIDTH
 operator|)
 operator|*
 literal|255.0

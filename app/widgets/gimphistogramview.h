@@ -23,22 +23,6 @@ file|<gtk/gtkdrawingarea.h>
 end_include
 
 begin_define
-DECL|macro|GIMP_HISTOGRAM_VIEW_WIDTH
-define|#
-directive|define
-name|GIMP_HISTOGRAM_VIEW_WIDTH
-value|256
-end_define
-
-begin_define
-DECL|macro|GIMP_HISTOGRAM_VIEW_HEIGHT
-define|#
-directive|define
-name|GIMP_HISTOGRAM_VIEW_HEIGHT
-value|150
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_HISTOGRAM_VIEW
 define|#
 directive|define
@@ -195,12 +179,6 @@ name|GtkWidget
 modifier|*
 name|gimp_histogram_view_new
 parameter_list|(
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
-parameter_list|,
 name|gboolean
 name|range
 parameter_list|)

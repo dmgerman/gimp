@@ -62,7 +62,7 @@ DECL|macro|GRADIENT_HEIGHT
 define|#
 directive|define
 name|GRADIENT_HEIGHT
-value|15
+value|12
 end_define
 
 begin_comment
@@ -371,7 +371,7 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
-literal|4
+literal|2
 argument_list|)
 expr_stmt|;
 comment|/*  The histogram  */
@@ -417,10 +417,6 @@ name|view
 operator|=
 name|gimp_histogram_view_new
 argument_list|(
-name|GIMP_HISTOGRAM_VIEW_WIDTH
-argument_list|,
-name|GIMP_HISTOGRAM_VIEW_HEIGHT
-argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -514,7 +510,8 @@ name|box
 operator|->
 name|gradient
 argument_list|,
-name|GIMP_HISTOGRAM_VIEW_WIDTH
+operator|-
+literal|1
 argument_list|,
 name|GRADIENT_HEIGHT
 argument_list|)

@@ -247,7 +247,7 @@ DECL|macro|XRANGE_HEIGHT
 define|#
 directive|define
 name|XRANGE_HEIGHT
-value|16
+value|12
 end_define
 
 begin_define
@@ -255,7 +255,7 @@ DECL|macro|YRANGE_WIDTH
 define|#
 directive|define
 name|YRANGE_WIDTH
-value|16
+value|12
 end_define
 
 begin_define
