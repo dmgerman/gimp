@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9630e20103
+DECL|enum|__anon27a521570103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1246,6 +1246,17 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"EXIT: gimp_dispose\n"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp
