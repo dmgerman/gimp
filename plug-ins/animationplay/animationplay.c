@@ -8,7 +8,7 @@ comment|/*  * REVISION HISTORY:  *  * 98.04.05 : version 0.94.0  *            Im
 end_comment
 
 begin_comment
-comment|/*  * BUGS:  *  Gets understandably upset if the source image is deleted  *    while the animation is playing.  Decent solution welcome.  *  *  In shaped mode, the shaped-window's mask and its pixmap contents  *    can get way out of sync (specifically, the mask changes but  *    the contents are frozen).  Starvation of GTK's redrawing thread?  *    How do I fix this?  *  *  Often segfaults on exit.  GTK stuff.  Help.  *  *  Any more?  Let me know!  */
+comment|/*  * BUGS:  *  Gets understandably upset if the source image is deleted  *    while the animation is playing.  Decent solution welcome.  *  *  In shaped mode, the shaped-window's mask and its pixmap contents  *    can get way out of sync (specifically, the mask changes but  *    the contents are frozen).  Starvation of GTK's redrawing thread?  *    How do I fix this?  *  *  Any more?  Let me know!  */
 end_comment
 
 begin_comment
@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2938b42f0103
+DECL|enum|__anon294905f50103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -154,6 +154,25 @@ parameter_list|(
 name|char
 modifier|*
 name|str
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint
+name|window_delete_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1407,7 +1426,7 @@ operator|&
 name|mask
 argument_list|)
 expr_stmt|;
-comment|//  printf("%u %d\n", mask, event->state);fflush(stdout);
+comment|/*  printf("%u %d\n", mask, event->state);fflush(stdout); */
 comment|/* if a button is still held by the time we process this event... */
 if|if
 condition|(
@@ -1910,17 +1929,14 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"delete_event"
 argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|window_close_callback
+name|window_delete_callback
 argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|dlg
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Action area - 'close' button only. */
@@ -6082,6 +6098,59 @@ end_comment
 
 begin_function
 specifier|static
+name|gint
+DECL|function|window_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
+name|window_delete_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+if|if
+condition|(
+name|playing
+condition|)
+name|playstop_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shape_window
+condition|)
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shape_window
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gdk_flush
+argument_list|()
+expr_stmt|;
+name|gtk_main_quit
+argument_list|()
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|window_close_callback (GtkWidget * widget,gpointer data)
 name|window_close_callback
@@ -6106,47 +6175,14 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|shape_window
-condition|)
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shape_window
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|playing
-condition|)
-name|playstop_callback
+name|window_delete_callback
 argument_list|(
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-comment|/* catch up on outstanding events, or gtk_main_quit won't quit (!?) */
-comment|/*  sleep(1);*/
-while|while
-condition|(
-name|gtk_events_pending
-argument_list|()
-condition|)
-name|gtk_main_iteration_do
-argument_list|(
-name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/* FIXME: Why are we segfaulting? */
-name|gtk_main_quit
-argument_list|()
 expr_stmt|;
 block|}
 end_function

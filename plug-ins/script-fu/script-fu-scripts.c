@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ac6e40108
+DECL|struct|__anon28fa4c3b0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon274ac6e4020a
+DECL|union|__anon28fa4c3b020a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ac6e40308
+DECL|struct|__anon28fa4c3b0308
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ac6e40408
+DECL|struct|__anon28fa4c3b0408
 block|{
 DECL|member|cc
 name|GtkWidget
@@ -1164,6 +1164,12 @@ decl_stmt|;
 name|LISP
 name|color_list
 decl_stmt|;
+name|gchar
+modifier|*
+name|menu_path
+init|=
+name|NULL
+decl_stmt|;
 comment|/*  Check the length of a  */
 if|if
 condition|(
@@ -1245,6 +1251,26 @@ name|cdr
 argument_list|(
 name|a
 argument_list|)
+expr_stmt|;
+comment|/* Allow scripts with no menus */
+if|if
+condition|(
+name|strncmp
+argument_list|(
+name|val
+argument_list|,
+literal|"<None>"
+argument_list|,
+literal|6
+argument_list|)
+operator|!=
+literal|0
+condition|)
+name|menu_path
+operator|=
+name|script
+operator|->
+name|description
 expr_stmt|;
 comment|/*  Find the script help  */
 name|val
@@ -2329,9 +2355,7 @@ name|script
 operator|->
 name|date
 argument_list|,
-name|script
-operator|->
-name|description
+name|menu_path
 argument_list|,
 name|script
 operator|->
