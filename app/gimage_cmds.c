@@ -10161,6 +10161,17 @@ argument_list|(
 name|channel
 argument_list|)
 expr_stmt|;
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_channel
+argument_list|)
+operator|->
+name|gimage_ID
+operator|=
+name|new_gimage
+operator|->
+name|ID
+expr_stmt|;
 comment|/*  Make sure the copied channel doesn't say: "<old channel> copy"  */
 name|g_free
 argument_list|(
