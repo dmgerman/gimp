@@ -289,6 +289,14 @@ name|_P_NOWAIT
 value|P_NOWAIT
 end_define
 
+begin_define
+DECL|macro|xspawnv
+define|#
+directive|define
+name|xspawnv
+value|spawnv
+end_define
+
 begin_endif
 endif|#
 directive|endif
