@@ -281,7 +281,7 @@ name|editor
 operator|->
 name|color_notebook
 operator|=
-name|color_notebook_viewable_new
+name|color_notebook_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -750,7 +750,7 @@ name|editor
 operator|->
 name|color_notebook
 operator|=
-name|color_notebook_viewable_new
+name|color_notebook_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -2403,7 +2403,7 @@ argument_list|)
 argument_list|,
 name|title
 argument_list|,
-literal|"gimp-gradient-segment_split-uniformly"
+literal|"gimp-gradient-segment-split-uniformly"
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,

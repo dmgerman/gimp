@@ -4667,7 +4667,7 @@ name|editor
 operator|->
 name|color_notebook
 operator|=
-name|color_notebook_viewable_new
+name|color_notebook_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

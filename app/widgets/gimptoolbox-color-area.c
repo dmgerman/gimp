@@ -117,7 +117,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5fe0f20103
+DECL|enum|__anon27a87f0b0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -1638,7 +1638,13 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
+name|NULL
+argument_list|,
 name|title
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|,
 name|widget
 argument_list|,

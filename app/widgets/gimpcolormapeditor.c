@@ -211,7 +211,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28934cc30103
+DECL|enum|__anon2bde98660103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -4485,7 +4485,7 @@ name|editor
 operator|->
 name|color_notebook
 operator|=
-name|color_notebook_viewable_new
+name|color_notebook_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
