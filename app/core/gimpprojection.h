@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -596,6 +596,12 @@ modifier|*
 name|cd_list
 decl_stmt|;
 comment|/* color display conversion stuff           */
+DECL|member|cd_ui
+name|GtkWidget
+modifier|*
+name|cd_ui
+decl_stmt|;
+comment|/* color display filter dialog              */
 block|}
 struct|;
 end_struct
@@ -1236,32 +1242,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|gdisplays_foreach
-parameter_list|(
-name|GFunc
-name|func
-parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplays_notify_add
-parameter_list|(
-name|GFunc
-name|func
-parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplays_notify_remove
 parameter_list|(
 name|GFunc
 name|func

@@ -62,6 +62,7 @@ end_comment
 begin_decl_stmt
 specifier|extern
 name|GDisplay
+modifier|*
 name|color_area_gdisp
 decl_stmt|;
 end_decl_stmt
