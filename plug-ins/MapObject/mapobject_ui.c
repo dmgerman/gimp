@@ -3562,9 +3562,9 @@ operator|.
 name|x
 argument_list|,
 operator|-
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
 literal|0.1
 argument_list|,
@@ -3656,9 +3656,9 @@ operator|.
 name|y
 argument_list|,
 operator|-
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
 literal|0.1
 argument_list|,
@@ -3750,9 +3750,9 @@ operator|.
 name|z
 argument_list|,
 operator|-
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
 literal|0.1
 argument_list|,
@@ -4444,7 +4444,7 @@ name|ambient_int
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
 literal|0.1
 argument_list|,
@@ -4619,7 +4619,7 @@ name|diffuse_int
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
 literal|0.1
 argument_list|,
@@ -4901,7 +4901,7 @@ name|diffuse_ref
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
 literal|0.1
 argument_list|,
@@ -5076,7 +5076,7 @@ name|specular_ref
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
 literal|0.1
 argument_list|,
@@ -5250,7 +5250,7 @@ name|highlight
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXDOUBLE
+name|G_MAXFLOAT
 argument_list|,
 literal|0.1
 argument_list|,

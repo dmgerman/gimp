@@ -352,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9c9f640108
+DECL|struct|__anon291c4d1a0108
 block|{
 DECL|member|offset
 name|gdouble
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9c9f640208
+DECL|struct|__anon291c4d1a0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2899,6 +2899,9 @@ name|progress
 condition|?
 name|progress_update_and_flush
 else|:
+operator|(
+name|progress_func_t
+operator|)
 name|NULL
 argument_list|,
 name|progress
