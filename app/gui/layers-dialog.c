@@ -6339,6 +6339,8 @@ operator|!
 name|lm
 operator|&&
 name|lp
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 comment|/* apply layer mask */

@@ -1672,6 +1672,9 @@ name|gimage_id
 operator|=
 name|gimage_id
 expr_stmt|;
+name|suspend_gimage_notify
+operator|++
+expr_stmt|;
 comment|/*  Free all elements in the channels listbox  */
 name|gtk_list_clear_items
 argument_list|(
@@ -1687,6 +1690,9 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+expr_stmt|;
+name|suspend_gimage_notify
+operator|--
 expr_stmt|;
 name|list
 operator|=
@@ -2125,6 +2131,9 @@ DECL|function|channels_dialog_clear ()
 name|channels_dialog_clear
 parameter_list|()
 block|{
+name|suspend_gimage_notify
+operator|++
+expr_stmt|;
 name|gtk_list_clear_items
 argument_list|(
 name|GTK_LIST
@@ -2139,6 +2148,9 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+expr_stmt|;
+name|suspend_gimage_notify
+operator|--
 expr_stmt|;
 block|}
 end_function
@@ -2163,6 +2175,9 @@ operator|==
 name|NULL
 condition|)
 return|return;
+name|suspend_gimage_notify
+operator|++
+expr_stmt|;
 comment|/*  Free all elements in the channels listbox  */
 name|gtk_list_clear_items
 argument_list|(
@@ -2178,6 +2193,9 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+expr_stmt|;
+name|suspend_gimage_notify
+operator|--
 expr_stmt|;
 name|list
 operator|=

@@ -1497,6 +1497,26 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  update the gdisplay's info dialog  */
+if|if
+condition|(
+name|gdisp
+operator|->
+name|window_info_dialog
+condition|)
+name|info_window_update
+argument_list|(
+name|gdisp
+operator|->
+name|window_info_dialog
+argument_list|,
+operator|(
+name|void
+operator|*
+operator|)
+name|gdisp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
