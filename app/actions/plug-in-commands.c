@@ -879,6 +879,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|plug_in_init_shm
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|current_plug_in
 name|PlugIn
@@ -1081,61 +1091,15 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|void
-DECL|function|plug_in_init (void)
-name|plug_in_init
+DECL|function|plug_in_init_shm (void)
+name|plug_in_init_shm
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-specifier|extern
-name|int
-name|use_shm
-decl_stmt|;
-name|char
-modifier|*
-name|filename
-decl_stmt|;
-name|GSList
-modifier|*
-name|tmp
-decl_stmt|,
-modifier|*
-name|tmp2
-decl_stmt|;
-name|PlugInDef
-modifier|*
-name|plug_in_def
-decl_stmt|;
-name|PlugInProcDef
-modifier|*
-name|proc_def
-decl_stmt|;
-name|gfloat
-name|nplugins
-decl_stmt|,
-name|nth
-decl_stmt|;
-comment|/* initialize the gimp protocol library and set the read and    *  write handlers.    */
-name|gp_init
-argument_list|()
-expr_stmt|;
-name|wire_set_writer
-argument_list|(
-name|plug_in_write
-argument_list|)
-expr_stmt|;
-name|wire_set_flusher
-argument_list|(
-name|plug_in_flush
-argument_list|)
-expr_stmt|;
 comment|/* allocate a piece of shared memory for use in transporting tiles    *  to plug-ins. if we can't allocate a piece of shared memory then    *  we'll fall back on sending the data over the pipe.    */
-if|if
-condition|(
-name|use_shm
-condition|)
-block|{
 ifdef|#
 directive|ifdef
 name|HAVE_SHM_H
@@ -1245,7 +1209,7 @@ directive|else
 ifdef|#
 directive|ifdef
 name|WIN32
-comment|/* Use Win32 shared memory mechanisms for        * transfering tile data.        */
+comment|/* Use Win32 shared memory mechanisms for    * transfering tile data.    */
 name|int
 name|pid
 decl_stmt|;
@@ -1362,6 +1326,68 @@ endif|#
 directive|endif
 endif|#
 directive|endif
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|plug_in_init (void)
+name|plug_in_init
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|extern
+name|int
+name|use_shm
+decl_stmt|;
+name|char
+modifier|*
+name|filename
+decl_stmt|;
+name|GSList
+modifier|*
+name|tmp
+decl_stmt|,
+modifier|*
+name|tmp2
+decl_stmt|;
+name|PlugInDef
+modifier|*
+name|plug_in_def
+decl_stmt|;
+name|PlugInProcDef
+modifier|*
+name|proc_def
+decl_stmt|;
+name|gfloat
+name|nplugins
+decl_stmt|,
+name|nth
+decl_stmt|;
+comment|/* initialize the gimp protocol library and set the read and    *  write handlers.    */
+name|gp_init
+argument_list|()
+expr_stmt|;
+name|wire_set_writer
+argument_list|(
+name|plug_in_write
+argument_list|)
+expr_stmt|;
+name|wire_set_flusher
+argument_list|(
+name|plug_in_flush
+argument_list|)
+expr_stmt|;
+comment|/* allocate a piece of shared memory for use in transporting tiles    *  to plug-ins. if we can't allocate a piece of shared memory then    *  we'll fall back on sending the data over the pipe.    */
+if|if
+condition|(
+name|use_shm
+condition|)
+block|{
+name|plug_in_init_shm
+argument_list|()
+expr_stmt|;
 block|}
 comment|/* search for binaries in the plug-in directory path */
 name|datafiles_read_directories
