@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-render.h"
+file|"display/gimpdisplayshell-render.h"
 end_include
 
 begin_include
@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c47e9b70103
+DECL|enum|__anon2bb1ad2b0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED

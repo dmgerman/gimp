@@ -57,6 +57,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_display_shell_scale_fit
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_scale_resize
 parameter_list|(
 name|GimpDisplayShell

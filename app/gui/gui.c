@@ -84,13 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-render.h"
+file|"display/gimpdisplayshell.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell.h"
+file|"display/gimpdisplayshell-render.h"
 end_include
 
 begin_include

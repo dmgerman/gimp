@@ -6,27 +6,61 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DISPLAY_CALLBACKS_H__
+name|__GIMP_DISPLAY_SHELL_CALLBACKS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DISPLAY_CALLBACKS_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_CALLBACKS_H__
 define|#
 directive|define
-name|__GIMP_DISPLAY_CALLBACKS_H__
+name|__GIMP_DISPLAY_SHELL_CALLBACKS_H__
 end_define
 
 begin_define
-DECL|macro|CANVAS_EVENT_MASK
+DECL|macro|GIMP_DISPLAY_SHELL_CANVAS_EVENT_MASK
 define|#
 directive|define
-name|CANVAS_EVENT_MASK
-value|(GDK_EXPOSURE_MASK            | \ 			   GDK_POINTER_MOTION_MASK      | \ 			   GDK_POINTER_MOTION_HINT_MASK | \ 			   GDK_BUTTON_PRESS_MASK        | \ 			   GDK_BUTTON_RELEASE_MASK      | \ 			   GDK_STRUCTURE_MASK           | \ 			   GDK_ENTER_NOTIFY_MASK        | \ 			   GDK_LEAVE_NOTIFY_MASK        | \ 			   GDK_KEY_PRESS_MASK           | \ 			   GDK_KEY_RELEASE_MASK         | \ 			   GDK_PROXIMITY_OUT_MASK)
+name|GIMP_DISPLAY_SHELL_CANVAS_EVENT_MASK
+value|(GDK_EXPOSURE_MASK            | \                                               GDK_POINTER_MOTION_MASK      | \                                               GDK_POINTER_MOTION_HINT_MASK | \                                               GDK_BUTTON_PRESS_MASK        | \                                               GDK_BUTTON_RELEASE_MASK      | \                                               GDK_STRUCTURE_MASK           | \                                               GDK_ENTER_NOTIFY_MASK        | \                                               GDK_LEAVE_NOTIFY_MASK        | \                                               GDK_KEY_PRESS_MASK           | \                                               GDK_KEY_RELEASE_MASK         | \                                               GDK_PROXIMITY_OUT_MASK)
 end_define
 
 begin_function_decl
 name|gboolean
-name|gdisplay_shell_events
+name|gimp_display_shell_events
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_canvas_realize
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_display_shell_canvas_events
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -45,26 +79,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gdisplay_canvas_events
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gdisplay_hruler_button_press
+name|gimp_display_shell_hruler_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -83,7 +98,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gdisplay_vruler_button_press
+name|gimp_display_shell_vruler_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -102,7 +117,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gdisplay_origin_button_press
+name|gimp_display_shell_origin_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -121,7 +136,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_drop_drawable
+name|gimp_display_shell_drop_drawable
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -139,7 +154,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_drop_pattern
+name|gimp_display_shell_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -157,7 +172,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_drop_color
+name|gimp_display_shell_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -176,7 +191,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_drop_buffer
+name|gimp_display_shell_drop_buffer
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -198,7 +213,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_DISPLAY_CALLBACKS_H__ */
+comment|/* __GIMP_DISPLAY_SHELL_CALLBACKS_H__ */
 end_comment
 
 end_unit

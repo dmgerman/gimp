@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-scale.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay-selection.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplayshell-scale.h"
 end_include
 
 begin_include
@@ -121,8 +121,8 @@ end_define
 
 begin_function
 name|void
-DECL|function|view_zoomin_cmd_callback (GtkWidget * widget,gpointer data)
-name|view_zoomin_cmd_callback
+DECL|function|view_zoom_in_cmd_callback (GtkWidget * widget,gpointer data)
+name|view_zoom_in_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -160,8 +160,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoomout_cmd_callback (GtkWidget * widget,gpointer data)
-name|view_zoomout_cmd_callback
+DECL|function|view_zoom_out_cmd_callback (GtkWidget * widget,gpointer data)
+name|view_zoom_out_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -192,6 +192,43 @@ name|shell
 argument_list|)
 argument_list|,
 name|GIMP_ZOOM_OUT
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|view_zoom_fit_cmd_callback (GtkWidget * widget,gpointer data)
+name|view_zoom_fit_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|gdisp
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scale_fit
+argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -837,9 +837,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|state
 operator|&
 name|GDK_MOD1_MASK
+operator|)
 operator|&&
 operator|!
 name|gimage_mask_is_empty
@@ -856,7 +858,7 @@ name|op
 operator|=
 name|SELECTION_MOVE_MASK
 expr_stmt|;
-comment|/* move just the selection mask */
+comment|/* move the selection mask */
 block|}
 elseif|else
 if|if
@@ -886,9 +888,9 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|x
+name|tx
 argument_list|,
-name|y
+name|ty
 argument_list|)
 operator|&&
 name|floating_sel

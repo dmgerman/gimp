@@ -186,12 +186,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-callbacks.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplay-foreach.h"
 end_include
 
@@ -204,19 +198,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-scale.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplay-scroll.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-callbacks.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-scroll.h"
 end_include
 
 begin_include
@@ -246,8 +246,8 @@ end_include
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_redraw (GimpDisplayShell * shell,gint x,gint y,gint w,gint h)
-name|gdisplay_redraw
+DECL|function|gimp_display_shell_redraw (GimpDisplayShell * shell,gint x,gint y,gint w,gint h)
+name|gimp_display_shell_redraw
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -310,8 +310,6 @@ literal|0
 argument_list|,
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|disp_width
 argument_list|)
 expr_stmt|;
@@ -324,8 +322,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|disp_height
 argument_list|)
@@ -340,8 +336,6 @@ literal|0
 argument_list|,
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|disp_width
 argument_list|)
 expr_stmt|;
@@ -354,8 +348,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|disp_height
 argument_list|)
@@ -408,8 +400,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_check_device_cursor (GimpDisplayShell * shell)
-name|gdisplay_check_device_cursor
+DECL|function|gimp_display_shell_check_device_cursor (GimpDisplayShell * shell)
+name|gimp_display_shell_check_device_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -474,7 +466,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|key_to_state (gint key)
 name|key_to_state
 parameter_list|(
@@ -525,8 +517,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_vscrollbar_update (GtkAdjustment * adjustment,GimpDisplayShell * shell)
-name|gdisplay_vscrollbar_update
+DECL|function|gimp_display_shell_vscrollbar_update (GtkAdjustment * adjustment,GimpDisplayShell * shell)
+name|gimp_display_shell_vscrollbar_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -550,8 +542,6 @@ name|value
 operator|-
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|offset_y
 operator|)
 argument_list|)
@@ -562,8 +552,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_hscrollbar_update (GtkAdjustment * adjustment,GimpDisplayShell * shell)
-name|gdisplay_hscrollbar_update
+DECL|function|gimp_display_shell_hscrollbar_update (GtkAdjustment * adjustment,GimpDisplayShell * shell)
+name|gimp_display_shell_hscrollbar_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -584,8 +574,6 @@ operator|->
 name|value
 operator|-
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|offset_x
 operator|)
@@ -598,8 +586,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gdisplay_shell_events (GtkWidget * widget,GdkEvent * event,GimpDisplayShell * shell)
-name|gdisplay_shell_events
+DECL|function|gimp_display_shell_events (GtkWidget * widget,GdkEvent * event,GimpDisplayShell * shell)
+name|gimp_display_shell_events
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -657,9 +645,154 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|gimp_display_shell_canvas_realize (GtkWidget * canvas,GimpDisplayShell * shell)
+name|gimp_display_shell_canvas_realize
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|canvas
+parameter_list|,
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|gdisp
+operator|=
+name|shell
+operator|->
+name|gdisp
+expr_stmt|;
+comment|/*  create the selection object  */
+name|gdisp
+operator|->
+name|select
+operator|=
+name|selection_create
+argument_list|(
+name|canvas
+operator|->
+name|window
+argument_list|,
+name|gdisp
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|height
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|width
+argument_list|,
+name|gimprc
+operator|.
+name|marching_speed
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|disp_width
+operator|=
+name|canvas
+operator|->
+name|allocation
+operator|.
+name|width
+expr_stmt|;
+name|shell
+operator|->
+name|disp_height
+operator|=
+name|canvas
+operator|->
+name|allocation
+operator|.
+name|height
+expr_stmt|;
+comment|/*  create GC for scrolling  */
+name|shell
+operator|->
+name|scroll_gc
+operator|=
+name|gdk_gc_new
+argument_list|(
+name|shell
+operator|->
+name|canvas
+operator|->
+name|window
+argument_list|)
+expr_stmt|;
+name|gdk_gc_set_exposures
+argument_list|(
+name|shell
+operator|->
+name|scroll_gc
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/*  set up the scrollbar observers  */
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|shell
+operator|->
+name|hsbdata
+argument_list|)
+argument_list|,
+literal|"value_changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_display_shell_hscrollbar_update
+argument_list|)
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|shell
+operator|->
+name|vsbdata
+argument_list|)
+argument_list|,
+literal|"value_changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_display_shell_vscrollbar_update
+argument_list|)
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+comment|/*  setup scale properly  */
+name|gimp_display_shell_scale_setup
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|gboolean
-DECL|function|gdisplay_canvas_events (GtkWidget * canvas,GdkEvent * event,GimpDisplayShell * shell)
-name|gdisplay_canvas_events
+DECL|function|gimp_display_shell_canvas_events (GtkWidget * canvas,GdkEvent * event,GimpDisplayShell * shell)
+name|gimp_display_shell_canvas_events
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -717,8 +850,13 @@ name|state
 init|=
 literal|0
 decl_stmt|;
-name|gint
+name|gboolean
 name|return_val
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|update_cursor
 init|=
 name|FALSE
 decl_stmt|;
@@ -746,11 +884,6 @@ name|key_signal_id
 init|=
 literal|0
 decl_stmt|;
-name|gboolean
-name|update_cursor
-init|=
-name|FALSE
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -758,9 +891,16 @@ name|canvas
 operator|->
 name|window
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"imp_display_shell_canvas_events(): called unrealized"
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 name|gdisp
 operator|=
 name|shell
@@ -778,7 +918,7 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/*  If this is the first event...  */
+comment|/* FIXME */
 if|if
 condition|(
 operator|!
@@ -787,127 +927,12 @@ operator|->
 name|select
 condition|)
 block|{
-comment|/*  create the selection object  */
-name|gdisp
-operator|->
-name|select
-operator|=
-name|selection_create
+name|gimp_display_shell_canvas_realize
 argument_list|(
 name|shell
 operator|->
 name|canvas
-operator|->
-name|window
 argument_list|,
-name|gdisp
-argument_list|,
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|height
-argument_list|,
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|width
-argument_list|,
-name|gimprc
-operator|.
-name|marching_speed
-argument_list|)
-expr_stmt|;
-name|gdisp
-operator|->
-name|disp_width
-operator|=
-name|shell
-operator|->
-name|canvas
-operator|->
-name|allocation
-operator|.
-name|width
-expr_stmt|;
-name|gdisp
-operator|->
-name|disp_height
-operator|=
-name|shell
-operator|->
-name|canvas
-operator|->
-name|allocation
-operator|.
-name|height
-expr_stmt|;
-comment|/*  create GC for scrolling  */
-name|shell
-operator|->
-name|scroll_gc
-operator|=
-name|gdk_gc_new
-argument_list|(
-name|shell
-operator|->
-name|canvas
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
-name|gdk_gc_set_exposures
-argument_list|(
-name|shell
-operator|->
-name|scroll_gc
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/*  set up the scrollbar observers  */
-name|g_signal_connect
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|shell
-operator|->
-name|hsbdata
-argument_list|)
-argument_list|,
-literal|"value_changed"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gdisplay_hscrollbar_update
-argument_list|)
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|shell
-operator|->
-name|vsbdata
-argument_list|)
-argument_list|,
-literal|"value_changed"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gdisplay_vscrollbar_update
-argument_list|)
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
-comment|/*  setup scale properly  */
-name|gimp_display_shell_scale_setup
-argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
@@ -929,7 +954,7 @@ argument_list|(
 name|event
 argument_list|)
 condition|)
-name|gdisplay_check_device_cursor
+name|gimp_display_shell_check_device_cursor
 argument_list|(
 name|shell
 argument_list|)
@@ -952,7 +977,7 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
-name|gdisplay_redraw
+name|gimp_display_shell_redraw
 argument_list|(
 name|shell
 argument_list|,
@@ -988,7 +1013,7 @@ case|:
 if|if
 condition|(
 operator|(
-name|gdisp
+name|shell
 operator|->
 name|disp_width
 operator|!=
@@ -1002,7 +1027,7 @@ name|width
 operator|)
 operator|||
 operator|(
-name|gdisp
+name|shell
 operator|->
 name|disp_height
 operator|!=
@@ -1016,7 +1041,7 @@ name|height
 operator|)
 condition|)
 block|{
-name|gdisp
+name|shell
 operator|->
 name|disp_width
 operator|=
@@ -1028,7 +1053,7 @@ name|allocation
 operator|.
 name|width
 expr_stmt|;
-name|gdisp
+name|shell
 operator|->
 name|disp_height
 operator|=
@@ -1387,7 +1412,7 @@ name|bevent
 operator|->
 name|x
 operator|+
-name|gdisp
+name|shell
 operator|->
 name|offset_x
 expr_stmt|;
@@ -1397,7 +1422,7 @@ name|bevent
 operator|->
 name|y
 operator|+
-name|gdisp
+name|shell
 operator|->
 name|offset_y
 expr_stmt|;
@@ -1419,8 +1444,6 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
-name|shell
-operator|->
 name|canvas
 operator|->
 name|window
@@ -1863,13 +1886,6 @@ return|return
 name|TRUE
 return|;
 comment|/* Ask for the pointer position, but ignore it except for cursor        * handling, so motion events sync with the button press/release events         */
-if|if
-condition|(
-name|mevent
-operator|->
-name|is_hint
-condition|)
-block|{
 ifdef|#
 directive|ifdef
 name|__GNUC__
@@ -1881,12 +1897,9 @@ directive|endif
 if|#
 directive|if
 literal|0
-block|gdk_input_window_get_pointer (canvas->window, current_device,&tx,&ty, 					NULL, NULL, NULL, NULL);
+block|if (mevent->is_hint) 	{ 	  gdk_input_window_get_pointer (canvas->window, current_device,&tx,&ty, 					NULL, NULL, NULL, NULL); 	}       else 	{
 endif|#
 directive|endif
-block|}
-else|else
-block|{
 name|tx
 operator|=
 name|mevent
@@ -1899,7 +1912,12 @@ name|mevent
 operator|->
 name|y
 expr_stmt|;
+if|#
+directive|if
+literal|0
 block|}
+endif|#
+directive|endif
 name|update_cursor
 operator|=
 name|TRUE
@@ -1918,7 +1936,7 @@ name|proximity
 operator|=
 name|TRUE
 expr_stmt|;
-name|gdisplay_check_device_cursor
+name|gimp_display_shell_check_device_cursor
 argument_list|(
 name|shell
 argument_list|)
@@ -1926,6 +1944,14 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|(
+name|mevent
+operator|->
+name|state
+operator|&
+name|GDK_BUTTON1_MASK
+operator|)
+operator|&&
 name|active_tool
 operator|&&
 operator|(
@@ -1941,14 +1967,6 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
-operator|)
-operator|&&
-operator|(
-name|mevent
-operator|->
-name|state
-operator|&
-name|GDK_BUTTON1_MASK
 operator|)
 condition|)
 block|{
@@ -1967,9 +1985,31 @@ condition|(
 operator|(
 name|mevent
 operator|->
-name|state
-operator|&
-name|GDK_BUTTON1_MASK
+name|x
+operator|<
+literal|0
+operator|||
+name|mevent
+operator|->
+name|y
+operator|<
+literal|0
+operator|||
+name|mevent
+operator|->
+name|x
+operator|>
+name|shell
+operator|->
+name|disp_width
+operator|||
+name|mevent
+operator|->
+name|y
+operator|>
+name|shell
+operator|->
+name|disp_height
 operator|)
 operator|&&
 operator|!
@@ -1978,42 +2018,6 @@ operator|->
 name|scroll_lock
 condition|)
 block|{
-if|if
-condition|(
-name|mevent
-operator|->
-name|x
-operator|<
-literal|0
-operator|||
-name|mevent
-operator|->
-name|y
-operator|<
-literal|0
-operator|||
-name|mevent
-operator|->
-name|x
-operator|>
-name|gdisp
-operator|->
-name|disp_width
-operator|||
-name|mevent
-operator|->
-name|y
-operator|>
-name|gdisp
-operator|->
-name|disp_height
-condition|)
-block|{
-name|gdouble
-name|child_x
-decl_stmt|,
-name|child_y
-decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
@@ -2047,7 +2051,7 @@ name|mevent
 operator|->
 name|x
 operator|>
-name|gdisp
+name|shell
 operator|->
 name|disp_width
 condition|)
@@ -2057,7 +2061,7 @@ name|mevent
 operator|->
 name|x
 operator|-
-name|gdisp
+name|shell
 operator|->
 name|disp_width
 expr_stmt|;
@@ -2082,7 +2086,7 @@ name|mevent
 operator|->
 name|y
 operator|>
-name|gdisp
+name|shell
 operator|->
 name|disp_height
 condition|)
@@ -2092,7 +2096,7 @@ name|mevent
 operator|->
 name|y
 operator|-
-name|gdisp
+name|shell
 operator|->
 name|disp_height
 expr_stmt|;
@@ -2119,12 +2123,11 @@ directive|endif
 if|#
 directive|if
 literal|0
-block|gdk_input_window_get_pointer (shell->canvas->window, mevent->deviceid,&child_x,&child_y,                                                          NULL, NULL, NULL, NULL);                            if (child_x == mevent->x&& child_y == mevent->y)
+block|gdouble child_x, child_y;                        gdk_input_window_get_pointer (shell->canvas->window, mevent->deviceid,&child_x,&child_y,                                                      NULL, NULL, NULL, NULL);                        if (child_x == mevent->x&& child_y == mevent->y)
 comment|/*  Put this event back on the queue -- so it keeps scrolling */
 block|gdk_event_put ((GdkEvent *) mevent);
 endif|#
 directive|endif
-block|}
 block|}
 block|}
 if|if
@@ -2206,7 +2209,7 @@ name|mevent
 operator|->
 name|x
 operator|-
-name|gdisp
+name|shell
 operator|->
 name|offset_x
 operator|)
@@ -2218,7 +2221,7 @@ name|mevent
 operator|->
 name|y
 operator|-
-name|gdisp
+name|shell
 operator|->
 name|offset_y
 operator|)
@@ -2604,7 +2607,7 @@ condition|)
 return|return
 name|TRUE
 return|;
-comment|/*  Cursor update support    *  no_cursor_updating is TRUE (=1) when    *<Toolbox>/File/Preferences.../Interface/...    *  Image Windows/Disable Cursor Updating is TOGGLED ON    */
+comment|/*  cursor update support  */
 if|if
 condition|(
 operator|!
@@ -2727,8 +2730,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gdisplay_hruler_button_press (GtkWidget * widget,GdkEventButton * event,GimpDisplayShell * shell)
-name|gdisplay_hruler_button_press
+DECL|function|gimp_display_shell_hruler_button_press (GtkWidget * widget,GdkEventButton * event,GimpDisplayShell * shell)
+name|gimp_display_shell_hruler_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2856,8 +2859,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gdisplay_vruler_button_press (GtkWidget * widget,GdkEventButton * event,GimpDisplayShell * shell)
-name|gdisplay_vruler_button_press
+DECL|function|gimp_display_shell_vruler_button_press (GtkWidget * widget,GdkEventButton * event,GimpDisplayShell * shell)
+name|gimp_display_shell_vruler_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2986,8 +2989,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_origin_menu_position (GtkMenu * menu,gint * x,gint * y,gpointer data)
-name|gdisplay_origin_menu_position
+DECL|function|gimp_display_shell_origin_menu_position (GtkMenu * menu,gint * x,gint * y,gpointer data)
+name|gimp_display_shell_origin_menu_position
 parameter_list|(
 name|GtkMenu
 modifier|*
@@ -3151,8 +3154,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gdisplay_origin_button_press (GtkWidget * widget,GdkEventButton * event,GimpDisplayShell * shell)
-name|gdisplay_origin_button_press
+DECL|function|gimp_display_shell_origin_button_press (GtkWidget * widget,GdkEventButton * event,GimpDisplayShell * shell)
+name|gimp_display_shell_origin_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3200,7 +3203,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisplay_origin_menu_position
+name|gimp_display_shell_origin_menu_position
 argument_list|(
 name|GTK_MENU
 argument_list|(
@@ -3253,8 +3256,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_drop_drawable (GtkWidget * widget,GimpViewable * viewable,gpointer data)
-name|gdisplay_drop_drawable
+DECL|function|gimp_display_shell_drop_drawable (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+name|gimp_display_shell_drop_drawable
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3705,8 +3708,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_bucket_fill (GimpDisplay * gdisp,BucketFillMode fill_mode,guchar orig_color[],TempBuf * orig_pat_buf)
-name|gdisplay_bucket_fill
+DECL|function|gimp_display_shell_bucket_fill (GimpDisplay * gdisp,BucketFillMode fill_mode,guchar orig_color[],TempBuf * orig_pat_buf)
+name|gimp_display_shell_bucket_fill
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -4265,8 +4268,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_drop_pattern (GtkWidget * widget,GimpViewable * viewable,gpointer data)
-name|gdisplay_drop_pattern
+DECL|function|gimp_display_shell_drop_pattern (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+name|gimp_display_shell_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4301,7 +4304,7 @@ name|viewable
 argument_list|)
 condition|)
 block|{
-name|gdisplay_bucket_fill
+name|gimp_display_shell_bucket_fill
 argument_list|(
 name|gdisp
 argument_list|,
@@ -4323,8 +4326,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_drop_color (GtkWidget * widget,const GimpRGB * drop_color,gpointer data)
-name|gdisplay_drop_color
+DECL|function|gimp_display_shell_drop_color (GtkWidget * widget,const GimpRGB * drop_color,gpointer data)
+name|gimp_display_shell_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4387,7 +4390,7 @@ literal|3
 index|]
 argument_list|)
 expr_stmt|;
-name|gdisplay_bucket_fill
+name|gimp_display_shell_bucket_fill
 argument_list|(
 name|gdisp
 argument_list|,
@@ -4403,8 +4406,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_drop_buffer (GtkWidget * widget,GimpViewable * viewable,gpointer data)
-name|gdisplay_drop_buffer
+DECL|function|gimp_display_shell_drop_buffer (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+name|gimp_display_shell_drop_buffer
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -1441,11 +1441,11 @@ name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|disp_width
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|disp_height
 argument_list|,

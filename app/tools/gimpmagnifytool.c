@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-scale.h"
+file|"display/gimpdisplayshell.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell.h"
+file|"display/gimpdisplayshell-scale.h"
 end_include
 
 begin_include
@@ -1437,7 +1437,7 @@ name|y1
 operator|+
 name|h
 expr_stmt|;
-comment|/* these change the user zoom level, so should not be changed to        * the resolution-aware scale macros -- austin */
+comment|/* these change the user zoom level, so should not be changed to        * the resolution-aware scale macros -- austin        */
 name|scalesrc
 operator|=
 name|SCALESRC
@@ -1454,13 +1454,13 @@ argument_list|)
 expr_stmt|;
 name|win_width
 operator|=
-name|gdisp
+name|shell
 operator|->
 name|disp_width
 expr_stmt|;
 name|win_height
 operator|=
-name|gdisp
+name|shell
 operator|->
 name|disp_height
 expr_stmt|;
@@ -1572,10 +1572,11 @@ operator|)
 operator|+
 name|scalesrc
 expr_stmt|;
-name|gdisp
+name|shell
 operator|->
 name|offset_x
 operator|=
+operator|(
 operator|(
 name|scaledest
 operator|*
@@ -1597,11 +1598,13 @@ name|win_width
 operator|/
 literal|2
 operator|)
+operator|)
 expr_stmt|;
-name|gdisp
+name|shell
 operator|->
 name|offset_y
 operator|=
+operator|(
 operator|(
 name|scaledest
 operator|*
@@ -1622,6 +1625,7 @@ operator|(
 name|win_height
 operator|/
 literal|2
+operator|)
 operator|)
 expr_stmt|;
 comment|/*  resize the image  */

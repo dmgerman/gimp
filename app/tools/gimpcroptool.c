@@ -3681,9 +3681,7 @@ name|crop
 operator|->
 name|y1
 argument_list|,
-name|tool
-operator|->
-name|gdisp
+name|shell
 operator|->
 name|disp_width
 argument_list|,
@@ -3714,9 +3712,7 @@ name|crop
 operator|->
 name|x1
 argument_list|,
-name|tool
-operator|->
-name|gdisp
+name|shell
 operator|->
 name|disp_height
 argument_list|)
@@ -4039,14 +4035,6 @@ name|layer_only
 argument_list|,
 name|crop_layers
 argument_list|)
-expr_stmt|;
-name|gdisplays_shrink_wrap
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gdisplays_flush
-argument_list|()
 expr_stmt|;
 block|}
 end_function

@@ -96,19 +96,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-scroll.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay-scale.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplayshell-scroll.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplayshell-scale.h"
 end_include
 
 begin_include
@@ -206,7 +206,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2d681a0103
+DECL|enum|__anon2b09ba4e0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -704,8 +704,6 @@ name|xratio
 operator|-
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|offset_x
 expr_stmt|;
 name|yoffset
@@ -715,8 +713,6 @@ operator|*
 name|yratio
 operator|-
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|offset_y
 expr_stmt|;
@@ -2857,8 +2853,6 @@ name|RINT
 argument_list|(
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|offset_x
 operator|/
 name|xratio
@@ -2867,8 +2861,6 @@ argument_list|,
 name|RINT
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|offset_y
 operator|/
@@ -2879,8 +2871,6 @@ name|RINT
 argument_list|(
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|disp_width
 operator|/
 name|xratio
@@ -2889,8 +2879,6 @@ argument_list|,
 name|RINT
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|disp_height
 operator|/
@@ -2904,8 +2892,6 @@ operator|->
 name|dispx
 operator|=
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|offset_x
 operator|*
@@ -2922,8 +2908,6 @@ operator|->
 name|dispy
 operator|=
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|offset_y
 operator|*
@@ -2942,8 +2926,6 @@ operator|=
 operator|(
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|disp_width
 operator|*
 name|nav_dialog
@@ -2961,8 +2943,6 @@ name|dispheight
 operator|=
 operator|(
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|disp_height
 operator|*
@@ -3021,8 +3001,6 @@ operator|(
 operator|(
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|offset_x
 operator|*
 name|gdisp
@@ -3057,8 +3035,6 @@ operator|=
 operator|(
 operator|(
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|disp_width
 operator|*
@@ -5442,8 +5418,6 @@ name|xpnt
 operator|-
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|offset_x
 expr_stmt|;
 name|yoffset
@@ -5451,8 +5425,6 @@ operator|=
 name|ypnt
 operator|-
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|offset_y
 expr_stmt|;

@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|view_zoomin_cmd_callback
+name|view_zoom_in_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -32,7 +32,21 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|view_zoomout_cmd_callback
+name|view_zoom_out_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|view_zoom_fit_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

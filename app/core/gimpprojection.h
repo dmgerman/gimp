@@ -386,32 +386,6 @@ name|gboolean
 name|dot_for_dot
 decl_stmt|;
 comment|/*  is monitor resolution being ignored?    */
-DECL|member|offset_x
-name|gint
-name|offset_x
-decl_stmt|;
-DECL|member|offset_y
-name|gint
-name|offset_y
-decl_stmt|;
-DECL|member|disp_width
-name|gint
-name|disp_width
-decl_stmt|;
-comment|/*  width of drawing area                   */
-DECL|member|disp_height
-name|gint
-name|disp_height
-decl_stmt|;
-comment|/*  height of drawing area                  */
-DECL|member|disp_xoffset
-name|gint
-name|disp_xoffset
-decl_stmt|;
-DECL|member|disp_yoffset
-name|gint
-name|disp_yoffset
-decl_stmt|;
 DECL|member|draw_guides
 name|gboolean
 name|draw_guides

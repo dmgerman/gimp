@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-render.h"
+file|"display/gimpdisplayshell-render.h"
 end_include
 
 begin_include
@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ca1f790103
+DECL|enum|__anon2c3f2bf50103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -13714,7 +13714,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28ca1f790208
+DECL|struct|__anon2c3f2bf50208
 block|{
 DECL|member|label
 name|gchar
@@ -13943,7 +13943,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28ca1f790308
+DECL|struct|__anon2c3f2bf50308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -42,13 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-scale.h"
+file|"gimpdisplayshell.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell.h"
+file|"gimpdisplayshell-scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
 end_include
 
 begin_comment
@@ -909,7 +915,7 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_shrink_wrap
+name|gimp_display_shell_scale_resize
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
@@ -917,6 +923,12 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
+argument_list|,
+name|gimprc
+operator|.
+name|allow_resize_windows
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

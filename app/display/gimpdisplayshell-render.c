@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-render.h"
+file|"gimpdisplayshell.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell.h"
+file|"gimpdisplayshell-render.h"
 end_include
 
 begin_include
@@ -3451,7 +3451,12 @@ name|x
 operator|=
 name|x
 operator|+
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|offset_x
 expr_stmt|;
@@ -3461,7 +3466,12 @@ name|y
 operator|=
 name|y
 operator|+
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|offset_y
 expr_stmt|;
