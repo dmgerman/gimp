@@ -108,7 +108,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|tool_tip
+name|tooltip
 parameter_list|,
 name|gchar
 modifier|*

@@ -169,6 +169,10 @@ begin_comment
 comment|/**********************/
 end_comment
 
+begin_comment
+comment|/**  * gimp_help_init:  *  * This function initializes GIMP's help system.  *  * Currently it only creates a #GtkTooltips object with gtk_tooltips_new()  * which will be used by gimp_help_set_help_data().  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_help_init (void)
@@ -184,6 +188,10 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_help_free:  *  * This function frees the menory used by the #GtkTooltips created by  * gimp_help_init().  *  */
+end_comment
 
 begin_function
 name|void
@@ -212,6 +220,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_help_enable_tooltips:  *  * This function calls gtk_tooltips_enable().  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_help_enable_tooltips (void)
@@ -228,6 +240,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_help_disable_tooltips:  *  * This function calls gtk_tooltips_disable().  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_help_disable_tooltips (void)
@@ -243,6 +259,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_help_connect_help_accel:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  *  */
+end_comment
 
 begin_function
 name|void
@@ -516,6 +536,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_help_set_help_data:  * @widget: The #GtkWidget you want to set a @tooltip and/or @help_data for.  * @tooltip: The text for this widget's tooltip.  * @help_data: The @help_data for the #GtkTipsQuery tooltips inspector.  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_help_set_help_data (GtkWidget * widget,const gchar * tooltip,gchar * help_data)
@@ -584,6 +608,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_context_help:  *  * This function invokes the #GtkTipsQuery tooltips inspector.  *   */
+end_comment
 
 begin_function
 name|void
