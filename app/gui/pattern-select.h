@@ -93,6 +93,10 @@ name|GtkWidget
 modifier|*
 name|pattern_preview
 decl_stmt|;
+DECL|member|popup_timeout_tag
+name|guint
+name|popup_timeout_tag
+decl_stmt|;
 comment|/*  Call back function name  */
 DECL|member|callback_name
 name|gchar

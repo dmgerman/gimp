@@ -97,7 +97,7 @@ name|core
 operator|->
 name|cap_style
 operator|=
-name|GDK_CAP_BUTT
+name|GDK_CAP_NOT_LAST
 expr_stmt|;
 name|core
 operator|->
