@@ -17,12 +17,12 @@ name|__ASUPSAMPLE_H__
 end_define
 
 begin_typedef
-DECL|typedef|render_func_t
+DECL|typedef|GimpRenderFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|render_func_t
+name|GimpRenderFunc
 function_decl|)
 parameter_list|(
 name|gdouble
@@ -36,18 +36,18 @@ modifier|*
 name|color
 parameter_list|,
 name|gpointer
-name|render_data
+name|data
 parameter_list|)
 function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|put_pixel_func_t
+DECL|typedef|GimpPutPixelFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|put_pixel_func_t
+name|GimpPutPixelFunc
 function_decl|)
 parameter_list|(
 name|gint
@@ -57,17 +57,18 @@ name|gint
 name|y
 parameter_list|,
 name|GimpRGB
+modifier|*
 name|color
 parameter_list|,
 name|gpointer
-name|put_pixel_data
+name|data
 parameter_list|)
 function_decl|;
 end_typedef
 
 begin_function_decl
 name|gulong
-name|adaptive_supersample_area
+name|gimp_adaptive_supersample_area
 parameter_list|(
 name|gint
 name|x1
@@ -87,13 +88,13 @@ parameter_list|,
 name|gdouble
 name|threshold
 parameter_list|,
-name|render_func_t
+name|GimpRenderFunc
 name|render_func
 parameter_list|,
 name|gpointer
 name|render_data
 parameter_list|,
-name|put_pixel_func_t
+name|GimpPutPixelFunc
 name|put_pixel_func
 parameter_list|,
 name|gpointer

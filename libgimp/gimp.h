@@ -37,6 +37,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpadaptivesupersample.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpbilinear.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpchannel.h>
 end_include
 

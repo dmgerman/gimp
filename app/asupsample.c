@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe2fc40108
+DECL|struct|__anon27db0f500108
 block|{
 DECL|member|ready
 name|gchar
@@ -68,9 +68,9 @@ DECL|member|color
 name|GimpRGB
 name|color
 decl_stmt|;
-DECL|typedef|sample_t
+DECL|typedef|GimpSampleType
 block|}
-name|sample_t
+name|GimpSampleType
 typedef|;
 end_typedef
 
@@ -81,7 +81,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|gulong
-name|render_sub_pixel
+name|gimp_render_sub_pixel
 parameter_list|(
 name|gint
 name|max_depth
@@ -89,7 +89,7 @@ parameter_list|,
 name|gint
 name|depth
 parameter_list|,
-name|sample_t
+name|GimpSampleType
 modifier|*
 modifier|*
 name|block
@@ -118,12 +118,12 @@ parameter_list|,
 name|gint
 name|sub_pixel_size
 parameter_list|,
-name|render_func_t
-name|render_func
-parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+name|GimpRenderFunc
+name|render_func
 parameter_list|,
 name|gpointer
 name|render_data
@@ -137,8 +137,8 @@ end_comment
 
 begin_function
 name|gulong
-DECL|function|adaptive_supersample_area (gint x1,gint y1,gint x2,gint y2,gint max_depth,gdouble threshold,render_func_t render_func,gpointer render_data,put_pixel_func_t put_pixel_func,gpointer put_pixel_data,GimpProgressFunc progress_func,gpointer progress_data)
-name|adaptive_supersample_area
+DECL|function|gimp_adaptive_supersample_area (gint x1,gint y1,gint x2,gint y2,gint max_depth,gdouble threshold,GimpRenderFunc render_func,gpointer render_data,GimpPutPixelFunc put_pixel_func,gpointer put_pixel_data,GimpProgressFunc progress_func,gpointer progress_data)
+name|gimp_adaptive_supersample_area
 parameter_list|(
 name|gint
 name|x1
@@ -158,13 +158,13 @@ parameter_list|,
 name|gdouble
 name|threshold
 parameter_list|,
-name|render_func_t
+name|GimpRenderFunc
 name|render_func
 parameter_list|,
 name|gpointer
 name|render_data
 parameter_list|,
-name|put_pixel_func_t
+name|GimpPutPixelFunc
 name|put_pixel_func
 parameter_list|,
 name|gpointer
@@ -197,19 +197,15 @@ name|gint
 name|sub_pixel_size
 decl_stmt|;
 comment|/* Numbe of samples per pixel (1D) */
-name|size_t
-name|row_size
-decl_stmt|;
-comment|/* Memory needed for one row */
 name|GimpRGB
 name|color
 decl_stmt|;
 comment|/* Rendered pixel's color */
-name|sample_t
+name|GimpSampleType
 name|tmp_sample
 decl_stmt|;
 comment|/* For swapping samples */
-name|sample_t
+name|GimpSampleType
 modifier|*
 name|top_row
 decl_stmt|,
@@ -220,7 +216,7 @@ modifier|*
 name|tmp_row
 decl_stmt|;
 comment|/* Sample rows */
-name|sample_t
+name|GimpSampleType
 modifier|*
 modifier|*
 name|block
@@ -251,7 +247,6 @@ literal|1
 operator|<<
 name|max_depth
 expr_stmt|;
-comment|/* 2**max_depth */
 comment|/* Create row arrays */
 name|width
 operator|=
@@ -261,33 +256,30 @@ name|x1
 operator|+
 literal|1
 expr_stmt|;
-name|row_size
+name|top_row
 operator|=
-operator|(
+name|g_new
+argument_list|(
+name|GimpSampleType
+argument_list|,
 name|sub_pixel_size
 operator|*
 name|width
 operator|+
 literal|1
-operator|)
-operator|*
-sizeof|sizeof
-argument_list|(
-name|sample_t
-argument_list|)
-expr_stmt|;
-name|top_row
-operator|=
-name|g_malloc
-argument_list|(
-name|row_size
 argument_list|)
 expr_stmt|;
 name|bot_row
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
-name|row_size
+name|GimpSampleType
+argument_list|,
+name|sub_pixel_size
+operator|*
+name|width
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 for|for
@@ -317,7 +309,7 @@ index|]
 operator|.
 name|ready
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|gimp_rgba_set
 argument_list|(
@@ -345,7 +337,7 @@ index|]
 operator|.
 name|ready
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|gimp_rgba_set
 argument_list|(
@@ -370,19 +362,14 @@ block|}
 comment|/* Allocate block matrix */
 name|block
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
-operator|(
+name|GimpSampleType
+operator|*
+argument_list|,
 name|sub_pixel_size
 operator|+
 literal|1
-operator|)
-operator|*
-sizeof|sizeof
-argument_list|(
-name|sample_t
-operator|*
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Rows */
@@ -409,18 +396,13 @@ index|[
 name|y
 index|]
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
-operator|(
+name|GimpSampleType
+argument_list|,
 name|sub_pixel_size
 operator|+
 literal|1
-operator|)
-operator|*
-sizeof|sizeof
-argument_list|(
-name|sample_t
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Columns */
@@ -452,7 +434,7 @@ index|]
 operator|.
 name|ready
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|gimp_rgba_set
 argument_list|(
@@ -524,7 +506,7 @@ index|]
 operator|.
 name|ready
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 comment|/* Clear first column */
 for|for
@@ -616,7 +598,7 @@ index|]
 operator|.
 name|ready
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 comment|/* Copy samples from top row to block */
 for|for
@@ -665,7 +647,7 @@ expr_stmt|;
 comment|/* Render pixel on (x, y) */
 name|num_samples
 operator|+=
-name|render_sub_pixel
+name|gimp_render_sub_pixel
 argument_list|(
 name|max_depth
 argument_list|,
@@ -689,10 +671,10 @@ name|threshold
 argument_list|,
 name|sub_pixel_size
 argument_list|,
-name|render_func
-argument_list|,
 operator|&
 name|color
+argument_list|,
+name|render_func
 argument_list|,
 name|render_data
 argument_list|)
@@ -710,6 +692,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
+operator|&
 name|color
 argument_list|,
 name|put_pixel_data
@@ -929,8 +912,8 @@ end_function
 begin_function
 specifier|static
 name|gulong
-DECL|function|render_sub_pixel (gint max_depth,gint depth,sample_t ** block,gint x,gint y,gint x1,gint y1,gint x3,gint y3,gdouble threshold,gint sub_pixel_size,render_func_t render_func,GimpRGB * color,gpointer render_data)
-name|render_sub_pixel
+DECL|function|gimp_render_sub_pixel (gint max_depth,gint depth,GimpSampleType ** block,gint x,gint y,gint x1,gint y1,gint x3,gint y3,gdouble threshold,gint sub_pixel_size,GimpRGB * color,GimpRenderFunc render_func,gpointer render_data)
+name|gimp_render_sub_pixel
 parameter_list|(
 name|gint
 name|max_depth
@@ -938,7 +921,7 @@ parameter_list|,
 name|gint
 name|depth
 parameter_list|,
-name|sample_t
+name|GimpSampleType
 modifier|*
 modifier|*
 name|block
@@ -967,12 +950,12 @@ parameter_list|,
 name|gint
 name|sub_pixel_size
 parameter_list|,
-name|render_func_t
-name|render_func
-parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+name|GimpRenderFunc
+name|render_func
 parameter_list|,
 name|gpointer
 name|render_data
@@ -1092,6 +1075,10 @@ block|{
 name|num_samples
 operator|++
 expr_stmt|;
+if|if
+condition|(
+name|render_func
+condition|)
 call|(
 modifier|*
 name|render_func
@@ -1121,7 +1108,7 @@ index|]
 operator|.
 name|ready
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|block
 index|[
@@ -1169,6 +1156,10 @@ block|{
 name|num_samples
 operator|++
 expr_stmt|;
+if|if
+condition|(
+name|render_func
+condition|)
 call|(
 modifier|*
 name|render_func
@@ -1198,7 +1189,7 @@ index|]
 operator|.
 name|ready
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|block
 index|[
@@ -1246,6 +1237,10 @@ block|{
 name|num_samples
 operator|++
 expr_stmt|;
+if|if
+condition|(
+name|render_func
+condition|)
 call|(
 modifier|*
 name|render_func
@@ -1275,7 +1270,7 @@ index|]
 operator|.
 name|ready
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|block
 index|[
@@ -1323,6 +1318,10 @@ block|{
 name|num_samples
 operator|++
 expr_stmt|;
+if|if
+condition|(
+name|render_func
+condition|)
 call|(
 modifier|*
 name|render_func
@@ -1352,7 +1351,7 @@ index|]
 operator|.
 name|ready
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|block
 index|[
@@ -1496,7 +1495,7 @@ expr_stmt|;
 comment|/* Render sub-blocks */
 name|num_samples
 operator|+=
-name|render_sub_pixel
+name|gimp_render_sub_pixel
 argument_list|(
 name|max_depth
 argument_list|,
@@ -1521,18 +1520,18 @@ argument_list|,
 name|threshold
 argument_list|,
 name|sub_pixel_size
-argument_list|,
-name|render_func
 argument_list|,
 operator|&
 name|c1
 argument_list|,
+name|render_func
+argument_list|,
 name|render_data
 argument_list|)
 expr_stmt|;
 name|num_samples
 operator|+=
-name|render_sub_pixel
+name|gimp_render_sub_pixel
 argument_list|(
 name|max_depth
 argument_list|,
@@ -1558,17 +1557,17 @@ name|threshold
 argument_list|,
 name|sub_pixel_size
 argument_list|,
-name|render_func
-argument_list|,
 operator|&
 name|c2
+argument_list|,
+name|render_func
 argument_list|,
 name|render_data
 argument_list|)
 expr_stmt|;
 name|num_samples
 operator|+=
-name|render_sub_pixel
+name|gimp_render_sub_pixel
 argument_list|(
 name|max_depth
 argument_list|,
@@ -1594,17 +1593,17 @@ name|threshold
 argument_list|,
 name|sub_pixel_size
 argument_list|,
-name|render_func
-argument_list|,
 operator|&
 name|c3
+argument_list|,
+name|render_func
 argument_list|,
 name|render_data
 argument_list|)
 expr_stmt|;
 name|num_samples
 operator|+=
-name|render_sub_pixel
+name|gimp_render_sub_pixel
 argument_list|(
 name|max_depth
 argument_list|,
@@ -1630,10 +1629,10 @@ name|threshold
 argument_list|,
 name|sub_pixel_size
 argument_list|,
-name|render_func
-argument_list|,
 operator|&
 name|c4
+argument_list|,
+name|render_func
 argument_list|,
 name|render_data
 argument_list|)

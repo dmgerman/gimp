@@ -400,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d861f20108
+DECL|struct|__anon28c1aa9c0108
 block|{
 DECL|member|offset
 name|gdouble
@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d861f20208
+DECL|struct|__anon28c1aa9c0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1023,6 +1023,7 @@ name|gint
 name|y
 parameter_list|,
 name|GimpRGB
+modifier|*
 name|color
 parameter_list|,
 name|gpointer
@@ -6878,7 +6879,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_put_pixel (int x,int y,GimpRGB color,void * put_pixel_data)
+DECL|function|gradient_put_pixel (int x,int y,GimpRGB * color,void * put_pixel_data)
 name|gradient_put_pixel
 parameter_list|(
 name|int
@@ -6888,6 +6889,7 @@ name|int
 name|y
 parameter_list|,
 name|GimpRGB
+modifier|*
 name|color
 parameter_list|,
 name|void
@@ -6934,7 +6936,7 @@ name|data
 operator|++
 operator|=
 name|color
-operator|.
+operator|->
 name|r
 operator|*
 literal|255.0
@@ -6944,7 +6946,7 @@ name|data
 operator|++
 operator|=
 name|color
-operator|.
+operator|->
 name|g
 operator|*
 literal|255.0
@@ -6954,7 +6956,7 @@ name|data
 operator|++
 operator|=
 name|color
-operator|.
+operator|->
 name|b
 operator|*
 literal|255.0
@@ -6964,7 +6966,7 @@ name|data
 operator|++
 operator|=
 name|color
-operator|.
+operator|->
 name|a
 operator|*
 literal|255.0
@@ -6982,15 +6984,15 @@ operator|*
 name|INTENSITY
 argument_list|(
 name|color
-operator|.
+operator|->
 name|r
 argument_list|,
 name|color
-operator|.
+operator|->
 name|g
 argument_list|,
 name|color
-operator|.
+operator|->
 name|b
 argument_list|)
 expr_stmt|;
@@ -6999,7 +7001,7 @@ name|data
 operator|++
 operator|=
 name|color
-operator|.
+operator|->
 name|a
 operator|*
 literal|255.0
@@ -7575,7 +7577,7 @@ operator|=
 name|width
 expr_stmt|;
 comment|/* Render! */
-name|adaptive_supersample_area
+name|gimp_adaptive_supersample_area
 argument_list|(
 literal|0
 argument_list|,

@@ -1391,7 +1391,7 @@ name|y2
 argument_list|)
 expr_stmt|;
 return|return
-name|gck_bilinear_rgba
+name|gimp_bilinear_rgba
 argument_list|(
 name|u
 argument_list|,
@@ -1573,7 +1573,7 @@ name|y2
 argument_list|)
 expr_stmt|;
 return|return
-name|gck_bilinear
+name|gimp_bilinear
 argument_list|(
 name|u
 argument_list|,

@@ -721,10 +721,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|scrollbar_horz_update
+argument_list|)
 argument_list|,
 name|gdisp
 argument_list|)
@@ -740,10 +740,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|scrollbar_vert_update
+argument_list|)
 argument_list|,
 name|gdisp
 argument_list|)
@@ -1018,7 +1018,7 @@ argument_list|(
 name|canvas
 argument_list|)
 expr_stmt|;
-comment|/* This is a hack to prevent other stuff being run in the middle of 	     a tool operation (like changing image types.... brrrr). We just 	     block all the keypress event. A better solution is to implement 	     some sort of locking for images. 	     Note that this is dependent on specific GTK behavior, and isn't 	     guaranteed to work in future versions of GTK. 	     -Yosh 	   */
+comment|/* This is a hack to prevent other stuff being run in the middle of 	   * a tool operation (like changing image types.... brrrr). We just 	   * block all the keypress event. A better solution is to implement 	   * some sort of locking for images. 	   * Note that this is dependent on specific GTK behavior, and isn't 	   * guaranteed to work in future versions of GTK. 	   * -Yosh 	   */
 if|if
 condition|(
 name|key_signal_id
@@ -1715,7 +1715,7 @@ condition|)
 return|return
 name|TRUE
 return|;
-comment|/* Ask for the pointer position, but ignore it except for cursor       * handling, so motion events sync with the button press/release events */
+comment|/* Ask for the pointer position, but ignore it except for cursor       * handling, so motion events sync with the button press/release events       */
 if|if
 condition|(
 name|mevent

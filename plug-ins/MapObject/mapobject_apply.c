@@ -1009,7 +1009,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|render (gdouble x,gdouble y,GimpRGB * col)
+DECL|function|render (gdouble x,gdouble y,GimpRGB * col,gpointer data)
 name|render
 parameter_list|(
 name|gdouble
@@ -1021,6 +1021,9 @@ parameter_list|,
 name|GimpRGB
 modifier|*
 name|col
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|GimpVector3
@@ -1068,7 +1071,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|show_progress (gint min,gint max,gint curr)
+DECL|function|show_progress (gint min,gint max,gint curr,gpointer data)
 name|show_progress
 parameter_list|(
 name|gint
@@ -1079,6 +1082,9 @@ name|max
 parameter_list|,
 name|gint
 name|curr
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|gimp_progress_update
@@ -1389,6 +1395,8 @@ name|ycount
 argument_list|,
 operator|&
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1420,7 +1428,7 @@ block|}
 block|}
 else|else
 block|{
-name|gck_adaptive_supersample_area
+name|gimp_adaptive_supersample_area
 argument_list|(
 literal|0
 argument_list|,
@@ -1442,9 +1450,15 @@ name|pixeltreshold
 argument_list|,
 name|render
 argument_list|,
+name|NULL
+argument_list|,
 name|poke
 argument_list|,
+name|NULL
+argument_list|,
 name|show_progress
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -255,6 +255,9 @@ parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
