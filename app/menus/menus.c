@@ -493,13 +493,15 @@ literal|0
 block|}
 block|,
 block|{
-literal|"/Edit/<Separator>"
+literal|"/Edit/---"
 block|,
 name|NULL
 block|,
 name|NULL
 block|,
 literal|0
+block|,
+literal|"<Separator>"
 block|}
 block|,
 block|{
