@@ -1041,10 +1041,7 @@ argument_list|(
 literal|"Tool Options"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Tool Options"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TOOL_OPTIONS
 argument_list|,
@@ -1299,10 +1296,7 @@ argument_list|(
 literal|"Images"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Image List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_IMAGES
 argument_list|,
@@ -1379,10 +1373,7 @@ argument_list|(
 literal|"Brushes"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Brush List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|,
@@ -1459,10 +1450,7 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Pattern List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
 argument_list|,
@@ -1539,10 +1527,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Gradient List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
@@ -1619,10 +1604,7 @@ argument_list|(
 literal|"Palettes"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Palette List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GTK_STOCK_SELECT_COLOR
 argument_list|,
@@ -1691,10 +1673,7 @@ argument_list|(
 literal|"Fonts"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Font List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GTK_STOCK_SELECT_FONT
 argument_list|,
@@ -1763,10 +1742,7 @@ argument_list|(
 literal|"Tools"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Tool List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GTK_STOCK_MISSING_IMAGE
 argument_list|,
@@ -1839,10 +1815,7 @@ argument_list|(
 literal|"Buffers"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Buffer List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GTK_STOCK_PASTE
 argument_list|,
@@ -1919,7 +1892,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Document History List"
+literal|"Document History"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_OPEN
@@ -2022,10 +1995,7 @@ argument_list|(
 literal|"Templates"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"List of Templates"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TEMPLATE
 argument_list|,
@@ -2102,10 +2072,7 @@ argument_list|(
 literal|"Images"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Image Grid"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_IMAGES
 argument_list|,
@@ -2182,10 +2149,7 @@ argument_list|(
 literal|"Brushes"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Brush Grid"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|,
@@ -2262,10 +2226,7 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Pattern Grid"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
 argument_list|,
@@ -2342,10 +2303,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Gradient Grid"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
@@ -2422,10 +2380,7 @@ argument_list|(
 literal|"Palettes"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Palette Grid"
-argument_list|)
+name|NULL
 argument_list|,
 name|GTK_STOCK_SELECT_COLOR
 argument_list|,
@@ -2494,10 +2449,7 @@ argument_list|(
 literal|"Fonts"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Font Grid"
-argument_list|)
+name|NULL
 argument_list|,
 name|GTK_STOCK_SELECT_FONT
 argument_list|,
@@ -2566,10 +2518,7 @@ argument_list|(
 literal|"Tools"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Tool Grid"
-argument_list|)
+name|NULL
 argument_list|,
 name|GTK_STOCK_MISSING_IMAGE
 argument_list|,
@@ -2642,10 +2591,7 @@ argument_list|(
 literal|"Buffers"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Buffer Grid"
-argument_list|)
+name|NULL
 argument_list|,
 name|GTK_STOCK_PASTE
 argument_list|,
@@ -2722,7 +2668,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Document History Grid"
+literal|"Document History"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_OPEN
@@ -2845,10 +2791,7 @@ argument_list|(
 literal|"Layers"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Layer List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_LAYERS
 argument_list|,
@@ -2979,10 +2922,7 @@ argument_list|(
 literal|"Channels"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Channel List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_CHANNELS
 argument_list|,
@@ -3136,10 +3076,7 @@ argument_list|(
 literal|"Paths"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Path List"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_PATHS
 argument_list|,
@@ -3704,10 +3641,7 @@ argument_list|(
 literal|"Brush Editor"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Brush Editor"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|,
@@ -3814,10 +3748,7 @@ argument_list|(
 literal|"Gradient Editor"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Gradient Editor"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
@@ -3924,10 +3855,7 @@ argument_list|(
 literal|"Palette Editor"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Palette Editor"
-argument_list|)
+name|NULL
 argument_list|,
 name|GTK_STOCK_SELECT_COLOR
 argument_list|,
