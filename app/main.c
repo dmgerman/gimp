@@ -322,7 +322,7 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
-name|use_mmx
+name|use_cpu_accel
 init|=
 name|TRUE
 decl_stmt|;
@@ -1359,7 +1359,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|use_mmx
+name|use_cpu_accel
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1857,7 +1857,7 @@ name|be_verbose
 argument_list|,
 name|use_shm
 argument_list|,
-name|use_mmx
+name|use_cpu_accel
 argument_list|,
 name|console_messages
 argument_list|,

@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b670bb80103
+DECL|enum|__anon29d2d9840103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -1716,19 +1716,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|paint_funcs_setup (gboolean use_mmx)
+DECL|function|paint_funcs_setup (void)
 name|paint_funcs_setup
 parameter_list|(
-name|gboolean
-name|use_mmx
+name|void
 parameter_list|)
 block|{
-name|guint
-name|i
-decl_stmt|;
 name|GRand
 modifier|*
 name|gr
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 comment|/*  generate a table of random seeds  */
 name|gr

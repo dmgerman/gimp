@@ -17,15 +17,14 @@ name|__PAINT_FUNCS_H__
 end_define
 
 begin_comment
-comment|/*  Called initially to setup accelerated rendering features  */
+comment|/*  Called initially to setup rendering features  */
 end_comment
 
 begin_function_decl
 name|void
 name|paint_funcs_setup
 parameter_list|(
-name|gboolean
-name|use_mmx
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
