@@ -82,7 +82,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon28c4cedb0103
+DECL|enum|__anon299701a10103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -2325,6 +2325,36 @@ name|drawable
 operator|->
 name|tattoo
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_drawable_set_tattoo (GimpDrawable * drawable,Tattoo val)
+name|gimp_drawable_set_tattoo
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|Tattoo
+name|val
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|drawable
+operator|->
+name|tattoo
+operator|=
+name|val
+expr_stmt|;
 block|}
 end_function
 

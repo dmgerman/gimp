@@ -450,6 +450,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_drawable_set_tattoo
+parameter_list|(
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|Tattoo
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpDrawable
 modifier|*
 name|gimp_drawable_get_ID

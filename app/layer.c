@@ -150,7 +150,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a439f9b0103
+DECL|enum|__anon2a3b8ff00103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -6271,6 +6271,33 @@ argument_list|)
 argument_list|)
 operator|)
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|layer_set_tattoo (const Layer * layer,Tattoo val)
+name|layer_set_tattoo
+parameter_list|(
+specifier|const
+name|Layer
+modifier|*
+name|layer
+parameter_list|,
+name|Tattoo
+name|val
+parameter_list|)
+block|{
+name|gimp_drawable_set_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|val
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -136,7 +136,7 @@ file|"lut_funcs.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b84dc7b0103
+DECL|enum|__anon288c649d0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -2547,6 +2547,33 @@ argument_list|)
 argument_list|)
 operator|)
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|channel_set_tattoo (const Channel * channel,Tattoo val)
+name|channel_set_tattoo
+parameter_list|(
+specifier|const
+name|Channel
+modifier|*
+name|channel
+parameter_list|,
+name|Tattoo
+name|val
+parameter_list|)
+block|{
+name|gimp_drawable_set_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
+argument_list|,
+name|val
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

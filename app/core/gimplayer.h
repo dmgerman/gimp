@@ -782,6 +782,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|layer_set_tattoo
+parameter_list|(
+specifier|const
+name|Layer
+modifier|*
+parameter_list|,
+name|Tattoo
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_define
 DECL|macro|drawable_layer
 define|#
