@@ -66,18 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpenummenu.h"
 end_include
 
@@ -102,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a3a7a30108
+DECL|struct|__anon274b83b60108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2135,10 +2123,6 @@ name|IndexedDialog
 modifier|*
 name|dialog
 decl_stmt|;
-name|GimpTool
-modifier|*
-name|active_tool
-decl_stmt|;
 name|dialog
 operator|=
 operator|(
@@ -2146,37 +2130,6 @@ name|IndexedDialog
 operator|*
 operator|)
 name|data
-expr_stmt|;
-comment|/* Close the dialogs when open because they're useless for indexed    *  images and could crash the GIMP when used nevertheless    */
-name|active_tool
-operator|=
-name|tool_manager_get_active
-argument_list|(
-name|dialog
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|active_tool
-condition|)
-name|tool_manager_control_active
-argument_list|(
-name|dialog
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|,
-name|HALT
-argument_list|,
-name|active_tool
-operator|->
-name|gdisp
-argument_list|)
 expr_stmt|;
 comment|/*  Convert the image to indexed color  */
 name|gimp_image_convert

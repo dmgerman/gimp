@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -299,20 +293,6 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-comment|/*  stop any active tool  */
-name|tool_manager_control_active
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|,
-name|HALT
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_edit_cut
@@ -422,20 +402,6 @@ operator|->
 name|global_buffer
 condition|)
 block|{
-comment|/*  stop any active tool  */
-name|tool_manager_control_active
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|,
-name|HALT
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_edit_paste
@@ -510,20 +476,6 @@ operator|->
 name|global_buffer
 condition|)
 block|{
-comment|/*  stop any active tool  */
-name|tool_manager_control_active
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|,
-name|HALT
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_edit_paste
@@ -598,20 +550,6 @@ operator|->
 name|global_buffer
 condition|)
 block|{
-comment|/*  stop any active tool  */
-name|tool_manager_control_active
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|,
-name|HALT
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
 name|gimp_edit_paste_as_new
 argument_list|(
 name|gdisp
@@ -663,20 +601,6 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|data
-argument_list|)
-expr_stmt|;
-comment|/*  stop any active tool  */
-name|tool_manager_control_active
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|,
-name|HALT
-argument_list|,
-name|gdisp
 argument_list|)
 expr_stmt|;
 name|qbox

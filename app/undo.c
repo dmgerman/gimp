@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a36c6d0103
+DECL|enum|__anon2c509f8b0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -2068,6 +2068,12 @@ operator|<=
 name|LAST_UNDO_GROUP
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* Notify listeners that the image will be modified */
+name|gimp_image_undo_start
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 if|if
@@ -14218,6 +14224,15 @@ block|,
 name|N_
 argument_list|(
 literal|"Cut"
+argument_list|)
+block|}
+block|,
+block|{
+name|EDIT_COPY_UNDO_GROUP
+block|,
+name|N_
+argument_list|(
+literal|"Copy"
 argument_list|)
 block|}
 block|,

@@ -1227,12 +1227,6 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/* Tell any listeners about impending layer merges */
-name|gimp_image_layer_merge
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  Start a merge undo group. */
 name|undo_push_group_start
 argument_list|(

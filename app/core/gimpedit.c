@@ -371,6 +371,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  Start a group undo  */
+name|undo_push_group_start
+argument_list|(
+name|gimage
+argument_list|,
+name|EDIT_COPY_UNDO_GROUP
+argument_list|)
+expr_stmt|;
 comment|/*  See if the gimage mask is empty  */
 name|empty
 operator|=
@@ -456,6 +464,12 @@ else|else
 name|cropped_copy
 operator|=
 name|NULL
+expr_stmt|;
+comment|/*  end the group undo  */
+name|undo_push_group_end
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
