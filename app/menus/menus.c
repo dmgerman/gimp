@@ -215,22 +215,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_File"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/File/_New"
+literal|"/File/New"
 argument_list|)
 block|,
 literal|"<control>N"
@@ -243,7 +228,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Open"
+literal|"/File/Open"
 argument_list|)
 block|,
 literal|"<control>O"
@@ -256,7 +241,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_About..."
+literal|"/File/About..."
 argument_list|)
 block|,
 name|NULL
@@ -269,7 +254,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Preferences..."
+literal|"/File/Preferences..."
 argument_list|)
 block|,
 name|NULL
@@ -282,7 +267,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Tip of the day"
+literal|"/File/Tip of the day"
 argument_list|)
 block|,
 name|NULL
@@ -310,22 +295,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Dialogs"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/File/Dialogs/_Brushes..."
+literal|"/File/Dialogs/Brushes..."
 argument_list|)
 block|,
 literal|"<control><shift>B"
@@ -338,7 +308,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Patterns..."
+literal|"/File/Dialogs/Patterns..."
 argument_list|)
 block|,
 literal|"<control><shift>P"
@@ -351,7 +321,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/P_alette..."
+literal|"/File/Dialogs/Palette..."
 argument_list|)
 block|,
 literal|"<control>P"
@@ -364,7 +334,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Gradient..."
+literal|"/File/Dialogs/Gradient..."
 argument_list|)
 block|,
 literal|"<control>G"
@@ -377,7 +347,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Layers& Channels..."
+literal|"/File/Dialogs/Layers& Channels..."
 argument_list|)
 block|,
 literal|"<control>L"
@@ -390,7 +360,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Tool Options..."
+literal|"/File/Dialogs/Tool Options..."
 argument_list|)
 block|,
 literal|"<control><shift>T"
@@ -403,7 +373,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Input Devices..."
+literal|"/File/Dialogs/Input Devices..."
 argument_list|)
 block|,
 name|NULL
@@ -416,7 +386,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Device Status..."
+literal|"/File/Dialogs/Device Status..."
 argument_list|)
 block|,
 name|NULL
@@ -429,7 +399,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/D_ocument Index..."
+literal|"/File/Dialogs/Document Index..."
 argument_list|)
 block|,
 name|NULL
@@ -442,7 +412,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Error Console..."
+literal|"/File/Dialogs/Error Console..."
 argument_list|)
 block|,
 name|NULL
@@ -455,7 +425,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Module Browser..."
+literal|"/File/Dialogs/Module Browser..."
 argument_list|)
 block|,
 name|NULL
@@ -549,7 +519,7 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Quit"
+literal|"/File/Quit"
 argument_list|)
 block|,
 literal|"<control>Q"
@@ -573,22 +543,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_File"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/File/_New"
+literal|"/File/New"
 argument_list|)
 block|,
 literal|"<control>N"
@@ -601,7 +556,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Open"
+literal|"/File/Open"
 argument_list|)
 block|,
 literal|"<control>O"
@@ -614,7 +569,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Save"
+literal|"/File/Save"
 argument_list|)
 block|,
 literal|"<control>S"
@@ -627,7 +582,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Save _as"
+literal|"/File/Save as"
 argument_list|)
 block|,
 name|NULL
@@ -640,7 +595,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Revert"
+literal|"/File/Revert"
 argument_list|)
 block|,
 name|NULL
@@ -653,7 +608,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Preferences..."
+literal|"/File/Preferences..."
 argument_list|)
 block|,
 name|NULL
@@ -681,7 +636,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Close"
+literal|"/File/Close"
 argument_list|)
 block|,
 literal|"<control>W"
@@ -694,7 +649,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/_Quit"
+literal|"/File/Quit"
 argument_list|)
 block|,
 literal|"<control>Q"
@@ -722,22 +677,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Edit/Cu_t"
+literal|"/Edit/Cut"
 argument_list|)
 block|,
 literal|"<control>X"
@@ -750,7 +690,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/_Copy"
+literal|"/Edit/Copy"
 argument_list|)
 block|,
 literal|"<control>C"
@@ -763,7 +703,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/_Paste"
+literal|"/Edit/Paste"
 argument_list|)
 block|,
 literal|"<control>V"
@@ -776,7 +716,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/Paste _Into"
+literal|"/Edit/Paste Into"
 argument_list|)
 block|,
 name|NULL
@@ -789,7 +729,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/C_lear"
+literal|"/Edit/Clear"
 argument_list|)
 block|,
 literal|"<control>K"
@@ -802,7 +742,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/_Fill"
+literal|"/Edit/Fill"
 argument_list|)
 block|,
 literal|"<control>period"
@@ -815,7 +755,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/_Stroke"
+literal|"/Edit/Stroke"
 argument_list|)
 block|,
 name|NULL
@@ -828,7 +768,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/_Undo"
+literal|"/Edit/Undo"
 argument_list|)
 block|,
 literal|"<control>Z"
@@ -841,7 +781,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/_Redo"
+literal|"/Edit/Redo"
 argument_list|)
 block|,
 literal|"<control>R"
@@ -869,7 +809,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/Cut _Named"
+literal|"/Edit/Cut Named"
 argument_list|)
 block|,
 literal|"<control><shift>X"
@@ -882,7 +822,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/Cop_y Named"
+literal|"/Edit/Copy Named"
 argument_list|)
 block|,
 literal|"<control><shift>C"
@@ -895,7 +835,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/Past_e Named"
+literal|"/Edit/Paste Named"
 argument_list|)
 block|,
 literal|"<control><shift>V"
@@ -923,22 +863,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/_Select"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Select/_Toggle"
+literal|"/Select/Toggle"
 argument_list|)
 block|,
 literal|"<control>T"
@@ -951,7 +876,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/_Invert"
+literal|"/Select/Invert"
 argument_list|)
 block|,
 literal|"<control>I"
@@ -964,7 +889,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/_All"
+literal|"/Select/All"
 argument_list|)
 block|,
 literal|"<control>A"
@@ -977,7 +902,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/_None"
+literal|"/Select/None"
 argument_list|)
 block|,
 literal|"<control><shift>A"
@@ -990,7 +915,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/_Float"
+literal|"/Select/Float"
 argument_list|)
 block|,
 literal|"<control><shift>L"
@@ -1003,7 +928,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/_Sharpen"
+literal|"/Select/Sharpen"
 argument_list|)
 block|,
 literal|"<control><shift>H"
@@ -1016,7 +941,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/_Border"
+literal|"/Select/Border"
 argument_list|)
 block|,
 literal|"<control><shift>B"
@@ -1029,7 +954,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/F_eather"
+literal|"/Select/Feather"
 argument_list|)
 block|,
 literal|"<control><shift>F"
@@ -1042,7 +967,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/_Grow"
+literal|"/Select/Grow"
 argument_list|)
 block|,
 name|NULL
@@ -1055,7 +980,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/S_hrink"
+literal|"/Select/Shrink"
 argument_list|)
 block|,
 name|NULL
@@ -1068,7 +993,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/Save To _Channel"
+literal|"/Select/Save To Channel"
 argument_list|)
 block|,
 name|NULL
@@ -1081,22 +1006,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/_View"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/View/Zoom _In"
+literal|"/View/Zoom In"
 argument_list|)
 block|,
 literal|"equal"
@@ -1109,7 +1019,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom _Out"
+literal|"/View/Zoom Out"
 argument_list|)
 block|,
 literal|"minus"
@@ -1122,7 +1032,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/1_6:1"
+literal|"/View/Zoom/16:1"
 argument_list|)
 block|,
 name|NULL
@@ -1135,7 +1045,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/_8:1"
+literal|"/View/Zoom/8:1"
 argument_list|)
 block|,
 name|NULL
@@ -1148,7 +1058,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/_4:1"
+literal|"/View/Zoom/4:1"
 argument_list|)
 block|,
 name|NULL
@@ -1161,7 +1071,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/_2:1"
+literal|"/View/Zoom/2:1"
 argument_list|)
 block|,
 name|NULL
@@ -1174,7 +1084,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/_1:1"
+literal|"/View/Zoom/1:1"
 argument_list|)
 block|,
 literal|"1"
@@ -1239,7 +1149,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/_Dot for dot"
+literal|"/View/Dot for dot"
 argument_list|)
 block|,
 name|NULL
@@ -1254,7 +1164,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/_Window Info..."
+literal|"/View/Window Info..."
 argument_list|)
 block|,
 literal|"<control><shift>I"
@@ -1267,7 +1177,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/Toggle _Rulers"
+literal|"/View/Toggle Rulers"
 argument_list|)
 block|,
 literal|"<control><shift>R"
@@ -1282,7 +1192,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/Toggle S_tatusbar"
+literal|"/View/Toggle Statusbar"
 argument_list|)
 block|,
 literal|"<control><shift>S"
@@ -1297,7 +1207,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/Toggle _Guides"
+literal|"/View/Toggle Guides"
 argument_list|)
 block|,
 literal|"<control><shift>T"
@@ -1312,7 +1222,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/_Snap To Guides"
+literal|"/View/Snap To Guides"
 argument_list|)
 block|,
 name|NULL
@@ -1342,7 +1252,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/_New View"
+literal|"/View/New View"
 argument_list|)
 block|,
 name|NULL
@@ -1355,7 +1265,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/View/S_hrink Wrap"
+literal|"/View/Shrink Wrap"
 argument_list|)
 block|,
 literal|"<control>E"
@@ -1368,37 +1278,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/_Image"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Image/_Colors"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Image/Colors/_Equalize"
+literal|"/Image/Colors/Equalize"
 argument_list|)
 block|,
 name|NULL
@@ -1411,7 +1291,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/Colors/_Invert"
+literal|"/Image/Colors/Invert"
 argument_list|)
 block|,
 name|NULL
@@ -1439,7 +1319,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/Colors/_Desaturate"
+literal|"/Image/Colors/Desaturate"
 argument_list|)
 block|,
 name|NULL
@@ -1452,22 +1332,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/C_hannel Ops"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Image/Channel Ops/_Duplicate"
+literal|"/Image/Channel Ops/Duplicate"
 argument_list|)
 block|,
 literal|"<control>D"
@@ -1480,7 +1345,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/Channel Ops/_Offset"
+literal|"/Image/Channel Ops/Offset"
 argument_list|)
 block|,
 literal|"<control><shift>O"
@@ -1493,22 +1358,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/_Alpha"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Image/Alpha/_Add Alpha Channel"
+literal|"/Image/Alpha/Add Alpha Channel"
 argument_list|)
 block|,
 name|NULL
@@ -1536,7 +1386,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/_RGB"
+literal|"/Image/RGB"
 argument_list|)
 block|,
 name|NULL
@@ -1549,7 +1399,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/_Grayscale"
+literal|"/Image/Grayscale"
 argument_list|)
 block|,
 name|NULL
@@ -1562,7 +1412,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/_Indexed"
+literal|"/Image/Indexed"
 argument_list|)
 block|,
 name|NULL
@@ -1590,7 +1440,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/R_esize"
+literal|"/Image/Resize"
 argument_list|)
 block|,
 name|NULL
@@ -1603,7 +1453,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Image/_Scale"
+literal|"/Image/Scale"
 argument_list|)
 block|,
 name|NULL
@@ -1631,22 +1481,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/_Layers"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Layers/_Layers& Channels..."
+literal|"/Layers/Layers& Channels..."
 argument_list|)
 block|,
 literal|"<control>L"
@@ -1659,7 +1494,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/_Raise Layer"
+literal|"/Layers/Raise Layer"
 argument_list|)
 block|,
 literal|"<control>F"
@@ -1672,7 +1507,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/L_ower Layer"
+literal|"/Layers/Lower Layer"
 argument_list|)
 block|,
 literal|"<control>B"
@@ -1685,7 +1520,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/_Anchor Layer"
+literal|"/Layers/Anchor Layer"
 argument_list|)
 block|,
 literal|"<control>H"
@@ -1698,7 +1533,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/_Merge Visible Layers"
+literal|"/Layers/Merge Visible Layers"
 argument_list|)
 block|,
 literal|"<control>M"
@@ -1711,7 +1546,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/_Flatten Image"
+literal|"/Layers/Flatten Image"
 argument_list|)
 block|,
 name|NULL
@@ -1724,7 +1559,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Al_pha To Selection"
+literal|"/Layers/Alpha To Selection"
 argument_list|)
 block|,
 name|NULL
@@ -1737,7 +1572,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Ma_sk To Selection"
+literal|"/Layers/Mask To Selection"
 argument_list|)
 block|,
 name|NULL
@@ -1750,7 +1585,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/A_dd Alpha Channel"
+literal|"/Layers/Add Alpha Channel"
 argument_list|)
 block|,
 name|NULL
@@ -1765,22 +1600,7 @@ comment|/*   { N_("/Tools/Ellipse Select"), "E", tools_select_cmd_callback, ELLI
 block|{
 name|N_
 argument_list|(
-literal|"/_Tools"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Tools/_Toolbox"
+literal|"/Tools/Toolbox"
 argument_list|)
 block|,
 name|NULL
@@ -1793,7 +1613,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Tools/_Default Colors"
+literal|"/Tools/Default Colors"
 argument_list|)
 block|,
 literal|"D"
@@ -1806,7 +1626,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Tools/_Swap Colors"
+literal|"/Tools/Swap Colors"
 argument_list|)
 block|,
 literal|"X"
@@ -1834,22 +1654,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Filte_rs"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Filters/_Repeat last"
+literal|"/Filters/Repeat last"
 argument_list|)
 block|,
 literal|"<alt>F"
@@ -1862,7 +1667,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Filters/Re-_show last"
+literal|"/Filters/Re-show last"
 argument_list|)
 block|,
 literal|"<alt><shift>F"
@@ -1903,22 +1708,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/_Dialogs"
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Branch>"
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"/Dialogs/_Brushes..."
+literal|"/Dialogs/Brushes..."
 argument_list|)
 block|,
 literal|"<control><shift>B"
@@ -1931,7 +1721,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Patterns..."
+literal|"/Dialogs/Patterns..."
 argument_list|)
 block|,
 literal|"<control><shift>P"
@@ -1944,7 +1734,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/P_alette..."
+literal|"/Dialogs/Palette..."
 argument_list|)
 block|,
 literal|"<control>P"
@@ -1957,7 +1747,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Gradient..."
+literal|"/Dialogs/Gradient..."
 argument_list|)
 block|,
 literal|"<control>G"
@@ -1970,7 +1760,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Layers& Channels..."
+literal|"/Dialogs/Layers& Channels..."
 argument_list|)
 block|,
 literal|"<control>L"
@@ -1983,7 +1773,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Indexed Palette..."
+literal|"/Dialogs/Indexed Palette..."
 argument_list|)
 block|,
 name|NULL
@@ -1996,7 +1786,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Tool Options..."
+literal|"/Dialogs/Tool Options..."
 argument_list|)
 block|,
 name|NULL
@@ -2009,7 +1799,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/I_nput Devices..."
+literal|"/Dialogs/Input Devices..."
 argument_list|)
 block|,
 name|NULL
@@ -2022,7 +1812,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/_Device Status..."
+literal|"/Dialogs/Device Status..."
 argument_list|)
 block|,
 name|NULL

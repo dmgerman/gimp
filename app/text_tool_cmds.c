@@ -160,6 +160,16 @@ name|size
 operator|*=
 name|SUPERSAMPLE
 expr_stmt|;
+if|if
+condition|(
+name|metric
+operator|==
+name|PIXELS
+condition|)
+name|size
+operator|*=
+literal|10
+expr_stmt|;
 name|sprintf
 argument_list|(
 name|buffer

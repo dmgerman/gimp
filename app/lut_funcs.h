@@ -28,6 +28,36 @@ directive|include
 file|"gimphistogramF.h"
 end_include
 
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< chop=_LUT>*/
+DECL|enum|__anon2c431f590103
+block|{
+DECL|enumerator|VALUE_LUT
+name|VALUE_LUT
+block|,
+comment|/*< nick=VALUE/GRAY>*/
+DECL|enumerator|RED_LUT
+name|RED_LUT
+block|,
+DECL|enumerator|GREEN_LUT
+name|GREEN_LUT
+block|,
+DECL|enumerator|BLUE_LUT
+name|BLUE_LUT
+block|,
+DECL|enumerator|GRAY_LUT
+name|GRAY_LUT
+init|=
+literal|0
+comment|/*< skip>*/
+DECL|typedef|ChannelLutType
+block|}
+name|ChannelLutType
+typedef|;
+end_typedef
+
 begin_comment
 comment|/* brightness contrast */
 end_comment
