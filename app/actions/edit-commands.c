@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpclipboard.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -109,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"gui/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/clipboard.h"
 end_include
 
 begin_include
@@ -581,7 +581,7 @@ argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
-name|clipboard_get_buffer
+name|gimp_clipboard_get_buffer
 argument_list|(
 name|gimp
 argument_list|)
@@ -953,7 +953,7 @@ name|GimpBuffer
 modifier|*
 name|buffer
 init|=
-name|clipboard_get_buffer
+name|gimp_clipboard_get_buffer
 argument_list|(
 name|gdisp
 operator|->

@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CLIPBOARD_H__
+name|__GIMP_CLIPBOARD_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CLIPBOARD_H__
+DECL|macro|__GIMP_CLIPBOARD_H__
 define|#
 directive|define
-name|__CLIPBOARD_H__
+name|__GIMP_CLIPBOARD_H__
 end_define
 
 begin_function_decl
 name|void
-name|clipboard_init
+name|gimp_clipboard_init
 parameter_list|(
 name|Gimp
 modifier|*
@@ -29,7 +29,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|clipboard_exit
+name|gimp_clipboard_exit
 parameter_list|(
 name|Gimp
 modifier|*
@@ -40,7 +40,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|clipboard_is_available
+name|gimp_clipboard_is_available
 parameter_list|(
 name|Gimp
 modifier|*
@@ -52,7 +52,7 @@ end_function_decl
 begin_function_decl
 name|GimpBuffer
 modifier|*
-name|clipboard_get_buffer
+name|gimp_clipboard_get_buffer
 parameter_list|(
 name|Gimp
 modifier|*
@@ -67,7 +67,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __CLIPBOARD_H__ */
+comment|/* __GIMP_CLIPBOARD_H__ */
 end_comment
 
 end_unit

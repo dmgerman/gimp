@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -54,19 +54,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdnd.h"
+file|"gimpclipboard.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpselectiondata.h"
+file|"gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"clipboard.h"
+file|"gimpselectiondata.h"
 end_include
 
 begin_include
@@ -89,7 +89,7 @@ end_decl_stmt
 begin_function_decl
 specifier|static
 name|void
-name|clipboard_buffer_changed
+name|gimp_clipboard_buffer_changed
 parameter_list|(
 name|Gimp
 modifier|*
@@ -101,7 +101,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|clipboard_set
+name|gimp_clipboard_set
 parameter_list|(
 name|Gimp
 modifier|*
@@ -117,7 +117,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|clipboard_get
+name|gimp_clipboard_get
 parameter_list|(
 name|GtkClipboard
 modifier|*
@@ -140,7 +140,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|clipboard_wait_is_available
+name|gimp_clipboard_wait_is_available
 parameter_list|(
 name|void
 parameter_list|)
@@ -149,8 +149,8 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|clipboard_init (Gimp * gimp)
-name|clipboard_init
+DECL|function|gimp_clipboard_init (Gimp * gimp)
+name|gimp_clipboard_init
 parameter_list|(
 name|Gimp
 modifier|*
@@ -165,7 +165,7 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|clipboard_set
+name|gimp_clipboard_set
 argument_list|(
 name|gimp
 argument_list|,
@@ -182,7 +182,7 @@ literal|"buffer_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|clipboard_buffer_changed
+name|gimp_clipboard_buffer_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -195,8 +195,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|clipboard_exit (Gimp * gimp)
-name|clipboard_exit
+DECL|function|gimp_clipboard_exit (Gimp * gimp)
+name|gimp_clipboard_exit
 parameter_list|(
 name|Gimp
 modifier|*
@@ -217,13 +217,13 @@ name|gimp
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|clipboard_buffer_changed
+name|gimp_clipboard_buffer_changed
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|clipboard_set
+name|gimp_clipboard_set
 argument_list|(
 name|gimp
 argument_list|,
@@ -234,13 +234,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * clipboard_is_available:  * @gimp: pointer to #Gimp  *  * Tests if there's image data in the clipboard. If the global cut  * buffer of @gimp is empty, this function checks if there's image  * data in %GDK_SELECTION_CLIPBOARD. This is done in a main-loop  * similar to gtk_clipboard_wait_is_text_available(). The same caveats  * apply here.  *  * Return value: %TRUE if there's image data in the clipboard, %FALSE otherwise  **/
+comment|/**  * gimp_clipboard_is_available:  * @gimp: pointer to #Gimp  *  * Tests if there's image data in the clipboard. If the global cut  * buffer of @gimp is empty, this function checks if there's image  * data in %GDK_SELECTION_CLIPBOARD. This is done in a main-loop  * similar to gtk_clipboard_wait_is_text_available(). The same caveats  * apply here.  *  * Return value: %TRUE if there's image data in the clipboard, %FALSE otherwise  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|clipboard_is_available (Gimp * gimp)
-name|clipboard_is_available
+DECL|function|gimp_clipboard_is_available (Gimp * gimp)
+name|gimp_clipboard_is_available
 parameter_list|(
 name|Gimp
 modifier|*
@@ -267,7 +267,7 @@ return|return
 name|TRUE
 return|;
 return|return
-name|clipboard_wait_is_available
+name|gimp_clipboard_wait_is_available
 argument_list|()
 return|;
 block|}
@@ -425,14 +425,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * clipboard_get_buffer:  * @gimp: pointer to #Gimp  *  * Retrieves either image data from %GDK_SELECTION_CLIPBOARD or from  * the global cut buffer of @gimp.  *  * The returned #GimpBuffer needs to be unref'ed when it's no longer  * needed.  *  * Return value: a reference to a #GimpBuffer or %NULL if there's no  *               image data  **/
+comment|/**  * gimp_clipboard_get_buffer:  * @gimp: pointer to #Gimp  *  * Retrieves either image data from %GDK_SELECTION_CLIPBOARD or from  * the global cut buffer of @gimp.  *  * The returned #GimpBuffer needs to be unref'ed when it's no longer  * needed.  *  * Return value: a reference to a #GimpBuffer or %NULL if there's no  *               image data  **/
 end_comment
 
 begin_function
 name|GimpBuffer
 modifier|*
-DECL|function|clipboard_get_buffer (Gimp * gimp)
-name|clipboard_get_buffer
+DECL|function|gimp_clipboard_get_buffer (Gimp * gimp)
+name|gimp_clipboard_get_buffer
 parameter_list|(
 name|Gimp
 modifier|*
@@ -483,7 +483,7 @@ argument_list|(
 name|gimp
 argument_list|)
 operator|&&
-name|clipboard_wait_is_available
+name|gimp_clipboard_wait_is_available
 argument_list|()
 condition|)
 block|{
@@ -604,15 +604,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clipboard_buffer_changed (Gimp * gimp)
-name|clipboard_buffer_changed
+DECL|function|gimp_clipboard_buffer_changed (Gimp * gimp)
+name|gimp_clipboard_buffer_changed
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|clipboard_set
+name|gimp_clipboard_set
 argument_list|(
 name|gimp
 argument_list|,
@@ -627,8 +627,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clipboard_set (Gimp * gimp,GimpBuffer * buffer)
-name|clipboard_set
+DECL|function|gimp_clipboard_set (Gimp * gimp,GimpBuffer * buffer)
+name|gimp_clipboard_set
 parameter_list|(
 name|Gimp
 modifier|*
@@ -676,7 +676,7 @@ argument_list|,
 operator|(
 name|GtkClipboardGetFunc
 operator|)
-name|clipboard_get
+name|gimp_clipboard_get
 argument_list|,
 operator|(
 name|GtkClipboardClearFunc
@@ -716,8 +716,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|clipboard_wait_is_available (void)
-name|clipboard_wait_is_available
+DECL|function|gimp_clipboard_wait_is_available (void)
+name|gimp_clipboard_wait_is_available
 parameter_list|(
 name|void
 parameter_list|)
@@ -818,6 +818,20 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
+name|g_print
+argument_list|(
+literal|"offered type: %s\n"
+argument_list|,
+name|gdk_atom_name
+argument_list|(
+name|targets
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|targets
@@ -831,6 +845,7 @@ name|result
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|targets
@@ -853,8 +868,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clipboard_get (GtkClipboard * clipboard,GtkSelectionData * selection_data,guint info,Gimp * gimp)
-name|clipboard_get
+DECL|function|gimp_clipboard_get (GtkClipboard * clipboard,GtkSelectionData * selection_data,guint info,Gimp * gimp)
+name|gimp_clipboard_get
 parameter_list|(
 name|GtkClipboard
 modifier|*

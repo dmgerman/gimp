@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpclipboard.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcontrollers.h"
 end_include
 
@@ -205,12 +211,6 @@ begin_include
 include|#
 directive|include
 file|"menus/menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"clipboard.h"
 end_include
 
 begin_include
@@ -1295,17 +1295,17 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|clipboard_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 name|render_init
 argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
 name|dialogs_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_clipboard_init
 argument_list|(
 name|gimp
 argument_list|)
@@ -1739,11 +1739,6 @@ name|image_ui_manager
 operator|=
 name|NULL
 expr_stmt|;
-name|clipboard_exit
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 name|menus_exit
 argument_list|(
 name|gimp
@@ -1770,6 +1765,11 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_devices_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_clipboard_exit
 argument_list|(
 name|gimp
 argument_list|)
