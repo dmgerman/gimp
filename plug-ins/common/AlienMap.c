@@ -30519,7 +30519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa698950108
+DECL|struct|__anon27b750cb0108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30554,7 +30554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa698950208
+DECL|struct|__anon27b750cb0208
 block|{
 DECL|member|run
 name|gint
@@ -31809,7 +31809,7 @@ argument_list|(
 name|dialog_response
 argument_list|)
 argument_list|,
-name|dialog
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -32750,10 +32750,7 @@ expr_stmt|;
 default|default:
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
+name|widget
 argument_list|)
 expr_stmt|;
 break|break;

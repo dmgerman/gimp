@@ -30523,7 +30523,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288241c10108
+DECL|struct|__anon2bdc17fc0108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30574,7 +30574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288241c10208
+DECL|struct|__anon2bdc17fc0208
 block|{
 DECL|member|run
 name|gint
@@ -32023,7 +32023,7 @@ argument_list|(
 name|dialog_response
 argument_list|)
 argument_list|,
-name|dialog
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -33117,10 +33117,7 @@ expr_stmt|;
 default|default:
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
+name|widget
 argument_list|)
 expr_stmt|;
 break|break;
