@@ -119,6 +119,17 @@ name|PaintCore
 modifier|*
 parameter_list|)
 function_decl|;
+DECL|member|want_null_motion
+name|gboolean
+function_decl|(
+modifier|*
+name|want_null_motion
+function_decl|)
+parameter_list|(
+name|PaintCore
+modifier|*
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct

@@ -58,7 +58,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c1532730103
+DECL|enum|__anon296d326a0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -78,6 +78,18 @@ specifier|static
 name|GimpBrush
 modifier|*
 name|gimp_brush_select_brush
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_brush_want_null_motion
 parameter_list|(
 name|PaintCore
 modifier|*
@@ -228,6 +240,12 @@ operator|->
 name|select_brush
 operator|=
 name|gimp_brush_select_brush
+expr_stmt|;
+name|klass
+operator|->
+name|want_null_motion
+operator|=
+name|gimp_brush_want_null_motion
 expr_stmt|;
 name|gimp_brush_signals
 index|[
@@ -477,6 +495,23 @@ return|return
 name|paint_core
 operator|->
 name|brush
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_brush_want_null_motion (PaintCore * paint_core)
+name|gimp_brush_want_null_motion
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|)
+block|{
+return|return
+name|TRUE
 return|;
 block|}
 end_function
