@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_COMPAT_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_ENABLE_COMPAT_CRUFT
-end_ifdef
-
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* This file contains aliases that are kept for historical  * reasons, because a wide code base depends on them.  *  * These defines will be removed in the next development cycle.   */
@@ -68,7 +62,7 @@ name|gimp_help_free
 parameter_list|()
 value|((void) 0)
 name|enum
-DECL|enum|__anon2a2391cb0103
+DECL|enum|__anon29d688430103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -109,7 +103,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon2a2391cb0203
+DECL|enum|__anon29d688430203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -136,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2391cb0303
+DECL|enum|__anon29d688430303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -163,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2391cb0403
+DECL|enum|__anon29d688430403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -195,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2391cb0503
+DECL|enum|__anon29d688430503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -212,7 +206,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2391cb0603
+DECL|enum|__anon29d688430603
 block|{
 DECL|enumerator|GIMP_ONCE_FORWARD
 name|GIMP_ONCE_FORWARD
@@ -239,7 +233,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2391cb0703
+DECL|enum|__anon29d688430703
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -256,7 +250,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2391cb0803
+DECL|enum|__anon29d688430803
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -274,15 +268,6 @@ end_enum
 begin_macro
 name|G_END_DECLS
 end_macro
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* GIMP_ENABLE_COMPAT_CRUFT */
-end_comment
 
 begin_endif
 endif|#
