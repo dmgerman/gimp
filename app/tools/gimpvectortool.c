@@ -2123,7 +2123,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|GIMP_UNDO_EVENT_UNDO
+name|GIMP_UNDO_EVENT_UNDO_EXPIRED
 argument_list|,
 name|undo
 argument_list|)
