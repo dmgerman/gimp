@@ -70,7 +70,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.1.10 - 8 Nov 1999"
+value|"1.1.11 - 29 Jan 2000"
 end_define
 
 begin_define
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3be9070108
+DECL|struct|__anon294a53400108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1693,6 +1693,8 @@ name|info
 operator|->
 name|x_pixels_per_unit
 operator|)
+operator|*
+literal|72.0
 argument_list|,
 operator|(
 operator|(
@@ -1702,6 +1704,9 @@ name|info
 operator|->
 name|y_pixels_per_unit
 operator|)
+name|i
+operator|*
+literal|72.0
 argument_list|)
 expr_stmt|;
 block|}
