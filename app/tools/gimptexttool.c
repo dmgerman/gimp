@@ -1675,10 +1675,6 @@ argument_list|,
 operator|-
 name|ink
 operator|.
-name|height
-operator|-
-name|ink
-operator|.
 name|y
 argument_list|)
 expr_stmt|;
