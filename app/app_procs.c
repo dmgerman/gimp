@@ -256,11 +256,19 @@ value|"The GIMP"
 end_define
 
 begin_define
+DECL|macro|BROUGHT
+define|#
+directive|define
+name|BROUGHT
+value|"brought to you by"
+end_define
+
+begin_define
 DECL|macro|AUTHORS
 define|#
 directive|define
 name|AUTHORS
-value|"brought to you by Spencer Kimball and Peter Mattis"
+value|"Spencer Kimball and Peter Mattis"
 end_define
 
 begin_define
@@ -1122,7 +1130,7 @@ literal|2
 operator|)
 argument_list|,
 operator|(
-literal|0.3
+literal|0.25
 operator|*
 name|logo_area_height
 operator|)
@@ -1167,12 +1175,50 @@ literal|2
 operator|)
 argument_list|,
 operator|(
-literal|0.5
+literal|0.45
 operator|*
 name|logo_area_height
 operator|)
 argument_list|,
 name|VERSION
+argument_list|)
+expr_stmt|;
+name|gdk_draw_string
+argument_list|(
+name|widget
+operator|->
+name|window
+argument_list|,
+name|font
+argument_list|,
+name|widget
+operator|->
+name|style
+operator|->
+name|black_gc
+argument_list|,
+operator|(
+operator|(
+name|logo_area_width
+operator|-
+name|gdk_string_width
+argument_list|(
+name|font
+argument_list|,
+name|BROUGHT
+argument_list|)
+operator|)
+operator|/
+literal|2
+operator|)
+argument_list|,
+operator|(
+literal|0.65
+operator|*
+name|logo_area_height
+operator|)
+argument_list|,
+name|BROUGHT
 argument_list|)
 expr_stmt|;
 name|gdk_draw_string
@@ -1205,7 +1251,7 @@ literal|2
 operator|)
 argument_list|,
 operator|(
-literal|0.7
+literal|0.80
 operator|*
 name|logo_area_height
 operator|)
