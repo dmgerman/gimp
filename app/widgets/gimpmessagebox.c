@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimputils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -49,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27389d400103
+DECL|enum|__anon2babd13b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1416,11 +1422,19 @@ name|gchar
 modifier|*
 name|text
 init|=
+name|gimp_any_to_utf8
+argument_list|(
 name|g_strdup_vprintf
 argument_list|(
 name|format
 argument_list|,
 name|args
+argument_list|)
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+literal|"Cannot convert text to utf8."
 argument_list|)
 decl_stmt|;
 name|gtk_label_set_text

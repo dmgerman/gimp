@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimputils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -556,6 +562,20 @@ modifier|*
 name|message
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|message2
+init|=
+name|gimp_any_to_utf8
+argument_list|(
+name|message
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+literal|"Cannot convert message to utf8."
+argument_list|)
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -599,7 +619,7 @@ name|gimp
 argument_list|,
 name|domain
 argument_list|,
-name|message
+name|message2
 argument_list|)
 expr_stmt|;
 else|else
@@ -609,7 +629,12 @@ literal|"%s: %s\n\n"
 argument_list|,
 name|domain
 argument_list|,
-name|message
+name|message2
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|message2
 argument_list|)
 expr_stmt|;
 block|}

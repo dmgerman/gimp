@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -1346,6 +1352,10 @@ condition|)
 block|{
 name|gchar
 modifier|*
+name|p
+decl_stmt|;
+name|gchar
+modifier|*
 name|filename
 init|=
 name|file_utils_uri_to_utf8_filename
@@ -1353,6 +1363,24 @@ argument_list|(
 name|uri
 argument_list|)
 decl_stmt|;
+while|while
+condition|(
+operator|(
+name|p
+operator|=
+name|strchr
+argument_list|(
+name|filename
+argument_list|,
+literal|'%'
+argument_list|)
+operator|)
+condition|)
+operator|*
+name|p
+operator|=
+literal|' '
+expr_stmt|;
 name|g_message
 argument_list|(
 name|_
