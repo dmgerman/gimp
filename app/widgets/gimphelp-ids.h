@@ -177,6 +177,14 @@ value|"gimp-edit-copy"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_EDIT_COPY_VISIBLE
+define|#
+directive|define
+name|GIMP_HELP_EDIT_COPY_VISIBLE
+value|"gimp-edit-copy-visible"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_EDIT_PASTE
 define|#
 directive|define

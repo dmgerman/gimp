@@ -327,6 +327,29 @@ name|GIMP_HELP_EDIT_COPY
 block|}
 block|,
 block|{
+literal|"edit-copy-visible"
+block|,
+name|NULL
+block|,
+comment|/* GIMP_STOCK_COPY_VISIBLE, */
+name|N_
+argument_list|(
+literal|"Copy _Visible"
+argument_list|)
+block|,
+literal|""
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|edit_copy_visible_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_EDIT_COPY_VISIBLE
+block|}
+block|,
+block|{
 literal|"edit-paste"
 block|,
 name|GTK_STOCK_PASTE
@@ -961,6 +984,13 @@ argument_list|(
 literal|"edit-copy"
 argument_list|,
 name|drawable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"edit-copy-visible"
+argument_list|,
+name|gimage
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

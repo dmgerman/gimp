@@ -59,6 +59,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|GimpBuffer
+modifier|*
+name|gimp_edit_copy_visible
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpLayer
 modifier|*
 name|gimp_edit_paste

@@ -1596,6 +1596,11 @@ argument_list|,
 literal|1
 argument_list|)
 decl_stmt|;
+name|g_print
+argument_list|(
+literal|"invalidating shared tile (executing buggy code!!!)\n"
+argument_list|)
+expr_stmt|;
 name|tile_init
 argument_list|(
 name|newtile

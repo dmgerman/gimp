@@ -43,6 +43,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_edit_copy_visible
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_edit_paste
 parameter_list|(
