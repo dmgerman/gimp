@@ -3294,7 +3294,7 @@ argument_list|(
 literal|"/Dialogs/Fonts..."
 argument_list|)
 block|,
-literal|"<control>P"
+name|NULL
 block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
