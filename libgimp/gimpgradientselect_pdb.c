@@ -205,7 +205,7 @@ name|nreturn_vals
 decl_stmt|;
 name|gchar
 modifier|*
-name|name
+name|ret_name
 init|=
 name|NULL
 decl_stmt|;
@@ -248,7 +248,7 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
-name|name
+name|ret_name
 operator|=
 name|g_strdup
 argument_list|(
@@ -317,7 +317,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|name
+name|ret_name
 return|;
 block|}
 end_function

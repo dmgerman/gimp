@@ -1363,7 +1363,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
-name|drawable_ID
+name|ret_drawable_ID
 init|=
 operator|-
 literal|1
@@ -1401,7 +1401,7 @@ name|d_status
 operator|==
 name|STATUS_SUCCESS
 condition|)
-name|drawable_ID
+name|ret_drawable_ID
 operator|=
 name|return_vals
 index|[
@@ -1420,7 +1420,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|drawable_ID
+name|ret_drawable_ID
 return|;
 block|}
 end_function
@@ -1844,7 +1844,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
-name|drawable_ID
+name|ret_drawable_ID
 init|=
 operator|-
 literal|1
@@ -1914,7 +1914,7 @@ name|d_status
 operator|==
 name|STATUS_SUCCESS
 condition|)
-name|drawable_ID
+name|ret_drawable_ID
 operator|=
 name|return_vals
 index|[
@@ -1933,7 +1933,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|drawable_ID
+name|ret_drawable_ID
 return|;
 block|}
 end_function
@@ -2052,7 +2052,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
-name|drawable_ID
+name|ret_drawable_ID
 init|=
 operator|-
 literal|1
@@ -2094,7 +2094,7 @@ name|d_status
 operator|==
 name|STATUS_SUCCESS
 condition|)
-name|drawable_ID
+name|ret_drawable_ID
 operator|=
 name|return_vals
 index|[
@@ -2113,7 +2113,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|drawable_ID
+name|ret_drawable_ID
 return|;
 block|}
 end_function
@@ -2150,7 +2150,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
-name|drawable_ID
+name|ret_drawable_ID
 init|=
 operator|-
 literal|1
@@ -2204,7 +2204,7 @@ name|d_status
 operator|==
 name|STATUS_SUCCESS
 condition|)
-name|drawable_ID
+name|ret_drawable_ID
 operator|=
 name|return_vals
 index|[
@@ -2223,7 +2223,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|drawable_ID
+name|ret_drawable_ID
 return|;
 block|}
 end_function
@@ -2254,7 +2254,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
-name|drawable_ID
+name|ret_drawable_ID
 init|=
 operator|-
 literal|1
@@ -2300,7 +2300,7 @@ name|d_status
 operator|==
 name|STATUS_SUCCESS
 condition|)
-name|drawable_ID
+name|ret_drawable_ID
 operator|=
 name|return_vals
 index|[
@@ -2319,7 +2319,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|drawable_ID
+name|ret_drawable_ID
 return|;
 block|}
 end_function
@@ -2486,7 +2486,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
-name|drawable_ID
+name|ret_drawable_ID
 init|=
 operator|-
 literal|1
@@ -2552,7 +2552,7 @@ name|d_status
 operator|==
 name|STATUS_SUCCESS
 condition|)
-name|drawable_ID
+name|ret_drawable_ID
 operator|=
 name|return_vals
 index|[
@@ -2571,7 +2571,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|drawable_ID
+name|ret_drawable_ID
 return|;
 block|}
 end_function
