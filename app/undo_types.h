@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dc27a20103
+DECL|enum|__anon27f313b50103
 block|{
 comment|/* Type 0 is special - in the gimpimage structure it means      * there is no undo group currently being added to. */
 DECL|enumerator|IMAGE_UNDO
@@ -154,6 +154,12 @@ name|PARASITE_REMOVE_UNDO
 block|,
 DECL|enumerator|RESOLUTION_UNDO
 name|RESOLUTION_UNDO
+block|,
+DECL|enumerator|IMAGE_SCALE_UNDO
+name|IMAGE_SCALE_UNDO
+block|,
+DECL|enumerator|IMAGE_RESIZE_UNDO
+name|IMAGE_RESIZE_UNDO
 block|,
 DECL|enumerator|MISC_UNDO
 name|MISC_UNDO

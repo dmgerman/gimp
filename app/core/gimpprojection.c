@@ -9449,6 +9449,7 @@ name|gimage
 operator|==
 name|gimage
 condition|)
+block|{
 name|gdisplay_expose_guide
 argument_list|(
 name|gdisp
@@ -9456,6 +9457,7 @@ argument_list|,
 name|guide
 argument_list|)
 expr_stmt|;
+block|}
 name|list
 operator|=
 name|g_slist_next

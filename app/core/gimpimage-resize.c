@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b8b074a0103
+DECL|enum|__anon2a39ee2f0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -1813,7 +1813,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMAGE_MOD_UNDO
+name|IMAGE_RESIZE_UNDO
 argument_list|)
 expr_stmt|;
 comment|/*  Relax the floating selection  */
@@ -1933,6 +1933,13 @@ block|{
 case|case
 name|ORIENTATION_HORIZONTAL
 case|:
+name|undo_push_guide
+argument_list|(
+name|gimage
+argument_list|,
+name|guide
+argument_list|)
+expr_stmt|;
 name|guide
 operator|->
 name|position
@@ -1964,6 +1971,13 @@ break|break;
 case|case
 name|ORIENTATION_VERTICAL
 case|:
+name|undo_push_guide
+argument_list|(
+name|gimage
+argument_list|,
+name|guide
+argument_list|)
+expr_stmt|;
 name|guide
 operator|->
 name|position
@@ -2202,7 +2216,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMAGE_MOD_UNDO
+name|IMAGE_SCALE_UNDO
 argument_list|)
 expr_stmt|;
 comment|/*  Relax the floating selection  */
@@ -2416,6 +2430,13 @@ block|{
 case|case
 name|ORIENTATION_HORIZONTAL
 case|:
+name|undo_push_guide
+argument_list|(
+name|gimage
+argument_list|,
+name|guide
+argument_list|)
+expr_stmt|;
 name|guide
 operator|->
 name|position
@@ -2434,6 +2455,13 @@ break|break;
 case|case
 name|ORIENTATION_VERTICAL
 case|:
+name|undo_push_guide
+argument_list|(
+name|gimage
+argument_list|,
+name|guide
+argument_list|)
+expr_stmt|;
 name|guide
 operator|->
 name|position
@@ -4807,6 +4835,22 @@ modifier|*
 name|guide
 parameter_list|)
 block|{
+name|guide
+operator|->
+name|position
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+if|if
+condition|(
+name|guide
+operator|->
+name|ref_count
+operator|<=
+literal|0
+condition|)
+block|{
 name|gimage
 operator|->
 name|guides
@@ -4825,6 +4869,7 @@ argument_list|(
 name|guide
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -228,7 +228,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c0e17a0103
+DECL|enum|__anon2920376f0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c0e17a0203
+DECL|enum|__anon2920376f0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -9232,6 +9232,12 @@ name|Guide
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|guide
+operator|->
+name|ref_count
+operator|=
+literal|0
 expr_stmt|;
 name|guide
 operator|->
