@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b824dcd0108
+DECL|struct|__anon27870c140108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b824dcd0208
+DECL|struct|__anon27870c140208
 block|{
 DECL|member|run
 name|gint
@@ -4775,30 +4775,10 @@ else|else
 block|{
 endif|#
 directive|endif
+comment|/*	globalcomment = g_malloc(1+strlen(_("Made with GIMP"))); 		strcpy(globalcomment, _("Made with GIMP")); */
 name|globalcomment
 operator|=
-name|g_malloc
-argument_list|(
-literal|1
-operator|+
-name|strlen
-argument_list|(
-name|_
-argument_list|(
-literal|"Made with GIMP"
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|strcpy
-argument_list|(
-name|globalcomment
-argument_list|,
-name|_
-argument_list|(
-literal|"Made with GIMP"
-argument_list|)
-argument_list|)
+name|NULL
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -4811,6 +4791,10 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+if|if
+condition|(
+name|globalcomment
+condition|)
 name|gtk_text_insert
 argument_list|(
 name|GTK_TEXT
