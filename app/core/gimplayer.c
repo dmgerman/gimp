@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdba2dc0103
+DECL|enum|__anon28b72a310103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1693,12 +1693,8 @@ modifier|*
 name|dest_image
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|src_image
-decl_stmt|;
 name|GimpImageBaseType
-name|old_base_type
+name|src_base_type
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -1709,7 +1705,7 @@ name|new_base_type
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
 argument_list|)
@@ -1727,21 +1723,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|src_image
+name|src_base_type
 operator|=
-name|gimp_item_get_image
+name|GIMP_IMAGE_TYPE_BASE_TYPE
 argument_list|(
-name|GIMP_ITEM
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|old_base_type
-operator|=
-name|gimp_image_base_type
-argument_list|(
-name|src_image
 argument_list|)
 expr_stmt|;
 name|new_base_type
@@ -1796,7 +1785,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|old_base_type
+name|src_base_type
 operator|!=
 name|new_base_type
 condition|)
@@ -1863,7 +1852,7 @@ name|new_drawable
 argument_list|,
 name|new_tiles
 argument_list|,
-name|old_base_type
+name|src_base_type
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1876,7 +1865,7 @@ name|new_drawable
 argument_list|,
 name|new_tiles
 argument_list|,
-name|old_base_type
+name|src_base_type
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1952,7 +1941,7 @@ name|layerPR
 argument_list|,
 name|NULL
 argument_list|,
-name|old_base_type
+name|src_base_type
 argument_list|)
 expr_stmt|;
 block|}

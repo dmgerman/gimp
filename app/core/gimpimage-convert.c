@@ -399,7 +399,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28f5518d0103
+DECL|enum|__anon29b5abc10103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1427,7 +1427,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f5518d0208
+DECL|struct|__anon29b5abc10208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1504,7 +1504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f5518d0308
+DECL|struct|__anon29b5abc10308
 block|{
 DECL|member|ncolors
 name|long
@@ -1664,7 +1664,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f5518d0408
+DECL|struct|__anon29b5abc10408
 block|{
 DECL|member|used_count
 name|signed
@@ -2760,7 +2760,7 @@ operator|==
 name|GIMP_INDEXED
 condition|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/* fprintf(stderr, " TO INDEXED(%d) ", num_cols); */
@@ -3799,6 +3799,22 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|tile_manager_bpp
+argument_list|(
+name|new_tiles
+argument_list|)
+operator|==
+operator|(
+name|has_alpha
+condition|?
+literal|4
+else|:
+literal|3
+operator|)
+argument_list|)
+expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -4198,6 +4214,22 @@ operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|tile_manager_bpp
+argument_list|(
+name|new_tiles
+argument_list|)
+operator|==
+operator|(
+name|has_alpha
+condition|?
+literal|2
+else|:
+literal|1
+operator|)
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
