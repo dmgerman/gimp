@@ -6,74 +6,35 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__BASE_CONFIG_H__
+name|__DETECT_MMX_H__
 end_ifndef
 
 begin_define
-DECL|macro|__BASE_CONFIG_H__
+DECL|macro|__DETECT_MMX_H__
 define|#
 directive|define
-name|__BASE_CONFIG_H__
+name|__DETECT_MMX_H__
 end_define
 
-begin_typedef
-DECL|typedef|GimpBaseConfig
-typedef|typedef
-name|struct
-name|_GimpBaseConfig
-name|GimpBaseConfig
-typedef|;
-end_typedef
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_ASM_MMX
+end_ifdef
 
-begin_struct
-DECL|struct|_GimpBaseConfig
-struct|struct
-name|_GimpBaseConfig
-block|{
-DECL|member|temp_path
-name|gchar
-modifier|*
-name|temp_path
-decl_stmt|;
-DECL|member|swap_path
-name|gchar
-modifier|*
-name|swap_path
-decl_stmt|;
-DECL|member|tile_cache_size
-name|guint
-name|tile_cache_size
-decl_stmt|;
-DECL|member|stingy_memory_use
-name|gboolean
-name|stingy_memory_use
-decl_stmt|;
-DECL|member|interpolation_type
-name|InterpolationType
-name|interpolation_type
-decl_stmt|;
-DECL|member|num_processors
-name|gint
-name|num_processors
-decl_stmt|;
-block|}
-struct|;
-end_struct
+begin_function_decl
+name|gulong
+name|intel_cpu_features
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_decl_stmt
-specifier|extern
-name|GimpBaseConfig
-modifier|*
-name|base_config
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gboolean
-name|use_mmx
-decl_stmt|;
-end_decl_stmt
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#
@@ -81,7 +42,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __BASE_CONFIG_H__  */
+comment|/* __DETECT_MMX__ */
 end_comment
 
 end_unit

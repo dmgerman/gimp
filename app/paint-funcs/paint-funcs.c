@@ -183,7 +183,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275cd2c90103
+DECL|enum|__anon29ebdaf60103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -633,29 +633,11 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* MMX stuff */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|gboolean
-name|use_mmx
-decl_stmt|;
-end_decl_stmt
-
 begin_ifdef
 ifdef|#
 directive|ifdef
 name|HAVE_ASM_MMX
 end_ifdef
-
-begin_decl_stmt
-specifier|extern
-name|int
-name|use_mmx
-decl_stmt|;
-end_decl_stmt
 
 begin_define
 DECL|macro|MMX_PIXEL_OP (x)
@@ -703,6 +685,10 @@ else|#
 directive|else
 end_else
 
+begin_comment
+comment|/* ! HAVE_ASM_MMX */
+end_comment
+
 begin_define
 DECL|macro|MMX_PIXEL_OP_3A_1A (op)
 define|#
@@ -727,6 +713,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* HAVE_ASM_MMX */
+end_comment
 
 begin_function
 name|void

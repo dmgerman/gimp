@@ -152,7 +152,7 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  if we were pasting to the old floating selection, paste now to the drawable  */
+comment|/*  if we were pasting to the old floating selection, paste now        *  to the drawable        */
 if|if
 condition|(
 name|drawable
@@ -214,7 +214,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  because setting the sensitivity in the layers_dialog lock call redraws the    *  previews, we need to lock the dialogs before the floating sel is actually added.    *  however, they won't lock unless we set the gimage's floating sel pointer    */
+comment|/*  because setting the sensitivity in the layers_dialog lock call    *  redraws the previews, we need to lock the dialogs before the    *  floating sel is actually added.  however, they won't lock unless    *  we set the gimage's floating sel pointer    */
 name|gimage
 operator|->
 name|floating_sel
@@ -354,7 +354,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot anchor this layer because\nit is not a floating selection."
+literal|"Cannot anchor this layer because\n"
+literal|"it is not a floating selection."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -713,15 +714,6 @@ operator|.
 name|drawable
 argument_list|)
 expr_stmt|;
-comment|/*  update the fs drawable--this updates the gimage composite preview    *  as well as the underlying drawable's    */
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  allocate the undo structure  */
 name|fsu
 operator|=
@@ -786,8 +778,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  if the floating selection exceeds the attached layer's extents,       update the new layer  */
-comment|/*  I don't think that the preview is ever valid as is, since the layer       will be added on top of the others.  Revert this if I'm wrong.       msw@gimp.org   */
 name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
@@ -814,8 +804,6 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* This may be undesirable when invoked non-interactively... we'll see. */
-comment|/*reinit_layer_idlerender (gimage, layer);*/
 name|gimp_image_floating_selection_changed
 argument_list|(
 name|gimage

@@ -785,7 +785,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bf5a370103
+DECL|enum|__anon2c1beb070103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -14378,7 +14378,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*reinit_layer_idlerender (gimage, merge_layer);*/
 return|return
 name|merge_layer
 return|;

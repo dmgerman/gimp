@@ -92,10 +92,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_comment
-comment|/*  WAIT_ANY  */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -173,31 +169,6 @@ name|gimp_sigchld_handler
 parameter_list|(
 name|gint
 name|sig_num
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* TODO: this should probably go into a header file */
-end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_ASM_MMX
-end_ifdef
-
-begin_function_decl
-name|unsigned
-name|long
-name|intel_cpu_features
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -369,15 +340,6 @@ name|FALSE
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|use_mmx
-name|gboolean
-name|use_mmx
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  *  argv processing:   *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  *      The exception is the batch switch.  When this is  *      encountered, all remaining args are treated as batch  *      commands.  */
 end_comment
@@ -504,41 +466,6 @@ argument_list|)
 name|use_shm
 operator|=
 name|TRUE
-expr_stmt|;
-endif|#
-directive|endif
-ifdef|#
-directive|ifdef
-name|HAVE_ASM_MMX
-name|use_mmx
-operator|=
-operator|(
-name|intel_cpu_features
-argument_list|()
-operator|&
-operator|(
-literal|1
-operator|<<
-literal|23
-operator|)
-operator|)
-condition|?
-literal|1
-else|:
-literal|0
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"MMX : %s\n"
-argument_list|,
-name|use_mmx
-condition|?
-literal|"yes"
-else|:
-literal|"no"
-argument_list|)
 expr_stmt|;
 endif|#
 directive|endif

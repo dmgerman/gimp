@@ -129,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ac27e0103
+DECL|enum|__anon290daecb0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1678,7 +1678,7 @@ name|new_layer
 operator|=
 name|gimp_layer_new
 argument_list|(
-literal|0
+name|gimage
 argument_list|,
 name|tile_manager_width
 argument_list|(

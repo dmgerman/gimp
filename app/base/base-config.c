@@ -78,5 +78,14 @@ name|static_base_config
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|use_mmx
+name|gboolean
+name|use_mmx
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
 end_unit
 
