@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpselection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -1016,9 +1022,12 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_save
+name|gimp_selection_save
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

@@ -107,12 +107,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage-mask-select.h"
 end_include
 
@@ -120,6 +114,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-projection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpselection.h"
 end_include
 
 begin_include
@@ -1250,11 +1250,14 @@ operator|->
 name|gimage
 condition|)
 block|{
-name|gimp_image_mask_save
+name|gimp_selection_save
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|editor
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

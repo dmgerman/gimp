@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-qmask.h"
 end_include
 
@@ -85,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"gimplayer-floating-sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpselection.h"
 end_include
 
 begin_include
@@ -424,9 +424,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_load
+name|gimp_selection_load
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|mask
 argument_list|)

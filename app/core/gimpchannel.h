@@ -967,24 +967,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_channel_load
-parameter_list|(
-name|GimpChannel
-modifier|*
-name|mask
-parameter_list|,
-name|GimpChannel
-modifier|*
-name|channel
-parameter_list|,
-name|gboolean
-name|push_undo
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

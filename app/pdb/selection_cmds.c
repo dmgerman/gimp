@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpselection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -3301,9 +3307,12 @@ operator|=
 operator|(
 name|channel
 operator|=
-name|gimp_image_mask_save
+name|gimp_selection_save
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 operator|)
 operator|!=
