@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b20e84f0103
+DECL|enum|__anon2c058f060103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -322,6 +322,16 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
+name|gtk_box_set_spacing
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|entry
 operator|->
 name|value
@@ -458,14 +468,11 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|=
-name|GIMP_MEMSIZE_ENTRY
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_MEMSIZE_ENTRY
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
