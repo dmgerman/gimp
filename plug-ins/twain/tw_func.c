@@ -1,11 +1,17 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    * TWAIN Plug-in  * Copyright (C) 1999 Craig Setera  * Craig Setera<setera@home.com>  * 03/31/1999  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  *  * Based on (at least) the following plug-ins:  * Screenshot  * GIF  * Randomize  *  * Any suggestions, bug-reports or patches are welcome.  *   * This plug-in interfaces to the TWAIN support library in order  * to capture images from TWAIN devices directly into GIMP images.  * The plug-in is capable of acquiring the following type of  * images:  * - B/W (1 bit images translated to grayscale B/W)  * - Grayscale up to 16 bits per pixel  * - RGB up to 16 bits per sample (24, 30, 36, etc.)  * - Paletted images (both Gray and RGB)  *  * Prerequisites:  *  This plug-in will not compile on anything other than a Win32  *  platform.  Although the TWAIN documentation implies that there  *  is TWAIN support available on Macintosh, I neither have a   *  Macintosh nor the interest in porting this.  If anyone else  *  has an interest, consult www.twain.org for more information on  *  interfacing to TWAIN.  *  * Known problems:  * - Multiple image transfers will hang the plug-in.  The current  *   configuration compiles with a maximum of single image transfers.  */
+comment|/*  * TWAIN Plug-in  * Copyright (C) 1999 Craig Setera  * Craig Setera<setera@home.com>  * 03/31/1999  *  * Updated for Mac OS X support  * Brion Vibber<brion@pobox.com>  * 07/22/2004  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  *  * Based on (at least) the following plug-ins:  * Screenshot  * GIF  * Randomize  *  * Any suggestions, bug-reports or patches are welcome.  *  * This plug-in interfaces to the TWAIN support library in order  * to capture images from TWAIN devices directly into GIMP images.  * The plug-in is capable of acquiring the following type of  * images:  * - B/W (1 bit images translated to grayscale B/W)  * - Grayscale up to 16 bits per pixel  * - RGB up to 16 bits per sample (24, 30, 36, etc.)  * - Paletted images (both Gray and RGB)  *  * Prerequisites:  * Should compile and run on both Win32 and Mac OS X 10.3 (possibly  * also on 10.2).  *  * Known problems:  * - Multiple image transfers will hang the plug-in.  The current  *   configuration compiles with a maximum of single image transfers.  * - On Mac OS X, canceling doesn't always close things out fully.  * - Epson TWAIN driver on Mac OS X crashes the plugin when scanning.  */
 end_comment
 
 begin_comment
-comment|/*   * Revision history  *  (02/07/99)  v0.1   First working version (internal)  *  (02/09/99)  v0.2   First release to anyone other than myself  *  (02/15/99)  v0.3   Added image dump and read support for debugging  *  (03/31/99)  v0.5   Added support for multi-byte samples and paletted   *                     images.  */
+comment|/*  * Revision history  *  (02/07/99)  v0.1   First working version (internal)  *  (02/09/99)  v0.2   First release to anyone other than myself  *  (02/15/99)  v0.3   Added image dump and read support for debugging  *  (03/31/99)  v0.5   Added support for multi-byte samples and paletted  *                     images.  *  (07/23/04)  v0.6   Added Mac OS X support.  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
 
 begin_include
 include|#
@@ -20,18 +26,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<windows.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"twain.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tw_func.h"
 end_include
 
@@ -41,17 +35,11 @@ directive|include
 file|"tw_util.h"
 end_include
 
-begin_comment
-comment|/* The DLL to be loaded for TWAIN support */
-end_comment
-
-begin_define
-DECL|macro|TWAIN_DLL_NAME
-define|#
-directive|define
-name|TWAIN_DLL_NAME
-value|"TWAIN_32.DLL"
-end_define
+begin_include
+include|#
+directive|include
+file|"tw_local.h"
+end_include
 
 begin_comment
 comment|/*  * Twain error code to string mappings  */
@@ -122,34 +110,6 @@ literal|"The device went offline prior to or during this operation"
 block|,
 name|NULL
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* Storage for the DLL handle */
-end_comment
-
-begin_decl_stmt
-DECL|variable|hDLL
-specifier|static
-name|HINSTANCE
-name|hDLL
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* Storage for the entry point into the DSM */
-end_comment
-
-begin_decl_stmt
-DECL|variable|dsmEntryPoint
-specifier|static
-name|DSMENTRYPROC
-name|dsmEntryPoint
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -243,57 +203,6 @@ literal|65536.0
 expr_stmt|;
 return|return
 name|floater
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * callDSM  *  * Call the specified function on the data source manager.  */
-end_comment
-
-begin_function
-name|TW_UINT16
-DECL|function|callDSM (pTW_IDENTITY pOrigin,pTW_IDENTITY pDest,TW_UINT32 DG,TW_UINT16 DAT,TW_UINT16 MSG,TW_MEMREF pData)
-name|callDSM
-parameter_list|(
-name|pTW_IDENTITY
-name|pOrigin
-parameter_list|,
-name|pTW_IDENTITY
-name|pDest
-parameter_list|,
-name|TW_UINT32
-name|DG
-parameter_list|,
-name|TW_UINT16
-name|DAT
-parameter_list|,
-name|TW_UINT16
-name|MSG
-parameter_list|,
-name|TW_MEMREF
-name|pData
-parameter_list|)
-block|{
-comment|/* Call the function */
-return|return
-call|(
-modifier|*
-name|dsmEntryPoint
-call|)
-argument_list|(
-name|pOrigin
-argument_list|,
-name|pDest
-argument_list|,
-name|DG
-argument_list|,
-name|DAT
-argument_list|,
-name|MSG
-argument_list|,
-name|pData
-argument_list|)
 return|;
 block|}
 end_function
@@ -403,73 +312,6 @@ name|twStatus
 operator|.
 name|ConditionCode
 argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * twainIsAvailable  *  * Return boolean indicating whether TWAIN is available  */
-end_comment
-
-begin_function
-name|int
-DECL|function|twainIsAvailable (void)
-name|twainIsAvailable
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-comment|/* Already loaded? */
-if|if
-condition|(
-name|dsmEntryPoint
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-comment|/* Attempt to load the library */
-name|hDLL
-operator|=
-name|LoadLibrary
-argument_list|(
-name|TWAIN_DLL_NAME
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|hDLL
-operator|==
-name|NULL
-condition|)
-return|return
-name|FALSE
-return|;
-comment|/* Look up the entry point for use */
-name|dsmEntryPoint
-operator|=
-operator|(
-name|DSMENTRYPROC
-operator|)
-name|GetProcAddress
-argument_list|(
-name|hDLL
-argument_list|,
-literal|"DSM_Entry"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|dsmEntryPoint
-operator|==
-name|NULL
-condition|)
-return|return
-name|FALSE
-return|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function
@@ -1113,10 +955,8 @@ name|bufXfer
 operator|.
 name|hContainer
 operator|=
-name|GlobalAlloc
+name|twainAllocHandle
 argument_list|(
-name|GHND
-argument_list|,
 sizeof|sizeof
 argument_list|(
 name|TW_ONEVALUE
@@ -1128,7 +968,7 @@ operator|=
 operator|(
 name|pTW_ONEVALUE
 operator|)
-name|GlobalLock
+name|twainLockHandle
 argument_list|(
 name|bufXfer
 operator|.
@@ -1147,7 +987,7 @@ name|Item
 operator|=
 name|TWSX_MEMORY
 expr_stmt|;
-name|GlobalUnlock
+name|twainUnlockHandle
 argument_list|(
 name|bufXfer
 operator|.
@@ -1185,7 +1025,7 @@ name|bufXfer
 argument_list|)
 expr_stmt|;
 comment|/* Free the container */
-name|GlobalFree
+name|twainFreeHandle
 argument_list|(
 name|bufXfer
 operator|.
@@ -1211,13 +1051,13 @@ end_comment
 
 begin_function
 name|int
-DECL|function|requestImageAcquire (pTW_SESSION twSession,BOOL showUI)
+DECL|function|requestImageAcquire (pTW_SESSION twSession,gboolean showUI)
 name|requestImageAcquire
 parameter_list|(
 name|pTW_SESSION
 name|twSession
 parameter_list|,
-name|BOOL
+name|gboolean
 name|showUI
 parameter_list|)
 block|{
@@ -1239,6 +1079,11 @@ return|return
 name|FALSE
 return|;
 block|}
+name|twainSetupCallback
+argument_list|(
+name|twSession
+argument_list|)
+expr_stmt|;
 comment|/* Set the transfer mode */
 if|if
 condition|(
@@ -1264,6 +1109,7 @@ name|ModalUI
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/* In Windows, the callbacks are sent to the window message handler */
 name|ui
 operator|.
 name|hParent
@@ -1655,6 +1501,9 @@ name|DAT_PARENT
 argument_list|,
 name|MSG_CLOSEDSM
 argument_list|,
+operator|(
+name|TW_MEMREF
+operator|)
 operator|&
 operator|(
 name|twSession
@@ -1704,63 +1553,6 @@ name|twRC
 operator|==
 name|TWRC_SUCCESS
 operator|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * unloadTwainLibrary  *  * Unload the TWAIN dynamic link library  */
-end_comment
-
-begin_function
-name|int
-DECL|function|unloadTwainLibrary (pTW_SESSION twSession)
-name|unloadTwainLibrary
-parameter_list|(
-name|pTW_SESSION
-name|twSession
-parameter_list|)
-block|{
-comment|/* Explicitly free the SM library */
-if|if
-condition|(
-name|hDLL
-condition|)
-block|{
-name|FreeLibrary
-argument_list|(
-name|hDLL
-argument_list|)
-expr_stmt|;
-name|hDLL
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-comment|/* the data source id will no longer be valid after    * twain is killed.  If the id is left around the    * data source can not be found or opened 	 */
-name|DS_IDENTITY
-argument_list|(
-name|twSession
-argument_list|)
-operator|->
-name|Id
-operator|=
-literal|0
-expr_stmt|;
-comment|/* We are now back at state 1 */
-name|twSession
-operator|->
-name|twainState
-operator|=
-literal|1
-expr_stmt|;
-name|LogMessage
-argument_list|(
-literal|"Source Manager successfully closed\n"
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function
@@ -2298,7 +2090,7 @@ modifier|*
 name|pendingCount
 parameter_list|)
 block|{
-name|BOOL
+name|gboolean
 name|continueTransfers
 decl_stmt|;
 name|int
@@ -2533,104 +2325,21 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * TwainProcessMessage  *  * Returns TRUE if the application should process message as usual.  * Returns FALSE if the application should skip processing of this message  */
-end_comment
-
 begin_function
-name|int
-DECL|function|TwainProcessMessage (LPMSG lpMsg,pTW_SESSION twSession)
-name|TwainProcessMessage
+name|void
+DECL|function|processTwainMessage (TW_UINT16 message,pTW_SESSION twSession)
+name|processTwainMessage
 parameter_list|(
-name|LPMSG
-name|lpMsg
+name|TW_UINT16
+name|message
 parameter_list|,
 name|pTW_SESSION
 name|twSession
 parameter_list|)
 block|{
-name|TW_EVENT
-name|twEvent
-decl_stmt|;
-name|twSession
-operator|->
-name|twRC
-operator|=
-name|TWRC_NOTDSEVENT
-expr_stmt|;
-comment|/* Only ask Source Manager to process event if there is a Source connected. */
-if|if
-condition|(
-name|DSM_IS_OPEN
-argument_list|(
-name|twSession
-argument_list|)
-operator|&&
-name|DS_IS_OPEN
-argument_list|(
-name|twSession
-argument_list|)
-condition|)
-block|{
-comment|/* 		 * A Source provides a modeless dialog box as its user interface. 		 * The following call relays Windows messages down to the Source's 		 * UI that were intended for its dialog box.  It also retrieves TWAIN 		 * messages sent from the Source to our Application. 		 */
-name|twEvent
-operator|.
-name|pEvent
-operator|=
-operator|(
-name|TW_MEMREF
-operator|)
-name|lpMsg
-expr_stmt|;
-name|twSession
-operator|->
-name|twRC
-operator|=
-name|callDSM
-argument_list|(
-name|APP_IDENTITY
-argument_list|(
-name|twSession
-argument_list|)
-argument_list|,
-name|DS_IDENTITY
-argument_list|(
-name|twSession
-argument_list|)
-argument_list|,
-name|DG_CONTROL
-argument_list|,
-name|DAT_EVENT
-argument_list|,
-name|MSG_PROCESSEVENT
-argument_list|,
-operator|(
-name|TW_MEMREF
-operator|)
-operator|&
-name|twEvent
-argument_list|)
-expr_stmt|;
-comment|/* Check the return code */
-if|if
-condition|(
-name|twSession
-operator|->
-name|twRC
-operator|==
-name|TWRC_NOTDSEVENT
-condition|)
-block|{
-return|return
-name|FALSE
-return|;
-block|}
-comment|/* Process the message as necessary */
 switch|switch
 condition|(
-name|twEvent
-operator|.
-name|TWMessage
+name|message
 condition|)
 block|{
 case|case
@@ -2650,7 +2359,7 @@ break|break;
 case|case
 name|MSG_CLOSEDSREQ
 case|:
-comment|/* Disable the datasource, Close the Data source 			 * and close the data source manager 			 */
+comment|/* Disable the datasource, Close the Data source      * and close the data source manager      */
 name|LogMessage
 argument_list|(
 literal|"CloseDSReq\n"
@@ -2672,97 +2381,13 @@ name|twSession
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/* No message from the Source to the App break; 			 * possible new message 			 */
+comment|/* No message from the Source to the App break;    * possible new message    */
 case|case
 name|MSG_NULL
 case|:
 default|default:
 break|break;
 block|}
-block|}
-comment|/* tell the caller what happened */
-return|return
-operator|(
-name|twSession
-operator|->
-name|twRC
-operator|==
-name|TWRC_DSEVENT
-operator|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * twainMessageLoop  *  * Process Win32 window messages and provide special handling  * of TWAIN specific messages.  This loop will not exit until  * the application exits.  */
-end_comment
-
-begin_function
-name|int
-DECL|function|twainMessageLoop (pTW_SESSION twSession)
-name|twainMessageLoop
-parameter_list|(
-name|pTW_SESSION
-name|twSession
-parameter_list|)
-block|{
-name|MSG
-name|msg
-decl_stmt|;
-while|while
-condition|(
-name|GetMessage
-argument_list|(
-operator|&
-name|msg
-argument_list|,
-name|NULL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
-name|DS_IS_CLOSED
-argument_list|(
-name|twSession
-argument_list|)
-operator|||
-operator|!
-name|TwainProcessMessage
-argument_list|(
-operator|&
-name|msg
-argument_list|,
-name|twSession
-argument_list|)
-condition|)
-block|{
-name|TranslateMessage
-argument_list|(
-operator|(
-name|LPMSG
-operator|)
-operator|&
-name|msg
-argument_list|)
-expr_stmt|;
-name|DispatchMessage
-argument_list|(
-operator|&
-name|msg
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-return|return
-name|msg
-operator|.
-name|wParam
-return|;
 block|}
 end_function
 
@@ -2879,13 +2504,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|registerWindowHandle (pTW_SESSION session,HWND hwnd)
+DECL|function|registerWindowHandle (pTW_SESSION session,TW_HANDLE hwnd)
 name|registerWindowHandle
 parameter_list|(
 name|pTW_SESSION
 name|session
 parameter_list|,
-name|HWND
+name|TW_HANDLE
 name|hwnd
 parameter_list|)
 block|{

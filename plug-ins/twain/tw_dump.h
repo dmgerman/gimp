@@ -10,13 +10,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<windows.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"twain.h"
+file|"tw_platform.h"
 end_include
 
 begin_include
@@ -24,14 +18,6 @@ include|#
 directive|include
 file|"tw_func.h"
 end_include
-
-begin_define
-DECL|macro|DUMP_FILE
-define|#
-directive|define
-name|DUMP_FILE
-value|"C:\\TWAINCAP.BIN"
-end_define
 
 begin_function_decl
 name|void

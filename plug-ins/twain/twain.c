@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * TWAIN Plug-in  * Copyright (C) 1999 Craig Setera  * Craig Setera<setera@home.com>  * 03/31/1999  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  *  * Based on (at least) the following plug-ins:  * Screenshot  * GIF  * Randomize  *  * Any suggestions, bug-reports or patches are welcome.  *  * This plug-in interfaces to the TWAIN support library in order  * to capture images from TWAIN devices directly into GIMP images.  * The plug-in is capable of acquiring the following type of  * images:  * - B/W (1 bit images translated to grayscale B/W)  * - Grayscale up to 16 bits per pixel  * - RGB up to 16 bits per sample (24, 30, 36, etc.)  * - Paletted images (both Gray and RGB)  *  * Prerequisites:  *  This plug-in will not compile on anything other than a Win32  *  platform.  Although the TWAIN documentation implies that there  *  is TWAIN support available on Macintosh, I neither have a  *  Macintosh nor the interest in porting this.  If anyone else  *  has an interest, consult www.twain.org for more information on  *  interfacing to TWAIN.  *  * Known problems:  * - Multiple image transfers will hang the plug-in.  The current  *   configuration compiles with a maximum of single image transfers.  */
+comment|/*  * TWAIN Plug-in  * Copyright (C) 1999 Craig Setera  * Craig Setera<setera@home.com>  * 03/31/1999  *  * Updated for Mac OS X support  * Brion Vibber<brion@pobox.com>  * 07/22/2004  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  *  * Based on (at least) the following plug-ins:  * Screenshot  * GIF  * Randomize  *  * Any suggestions, bug-reports or patches are welcome.  *  * This plug-in interfaces to the TWAIN support library in order  * to capture images from TWAIN devices directly into GIMP images.  * The plug-in is capable of acquiring the following type of  * images:  * - B/W (1 bit images translated to grayscale B/W)  * - Grayscale up to 16 bits per pixel  * - RGB up to 16 bits per sample (24, 30, 36, etc.)  * - Paletted images (both Gray and RGB)  *  * Prerequisites:  * Should compile and run on both Win32 and Mac OS X 10.3 (possibly  * also on 10.2).  *  * Known problems:  * - Multiple image transfers will hang the plug-in.  The current  *   configuration compiles with a maximum of single image transfers.  * - On Mac OS X, canceling doesn't always close things out fully.  * - Epson TWAIN driver on Mac OS X crashes the plugin when scanning.  */
 end_comment
 
 begin_comment
-comment|/*  * Revision history  *  (02/07/99)  v0.1   First working version (internal)  *  (02/09/99)  v0.2   First release to anyone other than myself  *  (02/15/99)  v0.3   Added image dump and read support for debugging  *  (03/31/99)  v0.5   Added support for multi-byte samples and paletted  *                     images.  */
+comment|/*  * Revision history  *  (02/07/99)  v0.1   First working version (internal)  *  (02/09/99)  v0.2   First release to anyone other than myself  *  (02/15/99)  v0.3   Added image dump and read support for debugging  *  (03/31/99)  v0.5   Added support for multi-byte samples and paletted  *                     images.  *  (07/23/04)  v0.6   Added Mac OS X support.  */
 end_comment
 
 begin_include
@@ -44,7 +44,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<windows.h>
+file|"tw_platform.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tw_local.h"
 end_include
 
 begin_include
@@ -141,7 +147,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v0.5 (03/31/1999)"
+value|"v0.6 (07/22/2004)"
 end_define
 
 begin_ifdef
@@ -180,35 +186,11 @@ comment|/*  * Application definitions  */
 end_comment
 
 begin_define
-DECL|macro|APP_NAME
-define|#
-directive|define
-name|APP_NAME
-value|"TWAIN"
-end_define
-
-begin_define
 DECL|macro|MAX_IMAGES
 define|#
 directive|define
 name|MAX_IMAGES
 value|1
-end_define
-
-begin_define
-DECL|macro|SHOW_WINDOW
-define|#
-directive|define
-name|SHOW_WINDOW
-value|0
-end_define
-
-begin_define
-DECL|macro|WM_TRANSFER_IMAGE
-define|#
-directive|define
-name|WM_TRANSFER_IMAGE
-value|(WM_USER + 100)
 end_define
 
 begin_comment
@@ -253,26 +235,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|hwnd
-specifier|static
-name|HWND
-name|hwnd
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|hInst
-specifier|static
-name|HINSTANCE
-name|hInst
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|destBuf
 specifier|static
 name|char
@@ -283,6 +245,12 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_DEBUG
+end_ifdef
+
 begin_decl_stmt
 DECL|variable|twain_run_mode
 specifier|static
@@ -292,6 +260,11 @@ init|=
 name|RUN_STANDARD
 decl_stmt|;
 end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* Forward declarations */
@@ -355,26 +328,6 @@ name|int
 parameter_list|,
 name|void
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|quit
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -456,22 +409,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|LRESULT
-name|CALLBACK
-name|WndProc
-parameter_list|(
-name|HWND
-parameter_list|,
-name|UINT
-parameter_list|,
-name|WPARAM
-parameter_list|,
-name|LPARAM
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* Data structure holding data between runs */
 end_comment
@@ -481,7 +418,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c76bee20108
+DECL|struct|__anon2bd949510108
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +550,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-specifier|static
 name|void
 DECL|function|setRunMode (char * argv[])
 name|setRunMode
@@ -654,7 +590,7 @@ name|_stricmp
 argument_list|(
 name|exeName
 argument_list|,
-literal|"DTWAIN.EXE"
+name|DUMP_NAME
 argument_list|)
 condition|)
 name|twain_run_mode
@@ -668,7 +604,7 @@ name|_stricmp
 argument_list|(
 name|exeName
 argument_list|,
-literal|"RTWAIN.EXE"
+name|RUNDUMP_NAME
 argument_list|)
 condition|)
 name|twain_run_mode
@@ -687,105 +623,53 @@ begin_comment
 comment|/* _DEBUG */
 end_comment
 
-begin_comment
-comment|/******************************************************************  * Win32 entry point and setup...  ******************************************************************/
-end_comment
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|TWAIN_ALTERNATE_MAIN
+end_ifndef
 
-begin_comment
-comment|/*  * WinMain  *  * The standard gimp entry point won't quite cut it for  * this plug-in.  This plug-in requires creation of a  * standard Win32 window (hidden) in order to receive  * and process window messages on behalf of the TWAIN  * datasource.  */
-end_comment
+begin_macro
+DECL|function|MAIN ()
+name|MAIN
+argument_list|()
+end_macro
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|int
-name|APIENTRY
-DECL|function|WinMain (HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
-name|WinMain
+name|scanImage
 parameter_list|(
-name|HINSTANCE
-name|hInstance
-parameter_list|,
-name|HINSTANCE
-name|hPrevInstance
-parameter_list|,
-name|LPSTR
-name|lpCmdLine
-parameter_list|,
-name|int
-name|nCmdShow
+name|void
 parameter_list|)
 block|{
-comment|/*    * Normally, we would do all of the Windows-ish set up of    * the window classes and stuff here in WinMain.  But,    * the only time we really need the window and message    * queues is during the plug-in run.  So, all of that will    * be done during run().  This avoids all of the Windows    * setup stuff for the query().  Stash the instance handle now    * so it is available from the run() procedure.    */
-name|hInst
-operator|=
-name|hInstance
-expr_stmt|;
 ifdef|#
 directive|ifdef
 name|_DEBUG
-comment|/* When in debug version, we allow different run modes...    * make sure that it is correctly set.    */
-name|setRunMode
-argument_list|(
-name|__argv
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* _DEBUG */
-comment|/*    * Now, call gimp_main... This is what the MAIN() macro    * would usually do.    */
+if|if
+condition|(
+name|twain_run_mode
+operator|==
+name|RUN_READDUMP
+condition|)
 return|return
-name|gimp_main
+name|readDumpedImage
 argument_list|(
-operator|&
-name|PLUG_IN_INFO
-argument_list|,
-name|__argc
-argument_list|,
-name|__argv
+name|twSession
 argument_list|)
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * main  *  * allow to build as console app as well  */
-end_comment
-
-begin_function
-DECL|function|main (int argc,char * argv[])
-name|int
-name|main
-parameter_list|(
-name|int
-name|argc
-parameter_list|,
-name|char
-modifier|*
-name|argv
-index|[]
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|_DEBUG
-comment|/* When in debug version, we allow different run modes...    * make sure that it is correctly set.    */
-name|setRunMode
-argument_list|(
-name|__argv
-argument_list|)
-expr_stmt|;
+else|else
 endif|#
 directive|endif
 comment|/* _DEBUG */
-comment|/*    * Now, call gimp_main... This is what the MAIN() macro    * would usually do.    */
 return|return
-name|gimp_main
+name|getImage
 argument_list|(
-operator|&
-name|PLUG_IN_INFO
-argument_list|,
-name|__argc
-argument_list|,
-name|__argv
+name|twSession
 argument_list|)
 return|;
 block|}
@@ -861,7 +745,7 @@ name|Version
 operator|.
 name|Info
 argument_list|,
-literal|"GIMP TWAIN 0.5"
+literal|"GIMP TWAIN 0.6"
 argument_list|)
 expr_stmt|;
 name|appIdentity
@@ -906,7 +790,7 @@ name|appIdentity
 operator|->
 name|ProductName
 argument_list|,
-literal|"GIMP for Win32"
+literal|"GIMP"
 argument_list|)
 expr_stmt|;
 return|return
@@ -920,7 +804,7 @@ comment|/*  * initializeTwain  *  * Do the necessary TWAIN initialization.  This
 end_comment
 
 begin_function
-name|void
+name|pTW_SESSION
 DECL|function|initializeTwain (void)
 name|initializeTwain
 parameter_list|(
@@ -978,377 +862,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * InitApplication  *  * Initialize window data and register the window class  */
-end_comment
-
-begin_function
-name|BOOL
-DECL|function|InitApplication (HINSTANCE hInstance)
-name|InitApplication
-parameter_list|(
-name|HINSTANCE
-name|hInstance
-parameter_list|)
-block|{
-name|WNDCLASS
-name|wc
-decl_stmt|;
-name|BOOL
-name|retValue
-decl_stmt|;
-comment|/*    * Fill in window class structure with parameters to describe    * the main window.    */
-name|wc
-operator|.
-name|style
-operator|=
-name|CS_HREDRAW
-operator||
-name|CS_VREDRAW
-expr_stmt|;
-name|wc
-operator|.
-name|lpfnWndProc
-operator|=
-operator|(
-name|WNDPROC
-operator|)
-name|WndProc
-expr_stmt|;
-name|wc
-operator|.
-name|cbClsExtra
-operator|=
-literal|0
-expr_stmt|;
-name|wc
-operator|.
-name|cbWndExtra
-operator|=
-literal|0
-expr_stmt|;
-name|wc
-operator|.
-name|hInstance
-operator|=
-name|hInstance
-expr_stmt|;
-name|wc
-operator|.
-name|hIcon
-operator|=
-name|LoadIcon
-argument_list|(
-name|NULL
-argument_list|,
-name|IDI_APPLICATION
-argument_list|)
-expr_stmt|;
-name|wc
-operator|.
-name|hCursor
-operator|=
-name|LoadCursor
-argument_list|(
-name|NULL
-argument_list|,
-name|IDC_ARROW
-argument_list|)
-expr_stmt|;
-name|wc
-operator|.
-name|hbrBackground
-operator|=
-call|(
-name|HBRUSH
-call|)
-argument_list|(
-name|COLOR_WINDOW
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|wc
-operator|.
-name|lpszClassName
-operator|=
-name|APP_NAME
-expr_stmt|;
-name|wc
-operator|.
-name|lpszMenuName
-operator|=
-name|NULL
-expr_stmt|;
-comment|/* Register the window class and stash success/failure code. */
-name|retValue
-operator|=
-name|RegisterClass
-argument_list|(
-operator|&
-name|wc
-argument_list|)
-expr_stmt|;
-comment|/* Log error */
-if|if
-condition|(
-operator|!
-name|retValue
-condition|)
-name|LogLastWinError
-argument_list|()
-expr_stmt|;
 return|return
-name|retValue
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * InitInstance  *  * Create the main window for the application.  Used to  * interface with the TWAIN datasource.  */
-end_comment
-
-begin_function
-name|BOOL
-DECL|function|InitInstance (HINSTANCE hInstance,int nCmdShow)
-name|InitInstance
-parameter_list|(
-name|HINSTANCE
-name|hInstance
-parameter_list|,
-name|int
-name|nCmdShow
-parameter_list|)
-block|{
-comment|/* Create our window */
-name|hwnd
-operator|=
-name|CreateWindow
-argument_list|(
-name|APP_NAME
-argument_list|,
-name|APP_NAME
-argument_list|,
-name|WS_OVERLAPPEDWINDOW
-argument_list|,
-name|CW_USEDEFAULT
-argument_list|,
-literal|0
-argument_list|,
-name|CW_USEDEFAULT
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|hInstance
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|hwnd
-condition|)
-block|{
-return|return
-operator|(
-name|FALSE
-operator|)
-return|;
-block|}
-name|ShowWindow
-argument_list|(
-name|hwnd
-argument_list|,
-name|nCmdShow
-argument_list|)
-expr_stmt|;
-name|UpdateWindow
-argument_list|(
-name|hwnd
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * twainWinMain  *  * This is the function that represents the code that  * would normally reside in WinMain (see above).  This  * function will get called during run() in order to set  * up the windowing environment necessary for TWAIN to  * operate.  */
-end_comment
-
-begin_function
-name|int
-DECL|function|twainWinMain (void)
-name|twainWinMain
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-comment|/* Initialize the twain information */
-name|initializeTwain
-argument_list|()
-expr_stmt|;
-comment|/* Perform instance initialization */
-if|if
-condition|(
-operator|!
-name|InitApplication
-argument_list|(
-name|hInst
-argument_list|)
-condition|)
-return|return
-operator|(
-name|FALSE
-operator|)
-return|;
-comment|/* Perform application initialization */
-if|if
-condition|(
-operator|!
-name|InitInstance
-argument_list|(
-name|hInst
-argument_list|,
-name|SHOW_WINDOW
-argument_list|)
-condition|)
-return|return
-operator|(
-name|FALSE
-operator|)
-return|;
-comment|/*    * Call the main message processing loop...    * This call will not return until the application    * exits.    */
-return|return
-name|twainMessageLoop
-argument_list|(
 name|twSession
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * WndProc  *  * Process window message for the main window.  */
-end_comment
-
-begin_function
-name|LRESULT
-name|CALLBACK
-DECL|function|WndProc (HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam)
-name|WndProc
-parameter_list|(
-name|HWND
-name|hWnd
-parameter_list|,
-name|UINT
-name|message
-parameter_list|,
-name|WPARAM
-name|wParam
-parameter_list|,
-name|LPARAM
-name|lParam
-parameter_list|)
-block|{
-switch|switch
-condition|(
-name|message
-condition|)
-block|{
-case|case
-name|WM_CREATE
-case|:
-comment|/* Register our window handle with the TWAIN      * support.      */
-name|registerWindowHandle
-argument_list|(
-name|twSession
-argument_list|,
-name|hWnd
-argument_list|)
-expr_stmt|;
-comment|/* Schedule the image transfer by posting a message */
-name|PostMessage
-argument_list|(
-name|hWnd
-argument_list|,
-name|WM_TRANSFER_IMAGE
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|WM_TRANSFER_IMAGE
-case|:
-comment|/* Get an image */
-ifdef|#
-directive|ifdef
-name|_DEBUG
-if|if
-condition|(
-name|twain_run_mode
-operator|==
-name|RUN_READDUMP
-condition|)
-name|readDumpedImage
-argument_list|(
-name|twSession
-argument_list|)
-expr_stmt|;
-else|else
-endif|#
-directive|endif
-comment|/* _DEBUG */
-name|getImage
-argument_list|(
-name|twSession
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|WM_DESTROY
-case|:
-name|LogMessage
-argument_list|(
-literal|"Exiting application\n"
-argument_list|)
-expr_stmt|;
-name|PostQuitMessage
-argument_list|(
-literal|0
-argument_list|)
-expr_stmt|;
-break|break;
-default|default:
-return|return
-operator|(
-name|DefWindowProc
-argument_list|(
-name|hWnd
-argument_list|,
-name|message
-argument_list|,
-name|wParam
-argument_list|,
-name|lParam
-argument_list|)
-operator|)
-return|;
-block|}
-return|return
-literal|0
 return|;
 block|}
 end_function
@@ -1813,7 +1328,7 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|twainWinMain
+name|twainMain
 argument_list|()
 expr_stmt|;
 comment|/* Check to make sure we got at least one valid    * image.    */
@@ -1887,7 +1402,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c76bee20208
+DECL|struct|__anon2bd949510208
 typedef|typedef
 struct|struct
 block|{
@@ -1973,11 +1488,6 @@ modifier|*
 name|clientData
 parameter_list|)
 block|{
-name|int
-name|done
-init|=
-literal|0
-decl_stmt|;
 name|int
 name|imageType
 decl_stmt|,
@@ -2161,6 +1671,37 @@ operator|->
 name|ImageLength
 argument_list|,
 name|imageType
+argument_list|)
+expr_stmt|;
+comment|/* Set the actual resolution */
+name|gimp_image_set_resolution
+argument_list|(
+name|theClientData
+operator|->
+name|image_id
+argument_list|,
+name|FIX32ToFloat
+argument_list|(
+name|imageInfo
+operator|->
+name|XResolution
+argument_list|)
+argument_list|,
+name|FIX32ToFloat
+argument_list|(
+name|imageInfo
+operator|->
+name|YResolution
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_image_set_unit
+argument_list|(
+name|theClientData
+operator|->
+name|image_id
+argument_list|,
+name|GIMP_UNIT_INCH
 argument_list|)
 expr_stmt|;
 comment|/* Create a layer */
@@ -2798,9 +2339,6 @@ name|sample
 decl_stmt|;
 name|char
 modifier|*
-name|srcBuf
-decl_stmt|,
-modifier|*
 name|destByte
 decl_stmt|;
 name|int
@@ -2816,24 +2354,6 @@ init|=
 name|imageMemXfer
 operator|->
 name|Columns
-decl_stmt|;
-name|int
-name|bitsPerSample
-init|=
-name|imageInfo
-operator|->
-name|BitsPerPixel
-operator|/
-name|imageInfo
-operator|->
-name|SamplesPerPixel
-decl_stmt|;
-name|int
-name|bytesPerSample
-init|=
-name|bitsPerSample
-operator|/
-literal|8
 decl_stmt|;
 name|TW_UINT16
 modifier|*
@@ -3711,10 +3231,8 @@ name|twSession
 argument_list|)
 expr_stmt|;
 comment|/* Post a message to close up the application */
-name|PostQuitMessage
-argument_list|(
-literal|0
-argument_list|)
+name|twainQuitApplication
+argument_list|()
 expr_stmt|;
 block|}
 end_function

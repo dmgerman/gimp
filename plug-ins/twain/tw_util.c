@@ -1,11 +1,17 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    * TWAIN Plug-in  * Copyright (C) 1999 Craig Setera  * Craig Setera<setera@home.com>  * 03/31/1999  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  *  * Based on (at least) the following plug-ins:  * Screenshot  * GIF  * Randomize  *  * Any suggestions, bug-reports or patches are welcome.  *   * This plug-in interfaces to the TWAIN support library in order  * to capture images from TWAIN devices directly into GIMP images.  * The plug-in is capable of acquiring the following type of  * images:  * - B/W (1 bit images translated to grayscale B/W)  * - Grayscale up to 16 bits per pixel  * - RGB up to 16 bits per sample (24, 30, 36, etc.)  * - Paletted images (both Gray and RGB)  *  * Prerequisites:  *  This plug-in will not compile on anything other than a Win32  *  platform.  Although the TWAIN documentation implies that there  *  is TWAIN support available on Macintosh, I neither have a   *  Macintosh nor the interest in porting this.  If anyone else  *  has an interest, consult www.twain.org for more information on  *  interfacing to TWAIN.  *  * Known problems:  * - Multiple image transfers will hang the plug-in.  The current  *   configuration compiles with a maximum of single image transfers.  */
+comment|/*  * TWAIN Plug-in  * Copyright (C) 1999 Craig Setera  * Craig Setera<setera@home.com>  * 03/31/1999  *  * Updated for Mac OS X support  * Brion Vibber<brion@pobox.com>  * 07/22/2004  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  *  * Based on (at least) the following plug-ins:  * Screenshot  * GIF  * Randomize  *  * Any suggestions, bug-reports or patches are welcome.  *  * This plug-in interfaces to the TWAIN support library in order  * to capture images from TWAIN devices directly into GIMP images.  * The plug-in is capable of acquiring the following type of  * images:  * - B/W (1 bit images translated to grayscale B/W)  * - Grayscale up to 16 bits per pixel  * - RGB up to 16 bits per sample (24, 30, 36, etc.)  * - Paletted images (both Gray and RGB)  *  * Prerequisites:  * Should compile and run on both Win32 and Mac OS X 10.3 (possibly  * also on 10.2).  *  * Known problems:  * - Multiple image transfers will hang the plug-in.  The current  *   configuration compiles with a maximum of single image transfers.  * - On Mac OS X, canceling doesn't always close things out fully.  * - Epson TWAIN driver on Mac OS X crashes the plugin when scanning.  */
 end_comment
 
 begin_comment
-comment|/*   * Revision history  *  (02/07/99)  v0.1   First working version (internal)  *  (02/09/99)  v0.2   First release to anyone other than myself  *  (02/15/99)  v0.3   Added image dump and read support for debugging  *  (03/31/99)  v0.5   Added support for multi-byte samples and paletted   *                     images.  */
+comment|/*  * Revision history  *  (02/07/99)  v0.1   First working version (internal)  *  (02/09/99)  v0.2   First release to anyone other than myself  *  (02/15/99)  v0.3   Added image dump and read support for debugging  *  (03/31/99)  v0.5   Added support for multi-byte samples and paletted  *                     images.  *  (07/23/04)  v0.6   Added Mac OS X support.  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
 
 begin_include
 include|#
@@ -21,12 +27,6 @@ begin_include
 include|#
 directive|include
 file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<windows.h>
 end_include
 
 begin_include
@@ -128,7 +128,7 @@ name|logFile
 operator|=
 name|fopen
 argument_list|(
-literal|"c:\\twain.log"
+name|DEBUG_LOGFILE
 argument_list|,
 literal|"w"
 argument_list|)
@@ -192,69 +192,6 @@ expr_stmt|;
 name|va_end
 argument_list|(
 name|args
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * LogLastWinError  *  * Log the last Windows error as returned by  * GetLastError.  */
-end_comment
-
-begin_function
-name|void
-DECL|function|LogLastWinError (void)
-name|LogLastWinError
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|LPVOID
-name|lpMsgBuf
-decl_stmt|;
-name|FormatMessage
-argument_list|(
-name|FORMAT_MESSAGE_ALLOCATE_BUFFER
-operator||
-name|FORMAT_MESSAGE_FROM_SYSTEM
-operator||
-name|FORMAT_MESSAGE_IGNORE_INSERTS
-argument_list|,
-name|NULL
-argument_list|,
-name|GetLastError
-argument_list|()
-argument_list|,
-name|MAKELANGID
-argument_list|(
-name|LANG_NEUTRAL
-argument_list|,
-name|SUBLANG_DEFAULT
-argument_list|)
-argument_list|,
-comment|/* Default language */
-operator|(
-name|LPTSTR
-operator|)
-operator|&
-name|lpMsgBuf
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|LogMessage
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|lpMsgBuf
-argument_list|)
-expr_stmt|;
-comment|/* Free the buffer. */
-name|LocalFree
-argument_list|(
-name|lpMsgBuf
 argument_list|)
 expr_stmt|;
 block|}
@@ -576,20 +513,6 @@ modifier|*
 name|format
 parameter_list|,
 modifier|...
-parameter_list|)
-block|{ }
-end_function
-
-begin_comment
-comment|/*  * LogLastWinError  *  * Log the last Windows error as returned by  * GetLastError.  */
-end_comment
-
-begin_function
-name|void
-DECL|function|LogLastWinError (void)
-name|LogLastWinError
-parameter_list|(
-name|void
 parameter_list|)
 block|{ }
 end_function
