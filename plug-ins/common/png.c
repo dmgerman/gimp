@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f688960108
+DECL|struct|__anon2c156fce0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -1167,7 +1167,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Try to find a colour in the palette which isn't actually   * used in the image, so that we can use it as the transparency   * index. Taken from gif.c */
+comment|/* Try to find a colour in the palette which isn't actually  * used in the image, so that we can use it as the transparency  * index. Taken from gif.c */
 end_comment
 
 begin_function
@@ -1239,7 +1239,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* If alpha is over a threshold, the colour index in the         * palette is taken. Otherwise, this pixel is transparent. */
+comment|/* If alpha is over a threshold, the colour index in the        * palette is taken. Otherwise, this pixel is transparent. */
 if|if
 condition|(
 name|pixels
@@ -2036,7 +2036,71 @@ name|PNG_INFO_gAMA
 argument_list|)
 condition|)
 block|{
-comment|/* I sure would like to handle this, but there's no mechanism to          do so in Gimp :( */
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
+name|gchar
+name|buf
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
+decl_stmt|;
+name|gdouble
+name|gamma
+decl_stmt|;
+name|png_get_gAMA
+argument_list|(
+name|pp
+argument_list|,
+name|info
+argument_list|,
+operator|&
+name|gamma
+argument_list|)
+expr_stmt|;
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
+argument_list|,
+name|gamma
+argument_list|)
+expr_stmt|;
+name|parasite
+operator|=
+name|gimp_parasite_new
+argument_list|(
+literal|"gamma"
+argument_list|,
+name|GIMP_PARASITE_PERSISTENT
+argument_list|,
+name|strlen
+argument_list|(
+name|buf
+argument_list|)
+operator|+
+literal|1
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|gimp_image_parasite_attach
+argument_list|(
+name|image
+argument_list|,
+name|parasite
+argument_list|)
+expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -3112,10 +3176,6 @@ decl_stmt|,
 name|yres
 decl_stmt|;
 comment|/* GIMP resolution (dpi) */
-name|gdouble
-name|gamma
-decl_stmt|;
-comment|/* GIMP gamma e.g. 2.20 */
 name|png_color_16
 name|background
 decl_stmt|;
@@ -3520,7 +3580,7 @@ name|pngvals
 operator|.
 name|interlaced
 expr_stmt|;
-comment|/*     * Initialise remap[]    */
+comment|/*    * Initialise remap[]    */
 for|for
 control|(
 name|i
@@ -3541,7 +3601,7 @@ index|]
 operator|=
 name|i
 expr_stmt|;
-comment|/*    * Set color type and remember bytes per pixel count     */
+comment|/*    * Set color type and remember bytes per pixel count    */
 switch|switch
 condition|(
 name|type
@@ -3830,28 +3890,53 @@ operator|.
 name|gama
 condition|)
 block|{
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
+name|gdouble
+name|gamma
+init|=
+name|DEFAULT_GAMMA
+decl_stmt|;
+name|parasite
+operator|=
+name|gimp_image_parasite_find
+argument_list|(
+name|orig_image_ID
+argument_list|,
+literal|"gamma"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parasite
+condition|)
+block|{
 name|gamma
 operator|=
-name|gimp_gamma
-argument_list|()
+name|g_ascii_strtod
+argument_list|(
+name|parasite
+operator|->
+name|data
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
+block|}
 name|png_set_gAMA
 argument_list|(
 name|pp
 argument_list|,
 name|info
 argument_list|,
-literal|1.0
-operator|/
-operator|(
 name|gamma
-operator|!=
-literal|1.00
-condition|?
-name|gamma
-else|:
-name|DEFAULT_GAMMA
-operator|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4237,7 +4322,7 @@ argument_list|,
 name|num
 argument_list|)
 expr_stmt|;
-comment|/* If we're dealing with a paletted image with             * transparency set, write out the remapped palette */
+comment|/* If we're dealing with a paletted image with            * transparency set, write out the remapped palette */
 if|if
 condition|(
 name|info
@@ -4317,7 +4402,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/* Otherwise if we have a paletted image and transparency             * couldn't be set, we ignore the alpha channel */
+comment|/* Otherwise if we have a paletted image and transparency            * couldn't be set, we ignore the alpha channel */
 elseif|else
 if|if
 condition|(
@@ -4689,7 +4774,7 @@ operator|!=
 operator|-
 literal|1
 condition|)
-comment|/* we have a winner for a transparent                                   * index - do like gif2png and swap                                   * index 0 and index transparent */
+comment|/* we have a winner for a transparent                                  * index - do like gif2png and swap                                  * index 0 and index transparent */
 block|{
 name|png_color
 name|palette
@@ -4716,7 +4801,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Transform all pixels with a value = transparent to         * 0 and vice versa to compensate for re-ordering in palette         * due to png_set_tRNS() */
+comment|/* Transform all pixels with a value = transparent to        * 0 and vice versa to compensate for re-ordering in palette        * due to png_set_tRNS() */
 name|remap
 index|[
 literal|0
@@ -4731,7 +4816,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-comment|/* Copy from index 0 to index transparent - 1 to index 1 to         * transparent of after, then from transparent+1 to colors-1         * unchanged, and finally from index transparent to index 0. */
+comment|/* Copy from index 0 to index transparent - 1 to index 1 to        * transparent of after, then from transparent+1 to colors-1        * unchanged, and finally from index transparent to index 0. */
 for|for
 control|(
 name|i
@@ -4816,7 +4901,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Inform the user that we couldn't losslessly save the         * transparency& just use the full palette */
+comment|/* Inform the user that we couldn't losslessly save the        * transparency& just use the full palette */
 name|g_message
 argument_list|(
 name|_
