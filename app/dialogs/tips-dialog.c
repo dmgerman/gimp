@@ -1245,7 +1245,7 @@ argument_list|(
 name|tip
 argument_list|)
 operator|-
-literal|2
+literal|1
 index|]
 operator|=
 literal|'\000'
