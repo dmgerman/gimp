@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpcolorarea.c  * Copyright (C) 2001 Sven Neumann  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpcolorarea.c  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c48370103
+DECL|enum|__anon28b027480103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -87,7 +87,7 @@ name|gimp_color_area_init
 parameter_list|(
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -143,7 +143,7 @@ name|gimp_color_area_update
 parameter_list|(
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -303,20 +303,20 @@ parameter_list|)
 block|{
 specifier|static
 name|GType
-name|gca_type
+name|area_type
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gca_type
+name|area_type
 condition|)
 block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|gca_info
+name|area_info
 init|=
 block|{
 sizeof|sizeof
@@ -359,7 +359,7 @@ operator|)
 name|gimp_color_area_init
 block|,       }
 decl_stmt|;
-name|gca_type
+name|area_type
 operator|=
 name|g_type_register_static
 argument_list|(
@@ -368,14 +368,14 @@ argument_list|,
 literal|"GimpColorArea"
 argument_list|,
 operator|&
-name|gca_info
+name|area_info
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|gca_type
+name|area_type
 return|;
 block|}
 end_function
@@ -508,18 +508,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_area_init (GimpColorArea * gca)
+DECL|function|gimp_color_area_init (GimpColorArea * area)
 name|gimp_color_area_init
 parameter_list|(
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 parameter_list|)
 block|{
 name|gimp_rgba_set
 argument_list|(
 operator|&
-name|gca
+name|area
 operator|->
 name|color
 argument_list|,
@@ -532,37 +532,37 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|buf
 operator|=
 name|NULL
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|width
 operator|=
 literal|0
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|height
 operator|=
 literal|0
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|rowstride
 operator|=
 literal|0
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|type
 operator|=
 name|GIMP_COLOR_AREA_FLAT
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|idle_id
 operator|=
@@ -584,7 +584,7 @@ parameter_list|)
 block|{
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -594,7 +594,7 @@ name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gca
+name|area
 operator|=
 name|GIMP_COLOR_AREA
 argument_list|(
@@ -603,37 +603,37 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gca
+name|area
 operator|->
 name|buf
 condition|)
 block|{
 name|g_free
 argument_list|(
-name|gca
+name|area
 operator|->
 name|buf
 argument_list|)
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|buf
 operator|=
 name|NULL
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|width
 operator|=
 literal|0
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|height
 operator|=
 literal|0
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|rowstride
 operator|=
@@ -642,19 +642,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gca
+name|area
 operator|->
 name|idle_id
 condition|)
 block|{
 name|g_source_remove
 argument_list|(
-name|gca
+name|area
 operator|->
 name|idle_id
 argument_list|)
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|idle_id
 operator|=
@@ -700,9 +700,9 @@ parameter_list|)
 block|{
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 decl_stmt|;
-name|gca
+name|area
 operator|=
 name|GIMP_COLOR_AREA
 argument_list|(
@@ -738,7 +738,7 @@ name|allocation
 operator|.
 name|width
 operator|!=
-name|gca
+name|area
 operator|->
 name|width
 operator|||
@@ -748,12 +748,12 @@ name|allocation
 operator|.
 name|height
 operator|!=
-name|gca
+name|area
 operator|->
 name|height
 condition|)
 block|{
-name|gca
+name|area
 operator|->
 name|width
 operator|=
@@ -763,7 +763,7 @@ name|allocation
 operator|.
 name|width
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|height
 operator|=
@@ -773,12 +773,12 @@ name|allocation
 operator|.
 name|height
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|rowstride
 operator|=
 operator|(
-name|gca
+name|area
 operator|->
 name|width
 operator|*
@@ -792,12 +792,12 @@ literal|0x3
 expr_stmt|;
 name|g_free
 argument_list|(
-name|gca
+name|area
 operator|->
 name|buf
 argument_list|)
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|buf
 operator|=
@@ -805,18 +805,18 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|gca
+name|area
 operator|->
 name|rowstride
 operator|*
-name|gca
+name|area
 operator|->
 name|height
 argument_list|)
 expr_stmt|;
 name|gimp_color_area_update
 argument_list|(
-name|gca
+name|area
 argument_list|)
 expr_stmt|;
 block|}
@@ -840,13 +840,13 @@ parameter_list|)
 block|{
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 decl_stmt|;
 name|guchar
 modifier|*
 name|buf
 decl_stmt|;
-name|gca
+name|area
 operator|=
 name|GIMP_COLOR_AREA
 argument_list|(
@@ -855,12 +855,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gca
+name|area
 operator|->
 name|idle_id
 operator|||
 operator|!
-name|gca
+name|area
 operator|->
 name|buf
 operator|||
@@ -875,7 +875,7 @@ name|FALSE
 return|;
 name|buf
 operator|=
-name|gca
+name|area
 operator|->
 name|buf
 operator|+
@@ -885,7 +885,7 @@ name|area
 operator|.
 name|y
 operator|*
-name|gca
+name|area
 operator|->
 name|rowstride
 operator|+
@@ -937,7 +937,7 @@ name|GDK_RGB_DITHER_MAX
 argument_list|,
 name|buf
 argument_list|,
-name|gca
+name|area
 operator|->
 name|rowstride
 argument_list|,
@@ -984,7 +984,7 @@ parameter_list|)
 block|{
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -995,7 +995,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gca
+name|area
 operator|=
 name|g_object_new
 argument_list|(
@@ -1004,14 +1004,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|color
 operator|=
 operator|*
 name|color
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|type
 operator|=
@@ -1021,7 +1021,7 @@ name|gtk_drag_dest_set
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|gca
+name|area
 argument_list|)
 argument_list|,
 name|GTK_DEST_DEFAULT_HIGHLIGHT
@@ -1056,7 +1056,7 @@ name|gtk_drag_source_set
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|gca
+name|area
 argument_list|)
 argument_list|,
 name|drag_mask
@@ -1073,24 +1073,24 @@ expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(
-name|gca
+name|area
 argument_list|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_set_color:  * @gca: Pointer to a #GimpColorArea.  * @color:  *   **/
+comment|/**  * gimp_color_area_set_color:  * @area: Pointer to a #GimpColorArea.  * @color:  *   **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_area_set_color (GimpColorArea * gca,const GimpRGB * color)
+DECL|function|gimp_color_area_set_color (GimpColorArea * area,const GimpRGB * color)
 name|gimp_color_area_set_color
 parameter_list|(
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -1102,7 +1102,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_AREA
 argument_list|(
-name|gca
+name|area
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1118,7 +1118,7 @@ condition|(
 name|gimp_rgba_distance
 argument_list|(
 operator|&
-name|gca
+name|area
 operator|->
 name|color
 argument_list|,
@@ -1128,7 +1128,7 @@ operator|>
 literal|0.000001
 condition|)
 block|{
-name|gca
+name|area
 operator|->
 name|color
 operator|=
@@ -1137,14 +1137,14 @@ name|color
 expr_stmt|;
 name|gimp_color_area_update
 argument_list|(
-name|gca
+name|area
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gca
+name|area
 argument_list|)
 argument_list|,
 name|gimp_color_area_signals
@@ -1161,12 +1161,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_color_area_get_color (GimpColorArea * gca,GimpRGB * color)
+DECL|function|gimp_color_area_get_color (GimpColorArea * area,GimpRGB * color)
 name|gimp_color_area_get_color
 parameter_list|(
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -1177,7 +1177,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_AREA
 argument_list|(
-name|gca
+name|area
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1191,7 +1191,7 @@ expr_stmt|;
 operator|*
 name|color
 operator|=
-name|gca
+name|area
 operator|->
 name|color
 expr_stmt|;
@@ -1200,26 +1200,26 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_color_area_has_alpha (GimpColorArea * gca)
+DECL|function|gimp_color_area_has_alpha (GimpColorArea * area)
 name|gimp_color_area_has_alpha
 parameter_list|(
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_AREA
 argument_list|(
-name|gca
+name|area
 argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|gca
+name|area
 operator|->
 name|type
 operator|!=
@@ -1230,12 +1230,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_color_area_set_type (GimpColorArea * gca,GimpColorAreaType type)
+DECL|function|gimp_color_area_set_type (GimpColorArea * area,GimpColorAreaType type)
 name|gimp_color_area_set_type
 parameter_list|(
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 parameter_list|,
 name|GimpColorAreaType
 name|type
@@ -1245,11 +1245,11 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_AREA
 argument_list|(
-name|gca
+name|area
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|type
 operator|=
@@ -1257,7 +1257,7 @@ name|type
 expr_stmt|;
 name|gimp_color_area_update
 argument_list|(
-name|gca
+name|area
 argument_list|)
 expr_stmt|;
 block|}
@@ -1266,38 +1266,38 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_area_update (GimpColorArea * gca)
+DECL|function|gimp_color_area_update (GimpColorArea * area)
 name|gimp_color_area_update
 parameter_list|(
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_AREA
 argument_list|(
-name|gca
+name|area
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gca
+name|area
 operator|->
 name|idle_id
 condition|)
 block|{
 name|g_source_remove
 argument_list|(
-name|gca
+name|area
 operator|->
 name|idle_id
 argument_list|)
 expr_stmt|;
 block|}
-name|gca
+name|area
 operator|->
 name|idle_id
 operator|=
@@ -1310,7 +1310,7 @@ name|GSourceFunc
 operator|)
 name|gimp_color_area_idle_update
 argument_list|,
-name|gca
+name|area
 argument_list|,
 name|NULL
 argument_list|)
@@ -1330,7 +1330,7 @@ parameter_list|)
 block|{
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1376,7 +1376,7 @@ decl_stmt|;
 name|gdouble
 name|frac
 decl_stmt|;
-name|gca
+name|area
 operator|=
 name|GIMP_COLOR_AREA
 argument_list|(
@@ -1390,7 +1390,7 @@ argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
-name|gca
+name|area
 operator|->
 name|idle_id
 operator|=
@@ -1410,7 +1410,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gca
+name|area
 operator|->
 name|buf
 condition|)
@@ -1419,19 +1419,19 @@ name|FALSE
 return|;
 name|width
 operator|=
-name|gca
+name|area
 operator|->
 name|width
 expr_stmt|;
 name|height
 operator|=
-name|gca
+name|area
 operator|->
 name|height
 expr_stmt|;
 switch|switch
 condition|(
-name|gca
+name|area
 operator|->
 name|type
 condition|)
@@ -1466,7 +1466,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1479,7 +1479,7 @@ index|[
 literal|1
 index|]
 operator|=
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1492,7 +1492,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1504,7 +1504,7 @@ if|if
 condition|(
 name|check_size
 operator|&&
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1522,7 +1522,7 @@ operator|(
 name|GIMP_CHECK_LIGHT
 operator|+
 operator|(
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1531,7 +1531,7 @@ operator|-
 name|GIMP_CHECK_LIGHT
 operator|)
 operator|*
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1549,7 +1549,7 @@ operator|(
 name|GIMP_CHECK_DARK
 operator|+
 operator|(
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1558,7 +1558,7 @@ operator|-
 name|GIMP_CHECK_DARK
 operator|)
 operator|*
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1576,7 +1576,7 @@ operator|(
 name|GIMP_CHECK_LIGHT
 operator|+
 operator|(
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1585,7 +1585,7 @@ operator|-
 name|GIMP_CHECK_LIGHT
 operator|)
 operator|*
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1603,7 +1603,7 @@ operator|(
 name|GIMP_CHECK_DARK
 operator|+
 operator|(
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1612,7 +1612,7 @@ operator|-
 name|GIMP_CHECK_DARK
 operator|)
 operator|*
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1630,7 +1630,7 @@ operator|(
 name|GIMP_CHECK_LIGHT
 operator|+
 operator|(
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1639,7 +1639,7 @@ operator|-
 name|GIMP_CHECK_LIGHT
 operator|)
 operator|*
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1657,7 +1657,7 @@ operator|(
 name|GIMP_CHECK_DARK
 operator|+
 operator|(
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1666,7 +1666,7 @@ operator|-
 name|GIMP_CHECK_DARK
 operator|)
 operator|*
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -1691,13 +1691,13 @@ control|)
 block|{
 name|p
 operator|=
-name|gca
+name|area
 operator|->
 name|buf
 operator|+
 name|y
 operator|*
-name|gca
+name|area
 operator|->
 name|rowstride
 expr_stmt|;
@@ -2071,13 +2071,13 @@ control|)
 block|{
 name|p
 operator|=
-name|gca
+name|area
 operator|->
 name|buf
 operator|+
 name|y
 operator|*
-name|gca
+name|area
 operator|->
 name|rowstride
 expr_stmt|;
@@ -2129,7 +2129,7 @@ name|gtk_widget_queue_draw
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|gca
+name|area
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2359,7 +2359,7 @@ parameter_list|)
 block|{
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 decl_stmt|;
 name|GimpRGB
 name|color
@@ -2368,7 +2368,7 @@ name|guint16
 modifier|*
 name|vals
 decl_stmt|;
-name|gca
+name|area
 operator|=
 name|GIMP_COLOR_AREA
 argument_list|(
@@ -2468,7 +2468,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_color_area_set_color
 argument_list|(
-name|gca
+name|area
 argument_list|,
 operator|&
 name|color
@@ -2504,7 +2504,7 @@ parameter_list|)
 block|{
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 decl_stmt|;
 name|guint16
 name|vals
@@ -2512,7 +2512,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|gca
+name|area
 operator|=
 name|GIMP_COLOR_AREA
 argument_list|(
@@ -2524,7 +2524,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -2537,7 +2537,7 @@ index|[
 literal|1
 index|]
 operator|=
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -2550,7 +2550,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|gca
+name|area
 operator|->
 name|color
 operator|.
@@ -2560,7 +2560,7 @@ literal|0xffff
 expr_stmt|;
 if|if
 condition|(
-name|gca
+name|area
 operator|->
 name|type
 operator|==
@@ -2579,7 +2579,7 @@ index|[
 literal|3
 index|]
 operator|=
-name|gca
+name|area
 operator|->
 name|color
 operator|.
