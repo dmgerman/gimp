@@ -3,27 +3,13 @@ begin_comment
 comment|/*  GIMP header image file format (INDEXED): \tmp\logo.h  */
 end_comment
 
-begin_decl_stmt
-DECL|variable|width
-specifier|static
-name|unsigned
-name|int
-name|width
-init|=
-literal|100
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/* static unsigned int width = 100;  */
+end_comment
 
-begin_decl_stmt
-DECL|variable|height
-specifier|static
-name|unsigned
-name|int
-name|height
-init|=
-literal|100
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/* static unsigned int height = 100; */
+end_comment
 
 begin_comment
 comment|/*  Call this macro repeatedly.  After each use, the pixel data can be extracted  */
