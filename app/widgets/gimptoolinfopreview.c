@@ -323,7 +323,7 @@ name|GtkStateType
 name|previous_state
 parameter_list|)
 block|{
-name|gimp_preview_render
+name|gimp_preview_update
 argument_list|(
 name|GIMP_PREVIEW
 argument_list|(

@@ -143,10 +143,6 @@ name|GtkWidget
 modifier|*
 name|save_button
 decl_stmt|;
-DECL|member|idle_render_id
-name|guint
-name|idle_render_id
-decl_stmt|;
 block|}
 struct|;
 end_struct

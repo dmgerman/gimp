@@ -190,9 +190,9 @@ DECL|member|press_state
 name|guint
 name|press_state
 decl_stmt|;
-DECL|member|idle_id
-name|guint
-name|idle_id
+DECL|member|needs_render
+name|gboolean
+name|needs_render
 decl_stmt|;
 DECL|member|popup_id
 name|guint
@@ -501,7 +501,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_render
+name|gimp_preview_update
 parameter_list|(
 name|GimpPreview
 modifier|*
