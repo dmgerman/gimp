@@ -546,7 +546,7 @@ expr_stmt|;
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_histogram_calculate_sub_region
 argument_list|,

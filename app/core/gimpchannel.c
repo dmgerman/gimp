@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8cd79f0103
+DECL|enum|__anon28a405e00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -5440,7 +5440,7 @@ expr_stmt|;
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_lut_process_inline
 argument_list|,
@@ -6026,7 +6026,7 @@ expr_stmt|;
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_lut_process_inline
 argument_list|,

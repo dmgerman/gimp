@@ -17822,7 +17822,7 @@ block|{
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|apply_mask_to_sub_region
 argument_list|,
@@ -18052,7 +18052,7 @@ condition|)
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|combine_mask_and_sub_region_stipple
 argument_list|,
@@ -18070,7 +18070,7 @@ else|else
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|combine_mask_and_sub_region_stroke
 argument_list|,
@@ -19147,7 +19147,7 @@ expr_stmt|;
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|initial_sub_region
 argument_list|,
@@ -21039,7 +21039,7 @@ comment|/* Start the actual processing.    */
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|combine_sub_region
 argument_list|,

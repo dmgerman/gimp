@@ -676,7 +676,7 @@ expr_stmt|;
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_lut_process
 argument_list|,
@@ -1848,7 +1848,7 @@ expr_stmt|;
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_lut_process
 argument_list|,
@@ -3003,7 +3003,7 @@ expr_stmt|;
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_lut_process
 argument_list|,
@@ -3519,7 +3519,7 @@ expr_stmt|;
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_lut_process
 argument_list|,
@@ -6042,7 +6042,7 @@ expr_stmt|;
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|threshold_2
 argument_list|,

@@ -2372,7 +2372,7 @@ case|:
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_channel_combine_sub_region_add
 argument_list|,
@@ -2394,7 +2394,7 @@ case|:
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_channel_combine_sub_region_sub
 argument_list|,
@@ -2416,7 +2416,7 @@ case|:
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
-name|p_func
+name|PixelProcessorFunc
 operator|)
 name|gimp_channel_combine_sub_region_intersect
 argument_list|,
