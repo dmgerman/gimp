@@ -42,10 +42,6 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|original
-parameter_list|,
-name|GSList
-modifier|*
-name|path_undo
 parameter_list|)
 function_decl|;
 end_function_decl

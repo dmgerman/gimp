@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"path_transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -124,10 +118,6 @@ name|TileManager
 modifier|*
 name|original
 decl_stmt|;
-DECL|member|path_undo
-name|gpointer
-name|path_undo
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -168,7 +158,7 @@ end_function_decl
 
 begin_function
 name|gboolean
-DECL|function|gimp_transform_tool_push_undo (GimpImage * gimage,const gchar * undo_desc,gint tool_ID,GType tool_type,gdouble * trans_info,TileManager * original,GSList * path_undo)
+DECL|function|gimp_transform_tool_push_undo (GimpImage * gimage,const gchar * undo_desc,gint tool_ID,GType tool_type,gdouble * trans_info,TileManager * original)
 name|gimp_transform_tool_push_undo
 parameter_list|(
 name|GimpImage
@@ -193,10 +183,6 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|original
-parameter_list|,
-name|GSList
-modifier|*
-name|path_undo
 parameter_list|)
 block|{
 name|GimpUndo
@@ -291,12 +277,6 @@ name|original
 operator|=
 name|original
 expr_stmt|;
-name|tu
-operator|->
-name|path_undo
-operator|=
-name|path_undo
-expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -372,17 +352,6 @@ operator|)
 name|undo
 operator|->
 name|data
-expr_stmt|;
-name|path_transform_do_undo
-argument_list|(
-name|undo
-operator|->
-name|gimage
-argument_list|,
-name|tu
-operator|->
-name|path_undo
-argument_list|)
 expr_stmt|;
 comment|/*  only pop if the active tool is the tool that pushed this undo  */
 if|if
@@ -550,13 +519,6 @@ argument_list|(
 name|tu
 operator|->
 name|original
-argument_list|)
-expr_stmt|;
-name|path_transform_free_undo
-argument_list|(
-name|tu
-operator|->
-name|path_undo
 argument_list|)
 expr_stmt|;
 name|g_free

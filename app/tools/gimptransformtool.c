@@ -3325,10 +3325,6 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
-name|GSList
-modifier|*
-name|path_undo
-decl_stmt|;
 name|gboolean
 name|new_layer
 decl_stmt|;
@@ -3419,15 +3415,6 @@ operator|&
 name|new_layer
 argument_list|)
 expr_stmt|;
-name|path_undo
-operator|=
-name|path_transform_start_undo
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  Send the request for the transformation to the tool...    */
 name|new_tiles
 operator|=
@@ -3509,8 +3496,6 @@ operator|->
 name|old_trans_info
 argument_list|,
 name|NULL
-argument_list|,
-name|path_undo
 argument_list|)
 expr_stmt|;
 block|}
