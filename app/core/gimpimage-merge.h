@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298898c00103
+DECL|enum|__anon29f46ab80103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298898c00203
+DECL|enum|__anon29f46ab80203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -2383,22 +2383,13 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|gimp_image_preview_valid
 parameter_list|(
 specifier|const
 name|GimpImage
 modifier|*
 name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_image_invalidate_previews
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
