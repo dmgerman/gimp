@@ -471,6 +471,11 @@ name|gimp_image_mask_select_vectors
 argument_list|(
 name|gimage
 argument_list|,
+name|_
+argument_list|(
+literal|"Path to Selection"
+argument_list|)
+argument_list|,
 name|active_vectors
 argument_list|,
 name|op

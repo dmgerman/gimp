@@ -135,6 +135,11 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors

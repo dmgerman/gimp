@@ -327,44 +327,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_clear (GimpImage * gimage,const gchar * undo_desc)
-name|gimp_image_mask_clear
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|undo_desc
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_channel_clear
-argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
-name|undo_desc
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|gimp_image_mask_push_undo (GimpImage * gimage,const gchar * undo_desc)
 name|gimp_image_mask_push_undo
 parameter_list|(
@@ -891,11 +853,13 @@ name|cut_image
 condition|)
 block|{
 comment|/*  Clear the region  */
-name|gimp_image_mask_clear
+name|gimp_channel_clear
 argument_list|(
-name|gimage
+name|sel_mask
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Update the region  */
@@ -1249,11 +1213,13 @@ condition|(
 operator|!
 name|cut_image
 condition|)
-name|gimp_image_mask_clear
+name|gimp_channel_clear
 argument_list|(
-name|gimage
+name|mask
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Create a new layer from the buffer, using the drawable's type    *  because it may be different from the image's type if we cut from    *  a channel or layer mask    */

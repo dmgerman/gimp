@@ -132,6 +132,10 @@ parameter_list|)
 block|{
 name|GimpChannel
 modifier|*
+name|selection
+decl_stmt|;
+name|GimpChannel
+modifier|*
 name|mask
 decl_stmt|;
 name|GimpRGB
@@ -154,6 +158,13 @@ operator|->
 name|qmask_state
 condition|)
 return|return;
+name|selection
+operator|=
+name|gimp_image_get_mask
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|qmask_state
@@ -195,13 +206,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
 argument_list|(
-name|gimage
+name|selection
 argument_list|)
 condition|)
-comment|/* if no selection */
 block|{
+comment|/* if no selection */
 name|GimpLayer
 modifier|*
 name|layer
@@ -263,8 +274,8 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* if selection */
 block|{
+comment|/* if selection */
 name|mask
 operator|=
 name|GIMP_CHANNEL
@@ -273,32 +284,25 @@ name|gimp_item_duplicate
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
+name|selection
 argument_list|)
 argument_list|,
-name|G_TYPE_FROM_INSTANCE
-argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
+name|GIMP_TYPE_CHANNEL
 argument_list|,
 name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_clear
+comment|/* Clear the selection */
+name|gimp_channel_clear
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* Clear the selection */
 name|gimp_channel_set_color
 argument_list|(
 name|mask

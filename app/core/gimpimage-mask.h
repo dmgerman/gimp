@@ -107,22 +107,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_image_mask_clear
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|undo_name
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  pure wrappers around the resp. GimpSelection functions:  */
 end_comment

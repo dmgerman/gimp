@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage-mask-select.h"
 end_include
 
@@ -1037,13 +1031,18 @@ argument_list|)
 expr_stmt|;
 comment|/*  Otherwise, clear the selection mask  */
 else|else
-name|gimp_image_mask_clear
+name|gimp_channel_clear
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

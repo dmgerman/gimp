@@ -121,12 +121,23 @@ name|gdouble
 name|feather_radius_y
 parameter_list|)
 block|{
+name|GimpChannel
+modifier|*
+name|selection
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|selection
+operator|=
+name|gimp_image_get_mask
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  if applicable, replace the current selection  */
@@ -136,14 +147,16 @@ name|op
 operator|==
 name|GIMP_CHANNEL_OP_REPLACE
 condition|)
-name|gimp_image_mask_clear
+name|gimp_channel_clear
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
 name|_
 argument_list|(
 literal|"Rect Select"
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
@@ -219,10 +232,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_mask
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
+name|selection
 argument_list|,
 name|mask
 argument_list|,
@@ -243,10 +253,7 @@ else|else
 block|{
 name|gimp_channel_combine_rect
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
+name|selection
 argument_list|,
 name|op
 argument_list|,
@@ -305,12 +312,23 @@ name|gdouble
 name|feather_radius_y
 parameter_list|)
 block|{
+name|GimpChannel
+modifier|*
+name|selection
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|selection
+operator|=
+name|gimp_image_get_mask
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  if applicable, replace the current selection  */
@@ -320,14 +338,16 @@ name|op
 operator|==
 name|GIMP_CHANNEL_OP_REPLACE
 condition|)
-name|gimp_image_mask_clear
+name|gimp_channel_clear
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
 name|_
 argument_list|(
 literal|"Ellipse Select"
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
@@ -405,10 +425,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_mask
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
+name|selection
 argument_list|,
 name|mask
 argument_list|,
@@ -429,10 +446,7 @@ else|else
 block|{
 name|gimp_channel_combine_ellipse
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
+name|selection
 argument_list|,
 name|op
 argument_list|,
@@ -458,7 +472,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_polygon (GimpImage * gimage,const gchar * undo_name,gint n_points,GimpVector2 * points,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_polygon (GimpImage * gimage,const gchar * undo_desc,gint n_points,GimpVector2 * points,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_polygon
 parameter_list|(
 name|GimpImage
@@ -468,7 +482,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|undo_name
+name|undo_desc
 parameter_list|,
 name|gint
 name|n_points
@@ -493,6 +507,10 @@ name|gdouble
 name|feather_radius_y
 parameter_list|)
 block|{
+name|GimpChannel
+modifier|*
+name|selection
+decl_stmt|;
 name|GimpScanConvert
 modifier|*
 name|scan_convert
@@ -509,6 +527,13 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|selection
+operator|=
+name|gimp_image_get_mask
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 comment|/*  if applicable, replace the current selection    *  or insure that a floating selection is anchored down...    */
 if|if
 condition|(
@@ -516,11 +541,13 @@ name|op
 operator|==
 name|GIMP_CHANNEL_OP_REPLACE
 condition|)
-name|gimp_image_mask_clear
+name|gimp_channel_clear
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
-name|undo_name
+name|undo_desc
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
@@ -528,7 +555,7 @@ name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
 argument_list|,
-name|undo_name
+name|undo_desc
 argument_list|)
 expr_stmt|;
 DECL|macro|SUPERSAMPLE
@@ -606,10 +633,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_mask
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
+name|selection
 argument_list|,
 name|mask
 argument_list|,
@@ -636,12 +660,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_vectors (GimpImage * gimage,GimpVectors * vectors,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_vectors (GimpImage * gimage,const gchar * undo_desc,GimpVectors * vectors,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|,
 name|GimpVectors
 modifier|*
@@ -663,6 +692,20 @@ name|gdouble
 name|feather_radius_y
 parameter_list|)
 block|{
+name|GimpChannel
+modifier|*
+name|selection
+decl_stmt|;
+name|GimpScanConvert
+modifier|*
+name|scan_convert
+decl_stmt|;
+name|GimpChannel
+modifier|*
+name|mask
+init|=
+name|NULL
+decl_stmt|;
 name|GList
 modifier|*
 name|stroke
@@ -681,30 +724,27 @@ name|num_coords
 init|=
 literal|0
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|undo_name
-init|=
-literal|"Select Vectors"
-decl_stmt|;
-comment|/* this probably should be an                                                 argument */
-name|GimpScanConvert
-modifier|*
-name|scan_convert
-decl_stmt|;
-name|GimpChannel
-modifier|*
-name|mask
-init|=
-name|NULL
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_VECTORS
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|selection
+operator|=
+name|gimp_image_get_mask
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  if applicable, replace the current selection    *  or insure that a floating selection is anchored down...    */
@@ -714,11 +754,13 @@ name|op
 operator|==
 name|GIMP_CHANNEL_OP_REPLACE
 condition|)
-name|gimp_image_mask_clear
+name|gimp_channel_clear
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
-name|undo_name
+name|undo_desc
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
@@ -726,7 +768,7 @@ name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
 argument_list|,
-name|undo_name
+name|undo_desc
 argument_list|)
 expr_stmt|;
 DECL|macro|SUPERSAMPLE
@@ -937,10 +979,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_mask
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
+name|selection
 argument_list|,
 name|mask
 argument_list|,
@@ -1002,6 +1041,10 @@ name|gdouble
 name|feather_radius_y
 parameter_list|)
 block|{
+name|GimpChannel
+modifier|*
+name|selection
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -1018,6 +1061,13 @@ name|channel
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|selection
+operator|=
+name|gimp_image_get_mask
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 comment|/*  if applicable, replace the current selection  */
 if|if
 condition|(
@@ -1025,11 +1075,13 @@ name|op
 operator|==
 name|GIMP_CHANNEL_OP_REPLACE
 condition|)
-name|gimp_image_mask_clear
+name|gimp_channel_clear
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
 name|undo_desc
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
@@ -1099,10 +1151,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_mask
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
+name|selection
 argument_list|,
 name|mask
 argument_list|,
@@ -1123,10 +1172,7 @@ else|else
 block|{
 name|gimp_channel_combine_mask
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
+name|selection
 argument_list|,
 name|channel
 argument_list|,
