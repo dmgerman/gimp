@@ -19,7 +19,7 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-comment|/*  only in button size:  */
+comment|/*  in button size:  */
 DECL|macro|GIMP_STOCK_ANCHOR
 define|#
 directive|define
@@ -80,6 +80,26 @@ define|#
 directive|define
 name|GIMP_STOCK_VCHAIN_BROKEN
 value|"gimp-vchain-broken"
+DECL|macro|GIMP_STOCK_SELECTION_ALL
+define|#
+directive|define
+name|GIMP_STOCK_SELECTION_ALL
+value|"gimp-selection-all"
+DECL|macro|GIMP_STOCK_SELECTION_NONE
+define|#
+directive|define
+name|GIMP_STOCK_SELECTION_NONE
+value|"gimp-selection-none"
+DECL|macro|GIMP_STOCK_SELECTION_GROW
+define|#
+directive|define
+name|GIMP_STOCK_SELECTION_GROW
+value|"gimp-selection-grow"
+DECL|macro|GIMP_STOCK_SELECTION_SHRINK
+define|#
+directive|define
+name|GIMP_STOCK_SELECTION_SHRINK
+value|"gimp-selection-shrink"
 DECL|macro|GIMP_STOCK_SELECTION_REPLACE
 define|#
 directive|define
@@ -150,7 +170,7 @@ define|#
 directive|define
 name|GIMP_STOCK_LINE_SPACING
 value|"gimp-line-spacing"
-comment|/*  only in menu size:  */
+comment|/*  in menu size:  */
 DECL|macro|GIMP_STOCK_CONVERT_RGB
 define|#
 directive|define
@@ -171,26 +191,6 @@ define|#
 directive|define
 name|GIMP_STOCK_INVERT
 value|"gimp-invert"
-DECL|macro|GIMP_STOCK_ALL
-define|#
-directive|define
-name|GIMP_STOCK_ALL
-value|"gimp-all"
-DECL|macro|GIMP_STOCK_NONE
-define|#
-directive|define
-name|GIMP_STOCK_NONE
-value|"gimp-none"
-DECL|macro|GIMP_STOCK_GROW
-define|#
-directive|define
-name|GIMP_STOCK_GROW
-value|"gimp-grow"
-DECL|macro|GIMP_STOCK_SHRINK
-define|#
-directive|define
-name|GIMP_STOCK_SHRINK
-value|"gimp-shrink"
 DECL|macro|GIMP_STOCK_MERGE_DOWN
 define|#
 directive|define
@@ -286,7 +286,7 @@ define|#
 directive|define
 name|GIMP_STOCK_WILBER
 value|"gimp-wilber"
-comment|/*  only in button size:  */
+comment|/*  in button size:  */
 DECL|macro|GIMP_STOCK_TOOL_AIRBRUSH
 define|#
 directive|define
@@ -477,7 +477,7 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_ZOOM
 value|"gimp-tool-zoom"
-comment|/*  only in dialog size:  */
+comment|/*  in dialog size:  */
 DECL|macro|GIMP_STOCK_WILBER_EEK
 define|#
 directive|define

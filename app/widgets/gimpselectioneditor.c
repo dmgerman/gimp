@@ -686,7 +686,7 @@ argument_list|(
 name|selection_editor
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_ALL
+name|GIMP_STOCK_SELECTION_ALL
 argument_list|,
 name|_
 argument_list|(
@@ -716,7 +716,7 @@ argument_list|(
 name|selection_editor
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_NONE
+name|GIMP_STOCK_SELECTION_NONE
 argument_list|,
 name|_
 argument_list|(

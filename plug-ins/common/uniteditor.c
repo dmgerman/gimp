@@ -39,21 +39,9 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pixmaps/new.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixmaps/duplicate.xpm"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon299881740103
+DECL|enum|__anon2c83e3640103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -2862,14 +2850,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_pixmap_button_new
+name|gtk_button_new_from_stock
 argument_list|(
-name|new_xpm
-argument_list|,
-name|_
-argument_list|(
-literal|"_New Unit"
-argument_list|)
+name|GTK_STOCK_NEW
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2921,14 +2904,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gimp_pixmap_button_new
+name|gtk_button_new_from_stock
 argument_list|(
-name|duplicate_xpm
-argument_list|,
-name|_
-argument_list|(
-literal|"_Duplicate Unit"
-argument_list|)
+name|GIMP_STOCK_DUPLICATE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

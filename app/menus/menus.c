@@ -2063,7 +2063,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_ALL
+name|GIMP_STOCK_SELECTION_ALL
 block|}
 block|,
 name|NULL
@@ -2088,7 +2088,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NONE
+name|GIMP_STOCK_SELECTION_NONE
 block|}
 block|,
 name|NULL
@@ -2181,7 +2181,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_SHRINK
+name|GIMP_STOCK_SELECTION_SHRINK
 block|}
 block|,
 name|NULL
@@ -2206,7 +2206,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_GROW
+name|GIMP_STOCK_SELECTION_GROW
 block|}
 block|,
 name|NULL
