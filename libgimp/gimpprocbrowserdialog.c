@@ -111,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0702350103
+DECL|enum|__anon2ad79d600103
 block|{
 DECL|enumerator|COLUMN_LABEL
 name|COLUMN_LABEL
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0702350208
+DECL|struct|__anon2ad79d600208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -225,6 +225,10 @@ decl_stmt|;
 DECL|member|apply_callback
 name|GimpProcBrowserApplyCallback
 name|apply_callback
+decl_stmt|;
+DECL|member|user_data
+name|gpointer
+name|user_data
 decl_stmt|;
 DECL|typedef|GimpDBBrowser
 block|}
@@ -330,7 +334,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_proc_browser_dialog_new (gboolean scheme_names,GimpProcBrowserApplyCallback apply_callback)
+DECL|function|gimp_proc_browser_dialog_new (gboolean scheme_names,GimpProcBrowserApplyCallback apply_callback,gpointer user_data)
 name|gimp_proc_browser_dialog_new
 parameter_list|(
 name|gboolean
@@ -338,6 +342,9 @@ name|scheme_names
 parameter_list|,
 name|GimpProcBrowserApplyCallback
 name|apply_callback
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|GimpDBBrowser
@@ -392,6 +399,12 @@ operator|->
 name|apply_callback
 operator|=
 name|apply_callback
+expr_stmt|;
+name|browser
+operator|->
+name|user_data
+operator|=
+name|user_data
 expr_stmt|;
 if|if
 condition|(
@@ -1489,6 +1502,10 @@ argument_list|,
 name|browser
 operator|->
 name|return_vals
+argument_list|,
+name|browser
+operator|->
+name|user_data
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1860,6 +1877,12 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|browser
+operator|->
+name|scheme_names
+condition|)
 name|browser_convert_string
 argument_list|(
 name|label

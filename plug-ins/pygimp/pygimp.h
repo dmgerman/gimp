@@ -119,8 +119,63 @@ parameter_list|)
 value|(PyObject_TypeCheck(v,&PyGimpPDBFunction_Type))
 end_define
 
+begin_function_decl
+name|PyObject
+modifier|*
+name|pygimp_pdb_function_new
+parameter_list|(
+specifier|const
+name|char
+modifier|*
+name|name
+parameter_list|,
+specifier|const
+name|char
+modifier|*
+name|blurb
+parameter_list|,
+specifier|const
+name|char
+modifier|*
+name|help
+parameter_list|,
+specifier|const
+name|char
+modifier|*
+name|author
+parameter_list|,
+specifier|const
+name|char
+modifier|*
+name|copyright
+parameter_list|,
+specifier|const
+name|char
+modifier|*
+name|date
+parameter_list|,
+name|GimpPDBProcType
+name|proc_type
+parameter_list|,
+name|int
+name|n_params
+parameter_list|,
+name|int
+name|n_return_vals
+parameter_list|,
+name|GimpParamDef
+modifier|*
+name|params
+parameter_list|,
+name|GimpParamDef
+modifier|*
+name|return_vals
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_typedef
-DECL|struct|__anon2b8271650108
+DECL|struct|__anon2a8eed9f0108
 typedef|typedef
 struct|struct
 block|{
@@ -165,7 +220,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b8271650208
+DECL|struct|__anon2a8eed9f0208
 typedef|typedef
 struct|struct
 block|{
@@ -210,7 +265,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b8271650308
+DECL|struct|__anon2a8eed9f0308
 typedef|typedef
 struct|struct
 block|{
@@ -328,7 +383,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b8271650408
+DECL|struct|__anon2a8eed9f0408
 typedef|typedef
 struct|struct
 block|{
@@ -385,7 +440,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b8271650508
+DECL|struct|__anon2a8eed9f0508
 typedef|typedef
 struct|struct
 block|{
@@ -455,7 +510,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b8271650608
+DECL|struct|__anon2a8eed9f0608
 typedef|typedef
 struct|struct
 block|{

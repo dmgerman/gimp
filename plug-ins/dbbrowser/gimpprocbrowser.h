@@ -77,6 +77,9 @@ specifier|const
 name|GimpParamDef
 modifier|*
 name|return_vals
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -91,6 +94,9 @@ name|scheme_names
 parameter_list|,
 name|GimpProcBrowserApplyCallback
 name|apply_callback
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl

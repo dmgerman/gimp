@@ -131,7 +131,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27da6deb0108
+DECL|struct|__anon2a3ccc220108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -1249,7 +1249,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|apply_callback (const gchar * proc_name,const gchar * proc_blurb,const gchar * proc_help,const gchar * proc_author,const gchar * proc_copyright,const gchar * proc_date,GimpPDBProcType proc_type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals)
+DECL|function|apply_callback (const gchar * proc_name,const gchar * proc_blurb,const gchar * proc_help,const gchar * proc_author,const gchar * proc_copyright,const gchar * proc_date,GimpPDBProcType proc_type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals,gpointer user_data)
 name|apply_callback
 parameter_list|(
 specifier|const
@@ -1300,6 +1300,9 @@ specifier|const
 name|GimpParamDef
 modifier|*
 name|return_vals
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|gint
@@ -1430,6 +1433,8 @@ argument_list|(
 name|TRUE
 argument_list|,
 name|apply_callback
+argument_list|,
+name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;
