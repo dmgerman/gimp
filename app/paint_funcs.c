@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -193,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2879830103
+DECL|enum|__anon2c72f9f70103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -718,17 +724,10 @@ name|use_mmx
 decl_stmt|;
 end_decl_stmt
 
-begin_define
-DECL|macro|USE_GCC_INTEL_MMX
-define|#
-directive|define
-name|USE_GCC_INTEL_MMX
-end_define
-
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|USE_GCC_INTEL_MMX
+name|HAVE_ASM_MMX
 end_ifdef
 
 begin_decl_stmt
@@ -18940,6 +18939,26 @@ decl_stmt|;
 name|gdouble
 name|position
 decl_stmt|;
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"shrink_line bytes=%d old_width=%d width=%d interp=%d "
+literal|"step=%f inv_step=%f\n"
+argument_list|,
+name|bytes
+argument_list|,
+name|old_width
+argument_list|,
+name|width
+argument_list|,
+name|interp
+argument_list|,
+name|step
+argument_list|,
+name|inv_step
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|b
@@ -19408,6 +19427,21 @@ operator|=
 name|destPR
 operator|->
 name|h
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"scale_region: (%d x %d) -> (%d x %d)\n"
+argument_list|,
+name|orig_width
+argument_list|,
+name|orig_height
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|)
 expr_stmt|;
 comment|/*  find the ratios of old y to new y  */
 name|y_rat
@@ -20609,6 +20643,21 @@ operator|=
 name|destPR
 operator|->
 name|h
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"subsample_region: (%d x %d) -> (%d x %d)\n"
+argument_list|,
+name|orig_width
+argument_list|,
+name|orig_height
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|)
 expr_stmt|;
 comment|/*  Some calculations...  */
 name|bytes
