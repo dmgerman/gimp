@@ -1705,9 +1705,9 @@ argument_list|)
 operator|->
 name|menu
 expr_stmt|;
-name|gtk_object_ref
+name|g_object_ref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|notebook_menu
 argument_list|)
@@ -1740,9 +1740,9 @@ argument_list|,
 name|notebook_menu
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|notebook_menu
 argument_list|)
@@ -1828,9 +1828,9 @@ operator|.
 name|height
 expr_stmt|;
 comment|/*  an item factory callback may destroy the dockbook, so reference        *  if for gimp_dockbook_menu_end()        */
-name|gtk_object_ref
+name|g_object_ref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dockbook
 argument_list|)
@@ -2133,9 +2133,9 @@ argument_list|(
 name|window
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data_full
+name|g_object_set_data_full
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dockable
 argument_list|)
@@ -2145,7 +2145,7 @@ argument_list|,
 name|window
 argument_list|,
 operator|(
-name|GtkDestroyNotify
+name|GDestroyNotify
 operator|)
 name|gtk_widget_destroy
 argument_list|)
@@ -2279,9 +2279,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_object_ref
+name|g_object_ref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dockable
 argument_list|)
@@ -2308,9 +2308,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dockable
 argument_list|)

@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c1cf3e0103
+DECL|enum|__anon29db7ae50103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE
@@ -254,7 +254,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_data_func
 parameter_list|,
 name|gpointer
@@ -277,7 +277,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_data_func
 parameter_list|,
 name|gpointer
@@ -307,7 +307,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_data_func
 parameter_list|,
 name|gpointer
@@ -380,7 +380,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_viewable_func
 parameter_list|,
 name|gpointer
@@ -399,7 +399,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_color_func
 parameter_list|,
 name|gpointer
@@ -418,7 +418,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_color_func
 parameter_list|,
 name|gpointer
@@ -445,7 +445,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_image_func
 parameter_list|,
 name|gpointer
@@ -472,7 +472,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_drawable_func
 parameter_list|,
 name|gpointer
@@ -499,7 +499,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_data_func
 parameter_list|,
 name|gpointer
@@ -526,7 +526,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_tool_func
 parameter_list|,
 name|gpointer
@@ -552,7 +552,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_color_func
 parameter_list|,
 name|gpointer
@@ -580,7 +580,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_color_func
 parameter_list|,
 name|gpointer
@@ -608,7 +608,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_image_func
 parameter_list|,
 name|gpointer
@@ -636,7 +636,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_drawable_func
 parameter_list|,
 name|gpointer
@@ -664,7 +664,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_brush_func
 parameter_list|,
 name|gpointer
@@ -692,7 +692,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_pattern_func
 parameter_list|,
 name|gpointer
@@ -720,7 +720,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_gradient_func
 parameter_list|,
 name|gpointer
@@ -748,7 +748,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_palette_func
 parameter_list|,
 name|gpointer
@@ -776,7 +776,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_buffer_func
 parameter_list|,
 name|gpointer
@@ -804,7 +804,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_tool_func
 parameter_list|,
 name|gpointer
@@ -1084,7 +1084,7 @@ block|{
 name|GimpDndDataType
 name|data_type
 decl_stmt|;
-name|GtkSignalFunc
+name|GCallback
 name|get_data_func
 decl_stmt|;
 name|gpointer
@@ -1099,9 +1099,9 @@ operator|=
 operator|(
 name|GimpDndDataType
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1118,11 +1118,11 @@ return|return;
 name|get_data_func
 operator|=
 operator|(
-name|GtkSignalFunc
+name|GCallback
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1135,9 +1135,9 @@ operator|=
 operator|(
 name|gpointer
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1242,9 +1242,9 @@ argument_list|(
 name|icon_widget
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data_full
+name|g_object_set_data_full
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1254,7 +1254,7 @@ argument_list|,
 name|window
 argument_list|,
 operator|(
-name|GtkDestroyNotify
+name|GDestroyNotify
 operator|)
 name|gtk_widget_destroy
 argument_list|)
@@ -1289,9 +1289,9 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1335,7 +1335,7 @@ block|{
 name|GimpDndDataType
 name|data_type
 decl_stmt|;
-name|GtkSignalFunc
+name|GCallback
 name|get_data_func
 decl_stmt|;
 name|gpointer
@@ -1356,9 +1356,9 @@ operator|=
 operator|(
 name|GimpDndDataType
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1375,11 +1375,11 @@ return|return;
 name|get_data_func
 operator|=
 operator|(
-name|GtkSignalFunc
+name|GCallback
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1392,9 +1392,9 @@ operator|=
 operator|(
 name|gpointer
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1506,7 +1506,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GtkSignalFunc
+name|GCallback
 name|set_data_func
 decl_stmt|;
 name|gpointer
@@ -1555,11 +1555,11 @@ block|{
 name|set_data_func
 operator|=
 operator|(
-name|GtkSignalFunc
+name|GCallback
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1577,9 +1577,9 @@ operator|=
 operator|(
 name|gpointer
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1636,7 +1636,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_data_source_set (GimpDndDataType data_type,GtkWidget * widget,GtkSignalFunc get_data_func,gpointer get_data_data)
+DECL|function|gimp_dnd_data_source_set (GimpDndDataType data_type,GtkWidget * widget,GCallback get_data_func,gpointer get_data_data)
 name|gimp_dnd_data_source_set
 parameter_list|(
 name|GimpDndDataType
@@ -1646,7 +1646,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_data_func
 parameter_list|,
 name|gpointer
@@ -1661,9 +1661,9 @@ operator|=
 operator|(
 name|gboolean
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1677,16 +1677,16 @@ operator|!
 name|drag_connected
 condition|)
 block|{
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
 argument_list|,
 literal|"drag_begin"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_dnd_data_drag_begin
 argument_list|)
@@ -1694,16 +1694,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
 argument_list|,
 literal|"drag_end"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_dnd_data_drag_end
 argument_list|)
@@ -1711,16 +1711,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
 argument_list|,
 literal|"drag_data_get"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_dnd_data_drag_handle
 argument_list|)
@@ -1728,9 +1728,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1744,9 +1744,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1759,9 +1759,9 @@ operator|)
 name|data_type
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1771,9 +1771,9 @@ argument_list|,
 name|get_data_func
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1805,9 +1805,9 @@ operator|=
 operator|(
 name|gboolean
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1821,9 +1821,9 @@ operator|!
 name|drag_connected
 condition|)
 return|return;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1833,9 +1833,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1845,9 +1845,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1888,9 +1888,9 @@ operator|=
 operator|(
 name|gboolean
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1904,16 +1904,16 @@ operator|!
 name|drop_connected
 condition|)
 block|{
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
 argument_list|,
 literal|"drag_data_received"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_dnd_data_drop_handle
 argument_list|)
@@ -1921,9 +1921,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1937,9 +1937,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1954,9 +1954,9 @@ argument_list|,
 name|set_data_func
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1996,9 +1996,9 @@ operator|=
 operator|(
 name|gboolean
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -2012,9 +2012,9 @@ operator|!
 name|drop_connected
 condition|)
 return|return;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -2029,9 +2029,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -2064,14 +2064,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_file_data (GtkWidget * widget,GtkSignalFunc set_file_func,gpointer set_file_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_file_data (GtkWidget * widget,GCallback set_file_func,gpointer set_file_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_file_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_file_func
 parameter_list|,
 name|gpointer
@@ -2336,7 +2336,7 @@ name|GIMP_DND_DATA_FILE_URI_LIST
 argument_list|,
 name|widget
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|set_file_func
 argument_list|)
@@ -2350,7 +2350,7 @@ name|GIMP_DND_DATA_FILE_TEXT_PLAIN
 argument_list|,
 name|widget
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|set_file_func
 argument_list|)
@@ -2364,7 +2364,7 @@ name|GIMP_DND_DATA_FILE_NETSCAPE_URL
 argument_list|,
 name|widget
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|set_file_func
 argument_list|)
@@ -2483,14 +2483,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dnd_get_color_icon (GtkWidget * widget,GtkSignalFunc get_color_func,gpointer get_color_data)
+DECL|function|gimp_dnd_get_color_icon (GtkWidget * widget,GCallback get_color_func,gpointer get_color_data)
 name|gimp_dnd_get_color_icon
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_color_func
 parameter_list|,
 name|gpointer
@@ -2551,14 +2551,14 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|gimp_dnd_get_color_data (GtkWidget * widget,GtkSignalFunc get_color_func,gpointer get_color_data,gint * format,gint * length)
+DECL|function|gimp_dnd_get_color_data (GtkWidget * widget,GCallback get_color_func,gpointer get_color_data,gint * format,gint * length)
 name|gimp_dnd_get_color_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_color_func
 parameter_list|,
 name|gpointer
@@ -2707,14 +2707,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_color_data (GtkWidget * widget,GtkSignalFunc set_color_func,gpointer set_color_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_color_data (GtkWidget * widget,GCallback set_color_func,gpointer set_color_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_color_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_color_func
 parameter_list|,
 name|gpointer
@@ -2863,7 +2863,7 @@ name|GIMP_DND_DATA_COLOR
 argument_list|,
 name|widget
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|get_color_func
 argument_list|)
@@ -2896,7 +2896,7 @@ name|GIMP_DND_DATA_COLOR
 argument_list|,
 name|widget
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|set_color_func
 argument_list|)
@@ -2943,14 +2943,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dnd_get_viewable_icon (GtkWidget * widget,GtkSignalFunc get_viewable_func,gpointer get_viewable_data)
+DECL|function|gimp_dnd_get_viewable_icon (GtkWidget * widget,GCallback get_viewable_func,gpointer get_viewable_data)
 name|gimp_dnd_get_viewable_icon
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_viewable_func
 parameter_list|,
 name|gpointer
@@ -3412,7 +3412,7 @@ name|dnd_type
 argument_list|,
 name|widget
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|get_viewable_func
 argument_list|)
@@ -3540,7 +3540,7 @@ name|dnd_type
 argument_list|,
 name|widget
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|set_viewable_func
 argument_list|)
@@ -3650,9 +3650,9 @@ operator|=
 operator|(
 name|GimpDndDataType
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -3673,9 +3673,9 @@ operator|=
 operator|(
 name|GimpDndDragViewableFunc
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -3688,9 +3688,9 @@ operator|=
 operator|(
 name|gpointer
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -3740,14 +3740,14 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|gimp_dnd_get_image_data (GtkWidget * widget,GtkSignalFunc get_image_func,gpointer get_image_data,gint * format,gint * length)
+DECL|function|gimp_dnd_get_image_data (GtkWidget * widget,GCallback get_image_func,gpointer get_image_data,gint * format,gint * length)
 name|gimp_dnd_get_image_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_image_func
 parameter_list|,
 name|gpointer
@@ -3837,14 +3837,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_image_data (GtkWidget * widget,GtkSignalFunc set_image_func,gpointer set_image_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_image_data (GtkWidget * widget,GCallback set_image_func,gpointer set_image_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_image_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_image_func
 parameter_list|,
 name|gpointer
@@ -3967,14 +3967,14 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|gimp_dnd_get_drawable_data (GtkWidget * widget,GtkSignalFunc get_drawable_func,gpointer get_drawable_data,gint * format,gint * length)
+DECL|function|gimp_dnd_get_drawable_data (GtkWidget * widget,GCallback get_drawable_func,gpointer get_drawable_data,gint * format,gint * length)
 name|gimp_dnd_get_drawable_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_drawable_func
 parameter_list|,
 name|gpointer
@@ -4064,14 +4064,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_drawable_data (GtkWidget * widget,GtkSignalFunc set_drawable_func,gpointer set_drawable_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_drawable_data (GtkWidget * widget,GCallback set_drawable_func,gpointer set_drawable_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_drawable_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_drawable_func
 parameter_list|,
 name|gpointer
@@ -4192,14 +4192,14 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|gimp_dnd_get_data_data (GtkWidget * widget,GtkSignalFunc get_data_func,gpointer get_data_data,gint * format,gint * length)
+DECL|function|gimp_dnd_get_data_data (GtkWidget * widget,GCallback get_data_func,gpointer get_data_data,gint * format,gint * length)
 name|gimp_dnd_get_data_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_data_func
 parameter_list|,
 name|gpointer
@@ -4310,14 +4310,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_brush_data (GtkWidget * widget,GtkSignalFunc set_brush_func,gpointer set_brush_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_brush_data (GtkWidget * widget,GCallback set_brush_func,gpointer set_brush_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_brush_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_brush_func
 parameter_list|,
 name|gpointer
@@ -4449,14 +4449,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_pattern_data (GtkWidget * widget,GtkSignalFunc set_pattern_func,gpointer set_pattern_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_pattern_data (GtkWidget * widget,GCallback set_pattern_func,gpointer set_pattern_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_pattern_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_pattern_func
 parameter_list|,
 name|gpointer
@@ -4588,14 +4588,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_gradient_data (GtkWidget * widget,GtkSignalFunc set_gradient_func,gpointer set_gradient_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_gradient_data (GtkWidget * widget,GCallback set_gradient_func,gpointer set_gradient_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_gradient_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_gradient_func
 parameter_list|,
 name|gpointer
@@ -4727,14 +4727,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_palette_data (GtkWidget * widget,GtkSignalFunc set_palette_func,gpointer set_palette_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_palette_data (GtkWidget * widget,GCallback set_palette_func,gpointer set_palette_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_palette_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_palette_func
 parameter_list|,
 name|gpointer
@@ -4866,14 +4866,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_buffer_data (GtkWidget * widget,GtkSignalFunc set_buffer_func,gpointer set_buffer_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_buffer_data (GtkWidget * widget,GCallback set_buffer_func,gpointer set_buffer_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_buffer_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_buffer_func
 parameter_list|,
 name|gpointer
@@ -4984,14 +4984,14 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|gimp_dnd_get_tool_data (GtkWidget * widget,GtkSignalFunc get_tool_func,gpointer get_tool_data,gint * format,gint * length)
+DECL|function|gimp_dnd_get_tool_data (GtkWidget * widget,GCallback get_tool_func,gpointer get_tool_data,gint * format,gint * length)
 name|gimp_dnd_get_tool_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|get_tool_func
 parameter_list|,
 name|gpointer
@@ -5090,14 +5090,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_tool_data (GtkWidget * widget,GtkSignalFunc set_tool_func,gpointer set_tool_data,guchar * vals,gint format,gint length)
+DECL|function|gimp_dnd_set_tool_data (GtkWidget * widget,GCallback set_tool_func,gpointer set_tool_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_tool_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|set_tool_func
 parameter_list|,
 name|gpointer

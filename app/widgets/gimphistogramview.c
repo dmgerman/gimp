@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ccbdf80103
+DECL|enum|__anon28be6f2b0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -879,9 +879,9 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|histogram
 argument_list|)
@@ -1043,16 +1043,16 @@ argument_list|,
 name|HISTOGRAM_MASK
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|histogram
 argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|histogram_widget_events
 argument_list|)
@@ -1122,9 +1122,9 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Give a range callback  */
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|histogram_widget
 argument_list|)
@@ -1232,9 +1232,9 @@ name|ALL
 argument_list|)
 expr_stmt|;
 comment|/*  Give a range callback  */
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|histogram
 argument_list|)

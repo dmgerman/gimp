@@ -2048,7 +2048,7 @@ operator|->
 name|bitmap
 argument_list|)
 expr_stmt|;
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|bmcursor
 operator|->
@@ -2103,7 +2103,7 @@ name|color
 argument_list|)
 expr_stmt|;
 comment|/*  first draw the bitmap completely ... */
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|bitmap
 argument_list|,
@@ -2140,7 +2140,7 @@ operator|->
 name|bitmap
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|bitmap
 argument_list|,
@@ -2185,7 +2185,7 @@ operator|->
 name|bitmap
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|bitmap
 argument_list|,
@@ -2217,7 +2217,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  ... then the mask  */
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|mask
 argument_list|,
@@ -2254,7 +2254,7 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|mask
 argument_list|,
@@ -2299,7 +2299,7 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|mask
 argument_list|,
@@ -2370,12 +2370,12 @@ operator|->
 name|y_hot
 argument_list|)
 expr_stmt|;
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|bitmap
 argument_list|)
 expr_stmt|;
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|mask
 argument_list|)

@@ -1450,9 +1450,9 @@ operator|(
 name|GimpDockable
 operator|*
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|source
 argument_list|)
@@ -1476,9 +1476,9 @@ decl_stmt|;
 name|gint
 name|index
 decl_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|src_dockable
 argument_list|)
@@ -1528,9 +1528,9 @@ argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
-name|gtk_object_ref
+name|g_object_ref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|src_dockable
 argument_list|)
@@ -1558,9 +1558,9 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|src_dockable
 argument_list|)

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3393340103
+DECL|enum|__anon2c8126e60103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -492,7 +492,7 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -503,6 +503,8 @@ name|menu_item_signals
 index|[
 name|SET_VIEWABLE
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|viewable
 argument_list|)
@@ -612,26 +614,23 @@ argument_list|,
 name|menu_item
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_while_alive
+name|g_signal_connect_object
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|viewable
 argument_list|)
 argument_list|,
 literal|"name_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_menu_item_name_changed
 argument_list|)
 argument_list|,
 name|menu_item
 argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|menu_item
-argument_list|)
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_gtk_drag_source_set_by_type

@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7a73700103
+DECL|enum|__anon2bac36b00103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -978,7 +978,7 @@ operator|/
 name|ratioy
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -989,6 +989,8 @@ name|preview_signals
 index|[
 name|MARKER_CHANGED
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|x
 argument_list|,

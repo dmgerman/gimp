@@ -195,7 +195,7 @@ name|gximage
 operator|->
 name|gc
 condition|)
-name|gdk_gc_destroy
+name|gdk_gc_unref
 argument_list|(
 name|gximage
 operator|->
