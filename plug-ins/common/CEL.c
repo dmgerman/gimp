@@ -918,7 +918,7 @@ modifier|*
 name|progress
 decl_stmt|;
 comment|/* Title for progress display */
-name|gchar
+name|guchar
 name|header
 index|[
 literal|32
@@ -1666,7 +1666,7 @@ name|palette
 index|[]
 parameter_list|)
 block|{
-name|gchar
+name|guchar
 name|header
 index|[
 literal|32
@@ -1986,7 +1986,7 @@ modifier|*
 name|progress
 decl_stmt|;
 comment|/* Title for progress display */
-name|gchar
+name|guchar
 name|header
 index|[
 literal|32

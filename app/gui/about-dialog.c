@@ -350,6 +350,8 @@ literal|"Tuomas Kuosmanen"
 block|,
 literal|"Peter Kirchgessner"
 block|,
+literal|"Nick Lamb"
+block|,
 literal|"Karl LaRocca"
 block|,
 literal|"Jens Lautenbacher"
