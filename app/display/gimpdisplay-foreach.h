@@ -62,21 +62,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplays_expose_guide
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpGuide
-modifier|*
-name|guide
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gdisplays_expose_full
 parameter_list|(
 name|void

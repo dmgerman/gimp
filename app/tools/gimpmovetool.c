@@ -883,7 +883,7 @@ argument_list|,
 name|guide
 argument_list|)
 expr_stmt|;
-name|gdisplays_expose_guide
+name|gimp_image_update_guide
 argument_list|(
 name|gdisp
 operator|->
@@ -1340,7 +1340,7 @@ break|break;
 default|default:
 break|break;
 block|}
-name|gdisplays_expose_guide
+name|gimp_image_update_guide
 argument_list|(
 name|gdisp
 operator|->

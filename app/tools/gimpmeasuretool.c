@@ -1196,7 +1196,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
-name|gdisplays_expose_guide
+name|gimp_image_update_guide
 argument_list|(
 name|gdisp
 operator|->
@@ -1240,7 +1240,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
-name|gdisplays_expose_guide
+name|gimp_image_update_guide
 argument_list|(
 name|gdisp
 operator|->

@@ -239,7 +239,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299068fd0103
+DECL|enum|__anon296a56980103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -4717,15 +4717,15 @@ begin_typedef
 DECL|typedef|LayerDisplaceUndo
 typedef|typedef
 name|struct
-name|_LayerDisplayUndo
+name|_LayerDisplaceUndo
 name|LayerDisplaceUndo
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_LayerDisplayUndo
+DECL|struct|_LayerDisplaceUndo
 struct|struct
-name|_LayerDisplayUndo
+name|_LayerDisplaceUndo
 block|{
 DECL|member|info
 name|gint
@@ -9552,9 +9552,10 @@ name|qmask
 operator|=
 name|tmp
 expr_stmt|;
-comment|/*  make sure the buttons on all displays are updated  */
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_qmask_changed
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
@@ -9775,7 +9776,7 @@ name|data
 operator|=
 name|data_ptr
 expr_stmt|;
-name|gdisplays_expose_guide
+name|gimp_image_update_guide
 argument_list|(
 name|gimage
 argument_list|,
@@ -9826,7 +9827,7 @@ name|orig
 operator|=
 name|tmp
 expr_stmt|;
-name|gdisplays_expose_guide
+name|gimp_image_update_guide
 argument_list|(
 name|gimage
 argument_list|,
