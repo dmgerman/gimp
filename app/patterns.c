@@ -76,19 +76,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"datafiles.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"devices.h"
 end_include
 
 begin_include
@@ -106,25 +94,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
 end_include
 
 begin_include
@@ -182,7 +158,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  static function prototypes  */
+comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
@@ -319,9 +295,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|patterns_free ()
+DECL|function|patterns_free (void)
 name|patterns_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -369,6 +347,15 @@ operator|!
 name|standard_pattern
 condition|)
 block|{
+name|guchar
+modifier|*
+name|data
+decl_stmt|;
+name|gint
+name|row
+decl_stmt|,
+name|col
+decl_stmt|;
 name|standard_pattern
 operator|=
 name|g_new
@@ -401,18 +388,17 @@ operator|-
 literal|1
 expr_stmt|;
 comment|/*  not part of the pattern list  */
-comment|/*  TODO: fill it with something */
 name|standard_pattern
 operator|->
 name|mask
 operator|=
 name|temp_buf_new
 argument_list|(
-literal|8
+literal|32
 argument_list|,
-literal|8
+literal|32
 argument_list|,
-literal|8
+literal|3
 argument_list|,
 literal|0
 argument_list|,
@@ -421,6 +407,79 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|data
+operator|=
+name|temp_buf_data
+argument_list|(
+name|standard_pattern
+operator|->
+name|mask
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|row
+operator|=
+literal|0
+init|;
+name|row
+operator|<
+name|standard_pattern
+operator|->
+name|mask
+operator|->
+name|height
+condition|;
+name|row
+operator|++
+control|)
+for|for
+control|(
+name|col
+operator|=
+literal|0
+init|;
+name|col
+operator|<
+name|standard_pattern
+operator|->
+name|mask
+operator|->
+name|width
+condition|;
+name|col
+operator|++
+control|)
+block|{
+operator|*
+name|data
+operator|++
+operator|=
+operator|*
+name|data
+operator|++
+operator|=
+operator|*
+name|data
+operator|++
+operator|=
+operator|(
+name|col
+operator|%
+literal|2
+operator|)
+operator|&&
+operator|(
+name|row
+operator|%
+literal|2
+operator|)
+condition|?
+literal|255
+else|:
+literal|0
+expr_stmt|;
+block|}
 block|}
 return|return
 name|standard_pattern
