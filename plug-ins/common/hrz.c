@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292033780108
+DECL|struct|__anon29441e810108
 block|{
 DECL|member|run
 name|gint
@@ -1315,6 +1315,10 @@ name|pixel_rgn
 argument_list|)
 expr_stmt|;
 comment|/* close the file */
+ifndef|#
+directive|ifndef
+name|NeXT
+comment|/* @#%@! NeXTStep */
 name|munmap
 argument_list|(
 name|mapped
@@ -1326,6 +1330,8 @@ operator|*
 literal|3
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/* Tell the GIMP to display the image.    */
 name|gimp_drawable_flush
 argument_list|(

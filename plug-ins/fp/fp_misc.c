@@ -1488,6 +1488,7 @@ name|M
 operator|!=
 name|m
 condition|)
+block|{
 for|for
 control|(
 name|k
@@ -1574,6 +1575,7 @@ argument_list|,
 name|middle
 argument_list|)
 expr_stmt|;
+block|}
 name|P
 index|[
 literal|0
@@ -1756,6 +1758,7 @@ name|M
 operator|!=
 name|m
 condition|)
+block|{
 if|if
 condition|(
 name|backupP
@@ -1825,6 +1828,7 @@ argument_list|,
 name|middle
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|VALUE

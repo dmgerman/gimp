@@ -2865,9 +2865,20 @@ unit|}
 comment|/* next pr sel_rgn tile thing */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|MAZE_DEBUG
+end_ifdef
+
 begin_comment
-comment|/* #ifdef MAZE_DEBUG      maze_dump(maz,mw,mh);      #endif */
+comment|/* maze_dump(maz,mw,mh); */
 end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 unit|}
