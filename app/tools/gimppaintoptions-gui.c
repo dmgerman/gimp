@@ -678,17 +678,14 @@ block|}
 comment|/*  the "incremental" toggle  */
 if|if
 condition|(
-name|g_type_is_a
-argument_list|(
 name|tool_type
-argument_list|,
-name|GIMP_TYPE_PAINTBRUSH_TOOL
-argument_list|)
+operator|==
+name|GIMP_TYPE_PENCIL_TOOL
 operator|||
-name|tool_options
-operator|->
-name|tool_info
-operator|->
+name|tool_type
+operator|==
+name|GIMP_TYPE_PAINTBRUSH_TOOL
+operator|||
 name|tool_type
 operator|==
 name|GIMP_TYPE_ERASER_TOOL
@@ -1726,6 +1723,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|incremental_toggle
+condition|)
+block|{
 name|gtk_widget_set_sensitive
 argument_list|(
 name|incremental_toggle
@@ -1748,6 +1750,7 @@ argument_list|,
 name|incremental_toggle
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  the gradient view  */
 name|button
 operator|=
