@@ -17,7 +17,7 @@ name|__PATH_TRANSFORM_H__
 end_define
 
 begin_function_decl
-name|PathUndo
+name|GSList
 modifier|*
 name|path_transform_start_undo
 parameter_list|(
@@ -32,7 +32,7 @@ begin_function_decl
 name|void
 name|path_transform_free_undo
 parameter_list|(
-name|PathUndo
+name|GSList
 modifier|*
 name|pundo
 parameter_list|)
@@ -47,7 +47,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|PathUndo
+name|GSList
 modifier|*
 name|pundo
 parameter_list|)

@@ -179,7 +179,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|QMASK_UNDO
+name|IMAGE_QMASK_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 if|if
@@ -328,7 +328,7 @@ argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;
-name|undo_push_qmask
+name|undo_push_image_qmask
 argument_list|(
 name|gimage
 argument_list|)
@@ -378,11 +378,11 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|QMASK_UNDO
+name|IMAGE_QMASK_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 comment|/*  push the undo here since removing the mask will                *  call the qmask_removed_callback() which will set                *  the qmask_state to FALSE                */
-name|undo_push_qmask
+name|undo_push_image_qmask
 argument_list|(
 name|gimage
 argument_list|)

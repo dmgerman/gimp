@@ -2607,7 +2607,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|TRANSFORM_CORE_UNDO
+name|TRANSFORM_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
@@ -2747,7 +2747,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|TRANSFORM_CORE_UNDO
+name|TRANSFORM_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
@@ -3103,7 +3103,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO
+name|EDIT_PASTE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|floating_sel_attach

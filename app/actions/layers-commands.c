@@ -1727,14 +1727,6 @@ name|gimage
 operator|)
 condition|)
 block|{
-comment|/*  Start a group undo  */
-name|undo_push_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|LAYER_ADD_UNDO
-argument_list|)
-expr_stmt|;
 name|layer
 operator|=
 name|gimp_layer_new
@@ -1791,12 +1783,6 @@ name|layer
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-comment|/*  End the group undo  */
-name|undo_push_group_end
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -1968,7 +1954,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO
+name|EDIT_PASTE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|new_layer
@@ -4090,7 +4076,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_SCALE_UNDO
+name|LAYER_SCALE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 if|if
@@ -4439,7 +4425,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_RESIZE_UNDO
+name|LAYER_RESIZE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 if|if

@@ -1238,7 +1238,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_MERGE_UNDO
+name|IMAGE_LAYERS_MERGE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|name

@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28ace3e70108
+DECL|struct|__anon2b1c75570108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -243,57 +243,6 @@ modifier|*
 name|layer
 parameter_list|)
 function_decl|;
-block|}
-struct|;
-end_struct
-
-begin_comment
-comment|/*  Special undo types  */
-end_comment
-
-begin_struct
-DECL|struct|_LayerUndo
-struct|struct
-name|_LayerUndo
-block|{
-DECL|member|layer
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
-comment|/*  the actual layer         */
-DECL|member|prev_position
-name|gint
-name|prev_position
-decl_stmt|;
-comment|/*  former position in list  */
-DECL|member|prev_layer
-name|GimpLayer
-modifier|*
-name|prev_layer
-decl_stmt|;
-comment|/*  previous active layer    */
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_FStoLayerUndo
-struct|struct
-name|_FStoLayerUndo
-block|{
-DECL|member|layer
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
-comment|/*  the layer                 */
-DECL|member|drawable
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-comment|/*  drawable of floating sel  */
 block|}
 struct|;
 end_struct

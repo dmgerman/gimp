@@ -177,31 +177,6 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  Special undo type  */
-end_comment
-
-begin_struct
-DECL|struct|_LayerMaskUndo
-struct|struct
-name|_LayerMaskUndo
-block|{
-DECL|member|layer
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
-comment|/*  the layer             */
-DECL|member|mask
-name|GimpLayerMask
-modifier|*
-name|mask
-decl_stmt|;
-comment|/*  the layer mask        */
-block|}
-struct|;
-end_struct
-
-begin_comment
 comment|/*  function declarations  */
 end_comment
 

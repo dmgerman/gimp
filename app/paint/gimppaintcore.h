@@ -58,7 +58,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2aa4eb5c0103
+DECL|enum|__anon278d53d10103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -97,7 +97,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2aa4eb5c0203
+DECL|enum|__anon278d53d10203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -409,36 +409,6 @@ name|GimpPaintCoreState
 name|paint_state
 parameter_list|)
 function_decl|;
-block|}
-struct|;
-end_struct
-
-begin_typedef
-DECL|typedef|GimpPaintCoreUndo
-typedef|typedef
-name|struct
-name|_GimpPaintCoreUndo
-name|GimpPaintCoreUndo
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpPaintCoreUndo
-struct|struct
-name|_GimpPaintCoreUndo
-block|{
-DECL|member|core_ID
-name|gint
-name|core_ID
-decl_stmt|;
-DECL|member|core_type
-name|GType
-name|core_type
-decl_stmt|;
-DECL|member|last_coords
-name|GimpCoords
-name|last_coords
-decl_stmt|;
 block|}
 struct|;
 end_struct

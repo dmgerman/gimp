@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c0b0b80108
+DECL|struct|__anon29b0d5de0108
 block|{
 DECL|member|resize
 name|Resize
@@ -1571,7 +1571,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_SCALE_UNDO
+name|IMAGE_SCALE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_resolution
@@ -1618,7 +1618,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_SCALE_UNDO
+name|IMAGE_SCALE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_unit
@@ -1692,7 +1692,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_SCALE_UNDO
+name|IMAGE_SCALE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|progress

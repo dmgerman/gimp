@@ -1102,7 +1102,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|GUIDE_UNDO
+name|IMAGE_GUIDE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 if|if
@@ -1119,7 +1119,7 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gdisp
 operator|->
@@ -1163,7 +1163,7 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gdisp
 operator|->

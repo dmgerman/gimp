@@ -153,7 +153,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|MISC_UNDO
+name|MISC_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 return|return

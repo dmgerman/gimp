@@ -22,15 +22,15 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
-begin_comment
-comment|/* FIXME */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"gui/gui-types.h"
 end_include
+
+begin_comment
+comment|/* FIXME */
+end_comment
 
 begin_comment
 comment|/* buffer sizes for scaling information strings (for the info dialog) */
@@ -335,45 +335,6 @@ name|TransformState
 name|state
 parameter_list|)
 function_decl|;
-block|}
-struct|;
-end_struct
-
-begin_typedef
-DECL|typedef|TransformUndo
-typedef|typedef
-name|struct
-name|_TransformUndo
-name|TransformUndo
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_TransformUndo
-struct|struct
-name|_TransformUndo
-block|{
-DECL|member|tool_ID
-name|gint
-name|tool_ID
-decl_stmt|;
-DECL|member|tool_type
-name|GType
-name|tool_type
-decl_stmt|;
-DECL|member|trans_info
-name|TransInfo
-name|trans_info
-decl_stmt|;
-DECL|member|original
-name|TileManager
-modifier|*
-name|original
-decl_stmt|;
-DECL|member|path_undo
-name|gpointer
-name|path_undo
-decl_stmt|;
 block|}
 struct|;
 end_struct

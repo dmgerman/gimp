@@ -1669,7 +1669,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_SCALE_UNDO
+name|LAYER_SCALE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 if|if
@@ -1985,7 +1985,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_RESIZE_UNDO
+name|LAYER_RESIZE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 if|if
@@ -2420,7 +2420,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LINKED_LAYER_UNDO
+name|LAYER_LINKED_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 if|if
@@ -2860,7 +2860,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LINKED_LAYER_UNDO
+name|LAYER_LINKED_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 if|if

@@ -217,7 +217,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_SCALE_UNDO
+name|IMAGE_SCALE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 comment|/*  Relax the floating selection  */
@@ -233,7 +233,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Push the image size to the stack  */
-name|undo_push_gimage_mod
+name|undo_push_image_size
 argument_list|(
 name|gimage
 argument_list|)
@@ -535,7 +535,7 @@ block|{
 case|case
 name|ORIENTATION_HORIZONTAL
 case|:
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gimage
 argument_list|,
@@ -560,7 +560,7 @@ break|break;
 case|case
 name|ORIENTATION_VERTICAL
 case|:
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gimage
 argument_list|,

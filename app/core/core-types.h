@@ -55,16 +55,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo_types.h"
-end_include
-
-begin_comment
-comment|/* EEK */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"core/core-enums.h"
 end_include
 
@@ -76,7 +66,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon29d2715e0103
+DECL|enum|__anon2a99231e0103
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -107,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2715e0203
+DECL|enum|__anon2a99231e0203
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -123,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2715e0303
+DECL|enum|__anon2a99231e0303
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -143,7 +133,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29d2715e0403
+DECL|enum|__anon2a99231e0403
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -167,7 +157,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon29d2715e0503
+DECL|enum|__anon2a99231e0503
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -189,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2715e0603
+DECL|enum|__anon2a99231e0603
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -219,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2715e0703
+DECL|enum|__anon2a99231e0703
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -235,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2715e0803
+DECL|enum|__anon2a99231e0803
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -257,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2715e0903
+DECL|enum|__anon2a99231e0903
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -292,7 +282,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2715e0a03
+DECL|enum|__anon2a99231e0a03
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -328,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2715e0b03
+DECL|enum|__anon2a99231e0b03
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL
@@ -341,6 +331,95 @@ name|PATTERN_BUCKET_FILL
 DECL|typedef|BucketFillMode
 block|}
 name|BucketFillMode
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+comment|/*< skip>*/
+DECL|enum|__anon2a99231e0c03
+block|{
+comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
+comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
+DECL|enumerator|NO_UNDO_GROUP
+name|NO_UNDO_GROUP
+init|=
+literal|0
+block|,
+DECL|enumerator|FIRST_UNDO_GROUP
+name|FIRST_UNDO_GROUP
+init|=
+name|NO_UNDO_GROUP
+block|,
+DECL|enumerator|IMAGE_SCALE_UNDO_GROUP
+name|IMAGE_SCALE_UNDO_GROUP
+block|,
+DECL|enumerator|IMAGE_RESIZE_UNDO_GROUP
+name|IMAGE_RESIZE_UNDO_GROUP
+block|,
+DECL|enumerator|IMAGE_CONVERT_UNDO_GROUP
+name|IMAGE_CONVERT_UNDO_GROUP
+block|,
+DECL|enumerator|IMAGE_CROP_UNDO_GROUP
+name|IMAGE_CROP_UNDO_GROUP
+block|,
+DECL|enumerator|IMAGE_LAYERS_MERGE_UNDO_GROUP
+name|IMAGE_LAYERS_MERGE_UNDO_GROUP
+block|,
+DECL|enumerator|IMAGE_QMASK_UNDO_GROUP
+name|IMAGE_QMASK_UNDO_GROUP
+block|,
+DECL|enumerator|IMAGE_GUIDE_UNDO_GROUP
+name|IMAGE_GUIDE_UNDO_GROUP
+block|,
+DECL|enumerator|LAYER_SCALE_UNDO_GROUP
+name|LAYER_SCALE_UNDO_GROUP
+block|,
+DECL|enumerator|LAYER_RESIZE_UNDO_GROUP
+name|LAYER_RESIZE_UNDO_GROUP
+block|,
+DECL|enumerator|LAYER_DISPLACE_UNDO_GROUP
+name|LAYER_DISPLACE_UNDO_GROUP
+block|,
+DECL|enumerator|LAYER_LINKED_UNDO_GROUP
+name|LAYER_LINKED_UNDO_GROUP
+block|,
+DECL|enumerator|LAYER_APPLY_MASK_UNDO_GROUP
+name|LAYER_APPLY_MASK_UNDO_GROUP
+block|,
+DECL|enumerator|FS_FLOAT_UNDO_GROUP
+name|FS_FLOAT_UNDO_GROUP
+block|,
+DECL|enumerator|FS_ANCHOR_UNDO_GROUP
+name|FS_ANCHOR_UNDO_GROUP
+block|,
+DECL|enumerator|EDIT_PASTE_UNDO_GROUP
+name|EDIT_PASTE_UNDO_GROUP
+block|,
+DECL|enumerator|EDIT_CUT_UNDO_GROUP
+name|EDIT_CUT_UNDO_GROUP
+block|,
+DECL|enumerator|TEXT_UNDO_GROUP
+name|TEXT_UNDO_GROUP
+block|,
+DECL|enumerator|TRANSFORM_UNDO_GROUP
+name|TRANSFORM_UNDO_GROUP
+block|,
+DECL|enumerator|PAINT_UNDO_GROUP
+name|PAINT_UNDO_GROUP
+block|,
+DECL|enumerator|MISC_UNDO_GROUP
+name|MISC_UNDO_GROUP
+block|,
+DECL|enumerator|LAST_UNDO_GROUP
+name|LAST_UNDO_GROUP
+init|=
+name|MISC_UNDO_GROUP
+DECL|typedef|UndoType
+block|}
+name|UndoType
 typedef|;
 end_typedef
 

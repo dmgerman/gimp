@@ -180,7 +180,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_CUT_UNDO
+name|EDIT_CUT_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 comment|/*  See if the gimage mask is empty  */
@@ -641,7 +641,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO
+name|EDIT_PASTE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 comment|/*  Set the offsets to the center of the image  */

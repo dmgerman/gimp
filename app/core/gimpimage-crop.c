@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad56aed0103
+DECL|enum|__anon2882cda00103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -395,7 +395,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_RESIZE_UNDO
+name|LAYER_RESIZE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|layer
@@ -495,7 +495,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|CROP_UNDO
+name|IMAGE_CROP_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 comment|/*  relax the floating layer  */
@@ -511,7 +511,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Push the image size to the stack  */
-name|undo_push_gimage_mod
+name|undo_push_image_size
 argument_list|(
 name|gimage
 argument_list|)
@@ -842,7 +842,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gimage
 argument_list|,

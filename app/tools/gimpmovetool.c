@@ -988,7 +988,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gdisp
 operator|->
@@ -2498,7 +2498,7 @@ name|disp
 operator|=
 name|gdisp
 expr_stmt|;
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gdisp
 operator|->

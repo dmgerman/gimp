@@ -117,6 +117,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"undo_types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -147,7 +153,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfa3bd0108
+DECL|struct|__anon2b736ea40108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -198,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfa3bd0208
+DECL|struct|__anon2b736ea40208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1135,11 +1141,11 @@ condition|(
 operator|(
 name|utype
 operator|!=
-name|MASK_UNDO
+name|IMAGE_MASK_UNDO
 operator|&&
 name|utype
 operator|!=
-name|QMASK_UNDO
+name|IMAGE_QMASK_UNDO
 operator|)
 operator|||
 operator|(

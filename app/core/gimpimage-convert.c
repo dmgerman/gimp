@@ -399,7 +399,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28b015f70103
+DECL|enum|__anon2aadb0cc0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1427,7 +1427,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b015f70208
+DECL|struct|__anon2aadb0cc0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1504,7 +1504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b015f70308
+DECL|struct|__anon2aadb0cc0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1664,7 +1664,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b015f70408
+DECL|struct|__anon2aadb0cc0408
 block|{
 DECL|member|used_count
 name|signed
@@ -2714,7 +2714,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMAGE_MOD_UNDO
+name|IMAGE_CONVERT_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 comment|/*  Relax the floating selection  */
@@ -2730,7 +2730,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Push the image size to the stack  */
-name|undo_push_gimage_mod
+name|undo_push_image_size
 argument_list|(
 name|gimage
 argument_list|)

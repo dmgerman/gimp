@@ -8710,7 +8710,7 @@ comment|/* These functions are the undo functions for the paths  * that have und
 end_comment
 
 begin_function
-name|PathUndo
+name|GSList
 modifier|*
 DECL|function|path_transform_start_undo (GimpImage * gimage)
 name|path_transform_start_undo
@@ -8827,10 +8827,6 @@ expr_stmt|;
 block|}
 block|}
 return|return
-operator|(
-name|PathUndo
-operator|*
-operator|)
 name|undo_list
 return|;
 block|}
@@ -8838,10 +8834,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_transform_free_undo (PathUndo * pundo)
+DECL|function|path_transform_free_undo (GSList * pundo)
 name|path_transform_free_undo
 parameter_list|(
-name|PathUndo
+name|GSList
 modifier|*
 name|pundo
 parameter_list|)
@@ -8899,14 +8895,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_transform_do_undo (GimpImage * gimage,PathUndo * pundo)
+DECL|function|path_transform_do_undo (GimpImage * gimage,GSList * pundo)
 name|path_transform_do_undo
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|PathUndo
+name|GSList
 modifier|*
 name|pundo
 parameter_list|)

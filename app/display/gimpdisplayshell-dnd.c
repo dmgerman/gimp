@@ -190,7 +190,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO
+name|EDIT_PASTE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|new_layer

@@ -279,7 +279,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gimage
 argument_list|,
@@ -529,7 +529,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gimage
 argument_list|,
@@ -808,7 +808,7 @@ name|guides
 operator|->
 name|next
 expr_stmt|;
-name|undo_push_guide
+name|undo_push_image_guide
 argument_list|(
 name|gimage
 argument_list|,

@@ -973,7 +973,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|LAYER_DISPLACE_UNDO
+name|LAYER_DISPLACE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_offsets
@@ -3548,7 +3548,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|LAYER_DISPLACE_UNDO
+name|LAYER_DISPLACE_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 if|if

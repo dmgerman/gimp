@@ -198,77 +198,6 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  Special undo types  */
-end_comment
-
-begin_typedef
-DECL|typedef|ChannelUndo
-typedef|typedef
-name|struct
-name|_ChannelUndo
-name|ChannelUndo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|MaskUndo
-typedef|typedef
-name|struct
-name|_MaskUndo
-name|MaskUndo
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_ChannelUndo
-struct|struct
-name|_ChannelUndo
-block|{
-DECL|member|channel
-name|GimpChannel
-modifier|*
-name|channel
-decl_stmt|;
-comment|/*  the actual channel          */
-DECL|member|prev_position
-name|gint
-name|prev_position
-decl_stmt|;
-comment|/*  former position in list     */
-DECL|member|prev_channel
-name|GimpChannel
-modifier|*
-name|prev_channel
-decl_stmt|;
-comment|/*  previous active channel     */
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_MaskUndo
-struct|struct
-name|_MaskUndo
-block|{
-DECL|member|tiles
-name|TileManager
-modifier|*
-name|tiles
-decl_stmt|;
-comment|/*  the actual mask  */
-DECL|member|x
-DECL|member|y
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-comment|/*  offsets          */
-block|}
-struct|;
-end_struct
-
-begin_comment
 comment|/*  function declarations  */
 end_comment
 
@@ -429,7 +358,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* selection mask functions  */
+comment|/*  selection mask functions  */
 end_comment
 
 begin_function_decl
