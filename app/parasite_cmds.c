@@ -60,18 +60,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|attach_parasite_proc
+DECL|variable|parasite_attach_proc
 specifier|static
 name|ProcRecord
-name|attach_parasite_proc
+name|parasite_attach_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|detach_parasite_proc
+DECL|variable|parasite_detach_proc
 specifier|static
 name|ProcRecord
-name|detach_parasite_proc
+name|parasite_detach_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -92,18 +92,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_attach_parasite_proc
+DECL|variable|drawable_parasite_attach_proc
 specifier|static
 name|ProcRecord
-name|drawable_attach_parasite_proc
+name|drawable_parasite_attach_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_detach_parasite_proc
+DECL|variable|drawable_parasite_detach_proc
 specifier|static
 name|ProcRecord
-name|drawable_detach_parasite_proc
+name|drawable_parasite_detach_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -124,18 +124,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_attach_parasite_proc
+DECL|variable|image_parasite_attach_proc
 specifier|static
 name|ProcRecord
-name|image_attach_parasite_proc
+name|image_parasite_attach_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_detach_parasite_proc
+DECL|variable|image_parasite_detach_proc
 specifier|static
 name|ProcRecord
-name|image_detach_parasite_proc
+name|image_parasite_detach_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -170,13 +170,13 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|attach_parasite_proc
+name|parasite_attach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|detach_parasite_proc
+name|parasite_detach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -194,13 +194,13 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|drawable_attach_parasite_proc
+name|drawable_parasite_attach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|drawable_detach_parasite_proc
+name|drawable_parasite_detach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -218,13 +218,13 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|image_attach_parasite_proc
+name|image_parasite_attach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|image_detach_parasite_proc
+name|image_parasite_detach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -683,8 +683,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|attach_parasite_invoker (Argument * args)
-name|attach_parasite_invoker
+DECL|function|parasite_attach_invoker (Argument * args)
+name|parasite_attach_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -738,7 +738,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|attach_parasite_proc
+name|parasite_attach_proc
 argument_list|,
 name|success
 argument_list|)
@@ -747,10 +747,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|attach_parasite_inargs
+DECL|variable|parasite_attach_inargs
 specifier|static
 name|ProcArg
-name|attach_parasite_inargs
+name|parasite_attach_inargs
 index|[]
 init|=
 block|{
@@ -766,13 +766,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|attach_parasite_proc
+DECL|variable|parasite_attach_proc
 specifier|static
 name|ProcRecord
-name|attach_parasite_proc
+name|parasite_attach_proc
 init|=
 block|{
-literal|"gimp_attach_parasite"
+literal|"gimp_parasite_attach"
 block|,
 literal|"Add a parasite to the gimp."
 block|,
@@ -788,7 +788,7 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|attach_parasite_inargs
+name|parasite_attach_inargs
 block|,
 literal|0
 block|,
@@ -796,7 +796,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|attach_parasite_invoker
+name|parasite_attach_invoker
 block|}
 block|}
 block|}
@@ -807,8 +807,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|detach_parasite_invoker (Argument * args)
-name|detach_parasite_invoker
+DECL|function|parasite_detach_invoker (Argument * args)
+name|parasite_detach_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -862,7 +862,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|detach_parasite_proc
+name|parasite_detach_proc
 argument_list|,
 name|success
 argument_list|)
@@ -871,10 +871,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|detach_parasite_inargs
+DECL|variable|parasite_detach_inargs
 specifier|static
 name|ProcArg
-name|detach_parasite_inargs
+name|parasite_detach_inargs
 index|[]
 init|=
 block|{
@@ -890,13 +890,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|detach_parasite_proc
+DECL|variable|parasite_detach_proc
 specifier|static
 name|ProcRecord
-name|detach_parasite_proc
+name|parasite_detach_proc
 init|=
 block|{
-literal|"gimp_detach_parasite"
+literal|"gimp_parasite_detach"
 block|,
 literal|"Removes a parasite from the gimp."
 block|,
@@ -912,7 +912,7 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|detach_parasite_inargs
+name|parasite_detach_inargs
 block|,
 literal|0
 block|,
@@ -920,7 +920,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|detach_parasite_invoker
+name|parasite_detach_invoker
 block|}
 block|}
 block|}
@@ -1279,8 +1279,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_attach_parasite_invoker (Argument * args)
-name|drawable_attach_parasite_invoker
+DECL|function|drawable_parasite_attach_invoker (Argument * args)
+name|drawable_parasite_attach_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -1364,7 +1364,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_attach_parasite_proc
+name|drawable_parasite_attach_proc
 argument_list|,
 name|success
 argument_list|)
@@ -1373,10 +1373,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_attach_parasite_inargs
+DECL|variable|drawable_parasite_attach_inargs
 specifier|static
 name|ProcArg
-name|drawable_attach_parasite_inargs
+name|drawable_parasite_attach_inargs
 index|[]
 init|=
 block|{
@@ -1400,13 +1400,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_attach_parasite_proc
+DECL|variable|drawable_parasite_attach_proc
 specifier|static
 name|ProcRecord
-name|drawable_attach_parasite_proc
+name|drawable_parasite_attach_proc
 init|=
 block|{
-literal|"gimp_drawable_attach_parasite"
+literal|"gimp_drawable_parasite_attach"
 block|,
 literal|"Add a parasite to a drawable."
 block|,
@@ -1422,7 +1422,7 @@ name|PDB_INTERNAL
 block|,
 literal|2
 block|,
-name|drawable_attach_parasite_inargs
+name|drawable_parasite_attach_inargs
 block|,
 literal|0
 block|,
@@ -1430,7 +1430,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|drawable_attach_parasite_invoker
+name|drawable_parasite_attach_invoker
 block|}
 block|}
 block|}
@@ -1441,8 +1441,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_detach_parasite_invoker (Argument * args)
-name|drawable_detach_parasite_invoker
+DECL|function|drawable_parasite_detach_invoker (Argument * args)
+name|drawable_parasite_detach_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -1526,7 +1526,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_detach_parasite_proc
+name|drawable_parasite_detach_proc
 argument_list|,
 name|success
 argument_list|)
@@ -1535,10 +1535,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_detach_parasite_inargs
+DECL|variable|drawable_parasite_detach_inargs
 specifier|static
 name|ProcArg
-name|drawable_detach_parasite_inargs
+name|drawable_parasite_detach_inargs
 index|[]
 init|=
 block|{
@@ -1562,13 +1562,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_detach_parasite_proc
+DECL|variable|drawable_parasite_detach_proc
 specifier|static
 name|ProcRecord
-name|drawable_detach_parasite_proc
+name|drawable_parasite_detach_proc
 init|=
 block|{
-literal|"gimp_drawable_detach_parasite"
+literal|"gimp_drawable_parasite_detach"
 block|,
 literal|"Removes a parasite from a drawable."
 block|,
@@ -1584,7 +1584,7 @@ name|PDB_INTERNAL
 block|,
 literal|2
 block|,
-name|drawable_detach_parasite_inargs
+name|drawable_parasite_detach_inargs
 block|,
 literal|0
 block|,
@@ -1592,7 +1592,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|drawable_detach_parasite_invoker
+name|drawable_parasite_detach_invoker
 block|}
 block|}
 block|}
@@ -2017,8 +2017,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_attach_parasite_invoker (Argument * args)
-name|image_attach_parasite_invoker
+DECL|function|image_parasite_attach_invoker (Argument * args)
+name|image_parasite_attach_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -2102,7 +2102,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|image_attach_parasite_proc
+name|image_parasite_attach_proc
 argument_list|,
 name|success
 argument_list|)
@@ -2111,10 +2111,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|image_attach_parasite_inargs
+DECL|variable|image_parasite_attach_inargs
 specifier|static
 name|ProcArg
-name|image_attach_parasite_inargs
+name|image_parasite_attach_inargs
 index|[]
 init|=
 block|{
@@ -2138,13 +2138,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_attach_parasite_proc
+DECL|variable|image_parasite_attach_proc
 specifier|static
 name|ProcRecord
-name|image_attach_parasite_proc
+name|image_parasite_attach_proc
 init|=
 block|{
-literal|"gimp_image_attach_parasite"
+literal|"gimp_image_parasite_attach"
 block|,
 literal|"Add a parasite to an image."
 block|,
@@ -2160,7 +2160,7 @@ name|PDB_INTERNAL
 block|,
 literal|2
 block|,
-name|image_attach_parasite_inargs
+name|image_parasite_attach_inargs
 block|,
 literal|0
 block|,
@@ -2168,7 +2168,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|image_attach_parasite_invoker
+name|image_parasite_attach_invoker
 block|}
 block|}
 block|}
@@ -2179,8 +2179,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_detach_parasite_invoker (Argument * args)
-name|image_detach_parasite_invoker
+DECL|function|image_parasite_detach_invoker (Argument * args)
+name|image_parasite_detach_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -2264,7 +2264,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|image_detach_parasite_proc
+name|image_parasite_detach_proc
 argument_list|,
 name|success
 argument_list|)
@@ -2273,10 +2273,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|image_detach_parasite_inargs
+DECL|variable|image_parasite_detach_inargs
 specifier|static
 name|ProcArg
-name|image_detach_parasite_inargs
+name|image_parasite_detach_inargs
 index|[]
 init|=
 block|{
@@ -2300,13 +2300,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_detach_parasite_proc
+DECL|variable|image_parasite_detach_proc
 specifier|static
 name|ProcRecord
-name|image_detach_parasite_proc
+name|image_parasite_detach_proc
 init|=
 block|{
-literal|"gimp_image_detach_parasite"
+literal|"gimp_image_parasite_detach"
 block|,
 literal|"Removes a parasite from an image."
 block|,
@@ -2322,7 +2322,7 @@ name|PDB_INTERNAL
 block|,
 literal|2
 block|,
-name|image_detach_parasite_inargs
+name|image_parasite_detach_inargs
 block|,
 literal|0
 block|,
@@ -2330,7 +2330,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|image_detach_parasite_invoker
+name|image_parasite_detach_invoker
 block|}
 block|}
 block|}
