@@ -6,20 +6,26 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__BLEND_H__
+name|__GIMP_BLEND_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__BLEND_H__
+DECL|macro|__GIMP_BLEND_TOOL_H__
 define|#
 directive|define
-name|__BLEND_H__
+name|__GIMP_BLEND_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawtool.h"
+end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29648a550103
+DECL|enum|__anon289314600103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -67,7 +73,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_MODE>*/
-DECL|enum|__anon29648a550203
+DECL|enum|__anon289314600203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -93,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29648a550303
+DECL|enum|__anon289314600303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -112,6 +118,145 @@ block|}
 name|RepeatMode
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_BLEND_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_BLEND_TOOL
+value|(gimp_blend_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_BLEND_TOOL (obj)
+define|#
+directive|define
+name|GIMP_BLEND_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BLEND_TOOL, GimpBlendTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_BLEND_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_BLEND_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BLEND_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_BLEND_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_BLEND_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BLEND_TOOL, GimpBlendToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_BLEND_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_BLEND_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BLEND_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpBlendTool
+typedef|typedef
+name|struct
+name|_GimpBlendTool
+name|GimpBlendTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBlendToolClass
+typedef|typedef
+name|struct
+name|_GimpBlendToolClass
+name|GimpBlendToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpBlendTool
+struct|struct
+name|_GimpBlendTool
+block|{
+DECL|member|parent_instance
+name|GimpDrawTool
+name|parent_instance
+decl_stmt|;
+DECL|member|startx
+name|gint
+name|startx
+decl_stmt|;
+comment|/*  starting x coord     */
+DECL|member|starty
+name|gint
+name|starty
+decl_stmt|;
+comment|/*  starting y coord     */
+DECL|member|endx
+name|gint
+name|endx
+decl_stmt|;
+comment|/*  ending x coord       */
+DECL|member|endy
+name|gint
+name|endy
+decl_stmt|;
+comment|/*  ending y coord       */
+DECL|member|context_id
+name|guint
+name|context_id
+decl_stmt|;
+comment|/*  for the statusbar    */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpBlendToolClass
+struct|struct
+name|_GimpBlendToolClass
+block|{
+DECL|member|parent_class
+name|GimpDrawToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|GtkType
+name|gimp_blend_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_blend_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
@@ -173,34 +318,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_blend
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_blend
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __BLEND_H__  */
+comment|/*  __GIMP_BLEND_TOOL_H__  */
 end_comment
 
 end_unit

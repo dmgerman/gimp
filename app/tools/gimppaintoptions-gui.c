@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpblendtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbucketfilltool.h"
 end_include
 
