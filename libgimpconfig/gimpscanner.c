@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2969b47a0108
+DECL|struct|__anon2c50e1780108
 block|{
 DECL|member|fd
 name|gint
@@ -522,6 +522,14 @@ operator|->
 name|config
 operator|->
 name|scan_identifier_1char
+operator|=
+name|TRUE
+expr_stmt|;
+name|scanner
+operator|->
+name|config
+operator|->
+name|store_int64
 operator|=
 name|TRUE
 expr_stmt|;
@@ -933,7 +941,7 @@ name|scanner
 operator|->
 name|value
 operator|.
-name|v_int
+name|v_int64
 expr_stmt|;
 else|else
 operator|*
@@ -943,7 +951,7 @@ name|scanner
 operator|->
 name|value
 operator|.
-name|v_int
+name|v_int64
 expr_stmt|;
 return|return
 name|TRUE
@@ -999,7 +1007,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2969b47a0203
+DECL|enum|__anon2c50e1780203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

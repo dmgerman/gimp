@@ -257,13 +257,13 @@ name|gchar
 modifier|*
 name|blurb
 parameter_list|,
-name|gulong
+name|guint64
 name|minimum
 parameter_list|,
-name|gulong
+name|guint64
 name|maximum
 parameter_list|,
-name|gulong
+name|guint64
 name|default_value
 parameter_list|,
 name|GParamFlags
@@ -279,7 +279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc388530103
+DECL|enum|__anon2a5317150103
 block|{
 DECL|enumerator|GIMP_PARAM_PATH_FILE
 name|GIMP_PARAM_PATH_FILE

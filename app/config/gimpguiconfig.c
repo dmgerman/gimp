@@ -192,7 +192,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b417bcc0103
+DECL|enum|__anon2a2122e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -651,7 +651,12 @@ name|MAX_NEW_IMAGE_SIZE_BLURB
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXULONG
+operator|(
+name|guint64
+operator|)
+literal|1
+operator|<<
+literal|40
 argument_list|,
 literal|1
 operator|<<
@@ -1044,7 +1049,7 @@ name|gui_config
 operator|->
 name|max_new_image_size
 operator|=
-name|g_value_get_ulong
+name|g_value_get_uint64
 argument_list|(
 name|value
 argument_list|)
@@ -1387,7 +1392,7 @@ break|break;
 case|case
 name|PROP_MAX_NEW_IMAGE_SIZE
 case|:
-name|g_value_set_ulong
+name|g_value_set_uint64
 argument_list|(
 name|value
 argument_list|,

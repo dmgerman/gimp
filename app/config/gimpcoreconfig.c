@@ -258,7 +258,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278d6c4a0103
+DECL|enum|__anon2ac62d300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1553,7 +1553,7 @@ name|core_config
 operator|->
 name|undo_size
 operator|=
-name|g_value_get_ulong
+name|g_value_get_uint64
 argument_list|(
 name|value
 argument_list|)
@@ -1934,7 +1934,7 @@ break|break;
 case|case
 name|PROP_UNDO_SIZE
 case|:
-name|g_value_set_ulong
+name|g_value_set_uint64
 argument_list|(
 name|value
 argument_list|,

@@ -130,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e443de0103
+DECL|enum|__anon2b845fb80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -547,7 +547,7 @@ name|base_config
 operator|->
 name|tile_cache_size
 operator|=
-name|g_value_get_ulong
+name|g_value_get_uint64
 argument_list|(
 name|value
 argument_list|)
@@ -661,7 +661,7 @@ break|break;
 case|case
 name|PROP_TILE_CACHE_SIZE
 case|:
-name|g_value_set_ulong
+name|g_value_set_uint64
 argument_list|(
 name|value
 argument_list|,

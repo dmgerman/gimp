@@ -4955,7 +4955,7 @@ literal|"max-new-image-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximum Image Size:"
+literal|"Maximum New Image Size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6818,7 +6818,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28e84aca0108
+DECL|struct|__anon2bc1880f0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9089,7 +9089,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28e84aca0208
+DECL|struct|__anon2bc1880f0208
 block|{
 DECL|member|label
 specifier|const
@@ -9248,7 +9248,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28e84aca0308
+DECL|struct|__anon2bc1880f0308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -300,7 +300,7 @@ name|memsize_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|G_TYPE_ULONG
+name|G_TYPE_UINT64
 argument_list|,
 literal|"GimpMemsize"
 argument_list|,
@@ -354,7 +354,7 @@ name|gchar
 modifier|*
 name|end
 decl_stmt|;
-name|gulong
+name|guint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -378,7 +378,7 @@ argument_list|)
 expr_stmt|;
 name|size
 operator|=
-name|strtoul
+name|g_ascii_strtoull
 argument_list|(
 name|string
 argument_list|,
@@ -392,7 +392,7 @@ if|if
 condition|(
 name|size
 operator|==
-name|ULONG_MAX
+name|G_MAXUINT64
 operator|&&
 name|errno
 operator|==
@@ -464,14 +464,12 @@ condition|(
 name|shift
 condition|)
 block|{
-name|gulong
+name|guint64
 name|limit
 init|=
-name|G_MAXULONG
+name|G_MAXUINT64
 operator|>>
-operator|(
 name|shift
-operator|)
 decl_stmt|;
 if|if
 condition|(
@@ -492,7 +490,7 @@ name|shift
 expr_stmt|;
 block|}
 block|}
-name|g_value_set_ulong
+name|g_value_set_uint64
 argument_list|(
 name|value
 argument_list|,
@@ -689,7 +687,7 @@ modifier|*
 name|dest_value
 parameter_list|)
 block|{
-name|gulong
+name|guint64
 name|size
 decl_stmt|;
 name|gchar
@@ -698,7 +696,7 @@ name|str
 decl_stmt|;
 name|size
 operator|=
-name|g_value_get_ulong
+name|g_value_get_uint64
 argument_list|(
 name|src_value
 argument_list|)
@@ -727,7 +725,9 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%luG"
+literal|"%"
+name|G_GUINT64_FORMAT
+literal|"G"
 argument_list|,
 name|size
 operator|>>
@@ -759,7 +759,9 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%luM"
+literal|"%"
+name|G_GUINT64_FORMAT
+literal|"M"
 argument_list|,
 name|size
 operator|>>
@@ -791,7 +793,9 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%luk"
+literal|"%"
+name|G_GUINT64_FORMAT
+literal|"k"
 argument_list|,
 name|size
 operator|>>
@@ -803,7 +807,8 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%lu"
+literal|"%"
+name|G_GUINT64_FORMAT
 argument_list|,
 name|size
 argument_list|)

@@ -159,7 +159,7 @@ name|gint
 name|last_opened_size
 decl_stmt|;
 DECL|member|max_new_image_size
-name|gulong
+name|guint64
 name|max_new_image_size
 decl_stmt|;
 DECL|member|theme_path
