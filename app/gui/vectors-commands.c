@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"vectors/gimpvectors-export.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"vectors/gimpvectors-import.h"
 end_include
 
@@ -796,6 +802,12 @@ name|GimpVectors
 modifier|*
 name|active_vectors
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|return_if_no_vectors
 argument_list|(
 name|gimage
@@ -805,14 +817,33 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: need vectors import/export
-endif|#
-directive|endif
+if|if
+condition|(
+operator|!
+name|gimp_vectors_export
+argument_list|(
+name|active_vectors
+argument_list|,
+literal|"path-export.svg"
+argument_list|,
+operator|&
+name|error
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
