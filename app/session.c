@@ -74,11 +74,8 @@ specifier|static
 name|void
 name|session_open_dialog
 parameter_list|(
-name|gpointer
-name|unused
-parameter_list|,
-name|gpointer
-name|pinfo
+name|SessionInfo
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -90,7 +87,6 @@ name|session_reset_open_state
 parameter_list|(
 name|SessionInfo
 modifier|*
-name|info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -861,26 +857,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|session_open_dialog (gpointer unused,gpointer pinfo)
+DECL|function|session_open_dialog (SessionInfo * info)
 name|session_open_dialog
 parameter_list|(
-name|gpointer
-name|unused
-parameter_list|,
-name|gpointer
-name|pinfo
-parameter_list|)
-block|{
 name|SessionInfo
 modifier|*
 name|info
-init|=
-operator|(
-name|SessionInfo
-operator|*
-operator|)
-name|pinfo
-decl_stmt|;
+parameter_list|)
+block|{
 if|if
 condition|(
 name|info

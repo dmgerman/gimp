@@ -1611,7 +1611,7 @@ name|rect_sel
 decl_stmt|;
 name|gchar
 modifier|*
-name|size
+name|select_mode
 decl_stmt|;
 name|int
 name|x
@@ -1987,37 +1987,70 @@ argument_list|,
 literal|"selection"
 argument_list|)
 expr_stmt|;
-name|size
+name|select_mode
 operator|=
 name|g_new
 argument_list|(
 name|gchar
 argument_list|,
-literal|24
+literal|21
 argument_list|)
 expr_stmt|;
-comment|/* strlen("Selection:  x ") + 2*5 */
+comment|/* strlen("Selection: INTERSECT") */
+switch|switch
+condition|(
+name|rect_sel
+operator|->
+name|op
+condition|)
+block|{
+case|case
+name|ADD
+case|:
 name|sprintf
 argument_list|(
-name|size
+name|select_mode
 argument_list|,
-literal|"Selection: %d x %d"
-argument_list|,
-name|abs
-argument_list|(
-name|rect_sel
-operator|->
-name|w
-argument_list|)
-argument_list|,
-name|abs
-argument_list|(
-name|rect_sel
-operator|->
-name|h
-argument_list|)
+literal|"Selection: ADD"
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|SUB
+case|:
+name|sprintf
+argument_list|(
+name|select_mode
+argument_list|,
+literal|"Selection: SUBTRACT"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|INTERSECT
+case|:
+name|sprintf
+argument_list|(
+name|select_mode
+argument_list|,
+literal|"Selection: INTERSECT"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|REPLACE
+case|:
+name|sprintf
+argument_list|(
+name|select_mode
+argument_list|,
+literal|"Selection: REPLACE"
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
 name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
@@ -2031,12 +2064,12 @@ name|rect_sel
 operator|->
 name|context_id
 argument_list|,
-name|size
+name|select_mode
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|size
+name|select_mode
 argument_list|)
 expr_stmt|;
 name|draw_core_start
@@ -2966,7 +2999,7 @@ name|g_new
 argument_list|(
 name|gchar
 argument_list|,
-literal|24
+literal|25
 argument_list|)
 expr_stmt|;
 comment|/* strlen("Selection:  x ") + 2*5 */
