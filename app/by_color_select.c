@@ -2940,7 +2940,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  Create the active brush label  */
+comment|/*  Create the active image label  */
 name|util_box
 operator|=
 name|gtk_hbox_new
@@ -4303,6 +4303,24 @@ operator|->
 name|gimage
 condition|)
 return|return;
+comment|/*  check if the image associated to the mask still exists  */
+if|if
+condition|(
+operator|!
+name|drawable_gimage
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimage_get_mask
+argument_list|(
+name|bcd
+operator|->
+name|gimage
+argument_list|)
+argument_list|)
+argument_list|)
+condition|)
+return|return;
 comment|/*  reset the mask  */
 name|gimage_mask_clear
 argument_list|(
@@ -4508,6 +4526,16 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+comment|/*  check if the gimage associated to the drawable still exists  */
+if|if
+condition|(
+operator|!
+name|drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
+return|return;
 comment|/*  Defaults  */
 name|replace
 operator|=
