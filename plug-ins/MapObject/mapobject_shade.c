@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -79,7 +85,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1194590108
+DECL|struct|__anon2bb8819e0108
 block|{
 DECL|member|u
 DECL|member|v
@@ -1474,11 +1480,13 @@ name|v
 operator|==
 literal|1.0
 condition|)
+block|{
 operator|*
 name|u
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 else|else
 block|{
 name|fac
@@ -1884,9 +1892,7 @@ operator|>
 name|by2
 condition|)
 return|return
-operator|(
 name|color
-operator|)
 return|;
 comment|/* Construct a line from our VP to the point */
 comment|/* ========================================= */
@@ -3951,9 +3957,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-operator|(
 name|result
-operator|)
 return|;
 block|}
 end_function
@@ -4840,9 +4844,7 @@ name|face_tmp
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|result
-operator|)
 return|;
 block|}
 end_function
@@ -5735,7 +5737,7 @@ name|sqr
 parameter_list|(
 name|a
 parameter_list|)
-value|a*a
+value|(a*a)
 if|if
 condition|(
 name|dir
@@ -5891,9 +5893,7 @@ undef|#
 directive|undef
 name|sqr
 return|return
-operator|(
 name|result
-operator|)
 return|;
 block|}
 end_function
@@ -5947,7 +5947,7 @@ name|sqr
 parameter_list|(
 name|a
 parameter_list|)
-value|a*a
+value|(a*a)
 name|a
 operator|=
 name|sqr
@@ -6516,9 +6516,7 @@ undef|#
 directive|undef
 name|sqr
 return|return
-operator|(
 name|result
-operator|)
 return|;
 block|}
 end_function
@@ -6578,9 +6576,7 @@ name|v
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|color
-operator|)
 return|;
 block|}
 end_function
@@ -6944,8 +6940,8 @@ operator|.
 name|v
 argument_list|)
 expr_stmt|;
-comment|/* Check for total transparency... */
-comment|/* =============================== */
+comment|/* Check for transparency... */
+comment|/* ========================= */
 if|if
 condition|(
 name|color

@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -63,12 +69,6 @@ begin_include
 include|#
 directive|include
 file|"mapobject_main.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -866,9 +866,11 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
 name|draw_preview_wireframe
 argument_list|()
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -1135,9 +1137,11 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
 name|draw_preview_wireframe
 argument_list|()
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -1969,11 +1973,13 @@ name|light_hit
 operator|==
 name|TRUE
 condition|)
+block|{
 name|draw_preview_image
 argument_list|(
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|pos

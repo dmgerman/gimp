@@ -35,7 +35,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd85760108
+DECL|struct|__anon2989f1d30108
 block|{
 DECL|member|x
 DECL|member|y

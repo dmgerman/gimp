@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -101,8 +107,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|init_compute (void)
 name|void
+DECL|function|init_compute (void)
 name|init_compute
 parameter_list|(
 name|void
@@ -523,6 +529,10 @@ break|break;
 case|case
 name|MAP_BOX
 case|:
+name|get_ray_color
+operator|=
+name|get_ray_color_box
+expr_stmt|;
 name|gimp_vector3_set
 argument_list|(
 operator|&
@@ -564,10 +574,6 @@ literal|0.0
 argument_list|,
 literal|1.0
 argument_list|)
-expr_stmt|;
-name|get_ray_color
-operator|=
-name|get_ray_color_box
 expr_stmt|;
 name|ident_mat
 argument_list|(
@@ -1002,8 +1008,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|render (gdouble x,gdouble y,GckRGB * col)
 name|void
+DECL|function|render (gdouble x,gdouble y,GckRGB * col)
 name|render
 parameter_list|(
 name|gdouble
@@ -1061,8 +1067,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|show_progress (gint min,gint max,gint curr)
 name|void
+DECL|function|show_progress (gint min,gint max,gint curr)
 name|show_progress
 parameter_list|(
 name|gint
@@ -1108,8 +1114,8 @@ comment|/**************************************************/
 end_comment
 
 begin_function
-DECL|function|compute_image (void)
 name|void
+DECL|function|compute_image (void)
 name|compute_image
 parameter_list|(
 name|void
@@ -1136,7 +1142,8 @@ name|new_image_id
 init|=
 operator|-
 literal|1
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|new_layer_id
 init|=
 operator|-
@@ -1412,6 +1419,7 @@ block|}
 block|}
 block|}
 else|else
+block|{
 name|gck_adaptive_supersample_area
 argument_list|(
 literal|0
@@ -1439,6 +1447,7 @@ argument_list|,
 name|show_progress
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Update the region */
 comment|/* ================= */
 name|gimp_drawable_flush

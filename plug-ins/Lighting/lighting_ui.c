@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -55,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"lighting_preview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -446,9 +440,9 @@ comment|/**********************************************************/
 end_comment
 
 begin_function
-DECL|function|xyzval_update (GtkEntry * entry)
 specifier|static
 name|void
+DECL|function|xyzval_update (GtkEntry * entry)
 name|xyzval_update
 parameter_list|(
 name|GtkEntry
