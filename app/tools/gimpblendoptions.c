@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpenummenu.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppropwidgets.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eec7370103
+DECL|enum|__anon29660d640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -781,7 +787,7 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|optionmenu
+name|menu
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -925,7 +931,7 @@ literal|0.0
 argument_list|)
 expr_stmt|;
 comment|/*  the gradient type menu  */
-name|optionmenu
+name|menu
 operator|=
 name|gimp_prop_enum_option_menu_new
 argument_list|(
@@ -936,6 +942,16 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_enum_option_menu_set_stock_prefix
+argument_list|(
+name|GTK_OPTION_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+literal|"gimp-gradient"
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -958,7 +974,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|optionmenu
+name|menu
 argument_list|,
 literal|2
 argument_list|,
@@ -966,7 +982,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  the repeat option  */
-name|optionmenu
+name|menu
 operator|=
 name|gimp_prop_enum_option_menu_new
 argument_list|(
@@ -999,7 +1015,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|optionmenu
+name|menu
 argument_list|,
 literal|2
 argument_list|,
@@ -1017,7 +1033,7 @@ argument_list|(
 name|blend_options_gradient_type_notify
 argument_list|)
 argument_list|,
-name|optionmenu
+name|menu
 argument_list|)
 expr_stmt|;
 comment|/*  frame for supersampling options  */
