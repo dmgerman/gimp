@@ -184,7 +184,7 @@ name|NULL
 expr_stmt|;
 name|histogram
 operator|->
-name|tmp_slot
+name|tmp_slots
 operator|=
 name|NULL
 expr_stmt|;
