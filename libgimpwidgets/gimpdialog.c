@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7eca300103
+DECL|enum|__anon2b8a98de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -817,14 +817,12 @@ block|{
 name|GdkEvent
 modifier|*
 name|event
-decl_stmt|;
-name|event
-operator|=
+init|=
 name|gdk_event_new
 argument_list|(
 name|GDK_DELETE
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|event
 operator|->
 name|any
@@ -1327,7 +1325,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7eca300208
+DECL|struct|__anon2b8a98de0208
 block|{
 DECL|member|dialog
 name|GtkDialog
