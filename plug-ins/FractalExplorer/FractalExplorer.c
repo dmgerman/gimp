@@ -5451,8 +5451,8 @@ name|_
 argument_list|(
 literal|"No fractalexplorer-path in gimprc:\n"
 literal|"You need to add an entry like\n"
-literal|"(fractalexplorer-path \"${gimp_dir}/fractalexplorer:${gimp_data_dir}/fractalexplorer\n"
-literal|"to your ~/.gimprc/gimprc file\n"
+literal|"(fractalexplorer-path \"${gimp_dir}/fractalexplorer:${gimp_data_dir}/fractalexplorer\")\n"
+literal|"to your ~/.gimp-1.1/gimprc file\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7876,7 +7876,7 @@ name|window
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Call up the file sel dialouge */
+comment|/* Call up the file sel dialogue */
 name|window
 operator|=
 name|gtk_file_selection_new
