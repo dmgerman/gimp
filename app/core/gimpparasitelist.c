@@ -30,18 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"parasitelist.h"
+file|"gimpparasitelist.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e6f3d80103
+DECL|enum|__anon28d4ba480103
 block|{
 DECL|enumerator|ADD
 name|ADD

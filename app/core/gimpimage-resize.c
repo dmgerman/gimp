@@ -160,6 +160,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpparasitelist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpundostack.h"
 end_include
 
@@ -179,12 +185,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"parasitelist.h"
 end_include
 
 begin_include
@@ -766,7 +766,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fa8bc70103
+DECL|enum|__anon29b048020103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED

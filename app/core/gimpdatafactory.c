@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdata.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdatalist.h"
+file|"gimpdata.h"
 end_include
 
 begin_include
@@ -42,19 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimpdatafiles.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdatalist.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"datafiles.h"
 end_include
 
 begin_include

@@ -114,6 +114,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpparasitelist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimpbycolorselecttool.h"
 end_include
 
@@ -169,18 +181,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay_ops.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"parasitelist.h"
 end_include
 
 begin_include
@@ -245,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c94defe0103
+DECL|enum|__anon2ad389450103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

@@ -132,19 +132,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewcache.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpparasite.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"parasitelist.h"
+file|"gimpparasitelist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppreviewcache.h"
 end_include
 
 begin_include
@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b81e4250103
+DECL|enum|__anon29456a8d0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED

@@ -136,6 +136,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -197,12 +203,6 @@ begin_include
 include|#
 directive|include
 file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpparasite.h"
 end_include
 
 begin_include
@@ -282,7 +282,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2937b6cd0103
+DECL|enum|__anon2c6d0b230103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

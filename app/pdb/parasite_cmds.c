@@ -52,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpparasite.h"
+file|"core/gimpparasite.h"
 end_include
 
 begin_include

@@ -47,31 +47,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"parasitelist.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpparasitelist.h"
 end_include
 
 begin_include

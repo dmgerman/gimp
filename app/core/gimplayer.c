@@ -76,18 +76,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawable-invert.h"
 end_include
 
@@ -112,7 +100,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"parasitelist.h"
+file|"gimpparasitelist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"floating_sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -129,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cc4f8a0103
+DECL|enum|__anon296ac27e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

@@ -403,6 +403,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdatafiles.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -452,12 +458,6 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"datafiles.h"
 end_include
 
 begin_include

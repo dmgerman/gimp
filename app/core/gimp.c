@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolinfo.h"
 end_include
 
@@ -139,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpparasite.h"
 end_include
 
 begin_include

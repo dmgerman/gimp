@@ -155,13 +155,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"datafiles.h"
+file|"gimpdatafiles.h"
 end_include
 
 begin_decl_stmt
