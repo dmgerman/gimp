@@ -179,7 +179,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b49b480108
+DECL|struct|__anon2c11411c0108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -1070,9 +1070,9 @@ name|cint
 operator|.
 name|font
 operator|=
-name|gdk_font_load
+name|gdk_fontset_load
 argument_list|(
-literal|"-*-*-medium-r-normal-*-*-100-*-*-c-*-*-*"
+literal|"-*-*-medium-r-normal-*-*-100-*-*-c-*-iso8859-1,*"
 argument_list|)
 expr_stmt|;
 comment|/*  Realize the widget before allowing new text to be inserted  */
@@ -1123,7 +1123,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"Copyright (C) 1995-2000\n"
+literal|"Copyright (C) 1995-2001\n"
 argument_list|,
 operator|-
 literal|1

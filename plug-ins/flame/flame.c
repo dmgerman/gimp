@@ -524,7 +524,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon28e7a78d0108
+DECL|struct|__anon292132df0108
 block|{
 DECL|member|randomize
 name|gint
@@ -951,6 +951,21 @@ expr_stmt|;
 name|maybe_init_cp
 argument_list|()
 expr_stmt|;
+comment|/*  reusing a drawable_ID from the last run is a bad idea           since the drawable might have vanished  (bug #37761)   */
+if|if
+condition|(
+name|config
+operator|.
+name|cmap_drawable
+operator|>=
+literal|0
+condition|)
+name|config
+operator|.
+name|cmap_drawable
+operator|=
+name|GRADIENT_DRAWABLE
+expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -1138,9 +1153,6 @@ name|guchar
 modifier|*
 name|p
 decl_stmt|;
-name|gint
-name|indexed
-decl_stmt|;
 if|if
 condition|(
 name|TABLE_DRAWABLE
@@ -1294,15 +1306,6 @@ block|{
 name|d
 operator|=
 name|gimp_drawable_get
-argument_list|(
-name|config
-operator|.
-name|cmap_drawable
-argument_list|)
-expr_stmt|;
-name|indexed
-operator|=
-name|gimp_drawable_is_indexed
 argument_list|(
 name|config
 operator|.

@@ -215,6 +215,26 @@ end_define
 
 begin_function_decl
 specifier|static
+name|int
+name|file_open_with_proc_and_display
+parameter_list|(
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|gchar
+modifier|*
+name|raw_filename
+parameter_list|,
+name|PlugInProcDef
+modifier|*
+name|file_proc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|file_open_dialog_create
 parameter_list|(
@@ -880,6 +900,42 @@ modifier|*
 name|raw_filename
 parameter_list|)
 block|{
+return|return
+name|file_open_with_proc_and_display
+argument_list|(
+name|filename
+argument_list|,
+name|raw_filename
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
+
+begin_function
+specifier|static
+name|int
+DECL|function|file_open_with_proc_and_display (gchar * filename,gchar * raw_filename,PlugInProcDef * file_proc)
+name|file_open_with_proc_and_display
+parameter_list|(
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|gchar
+modifier|*
+name|raw_filename
+parameter_list|,
+name|PlugInProcDef
+modifier|*
+name|file_proc
+parameter_list|)
+block|{
 name|GimpImage
 modifier|*
 name|gimage
@@ -911,7 +967,7 @@ argument_list|(
 literal|"Open"
 argument_list|)
 argument_list|,
-name|NULL
+name|file_proc
 argument_list|,
 name|RUN_INTERACTIVE
 argument_list|,
@@ -991,10 +1047,6 @@ name|status
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
 
 begin_function
 specifier|static
@@ -3155,7 +3207,7 @@ name|data
 argument_list|,
 name|NULL
 argument_list|,
-name|load_file_proc
+name|NULL
 argument_list|,
 name|RUN_NONINTERACTIVE
 argument_list|,
@@ -3537,11 +3589,13 @@ name|raw_filename
 expr_stmt|;
 name|status
 operator|=
-name|file_open_with_display
+name|file_open_with_proc_and_display
 argument_list|(
 name|full_filename
 argument_list|,
 name|raw_filename
+argument_list|,
+name|load_file_proc
 argument_list|)
 expr_stmt|;
 if|if
@@ -3685,7 +3739,7 @@ block|{
 comment|/* Is not directory. */
 name|status
 operator|=
-name|file_open_with_display
+name|file_open_with_proc_and_display
 argument_list|(
 name|full_filename
 argument_list|,
@@ -3696,6 +3750,8 @@ operator|)
 name|list
 operator|->
 name|data
+argument_list|,
+name|load_file_proc
 argument_list|)
 expr_stmt|;
 if|if
@@ -3981,7 +4037,7 @@ argument_list|(
 literal|"Revert"
 argument_list|)
 argument_list|,
-name|load_file_proc
+name|NULL
 argument_list|,
 name|RUN_INTERACTIVE
 argument_list|,
