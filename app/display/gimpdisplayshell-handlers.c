@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-title.h"
 end_include
 
@@ -2080,18 +2074,18 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_selection_pause
+name|gimp_display_shell_selection_visibility
 argument_list|(
 name|shell
-operator|->
-name|select
+argument_list|,
+name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_selection_resume
+name|gimp_display_shell_selection_visibility
 argument_list|(
 name|shell
-operator|->
-name|select
+argument_list|,
+name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 block|}
