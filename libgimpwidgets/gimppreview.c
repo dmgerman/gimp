@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a40de0103
+DECL|enum|__anon29b673da0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -64,7 +64,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a40de0203
+DECL|enum|__anon29b673da0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -884,9 +884,9 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_FILL
+literal|0
 argument_list|,
-name|GTK_FILL
+literal|0
 argument_list|,
 literal|0
 argument_list|,
