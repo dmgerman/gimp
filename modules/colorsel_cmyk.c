@@ -660,7 +660,8 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-literal|80
+operator|-
+literal|1
 argument_list|,
 operator|-
 literal|1
@@ -727,7 +728,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Black Pullout (%):"
+literal|"Black _Pullout:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -752,7 +753,7 @@ argument_list|)
 argument_list|,
 name|label
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 literal|3
 argument_list|,
@@ -835,6 +836,19 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|spinbutton
+argument_list|,
+name|_
+argument_list|(
+literal|"The percentage of black to pull out "
+literal|"of the colored inks."
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_mnemonic_widget

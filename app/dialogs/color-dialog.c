@@ -757,15 +757,6 @@ operator|=
 name|gtk_button_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|button
-argument_list|,
-name|COLOR_AREA_SIZE
-argument_list|,
-name|COLOR_AREA_SIZE
-argument_list|)
-expr_stmt|;
 name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
