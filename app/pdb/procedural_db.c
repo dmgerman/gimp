@@ -351,7 +351,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29b3ecae0108
+DECL|struct|__anon2aab2d0f0108
 block|{
 DECL|member|old_name
 specifier|const
@@ -548,6 +548,12 @@ block|{
 literal|"gimp_patterns_list"
 block|,
 literal|"gimp_patterns_get_list"
+block|}
+block|,
+block|{
+literal|"gimp_temp_PDB_name"
+block|,
+literal|"gimp_procedural_db_temp_name"
 block|}
 block|,
 block|{

@@ -23,6 +23,16 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+name|gchar
+modifier|*
+name|gimp_procedural_db_temp_name
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_procedural_db_dump
 parameter_list|(

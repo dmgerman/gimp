@@ -176,7 +176,7 @@ name|gchar
 modifier|*
 name|font_callback
 init|=
-name|gimp_temp_PDB_name
+name|gimp_procedural_db_temp_name
 argument_list|()
 decl_stmt|;
 name|gimp_install_temp_proc

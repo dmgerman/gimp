@@ -1126,7 +1126,7 @@ argument_list|(
 literal|"Procedural database"
 argument_list|)
 argument_list|,
-literal|0.827
+literal|0.824
 argument_list|)
 expr_stmt|;
 name|register_procedural_db_procs

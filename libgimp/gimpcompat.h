@@ -261,6 +261,11 @@ define|#
 directive|define
 name|gimp_palette_refresh
 value|gimp_palettes_refresh
+DECL|macro|gimp_temp_PDB_name
+define|#
+directive|define
+name|gimp_temp_PDB_name
+value|gimp_procedural_db_temp_name
 DECL|macro|gimp_undo_push_group_start
 define|#
 directive|define
@@ -416,7 +421,7 @@ directive|define
 name|GIMP_IS_FILE_SELECTION
 value|GIMP_IS_FILE_ENTRY
 name|enum
-DECL|enum|__anon2c2b1edf0103
+DECL|enum|__anon2c02865e0103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -448,7 +453,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon2c2b1edf0203
+DECL|enum|__anon2c02865e0203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -475,7 +480,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b1edf0303
+DECL|enum|__anon2c02865e0303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -502,7 +507,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b1edf0403
+DECL|enum|__anon2c02865e0403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -534,7 +539,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b1edf0503
+DECL|enum|__anon2c02865e0503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -551,7 +556,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b1edf0603
+DECL|enum|__anon2c02865e0603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -568,7 +573,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b1edf0703
+DECL|enum|__anon2c02865e0703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -585,7 +590,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b1edf0803
+DECL|enum|__anon2c02865e0803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -607,7 +612,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b1edf0903
+DECL|enum|__anon2c02865e0903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR

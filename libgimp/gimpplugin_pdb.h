@@ -45,16 +45,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
-modifier|*
-name|gimp_temp_PDB_name
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_plugin_domain_register
 parameter_list|(
