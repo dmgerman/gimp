@@ -219,7 +219,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b27318f0103
+DECL|enum|__anon2c08d32c0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -2161,6 +2161,11 @@ condition|(
 name|shrink_wrap
 condition|)
 block|{
+name|gdisplays_resize_cursor_label
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gdisplays_shrink_wrap
 argument_list|(
 name|gimage
@@ -10377,17 +10382,11 @@ name|unit
 operator|=
 name|tmpunit
 expr_stmt|;
-name|gdisplays_resize_cursor_label
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 block|}
 comment|/* really just want to recalc size and repaint */
-name|gdisplays_shrink_wrap
-argument_list|(
-name|gimage
-argument_list|)
+name|shrink_wrap
+operator|=
+name|TRUE
 expr_stmt|;
 return|return
 name|TRUE
