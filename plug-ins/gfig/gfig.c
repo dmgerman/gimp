@@ -4342,7 +4342,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
@@ -8313,7 +8313,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27afec220108
+DECL|struct|__anon27727b8a0108
 block|{
 DECL|member|color_string
 name|gchar
@@ -16623,7 +16623,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_channel
+name|gimp_drawable_is_channel
 argument_list|(
 name|gfig_drawable
 argument_list|)

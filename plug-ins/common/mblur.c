@@ -103,7 +103,7 @@ value|MBLUR_ZOOM
 end_define
 
 begin_typedef
-DECL|struct|__anon279870980108
+DECL|struct|__anon2c7439680108
 typedef|typedef
 struct|struct
 block|{
@@ -126,7 +126,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon279870980208
+DECL|struct|__anon2c7439680208
 typedef|typedef
 struct|struct
 block|{
@@ -1052,7 +1052,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

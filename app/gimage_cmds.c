@@ -74,10 +74,10 @@ file|"layer_pvt.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|list_images_proc
+DECL|variable|image_list_proc
 specifier|static
 name|ProcRecord
-name|list_images_proc
+name|image_list_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -306,34 +306,34 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_enable_undo_proc
+DECL|variable|image_undo_enable_proc
 specifier|static
 name|ProcRecord
-name|image_enable_undo_proc
+name|image_undo_enable_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_disable_undo_proc
+DECL|variable|image_undo_disable_proc
 specifier|static
 name|ProcRecord
-name|image_disable_undo_proc
+name|image_undo_disable_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_freeze_undo_proc
+DECL|variable|image_undo_freeze_proc
 specifier|static
 name|ProcRecord
-name|image_freeze_undo_proc
+name|image_undo_freeze_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_thaw_undo_proc
+DECL|variable|image_undo_thaw_proc
 specifier|static
 name|ProcRecord
-name|image_thaw_undo_proc
+name|image_undo_thaw_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -532,7 +532,7 @@ block|{
 name|procedural_db_register
 argument_list|(
 operator|&
-name|list_images_proc
+name|image_list_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -706,25 +706,25 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|image_enable_undo_proc
+name|image_undo_enable_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|image_disable_undo_proc
+name|image_undo_disable_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|image_freeze_undo_proc
+name|image_undo_freeze_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|image_thaw_undo_proc
+name|image_undo_thaw_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -915,8 +915,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|list_images_invoker (Argument * args)
-name|list_images_invoker
+DECL|function|image_list_invoker (Argument * args)
+name|image_list_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -1016,7 +1016,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|list_images_proc
+name|image_list_proc
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1050,10 +1050,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|list_images_outargs
+DECL|variable|image_list_outargs
 specifier|static
 name|ProcArg
-name|list_images_outargs
+name|image_list_outargs
 index|[]
 init|=
 block|{
@@ -1077,13 +1077,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|list_images_proc
+DECL|variable|image_list_proc
 specifier|static
 name|ProcRecord
-name|list_images_proc
+name|image_list_proc
 init|=
 block|{
-literal|"gimp_list_images"
+literal|"gimp_image_list"
 block|,
 literal|"Returns the list of images currently open."
 block|,
@@ -1103,11 +1103,11 @@ name|NULL
 block|,
 literal|2
 block|,
-name|list_images_outargs
+name|image_list_outargs
 block|,
 block|{
 block|{
-name|list_images_invoker
+name|image_list_invoker
 block|}
 block|}
 block|}
@@ -6613,8 +6613,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_enable_undo_invoker (Argument * args)
-name|image_enable_undo_invoker
+DECL|function|image_undo_enable_invoker (Argument * args)
+name|image_undo_enable_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -6674,7 +6674,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|image_enable_undo_proc
+name|image_undo_enable_proc
 argument_list|,
 name|success
 argument_list|)
@@ -6705,10 +6705,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|image_enable_undo_inargs
+DECL|variable|image_undo_enable_inargs
 specifier|static
 name|ProcArg
-name|image_enable_undo_inargs
+name|image_undo_enable_inargs
 index|[]
 init|=
 block|{
@@ -6724,10 +6724,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_enable_undo_outargs
+DECL|variable|image_undo_enable_outargs
 specifier|static
 name|ProcArg
-name|image_enable_undo_outargs
+name|image_undo_enable_outargs
 index|[]
 init|=
 block|{
@@ -6743,17 +6743,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_enable_undo_proc
+DECL|variable|image_undo_enable_proc
 specifier|static
 name|ProcRecord
-name|image_enable_undo_proc
+name|image_undo_enable_proc
 init|=
 block|{
-literal|"gimp_image_enable_undo"
+literal|"gimp_image_undo_enable"
 block|,
 literal|"Enable the image's undo stack."
 block|,
-literal|"This procedure enables the image's undo stack, allowing subsequent operations to store their undo steps. This is generally called in conjunction with 'gimp_image_disable_undo' to temporarily disable an image undo stack."
+literal|"This procedure enables the image's undo stack, allowing subsequent operations to store their undo steps. This is generally called in conjunction with 'gimp_image_undo_disable' to temporarily disable an image undo stack."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -6765,15 +6765,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|image_enable_undo_inargs
+name|image_undo_enable_inargs
 block|,
 literal|1
 block|,
-name|image_enable_undo_outargs
+name|image_undo_enable_outargs
 block|,
 block|{
 block|{
-name|image_enable_undo_invoker
+name|image_undo_enable_invoker
 block|}
 block|}
 block|}
@@ -6784,8 +6784,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_disable_undo_invoker (Argument * args)
-name|image_disable_undo_invoker
+DECL|function|image_undo_disable_invoker (Argument * args)
+name|image_undo_disable_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -6845,7 +6845,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|image_disable_undo_proc
+name|image_undo_disable_proc
 argument_list|,
 name|success
 argument_list|)
@@ -6876,10 +6876,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|image_disable_undo_inargs
+DECL|variable|image_undo_disable_inargs
 specifier|static
 name|ProcArg
-name|image_disable_undo_inargs
+name|image_undo_disable_inargs
 index|[]
 init|=
 block|{
@@ -6895,10 +6895,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_disable_undo_outargs
+DECL|variable|image_undo_disable_outargs
 specifier|static
 name|ProcArg
-name|image_disable_undo_outargs
+name|image_undo_disable_outargs
 index|[]
 init|=
 block|{
@@ -6914,17 +6914,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_disable_undo_proc
+DECL|variable|image_undo_disable_proc
 specifier|static
 name|ProcRecord
-name|image_disable_undo_proc
+name|image_undo_disable_proc
 init|=
 block|{
-literal|"gimp_image_disable_undo"
+literal|"gimp_image_undo_disable"
 block|,
 literal|"Disable the image's undo stack."
 block|,
-literal|"This procedure disables the image's undo stack, allowing subsequent operations to ignore their undo steps. This is generally called in conjunction with 'gimp_image_enable_undo' to temporarily disable an image undo stack. This is advantageous because saving undo steps can be time and memory intensive."
+literal|"This procedure disables the image's undo stack, allowing subsequent operations to ignore their undo steps. This is generally called in conjunction with 'gimp_image_undo_enable' to temporarily disable an image undo stack. This is advantageous because saving undo steps can be time and memory intensive."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -6936,15 +6936,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|image_disable_undo_inargs
+name|image_undo_disable_inargs
 block|,
 literal|1
 block|,
-name|image_disable_undo_outargs
+name|image_undo_disable_outargs
 block|,
 block|{
 block|{
-name|image_disable_undo_invoker
+name|image_undo_disable_invoker
 block|}
 block|}
 block|}
@@ -6955,8 +6955,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_freeze_undo_invoker (Argument * args)
-name|image_freeze_undo_invoker
+DECL|function|image_undo_freeze_invoker (Argument * args)
+name|image_undo_freeze_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -7016,7 +7016,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|image_freeze_undo_proc
+name|image_undo_freeze_proc
 argument_list|,
 name|success
 argument_list|)
@@ -7047,10 +7047,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|image_freeze_undo_inargs
+DECL|variable|image_undo_freeze_inargs
 specifier|static
 name|ProcArg
-name|image_freeze_undo_inargs
+name|image_undo_freeze_inargs
 index|[]
 init|=
 block|{
@@ -7066,10 +7066,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_freeze_undo_outargs
+DECL|variable|image_undo_freeze_outargs
 specifier|static
 name|ProcArg
-name|image_freeze_undo_outargs
+name|image_undo_freeze_outargs
 index|[]
 init|=
 block|{
@@ -7085,17 +7085,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_freeze_undo_proc
+DECL|variable|image_undo_freeze_proc
 specifier|static
 name|ProcRecord
-name|image_freeze_undo_proc
+name|image_undo_freeze_proc
 init|=
 block|{
-literal|"gimp_image_freeze_undo"
+literal|"gimp_image_undo_freeze"
 block|,
 literal|"Freeze the image's undo stack."
 block|,
-literal|"This procedure freezes the image's undo stack, allowing subsequent operations to ignore their undo steps. This is generally called in conjunction with 'gimp_image_thaw_undo' to temporarily disable an image undo stack. This is advantageous because saving undo steps can be time and memory intensive. 'gimp_image_{freeze,thaw}_undo' and 'gimp_image_{disable,enable}_undo' differ in that the former does not free up all undo steps when undo is thawed, so is more suited to interactive in-situ previews. It is important in this case that the image is back to the same state it was frozen in before thawing, else 'undo' behaviour is undefined."
+literal|"This procedure freezes the image's undo stack, allowing subsequent operations to ignore their undo steps. This is generally called in conjunction with 'gimp_image_undo_thaw' to temporarily disable an image undo stack. This is advantageous because saving undo steps can be time and memory intensive. 'gimp_image_undo_{freeze,thaw}' and 'gimp_image_undo_{disable,enable}' differ in that the former does not free up all undo steps when undo is thawed, so is more suited to interactive in-situ previews. It is important in this case that the image is back to the same state it was frozen in before thawing, else 'undo' behaviour is undefined."
 block|,
 literal|"Adam D. Moss"
 block|,
@@ -7107,15 +7107,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|image_freeze_undo_inargs
+name|image_undo_freeze_inargs
 block|,
 literal|1
 block|,
-name|image_freeze_undo_outargs
+name|image_undo_freeze_outargs
 block|,
 block|{
 block|{
-name|image_freeze_undo_invoker
+name|image_undo_freeze_invoker
 block|}
 block|}
 block|}
@@ -7126,8 +7126,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_thaw_undo_invoker (Argument * args)
-name|image_thaw_undo_invoker
+DECL|function|image_undo_thaw_invoker (Argument * args)
+name|image_undo_thaw_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -7187,7 +7187,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|image_thaw_undo_proc
+name|image_undo_thaw_proc
 argument_list|,
 name|success
 argument_list|)
@@ -7218,10 +7218,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|image_thaw_undo_inargs
+DECL|variable|image_undo_thaw_inargs
 specifier|static
 name|ProcArg
-name|image_thaw_undo_inargs
+name|image_undo_thaw_inargs
 index|[]
 init|=
 block|{
@@ -7237,10 +7237,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_thaw_undo_outargs
+DECL|variable|image_undo_thaw_outargs
 specifier|static
 name|ProcArg
-name|image_thaw_undo_outargs
+name|image_undo_thaw_outargs
 index|[]
 init|=
 block|{
@@ -7256,17 +7256,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_thaw_undo_proc
+DECL|variable|image_undo_thaw_proc
 specifier|static
 name|ProcRecord
-name|image_thaw_undo_proc
+name|image_undo_thaw_proc
 init|=
 block|{
-literal|"gimp_image_thaw_undo"
+literal|"gimp_image_undo_thaw"
 block|,
 literal|"Thaw the image's undo stack."
 block|,
-literal|"This procedure thaws the image's undo stack, allowing subsequent operations to store their undo steps. This is generally called in conjunction with 'gimp_image_disable_freeze' to temporarily freeze an image undo stack. 'gimp_image_thaw_undo' does NOT free the undo stack as 'gimp_image_enable_undo' does, so is suited for situations where one wishes to leave the undo stack in the same state in which one found it despite non-destructively playing with the image in the meantime. An example would be in-situ plugin previews. Balancing freezes and thaws and ensuring image consistancy is the responsibility of the caller."
+literal|"This procedure thaws the image's undo stack, allowing subsequent operations to store their undo steps. This is generally called in conjunction with 'gimp_image_undo_freeze' to temporarily freeze an image undo stack. 'gimp_image_undo_thaw' does NOT free the undo stack as 'gimp_image_undo_enable' does, so is suited for situations where one wishes to leave the undo stack in the same state in which one found it despite non-destructively playing with the image in the meantime. An example would be in-situ plugin previews. Balancing freezes and thaws and ensuring image consistancy is the responsibility of the caller."
 block|,
 literal|"Adam D. Moss"
 block|,
@@ -7278,15 +7278,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|image_thaw_undo_inargs
+name|image_undo_thaw_inargs
 block|,
 literal|1
 block|,
-name|image_thaw_undo_outargs
+name|image_undo_thaw_outargs
 block|,
 block|{
 block|{
-name|image_thaw_undo_invoker
+name|image_undo_thaw_invoker
 block|}
 block|}
 block|}

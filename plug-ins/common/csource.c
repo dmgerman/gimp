@@ -40,7 +40,7 @@ file|<gtk/gtk.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon2a18db3c0108
+DECL|struct|__anon2bce17fd0108
 typedef|typedef
 struct|struct
 block|{
@@ -519,7 +519,7 @@ operator|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|image_ID
 argument_list|,
@@ -607,7 +607,7 @@ index|[
 literal|0
 index|]
 condition|)
-name|gimp_image_detach_parasite
+name|gimp_image_parasite_detach
 argument_list|(
 name|image_ID
 argument_list|,
@@ -638,7 +638,7 @@ operator|.
 name|comment
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|image_ID
 argument_list|,

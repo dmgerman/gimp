@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a39ee2f0103
+DECL|enum|__anon2a2034cd0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -4876,8 +4876,8 @@ end_function
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_image_find_parasite (const GimpImage * gimage,const gchar * name)
-name|gimp_image_find_parasite
+DECL|function|gimp_image_parasite_find (const GimpImage * gimage,const gchar * name)
+name|gimp_image_parasite_find
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -5022,8 +5022,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_attach_parasite (GimpImage * gimage,Parasite * parasite)
-name|gimp_image_attach_parasite
+DECL|function|gimp_image_parasite_attach (GimpImage * gimage,Parasite * parasite)
+name|gimp_image_parasite_attach
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -5061,7 +5061,7 @@ name|parasite_compare
 argument_list|(
 name|parasite
 argument_list|,
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|gimage
 argument_list|,
@@ -5106,7 +5106,7 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-name|gimp_attach_parasite
+name|gimp_parasite_attach
 argument_list|(
 name|parasite
 argument_list|)
@@ -5117,8 +5117,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_detach_parasite (GimpImage * gimage,const gchar * parasite)
-name|gimp_image_detach_parasite
+DECL|function|gimp_image_parasite_detach (GimpImage * gimage,const gchar * parasite)
+name|gimp_image_parasite_detach
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -13471,8 +13471,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_freeze_undo (GimpImage * gimage)
-name|gimp_image_freeze_undo
+DECL|function|gimp_image_undo_freeze (GimpImage * gimage)
+name|gimp_image_undo_freeze
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -13493,8 +13493,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_thaw_undo (GimpImage * gimage)
-name|gimp_image_thaw_undo
+DECL|function|gimp_image_undo_thaw (GimpImage * gimage)
+name|gimp_image_undo_thaw
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -13515,8 +13515,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_disable_undo (GimpImage * gimage)
-name|gimp_image_disable_undo
+DECL|function|gimp_image_undo_disable (GimpImage * gimage)
+name|gimp_image_undo_disable
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -13524,7 +13524,7 @@ name|gimage
 parameter_list|)
 block|{
 return|return
-name|gimp_image_freeze_undo
+name|gimp_image_undo_freeze
 argument_list|(
 name|gimage
 argument_list|)
@@ -13534,8 +13534,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_enable_undo (GimpImage * gimage)
-name|gimp_image_enable_undo
+DECL|function|gimp_image_undo_enable (GimpImage * gimage)
+name|gimp_image_undo_enable
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -13549,7 +13549,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_image_thaw_undo
+name|gimp_image_undo_thaw
 argument_list|(
 name|gimage
 argument_list|)

@@ -169,7 +169,7 @@ DECL|macro|drawable_gray
 define|#
 directive|define
 name|drawable_gray
-value|gimp_drawable_gray
+value|gimp_drawable_is_gray
 end_define
 
 begin_define
@@ -177,7 +177,7 @@ DECL|macro|drawable_indexed
 define|#
 directive|define
 name|drawable_indexed
-value|gimp_drawable_indexed
+value|gimp_drawable_is_indexed
 end_define
 
 begin_define

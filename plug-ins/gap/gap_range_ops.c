@@ -7039,7 +7039,7 @@ expr_stmt|;
 block|}
 comment|/* p_load_named_frame(ainfo_ptr->image_id, ainfo_ptr->old_filename); */
 comment|/* dont need to reload, because the same sizechange operation was             * applied both to ram-image and dikfile             *             * But we must clear all undo steps.              * (If the user could undo the sizechange on the current image,             *  it would not fit to the other frames on disk.)             */
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|ainfo_ptr
 operator|->

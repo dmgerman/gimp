@@ -492,7 +492,7 @@ comment|/* =====================================================================
 if|if
 condition|(
 operator|!
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|mapvals
 operator|.
@@ -556,7 +556,7 @@ comment|/* Check if env-map is grayscale or has alpha */
 comment|/* ========================================== */
 if|if
 condition|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|mapvals
 operator|.

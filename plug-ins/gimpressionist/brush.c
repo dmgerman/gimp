@@ -1397,7 +1397,7 @@ argument_list|(
 name|drawableid
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawableid
 argument_list|)

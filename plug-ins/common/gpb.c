@@ -107,7 +107,7 @@ comment|/* Parameters applicable each time we save a gpb or gih, saved  * in the
 end_comment
 
 begin_struct
-DECL|struct|__anon2b5322b80108
+DECL|struct|__anon2a45c5a50108
 specifier|static
 struct|struct
 block|{
@@ -167,7 +167,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5322b80208
+DECL|struct|__anon2a45c5a50208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -5533,7 +5533,7 @@ argument_list|,
 name|parstring
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -6425,7 +6425,7 @@ argument_list|)
 expr_stmt|;
 name|pipe_parasite
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -6538,7 +6538,7 @@ argument_list|)
 expr_stmt|;
 name|pipe_parasite
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|orig_image_ID
 argument_list|,

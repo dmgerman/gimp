@@ -141,7 +141,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b09b5020108
+DECL|struct|__anon287861fa0108
 typedef|typedef
 struct|struct
 block|{
@@ -190,7 +190,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b09b5020208
+DECL|struct|__anon287861fa0208
 typedef|typedef
 struct|struct
 block|{
@@ -777,7 +777,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

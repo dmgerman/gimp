@@ -408,7 +408,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -929,13 +929,13 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
 operator|||
 operator|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
@@ -1405,7 +1405,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -1849,7 +1849,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -2002,7 +2002,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -2236,7 +2236,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -2248,7 +2248,7 @@ literal|1
 operator|)
 operator|||
 operator|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
@@ -2836,7 +2836,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -2848,7 +2848,7 @@ literal|256
 operator|)
 operator|||
 operator|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
@@ -3419,7 +3419,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -3935,13 +3935,13 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
 operator|||
 operator|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
@@ -4620,7 +4620,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -5079,7 +5079,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)

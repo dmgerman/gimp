@@ -560,7 +560,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_find_parasite
+name|gimp_parasite_find
 argument_list|(
 name|name
 argument_list|)
@@ -729,7 +729,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_attach_parasite
+name|gimp_parasite_attach
 argument_list|(
 name|parasite
 argument_list|)
@@ -853,7 +853,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_detach_parasite
+name|gimp_parasite_detach
 argument_list|(
 name|name
 argument_list|)
@@ -1145,7 +1145,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|drawable
 argument_list|,
@@ -1353,7 +1353,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_drawable_attach_parasite
+name|gimp_drawable_parasite_attach
 argument_list|(
 name|drawable
 argument_list|,
@@ -1515,7 +1515,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_drawable_detach_parasite
+name|gimp_drawable_parasite_detach
 argument_list|(
 name|drawable
 argument_list|,
@@ -1883,7 +1883,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|gimage
 argument_list|,
@@ -2091,7 +2091,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|gimage
 argument_list|,
@@ -2253,7 +2253,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_image_detach_parasite
+name|gimp_image_parasite_detach
 argument_list|(
 name|gimage
 argument_list|,

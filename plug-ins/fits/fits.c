@@ -61,7 +61,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2067e60108
+DECL|struct|__anon27ee224d0108
 block|{
 DECL|member|replace
 name|guint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2067e60208
+DECL|struct|__anon27ee224d0208
 block|{
 DECL|member|run
 name|gint
@@ -357,7 +357,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2067e60308
+DECL|struct|__anon27ee224d0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1529,7 +1529,7 @@ name|k
 operator|--
 control|)
 block|{
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|image_list
 index|[

@@ -8,8 +8,8 @@ end_include
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_find_parasite (const char * name)
-name|gimp_find_parasite
+DECL|function|gimp_parasite_find (const char * name)
+name|gimp_parasite_find
 parameter_list|(
 specifier|const
 name|char
@@ -32,7 +32,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_find_parasite"
+literal|"gimp_parasite_find"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -94,8 +94,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_attach_parasite (const Parasite * p)
-name|gimp_attach_parasite
+DECL|function|gimp_parasite_attach (const Parasite * p)
+name|gimp_parasite_attach
 parameter_list|(
 specifier|const
 name|Parasite
@@ -114,7 +114,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_attach_parasite"
+literal|"gimp_parasite_attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -184,7 +184,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_attach_parasite"
+literal|"gimp_parasite_attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -213,8 +213,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_detach_parasite (const char * name)
-name|gimp_detach_parasite
+DECL|function|gimp_parasite_detach (const char * name)
+name|gimp_parasite_detach
 parameter_list|(
 specifier|const
 name|char
@@ -233,7 +233,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_detach_parasite"
+literal|"gimp_parasite_detach"
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -68,7 +68,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)

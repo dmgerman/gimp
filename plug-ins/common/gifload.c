@@ -758,7 +758,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b4bfcf00108
+DECL|struct|__anon275568e70108
 block|{
 DECL|member|Width
 name|unsigned
@@ -808,7 +808,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b4bfcf00208
+DECL|struct|__anon275568e70208
 block|{
 DECL|member|transparent
 name|int
@@ -1844,7 +1844,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|image_ID
 argument_list|,

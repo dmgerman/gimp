@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon278adc810103
+DECL|enum|__anon27f7cbf90103
 typedef|typedef
 enum|enum
 block|{
@@ -11440,7 +11440,7 @@ condition|)
 goto|goto
 name|error
 goto|;
-name|gimp_attach_parasite
+name|gimp_parasite_attach
 argument_list|(
 name|parasite_new
 argument_list|(

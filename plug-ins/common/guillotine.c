@@ -907,7 +907,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimp_image_disable_undo
+name|gimp_image_undo_disable
 argument_list|(
 name|new_image
 argument_list|)
@@ -1004,7 +1004,7 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|new_image
 argument_list|)

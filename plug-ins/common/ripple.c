@@ -124,7 +124,7 @@ value|1
 end_define
 
 begin_typedef
-DECL|struct|__anon291e8c870108
+DECL|struct|__anon2b7a13fa0108
 typedef|typedef
 struct|struct
 block|{
@@ -163,7 +163,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon291e8c870208
+DECL|struct|__anon2b7a13fa0208
 typedef|typedef
 struct|struct
 block|{
@@ -958,7 +958,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

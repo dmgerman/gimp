@@ -650,7 +650,7 @@ DECL|macro|gimage_enable_undo
 define|#
 directive|define
 name|gimage_enable_undo
-value|gimp_image_enable_undo
+value|gimp_image_undo_enable
 end_define
 
 begin_define
@@ -658,7 +658,7 @@ DECL|macro|gimage_disable_undo
 define|#
 directive|define
 name|gimage_disable_undo
-value|gimp_image_disable_undo
+value|gimp_image_undo_disable
 end_define
 
 begin_define
@@ -666,7 +666,7 @@ DECL|macro|gimage_thaw_undo
 define|#
 directive|define
 name|gimage_thaw_undo
-value|gimp_image_thaw_undo
+value|gimp_image_undo_thaw
 end_define
 
 begin_define
@@ -674,7 +674,7 @@ DECL|macro|gimage_freeze_undo
 define|#
 directive|define
 name|gimage_freeze_undo
-value|gimp_image_freeze_undo
+value|gimp_image_undo_freeze
 end_define
 
 begin_define

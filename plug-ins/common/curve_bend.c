@@ -879,7 +879,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27b97e2b0108
+DECL|struct|__anon29e9bc7a0108
 typedef|typedef
 struct|struct
 block|{
@@ -908,7 +908,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27b97e2b0208
+DECL|struct|__anon29e9bc7a0208
 typedef|typedef
 struct|struct
 block|{
@@ -994,7 +994,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27b97e2b0308
+DECL|struct|__anon29e9bc7a0308
 typedef|typedef
 struct|struct
 block|{
@@ -3948,7 +3948,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|l_layer_id
 argument_list|)

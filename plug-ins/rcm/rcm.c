@@ -1143,7 +1143,7 @@ expr_stmt|;
 comment|/* works not on INDEXED images */
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|Current
 operator|.
@@ -1152,7 +1152,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|Current
 operator|.

@@ -2551,7 +2551,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_list_images"
+literal|"gimp_image_list"
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -6762,7 +6762,7 @@ argument_list|)
 operator|)
 operator|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawableId
 argument_list|)
@@ -6841,7 +6841,7 @@ argument_list|)
 operator|)
 operator|&&
 operator|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawableId
 argument_list|)

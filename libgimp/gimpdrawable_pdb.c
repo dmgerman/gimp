@@ -384,7 +384,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|drawable
 operator|->
@@ -618,7 +618,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -954,7 +954,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -976,8 +976,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_drawable_channel (gint32 drawable_ID)
-name|gimp_drawable_channel
+DECL|function|gimp_drawable_is_channel (gint32 drawable_ID)
+name|gimp_drawable_is_channel
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -997,7 +997,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_channel"
+literal|"gimp_drawable_is_channel"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1128,8 +1128,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_drawable_gray (gint32 drawable_ID)
-name|gimp_drawable_gray
+DECL|function|gimp_drawable_is_gray (gint32 drawable_ID)
+name|gimp_drawable_is_gray
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -1149,7 +1149,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_gray"
+literal|"gimp_drawable_is_gray"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1280,8 +1280,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_drawable_indexed (gint32 drawable_ID)
-name|gimp_drawable_indexed
+DECL|function|gimp_drawable_is_indexed (gint32 drawable_ID)
+name|gimp_drawable_is_indexed
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -1301,7 +1301,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_indexed"
+literal|"gimp_drawable_is_indexed"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1356,8 +1356,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_drawable_layer (gint32 drawable_ID)
-name|gimp_drawable_layer
+DECL|function|gimp_drawable_is_layer (gint32 drawable_ID)
+name|gimp_drawable_is_layer
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -1377,7 +1377,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_layer"
+literal|"gimp_drawable_is_layer"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1432,8 +1432,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_drawable_layer_mask (gint32 drawable_ID)
-name|gimp_drawable_layer_mask
+DECL|function|gimp_drawable_is_layer_mask (gint32 drawable_ID)
+name|gimp_drawable_is_layer_mask
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -1453,7 +1453,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_layer_mask"
+literal|"gimp_drawable_is_layer_mask"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1801,7 +1801,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -1838,7 +1838,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -2345,8 +2345,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_attach_parasite (gint32 drawable_ID,const Parasite * p)
-name|gimp_drawable_attach_parasite
+DECL|function|gimp_drawable_parasite_attach (gint32 drawable_ID,const Parasite * p)
+name|gimp_drawable_parasite_attach
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -2368,7 +2368,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_attach_parasite"
+literal|"gimp_drawable_parasite_attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2445,7 +2445,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_attach_parasite"
+literal|"gimp_drawable_parasite_attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2478,8 +2478,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_detach_parasite (gint32 drawable_ID,const char * name)
-name|gimp_drawable_detach_parasite
+DECL|function|gimp_drawable_parasite_detach (gint32 drawable_ID,const char * name)
+name|gimp_drawable_parasite_detach
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -2501,7 +2501,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_detach_parasite"
+literal|"gimp_drawable_parasite_detach"
 argument_list|,
 operator|&
 name|nreturn_vals

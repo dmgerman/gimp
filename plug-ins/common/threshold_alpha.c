@@ -487,7 +487,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0d30630108
+DECL|struct|__anon275ed9500108
 block|{
 DECL|member|threshold
 name|gint
@@ -514,7 +514,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0d30630208
+DECL|struct|__anon275ed9500208
 block|{
 DECL|member|run
 name|gint
@@ -803,7 +803,7 @@ name|drawable_id
 argument_list|)
 operator|&&
 operator|!
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable_id
 argument_list|)

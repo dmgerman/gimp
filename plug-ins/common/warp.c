@@ -144,7 +144,7 @@ value|3
 end_define
 
 begin_typedef
-DECL|struct|__anon275aa38b0108
+DECL|struct|__anon2909c0bd0108
 typedef|typedef
 struct|struct
 block|{
@@ -211,7 +211,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275aa38b0208
+DECL|struct|__anon2909c0bd0208
 typedef|typedef
 struct|struct
 block|{
@@ -1741,7 +1741,7 @@ expr_stmt|;
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-comment|/*   if (display_diff_map == FALSE) {     gimp_layer_delete(map_x->id);     gimp_layer_delete(map_y->id);   } else {     image_ID = gimp_layer_get_image_id(drawable->id);     gimp_image_disable_undo(image_ID);     gimp_image_enable_undo(image_ID);   }   */
+comment|/*   if (display_diff_map == FALSE) {     gimp_layer_delete(map_x->id);     gimp_layer_delete(map_y->id);   } else {     image_ID = gimp_layer_get_image_id(drawable->id);     gimp_image_undo_disable(image_ID);     gimp_image_undo_enable(image_ID);   }   */
 name|gimp_drawable_detach
 argument_list|(
 name|map_x

@@ -871,7 +871,7 @@ name|layer
 condition|)
 block|{
 comment|/*  add the new layer to the gimage  */
-name|gimp_image_disable_undo
+name|gimp_image_undo_disable
 argument_list|(
 name|image
 argument_list|)
@@ -885,7 +885,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|image
 argument_list|)

@@ -175,7 +175,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon2c7d88550103
+DECL|enum|__anon28a300fa0103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -193,7 +193,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2c7d88550203
+DECL|enum|__anon28a300fa0203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -211,7 +211,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2c7d88550308
+DECL|struct|__anon28a300fa0308
 typedef|typedef
 struct|struct
 block|{
@@ -266,7 +266,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c7d88550408
+DECL|struct|__anon28a300fa0408
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +311,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c7d88550508
+DECL|struct|__anon28a300fa0508
 typedef|typedef
 struct|struct
 block|{
@@ -1842,7 +1842,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
@@ -7788,7 +7788,7 @@ argument_list|(
 name|drawable_id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable_id
 argument_list|)

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974e32f0108
+DECL|struct|__anon27951e570108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974e32f0208
+DECL|struct|__anon27951e570208
 block|{
 DECL|member|run
 name|gint
@@ -1441,7 +1441,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
@@ -4804,7 +4804,7 @@ argument_list|)
 expr_stmt|;
 name|gray
 operator|=
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
@@ -5085,7 +5085,7 @@ argument_list|)
 expr_stmt|;
 name|gray
 operator|=
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

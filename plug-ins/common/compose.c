@@ -477,7 +477,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28ae52b30108
+DECL|struct|__anon2985d2bd0108
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +753,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon28ae52b30208
+DECL|struct|__anon2985d2bd0208
 typedef|typedef
 struct|struct
 block|{
@@ -784,7 +784,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28ae52b30308
+DECL|struct|__anon2985d2bd0308
 typedef|typedef
 struct|struct
 block|{
@@ -1763,7 +1763,7 @@ name|d_int32
 operator|=
 name|image_ID
 expr_stmt|;
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|image_ID
 argument_list|)

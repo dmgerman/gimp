@@ -281,7 +281,7 @@ end_function_decl
 begin_function_decl
 name|Parasite
 modifier|*
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 parameter_list|(
 name|gint32
 name|image_id

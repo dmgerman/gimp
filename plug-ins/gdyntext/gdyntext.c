@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275c42070103
+DECL|enum|__anon2c12901c0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -2509,7 +2509,7 @@ argument_list|,
 name|lname
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_attach_parasite
+name|gimp_drawable_parasite_attach
 argument_list|(
 name|data
 operator|->

@@ -3034,7 +3034,7 @@ name|drawable_id
 argument_list|)
 operator|&&
 operator|!
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -3120,7 +3120,7 @@ name|drawable_id
 argument_list|)
 operator|&&
 operator|!
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable_id
 argument_list|)

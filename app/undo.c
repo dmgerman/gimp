@@ -213,7 +213,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon29e443900103
+DECL|enum|__anon291f4b120103
 typedef|typedef
 enum|enum
 block|{
@@ -10565,7 +10565,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|gimage
 argument_list|,
@@ -10690,7 +10690,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|gimage
 argument_list|,
@@ -10821,7 +10821,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|drawable
 argument_list|,
@@ -10950,7 +10950,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|drawable
 argument_list|,
@@ -11022,7 +11022,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|gimage
 argument_list|,
@@ -11076,7 +11076,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -11126,7 +11126,7 @@ name|parasite
 operator|=
 name|parasite_copy
 argument_list|(
-name|gimp_find_parasite
+name|gimp_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -11138,13 +11138,13 @@ if|if
 condition|(
 name|tmp
 condition|)
-name|gimp_attach_parasite
+name|gimp_parasite_attach
 argument_list|(
 name|tmp
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_detach_parasite
+name|gimp_parasite_detach
 argument_list|(
 name|data
 operator|->
@@ -11235,7 +11235,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e443900208
+DECL|struct|__anon291f4b120208
 typedef|typedef
 struct|struct
 block|{
@@ -11465,7 +11465,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e443900308
+DECL|struct|__anon291f4b120308
 typedef|typedef
 struct|struct
 block|{

@@ -1508,7 +1508,7 @@ operator|->
 name|drawable
 argument_list|)
 operator|&&
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|_image_map
 operator|->
@@ -1646,7 +1646,7 @@ literal|255
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|_image_map
 operator|->

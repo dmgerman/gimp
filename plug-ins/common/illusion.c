@@ -159,7 +159,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bcd8b1e0108
+DECL|struct|__anon2c03e6670108
 typedef|typedef
 struct|struct
 block|{
@@ -693,7 +693,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

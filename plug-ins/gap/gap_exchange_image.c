@@ -1998,7 +1998,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|gimp_image_disable_undo
+name|gimp_image_undo_disable
 argument_list|(
 name|image_id
 argument_list|)
@@ -2261,7 +2261,7 @@ name|l_layers_list
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|image_id
 argument_list|)

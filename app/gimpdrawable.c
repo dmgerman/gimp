@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2ba82c000103
+DECL|enum|__anon2bf0688c0103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -1659,7 +1659,7 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|&&
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -1784,7 +1784,7 @@ literal|255
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -1823,8 +1823,8 @@ end_function
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_drawable_find_parasite (const GimpDrawable * drawable,const gchar * name)
-name|gimp_drawable_find_parasite
+DECL|function|gimp_drawable_parasite_find (const GimpDrawable * drawable,const gchar * name)
+name|gimp_drawable_parasite_find
 parameter_list|(
 specifier|const
 name|GimpDrawable
@@ -1969,8 +1969,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_attach_parasite (GimpDrawable * drawable,Parasite * parasite)
-name|gimp_drawable_attach_parasite
+DECL|function|gimp_drawable_parasite_attach (GimpDrawable * drawable,Parasite * parasite)
+name|gimp_drawable_parasite_attach
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -2025,7 +2025,7 @@ name|parasite_compare
 argument_list|(
 name|parasite
 argument_list|,
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|drawable
 argument_list|,
@@ -2072,7 +2072,7 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|drawable
 operator|->
@@ -2103,7 +2103,7 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-name|gimp_attach_parasite
+name|gimp_parasite_attach
 argument_list|(
 name|parasite
 argument_list|)
@@ -2130,8 +2130,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_detach_parasite (GimpDrawable * drawable,const gchar * parasite)
-name|gimp_drawable_detach_parasite
+DECL|function|gimp_drawable_parasite_detach (GimpDrawable * drawable,const gchar * parasite)
+name|gimp_drawable_parasite_detach
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -2274,8 +2274,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_gray (GimpDrawable * drawable)
-name|gimp_drawable_gray
+DECL|function|gimp_drawable_is_gray (GimpDrawable * drawable)
+name|gimp_drawable_is_gray
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -2310,8 +2310,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_indexed (GimpDrawable * drawable)
-name|gimp_drawable_indexed
+DECL|function|gimp_drawable_is_indexed (GimpDrawable * drawable)
+name|gimp_drawable_is_indexed
 parameter_list|(
 name|GimpDrawable
 modifier|*

@@ -2316,7 +2316,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -2406,7 +2406,7 @@ return|;
 return|return
 operator|(
 operator|!
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable_id
 argument_list|)

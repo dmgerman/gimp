@@ -228,7 +228,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2920376f0103
+DECL|enum|__anon2b514c460103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2920376f0203
+DECL|enum|__anon2b514c460203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -9431,7 +9431,7 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|gimage
 argument_list|,
@@ -10275,7 +10275,7 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_attach_parasite
+name|gimp_drawable_parasite_attach
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -10643,7 +10643,7 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_attach_parasite
+name|gimp_drawable_parasite_attach
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -112,7 +112,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon2b61786c0103
+DECL|enum|__anon29877fe80103
 typedef|typedef
 enum|enum
 block|{
@@ -132,7 +132,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b61786c0203
+DECL|enum|__anon29877fe80203
 typedef|typedef
 enum|enum
 block|{
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61786c0308
+DECL|struct|__anon29877fe80308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -171,7 +171,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon2b61786c040a
+DECL|union|__anon29877fe8040a
 union|union
 block|{
 DECL|member|d
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61786c0508
+DECL|struct|__anon29877fe80508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61786c0608
+DECL|struct|__anon29877fe80608
 block|{
 DECL|member|color
 name|IfsColor
@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61786c0708
+DECL|struct|__anon29877fe80708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61786c0808
+DECL|struct|__anon29877fe80808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61786c0908
+DECL|struct|__anon29877fe80908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61786c0a08
+DECL|struct|__anon29877fe80a08
 block|{
 DECL|member|run
 name|gint
@@ -1897,7 +1897,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|active_drawable
 operator|->
@@ -2004,7 +2004,7 @@ argument_list|,
 name|str
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_attach_parasite
+name|gimp_drawable_parasite_attach
 argument_list|(
 name|active_drawable
 operator|->

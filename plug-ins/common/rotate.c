@@ -151,7 +151,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon299777c90108
+DECL|struct|__anon2b0a54250108
 typedef|typedef
 struct|struct
 block|{
@@ -170,7 +170,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon299777c90208
+DECL|struct|__anon2b0a54250208
 typedef|typedef
 struct|struct
 block|{
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299777c90308
+DECL|struct|__anon2b0a54250308
 block|{
 DECL|member|ID
 name|gint32
@@ -1313,7 +1313,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|drawable
 operator|->
@@ -1594,7 +1594,7 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|drawable
 operator|->

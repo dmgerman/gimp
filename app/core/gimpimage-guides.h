@@ -211,7 +211,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c3c29ac0103
+DECL|enum|__anon2b55922b0103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3c29ac0203
+DECL|enum|__anon2b55922b0203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3c29ac0303
+DECL|enum|__anon2b55922b0303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -277,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3c29ac0403
+DECL|enum|__anon2b55922b0403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -782,7 +782,7 @@ end_function_decl
 begin_function_decl
 name|Parasite
 modifier|*
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -815,7 +815,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -828,7 +828,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_detach_parasite
+name|gimp_image_parasite_detach
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1567,7 +1567,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1577,7 +1577,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_disable_undo
+name|gimp_image_undo_disable
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1587,7 +1587,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_freeze_undo
+name|gimp_image_undo_freeze
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1597,7 +1597,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_thaw_undo
+name|gimp_image_undo_thaw
 parameter_list|(
 name|GimpImage
 modifier|*

@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e4bf6e0108
+DECL|struct|__anon2b9d1ef90108
 block|{
 DECL|member|radius
 name|gdouble
@@ -73,7 +73,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e4bf6e0208
+DECL|struct|__anon2b9d1ef90208
 block|{
 DECL|member|run
 name|gint
@@ -752,7 +752,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

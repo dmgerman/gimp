@@ -75,7 +75,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2a1f31f30103
+DECL|enum|__anon2ba6a4310103
 typedef|typedef
 enum|enum
 block|{
@@ -293,7 +293,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a1f31f30208
+DECL|struct|__anon2ba6a4310208
 typedef|typedef
 struct|struct
 block|{
@@ -449,7 +449,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2a1f31f30308
+DECL|struct|__anon2ba6a4310308
 struct|struct
 block|{
 DECL|member|matrix
@@ -940,7 +940,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
@@ -3241,7 +3241,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

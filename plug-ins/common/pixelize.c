@@ -92,7 +92,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon2a2124fb0108
+DECL|struct|__anon2931a61c0108
 typedef|typedef
 struct|struct
 block|{
@@ -107,7 +107,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a2124fb0208
+DECL|struct|__anon2931a61c0208
 typedef|typedef
 struct|struct
 block|{
@@ -122,7 +122,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a2124fb0308
+DECL|struct|__anon2931a61c0308
 typedef|typedef
 struct|struct
 block|{
@@ -173,7 +173,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a2124fb0408
+DECL|struct|__anon2931a61c0408
 typedef|typedef
 struct|struct
 block|{
@@ -831,7 +831,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

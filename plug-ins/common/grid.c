@@ -175,7 +175,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bff1160108
+DECL|struct|__anon2a347d120108
 block|{
 DECL|member|width
 name|gint
@@ -607,7 +607,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

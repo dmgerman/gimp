@@ -279,7 +279,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7431360108
+DECL|struct|__anon29ffc8250108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7431360208
+DECL|struct|__anon29ffc8250208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7431360308
+DECL|struct|__anon29ffc8250308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1528,7 +1528,7 @@ directive|ifdef
 name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -1647,7 +1647,7 @@ name|GIMP_HAVE_PARASITES
 comment|/* load up the previously used values */
 name|parasite
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -1824,7 +1824,7 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-name|gimp_image_freeze_undo
+name|gimp_image_undo_freeze
 argument_list|(
 name|image_ID
 argument_list|)
@@ -1857,7 +1857,7 @@ name|EXPORT_EXPORT
 condition|)
 block|{
 comment|/* thaw undo saving and end the undo_group. */
-name|gimp_image_thaw_undo
+name|gimp_image_undo_thaw
 argument_list|(
 name|image_ID
 argument_list|)
@@ -2153,7 +2153,7 @@ directive|ifdef
 name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -2410,7 +2410,7 @@ ifdef|#
 directive|ifdef
 name|GIMP_HAVE_PARASITES
 comment|/* pw - now we need to change the defaults to be whatever        * was used to save this image.  Dump the old parasites        * and add new ones. */
-name|gimp_image_detach_parasite
+name|gimp_image_parasite_detach
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -2443,7 +2443,7 @@ argument_list|,
 name|image_comment
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -2456,7 +2456,7 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_detach_parasite
+name|gimp_image_parasite_detach
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -2480,7 +2480,7 @@ operator|&
 name|jsvals
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -3940,7 +3940,7 @@ condition|(
 name|comment_parasite
 condition|)
 block|{
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|image_ID
 argument_list|,
@@ -3958,7 +3958,7 @@ condition|(
 name|vals_parasite
 condition|)
 block|{
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|image_ID
 argument_list|,

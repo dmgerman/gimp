@@ -279,7 +279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6dd0d0108
+DECL|struct|__anon2991064b0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6dd0d0208
+DECL|struct|__anon2991064b0208
 block|{
 DECL|member|name
 name|gchar
@@ -1677,7 +1677,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6dd0d0308
+DECL|struct|__anon2991064b0308
 block|{
 DECL|member|function
 name|gint
@@ -1750,7 +1750,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6dd0d0408
+DECL|struct|__anon2991064b0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2537,7 +2537,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6dd0d0508
+DECL|struct|__anon2991064b0508
 block|{
 DECL|member|run
 name|gint
@@ -2585,7 +2585,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6dd0d0608
+DECL|struct|__anon2991064b0608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -3356,7 +3356,7 @@ name|src_is_gray
 operator|=
 name|dest_is_gray
 operator|=
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable_id
 argument_list|)

@@ -743,7 +743,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29617d820108
+DECL|struct|__anon2945f63d0108
 typedef|typedef
 struct|struct
 block|{
@@ -1214,7 +1214,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon29617d820208
+DECL|struct|__anon2945f63d0208
 typedef|typedef
 struct|struct
 block|{
@@ -1232,7 +1232,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29617d820308
+DECL|struct|__anon2945f63d0308
 typedef|typedef
 struct|struct
 block|{
@@ -1899,7 +1899,7 @@ index|[
 name|j
 index|]
 expr_stmt|;
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|image_ID_extract
 index|[

@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fed660108
+DECL|struct|__anon2757ef940108
 block|{
 DECL|member|horizontal
 name|gint
@@ -75,7 +75,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fed660208
+DECL|struct|__anon2757ef940208
 block|{
 DECL|member|run
 name|gint
@@ -655,7 +655,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

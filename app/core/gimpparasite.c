@@ -117,8 +117,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_attach_parasite (Parasite * p)
-name|gimp_attach_parasite
+DECL|function|gimp_parasite_attach (Parasite * p)
+name|gimp_parasite_attach
 parameter_list|(
 name|Parasite
 modifier|*
@@ -137,8 +137,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_detach_parasite (const char * name)
-name|gimp_detach_parasite
+DECL|function|gimp_parasite_detach (const char * name)
+name|gimp_parasite_detach
 parameter_list|(
 specifier|const
 name|char
@@ -159,8 +159,8 @@ end_function
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_find_parasite (const char * name)
-name|gimp_find_parasite
+DECL|function|gimp_parasite_find (const char * name)
+name|gimp_parasite_find
 parameter_list|(
 specifier|const
 name|char

@@ -133,7 +133,7 @@ comment|/* to film_height (i.e. it should be a value from 0.0 to 1.0) */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29774abd0108
+DECL|struct|__anon28e5f1210108
 typedef|typedef
 struct|struct
 block|{
@@ -247,7 +247,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29774abd0208
+DECL|struct|__anon28e5f1210208
 block|{
 DECL|member|activate
 name|GtkWidget
@@ -289,7 +289,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29774abd0308
+DECL|struct|__anon28e5f1210308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1723,7 +1723,7 @@ name|d_int32
 operator|=
 name|image_ID
 expr_stmt|;
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|image_ID
 argument_list|)

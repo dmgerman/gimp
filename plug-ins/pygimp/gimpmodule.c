@@ -95,7 +95,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon277fc3fc0108
+DECL|struct|__anon2c9154cd0108
 typedef|typedef
 struct|struct
 block|{
@@ -135,7 +135,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon277fc3fc0208
+DECL|struct|__anon2c9154cd0208
 typedef|typedef
 struct|struct
 block|{
@@ -244,7 +244,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon277fc3fc0308
+DECL|struct|__anon2c9154cd0308
 typedef|typedef
 struct|struct
 block|{
@@ -298,7 +298,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon277fc3fc0408
+DECL|struct|__anon2c9154cd0408
 typedef|typedef
 struct|struct
 block|{
@@ -352,7 +352,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon277fc3fc0508
+DECL|struct|__anon2c9154cd0508
 typedef|typedef
 struct|struct
 block|{
@@ -476,7 +476,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon277fc3fc0608
+DECL|struct|__anon2c9154cd0608
 typedef|typedef
 struct|struct
 block|{
@@ -542,7 +542,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon277fc3fc0708
+DECL|struct|__anon2c9154cd0708
 typedef|typedef
 struct|struct
 block|{
@@ -622,7 +622,7 @@ comment|/* Declarations for objects of type Parasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon277fc3fc0808
+DECL|struct|__anon2c9154cd0808
 typedef|typedef
 struct|struct
 block|{
@@ -6474,7 +6474,7 @@ return|return
 name|NULL
 return|;
 comment|/*return_vals = gimp_run_procedure("gimp_undo_push_group_start",&nreturn_vals, PARAM_IMAGE, self->ID, 				     PARAM_END);     gimp_destroy_params(return_vals, nreturn_vals);*/
-name|gimp_image_disable_undo
+name|gimp_image_undo_disable
 argument_list|(
 name|self
 operator|->
@@ -6527,7 +6527,7 @@ return|return
 name|NULL
 return|;
 comment|/*return_vals = gimp_run_procedure("gimp_undo_push_group_start",&nreturn_vals, PARAM_IMAGE, self->ID, 				     PARAM_END);     gimp_destroy_params(return_vals, nreturn_vals);*/
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|self
 operator|->
@@ -7617,7 +7617,7 @@ operator|*
 operator|)
 name|newparaobject
 argument_list|(
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|self
 operator|->
@@ -7673,7 +7673,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|self
 operator|->
@@ -7818,7 +7818,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_image_detach_parasite
+name|gimp_image_parasite_detach
 argument_list|(
 name|self
 operator|->
@@ -11075,7 +11075,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_drawable_attach_parasite
+name|gimp_drawable_parasite_attach
 argument_list|(
 name|self
 operator|->
@@ -11220,7 +11220,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_drawable_detach_parasite
+name|gimp_drawable_parasite_detach
 argument_list|(
 name|self
 operator|->
@@ -11348,7 +11348,7 @@ expr_stmt|;
 comment|/* create the appropriate object type */
 if|if
 condition|(
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|ID
 argument_list|)
@@ -12518,7 +12518,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|self
 operator|->
@@ -12539,7 +12539,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|self
 operator|->
@@ -14378,7 +14378,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|self
 operator|->
@@ -14399,7 +14399,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|self
 operator|->
@@ -14468,7 +14468,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_drawable_layer_mask
+name|gimp_drawable_is_layer_mask
 argument_list|(
 name|self
 operator|->
@@ -24315,7 +24315,7 @@ operator|*
 operator|)
 name|newparaobject
 argument_list|(
-name|gimp_find_parasite
+name|gimp_parasite_find
 argument_list|(
 name|name
 argument_list|)
@@ -24369,7 +24369,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_attach_parasite
+name|gimp_parasite_attach
 argument_list|(
 name|parasite
 operator|->
@@ -24510,7 +24510,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_detach_parasite
+name|gimp_parasite_detach
 argument_list|(
 name|name
 argument_list|)

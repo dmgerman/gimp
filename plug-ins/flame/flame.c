@@ -444,7 +444,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2c24be330108
+DECL|struct|__anon29ac939a0108
 struct|struct
 block|{
 DECL|member|randomize
@@ -1227,7 +1227,7 @@ argument_list|)
 expr_stmt|;
 name|indexed
 operator|=
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|config
 operator|.
@@ -3591,7 +3591,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2c24be330208
+DECL|struct|__anon29ac939a0208
 specifier|static
 struct|struct
 block|{
@@ -4537,7 +4537,7 @@ parameter_list|)
 block|{
 return|return
 operator|!
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable_id
 argument_list|)

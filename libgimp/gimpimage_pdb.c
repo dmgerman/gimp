@@ -1169,8 +1169,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_disable_undo (gint32 image_ID)
-name|gimp_image_disable_undo
+DECL|function|gimp_image_undo_disable (gint32 image_ID)
+name|gimp_image_undo_disable
 parameter_list|(
 name|gint32
 name|image_ID
@@ -1187,7 +1187,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_disable_undo"
+literal|"gimp_image_undo_disable"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1211,8 +1211,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_enable_undo (gint32 image_ID)
-name|gimp_image_enable_undo
+DECL|function|gimp_image_undo_enable (gint32 image_ID)
+name|gimp_image_undo_enable
 parameter_list|(
 name|gint32
 name|image_ID
@@ -1229,7 +1229,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_enable_undo"
+literal|"gimp_image_undo_enable"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1253,8 +1253,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_freeze_undo (gint32 image_ID)
-name|gimp_image_freeze_undo
+DECL|function|gimp_image_undo_freeze (gint32 image_ID)
+name|gimp_image_undo_freeze
 parameter_list|(
 name|gint32
 name|image_ID
@@ -1271,7 +1271,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_freeze_undo"
+literal|"gimp_image_undo_freeze"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1295,8 +1295,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_thaw_undo (gint32 image_ID)
-name|gimp_image_thaw_undo
+DECL|function|gimp_image_undo_thaw (gint32 image_ID)
+name|gimp_image_undo_thaw
 parameter_list|(
 name|gint32
 name|image_ID
@@ -1313,7 +1313,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_thaw_undo"
+literal|"gimp_image_undo_thaw"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3299,8 +3299,8 @@ end_function
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_image_find_parasite (gint32 image_ID,const char * name)
-name|gimp_image_find_parasite
+DECL|function|gimp_image_parasite_find (gint32 image_ID,const char * name)
+name|gimp_image_parasite_find
 parameter_list|(
 name|gint32
 name|image_ID
@@ -3326,7 +3326,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_find_parasite"
+literal|"gimp_image_parasite_find"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3392,8 +3392,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_attach_parasite (gint32 image_ID,const Parasite * p)
-name|gimp_image_attach_parasite
+DECL|function|gimp_image_parasite_attach (gint32 image_ID,const Parasite * p)
+name|gimp_image_parasite_attach
 parameter_list|(
 name|gint32
 name|image_ID
@@ -3415,7 +3415,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_attach_parasite"
+literal|"gimp_image_parasite_attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3492,7 +3492,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_attach_parasite"
+literal|"gimp_image_parasite_attach"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3525,8 +3525,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_detach_parasite (gint32 image_ID,const char * name)
-name|gimp_image_detach_parasite
+DECL|function|gimp_image_parasite_detach (gint32 image_ID,const char * name)
+name|gimp_image_parasite_detach
 parameter_list|(
 name|gint32
 name|image_ID
@@ -3548,7 +3548,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_detach_parasite"
+literal|"gimp_image_parasite_detach"
 argument_list|,
 operator|&
 name|nreturn_vals

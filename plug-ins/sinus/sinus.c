@@ -223,7 +223,7 @@ value|1L
 end_define
 
 begin_typedef
-DECL|struct|__anon298b9a6e0108
+DECL|struct|__anon28bcf1b40108
 typedef|typedef
 struct|struct
 block|{
@@ -324,7 +324,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon298b9a6e0208
+DECL|struct|__anon28bcf1b40208
 typedef|typedef
 struct|struct
 block|{
@@ -1016,7 +1016,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
@@ -1380,7 +1380,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->
@@ -1472,7 +1472,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon298b9a6e0308
+DECL|struct|__anon28bcf1b40308
 DECL|member|r
 DECL|member|g
 DECL|member|b

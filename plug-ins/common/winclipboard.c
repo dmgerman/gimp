@@ -2012,7 +2012,7 @@ else|:
 name|RGB
 argument_list|)
 expr_stmt|;
-name|gimp_image_disable_undo
+name|gimp_image_undo_disable
 argument_list|(
 name|image_ID
 argument_list|)
@@ -2679,7 +2679,7 @@ name|CloseClipboard
 argument_list|()
 expr_stmt|;
 comment|/* shouldn't this be done by caller?? */
-name|gimp_image_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|image_ID
 argument_list|)

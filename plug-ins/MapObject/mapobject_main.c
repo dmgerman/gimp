@@ -594,7 +594,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|mapvals
 operator|.
@@ -695,7 +695,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|mapvals
 operator|.

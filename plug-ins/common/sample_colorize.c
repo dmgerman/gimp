@@ -401,7 +401,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon29230d4c0108
+DECL|struct|__anon289572380108
 typedef|typedef
 struct|struct
 block|{
@@ -470,7 +470,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29230d4c0208
+DECL|struct|__anon289572380208
 typedef|typedef
 struct|struct
 block|{
@@ -588,7 +588,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29230d4c0308
+DECL|struct|__anon289572380308
 typedef|typedef
 struct|struct
 block|{
@@ -617,7 +617,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29230d4c0408
+DECL|struct|__anon289572380408
 typedef|typedef
 struct|struct
 block|{
@@ -644,7 +644,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29230d4c0508
+DECL|struct|__anon289572380508
 typedef|typedef
 struct|struct
 block|{
@@ -1681,7 +1681,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|dst_drawable
 operator|->
@@ -2460,7 +2460,7 @@ block|}
 comment|/* dont accept layers from indexed images */
 if|if
 condition|(
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -16420,7 +16420,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|g_values
 operator|.

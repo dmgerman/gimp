@@ -230,7 +230,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -240,7 +240,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_drawable_indexed
+name|gimp_drawable_is_indexed
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -379,25 +379,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Parasite
-modifier|*
-name|gimp_drawable_find_parasite
-parameter_list|(
-specifier|const
-name|GimpDrawable
-modifier|*
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
-name|gimp_drawable_attach_parasite
+name|gimp_drawable_parasite_attach
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -410,7 +393,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_detach_parasite
+name|gimp_drawable_parasite_detach
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -425,7 +408,7 @@ end_function_decl
 begin_function_decl
 name|Parasite
 modifier|*
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 parameter_list|(
 specifier|const
 name|GimpDrawable

@@ -54,7 +54,7 @@ value|25
 end_define
 
 begin_typedef
-DECL|struct|__anon28ff4f2e0108
+DECL|struct|__anon27bb1b4c0108
 typedef|typedef
 struct|struct
 block|{
@@ -81,7 +81,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28ff4f2e0208
+DECL|struct|__anon27bb1b4c0208
 typedef|typedef
 struct|struct
 block|{
@@ -1141,7 +1141,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_layer
+name|gimp_drawable_is_layer
 argument_list|(
 name|drawable_id
 argument_list|)

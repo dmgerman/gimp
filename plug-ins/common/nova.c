@@ -226,7 +226,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|struct|__anon27d82b380108
+DECL|struct|__anon29927fac0108
 typedef|typedef
 struct|struct
 block|{
@@ -263,7 +263,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27d82b380208
+DECL|struct|__anon29927fac0208
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +278,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27d82b380308
+DECL|struct|__anon29927fac0308
 typedef|typedef
 struct|struct
 block|{
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d82b380408
+DECL|struct|__anon29927fac0408
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1281,7 +1281,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

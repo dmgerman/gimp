@@ -97,7 +97,7 @@ value|((unsigned int) (p[0]*77+p[1]*150+p[2]*29)>> 8)
 end_define
 
 begin_typedef
-DECL|struct|__anon2be6e00d0108
+DECL|struct|__anon2aeb53530108
 typedef|typedef
 struct|struct
 block|{
@@ -116,7 +116,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be6e00d0208
+DECL|struct|__anon2aeb53530208
 typedef|typedef
 struct|struct
 block|{
@@ -751,7 +751,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

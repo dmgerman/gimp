@@ -152,7 +152,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbeaa8a0108
+DECL|struct|__anon27d8dd200108
 typedef|typedef
 struct|struct
 block|{
@@ -183,7 +183,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bbeaa8a0208
+DECL|struct|__anon27d8dd200208
 typedef|typedef
 struct|struct
 block|{
@@ -223,7 +223,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bbeaa8a0308
+DECL|struct|__anon27d8dd200308
 typedef|typedef
 struct|struct
 block|{
@@ -1459,7 +1459,7 @@ operator|->
 name|id
 argument_list|)
 operator|||
-name|gimp_drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 operator|->

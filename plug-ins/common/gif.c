@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cb1110108
+DECL|struct|__anon2b69a78a0108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cb1110208
+DECL|struct|__anon2b69a78a0208
 block|{
 DECL|member|run
 name|gint
@@ -2830,7 +2830,7 @@ operator|)
 name|globalcomment
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|orig_image_ID
 argument_list|,
@@ -4856,7 +4856,7 @@ directive|ifdef
 name|FACEHUGGERS
 name|GIF2_CMNT
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|image_ID
 argument_list|,

@@ -33,7 +33,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_attach_parasite
+name|gimp_parasite_attach
 parameter_list|(
 name|Parasite
 modifier|*
@@ -44,7 +44,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_detach_parasite
+name|gimp_parasite_detach
 parameter_list|(
 specifier|const
 name|char
@@ -57,7 +57,7 @@ end_function_decl
 begin_function_decl
 name|Parasite
 modifier|*
-name|gimp_find_parasite
+name|gimp_parasite_find
 parameter_list|(
 specifier|const
 name|char

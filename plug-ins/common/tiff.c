@@ -57,7 +57,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ba8fd0108
+DECL|struct|__anon2773225b0108
 block|{
 DECL|member|compression
 name|gint
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ba8fd0208
+DECL|struct|__anon2773225b0208
 block|{
 DECL|member|run
 name|gint
@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9ba8fd0308
+DECL|struct|__anon2773225b0308
 typedef|typedef
 struct|struct
 block|{
@@ -1128,7 +1128,7 @@ directive|ifdef
 name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|orig_image
 argument_list|,
@@ -1191,7 +1191,7 @@ directive|ifdef
 name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|orig_image
 argument_list|,
@@ -1327,7 +1327,7 @@ directive|ifdef
 name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
-name|gimp_image_find_parasite
+name|gimp_image_parasite_find
 argument_list|(
 name|orig_image
 argument_list|,
@@ -1995,7 +1995,7 @@ operator|&
 name|save_vals
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|image
 argument_list|,
@@ -2075,7 +2075,7 @@ argument_list|,
 name|img_desc
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|image
 argument_list|,
@@ -6606,7 +6606,7 @@ argument_list|,
 name|image_comment
 argument_list|)
 expr_stmt|;
-name|gimp_image_attach_parasite
+name|gimp_image_parasite_attach
 argument_list|(
 name|orig_image
 argument_list|,
