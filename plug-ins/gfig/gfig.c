@@ -1151,7 +1151,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb872c30108
+DECL|struct|__anon2adefc0d0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -19567,7 +19567,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Release 1.3"
+literal|"Release 2.0"
 argument_list|)
 argument_list|)
 expr_stmt|;
