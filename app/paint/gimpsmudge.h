@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintcore.h"
 end_include
 
@@ -117,6 +123,19 @@ block|{
 DECL|member|parent_instance
 name|GimpPaintCore
 name|parent_instance
+decl_stmt|;
+DECL|member|initialized
+name|gboolean
+name|initialized
+decl_stmt|;
+DECL|member|accumPR
+name|PixelRegion
+name|accumPR
+decl_stmt|;
+DECL|member|accum_data
+name|guchar
+modifier|*
+name|accum_data
 decl_stmt|;
 block|}
 struct|;

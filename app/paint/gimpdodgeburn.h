@@ -107,6 +107,11 @@ DECL|member|parent_instance
 name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
+DECL|member|lut
+name|GimpLut
+modifier|*
+name|lut
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -181,11 +186,6 @@ DECL|member|exposure_w
 name|GtkObject
 modifier|*
 name|exposure_w
-decl_stmt|;
-DECL|member|lut
-name|GimpLut
-modifier|*
-name|lut
 decl_stmt|;
 block|}
 struct|;

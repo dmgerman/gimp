@@ -375,10 +375,6 @@ name|paint_state
 condition|)
 block|{
 case|case
-name|INIT_PAINT
-case|:
-break|break;
-case|case
 name|MOTION_PAINT
 case|:
 name|gimp_pencil_motion
@@ -390,10 +386,6 @@ argument_list|,
 name|paint_options
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|FINISH_PAINT
-case|:
 break|break;
 default|default:
 break|break;
@@ -420,6 +412,10 @@ modifier|*
 name|paint_options
 parameter_list|)
 block|{
+name|GimpPressureOptions
+modifier|*
+name|pressure_options
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
@@ -447,6 +443,12 @@ decl_stmt|;
 name|GimpPaintApplicationMode
 name|paint_appl_mode
 decl_stmt|;
+name|pressure_options
+operator|=
+name|paint_options
+operator|->
+name|pressure_options
+expr_stmt|;
 name|gimage
 operator|=
 name|gimp_item_get_image
@@ -480,8 +482,6 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|paint_options
-operator|->
 name|pressure_options
 operator|->
 name|size
@@ -520,8 +520,6 @@ return|return;
 comment|/*  color the pixels  */
 if|if
 condition|(
-name|paint_options
-operator|->
 name|pressure_options
 operator|->
 name|color
@@ -693,8 +691,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|paint_options
-operator|->
 name|pressure_options
 operator|->
 name|opacity
