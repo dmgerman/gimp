@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bae23890108
+DECL|struct|__anon277735530108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -506,7 +506,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"phys"
 block|,
-literal|"Write tIME chunk?"
+literal|"Write pHYs chunk?"
 block|}
 block|,
 block|{
@@ -514,7 +514,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"time"
 block|,
-literal|"Write pHYs chunk?"
+literal|"Write tIME chunk?"
 block|}
 block|}
 decl_stmt|;
@@ -1008,7 +1008,7 @@ name|d_int32
 expr_stmt|;
 name|pngvals
 operator|.
-name|phys
+name|offs
 operator|=
 name|param
 index|[
@@ -1021,7 +1021,7 @@ name|d_int32
 expr_stmt|;
 name|pngvals
 operator|.
-name|offs
+name|phys
 operator|=
 name|param
 index|[
