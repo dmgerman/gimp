@@ -8,7 +8,7 @@ comment|/*    * TODO for Convert:    *    *   Use palette of another open INDEXE
 end_comment
 
 begin_comment
-comment|/*  * 2000/01/30 - Use palette_selector instead of option_menu for custom  *  palette. Use libgimp callback functions.  [Sven]  *   * 99/09/01 - Created a low-bleed FS-dither option.  [Adam]  *  * 99/08/29 - Deterministic colour dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused colour entries from final colourmap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of posessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]   *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
+comment|/*  * 2000/03/24 - Some speedups [Martin]  * 2000/01/30 - Use palette_selector instead of option_menu for custom  *  palette. Use libgimp callback functions.  [Sven]  *   * 99/09/01 - Created a low-bleed FS-dither option.  [Adam]  *  * 99/08/29 - Deterministic colour dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused colour entries from final colourmap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of posessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]   *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
 end_comment
 
 begin_include
@@ -255,17 +255,45 @@ begin_comment
 comment|/* this has to match the INTENSITY definition in libgimp/gimpcolorspace.h */
 end_comment
 
+begin_comment
+comment|/* #define R_SCALE 30 */
+end_comment
+
+begin_comment
+comment|/*  scale R distances by this much  */
+end_comment
+
+begin_comment
+comment|/* #define G_SCALE 59 */
+end_comment
+
+begin_comment
+comment|/*  scale G distances by this much  */
+end_comment
+
+begin_comment
+comment|/* #define B_SCALE 11 */
+end_comment
+
+begin_comment
+comment|/*  and B by this much              */
+end_comment
+
+begin_comment
+comment|/* not as precise as the above devlaration but much faster                */
+end_comment
+
 begin_define
 DECL|macro|R_SCALE
 define|#
 directive|define
 name|R_SCALE
-value|30
+value|<< 2
 end_define
 
 begin_comment
 DECL|macro|R_SCALE
-comment|/*  scale R distances by this much  */
+comment|/* *4 = 36% */
 end_comment
 
 begin_define
@@ -273,12 +301,12 @@ DECL|macro|G_SCALE
 define|#
 directive|define
 name|G_SCALE
-value|59
+value|* 6
 end_define
 
 begin_comment
 DECL|macro|G_SCALE
-comment|/*  scale G distances by this much  */
+comment|/* *6 = 55% */
 end_comment
 
 begin_define
@@ -286,12 +314,11 @@ DECL|macro|B_SCALE
 define|#
 directive|define
 name|B_SCALE
-value|11
 end_define
 
 begin_comment
 DECL|macro|B_SCALE
-comment|/*  and B by this much              */
+comment|/* *1 = 9 % */
 end_comment
 
 begin_decl_stmt
@@ -34888,7 +34915,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c255410108
+DECL|struct|__anon278d53990108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34965,7 +34992,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c255410208
+DECL|struct|__anon278d53990208
 block|{
 DECL|member|ncolors
 name|long
@@ -34984,7 +35011,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c255410308
+DECL|struct|__anon278d53990308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38279,7 +38306,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c255410408
+DECL|struct|__anon278d53990408
 block|{
 DECL|member|used_count
 name|signed
@@ -42191,7 +42218,6 @@ condition|(
 name|boxp
 operator|->
 name|gerror
-operator|*
 name|G_SCALE
 operator|>
 name|maxc
@@ -42206,7 +42232,6 @@ operator|=
 name|boxp
 operator|->
 name|gerror
-operator|*
 name|G_SCALE
 expr_stmt|;
 block|}
@@ -42215,7 +42240,6 @@ condition|(
 name|boxp
 operator|->
 name|rerror
-operator|*
 name|R_SCALE
 operator|>
 name|maxc
@@ -42230,7 +42254,6 @@ operator|=
 name|boxp
 operator|->
 name|rerror
-operator|*
 name|R_SCALE
 expr_stmt|;
 block|}
@@ -42239,7 +42262,6 @@ condition|(
 name|boxp
 operator|->
 name|berror
-operator|*
 name|B_SCALE
 operator|>
 name|maxc
@@ -42254,7 +42276,6 @@ operator|=
 name|boxp
 operator|->
 name|berror
-operator|*
 name|B_SCALE
 expr_stmt|;
 block|}
@@ -43164,7 +43185,6 @@ operator|)
 operator|<<
 name|R_SHIFT
 operator|)
-operator|*
 name|R_SCALE
 expr_stmt|;
 name|dist1
@@ -43179,7 +43199,6 @@ operator|)
 operator|<<
 name|G_SHIFT
 operator|)
-operator|*
 name|G_SCALE
 expr_stmt|;
 name|dist2
@@ -43194,7 +43213,6 @@ operator|)
 operator|<<
 name|B_SHIFT
 operator|)
-operator|*
 name|B_SCALE
 expr_stmt|;
 name|boxp
@@ -43479,23 +43497,26 @@ name|histp
 operator|)
 operator|*
 operator|(
+operator|(
 name|re
 operator|*
 name|re
-operator|*
 name|R_SCALE
+operator|)
 operator|+
+operator|(
 name|ge
 operator|*
 name|ge
-operator|*
 name|G_SCALE
+operator|)
 operator|+
+operator|(
 name|be
 operator|*
 name|be
-operator|*
 name|B_SCALE
+operator|)
 operator|)
 expr_stmt|;
 name|ccount
@@ -43661,9 +43682,11 @@ name|re
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|tempRerror
-operator|*
-literal|2
+operator|<<
+literal|1
+operator|)
 operator|>
 name|boxp
 operator|->
@@ -43840,9 +43863,11 @@ name|ge
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|tempGerror
-operator|*
-literal|2
+operator|<<
+literal|1
+operator|)
 operator|>
 name|boxp
 operator|->
@@ -44017,9 +44042,11 @@ name|be
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|tempBerror
-operator|*
-literal|2
+operator|<<
+literal|1
+operator|)
 operator|>
 name|boxp
 operator|->
@@ -44093,7 +44120,7 @@ comment|/* Select box to split.        * Current algorithm: by population for fi
 if|#
 directive|if
 literal|0
-block|if (numboxes*2<= desired_colors) 	{ 	  b1 = find_biggest_color_pop (boxlist, numboxes); 	}       else
+block|if ((numboxes<<1)<= desired_colors) 	{ 	  b1 = find_biggest_color_pop (boxlist, numboxes); 	}       else
 endif|#
 directive|endif
 block|{
@@ -44243,7 +44270,7 @@ if|#
 directive|if
 literal|0
 comment|/* Select box to split.      * Current algorithm: by population for first half, then by volume.      */
-block|if (1 || numboxes*2<= desired_colors)       { 	g_print ("O "); 	b1 = find_biggest_color_pop (boxlist, numboxes);       }     else       { 	g_print (". "); 	b1 = find_biggest_volume (boxlist, numboxes);       }
+block|if (1 || (numboxes<<1)<= desired_colors)       { 	g_print ("O "); 	b1 = find_biggest_color_pop (boxlist, numboxes);       }     else       { 	g_print (". "); 	b1 = find_biggest_volume (boxlist, numboxes);       }
 endif|#
 directive|endif
 name|b1
@@ -44323,29 +44350,26 @@ comment|/* Choose which axis to split the box on.      * See notes in update_box
 comment|/*     //        R = ((b1->Rmax - b1->Rmin)<< R_SHIFT) * R_SCALE; 	//        G = ((b1->Gmax - b1->Gmin)<< G_SHIFT) * G_SCALE;         //B = ((b1->Bmax - b1->Bmin)<< B_SHIFT) * B_SCALE;     */
 name|R
 operator|=
-name|R_SCALE
-operator|*
 name|b1
 operator|->
 name|rerror
+name|R_SCALE
 expr_stmt|;
 comment|/* * (((b1->Rmax - b1->Rmin)<< R_SHIFT)) * R_SCALE; */
 name|G
 operator|=
-name|G_SCALE
-operator|*
 name|b1
 operator|->
 name|gerror
+name|G_SCALE
 expr_stmt|;
 comment|/* * (((b1->Gmax - b1->Gmin)<< G_SHIFT)) * G_SCALE; */
 name|B
 operator|=
-name|B_SCALE
-operator|*
 name|b1
 operator|->
 name|berror
+name|B_SCALE
 expr_stmt|;
 comment|/* * (((b1->Bmax - b1->Bmin)<< B_SHIFT)) * B_SCALE; */
 comment|/* We want to break any ties in favor of green, then red, blue last.      */
@@ -45710,7 +45734,6 @@ name|x
 operator|-
 name|minR
 operator|)
-operator|*
 name|R_SCALE
 expr_stmt|;
 name|min_dist
@@ -45726,7 +45749,6 @@ name|x
 operator|-
 name|maxR
 operator|)
-operator|*
 name|R_SCALE
 expr_stmt|;
 name|max_dist
@@ -45751,7 +45773,6 @@ name|x
 operator|-
 name|maxR
 operator|)
-operator|*
 name|R_SCALE
 expr_stmt|;
 name|min_dist
@@ -45767,7 +45788,6 @@ name|x
 operator|-
 name|minR
 operator|)
-operator|*
 name|R_SCALE
 expr_stmt|;
 name|max_dist
@@ -45798,7 +45818,6 @@ name|x
 operator|-
 name|maxR
 operator|)
-operator|*
 name|R_SCALE
 expr_stmt|;
 name|max_dist
@@ -45817,7 +45836,6 @@ name|x
 operator|-
 name|minR
 operator|)
-operator|*
 name|R_SCALE
 expr_stmt|;
 name|max_dist
@@ -45853,7 +45871,6 @@ name|x
 operator|-
 name|minG
 operator|)
-operator|*
 name|G_SCALE
 expr_stmt|;
 name|min_dist
@@ -45869,7 +45886,6 @@ name|x
 operator|-
 name|maxG
 operator|)
-operator|*
 name|G_SCALE
 expr_stmt|;
 name|max_dist
@@ -45894,7 +45910,6 @@ name|x
 operator|-
 name|maxG
 operator|)
-operator|*
 name|G_SCALE
 expr_stmt|;
 name|min_dist
@@ -45910,7 +45925,6 @@ name|x
 operator|-
 name|minG
 operator|)
-operator|*
 name|G_SCALE
 expr_stmt|;
 name|max_dist
@@ -45937,7 +45951,6 @@ name|x
 operator|-
 name|maxG
 operator|)
-operator|*
 name|G_SCALE
 expr_stmt|;
 name|max_dist
@@ -45956,7 +45969,6 @@ name|x
 operator|-
 name|minG
 operator|)
-operator|*
 name|G_SCALE
 expr_stmt|;
 name|max_dist
@@ -45992,7 +46004,6 @@ name|x
 operator|-
 name|minB
 operator|)
-operator|*
 name|B_SCALE
 expr_stmt|;
 name|min_dist
@@ -46008,7 +46019,6 @@ name|x
 operator|-
 name|maxB
 operator|)
-operator|*
 name|B_SCALE
 expr_stmt|;
 name|max_dist
@@ -46033,7 +46043,6 @@ name|x
 operator|-
 name|maxB
 operator|)
-operator|*
 name|B_SCALE
 expr_stmt|;
 name|min_dist
@@ -46049,7 +46058,6 @@ name|x
 operator|-
 name|minB
 operator|)
-operator|*
 name|B_SCALE
 expr_stmt|;
 name|max_dist
@@ -46076,7 +46084,6 @@ name|x
 operator|-
 name|maxB
 operator|)
-operator|*
 name|B_SCALE
 expr_stmt|;
 name|max_dist
@@ -46095,7 +46102,6 @@ name|x
 operator|-
 name|minB
 operator|)
-operator|*
 name|B_SCALE
 expr_stmt|;
 name|max_dist
@@ -46296,17 +46302,17 @@ DECL|macro|STEP_R
 define|#
 directive|define
 name|STEP_R
-value|((1<< R_SHIFT) * R_SCALE)
+value|((1<< R_SHIFT) R_SCALE)
 DECL|macro|STEP_G
 define|#
 directive|define
 name|STEP_G
-value|((1<< G_SHIFT) * G_SCALE)
+value|((1<< G_SHIFT) G_SCALE)
 DECL|macro|STEP_B
 define|#
 directive|define
 name|STEP_B
-value|((1<< B_SHIFT) * B_SCALE)
+value|((1<< B_SHIFT) B_SCALE)
 for|for
 control|(
 name|i
@@ -46343,7 +46349,6 @@ index|]
 operator|.
 name|red
 operator|)
-operator|*
 name|R_SCALE
 expr_stmt|;
 name|dist0
@@ -46366,7 +46371,6 @@ index|]
 operator|.
 name|green
 operator|)
-operator|*
 name|G_SCALE
 expr_stmt|;
 name|dist0
@@ -46389,7 +46393,6 @@ index|]
 operator|.
 name|blue
 operator|)
-operator|*
 name|B_SCALE
 expr_stmt|;
 name|dist0
@@ -46404,9 +46407,9 @@ operator|=
 name|inR
 operator|*
 operator|(
-literal|2
-operator|*
 name|STEP_R
+operator|<<
+literal|1
 operator|)
 operator|+
 name|STEP_R
@@ -46418,9 +46421,9 @@ operator|=
 name|inG
 operator|*
 operator|(
-literal|2
-operator|*
 name|STEP_G
+operator|<<
+literal|1
 operator|)
 operator|+
 name|STEP_G
@@ -46432,9 +46435,9 @@ operator|=
 name|inB
 operator|*
 operator|(
-literal|2
-operator|*
 name|STEP_B
+operator|<<
+literal|1
 operator|)
 operator|+
 name|STEP_B
@@ -46543,9 +46546,11 @@ name|xx2
 expr_stmt|;
 name|xx2
 operator|+=
-literal|2
-operator|*
+operator|(
 name|STEP_B
+operator|<<
+literal|1
+operator|)
 operator|*
 name|STEP_B
 expr_stmt|;
@@ -46562,9 +46567,11 @@ name|xx1
 expr_stmt|;
 name|xx1
 operator|+=
-literal|2
-operator|*
+operator|(
 name|STEP_G
+operator|<<
+literal|1
+operator|)
 operator|*
 name|STEP_G
 expr_stmt|;
@@ -46575,9 +46582,11 @@ name|xx0
 expr_stmt|;
 name|xx0
 operator|+=
-literal|2
-operator|*
+operator|(
 name|STEP_R
+operator|<<
+literal|1
+operator|)
 operator|*
 name|STEP_R
 expr_stmt|;
@@ -49159,9 +49168,11 @@ operator|=
 operator|(
 name|re
 operator|*
+operator|(
 name|dmval
-operator|*
-literal|2
+operator|<<
+literal|1
+operator|)
 operator|)
 operator|/
 literal|63
@@ -49171,9 +49182,11 @@ operator|=
 operator|(
 name|ge
 operator|*
+operator|(
 name|dmval
-operator|*
-literal|2
+operator|<<
+literal|1
+operator|)
 operator|)
 operator|/
 literal|63
@@ -49183,9 +49196,11 @@ operator|=
 operator|(
 name|be
 operator|*
+operator|(
 name|dmval
-operator|*
-literal|2
+operator|<<
+literal|1
+operator|)
 operator|)
 operator|/
 literal|63

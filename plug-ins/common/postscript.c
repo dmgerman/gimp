@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  */
+comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  * V 1.10, PK, 13-Mar-2000: For load EPSF, allow negative Bounding Box Values  *                          Save PS: dont start lines of image data with %%  *                          to prevent problems with stupid PostScript  *                          analyzer programs (Stanislav Brabec)  */
 end_comment
 
 begin_define
@@ -22,7 +22,7 @@ name|char
 name|dversio
 index|[]
 init|=
-literal|"v1.09  15-Feb-2000"
+literal|"v1.10  13-Mar-2000"
 decl_stmt|;
 end_decl_stmt
 
@@ -33,7 +33,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP PostScript/PDF file-plugin v1.09  15-Feb-2000"
+literal|"@(#) GIMP PostScript/PDF file-plugin v1.10  13-Mar-2000"
 decl_stmt|;
 end_decl_stmt
 
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ded0750108
+DECL|struct|__anon2b0663030108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ded0750208
+DECL|struct|__anon2b0663030208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ded0750308
+DECL|struct|__anon2b0663030308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ded0750408
+DECL|struct|__anon2b0663030408
 block|{
 DECL|member|run
 name|gint
@@ -350,7 +350,7 @@ comment|/* Unit is mm */
 literal|1
 block|,
 comment|/* Keep edge ratio */
-literal|0
+literal|90
 block|,
 comment|/* Rotate */
 literal|2
@@ -864,7 +864,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ded0750508
+DECL|struct|__anon2b0663030508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1060,6 +1060,12 @@ operator|==
 literal|0
 operator|)
 decl_stmt|;
+specifier|static
+name|int
+name|max_linewidth
+init|=
+literal|75
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -1104,6 +1110,25 @@ literal|4
 operator|)
 condition|)
 block|{
+if|if
+condition|(
+name|ascii85_linewidth
+operator|>=
+name|max_linewidth
+condition|)
+block|{
+name|putc
+argument_list|(
+literal|'\n'
+argument_list|,
+name|ofp
+argument_list|)
+expr_stmt|;
+name|ascii85_linewidth
+operator|=
+literal|0
+expr_stmt|;
+block|}
 name|putc
 argument_list|(
 literal|'z'
@@ -1117,12 +1142,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|ascii85_linewidth
-operator|+=
-name|ascii85_len
-operator|+
-literal|1
-expr_stmt|;
 for|for
 control|(
 name|i
@@ -1138,22 +1157,23 @@ condition|;
 name|i
 operator|++
 control|)
-name|putc
-argument_list|(
+block|{
+if|if
+condition|(
+operator|(
+name|ascii85_linewidth
+operator|>=
+name|max_linewidth
+operator|)
+operator|&&
+operator|(
 name|c
 index|[
 name|i
 index|]
-argument_list|,
-name|ofp
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|ascii85_linewidth
-operator|>=
-literal|75
+operator|!=
+literal|'%'
+operator|)
 condition|)
 block|{
 name|putc
@@ -1167,6 +1187,21 @@ name|ascii85_linewidth
 operator|=
 literal|0
 expr_stmt|;
+block|}
+name|putc
+argument_list|(
+name|c
+index|[
+name|i
+index|]
+argument_list|,
+name|ofp
+argument_list|)
+expr_stmt|;
+name|ascii85_linewidth
+operator|++
+expr_stmt|;
+block|}
 block|}
 name|ascii85_len
 operator|=
@@ -2195,13 +2230,13 @@ condition|(
 operator|(
 name|xres
 operator|<
-name|GIMP_MIN_RESOLUTION
+literal|1e-5
 operator|)
 operator|||
 operator|(
 name|yres
 operator|<
-name|GIMP_MIN_RESOLUTION
+literal|1e-5
 operator|)
 condition|)
 block|{
@@ -5253,6 +5288,15 @@ decl_stmt|,
 name|y1
 decl_stmt|;
 name|int
+name|offx
+init|=
+literal|0
+decl_stmt|,
+name|offy
+init|=
+literal|0
+decl_stmt|;
+name|int
 name|is_pdf
 decl_stmt|;
 name|char
@@ -5267,6 +5311,12 @@ literal|64
 index|]
 decl_stmt|,
 name|geometry
+index|[
+literal|32
+index|]
+decl_stmt|;
+name|char
+name|offset
 index|[
 literal|32
 index|]
@@ -5499,7 +5549,6 @@ comment|/* Try the BoundingBox ? */
 block|{
 if|if
 condition|(
-operator|(
 name|get_bbox
 argument_list|(
 name|filename
@@ -5518,8 +5567,44 @@ name|y1
 argument_list|)
 operator|==
 literal|0
-operator|)
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
+operator|*
+name|is_epsf
+condition|)
+comment|/* Handle negative BoundingBox for EPSF */
+block|{
+name|offx
+operator|=
+operator|-
+name|x0
+expr_stmt|;
+name|x1
+operator|+=
+name|offx
+expr_stmt|;
+name|x0
+operator|+=
+name|offx
+expr_stmt|;
+name|offy
+operator|=
+operator|-
+name|y0
+expr_stmt|;
+name|y1
+operator|+=
+name|offy
+expr_stmt|;
+name|y0
+operator|+=
+name|offy
+expr_stmt|;
+block|}
+if|if
+condition|(
 operator|(
 name|x0
 operator|>=
@@ -5631,6 +5716,7 @@ name|ury
 operator|+
 literal|1
 expr_stmt|;
+block|}
 block|}
 block|}
 if|if
@@ -5788,6 +5874,39 @@ index|]
 operator|=
 literal|'\0'
 expr_stmt|;
+name|offset
+index|[
+literal|0
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
+comment|/* Offset command for gs to get image part with negative x/y-coord. */
+if|if
+condition|(
+operator|(
+name|offx
+operator|!=
+literal|0
+operator|)
+operator|||
+operator|(
+name|offy
+operator|!=
+literal|0
+operator|)
+condition|)
+name|sprintf
+argument_list|(
+name|offset
+argument_list|,
+literal|"-c %d %d translate -- "
+argument_list|,
+name|offx
+argument_list|,
+name|offy
+argument_list|)
+expr_stmt|;
 comment|/* Antialiasing not available for PBM-device */
 if|if
 condition|(
@@ -5874,7 +5993,7 @@ name|cmd
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s -sDEVICE=%s -r%d %s%s%s-q -dNOPAUSE %s \ -sOutputFile=%s %s %s-c quit"
+literal|"%s -sDEVICE=%s -r%d %s%s%s-q -dNOPAUSE %s \ -sOutputFile=%s %s%s %s-c quit"
 argument_list|,
 name|gs
 argument_list|,
@@ -5891,6 +6010,8 @@ argument_list|,
 name|gs_opts
 argument_list|,
 name|pnmfile
+argument_list|,
+name|offset
 argument_list|,
 name|filename
 argument_list|,
@@ -14076,9 +14197,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -14610,7 +14731,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_end
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
