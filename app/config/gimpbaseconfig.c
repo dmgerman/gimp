@@ -30,6 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-params.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpconfig-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbaseconfig.h"
 end_include
 
@@ -94,7 +106,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aed59430103
+DECL|enum|__anon2c2ba0840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -381,7 +393,7 @@ name|object_class
 argument_list|,
 name|PROP_TILE_CACHE_SIZE
 argument_list|,
-name|g_param_spec_uint
+name|gimp_param_spec_memsize
 argument_list|(
 literal|"tile-cache-size"
 argument_list|,
@@ -391,7 +403,7 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXINT
+name|G_MAXUINT
 argument_list|,
 literal|1
 operator|<<
