@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7b8e20108
+DECL|struct|__anon2abd56b10108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7b8e20208
+DECL|struct|__anon2abd56b10208
 block|{
 DECL|member|r
 name|guchar
@@ -1037,7 +1037,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -2329,7 +2332,10 @@ argument_list|(
 literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

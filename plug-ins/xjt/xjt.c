@@ -243,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2800cc030103
+DECL|enum|__anon2bb7d6980103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2800cc030203
+DECL|enum|__anon2bb7d6980203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -503,7 +503,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2800cc030303
+DECL|enum|__anon2bb7d6980303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2800cc030403
+DECL|enum|__anon2bb7d6980403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2800cc030503
+DECL|enum|__anon2bb7d6980503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2800cc030603
+DECL|enum|__anon2bb7d6980603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -610,7 +610,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2800cc030703
+DECL|enum|__anon2bb7d6980703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800cc030808
+DECL|struct|__anon2bb7d6980808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -771,7 +771,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800cc030908
+DECL|struct|__anon2bb7d6980908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -820,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800cc030a08
+DECL|struct|__anon2bb7d6980a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800cc030b08
+DECL|struct|__anon2bb7d6980b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -907,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800cc030c08
+DECL|struct|__anon2bb7d6980c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -981,7 +981,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800cc030d08
+DECL|struct|__anon2bb7d6980d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1066,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800cc030e08
+DECL|struct|__anon2bb7d6980e08
 block|{
 DECL|member|position
 name|gint32
@@ -1090,7 +1090,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800cc030f08
+DECL|struct|__anon2bb7d6980f08
 block|{
 DECL|member|version
 name|gchar
@@ -7443,7 +7443,10 @@ argument_list|(
 literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -14189,7 +14192,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

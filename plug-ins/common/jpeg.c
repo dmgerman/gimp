@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29696df50108
+DECL|struct|__anon2ae247360108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29696df50208
+DECL|struct|__anon2ae247360208
 block|{
 DECL|member|cinfo
 name|struct
@@ -4633,7 +4633,10 @@ argument_list|(
 literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

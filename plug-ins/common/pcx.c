@@ -1049,7 +1049,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28ac56be0108
+DECL|struct|__anon27cd858f0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -2557,7 +2557,10 @@ argument_list|(
 literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

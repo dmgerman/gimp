@@ -515,7 +515,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

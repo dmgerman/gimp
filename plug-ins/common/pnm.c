@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f7f2d0108
+DECL|struct|__anon27e0af0c0108
 block|{
 DECL|member|raw
 name|gint
@@ -3841,7 +3841,10 @@ argument_list|(
 literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

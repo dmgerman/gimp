@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fe0d6b0108
+DECL|struct|__anon28b5669a0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fe0d6b0208
+DECL|struct|__anon28b5669a0208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fe0d6b0308
+DECL|struct|__anon28b5669a0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1862,7 +1862,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
