@@ -50,14 +50,14 @@ end_include
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|CPP
+name|CPP_PROGRAM
 end_ifndef
 
 begin_define
-DECL|macro|CPP
+DECL|macro|CPP_PROGRAM
 define|#
 directive|define
-name|CPP
+name|CPP_PROGRAM
 value|"cpp"
 end_define
 
@@ -460,7 +460,7 @@ name|cpp_cmd
 operator|=
 name|g_string_new
 argument_list|(
-name|CPP
+name|CPP_PROGRAM
 argument_list|)
 expr_stmt|;
 name|yydebug
