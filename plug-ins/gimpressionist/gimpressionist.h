@@ -23,25 +23,6 @@ name|HELP_ID
 value|"plug-in-gimppressionist"
 end_define
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|DEFAULTPATH
-end_ifndef
-
-begin_define
-DECL|macro|DEFAULTPATH
-define|#
-directive|define
-name|DEFAULTPATH
-value|"~/.gimp/gimpressionist:/usr/local/share/gimp/gimpressionist"
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|PREVIEWSIZE
 define|#
@@ -136,9 +117,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c4198450108
 typedef|typedef
 struct|struct
+DECL|struct|__anon27deb4780108
 block|{
 DECL|member|orientnum
 name|int
@@ -200,14 +181,14 @@ DECL|member|selectedbrush
 name|char
 name|selectedbrush
 index|[
-literal|100
+literal|200
 index|]
 decl_stmt|;
 DECL|member|selectedpaper
 name|char
 name|selectedpaper
 index|[
-literal|100
+literal|200
 index|]
 decl_stmt|;
 DECL|member|color
