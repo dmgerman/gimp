@@ -39,6 +39,14 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|LIBGIMP_DOMAIN
+define|#
+directive|define
+name|LIBGIMP_DOMAIN
+value|GETTEXT_PACKAGE "-libgimp"
+end_define
+
 begin_decl_stmt
 DECL|variable|gimp_stock_factory
 specifier|static
@@ -239,7 +247,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -254,7 +262,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -269,7 +277,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -284,7 +292,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -299,7 +307,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -314,7 +322,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -329,7 +337,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -344,7 +352,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -356,7 +364,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -368,7 +376,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -380,7 +388,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -392,7 +400,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -404,7 +412,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -416,7 +424,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -428,7 +436,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -440,7 +448,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -452,7 +460,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -464,7 +472,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -476,7 +484,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -488,7 +496,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -500,7 +508,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -512,7 +520,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -524,7 +532,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -536,7 +544,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -548,7 +556,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -560,7 +568,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -572,7 +580,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -584,7 +592,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -596,7 +604,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -608,7 +616,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -620,7 +628,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -632,7 +640,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -644,7 +652,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -656,7 +664,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -668,7 +676,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -683,7 +691,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -698,7 +706,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -710,7 +718,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -722,7 +730,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -734,7 +742,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -746,7 +754,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -758,7 +766,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -773,7 +781,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -788,7 +796,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -800,7 +808,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -812,7 +820,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -824,7 +832,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -836,7 +844,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -848,7 +856,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -860,7 +868,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -872,7 +880,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -884,7 +892,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -896,7 +904,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -908,7 +916,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -920,7 +928,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -932,7 +940,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -944,7 +952,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -956,7 +964,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -968,7 +976,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -980,7 +988,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -992,7 +1000,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1007,7 +1015,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1019,7 +1027,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1031,7 +1039,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1043,7 +1051,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1055,7 +1063,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1067,7 +1075,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1079,7 +1087,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1091,7 +1099,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1103,7 +1111,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1115,7 +1123,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1127,7 +1135,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1139,7 +1147,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1151,7 +1159,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1163,7 +1171,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1175,7 +1183,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1187,7 +1195,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1199,7 +1207,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1211,7 +1219,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1226,7 +1234,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1238,7 +1246,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1250,7 +1258,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1265,7 +1273,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1280,7 +1288,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1295,7 +1303,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1307,7 +1315,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1319,7 +1327,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1331,7 +1339,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
@@ -1343,7 +1351,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"gimp14-libgimp"
+name|LIBGIMP_DOMAIN
 block|}
 block|}
 decl_stmt|;
@@ -1352,7 +1360,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27df96e40108
+DECL|struct|__anon2c1cf9960108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1778,7 +1786,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27df96e40208
+DECL|struct|__anon2c1cf9960208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1958,7 +1966,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27df96e40308
+DECL|struct|__anon2c1cf9960308
 block|{
 DECL|member|stock_id
 specifier|const

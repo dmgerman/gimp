@@ -163,15 +163,7 @@ DECL|macro|STD_PLUGINS_DOMAIN
 define|#
 directive|define
 name|STD_PLUGINS_DOMAIN
-value|"gimp14-std-plug-ins"
-end_define
-
-begin_define
-DECL|macro|SCRIPT_FU_DOMAIN
-define|#
-directive|define
-name|SCRIPT_FU_DOMAIN
-value|"gimp14-script-fu"
+value|GETTEXT_PACKAGE "-std-plug-ins"
 end_define
 
 begin_typedef

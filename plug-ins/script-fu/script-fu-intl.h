@@ -16,6 +16,23 @@ directive|define
 name|__SCRIPT_FU_INTL_H__
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GETTEXT_PACKAGE
+end_ifndef
+
+begin_error
+error|#
+directive|error
+literal|"config.h must be included prior to script-fu-intl.h"
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
