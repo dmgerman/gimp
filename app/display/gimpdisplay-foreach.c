@@ -57,12 +57,6 @@ directive|include
 file|"gimpdisplayshell.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
-end_include
-
 begin_function
 name|gboolean
 DECL|function|gimp_displays_dirty (Gimp * gimp)
@@ -93,7 +87,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|displays
 argument_list|)
@@ -229,13 +223,25 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|the_gimp
+name|gimage
+operator|->
+name|gimp
 operator|->
 name|displays
 argument_list|)
