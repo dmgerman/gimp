@@ -60902,7 +60902,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43ebb80108
+DECL|struct|__anon290ad97b0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -60925,7 +60925,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43ebb80208
+DECL|struct|__anon290ad97b0208
 block|{
 DECL|member|run
 name|gint
@@ -62533,15 +62533,10 @@ expr_stmt|;
 block|}
 block|}
 comment|/* redraw preview widget */
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|preview
-argument_list|,
-name|NULL
 argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
 expr_stmt|;
 block|}
 end_function
