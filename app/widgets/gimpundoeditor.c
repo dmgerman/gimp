@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b535c340103
+DECL|enum|__anon28b4fe6f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -900,24 +900,20 @@ name|editor
 operator|->
 name|base_item
 operator|=
-name|gimp_undo_new
+name|g_object_new
 argument_list|(
+name|GIMP_TYPE_UNDO
+argument_list|,
+literal|"image"
+argument_list|,
 name|gimage
 argument_list|,
-name|GIMP_UNDO_GROUP_NONE
+literal|"name"
 argument_list|,
 name|_
 argument_list|(
 literal|"[ Base Image ]"
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-literal|0
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
