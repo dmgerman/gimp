@@ -193,9 +193,13 @@ name|dest_height
 expr_stmt|;
 name|area
 operator|=
+operator|(
 name|fx0
 operator|*
 name|fy0
+operator|)
+operator|>>
+literal|8
 expr_stmt|;
 name|x
 operator|=
@@ -289,6 +293,7 @@ condition|)
 block|{
 name|value
 operator|+=
+operator|(
 name|dx
 operator|*
 name|dy
@@ -301,6 +306,9 @@ name|src_width
 operator|*
 name|y
 index|]
+operator|)
+operator|>>
+literal|8
 expr_stmt|;
 name|x
 operator|++
@@ -323,8 +331,6 @@ condition|)
 block|{
 name|value
 operator|+=
-literal|256
-operator|*
 name|dy
 operator|*
 name|src
@@ -363,6 +369,8 @@ name|src_width
 operator|*
 name|y
 index|]
+operator|>>
+literal|8
 expr_stmt|;
 name|dx
 operator|=
@@ -411,8 +419,6 @@ name|value
 operator|+=
 name|dx
 operator|*
-literal|256
-operator|*
 name|src
 index|[
 name|x
@@ -445,8 +451,6 @@ name|value
 operator|+=
 literal|256
 operator|*
-literal|256
-operator|*
 name|src
 index|[
 name|x
@@ -472,8 +476,6 @@ block|{
 name|value
 operator|+=
 name|fx
-operator|*
-literal|256
 operator|*
 name|src
 index|[
@@ -523,6 +525,7 @@ condition|)
 block|{
 name|value
 operator|+=
+operator|(
 name|dx
 operator|*
 name|fy
@@ -535,6 +538,9 @@ name|src_width
 operator|*
 name|y
 index|]
+operator|)
+operator|>>
+literal|8
 expr_stmt|;
 name|x
 operator|++
@@ -557,8 +563,6 @@ condition|)
 block|{
 name|value
 operator|+=
-literal|256
-operator|*
 name|fy
 operator|*
 name|src
@@ -585,6 +589,7 @@ condition|)
 block|{
 name|value
 operator|+=
+operator|(
 name|fx
 operator|*
 name|fy
@@ -597,6 +602,9 @@ name|src_width
 operator|*
 name|y
 index|]
+operator|)
+operator|>>
+literal|8
 expr_stmt|;
 name|dx
 operator|=
@@ -858,9 +866,13 @@ name|dest_height
 expr_stmt|;
 name|area
 operator|=
+operator|(
 name|fx0
 operator|*
 name|fy0
+operator|)
+operator|>>
+literal|8
 expr_stmt|;
 name|x
 operator|=
@@ -971,9 +983,13 @@ condition|)
 block|{
 name|factor
 operator|=
+operator|(
 name|dx
 operator|*
 name|dy
+operator|)
+operator|>>
+literal|8
 expr_stmt|;
 name|src_ptr
 operator|=
@@ -1019,8 +1035,6 @@ condition|)
 block|{
 name|factor
 operator|=
-literal|256
-operator|*
 name|dy
 expr_stmt|;
 name|src_ptr
@@ -1061,9 +1075,13 @@ condition|)
 block|{
 name|factor
 operator|=
+operator|(
 name|fx
 operator|*
 name|dy
+operator|)
+operator|>>
+literal|8
 expr_stmt|;
 name|src_ptr
 operator|=
@@ -1134,8 +1152,6 @@ block|{
 name|factor
 operator|=
 name|dx
-operator|*
-literal|256
 expr_stmt|;
 name|src_ptr
 operator|=
@@ -1182,8 +1198,6 @@ block|{
 name|factor
 operator|=
 literal|256
-operator|*
-literal|256
 expr_stmt|;
 name|src_ptr
 operator|=
@@ -1224,8 +1238,6 @@ block|{
 name|factor
 operator|=
 name|fx
-operator|*
-literal|256
 expr_stmt|;
 name|src_ptr
 operator|=
@@ -1289,9 +1301,13 @@ condition|)
 block|{
 name|factor
 operator|=
+operator|(
 name|dx
 operator|*
 name|fy
+operator|)
+operator|>>
+literal|8
 expr_stmt|;
 name|src_ptr
 operator|=
@@ -1337,8 +1353,6 @@ condition|)
 block|{
 name|factor
 operator|=
-literal|256
-operator|*
 name|fy
 expr_stmt|;
 name|src_ptr
@@ -1379,9 +1393,13 @@ condition|)
 block|{
 name|factor
 operator|=
+operator|(
 name|fx
 operator|*
 name|fy
+operator|)
+operator|>>
+literal|8
 expr_stmt|;
 name|src_ptr
 operator|=
