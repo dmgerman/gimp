@@ -31,11 +31,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -69,6 +80,42 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_define
+DECL|macro|STRICT
+define|#
+directive|define
+name|STRICT
+end_define
+
+begin_include
+include|#
+directive|include
+file|<windows.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<shellapi.h>
+end_include
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_include
+include|#
+directive|include
 file|<X11/X.h>
 end_include
 
@@ -94,11 +141,10 @@ begin_comment
 comment|/* for XmuClientWindow() */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -266,6 +312,29 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+end_ifndef
+
+begin_function_decl
+specifier|static
+name|gint
+name|mozilla_remote
+parameter_list|(
+name|gchar
+modifier|*
+name|command
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function_decl
 specifier|static
 name|gint
@@ -277,18 +346,6 @@ name|url
 parameter_list|,
 name|gint
 name|new_window
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
-name|mozilla_remote
-parameter_list|(
-name|gchar
-modifier|*
-name|command
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -318,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba88e6d0108
+DECL|struct|__anon2a4072fa0108
 block|{
 DECL|member|url
 name|gchar
@@ -748,6 +805,26 @@ modifier|*
 name|url
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|ShellExecute
+argument_list|(
+name|HWND_DESKTOP
+argument_list|,
+literal|"open"
+argument_list|,
+name|url
+argument_list|,
+name|NULL
+argument_list|,
+literal|"C:\\"
+argument_list|,
+name|SW_SHOWNORMAL
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 ifndef|#
 directive|ifndef
 name|__EMX__
@@ -813,6 +890,9 @@ operator|)
 return|;
 endif|#
 directive|endif
+endif|#
+directive|endif
+comment|/* !G_OS_WIN32 */
 block|}
 end_function
 
@@ -847,6 +927,9 @@ condition|)
 operator|++
 name|url
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|sprintf
 argument_list|(
 name|buf
@@ -874,6 +957,8 @@ operator|(
 name|TRUE
 operator|)
 return|;
+endif|#
+directive|endif
 return|return
 operator|(
 name|start_browser
@@ -1567,6 +1652,12 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+end_ifndef
 
 begin_comment
 comment|/* -*- Mode:C; tab-width: 8 -*-  * remote.c --- remote control of Netscape Navigator for Unix.  * version 1.1.3, for Netscape Navigator 1.1 and newer.  *  * Copyright © 1996 Netscape Communications Corporation, all rights reserved.  * Created: Jamie Zawinski<jwz@netscape.com>, 24-Dec-94.  *  * Permission to use, copy, modify, distribute, and sell this software and its  * documentation for any purpose is hereby granted without fee, provided that  * the above copyright notice appear in all copies and that both that  * copyright notice and this permission notice appear in supporting  * documentation.  No representations are made about the suitability of this  * software for any purpose.  It is provided "as is" without express or   * implied warranty.  *  * To compile:  *  *    cc -o netscape-remote remote.c -DSTANDALONE -lXmu -lX11  *  * To use:  *  *    netscape-remote -help  *  * Documentation for the protocol which this code implements may be found at:  *  *    http://home.netscape.com/newsref/std/x-remote.html  *  * Bugs and commentary to x_cbug@netscape.com.  */
@@ -3913,6 +4004,15 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* !G_OS_WIN32 */
+end_comment
 
 end_unit
 
