@@ -2152,6 +2152,7 @@ literal|4
 operator|)
 argument_list|)
 expr_stmt|;
+comment|/* we offset all coordinates by 0.5 to align the brush with the path */
 name|stroke_points
 index|[
 name|cpnt
@@ -2170,6 +2171,8 @@ operator|.
 name|x1
 operator|-
 name|offx
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|stroke_points
@@ -2190,6 +2193,8 @@ operator|.
 name|y1
 operator|-
 name|offy
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 for|for
@@ -2269,6 +2274,8 @@ operator|.
 name|x2
 operator|-
 name|offx
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|stroke_points
@@ -2289,13 +2296,15 @@ operator|.
 name|y2
 operator|-
 name|offy
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|seg
 operator|++
 expr_stmt|;
 block|}
-comment|/* Close the stroke poitns up */
+comment|/* Close the stroke points up */
 name|stroke_points
 index|[
 name|cpnt
@@ -2410,6 +2419,8 @@ operator|.
 name|x1
 operator|-
 name|offx
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|stroke_points
@@ -2430,6 +2441,8 @@ operator|.
 name|y1
 operator|-
 name|offy
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
