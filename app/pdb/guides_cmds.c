@@ -259,7 +259,7 @@ expr_stmt|;
 if|if
 condition|(
 name|offset
-operator|<=
+operator|<
 literal|0
 condition|)
 name|success
@@ -516,7 +516,7 @@ expr_stmt|;
 if|if
 condition|(
 name|offset
-operator|<=
+operator|<
 literal|0
 condition|)
 name|success
