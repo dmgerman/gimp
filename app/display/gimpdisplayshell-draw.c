@@ -294,7 +294,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274b018d0103
+DECL|enum|__anon28e8b3b80103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5548,14 +5548,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Toggle Selection"
+literal|"/View/Show Selection"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"/View/Toggle Selection"
+literal|"/View/Show Selection"
 argument_list|,
 name|gdisp
 operator|&&
@@ -5569,14 +5569,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Toggle Layer Boundary"
+literal|"/View/Show Layer Boundary"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"/View/Toggle Layer Boundary"
+literal|"/View/Show Layer Boundary"
 argument_list|,
 name|gdisp
 operator|&&
@@ -5590,14 +5590,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Toggle Guides"
+literal|"/View/Show Guides"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"/View/Toggle Guides"
+literal|"/View/Show Guides"
 argument_list|,
 name|gdisp
 operator|&&
@@ -5626,14 +5626,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Toggle Menubar"
+literal|"/View/Show Menubar"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"/View/Toggle Menubar"
+literal|"/View/Show Menubar"
 argument_list|,
 name|gdisp
 operator|&&
@@ -5652,14 +5652,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Toggle Rulers"
+literal|"/View/Show Rulers"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"/View/Toggle Rulers"
+literal|"/View/Show Rulers"
 argument_list|,
 name|gdisp
 operator|&&
@@ -5673,14 +5673,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Toggle Statusbar"
+literal|"/View/Show Statusbar"
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"/View/Toggle Statusbar"
+literal|"/View/Show Statusbar"
 argument_list|,
 name|gdisp
 operator|&&

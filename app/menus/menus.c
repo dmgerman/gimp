@@ -2723,7 +2723,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Toggle Selection"
+literal|"/View/Show Selection"
 argument_list|)
 block|,
 literal|"<control>T"
@@ -2746,7 +2746,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Toggle Layer Boundary"
+literal|"/View/Show Layer Boundary"
 argument_list|)
 block|,
 name|NULL
@@ -2769,7 +2769,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Toggle Guides"
+literal|"/View/Show Guides"
 argument_list|)
 block|,
 literal|"<control><shift>T"
@@ -2820,7 +2820,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Toggle Menubar"
+literal|"/View/Show Menubar"
 argument_list|)
 block|,
 name|NULL
@@ -2843,7 +2843,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Toggle Rulers"
+literal|"/View/Show Rulers"
 argument_list|)
 block|,
 literal|"<control><shift>R"
@@ -2866,7 +2866,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Toggle Statusbar"
+literal|"/View/Show Statusbar"
 argument_list|)
 block|,
 name|NULL
