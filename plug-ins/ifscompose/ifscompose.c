@@ -96,7 +96,7 @@ value|10
 end_define
 
 begin_typedef
-DECL|enum|__anon28cbf0110103
+DECL|enum|__anon29d124eb0103
 typedef|typedef
 enum|enum
 block|{
@@ -116,7 +116,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28cbf0110203
+DECL|enum|__anon29d124eb0203
 typedef|typedef
 enum|enum
 block|{
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbf0110308
+DECL|struct|__anon29d124eb0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -155,7 +155,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon28cbf011040a
+DECL|union|__anon29d124eb040a
 union|union
 block|{
 DECL|member|d
@@ -185,7 +185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbf0110508
+DECL|struct|__anon29d124eb0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbf0110608
+DECL|struct|__anon29d124eb0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbf0110708
+DECL|struct|__anon29d124eb0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -300,7 +300,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbf0110808
+DECL|struct|__anon29d124eb0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -367,7 +367,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbf0110908
+DECL|struct|__anon29d124eb0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbf0110a08
+DECL|struct|__anon29d124eb0a08
 block|{
 DECL|member|run
 name|gint
@@ -9040,7 +9040,7 @@ operator|->
 name|pixmap
 condition|)
 block|{
-name|gdk_pixmap_unref
+name|gdk_pixmap_destroy
 argument_list|(
 name|ifsDesign
 operator|->
