@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  ScreenShot plug-in v0.9   *  Sven Neumann, neumanns@uni-duesseldorf.de    *  1998/06/06  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
+comment|/*    *  ScreenShot plug-in v0.9.1   *  Sven Neumann, neumanns@uni-duesseldorf.de    *  1999/08/12  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  *  (98/06/04)  v0.8   added delay-time for root window shot  *  (98/06/06)  v0.9   fixed a stupid bug in the dialog  */
+comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  *  (98/06/04)  v0.8   added delay-time for root window shot  *  (98/06/06)  v0.9   fixed a stupid bug in the dialog  *  (99/08/12)  v0.9.1 somebody changed the dialog,  *                     unset the image name and set the resolution  */
 end_comment
 
 begin_include
@@ -89,7 +89,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v0.9 (98/06/06)"
+value|"v0.9.1 (99/08/12)"
 end_define
 
 begin_define
@@ -184,7 +184,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2b6927fb0108
+DECL|struct|__anon289511ee0108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6927fb0208
+DECL|struct|__anon289511ee0208
 typedef|typedef
 struct|struct
 block|{
@@ -895,6 +895,11 @@ literal|7
 index|]
 decl_stmt|;
 comment|/* only need a maximum of 7 arguments to xwd */
+name|gdouble
+name|xres
+decl_stmt|,
+name|yres
+decl_stmt|;
 name|gint
 name|pid
 decl_stmt|;
@@ -1186,10 +1191,102 @@ name|data
 operator|.
 name|d_image
 expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|params
+argument_list|,
+name|retvals
+argument_list|)
+expr_stmt|;
 comment|/* get rid of the tmpfile */
 name|unlink
 argument_list|(
 name|tmpname
+argument_list|)
+expr_stmt|;
+comment|/* figure out the monitor resolution and set the image to it */
+name|params
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_get_monitor_resolution"
+argument_list|,
+operator|&
+name|retvals
+argument_list|,
+name|PARAM_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|params
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+name|xres
+operator|=
+name|params
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+name|yres
+operator|=
+name|params
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+block|}
+else|else
+block|{
+name|xres
+operator|=
+literal|72.0
+expr_stmt|;
+name|yres
+operator|=
+literal|72.0
+expr_stmt|;
+block|}
+name|gimp_destroy_params
+argument_list|(
+name|params
+argument_list|,
+name|retvals
+argument_list|)
+expr_stmt|;
+name|gimp_image_set_resolution
+argument_list|(
+name|image_ID
+argument_list|,
+name|xres
+argument_list|,
+name|yres
+argument_list|)
+expr_stmt|;
+comment|/* unset the image filename */
+name|gimp_image_set_filename
+argument_list|(
+name|image_ID
+argument_list|,
+literal|""
 argument_list|)
 expr_stmt|;
 return|return;
