@@ -66,18 +66,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_view_renderer_drawable_init
-parameter_list|(
-name|GimpViewRendererDrawable
-modifier|*
-name|renderer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_view_renderer_drawable_render
 parameter_list|(
 name|GimpViewRenderer
@@ -158,11 +146,9 @@ block|,
 literal|0
 block|,
 comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_view_renderer_drawable_init
-block|,       }
+name|NULL
+comment|/* instance_init */
+block|}
 decl_stmt|;
 name|renderer_type
 operator|=
@@ -199,14 +185,12 @@ block|{
 name|GimpViewRendererClass
 modifier|*
 name|renderer_class
-decl_stmt|;
-name|renderer_class
-operator|=
+init|=
 name|GIMP_VIEW_RENDERER_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -221,19 +205,6 @@ operator|=
 name|gimp_view_renderer_drawable_render
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_view_renderer_drawable_init (GimpViewRendererDrawable * renderer)
-name|gimp_view_renderer_drawable_init
-parameter_list|(
-name|GimpViewRendererDrawable
-modifier|*
-name|renderer
-parameter_list|)
-block|{ }
 end_function
 
 begin_function

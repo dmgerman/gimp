@@ -174,14 +174,12 @@ block|{
 name|GimpViewRendererClass
 modifier|*
 name|renderer_class
-decl_stmt|;
-name|renderer_class
-operator|=
+init|=
 name|GIMP_VIEW_RENDERER_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
