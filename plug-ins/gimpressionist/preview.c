@@ -648,7 +648,7 @@ operator|*
 literal|3
 argument_list|)
 expr_stmt|;
-comment|//for(j = 0; j< p.width; j++)
+comment|/* for(j = 0; j< p.width; j++) */
 name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW

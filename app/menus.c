@@ -497,6 +497,19 @@ block|,
 block|{
 name|N_
 argument_list|(
+literal|"/File/Dialogs/Display Filters..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_display_filters_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
 literal|"/Xtns/tearoff1"
 argument_list|)
 block|,
@@ -2314,7 +2327,20 @@ name|dialogs_device_status_cmd_callback
 block|,
 literal|0
 block|}
-block|, }
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/Dialogs/Display Filters..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_display_filters_cmd_callback
+block|,
+literal|0
+block|}
+block|}
 decl_stmt|;
 end_decl_stmt
 

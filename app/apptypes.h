@@ -31,7 +31,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4cc70103
+DECL|enum|__anon297d1eb00103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4cc70203
+DECL|enum|__anon297d1eb00203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -92,7 +92,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4cc70303
+DECL|enum|__anon297d1eb00303
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4cc70403
+DECL|enum|__anon297d1eb00403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -186,7 +186,6 @@ block|,
 comment|/*< skip>*/
 DECL|enumerator|ANTI_ERASE_MODE
 name|ANTI_ERASE_MODE
-block|,
 comment|/*< skip>*/
 DECL|typedef|LayerModeEffects
 block|}
@@ -201,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4cc70503
+DECL|enum|__anon297d1eb00503
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -227,7 +226,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4cc70603
+DECL|enum|__anon297d1eb00603
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -253,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4cc70703
+DECL|enum|__anon297d1eb00703
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -272,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4cc70803
+DECL|enum|__anon297d1eb00803
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -289,7 +288,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2c2d4cc70903
+DECL|enum|__anon297d1eb00903
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -310,7 +309,7 @@ comment|/* gradient paint modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c2d4cc70a03
+DECL|enum|__anon297d1eb00a03
 typedef|typedef
 enum|enum
 block|{
@@ -332,7 +331,6 @@ block|,
 comment|/* keep paiting, looping though the grad start->end,end->start /\/\/\/  */
 DECL|enumerator|ONCE_END_COLOR
 name|ONCE_END_COLOR
-block|,
 comment|/* paint once, but keep painting with the end color */
 DECL|typedef|GradientPaintMode
 block|}
@@ -347,7 +345,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4cc70b03
+DECL|enum|__anon297d1eb00b03
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION

@@ -31,7 +31,7 @@ comment|/* Will be used to hopefully store in XCF format...  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278b86a50108
+DECL|struct|__anon278fdc2a0108
 typedef|typedef
 struct|struct
 block|{
@@ -58,7 +58,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278b86a50208
+DECL|struct|__anon278fdc2a0208
 typedef|typedef
 struct|struct
 block|{
@@ -106,7 +106,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278b86a50308
+DECL|struct|__anon278fdc2a0308
 typedef|typedef
 struct|struct
 block|{
@@ -149,7 +149,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon278b86a50403
+DECL|enum|__anon278fdc2a0403
 typedef|typedef
 enum|enum
 block|{
@@ -157,8 +157,8 @@ DECL|enumerator|BEZIER
 name|BEZIER
 init|=
 literal|1
-block|, }
 DECL|typedef|PathType
+block|}
 name|PathType
 typedef|;
 end_typedef
