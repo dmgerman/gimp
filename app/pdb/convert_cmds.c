@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"convert.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontainer.h"
 end_include
 
@@ -53,6 +47,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage-convert.h"
 end_include
 
 begin_include
@@ -184,7 +184,7 @@ name|RGB
 operator|)
 operator|)
 condition|)
-name|convert_image
+name|gimp_image_convert
 argument_list|(
 operator|(
 name|void
@@ -203,6 +203,8 @@ argument_list|,
 literal|1
 argument_list|,
 literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -338,7 +340,7 @@ name|GRAY
 operator|)
 operator|)
 condition|)
-name|convert_image
+name|gimp_image_convert
 argument_list|(
 operator|(
 name|void
@@ -357,6 +359,8 @@ argument_list|,
 literal|1
 argument_list|,
 literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -599,6 +603,12 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpPalette
+modifier|*
+name|palette
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -615,12 +625,6 @@ operator|)
 operator|)
 condition|)
 block|{
-name|GimpPalette
-modifier|*
-name|palette
-init|=
-name|NULL
-decl_stmt|;
 switch|switch
 condition|(
 name|dither_type
@@ -723,11 +727,6 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-else|else
-name|theCustomPalette
-operator|=
-name|palette
-expr_stmt|;
 break|break;
 default|default:
 name|success
@@ -740,7 +739,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|convert_image
+name|gimp_image_convert
 argument_list|(
 operator|(
 name|void
@@ -759,6 +758,8 @@ argument_list|,
 name|remove_unused
 argument_list|,
 name|palette_type
+argument_list|,
+name|palette
 argument_list|)
 expr_stmt|;
 block|}

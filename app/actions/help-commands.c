@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"convert-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"errorconsole.h"
 end_include
 
@@ -109,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"convert.h"
 end_include
 
 begin_include
@@ -795,7 +795,7 @@ name|global_edit_paste
 argument_list|(
 name|gdisp
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -827,7 +827,7 @@ name|global_edit_paste
 argument_list|(
 name|gdisp
 argument_list|,
-literal|1
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

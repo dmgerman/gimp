@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CONVERT_H__
+name|__GIMP_IMAGE_CONVERT_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CONVERT_H__
+DECL|macro|__GIMP_IMAGE_CONVERT_H__
 define|#
 directive|define
-name|__CONVERT_H__
+name|__GIMP_IMAGE_CONVERT_H__
 end_define
 
 begin_comment
@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29654d1e0103
+DECL|enum|__anon2c3b214d0103
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29654d1e0203
+DECL|enum|__anon2c3b214d0203
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -103,46 +103,9 @@ name|MAXNUMCOLORS
 value|256
 end_define
 
-begin_comment
-comment|/*  convert functions  */
-end_comment
-
 begin_function_decl
 name|void
-name|convert_to_rgb
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|convert_to_grayscale
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|convert_to_indexed
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|convert_image
+name|gimp_image_convert
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -151,7 +114,7 @@ parameter_list|,
 name|GimpImageBaseType
 name|new_type
 parameter_list|,
-comment|/* The following three params used only for                                * new_type == INDEXED                                */
+comment|/* The following params used only for 			    * new_type == INDEXED 			    */
 name|gint
 name|num_cols
 parameter_list|,
@@ -166,17 +129,13 @@ name|remdups
 parameter_list|,
 name|ConvertPaletteType
 name|palette_type
+parameter_list|,
+name|GimpPalette
+modifier|*
+name|custom_palette
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-specifier|extern
-name|GimpPalette
-modifier|*
-name|theCustomPalette
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#
@@ -184,7 +143,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __CONVERT_H__  */
+comment|/*  __GIMP_IMAGE_CONVERT_H__  */
 end_comment
 
 end_unit
