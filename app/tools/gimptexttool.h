@@ -135,7 +135,7 @@ modifier|*
 name|text
 decl_stmt|;
 DECL|member|layer
-name|GimpLayer
+name|GimpTextLayer
 modifier|*
 name|layer
 decl_stmt|;
