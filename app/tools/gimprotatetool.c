@@ -381,7 +381,7 @@ literal|"gimp-rotate-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotate Tool"
+literal|"Rotate"
 argument_list|)
 argument_list|,
 name|_

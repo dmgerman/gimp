@@ -571,33 +571,12 @@ argument_list|)
 expr_stmt|;
 name|image_map_tool
 operator|->
-name|shell_title
-operator|=
-name|_
-argument_list|(
-literal|"Color Balance"
-argument_list|)
-expr_stmt|;
-name|image_map_tool
-operator|->
-name|shell_name
-operator|=
-literal|"color_balance"
-expr_stmt|;
-name|image_map_tool
-operator|->
 name|shell_desc
 operator|=
 name|_
 argument_list|(
 literal|"Adjust Color Balance"
 argument_list|)
-expr_stmt|;
-name|image_map_tool
-operator|->
-name|stock_id
-operator|=
-name|GIMP_STOCK_TOOL_COLOR_BALANCE
 expr_stmt|;
 name|cb_tool
 operator|->

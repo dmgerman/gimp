@@ -22,6 +22,16 @@ directive|include
 file|"gimpdataeditor.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
+begin_comment
+comment|/* FIXME */
+end_comment
+
 begin_define
 DECL|macro|GRAD_NUM_COLORS
 define|#
@@ -33,7 +43,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2913c3a50103
+DECL|enum|__anon2c1eb28a0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -57,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2913c3a50203
+DECL|enum|__anon2c1eb28a0203
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -217,6 +227,12 @@ comment|/*  Instant update  */
 DECL|member|instant_update
 name|gboolean
 name|instant_update
+decl_stmt|;
+comment|/*  Color notebook  */
+DECL|member|color_notebook
+name|ColorNotebook
+modifier|*
+name|color_notebook
 decl_stmt|;
 comment|/*  Gradient preview  */
 DECL|member|preview_rows

@@ -688,6 +688,13 @@ name|stock_id
 init|=
 name|NULL
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|window_desc
+init|=
+name|NULL
+decl_stmt|;
 name|gchar
 modifier|*
 name|help_page
@@ -725,6 +732,13 @@ argument_list|(
 literal|"Scale Layer"
 argument_list|)
 expr_stmt|;
+name|window_desc
+operator|=
+name|_
+argument_list|(
+literal|"Scale Layer Options"
+argument_list|)
+expr_stmt|;
 name|help_page
 operator|=
 literal|"layers/dialogs/scale_layer.html"
@@ -752,6 +766,13 @@ operator|=
 name|_
 argument_list|(
 literal|"Scale Image"
+argument_list|)
+expr_stmt|;
+name|window_desc
+operator|=
+name|_
+argument_list|(
+literal|"Scale Image Options"
 argument_list|)
 expr_stmt|;
 name|help_page
@@ -794,6 +815,13 @@ name|window_title
 operator|=
 name|_
 argument_list|(
+literal|"Layer Boundary Size"
+argument_list|)
+expr_stmt|;
+name|window_desc
+operator|=
+name|_
+argument_list|(
 literal|"Set Layer Boundary Size"
 argument_list|)
 expr_stmt|;
@@ -813,7 +841,14 @@ name|window_title
 operator|=
 name|_
 argument_list|(
-literal|"Set Canvas Size"
+literal|"Canvas Size"
+argument_list|)
+expr_stmt|;
+name|window_desc
+operator|=
+name|_
+argument_list|(
+literal|"Set Image Canvas Size"
 argument_list|)
 expr_stmt|;
 name|help_page
@@ -861,7 +896,7 @@ name|wmclass
 argument_list|,
 name|stock_id
 argument_list|,
-name|window_title
+name|window_desc
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -2378,6 +2413,25 @@ argument_list|(
 name|private
 operator|->
 name|constrain
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|GIMP_CHAIN_BUTTON
+argument_list|(
+name|private
+operator|->
+name|constrain
+argument_list|)
+operator|->
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Constrain aspect ratio"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

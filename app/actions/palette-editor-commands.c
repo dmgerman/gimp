@@ -319,11 +319,23 @@ name|editor
 operator|->
 name|color_notebook
 operator|=
-name|color_notebook_new
+name|color_notebook_viewable_new
 argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|palette
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Edit Palette Color"
+argument_list|)
+argument_list|,
+name|GTK_STOCK_SELECT_COLOR
+argument_list|,
+name|_
+argument_list|(
+literal|"Edit Color Palette Entry"
 argument_list|)
 argument_list|,
 operator|(
@@ -364,6 +376,18 @@ operator|->
 name|color_notebook_active
 condition|)
 block|{
+name|color_notebook_set_viewable
+argument_list|(
+name|editor
+operator|->
+name|color_notebook
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|palette
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|color_notebook_show
 argument_list|(
 name|editor

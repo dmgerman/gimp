@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-new-dialog.h"
 end_include
 
@@ -90,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a121f5f0108
+DECL|struct|__anon27c612370108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -386,22 +392,12 @@ argument_list|)
 expr_stmt|;
 name|info
 operator|->
-name|confirm_dialog
-operator|=
-name|NULL
-expr_stmt|;
-name|info
-operator|->
-name|size
-operator|=
-literal|0.0
-expr_stmt|;
-name|info
-operator|->
 name|dialog
 operator|=
-name|gimp_dialog_new
+name|gimp_viewable_dialog_new
 argument_list|(
+name|NULL
+argument_list|,
 name|_
 argument_list|(
 literal|"New Image"
@@ -409,17 +405,16 @@ argument_list|)
 argument_list|,
 literal|"new_image"
 argument_list|,
+name|GTK_STOCK_NEW
+argument_list|,
+name|_
+argument_list|(
+literal|"Create a New Image"
+argument_list|)
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/file_new.html"
-argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -464,6 +459,18 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_resizable
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|info
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  vbox holding the rest of the dialog  */

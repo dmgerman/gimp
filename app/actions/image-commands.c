@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b31cf580108
+DECL|struct|__anon2be861080108
 block|{
 DECL|member|resize
 name|Resize

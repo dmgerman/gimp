@@ -1387,6 +1387,12 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|tr_tool
+operator|->
+name|function
+operator|=
+name|TRANSFORM_CREATING
+expr_stmt|;
 block|}
 block|}
 block|}

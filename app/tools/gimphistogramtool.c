@@ -83,6 +83,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpenummenu.h"
 end_include
 
@@ -301,7 +307,9 @@ name|HistogramToolDialog
 modifier|*
 name|histogram_tool_dialog_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -683,7 +691,11 @@ condition|)
 name|histogram_dialog
 operator|=
 name|histogram_tool_dialog_new
-argument_list|()
+argument_list|(
+name|tool
+operator|->
+name|tool_info
+argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
@@ -1373,10 +1385,12 @@ begin_function
 specifier|static
 name|HistogramToolDialog
 modifier|*
-DECL|function|histogram_tool_dialog_new (void)
+DECL|function|histogram_tool_dialog_new (GimpToolInfo * tool_info)
 name|histogram_tool_dialog_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|HistogramToolDialog
@@ -1486,14 +1500,20 @@ name|gimp_viewable_dialog_new
 argument_list|(
 name|NULL
 argument_list|,
-name|_
+name|tool_info
+operator|->
+name|blurb
+argument_list|,
+name|GIMP_OBJECT
 argument_list|(
-literal|"Histogram"
+name|tool_info
 argument_list|)
+operator|->
+name|name
 argument_list|,
-literal|"histogram"
-argument_list|,
-name|GIMP_STOCK_TOOL_HISTOGRAM
+name|tool_info
+operator|->
+name|stock_id
 argument_list|,
 name|_
 argument_list|(

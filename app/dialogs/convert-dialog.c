@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette-select.h"
 end_include
 
@@ -96,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757f6d30108
+DECL|struct|__anon2a3be1150108
 block|{
 DECL|member|shell
 name|GtkWidget

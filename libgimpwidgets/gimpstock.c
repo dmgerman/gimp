@@ -677,7 +677,10 @@ block|,
 block|{
 name|GIMP_STOCK_RESIZE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Resize"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -689,7 +692,10 @@ block|,
 block|{
 name|GIMP_STOCK_SCALE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Scale"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -905,7 +911,10 @@ block|,
 block|{
 name|GIMP_STOCK_TOOL_CROP
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Crop"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1256,7 +1265,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c4c42dc0108
+DECL|struct|__anon279059280108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1640,7 +1649,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c4c42dc0208
+DECL|struct|__anon279059280208
 block|{
 DECL|member|stock_id
 specifier|const

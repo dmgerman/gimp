@@ -16,6 +16,29 @@ directive|define
 name|__GIMP_CROP_TOOL_H__
 end_define
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -166,6 +189,36 @@ decl_stmt|,
 name|dch
 decl_stmt|;
 comment|/*  width and height of corners */
+comment|/* the crop dialog */
+DECL|member|crop_info
+name|InfoDialog
+modifier|*
+name|crop_info
+decl_stmt|;
+DECL|member|orig_vals
+name|gdouble
+name|orig_vals
+index|[
+literal|2
+index|]
+decl_stmt|;
+DECL|member|size_vals
+name|gdouble
+name|size_vals
+index|[
+literal|2
+index|]
+decl_stmt|;
+DECL|member|origin_sizeentry
+name|GtkWidget
+modifier|*
+name|origin_sizeentry
+decl_stmt|;
+DECL|member|size_sizeentry
+name|GtkWidget
+modifier|*
+name|size_sizeentry
+decl_stmt|;
 block|}
 struct|;
 end_struct

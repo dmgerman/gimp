@@ -329,11 +329,23 @@ name|editor
 operator|->
 name|color_notebook
 operator|=
-name|color_notebook_new
+name|color_notebook_viewable_new
 argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Edit Indexed Color"
+argument_list|)
+argument_list|,
+name|GIMP_STOCK_CONVERT_INDEXED
+argument_list|,
+name|_
+argument_list|(
+literal|"Edit Indexed Image Palette Color"
 argument_list|)
 argument_list|,
 operator|(
@@ -356,6 +368,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|color_notebook_set_viewable
+argument_list|(
+name|editor
+operator|->
+name|color_notebook
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|color_notebook_show
 argument_list|(
 name|editor

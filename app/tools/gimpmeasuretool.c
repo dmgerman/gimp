@@ -530,7 +530,7 @@ literal|"gimp-measure-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Measure Tool"
+literal|"Measure"
 argument_list|)
 argument_list|,
 name|_
@@ -1503,18 +1503,30 @@ name|info_dialog_new
 argument_list|(
 name|NULL
 argument_list|,
-name|_
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|blurb
+argument_list|,
+name|GIMP_OBJECT
 argument_list|(
-literal|"Measure Tool"
+name|tool
+operator|->
+name|tool_info
 argument_list|)
+operator|->
+name|name
 argument_list|,
-literal|"measure"
-argument_list|,
-name|GIMP_STOCK_TOOL_MEASURE
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|stock_id
 argument_list|,
 name|_
 argument_list|(
-literal|"Measure Tool Information"
+literal|"Measure Distances and Angles"
 argument_list|)
 argument_list|,
 name|tool_manager_help_func
