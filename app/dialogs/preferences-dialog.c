@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppropwidgets.h"
 end_include
 
@@ -3661,7 +3667,7 @@ literal|"preferences"
 argument_list|,
 name|prefs_help_func
 argument_list|,
-literal|"dialogs/preferences/preferences.html"
+name|GIMP_HELP_PREFS_DIALOG
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -4340,7 +4346,7 @@ argument_list|(
 literal|"New Image"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/new_file.html"
+name|GIMP_HELP_PREFS_NEW_IMAGE
 argument_list|,
 name|NULL
 argument_list|,
@@ -4819,7 +4825,7 @@ argument_list|(
 literal|"Default Comment"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/new_file.html#default_comment"
+name|GIMP_HELP_PREFS_NEW_IMAGE_COMMENT
 argument_list|,
 operator|&
 name|top_iter
@@ -4974,7 +4980,7 @@ argument_list|(
 literal|"Interface"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/interface.html"
+name|GIMP_HELP_PREFS_INTERFACE
 argument_list|,
 name|NULL
 argument_list|,
@@ -5669,7 +5675,7 @@ argument_list|(
 literal|"Help System"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/interface.html#help_system"
+name|GIMP_HELP_PREFS_HELP
 argument_list|,
 operator|&
 name|top_iter
@@ -5836,7 +5842,7 @@ argument_list|(
 literal|"Tool Options"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/interface.html#tool_options"
+name|GIMP_HELP_PREFS_TOOL_OPTIONS
 argument_list|,
 operator|&
 name|top_iter
@@ -5991,7 +5997,7 @@ argument_list|(
 literal|"Input Devices"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/input-devices.html"
+name|GIMP_HELP_PREFS_INPUT_DEVICES
 argument_list|,
 operator|&
 name|top_iter
@@ -6256,7 +6262,7 @@ argument_list|(
 literal|"Image Windows"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/interface.html#image_windows"
+name|GIMP_HELP_PREFS_IMAGE_WINDOW
 argument_list|,
 operator|&
 name|top_iter
@@ -6571,7 +6577,7 @@ argument_list|(
 literal|"Appearance"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/image_windows.html"
+name|GIMP_HELP_PREFS_IMAGE_WINDOW_APPEARANCE
 argument_list|,
 operator|&
 name|child_iter
@@ -6938,7 +6944,7 @@ argument_list|(
 literal|"Title& Status"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/image_windows.html"
+name|GIMP_HELP_PREFS_IMAGE_WINDOW_TITLE
 argument_list|,
 operator|&
 name|child_iter
@@ -7010,7 +7016,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon292ba6c10108
+DECL|struct|__anon29be1a060108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7502,7 +7508,7 @@ argument_list|(
 literal|"Display"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/display.html"
+name|GIMP_HELP_PREFS_DISPLAY
 argument_list|,
 operator|&
 name|top_iter
@@ -7735,7 +7741,7 @@ argument_list|(
 literal|"Monitor"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/monitor.html"
+name|GIMP_HELP_PREFS_MONITOR
 argument_list|,
 operator|&
 name|top_iter
@@ -8345,7 +8351,7 @@ argument_list|(
 literal|"Environment"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/environment.html"
+name|GIMP_HELP_PREFS_ENVIRONMENT
 argument_list|,
 name|NULL
 argument_list|,
@@ -8636,7 +8642,7 @@ argument_list|(
 literal|"Folders"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/folders.html"
+name|GIMP_HELP_PREFS_FOLDERS
 argument_list|,
 name|NULL
 argument_list|,
@@ -8651,7 +8657,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292ba6c10208
+DECL|struct|__anon29be1a060208
 block|{
 DECL|member|label
 specifier|const
@@ -8810,7 +8816,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292ba6c10308
+DECL|struct|__anon29be1a060308
 block|{
 DECL|member|tree_label
 specifier|const
@@ -8866,7 +8872,7 @@ argument_list|)
 block|,
 literal|"folders-brushes.png"
 block|,
-literal|"dialogs/preferences/folders.html#brushes"
+name|GIMP_HELP_PREFS_FOLDERS_BRUSHES
 block|,
 name|N_
 argument_list|(
@@ -8889,7 +8895,7 @@ argument_list|)
 block|,
 literal|"folders-patterns.png"
 block|,
-literal|"dialogs/preferences/folders.html#patterns"
+name|GIMP_HELP_PREFS_FOLDERS_PATTERNS
 block|,
 name|N_
 argument_list|(
@@ -8912,7 +8918,7 @@ argument_list|)
 block|,
 literal|"folders-palettes.png"
 block|,
-literal|"dialogs/preferences/folders.html#palettes"
+name|GIMP_HELP_PREFS_FOLDERS_PALETTES
 block|,
 name|N_
 argument_list|(
@@ -8935,7 +8941,7 @@ argument_list|)
 block|,
 literal|"folders-gradients.png"
 block|,
-literal|"dialogs/preferences/folders.html#gradients"
+name|GIMP_HELP_PREFS_FOLDERS_GRADIENTS
 block|,
 name|N_
 argument_list|(
@@ -8958,7 +8964,7 @@ argument_list|)
 block|,
 literal|"folders-plug-ins.png"
 block|,
-literal|"dialogs/preferences/folders.html#plug_ins"
+name|GIMP_HELP_PREFS_FOLDERS_PLUG_INS
 block|,
 name|N_
 argument_list|(
@@ -8981,7 +8987,7 @@ argument_list|)
 block|,
 literal|"folders-scripts.png"
 block|,
-literal|"dialogs/preferences/folders.html#scripts"
+name|GIMP_HELP_PREFS_FOLDERS_SCRIPTS
 block|,
 name|N_
 argument_list|(
@@ -9004,7 +9010,7 @@ argument_list|)
 block|,
 literal|"folders-modules.png"
 block|,
-literal|"dialogs/preferences/folders.html#modules"
+name|GIMP_HELP_PREFS_FOLDERS_MODULES
 block|,
 name|N_
 argument_list|(
@@ -9027,7 +9033,7 @@ argument_list|)
 block|,
 literal|"folders-environ.png"
 block|,
-literal|"dialogs/preferences/folders.html#environ"
+name|GIMP_HELP_PREFS_FOLDERS_ENVIRONMENT
 block|,
 name|N_
 argument_list|(
@@ -9050,7 +9056,7 @@ argument_list|)
 block|,
 literal|"folders-themes.png"
 block|,
-literal|"dialogs/preferences/folders.html#themes"
+name|GIMP_HELP_PREFS_FOLDERS_THEMES
 block|,
 name|N_
 argument_list|(

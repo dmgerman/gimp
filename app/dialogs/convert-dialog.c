@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -90,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3a6340108
+DECL|struct|__anon2c0196cb0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -523,7 +529,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/convert_to_indexed.html"
+name|GIMP_HELP_IMAGE_CONVERT_INDEXED
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -355,7 +361,7 @@ literal|"Z"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/fuzzy_select.html"
+name|GIMP_HELP_TOOL_FUZZY_SELECT
 argument_list|,
 name|GIMP_STOCK_TOOL_FUZZY_SELECT
 argument_list|,

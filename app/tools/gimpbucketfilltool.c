@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -298,7 +304,7 @@ literal|"<shift>B"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/bucket_fill.html"
+name|GIMP_HELP_TOOL_BUCKET_FILL
 argument_list|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
 argument_list|,

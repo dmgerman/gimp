@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpitemfactory.h"
 end_include
 
@@ -3368,20 +3374,11 @@ literal|0
 argument_list|)
 operator|&&
 operator|(
-name|item_factory
-operator|==
-name|gimp_item_factory_from_path
-argument_list|(
-literal|"<Toolbox>"
-argument_list|)
-operator|)
-operator|&&
-operator|(
 name|strcmp
 argument_list|(
 name|help_page
 argument_list|,
-literal|"help/dialogs/help.html"
+name|GIMP_HELP_HELP
 argument_list|)
 operator|==
 literal|0
@@ -3390,7 +3387,7 @@ name|strcmp
 argument_list|(
 name|help_page
 argument_list|,
-literal|"help/context_help.html"
+name|GIMP_HELP_HELP_CONTEXT
 argument_list|)
 operator|==
 literal|0

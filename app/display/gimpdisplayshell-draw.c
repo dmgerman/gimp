@@ -161,6 +161,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -280,7 +286,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291c57510103
+DECL|enum|__anon28ee4bff0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1441,7 +1447,6 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/*  connect the "F1" help key  */
 name|gimp_help_connect
 argument_list|(
 name|GTK_WIDGET
@@ -7887,7 +7892,7 @@ name|title
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/really_close.html"
+name|GIMP_HELP_FILE_CLOSE_CONFIRM
 argument_list|,
 name|GIMP_STOCK_QUESTION
 argument_list|,

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -348,7 +354,7 @@ literal|"F"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/free_select.html"
+name|GIMP_HELP_TOOL_FREE_SELECT
 argument_list|,
 name|GIMP_STOCK_TOOL_FREE_SELECT
 argument_list|,

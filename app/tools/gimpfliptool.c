@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -275,7 +281,7 @@ literal|"<shift>F"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/flip.html"
+name|GIMP_HELP_TOOL_FLIP
 argument_list|,
 name|GIMP_STOCK_TOOL_FLIP
 argument_list|,

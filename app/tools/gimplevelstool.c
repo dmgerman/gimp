@@ -155,6 +155,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphistogramview.h"
 end_include
 
@@ -801,7 +807,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/levels.html"
+name|GIMP_HELP_TOOL_LEVELS
 argument_list|,
 name|GIMP_STOCK_TOOL_LEVELS
 argument_list|,

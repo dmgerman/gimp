@@ -78,13 +78,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpbrushfactoryview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcontainerview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpbrushfactoryview.h"
+file|"widgets/gimphelp-ids.h"
 end_include
 
 begin_include
@@ -566,7 +572,7 @@ literal|"brush_selection"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/brush_selection.html"
+name|GIMP_HELP_BRUSH_DIALOG
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

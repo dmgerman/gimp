@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -156,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a31940108
+DECL|struct|__anon2b4f6e770108
 block|{
 DECL|member|resize
 name|Resize
@@ -1390,7 +1396,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/layers/merge_visible_layers.html"
+name|GIMP_HELP_IMAGE_MERGE_LAYERS
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -1866,7 +1872,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/scale_layer_warn.html"
+name|GIMP_HELP_IMAGE_SCALE_WARNING
 argument_list|,
 name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,

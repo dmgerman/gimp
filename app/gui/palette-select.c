@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs-constructors.h"
 end_include
 
@@ -411,7 +417,7 @@ literal|"palette_selection"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/palette_selection.html"
+name|GIMP_HELP_PALETTE_DIALOG
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

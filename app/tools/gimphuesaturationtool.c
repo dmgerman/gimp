@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -464,7 +470,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/hue_saturation.html"
+name|GIMP_HELP_TOOL_HUE_SATURATION
 argument_list|,
 name|GIMP_STOCK_TOOL_HUE_SATURATION
 argument_list|,
@@ -965,7 +971,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2922dc260108
+DECL|struct|__anon2be6d92a0108
 block|{
 DECL|member|label
 specifier|const

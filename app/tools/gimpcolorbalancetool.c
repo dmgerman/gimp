@@ -66,13 +66,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
+file|"widgets/gimphelp-ids.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"widgets/gimpenummenu.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
@@ -385,7 +391,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/color_balance.html"
+name|GIMP_HELP_TOOL_COLOR_BALANCE
 argument_list|,
 name|GIMP_STOCK_TOOL_COLOR_BALANCE
 argument_list|,

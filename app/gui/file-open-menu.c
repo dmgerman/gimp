@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -98,7 +104,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"open_by_extension.html"
+name|GIMP_HELP_FILE_OPEN_BY_EXTENSION
 block|,
 name|NULL
 block|}

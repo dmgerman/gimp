@@ -39,29 +39,6 @@ directive|include
 file|"tools-types.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "gui/gui-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -89,7 +66,36 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
+end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
 end_include
 
 begin_include
@@ -375,7 +381,7 @@ literal|"<shift>S"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/shear.html"
+name|GIMP_HELP_TOOL_SHEAR
 argument_list|,
 name|GIMP_STOCK_TOOL_SHEAR
 argument_list|,

@@ -244,7 +244,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_PATH_SEL_REPLACE
+name|GIMP_HELP_PATH_SELECTION_REPLACE
 block|,
 name|NULL
 block|}
@@ -269,7 +269,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_PATH_SEL_ADD
+name|GIMP_HELP_PATH_SELECTION_ADD
 block|,
 name|NULL
 block|}
@@ -294,7 +294,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_PATH_SEL_SUB
+name|GIMP_HELP_PATH_SELECTION_SUBTRACT
 block|,
 name|NULL
 block|}
@@ -319,7 +319,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_PATH_SEL_INTERSECT
+name|GIMP_HELP_PATH_SELECTION_INTERSECT
 block|,
 name|NULL
 block|}

@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppreview.h"
 end_include
 
@@ -140,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ab7f100103
+DECL|enum|__anon29426e8c0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -645,7 +651,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/palette_editor/import_palette.html"
+name|GIMP_HELP_PALETTE_IMPORT
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

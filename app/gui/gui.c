@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -1919,7 +1925,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/really_quit.html"
+name|GIMP_HELP_FILE_QUIT_CONFIRM
 argument_list|,
 name|GIMP_STOCK_WILBER_EEK
 argument_list|,

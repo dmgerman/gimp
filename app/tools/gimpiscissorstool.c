@@ -136,6 +136,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -1222,7 +1228,7 @@ literal|"I"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/iscissors.html"
+name|GIMP_HELP_TOOL_ISCISSORS
 argument_list|,
 name|GIMP_STOCK_TOOL_ISCISSORS
 argument_list|,
@@ -4746,7 +4752,7 @@ name|tx
 decl_stmt|,
 name|ty
 decl_stmt|;
-comment|/*  traverse through the list, returning the curve segment's list element    *  if the current cursor position is on a curve...     */
+comment|/*  traverse through the list, returning the curve segment's list element    *  if the current cursor position is on a curve...    */
 for|for
 control|(
 name|list
@@ -5412,7 +5418,7 @@ argument_list|)
 operator|+
 literal|1
 expr_stmt|;
-comment|/*  expand the boundaries past the ending points by     *  some percentage of width and height.  This serves the following purpose:    *  It gives the algorithm more area to search so better solutions    *  are found.  This is particularly helpful in finding "bumps" which    *  fall outside the bounding box represented by the start and end    *  coordinates of the "curve".    */
+comment|/*  expand the boundaries past the ending points by    *  some percentage of width and height.  This serves the following purpose:    *  It gives the algorithm more area to search so better solutions    *  are found.  This is particularly helpful in finding "bumps" which    *  fall outside the bounding box represented by the start and end    *  coordinates of the "curve".    */
 name|ewidth
 operator|=
 operator|(
@@ -6869,7 +6875,7 @@ operator|)
 operator|+
 name|link
 expr_stmt|;
-comment|/*  possibly change the links from the other pixels to this pixel... 	       *  these changes occur if a neighboring pixel will receive a lower 	       *  cumulative cost by going through this pixel.   	       */
+comment|/*  possibly change the links from the other pixels to this pixel... 	       *  these changes occur if a neighboring pixel will receive a lower 	       *  cumulative cost by going through this pixel. 	       */
 for|for
 control|(
 name|k

@@ -491,7 +491,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_MASK_SEL_REPLACE
+name|GIMP_HELP_LAYER_MASK_SELECTION_REPLACE
 block|,
 name|NULL
 block|}
@@ -542,7 +542,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_ALPHA_SEL_REPLACE
+name|GIMP_HELP_LAYER_ALPHA_SELECTION_REPLACE
 block|,
 name|NULL
 block|}

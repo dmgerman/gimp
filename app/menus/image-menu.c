@@ -1343,7 +1343,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_QUICKMASK
+name|GIMP_HELP_QMASK_TOGGLE
 block|,
 name|NULL
 block|}
@@ -3298,7 +3298,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_MASK_SEL_REPLACE
+name|GIMP_HELP_LAYER_MASK_SELECTION_REPLACE
 block|,
 name|NULL
 block|}
@@ -3323,7 +3323,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_MASK_SEL_ADD
+name|GIMP_HELP_LAYER_MASK_SELECTION_ADD
 block|,
 name|NULL
 block|}
@@ -3348,7 +3348,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_MASK_SEL_SUB
+name|GIMP_HELP_LAYER_MASK_SELECTION_SUBTRACT
 block|,
 name|NULL
 block|}
@@ -3373,7 +3373,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_MASK_SEL_INTERSECT
+name|GIMP_HELP_LAYER_MASK_SELECTION_INTERSECT
 block|,
 name|NULL
 block|}
@@ -3433,7 +3433,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_ALPHA_SEL_REPLACE
+name|GIMP_HELP_LAYER_ALPHA_SELECTION_REPLACE
 block|,
 name|NULL
 block|}
@@ -3458,7 +3458,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_ALPHA_SEL_ADD
+name|GIMP_HELP_LAYER_ALPHA_SELECTION_ADD
 block|,
 name|NULL
 block|}
@@ -3483,7 +3483,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_ALPHA_SEL_SUB
+name|GIMP_HELP_LAYER_ALPHA_SELECTION_SUBTRACT
 block|,
 name|NULL
 block|}
@@ -3508,7 +3508,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_LAYER_ALPHA_SEL_INTERSECT
+name|GIMP_HELP_LAYER_ALPHA_SELECTION_INTERSECT
 block|,
 name|NULL
 block|}

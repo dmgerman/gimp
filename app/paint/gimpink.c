@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -698,7 +704,7 @@ literal|"K"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/ink.html"
+name|GIMP_HELP_TOOL_INK
 argument_list|,
 name|GIMP_STOCK_TOOL_INK
 argument_list|,
@@ -2918,7 +2924,7 @@ comment|/*********************************  *  Rendering functions          *  *
 end_comment
 
 begin_comment
-comment|/* Some of this stuff should probably be combined with the   * code it was copied from in paint_core.c; but I wanted  * to learn this stuff, so I've kept it simple.  *  * The following only supports CONSTANT mode. Incremental  * would, I think, interact strangely with the way we  * do things. But it wouldn't be hard to implement at all.  */
+comment|/* Some of this stuff should probably be combined with the  * code it was copied from in paint_core.c; but I wanted  * to learn this stuff, so I've kept it simple.  *  * The following only supports CONSTANT mode. Incremental  * would, I think, interact strangely with the way we  * do things. But it wouldn't be hard to implement at all.  */
 end_comment
 
 begin_function
@@ -3130,7 +3136,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon277c29030103
+DECL|enum|__anon2a3496960103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

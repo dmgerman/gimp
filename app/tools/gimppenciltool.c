@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppenciltool.h"
 end_include
 
@@ -148,7 +154,7 @@ literal|"N"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/pencil.html"
+name|GIMP_HELP_TOOL_PENCIL
 argument_list|,
 name|GIMP_STOCK_TOOL_PENCIL
 argument_list|,

@@ -39,29 +39,6 @@ directive|include
 file|"tools-types.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "gui/gui-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -89,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -96,6 +79,29 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell.h"
+end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
 end_include
 
 begin_include
@@ -395,7 +401,7 @@ literal|"<shift>T"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/transform.html"
+name|GIMP_HELP_TOOL_SCALE
 argument_list|,
 name|GIMP_STOCK_TOOL_SCALE
 argument_list|,
@@ -1640,7 +1646,7 @@ operator|+
 literal|1
 expr_stmt|;
 block|}
-comment|/*  if both the control key& mod1 keys are down,    *  keep the aspect ratio intact     */
+comment|/*  if both the control key& mod1 keys are down,    *  keep the aspect ratio intact    */
 if|if
 condition|(
 name|options

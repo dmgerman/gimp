@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpitemfactory.h"
 end_include
 
@@ -761,7 +767,6 @@ operator|->
 name|accel_group
 argument_list|)
 expr_stmt|;
-comment|/*  Connect the "F1" help key  */
 name|gimp_help_connect
 argument_list|(
 name|GTK_WIDGET
@@ -771,7 +776,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"toolbox/toolbox.html"
+name|GIMP_HELP_TOOLBOX
 argument_list|)
 expr_stmt|;
 name|toolbox

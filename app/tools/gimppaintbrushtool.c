@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintbrushtool.h"
 end_include
 
@@ -150,7 +156,7 @@ literal|"P"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/paintbrush.html"
+name|GIMP_HELP_TOOL_PAINTBRUSH
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|,

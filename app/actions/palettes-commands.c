@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppreview.h"
 end_include
 
@@ -220,7 +226,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/palette_editor/merge_palette.html"
+name|GIMP_HELP_PALETTE_MERGE
 argument_list|,
 name|_
 argument_list|(

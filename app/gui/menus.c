@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -1127,7 +1133,7 @@ index|]
 operator|.
 name|help_page
 operator|=
-literal|"file/last_opened.html"
+name|GIMP_HELP_FILE_OPEN_RECENT
 expr_stmt|;
 name|last_opened_entries
 index|[

@@ -259,7 +259,7 @@ block|}
 block|,
 literal|"gimp-preferences-dialog"
 block|,
-name|GIMP_HELP_PREFERENCES_DIALOG
+name|GIMP_HELP_PREFS_DIALOG
 block|,
 name|NULL
 block|}

@@ -107,6 +107,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -491,7 +497,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/measure.html"
+name|GIMP_HELP_TOOL_MEASURE
 argument_list|,
 name|GIMP_STOCK_TOOL_MEASURE
 argument_list|,

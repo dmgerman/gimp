@@ -21,7 +21,7 @@ DECL|macro|GIMP_HELP_FILE_NEW
 define|#
 directive|define
 name|GIMP_HELP_FILE_NEW
-value|"file/dialogs/file_new.html"
+value|"dialogs/file_new.html"
 end_define
 
 begin_define
@@ -29,7 +29,7 @@ DECL|macro|GIMP_HELP_FILE_NEW_CONFIRM
 define|#
 directive|define
 name|GIMP_HELP_FILE_NEW_CONFIRM
-value|"file/dialogs/file_new.html#confirm_dialog"
+value|"dialogs/file_new.html#confirm_dialog"
 end_define
 
 begin_define
@@ -37,7 +37,23 @@ DECL|macro|GIMP_HELP_FILE_OPEN
 define|#
 directive|define
 name|GIMP_HELP_FILE_OPEN
-value|"file/dialogs/file_open.html"
+value|"dialogs/file_open.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILE_OPEN_BY_EXTENSION
+define|#
+directive|define
+name|GIMP_HELP_FILE_OPEN_BY_EXTENSION
+value|"file/open_by_extension.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILE_OPEN_RECENT
+define|#
+directive|define
+name|GIMP_HELP_FILE_OPEN_RECENT
+value|"file/last_opened.html"
 end_define
 
 begin_define
@@ -45,7 +61,7 @@ DECL|macro|GIMP_HELP_FILE_SAVE
 define|#
 directive|define
 name|GIMP_HELP_FILE_SAVE
-value|"file/dialogs/file_save.html"
+value|"dialogs/file_save.html"
 end_define
 
 begin_define
@@ -53,7 +69,7 @@ DECL|macro|GIMP_HELP_FILE_SAVE_AS
 define|#
 directive|define
 name|GIMP_HELP_FILE_SAVE_AS
-value|"file/dialogs/file_save.html"
+value|"dialogs/file_save.html"
 end_define
 
 begin_define
@@ -61,7 +77,7 @@ DECL|macro|GIMP_HELP_FILE_SAVE_A_COPY
 define|#
 directive|define
 name|GIMP_HELP_FILE_SAVE_A_COPY
-value|"file/dialogs/file_save.html"
+value|"dialogs/file_save.html"
 end_define
 
 begin_define
@@ -69,7 +85,15 @@ DECL|macro|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
 define|#
 directive|define
 name|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
-value|"file/dialogs/file_save.html"
+value|"dialogs/file_save.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILE_SAVE_BY_EXTENSION
+define|#
+directive|define
+name|GIMP_HELP_FILE_SAVE_BY_EXTENSION
+value|"file/save_by_extension.html"
 end_define
 
 begin_define
@@ -77,7 +101,7 @@ DECL|macro|GIMP_HELP_FILE_SAVE_OVERWRITE
 define|#
 directive|define
 name|GIMP_HELP_FILE_SAVE_OVERWRITE
-value|"file/dialogs/file_exists.html"
+value|"dialogs/file_exists.html"
 end_define
 
 begin_define
@@ -97,11 +121,27 @@ value|"file/close.html"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILE_CLOSE_CONFIRM
+define|#
+directive|define
+name|GIMP_HELP_FILE_CLOSE_CONFIRM
+value|"dialogs/really_close.html"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILE_QUIT
 define|#
 directive|define
 name|GIMP_HELP_FILE_QUIT
 value|"file/quit.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILE_QUIT_CONFIRM
+define|#
+directive|define
+name|GIMP_HELP_FILE_QUIT_CONFIRM
+value|"dialogs/really_quit.html"
 end_define
 
 begin_define
@@ -253,7 +293,7 @@ DECL|macro|GIMP_HELP_SELECT_FEATHER
 define|#
 directive|define
 name|GIMP_HELP_SELECT_FEATHER
-value|"select/dialogs/feather_selection.html"
+value|"dialogs/feather_selection.html"
 end_define
 
 begin_define
@@ -269,7 +309,7 @@ DECL|macro|GIMP_HELP_SELECT_SHRINK
 define|#
 directive|define
 name|GIMP_HELP_SELECT_SHRINK
-value|"select/dialogs/shrink_selection.html"
+value|"dialogs/shrink_selection.html"
 end_define
 
 begin_define
@@ -277,7 +317,7 @@ DECL|macro|GIMP_HELP_SELECT_GROW
 define|#
 directive|define
 name|GIMP_HELP_SELECT_GROW
-value|"select/dialogs/grow_selection.html"
+value|"dialogs/grow_selection.html"
 end_define
 
 begin_define
@@ -285,15 +325,7 @@ DECL|macro|GIMP_HELP_SELECT_BORDER
 define|#
 directive|define
 name|GIMP_HELP_SELECT_BORDER
-value|"select/dialogs/border_selection.html"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_SELECT_QUICKMASK
-define|#
-directive|define
-name|GIMP_HELP_SELECT_QUICKMASK
-value|"select/quickmask.html"
+value|"dialogs/border_selection.html"
 end_define
 
 begin_define
@@ -469,7 +501,7 @@ DECL|macro|GIMP_HELP_IMAGE_FLIP_HORIZONTAL
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_FLIP_HORIZONTAL
-value|"image/dialogs/flip_image.html"
+value|"dialogs/flip_image.html"
 end_define
 
 begin_define
@@ -477,7 +509,7 @@ DECL|macro|GIMP_HELP_IMAGE_FLIP_VERTICAL
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_FLIP_VERTICAL
-value|"image/dialogs/flip_image.html"
+value|"dialogs/flip_image.html"
 end_define
 
 begin_define
@@ -485,7 +517,7 @@ DECL|macro|GIMP_HELP_IMAGE_ROTATE_90
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_ROTATE_90
-value|"image/dialogs/rotate_image.html"
+value|"dialogs/rotate_image.html"
 end_define
 
 begin_define
@@ -493,7 +525,7 @@ DECL|macro|GIMP_HELP_IMAGE_ROTATE_180
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_ROTATE_180
-value|"image/dialogs/rotate_image.html"
+value|"dialogs/rotate_image.html"
 end_define
 
 begin_define
@@ -501,7 +533,7 @@ DECL|macro|GIMP_HELP_IMAGE_ROTATE_270
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_ROTATE_270
-value|"image/dialogs/rotate_image.html"
+value|"dialogs/rotate_image.html"
 end_define
 
 begin_define
@@ -509,7 +541,7 @@ DECL|macro|GIMP_HELP_IMAGE_RESIZE
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_RESIZE
-value|"image/dialogs/set_canvas_size.html"
+value|"dialogs/set_canvas_size.html"
 end_define
 
 begin_define
@@ -517,7 +549,15 @@ DECL|macro|GIMP_HELP_IMAGE_SCALE
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_SCALE
-value|"image/dialogs/scale_image.html"
+value|"dialogs/scale_image.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_IMAGE_SCALE_WARNING
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_SCALE_WARNING
+value|"dialogs/scale_image.html"
 end_define
 
 begin_define
@@ -525,7 +565,7 @@ DECL|macro|GIMP_HELP_IMAGE_CROP
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_CROP
-value|"image/dialogs/crop_image.html"
+value|"dialogs/crop_image.html"
 end_define
 
 begin_define
@@ -541,7 +581,7 @@ DECL|macro|GIMP_HELP_IMAGE_MERGE_LAYERS
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_MERGE_LAYERS
-value|"layers/dialogs/merge_visible_layers.html"
+value|"/dialogs/merge_visible_layers.html"
 end_define
 
 begin_define
@@ -557,7 +597,7 @@ DECL|macro|GIMP_HELP_IMAGE_GRID
 define|#
 directive|define
 name|GIMP_HELP_IMAGE_GRID
-value|"image/dialogs/configure_grid.html"
+value|"dialogs/configure_grid.html"
 end_define
 
 begin_define
@@ -565,7 +605,7 @@ DECL|macro|GIMP_HELP_LAYER_DIALOG
 define|#
 directive|define
 name|GIMP_HELP_LAYER_DIALOG
-value|"layers/dialogs/layers_dialog.html"
+value|"/dialogs/layers_dialog.html"
 end_define
 
 begin_define
@@ -573,7 +613,7 @@ DECL|macro|GIMP_HELP_LAYER_NEW
 define|#
 directive|define
 name|GIMP_HELP_LAYER_NEW
-value|"layers/dialogs/new_layer.html"
+value|"/dialogs/new_layer.html"
 end_define
 
 begin_define
@@ -701,7 +741,7 @@ DECL|macro|GIMP_HELP_LAYER_MASK_ADD
 define|#
 directive|define
 name|GIMP_HELP_LAYER_MASK_ADD
-value|"layers/dialogs/add_layer_mask.html"
+value|"dialogs/add_layer_mask.html"
 end_define
 
 begin_define
@@ -721,34 +761,34 @@ value|"layers/delete_mask.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_MASK_SEL_REPLACE
+DECL|macro|GIMP_HELP_LAYER_MASK_SELECTION_REPLACE
 define|#
 directive|define
-name|GIMP_HELP_LAYER_MASK_SEL_REPLACE
+name|GIMP_HELP_LAYER_MASK_SELECTION_REPLACE
 value|"layers/mask_to_selection.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_MASK_SEL_ADD
+DECL|macro|GIMP_HELP_LAYER_MASK_SELECTION_ADD
 define|#
 directive|define
-name|GIMP_HELP_LAYER_MASK_SEL_ADD
+name|GIMP_HELP_LAYER_MASK_SELECTION_ADD
 value|"layers/mask_to_selection.html#add"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_MASK_SEL_SUB
+DECL|macro|GIMP_HELP_LAYER_MASK_SELECTION_SUBTRACT
 define|#
 directive|define
-name|GIMP_HELP_LAYER_MASK_SEL_SUB
+name|GIMP_HELP_LAYER_MASK_SELECTION_SUBTRACT
 value|"layers/mask_to_selection.html#subtract"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_MASK_SEL_INTERSECT
+DECL|macro|GIMP_HELP_LAYER_MASK_SELECTION_INTERSECT
 define|#
 directive|define
-name|GIMP_HELP_LAYER_MASK_SEL_INTERSECT
+name|GIMP_HELP_LAYER_MASK_SELECTION_INTERSECT
 value|"layers/mask_to_selection.html#intersect"
 end_define
 
@@ -761,34 +801,34 @@ value|"layers/add_alpha_channel.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_ALPHA_SEL_REPLACE
+DECL|macro|GIMP_HELP_LAYER_ALPHA_SELECTION_REPLACE
 define|#
 directive|define
-name|GIMP_HELP_LAYER_ALPHA_SEL_REPLACE
+name|GIMP_HELP_LAYER_ALPHA_SELECTION_REPLACE
 value|"layers/alpha_to_selection.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_ALPHA_SEL_ADD
+DECL|macro|GIMP_HELP_LAYER_ALPHA_SELECTION_ADD
 define|#
 directive|define
-name|GIMP_HELP_LAYER_ALPHA_SEL_ADD
+name|GIMP_HELP_LAYER_ALPHA_SELECTION_ADD
 value|"layers/alpha_to_selection.html#add"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_ALPHA_SEL_SUB
+DECL|macro|GIMP_HELP_LAYER_ALPHA_SELECTION_SUBTRACT
 define|#
 directive|define
-name|GIMP_HELP_LAYER_ALPHA_SEL_SUB
+name|GIMP_HELP_LAYER_ALPHA_SELECTION_SUBTRACT
 value|"layers/alpha_to_selection.html#subtract"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_ALPHA_SEL_INTERSECT
+DECL|macro|GIMP_HELP_LAYER_ALPHA_SELECTION_INTERSECT
 define|#
 directive|define
-name|GIMP_HELP_LAYER_ALPHA_SEL_INTERSECT
+name|GIMP_HELP_LAYER_ALPHA_SELECTION_INTERSECT
 value|"layers/alpha_to_selection.html#intersect"
 end_define
 
@@ -837,7 +877,7 @@ DECL|macro|GIMP_HELP_LAYER_OFFSET
 define|#
 directive|define
 name|GIMP_HELP_LAYER_OFFSET
-value|"layers/dialogs/offset.html"
+value|"dialogs/offset.html"
 end_define
 
 begin_define
@@ -845,7 +885,7 @@ DECL|macro|GIMP_HELP_LAYER_RESIZE
 define|#
 directive|define
 name|GIMP_HELP_LAYER_RESIZE
-value|"layers/dialogs/layer_boundary_size.html"
+value|"dialogs/layer_boundary_size.html"
 end_define
 
 begin_define
@@ -861,7 +901,7 @@ DECL|macro|GIMP_HELP_LAYER_SCALE
 define|#
 directive|define
 name|GIMP_HELP_LAYER_SCALE
-value|"layers/dialogs/scale_layer.html"
+value|"dialogs/scale_layer.html"
 end_define
 
 begin_define
@@ -869,7 +909,7 @@ DECL|macro|GIMP_HELP_LAYER_CROP
 define|#
 directive|define
 name|GIMP_HELP_LAYER_CROP
-value|"layers/dialogs/crop_layer.html"
+value|"dialogs/crop_layer.html"
 end_define
 
 begin_define
@@ -877,7 +917,7 @@ DECL|macro|GIMP_HELP_LAYER_EDIT
 define|#
 directive|define
 name|GIMP_HELP_LAYER_EDIT
-value|"layers/dialogs/edit_layer_attributes.html"
+value|"dialogs/edit_layer_attributes.html"
 end_define
 
 begin_define
@@ -885,7 +925,7 @@ DECL|macro|GIMP_HELP_CHANNEL_DIALOG
 define|#
 directive|define
 name|GIMP_HELP_CHANNEL_DIALOG
-value|"channels/dialogs/channels_dialog.html"
+value|"dialogs/channels_dialog.html"
 end_define
 
 begin_define
@@ -893,7 +933,7 @@ DECL|macro|GIMP_HELP_CHANNEL_NEW
 define|#
 directive|define
 name|GIMP_HELP_CHANNEL_NEW
-value|"channels/dialogs/new_channel.html"
+value|"dialogs/new_channel.html"
 end_define
 
 begin_define
@@ -929,34 +969,34 @@ value|"channels/delete_channel.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_CHANNEL_SEL_REPLACE
+DECL|macro|GIMP_HELP_CHANNEL_SELECTION_REPLACE
 define|#
 directive|define
-name|GIMP_HELP_CHANNEL_SEL_REPLACE
+name|GIMP_HELP_CHANNEL_SELECTION_REPLACE
 value|"channels/channel_to_selection.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_CHANNEL_SEL_ADD
+DECL|macro|GIMP_HELP_CHANNEL_SELECTION_ADD
 define|#
 directive|define
-name|GIMP_HELP_CHANNEL_SEL_ADD
+name|GIMP_HELP_CHANNEL_SELECTION_ADD
 value|"channels/channel_to_selection.html#add"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_CHANNEL_SEL_SUB
+DECL|macro|GIMP_HELP_CHANNEL_SELECTION_SUBTRACT
 define|#
 directive|define
-name|GIMP_HELP_CHANNEL_SEL_SUB
+name|GIMP_HELP_CHANNEL_SELECTION_SUBTRACT
 value|"channels/channel_to_selection.html#subtract"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_CHANNEL_SEL_INTERSECT
+DECL|macro|GIMP_HELP_CHANNEL_SELECTION_INTERSECT
 define|#
 directive|define
-name|GIMP_HELP_CHANNEL_SEL_INTERSECT
+name|GIMP_HELP_CHANNEL_SELECTION_INTERSECT
 value|"channels/channel_to_selection.html#intersect"
 end_define
 
@@ -965,7 +1005,31 @@ DECL|macro|GIMP_HELP_CHANNEL_EDIT
 define|#
 directive|define
 name|GIMP_HELP_CHANNEL_EDIT
-value|"channels/dialogs/edit_channel_attributes.html"
+value|"dialogs/edit_channel_attributes.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_QMASK_TOGGLE
+define|#
+directive|define
+name|GIMP_HELP_QMASK_TOGGLE
+value|"select/quickmask.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_QMASK_INVERT
+define|#
+directive|define
+name|GIMP_HELP_QMASK_INVERT
+value|"select/quickmask.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_QMASK_EDIT
+define|#
+directive|define
+name|GIMP_HELP_QMASK_EDIT
+value|"dialogs/edit_qmask_attributes.html"
 end_define
 
 begin_define
@@ -1017,34 +1081,34 @@ value|"paths/delete_path.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PATH_SEL_REPLACE
+DECL|macro|GIMP_HELP_PATH_SELECTION_REPLACE
 define|#
 directive|define
-name|GIMP_HELP_PATH_SEL_REPLACE
+name|GIMP_HELP_PATH_SELECTION_REPLACE
 value|"paths/path_to_selection.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PATH_SEL_ADD
+DECL|macro|GIMP_HELP_PATH_SELECTION_ADD
 define|#
 directive|define
-name|GIMP_HELP_PATH_SEL_ADD
+name|GIMP_HELP_PATH_SELECTION_ADD
 value|"paths/path_to_selection.html#add"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PATH_SEL_SUB
+DECL|macro|GIMP_HELP_PATH_SELECTION_SUBTRACT
 define|#
 directive|define
-name|GIMP_HELP_PATH_SEL_SUB
+name|GIMP_HELP_PATH_SELECTION_SUBTRACT
 value|"paths/path_to_selection.html#subtract"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PATH_SEL_INTERSECT
+DECL|macro|GIMP_HELP_PATH_SELECTION_INTERSECT
 define|#
 directive|define
-name|GIMP_HELP_PATH_SEL_INTERSECT
+name|GIMP_HELP_PATH_SELECTION_INTERSECT
 value|"paths/path_to_selection.html#intersect"
 end_define
 
@@ -1077,7 +1141,7 @@ DECL|macro|GIMP_HELP_PATH_IMPORT
 define|#
 directive|define
 name|GIMP_HELP_PATH_IMPORT
-value|"paths/dialogs/import_path.html"
+value|"dialogs/import_path.html"
 end_define
 
 begin_define
@@ -1085,7 +1149,7 @@ DECL|macro|GIMP_HELP_PATH_EXPORT
 define|#
 directive|define
 name|GIMP_HELP_PATH_EXPORT
-value|"paths/dialogs/export_path.html"
+value|"dialogs/export_path.html"
 end_define
 
 begin_define
@@ -1093,39 +1157,23 @@ DECL|macro|GIMP_HELP_PATH_EDIT
 define|#
 directive|define
 name|GIMP_HELP_PATH_EDIT
-value|"paths/dialogs/edit_path_attributes.html"
+value|"dialogs/edit_path_attributes.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_BY_COLOR_SELECT
+DECL|macro|GIMP_HELP_TOOL_AIRBRUSH
 define|#
 directive|define
-name|GIMP_HELP_TOOL_BY_COLOR_SELECT
-value|"tools/by_color_select.html"
+name|GIMP_HELP_TOOL_AIRBRUSH
+value|"tools/airbrush.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_COLOR_BALANCE
+DECL|macro|GIMP_HELP_TOOL_BLEND
 define|#
 directive|define
-name|GIMP_HELP_TOOL_COLOR_BALANCE
-value|"tools/color_balance.html"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_TOOL_HUE_SATURATION
-define|#
-directive|define
-name|GIMP_HELP_TOOL_HUE_SATURATION
-value|"tools/hue_saturation.html"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_TOOL_COLORIZE
-define|#
-directive|define
-name|GIMP_HELP_TOOL_COLORIZE
-value|"tools/colorize.html"
+name|GIMP_HELP_TOOL_BLEND
+value|"tools/blend.html"
 end_define
 
 begin_define
@@ -1137,19 +1185,67 @@ value|"tools/brightness-contrast.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_THRESHOLD
+DECL|macro|GIMP_HELP_TOOL_BUCKET_FILL
 define|#
 directive|define
-name|GIMP_HELP_TOOL_THRESHOLD
-value|"tools/threshold.html"
+name|GIMP_HELP_TOOL_BUCKET_FILL
+value|"tools/bucket_fill.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_LEVELS
+DECL|macro|GIMP_HELP_TOOL_BY_COLOR_SELECT
 define|#
 directive|define
-name|GIMP_HELP_TOOL_LEVELS
-value|"tools/levels.html"
+name|GIMP_HELP_TOOL_BY_COLOR_SELECT
+value|"tools/by_color_select.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_CLONE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_CLONE
+value|"tools/clone.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_COLORIZE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_COLORIZE
+value|"tools/colorize.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_COLOR_BALANCE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_COLOR_BALANCE
+value|"tools/color_balance.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_COLOR_PICKER
+define|#
+directive|define
+name|GIMP_HELP_TOOL_COLOR_PICKER
+value|"tools/color_picker.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_CONVOLVE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_CONVOLVE
+value|"tools/convolve.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_CROP
+define|#
+directive|define
+name|GIMP_HELP_TOOL_CROP
+value|"tools/crop.html"
 end_define
 
 begin_define
@@ -1161,11 +1257,59 @@ value|"tools/curves.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_POSTERIZE
+DECL|macro|GIMP_HELP_TOOL_CURVES
 define|#
 directive|define
-name|GIMP_HELP_TOOL_POSTERIZE
-value|"tools/posterize.html"
+name|GIMP_HELP_TOOL_CURVES
+value|"tools/curves.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_DODGE_BURN
+define|#
+directive|define
+name|GIMP_HELP_TOOL_DODGE_BURN
+value|"tools/dodge_burn.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_ELLIPSE_SELECT
+define|#
+directive|define
+name|GIMP_HELP_TOOL_ELLIPSE_SELECT
+value|"tools/ellipse_select.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_ERASER
+define|#
+directive|define
+name|GIMP_HELP_TOOL_ERASER
+value|"tools/eraser.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_FLIP
+define|#
+directive|define
+name|GIMP_HELP_TOOL_FLIP
+value|"tools/flip.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_FREE_SELECT
+define|#
+directive|define
+name|GIMP_HELP_TOOL_FREE_SELECT
+value|"tools/free_select.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_FUZZY_SELECT
+define|#
+directive|define
+name|GIMP_HELP_TOOL_FUZZY_SELECT
+value|"tools/fuzzy_select.html"
 end_define
 
 begin_define
@@ -1177,6 +1321,102 @@ value|"tools/histogram.html"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_HUE_SATURATION
+define|#
+directive|define
+name|GIMP_HELP_TOOL_HUE_SATURATION
+value|"tools/hue_saturation.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_INK
+define|#
+directive|define
+name|GIMP_HELP_TOOL_INK
+value|"tools/ink.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_ISCISSORS
+define|#
+directive|define
+name|GIMP_HELP_TOOL_ISCISSORS
+value|"tools/iscissors.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_LEVELS
+define|#
+directive|define
+name|GIMP_HELP_TOOL_LEVELS
+value|"tools/levels.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_MEASURE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_MEASURE
+value|"tools/measure.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_MOVE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_MOVE
+value|"tools/move.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_PATH
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PATH
+value|"tools/path.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_PAINTBRUSH
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PAINTBRUSH
+value|"tools/paintbrush.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_PENCIL
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PENCIL
+value|"tools/pencil.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_PERSPECTIVE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_PERSPECTIVE
+value|"tools/perspective.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_POSTERIZE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_POSTERIZE
+value|"tools/posterize.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_RECT_SELECT
+define|#
+directive|define
+name|GIMP_HELP_TOOL_RECT_SELECT
+value|"tools/rect_select.html"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_ROTATE
 define|#
 directive|define
@@ -1185,11 +1425,59 @@ value|"tools/rotate.html"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_SCALE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_SCALE
+value|"tools/scale.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_SHEAR
+define|#
+directive|define
+name|GIMP_HELP_TOOL_SHEAR
+value|"tools/shear.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_SMUDGE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_SMUDGE
+value|"tools/smudge.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_TEXT
+define|#
+directive|define
+name|GIMP_HELP_TOOL_TEXT
+value|"tools/text.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_THRESHOLD
+define|#
+directive|define
+name|GIMP_HELP_TOOL_THRESHOLD
+value|"tools/threshold.html"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_VECTORS
 define|#
 directive|define
 name|GIMP_HELP_TOOL_VECTORS
 value|"tools/vectors.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_ZOOM
+define|#
+directive|define
+name|GIMP_HELP_TOOL_ZOOM
+value|"tools/zoom.html"
 end_define
 
 begin_define
@@ -1561,11 +1849,187 @@ value|"dialogs/templates.html"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFERENCES_DIALOG
+DECL|macro|GIMP_HELP_PREFS_DIALOG
 define|#
 directive|define
-name|GIMP_HELP_PREFERENCES_DIALOG
-value|"file/dialogs/preferences/preferences.html"
+name|GIMP_HELP_PREFS_DIALOG
+value|"dialogs/preferences/preferences.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_NEW_IMAGE
+define|#
+directive|define
+name|GIMP_HELP_PREFS_NEW_IMAGE
+value|"dialogs/preferences/new_file.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_NEW_IMAGE_COMMENT
+define|#
+directive|define
+name|GIMP_HELP_PREFS_NEW_IMAGE_COMMENT
+value|"dialogs/preferences/new_file.html#default_comment"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_INTERFACE
+define|#
+directive|define
+name|GIMP_HELP_PREFS_INTERFACE
+value|"dialogs/preferences/interface.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_HELP
+define|#
+directive|define
+name|GIMP_HELP_PREFS_HELP
+value|"dialogs/preferences/interface.html#help_system"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_TOOL_OPTIONS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_TOOL_OPTIONS
+value|"dialogs/preferences/interface.html#tool_options"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_INPUT_DEVICES
+define|#
+directive|define
+name|GIMP_HELP_PREFS_INPUT_DEVICES
+value|"dialogs/preferences/input_devices.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_IMAGE_WINDOW
+define|#
+directive|define
+name|GIMP_HELP_PREFS_IMAGE_WINDOW
+value|"dialogs/preferences/interface.html#image_windows"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_IMAGE_WINDOW_APPEARANCE
+define|#
+directive|define
+name|GIMP_HELP_PREFS_IMAGE_WINDOW_APPEARANCE
+value|"dialogs/preferences/interface.html#image_windows"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_IMAGE_WINDOW_TITLE
+define|#
+directive|define
+name|GIMP_HELP_PREFS_IMAGE_WINDOW_TITLE
+value|"dialogs/preferences/interface.html#image_windows"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_DISPLAY
+define|#
+directive|define
+name|GIMP_HELP_PREFS_DISPLAY
+value|"dialogs/preferences/display.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_MONITOR
+define|#
+directive|define
+name|GIMP_HELP_PREFS_MONITOR
+value|"dialogs/preferences/monitor.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_ENVIRONMENT
+define|#
+directive|define
+name|GIMP_HELP_PREFS_ENVIRONMENT
+value|"dialogs/preferences/environment.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS
+value|"dialogs/preferences/folders.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_BRUSHES
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_BRUSHES
+value|"dialogs/preferences/folders.html#brushes"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_PATTERNS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_PATTERNS
+value|"dialogs/preferences/folders.html#patterns"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_PALETTES
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_PALETTES
+value|"dialogs/preferences/folders.html#palettes"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_GRADIENTS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_GRADIENTS
+value|"dialogs/preferences/folders.html#gradients"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_PLUG_INS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_PLUG_INS
+value|"dialogs/preferences/folders.html#plug_ins"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_SCRIPTS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_SCRIPTS
+value|"dialogs/preferences/folders.html#scripts"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_MODULES
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_MODULES
+value|"dialogs/preferences/folders.html#modules"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_ENVIRONMENT
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_ENVIRONMENT
+value|"dialogs/preferences/folders.html#environ"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_THEMES
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_THEMES
+value|"dialogs/preferences/folders.html#themes"
 end_define
 
 begin_define
@@ -1597,7 +2061,7 @@ DECL|macro|GIMP_HELP_DOCUMENT_DIALOG
 define|#
 directive|define
 name|GIMP_HELP_DOCUMENT_DIALOG
-value|"file/dialogs/document_index.html"
+value|"dialogs/document_index.html"
 end_define
 
 begin_define
@@ -1613,7 +2077,7 @@ DECL|macro|GIMP_HELP_INFO_DIALOG
 define|#
 directive|define
 name|GIMP_HELP_INFO_DIALOG
-value|"view/dialogs/info_window.html"
+value|"dialogs/info_window.html"
 end_define
 
 begin_define
@@ -1621,7 +2085,7 @@ DECL|macro|GIMP_HELP_NAVIGATION_DIALOG
 define|#
 directive|define
 name|GIMP_HELP_NAVIGATION_DIALOG
-value|"view/dialogs/navigation_window.html"
+value|"dialogs/navigation_window.html"
 end_define
 
 begin_define
@@ -1661,7 +2125,7 @@ DECL|macro|GIMP_HELP_TIPS_DIALOG
 define|#
 directive|define
 name|GIMP_HELP_TIPS_DIALOG
-value|"help/dialogs/tip_of_the_day.html"
+value|"dialogs/tip_of_the_day.html"
 end_define
 
 begin_define
@@ -1669,7 +2133,7 @@ DECL|macro|GIMP_HELP_ABOUT_DIALOG
 define|#
 directive|define
 name|GIMP_HELP_ABOUT_DIALOG
-value|"help/dialogs/about.html"
+value|"dialogs/about.html"
 end_define
 
 begin_define
@@ -1677,7 +2141,7 @@ DECL|macro|GIMP_HELP_HELP
 define|#
 directive|define
 name|GIMP_HELP_HELP
-value|"help/dialogs/help.html"
+value|"dialogs/help.html"
 end_define
 
 begin_define

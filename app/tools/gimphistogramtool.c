@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphistogrambox.h"
 end_include
 
@@ -438,7 +444,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/histogram.html"
+name|GIMP_HELP_TOOL_HISTOGRAM
 argument_list|,
 name|GIMP_STOCK_TOOL_HISTOGRAM
 argument_list|,

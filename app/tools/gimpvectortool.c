@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -492,7 +498,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"tools/paths.html"
+name|GIMP_HELP_TOOL_PATH
 argument_list|,
 name|GIMP_STOCK_TOOL_PATH
 argument_list|,
@@ -923,7 +929,7 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
-comment|/* when pressing mouse down    *    * Anchor: (NONE) -> Regular Movement     *         (SHFT) -> multiple selection    *         (CTRL) -> Drag out control point    *         (CTRL+SHFT) -> Convert to corner    *         (ALT)  -> close this stroke  (really should be able to connect    *                                       two strokes)    *             * Handle: (NONE) -> Regular Movement    *         (SHFT) -> (Handle) Move opposite handle symmetrically    *         (CTRL+SHFT) -> move handle to its anchor    */
+comment|/* when pressing mouse down    *    * Anchor: (NONE) -> Regular Movement    *         (SHFT) -> multiple selection    *         (CTRL) -> Drag out control point    *         (CTRL+SHFT) -> Convert to corner    *         (ALT)  -> close this stroke  (really should be able to connect    *                                       two strokes)    *    * Handle: (NONE) -> Regular Movement    *         (SHFT) -> (Handle) Move opposite handle symmetrically    *         (CTRL+SHFT) -> move handle to its anchor    */
 comment|/*  if we are changing displays, pop the statusbar of the old one  */
 if|if
 condition|(
