@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e5fae0108
+DECL|struct|__anon2ba0a9780108
 block|{
 DECL|member|run
 name|gint
@@ -2119,14 +2119,6 @@ block|{
 name|GtkWidget
 modifier|*
 name|dlg
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
 decl_stmt|;
 name|dlg
 operator|=
