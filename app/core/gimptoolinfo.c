@@ -350,11 +350,10 @@ name|tool_info
 decl_stmt|;
 name|tool_info
 operator|=
-operator|(
-name|GimpToolInfo
-operator|*
-operator|)
+name|GIMP_TOOL_INFO
+argument_list|(
 name|object
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -910,9 +909,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-operator|!
-name|context
-operator|||
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
@@ -1001,10 +997,8 @@ name|tool_info
 operator|->
 name|context
 operator|=
-name|gimp_create_context
+name|gimp_context_new
 argument_list|(
-name|context
-operator|->
 name|gimp
 argument_list|,
 name|identifier

@@ -2134,7 +2134,7 @@ argument_list|(
 literal|"/View/Zoom to Fit Window"
 argument_list|)
 block|,
-name|NULL
+literal|"<control><shift>E"
 block|,
 name|view_zoom_fit_cmd_callback
 block|,

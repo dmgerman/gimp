@@ -65,7 +65,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|tools_default_colors_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tools_default_colors_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|tools_default_colors_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -74,6 +74,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|gimp_context_set_default_colors
@@ -92,7 +95,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_swap_colors_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tools_swap_colors_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|tools_swap_colors_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -101,6 +104,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|gimp_context_swap_colors
@@ -119,7 +125,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_swap_contexts_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|tools_swap_contexts_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|tools_swap_contexts_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -128,6 +134,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 specifier|static
@@ -163,7 +172,7 @@ condition|)
 block|{
 name|swap_context
 operator|=
-name|gimp_create_context
+name|gimp_context_new
 argument_list|(
 name|gimp
 argument_list|,
@@ -177,7 +186,7 @@ argument_list|)
 expr_stmt|;
 name|temp_context
 operator|=
-name|gimp_create_context
+name|gimp_context_new
 argument_list|(
 name|gimp
 argument_list|,

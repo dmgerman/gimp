@@ -216,6 +216,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"device-status-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs.h"
 end_include
 
@@ -253,6 +259,12 @@ begin_include
 include|#
 directive|include
 file|"gradients-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"input-dialog.h"
 end_include
 
 begin_include
@@ -336,12 +348,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"devices.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -385,7 +391,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a961ef60108
+DECL|struct|__anon2c5d41960108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -805,7 +811,7 @@ name|preview_size
 parameter_list|)
 block|{
 return|return
-name|device_status_create
+name|device_status_dialog_create
 argument_list|(
 name|context
 operator|->

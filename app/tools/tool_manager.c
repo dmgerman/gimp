@@ -412,7 +412,7 @@ name|tool_manager
 operator|->
 name|global_tool_context
 operator|=
-name|gimp_create_context
+name|gimp_context_new
 argument_list|(
 name|gimp
 argument_list|,

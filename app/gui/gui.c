@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdevices.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -132,7 +138,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"devices.h"
+file|"device-status-dialog.h"
 end_include
 
 begin_include
@@ -990,9 +996,11 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|devices_init
+name|gimp_devices_init
 argument_list|(
 name|gimp
+argument_list|,
+name|device_status_dialog_update_current
 argument_list|)
 expr_stmt|;
 name|session_init
@@ -1058,7 +1066,7 @@ expr_stmt|;
 name|color_select_init
 argument_list|()
 expr_stmt|;
-name|devices_restore
+name|gimp_devices_restore
 argument_list|(
 name|gimp
 argument_list|)
@@ -1147,7 +1155,13 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|device_status_free
+if|if
+condition|(
+name|gimprc
+operator|.
+name|save_device_status
+condition|)
+name|gimp_devices_save
 argument_list|(
 name|gimp
 argument_list|)
@@ -1197,6 +1211,11 @@ name|render_free
 argument_list|()
 expr_stmt|;
 name|dialogs_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_devices_exit
 argument_list|(
 name|gimp
 argument_list|)

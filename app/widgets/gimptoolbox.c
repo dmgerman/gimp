@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdevices.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -139,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"color-area.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"devices.h"
 end_include
 
 begin_include
@@ -561,7 +561,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|devices_check_change
+name|gimp_devices_check_change
 argument_list|(
 name|GIMP
 argument_list|(

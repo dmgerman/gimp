@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdevices.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -193,12 +199,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"devices.h"
 end_include
 
 begin_include
@@ -5838,7 +5838,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|devices_get_current
+name|gimp_devices_get_current
 argument_list|(
 name|the_gimp
 argument_list|)
@@ -7252,7 +7252,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|devices_get_current
+name|gimp_devices_get_current
 argument_list|(
 name|tool
 operator|->
@@ -7264,6 +7264,7 @@ operator|==
 name|gdk_device_get_core_pointer
 argument_list|()
 condition|)
+block|{
 name|mask
 operator|=
 name|paint_tool
@@ -7272,7 +7273,9 @@ name|brush
 operator|->
 name|mask
 expr_stmt|;
+block|}
 else|else
+block|{
 name|mask
 operator|=
 name|gimp_paint_tool_scale_mask
@@ -7286,6 +7289,7 @@ argument_list|,
 name|scale
 argument_list|)
 expr_stmt|;
+block|}
 switch|switch
 condition|(
 name|brush_hardness

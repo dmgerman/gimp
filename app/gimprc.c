@@ -154,6 +154,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdevices.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -179,12 +185,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"devices.h"
 end_include
 
 begin_include
@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2d717a0103
+DECL|enum|__anon2c66a5010103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -10496,7 +10496,7 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|DeviceValues
+name|GimpDeviceValues
 name|values
 init|=
 literal|0
@@ -10673,7 +10673,7 @@ condition|)
 block|{
 name|values
 operator||=
-name|DEVICE_MODE
+name|GIMP_DEVICE_VALUE_MODE
 expr_stmt|;
 name|token
 operator|=
@@ -10762,7 +10762,7 @@ condition|)
 block|{
 name|values
 operator||=
-name|DEVICE_AXES
+name|GIMP_DEVICE_VALUE_AXES
 expr_stmt|;
 name|token
 operator|=
@@ -10966,7 +10966,7 @@ condition|)
 block|{
 name|values
 operator||=
-name|DEVICE_KEYS
+name|GIMP_DEVICE_VALUE_KEYS
 expr_stmt|;
 name|token
 operator|=
@@ -11070,7 +11070,7 @@ condition|)
 block|{
 name|values
 operator||=
-name|DEVICE_TOOL
+name|GIMP_DEVICE_VALUE_TOOL
 expr_stmt|;
 name|token
 operator|=
@@ -11118,7 +11118,7 @@ condition|)
 block|{
 name|values
 operator||=
-name|DEVICE_FOREGROUND
+name|GIMP_DEVICE_VALUE_FOREGROUND
 expr_stmt|;
 if|if
 condition|(
@@ -11154,7 +11154,7 @@ condition|)
 block|{
 name|values
 operator||=
-name|DEVICE_BACKGROUND
+name|GIMP_DEVICE_VALUE_BACKGROUND
 expr_stmt|;
 if|if
 condition|(
@@ -11190,7 +11190,7 @@ condition|)
 block|{
 name|values
 operator||=
-name|DEVICE_BRUSH
+name|GIMP_DEVICE_VALUE_BRUSH
 expr_stmt|;
 name|token
 operator|=
@@ -11238,7 +11238,7 @@ condition|)
 block|{
 name|values
 operator||=
-name|DEVICE_PATTERN
+name|GIMP_DEVICE_VALUE_PATTERN
 expr_stmt|;
 name|token
 operator|=
@@ -11286,7 +11286,7 @@ condition|)
 block|{
 name|values
 operator||=
-name|DEVICE_GRADIENT
+name|GIMP_DEVICE_VALUE_GRADIENT
 expr_stmt|;
 name|token
 operator|=
@@ -11368,7 +11368,7 @@ operator|=
 name|get_next_token
 argument_list|()
 expr_stmt|;
-name|devices_rc_update
+name|gimp_devices_rc_update
 argument_list|(
 name|the_gimp
 argument_list|,

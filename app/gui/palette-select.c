@@ -416,7 +416,7 @@ name|psp
 operator|->
 name|context
 operator|=
-name|gimp_create_context
+name|gimp_context_new
 argument_list|(
 name|gimp
 argument_list|,
