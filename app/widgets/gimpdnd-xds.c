@@ -67,6 +67,43 @@ begin_comment
 comment|/* Saving Files Via Drag-and-Drop:  * The Direct Save Protocol for the X Window System  *  *   http://www.newplanetsoftware.com/xds/  *   http://rox.sourceforge.net/xds.html  */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG_DND
+end_ifdef
+
+begin_define
+DECL|macro|D (stmnt)
+define|#
+directive|define
+name|D
+parameter_list|(
+name|stmnt
+parameter_list|)
+value|stmnt
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|D (stmnt)
+define|#
+directive|define
+name|D
+parameter_list|(
+name|stmnt
+parameter_list|)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|MAX_URI_LEN
 define|#
@@ -113,6 +150,14 @@ operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|D
+argument_list|(
+name|g_printerr
+argument_list|(
+literal|"\ngimp_dnd_xds_source_set\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -281,6 +326,14 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|D
+argument_list|(
+name|g_printerr
+argument_list|(
+literal|"\ngimp_dnd_xds_save_image\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
