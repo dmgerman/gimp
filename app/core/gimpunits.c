@@ -198,7 +198,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae972400103
+DECL|enum|__anon29c251f50103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -612,12 +612,18 @@ operator|==
 name|FALSE
 condition|)
 block|{
+name|gchar
+name|buf
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
+decl_stmt|;
 name|fprintf
 argument_list|(
 name|fp
 argument_list|,
 literal|"(unit-info \"%s\"\n"
-literal|"   (factor %f)\n"
+literal|"   (factor %s)\n"
 literal|"   (digits %d)\n"
 literal|"   (symbol \"%s\")\n"
 literal|"   (abbreviation \"%s\")\n"
@@ -629,9 +635,21 @@ argument_list|(
 name|i
 argument_list|)
 argument_list|,
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
+argument_list|,
+literal|"%f"
+argument_list|,
 name|gimp_unit_get_factor
 argument_list|(
 name|i
+argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_unit_get_digits
