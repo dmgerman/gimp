@@ -2224,8 +2224,6 @@ name|tile_is_valid
 argument_list|(
 name|src_tile
 argument_list|)
-operator|==
-name|TRUE
 condition|)
 block|{
 name|src_tile
@@ -4636,8 +4634,6 @@ name|tile_is_valid
 argument_list|(
 name|undo_tile
 argument_list|)
-operator|==
-name|TRUE
 condition|)
 block|{
 name|refd
@@ -4668,8 +4664,7 @@ expr_stmt|;
 name|s
 operator|=
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|*
 operator|)
 name|tile_data_pointer
@@ -8909,12 +8904,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|tile_is_valid
 argument_list|(
 name|dest_tile
 argument_list|)
-operator|==
-name|FALSE
 condition|)
 block|{
 name|src_tile
@@ -9067,12 +9061,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|tile_is_valid
 argument_list|(
 name|tile
 argument_list|)
-operator|==
-name|FALSE
 condition|)
 block|{
 name|tile

@@ -933,7 +933,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|tile_is_valid (Tile * tile)
 name|tile_is_valid
 parameter_list|(
@@ -1046,7 +1046,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|TILE_DEBUG
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"tile_attach: %p -> (%p,%d) *%d\n"
 argument_list|,
@@ -1131,7 +1131,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|TILE_DEBUG
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"tile_detach: %p ~> (%p,%d) r%d *%d\n"
 argument_list|,
@@ -1291,9 +1291,7 @@ parameter_list|)
 block|{
 name|gint
 name|offset
-decl_stmt|;
-name|offset
-operator|=
+init|=
 name|yoff
 operator|*
 name|tile
@@ -1301,7 +1299,7 @@ operator|->
 name|ewidth
 operator|+
 name|xoff
-expr_stmt|;
+decl_stmt|;
 return|return
 call|(
 name|gpointer

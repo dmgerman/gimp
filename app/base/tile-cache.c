@@ -84,7 +84,7 @@ end_define
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|tile_cache_zorch_next
 parameter_list|(
 name|void
@@ -295,7 +295,7 @@ DECL|macro|CACHE_LOCK
 define|#
 directive|define
 name|CACHE_LOCK
-value|pthread_mutex_lock(&tile_mutex)
+value|pthread_mutex_lock (&tile_mutex)
 end_define
 
 begin_define
@@ -303,7 +303,7 @@ DECL|macro|CACHE_UNLOCK
 define|#
 directive|define
 name|CACHE_UNLOCK
-value|pthread_mutex_unlock(&tile_mutex)
+value|pthread_mutex_unlock (&tile_mutex)
 end_define
 
 begin_else
@@ -465,11 +465,10 @@ name|CACHE_LOCK
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|tile
 operator|->
 name|data
-operator|==
-name|NULL
 condition|)
 goto|goto
 name|out
@@ -615,11 +614,8 @@ expr_stmt|;
 goto|goto
 name|out
 goto|;
-comment|/* goto grump;*/
 block|}
 block|}
-comment|/*grump:*/
-comment|/* Note the increase in the number of bytes the cache        *  is referencing.        */
 name|cur_cache_size
 operator|+=
 name|tile_size
@@ -703,11 +699,6 @@ argument_list|(
 name|tile
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-literal|1
-condition|)
-block|{
 ifdef|#
 directive|ifdef
 name|USE_PTHREADS
@@ -731,7 +722,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-block|}
 block|}
 name|out
 label|:
@@ -793,7 +783,6 @@ condition|(
 name|list
 condition|)
 block|{
-comment|/* Note the decrease in the number of bytes the cache        *  is referencing.        */
 name|cur_cache_size
 operator|-=
 name|tile_size
@@ -875,10 +864,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/* untested -- ADM */
-end_comment
-
 begin_function
 name|void
 DECL|function|tile_cache_set_size (gulong cache_size)
@@ -888,11 +873,11 @@ name|gulong
 name|cache_size
 parameter_list|)
 block|{
+name|CACHE_LOCK
+expr_stmt|;
 name|max_cache_size
 operator|=
 name|cache_size
-expr_stmt|;
-name|CACHE_LOCK
 expr_stmt|;
 while|while
 condition|(
@@ -916,7 +901,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|tile_cache_zorch_next (void)
 name|tile_cache_zorch_next
 parameter_list|(
@@ -1061,7 +1046,7 @@ name|count
 decl_stmt|;
 name|g_printerr
 argument_list|(
-literal|"starting tile preswapper\n"
+literal|"starting tile preswapper thread\n"
 argument_list|)
 expr_stmt|;
 name|count
@@ -1446,6 +1431,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* !USE_PTHREADS */
+end_comment
 
 end_unit
 

@@ -211,7 +211,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|tile_is_valid
 parameter_list|(
 name|Tile

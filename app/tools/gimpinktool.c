@@ -3147,7 +3147,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon293683de0103
+DECL|enum|__anon29ffecd30103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4675,12 +4675,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|tile_is_valid
 argument_list|(
 name|dest_tile
 argument_list|)
-operator|==
-name|FALSE
 condition|)
 block|{
 name|src_tile
@@ -4744,14 +4743,14 @@ name|gint
 name|h
 parameter_list|)
 block|{
+name|Tile
+modifier|*
+name|tile
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
 name|j
-decl_stmt|;
-name|Tile
-modifier|*
-name|tile
 decl_stmt|;
 for|for
 control|(
@@ -4824,12 +4823,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|tile_is_valid
 argument_list|(
 name|tile
 argument_list|)
-operator|==
-name|FALSE
 condition|)
 block|{
 name|tile
