@@ -114,10 +114,7 @@ if|#
 directive|if
 name|GLIB_SIZEOF_VOID_P
 operator|!=
-sizeof|sizeof
-argument_list|(
-name|guint32
-argument_list|)
+literal|4
 end_if
 
 begin_warning
@@ -144,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8c68d0108
+DECL|struct|__anon29425cb40108
 block|{
 DECL|member|root
 name|gboolean
@@ -826,16 +823,18 @@ modifier|*
 name|screen
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-comment|/* MS Windows specific code goes here (yet to be written) */
-comment|/* basically the code should grab the pointer using a crosshair      cursor, allow the user to click on a window and return the      obtained HWND (as a GdkNativeWindow) - for more details consult      the X11 specific code below */
-comment|/* note to self: take a look at the winsnap plug-in for example      code */
-else|#
-directive|else
-comment|/* ! G_OS_WIN32 */
+if|#
+directive|if
+name|defined
+argument_list|(
+name|GDK_WINDOWING_X11
+argument_list|)
 comment|/* X11 specific code */
+DECL|macro|MASK
+define|#
+directive|define
+name|MASK
+value|(ButtonPressMask | ButtonReleaseMask)
 name|Display
 modifier|*
 name|x_dpy
@@ -917,9 +916,7 @@ name|x_root
 argument_list|,
 name|False
 argument_list|,
-name|ButtonPressMask
-operator||
-name|ButtonReleaseMask
+name|MASK
 argument_list|,
 name|GrabModeSync
 argument_list|,
@@ -981,9 +978,7 @@ name|x_dpy
 argument_list|,
 name|x_root
 argument_list|,
-name|ButtonPressMask
-operator||
-name|ButtonReleaseMask
+name|MASK
 argument_list|,
 operator|&
 name|x_event
@@ -1055,12 +1050,42 @@ argument_list|,
 name|CurrentTime
 argument_list|)
 expr_stmt|;
+name|XFreeCursor
+argument_list|(
+name|x_dpy
+argument_list|,
+name|x_cursor
+argument_list|)
+expr_stmt|;
 return|return
 name|x_win
 return|;
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|GDK_WINDOWING_WIN32
+argument_list|)
+comment|/* MS Windows specific code goes here (yet to be written) */
+comment|/* basically the code should grab the pointer using a crosshair      cursor, allow the user to click on a window and return the      obtained HWND (as a GdkNativeWindow) - for more details consult      the X11 specific code below */
+comment|/* note to self: take a look at the winsnap plug-in for example      code */
+warning|#
+directive|warning
+warning|Win32 screenshot window chooser not implemented yet
+return|return
+literal|0
+return|;
+else|#
+directive|else
+warning|#
+directive|warning
+warning|screenshot window chooser not implemented yet for this GDB backend
+return|return
+literal|0
+return|;
 endif|#
 directive|endif
-comment|/* ! G_OS_WIN32 */
+comment|/* G_OS_WIN32 */
 block|}
 end_function
 
@@ -2463,10 +2488,6 @@ name|gint
 modifier|*
 name|seconds_left
 init|=
-operator|(
-name|gint
-operator|*
-operator|)
 name|data
 decl_stmt|;
 operator|(
