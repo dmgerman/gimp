@@ -507,6 +507,8 @@ name|color
 decl_stmt|;
 name|gdouble
 name|opacity
+init|=
+literal|0
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -1184,6 +1186,8 @@ name|color
 decl_stmt|;
 name|gdouble
 name|opacity
+init|=
+literal|0
 decl_stmt|;
 name|GimpGradient
 modifier|*
@@ -8015,6 +8019,8 @@ name|control_compress
 decl_stmt|;
 name|gdouble
 name|final_delta
+init|=
+literal|0
 decl_stmt|;
 name|GimpGradient
 modifier|*
