@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292b750e0103
+DECL|enum|__anon2aa035030103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -2978,9 +2978,10 @@ decl_stmt|,
 modifier|*
 name|p
 decl_stmt|;
+name|GimpImageBaseType
+name|color_type
+decl_stmt|;
 name|gint
-name|color
-decl_stmt|,
 name|alpha
 decl_stmt|;
 name|gint
@@ -3047,7 +3048,7 @@ name|mask
 operator|->
 name|bytes
 expr_stmt|;
-name|color
+name|color_type
 operator|=
 operator|(
 name|pattern
@@ -3117,7 +3118,7 @@ name|p
 argument_list|,
 name|d
 argument_list|,
-name|color
+name|color_type
 argument_list|)
 expr_stmt|;
 name|d

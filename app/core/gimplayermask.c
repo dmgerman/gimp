@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayermask.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eeb02a0103
+DECL|enum|__anon296907920103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -101,7 +107,7 @@ name|gimp_layer_mask_init
 parameter_list|(
 name|GimpLayerMask
 modifier|*
-name|layermask
+name|layer_mask
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -558,19 +564,38 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_mask_set_layer (GimpLayerMask * mask,GimpLayer * layer)
+DECL|function|gimp_layer_mask_set_layer (GimpLayerMask * layer_mask,GimpLayer * layer)
 name|gimp_layer_mask_set_layer
 parameter_list|(
 name|GimpLayerMask
 modifier|*
-name|mask
+name|layer_mask
 parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
 block|{
-name|mask
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_LAYER_MASK
+argument_list|(
+name|layer_mask
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+operator|!
+name|layer
+operator|||
+name|GIMP_IS_LAYER
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|layer_mask
 operator|->
 name|layer
 operator|=
@@ -582,17 +607,27 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_mask_get_layer (const GimpLayerMask * mask)
+DECL|function|gimp_layer_mask_get_layer (const GimpLayerMask * layer_mask)
 name|gimp_layer_mask_get_layer
 parameter_list|(
 specifier|const
 name|GimpLayerMask
 modifier|*
-name|mask
+name|layer_mask
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_LAYER_MASK
+argument_list|(
+name|layer_mask
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
-name|mask
+name|layer_mask
 operator|->
 name|layer
 return|;
@@ -634,6 +669,10 @@ operator|->
 name|apply_mask
 operator|=
 name|apply
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -758,6 +797,10 @@ operator|->
 name|edit_mask
 operator|=
 name|edit
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
@@ -842,6 +885,10 @@ operator|->
 name|show_mask
 operator|=
 name|show
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 if|if
 condition|(

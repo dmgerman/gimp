@@ -61,7 +61,7 @@ name|GSList
 modifier|*
 name|procs
 parameter_list|,
-name|gint
+name|GimpImageType
 name|image_type
 parameter_list|)
 function_decl|;

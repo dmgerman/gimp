@@ -785,10 +785,6 @@ name|success
 condition|)
 name|gimp_image_convert
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gimage
 argument_list|,
 name|GIMP_INDEXED

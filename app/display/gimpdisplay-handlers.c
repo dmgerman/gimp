@@ -526,6 +526,7 @@ argument_list|)
 operator|==
 name|GIMP_INDEXED
 condition|)
+block|{
 name|gimp_display_add_update_area
 argument_list|(
 name|gdisp
@@ -547,6 +548,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

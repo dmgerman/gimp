@@ -3680,8 +3680,10 @@ name|alpha
 operator|=
 name|NULL
 expr_stmt|;
-switch|switch
+if|if
 condition|(
+name|GIMP_IMAGE_TYPE_HAS_ALPHA
+argument_list|(
 name|gimp_image_projection_type
 argument_list|(
 name|shell
@@ -3690,17 +3692,9 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|)
 condition|)
 block|{
-case|case
-name|GIMP_RGBA_IMAGE
-case|:
-case|case
-name|GIMP_GRAYA_IMAGE
-case|:
-case|case
-name|GIMP_INDEXEDA_IMAGE
-case|:
 name|info
 operator|->
 name|alpha
@@ -3717,10 +3711,6 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
-comment|/* nothing special needs doing */
-break|break;
 block|}
 block|}
 end_function

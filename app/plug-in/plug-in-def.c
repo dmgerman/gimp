@@ -16149,7 +16149,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|PlugInImageType
 DECL|function|plug_in_image_types_parse (gchar * image_types)
 name|plug_in_image_types_parse
 parameter_list|(
@@ -16164,7 +16164,7 @@ name|type_spec
 init|=
 name|image_types
 decl_stmt|;
-name|gint
+name|PlugInImageType
 name|types
 init|=
 literal|0
