@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpobject.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-in.h"
 end_include
 
@@ -114,10 +120,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*****  Debug  *****/
+end_comment
+
 begin_function
 name|void
-DECL|function|mem_profile_cmd_callback (GtkWidget * widget,gpointer data)
-name|mem_profile_cmd_callback
+DECL|function|debug_mem_profile_cmd_callback (GtkWidget * widget,gpointer data)
+name|debug_mem_profile_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -127,8 +137,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|g_mem_profile
-argument_list|()
+name|gimp_object_get_memsize
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -286,6 +286,10 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
+comment|/* #define ENABLE_DEBUG_ENTRY 1 */
+end_comment
+
+begin_comment
 comment|/*  local function prototypes  */
 end_comment
 
@@ -1182,21 +1186,18 @@ block|,
 name|NULL
 block|}
 block|,
-name|SEPARATOR
+name|BRANCH
 argument_list|(
-literal|"/Help/---"
+literal|"/_Debug"
 argument_list|)
 block|,
 block|{
 block|{
-name|N_
-argument_list|(
-literal|"/Help/Mem Profile"
-argument_list|)
+literal|"/Debug/Mem Profile"
 block|,
 name|NULL
 block|,
-name|mem_profile_cmd_callback
+name|debug_mem_profile_cmd_callback
 block|,
 literal|0
 block|}
@@ -1213,7 +1214,7 @@ name|ENABLE_DEBUG_ENTRY
 block|,
 block|{
 block|{
-literal|"/Help/Dump Items (Debug)"
+literal|"/Debug/Dump Items"
 block|,
 name|NULL
 block|,

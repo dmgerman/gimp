@@ -63,7 +63,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|mem_profile_cmd_callback
+name|debug_mem_profile_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
