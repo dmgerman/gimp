@@ -1804,7 +1804,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|g_object_weak_ref
@@ -1867,6 +1867,16 @@ operator|=
 name|gtk_radio_button_new
 argument_list|(
 name|group
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_mode
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

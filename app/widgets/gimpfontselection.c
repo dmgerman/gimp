@@ -209,7 +209,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ee2fd30103
+DECL|enum|__anon28c590d30103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -506,6 +506,16 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
+name|gtk_box_set_spacing
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|fontsel
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|fontsel
 operator|->
 name|context
