@@ -1729,6 +1729,8 @@ operator|->
 name|fuzzy_mask
 argument_list|)
 argument_list|)
+argument_list|,
+name|HALF_WAY
 argument_list|)
 expr_stmt|;
 name|segs

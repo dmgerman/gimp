@@ -16,10 +16,22 @@ directive|define
 name|__BOUNDARY_H__
 end_define
 
+begin_comment
+comment|/* half intensity for mask */
+end_comment
+
+begin_define
+DECL|macro|HALF_WAY
+define|#
+directive|define
+name|HALF_WAY
+value|127
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f0f220103
+DECL|enum|__anon2a8e7bd90103
 block|{
 DECL|enumerator|WithinBounds
 name|WithinBounds
@@ -96,6 +108,9 @@ name|x2
 parameter_list|,
 name|gint
 name|y2
+parameter_list|,
+name|guchar
+name|threshold
 parameter_list|)
 function_decl|;
 end_function_decl

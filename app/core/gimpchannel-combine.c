@@ -3205,6 +3205,8 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
+argument_list|,
+name|HALF_WAY
 argument_list|)
 expr_stmt|;
 name|x1
@@ -3310,6 +3312,8 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
+argument_list|,
+name|HALF_WAY
 argument_list|)
 expr_stmt|;
 block|}

@@ -52,18 +52,6 @@ file|"tile-manager.h"
 end_include
 
 begin_comment
-comment|/* half intensity for mask */
-end_comment
-
-begin_define
-DECL|macro|HALF_WAY
-define|#
-directive|define
-name|HALF_WAY
-value|127
-end_define
-
-begin_comment
 comment|/* BoundSeg array growth parameter */
 end_comment
 
@@ -213,6 +201,9 @@ name|x2
 parameter_list|,
 name|gint
 name|y2
+parameter_list|,
+name|guchar
+name|threshold
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -337,6 +328,9 @@ name|x2
 parameter_list|,
 name|gint
 name|y2
+parameter_list|,
+name|guchar
+name|threshold
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -348,7 +342,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|find_empty_segs (PixelRegion * maskPR,gint scanline,gint empty_segs[],gint max_empty,gint * num_empty,BoundaryType type,gint x1,gint y1,gint x2,gint y2)
+DECL|function|find_empty_segs (PixelRegion * maskPR,gint scanline,gint empty_segs[],gint max_empty,gint * num_empty,BoundaryType type,gint x1,gint y1,gint x2,gint y2,guchar threshold)
 name|find_empty_segs
 parameter_list|(
 name|PixelRegion
@@ -383,6 +377,9 @@ name|x2
 parameter_list|,
 name|gint
 name|y2
+parameter_list|,
+name|guchar
+name|threshold
 parameter_list|)
 block|{
 name|unsigned
@@ -600,6 +597,37 @@ operator|=
 operator|*
 name|num_empty
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|maskPR
+operator|->
+name|tiles
+condition|)
+block|{
+name|data
+operator|=
+name|maskPR
+operator|->
+name|data
+operator|+
+name|scanline
+operator|*
+name|maskPR
+operator|->
+name|rowstride
+expr_stmt|;
+name|dstep
+operator|=
+name|maskPR
+operator|->
+name|bytes
+expr_stmt|;
+name|endx
+operator|=
+name|end
+expr_stmt|;
+block|}
 for|for
 control|(
 name|x
@@ -613,6 +641,13 @@ condition|;
 control|)
 block|{
 comment|/*  Check to see if we must advance to next tile  */
+if|if
+condition|(
+name|maskPR
+operator|->
+name|tiles
+condition|)
+block|{
 if|if
 condition|(
 operator|(
@@ -717,6 +752,7 @@ argument_list|,
 name|endx
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|type
@@ -750,7 +786,7 @@ condition|(
 operator|*
 name|data
 operator|>
-name|HALF_WAY
+name|threshold
 condition|)
 if|if
 condition|(
@@ -820,7 +856,7 @@ condition|(
 operator|*
 name|data
 operator|>
-name|HALF_WAY
+name|threshold
 condition|)
 name|val
 operator|=
@@ -1401,7 +1437,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_boundary (PixelRegion * PR,BoundaryType type,gint x1,gint y1,gint x2,gint y2)
+DECL|function|generate_boundary (PixelRegion * PR,BoundaryType type,gint x1,gint y1,gint x2,gint y2,guchar threshold)
 name|generate_boundary
 parameter_list|(
 name|PixelRegion
@@ -1422,6 +1458,9 @@ name|x2
 parameter_list|,
 name|gint
 name|y2
+parameter_list|,
+name|guchar
+name|threshold
 parameter_list|)
 block|{
 name|gint
@@ -1544,6 +1583,8 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
+argument_list|,
+name|threshold
 argument_list|)
 expr_stmt|;
 name|find_empty_segs
@@ -1568,6 +1609,8 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
+argument_list|,
+name|threshold
 argument_list|)
 expr_stmt|;
 for|for
@@ -1609,6 +1652,8 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
+argument_list|,
+name|threshold
 argument_list|)
 expr_stmt|;
 comment|/*  process the segments on the current scanline  */
@@ -1710,7 +1755,7 @@ end_function
 begin_function
 name|BoundSeg
 modifier|*
-DECL|function|find_mask_boundary (PixelRegion * maskPR,int * num_elems,BoundaryType type,int x1,int y1,int x2,int y2)
+DECL|function|find_mask_boundary (PixelRegion * maskPR,int * num_elems,BoundaryType type,int x1,int y1,int x2,int y2,guchar threshold)
 name|find_mask_boundary
 parameter_list|(
 name|PixelRegion
@@ -1735,6 +1780,9 @@ name|x2
 parameter_list|,
 name|int
 name|y2
+parameter_list|,
+name|guchar
+name|threshold
 parameter_list|)
 block|{
 name|BoundSeg
@@ -1758,6 +1806,8 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
+argument_list|,
+name|threshold
 argument_list|)
 expr_stmt|;
 comment|/*  Set the number of X segments  */

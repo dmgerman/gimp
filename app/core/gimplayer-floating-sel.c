@@ -2420,6 +2420,8 @@ name|layer
 argument_list|)
 operator|->
 name|height
+argument_list|,
+name|HALF_WAY
 argument_list|)
 expr_stmt|;
 comment|/*  offset the segments  */
