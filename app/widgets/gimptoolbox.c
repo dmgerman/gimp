@@ -1750,7 +1750,7 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_events
+name|gtk_widget_add_events
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
