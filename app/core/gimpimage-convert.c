@@ -165,6 +165,25 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|DM_RANGE
+end_ifndef
+
+begin_define
+DECL|macro|DM_RANGE
+define|#
+directive|define
+name|DM_RANGE
+value|63
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/* basic memory/quality tradeoff */
 end_comment
@@ -411,7 +430,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bf9e8a20103
+DECL|enum|__anon2aa153dd0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1452,7 +1471,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf9e8a20208
+DECL|struct|__anon2aa153dd0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1529,7 +1548,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf9e8a20308
+DECL|struct|__anon2aa153dd0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1714,7 +1733,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf9e8a20408
+DECL|struct|__anon2aa153dd0408
 block|{
 DECL|member|used_count
 name|signed
@@ -11765,7 +11784,7 @@ name|ColorFreq
 modifier|*
 name|cachep
 decl_stmt|;
-name|int
+name|gint
 name|pixval1
 init|=
 literal|0
@@ -11774,7 +11793,7 @@ name|pixval2
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|err1
 decl_stmt|,
 name|err2
@@ -11801,9 +11820,6 @@ name|col
 decl_stmt|;
 name|gint
 name|pixel
-decl_stmt|;
-name|gint
-name|R
 decl_stmt|;
 name|gulong
 modifier|*
@@ -12088,6 +12104,9 @@ index|[
 name|GRAY_PIX
 index|]
 operator|-
+operator|(
+name|int
+operator|)
 name|color1
 operator|->
 name|red
@@ -12104,13 +12123,15 @@ name|re
 decl_stmt|;
 do|do
 block|{
+specifier|const
+name|gint
 name|R
-operator|=
+init|=
 name|CLAMP0255
 argument_list|(
 name|RV
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|cachep
 operator|=
 operator|&
@@ -12161,7 +12182,6 @@ operator|&&
 operator|(
 operator|!
 operator|(
-operator|(
 name|RV
 operator|>
 literal|255
@@ -12169,7 +12189,6 @@ operator|||
 name|RV
 operator|<
 literal|0
-operator|)
 operator|)
 operator|)
 operator|&&
@@ -12193,6 +12212,38 @@ name|quantobj
 operator|->
 name|actual_number_of_colors
 operator|)
+expr_stmt|;
+block|}
+comment|/* always deterministically sort pixval1 and pixval2, to                  avoid artifacts in the dither range due to inverting our                  relative colour viewpoint -- most obvious in 1-bit dither. */
+if|if
+condition|(
+name|pixval1
+operator|>
+name|pixval2
+condition|)
+block|{
+name|gint
+name|tmpval
+init|=
+name|pixval1
+decl_stmt|;
+name|pixval1
+operator|=
+name|pixval2
+expr_stmt|;
+name|pixval2
+operator|=
+name|tmpval
+expr_stmt|;
+name|color1
+operator|=
+operator|&
+name|quantobj
+operator|->
+name|cmap
+index|[
+name|pixval1
+index|]
 expr_stmt|;
 block|}
 name|color2
@@ -12245,9 +12296,9 @@ name|int
 name|proportion2
 init|=
 operator|(
-literal|16
+literal|256
 operator|*
-literal|63
+name|DM_RANGE
 operator|*
 name|err2
 operator|)
@@ -12263,7 +12314,7 @@ condition|(
 operator|(
 name|dmval
 operator|*
-literal|16
+literal|256
 operator|)
 operator|>
 name|proportion2
@@ -12945,7 +12996,7 @@ name|ColorFreq
 modifier|*
 name|cachep
 decl_stmt|;
-name|int
+name|gint
 name|pixval1
 init|=
 literal|0
@@ -12976,7 +13027,7 @@ name|G
 decl_stmt|,
 name|B
 decl_stmt|;
-name|int
+name|gint
 name|err1
 decl_stmt|,
 name|err2
@@ -13667,7 +13718,7 @@ operator|->
 name|actual_number_of_colors
 operator|<=
 literal|2
-comment|/*||                            pixval1 == pixval2*/
+comment|/* || pixval1 == pixval2 */
 condition|)
 block|{
 comment|/* not enough colours to bother looking for an 'alternative'                    colour (we may fail to do so anyway), so decide that                    the alternative colour is simply the other cmap entry. */
@@ -13684,6 +13735,38 @@ name|quantobj
 operator|->
 name|actual_number_of_colors
 operator|)
+expr_stmt|;
+block|}
+comment|/* always deterministically sort pixval1 and pixval2, to                  avoid artifacts in the dither range due to inverting our                  relative colour viewpoint -- most obvious in 1-bit dither. */
+if|if
+condition|(
+name|pixval1
+operator|>
+name|pixval2
+condition|)
+block|{
+name|gint
+name|tmpval
+init|=
+name|pixval1
+decl_stmt|;
+name|pixval1
+operator|=
+name|pixval2
+expr_stmt|;
+name|pixval2
+operator|=
+name|tmpval
+expr_stmt|;
+name|color1
+operator|=
+operator|&
+name|quantobj
+operator|->
+name|cmap
+index|[
+name|pixval1
+index|]
 expr_stmt|;
 block|}
 name|color2
@@ -13814,7 +13897,7 @@ name|int
 name|proportion2
 init|=
 operator|(
-literal|63
+name|DM_RANGE
 operator|*
 name|err2
 operator|)
