@@ -3162,7 +3162,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_is_dirty:  * @image_ID: The image.  *  * Checks if the image has unsaved changes.  *  * This procedure checks the specified image's dirty count to see if it  * needs to be saved.  *  * Returns: True if the image has unsaved changed.  */
+comment|/**  * gimp_image_is_dirty:  * @image_ID: The image.  *  * Checks if the image has unsaved changes.  *  * This procedure checks the specified image's dirty count to see if it  * needs to be saved.  *  * Returns: True if the image has unsaved changes.  */
 end_comment
 
 begin_function

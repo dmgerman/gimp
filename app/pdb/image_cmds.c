@@ -9792,7 +9792,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"dirty"
 block|,
-literal|"True if the image has unsaved changed."
+literal|"True if the image has unsaved changes."
 block|}
 block|}
 decl_stmt|;
