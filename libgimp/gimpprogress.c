@@ -367,7 +367,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gpointer
 DECL|function|gimp_progress_uninstall (const gchar * progress_callback)
 name|gimp_progress_uninstall
 parameter_list|(
@@ -381,17 +381,24 @@ name|GimpProgressData
 modifier|*
 name|progress_data
 decl_stmt|;
-name|g_return_if_fail
+name|gpointer
+name|user_data
+decl_stmt|;
+name|g_return_val_if_fail
 argument_list|(
 name|progress_callback
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|gimp_progress_ht
 operator|!=
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -415,7 +422,9 @@ argument_list|(
 literal|"Can't find internal progress data"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|NULL
+return|;
 block|}
 name|_gimp_progress_uninstall
 argument_list|(
@@ -427,6 +436,12 @@ argument_list|(
 name|progress_callback
 argument_list|)
 expr_stmt|;
+name|user_data
+operator|=
+name|progress_data
+operator|->
+name|data
+expr_stmt|;
 name|g_hash_table_remove
 argument_list|(
 name|gimp_progress_ht
@@ -434,6 +449,9 @@ argument_list|,
 name|progress_callback
 argument_list|)
 expr_stmt|;
+return|return
+name|user_data
+return|;
 block|}
 end_function
 
