@@ -934,7 +934,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|12
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -944,7 +944,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|12
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

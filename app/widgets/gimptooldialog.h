@@ -16,6 +16,103 @@ directive|define
 name|__GIMP_TOOL_DIALOG_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_TOOL_DIALOG
+define|#
+directive|define
+name|GIMP_TYPE_TOOL_DIALOG
+value|(gimp_tool_dialog_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_DIALOG (obj)
+define|#
+directive|define
+name|GIMP_TOOL_DIALOG
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TOOL_DIALOG, GimpToolDialog))
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_DIALOG_CLASS (klass)
+define|#
+directive|define
+name|GIMP_TOOL_DIALOG_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TOOL_DIALOG, GimpToolDialogClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TOOL_DIALOG (obj)
+define|#
+directive|define
+name|GIMP_IS_TOOL_DIALOG
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TOOL_DIALOG))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TOOL_DIALOG_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_TOOL_DIALOG_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TOOL_DIALOG))
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_DIALOG_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_TOOL_DIALOG_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TOOL_DIALOG, GimpToolDialogClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpToolDialogClass
+typedef|typedef
+name|struct
+name|_GimpViewableDialogClass
+name|GimpToolDialogClass
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpToolDialog
+typedef|typedef
+name|struct
+name|_GimpViewableDialog
+name|GimpToolDialog
+typedef|;
+end_typedef
+
+begin_decl_stmt
+name|GType
+name|gimp_tool_dialog_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|GtkWidget
 modifier|*
