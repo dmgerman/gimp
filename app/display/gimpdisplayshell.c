@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpcolor/gimpcolor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -84,12 +78,6 @@ begin_include
 include|#
 directive|include
 file|"config/gimpdisplayconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpguiconfig.h"
 end_include
 
 begin_include
@@ -162,12 +150,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimppattern.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file/file-utils.h"
 end_include
 
 begin_include
@@ -340,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac0be720103
+DECL|enum|__anon2b4ed9990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -356,7 +338,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac0be720203
+DECL|enum|__anon2b4ed9990203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -642,37 +624,31 @@ parameter_list|)
 block|{
 name|GObjectClass
 modifier|*
-name|gobject_class
-decl_stmt|;
-name|GtkObjectClass
-modifier|*
 name|object_class
-decl_stmt|;
-name|GtkWidgetClass
-modifier|*
-name|widget_class
-decl_stmt|;
-name|gobject_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
-name|object_class
-operator|=
+decl_stmt|;
+name|GtkObjectClass
+modifier|*
+name|gtk_object_class
+init|=
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GtkWidgetClass
+modifier|*
 name|widget_class
-operator|=
+init|=
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -782,25 +758,25 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gobject_class
+name|object_class
 operator|->
 name|finalize
 operator|=
 name|gimp_display_shell_finalize
 expr_stmt|;
-name|gobject_class
+name|object_class
 operator|->
 name|set_property
 operator|=
 name|gimp_display_shell_set_property
 expr_stmt|;
-name|gobject_class
+name|object_class
 operator|->
 name|get_property
 operator|=
 name|gimp_display_shell_get_property
 expr_stmt|;
-name|object_class
+name|gtk_object_class
 operator|->
 name|destroy
 operator|=
@@ -844,7 +820,7 @@ name|NULL
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
-name|gobject_class
+name|object_class
 argument_list|,
 name|PROP_SCALE
 argument_list|,
@@ -870,7 +846,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
-name|gobject_class
+name|object_class
 argument_list|,
 name|PROP_UNIT
 argument_list|,
@@ -1193,7 +1169,7 @@ literal|0
 expr_stmt|;
 name|shell
 operator|->
-name|warning_dialog
+name|close_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -2280,10 +2256,6 @@ name|GimpDisplayConfig
 modifier|*
 name|display_config
 decl_stmt|;
-name|GimpGuiConfig
-modifier|*
-name|gui_config
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|main_vbox
@@ -2415,13 +2387,6 @@ operator|->
 name|gimp
 operator|->
 name|config
-argument_list|)
-expr_stmt|;
-name|gui_config
-operator|=
-name|GIMP_GUI_CONFIG
-argument_list|(
-name|display_config
 argument_list|)
 expr_stmt|;
 name|shell
@@ -2674,7 +2639,7 @@ block|}
 block|}
 else|else
 block|{
-comment|/* Set up size like above, but do not zoom to fit. 	 Useful when working on large images. */
+comment|/* Set up size like above, but do not zoom to fit.          Useful when working on large images. */
 if|if
 condition|(
 name|n_width
@@ -4510,7 +4475,7 @@ name|snap_distance
 decl_stmt|;
 name|snap_distance
 operator|=
-name|GIMP_GUI_CONFIG
+name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|shell
 operator|->

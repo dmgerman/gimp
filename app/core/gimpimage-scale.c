@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpguiconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -706,12 +700,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale_check:  * @gimage:      A #GimpImage.  * @new_width:   The new width.  * @new_height:  The new height.  * @new_memsize: The new memory size.  *  * Inventory the layer list in gimage and check that it may be  * scaled to @new_height and @new_width without problems.  *  * Return value: #GIMP_IMAGE_SCALE_OK if scaling the image will shrink none  *               of its layers completely away, and the new image size  *               is smaller than the maximum specified in the  *               preferences.  *               #GIMP_IMAGE_SCALE_TOO_SMALL if scaling would remove some  *               existing layers.  *               #GIMP_IMAGE_SCALE_TOO_BIG if the new image size would  *               exceed the maximum specified in the preferences.  **/
+comment|/**  * gimp_image_scale_check:  * @gimage:      A #GimpImage.  * @new_width:   The new width.  * @new_height:  The new height.  * @max_memsize: The maximum new memory size.  * @new_memsize: The new memory size.  *  * Inventory the layer list in gimage and check that it may be  * scaled to @new_height and @new_width without problems.  *  * Return value: #GIMP_IMAGE_SCALE_OK if scaling the image will shrink none  *               of its layers completely away, and the new image size  *               is smaller than @max_memsize.  *               #GIMP_IMAGE_SCALE_TOO_SMALL if scaling would remove some  *               existing layers.  *               #GIMP_IMAGE_SCALE_TOO_BIG if the new image size would  *               exceed the maximum specified in the preferences.  **/
 end_comment
 
 begin_function
 name|GimpImageScaleCheckType
-DECL|function|gimp_image_scale_check (const GimpImage * gimage,gint new_width,gint new_height,gint64 * new_memsize)
+DECL|function|gimp_image_scale_check (const GimpImage * gimage,gint new_width,gint new_height,gint64 max_memsize,gint64 * new_memsize)
 name|gimp_image_scale_check
 parameter_list|(
 specifier|const
@@ -724,6 +718,9 @@ name|new_width
 parameter_list|,
 name|gint
 name|new_height
+parameter_list|,
+name|gint64
+name|max_memsize
 parameter_list|,
 name|gint64
 modifier|*
@@ -921,16 +918,7 @@ name|current_size
 operator|&&
 name|new_size
 operator|>
-name|GIMP_GUI_CONFIG
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-operator|->
-name|config
-argument_list|)
-operator|->
-name|max_new_image_size
+name|max_memsize
 condition|)
 return|return
 name|GIMP_IMAGE_SCALE_TOO_BIG

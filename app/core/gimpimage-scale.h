@@ -58,6 +58,9 @@ name|gint
 name|new_height
 parameter_list|,
 name|gint64
+name|max_memsize
+parameter_list|,
+name|gint64
 modifier|*
 name|new_memsize
 parameter_list|)

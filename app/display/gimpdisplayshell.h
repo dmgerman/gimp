@@ -512,12 +512,12 @@ name|gint
 name|cursor_y
 decl_stmt|;
 comment|/* software cursor Y value             */
-DECL|member|warning_dialog
+DECL|member|close_dialog
 name|GtkWidget
 modifier|*
-name|warning_dialog
+name|close_dialog
 decl_stmt|;
-comment|/*  close warning dialog               */
+comment|/*  close dialog                       */
 DECL|member|info_dialog
 name|InfoDialog
 modifier|*
@@ -547,7 +547,7 @@ name|GimpColorDisplayStack
 modifier|*
 name|filter_stack
 decl_stmt|;
-comment|/* color display conversion stuff      */
+comment|/* color display conversion stuff    */
 DECL|member|filter_idle_id
 name|guint
 name|filter_idle_id
@@ -557,7 +557,7 @@ name|GtkWidget
 modifier|*
 name|filters_dialog
 decl_stmt|;
-comment|/* color display filter dialog         */
+comment|/* color display filter dialog       */
 DECL|member|paused_count
 name|gint
 name|paused_count

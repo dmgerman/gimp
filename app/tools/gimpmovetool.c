@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpguiconfig.h"
+file|"config/gimpdisplayconfig.h"
 end_include
 
 begin_include
@@ -1007,7 +1007,7 @@ name|snap_distance
 decl_stmt|;
 name|snap_distance
 operator|=
-name|GIMP_GUI_CONFIG
+name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->
@@ -2208,7 +2208,7 @@ name|snap_distance
 decl_stmt|;
 name|snap_distance
 operator|=
-name|GIMP_GUI_CONFIG
+name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->
@@ -2518,7 +2518,7 @@ name|snap_distance
 decl_stmt|;
 name|snap_distance
 operator|=
-name|GIMP_GUI_CONFIG
+name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|gdisp
 operator|->

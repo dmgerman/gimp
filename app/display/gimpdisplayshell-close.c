@@ -271,7 +271,7 @@ if|if
 condition|(
 name|shell
 operator|->
-name|warning_dialog
+name|close_dialog
 condition|)
 block|{
 name|gtk_window_present
@@ -280,7 +280,7 @@ name|GTK_WINDOW
 argument_list|(
 name|shell
 operator|->
-name|warning_dialog
+name|close_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -310,7 +310,7 @@ argument_list|)
 expr_stmt|;
 name|shell
 operator|->
-name|warning_dialog
+name|close_dialog
 operator|=
 name|dialog
 operator|=
@@ -364,7 +364,7 @@ argument_list|,
 operator|&
 name|shell
 operator|->
-name|warning_dialog
+name|close_dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -644,12 +644,7 @@ parameter_list|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-operator|->
-name|warning_dialog
-argument_list|)
+name|widget
 argument_list|)
 expr_stmt|;
 if|if

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -55,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpprojection.h"
 end_include
 
 begin_include
@@ -113,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1cc6fe0103
+DECL|enum|__anon2acc53fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

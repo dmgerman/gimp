@@ -2523,14 +2523,12 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|shell
 operator|->
 name|icon_idle_id

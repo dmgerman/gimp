@@ -136,10 +136,6 @@ name|area2
 decl_stmt|,
 name|area3
 decl_stmt|;
-name|GimpArea
-modifier|*
-name|ga2
-decl_stmt|;
 comment|/*  start new list off  */
 name|new_list
 operator|=
@@ -166,16 +162,14 @@ name|l
 argument_list|)
 control|)
 block|{
-name|ga2
-operator|=
-operator|(
 name|GimpArea
-operator|*
-operator|)
+modifier|*
+name|ga2
+init|=
 name|l
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 name|area1
 operator|=
 operator|(
@@ -227,6 +221,7 @@ expr_stmt|;
 name|area3
 operator|=
 operator|(
+operator|(
 name|MAX
 argument_list|(
 name|ga2
@@ -275,6 +270,7 @@ argument_list|)
 operator|)
 operator|+
 name|OVERHEAD
+operator|)
 expr_stmt|;
 if|if
 condition|(
