@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974fb680108
+DECL|struct|__anon2c3cdae00108
 block|{
 DECL|member|url
 name|gchar
@@ -1589,7 +1589,7 @@ name|G_OS_WIN32
 end_ifndef
 
 begin_comment
-comment|/* -*- Mode:C; tab-width: 8 -*-  * remote.c --- remote control of Netscape Navigator for Unix.  * version 1.1.3, for Netscape Navigator 1.1 and newer.  *  * Copyright © 1996 Netscape Communications Corporation, all rights reserved.  * Created: Jamie Zawinski<jwz@netscape.com>, 24-Dec-94.  *  * Permission to use, copy, modify, distribute, and sell this software and its  * documentation for any purpose is hereby granted without fee, provided that  * the above copyright notice appear in all copies and that both that  * copyright notice and this permission notice appear in supporting  * documentation.  No representations are made about the suitability of this  * software for any purpose.  It is provided "as is" without express or   * implied warranty.  *  * To compile:  *  *    cc -o netscape-remote remote.c -DSTANDALONE -lXmu -lX11  *  * To use:  *  *    netscape-remote -help  *  * Documentation for the protocol which this code implements may be found at:  *  *    http://home.netscape.com/newsref/std/x-remote.html  *  * Bugs and commentary to x_cbug@netscape.com.  */
+comment|/* -*- Mode:C; tab-width: 8 -*-  * remote.c --- remote control of Netscape Navigator for Unix.  * version 1.1.3, for Netscape Navigator 1.1 and newer.  *  * Copyright © 1996 Netscape Communications Corporation, all rights reserved.  * Created: Jamie Zawinski<jwz@netscape.com>, 24-Dec-94.  *  * To compile:  *  *    cc -o netscape-remote remote.c -DSTANDALONE -lXmu -lX11  *  * To use:  *  *    netscape-remote -help  *  * Documentation for the protocol which this code implements may be found at:  *  *    http://home.netscape.com/newsref/std/x-remote.html  *  * Bugs and commentary to x_cbug@netscape.com.  */
 end_comment
 
 begin_comment
@@ -1645,15 +1645,7 @@ comment|/**    granted, provided that the above copyright notice appear  in  all
 end_comment
 
 begin_comment
-comment|/**    copies and that both  that  copyright  notice  and  this  permis-    **/
-end_comment
-
-begin_comment
-comment|/**    sion  notice appear in supporting  documentation,  and  that  the    **/
-end_comment
-
-begin_comment
-comment|/**    name of Solbourne not be used in advertising                         **/
+comment|/**    copies and  that  the  name of Solbourne not be used in advertising  **/
 end_comment
 
 begin_comment

@@ -4,7 +4,7 @@ comment|/* edge filter for the GIMP  *  -Peter Mattis  *  * This filter performs
 end_comment
 
 begin_comment
-comment|/* pgmedge.c - edge-detect a portable graymap ** ** Copyright (C) 1989 by Jef Poskanzer. ** ** Permission to use, copy, modify, and distribute this software and its ** documentation for any purpose and without fee is hereby granted, provided ** that the above copyright notice appear in all copies and that both that ** copyright notice and this permission notice appear in supporting ** documentation.  This software is provided "as is" without express or ** implied warranty. */
+comment|/* pgmedge.c - edge-detect a portable graymap ** ** Copyright (C) 1989 by Jef Poskanzer. */
 end_comment
 
 begin_comment
@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fe8d150108
+DECL|struct|__anon276b05ac0108
 block|{
 DECL|member|amount
 name|gdouble
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fe8d150208
+DECL|struct|__anon276b05ac0208
 block|{
 DECL|member|run
 name|gint

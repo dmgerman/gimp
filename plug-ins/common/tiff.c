@@ -4,7 +4,7 @@ comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  * The TIFF lo
 end_comment
 
 begin_comment
-comment|/* ** tifftopnm.c - converts a Tagged Image File to a portable anymap ** ** Derived by Jef Poskanzer from tif2ras.c, which is: ** ** Copyright (c) 1990 by Sun Microsystems, Inc. ** ** Author: Patrick J. Naughton ** naughton@wind.sun.com ** ** Permission to use, copy, modify, and distribute this software and its ** documentation for any purpose and without fee is hereby granted, ** provided that the above copyright notice appear in all copies and that ** both that copyright notice and this permission notice appear in ** supporting documentation. ** ** This file is provided AS IS with no warranties of any kind.  The author ** shall have no liability with respect to the infringement of copyrights, ** trade secrets or any patents by this file or any part thereof.  In no ** event will the author be liable for any lost revenue or profits or ** other special, indirect and consequential damages. */
+comment|/* ** tifftopnm.c - converts a Tagged Image File to a portable anymap ** ** Derived by Jef Poskanzer from tif2ras.c, which is: ** ** Copyright (c) 1990 by Sun Microsystems, Inc. ** ** Author: Patrick J. Naughton ** naughton@wind.sun.com ** ** This file is provided AS IS with no warranties of any kind.  The author ** shall have no liability with respect to the infringement of copyrights, ** trade secrets or any patents by this file or any part thereof.  In no ** event will the author be liable for any lost revenue or profits or ** other special, indirect and consequential damages. */
 end_comment
 
 begin_include
@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f099a40108
+DECL|struct|__anon2c2e89ac0108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f099a40208
+DECL|struct|__anon2c2e89ac0208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f099a40308
+DECL|struct|__anon2c2e89ac0308
 block|{
 DECL|member|ID
 name|gint32
@@ -6365,7 +6365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* ** pnmtotiff.c - converts a portable anymap to a Tagged Image File ** ** Derived by Jef Poskanzer from ras2tif.c, which is: ** ** Copyright (c) 1990 by Sun Microsystems, Inc. ** ** Author: Patrick J. Naughton ** naughton@wind.sun.com ** ** Permission to use, copy, modify, and distribute this software and its ** documentation for any purpose and without fee is hereby granted, ** provided that the above copyright notice appear in all copies and that ** both that copyright notice and this permission notice appear in ** supporting documentation. ** ** This file is provided AS IS with no warranties of any kind.  The author ** shall have no liability with respect to the infringement of copyrights, ** trade secrets or any patents by this file or any part thereof.  In no ** event will the author be liable for any lost revenue or profits or ** other special, indirect and consequential damages. */
+comment|/* ** pnmtotiff.c - converts a portable anymap to a Tagged Image File ** ** Derived by Jef Poskanzer from ras2tif.c, which is: ** ** Copyright (c) 1990 by Sun Microsystems, Inc. ** ** Author: Patrick J. Naughton ** naughton@wind.sun.com ** ** This file is provided AS IS with no warranties of any kind.  The author ** shall have no liability with respect to the infringement of copyrights, ** trade secrets or any patents by this file or any part thereof.  In no ** event will the author be liable for any lost revenue or profits or ** other special, indirect and consequential damages. */
 end_comment
 
 begin_function
