@@ -100,6 +100,9 @@ name|GdkScreen
 modifier|*
 name|screen
 parameter_list|,
+name|gboolean
+name|show_image_menu
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1466,6 +1469,8 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
+name|TRUE
+argument_list|,
 name|tabs
 argument_list|,
 name|G_N_ELEMENTS
@@ -1519,6 +1524,8 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
+name|FALSE
+argument_list|,
 name|tabs
 argument_list|,
 name|G_N_ELEMENTS
@@ -1569,6 +1576,8 @@ name|gtk_widget_get_screen
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|,
 name|tabs
 argument_list|,
@@ -1675,12 +1684,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|dialogs_create_dock (GdkScreen * screen,const gchar * tabs[],gint n_tabs)
+DECL|function|dialogs_create_dock (GdkScreen * screen,gboolean show_image_menu,const gchar * tabs[],gint n_tabs)
 name|dialogs_create_dock
 parameter_list|(
 name|GdkScreen
 modifier|*
 name|screen
+parameter_list|,
+name|gboolean
+name|show_image_menu
 parameter_list|,
 specifier|const
 name|gchar
@@ -1714,6 +1726,16 @@ argument_list|(
 name|global_dock_factory
 argument_list|,
 name|screen
+argument_list|)
+expr_stmt|;
+name|gimp_image_dock_set_show_image_menu
+argument_list|(
+name|GIMP_IMAGE_DOCK
+argument_list|(
+name|dock
+argument_list|)
+argument_list|,
+name|show_image_menu
 argument_list|)
 expr_stmt|;
 name|dockbook
