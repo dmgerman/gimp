@@ -422,14 +422,6 @@ operator|&
 name|argv
 argument_list|)
 expr_stmt|;
-name|setlocale
-argument_list|(
-name|LC_NUMERIC
-argument_list|,
-literal|"C"
-argument_list|)
-expr_stmt|;
-comment|/* gtk seems to zap this during init.. */
 ifdef|#
 directive|ifdef
 name|HAVE_PUTENV

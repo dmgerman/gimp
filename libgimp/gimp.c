@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<locale.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<errno.h>
 end_include
 
@@ -830,7 +824,7 @@ block|{
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -839,13 +833,6 @@ name|k
 decl_stmt|;
 endif|#
 directive|endif
-name|setlocale
-argument_list|(
-name|LC_NUMERIC
-argument_list|,
-literal|"C"
-argument_list|)
-expr_stmt|;
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
