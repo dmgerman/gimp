@@ -2867,14 +2867,6 @@ name|NIL
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"arcons"
-argument_list|)
-expr_stmt|;
-comment|/* ~~~~~ */
 name|errswitch
 argument_list|()
 expr_stmt|;
@@ -5726,14 +5718,6 @@ name|sym_t
 operator|)
 return|;
 default|default:
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"arrayequal"
-argument_list|)
-expr_stmt|;
-comment|/* ~~~~~ */
 return|return
 operator|(
 name|errswitch
@@ -6141,14 +6125,6 @@ name|hash
 operator|)
 return|;
 default|default:
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"array_sxhash"
-argument_list|)
-expr_stmt|;
-comment|/* ~~~~~ */
 name|errswitch
 argument_list|()
 expr_stmt|;
@@ -8033,14 +8009,6 @@ name|NIL
 operator|)
 return|;
 default|default:
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"array_fast_print"
-argument_list|)
-expr_stmt|;
-comment|/* ~~~~~ */
 return|return
 operator|(
 name|errswitch
@@ -8595,14 +8563,6 @@ name|ptr
 operator|)
 return|;
 default|default:
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"array_fast_read"
-argument_list|)
-expr_stmt|;
-comment|/* ~~~~~ */
 return|return
 operator|(
 name|errswitch
@@ -11112,14 +11072,6 @@ index|]
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"base64encode"
-argument_list|)
-expr_stmt|;
-comment|/* ~~~~~ */
 name|errswitch
 argument_list|()
 expr_stmt|;
@@ -11679,14 +11631,6 @@ operator|)
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"base64decode"
-argument_list|)
-expr_stmt|;
-comment|/* ~~~~~ */
 name|errswitch
 argument_list|()
 expr_stmt|;
