@@ -6349,6 +6349,9 @@ index|[
 literal|1
 index|]
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
