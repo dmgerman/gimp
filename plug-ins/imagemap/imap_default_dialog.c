@@ -399,14 +399,6 @@ argument_list|,
 name|title
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_set_icon
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT

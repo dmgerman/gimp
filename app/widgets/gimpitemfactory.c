@@ -2367,14 +2367,6 @@ argument_list|,
 name|toplevel
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_set_icon
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|toplevel
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 else|else

@@ -183,14 +183,6 @@ literal|"Load Imagemap"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_set_icon
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
@@ -466,14 +458,6 @@ literal|"Save Imagemap"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_set_icon
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
@@ -531,7 +515,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27f0f8160108
+DECL|struct|__anon2bfdd9590108
 typedef|typedef
 struct|struct
 block|{

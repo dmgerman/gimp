@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298cc13e0108
+DECL|struct|__anon28a73f860108
 block|{
 DECL|member|directory
 name|gboolean
@@ -1840,14 +1840,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_dialog_set_icon
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

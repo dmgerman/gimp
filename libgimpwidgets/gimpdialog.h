@@ -248,17 +248,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_dialog_set_icon
-parameter_list|(
-name|GtkWindow
-modifier|*
-name|dialog
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_macro
 name|G_END_DECLS
 end_macro

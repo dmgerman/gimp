@@ -441,14 +441,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_set_icon
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dock
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_usize
 argument_list|(
 name|GTK_WIDGET

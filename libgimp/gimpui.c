@@ -154,7 +154,7 @@ name|gimp_gamma
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gimp_stock_init
+name|gimp_widgets_init
 argument_list|()
 expr_stmt|;
 name|initialized

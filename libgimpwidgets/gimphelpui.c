@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296a0f9b0103
+DECL|enum|__anon2ac0d03d0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -298,7 +298,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_connect:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  *  * Note that this function is automatically called by all libgimp dialog  * constructors. You only have to call it for windows/dialogs you created  * "manually".  *  * For convenience, gimp_help_connect_help_accel() calls  * gimp_dialog_set_icon() if the passed widget is a #GtkWindow, so you  * don't have to worry about this.  **/
+comment|/**  * gimp_help_connect:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  *  * Note that this function is automatically called by all libgimp dialog  * constructors. You only have to call it for windows/dialogs you created  * "manually".  **/
 end_comment
 
 begin_function
@@ -325,22 +325,6 @@ operator|!
 name|help_func
 condition|)
 return|return;
-comment|/*  for convenience we set the wm icon here because    *  this function is called for almost all gimp windows    */
-if|if
-condition|(
-name|GTK_IS_WINDOW
-argument_list|(
-name|widget
-argument_list|)
-condition|)
-name|gimp_dialog_set_icon
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  set up the help signals and tips query widget    */
 if|if
 condition|(

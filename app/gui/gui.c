@@ -557,6 +557,9 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+name|gimp_widgets_init
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -585,9 +588,6 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gimp_stock_init
-argument_list|()
 expr_stmt|;
 name|themes_hash
 operator|=

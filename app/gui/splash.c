@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -190,14 +184,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gimp_dialog_set_icon
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|win_initstatus
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|vbox
