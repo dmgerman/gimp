@@ -172,7 +172,7 @@ end_function_decl
 begin_function_decl
 name|GimpData
 modifier|*
-name|gimp_pattern_native_load
+name|gimp_pattern_load
 parameter_list|(
 specifier|const
 name|gchar
@@ -193,7 +193,7 @@ end_function_decl
 begin_function_decl
 name|GimpData
 modifier|*
-name|gimp_pattern_load
+name|gimp_pattern_load_pixbuf
 parameter_list|(
 specifier|const
 name|gchar

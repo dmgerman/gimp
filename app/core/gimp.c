@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a31c5d40103
+DECL|enum|__anon27d6a3bc0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2334,16 +2334,15 @@ index|[]
 init|=
 block|{
 block|{
-name|gimp_pattern_native_load
+name|gimp_pattern_load
 block|,
 name|GIMP_PATTERN_FILE_EXTENSION
 block|}
 block|,
 block|{
-name|gimp_pattern_load
+name|gimp_pattern_load_pixbuf
 block|,
 name|NULL
-comment|/* Fallback - try to load all files */
 block|}
 block|}
 decl_stmt|;
@@ -2364,7 +2363,7 @@ block|{
 name|gimp_gradient_load
 block|,
 name|NULL
-comment|/* fallback loader */
+comment|/* legacy loader */
 block|}
 block|}
 decl_stmt|;
@@ -2385,7 +2384,7 @@ block|{
 name|gimp_palette_load
 block|,
 name|NULL
-comment|/* fallback loader */
+comment|/* legacy loader */
 block|}
 block|}
 decl_stmt|;

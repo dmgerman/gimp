@@ -2272,7 +2272,6 @@ block|}
 block|}
 else|else
 block|{
-comment|/*      	    g_message (_("Trying fallback loader on file '%s' " 		         "with unknown extension."),                        gimp_filename_to_utf8 (file_data->filename));           */
 goto|goto
 name|insert
 goto|;
