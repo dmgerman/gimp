@@ -272,13 +272,44 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\n\nTesting gimp_rc_write_changes() ... \n\n"
+literal|"\n\nChanging a property ... "
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
+argument_list|,
+literal|"use-help"
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\nTesting gimp_rc_duplicate() ... "
 argument_list|)
 expr_stmt|;
 name|gimprc2
 operator|=
-name|gimp_rc_new
-argument_list|()
+name|gimp_rc_duplicate
+argument_list|(
+name|gimprc
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"done.\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\nTesting gimp_rc_write_changes() ... \n\n"
+argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
