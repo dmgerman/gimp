@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1ba54d0108
+DECL|struct|__anon2b43b9f60108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1ba54d0208
+DECL|struct|__anon2b43b9f60208
 block|{
 DECL|member|run
 name|gint
@@ -1106,7 +1106,7 @@ argument_list|)
 argument_list|,
 name|bvals
 operator|.
-name|vertical
+name|keep_sign
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
