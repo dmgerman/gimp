@@ -413,7 +413,7 @@ name|paint_core
 operator|->
 name|flags
 operator||=
-name|CORE_CAN_HANDLE_CHANGING_BRUSH
+name|CORE_HANDLES_CHANGING_BRUSH
 expr_stmt|;
 block|}
 end_function

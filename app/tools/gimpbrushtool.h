@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|state
-name|GdkModifierType
-name|state
-decl_stmt|;
-comment|/*  state of buttons and keys              */
 DECL|member|pick_colors
 name|gboolean
 name|pick_colors

@@ -513,7 +513,7 @@ name|paint_core
 operator|->
 name|flags
 operator||=
-name|CORE_CAN_HANDLE_CHANGING_BRUSH
+name|CORE_HANDLES_CHANGING_BRUSH
 expr_stmt|;
 name|paint_core
 operator|->
@@ -1896,17 +1896,12 @@ argument_list|,
 literal|255
 argument_list|)
 argument_list|,
-call|(
-name|gint
-call|)
-argument_list|(
 name|gimp_context_get_opacity
 argument_list|(
 name|context
 argument_list|)
 operator|*
 literal|255
-argument_list|)
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(

@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"procedural_db.h"
 end_include
 
@@ -58,7 +52,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask-select.h"
+file|"paint/gimpairbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint/gimpclone.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint/gimpconvolve.h"
 end_include
 
 begin_include
@@ -70,55 +76,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/paint-types.h"
+file|"paint/gimperaser.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/gimpairbrushtool.h"
+file|"paint/gimppaintbrush.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/gimpclonetool.h"
+file|"paint/gimppencil.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/gimpconvolvetool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpdodgeburntool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimperasertool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimppaintbrushtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimppenciltool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpsmudgetool.h"
+file|"paint/gimpsmudge.h"
 end_include
 
 begin_include

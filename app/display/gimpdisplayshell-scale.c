@@ -1735,14 +1735,15 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+comment|/* title may have changed if it includes the zoom ratio */
+name|shell
+operator|->
+name|title_dirty
+operator|=
+name|TRUE
+expr_stmt|;
 name|gdisplays_flush
 argument_list|()
-expr_stmt|;
-comment|/* title may have changed if it includes the zoom ratio */
-name|gimp_display_shell_update_title
-argument_list|(
-name|shell
-argument_list|)
 expr_stmt|;
 block|}
 comment|/* re-enable the active tool */

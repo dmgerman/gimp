@@ -58,7 +58,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27e0aa900103
+DECL|enum|__anon2ad51fae0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -97,17 +97,23 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27e0aa900203
+DECL|enum|__anon2ad51fae0203
 block|{
-DECL|enumerator|CORE_CAN_HANDLE_CHANGING_BRUSH
-name|CORE_CAN_HANDLE_CHANGING_BRUSH
+comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
+DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
+name|CORE_HANDLES_CHANGING_BRUSH
 init|=
-literal|0x0001
+literal|0x1
+operator|<<
+literal|0
 block|,
-comment|/* Set for tools that don't mind 					    * if the brush changes while 					    * painting. 					    */
+comment|/* Set for tools that perform    * temporary rendering directly to the    * window. These require sequencing with    * gdisplay_flush() routines.    * See gimpclone.c for example.    */
 DECL|enumerator|CORE_TRACES_ON_WINDOW
 name|CORE_TRACES_ON_WINDOW
-comment|/* Set for tools that perform temporary                                             * rendering directly to the window. These                                             * require sequencing with gdisplay_flush()                                             * routines. See clone.c for example.                                             */
+init|=
+literal|0x1
+operator|<<
+literal|1
 DECL|typedef|GimpPaintCoreFlags
 block|}
 name|GimpPaintCoreFlags
@@ -199,37 +205,37 @@ DECL|member|ID
 name|gint
 name|ID
 decl_stmt|;
-comment|/*  unique instance ID         */
+comment|/*  unique instance ID               */
 DECL|member|start_coords
 name|GimpCoords
 name|start_coords
 decl_stmt|;
-comment|/*  starting coords            */
+comment|/*  starting coords (for undo only)  */
 DECL|member|cur_coords
 name|GimpCoords
 name|cur_coords
 decl_stmt|;
-comment|/*  current coords             */
+comment|/*  current coords                   */
 DECL|member|last_coords
 name|GimpCoords
 name|last_coords
 decl_stmt|;
-comment|/*  last coords                */
+comment|/*  last coords                      */
 DECL|member|distance
 name|gdouble
 name|distance
 decl_stmt|;
-comment|/*  distance traveled by brush */
+comment|/*  distance traveled by brush       */
 DECL|member|pixel_dist
 name|gdouble
 name|pixel_dist
 decl_stmt|;
-comment|/*  distance in pixels         */
+comment|/*  distance in pixels               */
 DECL|member|spacing
 name|gdouble
 name|spacing
 decl_stmt|;
-comment|/*  spacing                    */
+comment|/*  spacing                          */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -237,7 +243,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  image space coords         */
+comment|/*  undo extents in image coords     */
 DECL|member|x2
 DECL|member|y2
 name|gint
@@ -245,7 +251,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  image space coords         */
+comment|/*  undo extents in image coords     */
 DECL|member|brush
 name|GimpBrush
 modifier|*
@@ -465,7 +471,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_paint_core_start
 parameter_list|(
 name|GimpPaintCore
@@ -479,25 +485,6 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_core_interpolate
-parameter_list|(
-name|GimpPaintCore
-modifier|*
-name|core
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|PaintOptions
-modifier|*
-name|paint_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -530,6 +517,40 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_paint_core_constrain
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_paint_core_interpolate
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintOptions
+modifier|*
+name|paint_options
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  protected functions  */
+end_comment
+
+begin_function_decl
+name|void
 name|gimp_paint_core_get_color_from_gradient
 parameter_list|(
 name|GimpPaintCore
@@ -552,10 +573,6 @@ name|mode
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  paint core painting functions  */
-end_comment
 
 begin_function_decl
 name|TempBuf
