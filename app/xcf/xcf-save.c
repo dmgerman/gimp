@@ -3841,7 +3841,7 @@ name|xresolution
 decl_stmt|,
 name|yresolution
 decl_stmt|;
-comment|/* we pass in floats,             but they are promoted to double by the compiler */
+comment|/* we pass in floats,            but they are promoted to double by the compiler */
 name|xresolution
 operator|=
 name|va_arg
@@ -4226,7 +4226,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* because we don't know how much room the paths list will take            we save the file position and write the length later          */
+comment|/* because we don't know how much room the paths list will take            we save the file position and write the length later         */
 name|pos
 operator|=
 name|info
@@ -4654,7 +4654,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* because we don't know how much room the paths list will take            we save the file position and write the length later          */
+comment|/* because we don't know how much room the paths list will take            we save the file position and write the length later         */
 name|pos
 operator|=
 name|info

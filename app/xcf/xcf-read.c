@@ -125,7 +125,6 @@ name|count
 parameter_list|)
 block|{
 return|return
-operator|(
 name|xcf_read_int32
 argument_list|(
 name|fp
@@ -144,7 +143,6 @@ operator|)
 argument_list|,
 name|count
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
