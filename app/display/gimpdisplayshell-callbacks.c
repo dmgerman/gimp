@@ -186,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpstatusbar.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -663,9 +669,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_resize_cursor_label
+name|gimp_statusbar_resize_cursor
+argument_list|(
+name|GIMP_STATUSBAR
 argument_list|(
 name|shell
+operator|->
+name|statusbar
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_update_title

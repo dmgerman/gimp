@@ -47,6 +47,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpStatusbar
+typedef|typedef
+name|struct
+name|_GimpStatusbar
+name|GimpStatusbar
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|Selection
 typedef|typedef
 name|struct

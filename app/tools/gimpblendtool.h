@@ -132,11 +132,6 @@ name|gint
 name|endy
 decl_stmt|;
 comment|/*  ending y coord       */
-DECL|member|context_id
-name|guint
-name|context_id
-decl_stmt|;
-comment|/*  for the statusbar    */
 block|}
 struct|;
 end_struct

@@ -1119,11 +1119,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|shell
-operator|->
-name|canvas
-operator|->
-name|window
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/* determine point, where clicked,    * switch accordingly.    */

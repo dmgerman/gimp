@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bf2f7b0103
+DECL|enum|__anon2c9399ac0103
 block|{
 DECL|enumerator|GIMP_DRAW_TOOL_STATE_INVISIBLE
 name|GIMP_DRAW_TOOL_STATE_INVISIBLE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bf2f7b0203
+DECL|enum|__anon2c9399ac0203
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -234,9 +234,9 @@ name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|,
-name|GdkWindow
+name|GimpDisplay
 modifier|*
-name|window
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

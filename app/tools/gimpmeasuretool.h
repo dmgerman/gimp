@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f8032f0103
+DECL|enum|__anon2afb82500103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -195,11 +195,6 @@ name|gdouble
 name|angle2
 decl_stmt|;
 comment|/*  second angle               */
-DECL|member|context_id
-name|guint
-name|context_id
-decl_stmt|;
-comment|/*  for the statusbar          */
 block|}
 struct|;
 end_struct

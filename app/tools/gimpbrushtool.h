@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2abbc3560103
+DECL|enum|__anon27ecd7350103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2abbc3560203
+DECL|enum|__anon27ecd7350203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -239,11 +239,6 @@ name|ToolFlags
 name|flags
 decl_stmt|;
 comment|/*  tool flags, see ToolFlags above       */
-DECL|member|context_id
-name|guint
-name|context_id
-decl_stmt|;
-comment|/*  for the statusbar          */
 block|}
 struct|;
 end_struct

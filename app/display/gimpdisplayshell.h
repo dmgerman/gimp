@@ -32,30 +32,6 @@ directive|include
 file|"gui/gui-types.h"
 end_include
 
-begin_comment
-comment|/* maximal width of the string holding the cursor-coordinates for  * the status line  */
-end_comment
-
-begin_define
-DECL|macro|CURSOR_STR_LENGTH
-define|#
-directive|define
-name|CURSOR_STR_LENGTH
-value|256
-end_define
-
-begin_comment
-comment|/* maximal length of the format string for the cursor-coordinates */
-end_comment
-
-begin_define
-DECL|macro|CURSOR_FORMAT_LENGTH
-define|#
-directive|define
-name|CURSOR_FORMAT_LENGTH
-value|32
-end_define
-
 begin_define
 DECL|macro|GIMP_TYPE_DISPLAY_SHELL
 define|#
@@ -242,48 +218,12 @@ modifier|*
 name|origin
 decl_stmt|;
 comment|/*  origin button       */
-DECL|member|statusarea
-name|GtkWidget
-modifier|*
-name|statusarea
-decl_stmt|;
-comment|/*  status area hbox    */
 DECL|member|statusbar
 name|GtkWidget
 modifier|*
 name|statusbar
 decl_stmt|;
 comment|/*  statusbar           */
-DECL|member|progressbar
-name|GtkWidget
-modifier|*
-name|progressbar
-decl_stmt|;
-comment|/*  progressbar         */
-DECL|member|progressid
-name|guint
-name|progressid
-decl_stmt|;
-comment|/*  progress id         */
-DECL|member|cursor_label
-name|GtkWidget
-modifier|*
-name|cursor_label
-decl_stmt|;
-comment|/*  cursor position     */
-DECL|member|cursor_format_str
-name|gchar
-name|cursor_format_str
-index|[
-name|CURSOR_FORMAT_LENGTH
-index|]
-decl_stmt|;
-DECL|member|cancelbutton
-name|GtkWidget
-modifier|*
-name|cancelbutton
-decl_stmt|;
-comment|/*  cancel button       */
 DECL|member|render_buf
 name|guchar
 modifier|*
@@ -793,17 +733,6 @@ name|x
 parameter_list|,
 name|gint
 name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_resize_cursor_label
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 function_decl|;
 end_function_decl

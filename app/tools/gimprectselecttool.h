@@ -145,11 +145,6 @@ DECL|member|fixed_height
 name|gdouble
 name|fixed_height
 decl_stmt|;
-DECL|member|context_id
-name|guint
-name|context_id
-decl_stmt|;
-comment|/*  for the statusbar  */
 block|}
 struct|;
 end_struct

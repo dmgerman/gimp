@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1263dd0103
+DECL|enum|__anon27e6b7220103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP
@@ -186,11 +186,6 @@ decl_stmt|,
 name|dch
 decl_stmt|;
 comment|/*  width and height of corners */
-DECL|member|context_id
-name|guint
-name|context_id
-decl_stmt|;
-comment|/*  for the statusbar           */
 block|}
 struct|;
 end_struct

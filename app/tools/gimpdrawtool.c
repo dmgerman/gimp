@@ -527,18 +527,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_start (GimpDrawTool * draw_tool,GdkWindow * win)
+DECL|function|gimp_draw_tool_start (GimpDrawTool * draw_tool,GimpDisplay * gdisp)
 name|gimp_draw_tool_start
 parameter_list|(
 name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|,
-name|GdkWindow
+name|GimpDisplay
 modifier|*
-name|win
+name|gdisp
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GdkColor
 name|fg
 decl_stmt|,
@@ -554,10 +558,19 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GDK_IS_WINDOW
+name|GIMP_IS_DISPLAY
 argument_list|(
-name|win
+name|gdisp
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 if|if
@@ -578,7 +591,11 @@ name|draw_tool
 operator|->
 name|win
 operator|=
-name|win
+name|shell
+operator|->
+name|canvas
+operator|->
+name|window
 expr_stmt|;
 name|draw_tool
 operator|->
@@ -601,6 +618,8 @@ name|gc
 operator|=
 name|gdk_gc_new
 argument_list|(
+name|draw_tool
+operator|->
 name|win
 argument_list|)
 expr_stmt|;
