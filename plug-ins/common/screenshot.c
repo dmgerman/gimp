@@ -128,7 +128,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a81ff0108
+DECL|struct|__anon2c9b2d360108
 block|{
 DECL|member|root
 name|gboolean
@@ -1064,15 +1064,15 @@ literal|0
 return|;
 else|#
 directive|else
+comment|/* GDK_WINDOWING_WIN32 */
 warning|#
 directive|warning
-warning|screenshot window chooser not implemented yet for this GDB backend
+warning|screenshot window chooser not implemented yet for this GDK backend
 return|return
 literal|0
 return|;
 endif|#
 directive|endif
-comment|/* GDK_WINDOWING_WIN32 */
 block|}
 end_function
 
