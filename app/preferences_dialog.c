@@ -5061,10 +5061,7 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
-name|_
-argument_list|(
-literal|"General"
-argument_list|)
+name|label
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -11081,7 +11078,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2ef3ec0108
+DECL|struct|__anon2c84b89c0108
 block|{
 DECL|member|label
 name|gchar
@@ -11306,7 +11303,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a2ef3ec0208
+DECL|struct|__anon2c84b89c0208
 block|{
 DECL|member|tree_label
 name|gchar
