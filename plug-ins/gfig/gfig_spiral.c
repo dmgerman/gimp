@@ -219,23 +219,6 @@ modifier|*
 name|to
 parameter_list|)
 block|{
-name|DobjPoints
-modifier|*
-name|spnt
-decl_stmt|;
-name|spnt
-operator|=
-name|obj
-operator|->
-name|points
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|spnt
-condition|)
-return|return;
-comment|/* End-of-line */
 name|fprintf
 argument_list|(
 name|to
@@ -243,37 +226,13 @@ argument_list|,
 literal|"<SPIRAL>\n"
 argument_list|)
 expr_stmt|;
-while|while
-condition|(
-name|spnt
-condition|)
-block|{
-name|fprintf
+name|do_save_obj
 argument_list|(
+name|obj
+argument_list|,
 name|to
-argument_list|,
-literal|"%d %d\n"
-argument_list|,
-name|spnt
-operator|->
-name|pnt
-operator|.
-name|x
-argument_list|,
-name|spnt
-operator|->
-name|pnt
-operator|.
-name|y
 argument_list|)
 expr_stmt|;
-name|spnt
-operator|=
-name|spnt
-operator|->
-name|next
-expr_stmt|;
-block|}
 name|fprintf
 argument_list|(
 name|to
@@ -335,17 +294,6 @@ index|[
 name|MAX_LOAD_LINE
 index|]
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|DEBUG
-name|printf
-argument_list|(
-literal|"Load spiral called\n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DEBUG */
 while|while
 condition|(
 name|get_line
@@ -1575,26 +1523,13 @@ name|Dobject
 modifier|*
 name|np
 decl_stmt|;
-if|#
-directive|if
-name|DEBUG
-name|printf
-argument_list|(
-literal|"Copy spiral\n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DEBUG */
 if|if
 condition|(
 operator|!
 name|obj
 condition|)
 return|return
-operator|(
 name|NULL
-operator|)
 return|;
 name|g_assert
 argument_list|(
@@ -1649,21 +1584,8 @@ name|obj
 operator|->
 name|type_data
 expr_stmt|;
-if|#
-directive|if
-name|DEBUG
-name|printf
-argument_list|(
-literal|"Done spiral copy\n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DEBUG */
 return|return
-operator|(
 name|np
-operator|)
 return|;
 block|}
 end_function
@@ -1686,52 +1608,6 @@ name|Dobject
 modifier|*
 name|nobj
 decl_stmt|;
-name|DobjPoints
-modifier|*
-name|npnt
-decl_stmt|;
-comment|/* Get new object and starting point */
-comment|/* Start point */
-name|npnt
-operator|=
-name|g_new0
-argument_list|(
-name|DobjPoints
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-if|#
-directive|if
-name|DEBUG
-name|printf
-argument_list|(
-literal|"New SPIRAL start at (%x,%x)\n"
-argument_list|,
-name|x
-argument_list|,
-name|y
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DEBUG */
-name|npnt
-operator|->
-name|pnt
-operator|.
-name|x
-operator|=
-name|x
-expr_stmt|;
-name|npnt
-operator|->
-name|pnt
-operator|.
-name|y
-operator|=
-name|y
-expr_stmt|;
 name|nobj
 operator|=
 name|g_new0
@@ -1758,7 +1634,12 @@ name|nobj
 operator|->
 name|points
 operator|=
-name|npnt
+name|new_dobjpoint
+argument_list|(
+name|x
+argument_list|,
+name|y
+argument_list|)
 expr_stmt|;
 name|nobj
 operator|->
@@ -1955,10 +1836,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* first point is center   * next defines the radius  */
-end_comment
-
 begin_function
 name|void
 DECL|function|d_spiral_start (GdkPoint * pnt,gint shift_down)
@@ -1972,24 +1849,20 @@ name|gint
 name|shift_down
 parameter_list|)
 block|{
-name|gint16
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-comment|/* First is center point */
 name|obj_creating
 operator|=
 name|d_new_spiral
 argument_list|(
-name|x
-operator|=
+operator|(
+name|gint16
+operator|)
 name|pnt
 operator|->
 name|x
 argument_list|,
-name|y
-operator|=
+operator|(
+name|gint16
+operator|)
 name|pnt
 operator|->
 name|y
