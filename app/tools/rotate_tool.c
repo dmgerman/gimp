@@ -437,6 +437,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/*  this looks strange (-180, 181), but it works  */
 name|widget
 operator|=
 name|info_dialog_add_scale
@@ -451,7 +452,7 @@ argument_list|,
 operator|-
 literal|180
 argument_list|,
-literal|180
+literal|181
 argument_list|,
 literal|0.01
 argument_list|,
