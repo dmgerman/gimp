@@ -2187,7 +2187,7 @@ operator|(
 name|data
 operator|->
 name|color
-literal|0
+operator|&
 literal|0xff0000
 operator|)
 operator|>>
