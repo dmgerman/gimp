@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b413de90103
+DECL|enum|__anon2922c2e10103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b413de90203
+DECL|enum|__anon2922c2e10203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -347,10 +347,13 @@ DECL|struct|_PaintUndo
 struct|struct
 name|_PaintUndo
 block|{
-DECL|member|tool
-name|GimpPaintTool
-modifier|*
-name|tool
+DECL|member|tool_ID
+name|gint
+name|tool_ID
+decl_stmt|;
+DECL|member|tool_type
+name|GtkType
+name|tool_type
 decl_stmt|;
 DECL|member|lastx
 name|gdouble

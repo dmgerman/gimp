@@ -227,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bc8fd0103
+DECL|enum|__anon2c75a3590103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -4835,7 +4835,7 @@ argument_list|)
 expr_stmt|;
 name|pu
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|PaintUndo
 argument_list|,
@@ -4844,9 +4844,27 @@ argument_list|)
 expr_stmt|;
 name|pu
 operator|->
-name|tool
+name|tool_ID
 operator|=
+name|GIMP_TOOL
+argument_list|(
 name|paint_tool
+argument_list|)
+operator|->
+name|ID
+expr_stmt|;
+name|pu
+operator|->
+name|tool_type
+operator|=
+name|GTK_OBJECT
+argument_list|(
+name|paint_tool
+argument_list|)
+operator|->
+name|klass
+operator|->
+name|type
 expr_stmt|;
 name|pu
 operator|->

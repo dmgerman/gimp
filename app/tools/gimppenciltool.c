@@ -535,10 +535,6 @@ name|PaintState
 name|state
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|PaintPressureOptions
 modifier|*
 name|pressure_options
