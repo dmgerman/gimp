@@ -651,11 +651,6 @@ name|GdkBitmap
 modifier|*
 name|mask
 decl_stmt|;
-DECL|member|cursor
-name|GdkCursor
-modifier|*
-name|cursor
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -667,8 +662,8 @@ name|GimpBitmapCursor
 name|gimp_cursors
 index|[]
 init|=
-comment|/* these have to match up with the enum in cursorutil.h */
 block|{
+comment|/* these have to match up with enum GimpCursorType in widgets-enums.h */
 block|{
 name|mouse_bits
 block|,
@@ -681,8 +676,6 @@ block|,
 name|mouse_x_hot
 block|,
 name|mouse_y_hot
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -705,8 +698,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -721,8 +712,6 @@ block|,
 name|crosshair_small_x_hot
 block|,
 name|crosshair_small_y_hot
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -745,8 +734,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -761,8 +748,6 @@ block|,
 name|zoom_x_hot
 block|,
 name|zoom_y_hot
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -785,8 +770,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|}
 decl_stmt|;
@@ -799,8 +782,8 @@ name|GimpBitmapCursor
 name|gimp_stock_tool_cursors
 index|[]
 init|=
-comment|/* these have to match up with the enum in widgets-types.h */
 block|{
+comment|/* these have to match up with enum GimpToolCursorType in widgets-enums.h */
 block|{
 name|NULL
 block|,
@@ -813,8 +796,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -837,8 +818,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -853,8 +832,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -877,8 +854,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -893,8 +868,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -917,8 +890,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -933,8 +904,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -957,8 +926,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -973,8 +940,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -997,8 +962,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1013,8 +976,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1037,8 +998,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1053,8 +1012,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1077,8 +1034,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1093,8 +1048,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1117,8 +1070,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1133,8 +1084,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1157,8 +1106,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1173,8 +1120,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1197,8 +1142,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1213,8 +1156,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1237,8 +1178,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1253,8 +1192,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1277,8 +1214,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1293,8 +1228,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1317,8 +1250,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1333,8 +1264,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1357,8 +1286,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1373,8 +1300,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1397,8 +1322,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1417,8 +1340,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|}
 decl_stmt|;
@@ -1431,8 +1352,8 @@ name|GimpBitmapCursor
 name|gimp_modifier_cursors
 index|[]
 init|=
-comment|/* these have to match up with the enum in widgets-types.h */
 block|{
+comment|/* these have to match up with enum GimpCursorModifier in widgets-enums.h */
 block|{
 name|NULL
 block|,
@@ -1445,8 +1366,6 @@ block|,
 literal|0
 block|,
 literal|0
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1469,8 +1388,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1485,8 +1402,6 @@ block|,
 name|minus_x_hot
 block|,
 name|minus_y_hot
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1509,8 +1424,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1525,8 +1438,6 @@ block|,
 name|move_x_hot
 block|,
 name|move_y_hot
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1549,8 +1460,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1565,8 +1474,6 @@ block|,
 name|control_x_hot
 block|,
 name|control_y_hot
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1589,8 +1496,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1605,8 +1510,6 @@ block|,
 name|foreground_x_hot
 block|,
 name|foreground_y_hot
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1629,8 +1532,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1649,8 +1550,6 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -1665,8 +1564,6 @@ block|,
 name|hand_x_hot
 block|,
 name|hand_y_hot
-block|,
-name|NULL
 block|,
 name|NULL
 block|,
@@ -1766,10 +1663,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* static void create_cursor (GimpBitmapCursor *bmcursor) {   if (bmcursor->bitmap == NULL ||       bmcursor->mask == NULL)     create_cursor_bitmaps (bmcursor);    if (bmcursor->cursor == NULL)     {       GdkColor fg, bg;        * should have a way to configure the mouse colors *       gdk_color_parse ("#FFFFFF",&bg);       gdk_color_parse ("#000000",&fg);        bmcursor->cursor = gdk_cursor_new_from_pixmap (bmcursor->bitmap, 						     bmcursor->mask,&fg,&bg, 						     bmcursor->x_hot, 						     bmcursor->y_hot);     }    g_return_if_fail (bmcursor->cursor != NULL); } */
-end_comment
-
 begin_function
 name|GdkCursor
 modifier|*
@@ -1798,26 +1691,14 @@ name|GdkBitmap
 modifier|*
 name|mask
 decl_stmt|;
-name|GdkColor
-name|color
-decl_stmt|;
-name|GdkColor
-name|fg
-decl_stmt|,
-name|bg
-decl_stmt|;
-specifier|static
-name|GdkGC
-modifier|*
-name|gc
-init|=
-name|NULL
-decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
 name|gint
 name|height
+decl_stmt|;
+name|GdkColor
+name|color
 decl_stmt|;
 name|GimpBitmapCursor
 modifier|*
@@ -1837,6 +1718,19 @@ name|bmtool
 init|=
 name|NULL
 decl_stmt|;
+specifier|static
+name|GdkGC
+modifier|*
+name|gc
+init|=
+name|NULL
+decl_stmt|;
+specifier|static
+name|GdkColor
+name|fg
+decl_stmt|,
+name|bg
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|cursor_type
@@ -1852,14 +1746,12 @@ name|cursor_type
 operator|<=
 name|GDK_LAST_CURSOR
 condition|)
-block|{
 return|return
 name|gdk_cursor_new
 argument_list|(
 name|cursor_type
 argument_list|)
 return|;
-block|}
 name|g_return_val_if_fail
 argument_list|(
 name|cursor_type
@@ -1890,6 +1782,7 @@ operator|=
 name|GIMP_TOOL_CURSOR_NONE
 expr_stmt|;
 block|}
+comment|/*  prepare the main cursor  */
 name|cursor_type
 operator|-=
 name|GIMP_MOUSE_CURSOR
@@ -1899,14 +1792,9 @@ operator|=
 operator|&
 name|gimp_cursors
 index|[
-operator|(
-name|gint
-operator|)
 name|cursor_type
 index|]
 expr_stmt|;
-comment|/*  if there are no modifiers, we can show the cursor immediately    */
-comment|/* FIXME: ref the cursor in gtk-2.0 before returning it   if (modifier    == GIMP_CURSOR_MODIFIER_NONE&&       tool_cursor == GIMP_TOOL_CURSOR_NONE)     {       if  (bmcursor->cursor == NULL) 	create_cursor (bmcursor);        gdk_window_set_cursor (window, bmcursor->cursor);        return;     }     else */
 if|if
 condition|(
 name|bmcursor
@@ -1921,13 +1809,11 @@ name|mask
 operator|==
 name|NULL
 condition|)
-block|{
 name|create_cursor_bitmaps
 argument_list|(
 name|bmcursor
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  prepare the tool cursor  */
 if|if
 condition|(
@@ -1957,9 +1843,6 @@ operator|=
 operator|&
 name|gimp_stock_tool_cursors
 index|[
-operator|(
-name|gint
-operator|)
 name|tool_cursor
 index|]
 expr_stmt|;
@@ -1977,13 +1860,11 @@ name|mask
 operator|==
 name|NULL
 condition|)
-block|{
 name|create_cursor_bitmaps
 argument_list|(
 name|bmtool
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/*  prepare the cursor modifier  */
 if|if
@@ -2014,9 +1895,6 @@ operator|=
 operator|&
 name|gimp_modifier_cursors
 index|[
-operator|(
-name|gint
-operator|)
 name|modifier
 index|]
 expr_stmt|;
@@ -2034,13 +1912,11 @@ name|mask
 operator|==
 name|NULL
 condition|)
-block|{
 name|create_cursor_bitmaps
 argument_list|(
 name|bmmodifier
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -2048,6 +1924,7 @@ name|gc
 operator|==
 name|NULL
 condition|)
+block|{
 name|gc
 operator|=
 name|gdk_gc_new
@@ -2057,6 +1934,24 @@ operator|->
 name|bitmap
 argument_list|)
 expr_stmt|;
+comment|/* should have a way to configure the mouse colors */
+name|gdk_color_parse
+argument_list|(
+literal|"#FFFFFF"
+argument_list|,
+operator|&
+name|bg
+argument_list|)
+expr_stmt|;
+name|gdk_color_parse
+argument_list|(
+literal|"#000000"
+argument_list|,
+operator|&
+name|fg
+argument_list|)
+expr_stmt|;
+block|}
 name|gdk_drawable_get_size
 argument_list|(
 name|bmcursor
@@ -2339,23 +2234,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* should have a way to configure the mouse colors */
-name|gdk_color_parse
-argument_list|(
-literal|"#FFFFFF"
-argument_list|,
-operator|&
-name|bg
-argument_list|)
-expr_stmt|;
-name|gdk_color_parse
-argument_list|(
-literal|"#000000"
-argument_list|,
-operator|&
-name|fg
-argument_list|)
-expr_stmt|;
 name|cursor
 operator|=
 name|gdk_cursor_new_from_pixmap
