@@ -29,7 +29,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ea1fe0103
+DECL|enum|__anon275635070103
 block|{
 DECL|enumerator|GIMP_INT_STORE_VALUE
 name|GIMP_INT_STORE_VALUE
@@ -147,6 +147,12 @@ block|{
 DECL|member|parent_instance
 name|GtkListStore
 name|parent_instance
+decl_stmt|;
+comment|/*< private>*/
+DECL|member|empty_iter
+name|GtkTreeIter
+modifier|*
+name|empty_iter
 decl_stmt|;
 block|}
 struct|;
