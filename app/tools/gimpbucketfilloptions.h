@@ -112,6 +112,14 @@ DECL|member|paint_options
 name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
+DECL|member|fill_mode
+name|GimpBucketFillMode
+name|fill_mode
+decl_stmt|;
+DECL|member|fill_selection
+name|gboolean
+name|fill_selection
+decl_stmt|;
 DECL|member|fill_transparent
 name|gboolean
 name|fill_transparent
@@ -123,10 +131,6 @@ decl_stmt|;
 DECL|member|threshold
 name|gdouble
 name|threshold
-decl_stmt|;
-DECL|member|fill_mode
-name|GimpBucketFillMode
-name|fill_mode
 decl_stmt|;
 block|}
 struct|;
