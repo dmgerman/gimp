@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -41,6 +35,18 @@ begin_include
 include|#
 directive|include
 file|"procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-in.h"
 end_include
 
 begin_include
@@ -107,13 +113,13 @@ name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
-name|prog_name
+name|help_domain
 decl_stmt|;
 name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
-name|prog_name
+name|help_domain
 operator|=
 operator|(
 name|gchar
@@ -130,9 +136,18 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|prog_name
-operator|==
+name|help_domain
+operator|&&
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|help_domain
+argument_list|,
+operator|-
+literal|1
+argument_list|,
 name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
@@ -178,22 +193,45 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_help
-argument_list|(
+block|{
+if|if
+condition|(
+operator|!
+name|help_domain
+operator|&&
 name|gimp
-argument_list|,
+operator|->
+name|current_plug_in
+condition|)
+name|help_domain
+operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|plug_ins_help_domain
 argument_list|(
 name|gimp
 argument_list|,
-name|prog_name
+name|gimp
+operator|->
+name|current_plug_in
+operator|->
+name|prog
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|gimp_help
+argument_list|(
+name|gimp
+argument_list|,
+name|help_domain
 argument_list|,
 name|help_id
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -217,9 +255,9 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"prog_name"
+literal|"help_domain"
 block|,
-literal|"The plug-in's executable name or an empty string"
+literal|"The help domain in which help_id is registered"
 block|}
 block|,
 block|{
@@ -244,7 +282,7 @@ literal|"gimp_help"
 block|,
 literal|"Load a help page."
 block|,
-literal|"This procedure loads the specified help page into the helpbrowser or what ever is configured as help viewer. The location of the help page is given relative to the help rootdir. The help rootdir is determined from the prog_name: if prog_name is NULL, we use the help rootdir of the main GIMP installation, if the plug-in's full executable name is passed as prog_name, the GIMP will use this information to look up the help path the plug-in has registered before with gimp-plugin-help-register."
+literal|"This procedure loads the specified help page into the helpbrowser or what ever is configured as help viewer. The help page is identified by its domain and ID: if help_domain is NULL, we use the help_domain which was registered using the gimp-plugin-help-register procedure. If help_domain is NULL and no help domain was registered, the help domain of the main GIMP installation is used."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,

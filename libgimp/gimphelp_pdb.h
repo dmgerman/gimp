@@ -29,7 +29,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|prog_name
+name|help_domain
 parameter_list|,
 specifier|const
 name|gchar

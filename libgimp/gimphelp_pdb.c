@@ -20,18 +20,18 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_help:  * @prog_name: The plug-in's executable name or an empty string.  * @help_id: The help page's ID.  *  * Load a help page.  *  * This procedure loads the specified help page into the helpbrowser or  * what ever is configured as help viewer. The location of the help  * page is given relative to the help rootdir. The help rootdir is  * determined from the prog_name: if prog_name is NULL, we use the help  * rootdir of the main GIMP installation, if the plug-in's full  * executable name is passed as prog_name, the GIMP will use this  * information to look up the help path the plug-in has registered  * before with gimp-plugin-help-register.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_help:  * @help_domain: The help domain in which help_id is registered.  * @help_id: The help page's ID.  *  * Load a help page.  *  * This procedure loads the specified help page into the helpbrowser or  * what ever is configured as help viewer. The help page is identified  * by its domain and ID: if help_domain is NULL, we use the help_domain  * which was registered using the gimp-plugin-help-register procedure.  * If help_domain is NULL and no help domain was registered, the help  * domain of the main GIMP installation is used.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_help (const gchar * prog_name,const gchar * help_id)
+DECL|function|gimp_help (const gchar * help_domain,const gchar * help_id)
 name|gimp_help
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|prog_name
+name|help_domain
 parameter_list|,
 specifier|const
 name|gchar
@@ -62,7 +62,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|prog_name
+name|help_domain
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,

@@ -352,8 +352,7 @@ parameter_list|)
 block|{
 name|gimp_help
 argument_list|(
-name|gimp_get_progname
-argument_list|()
+name|NULL
 argument_list|,
 name|help_id
 argument_list|)
