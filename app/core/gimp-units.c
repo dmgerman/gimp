@@ -107,13 +107,6 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|gimp
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
@@ -145,13 +138,6 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|gimp
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -210,7 +196,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7addae0103
+DECL|enum|__anon2a51449b0103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
