@@ -37,6 +37,29 @@ directive|include
 file|<errno.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -158,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c16a100103
+DECL|enum|__anon29a3ee830103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -178,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c16a100203
+DECL|enum|__anon29a3ee830203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -194,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c16a100308
+DECL|struct|__anon29a3ee830308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -216,7 +239,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29c16a10040a
+DECL|union|__anon29a3ee83040a
 block|{
 DECL|member|d
 name|gdouble
@@ -241,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c16a100508
+DECL|struct|__anon29a3ee830508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -271,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c16a100608
+DECL|struct|__anon29a3ee830608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -306,7 +329,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c16a100708
+DECL|struct|__anon29a3ee830708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -342,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c16a100808
+DECL|struct|__anon29a3ee830808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -409,7 +432,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c16a100908
+DECL|struct|__anon29a3ee830908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -619,7 +642,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c16a100a08
+DECL|struct|__anon29a3ee830a08
 block|{
 DECL|member|run
 name|gboolean
