@@ -836,6 +836,7 @@ name|gimg
 argument_list|)
 condition|)
 block|{
+comment|/* if no selection */
 if|if
 condition|(
 operator|(
@@ -854,7 +855,6 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* if no selection */
 name|gmask
 operator|=
 name|channel_new
@@ -884,20 +884,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_fill
+name|drawable_fill
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|gmask
 argument_list|)
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
+name|TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1034,7 +1028,7 @@ comment|/* channel = gimp_image_get_channel_by_name (gdisp->gimage, "Qmask"); */
 comment|/*  the new options structure  */
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|EditQmaskOptions
 argument_list|,
@@ -1390,7 +1384,10 @@ argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|qmask_color_changed
+argument_list|)
 argument_list|,
 name|opacity_scale_data
 argument_list|)
@@ -1448,7 +1445,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|edit_qmask_query_ok_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|edit_qmask_query_ok_callback (GtkWidget * widget,gpointer data)
 name|edit_qmask_query_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -1456,7 +1453,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|EditQmaskOptions
@@ -1476,7 +1473,7 @@ operator|(
 name|EditQmaskOptions
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|channel
 operator|=
@@ -1567,7 +1564,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|edit_qmask_query_cancel_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|edit_qmask_query_cancel_callback (GtkWidget * widget,gpointer data)
 name|edit_qmask_query_cancel_callback
 parameter_list|(
 name|GtkWidget
@@ -1575,7 +1572,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|EditQmaskOptions
@@ -1588,7 +1585,7 @@ operator|(
 name|EditQmaskOptions
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
