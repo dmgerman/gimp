@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimppixmap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -40,11 +46,14 @@ name|ops_button_pressed_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -56,8 +65,10 @@ name|ops_button_extended_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -65,13 +76,9 @@ end_function_decl
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|ops_button_box_new (GtkWidget * parent,OpsButton * ops_button,OpsButtonType ops_type)
+DECL|function|ops_button_box_new (OpsButton * ops_button,OpsButtonType ops_type)
 name|ops_button_box_new
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|,
 name|OpsButton
 modifier|*
 name|ops_button
@@ -90,19 +97,7 @@ name|button_box
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|pixmap_widget
-decl_stmt|;
-name|GdkPixmap
-modifier|*
 name|pixmap
-decl_stmt|;
-name|GdkBitmap
-modifier|*
-name|mask
-decl_stmt|;
-name|GtkStyle
-modifier|*
-name|style
 decl_stmt|;
 name|GSList
 modifier|*
@@ -110,18 +105,6 @@ name|group
 init|=
 name|NULL
 decl_stmt|;
-name|gtk_widget_realize
-argument_list|(
-name|parent
-argument_list|)
-expr_stmt|;
-name|style
-operator|=
-name|gtk_widget_get_style
-argument_list|(
-name|parent
-argument_list|)
-expr_stmt|;
 name|button_box
 operator|=
 name|gtk_hbox_new
@@ -140,45 +123,11 @@ condition|)
 block|{
 name|pixmap
 operator|=
-name|gdk_pixmap_create_from_xpm_d
+name|gimp_pixmap_new
 argument_list|(
-name|parent
-operator|->
-name|window
-argument_list|,
-operator|&
-name|mask
-argument_list|,
-operator|&
-name|style
-operator|->
-name|bg
-index|[
-name|GTK_STATE_NORMAL
-index|]
-argument_list|,
 name|ops_button
 operator|->
 name|xpm_data
-argument_list|)
-expr_stmt|;
-name|pixmap_widget
-operator|=
-name|gtk_pixmap_new
-argument_list|(
-name|pixmap
-argument_list|,
-name|mask
-argument_list|)
-expr_stmt|;
-name|gdk_pixmap_unref
-argument_list|(
-name|pixmap
-argument_list|)
-expr_stmt|;
-name|gdk_bitmap_unref
-argument_list|(
-name|mask
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -215,16 +164,6 @@ name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_toggle_button_set_mode
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -236,20 +175,15 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
-default|default :
-name|button
-operator|=
-name|NULL
-expr_stmt|;
-comment|/*stop compiler complaints */
-name|g_error
+default|default:
+name|g_warning
 argument_list|(
 literal|"ops_button_box_new: unknown type %d\n"
 argument_list|,
 name|ops_type
 argument_list|)
 expr_stmt|;
-break|break;
+continue|continue;
 block|}
 name|gtk_container_add
 argument_list|(
@@ -258,7 +192,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|pixmap_widget
+name|pixmap
 argument_list|)
 expr_stmt|;
 if|if
@@ -279,12 +213,12 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|ops_button
 operator|->
 name|callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -301,10 +235,10 @@ argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|ops_button_pressed_callback
+argument_list|)
 argument_list|,
 name|ops_button
 argument_list|)
@@ -318,10 +252,10 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|ops_button_extended_callback
+argument_list|)
 argument_list|,
 name|ops_button
 argument_list|)
@@ -361,7 +295,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pixmap_widget
+name|pixmap
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -386,9 +320,7 @@ operator|++
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|button_box
-operator|)
 return|;
 block|}
 end_function
@@ -396,7 +328,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ops_button_pressed_callback (GtkWidget * widget,GdkEventButton * bevent,gpointer client_data)
+DECL|function|ops_button_pressed_callback (GtkWidget * widget,GdkEventButton * bevent,gpointer data)
 name|ops_button_pressed_callback
 parameter_list|(
 name|GtkWidget
@@ -408,7 +340,7 @@ modifier|*
 name|bevent
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|OpsButton
@@ -417,7 +349,7 @@ name|ops_button
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|client_data
+name|data
 operator|!=
 name|NULL
 argument_list|)
@@ -428,7 +360,7 @@ operator|(
 name|OpsButton
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -504,7 +436,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ops_button_extended_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|ops_button_extended_callback (GtkWidget * widget,gpointer data)
 name|ops_button_extended_callback
 parameter_list|(
 name|GtkWidget
@@ -512,7 +444,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|OpsButton
@@ -521,7 +453,7 @@ name|ops_button
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|client_data
+name|data
 operator|!=
 name|NULL
 argument_list|)
@@ -532,7 +464,7 @@ operator|(
 name|OpsButton
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(

@@ -1626,10 +1626,6 @@ name|button_box
 operator|=
 name|ops_button_box_new
 argument_list|(
-name|lc_dialog
-operator|->
-name|shell
-argument_list|,
 name|channels_ops_buttons
 argument_list|,
 name|OPS_BUTTON_NORMAL

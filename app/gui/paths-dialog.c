@@ -1359,16 +1359,11 @@ name|button_box
 operator|=
 name|ops_button_box_new
 argument_list|(
-name|lc_dialog
-operator|->
-name|shell
-argument_list|,
 name|point_ops_buttons
 argument_list|,
 name|OPS_BUTTON_RADIO
 argument_list|)
 expr_stmt|;
-comment|/* gtk_container_set_border_width (GTK_CONTAINER (button_box), 2); */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1664,10 +1659,6 @@ name|button_box
 operator|=
 name|ops_button_box_new
 argument_list|(
-name|lc_dialog
-operator|->
-name|shell
-argument_list|,
 name|paths_ops_buttons
 argument_list|,
 name|OPS_BUTTON_NORMAL

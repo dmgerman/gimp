@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7418bb0103
+DECL|enum|__anon29bee3ba0103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -47,7 +47,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7418bb0203
+DECL|enum|__anon29bee3ba0203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -125,10 +125,6 @@ name|GtkWidget
 modifier|*
 name|ops_button_box_new
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|,
 name|OpsButton
 modifier|*
 name|ops_button
