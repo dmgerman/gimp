@@ -8721,12 +8721,18 @@ name|height
 decl_stmt|;
 name|GimpImageType
 name|type
+init|=
+name|GIMP_RGB_IMAGE
 decl_stmt|;
 name|double
 name|opacity
+init|=
+literal|100.0
 decl_stmt|;
 name|GimpLayerModeEffects
 name|mode
+init|=
+name|GIMP_NORMAL_MODE
 decl_stmt|;
 if|if
 condition|(
@@ -8735,7 +8741,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"O!siiidi:gimp.Layer.__init__"
+literal|"O!sii|idi:gimp.Layer.__init__"
 argument_list|,
 operator|&
 name|PyGimpImage_Type
