@@ -2644,6 +2644,26 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|standard_operator_update_func (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+name|standard_operator_update_func
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|gpointer
+name|gdisp_ptr
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|standard_control_func (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|standard_control_func
 parameter_list|(
@@ -2786,6 +2806,12 @@ operator|->
 name|cursor_update_func
 operator|=
 name|standard_cursor_update_func
+expr_stmt|;
+name|tool
+operator|->
+name|oper_update_func
+operator|=
+name|standard_operator_update_func
 expr_stmt|;
 name|tool
 operator|->

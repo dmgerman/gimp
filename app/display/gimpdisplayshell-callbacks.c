@@ -1888,6 +1888,45 @@ name|mevent
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Operator update support: Bug #XXXX */
+if|if
+condition|(
+comment|/* Should we have a tool...      */
+name|active_tool
+operator|&&
+comment|/* and this event is NOT driving */
+comment|/* button press handlers ...     */
+operator|!
+operator|(
+name|state
+operator|&
+operator|(
+name|GDK_BUTTON1_MASK
+operator||
+name|GDK_BUTTON2_MASK
+operator||
+name|GDK_BUTTON3_MASK
+operator|)
+operator|)
+condition|)
+block|{
+comment|/* ...then preconditions to modify a tool */
+comment|/* operator state have been met.          */
+call|(
+modifier|*
+name|active_tool
+operator|->
+name|oper_update_func
+call|)
+argument_list|(
+name|active_tool
+argument_list|,
+name|mevent
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|GDK_KEY_PRESS
@@ -2321,8 +2360,25 @@ begin_break
 break|break;
 end_break
 
+begin_comment
+unit|}
+comment|/* Cursor update support                               */
+end_comment
+
+begin_comment
+comment|/* no_cursor_updating is TRUE (=1) when                */
+end_comment
+
+begin_comment
+comment|/*<Toolbox>/File/Preferences.../Interface/...         */
+end_comment
+
+begin_comment
+comment|/* Image Windows/Disable Cursor Updating is TOGGLED ON */
+end_comment
+
 begin_expr_stmt
-unit|}    if
+unit|if
 operator|(
 name|no_cursor_updating
 operator|==

@@ -42,7 +42,7 @@ name|core
 decl_stmt|;
 comment|/*  Core select object                      */
 DECL|member|op
-name|int
+name|SelectOps
 name|op
 decl_stmt|;
 comment|/*  selection operation (SELECTION_ADD etc.) */

@@ -1296,6 +1296,12 @@ name|rect_select_cursor_update
 expr_stmt|;
 name|tool
 operator|->
+name|oper_update_func
+operator|=
+name|rect_select_oper_update
+expr_stmt|;
+name|tool
+operator|->
 name|control_func
 operator|=
 name|free_select_control

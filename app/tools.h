@@ -43,6 +43,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"toolsF.h"
 end_include
 
@@ -59,7 +65,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c10ec0b0103
+DECL|enum|__anon2923e3190103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -72,6 +78,54 @@ name|PAUSED
 DECL|typedef|ToolState
 block|}
 name|ToolState
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Selection Boolean operations that rect, */
+end_comment
+
+begin_comment
+comment|/* ellipse, freehand, and fuzzy tools may  */
+end_comment
+
+begin_comment
+comment|/* perform.                                */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2923e3190203
+block|{
+DECL|enumerator|SELECTION_ADD
+name|SELECTION_ADD
+init|=
+name|ADD
+block|,
+DECL|enumerator|SELECTION_SUB
+name|SELECTION_SUB
+init|=
+name|SUB
+block|,
+DECL|enumerator|SELECTION_REPLACE
+name|SELECTION_REPLACE
+init|=
+name|REPLACE
+block|,
+DECL|enumerator|SELECTION_INTERSECT
+name|SELECTION_INTERSECT
+init|=
+name|INTERSECT
+block|,
+DECL|enumerator|SELECTION_MOVE_MASK
+name|SELECTION_MOVE_MASK
+block|,
+DECL|enumerator|SELECTION_MOVE
+name|SELECTION_MOVE
+DECL|typedef|SelectOps
+block|}
+name|SelectOps
 typedef|;
 end_typedef
 
@@ -190,6 +244,10 @@ decl_stmt|;
 DECL|member|cursor_update_func
 name|CursorUpdateFunc
 name|cursor_update_func
+decl_stmt|;
+DECL|member|oper_update_func
+name|OperUpdateFunc
+name|oper_update_func
 decl_stmt|;
 DECL|member|control_func
 name|ToolCtlFunc
