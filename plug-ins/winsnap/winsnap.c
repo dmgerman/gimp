@@ -120,7 +120,7 @@ DECL|macro|PLUG_IN_MENU_PATH
 define|#
 directive|define
 name|PLUG_IN_MENU_PATH
-value|"<Toolbox>/Xtns/WinSnap"
+value|"<Toolbox>/File/Acquire/Screen Shot..."
 end_define
 
 begin_comment
@@ -358,7 +358,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29f214dc0108
+DECL|struct|__anon2b0299fc0108
 typedef|typedef
 struct|struct
 block|{
@@ -399,7 +399,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29f214dc0208
+DECL|struct|__anon2b0299fc0208
 typedef|typedef
 struct|struct
 block|{

@@ -97,7 +97,7 @@ DECL|macro|PLUG_IN_MENU_PATH
 define|#
 directive|define
 name|PLUG_IN_MENU_PATH
-value|"<Toolbox>/Xtns/Screen Shot"
+value|"<Toolbox>/File/Acquire/Screen Shot..."
 end_define
 
 begin_define
@@ -184,7 +184,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon289511ee0108
+DECL|struct|__anon2a323a6e0108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289511ee0208
+DECL|struct|__anon2a323a6e0208
 typedef|typedef
 struct|struct
 block|{
