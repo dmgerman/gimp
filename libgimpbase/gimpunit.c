@@ -34,7 +34,7 @@ file|"gimpunit.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_unit_get_number_of_units:  *  * Returns the number of units which are known to the #GimpUnit system.  *  * Returns: The number of defined units.  */
+comment|/**  * gimp_unit_get_number_of_units:  *  * Returns the number of units which are known to the #GimpUnit system.  *  * Returns: The number of defined units.  **/
 end_comment
 
 begin_function
@@ -66,7 +66,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_number_of_built_in_units:  *  * Returns the number of #GimpUnit's which are hardcoded in the unit system  * (UNIT_INCH, UNIT_MM, UNIT_POINT, UNIT_PICA and the two "pseudo unit"  *  UNIT_PIXEL).  *  * Returns: The number of built-in units.  */
+comment|/**  * gimp_unit_get_number_of_built_in_units:  *  * Returns the number of #GimpUnit's which are hardcoded in the unit system  * (UNIT_INCH, UNIT_MM, UNIT_POINT, UNIT_PICA and the two "pseudo unit"  *  UNIT_PIXEL).  *  * Returns: The number of built-in units.  **/
 end_comment
 
 begin_function
@@ -98,7 +98,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_new:  * @identifier: The unit's identifier string.  * @factor: The unit's factor (how many units are in one inch).  * @digits: The unit's suggested number of digits (see gimp_unit_get_digits()).  * @symbol: The symbol of the unit (e.g. "''" for inch).  * @abbreviation: The abbreviation of the unit.  * @singular: The singular form of the unit.  * @plural: The plural form of the unit.  *  * Returns the integer ID of the new #GimpUnit.  *  * Note that a new unit is always created with it's deletion flag  * set to %TRUE. You will have to set it to %FALSE with  * gimp_unit_set_deletion_flag() to make the unit definition persistent.  *  * Returns: The ID of the new unit.  */
+comment|/**  * gimp_unit_new:  * @identifier: The unit's identifier string.  * @factor: The unit's factor (how many units are in one inch).  * @digits: The unit's suggested number of digits (see gimp_unit_get_digits()).  * @symbol: The symbol of the unit (e.g. "''" for inch).  * @abbreviation: The abbreviation of the unit.  * @singular: The singular form of the unit.  * @plural: The plural form of the unit.  *  * Returns the integer ID of the new #GimpUnit.  *  * Note that a new unit is always created with it's deletion flag  * set to %TRUE. You will have to set it to %FALSE with  * gimp_unit_set_deletion_flag() to make the unit definition persistent.  *  * Returns: The ID of the new unit.  **/
 end_comment
 
 begin_function
@@ -168,7 +168,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_deletion_flag:  * @unit: The unit you want to know the @deletion_flag of.  *  * Returns: The unit's @deletion_flag.  */
+comment|/**  * gimp_unit_get_deletion_flag:  * @unit: The unit you want to know the @deletion_flag of.  *  * Returns: The unit's @deletion_flag.  **/
 end_comment
 
 begin_function
@@ -203,7 +203,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_set_deletion_flag:  * @unit: The unit you want to set the @deletion_flag for.  * @deletion_flag: The new deletion_flag.  *  * Sets a #GimpUnit's @deletion_flag. If the @deletion_flag of a unit is  * %TRUE when GIMP exits, this unit will not be saved in the uses's  * "unitrc" file.  *  * Trying to change the @deletion_flag of a built-in unit will be silently  * ignored.  */
+comment|/**  * gimp_unit_set_deletion_flag:  * @unit: The unit you want to set the @deletion_flag for.  * @deletion_flag: The new deletion_flag.  *  * Sets a #GimpUnit's @deletion_flag. If the @deletion_flag of a unit is  * %TRUE when GIMP exits, this unit will not be saved in the users's  * "unitrc" file.  *  * Trying to change the @deletion_flag of a built-in unit will be silently  * ignored.  **/
 end_comment
 
 begin_function
@@ -240,7 +240,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_factor:  * @unit: The unit you want to know the factor of.  *  * A #GimpUnit's @factor is defined to be:  *  * distance_in_units == (@factor * distance_in_inches)  *  * Returns 0 for @unit == GIMP_UNIT_PIXEL.  *  * Returns: The unit's factor.  */
+comment|/**  * gimp_unit_get_factor:  * @unit: The unit you want to know the factor of.  *  * A #GimpUnit's @factor is defined to be:  *  * distance_in_units == (@factor * distance_in_inches)  *  * Returns 0 for @unit == GIMP_UNIT_PIXEL.  *  * Returns: The unit's factor.  **/
 end_comment
 
 begin_function
@@ -275,7 +275,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_digits:  * @unit: The unit you want to know the digits.  *  * Returns the number of digits an entry field should provide to get  * approximately the same accuracy as an inch input field with two digits.  *  * Returns 0 for @unit == GIMP_UNIT_PIXEL.  *  * Returns: The suggested number of digits.  */
+comment|/**  * gimp_unit_get_digits:  * @unit: The unit you want to know the digits.  *  * Returns the number of digits an entry field should provide to get  * approximately the same accuracy as an inch input field with two digits.  *  * Returns 0 for @unit == GIMP_UNIT_PIXEL.  *  * Returns: The suggested number of digits.  **/
 end_comment
 
 begin_function
@@ -310,7 +310,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_identifier:  * @unit: The unit you want to know the identifier of.  *  * This is an unstranslated string and must not be changed or freed.  *  * Returns: The unit's identifier.  */
+comment|/**  * gimp_unit_get_identifier:  * @unit: The unit you want to know the identifier of.  *  * This is an unstranslated string and must not be changed or freed.  *  * Returns: The unit's identifier.  **/
 end_comment
 
 begin_function
@@ -347,7 +347,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_symbol:  * @unit: The unit you want to know the symbol of.  *  * This is e.g. "''" for UNIT_INCH.  *  * NOTE: This string must not be changed or freed.  *  * Returns: The unit's symbol.  */
+comment|/**  * gimp_unit_get_symbol:  * @unit: The unit you want to know the symbol of.  *  * This is e.g. "''" for UNIT_INCH.  *  * NOTE: This string must not be changed or freed.  *  * Returns: The unit's symbol.  **/
 end_comment
 
 begin_function
@@ -384,7 +384,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_abbreviation:  * @unit: The unit you want to know the abbreviation of.  *  * For built-in units, this function returns the translated abbreviation  * of the unit.  *  * NOTE: This string must not be changed or freed.  *  * Returns: The unit's abbreviation.  */
+comment|/**  * gimp_unit_get_abbreviation:  * @unit: The unit you want to know the abbreviation of.  *  * For built-in units, this function returns the translated abbreviation  * of the unit.  *  * NOTE: This string must not be changed or freed.  *  * Returns: The unit's abbreviation.  **/
 end_comment
 
 begin_function
@@ -421,7 +421,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_singular:  * @unit: The unit you want to know the singular form of.  *  * For built-in units, this function returns the translated singular form  * of the unit's name.  *  * NOTE: This string must not be changed or freed.  *  * Returns: The unit's singular form.  */
+comment|/**  * gimp_unit_get_singular:  * @unit: The unit you want to know the singular form of.  *  * For built-in units, this function returns the translated singular form  * of the unit's name.  *  * NOTE: This string must not be changed or freed.  *  * Returns: The unit's singular form.  **/
 end_comment
 
 begin_function
@@ -458,7 +458,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_plural:  * @unit: The unit you want to know the plural form of.  *  * For built-in units, this function returns the translated plural form  * of the unit's name.  *  * NOTE: This string must not be changed or freed.  *  * Returns: The unit's plural form.  *  */
+comment|/**  * gimp_unit_get_plural:  * @unit: The unit you want to know the plural form of.  *  * For built-in units, this function returns the translated plural form  * of the unit's name.  *  * NOTE: This string must not be changed or freed.  *  * Returns: The unit's plural form.  **/
 end_comment
 
 begin_function
