@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8fcc10103
+DECL|enum|__anon2bb8c9d60103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -2186,15 +2186,6 @@ condition|(
 name|insert_data
 condition|)
 block|{
-name|g_hash_table_remove
-argument_list|(
-name|view
-operator|->
-name|hash_table
-argument_list|,
-name|viewable
-argument_list|)
-expr_stmt|;
 name|GIMP_CONTAINER_VIEW_GET_CLASS
 argument_list|(
 name|view
@@ -2207,6 +2198,15 @@ argument_list|,
 name|viewable
 argument_list|,
 name|insert_data
+argument_list|)
+expr_stmt|;
+name|g_hash_table_remove
+argument_list|(
+name|view
+operator|->
+name|hash_table
+argument_list|,
+name|viewable
 argument_list|)
 expr_stmt|;
 block|}
