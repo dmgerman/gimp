@@ -175,7 +175,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c87ddc0103
+DECL|enum|__anon27ba62d50103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -970,9 +970,7 @@ literal|"<ColormapEditor>"
 argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
-name|menu_factory
-operator|->
-name|gimp
+name|editor
 argument_list|,
 name|FALSE
 argument_list|)

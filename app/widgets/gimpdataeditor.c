@@ -835,7 +835,7 @@ name|menu_identifier
 argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
-name|gimp
+name|editor
 argument_list|,
 name|FALSE
 argument_list|)

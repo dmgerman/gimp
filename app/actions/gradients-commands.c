@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gradients-commands.h"
 end_include
 
@@ -136,21 +130,11 @@ name|editor
 decl_stmt|;
 name|editor
 operator|=
-operator|(
-name|GimpContainerEditor
-operator|*
-operator|)
-name|gimp_widget_get_callback_context
+name|GIMP_CONTAINER_EDITOR
 argument_list|(
-name|widget
+name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|editor
-condition|)
-return|return;
 name|gradients_save_as_pov_query
 argument_list|(
 name|editor

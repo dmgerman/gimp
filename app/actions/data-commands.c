@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"data-commands.h"
 end_include
 
@@ -64,21 +58,11 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-operator|(
-name|GimpDataFactoryView
-operator|*
-operator|)
-name|gimp_widget_get_callback_context
+name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
-name|widget
+name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|view
-condition|)
-return|return;
 if|if
 condition|(
 name|GTK_WIDGET_SENSITIVE
@@ -88,7 +72,6 @@ operator|->
 name|new_button
 argument_list|)
 condition|)
-block|{
 name|gtk_button_clicked
 argument_list|(
 name|GTK_BUTTON
@@ -99,7 +82,6 @@ name|new_button
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -122,21 +104,11 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-operator|(
-name|GimpDataFactoryView
-operator|*
-operator|)
-name|gimp_widget_get_callback_context
+name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
-name|widget
+name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|view
-condition|)
-return|return;
 if|if
 condition|(
 name|GTK_WIDGET_SENSITIVE
@@ -146,7 +118,6 @@ operator|->
 name|duplicate_button
 argument_list|)
 condition|)
-block|{
 name|gtk_button_clicked
 argument_list|(
 name|GTK_BUTTON
@@ -157,7 +128,6 @@ name|duplicate_button
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -180,21 +150,11 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-operator|(
-name|GimpDataFactoryView
-operator|*
-operator|)
-name|gimp_widget_get_callback_context
+name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
-name|widget
+name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|view
-condition|)
-return|return;
 if|if
 condition|(
 name|GTK_WIDGET_SENSITIVE
@@ -204,7 +164,6 @@ operator|->
 name|edit_button
 argument_list|)
 condition|)
-block|{
 name|gtk_button_clicked
 argument_list|(
 name|GTK_BUTTON
@@ -215,7 +174,6 @@ name|edit_button
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -238,21 +196,11 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-operator|(
-name|GimpDataFactoryView
-operator|*
-operator|)
-name|gimp_widget_get_callback_context
+name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
-name|widget
+name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|view
-condition|)
-return|return;
 if|if
 condition|(
 name|GTK_WIDGET_SENSITIVE
@@ -262,7 +210,6 @@ operator|->
 name|delete_button
 argument_list|)
 condition|)
-block|{
 name|gtk_button_clicked
 argument_list|(
 name|GTK_BUTTON
@@ -273,7 +220,6 @@ name|delete_button
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -296,21 +242,11 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-operator|(
-name|GimpDataFactoryView
-operator|*
-operator|)
-name|gimp_widget_get_callback_context
+name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
-name|widget
+name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|view
-condition|)
-return|return;
 if|if
 condition|(
 name|GTK_WIDGET_SENSITIVE
@@ -320,7 +256,6 @@ operator|->
 name|refresh_button
 argument_list|)
 condition|)
-block|{
 name|gtk_button_clicked
 argument_list|(
 name|GTK_BUTTON
@@ -331,7 +266,6 @@ name|refresh_button
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
