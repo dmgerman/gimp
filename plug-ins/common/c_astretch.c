@@ -4,7 +4,7 @@ comment|/* Contrast Autostretch 1.06 --- image filter plug-in for The Gimp image
 end_comment
 
 begin_comment
-comment|/* This simple plug-in does an automatic contrast stretch.  For each    channel in the image, it finds the minimum and maximum values... it    uses those values to stretch the individual histograms to the full    contrast range.  For some images it may do just what you want; for    others it may be total crap :) */
+comment|/* This simple plug-in does an automatic contrast stretch.  For each    channel in the image, it finds the minimum and maximum values... it    uses those values to stretch the individual histograms to the full    contrast range.  For some images it may do just what you want; for    others it may not work that well */
 end_comment
 
 begin_include
@@ -191,8 +191,8 @@ literal|"stretch.  For each channel in the image, it finds "
 literal|"the minimum and maximum values... it uses those "
 literal|"values to stretch the individual histograms to the "
 literal|"full contrast range.  For some images it may do "
-literal|"just what you want; for others it may be total "
-literal|"crap :)"
+literal|"just what you want; for others it may not work "
+literal|"that well."
 argument_list|,
 literal|"Federico Mena Quintero"
 argument_list|,
@@ -812,7 +812,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon299c578a0108
+DECL|struct|__anon2b76def90108
 typedef|typedef
 struct|struct
 block|{

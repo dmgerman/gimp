@@ -4,7 +4,7 @@ comment|/* Color Enhance 0.10 --- image filter plug-in for The Gimp image  * man
 end_comment
 
 begin_comment
-comment|/* This simple plug-in does an automatic Saturation stretch.  For each    channel in the image, it finds the minimum and maximum values... it    uses those values to stretch the individual histograms to the full    range.  For some images it may do just what you want; for others    it may be total crap :) This version operates in HSV space    and preserves hue. Most code is taken from autostretch_hsv */
+comment|/* This simple plug-in does an automatic Saturation stretch.  For each    channel in the image, it finds the minimum and maximum values... it    uses those values to stretch the individual histograms to the full    range.  For some images it may do just what you want; for others    it may not work that well. This version operates in HSV space    and preserves hue. Most code is taken from autostretch_hsv */
 end_comment
 
 begin_include
@@ -191,7 +191,7 @@ literal|"stretch.  For each channel in the image, it finds "
 literal|"the minimum and maximum values... it uses those "
 literal|"values to stretch the individual histograms to the "
 literal|"full range.  For some images it may do just what "
-literal|"you want; for others it may be total crap :).  "
+literal|"you want; for others it may not work that well.  "
 literal|"This version differs from Contrast Autostretch in "
 literal|"that it works in HSV space, and preserves hue."
 argument_list|,
@@ -988,7 +988,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bf65b530108
+DECL|struct|__anon2c67add50108
 typedef|typedef
 struct|struct
 block|{

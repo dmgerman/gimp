@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761285d0108
+DECL|struct|__anon2ae6b0340108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -1782,7 +1782,6 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Are you crazy?\n\n"
 literal|"You are about to create a huge\n"
 literal|"HTML file which will most likely\n"
 literal|"crash your browser."
