@@ -205,6 +205,11 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+DECL|member|title_layout
+name|PangoLayout
+modifier|*
+name|title_layout
+decl_stmt|;
 DECL|member|menu_button
 name|GtkWidget
 modifier|*
