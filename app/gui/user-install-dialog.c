@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e956370103
+DECL|enum|__anon2b7630060103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e956370203
+DECL|enum|__anon2b7630060203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e956370303
+DECL|enum|__anon2b7630060303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28e956370408
+DECL|struct|__anon2b7630060408
 block|{
 DECL|member|directory
 name|gboolean
@@ -1971,8 +1971,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|user_install_dialog_create (const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,gboolean verbose)
-name|user_install_dialog_create
+DECL|function|user_install_dialog_run (const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,gboolean verbose)
+name|user_install_dialog_run
 parameter_list|(
 specifier|const
 name|gchar
@@ -4015,6 +4015,9 @@ name|gtk_widget_show
 argument_list|(
 name|dialog
 argument_list|)
+expr_stmt|;
+name|gtk_main
+argument_list|()
 expr_stmt|;
 block|}
 end_function

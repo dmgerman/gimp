@@ -6,53 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GUI_H__
+name|__GUI_VTABLE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GUI_H__
+DECL|macro|__GUI_VTABLE_H__
 define|#
 directive|define
-name|__GUI_H__
+name|__GUI_VTABLE_H__
 end_define
 
 begin_function_decl
-name|gboolean
-name|gui_libs_init
-parameter_list|(
-name|gint
-modifier|*
-name|argc
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-modifier|*
-name|argv
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpInitStatusFunc
-name|gui_init
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|gboolean
-name|no_spash
-parameter_list|,
-name|gboolean
-name|no_splash_image
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
-name|gui_post_init
+name|gui_vtable_init
 parameter_list|(
 name|Gimp
 modifier|*
@@ -67,7 +33,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GUI_H__ */
+comment|/* __GUI_VTABLE_H__ */
 end_comment
 
 end_unit

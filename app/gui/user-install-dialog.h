@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|user_install_dialog_create
+name|user_install_dialog_run
 parameter_list|(
 specifier|const
 name|gchar
