@@ -245,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b656fed0103
+DECL|enum|__anon2a4551610103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -1565,6 +1565,8 @@ block|{
 comment|/* If there are 0 levels of undo return FALSE.  */
 if|if
 condition|(
+name|gimprc
+operator|.
 name|levels_of_undo
 operator|==
 literal|0
@@ -1579,6 +1581,8 @@ name|gimage
 operator|->
 name|undo_levels
 operator|>=
+name|gimprc
+operator|.
 name|levels_of_undo
 condition|)
 name|gimage

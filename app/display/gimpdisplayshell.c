@@ -2530,6 +2530,8 @@ expr_stmt|;
 comment|/*  show everything  *******************************************************/
 if|if
 condition|(
+name|gimprc
+operator|.
 name|show_rulers
 condition|)
 block|{
@@ -2623,6 +2625,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|show_statusbar
 condition|)
 block|{

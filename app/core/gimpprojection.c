@@ -626,6 +626,8 @@ name|gdisp
 operator|->
 name|dot_for_dot
 operator|=
+name|gimprc
+operator|.
 name|default_dot_for_dot
 expr_stmt|;
 name|gdisp
@@ -1224,6 +1226,8 @@ literal|0
 expr_stmt|;
 name|format
 operator|=
+name|gimprc
+operator|.
 name|image_title_format
 expr_stmt|;
 while|while
@@ -6090,6 +6094,8 @@ name|resize_display
 argument_list|(
 name|gdisp
 argument_list|,
+name|gimprc
+operator|.
 name|allow_resize_windows
 argument_list|,
 name|TRUE
@@ -8453,6 +8459,8 @@ condition|)
 block|{
 switch|switch
 condition|(
+name|gimprc
+operator|.
 name|cursor_mode
 condition|)
 block|{

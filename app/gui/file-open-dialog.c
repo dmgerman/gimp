@@ -2721,6 +2721,8 @@ else|else
 block|{
 switch|switch
 condition|(
+name|gimprc
+operator|.
 name|thumbnail_mode
 condition|)
 block|{
@@ -3188,6 +3190,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|thumbnail_mode
 condition|)
 block|{

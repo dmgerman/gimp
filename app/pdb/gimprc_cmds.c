@@ -492,10 +492,14 @@ name|yres
 decl_stmt|;
 name|xres
 operator|=
+name|gimprc
+operator|.
 name|monitor_xres
 expr_stmt|;
 name|yres
 operator|=
+name|gimprc
+operator|.
 name|monitor_yres
 expr_stmt|;
 name|success

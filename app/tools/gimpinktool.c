@@ -4812,6 +4812,8 @@ literal|0
 operator|)
 operator|!=
 operator|(
+name|gimprc
+operator|.
 name|perfectmouse
 operator|!=
 literal|0
@@ -6383,7 +6385,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon288344f80103
+DECL|enum|__anon2a33a8220103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -8769,6 +8769,8 @@ if|if
 condition|(
 name|num_entries
 operator|==
+name|gimprc
+operator|.
 name|last_opened_size
 condition|)
 block|{
@@ -8886,6 +8888,8 @@ name|g_new
 argument_list|(
 name|GimpItemFactoryEntry
 argument_list|,
+name|gimprc
+operator|.
 name|last_opened_size
 argument_list|)
 expr_stmt|;
@@ -8895,6 +8899,8 @@ name|g_new
 argument_list|(
 name|gchar
 argument_list|,
+name|gimprc
+operator|.
 name|last_opened_size
 operator|*
 name|MRU_MENU_ENTRY_SIZE
@@ -8919,6 +8925,8 @@ literal|0
 init|;
 name|i
 operator|<
+name|gimprc
+operator|.
 name|last_opened_size
 condition|;
 name|i
@@ -9076,6 +9084,8 @@ name|menus_create_items
 argument_list|(
 name|toolbox_factory
 argument_list|,
+name|gimprc
+operator|.
 name|last_opened_size
 argument_list|,
 name|last_opened_entries
@@ -9095,6 +9105,8 @@ literal|0
 init|;
 name|i
 operator|<
+name|gimprc
+operator|.
 name|last_opened_size
 condition|;
 name|i
@@ -9646,6 +9658,8 @@ block|{
 if|if
 condition|(
 operator|!
+name|gimprc
+operator|.
 name|disable_tearoff_menus
 operator|&&
 name|create_tearoff
@@ -9663,6 +9677,8 @@ block|}
 elseif|else
 if|if
 condition|(
+name|gimprc
+operator|.
 name|disable_tearoff_menus
 operator|||
 operator|!

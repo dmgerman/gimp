@@ -388,6 +388,8 @@ block|}
 if|if
 condition|(
 operator|!
+name|gimprc
+operator|.
 name|global_paint_options
 condition|)
 block|{
@@ -663,6 +665,8 @@ operator|*
 operator|*
 operator|)
 operator|&
+name|gimprc
+operator|.
 name|brush_path
 argument_list|,
 name|brush_loader_entries
@@ -687,6 +691,8 @@ operator|*
 operator|*
 operator|)
 operator|&
+name|gimprc
+operator|.
 name|pattern_path
 argument_list|,
 name|pattern_loader_entries
@@ -711,6 +717,8 @@ operator|*
 operator|*
 operator|)
 operator|&
+name|gimprc
+operator|.
 name|gradient_path
 argument_list|,
 name|gradient_loader_entries
@@ -735,6 +743,8 @@ operator|*
 operator|*
 operator|)
 operator|&
+name|gimprc
+operator|.
 name|palette_path
 argument_list|,
 name|palette_loader_entries
@@ -855,6 +865,8 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimprc
+operator|.
 name|global_paint_options
 operator|&&
 name|active_tool
@@ -882,6 +894,8 @@ block|}
 elseif|else
 if|if
 condition|(
+name|gimprc
+operator|.
 name|global_paint_options
 condition|)
 block|{
@@ -999,6 +1013,8 @@ if|if
 condition|(
 name|global
 operator|==
+name|gimprc
+operator|.
 name|global_paint_options
 condition|)
 return|return;

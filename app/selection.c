@@ -2369,6 +2369,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|cycled_marching_ants
 condition|)
 block|{

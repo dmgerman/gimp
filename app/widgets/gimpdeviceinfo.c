@@ -4336,6 +4336,8 @@ block|{
 comment|/* Save device status on exit */
 if|if
 condition|(
+name|gimprc
+operator|.
 name|save_device_status
 condition|)
 name|devices_write_rc

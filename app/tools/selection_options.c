@@ -205,6 +205,8 @@ name|options
 operator|->
 name|threshold
 operator|=
+name|gimprc
+operator|.
 name|default_threshold
 expr_stmt|;
 name|options
@@ -1069,6 +1071,8 @@ name|threshold_w
 operator|=
 name|gtk_adjustment_new
 argument_list|(
+name|gimprc
+operator|.
 name|default_threshold
 argument_list|,
 literal|0.0
@@ -1844,6 +1848,8 @@ operator|->
 name|threshold_w
 argument_list|)
 argument_list|,
+name|gimprc
+operator|.
 name|default_threshold
 argument_list|)
 expr_stmt|;

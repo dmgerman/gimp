@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4e1c250108
+DECL|struct|__anon28d3cee00108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4e1c250208
+DECL|struct|__anon28d3cee00208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -3271,6 +3271,8 @@ name|st
 operator|->
 name|preview_size
 operator|=
+name|gimprc
+operator|.
 name|preview_size
 expr_stmt|;
 comment|/*  gimage signals  */

@@ -233,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad696d0103
+DECL|enum|__anon29cfa25f0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -1927,6 +1927,8 @@ expr_stmt|;
 comment|/* add motion memory if perfectmouse is set */
 if|if
 condition|(
+name|gimprc
+operator|.
 name|perfectmouse
 operator|!=
 literal|0

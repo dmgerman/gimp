@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6fbdeb0103
+DECL|enum|__anon2c10fa480103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1857,6 +1857,8 @@ name|view
 operator|->
 name|preview_size
 operator|=
+name|gimprc
+operator|.
 name|preview_size
 expr_stmt|;
 name|list_view

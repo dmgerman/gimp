@@ -29,7 +29,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b60fd00103
+DECL|enum|__anon2b88beb60103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -93,7 +93,7 @@ name|SCREEN_XRES
 parameter_list|(
 name|g
 parameter_list|)
-value|(g->dot_for_dot? g->gimage->xresolution : monitor_xres)
+value|(g->dot_for_dot? g->gimage->xresolution : gimprc.monitor_xres)
 end_define
 
 begin_define
@@ -104,7 +104,7 @@ name|SCREEN_YRES
 parameter_list|(
 name|g
 parameter_list|)
-value|(g->dot_for_dot? g->gimage->yresolution : monitor_yres)
+value|(g->dot_for_dot? g->gimage->yresolution : gimprc.monitor_yres)
 end_define
 
 begin_comment

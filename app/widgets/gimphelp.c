@@ -252,6 +252,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimprc
+operator|.
 name|use_help
 condition|)
 block|{
@@ -370,6 +372,8 @@ name|help_data
 operator|==
 name|NULL
 operator|&&
+name|gimprc
+operator|.
 name|help_browser
 operator|!=
 name|HELP_BROWSER_GIMP
@@ -438,6 +442,8 @@ directive|endif
 comment|/*  DEBUG_HELP  */
 switch|switch
 condition|(
+name|gimprc
+operator|.
 name|help_browser
 condition|)
 block|{
@@ -551,6 +557,8 @@ condition|(
 name|use_netscape
 condition|)
 block|{
+name|gimprc
+operator|.
 name|help_browser
 operator|=
 name|HELP_BROWSER_NETSCAPE
@@ -694,6 +702,8 @@ argument_list|()
 expr_stmt|;
 return|return
 operator|(
+name|gimprc
+operator|.
 name|help_browser
 operator|!=
 name|HELP_BROWSER_NETSCAPE

@@ -1628,6 +1628,8 @@ decl_stmt|;
 comment|/* Help out small displays */
 if|if
 condition|(
+name|gimprc
+operator|.
 name|preview_size
 operator|<
 literal|64
@@ -2470,6 +2472,8 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|preview_size
 condition|)
 block|{
@@ -2959,6 +2963,8 @@ operator|=
 operator|(
 name|double
 operator|)
+name|gimprc
+operator|.
 name|preview_size
 operator|/
 operator|(
@@ -2976,6 +2982,8 @@ operator|=
 operator|(
 name|double
 operator|)
+name|gimprc
+operator|.
 name|preview_size
 operator|/
 operator|(
@@ -2987,6 +2995,8 @@ name|height
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|preview_size
 condition|)
 block|{
@@ -6989,6 +6999,8 @@ operator|)
 operator|>=
 literal|0
 operator|&&
+name|gimprc
+operator|.
 name|preview_size
 condition|)
 block|{

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b42d7fd0103
+DECL|enum|__anon2ba008860103
 block|{
 DECL|enumerator|PUSH
 name|PUSH
@@ -749,8 +749,12 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
+name|gimprc
+operator|.
 name|preview_size
 argument_list|,
+name|gimprc
+operator|.
 name|preview_size
 argument_list|)
 expr_stmt|;

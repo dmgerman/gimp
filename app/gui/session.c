@@ -243,6 +243,8 @@ name|fp
 argument_list|,
 literal|"(last-tip-shown %d)\n\n"
 argument_list|,
+name|gimprc
+operator|.
 name|last_tip
 operator|+
 literal|1

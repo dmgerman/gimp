@@ -1257,6 +1257,8 @@ name|brush_select_show_paint_options
 argument_list|(
 name|bsp
 argument_list|,
+name|gimprc
+operator|.
 name|global_paint_options
 argument_list|)
 expr_stmt|;

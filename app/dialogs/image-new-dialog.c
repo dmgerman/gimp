@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2306960108
+DECL|struct|__anon28e7781e0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -359,6 +359,8 @@ name|info
 operator|->
 name|size
 operator|>
+name|gimprc
+operator|.
 name|max_new_image_size
 condition|)
 block|{
@@ -445,8 +447,12 @@ argument_list|)
 argument_list|,
 name|ABS
 argument_list|(
+name|gimprc
+operator|.
 name|default_xresolution
 operator|-
+name|gimprc
+operator|.
 name|default_yresolution
 argument_list|)
 operator|<
@@ -464,6 +470,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+name|gimprc
+operator|.
 name|default_xresolution
 argument_list|)
 expr_stmt|;
@@ -478,6 +486,8 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
+name|gimprc
+operator|.
 name|default_yresolution
 argument_list|)
 expr_stmt|;
@@ -490,6 +500,8 @@ operator|->
 name|resolution_se
 argument_list|)
 argument_list|,
+name|gimprc
+operator|.
 name|default_resolution_units
 argument_list|)
 expr_stmt|;
@@ -516,6 +528,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+name|gimprc
+operator|.
 name|default_xresolution
 argument_list|,
 name|TRUE
@@ -532,6 +546,8 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
+name|gimprc
+operator|.
 name|default_yresolution
 argument_list|,
 name|TRUE
@@ -548,6 +564,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+name|gimprc
+operator|.
 name|default_width
 argument_list|)
 expr_stmt|;
@@ -562,6 +580,8 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
+name|gimprc
+operator|.
 name|default_height
 argument_list|)
 expr_stmt|;
@@ -574,6 +594,8 @@ operator|->
 name|size_se
 argument_list|)
 argument_list|,
+name|gimprc
+operator|.
 name|default_units
 argument_list|)
 expr_stmt|;
@@ -585,6 +607,8 @@ name|info
 operator|->
 name|type_w
 index|[
+name|gimprc
+operator|.
 name|default_type
 index|]
 argument_list|)
@@ -789,6 +813,8 @@ name|max_size
 operator|=
 name|image_new_get_size_string
 argument_list|(
+name|gimprc
+operator|.
 name|max_new_image_size
 argument_list|)
 expr_stmt|;
@@ -2857,6 +2883,8 @@ name|gimp_size_entry_new
 argument_list|(
 literal|1
 argument_list|,
+name|gimprc
+operator|.
 name|default_resolution_units
 argument_list|,
 name|_

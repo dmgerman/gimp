@@ -2165,6 +2165,8 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimprc
+operator|.
 name|info_window_follows_mouse
 condition|)
 block|{
@@ -2234,6 +2236,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|nav_window_per_display
 condition|)
 block|{

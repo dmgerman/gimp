@@ -638,6 +638,8 @@ name|resize_display
 argument_list|(
 name|gdisp
 argument_list|,
+name|gimprc
+operator|.
 name|allow_resize_windows
 argument_list|,
 name|TRUE

@@ -965,7 +965,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3d57580103
+DECL|enum|__anon2c29cadc0103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -1008,7 +1008,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3d57580203
+DECL|enum|__anon2c29cadc0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -6950,6 +6950,8 @@ name|brush_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimprc
+operator|.
 name|default_brush
 argument_list|)
 expr_stmt|;
@@ -7620,6 +7622,8 @@ name|pattern_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimprc
+operator|.
 name|default_pattern
 argument_list|)
 expr_stmt|;
@@ -8273,6 +8277,8 @@ name|gradient_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimprc
+operator|.
 name|default_gradient
 argument_list|)
 expr_stmt|;
@@ -8860,6 +8866,8 @@ name|palette_name
 operator|=
 name|g_strdup
 argument_list|(
+name|gimprc
+operator|.
 name|default_palette
 argument_list|)
 expr_stmt|;

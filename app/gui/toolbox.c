@@ -1756,6 +1756,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|show_indicators
 condition|)
 name|create_indicator_area

@@ -508,6 +508,8 @@ comment|/*  Only save if the gimage has been modified  */
 if|if
 condition|(
 operator|!
+name|gimprc
+operator|.
 name|trust_dirty_flag
 operator|||
 name|gdisplay

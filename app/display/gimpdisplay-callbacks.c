@@ -743,6 +743,8 @@ name|gimage
 operator|->
 name|width
 argument_list|,
+name|gimprc
+operator|.
 name|marching_speed
 argument_list|)
 expr_stmt|;
@@ -2443,6 +2445,8 @@ comment|/*<Toolbox>/File/Preferences.../Interface/...         */
 comment|/* Image Windows/Disable Cursor Updating is TOGGLED ON */
 if|if
 condition|(
+name|gimprc
+operator|.
 name|no_cursor_updating
 operator|==
 literal|0

@@ -754,7 +754,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293456b90103
+DECL|enum|__anon27c775670103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1597,18 +1597,24 @@ name|gimage
 operator|->
 name|xresolution
 operator|=
+name|gimprc
+operator|.
 name|default_xresolution
 expr_stmt|;
 name|gimage
 operator|->
 name|yresolution
 operator|=
+name|gimprc
+operator|.
 name|default_yresolution
 expr_stmt|;
 name|gimage
 operator|->
 name|unit
 operator|=
+name|gimprc
+operator|.
 name|default_units
 expr_stmt|;
 name|gimage

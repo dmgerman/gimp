@@ -720,6 +720,8 @@ comment|/* gimage_set_save_proc(gimage, file_proc); */
 comment|/* Write a thumbnail for the saved image, where appropriate */
 switch|switch
 condition|(
+name|gimprc
+operator|.
 name|thumbnail_mode
 condition|)
 block|{

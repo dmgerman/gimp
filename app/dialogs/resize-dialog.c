@@ -3733,6 +3733,8 @@ name|gimp_size_entry_new
 argument_list|(
 literal|1
 argument_list|,
+name|gimprc
+operator|.
 name|default_resolution_units
 argument_list|,
 name|_

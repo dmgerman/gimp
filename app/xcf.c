@@ -230,7 +230,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c2fdb0103
+DECL|enum|__anon275af3c70103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c2fdb0203
+DECL|enum|__anon275af3c70203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -9536,10 +9536,14 @@ argument_list|)
 expr_stmt|;
 name|xres
 operator|=
+name|gimprc
+operator|.
 name|default_xresolution
 expr_stmt|;
 name|yres
 operator|=
+name|gimprc
+operator|.
 name|default_yresolution
 expr_stmt|;
 block|}

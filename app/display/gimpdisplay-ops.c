@@ -325,6 +325,8 @@ name|gimage
 operator|->
 name|dirty
 operator|&&
+name|gimprc
+operator|.
 name|confirm_on_close
 condition|)
 block|{

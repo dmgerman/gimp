@@ -317,6 +317,8 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
+name|gimprc
+operator|.
 name|preview_size
 argument_list|,
 literal|1
@@ -692,6 +694,8 @@ operator|->
 name|preview
 argument_list|)
 argument_list|,
+name|gimprc
+operator|.
 name|preview_size
 argument_list|,
 literal|1
@@ -1069,6 +1073,8 @@ operator|->
 name|preview
 argument_list|)
 argument_list|,
+name|gimprc
+operator|.
 name|preview_size
 argument_list|,
 literal|1

@@ -249,8 +249,12 @@ argument_list|()
 expr_stmt|;
 name|render_setup
 argument_list|(
+name|gimprc
+operator|.
 name|transparency_type
 argument_list|,
+name|gimprc
+operator|.
 name|transparency_size
 argument_list|)
 expr_stmt|;
@@ -270,6 +274,8 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimprc
+operator|.
 name|show_tool_tips
 condition|)
 name|gimp_help_disable_tooltips
@@ -298,6 +304,8 @@ argument_list|(
 name|gchar
 operator|*
 argument_list|,
+name|gimprc
+operator|.
 name|last_opened_size
 argument_list|)
 decl_stmt|;
@@ -323,6 +331,8 @@ literal|0
 init|;
 name|i
 operator|<
+name|gimprc
+operator|.
 name|last_opened_size
 condition|;
 name|i
@@ -421,6 +431,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimprc
+operator|.
 name|show_tips
 condition|)
 block|{

@@ -538,6 +538,8 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|always_restore_session
 condition|)
 name|restore_session
@@ -547,10 +549,14 @@ expr_stmt|;
 comment|/* make sure the monitor resolution is valid */
 if|if
 condition|(
+name|gimprc
+operator|.
 name|monitor_xres
 operator|<
 name|GIMP_MIN_RESOLUTION
 operator|||
+name|gimprc
+operator|.
 name|monitor_yres
 operator|<
 name|GIMP_MIN_RESOLUTION
@@ -559,12 +565,18 @@ block|{
 name|gdisplay_xserver_resolution
 argument_list|(
 operator|&
+name|gimprc
+operator|.
 name|monitor_xres
 argument_list|,
 operator|&
+name|gimprc
+operator|.
 name|monitor_yres
 argument_list|)
 expr_stmt|;
+name|gimprc
+operator|.
 name|using_xserver_resolution
 operator|=
 name|TRUE

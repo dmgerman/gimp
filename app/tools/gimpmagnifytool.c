@@ -837,6 +837,8 @@ name|options
 operator|->
 name|allow_resize_d
 operator|=
+name|gimprc
+operator|.
 name|allow_resize_windows
 expr_stmt|;
 name|options
@@ -888,7 +890,11 @@ name|gimp_toggle_button_update
 argument_list|)
 argument_list|,
 operator|&
+operator|(
+name|gimprc
+operator|.
 name|allow_resize_windows
+operator|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -900,6 +906,8 @@ operator|->
 name|allow_resize_w
 argument_list|)
 argument_list|,
+name|gimprc
+operator|.
 name|allow_resize_windows
 argument_list|)
 expr_stmt|;
@@ -1658,6 +1666,8 @@ name|resize_display
 argument_list|(
 name|gdisp
 argument_list|,
+name|gimprc
+operator|.
 name|allow_resize_windows
 argument_list|,
 name|TRUE

@@ -3174,6 +3174,8 @@ name|bcd
 operator|->
 name|threshold
 operator|=
+name|gimprc
+operator|.
 name|default_threshold
 expr_stmt|;
 comment|/*  The shell and main vbox  */
@@ -4891,6 +4893,8 @@ operator|->
 name|threshold_adj
 argument_list|)
 argument_list|,
+name|gimprc
+operator|.
 name|default_threshold
 argument_list|)
 expr_stmt|;

@@ -980,6 +980,8 @@ block|}
 if|if
 condition|(
 operator|!
+name|gimprc
+operator|.
 name|global_paint_options
 condition|)
 name|gtk_widget_show
@@ -1243,6 +1245,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|global_paint_options
 operator|&&
 name|options
@@ -1409,11 +1413,15 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
 name|global_paint_options
 operator|==
 name|global
 condition|)
 return|return;
+name|gimprc
+operator|.
 name|global_paint_options
 operator|=
 name|global
