@@ -375,16 +375,6 @@ modifier|*
 name|documents
 decl_stmt|;
 comment|/*  image_new values  */
-DECL|member|image_base_type_names
-name|GList
-modifier|*
-name|image_base_type_names
-decl_stmt|;
-DECL|member|fill_type_names
-name|GList
-modifier|*
-name|fill_type_names
-decl_stmt|;
 DECL|member|image_new_last_values
 name|GimpImageNewValues
 name|image_new_last_values

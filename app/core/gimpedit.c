@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-new.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplayer.h"
 end_include
 
@@ -211,12 +205,13 @@ if|if
 condition|(
 name|cut
 condition|)
-name|gimp_image_new_set_have_current_cut_buffer
-argument_list|(
 name|gimage
 operator|->
 name|gimp
-argument_list|)
+operator|->
+name|have_current_cut_buffer
+operator|=
+name|TRUE
 expr_stmt|;
 comment|/*  Only crop if the gimage mask wasn't empty  */
 if|if
@@ -404,12 +399,13 @@ if|if
 condition|(
 name|copy
 condition|)
-name|gimp_image_new_set_have_current_cut_buffer
-argument_list|(
 name|gimage
 operator|->
 name|gimp
-argument_list|)
+operator|->
+name|have_current_cut_buffer
+operator|=
+name|TRUE
 expr_stmt|;
 comment|/*  Only crop if the gimage mask wasn't empty  */
 if|if
