@@ -5582,14 +5582,7 @@ name|stroke
 argument_list|,
 name|start
 argument_list|,
-name|GIMP_ANCHOR
-argument_list|(
-name|stroke
-operator|->
-name|anchors
-operator|->
-name|data
-argument_list|)
+name|NULL
 argument_list|,
 name|EXTEND_SIMPLE
 argument_list|)
