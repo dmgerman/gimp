@@ -434,6 +434,17 @@ condition|(
 name|value
 operator|==
 name|NULL
+operator|||
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|value
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
@@ -489,7 +500,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"token"
 block|,
-literal|"The token to modify"
+literal|"The token to add or modify"
 block|}
 block|,
 block|{
@@ -514,7 +525,7 @@ literal|"gimp_gimprc_set"
 block|,
 literal|"Sets a gimprc token to a value and saves it in the gimprc."
 block|,
-literal|"This procedure is used to add or change additional information in the gimprc file that is considered extraneous to the operation of the GIMP. Plug-ins that need configuration information can use this function to store it, and gimp_gimprc_query to retrieve it. This will accept _only_ parameters in the format of (<token><value>), where<token> and<value> must be strings. Entries not corresponding to this format will be eaten and no action will be performed."
+literal|"This procedure is used to add or change additional information in the gimprc file that is considered extraneous to the operation of the GIMP. Plug-ins that need configuration information can use this function to store it, and gimp_gimprc_query to retrieve it. This will accept _only_ string values in UTF-8 encoding."
 block|,
 literal|"Seth Burgess"
 block|,

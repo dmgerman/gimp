@@ -69,6 +69,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/**  * gimp_config_path_expand:  * @path: a %NUL-terminated string in UTF-8 encoding  * @recode: whether to convert to the filesystem's encoding  * @error: return location for errors  *  * Paths as stored in the gimprc have to be treated special.  The  * string may contain special identifiers such as for example  * ${gimp_dir} that have to be substituted before use. Also the user's  * filesystem may be in a different encoding than UTF-8 (which is what  * is used for the gimprc). This function does the variable  * substitution for you and can also attempt to convert to the  * filesystem encoding.  *  * Return value: a newly allocated %NUL-terminated string  **/
+end_comment
+
 begin_function
 name|gchar
 modifier|*
