@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewablebox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4e43410103
+DECL|enum|__anon2b67f6e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1547,9 +1553,16 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gimp_tool_options_font_box_new
+name|gimp_font_box_new
+argument_list|(
+name|NULL
+argument_list|,
+name|GIMP_CONTEXT
 argument_list|(
 name|tool_options
+argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
