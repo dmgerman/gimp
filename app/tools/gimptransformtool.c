@@ -227,7 +227,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdde750103
+DECL|enum|__anon2c5ac4c30103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -964,9 +964,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -975,6 +975,8 @@ name|gimp_transform_tool_signals
 index|[
 name|TRANSFORM
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|gdisp
 argument_list|,

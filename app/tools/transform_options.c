@@ -869,9 +869,9 @@ literal|"Show Grid"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -880,7 +880,7 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_transform_tool_show_grid_update
 argument_list|)
@@ -1035,9 +1035,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1046,7 +1046,7 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_transform_tool_grid_density_callback
 argument_list|)
@@ -1194,9 +1194,9 @@ literal|"Smoothing"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1205,7 +1205,7 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_toggle_button_update
 argument_list|)
@@ -1256,9 +1256,9 @@ literal|"Show Path"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1267,7 +1267,7 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_transform_tool_show_path_update
 argument_list|)
@@ -1323,9 +1323,9 @@ literal|"Clip Result"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1334,7 +1334,7 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_toggle_button_update
 argument_list|)

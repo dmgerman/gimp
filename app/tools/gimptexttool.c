@@ -1175,9 +1175,9 @@ literal|"Antialiasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1186,7 +1186,7 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_toggle_button_update
 argument_list|)
@@ -1314,9 +1314,9 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1325,7 +1325,7 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_int_adjustment_update
 argument_list|)
@@ -1436,9 +1436,9 @@ literal|"Use Dynamic Text"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1447,7 +1447,7 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_toggle_button_update
 argument_list|)
@@ -2135,16 +2135,16 @@ name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
 comment|/* handle the wm close signal */
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|text_tool_shell
 argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|text_dialog_delete_callback
 argument_list|)
@@ -2153,9 +2153,9 @@ name|text_tool_shell
 argument_list|)
 expr_stmt|;
 comment|/* ok and cancel buttons */
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|GTK_FONT_SELECTION_DIALOG
 argument_list|(
@@ -2167,7 +2167,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|text_dialog_ok_callback
 argument_list|)
@@ -2175,9 +2175,9 @@ argument_list|,
 name|text_tool_shell
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|GTK_FONT_SELECTION_DIALOG
 argument_list|(
@@ -2189,7 +2189,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|text_dialog_cancel_callback
 argument_list|)

@@ -1480,9 +1480,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1491,7 +1491,7 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_toggle_button_update
 argument_list|)
@@ -1554,9 +1554,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1565,7 +1565,7 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_toggle_button_update
 argument_list|)
