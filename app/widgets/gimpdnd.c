@@ -2018,6 +2018,7 @@ if|if
 condition|(
 name|target_list
 condition|)
+block|{
 name|gtk_target_list_add_table
 argument_list|(
 name|target_list
@@ -2033,7 +2034,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|target_list
 operator|=
 name|gtk_target_list_new
@@ -2056,6 +2059,12 @@ argument_list|,
 name|target_list
 argument_list|)
 expr_stmt|;
+name|gtk_target_list_unref
+argument_list|(
+name|target_list
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2172,7 +2181,6 @@ name|atom
 operator|!=
 name|GDK_NONE
 condition|)
-block|{
 name|gtk_target_list_remove
 argument_list|(
 name|target_list
@@ -2180,14 +2188,6 @@ argument_list|,
 name|atom
 argument_list|)
 expr_stmt|;
-name|gtk_drag_dest_set_target_list
-argument_list|(
-name|widget
-argument_list|,
-name|target_list
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 end_function

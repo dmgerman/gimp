@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28777cac0103
+DECL|enum|__anon2804761c0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1246,7 +1246,10 @@ name|width
 operator|*
 name|bytes
 argument_list|,
-name|NULL
+operator|(
+name|GdkPixbufDestroyNotify
+operator|)
+name|g_free
 argument_list|,
 name|NULL
 argument_list|)

@@ -1917,6 +1917,11 @@ argument_list|,
 name|GTK_ICON_SIZE_MENU
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|stock_id
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|image
