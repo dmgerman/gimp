@@ -86,7 +86,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|language
+name|locale
 parameter_list|,
 name|GError
 modifier|*
