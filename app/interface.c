@@ -2708,17 +2708,8 @@ decl_stmt|;
 name|int
 name|contextid
 decl_stmt|;
-name|char
-name|buffer
-index|[
-name|CURSOR_STR_LENGTH
-index|]
-decl_stmt|;
-name|int
-name|cursor_label_width
-decl_stmt|;
-comment|/*  adjust the initial scale -- so that window fits on screen */
 block|{
+comment|/*  adjust the initial scale -- so that window fits on screen */
 name|s_width
 operator|=
 name|gdk_screen_width
@@ -3814,51 +3805,7 @@ name|cursor_label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|" 0000, 0000 "
-argument_list|)
-expr_stmt|;
-name|g_snprintf
-argument_list|(
-name|buffer
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buffer
-argument_list|)
-argument_list|,
-literal|" %d, %d "
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|)
-expr_stmt|;
-name|cursor_label_width
-operator|=
-name|gdk_string_measure
-argument_list|(
-name|gtk_widget_get_style
-argument_list|(
-name|gdisp
-operator|->
-name|cursor_label
-argument_list|)
-operator|->
-name|font
-argument_list|,
-name|buffer
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|gdisp
-operator|->
-name|cursor_label
-argument_list|,
-name|cursor_label_width
-argument_list|,
-operator|-
-literal|1
+literal|" "
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4168,6 +4115,11 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|gdisplay_resize_cursor_label
+argument_list|(
+name|gdisp
 argument_list|)
 expr_stmt|;
 ifdef|#
