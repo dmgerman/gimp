@@ -234,6 +234,25 @@ end_function
 
 begin_function
 name|void
+DECL|function|app_gui_abort (const gchar * abort_message)
+name|app_gui_abort
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|abort_message
+parameter_list|)
+block|{
+name|gui_abort
+argument_list|(
+name|abort_message
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|app_run (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|app_run
 parameter_list|(

@@ -6,66 +6,41 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GUI_H__
+name|__SANITY_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GUI_H__
+DECL|macro|__SANITY_H__
 define|#
 directive|define
-name|__GUI_H__
+name|__SANITY_H__
 end_define
 
-begin_function_decl
-name|gboolean
-name|gui_libs_init
-parameter_list|(
-name|gint
-modifier|*
-name|argc
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-modifier|*
-name|argv
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_APP_GLUE_COMPILATION
+end_ifndef
+
+begin_error
+error|#
+directive|error
+error|You must not #include "sanity.h" from an app/ subdir
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
-name|void
-name|gui_abort
-parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|abort_message
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpInitStatusFunc
-name|gui_init
+name|sanity_check
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|gboolean
-name|no_spash
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gui_post_init
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
+name|no_interface
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -76,7 +51,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GUI_H__ */
+comment|/* __SANITY_H__ */
 end_comment
 
 end_unit

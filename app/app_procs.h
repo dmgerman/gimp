@@ -52,6 +52,18 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|app_gui_abort
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|abort_message
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|app_run
 parameter_list|(
 specifier|const
