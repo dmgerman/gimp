@@ -201,11 +201,6 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|g_message
-argument_list|(
-literal|"bah1"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|g_module_supported
@@ -242,11 +237,6 @@ name|struct
 name|stat
 name|filestat
 decl_stmt|;
-name|g_message
-argument_list|(
-literal|"bah2"
-argument_list|)
-expr_stmt|;
 ifdef|#
 directive|ifdef
 name|__EMX__
