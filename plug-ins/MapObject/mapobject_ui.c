@@ -1014,7 +1014,7 @@ name|gtk_range_get_adjustment
 argument_list|(
 name|GTK_RANGE
 argument_list|(
-name|scale
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
