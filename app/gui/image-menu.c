@@ -2498,7 +2498,9 @@ name|image_configure_grid_cmd_callback
 block|,
 literal|0
 block|,
-name|NULL
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_GRID
 block|}
 block|,
 name|NULL
@@ -6802,6 +6804,13 @@ operator|!
 name|aux
 operator|&&
 name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Configure Grid..."
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  Layer  */
