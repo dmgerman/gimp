@@ -25,7 +25,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphistogramF.h"
+file|"gimphistogram.h"
 end_include
 
 begin_comment
