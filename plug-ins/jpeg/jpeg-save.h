@@ -136,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c81e7b50108
+DECL|struct|__anon2758bc6c0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c81e7b50208
+DECL|struct|__anon2758bc6c0208
 block|{
 DECL|member|run
 name|gint
@@ -225,6 +225,9 @@ parameter_list|(
 name|char
 modifier|*
 name|filename
+parameter_list|,
+name|GRunModeType
+name|runmode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -791,6 +794,8 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+name|run_mode
 argument_list|)
 expr_stmt|;
 if|if
@@ -1772,12 +1777,15 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (char * filename,GRunModeType runmode)
 name|load_image
 parameter_list|(
 name|char
 modifier|*
 name|filename
+parameter_list|,
+name|GRunModeType
+name|runmode
 parameter_list|)
 block|{
 name|GPixelRgn
@@ -1903,6 +1911,13 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|runmode
+operator|!=
+name|RUN_NONINTERACTIVE
+condition|)
+block|{
 name|name
 operator|=
 name|malloc
@@ -1934,6 +1949,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 name|image_ID
 operator|=
 operator|-
@@ -2544,6 +2560,13 @@ argument_list|,
 name|scanlines
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|runmode
+operator|!=
+name|RUN_NONINTERACTIVE
+condition|)
+block|{
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -2561,6 +2584,7 @@ operator|.
 name|output_height
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/* Step 7: Finish decompression */
 name|jpeg_finish_decompress
