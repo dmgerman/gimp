@@ -67,6 +67,18 @@ name|int
 name|op
 decl_stmt|;
 comment|/*  selection operation (ADD, SUB, etc)     */
+DECL|member|fixed_size
+name|int
+name|fixed_size
+decl_stmt|;
+DECL|member|fixed_width
+name|int
+name|fixed_width
+decl_stmt|;
+DECL|member|fixed_height
+name|int
+name|fixed_height
+decl_stmt|;
 DECL|member|context_id
 name|guint
 name|context_id
