@@ -122,21 +122,6 @@ name|GIOChannel
 modifier|*
 name|his_write
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-DECL|member|his_thread_id
-name|guint
-name|his_thread_id
-decl_stmt|;
-comment|/*  Plug-in's thread ID                     */
-DECL|member|his_read_fd
-name|gint
-name|his_read_fd
-decl_stmt|;
-comment|/*  Plug-in's read pipe fd                  */
-endif|#
-directive|endif
 DECL|member|input_id
 name|guint32
 name|input_id
