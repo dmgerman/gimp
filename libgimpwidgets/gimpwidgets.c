@@ -1858,7 +1858,7 @@ name|gtk_alignment_new
 argument_list|(
 literal|0.0
 argument_list|,
-literal|1.0
+literal|0.5
 argument_list|,
 literal|0.0
 argument_list|,

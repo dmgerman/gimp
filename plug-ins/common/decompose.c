@@ -734,7 +734,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon279520100108
+DECL|struct|__anon28d7fbca0108
 typedef|typedef
 struct|struct
 block|{
@@ -1205,7 +1205,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon279520100208
+DECL|struct|__anon28d7fbca0208
 typedef|typedef
 struct|struct
 block|{
@@ -1223,7 +1223,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon279520100308
+DECL|struct|__anon28d7fbca0308
 typedef|typedef
 struct|struct
 block|{
@@ -5227,7 +5227,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Extract channels:"
+literal|"Extract Channels:"
 argument_list|)
 argument_list|)
 expr_stmt|;

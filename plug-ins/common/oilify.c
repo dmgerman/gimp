@@ -97,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2790d3340108
+DECL|struct|__anon2905b9db0108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2790d3340208
+DECL|struct|__anon2905b9db0208
 block|{
 DECL|member|run
 name|gint
@@ -2332,7 +2332,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

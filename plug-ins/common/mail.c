@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*    *   GUMP - Gimp Useless Mail Plugin (or Gump Useless Mail Plugin if you prefer)    *          version about .85 I would say... give or take a few decimal points    *    *    *   by Adrian Likins<adrian@gimp.org>    *      MIME encapsulation by Reagan Blundell<reagan@emails.net>    *    *    *    *   Based heavily on gz.c by Daniel Risacher    *    *     Lets you choose to send a image to the mail from the file save as dialog.    *      images are piped to uuencode and then to mail...    *    *    *   This works fine for .99.10. I havent actually tried it in combination with    *   the gz plugin, but it works with all other file types. I will eventually get    *   around to making sure it works with gz.    *    *  To use: 1) image->File->mail image    *          2) when the mail dialog popups up, fill it out. Only to: and filename are required    *             note: the filename needs to a type that the image can be saved as. otherwise    *                   you will just send an empty message.    *          3) click ok and it should be on its way    *        *    * NOTE: You probabaly need sendmail installed. If your sendmail is in an odd spot    *       you can change the #define below. If you use qmail or other MTA's, and this    *       works after changing the MAILER, let me know how well or what changes were    *       needed.    *    * NOTE: Uuencode is needed. If it is in the path, it should work fine as is. Other-    *       wise just change the UUENCODE.    *    *    * TODO: 1) the aforementioned abilty to specify the     *           uuencode filename                         *done*    *       2) someway to do this without tmp files    *              * wont happen anytime soon*    *       3) MIME? *done*    *       4) a pointlessly snazzier dialog    *       5) make sure it works with gz         *               * works for .xcfgz but not .xcf.gz *    *       6) add an option to choose if mail get     *          uuencode or not (or MIME'ed for that matter)    *       7) realtime preview    *       8) better entry for comments    *done*    *       9) list of frequently used addreses         *      10) openGL compliance    *      11) better handling of filesave errors    *         *    *  Version history    *       .5  - 6/30/97 - inital relese    *       .51 - 7/3/97  - fixed a few spelling errors and the like    *       .65 - 7/4/97  - a fairly significant revision. changed it from a file    *                       plugin to an image plugin.    *                     - Changed some strcats into strcpy to be a bit more robust.    *                     - added the abilty to specify the filename you want it sent as    *                     - no more annoying hassles with the file saves as dialog    *                     - plugin now registers itself as<image>/File/Mail image    *       .7  - 9/12/97 - (RB) added support for MIME encapsulation    *       .71 - 9/17/97 - (RB) included Base64 encoding functions from mpack    *                       instead of using external program.    *                     - General cleanup of the MIME handling code.    *       .80 - 6/23/98 - Added a text box so you can compose real messages.    *       .85 - 3/19/99 - Added a "From:" field. Made it check gimprc for a    *                       "gump-from" token and use it. Also made "run with last     *                        values" work.    * As always: The utility of this plugin is left as an exercise for the reader    *  */
+comment|/*  *   GUMP - Gimp Useless Mail Plugin (or Gump Useless Mail Plugin if you prefer)  *          version about .85 I would say... give or take a few decimal points  *  *  *   by Adrian Likins<adrian@gimp.org>  *      MIME encapsulation by Reagan Blundell<reagan@emails.net>  *  *  *  *   Based heavily on gz.c by Daniel Risacher  *  *     Lets you choose to send a image to the mail from the file save as dialog.  *      images are piped to uuencode and then to mail...  *  *  *   This works fine for .99.10. I havent actually tried it in combination with  *   the gz plugin, but it works with all other file types. I will eventually get  *   around to making sure it works with gz.  *  *  To use: 1) image->File->mail image  *          2) when the mail dialog popups up, fill it out. Only to: and filename are required  *             note: the filename needs to a type that the image can be saved as. otherwise  *                   you will just send an empty message.  *          3) click ok and it should be on its way  *  *  * NOTE: You probabaly need sendmail installed. If your sendmail is in an odd spot  *       you can change the #define below. If you use qmail or other MTA's, and this  *       works after changing the MAILER, let me know how well or what changes were  *       needed.  *  * NOTE: Uuencode is needed. If it is in the path, it should work fine as is. Other-  *       wise just change the UUENCODE.  *  *  * TODO: 1) the aforementioned abilty to specify the   *           uuencode filename                         *done*  *       2) someway to do this without tmp files  *              * wont happen anytime soon*  *       3) MIME? *done*  *       4) a pointlessly snazzier dialog  *       5) make sure it works with gz       *               * works for .xcfgz but not .xcf.gz *  *       6) add an option to choose if mail get   *          uuencode or not (or MIME'ed for that matter)  *       7) realtime preview  *       8) better entry for comments    *done*  *       9) list of frequently used addreses       *      10) openGL compliance  *      11) better handling of filesave errors  *       *  *  Version history  *       .5  - 6/30/97 - inital relese  *       .51 - 7/3/97  - fixed a few spelling errors and the like  *       .65 - 7/4/97  - a fairly significant revision. changed it from a file  *                       plugin to an image plugin.  *                     - Changed some strcats into strcpy to be a bit more robust.  *                     - added the abilty to specify the filename you want it sent as  *                     - no more annoying hassles with the file saves as dialog  *                     - plugin now registers itself as<image>/File/Mail image  *       .7  - 9/12/97 - (RB) added support for MIME encapsulation  *       .71 - 9/17/97 - (RB) included Base64 encoding functions from mpack  *                       instead of using external program.  *                     - General cleanup of the MIME handling code.  *       .80 - 6/23/98 - Added a text box so you can compose real messages.  *       .85 - 3/19/99 - Added a "From:" field. Made it check gimprc for a  *                       "gump-from" token and use it. Also made "run with last   *                        values" work.  * As always: The utility of this plugin is left as an exercise for the reader  *  */
 end_comment
 
 begin_ifndef
@@ -183,18 +183,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -211,7 +211,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -231,7 +231,9 @@ begin_function_decl
 specifier|static
 name|gint
 name|save_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -357,10 +359,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|valid_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -385,7 +387,7 @@ name|char
 modifier|*
 name|find_extension
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -394,7 +396,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|to64
 parameter_list|(
 name|FILE
@@ -413,16 +415,16 @@ specifier|static
 name|void
 name|output64chunk
 parameter_list|(
-name|int
+name|gint
 name|c1
 parameter_list|,
-name|int
+name|gint
 name|c2
 parameter_list|,
-name|int
+name|gint
 name|c3
 parameter_list|,
-name|int
+name|gint
 name|pads
 parameter_list|,
 name|FILE
@@ -440,16 +442,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -457,45 +459,45 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29512a180108
+DECL|struct|__anon27f879c30108
 block|{
 DECL|member|receipt
-name|char
+name|gchar
 name|receipt
 index|[
 literal|256
 index|]
 decl_stmt|;
 DECL|member|subject
-name|char
+name|gchar
 name|subject
 index|[
 literal|256
 index|]
 decl_stmt|;
 DECL|member|comment
-name|char
+name|gchar
 name|comment
 index|[
 literal|256
 index|]
 decl_stmt|;
 DECL|member|from
-name|char
+name|gchar
 name|from
 index|[
 literal|256
 index|]
 decl_stmt|;
 DECL|member|filename
-name|char
+name|gchar
 name|filename
 index|[
 literal|256
 index|]
 decl_stmt|;
 DECL|member|encapsulation
-name|int
+name|gint
 name|encapsulation
 decl_stmt|;
 block|}
@@ -543,7 +545,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|run_flag
 specifier|static
-name|int
+name|gint
 name|run_flag
 init|=
 literal|0
@@ -560,7 +562,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -718,21 +722,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -1084,10 +1088,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -3190,11 +3194,11 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|valid_file (char * filename)
+name|gint
+DECL|function|valid_file (gchar * filename)
 name|valid_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -3243,18 +3247,18 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
-DECL|function|find_content_type (char * filename)
+DECL|function|find_content_type (gchar * filename)
 name|find_content_type
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
-comment|/* This function returns a MIME Content-type: value based on the        filename it is given.  */
-name|char
+comment|/* This function returns a MIME Content-type: value based on the      filename it is given.  */
+name|gchar
 modifier|*
 name|type_mappings
 index|[
@@ -3303,11 +3307,11 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|ext
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|mimetype
 init|=
@@ -3316,7 +3320,7 @@ argument_list|(
 literal|100
 argument_list|)
 decl_stmt|;
-name|int
+name|gint
 name|i
 init|=
 literal|0
@@ -3424,29 +3428,29 @@ end_function
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
-DECL|function|find_extension (char * filename)
+DECL|function|find_extension (gchar * filename)
 name|find_extension
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|filename_copy
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|ext
 decl_stmt|;
-comment|/* this whole routine needs to be redone so it works for xccfgz and .gz files */
-comment|/* not real sure where to start......                                         */
-comment|/* right now saving for .xcfgz works but not .xcf.gz                          */
-comment|/* this is all pretty close to straight from gz. It needs to be changed to    */
-comment|/* work better for this plugin                                                */
+comment|/* this whole routine needs to be redone so it works for xccfgz and gz files*/
+comment|/* not real sure where to start......                                       */
+comment|/* right now saving for .xcfgz works but not .xcf.gz                        */
+comment|/* this is all pretty close to straight from gz. It needs to be changed to  */
+comment|/* work better for this plugin                                              */
 comment|/* ie, FIXME */
 comment|/* we never free this copy - aren't we evil! */
 name|filename_copy
@@ -3572,7 +3576,7 @@ parameter_list|)
 block|{
 name|run_flag
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
@@ -3599,7 +3603,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/* Ignore the toggle-off signal, we are only interested in        what is being set */
+comment|/* Ignore the toggle-off signal, we are only interested in      what is being set */
 if|if
 condition|(
 operator|!
@@ -4084,7 +4088,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|basis_64
 specifier|static
-name|char
+name|gchar
 name|basis_64
 index|[]
 init|=
@@ -4093,25 +4097,19 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|to64 (infile,outfile)
 specifier|static
-name|int
+name|gint
+DECL|function|to64 (FILE * infile,FILE * outfile)
 name|to64
 parameter_list|(
-name|infile
-parameter_list|,
-name|outfile
-parameter_list|)
 name|FILE
 modifier|*
 name|infile
-decl_stmt|,
-decl|*
+parameter_list|,
+name|FILE
+modifier|*
 name|outfile
-decl_stmt|;
-end_function
-
-begin_block
+parameter_list|)
 block|{
 name|int
 name|c1
@@ -4267,28 +4265,30 @@ operator|+
 name|ct
 return|;
 block|}
-end_block
+end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|output64chunk (c1,c2,c3,pads,outfile)
+DECL|function|output64chunk (gint c1,gint c2,gint c3,gint pads,FILE * outfile)
 name|output64chunk
 parameter_list|(
+name|gint
 name|c1
 parameter_list|,
+name|gint
 name|c2
 parameter_list|,
+name|gint
 name|c3
 parameter_list|,
+name|gint
 name|pads
 parameter_list|,
-name|outfile
-parameter_list|)
 name|FILE
 modifier|*
 name|outfile
-decl_stmt|;
+parameter_list|)
 block|{
 name|putc
 argument_list|(
