@@ -63,6 +63,12 @@ directive|include
 file|"gimpconfig-utils.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimprc-unknown.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -234,7 +240,7 @@ argument_list|(
 literal|" Adding the unknown token (foobar \"hadjaha\") ..."
 argument_list|)
 expr_stmt|;
-name|gimp_config_add_unknown_token
+name|gimp_rc_add_unknown_token
 argument_list|(
 name|grid
 argument_list|,
@@ -355,7 +361,7 @@ name|header
 operator|=
 literal|" Unknown string tokens:\n"
 expr_stmt|;
-name|gimp_config_foreach_unknown_token
+name|gimp_rc_foreach_unknown_token
 argument_list|(
 name|grid
 argument_list|,
