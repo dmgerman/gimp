@@ -45,6 +45,12 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_FINITE
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_GETTEXT
 end_undef
 
@@ -58,6 +64,12 @@ begin_undef
 undef|#
 directive|undef
 name|HAVE_IPC_H
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|HAVE_ISFINITE
 end_undef
 
 begin_undef
