@@ -82,6 +82,10 @@ DECL|member|color
 name|gboolean
 name|color
 decl_stmt|;
+DECL|member|inv_size
+name|gboolean
+name|inv_size
+decl_stmt|;
 block|}
 struct|;
 end_struct
