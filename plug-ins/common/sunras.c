@@ -138,7 +138,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29d148500108
+DECL|struct|__anon288ae1210108
 typedef|typedef
 struct|struct
 block|{
@@ -227,7 +227,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29d148500208
+DECL|struct|__anon288ae1210208
 typedef|typedef
 struct|struct
 block|{
@@ -881,7 +881,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d148500308
+DECL|struct|__anon288ae1210308
 block|{
 DECL|member|rle
 name|gint
@@ -897,7 +897,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d148500408
+DECL|struct|__anon288ae1210408
 block|{
 DECL|member|run
 name|gint
@@ -8176,7 +8176,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -8233,7 +8236,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
