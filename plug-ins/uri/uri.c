@@ -92,6 +92,14 @@ name|TIMEOUT
 value|"300"
 end_define
 
+begin_define
+DECL|macro|BUFSIZE
+define|#
+directive|define
+name|BUFSIZE
+value|1024
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -834,22 +842,10 @@ name|FILE
 modifier|*
 name|input
 decl_stmt|;
-name|gint
-name|bufsize
-init|=
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|1024
-decl_stmt|;
 name|gchar
 name|buf
 index|[
-name|bufsize
-operator|+
-literal|1
+name|BUFSIZE
 index|]
 decl_stmt|;
 name|gboolean
@@ -935,7 +931,7 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|bufsize
+name|BUFSIZE
 argument_list|,
 name|input
 argument_list|)
@@ -971,7 +967,7 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|bufsize
+name|BUFSIZE
 argument_list|,
 name|input
 argument_list|)
@@ -1021,7 +1017,7 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|bufsize
+name|BUFSIZE
 argument_list|,
 name|input
 argument_list|)
@@ -1087,7 +1083,7 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|bufsize
+name|BUFSIZE
 argument_list|,
 name|input
 argument_list|)
@@ -1163,7 +1159,7 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|bufsize
+name|BUFSIZE
 argument_list|,
 name|input
 argument_list|)
@@ -1445,7 +1441,7 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|bufsize
+name|BUFSIZE
 argument_list|,
 name|input
 argument_list|)
