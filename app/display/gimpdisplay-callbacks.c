@@ -656,6 +656,13 @@ argument_list|(
 name|canvas
 argument_list|)
 expr_stmt|;
+comment|/* This is a hack to prevent other stuff being run in the middle of 	     a tool operation (like changing image types.... brrrr). We just 	     block all the keypress event. A better solution is to implement 	     some sort of locking for images. 	     Note that this is dependent on specific GTK behavior, and isn't 	     guaranteed to work in future versions of GTK. 	     -Yosh 	   */
+if|if
+condition|(
+name|key_signal_id
+operator|==
+literal|0
+condition|)
 name|key_signal_id
 operator|=
 name|gtk_signal_connect
@@ -937,6 +944,12 @@ block|{
 case|case
 literal|1
 case|:
+comment|/* Lame hack. See above */
+if|if
+condition|(
+name|key_signal_id
+condition|)
+block|{
 name|gtk_signal_disconnect
 argument_list|(
 name|GTK_OBJECT
@@ -947,6 +960,11 @@ argument_list|,
 name|key_signal_id
 argument_list|)
 expr_stmt|;
+name|key_signal_id
+operator|=
+literal|0
+expr_stmt|;
+block|}
 name|gtk_grab_remove
 argument_list|(
 name|canvas
