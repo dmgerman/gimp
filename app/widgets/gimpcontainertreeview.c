@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1014760103
+DECL|enum|__anon2ac5629a0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -3118,7 +3118,6 @@ condition|(
 operator|!
 name|toggled_cell
 condition|)
-block|{
 name|gimp_container_view_item_selected
 argument_list|(
 name|container_view
@@ -3128,6 +3127,20 @@ operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
+comment|/*  a callback invoked by selecting the item may have                *  destroyed us, so check if the container is still there                */
+if|if
+condition|(
+name|container_view
+operator|->
+name|container
+condition|)
+block|{
+name|gchar
+modifier|*
+name|path_str
+init|=
+name|NULL
+decl_stmt|;
 comment|/*  another row may have been set by selecting  */
 name|gtk_tree_view_column_cell_set_cell_data
 argument_list|(
@@ -3145,21 +3158,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
-comment|/*  a callback invoked by selecting the item may have                *  destroyed us, so check if the container is still there                */
-if|if
-condition|(
-name|container_view
-operator|->
-name|container
-condition|)
-block|{
-name|gchar
-modifier|*
-name|path_str
-init|=
-name|NULL
-decl_stmt|;
 if|if
 condition|(
 name|toggled_cell

@@ -719,6 +719,12 @@ name|batch_init
 argument_list|(
 name|the_gimp
 argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|*
+operator|)
 name|batch_cmds
 argument_list|)
 expr_stmt|;
