@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882bab60103
+DECL|enum|__anon291478240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2448,9 +2448,7 @@ block|{
 name|gchar
 modifier|*
 name|tmp
-decl_stmt|;
-name|tmp
-operator|=
+init|=
 name|g_strconcat
 argument_list|(
 name|tooltip
@@ -2467,6 +2465,11 @@ argument_list|,
 name|ext_tooltip
 argument_list|,
 name|NULL
+argument_list|)
+decl_stmt|;
+name|g_free
+argument_list|(
+name|ext_tooltip
 argument_list|)
 expr_stmt|;
 name|g_free

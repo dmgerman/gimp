@@ -6462,6 +6462,11 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|points
 argument_list|)
 expr_stmt|;

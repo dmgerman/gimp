@@ -37,7 +37,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa7be9d0103
+DECL|enum|__anon2b27e87d0103
 block|{
 DECL|enumerator|SCALE
 name|SCALE
@@ -777,26 +777,6 @@ name|path
 argument_list|)
 condition|)
 block|{
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
-name|gtk_tree_model_get
-argument_list|(
-name|model
-argument_list|,
-operator|&
-name|iter
-argument_list|,
-name|LABEL
-argument_list|,
-operator|&
-name|label
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_list_store_remove
 argument_list|(
 name|GTK_LIST_STORE
