@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c46fd4f0103
+DECL|enum|__anon28f5fef50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -962,18 +962,25 @@ operator|->
 name|shell
 condition|)
 block|{
-name|gtk_widget_destroy
-argument_list|(
+name|GtkWidget
+modifier|*
+name|shell
+init|=
 name|gdisp
 operator|->
 name|shell
-argument_list|)
-expr_stmt|;
+decl_stmt|;
+comment|/*  set gdisp->shell to NULL *before* destroying the shell.        *  all callbacks in gimpdisplayshell-callbacks.c will check        *  this pointer and do nothing if the shell is in destruction.        */
 name|gdisp
 operator|->
 name|shell
 operator|=
 name|NULL
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*  unrefs the gimage  */
