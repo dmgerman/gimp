@@ -25,7 +25,7 @@ file|"gimpsetF.h"
 end_include
 
 begin_comment
-comment|/* GimpSet - a typed set of objects with signals for adding and    removing of stuff. If it is weak, destroyed objects get removed    automatically. If it is not, it refs them so they won't be freed    till they are removed. (Though they can be destroyed, of course) */
+comment|/* GimpSet - a (usually) typed set of objects with signals for adding    and removing of stuff. If it is weak, destroyed objects get removed    automatically. If it is not, it refs them so they won't be freed    till they are removed. (Though they can be destroyed, of course).     If GTK_TYPE_NONE is specified at gimpset creation time, no type    checking is performed by gimp_set_add() and the    gimp_set_{add,remove}_handler() functions should not be used.  It    is also illegal to ask for a weak untyped gimpset. */
 end_comment
 
 begin_define
@@ -59,7 +59,7 @@ value|GTK_CHECK_TYPE (obj, gimp_set_get_type())
 end_define
 
 begin_comment
-comment|/* Signals:    add    remove */
+comment|/* Signals:    add    remove    member_modified */
 end_comment
 
 begin_typedef
@@ -206,6 +206,20 @@ name|set
 parameter_list|,
 name|GimpSetHandlerId
 name|id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_set_member_modified
+parameter_list|(
+name|GimpSet
+modifier|*
+name|set
+parameter_list|,
+name|gpointer
+name|ob
 parameter_list|)
 function_decl|;
 end_function_decl

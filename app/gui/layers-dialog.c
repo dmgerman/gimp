@@ -2691,16 +2691,6 @@ argument_list|(
 name|notebook
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|lc_shell
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|lc_subshell
-argument_list|)
-expr_stmt|;
 name|gtk_container_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -2867,6 +2857,16 @@ expr_stmt|;
 name|channels_dialog_update
 argument_list|(
 name|gimage
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|lc_subshell
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|lc_shell
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -4451,7 +4451,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2969ae8a0108
+DECL|struct|__anon29f32f720108
 typedef|typedef
 struct|struct
 block|{
@@ -5037,7 +5037,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
-name|GIMP_OBJECT
+name|GTK_OBJECT
 argument_list|(
 name|gimage
 argument_list|)

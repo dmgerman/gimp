@@ -136,7 +136,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon29591bb40103
+DECL|enum|__anon2ad2e8870103
 typedef|typedef
 enum|enum
 block|{
@@ -184,7 +184,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29591bb40203
+DECL|enum|__anon2ad2e8870203
 typedef|typedef
 enum|enum
 block|{
@@ -4950,17 +4950,13 @@ name|BLUE
 index|]
 expr_stmt|;
 block|}
-name|gdk_window_get_size
-argument_list|(
+comment|/* if we haven't yet been realised, there's no need to redraw        * anything. */
+if|if
+condition|(
+operator|!
 name|window
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|store_color
 argument_list|(
 operator|&
@@ -4973,6 +4969,17 @@ argument_list|,
 name|green
 argument_list|,
 name|blue
+argument_list|)
+expr_stmt|;
+name|gdk_window_get_size
+argument_list|(
+name|window
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
 argument_list|)
 expr_stmt|;
 if|if
@@ -10926,7 +10933,7 @@ comment|/* Colour notebook glue      */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29591bb40308
+DECL|struct|__anon2ad2e8870308
 typedef|typedef
 struct|struct
 block|{

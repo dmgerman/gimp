@@ -131,7 +131,6 @@ name|info
 init|=
 block|{
 name|NULL
-comment|/* no shutdown data needed */
 block|,
 literal|"Painter-style colour selector as a pluggable colour selector"
 block|,
@@ -202,7 +201,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon28ad45df0103
+DECL|enum|__anon297a79ae0103
 typedef|typedef
 enum|enum
 block|{
@@ -370,8 +369,11 @@ modifier|*
 name|inforet
 parameter_list|)
 block|{
-if|if
-condition|(
+name|GimpColorSelectorID
+name|id
+decl_stmt|;
+name|id
+operator|=
 name|gimp_color_selector_register
 argument_list|(
 literal|"Triangle"
@@ -379,8 +381,18 @@ argument_list|,
 operator|&
 name|methods
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|id
 condition|)
 block|{
+name|info
+operator|.
+name|shutdown_data
+operator|=
+name|id
+expr_stmt|;
 operator|*
 name|inforet
 operator|=
@@ -397,6 +409,43 @@ return|return
 name|GIMP_MODULE_UNLOAD
 return|;
 block|}
+block|}
+end_function
+
+begin_function
+name|G_MODULE_EXPORT
+name|void
+DECL|function|module_unload (void * shutdown_data,void (* completed_cb)(void *),void * completed_data)
+name|module_unload
+parameter_list|(
+name|void
+modifier|*
+name|shutdown_data
+parameter_list|,
+name|void
+function_decl|(
+modifier|*
+name|completed_cb
+function_decl|)
+parameter_list|(
+name|void
+modifier|*
+parameter_list|)
+parameter_list|,
+name|void
+modifier|*
+name|completed_data
+parameter_list|)
+block|{
+name|gimp_color_selector_unregister
+argument_list|(
+name|shutdown_data
+argument_list|,
+name|completed_cb
+argument_list|,
+name|completed_data
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
