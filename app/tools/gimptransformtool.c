@@ -2800,7 +2800,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* We test if the transformed polygon is convex.    * if z1 and z2 have the same sign as well as z3 and z4    * the polygon is convex. */
+comment|/* We test if the transformed polygon is convex.    * if z1 and z2 have the same sign as well as z3 and z4    * the polygon is convex.    */
 name|z1
 operator|=
 operator|(
@@ -2811,9 +2811,7 @@ operator|-
 name|tr_tool
 operator|->
 name|tx1
-operator|)
 operator|*
-operator|(
 name|tr_tool
 operator|->
 name|ty4
@@ -2821,9 +2819,7 @@ operator|-
 name|tr_tool
 operator|->
 name|ty1
-operator|)
 operator|-
-operator|(
 name|tr_tool
 operator|->
 name|tx4
@@ -2831,9 +2827,7 @@ operator|-
 name|tr_tool
 operator|->
 name|tx1
-operator|)
 operator|*
-operator|(
 name|tr_tool
 operator|->
 name|ty2
@@ -2853,9 +2847,7 @@ operator|-
 name|tr_tool
 operator|->
 name|tx1
-operator|)
 operator|*
-operator|(
 name|tr_tool
 operator|->
 name|ty3
@@ -2863,9 +2855,7 @@ operator|-
 name|tr_tool
 operator|->
 name|ty1
-operator|)
 operator|-
-operator|(
 name|tr_tool
 operator|->
 name|tx3
@@ -2873,9 +2863,7 @@ operator|-
 name|tr_tool
 operator|->
 name|tx1
-operator|)
 operator|*
-operator|(
 name|tr_tool
 operator|->
 name|ty4
@@ -2895,9 +2883,7 @@ operator|-
 name|tr_tool
 operator|->
 name|tx2
-operator|)
 operator|*
-operator|(
 name|tr_tool
 operator|->
 name|ty3
@@ -2905,9 +2891,7 @@ operator|-
 name|tr_tool
 operator|->
 name|ty2
-operator|)
 operator|-
-operator|(
 name|tr_tool
 operator|->
 name|tx3
@@ -2915,9 +2899,7 @@ operator|-
 name|tr_tool
 operator|->
 name|tx2
-operator|)
 operator|*
-operator|(
 name|tr_tool
 operator|->
 name|ty4
@@ -2937,9 +2919,7 @@ operator|-
 name|tr_tool
 operator|->
 name|tx2
-operator|)
 operator|*
-operator|(
 name|tr_tool
 operator|->
 name|ty1
@@ -2947,9 +2927,7 @@ operator|-
 name|tr_tool
 operator|->
 name|ty2
-operator|)
 operator|-
-operator|(
 name|tr_tool
 operator|->
 name|tx1
@@ -2957,9 +2935,7 @@ operator|-
 name|tr_tool
 operator|->
 name|tx2
-operator|)
 operator|*
-operator|(
 name|tr_tool
 operator|->
 name|ty3
@@ -4298,14 +4274,10 @@ condition|(
 name|tr_tool
 operator|->
 name|grid_coords
-operator|!=
-name|NULL
 operator|&&
 name|tr_tool
 operator|->
 name|tgrid_coords
-operator|!=
-name|NULL
 condition|)
 block|{
 name|gint
