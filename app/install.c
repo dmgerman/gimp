@@ -468,7 +468,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon2b7a45990108
+DECL|struct|__anon2b8b46b90108
 specifier|static
 specifier|const
 struct|struct
@@ -682,6 +682,27 @@ literal|"\t\tuser defined brushes.  The default gimprc file\n"
 literal|"\t\tchecks this subdirectory in addition to the system-\n"
 literal|"\t\twide gimp brushes installation when searching for\n"
 literal|"\t\tbrushes.\n"
+argument_list|)
+block|}
+block|,
+block|{
+literal|1
+block|,
+name|N_
+argument_list|(
+literal|"generated_brushes\n"
+argument_list|)
+block|}
+block|,
+block|{
+literal|0
+block|,
+name|N_
+argument_list|(
+literal|"\t\tThis is a subdirectory which is used to store brushes\n"
+literal|"\t\tthat are created with the brush editor.  The default\n"
+literal|"\t\gimprc file checks this subdirectory when searching for\n"
+literal|"\t\tgenerated brushes.\n"
 argument_list|)
 block|}
 block|,

@@ -2526,6 +2526,7 @@ name|trust_dirty_flag
 operator|!=
 name|old_trust_dirty_flag
 condition|)
+block|{
 name|update
 operator|=
 name|g_list_append
@@ -2535,6 +2536,16 @@ argument_list|,
 literal|"trust-dirty-flag"
 argument_list|)
 expr_stmt|;
+name|remove
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"dont-trust-dirty-flag"
+argument_list|)
+expr_stmt|;
+block|}
 name|save_gimprc
 argument_list|(
 operator|&
@@ -12365,7 +12376,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon2b296a930108
+DECL|struct|__anon27ccbc580108
 specifier|static
 specifier|const
 struct|struct
@@ -12590,7 +12601,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon2b296a930208
+DECL|struct|__anon27ccbc580208
 specifier|static
 specifier|const
 struct|struct

@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2770af0d0103
+DECL|enum|__anon277bce4c0103
 typedef|typedef
 enum|enum
 block|{
@@ -490,13 +490,13 @@ DECL|variable|tile_cache_size
 name|int
 name|tile_cache_size
 init|=
-literal|4194304
+literal|10485760
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
 DECL|variable|tile_cache_size
-comment|/* 4 MB */
+comment|/* 10 MB */
 end_comment
 
 begin_decl_stmt
@@ -504,13 +504,13 @@ DECL|variable|marching_speed
 name|int
 name|marching_speed
 init|=
-literal|150
+literal|300
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
 DECL|variable|marching_speed
-comment|/* 150 ms */
+comment|/* 300 ms */
 end_comment
 
 begin_decl_stmt
@@ -939,7 +939,7 @@ DECL|variable|trust_dirty_flag
 name|int
 name|trust_dirty_flag
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -2541,12 +2541,23 @@ block|,
 block|{
 literal|"trust-dirty-flag"
 block|,
-name|TT_INT
+name|TT_BOOLEAN
 block|,
 operator|&
 name|trust_dirty_flag
 block|,
 name|NULL
+block|}
+block|,
+block|{
+literal|"dont-trust-dirty-flag"
+block|,
+name|TT_BOOLEAN
+block|,
+name|NULL
+block|,
+operator|&
+name|trust_dirty_flag
 block|}
 block|}
 decl_stmt|;
