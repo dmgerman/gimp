@@ -5232,6 +5232,17 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+literal|"<Image>/Select/By Color..."
+argument_list|,
+operator|(
+name|base_type
+operator|!=
+name|INDEXED
+operator|)
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive
+argument_list|(
 literal|"<Image>/Edit/Cut"
 argument_list|,
 name|lp
