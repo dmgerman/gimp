@@ -229,6 +229,8 @@ name|n_presets
 decl_stmt|;
 name|gdouble
 name|new_scale
+init|=
+literal|1.0
 decl_stmt|;
 comment|/* This table is constructed to have fractions, that approximate    * sqrt(2)^k. This gives a smooth feeling regardless of the starting    * zoom level.    *    * Zooming in/out always jumps to a zoom step from the list above.    * However, we try to guarantee a certain size of the step, to    * avoid silly jumps from 101% to 100%.    * The factor 1.1 is chosen a bit arbitrary, but feels better    * than the geometric median of the zoom steps (2^(1/4)).    */
 DECL|macro|ZOOM_MIN_STEP
