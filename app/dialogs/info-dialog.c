@@ -157,6 +157,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|info_dialog_field_free
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -294,6 +308,48 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|info_dialog_field_free (gpointer data,gpointer user_data)
+name|info_dialog_field_free
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+name|InfoField
+modifier|*
+name|field
+init|=
+name|data
+decl_stmt|;
+name|g_signal_handlers_disconnect_by_func
+argument_list|(
+name|field
+operator|->
+name|obj
+argument_list|,
+name|field
+operator|->
+name|callback
+argument_list|,
+name|field
+operator|->
+name|callback_data
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|field
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|info_dialog_free (InfoDialog * idialog)
 name|info_dialog_free
@@ -319,7 +375,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|g_free
+name|info_dialog_field_free
 argument_list|,
 name|NULL
 argument_list|)
