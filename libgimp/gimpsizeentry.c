@@ -73,7 +73,7 @@ comment|/* static int  gimp_size_entry_focus_in_callback  (GtkWidget *widget, 		
 end_comment
 
 begin_enum
-DECL|enum|__anon2c4906c40103
+DECL|enum|__anon29785a490103
 enum|enum
 block|{
 DECL|enumerator|GSE_VALUE_CHANGED_SIGNAL
@@ -617,7 +617,7 @@ name|g_return_val_if_fail
 argument_list|(
 operator|(
 name|number_of_fields
-operator|>
+operator|>=
 literal|0
 operator|)
 operator|&&

@@ -1112,7 +1112,7 @@ argument_list|(
 name|sep
 argument_list|)
 expr_stmt|;
-comment|/*  antialias toggle  */
+comment|/*  the dynamic text toggle  */
 name|options
 operator|->
 name|use_dyntext_w
@@ -1436,6 +1436,10 @@ name|tool
 operator|->
 name|private
 argument_list|)
+expr_stmt|;
+name|the_text_tool
+operator|=
+name|NULL
 expr_stmt|;
 if|if
 condition|(
@@ -1977,10 +1981,6 @@ name|gtk_widget_hide
 argument_list|(
 name|text_tool_shell
 argument_list|)
-expr_stmt|;
-name|the_text_tool
-operator|=
-name|NULL
 expr_stmt|;
 break|break;
 block|}

@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2c90cc2e0103
+DECL|enum|__anon2882416c0103
 typedef|typedef
 enum|enum
 block|{
@@ -769,7 +769,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_xresolution
-name|float
+name|double
 name|default_xresolution
 init|=
 literal|72.0
@@ -778,7 +778,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_yresolution
-name|float
+name|double
 name|default_yresolution
 init|=
 literal|72.0
@@ -824,7 +824,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|monitor_xres
-name|float
+name|double
 name|monitor_xres
 init|=
 literal|72.0
@@ -833,7 +833,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|monitor_yres
-name|float
+name|double
 name|monitor_yres
 init|=
 literal|72.0
@@ -876,6 +876,20 @@ init|=
 name|TRUE
 decl_stmt|;
 end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|max_new_image_size
+name|int
+name|max_new_image_size
+init|=
+literal|33554432
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|max_new_image_size
+comment|/* 32 MB */
+end_comment
 
 begin_decl_stmt
 specifier|extern
@@ -2158,7 +2172,7 @@ block|,
 block|{
 literal|"default-xresolution"
 block|,
-name|TT_FLOAT
+name|TT_DOUBLE
 block|,
 operator|&
 name|default_xresolution
@@ -2169,7 +2183,7 @@ block|,
 block|{
 literal|"default-yresolution"
 block|,
-name|TT_FLOAT
+name|TT_DOUBLE
 block|,
 operator|&
 name|default_yresolution
@@ -2251,7 +2265,7 @@ block|,
 block|{
 literal|"monitor-xresolution"
 block|,
-name|TT_FLOAT
+name|TT_DOUBLE
 block|,
 operator|&
 name|monitor_xres
@@ -2262,7 +2276,7 @@ block|,
 block|{
 literal|"monitor-yresolution"
 block|,
-name|TT_FLOAT
+name|TT_DOUBLE
 block|,
 operator|&
 name|monitor_yres
@@ -2331,6 +2345,17 @@ name|TT_PATH
 block|,
 operator|&
 name|module_db_load_inhibit
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"max-new-image-size"
+block|,
+name|TT_MEMSIZE
+block|,
+operator|&
+name|max_new_image_size
 block|,
 name|NULL
 block|}
@@ -10133,7 +10158,7 @@ name|identifier
 init|=
 name|NULL
 decl_stmt|;
-name|float
+name|double
 name|factor
 init|=
 literal|1.0

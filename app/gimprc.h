@@ -316,14 +316,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|float
+name|double
 name|default_xresolution
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|float
+name|double
 name|default_yresolution
 decl_stmt|;
 end_decl_stmt
@@ -372,14 +372,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|float
+name|double
 name|monitor_xres
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|float
+name|double
 name|monitor_yres
 decl_stmt|;
 end_decl_stmt
@@ -410,6 +410,13 @@ begin_decl_stmt
 specifier|extern
 name|int
 name|global_paint_options
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|max_new_image_size
 decl_stmt|;
 end_decl_stmt
 
