@@ -88,16 +88,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_patterns_get_list:  * @num_patterns: The number of patterns in the pattern list.  *  * Retrieve a complete listing of the available patterns.  *  * This procedure returns a complete listing of available GIMP  * patterns. Each name returned can be used as input to the  * 'gimp_patterns_set_pattern'.  *  * Returns: The list of pattern names.  */
+comment|/**  * gimp_patterns_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_patterns: The number of patterns in the pattern list.  *  * Retrieve a complete listing of the available patterns.  *  * This procedure returns a complete listing of available GIMP  * patterns. Each name returned can be used as input to the  * 'gimp_patterns_set_pattern'.  *  * Returns: The list of pattern names.  */
 end_comment
 
 begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_patterns_get_list (gint * num_patterns)
+DECL|function|gimp_patterns_get_list (const gchar * filter,gint * num_patterns)
 name|gimp_patterns_get_list
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filter
+parameter_list|,
 name|gint
 modifier|*
 name|num_patterns
@@ -128,6 +133,10 @@ literal|"gimp_patterns_get_list"
 argument_list|,
 operator|&
 name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|filter
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

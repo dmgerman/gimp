@@ -37,6 +37,11 @@ modifier|*
 modifier|*
 name|gimp_gradients_get_list
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filter
+parameter_list|,
 name|gint
 modifier|*
 name|num_gradients

@@ -82,16 +82,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_fonts_get_list:  * @num_fonts: The number of available fonts.  *  * Retrieve the list of loaded fonts.  *  * This procedure returns a list of the fonts that are currently  * available.  *  * Returns: The list of font names.  */
+comment|/**  * gimp_fonts_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_fonts: The number of available fonts.  *  * Retrieve the list of loaded fonts.  *  * This procedure returns a list of the fonts that are currently  * available.  *  * Returns: The list of font names.  */
 end_comment
 
 begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_fonts_get_list (gint * num_fonts)
+DECL|function|gimp_fonts_get_list (const gchar * filter,gint * num_fonts)
 name|gimp_fonts_get_list
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filter
+parameter_list|,
 name|gint
 modifier|*
 name|num_fonts
@@ -122,6 +127,10 @@ literal|"gimp_fonts_get_list"
 argument_list|,
 operator|&
 name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|filter
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

@@ -88,16 +88,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_list:  * @num_brushes: The number of brushes in the brush list.  *  * Retrieve a complete listing of the available brushes.  *  * This procedure returns a complete listing of available GIMP brushes.  * Each name returned can be used as input to the  * 'gimp_brushes_set_brush'.  *  * Returns: The list of brush names.  */
+comment|/**  * gimp_brushes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_brushes: The number of brushes in the brush list.  *  * Retrieve a complete listing of the available brushes.  *  * This procedure returns a complete listing of available GIMP brushes.  * Each name returned can be used as input to the  * 'gimp_brushes_set_brush'.  *  * Returns: The list of brush names.  */
 end_comment
 
 begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_brushes_get_list (gint * num_brushes)
+DECL|function|gimp_brushes_get_list (const gchar * filter,gint * num_brushes)
 name|gimp_brushes_get_list
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filter
+parameter_list|,
 name|gint
 modifier|*
 name|num_brushes
@@ -128,6 +133,10 @@ literal|"gimp_brushes_get_list"
 argument_list|,
 operator|&
 name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|filter
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

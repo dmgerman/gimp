@@ -3034,6 +3034,8 @@ name|list
 operator|=
 name|gimp_gradients_get_list
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|num
 argument_list|)

@@ -82,16 +82,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_list:  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * 'gimp_palette_set_palette'.  *  * Returns: The list of palette names.  */
+comment|/**  * gimp_palettes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * 'gimp_palette_set_palette'.  *  * Returns: The list of palette names.  */
 end_comment
 
 begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_palettes_get_list (gint * num_palettes)
+DECL|function|gimp_palettes_get_list (const gchar * filter,gint * num_palettes)
 name|gimp_palettes_get_list
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filter
+parameter_list|,
 name|gint
 modifier|*
 name|num_palettes
@@ -122,6 +127,10 @@ literal|"gimp_palettes_get_list"
 argument_list|,
 operator|&
 name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|filter
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
