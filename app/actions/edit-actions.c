@@ -271,7 +271,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Clear undo history"
+literal|"Clear undo history..."
 argument_list|)
 block|,
 name|G_CALLBACK
