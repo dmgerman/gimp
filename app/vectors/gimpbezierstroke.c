@@ -5663,15 +5663,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|ret_closed
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -5680,6 +5671,10 @@ operator|->
 name|anchors
 condition|)
 block|{
+if|if
+condition|(
+name|ret_closed
+condition|)
 operator|*
 name|ret_closed
 operator|=
@@ -5902,6 +5897,10 @@ literal|3
 index|]
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|ret_closed
+condition|)
 operator|*
 name|ret_closed
 operator|=

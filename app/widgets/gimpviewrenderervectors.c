@@ -272,9 +272,6 @@ name|rect
 decl_stmt|,
 name|area
 decl_stmt|;
-name|gboolean
-name|closed
-decl_stmt|;
 name|gdouble
 name|xscale
 decl_stmt|,
@@ -494,8 +491,7 @@ argument_list|)
 operator|/
 literal|2
 argument_list|,
-operator|&
-name|closed
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

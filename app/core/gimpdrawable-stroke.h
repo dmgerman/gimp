@@ -35,6 +35,12 @@ name|bound_segs
 parameter_list|,
 name|gint
 name|n_bound_segs
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|)
 function_decl|;
 end_function_decl
