@@ -124,6 +124,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static void    gimp_component_list_item_toggled      (GtkWidget       *widget,                                                       gpointer         data);
+endif|#
+directive|endif
+end_endif
+
 begin_function_decl
 specifier|static
 name|void
@@ -329,6 +341,14 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
+comment|/*  FIXME: disable keyboard navigation because as of gtk+-2.0.3,    *  GtkList kb navogation with is h-o-r-r-i-b-l-y broken with    *  GTK_SELECTION_MULTIPLE  --mitch 05/27/2002    */
+name|GTK_WIDGET_UNSET_FLAGS
+argument_list|(
+name|list_item
+argument_list|,
+name|GTK_CAN_FOCUS
+argument_list|)
+expr_stmt|;
 name|list_item
 operator|->
 name|channel
@@ -604,6 +624,13 @@ decl_stmt|;
 name|gint
 name|pixel
 decl_stmt|;
+name|component_item
+operator|=
+name|GIMP_COMPONENT_LIST_ITEM
+argument_list|(
+name|list_item
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_LIST_ITEM_CLASS
@@ -623,13 +650,6 @@ argument_list|(
 name|list_item
 argument_list|,
 name|viewable
-argument_list|)
-expr_stmt|;
-name|component_item
-operator|=
-name|GIMP_COMPONENT_LIST_ITEM
-argument_list|(
-name|list_item
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -837,7 +857,7 @@ name|g_signal_connect_object
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|viewable
+name|gimage
 argument_list|)
 argument_list|,
 literal|"component_visibility_changed"
@@ -859,7 +879,7 @@ name|g_signal_connect_object
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|viewable
+name|gimage
 argument_list|)
 argument_list|,
 literal|"component_active_changed"
@@ -877,6 +897,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_signal_connect_after (G_OBJECT (list_item), "select",                           G_CALLBACK (gimp_component_list_item_toggled),                           NULL);   g_signal_connect_after (G_OBJECT (list_item), "deselect",                           G_CALLBACK (gimp_component_list_item_toggled),                           NULL);   g_signal_connect_after (G_OBJECT (list_item), "toggle",                           G_CALLBACK (gimp_component_list_item_toggled),                           NULL);
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -1074,6 +1100,18 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static void gimp_component_list_item_toggled (GtkWidget *widget,                                   gpointer   data) {   GimpComponentListItem *component_item;   GimpListItem          *list_item;   GimpImage             *gimage;   gboolean               active;    component_item = GIMP_COMPONENT_LIST_ITEM (widget);   list_item      = GIMP_LIST_ITEM (widget);   gimage         = GIMP_IMAGE (GIMP_PREVIEW (list_item->preview)->viewable);    active = (widget->state == GTK_STATE_SELECTED);    if (active != gimp_image_get_component_active (gimage,                                                  component_item->channel))     {       g_signal_handlers_block_by_func (G_OBJECT (gimage), 				       gimp_component_list_item_active_changed, 				       list_item);        gimp_image_set_component_active (gimage, component_item->channel,                                        active);        g_signal_handlers_unblock_by_func (G_OBJECT (gimage), 					 gimp_component_list_item_active_changed, 					 list_item);        gimp_image_flush (gimage);     } }
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -1315,6 +1353,12 @@ operator|->
 name|channel
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_print ("gimp_component_list_item_active_changed: channel: %d active: %d\n",            channel, active);
+endif|#
+directive|endif
 if|if
 condition|(
 name|active
