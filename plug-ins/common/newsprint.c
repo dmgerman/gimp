@@ -369,7 +369,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f76330108
+DECL|struct|__anon2b4f643a0108
 block|{
 DECL|member|name
 specifier|const
@@ -629,7 +629,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f76330208
+DECL|struct|__anon2b4f643a0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f76330308
+DECL|struct|__anon2b4f643a0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -736,7 +736,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f76330408
+DECL|struct|__anon2b4f643a0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -843,7 +843,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f76330508
+DECL|struct|__anon2b4f643a0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -1011,7 +1011,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f76330608
+DECL|struct|__anon2b4f643a0608
 block|{
 DECL|member|name
 specifier|const
@@ -4707,10 +4707,6 @@ name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|main_vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|preview
 decl_stmt|;
 name|GtkWidget
@@ -7067,7 +7063,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f76330708
+DECL|struct|__anon2b4f643a0708
 block|{
 DECL|member|index
 name|gint
