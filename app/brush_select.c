@@ -138,19 +138,25 @@ value|5
 end_define
 
 begin_define
-DECL|macro|MAX_WIN_WIDTH
+DECL|macro|MAX_WIN_WIDTH (p)
 define|#
 directive|define
 name|MAX_WIN_WIDTH
-value|(STD_CELL_WIDTH * NUM_BRUSH_COLUMNS)
+parameter_list|(
+name|p
+parameter_list|)
+value|(STD_CELL_WIDTH * ((p)->NUM_BRUSH_COLUMNS))
 end_define
 
 begin_define
-DECL|macro|MAX_WIN_HEIGHT
+DECL|macro|MAX_WIN_HEIGHT (p)
 define|#
 directive|define
 name|MAX_WIN_HEIGHT
-value|(STD_CELL_HEIGHT * NUM_BRUSH_ROWS)
+parameter_list|(
+name|p
+parameter_list|)
+value|(STD_CELL_HEIGHT * ((p)->NUM_BRUSH_ROWS))
 end_define
 
 begin_define
@@ -911,24 +917,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|NUM_BRUSH_COLUMNS
-name|int
-name|NUM_BRUSH_COLUMNS
-init|=
-literal|5
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|NUM_BRUSH_ROWS
-name|int
-name|NUM_BRUSH_ROWS
-init|=
-literal|5
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|active_dialogs
 specifier|static
 name|GSList
@@ -1168,6 +1156,18 @@ operator|->
 name|brush_popup
 operator|=
 name|NULL
+expr_stmt|;
+name|bsp
+operator|->
+name|NUM_BRUSH_COLUMNS
+operator|=
+name|STD_BRUSH_COLUMNS
+expr_stmt|;
+name|bsp
+operator|->
+name|NUM_BRUSH_ROWS
+operator|=
+name|STD_BRUSH_ROWS
 expr_stmt|;
 comment|/*  The shell and main vbox  */
 name|bsp
@@ -1419,12 +1419,18 @@ argument_list|,
 literal|0
 argument_list|,
 name|MAX_WIN_HEIGHT
+argument_list|(
+name|bsp
+argument_list|)
 argument_list|,
 literal|1
 argument_list|,
 literal|1
 argument_list|,
 name|MAX_WIN_HEIGHT
+argument_list|(
+name|bsp
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1491,12 +1497,18 @@ operator|->
 name|width
 operator|=
 name|MAX_WIN_WIDTH
+argument_list|(
+name|bsp
+argument_list|)
 expr_stmt|;
 name|bsp
 operator|->
 name|height
 operator|=
 name|MAX_WIN_HEIGHT
+argument_list|(
+name|bsp
+argument_list|)
 expr_stmt|;
 name|bsp
 operator|->
@@ -2648,6 +2660,8 @@ name|row
 operator|=
 name|index
 operator|/
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
 expr_stmt|;
 name|col
@@ -2656,7 +2670,11 @@ name|index
 operator|-
 name|row
 operator|*
+operator|(
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
+operator|)
 expr_stmt|;
 name|brush_select_show_selected
 argument_list|(
@@ -4063,11 +4081,19 @@ name|brush
 argument_list|,
 name|brush_counter
 operator|%
+operator|(
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
+operator|)
 argument_list|,
 name|brush_counter
 operator|/
+operator|(
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
+operator|)
 argument_list|)
 expr_stmt|;
 name|brush_counter
@@ -4718,12 +4744,20 @@ argument_list|(
 name|brush_list
 argument_list|)
 operator|+
+operator|(
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
+operator|)
 operator|-
 literal|1
 operator|)
 operator|/
+operator|(
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
+operator|)
 expr_stmt|;
 name|max
 operator|=
@@ -4863,6 +4897,8 @@ name|BrushSelectP
 name|bsp
 parameter_list|)
 block|{
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
 operator|=
 call|(
@@ -4882,6 +4918,8 @@ operator|/
 name|STD_CELL_WIDTH
 argument_list|)
 expr_stmt|;
+name|bsp
+operator|->
 name|NUM_BRUSH_ROWS
 operator|=
 operator|(
@@ -4890,11 +4928,15 @@ argument_list|(
 name|brush_list
 argument_list|)
 operator|+
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
 operator|-
 literal|1
 operator|)
 operator|/
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
 expr_stmt|;
 name|bsp
@@ -4945,7 +4987,7 @@ argument_list|(
 name|bsp
 argument_list|)
 expr_stmt|;
-comment|/*  render the patterns into the newly created image structure  */
+comment|/*  render the brush into the newly created image structure  */
 name|display_brushes
 argument_list|(
 name|bsp
@@ -5202,6 +5244,8 @@ name|index
 operator|=
 name|row
 operator|*
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
 operator|+
 name|col
@@ -5866,6 +5910,8 @@ name|row
 operator|=
 name|index
 operator|/
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
 expr_stmt|;
 name|col
@@ -5874,6 +5920,8 @@ name|index
 operator|-
 name|row
 operator|*
+name|bsp
+operator|->
 name|NUM_BRUSH_COLUMNS
 expr_stmt|;
 name|brush_select_show_selected

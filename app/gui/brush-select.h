@@ -167,6 +167,15 @@ DECL|member|paint_mode
 name|gint
 name|paint_mode
 decl_stmt|;
+comment|/* To calc column pos. */
+DECL|member|NUM_BRUSH_COLUMNS
+name|gint
+name|NUM_BRUSH_COLUMNS
+decl_stmt|;
+DECL|member|NUM_BRUSH_ROWS
+name|gint
+name|NUM_BRUSH_ROWS
+decl_stmt|;
 block|}
 struct|;
 end_struct
