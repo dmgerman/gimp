@@ -280,34 +280,7 @@ define|#
 directive|define
 name|GLOBAL_BRUSH_BLURB
 define|\
-value|"When enabled, the selected brush will be used for all tools."
-end_define
-
-begin_define
-DECL|macro|GLOBAL_PATTERN_BLURB
-define|#
-directive|define
-name|GLOBAL_PATTERN_BLURB
-define|\
-value|"When enabled, the selected pattern will be used for all tools."
-end_define
-
-begin_define
-DECL|macro|GLOBAL_PALETTE_BLURB
-define|#
-directive|define
-name|GLOBAL_PALETTE_BLURB
-define|\
-value|"When enabled, the selected palette will be used for all tools."
-end_define
-
-begin_define
-DECL|macro|GLOBAL_GRADIENT_BLURB
-define|#
-directive|define
-name|GLOBAL_GRADIENT_BLURB
-define|\
-value|"When enabled, the selected gradient will be used for all tools."
+value|N_("When enabled, the selected brush will be used for all tools.")
 end_define
 
 begin_define
@@ -317,6 +290,33 @@ directive|define
 name|GLOBAL_FONT_BLURB
 define|\
 value|"When enabled, the selected font will be used for all tools."
+end_define
+
+begin_define
+DECL|macro|GLOBAL_GRADIENT_BLURB
+define|#
+directive|define
+name|GLOBAL_GRADIENT_BLURB
+define|\
+value|N_("When enabled, the selected gradient will be used for all tools.")
+end_define
+
+begin_define
+DECL|macro|GLOBAL_PATTERN_BLURB
+define|#
+directive|define
+name|GLOBAL_PATTERN_BLURB
+define|\
+value|N_("When enabled, the selected pattern will be used for all tools.")
+end_define
+
+begin_define
+DECL|macro|GLOBAL_PALETTE_BLURB
+define|#
+directive|define
+name|GLOBAL_PALETTE_BLURB
+define|\
+value|"When enabled, the selected palette will be used for all tools."
 end_define
 
 begin_define
