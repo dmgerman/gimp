@@ -139,6 +139,11 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+DECL|member|image
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 DECL|member|editor
 name|GtkWidget
 modifier|*
