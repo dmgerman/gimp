@@ -102,7 +102,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"stdlib.h"
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<string.h>
 end_include
 
 begin_include
@@ -145,7 +151,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cacea00108
+DECL|struct|__anon2b033c520108
 block|{
 DECL|member|ready
 name|guchar
