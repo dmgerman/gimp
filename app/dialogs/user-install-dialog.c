@@ -642,7 +642,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon290a03110108
+DECL|struct|__anon292258260108
 block|{
 DECL|member|directory
 name|gboolean
@@ -2002,7 +2002,7 @@ if|if
 condition|(
 name|gdk_color_parse
 argument_list|(
-literal|"sienna1"
+literal|"dark orange"
 argument_list|,
 operator|&
 name|title_color
