@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2b96ab050103
+DECL|enum|__anon2bdd59630103
 typedef|typedef
 enum|enum
 block|{
@@ -283,7 +283,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b96ab050208
+DECL|struct|__anon2bdd59630208
 typedef|typedef
 struct|struct
 block|{
@@ -400,7 +400,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2b96ab050308
+DECL|struct|__anon2bdd59630308
 typedef|typedef
 struct|struct
 block|{
@@ -462,10 +462,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|modules_add_handler
+DECL|variable|modules_handler
 specifier|static
 name|GimpSetHandlerId
-name|modules_add_handler
+name|modules_handler
 decl_stmt|;
 end_decl_stmt
 
@@ -1588,7 +1588,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* hook the gimpset signals so we can refresh the display    * appropriately. */
-name|modules_add_handler
+name|modules_handler
 operator|=
 name|gimp_set_add_handler
 argument_list|(
@@ -1658,7 +1658,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b96ab050408
+DECL|struct|__anon2bdd59630408
 typedef|typedef
 struct|struct
 block|{
@@ -1673,7 +1673,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b96ab050503
+DECL|enum|__anon2bdd59630503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -3121,7 +3121,7 @@ name|gimp_set_remove_handler
 argument_list|(
 name|modules
 argument_list|,
-name|modules_add_handler
+name|modules_handler
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4519,7 +4519,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b96ab050608
+DECL|struct|__anon2bdd59630608
 typedef|typedef
 struct|struct
 block|{
