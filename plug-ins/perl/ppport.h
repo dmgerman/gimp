@@ -13,7 +13,7 @@ name|_P_P_PORTABILITY_H_
 end_define
 
 begin_comment
-comment|/* Perl/Pollution/Portability Version 1.0007 */
+comment|/* Perl/Pollution/Portability Version 1.0007-gimp-1 */
 end_comment
 
 begin_comment
@@ -826,6 +826,32 @@ end_endif
 begin_comment
 comment|/* newCONSTSUB */
 end_comment
+
+begin_comment
+comment|/*GIMP*/
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|SvPV_nolen
+end_ifndef
+
+begin_define
+DECL|macro|SvPV_nolen (b)
+define|#
+directive|define
+name|SvPV_nolen
+parameter_list|(
+name|b
+parameter_list|)
+value|SvPV((b),PL_na)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#
