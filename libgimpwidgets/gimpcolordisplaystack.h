@@ -160,6 +160,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpColorDisplayStack
+modifier|*
+name|gimp_color_display_stack_clone
+parameter_list|(
+name|GimpColorDisplayStack
+modifier|*
+name|stack
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_color_display_stack_changed
 parameter_list|(

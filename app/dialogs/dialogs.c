@@ -488,22 +488,6 @@ block|,
 name|FALSE
 block|}
 block|,
-block|{
-literal|"gimp-display-filters-dialog"
-block|,
-name|dialogs_display_filters_get
-block|,
-literal|0
-block|,
-name|FALSE
-block|,
-name|TRUE
-block|,
-name|FALSE
-block|,
-name|FALSE
-block|}
-block|,
 comment|/*  singleton toplevels  */
 block|{
 literal|"gimp-preferences-dialog"

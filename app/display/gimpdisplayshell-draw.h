@@ -537,12 +537,16 @@ modifier|*
 name|grid_dialog
 decl_stmt|;
 comment|/*  grid configuration dialog          */
-DECL|member|filters
-name|GList
+DECL|member|filter_stack
+name|GimpColorDisplayStack
 modifier|*
-name|filters
+name|filter_stack
 decl_stmt|;
 comment|/* color display conversion stuff      */
+DECL|member|filter_idle_id
+name|guint
+name|filter_idle_id
+decl_stmt|;
 DECL|member|filters_dialog
 name|GtkWidget
 modifier|*

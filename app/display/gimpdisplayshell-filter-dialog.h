@@ -17,7 +17,8 @@ name|__GIMP_DISPLAY_SHELL_FILTER_DIALOG_H__
 end_define
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|gimp_display_shell_filter_dialog_new
 parameter_list|(
 name|GimpDisplayShell
