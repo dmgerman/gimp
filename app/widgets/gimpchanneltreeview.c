@@ -892,6 +892,12 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|channel_view
+operator|->
+name|component_editor
+condition|)
 name|gimp_component_editor_set_preview_size
 argument_list|(
 name|GIMP_COMPONENT_EDITOR

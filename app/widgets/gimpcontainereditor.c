@@ -425,10 +425,6 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|min_items_x
-operator|>
-literal|0
-operator|&&
-name|min_items_x
 operator|<=
 literal|64
 argument_list|,
@@ -437,10 +433,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|min_items_y
-operator|>
-literal|0
-operator|&&
 name|min_items_y
 operator|<=
 literal|64
