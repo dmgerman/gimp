@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d464950103
+DECL|enum|__anon2b07924c0103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d464950208
+DECL|struct|__anon2b07924c0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d464950308
+DECL|struct|__anon2b07924c0308
 block|{
 DECL|member|run
 name|gboolean
@@ -435,17 +435,17 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"edgemode"
+literal|"wrapmode"
 block|,
-literal|"Edge detection algorithm: { SOBEL (0), PREWITT (1), GRADIENT (2), ROBERTS (3),  DIFFERENTIAL (4), LAPLACE (5) }"
+literal|"Edge detection behavior: { WRAP (0), SMEAR (1), BLACK (2) }"
 block|}
 block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"wrapmode"
+literal|"edgemode"
 block|,
-literal|"Edge detection behavior: { WRAP (0), SMEAR (1), BLACK (2) }"
+literal|"Edge detection algorithm: { SOBEL (0), PREWITT (1), GRADIENT (2), ROBERTS (3),  DIFFERENTIAL (4), LAPLACE (5) }"
 block|}
 block|}
 decl_stmt|;
@@ -455,7 +455,9 @@ name|help_string
 init|=
 literal|"Perform edge detection on the contents of the specified drawable."
 literal|"AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in "
-literal|"(useful for tilable image)."
+literal|"(useful for tilable image). EDGEMODE sets the kind of matrix "
+literal|"transform applied to the pixels, SOBEL was the method used in older "
+literal|"versions."
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
@@ -666,7 +668,7 @@ name|d_float
 expr_stmt|;
 name|evals
 operator|.
-name|edgemode
+name|wrapmode
 operator|=
 name|param
 index|[
@@ -679,7 +681,7 @@ name|d_int32
 expr_stmt|;
 name|evals
 operator|.
-name|wrapmode
+name|edgemode
 operator|=
 name|param
 index|[
