@@ -196,37 +196,17 @@ begin_comment
 comment|/* Let GIMP library handle initialisation (and inquisitive users) */
 end_comment
 
-begin_function
-DECL|function|main (int argc,char * argv[])
-name|int
-name|main
-parameter_list|(
-name|int
-name|argc
-parameter_list|,
-name|char
-modifier|*
-name|argv
-index|[]
-parameter_list|)
-block|{
-return|return
-name|gimp_main
-argument_list|(
-name|argc
-argument_list|,
-name|argv
-argument_list|)
-return|;
-block|}
-end_function
+begin_macro
+DECL|function|MAIN ()
+name|MAIN
+argument_list|()
+end_macro
 
 begin_comment
 comment|/* GIMP queries plug-in for parameters etc. */
 end_comment
 
 begin_function
-DECL|function|query (void)
 specifier|static
 name|void
 name|query
