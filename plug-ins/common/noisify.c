@@ -55,12 +55,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpoldpreview.h"
-end_include
-
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -80,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc389370108
+DECL|struct|__anon2ac23d450108
 block|{
 DECL|member|independent
 name|gint
@@ -103,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc389370208
+DECL|struct|__anon2ac23d450208
 block|{
 DECL|member|channels
 name|gint
