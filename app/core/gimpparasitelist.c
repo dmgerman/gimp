@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0731ec0103
+DECL|enum|__anon2a18a1250103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1812,6 +1812,13 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+name|g_string_append
+argument_list|(
+name|str
+argument_list|,
+literal|"\""
+argument_list|)
+expr_stmt|;
 name|gimp_config_writer_print
 argument_list|(
 name|writer

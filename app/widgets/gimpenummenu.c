@@ -445,7 +445,7 @@ condition|)
 continue|continue;
 name|menu_item
 operator|=
-name|gtk_menu_item_new_with_label
+name|gtk_menu_item_new_with_mnemonic
 argument_list|(
 name|gettext
 argument_list|(
@@ -684,7 +684,7 @@ condition|)
 block|{
 name|menu_item
 operator|=
-name|gtk_menu_item_new_with_label
+name|gtk_menu_item_new_with_mnemonic
 argument_list|(
 name|gettext
 argument_list|(
@@ -1247,7 +1247,7 @@ condition|)
 continue|continue;
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,

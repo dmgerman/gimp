@@ -1375,7 +1375,7 @@ name|GIMP_ADD_WHITE_MASK
 operator|||
 name|mask_type
 operator|>
-name|GIMP_ADD_INVERSE_COPY_MASK
+name|GIMP_ADD_COPY_MASK
 condition|)
 name|success
 operator|=
@@ -1461,7 +1461,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mask_type"
 block|,
-literal|"The type of mask: { GIMP_ADD_WHITE_MASK (0), GIMP_ADD_BLACK_MASK (1), GIMP_ADD_ALPHA_MASK (2), GIMP_ADD_SELECTION_MASK (3), GIMP_ADD_INVERSE_SELECTION_MASK (4), GIMP_ADD_COPY_MASK (5), GIMP_ADD_INVERSE_COPY_MASK (6) }"
+literal|"The type of mask: { GIMP_ADD_WHITE_MASK (0), GIMP_ADD_BLACK_MASK (1), GIMP_ADD_ALPHA_MASK (2), GIMP_ADD_SELECTION_MASK (3), GIMP_ADD_COPY_MASK (4) }"
 block|}
 block|}
 decl_stmt|;
@@ -1497,7 +1497,7 @@ literal|"gimp_layer_create_mask"
 block|,
 literal|"Create a layer mask for the specified specified layer."
 block|,
-literal|"This procedure creates a layer mask for the specified layer. Layer masks serve as an additional alpha channel for a layer. Three different types of masks are allowed initially: completely white masks (which will leave the layer fully visible), completely black masks (which will give the layer complete transparency, and the layer's already existing alpha channel (which will leave the layer fully visible, but which may be more useful than a white mask). The layer mask still needs to be added to the layer. This can be done with a call to 'gimp_image_add_layer_mask'."
+literal|"This procedure creates a layer mask for the specified layer. Layer masks serve as an additional alpha channel for a layer. A number of ifferent types of masks are allowed for initialisation: completely white masks (which will leave the layer fully visible), completely black masks (which will give the layer complete transparency, the layer's already existing alpha channel (which will leave the layer fully visible, but which may be more useful than a white mask), the current selection or a grayscale copy of the layer. The layer mask still needs to be added to the layer. This can be done with a call to 'gimp_image_add_layer_mask'."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
