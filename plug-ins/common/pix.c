@@ -802,7 +802,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     bit ordering should not matter   */
+comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     byte order should not matter.  */
 end_comment
 
 begin_function
@@ -843,20 +843,16 @@ operator|<<
 literal|8
 operator|)
 operator|+
-operator|(
 name|buf
 index|[
 literal|1
 index|]
-operator|<<
-literal|0
-operator|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     bit ordering should not matter   */
+comment|/*   * Description:  *     Writes a 16-bit integer to a file in such a way that the machine's  *     byte order should not matter.  */
 end_comment
 
 begin_function
@@ -884,28 +880,22 @@ index|[
 literal|0
 index|]
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
+operator|(
 name|value
 operator|>>
 literal|8
-argument_list|)
+operator|)
+operator|&
+literal|0xFF
 expr_stmt|;
 name|buf
 index|[
 literal|1
 index|]
 operator|=
-call|(
-name|guchar
-call|)
-argument_list|(
 name|value
-operator|%
-literal|256
-argument_list|)
+operator|&
+literal|0xFF
 expr_stmt|;
 name|fwrite
 argument_list|(
