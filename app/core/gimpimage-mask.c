@@ -655,7 +655,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimage_mask_extract (GImage * gimage,GimpDrawable * drawable,gboolean cut_gimage,gboolean keep_indexed)
+DECL|function|gimage_mask_extract (GImage * gimage,GimpDrawable * drawable,gboolean cut_gimage,gboolean keep_indexed,gboolean add_alpha)
 name|gimage_mask_extract
 parameter_list|(
 name|GImage
@@ -671,6 +671,9 @@ name|cut_gimage
 parameter_list|,
 name|gboolean
 name|keep_indexed
+parameter_list|,
+name|gboolean
+name|add_alpha
 parameter_list|)
 block|{
 name|TileManager
@@ -796,7 +799,13 @@ name|RGBA_GIMAGE
 case|:
 name|bytes
 operator|=
+name|add_alpha
+condition|?
 literal|4
+else|:
+name|drawable
+operator|->
+name|bytes
 expr_stmt|;
 name|type
 operator|=
@@ -811,7 +820,13 @@ name|GRAYA_GIMAGE
 case|:
 name|bytes
 operator|=
+name|add_alpha
+condition|?
 literal|2
+else|:
+name|drawable
+operator|->
+name|bytes
 expr_stmt|;
 name|type
 operator|=
@@ -831,7 +846,13 @@ condition|)
 block|{
 name|bytes
 operator|=
+name|add_alpha
+condition|?
 literal|2
+else|:
+name|drawable
+operator|->
+name|bytes
 expr_stmt|;
 name|type
 operator|=
@@ -842,7 +863,13 @@ else|else
 block|{
 name|bytes
 operator|=
+name|add_alpha
+condition|?
 literal|4
+else|:
+name|drawable
+operator|->
+name|bytes
 expr_stmt|;
 name|type
 operator|=
@@ -1424,6 +1451,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Create a new layer from the buffer  */

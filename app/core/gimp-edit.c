@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e476aa0103
+DECL|enum|__anon2b1b47110103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -916,6 +916,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Only crop if the gimage mask wasn't empty  */
@@ -1065,6 +1067,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Only crop if the gimage mask wasn't empty  */

@@ -53,7 +53,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297f07190103
+DECL|enum|__anon2b15b6f60103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -85,7 +85,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297f07190203
+DECL|enum|__anon2b15b6f60203
 block|{
 DECL|enumerator|INIT
 name|INIT
@@ -694,8 +694,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
-modifier|*
+name|gboolean
 name|transform_core_paste
 parameter_list|(
 name|GImage

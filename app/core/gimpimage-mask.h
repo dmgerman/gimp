@@ -162,6 +162,9 @@ name|cut_gimage
 parameter_list|,
 name|gboolean
 name|keep_indexed
+parameter_list|,
+name|gboolean
+name|add_alpha
 parameter_list|)
 function_decl|;
 end_function_decl

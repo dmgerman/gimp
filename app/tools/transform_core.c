@@ -5617,6 +5617,29 @@ literal|0
 expr_stmt|;
 break|break;
 block|}
+comment|/*  enable rotating un-floated non-layers  */
+if|if
+condition|(
+name|float_tiles
+operator|->
+name|bpp
+operator|==
+literal|1
+condition|)
+block|{
+name|bg_col
+index|[
+literal|0
+index|]
+operator|=
+name|OPAQUE_OPACITY
+expr_stmt|;
+comment|/*  setting alpha = 0 will cause the channel's value to be treated        *  as alpha and the color channel loops never to be entered        */
+name|alpha
+operator|=
+literal|0
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|transform_tool_direction
@@ -5696,10 +5719,16 @@ expr_stmt|;
 comment|/*  Find the bounding coordinates  */
 if|if
 condition|(
+name|alpha
+operator|==
+literal|0
+operator|||
+operator|(
 name|active_tool
 operator|&&
 name|transform_tool_clip
 argument_list|()
+operator|)
 condition|)
 block|{
 name|tx1
@@ -6513,7 +6542,7 @@ name|a_val
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for colour channels c,                        * result = bicubic (c * alpha) / bicubic (alpha) 	               */
+comment|/*  for colour channels c, 		       *  result = bicubic (c * alpha) / bicubic (alpha) 		       * 		       *  never entered for alpha == 0 		       */
 for|for
 control|(
 name|i
@@ -6644,6 +6673,7 @@ name|newval
 expr_stmt|;
 block|}
 block|}
+comment|/*  alpha already done  */
 name|d
 operator|++
 expr_stmt|;
@@ -6881,7 +6911,7 @@ name|a_val
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  for colour channels c, 		       *  result = bilinear (c * alpha) / bilinear (alpha) 		       */
+comment|/*  for colour channels c, 		       *  result = bilinear (c * alpha) / bilinear (alpha) 		       * 		       *  never entered for alpha == 0 		       */
 for|for
 control|(
 name|i
@@ -7008,7 +7038,7 @@ name|newval
 expr_stmt|;
 block|}
 block|}
-comment|/* already set alpha */
+comment|/*  alpha already done  */
 name|d
 operator|++
 expr_stmt|;
@@ -7265,6 +7295,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -7276,6 +7308,13 @@ block|}
 comment|/*  otherwise, just copy the layer  */
 else|else
 block|{
+if|if
+condition|(
+name|GIMP_IS_LAYER
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
 name|tiles
 operator|=
 name|gimage_mask_extract
@@ -7287,6 +7326,24 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+else|else
+name|tiles
+operator|=
+name|gimage_mask_extract
+argument_list|(
+name|gimage
+argument_list|,
+name|drawable
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -7306,8 +7363,7 @@ comment|/*  Paste a transform to the gdisplay  */
 end_comment
 
 begin_function
-name|Layer
-modifier|*
+name|gboolean
 DECL|function|transform_core_paste (GImage * gimage,GimpDrawable * drawable,TileManager * tiles,gboolean new_layer)
 name|transform_core_paste
 parameter_list|(
@@ -7330,6 +7386,14 @@ block|{
 name|Layer
 modifier|*
 name|layer
+init|=
+name|NULL
+decl_stmt|;
+name|Channel
+modifier|*
+name|channel
+init|=
+name|NULL
 decl_stmt|;
 name|Layer
 modifier|*
@@ -7375,7 +7439,7 @@ literal|"transform_core_paste: layer_new_frome_tiles() failed"
 argument_list|)
 expr_stmt|;
 return|return
-name|NULL
+name|FALSE
 return|;
 block|}
 name|GIMP_DRAWABLE
@@ -7428,7 +7492,7 @@ name|tiles
 argument_list|)
 expr_stmt|;
 return|return
-name|layer
+name|TRUE
 return|;
 block|}
 else|else
@@ -7447,10 +7511,29 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
+name|channel
+operator|=
+name|GIMP_CHANNEL
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 else|else
 return|return
-name|NULL
+name|FALSE
 return|;
+if|if
+condition|(
+name|layer
+condition|)
 name|layer_add_alpha
 argument_list|(
 name|layer
@@ -7478,36 +7561,28 @@ name|gdisplays_update_area
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 operator|->
 name|offset_x
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 operator|->
 name|offset_y
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 operator|->
 name|width
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 operator|->
 name|height
 argument_list|)
 expr_stmt|;
 comment|/*  Push an undo  */
+if|if
+condition|(
+name|layer
+condition|)
 name|undo_push_layer_mod
 argument_list|(
 name|gimage
@@ -7515,21 +7590,27 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  set the current layer's data  */
-name|GIMP_DRAWABLE
+elseif|else
+if|if
+condition|(
+name|channel
+condition|)
+name|undo_push_channel_mod
 argument_list|(
-name|layer
+name|gimage
+argument_list|,
+name|channel
 argument_list|)
+expr_stmt|;
+comment|/*  set the current layer's data  */
+name|drawable
 operator|->
 name|tiles
 operator|=
 name|tiles
 expr_stmt|;
 comment|/*  Fill in the new layer's attributes  */
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 operator|->
 name|width
 operator|=
@@ -7537,10 +7618,7 @@ name|tiles
 operator|->
 name|width
 expr_stmt|;
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 operator|->
 name|height
 operator|=
@@ -7548,10 +7626,7 @@ name|tiles
 operator|->
 name|height
 expr_stmt|;
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 operator|->
 name|bytes
 operator|=
@@ -7559,10 +7634,7 @@ name|tiles
 operator|->
 name|bpp
 expr_stmt|;
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 operator|->
 name|offset_x
 operator|=
@@ -7570,10 +7642,7 @@ name|tiles
 operator|->
 name|x
 expr_stmt|;
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 operator|->
 name|offset_y
 operator|=
@@ -7594,35 +7663,32 @@ argument_list|)
 expr_stmt|;
 name|drawable_update
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 argument_list|,
 literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|GIMP_DRAWABLE
+name|gimp_drawable_width
 argument_list|(
-name|layer
+name|drawable
 argument_list|)
-operator|->
-name|width
 argument_list|,
-name|GIMP_DRAWABLE
+name|gimp_drawable_height
 argument_list|(
-name|layer
+name|drawable
 argument_list|)
-operator|->
-name|height
 argument_list|)
 expr_stmt|;
 comment|/*  if we were operating on the floating selection, then it's boundary         *  and previews need invalidating        */
 if|if
 condition|(
-name|layer
+name|drawable
 operator|==
+operator|(
+name|GimpDrawable
+operator|*
+operator|)
 name|floating_layer
 condition|)
 name|floating_sel_invalidate
@@ -7631,7 +7697,7 @@ name|floating_layer
 argument_list|)
 expr_stmt|;
 return|return
-name|layer
+name|TRUE
 return|;
 block|}
 block|}
