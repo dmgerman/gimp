@@ -6836,6 +6836,17 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+comment|/*  flag as dirty  */
+name|shell
+operator|->
+name|other_scale
+operator||=
+operator|(
+literal|1
+operator|<<
+literal|30
+operator|)
+expr_stmt|;
 block|}
 end_function
 
