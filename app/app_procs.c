@@ -260,7 +260,7 @@ DECL|macro|LOGO_WIDTH_MIN
 define|#
 directive|define
 name|LOGO_WIDTH_MIN
-value|350
+value|300
 end_define
 
 begin_define
