@@ -1923,10 +1923,7 @@ name|SIGHUP
 case|:
 name|gimp_terminate
 argument_list|(
-name|_
-argument_list|(
 literal|"sighup caught"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1939,12 +1936,9 @@ case|case
 name|SIGINT
 case|:
 name|gimp_terminate
-argument_list|(
-name|_
 argument_list|(
 literal|"sigint caught"
 argument_list|)
-argument_list|)
 expr_stmt|;
 break|break;
 endif|#
@@ -1956,12 +1950,9 @@ case|case
 name|SIGQUIT
 case|:
 name|gimp_terminate
-argument_list|(
-name|_
 argument_list|(
 literal|"sigquit caught"
 argument_list|)
-argument_list|)
 expr_stmt|;
 break|break;
 endif|#
@@ -1973,12 +1964,9 @@ case|case
 name|SIGABRT
 case|:
 name|gimp_terminate
-argument_list|(
-name|_
 argument_list|(
 literal|"sigabrt caught"
 argument_list|)
-argument_list|)
 expr_stmt|;
 break|break;
 endif|#
@@ -1990,12 +1978,9 @@ case|case
 name|SIGBUS
 case|:
 name|gimp_fatal_error
-argument_list|(
-name|_
 argument_list|(
 literal|"sigbus caught"
 argument_list|)
-argument_list|)
 expr_stmt|;
 break|break;
 endif|#
@@ -2007,12 +1992,9 @@ case|case
 name|SIGSEGV
 case|:
 name|gimp_fatal_error
-argument_list|(
-name|_
 argument_list|(
 literal|"sigsegv caught"
 argument_list|)
-argument_list|)
 expr_stmt|;
 break|break;
 endif|#
@@ -2024,12 +2006,9 @@ case|case
 name|SIGPIPE
 case|:
 name|gimp_terminate
-argument_list|(
-name|_
 argument_list|(
 literal|"sigpipe caught"
 argument_list|)
-argument_list|)
 expr_stmt|;
 break|break;
 endif|#
@@ -2042,10 +2021,7 @@ name|SIGTERM
 case|:
 name|gimp_terminate
 argument_list|(
-name|_
-argument_list|(
 literal|"sigterm caught"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2059,10 +2035,7 @@ name|SIGFPE
 case|:
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"sigfpe caught"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2071,10 +2044,7 @@ directive|endif
 default|default:
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"unknown signal"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2145,7 +2115,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274888350108
+DECL|struct|__anon2a30f73b0108
 block|{
 DECL|member|test_gint32
 name|gint32
