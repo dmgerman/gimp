@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GtkTreeView
 name|parent_instance
 decl_stmt|;
+DECL|member|meta_extensions
+name|GList
+modifier|*
+name|meta_extensions
+decl_stmt|;
 block|}
 struct|;
 end_struct

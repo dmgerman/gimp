@@ -480,7 +480,7 @@ argument_list|)
 block|,
 literal|"application/x-gzip"
 block|,
-literal|"gz,xcfgz"
+literal|"xcf.gz,gz,xcfgz"
 block|,
 literal|"0,string,\037\213"
 block|,
@@ -521,7 +521,7 @@ argument_list|)
 block|,
 literal|"application/x-bzip"
 block|,
-literal|"bz2,xcfbz2"
+literal|"xcf.bz2,bz2,xcfbz2"
 block|,
 literal|"0,string,BZh"
 block|,
