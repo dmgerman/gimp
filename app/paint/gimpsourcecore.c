@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpclonetool.h"
 end_include
 
@@ -178,7 +172,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275f8f9d0103
+DECL|enum|__anon27dedc010103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -1503,7 +1497,7 @@ argument_list|,
 operator|&
 name|trans_ty
 argument_list|,
-literal|1
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume

@@ -166,6 +166,11 @@ name|gboolean
 name|handle_empty_image
 decl_stmt|;
 comment|/*  invoke the tool on images without                                      *  active drawable                                      */
+DECL|member|perfectmouse
+name|gboolean
+name|perfectmouse
+decl_stmt|;
+comment|/*  tool is affected by gimprc's                                      *  "prefectmouse" setting                                      */
 DECL|member|preserve
 name|gboolean
 name|preserve

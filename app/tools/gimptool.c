@@ -536,14 +536,20 @@ name|handle_empty_image
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  Don't work without active drawable  */
+comment|/*  Don't work without                                           *  active drawable                                           */
+name|tool
+operator|->
+name|perfectmouse
+operator|=
+name|FALSE
+expr_stmt|;
 name|tool
 operator|->
 name|preserve
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*  Preserve across drawable changes  */
+comment|/*  Preserve across drawable                                           *  changes                                           */
 name|tool
 operator|->
 name|gdisp

@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbucketfilltool.h"
 end_include
 
@@ -631,10 +625,6 @@ name|BucketOptions
 modifier|*
 name|options
 decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
 name|bucket_tool
 operator|=
 name|GIMP_BUCKET_FILL_TOOL
@@ -653,15 +643,6 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
-expr_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
 expr_stmt|;
 name|bucket_tool
 operator|->
@@ -721,30 +702,6 @@ operator|-=
 name|off_y
 expr_stmt|;
 block|}
-name|gdk_pointer_grab
-argument_list|(
-name|shell
-operator|->
-name|canvas
-operator|->
-name|window
-argument_list|,
-name|FALSE
-argument_list|,
-name|GDK_POINTER_MOTION_HINT_MASK
-operator||
-name|GDK_BUTTON1_MOTION_MASK
-operator||
-name|GDK_BUTTON_RELEASE_MASK
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|time
-argument_list|)
-expr_stmt|;
-comment|/*  Make the tool active and set the gdisplay which owns it  */
 name|tool
 operator|->
 name|gdisp
@@ -818,14 +775,6 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
-expr_stmt|;
-name|gdk_pointer_ungrab
-argument_list|(
-name|time
-argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
 expr_stmt|;
 comment|/*  if the 3rd button isn't pressed, fill the selected region  */
 if|if

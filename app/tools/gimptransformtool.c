@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptransformtool.h"
 end_include
 
@@ -1129,10 +1123,6 @@ name|GimpDrawTool
 modifier|*
 name|draw_tool
 decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1154,15 +1144,6 @@ operator|=
 name|GIMP_DRAW_TOOL
 argument_list|(
 name|tool
-argument_list|)
-expr_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 name|drawable
@@ -1472,29 +1453,6 @@ name|coords
 operator|->
 name|y
 expr_stmt|;
-name|gdk_pointer_grab
-argument_list|(
-name|shell
-operator|->
-name|canvas
-operator|->
-name|window
-argument_list|,
-name|FALSE
-argument_list|,
-name|GDK_POINTER_MOTION_HINT_MASK
-operator||
-name|GDK_BUTTON1_MOTION_MASK
-operator||
-name|GDK_BUTTON_RELEASE_MASK
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|time
-argument_list|)
-expr_stmt|;
 name|tool
 operator|->
 name|state
@@ -1554,15 +1512,6 @@ operator|==
 name|TRANSFORM_CREATING
 condition|)
 return|return;
-comment|/*  release of the pointer grab  */
-name|gdk_pointer_ungrab
-argument_list|(
-name|time
-argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
 comment|/*  if the 3rd button isn't pressed, transform the selected mask  */
 if|if
 condition|(
@@ -2873,10 +2822,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
 name|GimpTool
 modifier|*
 name|tool
@@ -2913,15 +2858,6 @@ operator|=
 name|GIMP_TOOL
 argument_list|(
 name|tr_tool
-argument_list|)
-expr_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 comment|/* undraw the tool before we muck around with the transform matrix */

@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpinktool.h"
 end_include
 
@@ -1323,6 +1317,12 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
+name|perfectmouse
+operator|=
+name|TRUE
+expr_stmt|;
+name|tool
+operator|->
 name|tool_cursor
 operator|=
 name|GIMP_INK_TOOL_CURSOR
@@ -1477,10 +1477,6 @@ name|InkOptions
 modifier|*
 name|options
 decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1507,15 +1503,6 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
-expr_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
@@ -1559,7 +1546,7 @@ name|paused_count
 operator|=
 literal|0
 expr_stmt|;
-comment|/*  pause the current selection and grab the pointer  */
+comment|/*  pause the current selection  */
 name|gimp_image_selection_control
 argument_list|(
 name|gdisp
@@ -1569,76 +1556,6 @@ argument_list|,
 name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
-comment|/* add motion memory if you press mod1 first ^ perfectmouse */
-if|if
-condition|(
-operator|(
-operator|(
-name|state
-operator|&
-name|GDK_MOD1_MASK
-operator|)
-operator|!=
-literal|0
-operator|)
-operator|!=
-operator|(
-name|gimprc
-operator|.
-name|perfectmouse
-operator|!=
-literal|0
-operator|)
-condition|)
-block|{
-name|gdk_pointer_grab
-argument_list|(
-name|shell
-operator|->
-name|canvas
-operator|->
-name|window
-argument_list|,
-name|FALSE
-argument_list|,
-name|GDK_BUTTON1_MOTION_MASK
-operator||
-name|GDK_BUTTON_RELEASE_MASK
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|time
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|gdk_pointer_grab
-argument_list|(
-name|shell
-operator|->
-name|canvas
-operator|->
-name|window
-argument_list|,
-name|FALSE
-argument_list|,
-name|GDK_POINTER_MOTION_HINT_MASK
-operator||
-name|GDK_BUTTON1_MOTION_MASK
-operator||
-name|GDK_BUTTON_RELEASE_MASK
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|time
-argument_list|)
-expr_stmt|;
-block|}
 name|b
 operator|=
 name|ink_pen_ellipse
@@ -1779,7 +1696,7 @@ name|gdisp
 operator|->
 name|gimage
 expr_stmt|;
-comment|/*  resume the current selection and ungrab the pointer  */
+comment|/*  resume the current selection  */
 name|gimp_image_selection_control
 argument_list|(
 name|gdisp
@@ -1788,14 +1705,6 @@ name|gimage
 argument_list|,
 name|GIMP_SELECTION_RESUME
 argument_list|)
-expr_stmt|;
-name|gdk_pointer_ungrab
-argument_list|(
-name|time
-argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
 expr_stmt|;
 comment|/*  Set tool state to inactive -- no longer painting */
 name|tool
@@ -4722,7 +4631,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2b528b5f0103
+DECL|enum|__anon277d131f0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

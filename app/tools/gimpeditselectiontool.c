@@ -1282,21 +1282,13 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/*  resume the current selection and ungrab the pointer  */
+comment|/*  resume the current selection  */
 name|gimp_display_shell_selection_visibility
 argument_list|(
 name|shell
 argument_list|,
 name|GIMP_SELECTION_RESUME
 argument_list|)
-expr_stmt|;
-name|gdk_pointer_ungrab
-argument_list|(
-name|time
-argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
 expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
