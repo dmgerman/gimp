@@ -4825,7 +4825,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -5028,7 +5028,7 @@ name|ImageResize
 modifier|*
 name|image_resize
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -5242,7 +5242,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -5367,7 +5367,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -5495,7 +5495,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -5623,7 +5623,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;

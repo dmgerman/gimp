@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|layer_select_init
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

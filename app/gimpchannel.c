@@ -5846,7 +5846,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;

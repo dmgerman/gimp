@@ -1263,10 +1263,10 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|find_contiguous_region (GImage * gimage,GimpDrawable * drawable,gboolean antialias,gint threshold,gint x,gint y,gboolean sample_merged)
+DECL|function|find_contiguous_region (GimpImage * gimage,GimpDrawable * drawable,gboolean antialias,gint threshold,gint x,gint y,gboolean sample_merged)
 name|find_contiguous_region
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

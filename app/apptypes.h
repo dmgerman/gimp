@@ -162,14 +162,6 @@ name|GimpImage
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GImage
-typedef|typedef
-name|GimpImage
-name|GImage
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  data objects  */
 end_comment

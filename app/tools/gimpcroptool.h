@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CROP_H__
+name|__GIMP_CROP_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CROP_H__
+DECL|macro|__GIMP_CROP_TOOL_H__
 define|#
 directive|define
-name|__CROP_H__
+name|__GIMP_CROP_TOOL_H__
 end_define
 
 begin_include
@@ -21,6 +21,26 @@ include|#
 directive|include
 file|"gimpdrawtool.h"
 end_include
+
+begin_comment
+comment|/* XXX Used? */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bee90780103
+block|{
+DECL|enumerator|CROP_CROP
+name|CROP_CROP
+block|,
+DECL|enumerator|RESIZE_CROP
+name|RESIZE_CROP
+DECL|typedef|CropType
+block|}
+name|CropType
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|GIMP_TYPE_CROP_TOOL
@@ -81,26 +101,6 @@ name|GimpCropToolClass
 typedef|;
 end_typedef
 
-begin_comment
-comment|/* XXX Used? */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b38f20d0103
-block|{
-DECL|enumerator|CROP_CROP
-name|CROP_CROP
-block|,
-DECL|enumerator|RESIZE_CROP
-name|RESIZE_CROP
-DECL|typedef|CropType
-block|}
-name|CropType
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpCropTool
 struct|struct
@@ -110,7 +110,6 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-comment|/*  DrawCore *core; */
 DECL|member|startx
 name|gint
 name|startx
@@ -255,7 +254,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __CROP_H__  */
+comment|/*  __GIMP_CROP_TOOL_H__  */
 end_comment
 
 end_unit

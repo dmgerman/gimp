@@ -161,10 +161,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimage_mask_boundary (GImage * gimage,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out)
+DECL|function|gimage_mask_boundary (GimpImage * gimage,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out)
 name|gimage_mask_boundary
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -465,10 +465,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimage_mask_bounds (GImage * gimage,gint * x1,gint * y1,gint * x2,gint * y2)
+DECL|function|gimage_mask_bounds (GimpImage * gimage,gint * x1,gint * y1,gint * x2,gint * y2)
 name|gimage_mask_bounds
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -511,10 +511,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_invalidate (GImage * gimage)
+DECL|function|gimage_mask_invalidate (GimpImage * gimage)
 name|gimage_mask_invalidate
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -596,10 +596,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimage_mask_value (GImage * gimage,gint x,gint y)
+DECL|function|gimage_mask_value (GimpImage * gimage,gint x,gint y)
 name|gimage_mask_value
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -628,10 +628,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimage_mask_is_empty (GImage * gimage)
+DECL|function|gimage_mask_is_empty (GimpImage * gimage)
 name|gimage_mask_is_empty
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -659,10 +659,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_translate (GImage * gimage,gint off_x,gint off_y)
+DECL|function|gimage_mask_translate (GimpImage * gimage,gint off_x,gint off_y)
 name|gimage_mask_translate
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -691,10 +691,10 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimage_mask_extract (GImage * gimage,GimpDrawable * drawable,gboolean cut_gimage,gboolean keep_indexed,gboolean add_alpha)
+DECL|function|gimage_mask_extract (GimpImage * gimage,GimpDrawable * drawable,gboolean cut_gimage,gboolean keep_indexed,gboolean add_alpha)
 name|gimage_mask_extract
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1366,10 +1366,10 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimage_mask_float (GImage * gimage,GimpDrawable * drawable,gint off_x,gint off_y)
+DECL|function|gimage_mask_float (GimpImage * gimage,GimpDrawable * drawable,gint off_x,gint off_y)
 name|gimage_mask_float
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1588,10 +1588,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_clear (GImage * gimage)
+DECL|function|gimage_mask_clear (GimpImage * gimage)
 name|gimage_mask_clear
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -1609,10 +1609,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_undo (GImage * gimage)
+DECL|function|gimage_mask_undo (GimpImage * gimage)
 name|gimage_mask_undo
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -1630,10 +1630,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_invert (GImage * gimage)
+DECL|function|gimage_mask_invert (GimpImage * gimage)
 name|gimage_mask_invert
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -1651,10 +1651,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_sharpen (GImage * gimage)
+DECL|function|gimage_mask_sharpen (GimpImage * gimage)
 name|gimage_mask_sharpen
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -1673,10 +1673,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_all (GImage * gimage)
+DECL|function|gimage_mask_all (GimpImage * gimage)
 name|gimage_mask_all
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -1694,10 +1694,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_none (GImage * gimage)
+DECL|function|gimage_mask_none (GimpImage * gimage)
 name|gimage_mask_none
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -1715,10 +1715,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_feather (GImage * gimage,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimage_mask_feather (GimpImage * gimage,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimage_mask_feather
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1767,10 +1767,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_border (GImage * gimage,gint border_radius_x,gint border_radius_y)
+DECL|function|gimage_mask_border (GimpImage * gimage,gint border_radius_x,gint border_radius_y)
 name|gimage_mask_border
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1799,10 +1799,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_grow (GImage * gimage,int grow_pixels_x,int grow_pixels_y)
+DECL|function|gimage_mask_grow (GimpImage * gimage,int grow_pixels_x,int grow_pixels_y)
 name|gimage_mask_grow
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1831,10 +1831,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_shrink (GImage * gimage,gint shrink_pixels_x,gint shrink_pixels_y,gboolean edge_lock)
+DECL|function|gimage_mask_shrink (GimpImage * gimage,gint shrink_pixels_x,gint shrink_pixels_y,gboolean edge_lock)
 name|gimage_mask_shrink
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1973,10 +1973,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_load (GImage * gimage,GimpChannel * channel)
+DECL|function|gimage_mask_load (GimpImage * gimage,GimpChannel * channel)
 name|gimage_mask_load
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -2004,10 +2004,10 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimage_mask_save (GImage * gimage)
+DECL|function|gimage_mask_save (GimpImage * gimage)
 name|gimage_mask_save
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -2057,10 +2057,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimage_mask_stroke (GImage * gimage,GimpDrawable * drawable)
+DECL|function|gimage_mask_stroke (GimpImage * gimage,GimpDrawable * drawable)
 name|gimage_mask_stroke
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

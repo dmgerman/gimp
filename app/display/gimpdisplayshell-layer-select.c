@@ -129,7 +129,7 @@ modifier|*
 name|preview
 decl_stmt|;
 DECL|member|gimage
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -225,7 +225,7 @@ name|LayerSelect
 modifier|*
 name|layer_select
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -316,10 +316,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|layer_select_init (GImage * gimage,gint move,guint32 time)
+DECL|function|layer_select_init (GimpImage * gimage,gint move,guint32 time)
 name|layer_select_init
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1201,14 +1201,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layer_select_set_gimage (LayerSelect * layer_select,GImage * gimage)
+DECL|function|layer_select_set_gimage (LayerSelect * layer_select,GimpImage * gimage)
 name|layer_select_set_gimage
 parameter_list|(
 name|LayerSelect
 modifier|*
 name|layer_select
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)

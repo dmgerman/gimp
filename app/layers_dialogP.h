@@ -70,7 +70,7 @@ begin_function_decl
 name|void
 name|layers_dialog_layer_merge_query
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

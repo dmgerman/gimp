@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d5bc50103
+DECL|enum|__anon29654d1e0103
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d5bc50203
+DECL|enum|__anon29654d1e0203
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -149,11 +149,14 @@ modifier|*
 name|gimage
 parameter_list|,
 name|GimpImageBaseType
+name|new_type
 parameter_list|,
+comment|/* The following three params used only for                                * new_type == INDEXED                                */
 name|gint
 name|num_cols
 parameter_list|,
 name|ConvertDitherType
+name|dither
 parameter_list|,
 name|gint
 name|alpha_dither
@@ -162,6 +165,7 @@ name|gint
 name|remdups
 parameter_list|,
 name|ConvertPaletteType
+name|palette_type
 parameter_list|)
 function_decl|;
 end_function_decl

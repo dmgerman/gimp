@@ -1706,10 +1706,10 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd28f00108
+DECL|struct|__anon2bf63adf0108
 block|{
 DECL|member|def
-name|GImage
+name|GimpImage
 modifier|*
 modifier|*
 name|def
@@ -1733,7 +1733,7 @@ name|gint
 name|num_items
 decl_stmt|;
 DECL|member|id
-name|GImage
+name|GimpImage
 modifier|*
 name|id
 decl_stmt|;

@@ -2156,7 +2156,7 @@ expr_stmt|;
 name|component
 operator|=
 operator|(
-name|GImage
+name|GimpImage
 operator|*
 operator|)
 name|gtk_object_get_data

@@ -215,7 +215,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe95640103
+DECL|enum|__anon27cc93ab0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -4947,7 +4947,7 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;

@@ -7901,10 +7901,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_with_proc (GImage * gimage,gchar * full_filename,gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_filename)
+DECL|function|file_save_with_proc (GimpImage * gimage,gchar * full_filename,gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_filename)
 name|file_save_with_proc
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -7971,7 +7971,7 @@ name|filesave
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* If there was an error but file_save() didn't print an error      * message, then we'd better. */
+comment|/* If there was an error but file_save() didn't print an error    * message, then we'd better. */
 if|if
 condition|(
 name|status

@@ -34941,7 +34941,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c8ecd0108
+DECL|struct|__anon2c1e9a460108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35018,7 +35018,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c8ecd0208
+DECL|struct|__anon2c1e9a460208
 block|{
 DECL|member|ncolors
 name|long
@@ -35037,7 +35037,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c8ecd0308
+DECL|struct|__anon2c1e9a460308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38325,7 +38325,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c8ecd0408
+DECL|struct|__anon2c1e9a460408
 block|{
 DECL|member|used_count
 name|signed
@@ -39273,10 +39273,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|convert_image (GImage * gimage,GimpImageBaseType new_type,int num_cols,ConvertDitherType dither,int alpha_dither,int remdups,ConvertPaletteType palette_type)
+DECL|function|convert_image (GimpImage * gimage,GimpImageBaseType new_type,gint num_cols,ConvertDitherType dither,gint alpha_dither,gint remdups,ConvertPaletteType palette_type)
 name|convert_image
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -39284,16 +39284,16 @@ name|GimpImageBaseType
 name|new_type
 parameter_list|,
 comment|/* The following three params used only for 		* new_type == INDEXED 		*/
-name|int
+name|gint
 name|num_cols
 parameter_list|,
 name|ConvertDitherType
 name|dither
 parameter_list|,
-name|int
+name|gint
 name|alpha_dither
 parameter_list|,
-name|int
+name|gint
 name|remdups
 parameter_list|,
 name|ConvertPaletteType

@@ -124,10 +124,10 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adeb4c90108
+DECL|struct|__anon28b450a20108
 block|{
 DECL|member|gimage
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adeb4c90208
+DECL|struct|__anon28b450a20208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -191,7 +191,7 @@ name|gint
 name|size
 decl_stmt|;
 DECL|member|gimage
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -269,10 +269,10 @@ begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|mask_render_preview (GImage * gimage,gint * pwidth,gint * pheight)
+DECL|function|mask_render_preview (GimpImage * gimage,gint * pwidth,gint * pheight)
 name|mask_render_preview
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1736,7 +1736,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|undo_history_set_pixmap (GtkCList * clist,gint row,gint size,GImage * gimage)
+DECL|function|undo_history_set_pixmap (GtkCList * clist,gint row,gint size,GimpImage * gimage)
 name|undo_history_set_pixmap
 parameter_list|(
 name|GtkCList
@@ -1749,7 +1749,7 @@ parameter_list|,
 name|gint
 name|size
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -3224,10 +3224,10 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|undo_history_new (GImage * gimage)
+DECL|function|undo_history_new (GimpImage * gimage)
 name|undo_history_new
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)

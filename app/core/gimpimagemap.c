@@ -186,14 +186,14 @@ name|_ImageMap
 modifier|*
 name|_image_map
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
 name|PixelRegion
 name|shadowPR
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y

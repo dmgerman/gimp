@@ -2530,7 +2530,7 @@ name|OffsetDialog
 modifier|*
 name|off_d
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -2709,7 +2709,7 @@ name|OffsetDialog
 modifier|*
 name|off_d
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -3936,7 +3936,7 @@ name|GDisplay
 modifier|*
 name|new_gdisp
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|new_gimage
 decl_stmt|;

@@ -20,7 +20,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_group_start
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_group_end
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -45,7 +45,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_image
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -72,7 +72,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_image_mod
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -105,7 +105,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_mask
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -119,7 +119,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_layer_displace
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -134,7 +134,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_transform
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -148,7 +148,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_paint
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -162,7 +162,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_layer
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -179,7 +179,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_layer_mod
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -193,7 +193,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_layer_mask
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -210,7 +210,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_layer_change
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -225,7 +225,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_layer_reposition
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -240,7 +240,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_channel
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -257,7 +257,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_channel_mod
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -271,7 +271,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_fs_to_layer
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -285,7 +285,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_fs_rigor
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -299,7 +299,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_fs_relax
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -313,7 +313,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_gimage_mod
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -324,7 +324,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_guide
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -338,7 +338,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_image_parasite
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -352,7 +352,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_drawable_parasite
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -370,7 +370,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_image_parasite_remove
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -386,7 +386,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_drawable_parasite_remove
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -406,7 +406,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_qmask
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -417,7 +417,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_resolution
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -428,7 +428,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_layer_rename
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -443,7 +443,7 @@ begin_function_decl
 name|gboolean
 name|undo_push_cantundo
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -459,7 +459,7 @@ begin_function_decl
 name|gboolean
 name|undo_pop
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -470,7 +470,7 @@ begin_function_decl
 name|gboolean
 name|undo_redo
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -481,7 +481,7 @@ begin_function_decl
 name|void
 name|undo_free
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -494,7 +494,7 @@ name|gchar
 modifier|*
 name|undo_get_undo_name
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -507,7 +507,7 @@ name|gchar
 modifier|*
 name|undo_get_redo_name
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -542,7 +542,7 @@ begin_function_decl
 name|void
 name|undo_map_over_undo_stack
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -559,7 +559,7 @@ begin_function_decl
 name|void
 name|undo_map_over_redo_stack
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -576,7 +576,7 @@ begin_function_decl
 name|UndoType
 name|undo_get_undo_top_type
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -590,7 +590,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b26f8cb0103
+DECL|enum|__anon2b1caeb00103
 block|{
 DECL|enumerator|UNDO_PUSHED
 name|UNDO_PUSHED

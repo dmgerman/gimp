@@ -545,7 +545,7 @@ specifier|static
 name|void
 name|crop_adjust_guides
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -704,7 +704,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcc31420103
+DECL|enum|__anon289c04c50103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1942,10 +1942,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_adjust_guides (GImage * gimage,gint x1,gint y1,gint x2,gint y2)
+DECL|function|crop_adjust_guides (GimpImage * gimage,gint x1,gint y1,gint x2,gint y2)
 name|crop_adjust_guides
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -4287,10 +4287,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|crop_image (GImage * gimage,gint x1,gint y1,gint x2,gint y2,gboolean layer_only,gboolean crop_layers)
+DECL|function|crop_image (GimpImage * gimage,gint x1,gint y1,gint x2,gint y2,gboolean layer_only,gboolean crop_layers)
 name|crop_image
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

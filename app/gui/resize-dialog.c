@@ -7543,7 +7543,7 @@ name|image_scale
 init|=
 name|NULL
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 init|=
@@ -7633,7 +7633,7 @@ name|success
 init|=
 name|FALSE
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 init|=

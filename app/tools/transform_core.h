@@ -560,7 +560,7 @@ name|TileManager
 modifier|*
 name|transform_core_do
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -592,7 +592,7 @@ name|TileManager
 modifier|*
 name|transform_core_cut
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -611,7 +611,7 @@ begin_function_decl
 name|gboolean
 name|transform_core_paste
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

@@ -23,7 +23,7 @@ file|"gimpimage.h"
 end_include
 
 begin_function_decl
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage_new
 parameter_list|(

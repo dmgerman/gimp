@@ -36,7 +36,7 @@ name|TileManager
 modifier|*
 name|edit_cut
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -52,7 +52,7 @@ name|TileManager
 modifier|*
 name|edit_copy
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -68,7 +68,7 @@ name|GimpLayer
 modifier|*
 name|edit_paste
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -90,7 +90,7 @@ begin_function_decl
 name|gboolean
 name|edit_paste_as_new
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -105,7 +105,7 @@ begin_function_decl
 name|gboolean
 name|edit_clear
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -120,7 +120,7 @@ begin_function_decl
 name|gboolean
 name|edit_fill
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

@@ -236,7 +236,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296491a40103
+DECL|enum|__anon2a304d090103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296491a40203
+DECL|enum|__anon2a304d090203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -402,7 +402,7 @@ end_typedef
 begin_typedef
 DECL|typedef|info
 typedef|typedef
-name|GImage
+name|GimpImage
 modifier|*
 name|XcfLoader
 parameter_list|(
@@ -448,7 +448,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -464,7 +464,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -480,7 +480,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -496,7 +496,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -516,7 +516,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -553,7 +553,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -573,7 +573,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -674,7 +674,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -690,7 +690,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -722,7 +722,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -763,7 +763,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -780,7 +780,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -797,7 +797,7 @@ name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -1438,7 +1438,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -1775,7 +1775,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -1966,14 +1966,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_choose_format (XcfInfo * info,GImage * gimage)
+DECL|function|xcf_save_choose_format (XcfInfo * info,GimpImage * gimage)
 name|xcf_save_choose_format
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -2007,14 +2007,14 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|xcf_save_image (XcfInfo * info,GImage * gimage)
+DECL|function|xcf_save_image (XcfInfo * info,GimpImage * gimage)
 name|xcf_save_image
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -2585,14 +2585,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_image_props (XcfInfo * info,GImage * gimage)
+DECL|function|xcf_save_image_props (XcfInfo * info,GimpImage * gimage)
 name|xcf_save_image_props
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -2767,14 +2767,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_layer_props (XcfInfo * info,GImage * gimage,GimpLayer * layer)
+DECL|function|xcf_save_layer_props (XcfInfo * info,GimpImage * gimage,GimpLayer * layer)
 name|xcf_save_layer_props
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -3039,14 +3039,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_channel_props (XcfInfo * info,GImage * gimage,GimpChannel * channel)
+DECL|function|xcf_save_channel_props (XcfInfo * info,GimpImage * gimage,GimpChannel * channel)
 name|xcf_save_channel_props
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -3986,10 +3986,10 @@ begin_function
 specifier|static
 name|Path
 modifier|*
-DECL|function|read_one_path (GImage * gimage,XcfInfo * info)
+DECL|function|read_one_path (GimpImage * gimage,XcfInfo * info)
 name|read_one_path
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -4438,10 +4438,10 @@ begin_function
 specifier|static
 name|PathList
 modifier|*
-DECL|function|read_bzpaths (GImage * gimage,XcfInfo * info)
+DECL|function|read_bzpaths (GimpImage * gimage,XcfInfo * info)
 name|read_bzpaths
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -6769,14 +6769,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_layer (XcfInfo * info,GImage * gimage,GimpLayer * layer)
+DECL|function|xcf_save_layer (XcfInfo * info,GimpImage * gimage,GimpLayer * layer)
 name|xcf_save_layer
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -7085,14 +7085,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_channel (XcfInfo * info,GImage * gimage,GimpChannel * channel)
+DECL|function|xcf_save_channel (XcfInfo * info,GimpImage * gimage,GimpChannel * channel)
 name|xcf_save_channel
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -8600,7 +8600,7 @@ modifier|*
 name|info
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -9009,14 +9009,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_image_props (XcfInfo * info,GImage * gimage)
+DECL|function|xcf_load_image_props (XcfInfo * info,GimpImage * gimage)
 name|xcf_load_image_props
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -10040,14 +10040,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_layer_props (XcfInfo * info,GImage * gimage,GimpLayer * layer,gboolean * apply_mask,gboolean * edit_mask,gboolean * show_mask)
+DECL|function|xcf_load_layer_props (XcfInfo * info,GimpImage * gimage,GimpLayer * layer,gboolean * apply_mask,gboolean * edit_mask,gboolean * show_mask)
 name|xcf_load_layer_props
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -10586,14 +10586,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_channel_props (XcfInfo * info,GImage * gimage,GimpChannel * channel)
+DECL|function|xcf_load_channel_props (XcfInfo * info,GimpImage * gimage,GimpChannel * channel)
 name|xcf_load_channel_props
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -11070,14 +11070,14 @@ begin_function
 specifier|static
 name|GimpLayer
 modifier|*
-DECL|function|xcf_load_layer (XcfInfo * info,GImage * gimage)
+DECL|function|xcf_load_layer (XcfInfo * info,GimpImage * gimage)
 name|xcf_load_layer
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -11473,14 +11473,14 @@ begin_function
 specifier|static
 name|GimpChannel
 modifier|*
-DECL|function|xcf_load_channel (XcfInfo * info,GImage * gimage)
+DECL|function|xcf_load_channel (XcfInfo * info,GimpImage * gimage)
 name|xcf_load_channel
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -11727,14 +11727,14 @@ begin_function
 specifier|static
 name|GimpLayerMask
 modifier|*
-DECL|function|xcf_load_layer_mask (XcfInfo * info,GImage * gimage)
+DECL|function|xcf_load_layer_mask (XcfInfo * info,GimpImage * gimage)
 name|xcf_load_layer_mask
 parameter_list|(
 name|XcfInfo
 modifier|*
 name|info
 parameter_list|,
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)

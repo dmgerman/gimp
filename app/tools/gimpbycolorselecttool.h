@@ -52,7 +52,7 @@ begin_function_decl
 name|void
 name|by_color_select_initialize_by_image
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)

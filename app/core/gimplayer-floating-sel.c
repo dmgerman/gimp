@@ -125,7 +125,7 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -269,7 +269,7 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -328,7 +328,7 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -465,7 +465,7 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -598,7 +598,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -1571,7 +1571,7 @@ name|gboolean
 name|undo
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 init|=
@@ -1656,7 +1656,7 @@ name|gboolean
 name|undo
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 init|=
@@ -1766,7 +1766,7 @@ block|{
 name|PixelRegion
 name|fsPR
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
