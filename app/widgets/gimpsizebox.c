@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce177a0103
+DECL|enum|__anon27cf8b420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -792,9 +792,9 @@ name|box
 operator|->
 name|xresolution
 argument_list|,
-literal|0
+name|GIMP_MIN_IMAGE_SIZE
 argument_list|,
-literal|100000
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
@@ -815,9 +815,9 @@ name|box
 operator|->
 name|yresolution
 argument_list|,
-literal|0
+name|GIMP_MIN_IMAGE_SIZE
 argument_list|,
-literal|100000
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
@@ -865,7 +865,7 @@ name|box
 operator|->
 name|height
 expr_stmt|;
-comment|/*    * let gimp_prop_coordinates_callback know how to    * interpret the chainbutton.  This should be removed    * eventually.    */
+comment|/*    * let gimp_prop_coordinates_callback know how to interpret the chainbutton    */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -1786,21 +1786,31 @@ name|gchar
 modifier|*
 name|text
 decl_stmt|;
-if|if
-condition|(
-operator|(
 name|gint
-operator|)
+name|xres
+init|=
+name|ROUND
+argument_list|(
 name|box
 operator|->
 name|xresolution
-operator|!=
-operator|(
+argument_list|)
+decl_stmt|;
 name|gint
-operator|)
+name|yres
+init|=
+name|ROUND
+argument_list|(
 name|box
 operator|->
 name|yresolution
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|xres
+operator|!=
+name|yres
 condition|)
 name|text
 operator|=
@@ -1811,19 +1821,9 @@ argument_list|(
 literal|"%d x %d dpi"
 argument_list|)
 argument_list|,
-operator|(
-name|gint
-operator|)
-name|box
-operator|->
-name|xresolution
+name|xres
 argument_list|,
-operator|(
-name|gint
-operator|)
-name|box
-operator|->
-name|yresolution
+name|yres
 argument_list|)
 expr_stmt|;
 else|else
@@ -1836,12 +1836,7 @@ argument_list|(
 literal|"%d dpi"
 argument_list|)
 argument_list|,
-operator|(
-name|gint
-operator|)
-name|box
-operator|->
-name|yresolution
+name|yres
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
