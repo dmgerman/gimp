@@ -233,7 +233,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,BucketFillMode fill_mode,gint paint_mode,gdouble opacity,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,BucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
@@ -248,6 +248,9 @@ name|paint_mode
 parameter_list|,
 name|gdouble
 name|opacity
+parameter_list|,
+name|gboolean
+name|fill_transparent
 parameter_list|,
 name|gdouble
 name|threshold
@@ -407,6 +410,8 @@ argument_list|,
 name|TRUE
 comment|/* do seed fill */
 argument_list|,
+name|fill_transparent
+argument_list|,
 name|threshold
 argument_list|,
 name|sample_merged
@@ -421,7 +426,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill_full (GimpDrawable * drawable,BucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
+DECL|function|gimp_drawable_bucket_fill_full (GimpDrawable * drawable,BucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
 name|gimp_drawable_bucket_fill_full
 parameter_list|(
 name|GimpDrawable
@@ -448,6 +453,9 @@ name|opacity
 parameter_list|,
 name|gboolean
 name|do_seed_fill
+parameter_list|,
+name|gboolean
+name|fill_transparent
 parameter_list|,
 name|gdouble
 name|threshold
@@ -908,6 +916,8 @@ operator|(
 name|gint
 operator|)
 name|threshold
+argument_list|,
+name|fill_transparent
 argument_list|,
 operator|(
 name|gint

@@ -38,6 +38,9 @@ parameter_list|,
 name|gint
 name|threshold
 parameter_list|,
+name|gboolean
+name|select_transparent
+parameter_list|,
 name|gint
 name|x
 parameter_list|,
@@ -68,6 +71,9 @@ name|antialias
 parameter_list|,
 name|gint
 name|threshold
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|,
 specifier|const
 name|GimpRGB

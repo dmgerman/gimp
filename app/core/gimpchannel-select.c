@@ -718,7 +718,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_fuzzy (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gint threshold,ChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_fuzzy (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gint threshold,gboolean select_transparent,ChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_fuzzy
 parameter_list|(
 name|GimpImage
@@ -740,6 +740,9 @@ name|y
 parameter_list|,
 name|gint
 name|threshold
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|,
 name|ChannelOps
 name|op
@@ -791,6 +794,8 @@ name|antialias
 argument_list|,
 name|threshold
 argument_list|,
+name|select_transparent
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -828,7 +833,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_by_color (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,const GimpRGB * color,gint threshold,ChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_by_color (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,const GimpRGB * color,gint threshold,gboolean select_transparent,ChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_by_color
 parameter_list|(
 name|GimpImage
@@ -849,6 +854,9 @@ name|color
 parameter_list|,
 name|gint
 name|threshold
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|,
 name|ChannelOps
 name|op
@@ -906,6 +914,8 @@ argument_list|,
 name|antialias
 argument_list|,
 name|threshold
+argument_list|,
+name|select_transparent
 argument_list|,
 name|color
 argument_list|)

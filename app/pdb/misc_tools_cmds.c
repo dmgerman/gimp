@@ -989,6 +989,9 @@ name|opacity
 operator|/
 literal|100.0
 argument_list|,
+name|FALSE
+comment|/* don't fill transparent */
+argument_list|,
 name|threshold
 argument_list|,
 name|sample_merged

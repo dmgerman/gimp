@@ -1543,6 +1543,10 @@ name|sel_options
 operator|->
 name|threshold
 argument_list|,
+name|sel_options
+operator|->
+name|select_transparent
+argument_list|,
 name|sel_tool
 operator|->
 name|op
@@ -3946,6 +3950,10 @@ name|sel_options
 operator|->
 name|threshold
 argument_list|,
+name|sel_options
+operator|->
+name|select_transparent
+argument_list|,
 name|operation
 argument_list|,
 name|sel_options
@@ -4083,6 +4091,10 @@ argument_list|,
 name|sel_options
 operator|->
 name|threshold
+argument_list|,
+name|sel_options
+operator|->
+name|select_transparent
 argument_list|,
 name|sel_options
 operator|->

@@ -221,11 +221,18 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|undo_pop
 argument_list|(
 name|gimage
 argument_list|)
+condition|)
+block|{
+name|gdisplays_flush
+argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -253,11 +260,18 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|undo_redo
 argument_list|(
 name|gimage
 argument_list|)
+condition|)
+block|{
+name|gdisplays_flush
+argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -33,6 +33,9 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
+name|gboolean
+name|fill_transparent
+parameter_list|,
 name|gdouble
 name|threshold
 parameter_list|,
@@ -76,6 +79,9 @@ name|opacity
 parameter_list|,
 name|gboolean
 name|do_seed_fill
+parameter_list|,
+name|gboolean
+name|fill_transparent
 parameter_list|,
 name|gdouble
 name|threshold

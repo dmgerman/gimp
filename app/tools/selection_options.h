@@ -93,6 +93,19 @@ modifier|*
 name|feather_radius_w
 decl_stmt|;
 comment|/*  used by fuzzy, by-color selection  */
+DECL|member|select_transparent
+name|gboolean
+name|select_transparent
+decl_stmt|;
+DECL|member|select_transparent_d
+name|gboolean
+name|select_transparent_d
+decl_stmt|;
+DECL|member|select_transparent_w
+name|GtkWidget
+modifier|*
+name|select_transparent_w
+decl_stmt|;
 DECL|member|sample_merged
 name|gboolean
 name|sample_merged

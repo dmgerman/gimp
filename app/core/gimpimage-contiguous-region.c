@@ -103,6 +103,9 @@ name|bytes
 parameter_list|,
 name|gboolean
 name|has_alpha
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -176,6 +179,9 @@ name|gboolean
 name|has_alpha
 parameter_list|,
 name|gboolean
+name|select_transparent
+parameter_list|,
+name|gboolean
 name|antialias
 parameter_list|,
 name|gint
@@ -212,6 +218,9 @@ name|gboolean
 name|has_alpha
 parameter_list|,
 name|gboolean
+name|select_transparent
+parameter_list|,
+name|gboolean
 name|antialias
 parameter_list|,
 name|gint
@@ -240,7 +249,7 @@ end_comment
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_contiguous_region_by_seed (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gboolean antialias,gint threshold,gint x,gint y)
+DECL|function|gimp_image_contiguous_region_by_seed (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gboolean antialias,gint threshold,gboolean select_transparent,gint x,gint y)
 name|gimp_image_contiguous_region_by_seed
 parameter_list|(
 name|GimpImage
@@ -259,6 +268,9 @@ name|antialias
 parameter_list|,
 name|gint
 name|threshold
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|,
 name|gint
 name|x
@@ -507,6 +519,41 @@ operator|%
 name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|has_alpha
+condition|)
+block|{
+if|if
+condition|(
+name|select_transparent
+condition|)
+block|{
+comment|/*  don't select transparent regions if the start pixel isn't                *  fully transparent                */
+if|if
+condition|(
+name|start
+index|[
+name|bytes
+operator|-
+literal|1
+index|]
+operator|>
+literal|0
+condition|)
+name|select_transparent
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|select_transparent
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 name|find_contiguous_region_helper
 argument_list|(
 operator|&
@@ -516,6 +563,8 @@ operator|&
 name|srcPR
 argument_list|,
 name|has_alpha
+argument_list|,
+name|select_transparent
 argument_list|,
 name|antialias
 argument_list|,
@@ -547,7 +596,7 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_image_contiguous_region_by_color (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gboolean antialias,gint threshold,const GimpRGB * color)
+DECL|function|gimp_image_contiguous_region_by_color (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gboolean antialias,gint threshold,gboolean select_transparent,const GimpRGB * color)
 name|gimp_image_contiguous_region_by_color
 parameter_list|(
 name|GimpImage
@@ -566,6 +615,9 @@ name|antialias
 parameter_list|,
 name|gint
 name|threshold
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -832,6 +884,39 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|has_alpha
+condition|)
+block|{
+if|if
+condition|(
+name|select_transparent
+condition|)
+block|{
+comment|/*  don't select transparancy if "color" isn't fully transparent            */
+if|if
+condition|(
+name|col
+index|[
+literal|3
+index|]
+operator|>
+literal|0
+condition|)
+name|select_transparent
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|select_transparent
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+if|if
+condition|(
 name|indexed
 condition|)
 block|{
@@ -1021,6 +1106,8 @@ argument_list|,
 name|color_bytes
 argument_list|,
 name|has_alpha
+argument_list|,
+name|select_transparent
 argument_list|)
 expr_stmt|;
 name|idata
@@ -1055,7 +1142,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|is_pixel_sufficiently_different (guchar * col1,guchar * col2,gboolean antialias,gint threshold,gint bytes,gboolean has_alpha)
+DECL|function|is_pixel_sufficiently_different (guchar * col1,guchar * col2,gboolean antialias,gint threshold,gint bytes,gboolean has_alpha,gboolean select_transparent)
 name|is_pixel_sufficiently_different
 parameter_list|(
 name|guchar
@@ -1077,6 +1164,9 @@ name|bytes
 parameter_list|,
 name|gboolean
 name|has_alpha
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|)
 block|{
 name|gint
@@ -1110,6 +1200,9 @@ expr_stmt|;
 comment|/*  if there is an alpha channel, never select transparent regions  */
 if|if
 condition|(
+operator|!
+name|select_transparent
+operator|&&
 name|has_alpha
 operator|&&
 name|col2
@@ -1122,7 +1215,36 @@ condition|)
 return|return
 literal|0
 return|;
-comment|/*  fuzzy_select had a "for (b = 0; b< _bytes_; b++)" loop. however    *  i'm quite sure "b< alpha" is correct for both tools  --Mitch    */
+if|if
+condition|(
+name|select_transparent
+operator|&&
+name|has_alpha
+condition|)
+block|{
+name|max
+operator|=
+name|col1
+index|[
+name|alpha
+index|]
+operator|-
+name|col2
+index|[
+name|alpha
+index|]
+expr_stmt|;
+name|max
+operator|=
+name|abs
+argument_list|(
+name|max
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/*  fuzzy_select had a "for (b = 0; b< _bytes_; b++)" loop. however        *  i'm quite sure "b< alpha" is correct for both tools  --Mitch        */
 for|for
 control|(
 name|b
@@ -1166,6 +1288,7 @@ name|max
 operator|=
 name|diff
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -1385,7 +1508,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|find_contiguous_segment (guchar * col,PixelRegion * src,PixelRegion * mask,gint width,gint bytes,gboolean has_alpha,gboolean antialias,gint threshold,gint initial,gint * start,gint * end)
+DECL|function|find_contiguous_segment (guchar * col,PixelRegion * src,PixelRegion * mask,gint width,gint bytes,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gint initial,gint * start,gint * end)
 name|find_contiguous_segment
 parameter_list|(
 name|guchar
@@ -1408,6 +1531,9 @@ name|bytes
 parameter_list|,
 name|gboolean
 name|has_alpha
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|,
 name|gboolean
 name|antialias
@@ -1501,6 +1627,8 @@ argument_list|,
 name|bytes
 argument_list|,
 name|has_alpha
+argument_list|,
+name|select_transparent
 argument_list|)
 operator|)
 condition|)
@@ -1609,6 +1737,8 @@ argument_list|,
 name|bytes
 argument_list|,
 name|has_alpha
+argument_list|,
+name|select_transparent
 argument_list|)
 expr_stmt|;
 if|if
@@ -1752,6 +1882,8 @@ argument_list|,
 name|bytes
 argument_list|,
 name|has_alpha
+argument_list|,
+name|select_transparent
 argument_list|)
 expr_stmt|;
 if|if
@@ -1800,7 +1932,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|find_contiguous_region_helper (PixelRegion * mask,PixelRegion * src,gboolean has_alpha,gboolean antialias,gint threshold,gboolean indexed,gint x,gint y,guchar * col)
+DECL|function|find_contiguous_region_helper (PixelRegion * mask,PixelRegion * src,gboolean has_alpha,gboolean select_transparent,gboolean antialias,gint threshold,gboolean indexed,gint x,gint y,guchar * col)
 name|find_contiguous_region_helper
 parameter_list|(
 name|PixelRegion
@@ -1813,6 +1945,9 @@ name|src
 parameter_list|,
 name|gboolean
 name|has_alpha
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|,
 name|gboolean
 name|antialias
@@ -1853,16 +1988,6 @@ name|tile
 decl_stmt|;
 if|if
 condition|(
-name|threshold
-operator|==
-literal|0
-condition|)
-name|threshold
-operator|=
-literal|1
-expr_stmt|;
-if|if
-condition|(
 name|x
 operator|<
 literal|0
@@ -1887,6 +2012,16 @@ operator|->
 name|h
 condition|)
 return|return;
+if|if
+condition|(
+name|threshold
+operator|==
+literal|0
+condition|)
+name|threshold
+operator|=
+literal|1
+expr_stmt|;
 name|tile
 operator|=
 name|tile_manager_get_tile
@@ -1993,6 +2128,8 @@ name|bytes
 argument_list|,
 name|has_alpha
 argument_list|,
+name|select_transparent
+argument_list|,
 name|antialias
 argument_list|,
 name|threshold
@@ -2031,6 +2168,8 @@ name|src
 argument_list|,
 name|has_alpha
 argument_list|,
+name|select_transparent
+argument_list|,
 name|antialias
 argument_list|,
 name|threshold
@@ -2053,6 +2192,8 @@ argument_list|,
 name|src
 argument_list|,
 name|has_alpha
+argument_list|,
+name|select_transparent
 argument_list|,
 name|antialias
 argument_list|,

@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/gimpbycolorselecttool.h"
 end_include
 
@@ -251,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2779e2780103
+DECL|enum|__anon2c36ec310103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -2076,22 +2070,6 @@ operator|!
 name|in_group
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: investigate why display update was done here
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|GimpDisplay *gdisp;           gint         x, y;
-comment|/*  Flush any image updates and displays  */
-block|gdisp = gimp_context_get_display (gimp_get_user_context (gimage->gimp));  	  if (gdisp) 	    {               GimpDisplayShell *shell;                shell = GIMP_DISPLAY_SHELL (gdisp->shell);  	      if (shell->gdisp->disp_xoffset || shell->gdisp->disp_yoffset) 		{ 		  gdk_drawable_get_size (shell->canvas->window,&x,&y);  		  if (shell->gdisp->disp_yoffset) 		    { 		      gimp_display_shell_add_expose_area (shell,                                                           0, 0,                                                           shell->gdisp->disp_width,                                                           shell->gdisp->disp_yoffset); 		      gimp_display_shell_add_expose_area (shell,                                                           0, shell->gdisp->disp_yoffset + y,                                                           shell->gdisp->disp_width,                                                           shell->gdisp->disp_height); 		    }  		  if (shell->gdisp->disp_xoffset) 		    { 		      gimp_display_shell_add_expose_area (shell,                                                           0, 0,                                                           shell->gdisp->disp_xoffset,                                                           shell->gdisp->disp_height); 		      gimp_display_shell_add_expose_area (shell,                                                           shell->gdisp->disp_xoffset + x, 0,                                                           shell->gdisp->disp_width,                                                           shell->gdisp->disp_height); 		    } 		} 	    }
-endif|#
-directive|endif
 comment|/*  If the mode_changed flag was set  */
 if|if
 condition|(
@@ -2174,9 +2152,6 @@ name|UNDO_POPPED
 else|:
 name|UNDO_REDO
 argument_list|)
-expr_stmt|;
-name|gdisplays_flush
-argument_list|()
 expr_stmt|;
 return|return
 name|TRUE

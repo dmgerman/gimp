@@ -1410,6 +1410,10 @@ name|sel_options
 operator|->
 name|threshold
 argument_list|,
+name|sel_options
+operator|->
+name|select_transparent
+argument_list|,
 name|x
 argument_list|,
 name|y

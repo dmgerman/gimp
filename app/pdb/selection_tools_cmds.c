@@ -381,6 +381,9 @@ name|color
 argument_list|,
 name|threshold
 argument_list|,
+name|FALSE
+comment|/* don't select transparent */
+argument_list|,
 name|operation
 argument_list|,
 name|antialias
@@ -1454,6 +1457,9 @@ argument_list|,
 name|y
 argument_list|,
 name|threshold
+argument_list|,
+name|FALSE
+comment|/* don't select transparent */
 argument_list|,
 name|operation
 argument_list|,

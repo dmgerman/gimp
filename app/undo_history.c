@@ -57,7 +57,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"display/display-types.h"
 end_include
 
 begin_include
@@ -94,6 +94,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -141,7 +147,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa63f520108
+DECL|struct|__anon27dfa3bd0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -192,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa63f520208
+DECL|struct|__anon27dfa3bd0208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -2171,13 +2177,20 @@ name|st
 init|=
 name|data
 decl_stmt|;
+if|if
+condition|(
 name|undo_pop
 argument_list|(
 name|st
 operator|->
 name|gimage
 argument_list|)
+condition|)
+block|{
+name|gdisplays_flush
+argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2205,13 +2218,20 @@ name|st
 init|=
 name|data
 decl_stmt|;
+if|if
+condition|(
 name|undo_redo
 argument_list|(
 name|st
 operator|->
 name|gimage
 argument_list|)
+condition|)
+block|{
+name|gdisplays_flush
+argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2975,6 +2995,9 @@ name|old_selection
 operator|++
 expr_stmt|;
 block|}
+name|gdisplays_flush
+argument_list|()
+expr_stmt|;
 name|undo_history_set_pixmap
 argument_list|(
 name|GTK_CLIST

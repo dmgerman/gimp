@@ -180,6 +180,9 @@ parameter_list|,
 name|gint
 name|threshold
 parameter_list|,
+name|gboolean
+name|select_transparent
+parameter_list|,
 name|ChannelOps
 name|op
 parameter_list|,
@@ -220,6 +223,9 @@ name|color
 parameter_list|,
 name|gint
 name|threshold
+parameter_list|,
+name|gboolean
+name|select_transparent
 parameter_list|,
 name|ChannelOps
 name|op

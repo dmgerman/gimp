@@ -940,12 +940,6 @@ name|tool_info
 operator|->
 name|tool_type
 operator|==
-name|GIMP_TYPE_BUCKET_FILL_TOOL
-operator|||
-name|tool_info
-operator|->
-name|tool_type
-operator|==
 name|GIMP_TYPE_BLEND_TOOL
 condition|)
 block|{
