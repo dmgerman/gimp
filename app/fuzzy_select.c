@@ -146,16 +146,21 @@ decl_stmt|,
 name|y
 decl_stmt|;
 comment|/*  Point from which to execute seed fill  */
-DECL|member|last_x
+DECL|member|first_x
 name|int
-name|last_x
+name|first_x
 decl_stmt|;
 comment|/*                                         */
-DECL|member|last_y
+DECL|member|first_y
 name|int
-name|last_y
+name|first_y
 decl_stmt|;
 comment|/*  variables to keep track of sensitivity */
+DECL|member|first_threshold
+name|double
+name|first_threshold
+decl_stmt|;
+comment|/* initial value of threshold slider   */
 block|}
 struct|;
 end_struct
@@ -1884,7 +1889,7 @@ name|y
 expr_stmt|;
 name|fuzzy_sel
 operator|->
-name|last_x
+name|first_x
 operator|=
 name|fuzzy_sel
 operator|->
@@ -1892,11 +1897,19 @@ name|x
 expr_stmt|;
 name|fuzzy_sel
 operator|->
-name|last_y
+name|first_y
 operator|=
 name|fuzzy_sel
 operator|->
 name|y
+expr_stmt|;
+name|fuzzy_sel
+operator|->
+name|first_threshold
+operator|=
+name|fuzzy_options
+operator|->
+name|threshold
 expr_stmt|;
 name|gdk_pointer_grab
 argument_list|(
@@ -2206,11 +2219,12 @@ name|int
 name|num_new_segs
 decl_stmt|;
 name|int
-name|diff
-decl_stmt|,
 name|diff_x
 decl_stmt|,
 name|diff_y
+decl_stmt|;
+name|double
+name|diff
 decl_stmt|;
 if|if
 condition|(
@@ -2239,7 +2253,7 @@ name|x
 operator|-
 name|fuzzy_sel
 operator|->
-name|last_x
+name|first_x
 expr_stmt|;
 name|diff_y
 operator|=
@@ -2249,7 +2263,7 @@ name|y
 operator|-
 name|fuzzy_sel
 operator|->
-name|last_y
+name|first_y
 expr_stmt|;
 name|diff
 operator|=
@@ -2271,23 +2285,7 @@ else|:
 name|diff_y
 operator|)
 operator|/
-literal|2
-expr_stmt|;
-name|fuzzy_sel
-operator|->
-name|last_x
-operator|=
-name|mevent
-operator|->
-name|x
-expr_stmt|;
-name|fuzzy_sel
-operator|->
-name|last_y
-operator|=
-name|mevent
-operator|->
-name|y
+literal|2.0
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
@@ -2298,9 +2296,9 @@ operator|->
 name|threshold_w
 argument_list|)
 argument_list|,
-name|fuzzy_options
+name|fuzzy_sel
 operator|->
-name|threshold
+name|first_threshold
 operator|+
 name|diff
 argument_list|)

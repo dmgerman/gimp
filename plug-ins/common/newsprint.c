@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * newsprint plug-in  * Copyright (C) 1997-1998 Austin Donnelly<austin@greenend.org.uk>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Portions of this plug-in are copyright 1991-1992 Adobe Systems  * Incorporated.  See the spot_PS*() functions for details.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * newsprint plug-in  * Copyright (C) 1997-1998 Austin Donnelly<austin@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Portions of this plug-in are copyright 1991-1992 Adobe Systems  * Incorporated.  See the spot_PS*() functions for details.  */
 end_comment
 
 begin_comment
@@ -552,7 +552,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28c5a5e70108
+DECL|struct|__anon299196070108
 typedef|typedef
 struct|struct
 block|{
@@ -812,7 +812,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c5a5e70208
+DECL|struct|__anon299196070208
 typedef|typedef
 struct|struct
 block|{
@@ -885,7 +885,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c5a5e70308
+DECL|struct|__anon299196070308
 typedef|typedef
 struct|struct
 block|{
@@ -911,7 +911,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28c5a5e70408
+DECL|struct|__anon299196070408
 typedef|typedef
 struct|struct
 block|{
@@ -944,7 +944,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28c5a5e70503
+DECL|enum|__anon299196070503
 typedef|typedef
 enum|enum
 block|{
@@ -960,7 +960,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28c5a5e70608
+DECL|struct|__anon299196070608
 typedef|typedef
 struct|struct
 block|{
@@ -1018,7 +1018,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c5a5e70708
+DECL|struct|__anon299196070708
 typedef|typedef
 struct|struct
 block|{
@@ -1120,7 +1120,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c5a5e70808
+DECL|struct|__anon299196070808
 typedef|typedef
 struct|struct
 block|{
@@ -1308,7 +1308,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c5a5e70908
+DECL|struct|__anon299196070908
 typedef|typedef
 struct|struct
 block|{
@@ -7355,7 +7355,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c5a5e70a08
+DECL|struct|__anon299196070a08
 typedef|typedef
 struct|struct
 block|{

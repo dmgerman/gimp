@@ -19,6 +19,10 @@ begin_comment
 comment|/*   * 21-AUG-99 - Bunch O' Fixes.  * - Adam D. Moss<adam@gimp.org>  *  * We now correctly create an alpha-padded layer for our preview --  * having a non-background non-alpha layer is a no-no in GIMP.  *  * I've also tweaked the GIMP undo API a little and changed the JPEG  * plugin to use gimp_image_{freeze,thaw}_undo so that it doesn't store  * up a whole load of superfluous tile data every time the preview is  * changed.  */
 end_comment
 
+begin_comment
+comment|/*  * 22-DEC-99 - volatiles added  * - Austin Donnelly<austin@gimp.org>  *  * When gcc complains a variable may be clobbered by a longjmp or  * vfork, it means the following: setjmp() was called by the JPEG  * library for error recovery purposes, but gcc is keeping some  * variables in registers without updating the memory locations on the  * stack consistently.  If JPEG error recovery is every invoked, the  * values of these variable will be inconsistent.  This is almost  * always a bug, but not one that's commonly seen unless JPEG recovery  * code is exercised frequently.  The correct solution is to tell gcc  * to keep the stack version of the affected variables up to date, by  * using the "volatile" keyword.   Here endeth the lesson.  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -120,6 +124,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<signal.h>
 end_include
 
 begin_define
@@ -279,7 +289,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b432ac0108
+DECL|struct|__anon2b1ae3c70108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b432ac0208
+DECL|struct|__anon2b1ae3c70208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +351,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b432ac0308
+DECL|struct|__anon2b1ae3c70308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1282,6 +1292,12 @@ name|d_status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|printf ("JPEG: Waiting (pid %d)...\n", getpid());       kill (getpid(), SIGSTOP);
+endif|#
+directive|endif
 if|if
 condition|(
 name|strcmp
@@ -2793,6 +2809,7 @@ name|buf
 decl_stmt|;
 name|guchar
 modifier|*
+specifier|volatile
 name|padded_buf
 init|=
 name|NULL
@@ -2833,12 +2850,14 @@ name|local_save_vals
 decl_stmt|;
 name|Parasite
 modifier|*
+specifier|volatile
 name|comment_parasite
 init|=
 name|NULL
 decl_stmt|;
 name|Parasite
 modifier|*
+specifier|volatile
 name|vals_parasite
 init|=
 name|NULL
@@ -3054,6 +3073,10 @@ name|local_image_comments
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+name|local_image_comments
+operator|=
+name|NULL
 expr_stmt|;
 name|comment_parasite
 operator|=
