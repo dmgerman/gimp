@@ -2954,10 +2954,12 @@ operator|<<
 literal|8
 operator|)
 operator||
+operator|(
 name|pixel
 index|[
 literal|2
 index|]
+operator|)
 operator||
 operator|(
 name|pixel
@@ -3528,6 +3530,10 @@ name|ico
 operator|->
 name|fp
 argument_list|,
+operator|(
+name|guint8
+operator|*
+operator|)
 name|data
 operator|->
 name|palette

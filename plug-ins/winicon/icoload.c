@@ -1271,6 +1271,10 @@ name|ico
 operator|->
 name|fp
 argument_list|,
+operator|(
+name|guint8
+operator|*
+operator|)
 name|data
 operator|->
 name|palette
