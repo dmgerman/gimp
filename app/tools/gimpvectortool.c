@@ -2525,6 +2525,11 @@ name|VECTORS_FINISHED
 expr_stmt|;
 if|if
 condition|(
+name|vector_tool
+operator|->
+name|have_undo
+operator|&&
+operator|(
 operator|!
 name|vector_tool
 operator|->
@@ -2534,10 +2539,7 @@ operator|(
 name|state
 operator|&
 name|GDK_BUTTON3_MASK
-operator|&&
-name|vector_tool
-operator|->
-name|have_undo
+operator|)
 operator|)
 condition|)
 block|{
@@ -2584,6 +2586,11 @@ argument_list|(
 name|undo
 argument_list|,
 name|GIMP_UNDO_MODE_UNDO
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|undo
 argument_list|)
 expr_stmt|;
 block|}
