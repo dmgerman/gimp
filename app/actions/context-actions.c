@@ -311,7 +311,7 @@ block|{
 block|{
 literal|"context-foreground-red-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Foreground Red Set"
 block|,
@@ -327,7 +327,7 @@ block|,
 block|{
 literal|"context-foreground-red-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Foreground Red Minimum"
 block|,
@@ -343,7 +343,7 @@ block|,
 block|{
 literal|"context-foreground-red-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Foreground Red Maximum"
 block|,
@@ -359,7 +359,7 @@ block|,
 block|{
 literal|"context-foreground-red-decrease"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Foreground Red Decrease"
 block|,
@@ -375,7 +375,7 @@ block|,
 block|{
 literal|"context-foreground-red-increase"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Foreground Red Increase"
 block|,
@@ -391,7 +391,7 @@ block|,
 block|{
 literal|"context-foreground-red-decrease-skip"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Foreground Red Decrease 10%"
 block|,
@@ -407,7 +407,7 @@ block|,
 block|{
 literal|"context-foreground-red-increase-skip"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Foreground Red Increase 10%"
 block|,
@@ -434,7 +434,7 @@ block|{
 block|{
 literal|"context-foreground-green-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Set"
 block|,
@@ -450,7 +450,7 @@ block|,
 block|{
 literal|"context-foreground-green-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Minimum"
 block|,
@@ -466,7 +466,7 @@ block|,
 block|{
 literal|"context-foreground-green-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Maximum"
 block|,
@@ -482,7 +482,7 @@ block|,
 block|{
 literal|"context-foreground-green-decrease"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Decrease"
 block|,
@@ -498,7 +498,7 @@ block|,
 block|{
 literal|"context-foreground-green-increase"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Increase"
 block|,
@@ -514,7 +514,7 @@ block|,
 block|{
 literal|"context-foreground-green-decrease-skip"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Decrease 10%"
 block|,
@@ -530,7 +530,7 @@ block|,
 block|{
 literal|"context-foreground-green-increase-skip"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Foreground Green Increase 10%"
 block|,
@@ -557,7 +557,7 @@ block|{
 block|{
 literal|"context-foreground-blue-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Set"
 block|,
@@ -573,7 +573,7 @@ block|,
 block|{
 literal|"context-foreground-blue-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Minimum"
 block|,
@@ -589,7 +589,7 @@ block|,
 block|{
 literal|"context-foreground-blue-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Maximum"
 block|,
@@ -605,7 +605,7 @@ block|,
 block|{
 literal|"context-foreground-blue-decrease"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Decrease"
 block|,
@@ -621,7 +621,7 @@ block|,
 block|{
 literal|"context-foreground-blue-increase"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Increase"
 block|,
@@ -637,7 +637,7 @@ block|,
 block|{
 literal|"context-foreground-blue-decrease-skip"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Decrease 10%"
 block|,
@@ -653,7 +653,7 @@ block|,
 block|{
 literal|"context-foreground-blue-increase-skip"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Foreground Blue Increase 10%"
 block|,
@@ -680,7 +680,7 @@ block|{
 block|{
 literal|"context-background-red-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Background Red Set"
 block|,
@@ -696,7 +696,7 @@ block|,
 block|{
 literal|"context-background-red-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Background Red Minimum"
 block|,
@@ -712,7 +712,7 @@ block|,
 block|{
 literal|"context-background-red-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Background Red Maximum"
 block|,
@@ -728,7 +728,7 @@ block|,
 block|{
 literal|"context-background-red-decrease"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Background Red Decrease"
 block|,
@@ -744,7 +744,7 @@ block|,
 block|{
 literal|"context-background-red-increase"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Background Red Increase"
 block|,
@@ -760,7 +760,7 @@ block|,
 block|{
 literal|"context-background-red-decrease-skip"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Background Red Decrease 10%"
 block|,
@@ -776,7 +776,7 @@ block|,
 block|{
 literal|"context-background-red-increase-skip"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_RED
 block|,
 literal|"Background Red Increase 10%"
 block|,
@@ -803,7 +803,7 @@ block|{
 block|{
 literal|"context-background-green-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Background Green Set"
 block|,
@@ -819,7 +819,7 @@ block|,
 block|{
 literal|"context-background-green-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Background Green Minimum"
 block|,
@@ -835,7 +835,7 @@ block|,
 block|{
 literal|"context-background-green-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Background Green Maximum"
 block|,
@@ -851,7 +851,7 @@ block|,
 block|{
 literal|"context-background-green-decrease"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Background Green Decrease"
 block|,
@@ -867,7 +867,7 @@ block|,
 block|{
 literal|"context-background-green-increase"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Background Green Increase"
 block|,
@@ -883,7 +883,7 @@ block|,
 block|{
 literal|"context-background-green-decrease-skip"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Background Green Decrease 10%"
 block|,
@@ -899,7 +899,7 @@ block|,
 block|{
 literal|"context-background-green-increase-skip"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_GREEN
 block|,
 literal|"Background Green Increase 10%"
 block|,
@@ -926,7 +926,7 @@ block|{
 block|{
 literal|"context-background-blue-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Background Blue Set"
 block|,
@@ -942,7 +942,7 @@ block|,
 block|{
 literal|"context-background-blue-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Background Blue Minimum"
 block|,
@@ -958,7 +958,7 @@ block|,
 block|{
 literal|"context-background-blue-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Background Blue Maximum"
 block|,
@@ -974,7 +974,7 @@ block|,
 block|{
 literal|"context-background-blue-decrease"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Background Blue Decrease"
 block|,
@@ -990,7 +990,7 @@ block|,
 block|{
 literal|"context-background-blue-increase"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Background Blue Increase"
 block|,
@@ -1006,7 +1006,7 @@ block|,
 block|{
 literal|"context-background-blue-decrease-skip"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Background Blue Decrease 10%"
 block|,
@@ -1022,7 +1022,7 @@ block|,
 block|{
 literal|"context-background-blue-increase-skip"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_CHANNEL_BLUE
 block|,
 literal|"Background Blue Increase 10%"
 block|,
@@ -1049,7 +1049,7 @@ block|{
 block|{
 literal|"context-opacity-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"Set Transparency"
 block|,
@@ -1065,7 +1065,7 @@ block|,
 block|{
 literal|"context-opacity-transparent"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"Completely Transparent"
 block|,
@@ -1081,7 +1081,7 @@ block|,
 block|{
 literal|"context-opacity-opaque"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"Completely Opaque"
 block|,
@@ -1097,7 +1097,7 @@ block|,
 block|{
 literal|"context-opacity-decrease"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"More Transparent"
 block|,
@@ -1113,7 +1113,7 @@ block|,
 block|{
 literal|"context-opacity-increase"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"More Opaque"
 block|,
@@ -1129,7 +1129,7 @@ block|,
 block|{
 literal|"context-opacity-decrease-skip"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"10% More Transparent"
 block|,
@@ -1145,7 +1145,7 @@ block|,
 block|{
 literal|"context-opacity-increase-skip"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"10% More Opaque"
 block|,
@@ -1172,7 +1172,7 @@ block|{
 block|{
 literal|"context-tool-select-first"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_TOOLS
 block|,
 literal|"First Tool"
 block|,
@@ -1188,7 +1188,7 @@ block|,
 block|{
 literal|"context-tool-select-last"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_TOOLS
 block|,
 literal|"Last Tool"
 block|,
@@ -1204,7 +1204,7 @@ block|,
 block|{
 literal|"context-tool-select-previous"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_TOOLS
 block|,
 literal|"Previous Tool"
 block|,
@@ -1220,7 +1220,7 @@ block|,
 block|{
 literal|"context-tool-select-next"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_TOOLS
 block|,
 literal|"Next Tool"
 block|,
@@ -1247,7 +1247,7 @@ block|{
 block|{
 literal|"context-brush-select-first"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"First Brush"
 block|,
@@ -1263,7 +1263,7 @@ block|,
 block|{
 literal|"context-brush-select-last"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Last Brush"
 block|,
@@ -1279,7 +1279,7 @@ block|,
 block|{
 literal|"context-brush-select-previous"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Previous Brush"
 block|,
@@ -1295,7 +1295,7 @@ block|,
 block|{
 literal|"context-brush-select-next"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Next Brush"
 block|,
@@ -1322,7 +1322,7 @@ block|{
 block|{
 literal|"context-pattern-select-first"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_PATTERN
 block|,
 literal|"First Pattern"
 block|,
@@ -1338,7 +1338,7 @@ block|,
 block|{
 literal|"context-pattern-select-last"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_PATTERN
 block|,
 literal|"Last Pattern"
 block|,
@@ -1354,7 +1354,7 @@ block|,
 block|{
 literal|"context-pattern-select-previous"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_PATTERN
 block|,
 literal|"Previous Pattern"
 block|,
@@ -1370,7 +1370,7 @@ block|,
 block|{
 literal|"context-pattern-select-next"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_PATTERN
 block|,
 literal|"Next Pattern"
 block|,
@@ -1397,7 +1397,7 @@ block|{
 block|{
 literal|"context-palette-select-first"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_PALETTE
 block|,
 literal|"First Palette"
 block|,
@@ -1413,7 +1413,7 @@ block|,
 block|{
 literal|"context-palette-select-last"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_PALETTE
 block|,
 literal|"Last Palette"
 block|,
@@ -1429,7 +1429,7 @@ block|,
 block|{
 literal|"context-palette-select-previous"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_PALETTE
 block|,
 literal|"Previous Palette"
 block|,
@@ -1445,7 +1445,7 @@ block|,
 block|{
 literal|"context-palette-select-next"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_PALETTE
 block|,
 literal|"Next Palette"
 block|,
@@ -1472,7 +1472,7 @@ block|{
 block|{
 literal|"context-gradient-select-first"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_GRADIENT
 block|,
 literal|"First Gradient"
 block|,
@@ -1488,7 +1488,7 @@ block|,
 block|{
 literal|"context-gradient-select-last"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_GRADIENT
 block|,
 literal|"Last Gradient"
 block|,
@@ -1504,7 +1504,7 @@ block|,
 block|{
 literal|"context-gradient-select-previous"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_GRADIENT
 block|,
 literal|"Previous Gradient"
 block|,
@@ -1520,7 +1520,7 @@ block|,
 block|{
 literal|"context-gradient-select-next"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_GRADIENT
 block|,
 literal|"Next Gradient"
 block|,
@@ -1547,7 +1547,7 @@ block|{
 block|{
 literal|"context-font-select-first"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_FONT
 block|,
 literal|"First Font"
 block|,
@@ -1563,7 +1563,7 @@ block|,
 block|{
 literal|"context-font-select-last"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_FONT
 block|,
 literal|"Last Font"
 block|,
@@ -1579,7 +1579,7 @@ block|,
 block|{
 literal|"context-font-select-previous"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_FONT
 block|,
 literal|"Previous Font"
 block|,
@@ -1595,7 +1595,7 @@ block|,
 block|{
 literal|"context-font-select-next"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_FONT
 block|,
 literal|"Next Font"
 block|,
@@ -1622,9 +1622,9 @@ block|{
 block|{
 literal|"context-brush-shape-circle"
 block|,
-name|GIMP_STOCK_SHAPE_CIRCLE
+name|GIMP_STOCK_BRUSH
 block|,
-literal|"Circle"
+literal|"Circular Brush"
 block|,
 name|NULL
 block|,
@@ -1638,9 +1638,9 @@ block|,
 block|{
 literal|"context-brush-shape-square"
 block|,
-name|GIMP_STOCK_SHAPE_SQUARE
+name|GIMP_STOCK_BRUSH
 block|,
-literal|"Square"
+literal|"Square Brush"
 block|,
 name|NULL
 block|,
@@ -1654,9 +1654,9 @@ block|,
 block|{
 literal|"context-brush-shape-diamond"
 block|,
-name|GIMP_STOCK_SHAPE_DIAMOND
+name|GIMP_STOCK_BRUSH
 block|,
-literal|"Diamond"
+literal|"Diamond Brush"
 block|,
 name|NULL
 block|,
@@ -1681,7 +1681,7 @@ block|{
 block|{
 literal|"context-brush-radius-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Set Brush Radius"
 block|,
@@ -1697,7 +1697,7 @@ block|,
 block|{
 literal|"context-brush-radius-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Minumum Radius"
 block|,
@@ -1713,7 +1713,7 @@ block|,
 block|{
 literal|"context-brush-radius-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Maximum Radius"
 block|,
@@ -1729,7 +1729,7 @@ block|,
 block|{
 literal|"context-brush-radius-decrease"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Radius"
 block|,
@@ -1745,7 +1745,7 @@ block|,
 block|{
 literal|"context-brush-radius-increase"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Radius"
 block|,
@@ -1761,7 +1761,7 @@ block|,
 block|{
 literal|"context-brush-radius-decrease-skip"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Radius More"
 block|,
@@ -1777,7 +1777,7 @@ block|,
 block|{
 literal|"context-brush-radius-increase-skip"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Radius More"
 block|,
@@ -1804,7 +1804,7 @@ block|{
 block|{
 literal|"context-brush-spikes-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Set Brush Spikes"
 block|,
@@ -1820,7 +1820,7 @@ block|,
 block|{
 literal|"context-brush-spikes-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Minumum Spikes"
 block|,
@@ -1836,7 +1836,7 @@ block|,
 block|{
 literal|"context-brush-spikes-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Maximum Spikes"
 block|,
@@ -1852,7 +1852,7 @@ block|,
 block|{
 literal|"context-brush-spikes-decrease"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Spikes"
 block|,
@@ -1868,7 +1868,7 @@ block|,
 block|{
 literal|"context-brush-spikes-increase"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Spikes"
 block|,
@@ -1884,7 +1884,7 @@ block|,
 block|{
 literal|"context-brush-spikes-decrease-skip"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Spikes More"
 block|,
@@ -1900,7 +1900,7 @@ block|,
 block|{
 literal|"context-brush-spikes-increase-skip"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Spikes More"
 block|,
@@ -1927,7 +1927,7 @@ block|{
 block|{
 literal|"context-brush-hardness-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Set Brush Hardness"
 block|,
@@ -1943,7 +1943,7 @@ block|,
 block|{
 literal|"context-brush-hardness-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Minumum Hardness"
 block|,
@@ -1959,7 +1959,7 @@ block|,
 block|{
 literal|"context-brush-hardness-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Maximum Hardness"
 block|,
@@ -1975,7 +1975,7 @@ block|,
 block|{
 literal|"context-brush-hardness-decrease"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Hardness"
 block|,
@@ -1991,7 +1991,7 @@ block|,
 block|{
 literal|"context-brush-hardness-increase"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Hardness"
 block|,
@@ -2007,7 +2007,7 @@ block|,
 block|{
 literal|"context-brush-hardness-decrease-skip"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Hardness More"
 block|,
@@ -2023,7 +2023,7 @@ block|,
 block|{
 literal|"context-brush-hardness-increase-skip"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Hardness More"
 block|,
@@ -2050,7 +2050,7 @@ block|{
 block|{
 literal|"context-brush-aspect-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Set Brush Aspect"
 block|,
@@ -2066,7 +2066,7 @@ block|,
 block|{
 literal|"context-brush-aspect-minimum"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Minumum Aspect"
 block|,
@@ -2082,7 +2082,7 @@ block|,
 block|{
 literal|"context-brush-aspect-maximum"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Maximum Aspect"
 block|,
@@ -2098,7 +2098,7 @@ block|,
 block|{
 literal|"context-brush-aspect-decrease"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Aspect"
 block|,
@@ -2114,7 +2114,7 @@ block|,
 block|{
 literal|"context-brush-aspect-increase"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Aspect"
 block|,
@@ -2130,7 +2130,7 @@ block|,
 block|{
 literal|"context-brush-aspect-decrease-skip"
 block|,
-name|GTK_STOCK_GO_BACK
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Decrease Aspect More"
 block|,
@@ -2146,7 +2146,7 @@ block|,
 block|{
 literal|"context-brush-aspect-increase-skip"
 block|,
-name|GTK_STOCK_GO_FORWARD
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Increase Aspect More"
 block|,
@@ -2173,7 +2173,7 @@ block|{
 block|{
 literal|"context-brush-angle-set"
 block|,
-name|GTK_STOCK_JUMP_TO
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Set Brush Angle"
 block|,
@@ -2189,7 +2189,7 @@ block|,
 block|{
 literal|"context-brush-angle-minimum"
 block|,
-name|GIMP_STOCK_FLIP_HORIZONTAL
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Horizontal"
 block|,
@@ -2205,7 +2205,7 @@ block|,
 block|{
 literal|"context-brush-angle-maximum"
 block|,
-name|GIMP_STOCK_FLIP_VERTICAL
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Vertical"
 block|,
@@ -2221,7 +2221,7 @@ block|,
 block|{
 literal|"context-brush-angle-decrease"
 block|,
-name|GIMP_STOCK_ROTATE_90
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Rotate Right"
 block|,
@@ -2237,7 +2237,7 @@ block|,
 block|{
 literal|"context-brush-angle-increase"
 block|,
-name|GIMP_STOCK_ROTATE_270
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Rotate Left"
 block|,
@@ -2253,7 +2253,7 @@ block|,
 block|{
 literal|"context-brush-angle-decrease-skip"
 block|,
-name|GIMP_STOCK_ROTATE_90
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Rotate Right 15 degrees"
 block|,
@@ -2269,7 +2269,7 @@ block|,
 block|{
 literal|"context-brush-angle-increase-skip"
 block|,
-name|GIMP_STOCK_ROTATE_270
+name|GIMP_STOCK_BRUSH
 block|,
 literal|"Rotate Left 15 degrees"
 block|,
