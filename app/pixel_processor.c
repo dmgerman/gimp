@@ -80,7 +80,7 @@ directive|else
 end_else
 
 begin_comment
-comment|/* !USE_PTHREADS */
+comment|/* !ENABLE_MP */
 end_comment
 
 begin_define
@@ -99,7 +99,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* !USE_PTHREADS */
+comment|/* ENABLE_MP */
 end_comment
 
 begin_typedef
