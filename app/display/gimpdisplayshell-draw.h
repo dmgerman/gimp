@@ -360,6 +360,11 @@ name|gint
 name|scale
 decl_stmt|;
 comment|/*  scale factor from original raw image    */
+DECL|member|other_scale
+name|gint
+name|other_scale
+decl_stmt|;
+comment|/*  scale factor entered in Zoom->Other     */
 DECL|member|dot_for_dot
 name|gboolean
 name|dot_for_dot
@@ -580,6 +585,12 @@ modifier|*
 name|info_dialog
 decl_stmt|;
 comment|/*  image information dialog           */
+DECL|member|scale_dialog
+name|GtkWidget
+modifier|*
+name|scale_dialog
+decl_stmt|;
+comment|/*  scale (zoom) dialog                */
 DECL|member|nav_popup
 name|GtkWidget
 modifier|*

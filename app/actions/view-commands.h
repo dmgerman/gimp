@@ -77,6 +77,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|view_zoom_other_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|view_dot_for_dot_cmd_callback
 parameter_list|(
 name|GtkWidget

@@ -256,7 +256,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279557fe0103
+DECL|enum|__anon29c038af0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -708,6 +708,12 @@ name|shell
 operator|->
 name|scale
 operator|=
+literal|0x101
+expr_stmt|;
+name|shell
+operator|->
+name|other_scale
+operator|=
 literal|0
 expr_stmt|;
 name|shell
@@ -972,6 +978,12 @@ expr_stmt|;
 name|shell
 operator|->
 name|info_dialog
+operator|=
+name|NULL
+expr_stmt|;
+name|shell
+operator|->
+name|scale_dialog
 operator|=
 name|NULL
 expr_stmt|;
