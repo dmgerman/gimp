@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a05440103
+DECL|enum|__anon2c5fb9e00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1967,6 +1967,11 @@ name|mtime
 argument_list|,
 operator|&
 name|filesize
+argument_list|,
+operator|&
+name|thumbnail
+operator|->
+name|image_not_found_errno
 argument_list|)
 condition|)
 block|{

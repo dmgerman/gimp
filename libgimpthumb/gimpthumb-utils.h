@@ -110,6 +110,10 @@ parameter_list|,
 name|gint64
 modifier|*
 name|size
+parameter_list|,
+name|gint
+modifier|*
+name|err_no
 parameter_list|)
 function_decl|;
 end_function_decl

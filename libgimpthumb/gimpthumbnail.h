@@ -123,6 +123,10 @@ DECL|member|image_mtime
 name|gint64
 name|image_mtime
 decl_stmt|;
+DECL|member|image_not_found_errno
+name|gint
+name|image_not_found_errno
+decl_stmt|;
 DECL|member|image_width
 name|gint
 name|image_width

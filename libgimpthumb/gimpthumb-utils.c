@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -789,6 +795,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 operator|==
 name|GIMP_THUMB_FILE_TYPE_REGULAR
@@ -851,6 +859,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 operator|==
 name|GIMP_THUMB_FILE_TYPE_REGULAR
@@ -881,12 +891,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_file_test:  * @filename: a filename in the encoding of the filesystem  * @mtime: return location for modification time  * @size: return location for file size  *  * This is a convenience and portability wrapper around stat(). It  * checks if the given @filename exists and returns modification time  * and file size in 64bit integer values.  *  * Return value: The type of the file, or #GIMP_THUMB_FILE_TYPE_NONE if  *               the file doesn't exist.  **/
+comment|/**  * gimp_thumb_file_test:  * @filename: a filename in the encoding of the filesystem  * @mtime: return location for modification time  * @size: return location for file size  * @err_no: return location for system "errno"  *  * This is a convenience and portability wrapper around stat(). It  * checks if the given @filename exists and returns modification time  * and file size in 64bit integer values.  *  * Return value: The type of the file, or #GIMP_THUMB_FILE_TYPE_NONE if  *               the file doesn't exist.  **/
 end_comment
 
 begin_function
 name|GimpThumbFileType
-DECL|function|gimp_thumb_file_test (const gchar * filename,gint64 * mtime,gint64 * size)
+DECL|function|gimp_thumb_file_test (const gchar * filename,gint64 * mtime,gint64 * size,gint * err_no)
 name|gimp_thumb_file_test
 parameter_list|(
 specifier|const
@@ -901,6 +911,10 @@ parameter_list|,
 name|gint64
 modifier|*
 name|size
+parameter_list|,
+name|gint
+modifier|*
+name|err_no
 parameter_list|)
 block|{
 name|struct
@@ -953,6 +967,15 @@ name|st_size
 expr_stmt|;
 if|if
 condition|(
+name|err_no
+condition|)
+operator|*
+name|err_no
+operator|=
+literal|0
+expr_stmt|;
+if|if
+condition|(
 name|S_ISREG
 argument_list|(
 name|s
@@ -1001,6 +1024,15 @@ operator|*
 name|size
 operator|=
 literal|0
+expr_stmt|;
+if|if
+condition|(
+name|err_no
+condition|)
+operator|*
+name|err_no
+operator|=
+name|errno
 expr_stmt|;
 return|return
 name|GIMP_THUMB_FILE_TYPE_NONE

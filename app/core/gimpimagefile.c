@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c951ab40103
+DECL|enum|__anon29014e320103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1803,9 +1803,11 @@ name|imagefile
 operator|->
 name|description
 operator|=
-name|_
+name|g_strerror
 argument_list|(
-literal|"Could not open"
+name|thumbnail
+operator|->
+name|image_not_found_errno
 argument_list|)
 expr_stmt|;
 name|imagefile
