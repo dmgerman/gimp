@@ -16,6 +16,17 @@ directive|define
 name|__GIMP_ANCHOR_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_ANCHOR (anchor)
+define|#
+directive|define
+name|GIMP_ANCHOR
+parameter_list|(
+name|anchor
+parameter_list|)
+value|((GimpAnchor *) (anchor))
+end_define
+
 begin_struct
 DECL|struct|_GimpAnchor
 struct|struct

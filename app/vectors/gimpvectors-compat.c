@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3dd70f0103
+DECL|enum|__anon29e955300103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -733,15 +733,14 @@ condition|)
 block|{
 name|anchor
 operator|=
-operator|(
-name|GimpAnchor
-operator|*
-operator|)
+name|GIMP_ANCHOR
+argument_list|(
 name|stroke
 operator|->
 name|anchors
 operator|->
 name|data
+argument_list|)
 expr_stmt|;
 name|points
 index|[
