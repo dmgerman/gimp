@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-flip.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-mask.h"
 end_include
 
 begin_include
@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f6e770108
+DECL|struct|__anon2bfa541e0108
 block|{
 DECL|member|resize
 name|Resize
@@ -893,11 +893,14 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_image_mask_bounds
+name|gimp_channel_bounds
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|,
 operator|&
 name|x1

@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo-push.h"
 end_include
 
@@ -179,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af291940103
+DECL|enum|__anon2bece9210103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -3271,9 +3265,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_mask_bounds
+name|gimp_channel_bounds
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|x1
 argument_list|,

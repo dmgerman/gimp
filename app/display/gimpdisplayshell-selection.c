@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimpchannel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -3238,8 +3238,10 @@ name|BoundSeg
 modifier|*
 name|segs_layer
 decl_stmt|;
-comment|/*  Ask the gimage for the boundary of its selected region...    *  Then transform that information into a new buffer of XSegments    */
-name|gimp_image_mask_boundary
+comment|/*  Ask the gimage for the boundary of its selected region...    *  Then transform that information into a new buffer of GdkSegments    */
+name|gimp_channel_boundary
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|select
 operator|->
@@ -3248,6 +3250,7 @@ operator|->
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|,
 operator|&
 name|segs_in
@@ -3264,6 +3267,14 @@ operator|&
 name|select
 operator|->
 name|num_segs_out
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
