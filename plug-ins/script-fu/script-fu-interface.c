@@ -292,7 +292,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab21f110108
+DECL|struct|__anon2b82ca940108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -327,7 +327,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab21f110208
+DECL|struct|__anon2b82ca940208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab21f110308
+DECL|struct|__anon2b82ca940308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -397,7 +397,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab21f110408
+DECL|struct|__anon2b82ca940408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab21f110508
+DECL|struct|__anon2b82ca940508
 block|{
 DECL|member|name
 name|gchar
@@ -446,7 +446,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2ab21f11060a
+DECL|union|__anon2b82ca94060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -512,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab21f110708
+DECL|struct|__anon2b82ca940708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -593,7 +593,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab21f110808
+DECL|struct|__anon2b82ca940808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -8363,8 +8363,8 @@ parameter_list|,
 comment|/* dialog closing */
 name|gpointer
 name|udata
-comment|/* user data */
 parameter_list|)
+comment|/* user data */
 block|{
 name|SFBrush
 modifier|*
@@ -9455,7 +9455,10 @@ index|]
 operator|.
 name|sfa_value
 operator|=
+name|g_strdup
+argument_list|(
 name|text
+argument_list|)
 expr_stmt|;
 name|escaped
 operator|=
