@@ -12,6 +12,19 @@ directive|define
 name|_G_P_P_PORTABILITY_H_
 end_define
 
+begin_undef
+undef|#
+directive|undef
+name|_P_P_PORTABILITY_H_
+end_undef
+
+begin_define
+DECL|macro|_P_P_PORTABILITY_H_
+define|#
+directive|define
+name|_P_P_PORTABILITY_H_
+end_define
+
 begin_comment
 comment|/* Perl/Pollution/Portability Version 1.0007-gimp-2 */
 end_comment
