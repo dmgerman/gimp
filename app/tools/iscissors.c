@@ -166,6 +166,17 @@ parameter_list|)
 value|printf x
 end_define
 
+begin_define
+DECL|macro|D (x)
+define|#
+directive|define
+name|D
+parameter_list|(
+name|x
+parameter_list|)
+value|x
+end_define
+
 begin_else
 else|#
 directive|else
@@ -176,6 +187,16 @@ DECL|macro|TRC (x)
 define|#
 directive|define
 name|TRC
+parameter_list|(
+name|x
+parameter_list|)
+end_define
+
+begin_define
+DECL|macro|D (x)
+define|#
+directive|define
+name|D
 parameter_list|(
 name|x
 parameter_list|)
@@ -232,7 +253,7 @@ comment|/*  The possible states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a22f9670103
+DECL|enum|__anon291c491c0103
 typedef|typedef
 enum|enum
 block|{
@@ -258,7 +279,7 @@ comment|/*  The possible drawing states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a22f9670203
+DECL|enum|__anon291c491c0203
 typedef|typedef
 enum|enum
 block|{
@@ -817,6 +838,18 @@ begin_comment
 comment|/*  temporary convolution buffers --  */
 end_comment
 
+begin_macro
+name|D
+argument_list|(
+argument|static unsigned int sent0 =
+literal|0xd0d0d0d0
+argument_list|)
+end_macro
+
+begin_empty_stmt
+empty_stmt|;
+end_empty_stmt
+
 begin_decl_stmt
 DECL|variable|maxgrad_conv0
 specifier|static
@@ -834,6 +867,18 @@ init|=
 literal|""
 decl_stmt|;
 end_decl_stmt
+
+begin_macro
+name|D
+argument_list|(
+argument|static unsigned int sent1 =
+literal|0xd1d1d1d1
+argument_list|)
+end_macro
+
+begin_empty_stmt
+empty_stmt|;
+end_empty_stmt
 
 begin_decl_stmt
 DECL|variable|maxgrad_conv1
@@ -853,6 +898,18 @@ literal|""
 decl_stmt|;
 end_decl_stmt
 
+begin_macro
+name|D
+argument_list|(
+argument|static unsigned int sent2 =
+literal|0xd2d2d2d2
+argument_list|)
+end_macro
+
+begin_empty_stmt
+empty_stmt|;
+end_empty_stmt
+
 begin_decl_stmt
 DECL|variable|maxgrad_conv2
 specifier|static
@@ -870,6 +927,18 @@ init|=
 literal|""
 decl_stmt|;
 end_decl_stmt
+
+begin_macro
+name|D
+argument_list|(
+argument|static unsigned int sent3 =
+literal|0xd3d3d3d3
+argument_list|)
+end_macro
+
+begin_empty_stmt
+empty_stmt|;
+end_empty_stmt
 
 begin_decl_stmt
 DECL|variable|horz_deriv
@@ -3896,16 +3965,15 @@ decl_stmt|;
 name|guint32
 name|coords
 decl_stmt|;
-comment|/* XXX this has triggered: work out why */
-name|g_return_if_fail
-argument_list|(
+comment|/* Uh, this shouldn't happen, but it does.  So we ignore it.    * Quality code, baby. */
+if|if
+condition|(
+operator|!
 name|curve
 operator|->
 name|points
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|npts
 operator|=
 literal|0
@@ -7222,40 +7290,6 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-name|srcPR
-operator|.
-name|bytes
-operator|=
-name|gimp_image_composite_bytes
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|srcPR
-operator|.
-name|w
-operator|=
-name|TILE_WIDTH
-expr_stmt|;
-name|srcPR
-operator|.
-name|h
-operator|=
-name|TILE_HEIGHT
-expr_stmt|;
-name|srcPR
-operator|.
-name|rowstride
-operator|=
-name|gimage
-operator|->
-name|width
-operator|*
-name|gimp_image_composite_bytes
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 name|tile_manager_get_tile_coordinates
 argument_list|(
 name|tm
@@ -7413,7 +7447,9 @@ name|srcPR
 operator|.
 name|rowstride
 operator|=
-name|sw
+name|srcPR
+operator|.
+name|w
 operator|*
 name|srcPR
 operator|.
@@ -7569,7 +7605,10 @@ name|gradmap
 operator|=
 name|tiledata
 operator|+
-name|TILE_WIDTH
+name|tile_ewidth
+argument_list|(
+name|tile
+argument_list|)
 operator|*
 name|COST_WIDTH
 operator|*
@@ -8314,7 +8353,9 @@ operator|*
 operator|(
 name|i
 operator|-
-name|y1
+name|srcPR
+operator|.
+name|y
 operator|)
 expr_stmt|;
 for|for
