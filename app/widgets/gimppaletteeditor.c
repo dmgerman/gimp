@@ -2798,7 +2798,7 @@ expr_stmt|;
 comment|/*  Update the active color name  */
 name|g_print
 argument_list|(
-literal|"color name before:>>%s<<\n"
+literal|"former color name: '%s'\n"
 argument_list|,
 name|palette_editor
 operator|->
@@ -2853,7 +2853,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"color name after:>>%s<<\n"
+literal|"new color name: '%s'\n"
 argument_list|,
 name|palette_editor
 operator|->

@@ -3837,7 +3837,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"paths list: internal list error"
+literal|"Paths list: internal list error"
 argument_list|)
 expr_stmt|;
 block|}
@@ -5583,9 +5583,11 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"paths_dialog_adavanced_to_path_callback(): selection to path (advanced) procedure lookup failed"
+literal|"%s: selection to path (advanced) procedure lookup failed"
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5758,9 +5760,11 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"paths_dialog_sel_to_path_callback(): selection to path procedure lookup failed"
+literal|"%s: selection to path procedure lookup failed."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6462,7 +6466,9 @@ name|next
 condition|)
 name|g_warning
 argument_list|(
-literal|"Curve of of sync"
+literal|"%s: Curve out of sync."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 name|need_move
@@ -7833,10 +7839,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to open file %s"
+literal|"Unable to open file '%s'\nError: %s."
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7920,7 +7931,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to read from %s"
+literal|"Failed to read from '%s'"
 argument_list|)
 argument_list|,
 name|filename
@@ -8009,7 +8020,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to read path from %s"
+literal|"Failed to read path from '%s'"
 argument_list|)
 argument_list|,
 name|filename
@@ -8033,7 +8044,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No points specified in path file %s"
+literal|"No points specified in path file '%s'"
 argument_list|)
 argument_list|,
 name|filename
@@ -8133,7 +8144,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Invalid single point in path\n"
+literal|"%s: Invalid single point in path."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
@@ -8151,7 +8164,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Invalid point type passed\n"
+literal|"%s: Invalid point type passed."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
@@ -8338,7 +8353,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"open failed on %s: %s\n"
+literal|"Opening '%s' failed:\n%s"
 argument_list|)
 argument_list|,
 name|filename
@@ -8411,7 +8426,7 @@ name|gtk_file_selection_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load/Store Bezier Curves"
+literal|"Load and Save Bezier Curves"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8662,7 +8677,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Store Path"
+literal|"Save Path"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10273,7 +10288,11 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"wrong number of points\n"
+literal|"%s: Wrong number of points (%d)."
+argument_list|,
+name|G_STRLOC
+argument_list|,
+name|num_pnts
 argument_list|)
 expr_stmt|;
 return|return
@@ -10366,7 +10385,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Invalid single point in path\n"
+literal|"%s: Invalid single point in path."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return
@@ -10381,7 +10402,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Invalid point type passed\n"
+literal|"%s: Invalid point type passed."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return
@@ -10679,7 +10702,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"paths_delete_path: invalid path"
+literal|"%s: invalid path."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return

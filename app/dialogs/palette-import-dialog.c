@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abe01970103
+DECL|enum|__anon29e8e4410103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1087,7 +1087,7 @@ name|g_strdup
 argument_list|(
 name|_
 argument_list|(
-literal|"Unnamed"
+literal|"Untitled"
 argument_list|)
 argument_list|)
 expr_stmt|;
