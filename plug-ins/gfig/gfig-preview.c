@@ -1725,7 +1725,9 @@ argument_list|()
 expr_stmt|;
 name|draw_objects
 argument_list|(
-name|pic_obj
+name|gfig_context
+operator|->
+name|current_obj
 operator|->
 name|obj_list
 argument_list|,
@@ -2093,13 +2095,6 @@ break|break;
 block|}
 name|gfig_paint_callback
 argument_list|()
-expr_stmt|;
-name|list_button_update
-argument_list|(
-name|gfig_context
-operator|->
-name|current_obj
-argument_list|)
 expr_stmt|;
 break|break;
 case|case

@@ -1646,7 +1646,6 @@ if|if
 condition|(
 name|operation_obj
 condition|)
-block|{
 name|gfig_style_set_context_from_style
 argument_list|(
 operator|&
@@ -1655,10 +1654,6 @@ operator|->
 name|style
 argument_list|)
 expr_stmt|;
-name|gfig_paint_callback
-argument_list|()
-expr_stmt|;
-block|}
 name|operation_obj
 operator|=
 name|NULL
@@ -3781,14 +3776,6 @@ argument_list|(
 name|gfig_context
 operator|->
 name|preview
-argument_list|)
-expr_stmt|;
-comment|/* And preview */
-name|list_button_update
-argument_list|(
-name|gfig_context
-operator|->
-name|current_obj
 argument_list|)
 expr_stmt|;
 if|if
