@@ -261,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c00f8a60103
+DECL|enum|__anon278fc84c0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -368,9 +368,6 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -699,15 +696,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__POINTER_BOOLEAN
+name|gimp_marshal_VOID__POINTER
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 name|G_TYPE_POINTER
-argument_list|,
-name|G_TYPE_BOOLEAN
 argument_list|)
 expr_stmt|;
 name|gimp_signals
@@ -799,6 +794,12 @@ block|{
 name|gimp
 operator|->
 name|config
+operator|=
+name|NULL
+expr_stmt|;
+name|gimp
+operator|->
+name|session_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -1332,14 +1333,12 @@ block|{
 name|Gimp
 modifier|*
 name|gimp
-decl_stmt|;
-name|gimp
-operator|=
+init|=
 name|GIMP
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_set_current_context
 argument_list|(
 name|gimp
@@ -1831,6 +1830,27 @@ expr_stmt|;
 name|gimp
 operator|->
 name|edit_config
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|gimp
+operator|->
+name|session_name
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|gimp
+operator|->
+name|session_name
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
+name|session_name
 operator|=
 name|NULL
 expr_stmt|;
@@ -2731,7 +2751,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_real_restore (Gimp * gimp,GimpInitStatusFunc status_callback,gboolean restore_session)
+DECL|function|gimp_real_restore (Gimp * gimp,GimpInitStatusFunc status_callback)
 name|gimp_real_restore
 parameter_list|(
 name|Gimp
@@ -2740,9 +2760,6 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 block|{
 if|if
@@ -2864,13 +2881,18 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (const gchar * name,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
+DECL|function|gimp_new (const gchar * name,const gchar * session_name,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
 name|gimp_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|session_name
 parameter_list|,
 name|gboolean
 name|be_verbose
@@ -2918,6 +2940,15 @@ argument_list|,
 name|name
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
+name|session_name
+operator|=
+name|g_strdup
+argument_list|(
+name|session_name
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -3536,7 +3567,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_restore (Gimp * gimp,GimpInitStatusFunc status_callback,gboolean restore_session)
+DECL|function|gimp_restore (Gimp * gimp,GimpInitStatusFunc status_callback)
 name|gimp_restore
 parameter_list|(
 name|Gimp
@@ -3545,9 +3576,6 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3804,8 +3832,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|status_callback
-argument_list|,
-name|restore_session
 argument_list|)
 expr_stmt|;
 block|}

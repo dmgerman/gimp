@@ -301,9 +301,6 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|callback
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -319,9 +316,6 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|callback
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1202,7 +1196,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_restore_callback (Gimp * gimp,GimpInitStatusFunc status_callback,gboolean restore_session)
+DECL|function|gui_restore_callback (Gimp * gimp,GimpInitStatusFunc status_callback)
 name|gui_restore_callback
 parameter_list|(
 name|Gimp
@@ -1211,9 +1205,6 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 block|{
 name|GimpDisplayConfig
@@ -1424,7 +1415,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_restore_after_callback (Gimp * gimp,GimpInitStatusFunc status_callback,gboolean restore_session)
+DECL|function|gui_restore_after_callback (Gimp * gimp,GimpInitStatusFunc status_callback)
 name|gui_restore_after_callback
 parameter_list|(
 name|Gimp
@@ -1433,9 +1424,6 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 block|{
 name|GimpGuiConfig
@@ -1525,8 +1513,6 @@ if|if
 condition|(
 name|gui_config
 operator|->
-name|restore_session
-operator|||
 name|restore_session
 condition|)
 name|session_restore

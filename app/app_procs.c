@@ -232,7 +232,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_init (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_mmx,gboolean console_messages,GimpStackTraceMode stack_trace_mode,gboolean restore_session)
+DECL|function|app_init (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_mmx,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
 name|app_init
 parameter_list|(
 specifier|const
@@ -257,6 +257,11 @@ specifier|const
 name|gchar
 modifier|*
 name|alternate_gimprc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|session_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -293,9 +298,6 @@ name|console_messages
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 block|{
 name|GimpInitStatusFunc
@@ -309,6 +311,8 @@ operator|=
 name|gimp_new
 argument_list|(
 name|full_prog_name
+argument_list|,
+name|session_name
 argument_list|,
 name|be_verbose
 argument_list|,
@@ -626,8 +630,6 @@ argument_list|(
 name|the_gimp
 argument_list|,
 name|update_status_func
-argument_list|,
-name|restore_session
 argument_list|)
 expr_stmt|;
 comment|/*  enable autosave late so we don't autosave when the    *  monitor resolution is set in gui_init()    */

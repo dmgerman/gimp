@@ -123,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a32cf0a0103
+DECL|enum|__anon2b61d9190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1458,7 +1458,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rc_new:  * @system_gimprc: the name of the system-wide gimprc file or %NULL to  *                 use the standard location  * @user_gimprc: the name of the user gimprc file or %NULL to use the  *               standard location  * @verbose:  *  * Creates a new GimpRc object and loads the system-wide and the user  * configuration files.  *  * Returns: the new #GimpRc.  */
+comment|/**  * gimp_rc_new:  * @system_gimprc: the name of the system-wide gimprc file or %NULL to  *                 use the standard location  * @user_gimprc:   the name of the user gimprc file or %NULL to use the  *                 standard location  * @verbose:       enable console messages about loading and saving  *  * Creates a new GimpRc object and loads the system-wide and the user  * configuration files.  *  * Returns: the new #GimpRc.  */
 end_comment
 
 begin_function
@@ -1609,7 +1609,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rc_query:  * @rc: a #GimpRc object.  * @key: a string used as a key for the lookup.  *  * This function looks up @key in the object properties of @rc. If  * there's a matching property, a string representation of its value  * is returned. If no property is found, the list of unknown tokens  * attached to the @rc object is searched.  *  * Return value: a newly allocated string representing the value or %NULL  *               if the key couldn't be found.  **/
+comment|/**  * gimp_rc_query:  * @rc:  a #GimpRc object.  * @key: a string used as a key for the lookup.  *  * This function looks up @key in the object properties of @rc. If  * there's a matching property, a string representation of its value  * is returned. If no property is found, the list of unknown tokens  * attached to the @rc object is searched.  *  * Return value: a newly allocated string representing the value or %NULL  *               if the key couldn't be found.  **/
 end_comment
 
 begin_function

@@ -92,6 +92,11 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|session_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 modifier|*
 name|batch_cmds
 parameter_list|,
@@ -124,9 +129,6 @@ name|console_messages
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 function_decl|;
 end_function_decl

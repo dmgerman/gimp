@@ -470,6 +470,11 @@ modifier|*
 name|edit_config
 decl_stmt|;
 comment|/* don't use this one, it's just                                         * for the preferences dialog                                         */
+DECL|member|session_name
+name|gchar
+modifier|*
+name|session_name
+decl_stmt|;
 DECL|member|be_verbose
 name|gboolean
 name|be_verbose
@@ -858,9 +863,6 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 function_decl|;
 DECL|member|exit
@@ -901,6 +903,11 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|session_name
 parameter_list|,
 name|gboolean
 name|be_verbose
@@ -974,9 +981,6 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
-parameter_list|,
-name|gboolean
-name|restore_session
 parameter_list|)
 function_decl|;
 end_function_decl
