@@ -20,6 +20,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -33,6 +39,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -203,11 +215,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_header_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files as C unsigned character array"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help"
 argument_list|,
@@ -384,6 +402,9 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -39,10 +45,16 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a34021e0108
+DECL|struct|__anon2aa895b40108
 block|{
 DECL|member|file_name
 name|gchar
@@ -273,11 +285,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_csource_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"Dump image data in RGB(A) format for C source"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help"
 argument_list|,
@@ -516,6 +534,9 @@ name|drawable_type
 operator|==
 name|INDEXEDA_IMAGE
 operator|)
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 name|parasite
 operator|=
@@ -3007,7 +3028,10 @@ name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save as C-Source"
+argument_list|)
 argument_list|,
 literal|"csource"
 argument_list|,
@@ -3023,7 +3047,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|cb_set_true
 argument_list|,
@@ -3039,7 +3066,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -3156,7 +3186,10 @@ name|GTK_TYPE_LABEL
 argument_list|,
 literal|"label"
 argument_list|,
+name|_
+argument_list|(
 literal|"Prefixed Name: "
+argument_list|)
 argument_list|,
 literal|"xalign"
 argument_list|,
@@ -3237,7 +3270,10 @@ name|GTK_TYPE_LABEL
 argument_list|,
 literal|"label"
 argument_list|,
+name|_
+argument_list|(
 literal|"Comment: "
+argument_list|)
 argument_list|,
 literal|"xalign"
 argument_list|,
@@ -3320,7 +3356,10 @@ name|GTK_TYPE_CHECK_BUTTON
 argument_list|,
 literal|"label"
 argument_list|,
+name|_
+argument_list|(
 literal|"Save comment to file?"
+argument_list|)
 argument_list|,
 literal|"visible"
 argument_list|,
@@ -3376,7 +3415,10 @@ name|GTK_TYPE_CHECK_BUTTON
 argument_list|,
 literal|"label"
 argument_list|,
+name|_
+argument_list|(
 literal|"Use GLib types (guint8*)"
+argument_list|)
 argument_list|,
 literal|"visible"
 argument_list|,
@@ -3432,7 +3474,10 @@ name|GTK_TYPE_CHECK_BUTTON
 argument_list|,
 literal|"label"
 argument_list|,
+name|_
+argument_list|(
 literal|"Use macros instead of struct"
+argument_list|)
 argument_list|,
 literal|"visible"
 argument_list|,
@@ -3488,7 +3533,10 @@ name|GTK_TYPE_CHECK_BUTTON
 argument_list|,
 literal|"label"
 argument_list|,
+name|_
+argument_list|(
 literal|"Use 1 Byte Run-Length-Encoding"
+argument_list|)
 argument_list|,
 literal|"visible"
 argument_list|,
@@ -3544,7 +3592,10 @@ name|GTK_TYPE_CHECK_BUTTON
 argument_list|,
 literal|"label"
 argument_list|,
+name|_
+argument_list|(
 literal|"Save Alpha channel (RGBA/RGB)"
+argument_list|)
 argument_list|,
 literal|"visible"
 argument_list|,
@@ -3598,7 +3649,10 @@ name|GTK_TYPE_LABEL
 argument_list|,
 literal|"label"
 argument_list|,
+name|_
+argument_list|(
 literal|"Opacity: "
+argument_list|)
 argument_list|,
 literal|"xalign"
 argument_list|,

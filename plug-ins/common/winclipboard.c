@@ -18,7 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -225,13 +237,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_clipboard_copy"
 argument_list|,
+name|_
+argument_list|(
 literal|"copy image to clipboard"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Copies the active drawable to the clipboard."
+argument_list|)
 argument_list|,
 literal|"Hans Breuer"
 argument_list|,
@@ -239,7 +260,10 @@ literal|"Hans Breuer"
 argument_list|,
 literal|"1999"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Edit/Copy to Clipboard"
+argument_list|)
 argument_list|,
 literal|"INDEXED*, RGB*"
 argument_list|,
@@ -258,9 +282,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_clipboard_paste"
 argument_list|,
+name|_
+argument_list|(
 literal|"paste image from clipboard"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Paste image from clipboard into active image."
+argument_list|)
 argument_list|,
 literal|"Hans Breuer"
 argument_list|,
@@ -268,7 +298,10 @@ literal|"Hans Breuer"
 argument_list|,
 literal|"1999"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Edit/Paste from Clipboard"
+argument_list|)
 argument_list|,
 literal|"INDEXED*, RGB*"
 argument_list|,
@@ -287,9 +320,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_clipboard_paste"
 argument_list|,
+name|_
+argument_list|(
 literal|"Get image from clipboard"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Get an image from the Windows clipboard, creating a new image"
+argument_list|)
 argument_list|,
 literal|"Hans Breuer"
 argument_list|,
@@ -297,7 +336,10 @@ literal|"Hans Breuer"
 argument_list|,
 literal|"1999"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Toolbox>/File/Acquire/From Clipboard"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -392,6 +434,9 @@ operator|.
 name|d_status
 operator|=
 name|STATUS_CALLING_ERROR
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -1136,7 +1181,10 @@ name|interactive
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Copying ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* speed it up with: */
@@ -2023,7 +2071,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|nWidth
 argument_list|,
@@ -2052,7 +2103,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Pasted"
+argument_list|)
 argument_list|,
 name|nWidth
 argument_list|,
@@ -2124,7 +2178,10 @@ name|interactive
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Pasteing ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pData
