@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bca526f0103
+DECL|enum|__anon2978bcdb0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -7038,6 +7038,8 @@ decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
+init|=
+name|NULL
 decl_stmt|;
 name|gimage_foreach
 argument_list|(

@@ -16,6 +16,18 @@ directive|define
 name|__COLOR_AREA_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplayF.h"
+end_include
+
 begin_define
 DECL|macro|FOREGROUND
 define|#
@@ -44,7 +56,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  foreground (= 0) or background (= 1) */
+comment|/* foreground (= 0) or background (= 1) */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GDisplay
+name|color_area_gdisp
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* hack for color displays */
 end_comment
 
 begin_comment

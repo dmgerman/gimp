@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"color_area.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -79,6 +85,11 @@ DECL|member|dest
 name|GtkWidget
 modifier|*
 name|dest
+decl_stmt|;
+DECL|member|target_menu
+name|GtkWidget
+modifier|*
+name|target_menu
 decl_stmt|;
 DECL|member|src_row
 name|gint
@@ -843,6 +854,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*   cdd.target_menu = gtk_option_menu_new ();   target_menu = create_target_menu ();   */
 for|for
 control|(
 name|i
@@ -923,6 +935,17 @@ name|hbox
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|create_target_menu (void)
+name|create_target_menu
+parameter_list|(
+name|void
+parameter_list|)
+block|{ }
 end_function
 
 begin_function
@@ -1683,7 +1706,11 @@ if|if
 condition|(
 name|gdisp
 condition|)
-block|{
+name|gdisp
+operator|=
+operator|&
+name|color_area_gdisp
+expr_stmt|;
 name|cdd
 operator|.
 name|old_nodes
@@ -1710,7 +1737,6 @@ operator|.
 name|old_nodes
 argument_list|)
 expr_stmt|;
-block|}
 name|cdd
 operator|.
 name|gdisp

@@ -58,6 +58,21 @@ function_decl|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpColorDisplayClone
+typedef|typedef
+name|gpointer
+function_decl|(
+modifier|*
+name|GimpColorDisplayClone
+function_decl|)
+parameter_list|(
+name|gpointer
+name|cd_ID
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorDisplayConvert
 typedef|typedef
 name|void
@@ -203,6 +218,10 @@ decl_stmt|;
 DECL|member|new
 name|GimpColorDisplayNew
 name|new
+decl_stmt|;
+DECL|member|clone
+name|GimpColorDisplayClone
+name|clone
 decl_stmt|;
 DECL|member|convert
 name|GimpColorDisplayConvert

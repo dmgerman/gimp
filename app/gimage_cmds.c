@@ -6646,6 +6646,8 @@ name|gimage
 decl_stmt|;
 name|gboolean
 name|enabled
+init|=
+name|FALSE
 decl_stmt|;
 name|gimage
 operator|=

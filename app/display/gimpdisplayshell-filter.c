@@ -792,10 +792,6 @@ block|{
 name|GList
 modifier|*
 name|list
-init|=
-name|gdisp
-operator|->
-name|cd_list
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -803,6 +799,12 @@ name|gdisp
 operator|!=
 name|NULL
 argument_list|)
+expr_stmt|;
+name|list
+operator|=
+name|gdisp
+operator|->
+name|cd_list
 expr_stmt|;
 while|while
 condition|(

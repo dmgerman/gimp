@@ -314,7 +314,7 @@ decl_stmt|;
 name|gboolean
 name|non_empty
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 name|gint32
 name|x1
