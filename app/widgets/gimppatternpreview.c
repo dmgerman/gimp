@@ -18,7 +18,7 @@ value|(GDK_BUTTON_PRESS_MASK |   \                                      GDK_BUTT
 end_define
 
 begin_enum
-DECL|enum|__anon29b296bb0103
+DECL|enum|__anon2b7bca610103
 enum|enum
 block|{
 DECL|enumerator|CLICKED
@@ -821,6 +821,21 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gpp
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gpp
+operator|->
+name|pattern
+condition|)
+return|return;
 name|width
 operator|=
 name|gpp
@@ -1377,6 +1392,10 @@ name|y
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|gpp
+operator|!=
+name|NULL
+operator|&&
 name|gpp
 operator|->
 name|pattern
