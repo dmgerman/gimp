@@ -22,10 +22,16 @@ directive|include
 file|"libgimp/gimpunit.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimage.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2992054c0103
+DECL|enum|__anon29e00c480103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -41,7 +47,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2992054c0203
+DECL|enum|__anon29e00c480203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -128,6 +134,27 @@ block|}
 struct|;
 end_struct
 
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon29e00c480308
+block|{
+DECL|member|resize
+name|Resize
+modifier|*
+name|resize
+decl_stmt|;
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+DECL|typedef|ImageResize
+block|}
+name|ImageResize
+typedef|;
+end_typedef
+
 begin_comment
 comment|/* If resolution_x is zero, then don't show resolution modification  * parts of the dialog. If object is non-NULL, then attach the cancel  * callback to its destroy signal. */
 end_comment
@@ -184,6 +211,30 @@ parameter_list|(
 name|Resize
 modifier|*
 name|resize
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Layer scaling sanity check and warning dialogs */
+end_comment
+
+begin_function_decl
+name|gboolean
+name|resize_check_layer_scaling
+parameter_list|(
+name|ImageResize
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|resize_scale_implement
+parameter_list|(
+name|ImageResize
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

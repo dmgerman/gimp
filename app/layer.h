@@ -376,6 +376,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|layer_check_scaling
+parameter_list|(
+name|Layer
+modifier|*
+parameter_list|,
+name|gint
+parameter_list|,
+name|gint
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|LayerMask
 modifier|*
 name|layer_create_mask
@@ -471,6 +485,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|layer_scale_by_factors
+parameter_list|(
+name|Layer
+modifier|*
+parameter_list|,
+name|gdouble
+parameter_list|,
+name|gdouble
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|layer_scale
 parameter_list|(
@@ -481,7 +509,7 @@ name|gint
 parameter_list|,
 name|gint
 parameter_list|,
-name|gint
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
