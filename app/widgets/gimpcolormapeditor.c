@@ -169,7 +169,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4f43250103
+DECL|enum|__anon2b41c1930103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1901,7 +1901,7 @@ operator|/
 name|xn
 operator|)
 expr_stmt|;
-comment|/*     width  = xn * cellsize;     height = yn * cellsize;   */
+comment|/* We used to render just multiples of "cellsize" here, but the    *  colormap as dockable looks better if it always fills the    *  available allocation->width (which should always be larger than    *  "xn * cellsize"). Defensively, we use MAX(width,xn*cellsize)    *  below   --Mitch    *     width  = xn * cellsize;    height = yn * cellsize; */
 name|editor
 operator|->
 name|xn
@@ -1926,9 +1926,14 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
+name|MAX
+argument_list|(
+name|width
+argument_list|,
 name|xn
 operator|*
 name|cellsize
+argument_list|)
 operator|*
 literal|3
 argument_list|)

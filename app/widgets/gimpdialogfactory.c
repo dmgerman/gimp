@@ -110,11 +110,14 @@ name|DEBUG_FACTORY
 end_ifdef
 
 begin_define
-DECL|macro|DEBUG
+DECL|macro|D (stmnt)
 define|#
 directive|define
-name|DEBUG
-value|g_print
+name|D
+parameter_list|(
+name|stmnt
+parameter_list|)
+value|stmnt
 end_define
 
 begin_else
@@ -123,10 +126,13 @@ directive|else
 end_else
 
 begin_define
-DECL|macro|DEBUG
+DECL|macro|D (stmnt)
 define|#
 directive|define
-name|DEBUG
+name|D
+parameter_list|(
+name|stmnt
+parameter_list|)
 end_define
 
 begin_endif
@@ -137,7 +143,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bf11940103
+DECL|enum|__anon2a1fef670103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -158,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bf11940203
+DECL|enum|__anon2a1fef670203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -2382,7 +2388,9 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: adding %s \"%s\"\n"
 argument_list|,
@@ -2397,6 +2405,7 @@ argument_list|,
 name|entry
 operator|->
 name|identifier
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -2471,7 +2480,9 @@ operator|->
 name|identifier
 argument_list|)
 expr_stmt|;
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: corrupt session info: %p (widget %p)\n"
 argument_list|,
@@ -2482,6 +2493,7 @@ argument_list|,
 name|info
 operator|->
 name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2494,7 +2506,9 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: updating session info %p (widget %p) for %s \"%s\"\n"
 argument_list|,
@@ -2515,6 +2529,7 @@ argument_list|,
 name|entry
 operator|->
 name|identifier
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2559,7 +2574,9 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: creating session info %p (widget %p) for %s \"%s\"\n"
 argument_list|,
@@ -2580,6 +2597,7 @@ argument_list|,
 name|entry
 operator|->
 name|identifier
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2617,11 +2635,14 @@ block|}
 else|else
 comment|/*  dialog is a GimpDock  */
 block|{
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: adding dock\n"
 argument_list|,
 name|G_GNUC_FUNCTION
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -2677,7 +2698,9 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: updating session info %p (widget %p) for dock\n"
 argument_list|,
@@ -2688,6 +2711,7 @@ argument_list|,
 name|info
 operator|->
 name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_set_window_geometry
@@ -2724,7 +2748,9 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: creating session info %p (widget %p) for dock\n"
 argument_list|,
@@ -2735,6 +2761,7 @@ argument_list|,
 name|info
 operator|->
 name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|factory
@@ -2934,7 +2961,9 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: removing \"%s\"\n"
 argument_list|,
@@ -2947,6 +2976,7 @@ operator|->
 name|identifier
 else|:
 literal|"dock"
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -2986,7 +3016,9 @@ operator|==
 name|dialog
 condition|)
 block|{
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: clearing session info %p (widget %p) for \"%s\"\n"
 argument_list|,
@@ -3005,6 +3037,7 @@ operator|->
 name|identifier
 else|:
 literal|"dock"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|session_info
