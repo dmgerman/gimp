@@ -1297,9 +1297,9 @@ argument_list|,
 name|c_tool
 argument_list|)
 expr_stmt|;
-name|gimp_enum_combo_box_set_active
+name|gimp_int_combo_box_set_active
 argument_list|(
-name|GIMP_ENUM_COMBO_BOX
+name|GIMP_INT_COMBO_BOX
 argument_list|(
 name|c_tool
 operator|->
@@ -3933,11 +3933,9 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-if|if
-condition|(
-name|gimp_enum_combo_box_get_active
+name|gimp_int_combo_box_get_active
 argument_list|(
-name|GIMP_ENUM_COMBO_BOX
+name|GIMP_INT_COMBO_BOX
 argument_list|(
 name|widget
 argument_list|)
@@ -3951,8 +3949,7 @@ name|tool
 operator|->
 name|channel
 argument_list|)
-condition|)
-block|{
+expr_stmt|;
 name|gimp_histogram_view_set_channel
 argument_list|(
 name|GIMP_HISTOGRAM_VIEW
@@ -3995,7 +3992,6 @@ literal|2
 else|:
 literal|1
 expr_stmt|;
-block|}
 name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
@@ -4116,7 +4112,7 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_ENUM_STORE_VALUE
+name|GIMP_INT_STORE_VALUE
 argument_list|,
 operator|&
 name|channel

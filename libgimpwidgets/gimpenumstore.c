@@ -54,18 +54,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_enum_store_init
-parameter_list|(
-name|GimpEnumStore
-modifier|*
-name|enum_store
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_enum_store_finalize
 parameter_list|(
 name|GObject
@@ -94,7 +82,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GtkListStoreClass
+name|GimpEnumStoreClass
 modifier|*
 name|parent_class
 init|=
@@ -135,10 +123,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-comment|/* base_init */
+comment|/* base_init      */
 name|NULL
 block|,
-comment|/* base_finalize */
+comment|/* base_finalize  */
 operator|(
 name|GClassInitFunc
 operator|)
@@ -149,7 +137,7 @@ block|,
 comment|/* class_finalize */
 name|NULL
 block|,
-comment|/* class_data */
+comment|/* class_data     */
 sizeof|sizeof
 argument_list|(
 name|GimpEnumStore
@@ -157,18 +145,16 @@ argument_list|)
 block|,
 literal|0
 block|,
-comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_enum_store_init
-block|,       }
+comment|/* n_preallocs    */
+name|NULL
+comment|/* instance_init  */
+block|}
 decl_stmt|;
 name|enum_store_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GTK_TYPE_LIST_STORE
+name|GIMP_TYPE_INT_STORE
 argument_list|,
 literal|"GimpEnumStore"
 argument_list|,
@@ -217,58 +203,6 @@ operator|->
 name|finalize
 operator|=
 name|gimp_enum_store_finalize
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_enum_store_init (GimpEnumStore * enum_store)
-name|gimp_enum_store_init
-parameter_list|(
-name|GimpEnumStore
-modifier|*
-name|enum_store
-parameter_list|)
-block|{
-name|GType
-name|types
-index|[
-name|GIMP_ENUM_STORE_NUM_COLUMNS
-index|]
-init|=
-block|{
-name|G_TYPE_INT
-block|,
-comment|/*  GIMP_ENUM_STORE_VALUE      */
-name|G_TYPE_STRING
-block|,
-comment|/*  GIMP_ENUM_STORE_LABEL      */
-name|G_TYPE_STRING
-block|,
-comment|/*  GIMP_ENUM_STORE_ICON       */
-name|G_TYPE_POINTER
-comment|/*  GIMP_ENUM_STORE_USER_DATA  */
-block|}
-decl_stmt|;
-name|enum_store
-operator|->
-name|enum_class
-operator|=
-name|NULL
-expr_stmt|;
-name|gtk_list_store_set_column_types
-argument_list|(
-name|GTK_LIST_STORE
-argument_list|(
-name|enum_store
-argument_list|)
-argument_list|,
-name|GIMP_ENUM_STORE_NUM_COLUMNS
-argument_list|,
-name|types
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -352,13 +286,13 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_ENUM_STORE_VALUE
+name|GIMP_INT_STORE_VALUE
 argument_list|,
 name|value
 operator|->
 name|value
 argument_list|,
-name|GIMP_ENUM_STORE_LABEL
+name|GIMP_INT_STORE_LABEL
 argument_list|,
 name|gettext
 argument_list|(
@@ -366,14 +300,6 @@ name|value
 operator|->
 name|value_name
 argument_list|)
-argument_list|,
-name|GIMP_ENUM_STORE_ICON
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_ENUM_STORE_USER_DATA
-argument_list|,
-name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -734,104 +660,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_lookup_by_value:  * @model: a #GimpEnumStore  * @value: an enum values to lookup in the @model  * @iter:  return location for the iter of the given @value  *  * Iterate over the @model looking for @value.  *  * Return value: %TRUE if the value has been located and @iter is  *               valid, %FALSE otherwise.  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_enum_store_lookup_by_value (GtkTreeModel * model,gint value,GtkTreeIter * iter)
-name|gimp_enum_store_lookup_by_value
-parameter_list|(
-name|GtkTreeModel
-modifier|*
-name|model
-parameter_list|,
-name|gint
-name|value
-parameter_list|,
-name|GtkTreeIter
-modifier|*
-name|iter
-parameter_list|)
-block|{
-name|gboolean
-name|iter_valid
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GTK_IS_TREE_MODEL
-argument_list|(
-name|model
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|iter
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|iter_valid
-operator|=
-name|gtk_tree_model_get_iter_first
-argument_list|(
-name|model
-argument_list|,
-name|iter
-argument_list|)
-init|;
-name|iter_valid
-condition|;
-name|iter_valid
-operator|=
-name|gtk_tree_model_iter_next
-argument_list|(
-name|model
-argument_list|,
-name|iter
-argument_list|)
-control|)
-block|{
-name|gint
-name|this
-decl_stmt|;
-name|gtk_tree_model_get
-argument_list|(
-name|model
-argument_list|,
-name|iter
-argument_list|,
-name|GIMP_ENUM_STORE_VALUE
-argument_list|,
-operator|&
-name|this
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|this
-operator|==
-name|value
-condition|)
-break|break;
-block|}
-return|return
-name|iter_valid
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix inserting a hyphen  * between them.  **/
 end_comment
 
@@ -925,7 +753,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_ENUM_STORE_VALUE
+name|GIMP_INT_STORE_VALUE
 argument_list|,
 operator|&
 name|value
@@ -971,7 +799,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_ENUM_STORE_ICON
+name|GIMP_INT_STORE_STOCK_ID
 argument_list|,
 name|stock_id
 argument_list|,

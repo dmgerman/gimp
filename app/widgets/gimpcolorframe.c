@@ -608,9 +608,9 @@ name|frame
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_enum_combo_box_set_active
+name|gimp_int_combo_box_set_active
 argument_list|(
-name|GIMP_ENUM_COMBO_BOX
+name|GIMP_INT_COMBO_BOX
 argument_list|(
 name|frame
 operator|->
@@ -762,11 +762,9 @@ modifier|*
 name|frame
 parameter_list|)
 block|{
-if|if
-condition|(
-name|gimp_enum_combo_box_get_active
+name|gimp_int_combo_box_get_active
 argument_list|(
-name|GIMP_ENUM_COMBO_BOX
+name|GIMP_INT_COMBO_BOX
 argument_list|(
 name|widget
 argument_list|)
@@ -780,7 +778,7 @@ name|frame
 operator|->
 name|frame_mode
 argument_list|)
-condition|)
+expr_stmt|;
 name|gimp_color_frame_update
 argument_list|(
 name|frame

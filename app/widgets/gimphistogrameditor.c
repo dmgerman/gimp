@@ -1715,7 +1715,7 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_ENUM_STORE_VALUE
+name|GIMP_INT_STORE_VALUE
 argument_list|,
 operator|&
 name|channel

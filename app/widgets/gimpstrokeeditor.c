@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286e373c0103
+DECL|enum|__anon29111c0c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1162,7 +1162,7 @@ literal|"dash_info_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_enum_combo_box_set_active
+name|gimp_int_combo_box_set_active
 argument_list|)
 argument_list|,
 name|box
@@ -1564,9 +1564,9 @@ name|value
 decl_stmt|;
 if|if
 condition|(
-name|gimp_enum_combo_box_get_active
+name|gimp_int_combo_box_get_active
 argument_list|(
-name|GIMP_ENUM_COMBO_BOX
+name|GIMP_INT_COMBO_BOX
 argument_list|(
 name|widget
 argument_list|)
