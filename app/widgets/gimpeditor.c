@@ -374,6 +374,37 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
+DECL|function|gimp_editor_new (void)
+name|gimp_editor_new
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpEditor
+modifier|*
+name|editor
+decl_stmt|;
+name|editor
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_EDITOR
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
 DECL|function|gimp_editor_add_button (GimpEditor * editor,const gchar * stock_id,const gchar * tooltip,const gchar * help_data,GCallback callback,GCallback extended_callback,gpointer callback_data)
 name|gimp_editor_add_button
 parameter_list|(

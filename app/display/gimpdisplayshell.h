@@ -337,16 +337,16 @@ modifier|*
 name|nav_popup
 decl_stmt|;
 comment|/*  navigation popup                   */
-DECL|member|cd_list
+DECL|member|filters
 name|GList
 modifier|*
-name|cd_list
+name|filters
 decl_stmt|;
 comment|/* color display conversion stuff      */
-DECL|member|cd_ui
+DECL|member|filters_dialog
 name|GtkWidget
 modifier|*
-name|cd_ui
+name|filters_dialog
 decl_stmt|;
 comment|/* color display filter dialog         */
 block|}

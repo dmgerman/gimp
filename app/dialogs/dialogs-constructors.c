@@ -932,7 +932,7 @@ condition|(
 operator|!
 name|shell
 operator|->
-name|cd_ui
+name|filters_dialog
 condition|)
 name|gimp_display_shell_filter_dialog_new
 argument_list|(
@@ -942,7 +942,7 @@ expr_stmt|;
 return|return
 name|shell
 operator|->
-name|cd_ui
+name|filters_dialog
 return|;
 block|}
 return|return

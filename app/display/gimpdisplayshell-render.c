@@ -1187,7 +1187,7 @@ name|list
 operator|=
 name|shell
 operator|->
-name|cd_list
+name|filters
 init|;
 name|list
 condition|;
@@ -1202,7 +1202,9 @@ block|{
 name|ColorDisplayNode
 modifier|*
 name|node
-init|=
+decl_stmt|;
+name|node
+operator|=
 operator|(
 name|ColorDisplayNode
 operator|*
@@ -1210,7 +1212,7 @@ operator|)
 name|list
 operator|->
 name|data
-decl_stmt|;
+expr_stmt|;
 name|node
 operator|->
 name|cd_convert

@@ -911,13 +911,13 @@ name|NULL
 expr_stmt|;
 name|shell
 operator|->
-name|cd_list
+name|filters
 operator|=
 name|NULL
 expr_stmt|;
 name|shell
 operator|->
-name|cd_ui
+name|filters_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -3606,6 +3606,11 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
+name|sel
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|alpha
 init|=
 name|FALSE
@@ -3687,6 +3692,14 @@ name|lp
 operator|=
 operator|!
 name|gimp_image_is_empty
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+name|sel
+operator|=
+operator|!
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)
@@ -4261,6 +4274,15 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
+name|SET_SENSITIVE
+argument_list|(
+literal|"Image/Crop Image"
+argument_list|,
+name|gdisp
+operator|&&
+name|sel
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"Image/Merge Visible Layers..."
