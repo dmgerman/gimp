@@ -12,6 +12,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* Needed here by Win32 gcc compilation */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<sys/types.h>
 end_include
 
@@ -208,7 +218,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2954bb890103
+DECL|enum|__anon2b27bf7c0103
 enum|enum
 block|{
 DECL|enumerator|GFS_FILENAME_CHANGED_SIGNAL

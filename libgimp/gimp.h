@@ -300,6 +300,15 @@ argument_list|(
 name|LIBGIMP_COMPILATION
 argument_list|)
 comment|/* Define PLUG_IN_INFO as an exported symbol (when compiling a plug-in).  * In gimp.c, we don't declare it at all, but fetch the address  * of it with GetProcAddress.  */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+DECL|variable|PLUG_IN_INFO
+name|GPlugInInfo
+name|PLUG_IN_INFO
+decl_stmt|;
+else|#
+directive|else
 name|__declspec
 argument_list|(
 argument|dllexport
@@ -307,6 +316,8 @@ argument_list|)
 name|GPlugInInfo
 name|PLUG_IN_INFO
 decl_stmt|;
+endif|#
+directive|endif
 endif|#
 directive|endif
 DECL|struct|_GTile
@@ -656,6 +667,27 @@ ifdef|#
 directive|ifdef
 name|NATIVE_WIN32
 comment|/* Define WinMain() as plug-ins are built as GUI applications. Also  * define a main() in case some plug-in still is built as a console  * application.  */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+comment|/* With gcc these must be handled differently */
+DECL|macro|__argc
+define|#
+directive|define
+name|__argc
+value|_argc
+DECL|macro|__argv
+define|#
+directive|define
+name|__argv
+value|_argv
+DECL|macro|_stdcall
+define|#
+directive|define
+name|_stdcall
+value|__attribute__((stdcall))
+endif|#
+directive|endif
 DECL|macro|MAIN ()
 define|#
 directive|define
