@@ -358,7 +358,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b0299fc0108
+DECL|struct|__anon2b52bfa70108
 typedef|typedef
 struct|struct
 block|{
@@ -399,7 +399,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b0299fc0208
+DECL|struct|__anon2b52bfa70208
 typedef|typedef
 struct|struct
 block|{
@@ -478,7 +478,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* We create a DIB section to hold the grabbed area. The scanlines in  * DIB sections are aligned ona LONG (four byte) boundary. Its pixel  * data is in RGB (BGR actually) format, three bytes per pixel.  *  * The GIMP uses no alignment for its pixel regions. The GIMP image we  * create is of type RGB, i.e. three bytes per pixel, too. Thus in  * order to be able to quickly transfer all of the image at a time, we  * must use a DIB section and pixel region the scanline width of which  * is evenly divisible with both 3 and 4. I.e. it must be a multiple  * of 12 bytes, or in pixels, a multiple of four pixels.  */
+comment|/* We create a DIB section to hold the grabbed area. The scanlines in  * DIB sections are aligned ona LONG (four byte) boundary. Its pixel  * data is in RGB (BGR actually) format, three bytes per pixel.  *  * The GIMP uses no alignment for its pixel regions. The GIMP image we  * create is of type RGB, i.e. three bytes per pixel, too. Thus in  * order to be able to quickly transfer all of the image at a time, we  * must use a DIB section and pixel region the scanline width in  * bytesof which is evenly divisible with both 3 and 4. I.e. it must  * be a multiple of 12 bytes, or in pixels, a multiple of four pixels.  */
 end_comment
 
 begin_define
@@ -610,8 +610,7 @@ decl_stmt|;
 name|int
 name|height
 init|=
-name|abs
-argument_list|(
+operator|(
 name|rect
 operator|.
 name|bottom
@@ -619,7 +618,7 @@ operator|-
 name|rect
 operator|.
 name|top
-argument_list|)
+operator|)
 decl_stmt|;
 comment|/* Create the bitmap info header */
 name|bmi
@@ -4004,13 +4003,9 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|flipRedAndBlueBytes (char * buffer,int width,int height)
+DECL|function|flipRedAndBlueBytes (int width,int height)
 name|flipRedAndBlueBytes
 parameter_list|(
-name|char
-modifier|*
-name|buffer
-parameter_list|,
 name|int
 name|width
 parameter_list|,
@@ -4019,57 +4014,82 @@ name|height
 parameter_list|)
 block|{
 name|int
-name|npixels
+name|i
+decl_stmt|,
+name|j
+decl_stmt|;
+name|guchar
+modifier|*
+name|bufp
 decl_stmt|;
 name|guchar
 name|temp
 decl_stmt|;
-name|width
+name|j
 operator|=
+literal|0
+expr_stmt|;
+while|while
+condition|(
+name|j
+operator|<
+name|height
+condition|)
+block|{
+name|i
+operator|=
+name|width
+expr_stmt|;
+name|bufp
+operator|=
+name|capBytes
+operator|+
+name|j
+operator|*
 name|ROUND4
 argument_list|(
 name|width
 argument_list|)
-expr_stmt|;
-name|npixels
-operator|=
-name|width
 operator|*
-name|height
+literal|3
 expr_stmt|;
 while|while
 condition|(
-name|npixels
+name|i
 operator|--
 condition|)
 block|{
 name|temp
 operator|=
-name|buffer
+name|bufp
 index|[
 literal|2
 index|]
 expr_stmt|;
-name|buffer
+name|bufp
 index|[
 literal|2
 index|]
 operator|=
-name|buffer
+name|bufp
 index|[
 literal|0
 index|]
 expr_stmt|;
-name|buffer
+name|bufp
 index|[
 literal|0
 index|]
 operator|=
 name|temp
 expr_stmt|;
-name|buffer
+name|bufp
 operator|+=
 literal|3
+expr_stmt|;
+block|}
+name|j
+operator|++
 expr_stmt|;
 block|}
 block|}
@@ -4143,8 +4163,7 @@ operator|)
 expr_stmt|;
 name|height
 operator|=
-name|abs
-argument_list|(
+operator|(
 name|rect
 operator|.
 name|bottom
@@ -4152,7 +4171,7 @@ operator|-
 name|rect
 operator|.
 name|top
-argument_list|)
+operator|)
 expr_stmt|;
 comment|/* Check that we got the memory */
 if|if
@@ -4173,8 +4192,6 @@ block|}
 comment|/* Flip the red and blue bytes */
 name|flipRedAndBlueBytes
 argument_list|(
-name|capBytes
-argument_list|,
 name|width
 argument_list|,
 name|height
@@ -4300,44 +4317,14 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* Now resize the image down to the correct size if necessary. */
-if|if
-condition|(
-name|width
-operator|!=
-name|ROUND4
-argument_list|(
-name|width
-argument_list|)
-condition|)
-block|{
-name|gimp_layer_resize
-argument_list|(
-name|layer_id
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|,
+if|#
+directive|if
 literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gimp_image_resize
-argument_list|(
-name|image_id
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
+comment|/* The layer resizing causes image corruption along the right border! */
+comment|/* Now resize the layer down to the correct size if necessary. */
+block|if (width != ROUND4(width)) {     gimp_layer_resize (layer_id, width, height, 0, 0);   }
+endif|#
+directive|endif
 comment|/* Finish up */
 name|gimp_drawable_flush
 argument_list|(
