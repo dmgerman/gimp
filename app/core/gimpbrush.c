@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c669a5c0103
+DECL|enum|__anon28a41f030103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -823,11 +823,6 @@ name|filename
 argument_list|)
 condition|)
 block|{
-name|fclose
-argument_list|(
-name|fp
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -921,6 +916,11 @@ name|BrushHeader
 argument_list|)
 condition|)
 block|{
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 name|gtk_object_sink
 argument_list|(
 name|GTK_OBJECT
@@ -1037,6 +1037,11 @@ operator|!=
 literal|1
 condition|)
 block|{
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 name|gtk_object_sink
 argument_list|(
 name|GTK_OBJECT
@@ -1140,6 +1145,11 @@ name|_
 argument_list|(
 literal|"Error in GIMP brush file...aborting."
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 name|gtk_object_sink
@@ -1315,6 +1325,11 @@ operator|.
 name|version
 argument_list|,
 name|filename
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 name|gtk_object_sink

@@ -16,15 +16,6 @@ directive|define
 name|__PATTERN_HEADER_H__
 end_define
 
-begin_typedef
-DECL|typedef|PatternHeader
-typedef|typedef
-name|struct
-name|_PatternHeader
-name|PatternHeader
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GPATTERN_FILE_VERSION
 define|#
@@ -41,17 +32,18 @@ name|GPATTERN_MAGIC
 value|(('G'<< 24) + ('P'<< 16) + ('A'<< 8) + ('T'<< 0))
 end_define
 
-begin_define
-DECL|macro|sz_PatternHeader
-define|#
-directive|define
-name|sz_PatternHeader
-value|(sizeof (PatternHeader))
-end_define
-
 begin_comment
 comment|/*  All field entries are MSB  */
 end_comment
+
+begin_typedef
+DECL|typedef|PatternHeader
+typedef|typedef
+name|struct
+name|_PatternHeader
+name|PatternHeader
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_PatternHeader
@@ -59,38 +51,32 @@ struct|struct
 name|_PatternHeader
 block|{
 DECL|member|header_size
-name|unsigned
-name|int
+name|guint
 name|header_size
 decl_stmt|;
-comment|/*  header_size = sz_PatternHeader + pattern name  */
+comment|/*  header_size = sizeof(PatternHeader) + pattern name  */
 DECL|member|version
-name|unsigned
-name|int
+name|guint
 name|version
 decl_stmt|;
 comment|/*  pattern file version #  */
 DECL|member|width
-name|unsigned
-name|int
+name|guint
 name|width
 decl_stmt|;
 comment|/*  width of pattern  */
 DECL|member|height
-name|unsigned
-name|int
+name|guint
 name|height
 decl_stmt|;
 comment|/*  height of pattern  */
 DECL|member|bytes
-name|unsigned
-name|int
+name|guint
 name|bytes
 decl_stmt|;
 comment|/*  depth of pattern in bytes  */
 DECL|member|magic_number
-name|unsigned
-name|int
+name|guint
 name|magic_number
 decl_stmt|;
 comment|/*  GIMP pattern magic number  */

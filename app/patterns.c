@@ -163,21 +163,6 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|GSList
-modifier|*
-name|insert_pattern_in_list
-parameter_list|(
-name|GSList
-modifier|*
-parameter_list|,
-name|GPattern
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
 name|load_pattern
 parameter_list|(
@@ -617,17 +602,20 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
+name|PatternHeader
+name|header
+decl_stmt|;
 name|gint
 name|bn_size
 decl_stmt|;
 name|guchar
 name|buf
 index|[
-name|sz_PatternHeader
-index|]
-decl_stmt|;
+sizeof|sizeof
+argument_list|(
 name|PatternHeader
-name|header
+argument_list|)
+index|]
 decl_stmt|;
 name|guint
 modifier|*
@@ -646,13 +634,19 @@ name|buf
 argument_list|,
 literal|1
 argument_list|,
-name|sz_PatternHeader
+sizeof|sizeof
+argument_list|(
+name|PatternHeader
+argument_list|)
 argument_list|,
 name|fp
 argument_list|)
 operator|)
 operator|<
-name|sz_PatternHeader
+sizeof|sizeof
+argument_list|(
+name|PatternHeader
+argument_list|)
 condition|)
 block|{
 name|fclose
@@ -688,7 +682,10 @@ init|;
 name|i
 operator|<
 operator|(
-name|sz_PatternHeader
+sizeof|sizeof
+argument_list|(
+name|PatternHeader
+argument_list|)
 operator|/
 literal|4
 operator|)
@@ -798,7 +795,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unknown GIMP version #%d in \"%s\"\n"
+literal|"Unknown GIMP pattern version #%d in \"%s\"\n"
 argument_list|)
 argument_list|,
 name|header
@@ -859,7 +856,10 @@ name|header
 operator|.
 name|header_size
 operator|-
-name|sz_PatternHeader
+sizeof|sizeof
+argument_list|(
+name|PatternHeader
+argument_list|)
 operator|)
 operator|)
 condition|)
@@ -899,8 +899,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error in GIMP pattern file...aborting."
+literal|"Error in GIMP pattern file \"%s\""
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -975,14 +977,18 @@ name|header
 operator|.
 name|bytes
 condition|)
+block|{
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMP pattern file appears to be truncated."
+literal|"GIMP pattern file \"%s\" appears to be truncated."
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  success  */
 return|return
 name|TRUE
@@ -1120,35 +1126,6 @@ end_function
 
 begin_function
 specifier|static
-name|GSList
-modifier|*
-DECL|function|insert_pattern_in_list (GSList * list,GPattern * pattern)
-name|insert_pattern_in_list
-parameter_list|(
-name|GSList
-modifier|*
-name|list
-parameter_list|,
-name|GPattern
-modifier|*
-name|pattern
-parameter_list|)
-block|{
-return|return
-name|g_slist_insert_sorted
-argument_list|(
-name|list
-argument_list|,
-name|pattern
-argument_list|,
-name|pattern_compare_func
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|void
 DECL|function|load_pattern (gchar * filename)
 name|load_pattern
@@ -1168,7 +1145,7 @@ name|fp
 decl_stmt|;
 name|pattern
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GPattern
 argument_list|,
@@ -1236,8 +1213,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Pattern load failed"
+literal|"Error loading pattern \"%s\""
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1251,11 +1230,13 @@ expr_stmt|;
 comment|/*temp_buf_swap (pattern->mask);*/
 name|pattern_list
 operator|=
-name|insert_pattern_in_list
+name|g_slist_insert_sorted
 argument_list|(
 name|pattern_list
 argument_list|,
 name|pattern
+argument_list|,
+name|pattern_compare_func
 argument_list|)
 expr_stmt|;
 block|}
