@@ -426,8 +426,7 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
-name|gimp_drawable_is_gray
+name|gimp_drawable_is_indexed
 argument_list|(
 name|mapvals
 operator|.
