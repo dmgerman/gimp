@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a359d0103
+DECL|enum|__anon290002df0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -810,14 +810,14 @@ expr_stmt|;
 else|else
 name|help_id
 operator|=
-name|g_object_get_data
+name|g_object_get_qdata
 argument_list|(
 name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-help-id"
+name|GIMP_HELP_ID
 argument_list|)
 expr_stmt|;
 name|help_data
