@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d69dec0103
+DECL|enum|__anon2b0c96730103
 block|{
 DECL|enumerator|SCALE
 name|SCALE
@@ -132,6 +132,9 @@ name|iter
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gboolean
+name|persistent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -446,10 +449,9 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-operator|(
-name|gdouble
-operator|)
 name|i
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -485,10 +487,9 @@ name|iter
 argument_list|,
 literal|1.0
 operator|/
-operator|(
-name|gdouble
-operator|)
 name|i
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -803,7 +804,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_scale_combo_box_scale_iter_set (GtkListStore * store,GtkTreeIter * iter,gdouble scale)
+DECL|function|gimp_scale_combo_box_scale_iter_set (GtkListStore * store,GtkTreeIter * iter,gdouble scale,gboolean persistent)
 name|gimp_scale_combo_box_scale_iter_set
 parameter_list|(
 name|GtkListStore
@@ -816,6 +817,9 @@ name|iter
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gboolean
+name|persistent
 parameter_list|)
 block|{
 name|gchar
@@ -835,9 +839,10 @@ argument_list|)
 argument_list|,
 literal|"%d%%"
 argument_list|,
-call|(
+operator|(
 name|int
-call|)
+operator|)
+name|ROUND
 argument_list|(
 literal|100.0
 operator|*
@@ -865,7 +870,7 @@ literal|1.0
 argument_list|,
 name|PERSISTENT
 argument_list|,
-name|TRUE
+name|persistent
 argument_list|,
 operator|-
 literal|1
@@ -1552,6 +1557,8 @@ operator|&
 name|iter
 argument_list|,
 name|scale
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
