@@ -105,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292d09cd0103
+DECL|enum|__anon27fe7fdf0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1064,7 +1064,9 @@ argument_list|)
 operator|!=
 name|token
 condition|)
-break|break;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -1076,7 +1078,9 @@ operator|&
 name|parasite_flags
 argument_list|)
 condition|)
-break|break;
+goto|goto
+name|cleanup
+goto|;
 name|token
 operator|=
 name|G_TOKEN_STRING
@@ -1090,7 +1094,9 @@ argument_list|)
 operator|!=
 name|token
 condition|)
-break|break;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -1102,7 +1108,9 @@ operator|&
 name|parasite_data
 argument_list|)
 condition|)
-break|break;
+goto|goto
+name|cleanup
+goto|;
 name|parasite
 operator|=
 name|gimp_parasite_new
@@ -1138,6 +1146,18 @@ expr_stmt|;
 name|token
 operator|=
 name|G_TOKEN_RIGHT_PAREN
+expr_stmt|;
+name|g_free
+argument_list|(
+name|parasite_data
+argument_list|)
+expr_stmt|;
+name|cleanup
+label|:
+name|g_free
+argument_list|(
+name|parasite_name
+argument_list|)
 expr_stmt|;
 block|}
 break|break;

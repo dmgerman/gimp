@@ -4197,6 +4197,10 @@ name|GimpLayerMask
 modifier|*
 name|layer_mask
 decl_stmt|;
+name|GimpChannel
+modifier|*
+name|channel
+decl_stmt|;
 name|guint32
 name|hierarchy_offset
 decl_stmt|;
@@ -4327,6 +4331,13 @@ return|return
 name|NULL
 return|;
 comment|/* read in the layer_mask properties */
+name|channel
+operator|=
+name|GIMP_CHANNEL
+argument_list|(
+name|layer_mask
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -4336,13 +4347,8 @@ name|info
 argument_list|,
 name|gimage
 argument_list|,
-operator|(
-name|GimpChannel
-operator|*
-operator|*
-operator|)
 operator|&
-name|layer_mask
+name|channel
 argument_list|)
 condition|)
 goto|goto
