@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b256a0103
+DECL|enum|__anon2a59d76a0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -179,7 +179,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b256a0203
+DECL|enum|__anon2a59d76a0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b256a0308
+DECL|struct|__anon2a59d76a0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b256a0408
+DECL|struct|__anon2a59d76a0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b256a0508
+DECL|struct|__anon2a59d76a0508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -421,7 +421,7 @@ name|bumpmap_params_t
 name|params
 decl_stmt|;
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|bumpmap_interface_t
@@ -449,6 +449,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -456,6 +457,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1336,9 +1338,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1346,6 +1349,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

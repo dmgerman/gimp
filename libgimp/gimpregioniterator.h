@@ -20,7 +20,7 @@ begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|enum
-DECL|enum|__anon2773d54c0103
+DECL|enum|__anon2901475e0103
 type|{
 DECL|enumerator|PIXEL_WRAP
 name|PIXEL_WRAP
@@ -185,6 +185,7 @@ modifier|*
 name|GimpRgnFunc1
 function_decl|)
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -193,6 +194,7 @@ name|gint
 name|bpp
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -206,6 +208,7 @@ modifier|*
 name|GimpRgnFunc2
 function_decl|)
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -218,6 +221,7 @@ name|gint
 name|bpp
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_typedef

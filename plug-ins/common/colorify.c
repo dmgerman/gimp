@@ -82,6 +82,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -89,6 +90,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -162,7 +164,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b187b400108
+DECL|struct|__anon2b8a9d040108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -177,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b187b400208
+DECL|struct|__anon2b8a9d040208
 block|{
 DECL|member|run
 name|gboolean
@@ -499,9 +501,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -509,6 +512,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -750,9 +754,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorify_func (guchar * src,guchar * dest,gint bpp,gpointer data)
+DECL|function|colorify_func (const guchar * src,guchar * dest,gint bpp,gpointer data)
 name|colorify_func
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -770,7 +775,10 @@ parameter_list|)
 block|{
 name|gint
 name|lum
-init|=
+decl_stmt|;
+name|lum
+operator|=
+operator|(
 name|lum_red_lookup
 index|[
 name|src
@@ -794,8 +802,8 @@ index|[
 literal|2
 index|]
 index|]
-decl_stmt|;
-comment|/* luminosity */
+operator|)
+expr_stmt|;
 name|dest
 index|[
 literal|0

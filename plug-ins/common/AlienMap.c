@@ -30511,7 +30511,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a860160108
+DECL|struct|__anon28a6c5620108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30546,7 +30546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a860160208
+DECL|struct|__anon28a6c5620208
 block|{
 DECL|member|run
 name|gint
@@ -30577,18 +30577,20 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -31239,9 +31241,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -31249,6 +31252,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -31587,9 +31591,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|alienmap_func (guchar * src,guchar * dest,gint bpp,gpointer data)
+DECL|function|alienmap_func (const guchar * src,guchar * dest,gint bpp,gpointer data)
 name|alienmap_func
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
