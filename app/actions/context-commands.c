@@ -1043,7 +1043,7 @@ name|radius
 argument_list|,
 literal|1.0
 argument_list|,
-literal|4096.0
+literal|256.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1239,7 +1239,7 @@ name|aspect
 argument_list|,
 literal|1.0
 argument_list|,
-literal|1000.0
+literal|20.0
 argument_list|,
 literal|1.0
 argument_list|,
