@@ -186,6 +186,9 @@ parameter_list|(
 name|GimpEnumAction
 modifier|*
 name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -189,6 +189,10 @@ parameter_list|(
 name|GimpPlugInAction
 modifier|*
 name|action
+parameter_list|,
+name|PlugInProcDef
+modifier|*
+name|proc_def
 parameter_list|)
 function_decl|;
 end_function_decl

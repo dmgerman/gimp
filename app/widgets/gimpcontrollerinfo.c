@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be6c11d0103
+DECL|enum|__anon28dbceed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be6c11d0203
+DECL|enum|__anon28dbceed0203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -1559,7 +1559,7 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"    ignoring because controller is disabled\n"
+literal|"    ignoring because controller is disabled\n\n"
 argument_list|)
 expr_stmt|;
 return|return

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bec58440103
+DECL|enum|__anon291e05130103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bec58440203
+DECL|enum|__anon291e05130203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -606,6 +606,10 @@ decl_stmt|;
 name|gimp_enum_action_selected
 argument_list|(
 name|enum_action
+argument_list|,
+name|enum_action
+operator|->
+name|value
 argument_list|)
 expr_stmt|;
 block|}
@@ -613,12 +617,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_enum_action_selected (GimpEnumAction * action)
+DECL|function|gimp_enum_action_selected (GimpEnumAction * action,gint value)
 name|gimp_enum_action_selected
 parameter_list|(
 name|GimpEnumAction
 modifier|*
 name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -640,8 +647,6 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|action
-operator|->
 name|value
 argument_list|)
 expr_stmt|;

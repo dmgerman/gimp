@@ -191,6 +191,11 @@ parameter_list|(
 name|GimpStringAction
 modifier|*
 name|action
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|value
 parameter_list|)
 function_decl|;
 end_function_decl
