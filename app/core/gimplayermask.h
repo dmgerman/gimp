@@ -197,11 +197,6 @@ modifier|*
 name|mask
 decl_stmt|;
 comment|/*  the layer mask        */
-DECL|member|mode
-name|gint
-name|mode
-decl_stmt|;
-comment|/*  the application mode  */
 block|}
 struct|;
 end_struct

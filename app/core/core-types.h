@@ -70,7 +70,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon276a659f0103
+DECL|enum|__anon292d97b10103
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -86,6 +86,12 @@ name|ADD_SELECTION_MASK
 block|,
 DECL|enumerator|ADD_INV_SELECTION_MASK
 name|ADD_INV_SELECTION_MASK
+block|,
+DECL|enumerator|ADD_COPY_MASK
+name|ADD_COPY_MASK
+block|,
+DECL|enumerator|ADD_INV_COPY_MASK
+name|ADD_INV_COPY_MASK
 DECL|typedef|AddMaskType
 block|}
 name|AddMaskType
@@ -95,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276a659f0203
+DECL|enum|__anon292d97b10203
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -111,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276a659f0303
+DECL|enum|__anon292d97b10303
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -131,7 +137,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon276a659f0403
+DECL|enum|__anon292d97b10403
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -155,7 +161,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon276a659f0503
+DECL|enum|__anon292d97b10503
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -177,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276a659f0603
+DECL|enum|__anon292d97b10603
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -207,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276a659f0703
+DECL|enum|__anon292d97b10703
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -223,7 +229,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276a659f0803
+DECL|enum|__anon292d97b10803
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -245,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276a659f0903
+DECL|enum|__anon292d97b10903
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -280,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276a659f0a03
+DECL|enum|__anon292d97b10a03
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -316,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276a659f0b03
+DECL|enum|__anon292d97b10b03
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL

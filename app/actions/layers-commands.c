@@ -3758,6 +3758,30 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
+literal|"Grayscale Copy of Layer"
+argument_list|)
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|ADD_COPY_MASK
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Inverse Grayscale Copy of Layer"
+argument_list|)
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|ADD_INV_COPY_MASK
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
 literal|"White (Full Opacity)"
 argument_list|)
 argument_list|,
@@ -3825,6 +3849,30 @@ name|options
 operator|->
 name|add_mask_type
 argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Grayscale Copy of Layer"
+argument_list|)
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|ADD_COPY_MASK
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Inverse Grayscale Copy of Layer"
+argument_list|)
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|ADD_INV_COPY_MASK
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|_
 argument_list|(
