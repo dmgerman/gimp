@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297d67ef0103
+DECL|enum|__anon29d81cf90103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -375,7 +375,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_RESIZE
+name|GIMP_UNDO_GROUP_ITEM_RESIZE
 argument_list|,
 name|_
 argument_list|(

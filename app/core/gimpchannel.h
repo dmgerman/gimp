@@ -447,12 +447,6 @@ name|gboolean
 name|push_undo
 parameter_list|)
 function_decl|;
-DECL|member|translate_desc
-specifier|const
-name|gchar
-modifier|*
-name|translate_desc
-decl_stmt|;
 DECL|member|feather_desc
 specifier|const
 name|gchar

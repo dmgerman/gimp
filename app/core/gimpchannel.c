@@ -1129,6 +1129,60 @@ argument_list|(
 literal|"Rename Channel"
 argument_list|)
 expr_stmt|;
+name|item_class
+operator|->
+name|translate_desc
+operator|=
+name|_
+argument_list|(
+literal|"Move Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|scale_desc
+operator|=
+name|_
+argument_list|(
+literal|"Scale Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|resize_desc
+operator|=
+name|_
+argument_list|(
+literal|"Resize Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|flip_desc
+operator|=
+name|_
+argument_list|(
+literal|"Flip Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|rotate_desc
+operator|=
+name|_
+argument_list|(
+literal|"Rotate Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|transform_desc
+operator|=
+name|_
+argument_list|(
+literal|"Transform Channel"
+argument_list|)
+expr_stmt|;
 name|drawable_class
 operator|->
 name|invalidate_boundary
@@ -1164,24 +1218,6 @@ operator|->
 name|swap_pixels
 operator|=
 name|gimp_channel_swap_pixels
-expr_stmt|;
-name|drawable_class
-operator|->
-name|scale_desc
-operator|=
-name|_
-argument_list|(
-literal|"Scale Channel"
-argument_list|)
-expr_stmt|;
-name|drawable_class
-operator|->
-name|resize_desc
-operator|=
-name|_
-argument_list|(
-literal|"Resize Channel"
-argument_list|)
 expr_stmt|;
 name|klass
 operator|->
@@ -1254,15 +1290,6 @@ operator|->
 name|shrink
 operator|=
 name|gimp_channel_real_shrink
-expr_stmt|;
-name|klass
-operator|->
-name|translate_desc
-operator|=
-name|_
-argument_list|(
-literal|"Move Channel"
-argument_list|)
 expr_stmt|;
 name|klass
 operator|->
@@ -1891,12 +1918,7 @@ name|gimp_channel_push_undo
 argument_list|(
 name|channel
 argument_list|,
-name|GIMP_CHANNEL_GET_CLASS
-argument_list|(
-name|channel
-argument_list|)
-operator|->
-name|translate_desc
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else
@@ -2485,27 +2507,6 @@ name|gboolean
 name|clip_result
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_TRANSFORM
-argument_list|,
-name|_
-argument_list|(
-literal|"Flip Channel"
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|G_TYPE_FROM_INSTANCE
@@ -2535,11 +2536,6 @@ argument_list|,
 name|clip_result
 argument_list|)
 expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2566,27 +2562,6 @@ name|gboolean
 name|clip_result
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_TRANSFORM
-argument_list|,
-name|_
-argument_list|(
-literal|"Rotate Channel"
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  don't default to clip_result == TRUE here  */
 name|GIMP_ITEM_CLASS
 argument_list|(
@@ -2604,11 +2579,6 @@ argument_list|,
 name|center_y
 argument_list|,
 name|clip_result
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 block|}
@@ -2651,27 +2621,6 @@ name|gpointer
 name|progress_data
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_TRANSFORM
-argument_list|,
-name|_
-argument_list|(
-literal|"Transform Channel"
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|G_TYPE_FROM_INSTANCE
@@ -2709,11 +2658,6 @@ argument_list|,
 name|progress_callback
 argument_list|,
 name|progress_data
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 block|}

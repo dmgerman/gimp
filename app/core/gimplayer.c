@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6921570103
+DECL|enum|__anon27b3232f0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1049,6 +1049,60 @@ argument_list|(
 literal|"Rename Layer"
 argument_list|)
 expr_stmt|;
+name|item_class
+operator|->
+name|translate_desc
+operator|=
+name|_
+argument_list|(
+literal|"Move Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|scale_desc
+operator|=
+name|_
+argument_list|(
+literal|"Scale Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|resize_desc
+operator|=
+name|_
+argument_list|(
+literal|"Resize Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|flip_desc
+operator|=
+name|_
+argument_list|(
+literal|"Flip Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|rotate_desc
+operator|=
+name|_
+argument_list|(
+literal|"Rotate Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|transform_desc
+operator|=
+name|_
+argument_list|(
+literal|"Transform Layer"
+argument_list|)
+expr_stmt|;
 name|drawable_class
 operator|->
 name|invalidate_boundary
@@ -1066,24 +1120,6 @@ operator|->
 name|set_tiles
 operator|=
 name|gimp_layer_set_tiles
-expr_stmt|;
-name|drawable_class
-operator|->
-name|scale_desc
-operator|=
-name|_
-argument_list|(
-literal|"Scale Layer"
-argument_list|)
-expr_stmt|;
-name|drawable_class
-operator|->
-name|resize_desc
-operator|=
-name|_
-argument_list|(
-literal|"Resize Layer"
-argument_list|)
 expr_stmt|;
 name|klass
 operator|->
@@ -2571,10 +2607,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Move Layer"
-argument_list|)
+name|NULL
 argument_list|,
 name|item
 argument_list|)
@@ -2734,33 +2767,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|layer
-operator|->
-name|mask
-condition|)
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_SCALE
-argument_list|,
-name|_
-argument_list|(
-literal|"Scale Layer"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -2791,7 +2797,6 @@ name|layer
 operator|->
 name|mask
 condition|)
-block|{
 name|gimp_item_scale
 argument_list|(
 name|GIMP_ITEM
@@ -2816,12 +2821,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -2857,33 +2856,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|layer
-operator|->
-name|mask
-condition|)
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_RESIZE
-argument_list|,
-name|_
-argument_list|(
-literal|"Resize Layer"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -2908,7 +2880,6 @@ name|layer
 operator|->
 name|mask
 condition|)
-block|{
 name|gimp_item_resize
 argument_list|(
 name|GIMP_ITEM
@@ -2927,12 +2898,6 @@ argument_list|,
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -2965,27 +2930,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_TRANSFORM
-argument_list|,
-name|_
-argument_list|(
-literal|"Flip Layer"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -3024,11 +2968,6 @@ argument_list|,
 name|clip_result
 argument_list|)
 expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3064,27 +3003,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_TRANSFORM
-argument_list|,
-name|_
-argument_list|(
-literal|"Rotate Layer"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -3125,11 +3043,6 @@ argument_list|,
 name|center_y
 argument_list|,
 name|clip_result
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 block|}
@@ -3181,27 +3094,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_TRANSFORM
-argument_list|,
-name|_
-argument_list|(
-literal|"Transform Layer"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -3258,11 +3150,6 @@ argument_list|,
 name|progress_callback
 argument_list|,
 name|progress_data
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 block|}
@@ -5735,7 +5622,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_RESIZE
+name|GIMP_UNDO_GROUP_ITEM_RESIZE
 argument_list|,
 name|_
 argument_list|(

@@ -1365,7 +1365,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_RESIZE
+name|GIMP_UNDO_GROUP_ITEM_RESIZE
 argument_list|,
 name|_
 argument_list|(
@@ -4894,7 +4894,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_SCALE
+name|GIMP_UNDO_GROUP_ITEM_SCALE
 argument_list|,
 name|_
 argument_list|(
@@ -5271,7 +5271,7 @@ name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_RESIZE
+name|GIMP_UNDO_GROUP_ITEM_RESIZE
 argument_list|,
 name|_
 argument_list|(

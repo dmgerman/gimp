@@ -763,6 +763,15 @@ name|stroke
 operator|=
 name|gimp_selection_stroke
 expr_stmt|;
+name|item_class
+operator|->
+name|translate_desc
+operator|=
+name|_
+argument_list|(
+literal|"Move Selection"
+argument_list|)
+expr_stmt|;
 name|drawable_class
 operator|->
 name|invalidate_boundary
@@ -840,15 +849,6 @@ operator|->
 name|shrink
 operator|=
 name|gimp_selection_shrink
-expr_stmt|;
-name|channel_class
-operator|->
-name|translate_desc
-operator|=
-name|_
-argument_list|(
-literal|"Move Selection"
-argument_list|)
 expr_stmt|;
 name|channel_class
 operator|->

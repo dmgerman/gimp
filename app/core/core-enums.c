@@ -2917,28 +2917,6 @@ literal|"group-mask"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_ITEM_PROPERTIES
-block|,
-name|N_
-argument_list|(
-literal|"Item Properties"
-argument_list|)
-block|,
-literal|"group-item-properties"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_GROUP_ITEM_DISPLACE
-block|,
-name|N_
-argument_list|(
-literal|"Move Item"
-argument_list|)
-block|,
-literal|"group-item-displace"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_GROUP_ITEM_VISIBILITY
 block|,
 name|N_
@@ -2961,25 +2939,47 @@ literal|"group-item-linked"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_LAYER_SCALE
+name|GIMP_UNDO_GROUP_ITEM_PROPERTIES
 block|,
 name|N_
 argument_list|(
-literal|"Scale Layer"
+literal|"Item Properties"
 argument_list|)
 block|,
-literal|"group-layer-scale"
+literal|"group-item-properties"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_LAYER_RESIZE
+name|GIMP_UNDO_GROUP_ITEM_DISPLACE
 block|,
 name|N_
 argument_list|(
-literal|"Resize Layer"
+literal|"Move Item"
 argument_list|)
 block|,
-literal|"group-layer-resize"
+literal|"group-item-displace"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_ITEM_SCALE
+block|,
+name|N_
+argument_list|(
+literal|"Scale Item"
+argument_list|)
+block|,
+literal|"group-item-scale"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_ITEM_RESIZE
+block|,
+name|N_
+argument_list|(
+literal|"Resize Item"
+argument_list|)
+block|,
+literal|"group-item-resize"
 block|}
 block|,
 block|{
