@@ -35,7 +35,7 @@ parameter_list|,
 name|GimpImageBaseType
 name|new_type
 parameter_list|,
-comment|/* The following params used only for                                          * new_type == INDEXED                                          */
+comment|/* The following params used only for                                          * new_type == GIMP_INDEXED                                          */
 name|gint
 name|num_cols
 parameter_list|,
