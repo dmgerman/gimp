@@ -840,6 +840,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*, 					      ToolType        tool_type, 					      CursorModifier  modifier, 					      gboolean        toggle_cursor); */
+end_comment
+
 begin_function_decl
 name|void
 name|gdisplay_remove_tool_cursor

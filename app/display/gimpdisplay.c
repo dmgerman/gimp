@@ -7503,6 +7503,7 @@ parameter_list|,
 name|GdkCursorType
 name|cursor_type
 parameter_list|)
+comment|/*, 			      ToolType        tool_type, 			      CursorModifier  modifier, 			      gboolean        toggle_cursor) */
 block|{
 if|if
 condition|(
@@ -7523,6 +7524,7 @@ name|CURSOR_MODIFIER_NONE
 argument_list|,
 name|FALSE
 argument_list|,
+comment|/*tool_type, 				       modifier, 				       toggle_cursor,*/
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -7636,9 +7638,9 @@ name|gdisp
 operator|->
 name|current_cursor
 argument_list|,
-name|active_tool
+name|gdisp
 operator|->
-name|type
+name|cursor_tool
 argument_list|,
 name|CURSOR_MODIFIER_NONE
 argument_list|,

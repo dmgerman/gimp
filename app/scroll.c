@@ -253,9 +253,9 @@ name|gdisp
 operator|->
 name|current_cursor
 argument_list|,
-name|active_tool
+name|gdisp
 operator|->
-name|type
+name|cursor_tool
 argument_list|,
 name|CURSOR_MODIFIER_NONE
 argument_list|,
