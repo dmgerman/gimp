@@ -145,6 +145,11 @@ DECL|member|update_on_popup
 name|gboolean
 name|update_on_popup
 decl_stmt|;
+DECL|member|title
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
 DECL|member|help_id
 name|gchar
 modifier|*
@@ -203,6 +208,11 @@ specifier|const
 name|gchar
 modifier|*
 name|factory_path
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|title
 parameter_list|,
 specifier|const
 name|gchar

@@ -141,7 +141,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299d30fc0103
+DECL|enum|__anon290ac6ca0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -896,9 +896,7 @@ literal|"<Dialogs>"
 argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
-name|menu_factory
-operator|->
-name|gimp
+name|dockbook
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2154,6 +2152,34 @@ name|GtkWidget
 modifier|*
 name|add_widget
 decl_stmt|;
+name|gimp_item_factory_set_visible
+argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|dockbook
+operator|->
+name|item_factory
+argument_list|)
+argument_list|,
+literal|"/dialog-menu"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_item_factory_set_visible
+argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|dockbook
+operator|->
+name|item_factory
+argument_list|)
+argument_list|,
+literal|"/Select Tab"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|add_widget
 operator|=
 name|gtk_item_factory_get_widget

@@ -2513,11 +2513,19 @@ value|"gimp-dock-tab-add"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_DOCK_TAB_REMOVE
+DECL|macro|GIMP_HELP_DOCK_TAB_CLOSE
 define|#
 directive|define
-name|GIMP_HELP_DOCK_TAB_REMOVE
-value|"gimp-dock-tab-remove"
+name|GIMP_HELP_DOCK_TAB_CLOSE
+value|"gimp-dock-tab-close"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_DOCK_TAB_DETACH
+define|#
+directive|define
+name|GIMP_HELP_DOCK_TAB_DETACH
+value|"gimp-dock-tab-detach"
 end_define
 
 begin_define
