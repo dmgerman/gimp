@@ -287,39 +287,6 @@ name|run_proc
 decl_stmt|;
 block|}
 struct|;
-if|#
-directive|if
-name|defined
-argument_list|(
-name|NATIVE_WIN32
-argument_list|)
-operator|&&
-operator|!
-name|defined
-argument_list|(
-name|LIBGIMP_COMPILATION
-argument_list|)
-comment|/* Define PLUG_IN_INFO as an exported symbol (when compiling a plug-in).  * In gimp.c, we don't declare it at all, but fetch the address  * of it with GetProcAddress.  */
-ifdef|#
-directive|ifdef
-name|__GNUC__
-DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
-name|PLUG_IN_INFO
-decl_stmt|;
-else|#
-directive|else
-name|__declspec
-argument_list|(
-argument|dllexport
-argument_list|)
-name|GPlugInInfo
-name|PLUG_IN_INFO
-decl_stmt|;
-endif|#
-directive|endif
-endif|#
-directive|endif
 DECL|struct|_GTile
 struct|struct
 name|_GTile
@@ -666,7 +633,7 @@ struct|;
 ifdef|#
 directive|ifdef
 name|NATIVE_WIN32
-comment|/* Define WinMain() as plug-ins are built as GUI applications. Also  * define a main() in case some plug-in still is built as a console  * application.  */
+comment|/* Define WinMain() because plug-ins are built as GUI applications. Also  * define a main() in case some plug-in still is built as a console  * application.  */
 ifdef|#
 directive|ifdef
 name|__GNUC__
@@ -694,7 +661,7 @@ directive|define
 name|MAIN
 parameter_list|()
 define|\
-value|int _stdcall				\    WinMain (int hInstance,		\ 	    int hPrevInstance,		\ 	    char *lpszCmdLine,		\ 	    int nCmdShow)		\    {					\      return gimp_main (__argc, __argv);	\    }					\ 					\    int					\    main (int argc, char *argv[])	\    {					\      return gimp_main (argc, argv);	\    }
+value|static int				\    win32_gimp_main (int argc, char *argv[])	\    {					\      extern void set_gimp_PLUG_IN_INFO_PTR(GPlugInInfo *);	\      set_gimp_PLUG_IN_INFO_PTR(&PLUG_IN_INFO);	\      return gimp_main (argc, argv);	\    }					\ 					\    int _stdcall				\    WinMain (void *hInstance,		\ 	    void *hPrevInstance,	\ 	    char *lpszCmdLine,		\ 	    int nCmdShow)		\    {					\      return win32_gimp_main (__argc, __argv);	\    }					\ 					\    int					\    main (int argc, char *argv[])	\    {					\      return win32_gimp_main (argc, argv);	\    }
 else|#
 directive|else
 ifndef|#

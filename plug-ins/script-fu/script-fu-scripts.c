@@ -12,6 +12,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* Include early for obscure Win32 				   build reasons */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -282,7 +292,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e70dd90108
+DECL|struct|__anon2ab21f110108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -317,7 +327,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e70dd90208
+DECL|struct|__anon2ab21f110208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -361,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e70dd90308
+DECL|struct|__anon2ab21f110308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -387,7 +397,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e70dd90408
+DECL|struct|__anon2ab21f110408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -408,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e70dd90508
+DECL|struct|__anon2ab21f110508
 block|{
 DECL|member|name
 name|gchar
@@ -436,7 +446,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29e70dd9060a
+DECL|union|__anon2ab21f11060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -502,7 +512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e70dd90708
+DECL|struct|__anon2ab21f110708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -583,7 +593,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e70dd90808
+DECL|struct|__anon2ab21f110808
 block|{
 DECL|member|status
 name|GtkWidget

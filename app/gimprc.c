@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon29bf26a30103
+DECL|enum|__anon2975ee8b0103
 typedef|typedef
 enum|enum
 block|{
@@ -11144,13 +11144,6 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|printf
-argument_list|(
-literal|" STRING = %s"
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|i
