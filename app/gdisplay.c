@@ -908,12 +908,20 @@ name|tool_gdisp
 operator|->
 name|ID
 condition|)
+block|{
+name|active_tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
 name|active_tool
 operator|->
 name|gdisp_ptr
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 block|}
 comment|/*  free the selection structure  */
 name|selection_free
