@@ -51,6 +51,40 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_function
+DECL|function|ERR (char * msg)
+name|void
+name|ERR
+parameter_list|(
+name|char
+modifier|*
+name|msg
+parameter_list|)
+block|{
+name|STRLEN
+name|dc
+decl_stmt|;
+name|dTHR
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"(Perl module error, please report!) %s: %s\n"
+argument_list|,
+name|msg
+argument_list|,
+name|SvPV
+argument_list|(
+name|ERRSV
+argument_list|,
+name|dc
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_decl_stmt
 DECL|variable|interp
 specifier|static
@@ -112,6 +146,10 @@ argument_list|(
 name|interp
 argument_list|)
 expr_stmt|;
+block|{
+name|dTHR
+expr_stmt|;
+comment|/* NOT earlier! */
 name|perl_parse
 argument_list|(
 name|interp
@@ -132,15 +170,49 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|SvTRUE
+argument_list|(
+name|ERRSV
+argument_list|)
+condition|)
+block|{
+name|ERR
+argument_list|(
+literal|"error during require Gimp::Module, perl NOT initialized!"
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_MODULE_UNLOAD
+return|;
+block|}
 name|res
 operator|=
 name|perl_eval_pv
 argument_list|(
 literal|"Gimp::Module::_init()"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|SvTRUE
+argument_list|(
+name|ERRSV
+argument_list|)
+condition|)
+block|{
+name|ERR
+argument_list|(
+literal|"error during require Gimp::Module::_init(), perl NOT initialized!"
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_MODULE_UNLOAD
+return|;
+block|}
 if|if
 condition|(
 name|res
@@ -156,6 +228,7 @@ argument_list|(
 name|res
 argument_list|)
 return|;
+block|}
 block|}
 return|return
 name|GIMP_MODULE_UNLOAD
@@ -176,6 +249,8 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|dTHR
+expr_stmt|;
 if|if
 condition|(
 name|interp
@@ -190,7 +265,19 @@ name|perl_eval_pv
 argument_list|(
 literal|"Gimp::Module::_deinit()"
 argument_list|,
-name|TRUE
+name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|SvTRUE
+argument_list|(
+name|ERRSV
+argument_list|)
+condition|)
+name|ERR
+argument_list|(
+literal|"error during require Gimp::Module::_init()"
 argument_list|)
 expr_stmt|;
 name|PL_perl_destruct_level
@@ -284,8 +371,8 @@ block|{
 name|perl_deinit
 argument_list|()
 expr_stmt|;
-comment|/* perl is unloadable, *sigh* */
-comment|/*  completed_cb (completed_data);*/
+comment|/* perl is unloadable (atexit& friends), *sigh* */
+comment|/* completed_cb (completed_data); */
 block|}
 end_function
 
