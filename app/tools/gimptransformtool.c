@@ -5790,10 +5790,9 @@ condition|(
 name|tr_tool
 operator|->
 name|function
-operator|==
+operator|!=
 name|TRANSFORM_CREATING
 condition|)
-return|return;
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -5818,6 +5817,15 @@ name|options
 operator|->
 name|direction
 expr_stmt|;
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|function
+operator|!=
+name|TRANSFORM_CREATING
+condition|)
+block|{
 comment|/*  recalculate the tool's transformation matrix  */
 name|gimp_transform_tool_recalc
 argument_list|(
@@ -5839,6 +5847,7 @@ name|tr_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -971,7 +971,19 @@ break|break;
 case|case
 name|GIMP_TRANSFORM_TYPE_PATH
 case|:
-comment|/* TODO */
+name|gimp_item_flip
+argument_list|(
+name|active_item
+argument_list|,
+name|options
+operator|->
+name|flip_type
+argument_list|,
+name|axis
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 return|return
