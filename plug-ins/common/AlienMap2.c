@@ -30523,7 +30523,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ee1920108
+DECL|struct|__anon288241c10108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30574,7 +30574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ee1920208
+DECL|struct|__anon288241c10208
 block|{
 DECL|member|run
 name|gint
@@ -31996,7 +31996,7 @@ literal|"filters/alienmap2.html"
 argument_list|,
 name|_
 argument_list|(
-literal|"About..."
+literal|"About"
 argument_list|)
 argument_list|,
 name|RESPONSE_ABOUT
@@ -32023,7 +32023,7 @@ argument_list|(
 name|dialog_response
 argument_list|)
 argument_list|,
-name|NULL
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

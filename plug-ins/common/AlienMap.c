@@ -30519,7 +30519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b11850108
+DECL|struct|__anon2aa698950108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30554,7 +30554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b11850208
+DECL|struct|__anon2aa698950208
 block|{
 DECL|member|run
 name|gint
@@ -31197,56 +31197,29 @@ break|break;
 default|default:
 break|break;
 block|}
-if|if
-condition|(
-name|red
-operator|==
-literal|256
-condition|)
-block|{
-name|red
-operator|=
-literal|255
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|green
-operator|==
-literal|256
-condition|)
-block|{
-name|green
-operator|=
-literal|255
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|blue
-operator|==
-literal|256
-condition|)
-block|{
-name|blue
-operator|=
-literal|255
-expr_stmt|;
-block|}
 operator|*
 name|r
 operator|=
+name|CLAMP0255
+argument_list|(
 name|red
+argument_list|)
 expr_stmt|;
 operator|*
 name|g
 operator|=
+name|CLAMP0255
+argument_list|(
 name|green
+argument_list|)
 expr_stmt|;
 operator|*
 name|b
 operator|=
+name|CLAMP0255
+argument_list|(
 name|blue
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -31809,7 +31782,7 @@ literal|"filters/alienmap.html"
 argument_list|,
 name|_
 argument_list|(
-literal|"About..."
+literal|"About"
 argument_list|)
 argument_list|,
 name|RESPONSE_ABOUT
@@ -31836,7 +31809,7 @@ argument_list|(
 name|dialog_response
 argument_list|)
 argument_list|,
-name|NULL
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -33280,8 +33253,6 @@ operator|(
 literal|"\nCotting Software Productions\n"
 literal|"Bahnhofstrasse 31\n"
 literal|"CH-3066 Stettlen (Switzerland)\n\n"
-literal|"cotting@mygale.org\n"
-literal|"http://www.mygale.org/~cotting\n\n"
 literal|"AlienMap Plug-In for the GIMP\n"
 literal|"Version 1.01\n"
 operator|)

@@ -8704,10 +8704,8 @@ argument_list|(
 literal|"\nCotting Software Productions\n"
 literal|"Quellenstrasse 10\n"
 literal|"CH-8005 Zuerich (Switzerland)\n\n"
-literal|"cotting@multimania.com\n"
-literal|"http://www.multimania.com/cotting\n\n"
 literal|"Fractal Chaos Explorer\nPlug-In for the GIMP\n"
-literal|"Version 2.00 Beta 2 (Multilingual)\n"
+literal|"Version 2.00 (Multilingual)\n"
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -9402,13 +9400,6 @@ expr_stmt|;
 name|fputs
 argument_list|(
 literal|"# This is a data file for the Fractal Explorer plug-in for the GIMP   *\n"
-argument_list|,
-name|fp
-argument_list|)
-expr_stmt|;
-name|fputs
-argument_list|(
-literal|"# Get the plug-in at              http://www.multimania.com/cotting   *\n"
 argument_list|,
 name|fp
 argument_list|)

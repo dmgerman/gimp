@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c4fa60108
+DECL|struct|__anon2bf497a60108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -481,7 +481,7 @@ name|gchar
 modifier|*
 name|author
 init|=
-literal|"Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/"
+literal|"Miles O'Neal<meo@rru.com>"
 decl_stmt|;
 specifier|const
 name|gchar
