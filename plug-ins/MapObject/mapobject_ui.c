@@ -8252,9 +8252,12 @@ name|image
 operator|!=
 name|NULL
 condition|)
-name|gdk_image_unref
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gck_visualinfo_destroy

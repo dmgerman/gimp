@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0d73f10108
+DECL|struct|__anon2bcaeeec0108
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -120,7 +120,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b0d73f10208
+DECL|struct|__anon2bcaeeec0208
 typedef|typedef
 struct|struct
 block|{
@@ -1128,7 +1128,8 @@ modifier|*
 name|arr_ptr
 parameter_list|)
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;

@@ -25,7 +25,6 @@ end_include
 begin_typedef
 DECL|typedef|BrowseFilter_t
 typedef|typedef
-specifier|const
 name|gchar
 modifier|*
 function_decl|(
@@ -44,7 +43,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a2149f20108
+DECL|struct|__anon29abff6d0108
 typedef|typedef
 struct|struct
 block|{

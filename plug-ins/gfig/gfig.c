@@ -1110,7 +1110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0103
+DECL|enum|__anon291d23980103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1162,7 +1162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0203
+DECL|enum|__anon291d23980203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1183,7 +1183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0303
+DECL|enum|__anon291d23980303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1204,7 +1204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0403
+DECL|enum|__anon291d23980403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1231,7 +1231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0503
+DECL|enum|__anon291d23980503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1252,7 +1252,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0603
+DECL|enum|__anon291d23980603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1420,7 +1420,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8f3ef0708
+DECL|struct|__anon291d23980708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1459,7 +1459,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8f3ef0808
+DECL|struct|__anon291d23980808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1508,7 +1508,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8f3ef0908
+DECL|struct|__anon291d23980908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1686,7 +1686,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0a03
+DECL|enum|__anon291d23980a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1716,7 +1716,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0b03
+DECL|enum|__anon291d23980b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1732,7 +1732,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0c03
+DECL|enum|__anon291d23980c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1757,7 +1757,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8f3ef0d03
+DECL|enum|__anon291d23980d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -2847,10 +2847,12 @@ name|GFigObj
 modifier|*
 name|gfig_load
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -5510,13 +5512,15 @@ begin_function
 specifier|static
 name|GFigObj
 modifier|*
-DECL|function|gfig_load (gchar * filename,gchar * name)
+DECL|function|gfig_load (const gchar * filename,const gchar * name)
 name|gfig_load
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -7267,6 +7271,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|filenamebuf
@@ -7596,6 +7601,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|tmp
@@ -7610,11 +7616,6 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-name|tmp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|tmp
 argument_list|)
 expr_stmt|;
@@ -9356,7 +9357,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_menu_item_update
+argument_list|)
 argument_list|,
 name|which_way
 argument_list|,
@@ -11235,7 +11239,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gfig_brush_menu_callback
+argument_list|)
 argument_list|,
 operator|*
 name|pv
@@ -13038,7 +13045,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|paint_menu_callback
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -13146,7 +13156,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|paint_menu_callback
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -13363,7 +13376,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|paint_menu_callback
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -15204,7 +15220,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|select_menu_callback
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -15519,7 +15538,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|select_menu_callback
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -15698,7 +15720,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|select_menu_callback
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -15768,7 +15793,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|select_menu_callback
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -16235,7 +16263,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gridtype_menu_callback
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -16322,7 +16353,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gridtype_menu_callback
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -19311,12 +19345,16 @@ operator|&
 name|new_col1
 argument_list|)
 expr_stmt|;
-name|gdk_color_alloc
+name|gdk_colormap_alloc_color
 argument_list|(
 name|xxx
 argument_list|,
 operator|&
 name|new_col1
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gdk_color_parse
@@ -19327,12 +19365,16 @@ operator|&
 name|new_col2
 argument_list|)
 expr_stmt|;
-name|gdk_color_alloc
+name|gdk_colormap_alloc_color
 argument_list|(
 name|xxx
 argument_list|,
 operator|&
 name|new_col2
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|values
@@ -22153,6 +22195,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -24050,6 +24093,10 @@ name|gchar
 modifier|*
 name|hm
 init|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|g_get_home_dir
 argument_list|()
 decl_stmt|;

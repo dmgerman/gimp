@@ -4031,7 +4031,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|saveppm (struct ppm * p,char * fn)
+DECL|function|saveppm (struct ppm * p,const char * fn)
 name|void
 name|saveppm
 parameter_list|(
@@ -4040,6 +4040,7 @@ name|ppm
 modifier|*
 name|p
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 name|fn

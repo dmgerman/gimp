@@ -1120,7 +1120,7 @@ operator|&
 name|_preferences
 argument_list|)
 expr_stmt|;
-name|gdk_color_alloc
+name|gdk_colormap_alloc_color
 argument_list|(
 name|colormap
 argument_list|,
@@ -1128,9 +1128,13 @@ operator|&
 name|colors
 operator|->
 name|normal_fg
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdk_color_alloc
+name|gdk_colormap_alloc_color
 argument_list|(
 name|colormap
 argument_list|,
@@ -1138,9 +1142,13 @@ operator|&
 name|colors
 operator|->
 name|normal_bg
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdk_color_alloc
+name|gdk_colormap_alloc_color
 argument_list|(
 name|colormap
 argument_list|,
@@ -1148,9 +1156,13 @@ operator|&
 name|colors
 operator|->
 name|selected_fg
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdk_color_alloc
+name|gdk_colormap_alloc_color
 argument_list|(
 name|colormap
 argument_list|,
@@ -1158,6 +1170,10 @@ operator|&
 name|colors
 operator|->
 name|selected_bg
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|_preferences
@@ -2366,7 +2382,7 @@ operator|(
 name|filename
 operator|)
 condition|?
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|filename
 argument_list|)
@@ -2382,6 +2398,15 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s - ImageMap 1.3"
 argument_list|,
+name|p
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|filename
+condition|)
+name|g_free
+argument_list|(
 name|p
 argument_list|)
 expr_stmt|;
@@ -2934,6 +2959,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|author

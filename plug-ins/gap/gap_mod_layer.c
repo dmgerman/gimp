@@ -1151,6 +1151,7 @@ modifier|*
 name|filter_procname
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|l_env
@@ -1179,7 +1180,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|l_continue
 decl_stmt|;
 name|l_but_argv

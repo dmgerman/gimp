@@ -246,6 +246,7 @@ name|gint32
 name|layer_idx
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|l_env

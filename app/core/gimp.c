@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/internal_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xcf/xcf.h"
 end_include
 
@@ -179,12 +185,6 @@ begin_include
 include|#
 directive|include
 file|"gimpunit.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
 end_include
 
 begin_include
@@ -1176,12 +1176,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_initialize (Gimp * gimp)
+DECL|function|gimp_initialize (Gimp * gimp,GimpInitStatusFunc status_callback)
 name|gimp_initialize
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpInitStatusFunc
+name|status_callback
 parameter_list|)
 block|{
 name|GimpContext
@@ -1282,6 +1285,13 @@ name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|status_callback
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1495,17 +1505,44 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  register all internal procedures  */
+call|(
+modifier|*
+name|status_callback
+call|)
+argument_list|(
+name|_
+argument_list|(
+literal|"Procedural Database"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|internal_procs_init
+argument_list|(
+name|gimp
+argument_list|,
+name|status_callback
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_restore (Gimp * gimp,gboolean no_data)
+DECL|function|gimp_restore (Gimp * gimp,GimpInitStatusFunc status_callback,gboolean no_data)
 name|gimp_restore
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpInitStatusFunc
+name|status_callback
 parameter_list|,
 name|gboolean
 name|no_data
@@ -1519,8 +1556,18 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|status_callback
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  initialize  the global parasite table  */
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|_
 argument_list|(
@@ -1541,7 +1588,10 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp brushes    */
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -1563,7 +1613,10 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp patterns   */
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -1585,7 +1638,10 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp palettes   */
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -1607,7 +1663,10 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp gradients  */
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -1629,7 +1688,10 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize  the global parasite table  */
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -1646,7 +1708,10 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|NULL
 argument_list|,

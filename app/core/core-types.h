@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220103
+DECL|enum|__anon2b4c3de00103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220203
+DECL|enum|__anon2b4c3de00203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220303
+DECL|enum|__anon2b4c3de00303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -149,7 +149,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2a07a4220403
+DECL|enum|__anon2b4c3de00403
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220503
+DECL|enum|__anon2b4c3de00503
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220603
+DECL|enum|__anon2b4c3de00603
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -210,7 +210,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a07a4220703
+DECL|enum|__anon2b4c3de00703
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -234,7 +234,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon2a07a4220803
+DECL|enum|__anon2b4c3de00803
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -257,7 +257,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a07a4220903
+DECL|enum|__anon2b4c3de00903
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -282,7 +282,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220a03
+DECL|enum|__anon2b4c3de00a03
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -313,7 +313,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2a07a4220b03
+DECL|enum|__anon2b4c3de00b03
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -332,7 +332,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220c03
+DECL|enum|__anon2b4c3de00c03
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -348,7 +348,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220d03
+DECL|enum|__anon2b4c3de00d03
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -370,7 +370,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220e03
+DECL|enum|__anon2b4c3de00e03
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -405,7 +405,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07a4220f03
+DECL|enum|__anon2b4c3de00f03
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -810,6 +810,31 @@ end_typedef
 begin_comment
 comment|/*  functions  */
 end_comment
+
+begin_typedef
+DECL|typedef|GimpInitStatusFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpInitStatusFunc
+function_decl|)
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|text1
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|text2
+parameter_list|,
+name|gdouble
+name|percentage
+parameter_list|)
+function_decl|;
+end_typedef
 
 begin_typedef
 DECL|typedef|GimpDataFileLoaderFunc

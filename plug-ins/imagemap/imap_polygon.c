@@ -1690,7 +1690,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon275f63200108
+DECL|struct|__anon2b706c430108
 typedef|typedef
 struct|struct
 block|{
@@ -2012,6 +2012,7 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -2062,6 +2063,11 @@ name|data
 operator|->
 name|selected_row
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|*
+operator|)
 name|text
 argument_list|)
 expr_stmt|;
@@ -2088,6 +2094,7 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -2134,6 +2141,11 @@ operator|->
 name|list
 argument_list|)
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|*
+operator|)
 name|text
 argument_list|)
 expr_stmt|;

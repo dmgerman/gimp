@@ -1570,7 +1570,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -1605,7 +1605,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -1769,7 +1769,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -1804,7 +1804,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -1839,7 +1839,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -1874,7 +1874,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -1909,7 +1909,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -1944,7 +1944,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -1979,7 +1979,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -2066,7 +2066,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -2098,7 +2098,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(
@@ -2130,7 +2130,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_menu_item_group
+name|gtk_radio_menu_item_get_group
 argument_list|(
 name|GTK_RADIO_MENU_ITEM
 argument_list|(

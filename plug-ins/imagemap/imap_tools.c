@@ -409,6 +409,11 @@ name|GtkWidget
 modifier|*
 name|toolbar
 decl_stmt|;
+name|toolbar
+operator|=
+name|gtk_toolbar_new
+argument_list|()
+expr_stmt|;
 name|_tools
 operator|.
 name|container

@@ -2048,7 +2048,8 @@ DECL|function|p_init_xanim_global_name ()
 name|p_init_xanim_global_name
 parameter_list|()
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|l_env
 decl_stmt|;

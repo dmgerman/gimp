@@ -112,12 +112,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/internal_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay-foreach.h"
 end_include
 
@@ -253,6 +247,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|void
 DECL|function|app_init_update_status (const gchar * text1,const gchar * text2,gdouble percentage)
 name|app_init_update_status
@@ -443,28 +438,11 @@ comment|/*  Create all members of the global Gimp instance which need an already
 name|gimp_initialize
 argument_list|(
 name|the_gimp
+argument_list|,
+name|app_init_update_status
 argument_list|)
 expr_stmt|;
 name|tool_manager_init
-argument_list|(
-name|the_gimp
-argument_list|)
-expr_stmt|;
-comment|/*  Initialize the procedural database    *    We need to do this first because any of the init    *    procedures might install or query it as needed.    */
-name|app_init_update_status
-argument_list|(
-name|_
-argument_list|(
-literal|"Procedural Database"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|internal_procs_init
 argument_list|(
 name|the_gimp
 argument_list|)
@@ -488,13 +466,19 @@ name|gimp_restore
 argument_list|(
 name|the_gimp
 argument_list|,
+name|app_init_update_status
+argument_list|,
 name|no_data
 argument_list|)
 expr_stmt|;
+comment|/*  Initialize the plug-in structures    */
 name|plug_in_init
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|,
+name|app_init_update_status
+argument_list|)
 expr_stmt|;
-comment|/*  initialize the plug in structures  */
 if|if
 condition|(
 operator|!

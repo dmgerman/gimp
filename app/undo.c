@@ -180,12 +180,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -251,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac054d50103
+DECL|enum|__anon2ac262fa0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -2080,7 +2074,9 @@ name|gimp_context_get_display
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimage
+operator|->
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2b8aa91c0108
+DECL|struct|__anon2acc4b260108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8aa91c0208
+DECL|struct|__anon2acc4b260208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aa91c0308
+DECL|struct|__anon2acc4b260308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8aa91c0408
+DECL|struct|__anon2acc4b260408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8aa91c0503
+DECL|enum|__anon2acc4b260503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -6314,6 +6314,7 @@ name|path_ptr
 init|=
 name|data
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -6428,7 +6429,8 @@ name|path_ptr
 init|=
 name|data
 decl_stmt|;
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;

@@ -168,6 +168,7 @@ name|ppm
 modifier|*
 name|p
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 name|fn

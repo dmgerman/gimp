@@ -2643,6 +2643,7 @@ name|ResizePrivate
 modifier|*
 name|private
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|str
@@ -2740,6 +2741,7 @@ name|ResizePrivate
 modifier|*
 name|private
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|str
@@ -2837,6 +2839,7 @@ name|ResizePrivate
 modifier|*
 name|private
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|str
@@ -3323,6 +3326,7 @@ name|ResizePrivate
 modifier|*
 name|private
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|str
@@ -3825,6 +3829,7 @@ name|ResizePrivate
 modifier|*
 name|private
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|str
@@ -4343,6 +4348,7 @@ name|ResizePrivate
 modifier|*
 name|private
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|str

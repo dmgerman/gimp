@@ -1508,10 +1508,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_init (void)
+DECL|function|plug_in_init (Gimp * gimp,GimpInitStatusFunc status_callback)
 name|plug_in_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpInitStatusFunc
+name|status_callback
 parameter_list|)
 block|{
 specifier|extern
@@ -1544,6 +1549,21 @@ decl_stmt|;
 name|gfloat
 name|nth
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|status_callback
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* initialize the gimp protocol library and set the read and    *  write handlers.    */
 name|gp_init
 argument_list|()
@@ -1646,7 +1666,10 @@ argument_list|(
 literal|"pluginrc"
 argument_list|)
 expr_stmt|;
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|_
 argument_list|(
@@ -1669,7 +1692,10 @@ name|tmp
 operator|=
 name|plug_in_defs
 expr_stmt|;
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|_
 argument_list|(
@@ -1742,7 +1768,10 @@ name|plug_in_def
 argument_list|)
 expr_stmt|;
 block|}
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|NULL
 argument_list|,
@@ -1920,7 +1949,10 @@ literal|"Starting extensions: "
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|_
 argument_list|(
@@ -2006,7 +2038,10 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-name|app_init_update_status
+call|(
+modifier|*
+name|status_callback
+call|)
 argument_list|(
 name|NULL
 argument_list|,

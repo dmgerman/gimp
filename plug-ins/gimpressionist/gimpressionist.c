@@ -1622,7 +1622,7 @@ argument_list|,
 operator|(
 name|GCompareFunc
 operator|)
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|)
 expr_stmt|;
 block|}

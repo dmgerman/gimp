@@ -1744,11 +1744,15 @@ operator|->
 name|window
 argument_list|)
 expr_stmt|;
-name|gdk_color_alloc
+name|gdk_colormap_alloc_color
 argument_list|(
 name|colormap
 argument_list|,
 name|gdk_color
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gdk_window_set_background

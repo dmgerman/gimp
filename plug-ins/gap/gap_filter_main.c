@@ -366,6 +366,7 @@ decl_stmt|;
 name|gint32
 name|l_rc
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|l_env

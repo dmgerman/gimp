@@ -4171,7 +4171,7 @@ name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|l_ext
 decl_stmt|;
@@ -4374,6 +4374,10 @@ condition|)
 block|{
 name|l_ext
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|g_getenv
 argument_list|(
 literal|"GAP_NO_SAVE"

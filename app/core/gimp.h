@@ -369,6 +369,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpInitStatusFunc
+name|status_callback
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -380,6 +383,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpInitStatusFunc
+name|status_callback
 parameter_list|,
 name|gboolean
 name|no_data
@@ -471,7 +477,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* void          gimp_open_file            (Gimp              *gimp, 					 const gchar       *filename, 					 gboolean           with_display); */
+comment|/* void          gimp_open_file            (Gimp               *gimp, 					 const gchar        *filename, 					 gboolean            with_display); */
 end_comment
 
 begin_function_decl

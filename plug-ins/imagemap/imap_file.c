@@ -77,7 +77,8 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -358,7 +359,8 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -529,7 +531,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2be578d30108
+DECL|struct|__anon27f0f8160108
 typedef|typedef
 struct|struct
 block|{

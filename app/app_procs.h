@@ -30,26 +30,6 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|app_init_update_status
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|label1
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|label2
-parameter_list|,
-name|gdouble
-name|percentage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|app_init
 parameter_list|(
 name|gint

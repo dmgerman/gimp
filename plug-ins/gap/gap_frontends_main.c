@@ -504,6 +504,7 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
+specifier|const
 name|char
 modifier|*
 name|l_env

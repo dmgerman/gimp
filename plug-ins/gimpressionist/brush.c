@@ -1164,7 +1164,8 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|fn
 decl_stmt|;

@@ -2828,7 +2828,8 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|l
 decl_stmt|;

@@ -261,7 +261,7 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_MODULE_INFO
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|GIMP_CONTAINER_POLICY_WEAK
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1041,21 +1041,13 @@ name|module_info
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|module_info
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eaf0890108
+DECL|struct|__anon2b4025720108
 block|{
 DECL|member|search_key
 specifier|const
@@ -1494,6 +1486,14 @@ operator|->
 name|modules
 argument_list|,
 name|GIMP_OBJECT
+argument_list|(
+name|module_info
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|module_info
 argument_list|)

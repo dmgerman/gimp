@@ -73,7 +73,6 @@ end_decl_stmt
 
 begin_function
 specifier|static
-specifier|const
 name|gchar
 modifier|*
 DECL|function|relative_filter (const char * name,gpointer data)
@@ -111,13 +110,16 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|name
 argument_list|)
 return|;
 return|return
+name|g_strdup
+argument_list|(
 name|name
+argument_list|)
 return|;
 block|}
 end_function
@@ -146,6 +148,7 @@ operator|*
 operator|)
 name|data
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|url
@@ -167,7 +170,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 name|url
 argument_list|,
@@ -191,7 +194,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 name|url
 argument_list|,
@@ -215,7 +218,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 name|url
 argument_list|,
@@ -239,7 +242,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 name|url
 argument_list|,
@@ -263,7 +266,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 name|url
 argument_list|,
@@ -287,7 +290,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 name|url
 argument_list|,
@@ -311,7 +314,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|g_strncasecmp
+name|g_ascii_strncasecmp
 argument_list|(
 name|url
 argument_list|,
