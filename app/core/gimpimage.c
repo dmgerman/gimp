@@ -754,7 +754,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc179b40103
+DECL|enum|__anon2a4e59d60103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -14912,7 +14912,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Channel cannot be raiseed any further"
+literal|"Channel cannot be raised any further"
 argument_list|)
 argument_list|)
 expr_stmt|;
