@@ -63,7 +63,7 @@ modifier|*
 name|get_ray_func
 function_decl|)
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 parameter_list|)
 function_decl|;
@@ -74,7 +74,7 @@ specifier|extern
 name|GckRGB
 name|get_ray_color
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|position
 parameter_list|)
@@ -86,7 +86,7 @@ specifier|extern
 name|GckRGB
 name|get_ray_color_no_bilinear
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|position
 parameter_list|)
@@ -98,7 +98,7 @@ specifier|extern
 name|GckRGB
 name|get_ray_color_ref
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|position
 parameter_list|)
@@ -110,7 +110,7 @@ specifier|extern
 name|GckRGB
 name|get_ray_color_no_bilinear_ref
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|position
 parameter_list|)

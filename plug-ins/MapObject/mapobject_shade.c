@@ -41,7 +41,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon277dc8c00108
+DECL|struct|__anon29c22a2f0108
 typedef|typedef
 struct|struct
 block|{
@@ -57,11 +57,11 @@ name|gdouble
 name|t
 decl_stmt|;
 DECL|member|s
-name|GckVector3
+name|GimpVector3
 name|s
 decl_stmt|;
 DECL|member|n
-name|GckVector3
+name|GimpVector3
 name|n
 decl_stmt|;
 DECL|member|face
@@ -87,23 +87,23 @@ comment|/*****************/
 end_comment
 
 begin_function
-DECL|function|phong_shade (GckVector3 * pos,GckVector3 * viewpoint,GckVector3 * normal,GckVector3 * light,GckRGB * diff_col,GckRGB * spec_col,gint type)
+DECL|function|phong_shade (GimpVector3 * pos,GimpVector3 * viewpoint,GimpVector3 * normal,GimpVector3 * light,GckRGB * diff_col,GckRGB * spec_col,gint type)
 name|GckRGB
 name|phong_shade
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|viewpoint
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|normal
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|light
 parameter_list|,
@@ -133,7 +133,7 @@ name|RV
 decl_stmt|,
 name|dist
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|L
 decl_stmt|,
 name|NN
@@ -174,7 +174,7 @@ name|type
 operator|==
 name|POINT_LIGHT
 condition|)
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|L
@@ -192,7 +192,7 @@ name|light
 expr_stmt|;
 name|dist
 operator|=
-name|gck_vector3_length
+name|gimp_vector3_length
 argument_list|(
 operator|&
 name|L
@@ -204,7 +204,7 @@ name|dist
 operator|!=
 literal|0.0
 condition|)
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 operator|&
 name|L
@@ -218,7 +218,7 @@ name|NL
 operator|=
 literal|2.0
 operator|*
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|N
@@ -236,7 +236,7 @@ condition|)
 block|{
 comment|/* Compute (R*V)^alpha term of Phong's equation */
 comment|/* ============================================ */
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|V
@@ -246,13 +246,13 @@ argument_list|,
 name|pos
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|V
 argument_list|)
 expr_stmt|;
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 operator|&
 name|N
@@ -260,7 +260,7 @@ argument_list|,
 name|NL
 argument_list|)
 expr_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|NN
@@ -274,7 +274,7 @@ argument_list|)
 expr_stmt|;
 name|RV
 operator|=
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|NN
@@ -394,19 +394,19 @@ block|}
 end_function
 
 begin_function
-DECL|function|plane_intersect (GckVector3 * dir,GckVector3 * viewp,GckVector3 * ipos,gdouble * u,gdouble * v)
+DECL|function|plane_intersect (GimpVector3 * dir,GimpVector3 * viewp,GimpVector3 * ipos,gdouble * u,gdouble * v)
 name|gint
 name|plane_intersect
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|dir
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|viewp
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|ipos
 parameter_list|,
@@ -1180,11 +1180,11 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|get_ray_color_plane (GckVector3 * pos)
+DECL|function|get_ray_color_plane (GimpVector3 * pos)
 name|GckRGB
 name|get_ray_color_plane
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|)
@@ -1201,7 +1201,7 @@ init|=
 name|FALSE
 decl_stmt|;
 specifier|static
-name|GckVector3
+name|GimpVector3
 name|ray
 decl_stmt|,
 name|spos
@@ -1214,7 +1214,7 @@ name|vy
 decl_stmt|;
 comment|/* Construct a line from our VP to the point */
 comment|/* ========================================= */
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|ray
@@ -1227,7 +1227,7 @@ operator|.
 name|viewpoint
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|ray
@@ -1381,11 +1381,11 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|sphere_to_image (GckVector3 * normal,gdouble * u,gdouble * v)
+DECL|function|sphere_to_image (GimpVector3 * normal,gdouble * u,gdouble * v)
 name|void
 name|sphere_to_image
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|normal
 parameter_list|,
@@ -1405,7 +1405,7 @@ decl_stmt|,
 name|fac
 decl_stmt|;
 specifier|static
-name|GckVector3
+name|GimpVector3
 name|cross_prod
 decl_stmt|;
 name|alpha
@@ -1413,7 +1413,7 @@ operator|=
 name|acos
 argument_list|(
 operator|-
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|mapvals
@@ -1452,7 +1452,7 @@ else|else
 block|{
 name|fac
 operator|=
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|mapvals
@@ -1508,7 +1508,7 @@ operator|)
 expr_stmt|;
 name|cross_prod
 operator|=
-name|gck_vector3_cross_product
+name|gimp_vector3_cross_product
 argument_list|(
 operator|&
 name|mapvals
@@ -1523,7 +1523,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|cross_prod
@@ -1558,23 +1558,23 @@ comment|/***************************************************/
 end_comment
 
 begin_function
-DECL|function|sphere_intersect (GckVector3 * dir,GckVector3 * viewp,GckVector3 * spos1,GckVector3 * spos2)
+DECL|function|sphere_intersect (GimpVector3 * dir,GimpVector3 * viewp,GimpVector3 * spos1,GimpVector3 * spos2)
 name|gint
 name|sphere_intersect
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|dir
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|viewp
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|spos1
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|spos2
 parameter_list|)
@@ -1594,10 +1594,10 @@ decl_stmt|,
 name|tmp
 decl_stmt|;
 specifier|static
-name|GckVector3
+name|GimpVector3
 name|t
 decl_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|t
@@ -1612,7 +1612,7 @@ argument_list|)
 expr_stmt|;
 name|alpha
 operator|=
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 name|dir
 argument_list|,
@@ -1622,7 +1622,7 @@ argument_list|)
 expr_stmt|;
 name|beta
 operator|=
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|t
@@ -1804,11 +1804,11 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|get_ray_color_sphere (GckVector3 * pos)
+DECL|function|get_ray_color_sphere (GimpVector3 * pos)
 name|GckRGB
 name|get_ray_color_sphere
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|)
@@ -1829,7 +1829,7 @@ init|=
 name|FALSE
 decl_stmt|;
 specifier|static
-name|GckVector3
+name|GimpVector3
 name|normal
 decl_stmt|,
 name|ray
@@ -1879,7 +1879,7 @@ operator|)
 return|;
 comment|/* Construct a line from our VP to the point */
 comment|/* ========================================= */
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|ray
@@ -1892,7 +1892,7 @@ operator|.
 name|viewpoint
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|ray
@@ -1924,7 +1924,7 @@ condition|)
 block|{
 comment|/* Compute spherical to rectangular mapping */
 comment|/* ======================================== */
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|normal
@@ -1938,7 +1938,7 @@ operator|.
 name|position
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|normal
@@ -2027,7 +2027,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|normal
@@ -2041,7 +2041,7 @@ operator|.
 name|position
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|normal
@@ -2073,7 +2073,7 @@ argument_list|)
 expr_stmt|;
 comment|/* Make the normal point inwards */
 comment|/* ============================= */
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 operator|&
 name|normal
@@ -2437,7 +2437,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|p1
 decl_stmt|,
 name|p2
@@ -2445,7 +2445,7 @@ decl_stmt|;
 name|gdouble
 name|t
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|dir
 decl_stmt|;
 name|p1
@@ -2508,7 +2508,7 @@ operator|+
 literal|0.01
 operator|)
 expr_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|dir
@@ -2522,7 +2522,7 @@ operator|.
 name|viewpoint
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|dir
@@ -2591,7 +2591,7 @@ name|y
 operator|)
 expr_stmt|;
 block|}
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|dir
@@ -2605,7 +2605,7 @@ operator|.
 name|viewpoint
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|dir
@@ -2726,15 +2726,15 @@ comment|/* ============================================================ */
 end_comment
 
 begin_function
-DECL|function|vecmulmat (GckVector3 * u,GckVector3 * v,gfloat m[16])
+DECL|function|vecmulmat (GimpVector3 * u,GimpVector3 * v,gfloat m[16])
 name|void
 name|vecmulmat
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|u
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|v
 parameter_list|,
@@ -2895,14 +2895,14 @@ block|}
 end_function
 
 begin_function
-DECL|function|rotatemat (gfloat angle,GckVector3 * v,gfloat m[16])
+DECL|function|rotatemat (gfloat angle,GimpVector3 * v,gfloat m[16])
 name|void
 name|rotatemat
 parameter_list|(
 name|gfloat
 name|angle
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|v
 parameter_list|,
@@ -3750,7 +3750,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|intersect_rect (gdouble u,gdouble v,gdouble w,GckVector3 viewp,GckVector3 dir,FaceIntersectInfo * face_info)
+DECL|function|intersect_rect (gdouble u,gdouble v,gdouble w,GimpVector3 viewp,GimpVector3 dir,FaceIntersectInfo * face_info)
 name|gboolean
 name|intersect_rect
 parameter_list|(
@@ -3763,10 +3763,10 @@ parameter_list|,
 name|gdouble
 name|w
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 name|viewp
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 name|dir
 parameter_list|,
 name|FaceIntersectInfo
@@ -3949,17 +3949,17 @@ block|}
 end_function
 
 begin_function
-DECL|function|intersect_box (GckVector3 scale,GckVector3 viewp,GckVector3 dir,FaceIntersectInfo * face_intersect)
+DECL|function|intersect_box (GimpVector3 scale,GimpVector3 viewp,GimpVector3 dir,FaceIntersectInfo * face_intersect)
 name|gboolean
 name|intersect_box
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 name|scale
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 name|viewp
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 name|dir
 parameter_list|,
 name|FaceIntersectInfo
@@ -3967,7 +3967,7 @@ modifier|*
 name|face_intersect
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|v
 decl_stmt|,
 name|d
@@ -3998,7 +3998,7 @@ name|i
 init|=
 literal|0
 decl_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|axis
@@ -4013,7 +4013,7 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|axis
@@ -4028,7 +4028,7 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|axis
@@ -4086,7 +4086,7 @@ name|face
 operator|=
 literal|0
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|face_intersect
@@ -4153,7 +4153,7 @@ name|face
 operator|=
 literal|1
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|face_intersect
@@ -4326,7 +4326,7 @@ name|s
 operator|=
 name|tmp
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|face_intersect
@@ -4485,7 +4485,7 @@ index|]
 operator|.
 name|v
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|face_intersect
@@ -4626,7 +4626,7 @@ name|s
 operator|=
 name|tmp
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|face_intersect
@@ -4775,7 +4775,7 @@ index|]
 operator|.
 name|u
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|face_intersect
@@ -4853,16 +4853,16 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_ray_color_box (GckVector3 * pos)
+DECL|function|get_ray_color_box (GimpVector3 * pos)
 name|GckRGB
 name|get_ray_color_box
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|lvp
 decl_stmt|,
 name|ldir
@@ -5001,7 +5001,7 @@ name|z
 expr_stmt|;
 comment|/* Compute direction */
 comment|/* ================= */
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|dir
@@ -5013,7 +5013,7 @@ operator|&
 name|vp
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|dir
@@ -5337,7 +5337,7 @@ argument_list|)
 expr_stmt|;
 comment|/* Make the normal point inwards */
 comment|/* ============================= */
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 operator|&
 name|face_intersect
@@ -5706,14 +5706,14 @@ block|}
 end_function
 
 begin_function
-DECL|function|intersect_circle (GckVector3 vp,GckVector3 dir,gdouble w,FaceIntersectInfo * face_info)
+DECL|function|intersect_circle (GimpVector3 vp,GimpVector3 dir,gdouble w,FaceIntersectInfo * face_info)
 name|gboolean
 name|intersect_circle
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 name|vp
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 name|dir
 parameter_list|,
 name|gdouble
@@ -6050,14 +6050,14 @@ block|}
 end_function
 
 begin_function
-DECL|function|intersect_cylinder (GckVector3 vp,GckVector3 dir,FaceIntersectInfo * face_intersect)
+DECL|function|intersect_cylinder (GimpVector3 vp,GimpVector3 dir,FaceIntersectInfo * face_intersect)
 name|gboolean
 name|intersect_cylinder
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 name|vp
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 name|dir
 parameter_list|,
 name|FaceIntersectInfo
@@ -6396,7 +6396,7 @@ name|y
 operator|=
 literal|0.0
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|face_intersect
@@ -6562,7 +6562,7 @@ name|face
 operator|=
 literal|1
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|face_intersect
@@ -6618,7 +6618,7 @@ name|face
 operator|=
 literal|2
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|face_intersect
@@ -6715,16 +6715,16 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_ray_color_cylinder (GckVector3 * pos)
+DECL|function|get_ray_color_cylinder (GimpVector3 * pos)
 name|GckRGB
 name|get_ray_color_cylinder
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|lvp
 decl_stmt|,
 name|ldir
@@ -6860,7 +6860,7 @@ name|z
 expr_stmt|;
 comment|/* Compute direction */
 comment|/* ================= */
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|dir
@@ -6872,7 +6872,7 @@ operator|&
 name|vp
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|dir
@@ -7170,7 +7170,7 @@ argument_list|)
 expr_stmt|;
 comment|/* Make the normal point inwards */
 comment|/* ============================= */
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 operator|&
 name|face_intersect

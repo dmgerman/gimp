@@ -327,7 +327,7 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-name|GckVector3
+name|GimpVector3
 name|int_to_pos
 parameter_list|(
 name|gint

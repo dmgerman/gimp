@@ -190,7 +190,7 @@ name|lightcheck
 decl_stmt|,
 name|temp
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|pos
 decl_stmt|;
 name|get_ray_func

@@ -115,7 +115,7 @@ comment|/* ======== */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c86e5fc0103
+DECL|enum|__anon275e59ff0103
 typedef|typedef
 enum|enum
 block|{
@@ -137,7 +137,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2c86e5fc0203
+DECL|enum|__anon275e59ff0203
 enum|enum
 block|{
 DECL|enumerator|IMAGE_BUMP
@@ -152,7 +152,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c86e5fc0308
+DECL|struct|__anon275e59ff0308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -187,18 +187,18 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c86e5fc0408
+DECL|struct|__anon275e59ff0408
 block|{
 DECL|member|type
 name|LightType
 name|type
 decl_stmt|;
 DECL|member|position
-name|GckVector3
+name|GimpVector3
 name|position
 decl_stmt|;
 DECL|member|direction
-name|GckVector3
+name|GimpVector3
 name|direction
 decl_stmt|;
 DECL|member|color
@@ -216,7 +216,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c86e5fc0508
+DECL|struct|__anon275e59ff0508
 typedef|typedef
 struct|struct
 block|{
@@ -235,11 +235,11 @@ decl_stmt|;
 comment|/* Render variables */
 comment|/* ================ */
 DECL|member|viewpoint
-name|GckVector3
+name|GimpVector3
 name|viewpoint
 decl_stmt|;
 DECL|member|planenormal
-name|GckVector3
+name|GimpVector3
 name|planenormal
 decl_stmt|;
 DECL|member|lightsource

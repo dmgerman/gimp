@@ -973,7 +973,7 @@ operator|=
 literal|0.0
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|private
 operator|->
@@ -1735,14 +1735,14 @@ operator|->
 name|cy
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|transform_core
 operator|->
 name|transform
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -1755,7 +1755,7 @@ operator|-
 name|cy
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_rotate
+name|gimp_matrix3_rotate
 argument_list|(
 name|transform_core
 operator|->
@@ -1769,7 +1769,7 @@ name|ANGLE
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -1800,7 +1800,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|rotate_tool_rotate (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,gdouble angle,TileManager * float_tiles,gboolean interpolation,GimpMatrix matrix)
+DECL|function|rotate_tool_rotate (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,gdouble angle,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
 name|rotate_tool_rotate
 parameter_list|(
 name|GImage
@@ -1825,7 +1825,7 @@ parameter_list|,
 name|gboolean
 name|interpolation
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{

@@ -70,7 +70,7 @@ parameter_list|,
 name|gboolean
 name|interpolation
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 function_decl|;
@@ -84,7 +84,7 @@ name|gdouble
 modifier|*
 name|coords
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 function_decl|;

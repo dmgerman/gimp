@@ -19,7 +19,7 @@ end_include
 
 begin_decl_stmt
 DECL|variable|triangle_normals
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|triangle_normals
 index|[
@@ -36,7 +36,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|vertex_normals
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|vertex_normals
 index|[
@@ -125,23 +125,23 @@ comment|/*****************/
 end_comment
 
 begin_function
-DECL|function|phong_shade (GckVector3 * position,GckVector3 * viewpoint,GckVector3 * normal,GckVector3 * lightposition,GckRGB * diff_col,GckRGB * spec_col,LightType light_type)
+DECL|function|phong_shade (GimpVector3 * position,GimpVector3 * viewpoint,GimpVector3 * normal,GimpVector3 * lightposition,GckRGB * diff_col,GckRGB * spec_col,LightType light_type)
 name|GckRGB
 name|phong_shade
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|position
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|viewpoint
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|normal
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|lightposition
 parameter_list|,
@@ -171,7 +171,7 @@ name|rv
 decl_stmt|,
 name|dist
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|l
 decl_stmt|,
 name|nn
@@ -212,7 +212,7 @@ name|light_type
 operator|==
 name|POINT_LIGHT
 condition|)
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|l
@@ -230,7 +230,7 @@ name|lightposition
 expr_stmt|;
 name|dist
 operator|=
-name|gck_vector3_length
+name|gimp_vector3_length
 argument_list|(
 operator|&
 name|l
@@ -242,7 +242,7 @@ name|dist
 operator|!=
 literal|0.0
 condition|)
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 operator|&
 name|l
@@ -256,7 +256,7 @@ name|nl
 operator|=
 literal|2.0
 operator|*
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|n
@@ -274,7 +274,7 @@ condition|)
 block|{
 comment|/* Compute (R*V)^alpha term of Phong's equation */
 comment|/* ============================================ */
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|v
@@ -284,13 +284,13 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|v
 argument_list|)
 expr_stmt|;
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 operator|&
 name|n
@@ -298,7 +298,7 @@ argument_list|,
 name|nl
 argument_list|)
 expr_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|nn
@@ -312,7 +312,7 @@ argument_list|)
 expr_stmt|;
 name|rv
 operator|=
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|nn
@@ -438,7 +438,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_normal (gdouble xf,gdouble yf,GckVector3 * normal)
+DECL|function|get_normal (gdouble xf,gdouble yf,GimpVector3 * normal)
 name|void
 name|get_normal
 parameter_list|(
@@ -448,12 +448,12 @@ parameter_list|,
 name|gdouble
 name|yf
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|normal
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|v1
 decl_stmt|,
 name|v2
@@ -703,7 +703,7 @@ literal|255.0
 operator|-
 name|val
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 name|normal
 argument_list|,
@@ -766,7 +766,7 @@ name|val4
 expr_stmt|;
 name|n
 operator|=
-name|gck_vector3_cross_product
+name|gimp_vector3_cross_product
 argument_list|(
 operator|&
 name|v1
@@ -775,7 +775,7 @@ operator|&
 name|v2
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|n
@@ -798,7 +798,7 @@ name|n
 operator|.
 name|z
 expr_stmt|;
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 name|normal
 argument_list|,
@@ -865,7 +865,7 @@ name|val2
 expr_stmt|;
 name|n
 operator|=
-name|gck_vector3_cross_product
+name|gimp_vector3_cross_product
 argument_list|(
 operator|&
 name|v1
@@ -874,7 +874,7 @@ operator|&
 name|v2
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|n
@@ -897,7 +897,7 @@ name|n
 operator|.
 name|z
 expr_stmt|;
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 name|normal
 argument_list|,
@@ -963,7 +963,7 @@ name|val3
 expr_stmt|;
 name|n
 operator|=
-name|gck_vector3_cross_product
+name|gimp_vector3_cross_product
 argument_list|(
 operator|&
 name|v1
@@ -972,7 +972,7 @@ operator|&
 name|v2
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|n
@@ -995,7 +995,7 @@ name|n
 operator|.
 name|z
 expr_stmt|;
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 name|normal
 argument_list|,
@@ -1060,7 +1060,7 @@ name|val4
 expr_stmt|;
 name|n
 operator|=
-name|gck_vector3_cross_product
+name|gimp_vector3_cross_product
 argument_list|(
 operator|&
 name|v1
@@ -1069,7 +1069,7 @@ operator|&
 name|v2
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|n
@@ -1092,7 +1092,7 @@ name|n
 operator|.
 name|z
 expr_stmt|;
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 name|normal
 argument_list|,
@@ -1106,7 +1106,7 @@ name|numvecs
 operator|++
 expr_stmt|;
 block|}
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 name|normal
 argument_list|,
@@ -1118,7 +1118,7 @@ operator|)
 name|numvecs
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 name|normal
 argument_list|)
@@ -1243,14 +1243,14 @@ name|n
 index|]
 operator|=
 operator|(
-name|GckVector3
+name|GimpVector3
 operator|*
 operator|)
 name|malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|GckVector3
+name|GimpVector3
 argument_list|)
 operator|*
 operator|(
@@ -1332,14 +1332,14 @@ literal|0
 index|]
 operator|=
 operator|(
-name|GckVector3
+name|GimpVector3
 operator|*
 operator|)
 name|malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|GckVector3
+name|GimpVector3
 argument_list|)
 operator|*
 call|(
@@ -1362,14 +1362,14 @@ literal|1
 index|]
 operator|=
 operator|(
-name|GckVector3
+name|GimpVector3
 operator|*
 operator|)
 name|malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|GckVector3
+name|GimpVector3
 argument_list|)
 operator|*
 call|(
@@ -1406,7 +1406,7 @@ name|n
 operator|++
 control|)
 block|{
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|triangle_normals
@@ -1424,7 +1424,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|triangle_normals
@@ -1457,7 +1457,7 @@ name|n
 operator|++
 control|)
 block|{
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|vertex_normals
@@ -1475,7 +1475,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|vertex_normals
@@ -1493,7 +1493,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|vertex_normals
@@ -1572,7 +1572,7 @@ name|gint
 name|y
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|tmpv
 decl_stmt|,
@@ -1974,7 +1974,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gck_vector3_cross_product
+name|gimp_vector3_cross_product
 argument_list|(
 operator|&
 name|p2
@@ -1993,7 +1993,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|gck_vector3_cross_product
+name|gimp_vector3_cross_product
 argument_list|(
 operator|&
 name|p3
@@ -2002,7 +2002,7 @@ operator|&
 name|p2
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|triangle_normals
@@ -2014,7 +2014,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|triangle_normals
@@ -2039,7 +2039,7 @@ name|i
 operator|=
 literal|0
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|normal
@@ -2089,7 +2089,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 operator|&
 name|normal
@@ -2109,7 +2109,7 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 operator|&
 name|normal
@@ -2141,7 +2141,7 @@ operator|<
 name|pre_h
 condition|)
 block|{
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 operator|&
 name|normal
@@ -2180,7 +2180,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 operator|&
 name|normal
@@ -2198,7 +2198,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 operator|&
 name|normal
@@ -2230,7 +2230,7 @@ operator|<
 name|pre_h
 condition|)
 block|{
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 operator|&
 name|normal
@@ -2248,7 +2248,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gck_vector3_add
+name|gimp_vector3_add
 argument_list|(
 operator|&
 name|normal
@@ -2274,7 +2274,7 @@ literal|2
 expr_stmt|;
 block|}
 block|}
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 operator|&
 name|normal
@@ -2287,7 +2287,7 @@ operator|)
 name|nv
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|normal
@@ -2324,20 +2324,20 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|compute_reflected_ray (GckVector3 * normal,GckVector3 * view)
-name|GckVector3
+DECL|function|compute_reflected_ray (GimpVector3 * normal,GimpVector3 * view)
+name|GimpVector3
 name|compute_reflected_ray
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|normal
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|view
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|ref
 decl_stmt|;
 name|gdouble
@@ -2347,7 +2347,7 @@ name|nl
 operator|=
 literal|2.0
 operator|*
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 name|normal
 argument_list|,
@@ -2359,7 +2359,7 @@ operator|=
 operator|*
 name|normal
 expr_stmt|;
-name|gck_vector3_mul
+name|gimp_vector3_mul
 argument_list|(
 operator|&
 name|ref
@@ -2367,7 +2367,7 @@ argument_list|,
 name|nl
 argument_list|)
 expr_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|ref
@@ -2403,11 +2403,11 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|sphere_to_image (GckVector3 * normal,gdouble * u,gdouble * v)
+DECL|function|sphere_to_image (GimpVector3 * normal,gdouble * u,gdouble * v)
 name|void
 name|sphere_to_image
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|normal
 parameter_list|,
@@ -2427,11 +2427,11 @@ decl_stmt|,
 name|fac
 decl_stmt|;
 specifier|static
-name|GckVector3
+name|GimpVector3
 name|cross_prod
 decl_stmt|;
 specifier|static
-name|GckVector3
+name|GimpVector3
 name|firstaxis
 init|=
 block|{
@@ -2443,7 +2443,7 @@ literal|0.0
 block|}
 decl_stmt|;
 specifier|static
-name|GckVector3
+name|GimpVector3
 name|secondaxis
 init|=
 block|{
@@ -2459,7 +2459,7 @@ operator|=
 name|acos
 argument_list|(
 operator|-
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|secondaxis
@@ -2496,7 +2496,7 @@ else|else
 block|{
 name|fac
 operator|=
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|firstaxis
@@ -2550,7 +2550,7 @@ operator|)
 expr_stmt|;
 name|cross_prod
 operator|=
-name|gck_vector3_cross_product
+name|gimp_vector3_cross_product
 argument_list|(
 operator|&
 name|secondaxis
@@ -2561,7 +2561,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gck_vector3_inner_product
+name|gimp_vector3_inner_product
 argument_list|(
 operator|&
 name|cross_prod
@@ -2596,11 +2596,11 @@ comment|/*********************************************************************/
 end_comment
 
 begin_function
-DECL|function|get_ray_color (GckVector3 * position)
+DECL|function|get_ray_color (GimpVector3 * position)
 name|GckRGB
 name|get_ray_color
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|position
 parameter_list|)
@@ -2618,7 +2618,7 @@ name|xf
 decl_stmt|,
 name|yf
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|normal
 decl_stmt|,
 modifier|*
@@ -2830,11 +2830,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_ray_color_ref (GckVector3 * position)
+DECL|function|get_ray_color_ref (GimpVector3 * position)
 name|GckRGB
 name|get_ray_color_ref
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|position
 parameter_list|)
@@ -2854,7 +2854,7 @@ name|xf
 decl_stmt|,
 name|yf
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|normal
 decl_stmt|,
 modifier|*
@@ -3026,7 +3026,7 @@ literal|0.5
 argument_list|)
 index|]
 expr_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|v
@@ -3039,7 +3039,7 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|v
@@ -3141,11 +3141,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_ray_color_no_bilinear (GckVector3 * position)
+DECL|function|get_ray_color_no_bilinear (GimpVector3 * position)
 name|GckRGB
 name|get_ray_color_no_bilinear
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|position
 parameter_list|)
@@ -3161,7 +3161,7 @@ name|xf
 decl_stmt|,
 name|yf
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|normal
 decl_stmt|,
 modifier|*
@@ -3370,11 +3370,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_ray_color_no_bilinear_ref (GckVector3 * position)
+DECL|function|get_ray_color_no_bilinear_ref (GimpVector3 * position)
 name|GckRGB
 name|get_ray_color_no_bilinear_ref
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|position
 parameter_list|)
@@ -3392,7 +3392,7 @@ name|xf
 decl_stmt|,
 name|yf
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|normal
 decl_stmt|,
 modifier|*
@@ -3562,7 +3562,7 @@ literal|0.5
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|v
@@ -3575,7 +3575,7 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|v
@@ -3730,7 +3730,7 @@ literal|0.5
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|v
@@ -3743,7 +3743,7 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|v

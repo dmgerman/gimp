@@ -79,6 +79,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpvector.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpcompat.h"
 end_include
 

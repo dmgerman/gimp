@@ -7253,7 +7253,7 @@ index|[
 literal|8
 index|]
 decl_stmt|;
-name|GimpMatrix
+name|GimpMatrix3
 name|m
 decl_stmt|,
 name|matrix
@@ -7502,12 +7502,12 @@ operator|->
 name|height
 expr_stmt|;
 comment|/* Assemble the transformation matrix */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|matrix
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|matrix
 argument_list|,
@@ -7518,7 +7518,7 @@ operator|-
 name|cy
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_scale
+name|gimp_matrix3_scale
 argument_list|(
 name|matrix
 argument_list|,
@@ -7527,7 +7527,7 @@ argument_list|,
 name|scaley
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_mult
+name|gimp_matrix3_mult
 argument_list|(
 name|m
 argument_list|,
@@ -8176,7 +8176,7 @@ name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 decl_stmt|;
 name|drawable
@@ -8290,12 +8290,12 @@ operator|/
 literal|2.0
 expr_stmt|;
 comment|/* Assemble the transformation matrix */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|matrix
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|matrix
 argument_list|,
@@ -8306,14 +8306,14 @@ operator|-
 name|cy
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_rotate
+name|gimp_matrix3_rotate
 argument_list|(
 name|matrix
 argument_list|,
 name|angle
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|matrix
 argument_list|,
@@ -8573,7 +8573,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 decl_stmt|;
 name|drawable
@@ -8791,12 +8791,12 @@ operator|->
 name|height
 expr_stmt|;
 comment|/* Assemble the transformation matrix */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|matrix
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|matrix
 argument_list|,
@@ -8809,7 +8809,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_scale
+name|gimp_matrix3_scale
 argument_list|(
 name|matrix
 argument_list|,
@@ -8818,7 +8818,7 @@ argument_list|,
 name|scaley
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|matrix
 argument_list|,
@@ -9112,7 +9112,7 @@ name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 decl_stmt|;
 name|drawable
@@ -9250,12 +9250,12 @@ name|height
 operator|/
 literal|2.0
 expr_stmt|;
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|matrix
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|matrix
 argument_list|,
@@ -9289,7 +9289,7 @@ name|shear_type
 operator|==
 name|ORIENTATION_HORIZONTAL
 condition|)
-name|gimp_matrix_xshear
+name|gimp_matrix3_xshear
 argument_list|(
 name|matrix
 argument_list|,
@@ -9307,7 +9307,7 @@ name|shear_type
 operator|==
 name|ORIENTATION_VERTICAL
 condition|)
-name|gimp_matrix_yshear
+name|gimp_matrix3_yshear
 argument_list|(
 name|matrix
 argument_list|,
@@ -9318,7 +9318,7 @@ operator|->
 name|width
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|matrix
 argument_list|,

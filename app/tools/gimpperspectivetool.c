@@ -568,7 +568,7 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|private
 operator|->
@@ -903,7 +903,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|GimpMatrix
+name|GimpMatrix3
 name|m
 decl_stmt|;
 name|gdouble
@@ -1015,14 +1015,14 @@ name|y1
 operator|)
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|transform_core
 operator|->
 name|transform
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -1035,7 +1035,7 @@ operator|-
 name|cy
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_scale
+name|gimp_matrix3_scale
 argument_list|(
 name|transform_core
 operator|->
@@ -1046,7 +1046,7 @@ argument_list|,
 name|scaley
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_mult
+name|gimp_matrix3_mult
 argument_list|(
 name|m
 argument_list|,
@@ -1072,14 +1072,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|perspective_find_transform (gdouble * coords,GimpMatrix matrix)
+DECL|function|perspective_find_transform (gdouble * coords,GimpMatrix3 matrix)
 name|perspective_find_transform
 parameter_list|(
 name|gdouble
 modifier|*
 name|coords
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{
@@ -1561,7 +1561,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|perspective_tool_perspective (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,gboolean interpolation,GimpMatrix matrix)
+DECL|function|perspective_tool_perspective (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
 name|perspective_tool_perspective
 parameter_list|(
 name|GImage
@@ -1583,7 +1583,7 @@ parameter_list|,
 name|gboolean
 name|interpolation
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{

@@ -6,19 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
+file|"gimpmath.h"
 end_include
 
 begin_include
@@ -36,15 +24,15 @@ value|1e-6
 end_define
 
 begin_comment
-comment|/**  * gimp_matrix_transform_point:  * @matrix: The transformation matrix.  * @x: The source X coordinate.  * @y: The source Y coordinate.  * @newx: The transformed X coordinate.  * @newy: The transformed Y coordinate.  *   * Transforms a point in 2D as specified by the transformation matrix.  */
+comment|/**  * gimp_matrix3_transform_point:  * @matrix: The transformation matrix.  * @x: The source X coordinate.  * @y: The source Y coordinate.  * @newx: The transformed X coordinate.  * @newy: The transformed Y coordinate.  *   * Transforms a point in 2D as specified by the transformation matrix.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_transform_point (GimpMatrix matrix,gdouble x,gdouble y,gdouble * newx,gdouble * newy)
-name|gimp_matrix_transform_point
+DECL|function|gimp_matrix3_transform_point (GimpMatrix3 matrix,gdouble x,gdouble y,gdouble * newx,gdouble * newy)
+name|gimp_matrix3_transform_point
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|,
 name|gdouble
@@ -186,18 +174,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_mult:  * @matrix1: The first input matrix.  * @matrix2: The second input matrix which will be oeverwritten ba the result.  *   * Multiplies two matrices and puts the result into the second one.  */
+comment|/**  * gimp_matrix3_mult:  * @matrix1: The first input matrix.  * @matrix2: The second input matrix which will be oeverwritten ba the result.  *   * Multiplies two matrices and puts the result into the second one.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_mult (GimpMatrix matrix1,GimpMatrix matrix2)
-name|gimp_matrix_mult
+DECL|function|gimp_matrix3_mult (GimpMatrix3 matrix1,GimpMatrix3 matrix2)
+name|gimp_matrix3_mult
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix1
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix2
 parameter_list|)
 block|{
@@ -206,7 +194,7 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|GimpMatrix
+name|GimpMatrix3
 name|tmp
 decl_stmt|;
 name|gdouble
@@ -353,7 +341,7 @@ index|]
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|GimpMatrix
+name|GimpMatrix3
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -361,20 +349,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_identity:  * @matrix: A matrix.  *   * Sets the matrix to the identity matrix.  */
+comment|/**  * gimp_matrix3_identity:  * @matrix: A matrix.  *   * Sets the matrix to the identity matrix.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_identity (GimpMatrix matrix)
-name|gimp_matrix_identity
+DECL|function|gimp_matrix3_identity (GimpMatrix3 matrix)
+name|gimp_matrix3_identity
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{
 specifier|static
-name|GimpMatrix
+name|GimpMatrix3
 name|identity
 init|=
 block|{
@@ -425,7 +413,7 @@ index|]
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|GimpMatrix
+name|GimpMatrix3
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -433,15 +421,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_translate:  * @matrix: The matrix that is to be translated.  * @x: Translation in X direction.  * @y: Translation in Y direction.  *   * Translates the matrix by x and y.  */
+comment|/**  * gimp_matrix3_translate:  * @matrix: The matrix that is to be translated.  * @x: Translation in X direction.  * @y: Translation in Y direction.  *   * Translates the matrix by x and y.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_translate (GimpMatrix matrix,gdouble x,gdouble y)
-name|gimp_matrix_translate
+DECL|function|gimp_matrix3_translate (GimpMatrix3 matrix,gdouble x,gdouble y)
+name|gimp_matrix3_translate
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|,
 name|gdouble
@@ -564,15 +552,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_scale:  * @matrix: The matrix that is to be scaled.  * @x: X scale factor.  * @y: Y scale factor.  *   * Scales the matrix by x and y   */
+comment|/**  * gimp_matrix3_scale:  * @matrix: The matrix that is to be scaled.  * @x: X scale factor.  * @y: Y scale factor.  *   * Scales the matrix by x and y   */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_scale (GimpMatrix matrix,gdouble x,gdouble y)
-name|gimp_matrix_scale
+DECL|function|gimp_matrix3_scale (GimpMatrix3 matrix,gdouble x,gdouble y)
+name|gimp_matrix3_scale
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|,
 name|gdouble
@@ -646,15 +634,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_rotate:  * @matrix: The matrix that is to be rotated.  * @theta: The angle of rotation (in radians).  *   * Rotates the matrix by theta degrees.  */
+comment|/**  * gimp_matrix3_rotate:  * @matrix: The matrix that is to be rotated.  * @theta: The angle of rotation (in radians).  *   * Rotates the matrix by theta degrees.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_rotate (GimpMatrix matrix,gdouble theta)
-name|gimp_matrix_rotate
+DECL|function|gimp_matrix3_rotate (GimpMatrix3 matrix,gdouble theta)
+name|gimp_matrix3_rotate
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|,
 name|gdouble
@@ -845,15 +833,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_xshear:  * @matrix: The matrix that is to be sheared.  * @amount: X shear amount.  *   * Shears the matrix in the X direction.  */
+comment|/**  * gimp_matrix3_xshear:  * @matrix: The matrix that is to be sheared.  * @amount: X shear amount.  *   * Shears the matrix in the X direction.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_xshear (GimpMatrix matrix,gdouble amount)
-name|gimp_matrix_xshear
+DECL|function|gimp_matrix3_xshear (GimpMatrix3 matrix,gdouble amount)
+name|gimp_matrix3_xshear
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|,
 name|gdouble
@@ -918,15 +906,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_yshear:  * @matrix: The matrix that is to be sheared.  * @amount: Y shear amount.  *   * Shears the matrix in the Y direction.  */
+comment|/**  * gimp_matrix3_yshear:  * @matrix: The matrix that is to be sheared.  * @amount: Y shear amount.  *   * Shears the matrix in the Y direction.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_yshear (GimpMatrix matrix,gdouble amount)
-name|gimp_matrix_yshear
+DECL|function|gimp_matrix3_yshear (GimpMatrix3 matrix,gdouble amount)
+name|gimp_matrix3_yshear
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|,
 name|gdouble
@@ -991,15 +979,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_determinant:  * @matrix: The input matrix.   *   * Calculates the determinant of the given matrix.  *   * Returns: The determinant.  */
+comment|/**  * gimp_matrix3_determinant:  * @matrix: The input matrix.   *   * Calculates the determinant of the given matrix.  *   * Returns: The determinant.  */
 end_comment
 
 begin_function
 name|gdouble
-DECL|function|gimp_matrix_determinant (GimpMatrix matrix)
-name|gimp_matrix_determinant
+DECL|function|gimp_matrix3_determinant (GimpMatrix3 matrix)
+name|gimp_matrix3_determinant
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{
@@ -1145,18 +1133,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_invert:  * @matrix: The matrix that is to be inverted.  * @matrix_inv: A matrix the inverted matrix should be written into.   *   * Inverts the given matrix.  */
+comment|/**  * gimp_matrix3_invert:  * @matrix: The matrix that is to be inverted.  * @matrix_inv: A matrix the inverted matrix should be written into.   *   * Inverts the given matrix.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_invert (GimpMatrix matrix,GimpMatrix matrix_inv)
-name|gimp_matrix_invert
+DECL|function|gimp_matrix3_invert (GimpMatrix3 matrix,GimpMatrix3 matrix_inv)
+name|gimp_matrix3_invert
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix_inv
 parameter_list|)
 block|{
@@ -1165,7 +1153,7 @@ name|det_1
 decl_stmt|;
 name|det_1
 operator|=
-name|gimp_matrix_determinant
+name|gimp_matrix3_determinant
 argument_list|(
 name|matrix
 argument_list|)
@@ -1587,18 +1575,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_duplicate:  * @src: The source matrix.  * @target: The destination matrix.   *   * Copies the source matrix to the destination matrix.  */
+comment|/**  * gimp_matrix3_duplicate:  * @src: The source matrix.  * @target: The destination matrix.   *   * Copies the source matrix to the destination matrix.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_duplicate (GimpMatrix src,GimpMatrix target)
-name|gimp_matrix_duplicate
+DECL|function|gimp_matrix3_duplicate (GimpMatrix3 src,GimpMatrix3 target)
+name|gimp_matrix3_duplicate
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|src
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|target
 parameter_list|)
 block|{
@@ -1624,7 +1612,7 @@ index|]
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|GimpMatrix
+name|GimpMatrix3
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1636,15 +1624,15 @@ comment|/*  functions to test for matrix properties  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_matrix_is_diagonal:  * @matrix: The matrix that is to be tested.  *   * Checks if the given matrix is diagonal.  *   * Returns: TRUE if the matrix is diagonal.  */
+comment|/**  * gimp_matrix3_is_diagonal:  * @matrix: The matrix that is to be tested.  *   * Checks if the given matrix is diagonal.  *   * Returns: TRUE if the matrix is diagonal.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_matrix_is_diagonal (GimpMatrix matrix)
-name|gimp_matrix_is_diagonal
+DECL|function|gimp_matrix3_is_diagonal (GimpMatrix3 matrix)
+name|gimp_matrix3_is_diagonal
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{
@@ -1712,15 +1700,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix_is_identity:  * @matrix: The matrix that is to be tested.  *   * Checks if the given matrix is the identity matrix.  *   * Returns: TRUE if the matrix is the identity matrix.  */
+comment|/**  * gimp_matrix3_is_identity:  * @matrix: The matrix that is to be tested.  *   * Checks if the given matrix is the identity matrix.  *   * Returns: TRUE if the matrix is the identity matrix.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_matrix_is_identity (GimpMatrix matrix)
-name|gimp_matrix_is_identity
+DECL|function|gimp_matrix3_is_identity (GimpMatrix3 matrix)
+name|gimp_matrix3_is_identity
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{
@@ -1819,15 +1807,15 @@ comment|/*  Check if we'll need to interpolate when applying this matrix.      T
 end_comment
 
 begin_comment
-comment|/**  * gimp_matrix_is_simple:  * @matrix: The matrix that is to be tested.  *   * Checks if we'll need to interpolate when applying this matrix as  * a transformation.  *   * Returns: TRUE if all entries of the upper left 2x2 matrix are either   * 0 or 1  */
+comment|/**  * gimp_matrix3_is_simple:  * @matrix: The matrix that is to be tested.  *   * Checks if we'll need to interpolate when applying this matrix as  * a transformation.  *   * Returns: TRUE if all entries of the upper left 2x2 matrix are either   * 0 or 1  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_matrix_is_simple (GimpMatrix matrix)
-name|gimp_matrix_is_simple
+DECL|function|gimp_matrix3_is_simple (GimpMatrix3 matrix)
+name|gimp_matrix3_is_simple
 parameter_list|(
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{
@@ -1903,6 +1891,90 @@ block|}
 return|return
 name|TRUE
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_matrix4_to_deg (GimpMatrix4 matrix,gdouble * a,gdouble * b,gdouble * c)
+name|gimp_matrix4_to_deg
+parameter_list|(
+name|GimpMatrix4
+name|matrix
+parameter_list|,
+name|gdouble
+modifier|*
+name|a
+parameter_list|,
+name|gdouble
+modifier|*
+name|b
+parameter_list|,
+name|gdouble
+modifier|*
+name|c
+parameter_list|)
+block|{
+operator|*
+name|a
+operator|=
+literal|180
+operator|*
+operator|(
+name|asin
+argument_list|(
+name|matrix
+index|[
+literal|1
+index|]
+index|[
+literal|0
+index|]
+argument_list|)
+operator|/
+name|G_PI_2
+operator|)
+expr_stmt|;
+operator|*
+name|b
+operator|=
+literal|180
+operator|*
+operator|(
+name|asin
+argument_list|(
+name|matrix
+index|[
+literal|2
+index|]
+index|[
+literal|0
+index|]
+argument_list|)
+operator|/
+name|G_PI_2
+operator|)
+expr_stmt|;
+operator|*
+name|c
+operator|=
+literal|180
+operator|*
+operator|(
+name|asin
+argument_list|(
+name|matrix
+index|[
+literal|2
+index|]
+index|[
+literal|1
+index|]
+argument_list|)
+operator|/
+name|G_PI_2
+operator|)
+expr_stmt|;
 block|}
 end_function
 

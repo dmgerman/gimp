@@ -169,7 +169,7 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|mapvals
@@ -183,7 +183,7 @@ argument_list|,
 literal|2.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|mapvals
@@ -197,7 +197,7 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|mapvals
@@ -211,7 +211,7 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|mapvals
@@ -225,7 +225,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|mapvals
@@ -239,7 +239,7 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|mapvals
@@ -257,7 +257,7 @@ argument_list|,
 literal|2.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|mapvals
@@ -275,7 +275,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gck_vector3_set
+name|gimp_vector3_set
 argument_list|(
 operator|&
 name|mapvals

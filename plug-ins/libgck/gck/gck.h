@@ -95,33 +95,10 @@ end_define
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
+begin_define
 DECL|macro|g_function_enter (fname)
 define|#
 directive|define
@@ -129,6 +106,9 @@ name|g_function_enter
 parameter_list|(
 name|fname
 parameter_list|)
+end_define
+
+begin_define
 DECL|macro|g_function_leave (fname)
 define|#
 directive|define
@@ -136,42 +116,34 @@ name|g_function_leave
 parameter_list|(
 name|fname
 parameter_list|)
-include|#
-directive|include
-file|<gck/gckcommon.h>
+end_define
+
+begin_include
 include|#
 directive|include
 file|<gck/gcktypes.h>
+end_include
+
+begin_include
 include|#
 directive|include
 file|<gck/gckcolor.h>
-include|#
-directive|include
-file|<gck/gckmath.h>
-include|#
-directive|include
-file|<gck/gckvector.h>
+end_include
+
+begin_include
 include|#
 directive|include
 file|<gck/gckui.h>
-include|#
-directive|include
-file|<gck/gcklistbox.h>
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_include
 
 begin_endif
 endif|#
 directive|endif
 end_endif
 
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_comment
+comment|/* __GCK_H__ */
+end_comment
 
 end_unit
 

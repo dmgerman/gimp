@@ -1,82 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/***************************************************************************/
-end_comment
-
-begin_comment
-comment|/* GCK - The General Convenience Kit. Generally useful conveniece routines */
-end_comment
-
-begin_comment
-comment|/* for GIMP plug-in writers and users of the GDK/GTK libraries.            */
-end_comment
-
-begin_comment
-comment|/* Copyright (C) 1996 Tom Bech                                             */
-end_comment
-
-begin_comment
-comment|/*                                                                         */
-end_comment
-
-begin_comment
-comment|/* This program is free software; you can redistribute it and/or modify    */
-end_comment
-
-begin_comment
-comment|/* it under the terms of the GNU General Public License as published by    */
-end_comment
-
-begin_comment
-comment|/* the Free Software Foundation; either version 2 of the License, or       */
-end_comment
-
-begin_comment
-comment|/* (at your option) any later version.                                     */
-end_comment
-
-begin_comment
-comment|/*                                                                         */
-end_comment
-
-begin_comment
-comment|/* This program is distributed in the hope that it will be useful,         */
-end_comment
-
-begin_comment
-comment|/* but WITHOUT ANY WARRANTY; without even the implied warranty of          */
-end_comment
-
-begin_comment
-comment|/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           */
-end_comment
-
-begin_comment
-comment|/* GNU General Public License for more details.                            */
-end_comment
-
-begin_comment
-comment|/*                                                                         */
-end_comment
-
-begin_comment
-comment|/* You should have received a copy of the GNU General Public License       */
-end_comment
-
-begin_comment
-comment|/* along with this program; if not, write to the Free Software             */
-end_comment
-
-begin_comment
-comment|/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,   */
-end_comment
-
-begin_comment
-comment|/* USA.                                                                    */
-end_comment
-
-begin_comment
-comment|/***************************************************************************/
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * The gimp_vector* functions were taken from:  * GCK - The General Convenience Kit  * Copyright (C) 1996 Tom Bech  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -94,19 +18,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|"gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gck/gck.h>
+file|"gimpvector.h"
 end_include
 
 begin_comment
@@ -122,10 +40,10 @@ comment|/*************************/
 end_comment
 
 begin_decl_stmt
-DECL|variable|gck_vector2_zero
+DECL|variable|gimp_vector2_zero
 specifier|const
-name|GckVector2
-name|gck_vector2_zero
+name|GimpVector2
+name|gimp_vector2_zero
 init|=
 block|{
 literal|0.0
@@ -136,12 +54,74 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gck_vector2_unit_x
+DECL|variable|gimp_vector2_unit_x
 specifier|const
-name|GckVector2
-name|gck_vector2_unit_x
+name|GimpVector2
+name|gimp_vector2_unit_x
 init|=
 block|{
+literal|1.0
+block|,
+literal|0.0
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gimp_vector2_unit_y
+specifier|const
+name|GimpVector2
+name|gimp_vector2_unit_y
+init|=
+block|{
+literal|0.0
+block|,
+literal|1.0
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gimp_vector3_zero
+specifier|const
+name|GimpVector3
+name|gimp_vector3_zero
+init|=
+block|{
+literal|0.0
+block|,
+literal|0.0
+block|,
+literal|0.0
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gimp_vector3_unit_x
+specifier|const
+name|GimpVector3
+name|gimp_vector3_unit_x
+init|=
+block|{
+literal|1.0
+block|,
+literal|0.0
+block|,
+literal|0.0
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gimp_vector3_unit_y
+specifier|const
+name|GimpVector3
+name|gimp_vector3_unit_y
+init|=
+block|{
+literal|0.0
+block|,
 literal|1.0
 block|,
 literal|0.0
@@ -150,72 +130,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gck_vector2_unit_y
+DECL|variable|gimp_vector3_unit_z
 specifier|const
-name|GckVector2
-name|gck_vector2_unit_y
-init|=
-block|{
-literal|0.0
-block|,
-literal|1.0
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gck_vector3_zero
-specifier|const
-name|GckVector3
-name|gck_vector3_zero
-init|=
-block|{
-literal|0.0
-block|,
-literal|0.0
-block|,
-literal|0.0
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gck_vector3_unit_x
-specifier|const
-name|GckVector3
-name|gck_vector3_unit_x
-init|=
-block|{
-literal|1.0
-block|,
-literal|0.0
-block|,
-literal|0.0
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gck_vector3_unit_y
-specifier|const
-name|GckVector3
-name|gck_vector3_unit_y
-init|=
-block|{
-literal|0.0
-block|,
-literal|1.0
-block|,
-literal|0.0
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gck_vector3_unit_z
-specifier|const
-name|GckVector3
-name|gck_vector3_unit_z
+name|GimpVector3
+name|gimp_vector3_unit_z
 init|=
 block|{
 literal|0.0
@@ -240,24 +158,19 @@ comment|/**************************************/
 end_comment
 
 begin_function
-DECL|function|gck_vector2_inner_product (GckVector2 * a,GckVector2 * b)
-name|double
-name|gck_vector2_inner_product
+name|gdouble
+DECL|function|gimp_vector2_inner_product (GimpVector2 * a,GimpVector2 * b)
+name|gimp_vector2_inner_product
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|a
 parameter_list|,
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_inner_product"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -270,11 +183,6 @@ argument_list|(
 name|b
 operator|!=
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_inner_product"
 argument_list|)
 expr_stmt|;
 return|return
@@ -300,27 +208,22 @@ block|}
 end_function
 
 begin_function
-DECL|function|gck_vector2_cross_product (GckVector2 * a,GckVector2 * b)
-name|GckVector3
-name|gck_vector2_cross_product
+name|GimpVector2
+DECL|function|gimp_vector2_cross_product (GimpVector2 * a,GimpVector2 * b)
+name|gimp_vector2_cross_product
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|a
 parameter_list|,
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector2
 name|normal
 decl_stmt|;
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_cross_product"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -335,45 +238,67 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  normal.x=a->y*b->z-a->z*b->y;   normal.y=a->z*b->x-a->x*b->z;   normal.z=a->x*b->y-a->y*b->x;*/
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_cross_product"
-argument_list|)
+name|normal
+operator|.
+name|x
+operator|=
+name|a
+operator|->
+name|x
+operator|*
+name|b
+operator|->
+name|y
+operator|-
+name|a
+operator|->
+name|y
+operator|*
+name|b
+operator|->
+name|x
+expr_stmt|;
+name|normal
+operator|.
+name|y
+operator|=
+name|a
+operator|->
+name|y
+operator|*
+name|b
+operator|->
+name|x
+operator|-
+name|a
+operator|->
+name|x
+operator|*
+name|b
+operator|->
+name|y
 expr_stmt|;
 return|return
-operator|(
 name|normal
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector2_length (GckVector2 * a)
-name|double
-name|gck_vector2_length
+name|gdouble
+DECL|function|gimp_vector2_length (GimpVector2 * a)
+name|gimp_vector2_length
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|a
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_length"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
 operator|!=
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_length"
 argument_list|)
 expr_stmt|;
 return|return
@@ -402,23 +327,18 @@ block|}
 end_function
 
 begin_function
-DECL|function|gck_vector2_normalize (GckVector2 * a)
 name|void
-name|gck_vector2_normalize
+DECL|function|gimp_vector2_normalize (GimpVector2 * a)
+name|gimp_vector2_normalize
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|a
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|len
 decl_stmt|;
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_normalize"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -428,7 +348,7 @@ argument_list|)
 expr_stmt|;
 name|len
 operator|=
-name|gck_vector2_length
+name|gimp_vector2_length
 argument_list|(
 name|a
 argument_list|)
@@ -468,25 +388,22 @@ name|len
 expr_stmt|;
 block|}
 else|else
+block|{
 operator|*
 name|a
 operator|=
-name|gck_vector2_zero
+name|gimp_vector2_zero
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_normalize"
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector2_mul (GckVector2 * a,double b)
 name|void
-name|gck_vector2_mul
+DECL|function|gimp_vector2_mul (GimpVector2 * a,double b)
+name|gimp_vector2_mul
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|a
 parameter_list|,
@@ -494,11 +411,6 @@ name|double
 name|b
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_mul"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -526,37 +438,27 @@ name|y
 operator|*
 name|b
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_mul"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector2_sub (GckVector2 * c,GckVector2 * a,GckVector2 * b)
 name|void
-name|gck_vector2_sub
+DECL|function|gimp_vector2_sub (GimpVector2 * c,GimpVector2 * a,GimpVector2 * b)
+name|gimp_vector2_sub
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|c
 parameter_list|,
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|a
 parameter_list|,
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_sub"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -602,35 +504,25 @@ name|b
 operator|->
 name|y
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_sub"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector2_set (GckVector2 * a,double x,double y)
 name|void
-name|gck_vector2_set
+DECL|function|gimp_vector2_set (GimpVector2 * a,gdouble x,gdouble y)
+name|gimp_vector2_set
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|a
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_set"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -650,37 +542,27 @@ name|y
 operator|=
 name|y
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_set"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector2_add (GckVector2 * c,GckVector2 * a,GckVector2 * b)
 name|void
-name|gck_vector2_add
+DECL|function|gimp_vector2_add (GimpVector2 * c,GimpVector2 * a,GimpVector2 * b)
+name|gimp_vector2_add
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|c
 parameter_list|,
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|a
 parameter_list|,
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_add"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -726,29 +608,19 @@ name|b
 operator|->
 name|y
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_add"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector2_neg (GckVector2 * a)
 name|void
-name|gck_vector2_neg
+DECL|function|gimp_vector2_neg (GimpVector2 * a)
+name|gimp_vector2_neg
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|a
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_neg"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -770,35 +642,25 @@ operator|*=
 operator|-
 literal|1.0
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_neg"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector2_rotate (GckVector2 * v,double alpha)
 name|void
-name|gck_vector2_rotate
+DECL|function|gimp_vector2_rotate (GimpVector2 * v,gdouble alpha)
+name|gimp_vector2_rotate
 parameter_list|(
-name|GckVector2
+name|GimpVector2
 modifier|*
 name|v
 parameter_list|,
-name|double
+name|gdouble
 name|alpha
 parameter_list|)
 block|{
-name|GckVector2
+name|GimpVector2
 name|s
 decl_stmt|;
-name|g_function_enter
-argument_list|(
-literal|"gck_vector2_rotate"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|v
@@ -855,11 +717,6 @@ name|v
 operator|=
 name|s
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector2_rotate"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -876,24 +733,19 @@ comment|/**************************************/
 end_comment
 
 begin_function
-DECL|function|gck_vector3_inner_product (GckVector3 * a,GckVector3 * b)
-name|double
-name|gck_vector3_inner_product
+name|gdouble
+DECL|function|gimp_vector3_inner_product (GimpVector3 * a,GimpVector3 * b)
+name|gimp_vector3_inner_product
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|a
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_inner_product"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -906,11 +758,6 @@ argument_list|(
 name|b
 operator|!=
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_inner_product"
 argument_list|)
 expr_stmt|;
 return|return
@@ -944,27 +791,22 @@ block|}
 end_function
 
 begin_function
-DECL|function|gck_vector3_cross_product (GckVector3 * a,GckVector3 * b)
-name|GckVector3
-name|gck_vector3_cross_product
+name|GimpVector3
+DECL|function|gimp_vector3_cross_product (GimpVector3 * a,GimpVector3 * b)
+name|gimp_vector3_cross_product
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|a
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|normal
 decl_stmt|;
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_cross_product"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -1038,45 +880,28 @@ operator|*
 name|b
 operator|->
 name|x
-expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_cross_product"
-argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|normal
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector3_length (GckVector3 * a)
-name|double
-name|gck_vector3_length
+name|gdouble
+DECL|function|gimp_vector3_length (GimpVector3 * a)
+name|gimp_vector3_length
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|a
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_length"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
 operator|!=
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_length"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1113,23 +938,18 @@ block|}
 end_function
 
 begin_function
-DECL|function|gck_vector3_normalize (GckVector3 * a)
 name|void
-name|gck_vector3_normalize
+DECL|function|gimp_vector3_normalize (GimpVector3 * a)
+name|gimp_vector3_normalize
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|a
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|len
 decl_stmt|;
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_normalize"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -1139,7 +959,7 @@ argument_list|)
 expr_stmt|;
 name|len
 operator|=
-name|gck_vector3_length
+name|gimp_vector3_length
 argument_list|(
 name|a
 argument_list|)
@@ -1189,37 +1009,29 @@ name|len
 expr_stmt|;
 block|}
 else|else
+block|{
 operator|*
 name|a
 operator|=
-name|gck_vector3_zero
+name|gimp_vector3_zero
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_normalize"
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector3_mul (GckVector3 * a,double b)
 name|void
-name|gck_vector3_mul
+DECL|function|gimp_vector3_mul (GimpVector3 * a,gdouble b)
+name|gimp_vector3_mul
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|a
 parameter_list|,
-name|double
+name|gdouble
 name|b
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_mul"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -1257,37 +1069,27 @@ name|z
 operator|*
 name|b
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_mul"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector3_sub (GckVector3 * c,GckVector3 * a,GckVector3 * b)
 name|void
-name|gck_vector3_sub
+DECL|function|gimp_vector3_sub (GimpVector3 * c,GimpVector3 * a,GimpVector3 * b)
+name|gimp_vector3_sub
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|c
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|a
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_sub"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -1345,38 +1147,28 @@ name|b
 operator|->
 name|z
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_sub"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector3_set (GckVector3 * a,double x,double y,double z)
 name|void
-name|gck_vector3_set
+DECL|function|gimp_vector3_set (GimpVector3 * a,gdouble x,gdouble y,gdouble z)
+name|gimp_vector3_set
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|a
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|,
-name|double
+name|gdouble
 name|z
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_set"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -1402,37 +1194,27 @@ name|z
 operator|=
 name|z
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_set"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector3_add (GckVector3 * c,GckVector3 * a,GckVector3 * b)
 name|void
-name|gck_vector3_add
+DECL|function|gimp_vector3_add (GimpVector3 * c,GimpVector3 * a,GimpVector3 * b)
+name|gimp_vector3_add
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|c
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|a
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_add"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -1490,29 +1272,19 @@ name|b
 operator|->
 name|z
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_add"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector3_neg (GckVector3 * a)
 name|void
-name|gck_vector3_neg
+DECL|function|gimp_vector3_neg (GimpVector3 * a)
+name|gimp_vector3_neg
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|a
 parameter_list|)
 block|{
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_neg"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|a
@@ -1541,43 +1313,33 @@ operator|*=
 operator|-
 literal|1.0
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_neg"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gck_vector3_rotate (GckVector3 * v,double alpha,double beta,double gamma)
 name|void
-name|gck_vector3_rotate
+DECL|function|gimp_vector3_rotate (GimpVector3 * v,gdouble alpha,gdouble beta,gdouble gamma)
+name|gimp_vector3_rotate
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|v
 parameter_list|,
-name|double
+name|gdouble
 name|alpha
 parameter_list|,
-name|double
+name|gdouble
 name|beta
 parameter_list|,
-name|double
+name|gdouble
 name|gamma
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|s
 decl_stmt|,
 name|t
 decl_stmt|;
-name|g_function_enter
-argument_list|(
-literal|"gck_vector3_rotate"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|v
@@ -1727,11 +1489,6 @@ name|t
 operator|.
 name|y
 expr_stmt|;
-name|g_function_leave
-argument_list|(
-literal|"gck_vector3_rotate"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1756,47 +1513,42 @@ comment|/******************************************************************/
 end_comment
 
 begin_function
-DECL|function|gck_2d_to_3d (int sx,int sy,int w,int h,int x,int y,GckVector3 * vp,GckVector3 * p)
 name|void
-name|gck_2d_to_3d
+DECL|function|gimp_vector_2d_to_3d (gint sx,gint sy,gint w,gint h,gint x,gint y,GimpVector3 * vp,GimpVector3 * p)
+name|gimp_vector_2d_to_3d
 parameter_list|(
-name|int
+name|gint
 name|sx
 parameter_list|,
-name|int
+name|gint
 name|sy
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|vp
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|p
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|t
 init|=
 literal|0.0
 decl_stmt|;
-name|g_function_enter
-argument_list|(
-literal|"gck_2d_to_3d"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|vp
@@ -1859,7 +1611,7 @@ name|x
 operator|-
 operator|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|x
@@ -1868,7 +1620,7 @@ name|sx
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|w
 operator|)
@@ -1891,7 +1643,7 @@ name|y
 operator|-
 operator|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|y
@@ -1900,7 +1652,7 @@ name|sy
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|h
 operator|)
@@ -1914,7 +1666,7 @@ operator|->
 name|x
 operator|=
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|x
@@ -1923,7 +1675,7 @@ name|sx
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|w
 expr_stmt|;
@@ -1932,7 +1684,7 @@ operator|->
 name|y
 operator|=
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|y
@@ -1941,16 +1693,11 @@ name|sy
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|h
 expr_stmt|;
 block|}
-name|g_function_leave
-argument_list|(
-literal|"gck_2d_to_3d"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1979,50 +1726,45 @@ comment|/*********************************************************/
 end_comment
 
 begin_function
-DECL|function|gck_3d_to_2d (int sx,int sy,int w,int h,double * x,double * y,GckVector3 * vp,GckVector3 * p)
 name|void
-name|gck_3d_to_2d
+DECL|function|gimp_vector_3d_to_2d (gint sx,gint sy,gint w,gint h,gdouble * x,gdouble * y,GimpVector3 * vp,GimpVector3 * p)
+name|gimp_vector_3d_to_2d
 parameter_list|(
-name|int
+name|gint
 name|sx
 parameter_list|,
-name|int
+name|gint
 name|sy
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|x
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|y
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|vp
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|p
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|t
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|dir
 decl_stmt|;
-name|g_function_enter
-argument_list|(
-literal|"gck_3d_to_2d"
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|vp
@@ -2037,7 +1779,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gck_vector3_sub
+name|gimp_vector3_sub
 argument_list|(
 operator|&
 name|dir
@@ -2047,7 +1789,7 @@ argument_list|,
 name|vp
 argument_list|)
 expr_stmt|;
-name|gck_vector3_normalize
+name|gimp_vector3_normalize
 argument_list|(
 operator|&
 name|dir
@@ -2081,7 +1823,7 @@ operator|*
 name|x
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|sx
 operator|+
@@ -2099,7 +1841,7 @@ name|x
 operator|)
 operator|*
 operator|(
-name|double
+name|gdouble
 operator|)
 name|w
 operator|)
@@ -2108,7 +1850,7 @@ operator|*
 name|y
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|sy
 operator|+
@@ -2126,7 +1868,7 @@ name|y
 operator|)
 operator|*
 operator|(
-name|double
+name|gdouble
 operator|)
 name|h
 operator|)
@@ -2138,7 +1880,7 @@ operator|*
 name|x
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|sx
 operator|+
@@ -2148,7 +1890,7 @@ operator|->
 name|x
 operator|*
 operator|(
-name|double
+name|gdouble
 operator|)
 name|w
 operator|)
@@ -2157,7 +1899,7 @@ operator|*
 name|y
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|sy
 operator|+
@@ -2167,17 +1909,12 @@ operator|->
 name|y
 operator|*
 operator|(
-name|double
+name|gdouble
 operator|)
 name|h
 operator|)
 expr_stmt|;
 block|}
-name|g_function_leave
-argument_list|(
-literal|"gck_3d_to_2d"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

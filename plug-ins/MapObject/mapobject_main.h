@@ -115,7 +115,7 @@ comment|/* ======== */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29089f7b0103
+DECL|enum|__anon2b575b4c0103
 typedef|typedef
 enum|enum
 block|{
@@ -134,7 +134,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29089f7b0203
+DECL|enum|__anon2b575b4c0203
 typedef|typedef
 enum|enum
 block|{
@@ -166,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29089f7b0308
+DECL|struct|__anon2b575b4c0308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -201,18 +201,18 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29089f7b0408
+DECL|struct|__anon2b575b4c0408
 block|{
 DECL|member|type
 name|LightType
 name|type
 decl_stmt|;
 DECL|member|position
-name|GckVector3
+name|GimpVector3
 name|position
 decl_stmt|;
 DECL|member|direction
-name|GckVector3
+name|GimpVector3
 name|direction
 decl_stmt|;
 DECL|member|color
@@ -230,7 +230,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29089f7b0508
+DECL|struct|__anon2b575b4c0508
 typedef|typedef
 struct|struct
 block|{
@@ -240,7 +240,7 @@ DECL|member|secondaxis
 DECL|member|normal
 DECL|member|position
 DECL|member|scale
-name|GckVector3
+name|GimpVector3
 name|viewpoint
 decl_stmt|,
 name|firstaxis

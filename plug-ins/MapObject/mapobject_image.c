@@ -913,7 +913,7 @@ end_function
 
 begin_function
 DECL|function|int_to_pos (gint x,gint y)
-name|GckVector3
+name|GimpVector3
 name|int_to_pos
 parameter_list|(
 name|gint
@@ -923,7 +923,7 @@ name|gint
 name|y
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|pos
 decl_stmt|;
 name|pos

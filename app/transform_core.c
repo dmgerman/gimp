@@ -304,7 +304,7 @@ parameter_list|,
 name|DrawCore
 modifier|*
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3868,7 +3868,7 @@ name|transform_tool_showpath
 argument_list|()
 condition|)
 block|{
-name|GimpMatrix
+name|GimpMatrix3
 name|tmp_matrix
 decl_stmt|;
 if|if
@@ -3879,7 +3879,7 @@ operator|==
 name|TRANSFORM_CORRECTIVE
 condition|)
 block|{
-name|gimp_matrix_invert
+name|gimp_matrix3_invert
 argument_list|(
 name|transform_core
 operator|->
@@ -3891,7 +3891,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_matrix_duplicate
+name|gimp_matrix3_duplicate
 argument_list|(
 name|transform_core
 operator|->
@@ -4249,7 +4249,7 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|transform_core
 operator|->
@@ -4274,7 +4274,7 @@ operator|->
 name|ty1
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|transform_core
 operator|->
@@ -4299,7 +4299,7 @@ operator|->
 name|ty2
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|transform_core
 operator|->
@@ -4324,7 +4324,7 @@ operator|->
 name|ty3
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|transform_core
 operator|->
@@ -4357,7 +4357,7 @@ name|type
 operator|==
 name|ROTATE
 condition|)
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|transform_core
 operator|->
@@ -4429,7 +4429,7 @@ name|i
 operator|++
 control|)
 block|{
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|transform_core
 operator|->
@@ -5380,7 +5380,7 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|transform_core_do (GImage * gimage,GimpDrawable * drawable,TileManager * float_tiles,gboolean interpolation,GimpMatrix matrix,progress_func_t progress_callback,gpointer progress_data)
+DECL|function|transform_core_do (GImage * gimage,GimpDrawable * drawable,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix,progress_func_t progress_callback,gpointer progress_data)
 name|transform_core_do
 parameter_list|(
 name|GImage
@@ -5398,7 +5398,7 @@ parameter_list|,
 name|gboolean
 name|interpolation
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|,
 name|progress_func_t
@@ -5415,10 +5415,10 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-name|GimpMatrix
+name|GimpMatrix3
 name|m
 decl_stmt|;
-name|GimpMatrix
+name|GimpMatrix3
 name|im
 decl_stmt|;
 name|gint
@@ -5539,7 +5539,7 @@ expr_stmt|;
 comment|/*  turn interpolation off for simple transformations (e.g. rot90)  */
 if|if
 condition|(
-name|gimp_matrix_is_simple
+name|gimp_matrix3_is_simple
 argument_list|(
 name|matrix
 argument_list|)
@@ -5639,14 +5639,14 @@ name|TRANSFORM_CORRECTIVE
 condition|)
 block|{
 comment|/*  keep the original matrix here, so we dont need to recalculate  	  the inverse later  */
-name|gimp_matrix_duplicate
+name|gimp_matrix3_duplicate
 argument_list|(
 name|matrix
 argument_list|,
 name|m
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_invert
+name|gimp_matrix3_invert
 argument_list|(
 name|matrix
 argument_list|,
@@ -5661,7 +5661,7 @@ block|}
 else|else
 block|{
 comment|/*  Find the inverse of the transformation matrix  */
-name|gimp_matrix_invert
+name|gimp_matrix3_invert
 argument_list|(
 name|matrix
 argument_list|,
@@ -5751,7 +5751,7 @@ name|dx4
 decl_stmt|,
 name|dy4
 decl_stmt|;
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|matrix
 argument_list|,
@@ -5766,7 +5766,7 @@ operator|&
 name|dy1
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|matrix
 argument_list|,
@@ -5781,7 +5781,7 @@ operator|&
 name|dy2
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|matrix
 argument_list|,
@@ -5796,7 +5796,7 @@ operator|&
 name|dy3
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|matrix
 argument_list|,

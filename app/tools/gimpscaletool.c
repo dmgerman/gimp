@@ -916,7 +916,7 @@ operator|=
 literal|0.0
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|private
 operator|->
@@ -2474,14 +2474,14 @@ expr_stmt|;
 break|break;
 block|}
 comment|/*  assemble the transformation matrix  */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|transform_core
 operator|->
 name|transform
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -2504,7 +2504,7 @@ operator|+
 name|diffy
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_scale
+name|gimp_matrix3_scale
 argument_list|(
 name|transform_core
 operator|->
@@ -2515,7 +2515,7 @@ argument_list|,
 name|scaley
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -2550,7 +2550,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|scale_tool_scale (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,gdouble * trans_info,TileManager * float_tiles,gboolean interpolation,GimpMatrix matrix)
+DECL|function|scale_tool_scale (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,gdouble * trans_info,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
 name|scale_tool_scale
 parameter_list|(
 name|GImage
@@ -2576,7 +2576,7 @@ parameter_list|,
 name|gboolean
 name|interpolation
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{

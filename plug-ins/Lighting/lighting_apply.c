@@ -62,7 +62,7 @@ modifier|*
 name|col
 parameter_list|)
 block|{
-name|GckVector3
+name|GimpVector3
 name|pos
 decl_stmt|;
 name|pos
@@ -141,7 +141,7 @@ name|progress_counter
 init|=
 literal|0
 decl_stmt|;
-name|GckVector3
+name|GimpVector3
 name|p
 decl_stmt|;
 name|gint32

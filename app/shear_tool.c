@@ -517,7 +517,7 @@ operator|=
 name|shear_tool_transform
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|private
 operator|->
@@ -1284,14 +1284,14 @@ operator|=
 literal|1
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|gimp_matrix_identity
+name|gimp_matrix3_identity
 argument_list|(
 name|transform_core
 operator|->
 name|transform
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -1316,7 +1316,7 @@ index|]
 operator|==
 name|ORIENTATION_HORIZONTAL
 condition|)
-name|gimp_matrix_xshear
+name|gimp_matrix3_xshear
 argument_list|(
 name|transform_core
 operator|->
@@ -1336,7 +1336,7 @@ name|height
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_matrix_yshear
+name|gimp_matrix3_yshear
 argument_list|(
 name|transform_core
 operator|->
@@ -1355,7 +1355,7 @@ operator|/
 name|width
 argument_list|)
 expr_stmt|;
-name|gimp_matrix_translate
+name|gimp_matrix3_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -1386,7 +1386,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|shear_tool_shear (GimpImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,gboolean interpolation,GimpMatrix matrix)
+DECL|function|shear_tool_shear (GimpImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
 name|shear_tool_shear
 parameter_list|(
 name|GimpImage
@@ -1408,7 +1408,7 @@ parameter_list|,
 name|gboolean
 name|interpolation
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{

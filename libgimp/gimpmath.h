@@ -152,6 +152,22 @@ parameter_list|(
 name|a
 parameter_list|)
 value|CLAMP(a,0,255)
+DECL|macro|gimp_deg_to_rad (angle)
+define|#
+directive|define
+name|gimp_deg_to_rad
+parameter_list|(
+name|angle
+parameter_list|)
+value|((angle) * (2.0 * G_PI) / 360.0)
+DECL|macro|gimp_rad_to_deg (angle)
+define|#
+directive|define
+name|gimp_rad_to_deg
+parameter_list|(
+name|angle
+parameter_list|)
+value|((angle) * 360.0 / (2.0 * G_PI))
 ifdef|#
 directive|ifdef
 name|__cplusplus

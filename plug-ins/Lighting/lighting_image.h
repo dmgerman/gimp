@@ -272,7 +272,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckVector3
+name|GimpVector3
 name|int_to_pos
 parameter_list|(
 name|gint
@@ -285,7 +285,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GckVector3
+name|GimpVector3
 name|int_to_posf
 parameter_list|(
 name|gdouble

@@ -63,7 +63,7 @@ modifier|*
 name|get_ray_color_func
 function_decl|)
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|)
@@ -82,7 +82,7 @@ specifier|extern
 name|GckRGB
 name|get_ray_color_plane
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|)
@@ -94,7 +94,7 @@ specifier|extern
 name|GckRGB
 name|get_ray_color_sphere
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|)
@@ -106,7 +106,7 @@ specifier|extern
 name|GckRGB
 name|get_ray_color_box
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|)
@@ -118,7 +118,7 @@ specifier|extern
 name|GckRGB
 name|get_ray_color_cylinder
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|pos
 parameter_list|)
@@ -140,11 +140,11 @@ specifier|extern
 name|void
 name|vecmulmat
 parameter_list|(
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|u
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|v
 parameter_list|,
@@ -165,7 +165,7 @@ parameter_list|(
 name|gfloat
 name|angle
 parameter_list|,
-name|GckVector3
+name|GimpVector3
 modifier|*
 name|v
 parameter_list|,

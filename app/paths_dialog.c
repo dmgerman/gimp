@@ -10815,14 +10815,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_transform_current_path (GimpImage * gimage,GimpMatrix transform,gboolean forpreview)
+DECL|function|paths_transform_current_path (GimpImage * gimage,GimpMatrix3 transform,gboolean forpreview)
 name|paths_transform_current_path
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|transform
 parameter_list|,
 name|gboolean
@@ -10948,7 +10948,7 @@ operator|->
 name|data
 decl_stmt|;
 comment|/*       printf("[x,y] = [%g,%g]\n",ppoint->x, ppoint->y); */
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|transform
 argument_list|,
@@ -11080,7 +11080,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_draw_current (GDisplay * gdisp,DrawCore * core,GimpMatrix transform)
+DECL|function|paths_draw_current (GDisplay * gdisp,DrawCore * core,GimpMatrix3 transform)
 name|paths_draw_current
 parameter_list|(
 name|GDisplay
@@ -11091,7 +11091,7 @@ name|DrawCore
 modifier|*
 name|core
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|transform
 parameter_list|)
 block|{
@@ -11197,7 +11197,7 @@ operator|->
 name|data
 decl_stmt|;
 comment|/*       printf("[x,y] = [%g,%g]\n",ppoint->x, ppoint->y); */
-name|gimp_matrix_transform_point
+name|gimp_matrix3_transform_point
 argument_list|(
 name|transform
 argument_list|,

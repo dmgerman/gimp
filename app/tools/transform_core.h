@@ -53,7 +53,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c5dfd0103
+DECL|enum|__anon297f07190103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -85,7 +85,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c5dfd0203
+DECL|enum|__anon297f07190203
 block|{
 DECL|enumerator|INIT
 name|INIT
@@ -348,7 +348,7 @@ name|scy
 decl_stmt|;
 comment|/*  and center for rotation     */
 DECL|member|transform
-name|GimpMatrix
+name|GimpMatrix3
 name|transform
 decl_stmt|;
 comment|/*  transformation matrix       */
@@ -661,7 +661,7 @@ parameter_list|,
 name|gboolean
 name|interpolation
 parameter_list|,
-name|GimpMatrix
+name|GimpMatrix3
 name|matrix
 parameter_list|,
 name|progress_func_t
