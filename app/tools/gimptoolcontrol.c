@@ -472,6 +472,10 @@ operator|->
 name|toggled
 operator|=
 name|toggled
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 block|}
 end_function
@@ -502,6 +506,10 @@ operator|->
 name|handle_empty_image
 operator|=
 name|handle_empty
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 block|}
 end_function
@@ -532,6 +540,10 @@ operator|->
 name|auto_snap_to
 operator|=
 name|snap_to
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 block|}
 end_function
@@ -592,6 +604,10 @@ operator|->
 name|preserve
 operator|=
 name|preserve
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 block|}
 end_function
@@ -802,6 +818,10 @@ operator|->
 name|scroll_lock
 operator|=
 name|scroll_lock
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 block|}
 end_function

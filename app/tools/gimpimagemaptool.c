@@ -200,7 +200,24 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 expr_stmt|;
-comment|/* child must create control. */
+name|gimp_tool_control_set_scroll_lock
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

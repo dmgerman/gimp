@@ -223,7 +223,7 @@ specifier|static
 name|void
 name|gimp_hue_saturation_tool_init
 parameter_list|(
-name|GimpTool
+name|GimpHueSaturationTool
 modifier|*
 name|tool
 parameter_list|)
@@ -758,33 +758,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_hue_saturation_tool_init (GimpTool * tool)
+DECL|function|gimp_hue_saturation_tool_init (GimpHueSaturationTool * tool)
 name|gimp_hue_saturation_tool_init
 parameter_list|(
-name|GimpTool
+name|GimpHueSaturationTool
 modifier|*
 name|tool
 parameter_list|)
-block|{
-name|gimp_tool_control_set_scroll_lock
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_tool_control_set_preserve
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function

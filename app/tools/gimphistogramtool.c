@@ -254,7 +254,7 @@ name|gimp_histogram_tool_init
 parameter_list|(
 name|GimpHistogramTool
 modifier|*
-name|bc_tool
+name|hist_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -554,7 +554,7 @@ name|tool_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_TOOL
+name|GIMP_TYPE_IMAGE_MAP_TOOL
 argument_list|,
 literal|"GimpHistogramTool"
 argument_list|,
@@ -618,45 +618,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_histogram_tool_init (GimpHistogramTool * bc_tool)
+DECL|function|gimp_histogram_tool_init (GimpHistogramTool * hist_tool)
 name|gimp_histogram_tool_init
 parameter_list|(
 name|GimpHistogramTool
 modifier|*
-name|bc_tool
+name|hist_tool
 parameter_list|)
-block|{
-name|GimpTool
-modifier|*
-name|tool
-decl_stmt|;
-name|tool
-operator|=
-name|GIMP_TOOL
-argument_list|(
-name|bc_tool
-argument_list|)
-expr_stmt|;
-name|gimp_tool_control_set_scroll_lock
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/* why? */
-name|gimp_tool_control_set_preserve
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
