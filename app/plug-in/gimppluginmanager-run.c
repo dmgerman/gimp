@@ -935,14 +935,6 @@ begin_comment
 comment|/*  private functions  */
 end_comment
 
-begin_define
-DECL|macro|ENABLE_TEMP_RETURN
-define|#
-directive|define
-name|ENABLE_TEMP_RETURN
-value|1
-end_define
-
 begin_function
 specifier|static
 name|Argument
@@ -1108,9 +1100,6 @@ argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_TEMP_RETURN
 name|plug_in_main_loop
 argument_list|(
 name|plug_in
@@ -1125,19 +1114,6 @@ argument_list|,
 name|proc_rec
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|return_vals
-operator|=
-name|procedural_db_return_args
-argument_list|(
-name|proc_rec
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|plug_in
 operator|->
 name|temp_proc_recs

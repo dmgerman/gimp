@@ -105,14 +105,6 @@ directive|include
 file|"plug-in-shm.h"
 end_include
 
-begin_define
-DECL|macro|ENABLE_TEMP_RETURN
-define|#
-directive|define
-name|ENABLE_TEMP_RETURN
-value|1
-end_define
-
 begin_typedef
 DECL|typedef|PlugInBlocked
 typedef|typedef
@@ -221,12 +213,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_TEMP_RETURN
-end_ifdef
-
 begin_function_decl
 specifier|static
 name|void
@@ -242,11 +228,6 @@ name|proc_return
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 specifier|static
@@ -519,9 +500,6 @@ break|break;
 case|case
 name|GP_TEMP_PROC_RETURN
 case|:
-ifdef|#
-directive|ifdef
-name|ENABLE_TEMP_RETURN
 name|plug_in_handle_temp_proc_return
 argument_list|(
 name|plug_in
@@ -531,37 +509,6 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|g_message
-argument_list|(
-literal|"Plug-In \"%s\"\n(%s)\n\n"
-literal|"sent a TEMP_PROC_RETURN message (should not happen)"
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|plug_in
-operator|->
-name|name
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|plug_in
-operator|->
-name|prog
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|plug_in_close
-argument_list|(
-name|plug_in
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 break|break;
 case|case
 name|GP_PROC_INSTALL
@@ -2009,12 +1956,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_TEMP_RETURN
-end_ifdef
-
 begin_function
 specifier|static
 name|void
@@ -2083,11 +2024,6 @@ expr_stmt|;
 block|}
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 specifier|static

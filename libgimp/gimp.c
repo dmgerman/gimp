@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e291250103
+DECL|enum|__anon2c059ad20103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -5686,14 +5686,6 @@ block|}
 block|}
 end_function
 
-begin_define
-DECL|macro|ENABLE_TEMP_RETURN
-define|#
-directive|define
-name|ENABLE_TEMP_RETURN
-value|1
-end_define
-
 begin_function
 specifier|static
 name|void
@@ -5730,14 +5722,9 @@ condition|(
 name|run_proc
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|ENABLE_TEMP_RETURN
 name|GPProcReturn
 name|proc_return
 decl_stmt|;
-endif|#
-directive|endif
 name|GimpParam
 modifier|*
 name|return_vals
@@ -5773,9 +5760,6 @@ operator|&
 name|return_vals
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_TEMP_RETURN
 name|proc_return
 operator|.
 name|name
@@ -5816,8 +5800,6 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 block|}
 end_function
