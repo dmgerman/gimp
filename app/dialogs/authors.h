@@ -308,6 +308,8 @@ literal|"Artur Polaczynski"
 block|,
 literal|"Ari Pollak"
 block|,
+literal|"Karine Proot"
+block|,
 literal|"RaphaÃ«l Quinet"
 block|,
 literal|"Tom Rathborne"
