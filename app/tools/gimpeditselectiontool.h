@@ -19,10 +19,16 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288f11580103
+DECL|enum|__anon2ad23c030103
 block|{
 DECL|enumerator|EDIT_VECTORS_TRANSLATE
 name|EDIT_VECTORS_TRANSLATE
+block|,
+DECL|enumerator|EDIT_CHANNEL_TRANSLATE
+name|EDIT_CHANNEL_TRANSLATE
+block|,
+DECL|enumerator|EDIT_LAYER_MASK_TRANSLATE
+name|EDIT_LAYER_MASK_TRANSLATE
 block|,
 DECL|enumerator|EDIT_MASK_TRANSLATE
 name|EDIT_MASK_TRANSLATE
