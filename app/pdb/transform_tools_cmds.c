@@ -720,7 +720,7 @@ expr_stmt|;
 else|else
 name|interpolation_type
 operator|=
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 expr_stmt|;
 comment|/* Perspective the selection */
 name|success
@@ -1080,7 +1080,7 @@ expr_stmt|;
 else|else
 name|interpolation_type
 operator|=
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 expr_stmt|;
 comment|/* Rotate the selection */
 name|success
@@ -1472,7 +1472,7 @@ expr_stmt|;
 else|else
 name|interpolation_type
 operator|=
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 expr_stmt|;
 comment|/* Scale the selection */
 name|success
@@ -1853,7 +1853,7 @@ expr_stmt|;
 else|else
 name|interpolation_type
 operator|=
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 expr_stmt|;
 comment|/* Shear the selection */
 name|success
@@ -2248,7 +2248,7 @@ expr_stmt|;
 else|else
 name|interpolation_type
 operator|=
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 expr_stmt|;
 comment|/* Transform the selection */
 name|success

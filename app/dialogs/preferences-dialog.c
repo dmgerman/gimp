@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdeeb5d0103
+DECL|enum|__anon29ffc6a40103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12711,7 +12711,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 argument_list|)
 argument_list|,
 name|NULL
@@ -12723,7 +12723,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GIMP_LINEAR_INTERPOLATION
+name|GIMP_INTERPOLATION_LINEAR
 argument_list|)
 argument_list|,
 name|NULL
@@ -12735,7 +12735,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GIMP_CUBIC_INTERPOLATION
+name|GIMP_INTERPOLATION_CUBIC
 argument_list|)
 argument_list|,
 name|NULL
@@ -14196,7 +14196,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bdeeb5d0208
+DECL|struct|__anon29ffc6a40208
 block|{
 DECL|member|label
 name|gchar
@@ -14414,7 +14414,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bdeeb5d0308
+DECL|struct|__anon29ffc6a40308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1c51910103
+DECL|enum|__anon2be6a2da0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -12564,7 +12564,7 @@ name|interp
 condition|)
 block|{
 case|case
-name|GIMP_CUBIC_INTERPOLATION
+name|GIMP_INTERPOLATION_CUBIC
 case|:
 for|for
 control|(
@@ -12684,7 +12684,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_LINEAR_INTERPOLATION
+name|GIMP_INTERPOLATION_LINEAR
 case|:
 for|for
 control|(
@@ -12794,12 +12794,10 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 case|:
-name|g_error
-argument_list|(
-literal|"sampling_type can't be GIMP_NEAREST_NEIGHBOR_INTERPOLATION"
-argument_list|)
+name|g_assert_not_reached
+argument_list|()
 expr_stmt|;
 break|break;
 block|}
@@ -13340,7 +13338,7 @@ if|if
 condition|(
 name|interpolation_type
 operator|==
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 condition|)
 block|{
 name|scale_region_no_resample
@@ -13872,7 +13870,7 @@ name|interpolation_type
 condition|)
 block|{
 case|case
-name|GIMP_CUBIC_INTERPOLATION
+name|GIMP_INTERPOLATION_CUBIC
 case|:
 block|{
 name|double
@@ -14022,7 +14020,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_LINEAR_INTERPOLATION
+name|GIMP_INTERPOLATION_LINEAR
 case|:
 block|{
 name|double
@@ -14090,13 +14088,10 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 case|:
-name|g_error
-argument_list|(
-literal|"sampling_type can't be "
-literal|"GIMP_NEAREST_NEIGHBOR_INTERPOLATION"
-argument_list|)
+name|g_assert_not_reached
+argument_list|()
 expr_stmt|;
 break|break;
 block|}

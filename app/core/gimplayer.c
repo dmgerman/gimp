@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3017510103
+DECL|enum|__anon2a03eb2c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3681,7 +3681,7 @@ argument_list|,
 operator|&
 name|destPR
 argument_list|,
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 argument_list|)
 expr_stmt|;
 block|}

@@ -118,7 +118,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29139f460103
+DECL|enum|__anon2b68e9a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -359,7 +359,7 @@ literal|"interpolation-type"
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
-name|GIMP_LINEAR_INTERPOLATION
+name|GIMP_INTERPOLATION_LINEAR
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH

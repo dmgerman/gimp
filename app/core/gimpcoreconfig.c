@@ -68,7 +68,7 @@ name|config
 operator|->
 name|interpolation_type
 operator|=
-name|GIMP_LINEAR_INTERPOLATION
+name|GIMP_INTERPOLATION_LINEAR
 expr_stmt|;
 name|gimp
 operator|->

@@ -4158,7 +4158,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_INTERPOLATION_NONE
 argument_list|)
 argument_list|,
 name|NULL
@@ -4170,7 +4170,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GIMP_LINEAR_INTERPOLATION
+name|GIMP_INTERPOLATION_LINEAR
 argument_list|)
 argument_list|,
 name|NULL
@@ -4182,7 +4182,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GIMP_CUBIC_INTERPOLATION
+name|GIMP_INTERPOLATION_CUBIC
 argument_list|)
 argument_list|,
 name|NULL
