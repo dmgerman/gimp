@@ -943,8 +943,6 @@ argument_list|(
 literal|"%d minutes"
 argument_list|)
 argument_list|,
-literal|1
-operator|+
 name|diff
 operator|/
 literal|60
