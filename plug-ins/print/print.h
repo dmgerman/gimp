@@ -1,17 +1,33 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  *  *   Print plug-in header file for the GIMP.  *  *   Copyright 1997-1999 Michael Sweet (mike@easysw.com) and  *	Robert Krawitz (rlk@alum.mit.edu)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Revision History:  *  *   See ChangeLog  */
+comment|/*  * "$Id$"  *  *   Print plug-in header file for the GIMP.  *  *   Copyright 1997-2000 Michael Sweet (mike@easysw.com) and  *	Robert Krawitz (rlk@alum.mit.edu)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Revision History:  *  *   See ChangeLog  */
+end_comment
+
+begin_comment
+comment|/*  *  * This file must not include any gimp, glib, gtk, etc. headers.  *  * Eventually I intend to port this to GhostScript and/or CUPS.  The only  * file that should have GIMP-specific code is print.c.  The rest of this  * program should be completely generic.  *  * rlk 20000112  */
 end_comment
 
 begin_comment
 comment|/*  * Include necessary header files...  */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|HAVE_UNISTD_H
+end_ifndef
+
+begin_define
+DECL|macro|HAVE_UNISTD_H
+define|#
+directive|define
+name|HAVE_UNISTD_H
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -66,37 +82,9 @@ endif|#
 directive|endif
 end_endif
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
 begin_comment
 comment|/*  * Constants...  */
 end_comment
-
-begin_define
-DECL|macro|PLUG_IN_VERSION
-define|#
-directive|define
-name|PLUG_IN_VERSION
-value|"3.0.1 - 05 Dec 1999"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_NAME
-define|#
-directive|define
-name|PLUG_IN_NAME
-value|"Print"
-end_define
 
 begin_define
 DECL|macro|OUTPUT_GRAY
@@ -211,7 +199,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da0ff40108
+DECL|struct|__anon27938e0b0108
 block|{
 DECL|member|composite
 name|unsigned
@@ -255,7 +243,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon29da0ff40208
+DECL|struct|__anon27938e0b0208
 block|{
 DECL|member|output_to
 name|char
@@ -383,7 +371,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon29da0ff40308
+DECL|struct|__anon27938e0b0308
 block|{
 DECL|member|active
 name|int
@@ -547,7 +535,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da0ff40408
+DECL|struct|__anon27938e0b0408
 block|{
 DECL|member|long_name
 name|char
@@ -1510,6 +1498,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/*  * End of "$Id$".  */
+end_comment
 
 end_unit
 
