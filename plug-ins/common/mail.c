@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  *   GUMP - Gimp Useless Mail Plugin (or Gump Useless Mail Plugin if you prefer)  *          version about .85 I would say... give or take a few decimal points  *  *  *   by Adrian Likins<adrian@gimp.org>  *      MIME encapsulation by Reagan Blundell<reagan@emails.net>  *  *  *  *   Based heavily on gz.c by Daniel Risacher  *  *     Lets you choose to send a image to the mail from the file save as dialog.  *      images are piped to uuencode and then to mail...  *  *  *   This works fine for .99.10. I havent actually tried it in  *   combination with the gz plugin, but it works with all other file  *   types. I will eventually get around to making sure it works with  *   gz.  *  *  To use: 1) image->File->mail image  *          2) when the mail dialog popups up, fill it out. Only to:  *             and filename are required note: the filename needs to a  *             type that the image can be saved as. otherwise you will  *             just send an empty message.  *          3) click ok and it should be on its way  *  *  * NOTE: You probabaly need sendmail installed. If your sendmail is in  *       an odd spot you can change the #define below. If you use  *       qmail or other MTA's, and this works after changing the  *       MAILER, let me know how well or what changes were needed.  *  * NOTE: Uuencode is needed. If it is in the path, it should work fine  *       as is. Other- wise just change the UUENCODE.  *  *  * TODO: 1) the aforementioned abilty to specify the  *           uuencode filename                         *done*  *       2) someway to do this without tmp files  *              * wont happen anytime soon*  *       3) MIME? *done*  *       4) a pointlessly snazzier dialog  *       5) make sure it works with gz  *               * works for .xcfgz but not .xcf.gz *  *       6) add an option to choose if mail get  *          uuencode or not (or MIME'ed for that matter)  *       7) realtime preview  *       8) better entry for comments    *done*  *       9) list of frequently used addreses  *      10) openGL compliance  *      11) better handling of filesave errors  *  *  * As always: The utility of this plugin is left as an exercise for the reader  *  */
+comment|/*  *   GUMP - Gimp Useless Mail Plugin (or Gump Useless Mail Plugin if  *   you prefer) version about .85 I would say... give or take a few  *   decimal points  *  *  *   by Adrian Likins<adrian@gimp.org>  *      MIME encapsulation by Reagan Blundell<reagan@emails.net>  *  *  *  *   Based heavily on gz.c by Daniel Risacher  *  *     Lets you choose to send a image to the mail from the file save  *     as dialog.  images are piped to uuencode and then to mail...  *  *  *   This works fine for .99.10. I havent actually tried it in  *   combination with the gz plugin, but it works with all other file  *   types. I will eventually get around to making sure it works with  *   gz.  *  *  To use: 1) image->File->mail image  *          2) when the mail dialog popups up, fill it out. Only to:  *             and filename are required note: the filename needs to a  *             type that the image can be saved as. otherwise you will  *             just send an empty message.  *          3) click ok and it should be on its way  *  *  * NOTE: You probabaly need sendmail installed. If your sendmail is in  *       an odd spot you can change the #define below. If you use  *       qmail or other MTA's, and this works after changing the  *       MAILER, let me know how well or what changes were needed.  *  * NOTE: Uuencode is needed. If it is in the path, it should work fine  *       as is. Other- wise just change the UUENCODE.  *  *  * TODO: 1) the aforementioned abilty to specify the  *           uuencode filename                         *done*  *       2) someway to do this without tmp files  *              * wont happen anytime soon*  *       3) MIME? *done*  *       4) a pointlessly snazzier dialog  *       5) make sure it works with gz  *               * works for .xcfgz but not .xcf.gz *  *       6) add an option to choose if mail get  *          uuencode or not (or MIME'ed for that matter)  *       7) realtime preview  *       8) better entry for comments    *done*  *       9) list of frequently used addreses  *      10) openGL compliance  *      11) better handling of filesave errors  *  *  * As always: The utility of this plugin is left as an exercise for  * the reader  *  */
 end_comment
 
 begin_include
@@ -474,7 +474,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28aee41e0108
+DECL|struct|__anon2771af290108
 block|{
 DECL|member|receipt
 name|gchar
@@ -528,7 +528,7 @@ name|m_info
 name|mail_info
 init|=
 block|{
-comment|/* I would a assume there is a better way to do this, but this works for now */
+comment|/* I would assume there is a better way to do this, but this works for now */
 literal|"\0"
 block|,
 literal|"\0"
@@ -878,7 +878,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* this hasnt been tested yet */
 name|strncpy
 argument_list|(
 name|mail_info
@@ -1180,7 +1179,7 @@ argument_list|(
 name|mailpipe
 argument_list|)
 expr_stmt|;
-comment|/* This is necessary to make the comments and headers work correctly. Not real sure why */
+comment|/* This is necessary to make the comments and headers work    * correctly. Not real sure why    */
 name|fflush
 argument_list|(
 name|mailpipe
@@ -1431,7 +1430,6 @@ name|encapsulation
 operator|==
 name|ENCAPSULATION_MIME
 condition|)
-block|{
 name|fprintf
 argument_list|(
 name|mailpipe
@@ -1439,7 +1437,6 @@ argument_list|,
 literal|"\n--GUMP-MIME-boundary--\n"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/* delete the tmpfile that was generated */
 name|unlink
@@ -2630,29 +2627,11 @@ name|gchar
 modifier|*
 name|ext
 decl_stmt|;
-comment|/* this whole routine needs to be redone so it works for xccfgz and gz files*/
-comment|/* not real sure where to start......                                       */
-comment|/* right now saving for .xcfgz works but not .xcf.gz                        */
-comment|/* this is all pretty close to straight from gz. It needs to be changed to  */
-comment|/* work better for this plugin                                              */
-comment|/* ie, FIXME */
 comment|/* we never free this copy - aren't we evil! */
 name|filename_copy
 operator|=
-name|malloc
+name|g_strdup
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|strcpy
-argument_list|(
-name|filename_copy
-argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
@@ -2668,7 +2647,7 @@ argument_list|)
 expr_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 if|if
@@ -2695,7 +2674,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"some sort of error with the file extension or lack thereof"
+literal|"some sort of error with the file extension "
+literal|"or lack thereof"
 argument_list|)
 argument_list|)
 expr_stmt|;
