@@ -2745,6 +2745,14 @@ name|num_segs_layer
 argument_list|)
 expr_stmt|;
 comment|/*  Draw the ants  */
+if|if
+condition|(
+operator|!
+name|select
+operator|->
+name|hidden
+condition|)
+block|{
 name|selection_draw
 argument_list|(
 name|select
@@ -2771,6 +2779,7 @@ operator|->
 name|num_segs_out
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  Reset the timer  */
 name|select
 operator|->
