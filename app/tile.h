@@ -153,7 +153,8 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|gint
+name|gboolean
+name|dirty
 parameter_list|)
 function_decl|;
 end_function_decl

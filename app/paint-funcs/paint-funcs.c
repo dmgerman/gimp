@@ -18,19 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_include
@@ -49,18 +37,6 @@ begin_include
 include|#
 directive|include
 file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"boundary.h"
 end_include
 
 begin_include
@@ -97,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
@@ -217,7 +187,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2add77250103
+DECL|enum|__anon2c499b250103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -255,323 +225,231 @@ struct|struct
 name|_LayerMode
 block|{
 DECL|member|affect_alpha
-name|gint
+name|gboolean
 name|affect_alpha
 decl_stmt|;
 comment|/*  does the layer mode affect the alpha channel  */
 DECL|member|increase_opacity
-name|gint
+name|gboolean
 name|increase_opacity
 decl_stmt|;
 comment|/*  layer mode can increase opacity */
 DECL|member|decrease_opacity
-name|gint
+name|gboolean
 name|decrease_opacity
 decl_stmt|;
 comment|/*  layer mode can decrease opacity */
-DECL|member|name
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-comment|/*  layer mode specification  */
 block|}
 struct|;
 end_struct
 
 begin_decl_stmt
 DECL|variable|layer_modes
+specifier|static
+specifier|const
 name|LayerMode
 name|layer_modes
 index|[]
 init|=
-comment|/* This must obviously be in the same 				 * order as the corresponding values 				 * in the LayerModeEffects enumeration. 				 */
+comment|/* This must obviously be in the same 			        * order as the corresponding values 		         	* in the LayerModeEffects enumeration. 				*/
 block|{
 block|{
-literal|1
+name|TRUE
 block|,
-literal|1
+name|TRUE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Normal"
-argument_list|)
-block|}
-block|,
+comment|/*  NORMAL_MODE        */
 block|{
-literal|1
+name|TRUE
 block|,
-literal|1
+name|TRUE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Dissolve"
-argument_list|)
-block|}
-block|,
+comment|/*  DISSOLVE_MODE      */
 block|{
-literal|1
+name|TRUE
 block|,
-literal|1
+name|TRUE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Behind"
-argument_list|)
-block|}
-block|,
+comment|/*  BEHIND_MODE        */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Multiply (Burn)"
-argument_list|)
-block|}
-block|,
+comment|/*  MULTIPLY_MODE      */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Screen"
-argument_list|)
-block|}
-block|,
+comment|/*  SCREEN_MODE        */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Overlay"
-argument_list|)
-block|}
-block|,
+comment|/*  OVERLAY_MODE       */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Difference"
-argument_list|)
-block|}
-block|,
+comment|/*  DIFFERENCE_MODE    */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Addition"
-argument_list|)
-block|}
-block|,
+comment|/*  ADDITION_MODE      */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Subtraction"
-argument_list|)
-block|}
-block|,
+comment|/*  SUBTRACT_MODE      */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Darken Only"
-argument_list|)
-block|}
-block|,
+comment|/*  DARKEN_ONLY_MODE   */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Lighten Only"
-argument_list|)
-block|}
-block|,
+comment|/*  LIGHTEN_ONLY_MODE  */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Hue"
-argument_list|)
-block|}
-block|,
+comment|/*  HUE_MODE           */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Saturation"
-argument_list|)
-block|}
-block|,
+comment|/*  SATURATION_MODE    */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Color"
-argument_list|)
-block|}
-block|,
+comment|/*  COLOR_MODE         */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Value"
-argument_list|)
-block|}
-block|,
+comment|/*  VALUE_MODE         */
 block|{
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Divide (Dodge)"
-argument_list|)
-block|}
-block|,
+comment|/*  DIVIDE_MODE        */
 block|{
-literal|1
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|1
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Erase"
-argument_list|)
-block|}
-block|,
+comment|/*  DODGE_MODE         */
 block|{
-literal|1
+name|FALSE
 block|,
-literal|1
+name|FALSE
 block|,
-literal|1
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Replace"
-argument_list|)
-block|}
-block|,
+comment|/*  BURN_MODE          */
 block|{
-literal|1
+name|FALSE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|1
+name|FALSE
+block|, }
 block|,
-name|N_
-argument_list|(
-literal|"Anti Erase"
-argument_list|)
-block|}
-block|,
+comment|/*  HARDLIGHT_MODE     */
 block|{
-literal|0
+name|TRUE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
+name|TRUE
+block|,  }
 block|,
-name|N_
-argument_list|(
-literal|"Dodge"
-argument_list|)
-block|}
-block|,
+comment|/*  ERASE_MODE         */
 block|{
-literal|0
+name|TRUE
 block|,
-literal|0
+name|TRUE
 block|,
-literal|0
+name|TRUE
+block|,  }
 block|,
-name|N_
-argument_list|(
-literal|"Burn"
-argument_list|)
-block|}
-block|,
+comment|/*  REPLACE_MODE       */
 block|{
-literal|0
+name|TRUE
 block|,
-literal|0
+name|FALSE
 block|,
-literal|0
-block|,
-name|N_
-argument_list|(
-literal|"Hard Light"
-argument_list|)
-block|}
+name|TRUE
+block|,  }
+comment|/*  ANTI_ERASE_MODE    */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -708,9 +586,11 @@ modifier|*
 name|make_curve
 parameter_list|(
 name|gdouble
+name|sigma
 parameter_list|,
 name|gint
 modifier|*
+name|length
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -722,31 +602,40 @@ name|run_length_encode
 parameter_list|(
 name|guchar
 modifier|*
+name|src
 parameter_list|,
 name|gint
 modifier|*
+name|dest
 parameter_list|,
 name|gint
+name|w
 parameter_list|,
 name|gint
+name|bytes
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|double
+name|gdouble
 name|cubic
 parameter_list|(
 name|gdouble
+name|dx
 parameter_list|,
 name|gint
+name|jm1
 parameter_list|,
 name|gint
+name|j
 parameter_list|,
 name|gint
+name|jp1
 parameter_list|,
 name|gint
+name|jp2
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -758,30 +647,41 @@ name|apply_layer_mode_replace
 parameter_list|(
 name|guchar
 modifier|*
+name|src1
 parameter_list|,
 name|guchar
 modifier|*
+name|src2
 parameter_list|,
 name|guchar
 modifier|*
+name|dest
 parameter_list|,
 name|guchar
 modifier|*
+name|mask
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
+name|opacity
 parameter_list|,
 name|gint
+name|length
 parameter_list|,
 name|gint
+name|bytes1
 parameter_list|,
 name|gint
+name|bytes2
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
+name|affect
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -791,8 +691,7 @@ specifier|static
 name|void
 name|rotate_pointers
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 modifier|*
 name|p
 parameter_list|,
@@ -6020,7 +5919,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|replace_pixels (guchar * src1,guchar * src2,guchar * dest,guchar * mask,gint length,gint opacity,gint * affect,gint bytes1,gint bytes2)
+DECL|function|replace_pixels (guchar * src1,guchar * src2,guchar * dest,guchar * mask,gint length,gint opacity,gboolean * affect,gint bytes1,gint bytes2)
 name|replace_pixels
 parameter_list|(
 name|guchar
@@ -6045,7 +5944,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -6192,7 +6091,7 @@ operator|=
 literal|0.5
 operator|+
 operator|(
-name|double
+name|gdouble
 operator|)
 name|src1
 index|[
@@ -6203,7 +6102,7 @@ name|mask_val
 operator|*
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|src2
 index|[
@@ -6211,7 +6110,7 @@ name|b
 index|]
 operator|-
 operator|(
-name|double
+name|gdouble
 operator|)
 name|src1
 index|[
@@ -6778,7 +6677,7 @@ decl_stmt|;
 name|gint
 name|dest_bytes
 decl_stmt|;
-name|gint
+name|gboolean
 name|has_alpha
 decl_stmt|;
 name|has_alpha
@@ -6789,9 +6688,9 @@ operator|==
 literal|2
 operator|)
 condition|?
-literal|1
+name|TRUE
 else|:
-literal|0
+name|FALSE
 expr_stmt|;
 name|dest_bytes
 operator|=
@@ -7519,16 +7418,16 @@ block|{
 name|gint
 name|b
 decl_stmt|;
-specifier|const
-name|guchar
-modifier|*
-name|m
-decl_stmt|;
 name|gint
 name|tmp
 decl_stmt|;
 name|gint
 name|l
+decl_stmt|;
+specifier|const
+name|guchar
+modifier|*
+name|m
 decl_stmt|;
 name|guchar
 modifier|*
@@ -7875,7 +7774,7 @@ operator|=
 operator|&
 name|no_mask
 expr_stmt|;
-comment|/*  This function assumes the source has no alpha channel and      *  the destination has an alpha channel.  So dest_bytes = bytes + 1      */
+comment|/*  This function assumes the source has no alpha channel and        *  the destination has an alpha channel.  So dest_bytes = bytes + 1        */
 if|if
 condition|(
 name|bytes
@@ -8087,7 +7986,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_inten_a_pixels (const guchar * src,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|initial_inten_a_pixels (const guchar * src,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|initial_inten_a_pixels
 parameter_list|(
 specifier|const
@@ -8108,7 +8007,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -8298,7 +8197,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_indexed_and_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|combine_indexed_and_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|combine_indexed_and_indexed_pixels
 parameter_list|(
 specifier|const
@@ -8324,7 +8223,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -8502,7 +8401,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_indexed_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|combine_indexed_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|combine_indexed_and_indexed_a_pixels
 parameter_list|(
 specifier|const
@@ -8528,7 +8427,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -8547,16 +8446,16 @@ decl_stmt|;
 name|guchar
 name|new_alpha
 decl_stmt|;
+name|gint
+name|src2_bytes
+decl_stmt|;
+name|glong
+name|tmp
+decl_stmt|;
 specifier|const
 name|guchar
 modifier|*
 name|m
-decl_stmt|;
-name|gint
-name|src2_bytes
-decl_stmt|;
-name|long
-name|tmp
 decl_stmt|;
 name|alpha
 operator|=
@@ -8734,7 +8633,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_indexed_a_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|combine_indexed_a_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|combine_indexed_a_and_indexed_a_pixels
 parameter_list|(
 specifier|const
@@ -8760,7 +8659,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -8771,6 +8670,11 @@ name|gint
 name|bytes
 parameter_list|)
 block|{
+specifier|const
+name|guchar
+modifier|*
+name|m
+decl_stmt|;
 name|gint
 name|b
 decl_stmt|,
@@ -8779,12 +8683,7 @@ decl_stmt|;
 name|guchar
 name|new_alpha
 decl_stmt|;
-specifier|const
-name|guchar
-modifier|*
-name|m
-decl_stmt|;
-name|long
+name|glong
 name|tmp
 decl_stmt|;
 name|alpha
@@ -9056,8 +8955,13 @@ decl_stmt|;
 name|gint
 name|index
 decl_stmt|;
-name|long
+name|glong
 name|tmp
+decl_stmt|;
+specifier|const
+name|guchar
+modifier|*
+name|m
 decl_stmt|;
 name|alpha
 operator|=
@@ -9072,13 +8976,10 @@ condition|(
 name|mask
 condition|)
 block|{
-specifier|const
-name|guchar
-modifier|*
 name|m
-init|=
+operator|=
 name|mask
-decl_stmt|;
+expr_stmt|;
 while|while
 condition|(
 name|length
@@ -9293,7 +9194,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|combine_inten_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|combine_inten_and_inten_pixels
 parameter_list|(
 specifier|const
@@ -9319,7 +9220,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -9330,16 +9231,16 @@ name|gint
 name|bytes
 parameter_list|)
 block|{
+specifier|const
+name|guchar
+modifier|*
+name|m
+decl_stmt|;
 name|gint
 name|b
 decl_stmt|;
 name|guchar
 name|new_alpha
-decl_stmt|;
-specifier|const
-name|guchar
-modifier|*
-name|m
 decl_stmt|;
 name|gint
 name|tmp
@@ -9509,7 +9410,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|combine_inten_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|combine_inten_and_inten_a_pixels
 parameter_list|(
 specifier|const
@@ -9535,7 +9436,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -9563,7 +9464,7 @@ modifier|*
 name|m
 decl_stmt|;
 specifier|register
-name|long
+name|glong
 name|t1
 decl_stmt|;
 name|alpha
@@ -9907,7 +9808,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint mode_affect,gint length,gint bytes)
+DECL|function|combine_inten_a_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint mode_affect,gint length,gint bytes)
 name|combine_inten_a_and_inten_pixels
 parameter_list|(
 specifier|const
@@ -9933,7 +9834,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -10367,7 +10268,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint mode_affect,gint length,gint bytes)
+DECL|function|combine_inten_a_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,const gint mode_affect,gint length,gint bytes)
 name|combine_inten_a_and_inten_a_pixels
 parameter_list|(
 specifier|const
@@ -10393,10 +10294,11 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
+specifier|const
 name|gint
 name|mode_affect
 parameter_list|,
@@ -10423,12 +10325,12 @@ name|guchar
 modifier|*
 name|m
 decl_stmt|;
-name|float
+name|gfloat
 name|ratio
 decl_stmt|,
 name|compl_ratio
 decl_stmt|;
-name|long
+name|glong
 name|tmp
 decl_stmt|;
 specifier|const
@@ -12240,7 +12142,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|behind_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes1,gint bytes2,gint has_alpha1,gint has_alpha2)
+DECL|function|behind_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes1,gint bytes2,gint has_alpha1,gint has_alpha2)
 name|behind_inten_pixels
 parameter_list|(
 specifier|const
@@ -12266,7 +12168,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -12500,7 +12402,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|behind_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes1,gint bytes2,gint has_alpha1,gint has_alpha2)
+DECL|function|behind_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes1,gint bytes2,gint has_alpha1,gint has_alpha2)
 name|behind_indexed_pixels
 parameter_list|(
 specifier|const
@@ -12526,7 +12428,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -12701,7 +12603,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|replace_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes1,gint bytes2,gint has_alpha1,gint has_alpha2)
+DECL|function|replace_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes1,gint bytes2,gint has_alpha1,gint has_alpha2)
 name|replace_inten_pixels
 parameter_list|(
 specifier|const
@@ -12727,7 +12629,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -12976,7 +12878,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|replace_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes1,gint bytes2,gint has_alpha1,gint has_alpha2)
+DECL|function|replace_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes1,gint bytes2,gint has_alpha1,gint has_alpha2)
 name|replace_indexed_pixels
 parameter_list|(
 specifier|const
@@ -13002,7 +12904,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -13158,7 +13060,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|erase_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|erase_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|erase_inten_pixels
 parameter_list|(
 specifier|const
@@ -13184,7 +13086,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -13201,7 +13103,7 @@ decl_stmt|;
 name|guchar
 name|src2_alpha
 decl_stmt|;
-name|long
+name|glong
 name|tmp
 decl_stmt|;
 specifier|const
@@ -13405,7 +13307,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|erase_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|erase_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|erase_indexed_pixels
 parameter_list|(
 specifier|const
@@ -13431,7 +13333,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -13455,7 +13357,7 @@ name|guchar
 modifier|*
 name|m
 decl_stmt|;
-name|long
+name|glong
 name|tmp
 decl_stmt|;
 if|if
@@ -13567,7 +13469,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|anti_erase_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|anti_erase_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|anti_erase_inten_pixels
 parameter_list|(
 specifier|const
@@ -13593,7 +13495,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -13737,7 +13639,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|anti_erase_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|anti_erase_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
 name|anti_erase_indexed_pixels
 parameter_list|(
 specifier|const
@@ -13763,7 +13665,7 @@ name|gint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -20424,7 +20326,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|double
+name|gdouble
 modifier|*
 name|row
 decl_stmt|,
@@ -20454,22 +20356,22 @@ name|orig_width
 decl_stmt|,
 name|orig_height
 decl_stmt|;
-name|double
+name|gdouble
 name|x_rat
 decl_stmt|,
 name|y_rat
 decl_stmt|;
-name|double
+name|gdouble
 name|x_cum
 decl_stmt|,
 name|y_cum
 decl_stmt|;
-name|double
+name|gdouble
 name|x_last
 decl_stmt|,
 name|y_last
 decl_stmt|;
-name|double
+name|gdouble
 modifier|*
 name|x_frac
 decl_stmt|,
@@ -21045,7 +20947,7 @@ block|}
 end_function
 
 begin_function
-name|float
+name|gfloat
 DECL|function|shapeburst_region (PixelRegion * srcPR,PixelRegion * distPR)
 name|shapeburst_region
 parameter_list|(
@@ -21066,25 +20968,25 @@ name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|float
+name|gfloat
 name|max_iterations
 decl_stmt|;
-name|float
+name|gfloat
 modifier|*
 name|distp_cur
 decl_stmt|;
-name|float
+name|gfloat
 modifier|*
 name|distp_prev
 decl_stmt|;
-name|float
+name|gfloat
 modifier|*
 name|tmp
 decl_stmt|;
-name|float
+name|gfloat
 name|min_prev
 decl_stmt|;
-name|float
+name|gfloat
 name|float_tmp
 decl_stmt|;
 name|gint
@@ -21617,11 +21519,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rotate_pointers (void ** p,guint32 n)
+DECL|function|rotate_pointers (gpointer * p,guint32 n)
 name|rotate_pointers
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 modifier|*
 name|p
 parameter_list|,
@@ -21632,8 +21533,7 @@ block|{
 name|guint32
 name|i
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|tmp
 decl_stmt|;
 name|tmp
@@ -21776,7 +21676,7 @@ argument_list|(
 name|yradius
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|xradius
 operator|*
@@ -26787,7 +26687,7 @@ name|LayerModeEffects
 name|mode
 decl_stmt|;
 DECL|member|affect
-name|gint
+name|gboolean
 modifier|*
 name|affect
 decl_stmt|;
@@ -26856,7 +26756,7 @@ decl_stmt|;
 name|LayerModeEffects
 name|mode
 decl_stmt|;
-name|gint
+name|gboolean
 modifier|*
 name|affect
 decl_stmt|;
@@ -26909,10 +26809,8 @@ operator|)
 operator|>
 literal|512
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"initial_sub_region:: error :: src->w * (src->bytes + 1)> 512\n"
 argument_list|)
 expr_stmt|;
@@ -27229,7 +27127,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * data,gint opacity,LayerModeEffects mode,gint * affect,gint type)
+DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * data,gint opacity,LayerModeEffects mode,gboolean * affect,gint type)
 name|initial_region
 parameter_list|(
 name|PixelRegion
@@ -27254,7 +27152,7 @@ parameter_list|,
 name|LayerModeEffects
 name|mode
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -27332,7 +27230,7 @@ name|LayerModeEffects
 name|mode
 decl_stmt|;
 DECL|member|affect
-name|gint
+name|gboolean
 modifier|*
 name|affect
 decl_stmt|;
@@ -27347,7 +27245,7 @@ name|data
 decl_stmt|;
 DECL|member|has_alpha1
 DECL|member|has_alpha2
-name|gint
+name|gboolean
 name|has_alpha1
 decl_stmt|,
 name|has_alpha2
@@ -27401,7 +27299,7 @@ decl_stmt|;
 name|LayerModeEffects
 name|mode
 decl_stmt|;
-name|gint
+name|gboolean
 modifier|*
 name|affect
 decl_stmt|;
@@ -27411,7 +27309,7 @@ decl_stmt|;
 name|gint
 name|h
 decl_stmt|;
-name|gint
+name|gboolean
 name|has_alpha1
 decl_stmt|,
 name|has_alpha2
@@ -28471,7 +28369,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,gint opacity,LayerModeEffects mode,gint * affect,gint type)
+DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,gint opacity,LayerModeEffects mode,gboolean * affect,gint type)
 name|combine_regions
 parameter_list|(
 name|PixelRegion
@@ -28500,7 +28398,7 @@ parameter_list|,
 name|LayerModeEffects
 name|mode
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -28508,7 +28406,7 @@ name|gint
 name|type
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|has_alpha1
 decl_stmt|,
 name|has_alpha2
@@ -28536,7 +28434,7 @@ name|has_alpha1
 operator|=
 name|has_alpha2
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 break|break;
 case|case
@@ -28544,11 +28442,11 @@ name|COMBINE_INTEN_A_INTEN
 case|:
 name|has_alpha1
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|has_alpha2
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 break|break;
 case|case
@@ -28559,11 +28457,11 @@ name|COMBINE_INDEXED_INDEXED_A
 case|:
 name|has_alpha1
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|has_alpha2
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -28576,7 +28474,7 @@ name|has_alpha1
 operator|=
 name|has_alpha2
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 break|break;
 default|default:
@@ -28584,7 +28482,7 @@ name|has_alpha1
 operator|=
 name|has_alpha2
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 name|st
@@ -28773,7 +28671,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_regions_replace (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,gint opacity,gint * affect,gint type)
+DECL|function|combine_regions_replace (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,gint opacity,gboolean * affect,gint type)
 name|combine_regions_replace
 parameter_list|(
 name|PixelRegion
@@ -28799,7 +28697,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,
@@ -28813,19 +28711,20 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|s1
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|s2
 decl_stmt|;
 name|guchar
 modifier|*
 name|d
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|m
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
 for|for
@@ -28978,7 +28877,7 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|apply_layer_mode (guchar * src1,guchar * src2,guchar ** dest,gint x,gint y,gint opacity,gint length,LayerModeEffects mode,gint bytes1,gint bytes2,gint has_alpha1,gint has_alpha2,gint * mode_affect)
+DECL|function|apply_layer_mode (guchar * src1,guchar * src2,guchar ** dest,gint x,gint y,gint opacity,gint length,LayerModeEffects mode,gint bytes1,gint bytes2,gboolean has_alpha1,gboolean has_alpha2,gint * mode_affect)
 name|apply_layer_mode
 parameter_list|(
 name|guchar
@@ -29012,19 +28911,15 @@ parameter_list|,
 name|gint
 name|bytes1
 parameter_list|,
-comment|/* bytes */
 name|gint
 name|bytes2
 parameter_list|,
-comment|/* bytes */
-name|gint
+name|gboolean
 name|has_alpha1
 parameter_list|,
-comment|/* has alpha */
-name|gint
+name|gboolean
 name|has_alpha2
 parameter_list|,
-comment|/* has alpha */
 name|gint
 modifier|*
 name|mode_affect
@@ -29624,8 +29519,8 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|apply_indexed_layer_mode (guchar * src1,guchar * src2,guchar ** dest,LayerModeEffects mode,gint has_alpha1,gint has_alpha2)
+name|gint
+DECL|function|apply_indexed_layer_mode (guchar * src1,guchar * src2,guchar ** dest,LayerModeEffects mode,gboolean has_alpha1,gboolean has_alpha2)
 name|apply_indexed_layer_mode
 parameter_list|(
 name|guchar
@@ -29644,11 +29539,11 @@ parameter_list|,
 name|LayerModeEffects
 name|mode
 parameter_list|,
-name|gint
+name|gboolean
 name|has_alpha1
 parameter_list|,
 comment|/* has alpha */
-name|gint
+name|gboolean
 name|has_alpha2
 parameter_list|)
 comment|/* has alpha */
@@ -29771,7 +29666,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|apply_layer_mode_replace (guchar * src1,guchar * src2,guchar * dest,guchar * mask,gint x,gint y,gint opacity,gint length,gint bytes1,gint bytes2,gint * affect)
+DECL|function|apply_layer_mode_replace (guchar * src1,guchar * src2,guchar * dest,guchar * mask,gint x,gint y,gint opacity,gint length,gint bytes1,gint bytes2,gboolean * affect)
 name|apply_layer_mode_replace
 parameter_list|(
 name|guchar
@@ -29805,12 +29700,10 @@ parameter_list|,
 name|gint
 name|bytes1
 parameter_list|,
-comment|/* bytes */
 name|gint
 name|bytes2
 parameter_list|,
-comment|/* bytes */
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|)

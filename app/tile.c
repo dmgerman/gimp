@@ -560,14 +560,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_release (Tile * tile,int dirty)
+DECL|function|tile_release (Tile * tile,gboolean dirty)
 name|tile_release
 parameter_list|(
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gboolean
 name|dirty
 parameter_list|)
 block|{

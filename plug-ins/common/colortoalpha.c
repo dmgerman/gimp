@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2c5e70108
+DECL|struct|__anon2aa7f13d0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2c5e70208
+DECL|struct|__anon2aa7f13d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2c5e70308
+DECL|struct|__anon2aa7f13d0308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -162,6 +162,7 @@ name|GimpRGB
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -760,13 +761,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colortoalpha (GimpRGB * src,GimpRGB * color)
+DECL|function|colortoalpha (GimpRGB * src,const GimpRGB * color)
 name|colortoalpha
 parameter_list|(
 name|GimpRGB
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -1204,7 +1206,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*<clahey> so if a1> c1, a2> c2, and a3> c2 and a1 - c1> a2-c2, a3-c3, then a1 = b1 * alpha + c1 * (1-alpha) So, maximizing alpha without taking b1 above 1 gives a1 = alpha + c1(1-alpha) and therefore alpha = (a1-c1)/(1-c1).<AmJur2d> eek!  math!> AmJur2d runs and hides behind a library carrel<sjburges> clahey: btw, the ordering of that a2, a3 in the white->alpha didn't matter<clahey> sjburges: You mean that it could be either a1, a2, a3 or a1, a3, a2?<sjburges> yeah<sjburges> because neither one uses the other<clahey> sjburges: That's exactly as it should be.  They are both just getting reduced to the same amount, limited by the the darkest color.<clahey> Then a2 = b2 * alpha + c2 * ( 1- alpha).  Solving for b2 gives b2 = (a1-c2)/alpha + c2.<sjburges> yeah<jlb> xachbot, url holy wars<jlb> xachbot, url wars<clahey> That gives us are formula for if the background is darker than the foreground? Yep.<clahey> Next if a1< c1, a2< c2, a3< c3, and c1-a1> c2-a2, c3-a3, and by our desired result a1 = b1 * alpha + c1 * (1-alpha), we maximize alpha without taking b1 negative gives alpha = 1-a1/c1.<clahey> And then again, b2 = (a2-c2)/alpha + c2 by the same formula.  (Actually, I think we can use that formula for all cases, though it may possibly introduce rounding error.<clahey> sjburges: I like the idea of using floats to avoid rounding error.  Good call.<clahey> It's cool to be able to replace all the black in an image with another color.  It' */
+comment|/*<clahey>   so if a1> c1, a2> c2, and a3> c2 and a1 - c1> a2-c2, a3-c3,               then a1 = b1 * alpha + c1 * (1-alpha)               So, maximizing alpha without taking b1 above 1 gives  	     a1 = alpha + c1(1-alpha) and therefore alpha = (a1-c1) / (1-c1).<sjburges> clahey: btw, the ordering of that a2, a3 in the white->alpha didn't               matter<clahey>   sjburges: You mean that it could be either a1, a2, a3 or a1, a3, a2?<sjburges> yeah<sjburges> because neither one uses the other<clahey>   sjburges: That's exactly as it should be.  They are both just getting               reduced to the same amount, limited by the the darkest color.<clahey>   Then a2 = b2 * alpha + c2 * ( 1- alpha).  Solving for b2 gives               b2 = (a1-c2)/alpha + c2.<sjburges> yeah<clahey>   That gives us are formula for if the background is darker than the               foreground? Yep.<clahey>   Next if a1< c1, a2< c2, a3< c3, and c1-a1> c2-a2, c3-a3, and by our               desired result a1 = b1 * alpha + c1 * (1-alpha), we maximize alpha               without taking b1 negative gives alpha = 1 - a1 / c1.<clahey>   And then again, b2 = (a2-c2) / alpha + c2 by the same formula.                (Actually, I think we can use that formula for all cases, though it               may possibly introduce rounding error.<clahey>   sjburges: I like the idea of using floats to avoid rounding error.                Good call. */
 end_comment
 
 begin_function
@@ -1232,7 +1234,7 @@ name|bytes
 parameter_list|)
 block|{
 name|GimpRGB
-name|src
+name|color
 decl_stmt|;
 while|while
 condition|(
@@ -1240,26 +1242,18 @@ name|col
 operator|--
 condition|)
 block|{
-name|gimp_rgba_set
+name|gimp_rgba_set_uchar
 argument_list|(
 operator|&
-name|src
+name|color
 argument_list|,
-operator|(
-name|gdouble
-operator|)
 name|src_data
 index|[
 name|col
 operator|*
 name|bytes
 index|]
-operator|/
-literal|255.0
 argument_list|,
-operator|(
-name|gdouble
-operator|)
 name|src_data
 index|[
 name|col
@@ -1268,12 +1262,7 @@ name|bytes
 operator|+
 literal|1
 index|]
-operator|/
-literal|255.0
 argument_list|,
-operator|(
-name|gdouble
-operator|)
 name|src_data
 index|[
 name|col
@@ -1282,12 +1271,7 @@ name|bytes
 operator|+
 literal|2
 index|]
-operator|/
-literal|255.0
 argument_list|,
-operator|(
-name|gdouble
-operator|)
 name|src_data
 index|[
 name|col
@@ -1296,15 +1280,12 @@ name|bytes
 operator|+
 literal|3
 index|]
-operator|/
-literal|255.0
 argument_list|)
 expr_stmt|;
-comment|/* For brighter than the background the rule is to send the 	 farthest above the background as the first address. 	 However, since v1< COLOR_RED, for example, all of these 	 are negative so we have to invert the operator to reduce 	 the amount of typing to fix the problem.  :) */
 name|colortoalpha
 argument_list|(
 operator|&
-name|src
+name|color
 argument_list|,
 operator|&
 name|pvals
@@ -1312,19 +1293,20 @@ operator|.
 name|color
 argument_list|)
 expr_stmt|;
+name|gimp_rgba_get_uchar
+argument_list|(
+operator|&
+name|color
+argument_list|,
+operator|&
 name|dest_data
 index|[
 name|col
 operator|*
 name|bytes
 index|]
-operator|=
-name|src
-operator|.
-name|r
-operator|*
-literal|255.999
-expr_stmt|;
+argument_list|,
+operator|&
 name|dest_data
 index|[
 name|col
@@ -1333,13 +1315,8 @@ name|bytes
 operator|+
 literal|1
 index|]
-operator|=
-name|src
-operator|.
-name|g
-operator|*
-literal|255.999
-expr_stmt|;
+argument_list|,
+operator|&
 name|dest_data
 index|[
 name|col
@@ -1348,13 +1325,8 @@ name|bytes
 operator|+
 literal|2
 index|]
-operator|=
-name|src
-operator|.
-name|b
-operator|*
-literal|255.999
-expr_stmt|;
+argument_list|,
+operator|&
 name|dest_data
 index|[
 name|col
@@ -1363,12 +1335,7 @@ name|bytes
 operator|+
 literal|3
 index|]
-operator|=
-name|src
-operator|.
-name|a
-operator|*
-literal|255.999
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -1553,6 +1520,13 @@ name|progress_skip
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|total_area
+operator|<
+literal|1
+condition|)
+return|return;
 comment|/* Initialize the pixel regions. */
 name|gimp_pixel_rgn_init
 argument_list|(
