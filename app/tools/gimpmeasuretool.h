@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b8bf670103
+DECL|enum|__anon28f8c4bb0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -130,13 +130,8 @@ struct|struct
 name|_GimpMeasureTool
 block|{
 DECL|member|parent_instance
-name|GimpTool
+name|GimpDrawTool
 name|parent_instance
-decl_stmt|;
-DECL|member|core
-name|DrawCore
-modifier|*
-name|core
 decl_stmt|;
 comment|/*  Core select object  */
 DECL|member|function

@@ -6,153 +6,154 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__COLOR_PICKER_H__
+name|__GIMP_PAINTBRUSH_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__COLOR_PICKER_H__
+DECL|macro|__GIMP_PAINTBRUSH_TOOL_H__
 define|#
 directive|define
-name|__COLOR_PICKER_H__
+name|__GIMP_PAINTBRUSH_TOOL_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"gimppainttool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_COLOR_PICKER
+DECL|macro|GIMP_TYPE_PAINTBRUSH_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_COLOR_PICKER
-value|(gimp_color_picker_get_type ())
+name|GIMP_TYPE_PAINTBRUSH_TOOL
+value|(gimp_paintbrush_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_COLOR_PICKER (obj)
+DECL|macro|GIMP_PAINTBRUSH_TOOL (obj)
 define|#
 directive|define
-name|GIMP_COLOR_PICKER
+name|GIMP_PAINTBRUSH_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_COLOR_PICKER, GimpColorPicker))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_PAINTBRUSH_TOOL, GimpPaintbrushTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_COLOR_PICKER (obj)
+DECL|macro|GIMP_IS_PAINTBRUSH_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_COLOR_PICKER
+name|GIMP_IS_PAINTBRUSH_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_COLOR_PICKER))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_PAINTBRUSH_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_COLOR_PICKER_CLASS (klass)
+DECL|macro|GIMP_PAINTBRUSH_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_COLOR_PICKER_CLASS
+name|GIMP_PAINTBRUSH_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_PICKER, GimpColorPickerClass))
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PAINTBRUSH_TOOL, GimpPaintbrushToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_COLOR_PICKER_CLASS (klass)
+DECL|macro|GIMP_IS_PAINTBRUSH_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_COLOR_PICKER_CLASS
+name|GIMP_IS_PAINTBRUSH_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_PICKER))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PAINTBRUSH_TOOL))
 end_define
-
-begin_typedef
-DECL|typedef|GimpColorPicker
-typedef|typedef
-name|struct
-name|_GimpColorPicker
-name|GimpColorPicker
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpColorPickerClass
-typedef|typedef
-name|struct
-name|_GimpColorPickerClass
-name|GimpColorPickerClass
-typedef|;
-end_typedef
 
 begin_struct
-DECL|struct|_GimpColorPicker
+DECL|struct|_GimpPaintbrushTool
 struct|struct
-name|_GimpColorPicker
+name|_GimpPaintbrushTool
 block|{
 DECL|member|parent_instance
-name|GimpTool
+name|GimpPaintTool
 name|parent_instance
 decl_stmt|;
-DECL|member|core
-name|DrawCore
-modifier|*
-name|core
-decl_stmt|;
-comment|/*  Core select object  */
-DECL|member|centerx
-name|gint
-name|centerx
-decl_stmt|;
-comment|/*  starting x coord    */
-DECL|member|centery
-name|gint
-name|centery
-decl_stmt|;
-comment|/*  starting y coord    */
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpColorPickerClass
+DECL|struct|_GimpPaintbrushToolClass
 struct|struct
-name|_GimpColorPickerClass
+name|_GimpPaintbrushToolClass
 block|{
 DECL|member|parent_class
-name|GimpToolClass
+name|GimpPaintToolClass
 name|parent_class
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
+begin_typedef
+DECL|typedef|GimpPaintbrushTool
+typedef|typedef
+name|struct
+name|_GimpPaintbrushTool
+name|GimpPaintbrushTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPaintbrushToolClass
+typedef|typedef
+name|struct
+name|_GimpPaintbrushToolClass
+name|GimpPaintbrushToolClass
+typedef|;
+end_typedef
+
 begin_comment
-comment|/* FIXME: Whats this doing here? */
+comment|/* FIXME: this antique code doesn't follow the coding style */
 end_comment
 
-begin_decl_stmt
-specifier|extern
+begin_function_decl
+name|gboolean
+name|gimp_paintbrush_tool_non_gui
+parameter_list|(
+name|GimpDrawable
+modifier|*
+parameter_list|,
 name|gint
-name|col_value
-index|[
-literal|5
-index|]
-decl_stmt|;
-end_decl_stmt
+parameter_list|,
+name|gdouble
+modifier|*
+parameter_list|,
+name|gdouble
+parameter_list|,
+name|gint
+parameter_list|,
+name|gdouble
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
-name|GtkType
-name|gimp_color_picker_get_type
+name|gboolean
+name|gimp_paintbrush_tool_non_gui_default
 parameter_list|(
-name|void
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|gint
+parameter_list|,
+name|gdouble
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -160,7 +161,7 @@ end_function_decl
 begin_function_decl
 name|GimpTool
 modifier|*
-name|gimp_color_picker_new
+name|gimp_paintbrush_tool_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -168,43 +169,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_color_picker_register
+name|GtkType
+name|gimp_paintbrush_tool_get_type
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|pick_color
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gboolean
-name|sample_merged
-parameter_list|,
-name|gboolean
-name|sample_average
-parameter_list|,
-name|double
-name|average_radius
-parameter_list|,
-name|gint
-name|final
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -215,7 +183,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __COLOR_PICKER_H__  */
+comment|/*  __GIMP_PAINTBRUSH_TOOL_H__  */
 end_comment
 
 end_unit

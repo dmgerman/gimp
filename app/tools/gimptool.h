@@ -79,14 +79,6 @@ value|GTK_TYPE_NONE
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_PAINTBRUSH_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_PAINTBRUSH_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_PENCIL_TOOL
 define|#
 directive|define
@@ -299,11 +291,6 @@ name|gboolean
 name|toggled
 decl_stmt|;
 comment|/*  Bad hack to let the paint_core show the 			       *  right toggle cursors 			       */
-DECL|member|paintcore
-name|PaintCore
-modifier|*
-name|paintcore
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -502,10 +489,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/*  Function declarations  */
-end_comment
 
 begin_function_decl
 name|GtkType

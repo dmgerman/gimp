@@ -40,7 +40,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"color_picker.h"
+file|"gimpcolorpickertool.h"
 end_include
 
 begin_function_decl
@@ -938,7 +938,7 @@ name|standard_tool_info
 operator|=
 name|gimp_tool_info_new
 argument_list|(
-name|GIMP_TYPE_COLOR_PICKER
+name|GIMP_TYPE_COLOR_PICKER_TOOL
 argument_list|,
 literal|"gimp:standard_tool"
 argument_list|,

@@ -157,9 +157,9 @@ modifier|*
 name|select_brush
 function_decl|)
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|)
 function_decl|;
 DECL|member|want_null_motion
@@ -169,9 +169,9 @@ modifier|*
 name|want_null_motion
 function_decl|)
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|)
 function_decl|;
 block|}

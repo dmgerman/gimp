@@ -79,7 +79,7 @@ name|GDisplay
 modifier|*
 name|gimage
 parameter_list|,
-name|DrawCore
+name|GimpDrawTool
 modifier|*
 name|core
 parameter_list|,

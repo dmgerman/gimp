@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"draw_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -162,7 +156,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/paint_core.h"
+file|"tools/gimpdrawtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/gimppainttool.h"
 end_include
 
 begin_include
@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2911c0e50103
+DECL|enum|__anon2ae9b61b0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

@@ -99,7 +99,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"tools/paint_core.h"
+file|"tools/gimppainttool.h"
 end_include
 
 begin_define

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/color_picker.h"
+file|"tools/gimpcolorpickertool.h"
 end_include
 
 begin_include
@@ -657,7 +657,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|tool_manager_get_info_by_type
 argument_list|(
-name|GIMP_TYPE_COLOR_PICKER
+name|GIMP_TYPE_COLOR_PICKER_TOOL
 argument_list|)
 argument_list|)
 argument_list|,

@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_core.h"
+file|"tools/gimppainttool.h"
 end_include
 
 begin_include
@@ -108,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paintbrush.h"
+file|"tools/gimppaintbrushtool.h"
 end_include
 
 begin_include
@@ -120,7 +120,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tools/tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixmaps2.h"
 end_include
 
 begin_include
@@ -393,6 +405,15 @@ name|non_gui_gradient_unit
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|parent_class
+specifier|static
+name|GimpPaintToolClass
+modifier|*
+name|parent_class
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  forward function declarations  */
 end_comment
@@ -400,9 +421,9 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|paintbrush_motion
+name|gimp_paintbrush_tool_motion
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
 parameter_list|,
 name|GimpDrawable
@@ -424,10 +445,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gpointer
-name|paintbrush_paint_func
+name|void
+name|gimp_paintbrush_tool_paint_func
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
 name|paint_core
 parameter_list|,
@@ -441,15 +462,100 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_paintbrush_tool_class_init
+parameter_list|(
+name|GimpPaintToolClass
+modifier|*
+name|klass
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  functions  */
 end_comment
 
 begin_function
+name|GtkType
+DECL|function|gimp_paintbrush_tool_get_type (void)
+name|gimp_paintbrush_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|static
+name|GtkType
+name|tool_type
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|tool_type
+condition|)
+block|{
+name|GtkTypeInfo
+name|tool_info
+init|=
+block|{
+literal|"GimpPaintbrushTool"
+block|,
+sizeof|sizeof
+argument_list|(
+name|GimpPaintbrushTool
+argument_list|)
+block|,
+sizeof|sizeof
+argument_list|(
+name|GimpPaintbrushToolClass
+argument_list|)
+block|,
+operator|(
+name|GtkClassInitFunc
+operator|)
+name|gimp_paintbrush_tool_class_init
+block|,
+operator|(
+name|GtkObjectInitFunc
+operator|)
+name|NULL
+comment|/*gimp_paintbrush_tool_initialize*/
+block|,
+comment|/* reserved_1 */
+name|NULL
+block|,
+comment|/* reserved_2 */
+name|NULL
+block|,
+name|NULL
+block|}
+decl_stmt|;
+name|tool_type
+operator|=
+name|gtk_type_unique
+argument_list|(
+name|GIMP_TYPE_PAINT_TOOL
+argument_list|,
+operator|&
+name|tool_info
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|tool_type
+return|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|void
-DECL|function|paintbrush_gradient_toggle_callback (GtkWidget * widget,gpointer data)
-name|paintbrush_gradient_toggle_callback
+DECL|function|gimp_paintbrush_tool_gradient_toggle_callback (GtkWidget * widget,gpointer data)
+name|gimp_paintbrush_tool_gradient_toggle_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -531,8 +637,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paintbrush_options_reset (void)
-name|paintbrush_options_reset
+DECL|function|gimp_paintbrush_tool_options_reset (void)
+name|gimp_paintbrush_tool_options_reset
 parameter_list|(
 name|void
 parameter_list|)
@@ -810,8 +916,8 @@ begin_function
 specifier|static
 name|PaintbrushOptions
 modifier|*
-DECL|function|paintbrush_options_new (void)
-name|paintbrush_options_new
+DECL|function|gimp_paintbrush_tool_options_new (void)
+name|gimp_paintbrush_tool_options_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -858,9 +964,9 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|PAINTBRUSH
+name|GIMP_TYPE_PAINTBRUSH_TOOL
 argument_list|,
-name|paintbrush_options_reset
+name|gimp_paintbrush_tool_options_reset
 argument_list|)
 expr_stmt|;
 name|options
@@ -1453,7 +1559,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|paintbrush_gradient_toggle_callback
+name|gimp_paintbrush_tool_gradient_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -2023,13 +2129,13 @@ end_define
 
 begin_function
 specifier|static
-name|gpointer
-DECL|function|paintbrush_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
-name|paintbrush_paint_func
+name|void
+DECL|function|gimp_paintbrush_tool_paint_func (GimpPaintTool * paint_tool,GimpDrawable * drawable,PaintState state)
+name|gimp_paintbrush_tool_paint_func
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -2055,12 +2161,10 @@ decl_stmt|;
 name|double
 name|unit_factor
 decl_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|gdisp
 operator|!=
-name|NULL
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -2262,9 +2366,9 @@ name|unit_factor
 expr_stmt|;
 break|break;
 block|}
-name|paintbrush_motion
+name|gimp_paintbrush_tool_motion
 argument_list|(
-name|paint_core
+name|paint_tool
 argument_list|,
 name|drawable
 argument_list|,
@@ -2347,109 +2451,120 @@ break|break;
 default|default :
 break|break;
 block|}
-return|return
-name|NULL
-return|;
 block|}
 end_function
 
 begin_function
-name|Tool
+name|GimpTool
 modifier|*
-DECL|function|tools_new_paintbrush ()
-name|tools_new_paintbrush
-parameter_list|()
+DECL|function|gimp_paintbrush_tool_new (void)
+name|gimp_paintbrush_tool_new
+parameter_list|(
+name|void
+parameter_list|)
 block|{
-name|Tool
-modifier|*
-name|tool
-decl_stmt|;
-name|PaintCore
-modifier|*
-name|private
-decl_stmt|;
-comment|/*  The tool options  */
-if|if
-condition|(
-operator|!
-name|paintbrush_options
-condition|)
-block|{
-name|paintbrush_options
-operator|=
-name|paintbrush_options_new
-argument_list|()
-expr_stmt|;
-name|tools_register
-argument_list|(
-name|PAINTBRUSH
-argument_list|,
-operator|(
-name|ToolOptions
-operator|*
-operator|)
-name|paintbrush_options
-argument_list|)
-expr_stmt|;
-comment|/*  press all default buttons  */
-name|paintbrush_options_reset
-argument_list|()
-expr_stmt|;
-block|}
-name|tool
-operator|=
-name|paint_core_new
-argument_list|(
-name|PAINTBRUSH
-argument_list|)
-expr_stmt|;
-name|private
-operator|=
-operator|(
-name|PaintCore
-operator|*
-operator|)
-name|tool
-operator|->
-name|private
-expr_stmt|;
-name|private
-operator|->
-name|paint_func
-operator|=
-name|paintbrush_paint_func
-expr_stmt|;
-name|private
-operator|->
-name|pick_colors
-operator|=
-name|TRUE
-expr_stmt|;
-name|private
-operator|->
-name|flags
-operator||=
-name|TOOL_CAN_HANDLE_CHANGING_BRUSH
-expr_stmt|;
 return|return
-name|tool
+name|gtk_type_new
+argument_list|(
+name|GIMP_TYPE_PAINTBRUSH_TOOL
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|tools_free_paintbrush (Tool * tool)
-name|tools_free_paintbrush
+DECL|function|gimp_paintbrush_tool_initialize (GimpPaintTool * tool)
+name|gimp_paintbrush_tool_initialize
 parameter_list|(
-name|Tool
+name|GimpPaintTool
 modifier|*
 name|tool
 parameter_list|)
 block|{
-name|paint_core_free
-argument_list|(
 name|tool
+operator|->
+name|pick_colors
+operator|=
+name|TRUE
+expr_stmt|;
+name|tool
+operator|->
+name|flags
+operator||=
+name|TOOL_CAN_HANDLE_CHANGING_BRUSH
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_paintbrush_tool_class_init (GimpPaintToolClass * klass)
+name|gimp_paintbrush_tool_class_init
+parameter_list|(
+name|GimpPaintToolClass
+modifier|*
+name|klass
+parameter_list|)
+block|{
+name|parent_class
+operator|=
+name|gtk_type_class
+argument_list|(
+name|GIMP_TYPE_PAINT_TOOL
+argument_list|)
+expr_stmt|;
+name|klass
+operator|->
+name|paint_func
+operator|=
+name|gimp_paintbrush_tool_paint_func
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_paintbrush_tool_register (void)
+name|gimp_paintbrush_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|tool_manager_register_tool
+argument_list|(
+name|GIMP_TYPE_PAINTBRUSH_TOOL
+argument_list|,
+literal|"gimp:paintbrush_tool"
+argument_list|,
+name|N_
+argument_list|(
+literal|"Paintbrush"
+argument_list|)
+argument_list|,
+name|N_
+argument_list|(
+literal|"Paint fuzzy brush strokes"
+argument_list|)
+argument_list|,
+name|N_
+argument_list|(
+literal|"/Tools/Paint Tools/Paintbrush"
+argument_list|)
+argument_list|,
+literal|"P"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"tools/paintbrush.html"
+argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|*
+operator|)
+name|paint_bits
 argument_list|)
 expr_stmt|;
 block|}
@@ -2458,12 +2573,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paintbrush_motion (PaintCore * paint_core,GimpDrawable * drawable,PaintPressureOptions * pressure_options,double fade_out,double gradient_length,PaintApplicationMode incremental,GradientPaintMode gradient_type)
-name|paintbrush_motion
+DECL|function|gimp_paintbrush_tool_motion (GimpPaintTool * paint_tool,GimpDrawable * drawable,PaintPressureOptions * pressure_options,double fade_out,double gradient_length,PaintApplicationMode incremental,GradientPaintMode gradient_type)
+name|gimp_paintbrush_tool_motion
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -2564,7 +2679,7 @@ name|size
 condition|)
 name|scale
 operator|=
-name|paint_core
+name|paint_tool
 operator|->
 name|curpressure
 expr_stmt|;
@@ -2591,9 +2706,9 @@ operator|!
 operator|(
 name|area
 operator|=
-name|paint_core_get_paint_area
+name|gimp_paint_tool_get_paint_area
 argument_list|(
-name|paint_core
+name|paint_tool
 argument_list|,
 name|drawable
 argument_list|,
@@ -2615,7 +2730,7 @@ operator|(
 operator|(
 name|double
 operator|)
-name|paint_core
+name|paint_tool
 operator|->
 name|pixel_dist
 operator|/
@@ -2679,7 +2794,7 @@ argument_list|(
 name|NULL
 argument_list|)
 argument_list|,
-name|paint_core
+name|paint_tool
 operator|->
 name|curpressure
 argument_list|,
@@ -2688,9 +2803,9 @@ name|color
 argument_list|)
 expr_stmt|;
 else|else
-name|paint_core_get_color_from_gradient
+name|gimp_paint_tool_get_color_from_gradient
 argument_list|(
-name|paint_core
+name|paint_tool
 argument_list|,
 name|gradient_length
 argument_list|,
@@ -2779,20 +2894,20 @@ comment|/* we check to see if this is a pixmap, if so composite the 	 pixmap ima
 elseif|else
 if|if
 condition|(
-name|paint_core
+name|paint_tool
 operator|->
 name|brush
 operator|&&
-name|paint_core
+name|paint_tool
 operator|->
 name|brush
 operator|->
 name|pixmap
 condition|)
 block|{
-name|paint_core_color_area_with_pixmap
+name|gimp_paint_tool_color_area_with_pixmap
 argument_list|(
-name|paint_core
+name|paint_tool
 argument_list|,
 name|gimage
 argument_list|,
@@ -2874,13 +2989,13 @@ name|opacity
 operator|*
 literal|2.0
 operator|*
-name|paint_core
+name|paint_tool
 operator|->
 name|curpressure
 expr_stmt|;
-name|paint_core_paste_canvas
+name|gimp_paint_tool_paste_canvas
 argument_list|(
-name|paint_core
+name|paint_tool
 argument_list|,
 name|drawable
 argument_list|,
@@ -2923,12 +3038,12 @@ end_function
 begin_function
 specifier|static
 name|gpointer
-DECL|function|paintbrush_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
-name|paintbrush_non_gui_paint_func
+DECL|function|gimp_paintbrush_tool_non_gui_paint_func (GimpPaintTool * paint_tool,GimpDrawable * drawable,PaintState state)
+name|gimp_paintbrush_tool_non_gui_paint_func
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -3088,9 +3203,9 @@ name|unit_factor
 expr_stmt|;
 break|break;
 block|}
-name|paintbrush_motion
+name|gimp_paintbrush_tool_motion
 argument_list|(
-name|paint_core
+name|paint_tool
 argument_list|,
 name|drawable
 argument_list|,
@@ -3114,8 +3229,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|paintbrush_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
-name|paintbrush_non_gui_default
+DECL|function|gimp_paintbrush_tool_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+name|gimp_paintbrush_tool_non_gui_default
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -3254,14 +3369,13 @@ name|fade_out
 operator|=
 literal|0.0
 expr_stmt|;
-comment|/* Hmmm... PDB paintbrush should have gradient type added to it!*/
-comment|/* thats why the code below is duplicated.    */
+comment|/* Hmmm... PDB paintbrush should have gradient type added to it!    * thats why the code below is duplicated.    */
 if|if
 condition|(
-name|paint_core_init
+name|gimp_paint_tool_start
 argument_list|(
 operator|&
-name|non_gui_paint_core
+name|non_gui_paint_tool
 argument_list|,
 name|drawable
 argument_list|,
@@ -3302,18 +3416,21 @@ operator|=
 name|gradient_unit
 expr_stmt|;
 comment|/* Set the paint core's paint func */
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool_class
+operator|->
 name|paint_func
 operator|=
-name|paintbrush_non_gui_paint_func
+operator|(
+name|PaintFunc
+operator|)
+name|gimp_paintbrush_tool_non_gui_paint_func
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|startx
 operator|=
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|lastx
 operator|=
 name|stroke_array
@@ -3321,12 +3438,12 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|starty
 operator|=
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|lasty
 operator|=
 name|stroke_array
@@ -3334,16 +3451,16 @@ index|[
 literal|1
 index|]
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|flags
 operator||=
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
 expr_stmt|;
-name|paintbrush_non_gui_paint_func
+name|gimp_paintbrush_tool_non_gui_paint_func
 argument_list|(
 operator|&
-name|non_gui_paint_core
+name|non_gui_paint_tool
 argument_list|,
 name|drawable
 argument_list|,
@@ -3364,8 +3481,8 @@ name|i
 operator|++
 control|)
 block|{
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|curx
 operator|=
 name|stroke_array
@@ -3377,8 +3494,8 @@ operator|+
 literal|0
 index|]
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|cury
 operator|=
 name|stroke_array
@@ -3390,45 +3507,42 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-name|paint_core_interpolate
+name|gimp_paint_tool_interpolate
 argument_list|(
 operator|&
-name|non_gui_paint_core
+name|non_gui_paint_tool
 argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|lastx
 operator|=
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|curx
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|lasty
 operator|=
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|cury
 expr_stmt|;
 block|}
 comment|/* Finish the painting */
-name|paint_core_finish
+name|gimp_paint_tool_finish
 argument_list|(
 operator|&
-name|non_gui_paint_core
+name|non_gui_paint_tool
 argument_list|,
 name|drawable
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Cleanup */
-name|paint_core_cleanup
+name|gimp_paint_tool_cleanup
 argument_list|()
 expr_stmt|;
 return|return
@@ -3444,8 +3558,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|paintbrush_non_gui (GimpDrawable * drawable,int num_strokes,double * stroke_array,double fade_out,int method,double gradient_length)
-name|paintbrush_non_gui
+DECL|function|gimp_paintbrush_tool_non_gui (GimpDrawable * drawable,int num_strokes,double * stroke_array,double fade_out,int method,double gradient_length)
+name|gimp_paintbrush_tool_non_gui
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -3474,10 +3588,10 @@ decl_stmt|;
 comment|/* Code duplicated above */
 if|if
 condition|(
-name|paint_core_init
+name|gimp_paint_tool_start
 argument_list|(
 operator|&
-name|non_gui_paint_core
+name|non_gui_paint_tool
 argument_list|,
 name|drawable
 argument_list|,
@@ -3510,18 +3624,18 @@ operator|=
 name|method
 expr_stmt|;
 comment|/* Set the paint core's paint func */
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool_class
+operator|->
 name|paint_func
 operator|=
-name|paintbrush_non_gui_paint_func
+name|gimp_paintbrush_tool_non_gui_paint_func
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|startx
 operator|=
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|lastx
 operator|=
 name|stroke_array
@@ -3529,12 +3643,12 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|starty
 operator|=
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|lasty
 operator|=
 name|stroke_array
@@ -3542,8 +3656,8 @@ index|[
 literal|1
 index|]
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|flags
 operator||=
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -3554,10 +3668,10 @@ name|num_strokes
 operator|==
 literal|1
 condition|)
-name|paintbrush_non_gui_paint_func
+name|gimp_paintbrush_tool_non_gui_paint_func
 argument_list|(
 operator|&
-name|non_gui_paint_core
+name|non_gui_paint_tool
 argument_list|,
 name|drawable
 argument_list|,
@@ -3578,8 +3692,8 @@ name|i
 operator|++
 control|)
 block|{
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|curx
 operator|=
 name|stroke_array
@@ -3591,8 +3705,8 @@ operator|+
 literal|0
 index|]
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|cury
 operator|=
 name|stroke_array
@@ -3604,45 +3718,42 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-name|paint_core_interpolate
+name|gimp_paint_tool_interpolate
 argument_list|(
 operator|&
-name|non_gui_paint_core
+name|non_gui_paint_tool
 argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|lastx
 operator|=
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|curx
 expr_stmt|;
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|lasty
 operator|=
-name|non_gui_paint_core
-operator|.
+name|non_gui_paint_tool
+operator|->
 name|cury
 expr_stmt|;
 block|}
 comment|/* Finish the painting */
-name|paint_core_finish
+name|gimp_paint_tool_finish
 argument_list|(
 operator|&
-name|non_gui_paint_core
+name|non_gui_paint_tool
 argument_list|,
 name|drawable
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Cleanup */
-name|paint_core_cleanup
+name|gimp_paint_tool_cleanup
 argument_list|()
 expr_stmt|;
 return|return

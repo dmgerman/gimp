@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"draw_core.h"
+file|"tools/gimpdrawtool.h"
 end_include
 
 begin_define
@@ -111,7 +111,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon288156fb0103
+DECL|enum|__anon27fafb3a0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -203,7 +203,7 @@ name|closed
 decl_stmt|;
 comment|/* is the last curve closed          */
 DECL|member|core
-name|DrawCore
+name|GimpDrawTool
 modifier|*
 name|core
 decl_stmt|;
@@ -261,7 +261,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288156fb0208
+DECL|struct|__anon27fafb3a0208
 block|{
 DECL|member|count
 name|gint

@@ -108,10 +108,9 @@ DECL|struct|_TransformCore
 struct|struct
 name|_TransformCore
 block|{
-DECL|member|core
-name|DrawCore
-modifier|*
-name|core
+DECL|member|parent_instance
+name|GimpDrawTool
+name|parent_instance
 decl_stmt|;
 comment|/*  Core select object          */
 DECL|member|startx

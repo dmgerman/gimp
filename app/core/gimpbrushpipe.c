@@ -165,7 +165,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"tools/paint_core.h"
+file|"tools/gimppainttool.h"
 end_include
 
 begin_include
@@ -186,9 +186,9 @@ name|GimpBrush
 modifier|*
 name|gimp_brush_pipe_select_brush
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -198,9 +198,9 @@ specifier|static
 name|gboolean
 name|gimp_brush_pipe_want_null_motion
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -232,12 +232,12 @@ begin_function
 specifier|static
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_pipe_select_brush (PaintCore * paint_core)
+DECL|function|gimp_brush_pipe_select_brush (GimpPaintTool * paint_tool)
 name|gimp_brush_pipe_select_brush
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|)
 block|{
 name|GimpBrushPipe
@@ -256,7 +256,7 @@ name|angle
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|!=
 name|NULL
 argument_list|,
@@ -267,7 +267,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_BRUSH_PIPE
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|->
 name|brush
 argument_list|)
@@ -279,7 +279,7 @@ name|pipe
 operator|=
 name|GIMP_BRUSH_PIPE
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|->
 name|brush
 argument_list|)
@@ -361,19 +361,19 @@ name|angle
 operator|=
 name|atan2
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|->
 name|cury
 operator|-
-name|paint_core
+name|paint_tool
 operator|->
 name|lasty
 argument_list|,
-name|paint_core
+name|paint_tool
 operator|->
 name|curx
 operator|-
-name|paint_core
+name|paint_tool
 operator|->
 name|lastx
 argument_list|)
@@ -456,7 +456,7 @@ name|ix
 operator|=
 name|RINT
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|->
 name|curpressure
 operator|*
@@ -480,7 +480,7 @@ name|ix
 operator|=
 name|RINT
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|->
 name|curxtilt
 operator|/
@@ -511,7 +511,7 @@ name|ix
 operator|=
 name|RINT
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|->
 name|curytilt
 operator|/
@@ -631,12 +631,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brush_pipe_want_null_motion (PaintCore * paint_core)
+DECL|function|gimp_brush_pipe_want_null_motion (GimpPaintTool * paint_tool)
 name|gimp_brush_pipe_want_null_motion
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|)
 block|{
 name|GimpBrushPipe
@@ -648,7 +648,7 @@ name|i
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|!=
 name|NULL
 argument_list|,
@@ -659,7 +659,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_BRUSH_PIPE
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|->
 name|brush
 argument_list|)
@@ -671,7 +671,7 @@ name|pipe
 operator|=
 name|GIMP_BRUSH_PIPE
 argument_list|(
-name|paint_core
+name|paint_tool
 operator|->
 name|brush
 argument_list|)

@@ -949,7 +949,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2934a3870103
+DECL|enum|__anon29e317b70103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -992,7 +992,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2934a3870203
+DECL|enum|__anon29e317b70203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -5506,6 +5506,7 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
+comment|/* FIXME if (tool_info != standard_tool_info) */
 if|if
 condition|(
 name|tool_info

@@ -163,7 +163,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"tools/paint_core.h"
+file|"tools/gimppainttool.h"
 end_include
 
 begin_include
@@ -252,9 +252,9 @@ name|GimpBrush
 modifier|*
 name|gimp_brush_select_brush
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -264,9 +264,9 @@ specifier|static
 name|gboolean
 name|gimp_brush_want_null_motion
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
-name|paint_core
+name|paint_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1360,10 +1360,10 @@ begin_function
 specifier|static
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_select_brush (PaintCore * paint_core)
+DECL|function|gimp_brush_select_brush (GimpPaintTool * paint_core)
 name|gimp_brush_select_brush
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
 name|paint_core
 parameter_list|)
@@ -1379,10 +1379,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brush_want_null_motion (PaintCore * paint_core)
+DECL|function|gimp_brush_want_null_motion (GimpPaintTool * paint_core)
 name|gimp_brush_want_null_motion
 parameter_list|(
-name|PaintCore
+name|GimpPaintTool
 modifier|*
 name|paint_core
 parameter_list|)

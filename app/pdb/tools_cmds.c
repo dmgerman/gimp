@@ -82,7 +82,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/color_picker.h"
+file|"tools/gimpcolorpickertool.h"
 end_include
 
 begin_include
@@ -136,7 +136,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/paintbrush.h"
+file|"tools/gimppaintbrushtool.h"
 end_include
 
 begin_include
@@ -6694,7 +6694,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|paintbrush_non_gui
+name|gimp_paintbrush_tool_non_gui
 argument_list|(
 name|drawable
 argument_list|,
@@ -6920,7 +6920,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|paintbrush_non_gui_default
+name|gimp_paintbrush_tool_non_gui_default
 argument_list|(
 name|drawable
 argument_list|,

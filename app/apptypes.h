@@ -439,11 +439,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|DrawCore
+DECL|typedef|GimpDrawTool
 typedef|typedef
 name|struct
-name|_DrawCore
-name|DrawCore
+name|_GimpDrawTool
+name|GimpDrawTool
 typedef|;
 end_typedef
 
@@ -537,11 +537,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|PaintCore
+DECL|typedef|GimpPaintTool
 typedef|typedef
 name|struct
-name|_PaintCore
-name|PaintCore
+name|_GimpPaintTool
+name|GimpPaintTool
 typedef|;
 end_typedef
 
