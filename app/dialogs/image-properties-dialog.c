@@ -134,7 +134,7 @@ name|GIMP_STOCK_INFO
 argument_list|,
 name|_
 argument_list|(
-literal|"View Image Properties"
+literal|"Image Properties"
 argument_list|)
 argument_list|,
 name|parent
