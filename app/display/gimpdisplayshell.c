@@ -292,6 +292,11 @@ name|char
 modifier|*
 name|tool_desc
 decl_stmt|;
+DECL|member|private_tip
+name|char
+modifier|*
+name|private_tip
+decl_stmt|;
 DECL|member|callback_data
 name|gpointer
 name|callback_data
@@ -318,6 +323,8 @@ name|rect_bits
 block|,
 literal|"Select rectangular regions"
 block|,
+literal|"ContextHelp/rect-select"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -333,6 +340,8 @@ operator|)
 name|circ_bits
 block|,
 literal|"Select elliptical regions"
+block|,
+literal|"ContextHelp/ellipse-select"
 block|,
 operator|(
 name|gpointer
@@ -350,6 +359,8 @@ name|free_bits
 block|,
 literal|"Select hand-drawn regions"
 block|,
+literal|"ContextHelp/free-select"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -365,6 +376,8 @@ operator|)
 name|fuzzy_bits
 block|,
 literal|"Select contiguous regions"
+block|,
+literal|"ContextHelp/fuzzy-select"
 block|,
 operator|(
 name|gpointer
@@ -382,6 +395,8 @@ name|bezier_bits
 block|,
 literal|"Select regions using Bezier curves"
 block|,
+literal|"ContextHelp/bezier-select"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -397,6 +412,8 @@ operator|)
 name|iscissors_bits
 block|,
 literal|"Select shapes from image"
+block|,
+literal|"ContextHelp/iscissors"
 block|,
 operator|(
 name|gpointer
@@ -414,6 +431,8 @@ name|move_bits
 block|,
 literal|"Move layers& selections"
 block|,
+literal|"ContextHelp/move"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -429,6 +448,8 @@ operator|)
 name|magnify_bits
 block|,
 literal|"Zoom in& out"
+block|,
+literal|"ContextHelp/magnify"
 block|,
 operator|(
 name|gpointer
@@ -446,6 +467,8 @@ name|crop_bits
 block|,
 literal|"Crop the image"
 block|,
+literal|"ContextHelp/crop"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -461,6 +484,8 @@ operator|)
 name|scale_bits
 block|,
 literal|"Transform the layer or selection"
+block|,
+literal|"ContextHelp/rotate"
 block|,
 operator|(
 name|gpointer
@@ -478,6 +503,8 @@ name|horizflip_bits
 block|,
 literal|"Flip the layer or selection"
 block|,
+literal|"ContextHelp/flip"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -493,6 +520,8 @@ operator|)
 name|text_bits
 block|,
 literal|"Add text to the image"
+block|,
+literal|"ContextHelp/text"
 block|,
 operator|(
 name|gpointer
@@ -510,6 +539,8 @@ name|colorpicker_bits
 block|,
 literal|"Pick colors from the image"
 block|,
+literal|"ContextHelp/color-picker"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -525,6 +556,8 @@ operator|)
 name|fill_bits
 block|,
 literal|"Fill with a color or pattern"
+block|,
+literal|"ContextHelp/bucket-fill"
 block|,
 operator|(
 name|gpointer
@@ -542,6 +575,8 @@ name|gradient_bits
 block|,
 literal|"Fill with a color gradient"
 block|,
+literal|"ContextHelp/gradient"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -557,6 +592,8 @@ operator|)
 name|pencil_bits
 block|,
 literal|"Draw sharp pencil strokes"
+block|,
+literal|"ContextHelp/pencil"
 block|,
 operator|(
 name|gpointer
@@ -574,6 +611,8 @@ name|paint_bits
 block|,
 literal|"Paint fuzzy brush strokes"
 block|,
+literal|"ContextHelp/paintbrush"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -589,6 +628,8 @@ operator|)
 name|erase_bits
 block|,
 literal|"Erase to background or transparency"
+block|,
+literal|"ContextHelp/eraser"
 block|,
 operator|(
 name|gpointer
@@ -606,6 +647,8 @@ name|airbrush_bits
 block|,
 literal|"Airbrush with variable pressure"
 block|,
+literal|"ContextHelp/airbrush"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -621,6 +664,8 @@ operator|)
 name|clone_bits
 block|,
 literal|"Paint using patterns or image regions"
+block|,
+literal|"ContextHelp/clone"
 block|,
 operator|(
 name|gpointer
@@ -638,6 +683,8 @@ name|blur_bits
 block|,
 literal|"Blur or sharpen"
 block|,
+literal|"ContextHelp/convolve"
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -645,6 +692,8 @@ name|CONVOLVE
 block|}
 block|,
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 name|NULL
@@ -660,6 +709,8 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -667,6 +718,8 @@ name|COLOR_BALANCE
 block|}
 block|,
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 name|NULL
@@ -682,6 +735,8 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -689,6 +744,8 @@ name|HUE_SATURATION
 block|}
 block|,
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 name|NULL
@@ -704,6 +761,8 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -711,6 +770,8 @@ name|THRESHOLD
 block|}
 block|,
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 name|NULL
@@ -726,6 +787,8 @@ name|NULL
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 operator|(
 name|gpointer
 operator|)
@@ -733,6 +796,8 @@ name|LEVELS
 block|}
 block|,
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 name|NULL
@@ -2007,7 +2072,12 @@ index|]
 operator|.
 name|tool_desc
 argument_list|,
-name|NULL
+name|tool_data
+index|[
+name|i
+index|]
+operator|.
+name|private_tip
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2972,14 +3042,14 @@ argument_list|)
 expr_stmt|;
 comment|/*create_tool_label (vbox);*/
 comment|/*create_progress_area (vbox);*/
-name|create_color_area
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|window
+argument_list|)
+expr_stmt|;
+name|create_color_area
+argument_list|(
+name|vbox
 argument_list|)
 expr_stmt|;
 name|toolbox_shell
