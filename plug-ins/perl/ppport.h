@@ -254,6 +254,14 @@ name|PL_Sv
 value|Sv
 end_define
 
+begin_define
+DECL|macro|PL_perl_destruct_level
+define|#
+directive|define
+name|PL_perl_destruct_level
+value|perl_destruct_level
+end_define
+
 begin_comment
 comment|/* Replace: 0 */
 end_comment
