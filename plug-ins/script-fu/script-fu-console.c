@@ -100,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"siod.h"
 end_include
 
@@ -179,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c64d1020108
+DECL|struct|__anon29908c080108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -562,7 +568,10 @@ name|STATUS_CALLING_ERROR
 expr_stmt|;
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Script-Fu console mode allows only interactive invocation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -641,6 +650,10 @@ decl_stmt|;
 name|gint
 name|argc
 decl_stmt|;
+name|INIT_LOCALE
+argument_list|(
+literal|"script-fu"
+argument_list|)
 name|argc
 operator|=
 literal|1
@@ -692,7 +705,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Script-Fu Console"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -765,7 +781,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -816,7 +835,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"SIOD Output"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1548,7 +1570,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Current Command"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1714,7 +1739,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Browse..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_usize
@@ -2903,7 +2931,10 @@ condition|)
 block|{
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to open SIOD output pipe"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2929,7 +2960,10 @@ condition|)
 block|{
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to open a stream on the SIOD output pipe"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|siod_output
@@ -3099,7 +3133,10 @@ name|STATUS_CALLING_ERROR
 expr_stmt|;
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Script-Fu evaluate mode allows only noninteractive invocation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

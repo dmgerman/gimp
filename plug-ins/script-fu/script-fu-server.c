@@ -117,6 +117,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -325,7 +331,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc2b600108
+DECL|struct|__anon28a7f8070108
 block|{
 DECL|member|command
 name|gchar
@@ -349,7 +355,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc2b600208
+DECL|struct|__anon28a7f8070208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2087,6 +2093,10 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|INIT_LOCALE
+argument_list|(
+literal|"script-fu"
+argument_list|)
 name|argv
 index|[
 literal|0
@@ -2124,7 +2134,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Script-Fu Server Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2174,7 +2187,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2236,7 +2252,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2340,7 +2359,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Server Port: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2451,7 +2473,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Server Logfile: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

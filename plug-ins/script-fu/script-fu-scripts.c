@@ -103,6 +103,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"siod.h"
 end_include
 
@@ -342,7 +348,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8f6080108
+DECL|struct|__anon288852590108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -377,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8f6080208
+DECL|struct|__anon288852590208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -421,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8f6080308
+DECL|struct|__anon288852590308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -447,7 +453,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8f6080408
+DECL|struct|__anon288852590408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -468,7 +474,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8f6080508
+DECL|struct|__anon288852590508
 block|{
 DECL|member|name
 name|gchar
@@ -496,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27b8f608060a
+DECL|union|__anon28885259060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -562,7 +568,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8f6080708
+DECL|struct|__anon288852590708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -643,7 +649,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8f6080808
+DECL|struct|__anon288852590808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -5917,9 +5923,10 @@ argument_list|(
 literal|"script-fu"
 argument_list|)
 expr_stmt|;
-name|gtk_set_locale
-argument_list|()
-expr_stmt|;
+name|INIT_LOCALE
+argument_list|(
+literal|"script-fu"
+argument_list|)
 name|gtk_init
 argument_list|(
 operator|&
@@ -6190,7 +6197,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Script Arguments"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -6737,7 +6747,10 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Script Toggle"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|script
@@ -7174,7 +7187,10 @@ index|]
 operator|=
 name|gimp_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Script-Fu File Selection"
+argument_list|)
 argument_list|,
 name|script
 operator|->
@@ -7390,7 +7406,10 @@ index|]
 operator|=
 name|gimp_pattern_select_widget
 argument_list|(
+name|_
+argument_list|(
 literal|"Script-fu Pattern Selection"
+argument_list|)
 argument_list|,
 name|script
 operator|->
@@ -7427,7 +7446,10 @@ index|]
 operator|=
 name|gimp_gradient_select_widget
 argument_list|(
+name|_
+argument_list|(
 literal|"Script-Fu Gradient Selection"
+argument_list|)
 argument_list|,
 name|script
 operator|->
@@ -7464,7 +7486,10 @@ index|]
 operator|=
 name|gimp_brush_select_widget
 argument_list|(
+name|_
+argument_list|(
 literal|"Script-Fu Brush Selection"
+argument_list|)
 argument_list|,
 name|script
 operator|->
@@ -7787,7 +7812,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" Reset to Defaults "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -7889,7 +7917,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -7940,7 +7971,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -7986,7 +8020,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"About"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -8604,7 +8641,10 @@ argument_list|(
 name|preview
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"NOT SET"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -8946,7 +8986,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"At least one font you've choosen is invalid.\nPlease check your settings.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -10505,7 +10548,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Author: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -10593,7 +10639,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Copyright: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -10681,7 +10730,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Date: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -10783,7 +10835,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Image types: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -10886,7 +10941,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -11733,7 +11791,10 @@ name|dialog
 operator|=
 name|gtk_color_selection_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Script-Fu Color Picker"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|csd
@@ -12172,7 +12233,10 @@ name|dialog
 operator|=
 name|gtk_font_selection_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Script-Fu Font Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fsd
