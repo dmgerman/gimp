@@ -29,9 +29,9 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|GimpDisplay
+name|GimpProgress
 modifier|*
-name|gdisp
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -660,7 +660,10 @@ name|gimage
 argument_list|,
 name|widget
 argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
 name|gdisp
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
