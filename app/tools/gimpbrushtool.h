@@ -116,15 +116,6 @@ DECL|member|draw_brush
 name|gboolean
 name|draw_brush
 decl_stmt|;
-DECL|member|brush_bound_segs
-name|BoundSeg
-modifier|*
-name|brush_bound_segs
-decl_stmt|;
-DECL|member|n_brush_bound_segs
-name|gint
-name|n_brush_bound_segs
-decl_stmt|;
 DECL|member|brush_x
 name|gdouble
 name|brush_x

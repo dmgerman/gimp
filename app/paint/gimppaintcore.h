@@ -46,7 +46,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b26dcdf0103
+DECL|enum|__anon2bfee0a10103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -85,7 +85,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b26dcdf0203
+DECL|enum|__anon2bfee0a10203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -370,11 +370,20 @@ DECL|member|cache_invalid
 name|gboolean
 name|cache_invalid
 decl_stmt|;
-comment|/*  don't use this one...  */
+comment|/*  don't use these...  */
 DECL|member|grr_brush
 name|GimpBrush
 modifier|*
 name|grr_brush
+decl_stmt|;
+DECL|member|brush_bound_segs
+name|BoundSeg
+modifier|*
+name|brush_bound_segs
+decl_stmt|;
+DECL|member|n_brush_bound_segs
+name|gint
+name|n_brush_bound_segs
 decl_stmt|;
 block|}
 struct|;
