@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6436080103
+DECL|enum|__anon29d813bf0103
 block|{
 DECL|enumerator|DEVICE_MODE
 name|DEVICE_MODE
@@ -148,7 +148,7 @@ comment|/*  Returns TRUE, and makes necessary global changes  *  if event is not
 end_comment
 
 begin_function_decl
-name|gint
+name|gboolean
 name|devices_check_change
 parameter_list|(
 name|GdkEvent

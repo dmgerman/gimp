@@ -157,7 +157,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|gdisplay_delete
 parameter_list|(
 name|GtkWidget

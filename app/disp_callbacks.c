@@ -567,7 +567,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gdisplay_shell_events (GtkWidget * widget,GdkEvent * event,GDisplay * gdisp)
 name|gdisplay_shell_events
 parameter_list|(
@@ -623,7 +623,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gdisplay_canvas_events (GtkWidget * canvas,GdkEvent * event,GDisplay * gdisp)
 name|gdisplay_canvas_events
 parameter_list|(
@@ -2472,7 +2472,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gdisplay_hruler_button_press (GtkWidget * widget,GdkEventButton * event,gpointer data)
 name|gdisplay_hruler_button_press
 parameter_list|(
@@ -2602,7 +2602,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gdisplay_vruler_button_press (GtkWidget * widget,GdkEventButton * event,gpointer data)
 name|gdisplay_vruler_button_press
 parameter_list|(
@@ -2898,7 +2898,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gdisplay_origin_button_press (GtkWidget * widget,GdkEventButton * event,gpointer data)
 name|gdisplay_origin_button_press
 parameter_list|(

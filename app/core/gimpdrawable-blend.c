@@ -335,7 +335,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a408bae0108
+DECL|struct|__anon2c1422030108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -392,7 +392,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a408bae0208
+DECL|struct|__anon2c1422030208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -7409,7 +7409,6 @@ decl_stmt|,
 name|endy
 decl_stmt|;
 name|gpointer
-modifier|*
 name|pr
 decl_stmt|;
 name|guchar
