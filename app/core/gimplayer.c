@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29edcb250103
+DECL|enum|__anon2b00f9390103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -4016,6 +4016,14 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+name|gimp_viewable_size_changed
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -5068,6 +5076,14 @@ name|layer
 argument_list|)
 operator|->
 name|height
+argument_list|)
+expr_stmt|;
+name|gimp_viewable_size_changed
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

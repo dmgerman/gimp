@@ -1467,6 +1467,14 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+name|gimp_viewable_size_changed
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1917,6 +1925,14 @@ name|channel
 argument_list|)
 operator|->
 name|height
+argument_list|)
+expr_stmt|;
+name|gimp_viewable_size_changed
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
