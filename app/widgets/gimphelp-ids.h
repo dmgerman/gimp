@@ -457,6 +457,22 @@ value|"gimp-view-snap-to-grid"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_SNAP_TO_CANVAS
+define|#
+directive|define
+name|GIMP_HELP_VIEW_SNAP_TO_CANVAS
+value|"gimp-view-snap-to-canvas"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_VIEW_SNAP_TO_VECTORS
+define|#
+directive|define
+name|GIMP_HELP_VIEW_SNAP_TO_VECTORS
+value|"gimp-view-snap-to-vectors"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_SHOW_MENUBAR
 define|#
 directive|define

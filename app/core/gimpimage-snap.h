@@ -39,6 +39,9 @@ name|snap_to_guides
 parameter_list|,
 name|gboolean
 name|snap_to_grid
+parameter_list|,
+name|gboolean
+name|snap_to_canvas
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -66,6 +69,9 @@ name|snap_to_guides
 parameter_list|,
 name|gboolean
 name|snap_to_grid
+parameter_list|,
+name|gboolean
+name|snap_to_canvas
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -103,6 +109,12 @@ name|snap_to_guides
 parameter_list|,
 name|gboolean
 name|snap_to_grid
+parameter_list|,
+name|gboolean
+name|snap_to_canvas
+parameter_list|,
+name|gboolean
+name|snap_to_vectors
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -146,6 +158,12 @@ name|snap_to_guides
 parameter_list|,
 name|gboolean
 name|snap_to_grid
+parameter_list|,
+name|gboolean
+name|snap_to_canvas
+parameter_list|,
+name|gboolean
+name|snap_to_vectors
 parameter_list|)
 function_decl|;
 end_function_decl
