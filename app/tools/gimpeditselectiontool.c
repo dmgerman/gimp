@@ -4256,6 +4256,34 @@ name|undo_desc
 init|=
 name|NULL
 decl_stmt|;
+comment|/* Bail out early if it is not an arrow key event */
+if|if
+condition|(
+name|kevent
+operator|->
+name|keyval
+operator|!=
+name|GDK_Left
+operator|&&
+name|kevent
+operator|->
+name|keyval
+operator|!=
+name|GDK_Right
+operator|&&
+name|kevent
+operator|->
+name|keyval
+operator|!=
+name|GDK_Up
+operator|&&
+name|kevent
+operator|->
+name|keyval
+operator|!=
+name|GDK_Down
+condition|)
+return|return;
 comment|/*  check for mask translation first because the translate_layer    *  modifiers match the translate_mask ones...    */
 name|inc_x
 operator|=
