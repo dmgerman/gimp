@@ -3203,9 +3203,13 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_rgb_to_cmyk_int:  * @red:     the red channel; returns the cyan value (0-255)  * @green:   the green channel; returns the magenta value (0-255)  * @blue:    the blue channel; returns the yellow value (0-255)  * @pullout: the maximum amount of black to pull out; returns  *           the black value (0-255)  *  * Does a naive conversion from RGB to CMYK colorspace. A simple  * formula that doesn't take any color-profiles into account is used.  * The amount of black pullout how can be controlled via the @pullout  * parameter. A @pullout value of 0 makes this a conversion to CMY.  * For most cases, @pullout should be choosen as 255.  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_rgb_to_cmyk_int (gint * red,gint * green,gint * blue,gint * black)
+DECL|function|gimp_rgb_to_cmyk_int (gint * red,gint * green,gint * blue,gint * pullout)
 name|gimp_rgb_to_cmyk_int
 parameter_list|(
 name|gint
@@ -3222,7 +3226,7 @@ name|blue
 parameter_list|,
 name|gint
 modifier|*
-name|black
+name|pullout
 parameter_list|)
 block|{
 name|gint
@@ -3231,8 +3235,6 @@ decl_stmt|,
 name|m
 decl_stmt|,
 name|y
-decl_stmt|,
-name|k
 decl_stmt|;
 name|c
 operator|=
@@ -3255,10 +3257,45 @@ operator|-
 operator|*
 name|blue
 expr_stmt|;
-name|k
+if|if
+condition|(
+operator|*
+name|pullout
+operator|==
+literal|0
+condition|)
+block|{
+operator|*
+name|red
 operator|=
-literal|255
+name|c
 expr_stmt|;
+operator|*
+name|green
+operator|=
+name|m
+expr_stmt|;
+operator|*
+name|blue
+operator|=
+name|y
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gint
+name|k
+init|=
+name|CLAMP
+argument_list|(
+operator|*
+name|pullout
+argument_list|,
+literal|0
+argument_list|,
+literal|255
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|c
@@ -3347,10 +3384,11 @@ name|k
 operator|)
 expr_stmt|;
 operator|*
-name|black
+name|pullout
 operator|=
 name|k
 expr_stmt|;
+block|}
 block|}
 end_function
 
