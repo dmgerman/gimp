@@ -1201,6 +1201,24 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Flush the gdisplays  */
+comment|/* FIXME: this expose is a performance drag, but it prevents display          artifacts */
+name|gdisplay_expose_area
+argument_list|(
+name|gdisp
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|gdisp
+operator|->
+name|disp_width
+argument_list|,
+name|gdisp
+operator|->
+name|disp_height
+argument_list|)
+expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
