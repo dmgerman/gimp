@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290b49e40103
+DECL|enum|__anon2b97d66b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1703,9 +1703,9 @@ operator|==
 name|GIMP_RGB
 operator|)
 condition|?
-name|GIMP_RGBA_IMAGE
+name|GIMP_RGB_IMAGE
 else|:
-name|GIMP_GRAYA_IMAGE
+name|GIMP_GRAY_IMAGE
 expr_stmt|;
 break|break;
 block|}
