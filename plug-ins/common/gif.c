@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9653f0108
+DECL|struct|__anon27794cef0108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9653f0208
+DECL|struct|__anon27794cef0208
 block|{
 DECL|member|run
 name|gint
@@ -3074,21 +3074,12 @@ block|{
 comment|/* init the progress meter */
 name|temp_buf
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp_buf
-argument_list|,
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -3122,7 +3113,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: can't open %s\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -8630,7 +8624,10 @@ parameter_list|()
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF: error writing output file\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -9086,7 +9083,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIF save: Your comment string is too long.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

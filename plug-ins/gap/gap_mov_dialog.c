@@ -205,7 +205,7 @@ value|32
 end_define
 
 begin_typedef
-DECL|struct|__anon2c880fa40108
+DECL|struct|__anon2b829ea00108
 typedef|typedef
 struct|struct
 block|{
@@ -220,7 +220,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c880fa40208
+DECL|struct|__anon2b829ea00208
 typedef|typedef
 struct|struct
 block|{
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c880fa40308
+DECL|struct|__anon2b829ea00308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -475,7 +475,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c880fa40408
+DECL|struct|__anon2b829ea00408
 typedef|typedef
 struct|struct
 block|{
@@ -5715,7 +5715,7 @@ modifier|*
 name|path_ptr
 parameter_list|)
 block|{
-name|snprintf
+name|g_snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5739,7 +5739,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|snprintf
+name|g_snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5763,7 +5763,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|snprintf
+name|g_snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5787,7 +5787,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|snprintf
+name|g_snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5811,7 +5811,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|snprintf
+name|g_snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5835,7 +5835,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|snprintf
+name|g_snprintf
 argument_list|(
 operator|&
 name|path_ptr
