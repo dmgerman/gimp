@@ -36,6 +36,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|LISP
+name|script_fu_add_menu
+parameter_list|(
+name|LISP
+name|a
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|script_fu_error_msg
 parameter_list|(
