@@ -225,7 +225,6 @@ operator|=
 name|gtk_icon_source_new
 argument_list|()
 expr_stmt|;
-comment|// gtk_icon_source_set_size (source, GTK_ICON_SIZE_BUTTON);
 name|gtk_icon_source_set_size
 argument_list|(
 name|source
