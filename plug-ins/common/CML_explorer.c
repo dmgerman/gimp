@@ -267,7 +267,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b00bc060108
+DECL|struct|__anon2bccd6740108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -295,10 +295,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b00bc060208
+DECL|struct|__anon2bccd6740208
 block|{
 DECL|member|name
-name|guchar
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -561,7 +561,7 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -581,7 +581,7 @@ name|GtkWidget
 modifier|*
 name|gtkW_dialog_new
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -604,7 +604,7 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -632,7 +632,7 @@ parameter_list|(
 name|gint
 name|gtk_was_initialized
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)
@@ -645,7 +645,7 @@ name|GtkWidget
 modifier|*
 name|gtkW_message_dialog_new
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -784,7 +784,7 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -824,7 +824,7 @@ name|GtkWidget
 modifier|*
 name|table
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -876,7 +876,7 @@ name|GtkWidget
 modifier|*
 name|vbox
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -1521,7 +1521,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b00bc060308
+DECL|struct|__anon2bccd6740308
 block|{
 DECL|member|function
 name|gint
@@ -1594,7 +1594,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b00bc060408
+DECL|struct|__anon2bccd6740408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1625,7 +1625,7 @@ name|gint
 name|seed
 decl_stmt|;
 DECL|member|last_file_name
-name|guchar
+name|gchar
 name|last_file_name
 index|[
 literal|256
@@ -2050,7 +2050,7 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -2074,7 +2074,7 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -2278,7 +2278,7 @@ specifier|static
 name|gint
 name|CML_load_parameter_file
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -2360,7 +2360,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b00bc060508
+DECL|struct|__anon2bccd6740508
 block|{
 DECL|member|run
 name|gint
@@ -2408,7 +2408,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b00bc060608
+DECL|struct|__anon2bccd6740608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2847,7 +2847,7 @@ case|case
 name|RUN_NONINTERACTIVE
 case|:
 block|{
-name|guchar
+name|gchar
 modifier|*
 name|filename
 init|=
@@ -9819,14 +9819,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|CML_dialog_sub_panel_new (GtkWidget * parent,guchar * name,CML_PARAM * param,gint channel_id)
+DECL|function|CML_dialog_sub_panel_new (GtkWidget * parent,gchar * name,CML_PARAM * param,gint channel_id)
 name|CML_dialog_sub_panel_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -10522,14 +10522,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|CML_dialog_advanced_panel_new (GtkWidget * parent,guchar * name)
+DECL|function|CML_dialog_advanced_panel_new (GtkWidget * parent,gchar * name)
 name|CML_dialog_advanced_panel_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -10563,7 +10563,7 @@ decl_stmt|;
 name|gint
 name|channel_id
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|ch_name
 index|[]
@@ -12594,7 +12594,7 @@ name|NULL
 operator|)
 condition|)
 block|{
-name|guchar
+name|gchar
 name|buffer
 index|[
 name|CML_LINE_SIZE
@@ -12960,7 +12960,7 @@ ifdef|#
 directive|ifdef
 name|VERBOSE_DIALOGS
 block|{
-name|guchar
+name|gchar
 name|buffer
 index|[
 name|CML_LINE_SIZE
@@ -13622,10 +13622,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|CML_load_parameter_file (guchar * filename,gint interactive_mode)
+DECL|function|CML_load_parameter_file (gchar * filename,gint interactive_mode)
 name|CML_load_parameter_file
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -13712,7 +13712,7 @@ operator|!
 name|file
 condition|)
 block|{
-name|guchar
+name|gchar
 name|buffer
 index|[
 name|CML_LINE_SIZE
@@ -13746,7 +13746,7 @@ return|;
 block|}
 else|else
 block|{
-name|guchar
+name|gchar
 name|line
 index|[
 name|CML_LINE_SIZE
@@ -14531,13 +14531,13 @@ modifier|*
 name|flag
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 name|line
 index|[
 name|CML_LINE_SIZE
 index|]
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|str
 decl_stmt|;
@@ -14648,13 +14648,13 @@ modifier|*
 name|flag
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 name|line
 index|[
 name|CML_LINE_SIZE
 index|]
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|str
 decl_stmt|;
@@ -15579,14 +15579,14 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gtkW_check_button_new (GtkWidget * parent,guchar * name,GtkSignalFunc update,gint * value)
+DECL|function|gtkW_check_button_new (GtkWidget * parent,gchar * name,GtkSignalFunc update,gint * value)
 name|gtkW_check_button_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -15662,10 +15662,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gtkW_dialog_new (guchar * name,GtkSignalFunc ok_callback,GtkSignalFunc close_callback)
+DECL|function|gtkW_dialog_new (gchar * name,GtkSignalFunc ok_callback,GtkSignalFunc close_callback)
 name|gtkW_dialog_new
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -15858,14 +15858,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gtkW_frame_new (GtkWidget * parent,guchar * name)
+DECL|function|gtkW_frame_new (GtkWidget * parent,gchar * name)
 name|gtkW_frame_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -15997,13 +15997,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gtkW_message_dialog (gint gtk_was_initialized,guchar * message)
+DECL|function|gtkW_message_dialog (gint gtk_was_initialized,gchar * message)
 name|gtkW_message_dialog
 parameter_list|(
 name|gint
 name|gtk_was_initialized
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)
@@ -16155,10 +16155,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gtkW_message_dialog_new (guchar * name)
+DECL|function|gtkW_message_dialog_new (gchar * name)
 name|gtkW_message_dialog_new
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -16443,7 +16443,7 @@ decl_stmt|,
 modifier|*
 name|entry
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|buffer
 decl_stmt|;
@@ -16697,7 +16697,7 @@ expr_stmt|;
 name|buffer
 operator|=
 operator|(
-name|guchar
+name|gchar
 operator|*
 operator|)
 name|g_malloc
@@ -16862,7 +16862,7 @@ decl_stmt|,
 modifier|*
 name|entry
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|buffer
 decl_stmt|;
@@ -17116,7 +17116,7 @@ expr_stmt|;
 name|buffer
 operator|=
 operator|(
-name|guchar
+name|gchar
 operator|*
 operator|)
 name|g_malloc
@@ -17224,14 +17224,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gtkW_table_add_menu (GtkWidget * table,guchar * name,gint x,gint y,GtkSignalFunc menu_update,gint * val,gtkW_menu_item * item,gint item_num,gpointer widget_entry)
+DECL|function|gtkW_table_add_menu (GtkWidget * table,gchar * name,gint x,gint y,GtkSignalFunc menu_update,gint * val,gtkW_menu_item * item,gint item_num,gpointer widget_entry)
 name|gtkW_table_add_menu
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|table
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -17567,14 +17567,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gtkW_table_add_toggle (GtkWidget * table,guchar * name,gint x,gint y,GtkSignalFunc update,gint * value,gpointer widget_entry)
+DECL|function|gtkW_table_add_toggle (GtkWidget * table,gchar * name,gint x,gint y,GtkSignalFunc update,gint * value,gpointer widget_entry)
 name|gtkW_table_add_toggle
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|table
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -17781,14 +17781,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gtkW_vbox_add_button (GtkWidget * vbox,guchar * name,GtkSignalFunc update,gpointer data)
+DECL|function|gtkW_vbox_add_button (GtkWidget * vbox,gchar * name,GtkSignalFunc update,gpointer data)
 name|gtkW_vbox_add_button
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|vbox
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,

@@ -76,7 +76,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf401bc0108
+DECL|struct|__anon2a272cca0108
 block|{
 DECL|member|run
 name|gint
@@ -231,7 +231,8 @@ decl_stmt|;
 name|char
 modifier|*
 name|temp_buf
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|pixels
 decl_stmt|;
@@ -576,7 +577,7 @@ comment|/* fetch the image */
 name|pixels
 operator|=
 operator|(
-name|char
+name|guchar
 operator|*
 operator|)
 name|g_malloc
@@ -1325,7 +1326,7 @@ name|FILE
 modifier|*
 name|f
 decl_stmt|;
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|;
@@ -1343,7 +1344,7 @@ decl_stmt|,
 name|spzeile
 decl_stmt|;
 block|{
-name|char
+name|guchar
 name|buf
 index|[
 literal|16

@@ -1271,7 +1271,7 @@ end_function
 begin_function
 name|GSList
 modifier|*
-DECL|function|mw_value_radio_group_new (GtkWidget * parent,gchar * name,struct mwValueRadioGroup * rg,gint * var)
+DECL|function|mw_value_radio_group_new (GtkWidget * parent,gchar * name,struct mwValueRadioGroup * rg,glong * var)
 name|mw_value_radio_group_new
 parameter_list|(
 name|GtkWidget
@@ -1287,7 +1287,7 @@ name|mwValueRadioGroup
 modifier|*
 name|rg
 parameter_list|,
-name|gint
+name|glong
 modifier|*
 name|var
 parameter_list|)
@@ -1315,7 +1315,7 @@ name|mwValueRadioGroup
 modifier|*
 name|c
 decl_stmt|;
-name|gint
+name|glong
 name|value
 decl_stmt|;
 if|if
@@ -4175,14 +4175,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gint
+name|glong
 name|id
 decl_stmt|;
 comment|/* Get radio button ID */
 name|id
 operator|=
 operator|(
-name|gint
+name|glong
 operator|)
 name|gtk_object_get_data
 argument_list|(
@@ -4206,7 +4206,7 @@ condition|)
 block|{
 operator|*
 operator|(
-name|gint
+name|glong
 operator|*
 operator|)
 name|data

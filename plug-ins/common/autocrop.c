@@ -80,7 +80,7 @@ specifier|static
 name|int
 name|colors_equal
 parameter_list|(
-name|gchar
+name|guchar
 modifier|*
 name|col1
 parameter_list|,
@@ -112,7 +112,7 @@ parameter_list|,
 name|int
 name|bytes
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|color
 parameter_list|)
@@ -1086,7 +1086,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|guess_bgcolor (GPixelRgn * pr,int width,int height,int bytes,gchar * color)
+DECL|function|guess_bgcolor (GPixelRgn * pr,int width,int height,int bytes,guchar * color)
 specifier|static
 name|int
 name|guess_bgcolor
@@ -1104,12 +1104,12 @@ parameter_list|,
 name|int
 name|bytes
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|color
 parameter_list|)
 block|{
-name|gchar
+name|guchar
 name|tl
 index|[
 literal|4
@@ -1473,12 +1473,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|colors_equal (gchar * col1,gchar * col2,int bytes)
+DECL|function|colors_equal (guchar * col1,gchar * col2,int bytes)
 specifier|static
 name|int
 name|colors_equal
 parameter_list|(
-name|gchar
+name|guchar
 modifier|*
 name|col1
 parameter_list|,

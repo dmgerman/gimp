@@ -1172,8 +1172,8 @@ name|DEL_OBJ
 block|,
 DECL|enumerator|NULL_OPER
 name|NULL_OPER
-block|, }
 DECL|typedef|DOBJTYPE
+block|}
 name|DOBJTYPE
 typedef|;
 end_typedef
@@ -1194,8 +1194,8 @@ name|POLAR_GRID
 block|,
 DECL|enumerator|ISO_GRID
 name|ISO_GRID
-block|, }
 DECL|typedef|GRIDTYPE
+block|}
 name|GRIDTYPE
 typedef|;
 end_typedef
@@ -1216,8 +1216,8 @@ name|ORIGINAL_LAYER
 block|,
 DECL|enumerator|MULTI_LAYER
 name|MULTI_LAYER
-block|, }
 DECL|typedef|DRAWONLAYERS
+block|}
 name|DRAWONLAYERS
 typedef|;
 end_typedef
@@ -1241,8 +1241,8 @@ name|LAYER_WHITE_BG
 block|,
 DECL|enumerator|LAYER_COPY_BG
 name|LAYER_COPY_BG
-block|, }
 DECL|typedef|DRAWLAYERBG
+block|}
 name|DRAWLAYERBG
 typedef|;
 end_typedef
@@ -1263,8 +1263,8 @@ name|PAINT_SELECTION_TYPE
 block|,
 DECL|enumerator|PAINT_SELECTION_FILL_TYPE
 name|PAINT_SELECTION_FILL_TYPE
-block|, }
 DECL|typedef|PAINTTYPE
+block|}
 name|PAINTTYPE
 typedef|;
 end_typedef
@@ -1288,8 +1288,8 @@ name|BRUSH_AIRBRUSH_TYPE
 block|,
 DECL|enumerator|BRUSH_PATTERN_TYPE
 name|BRUSH_PATTERN_TYPE
-block|, }
 DECL|typedef|BRUSH_TYPE
+block|}
 name|BRUSH_TYPE
 typedef|;
 end_typedef
@@ -1725,8 +1725,8 @@ DECL|enumerator|INTERSECT
 name|INTERSECT
 init|=
 literal|3
-block|, }
 DECL|typedef|SELECTION_TYPE
+block|}
 name|SELECTION_TYPE
 typedef|;
 end_typedef
@@ -1742,8 +1742,8 @@ name|ARC_SEGMENT
 block|,
 DECL|enumerator|ARC_SECTOR
 name|ARC_SECTOR
-block|, }
 DECL|typedef|ARC_TYPE
+block|}
 name|ARC_TYPE
 typedef|;
 end_typedef
@@ -1768,8 +1768,8 @@ DECL|enumerator|FILL_PATTERN
 name|FILL_PATTERN
 init|=
 literal|2
-block|, }
 DECL|typedef|FILL_TYPE
+block|}
 name|FILL_TYPE
 typedef|;
 end_typedef
@@ -1787,8 +1787,8 @@ literal|0
 block|,
 DECL|enumerator|FILL_AFTER
 name|FILL_AFTER
-block|, }
 DECL|typedef|FILL_WHEN
+block|}
 name|FILL_WHEN
 typedef|;
 end_typedef
@@ -2311,7 +2311,7 @@ name|height
 decl_stmt|;
 comment|/* Height of brush */
 DECL|member|pv_buf
-name|gchar
+name|guchar
 modifier|*
 name|pv_buf
 decl_stmt|;
@@ -3735,16 +3735,15 @@ name|org_scale_y_factor
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
 parameter_list|()
 block|{
@@ -4852,10 +4851,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gfig_name_encode (guchar * dest,guchar * src)
+DECL|function|gfig_name_encode (gchar * dest,guchar * src)
 name|gfig_name_encode
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|dest
 parameter_list|,
@@ -4940,14 +4939,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gfig_name_decode (guchar * dest,guchar * src)
+DECL|function|gfig_name_decode (gchar * dest,gchar * src)
 name|gfig_name_decode
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|dest
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|src
 parameter_list|)
@@ -8134,7 +8133,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b57ebe90108
+DECL|struct|__anon27fe7dc40108
 block|{
 DECL|member|color_string
 name|gchar
@@ -56299,11 +56298,6 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_empty_stmt
-DECL|variable|fp_pnt_pnts
-empty_stmt|;
-end_empty_stmt
 
 begin_function
 specifier|static

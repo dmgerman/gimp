@@ -171,7 +171,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2aeadc020108
+DECL|struct|__anon2c53d9ef0108
 typedef|typedef
 struct|struct
 block|{
@@ -190,7 +190,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aeadc020208
+DECL|struct|__anon2c53d9ef0208
 typedef|typedef
 struct|struct
 block|{
@@ -388,7 +388,7 @@ specifier|static
 name|void
 name|ErrorMessage
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)
@@ -3510,10 +3510,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|ErrorMessage (guchar * message)
+DECL|function|ErrorMessage (gchar * message)
 name|ErrorMessage
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)

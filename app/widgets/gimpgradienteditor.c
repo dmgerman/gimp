@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be0ab360103
+DECL|enum|__anon2bf57fec0103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2be0ab360203
+DECL|enum|__anon2bf57fec0203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2be0ab360303
+DECL|enum|__anon2bf57fec0303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be0ab360408
+DECL|struct|__anon2bf57fec0408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2be0ab360508
+DECL|struct|__anon2bf57fec0508
 struct|struct
 block|{
 DECL|member|r
@@ -27430,10 +27430,6 @@ name|return_args
 return|;
 block|}
 end_function
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
 
 begin_comment
 comment|/* gradients_get_active_invoker */

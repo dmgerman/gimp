@@ -192,7 +192,7 @@ parameter_list|(
 name|gint
 name|gtk_was_not_initialized
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)
@@ -438,7 +438,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c481dd0108
+DECL|struct|__anon2b1c56cc0108
 block|{
 DECL|member|max_p
 name|gint
@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c481dd0208
+DECL|struct|__anon2b1c56cc0208
 block|{
 DECL|member|run
 name|gint
@@ -760,10 +760,6 @@ name|ERROR_DIALOG
 argument_list|(
 literal|1
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
 literal|"RGB drawable is not selected."
 argument_list|)
 expr_stmt|;
@@ -1546,13 +1542,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ERROR_DIALOG (gint gtk_was_not_initialized,guchar * message)
+DECL|function|ERROR_DIALOG (gint gtk_was_not_initialized,gchar * message)
 name|ERROR_DIALOG
 parameter_list|(
 name|gint
 name|gtk_was_not_initialized
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)

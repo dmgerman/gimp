@@ -38,7 +38,7 @@ modifier|*
 name|name
 decl_stmt|;
 DECL|member|val
-name|gint
+name|glong
 name|val
 decl_stmt|;
 block|}
@@ -324,7 +324,7 @@ name|mwValueRadioGroup
 modifier|*
 name|rg
 parameter_list|,
-name|gint
+name|glong
 modifier|*
 name|var
 parameter_list|)

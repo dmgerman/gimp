@@ -97,7 +97,7 @@ comment|/*---- Typedefs ----*/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2be74ccb0108
+DECL|struct|__anon27af924c0108
 typedef|typedef
 struct|struct
 block|{
@@ -137,7 +137,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be74ccb0208
+DECL|struct|__anon27af924c0208
 typedef|typedef
 struct|struct
 block|{
@@ -152,7 +152,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be74ccb0308
+DECL|struct|__anon27af924c0308
 typedef|typedef
 struct|struct
 block|{
@@ -2163,7 +2163,7 @@ decl_stmt|;
 name|gint
 name|argc
 decl_stmt|;
-name|guchar
+name|gchar
 name|buffer
 index|[
 literal|32

@@ -245,7 +245,7 @@ parameter_list|(
 name|FILE
 modifier|*
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 parameter_list|,
 name|int
@@ -297,7 +297,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29fda1620108
+DECL|struct|__anon2b56acb20108
 block|{
 DECL|member|bfSize
 name|unsigned
@@ -332,7 +332,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29fda1620208
+DECL|struct|__anon2b56acb20208
 block|{
 DECL|member|biWidth
 name|unsigned
@@ -404,7 +404,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29fda1620308
+DECL|struct|__anon2b56acb20308
 block|{
 DECL|member|bcWidth
 name|unsigned

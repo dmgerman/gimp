@@ -189,7 +189,7 @@ parameter_list|(
 name|gint
 name|gtk_was_not_initialized
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)
@@ -491,7 +491,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b413040108
+DECL|struct|__anon28760fe60108
 block|{
 DECL|member|threshold
 name|gint
@@ -518,7 +518,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b413040208
+DECL|struct|__anon28760fe60208
 block|{
 DECL|member|run
 name|gint
@@ -1503,13 +1503,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ERROR_DIALOG (gint gtk_was_not_initialized,guchar * message)
+DECL|function|ERROR_DIALOG (gint gtk_was_not_initialized,gchar * message)
 name|ERROR_DIALOG
 parameter_list|(
 name|gint
 name|gtk_was_not_initialized
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)

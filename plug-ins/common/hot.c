@@ -131,7 +131,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon28ac2e7d0103
+DECL|enum|__anon2ab3f4760103
 typedef|typedef
 enum|enum
 block|{
@@ -149,14 +149,14 @@ DECL|enumerator|act_flag
 name|act_flag
 init|=
 literal|2
-block|, }
 DECL|typedef|hotAction
+block|}
 name|hotAction
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28ac2e7d0203
+DECL|enum|__anon2ab3f4760203
 typedef|typedef
 enum|enum
 block|{
@@ -169,8 +169,8 @@ DECL|enumerator|mode_pal
 name|mode_pal
 init|=
 literal|1
-block|, }
 DECL|typedef|hotModes
+block|}
 name|hotModes
 typedef|;
 end_typedef
@@ -206,7 +206,7 @@ comment|/*  * RGB to YIQ encoding matrix.  */
 end_comment
 
 begin_struct
-DECL|struct|__anon28ac2e7d0308
+DECL|struct|__anon2ab3f4760308
 struct|struct
 block|{
 DECL|member|pedestal

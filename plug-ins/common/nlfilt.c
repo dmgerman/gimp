@@ -146,7 +146,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon29422dd70103
+DECL|enum|__anon29354e3a0103
 typedef|typedef
 enum|enum
 block|{
@@ -158,8 +158,8 @@ name|filter_opt_est
 block|,
 DECL|enumerator|filter_edge_enhance
 name|filter_edge_enhance
-block|, }
 DECL|typedef|FilterType
+block|}
 name|FilterType
 typedef|;
 end_typedef

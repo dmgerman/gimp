@@ -856,7 +856,7 @@ decl_stmt|;
 name|PatternHeader
 name|ph
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|buffer
 decl_stmt|;

@@ -193,7 +193,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bfdbb8e0108
+DECL|struct|__anon2c1e23270108
 typedef|typedef
 struct|struct
 block|{
@@ -4998,7 +4998,7 @@ decl_stmt|;
 name|GPixelRgn
 name|src_rgn
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|src_rows
 decl_stmt|,

@@ -240,6 +240,10 @@ argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|temp
 argument_list|,
 literal|"%s/%s"

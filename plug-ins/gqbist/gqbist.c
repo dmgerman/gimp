@@ -2518,7 +2518,7 @@ argument_list|(
 name|qbist_info
 argument_list|,
 operator|(
-name|guchar
+name|gchar
 operator|*
 operator|)
 name|row_data

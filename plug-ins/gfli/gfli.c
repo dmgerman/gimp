@@ -828,7 +828,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_read_frame (FILE * f,s_fli_header * fli_header,gchar * framebuf,gchar * cmap)
+DECL|function|fli_read_frame (FILE * f,s_fli_header * fli_header,guchar * framebuf,gchar * cmap)
 name|void
 name|fli_read_frame
 parameter_list|(
@@ -840,7 +840,7 @@ name|s_fli_header
 modifier|*
 name|fli_header
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|framebuf
 parameter_list|,
@@ -1168,7 +1168,7 @@ name|unsigned
 name|short
 name|yc
 decl_stmt|;
-name|char
+name|guchar
 modifier|*
 name|pos
 decl_stmt|;
@@ -1336,7 +1336,7 @@ name|unsigned
 name|long
 name|cc
 decl_stmt|;
-name|char
+name|guchar
 modifier|*
 name|pos
 decl_stmt|;
@@ -1391,7 +1391,7 @@ name|firstline
 decl_stmt|,
 name|numline
 decl_stmt|;
-name|char
+name|guchar
 modifier|*
 name|pos
 decl_stmt|;
@@ -1592,7 +1592,7 @@ name|lc
 decl_stmt|,
 name|numline
 decl_stmt|;
-name|char
+name|guchar
 modifier|*
 name|pos
 decl_stmt|;
@@ -2101,11 +2101,11 @@ name|image_ID
 decl_stmt|,
 name|layer_ID
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|frame_buffer
 decl_stmt|;
-name|gchar
+name|guchar
 name|cmap
 index|[
 literal|768

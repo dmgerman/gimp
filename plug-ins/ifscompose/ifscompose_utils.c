@@ -46,7 +46,7 @@ file|"ifscompose.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bbec7950108
+DECL|struct|__anon2b9dbd140108
 typedef|typedef
 struct|struct
 block|{
@@ -4788,7 +4788,7 @@ name|pixel
 expr_stmt|;
 endif|#
 directive|endif
-endif|DEBUG_BRUSH
+comment|/* DEBUG_BRUSH */
 block|}
 ifdef|#
 directive|ifdef
@@ -4800,7 +4800,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|DEBUG_BRUSH
+comment|/* DEBUG_BRUSH */
 block|}
 ifdef|#
 directive|ifdef
@@ -4821,7 +4821,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|DEBUG_BRUSH
+comment|/* DEBUG_BRUSH */
 return|return
 name|brush
 return|;

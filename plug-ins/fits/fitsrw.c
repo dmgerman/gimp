@@ -3380,7 +3380,6 @@ modifier|*
 name|nrec
 parameter_list|)
 block|{
-name|unsigned
 name|char
 name|record
 index|[

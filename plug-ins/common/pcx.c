@@ -481,7 +481,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -506,7 +506,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -531,7 +531,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -556,7 +556,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -978,7 +978,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2782689a0108
+DECL|struct|__anon2c545bec0108
 specifier|static
 struct|struct
 block|{
@@ -1689,7 +1689,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_8 (FILE * fp,int width,int height,char * buffer,int bytes)
+DECL|function|load_8 (FILE * fp,int width,int height,guchar * buffer,int bytes)
 specifier|static
 name|void
 name|load_8
@@ -1704,7 +1704,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -1789,7 +1789,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_24 (FILE * fp,int width,int height,char * buffer,int bytes)
+DECL|function|load_24 (FILE * fp,int width,int height,guchar * buffer,int bytes)
 specifier|static
 name|void
 name|load_24
@@ -1804,7 +1804,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -1932,7 +1932,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_1 (FILE * fp,int width,int height,char * buffer,int bytes)
+DECL|function|load_1 (FILE * fp,int width,int height,guchar * buffer,int bytes)
 specifier|static
 name|void
 name|load_1
@@ -1947,7 +1947,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,
@@ -2074,7 +2074,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_4 (FILE * fp,int width,int height,char * buffer,int bytes)
+DECL|function|load_4 (FILE * fp,int width,int height,guchar * buffer,int bytes)
 specifier|static
 name|void
 name|load_4
@@ -2089,7 +2089,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|char
+name|guchar
 modifier|*
 name|buffer
 parameter_list|,

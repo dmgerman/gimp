@@ -283,7 +283,7 @@ parameter_list|(
 name|gint
 name|gtk_was_initialized
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)
@@ -411,10 +411,10 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28911c730108
+DECL|struct|__anon28fea4160108
 block|{
 DECL|member|name
-name|guchar
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -437,7 +437,7 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -900,7 +900,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28911c730208
+DECL|struct|__anon28fea4160208
 block|{
 DECL|member|h_style
 name|gint
@@ -963,7 +963,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28911c730308
+DECL|struct|__anon28fea4160308
 block|{
 DECL|member|run
 name|gint
@@ -2287,7 +2287,7 @@ name|index
 init|=
 literal|0
 decl_stmt|;
-name|guchar
+name|gchar
 name|buffer
 index|[
 literal|10
@@ -3647,13 +3647,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gtkW_message_dialog (gint gtk_was_initialized,guchar * message)
+DECL|function|gtkW_message_dialog (gint gtk_was_initialized,gchar * message)
 name|gtkW_message_dialog
 parameter_list|(
 name|gint
 name|gtk_was_initialized
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|message
 parameter_list|)
@@ -5084,14 +5084,14 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gtkW_table_add_menu (GtkWidget * table,guchar * name,int x,int y,GtkSignalFunc menu_update,int * val,gtkW_menu_item * item,int item_num)
+DECL|function|gtkW_table_add_menu (GtkWidget * table,gchar * name,int x,int y,GtkSignalFunc menu_update,int * val,gtkW_menu_item * item,int item_num)
 name|gtkW_table_add_menu
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|table
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -5130,7 +5130,7 @@ decl_stmt|,
 modifier|*
 name|option_menu
 decl_stmt|;
-name|guchar
+name|gchar
 name|buf
 index|[
 literal|64

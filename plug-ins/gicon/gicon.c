@@ -88,7 +88,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2872760108
+DECL|struct|__anon286f9fbf0108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2872760208
+DECL|struct|__anon286f9fbf0208
 block|{
 DECL|member|run
 name|gint
@@ -1139,7 +1139,7 @@ name|dest
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|guchar
 argument_list|,
 name|width
 operator|*
@@ -1487,7 +1487,7 @@ name|src_buf
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|guchar
 argument_list|,
 name|w
 operator|*

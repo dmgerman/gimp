@@ -36,7 +36,7 @@ comment|/* Typedefs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275b224f0108
+DECL|struct|__anon294a9d210108
 typedef|typedef
 struct|struct
 block|{
@@ -103,7 +103,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275b224f0208
+DECL|struct|__anon294a9d210208
 typedef|typedef
 struct|struct
 block|{
@@ -726,7 +726,7 @@ decl_stmt|,
 modifier|*
 name|buf2
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|width
 decl_stmt|,
@@ -930,14 +930,14 @@ name|width
 operator|=
 name|malloc
 argument_list|(
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|malloc
 argument_list|(
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|sprintf
@@ -1623,7 +1623,7 @@ modifier|*
 modifier|*
 name|argv
 decl_stmt|;
-name|guchar
+name|gchar
 name|buffer
 index|[
 literal|32
