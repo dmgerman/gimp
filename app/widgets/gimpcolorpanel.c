@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"gimpcolorpanel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color_panel.h"
+file|"appenv.h"
 end_include
 
 begin_include

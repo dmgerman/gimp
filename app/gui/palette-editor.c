@@ -36,6 +36,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcontainerlistview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpdatafactoryview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimppreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color_area.h"
 end_include
 
@@ -66,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainerlistview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -79,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdatafactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdatafactoryview.h"
 end_include
 
 begin_include
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"gimppalette.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppreview.h"
 end_include
 
 begin_include

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__COLOR_PANEL_H__
+name|__GIMP_COLOR_PANEL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__COLOR_PANEL_H__
+DECL|macro|__GIMP_COLOR_PANEL_H__
 define|#
 directive|define
-name|__COLOR_PANEL_H__
+name|__GIMP_COLOR_PANEL_H__
 end_define
 
 begin_include
@@ -147,7 +147,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __COLOR_PANEL_H__  */
+comment|/*  __GIMP_COLOR_PANEL_H__  */
 end_comment
 
 end_unit

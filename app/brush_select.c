@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdatafactoryview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdatafactoryview.h"
 end_include
 
 begin_include

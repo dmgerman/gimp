@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_panel.h"
+file|"widgets/gimpcolorpanel.h"
 end_include
 
 begin_include

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcolorpanel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"channels_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"color_panel.h"
 end_include
 
 begin_include
@@ -7053,7 +7053,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff17a20108
+DECL|struct|__anon278a59990108
 block|{
 DECL|member|gimage
 name|GimpImage

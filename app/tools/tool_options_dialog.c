@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimppreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppreview.h"
 end_include
 
 begin_include

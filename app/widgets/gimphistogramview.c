@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphistogramview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage.h"
 end_include
 
@@ -43,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimphistogram.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"histogramwidget.h"
 end_include
 
 begin_include
@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e78a3a0103
+DECL|enum|__anon2af18f8f0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED

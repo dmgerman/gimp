@@ -60,6 +60,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimppreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gtkhwrapbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -120,19 +132,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtkhwrapbox.h"
 end_include
 
 begin_include

@@ -76,12 +76,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"histogramwidget.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"invert.h"
 end_include
 
@@ -131,6 +125,12 @@ begin_include
 include|#
 directive|include
 file|"tools/threshold.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimphistogramview.h"
 end_include
 
 begin_decl_stmt

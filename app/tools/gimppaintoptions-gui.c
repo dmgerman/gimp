@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gtkhwrapbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtkhwrapbox.h"
 end_include
 
 begin_include
