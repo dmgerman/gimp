@@ -606,24 +606,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpFontSelection
-typedef|typedef
-name|struct
-name|_GimpFontSelection
-name|GimpFontSelection
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpFontSelectionDialog
-typedef|typedef
-name|struct
-name|_GimpFontSelectionDialog
-name|GimpFontSelectionDialog
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpHistogramView
 typedef|typedef
 name|struct
