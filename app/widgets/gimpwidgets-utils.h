@@ -205,6 +205,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gchar
+modifier|*
+name|gimp_get_accel_string
+parameter_list|(
+name|guint
+name|key
+parameter_list|,
+name|GdkModifierType
+name|modifiers
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_get_screen_resolution
 parameter_list|(

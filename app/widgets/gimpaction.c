@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e358e0103
+DECL|enum|__anon28fc69df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -854,6 +860,45 @@ argument_list|,
 name|stock_id
 argument_list|,
 name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_action_name_compare (GimpAction * action1,GimpAction * action2)
+name|gimp_action_name_compare
+parameter_list|(
+name|GimpAction
+modifier|*
+name|action1
+parameter_list|,
+name|GimpAction
+modifier|*
+name|action2
+parameter_list|)
+block|{
+return|return
+name|strcmp
+argument_list|(
+name|gtk_action_get_name
+argument_list|(
+operator|(
+name|GtkAction
+operator|*
+operator|)
+name|action1
+argument_list|)
+argument_list|,
+name|gtk_action_get_name
+argument_list|(
+operator|(
+name|GtkAction
+operator|*
+operator|)
+name|action2
+argument_list|)
 argument_list|)
 return|;
 block|}

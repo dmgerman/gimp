@@ -167,6 +167,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gint
+name|gimp_action_name_compare
+parameter_list|(
+name|GimpAction
+modifier|*
+name|action1
+parameter_list|,
+name|GimpAction
+modifier|*
+name|action2
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

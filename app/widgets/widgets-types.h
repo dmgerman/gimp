@@ -696,6 +696,15 @@ comment|/*  misc widgets  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpActionView
+typedef|typedef
+name|struct
+name|_GimpActionView
+name|GimpActionView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorBar
 typedef|typedef
 name|struct
