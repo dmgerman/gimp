@@ -4682,6 +4682,15 @@ condition|)
 return|return
 name|FALSE
 return|;
+comment|/* ref the image, so it can't get deleted during save */
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|proc
 operator|=
 operator|&
@@ -4896,6 +4905,14 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|args
+argument_list|)
+expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

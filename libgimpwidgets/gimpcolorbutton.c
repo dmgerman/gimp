@@ -465,7 +465,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon29e2d94e0103
+DECL|enum|__anon29b30d4b0103
 enum|enum
 block|{
 DECL|enumerator|COLOR_CHANGED
@@ -1888,6 +1888,18 @@ name|dialog
 argument_list|)
 operator|->
 name|help_button
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|gcb
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

@@ -274,7 +274,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8bae670103
+DECL|enum|__anon28dcbc670103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -485,7 +485,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-name|FALSE
+name|wants_updates
 argument_list|,
 name|wants_updates
 condition|?
@@ -509,7 +509,8 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+operator|!
+name|wants_updates
 argument_list|,
 name|NULL
 argument_list|)

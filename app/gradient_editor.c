@@ -301,7 +301,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276d42e70103
+DECL|enum|__anon2c16966f0103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -341,7 +341,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276d42e70203
+DECL|enum|__anon2c16966f0203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d42e70308
+DECL|struct|__anon2c16966f0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -648,7 +648,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon276d42e70408
+DECL|struct|__anon2c16966f0408
 block|{
 DECL|member|r
 DECL|member|g
@@ -20213,6 +20213,26 @@ operator|=
 name|gtk_color_selection_dialog_new
 argument_list|(
 name|title
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_COLOR_SELECTION_DIALOG
+argument_list|(
+name|window
+argument_list|)
+operator|->
+name|help_button
 argument_list|)
 expr_stmt|;
 name|gimp_help_connect_help_accel
