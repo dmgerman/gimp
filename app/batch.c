@@ -153,7 +153,6 @@ modifier|*
 name|batch_cmds
 parameter_list|)
 block|{
-specifier|static
 name|ProcRecord
 modifier|*
 name|eval_proc
@@ -161,7 +160,7 @@ init|=
 name|NULL
 decl_stmt|;
 name|gboolean
-name|perl_server_already_running
+name|perl_server_running
 init|=
 name|FALSE
 decl_stmt|;
@@ -273,7 +272,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|perl_server_already_running
+name|perl_server_running
 condition|)
 block|{
 name|batch_perl_server
@@ -287,7 +286,7 @@ argument_list|,
 name|extra
 argument_list|)
 expr_stmt|;
-name|perl_server_already_running
+name|perl_server_running
 operator|=
 name|TRUE
 expr_stmt|;
