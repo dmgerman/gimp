@@ -66,6 +66,24 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|CPP_SEARCH
+end_ifndef
+
+begin_define
+DECL|macro|CPP_SEARCH
+define|#
+directive|define
+name|CPP_SEARCH
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_decl_stmt
 DECL|variable|header_root
 name|Id
@@ -460,7 +478,7 @@ name|cpp_cmd
 operator|=
 name|g_string_new
 argument_list|(
-name|CPP_PROGRAM
+argument|CPP_PROGRAM CPP_SEARCH
 argument_list|)
 expr_stmt|;
 name|yydebug
