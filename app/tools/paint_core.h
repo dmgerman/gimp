@@ -610,20 +610,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  ugly hacks  */
-end_comment
-
-begin_function_decl
-name|int
-name|paint_core_invalidate_cache
-parameter_list|(
-name|MaskBuf
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

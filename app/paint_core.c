@@ -318,6 +318,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|int
+name|paint_core_invalidate_cache
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|,
+name|gpointer
+modifier|*
+name|blah
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/***********************************************************************/
 end_comment
@@ -2312,8 +2328,11 @@ decl_stmt|,
 name|y
 decl_stmt|;
 block|{
+specifier|static
 name|GimpBrushP
 name|brush
+init|=
+literal|0
 decl_stmt|;
 name|paint_core
 operator|->
@@ -2373,6 +2392,40 @@ expr_stmt|;
 comment|/*  Each buffer is the same size as the maximum bounds of the active brush... */
 if|if
 condition|(
+name|brush
+operator|&&
+name|brush
+operator|!=
+name|get_active_brush
+argument_list|()
+condition|)
+block|{
+name|gtk_signal_disconnect_by_func
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|brush
+argument_list|)
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|paint_core_invalidate_cache
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|brush
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
 operator|!
 operator|(
 name|brush
@@ -2391,6 +2444,31 @@ return|return
 name|FALSE
 return|;
 block|}
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|brush
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|brush
+argument_list|)
+argument_list|,
+literal|"dirty"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|paint_core_invalidate_cache
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|paint_core
 operator|->
 name|spacing
@@ -3969,16 +4047,12 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* This is a hack to make sure we don't cache data for a brush that   * has changed.  Do it the right way when signals get put in.  */
-end_comment
-
 begin_decl_stmt
-DECL|variable|last_brush
+DECL|variable|last_brush_mask
 specifier|static
 name|MaskBuf
 modifier|*
-name|last_brush
+name|last_brush_mask
 init|=
 name|NULL
 decl_stmt|;
@@ -3995,20 +4069,28 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|paint_core_invalidate_cache (MaskBuf * buf)
+DECL|function|paint_core_invalidate_cache (GimpBrush * brush,gpointer * blah)
+specifier|static
 name|int
 name|paint_core_invalidate_cache
 parameter_list|(
-name|MaskBuf
+name|GimpBrush
 modifier|*
-name|buf
+name|brush
+parameter_list|,
+name|gpointer
+modifier|*
+name|blah
 parameter_list|)
 block|{
+comment|/* Make sure we don't cache data for a brush that has changed */
 if|if
 condition|(
-name|last_brush
+name|last_brush_mask
 operator|==
-name|buf
+name|brush
+operator|->
+name|mask
 condition|)
 block|{
 name|cache_invalid
@@ -4052,7 +4134,6 @@ decl_stmt|,
 name|y
 decl_stmt|;
 block|{
-comment|/*  static MaskBuf *last_brush = NULL; */
 name|MaskBuf
 modifier|*
 name|dest
@@ -4181,7 +4262,7 @@ condition|(
 operator|(
 name|mask
 operator|==
-name|last_brush
+name|last_brush_mask
 operator|)
 operator|&&
 name|kernel_brushes
@@ -4209,7 +4290,7 @@ if|if
 condition|(
 name|mask
 operator|!=
-name|last_brush
+name|last_brush_mask
 operator|||
 name|cache_invalid
 condition|)
@@ -4272,7 +4353,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|last_brush
+name|last_brush_mask
 operator|=
 name|mask
 expr_stmt|;

@@ -263,7 +263,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* TODO: {re}move these functions */
+comment|/* TODO: {re}move this function */
 end_comment
 
 begin_function_decl
@@ -271,15 +271,6 @@ name|void
 name|create_brush_dialog
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|brush_changed_notify
-parameter_list|(
-name|GimpBrushP
 parameter_list|)
 function_decl|;
 end_function_decl

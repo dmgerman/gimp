@@ -157,19 +157,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|brush_select_brush_changed
-parameter_list|(
-name|BrushSelectP
-name|bsp
-parameter_list|,
-name|GimpBrushP
-name|brush
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  An interface to other dialogs which need to create a paint mode menu  */
 end_comment

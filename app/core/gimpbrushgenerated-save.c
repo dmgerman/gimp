@@ -53,10 +53,10 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_generated_destroy (GimpBrushGenerated * object)
+DECL|function|gimp_brush_generated_destroy (GtkObject * object)
 name|gimp_brush_generated_destroy
 parameter_list|(
-name|GimpBrushGenerated
+name|GtkObject
 modifier|*
 name|object
 parameter_list|)
@@ -1072,7 +1072,6 @@ index|]
 operator|=
 name|a
 expr_stmt|;
-comment|/*      centerp[-1*y*brush->mask->width + x] = a;       centerp[-1*y*brush->mask->width - x] = a;       centerp[   x*brush->mask->width + y] = a;       centerp[   x*brush->mask->width - y] = a;       centerp[-1*x*brush->mask->width + y] = a;       centerp[-1*x*brush->mask->width - y] = a;*/
 block|}
 block|}
 name|g_free
@@ -1080,15 +1079,17 @@ argument_list|(
 name|lookup
 argument_list|)
 expr_stmt|;
-comment|/*  gtk_signal_emit_by_name(brush, "dirty"); */
-name|brush_changed_notify
+name|gtk_signal_emit_by_name
 argument_list|(
-name|GIMP_BRUSH
+name|GTK_OBJECT
 argument_list|(
 name|brush
 argument_list|)
+argument_list|,
+literal|"dirty"
 argument_list|)
 expr_stmt|;
+comment|/*  brush_changed_notify(GIMP_BRUSH(brush)); */
 block|}
 end_function
 
