@@ -19,6 +19,7 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+comment|/*  * GIMP_TYPE_UNIT  */
 DECL|macro|GIMP_TYPE_UNIT
 define|#
 directive|define
@@ -40,6 +41,74 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/*  * GIMP_TYPE_PARAM_UNIT  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_PARAM_UNIT
+define|#
+directive|define
+name|GIMP_TYPE_PARAM_UNIT
+value|(gimp_param_unit_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_PARAM_SPEC_UNIT (pspec)
+define|#
+directive|define
+name|GIMP_IS_PARAM_SPEC_UNIT
+parameter_list|(
+name|pspec
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_UNIT))
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_param_unit_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
+name|GParamSpec
+modifier|*
+name|gimp_param_spec_unit
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|nick
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blurb
+parameter_list|,
+name|gboolean
+name|allow_pixels
+parameter_list|,
+name|gboolean
+name|allow_percent
+parameter_list|,
+name|GimpUnit
+name|default_value
+parameter_list|,
+name|GParamFlags
+name|flags
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gint
