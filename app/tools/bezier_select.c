@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -277,7 +283,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2bb8b7260108
+DECL|struct|__anon29e8cbe40108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bb8b7260208
+DECL|struct|__anon29e8cbe40208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bb8b7260308
+DECL|struct|__anon29e8cbe40308
 typedef|typedef
 struct|struct
 block|{

@@ -506,6 +506,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|layer_resize_to_image
+parameter_list|(
+name|Layer
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|BoundSeg
 modifier|*
 name|layer_boundary
