@@ -818,7 +818,8 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_free
