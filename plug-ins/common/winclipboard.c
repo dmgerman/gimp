@@ -22,7 +22,7 @@ file|"libgimp/gimp.h"
 end_include
 
 begin_comment
-comment|/* History:  *    *   08/07/99 Implementation and release.  *  * TODO (maybe):  *  *   - Speed up (e.g. by transfering greater chunks of memory between  *     plug-in and gimp)  *   - Support for 4,2,1 bit bitmaps  *   - Unsupported formats could be delegated to GIMP Loader (e.g. wmf)  *   - ...  */
+comment|/* History:  *    *   08/07/99 Implementation and release.  *	 08/10/99 Big speed increase by using gimp_tile_cache_size()  *			  Thanks to Kevin Turner's documentation at:  *			  http://www.poboxes.com/kevint/gimp/doc/plugin-doc-2.1.html  *  * TODO (maybe):  *  *   - Support for 4,2,1 bit bitmaps  *   - Unsupported formats could be delegated to GIMP Loader (e.g. wmf)  *   - ...  */
 end_comment
 
 begin_comment
@@ -646,11 +646,6 @@ decl_stmt|;
 name|BOOL
 name|bRet
 decl_stmt|;
-name|gimp_image_disable_undo
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -1144,6 +1139,21 @@ argument_list|(
 literal|"Copying ..."
 argument_list|)
 expr_stmt|;
+comment|/* speed it up with: */
+name|gimp_tile_cache_size
+argument_list|(
+name|drawable
+operator|->
+name|width
+operator|*
+name|gimp_tile_height
+argument_list|()
+operator|*
+name|drawable
+operator|->
+name|bpp
+argument_list|)
+expr_stmt|;
 comment|/* copy data to DIB */
 if|if
 condition|(
@@ -1622,12 +1632,6 @@ expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
-argument_list|)
-expr_stmt|;
-comment|/* shouldn't this be done by caller?? */
-name|gimp_image_enable_undo
-argument_list|(
-name|image_ID
 argument_list|)
 expr_stmt|;
 return|return
@@ -2310,6 +2314,21 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/* speed it up with: */
+name|gimp_tile_cache_size
+argument_list|(
+name|drawable
+operator|->
+name|width
+operator|*
+name|gimp_tile_height
+argument_list|()
+operator|*
+name|drawable
+operator|->
+name|bpp
+argument_list|)
+expr_stmt|;
 comment|/* change data format and copy data */
 if|if
 condition|(

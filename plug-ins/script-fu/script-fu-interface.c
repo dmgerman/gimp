@@ -212,6 +212,11 @@ end_comment
 begin_if
 if|#
 directive|if
+name|defined
+argument_list|(
+name|GLIB_CHECK_VERSION
+argument_list|)
+operator|&&
 name|GLIB_CHECK_VERSION
 argument_list|(
 literal|1
@@ -337,7 +342,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68c2180108
+DECL|struct|__anon2bd056870108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -372,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68c2180208
+DECL|struct|__anon2bd056870208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -416,7 +421,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68c2180308
+DECL|struct|__anon2bd056870308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -442,7 +447,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68c2180408
+DECL|struct|__anon2bd056870408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -463,7 +468,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68c2180508
+DECL|struct|__anon2bd056870508
 block|{
 DECL|member|name
 name|gchar
@@ -491,7 +496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b68c218060a
+DECL|union|__anon2bd05687060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -557,7 +562,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68c2180708
+DECL|struct|__anon2bd056870708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -638,7 +643,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68c2180808
+DECL|struct|__anon2bd056870808
 block|{
 DECL|member|status
 name|GtkWidget

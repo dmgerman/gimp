@@ -358,7 +358,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c7684400108
+DECL|struct|__anon29f214dc0108
 typedef|typedef
 struct|struct
 block|{
@@ -399,7 +399,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c7684400208
+DECL|struct|__anon29f214dc0208
 typedef|typedef
 struct|struct
 block|{
@@ -4238,6 +4238,19 @@ operator|=
 name|gimp_drawable_get
 argument_list|(
 name|layer_id
+argument_list|)
+expr_stmt|;
+name|gimp_tile_cache_size
+argument_list|(
+name|ROUND4
+argument_list|(
+name|width
+argument_list|)
+operator|*
+name|gimp_tile_height
+argument_list|()
+operator|*
+literal|3
 argument_list|)
 expr_stmt|;
 comment|/* Initialize a pixel region for writing to the image */

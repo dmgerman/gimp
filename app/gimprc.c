@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2c14ca040103
+DECL|enum|__anon278ca5290103
 typedef|typedef
 enum|enum
 block|{
@@ -11494,6 +11494,11 @@ parameter_list|)
 block|{
 if|#
 directive|if
+name|defined
+argument_list|(
+name|GLIB_CHECK_VERSION
+argument_list|)
+operator|&&
 name|GLIB_CHECK_VERSION
 argument_list|(
 literal|1
