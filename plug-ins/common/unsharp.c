@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* $Id$  *  * unsharp.c 0.10 -- This is a plug-in for the GIMP 1.0  *  http://www.steppe.com/~winston/gimp/unsharp.html  *  * Copyright (C) 1999 Winston Chang  *<wchang3@students.wisc.edu>  *<winston@stdout.com>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* $Id$  *  * unsharp.c 0.10 -- This is a plug-in for the GIMP 1.0  *  http://www.stdout.org/~winston/gimp/unsharp.html  *  (now out of date)   *  * Copyright (C) 1999 Winston Chang  *<winstonc@cs.wisc.edu>  *<winston@stdout.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b16391d0108
+DECL|struct|__anon2bb846380108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b16391d0208
+DECL|struct|__anon2bb846380208
 block|{
 DECL|member|run
 name|gint
@@ -733,7 +733,7 @@ literal|"used on photographic images, and is provides a much "
 literal|"more pleasing result than the standard sharpen "
 literal|"filter."
 argument_list|,
-literal|"Winston Chang<wchang3@students.wisc.edu>"
+literal|"Winston Chang<winstonc@cs.wisc.edu>"
 argument_list|,
 literal|"Winston Chang"
 argument_list|,
