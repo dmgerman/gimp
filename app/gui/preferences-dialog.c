@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0b016a0103
+DECL|enum|__anon27e70a130103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -2867,7 +2867,7 @@ name|remove
 operator|=
 name|g_list_append
 argument_list|(
-name|update
+name|remove
 argument_list|,
 literal|"dont-trust-dirty-flag"
 argument_list|)
@@ -12468,7 +12468,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c0b016a0208
+DECL|struct|__anon27e70a130208
 block|{
 DECL|member|label
 name|gchar
@@ -12697,7 +12697,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c0b016a0308
+DECL|struct|__anon27e70a130308
 block|{
 DECL|member|tree_label
 name|gchar
