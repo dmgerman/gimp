@@ -1,6 +1,25 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|BISON_IMAP_CSIM_TAB_H
+end_ifndef
+
+begin_define
+DECL|macro|BISON_IMAP_CSIM_TAB_H
+define|#
+directive|define
+name|BISON_IMAP_CSIM_TAB_H
+end_define
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|YYSTYPE
+end_ifndef
+
 begin_typedef
-DECL|union|__anon2bd1b8c2010a
+DECL|union|__anon290d84c9010a
 typedef|typedef
 union|union
 block|{
@@ -19,11 +38,32 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-DECL|typedef|YYSTYPE
+DECL|typedef|yystype
 block|}
-name|YYSTYPE
+name|yystype
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|YYSTYPE
+define|#
+directive|define
+name|YYSTYPE
+value|yystype
+end_define
+
+begin_define
+DECL|macro|YYSTYPE_IS_TRIVIAL
+define|#
+directive|define
+name|YYSTYPE_IS_TRIVIAL
+value|1
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|IMG
@@ -239,6 +279,15 @@ name|YYSTYPE
 name|csim_lval
 decl_stmt|;
 end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* not BISON_IMAP_CSIM_TAB_H */
+end_comment
 
 end_unit
 
