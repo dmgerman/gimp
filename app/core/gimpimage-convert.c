@@ -436,7 +436,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b4c0d200103
+DECL|enum|__anon27f96dc70103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -967,7 +967,7 @@ name|og
 decl_stmt|,
 name|ob
 decl_stmt|;
-comment|/*   double sL, sa, sb;   {     double low_l = 999.0, low_a = 999.9, low_b = 999.0;     double high_l = -999.0, high_a = -999.0, high_b = -999.0;      int r,g,b;      for (r=0; r<256; r++)       for (g=0; g<256; g++) 	for (b=0; b<256; b++) 	  { 	    cpercep_rgb_to_space(r,g,b,&sL,&sa,&sb);  	    if (sL> high_l) 	      high_l = sL; 	    if (sL< low_l) 	      low_l = sL; 	    if (sa> high_a) 	      high_a = sa; 	    if (sa< low_a) 	      low_a = sa; 	    if (sb> high_b) 	      high_b = sb; 	    if (sb< low_b) 	      low_b = sb; 	  }      fprintf(stderr, " [L: %0.3f -> %0.3f / a: %0.3f -> %0.3f / b: %0.3f -> %0.3f]\t", low_l, high_l, low_a, high_a, low_b, high_b);      exit(-1);   }   */
+comment|/*   double sL, sa, sb;   {     double low_l = 999.0, low_a = 999.9, low_b = 999.0;     double high_l = -999.0, high_a = -999.0, high_b = -999.0;      int r,g,b;      for (r=0; r<256; r++)       for (g=0; g<256; g++)         for (b=0; b<256; b++)           {             cpercep_rgb_to_space(r,g,b,&sL,&sa,&sb);              if (sL> high_l)               high_l = sL;             if (sL< low_l)               low_l = sL;             if (sa> high_a)               high_a = sa;             if (sa< low_a)               low_a = sa;             if (sb> high_b)               high_b = sb;             if (sb< low_b)               low_b = sb;           }      fprintf(stderr, " [L: %0.3f -> %0.3f / a: %0.3f -> %0.3f / b: %0.3f -> %0.3f]\t", low_l, high_l, low_a, high_a, low_b, high_b);      exit(-1);   }   */
 name|rgb_to_unshifted_lin
 argument_list|(
 name|r
@@ -995,21 +995,21 @@ name|RSDF
 parameter_list|(
 name|r
 parameter_list|)
-value|((r)>= ((HIST_R_ELEMS-1)<< R_SHIFT) ? HIST_R_ELEMS-1 : \ 		 ((r) + ((1<<R_SHIFT)>>1) )>> R_SHIFT)
+value|((r)>= ((HIST_R_ELEMS-1)<< R_SHIFT) ? HIST_R_ELEMS-1 : \                  ((r) + ((1<<R_SHIFT)>>1) )>> R_SHIFT)
 define|#
 directive|define
 name|GSDF
 parameter_list|(
 name|g
 parameter_list|)
-value|((g)>= ((HIST_G_ELEMS-1)<< G_SHIFT) ? HIST_G_ELEMS-1 : \ 		 ((g) + ((1<<G_SHIFT)>>1) )>> G_SHIFT)
+value|((g)>= ((HIST_G_ELEMS-1)<< G_SHIFT) ? HIST_G_ELEMS-1 : \                  ((g) + ((1<<G_SHIFT)>>1) )>> G_SHIFT)
 define|#
 directive|define
 name|BSDF
 parameter_list|(
 name|b
 parameter_list|)
-value|((b)>= ((HIST_B_ELEMS-1)<< B_SHIFT) ? HIST_B_ELEMS-1 : \ 		 ((b) + ((1<<B_SHIFT)>>1) )>> B_SHIFT)
+value|((b)>= ((HIST_B_ELEMS-1)<< B_SHIFT) ? HIST_B_ELEMS-1 : \                  ((b) + ((1<<B_SHIFT)>>1) )>> B_SHIFT)
 else|#
 directive|else
 DECL|macro|RSDF (r)
@@ -1477,7 +1477,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c0d200208
+DECL|struct|__anon27f96dc70208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1554,7 +1554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c0d200308
+DECL|struct|__anon27f96dc70308
 block|{
 DECL|member|ncolors
 name|long
@@ -1739,7 +1739,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c0d200408
+DECL|struct|__anon27f96dc70408
 block|{
 DECL|member|used_count
 name|signed
@@ -2146,7 +2146,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-comment|/* change all mappings from this dead index 		 to the live one. */
+comment|/* change all mappings from this dead index                  to the live one. */
 for|for
 control|(
 name|k
@@ -2464,19 +2464,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|remap_indexed_layer (GimpLayer * layer,unsigned char * remap_table,int num_entries)
+DECL|function|remap_indexed_layer (GimpLayer * layer,const guchar * remap_table,gint num_entries)
 name|remap_indexed_layer
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|unsigned
-name|char
+specifier|const
+name|guchar
 modifier|*
 name|remap_table
 parameter_list|,
-name|int
+name|gint
 name|num_entries
 parameter_list|)
 block|{
@@ -2494,6 +2494,7 @@ decl_stmt|;
 name|gint
 name|pixels
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -2578,6 +2579,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|has_alpha
+condition|)
+block|{
 for|for
 control|(
 name|pr
@@ -2635,21 +2641,11 @@ condition|)
 block|{
 if|if
 condition|(
-operator|(
-operator|!
-name|has_alpha
-operator|)
-operator|||
-operator|(
-name|has_alpha
-operator|&&
 name|src
 index|[
 name|ALPHA_I_PIX
 index|]
-operator|)
 condition|)
-block|{
 name|dest
 index|[
 name|INDEXED_PIX
@@ -2664,6 +2660,89 @@ index|]
 index|]
 expr_stmt|;
 block|}
+name|src
+operator|+=
+name|srcPR
+operator|.
+name|bytes
+expr_stmt|;
+name|dest
+operator|+=
+name|destPR
+operator|.
+name|bytes
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+for|for
+control|(
+name|pr
+operator|=
+name|pixel_regions_register
+argument_list|(
+literal|2
+argument_list|,
+operator|&
+name|srcPR
+argument_list|,
+operator|&
+name|destPR
+argument_list|)
+init|;
+name|pr
+operator|!=
+name|NULL
+condition|;
+name|pr
+operator|=
+name|pixel_regions_process
+argument_list|(
+name|pr
+argument_list|)
+control|)
+block|{
+name|src
+operator|=
+name|srcPR
+operator|.
+name|data
+expr_stmt|;
+name|dest
+operator|=
+name|destPR
+operator|.
+name|data
+expr_stmt|;
+name|pixels
+operator|=
+name|srcPR
+operator|.
+name|h
+operator|*
+name|srcPR
+operator|.
+name|w
+expr_stmt|;
+while|while
+condition|(
+name|pixels
+operator|--
+condition|)
+name|dest
+index|[
+name|INDEXED_PIX
+index|]
+operator|=
+name|remap_table
+index|[
+name|src
+index|[
+name|INDEXED_PIX
+index|]
+index|]
+expr_stmt|;
 name|src
 operator|+=
 name|srcPR
@@ -2792,7 +2871,7 @@ parameter_list|,
 name|GimpImageBaseType
 name|new_type
 parameter_list|,
-comment|/* The following three params used only for 		     * new_type == GIMP_INDEXED 		     */
+comment|/* The following three params used only for                      * new_type == GIMP_INDEXED                      */
 name|gint
 name|num_cols
 parameter_list|,
@@ -3089,7 +3168,7 @@ operator|->
 name|histogram
 argument_list|)
 expr_stmt|;
-comment|/* To begin, assume that there are fewer colours in 	   *  the image than the user actually asked for.  In that 	   *  case, we don't need to quantize or colour-dither. 	   */
+comment|/* To begin, assume that there are fewer colours in            *  the image than the user actually asked for.  In that            *  case, we don't need to quantize or colour-dither.            */
 name|needs_quantize
 operator|=
 name|FALSE
@@ -3176,7 +3255,7 @@ argument_list|,
 name|n_layers
 argument_list|)
 expr_stmt|;
-comment|/* 	       * Note: generate_histogram_rgb may set needs_quantize if 	       *  the image contains more colours than the limit specified 	       *  by the user. 	       */
+comment|/*                * Note: generate_histogram_rgb may set needs_quantize if                *  the image contains more colours than the limit specified                *  by the user.                */
 block|}
 block|}
 if|if
@@ -3430,10 +3509,6 @@ control|)
 block|{
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -4100,6 +4175,7 @@ decl_stmt|;
 name|gint
 name|has_alpha
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4114,6 +4190,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -4159,6 +4236,13 @@ literal|3
 operator|)
 argument_list|)
 expr_stmt|;
+name|cmap
+operator|=
+name|gimp_drawable_cmap
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -4217,6 +4301,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|old_base_type
+condition|)
+block|{
+case|case
+name|GIMP_GRAY
+case|:
 for|for
 control|(
 name|pr
@@ -4256,14 +4348,6 @@ name|destPR
 operator|.
 name|data
 expr_stmt|;
-switch|switch
-condition|(
-name|old_base_type
-condition|)
-block|{
-case|case
-name|GIMP_GRAY
-case|:
 for|for
 control|(
 name|row
@@ -4361,16 +4445,49 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
+block|}
 break|break;
 case|case
 name|GIMP_INDEXED
 case|:
-name|cmap
+for|for
+control|(
+name|pr
 operator|=
-name|gimp_drawable_cmap
+name|pixel_regions_register
 argument_list|(
-name|drawable
+literal|2
+argument_list|,
+operator|&
+name|srcPR
+argument_list|,
+operator|&
+name|destPR
 argument_list|)
+init|;
+name|pr
+operator|!=
+name|NULL
+condition|;
+name|pr
+operator|=
+name|pixel_regions_process
+argument_list|(
+name|pr
+argument_list|)
+control|)
+block|{
+name|src
+operator|=
+name|srcPR
+operator|.
+name|data
+expr_stmt|;
+name|dest
+operator|=
+name|destPR
+operator|.
+name|data
 expr_stmt|;
 for|for
 control|(
@@ -4486,10 +4603,10 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
+block|}
 break|break;
 default|default:
 break|break;
-block|}
 block|}
 block|}
 end_function
@@ -4529,6 +4646,7 @@ decl_stmt|;
 name|gboolean
 name|has_alpha
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4543,6 +4661,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -4588,6 +4707,13 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
+name|cmap
+operator|=
+name|gimp_drawable_cmap
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -4646,6 +4772,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|old_base_type
+condition|)
+block|{
+case|case
+name|GIMP_RGB
+case|:
 for|for
 control|(
 name|pr
@@ -4685,14 +4819,6 @@ name|destPR
 operator|.
 name|data
 expr_stmt|;
-switch|switch
-condition|(
-name|old_base_type
-condition|)
-block|{
-case|case
-name|GIMP_RGB
-case|:
 for|for
 control|(
 name|row
@@ -4794,16 +4920,49 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
+block|}
 break|break;
 case|case
 name|GIMP_INDEXED
 case|:
-name|cmap
+for|for
+control|(
+name|pr
 operator|=
-name|gimp_drawable_cmap
+name|pixel_regions_register
 argument_list|(
-name|drawable
+literal|2
+argument_list|,
+operator|&
+name|srcPR
+argument_list|,
+operator|&
+name|destPR
 argument_list|)
+init|;
+name|pr
+operator|!=
+name|NULL
+condition|;
+name|pr
+operator|=
+name|pixel_regions_process
+argument_list|(
+name|pr
+argument_list|)
+control|)
+block|{
+name|src
+operator|=
+name|srcPR
+operator|.
+name|data
+expr_stmt|;
+name|dest
+operator|=
+name|destPR
+operator|.
+name|data
 expr_stmt|;
 for|for
 control|(
@@ -4916,10 +5075,10 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
+block|}
 break|break;
 default|default:
 break|break;
-block|}
 block|}
 block|}
 end_function
@@ -5015,6 +5174,7 @@ block|{
 name|PixelRegion
 name|srcPR
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -5168,6 +5328,7 @@ block|{
 name|PixelRegion
 name|srcPR
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -5336,7 +5497,7 @@ name|total_size
 operator|+=
 name|size
 expr_stmt|;
-comment|/*fprintf(stderr, " [%d,%d - %d,%d]", srcPR.x, srcPR.y, offsetx, offsety);*/
+comment|/* g_printerr (" [%d,%d - %d,%d]", srcPR.x, srcPR.y, offsetx, offsety); */
 if|if
 condition|(
 name|needs_quantize
@@ -5347,7 +5508,7 @@ condition|(
 name|alpha_dither
 condition|)
 block|{
-comment|/* if alpha-dithering, we need to be deterministic w.r.t. offsets */
+comment|/* if alpha-dithering,                  we need to be deterministic w.r.t. offsets */
 name|col
 operator|=
 name|srcPR
@@ -5729,7 +5890,7 @@ goto|goto
 name|already_found
 goto|;
 block|}
-comment|/* Colour was not in the table of 		       * existing colours 		       */
+comment|/* Colour was not in the table of                        * existing colours                        */
 name|num_found_cols
 operator|++
 expr_stmt|;
@@ -5740,19 +5901,19 @@ operator|>
 name|col_limit
 condition|)
 block|{
-comment|/* There are more colours in the image 			   *  than were allowed.  We switch to plain 			   *  histogram calculation with a view to 			   *  quantizing at a later stage. 			   */
+comment|/* There are more colours in the image                            *  than were allowed.  We switch to plain                            *  histogram calculation with a view to                            *  quantizing at a later stage.                            */
 name|needs_quantize
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*			  g_print ("\nmax colours exceeded - needs quantize.\n");*/
+comment|/*                      g_print ("\nmax colours exceeded - needs quantize.\n");*/
 goto|goto
 name|already_found
 goto|;
 block|}
 else|else
 block|{
-comment|/* Remember the new colour we just found. 			   */
+comment|/* Remember the new colour we just found.                            */
 name|found_cols
 index|[
 name|num_found_cols
@@ -5969,7 +6130,7 @@ operator|/
 name|BIAS_FACTOR
 operator|)
 expr_stmt|;
-comment|/*Lbias = 1.0; 	fprintf(stderr, " [[%d]] ", numboxes); 	fprintf(stderr, "Using ramped L-split bias.\n"); 	fprintf(stderr, "R\n");       */
+comment|/*Lbias = 1.0;         fprintf(stderr, " [[%d]] ", numboxes);         fprintf(stderr, "Using ramped L-split bias.\n");         fprintf(stderr, "R\n");       */
 block|}
 else|else
 name|Lbias
@@ -6065,7 +6226,7 @@ argument_list|)
 decl_stmt|;
 else|#
 directive|else
-comment|/* 	   * Sorry about the mess, otherwise would get : 	   * error C2520: conversion from unsigned __int64 to double 	   *              not implemented, use signed __int64 	   */
+comment|/*            * Sorry about the mess, otherwise would get :            * error C2520: conversion from unsigned __int64 to double            *              not implemented, use signed __int64            */
 name|etype
 name|rpe
 init|=
@@ -7406,19 +7567,19 @@ block|tempRerror = 0;   boxp->Rhalferror = Rmin;
 warning|#
 directive|warning
 warning|r<=?
-block|for (R = Rmin; R<= Rmax; R++)     {       for (G = Gmin; G<= Gmax; G++) 	{ 	  for (B = Bmin; B<= Bmax; B++) 	    { 	      ColorFreq freq_here; 	      freq_here = *HIST_LIN(histogram, R, G, B); 	      if (freq_here != 0) 		{ 		  int re; 		  int idist; 		  double dist;  		  dummybox.Rmin = dummybox.Rmax = R; 		  dummybox.Gmin = dummybox.Gmax = G; 		  dummybox.Bmin = dummybox.Bmax = B; 		  compute_color_lin8(&dummyqo, histogram,&dummybox, 1);  		  re = dummyqo.cmap[0].red   - dummyqo.cmap[1].red;  		  tempRerror += freq_here * (re) * (re);  		  if (tempRerror*2>= boxp->rerror) 		    goto green_axisscan; 		  else 		    boxp->Rhalferror = R; 		} 	    } 	}     }   fprintf(stderr, " D:");  green_axisscan:    fprintf(stderr, "<%d: %llu/%llu> ", R, tempRerror, boxp->rerror);
+block|for (R = Rmin; R<= Rmax; R++)     {       for (G = Gmin; G<= Gmax; G++)         {           for (B = Bmin; B<= Bmax; B++)             {               ColorFreq freq_here;               freq_here = *HIST_LIN(histogram, R, G, B);               if (freq_here != 0)                 {                   int re;                   int idist;                   double dist;                    dummybox.Rmin = dummybox.Rmax = R;                   dummybox.Gmin = dummybox.Gmax = G;                   dummybox.Bmin = dummybox.Bmax = B;                   compute_color_lin8(&dummyqo, histogram,&dummybox, 1);                    re = dummyqo.cmap[0].red   - dummyqo.cmap[1].red;                    tempRerror += freq_here * (re) * (re);                    if (tempRerror*2>= boxp->rerror)                     goto green_axisscan;                   else                     boxp->Rhalferror = R;                 }             }         }     }   fprintf(stderr, " D:");  green_axisscan:    fprintf(stderr, "<%d: %llu/%llu> ", R, tempRerror, boxp->rerror);
 comment|/* Scan again, taking note of halfway error point for green axis */
 block|tempGerror = 0;   boxp->Ghalferror = Gmin;
 warning|#
 directive|warning
 warning|G<=?
-block|for (G = Gmin; G<= Gmax; G++)     {       for (R = Rmin; R<= Rmax; R++) 	{ 	  for (B = Bmin; B<= Bmax; B++) 	    { 	      ColorFreq freq_here; 	      freq_here = *HIST_LIN(histogram, R, G, B); 	      if (freq_here != 0) 		{ 		  int ge; 		  dummybox.Rmin = dummybox.Rmax = R; 		  dummybox.Gmin = dummybox.Gmax = G; 		  dummybox.Bmin = dummybox.Bmax = B; 		  compute_color_lin8(&dummyqo, histogram,&dummybox, 1);  		  ge = dummyqo.cmap[0].green - dummyqo.cmap[1].green;  		  tempGerror += freq_here * (ge) * (ge);  		  if (tempGerror*2>= boxp->gerror) 		    goto blue_axisscan; 		  else 		    boxp->Ghalferror = G; 		} 	    } 	}     }   blue_axisscan:
+block|for (G = Gmin; G<= Gmax; G++)     {       for (R = Rmin; R<= Rmax; R++)         {           for (B = Bmin; B<= Bmax; B++)             {               ColorFreq freq_here;               freq_here = *HIST_LIN(histogram, R, G, B);               if (freq_here != 0)                 {                   int ge;                   dummybox.Rmin = dummybox.Rmax = R;                   dummybox.Gmin = dummybox.Gmax = G;                   dummybox.Bmin = dummybox.Bmax = B;                   compute_color_lin8(&dummyqo, histogram,&dummybox, 1);                    ge = dummyqo.cmap[0].green - dummyqo.cmap[1].green;                    tempGerror += freq_here * (ge) * (ge);                    if (tempGerror*2>= boxp->gerror)                     goto blue_axisscan;                   else                     boxp->Ghalferror = G;                 }             }         }     }   blue_axisscan:
 comment|/* Scan again, taking note of halfway error point for blue axis */
 block|tempBerror = 0;   boxp->Bhalferror = Bmin;
 warning|#
 directive|warning
 warning|B<=?
-block|for (B = Bmin; B<= Bmax; B++)     {       for (R = Rmin; R<= Rmax; R++) 	{ 	  for (G = Gmin; G<= Gmax; G++) 	    { 	      ColorFreq freq_here; 	      freq_here = *HIST_LIN(histogram, R, G, B); 	      if (freq_here != 0) 		{ 		  int be; 		  dummybox.Rmin = dummybox.Rmax = R; 		  dummybox.Gmin = dummybox.Gmax = G; 		  dummybox.Bmin = dummybox.Bmax = B; 		  compute_color_lin8(&dummyqo, histogram,&dummybox, 1);  		  be = dummyqo.cmap[0].blue  - dummyqo.cmap[1].blue;  		  tempBerror += freq_here * (be) * (be);  		  if (tempBerror*2>= boxp->berror) 		    goto finished_axesscan; 		  else 		    boxp->Bhalferror = B; 		} 	    } 	}     }  finished_axesscan:
+block|for (B = Bmin; B<= Bmax; B++)     {       for (R = Rmin; R<= Rmax; R++)         {           for (G = Gmin; G<= Gmax; G++)             {               ColorFreq freq_here;               freq_here = *HIST_LIN(histogram, R, G, B);               if (freq_here != 0)                 {                   int be;                   dummybox.Rmin = dummybox.Rmax = R;                   dummybox.Gmin = dummybox.Gmax = G;                   dummybox.Bmin = dummybox.Bmax = B;                   compute_color_lin8(&dummyqo, histogram,&dummybox, 1);                    be = dummyqo.cmap[0].blue  - dummyqo.cmap[1].blue;                    tempBerror += freq_here * (be) * (be);                    if (tempBerror*2>= boxp->berror)                     goto finished_axesscan;                   else                     boxp->Bhalferror = B;                 }             }         }     }  finished_axesscan:
 else|#
 directive|else
 name|boxp
@@ -7499,7 +7660,7 @@ decl_stmt|;
 name|int
 name|ratio
 decl_stmt|;
-comment|/*     fprintf(stderr, "[%d,%d,%d=%d,%d,%d] ", 	    (Rmax - Rmin), (Gmax - Gmin), (Bmax - Bmin), 	    dist0, dist1, dist2);     */
+comment|/*     fprintf(stderr, "[%d,%d,%d=%d,%d,%d] ",             (Rmax - Rmin), (Gmax - Gmin), (Bmax - Bmin),             dist0, dist1, dist2);     */
 if|if
 condition|(
 name|dist0
@@ -7859,7 +8020,7 @@ directive|endif
 comment|/*   fprintf(stderr, " %d,%d", dummyqo.cmap[0].blue, boxp->Bmax);    g_assert(boxp->Rhalferror>= boxp->Rmin);   g_assert(boxp->Rhalferror< boxp->Rmax);   g_assert(boxp->Ghalferror>= boxp->Gmin);   g_assert(boxp->Ghalferror< boxp->Gmax);   g_assert(boxp->Bhalferror>= boxp->Bmin);   g_assert(boxp->Bhalferror< boxp->Bmax);*/
 comment|/*boxp->error = (sqrt((double)(boxp->error/ccount)));*/
 comment|/*  boxp->rerror = (sqrt((double)((boxp->rerror)/ccount)));   boxp->gerror = (sqrt((double)((boxp->gerror)/ccount)));   boxp->berror = (sqrt((double)((boxp->berror)/ccount)));*/
-comment|/*printf(":%lld / %ld: ", boxp->error, ccount);   printf("(%d-%d-%d)(%d-%d-%d)(%d-%d-%d)\n", 	 Rmin, boxp->Rhalferror, Rmax, 	 Gmin, boxp->Ghalferror, Gmax, 	 Bmin, boxp->Bhalferror, Bmax 	 ); 	 fflush(stdout);*/
+comment|/*printf(":%lld / %ld: ", boxp->error, ccount);   printf("(%d-%d-%d)(%d-%d-%d)(%d-%d-%d)\n",          Rmin, boxp->Rhalferror, Rmax,          Gmin, boxp->Ghalferror, Gmax,          Bmin, boxp->Bhalferror, Bmax          );          fflush(stdout);*/
 name|boxp
 operator|->
 name|colorcount
@@ -8486,7 +8647,7 @@ name|red
 expr_stmt|;
 block|}
 else|else
-comment|/* The only situation where total==0 is if the image was null or 	*  all-transparent.  In that case we just put a dummy value in 	*  the colourmap. 	*/
+comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colourmap.         */
 block|{
 name|quantobj
 operator|->
@@ -8727,7 +8888,7 @@ name|blue
 decl_stmt|;
 name|lin_to_rgb
 argument_list|(
-comment|/*(Rtotal + (total>>1)) / total, 		 (Gtotal + (total>>1)) / total, 		 (Btotal + (total>>1)) / total,*/
+comment|/*(Rtotal + (total>>1)) / total,                  (Gtotal + (total>>1)) / total,                  (Btotal + (total>>1)) / total,*/
 operator|(
 name|double
 operator|)
@@ -8803,7 +8964,7 @@ name|blue
 expr_stmt|;
 block|}
 else|else
-comment|/* The only situation where total==0 is if the image was null or 	*  all-transparent.  In that case we just put a dummy value in 	*  the colourmap. 	*/
+comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colourmap.         */
 block|{
 name|quantobj
 operator|->
@@ -9112,7 +9273,7 @@ name|total
 expr_stmt|;
 block|}
 else|else
-comment|/* The only situation where total==0 is if the image was null or 	*  all-transparent.  In that case we just put a dummy value in 	*  the colourmap. 	*/
+comment|/* The only situation where total==0 is if the image was null or         *  all-transparent.  In that case we just put a dummy value in         *  the colourmap.         */
 block|{
 name|g_warning
 argument_list|(
@@ -10464,7 +10625,7 @@ operator|*
 name|inB
 expr_stmt|;
 block|}
-comment|/*    else             { 		inG = 0; 		inB = 0; 		} */
+comment|/*    else             {                 inG = 0;                 inB = 0;                 } */
 comment|/* Form the initial difference increments */
 name|inR
 operator|=
@@ -11287,7 +11448,7 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-comment|/* fprintf(stderr, "custompal_pass1: using (theCustomPalette %s) from (file %s)\n", 			 theCustomPalette->name, theCustomPalette->filename); */
+comment|/* fprintf(stderr, "custompal_pass1: using (theCustomPalette %s) from (file %s)\n",                          theCustomPalette->name, theCustomPalette->filename); */
 for|for
 control|(
 name|i
@@ -11431,10 +11592,12 @@ name|ColorFreq
 modifier|*
 name|cachep
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -11846,10 +12009,12 @@ name|Color
 modifier|*
 name|color2
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -12497,10 +12662,12 @@ name|ColorFreq
 modifier|*
 name|cachep
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -12914,7 +13081,7 @@ argument_list|,
 name|B
 argument_list|)
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest 		 colormap entry and update the cache */
+comment|/* If we have not seen this color before, find nearest                  colormap entry and update the cache */
 if|if
 condition|(
 operator|*
@@ -13053,10 +13220,12 @@ name|Color
 modifier|*
 name|color2
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -13481,7 +13650,7 @@ argument_list|,
 name|B
 argument_list|)
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest 		 colormap entry and update the cache */
+comment|/* If we have not seen this color before, find nearest                  colormap entry and update the cache */
 if|if
 condition|(
 operator|*
@@ -14049,10 +14218,12 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -14883,10 +15054,12 @@ name|src_bytes
 decl_stmt|,
 name|dest_bytes
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -15993,10 +16166,12 @@ name|src_bytes
 decl_stmt|,
 name|dest_bytes
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -17088,7 +17263,7 @@ if|#
 directive|if
 literal|0
 comment|/* hmm. */
-block|r = range_limiter[src[red_pix] + error_limiter[*rpr]]; 	  g = range_limiter[src[green_pix] + error_limiter[*gpr]]; 	  b = range_limiter[src[blue_pix] + error_limiter[*bpr]];  	  re = r>> R_SHIFT; 	  ge = g>> G_SHIFT; 	  be = b>> B_SHIFT;  	  rgb_to_lin (r, g, b,&re,&ge,&be);
+block|r = range_limiter[src[red_pix] + error_limiter[*rpr]];           g = range_limiter[src[green_pix] + error_limiter[*gpr]];           b = range_limiter[src[blue_pix] + error_limiter[*bpr]];            re = r>> R_SHIFT;           ge = g>> G_SHIFT;           be = b>> B_SHIFT;            rgb_to_lin (r, g, b,&re,&ge,&be);
 endif|#
 directive|endif
 name|rgb_to_unshifted_lin
@@ -17118,7 +17293,7 @@ operator|&
 name|be
 argument_list|)
 expr_stmt|;
-comment|/* 	    re = CLAMP(re, global_rmin, global_rmax); 	    ge = CLAMP(ge, global_gmin, global_gmax); 	    be = CLAMP(be, global_bmin, global_bmax);*/
+comment|/*             re = CLAMP(re, global_rmin, global_rmax);             ge = CLAMP(ge, global_gmin, global_gmax);             be = CLAMP(be, global_bmin, global_bmax);*/
 name|re
 operator|=
 name|range_limiter
@@ -17180,7 +17355,7 @@ name|be
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* If we have not seen this color before, find nearest 	     colormap entry and update the cache */
+comment|/* If we have not seen this color before, find nearest              colormap entry and update the cache */
 if|if
 condition|(
 operator|*
@@ -17230,8 +17405,8 @@ index|]
 operator|=
 name|index
 expr_stmt|;
-comment|/*if (re> global_rmax) 	    re = (re + 3*global_rmax) / 4; 	  else if (re< global_rmin) 	  re = (re + 3*global_rmin) / 4;*/
-comment|/* We constrain chroma error extra-hard so that it 	     doesn't run away and steal the thunder from the 	     lightness error where all the detail usually is. */
+comment|/*if (re> global_rmax)             re = (re + 3*global_rmax) / 4;           else if (re< global_rmin)           re = (re + 3*global_rmin) / 4;*/
+comment|/* We constrain chroma error extra-hard so that it              doesn't run away and steal the thunder from the              lightness error where all the detail usually is. */
 if|if
 condition|(
 name|ge
@@ -17320,10 +17495,10 @@ if|#
 directive|if
 literal|0
 block|if ((re> 0&& re< 255)
-comment|/* HMM&& 	      ge>= 0&& ge<= 255&& 	      be>= 0&& be<= 255*/
-block|) 	    { 	      ge = ge - color->green; 	      be = be - color->blue; 	      re = re - color->red; 	    } 	  else 	    {
+comment|/* HMM&&               ge>= 0&& ge<= 255&&               be>= 0&& be<= 255*/
+block|)             {               ge = ge - color->green;               be = be - color->blue;               re = re - color->red;             }           else             {
 comment|/* colour pretty much undefined now; nullify error. */
-block|re = ge = be = 0; 	    }
+block|re = ge = be = 0;             }
 endif|#
 directive|endif
 if|if
