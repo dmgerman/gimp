@@ -387,6 +387,24 @@ argument_list|,
 literal|"reorderable"
 argument_list|)
 expr_stmt|;
+name|g_object_class_override_property
+argument_list|(
+name|object_class
+argument_list|,
+name|GIMP_CONTAINER_VIEW_PROP_PREVIEW_SIZE
+argument_list|,
+literal|"preview-size"
+argument_list|)
+expr_stmt|;
+name|g_object_class_override_property
+argument_list|(
+name|object_class
+argument_list|,
+name|GIMP_CONTAINER_VIEW_PROP_PREVIEW_BORDER_WIDTH
+argument_list|,
+literal|"preview-border-width"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
