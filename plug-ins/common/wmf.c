@@ -8,7 +8,7 @@ DECL|macro|VERSION
 define|#
 directive|define
 name|VERSION
-value|"1999-03-17"
+value|"1999-09-30"
 end_define
 
 begin_include
@@ -4324,7 +4324,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20108
+DECL|struct|__anon2aab7edf0108
 block|{
 DECL|member|scale
 name|double
@@ -4352,7 +4352,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20208
+DECL|struct|__anon2aab7edf0208
 block|{
 DECL|member|run
 name|gint
@@ -4379,7 +4379,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20308
+DECL|struct|__anon2aab7edf0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4400,7 +4400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298eddc20403
+DECL|enum|__anon2aab7edf0403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -4431,7 +4431,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20508
+DECL|struct|__anon2aab7edf0508
 block|{
 DECL|member|dummy
 name|int
@@ -4446,7 +4446,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20608
+DECL|struct|__anon2aab7edf0608
 block|{
 DECL|member|color
 name|GdkColor
@@ -4473,7 +4473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20708
+DECL|struct|__anon2aab7edf0708
 block|{
 DECL|member|dummy
 name|int
@@ -4488,7 +4488,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20808
+DECL|struct|__anon2aab7edf0808
 block|{
 DECL|member|color
 name|GdkColor
@@ -4515,7 +4515,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20908
+DECL|struct|__anon2aab7edf0908
 block|{
 DECL|member|font
 name|GdkFont
@@ -4531,7 +4531,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20a08
+DECL|struct|__anon2aab7edf0a08
 block|{
 DECL|member|dummy
 name|int
@@ -4546,14 +4546,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20b08
+DECL|struct|__anon2aab7edf0b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon298eddc20c0a
+DECL|union|__anon2aab7edf0c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -4592,7 +4592,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20d08
+DECL|struct|__anon2aab7edf0d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -4645,7 +4645,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20e08
+DECL|struct|__anon2aab7edf0e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -4696,7 +4696,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eddc20f08
+DECL|struct|__anon2aab7edf0f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -13509,10 +13509,34 @@ name|image
 operator|->
 name|bpp
 operator|>
-literal|3
+literal|4
 condition|)
 block|{
 comment|/* Workaround for bugs in GDK */
+if|if
+condition|(
+name|image
+operator|->
+name|bpp
+operator|>
+literal|4
+condition|)
+comment|/* GDK has set image->bpp to bits-per-pixel, 		     * correct it to bytes-per-pixel. 		     */
+name|image
+operator|->
+name|bpp
+operator|=
+operator|(
+name|image
+operator|->
+name|bpp
+operator|+
+literal|7
+operator|)
+operator|/
+literal|8
+expr_stmt|;
+elseif|else
 if|if
 condition|(
 name|image
