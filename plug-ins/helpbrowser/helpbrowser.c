@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1e5d700103
+DECL|enum|__anon29d6bb800103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -159,7 +159,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e5d700208
+DECL|struct|__anon29d6bb800208
 block|{
 DECL|member|title
 specifier|const
@@ -594,7 +594,7 @@ operator|!
 operator|(
 name|ref
 operator|=
-name|queue_prev
+name|queue_next
 argument_list|(
 name|queue
 argument_list|)
@@ -608,7 +608,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|queue_move_prev
+name|queue_move_next
 argument_list|(
 name|queue
 argument_list|)
@@ -703,6 +703,7 @@ name|item
 operator|->
 name|count
 condition|)
+block|{
 name|compare_text
 operator|=
 name|g_strdup_printf
@@ -720,7 +721,9 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|compare_text
 operator|=
 operator|(
@@ -731,6 +734,7 @@ name|item
 operator|->
 name|title
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|strcmp
@@ -763,11 +767,13 @@ name|item
 operator|->
 name|count
 condition|)
+block|{
 name|g_free
 argument_list|(
 name|compare_text
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
