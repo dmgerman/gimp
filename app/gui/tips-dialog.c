@@ -856,7 +856,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|15
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -866,7 +866,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -1029,7 +1029,7 @@ argument_list|(
 name|bbox
 argument_list|)
 argument_list|,
-literal|5
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

@@ -3434,7 +3434,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

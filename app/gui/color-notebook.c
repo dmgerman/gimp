@@ -595,7 +595,7 @@ operator|->
 name|selection
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gimp_color_selection_set_show_alpha

@@ -1408,7 +1408,7 @@ argument_list|(
 name|info_table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d983240103
+DECL|enum|__anon291cd01a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -490,7 +490,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
