@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f49acf0103
+DECL|enum|__anon29ea299f0103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -63,6 +63,14 @@ decl_stmt|;
 DECL|member|height
 name|int
 name|height
+decl_stmt|;
+DECL|member|ratio_x
+name|double
+name|ratio_x
+decl_stmt|;
+DECL|member|ratio_y
+name|double
+name|ratio_y
 decl_stmt|;
 DECL|member|off_x
 name|int
