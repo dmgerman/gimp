@@ -318,6 +318,8 @@ literal|"Manish Singh"
 block|,
 literal|"Daniel Skarda"
 block|,
+literal|"Adam Spiers"
+block|,
 literal|"Nathan Summers"
 block|,
 literal|"Mike Sweet"

@@ -203,6 +203,16 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
+name|gboolean
+name|gimp_selection_combine
+parameter_list|(
+name|gint32
+name|channel_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
+parameter_list|)
+function_decl|;
 ifdef|#
 directive|ifdef
 name|__cplusplus
