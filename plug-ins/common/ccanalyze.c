@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a479c450103
+DECL|enum|__anon28e8c08b0103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -1038,11 +1038,13 @@ for|for
 control|(
 name|x
 operator|=
-name|x1
+literal|0
 init|;
 name|x
 operator|<
 name|x2
+operator|-
+name|x1
 condition|;
 name|x
 operator|++
