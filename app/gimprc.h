@@ -424,6 +424,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+name|gchar
+modifier|*
+name|module_db_load_inhibit
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
 name|gboolean
 name|show_indicators
 decl_stmt|;

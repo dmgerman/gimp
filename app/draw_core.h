@@ -16,12 +16,6 @@ directive|define
 name|__DRAW_CORE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools/tool.h"
-end_include
-
 begin_comment
 comment|/*  drawing states  */
 end_comment

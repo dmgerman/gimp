@@ -1465,6 +1465,10 @@ argument_list|(
 operator|-
 literal|1
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|gimp_data_directory
 argument_list|()
 argument_list|)

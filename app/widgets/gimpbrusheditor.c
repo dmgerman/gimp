@@ -87,9 +87,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GtkAllocation
 modifier|*
-name|event
+name|allocation
 parameter_list|,
 name|BrushEditGeneratedWindow
 modifier|*
@@ -1900,16 +1900,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|brush_edit_preview_resize (GtkWidget * widget,GdkEvent * event,BrushEditGeneratedWindow * begw)
+DECL|function|brush_edit_preview_resize (GtkWidget * widget,GtkAllocation * allocation,BrushEditGeneratedWindow * begw)
 name|brush_edit_preview_resize
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GtkAllocation
 modifier|*
-name|event
+name|allocation
 parameter_list|,
 name|BrushEditGeneratedWindow
 modifier|*

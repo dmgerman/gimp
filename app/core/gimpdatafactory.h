@@ -184,6 +184,7 @@ modifier|*
 name|data_path
 decl_stmt|;
 DECL|member|loader_entries
+specifier|const
 name|GimpDataFactoryLoaderEntry
 modifier|*
 name|loader_entries
@@ -240,6 +241,7 @@ modifier|*
 modifier|*
 name|data_path
 parameter_list|,
+specifier|const
 name|GimpDataFactoryLoaderEntry
 modifier|*
 name|loader_entries

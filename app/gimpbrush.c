@@ -1097,7 +1097,7 @@ block|}
 end_function
 
 begin_function
-name|GimpBrush
+name|GimpData
 modifier|*
 DECL|function|gimp_brush_new (const gchar * name)
 name|gimp_brush_new
@@ -1148,13 +1148,16 @@ name|name
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_DATA
+argument_list|(
 name|brush
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
-name|GimpBrush
+name|GimpData
 modifier|*
 DECL|function|gimp_brush_get_standard (void)
 name|gimp_brush_get_standard
@@ -1228,13 +1231,16 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
+name|GIMP_DATA
+argument_list|(
 name|standard_brush
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
-name|GimpBrush
+name|GimpData
 modifier|*
 DECL|function|gimp_brush_load (const gchar * filename)
 name|gimp_brush_load
@@ -1342,7 +1348,10 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
+name|GIMP_DATA
+argument_list|(
 name|brush
+argument_list|)
 return|;
 block|}
 end_function

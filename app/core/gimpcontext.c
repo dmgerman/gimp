@@ -885,7 +885,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a4d6430103
+DECL|enum|__anon2b55b44d0103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -928,7 +928,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a4d6430203
+DECL|enum|__anon2b55b44d0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -6234,8 +6234,11 @@ name|gimp_context_real_set_brush
 argument_list|(
 name|context
 argument_list|,
+name|GIMP_BRUSH
+argument_list|(
 name|gimp_brush_get_standard
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -6340,8 +6343,11 @@ name|standard_brush
 condition|)
 name|standard_brush
 operator|=
+name|GIMP_BRUSH
+argument_list|(
 name|gimp_brush_get_standard
 argument_list|()
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -6894,8 +6900,11 @@ name|gimp_context_real_set_pattern
 argument_list|(
 name|context
 argument_list|,
+name|GIMP_PATTERN
+argument_list|(
 name|gimp_pattern_get_standard
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7000,8 +7009,11 @@ name|standard_pattern
 condition|)
 name|standard_pattern
 operator|=
+name|GIMP_PATTERN
+argument_list|(
 name|gimp_pattern_get_standard
 argument_list|()
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -7537,8 +7549,11 @@ name|gimp_context_real_set_gradient
 argument_list|(
 name|context
 argument_list|,
+name|GIMP_GRADIENT
+argument_list|(
 name|gimp_gradient_get_standard
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7643,8 +7658,11 @@ name|standard_gradient
 condition|)
 name|standard_gradient
 operator|=
+name|GIMP_GRADIENT
+argument_list|(
 name|gimp_gradient_get_standard
 argument_list|()
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -8118,8 +8136,11 @@ name|gimp_context_real_set_palette
 argument_list|(
 name|context
 argument_list|,
+name|GIMP_PALETTE
+argument_list|(
 name|gimp_palette_get_standard
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -8224,8 +8245,11 @@ name|standard_palette
 condition|)
 name|standard_palette
 operator|=
+name|GIMP_PALETTE
+argument_list|(
 name|gimp_palette_get_standard
 argument_list|()
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2934671c0103
+DECL|enum|__anon2c6b96f50103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -2982,8 +2982,11 @@ literal|0
 condition|)
 name|brush
 operator|=
+name|GIMP_BRUSH
+argument_list|(
 name|gimp_brush_get_standard
 argument_list|()
+argument_list|)
 expr_stmt|;
 else|else
 name|brush
@@ -3362,8 +3365,11 @@ literal|0
 condition|)
 name|pattern
 operator|=
+name|GIMP_PATTERN
+argument_list|(
 name|gimp_pattern_get_standard
 argument_list|()
+argument_list|)
 expr_stmt|;
 else|else
 name|pattern
@@ -3754,8 +3760,11 @@ literal|0
 condition|)
 name|gradient
 operator|=
+name|GIMP_GRADIENT
+argument_list|(
 name|gimp_gradient_get_standard
 argument_list|()
+argument_list|)
 expr_stmt|;
 else|else
 name|gradient
@@ -4134,8 +4143,11 @@ literal|0
 condition|)
 name|palette
 operator|=
+name|GIMP_PALETTE
+argument_list|(
 name|gimp_palette_get_standard
 argument_list|()
+argument_list|)
 expr_stmt|;
 else|else
 name|palette

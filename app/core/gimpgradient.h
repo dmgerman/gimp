@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7431f90103
+DECL|enum|__anon2b9614200103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -60,7 +60,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7431f90203
+DECL|enum|__anon2b9614200203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB
@@ -245,7 +245,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpGradient
+name|GimpData
 modifier|*
 name|gimp_gradient_new
 parameter_list|(
@@ -258,7 +258,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpGradient
+name|GimpData
 modifier|*
 name|gimp_gradient_get_standard
 parameter_list|(
@@ -268,7 +268,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpGradient
+name|GimpData
 modifier|*
 name|gimp_gradient_load
 parameter_list|(

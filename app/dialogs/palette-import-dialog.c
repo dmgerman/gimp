@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296bc4e80103
+DECL|enum|__anon2b6fd9c50103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -2314,9 +2314,12 @@ name|loop
 decl_stmt|;
 name|palette
 operator|=
+name|GIMP_PALETTE
+argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sample_sz
@@ -3147,9 +3150,12 @@ argument_list|)
 expr_stmt|;
 name|palette
 operator|=
+name|GIMP_PALETTE
+argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_slist_foreach
@@ -3645,9 +3651,12 @@ condition|)
 return|return;
 name|palette
 operator|=
+name|GIMP_PALETTE
+argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|pname
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

@@ -238,6 +238,19 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  tools  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpTool
+typedef|typedef
+name|struct
+name|_GimpTool
+name|GimpTool
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  widgets  */
 end_comment
 
@@ -377,6 +390,15 @@ typedef|typedef
 name|struct
 name|_BezierSelect
 name|BezierSelect
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|BitmapCursor
+typedef|typedef
+name|struct
+name|_BitmapCursor
+name|BitmapCursor
 typedef|;
 end_typedef
 

@@ -188,7 +188,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpBrush
+name|GimpData
 modifier|*
 name|gimp_brush_new
 parameter_list|(
@@ -201,7 +201,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpBrush
+name|GimpData
 modifier|*
 name|gimp_brush_get_standard
 parameter_list|(
@@ -211,7 +211,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpBrush
+name|GimpData
 modifier|*
 name|gimp_brush_load
 parameter_list|(

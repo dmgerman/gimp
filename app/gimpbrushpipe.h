@@ -85,7 +85,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299d5ef60103
+DECL|enum|__anon289274690103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -206,7 +206,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpBrush
+name|GimpData
 modifier|*
 name|gimp_brush_pipe_load
 parameter_list|(

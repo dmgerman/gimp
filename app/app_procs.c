@@ -2313,6 +2313,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|gtkrc
+decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -2322,7 +2327,7 @@ modifier|*
 name|path
 decl_stmt|;
 comment|/*  parse the systemwide gtkrc  */
-name|filename
+name|gtkrc
 operator|=
 name|gimp_gtkrc
 argument_list|()
@@ -2338,12 +2343,12 @@ argument_list|(
 literal|"parsing \"%s\"\n"
 argument_list|)
 argument_list|,
-name|filename
+name|gtkrc
 argument_list|)
 expr_stmt|;
 name|gtk_rc_parse
 argument_list|(
-name|filename
+name|gtkrc
 argument_list|)
 expr_stmt|;
 comment|/*  parse the user gtkrc  */

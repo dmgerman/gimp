@@ -231,10 +231,11 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the environment   * variable GIMP_DIRECTORY exists, it is used. If it is an absolute path,   * it is used as is.  If it is a relative path, it is taken to be a   * subdirectory of the home directory. If it is relative path, and no home   * directory can be determined, it is taken to be a subdirectory of  * gimp_data_directory().  *  * The usual case is that no GIMP_DIRECTORY environment variable exists,   * and then we use the GIMPDIR subdirectory of the home directory. If no   * home directory exists, we use a per-user subdirectory of  * gimp_data_directory().  * In any case, we always return some non-empty string, whether it  * corresponds to an existing directory or not.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The user-specific GIMP settings directory.  **/
+comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the  * environment variable GIMP_DIRECTORY exists, it is used. If it is an  * absolute path, it is used as is.  If it is a relative path, it is  * taken to be a subdirectory of the home directory. If it is a  * relative path, and no home directory can be determined, it is taken  * to be a subdirectory of gimp_data_directory().  *  * The usual case is that no GIMP_DIRECTORY environment variable  * exists, and then we use the GIMPDIR subdirectory of the home  * directory. If no home directory exists, we use a per-user  * subdirectory of gimp_data_directory().  In any case, we always  * return some non-empty string, whether it corresponds to an existing  * directory or not.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The user-specific GIMP settings directory.  **/
 end_comment
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_directory (void)
@@ -460,9 +461,10 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_personal_rc_file (gchar * basename)
+DECL|function|gimp_personal_rc_file (const gchar * basename)
 name|gimp_personal_rc_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|basename
@@ -489,6 +491,7 @@ comment|/**  * gimp_data_directory:  *  * Returns the top directory for GIMP dat
 end_comment
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_data_directory (void)
@@ -716,6 +719,7 @@ comment|/**  * gimp_sysconf_directory:  *  * Returns the top directory for GIMP 
 end_comment
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_sysconf_directory (void)
@@ -861,7 +865,7 @@ argument_list|(
 literal|"GetModuleFilename failed\n"
 argument_list|)
 expr_stmt|;
-comment|/* If the executable file name is of the format        *<foobar>\bin\gimp.exe of<foobar>\plug-ins\filter.exe, * use        *<foobar>. Otherwise, use the directory where the executable        * is.        */
+comment|/* If the executable file name is of the format        *<foobar>\bin\gimp.exe or<foobar>\plug-ins\filter.exe, use        *<foobar>. Otherwise, use the directory where the executable        * is.        */
 name|sep1
 operator|=
 name|strrchr
@@ -943,6 +947,7 @@ comment|/**  * gimp_gtkrc:  *  * Returns the name of the GIMP's application-spec
 end_comment
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_gtkrc (void)
@@ -994,9 +999,10 @@ end_comment
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_path_parse (gchar * path,gint max_paths,gboolean check,GList ** check_failed)
+DECL|function|gimp_path_parse (const gchar * path,gint max_paths,gboolean check,GList ** check_failed)
 name|gimp_path_parse
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|path

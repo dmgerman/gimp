@@ -1056,7 +1056,7 @@ block|}
 end_function
 
 begin_function
-name|GimpBrush
+name|GimpData
 modifier|*
 DECL|function|gimp_brush_pipe_load (const gchar * filename)
 name|gimp_brush_pipe_load
@@ -2123,7 +2123,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_BRUSH
+name|GIMP_DATA
 argument_list|(
 name|pipe
 argument_list|)

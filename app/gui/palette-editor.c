@@ -5173,9 +5173,12 @@ name|palette
 decl_stmt|;
 name|palette
 operator|=
+name|GIMP_PALETTE
+argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|palette_name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_container_add
@@ -5539,9 +5542,12 @@ name|sel_list
 decl_stmt|;
 name|new_palette
 operator|=
+name|GIMP_PALETTE
+argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|palette_name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|palette_dialog

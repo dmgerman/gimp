@@ -649,7 +649,7 @@ block|}
 end_function
 
 begin_function
-name|GimpPattern
+name|GimpData
 modifier|*
 DECL|function|gimp_pattern_new (const gchar * name)
 name|gimp_pattern_new
@@ -794,13 +794,16 @@ literal|3
 expr_stmt|;
 block|}
 return|return
+name|GIMP_DATA
+argument_list|(
 name|pattern
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
-name|GimpPattern
+name|GimpData
 modifier|*
 DECL|function|gimp_pattern_get_standard (void)
 name|gimp_pattern_get_standard
@@ -968,13 +971,16 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
+name|GIMP_DATA
+argument_list|(
 name|standard_pattern
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
-name|GimpPattern
+name|GimpData
 modifier|*
 DECL|function|gimp_pattern_load (const gchar * filename)
 name|gimp_pattern_load
@@ -1406,7 +1412,10 @@ name|mask
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_DATA
+argument_list|(
 name|pattern
+argument_list|)
 return|;
 name|error
 label|:

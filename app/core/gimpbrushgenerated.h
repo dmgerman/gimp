@@ -151,7 +151,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpBrush
+name|GimpData
 modifier|*
 name|gimp_brush_generated_new
 parameter_list|(
@@ -171,7 +171,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpBrush
+name|GimpData
 modifier|*
 name|gimp_brush_generated_load
 parameter_list|(

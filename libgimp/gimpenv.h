@@ -30,6 +30,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
+specifier|const
 name|gchar
 modifier|*
 name|gimp_directory
@@ -41,11 +42,13 @@ name|gchar
 modifier|*
 name|gimp_personal_rc_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|basename
 parameter_list|)
 function_decl|;
+specifier|const
 name|gchar
 modifier|*
 name|gimp_data_directory
@@ -53,6 +56,7 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+specifier|const
 name|gchar
 modifier|*
 name|gimp_sysconf_directory
@@ -60,6 +64,7 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+specifier|const
 name|gchar
 modifier|*
 name|gimp_gtkrc
@@ -71,6 +76,7 @@ name|GList
 modifier|*
 name|gimp_path_parse
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|path

@@ -19,13 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"cursorutil.h"
+file|"gimpobject.h"
 end_include
 
 begin_define
@@ -107,15 +101,6 @@ directive|define
 name|NON_ACTIVE_LAYER
 value|(1<< 2)
 end_define
-
-begin_typedef
-DECL|typedef|GimpTool
-typedef|typedef
-name|struct
-name|_GimpTool
-name|GimpTool
-typedef|;
-end_typedef
 
 begin_comment
 comment|/*  Tool action function declarations  */

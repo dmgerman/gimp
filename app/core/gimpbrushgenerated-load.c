@@ -1549,19 +1549,11 @@ argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|brush
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-name|GimpBrush
+name|GimpData
 modifier|*
 DECL|function|gimp_brush_generated_new (gfloat radius,gfloat hardness,gfloat angle,gfloat aspect_ratio)
 name|gimp_brush_generated_new
@@ -1648,7 +1640,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_BRUSH
+name|GIMP_DATA
 argument_list|(
 name|brush
 argument_list|)
@@ -1657,7 +1649,7 @@ block|}
 end_function
 
 begin_function
-name|GimpBrush
+name|GimpData
 modifier|*
 DECL|function|gimp_brush_generated_load (const gchar * filename)
 name|gimp_brush_generated_load
@@ -1959,7 +1951,7 @@ name|mask
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_BRUSH
+name|GIMP_DATA
 argument_list|(
 name|brush
 argument_list|)

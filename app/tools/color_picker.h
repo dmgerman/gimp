@@ -74,14 +74,23 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_PICKER))
 end_define
 
-begin_function_decl
-name|GtkType
-name|gimp_color_picker_get_type
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_typedef
+DECL|typedef|GimpColorPicker
+typedef|typedef
+name|struct
+name|_GimpColorPicker
+name|GimpColorPicker
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpColorPickerClass
+typedef|typedef
+name|struct
+name|_GimpColorPickerClass
+name|GimpColorPickerClass
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_GimpColorPicker
@@ -125,34 +134,6 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|typedef|GimpColorPicker
-typedef|typedef
-name|struct
-name|_GimpColorPicker
-name|GimpColorPicker
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|GimpColorPicker
-comment|/* This is one of the stupidest parts of the gnu coding standards */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpColorPickerClass
-typedef|typedef
-name|struct
-name|_GimpColorPickerClass
-name|GimpColorPickerClass
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|GimpColorPickerClass
-comment|/* making the typedef and the struct one line like everyone else does confuses nobody */
-end_comment
-
 begin_decl_stmt
 specifier|extern
 name|gint
@@ -162,6 +143,25 @@ literal|5
 index|]
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GtkType
+name|gimp_color_picker_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpTool
+modifier|*
+name|gimp_color_picker_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gboolean
@@ -192,16 +192,6 @@ name|average_radius
 parameter_list|,
 name|gint
 name|final
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpTool
-modifier|*
-name|gimp_color_picker_new
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -383,6 +383,7 @@ name|properly_installed
 init|=
 name|TRUE
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -660,7 +661,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a2b2afc0108
+DECL|struct|__anon277e07f50108
 block|{
 DECL|member|directory
 name|gboolean
@@ -3194,6 +3195,10 @@ index|[
 literal|0
 index|]
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|gimp_directory
 argument_list|()
 expr_stmt|;

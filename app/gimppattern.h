@@ -132,7 +132,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpPattern
+name|GimpData
 modifier|*
 name|gimp_pattern_new
 parameter_list|(
@@ -145,7 +145,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpPattern
+name|GimpData
 modifier|*
 name|gimp_pattern_get_standard
 parameter_list|(
@@ -155,7 +155,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpPattern
+name|GimpData
 modifier|*
 name|gimp_pattern_load
 parameter_list|(

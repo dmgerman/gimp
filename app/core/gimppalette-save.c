@@ -929,7 +929,7 @@ block|}
 end_function
 
 begin_function
-name|GimpPalette
+name|GimpData
 modifier|*
 DECL|function|gimp_palette_new (const gchar * name)
 name|gimp_palette_new
@@ -990,13 +990,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_DATA
+argument_list|(
 name|palette
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
-name|GimpPalette
+name|GimpData
 modifier|*
 DECL|function|gimp_palette_get_standard (void)
 name|gimp_palette_get_standard
@@ -1039,13 +1042,16 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
+name|GIMP_DATA
+argument_list|(
 name|standard_palette
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
-name|GimpPalette
+name|GimpData
 modifier|*
 DECL|function|gimp_palette_load (const gchar * filename)
 name|gimp_palette_load
@@ -1780,7 +1786,10 @@ operator|=
 name|FALSE
 expr_stmt|;
 return|return
+name|GIMP_DATA
+argument_list|(
 name|palette
+argument_list|)
 return|;
 block|}
 end_function

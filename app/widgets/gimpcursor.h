@@ -16,10 +16,10 @@ directive|define
 name|__CURSORUTIL_H__
 end_define
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_BitmapCursor
 struct|struct
-DECL|struct|__anon2c29b2940108
+name|_BitmapCursor
 block|{
 DECL|member|bits
 name|guchar
@@ -60,16 +60,14 @@ name|GdkCursor
 modifier|*
 name|cursor
 decl_stmt|;
-DECL|typedef|BitmapCursor
 block|}
-name|BitmapCursor
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c29b2940203
+DECL|enum|__anon29f2fae60103
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR

@@ -359,7 +359,7 @@ end_function
 begin_function
 name|GimpDataFactory
 modifier|*
-DECL|function|gimp_data_factory_new (GtkType data_type,const gchar ** data_path,GimpDataFactoryLoaderEntry * loader_entries,gint n_loader_entries,GimpDataNewFunc new_func,GimpDataGetStandardFunc standard_func)
+DECL|function|gimp_data_factory_new (GtkType data_type,const gchar ** data_path,const GimpDataFactoryLoaderEntry * loader_entries,gint n_loader_entries,GimpDataNewFunc new_func,GimpDataGetStandardFunc standard_func)
 name|gimp_data_factory_new
 parameter_list|(
 name|GtkType
@@ -371,6 +371,7 @@ modifier|*
 modifier|*
 name|data_path
 parameter_list|,
+specifier|const
 name|GimpDataFactoryLoaderEntry
 modifier|*
 name|loader_entries

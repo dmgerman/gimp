@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpobject.h"
 end_include
 
@@ -83,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acf22430103
+DECL|enum|__anon29c5d07f0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -129,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acf22430203
+DECL|enum|__anon29c5d07f0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK

@@ -128,24 +128,10 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_comment
-comment|/* export this to gimprc.c */
-end_comment
-
-begin_decl_stmt
-DECL|variable|module_db_load_inhibit
-name|gchar
-modifier|*
-name|module_db_load_inhibit
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2883ee470103
+DECL|enum|__anon28af178a0103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -319,7 +305,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883ee470208
+DECL|struct|__anon28af178a0208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -434,7 +420,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883ee470308
+DECL|struct|__anon28af178a0308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1752,7 +1738,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2883ee470403
+DECL|enum|__anon28af178a0403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -4697,7 +4683,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883ee470508
+DECL|struct|__anon28af178a0508
 block|{
 DECL|member|search_key
 specifier|const
