@@ -28,7 +28,7 @@ define|#
 directive|define
 name|INIT_I18N
 parameter_list|()
-value|G_STMT_START{                               \   bindtextdomain(GETTEXT_PACKAGE"-libgimp", LOCALEDIR);             \   bind_textdomain_codeset (GETTEXT_PACKAGE"-libgimp", "UTF-8");     \   bindtextdomain(GETTEXT_PACKAGE"-std-plugins", LOCALEDIR);         \   bind_textdomain_codeset (GETTEXT_PACKAGE"-std-plugins", "UTF-8"); \   textdomain(GETTEXT_PACKAGE"-std-plugins");		            \   setlocale (LC_NUMERIC, "C");                                      \ }G_STMT_END
+value|G_STMT_START{                               \   setlocale (LC_ALL, "");                                           \   bindtextdomain(GETTEXT_PACKAGE"-libgimp", LOCALEDIR);             \   bind_textdomain_codeset (GETTEXT_PACKAGE"-libgimp", "UTF-8");     \   bindtextdomain(GETTEXT_PACKAGE"-std-plugins", LOCALEDIR);         \   bind_textdomain_codeset (GETTEXT_PACKAGE"-std-plugins", "UTF-8"); \   textdomain(GETTEXT_PACKAGE"-std-plugins");		            \ }G_STMT_END
 end_define
 
 begin_define
@@ -37,7 +37,7 @@ define|#
 directive|define
 name|INIT_I18N_UI
 parameter_list|()
-value|G_STMT_START{	\   gtk_set_locale();			\   INIT_I18N();				\ }G_STMT_END
+value|INIT_I18N()
 end_define
 
 begin_endif

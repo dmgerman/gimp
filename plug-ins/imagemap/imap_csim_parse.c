@@ -374,7 +374,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon29c8324e0103
+DECL|enum|__anon2be36e140103
 DECL|enumerator|UNDEFINED
 DECL|enumerator|RECTANGLE
 DECL|enumerator|CIRCLE
@@ -421,7 +421,7 @@ file|"imap_csim.y"
 end_line
 
 begin_typedef
-DECL|union|__anon29c8324e020a
+DECL|union|__anon2be36e14020a
 typedef|typedef
 union|union
 block|{
@@ -5442,7 +5442,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|yyvsp
 index|[
@@ -5477,7 +5477,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|yyvsp
 index|[
@@ -5510,7 +5510,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|yyvsp
 index|[
@@ -5539,7 +5539,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|yyvsp
 index|[

@@ -22,47 +22,13 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LC_MESSAGES
-end_ifdef
-
 begin_define
 DECL|macro|INIT_I18N ()
 define|#
 directive|define
 name|INIT_I18N
 parameter_list|()
-value|G_STMT_START{			  \   setlocale(LC_MESSAGES, ""); 				  \   bindtextdomain(GETTEXT_PACKAGE"-libgimp", LOCALEDIR);   \   bindtextdomain(GETTEXT_PACKAGE"-script-fu", LOCALEDIR); \   textdomain(GETTEXT_PACKAGE"-script-fu");		  \                         }G_STMT_END
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|INIT_I18N ()
-define|#
-directive|define
-name|INIT_I18N
-parameter_list|()
-value|G_STMT_START{			  \   bindtextdomain(GETTEXT_PACKAGE"-libgimp", LOCALEDIR);   \   bindtextdomain(GETTEXT_PACKAGE"-script-fu", LOCALEDIR); \   textdomain(GETTEXT_PACKAGE"-script-fu");                \   			}G_STMT_END
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_define
-DECL|macro|INIT_I18N_UI ()
-define|#
-directive|define
-name|INIT_I18N_UI
-parameter_list|()
-value|G_STMT_START{	\   gtk_set_locale();			\   setlocale (LC_NUMERIC, "C");		\   INIT_I18N();				\ 			}G_STMT_END
+value|G_STMT_START{			  \   setlocale (LC_ALL, ""); 				  \   bindtextdomain(GETTEXT_PACKAGE"-libgimp", LOCALEDIR);   \   bindtextdomain(GETTEXT_PACKAGE"-script-fu", LOCALEDIR); \   textdomain(GETTEXT_PACKAGE"-script-fu");                \ }G_STMT_END
 end_define
 
 begin_endif

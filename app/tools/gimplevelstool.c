@@ -8496,7 +8496,7 @@ index|[
 name|i
 index|]
 operator|=
-name|strtod
+name|g_ascii_strtod
 argument_list|(
 name|buf
 argument_list|,
@@ -8628,8 +8628,14 @@ modifier|*
 name|f
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
+decl_stmt|;
+name|gchar
+name|buf
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
 decl_stmt|;
 name|fprintf
 argument_list|(
@@ -8656,7 +8662,7 @@ name|fprintf
 argument_list|(
 name|f
 argument_list|,
-literal|"%d %d %d %d %f\n"
+literal|"%d %d %d %d %s\n"
 argument_list|,
 name|levels_dialog
 operator|->
@@ -8686,12 +8692,21 @@ index|[
 name|i
 index|]
 argument_list|,
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
+argument_list|,
 name|levels_dialog
 operator|->
 name|gamma
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

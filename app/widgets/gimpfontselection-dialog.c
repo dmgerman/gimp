@@ -1307,7 +1307,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|name
 argument_list|,

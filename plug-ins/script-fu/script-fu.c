@@ -605,6 +605,9 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|siod_set_output_file
 argument_list|(
 name|stdout
@@ -877,9 +880,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
 literal|"script_fu_refresh"

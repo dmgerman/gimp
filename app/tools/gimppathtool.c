@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -848,16 +842,13 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"gimp_path_tool_free start\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 if|if
 condition|(
 name|path_tool
@@ -917,16 +908,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_tool_control\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|path_tool
 operator|=
 name|GIMP_PATH_TOOL
@@ -1032,16 +1020,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_tool_button_press\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 comment|/* Transform window-coordinates to canvas-coordinates */
 name|gdisplay_untransform_coords_f
 argument_list|(
@@ -1067,10 +1052,8 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Clickcoordinates %.2f, %.2f\n"
 argument_list|,
 name|x
@@ -1080,7 +1063,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|path_tool
 operator|->
 name|click_x
@@ -1377,16 +1359,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_tool_button_press_anchor:\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|grab_pointer
 operator|=
 literal|1
@@ -1400,16 +1379,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal error: No current Path\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return
 literal|0
 return|;
@@ -1433,16 +1409,13 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Doppelclick!\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 block|}
 else|else
 name|doubleclick
@@ -1473,10 +1446,8 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"p_sas: %p\n"
 argument_list|,
 name|p_sas
@@ -1484,7 +1455,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 if|if
 condition|(
 name|path_tool
@@ -1892,16 +1862,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_tool_button_press_handle:\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|grab_pointer
 operator|=
 literal|1
@@ -1915,16 +1882,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal error: No current Path\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return
 literal|0
 return|;
@@ -1948,16 +1912,13 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Doppelclick!\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 block|}
 else|else
 name|doubleclick
@@ -2017,16 +1978,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_tool_button_press_canvas:\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|grab_pointer
 operator|=
 literal|1
@@ -2040,16 +1998,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal error: No current Path\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return
 literal|0
 return|;
@@ -2334,16 +2289,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_tool_button_press_curve:\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|grab_pointer
 operator|=
 literal|1
@@ -2357,16 +2309,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal error: No current NPath\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return
 literal|0
 return|;
@@ -2549,16 +2498,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_tool_button_release\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|path_tool
 operator|->
 name|state
@@ -3319,9 +3265,12 @@ if|#
 directive|if
 literal|0
 block|gint     x, y, halfwidth, dummy, cursor_location;
-empty|#idef PATH_TOOL_DEBUG
-comment|/* fprintf (stderr, "path_tool_cursor_update\n");    */
-empty|#edif PATH_TOOL_DEBUG
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+block|g_printerr ("path_tool_cursor_update\n");
+endif|#
+directive|endif
 block|gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&x,&y, TRUE, 0);
 comment|/* get halfwidth in image coord */
 block|gdisplay_untransform_coords (gdisp, mevent->x + PATH_TOOL_HALFWIDTH, 0,&halfwidth,&dummy, TRUE, 0);   halfwidth -= x;    cursor_location = path_tool_cursor_position (tool, x, y, halfwidth, NULL, NULL, NULL, NULL, NULL);    switch (cursor_location) {   case ON_CANVAS:      gdisplay_install_tool_cursor (gdisp, GIMP_MOUSE1AP_CURSOR);      break;   case ON_ANCHOR:      gdisplay_install_tool_cursor (gdisp, GDK_FLEUR);      break;   case ON_HANDLE:      gdisplay_install_tool_cursor (gdisp, GDK_CROSSHAIR);      break;   case ON_CURVE:      gdisplay_install_tool_cursor (gdisp, GDK_CROSSHAIR);      break;   default:      gdisplay_install_tool_cursor (gdisp, GDK_QUESTION_ARROW);      break;   }

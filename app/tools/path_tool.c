@@ -786,16 +786,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_traverse_segment\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 comment|/* XXX: here we need path_curve_get_point(s) */
 comment|/* Something like:     * for i = 1 to subsamples {     *   (x,y) = get_coordinates(i / subsamples)     *   (* function) (....)     * }     */
 block|}
@@ -839,16 +836,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_add_curve\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 if|if
 condition|(
 name|cur_path
@@ -935,16 +929,13 @@ ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
 else|else
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal Error: path_add_curve called without valid path\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return
 name|new_curve
 return|;
@@ -992,16 +983,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_append_segment\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 if|if
 condition|(
 name|cur_curve
@@ -1133,31 +1121,25 @@ ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
 else|else
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal Error: path_append_segment called with a closed curve\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 block|}
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
 else|else
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal Error: path_append_segment called without valid curve\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return
 name|new_segment
 return|;
@@ -1205,16 +1187,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_prepend_segment\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 if|if
 condition|(
 name|cur_curve
@@ -1328,31 +1307,25 @@ ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
 else|else
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal Error: path_prepend_segment called with a closed curve\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 block|}
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
 else|else
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal Error: path_prepend_segment called without valid curve\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return
 name|new_segment
 return|;
@@ -1382,16 +1355,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_split_segment\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 if|if
 condition|(
 name|segment
@@ -1500,16 +1470,13 @@ ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
 else|else
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_split_segment without valid segment\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return
 name|NULL
 return|;
@@ -1571,16 +1538,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Fatal Error: path_join_curves called with a closed segment\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return;
 block|}
 if|if
@@ -1597,16 +1561,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Joining beginning and end of the same curve...\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 if|if
 condition|(
 name|segment2
@@ -1665,16 +1626,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Flipping second curve (next, next)...\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|path_flip_curve
 argument_list|(
 name|segment2
@@ -1702,16 +1660,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Flipping second curve (prev, prev)...\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|path_flip_curve
 argument_list|(
 name|segment2
@@ -1739,16 +1694,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Appending second to first curve...\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|curve1
 operator|=
 name|segment1
@@ -1879,16 +1831,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Prepending second to first curve...\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 name|curve1
 operator|=
 name|segment1
@@ -2010,17 +1959,14 @@ block|}
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Cant join these curves yet...\nThis should not happen."
 argument_list|)
 expr_stmt|;
 return|return;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 block|}
 end_function
 
@@ -2066,16 +2012,13 @@ block|{
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"path_flip_curve: No curve o no segments to flip!\n"
 argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 return|return;
 block|}
 name|tmp
@@ -2780,10 +2723,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "path_tool_button_press\n");
+unit|g_printerr ("path_tool_button_press\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_comment
@@ -2799,10 +2741,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf(stderr, "Clickcoordinates %d, %d\n",x,y);
+unit|g_printerr ("Clickcoordinates %d, %d\n",x,y);
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_comment
@@ -2823,10 +2764,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf(stderr, "path_tool_button_press_anchor:\n");
+unit|g_printerr ("path_tool_button_press_anchor:\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -2837,10 +2777,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "Fatal error: No current Path\n");
+unit|g_printerr ("Fatal error: No current Path\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_comment
@@ -2856,10 +2795,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "Doppelclick!\n");
+unit|g_printerr ("Doppelclick!\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_comment
@@ -2875,10 +2813,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "p_sas: %p\n", p_sas);
+unit|g_printerr ("p_sas: %p\n", p_sas);
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_comment
@@ -2914,10 +2851,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf(stderr, "path_tool_button_press_handle:\n");
+unit|g_printerr ("path_tool_button_press_handle:\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -2928,10 +2864,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "Fatal error: No current Path\n");
+unit|g_printerr ("Fatal error: No current Path\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_comment
@@ -2947,10 +2882,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "Doppelclick!\n");
+unit|g_printerr ("Doppelclick!\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -2961,10 +2895,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf(stderr, "path_tool_button_press_canvas:\n");
+unit|g_printerr ("path_tool_button_press_canvas:\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -2975,10 +2908,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "Fatal error: No current Path\n");
+unit|g_printerr ("Fatal error: No current Path\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -2989,10 +2921,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf(stderr, "path_tool_button_press_curve:\n");
+unit|g_printerr ("path_tool_button_press_curve:\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -3003,10 +2934,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "Fatal error: No current NPath\n");
+unit|g_printerr ("Fatal error: No current NPath\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -3017,10 +2947,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "path_tool_button_release\n");
+unit|g_printerr ("path_tool_button_release\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_comment
@@ -3051,13 +2980,12 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_comment
-comment|/* fprintf (stderr, "path_tool_cursor_update\n");     */
+comment|/* g_printerr ("path_tool_cursor_update\n");     */
 end_comment
 
 begin_endif
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_comment
@@ -3078,10 +3006,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "path_tool_control\n");
+unit|g_printerr ("path_tool_control\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -3092,10 +3019,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "path_tool_control: HALT\n");
+unit|g_printerr ("path_tool_control: HALT\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -3106,10 +3032,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "path_tool_control: end\n");
+unit|g_printerr ("path_tool_control: end\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_comment
@@ -3125,10 +3050,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "tools_free_path_tool start\n");
+unit|g_printerr ("tools_free_path_tool start\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -3139,10 +3063,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "tools_free_path_tool end\n");
+unit|g_printerr ("tools_free_path_tool end\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_endif
@@ -3156,7 +3079,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28dd23000108
+DECL|struct|__anon2c3e8c2b0108
 typedef|typedef
 struct|struct
 block|{
@@ -3514,7 +3437,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28dd23000208
+DECL|struct|__anon2c3e8c2b0208
 typedef|typedef
 struct|struct
 block|{
@@ -3856,7 +3779,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28dd23000308
+DECL|struct|__anon2c3e8c2b0308
 typedef|typedef
 struct|struct
 block|{
@@ -4174,7 +4097,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28dd23000408
+DECL|struct|__anon2c3e8c2b0408
 typedef|typedef
 struct|struct
 block|{
@@ -4332,7 +4255,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28dd23000508
+DECL|struct|__anon2c3e8c2b0508
 typedef|typedef
 struct|struct
 block|{
@@ -4659,18 +4582,16 @@ block|Tool     * tool = (Tool *) tool_ptr;    GimpDisplay * gdisp;    PathTool *
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-block|fprintf (stderr, "Fatal Error: path_tool_draw_segment called without valid tool *\n");
+block|g_printerr ("Fatal Error: path_tool_draw_segment called without valid tool *\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 block|return;    }        gdisp = tool->gdisp;     path_tool = (PathTool *) tool->private;    core = path_tool->core;        if (path_tool->draw& PATH_TOOL_REDRAW_ACTIVE)       draw = (segment->flags& SEGMENT_ACTIVE || (segment->next&& segment->next->flags& SEGMENT_ACTIVE));     if (segment&& draw)     {       gdisplay_transform_coords (gdisp, (gint) segment->x, (gint) segment->y,&x1,&y1, FALSE);       if (segment->flags& SEGMENT_ACTIVE)          gdk_draw_arc (core->win, core->gc, 0, 	               x1 - PATH_TOOL_HALFWIDTH, y1 - PATH_TOOL_HALFWIDTH, 		       PATH_TOOL_WIDTH, PATH_TOOL_WIDTH, 0, 23040);       else          gdk_draw_arc (core->win, core->gc, 1, 	               x1 - PATH_TOOL_HALFWIDTH, y1 - PATH_TOOL_HALFWIDTH, 		       PATH_TOOL_WIDTH, PATH_TOOL_WIDTH, 0, 23040);              path_curve_draw_handles (tool, segment);           if (segment->next)       {          path_curve_draw_segment (tool, segment);       }    }
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-block|else if (!segment)       fprintf(stderr, "path_tool_draw_segment: no segment to draw\n");
+block|else if (!segment)       g_printerr ("path_tool_draw_segment: no segment to draw\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 endif|#
 directive|endif
 block|}
@@ -4690,10 +4611,9 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_endif
-unit|fprintf (stderr, "path_tool_draw\n");
+unit|g_printerr ("path_tool_draw\n");
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
@@ -4704,13 +4624,12 @@ name|PATH_TOOL_DEBUG
 end_ifdef
 
 begin_comment
-comment|/* fprintf (stderr, "path_tool_draw end.\n");     */
+comment|/* g_printerr ("path_tool_draw end.\n");     */
 end_comment
 
 begin_endif
 endif|#
 directive|endif
-endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_endif

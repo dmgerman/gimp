@@ -337,7 +337,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c259e0108
+DECL|struct|__anon27cd36270108
 block|{
 DECL|member|command
 name|gchar
@@ -361,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c259e0208
+DECL|struct|__anon27cd36270208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2055,7 +2055,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|gimp_ui_init

@@ -1098,6 +1098,9 @@ name|gimp_window
 operator|=
 name|gdk_window_foreign_new
 argument_list|(
+operator|(
+name|GdkNativeWindow
+operator|)
 name|gimp_x_window
 argument_list|)
 expr_stmt|;

@@ -32,7 +32,7 @@ file|"ifscompose.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2a054ab30103
+DECL|enum|__anon2c408d2a0103
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -118,7 +118,7 @@ end_enum
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a054ab30208
+DECL|struct|__anon2c408d2a0208
 block|{
 DECL|member|name
 name|gchar
@@ -1644,6 +1644,21 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+name|gchar
+name|buf
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
+decl_stmt|;
+name|gchar
+name|cbuf
+index|[
+literal|3
+index|]
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
+decl_stmt|;
 name|GString
 modifier|*
 name|result
@@ -1686,11 +1701,13 @@ operator|->
 name|subdivide
 argument_list|)
 expr_stmt|;
-name|g_string_append_printf
+name|g_ascii_formatd
 argument_list|(
-name|result
+name|buf
 argument_list|,
-literal|"radius %f\n"
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|vals
 operator|->
@@ -1701,7 +1718,18 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"aspect_ratio %f\n"
+literal|"radius %s\n"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|vals
 operator|->
@@ -1712,7 +1740,18 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"center_x %f\n"
+literal|"aspect_ratio %s\n"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|vals
 operator|->
@@ -1723,11 +1762,31 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"center_y %f\n"
+literal|"center_x %s\n"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|vals
 operator|->
 name|center_y
+argument_list|)
+expr_stmt|;
+name|g_string_append_printf
+argument_list|(
+name|result
+argument_list|,
+literal|"center_y %s\n"
+argument_list|,
+name|buf
 argument_list|)
 expr_stmt|;
 for|for
@@ -1753,11 +1812,13 @@ argument_list|,
 literal|"element {\n"
 argument_list|)
 expr_stmt|;
-name|g_string_append_printf
+name|g_ascii_formatd
 argument_list|(
-name|result
+name|buf
 argument_list|,
-literal|"    x %f\n"
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1773,7 +1834,18 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    y %f\n"
+literal|"    x %s\n"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1789,7 +1861,18 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    theta %f\n"
+literal|"    y %s\n"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1805,7 +1888,18 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    scale %f\n"
+literal|"    theta %s\n"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1821,7 +1915,18 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    asym %f\n"
+literal|"    scale %s\n"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1837,7 +1942,18 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    shear %f\n"
+literal|"    asym %s\n"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1847,6 +1963,15 @@ operator|->
 name|v
 operator|.
 name|shear
+argument_list|)
+expr_stmt|;
+name|g_string_append_printf
+argument_list|(
+name|result
+argument_list|,
+literal|"    shear %s\n"
+argument_list|,
+name|buf
 argument_list|)
 expr_stmt|;
 name|g_string_append_printf
@@ -1865,11 +1990,16 @@ operator|.
 name|flip
 argument_list|)
 expr_stmt|;
-name|g_string_append_printf
+name|g_ascii_formatd
 argument_list|(
-name|result
+name|cbuf
+index|[
+literal|0
+index|]
 argument_list|,
-literal|"    red_color { %f,%f,%f }\n"
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1881,6 +2011,18 @@ operator|.
 name|red_color
 operator|.
 name|r
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1892,6 +2034,18 @@ operator|.
 name|red_color
 operator|.
 name|g
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1909,7 +2063,34 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    green_color { %f,%f,%f }\n"
+literal|"    red_color { %s,%s,%s }\n"
+argument_list|,
+name|cbuf
+index|[
+literal|0
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|0
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1921,6 +2102,18 @@ operator|.
 name|green_color
 operator|.
 name|r
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1932,6 +2125,18 @@ operator|.
 name|green_color
 operator|.
 name|g
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1949,7 +2154,34 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    blue_color { %f,%f,%f }\n"
+literal|"    green_color { %s,%s,%s }\n"
+argument_list|,
+name|cbuf
+index|[
+literal|0
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|0
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1961,6 +2193,18 @@ operator|.
 name|blue_color
 operator|.
 name|r
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1972,6 +2216,18 @@ operator|.
 name|blue_color
 operator|.
 name|g
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -1989,7 +2245,34 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    black_color { %f,%f,%f }\n"
+literal|"    blue_color { %s,%s,%s }\n"
+argument_list|,
+name|cbuf
+index|[
+literal|0
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|0
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -2001,6 +2284,18 @@ operator|.
 name|black_color
 operator|.
 name|r
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -2012,6 +2307,18 @@ operator|.
 name|black_color
 operator|.
 name|g
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -2029,7 +2336,34 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    target_color { %f,%f,%f }\n"
+literal|"    black_color { %s,%s,%s }\n"
+argument_list|,
+name|cbuf
+index|[
+literal|0
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|0
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -2041,6 +2375,18 @@ operator|.
 name|target_color
 operator|.
 name|r
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -2052,6 +2398,18 @@ operator|.
 name|target_color
 operator|.
 name|g
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -2069,7 +2427,31 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    hue_scale %f\n"
+literal|"    target_color { %s,%s,%s }\n"
+argument_list|,
+name|cbuf
+index|[
+literal|0
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|1
+index|]
+argument_list|,
+name|cbuf
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -2085,7 +2467,18 @@ name|g_string_append_printf
 argument_list|(
 name|result
 argument_list|,
-literal|"    value_scale %f\n"
+literal|"    hue_scale %s\n"
+argument_list|,
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -2095,6 +2488,15 @@ operator|->
 name|v
 operator|.
 name|value_scale
+argument_list|)
+expr_stmt|;
+name|g_string_append_printf
+argument_list|(
+name|result
+argument_list|,
+literal|"    value_scale %s\n"
+argument_list|,
+name|buf
 argument_list|)
 expr_stmt|;
 name|g_string_append_printf
@@ -2113,11 +2515,13 @@ operator|.
 name|simple_color
 argument_list|)
 expr_stmt|;
-name|g_string_append_printf
+name|g_ascii_formatd
 argument_list|(
-name|result
+name|buf
 argument_list|,
-literal|"    prob %f\n"
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|elements
 index|[
@@ -2127,6 +2531,15 @@ operator|->
 name|v
 operator|.
 name|prob
+argument_list|)
+expr_stmt|;
+name|g_string_append_printf
+argument_list|(
+name|result
+argument_list|,
+literal|"    prob %s\n"
+argument_list|,
+name|buf
 argument_list|)
 expr_stmt|;
 name|g_string_append

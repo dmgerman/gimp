@@ -183,7 +183,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ebdaf60103
+DECL|enum|__anon2b53d2430103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -18465,10 +18465,8 @@ decl_stmt|;
 name|gdouble
 name|position
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"shrink_line bytes=%d old_width=%d width=%d interp=%d "
 literal|"step=%f inv_step=%f\n"
 argument_list|,

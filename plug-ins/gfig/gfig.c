@@ -1110,7 +1110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10103
+DECL|enum|__anon2761b4d90103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1162,7 +1162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10203
+DECL|enum|__anon2761b4d90203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1183,7 +1183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10303
+DECL|enum|__anon2761b4d90303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1204,7 +1204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10403
+DECL|enum|__anon2761b4d90403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1231,7 +1231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10503
+DECL|enum|__anon2761b4d90503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1252,7 +1252,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10603
+DECL|enum|__anon2761b4d90603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1420,7 +1420,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fadd10708
+DECL|struct|__anon2761b4d90708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1459,7 +1459,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fadd10808
+DECL|struct|__anon2761b4d90808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1508,7 +1508,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fadd10908
+DECL|struct|__anon2761b4d90908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1686,7 +1686,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10a03
+DECL|enum|__anon2761b4d90a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1716,7 +1716,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10b03
+DECL|enum|__anon2761b4d90b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1732,7 +1732,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10c03
+DECL|enum|__anon2761b4d90c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1757,7 +1757,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2fadd10d03
+DECL|enum|__anon2761b4d90d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -5691,16 +5691,30 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sscanf
+if|if
+condition|(
+name|strncmp
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"Version: %f"
+literal|"Version: "
 argument_list|,
-operator|&
+literal|9
+argument_list|)
+operator|==
+literal|0
+condition|)
 name|gfig
 operator|->
 name|version
+operator|=
+name|g_ascii_strtod
+argument_list|(
+name|load_buf
+operator|+
+literal|9
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|get_line
@@ -7031,6 +7045,12 @@ modifier|*
 name|message
 decl_stmt|;
 name|gchar
+name|buf
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
+decl_stmt|;
+name|gchar
 name|conv_buf
 index|[
 name|MAX_LOAD_LINE
@@ -7123,11 +7143,20 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"Version: %f\n"
+literal|"Version: %s\n"
+argument_list|,
+name|g_ascii_formatd
+argument_list|(
+name|buf
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
+literal|"%f"
 argument_list|,
 name|current_obj
 operator|->
 name|version
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|objs

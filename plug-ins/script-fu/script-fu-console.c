@@ -173,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967c79f0108
+DECL|struct|__anon2893beb80108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -570,9 +570,6 @@ name|GIOChannel
 modifier|*
 name|input_channel
 decl_stmt|;
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"script-fu"

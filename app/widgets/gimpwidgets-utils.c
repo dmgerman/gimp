@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -198,10 +192,8 @@ operator|>
 name|MESSAGE_BOX_MAXIMUM
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%s: %s\n"
 argument_list|,
 name|prog_name
@@ -400,10 +392,8 @@ operator|==
 name|MESSAGE_BOX_MAXIMUM
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%s: %s\n"
 argument_list|,
 name|prog_name
