@@ -282,6 +282,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_data_editor_save_dirty
+parameter_list|(
+name|GimpDataEditor
+modifier|*
+name|editor
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
@@ -850,6 +862,13 @@ name|editor
 operator|->
 name|data
 condition|)
+block|{
+comment|/* Save dirty data before we clear out */
+name|gimp_data_editor_save_dirty
+argument_list|(
+name|editor
+argument_list|)
+expr_stmt|;
 name|gimp_data_editor_set_data
 argument_list|(
 name|editor
@@ -857,6 +876,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -1401,6 +1421,48 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
+name|gimp_data_editor_save_dirty
+argument_list|(
+name|editor
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_data_editor_revert_clicked (GtkWidget * widget,GimpDataEditor * editor)
+name|gimp_data_editor_revert_clicked
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GimpDataEditor
+modifier|*
+name|editor
+parameter_list|)
+block|{
+name|g_print
+argument_list|(
+literal|"TODO: implement revert\n"
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_data_editor_save_dirty (GimpDataEditor * editor)
+name|gimp_data_editor_save_dirty
+parameter_list|(
+name|GimpDataEditor
+modifier|*
+name|editor
+parameter_list|)
+block|{
 name|gchar
 modifier|*
 name|path
@@ -1550,29 +1612,6 @@ block|}
 name|g_free
 argument_list|(
 name|path
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_data_editor_revert_clicked (GtkWidget * widget,GimpDataEditor * editor)
-name|gimp_data_editor_revert_clicked
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GimpDataEditor
-modifier|*
-name|editor
-parameter_list|)
-block|{
-name|g_print
-argument_list|(
-literal|"TODO: implement revert\n"
 argument_list|)
 expr_stmt|;
 block|}
