@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61bb620103
+DECL|enum|__anon2c106d7b0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -237,7 +237,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61bb620203
+DECL|enum|__anon2c106d7b0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1508,6 +1508,13 @@ name|FALSE
 expr_stmt|;
 block|}
 block|}
+name|fclose
+argument_list|(
+name|info
+operator|.
+name|fp
+argument_list|)
+expr_stmt|;
 block|}
 name|return_args
 operator|=
