@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayer-floating-sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppalette.h"
 end_include
 
@@ -417,7 +411,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2afa43b30103
+DECL|enum|__anon2a2dac900103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1445,7 +1439,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa43b30208
+DECL|struct|__anon2a2dac900208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1516,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa43b30308
+DECL|struct|__anon2a2dac900308
 block|{
 DECL|member|ncolors
 name|long
@@ -1693,7 +1687,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa43b30408
+DECL|struct|__anon2a2dac900408
 block|{
 DECL|member|used_count
 name|signed
@@ -2777,10 +2771,6 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|GimpLayer
-modifier|*
-name|floating_layer
-decl_stmt|;
 name|GimpImageBaseType
 name|old_type
 decl_stmt|;
@@ -2831,14 +2821,6 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/*  Get the floating layer if one exists  */
-name|floating_layer
-operator|=
-name|gimp_image_floating_sel
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|new_type
@@ -2885,18 +2867,6 @@ argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_CONVERT
 argument_list|,
 name|undo_desc
-argument_list|)
-expr_stmt|;
-comment|/*  Relax the floating selection  */
-if|if
-condition|(
-name|floating_layer
-condition|)
-name|floating_sel_relax
-argument_list|(
-name|floating_layer
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Push the image type to the stack  */
@@ -3860,18 +3830,6 @@ operator|->
 name|delete_func
 argument_list|(
 name|quantobj
-argument_list|)
-expr_stmt|;
-comment|/*  Rigor the floating selection  */
-if|if
-condition|(
-name|floating_layer
-condition|)
-name|floating_sel_rigor
-argument_list|(
-name|floating_layer
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end

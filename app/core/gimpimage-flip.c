@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayer-floating-sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplist.h"
 end_include
 
@@ -94,10 +88,6 @@ name|gpointer
 name|progress_data
 parameter_list|)
 block|{
-name|GimpLayer
-modifier|*
-name|floating_layer
-decl_stmt|;
 name|GimpItem
 modifier|*
 name|item
@@ -200,14 +190,6 @@ literal|1
 comment|/* selection */
 operator|)
 expr_stmt|;
-comment|/*  Get the floating layer if one exists  */
-name|floating_layer
-operator|=
-name|gimp_image_floating_sel
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
@@ -215,18 +197,6 @@ argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_FLIP
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  Relax the floating selection  */
-if|if
-condition|(
-name|floating_layer
-condition|)
-name|floating_sel_relax
-argument_list|(
-name|floating_layer
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Flip all channels  */
@@ -553,18 +523,6 @@ default|default:
 break|break;
 block|}
 block|}
-comment|/*  Rigor the floating selection  */
-if|if
-condition|(
-name|floating_layer
-condition|)
-name|floating_sel_rigor
-argument_list|(
-name|floating_layer
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|gimage

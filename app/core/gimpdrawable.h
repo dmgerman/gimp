@@ -916,6 +916,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_drawable_has_floating_sel
+parameter_list|(
+specifier|const
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|TileManager
 modifier|*
 name|gimp_drawable_data
