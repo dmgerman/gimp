@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig-error.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpconfig-path.h"
 end_include
 
@@ -465,6 +471,14 @@ name|error
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|error
+operator|->
+name|code
+operator|!=
+name|GIMP_CONFIG_ERROR_OPEN_ENOENT
+condition|)
 name|g_message
 argument_list|(
 name|error

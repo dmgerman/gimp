@@ -189,7 +189,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2791ee450103
+DECL|enum|__anon28aced610103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -302,7 +302,7 @@ operator|!
 name|scanner
 condition|)
 return|return
-name|TRUE
+name|FALSE
 return|;
 name|g_scanner_scope_add_symbol
 argument_list|(
