@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9a3c0108
+DECL|struct|__anon2912b1820108
 block|{
 DECL|member|raw
 name|gint
@@ -1021,13 +1021,6 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_pnm_load"
-argument_list|,
-literal|"<Load>"
-argument_list|)
-expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
 literal|"file_pnm_load"
@@ -1080,13 +1073,6 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_pnm_save"
-argument_list|,
-literal|"<Save>"
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime

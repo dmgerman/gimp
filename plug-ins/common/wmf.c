@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289608200108
+DECL|struct|__anon2c617a540108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -410,13 +410,6 @@ argument_list|,
 name|load_args
 argument_list|,
 name|load_return_vals
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_wmf_load"
-argument_list|,
-literal|"<Load>"
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime

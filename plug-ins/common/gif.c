@@ -125,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf25a280103
+DECL|enum|__anon2b6522260103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf25a280208
+DECL|struct|__anon2b6522260208
 block|{
 DECL|member|interlace
 name|gint
@@ -510,13 +510,6 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_gif_save"
-argument_list|,
-literal|"<Save>"
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime

@@ -159,7 +159,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af325110108
+DECL|struct|__anon2c9221fc0108
 block|{
 DECL|member|description
 name|gchar
@@ -479,13 +479,6 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_gbr_load"
-argument_list|,
-literal|"<Load>"
-argument_list|)
-expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
 literal|"file_gbr_load"
@@ -546,13 +539,6 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_gbr_save"
-argument_list|,
-literal|"<Save>"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
@@ -2001,7 +1987,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2af32511020a
+DECL|union|__anon2c9221fc020a
 block|{
 DECL|member|u
 name|guint16

@@ -270,13 +270,6 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_url_load"
-argument_list|,
-literal|"<Load>"
-argument_list|)
-expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
 literal|"file_url_load"

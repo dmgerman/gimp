@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99da070108
+DECL|struct|__anon29699b250108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99da070208
+DECL|struct|__anon29699b250208
 block|{
 DECL|member|r
 name|guchar
@@ -503,13 +503,6 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_xpm_load"
-argument_list|,
-literal|"<Load>"
-argument_list|)
-expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
 literal|"file_xpm_load"
@@ -523,7 +516,7 @@ literal|"file_xpm_load"
 argument_list|,
 literal|"xpm"
 argument_list|,
-literal|"<Load>/Xpm"
+literal|""
 argument_list|,
 literal|"0, string,/*\\040XPM\\040*/"
 argument_list|)
@@ -569,13 +562,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_xpm_save"
-argument_list|,
-literal|"<Save>"
-argument_list|)
-expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
 literal|"file_xpm_save"
@@ -589,7 +575,7 @@ literal|"file_xpm_save"
 argument_list|,
 literal|"xpm"
 argument_list|,
-literal|"<Save>/Xpm"
+literal|""
 argument_list|)
 expr_stmt|;
 block|}

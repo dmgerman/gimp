@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964ecf30108
+DECL|struct|__anon28e946c20108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964ecf30208
+DECL|struct|__anon28e946c20208
 block|{
 DECL|member|run
 name|gboolean
@@ -656,13 +656,6 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_png_load"
-argument_list|,
-literal|"<Load>"
-argument_list|)
-expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
 literal|"file_png_load"
@@ -799,13 +792,6 @@ argument_list|,
 name|save_args_defaults
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_png_save_defaults"
-argument_list|,
-literal|"<Save>"
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime

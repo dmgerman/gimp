@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c537a560108
+DECL|struct|__anon288f27180108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c537a560208
+DECL|struct|__anon288f27180208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -312,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c537a560308
+DECL|struct|__anon288f27180308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c537a560408
+DECL|struct|__anon288f27180408
 block|{
 DECL|member|npixel
 name|gint
@@ -1030,13 +1030,6 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_xwd_load"
-argument_list|,
-literal|"<Load>"
-argument_list|)
-expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
 literal|"file_xwd_load"
@@ -1089,13 +1082,6 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_xwd_save"
-argument_list|,
-literal|"<Save>"
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime

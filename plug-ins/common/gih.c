@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29fcf94a0108
+DECL|struct|__anon2b77e5300108
 block|{
 DECL|member|spacing
 name|guint
@@ -252,7 +252,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcf94a0208
+DECL|struct|__anon2b77e5300208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -714,13 +714,6 @@ argument_list|,
 name|gih_load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_gih_load"
-argument_list|,
-literal|"<Load>"
-argument_list|)
-expr_stmt|;
 name|gimp_plugin_icon_register
 argument_list|(
 literal|"file_gih_load"
@@ -781,13 +774,6 @@ argument_list|,
 name|gih_save_args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_gih_save"
-argument_list|,
-literal|"<Save>"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register

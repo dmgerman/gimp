@@ -360,13 +360,6 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"file_gif_load"
-argument_list|,
-literal|"<Load>"
-argument_list|)
-expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
 literal|"file_gif_load"
@@ -727,7 +720,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29d5b8510108
+DECL|struct|__anon29b17b180108
 block|{
 DECL|member|Width
 name|unsigned
@@ -777,7 +770,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29d5b8510208
+DECL|struct|__anon29b17b180208
 block|{
 DECL|member|transparent
 name|int
