@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -10528,7 +10534,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28a7827c0108
+DECL|struct|__anon2bde99c20108
 typedef|typedef
 struct|struct
 block|{
