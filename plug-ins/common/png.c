@@ -70,7 +70,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.3.1 - 25 April 2000"
+value|"1.3.2 - 9 May 2000"
 end_define
 
 begin_define
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288ce34e0108
+DECL|struct|__anon2b44b91a0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1354,6 +1354,21 @@ if|if
 condition|(
 name|info
 operator|->
+name|bit_depth
+operator|==
+literal|16
+condition|)
+block|{
+name|png_set_strip_16
+argument_list|(
+name|pp
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|info
+operator|->
 name|color_type
 operator|==
 name|PNG_COLOR_TYPE_GRAY
@@ -1392,16 +1407,25 @@ name|pp
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*   * Expand G+tRNS to GA, RGB+tRNS to RGBA   */
 if|if
 condition|(
 name|info
 operator|->
-name|bit_depth
-operator|==
-literal|16
+name|color_type
+operator|!=
+name|PNG_COLOR_TYPE_PALETTE
+operator|&&
+operator|(
+name|info
+operator|->
+name|valid
+operator|&
+name|PNG_INFO_tRNS
+operator|)
 condition|)
 block|{
-name|png_set_strip_16
+name|png_set_expand
 argument_list|(
 name|pp
 argument_list|)
