@@ -88,14 +88,6 @@ value|100
 end_define
 
 begin_define
-DECL|macro|COLOR_SAMPLE_WIDTH
-define|#
-directive|define
-name|COLOR_SAMPLE_WIDTH
-value|100
-end_define
-
-begin_define
 DECL|macro|COLOR_SAMPLE_HEIGHT
 define|#
 directive|define
@@ -114,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292cb6d70108
+DECL|struct|__anon2ad536c10108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -586,6 +578,10 @@ name|GtkWidget
 modifier|*
 name|vbox2
 decl_stmt|;
+name|GtkSizeGroup
+modifier|*
+name|group
+decl_stmt|;
 name|GSList
 modifier|*
 name|list
@@ -597,9 +593,6 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|buf
-decl_stmt|;
-name|gint
-name|start_args
 decl_stmt|;
 name|gint
 name|i
@@ -1017,7 +1010,14 @@ operator|->
 name|args_table
 argument_list|)
 expr_stmt|;
-name|start_args
+name|group
+operator|=
+name|gtk_size_group_new
+argument_list|(
+name|GTK_SIZE_GROUP_HORIZONTAL
+argument_list|)
+expr_stmt|;
+name|i
 operator|=
 operator|(
 name|script
@@ -1031,9 +1031,6 @@ literal|0
 expr_stmt|;
 for|for
 control|(
-name|i
-operator|=
-name|start_args
 init|;
 name|i
 operator|<
@@ -1060,11 +1057,6 @@ name|label_yalign
 init|=
 literal|0.5
 decl_stmt|;
-name|gboolean
-name|leftalign
-init|=
-name|FALSE
-decl_stmt|;
 name|gint
 modifier|*
 name|ID_ptr
@@ -1075,6 +1067,11 @@ name|gint
 name|row
 init|=
 name|i
+decl_stmt|;
+name|gboolean
+name|left_align
+init|=
+name|FALSE
 decl_stmt|;
 if|if
 condition|(
@@ -1275,6 +1272,10 @@ break|break;
 case|case
 name|SF_COLOR
 case|:
+name|left_align
+operator|=
+name|TRUE
+expr_stmt|;
 name|widget
 operator|=
 name|gimp_color_button_new
@@ -1284,7 +1285,8 @@ argument_list|(
 literal|"Script-Fu Color Selection"
 argument_list|)
 argument_list|,
-name|COLOR_SAMPLE_WIDTH
+operator|-
+literal|1
 argument_list|,
 name|COLOR_SAMPLE_HEIGHT
 argument_list|,
@@ -1692,7 +1694,7 @@ break|break;
 case|case
 name|SF_SPINNER
 case|:
-name|leftalign
+name|left_align
 operator|=
 name|TRUE
 expr_stmt|;
@@ -2015,7 +2017,7 @@ break|break;
 case|case
 name|SF_PATTERN
 case|:
-name|leftalign
+name|left_align
 operator|=
 name|TRUE
 expr_stmt|;
@@ -2054,7 +2056,7 @@ break|break;
 case|case
 name|SF_GRADIENT
 case|:
-name|leftalign
+name|left_align
 operator|=
 name|TRUE
 expr_stmt|;
@@ -2093,7 +2095,7 @@ break|break;
 case|case
 name|SF_BRUSH
 case|:
-name|leftalign
+name|left_align
 operator|=
 name|TRUE
 expr_stmt|;
@@ -2296,7 +2298,7 @@ name|widget
 argument_list|,
 literal|2
 argument_list|,
-name|leftalign
+name|left_align
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2345,6 +2347,17 @@ name|widget
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|left_align
+condition|)
+name|gtk_size_group_add_widget
+argument_list|(
+name|group
+argument_list|,
+name|widget
+argument_list|)
+expr_stmt|;
 block|}
 name|sf_interface
 operator|->
@@ -2356,6 +2369,11 @@ operator|=
 name|widget
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|group
+argument_list|)
+expr_stmt|;
 comment|/* the script progress frame */
 name|frame
 operator|=
