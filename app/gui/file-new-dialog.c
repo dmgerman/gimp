@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1aefb90108
+DECL|struct|__anon2ad8eb340108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -263,7 +263,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_new_dialog_create (Gimp * gimp,GimpImage * gimage)
+DECL|function|file_new_dialog_create (Gimp * gimp,GimpImage * gimage,GimpTemplate * template)
 name|file_new_dialog_create
 parameter_list|(
 name|Gimp
@@ -273,15 +273,15 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpTemplate
+modifier|*
+name|template
 parameter_list|)
 block|{
 name|FileNewDialog
 modifier|*
 name|dialog
-decl_stmt|;
-name|GimpTemplate
-modifier|*
-name|template
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -312,6 +312,18 @@ operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|template
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_TEMPLATE
+argument_list|(
+name|template
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -617,7 +629,7 @@ name|gimp_template_editor_new
 argument_list|(
 name|gimp
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -666,6 +678,29 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|template
+condition|)
+block|{
+name|gimp_container_menu_select_item
+argument_list|(
+name|GIMP_CONTAINER_MENU
+argument_list|(
+name|dialog
+operator|->
+name|template_menu
+argument_list|)
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|template
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|template
 operator|=
 name|gimp_image_new_get_last_template
@@ -692,6 +727,7 @@ argument_list|(
 name|template
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_size_entry_grab_focus
 argument_list|(
 name|GIMP_SIZE_ENTRY

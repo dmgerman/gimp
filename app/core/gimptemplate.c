@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -89,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b75090b0103
+DECL|enum|__anon29d9d14e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1218,6 +1224,26 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|pspec
+operator|->
+name|name
+argument_list|,
+literal|"stock-id"
+argument_list|)
+condition|)
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|object
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -290,6 +290,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

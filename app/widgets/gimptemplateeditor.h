@@ -183,7 +183,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|edit_stock_id
+name|edit_template
 parameter_list|)
 function_decl|;
 end_function_decl
