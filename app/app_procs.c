@@ -228,6 +228,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"module_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -2429,6 +2435,10 @@ name|plug_in_init
 argument_list|()
 expr_stmt|;
 comment|/*  initialize the plug in structures  */
+name|module_db_init
+argument_list|()
+expr_stmt|;
+comment|/*  load any modules we need */
 name|RESET_BAR
 argument_list|()
 expr_stmt|;

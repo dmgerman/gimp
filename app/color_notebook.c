@@ -693,6 +693,14 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+comment|/* hide the frame, so it doesn't get selected by mistake */
+name|gtk_widget_hide
+argument_list|(
+name|csel
+operator|->
+name|frame
+argument_list|)
+expr_stmt|;
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK

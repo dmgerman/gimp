@@ -118,6 +118,28 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|info
+specifier|static
+name|GimpModuleInfo
+name|info
+init|=
+block|{
+name|NULL
+block|,
+literal|"GTK colour selector as a pluggable colour selector"
+block|,
+literal|"Austin Donnelly<austin@gimp.org>"
+block|,
+literal|"v0.02"
+block|,
+literal|"(c) 1999, released under the GPL"
+block|,
+literal|"17 Jan 1999"
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* globaly exported init function */
 end_comment
@@ -125,14 +147,20 @@ end_comment
 begin_function
 name|G_MODULE_EXPORT
 name|GimpModuleStatus
-DECL|function|module_init (void)
+DECL|function|module_init (GimpModuleInfo ** inforet)
 name|module_init
 parameter_list|(
-name|void
+name|GimpModuleInfo
+modifier|*
+modifier|*
+name|inforet
 parameter_list|)
 block|{
-if|if
-condition|(
+name|GimpColorSelectorID
+name|id
+decl_stmt|;
+name|id
+operator|=
 name|gimp_color_selector_register
 argument_list|(
 literal|"GTK"
@@ -140,14 +168,71 @@ argument_list|,
 operator|&
 name|methods
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|id
 condition|)
+block|{
+name|info
+operator|.
+name|shutdown_data
+operator|=
+name|id
+expr_stmt|;
+operator|*
+name|inforet
+operator|=
+operator|&
+name|info
+expr_stmt|;
 return|return
 name|GIMP_MODULE_OK
 return|;
+block|}
 else|else
+block|{
 return|return
 name|GIMP_MODULE_UNLOAD
 return|;
+block|}
+block|}
+end_function
+
+begin_function
+name|G_MODULE_EXPORT
+name|void
+DECL|function|module_unload (void * shutdown_data,void (* completed_cb)(void *),void * completed_data)
+name|module_unload
+parameter_list|(
+name|void
+modifier|*
+name|shutdown_data
+parameter_list|,
+name|void
+function_decl|(
+modifier|*
+name|completed_cb
+function_decl|)
+parameter_list|(
+name|void
+modifier|*
+parameter_list|)
+parameter_list|,
+name|void
+modifier|*
+name|completed_data
+parameter_list|)
+block|{
+name|gimp_color_selector_unregister
+argument_list|(
+name|shutdown_data
+argument_list|,
+name|completed_cb
+argument_list|,
+name|completed_data
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -160,7 +245,7 @@ comment|/* GTK colour selector methods */
 end_comment
 
 begin_typedef
-DECL|struct|__anon286dea0f0108
+DECL|struct|__anon29c75c830108
 typedef|typedef
 struct|struct
 block|{
