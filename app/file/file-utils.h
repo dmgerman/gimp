@@ -92,18 +92,6 @@ comment|/* .xvpics thumbnail stuff  */
 end_comment
 
 begin_function_decl
-name|TempBuf
-modifier|*
-name|make_thumb_tempbuf
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|guchar
 modifier|*
 name|readXVThumb
@@ -126,26 +114,6 @@ modifier|*
 modifier|*
 name|imginfo
 comment|/* caller frees if != NULL */
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|file_save_thumbnail
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|full_source_filename
-parameter_list|,
-name|TempBuf
-modifier|*
-name|tempbuf
 parameter_list|)
 function_decl|;
 end_function_decl

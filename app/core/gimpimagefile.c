@@ -237,7 +237,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2385290103
+DECL|enum|__anon2b0d2ed90103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -251,7 +251,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2385290208
+DECL|struct|__anon2b0d2ed90208
 block|{
 DECL|member|dirname
 specifier|const
@@ -384,7 +384,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_imagefile_save_png_thumb
 parameter_list|(
 name|GimpImagefile
@@ -1461,7 +1461,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_imagefile_save_thumbnail (GimpImagefile * imagefile,GimpImage * gimage)
 name|gimp_imagefile_save_thumbnail
 parameter_list|(
@@ -1479,6 +1479,11 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|image_uri
+decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -1493,20 +1498,29 @@ decl_stmt|;
 name|off_t
 name|image_size
 decl_stmt|;
-name|g_return_if_fail
+name|gboolean
+name|success
+init|=
+name|FALSE
+decl_stmt|;
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGEFILE
 argument_list|(
 name|imagefile
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|uri
@@ -1519,21 +1533,31 @@ name|imagefile
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|image_uri
+operator|=
+name|gimp_object_get_name
 argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|imagefile
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|uri
+operator|&&
+name|image_uri
+operator|&&
 operator|!
 name|strcmp
 argument_list|(
 name|uri
 argument_list|,
-name|gimp_object_get_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|gimage
+name|image_uri
 argument_list|)
-argument_list|)
-argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|filename
@@ -1553,7 +1577,9 @@ condition|(
 operator|!
 name|filename
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|thumb_name
 operator|=
 name|gimp_imagefile_png_thumb_path
@@ -1569,7 +1595,9 @@ condition|(
 operator|!
 name|thumb_name
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 if|if
 condition|(
 name|gimp_imagefile_test
@@ -1584,6 +1612,8 @@ name|image_size
 argument_list|)
 condition|)
 block|{
+name|success
+operator|=
 name|gimp_imagefile_save_png_thumb
 argument_list|(
 name|imagefile
@@ -1603,6 +1633,9 @@ argument_list|(
 name|thumb_name
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -3016,7 +3049,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_imagefile_save_png_thumb (GimpImagefile * imagefile,GimpImage * gimage,const gchar * thumb_name,time_t image_mtime,off_t image_size)
 name|gimp_imagefile_save_png_thumb
 parameter_list|(
@@ -3059,6 +3092,11 @@ name|gint
 name|width
 decl_stmt|,
 name|height
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|FALSE
 decl_stmt|;
 name|uri
 operator|=
@@ -3322,9 +3360,8 @@ operator|->
 name|num_children
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+name|success
+operator|=
 name|gdk_pixbuf_save
 argument_list|(
 name|pixbuf
@@ -3374,6 +3411,11 @@ name|l_str
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|success
 condition|)
 block|{
 name|g_message
@@ -3447,6 +3489,9 @@ argument_list|(
 name|imagefile
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
