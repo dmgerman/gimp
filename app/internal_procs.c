@@ -1504,6 +1504,12 @@ operator|&
 name|convert_indexed_proc
 argument_list|)
 expr_stmt|;
+name|procedural_db_register
+argument_list|(
+operator|&
+name|convert_indexed_palette_proc
+argument_list|)
+expr_stmt|;
 comment|/*  Channel Ops procedures  */
 name|procedural_db_register
 argument_list|(
