@@ -4561,7 +4561,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Canvas padding mode:"
+literal|"Canvas _padding mode:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4584,7 +4584,7 @@ literal|"padding-color"
 argument_list|,
 name|_
 argument_list|(
-literal|"Custom padding color:"
+literal|"Custom p_adding color:"
 argument_list|)
 argument_list|,
 name|_
@@ -6652,7 +6652,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Help _browser to use:"
+literal|"H_elp browser to use:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6722,7 +6722,7 @@ name|fileselection
 argument_list|,
 name|_
 argument_list|(
-literal|"Web browser to use:"
+literal|"_Web browser to use:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -7118,7 +7118,7 @@ literal|"toolbox-color-area"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show foreground& background _color"
+literal|"Show _foreground& background color"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_DEFAULT_COLORS
@@ -7369,7 +7369,7 @@ literal|"1:1"
 argument_list|,
 name|_
 argument_list|(
-literal|"Initial zoom ratio:"
+literal|"Initial zoom _ratio:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -7458,7 +7458,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cursor m_ode:"
+literal|"Cursor _mode:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -7695,7 +7695,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bf81b3a0108
+DECL|struct|__anon28941ee80108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9018,7 +9018,7 @@ modifier|*
 name|list
 decl_stmt|;
 enum|enum
-DECL|enum|__anon2bf81b3a0203
+DECL|enum|__anon28941ee80203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -10175,7 +10175,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Minimal number of undo levels:"
+literal|"Minimal number of _undo levels:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10196,7 +10196,7 @@ literal|"undo-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximum undo memory:"
+literal|"Maximum undo _memory:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10217,7 +10217,7 @@ literal|"tile-cache-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile cache size:"
+literal|"Tile cache _size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10238,7 +10238,7 @@ literal|"max-new-image-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximum new image size:"
+literal|"Maximum _new image size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10268,7 +10268,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of processors to use:"
+literal|"Number of _processors to use:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10326,7 +10326,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Size of thumbnails:"
+literal|"Size of _thumbnails:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10347,7 +10347,7 @@ literal|"thumbnail-filesize-limit"
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximum filesize for thumbnailing:"
+literal|"Maximum _filesize for thumbnailing:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10386,7 +10386,7 @@ literal|"confirm-on-close"
 argument_list|,
 name|_
 argument_list|(
-literal|"Confirm closing of unsaved images"
+literal|"Confirm closing of unsa_ved images"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -10450,7 +10450,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf81b3a0308
+DECL|struct|__anon28941ee80308
 block|{
 DECL|member|label
 specifier|const
@@ -10607,7 +10607,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf81b3a0408
+DECL|struct|__anon28941ee80408
 block|{
 DECL|member|tree_label
 specifier|const
