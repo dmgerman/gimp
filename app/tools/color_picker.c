@@ -72,7 +72,7 @@ DECL|macro|MAX_INFO_BUF
 define|#
 directive|define
 name|MAX_INFO_BUF
-value|4
+value|8
 end_define
 
 begin_comment
