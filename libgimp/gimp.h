@@ -665,6 +665,9 @@ define|\
 value|int _stdcall				\    WinMain (int hInstance,		\ 	    int hPrevInstance,		\ 	    char *lpszCmdLine,		\ 	    int nCmdShow)		\    {					\      return gimp_main (__argc, __argv);	\    }					\ 					\    int					\    main (int argc, char *argv[])	\    {					\      return gimp_main (argc, argv);	\    }
 else|#
 directive|else
+ifndef|#
+directive|ifndef
+name|__EMX__
 DECL|macro|MAIN ()
 define|#
 directive|define
@@ -672,6 +675,17 @@ name|MAIN
 parameter_list|()
 define|\
 value|int					\    main (int argc, char *argv[])	\    {					\      return gimp_main (argc, argv);	\    }
+else|#
+directive|else
+DECL|macro|MAIN ()
+define|#
+directive|define
+name|MAIN
+parameter_list|()
+define|\
+value|int						\    main (int argc, char *argv[])		\    {						\      set_gimp_PLUG_IN_INFO(&PLUG_IN_INFO);	\      return gimp_main (argc, argv);		\    }
+endif|#
+directive|endif
 endif|#
 directive|endif
 comment|/* The main procedure that should be called with the  *  'argc' and 'argv' that are passed to "main".  */
