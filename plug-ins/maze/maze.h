@@ -70,7 +70,7 @@ file|"glib.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2bd256800103
+DECL|enum|__anon2a0d68640103
 typedef|typedef
 enum|enum
 block|{
@@ -86,7 +86,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bd256800208
+DECL|struct|__anon2a0d68640208
 typedef|typedef
 struct|struct
 block|{
@@ -119,9 +119,9 @@ name|MazeAlgoType
 name|algorithm
 decl_stmt|;
 comment|/* Interface options. */
-DECL|member|defaultseed
+DECL|member|timeseed
 name|gboolean
-name|defaultseed
+name|timeseed
 decl_stmt|;
 DECL|typedef|MazeValues
 block|}
