@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02c4700103
+DECL|enum|__anon2b31f02b0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -380,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c02c4700208
+DECL|struct|__anon2b31f02b0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -663,7 +663,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2c02c4700308
+DECL|struct|__anon2b31f02b0308
 block|{
 DECL|member|r
 DECL|member|g
@@ -3563,10 +3563,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"gradient_get_color_at(): Unknown gradient type %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -3870,10 +3867,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"gradient_get_color_at(): Unknown coloring mode %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -8182,13 +8176,9 @@ operator|!
 name|gradient_name
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"ed_do_new_gradient_callback(): "
-literal|"oops, received NULL in call_data"
-argument_list|)
+literal|"received NULL in call_data"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -8458,13 +8448,9 @@ operator|!
 name|gradient_name
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"ed_do_copy_gradient_callback(): "
-literal|"oops, received NULL in call_data"
-argument_list|)
+literal|"received NULL in call_data"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -8775,13 +8761,9 @@ operator|!
 name|gradient_name
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"ed_do_rename_gradient_callback(): "
-literal|"oops, received NULL in call_data"
-argument_list|)
+literal|"received NULL in call_data"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -8832,13 +8814,9 @@ operator|!
 name|grad_list
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"ed_do_rename_gradient_callback(): "
-literal|"oops, can't find gradient to rename"
-argument_list|)
+literal|"can't find gradient to rename"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -9247,11 +9225,7 @@ name|NULL
 condition|)
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
-literal|"ed_do_delete_gradient_callback(): "
 literal|"Could not find gradient to delete!"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Delete gradient from gradients list */
@@ -9579,7 +9553,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"ed_do_save_pov_callback(): oops, could not open \"%s\""
+literal|"Could not open \"%s\""
 argument_list|)
 argument_list|,
 name|filename
@@ -12598,10 +12572,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+name|g_warning
 argument_list|(
-literal|"control_do_hint: oops, in_handle is true "
-literal|"yet we got handle type %d"
+literal|"in_handle is true yet we got handle type %d"
 argument_list|,
 operator|(
 name|int
@@ -13028,10 +13001,9 @@ expr_stmt|;
 block|}
 return|return;
 default|default:
-name|g_message
+name|g_warning
 argument_list|(
-literal|"control_button_press(): oops, in_handle is true "
-literal|"yet we got handle type %d"
+literal|"in_handle is true yet we got handle type %d"
 argument_list|,
 operator|(
 name|int
@@ -13179,9 +13151,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+name|g_warning
 argument_list|(
-literal|"control_point_in_handle(): oops, can not handle drag mode %d"
+literal|"can not handle drag mode %d"
 argument_list|,
 operator|(
 name|int
@@ -13612,10 +13584,7 @@ break|break;
 default|default:
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
-literal|"control_motion(): Attempt to move bogus handle %d"
-argument_list|)
+literal|"Attempt to move bogus handle %d"
 argument_list|,
 operator|(
 name|int

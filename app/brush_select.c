@@ -2302,10 +2302,7 @@ name|brush_size
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
-literal|"(0 X 0)"
-argument_list|)
+literal|"(0 x 0)"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5187,7 +5184,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958dbd90108
+DECL|struct|__anon2bf5918a0108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -7628,10 +7625,7 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"(%d X %d)"
-argument_list|)
+literal|"(%d x %d)"
 argument_list|,
 name|brush
 operator|->

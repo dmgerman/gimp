@@ -60855,7 +60855,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a40e6ae0108
+DECL|struct|__anon288052990108
 typedef|typedef
 struct|struct
 block|{
@@ -60878,7 +60878,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a40e6ae0208
+DECL|struct|__anon288052990208
 typedef|typedef
 struct|struct
 block|{
@@ -61241,7 +61241,7 @@ literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
 literal|"2nd March 1997"
 argument_list|,
-literal|"<Image>/Filters/Misc/Video..."
+literal|"<Image>/Filters/Distorts/Video..."
 argument_list|,
 literal|"RGB*"
 argument_list|,

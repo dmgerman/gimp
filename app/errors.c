@@ -260,12 +260,9 @@ argument_list|,
 name|fmt
 argument_list|)
 expr_stmt|;
-name|printf
-argument_list|(
-name|_
+name|g_print
 argument_list|(
 literal|"%s: fatal error: %s\n"
-argument_list|)
 argument_list|,
 name|prog_name
 argument_list|,
@@ -372,7 +369,7 @@ argument_list|,
 name|fmt
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"%s terminated: "
 argument_list|,
@@ -386,7 +383,7 @@ argument_list|,
 name|args
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n"
 argument_list|)

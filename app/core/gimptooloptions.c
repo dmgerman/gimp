@@ -1055,10 +1055,7 @@ argument_list|(
 literal|"By-Color Select Options"
 argument_list|)
 else|:
-name|_
-argument_list|(
 literal|"ERROR: Unknown Selection Type"
-argument_list|)
 operator|)
 operator|)
 operator|)
@@ -2849,10 +2846,7 @@ argument_list|(
 literal|"Xinput Airbrush Options"
 argument_list|)
 else|:
-name|_
-argument_list|(
 literal|"ERROR: Unknown Paint Type"
-argument_list|)
 operator|)
 operator|)
 operator|)

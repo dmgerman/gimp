@@ -986,19 +986,12 @@ name|label_text
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s%s%s"
-argument_list|,
 name|_
 argument_list|(
-literal|"Version "
+literal|"Version %s brought to you by"
 argument_list|)
 argument_list|,
 name|GIMP_VERSION
-argument_list|,
-name|_
-argument_list|(
-literal|" brought to you by"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|label

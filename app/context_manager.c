@@ -544,6 +544,9 @@ case|:
 case|case
 name|SMUDGE
 case|:
+case|case
+name|XINPUT_AIRBRUSH
+case|:
 name|tool_info
 index|[
 name|i
@@ -593,6 +596,7 @@ index|]
 operator|.
 name|tool_context
 condition|)
+block|{
 name|gimp_context_set_parent
 argument_list|(
 name|tool_info
@@ -607,11 +611,13 @@ argument_list|,
 name|user_context
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
 name|global_paint_options
 condition|)
+block|{
 name|gimp_context_set_parent
 argument_list|(
 name|global_tool_context
@@ -619,6 +625,7 @@ argument_list|,
 name|user_context
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

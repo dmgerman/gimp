@@ -176,10 +176,7 @@ return|return;
 default|default:
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"drawable_fill called with unknown fill type"
-argument_list|)
+literal|"unknown fill type"
 argument_list|)
 expr_stmt|;
 name|a
