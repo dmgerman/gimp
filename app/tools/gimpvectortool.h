@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baa779e0103
+DECL|enum|__anon276c74c80103
 block|{
 DECL|enumerator|VECTORS_CREATE_VECTOR
 name|VECTORS_CREATE_VECTOR
@@ -189,12 +189,12 @@ name|saved_state
 decl_stmt|;
 comment|/* modifier state at button_press */
 DECL|member|last_x
-name|gint
+name|gdouble
 name|last_x
 decl_stmt|;
 comment|/* last x coordinate              */
 DECL|member|last_y
-name|gint
+name|gdouble
 name|last_y
 decl_stmt|;
 comment|/* last y coordinate              */
