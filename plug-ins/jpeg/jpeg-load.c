@@ -307,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3cb4400108
+DECL|struct|__anon27cabd0f0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3cb4400208
+DECL|struct|__anon27cabd0f0208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3cb4400308
+DECL|struct|__anon27cabd0f0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1041,7 +1041,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1999"
 argument_list|,
-literal|"<Save>/Jpeg"
+literal|"<Save>/JPEG"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -5900,7 +5900,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save as Jpeg"
+literal|"Save as JPEG"
 argument_list|)
 argument_list|,
 literal|"jpeg"
@@ -6093,7 +6093,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Preview (in Image Window)"
+literal|"Preview (in image window)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6738,7 +6738,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Restart Markers"
+literal|"Restart markers"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6796,7 +6796,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Restart Frequency (Rows):"
+literal|"Restart frequency (rows):"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7192,7 +7192,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Force Baseline JPEG (Readable by all Decoders)"
+literal|"Force baseline JPEG (Readable by all decoders)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7477,7 +7477,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"DCT Method (Speed/Quality Tradeoff):"
+literal|"DCT method (Speed/quality tradeoff):"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7611,7 +7611,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Image Comments"
+literal|"Image comments"
 argument_list|)
 argument_list|)
 expr_stmt|;
