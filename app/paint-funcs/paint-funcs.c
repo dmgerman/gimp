@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b498b50103
+DECL|enum|__anon2a3c71000103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -362,6 +362,33 @@ block|, }
 block|,
 comment|/*  GIMP_HARDLIGHT_MODE     */
 block|{
+name|FALSE
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|, }
+block|,
+comment|/*  GIMP_SOFTLIGHT_MODE     */
+block|{
+name|FALSE
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|, }
+block|,
+comment|/*  GIMP_GRAIN_EXTRACT_MODE */
+block|{
+name|FALSE
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|, }
+block|,
+comment|/*  GIMP_GRAIN_MERGE_MODE   */
+block|{
 name|TRUE
 block|,
 name|FALSE
@@ -462,6 +489,12 @@ name|layer_burn_mode
 block|,
 name|layer_hardlight_mode
 block|,
+name|layer_softlight_mode
+block|,
+name|layer_grain_extract_mode
+block|,
+name|layer_grain_merge_mode
+block|,
 name|layer_color_erase_mode
 block|,
 name|layer_erase_mode
@@ -469,7 +502,7 @@ block|,
 name|layer_replace_mode
 block|,
 name|layer_anti_erase_mode
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 

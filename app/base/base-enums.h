@@ -79,7 +79,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2410e90103
+DECL|enum|__anon2954c2d40103
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -119,7 +119,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2410e90203
+DECL|enum|__anon2954c2d40203
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -178,6 +178,15 @@ block|,
 DECL|enumerator|GIMP_HARDLIGHT_MODE
 name|GIMP_HARDLIGHT_MODE
 block|,
+DECL|enumerator|GIMP_SOFTLIGHT_MODE
+name|GIMP_SOFTLIGHT_MODE
+block|,
+DECL|enumerator|GIMP_GRAIN_EXTRACT_MODE
+name|GIMP_GRAIN_EXTRACT_MODE
+block|,
+DECL|enumerator|GIMP_GRAIN_MERGE_MODE
+name|GIMP_GRAIN_MERGE_MODE
+block|,
 DECL|enumerator|GIMP_COLOR_ERASE_MODE
 name|GIMP_COLOR_ERASE_MODE
 block|,
@@ -220,7 +229,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2410e90303
+DECL|enum|__anon2954c2d40303
 block|{
 DECL|enumerator|GIMP_SMALL_CHECKS
 name|GIMP_SMALL_CHECKS
@@ -267,7 +276,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2410e90403
+DECL|enum|__anon2954c2d40403
 block|{
 DECL|enumerator|GIMP_LIGHT_CHECKS
 name|GIMP_LIGHT_CHECKS
@@ -332,7 +341,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2410e90503
+DECL|enum|__anon2954c2d40503
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -390,7 +399,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2410e90603
+DECL|enum|__anon2954c2d40603
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -417,7 +426,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c2410e90703
+DECL|enum|__anon2954c2d40703
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -440,7 +449,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c2410e90803
+DECL|enum|__anon2954c2d40803
 block|{
 DECL|enumerator|GIMP_VALUE_LUT
 name|GIMP_VALUE_LUT
@@ -472,7 +481,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c2410e90903
+DECL|enum|__anon2954c2d40903
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES

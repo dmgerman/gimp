@@ -232,6 +232,42 @@ name|GIMP_HARDLIGHT_MODE
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
+literal|"Soft Light"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|GIMP_SOFTLIGHT_MODE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Grain Extract"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|GIMP_GRAIN_EXTRACT_MODE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Grain Merge"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|GIMP_GRAIN_MERGE_MODE
+argument_list|,
+name|NULL
+argument_list|,
 literal|"---"
 argument_list|,
 operator|(
@@ -502,6 +538,42 @@ operator|(
 name|gpointer
 operator|)
 name|GIMP_HARDLIGHT_MODE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Soft Light"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|GIMP_SOFTLIGHT_MODE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Grain Extract"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|GIMP_GRAIN_EXTRACT_MODE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Grain Merge"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|GIMP_GRAIN_MERGE_MODE
 argument_list|,
 name|NULL
 argument_list|,
