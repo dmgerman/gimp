@@ -4451,7 +4451,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bc331ca0108
+DECL|struct|__anon2c98739b0108
 typedef|typedef
 struct|struct
 block|{
@@ -7672,9 +7672,6 @@ argument_list|,
 name|layer_widget
 argument_list|)
 expr_stmt|;
-name|suspend_gimage_notify
-operator|--
-expr_stmt|;
 comment|/*  Add it back at the proper index  */
 name|gtk_list_insert_items
 argument_list|(
@@ -7704,6 +7701,9 @@ name|layer_widget
 argument_list|,
 name|new_index
 argument_list|)
+expr_stmt|;
+name|suspend_gimage_notify
+operator|--
 expr_stmt|;
 block|}
 end_function
