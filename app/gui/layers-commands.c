@@ -3789,6 +3789,18 @@ name|gimage
 operator|)
 condition|)
 block|{
+name|gimp_image_undo_group_start
+argument_list|(
+name|gimage
+argument_list|,
+name|GIMP_UNDO_GROUP_LAYER_ADD_MASK
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Layer Mask"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|mask
 operator|=
 name|gimp_layer_create_mask
@@ -3828,6 +3840,11 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|mask
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_group_end
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

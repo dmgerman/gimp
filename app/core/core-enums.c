@@ -74,6 +74,17 @@ literal|"alpha-mask"
 block|}
 block|,
 block|{
+name|GIMP_ADD_ALPHA_MASK_TRANSFER
+block|,
+name|N_
+argument_list|(
+literal|"_Transfer Layer's Alpha Channel"
+argument_list|)
+block|,
+literal|"alpha-mask-transfer"
+block|}
+block|,
+block|{
 name|GIMP_ADD_SELECTION_MASK
 block|,
 name|N_
@@ -2761,6 +2772,17 @@ literal|"Resize Layer"
 argument_list|)
 block|,
 literal|"group-layer-resize"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_LAYER_ADD_MASK
+block|,
+name|N_
+argument_list|(
+literal|"Add Layer Mask"
+argument_list|)
+block|,
+literal|"group-layer-add-mask"
 block|}
 block|,
 block|{
