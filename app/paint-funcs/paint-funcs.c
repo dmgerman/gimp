@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaac20c0103
+DECL|enum|__anon29b498b50103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -1747,9 +1747,13 @@ index|]
 operator|=
 literal|255
 expr_stmt|;
+comment|/* *_mmx functions are problematical. See "Additional Comments: Bug #86290"     * http://bugzilla.gnome.org/show_bug.cgi?id=86290 grosgood@rcn.com Nov-03-2002    */
 ifdef|#
 directive|ifdef
 name|HAVE_ASM_MMX
+if|#
+directive|if
+name|GIMP_ENABLE_MMX
 if|if
 condition|(
 name|use_mmx
@@ -1812,6 +1816,9 @@ operator|=
 name|layer_lighten_only_mode_mmx
 expr_stmt|;
 block|}
+endif|#
+directive|endif
+comment|/* GIMP_ENABLE_MMX */
 endif|#
 directive|endif
 comment|/* HAVE_ASM_MMX */
