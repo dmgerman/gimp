@@ -1988,6 +1988,14 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
+comment|/* Stop the signal emission so the button doesn't grab the        * pointer away from us        */
+name|gtk_signal_emit_stop_by_name
+argument_list|(
+name|widget
+argument_list|,
+literal|"button_press_event"
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|FALSE
