@@ -244,7 +244,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27799ec30103
+DECL|enum|__anon2bf3cca40103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -379,7 +379,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27799ec30203
+DECL|enum|__anon2bf3cca40203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -9547,7 +9547,7 @@ operator|||
 operator|(
 name|unit
 operator|>=
-name|gimp_unit_get_number_of_units
+name|gimp_unit_get_number_of_built_in_units
 argument_list|()
 operator|)
 condition|)
