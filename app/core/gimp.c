@@ -261,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c6a3da0103
+DECL|enum|__anon29da91da0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2864,7 +2864,7 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (const gchar * name,gboolean be_verbose,gboolean no_data,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
+DECL|function|gimp_new (const gchar * name,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
 name|gimp_new
 parameter_list|(
 specifier|const
@@ -2877,6 +2877,9 @@ name|be_verbose
 parameter_list|,
 name|gboolean
 name|no_data
+parameter_list|,
+name|gboolean
+name|no_fonts
 parameter_list|,
 name|gboolean
 name|no_interface
@@ -2932,6 +2935,16 @@ operator|->
 name|no_data
 operator|=
 name|no_data
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
+name|no_fonts
+operator|=
+name|no_fonts
 condition|?
 name|TRUE
 else|:

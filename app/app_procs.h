@@ -102,6 +102,9 @@ name|gboolean
 name|no_data
 parameter_list|,
 name|gboolean
+name|no_fonts
+parameter_list|,
+name|gboolean
 name|no_splash
 parameter_list|,
 name|gboolean

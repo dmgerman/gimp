@@ -419,6 +419,10 @@ DECL|member|no_data
 name|gboolean
 name|no_data
 decl_stmt|;
+DECL|member|no_fonts
+name|gboolean
+name|no_fonts
+decl_stmt|;
 DECL|member|no_interface
 name|gboolean
 name|no_interface
@@ -832,6 +836,9 @@ name|be_verbose
 parameter_list|,
 name|gboolean
 name|no_data
+parameter_list|,
+name|gboolean
+name|no_fonts
 parameter_list|,
 name|gboolean
 name|no_interface

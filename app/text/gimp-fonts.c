@@ -206,6 +206,13 @@ name|fonts
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|no_fonts
+condition|)
+return|return;
 name|gimp_set_busy
 argument_list|(
 name|gimp
@@ -526,5 +533,6 @@ expr_stmt|;
 block|}
 end_function
 
+unit|\
 end_unit
 

@@ -232,7 +232,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_init (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_mmx,gboolean console_messages,GimpStackTraceMode stack_trace_mode,gboolean restore_session)
+DECL|function|app_init (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_mmx,gboolean console_messages,GimpStackTraceMode stack_trace_mode,gboolean restore_session)
 name|app_init
 parameter_list|(
 specifier|const
@@ -269,6 +269,9 @@ name|no_interface
 parameter_list|,
 name|gboolean
 name|no_data
+parameter_list|,
+name|gboolean
+name|no_fonts
 parameter_list|,
 name|gboolean
 name|no_splash
@@ -310,6 +313,8 @@ argument_list|,
 name|be_verbose
 argument_list|,
 name|no_data
+argument_list|,
+name|no_fonts
 argument_list|,
 name|no_interface
 argument_list|,
