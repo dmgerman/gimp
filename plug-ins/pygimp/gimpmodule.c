@@ -162,7 +162,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c10abce0108
+DECL|struct|__anon2bbfb8680108
 typedef|typedef
 struct|struct
 block|{
@@ -202,7 +202,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c10abce0208
+DECL|struct|__anon2bbfb8680208
 typedef|typedef
 struct|struct
 block|{
@@ -258,7 +258,7 @@ name|nreturn_vals
 decl_stmt|;
 DECL|member|params
 DECL|member|return_vals
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|params
 decl_stmt|,
@@ -311,7 +311,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c10abce0308
+DECL|struct|__anon2bbfb8680308
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c10abce0408
+DECL|struct|__anon2bbfb8680408
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +419,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c10abce0508
+DECL|struct|__anon2bbfb8680508
 typedef|typedef
 struct|struct
 block|{
@@ -429,7 +429,7 @@ name|gint32
 name|ID
 decl_stmt|;
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -526,7 +526,7 @@ name|drwobject
 modifier|*
 name|newdrwobject
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 parameter_list|,
 name|gint32
@@ -543,13 +543,13 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c10abce0608
+DECL|struct|__anon2bbfb8680608
 typedef|typedef
 struct|struct
 block|{
 name|PyObject_HEAD
 DECL|member|tile
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -590,7 +590,7 @@ name|tileobject
 modifier|*
 name|newtileobject
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 parameter_list|,
 name|drwobject
@@ -609,13 +609,13 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c10abce0708
+DECL|struct|__anon2bbfb8680708
 typedef|typedef
 struct|struct
 block|{
 name|PyObject_HEAD
 DECL|member|pr
-name|GPixelRgn
+name|GimpPixelRgn
 name|pr
 decl_stmt|;
 DECL|member|drawable
@@ -685,17 +685,17 @@ name|GIMP_HAVE_PARASITES
 end_ifdef
 
 begin_comment
-comment|/* Declarations for objects of type Parasite */
+comment|/* Declarations for objects of type GimpParasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c10abce0808
+DECL|struct|__anon2bbfb8680808
 typedef|typedef
 struct|struct
 block|{
 name|PyObject_HEAD
 DECL|member|para
-name|Parasite
+name|GimpParasite
 modifier|*
 name|para
 decl_stmt|;
@@ -730,7 +730,7 @@ name|paraobject
 modifier|*
 name|newparaobject
 parameter_list|(
-name|Parasite
+name|GimpParasite
 modifier|*
 name|para
 parameter_list|)
@@ -747,7 +747,7 @@ comment|/* ---------------------------------------------------------------- */
 end_comment
 
 begin_comment
-comment|/* routines to convert between Python tuples and gimp GParam's */
+comment|/* routines to convert between Python tuples and gimp GimpParam's */
 end_comment
 
 begin_if
@@ -759,7 +759,7 @@ literal|0
 end_if
 
 begin_function
-DECL|function|print_GParam (int nparams,GParam * params)
+DECL|function|print_GParam (int nparams,GimpParam * params)
 specifier|static
 name|void
 name|print_GParam
@@ -767,7 +767,7 @@ parameter_list|(
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|)
@@ -1012,13 +1012,13 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|GParam_to_tuple (int nparams,GParam * params)
+DECL|function|GParam_to_tuple (int nparams,GimpParam * params)
 name|GParam_to_tuple
 parameter_list|(
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|)
@@ -2332,7 +2332,7 @@ operator|*
 operator|)
 name|newparaobject
 argument_list|(
-name|parasite_copy
+name|gimp_parasite_copy
 argument_list|(
 operator|&
 operator|(
@@ -2389,16 +2389,16 @@ end_function
 
 begin_function
 specifier|static
-name|GParam
+name|GimpParam
 modifier|*
-DECL|function|tuple_to_GParam (PyObject * args,GParamDef * ptype,int nparams)
+DECL|function|tuple_to_GParam (PyObject * args,GimpParamDef * ptype,int nparams)
 name|tuple_to_GParam
 parameter_list|(
 name|PyObject
 modifier|*
 name|args
 parameter_list|,
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|ptype
 parameter_list|,
@@ -2434,7 +2434,7 @@ decl_stmt|,
 modifier|*
 name|h
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|ret
 decl_stmt|;
@@ -2558,7 +2558,7 @@ name|ret
 operator|=
 name|g_new
 argument_list|(
-name|GParam
+name|GimpParam
 argument_list|,
 name|nparams
 operator|+
@@ -3731,7 +3731,7 @@ name|GIMP_HAVE_PARASITES
 case|case
 name|GIMP_PDB_PARASITE
 case|:
-comment|/* can't do anything, since size of Parasite is not known */
+comment|/* can't do anything, since size of GimpParasite is not known */
 break|break;
 endif|#
 directive|endif
@@ -4247,7 +4247,7 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_query_database
+name|gimp_procedural_db_query
 argument_list|(
 name|n
 argument_list|,
@@ -5626,7 +5626,7 @@ modifier|*
 name|kwargs
 decl_stmt|;
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 decl_stmt|,
@@ -5743,7 +5743,7 @@ name|data
 operator|.
 name|d_int32
 operator|=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 expr_stmt|;
 if|#
 directive|if
@@ -5898,7 +5898,7 @@ name|d_status
 condition|)
 block|{
 case|case
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 case|:
 if|#
 directive|if
@@ -5933,7 +5933,7 @@ name|NULL
 return|;
 break|break;
 case|case
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 case|:
 if|#
 directive|if
@@ -5968,7 +5968,7 @@ name|NULL
 return|;
 break|break;
 case|case
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 case|:
 if|#
 directive|if
@@ -6543,7 +6543,7 @@ modifier|*
 name|args
 decl_stmt|;
 block|{
-comment|/*GParam *return_vals;     int nreturn_vals;*/
+comment|/*GimpParam *return_vals;     int nreturn_vals;*/
 if|if
 condition|(
 operator|!
@@ -6596,7 +6596,7 @@ modifier|*
 name|args
 decl_stmt|;
 block|{
-comment|/*GParam *return_vals;     int nreturn_vals;*/
+comment|/*GimpParam *return_vals;     int nreturn_vals;*/
 if|if
 condition|(
 operator|!
@@ -10794,7 +10794,7 @@ modifier|*
 name|args
 decl_stmt|;
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|t
 decl_stmt|;
@@ -10882,7 +10882,7 @@ modifier|*
 name|args
 decl_stmt|;
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|t
 decl_stmt|;
@@ -11375,10 +11375,10 @@ begin_function
 specifier|static
 name|drwobject
 modifier|*
-DECL|function|newdrwobject (GDrawable * d,gint32 ID)
+DECL|function|newdrwobject (GimpDrawable * d,gint32 ID)
 name|newdrwobject
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|d
 parameter_list|,
@@ -11506,7 +11506,7 @@ literal|0
 decl_stmt|,
 name|nreturn_vals
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -11563,7 +11563,7 @@ name|data
 operator|.
 name|d_status
 operator|!=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|PyErr_SetString
@@ -12430,7 +12430,7 @@ argument_list|(
 operator|(
 name|long
 operator|)
-name|gimp_layer_bpp
+name|gimp_drawable_bpp
 argument_list|(
 name|self
 operator|->
@@ -12475,7 +12475,7 @@ argument_list|(
 operator|(
 name|long
 operator|)
-name|gimp_layer_height
+name|gimp_drawable_height
 argument_list|(
 name|self
 operator|->
@@ -12962,7 +12962,7 @@ argument_list|(
 operator|(
 name|long
 operator|)
-name|gimp_layer_type
+name|gimp_drawable_type
 argument_list|(
 name|self
 operator|->
@@ -13010,7 +13010,7 @@ argument_list|(
 operator|(
 name|long
 operator|)
-name|gimp_layer_width
+name|gimp_drawable_width
 argument_list|(
 name|self
 operator|->
@@ -13215,7 +13215,7 @@ operator|->
 name|ID
 argument_list|,
 operator|(
-name|GLayerMode
+name|GimpLayerModeEffects
 operator|)
 name|PyInt_AsLong
 argument_list|(
@@ -14376,7 +14376,7 @@ argument_list|(
 operator|(
 name|long
 operator|)
-name|gimp_channel_height
+name|gimp_drawable_height
 argument_list|(
 name|self
 operator|->
@@ -14807,7 +14807,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_channel_width
+name|gimp_drawable_width
 argument_list|(
 name|self
 operator|->
@@ -15670,7 +15670,7 @@ name|t
 parameter_list|,
 name|drw
 parameter_list|)
-name|GTile
+name|GimpTile
 modifier|*
 name|t
 decl_stmt|;
@@ -15775,7 +15775,7 @@ name|OFF
 parameter_list|(
 name|x
 parameter_list|)
-value|offsetof(GTile, x)
+value|offsetof(GimpTile, x)
 end_define
 
 begin_decl_stmt
@@ -16147,7 +16147,7 @@ modifier|*
 name|sub
 decl_stmt|;
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 init|=
@@ -16349,7 +16349,7 @@ end_function
 
 begin_block
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 init|=
@@ -17092,7 +17092,7 @@ modifier|*
 name|key
 decl_stmt|;
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 init|=
@@ -17857,7 +17857,7 @@ end_function
 
 begin_block
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 init|=
@@ -18661,7 +18661,7 @@ name|OFF
 parameter_list|(
 name|x
 parameter_list|)
-value|offsetof(GPixelRgn, x)
+value|offsetof(GimpPixelRgn, x)
 end_define
 
 begin_decl_stmt
@@ -19155,7 +19155,7 @@ operator|*
 operator|)
 name|newparaobject
 argument_list|(
-name|parasite_copy
+name|gimp_parasite_copy
 argument_list|(
 name|self
 operator|->
@@ -19209,7 +19209,7 @@ return|;
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|parasite_is_type
+name|gimp_parasite_is_type
 argument_list|(
 name|self
 operator|->
@@ -19264,7 +19264,7 @@ return|;
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|parasite_has_flag
+name|gimp_parasite_has_flag
 argument_list|(
 name|self
 operator|->
@@ -19338,7 +19338,7 @@ name|newparaobject
 parameter_list|(
 name|para
 parameter_list|)
-name|Parasite
+name|GimpParasite
 modifier|*
 name|para
 decl_stmt|;
@@ -19410,7 +19410,7 @@ modifier|*
 name|self
 decl_stmt|;
 block|{
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|self
 operator|->
@@ -19514,7 +19514,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|parasite_is_persistent
+name|gimp_parasite_is_persistent
 argument_list|(
 name|self
 operator|->
@@ -19545,7 +19545,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|parasite_is_undoable
+name|gimp_parasite_is_undoable
 argument_list|(
 name|self
 operator|->
@@ -19568,7 +19568,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|parasite_flags
+name|gimp_parasite_flags
 argument_list|(
 name|self
 operator|->
@@ -19589,7 +19589,7 @@ condition|)
 return|return
 name|PyString_FromString
 argument_list|(
-name|parasite_name
+name|gimp_parasite_name
 argument_list|(
 name|self
 operator|->
@@ -19610,14 +19610,14 @@ condition|)
 return|return
 name|PyString_FromStringAndSize
 argument_list|(
-name|parasite_data
+name|gimp_parasite_data
 argument_list|(
 name|self
 operator|->
 name|para
 argument_list|)
 argument_list|,
-name|parasite_data_size
+name|gimp_parasite_data_size
 argument_list|(
 name|self
 operator|->
@@ -19674,7 +19674,7 @@ name|s
 argument_list|,
 name|PyString_FromString
 argument_list|(
-name|parasite_name
+name|gimp_parasite_name
 argument_list|(
 name|self
 operator|->
@@ -19717,14 +19717,14 @@ block|{
 return|return
 name|PyString_FromStringAndSize
 argument_list|(
-name|parasite_data
+name|gimp_parasite_data
 argument_list|(
 name|self
 operator|->
 name|para
 argument_list|)
 argument_list|,
-name|parasite_data_size
+name|gimp_parasite_data_size
 argument_list|(
 name|self
 operator|->
@@ -19750,7 +19750,7 @@ argument_list|)
 literal|0
 block|,
 comment|/*ob_size*/
-literal|"Parasite"
+literal|"GimpParasite"
 block|,
 comment|/*tp_name*/
 sizeof|sizeof
@@ -19842,7 +19842,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* End of code for Parasite objects */
+comment|/* End of code for GimpParasite objects */
 end_comment
 
 begin_comment
@@ -19856,7 +19856,7 @@ end_endif
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -20031,7 +20031,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|pygimp_run_proc (char * name,int nparams,GParam * params,int * nreturn_vals,GParam ** return_vals)
+DECL|function|pygimp_run_proc (char * name,int nparams,GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
 specifier|static
 name|void
 name|pygimp_run_proc
@@ -20043,7 +20043,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -20051,7 +20051,7 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -20094,7 +20094,7 @@ name|np
 decl_stmt|,
 name|nrv
 decl_stmt|;
-name|gimp_query_procedure
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|name
 argument_list|,
@@ -20211,7 +20211,7 @@ name|return_vals
 operator|=
 name|g_new
 argument_list|(
-name|GParam
+name|GimpParam
 argument_list|,
 literal|1
 argument_list|)
@@ -20240,7 +20240,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 return|return;
 block|}
@@ -20288,7 +20288,7 @@ name|return_vals
 operator|=
 name|g_new
 argument_list|(
-name|GParam
+name|GimpParam
 argument_list|,
 literal|1
 argument_list|)
@@ -20317,7 +20317,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 return|return;
 block|}
@@ -20359,7 +20359,7 @@ name|return_vals
 operator|=
 name|g_new
 argument_list|(
-name|GParam
+name|GimpParam
 argument_list|,
 literal|1
 argument_list|)
@@ -20388,7 +20388,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 return|return;
 block|}
@@ -20428,7 +20428,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 block|}
 end_function
@@ -20717,7 +20717,7 @@ specifier|extern
 name|void
 name|set_gimp_PLUG_IN_INFO_PTR
 argument_list|(
-name|GPlugInInfo
+name|GimpPlugInInfo
 operator|*
 argument_list|)
 decl_stmt|;
@@ -20872,7 +20872,7 @@ name|bytes
 decl_stmt|,
 name|nreturn_vals
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -20933,7 +20933,7 @@ name|data
 operator|.
 name|d_status
 operator|!=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|PyErr_SetString
@@ -20993,7 +20993,7 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -21044,7 +21044,7 @@ name|data
 operator|.
 name|d_status
 operator|!=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|PyErr_SetString
@@ -21262,7 +21262,7 @@ name|NULL
 return|;
 name|imgs
 operator|=
-name|gimp_query_images
+name|gimp_image_list
 argument_list|(
 operator|&
 name|nimgs
@@ -21365,7 +21365,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|params
 decl_stmt|,
@@ -21478,7 +21478,7 @@ name|params
 operator|=
 name|g_new
 argument_list|(
-name|GParamDef
+name|GimpParamDef
 argument_list|,
 name|nparams
 argument_list|)
@@ -21567,7 +21567,7 @@ name|return_vals
 operator|=
 name|g_new
 argument_list|(
-name|GParamDef
+name|GimpParamDef
 argument_list|,
 name|nreturn_vals
 argument_list|)
@@ -21749,7 +21749,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|params
 decl_stmt|,
@@ -21862,7 +21862,7 @@ name|params
 operator|=
 name|g_new
 argument_list|(
-name|GParamDef
+name|GimpParamDef
 argument_list|,
 name|nparams
 argument_list|)
@@ -21951,7 +21951,7 @@ name|return_vals
 operator|=
 name|g_new
 argument_list|(
-name|GParamDef
+name|GimpParamDef
 argument_list|,
 name|nreturn_vals
 argument_list|)
@@ -23540,7 +23540,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|GImageType
+name|GimpImageBaseType
 name|type
 decl_stmt|;
 if|if
@@ -23621,13 +23621,13 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|type
 decl_stmt|;
 name|double
 name|opacity
 decl_stmt|;
-name|GLayerMode
+name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
 if|if
@@ -24469,7 +24469,7 @@ operator|*
 operator|)
 name|newparaobject
 argument_list|(
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 name|name
 argument_list|,
