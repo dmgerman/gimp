@@ -704,9 +704,13 @@ name|opacity
 operator|=
 name|OPAQUE_OPACITY
 operator|*
+operator|(
 name|paint_core
 operator|->
 name|curpressure
+operator|/
+literal|0.5
+operator|)
 expr_stmt|;
 if|if
 condition|(
