@@ -51,6 +51,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpChannel
+modifier|*
+name|gimp_image_get_qmask
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_image_qmask_invert
 parameter_list|(

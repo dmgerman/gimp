@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84bad20103
+DECL|enum|__anon2b968b5d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4122,13 +4122,9 @@ name|gimage
 argument_list|)
 operator|&&
 operator|!
-name|gimp_container_get_child_by_name
+name|gimp_image_get_qmask
 argument_list|(
 name|gimage
-operator|->
-name|channels
-argument_list|,
-name|GIMP_IMAGE_QMASK_NAME
 argument_list|)
 condition|)
 block|{
