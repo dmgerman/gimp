@@ -545,11 +545,14 @@ name|transform_core
 operator|->
 name|original
 argument_list|,
+operator|(
+name|int
+operator|)
 name|transform_core
 operator|->
 name|trans_info
 index|[
-name|FLIP
+name|FLIP_INFO
 index|]
 argument_list|,
 name|flip_options
