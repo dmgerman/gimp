@@ -328,7 +328,7 @@ name|gimp
 operator|->
 name|no_interface
 condition|)
-name|plug_in_progress_init
+name|plug_in_progress_start
 argument_list|(
 name|current_plug_in
 argument_list|,

@@ -94,13 +94,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_progress_init (PlugIn * plug_in,gchar * message,gint gdisp_ID)
-name|plug_in_progress_init
+DECL|function|plug_in_progress_start (PlugIn * plug_in,const gchar * message,gint gdisp_ID)
+name|plug_in_progress_start
 parameter_list|(
 name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|message
@@ -115,6 +116,13 @@ name|gdisp
 init|=
 name|NULL
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|plug_in
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -209,6 +217,13 @@ name|gdouble
 name|percentage
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|plug_in
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -216,7 +231,7 @@ name|plug_in
 operator|->
 name|progress
 condition|)
-name|plug_in_progress_init
+name|plug_in_progress_start
 argument_list|(
 name|plug_in
 argument_list|,
@@ -248,6 +263,13 @@ modifier|*
 name|plug_in
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|plug_in
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|plug_in

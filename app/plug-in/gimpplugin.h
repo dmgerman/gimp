@@ -50,7 +50,7 @@ name|open
 range|:
 literal|1
 decl_stmt|;
-comment|/*  Is the plug-in open*                    */
+comment|/*  Is the plug-in open?                    */
 DECL|member|query
 name|guint
 name|query

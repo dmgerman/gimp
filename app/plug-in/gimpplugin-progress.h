@@ -18,12 +18,13 @@ end_define
 
 begin_function_decl
 name|void
-name|plug_in_progress_init
+name|plug_in_progress_start
 parameter_list|(
 name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|message
