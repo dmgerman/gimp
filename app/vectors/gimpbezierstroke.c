@@ -629,7 +629,7 @@ name|anchor
 operator|->
 name|type
 operator|=
-name|ANCHOR_HANDLE
+name|GIMP_HANDLE_ANCHOR
 expr_stmt|;
 name|anchor
 operator|->
@@ -930,7 +930,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|CONTROL_HANDLE
+name|GIMP_HANDLE_CONTROL
 condition|)
 block|{
 name|control_count
@@ -962,7 +962,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|CONTROL_HANDLE
+name|GIMP_HANDLE_CONTROL
 condition|)
 block|{
 name|control_count
@@ -1066,7 +1066,7 @@ name|anchor
 operator|->
 name|type
 operator|=
-name|CONTROL_HANDLE
+name|GIMP_HANDLE_CONTROL
 expr_stmt|;
 break|break;
 case|case
@@ -1076,7 +1076,7 @@ name|anchor
 operator|->
 name|type
 operator|=
-name|ANCHOR_HANDLE
+name|GIMP_HANDLE_ANCHOR
 expr_stmt|;
 break|break;
 default|default:
@@ -1352,7 +1352,7 @@ operator|)
 operator|->
 name|type
 operator|!=
-name|ANCHOR_HANDLE
+name|GIMP_HANDLE_ANCHOR
 condition|;
 name|anchorlist
 operator|=

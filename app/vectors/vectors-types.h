@@ -34,13 +34,13 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcc68a80103
+DECL|enum|__anon2788af1b0103
 block|{
-DECL|enumerator|ANCHOR_HANDLE
-name|ANCHOR_HANDLE
+DECL|enumerator|GIMP_HANDLE_ANCHOR
+name|GIMP_HANDLE_ANCHOR
 block|,
-DECL|enumerator|CONTROL_HANDLE
-name|CONTROL_HANDLE
+DECL|enumerator|GIMP_HANDLE_CONTROL
+name|GIMP_HANDLE_CONTROL
 block|, }
 DECL|typedef|GimpAnchorType
 name|GimpAnchorType
@@ -50,7 +50,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcc68a80203
+DECL|enum|__anon2788af1b0203
 block|{
 DECL|enumerator|EXTEND_SIMPLE
 name|EXTEND_SIMPLE

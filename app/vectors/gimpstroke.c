@@ -1924,7 +1924,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|ANCHOR_HANDLE
+name|GIMP_HANDLE_ANCHOR
 condition|)
 name|ret_list
 operator|=
@@ -2035,7 +2035,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|CONTROL_HANDLE
+name|GIMP_HANDLE_CONTROL
 condition|)
 block|{
 if|if
@@ -2058,7 +2058,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|ANCHOR_HANDLE
+name|GIMP_HANDLE_ANCHOR
 operator|&&
 operator|(
 operator|(
@@ -2106,7 +2106,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|ANCHOR_HANDLE
+name|GIMP_HANDLE_ANCHOR
 operator|&&
 operator|(
 operator|(
@@ -2246,7 +2246,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|ANCHOR_HANDLE
+name|GIMP_HANDLE_ANCHOR
 operator|&&
 operator|(
 operator|(

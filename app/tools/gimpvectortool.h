@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af2dea90103
+DECL|enum|__anon29db30740103
 block|{
 DECL|enumerator|VECTORS_CREATING
 name|VECTORS_CREATING
@@ -234,6 +234,17 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_vector_tool_clear_vectors
+parameter_list|(
+name|GimpVectorTool
+modifier|*
+name|vector_tool
 parameter_list|)
 function_decl|;
 end_function_decl
