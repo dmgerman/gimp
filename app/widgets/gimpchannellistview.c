@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchannellistview.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"gimplistitem.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include

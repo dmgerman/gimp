@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcomponentlistitem.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gimppreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include

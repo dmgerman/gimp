@@ -36,19 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/gui-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpprogress.h"
 end_include
 
 begin_include
@@ -60,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
@@ -85,6 +79,18 @@ begin_include
 include|#
 directive|include
 file|"transform_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
 end_include
 
 begin_include

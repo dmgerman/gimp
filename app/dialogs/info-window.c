@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/tools-types.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpunit.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
@@ -135,12 +135,6 @@ begin_include
 include|#
 directive|include
 file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include

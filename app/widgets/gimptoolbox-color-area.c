@@ -96,12 +96,6 @@ directive|include
 file|"app_procs.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -132,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e60ef00103
+DECL|enum|__anon2a9d4bb70103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptool.h"
 end_include
 
@@ -60,18 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276128230103
+DECL|enum|__anon2c7522db0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE

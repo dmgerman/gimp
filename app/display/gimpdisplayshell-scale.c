@@ -30,13 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
+file|"display-types.h"
 end_include
 
 begin_include
@@ -60,13 +54,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gimpdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay_ops.h"
+file|"gimpdisplay-ops.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplay-scale.h"
 end_include
 
 begin_include
@@ -79,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"nav_window.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"scale.h"
 end_include
 
 begin_function

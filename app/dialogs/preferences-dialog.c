@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -84,6 +84,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay-ops.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay-render.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/tool_manager.h"
 end_include
 
@@ -120,18 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay_ops.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphelp.h"
 end_include
 
@@ -139,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"image_render.h"
 end_include
 
 begin_include
@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29591e2f0103
+DECL|enum|__anon2b43555c0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -13545,7 +13545,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29591e2f0208
+DECL|struct|__anon2b43555c0208
 block|{
 DECL|member|label
 name|gchar
@@ -13774,7 +13774,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29591e2f0308
+DECL|struct|__anon2b43555c0308
 block|{
 DECL|member|tree_label
 name|gchar

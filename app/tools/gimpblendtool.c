@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -133,12 +139,6 @@ begin_include
 include|#
 directive|include
 file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -335,7 +335,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1422030108
+DECL|struct|__anon2a3ffcff0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -392,7 +392,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1422030208
+DECL|struct|__anon2a3ffcff0208
 block|{
 DECL|member|PR
 name|PixelRegion

@@ -42,13 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"path_curves.h"
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
@@ -78,13 +72,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"path_tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"path_tool.h"
+file|"path_curves.h"
 end_include
 
 begin_comment

@@ -84,6 +84,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay-scroll.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay-scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpnavigationpreview.h"
 end_include
 
@@ -91,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -115,18 +127,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"scroll.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"scale.h"
 end_include
 
 begin_include
@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b42e96d0103
+DECL|enum|__anon2afd16b00103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW

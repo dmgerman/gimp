@@ -36,13 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
+file|"display/display-types.h"
 end_include
 
 begin_include
@@ -54,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimpbezierselecttool.h"
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"tools/gimpbezierselecttool.h"
 end_include
 
 begin_include

@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/tools-types.h"
 end_include
 
@@ -132,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimpbycolorselecttool.h"
 end_include
 
@@ -175,18 +175,6 @@ begin_include
 include|#
 directive|include
 file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay_ops.h"
 end_include
 
 begin_include
@@ -251,7 +239,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aa234d80103
+DECL|enum|__anon2b9b7a500103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

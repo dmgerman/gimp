@@ -83,7 +83,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"display/display-types.h"
 end_include
 
 begin_include
@@ -101,6 +101,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-ops.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/resolution-calibrate-dialog.h"
 end_include
 
@@ -108,12 +114,6 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay_ops.h"
 end_include
 
 begin_include
@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29617bf40108
+DECL|struct|__anon273d90160108
 block|{
 DECL|member|directory
 name|gboolean

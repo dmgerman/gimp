@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawtool.h"
 end_include
 
@@ -175,12 +181,6 @@ begin_include
 include|#
 directive|include
 file|"devices.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -245,7 +245,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eb5eea0103
+DECL|enum|__anon2ae327c20103
 block|{
 DECL|enumerator|PAINT
 name|PAINT

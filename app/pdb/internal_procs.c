@@ -490,7 +490,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"GDisplay procedures"
+literal|"GimpDisplay procedures"
 argument_list|)
 argument_list|,
 literal|0.138

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchannellistview.h"
 end_include
 
@@ -108,18 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279b2ae90103
+DECL|enum|__anon28de56b10103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE

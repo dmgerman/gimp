@@ -78,6 +78,30 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay-ops.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay-render.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gximage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -138,18 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gximage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"image_render.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"menus.h"
 end_include
 
@@ -200,26 +212,6 @@ include|#
 directive|include
 file|"app_procs.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_comment
-comment|/* for gdisplay_*_override_cursor()  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"gdisplay_ops.h"
-end_include
-
-begin_comment
-comment|/* for gdisplay_xserver_resolution() */
-end_comment
 
 begin_include
 include|#

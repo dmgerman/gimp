@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpclonetool.h"
 end_include
 
@@ -121,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bde90110103
+DECL|enum|__anon2ad104110103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO

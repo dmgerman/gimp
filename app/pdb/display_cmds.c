@@ -52,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"display/gimpdisplay.h"
 end_include
 
 begin_decl_stmt
@@ -145,7 +145,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -333,7 +333,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;

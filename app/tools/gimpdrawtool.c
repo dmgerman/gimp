@@ -30,18 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawtool.h"
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b79b1c70103
+DECL|enum|__anon29c716aa0103
 block|{
 DECL|enumerator|DRAW
 name|DRAW

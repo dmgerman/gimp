@@ -130,6 +130,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/tool_manager.h"
 end_include
 
@@ -185,12 +191,6 @@ begin_include
 include|#
 directive|include
 file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include

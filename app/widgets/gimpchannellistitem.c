@@ -51,12 +51,6 @@ directive|include
 file|"gimppreview.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
 begin_function_decl
 specifier|static
 name|void
@@ -86,7 +80,7 @@ comment|/* static void   gimp_channel_list_item_drop_color (GtkWidget     *widge
 end_comment
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_channel_list_item_get_type (void)
 name|gimp_channel_list_item_get_type
 parameter_list|(
@@ -94,7 +88,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|list_item_type
 init|=
 literal|0

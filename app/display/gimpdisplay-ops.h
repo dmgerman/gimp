@@ -6,21 +6,15 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GDISPLAY_OPS_H__
+name|__GIMPDISPLAY_OPS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GDISPLAY_OPS_H__
+DECL|macro|__GIMPDISPLAY_OPS_H__
 define|#
 directive|define
-name|__GDISPLAY_OPS_H__
+name|__GIMPDISPLAY_OPS_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
 
 begin_function_decl
 name|gulong
@@ -123,7 +117,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GDISPLAY_OPS_H__ */
+comment|/* __GIMPDISPLAY_OPS_H__ */
 end_comment
 
 end_unit

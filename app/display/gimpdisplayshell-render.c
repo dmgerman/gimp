@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"display-types.h"
 end_include
 
 begin_include
@@ -54,19 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"gimpdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
+file|"gimpdisplay-render.h"
 end_include
 
 begin_include
@@ -78,7 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"image_render.h"
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
 end_include
 
 begin_define

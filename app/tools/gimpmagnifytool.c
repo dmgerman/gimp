@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/info-window.h"
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"display/gimpdisplay-scale.h"
 end_include
 
 begin_include
@@ -73,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"scale.h"
 end_include
 
 begin_include

@@ -106,19 +106,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/widgets-types.h"
+file|"gui/gui-types.h"
 end_include
 
 begin_include
@@ -300,7 +288,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275686030103
+DECL|enum|__anon27d733d70103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

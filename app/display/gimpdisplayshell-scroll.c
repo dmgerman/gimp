@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
+file|"display-types.h"
 end_include
 
 begin_include
@@ -54,19 +54,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gimpdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"scale.h"
+file|"gimpdisplay-scale.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"scroll.h"
+file|"gimpdisplay-scroll.h"
 end_include
 
 begin_include

@@ -24,13 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/widgets-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -48,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppreview.h"
 end_include
 
@@ -55,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"layer-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"display/display-types.h"
 end_include
 
 begin_include
@@ -37,6 +37,18 @@ begin_include
 include|#
 directive|include
 file|"core/gimpobject.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay-ops.h"
 end_include
 
 begin_include
@@ -85,18 +97,6 @@ begin_include
 include|#
 directive|include
 file|"file-save.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay_ops.h"
 end_include
 
 begin_include

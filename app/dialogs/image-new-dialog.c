@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -90,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed8c610108
+DECL|struct|__anon2c426df00108
 block|{
 DECL|member|dialog
 name|GtkWidget

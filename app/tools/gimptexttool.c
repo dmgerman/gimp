@@ -102,6 +102,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpeditselectiontool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptexttool.h"
 end_include
 
@@ -132,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp_glue.h"
 end_include
 
@@ -157,12 +163,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpeditselectiontool.h"
 end_include
 
 begin_include

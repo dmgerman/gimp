@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/gui-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -60,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawtool.h"
 end_include
 
@@ -79,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include

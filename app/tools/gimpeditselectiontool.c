@@ -90,13 +90,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"display/gimpdisplay-selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"floating_sel.h"
 end_include
 
 begin_include
@@ -109,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"path_transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"selection.h"
 end_include
 
 begin_include

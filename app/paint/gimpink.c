@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpinktool.h"
 end_include
 
@@ -145,12 +151,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -6451,7 +6451,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c9b4b3d0103
+DECL|enum|__anon2c261f440103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

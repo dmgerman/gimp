@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/gui-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/base-config.h"
 end_include
 
@@ -138,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
@@ -227,7 +233,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f4f250103
+DECL|enum|__anon2894bcc90103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM

@@ -23,6 +23,16 @@ file|"gimpdrawtool.h"
 end_include
 
 begin_comment
+comment|/* FIXME */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
+begin_comment
 comment|/* buffer sizes for scaling information strings (for the info dialog) */
 end_comment
 

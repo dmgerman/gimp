@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-render.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrushpreview.h"
 end_include
 
@@ -171,18 +177,6 @@ directive|include
 file|"gimptoolinfopreview.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"image_render.h"
-end_include
-
 begin_define
 DECL|macro|PREVIEW_POPUP_DELAY
 define|#
@@ -201,7 +195,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d926470103
+DECL|enum|__anon2a116ab30103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED

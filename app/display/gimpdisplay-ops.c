@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"display-types.h"
 end_include
 
 begin_include
@@ -42,13 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
+file|"gimpdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay_ops.h"
+file|"gimpdisplay-ops.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"colormaps.h"
 end_include
 
 begin_include

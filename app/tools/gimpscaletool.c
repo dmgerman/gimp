@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/gui-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -49,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"gui/info-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay.h"
 end_include
 
 begin_include
@@ -73,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"transform_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
