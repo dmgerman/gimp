@@ -78,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actions/tools-actions.h"
+file|"tools-actions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"actions/tools-commands.h"
+file|"tools-commands.h"
 end_include
 
 begin_include
