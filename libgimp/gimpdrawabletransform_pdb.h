@@ -24,7 +24,7 @@ begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|gint32
-name|gimp_drawable_transform_flip
+name|gimp_drawable_transform_flip_simple
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_flip_free
+name|gimp_drawable_transform_flip
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -132,7 +132,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_rotate
+name|gimp_drawable_transform_rotate_simple
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -157,7 +157,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_rotate_free
+name|gimp_drawable_transform_rotate
 parameter_list|(
 name|gint32
 name|drawable_ID

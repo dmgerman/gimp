@@ -86,18 +86,18 @@ file|"gimp-intl.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_proc
+DECL|variable|drawable_transform_flip_simple_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_flip_proc
+name|drawable_transform_flip_simple_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_free_proc
+DECL|variable|drawable_transform_flip_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_flip_free_proc
+name|drawable_transform_flip_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -110,18 +110,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_proc
+DECL|variable|drawable_transform_rotate_simple_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_rotate_proc
+name|drawable_transform_rotate_simple_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_free_proc
+DECL|variable|drawable_transform_rotate_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_rotate_free_proc
+name|drawable_transform_rotate_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -172,7 +172,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_flip_proc
+name|drawable_transform_flip_simple_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -180,7 +180,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_flip_free_proc
+name|drawable_transform_flip_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -196,7 +196,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_rotate_proc
+name|drawable_transform_rotate_simple_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -204,7 +204,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_rotate_free_proc
+name|drawable_transform_rotate_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -246,8 +246,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_flip_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_flip_invoker
+DECL|function|drawable_transform_flip_simple_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_flip_simple_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -470,7 +470,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_flip_proc
+name|drawable_transform_flip_simple_proc
 argument_list|,
 name|success
 argument_list|)
@@ -503,10 +503,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_inargs
+DECL|variable|drawable_transform_flip_simple_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_flip_inargs
+name|drawable_transform_flip_simple_inargs
 index|[]
 init|=
 block|{
@@ -554,10 +554,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_outargs
+DECL|variable|drawable_transform_flip_simple_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_flip_outargs
+name|drawable_transform_flip_simple_outargs
 index|[]
 init|=
 block|{
@@ -573,13 +573,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_proc
+DECL|variable|drawable_transform_flip_simple_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_flip_proc
+name|drawable_transform_flip_simple_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_flip"
+literal|"gimp_drawable_transform_flip_simple"
 block|,
 literal|"Flip the specified drawable either vertically or horizontally."
 block|,
@@ -597,15 +597,15 @@ name|GIMP_INTERNAL
 block|,
 literal|5
 block|,
-name|drawable_transform_flip_inargs
+name|drawable_transform_flip_simple_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_flip_outargs
+name|drawable_transform_flip_simple_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_flip_invoker
+name|drawable_transform_flip_simple_invoker
 block|}
 block|}
 block|}
@@ -616,8 +616,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_flip_free_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_flip_free_invoker
+DECL|function|drawable_transform_flip_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_flip_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -993,7 +993,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_flip_free_proc
+name|drawable_transform_flip_proc
 argument_list|,
 name|success
 argument_list|)
@@ -1026,10 +1026,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_free_inargs
+DECL|variable|drawable_transform_flip_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_flip_free_inargs
+name|drawable_transform_flip_inargs
 index|[]
 init|=
 block|{
@@ -1117,10 +1117,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_free_outargs
+DECL|variable|drawable_transform_flip_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_flip_free_outargs
+name|drawable_transform_flip_outargs
 index|[]
 init|=
 block|{
@@ -1136,13 +1136,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_free_proc
+DECL|variable|drawable_transform_flip_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_flip_free_proc
+name|drawable_transform_flip_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_flip_free"
+literal|"gimp_drawable_transform_flip"
 block|,
 literal|"Flip the specified drawable around a given line."
 block|,
@@ -1160,15 +1160,15 @@ name|GIMP_INTERNAL
 block|,
 literal|10
 block|,
-name|drawable_transform_flip_free_inargs
+name|drawable_transform_flip_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_flip_free_outargs
+name|drawable_transform_flip_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_flip_free_invoker
+name|drawable_transform_flip_invoker
 block|}
 block|}
 block|}
@@ -1868,8 +1868,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_rotate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_rotate_invoker
+DECL|function|drawable_transform_rotate_simple_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_rotate_simple_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -2108,7 +2108,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_rotate_proc
+name|drawable_transform_rotate_simple_proc
 argument_list|,
 name|success
 argument_list|)
@@ -2141,10 +2141,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_inargs
+DECL|variable|drawable_transform_rotate_simple_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_rotate_inargs
+name|drawable_transform_rotate_simple_inargs
 index|[]
 init|=
 block|{
@@ -2200,10 +2200,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_outargs
+DECL|variable|drawable_transform_rotate_simple_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_rotate_outargs
+name|drawable_transform_rotate_simple_outargs
 index|[]
 init|=
 block|{
@@ -2219,13 +2219,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_proc
+DECL|variable|drawable_transform_rotate_simple_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_rotate_proc
+name|drawable_transform_rotate_simple_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_rotate"
+literal|"gimp_drawable_transform_rotate_simple"
 block|,
 literal|"Rotate the specified drawable about given coordinates through the specified angle."
 block|,
@@ -2243,15 +2243,15 @@ name|GIMP_INTERNAL
 block|,
 literal|6
 block|,
-name|drawable_transform_rotate_inargs
+name|drawable_transform_rotate_simple_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_rotate_outargs
+name|drawable_transform_rotate_simple_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_rotate_invoker
+name|drawable_transform_rotate_simple_invoker
 block|}
 block|}
 block|}
@@ -2262,8 +2262,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_rotate_free_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_rotate_free_invoker
+DECL|function|drawable_transform_rotate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_rotate_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -2654,7 +2654,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_rotate_free_proc
+name|drawable_transform_rotate_proc
 argument_list|,
 name|success
 argument_list|)
@@ -2687,10 +2687,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_free_inargs
+DECL|variable|drawable_transform_rotate_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_rotate_free_inargs
+name|drawable_transform_rotate_inargs
 index|[]
 init|=
 block|{
@@ -2778,10 +2778,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_free_outargs
+DECL|variable|drawable_transform_rotate_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_rotate_free_outargs
+name|drawable_transform_rotate_outargs
 index|[]
 init|=
 block|{
@@ -2797,13 +2797,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_free_proc
+DECL|variable|drawable_transform_rotate_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_rotate_free_proc
+name|drawable_transform_rotate_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_rotate_free"
+literal|"gimp_drawable_transform_rotate"
 block|,
 literal|"Rotate the specified drawable about given coordinates through the specified angle."
 block|,
@@ -2821,15 +2821,15 @@ name|GIMP_INTERNAL
 block|,
 literal|10
 block|,
-name|drawable_transform_rotate_free_inargs
+name|drawable_transform_rotate_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_rotate_free_outargs
+name|drawable_transform_rotate_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_rotate_free_invoker
+name|drawable_transform_rotate_invoker
 block|}
 block|}
 block|}
