@@ -1613,7 +1613,7 @@ name|header
 operator|.
 name|bytes
 operator|>
-literal|3
+literal|4
 condition|)
 block|{
 name|g_set_error
@@ -1628,7 +1628,7 @@ name|_
 argument_list|(
 literal|"Unsupported pattern depth %d\n"
 literal|"in file '%s'.\n"
-literal|"GIMP Patterns must be GRAY or RGB.\n"
+literal|"GIMP Patterns must be GRAY or RGB."
 argument_list|)
 argument_list|,
 name|header
