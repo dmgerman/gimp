@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptoolcontrol-displayshell.h"
+file|"libgimptool/gimptoolcontrol.h"
 end_include
 
 begin_include
@@ -1721,26 +1721,36 @@ name|GDK_BUTTON1_MASK
 expr_stmt|;
 if|if
 condition|(
-name|gimp_tool_control_wants_perfect_mouse
+operator|(
+operator|(
+name|gimp_tool_control_motion_mode
 argument_list|(
 name|active_tool
 operator|->
 name|control
 argument_list|)
+operator|==
+name|GIMP_MOTION_MODE_EXACT
+operator|)
 operator|&&
 name|gimprc
 operator|.
 name|perfectmouse
-condition|)
-comment|/* FIXME */
-if|#
-directive|if
-literal|0
-then|if (((active_tool->motion_mode == GIMP_MOTION_MODE_EXACT)&&                  gimprc.perfectmouse) ||
+operator|)
+operator|||
 comment|/*  don't request motion hins for XInput devices because                  *  the wacom driver is known to report crappy hints                  *  (#6901) --mitch                  */
-then|(gimp_devices_get_current (gimage->gimp) !=                  gdk_device_get_core_pointer ()))
-endif|#
-directive|endif
+operator|(
+name|gimp_devices_get_current
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+operator|!=
+name|gdk_device_get_core_pointer
+argument_list|()
+operator|)
+condition|)
 block|{
 name|gdk_pointer_grab
 argument_list|(
@@ -2556,13 +2566,35 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/* FIXME */
-if|#
-directive|if
-literal|0
-block|switch (active_tool->motion_mode)           {           case GIMP_MOTION_MODE_EXACT:           case GIMP_MOTION_MODE_HINT:             break;            case GIMP_MOTION_MODE_COMPRESS:             compressed_motion = gimp_display_shell_compress_motion (shell);             break;           }
-endif|#
-directive|endif
+switch|switch
+condition|(
+name|gimp_tool_control_motion_mode
+argument_list|(
+name|active_tool
+operator|->
+name|control
+argument_list|)
+condition|)
+block|{
+case|case
+name|GIMP_MOTION_MODE_EXACT
+case|:
+case|case
+name|GIMP_MOTION_MODE_HINT
+case|:
+break|break;
+case|case
+name|GIMP_MOTION_MODE_COMPRESS
+case|:
+name|compressed_motion
+operator|=
+name|gimp_display_shell_compress_motion
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
 if|if
 condition|(
 name|compressed_motion

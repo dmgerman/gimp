@@ -8,6 +8,10 @@ comment|/* This tool is based on a paper from SIGGRAPH '95:  *  "Intelligent Sci
 end_comment
 
 begin_comment
+comment|/* Personal note: Dr. Barrett, one of the authors of the paper written above  * is not only one of the most brilliant people I have ever met, he is an  * incredible professor who genuinely cares about his students and wants them  * to learn as much as they can about the topic.  *  * I didn't even notice I was taking a class from the person who wrote the  * paper until halfway through the semester.  *                                                   -- Rockwalrus  */
+end_comment
+
+begin_comment
 comment|/* The history of this implementation is lonog and varied.  It was  * orignally done by Spencer and Peter, and worked fine in the 0.54  * (motif only) release of the gimp.  Later revisions (0.99.something  * until about 1.1.4) completely changed the algorithm used, until it  * bore little resemblance to the one described in the paper above.  * The 0.54 version of the algorithm was then forwards ported to 1.1.4  * by Austin Donnelly.  */
 end_comment
 
@@ -1498,21 +1502,21 @@ name|control
 operator|=
 name|gimp_tool_control_new
 argument_list|(
-name|FALSE
+name|TRUE
 argument_list|,
 comment|/* scroll_lock */
 name|FALSE
 argument_list|,
 comment|/* auto_snap_to */
-name|TRUE
+name|FALSE
 argument_list|,
 comment|/* preserve */
 name|FALSE
 argument_list|,
 comment|/* handle_empty_image */
-name|FALSE
+name|GIMP_MOTION_MODE_HINT
 argument_list|,
-comment|/* perfectmouse */
+comment|/* motion_mode */
 name|GIMP_MOUSE_CURSOR
 argument_list|,
 comment|/* cursor */

@@ -171,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4d3ad30103
+DECL|enum|__anon2baa3f700103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -1045,9 +1045,9 @@ comment|/* preserve */
 name|FALSE
 argument_list|,
 comment|/* handle_empty_image */
-name|FALSE
+name|GIMP_MOTION_MODE_HINT
 argument_list|,
-comment|/* perfectmouse */
+comment|/* motion_mode */
 name|GIMP_MOUSE_CURSOR
 argument_list|,
 comment|/* cursor */

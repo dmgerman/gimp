@@ -586,8 +586,6 @@ argument_list|(
 name|paint_tool
 argument_list|)
 expr_stmt|;
-comment|/* tool->perfectmouse      = TRUE; */
-comment|/* FIXME tool->motion_mode       = GIMP_MOTION_MODE_EXACT; */
 name|paint_tool
 operator|->
 name|pick_colors

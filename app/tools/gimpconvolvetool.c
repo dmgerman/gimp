@@ -524,9 +524,9 @@ comment|/* preserve */
 name|FALSE
 argument_list|,
 comment|/* handle_empty_image */
-name|FALSE
+name|GIMP_MOTION_MODE_EXACT
 argument_list|,
-comment|/* perfectmouse */
+comment|/* motion_mode */
 name|GIMP_BLUR_TOOL_CURSOR
 argument_list|,
 comment|/* cursor */

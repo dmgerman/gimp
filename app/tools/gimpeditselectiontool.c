@@ -703,9 +703,9 @@ comment|/* preserve */
 name|FALSE
 argument_list|,
 comment|/* handle_empty_image */
-name|FALSE
+name|GIMP_MOTION_MODE_COMPRESS
 argument_list|,
-comment|/* perfectmouse */
+comment|/* motion_mode */
 name|GIMP_MOUSE_CURSOR
 argument_list|,
 comment|/* cursor */
@@ -725,7 +725,6 @@ name|GIMP_CURSOR_MODIFIER_NONE
 comment|/* toggle_cursor_modifier */
 argument_list|)
 expr_stmt|;
-comment|/* FIXME!  tool->motion_mode               = GIMP_MOTION_MODE_COMPRESS; */
 name|edit_selection_tool
 operator|->
 name|origx

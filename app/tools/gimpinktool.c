@@ -1345,9 +1345,9 @@ comment|/* preserve */
 name|FALSE
 argument_list|,
 comment|/* handle_empty_image */
-name|TRUE
+name|GIMP_MOTION_MODE_EXACT
 argument_list|,
-comment|/* perfectmouse */
+comment|/* motion_mode */
 name|GIMP_MOUSE_CURSOR
 argument_list|,
 comment|/* cursor */
@@ -1367,7 +1367,6 @@ name|GIMP_CURSOR_MODIFIER_NONE
 comment|/* toggle_cursor_modifier */
 argument_list|)
 expr_stmt|;
-comment|/* FIXME tool->motion_mode = GIMP_MOTION_MODE_EXACT; */
 block|}
 end_function
 
@@ -1590,7 +1589,12 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* EEEEEEEK!  FIXME! Should we really be setting the gdisp like this? tool->gdisp = gdisp; */
+name|tool
+operator|->
+name|gdisp
+operator|=
+name|gdisp
+expr_stmt|;
 comment|/*  pause the current selection  */
 name|gimp_image_selection_control
 argument_list|(
@@ -4681,7 +4685,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c99ee190103
+DECL|enum|__anon2a532f460103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

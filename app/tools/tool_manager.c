@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptoolcontrol-displayshell.h"
+file|"gimptoolcontrol.h"
 end_include
 
 begin_include

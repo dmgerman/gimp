@@ -1199,21 +1199,21 @@ name|control
 operator|=
 name|gimp_tool_control_new
 argument_list|(
-name|FALSE
+name|TRUE
 argument_list|,
 comment|/* scroll_lock */
 name|TRUE
 argument_list|,
 comment|/* auto_snap_to */
-name|TRUE
+name|FALSE
 argument_list|,
 comment|/* preserve */
 name|FALSE
 argument_list|,
 comment|/* handle_empty_image */
-name|FALSE
+name|GIMP_MOTION_MODE_HINT
 argument_list|,
-comment|/* perfectmouse */
+comment|/* motion_mode */
 name|GIMP_MOUSE_CURSOR
 argument_list|,
 comment|/* cursor */

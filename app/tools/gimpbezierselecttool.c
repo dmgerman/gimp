@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c3be7d0108
+DECL|struct|__anon27d41b1e0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -340,7 +340,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c3be7d0208
+DECL|struct|__anon27d41b1e0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c3be7d0308
+DECL|struct|__anon27d41b1e0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -1522,9 +1522,9 @@ comment|/* preserve */
 name|FALSE
 argument_list|,
 comment|/* handle_empty_image */
-name|FALSE
+name|GIMP_MOTION_MODE_HINT
 argument_list|,
-comment|/* perfectmouse */
+comment|/* motion_mode */
 name|GIMP_MOUSE_CURSOR
 argument_list|,
 comment|/* cursor */

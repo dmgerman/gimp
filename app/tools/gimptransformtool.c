@@ -866,34 +866,6 @@ name|info_dialog
 operator|=
 name|NULL
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|tool->control = gimp_tool_control_new  (TRUE,
-comment|/* scroll_lock */
-block|TRUE,
-comment|/* auto_snap_to */
-block|FALSE,
-comment|/* preserve */
-block|FALSE,
-comment|/* handle_empty_image */
-block|FALSE,
-comment|/* perfectmouse */
-block|GIMP_MOUSE_CURSOR,
-comment|/* cursor */
-block|GIMP_TOOL_CURSOR_NONE,
-comment|/* tool_cursor */
-block|GIMP_CURSOR_MODIFIER_NONE,
-comment|/* cursor_modifier */
-block|GIMP_MOUSE_CURSOR,
-comment|/* toggle_cursor */
-block|GIMP_TOOL_CURSOR_NONE,
-comment|/* toggle_tool_cursor */
-block|GIMP_CURSOR_MODIFIER_NONE
-comment|/* toggle_cursor_modifier */
-block|);
-endif|#
-directive|endif
 block|}
 end_function
 
