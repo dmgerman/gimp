@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64d3c70108
+DECL|struct|__anon28db992f0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -335,8 +335,6 @@ name|g_list_length
 argument_list|(
 name|splashes
 argument_list|)
-operator|-
-literal|1
 argument_list|)
 decl_stmt|;
 name|filename
