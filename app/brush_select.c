@@ -2565,6 +2565,11 @@ argument_list|,
 name|bsp
 argument_list|)
 expr_stmt|;
+name|preview_calc_scrollbar
+argument_list|(
+name|bsp
+argument_list|)
+expr_stmt|;
 name|brush_select_brush_changed
 argument_list|(
 name|bsp
@@ -2599,7 +2604,11 @@ argument_list|,
 name|bsp
 argument_list|)
 expr_stmt|;
-comment|/*  brush_select_brush_changed(bsp, brush); */
+name|preview_calc_scrollbar
+argument_list|(
+name|bsp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
