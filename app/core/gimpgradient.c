@@ -3069,7 +3069,7 @@ name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
-name|seg
+name|lseg
 argument_list|,
 name|seg
 operator|->
@@ -3087,7 +3087,7 @@ name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
-name|seg
+name|lseg
 argument_list|,
 name|seg
 operator|->
