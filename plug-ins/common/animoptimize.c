@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Animation Optimizer plug-in version 1.0.3  *  * (c) Adam D. Moss, 1997-2000  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
+comment|/*  * Animation Optimizer plug-in version 1.0.4  *  * (c) Adam D. Moss, 1997-2000  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY:  *  * 2000-06-05 : version 1.0.3  *              Fix old bug which could cause errors in evaluating the  *              final pixel of each composed layer.  *  * 2000-01-13 : version 1.0.2  *              Collapse timing of completely optimized-away frames  *              onto previous surviving frame.  Also be looser with  *              (XXXXX) tag parsing.  *  * 2000-01-07 : version 1.0.1  *              PDB interface submitted by Andreas Jaekel  *<jaekel@cablecats.de>  *  * 98.05.17 : version 1.0.0  *            Finally preserves frame timings / layer names.  Has  *            a progress bar now.  No longer beta, I suppose.  *  * 98.04.19 : version 0.70.0  *            Plug-in doubles up as Animation UnOptimize too!  (This  *            is somewhat more useful than it sounds.)  *  * 98.03.16 : version 0.61.0  *            Support more rare opaque/transparent combinations.  *  * 97.12.09 : version 0.60.0  *            Added support for INDEXED* and GRAY* images.  *  * 97.12.09 : version 0.52.0  *            Fixed some bugs.  *  * 97.12.08 : version 0.51.0  *            Relaxed bounding box on optimized layers marked  *            'replace'.  *  * 97.12.07 : version 0.50.0  *            Initial release.  */
+comment|/*  * REVISION HISTORY:  *  * 2000-08-30 : version 1.0.4  *              Change default frame duration from 125ms to 100ms for  *              consistancy.  *  * 2000-06-05 : version 1.0.3  *              Fix old bug which could cause errors in evaluating the  *              final pixel of each composed layer.  *  * 2000-01-13 : version 1.0.2  *              Collapse timing of completely optimized-away frames  *              onto previous surviving frame.  Also be looser with  *              (XXXXX) tag parsing.  *  * 2000-01-07 : version 1.0.1  *              PDB interface submitted by Andreas Jaekel  *<jaekel@cablecats.de>  *  * 98.05.17 : version 1.0.0  *            Finally preserves frame timings / layer names.  Has  *            a progress bar now.  No longer beta, I suppose.  *  * 98.04.19 : version 0.70.0  *            Plug-in doubles up as Animation UnOptimize too!  (This  *            is somewhat more useful than it sounds.)  *  * 98.03.16 : version 0.61.0  *            Support more rare opaque/transparent combinations.  *  * 97.12.09 : version 0.60.0  *            Added support for INDEXED* and GRAY* images.  *  * 97.12.09 : version 0.52.0  *            Fixed some bugs.  *  * 97.12.08 : version 0.51.0  *            Relaxed bounding box on optimized layers marked  *            'replace'.  *  * 97.12.07 : version 0.50.0  *            Initial release.  */
 end_comment
 
 begin_comment
@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abb1a3b0103
+DECL|enum|__anon2b2032950103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -3489,7 +3489,7 @@ literal|0
 condition|)
 name|duration
 operator|=
-literal|125
+literal|100
 expr_stmt|;
 comment|/* FIXME for default-if-not-said  */
 if|if
@@ -3500,7 +3500,7 @@ literal|0
 condition|)
 name|duration
 operator|=
-literal|125
+literal|100
 expr_stmt|;
 comment|/* FIXME - 0-wait is nasty */
 return|return
