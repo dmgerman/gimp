@@ -2111,6 +2111,17 @@ operator|!
 name|gdisplay
 condition|)
 return|return;
+if|if
+condition|(
+operator|!
+name|gimage_active_drawable
+argument_list|(
+name|gdisplay
+operator|->
+name|gimage
+argument_list|)
+condition|)
+return|return;
 comment|/*  Only save if the gimage has been modified  */
 if|if
 condition|(
@@ -2250,6 +2261,17 @@ if|if
 condition|(
 operator|!
 name|gdisplay
+condition|)
+return|return;
+if|if
+condition|(
+operator|!
+name|gimage_active_drawable
+argument_list|(
+name|gdisplay
+operator|->
+name|gimage
+argument_list|)
 condition|)
 return|return;
 name|the_gimage

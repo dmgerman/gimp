@@ -7759,6 +7759,8 @@ argument_list|(
 literal|"File/Save"
 argument_list|,
 name|gdisp
+operator|&&
+name|drawable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -7766,6 +7768,8 @@ argument_list|(
 literal|"File/Save As..."
 argument_list|,
 name|gdisp
+operator|&&
+name|drawable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
