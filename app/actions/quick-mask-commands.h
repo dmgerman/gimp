@@ -38,8 +38,9 @@ name|GtkAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
-name|value
+name|GtkAction
+modifier|*
+name|current
 parameter_list|,
 name|gpointer
 name|data

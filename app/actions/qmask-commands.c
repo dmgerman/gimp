@@ -279,15 +279,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_invert_cmd_callback (GtkAction * action,gint value,gpointer data)
+DECL|function|qmask_invert_cmd_callback (GtkAction * action,GtkAction * current,gpointer data)
 name|qmask_invert_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
 parameter_list|,
-name|gint
-name|value
+name|GtkAction
+modifier|*
+name|current
 parameter_list|,
 name|gpointer
 name|data
@@ -297,6 +298,9 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|gint
+name|value
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
@@ -304,17 +308,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gtk_toggle_action_get_active
+name|value
+operator|=
+name|gtk_radio_action_get_current_value
 argument_list|(
-name|GTK_TOGGLE_ACTION
+name|GTK_RADIO_ACTION
 argument_list|(
 name|action
 argument_list|)
 argument_list|)
-condition|)
-block|{
+expr_stmt|;
 if|if
 condition|(
 name|value
@@ -329,19 +332,11 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_image_get_qmask_state
-argument_list|(
-name|gimage
-argument_list|)
-condition|)
 name|gimp_image_flush
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
