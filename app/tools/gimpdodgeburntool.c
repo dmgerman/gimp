@@ -243,18 +243,23 @@ end_struct
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_tool_paint
+name|gimp_dodgeburn_tool_class_init
 parameter_list|(
-name|GimpPaintTool
+name|GimpDodgeBurnToolClass
 modifier|*
-name|paint_tool
-parameter_list|,
-name|GimpDrawable
+name|klass
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_dodgeburn_tool_init
+parameter_list|(
+name|GimpDodgeBurnTool
 modifier|*
-name|drawable
-parameter_list|,
-name|PaintState
-name|state
+name|dodgeburn
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -284,6 +289,65 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_dodgeburn_tool_modifier_key
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventKey
+modifier|*
+name|kevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_dodgeburn_tool_cursor_update
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_dodgeburn_tool_paint
+parameter_list|(
+name|GimpPaintTool
+modifier|*
+name|paint_tool
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|state
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -442,6 +506,127 @@ comment|/* functions  */
 end_comment
 
 begin_function
+name|void
+DECL|function|gimp_dodgeburn_tool_register (void)
+name|gimp_dodgeburn_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|tool_manager_register_tool
+argument_list|(
+name|GIMP_TYPE_DODGEBURN_TOOL
+argument_list|,
+name|TRUE
+argument_list|,
+literal|"gimp:dodgeburn_tool"
+argument_list|,
+name|_
+argument_list|(
+literal|"Dodge/Burn"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Dodge or Burn strokes"
+argument_list|)
+argument_list|,
+name|N_
+argument_list|(
+literal|"/Tools/Paint Tools/DodgeBurn"
+argument_list|)
+argument_list|,
+literal|"<shift>D"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"tools/dodgeburn.html"
+argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|*
+operator|)
+name|dodge_bits
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GtkType
+DECL|function|gimp_dodgeburn_tool_get_type (void)
+name|gimp_dodgeburn_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|static
+name|GtkType
+name|tool_type
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|tool_type
+condition|)
+block|{
+name|GtkTypeInfo
+name|tool_info
+init|=
+block|{
+literal|"GimpDodgeBurnTool"
+block|,
+sizeof|sizeof
+argument_list|(
+name|GimpDodgeBurnTool
+argument_list|)
+block|,
+sizeof|sizeof
+argument_list|(
+name|GimpDodgeBurnToolClass
+argument_list|)
+block|,
+operator|(
+name|GtkClassInitFunc
+operator|)
+name|gimp_dodgeburn_tool_class_init
+block|,
+operator|(
+name|GtkObjectInitFunc
+operator|)
+name|gimp_dodgeburn_tool_init
+block|,
+comment|/* reserved_1 */
+name|NULL
+block|,
+comment|/* reserved_2 */
+name|NULL
+block|,
+name|NULL
+block|}
+decl_stmt|;
+name|tool_type
+operator|=
+name|gtk_type_unique
+argument_list|(
+name|GIMP_TYPE_PAINT_TOOL
+argument_list|,
+operator|&
+name|tool_info
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|tool_type
+return|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|void
 DECL|function|gimp_dodgeburn_tool_options_reset (void)
@@ -553,7 +738,7 @@ decl_stmt|;
 comment|/*  the new dodgeburn tool options structure  */
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|DodgeBurnOptions
 argument_list|,
@@ -1164,6 +1349,18 @@ argument_list|(
 name|GIMP_TYPE_PAINT_TOOL
 argument_list|)
 expr_stmt|;
+name|tool_class
+operator|->
+name|modifier_key
+operator|=
+name|gimp_dodgeburn_tool_modifier_key
+expr_stmt|;
+name|tool_class
+operator|->
+name|cursor_update
+operator|=
+name|gimp_dodgeburn_tool_cursor_update
+expr_stmt|;
 name|paint_tool_class
 operator|->
 name|paint
@@ -1217,8 +1414,6 @@ operator|=
 name|gimp_dodgeburn_tool_options_new
 argument_list|()
 expr_stmt|;
-name|GIMP_TYPE_DODGEBURN_TOOL
-expr_stmt|;
 name|tool_manager_register_tool_options
 argument_list|(
 name|GIMP_TYPE_DODGEBURN_TOOL
@@ -1238,6 +1433,12 @@ operator|->
 name|tool_cursor
 operator|=
 name|GIMP_DODGE_TOOL_CURSOR
+expr_stmt|;
+name|tool
+operator|->
+name|toggle_cursor
+operator|=
+name|GIMP_BURN_TOOL_CURSOR
 expr_stmt|;
 name|paint_tool
 operator|->
@@ -1366,8 +1567,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dodgeburn_modifier_key_func (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
-name|dodgeburn_modifier_key_func
+DECL|function|gimp_dodgeburn_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+name|gimp_dodgeburn_tool_modifier_key
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1550,8 +1751,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dodgeburn_cursor_update_func (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
-name|dodgeburn_cursor_update_func
+DECL|function|gimp_dodgeburn_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+name|gimp_dodgeburn_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1578,8 +1779,29 @@ operator|==
 name|BURN
 operator|)
 expr_stmt|;
-comment|/* FIXME: come up with a way to change cursor */
-comment|/*  gimp_paint_tool_cursor_update (tool, mevent, gdisp); */
+if|if
+condition|(
+name|GIMP_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|cursor_update
+condition|)
+name|GIMP_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|cursor_update
+argument_list|(
+name|tool
+argument_list|,
+name|mevent
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1708,7 +1930,7 @@ argument_list|)
 operator|)
 condition|)
 return|return;
-comment|/* Constant painting --get a copy of the orig drawable (with      no paint from this stroke yet) */
+comment|/* Constant painting --get a copy of the orig drawable (with no    * paint from this stroke yet)    */
 block|{
 name|gint
 name|x1
@@ -2127,7 +2349,7 @@ literal|0
 end_if
 
 begin_comment
-unit|static gpointer   gimp_dodgeburn_tool_non_gui_paint (GimpPaintTool    *paint_tool,             		           GimpDrawable     *drawable,  			           PaintState        state)   {    gimp_dodgeburn_tool_motion (paint_tool,&non_gui_pressure_options,   		              non_gui_exposure, non_gui_lut, drawable);       return NULL;   }    gboolean gimp_dodgeburn_tool_non_gui_default (GimpDrawable *drawable, 			             gint          num_strokes, 			             gdouble      *stroke_array) {   gdouble           exposure = DODGEBURN_DEFAULT_TYPE;   DodgeBurnType     type     = DODGEBURN_DEFAULT_TYPE;   DodgeBurnMode     mode     = DODGEBURN_DEFAULT_MODE;   DodgeBurnOptions *options  = dodgeburn_options;    if (options)     {       exposure = dodgeburn_options->exposure;       type     = dodgeburn_options->type;       mode     = dodgeburn_options->mode;     }    return gimp_dodgeburn_tool_non_gui (drawable, exposure, type, mode, 			              num_strokes, stroke_array); }  gboolean gimp_dodgeburn_tool_non_gui (GimpDrawable  *drawable, 		             gdouble        exposure, 		             DodgeBurnType  type, 		             DodgeBurnMode  mode, 		             gint           num_strokes, 		             gdouble       *stroke_array) {   GimpPaintTool *paint_tool;   gint i;    if (! non_gui_dodgeburn)     {       non_gui_dodgeburn = gtk_type_new (GIMP_TYPE_DODGEBURN_TOOL);     }    paint_tool = GIMP_PAINT_TOOL (non_gui_dodgeburn);      if (gimp_paint_tool_init (paint_tool, drawable, 		            stroke_array[0],  			    stroke_array[1]))     {
+unit|static gpointer gimp_dodgeburn_tool_non_gui_paint (GimpPaintTool    *paint_tool,             		           GimpDrawable     *drawable,  			           PaintState        state) {   gimp_dodgeburn_tool_motion (paint_tool,&non_gui_pressure_options,   		              non_gui_exposure, non_gui_lut, drawable);    return NULL; }  gboolean gimp_dodgeburn_tool_non_gui_default (GimpDrawable *drawable, 			             gint          num_strokes, 			             gdouble      *stroke_array) {   gdouble           exposure = DODGEBURN_DEFAULT_TYPE;   DodgeBurnType     type     = DODGEBURN_DEFAULT_TYPE;   DodgeBurnMode     mode     = DODGEBURN_DEFAULT_MODE;   DodgeBurnOptions *options  = dodgeburn_options;    if (options)     {       exposure = dodgeburn_options->exposure;       type     = dodgeburn_options->type;       mode     = dodgeburn_options->mode;     }    return gimp_dodgeburn_tool_non_gui (drawable, exposure, type, mode, 			              num_strokes, stroke_array); }  gboolean gimp_dodgeburn_tool_non_gui (GimpDrawable  *drawable, 		             gdouble        exposure, 		             DodgeBurnType  type, 		             DodgeBurnMode  mode, 		             gint           num_strokes, 		             gdouble       *stroke_array) {   GimpPaintTool *paint_tool;   gint i;    if (! non_gui_dodgeburn)     {       non_gui_dodgeburn = gtk_type_new (GIMP_TYPE_DODGEBURN_TOOL);     }    paint_tool = GIMP_PAINT_TOOL (non_gui_dodgeburn);      if (gimp_paint_tool_init (paint_tool, drawable, 		            stroke_array[0],  			    stroke_array[1]))     {
 comment|/* Set the paint core's paint func */
 end_comment
 
@@ -2459,134 +2681,13 @@ return|;
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|gimp_dodgeburn_tool_register (void)
-name|gimp_dodgeburn_tool_register
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|tool_manager_register_tool
-argument_list|(
-name|GIMP_TYPE_DODGEBURN_TOOL
-argument_list|,
-name|TRUE
-argument_list|,
-literal|"gimp:dodgeburn_tool"
-argument_list|,
-name|_
-argument_list|(
-literal|"Dodge/Burn"
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Dodge or Burn strokes"
-argument_list|)
-argument_list|,
-name|N_
-argument_list|(
-literal|"/Tools/Paint Tools/DodgeBurn"
-argument_list|)
-argument_list|,
-literal|"<shift>O"
-argument_list|,
-name|NULL
-argument_list|,
-literal|"tools/dodgeburn.html"
-argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|*
-operator|)
-name|dodge_bits
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|GtkType
-DECL|function|gimp_dodgeburn_tool_get_type (void)
-name|gimp_dodgeburn_tool_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GtkType
-name|tool_type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|tool_type
-condition|)
-block|{
-name|GtkTypeInfo
-name|tool_info
-init|=
-block|{
-literal|"GimpDodgeBurnTool"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpDodgeBurnTool
-argument_list|)
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpDodgeBurnToolClass
-argument_list|)
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|gimp_dodgeburn_tool_class_init
-block|,
-operator|(
-name|GtkObjectInitFunc
-operator|)
-name|gimp_dodgeburn_tool_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-name|NULL
-block|}
-decl_stmt|;
-name|tool_type
-operator|=
-name|gtk_type_unique
-argument_list|(
-name|GIMP_TYPE_PAINT_TOOL
-argument_list|,
-operator|&
-name|tool_info
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|tool_type
-return|;
-block|}
-end_function
-
 begin_comment
 comment|/* FIXME: do someting usefule here */
 end_comment
 
 begin_function
-DECL|function|dodgeburn_non_gui (GimpDrawable * drawable,gdouble exposure,DodgeBurnType type,DodgeBurnMode mode,gint num_strokes,gdouble * stroke_array)
 name|gboolean
+DECL|function|dodgeburn_non_gui (GimpDrawable * drawable,gdouble exposure,DodgeBurnType type,DodgeBurnMode mode,gint num_strokes,gdouble * stroke_array)
 name|dodgeburn_non_gui
 parameter_list|(
 name|GimpDrawable
@@ -2622,8 +2723,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|dodgeburn_non_gui_default (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array)
 name|gboolean
+DECL|function|dodgeburn_non_gui_default (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array)
 name|dodgeburn_non_gui_default
 parameter_list|(
 name|GimpDrawable

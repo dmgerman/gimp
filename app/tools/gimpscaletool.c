@@ -376,7 +376,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Color Picker"
+literal|"/Tools/Transform Tools/Transform"
 argument_list|)
 argument_list|,
 literal|"<shift>T"
