@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a7a5590103
+DECL|enum|__anon2b1f9e210103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a7a5590203
+DECL|enum|__anon2b1f9e210203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a7a5590308
+DECL|struct|__anon2b1f9e210308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -216,7 +216,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29a7a559040a
+DECL|union|__anon2b1f9e21040a
 block|{
 DECL|member|d
 name|gdouble
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a7a5590508
+DECL|struct|__anon2b1f9e210508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a7a5590608
+DECL|struct|__anon2b1f9e210608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a7a5590708
+DECL|struct|__anon2b1f9e210708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -342,7 +342,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a7a5590808
+DECL|struct|__anon2b1f9e210808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -409,7 +409,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a7a5590908
+DECL|struct|__anon2b1f9e210908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -558,7 +558,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a7a5590a08
+DECL|struct|__anon2b1f9e210a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1505,15 +1505,16 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_ifs_compose"
 argument_list|,
-literal|"Create an Iterated Function System Fractal"
+literal|"Create an Iterated Function System (IFS) Fractal"
 argument_list|,
-literal|"Interactively create an Iterated Function System fractal. "
-literal|"Use the window on the upper left to adjust the component "
-literal|"transformations of the fractal. The operation that is performed "
-literal|"is selected by the buttons underneath the window, or from a "
-literal|"menu popped up by the right mouse button. The fractal will be "
-literal|"rendered with a transparent background if the current image has "
-literal|"a transparent background."
+literal|"Interactively create an Iterated Function System "
+literal|"fractal. Use the window on the upper left to adjust "
+literal|"the component transformations of the fractal. The "
+literal|"operation that is performed is selected by the "
+literal|"buttons underneath the window, or from a menu "
+literal|"popped up by the right mouse button. The fractal "
+literal|"will be rendered with a transparent background if "
+literal|"the current image has an alpha channel."
 argument_list|,
 literal|"Owen Taylor"
 argument_list|,
@@ -1523,7 +1524,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Ifs_Compose..."
+literal|"_IFS Fractal..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -3159,7 +3160,7 @@ name|color_map_create
 argument_list|(
 name|_
 argument_list|(
-literal|"IfsCompose: Target"
+literal|"IFS Fractal: Target"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3601,7 +3602,7 @@ name|color_map_create
 argument_list|(
 name|_
 argument_list|(
-literal|"IfsCompose: Red"
+literal|"IFS Fractal: Red"
 argument_list|)
 argument_list|,
 operator|&
@@ -3676,7 +3677,7 @@ name|color_map_create
 argument_list|(
 name|_
 argument_list|(
-literal|"IfsCompose: Green"
+literal|"IFS Fractal: Green"
 argument_list|)
 argument_list|,
 operator|&
@@ -3751,7 +3752,7 @@ name|color_map_create
 argument_list|(
 name|_
 argument_list|(
-literal|"IfsCompose: Blue"
+literal|"IFS Fractal: Blue"
 argument_list|)
 argument_list|,
 operator|&
@@ -3826,7 +3827,7 @@ name|color_map_create
 argument_list|(
 name|_
 argument_list|(
-literal|"IfsCompose: Black"
+literal|"IFS Fractal: Black"
 argument_list|)
 argument_list|,
 operator|&
@@ -4049,7 +4050,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"IfsCompose"
+literal|"IFS Fractal"
 argument_list|)
 argument_list|,
 literal|"ifscompose"
@@ -5394,7 +5395,7 @@ literal|"ifs-compose-menu"
 block|,
 name|NULL
 block|,
-literal|"Ifs Compose Menu"
+literal|"IFS Fractal Menu"
 block|}
 block|,
 block|{
@@ -5866,7 +5867,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"IfsCompose Options"
+literal|"IFS Fractal Render Options"
 argument_list|)
 argument_list|,
 literal|"ifscompose"
@@ -7376,7 +7377,7 @@ name|GIMP_INDEXEDA_IMAGE
 case|:
 name|g_error
 argument_list|(
-literal|"Indexed images not supported by IfsCompose"
+literal|"Indexed images not supported by IFS Fractal"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12774,7 +12775,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"File '%s' doesn't seem to be "
-literal|"an IFS Compose file."
+literal|"an IFS Fractal file."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -12909,7 +12910,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save as IFS file"
+literal|"Save as IFS Fraktal file"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
@@ -13011,7 +13012,7 @@ name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Open IFS file"
+literal|"Open IFS Fraktal file"
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
