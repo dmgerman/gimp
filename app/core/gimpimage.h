@@ -316,11 +316,6 @@ name|gint
 name|proj_bytes
 decl_stmt|;
 comment|/*  bpp in projection image      */
-DECL|member|proj_level
-name|gint
-name|proj_level
-decl_stmt|;
-comment|/*  projection level             */
 DECL|member|projection
 name|TileManager
 modifier|*
