@@ -491,10 +491,12 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -589,7 +591,7 @@ condition|)
 block|{
 name|success
 operator|=
-name|plug_in_context_push
+name|plug_in_context_pop
 argument_list|(
 name|gimp
 operator|->
@@ -598,10 +600,12 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
