@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -827,6 +833,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|gint32
+name|fill_type
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
@@ -855,6 +864,31 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|fill_type
+operator|=
+name|args
+index|[
+literal|1
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+expr_stmt|;
+if|if
+condition|(
+name|fill_type
+operator|<
+name|FOREGROUND_FILL
+operator|||
+name|fill_type
+operator|>
+name|NO_FILL
+condition|)
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 name|success
@@ -877,6 +911,11 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+operator|(
+name|GimpFillType
+operator|)
+name|fill_type
 argument_list|)
 expr_stmt|;
 block|}
@@ -907,6 +946,14 @@ literal|"drawable"
 block|,
 literal|"The drawable to fill to"
 block|}
+block|,
+block|{
+name|PDB_INT32
+block|,
+literal|"fill_type"
+block|,
+literal|"The type of fill: FG_IMAGE_FILL (0), BG_IMAGE_FILL (1), WHITE_IMAGE_FILL (2), TRANS_IMAGE_FILL (3), NO_IMAGE_FILL (4)"
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -922,17 +969,17 @@ literal|"gimp_edit_fill"
 block|,
 literal|"Fill selected area of drawable."
 block|,
-literal|"This procedure fills the specified drawable with the background color. This procedure only affects regions within a selection if there is a selection active."
+literal|"This procedure fills the specified drawable with the fill mode. If the fill mode is foreground, the current foreground color is used. If the fill mode is background, the current background color is used. Other fill modes should not be used. This procedure only affects regions within a selection if there is a selection active."
+block|,
+literal|"Spencer Kimball& Peter Mattis& Raphael Quinet"
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"1995-1996"
+literal|"1995-2000"
 block|,
 name|PDB_INTERNAL
 block|,
-literal|1
+literal|2
 block|,
 name|edit_fill_inargs
 block|,

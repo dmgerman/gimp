@@ -7862,7 +7862,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Edit/Fill"
+literal|"Edit/Fill with FG Color"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"Edit/Fill with BG Color"
 argument_list|,
 name|lp
 argument_list|)

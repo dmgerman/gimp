@@ -258,8 +258,13 @@ name|edit_fill_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|callback_data
+parameter_list|,
+name|guint
+name|callback_action
 parameter_list|)
 function_decl|;
 end_function_decl

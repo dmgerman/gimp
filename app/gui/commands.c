@@ -960,7 +960,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_fill_cmd_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|edit_fill_cmd_callback (GtkWidget * widget,gpointer callback_data,guint callback_action)
 name|edit_fill_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -968,9 +968,15 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|callback_data
+parameter_list|,
+name|guint
+name|callback_action
 parameter_list|)
 block|{
+name|GimpFillType
+name|fill_type
+decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
@@ -979,6 +985,13 @@ name|return_if_no_display
 argument_list|(
 name|gdisp
 argument_list|)
+expr_stmt|;
+name|fill_type
+operator|=
+operator|(
+name|GimpFillType
+operator|)
+name|callback_action
 expr_stmt|;
 name|edit_fill
 argument_list|(
@@ -992,6 +1005,8 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|,
+name|fill_type
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush

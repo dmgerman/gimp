@@ -133,6 +133,9 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpFillType
+name|fill_type
 parameter_list|)
 function_decl|;
 end_function_decl
