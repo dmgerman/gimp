@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c757afc0108
+DECL|struct|__anon27d4fc270108
 block|{
 DECL|member|name
 name|gchar
@@ -86,7 +86,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c757afc0203
+DECL|enum|__anon27d4fc270203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1577,6 +1577,46 @@ literal|0xf8
 condition|)
 comment|/* realtime messages */
 block|{
+switch|switch
+condition|(
+name|buf
+index|[
+name|pos
+index|]
+condition|)
+block|{
+case|case
+literal|0xf8
+case|:
+comment|/* timing clock   */
+case|case
+literal|0xf9
+case|:
+comment|/* (undefined)    */
+case|case
+literal|0xfa
+case|:
+comment|/* start          */
+case|case
+literal|0xfb
+case|:
+comment|/* continue       */
+case|case
+literal|0xfc
+case|:
+comment|/* stop           */
+case|case
+literal|0xfd
+case|:
+comment|/* (undefined)    */
+case|case
+literal|0xfe
+case|:
+comment|/* active sensing */
+case|case
+literal|0xff
+case|:
+comment|/* system reset   */
 comment|/* nop */
 if|#
 directive|if
@@ -1584,8 +1624,18 @@ literal|0
 block|g_print ("MIDI: realtime message (%02x)\n", buf[pos]);
 endif|#
 directive|endif
+break|break;
 block|}
-elseif|else
+block|}
+else|else
+block|{
+name|midi
+operator|->
+name|swallow
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/* any status bytes ends swallowing */
 if|if
 condition|(
 name|buf
@@ -1597,17 +1647,18 @@ literal|0xf0
 condition|)
 comment|/* system messages */
 block|{
-if|if
+switch|switch
 condition|(
 name|buf
 index|[
 name|pos
 index|]
-operator|==
-literal|0xf0
 condition|)
-comment|/* sysex start */
 block|{
+case|case
+literal|0xf0
+case|:
+comment|/* sysex start */
 name|midi
 operator|->
 name|swallow
@@ -1622,83 +1673,23 @@ literal|"MIDI: sysex start\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|midi
-operator|->
-name|swallow
-operator|=
-name|FALSE
-expr_stmt|;
-comment|/* any status bytes ends swallowing */
-switch|switch
-condition|(
-name|buf
-index|[
-name|pos
-index|]
-condition|)
-block|{
-case|case
-literal|0xf7
-case|:
-comment|/* sysex end */
-name|D
-argument_list|(
-name|g_print
-argument_list|(
-literal|"MIDI: sysex end\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
-literal|0xf6
+literal|0xf1
 case|:
-comment|/* tune request */
-name|D
-argument_list|(
-name|g_print
-argument_list|(
-literal|"MIDI: tune request\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-literal|0xf5
-case|:
-comment|/* undefined */
-case|case
-literal|0xf4
-case|:
-comment|/* undefined */
-name|D
-argument_list|(
-name|g_print
-argument_list|(
-literal|"MIDI: undefined system message\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-literal|0xf3
-case|:
-comment|/* song select */
+comment|/* time code   */
 name|midi
 operator|->
 name|swallow
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* song number */
+comment|/* type + data */
 name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI: song select\n"
+literal|"MIDI: time code\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1724,38 +1715,73 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|0xf1
+literal|0xf3
 case|:
-comment|/* time code   */
+comment|/* song select */
 name|midi
 operator|->
 name|swallow
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* type + data */
+comment|/* song number */
 name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI: time code\n"
+literal|"MIDI: song select\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+literal|0xf4
+case|:
+comment|/* (undefined) */
+case|case
+literal|0xf5
+case|:
+comment|/* (undefined) */
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"MIDI: undefined system message\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+literal|0xf6
+case|:
+comment|/* tune request */
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"MIDI: tune request\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+literal|0xf7
+case|:
+comment|/* sysex end */
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"MIDI: sysex end\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 block|}
 block|}
-block|}
 else|else
 comment|/* channel messages */
 block|{
-name|midi
-operator|->
-name|swallow
-operator|=
-name|FALSE
-expr_stmt|;
-comment|/* any status byte ends swallowing */
 name|midi
 operator|->
 name|command
@@ -1807,6 +1833,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
+block|}
 block|}
 name|pos
 operator|++
