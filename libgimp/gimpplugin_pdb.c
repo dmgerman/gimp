@@ -94,7 +94,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_update:  * @percentage: Percentage of progress completed.  *  * Updates the progress bar for the current plug-in.  *  * Updates the progress bar for the current plug-in. It is only valid  * to call this procedure from a plug-in.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_progress_update:  * @percentage: Percentage of progress completed which must be between 0.0 and 1.0.  *  * Updates the progress bar for the current plug-in.  *  * Updates the progress bar for the current plug-in. It is only valid  * to call this procedure from a plug-in.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

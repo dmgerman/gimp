@@ -541,7 +541,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"percentage"
 block|,
-literal|"Percentage of progress completed"
+literal|"Percentage of progress completed which must be between 0.0 and 1.0"
 block|}
 block|}
 decl_stmt|;
