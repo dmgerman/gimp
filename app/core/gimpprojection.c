@@ -4424,13 +4424,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_widget_queue_resize
-argument_list|(
-name|gdisp
-operator|->
-name|statusarea
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -7352,11 +7345,6 @@ argument_list|,
 name|gdisp
 operator|->
 name|disp_height
-argument_list|)
-expr_stmt|;
-name|gdisplay_resize_cursor_label
-argument_list|(
-name|gdisp
 argument_list|)
 expr_stmt|;
 block|}

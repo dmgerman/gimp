@@ -3835,6 +3835,11 @@ operator|->
 name|cursor_label
 argument_list|)
 expr_stmt|;
+name|gdisplay_resize_cursor_label
+argument_list|(
+name|gdisp
+argument_list|)
+expr_stmt|;
 name|gdisp
 operator|->
 name|statusbar
@@ -4133,11 +4138,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
-argument_list|)
-expr_stmt|;
-name|gdisplay_resize_cursor_label
-argument_list|(
-name|gdisp
 argument_list|)
 expr_stmt|;
 ifdef|#

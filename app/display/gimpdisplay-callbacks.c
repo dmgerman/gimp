@@ -421,7 +421,7 @@ decl_stmt|;
 name|int
 name|update_cursor
 init|=
-literal|1
+name|FALSE
 decl_stmt|;
 name|tx
 operator|=
@@ -750,18 +750,10 @@ name|proximity
 operator|=
 name|FALSE
 expr_stmt|;
-name|update_cursor
-operator|=
-literal|0
-expr_stmt|;
 break|break;
 case|case
 name|GDK_ENTER_NOTIFY
 case|:
-name|update_cursor
-operator|=
-literal|0
-expr_stmt|;
 comment|/* Actually, should figure out tx,ty here */
 break|break;
 case|case
@@ -882,6 +874,10 @@ operator|->
 name|y
 operator|=
 name|ty
+expr_stmt|;
+name|update_cursor
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 comment|/* reset the current tool if we're changing gdisplays */
@@ -1147,6 +1143,10 @@ name|y
 operator|=
 name|ty
 expr_stmt|;
+name|update_cursor
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 call|(
 modifier|*
@@ -1254,6 +1254,10 @@ operator|->
 name|y
 expr_stmt|;
 block|}
+name|update_cursor
+operator|=
+name|TRUE
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1406,6 +1410,10 @@ operator|->
 name|y
 operator|=
 name|ty
+expr_stmt|;
+name|update_cursor
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 call|(
@@ -2008,7 +2016,7 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
-comment|/* Stop the signal emission so the button doesn't grab the        * pointer away from us        */
+comment|/* Stop the signal emission so the button doesn't grab the        * pointer away from us */
 name|gtk_signal_emit_stop_by_name
 argument_list|(
 name|GTK_OBJECT
