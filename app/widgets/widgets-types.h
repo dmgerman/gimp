@@ -641,6 +641,15 @@ name|GimpTextEditor
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpColorDisplayEditor
+typedef|typedef
+name|struct
+name|_GimpColorDisplayEditor
+name|GimpColorDisplayEditor
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  structs  */
 end_comment
