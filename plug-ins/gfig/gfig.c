@@ -999,7 +999,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0103
+DECL|enum|__anon2a1994050103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1051,7 +1051,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0203
+DECL|enum|__anon2a1994050203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1072,7 +1072,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0303
+DECL|enum|__anon2a1994050303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1093,7 +1093,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0403
+DECL|enum|__anon2a1994050403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1120,7 +1120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0503
+DECL|enum|__anon2a1994050503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1141,7 +1141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0603
+DECL|enum|__anon2a1994050603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1309,7 +1309,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a995ddb0708
+DECL|struct|__anon2a1994050708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1348,7 +1348,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a995ddb0808
+DECL|struct|__anon2a1994050808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1397,7 +1397,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a995ddb0908
+DECL|struct|__anon2a1994050908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1567,7 +1567,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0a03
+DECL|enum|__anon2a1994050a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1591,7 +1591,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0b03
+DECL|enum|__anon2a1994050b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1609,7 +1609,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0c03
+DECL|enum|__anon2a1994050c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1630,7 +1630,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a995ddb0d03
+DECL|enum|__anon2a1994050d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -5883,22 +5883,13 @@ operator|.
 name|lockongrid
 condition|)
 block|{
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|gfig_opt_widget
-operator|.
-name|lockongrid
-argument_list|)
-argument_list|,
-name|current_obj
-operator|->
-name|opts
-operator|.
-name|lockongrid
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* Maurits: code not implemented */
+block|gtk_toggle_button_set_active 	(GTK_TOGGLE_BUTTON (gfig_opt_widget.lockongrid), 	 current_obj->opts.lockongrid);
+endif|#
+directive|endif
 block|}
 if|if
 condition|(
@@ -12671,7 +12662,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Reverse Line"
+literal|"Reverse line"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12781,7 +12772,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Scale to Image"
+literal|"Scale to image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13024,7 +13015,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Approx. Circles/Ellipses"
+literal|"Approx. circles/ellipses"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15296,7 +15287,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Image"
+literal|"Show image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15497,7 +15488,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid Type:"
+literal|"Grid type:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15635,7 +15626,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid Color:"
+literal|"Grid color:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15664,7 +15655,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Max Undo:"
+literal|"Max undo:"
 argument_list|)
 argument_list|,
 literal|0
@@ -15719,7 +15710,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Position"
+literal|"Show position"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15791,7 +15782,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Hide Control Points"
+literal|"Hide control points"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16057,63 +16048,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Snap to Grid"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|toggle
-argument_list|,
-literal|"toggled"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_toggle_button_update
-argument_list|)
-argument_list|,
-operator|&
-name|selvals
-operator|.
-name|opts
-operator|.
-name|snap2grid
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
-name|gfig_opt_widget
-operator|.
-name|snap2grid
-operator|=
-name|toggle
-expr_stmt|;
-name|toggle
-operator|=
-name|gtk_check_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Display Grid"
+literal|"Show grid"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16166,6 +16101,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"Show grid"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|toggle
@@ -16183,7 +16130,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Lock on Grid"
+literal|"Snap to grid"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16219,7 +16166,19 @@ name|selvals
 operator|.
 name|opts
 operator|.
-name|lockongrid
+name|snap2grid
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"Snap to grid"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -16229,10 +16188,17 @@ argument_list|)
 expr_stmt|;
 name|gfig_opt_widget
 operator|.
-name|lockongrid
+name|snap2grid
 operator|=
 name|toggle
 expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* 17/10/2003 (Maurits): this option is not implemented. Therefore removing      it from the user interface */
+block|toggle = gtk_check_button_new_with_label (_("Lock on Grid"));   gtk_box_pack_start (GTK_BOX (hbox), toggle, FALSE, FALSE, 0);    g_signal_connect (toggle, "toggled",                     G_CALLBACK (gimp_toggle_button_update),&selvals.opts.lockongrid);   gtk_widget_show (toggle);   gfig_opt_widget.lockongrid = toggle;
+endif|#
+directive|endif
 name|table
 operator|=
 name|gtk_table_new
@@ -16300,7 +16266,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid Spacing:"
+literal|"Grid spacing:"
 argument_list|)
 argument_list|,
 literal|0
