@@ -977,10 +977,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_runtime_fix:  * @path: A pointer to a string (allocated with g_malloc) that is (or could be) a pathname.  *  * On Windows, this function checks if the string pointed to by @path  * starts with the compile-time prefix, and in that case, replaces the  * prefix with the run-time one.  @path should be a pointer to a  * dynamically allocated (with g_malloc, g_strconcat, etc) string. If  * the replacement takes place, the original string is deallocated,  * and *@path is replaced with a pointer to a new string with the  * run-time prefix spliced in.  *  * On Unix, does nothing.  */
+comment|/**  * gimp_path_runtime_fix:  * @path: A pointer to a string (allocated with g_malloc) that is  *        (or could be) a pathname.  *  * On Windows, this function checks if the string pointed to by @path  * starts with the compile-time prefix, and in that case, replaces the  * prefix with the run-time one.  @path should be a pointer to a  * dynamically allocated (with g_malloc, g_strconcat, etc) string. If  * the replacement takes place, the original string is deallocated,  * and *@path is replaced with a pointer to a new string with the  * run-time prefix spliced in.  *  * On Unix, does nothing.  */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_path_runtime_fix (gchar ** path)
 name|gimp_path_runtime_fix
