@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290eef880103
+DECL|enum|__anon2882645e0103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -514,7 +514,7 @@ name|gimp_dock_real_book_added
 expr_stmt|;
 name|klass
 operator|->
-name|book_added
+name|book_removed
 operator|=
 name|gimp_dock_real_book_removed
 expr_stmt|;
