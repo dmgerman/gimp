@@ -135,7 +135,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2a484e120103
+DECL|enum|__anon2b0805900103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -151,7 +151,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2a484e120203
+DECL|enum|__anon2b0805900203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a484e120308
+DECL|struct|__anon2b0805900308
 block|{
 DECL|member|index
 name|gint
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a484e120408
+DECL|struct|__anon2b0805900408
 block|{
 DECL|member|title
 name|gchar
@@ -376,6 +376,17 @@ block|,
 literal|"introduction.html"
 block|}
 block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gimp_help_root
+specifier|static
+name|gchar
+modifier|*
+name|gimp_help_root
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -3100,16 +3111,9 @@ argument_list|)
 expr_stmt|;
 name|root_dir
 operator|=
-name|g_strconcat
+name|g_strdup
 argument_list|(
-name|gimp_data_directory
-argument_list|()
-argument_list|,
-name|G_DIR_SEPARATOR_S
-argument_list|,
-name|GIMP_HELP_PREFIX
-argument_list|,
-name|NULL
+name|gimp_help_root
 argument_list|)
 expr_stmt|;
 if|if
@@ -3123,7 +3127,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -3131,6 +3135,8 @@ literal|"GIMP Help Browser Error.\n\n"
 literal|"Couldn't find my root html directory.\n"
 literal|"(%s)"
 argument_list|)
+argument_list|,
+name|root_dir
 argument_list|)
 expr_stmt|;
 return|return
@@ -3190,7 +3196,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -3198,6 +3204,8 @@ literal|"GIMP Help Browser Error.\n\n"
 literal|"Couldn't find my root html directory.\n"
 literal|"(%s)"
 argument_list|)
+argument_list|,
+name|help_path
 argument_list|)
 expr_stmt|;
 return|return
@@ -4552,16 +4560,9 @@ decl_stmt|;
 comment|/*  set default values  */
 name|help_path
 operator|=
-name|g_strconcat
+name|g_strdup
 argument_list|(
-name|gimp_data_directory
-argument_list|()
-argument_list|,
-name|G_DIR_SEPARATOR_S
-argument_list|,
-name|GIMP_HELP_PREFIX
-argument_list|,
-name|NULL
+name|gimp_help_root
 argument_list|)
 expr_stmt|;
 name|locale
@@ -5156,6 +5157,12 @@ name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gchar
 modifier|*
+name|env_root_dir
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
 name|help_path
 init|=
 name|NULL
@@ -5243,7 +5250,58 @@ case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*  set default values  */
-name|help_path
+name|env_root_dir
+operator|=
+name|g_getenv
+argument_list|(
+literal|"GIMP_HELP_ROOT"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|env_root_dir
+condition|)
+block|{
+if|if
+condition|(
+name|chdir
+argument_list|(
+name|env_root_dir
+argument_list|)
+operator|==
+operator|-
+literal|1
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"GIMP Help Browser Error.\n\n"
+literal|"Couldn't find GIMP_HELP_ROOT html directory.\n"
+literal|"(%s)"
+argument_list|)
+argument_list|,
+name|env_root_dir
+argument_list|)
+expr_stmt|;
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+break|break;
+block|}
+name|gimp_help_root
+operator|=
+name|g_strdup
+argument_list|(
+name|env_root_dir
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_help_root
 operator|=
 name|g_strconcat
 argument_list|(
@@ -5255,6 +5313,14 @@ argument_list|,
 name|GIMP_HELP_PREFIX
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+name|help_path
+operator|=
+name|g_strdup
+argument_list|(
+name|gimp_help_root
 argument_list|)
 expr_stmt|;
 name|locale
