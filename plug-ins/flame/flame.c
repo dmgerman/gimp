@@ -433,7 +433,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2bef21010108
+DECL|struct|__anon2acea0b80108
 struct|struct
 block|{
 DECL|member|randomize
@@ -2191,13 +2191,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_quit_add
+name|gtk_quit_add_destroy
 argument_list|(
 literal|1
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
+name|GTK_OBJECT
+argument_list|(
 name|file_dlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3024,13 +3025,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_quit_add
+name|gtk_quit_add_destroy
 argument_list|(
 literal|1
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
+name|GTK_OBJECT
+argument_list|(
 name|edit_dlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3619,7 +3621,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2bef21010208
+DECL|struct|__anon2acea0b80208
 specifier|static
 struct|struct
 block|{
