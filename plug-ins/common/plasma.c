@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5d69a00108
+DECL|struct|__anon2b0667880108
 block|{
 DECL|member|seed
 name|gint
@@ -167,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5d69a00208
+DECL|struct|__anon2b0667880208
 block|{
 DECL|member|run
 name|gint
@@ -1043,6 +1043,10 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|table
 decl_stmt|;
 name|GtkWidget
@@ -1454,6 +1458,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -1479,6 +1485,19 @@ argument_list|,
 literal|1
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|GIMP_RANDOM_SEED_SPINBUTTON
+argument_list|(
+name|seed
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped

@@ -196,7 +196,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ead3ba0108
+DECL|struct|__anon2931614b0108
 block|{
 DECL|member|division
 name|gint32
@@ -3202,7 +3202,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Division:"
+literal|"_Division:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3255,13 +3255,13 @@ argument_list|)
 expr_stmt|;
 name|radio
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Mode 1"
+literal|"Mode _1"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3357,13 +3357,13 @@ argument_list|)
 expr_stmt|;
 name|radio
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Mode 2"
+literal|"Mode _2"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291af28e0108
+DECL|struct|__anon2a2c826b0108
 block|{
 DECL|member|tilable
 name|gint
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291af28e0208
+DECL|struct|__anon2a2c826b0208
 block|{
 DECL|member|run
 name|gint
@@ -2036,6 +2036,10 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|seed_hbox
 decl_stmt|;
 name|GtkWidget
@@ -2246,6 +2250,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -2271,6 +2277,19 @@ argument_list|,
 literal|1
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|GIMP_RANDOM_SEED_SPINBUTTON
+argument_list|(
+name|seed_hbox
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Detail  */
@@ -2350,7 +2369,7 @@ expr_stmt|;
 comment|/*  Turbulent  */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
@@ -2426,7 +2445,7 @@ expr_stmt|;
 comment|/*  Tilable  */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(

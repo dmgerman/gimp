@@ -483,7 +483,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2037a0103
+DECL|enum|__anon2a482d720103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -510,7 +510,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2037a0203
+DECL|enum|__anon2a482d720203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -531,7 +531,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0308
+DECL|struct|__anon2a482d720308
 block|{
 DECL|member|name
 name|gchar
@@ -672,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0408
+DECL|struct|__anon2a482d720408
 block|{
 DECL|member|fp
 name|FILE
@@ -692,7 +692,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2037a0503
+DECL|enum|__anon2a482d720503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -720,7 +720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0608
+DECL|struct|__anon2a482d720608
 block|{
 DECL|member|init
 name|gint
@@ -742,7 +742,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27a2037a0708
+DECL|struct|__anon2a482d720708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -816,7 +816,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0808
+DECL|struct|__anon2a482d720808
 block|{
 DECL|member|init
 name|gint
@@ -886,7 +886,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0908
+DECL|struct|__anon2a482d720908
 block|{
 DECL|member|x0
 name|gdouble
@@ -913,7 +913,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0a08
+DECL|struct|__anon2a482d720a08
 block|{
 DECL|member|init
 name|gint
@@ -1083,7 +1083,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0b08
+DECL|struct|__anon2a482d720b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1110,7 +1110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0c08
+DECL|struct|__anon2a482d720c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1151,7 +1151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0d08
+DECL|struct|__anon2a482d720d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1377,7 +1377,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0e08
+DECL|struct|__anon2a482d720e08
 block|{
 DECL|member|tag
 name|gint
@@ -1454,7 +1454,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a0f08
+DECL|struct|__anon2a482d720f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1512,7 +1512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2037a1008
+DECL|struct|__anon2a482d721008
 block|{
 DECL|member|run
 name|gint
@@ -6629,12 +6629,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gflare
-operator|->
-name|name
-condition|)
 name|g_free
 argument_list|(
 name|gflare
@@ -6642,12 +6636,6 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gflare
-operator|->
-name|filename
-condition|)
 name|g_free
 argument_list|(
 name|gflare
@@ -9520,7 +9508,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon27a2037a1108
+DECL|struct|__anon2a482d721108
 specifier|static
 struct|struct
 block|{
@@ -14640,7 +14628,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"X:"
+literal|"_X:"
 argument_list|)
 argument_list|,
 name|pvals
@@ -14665,7 +14653,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|,
 name|pvals
@@ -14870,7 +14858,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Radius:"
+literal|"_Radius:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -14959,7 +14947,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotation:"
+literal|"Ro_tation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -15045,7 +15033,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Hue Rotation:"
+literal|"_Hue Rotation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -15131,7 +15119,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Vector Angle:"
+literal|"Vector _Angle:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -15216,7 +15204,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Vector Length:"
+literal|"Vector _Length:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -15355,11 +15343,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Adaptive Supersampling"
+literal|"A_daptive Supersampling"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15566,7 +15554,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Max Depth:"
+literal|"_Max Depth:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15662,7 +15650,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Threshold:"
+literal|"_Threshold:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15683,11 +15671,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Auto Update Preview"
+literal|"A_uto Update Preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15754,11 +15742,11 @@ argument_list|)
 argument_list|,
 name|main_vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Settings"
+literal|"_Settings"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -15960,7 +15948,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon27a2037a1208
+DECL|struct|__anon2a482d721208
 block|{
 DECL|member|label
 name|gchar
@@ -15979,7 +15967,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"New"
+literal|"_New"
 argument_list|)
 block|,
 operator|(
@@ -15992,7 +15980,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Edit"
+literal|"_Edit"
 argument_list|)
 block|,
 operator|(
@@ -16005,7 +15993,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Copy"
+literal|"Co_py"
 argument_list|)
 block|,
 operator|(
@@ -16018,7 +16006,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Delete"
+literal|"_Delete"
 argument_list|)
 block|,
 operator|(
@@ -16173,7 +16161,7 @@ control|)
 block|{
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|gettext
 argument_list|(
@@ -16263,11 +16251,11 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Selector"
+literal|"S_elector"
 argument_list|)
 argument_list|)
 argument_list|)

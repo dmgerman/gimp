@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28adfff30108
+DECL|struct|__anon28dadb460108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28adfff30208
+DECL|struct|__anon28dadb460208
 block|{
 DECL|member|run
 name|gint
@@ -1200,11 +1200,11 @@ expr_stmt|;
 comment|/*  X options  */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"X Displacement:"
+literal|"_X Displacement:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1470,11 +1470,11 @@ expr_stmt|;
 comment|/*  Y Options  */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Y Displacement:"
+literal|"_Y Displacement:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1834,13 +1834,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Wrap"
+literal|"_Wrap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1926,13 +1926,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Smear"
+literal|"_Smear"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2018,13 +2018,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Black"
+literal|"_Black"
 argument_list|)
 argument_list|)
 expr_stmt|;
