@@ -79,6 +79,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"ppmtool.h"
 end_include
 
@@ -86,6 +92,12 @@ begin_include
 include|#
 directive|include
 file|"gimpressionist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function
@@ -4057,6 +4069,29 @@ argument_list|,
 literal|"wb"
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|f
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"GIMPressionist:\nFailed to save PPM file '%s':\n%s"
+argument_list|)
+argument_list|,
+name|fn
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|fprintf
 argument_list|(
 name|f
