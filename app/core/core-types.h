@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a05067f0103
+DECL|enum|__anon2a53face0103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -91,7 +91,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a05067f0203
+DECL|enum|__anon2a53face0203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -110,7 +110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a05067f0303
+DECL|enum|__anon2a53face0303
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -128,7 +128,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2a05067f0403
+DECL|enum|__anon2a53face0403
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
@@ -513,15 +513,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpText
-typedef|typedef
-name|struct
-name|_GimpText
-name|GimpText
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpEnvironTable
 typedef|typedef
 name|struct
@@ -773,6 +764,12 @@ begin_include
 include|#
 directive|include
 file|"paint/paint-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"text/text-types.h"
 end_include
 
 begin_include

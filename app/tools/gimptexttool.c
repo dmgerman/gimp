@@ -102,13 +102,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptext.h"
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
+file|"text/gimptext.h"
 end_include
 
 begin_include
