@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-mask.h"
 end_include
 
@@ -246,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3ca0390103
+DECL|enum|__anon27dcee2f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -2247,7 +2253,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|g_free
+name|gimp_image_guide_unref
 argument_list|,
 name|NULL
 argument_list|)
