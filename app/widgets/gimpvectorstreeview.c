@@ -1014,12 +1014,23 @@ decl_stmt|;
 name|gint
 name|index
 decl_stmt|;
+if|if
+condition|(
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|be_verbose
+condition|)
 name|g_print
 argument_list|(
 literal|"%s: SVG dropped (len = %d)\n"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
+operator|(
+name|gint
+operator|)
 name|svg_data_len
 argument_list|)
 expr_stmt|;
