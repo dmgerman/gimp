@@ -397,6 +397,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcoreconfig.h"
 end_include
 
@@ -1557,7 +1563,9 @@ expr_stmt|;
 comment|/* search for binaries in the plug-in directory path */
 name|gimp_datafiles_read_directories
 argument_list|(
-name|core_config
+name|the_gimp
+operator|->
+name|config
 operator|->
 name|plug_in_path
 argument_list|,
@@ -1575,7 +1583,9 @@ name|NULL
 expr_stmt|;
 if|if
 condition|(
-name|core_config
+name|the_gimp
+operator|->
+name|config
 operator|->
 name|pluginrc_path
 condition|)
@@ -1584,7 +1594,9 @@ if|if
 condition|(
 name|g_path_is_absolute
 argument_list|(
-name|core_config
+name|the_gimp
+operator|->
+name|config
 operator|->
 name|pluginrc_path
 argument_list|)
@@ -1593,7 +1605,9 @@ name|filename
 operator|=
 name|g_strdup
 argument_list|(
-name|core_config
+name|the_gimp
+operator|->
+name|config
 operator|->
 name|pluginrc_path
 argument_list|)
@@ -1610,7 +1624,9 @@ argument_list|,
 name|gimp_directory
 argument_list|()
 argument_list|,
-name|core_config
+name|the_gimp
+operator|->
+name|config
 operator|->
 name|pluginrc_path
 argument_list|)
@@ -3721,7 +3737,9 @@ name|path
 operator|=
 name|plug_in_search_in_path
 argument_list|(
-name|core_config
+name|the_gimp
+operator|->
+name|config
 operator|->
 name|plug_in_path
 argument_list|,
@@ -6854,6 +6872,8 @@ name|gimp_drawable_shadow
 argument_list|(
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|the_gimp
+argument_list|,
 name|tile_info
 operator|->
 name|drawable_ID
@@ -6867,6 +6887,8 @@ name|gimp_drawable_data
 argument_list|(
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|the_gimp
+argument_list|,
 name|tile_info
 operator|->
 name|drawable_ID
@@ -7026,6 +7048,8 @@ name|gimp_drawable_shadow
 argument_list|(
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|the_gimp
+argument_list|,
 name|tile_req
 operator|->
 name|drawable_ID
@@ -7039,6 +7063,8 @@ name|gimp_drawable_data
 argument_list|(
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|the_gimp
+argument_list|,
 name|tile_req
 operator|->
 name|drawable_ID
@@ -15995,6 +16021,8 @@ name|gdisp
 operator|=
 name|gdisplay_get_by_ID
 argument_list|(
+name|the_gimp
+argument_list|,
 name|gdisp_ID
 argument_list|)
 expr_stmt|;

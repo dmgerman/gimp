@@ -124,6 +124,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpunit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -1688,6 +1694,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -1932,6 +1940,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2140,6 +2150,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2440,6 +2452,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2570,6 +2584,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2721,6 +2737,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2996,6 +3014,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -3247,6 +3267,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -3390,6 +3412,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -3609,6 +3633,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -3637,6 +3663,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -3780,6 +3808,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -3808,6 +3838,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -3951,6 +3983,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -3979,6 +4013,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -4122,6 +4158,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -4150,6 +4188,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -4302,6 +4342,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -4535,6 +4577,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -4563,6 +4607,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -4799,6 +4845,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -4985,6 +5033,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -5013,6 +5063,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -5243,6 +5295,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -5271,6 +5325,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -5416,6 +5472,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -5444,6 +5502,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -5472,6 +5532,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|2
@@ -5630,6 +5692,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -5658,6 +5722,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -5834,6 +5900,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -5862,6 +5930,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -6005,6 +6075,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -6033,6 +6105,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -6179,6 +6253,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -6207,6 +6283,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -6377,6 +6455,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -6405,6 +6485,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -6552,6 +6634,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -6740,6 +6824,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -6922,6 +7008,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -7141,6 +7229,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -7390,6 +7480,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -7561,6 +7653,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -7736,6 +7830,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -7911,6 +8007,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -8086,6 +8184,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -8257,6 +8357,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -8394,6 +8496,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -8586,6 +8690,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -8825,6 +8931,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -9259,6 +9367,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -9420,6 +9530,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -9599,6 +9711,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -9779,6 +9893,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -9941,6 +10057,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -10109,6 +10227,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -10291,6 +10411,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -10319,6 +10441,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -10466,6 +10590,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -10648,6 +10774,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -10676,6 +10804,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -10823,6 +10953,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -11009,6 +11141,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -11256,6 +11390,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -11497,6 +11633,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -11744,6 +11882,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -11982,6 +12122,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -12148,6 +12290,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -12314,6 +12458,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -12501,6 +12647,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -12727,6 +12875,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -12888,6 +13038,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -13065,6 +13217,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -13290,6 +13444,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0

@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"unitrc.h"
+file|"core/gimpunit.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpunit.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_decl_stmt

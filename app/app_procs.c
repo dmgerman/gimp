@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpunit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/internal_procs.h"
 end_include
 
@@ -209,12 +215,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"unitrc.h"
 end_include
 
 begin_include

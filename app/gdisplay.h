@@ -29,7 +29,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c72994d0103
+DECL|enum|__anon2b26ca920103
 block|{
 DECL|enumerator|SELECTION_OFF
 name|SELECTION_OFF
@@ -1270,6 +1270,10 @@ name|GDisplay
 modifier|*
 name|gdisplay_get_by_ID
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 name|ID
 parameter_list|)

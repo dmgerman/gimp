@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -245,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad389450103
+DECL|enum|__anon2c5000df0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -1565,7 +1571,11 @@ block|{
 comment|/* If there are 0 levels of undo return FALSE.  */
 if|if
 condition|(
-name|core_config
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
 operator|->
 name|levels_of_undo
 operator|==
@@ -1581,7 +1591,11 @@ name|gimage
 operator|->
 name|undo_levels
 operator|>=
-name|core_config
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
 operator|->
 name|levels_of_undo
 condition|)
@@ -5009,6 +5023,10 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|ldu
 operator|->
 name|info
@@ -8703,6 +8721,10 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|layer_ID
 argument_list|)
 operator|)
@@ -9008,6 +9030,10 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|layer_ID
 argument_list|)
 operator|)

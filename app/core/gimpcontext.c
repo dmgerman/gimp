@@ -1031,7 +1031,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289934a80103
+DECL|enum|__anon293705cb0103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -1077,7 +1077,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289934a80203
+DECL|enum|__anon293705cb0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -6806,7 +6806,11 @@ name|brush_name
 operator|=
 name|g_strdup
 argument_list|(
-name|core_config
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_brush
 argument_list|)
@@ -7463,7 +7467,11 @@ name|pattern_name
 operator|=
 name|g_strdup
 argument_list|(
-name|core_config
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_pattern
 argument_list|)
@@ -8103,7 +8111,11 @@ name|gradient_name
 operator|=
 name|g_strdup
 argument_list|(
-name|core_config
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_gradient
 argument_list|)
@@ -8677,7 +8689,11 @@ name|palette_name
 operator|=
 name|g_strdup
 argument_list|(
-name|core_config
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_palette
 argument_list|)
@@ -9207,7 +9223,7 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-comment|/*   GimpBuffer *buffer;    if (! context->buffer_name)     context->buffer_name = g_strdup (core_config->default_buffer);    if ((buffer = (GimpBuffer *)        gimp_container_get_child_by_name (container, 					 context->buffer_name)))     {       gimp_context_real_set_buffer (context, buffer);       return;     }   */
+comment|/*   GimpBuffer *buffer;    if (! context->buffer_name)     context->buffer_name = g_strdup (context->gimp->config->default_buffer);    if ((buffer = (GimpBuffer *)        gimp_container_get_child_by_name (container, 					 context->buffer_name)))     {       gimp_context_real_set_buffer (context, buffer);       return;     }   */
 if|if
 condition|(
 name|gimp_container_num_children

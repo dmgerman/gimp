@@ -330,7 +330,9 @@ name|image_new_last_values
 operator|.
 name|width
 operator|=
-name|core_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_width
 expr_stmt|;
@@ -340,7 +342,9 @@ name|image_new_last_values
 operator|.
 name|height
 operator|=
-name|core_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_height
 expr_stmt|;
@@ -350,7 +354,9 @@ name|image_new_last_values
 operator|.
 name|unit
 operator|=
-name|core_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_units
 expr_stmt|;
@@ -360,7 +366,9 @@ name|image_new_last_values
 operator|.
 name|xresolution
 operator|=
-name|core_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_xresolution
 expr_stmt|;
@@ -370,7 +378,9 @@ name|image_new_last_values
 operator|.
 name|yresolution
 operator|=
-name|core_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_yresolution
 expr_stmt|;
@@ -380,7 +390,9 @@ name|image_new_last_values
 operator|.
 name|res_unit
 operator|=
-name|core_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_resolution_units
 expr_stmt|;
@@ -390,7 +402,9 @@ name|image_new_last_values
 operator|.
 name|type
 operator|=
-name|core_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_type
 expr_stmt|;

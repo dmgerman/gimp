@@ -10336,9 +10336,13 @@ end_function
 begin_function
 name|GDisplay
 modifier|*
-DECL|function|gdisplay_get_by_ID (gint ID)
+DECL|function|gdisplay_get_by_ID (Gimp * gimp,gint ID)
 name|gdisplay_get_by_ID
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 name|ID
 parameter_list|)

@@ -237,6 +237,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcoreconfig.h"
 end_include
 
@@ -724,7 +730,11 @@ comment|/* gimage_set_save_proc(gimage, file_proc); */
 comment|/* Write a thumbnail for the saved image, where appropriate */
 switch|switch
 condition|(
-name|core_config
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
 operator|->
 name|thumbnail_mode
 condition|)

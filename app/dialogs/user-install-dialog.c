@@ -95,6 +95,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpunit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/resolution-calibrate-dialog.h"
 end_include
 
@@ -114,12 +120,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"unitrc.h"
 end_include
 
 begin_include
@@ -544,7 +544,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27b51e550108
+DECL|struct|__anon2b2ea75d0108
 block|{
 DECL|member|directory
 name|gboolean

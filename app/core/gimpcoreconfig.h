@@ -16,15 +16,6 @@ directive|define
 name|__GIMP_CORE_CONFIG_H__
 end_define
 
-begin_typedef
-DECL|typedef|GimpCoreConfig
-typedef|typedef
-name|struct
-name|_GimpCoreConfig
-name|GimpCoreConfig
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpCoreConfig
 struct|struct
@@ -135,13 +126,16 @@ block|}
 struct|;
 end_struct
 
-begin_decl_stmt
-specifier|extern
-name|GimpCoreConfig
+begin_function_decl
+name|void
+name|gimp_core_config_init
+parameter_list|(
+name|Gimp
 modifier|*
-name|core_config
-decl_stmt|;
-end_decl_stmt
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

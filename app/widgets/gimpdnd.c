@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296fb1ec0103
+DECL|enum|__anon29c1cf3e0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE
@@ -3921,6 +3921,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|the_gimp
+argument_list|,
 name|ID
 argument_list|)
 expr_stmt|;
@@ -4144,6 +4146,8 @@ name|drawable
 operator|=
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|the_gimp
+argument_list|,
 name|ID
 argument_list|)
 expr_stmt|;

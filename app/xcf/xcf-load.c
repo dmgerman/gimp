@@ -124,6 +124,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpunit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xcf-private.h"
 end_include
 
@@ -2157,13 +2163,21 @@ argument_list|)
 expr_stmt|;
 name|xres
 operator|=
-name|core_config
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_xresolution
 expr_stmt|;
 name|yres
 operator|=
-name|core_config
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
 operator|->
 name|default_yresolution
 expr_stmt|;

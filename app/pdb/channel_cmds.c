@@ -391,6 +391,8 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -751,6 +753,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -936,6 +940,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -1083,6 +1089,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -1111,6 +1119,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|1
@@ -1335,6 +1345,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -1505,6 +1517,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -1675,6 +1689,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -1841,6 +1857,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2001,6 +2019,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2166,6 +2186,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2325,6 +2347,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2494,6 +2518,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2670,6 +2696,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -2845,6 +2873,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -3019,6 +3049,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0
@@ -3185,6 +3217,8 @@ operator|*
 operator|)
 name|gimp_drawable_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 index|[
 literal|0

@@ -2522,7 +2522,9 @@ else|else
 block|{
 switch|switch
 condition|(
-name|core_config
+name|the_gimp
+operator|->
+name|config
 operator|->
 name|thumbnail_mode
 condition|)
@@ -2995,7 +2997,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|core_config
+name|the_gimp
+operator|->
+name|config
 operator|->
 name|thumbnail_mode
 condition|)

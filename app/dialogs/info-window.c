@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpunit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppreview.h"
 end_include
 
@@ -135,12 +141,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"unitrc.h"
 end_include
 
 begin_include

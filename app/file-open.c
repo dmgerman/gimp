@@ -698,6 +698,8 @@ block|{
 return|return
 name|gimp_image_get_by_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|gimage_id
 argument_list|)
 return|;

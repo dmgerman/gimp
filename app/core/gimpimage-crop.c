@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchannel.h"
 end_include
 
@@ -78,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a00767a0103
+DECL|enum|__anon2abb4d880103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -374,7 +374,11 @@ name|height
 condition|)
 block|{
 name|gimp_set_busy
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -881,7 +885,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -1048,7 +1056,11 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_set_busy
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 comment|/* You should always keep in mind that crop->tx2 and crop->ty2 are the NOT the      coordinates of the bottomright corner of the area to be cropped. They point       at the pixel located one to the right and one to the bottom.      */
 if|if
@@ -1638,7 +1650,11 @@ name|buffer
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 return|return
 name|retval

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcoreconfig.h"
 end_include
 
@@ -61,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"resize-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -3671,7 +3683,9 @@ name|gimp_size_entry_new
 argument_list|(
 literal|1
 argument_list|,
-name|core_config
+name|the_gimp
+operator|->
+name|config
 operator|->
 name|default_resolution_units
 argument_list|,

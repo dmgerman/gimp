@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"core/gimpunit.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"unitrc.h"
+file|"app_procs.h"
 end_include
 
 begin_include

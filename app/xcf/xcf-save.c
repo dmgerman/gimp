@@ -118,6 +118,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpunit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xcf-private.h"
 end_include
 
@@ -155,12 +161,6 @@ begin_include
 include|#
 directive|include
 file|"pathP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"unitrc.h"
 end_include
 
 begin_function_decl
