@@ -877,6 +877,13 @@ endif|#
 directive|endif
 else|#
 directive|else
+name|g_assert
+argument_list|(
+name|PLUG_IN_INFO_PTR
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|_readchannel
 operator|=
 name|g_io_channel_win32_new_pipe

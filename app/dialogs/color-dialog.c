@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gmodule/gmodule.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -1642,6 +1648,7 @@ comment|/* Registration functions */
 end_comment
 
 begin_function
+name|G_MODULE_EXPORT
 name|GimpColorSelectorID
 DECL|function|gimp_color_selector_register (const char * name,GimpColorSelectorMethods * methods)
 name|gimp_color_selector_register
@@ -1747,6 +1754,7 @@ block|}
 end_function
 
 begin_function
+name|G_MODULE_EXPORT
 name|gboolean
 DECL|function|gimp_color_selector_unregister (GimpColorSelectorID id,void (* callback)(void * data),void * data)
 name|gimp_color_selector_unregister
