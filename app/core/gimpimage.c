@@ -252,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a18a0c40103
+DECL|enum|__anon275582ee0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -2795,6 +2795,20 @@ argument_list|(
 name|gimage
 operator|->
 name|channels
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|gimp_viewable_size_changed
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_container_foreach
+argument_list|(
+name|gimage
+operator|->
+name|vectors
 argument_list|,
 operator|(
 name|GFunc

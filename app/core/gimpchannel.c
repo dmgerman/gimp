@@ -1900,19 +1900,7 @@ literal|"Rotate Channel"
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|G_TYPE_FROM_INSTANCE
-argument_list|(
-name|item
-argument_list|)
-operator|==
-name|GIMP_TYPE_CHANNEL
-condition|)
-name|clip_result
-operator|=
-name|TRUE
-expr_stmt|;
+comment|/*  don't default to clip_result == TRUE here  */
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class

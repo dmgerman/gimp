@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad51e010103
+DECL|enum|__anon2bbaad960103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1865,7 +1865,6 @@ name|GIMP_ROTATE_90
 case|:
 name|angle
 operator|=
-operator|-
 name|G_PI_2
 expr_stmt|;
 break|break;
@@ -1882,6 +1881,7 @@ name|GIMP_ROTATE_270
 case|:
 name|angle
 operator|=
+operator|-
 name|G_PI_2
 expr_stmt|;
 break|break;
