@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -630,6 +636,10 @@ condition|(
 name|size
 operator|==
 name|ULONG_MAX
+operator|&&
+name|errno
+operator|==
+name|ERANGE
 condition|)
 goto|goto
 name|error
@@ -691,10 +701,39 @@ goto|goto
 name|error
 goto|;
 block|}
+comment|/* protect against overflow */
+if|if
+condition|(
+name|shift
+condition|)
+block|{
+name|gulong
+name|limit
+init|=
+name|G_MAXULONG
+operator|>>
+operator|(
+name|shift
+operator|)
+decl_stmt|;
+if|if
+condition|(
+name|size
+operator|!=
+operator|(
+name|size
+operator|&
+name|limit
+operator|)
+condition|)
+goto|goto
+name|error
+goto|;
 name|size
 operator|<<=
 name|shift
 expr_stmt|;
+block|}
 block|}
 name|g_value_set_ulong
 argument_list|(
@@ -706,6 +745,13 @@ expr_stmt|;
 return|return;
 name|error
 label|:
+name|g_value_set_ulong
+argument_list|(
+name|dest_value
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|g_warning
 argument_list|(
 literal|"Can't convert string to GimpMemsize."

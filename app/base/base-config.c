@@ -98,7 +98,9 @@ name|INIT_MEMBER
 argument_list|(
 name|tile_cache_size
 argument_list|,
-literal|33554432
+literal|1
+operator|<<
+literal|25
 argument_list|)
 block|,
 name|INIT_MEMBER

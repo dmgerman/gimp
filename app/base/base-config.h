@@ -41,7 +41,7 @@ modifier|*
 name|swap_path
 decl_stmt|;
 DECL|member|tile_cache_size
-name|guint
+name|gulong
 name|tile_cache_size
 decl_stmt|;
 DECL|member|stingy_memory_use

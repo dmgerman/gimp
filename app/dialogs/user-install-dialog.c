@@ -248,7 +248,7 @@ value|gtk_widget_modify_style (widget, title_style)
 end_define
 
 begin_enum
-DECL|enum|__anon29eb02250103
+DECL|enum|__anon2b26b9960103
 enum|enum
 block|{
 DECL|enumerator|DIRENT_COLUMN
@@ -509,7 +509,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29eb02250208
+DECL|struct|__anon2b26b9960208
 block|{
 DECL|member|directory
 name|gboolean
@@ -4625,13 +4625,7 @@ name|tile_cache_size
 argument_list|,
 literal|0
 argument_list|,
-operator|(
-literal|4069.0
-operator|*
-literal|1024
-operator|*
-literal|1024
-operator|)
+name|G_MAXULONG
 argument_list|,
 literal|1.0
 argument_list|,
@@ -5596,7 +5590,7 @@ name|remove
 init|=
 name|NULL
 decl_stmt|;
-name|gint
+name|gulong
 name|new_tile_cache_size
 decl_stmt|;
 name|gchar

@@ -411,14 +411,13 @@ operator|(
 name|TileList
 operator|*
 operator|)
-operator|(
 name|tile
 operator|->
 name|listhead
-operator|)
 expr_stmt|;
 name|newlist
 operator|=
+operator|(
 operator|(
 name|tile
 operator|->
@@ -437,6 +436,7 @@ name|dirty_list
 else|:
 operator|&
 name|clean_list
+operator|)
 expr_stmt|;
 comment|/* if list is NULL, the tile is not in the cache */
 if|if
@@ -612,11 +612,9 @@ comment|/* Invariant: test for selecting dirty list should be the same */
 comment|/* as counting files dirty.                                    */
 if|if
 condition|(
-operator|(
 name|tile
 operator|->
 name|dirty
-operator|)
 operator|||
 operator|(
 name|tile
@@ -723,11 +721,9 @@ operator|(
 name|TileList
 operator|*
 operator|)
-operator|(
 name|tile
 operator|->
 name|listhead
-operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -1332,6 +1328,10 @@ begin_else
 else|#
 directive|else
 end_else
+
+begin_comment
+comment|/* !USE_PTHREADS */
+end_comment
 
 begin_function
 specifier|static
