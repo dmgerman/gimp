@@ -2306,10 +2306,38 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
+comment|/*  parse the systemwide gtkrc  */
 name|filename
 operator|=
 name|gimp_gtkrc
 argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"parsing \"%s\"\n"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+comment|/*  parse the user gtkrc  */
+name|filename
+operator|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"gtkrc"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
