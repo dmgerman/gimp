@@ -12,51 +12,31 @@ comment|/*  *  "The Graphics Interchange Format(c) is the Copyright property of 
 end_comment
 
 begin_comment
+comment|/* Copyright notice for GIF code from which this plugin was long ago     */
+end_comment
+
+begin_comment
+comment|/* derived (David Koblas has granted permission to relicense):           */
+end_comment
+
+begin_comment
+comment|/* +-------------------------------------------------------------------+ */
+end_comment
+
+begin_comment
+comment|/* | Copyright 1990, 1991, 1993, David Koblas.  (koblas@extra.com)     | */
+end_comment
+
+begin_comment
+comment|/* +-------------------------------------------------------------------+ */
+end_comment
+
+begin_comment
 comment|/*  * REVISION HISTORY  *  * 2000/03/31  * 1.00.03 - Just mildly more useful comments/messages concerning frame  *     disposals.  *  * 99/11/20  * 1.00.02 - Fixed a couple of possible infinite loops where an  *     error condition was not being checked.  Also changed some g_message()s  *     back to g_warning()s as they should be (don't get carried away with  *     the user feedback fellahs, no-one wants to be told of every single  *     corrupt byte and block in its own little window.  :-( ).  *  * 99/11/11  * 1.00.01 - Fixed an uninitialized variable which has been around  *     forever... thanks to jrb@redhat.com for noticing that there  *     was a problem somewhere!  *  * 99/03/20  * 1.00.00 - GIF load-only code split from main GIF plugin.  *  * For previous revision information, please consult the comments  * in the 'gif' plugin.  */
 end_comment
 
 begin_comment
 comment|/*  * TODO (more *'s means more important!)  *  * - PDB stuff for comments  *  * - Remove unused colourmap entries for GRAYSCALE images.  */
-end_comment
-
-begin_comment
-comment|/* Copyright notice for code which this plugin was long ago derived from */
-end_comment
-
-begin_comment
-comment|/* +-------------------------------------------------------------------+ */
-end_comment
-
-begin_comment
-comment|/* | Copyright 1990, 1991, 1993, David Koblas.  (koblas@netcom.com)    | */
-end_comment
-
-begin_comment
-comment|/* |   Permission to use, copy, modify, and distribute this software   | */
-end_comment
-
-begin_comment
-comment|/* |   and its documentation for any purpose and without fee is hereby | */
-end_comment
-
-begin_comment
-comment|/* |   granted, provided that the above copyright notice appear in all | */
-end_comment
-
-begin_comment
-comment|/* |   copies and that both that copyright notice and this permission  | */
-end_comment
-
-begin_comment
-comment|/* |   notice appear in supporting documentation.  This software is    | */
-end_comment
-
-begin_comment
-comment|/* |   provided "as is" without express or implied warranty.           | */
-end_comment
-
-begin_comment
-comment|/* +-------------------------------------------------------------------+ */
 end_comment
 
 begin_include
@@ -725,7 +705,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon277ad7220108
+DECL|struct|__anon2962ed810108
 block|{
 DECL|member|Width
 name|unsigned
@@ -775,7 +755,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon277ad7220208
+DECL|struct|__anon2962ed810208
 block|{
 DECL|member|transparent
 name|int
