@@ -115,6 +115,21 @@ define|#
 directive|define
 name|GIMP_STOCK_PATH_STROKE
 value|"gimp-path-stroke"
+DECL|macro|GIMP_STOCK_CHAR_PICKER
+define|#
+directive|define
+name|GIMP_STOCK_CHAR_PICKER
+value|"gimp-char-picker"
+DECL|macro|GIMP_STOCK_LETTER_SPACING
+define|#
+directive|define
+name|GIMP_STOCK_LETTER_SPACING
+value|"gimp-letter-spacing"
+DECL|macro|GIMP_STOCK_LINE_SPACING
+define|#
+directive|define
+name|GIMP_STOCK_LINE_SPACING
+value|"gimp-line-spacing"
 comment|/*  only in menu size:  */
 DECL|macro|GIMP_STOCK_CONVERT_RGB
 define|#
