@@ -5,11 +5,19 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_define
+DECL|macro|FILE_OSTREAM_INIT
+define|#
+directive|define
+name|FILE_OSTREAM_INIT
+value|fo_init
+end_define
+
 begin_function
-DECL|function|ex_file_ostream_init_real (ExFileOstream * str)
+DECL|function|fo_init (ExFileOstream * str)
 specifier|static
 name|void
-name|ex_file_ostream_init_real
+name|fo_init
 parameter_list|(
 name|ExFileOstream
 modifier|*
@@ -26,10 +34,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|put_char (ExOstream * s,gchar c)
+DECL|function|fo_putchar (ExOstream * s,gchar c)
 specifier|static
 name|void
-name|put_char
+name|fo_putchar
 parameter_list|(
 name|ExOstream
 modifier|*
@@ -61,10 +69,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|close (ExOstream * s)
+DECL|function|fo_close (ExOstream * s)
 specifier|static
 name|void
-name|close
+name|fo_close
 parameter_list|(
 name|ExOstream
 modifier|*
@@ -96,11 +104,19 @@ expr_stmt|;
 block|}
 end_function
 
+begin_define
+DECL|macro|FILE_OSTREAM_CLASS_INIT
+define|#
+directive|define
+name|FILE_OSTREAM_CLASS_INIT
+value|fo_cinit
+end_define
+
 begin_function
-DECL|function|ex_file_ostream_class_init_real (ExFileOstreamClass * klass)
+DECL|function|fo_cinit (ExFileOstreamClass * klass)
 specifier|static
 name|void
-name|ex_file_ostream_class_init_real
+name|fo_cinit
 parameter_list|(
 name|ExFileOstreamClass
 modifier|*
@@ -117,7 +133,7 @@ operator|)
 operator|->
 name|putchar
 operator|=
-name|put_char
+name|fo_putchar
 expr_stmt|;
 operator|(
 operator|(
@@ -129,17 +145,25 @@ operator|)
 operator|->
 name|close
 operator|=
-name|close
+name|fo_close
 expr_stmt|;
 block|}
 end_function
 
+begin_define
+DECL|macro|FILE_OSTREAM_OPEN
+define|#
+directive|define
+name|FILE_OSTREAM_OPEN
+value|fo_open
+end_define
+
 begin_function
-DECL|function|file_ostream_open_real (gchar * filename)
+DECL|function|fo_open (gchar * filename)
 specifier|static
 name|ExFileOstream
 modifier|*
-name|file_ostream_open_real
+name|fo_open
 parameter_list|(
 name|gchar
 modifier|*

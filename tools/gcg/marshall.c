@@ -27,7 +27,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon28dc6b3f0103
+DECL|enum|__anon274bc8340103
 typedef|typedef
 enum|enum
 block|{
@@ -467,7 +467,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon28dc6b3f0203
+DECL|enum|__anon274bc8340203
 typedef|typedef
 enum|enum
 block|{
@@ -1217,7 +1217,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28dc6b3f0308
+DECL|struct|__anon274bc8340308
 typedef|typedef
 struct|struct
 block|{
@@ -1323,6 +1323,16 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|gint
+name|nargs
+init|=
+name|g_slist_length
+argument_list|(
+name|m
+operator|->
+name|params
+argument_list|)
+decl_stmt|;
 name|gboolean
 name|ret
 init|=
@@ -1340,27 +1350,33 @@ return|return
 name|p_fmt
 argument_list|(
 literal|"\t{\n"
-literal|"\tGtkArg args[~];\n"
 literal|"~"
 literal|"~"
 literal|"~"
-literal|"\tgtk_signal_emitv((GtkObject*)~, ~, args);\n"
+literal|"~"
+literal|"\tgtk_signal_emitv((GtkObject*)~, ~, ~);\n"
 literal|"~"
 literal|"\t}\n"
+argument_list|,
+name|nargs
+operator|>
+literal|0
+condition|?
+name|p_fmt
+argument_list|(
+literal|"\tGtkArg args[~];\n"
 argument_list|,
 name|p_prf
 argument_list|(
 literal|"%d"
 argument_list|,
-name|g_slist_length
-argument_list|(
-name|m
-operator|->
-name|params
-argument_list|)
+name|nargs
 operator|+
 name|ret
 argument_list|)
+argument_list|)
+else|:
+name|p_nil
 argument_list|,
 name|ret
 condition|?
@@ -1402,12 +1418,7 @@ name|p_prf
 argument_list|(
 literal|"%d"
 argument_list|,
-name|g_slist_length
-argument_list|(
-name|m
-operator|->
-name|params
-argument_list|)
+name|nargs
 argument_list|)
 argument_list|)
 else|:
@@ -1433,6 +1444,20 @@ argument_list|,
 name|p_signal_id
 argument_list|(
 name|m
+argument_list|)
+argument_list|,
+name|nargs
+operator|>
+literal|0
+condition|?
+name|p_str
+argument_list|(
+literal|"args"
+argument_list|)
+else|:
+name|p_str
+argument_list|(
+literal|"NULL"
 argument_list|)
 argument_list|,
 name|ret

@@ -48,24 +48,19 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-DECL|function|ex_ostream_init_real (ExOstream * str)
-specifier|static
-name|void
-name|ex_ostream_init_real
-parameter_list|(
-name|ExOstream
-modifier|*
-name|str
-parameter_list|)
-block|{ }
-end_function
+begin_define
+DECL|macro|OSTREAM_CLASS_INIT
+define|#
+directive|define
+name|OSTREAM_CLASS_INIT
+value|ostream_class_init
+end_define
 
 begin_function
-DECL|function|ex_ostream_class_init_real (ExOstreamClass * klass)
+DECL|function|ostream_class_init (ExOstreamClass * klass)
 specifier|static
 name|void
-name|ex_ostream_class_init_real
+name|ostream_class_init
 parameter_list|(
 name|ExOstreamClass
 modifier|*

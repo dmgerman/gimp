@@ -247,6 +247,10 @@ condition|(
 name|m
 operator|->
 name|package
+operator|&&
+name|m
+operator|->
+name|name
 condition|)
 name|g_hash_table_insert
 argument_list|(
