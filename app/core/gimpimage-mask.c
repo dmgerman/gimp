@@ -1469,7 +1469,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot float selection: No selection made."
+literal|"Cannot float selection because the\n"
+literal|"selected region is empty."
 argument_list|)
 argument_list|)
 expr_stmt|;
