@@ -1303,7 +1303,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Image hoses should have at least one brush."
+literal|"Brush pipes should have at least one brush."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2030,7 +2030,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to load one of the brushes in the image hose."
+literal|"Failed to load one of the\n"
+literal|"brushes in the brush pipe."
 argument_list|)
 argument_list|)
 expr_stmt|;
