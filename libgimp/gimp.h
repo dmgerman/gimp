@@ -3249,6 +3249,27 @@ modifier|*
 name|help_data
 parameter_list|)
 function_decl|;
+comment|/****************************************  *           Localisation               *  ****************************************/
+name|void
+name|gimp_plugin_domain_add
+parameter_list|(
+name|gchar
+modifier|*
+name|domain_name
+parameter_list|)
+function_decl|;
+name|void
+name|gimp_plugin_domain_add_with_path
+parameter_list|(
+name|gchar
+modifier|*
+name|domain_name
+parameter_list|,
+name|gchar
+modifier|*
+name|domain_path
+parameter_list|)
+function_decl|;
 ifdef|#
 directive|ifdef
 name|__cplusplus
