@@ -673,7 +673,7 @@ name|sprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|"%s/gimp_splash.ppm"
+literal|"%s/gimp1_1_splash.ppm"
 argument_list|,
 name|DATADIR
 argument_list|)
@@ -818,7 +818,7 @@ name|sprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|"%s/gimp_splash.ppm"
+literal|"%s/gimp1_1_splash.ppm"
 argument_list|,
 name|DATADIR
 argument_list|)
