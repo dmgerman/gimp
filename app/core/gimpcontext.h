@@ -25,56 +25,56 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5be4eb0103
+DECL|enum|__anon295014ca0103
 block|{
-DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
-name|GIMP_CONTEXT_ARG_IMAGE
+DECL|enumerator|GIMP_CONTEXT_PROP_IMAGE
+name|GIMP_CONTEXT_PROP_IMAGE
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_DISPLAY
-name|GIMP_CONTEXT_ARG_DISPLAY
+DECL|enumerator|GIMP_CONTEXT_PROP_DISPLAY
+name|GIMP_CONTEXT_PROP_DISPLAY
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_TOOL
-name|GIMP_CONTEXT_ARG_TOOL
+DECL|enumerator|GIMP_CONTEXT_PROP_TOOL
+name|GIMP_CONTEXT_PROP_TOOL
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_FOREGROUND
-name|GIMP_CONTEXT_ARG_FOREGROUND
+DECL|enumerator|GIMP_CONTEXT_PROP_FOREGROUND
+name|GIMP_CONTEXT_PROP_FOREGROUND
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_BACKGROUND
-name|GIMP_CONTEXT_ARG_BACKGROUND
+DECL|enumerator|GIMP_CONTEXT_PROP_BACKGROUND
+name|GIMP_CONTEXT_PROP_BACKGROUND
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_OPACITY
-name|GIMP_CONTEXT_ARG_OPACITY
+DECL|enumerator|GIMP_CONTEXT_PROP_OPACITY
+name|GIMP_CONTEXT_PROP_OPACITY
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_PAINT_MODE
-name|GIMP_CONTEXT_ARG_PAINT_MODE
+DECL|enumerator|GIMP_CONTEXT_PROP_PAINT_MODE
+name|GIMP_CONTEXT_PROP_PAINT_MODE
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_BRUSH
-name|GIMP_CONTEXT_ARG_BRUSH
+DECL|enumerator|GIMP_CONTEXT_PROP_BRUSH
+name|GIMP_CONTEXT_PROP_BRUSH
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_PATTERN
-name|GIMP_CONTEXT_ARG_PATTERN
+DECL|enumerator|GIMP_CONTEXT_PROP_PATTERN
+name|GIMP_CONTEXT_PROP_PATTERN
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_GRADIENT
-name|GIMP_CONTEXT_ARG_GRADIENT
+DECL|enumerator|GIMP_CONTEXT_PROP_GRADIENT
+name|GIMP_CONTEXT_PROP_GRADIENT
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_PALETTE
-name|GIMP_CONTEXT_ARG_PALETTE
+DECL|enumerator|GIMP_CONTEXT_PROP_PALETTE
+name|GIMP_CONTEXT_PROP_PALETTE
 block|,
-DECL|enumerator|GIMP_CONTEXT_ARG_BUFFER
-name|GIMP_CONTEXT_ARG_BUFFER
+DECL|enumerator|GIMP_CONTEXT_PROP_BUFFER
+name|GIMP_CONTEXT_PROP_BUFFER
 block|,
-DECL|enumerator|GIMP_CONTEXT_NUM_ARGS
-name|GIMP_CONTEXT_NUM_ARGS
-DECL|typedef|GimpContextArgType
+DECL|enumerator|GIMP_CONTEXT_NUM_PROPS
+name|GIMP_CONTEXT_NUM_PROPS
+DECL|typedef|GimpContextPropType
 block|}
-name|GimpContextArgType
+name|GimpContextPropType
 typedef|;
 end_typedef
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5be4eb0203
+DECL|enum|__anon295014ca0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -161,8 +161,8 @@ operator|<<
 literal|11
 block|,
 comment|/*  aliases  */
-DECL|enumerator|GIMP_CONTEXT_PAINT_ARGS_MASK
-name|GIMP_CONTEXT_PAINT_ARGS_MASK
+DECL|enumerator|GIMP_CONTEXT_PAINT_PROPS_MASK
+name|GIMP_CONTEXT_PAINT_PROPS_MASK
 init|=
 operator|(
 name|GIMP_CONTEXT_FOREGROUND_MASK
@@ -180,8 +180,8 @@ operator||
 name|GIMP_CONTEXT_GRADIENT_MASK
 operator|)
 block|,
-DECL|enumerator|GIMP_CONTEXT_ALL_ARGS_MASK
-name|GIMP_CONTEXT_ALL_ARGS_MASK
+DECL|enumerator|GIMP_CONTEXT_ALL_PROPS_MASK
+name|GIMP_CONTEXT_ALL_PROPS_MASK
 init|=
 operator|(
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -194,11 +194,11 @@ name|GIMP_CONTEXT_PALETTE_MASK
 operator||
 name|GIMP_CONTEXT_BUFFER_MASK
 operator||
-name|GIMP_CONTEXT_PAINT_ARGS_MASK
+name|GIMP_CONTEXT_PAINT_PROPS_MASK
 operator|)
-DECL|typedef|GimpContextArgMask
+DECL|typedef|GimpContextPropMask
 block|}
-name|GimpContextArgMask
+name|GimpContextPropMask
 typedef|;
 end_typedef
 
@@ -293,9 +293,9 @@ name|GimpContext
 modifier|*
 name|parent
 decl_stmt|;
-DECL|member|defined_args
+DECL|member|defined_props
 name|guint32
-name|defined_args
+name|defined_props
 decl_stmt|;
 DECL|member|image
 name|GimpImage
@@ -685,19 +685,19 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  define / undefinine context arguments  *  *  the value of an undefined argument will be taken from the parent context.  */
+comment|/*  define / undefinine context properties  *  *  the value of an undefined property will be taken from the parent context.  */
 end_comment
 
 begin_function_decl
 name|void
-name|gimp_context_define_arg
+name|gimp_context_define_property
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpContextArgType
-name|arg
+name|GimpContextPropType
+name|prop
 parameter_list|,
 name|gboolean
 name|defined
@@ -707,28 +707,28 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_context_arg_defined
+name|gimp_context_property_defined
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpContextArgType
-name|arg
+name|GimpContextPropType
+name|prop
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_context_define_args
+name|gimp_context_define_properties
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpContextArgMask
-name|args_mask
+name|GimpContextPropMask
+name|props_mask
 parameter_list|,
 name|gboolean
 name|defined
@@ -737,12 +737,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  copying context arguments  */
+comment|/*  copying context properties  */
 end_comment
 
 begin_function_decl
 name|void
-name|gimp_context_copy_arg
+name|gimp_context_copy_property
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -752,15 +752,15 @@ name|GimpContext
 modifier|*
 name|dest
 parameter_list|,
-name|GimpContextArgType
-name|arg
+name|GimpContextPropType
+name|prop
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_context_copy_args
+name|gimp_context_copy_properties
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -770,8 +770,8 @@ name|GimpContext
 modifier|*
 name|dest
 parameter_list|,
-name|GimpContextArgMask
-name|args_mask
+name|GimpContextPropMask
+name|props_mask
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -781,8 +781,8 @@ comment|/*  manipulate by GType  */
 end_comment
 
 begin_function_decl
-name|GimpContextArgType
-name|gimp_context_type_to_arg
+name|GimpContextPropType
+name|gimp_context_type_to_property
 parameter_list|(
 name|GType
 name|type

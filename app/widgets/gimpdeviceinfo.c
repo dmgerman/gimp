@@ -1039,7 +1039,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_context_define_args
+name|gimp_context_define_properties
 argument_list|(
 name|device_info
 operator|->
@@ -1050,7 +1050,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_context_copy_args
+name|gimp_context_copy_properties
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
@@ -1151,7 +1151,7 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
-name|gimp_context_copy_args
+name|gimp_context_copy_properties
 argument_list|(
 name|device_info
 operator|->
@@ -1430,7 +1430,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_context_define_args
+name|gimp_context_define_properties
 argument_list|(
 name|device_info
 operator|->
@@ -1441,7 +1441,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_context_copy_args
+name|gimp_context_copy_properties
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
@@ -2004,7 +2004,7 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
-name|gimp_context_copy_args
+name|gimp_context_copy_properties
 argument_list|(
 name|device_info
 operator|->

@@ -414,7 +414,7 @@ name|user_context
 argument_list|)
 expr_stmt|;
 comment|/*  TODO: add foreground, background, brush, pattern, gradient  */
-name|gimp_context_define_args
+name|gimp_context_define_properties
 argument_list|(
 name|tool_manager
 operator|->
@@ -637,7 +637,7 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_context_copy_args
+name|gimp_context_copy_properties
 argument_list|(
 name|tool_manager
 operator|->
@@ -682,7 +682,7 @@ operator|->
 name|context
 condition|)
 block|{
-name|gimp_context_copy_args
+name|gimp_context_copy_properties
 argument_list|(
 name|tool_info
 operator|->
@@ -693,7 +693,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|GIMP_CONTEXT_PAINT_ARGS_MASK
+name|GIMP_CONTEXT_PAINT_PROPS_MASK
 argument_list|)
 expr_stmt|;
 name|gimp_context_set_parent
@@ -2318,7 +2318,7 @@ name|context
 operator|)
 condition|)
 block|{
-name|gimp_context_copy_args
+name|gimp_context_copy_properties
 argument_list|(
 name|tool_context
 argument_list|,

@@ -701,13 +701,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_context_define_args
+name|gimp_context_define_properties
 argument_list|(
 name|dock
 operator|->
 name|context
 argument_list|,
-name|GIMP_CONTEXT_ALL_ARGS_MASK
+name|GIMP_CONTEXT_ALL_PROPS_MASK
 operator|&
 operator|~
 operator|(
@@ -736,7 +736,7 @@ name|image_dock
 operator|->
 name|auto_follow_active
 condition|)
-name|gimp_context_copy_arg
+name|gimp_context_copy_property
 argument_list|(
 name|factory
 operator|->
@@ -746,7 +746,7 @@ name|dock
 operator|->
 name|context
 argument_list|,
-name|GIMP_CONTEXT_ARG_IMAGE
+name|GIMP_CONTEXT_PROP_IMAGE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object

@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2992fac70103
+DECL|enum|__anon27cd37710103
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -393,12 +393,6 @@ name|UndoType
 name|pushing_undo_group
 decl_stmt|;
 comment|/*  undo group status flag       */
-DECL|member|undo_history
-name|GtkWidget
-modifier|*
-name|undo_history
-decl_stmt|;
-comment|/*  history viewer, or NULL      */
 comment|/*  New undo apparatus  */
 DECL|member|new_undo_stack
 name|GimpUndoStack

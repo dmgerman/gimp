@@ -65,7 +65,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a2acd90103
+DECL|enum|__anon2bca11cb0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -131,9 +131,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_container_child_destroy_callback
+name|gimp_container_disconnect_callback
 parameter_list|(
-name|GtkObject
+name|GimpObject
 modifier|*
 name|object
 parameter_list|,
@@ -641,10 +641,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_child_destroy_callback (GtkObject * object,gpointer data)
-name|gimp_container_child_destroy_callback
+DECL|function|gimp_container_disconnect_callback (GimpObject * object,gpointer data)
+name|gimp_container_disconnect_callback
 parameter_list|(
-name|GtkObject
+name|GimpObject
 modifier|*
 name|object
 parameter_list|,
@@ -667,10 +667,7 @@ name|gimp_container_remove
 argument_list|(
 name|container
 argument_list|,
-name|GIMP_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -955,11 +952,11 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_container_child_destroy_callback
+name|gimp_container_disconnect_callback
 argument_list|)
 argument_list|,
 name|container
@@ -1198,7 +1195,7 @@ argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_container_child_destroy_callback
+name|gimp_container_disconnect_callback
 argument_list|)
 argument_list|,
 name|container

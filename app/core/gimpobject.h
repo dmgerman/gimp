@@ -74,6 +74,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_OBJECT))
 end_define
 
+begin_define
+DECL|macro|GIMP_OBJECT_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_OBJECT_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_OBJECT, GimpObjectClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpObjectClass
 typedef|typedef
@@ -110,6 +121,18 @@ DECL|member|parent_class
 name|GtkObjectClass
 name|parent_class
 decl_stmt|;
+DECL|member|disconnect
+name|void
+function_decl|(
+modifier|*
+name|disconnect
+function_decl|)
+parameter_list|(
+name|GimpObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
 DECL|member|name_changed
 name|void
 function_decl|(
