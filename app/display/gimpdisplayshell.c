@@ -250,7 +250,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce77980103
+DECL|enum|__anon2c62fa1b0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4926,6 +4926,10 @@ argument_list|,
 name|pixbuf
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pixbuf
+condition|)
 name|g_object_unref
 argument_list|(
 name|pixbuf
@@ -7253,7 +7257,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/really_close.html"
 argument_list|,
-name|GTK_STOCK_DIALOG_QUESTION
+name|GIMP_STOCK_QUESTION
 argument_list|,
 name|warning
 argument_list|,

@@ -492,12 +492,21 @@ value|"Sets the pluginrc search path."
 end_define
 
 begin_define
-DECL|macro|PREVIEW_SIZE_BLURB
+DECL|macro|LAYER_PREVIEWS_BLURB
 define|#
 directive|define
-name|PREVIEW_SIZE_BLURB
+name|LAYER_PREVIEWS_BLURB
 define|\
-value|N_("Sets the default preview size.")
+value|N_("Sets whether GIMP should create previews of layers and channels.")
+end_define
+
+begin_define
+DECL|macro|LAYER_PREVIEW_SIZE_BLURB
+define|#
+directive|define
+name|LAYER_PREVIEW_SIZE_BLURB
+define|\
+value|N_("Sets the default preview size for layers and channels.")
 end_define
 
 begin_define

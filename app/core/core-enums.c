@@ -1345,17 +1345,6 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PREVIEW_SIZE_NONE
-block|,
-name|N_
-argument_list|(
-literal|"None"
-argument_list|)
-block|,
-literal|"none"
-block|}
-block|,
-block|{
 name|GIMP_PREVIEW_SIZE_TINY
 block|,
 name|N_

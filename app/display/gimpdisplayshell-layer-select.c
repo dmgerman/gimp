@@ -292,7 +292,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|preview_size
+name|layer_preview_size
 argument_list|,
 literal|1
 argument_list|,
@@ -925,7 +925,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|preview_size
+name|layer_preview_size
 argument_list|,
 literal|1
 argument_list|)

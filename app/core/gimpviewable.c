@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b81b8800103
+DECL|enum|__anon28af8a6e0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -411,7 +411,7 @@ name|klass
 operator|->
 name|default_stock_id
 operator|=
-literal|"gtk-dialog-question"
+literal|"gimp-question"
 expr_stmt|;
 name|klass
 operator|->

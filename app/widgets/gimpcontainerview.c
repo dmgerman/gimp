@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2975e7fb0103
+DECL|enum|__anon2acc74cd0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -2009,6 +2009,17 @@ modifier|*
 name|view
 parameter_list|)
 block|{
+name|GimpContainerViewClass
+modifier|*
+name|view_class
+decl_stmt|;
+name|view_class
+operator|=
+name|GIMP_CONTAINER_VIEW_GET_CLASS
+argument_list|(
+name|view
+argument_list|)
+expr_stmt|;
 name|g_hash_table_destroy
 argument_list|(
 name|view
@@ -2020,11 +2031,17 @@ name|view
 operator|->
 name|hash_table
 operator|=
-name|g_hash_table_new
+name|g_hash_table_new_full
 argument_list|(
 name|g_direct_hash
 argument_list|,
 name|g_direct_equal
+argument_list|,
+name|NULL
+argument_list|,
+name|view_class
+operator|->
+name|insert_data_free
 argument_list|)
 expr_stmt|;
 block|}

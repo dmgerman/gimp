@@ -1525,7 +1525,7 @@ name|gimp_standard_help_func
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_DIALOG_QUESTION
+name|GIMP_STOCK_QUESTION
 argument_list|,
 name|str
 argument_list|,

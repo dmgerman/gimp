@@ -1618,9 +1618,6 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gboolean
-name|sensitive
-decl_stmt|;
 if|if
 condition|(
 name|shell
@@ -1642,26 +1639,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|sensitive
-operator|=
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
-name|config
-argument_list|)
-operator|->
-name|nav_preview_size
-operator|!=
-name|GIMP_PREVIEW_SIZE_NONE
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|shell
-operator|->
-name|nav_ebox
-argument_list|,
-name|sensitive
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

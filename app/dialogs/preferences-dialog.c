@@ -4707,6 +4707,23 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|config
+argument_list|,
+literal|"layer-previews"
+argument_list|,
+name|_
+argument_list|(
+literal|"_Enable Layer& Channel Previews"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|table
 operator|=
 name|prefs_table_new
@@ -4725,7 +4742,7 @@ name|prefs_enum_option_menu_add
 argument_list|(
 name|config
 argument_list|,
-literal|"preview-size"
+literal|"layer-preview-size"
 argument_list|,
 literal|0
 argument_list|,
@@ -4733,7 +4750,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Preview Size:"
+literal|"_Layer& Channel Preview Size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6182,7 +6199,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bd2b1020108
+DECL|struct|__anon2b7821220108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7803,7 +7820,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd2b1020208
+DECL|struct|__anon2b7821220208
 block|{
 DECL|member|label
 specifier|const
@@ -7962,7 +7979,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd2b1020308
+DECL|struct|__anon2b7821220308
 block|{
 DECL|member|tree_label
 specifier|const

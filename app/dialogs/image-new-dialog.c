@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e07b60108
+DECL|struct|__anon2ab348330108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -2949,7 +2949,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/file_new.html#confirm_size"
 argument_list|,
-name|GTK_STOCK_DIALOG_INFO
+name|GIMP_STOCK_INFO
 argument_list|,
 name|text
 argument_list|,

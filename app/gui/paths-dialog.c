@@ -2003,7 +2003,7 @@ name|the_gimp
 operator|->
 name|config
 operator|->
-name|preview_size
+name|layer_preview_size
 operator|<
 literal|64
 condition|)
@@ -2895,7 +2895,7 @@ name|the_gimp
 operator|->
 name|config
 operator|->
-name|preview_size
+name|layer_preview_size
 condition|)
 block|{
 comment|/* Need to add this to the list */
@@ -3382,7 +3382,7 @@ name|the_gimp
 operator|->
 name|config
 operator|->
-name|preview_size
+name|layer_preview_size
 operator|/
 operator|(
 name|double
@@ -3403,7 +3403,7 @@ name|the_gimp
 operator|->
 name|config
 operator|->
-name|preview_size
+name|layer_preview_size
 operator|/
 operator|(
 name|double
@@ -3418,7 +3418,7 @@ name|the_gimp
 operator|->
 name|config
 operator|->
-name|preview_size
+name|layer_preview_size
 condition|)
 block|{
 name|paths_dialog
@@ -7458,7 +7458,7 @@ name|the_gimp
 operator|->
 name|config
 operator|->
-name|preview_size
+name|layer_preview_size
 condition|)
 block|{
 name|PathWidget

@@ -990,7 +990,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"file/revert.html"
 argument_list|,
-name|GTK_STOCK_DIALOG_QUESTION
+name|GIMP_STOCK_QUESTION
 argument_list|,
 name|text
 argument_list|,

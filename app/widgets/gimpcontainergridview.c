@@ -1377,15 +1377,6 @@ operator|->
 name|widget
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_CONTAINER_VIEW_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|clear_items
-condition|)
 name|GIMP_CONTAINER_VIEW_CLASS
 argument_list|(
 name|parent_class

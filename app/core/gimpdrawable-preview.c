@@ -66,6 +66,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchannel.h"
 end_include
 
@@ -473,6 +485,23 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimage
+operator|||
+operator|!
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|layer_previews
+condition|)
+return|return
+name|NULL
+return|;
 comment|/* Ok prime the cache with a large preview if the cache is invalid */
 if|if
 condition|(

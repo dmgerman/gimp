@@ -263,6 +263,8 @@ decl_stmt|;
 name|TempBuf
 modifier|*
 name|render_buf
+init|=
+name|NULL
 decl_stmt|;
 name|gimage
 operator|=
@@ -343,6 +345,11 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|temp_buf
+condition|)
+block|{
 name|render_buf
 operator|=
 name|temp_buf_scale
@@ -360,6 +367,7 @@ name|temp_buf
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 else|else
 block|{
 name|render_buf
@@ -376,6 +384,11 @@ name|preview_height
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|render_buf
+condition|)
+block|{
 comment|/*  xresolution != yresolution */
 if|if
 condition|(
@@ -488,6 +501,33 @@ argument_list|(
 name|render_buf
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
+decl_stmt|;
+name|stock_id
+operator|=
+name|gimp_viewable_get_stock_id
+argument_list|(
+name|renderer
+operator|->
+name|viewable
+argument_list|)
+expr_stmt|;
+name|gimp_preview_renderer_default_render_stock
+argument_list|(
+name|renderer
+argument_list|,
+name|widget
+argument_list|,
+name|stock_id
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

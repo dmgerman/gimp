@@ -195,7 +195,7 @@ name|gchar
 modifier|*
 name|stock_id
 init|=
-name|GTK_STOCK_DIALOG_WARNING
+name|GIMP_STOCK_WARNING
 decl_stmt|;
 if|if
 condition|(
@@ -408,7 +408,7 @@ argument_list|)
 expr_stmt|;
 name|stock_id
 operator|=
-name|GTK_STOCK_DIALOG_WARNING
+name|GIMP_STOCK_WARNING
 expr_stmt|;
 block|}
 name|msg_box

@@ -1308,7 +1308,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"save/file_exists.html"
 argument_list|,
-name|GTK_STOCK_DIALOG_QUESTION
+name|GIMP_STOCK_QUESTION
 argument_list|,
 name|message
 argument_list|,

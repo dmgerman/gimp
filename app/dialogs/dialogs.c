@@ -107,7 +107,7 @@ literal|"gimp-device-status-dialog"
 block|,
 name|dialogs_device_status_get
 block|,
-literal|32
+literal|0
 block|,
 name|TRUE
 block|,
@@ -123,7 +123,7 @@ literal|"gimp-preferences-dialog"
 block|,
 name|dialogs_preferences_get
 block|,
-literal|32
+literal|0
 block|,
 name|TRUE
 block|,
@@ -139,7 +139,7 @@ literal|"gimp-module-browser-dialog"
 block|,
 name|dialogs_module_browser_get
 block|,
-literal|32
+literal|0
 block|,
 name|TRUE
 block|,
@@ -155,7 +155,7 @@ literal|"gimp-display-filters-dialog"
 block|,
 name|dialogs_display_filters_get
 block|,
-literal|32
+literal|0
 block|,
 name|FALSE
 block|,
@@ -171,7 +171,7 @@ literal|"gimp-tips-dialog"
 block|,
 name|dialogs_tips_get
 block|,
-literal|32
+literal|0
 block|,
 name|TRUE
 block|,
@@ -187,7 +187,7 @@ literal|"gimp-about-dialog"
 block|,
 name|dialogs_about_get
 block|,
-literal|32
+literal|0
 block|,
 name|TRUE
 block|,
@@ -583,7 +583,7 @@ literal|"gimp-layer-list"
 block|,
 name|dialogs_layer_list_view_new
 block|,
-literal|32
+literal|0
 block|,
 name|FALSE
 block|,
@@ -599,7 +599,7 @@ literal|"gimp-channel-list"
 block|,
 name|dialogs_channel_list_view_new
 block|,
-literal|32
+literal|0
 block|,
 name|FALSE
 block|,
@@ -615,7 +615,7 @@ literal|"gimp-vectors-list"
 block|,
 name|dialogs_vectors_list_view_new
 block|,
-literal|32
+literal|0
 block|,
 name|FALSE
 block|,
@@ -631,7 +631,7 @@ literal|"gimp-path-list"
 block|,
 name|dialogs_path_list_view_new
 block|,
-literal|32
+literal|0
 block|,
 name|TRUE
 block|,
@@ -647,7 +647,7 @@ literal|"gimp-indexed-palette"
 block|,
 name|dialogs_indexed_palette_new
 block|,
-literal|32
+literal|0
 block|,
 name|FALSE
 block|,

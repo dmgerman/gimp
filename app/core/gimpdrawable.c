@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2942fec60103
+DECL|enum|__anon27e0b6170103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -807,6 +807,20 @@ operator|->
 name|preview_valid
 operator|=
 name|FALSE
+expr_stmt|;
+if|if
+condition|(
+name|drawable
+operator|->
+name|preview_cache
+condition|)
+name|gimp_preview_cache_invalidate
+argument_list|(
+operator|&
+name|drawable
+operator|->
+name|preview_cache
+argument_list|)
 expr_stmt|;
 name|gimage
 operator|=

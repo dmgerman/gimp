@@ -213,9 +213,13 @@ name|gchar
 modifier|*
 name|module_load_inhibit
 decl_stmt|;
-DECL|member|preview_size
+DECL|member|layer_previews
+name|gboolean
+name|layer_previews
+decl_stmt|;
+DECL|member|layer_preview_size
 name|GimpPreviewSize
-name|preview_size
+name|layer_preview_size
 decl_stmt|;
 DECL|member|thumbnail_size
 name|GimpThumbnailSize
