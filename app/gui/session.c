@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -68,9 +74,11 @@ specifier|static
 name|void
 name|session_open_dialog
 parameter_list|(
-name|SessionInfo
-modifier|*
-name|info
+name|gpointer
+name|unused
+parameter_list|,
+name|gpointer
+name|pinfo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -132,6 +140,9 @@ init|=
 block|{
 literal|"lc-dialog"
 block|,
+operator|(
+name|GtkItemFactoryCallback
+operator|)
 name|dialogs_lc_cmd_callback
 block|,
 literal|0
@@ -178,6 +189,9 @@ init|=
 block|{
 literal|"tool-options"
 block|,
+operator|(
+name|GtkItemFactoryCallback
+operator|)
 name|dialogs_tools_options_cmd_callback
 block|,
 literal|0
@@ -201,6 +215,9 @@ init|=
 block|{
 literal|"palette"
 block|,
+operator|(
+name|GtkItemFactoryCallback
+operator|)
 name|dialogs_palette_cmd_callback
 block|,
 literal|140
@@ -224,6 +241,9 @@ init|=
 block|{
 literal|"brush-select"
 block|,
+operator|(
+name|GtkItemFactoryCallback
+operator|)
 name|dialogs_brushes_cmd_callback
 block|,
 literal|150
@@ -247,6 +267,9 @@ init|=
 block|{
 literal|"pattern-select"
 block|,
+operator|(
+name|GtkItemFactoryCallback
+operator|)
 name|dialogs_patterns_cmd_callback
 block|,
 literal|160
@@ -270,6 +293,9 @@ init|=
 block|{
 literal|"gradient-editor"
 block|,
+operator|(
+name|GtkItemFactoryCallback
+operator|)
 name|dialogs_gradient_editor_cmd_callback
 block|,
 literal|170
@@ -809,14 +835,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|session_open_dialog (SessionInfo * info)
+DECL|function|session_open_dialog (gpointer unused,gpointer pinfo)
 name|session_open_dialog
 parameter_list|(
+name|gpointer
+name|unused
+parameter_list|,
+name|gpointer
+name|pinfo
+parameter_list|)
+block|{
 name|SessionInfo
 modifier|*
 name|info
-parameter_list|)
-block|{
+init|=
+operator|(
+name|SessionInfo
+operator|*
+operator|)
+name|pinfo
+decl_stmt|;
 if|if
 condition|(
 name|info
@@ -835,11 +873,7 @@ name|info
 operator|->
 name|open_callback
 call|)
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 end_function
