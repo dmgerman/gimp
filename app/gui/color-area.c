@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297a10e10103
+DECL|enum|__anon29e60ef00103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -454,7 +454,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|color_area_pixmap
 argument_list|,
@@ -908,7 +908,7 @@ operator|!
 name|color_area_gc
 condition|)
 return|return;
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|color_area_pixmap
 argument_list|,
@@ -1241,7 +1241,7 @@ name|rect_h
 argument_list|)
 expr_stmt|;
 comment|/*  draw the default pixmap  */
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|default_pixmap
 argument_list|,
@@ -1252,7 +1252,7 @@ operator|&
 name|def_height
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|color_area_pixmap
 argument_list|,
@@ -1275,7 +1275,7 @@ argument_list|,
 name|def_height
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|color_area_mask
 argument_list|,
@@ -1299,7 +1299,7 @@ name|def_height
 argument_list|)
 expr_stmt|;
 comment|/*  draw the swap pixmap  */
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|swap_pixmap
 argument_list|,
@@ -1310,7 +1310,7 @@ operator|&
 name|swap_height
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|color_area_pixmap
 argument_list|,
@@ -1333,7 +1333,7 @@ argument_list|,
 name|swap_height
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|color_area_mask
 argument_list|,
@@ -1373,7 +1373,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|color_area
 operator|->

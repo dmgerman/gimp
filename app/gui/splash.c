@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e67290103
+DECL|enum|__anon28caa13e0103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER
@@ -1303,7 +1303,7 @@ argument_list|,
 name|logo_height
 argument_list|)
 expr_stmt|;
-name|gdk_gc_destroy
+name|gdk_gc_unref
 argument_list|(
 name|gc
 argument_list|)
@@ -1626,7 +1626,7 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|widget
 operator|->

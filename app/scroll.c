@@ -171,7 +171,7 @@ argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|cursor
 argument_list|)
@@ -590,7 +590,7 @@ name|offset_y
 operator|+=
 name|y_offset
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|gdisp
 operator|->

@@ -1002,7 +1002,7 @@ name|GdkColormap
 modifier|*
 name|colormap
 init|=
-name|gdk_window_get_colormap
+name|gdk_drawable_get_colormap
 argument_list|(
 name|_dlg
 operator|->

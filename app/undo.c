@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278bfd5a0103
+DECL|enum|__anon2aa234d80103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -2097,7 +2097,7 @@ operator|->
 name|disp_yoffset
 condition|)
 block|{
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|gdisp
 operator|->

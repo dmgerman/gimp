@@ -5524,7 +5524,7 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|cd
 operator|->

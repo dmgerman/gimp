@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1786e0108
+DECL|struct|__anon2b4455c40108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1786e0208
+DECL|struct|__anon2b4455c40208
 block|{
 DECL|member|y
 name|gint32
@@ -8110,7 +8110,7 @@ literal|23040
 argument_list|)
 expr_stmt|;
 block|}
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|cd
 operator|->

@@ -1920,7 +1920,7 @@ name|gdisp
 operator|->
 name|scroll_gc
 condition|)
-name|gdk_gc_destroy
+name|gdk_gc_unref
 argument_list|(
 name|gdisp
 operator|->
@@ -3671,7 +3671,7 @@ operator|=
 name|gdk_colormap_get_system
 argument_list|()
 expr_stmt|;
-comment|/* or gdk_rgb_get_cmap ()  */
+comment|/* or gdk_rgb_get_colormap ()  */
 name|gdk_color_white
 argument_list|(
 name|colormap
@@ -4861,7 +4861,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|gdisp
 operator|->
@@ -8805,7 +8805,7 @@ argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|cursor
 argument_list|)
@@ -8929,7 +8929,7 @@ argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|cursor
 argument_list|)

@@ -1008,7 +1008,7 @@ parameter_list|)
 block|{
 comment|/* Restore background if it has been saved */
 comment|/* ======================================= */
-comment|/*  if (backbuf.image!=NULL)     {       gck_gc_set_foreground(visinfo,gc,255,255,255);       gck_gc_set_background(visinfo,gc,0,0,0);        gdk_gc_set_function(gc,GDK_COPY);       gdk_draw_image(previewarea->window,gc,backbuf.image,0,0,backbuf.x,backbuf.y,         backbuf.w,backbuf.h);       gdk_image_destroy(backbuf.image);       backbuf.image=NULL;     } */
+comment|/*  if (backbuf.image!=NULL)     {       gck_gc_set_foreground(visinfo,gc,255,255,255);       gck_gc_set_background(visinfo,gc,0,0,0);        gdk_gc_set_function(gc,GDK_COPY);       gdk_draw_image(previewarea->window,gc,backbuf.image,0,0,backbuf.x,backbuf.y,         backbuf.w,backbuf.h);       gdk_image_unref(backbuf.image);       backbuf.image=NULL;     } */
 block|}
 end_function
 
@@ -1315,7 +1315,7 @@ argument_list|,
 name|newcursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|newcursor
 argument_list|)
@@ -1350,7 +1350,7 @@ argument_list|,
 name|newcursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|newcursor
 argument_list|)

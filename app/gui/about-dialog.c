@@ -1905,7 +1905,7 @@ argument_list|,
 name|logo_height
 argument_list|)
 expr_stmt|;
-name|gdk_gc_destroy
+name|gdk_gc_unref
 argument_list|(
 name|gc
 argument_list|)
@@ -2149,7 +2149,7 @@ block|}
 else|else
 block|{
 comment|/* If we draw beyond the boundaries of the pixmap, then X 	 will generate an expose area for those areas, starting 	 an infinite cycle. We now set allow_grow = FALSE, so 	 the drawing area can never be bigger than the preview.          Otherwise, it would be necessary to intersect event->area          with the pixmap boundary rectangle. */
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|widget
 operator|->
@@ -2607,7 +2607,7 @@ argument_list|,
 name|wilber2_xpm
 argument_list|)
 expr_stmt|;
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|pixmap
 argument_list|,
@@ -2694,7 +2694,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|logo_pixmap
 argument_list|,
@@ -2920,7 +2920,7 @@ name|k
 index|]
 condition|)
 block|{
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|logo_area
 operator|->
@@ -3197,7 +3197,7 @@ name|cur_scroll_text
 index|]
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|scroll_area
 operator|->

@@ -1749,7 +1749,7 @@ argument_list|,
 name|wilber2_xpm
 argument_list|)
 expr_stmt|;
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|pixmap
 argument_list|,
@@ -1836,7 +1836,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|widget
 operator|->

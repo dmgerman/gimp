@@ -1874,7 +1874,7 @@ argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|cursor
 argument_list|)

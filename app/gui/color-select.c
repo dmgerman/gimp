@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baa3a3b0103
+DECL|enum|__anon29a39cdf0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -193,7 +193,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baa3a3b0203
+DECL|enum|__anon29a39cdf0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -7209,7 +7209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa3a3b0308
+DECL|struct|__anon29a39cdf0308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback
@@ -7410,7 +7410,7 @@ name|glue
 init|=
 name|data
 decl_stmt|;
-name|gdk_gc_destroy
+name|gdk_gc_unref
 argument_list|(
 name|glue
 operator|->

@@ -180,7 +180,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d68c6b0103
+DECL|enum|__anon2b38c1750103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -3069,7 +3069,7 @@ argument_list|,
 name|cursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|cursor
 argument_list|)
@@ -6759,7 +6759,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|gdk_gc_destroy
+name|gdk_gc_unref
 argument_list|(
 name|gc
 argument_list|)

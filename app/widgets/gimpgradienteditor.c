@@ -257,7 +257,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b429ec00103
+DECL|enum|__anon295a43000103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -297,7 +297,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b429ec00203
+DECL|enum|__anon295a43000203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -9358,7 +9358,7 @@ name|gradient_editor
 operator|->
 name|control_pixmap
 condition|)
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|gradient_editor
 operator|->
@@ -9488,7 +9488,7 @@ operator|->
 name|page_size
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|gradient_editor
 operator|->
@@ -10119,7 +10119,7 @@ operator|->
 name|scroll_data
 argument_list|)
 expr_stmt|;
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|gradient_editor
 operator|->
@@ -10190,7 +10190,7 @@ operator|->
 name|scroll_data
 argument_list|)
 expr_stmt|;
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|gradient_editor
 operator|->

@@ -1771,7 +1771,7 @@ operator|.
 name|h
 argument_list|)
 expr_stmt|;
-name|gdk_image_destroy
+name|gdk_image_unref
 argument_list|(
 name|backbuf
 operator|.
@@ -2137,7 +2137,7 @@ argument_list|,
 name|newcursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|newcursor
 argument_list|)
@@ -2180,7 +2180,7 @@ argument_list|,
 name|newcursor
 argument_list|)
 expr_stmt|;
-name|gdk_cursor_destroy
+name|gdk_cursor_unref
 argument_list|(
 name|newcursor
 argument_list|)

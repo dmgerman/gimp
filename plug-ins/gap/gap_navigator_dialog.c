@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4bc8600103
+DECL|enum|__anon296285600103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4bc8600203
+DECL|enum|__anon296285600203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -9325,7 +9325,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-name|gdk_window_get_size
+name|gdk_drawable_get_size
 argument_list|(
 name|pixmap
 argument_list|,
@@ -10241,7 +10241,7 @@ argument_list|(
 name|frame_widget
 argument_list|)
 expr_stmt|;
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|widget
 operator|->
@@ -10473,7 +10473,7 @@ literal|0
 operator|)
 condition|)
 block|{
-name|gdk_draw_pixmap
+name|gdk_draw_drawable
 argument_list|(
 name|widget
 operator|->

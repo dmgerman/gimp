@@ -1737,7 +1737,7 @@ argument_list|)
 expr_stmt|;
 name|colormap
 operator|=
-name|gdk_window_get_colormap
+name|gdk_drawable_get_colormap
 argument_list|(
 name|button
 operator|->
