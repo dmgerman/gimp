@@ -7766,6 +7766,12 @@ argument_list|(
 literal|"File/Revert"
 argument_list|,
 name|gdisp
+operator|&&
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|filename
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
