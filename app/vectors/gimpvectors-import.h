@@ -59,7 +59,7 @@ name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
+name|gsize
 name|len
 parameter_list|,
 name|gboolean

@@ -196,7 +196,7 @@ name|gchar
 modifier|*
 name|svg_data
 parameter_list|,
-name|gint
+name|gsize
 name|svg_data_len
 parameter_list|,
 name|GimpViewable
@@ -219,7 +219,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gint
+name|gsize
 modifier|*
 name|svg_data_len
 parameter_list|,
@@ -1072,7 +1072,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_tree_view_drop_svg (GimpContainerTreeView * tree_view,const gchar * svg_data,gint svg_data_len,GimpViewable * dest_viewable,GtkTreeViewDropPosition drop_pos)
+DECL|function|gimp_vectors_tree_view_drop_svg (GimpContainerTreeView * tree_view,const gchar * svg_data,gsize svg_data_len,GimpViewable * dest_viewable,GtkTreeViewDropPosition drop_pos)
 name|gimp_vectors_tree_view_drop_svg
 parameter_list|(
 name|GimpContainerTreeView
@@ -1084,7 +1084,7 @@ name|gchar
 modifier|*
 name|svg_data
 parameter_list|,
-name|gint
+name|gsize
 name|svg_data_len
 parameter_list|,
 name|GimpViewable
@@ -1202,14 +1202,14 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_vectors_tree_view_drag_svg (GtkWidget * widget,gint * svg_data_len,gpointer data)
+DECL|function|gimp_vectors_tree_view_drag_svg (GtkWidget * widget,gsize * svg_data_len,gpointer data)
 name|gimp_vectors_tree_view_drag_svg
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gint
+name|gsize
 modifier|*
 name|svg_data_len
 parameter_list|,

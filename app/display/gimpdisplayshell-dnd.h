@@ -65,7 +65,7 @@ name|gchar
 modifier|*
 name|svg_data
 parameter_list|,
-name|gint
+name|gsize
 name|svg_data_length
 parameter_list|,
 name|gpointer

@@ -1450,8 +1450,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_selection_data_set_svg (GtkSelectionData * selection,GdkAtom atom,const gchar * svg_data,gint svg_data_length)
-name|gimp_selection_data_set_svg
+DECL|function|gimp_selection_data_set_stream (GtkSelectionData * selection,GdkAtom atom,const guchar * stream,gsize stream_length)
+name|gimp_selection_data_set_stream
 parameter_list|(
 name|GtkSelectionData
 modifier|*
@@ -1461,12 +1461,12 @@ name|GdkAtom
 name|atom
 parameter_list|,
 specifier|const
-name|gchar
+name|guchar
 modifier|*
-name|svg_data
+name|stream
 parameter_list|,
-name|gint
-name|svg_data_length
+name|gsize
+name|stream_length
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1485,14 +1485,14 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|svg_data
+name|stream
 operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|svg_data_length
+name|stream_length
 operator|>
 literal|0
 argument_list|)
@@ -1509,9 +1509,9 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|svg_data
+name|stream
 argument_list|,
-name|svg_data_length
+name|stream_length
 argument_list|)
 expr_stmt|;
 block|}
@@ -1519,18 +1519,18 @@ end_function
 
 begin_function
 specifier|const
-name|gchar
+name|guchar
 modifier|*
-DECL|function|gimp_selection_data_get_svg (GtkSelectionData * selection,gint * svg_data_length)
-name|gimp_selection_data_get_svg
+DECL|function|gimp_selection_data_get_stream (GtkSelectionData * selection,gsize * stream_length)
+name|gimp_selection_data_get_stream
 parameter_list|(
 name|GtkSelectionData
 modifier|*
 name|selection
 parameter_list|,
-name|gint
+name|gsize
 modifier|*
-name|svg_data_length
+name|stream_length
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1544,7 +1544,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|svg_data_length
+name|stream_length
 operator|!=
 name|NULL
 argument_list|,
@@ -1572,7 +1572,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid SVG data!"
+literal|"Received invalid data stream!"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1580,7 +1580,7 @@ name|NULL
 return|;
 block|}
 operator|*
-name|svg_data_length
+name|stream_length
 operator|=
 name|selection
 operator|->
@@ -1589,7 +1589,7 @@ expr_stmt|;
 return|return
 operator|(
 specifier|const
-name|gchar
+name|guchar
 operator|*
 operator|)
 name|selection

@@ -53,6 +53,15 @@ value|{ "application/x-color", 0, GIMP_DND_TYPE_COLOR }
 end_define
 
 begin_define
+DECL|macro|GIMP_TARGET_PNG
+define|#
+directive|define
+name|GIMP_TARGET_PNG
+define|\
+value|{ "image/png", 0, GIMP_DND_TYPE_PNG }
+end_define
+
+begin_define
 DECL|macro|GIMP_TARGET_SVG
 define|#
 directive|define
@@ -440,26 +449,26 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  svg dnd functions  */
+comment|/*  stream dnd functions  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpDndDragSvgFunc
+DECL|typedef|GimpDndDragStreamFunc
 typedef|typedef
-name|gchar
+name|guchar
 modifier|*
 function_decl|(
 modifier|*
-name|GimpDndDragSvgFunc
+name|GimpDndDragStreamFunc
 function_decl|)
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gint
+name|gsize
 modifier|*
-name|svg_data_len
+name|stream_len
 parameter_list|,
 name|gpointer
 name|data
@@ -468,12 +477,12 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDndDropSvgFunc
+DECL|typedef|GimpDndDropStreamFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpDndDropSvgFunc
+name|GimpDndDropStreamFunc
 function_decl|)
 parameter_list|(
 name|GtkWidget
@@ -481,12 +490,12 @@ modifier|*
 name|widget
 parameter_list|,
 specifier|const
-name|gchar
+name|guchar
 modifier|*
-name|svg_data
+name|stream
 parameter_list|,
-name|gint
-name|svg_data_len
+name|gsize
+name|stream_len
 parameter_list|,
 name|gpointer
 name|data
@@ -502,7 +511,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDndDragSvgFunc
+name|GimpDndDragStreamFunc
 name|get_svg_func
 parameter_list|,
 name|gpointer
@@ -530,7 +539,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDndDropSvgFunc
+name|GimpDndDropStreamFunc
 name|set_svg_func
 parameter_list|,
 name|gpointer

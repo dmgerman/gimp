@@ -590,7 +590,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_svg (GtkWidget * widget,const gchar * svg_data,gint svg_data_len,gpointer data)
+DECL|function|gimp_display_shell_drop_svg (GtkWidget * widget,const gchar * svg_data,gsize svg_data_len,gpointer data)
 name|gimp_display_shell_drop_svg
 parameter_list|(
 name|GtkWidget
@@ -602,7 +602,7 @@ name|gchar
 modifier|*
 name|svg_data
 parameter_list|,
-name|gint
+name|gsize
 name|svg_data_len
 parameter_list|,
 name|gpointer

@@ -89,12 +89,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  svg  */
+comment|/*  stream (svg/png)  */
 end_comment
 
 begin_function_decl
 name|void
-name|gimp_selection_data_set_svg
+name|gimp_selection_data_set_stream
 parameter_list|(
 name|GtkSelectionData
 modifier|*
@@ -104,29 +104,29 @@ name|GdkAtom
 name|atom
 parameter_list|,
 specifier|const
-name|gchar
+name|guchar
 modifier|*
-name|svg_data
+name|stream
 parameter_list|,
-name|gint
-name|svg_data_length
+name|gsize
+name|stream_length
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|const
-name|gchar
+name|guchar
 modifier|*
-name|gimp_selection_data_get_svg
+name|gimp_selection_data_get_stream
 parameter_list|(
 name|GtkSelectionData
 modifier|*
 name|selection
 parameter_list|,
-name|gint
+name|gsize
 modifier|*
-name|svg_data_length
+name|stream_length
 parameter_list|)
 function_decl|;
 end_function_decl
