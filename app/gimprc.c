@@ -106,7 +106,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b30bada0103
+DECL|enum|__anon2b9e6ecd0103
 typedef|typedef
 enum|enum
 block|{
@@ -1170,7 +1170,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|char
+modifier|*
 name|open_backup_file
 parameter_list|(
 name|char
@@ -2412,6 +2413,10 @@ name|char
 modifier|*
 name|str
 decl_stmt|;
+name|char
+modifier|*
+name|error_msg
+decl_stmt|;
 name|g_assert
 argument_list|(
 name|updated_options
@@ -2440,9 +2445,8 @@ argument_list|,
 name|gimp_dir
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+name|error_msg
+operator|=
 name|open_backup_file
 argument_list|(
 name|name
@@ -2453,12 +2457,18 @@ argument_list|,
 operator|&
 name|fp_old
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error_msg
+operator|!=
+name|NULL
 condition|)
 block|{
 comment|/* FIXME: show the error in a nice dialog box */
 name|g_warning
 argument_list|(
-literal|"cannot save .gimprc"
+name|error_msg
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7768,8 +7778,15 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-return|return
-name|g_strdup
+name|char
+modifier|*
+name|str
+decl_stmt|;
+name|str
+operator|=
+name|g_malloc
+argument_list|(
+name|strlen
 argument_list|(
 operator|*
 operator|(
@@ -7781,6 +7798,33 @@ operator|)
 name|val1p
 operator|)
 argument_list|)
+operator|+
+literal|3
+argument_list|)
+expr_stmt|;
+name|sprintf
+argument_list|(
+name|str
+argument_list|,
+literal|"%c%s%c"
+argument_list|,
+literal|'"'
+argument_list|,
+operator|*
+operator|(
+operator|(
+name|char
+operator|*
+operator|*
+operator|)
+name|val1p
+operator|)
+argument_list|,
+literal|'"'
+argument_list|)
+expr_stmt|;
+return|return
+name|str
 return|;
 block|}
 end_function
@@ -7800,17 +7844,11 @@ name|val2p
 parameter_list|)
 block|{
 return|return
-name|g_strdup
+name|string_to_str
 argument_list|(
-operator|*
-operator|(
-operator|(
-name|char
-operator|*
-operator|*
-operator|)
 name|val1p
-operator|)
+argument_list|,
+name|val2p
 argument_list|)
 return|;
 block|}
@@ -8416,9 +8454,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Try to:     1. Open gimprc for reading.     2. Rename gimprc to gimprc.old.     3. Open gimprc for writing.     On success, return NULL. On failure, return a string in English    explaining the problem.     */
+end_comment
+
 begin_function
 specifier|static
-name|int
+name|char
+modifier|*
 DECL|function|open_backup_file (char * filename,FILE ** fp_new,FILE ** fp_old)
 name|open_backup_file
 parameter_list|(
@@ -8458,9 +8501,29 @@ operator|)
 operator|==
 name|NULL
 condition|)
+block|{
+if|if
+condition|(
+name|errno
+operator|==
+name|EACCES
+condition|)
 return|return
-name|FALSE
+literal|"Can't open gimprc; permission problems"
 return|;
+if|if
+condition|(
+name|errno
+operator|==
+name|ENOENT
+condition|)
+return|return
+literal|"Can't open gimprc; file does not exist"
+return|;
+return|return
+literal|"Can't open gimprc, reason unknown"
+return|;
+block|}
 name|oldfilename
 operator|=
 name|g_malloc
@@ -8499,8 +8562,26 @@ argument_list|(
 name|oldfilename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|errno
+operator|==
+name|EACCES
+condition|)
 return|return
-name|FALSE
+literal|"Can't rename gimprc to gimprc.old; permission problems"
+return|;
+if|if
+condition|(
+name|errno
+operator|==
+name|EISDIR
+condition|)
+return|return
+literal|"Can't rename gimprc to gimprc.old; gimprc.old is a directory"
+return|;
+return|return
+literal|"Can't rename gimprc to gimprc.old, reason unknown"
 return|;
 block|}
 if|if
@@ -8535,8 +8616,17 @@ argument_list|(
 name|oldfilename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|errno
+operator|==
+name|EACCES
+condition|)
 return|return
-name|FALSE
+literal|"Can't write to gimprc; permission problems"
+return|;
+return|return
+literal|"Can't write to gimprc, reason unknown"
 return|;
 block|}
 name|g_free
@@ -8545,7 +8635,7 @@ name|oldfilename
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|NULL
 return|;
 block|}
 end_function
