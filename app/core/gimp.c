@@ -196,6 +196,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpgradient-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -255,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e62c8d0103
+DECL|enum|__anon2aa777a50103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpgradient.h"
+file|"core/gimpgradient-save.h"
 end_include
 
 begin_include
