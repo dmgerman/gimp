@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gmodule/gmodule.h>
+file|<gmodule.h>
 end_include
 
 begin_include
