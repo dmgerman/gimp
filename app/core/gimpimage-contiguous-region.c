@@ -1985,16 +1985,6 @@ operator|->
 name|h
 condition|)
 return|return;
-if|if
-condition|(
-name|threshold
-operator|==
-literal|0
-condition|)
-name|threshold
-operator|=
-literal|1
-expr_stmt|;
 name|tile
 operator|=
 name|tile_manager_get_tile
