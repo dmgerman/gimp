@@ -128,6 +128,116 @@ parameter_list|)
 value|MAX(x,y)
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_PI
+end_ifndef
+
+begin_comment
+comment|/* G_PI will be in GLib eventually */
+end_comment
+
+begin_define
+DECL|macro|G_PI
+define|#
+directive|define
+name|G_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_PI_4
+end_ifndef
+
+begin_comment
+comment|/* As will G_PI_4 */
+end_comment
+
+begin_define
+DECL|macro|G_PI_4
+define|#
+directive|define
+name|G_PI_4
+value|0.78539816339744830962
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_RINT
+end_ifdef
+
+begin_define
+DECL|macro|RINT (x)
+define|#
+directive|define
+name|RINT
+parameter_list|(
+name|x
+parameter_list|)
+value|rint(x)
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|RINT (x)
+define|#
+directive|define
+name|RINT
+parameter_list|(
+name|x
+parameter_list|)
+value|floor ((x)+0.5)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_define
+DECL|macro|ROUND (x)
+define|#
+directive|define
+name|ROUND
+parameter_list|(
+name|x
+parameter_list|)
+value|((int) ((x)+0.5))
+end_define
+
+begin_comment
+comment|/* Square */
+end_comment
+
+begin_define
+DECL|macro|SQR (x)
+define|#
+directive|define
+name|SQR
+parameter_list|(
+name|x
+parameter_list|)
+value|((x)*(x))
+end_define
+
 begin_comment
 comment|/* limit a (0->511) int to 255 */
 end_comment
@@ -163,7 +273,7 @@ value|CLAMP(a,0,255)
 end_define
 
 begin_typedef
-DECL|enum|__anon2c7280480103
+DECL|enum|__anon2c6d07460103
 typedef|typedef
 enum|enum
 block|{

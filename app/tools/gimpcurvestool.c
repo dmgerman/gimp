@@ -100,17 +100,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|ROUND (x)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|x
-parameter_list|)
-value|((int) ((x) + 0.5))
-end_define
-
-begin_define
 DECL|macro|GRAPH
 define|#
 directive|define

@@ -158,40 +158,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|SQR (x)
-define|#
-directive|define
-name|SQR
-parameter_list|(
-name|x
-parameter_list|)
-value|((x) * (x))
-end_define
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/*  M_PI  */
-end_comment
-
-begin_define
 DECL|macro|BILINEAR (jk,j1k,jk1,j1k1,dx,dy)
 define|#
 directive|define
@@ -7901,14 +7867,14 @@ comment|/*  no interpolation  */
 block|{
 name|itx
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|ttx
 argument_list|)
 expr_stmt|;
 name|ity
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|tty
 argument_list|)

@@ -297,28 +297,6 @@ directive|include
 file|"pixmaps/locked.xbm"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|HAVE_RINT
-end_ifndef
-
-begin_define
-DECL|macro|rint (x)
-define|#
-directive|define
-name|rint
-parameter_list|(
-name|x
-parameter_list|)
-value|floor (x + 0.5)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|PREVIEW_EVENT_MASK
 define|#
@@ -344,7 +322,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon29b2d4280108
+DECL|struct|__anon28da03670108
 typedef|typedef
 struct|struct
 block|{
@@ -473,7 +451,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29b2d4280208
+DECL|struct|__anon28da03670208
 typedef|typedef
 struct|struct
 block|{
@@ -502,7 +480,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b2d4280308
+DECL|struct|__anon28da03670308
 typedef|typedef
 struct|struct
 block|{
@@ -521,7 +499,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b2d4280408
+DECL|struct|__anon28da03670408
 typedef|typedef
 struct|struct
 block|{
@@ -3279,7 +3257,7 @@ name|pdata
 operator|->
 name|type
 argument_list|,
-name|rint
+name|RINT
 argument_list|(
 name|pdata
 operator|->
@@ -3287,7 +3265,7 @@ name|x
 argument_list|)
 argument_list|,
 comment|/* ALT add rint() */
-name|rint
+name|RINT
 argument_list|(
 name|pdata
 operator|->

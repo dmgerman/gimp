@@ -39,39 +39,11 @@ directive|include
 file|<string.h>
 end_include
 
-begin_define
-DECL|macro|ROUND (A)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|A
-parameter_list|)
-value|floor((A)+0.5)
-end_define
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
+begin_include
+include|#
+directive|include
+file|"appenv.h"
+end_include
 
 begin_function
 specifier|static
@@ -131,7 +103,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon2bed6ea90103
+DECL|enum|__anon2945fff30103
 typedef|typedef
 enum|enum
 block|{
@@ -3230,7 +3202,7 @@ argument_list|(
 name|i
 operator|*
 operator|(
-name|M_PI
+name|G_PI
 operator|/
 literal|128.
 operator|)

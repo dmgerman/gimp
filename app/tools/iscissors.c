@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<math.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -17,12 +23,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -126,52 +126,6 @@ include|#
 directive|include
 file|"libgimp/gimpintl.h"
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI_4
-end_ifndef
-
-begin_define
-DECL|macro|M_PI_4
-define|#
-directive|define
-name|M_PI_4
-value|0.78539816339744830962
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI_4 */
-end_comment
 
 begin_comment
 comment|/*  the intelligent scissors structures  */
@@ -3979,14 +3933,6 @@ name|int
 name|draw_type
 parameter_list|)
 block|{
-DECL|macro|ROUND (x)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|x
-parameter_list|)
-value|((int) ((x) + 0.5))
 specifier|static
 name|GdkPoint
 name|gdk_points
@@ -7259,7 +7205,7 @@ operator|.
 name|kinkiness
 operator|=
 operator|(
-name|M_PI
+name|G_PI
 operator|-
 name|acos
 argument_list|(
@@ -7272,7 +7218,7 @@ argument_list|)
 argument_list|)
 operator|)
 operator|/
-name|M_PI
+name|G_PI
 expr_stmt|;
 name|kinks
 index|[
@@ -8422,13 +8368,13 @@ operator|>
 operator|-
 literal|3
 operator|*
-name|M_PI_4
+name|G_PI_4
 operator|)
 operator|&&
 operator|(
 name|angle
 operator|<
-name|M_PI_4
+name|G_PI_4
 operator|)
 operator|)
 condition|?

@@ -12,13 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplut.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimphistogram.h"
+file|<math.h>
 end_include
 
 begin_include
@@ -30,36 +24,26 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|"appenv.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|HAVE_RINT
-end_ifndef
+begin_include
+include|#
+directive|include
+file|"gimplut.h"
+end_include
 
-begin_define
-DECL|macro|rint (x)
-define|#
-directive|define
-name|rint
-parameter_list|(
-name|x
-parameter_list|)
-value|floor (x + 0.5)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_include
+include|#
+directive|include
+file|"gimphistogram.h"
+end_include
 
 begin_comment
 comment|/* ---------- Brightness/Contrast -----------*/
@@ -959,7 +943,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d24f50108
+DECL|struct|__anon2bc0e5c30108
 block|{
 DECL|member|gamma
 name|double
@@ -1541,7 +1525,7 @@ name|ilevels
 expr_stmt|;
 name|value
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|value
 operator|*

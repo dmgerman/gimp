@@ -99,29 +99,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
-
 begin_comment
 comment|/*  index into trans_info array  */
 end_comment
@@ -176,7 +153,7 @@ DECL|macro|FIFTEEN_DEG
 define|#
 directive|define
 name|FIFTEEN_DEG
-value|(M_PI / 12.0)
+value|(G_PI / 12.0)
 end_define
 
 begin_comment
@@ -1074,7 +1051,7 @@ operator|*
 literal|180.0
 operator|)
 operator|/
-name|M_PI
+name|G_PI
 expr_stmt|;
 name|center_vals
 index|[
@@ -1178,7 +1155,7 @@ argument_list|)
 operator|->
 name|value
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;
@@ -1548,12 +1525,12 @@ if|if
 condition|(
 name|angle
 operator|>
-name|M_PI
+name|G_PI
 operator|||
 name|angle
 operator|<
 operator|-
-name|M_PI
+name|G_PI
 condition|)
 name|angle
 operator|=
@@ -1568,7 +1545,7 @@ operator|)
 condition|?
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|+
 name|angle1
 else|:
@@ -1576,7 +1553,7 @@ name|angle1
 operator|-
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 expr_stmt|;
 comment|/*  increment the transform tool's angle  */
@@ -1600,7 +1577,7 @@ name|REAL_ANGLE
 index|]
 operator|<
 operator|-
-name|M_PI
+name|G_PI
 condition|)
 name|transform_core
 operator|->
@@ -1611,7 +1588,7 @@ index|]
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|-
 name|transform_core
 operator|->
@@ -1630,7 +1607,7 @@ index|[
 name|REAL_ANGLE
 index|]
 operator|>
-name|M_PI
+name|G_PI
 condition|)
 name|transform_core
 operator|->
@@ -1648,7 +1625,7 @@ index|]
 operator|-
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 comment|/*  constrain the angle to 15-degree multiples if ctrl is held down  */
 if|if

@@ -33,28 +33,6 @@ directive|include
 file|<math.h>
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|HAVE_RINT
-end_ifndef
-
-begin_define
-DECL|macro|rint (x)
-define|#
-directive|define
-name|rint
-parameter_list|(
-name|x
-parameter_list|)
-value|floor (x + 0.5)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -223,7 +201,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2977343e0103
+DECL|enum|__anon29a2b59f0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -19611,7 +19589,7 @@ index|[
 name|i
 index|]
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|yradius
 operator|/

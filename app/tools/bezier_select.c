@@ -105,28 +105,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|HAVE_RINT
-end_ifndef
-
-begin_define
-DECL|macro|rint (x)
-define|#
-directive|define
-name|rint
-parameter_list|(
-name|x
-parameter_list|)
-value|floor (x + 0.5)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* Bezier extensions made by Raphael FRANCOIS (fraph@ibm.net)    BEZIER_EXTENDS VER 1.0     - work as the cut/copy/paste named functions.   - allow to add/remove/replace bezier curves   - allow to modify the control/anchor points even if the selection is made   - allow to add/remove control/anchor points on a curve   - allow to update a previous saved curve    - cannot operate on open or multiple curves simultaneously */
 end_comment
@@ -209,17 +187,6 @@ define|#
 directive|define
 name|YES
 value|1
-end_define
-
-begin_define
-DECL|macro|ROUND (x)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|x
-parameter_list|)
-value|((int) ((x) + 0.5))
 end_define
 
 begin_comment
@@ -310,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon28b34bcc0108
+DECL|struct|__anon291ce94c0108
 typedef|typedef
 struct|struct
 block|{
@@ -347,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b34bcc0208
+DECL|struct|__anon291ce94c0208
 typedef|typedef
 struct|struct
 block|{
@@ -402,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b34bcc0308
+DECL|struct|__anon291ce94c0308
 typedef|typedef
 struct|struct
 block|{
@@ -7945,14 +7912,6 @@ name|gpointer
 name|udata
 parameter_list|)
 block|{
-DECL|macro|ROUND (x)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|x
-parameter_list|)
-value|((int) ((x) + 0.5))
 specifier|static
 name|GdkPoint
 name|gdk_points
@@ -11034,7 +10993,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|points
 operator|->
@@ -11051,7 +11010,7 @@ index|[
 literal|1
 index|]
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|points
 operator|->
@@ -14517,9 +14476,6 @@ operator|->
 name|x
 operator|)
 operator|=
-operator|(
-name|gint
-operator|)
 name|ROUND
 argument_list|(
 operator|(
@@ -14538,9 +14494,6 @@ operator|->
 name|y
 operator|)
 operator|=
-operator|(
-name|gint
-operator|)
 name|ROUND
 argument_list|(
 operator|(

@@ -27,47 +27,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|HAVE_RINT
-end_ifndef
-
-begin_define
-DECL|macro|rint (x)
-define|#
-directive|define
-name|rint
-parameter_list|(
-name|x
-parameter_list|)
-value|floor (x + 0.5)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -1101,7 +1060,7 @@ name|brush
 operator|->
 name|angle
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|)
@@ -1114,7 +1073,7 @@ name|brush
 operator|->
 name|angle
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|)
@@ -1635,7 +1594,7 @@ name|x
 operator|++
 index|]
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|sum
 operator|*
@@ -1749,7 +1708,7 @@ index|[
 operator|(
 name|int
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|d
 operator|*
