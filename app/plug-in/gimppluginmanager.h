@@ -81,7 +81,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c60c5080103
+DECL|enum|__anon2b3110370103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -226,7 +226,7 @@ name|temp_proc_defs
 decl_stmt|;
 comment|/* Temporary procedures  */
 DECL|member|progress
-name|gimp_progress
+name|GimpProgress
 modifier|*
 name|progress
 decl_stmt|;

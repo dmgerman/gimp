@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbc86b90103
+DECL|enum|__anon29648a550103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -67,7 +67,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_MODE>*/
-DECL|enum|__anon2bbc86b90203
+DECL|enum|__anon29648a550203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -93,7 +93,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbc86b90303
+DECL|enum|__anon29648a550303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -164,7 +164,7 @@ parameter_list|,
 name|gdouble
 name|endy
 parameter_list|,
-name|progress_func_t
+name|GimpProgressFunc
 name|progress_callback
 parameter_list|,
 name|gpointer

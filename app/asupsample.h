@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8a12f0108
+DECL|struct|__anon27791d3f0108
 block|{
 DECL|member|r
 DECL|member|g
@@ -124,7 +124,7 @@ parameter_list|,
 name|gpointer
 name|put_pixel_data
 parameter_list|,
-name|progress_func_t
+name|GimpProgressFunc
 name|progress_func
 parameter_list|,
 name|gpointer

@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac573d40108
+DECL|struct|__anon2ace75a70108
 block|{
 DECL|member|ready
 name|gchar
@@ -151,7 +151,7 @@ end_comment
 
 begin_function
 name|gulong
-DECL|function|adaptive_supersample_area (gint x1,gint y1,gint x2,gint y2,gint max_depth,gdouble threshold,render_func_t render_func,gpointer render_data,put_pixel_func_t put_pixel_func,gpointer put_pixel_data,progress_func_t progress_func,gpointer progress_data)
+DECL|function|adaptive_supersample_area (gint x1,gint y1,gint x2,gint y2,gint max_depth,gdouble threshold,render_func_t render_func,gpointer render_data,put_pixel_func_t put_pixel_func,gpointer put_pixel_data,GimpProgressFunc progress_func,gpointer progress_data)
 name|adaptive_supersample_area
 parameter_list|(
 name|gint
@@ -184,7 +184,7 @@ parameter_list|,
 name|gpointer
 name|put_pixel_data
 parameter_list|,
-name|progress_func_t
+name|GimpProgressFunc
 name|progress_func
 parameter_list|,
 name|gpointer

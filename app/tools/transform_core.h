@@ -589,7 +589,7 @@ parameter_list|,
 name|GimpMatrix3
 name|matrix
 parameter_list|,
-name|progress_func_t
+name|GimpProgressFunc
 name|progress_callback
 parameter_list|,
 name|gpointer

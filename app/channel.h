@@ -94,6 +94,15 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHANNEL))
 end_define
 
+begin_typedef
+DECL|typedef|GimpChannelClass
+typedef|typedef
+name|struct
+name|_GimpChannelClass
+name|GimpChannelClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpChannel
 struct|struct

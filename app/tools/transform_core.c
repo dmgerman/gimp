@@ -5232,7 +5232,7 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|transform_core_do (GImage * gimage,GimpDrawable * drawable,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix,progress_func_t progress_callback,gpointer progress_data)
+DECL|function|transform_core_do (GImage * gimage,GimpDrawable * drawable,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix,GimpProgressFunc progress_callback,gpointer progress_data)
 name|transform_core_do
 parameter_list|(
 name|GImage
@@ -5253,7 +5253,7 @@ parameter_list|,
 name|GimpMatrix3
 name|matrix
 parameter_list|,
-name|progress_func_t
+name|GimpProgressFunc
 name|progress_callback
 parameter_list|,
 name|gpointer

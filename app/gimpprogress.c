@@ -52,9 +52,9 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_struct
-DECL|struct|gimp_progress_pvt
+DECL|struct|_GimpProgress
 struct|struct
-name|gimp_progress_pvt
+name|_GimpProgress
 block|{
 DECL|member|gdisp
 name|GDisplay
@@ -106,18 +106,21 @@ specifier|static
 name|void
 name|progress_signal_setup
 parameter_list|(
-name|gimp_progress
+name|GimpProgress
 modifier|*
+name|progress
 parameter_list|,
 name|GtkSignalFunc
+name|cancel_callback
 parameter_list|,
 name|gpointer
+name|cancel_data
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* These progress bar routines are re-entrant, and so should be  * thread-safe. */
+comment|/* These progress bar routines are re-entrant, and so should be  * thread-safe.  */
 end_comment
 
 begin_comment
@@ -125,7 +128,7 @@ comment|/* Start a progress bar on "gdisp" with reason "message".  If "gdisp"  *
 end_comment
 
 begin_function
-name|gimp_progress
+name|GimpProgress
 modifier|*
 DECL|function|progress_start (GDisplay * gdisp,const char * message,gboolean important,GtkSignalFunc cancel_callback,gpointer cancel_data)
 name|progress_start
@@ -149,7 +152,7 @@ name|gpointer
 name|cancel_data
 parameter_list|)
 block|{
-name|gimp_progress
+name|GimpProgress
 modifier|*
 name|p
 decl_stmt|;
@@ -164,7 +167,7 @@ name|p
 operator|=
 name|g_new
 argument_list|(
-name|gimp_progress
+name|GimpProgress
 argument_list|,
 literal|1
 argument_list|)
@@ -503,12 +506,12 @@ comment|/* Update the message and/or the callbacks for a progress and reset  * t
 end_comment
 
 begin_function
-name|gimp_progress
+name|GimpProgress
 modifier|*
-DECL|function|progress_restart (gimp_progress * p,const char * message,GtkSignalFunc cancel_callback,gpointer cancel_data)
+DECL|function|progress_restart (GimpProgress * p,const char * message,GtkSignalFunc cancel_callback,gpointer cancel_data)
 name|progress_restart
 parameter_list|(
-name|gimp_progress
+name|GimpProgress
 modifier|*
 name|p
 parameter_list|,
@@ -664,14 +667,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|progress_update (gimp_progress * progress,float percentage)
+DECL|function|progress_update (GimpProgress * progress,gdouble percentage)
 name|progress_update
 parameter_list|(
-name|gimp_progress
+name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|float
+name|gdouble
 name|percentage
 parameter_list|)
 block|{
@@ -741,16 +744,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|progress_update_and_flush (int ymin,int ymax,int curr_y,gpointer data)
+DECL|function|progress_update_and_flush (gint ymin,gint ymax,gint curr_y,gpointer data)
 name|progress_update_and_flush
 parameter_list|(
-name|int
+name|gint
 name|ymin
 parameter_list|,
-name|int
+name|gint
 name|ymax
 parameter_list|,
-name|int
+name|gint
 name|curr_y
 parameter_list|,
 name|gpointer
@@ -760,7 +763,7 @@ block|{
 name|progress_update
 argument_list|(
 operator|(
-name|gimp_progress
+name|GimpProgress
 operator|*
 operator|)
 name|data
@@ -802,10 +805,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|progress_step (gimp_progress * progress)
+DECL|function|progress_step (GimpProgress * progress)
 name|progress_step
 parameter_list|(
-name|gimp_progress
+name|GimpProgress
 modifier|*
 name|progress
 parameter_list|)
@@ -883,15 +886,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|progress_end (gimp_progress * p)
+DECL|function|progress_end (GimpProgress * p)
 name|progress_end
 parameter_list|(
-name|gimp_progress
+name|GimpProgress
 modifier|*
 name|p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|cid
 decl_stmt|;
 name|g_return_if_fail
@@ -1005,10 +1008,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|progress_signal_setup (gimp_progress * p,GtkSignalFunc cancel_callback,gpointer cancel_data)
+DECL|function|progress_signal_setup (GimpProgress * p,GtkSignalFunc cancel_callback,gpointer cancel_data)
 name|progress_signal_setup
 parameter_list|(
-name|gimp_progress
+name|GimpProgress
 modifier|*
 name|p
 parameter_list|,

@@ -2597,7 +2597,7 @@ name|GimpMatrix3
 name|matrix
 parameter_list|)
 block|{
-name|gimp_progress
+name|GimpProgress
 modifier|*
 name|progress
 decl_stmt|;
@@ -2642,7 +2642,7 @@ condition|?
 name|progress_update_and_flush
 else|:
 operator|(
-name|progress_func_t
+name|GimpProgressFunc
 operator|)
 name|NULL
 argument_list|,

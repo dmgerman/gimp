@@ -132,6 +132,24 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LAYER_MASK))
 end_define
 
+begin_typedef
+DECL|typedef|GimpLayerClass
+typedef|typedef
+name|struct
+name|_GimpLayerClass
+name|GimpLayerClass
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLayerMaskClass
+typedef|typedef
+name|struct
+name|_GimpLayerMaskClass
+name|GimpLayerMaskClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpLayer
 struct|struct
@@ -184,7 +202,7 @@ decl_stmt|;
 comment|/*  layer combination mode         */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2a8c97a20108
+DECL|struct|__anon2bd3fe5f0108
 block|{
 DECL|member|backing_store
 name|TileManager
