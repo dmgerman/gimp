@@ -78,13 +78,13 @@ DECL|member|size
 name|gboolean
 name|size
 decl_stmt|;
+DECL|member|inverse_size
+name|gboolean
+name|inverse_size
+decl_stmt|;
 DECL|member|color
 name|gboolean
 name|color
-decl_stmt|;
-DECL|member|inv_size
-name|gboolean
-name|inv_size
 decl_stmt|;
 block|}
 struct|;

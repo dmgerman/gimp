@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fc533d0103
-DECL|enum|__anon27fc533d0203
+DECL|enum|__anon2b4c10990103
+DECL|enum|__anon2b4c10990203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -2978,7 +2978,7 @@ if|if
 condition|(
 name|pressure_options
 operator|->
-name|inv_size
+name|inverse_size
 condition|)
 name|core
 operator|->
