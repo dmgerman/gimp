@@ -77,7 +77,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1a69a70103
+DECL|enum|__anon2c7215480103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1a69a70203
+DECL|enum|__anon2c7215480203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -323,6 +323,13 @@ literal|8
 index|]
 operator|=
 name|ecx
+expr_stmt|;
+name|id
+index|[
+literal|12
+index|]
+operator|=
+literal|'\0'
 expr_stmt|;
 ifdef|#
 directive|ifdef
