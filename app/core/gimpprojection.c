@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -1309,6 +1315,10 @@ name|GDisplay
 modifier|*
 name|tool_gdisp
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|g_hash_table_remove
 argument_list|(
 name|display_ht
@@ -1483,6 +1493,28 @@ condition|)
 name|popup_shell
 operator|=
 name|NULL
+expr_stmt|;
+comment|/*  set the active display to NULL  */
+name|context
+operator|=
+name|gimp_context_get_user
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|gimp_context_get_display
+argument_list|(
+name|context
+argument_list|)
+operator|==
+name|gdisp
+condition|)
+name|gimp_context_set_display
+argument_list|(
+name|context
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_widget_unref
 argument_list|(
@@ -7261,7 +7293,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*      g_warning ("Tried to remove override-cursor from un-overridden gdisp."); */
+comment|/* g_warning ("Tried to remove override-cursor from un-overridden gdisp."); */
 block|}
 block|}
 end_function
@@ -8452,6 +8484,7 @@ DECL|function|gdisplay_active ()
 name|gdisplay_active
 parameter_list|()
 block|{
+comment|/* FIXME: this function may become useless once the GimpContext, which also    *        has an active display, is properly tested    * TODO: ensure that gimp_context_get_display (gimp_context_get_user ())    *       _always_ return the correct display    *    * ideally, this function's body should be:    * {    *   return gimp_context_get_display (gimp_context_get_user ());    * }    */
 name|GtkWidget
 modifier|*
 name|event_widget
@@ -8470,7 +8503,7 @@ name|gdisp
 init|=
 name|NULL
 decl_stmt|;
-comment|/*  If the popup shell is valid, then get the gdisplay associated with that shell  */
+comment|/*  If the popup shell is valid, then get the gdisplay associated    *  with that shell    */
 name|event
 operator|=
 name|gtk_get_current_event
@@ -8530,25 +8563,30 @@ condition|)
 return|return
 name|gdisp
 return|;
-if|if
-condition|(
-name|popup_shell
-condition|)
-block|{
+comment|/* The following is insane, since the checking if the display is valid    * should not be here - this will be corrected, if the active_image stuff    * moves to GimpContext. */
 name|gdisp
 operator|=
-name|gtk_object_get_user_data
+name|gimp_context_get_display
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|popup_shell
-argument_list|)
+name|gimp_context_get_user
+argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|g_slist_index
+argument_list|(
+name|display_list
+argument_list|,
+name|gdisp
+argument_list|)
+operator|>=
+literal|0
+condition|)
 return|return
 name|gdisp
 return|;
-block|}
+comment|/* disabled, since tear-off menus may have pointers to gone displays...    * if (popup_shell)    *   {    *     gdisp = gtk_object_get_user_data (GTK_OBJECT (popup_shell));    *     return gdisp;    *   }    */
 return|return
 name|NULL
 return|;

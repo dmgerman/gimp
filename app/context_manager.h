@@ -46,7 +46,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_CONTEXT_H__ */
+comment|/* __CONTEXT_MANAGER_H__ */
 end_comment
 
 end_unit

@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpset.h"
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -439,7 +439,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-comment|/* Set the active Image to the image where the user clicked/typed */
 switch|switch
 condition|(
 name|event
@@ -453,13 +452,19 @@ case|:
 case|case
 name|GDK_KEY_PRESS
 case|:
-name|gimp_set_set_active
+comment|/*  Setting the context's display automatically sets the image, too  */
+name|gimp_context_set_display
 argument_list|(
-name|image_context
+name|gimp_context_get_user
+argument_list|()
 argument_list|,
 name|gdisp
-operator|->
-name|gimage
+argument_list|)
+expr_stmt|;
+comment|/*  Always set the menu sensitivity to ensure the consitency of the        *  tear-off menus        */
+name|gdisplay_set_menu_sensitivity
+argument_list|(
+name|gdisp
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1105,11 +1110,6 @@ operator|=
 name|gdisp
 operator|->
 name|shell
-expr_stmt|;
-name|gdisplay_set_menu_sensitivity
-argument_list|(
-name|gdisp
-argument_list|)
 expr_stmt|;
 name|gtk_menu_popup
 argument_list|(
@@ -1830,12 +1830,6 @@ expr_stmt|;
 block|}
 break|break;
 block|}
-comment|/*  We need this here in case of accelerators  */
-name|gdisplay_set_menu_sensitivity
-argument_list|(
-name|gdisp
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|GDK_KEY_RELEASE
@@ -2237,11 +2231,6 @@ operator|=
 name|gdisp
 operator|->
 name|shell
-expr_stmt|;
-name|gdisplay_set_menu_sensitivity
-argument_list|(
-name|gdisp
-argument_list|)
 expr_stmt|;
 name|gtk_menu_popup
 argument_list|(
