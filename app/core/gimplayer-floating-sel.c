@@ -208,10 +208,11 @@ if|if
 condition|(
 name|drawable
 operator|==
-name|GIMP_DRAWABLE
-argument_list|(
+operator|(
+name|GimpDrawable
+operator|*
+operator|)
 name|floating_sel
-argument_list|)
 condition|)
 name|drawable
 operator|=
