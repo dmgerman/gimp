@@ -142,6 +142,11 @@ modifier|*
 name|gimage
 decl_stmt|;
 comment|/* the image this undo is part of     */
+DECL|member|time
+name|guint
+name|time
+decl_stmt|;
+comment|/* time of undo step construction     */
 DECL|member|undo_type
 name|GimpUndoType
 name|undo_type

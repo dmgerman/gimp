@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<time.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bfb3580103
+DECL|enum|__anon2a21cf080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -488,15 +482,6 @@ name|text_undo
 argument_list|)
 operator|->
 name|item
-argument_list|)
-expr_stmt|;
-name|text_undo
-operator|->
-name|time
-operator|=
-name|time
-argument_list|(
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if

@@ -2228,9 +2228,18 @@ name|list
 operator|->
 name|data
 expr_stmt|;
+comment|/*  If we are changing a single property, we don't need to push    *  an undo if all of the following is true:    *   - the redo stack is empty    *   - the last item on the undo stack is a text undo    *   - the last undo changed the same text property on the same layer    *   - the last undo happened less than TEXT_UNDO_TIMEOUT seconds ago    */
 if|if
 condition|(
 name|pspec
+operator|&&
+operator|!
+name|gimp_undo_stack_peek
+argument_list|(
+name|image
+operator|->
+name|redo_stack
+argument_list|)
 condition|)
 block|{
 name|GimpUndo
@@ -2244,22 +2253,11 @@ operator|->
 name|undo_stack
 argument_list|)
 decl_stmt|;
-comment|/*  If we are changing a single property, we don't need to push        *  an undo if all of the following is true:        *   - the last item on the undo stack is a text undo        *   - the redo stack is empty        *   - the last undo changed the same text property on the same layer        *   - the last undo happened less than TEXT_UNDO_TIMEOUT seconds ago        */
 if|if
 condition|(
-name|undo
-operator|&&
 name|GIMP_IS_TEXT_UNDO
 argument_list|(
 name|undo
-argument_list|)
-operator|&&
-operator|!
-name|gimp_undo_stack_peek
-argument_list|(
-name|image
-operator|->
-name|redo_stack
 argument_list|)
 condition|)
 block|{
@@ -2305,13 +2303,13 @@ if|if
 condition|(
 name|now
 operator|>=
-name|text_undo
+name|undo
 operator|->
 name|time
 operator|&&
 name|now
 operator|-
-name|text_undo
+name|undo
 operator|->
 name|time
 operator|<
@@ -2322,7 +2320,7 @@ name|push_undo
 operator|=
 name|FALSE
 expr_stmt|;
-name|text_undo
+name|undo
 operator|->
 name|time
 operator|=

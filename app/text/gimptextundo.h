@@ -119,10 +119,6 @@ name|GValue
 modifier|*
 name|value
 decl_stmt|;
-DECL|member|time
-name|guint
-name|time
-decl_stmt|;
 block|}
 struct|;
 end_struct

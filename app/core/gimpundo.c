@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<time.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be02f00103
+DECL|enum|__anon2a0a21fa0103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -87,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be02f00203
+DECL|enum|__anon2a0a21fa0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -831,6 +837,15 @@ name|undo
 operator|->
 name|gimage
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|undo
+operator|->
+name|time
+operator|=
+name|time
+argument_list|(
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
