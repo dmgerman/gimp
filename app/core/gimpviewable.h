@@ -29,6 +29,14 @@ file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
 begin_define
+DECL|macro|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
+define|#
+directive|define
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
+value|1024
+end_define
+
+begin_define
 DECL|macro|GIMP_VIEWABLE_MAX_POPUP_SIZE
 define|#
 directive|define

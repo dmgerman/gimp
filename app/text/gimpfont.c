@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1fff3b0103
+DECL|enum|__anon28dd97020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -840,14 +840,6 @@ operator|&
 name|logical
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME #need to use GIMP_PREVIEW_MAX_SIZE here
-endif|#
-directive|endif
 operator|*
 name|popup_width
 operator|=
@@ -859,7 +851,7 @@ name|width
 operator|+
 literal|6
 argument_list|,
-literal|1024
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -873,7 +865,7 @@ name|height
 operator|+
 literal|6
 argument_list|,
-literal|1024
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 name|font

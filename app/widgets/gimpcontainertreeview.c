@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c07e69f0103
+DECL|enum|__anon296727300103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1097,7 +1097,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)

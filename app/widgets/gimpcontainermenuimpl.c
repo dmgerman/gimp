@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpviewable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainermenuimpl.h"
 end_include
 
@@ -430,8 +436,9 @@ name|menu
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-operator|!
 name|container
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_CONTAINER
 argument_list|(
@@ -443,8 +450,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-operator|!
 name|context
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_CONTEXT
 argument_list|(
@@ -462,7 +470,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_POPUP_SIZE
 argument_list|,
 name|NULL
 argument_list|)

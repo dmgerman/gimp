@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f160d0103
+DECL|enum|__anon27a379620103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -938,7 +938,7 @@ name|width
 operator|=
 name|MIN
 argument_list|(
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|allocation
 operator|->
@@ -957,7 +957,7 @@ name|height
 operator|=
 name|MIN
 argument_list|(
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|allocation
 operator|->
@@ -1038,7 +1038,7 @@ name|renderer
 operator|->
 name|viewable
 argument_list|,
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|preview
 operator|->
@@ -2128,7 +2128,7 @@ literal|0
 operator|&&
 name|size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2277,7 +2277,7 @@ literal|0
 operator|&&
 name|width
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2290,7 +2290,7 @@ literal|0
 operator|&&
 name|height
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2419,8 +2419,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|viewable
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_VIEWABLE
 argument_list|(
@@ -2661,7 +2662,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -2724,7 +2725,7 @@ literal|0
 operator|&&
 name|width
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -2735,7 +2736,7 @@ literal|0
 operator|&&
 name|height
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail

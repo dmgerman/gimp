@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd374920103
+DECL|enum|__anon2c6195650103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -690,7 +690,7 @@ literal|0
 operator|&&
 name|size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -796,7 +796,7 @@ literal|0
 operator|&&
 name|width
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -809,7 +809,7 @@ literal|0
 operator|&&
 name|height
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -1176,7 +1176,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1287,7 +1287,7 @@ literal|0
 operator|&&
 name|width
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1298,7 +1298,7 @@ literal|0
 operator|&&
 name|height
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail

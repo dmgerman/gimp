@@ -23,22 +23,6 @@ file|<gtk/gtkdrawingarea.h>
 end_include
 
 begin_define
-DECL|macro|GIMP_PREVIEW_MAX_SIZE
-define|#
-directive|define
-name|GIMP_PREVIEW_MAX_SIZE
-value|1024
-end_define
-
-begin_define
-DECL|macro|GIMP_PREVIEW_MAX_BORDER_WIDTH
-define|#
-directive|define
-name|GIMP_PREVIEW_MAX_BORDER_WIDTH
-value|16
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_PREVIEW
 define|#
 directive|define

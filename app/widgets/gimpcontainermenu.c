@@ -57,15 +57,9 @@ directive|include
 file|"gimpcontainerview-utils.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimppreview.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon27b90b0c0103
+DECL|enum|__anon2bcd8b780103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1275,7 +1269,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_POPUP_SIZE
 argument_list|)
 expr_stmt|;
 if|if

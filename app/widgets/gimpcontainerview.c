@@ -69,15 +69,9 @@ directive|include
 file|"gimpdnd.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimppreview.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon28d278630103
+DECL|enum|__anon27cbe3410103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1354,7 +1348,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1695,7 +1689,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 if|if

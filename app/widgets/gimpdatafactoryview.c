@@ -638,7 +638,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|FALSE
 argument_list|)

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpviewable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainergridview.h"
 end_include
 
@@ -89,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56ffe10103
+DECL|enum|__anon27a2cf970103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -1014,7 +1020,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)

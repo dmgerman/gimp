@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpviewable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainereditor.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimpmenufactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppreview.h"
 end_include
 
 begin_function_decl
@@ -417,7 +417,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|FALSE
 argument_list|)

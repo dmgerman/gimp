@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6497f60103
+DECL|enum|__anon2b0ab1970103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1437,15 +1437,16 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-operator|!
 name|gimage
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_IMAGE
 argument_list|(

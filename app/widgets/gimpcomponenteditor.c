@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278672b60103
+DECL|enum|__anon29fc5f9a0103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -962,7 +962,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -1058,7 +1058,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_SIZE
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
 name|tree_widget
