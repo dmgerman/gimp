@@ -1686,7 +1686,6 @@ if|if
 condition|(
 name|push_undo
 condition|)
-block|{
 name|gimp_channel_push_undo
 argument_list|(
 name|channel
@@ -1697,6 +1696,15 @@ name|channel
 argument_list|)
 operator|->
 name|translate_desc
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  update the old area  */
@@ -1720,18 +1728,6 @@ operator|-
 name|y1
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  make sure width and height are non-zero  */
 if|if
 condition|(
@@ -2016,11 +2012,6 @@ operator|=
 name|y2
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|push_undo
-condition|)
-block|{
 comment|/*  update the new area  */
 name|gimp_drawable_update
 argument_list|(
@@ -2054,15 +2045,6 @@ operator|->
 name|y1
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_size_changed
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|item
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 

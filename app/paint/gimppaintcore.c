@@ -2094,12 +2094,20 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*  invalidate the drawable--have to do it here, because    *  it is not done during the actual painting.    */
+comment|/*  invalidate the previews -- have to do it here, because    *  it is not done during the actual painting.    */
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7316,7 +7324,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage -- It is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
+comment|/*  Update the gimage -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable and image previews to be constantly invalidated    */
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
@@ -7829,7 +7837,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage -- It is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
+comment|/*  Update the gimage -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable and image previews to be constantly invalidated    */
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM

@@ -2809,6 +2809,10 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
 name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
@@ -2848,12 +2852,30 @@ name|undo_tiles
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*  invalidate the drawable--have to do it here, because    *  it is not done during the actual painting.    */
+name|gimage
+operator|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  invalidate the previews -- have to do it here, because    *  it is not done during the actual painting.    */
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3137,7 +3159,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon28ed04b10103
+DECL|enum|__anon296439460103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4355,7 +4377,7 @@ name|height
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage--it is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
+comment|/*  Update the gimage -- it is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable and image previews to be constantly invalidated    */
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
