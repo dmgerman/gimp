@@ -794,7 +794,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296204e70108
+DECL|struct|__anon289c5e830108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296204e70208
+DECL|struct|__anon289c5e830208
 block|{
 DECL|member|y
 name|gint32
@@ -2998,12 +2998,12 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
-comment|/* the installation of the Iterator extension for the bend plugin */
+comment|/* the installation of the Iterator procedure for the bend plugin */
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_ITER_NAME
 argument_list|,
-literal|"This extension calculates the modified values for one iterationstep for the call of plug_in_curve_bend"
+literal|"This procedure calculates the modified values for one iterationstep for the call of plug_in_curve_bend"
 argument_list|,
 literal|""
 argument_list|,
@@ -3018,7 +3018,7 @@ argument_list|,
 comment|/* do not appear in menus */
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(

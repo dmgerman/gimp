@@ -217,6 +217,21 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|proc_rec
+operator|->
+name|proc_type
+operator|!=
+name|GIMP_EXTENSION
+operator|||
+name|synchronous
+operator|==
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|proc_rec
@@ -473,24 +488,14 @@ argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
-comment|/* If this is an automatically installed extension, wait for an        * installation-confirmation message        */
+comment|/* If this is an extension,        * wait for an installation-confirmation message        */
 if|if
 condition|(
-operator|(
 name|proc_rec
 operator|->
 name|proc_type
 operator|==
 name|GIMP_EXTENSION
-operator|)
-operator|&&
-operator|(
-name|proc_rec
-operator|->
-name|num_args
-operator|==
-literal|0
-operator|)
 condition|)
 block|{
 name|plug_in
@@ -511,7 +516,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-comment|/* If this plug-in is requested to run synchronously, wait for        * it's return values        */
+comment|/* If this plug-in is requested to run synchronously,        * wait for its return values        */
 if|if
 condition|(
 name|plug_in

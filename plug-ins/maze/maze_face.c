@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2780d9620108
+DECL|struct|__anon2bd66e9d0108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -2723,7 +2723,7 @@ if|if
 condition|(
 name|gimp_procedural_db_proc_info
 argument_list|(
-literal|"extension_web_browser"
+literal|"plug_in_web_browser"
 argument_list|,
 operator|&
 name|proc_blurb
@@ -2782,7 +2782,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_run_procedure
 argument_list|(
-literal|"extension_web_browser"
+literal|"plug_in_web_browser"
 argument_list|,
 operator|&
 name|baz

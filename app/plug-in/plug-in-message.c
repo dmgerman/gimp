@@ -1946,8 +1946,10 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install procedure \"%s\"\n"
-literal|"which does not take the standard Plug-In args."
+literal|"attempted to install<Toolbox> procedure \"%s\"\n"
+literal|"which does not take the standard<Toolbox> Plug-In "
+literal|"args.\n"
+literal|"(INT32)"
 argument_list|,
 name|plug_in
 operator|->
@@ -2035,8 +2037,10 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install procedure \"%s\"\n"
-literal|"which does not take the standard Plug-In args."
+literal|"attempted to install<Image> procedure \"%s\"\n"
+literal|"which does not take the standard<Image> Plug-In "
+literal|"args.\n"
+literal|"(INT32, IMAGE, DRAWABLE)"
 argument_list|,
 name|plug_in
 operator|->
@@ -2124,8 +2128,10 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install procedure \"%s\"\n"
-literal|"which does not take the standard Plug-In args."
+literal|"attempted to install<Load> procedure \"%s\"\n"
+literal|"which does not take the standard<Load> Plug-In "
+literal|"args.\n"
+literal|"(INT32, STRING, STRING)"
 argument_list|,
 name|plug_in
 operator|->
@@ -2239,8 +2245,10 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install procedure \"%s\"\n"
-literal|"which does not take the standard Plug-In args."
+literal|"attempted to install<Save> procedure \"%s\"\n"
+literal|"which does not take the standard<Save> Plug-In "
+literal|"args.\n"
+literal|"(INT32, IMAGE, DRAWABLE, STRING, STRING)"
 argument_list|,
 name|plug_in
 operator|->
@@ -2690,7 +2698,7 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install a procedure with invalid UTF-8 strings.\n"
+literal|"attempted to install a procedure with invalid UTF-8 strings."
 argument_list|,
 name|plug_in
 operator|->

@@ -998,7 +998,7 @@ name|procedural_db_run_proc
 argument_list|(
 name|gimp
 argument_list|,
-literal|"extension_web_browser"
+literal|"plug_in_web_browser"
 argument_list|,
 operator|&
 name|nreturn_vals

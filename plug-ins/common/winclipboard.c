@@ -292,7 +292,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"extension_clipboard_paste"
+literal|"plug_in_clipboard_paste_as_new"
 argument_list|,
 literal|"Get image from clipboard"
 argument_list|,
@@ -311,12 +311,9 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|copy_args
-argument_list|)
+literal|1
 argument_list|,
 literal|0
 argument_list|,
@@ -553,7 +550,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"extension_clipboard_paste"
+literal|"plug_in_clipboard_paste_as_new"
 argument_list|)
 operator|==
 literal|0

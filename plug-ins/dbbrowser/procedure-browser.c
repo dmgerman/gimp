@@ -150,7 +150,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"extension_db_browser"
+literal|"plug_in_db_browser"
 argument_list|,
 literal|"List available procedures in the PDB"
 argument_list|,
@@ -169,7 +169,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(

@@ -99,31 +99,6 @@ file|"script-fu-intl.h"
 end_include
 
 begin_comment
-comment|/* External functions  */
-end_comment
-
-begin_function_decl
-specifier|extern
-name|void
-name|gimp_extension_process
-parameter_list|(
-name|guint
-name|timeout
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|extern
-name|void
-name|gimp_extension_ack
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Declare local functions.  */
 end_comment
 
@@ -383,7 +358,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"extension_script_fu_console"
+literal|"plug_in_script_fu_console"
 argument_list|,
 literal|"Provides a console mode for script-fu development"
 argument_list|,
@@ -402,7 +377,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -418,7 +393,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"extension_script_fu_text_console"
+literal|"plug_in_script_fu_text_console"
 argument_list|,
 literal|"Provides a text console mode for script-fu development"
 argument_list|,
@@ -434,7 +409,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -453,7 +428,7 @@ directive|ifndef
 name|G_OS_WIN32
 name|gimp_install_procedure
 argument_list|(
-literal|"extension_script_fu_server"
+literal|"plug_in_script_fu_server"
 argument_list|,
 literal|"Provides a server for remote script-fu operation"
 argument_list|,
@@ -472,7 +447,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -490,7 +465,7 @@ endif|#
 directive|endif
 name|gimp_install_procedure
 argument_list|(
-literal|"extension_script_fu_eval"
+literal|"plug_in_script_fu_eval"
 argument_list|,
 literal|"Evaluate scheme code"
 argument_list|,
@@ -506,7 +481,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -671,7 +646,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"extension_script_fu_text_console"
+literal|"plug_in_script_fu_text_console"
 argument_list|)
 operator|==
 literal|0
@@ -699,7 +674,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"extension_script_fu_console"
+literal|"plug_in_script_fu_console"
 argument_list|)
 operator|==
 literal|0
@@ -730,7 +705,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"extension_script_fu_server"
+literal|"plug_in_script_fu_server"
 argument_list|)
 operator|==
 literal|0
@@ -760,7 +735,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"extension_script_fu_eval"
+literal|"plug_in_script_fu_eval"
 argument_list|)
 operator|==
 literal|0

@@ -54,7 +54,7 @@ DECL|macro|TILE_WIDTH
 define|#
 directive|define
 name|TILE_WIDTH
-value|_gimp_tile_width
+value|gimp_tile_width()
 end_define
 
 begin_define
@@ -62,7 +62,7 @@ DECL|macro|TILE_HEIGHT
 define|#
 directive|define
 name|TILE_HEIGHT
-value|_gimp_tile_height
+value|gimp_tile_height()
 end_define
 
 begin_typedef
@@ -199,20 +199,6 @@ name|pri
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-specifier|extern
-name|gint
-name|_gimp_tile_width
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gint
-name|_gimp_tile_height
-decl_stmt|;
-end_decl_stmt
 
 begin_function
 name|void

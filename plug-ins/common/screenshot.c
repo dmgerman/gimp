@@ -87,7 +87,7 @@ DECL|macro|PLUG_IN_NAME
 define|#
 directive|define
 name|PLUG_IN_NAME
-value|"extension_screenshot"
+value|"plug_in_screenshot"
 end_define
 
 begin_ifndef
@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad974fa0108
+DECL|struct|__anon2934f0e90108
 block|{
 DECL|member|root
 name|gboolean
@@ -395,7 +395,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(

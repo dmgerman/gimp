@@ -105,7 +105,7 @@ name|NULL
 return|;
 name|args
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|Argument
 argument_list|,
@@ -1081,7 +1081,7 @@ name|NULL
 return|;
 name|params
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GPParam
 argument_list|,
@@ -2537,7 +2537,6 @@ if|if
 condition|(
 name|full_destroy
 condition|)
-block|{
 name|procedural_db_destroy_args
 argument_list|(
 name|args
@@ -2545,15 +2544,12 @@ argument_list|,
 name|nargs
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|g_free
 argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

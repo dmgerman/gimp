@@ -389,34 +389,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
-name|input_callback
-parameter_list|(
-name|GIOChannel
-modifier|*
-name|channel
-parameter_list|,
-name|GIOCondition
-name|condition
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_setup_callbacks
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gchar
 modifier|*
 name|gen_temp_plugin_name
@@ -443,19 +415,6 @@ name|width
 parameter_list|,
 name|gint
 name|height
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* From gimp.c */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_run_temp
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4696,76 +4655,6 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|input_callback (GIOChannel * channel,GIOCondition condition,gpointer data)
-name|input_callback
-parameter_list|(
-name|GIOChannel
-modifier|*
-name|channel
-parameter_list|,
-name|GIOCondition
-name|condition
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-comment|/* We have some data in the wire - read it */
-comment|/* The below will only ever run a single proc */
-name|gimp_run_temp
-argument_list|()
-expr_stmt|;
-return|return
-name|TRUE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_setup_callbacks (void)
-name|gimp_setup_callbacks
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|gboolean
-name|first_time
-init|=
-name|TRUE
-decl_stmt|;
-if|if
-condition|(
-name|first_time
-condition|)
-block|{
-comment|/* Tie into the gdk input function only once */
-name|g_io_add_watch
-argument_list|(
-name|_readchannel
-argument_list|,
-name|G_IO_IN
-operator||
-name|G_IO_PRI
-argument_list|,
-name|input_callback
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|first_time
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
-specifier|static
 name|gchar
 modifier|*
 DECL|function|gen_temp_plugin_name (void)
@@ -5076,10 +4965,10 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|gimp_setup_callbacks
+name|gimp_extension_enable
 argument_list|()
 expr_stmt|;
-comment|/* New function to allow callbacks to be watched */
+comment|/* Allow callbacks to be watched */
 name|gimp_destroy_params
 argument_list|(
 name|pdbreturn_vals
@@ -5288,10 +5177,10 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|gimp_setup_callbacks
+name|gimp_extension_enable
 argument_list|()
 expr_stmt|;
-comment|/* New function to allow callbacks to be watched */
+comment|/* Allow callbacks to be watched */
 name|gimp_destroy_params
 argument_list|(
 name|pdbreturn_vals
@@ -5523,10 +5412,10 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|gimp_setup_callbacks
+name|gimp_extension_enable
 argument_list|()
 expr_stmt|;
-comment|/* New function to allow callbacks to be watched */
+comment|/* Allow callbacks to be watched */
 name|gimp_destroy_params
 argument_list|(
 name|pdbreturn_vals
@@ -5775,10 +5664,10 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|gimp_setup_callbacks
+name|gimp_extension_enable
 argument_list|()
 expr_stmt|;
-comment|/* New function to allow callbacks to be watched */
+comment|/* Allow callbacks to be watched */
 name|gimp_destroy_params
 argument_list|(
 name|pdbreturn_vals

@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3cdae00108
+DECL|struct|__anon27ee82c80108
 block|{
 DECL|member|url
 name|gchar
@@ -468,7 +468,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"extension_web_browser"
+literal|"plug_in_web_browser"
 argument_list|,
 literal|"open URL in Netscape"
 argument_list|,
@@ -487,7 +487,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -596,7 +596,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"extension_web_browser"
+literal|"plug_in_web_browser"
 argument_list|)
 operator|==
 literal|0
@@ -613,7 +613,7 @@ case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
-literal|"extension_web_browser"
+literal|"plug_in_web_browser"
 argument_list|,
 operator|&
 name|url_info
@@ -683,7 +683,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"extension_web_browser"
+literal|"plug_in_web_browser"
 argument_list|,
 operator|&
 name|url_info
@@ -733,7 +733,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"extension_web_browser"
+literal|"plug_in_web_browser"
 argument_list|,
 operator|&
 name|url_info

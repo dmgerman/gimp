@@ -575,20 +575,15 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-name|ProcRecord
-modifier|*
-name|procedure
-decl_stmt|;
 name|Argument
 modifier|*
 name|return_args
+init|=
+name|NULL
 decl_stmt|;
 name|GList
 modifier|*
 name|list
-decl_stmt|;
-name|gint
-name|i
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -608,10 +603,6 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|return_args
-operator|=
-name|NULL
 expr_stmt|;
 name|list
 operator|=
@@ -638,7 +629,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"PDB calling error %s not found"
+literal|"PDB calling error:\nprocedure '%s' not found"
 argument_list|)
 argument_list|,
 name|name
@@ -684,9 +675,13 @@ name|list
 argument_list|)
 control|)
 block|{
-if|if
-condition|(
-operator|(
+name|ProcRecord
+modifier|*
+name|procedure
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|procedure
 operator|=
 operator|(
@@ -696,48 +691,30 @@ operator|)
 name|list
 operator|->
 name|data
-operator|)
-operator|==
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|: FIXME: this is impossible, right?  --mitch
+endif|#
+directive|endif
+if|#
+directive|if
+literal|0
+block|if (procedure == NULL) 	{ 	  g_warning ("PDB calling error %s not found", name);  	  return_args = g_new (Argument, 1); 	  return_args->arg_type      = GIMP_PDB_STATUS; 	  return_args->value.pdb_int = GIMP_PDB_CALLING_ERROR;  	  return return_args; 	}
+endif|#
+directive|endif
+name|g_return_val_if_fail
+argument_list|(
+name|procedure
+operator|!=
 name|NULL
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"PDB calling error %s not found"
-argument_list|)
 argument_list|,
-name|name
+name|NULL
 argument_list|)
 expr_stmt|;
-name|return_args
-operator|=
-name|g_new
-argument_list|(
-name|Argument
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|return_args
-operator|->
-name|arg_type
-operator|=
-name|GIMP_PDB_STATUS
-expr_stmt|;
-name|return_args
-operator|->
-name|value
-operator|.
-name|pdb_int
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
-return|return
-name|return_args
-return|;
-block|}
 comment|/*  check the arguments  */
 for|for
 control|(
@@ -774,6 +751,45 @@ operator|.
 name|arg_type
 condition|)
 block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"PDB calling error for procedure '%s':\n"
+literal|"Argument #%d type mismatch (expected %s, got %s)"
+argument_list|)
+argument_list|,
+name|procedure
+operator|->
+name|name
+argument_list|,
+name|i
+operator|+
+literal|1
+argument_list|,
+name|pdb_type_name
+argument_list|(
+name|procedure
+operator|->
+name|args
+index|[
+name|i
+index|]
+operator|.
+name|arg_type
+argument_list|)
+argument_list|,
+name|pdb_type_name
+argument_list|(
+name|args
+index|[
+name|i
+index|]
+operator|.
+name|arg_type
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|return_args
 operator|=
 name|g_new
@@ -796,18 +812,6 @@ operator|.
 name|pdb_int
 operator|=
 name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"PDB calling error %s"
-argument_list|)
-argument_list|,
-name|procedure
-operator|->
-name|name
-argument_list|)
 expr_stmt|;
 return|return
 name|return_args
@@ -1172,17 +1176,17 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Incorrect arguments passed to procedural_db_run_proc:\n"
-literal|"Argument %d to '%s' should be a %s, but got passed a %s"
+literal|"PDB calling error for procedure '%s':\n"
+literal|"Argument #%d type mismatch (expected %s, got %s)"
 argument_list|)
-argument_list|,
-name|i
-operator|+
-literal|1
 argument_list|,
 name|proc
 operator|->
 name|name
+argument_list|,
+name|i
+operator|+
+literal|1
 argument_list|,
 name|pdb_type_name
 argument_list|(
@@ -1503,7 +1507,7 @@ argument_list|)
 expr_stmt|;
 name|return_args
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|Argument
 argument_list|,
@@ -1514,11 +1518,6 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-block|{
 name|return_args
 index|[
 literal|0
@@ -1528,6 +1527,10 @@ name|arg_type
 operator|=
 name|GIMP_PDB_STATUS
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
 name|return_args
 index|[
 literal|0
@@ -1539,18 +1542,7 @@ name|pdb_int
 operator|=
 name|GIMP_PDB_SUCCESS
 expr_stmt|;
-block|}
 else|else
-block|{
-name|return_args
-index|[
-literal|0
-index|]
-operator|.
-name|arg_type
-operator|=
-name|GIMP_PDB_STATUS
-expr_stmt|;
 name|return_args
 index|[
 literal|0
@@ -1562,7 +1554,6 @@ name|pdb_int
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
-block|}
 comment|/*  Set the arg types for the return values  */
 for|for
 control|(

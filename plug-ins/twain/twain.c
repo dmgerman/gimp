@@ -502,7 +502,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2906f6140108
+DECL|struct|__anon29bcd0930108
 typedef|typedef
 struct|struct
 block|{
@@ -1474,7 +1474,7 @@ name|PLUG_IN_D_MENU_PATH
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|NUMBER_IN_ARGS
 argument_list|,
@@ -1511,7 +1511,7 @@ name|PLUG_IN_R_MENU_PATH
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|NUMBER_IN_ARGS
 argument_list|,
@@ -1548,7 +1548,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|NUMBER_IN_ARGS
 argument_list|,
@@ -1869,7 +1869,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2906f6140208
+DECL|struct|__anon29bcd0930208
 typedef|typedef
 struct|struct
 block|{

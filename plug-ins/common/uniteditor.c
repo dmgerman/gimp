@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29137d680103
+DECL|enum|__anon2952d0270103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -160,7 +160,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29137d680208
+DECL|struct|__anon2952d0270208
 block|{
 DECL|member|title
 specifier|const
@@ -323,7 +323,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"extension_gimp_unit_editor"
+literal|"plug_in_unit_editor"
 argument_list|,
 literal|"The GIMP unit editor (runs in interactive mode only)"
 argument_list|,
@@ -342,7 +342,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
@@ -446,7 +446,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"extension_gimp_unit_editor"
+literal|"plug_in_unit_editor"
 argument_list|)
 operator|==
 literal|0

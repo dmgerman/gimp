@@ -82,7 +82,7 @@ DECL|macro|PLUG_IN_NAME
 define|#
 directive|define
 name|PLUG_IN_NAME
-value|"extension_winsnap"
+value|"plug_in_winsnap"
 end_define
 
 begin_define
@@ -348,7 +348,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a4169930108
+DECL|struct|__anon2b0d2c790108
 typedef|typedef
 struct|struct
 block|{
@@ -395,7 +395,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a4169930208
+DECL|struct|__anon2b0d2c790208
 typedef|typedef
 struct|struct
 block|{
@@ -3939,7 +3939,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_EXTENSION
+name|GIMP_PLUGIN
 argument_list|,
 name|NUMBER_IN_ARGS
 argument_list|,

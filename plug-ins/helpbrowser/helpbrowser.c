@@ -142,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddf8790103
+DECL|enum|__anon2b5fc38e0103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bddf8790208
+DECL|struct|__anon2b5fc38e0208
 block|{
 DECL|member|title
 specifier|const
@@ -354,16 +354,6 @@ name|run
 block|,
 comment|/* run_proc   */
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|temp_proc_installed
-specifier|static
-name|gboolean
-name|temp_proc_installed
-init|=
-name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -1288,7 +1278,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"extension_web_browser"
+literal|"plug_in_web_browser"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3222,47 +3212,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  from libgimp/gimp.c  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_run_temp
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function
-specifier|static
-name|gboolean
-DECL|function|input_callback (GIOChannel * channel,GIOCondition condition,gpointer data)
-name|input_callback
-parameter_list|(
-name|GIOChannel
-modifier|*
-name|channel
-parameter_list|,
-name|GIOCondition
-name|condition
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-comment|/* We have some data in the wire - read it */
-comment|/* The below will only ever run a single proc */
-name|gimp_run_temp
-argument_list|()
-expr_stmt|;
-return|return
-name|TRUE
-return|;
-block|}
-end_function
-
 begin_function
 specifier|static
 name|void
@@ -3338,64 +3287,6 @@ name|NULL
 argument_list|,
 name|run_temp_proc
 argument_list|)
-expr_stmt|;
-comment|/* Tie into the gdk input function */
-name|g_io_add_watch
-argument_list|(
-name|_readchannel
-argument_list|,
-name|G_IO_IN
-operator||
-name|G_IO_PRI
-argument_list|,
-name|input_callback
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|temp_proc_installed
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|open_url (const gchar * help_path,const gchar * locale,const gchar * help_file)
-name|open_url
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|help_path
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|locale
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|help_file
-parameter_list|)
-block|{
-name|open_browser_dialog
-argument_list|(
-name|help_path
-argument_list|,
-name|locale
-argument_list|,
-name|help_file
-argument_list|)
-expr_stmt|;
-name|install_temp_proc
-argument_list|()
-expr_stmt|;
-name|gtk_main
-argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -3870,7 +3761,7 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|open_url
+name|open_browser_dialog
 argument_list|(
 name|help_path
 argument_list|,
@@ -3878,6 +3769,20 @@ name|locale
 argument_list|,
 name|help_file
 argument_list|)
+expr_stmt|;
+name|install_temp_proc
+argument_list|()
+expr_stmt|;
+comment|/*  we have installed our temp_proc and are ready to run  */
+name|gimp_extension_ack
+argument_list|()
+expr_stmt|;
+comment|/*  enable asynchronous processing of temp_proc_run requests  */
+name|gimp_extension_enable
+argument_list|()
+expr_stmt|;
+name|gtk_main
+argument_list|()
 expr_stmt|;
 name|g_free
 argument_list|(
