@@ -735,7 +735,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f930e70108
+DECL|struct|__anon28ff8b2f0108
 block|{
 DECL|member|type
 name|gchar
@@ -1347,7 +1347,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f930e70208
+DECL|struct|__anon28ff8b2f0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1365,7 +1365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f930e70308
+DECL|struct|__anon28ff8b2f0308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -1854,7 +1854,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Decompose: Can only work on RGB images."
+literal|"Can only work on RGB images."
 argument_list|)
 expr_stmt|;
 name|status
@@ -2187,7 +2187,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Decompose: Not an RGB image."
+literal|"Not an RGB image."
 argument_list|)
 expr_stmt|;
 return|return
@@ -2230,7 +2230,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Decompose: No alpha channel available."
+literal|"No alpha channel available."
 argument_list|)
 expr_stmt|;
 return|return

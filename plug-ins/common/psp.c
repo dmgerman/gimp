@@ -61,6 +61,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -137,7 +143,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0103
+DECL|enum|__anon2a3f33df0103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +207,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0203
+DECL|enum|__anon2a3f33df0203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +247,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0303
+DECL|enum|__anon2a3f33df0303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +279,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0403
+DECL|enum|__anon2a3f33df0403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +307,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0503
+DECL|enum|__anon2a3f33df0503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +335,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0603
+DECL|enum|__anon2a3f33df0603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +357,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0703
+DECL|enum|__anon2a3f33df0703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +393,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0803
+DECL|enum|__anon2a3f33df0803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +413,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0903
+DECL|enum|__anon2a3f33df0903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +461,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0a03
+DECL|enum|__anon2a3f33df0a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +485,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0b03
+DECL|enum|__anon2a3f33df0b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +546,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a04d5c0c03
+DECL|enum|__anon2a3f33df0c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a04d5c0d08
+DECL|struct|__anon2a3f33df0d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +767,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a04d5c0e08
+DECL|struct|__anon2a3f33df0e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +782,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a04d5c0f08
+DECL|struct|__anon2a3f33df0f08
 block|{
 DECL|member|run
 name|gint
@@ -1384,7 +1390,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading block header"
+literal|"Error reading block header"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1417,7 +1423,7 @@ literal|3
 argument_list|)
 name|g_message
 argument_list|(
-literal|"PSP: Invalid block header at %ld"
+literal|"Invalid block header at %ld"
 argument_list|,
 name|header_start
 argument_list|)
@@ -1425,7 +1431,7 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"PSP: Invalid block header"
+literal|"Invalid block header"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1444,7 +1450,7 @@ literal|3
 argument_list|)
 name|g_message
 argument_list|(
-literal|"PSP: %s at %ld"
+literal|"%s at %ld"
 argument_list|,
 name|block_name
 argument_list|(
@@ -1549,7 +1555,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Invalid general image attribute chunk size"
+literal|"Invalid general image attribute chunk size"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1754,7 +1760,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading general image attribute block"
+literal|"Error reading general image attribute block"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1845,7 +1851,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Unknown compression type %d"
+literal|"Unknown compression type %d"
 argument_list|,
 name|ia
 operator|->
@@ -1884,7 +1890,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Unsupported bit depth %d"
+literal|"Unsupported bit depth %d"
 argument_list|,
 name|ia
 operator|->
@@ -1962,7 +1968,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Seek error"
+literal|"Seek error: %s"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2138,7 +2149,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading creator keyword chunk"
+literal|"Error reading creator keyword chunk"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2172,7 +2183,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Invalid keyword chunk header"
+literal|"Invalid keyword chunk header"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2248,7 +2259,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading creator keyword data"
+literal|"Error reading creator keyword data"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2362,7 +2373,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading creator keyword data"
+literal|"Error reading creator keyword data"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -3588,7 +3599,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: zlib error"
+literal|"zlib error"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -3653,7 +3664,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: zlib error"
+literal|"zlib error"
 argument_list|)
 expr_stmt|;
 name|inflateEnd
@@ -3948,7 +3959,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Invalid layer sub-block %s, should be LAYER"
+literal|"Invalid layer sub-block %s, should be LAYER"
 argument_list|,
 name|block_name
 argument_list|(
@@ -4262,7 +4273,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading layer information chunk"
+literal|"Error reading layer information chunk"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -4534,7 +4545,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading layer information chunk"
+literal|"Error reading layer information chunk"
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4566,7 +4577,7 @@ name|PSP_LAYER_FLOATING_SELECTION
 condition|)
 name|g_message
 argument_list|(
-literal|"PSP: Floating selection restored as normal layer"
+literal|"Floating selection restored as normal layer"
 argument_list|)
 expr_stmt|;
 name|swab_rect
@@ -4623,7 +4634,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Unsupported PSP layer blend mode %s "
+literal|"Unsupported PSP layer blend mode %s "
 literal|"for layer %s, setting layer invisible"
 argument_list|,
 name|blend_mode_name
@@ -4673,7 +4684,7 @@ literal|2
 argument_list|)
 name|g_message
 argument_list|(
-literal|"PSP: layer: %s %dx%d (%dx%d) @%d,%d opacity %d blend_mode %s "
+literal|"layer: %s %dx%d (%dx%d) @%d,%d opacity %d blend_mode %s "
 literal|"%d bitmaps %d channels"
 argument_list|,
 name|name
@@ -4730,7 +4741,7 @@ literal|2
 argument_list|)
 name|g_message
 argument_list|(
-literal|"PSP: mask %dx%d (%dx%d) @%d,%d"
+literal|"mask %dx%d (%dx%d) @%d,%d"
 argument_list|,
 name|mask_rect
 index|[
@@ -4905,7 +4916,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error creating layer"
+literal|"Error creating layer"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -5168,7 +5179,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Invalid layer sub-block %s, should be CHANNEL"
+literal|"Invalid layer sub-block %s, should be CHANNEL"
 argument_list|,
 name|block_name
 argument_list|(
@@ -5275,7 +5286,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading channel information chunk"
+literal|"Error reading channel information chunk"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -5330,8 +5341,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Invalid bitmap type %d "
-literal|"in channel information chunk"
+literal|"Invalid bitmap type %d in channel information chunk"
 argument_list|,
 name|bitmap_type
 argument_list|)
@@ -5360,8 +5370,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Invalid channel type %d "
-literal|"in channel information chunk"
+literal|"Invalid channel type %d in channel information chunk"
 argument_list|,
 name|channel_type
 argument_list|)
@@ -5387,8 +5396,7 @@ literal|2
 argument_list|)
 name|g_message
 argument_list|(
-literal|"PSP: channel: %s %s %d (%d) bytes "
-literal|"%d bytespp"
+literal|"channel: %s %s %d (%d) bytes %d bytespp"
 argument_list|,
 name|bitmap_type_name
 argument_list|(
@@ -5770,7 +5778,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading tube data chunk"
+literal|"Error reading tube data chunk"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -6208,10 +6216,27 @@ name|f
 operator|==
 name|NULL
 condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't open '%s':\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
+block|}
 comment|/* Read thePSP File Header */
 if|if
 condition|(
@@ -6259,7 +6284,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Error reading file header"
+literal|"Error reading file header"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -6288,7 +6313,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Incorrect file signature"
+literal|"Incorrect file signature"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -6325,7 +6350,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Unsupported PSP file format version "
+literal|"Unsupported PSP file format version "
 literal|"%d.%d, only knows 3.0 (and later?)"
 argument_list|,
 name|major
@@ -6365,7 +6390,7 @@ literal|0
 condition|)
 name|g_message
 argument_list|(
-literal|"PSP: Warning: PSP file format version "
+literal|"Warning: PSP file format version "
 literal|"4.0. Support for this format version "
 literal|"is based on reverse engineering, "
 literal|"as no documentation has been made available"
@@ -6375,7 +6400,7 @@ else|else
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Unsupported PSP file format version %d.%d"
+literal|"Unsupported PSP file format version %d.%d"
 argument_list|,
 name|major
 argument_list|,
@@ -6403,7 +6428,7 @@ literal|3
 argument_list|)
 name|g_message
 argument_list|(
-literal|"PSP: size = %d"
+literal|"size = %d"
 argument_list|,
 operator|(
 name|int
@@ -6466,7 +6491,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Duplicate General Image Attributes block"
+literal|"Duplicate General Image Attributes block"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -6506,7 +6531,7 @@ literal|2
 argument_list|)
 name|g_message
 argument_list|(
-literal|"PSP: %d dpi %dx%d %s"
+literal|"%d dpi %dx%d %s"
 argument_list|,
 operator|(
 name|int
@@ -6595,7 +6620,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Missing General Image Attributes block"
+literal|"Missing General Image Attributes block"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -6729,7 +6754,7 @@ name|PSP_ALPHA_CHANNEL_BLOCK
 case|:
 name|g_message
 argument_list|(
-literal|"PSP: Sub-block %s should not occur "
+literal|"Sub-block %s should not occur "
 literal|"at main level of file"
 argument_list|,
 name|block_name
@@ -6742,7 +6767,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"PSP: Unrecognized block id %d"
+literal|"Unrecognized block id %d"
 argument_list|,
 name|id
 argument_list|)
@@ -6844,7 +6869,7 @@ parameter_list|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSP: Saving not implemented yet"
+literal|"Saving not implemented yet"
 argument_list|)
 expr_stmt|;
 return|return

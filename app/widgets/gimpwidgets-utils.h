@@ -23,6 +23,16 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|stock_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|domain
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|message
 parameter_list|,
 name|GtkCallback

@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9db990108
+DECL|struct|__anon2ac5b7ea0108
 block|{
 DECL|member|period
 name|gint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9db990208
+DECL|struct|__anon2ac5b7ea0208
 block|{
 DECL|member|run
 name|gint

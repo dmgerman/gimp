@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8c1010108
+DECL|struct|__anon29004ab80108
 block|{
 DECL|member|xblock
 name|gint
@@ -75,7 +75,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8c1010208
+DECL|struct|__anon29004ab80208
 block|{
 DECL|member|run
 name|gint

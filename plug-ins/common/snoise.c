@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e4ee8a0108
+DECL|struct|__anon2c7480220108
 block|{
 DECL|member|tilable
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e4ee8a0208
+DECL|struct|__anon2c7480220208
 block|{
 DECL|member|run
 name|gint

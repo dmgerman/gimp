@@ -896,7 +896,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"ZealousCrop(tm): Nothing to crop."
+literal|"Nothing to crop."
 argument_list|)
 argument_list|)
 expr_stmt|;

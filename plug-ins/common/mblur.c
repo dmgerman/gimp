@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c546a760108
+DECL|struct|__anon2b7a31e40108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -3004,7 +3004,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Blurring..."
+literal|"Motion Blurring..."
 argument_list|)
 argument_list|)
 expr_stmt|;

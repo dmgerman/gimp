@@ -20,6 +20,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -170,7 +176,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bac3ea0108
+DECL|struct|__anon2aef8f9b0108
 block|{
 DECL|member|run
 name|gint
@@ -1136,28 +1142,6 @@ name|stat
 name|statbuf
 decl_stmt|;
 comment|/* must check file size */
-name|temp
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Loading %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
 comment|/* open the file */
 name|filedes
 operator|=
@@ -1178,13 +1162,48 @@ operator|-
 literal|1
 condition|)
 block|{
-comment|/* errno is set to indicate the error, but the user won't know :-( */
-comment|/*gimp_message("hrz filter: can't open file\n");*/
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't open '%s':\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
 block|}
+name|temp
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
 comment|/* stat the file to see if it is the right size */
 name|fstat
 argument_list|(
@@ -1209,7 +1228,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"hrz: file is not HRZ type"
+name|_
+argument_list|(
+literal|"'%s' is not a HRZ file"
+argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -1257,7 +1281,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"hrz: could not map file"
+literal|"Could not map file"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1302,7 +1326,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"hrz: file read error"
+literal|"File read error"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1652,12 +1676,16 @@ operator|==
 name|NULL
 condition|)
 block|{
-comment|/* Ought to pass errno back... */
 name|g_message
 argument_list|(
-literal|"hrz: can't open \"%s\"\n"
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1693,7 +1721,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"hrz: Image must be 256x240 for HRZ format."
+name|_
+argument_list|(
+literal|"Image must be 256x240"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1709,7 +1740,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"hrz: Image must be RGB or GRAY for HRZ format."
+name|_
+argument_list|(
+literal|"Image must be RGB or GRAY"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1722,7 +1756,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename

@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -62,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29001edf0108
+DECL|struct|__anon2a0624ce0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -129,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29001edf0208
+DECL|struct|__anon2a0624ce0208
 block|{
 DECL|member|run
 name|gint
@@ -245,7 +251,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 name|gchar
@@ -261,7 +267,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|gint32
@@ -663,7 +669,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_image (gchar * filename,GimpDrawable * drawable)
 name|save_image
 parameter_list|(
@@ -676,7 +682,7 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|int
+name|gint
 name|row
 decl_stmt|,
 name|col
@@ -689,17 +695,14 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|colcount
 decl_stmt|,
 name|colspan
 decl_stmt|,
 name|rowspan
 decl_stmt|;
-comment|/* This works only in gcc - not allowed according */
-comment|/* to ANSI C */
-comment|/*int palloc[drawable->width][drawable->height];*/
-name|int
+name|gint
 modifier|*
 name|palloc
 decl_stmt|;
@@ -720,22 +723,20 @@ decl_stmt|;
 name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
 name|FILE
 modifier|*
 name|fp
-decl_stmt|,
-modifier|*
-name|fopen
-argument_list|()
 decl_stmt|;
 name|palloc
 operator|=
-name|malloc
+name|g_new
 argument_list|(
+name|int
+argument_list|,
 name|drawable
 operator|->
 name|width
@@ -743,11 +744,6 @@ operator|*
 name|drawable
 operator|->
 name|height
-operator|*
-sizeof|sizeof
-argument_list|(
-name|int
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|fp
@@ -759,6 +755,31 @@ argument_list|,
 literal|"w"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|fp
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't open '%s' for writing:\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 if|if
 condition|(
 name|gtmvals
@@ -827,7 +848,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -903,14 +924,14 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 literal|2
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 literal|2
 argument_list|)
@@ -945,7 +966,7 @@ condition|)
 block|{
 name|width
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
@@ -985,7 +1006,7 @@ condition|)
 block|{
 name|height
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
@@ -1528,23 +1549,23 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|width
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|height
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|palloc
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -1552,9 +1573,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_dialog (image_ID)
+DECL|function|save_dialog (gint32 image_ID)
 name|save_dialog
 parameter_list|(
+name|gint32
 name|image_ID
 parameter_list|)
 block|{

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -705,7 +711,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27944e330108
+DECL|struct|__anon2c5c1c240108
 block|{
 DECL|member|Width
 name|unsigned
@@ -755,7 +761,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27944e330208
+DECL|struct|__anon2c5c1c240208
 block|{
 DECL|member|transparent
 name|int
@@ -1017,9 +1023,14 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: can't open \"%s\"\n"
+literal|"Can't open '%s':\n%s"
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1027,20 +1038,13 @@ operator|-
 literal|1
 return|;
 block|}
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|name_buf
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -1056,7 +1060,6 @@ argument_list|(
 name|name_buf
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
@@ -1072,7 +1075,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: error reading magic number\n"
+literal|"Error reading magic number"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1100,7 +1103,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: not a GIF file\n"
+literal|"Not a GIF file"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1157,7 +1160,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: bad version number, not '87a' or '89a'\n"
+literal|"Bad version number, not '87a' or '89a'"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1180,7 +1183,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: failed to read screen descriptor\n"
+literal|"Failed to read screen descriptor"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1313,7 +1316,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: error reading global colormap\n"
+literal|"Error reading global colormap"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1339,7 +1342,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: warning - non-square pixels\n"
+literal|"Warning - non-square pixels"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1369,7 +1372,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: EOF / read error on image data\n"
+literal|"EOF / read error on image data"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1413,7 +1416,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: EOF / read error on extension function code\n"
+literal|"EOF / read error on extension function code"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1468,7 +1471,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: couldn't read left/top/width/height\n"
+literal|"Couldn't read left/top/width/height"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1529,7 +1532,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: error reading local colormap\n"
+literal|"Error reading local colormap"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1839,7 +1842,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: bad colormap\n"
+literal|"Bad colormap"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2460,7 +2463,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: error in getting DataBlock size\n"
+literal|"Error in getting DataBlock size"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2497,7 +2500,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: error in reading DataBlock\n"
+literal|"Error in reading DataBlock"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2607,7 +2610,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: ran off the end of my bits\n"
+literal|"Ran off the end of my bits"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -2856,7 +2859,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: value out of range for code size (corrupted file?)"
+literal|"Value out of range for code size (corrupted file?)"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3287,7 +3290,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: circular table entry BIG ERROR\n"
+literal|"Circular table entry BIG ERROR"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -3545,7 +3548,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: EOF / read error on image data\n"
+literal|"EOF / read error on image data"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3569,7 +3572,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: error while reading\n"
+literal|"Error while reading"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4063,9 +4066,9 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"GIF: Hmm... Composite type %d.  Interesting.\n"
+literal|"Hmm... Composite type %d.  Interesting.\n"
 literal|"Please forward this GIF to the "
-literal|"GIF plugin author!\n  (adam@foxbox.org)\n"
+literal|"GIF plugin author!\n  (adam@foxbox.org)"
 argument_list|,
 name|previous_disposal
 argument_list|)
@@ -4074,7 +4077,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"GIF: Something got corrupted.\n"
+literal|"Something got corrupted."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4230,7 +4233,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF: Ouchie!  Can't handle non-alpha RGB frames.\n     Please mail the plugin author.  (adam@gimp.org)\n"
+literal|"Ouchie!  Can't handle non-alpha RGB frames.\n     Please mail the plugin author.  (adam@gimp.org)"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -4580,13 +4583,6 @@ name|ypos
 operator|++
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|cur_progress
 operator|++
 expr_stmt|;
@@ -4613,7 +4609,6 @@ operator|)
 name|max_progress
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(

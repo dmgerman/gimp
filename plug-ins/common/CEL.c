@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -957,10 +963,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s\nis not present or is unreadable"
+literal|"Can't open '%s':\n%s"
 argument_list|)
 argument_list|,
 name|file
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -974,7 +985,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|brief
@@ -1176,7 +1187,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"CEL Can't create a new image"
+literal|"Can't create a new image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2126,8 +2137,9 @@ name|gint
 name|colours
 decl_stmt|,
 name|type
-decl_stmt|,
+decl_stmt|;
 comment|/* Number of colours, type of layer */
+name|gint
 name|offx
 decl_stmt|,
 name|offy
@@ -2136,8 +2148,9 @@ comment|/* Layer offsets */
 name|guchar
 modifier|*
 name|buffer
-decl_stmt|,
+decl_stmt|;
 comment|/* Temporary buffer */
+name|guchar
 modifier|*
 name|line
 decl_stmt|;
@@ -2151,7 +2164,7 @@ name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 comment|/* Pixel region for layer */
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -2226,10 +2239,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"CEL Couldn't write image to\n%s"
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|)
 argument_list|,
 name|file
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2242,7 +2260,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|brief

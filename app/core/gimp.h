@@ -122,6 +122,11 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|domain
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|message
 parameter_list|)
 function_decl|;
@@ -690,6 +695,11 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|domain
 parameter_list|,
 specifier|const
 name|gchar

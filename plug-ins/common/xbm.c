@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -2665,10 +2671,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"XBM: cannot open \"%s\"\n"
+literal|"Can't open '%s':\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2682,7 +2693,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -2975,8 +2986,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"XBM: cannot read header (ftell == %ld)\n"
+literal|"'%s':\nCan't read header (ftell == %ld)"
 argument_list|)
+argument_list|,
+name|filename
 argument_list|,
 name|ftell
 argument_list|(
@@ -3000,8 +3013,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"XBM: no image width specified\n"
+literal|"'%s':\nNo image width specified"
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -3020,8 +3035,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"XBM: no image height specified\n"
+literal|"'%s':\nNo image height specified"
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -3040,8 +3057,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"XBM: no image data type specified\n"
+literal|"'%s':\nNo image data type specified"
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -3663,28 +3682,6 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 expr_stmt|;
-name|name_buf
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|name_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name_buf
-argument_list|)
-expr_stmt|;
 comment|/* Figure out which color is black, and which is white. */
 name|dark
 operator|=
@@ -3810,16 +3807,43 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"XBM: cannot create \"%s\"\n"
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
 return|;
 block|}
+name|name_buf
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|name_buf
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name_buf
+argument_list|)
+expr_stmt|;
 comment|/* Maybe write the image comment. */
 if|#
 directive|if

@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -179,7 +185,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27eac7e60108
+DECL|struct|__anon2c35d2ab0108
 block|{
 DECL|member|spacing
 name|guint
@@ -236,7 +242,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eac7e60208
+DECL|struct|__anon2c35d2ab0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2648,28 +2654,6 @@ name|GimpParasite
 modifier|*
 name|pipe_parasite
 decl_stmt|;
-name|temp
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Loading %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
 name|fd
 operator|=
 name|open
@@ -2689,11 +2673,48 @@ operator|-
 literal|1
 condition|)
 block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't open '%s':\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
 block|}
+name|temp
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
 comment|/* The file format starts with a painfully simple text header */
 comment|/*  get the name  */
 name|buffer
@@ -2769,7 +2790,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Couldn't read name for brush pipe from file '%s'\n"
+literal|"Couldn't read name for brush pipe\nfrom '%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -5923,28 +5944,6 @@ operator|*
 literal|4
 argument_list|)
 expr_stmt|;
-name|msg
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
 name|fd
 operator|=
 name|open
@@ -5974,16 +5973,43 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to open %s"
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
 return|;
 block|}
+name|msg
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
 name|parstring
 operator|=
 name|gimp_pixpipe_params_build

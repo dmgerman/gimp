@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -96,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab1e4e00108
+DECL|struct|__anon2ae6d2310108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1524,7 +1530,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s\nPNG error. File corrupted?"
+literal|"'%s':\nPNG error. File corrupted?"
 argument_list|)
 argument_list|,
 name|filename
@@ -1559,9 +1565,17 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s\nis not present or is unreadable"
+name|_
+argument_list|(
+literal|"Can't open '%s':\n%s"
+argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1575,44 +1589,13 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|strrchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'/'
-argument_list|)
-operator|!=
-name|NULL
-condition|)
 name|progress
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
-argument_list|)
-argument_list|,
-name|strrchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'/'
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-else|else
-name|progress
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -1937,7 +1920,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s\nPNG unknown color model"
+literal|"'%s':\nUnknown PNG color model"
 argument_list|)
 argument_list|,
 name|filename
@@ -1974,7 +1957,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't allocate new image\n%s"
+literal|"'%s'\nCan't allocate new image"
 argument_list|,
 name|filename
 argument_list|)
@@ -2974,7 +2957,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s\nPNG error. Couldn't save image"
+literal|"'%s':\nPNG error. Couldn't save image"
 argument_list|)
 argument_list|,
 name|filename
@@ -3005,10 +2988,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s\nCouldn't create file"
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3022,44 +3010,13 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|strrchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'/'
-argument_list|)
-operator|!=
-name|NULL
-condition|)
 name|progress
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
-argument_list|)
-argument_list|,
-name|strrchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'/'
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-else|else
-name|progress
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -3287,7 +3244,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"%s\nImage type can't be saved as PNG"
+literal|"'%s':\nImage type can't be saved as PNG"
 argument_list|,
 name|filename
 argument_list|)
@@ -4409,7 +4366,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't losslessly save transparency, saving opacity instead.\n"
+literal|"Couldn't losslessly save transparency,\n"
+literal|"saving opacity instead."
 argument_list|)
 argument_list|)
 expr_stmt|;

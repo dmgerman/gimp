@@ -60925,7 +60925,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0411320108
+DECL|struct|__anon27deb8fc0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -60948,7 +60948,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0411320208
+DECL|struct|__anon27deb8fc0208
 block|{
 DECL|member|run
 name|gint

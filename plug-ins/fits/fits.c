@@ -27,6 +27,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -79,7 +85,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af04e9a0108
+DECL|struct|__anon29c2dd430108
 block|{
 DECL|member|replace
 name|gint
@@ -105,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af04e9a0208
+DECL|struct|__anon29c2dd430208
 block|{
 DECL|member|run
 name|gint
@@ -1140,7 +1146,14 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open file for reading"
+literal|"Can't open '%s':\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1624,7 +1637,14 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open file for writing"
+literal|"Can't open '%s' for writing:\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1647,7 +1667,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s':"
 argument_list|)
 argument_list|,
 name|filename

@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5549ee0108
+DECL|struct|__anon27746d400108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5549ee0208
+DECL|struct|__anon27746d400208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5549ee0308
+DECL|struct|__anon27746d400308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -815,7 +815,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"gauss_rle: you must specify either horizontal or vertical (or both)"
+literal|"You must specify either horizontal or vertical (or both)"
 argument_list|)
 argument_list|)
 expr_stmt|;

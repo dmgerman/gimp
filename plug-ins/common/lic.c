@@ -169,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd176f30108
+DECL|struct|__anon2ba79bca0108
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -2973,7 +2973,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Van Gogh (LIC)"
+literal|"Van Gogh (LIC)..."
 argument_list|)
 argument_list|)
 expr_stmt|;

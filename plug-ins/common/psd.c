@@ -68,6 +68,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -125,7 +131,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1b255b0103
+DECL|enum|__anon29e23c4c0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -313,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1b255b0208
+DECL|struct|__anon29e23c4c0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -559,7 +565,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1b255b0308
+DECL|struct|__anon29e23c4c0308
 block|{
 DECL|member|signature
 name|gchar
@@ -1877,7 +1883,7 @@ return|;
 default|default:
 name|g_message
 argument_list|(
-literal|"PSD: Error: Can't convert PSD imagetype to GIMP imagetype\n"
+literal|"Error: Can't convert PSD imagetype to GIMP imagetype"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1988,7 +1994,7 @@ return|;
 default|default:
 name|g_message
 argument_list|(
-literal|"PSD: Error: Can't convert PSD mode to GIMP base imagetype\n"
+literal|"Error: Can't convert PSD mode to GIMP base imagetype"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -3984,7 +3990,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PSD: Error - layer blend signature is incorrect. :-(\n"
+literal|"Error: layer blend signature is incorrect. :-("
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -5157,7 +5163,7 @@ expr_stmt|;
 block|}
 name|g_message
 argument_list|(
-literal|"*** Unknown compression type in channel.\n"
+literal|"*** Unknown compression type in channel."
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -7061,23 +7067,6 @@ argument_list|,
 name|name
 argument_list|)
 decl_stmt|;
-name|name_buf
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Loading %s:"
-argument_list|)
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|name_buf
-argument_list|)
-expr_stmt|;
 name|fd
 operator|=
 name|fopen
@@ -7093,22 +7082,48 @@ operator|!
 name|fd
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"%s: can't open \"%s\"\n"
+name|_
+argument_list|(
+literal|"Can't open '%s':\n%s"
+argument_list|)
 argument_list|,
-name|prog_name
+name|name
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+name|name_buf
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'..."
+argument_list|)
 argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-return|return
-operator|(
-operator|-
-literal|1
-operator|)
-return|;
-block|}
+name|gimp_progress_init
+argument_list|(
+name|name_buf
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name_buf
+argument_list|)
+expr_stmt|;
 name|read_whole_file
 argument_list|(
 name|fd
@@ -8659,11 +8674,6 @@ argument_list|,
 literal|100
 argument_list|,
 name|GIMP_NORMAL_MODE
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name_buf
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

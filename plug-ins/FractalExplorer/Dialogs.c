@@ -8,6 +8,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -8481,10 +8487,6 @@ name|gchar
 modifier|*
 name|savename
 decl_stmt|;
-name|gchar
-modifier|*
-name|message
-decl_stmt|;
 name|savename
 operator|=
 name|filename
@@ -8504,33 +8506,19 @@ operator|!
 name|fp
 condition|)
 block|{
-name|message
-operator|=
-name|g_strconcat
+name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error opening: %s"
-argument_list|)
-argument_list|,
-literal|"\n"
-argument_list|,
-name|_
-argument_list|(
-literal|"Could not save."
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|)
 argument_list|,
 name|savename
-argument_list|)
-expr_stmt|;
-name|g_message
+argument_list|,
+name|g_strerror
 argument_list|(
-name|message
+name|errno
 argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|message
 argument_list|)
 expr_stmt|;
 return|return;
@@ -8587,7 +8575,17 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to write file\n"
+literal|"Failed to write '%s':\n%s"
+argument_list|)
+argument_list|,
+name|savename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|ferror
+argument_list|(
+name|fp
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10180,11 +10178,19 @@ operator|!
 name|fp
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"Error opening: %s"
+name|_
+argument_list|(
+literal|"Can't open '%s':\n%s"
+argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -10219,7 +10225,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"File '%s' is not a FractalExplorer file"
+literal|"'%s'\nis not a FractalExplorer file"
 argument_list|)
 argument_list|,
 name|filename
@@ -10241,7 +10247,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"File '%s' is corrupt.\nLine %d Option section incorrect"
+literal|"'%s' is corrupt.\nLine %d Option section incorrect"
 argument_list|)
 argument_list|,
 name|filename

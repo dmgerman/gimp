@@ -75,7 +75,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c73c5bb0108
+DECL|struct|__anon2a27643d0108
 block|{
 DECL|member|img
 name|gint32
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c73c5bb0203
+DECL|enum|__anon2a27643d0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -455,6 +455,10 @@ index|[
 literal|1
 index|]
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|piArgs
 name|args
 decl_stmt|;
@@ -560,10 +564,6 @@ operator|.
 name|d_int32
 condition|)
 block|{
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
@@ -1001,7 +1001,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"NL Filter"
+literal|"NL Filter..."
 argument_list|)
 argument_list|)
 expr_stmt|;

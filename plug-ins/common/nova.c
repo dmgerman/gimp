@@ -161,7 +161,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2166df0108
+DECL|struct|__anon288a328a0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2166df0208
+DECL|struct|__anon288a328a0208
 block|{
 DECL|member|run
 name|gint
@@ -211,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2166df0308
+DECL|struct|__anon288a328a0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -642,7 +642,7 @@ literal|"Eiichi Takamori"
 argument_list|,
 literal|"May 2000"
 argument_list|,
-comment|/* don't translate '<Image>', it's a keyword 			   * of the gtk toolkit */
+comment|/* don't translate '<Image>' */
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Light Effects/SuperNova..."

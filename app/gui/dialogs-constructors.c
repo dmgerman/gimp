@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimperrorconsole.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpimagedock.h"
 end_include
 
@@ -313,12 +319,6 @@ begin_include
 include|#
 directive|include
 file|"dialogs-constructors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"error-console-dialog.h"
 end_include
 
 begin_include
@@ -1151,11 +1151,15 @@ name|NULL
 return|;
 name|view
 operator|=
-name|error_console_create
+name|gimp_error_console_new
 argument_list|(
 name|context
 operator|->
 name|gimp
+argument_list|,
+name|factory
+operator|->
+name|menu_factory
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer

@@ -249,7 +249,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3077c80103
+DECL|enum|__anon2c75f3e50103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -3692,12 +3692,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_message (Gimp * gimp,const gchar * message)
+DECL|function|gimp_message (Gimp * gimp,const gchar * domain,const gchar * message)
 name|gimp_message
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|domain
 parameter_list|,
 specifier|const
 name|gchar
@@ -3739,6 +3744,8 @@ name|gui_message_func
 argument_list|(
 name|gimp
 argument_list|,
+name|domain
+argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
@@ -3752,6 +3759,10 @@ name|g_printerr
 argument_list|(
 literal|"%s: %s\n"
 argument_list|,
+name|domain
+condition|?
+name|domain
+else|:
 name|GIMP_OBJECT
 argument_list|(
 name|gimp

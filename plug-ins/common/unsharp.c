@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a183810108
+DECL|struct|__anon28edae9e0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a183810208
+DECL|struct|__anon28edae9e0208
 block|{
 DECL|member|run
 name|gint

@@ -20,6 +20,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -309,7 +315,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c456f010108
+DECL|struct|__anon2b75a3df0108
 block|{
 DECL|member|raw
 name|gint
@@ -325,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c456f010208
+DECL|struct|__anon2b75a3df0208
 block|{
 DECL|member|run
 name|gint
@@ -1598,28 +1604,6 @@ decl_stmt|;
 name|int
 name|ctr
 decl_stmt|;
-name|temp
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Loading %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
 comment|/* open the file */
 name|fd
 operator|=
@@ -1644,10 +1628,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"PNM: Can't open file %s."
+literal|"Can't open '%s':\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1655,6 +1644,28 @@ operator|-
 literal|1
 return|;
 block|}
+name|temp
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
 comment|/* allocate the necessary structures */
 name|pnminfo
 operator|=
@@ -1880,7 +1891,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"PNM: File not in a supported format."
+literal|"File not in a supported format."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3816,28 +3827,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|temp
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
 comment|/* open the file */
 name|fd
 operator|=
@@ -3866,15 +3855,42 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"pnm: can't open \"%s\""
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
 return|;
 block|}
+name|temp
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
 name|xres
 operator|=
 name|drawable

@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2803e6ff0108
+DECL|struct|__anon2a4d235e0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -242,7 +242,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2803e6ff0208
+DECL|struct|__anon2a4d235e0208
 block|{
 DECL|member|run
 name|gint
@@ -1141,7 +1141,7 @@ name|sprintf
 argument_list|(
 name|prog_label
 argument_list|,
-literal|"%s (%s)"
+literal|"%s (%s)..."
 argument_list|,
 name|gettext
 argument_list|(

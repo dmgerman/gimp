@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af0e7d0108
+DECL|struct|__anon2ad974fa0108
 block|{
 DECL|member|root
 name|gboolean
@@ -902,7 +902,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"screenshot: fork failed: %s\n"
+literal|"fork() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -930,7 +930,7 @@ expr_stmt|;
 comment|/*  What are we doing here? exec must have failed  */
 name|g_message
 argument_list|(
-literal|"screenshot: exec failed: xwd: %s\n"
+literal|"exec failed: xwd: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -965,7 +965,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"screenshot: spawn failed: %s\n"
+literal|"spawn failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1023,7 +1023,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"screenshot: xwd didn't work\n"
+literal|"xwd didn't work"
 argument_list|)
 expr_stmt|;
 return|return;

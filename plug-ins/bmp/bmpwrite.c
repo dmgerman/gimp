@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -121,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ccbd90108
+DECL|struct|__anon2a2ec4b00108
 block|{
 DECL|member|run
 name|gint
@@ -550,7 +556,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"BMP: cannot operate on unknown image types or alpha images"
+literal|"Cannot operate on unknown image types or alpha images"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -796,10 +802,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open %s"
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -845,18 +856,13 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/* And let's begin the progress */
-if|if
-condition|(
-name|interactive_bmp
-condition|)
-block|{
 name|temp_buf
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -872,7 +878,6 @@ argument_list|(
 name|temp_buf
 argument_list|)
 expr_stmt|;
-block|}
 name|cur_progress
 operator|=
 literal|0
@@ -1794,18 +1799,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|interactive_bmp
-operator|)
-operator|&&
-operator|(
-operator|(
 name|cur_progress
 operator|%
 literal|5
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -2003,18 +2002,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|interactive_bmp
-operator|)
-operator|&&
-operator|(
-operator|(
 name|cur_progress
 operator|%
 literal|5
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -2682,18 +2675,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|interactive_bmp
-operator|)
-operator|&&
-operator|(
-operator|(
 name|cur_progress
 operator|%
 literal|5
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -2808,10 +2795,6 @@ break|break;
 block|}
 block|}
 block|}
-if|if
-condition|(
-name|interactive_bmp
-condition|)
 name|gimp_progress_update
 argument_list|(
 literal|1

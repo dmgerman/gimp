@@ -347,20 +347,6 @@ literal|"Input drawable"
 block|}
 block|,   }
 decl_stmt|;
-comment|/* args */
-specifier|static
-name|GimpParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -389,19 +375,15 @@ argument_list|(
 name|args
 argument_list|)
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* query */
-end_comment
 
 begin_function
 specifier|static
@@ -578,7 +560,7 @@ name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|g_message
 argument_list|(
-literal|"GIMPressionist: GIMP_RUN_NONINTERACTIVE not implemented yet!\n"
+literal|"GIMP_RUN_NONINTERACTIVE not implemented yet!"
 argument_list|)
 expr_stmt|;
 name|status
@@ -599,11 +581,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
-argument_list|(
-literal|"Huh?!\n"
-argument_list|)
-expr_stmt|;
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR

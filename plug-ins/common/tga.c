@@ -41,6 +41,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -1323,10 +1329,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"TGA: can't open \"%s\"\n"
+literal|"Can't open '%s':\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1340,7 +1351,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -1394,7 +1405,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"TGA: Cannot read footer from \"%s\"\n"
+literal|"Cannot read footer from\n'%s'"
 argument_list|)
 argument_list|,
 name|filename
@@ -1499,7 +1510,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"TGA: Cannot read extension from \"%s\"\n"
+literal|"Cannot read extension from\n'%s'"
 argument_list|)
 argument_list|,
 name|filename
@@ -1544,7 +1555,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: Cannot read header from \"%s\"\n"
+literal|"Cannot read header from\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1879,7 +1890,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: Unhandled sub-format in \"%s\"\n"
+literal|"Unhandled sub-format in\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1922,7 +1933,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: Unhandled sub-format in \"%s\"\n"
+literal|"Unhandled sub-format in\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1969,7 +1980,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: Unhandled sub-format in \"%s\"\n"
+literal|"Unhandled sub-format in\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1983,7 +1994,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"TGA: Unknown image type for \"%s\"\n"
+literal|"Unknown image type for\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -2024,7 +2035,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: No support yet for TGA with these parameters\n"
+literal|"No support yet for TGA with these parameters"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2050,7 +2061,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: indexed image has invalid color map type %d\n"
+literal|"Indexed image has invalid color map type %d"
 argument_list|,
 name|info
 operator|.
@@ -2080,7 +2091,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: non-indexed image has invalid color map type %d\n"
+literal|"Non-indexed image has invalid color map type %d"
 argument_list|,
 name|info
 operator|.
@@ -2113,7 +2124,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: File is truncated or corrupted \"%s\"\n"
+literal|"File '%s'\nis truncated or corrupted"
 argument_list|,
 name|filename
 argument_list|)
@@ -3596,7 +3607,7 @@ else|else
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: File is truncated or corrupted \"%s\"\n"
+literal|"File '%s'\nis truncated or corrupted"
 argument_list|,
 name|filename
 argument_list|)
@@ -4080,7 +4091,7 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|name_buf
 decl_stmt|;
@@ -4157,32 +4168,6 @@ name|drawable
 operator|->
 name|height
 expr_stmt|;
-name|name_buf
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-operator|(
-name|gchar
-operator|*
-operator|)
-name|name_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name_buf
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -4201,15 +4186,42 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TGA: can't create \"%s\"\n"
+literal|"Can't open '%s'\nfor writing: %s"
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
 return|;
 block|}
+name|name_buf
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|name_buf
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name_buf
+argument_list|)
+expr_stmt|;
 name|header
 index|[
 literal|0

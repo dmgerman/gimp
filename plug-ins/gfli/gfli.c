@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -1532,10 +1538,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"FLI: Can't open \"%s\""
+literal|"Can't open '%s':\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1649,28 +1660,6 @@ decl_stmt|;
 name|gint
 name|cnt
 decl_stmt|;
-name|name_buf
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Loading %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|name_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name_buf
-argument_list|)
-expr_stmt|;
 name|file
 operator|=
 name|fopen
@@ -1690,10 +1679,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"FLI: Can't open \"%s\""
+literal|"Can't open '%s':\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1701,6 +1695,28 @@ operator|-
 literal|1
 return|;
 block|}
+name|name_buf
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|name_buf
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name_buf
+argument_list|)
+expr_stmt|;
 name|fli_read_header
 argument_list|(
 name|file
@@ -2700,7 +2716,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"FLI: Sorry, I can save only INDEXED and GRAY images."
+literal|"Sorry, I can save only INDEXED and GRAY images."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2714,7 +2730,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -2877,10 +2893,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"FLI: Can't open \"%s\""
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

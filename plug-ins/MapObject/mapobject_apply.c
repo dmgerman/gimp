@@ -1298,7 +1298,7 @@ name|MAP_PLANE
 case|:
 name|gimp_progress_init
 argument_list|(
-literal|"Map to object (plane)"
+literal|"Map to Plane..."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1307,7 +1307,7 @@ name|MAP_SPHERE
 case|:
 name|gimp_progress_init
 argument_list|(
-literal|"Map to object (sphere)"
+literal|"Map to Sphere..."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1316,7 +1316,7 @@ name|MAP_BOX
 case|:
 name|gimp_progress_init
 argument_list|(
-literal|"Map to object (box)"
+literal|"Map to Box..."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1325,7 +1325,7 @@ name|MAP_CYLINDER
 case|:
 name|gimp_progress_init
 argument_list|(
-literal|"Map to object (cylinder)"
+literal|"Map to Cylinder..."
 argument_list|)
 expr_stmt|;
 break|break;

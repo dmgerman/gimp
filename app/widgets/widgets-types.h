@@ -241,6 +241,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpErrorConsole
+typedef|typedef
+name|struct
+name|_GimpErrorConsole
+name|GimpErrorConsole
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageEditor
 typedef|typedef
 name|struct

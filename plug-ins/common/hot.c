@@ -70,7 +70,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0e75840108
+DECL|struct|__anon2ab2234d0108
 block|{
 DECL|member|image
 name|gint32
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0e75840203
+DECL|enum|__anon2ab2234d0203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0e75840303
+DECL|enum|__anon2ab2234d0303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -165,7 +165,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b0e75840408
+DECL|struct|__anon2ab2234d0408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -1417,7 +1417,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Hot"
+literal|"Hot..."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -113,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9fea2c0103
+DECL|enum|__anon2bf030740103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -130,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fea2c0208
+DECL|struct|__anon2bf030740208
 block|{
 DECL|member|interlace
 name|gint
@@ -161,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fea2c0308
+DECL|struct|__anon2bf030740308
 block|{
 DECL|member|run
 name|gint
@@ -1784,7 +1790,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIF: Couldn't simply reduce colors further.\nSaving as opaque.\n"
+literal|"Couldn't simply reduce colors further.\nSaving as opaque."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2785,7 +2791,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIF: Sorry, can't save RGB images as GIFs - convert to INDEXED\nor GRAY first.\n"
+literal|"Sorry, can't save RGB images as GIFs - convert to INDEXED\nor GRAY first."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2793,37 +2799,6 @@ return|return
 name|FALSE
 return|;
 break|break;
-block|}
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
-comment|/* init the progress meter */
-name|temp_buf
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp_buf
-argument_list|)
-expr_stmt|;
 block|}
 comment|/* open the destination file for writing */
 name|outfile
@@ -2845,16 +2820,44 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIF: can't open %s\n"
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
 return|;
 block|}
+comment|/* init the progress meter */
+name|temp_buf
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Saving '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|temp_buf
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|temp_buf
+argument_list|)
+expr_stmt|;
 comment|/* write the GIFheader */
 if|if
 condition|(
@@ -5157,13 +5160,6 @@ operator|==
 name|Width
 condition|)
 block|{
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|cur_progress
 operator|++
 expr_stmt|;
@@ -5190,7 +5186,6 @@ operator|)
 name|max_progress
 argument_list|)
 expr_stmt|;
-block|}
 name|curx
 operator|=
 literal|0
@@ -7761,7 +7756,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIF: error writing output file\n"
+literal|"Error writing output file."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -335,7 +335,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4170e90108
+DECL|struct|__anon2ac003650108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -381,7 +381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4170e90208
+DECL|struct|__anon2ac003650208
 block|{
 DECL|member|run
 name|gint
@@ -739,7 +739,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Scatter HSV: RGB drawable is not selected."
+literal|"Cannot operate on non-RGB drawables."
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1025,7 +1025,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Scatter HSV: Scattering..."
+literal|"Scattering HSV..."
 argument_list|)
 argument_list|)
 expr_stmt|;

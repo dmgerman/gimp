@@ -956,7 +956,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"can't open image file\n"
+literal|"Can't open '%s'"
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -965,44 +967,13 @@ literal|1
 return|;
 block|}
 empty_stmt|;
-if|if
-condition|(
-name|strrchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'/'
-argument_list|)
-operator|!=
-name|NULL
-condition|)
 name|progress
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
-argument_list|)
-argument_list|,
-name|strrchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'/'
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-else|else
-name|progress
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -1113,7 +1084,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"can't allocate new image\n"
+literal|"Can't allocate new image"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1785,13 +1756,12 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"SGI: Image must be of type RGB or GRAY\n"
+literal|"Image must be of type RGB or GRAY"
 argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
 return|;
-break|break;
 block|}
 comment|/*    * Open the file for writing...    */
 name|sgip
@@ -1826,7 +1796,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"SGI: Can't create image file\n"
+name|_
+argument_list|(
+literal|"Can't open '%s' for writing"
+argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -1834,44 +1809,13 @@ name|FALSE
 return|;
 block|}
 empty_stmt|;
-if|if
-condition|(
-name|strrchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'/'
-argument_list|)
-operator|!=
-name|NULL
-condition|)
 name|progress
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
-argument_list|)
-argument_list|,
-name|strrchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'/'
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-else|else
-name|progress
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename

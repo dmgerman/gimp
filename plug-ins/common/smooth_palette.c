@@ -306,7 +306,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27d84fe60108
+DECL|struct|__anon2a2409540108
 block|{
 DECL|member|width
 name|gint
@@ -640,7 +640,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Deriving smooth palette..."
+literal|"Deriving Smooth Palette..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -723,10 +723,12 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+block|}
 name|gimp_drawable_detach
 argument_list|(
 name|drawable

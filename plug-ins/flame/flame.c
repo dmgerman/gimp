@@ -535,7 +535,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bd1d4780108
+DECL|struct|__anon298edf280108
 block|{
 DECL|member|randomize
 name|gint
@@ -2198,7 +2198,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s: %s"
+name|_
+argument_list|(
+literal|"Can't open '%s' for writing:\n%s"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|,

@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce5f490108
+DECL|struct|__anon2895bec90108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce5f490208
+DECL|struct|__anon2895bec90208
 block|{
 DECL|member|run
 name|gint

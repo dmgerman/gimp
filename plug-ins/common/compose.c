@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b07fce90108
+DECL|struct|__anon2ac3cef50108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -964,7 +964,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b07fce90208
+DECL|struct|__anon2ac3cef50208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -995,7 +995,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b07fce90308
+DECL|struct|__anon2ac3cef50308
 block|{
 DECL|member|width
 DECL|member|height
@@ -1596,7 +1596,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Compose: Could not get layers for image %d"
+literal|"Could not get layers for image %d"
 argument_list|)
 argument_list|,
 operator|(
@@ -2166,7 +2166,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Compose: Drawables have different size"
+literal|"Drawables have different size"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2277,7 +2277,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Compose: Images have different size"
+literal|"Images have different size"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2339,7 +2339,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Compose: Error in getting layer IDs"
+literal|"Error in getting layer IDs"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2422,7 +2422,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Compose: Image is not a gray image (bpp=%d)"
+literal|"Image is not a gray image (bpp=%d)"
 argument_list|)
 argument_list|,
 name|incr_src

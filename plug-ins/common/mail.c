@@ -392,7 +392,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d02440108
+DECL|struct|__anon2ae6c85a0108
 block|{
 DECL|member|receipt
 name|gchar
@@ -1175,7 +1175,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"mail: fork failed: %s\n"
+literal|"fork() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1221,7 +1221,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"mail: dup2 failed: %s\n"
+literal|"dup2() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1246,7 +1246,7 @@ expr_stmt|;
 comment|/* What are we doing here? exec must have failed */
 name|g_message
 argument_list|(
-literal|"mail: exec failed: uuencode: %s\n"
+literal|"exec failed: uuencode: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1310,7 +1310,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"mail: dup2 failed: %s\n"
+literal|"dup2() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1384,7 +1384,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"mail: spawn failed: %s\n"
+literal|"spawn failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1442,7 +1442,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"mail: mail didnt work or something on file %s\n"
+literal|"mail didnt work or something on file\n'%s'"
 argument_list|,
 name|tmpname
 argument_list|)
@@ -2775,7 +2775,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"mail: some sort of error with the file extension or lack thereof \n"
+literal|"some sort of error with the file extension or lack thereof"
 argument_list|)
 argument_list|)
 expr_stmt|;

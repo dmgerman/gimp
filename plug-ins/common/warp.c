@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa77d020103
+DECL|enum|__anon2a0dd0090103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa77d020208
+DECL|struct|__anon2a0dd0090208
 block|{
 DECL|member|amount
 name|gdouble
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa77d020308
+DECL|struct|__anon2a0dd0090308
 block|{
 DECL|member|run
 name|gint
@@ -6826,13 +6826,6 @@ name|warp_iter
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|string
 operator|=
 name|g_strdup_printf
@@ -6866,7 +6859,6 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
-block|}
 name|warp_one
 argument_list|(
 name|orig_draw

@@ -20,6 +20,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -210,10 +216,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: bad colormap"
+literal|"Bad colormap"
 argument_list|)
-argument_list|,
-name|prog_name
 argument_list|)
 expr_stmt|;
 return|return
@@ -352,18 +356,52 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+name|filename
+operator|=
+name|name
+expr_stmt|;
+name|fd
+operator|=
+name|fopen
+argument_list|(
+name|filename
+argument_list|,
+literal|"rb"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|interactive_bmp
+operator|!
+name|fd
 condition|)
 block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't open '%s':\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 name|temp_buf
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|name
@@ -379,44 +417,6 @@ argument_list|(
 name|temp_buf
 argument_list|)
 expr_stmt|;
-block|}
-name|filename
-operator|=
-name|name
-expr_stmt|;
-name|fd
-operator|=
-name|fopen
-argument_list|(
-name|filename
-argument_list|,
-literal|"rb"
-argument_list|)
-expr_stmt|;
-comment|/* Is this a valid File? Should never be used because Gimp tests it. */
-if|if
-condition|(
-operator|!
-name|fd
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"%s: can't open \"%s\""
-argument_list|)
-argument_list|,
-name|prog_name
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
 comment|/* It is a File. Now is it a Bitmap? Read the shortest possible header */
 if|if
 condition|(
@@ -498,10 +498,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: %s is not a valid BMP file"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
-argument_list|,
-name|prog_name
 argument_list|,
 name|filename
 argument_list|)
@@ -541,10 +539,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: %s is not a valid BMP file"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
-argument_list|,
-name|prog_name
 argument_list|,
 name|filename
 argument_list|)
@@ -571,10 +567,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: %s is not a valid BMP file"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
-argument_list|,
-name|prog_name
 argument_list|,
 name|filename
 argument_list|)
@@ -602,10 +596,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: %s is not a valid BMP file"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
-argument_list|,
-name|prog_name
 argument_list|,
 name|filename
 argument_list|)
@@ -685,10 +677,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: %s is not a valid BMP file"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
-argument_list|,
-name|prog_name
 argument_list|,
 name|filename
 argument_list|)
@@ -739,10 +729,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header"
+literal|"Error reading BMP file header\nfrom '%s'"
 argument_list|)
 argument_list|,
-name|prog_name
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -871,10 +861,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header"
+literal|"Error reading BMP file header\nfrom '%s'"
 argument_list|)
 argument_list|,
-name|prog_name
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -1060,10 +1050,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header"
+literal|"Error reading BMP file header\nfrom '%s'"
 argument_list|)
 argument_list|,
-name|prog_name
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -1223,10 +1213,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header"
+literal|"Error reading BMP file header\nfrom '%s'"
 argument_list|)
 argument_list|,
-name|prog_name
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -1303,10 +1293,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header"
+literal|"Error reading BMP file header\nfrom '%s'"
 argument_list|)
 argument_list|,
-name|prog_name
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -1327,10 +1317,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header"
+literal|"Error reading BMP file header\nfrom '%s'"
 argument_list|)
 argument_list|,
-name|prog_name
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -1355,10 +1345,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header"
+literal|"Error reading BMP file header\nfrom '%s'"
 argument_list|)
 argument_list|,
-name|prog_name
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -1958,18 +1948,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|interactive_bmp
-operator|)
-operator|&&
-operator|(
-operator|(
 name|cur_progress
 operator|%
 literal|5
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -2081,18 +2065,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|interactive_bmp
-operator|)
-operator|&&
-operator|(
-operator|(
 name|cur_progress
 operator|%
 literal|5
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -2226,18 +2204,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|interactive_bmp
-operator|)
-operator|&&
-operator|(
-operator|(
 name|cur_progress
 operator|%
 literal|5
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -2429,18 +2401,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|interactive_bmp
-operator|)
-operator|&&
-operator|(
-operator|(
 name|cur_progress
 operator|%
 literal|5
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -2928,18 +2894,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|interactive_bmp
-operator|)
-operator|&&
-operator|(
-operator|(
 name|cur_progress
 operator|%
 literal|5
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -3126,10 +3086,6 @@ literal|2
 index|]
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|interactive_bmp
-condition|)
 name|gimp_progress_update
 argument_list|(
 literal|1

@@ -50,6 +50,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -316,7 +322,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291edd720108
+DECL|struct|__anon2ad139b90108
 block|{
 DECL|member|quality
 name|gdouble
@@ -363,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291edd720208
+DECL|struct|__anon2ad139b90208
 block|{
 DECL|member|run
 name|gint
@@ -378,7 +384,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291edd720308
+DECL|struct|__anon2ad139b90308
 block|{
 DECL|member|cinfo
 name|struct
@@ -2660,30 +2666,28 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"can't open \"%s\"\n"
+literal|"Can't open '%s':\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|runmode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|name
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -2699,7 +2703,6 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-block|}
 name|image_ID
 operator|=
 operator|-
@@ -3010,7 +3013,9 @@ comment|/*fallthrough*/
 default|default:
 name|g_message
 argument_list|(
-literal|"don't know how to load JPEGs\nwith %d color channels\nusing colorspace %d (%d)"
+literal|"Don't know how to load JPEGs\n"
+literal|"with %d color channels\n"
+literal|"using colorspace %d (%d)"
 argument_list|,
 name|cinfo
 operator|.
@@ -3321,7 +3326,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"unknown density unit %d\nassuming dots per inch"
+literal|"Unknown density unit %d\nassuming dots per inch"
 argument_list|,
 name|cinfo
 operator|.
@@ -3713,13 +3718,6 @@ argument_list|,
 name|scanlines
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|runmode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -3737,7 +3735,6 @@ operator|.
 name|output_height
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/* Step 7: Finish decompression */
 name|jpeg_finish_decompress
@@ -4440,7 +4437,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -4551,9 +4548,17 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"can't open %s\n"
+name|_
+argument_list|(
+literal|"Can't open '%s' for writing:\n%s"
+argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -6830,7 +6835,6 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|restart_markers_label
 argument_list|,
-operator|(
 name|jsvals
 operator|.
 name|restart
@@ -6838,14 +6842,12 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
-operator|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|restart_markers_scale
 argument_list|,
-operator|(
 name|jsvals
 operator|.
 name|restart
@@ -6853,7 +6855,6 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
-operator|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -7678,7 +7679,6 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|restart_markers_label
 argument_list|,
-operator|(
 name|jsvals
 operator|.
 name|restart
@@ -7686,14 +7686,12 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
-operator|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|restart_markers_scale
 argument_list|,
-operator|(
 name|jsvals
 operator|.
 name|restart
@@ -7701,7 +7699,6 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
-operator|)
 argument_list|)
 expr_stmt|;
 name|make_preview

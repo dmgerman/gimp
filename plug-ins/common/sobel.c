@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d7bf220108
+DECL|struct|__anon27eef2300108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d7bf220208
+DECL|struct|__anon27eef2300208
 block|{
 DECL|member|run
 name|gint
@@ -696,7 +696,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* g_message ("sobel: cannot operate on indexed color images"); */
+comment|/* g_message ("Cannot operate on indexed color images"); */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR

@@ -184,7 +184,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27942a5a0103
+DECL|enum|__anon29b1e32e0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -202,7 +202,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27942a5a0208
+DECL|struct|__anon29b1e32e0208
 block|{
 DECL|member|max_p
 name|gint
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27942a5a0308
+DECL|struct|__anon29b1e32e0308
 block|{
 DECL|member|run
 name|gint
@@ -497,7 +497,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Max RGB: Can only operate on RGB drawables."
+literal|"Can only operate on RGB drawables."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -600,7 +600,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27942a5a0408
+DECL|struct|__anon29b1e32e0408
 typedef|typedef
 struct|struct
 block|{
@@ -889,12 +889,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* normal mode */
 name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Max RGB: Scanning..."
+literal|"Max RGB..."
 argument_list|)
 argument_list|)
 expr_stmt|;

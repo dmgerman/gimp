@@ -537,7 +537,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: can't open URL without an extension"
+literal|"Can't open URL without an extension"
 argument_list|)
 expr_stmt|;
 operator|*
@@ -574,7 +574,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: pipe() failed: %s"
+literal|"pipe() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -611,7 +611,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: fork() failed: %s"
+literal|"fork() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -713,7 +713,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"url: exec() failed: wget: %s"
+literal|"exec() failed: wget: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -779,7 +779,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: wget exited abnormally on URL %s"
+literal|"wget exited abnormally on URL %s"
 argument_list|,
 name|filename
 argument_list|)
@@ -946,7 +946,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: wget exited abnormally on URL\n%s"
+literal|"wget exited abnormally on URL\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -998,7 +998,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: wget exited abnormally on URL\n%s"
+literal|"wget exited abnormally on URL\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1087,7 +1087,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: wget exited abnormally on URL\n%s"
+literal|"wget exited abnormally on URL\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1116,7 +1116,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: a network error occured: %s"
+literal|"A network error occured: %s"
 argument_list|,
 name|buf
 argument_list|)
@@ -1163,7 +1163,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: wget exited abnormally on URL\n%s"
+literal|"wget exited abnormally on URL\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1203,7 +1203,7 @@ else|else
 block|{
 name|g_message
 argument_list|(
-literal|"url: a network error occured: %s"
+literal|"A network error occured: %s"
 argument_list|,
 name|buf
 argument_list|)
@@ -1249,7 +1249,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: could not parse wget's file length message"
+literal|"Could not parse wget's file length message"
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1478,7 +1478,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: wget exited before finishing downloading URL\n%s"
+literal|"wget exited before finishing downloading URL\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1542,7 +1542,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: spawn failed: %s"
+literal|"spawn failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1603,7 +1603,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"url: wget exited abnormally on URL %s"
+literal|"wget exited abnormally on URL\n'%s'"
 argument_list|,
 name|filename
 argument_list|)

@@ -1216,7 +1216,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMPressionist: Can only save drawables!\n"
+literal|"Can only save drawables!"
 argument_list|)
 argument_list|)
 expr_stmt|;

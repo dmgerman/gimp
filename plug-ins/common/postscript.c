@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -164,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b081ad70108
+DECL|struct|__anon2af64ea70108
 block|{
 DECL|member|resolution
 name|guint
@@ -216,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b081ad70208
+DECL|struct|__anon2af64ea70208
 block|{
 DECL|member|run
 name|gint
@@ -282,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b081ad70308
+DECL|struct|__anon2af64ea70308
 block|{
 DECL|member|width
 DECL|member|height
@@ -344,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b081ad70408
+DECL|struct|__anon2af64ea70408
 block|{
 DECL|member|run
 name|gint
@@ -884,7 +890,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b081ad70508
+DECL|struct|__anon2af64ea70508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1755,7 +1761,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b081ad70608
+DECL|struct|__anon2af64ea70608
 block|{
 DECL|member|eol
 name|long
@@ -3621,15 +3627,20 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"PS: can't open file for reading"
+literal|"Can't open '%s':\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 name|fclose
@@ -3637,20 +3648,13 @@ argument_list|(
 name|ifp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|temp
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Interpreting and Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -3666,7 +3670,6 @@ argument_list|(
 name|temp
 argument_list|)
 expr_stmt|;
-block|}
 name|ifp
 operator|=
 name|ps_open
@@ -3702,7 +3705,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"PS: can't interprete file"
+literal|"Can't interpret file"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4151,7 +4154,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"PS: cannot operate on unknown image types"
+literal|"Cannot operate on unknown image types"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4182,7 +4185,14 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"PS: can't open file for writing"
+literal|"Can't open '%s' for writing:\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4192,20 +4202,13 @@ name|FALSE
 operator|)
 return|;
 block|}
-if|if
-condition|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|temp
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -4221,7 +4224,6 @@ argument_list|(
 name|temp
 argument_list|)
 expr_stmt|;
-block|}
 name|save_ps_header
 argument_list|(
 name|ofp
@@ -7366,20 +7368,12 @@ return|;
 if|if
 condition|(
 operator|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-operator|&&
-operator|(
-operator|(
 name|i
 operator|%
 literal|20
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -8010,20 +8004,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-operator|&&
-operator|(
-operator|(
 name|i
 operator|%
 literal|20
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -8177,20 +8163,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-operator|&&
-operator|(
-operator|(
 name|i
 operator|%
 literal|20
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -10503,20 +10481,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-operator|&&
-operator|(
-operator|(
 name|y
 operator|%
 literal|20
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -10951,20 +10921,12 @@ block|}
 if|if
 condition|(
 operator|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-operator|&&
-operator|(
-operator|(
 name|i
 operator|%
 literal|20
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -11639,20 +11601,12 @@ block|}
 if|if
 condition|(
 operator|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-operator|&&
-operator|(
-operator|(
 name|i
 operator|%
 literal|20
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -11717,8 +11671,6 @@ expr_stmt|;
 if|if
 condition|(
 name|packb
-operator|!=
-name|NULL
 condition|)
 name|g_free
 argument_list|(
@@ -12560,20 +12512,12 @@ block|}
 if|if
 condition|(
 operator|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-operator|&&
-operator|(
-operator|(
 name|i
 operator|%
 literal|20
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -12609,8 +12553,6 @@ expr_stmt|;
 if|if
 condition|(
 name|packb
-operator|!=
-name|NULL
 condition|)
 name|g_free
 argument_list|(
@@ -12620,8 +12562,6 @@ expr_stmt|;
 if|if
 condition|(
 name|plane
-operator|!=
-name|NULL
 condition|)
 name|g_free
 argument_list|(
@@ -13256,20 +13196,12 @@ block|}
 if|if
 condition|(
 operator|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-operator|&&
-operator|(
-operator|(
 name|i
 operator|%
 literal|20
 operator|)
 operator|==
 literal|0
-operator|)
 condition|)
 name|gimp_progress_update
 argument_list|(
@@ -13305,8 +13237,6 @@ expr_stmt|;
 if|if
 condition|(
 name|packb
-operator|!=
-name|NULL
 condition|)
 name|g_free
 argument_list|(
@@ -13316,8 +13246,6 @@ expr_stmt|;
 if|if
 condition|(
 name|plane
-operator|!=
-name|NULL
 condition|)
 name|g_free
 argument_list|(

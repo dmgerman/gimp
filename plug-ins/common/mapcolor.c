@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c42bdbc0108
+DECL|struct|__anon2bc426790108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -220,7 +220,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c42bdbc0208
+DECL|struct|__anon2bc426790208
 block|{
 DECL|member|width
 DECL|member|height
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c42bdbc0308
+DECL|struct|__anon2bc426790308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1821,17 +1821,11 @@ name|map_mode
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
 name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Adjusting Foreground/Background"
+literal|"Adjusting Foreground/Background..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1996,17 +1990,11 @@ name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 block|}
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
 name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Mapping colors"
+literal|"Mapping colors..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3814,13 +3802,6 @@ block|}
 block|}
 if|if
 condition|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
-if|if
-condition|(
 operator|(
 name|gdouble
 operator|)
@@ -3855,13 +3836,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-if|if
-condition|(
-name|l_run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
 name|gimp_progress_update
 argument_list|(
 literal|1.0

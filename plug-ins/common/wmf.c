@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -2945,7 +2951,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40108
+DECL|struct|__anon2a3b557e0108
 block|{
 DECL|member|scale
 name|double
@@ -2973,7 +2979,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40208
+DECL|struct|__anon2a3b557e0208
 block|{
 DECL|member|run
 name|gint
@@ -3000,7 +3006,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40308
+DECL|struct|__anon2a3b557e0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3021,7 +3027,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3c19e40403
+DECL|enum|__anon2a3b557e0403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -3052,7 +3058,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40508
+DECL|struct|__anon2a3b557e0508
 block|{
 DECL|member|dummy
 name|int
@@ -3067,7 +3073,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40608
+DECL|struct|__anon2a3b557e0608
 block|{
 DECL|member|color
 name|GdkColor
@@ -3094,7 +3100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40708
+DECL|struct|__anon2a3b557e0708
 block|{
 DECL|member|dummy
 name|int
@@ -3109,7 +3115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40808
+DECL|struct|__anon2a3b557e0808
 block|{
 DECL|member|color
 name|GdkColor
@@ -3136,7 +3142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40908
+DECL|struct|__anon2a3b557e0908
 block|{
 DECL|member|font
 name|GdkFont
@@ -3152,7 +3158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40a08
+DECL|struct|__anon2a3b557e0a08
 block|{
 DECL|member|dummy
 name|int
@@ -3167,14 +3173,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40b08
+DECL|struct|__anon2a3b557e0b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c3c19e40c0a
+DECL|union|__anon2a3b557e0c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -3213,7 +3219,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40d08
+DECL|struct|__anon2a3b557e0d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -3266,7 +3272,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40e08
+DECL|struct|__anon2a3b557e0e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -3317,7 +3323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c19e40f08
+DECL|struct|__anon2a3b557e0f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -4502,7 +4508,7 @@ name|nobjects
 condition|)
 name|g_message
 argument_list|(
-literal|"WMF: Creating too many objects"
+literal|"Creating too many objects"
 argument_list|)
 expr_stmt|;
 return|return
@@ -5606,9 +5612,14 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: can't open \"%s\""
+literal|"Can't open '%s':%s"
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -5653,7 +5664,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: Failed to read metafile header"
+literal|"Failed to read metafile header"
 argument_list|)
 expr_stmt|;
 return|return
@@ -5704,7 +5715,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: Failed to read placeable metafile header"
+literal|"Failed to read placeable metafile header"
 argument_list|)
 expr_stmt|;
 return|return
@@ -5911,7 +5922,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: Failed to read metafile header"
+literal|"Failed to read metafile header"
 argument_list|)
 expr_stmt|;
 return|return
@@ -6053,7 +6064,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: Metafile has wrong version, got %#x, expected 0x300"
+literal|"Metafile has wrong version, got %#x, expected 0x300"
 argument_list|,
 name|GUINT16_FROM_LE
 argument_list|(
@@ -6127,7 +6138,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: Failed to read metafile record"
+literal|"Failed to read metafile record"
 argument_list|)
 expr_stmt|;
 return|return
@@ -6637,7 +6648,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: RestoreDC with positive argument (%d)?"
+literal|"RestoreDC with positive argument (%d)?"
 argument_list|,
 name|ix
 argument_list|)
@@ -6671,7 +6682,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: DC stack underflow"
+literal|"DC stack underflow"
 argument_list|)
 expr_stmt|;
 return|return
@@ -6860,7 +6871,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Couldn't allocate color"
+literal|"Couldn't allocate color"
 argument_list|)
 expr_stmt|;
 return|return
@@ -6966,7 +6977,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Invalid case %d at line %d"
+literal|"Invalid case %d at line %d"
 argument_list|,
 name|GINT16_FROM_LE
 argument_list|(
@@ -7113,7 +7124,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Couldn't allocate color"
+literal|"Couldn't allocate color"
 argument_list|)
 expr_stmt|;
 return|return
@@ -7770,7 +7781,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Invalid case %d at line %d"
+literal|"Invalid case %d at line %d"
 argument_list|,
 name|GUINT16_FROM_LE
 argument_list|(
@@ -7975,7 +7986,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"WMF: Unrecognized pen style %#x"
+literal|"Unrecognized pen style %#x"
 argument_list|,
 name|GUINT16_FROM_LE
 argument_list|(
@@ -8200,7 +8211,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: Couldn't allocate color"
+literal|"Couldn't allocate color"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -8463,7 +8474,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: Couldn't allocate color"
+literal|"Couldn't allocate color"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -9278,7 +9289,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Cannot load suitable font, not even %s"
+literal|"Cannot load suitable font, not even %s"
 argument_list|,
 name|fontname
 argument_list|)
@@ -9348,7 +9359,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Selecting out of bounds object index"
+literal|"Selecting out of bounds object index"
 argument_list|)
 expr_stmt|;
 return|return
@@ -9377,7 +9388,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Selecting NULL object"
+literal|"Selecting NULL object"
 argument_list|)
 expr_stmt|;
 return|return
@@ -9625,7 +9636,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Unhandled case %d at line %d"
+literal|"Unhandled case %d at line %d"
 argument_list|,
 name|objp
 operator|->
@@ -9698,7 +9709,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Selecting out of bounds palette index"
+literal|"Selecting out of bounds palette index"
 argument_list|)
 expr_stmt|;
 return|return
@@ -9727,7 +9738,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Selecting NULL palette"
+literal|"Selecting NULL palette"
 argument_list|)
 expr_stmt|;
 return|return
@@ -9751,7 +9762,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: SelectPalette selects non-palette"
+literal|"SelectPalette selects non-palette"
 argument_list|)
 expr_stmt|;
 return|return
@@ -9835,7 +9846,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Deleting out of bounds object index"
+literal|"Deleting out of bounds object index"
 argument_list|)
 expr_stmt|;
 return|return
@@ -9864,7 +9875,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Deleting already deleted object"
+literal|"Deleting already deleted object"
 argument_list|)
 expr_stmt|;
 return|return
@@ -13072,7 +13083,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: Unhandled operation %#x."
+literal|"Unhandled operation %#x."
 argument_list|,
 name|GUINT16_FROM_LE
 argument_list|(
@@ -13196,7 +13207,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: too small record?"
+literal|"Too small record?"
 argument_list|)
 expr_stmt|;
 return|return
@@ -13218,7 +13229,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: too large record?"
+literal|"Too large record?"
 argument_list|)
 expr_stmt|;
 return|return
@@ -13254,7 +13265,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"WMF: Read failed"
+literal|"Read failed"
 argument_list|)
 expr_stmt|;
 return|return

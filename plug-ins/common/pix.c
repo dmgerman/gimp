@@ -35,6 +35,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -976,29 +982,6 @@ decl_stmt|;
 name|GimpImageType
 name|gdtype
 decl_stmt|;
-comment|/* Set up progress display */
-name|progMessage
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Loading %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progMessage
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progMessage
-argument_list|)
-expr_stmt|;
 name|PIX_DEBUG_PRINT
 argument_list|(
 literal|"Opening file: %s\n"
@@ -1023,11 +1006,49 @@ operator|==
 name|file
 condition|)
 block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't open '%s':\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
 block|}
+comment|/* Set up progress display */
+name|progMessage
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|progMessage
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|progMessage
+argument_list|)
+expr_stmt|;
 comment|/* Read header information */
 name|width
 operator|=
@@ -1745,9 +1766,26 @@ condition|(
 operator|!
 name|file
 condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't open '%s' for writing:\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
+block|}
 comment|/* Set up progress display */
 name|progMessage
 operator|=
@@ -1755,7 +1793,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename

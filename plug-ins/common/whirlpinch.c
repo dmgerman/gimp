@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0562a80108
+DECL|struct|__anon29343f320108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0562a80208
+DECL|struct|__anon29343f320208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1388,7 +1388,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Whirling and pinching..."
+literal|"Whirling and Pinching..."
 argument_list|)
 argument_list|)
 expr_stmt|;

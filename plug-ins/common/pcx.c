@@ -44,6 +44,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -1037,7 +1043,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294548fd0108
+DECL|struct|__anon27739e480108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1162,28 +1168,6 @@ index|[
 literal|768
 index|]
 decl_stmt|;
-name|message
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Loading %s:"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
 name|fd
 operator|=
 name|fopen
@@ -1201,9 +1185,17 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PCX: Can't open\n%s"
+name|_
+argument_list|(
+literal|"Can't open '%s':\n%s"
+argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1211,6 +1203,28 @@ operator|-
 literal|1
 return|;
 block|}
+name|message
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'..."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|fread
@@ -1230,7 +1244,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PCX: Can't read header from\n%s"
+name|_
+argument_list|(
+literal|"Can't read header from\n'%s'"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1251,7 +1268,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s\nis not a PCX file"
+name|_
+argument_list|(
+literal|"'%s'\nis not a PCX file"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1669,7 +1689,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unusual PCX flavour, giving up"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2529,7 +2552,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -2683,13 +2706,15 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"PCX Can't save this image type\nFlatten your image"
+name|_
+argument_list|(
+literal|"Can't save layers with alpha.\nFlatten your image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
 return|;
-break|break;
 block|}
 if|if
 condition|(
@@ -2709,9 +2734,17 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PCX Can't open \n%s"
+name|_
+argument_list|(
+literal|"Can't open '%s' for writing:\n%s"
+argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2988,15 +3021,9 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|g_message
-argument_list|(
-literal|"Can't save this image as PCX\nFlatten your image"
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
-break|break;
 block|}
 name|gimp_drawable_detach
 argument_list|(

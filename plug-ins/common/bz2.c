@@ -783,7 +783,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"bz: fopen failed: %s\n"
+literal|"fopen() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -829,7 +829,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"bz: dup2 failed: %s\n"
+literal|"dup2() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -906,7 +906,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"bz: spawn failed: %s\n"
+literal|"spawn() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -989,8 +989,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"bz2: can't open bzip2ed file without a "
-literal|"sensible extension\n"
+literal|"Can't open bzip2ed file without a "
+literal|"sensible extension"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1064,7 +1064,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"bz2: fork failed: %s\n"
+literal|"fork() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1106,7 +1106,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"bz2: fopen failed: %s\n"
+literal|"fopen() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1146,7 +1146,7 @@ argument_list|)
 condition|)
 name|g_message
 argument_list|(
-literal|"bz2: dup2 failed: %s\n"
+literal|"dup2() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1170,7 +1170,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"bz2: exec failed: bzip2: %s\n"
+literal|"exec failed: bzip2: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1261,7 +1261,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"bz2: bzip2 exited abnormally on file %s\n"
+literal|"bzip2 exited abnormally on file\n'%s'"
 argument_list|,
 name|tmpname
 argument_list|)
@@ -1349,8 +1349,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"bz2: can't open bzip2ed file without a "
-literal|"sensible extension\n"
+literal|"Can't open bzip2ed file without a sensible extension"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1392,7 +1391,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"bz2: fork failed: %s\n"
+literal|"fork() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1445,7 +1444,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"bz2: fopen failed: %s\n"
+literal|"fopen() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1485,7 +1484,7 @@ argument_list|)
 condition|)
 name|g_message
 argument_list|(
-literal|"bz2: dup2 failed: %s\n"
+literal|"dup2() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1509,7 +1508,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"bz2: exec failed: bunzip2: %s\n"
+literal|"exec failed: bunzip2: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1607,7 +1606,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"bz2: bzip2 exited abnormally on file %s\n"
+literal|"bzip2 exited abnormally on file\n'%s'"
 argument_list|,
 name|filename
 argument_list|)
