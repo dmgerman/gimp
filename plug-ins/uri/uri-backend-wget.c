@@ -701,12 +701,27 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_PUTENV
+comment|/* produce deterministic output */
+name|putenv
+argument_list|(
+literal|"LANGUAGE=C"
+argument_list|)
+expr_stmt|;
 name|putenv
 argument_list|(
 literal|"LC_ALL=C"
 argument_list|)
 expr_stmt|;
-comment|/* produce deterministic output */
+name|putenv
+argument_list|(
+literal|"LANG=C"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|execlp
 argument_list|(
 literal|"wget"
