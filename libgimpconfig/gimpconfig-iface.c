@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ddb5e20103
+DECL|enum|__anon2900a40f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -665,6 +665,7 @@ if|if
 condition|(
 name|file
 condition|)
+block|{
 name|gimp_config_serialize_properties
 argument_list|(
 name|config
@@ -677,6 +678,7 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
