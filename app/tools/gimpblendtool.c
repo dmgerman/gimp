@@ -190,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2767d4e30103
+DECL|enum|__anon2ac0b8280103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -227,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2767d4e30203
+DECL|enum|__anon2ac0b8280203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2767d4e30303
+DECL|enum|__anon2ac0b8280303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -388,7 +388,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2767d4e30408
+DECL|struct|__anon2ac0b8280408
 typedef|typedef
 struct|struct
 block|{
@@ -440,7 +440,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2767d4e30508
+DECL|struct|__anon2ac0b8280508
 typedef|typedef
 struct|struct
 block|{
@@ -3380,13 +3380,9 @@ case|:
 case|case
 name|INDEXEDA_GIMAGE
 case|:
-name|message_box
+name|g_message
 argument_list|(
 literal|"Blend: Invalid for indexed images."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3772,13 +3768,9 @@ name|gdisplays_flush
 argument_list|()
 expr_stmt|;
 else|else
-name|message_box
+name|g_message
 argument_list|(
 literal|"Blend operation failed."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args

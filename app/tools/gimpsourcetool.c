@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b58197f0103
+DECL|enum|__anon2c387f5e0103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -1118,13 +1118,9 @@ operator|!
 name|get_active_pattern
 argument_list|()
 condition|)
-name|message_box
+name|g_message
 argument_list|(
 literal|"No patterns available for this operation."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 break|break;

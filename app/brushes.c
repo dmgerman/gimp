@@ -1111,7 +1111,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"Unknown GIMP version #%d in \"%s\"\n"
 argument_list|,
@@ -1223,7 +1223,7 @@ operator|<
 name|bn_size
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"Error in GIMP brush file...aborting."
 argument_list|)
@@ -1287,7 +1287,7 @@ name|header
 operator|.
 name|height
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"GIMP brush file appears to be truncated."
 argument_list|)

@@ -1202,7 +1202,7 @@ condition|(
 operator|!
 name|list
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"Cannot properly scanline convert polygon!\n"
 argument_list|)

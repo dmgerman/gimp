@@ -2150,7 +2150,7 @@ argument_list|()
 operator|)
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"No brushes available for use with this tool."
 argument_list|)

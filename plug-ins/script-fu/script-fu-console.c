@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b6e4b0108
+DECL|struct|__anon27ce410c0108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -486,7 +486,7 @@ name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-name|g_warning
+name|gimp_message
 argument_list|(
 literal|"Script-Fu console mode allows only interactive invocation"
 argument_list|)
@@ -2808,7 +2808,7 @@ name|siod_output_pipe
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|gimp_message
 argument_list|(
 literal|"Unable to open SIOD output pipe"
 argument_list|)
@@ -2834,7 +2834,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_warning
+name|gimp_message
 argument_list|(
 literal|"Unable to open a stream on the SIOD output pipe"
 argument_list|)

@@ -1891,13 +1891,9 @@ operator|==
 literal|0
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Note: No fonts found.  Text tool not available."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|nfonts
@@ -9388,43 +9384,12 @@ operator|-
 literal|1
 condition|)
 block|{
-name|char
-modifier|*
-name|buf
-decl_stmt|;
-name|buf
-operator|=
-name|g_malloc
+name|g_message
 argument_list|(
-name|strlen
-argument_list|(
-name|family_str
-argument_list|)
-operator|+
-literal|87
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|buf
-argument_list|,
-literal|"I'm sorry, but the font %s is corrupt.\nPlease ask the system adminstrator to replace it."
+literal|"I'm sorry, but the font %s is corrupt.\n"
+literal|"Please ask the system adminstrator to replace it."
 argument_list|,
 name|family_str
-argument_list|)
-expr_stmt|;
-name|message_box
-argument_list|(
-name|buf
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|buf
 argument_list|)
 expr_stmt|;
 return|return
@@ -10944,7 +10909,7 @@ condition|(
 name|newmask
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"text_render: could not allocate image"
 argument_list|)

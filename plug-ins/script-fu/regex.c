@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Extended regular expression matching and search library,    version 0.12.    (Implements POSIX draft P1003.2/D11.2, except for some of the    internationalization features.)     Copyright (C) 1993, 1994, 1995, 1996, 1997 Free Software Foundation, Inc.     the C library, however.  The master source lives in /gd/gnu/lib.  NOTE: The canonical source of this file is maintained with the  GNU C Library.  Bugs can be reported to bug-glibc@prep.ai.mit.edu.  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version.  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation,  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* Extended regular expression matching and search library,    version 0.12.    (Implements POSIX draft P1003.2/D11.2, except for some of the    internationalization features.)     Copyright (C) 1993, 1994, 1995, 1996, 1997, 1998 Free Software Foundation, Inc.     the C library, however.  The master source lives in /gd/gnu/lib.  NOTE: The canonical source of this file is maintained with the GNU C Library.  Bugs can be reported to bug-glibc@prep.ai.mit.edu.  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2, or (at your option) any later version.  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -123,16 +123,20 @@ name|HAVE_WCHAR_H
 operator|)
 end_if
 
-begin_include
-include|#
-directive|include
-file|<wctype.h>
-end_include
+begin_comment
+comment|/* Solaris 2.5 has a bug:<wchar.h> must be included before<wctype.h>.  */
+end_comment
 
 begin_include
 include|#
 directive|include
 file|<wchar.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<wctype.h>
 end_include
 
 begin_endif
@@ -768,6 +772,12 @@ begin_comment
 comment|/* Jim Meyering writes:     "... Some ctype macros are valid only for character codes that    isascii says are ASCII (SGI's IRIX-4.0.5 is one such system --when    using /bin/cc or gcc but without giving an ansi option).  So, all    ctype uses should be through macros like ISPRINT...  If    STDC_HEADERS is defined, then autoconf has verified that the ctype    macros don't need to be guarded with references to isascii. ...    Defining isascii to 1 should let any compiler worth its salt    eliminate the&& through constant folding."  */
 end_comment
 
+begin_undef
+undef|#
+directive|undef
+name|ISASCII
+end_undef
+
 begin_if
 if|#
 directive|if
@@ -898,6 +908,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|ISPRINT
+end_undef
 
 begin_define
 DECL|macro|ISPRINT (c)
@@ -1666,7 +1682,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2742fd3a0103
+DECL|enum|__anon278bb8780103
 block|{
 DECL|enumerator|no_op
 name|no_op
@@ -4063,7 +4079,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2742fd3a0208
+DECL|struct|__anon278bb8780208
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4170,7 +4186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2742fd3a0308
+DECL|struct|__anon278bb8780308
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4631,14 +4647,14 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2742fd3a040a
+DECL|union|__anon278bb878040a
 block|{
 DECL|member|word
 name|fail_stack_elt_t
 name|word
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2742fd3a0508
+DECL|struct|__anon278bb8780508
 block|{
 comment|/* This field is one if this group can match the empty string,          zero if not.  If not yet determined,  `MATCH_NULL_UNSET_VALUE'.  */
 DECL|macro|MATCH_NULL_UNSET_VALUE
@@ -5383,7 +5399,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2742fd3a0608
+DECL|struct|__anon278bb8780608
 block|{
 DECL|member|begalt_offset
 name|pattern_offset_t
@@ -5414,7 +5430,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2742fd3a0708
+DECL|struct|__anon278bb8780708
 block|{
 DECL|member|stack
 name|compile_stack_elt_t
@@ -5580,7 +5596,7 @@ DECL|macro|CHAR_CLASS_MAX_LENGTH
 define|#
 directive|define
 name|CHAR_CLASS_MAX_LENGTH
-value|6
+value|256
 end_define
 
 begin_comment
@@ -7091,13 +7107,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|c
 operator|==
 literal|':'
-operator|||
-name|c
+operator|&&
+operator|*
+name|p
 operator|==
 literal|']'
+operator|)
 operator|||
 name|p
 operator|==

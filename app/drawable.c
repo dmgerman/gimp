@@ -100,7 +100,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b40e26f0103
+DECL|enum|__anon28ef41d50103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -943,7 +943,7 @@ name|a
 expr_stmt|;
 break|break;
 default|default:
-name|warning
+name|g_message
 argument_list|(
 literal|"Can't fill unknown image type."
 argument_list|)
@@ -2496,7 +2496,7 @@ literal|1
 expr_stmt|;
 break|break;
 default|default:
-name|warning
+name|g_message
 argument_list|(
 literal|"Layer type %d not supported."
 argument_list|,

@@ -229,6 +229,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_message_func
+parameter_list|(
+name|char
+modifier|*
+name|str
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|_readfd
 name|int
@@ -543,6 +555,12 @@ return|return
 literal|0
 return|;
 block|}
+name|g_set_message_handler
+argument_list|(
+operator|&
+name|gimp_message_func
+argument_list|)
+expr_stmt|;
 name|temp_proc_ht
 operator|=
 name|g_hash_table_new
@@ -856,6 +874,68 @@ argument_list|(
 name|return_vals
 argument_list|,
 name|nreturn_vals
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_message (char * message)
+name|gimp_message
+parameter_list|(
+name|char
+modifier|*
+name|message
+parameter_list|)
+block|{
+name|GParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|int
+name|nreturn_vals
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_message"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|PARAM_STRING
+argument_list|,
+name|message
+argument_list|,
+name|PARAM_END
+argument_list|)
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_message_func (char * str)
+name|gimp_message_func
+parameter_list|(
+name|char
+modifier|*
+name|str
+parameter_list|)
+block|{
+name|gimp_message
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 block|}
@@ -4227,7 +4307,7 @@ operator|<
 name|GP_VERSION
 condition|)
 block|{
-name|g_print
+name|g_message
 argument_list|(
 literal|"%s: the gimp is using an older version of the "
 literal|"plug-in protocol than this plug-in\n"
@@ -4249,7 +4329,7 @@ operator|>
 name|GP_VERSION
 condition|)
 block|{
-name|g_print
+name|g_message
 argument_list|(
 literal|"%s: the gimp is using a newer version of the "
 literal|"plug-in protocol than this plug-in\n"

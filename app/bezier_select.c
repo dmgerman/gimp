@@ -5462,7 +5462,7 @@ condition|(
 operator|!
 name|list
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"cannot properly scanline convert bezier curve: %d"
 argument_list|,

@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c187ea00103
+DECL|enum|__anon2b325e3d0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c187ea00203
+DECL|enum|__anon2b325e3d0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1523,30 +1523,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|char
-name|message
-index|[
-literal|256
-index|]
-decl_stmt|;
-name|sprintf
+name|g_message
 argument_list|(
-name|message
-argument_list|,
 literal|"XCF error: unsupported XCF file version %d encountered"
 argument_list|,
 name|info
 operator|.
 name|file_version
-argument_list|)
-expr_stmt|;
-name|message_box
-argument_list|(
-name|message
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|success
@@ -6328,15 +6311,11 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|message_box
+name|g_message
 argument_list|(
 literal|"XCF warning: version 0 of XCF file format\n"
 literal|"did not save indexed colormaps correctly.\n"
 literal|"Substituting grayscale map."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|info

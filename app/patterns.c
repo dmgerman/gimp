@@ -801,7 +801,7 @@ operator|!=
 name|FILE_VERSION
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"Unknown GIMP version #%d in \"%s\"\n"
 argument_list|,
@@ -904,7 +904,7 @@ operator|<
 name|bn_size
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"Error in GIMP pattern file...aborting."
 argument_list|)
@@ -976,7 +976,7 @@ name|header
 operator|.
 name|bytes
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"GIMP pattern file appears to be truncated."
 argument_list|)

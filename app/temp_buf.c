@@ -767,7 +767,7 @@ operator|!
 name|src
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"trying to copy a temp buf which is NULL."
 argument_list|)
@@ -828,7 +828,7 @@ name|src
 operator|->
 name|height
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"In temp_buf_copy, the widths or heights don't match."
 argument_list|)
@@ -880,7 +880,7 @@ name|new
 argument_list|)
 expr_stmt|;
 else|else
-name|warning
+name|g_message
 argument_list|(
 literal|"Cannot convert from indexed color."
 argument_list|)
@@ -1160,7 +1160,7 @@ operator|!
 name|src
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"trying to copy a temp buf which is NULL."
 argument_list|)
@@ -1321,7 +1321,7 @@ name|src
 operator|->
 name|bytes
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"In temp_buf_copy_area, the widths or heights or bytes don't match."
 argument_list|)
@@ -1856,7 +1856,7 @@ operator|&
 name|S_IFDIR
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"Error in temp buf caching: \"%s\" is a directory (cannot overwrite)"
 argument_list|,
@@ -1922,7 +1922,7 @@ argument_list|(
 literal|"Error in temp buf caching"
 argument_list|)
 expr_stmt|;
-name|warning
+name|g_message
 argument_list|(
 literal|"Cannot write \"%s\""
 argument_list|,
@@ -2138,7 +2138,7 @@ condition|(
 operator|!
 name|succ
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"Error in temp buf caching: information swapped to disk was lost!"
 argument_list|)
@@ -2230,7 +2230,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|warning
+name|g_message
 argument_list|(
 literal|"Error in temp buf disk swapping: information swapped to disk was lost!"
 argument_list|)

@@ -3976,20 +3976,12 @@ block|{
 case|case
 name|GDK_Up
 case|:
-name|printf
-argument_list|(
-literal|"up arrow\n"
-argument_list|)
-expr_stmt|;
+comment|/* printf ("up arrow\n"); */
 break|break;
 case|case
 name|GDK_Down
 case|:
-name|printf
-argument_list|(
-literal|"down arrow\n"
-argument_list|)
-expr_stmt|;
+comment|/* printf ("down arrow\n"); */
 break|break;
 default|default:
 return|return

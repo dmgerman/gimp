@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ac4b6ba0103
+DECL|enum|__anon28d3f6ba0103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ac4b6ba0203
+DECL|enum|__anon28d3f6ba0203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ac4b6ba0303
+DECL|enum|__anon28d3f6ba0303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac4b6ba0408
+DECL|struct|__anon28d3f6ba0408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2ac4b6ba0508
+DECL|struct|__anon28d3f6ba0508
 struct|struct
 block|{
 DECL|member|r
@@ -7014,7 +7014,7 @@ operator|!
 name|gradient_name
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"ed_do_new_gradient_callback(): oops, received NULL in call_data"
 argument_list|)
@@ -7233,7 +7233,7 @@ operator|!
 name|gradient_name
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"ed_do_copy_gradient_callback(): oops, received NULL in call_data"
 argument_list|)
@@ -8288,7 +8288,7 @@ condition|(
 operator|!
 name|file
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"ed_do_save_pov_callback(): oops, could not open \"%s\""
 argument_list|,
@@ -10686,7 +10686,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|warning
+name|g_message
 argument_list|(
 literal|"control_do_hint: oops, in_handle is true "
 literal|"yet we got handle type %d"
@@ -11009,7 +11009,7 @@ block|}
 comment|/* else */
 return|return;
 default|default:
-name|warning
+name|g_message
 argument_list|(
 literal|"control_button_press(): oops, in_handle is true "
 literal|"yet we got handle type %d"
@@ -11165,7 +11165,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|warning
+name|g_message
 argument_list|(
 literal|"control_point_in_handle(): oops, can not handle drag mode %d"
 argument_list|,
@@ -24982,7 +24982,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"grad_load_gradient(): invalid number of segments in \"%s\""
 argument_list|,
@@ -25147,7 +25147,7 @@ operator|!=
 literal|13
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"grad_load_gradient(): badly formatted "
 literal|"gradient segment %d in \"%s\" --- bad things may "
@@ -25265,7 +25265,7 @@ operator|!
 name|filename
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"grad_save_gradient(): can not save gradient with NULL filename"
 argument_list|)
@@ -25288,7 +25288,7 @@ operator|!
 name|file
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"grad_save_gradient(): can't open \"%s\""
 argument_list|,

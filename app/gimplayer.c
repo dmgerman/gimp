@@ -122,7 +122,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2bce602f0103
+DECL|enum|__anon2c4b10ee0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -901,7 +901,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"Zero width or height layers not allowed."
 argument_list|)
@@ -1274,7 +1274,7 @@ operator|!
 name|new_layer
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"layer_copy: could not allocate new layer"
 argument_list|)
@@ -1693,7 +1693,7 @@ operator|!
 name|new_layer
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"layer_from_tiles: could not allocate new layer"
 argument_list|)

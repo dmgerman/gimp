@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -228,7 +234,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"errors.h"
 end_include
 
 begin_include
@@ -2385,6 +2391,12 @@ expr_stmt|;
 name|tools_select
 argument_list|(
 name|RECT_SELECT
+argument_list|)
+expr_stmt|;
+name|g_set_message_handler
+argument_list|(
+operator|&
+name|message_box_func
 argument_list|)
 expr_stmt|;
 block|}

@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c81eb880103
+DECL|enum|__anon2bb720860103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -1699,13 +1699,9 @@ name|gdisplays_flush
 argument_list|()
 expr_stmt|;
 else|else
-name|message_box
+name|g_message
 argument_list|(
 literal|"Bucket Fill operation failed."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args
@@ -2128,13 +2124,9 @@ operator|!
 name|pattern
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"No available patterns for this operation."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;

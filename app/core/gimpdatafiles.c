@@ -316,7 +316,7 @@ condition|(
 operator|!
 name|dir
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"error reading datafiles directory \"%s\""
 argument_list|,

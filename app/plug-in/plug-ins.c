@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c802d5a0103
+DECL|enum|__anon2a0f3a480103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -618,6 +618,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|Argument
+modifier|*
+name|message_invoker
+parameter_list|(
+name|Argument
+modifier|*
+name|args
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|plug_in_defs
 specifier|static
@@ -914,6 +927,63 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|message_args
+specifier|static
+name|ProcArg
+name|message_args
+index|[]
+init|=
+block|{
+block|{
+name|PDB_STRING
+block|,
+literal|"message"
+block|,
+literal|"Message to display in the dialog."
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|message_proc
+specifier|static
+name|ProcRecord
+name|message_proc
+init|=
+block|{
+literal|"gimp_message"
+block|,
+literal|"Displays a dialog box with a message"
+block|,
+literal|"Displays a dialog box with a message. Useful for status or error reporting."
+block|,
+literal|"Spencer Kimball& Peter Mattis"
+block|,
+literal|"Spencer Kimball& Peter Mattis"
+block|,
+literal|"1995-1996"
+block|,
+name|PDB_INTERNAL
+block|,
+literal|1
+block|,
+name|message_args
+block|,
+literal|0
+block|,
+name|NULL
+block|,
+block|{
+block|{
+name|message_invoker
+block|}
+block|}
+block|, }
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|void
 DECL|function|plug_in_init ()
@@ -961,6 +1031,13 @@ name|procedural_db_register
 argument_list|(
 operator|&
 name|progress_update_proc
+argument_list|)
+expr_stmt|;
+comment|/* initialize the message box procedural db calls */
+name|procedural_db_register
+argument_list|(
+operator|&
+name|message_proc
 argument_list|)
 expr_stmt|;
 comment|/* initialize the gimp protocol library and set the read and    *  write handlers.    */
@@ -2821,7 +2898,7 @@ operator|!
 name|path
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"unable to locate plug-in: \"%s\""
 argument_list|,
@@ -3254,7 +3331,7 @@ literal|1
 operator|)
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"unable to open pipe"
 argument_list|)
@@ -3475,7 +3552,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"unable to run plug-in: %s\n"
 argument_list|,
@@ -13792,6 +13869,46 @@ operator|&
 name|progress_update_proc
 argument_list|,
 name|success
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|Argument
+modifier|*
+DECL|function|message_invoker (Argument * args)
+name|message_invoker
+parameter_list|(
+name|Argument
+modifier|*
+name|args
+parameter_list|)
+block|{
+name|g_message
+argument_list|(
+name|args
+index|[
+literal|0
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_pointer
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|procedural_db_return_args
+argument_list|(
+operator|&
+name|message_proc
+argument_list|,
+name|TRUE
 argument_list|)
 return|;
 block|}

@@ -2982,8 +2982,6 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*message_box ("Intelligent Scissors is currently not enabled\nfor use with   the tile-based GIMP\non anything but yosh's computer.",   NULL, NULL);*/
-comment|/*  return;*/
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -9771,13 +9769,9 @@ operator|<
 literal|4
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Boundary contains< 4 points!  Cannot bezierify."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;

@@ -820,7 +820,7 @@ name|GRAYA_GIMAGE
 expr_stmt|;
 break|break;
 default|default:
-name|warning
+name|g_message
 argument_list|(
 literal|"gimage type unsupported.\n"
 argument_list|)
@@ -1275,7 +1275,7 @@ operator|<=
 literal|0
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"gimage_resize: width and height must be positive"
 argument_list|)
@@ -2291,9 +2291,9 @@ operator|-
 literal|1
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
-literal|"gimage_apply_image sent illegal parameters\n"
+literal|"gimage_apply_image sent illegal parameters"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2849,9 +2849,9 @@ operator|-
 literal|1
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
-literal|"gimage_apply_image sent illegal parameters\n"
+literal|"gimage_apply_image sent illegal parameters"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4357,7 +4357,7 @@ name|INITIAL_INDEXED
 argument_list|)
 expr_stmt|;
 else|else
-name|warning
+name|g_message
 argument_list|(
 literal|"Unable to project indexed image."
 argument_list|)
@@ -7957,13 +7957,9 @@ return|;
 block|}
 else|else
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Layer cannot be raised any further"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -8281,13 +8277,9 @@ return|;
 block|}
 else|else
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Layer cannot be lowered any further"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -8413,13 +8405,9 @@ return|;
 block|}
 else|else
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"There are not enough visible layers for a merge.\nThere must be at least two."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -9115,7 +9103,7 @@ operator|!
 name|merge_layer
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"gimage_merge_layers: could not allocate merge layer"
 argument_list|)
@@ -9252,7 +9240,7 @@ operator|!
 name|merge_layer
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"gimage_merge_layers: could not allocate merge layer"
 argument_list|)
@@ -9406,7 +9394,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"gimage_merge_layers attempting to merge incompatible layers\n"
 argument_list|)
@@ -9872,7 +9860,7 @@ operator|->
 name|ID
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"gimage_add_layer: attempt to add layer to wrong image"
 argument_list|)
@@ -9904,7 +9892,7 @@ operator|==
 name|float_layer
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"gimage_add_layer: trying to add layer to image twice"
 argument_list|)
@@ -10480,13 +10468,9 @@ condition|(
 name|error
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 name|error
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -10924,13 +10908,9 @@ return|;
 block|}
 else|else
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Channel cannot be raised any further"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -11102,13 +11082,9 @@ return|;
 block|}
 else|else
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Channel cannot be lowered any further"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -11172,7 +11148,7 @@ operator|->
 name|ID
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"gimage_add_channel: attempt to add channel to wrong image"
 argument_list|)
@@ -11204,7 +11180,7 @@ operator|==
 name|channel
 condition|)
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"gimage_add_channel: trying to add channel to image twice"
 argument_list|)

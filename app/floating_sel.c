@@ -351,13 +351,9 @@ name|layer
 argument_list|)
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Cannot anchor this layer because\nit is not a floating selection."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;
@@ -658,7 +654,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Cannot create a new layer from the floating\n"
 literal|"selection because it belongs to a\n"

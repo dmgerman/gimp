@@ -124,13 +124,9 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Invert does not operate on indexed drawables."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;
@@ -173,13 +169,9 @@ name|pdb_int
 operator|!=
 name|PDB_SUCCESS
 condition|)
-name|message_box
+name|g_message
 argument_list|(
 literal|"Invert operation failed."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args

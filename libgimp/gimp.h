@@ -601,6 +601,15 @@ name|gdouble
 name|percentage
 parameter_list|)
 function_decl|;
+comment|/* Pops up a dialog box with "message". Useful for status and  * error reports. If "message" is NULL, do nothing.  */
+name|void
+name|gimp_message
+parameter_list|(
+name|char
+modifier|*
+name|message
+parameter_list|)
+function_decl|;
 comment|/* Query the gimp application's procedural database.  *  The arguments are regular expressions which select  *  which procedure names will be returned in 'proc_names'.  */
 name|void
 name|gimp_query_database

@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa4c3b0108
+DECL|struct|__anon2b91c1680108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28fa4c3b020a
+DECL|union|__anon2b91c168020a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa4c3b0308
+DECL|struct|__anon2b91c1680308
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa4c3b0408
+DECL|struct|__anon2b91c1680408
 block|{
 DECL|member|cc
 name|GtkWidget
@@ -941,7 +941,7 @@ condition|(
 operator|!
 name|dir
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
 literal|"error reading script directory \"%s\""
 argument_list|,
@@ -3492,9 +3492,11 @@ if|if
 condition|(
 name|err_msg
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
-literal|"%s"
+literal|"Script-Fu Error\n%s\n"
+literal|"If this happens while running a logo script,\n"
+literal|"you might not have the font it wants installed on your system"
 argument_list|,
 name|siod_err_msg
 argument_list|)

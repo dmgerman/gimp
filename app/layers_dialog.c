@@ -8152,20 +8152,12 @@ block|{
 case|case
 name|GDK_Up
 case|:
-name|printf
-argument_list|(
-literal|"up arrow\n"
-argument_list|)
-expr_stmt|;
+comment|/* printf ("up arrow\n"); */
 break|break;
 case|case
 name|GDK_Down
 case|:
-name|printf
-argument_list|(
-literal|"down arrow\n"
-argument_list|)
-expr_stmt|;
+comment|/* printf ("down arrow\n"); */
 break|break;
 default|default:
 return|return
@@ -14484,7 +14476,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|warning
+name|g_message
 argument_list|(
 literal|"new_layer_query_ok_callback: could not allocate new layer"
 argument_list|)
@@ -17632,13 +17624,9 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|message_box
+name|g_message
 argument_list|(
 literal|"Invalid width or height.  Both must be positive."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -18233,13 +18221,9 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|message_box
+name|g_message
 argument_list|(
 literal|"Invalid width or height.  Both must be positive."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

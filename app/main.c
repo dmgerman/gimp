@@ -872,6 +872,13 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/* Print to console at first */
+name|g_set_message_handler
+argument_list|(
+operator|&
+name|message_console_func
+argument_list|)
+expr_stmt|;
 comment|/* Handle some signals */
 name|signal
 argument_list|(

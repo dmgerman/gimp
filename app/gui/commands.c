@@ -309,7 +309,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon295368390108
+DECL|struct|__anon2bba50490108
 typedef|typedef
 struct|struct
 block|{
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295368390208
+DECL|struct|__anon2bba50490208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2996,13 +2996,9 @@ operator|<
 literal|0
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Error: Levels of undo must be zero or greater."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|levels_of_undo
@@ -3018,13 +3014,9 @@ operator|<
 literal|50
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Error: Marching speed must be 50 or greater."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|marching_speed
@@ -3040,13 +3032,9 @@ operator|<
 literal|1
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Error: Default width must be one or greater."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|default_width
@@ -3062,13 +3050,9 @@ operator|<
 literal|1
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Error: Default height must be one or greater."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|default_height
@@ -3816,13 +3800,9 @@ if|if
 condition|(
 name|restart_notification
 condition|)
-name|message_box
+name|g_message
 argument_list|(
 literal|"You will need to restart GIMP for these changes to take effect."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_list_free
@@ -4571,7 +4551,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon295368390308
+DECL|struct|__anon2bba50490308
 struct|struct
 block|{
 DECL|member|label
@@ -4640,7 +4620,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon295368390408
+DECL|struct|__anon2bba50490408
 struct|struct
 block|{
 DECL|member|label
@@ -11789,13 +11769,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Resize Error: Both width and height must be greater than zero."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;
@@ -11911,13 +11887,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Scale Error: Both width and height must be greater than zero."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;

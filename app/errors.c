@@ -54,19 +54,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"interface.h"
 end_include
 
 begin_include
@@ -92,48 +92,21 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|message (char * fmt,...)
-name|message
+DECL|function|message_console_func (char * str)
+name|message_console_func
 parameter_list|(
 name|char
 modifier|*
-name|fmt
-parameter_list|,
-modifier|...
+name|str
 parameter_list|)
 block|{
-name|va_list
-name|args
-decl_stmt|;
-name|va_start
+name|g_print
 argument_list|(
-name|args
-argument_list|,
-name|fmt
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"%s: "
+literal|"%s: %s\n"
 argument_list|,
 name|prog_name
-argument_list|)
-expr_stmt|;
-name|vprintf
-argument_list|(
-name|fmt
 argument_list|,
-name|args
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|va_end
-argument_list|(
-name|args
+name|str
 argument_list|)
 expr_stmt|;
 block|}
@@ -141,48 +114,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|warning (char * fmt,...)
-name|warning
+DECL|function|message_box_func (char * str)
+name|message_box_func
 parameter_list|(
 name|char
 modifier|*
-name|fmt
-parameter_list|,
-modifier|...
+name|str
 parameter_list|)
 block|{
-name|va_list
-name|args
-decl_stmt|;
-name|va_start
+name|message_box
 argument_list|(
-name|args
+name|str
 argument_list|,
-name|fmt
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"%s warning: "
+name|NULL
 argument_list|,
-name|prog_name
-argument_list|)
-expr_stmt|;
-name|vprintf
-argument_list|(
-name|fmt
-argument_list|,
-name|args
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|va_end
-argument_list|(
-name|args
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -776,13 +776,9 @@ name|mask
 argument_list|)
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Transformations do not work on\nlayers that contain layer masks."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|tool
@@ -5118,7 +5114,7 @@ name|tw
 operator|==
 literal|0.0
 condition|)
-name|warning
+name|g_message
 argument_list|(
 literal|"homogeneous coordinate = 0...\n"
 argument_list|)

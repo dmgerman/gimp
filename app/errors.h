@@ -18,24 +18,20 @@ end_define
 
 begin_function_decl
 name|void
-name|message
+name|message_console_func
 parameter_list|(
 name|char
 modifier|*
-parameter_list|,
-modifier|...
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|warning
+name|message_box_func
 parameter_list|(
 name|char
 modifier|*
-parameter_list|,
-modifier|...
 parameter_list|)
 function_decl|;
 end_function_decl

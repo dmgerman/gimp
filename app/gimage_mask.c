@@ -862,13 +862,9 @@ operator|)
 operator|)
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Unable to cut/copy because the selected\nregion is empty."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -1505,13 +1501,9 @@ operator|==
 literal|0
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Float Selection: No selection to float."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -1961,13 +1953,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"The active layer has no alpha channel\nto convert to a selection."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2015,13 +2003,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"The active layer has no mask\nto convert to a selection."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2187,13 +2171,9 @@ name|num_segs_out
 argument_list|)
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"No selection to stroke!"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return

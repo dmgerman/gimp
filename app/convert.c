@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce076f0108
+DECL|struct|__anon2c8361af0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce076f0208
+DECL|struct|__anon2c8361af0208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce076f0308
+DECL|struct|__anon2c8361af0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2515,13 +2515,9 @@ operator|!
 name|shown_message_already
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Note:  You are attempting to convert an image\nwith alpha/layers.  It is recommended that you quantize\nto no more than 255 colors if you wish to make\na transparent or animated GIF from it.\n\nYou won't get this message again\nuntil the next time you run GIMP.\nHave a nice day!"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|shown_message_already
@@ -6117,15 +6113,7 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"col_limit = %d, nfc = %d\n"
-argument_list|,
-name|col_limit
-argument_list|,
-name|num_found_cols
-argument_list|)
-expr_stmt|;
+comment|/*  g_print ("col_limit = %d, nfc = %d\n", col_limit, num_found_cols);*/
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -6442,11 +6430,7 @@ name|needs_quantize
 operator|=
 name|TRUE
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"\nmax colours exceeded - needs quantize.\n"
-argument_list|)
-expr_stmt|;
+comment|/*			  g_print ("\nmax colours exceeded - needs quantize.\n");*/
 goto|goto
 name|already_found
 goto|;
@@ -6513,15 +6497,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|g_print
-argument_list|(
-literal|"O: col_limit = %d, nfc = %d\n"
-argument_list|,
-name|col_limit
-argument_list|,
-name|num_found_cols
-argument_list|)
-expr_stmt|;
+comment|/*  g_print ("O: col_limit = %d, nfc = %d\n", col_limit, num_found_cols);*/
 block|}
 end_function
 

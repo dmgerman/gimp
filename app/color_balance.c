@@ -1824,13 +1824,9 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|message_box
+name|g_message
 argument_list|(
 literal|"Color balance operates only on RGB color drawables."
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return;

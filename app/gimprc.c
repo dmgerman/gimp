@@ -124,7 +124,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2bc342730103
+DECL|enum|__anon2b64ac8e0103
 typedef|typedef
 enum|enum
 block|{
@@ -2571,8 +2571,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-comment|/* FIXME: show the error in a nice dialog box */
-name|g_warning
+name|g_message
 argument_list|(
 name|error_msg
 argument_list|)
