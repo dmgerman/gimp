@@ -89,6 +89,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"script-fu-text-console.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"script-fu-intl.h"
 end_include
 

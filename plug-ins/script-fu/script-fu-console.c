@@ -179,7 +179,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd203660108
+DECL|struct|__anon2a23f3580108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -3064,7 +3064,7 @@ name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
-name|repl_c_string
+name|siod_interpret_string
 argument_list|(
 name|params
 index|[
@@ -3074,12 +3074,6 @@ operator|.
 name|data
 operator|.
 name|d_string
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|1
 argument_list|)
 operator|!=
 literal|0
