@@ -237,7 +237,7 @@ name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_PAINT_CORE
 argument_list|,
-literal|"GimpPencilCore"
+literal|"GimpPencil"
 argument_list|,
 operator|&
 name|info
