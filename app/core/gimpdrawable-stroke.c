@@ -188,9 +188,9 @@ literal|4
 index|]
 init|=
 block|{
-literal|255
+literal|0
 block|,
-literal|127
+literal|0
 block|,
 literal|0
 block|,
@@ -206,6 +206,10 @@ init|=
 block|{
 literal|0
 block|, }
+decl_stmt|;
+name|guchar
+modifier|*
+name|src_bytes
 decl_stmt|;
 name|PixelRegion
 name|maskPR
@@ -524,6 +528,13 @@ condition|)
 name|bytes
 operator|++
 expr_stmt|;
+name|src_bytes
+operator|=
+name|g_malloc0
+argument_list|(
+name|bytes
+argument_list|)
+expr_stmt|;
 comment|/* Fill a TileManager with the stroke color */
 name|gimp_rgb_get_uchar
 argument_list|(
@@ -552,6 +563,33 @@ index|[
 literal|2
 index|]
 operator|)
+argument_list|)
+expr_stmt|;
+name|src_bytes
+index|[
+name|bytes
+operator|-
+literal|1
+index|]
+operator|=
+name|OPAQUE_OPACITY
+expr_stmt|;
+name|gimp_image_transform_color
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+operator|->
+name|gimage
+argument_list|,
+name|drawable
+argument_list|,
+name|src_bytes
+argument_list|,
+name|GIMP_RGB
+argument_list|,
+name|ucolor
 argument_list|)
 expr_stmt|;
 name|base
@@ -601,7 +639,12 @@ argument_list|(
 operator|&
 name|basePR
 argument_list|,
-name|ucolor
+name|src_bytes
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|src_bytes
 argument_list|)
 expr_stmt|;
 comment|/* combine mask and stroke color TileManager */
