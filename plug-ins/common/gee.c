@@ -576,12 +576,8 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"1998"
 argument_list|,
-name|N_
-argument_list|(
-literal|"<Image>/Filters/Toys/The Egg..."
-argument_list|)
+name|NULL
 argument_list|,
-comment|/*NULL,*/
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
@@ -749,13 +745,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|build_dialog (GimpImageBaseType basetype,char * imagename)
+DECL|function|build_dialog (GimpImageBaseType basetype,gchar * imagename)
 name|build_dialog
 parameter_list|(
 name|GimpImageBaseType
 name|basetype
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|imagename
 parameter_list|)
@@ -1274,15 +1270,15 @@ block|}
 end_function
 
 begin_function
-DECL|function|init_lut (void)
 specifier|static
 name|void
+DECL|function|init_lut (void)
 name|init_lut
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -1344,9 +1340,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|do_playback (void)
 specifier|static
 name|void
+DECL|function|do_playback (void)
 name|do_playback
 parameter_list|(
 name|void
@@ -1434,8 +1430,9 @@ comment|/* Adam's silly algorithm. */
 end_comment
 
 begin_function
-DECL|function|domap1 (unsigned char * src,unsigned char * dest,int bx,int by,int cx,int cy)
+specifier|static
 name|void
+DECL|function|domap1 (unsigned char * src,unsigned char * dest,int bx,int by,int cx,int cy)
 name|domap1
 parameter_list|(
 name|unsigned
@@ -1846,8 +1843,9 @@ comment|/* 3bypp variant */
 end_comment
 
 begin_function
-DECL|function|domap3 (unsigned char * src,unsigned char * dest,int bx,int by,int cx,int cy)
+specifier|static
 name|void
+DECL|function|domap3 (unsigned char * src,unsigned char * dest,int bx,int by,int cx,int cy)
 name|domap3
 parameter_list|(
 name|unsigned
@@ -3043,7 +3041,7 @@ block|{
 name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gboolean
@@ -4159,9 +4157,7 @@ name|render_frame
 argument_list|()
 expr_stmt|;
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
