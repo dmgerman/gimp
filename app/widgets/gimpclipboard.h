@@ -40,7 +40,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_clipboard_is_available
+name|gimp_clipboard_has_buffer
 parameter_list|(
 name|Gimp
 modifier|*
