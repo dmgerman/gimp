@@ -2203,6 +2203,10 @@ index|]
 argument_list|)
 condition|)
 block|{
+name|non_gui_fade_out
+operator|=
+name|fade_out
+expr_stmt|;
 name|non_gui_gradient_length
 operator|=
 name|gradient_length

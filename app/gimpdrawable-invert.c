@@ -159,6 +159,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|return_vals
+operator|||
 name|return_vals
 index|[
 literal|0

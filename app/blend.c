@@ -422,7 +422,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon27a09c480108
+DECL|struct|__anon28f8b3ca0108
 typedef|typedef
 struct|struct
 block|{
@@ -474,7 +474,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27a09c480208
+DECL|struct|__anon28f8b3ca0208
 typedef|typedef
 struct|struct
 block|{
@@ -4104,6 +4104,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|return_vals
+operator|&&
 name|return_vals
 index|[
 literal|0

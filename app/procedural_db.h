@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b65bf3f0103
+DECL|enum|__anon2797742e0103
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -112,13 +112,17 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/* NOTE: If you change the PDBArgType enum above, you _must_ change  * the type_str array in procedural_db.c to match. */
+end_comment
+
+begin_comment
 comment|/*  Error types  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b65bf3f0203
+DECL|enum|__anon2797742e0203
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -144,7 +148,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b65bf3f0303
+DECL|enum|__anon2797742e0303
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL
@@ -726,6 +730,22 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* "type" should really be a PDBArgType, but we can cope with  *  out-of-range values. */
+end_comment
+
+begin_function_decl
+specifier|const
+name|char
+modifier|*
+name|pdb_type_name
+parameter_list|(
+name|gint
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl

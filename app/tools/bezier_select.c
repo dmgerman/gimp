@@ -294,7 +294,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon292e17fe0108
+DECL|struct|__anon29fd8dc20108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292e17fe0208
+DECL|struct|__anon29fd8dc20208
 typedef|typedef
 struct|struct
 block|{
@@ -10959,11 +10959,26 @@ name|rpnts
 operator|->
 name|stroke_points
 argument_list|,
+name|PDB_INT32
+argument_list|,
+literal|0
+comment|/* continuous */
+argument_list|,
+name|PDB_FLOAT
+argument_list|,
+operator|(
+name|gdouble
+operator|)
+literal|0
+comment|/*no grad*/
+argument_list|,
 name|PDB_END
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|return_vals
+operator|&&
 name|return_vals
 index|[
 literal|0

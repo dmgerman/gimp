@@ -5121,7 +5121,7 @@ expr_stmt|;
 if|if
 condition|(
 name|fade_out
-operator|<=
+operator|<
 literal|0.0
 condition|)
 name|success
@@ -5272,7 +5272,7 @@ name|PDB_FLOAT
 block|,
 literal|"fade_out"
 block|,
-literal|"Fade out parameter: 0< fade_out"
+literal|"Fade out parameter: 0<= fade_out"
 block|}
 block|,
 block|{

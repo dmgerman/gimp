@@ -1867,6 +1867,8 @@ expr_stmt|;
 if|if
 condition|(
 name|return_vals
+operator|&&
+name|return_vals
 index|[
 literal|0
 index|]
