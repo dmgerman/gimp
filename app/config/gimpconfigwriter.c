@@ -106,6 +106,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfigwriter.h"
 end_include
 
@@ -718,53 +724,24 @@ operator|->
 name|error
 condition|)
 return|return;
-if|if
-condition|(
-name|string
-condition|)
-block|{
-name|gchar
-modifier|*
-name|escaped
-init|=
-name|g_strescape
-argument_list|(
-name|string
-argument_list|,
-name|NULL
-argument_list|)
-decl_stmt|;
-name|g_string_append_printf
+name|g_string_append_c
 argument_list|(
 name|writer
 operator|->
 name|buffer
 argument_list|,
-literal|" \"%s\""
-argument_list|,
-name|escaped
+literal|' '
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|escaped
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_string_append_len
+name|gimp_config_string_append_escaped
 argument_list|(
 name|writer
 operator|->
 name|buffer
 argument_list|,
-literal|" \"\""
-argument_list|,
-literal|3
+name|string
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

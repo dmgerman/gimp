@@ -806,7 +806,7 @@ literal|"   %s \"%s\"\n"
 argument_list|,
 name|key
 argument_list|,
-name|value
+name|escaped
 argument_list|)
 expr_stmt|;
 name|g_free

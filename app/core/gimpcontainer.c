@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b29f3520103
+DECL|enum|__anon293e98230103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b29f3520203
+DECL|enum|__anon293e98230203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1374,7 +1374,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b29f3520308
+DECL|struct|__anon293e98230308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -1474,39 +1474,16 @@ if|if
 condition|(
 name|name
 condition|)
-block|{
-name|gchar
-modifier|*
-name|escaped
-decl_stmt|;
-name|escaped
-operator|=
-name|g_strescape
-argument_list|(
-name|name
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_config_writer_printf
+name|gimp_config_writer_string
 argument_list|(
 name|serialize_data
 operator|->
 name|writer
 argument_list|,
-literal|"\"%s\""
-argument_list|,
-name|escaped
+name|name
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|escaped
-argument_list|)
-expr_stmt|;
-block|}
 else|else
-block|{
 name|gimp_config_writer_print
 argument_list|(
 name|serialize_data
@@ -1518,7 +1495,6 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-block|}
 name|serialize_data
 operator|->
 name|success
