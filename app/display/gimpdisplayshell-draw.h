@@ -60,6 +60,14 @@ name|popup_shell
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|GtkTooltips
+modifier|*
+name|tool_tips
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* function declarations */
 end_comment
