@@ -22,7 +22,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_help
+name|gimp_help_show
 parameter_list|(
 name|Gimp
 modifier|*

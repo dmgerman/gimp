@@ -16,7 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -29,12 +29,6 @@ begin_include
 include|#
 directive|include
 file|"pdb-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
 end_include
 
 begin_include
@@ -59,18 +53,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay.h"
 end_include
 
 begin_decl_stmt
@@ -183,7 +165,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GimpDisplay
+name|GimpObject
 modifier|*
 name|display
 init|=
@@ -224,10 +206,6 @@ condition|)
 block|{
 name|display
 operator|=
-operator|(
-name|GimpDisplay
-operator|*
-operator|)
 name|gimp_create_display
 argument_list|(
 name|gimp
@@ -287,8 +265,10 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_display_get_ID
+name|gimp_get_display_ID
 argument_list|(
+name|gimp
+argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
@@ -399,13 +379,13 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GimpDisplay
+name|GimpObject
 modifier|*
 name|display
 decl_stmt|;
 name|display
 operator|=
-name|gimp_display_get_by_ID
+name|gimp_get_display_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -422,7 +402,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GIMP_IS_DISPLAY
+name|GIMP_IS_OBJECT
 argument_list|(
 name|display
 argument_list|)
@@ -435,8 +415,10 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_display_delete
+name|gimp_delete_display
 argument_list|(
+name|gimp
+argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
@@ -686,7 +668,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_displays_reconnect
+name|gimp_reconnect_displays
 argument_list|(
 name|gimp
 argument_list|,

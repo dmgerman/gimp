@@ -200,8 +200,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help (Gimp * gimp,const gchar * help_domain,const gchar * help_id)
-name|gimp_help
+DECL|function|gimp_help_show (Gimp * gimp,const gchar * help_domain,const gchar * help_id)
+name|gimp_help_show
 parameter_list|(
 name|Gimp
 modifier|*
