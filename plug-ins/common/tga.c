@@ -1953,7 +1953,7 @@ operator|.
 name|bpp
 operator|!=
 literal|16
-operator|||
+operator|&&
 name|info
 operator|.
 name|bpp

@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae960f20108
+DECL|struct|__anon2b2040140108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae960f20208
+DECL|struct|__anon2b2040140208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -2972,6 +2972,11 @@ argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|curve
+argument_list|)
+expr_stmt|;
 name|curve
 operator|=
 name|make_curve
@@ -3462,6 +3467,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|dest
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|curve
 argument_list|)
 expr_stmt|;
 block|}
