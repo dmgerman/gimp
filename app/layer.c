@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon27e75b930103
+DECL|enum|__anon28c243650103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -1802,6 +1802,17 @@ condition|)
 return|return
 name|NULL
 return|;
+comment|/*  the layer_type needs to have alpha */
+name|g_return_val_if_fail
+argument_list|(
+name|TYPE_HAS_ALPHA
+argument_list|(
+name|layer_type
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  Create the new layer  */
 name|new_layer
 operator|=
