@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b21575f0103
+DECL|enum|__anon2bdb635d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -768,9 +768,26 @@ operator|*
 name|x_offset
 operator|=
 operator|(
+operator|(
+operator|(
+name|gtk_widget_get_direction
+argument_list|(
+name|widget
+argument_list|)
+operator|==
+name|GTK_TEXT_DIR_RTL
+operator|)
+condition|?
+literal|1.0
+operator|-
 name|cell
 operator|->
 name|xalign
+else|:
+name|cell
+operator|->
+name|xalign
+operator|)
 operator|*
 operator|(
 name|cell_area
