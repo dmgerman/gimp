@@ -877,7 +877,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|kill_it
+name|force
 parameter_list|)
 function_decl|;
 block|}
@@ -991,7 +991,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|kill_it
+name|force
 parameter_list|)
 function_decl|;
 end_function_decl

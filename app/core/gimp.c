@@ -261,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27edd22b0103
+DECL|enum|__anon2b788b250103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -382,7 +382,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|kill_it
+name|force
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2756,7 +2756,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_real_exit (Gimp * gimp,gboolean kill_it)
+DECL|function|gimp_real_exit (Gimp * gimp,gboolean force)
 name|gimp_real_exit
 parameter_list|(
 name|Gimp
@@ -2764,7 +2764,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|kill_it
+name|force
 parameter_list|)
 block|{
 if|if
@@ -3793,9 +3793,13 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_exit:  * @gimp: a #Gimp object  * @force: whether to force the application to quit  *  * Exit this GIMP session. Unless @force is %TRUE, the user is queried  * whether unsaved images should be saved and can cancel the operation.  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_exit (Gimp * gimp,gboolean kill_it)
+DECL|function|gimp_exit (Gimp * gimp,gboolean force)
 name|gimp_exit
 parameter_list|(
 name|Gimp
@@ -3803,7 +3807,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|kill_it
+name|force
 parameter_list|)
 block|{
 name|gboolean
@@ -3839,7 +3843,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|kill_it
+name|force
 condition|?
 name|TRUE
 else|:

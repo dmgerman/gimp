@@ -104,6 +104,10 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|ProcRecord
+modifier|*
+name|proc
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -133,17 +137,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|eval_proc
-specifier|static
-name|ProcRecord
-modifier|*
-name|eval_proc
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|void
 DECL|function|batch_run (Gimp * gimp,const gchar ** batch_cmds)
@@ -160,6 +153,13 @@ modifier|*
 name|batch_cmds
 parameter_list|)
 block|{
+specifier|static
+name|ProcRecord
+modifier|*
+name|eval_proc
+init|=
+name|NULL
+decl_stmt|;
 name|gboolean
 name|perl_server_already_running
 init|=
@@ -326,6 +326,8 @@ name|batch_run_cmd
 argument_list|(
 name|gimp
 argument_list|,
+name|eval_proc
+argument_list|,
 name|batch_cmds
 index|[
 name|i
@@ -382,12 +384,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|batch_run_cmd (Gimp * gimp,const gchar * cmd)
+DECL|function|batch_run_cmd (Gimp * gimp,ProcRecord * proc,const gchar * cmd)
 name|batch_run_cmd
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|ProcRecord
+modifier|*
+name|proc
 parameter_list|,
 specifier|const
 name|gchar
@@ -406,34 +412,13 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-if|if
-condition|(
-name|g_ascii_strcasecmp
-argument_list|(
-name|cmd
-argument_list|,
-literal|"(gimp-quit 0)"
-argument_list|)
-operator|==
-literal|0
-condition|)
-block|{
-name|gimp_exit
-argument_list|(
-name|gimp
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 name|args
 operator|=
 name|g_new0
 argument_list|(
 name|Argument
 argument_list|,
-name|eval_proc
+name|proc
 operator|->
 name|num_args
 argument_list|)
@@ -446,7 +431,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|eval_proc
+name|proc
 operator|->
 name|num_args
 condition|;
@@ -460,7 +445,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|eval_proc
+name|proc
 operator|->
 name|args
 index|[
@@ -551,7 +536,7 @@ name|procedural_db_destroy_args
 argument_list|(
 name|vals
 argument_list|,
-name|eval_proc
+name|proc
 operator|->
 name|num_values
 argument_list|)

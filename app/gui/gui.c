@@ -336,7 +336,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|kill_it
+name|force
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -351,7 +351,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|kill_it
+name|force
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1477,7 +1477,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gui_exit_callback (Gimp * gimp,gboolean kill_it)
+DECL|function|gui_exit_callback (Gimp * gimp,gboolean force)
 name|gui_exit_callback
 parameter_list|(
 name|Gimp
@@ -1485,7 +1485,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|kill_it
+name|force
 parameter_list|)
 block|{
 name|GimpGuiConfig
@@ -1513,7 +1513,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|kill_it
+name|force
 operator|&&
 name|gimp_displays_dirty
 argument_list|(
@@ -1656,7 +1656,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gui_exit_after_callback (Gimp * gimp,gboolean kill_it)
+DECL|function|gui_exit_after_callback (Gimp * gimp,gboolean force)
 name|gui_exit_after_callback
 parameter_list|(
 name|Gimp
@@ -1664,7 +1664,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|kill_it
+name|force
 parameter_list|)
 block|{
 if|if

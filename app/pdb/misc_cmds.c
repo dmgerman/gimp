@@ -218,9 +218,9 @@ name|args
 parameter_list|)
 block|{
 name|gboolean
-name|kill_it
+name|force
 decl_stmt|;
-name|kill_it
+name|force
 operator|=
 name|args
 index|[
@@ -239,7 +239,7 @@ name|gimp_exit
 argument_list|(
 name|gimp
 argument_list|,
-name|kill_it
+name|force
 argument_list|)
 expr_stmt|;
 return|return
@@ -265,9 +265,9 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"kill"
+literal|"force"
 block|,
-literal|"Flag specifying whether to kill the gimp process or exit normally"
+literal|"Flag specifying whether to force the gimp to or exit normally"
 block|}
 block|}
 decl_stmt|;
@@ -284,7 +284,7 @@ literal|"gimp_quit"
 block|,
 literal|"Causes the gimp to exit gracefully."
 block|,
-literal|"The internal procedure which can either be used to make the gimp quit normally, or to have the gimp clean up its resources and exit immediately. The normaly shutdown process allows for querying the user to save any dirty images."
+literal|"The internal procedure which can either be used to make the gimp quit. If there are unsaved images in an interactive GIMP session, the user will be asked for confirmation. If force is TRUE, the application is quit without querying the user to save any dirty images."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
