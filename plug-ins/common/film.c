@@ -113,7 +113,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c12f4050108
+DECL|struct|__anon28fa2a050108
 block|{
 DECL|member|film_height
 name|gint
@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c12f4050208
+DECL|struct|__anon28fa2a050208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -1349,12 +1349,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -2411,12 +2405,6 @@ operator|/
 literal|2
 operator|)
 expr_stmt|;
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(

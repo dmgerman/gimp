@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b2c32a0108
+DECL|struct|__anon2b1a04e20108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -582,12 +582,6 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
 name|gimp_progress_init
 argument_list|(
 name|_
