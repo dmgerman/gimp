@@ -91,6 +91,15 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VECTORS, GimpVectorsClass))
 end_define
 
+begin_typedef
+DECL|typedef|GimpVectorsClass
+typedef|typedef
+name|struct
+name|_GimpVectorsClass
+name|GimpVectorsClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpVectors
 struct|struct

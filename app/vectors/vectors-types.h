@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * vectors-types.h  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * vectors-types.h  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -23,18 +23,9 @@ file|"core/core-types.h"
 end_include
 
 begin_typedef
-DECL|typedef|GimpAnchor
-typedef|typedef
-name|struct
-name|_GimpAnchor
-name|GimpAnchor
-typedef|;
-end_typedef
-
-begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a42ae050103
+DECL|enum|__anon29e0f7190103
 block|{
 DECL|enumerator|GIMP_ANCHOR_ANCHOR
 name|GIMP_ANCHOR_ANCHOR
@@ -50,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a42ae050203
+DECL|enum|__anon29e0f7190203
 block|{
 DECL|enumerator|GIMP_ANCHOR_FEATURE_NONE
 name|GIMP_ANCHOR_FEATURE_NONE
@@ -72,7 +63,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a42ae050303
+DECL|enum|__anon29e0f7190303
 block|{
 DECL|enumerator|EXTEND_SIMPLE
 name|EXTEND_SIMPLE
@@ -86,56 +77,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpStroke
+DECL|typedef|GimpAnchor
 typedef|typedef
 name|struct
-name|_GimpStroke
-name|GimpStroke
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpStrokeClass
-typedef|typedef
-name|struct
-name|_GimpStrokeClass
-name|GimpStrokeClass
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpBezierStroke
-typedef|typedef
-name|struct
-name|_GimpBezierStroke
-name|GimpBezierStroke
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpBezierStrokeClass
-typedef|typedef
-name|struct
-name|_GimpBezierStrokeClass
-name|GimpBezierStrokeClass
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpBezier
-typedef|typedef
-name|struct
-name|_GimpBezier
-name|GimpBezier
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpBezierClass
-typedef|typedef
-name|struct
-name|_GimpBezierClass
-name|GimpBezierClass
+name|_GimpAnchor
+name|GimpAnchor
 typedef|;
 end_typedef
 
@@ -149,11 +95,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpVectorsClass
+DECL|typedef|GimpStroke
 typedef|typedef
 name|struct
-name|_GimpVectorsClass
-name|GimpVectorsClass
+name|_GimpStroke
+name|GimpStroke
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBezierStroke
+typedef|typedef
+name|struct
+name|_GimpBezierStroke
+name|GimpBezierStroke
 typedef|;
 end_typedef
 

@@ -91,6 +91,15 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_STROKE, GimpStrokeClass))
 end_define
 
+begin_typedef
+DECL|typedef|GimpStrokeClass
+typedef|typedef
+name|struct
+name|_GimpStrokeClass
+name|GimpStrokeClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpStroke
 struct|struct

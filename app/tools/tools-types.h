@@ -48,15 +48,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpToolModule
-typedef|typedef
-name|struct
-name|_GimpToolModule
-name|GimpToolModule
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpToolControl
 typedef|typedef
 name|struct
@@ -98,15 +89,6 @@ typedef|typedef
 name|struct
 name|_GimpPaintTool
 name|GimpPaintTool
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpPathTool
-typedef|typedef
-name|struct
-name|_GimpPathTool
-name|GimpPathTool
 typedef|;
 end_typedef
 
