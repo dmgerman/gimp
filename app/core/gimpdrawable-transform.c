@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -2603,11 +2609,16 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Start a transform undo group */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|TRANSFORM_UNDO_GROUP
+name|GIMP_UNDO_GROUP_TRANSFORM
+argument_list|,
+name|_
+argument_list|(
+literal|"Transform"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
@@ -2675,7 +2686,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  push the undo group end  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -2746,11 +2757,16 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Start a transform undo group */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|TRANSFORM_UNDO_GROUP
+name|GIMP_UNDO_GROUP_TRANSFORM
+argument_list|,
+name|_
+argument_list|(
+literal|"Flip"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
@@ -2808,7 +2824,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  push the undo group end  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -3113,11 +3129,16 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  Start a group undo  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_EDIT_PASTE
+argument_list|,
+name|_
+argument_list|(
+literal|"Paste Transform"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|floating_sel_attach
@@ -3128,7 +3149,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  End the group undo  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

@@ -984,13 +984,18 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|LAYER_DISPLACE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_DISPLACE
+argument_list|,
+name|_
+argument_list|(
+literal|"Move Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_offsets
@@ -1497,7 +1502,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->
@@ -3530,13 +3535,18 @@ operator|==
 literal|0
 condition|)
 return|return;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|LAYER_DISPLACE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_DISPLACE
+argument_list|,
+name|_
+argument_list|(
+literal|"Move Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3740,7 +3750,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->

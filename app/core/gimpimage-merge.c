@@ -1221,11 +1221,16 @@ return|return
 name|NULL
 return|;
 comment|/*  Start a merge undo group. */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_LAYERS_MERGE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
+argument_list|,
+name|_
+argument_list|(
+literal|"Merge Layers"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|name
@@ -2025,7 +2030,7 @@ name|name
 argument_list|)
 expr_stmt|;
 comment|/*  End the merge undo group  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

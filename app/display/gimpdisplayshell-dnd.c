@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -178,13 +184,18 @@ argument_list|(
 name|viewable
 argument_list|)
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_EDIT_PASTE
+argument_list|,
+name|_
+argument_list|(
+literal|"Drop New Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|new_layer
@@ -253,7 +264,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->

@@ -40,13 +40,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_decl_stmt
@@ -151,11 +157,16 @@ if|if
 condition|(
 name|success
 condition|)
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|MISC_UNDO_GROUP
+name|GIMP_UNDO_GROUP_MISC
+argument_list|,
+name|_
+argument_list|(
+literal|"Plug-In"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -284,7 +295,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -1050,11 +1056,16 @@ operator|!
 name|layer
 condition|)
 return|return;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|TEXT_UNDO_GROUP
+name|GIMP_UNDO_GROUP_TEXT
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Text Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_DRAWABLE
@@ -1089,7 +1100,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

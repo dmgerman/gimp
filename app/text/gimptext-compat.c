@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer-floating-sel.h"
 end_include
 
@@ -103,6 +109,12 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_function
@@ -254,11 +266,16 @@ return|return
 name|NULL
 return|;
 comment|/*  Start a group undo  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|TEXT_UNDO_GROUP
+name|GIMP_UNDO_GROUP_TEXT
+argument_list|,
+name|_
+argument_list|(
+literal|"Text"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the layer offsets  */
@@ -321,7 +338,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  end the group undo  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

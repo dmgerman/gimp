@@ -226,59 +226,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/**********************/
-end_comment
-
-begin_comment
-comment|/*  group Undo funcs  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|undo_push_group_start (GimpImage * gimage,GimpUndoType type)
-name|undo_push_group_start
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpUndoType
-name|type
-parameter_list|)
-block|{
-return|return
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|type
-argument_list|,
-name|NULL
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-name|gboolean
-DECL|function|undo_push_group_end (GimpImage * gimage)
-name|undo_push_group_end
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
-return|return
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/****************/
 end_comment
 
@@ -508,7 +455,7 @@ argument_list|(
 name|ImageUndo
 argument_list|)
 argument_list|,
-name|IMAGE_UNDO
+name|GIMP_UNDO_IMAGE
 argument_list|,
 name|NULL
 argument_list|,
@@ -819,7 +766,7 @@ argument_list|(
 name|ImageUndo
 argument_list|)
 argument_list|,
-name|IMAGE_MOD_UNDO
+name|GIMP_UNDO_IMAGE_MOD
 argument_list|,
 name|NULL
 argument_list|,
@@ -1426,7 +1373,7 @@ argument_list|(
 name|ImageTypeUndo
 argument_list|)
 argument_list|,
-name|IMAGE_TYPE_UNDO
+name|GIMP_UNDO_IMAGE_TYPE
 argument_list|,
 name|NULL
 argument_list|,
@@ -1702,7 +1649,7 @@ argument_list|(
 name|ImageSizeUndo
 argument_list|)
 argument_list|,
-name|IMAGE_SIZE_UNDO
+name|GIMP_UNDO_IMAGE_SIZE
 argument_list|,
 name|NULL
 argument_list|,
@@ -2024,7 +1971,7 @@ argument_list|(
 name|ResolutionUndo
 argument_list|)
 argument_list|,
-name|IMAGE_RESOLUTION_UNDO
+name|GIMP_UNDO_IMAGE_RESOLUTION
 argument_list|,
 name|NULL
 argument_list|,
@@ -2388,7 +2335,7 @@ argument_list|(
 name|QmaskUndo
 argument_list|)
 argument_list|,
-name|IMAGE_QMASK_UNDO
+name|GIMP_UNDO_IMAGE_QMASK
 argument_list|,
 name|NULL
 argument_list|,
@@ -2657,7 +2604,7 @@ argument_list|(
 name|GuideUndo
 argument_list|)
 argument_list|,
-name|IMAGE_GUIDE_UNDO
+name|GIMP_UNDO_IMAGE_GUIDE
 argument_list|,
 name|NULL
 argument_list|,
@@ -3181,7 +3128,7 @@ argument_list|(
 name|MaskUndo
 argument_list|)
 argument_list|,
-name|MASK_UNDO
+name|GIMP_UNDO_MASK
 argument_list|,
 name|NULL
 argument_list|,
@@ -3983,7 +3930,7 @@ argument_list|(
 name|ItemRenameUndo
 argument_list|)
 argument_list|,
-name|ITEM_RENAME_UNDO
+name|GIMP_UNDO_ITEM_RENAME
 argument_list|,
 name|NULL
 argument_list|,
@@ -4319,7 +4266,7 @@ name|undo_push_layer
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_ADD_UNDO
+name|GIMP_UNDO_LAYER_ADD
 argument_list|,
 name|layer
 argument_list|,
@@ -4357,7 +4304,7 @@ name|undo_push_layer
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_REMOVE_UNDO
+name|GIMP_UNDO_LAYER_REMOVE
 argument_list|,
 name|layer
 argument_list|,
@@ -4405,11 +4352,11 @@ name|g_return_val_if_fail
 argument_list|(
 name|type
 operator|==
-name|LAYER_ADD_UNDO
+name|GIMP_UNDO_LAYER_ADD
 operator|||
 name|type
 operator|==
-name|LAYER_REMOVE_UNDO
+name|GIMP_UNDO_LAYER_REMOVE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4546,7 +4493,7 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|LAYER_ADD_UNDO
+name|GIMP_UNDO_LAYER_ADD
 operator|)
 operator|||
 operator|(
@@ -4558,7 +4505,7 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|LAYER_REMOVE_UNDO
+name|GIMP_UNDO_LAYER_REMOVE
 operator|)
 condition|)
 block|{
@@ -5086,7 +5033,7 @@ argument_list|(
 name|LayerModUndo
 argument_list|)
 argument_list|,
-name|LAYER_MOD_UNDO
+name|GIMP_UNDO_LAYER_MOD
 argument_list|,
 name|NULL
 argument_list|,
@@ -5737,7 +5684,7 @@ name|undo_push_layer_mask
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_MASK_ADD_UNDO
+name|GIMP_UNDO_LAYER_MASK_ADD
 argument_list|,
 name|layer
 argument_list|,
@@ -5770,7 +5717,7 @@ name|undo_push_layer_mask
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_MASK_REMOVE_UNDO
+name|GIMP_UNDO_LAYER_MASK_REMOVE
 argument_list|,
 name|layer
 argument_list|,
@@ -5813,11 +5760,11 @@ name|g_return_val_if_fail
 argument_list|(
 name|type
 operator|==
-name|LAYER_MASK_ADD_UNDO
+name|GIMP_UNDO_LAYER_MASK_ADD
 operator|||
 name|type
 operator|==
-name|LAYER_MASK_REMOVE_UNDO
+name|GIMP_UNDO_LAYER_MASK_REMOVE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5948,7 +5895,7 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|LAYER_MASK_ADD_UNDO
+name|GIMP_UNDO_LAYER_MASK_ADD
 operator|)
 operator|||
 operator|(
@@ -5960,7 +5907,7 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|LAYER_MASK_REMOVE_UNDO
+name|GIMP_UNDO_LAYER_MASK_REMOVE
 operator|)
 condition|)
 block|{
@@ -6165,7 +6112,7 @@ argument_list|(
 name|LayerRepositionUndo
 argument_list|)
 argument_list|,
-name|LAYER_REPOSITION_UNDO
+name|GIMP_UNDO_LAYER_REPOSITION
 argument_list|,
 name|NULL
 argument_list|,
@@ -6448,7 +6395,7 @@ argument_list|(
 name|LayerDisplaceUndo
 argument_list|)
 argument_list|,
-name|LAYER_DISPLACE_UNDO
+name|GIMP_UNDO_LAYER_DISPLACE
 argument_list|,
 name|NULL
 argument_list|,
@@ -6972,7 +6919,7 @@ name|undo_push_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|CHANNEL_ADD_UNDO
+name|GIMP_UNDO_CHANNEL_ADD
 argument_list|,
 name|channel
 argument_list|,
@@ -7010,7 +6957,7 @@ name|undo_push_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|CHANNEL_REMOVE_UNDO
+name|GIMP_UNDO_CHANNEL_REMOVE
 argument_list|,
 name|channel
 argument_list|,
@@ -7058,11 +7005,11 @@ name|g_return_val_if_fail
 argument_list|(
 name|type
 operator|==
-name|CHANNEL_ADD_UNDO
+name|GIMP_UNDO_CHANNEL_ADD
 operator|||
 name|type
 operator|==
-name|CHANNEL_REMOVE_UNDO
+name|GIMP_UNDO_CHANNEL_REMOVE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -7199,7 +7146,7 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|CHANNEL_ADD_UNDO
+name|GIMP_UNDO_CHANNEL_ADD
 operator|)
 operator|||
 operator|(
@@ -7211,7 +7158,7 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|CHANNEL_REMOVE_UNDO
+name|GIMP_UNDO_CHANNEL_REMOVE
 operator|)
 condition|)
 block|{
@@ -7568,7 +7515,7 @@ argument_list|(
 name|ChannelModUndo
 argument_list|)
 argument_list|,
-name|CHANNEL_MOD_UNDO
+name|GIMP_UNDO_CHANNEL_MOD
 argument_list|,
 name|NULL
 argument_list|,
@@ -7992,7 +7939,7 @@ argument_list|(
 name|ChannelRepositionUndo
 argument_list|)
 argument_list|,
-name|CHANNEL_REPOSITION_UNDO
+name|GIMP_UNDO_CHANNEL_REPOSITION
 argument_list|,
 name|NULL
 argument_list|,
@@ -8289,7 +8236,7 @@ name|undo_push_vectors
 argument_list|(
 name|gimage
 argument_list|,
-name|VECTORS_ADD_UNDO
+name|GIMP_UNDO_VECTORS_ADD
 argument_list|,
 name|vectors
 argument_list|,
@@ -8327,7 +8274,7 @@ name|undo_push_vectors
 argument_list|(
 name|gimage
 argument_list|,
-name|VECTORS_REMOVE_UNDO
+name|GIMP_UNDO_VECTORS_REMOVE
 argument_list|,
 name|vectors
 argument_list|,
@@ -8375,11 +8322,11 @@ name|g_return_val_if_fail
 argument_list|(
 name|type
 operator|==
-name|VECTORS_ADD_UNDO
+name|GIMP_UNDO_VECTORS_ADD
 operator|||
 name|type
 operator|==
-name|VECTORS_REMOVE_UNDO
+name|GIMP_UNDO_VECTORS_REMOVE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -8516,7 +8463,7 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|VECTORS_ADD_UNDO
+name|GIMP_UNDO_VECTORS_ADD
 operator|)
 operator|||
 operator|(
@@ -8528,7 +8475,7 @@ name|undo
 operator|->
 name|undo_type
 operator|==
-name|VECTORS_REMOVE_UNDO
+name|GIMP_UNDO_VECTORS_REMOVE
 operator|)
 condition|)
 block|{
@@ -8811,7 +8758,7 @@ argument_list|(
 name|VectorsModUndo
 argument_list|)
 argument_list|,
-name|VECTORS_MOD_UNDO
+name|GIMP_UNDO_VECTORS_MOD
 argument_list|,
 name|NULL
 argument_list|,
@@ -9129,7 +9076,7 @@ argument_list|(
 name|VectorsRepositionUndo
 argument_list|)
 argument_list|,
-name|VECTORS_REPOSITION_UNDO
+name|GIMP_UNDO_VECTORS_REPOSITION
 argument_list|,
 name|NULL
 argument_list|,
@@ -9410,7 +9357,7 @@ argument_list|(
 name|FStoLayerUndo
 argument_list|)
 argument_list|,
-name|FS_TO_LAYER_UNDO
+name|GIMP_UNDO_FS_TO_LAYER
 argument_list|,
 name|NULL
 argument_list|,
@@ -9896,7 +9843,7 @@ argument_list|(
 name|gint32
 argument_list|)
 argument_list|,
-name|FS_RIGOR_UNDO
+name|GIMP_UNDO_FS_RIGOR
 argument_list|,
 name|NULL
 argument_list|,
@@ -10248,7 +10195,7 @@ argument_list|(
 name|gint32
 argument_list|)
 argument_list|,
-name|FS_RELAX_UNDO
+name|GIMP_UNDO_FS_RELAX
 argument_list|,
 name|NULL
 argument_list|,
@@ -10654,7 +10601,7 @@ argument_list|(
 name|TransformUndo
 argument_list|)
 argument_list|,
-name|TRANSFORM_UNDO
+name|GIMP_UNDO_TRANSFORM
 argument_list|,
 name|NULL
 argument_list|,
@@ -11130,7 +11077,7 @@ argument_list|(
 name|PaintUndo
 argument_list|)
 argument_list|,
-name|PAINT_UNDO
+name|GIMP_UNDO_PAINT
 argument_list|,
 name|NULL
 argument_list|,
@@ -11468,7 +11415,7 @@ argument_list|(
 name|ParasiteUndo
 argument_list|)
 argument_list|,
-name|PARASITE_ATTACH_UNDO
+name|GIMP_UNDO_PARASITE_ATTACH
 argument_list|,
 name|NULL
 argument_list|,
@@ -11579,7 +11526,7 @@ argument_list|(
 name|ParasiteUndo
 argument_list|)
 argument_list|,
-name|PARASITE_REMOVE_UNDO
+name|GIMP_UNDO_PARASITE_REMOVE
 argument_list|,
 name|NULL
 argument_list|,
@@ -11689,7 +11636,7 @@ argument_list|(
 name|ParasiteUndo
 argument_list|)
 argument_list|,
-name|PARASITE_ATTACH_UNDO
+name|GIMP_UNDO_PARASITE_ATTACH
 argument_list|,
 name|NULL
 argument_list|,
@@ -11804,7 +11751,7 @@ argument_list|(
 name|ParasiteUndo
 argument_list|)
 argument_list|,
-name|PARASITE_REMOVE_UNDO
+name|GIMP_UNDO_PARASITE_REMOVE
 argument_list|,
 name|NULL
 argument_list|,
@@ -12224,7 +12171,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|CANT_UNDO
+name|GIMP_UNDO_CANT
 argument_list|,
 name|NULL
 argument_list|,

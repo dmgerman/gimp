@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -99,10 +105,16 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2da8b90103
+DECL|enum|__anon2b64e6410103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -428,11 +440,16 @@ operator|-
 name|y1
 operator|)
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_RESIZE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_RESIZE
+argument_list|,
+name|_
+argument_list|(
+literal|"Resize Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -476,7 +493,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -491,11 +508,16 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_CROP_UNDO_GROUP
+name|GIMP_UNDO_GROUP_IMAGE_CROP
+argument_list|,
+name|_
+argument_list|(
+literal|"Crop Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  relax the floating layer  */
@@ -862,7 +884,7 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

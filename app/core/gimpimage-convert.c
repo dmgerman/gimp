@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplist.h"
 end_include
 
@@ -151,6 +157,12 @@ begin_include
 include|#
 directive|include
 file|"gimpimage-convert.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -399,7 +411,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29b5abc10103
+DECL|enum|__anon29a5510b0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1427,7 +1439,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5abc10208
+DECL|struct|__anon29a5510b0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1504,7 +1516,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5abc10308
+DECL|struct|__anon29a5510b0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1664,7 +1676,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5abc10408
+DECL|struct|__anon29a5510b0408
 block|{
 DECL|member|used_count
 name|signed
@@ -2710,11 +2722,16 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_CONVERT_UNDO_GROUP
+name|GIMP_UNDO_GROUP_IMAGE_CONVERT
+argument_list|,
+name|_
+argument_list|(
+literal|"Convert"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Relax the floating selection  */
@@ -3690,7 +3707,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

@@ -107,6 +107,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -3275,13 +3281,18 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Start a transform undo group  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|TRANSFORM_UNDO_GROUP
+name|GIMP_UNDO_GROUP_TRANSFORM
+argument_list|,
+name|_
+argument_list|(
+literal|"Transform"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* With the old UI, if original is NULL, then this is the    * first transformation. In the new UI, it is always so, right?    */
@@ -3414,7 +3425,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  push the undo group end  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->

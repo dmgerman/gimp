@@ -17,35 +17,6 @@ name|__UNDO_H__
 end_define
 
 begin_comment
-comment|/*  undo groups  */
-end_comment
-
-begin_function_decl
-name|gboolean
-name|undo_push_group_start
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpUndoType
-name|undo_type
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|undo_push_group_end
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  image undos  */
 end_comment
 

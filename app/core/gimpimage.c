@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2999b4170103
+DECL|enum|__anon2bd2d03a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1910,7 +1910,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|=
-name|NO_UNDO_GROUP
+name|GIMP_UNDO_GROUP_NONE
 expr_stmt|;
 name|gimage
 operator|->

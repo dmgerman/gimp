@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer-floating-sel.h"
 end_include
 
@@ -175,11 +181,16 @@ operator|!
 name|mask
 condition|)
 block|{
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_QMASK_UNDO_GROUP
+name|GIMP_UNDO_GROUP_IMAGE_QMASK
+argument_list|,
+name|_
+argument_list|(
+literal|"Enable QuickMask"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -341,7 +352,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -379,11 +390,16 @@ condition|(
 name|mask
 condition|)
 block|{
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_QMASK_UNDO_GROUP
+name|GIMP_UNDO_GROUP_IMAGE_QMASK
+argument_list|,
+name|_
+argument_list|(
+literal|"Disable QuickMask"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  push the undo here since removing the mask will                *  call the qmask_removed_callback() which will set                *  the qmask_state to FALSE                */
@@ -419,7 +435,7 @@ argument_list|,
 name|mask
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

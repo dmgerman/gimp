@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimppaintinfo.h"
 end_include
 
@@ -286,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d95290108
+DECL|struct|__anon27b7aaa20108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d95290208
+DECL|struct|__anon27b7aaa20208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d95290308
+DECL|struct|__anon27b7aaa20308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -13912,13 +13918,18 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/*  Start an undo group  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|PAINT_UNDO_GROUP
+name|GIMP_UNDO_GROUP_PAINT
+argument_list|,
+name|_
+argument_list|(
+literal|"Stroke Path"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|bezier_gen_points
@@ -14158,7 +14169,7 @@ name|rpnts
 condition|)
 do|;
 comment|/*  End an undo group  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->

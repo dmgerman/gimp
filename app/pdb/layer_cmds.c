@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -107,6 +113,12 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_decl_stmt
@@ -1676,11 +1688,16 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_SCALE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_SCALE
+argument_list|,
+name|_
+argument_list|(
+literal|"Scale Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1722,7 +1739,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -1995,11 +2012,16 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_RESIZE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_RESIZE
+argument_list|,
+name|_
+argument_list|(
+literal|"Resize Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2037,7 +2059,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -2432,11 +2454,16 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_LINKED_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_LINKED
+argument_list|,
+name|_
+argument_list|(
+literal|"Move Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2517,7 +2544,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -2877,11 +2904,16 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_LINKED_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_LINKED
+argument_list|,
+name|_
+argument_list|(
+literal|"Move Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2980,7 +3012,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

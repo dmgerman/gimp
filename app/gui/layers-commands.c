@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -1055,11 +1061,16 @@ name|off_y
 operator|-=
 name|y1
 expr_stmt|;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_RESIZE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_RESIZE
+argument_list|,
+name|_
+argument_list|(
+literal|"Crop Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1107,7 +1118,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -2095,11 +2106,16 @@ operator|=
 name|GIMP_NORMAL_MODE
 expr_stmt|;
 block|}
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_EDIT_PASTE
+argument_list|,
+name|_
+argument_list|(
+literal|"New Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|new_layer
@@ -2169,7 +2185,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -3064,13 +3080,18 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|options
 operator|->
 name|gimage
 argument_list|,
-name|LAYER_PROPERTIES_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_PROPERTIES
+argument_list|,
+name|_
+argument_list|(
+literal|"Rename Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3110,7 +3131,7 @@ argument_list|,
 name|new_name
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|options
 operator|->
@@ -4121,11 +4142,16 @@ condition|(
 name|gimage
 condition|)
 block|{
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_SCALE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_SCALE
+argument_list|,
+name|_
+argument_list|(
+literal|"Scale Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4181,7 +4207,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -4462,11 +4488,16 @@ condition|(
 name|gimage
 condition|)
 block|{
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_RESIZE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_RESIZE
+argument_list|,
+name|_
+argument_list|(
+literal|"Resize Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4526,7 +4557,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

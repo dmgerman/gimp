@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpitem.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac3a0b40103
+DECL|enum|__anon2a58f1e10103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -1770,13 +1776,18 @@ argument_list|)
 condition|)
 block|{
 comment|/* do a group in case we have attach_parent set */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|item
 operator|->
 name|gimage
 argument_list|,
-name|PARASITE_ATTACH_UNDO_GROUP
+name|GIMP_UNDO_GROUP_PARASITE_ATTACH
+argument_list|,
+name|_
+argument_list|(
+literal|"Attach Parasite"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|undo_push_item_parasite
@@ -1904,7 +1915,7 @@ name|parasite
 argument_list|)
 condition|)
 block|{
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|item
 operator|->

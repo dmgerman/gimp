@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -1479,11 +1485,16 @@ name|NULL
 return|;
 block|}
 comment|/*  Start an undo group  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|FS_FLOAT_UNDO_GROUP
+name|GIMP_UNDO_GROUP_FS_FLOAT
+argument_list|,
+name|_
+argument_list|(
+literal|"Float Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Cut the selected region  */
@@ -1575,7 +1586,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  End an undo group  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -2540,11 +2551,16 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/*  Start an undo group  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|PAINT_UNDO_GROUP
+name|GIMP_UNDO_GROUP_PAINT
+argument_list|,
+name|_
+argument_list|(
+literal|"Stroke Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|seg
@@ -2885,7 +2901,7 @@ name|stroke_segs
 argument_list|)
 expr_stmt|;
 comment|/*  End an undo group  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

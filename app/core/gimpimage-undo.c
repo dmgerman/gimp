@@ -139,7 +139,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|==
-name|NO_UNDO_GROUP
+name|GIMP_UNDO_GROUP_NONE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -191,7 +191,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|==
-name|NO_UNDO_GROUP
+name|GIMP_UNDO_GROUP_NONE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -325,11 +325,11 @@ name|g_return_val_if_fail
 argument_list|(
 name|type
 operator|>
-name|FIRST_UNDO_GROUP
+name|GIMP_UNDO_GROUP_FIRST
 operator|&&
 name|type
 operator|<=
-name|LAST_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAST
 argument_list|,
 name|FALSE
 argument_list|)
@@ -518,7 +518,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|=
-name|NO_UNDO_GROUP
+name|GIMP_UNDO_GROUP_NONE
 expr_stmt|;
 name|gimp_image_undo_free_space
 argument_list|(
@@ -597,7 +597,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|type
 operator|>
-name|LAST_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAST
 argument_list|,
 name|NULL
 argument_list|)
@@ -702,7 +702,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|==
-name|NO_UNDO_GROUP
+name|GIMP_UNDO_GROUP_NONE
 condition|)
 block|{
 name|gimp_undo_stack_push_undo

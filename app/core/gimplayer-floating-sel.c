@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -368,11 +374,16 @@ expr_stmt|;
 return|return;
 block|}
 comment|/*  Start a floating selection anchoring undo  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|FS_ANCHOR_UNDO_GROUP
+name|GIMP_UNDO_GROUP_FS_ANCHOR
+argument_list|,
+name|_
+argument_list|(
+literal|"Anchor Floating Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Invalidate the previews of the layer that will be composited    * with the floating section.    */
@@ -441,7 +452,7 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  end the group undo  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

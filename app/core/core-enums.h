@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0103
+DECL|enum|__anon2b6773770103
 block|{
 DECL|enumerator|GIMP_ORIENTATION_HORIZONTAL
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -122,7 +122,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0203
+DECL|enum|__anon2b6773770203
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB_MODE
 name|GIMP_FG_BG_RGB_MODE
@@ -166,7 +166,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0303
+DECL|enum|__anon2b6773770303
 block|{
 DECL|enumerator|GIMP_FG_BUCKET_FILL
 name|GIMP_FG_BUCKET_FILL
@@ -210,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0403
+DECL|enum|__anon2b6773770403
 block|{
 DECL|enumerator|GIMP_CHANNEL_OP_ADD
 name|GIMP_CHANNEL_OP_ADD
@@ -258,7 +258,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0503
+DECL|enum|__anon2b6773770503
 block|{
 DECL|enumerator|GIMP_RED_CHANNEL
 name|GIMP_RED_CHANNEL
@@ -304,7 +304,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0603
+DECL|enum|__anon2b6773770603
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -353,7 +353,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a8d953f0703
+DECL|enum|__anon2b6773770703
 block|{
 DECL|enumerator|GIMP_GRAVITY_NONE
 name|GIMP_GRAVITY_NONE
@@ -411,7 +411,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0803
+DECL|enum|__anon2b6773770803
 block|{
 DECL|enumerator|GIMP_FOREGROUND_FILL
 name|GIMP_FOREGROUND_FILL
@@ -459,7 +459,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0903
+DECL|enum|__anon2b6773770903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -531,7 +531,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0a03
+DECL|enum|__anon2b6773770a03
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -571,7 +571,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0b03
+DECL|enum|__anon2b6773770b03
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -624,7 +624,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a8d953f0c03
+DECL|enum|__anon2b6773770c03
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_NONE
 name|GIMP_PREVIEW_SIZE_NONE
@@ -712,7 +712,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d953f0d03
+DECL|enum|__anon2b6773770d03
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -753,7 +753,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a8d953f0e03
+DECL|enum|__anon2b6773770e03
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -797,7 +797,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a8d953f0f03
+DECL|enum|__anon2b6773770f03
 block|{
 DECL|enumerator|GIMP_THUMBNAIL_SIZE_NONE
 name|GIMP_THUMBNAIL_SIZE_NONE
@@ -844,7 +844,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a8d953f1003
+DECL|enum|__anon2b6773771003
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD
@@ -881,7 +881,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a8d953f1103
+DECL|enum|__anon2b6773771103
 block|{
 DECL|enumerator|GIMP_UNDO_MODE_UNDO
 name|GIMP_UNDO_MODE_UNDO
@@ -916,249 +916,250 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a8d953f1203
+DECL|enum|__anon2b6773771203
 block|{
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
-DECL|enumerator|NO_UNDO_GROUP
-name|NO_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_NONE
+name|GIMP_UNDO_GROUP_NONE
 init|=
 literal|0
 block|,
 comment|/*< desc="<<invalid>>">*/
-DECL|enumerator|FIRST_UNDO_GROUP
-name|FIRST_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_FIRST
+name|GIMP_UNDO_GROUP_FIRST
 init|=
-name|NO_UNDO_GROUP
+name|GIMP_UNDO_GROUP_NONE
 block|,
-DECL|enumerator|IMAGE_SCALE_UNDO_GROUP
-name|IMAGE_SCALE_UNDO_GROUP
+comment|/*< skip>*/
+DECL|enumerator|GIMP_UNDO_GROUP_IMAGE_SCALE
+name|GIMP_UNDO_GROUP_IMAGE_SCALE
 block|,
 comment|/*< desc="Scale Image">*/
-DECL|enumerator|IMAGE_RESIZE_UNDO_GROUP
-name|IMAGE_RESIZE_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_IMAGE_RESIZE
+name|GIMP_UNDO_GROUP_IMAGE_RESIZE
 block|,
 comment|/*< desc="Resize Image">*/
-DECL|enumerator|IMAGE_CONVERT_UNDO_GROUP
-name|IMAGE_CONVERT_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_IMAGE_CONVERT
+name|GIMP_UNDO_GROUP_IMAGE_CONVERT
 block|,
 comment|/*< desc="Convert Image">*/
-DECL|enumerator|IMAGE_CROP_UNDO_GROUP
-name|IMAGE_CROP_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_IMAGE_CROP
+name|GIMP_UNDO_GROUP_IMAGE_CROP
 block|,
 comment|/*< desc="Crop Image">*/
-DECL|enumerator|IMAGE_LAYERS_MERGE_UNDO_GROUP
-name|IMAGE_LAYERS_MERGE_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
+name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 block|,
 comment|/*< desc="Merge Layers">*/
-DECL|enumerator|IMAGE_QMASK_UNDO_GROUP
-name|IMAGE_QMASK_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_IMAGE_QMASK
+name|GIMP_UNDO_GROUP_IMAGE_QMASK
 block|,
 comment|/*< desc="QuickMask">*/
-DECL|enumerator|IMAGE_GUIDE_UNDO_GROUP
-name|IMAGE_GUIDE_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_IMAGE_GUIDE
+name|GIMP_UNDO_GROUP_IMAGE_GUIDE
 block|,
 comment|/*< desc="Guide">*/
-DECL|enumerator|LAYER_PROPERTIES_UNDO_GROUP
-name|LAYER_PROPERTIES_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_LAYER_PROPERTIES
+name|GIMP_UNDO_GROUP_LAYER_PROPERTIES
 block|,
 comment|/*< desc="Layer Properties">*/
-DECL|enumerator|LAYER_SCALE_UNDO_GROUP
-name|LAYER_SCALE_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_LAYER_SCALE
+name|GIMP_UNDO_GROUP_LAYER_SCALE
 block|,
 comment|/*< desc="Scale Layer">*/
-DECL|enumerator|LAYER_RESIZE_UNDO_GROUP
-name|LAYER_RESIZE_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_LAYER_RESIZE
+name|GIMP_UNDO_GROUP_LAYER_RESIZE
 block|,
 comment|/*< desc="Resize Layer">*/
-DECL|enumerator|LAYER_DISPLACE_UNDO_GROUP
-name|LAYER_DISPLACE_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_LAYER_DISPLACE
+name|GIMP_UNDO_GROUP_LAYER_DISPLACE
 block|,
 comment|/*< desc="Move Layer">*/
-DECL|enumerator|LAYER_LINKED_UNDO_GROUP
-name|LAYER_LINKED_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_LAYER_LINKED
+name|GIMP_UNDO_GROUP_LAYER_LINKED
 block|,
 comment|/*< desc="Linked Layer">*/
-DECL|enumerator|LAYER_APPLY_MASK_UNDO_GROUP
-name|LAYER_APPLY_MASK_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_LAYER_APPLY_MASK
+name|GIMP_UNDO_GROUP_LAYER_APPLY_MASK
 block|,
 comment|/*< desc="Apply Layer Mask">*/
-DECL|enumerator|FS_FLOAT_UNDO_GROUP
-name|FS_FLOAT_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_FS_FLOAT
+name|GIMP_UNDO_GROUP_FS_FLOAT
 block|,
 comment|/*< desc="Float Selection">*/
-DECL|enumerator|FS_ANCHOR_UNDO_GROUP
-name|FS_ANCHOR_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_FS_ANCHOR
+name|GIMP_UNDO_GROUP_FS_ANCHOR
 block|,
 comment|/*< desc="Anchor Floating Selection">*/
-DECL|enumerator|EDIT_PASTE_UNDO_GROUP
-name|EDIT_PASTE_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_EDIT_PASTE
+name|GIMP_UNDO_GROUP_EDIT_PASTE
 block|,
 comment|/*< desc="Paste">*/
-DECL|enumerator|EDIT_CUT_UNDO_GROUP
-name|EDIT_CUT_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_EDIT_CUT
+name|GIMP_UNDO_GROUP_EDIT_CUT
 block|,
 comment|/*< desc="Cut">*/
-DECL|enumerator|EDIT_COPY_UNDO_GROUP
-name|EDIT_COPY_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_EDIT_COPY
+name|GIMP_UNDO_GROUP_EDIT_COPY
 block|,
 comment|/*< desc="Copy">*/
-DECL|enumerator|TEXT_UNDO_GROUP
-name|TEXT_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_TEXT
+name|GIMP_UNDO_GROUP_TEXT
 block|,
 comment|/*< desc="Text">*/
-DECL|enumerator|TRANSFORM_UNDO_GROUP
-name|TRANSFORM_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_TRANSFORM
+name|GIMP_UNDO_GROUP_TRANSFORM
 block|,
 comment|/*< desc="Transform">*/
-DECL|enumerator|PAINT_UNDO_GROUP
-name|PAINT_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_PAINT
+name|GIMP_UNDO_GROUP_PAINT
 block|,
 comment|/*< desc="Paint">*/
-DECL|enumerator|PARASITE_ATTACH_UNDO_GROUP
-name|PARASITE_ATTACH_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_PARASITE_ATTACH
+name|GIMP_UNDO_GROUP_PARASITE_ATTACH
 block|,
 comment|/*< desc="Attach Parasite">*/
-DECL|enumerator|PARASITE_REMOVE_UNDO_GROUP
-name|PARASITE_REMOVE_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_PARASITE_REMOVE
+name|GIMP_UNDO_GROUP_PARASITE_REMOVE
 block|,
 comment|/*< desc="Remove Parasite">*/
-DECL|enumerator|MISC_UNDO_GROUP
-name|MISC_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_MISC
+name|GIMP_UNDO_GROUP_MISC
 block|,
 comment|/*< desc="Plug-In">*/
-DECL|enumerator|LAST_UNDO_GROUP
-name|LAST_UNDO_GROUP
+DECL|enumerator|GIMP_UNDO_GROUP_LAST
+name|GIMP_UNDO_GROUP_LAST
 init|=
-name|MISC_UNDO_GROUP
+name|GIMP_UNDO_GROUP_MISC
 block|,
+comment|/*< skip>*/
 comment|/*  Undo types which actually do something  */
-DECL|enumerator|IMAGE_UNDO
-name|IMAGE_UNDO
+DECL|enumerator|GIMP_UNDO_IMAGE
+name|GIMP_UNDO_IMAGE
 block|,
 comment|/*< desc="Image">*/
-DECL|enumerator|IMAGE_MOD_UNDO
-name|IMAGE_MOD_UNDO
+DECL|enumerator|GIMP_UNDO_IMAGE_MOD
+name|GIMP_UNDO_IMAGE_MOD
 block|,
 comment|/*< desc="Image Mod">*/
-DECL|enumerator|IMAGE_TYPE_UNDO
-name|IMAGE_TYPE_UNDO
+DECL|enumerator|GIMP_UNDO_IMAGE_TYPE
+name|GIMP_UNDO_IMAGE_TYPE
 block|,
 comment|/*< desc="Image Type">*/
-DECL|enumerator|IMAGE_SIZE_UNDO
-name|IMAGE_SIZE_UNDO
+DECL|enumerator|GIMP_UNDO_IMAGE_SIZE
+name|GIMP_UNDO_IMAGE_SIZE
 block|,
 comment|/*< desc="Image Size">*/
-DECL|enumerator|IMAGE_RESOLUTION_UNDO
-name|IMAGE_RESOLUTION_UNDO
+DECL|enumerator|GIMP_UNDO_IMAGE_RESOLUTION
+name|GIMP_UNDO_IMAGE_RESOLUTION
 block|,
 comment|/*< desc="Resolution Change">*/
-DECL|enumerator|IMAGE_QMASK_UNDO
-name|IMAGE_QMASK_UNDO
+DECL|enumerator|GIMP_UNDO_IMAGE_QMASK
+name|GIMP_UNDO_IMAGE_QMASK
 block|,
 comment|/*< desc="QuickMask">*/
-DECL|enumerator|IMAGE_GUIDE_UNDO
-name|IMAGE_GUIDE_UNDO
+DECL|enumerator|GIMP_UNDO_IMAGE_GUIDE
+name|GIMP_UNDO_IMAGE_GUIDE
 block|,
 comment|/*< desc="Guide">*/
-DECL|enumerator|MASK_UNDO
-name|MASK_UNDO
+DECL|enumerator|GIMP_UNDO_MASK
+name|GIMP_UNDO_MASK
 block|,
 comment|/*< desc="Selection Mask">*/
-DECL|enumerator|ITEM_RENAME_UNDO
-name|ITEM_RENAME_UNDO
+DECL|enumerator|GIMP_UNDO_ITEM_RENAME
+name|GIMP_UNDO_ITEM_RENAME
 block|,
 comment|/*< desc="Rename Item">*/
-DECL|enumerator|LAYER_ADD_UNDO
-name|LAYER_ADD_UNDO
+DECL|enumerator|GIMP_UNDO_LAYER_ADD
+name|GIMP_UNDO_LAYER_ADD
 block|,
 comment|/*< desc="New Layer">*/
-DECL|enumerator|LAYER_REMOVE_UNDO
-name|LAYER_REMOVE_UNDO
+DECL|enumerator|GIMP_UNDO_LAYER_REMOVE
+name|GIMP_UNDO_LAYER_REMOVE
 block|,
 comment|/*< desc="Delete Layer">*/
-DECL|enumerator|LAYER_MOD_UNDO
-name|LAYER_MOD_UNDO
+DECL|enumerator|GIMP_UNDO_LAYER_MOD
+name|GIMP_UNDO_LAYER_MOD
 block|,
 comment|/*< desc="Layer Mod">*/
-DECL|enumerator|LAYER_MASK_ADD_UNDO
-name|LAYER_MASK_ADD_UNDO
+DECL|enumerator|GIMP_UNDO_LAYER_MASK_ADD
+name|GIMP_UNDO_LAYER_MASK_ADD
 block|,
 comment|/*< desc="Add Layer Mask">*/
-DECL|enumerator|LAYER_MASK_REMOVE_UNDO
-name|LAYER_MASK_REMOVE_UNDO
+DECL|enumerator|GIMP_UNDO_LAYER_MASK_REMOVE
+name|GIMP_UNDO_LAYER_MASK_REMOVE
 block|,
 comment|/*< desc="Delete Layer Mask">*/
-DECL|enumerator|LAYER_REPOSITION_UNDO
-name|LAYER_REPOSITION_UNDO
+DECL|enumerator|GIMP_UNDO_LAYER_REPOSITION
+name|GIMP_UNDO_LAYER_REPOSITION
 block|,
 comment|/*< desc="Layer Reposition">*/
-DECL|enumerator|LAYER_DISPLACE_UNDO
-name|LAYER_DISPLACE_UNDO
+DECL|enumerator|GIMP_UNDO_LAYER_DISPLACE
+name|GIMP_UNDO_LAYER_DISPLACE
 block|,
 comment|/*< desc="Layer Move">*/
-DECL|enumerator|CHANNEL_ADD_UNDO
-name|CHANNEL_ADD_UNDO
+DECL|enumerator|GIMP_UNDO_CHANNEL_ADD
+name|GIMP_UNDO_CHANNEL_ADD
 block|,
 comment|/*< desc="New Channel">*/
-DECL|enumerator|CHANNEL_REMOVE_UNDO
-name|CHANNEL_REMOVE_UNDO
+DECL|enumerator|GIMP_UNDO_CHANNEL_REMOVE
+name|GIMP_UNDO_CHANNEL_REMOVE
 block|,
 comment|/*< desc="Delete Channel">*/
-DECL|enumerator|CHANNEL_MOD_UNDO
-name|CHANNEL_MOD_UNDO
+DECL|enumerator|GIMP_UNDO_CHANNEL_MOD
+name|GIMP_UNDO_CHANNEL_MOD
 block|,
 comment|/*< desc="Channel Mod">*/
-DECL|enumerator|CHANNEL_REPOSITION_UNDO
-name|CHANNEL_REPOSITION_UNDO
+DECL|enumerator|GIMP_UNDO_CHANNEL_REPOSITION
+name|GIMP_UNDO_CHANNEL_REPOSITION
 block|,
 comment|/*< desc="Channel Reposition">*/
-DECL|enumerator|VECTORS_ADD_UNDO
-name|VECTORS_ADD_UNDO
+DECL|enumerator|GIMP_UNDO_VECTORS_ADD
+name|GIMP_UNDO_VECTORS_ADD
 block|,
 comment|/*< desc="New Vectors">*/
-DECL|enumerator|VECTORS_REMOVE_UNDO
-name|VECTORS_REMOVE_UNDO
+DECL|enumerator|GIMP_UNDO_VECTORS_REMOVE
+name|GIMP_UNDO_VECTORS_REMOVE
 block|,
 comment|/*< desc="Delete Vectors">*/
-DECL|enumerator|VECTORS_MOD_UNDO
-name|VECTORS_MOD_UNDO
+DECL|enumerator|GIMP_UNDO_VECTORS_MOD
+name|GIMP_UNDO_VECTORS_MOD
 block|,
 comment|/*< desc="Vectors Mod">*/
-DECL|enumerator|VECTORS_REPOSITION_UNDO
-name|VECTORS_REPOSITION_UNDO
+DECL|enumerator|GIMP_UNDO_VECTORS_REPOSITION
+name|GIMP_UNDO_VECTORS_REPOSITION
 block|,
 comment|/*< desc="Vectors Reposition">*/
-DECL|enumerator|FS_TO_LAYER_UNDO
-name|FS_TO_LAYER_UNDO
+DECL|enumerator|GIMP_UNDO_FS_TO_LAYER
+name|GIMP_UNDO_FS_TO_LAYER
 block|,
 comment|/*< desc="FS to Layer">*/
-DECL|enumerator|FS_RIGOR_UNDO
-name|FS_RIGOR_UNDO
+DECL|enumerator|GIMP_UNDO_FS_RIGOR
+name|GIMP_UNDO_FS_RIGOR
 block|,
 comment|/*< desc="FS Rigor">*/
-DECL|enumerator|FS_RELAX_UNDO
-name|FS_RELAX_UNDO
+DECL|enumerator|GIMP_UNDO_FS_RELAX
+name|GIMP_UNDO_FS_RELAX
 block|,
 comment|/*< desc="FS Relax">*/
-DECL|enumerator|TRANSFORM_UNDO
-name|TRANSFORM_UNDO
+DECL|enumerator|GIMP_UNDO_TRANSFORM
+name|GIMP_UNDO_TRANSFORM
 block|,
 comment|/*< desc="Transform">*/
-DECL|enumerator|PAINT_UNDO
-name|PAINT_UNDO
+DECL|enumerator|GIMP_UNDO_PAINT
+name|GIMP_UNDO_PAINT
 block|,
 comment|/*< desc="Paint">*/
-DECL|enumerator|PARASITE_ATTACH_UNDO
-name|PARASITE_ATTACH_UNDO
+DECL|enumerator|GIMP_UNDO_PARASITE_ATTACH
+name|GIMP_UNDO_PARASITE_ATTACH
 block|,
 comment|/*< desc="Attach Parasite">*/
-DECL|enumerator|PARASITE_REMOVE_UNDO
-name|PARASITE_REMOVE_UNDO
+DECL|enumerator|GIMP_UNDO_PARASITE_REMOVE
+name|GIMP_UNDO_PARASITE_REMOVE
 block|,
 comment|/*< desc="Remove Parasite">*/
-DECL|enumerator|CANT_UNDO
-name|CANT_UNDO
-block|,
+DECL|enumerator|GIMP_UNDO_CANT
+name|GIMP_UNDO_CANT
 comment|/*< desc="EEK: can't undo">*/
 DECL|typedef|GimpUndoType
 block|}
@@ -1174,7 +1175,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a8d953f1303
+DECL|enum|__anon2b6773771303
 block|{
 DECL|enumerator|GIMP_MAKE_PALETTE
 name|GIMP_MAKE_PALETTE
@@ -1201,7 +1202,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2a8d953f1403
+DECL|enum|__anon2b6773771403
 block|{
 DECL|enumerator|GIMP_GRAD_LINEAR
 name|GIMP_GRAD_LINEAR
@@ -1230,7 +1231,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2a8d953f1503
+DECL|enum|__anon2b6773771503
 block|{
 DECL|enumerator|GIMP_GRAD_RGB
 name|GIMP_GRAD_RGB
@@ -1253,7 +1254,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a8d953f1603
+DECL|enum|__anon2b6773771603
 block|{
 DECL|enumerator|GIMP_ADD_WHITE_MASK
 name|GIMP_ADD_WHITE_MASK
@@ -1285,7 +1286,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a8d953f1703
+DECL|enum|__anon2b6773771703
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -1302,7 +1303,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a8d953f1803
+DECL|enum|__anon2b6773771803
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -1325,7 +1326,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a8d953f1903
+DECL|enum|__anon2b6773771903
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND

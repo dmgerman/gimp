@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -138,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f83ab0108
+DECL|struct|__anon2acb5e450108
 block|{
 DECL|member|resize
 name|Resize
@@ -1716,11 +1722,16 @@ operator|->
 name|yresolution
 condition|)
 block|{
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_SCALE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_IMAGE_SCALE
+argument_list|,
+name|_
+argument_list|(
+literal|"Scale Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_resolution
@@ -1763,11 +1774,16 @@ condition|(
 operator|!
 name|display_flush
 condition|)
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_SCALE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_IMAGE_SCALE
+argument_list|,
+name|_
+argument_list|(
+literal|"Scale Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_unit
@@ -1837,11 +1853,16 @@ condition|(
 operator|!
 name|display_flush
 condition|)
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|IMAGE_SCALE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_IMAGE_SCALE
+argument_list|,
+name|_
+argument_list|(
+literal|"Scale Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|progress
@@ -1920,7 +1941,7 @@ condition|(
 name|display_flush
 condition|)
 block|{
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

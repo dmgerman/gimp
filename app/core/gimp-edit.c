@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -170,11 +176,16 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Start a group undo  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_CUT_UNDO_GROUP
+name|GIMP_UNDO_GROUP_EDIT_CUT
+argument_list|,
+name|_
+argument_list|(
+literal|"Cut"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  See if the gimage mask is empty  */
@@ -264,7 +275,7 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/*  end the group undo  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -369,11 +380,16 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Start a group undo  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_COPY_UNDO_GROUP
+name|GIMP_UNDO_GROUP_EDIT_COPY
+argument_list|,
+name|_
+argument_list|(
+literal|"Copy"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  See if the gimage mask is empty  */
@@ -463,7 +479,7 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/*  end the group undo  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -638,11 +654,16 @@ return|return
 name|NULL
 return|;
 comment|/*  Start a group undo  */
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_EDIT_PASTE
+argument_list|,
+name|_
+argument_list|(
+literal|"Paste"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the offsets to the center of the image  */
@@ -815,7 +836,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  end the group undo  */
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

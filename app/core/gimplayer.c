@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -137,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299b8ab70103
+DECL|enum|__anon2b5f1e6d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3033,11 +3039,16 @@ condition|(
 name|push_undo
 condition|)
 block|{
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_APPLY_MASK_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_APPLY_MASK
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply Layer Mask"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|undo_push_layer_mask_remove
@@ -3251,7 +3262,7 @@ condition|(
 name|push_undo
 condition|)
 block|{
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)
@@ -5184,11 +5195,16 @@ argument_list|)
 operator|)
 condition|)
 return|return;
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|LAYER_RESIZE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_LAYER_RESIZE
+argument_list|,
+name|_
+argument_list|(
+literal|"Layer to Image Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5250,7 +5266,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

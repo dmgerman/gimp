@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-mask-select.h"
 end_include
 
@@ -1017,11 +1023,16 @@ literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_EDIT_PASTE
+argument_list|,
+name|_
+argument_list|(
+literal|"New Channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|new_channel
@@ -1087,7 +1098,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
 argument_list|)

@@ -83,6 +83,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -1042,13 +1048,18 @@ name|create_hguide
 operator|&&
 name|create_vguide
 condition|)
-name|undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|IMAGE_GUIDE_UNDO_GROUP
+name|GIMP_UNDO_GROUP_IMAGE_GUIDE
+argument_list|,
+name|_
+argument_list|(
+literal|"Add Guides"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1145,7 +1156,7 @@ name|create_hguide
 operator|&&
 name|create_vguide
 condition|)
-name|undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gdisp
 operator|->
