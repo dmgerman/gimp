@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b28df140103
+DECL|enum|__anon2bf31f320103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4245,11 +4245,8 @@ argument_list|,
 literal|"Waiting for debugger..."
 argument_list|)
 expr_stmt|;
-name|kill
+name|raise
 argument_list|(
-name|getpid
-argument_list|()
-argument_list|,
 name|SIGSTOP
 argument_list|)
 expr_stmt|;
