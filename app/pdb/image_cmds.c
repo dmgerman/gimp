@@ -11781,7 +11781,7 @@ if|if
 condition|(
 name|component
 operator|<
-name|GIMP_GREEN_CHANNEL
+name|GIMP_RED_CHANNEL
 operator|||
 name|component
 operator|>
@@ -12032,7 +12032,7 @@ if|if
 condition|(
 name|component
 operator|<
-name|GIMP_GREEN_CHANNEL
+name|GIMP_RED_CHANNEL
 operator|||
 name|component
 operator|>
@@ -12277,7 +12277,7 @@ if|if
 condition|(
 name|component
 operator|<
-name|GIMP_GREEN_CHANNEL
+name|GIMP_RED_CHANNEL
 operator|||
 name|component
 operator|>
@@ -12528,7 +12528,7 @@ if|if
 condition|(
 name|component
 operator|<
-name|GIMP_GREEN_CHANNEL
+name|GIMP_RED_CHANNEL
 operator|||
 name|component
 operator|>
