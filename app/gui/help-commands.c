@@ -309,7 +309,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon275c52fd0108
+DECL|struct|__anon295368390108
 typedef|typedef
 struct|struct
 block|{
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c52fd0208
+DECL|struct|__anon295368390208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4203,7 +4203,7 @@ operator|==
 operator|&
 name|edit_stingy_memory_use
 condition|)
-name|stingy_memory_use
+name|edit_stingy_memory_use
 operator|=
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4571,7 +4571,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon275c52fd0308
+DECL|struct|__anon295368390308
 struct|struct
 block|{
 DECL|member|label
@@ -4640,7 +4640,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon275c52fd0408
+DECL|struct|__anon295368390408
 struct|struct
 block|{
 DECL|member|label
