@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
 
@@ -49,12 +55,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
 
 begin_ifdef
 ifdef|#
