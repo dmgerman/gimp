@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29beff3f0103
+DECL|enum|__anon297b785e0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29beff3f0203
+DECL|enum|__anon297b785e0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -171,14 +171,15 @@ name|COMPRESS_ZLIB
 init|=
 literal|2
 block|,
+comment|/* unused */
 DECL|enumerator|COMPRESS_FRACTAL
 name|COMPRESS_FRACTAL
 init|=
 literal|3
-comment|/* Unused. */
-DECL|typedef|CompressionType
+comment|/* unused */
+DECL|typedef|XcfCompressionType
 block|}
-name|CompressionType
+name|XcfCompressionType
 typedef|;
 end_typedef
 
@@ -244,7 +245,7 @@ modifier|*
 name|ref_count
 decl_stmt|;
 DECL|member|compression
-name|gint
+name|XcfCompressionType
 name|compression
 decl_stmt|;
 DECL|member|file_version

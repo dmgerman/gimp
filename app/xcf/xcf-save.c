@@ -1691,8 +1691,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_a_parasite (gchar * key,GimpParasite * p,XcfInfo * info)
-name|write_a_parasite
+DECL|function|xcf_save_parasite (gchar * key,GimpParasite * parasite,XcfInfo * info)
+name|xcf_save_parasite
 parameter_list|(
 name|gchar
 modifier|*
@@ -1700,7 +1700,7 @@ name|key
 parameter_list|,
 name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|,
 name|XcfInfo
 modifier|*
@@ -1709,13 +1709,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|(
-name|p
-operator|->
-name|flags
-operator|&
-name|GIMP_PARASITE_PERSISTENT
-operator|)
+name|gimp_parasite_is_persistent
+argument_list|(
+name|parasite
+argument_list|)
 condition|)
 block|{
 name|info
@@ -1729,7 +1726,7 @@ operator|->
 name|fp
 argument_list|,
 operator|&
-name|p
+name|parasite
 operator|->
 name|name
 argument_list|,
@@ -1747,7 +1744,7 @@ operator|->
 name|fp
 argument_list|,
 operator|&
-name|p
+name|parasite
 operator|->
 name|flags
 argument_list|,
@@ -1765,7 +1762,7 @@ operator|->
 name|fp
 argument_list|,
 operator|&
-name|p
+name|parasite
 operator|->
 name|size
 argument_list|,
@@ -1782,11 +1779,11 @@ name|info
 operator|->
 name|fp
 argument_list|,
-name|p
+name|parasite
 operator|->
 name|data
 argument_list|,
-name|p
+name|parasite
 operator|->
 name|size
 argument_list|)
@@ -1798,42 +1795,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_bz_point (gpointer pptr,gpointer iptr)
-name|write_bz_point
+DECL|function|xcf_save_bz_point (PathPoint * bpt,XcfInfo * info)
+name|xcf_save_bz_point
 parameter_list|(
-name|gpointer
-name|pptr
-parameter_list|,
-name|gpointer
-name|iptr
-parameter_list|)
-block|{
 name|PathPoint
 modifier|*
 name|bpt
-init|=
-operator|(
-name|PathPoint
-operator|*
-operator|)
-name|pptr
-decl_stmt|;
+parameter_list|,
 name|XcfInfo
 modifier|*
 name|info
-init|=
-operator|(
-name|XcfInfo
-operator|*
-operator|)
-name|iptr
-decl_stmt|;
+parameter_list|)
+block|{
 name|gfloat
 name|xfloat
 init|=
-operator|(
-name|gfloat
-operator|)
 name|bpt
 operator|->
 name|x
@@ -1841,9 +1817,6 @@ decl_stmt|;
 name|gfloat
 name|yfloat
 init|=
-operator|(
-name|gfloat
-operator|)
 name|bpt
 operator|->
 name|y
@@ -1905,42 +1878,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_one_path (gpointer pptr,gpointer iptr)
-name|write_one_path
+DECL|function|xcf_save_path (Path * bzp,XcfInfo * info)
+name|xcf_save_path
 parameter_list|(
-name|gpointer
-name|pptr
-parameter_list|,
-name|gpointer
-name|iptr
-parameter_list|)
-block|{
 name|Path
 modifier|*
 name|bzp
-init|=
-operator|(
-name|Path
-operator|*
-operator|)
-name|pptr
-decl_stmt|;
+parameter_list|,
 name|XcfInfo
 modifier|*
 name|info
-init|=
-operator|(
-name|XcfInfo
-operator|*
-operator|)
-name|iptr
-decl_stmt|;
+parameter_list|)
+block|{
 name|guint8
 name|state
 init|=
-operator|(
-name|gchar
-operator|)
 name|bzp
 operator|->
 name|state
@@ -2116,7 +2068,10 @@ name|bzp
 operator|->
 name|path_details
 argument_list|,
-name|write_bz_point
+operator|(
+name|GFunc
+operator|)
+name|xcf_save_bz_point
 argument_list|,
 name|info
 argument_list|)
@@ -2127,8 +2082,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_bzpaths (PathList * paths,XcfInfo * info)
-name|write_bzpaths
+DECL|function|xcf_save_bzpaths (PathList * paths,XcfInfo * info)
+name|xcf_save_bzpaths
 parameter_list|(
 name|PathList
 modifier|*
@@ -2196,7 +2151,10 @@ name|paths
 operator|->
 name|bz_paths
 argument_list|,
-name|write_one_path
+operator|(
+name|GFunc
+operator|)
+name|xcf_save_path
 argument_list|,
 name|info
 argument_list|)
@@ -3612,7 +3570,7 @@ name|xresolution
 decl_stmt|,
 name|yresolution
 decl_stmt|;
-comment|/* we pass in floats, but they are promoted to double by the compiler */
+comment|/* we pass in floats,             but they are promoted to double by the compiler */
 name|xresolution
 operator|=
 name|va_arg
@@ -3840,12 +3798,9 @@ expr_stmt|;
 comment|/* because we don't know how much room the parasite list will take 	     * we save the file position and write the length later 	     */
 name|pos
 operator|=
-name|ftell
-argument_list|(
 name|info
 operator|->
-name|fp
-argument_list|)
+name|cp
 expr_stmt|;
 name|info
 operator|->
@@ -3876,7 +3831,7 @@ argument_list|,
 operator|(
 name|GHFunc
 operator|)
-name|write_a_parasite
+name|xcf_save_parasite
 argument_list|,
 name|info
 argument_list|)
@@ -3890,15 +3845,11 @@ operator|-
 name|base
 expr_stmt|;
 comment|/* go back to the saved position and write the length */
-name|fseek
+name|xcf_seek_pos
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 name|pos
-argument_list|,
-name|SEEK_SET
 argument_list|)
 expr_stmt|;
 name|xcf_write_int32
@@ -3913,15 +3864,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|fseek
+name|xcf_seek_end
 argument_list|(
 name|info
-operator|->
-name|fp
-argument_list|,
-literal|0
-argument_list|,
-name|SEEK_END
 argument_list|)
 expr_stmt|;
 block|}
@@ -4052,15 +3997,12 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* because we don't know how much room the paths list will take 	     we save the file position and write the length later  	     ALT. OK I copied the code from above... 	  */
+comment|/* because we don't know how much room the paths list will take                we save the file position and write the length later               */
 name|pos
 operator|=
-name|ftell
-argument_list|(
 name|info
 operator|->
-name|fp
-argument_list|)
+name|cp
 expr_stmt|;
 name|info
 operator|->
@@ -4084,7 +4026,7 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-name|write_bzpaths
+name|xcf_save_bzpaths
 argument_list|(
 name|paths_list
 argument_list|,
@@ -4100,15 +4042,11 @@ operator|-
 name|base
 expr_stmt|;
 comment|/* go back to the saved position and write the length */
-name|fseek
+name|xcf_seek_pos
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 name|pos
-argument_list|,
-name|SEEK_SET
 argument_list|)
 expr_stmt|;
 name|xcf_write_int32
@@ -4123,15 +4061,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|fseek
+name|xcf_seek_end
 argument_list|(
 name|info
-operator|->
-name|fp
-argument_list|,
-literal|0
-argument_list|,
-name|SEEK_END
 argument_list|)
 expr_stmt|;
 block|}

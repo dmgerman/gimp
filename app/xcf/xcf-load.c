@@ -417,8 +417,8 @@ begin_function
 specifier|static
 name|GimpParasite
 modifier|*
-DECL|function|read_a_parasite (XcfInfo * info)
-name|read_a_parasite
+DECL|function|xcf_load_parasite (XcfInfo * info)
+name|xcf_load_parasite
 parameter_list|(
 name|XcfInfo
 modifier|*
@@ -534,8 +534,8 @@ begin_function
 specifier|static
 name|PathPoint
 modifier|*
-DECL|function|v1read_bz_point (XcfInfo * info)
-name|v1read_bz_point
+DECL|function|xcf_load_bz_point_version1 (XcfInfo * info)
+name|xcf_load_bz_point_version1
 parameter_list|(
 name|XcfInfo
 modifier|*
@@ -638,8 +638,8 @@ begin_function
 specifier|static
 name|PathPoint
 modifier|*
-DECL|function|read_bz_point (XcfInfo * info)
-name|read_bz_point
+DECL|function|xcf_load_bz_point (XcfInfo * info)
+name|xcf_load_bz_point
 parameter_list|(
 name|XcfInfo
 modifier|*
@@ -734,8 +734,8 @@ begin_function
 specifier|static
 name|Path
 modifier|*
-DECL|function|read_one_path (GimpImage * gimage,XcfInfo * info)
-name|read_one_path
+DECL|function|xcf_load_path (GimpImage * gimage,XcfInfo * info)
+name|xcf_load_path
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -906,7 +906,7 @@ decl_stmt|;
 comment|/* Read in a path */
 name|bpt
 operator|=
-name|v1read_bz_point
+name|xcf_load_bz_point_version1
 argument_list|(
 name|info
 argument_list|)
@@ -966,7 +966,7 @@ decl_stmt|;
 comment|/* Read in a path */
 name|bpt
 operator|=
-name|read_bz_point
+name|xcf_load_bz_point
 argument_list|(
 name|info
 argument_list|)
@@ -1046,7 +1046,7 @@ decl_stmt|;
 comment|/* Read in a path */
 name|bpt
 operator|=
-name|read_bz_point
+name|xcf_load_bz_point
 argument_list|(
 name|info
 argument_list|)
@@ -1104,8 +1104,8 @@ begin_function
 specifier|static
 name|PathList
 modifier|*
-DECL|function|read_bzpaths (GimpImage * gimage,XcfInfo * info)
-name|read_bzpaths
+DECL|function|xcf_load_bzpaths (GimpImage * gimage,XcfInfo * info)
+name|xcf_load_bzpaths
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1179,7 +1179,7 @@ decl_stmt|;
 comment|/* Read in a path */
 name|bzp
 operator|=
-name|read_one_path
+name|xcf_load_path
 argument_list|(
 name|gimage
 argument_list|,
@@ -2248,7 +2248,7 @@ condition|)
 block|{
 name|p
 operator|=
-name|read_a_parasite
+name|xcf_load_parasite
 argument_list|(
 name|info
 argument_list|)
@@ -2328,7 +2328,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Warning, unit out of range in XCF file, falling back to inches"
+literal|"Warning, unit out of range in XCF file, "
+literal|"falling back to inches"
 argument_list|)
 expr_stmt|;
 name|unit
@@ -2352,7 +2353,7 @@ name|PathList
 modifier|*
 name|paths
 init|=
-name|read_bzpaths
+name|xcf_load_bzpaths
 argument_list|(
 name|gimage
 argument_list|,
@@ -3130,7 +3131,7 @@ condition|)
 block|{
 name|p
 operator|=
-name|read_a_parasite
+name|xcf_load_parasite
 argument_list|(
 name|info
 argument_list|)
@@ -3550,7 +3551,7 @@ condition|)
 block|{
 name|p
 operator|=
-name|read_a_parasite
+name|xcf_load_parasite
 argument_list|(
 name|info
 argument_list|)
@@ -6024,7 +6025,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"unable to read tile data from xcf file: %d ( %d ) bytes read"
+literal|"unable to read tile data from xcf file: "
+literal|"%d ( %d ) bytes read"
 argument_list|,
 name|err
 argument_list|,
