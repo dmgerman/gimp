@@ -145,7 +145,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient.h"
+file|"gradient_editor.h"
 end_include
 
 begin_include
@@ -313,7 +313,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274cfc6d0103
+DECL|enum|__anon2760315d0103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -353,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274cfc6d0203
+DECL|enum|__anon2760315d0203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274cfc6d0308
+DECL|struct|__anon2760315d0308
 block|{
 DECL|member|shell
 name|GtkWidget

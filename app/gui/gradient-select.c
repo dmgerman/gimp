@@ -80,7 +80,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient.h"
+file|"gradient_editor.h"
 end_include
 
 begin_include
