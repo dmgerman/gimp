@@ -112,6 +112,7 @@ DECL|member|parent_instance
 name|GimpTransformTool
 name|parent_instance
 decl_stmt|;
+comment|/*  shear dialog  */
 DECL|member|xshear_val
 name|gdouble
 name|xshear_val

@@ -587,7 +587,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_transform_tool_recalc
+name|gimp_transform_tool_doit
 parameter_list|(
 name|GimpTransformTool
 modifier|*
@@ -603,15 +603,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_transform_tool_doit
+name|gimp_transform_tool_transform_bounding_box
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -917,6 +913,12 @@ expr_stmt|;
 name|klass
 operator|->
 name|dialog
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|dialog_update
 operator|=
 name|NULL
 expr_stmt|;
@@ -1715,6 +1717,13 @@ break|break;
 case|case
 name|RESUME
 case|:
+name|gimp_transform_tool_bounds
+argument_list|(
+name|tr_tool
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
@@ -1975,6 +1984,14 @@ index|[
 name|i
 index|]
 expr_stmt|;
+comment|/*  reget the selection bounds  */
+name|gimp_transform_tool_bounds
+argument_list|(
+name|tr_tool
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
 name|gimp_transform_tool_recalc
 argument_list|(
@@ -2114,15 +2131,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|tr_tool_class
-operator|->
-name|recalc
-condition|)
-name|tr_tool_class
-operator|->
-name|recalc
+name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
 argument_list|,
@@ -4275,6 +4284,13 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|gimp_transform_tool_bounds
+argument_list|(
+name|tr_tool
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 name|gimp_transform_tool_recalc
 argument_list|(
 name|tr_tool
@@ -4462,6 +4478,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_transform_tool_transform_bounding_box (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_transform_bounding_box
@@ -6444,7 +6461,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_transform_tool_recalc (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
 name|gimp_transform_tool_recalc
@@ -6458,13 +6474,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|gimp_transform_tool_bounds
-argument_list|(
-name|tr_tool
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|GIMP_TRANSFORM_TOOL_GET_CLASS
@@ -6484,6 +6493,30 @@ argument_list|(
 name|tr_tool
 argument_list|,
 name|gdisp
+argument_list|)
+expr_stmt|;
+name|gimp_transform_tool_transform_bounding_box
+argument_list|(
+name|tr_tool
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GIMP_TRANSFORM_TOOL_GET_CLASS
+argument_list|(
+name|tr_tool
+argument_list|)
+operator|->
+name|dialog_update
+condition|)
+name|GIMP_TRANSFORM_TOOL_GET_CLASS
+argument_list|(
+name|tr_tool
+argument_list|)
+operator|->
+name|dialog_update
+argument_list|(
+name|tr_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -6565,6 +6598,16 @@ name|old_trans_info
 index|[
 name|i
 index|]
+expr_stmt|;
+comment|/*  reget the selection bounds  */
+name|gimp_transform_tool_bounds
+argument_list|(
+name|tr_tool
+argument_list|,
+name|tool
+operator|->
+name|gdisp
+argument_list|)
 expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
 name|gimp_transform_tool_recalc
@@ -6679,6 +6722,19 @@ operator|!=
 name|TRANSFORM_CREATING
 condition|)
 block|{
+comment|/*  reget the selection bounds  */
+name|gimp_transform_tool_bounds
+argument_list|(
+name|tr_tool
+argument_list|,
+name|GIMP_TOOL
+argument_list|(
+name|tr_tool
+argument_list|)
+operator|->
+name|gdisp
+argument_list|)
+expr_stmt|;
 comment|/*  recalculate the tool's transformation matrix  */
 name|gimp_transform_tool_recalc
 argument_list|(

@@ -352,6 +352,18 @@ modifier|*
 name|tool
 parameter_list|)
 function_decl|;
+DECL|member|dialog_update
+name|void
+function_decl|(
+modifier|*
+name|dialog_update
+function_decl|)
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
 DECL|member|prepare
 name|void
 function_decl|(
@@ -437,11 +449,15 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_transform_tool_transform_bounding_box
+name|gimp_transform_tool_recalc
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
