@@ -142,7 +142,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Edit path attributes"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -164,11 +167,39 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"New path dialog"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
 name|vectors_new_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_PATH_NEW
+block|}
+block|,
+block|{
+literal|"vectors-new-default"
+block|,
+name|GTK_STOCK_NEW
+block|,
+name|N_
+argument_list|(
+literal|"_New Path"
+argument_list|)
+block|,
+literal|""
+block|,
+name|N_
+argument_list|(
+literal|"New path"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|vectors_new_default_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PATH_NEW
@@ -186,7 +217,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Duplicate path"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -208,7 +242,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Delete path"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -252,7 +289,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Raise path"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -274,7 +314,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Raise path to top"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -296,7 +339,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Lower path"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -318,7 +364,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Lower path to bottom"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -976,6 +1025,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-new"
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"vectors-new-default"
 argument_list|,
 name|gimage
 argument_list|)

@@ -120,7 +120,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Edit channel attributes"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -142,11 +145,39 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"New channel dialog"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
 name|channels_new_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_CHANNEL_NEW
+block|}
+block|,
+block|{
+literal|"channels-new-default"
+block|,
+name|GTK_STOCK_NEW
+block|,
+name|N_
+argument_list|(
+literal|"_New Channel"
+argument_list|)
+block|,
+literal|""
+block|,
+name|N_
+argument_list|(
+literal|"New channel"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|channels_new_default_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_NEW
@@ -164,7 +195,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Duplicate channel"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -186,7 +220,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Delete channel"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -208,7 +245,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Raise channel"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -230,7 +270,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Raise channel to top"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -252,7 +295,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Lower channel"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -274,7 +320,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Lower channel to bottom"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -601,6 +650,16 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"channels-new"
+argument_list|,
+operator|!
+name|fs
+operator|&&
+name|gimage
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"channels-new-default"
 argument_list|,
 operator|!
 name|fs

@@ -270,7 +270,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Edit layer attributes"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -292,11 +295,39 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"New layer dialog"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
 name|layers_new_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_LAYER_NEW
+block|}
+block|,
+block|{
+literal|"layers-new-default"
+block|,
+name|GTK_STOCK_NEW
+block|,
+name|N_
+argument_list|(
+literal|"_New Layer"
+argument_list|)
+block|,
+literal|""
+block|,
+name|N_
+argument_list|(
+literal|"New layer"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|layers_new_default_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_LAYER_NEW
@@ -314,7 +345,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Duplicate layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -336,7 +370,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Delete layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -358,7 +395,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Raise layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -380,7 +420,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Raise layer to top"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -402,7 +445,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Lower layer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -424,7 +470,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Lower layer to bottom"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -1772,6 +1821,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"layers-new"
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"layers-new-default"
 argument_list|,
 name|gimage
 argument_list|)
