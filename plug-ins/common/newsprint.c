@@ -369,7 +369,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b16f0108
+DECL|struct|__anon2aea65300108
 block|{
 DECL|member|name
 specifier|const
@@ -629,7 +629,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b16f0208
+DECL|struct|__anon2aea65300208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -702,10 +702,10 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b16f0308
+DECL|struct|__anon2aea65300308
 block|{
 DECL|member|input_spi
-name|gint
+name|gdouble
 name|input_spi
 decl_stmt|;
 comment|/* input samples per inch */
@@ -715,10 +715,14 @@ name|output_lpi
 decl_stmt|;
 comment|/* desired output lines per inch */
 DECL|member|lock_channels
-name|gint
+name|gboolean
 name|lock_channels
 decl_stmt|;
 comment|/* changes to one channel affect all */
+DECL|member|preview
+name|gboolean
+name|preview
+decl_stmt|;
 DECL|typedef|NewsprintUIValues
 block|}
 name|NewsprintUIValues
@@ -732,7 +736,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b16f0408
+DECL|struct|__anon2aea65300408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -839,7 +843,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b16f0508
+DECL|struct|__anon2aea65300508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -973,12 +977,15 @@ init|=
 block|{
 literal|72
 block|,
-comment|/* input spi */
+comment|/* input spi     */
 literal|7.2
 block|,
-comment|/* output lpi */
+comment|/* output lpi    */
 name|FALSE
+block|,
 comment|/* lock channels */
+name|TRUE
+comment|/* preview       */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1010,7 +1017,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b16f0608
+DECL|struct|__anon2aea65300608
 block|{
 DECL|member|name
 specifier|const
@@ -3376,6 +3383,23 @@ operator|.
 name|output_lpi
 argument_list|)
 expr_stmt|;
+name|g_print
+argument_list|(
+literal|"lpi (%g / %g = %d)\n"
+argument_list|,
+name|pvals_ui
+operator|.
+name|input_spi
+argument_list|,
+name|pvals_ui
+operator|.
+name|output_lpi
+argument_list|,
+name|pvals
+operator|.
+name|cell_width
+argument_list|)
+expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|st
@@ -3449,6 +3473,23 @@ operator|.
 name|input_spi
 argument_list|)
 expr_stmt|;
+name|g_print
+argument_list|(
+literal|"spi (%g / %g = %d)\n"
+argument_list|,
+name|pvals_ui
+operator|.
+name|input_spi
+argument_list|,
+name|pvals_ui
+operator|.
+name|output_lpi
+argument_list|,
+name|pvals
+operator|.
+name|cell_width
+argument_list|)
+expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|st
@@ -3517,6 +3558,23 @@ argument_list|(
 name|adjustment
 argument_list|,
 operator|&
+name|pvals
+operator|.
+name|cell_width
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"cell (%g / %g = %d)\n"
+argument_list|,
+name|pvals_ui
+operator|.
+name|input_spi
+argument_list|,
+name|pvals_ui
+operator|.
+name|output_lpi
+argument_list|,
 name|pvals
 operator|.
 name|cell_width
@@ -4900,10 +4958,12 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-name|NULL
+operator|&
+name|pvals_ui
+operator|.
+name|preview
 argument_list|)
 expr_stmt|;
-comment|// FIXME
 name|gtk_box_pack_start_defaults
 argument_list|(
 name|GTK_BOX
@@ -6908,7 +6968,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b16f0708
+DECL|struct|__anon2aea65300708
 block|{
 DECL|member|index
 name|gint
@@ -7348,6 +7408,16 @@ name|thresh
 index|[
 literal|4
 index|]
+init|=
+block|{
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
 decl_stmt|;
 name|gdouble
 name|r
@@ -8081,6 +8151,7 @@ argument_list|,
 name|y_step
 argument_list|,
 name|TRUE
+comment|/*dirty*/
 argument_list|,
 name|TRUE
 comment|/*shadow*/
@@ -8973,7 +9044,34 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* We don't free the threshold matrices, since we're about to    * exit, and the OS should clean up after us. */
+for|for
+control|(
+name|b
+operator|=
+literal|0
+init|;
+name|b
+operator|<
+literal|4
+condition|;
+name|b
+operator|++
+control|)
+if|if
+condition|(
+name|thresh
+index|[
+name|b
+index|]
+condition|)
+name|g_free
+argument_list|(
+name|thresh
+index|[
+name|b
+index|]
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|preview
