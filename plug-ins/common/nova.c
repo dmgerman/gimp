@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c498eeb0108
+DECL|struct|__anon2bb82f8b0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c498eeb0208
+DECL|struct|__anon2bb82f8b0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -5089,7 +5089,6 @@ if|if
 condition|(
 name|has_alpha
 condition|)
-empty_stmt|;
 name|dest
 index|[
 name|alpha
