@@ -14628,9 +14628,15 @@ return|return
 operator|(
 name|PLUG_IN_RGB_IMAGE
 operator||
+name|PLUG_IN_RGBA_IMAGE
+operator||
 name|PLUG_IN_GRAY_IMAGE
 operator||
+name|PLUG_IN_GRAYA_IMAGE
+operator||
 name|PLUG_IN_INDEXED_IMAGE
+operator||
+name|PLUG_IN_INDEXEDA_IMAGE
 operator|)
 return|;
 name|types

@@ -305,7 +305,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba508630108
+DECL|struct|__anon29e62c900108
 block|{
 DECL|member|url
 name|char
@@ -440,7 +440,7 @@ literal|"1997"
 argument_list|,
 literal|"<Toolbox>/Xtns/Web Browser/Open URL..."
 argument_list|,
-literal|"RGB*, GRAY*, INDEXED*"
+name|NULL
 argument_list|,
 name|PROC_EXTENSION
 argument_list|,
