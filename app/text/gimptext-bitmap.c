@@ -15,6 +15,13 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_define
+DECL|macro|PANGO_ENABLE_ENGINE
+define|#
+directive|define
+name|PANGO_ENABLE_ENGINE
+end_define
+
 begin_include
 include|#
 directive|include
@@ -117,9 +124,12 @@ name|dest
 decl_stmt|;
 name|face
 operator|=
-name|pango_ft2_font_get_face
+name|pango_fc_font_lock_face
+argument_list|(
+name|PANGO_FC_FONT
 argument_list|(
 name|font
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|FT_Set_Transform
@@ -580,6 +590,14 @@ break|break;
 default|default:
 break|break;
 block|}
+name|pango_fc_font_unlock_face
+argument_list|(
+name|PANGO_FC_FONT
+argument_list|(
+name|font
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -2587,7 +2587,7 @@ return|return
 name|token
 return|;
 block|}
-name|g_value_set_boxed_take_ownership
+name|g_value_take_boxed
 argument_list|(
 name|value
 argument_list|,

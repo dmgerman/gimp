@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a829f30103
+DECL|enum|__anon27dc126a0103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -2024,7 +2024,7 @@ operator|-
 literal|3
 argument_list|)
 expr_stmt|;
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|gc
 argument_list|)

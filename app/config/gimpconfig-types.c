@@ -801,7 +801,7 @@ argument_list|,
 name|size
 argument_list|)
 expr_stmt|;
-name|g_value_set_string_take_ownership
+name|g_value_take_string
 argument_list|(
 name|dest_value
 argument_list|,

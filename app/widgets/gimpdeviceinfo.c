@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c779a990103
+DECL|enum|__anon29f3880a0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c779a990203
+DECL|enum|__anon29f3880a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1352,7 +1352,7 @@ operator|&
 name|enum_value
 argument_list|)
 expr_stmt|;
-name|g_value_set_boxed_take_ownership
+name|g_value_take_boxed
 argument_list|(
 name|value
 argument_list|,
@@ -1606,7 +1606,7 @@ operator|&
 name|string_value
 argument_list|)
 expr_stmt|;
-name|g_value_set_boxed_take_ownership
+name|g_value_take_boxed
 argument_list|(
 name|value
 argument_list|,
