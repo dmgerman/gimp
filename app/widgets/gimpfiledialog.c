@@ -352,6 +352,16 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
+name|gtk_dialog_set_has_separator
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
