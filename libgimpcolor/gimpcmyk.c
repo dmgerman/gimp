@@ -38,12 +38,12 @@ comment|/*  CMYK functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_cmyk_set:  * @cmyk: A GimpCMYK structure which will hold the specified cmyk value.  * @c:    The Cyan channel of the CMYK value   * @m:    The Magenta channel  * @y:    The Yellow channel  * @k:    The blacK channel  *  * Very basic initialiser for the internal GimpCMYK structure. Channel   * values are doubles in the range 0 to 1.  **/
+comment|/**  * gimp_cmyk_set:  * @cmyk:    A #GimpCMYK structure which will hold the specified CMYK value.  * @cyan:    The Cyan channel of the CMYK value  * @magenta: The Magenta channel  * @yellow:  The Yellow channel  * @black:   The blacK channel  *  * Very basic initialiser for the internal #GimpCMYK structure. Channel  * values are doubles in the range 0 to 1.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_cmyk_set (GimpCMYK * cmyk,gdouble c,gdouble m,gdouble y,gdouble k)
+DECL|function|gimp_cmyk_set (GimpCMYK * cmyk,gdouble cyan,gdouble magenta,gdouble yellow,gdouble black)
 name|gimp_cmyk_set
 parameter_list|(
 name|GimpCMYK
@@ -51,16 +51,16 @@ modifier|*
 name|cmyk
 parameter_list|,
 name|gdouble
-name|c
+name|cyan
 parameter_list|,
 name|gdouble
-name|m
+name|magenta
 parameter_list|,
 name|gdouble
-name|y
+name|yellow
 parameter_list|,
 name|gdouble
-name|k
+name|black
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -74,36 +74,36 @@ name|cmyk
 operator|->
 name|c
 operator|=
-name|c
+name|cyan
 expr_stmt|;
 name|cmyk
 operator|->
 name|m
 operator|=
-name|m
+name|magenta
 expr_stmt|;
 name|cmyk
 operator|->
 name|y
 operator|=
-name|y
+name|yellow
 expr_stmt|;
 name|cmyk
 operator|->
 name|k
 operator|=
-name|k
+name|black
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cmyk_set_uchar:  *  * The same as gimp_cmyk_set, except that channel values are unsigned   * chars in the range 0 to 255.  **/
+comment|/**  * gimp_cmyk_set_uchar:  * @cmyk:    A #GimpCMYK structure which will hold the specified CMYK value.  * @cyan:    The Cyan channel of the CMYK value  * @magenta: The Magenta channel  * @yellow:  The Yellow channel  * @black:   The blacK channel  *  * The same as gimp_cmyk_set(), except that channel values are  * unsigned chars in the range 0 to 255.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_cmyk_set_uchar (GimpCMYK * cmyk,guchar c,guchar m,guchar y,guchar k)
+DECL|function|gimp_cmyk_set_uchar (GimpCMYK * cmyk,guchar cyan,guchar magenta,guchar yellow,guchar black)
 name|gimp_cmyk_set_uchar
 parameter_list|(
 name|GimpCMYK
@@ -111,16 +111,16 @@ modifier|*
 name|cmyk
 parameter_list|,
 name|guchar
-name|c
+name|cyan
 parameter_list|,
 name|guchar
-name|m
+name|magenta
 parameter_list|,
 name|guchar
-name|y
+name|yellow
 parameter_list|,
 name|guchar
-name|k
+name|black
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -137,7 +137,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|c
+name|cyan
 operator|/
 literal|255.0
 expr_stmt|;
@@ -148,7 +148,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|m
+name|magenta
 operator|/
 literal|255.0
 expr_stmt|;
@@ -159,7 +159,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|y
+name|yellow
 operator|/
 literal|255.0
 expr_stmt|;
@@ -170,7 +170,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|k
+name|black
 operator|/
 literal|255.0
 expr_stmt|;
@@ -178,12 +178,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cmyk_get_uchar:  * @cmyk: A GimpCMYK structure which will hold the specified cmyk value.  * @c:    The Cyan channel of the CMYK value   * @m:    The Magenta channel  * @y:    The Yellow channel  * @k:    The blacK channel  *  * Retrieve individual channel values from a GimpCMYK structure. Channel   * values are pointers to unsigned chars in the range 0 to 255.  **/
+comment|/**  * gimp_cmyk_get_uchar:  * @cmyk:    A #GimpCMYK structure which will hold the specified CMYK value.  * @cyan:    The Cyan channel of the CMYK value  * @magenta: The Magenta channel  * @yellow:  The Yellow channel  * @black:   The blacK channel  *  * Retrieve individual channel values from a #GimpCMYK structure. Channel  * values are pointers to unsigned chars in the range 0 to 255.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_cmyk_get_uchar (const GimpCMYK * cmyk,guchar * c,guchar * m,guchar * y,guchar * k)
+DECL|function|gimp_cmyk_get_uchar (const GimpCMYK * cmyk,guchar * cyan,guchar * magenta,guchar * yellow,guchar * black)
 name|gimp_cmyk_get_uchar
 parameter_list|(
 specifier|const
@@ -193,19 +193,19 @@ name|cmyk
 parameter_list|,
 name|guchar
 modifier|*
-name|c
+name|cyan
 parameter_list|,
 name|guchar
 modifier|*
-name|m
+name|magenta
 parameter_list|,
 name|guchar
 modifier|*
-name|y
+name|yellow
 parameter_list|,
 name|guchar
 modifier|*
-name|k
+name|black
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -217,10 +217,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|c
+name|cyan
 condition|)
 operator|*
-name|c
+name|cyan
 operator|=
 name|ROUND
 argument_list|(
@@ -240,10 +240,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|m
+name|magenta
 condition|)
 operator|*
-name|m
+name|magenta
 operator|=
 name|ROUND
 argument_list|(
@@ -263,10 +263,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|y
+name|yellow
 condition|)
 operator|*
-name|y
+name|yellow
 operator|=
 name|ROUND
 argument_list|(
@@ -286,10 +286,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|k
+name|black
 condition|)
 operator|*
-name|k
+name|black
 operator|=
 name|ROUND
 argument_list|(
@@ -315,12 +315,12 @@ comment|/*  CMYKA functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_cmyka_set:  * @cmyka: A GimpCMYK structure which will hold the specified cmyka value.  * @c:    The Cyan channel of the CMYK value   * @m:    The Magenta channel  * @y:    The Yellow channel  * @k:    The blacK channel  * @a:    The Alpha channel  *  * Initialiser for the internal GimpCMYK structure. Channel values are   * doubles in the range 0 to 1.  **/
+comment|/**  * gimp_cmyka_set:  * @cmyka:   A #GimpCMYK structure which will hold the specified CMYKA value.  * @cyan:    The Cyan channel of the CMYK value  * @magenta: The Magenta channel  * @yellow:  The Yellow channel  * @black:   The blacK channel  * @alpha:   The Alpha channel  *  * Initialiser for the internal #GimpCMYK structure. Channel values are  * doubles in the range 0 to 1.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_cmyka_set (GimpCMYK * cmyka,gdouble c,gdouble m,gdouble y,gdouble k,gdouble a)
+DECL|function|gimp_cmyka_set (GimpCMYK * cmyka,gdouble cyan,gdouble magenta,gdouble yellow,gdouble black,gdouble alpha)
 name|gimp_cmyka_set
 parameter_list|(
 name|GimpCMYK
@@ -328,19 +328,19 @@ modifier|*
 name|cmyka
 parameter_list|,
 name|gdouble
-name|c
+name|cyan
 parameter_list|,
 name|gdouble
-name|m
+name|magenta
 parameter_list|,
 name|gdouble
-name|y
+name|yellow
 parameter_list|,
 name|gdouble
-name|k
+name|black
 parameter_list|,
 name|gdouble
-name|a
+name|alpha
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -354,42 +354,42 @@ name|cmyka
 operator|->
 name|c
 operator|=
-name|c
+name|cyan
 expr_stmt|;
 name|cmyka
 operator|->
 name|m
 operator|=
-name|m
+name|magenta
 expr_stmt|;
 name|cmyka
 operator|->
 name|y
 operator|=
-name|y
+name|yellow
 expr_stmt|;
 name|cmyka
 operator|->
 name|k
 operator|=
-name|k
+name|black
 expr_stmt|;
 name|cmyka
 operator|->
 name|a
 operator|=
-name|a
+name|alpha
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cmyka_set_uchar:  *  * The same as gimp_cmyka_set, except that channel values are unsigned chars  * in the range 0 to 255.  **/
+comment|/**  * gimp_cmyka_set_uchar:  * @cmyka:   A #GimpCMYK structure which will hold the specified CMYKA value.  * @cyan:    The Cyan channel of the CMYK value  * @magenta: The Magenta channel  * @yellow:  The Yellow channel  * @black:   The blacK channel  * @alpha:   The Alpha channel  *  * The same as gimp_cmyka_set(), except that channel values are  * unsigned chars in the range 0 to 255.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_cmyka_set_uchar (GimpCMYK * cmyka,guchar c,guchar m,guchar y,guchar k,guchar a)
+DECL|function|gimp_cmyka_set_uchar (GimpCMYK * cmyka,guchar cyan,guchar magenta,guchar yellow,guchar black,guchar alpha)
 name|gimp_cmyka_set_uchar
 parameter_list|(
 name|GimpCMYK
@@ -397,19 +397,19 @@ modifier|*
 name|cmyka
 parameter_list|,
 name|guchar
-name|c
+name|cyan
 parameter_list|,
 name|guchar
-name|m
+name|magenta
 parameter_list|,
 name|guchar
-name|y
+name|yellow
 parameter_list|,
 name|guchar
-name|k
+name|black
 parameter_list|,
 name|guchar
-name|a
+name|alpha
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -426,7 +426,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|c
+name|cyan
 operator|/
 literal|255.0
 expr_stmt|;
@@ -437,7 +437,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|m
+name|magenta
 operator|/
 literal|255.0
 expr_stmt|;
@@ -448,7 +448,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|y
+name|yellow
 operator|/
 literal|255.0
 expr_stmt|;
@@ -459,7 +459,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|k
+name|black
 operator|/
 literal|255.0
 expr_stmt|;
@@ -470,7 +470,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|a
+name|alpha
 operator|/
 literal|255.0
 expr_stmt|;
@@ -478,12 +478,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cmyka_get_uchar:  * @cmyk: A GimpCMYK structure which will hold the specified cmyka value.  * @c:    The Cyan channel of the CMYK value   * @m:    The Magenta channel  * @y:    The Yellow channel  * @k:    The blacK channel  * @a:    The Alpha channel  *  * Retrieve individual channel values from a GimpCMYK structure. Channel   * values are pointers to unsigned chars in the range 0 to 255.  **/
+comment|/**  * gimp_cmyka_get_uchar:  * @cmyka:   A #GimpCMYK structure which will hold the specified CMYKA value.  * @cyan:    The Cyan channel of the CMYK value  * @magenta: The Magenta channel  * @yellow:  The Yellow channel  * @black:   The blacK channel  * @alpha:   The Alpha channel  *  * Retrieve individual channel values from a #GimpCMYK structure.  * Channel values are pointers to unsigned chars in the range 0 to 255.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_cmyka_get_uchar (const GimpCMYK * cmyka,guchar * c,guchar * m,guchar * y,guchar * k,guchar * a)
+DECL|function|gimp_cmyka_get_uchar (const GimpCMYK * cmyka,guchar * cyan,guchar * magenta,guchar * yellow,guchar * black,guchar * alpha)
 name|gimp_cmyka_get_uchar
 parameter_list|(
 specifier|const
@@ -493,23 +493,23 @@ name|cmyka
 parameter_list|,
 name|guchar
 modifier|*
-name|c
+name|cyan
 parameter_list|,
 name|guchar
 modifier|*
-name|m
+name|magenta
 parameter_list|,
 name|guchar
 modifier|*
-name|y
+name|yellow
 parameter_list|,
 name|guchar
 modifier|*
-name|k
+name|black
 parameter_list|,
 name|guchar
 modifier|*
-name|a
+name|alpha
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -521,10 +521,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|c
+name|cyan
 condition|)
 operator|*
-name|c
+name|cyan
 operator|=
 name|ROUND
 argument_list|(
@@ -544,10 +544,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|m
+name|magenta
 condition|)
 operator|*
-name|m
+name|magenta
 operator|=
 name|ROUND
 argument_list|(
@@ -567,10 +567,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|y
+name|yellow
 condition|)
 operator|*
-name|y
+name|yellow
 operator|=
 name|ROUND
 argument_list|(
@@ -590,10 +590,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|k
+name|black
 condition|)
 operator|*
-name|k
+name|black
 operator|=
 name|ROUND
 argument_list|(
@@ -613,10 +613,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|a
+name|alpha
 condition|)
 operator|*
-name|a
+name|alpha
 operator|=
 name|ROUND
 argument_list|(

@@ -630,7 +630,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_to_hsl:  * @rgb: A color value in the RGB colorspace  * @hsl: The value converted to HSL  *  * Convert an RGB color value to a HSL (Hue, Saturation, Lightness) color  * value.  **/
+comment|/**  * gimp_rgb_to_hsl:  * @rgb: A color value in the RGB colorspace  * @hsl: The value converted to HSL  *  * Convert an RGB color value to a HSL (Hue, Saturation, Lightness)  * color value.  **/
 end_comment
 
 begin_function
@@ -3601,7 +3601,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_to_hsv4:  * @rgb:        RGB triplet, rgb[0] is red channel, rgb[1] is green,   *              rgb[2] is blue (0..255)  * @hue:        Pointer to hue channel (0..1)  * @saturation: Pointer to saturation channel (0..1)   * @value:      Pointer to value channel (0..1)  **/
+comment|/**  * gimp_rgb_to_hsv4:  * @rgb:        RGB triplet, rgb[0] is red channel, rgb[1] is green,  *              rgb[2] is blue (0..255)  * @hue:        Pointer to hue channel (0..1)  * @saturation: Pointer to saturation channel (0..1)  * @value:      Pointer to value channel (0..1)  **/
 end_comment
 
 begin_function
@@ -3879,7 +3879,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_hsv_to_rgb4:  * @rgb:        RGB triplet, rgb[0] is red channel, rgb[1] is green,   *              rgb[2] is blue (0..255)  * @hue:        Hue channel (0..1)  * @saturation: Saturation channel (0..1)   * @value:      Value channel (0..1)  **/
+comment|/**  * gimp_hsv_to_rgb4:  * @rgb:        RGB triplet, rgb[0] is red channel, rgb[1] is green,  *              rgb[2] is blue (0..255)  * @hue:        Hue channel (0..1)  * @saturation: Saturation channel (0..1)  * @value:      Value channel (0..1)  **/
 end_comment
 
 begin_function
