@@ -17,10 +17,9 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_matrix_transform_point (const GimpMatrix m,double x,double y,double * newx,double * newy)
+DECL|function|gimp_matrix_transform_point (GimpMatrix m,double x,double y,double * newx,double * newy)
 name|gimp_matrix_transform_point
 parameter_list|(
-specifier|const
 name|GimpMatrix
 name|m
 parameter_list|,
@@ -164,10 +163,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_matrix_mult (const GimpMatrix m1,GimpMatrix m2)
+DECL|function|gimp_matrix_mult (GimpMatrix m1,GimpMatrix m2)
 name|gimp_matrix_mult
 parameter_list|(
-specifier|const
 name|GimpMatrix
 name|m1
 parameter_list|,
@@ -946,10 +944,9 @@ end_function
 
 begin_function
 name|double
-DECL|function|gimp_matrix_determinant (const GimpMatrix m)
+DECL|function|gimp_matrix_determinant (GimpMatrix m)
 name|gimp_matrix_determinant
 parameter_list|(
-specifier|const
 name|GimpMatrix
 name|m
 parameter_list|)
@@ -1097,10 +1094,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_matrix_invert (const GimpMatrix m,GimpMatrix m_inv)
+DECL|function|gimp_matrix_invert (GimpMatrix m,GimpMatrix m_inv)
 name|gimp_matrix_invert
 parameter_list|(
-specifier|const
 name|GimpMatrix
 name|m
 parameter_list|,

@@ -34,7 +34,6 @@ begin_function_decl
 name|void
 name|gimp_matrix_transform_point
 parameter_list|(
-specifier|const
 name|GimpMatrix
 parameter_list|,
 name|double
@@ -54,7 +53,6 @@ begin_function_decl
 name|void
 name|gimp_matrix_mult
 parameter_list|(
-specifier|const
 name|GimpMatrix
 parameter_list|,
 name|GimpMatrix
@@ -134,7 +132,6 @@ begin_function_decl
 name|double
 name|gimp_matrix_determinant
 parameter_list|(
-specifier|const
 name|GimpMatrix
 parameter_list|)
 function_decl|;
@@ -144,7 +141,6 @@ begin_function_decl
 name|void
 name|gimp_matrix_invert
 parameter_list|(
-specifier|const
 name|GimpMatrix
 name|m
 parameter_list|,
