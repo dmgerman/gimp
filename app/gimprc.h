@@ -493,6 +493,13 @@ name|cursor_mode
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|disable_tearoff_menus
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  function prototypes  */
 end_comment

@@ -248,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1792920103
+DECL|enum|__anon2b64b37d0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1044,6 +1044,15 @@ name|gint
 name|cursor_mode
 init|=
 name|CURSOR_MODE_TOOL_ICON
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|disable_tearoff_menus
+name|gboolean
+name|disable_tearoff_menus
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -2848,6 +2857,17 @@ name|cursor_mode
 block|,
 name|NULL
 block|}
+block|,
+block|{
+literal|"disable-tearoff-menus"
+block|,
+name|TT_BOOLEAN
+block|,
+operator|&
+name|disable_tearoff_menus
+block|,
+name|NULL
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2855,7 +2875,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|nfuncs
 specifier|static
-name|int
+name|gint
 name|nfuncs
 init|=
 sizeof|sizeof

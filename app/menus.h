@@ -41,6 +41,7 @@ modifier|*
 name|help_page
 decl_stmt|;
 DECL|member|description
+specifier|const
 name|gchar
 modifier|*
 name|description
