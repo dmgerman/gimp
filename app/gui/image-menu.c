@@ -468,7 +468,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Sa_ve a Copy..."
+literal|"/File/Save a Cop_y..."
 argument_list|)
 block|,
 name|NULL
@@ -2434,7 +2434,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Image/_Merge Visible Layers..."
+literal|"/Image/Merge Visible _Layers..."
 argument_list|)
 block|,
 literal|"<control>M"
