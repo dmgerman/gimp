@@ -1071,6 +1071,10 @@ name|bestdev
 operator|)
 condition|)
 block|{
+if|if
+condition|(
+name|brlist
+condition|)
 name|g_list_free
 argument_list|(
 name|brlist
@@ -1084,7 +1088,7 @@ block|}
 if|if
 condition|(
 name|dev
-operator|<
+operator|<=
 name|bestdev
 operator|||
 name|best
@@ -5763,7 +5767,7 @@ operator|*
 literal|3
 index|]
 operator|/
-literal|255
+literal|256
 expr_stmt|;
 break|break;
 case|case
@@ -5854,7 +5858,7 @@ operator|*
 literal|3
 index|]
 operator|/
-literal|255
+literal|256
 expr_stmt|;
 break|break;
 case|case
