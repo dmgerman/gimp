@@ -490,10 +490,7 @@ comment|/* leave stuff untouched in line draw mode */
 block|{
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"anti-erase"
 argument_list|,

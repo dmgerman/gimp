@@ -2569,8 +2569,6 @@ expr_stmt|;
 block|}
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|GIMP_TOOL
 argument_list|(
 name|rect_sel
@@ -2579,7 +2577,6 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
-argument_list|)
 argument_list|,
 literal|"fixed-width"
 argument_list|,

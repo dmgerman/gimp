@@ -2096,10 +2096,7 @@ condition|)
 block|{
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"constrain-1"
 argument_list|,
@@ -2122,10 +2119,7 @@ condition|)
 block|{
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"constrain-2"
 argument_list|,

@@ -1324,10 +1324,7 @@ literal|2.0
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"threshold"
 argument_list|,

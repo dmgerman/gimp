@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b469ca0103
+DECL|enum|__anon2a4134db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1372,10 +1372,7 @@ expr_stmt|;
 block|}
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|cell
-argument_list|)
 argument_list|,
 literal|"pixbuf"
 argument_list|,

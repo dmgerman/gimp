@@ -809,10 +809,7 @@ name|GIMP_FG_BUCKET_FILL
 case|:
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"fill-mode"
 argument_list|,
@@ -827,10 +824,7 @@ name|GIMP_BG_BUCKET_FILL
 case|:
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"fill-mode"
 argument_list|,

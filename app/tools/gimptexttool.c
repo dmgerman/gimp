@@ -1186,12 +1186,9 @@ name|NULL
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
 operator|->
 name|text
-argument_list|)
 argument_list|,
 literal|"text"
 argument_list|,

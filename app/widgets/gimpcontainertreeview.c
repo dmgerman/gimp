@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b470f0103
+DECL|enum|__anon2a1dec840103
 block|{
 DECL|enumerator|COLUMN_VIEWABLE
 name|COLUMN_VIEWABLE
@@ -718,10 +718,7 @@ block|}
 block|}
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|cell
-argument_list|)
 argument_list|,
 literal|"viewable"
 argument_list|,
@@ -870,12 +867,9 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tree_view
 operator|->
 name|list
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_CONTAINER_VIEW

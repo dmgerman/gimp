@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9cc1a0103
+DECL|enum|__anon2b81b8f80103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -2811,10 +2811,7 @@ name|allow_enlarge
 condition|)
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"allow-enlarge"
 argument_list|,
@@ -2834,10 +2831,7 @@ name|allow_enlarge
 condition|)
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"allow-enlarge"
 argument_list|,
@@ -2866,10 +2860,7 @@ name|GIMP_CROP
 case|:
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"crop-type"
 argument_list|,
@@ -2884,10 +2875,7 @@ name|GIMP_RESIZE
 case|:
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"crop-type"
 argument_list|,

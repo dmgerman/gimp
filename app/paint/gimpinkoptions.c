@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2759c50103
+DECL|enum|__anon29fdae660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2799,12 +2799,9 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|brush_widget
 operator|->
 name|ink_options
-argument_list|)
 argument_list|,
 literal|"blob-angle"
 argument_list|,

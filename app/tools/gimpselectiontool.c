@@ -544,10 +544,7 @@ condition|)
 block|{
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"operation"
 argument_list|,

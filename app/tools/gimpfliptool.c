@@ -566,10 +566,7 @@ name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"flip-type"
 argument_list|,
@@ -584,10 +581,7 @@ name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
-argument_list|)
 argument_list|,
 literal|"flip-type"
 argument_list|,
