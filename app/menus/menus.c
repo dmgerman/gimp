@@ -2124,6 +2124,31 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/Select/Toggle QuickMask"
+argument_list|)
+block|,
+literal|"<shift>Q"
+block|,
+name|select_toggle_quickmask_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_QMASK_ON
+block|}
+block|,
+name|NULL
+block|,
+literal|"select/quickmask.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/Select/Save to Channel"
 argument_list|)
 block|,
