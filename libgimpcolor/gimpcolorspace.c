@@ -1041,7 +1041,7 @@ operator|=
 name|lightness
 operator|*
 operator|(
-name|lightness
+literal|1.0
 operator|+
 name|saturation
 operator|)
@@ -1052,7 +1052,7 @@ operator|=
 name|lightness
 operator|+
 name|saturation
-operator|+
+operator|-
 name|lightness
 operator|*
 name|saturation
