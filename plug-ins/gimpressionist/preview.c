@@ -584,7 +584,7 @@ condition|(
 name|d
 condition|)
 block|{
-name|storevals
+name|store_values
 argument_list|()
 expr_stmt|;
 if|if

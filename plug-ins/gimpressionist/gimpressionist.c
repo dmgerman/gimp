@@ -113,9 +113,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|storevals (void)
+DECL|function|store_values (void)
 name|void
-name|storevals
+name|store_values
 parameter_list|(
 name|void
 parameter_list|)
@@ -133,9 +133,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|restorevals (void)
+DECL|function|restore_values (void)
 name|void
-name|restorevals
+name|restore_values
 parameter_list|(
 name|void
 parameter_list|)
@@ -168,10 +168,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|createonecolumnlist (GtkWidget * parent,void (* changed_cb)(GtkTreeSelection * selection,gpointer data))
+DECL|function|create_one_column_list (GtkWidget * parent,void (* changed_cb)(GtkTreeSelection * selection,gpointer data))
 name|GtkWidget
 modifier|*
-name|createonecolumnlist
+name|create_one_column_list
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -396,8 +396,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|showabout (void)
-name|showabout
+DECL|function|show_about (void)
+name|show_about
 parameter_list|(
 name|void
 parameter_list|)
@@ -733,14 +733,14 @@ block|{
 case|case
 name|RESPONSE_ABOUT
 case|:
-name|showabout
+name|show_about
 argument_list|()
 expr_stmt|;
 break|break;
 case|case
 name|GTK_RESPONSE_OK
 case|:
-name|storevals
+name|store_values
 argument_list|()
 expr_stmt|;
 name|pcvals
@@ -1023,7 +1023,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/*    * This is to make sure the values from the pcvals will be reflected    * in the GUI here. Otherwise they will be set to the defaults.    * */
-name|restorevals
+name|restore_values
 argument_list|()
 expr_stmt|;
 name|gtk_widget_show

@@ -2183,7 +2183,7 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|=
-name|createonecolumnlist
+name|create_one_column_list
 argument_list|(
 name|box1
 argument_list|,

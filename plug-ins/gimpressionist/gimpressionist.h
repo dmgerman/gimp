@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e5bdf0108
+DECL|struct|__anon2c42daed0108
 block|{
 DECL|member|orientnum
 name|int
@@ -523,7 +523,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|storevals
+name|store_values
 parameter_list|(
 name|void
 parameter_list|)
@@ -532,7 +532,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|restorevals
+name|restore_values
 parameter_list|(
 name|void
 parameter_list|)
@@ -654,7 +654,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|createonecolumnlist
+name|create_one_column_list
 parameter_list|(
 name|GtkWidget
 modifier|*

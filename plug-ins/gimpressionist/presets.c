@@ -2871,7 +2871,7 @@ argument_list|(
 name|preset
 argument_list|)
 expr_stmt|;
-name|restorevals
+name|restore_values
 argument_list|()
 expr_stmt|;
 comment|/* g_free (preset); */
@@ -3510,7 +3510,7 @@ operator|=
 name|parsepath
 argument_list|()
 expr_stmt|;
-name|storevals
+name|store_values
 argument_list|()
 expr_stmt|;
 if|if
