@@ -117,7 +117,7 @@ argument_list|)
 decl_stmt|;
 name|locales
 operator|=
-name|g_list_prepend
+name|g_list_append
 argument_list|(
 name|locales
 argument_list|,
