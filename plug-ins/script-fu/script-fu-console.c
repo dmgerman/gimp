@@ -131,7 +131,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f14170108
+DECL|struct|__anon27da6deb0108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -1249,18 +1249,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|apply_callback (const gchar * proc_name,const gchar * scheme_proc_name,const gchar * proc_blurb,const gchar * proc_help,const gchar * proc_author,const gchar * proc_copyright,const gchar * proc_date,GimpPDBProcType proc_type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals)
+DECL|function|apply_callback (const gchar * proc_name,const gchar * proc_blurb,const gchar * proc_help,const gchar * proc_author,const gchar * proc_copyright,const gchar * proc_date,GimpPDBProcType proc_type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals)
 name|apply_callback
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|proc_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|scheme_proc_name
 parameter_list|,
 specifier|const
 name|gchar
@@ -1334,7 +1329,7 @@ name|g_string_append
 argument_list|(
 name|text
 argument_list|,
-name|scheme_proc_name
+name|proc_name
 argument_list|)
 expr_stmt|;
 for|for
@@ -1432,6 +1427,8 @@ operator|*
 operator|)
 name|gimp_proc_browser_dialog_new
 argument_list|(
+name|TRUE
+argument_list|,
 name|apply_callback
 argument_list|)
 argument_list|)

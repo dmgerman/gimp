@@ -86,7 +86,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-name|GParamType_to_string
+name|GimpPDBArgType_to_string
 parameter_list|(
 name|GimpPDBArgType
 name|type
@@ -1278,7 +1278,7 @@ expr_stmt|;
 comment|/* type */
 name|type
 operator|=
-name|GParamType_to_string
+name|GimpPDBArgType_to_string
 argument_list|(
 name|params
 index|[
@@ -1455,8 +1455,8 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|GParamType_to_string (GimpPDBArgType type)
-name|GParamType_to_string
+DECL|function|GimpPDBArgType_to_string (GimpPDBArgType type)
+name|GimpPDBArgType_to_string
 parameter_list|(
 name|GimpPDBArgType
 name|type

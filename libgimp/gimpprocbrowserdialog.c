@@ -111,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290f2a0b0103
+DECL|enum|__anon2b0702350103
 block|{
 DECL|enumerator|COLUMN_LABEL
 name|COLUMN_LABEL
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f2a0b0208
+DECL|struct|__anon2b0702350208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -170,11 +170,6 @@ DECL|member|proc_name
 name|gchar
 modifier|*
 name|proc_name
-decl_stmt|;
-DECL|member|scheme_proc_name
-name|gchar
-modifier|*
-name|scheme_proc_name
 decl_stmt|;
 DECL|member|proc_blurb
 name|gchar
@@ -222,6 +217,10 @@ DECL|member|return_vals
 name|GimpParamDef
 modifier|*
 name|return_vals
+decl_stmt|;
+DECL|member|scheme_names
+name|gboolean
+name|scheme_names
 decl_stmt|;
 DECL|member|apply_callback
 name|GimpProcBrowserApplyCallback
@@ -331,9 +330,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_proc_browser_dialog_new (GimpProcBrowserApplyCallback apply_callback)
+DECL|function|gimp_proc_browser_dialog_new (gboolean scheme_names,GimpProcBrowserApplyCallback apply_callback)
 name|gimp_proc_browser_dialog_new
 parameter_list|(
+name|gboolean
+name|scheme_names
+parameter_list|,
 name|GimpProcBrowserApplyCallback
 name|apply_callback
 parameter_list|)
@@ -374,6 +376,16 @@ name|GimpDBBrowser
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|browser
+operator|->
+name|scheme_names
+operator|=
+name|scheme_names
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|browser
 operator|->
@@ -991,12 +1003,6 @@ name|NULL
 expr_stmt|;
 name|browser
 operator|->
-name|scheme_proc_name
-operator|=
-name|NULL
-expr_stmt|;
-name|browser
-operator|->
 name|proc_blurb
 operator|=
 name|NULL
@@ -1226,27 +1232,17 @@ argument_list|(
 name|proc_name
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
+if|if
+condition|(
 name|browser
 operator|->
-name|scheme_proc_name
-argument_list|)
-expr_stmt|;
-name|browser
-operator|->
-name|scheme_proc_name
-operator|=
-name|g_strdup
-argument_list|(
-name|proc_name
-argument_list|)
-expr_stmt|;
+name|scheme_names
+condition|)
 name|browser_convert_string
 argument_list|(
 name|browser
 operator|->
-name|scheme_proc_name
+name|proc_name
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1371,7 +1367,7 @@ name|gimp_proc_view_new
 argument_list|(
 name|browser
 operator|->
-name|scheme_proc_name
+name|proc_name
 argument_list|,
 name|NULL
 argument_list|,
@@ -1453,10 +1449,6 @@ argument_list|(
 name|browser
 operator|->
 name|proc_name
-argument_list|,
-name|browser
-operator|->
-name|scheme_proc_name
 argument_list|,
 name|browser
 operator|->

@@ -37,11 +37,6 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|scheme_proc_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
 name|proc_blurb
 parameter_list|,
 specifier|const
@@ -91,6 +86,9 @@ name|GtkWidget
 modifier|*
 name|gimp_proc_browser_dialog_new
 parameter_list|(
+name|gboolean
+name|scheme_names
+parameter_list|,
 name|GimpProcBrowserApplyCallback
 name|apply_callback
 parameter_list|)

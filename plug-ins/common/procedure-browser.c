@@ -304,6 +304,8 @@ operator|*
 operator|)
 name|gimp_proc_browser_dialog_new
 argument_list|(
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|)
 argument_list|)
