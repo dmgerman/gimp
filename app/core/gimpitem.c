@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff058e0103
+DECL|enum|__anon2aefcf780103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -679,6 +679,12 @@ expr_stmt|;
 name|klass
 operator|->
 name|linked_changed
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|is_attached
 operator|=
 name|NULL
 expr_stmt|;
@@ -1852,6 +1858,40 @@ literal|"Unnamed"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_item_is_attached (GimpItem * item)
+name|gimp_item_is_attached
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_ITEM_GET_CLASS
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|is_attached
+argument_list|(
+name|item
+argument_list|)
+return|;
 block|}
 end_function
 

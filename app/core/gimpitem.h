@@ -207,6 +207,18 @@ name|item
 parameter_list|)
 function_decl|;
 comment|/*  virtual functions  */
+DECL|member|is_attached
+name|gboolean
+function_decl|(
+modifier|*
+name|is_attached
+function_decl|)
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
 DECL|member|duplicate
 name|GimpItem
 modifier|*
@@ -495,6 +507,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_item_removed
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_is_attached
 parameter_list|(
 name|GimpItem
 modifier|*

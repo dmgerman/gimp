@@ -16,18 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -456,10 +444,8 @@ condition|(
 name|drawable
 operator|&&
 operator|!
-name|gimp_image_owns_item
+name|gimp_item_is_attached
 argument_list|(
-name|gimage
-argument_list|,
 name|GIMP_ITEM
 argument_list|(
 name|drawable
@@ -1615,10 +1601,8 @@ condition|(
 name|drawable
 operator|&&
 operator|!
-name|gimp_image_owns_item
+name|gimp_item_is_attached
 argument_list|(
-name|gimage
-argument_list|,
 name|GIMP_ITEM
 argument_list|(
 name|drawable

@@ -200,10 +200,8 @@ name|drawable
 operator|==
 name|NULL
 operator|||
-name|gimp_image_owns_item
+name|gimp_item_is_attached
 argument_list|(
-name|gimage
-argument_list|,
 name|GIMP_ITEM
 argument_list|(
 name|drawable
