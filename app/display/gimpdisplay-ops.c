@@ -1179,7 +1179,7 @@ name|GtkWidget
 modifier|*
 name|mbox
 decl_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -1246,7 +1246,7 @@ name|GtkWidget
 modifier|*
 name|mbox
 decl_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -1408,7 +1408,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,

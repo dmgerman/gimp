@@ -1731,7 +1731,10 @@ name|open_options_genbuttonlabel
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"generate\npreview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|{
@@ -1878,7 +1881,10 @@ argument_list|(
 name|open_options_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"No selection."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5607,14 +5613,20 @@ argument_list|)
 argument_list|,
 name|thumb_may_be_outdated
 condition|?
+name|_
+argument_list|(
 literal|"(this thumbnail may be out of date)"
+argument_list|)
 else|:
 operator|(
 name|imginfo
 condition|?
 name|imginfo
 else|:
+name|_
+argument_list|(
 literal|"(no information)"
+argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
@@ -5636,7 +5648,10 @@ argument_list|(
 name|open_options_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"(thumbnail saving is disabled)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5650,7 +5665,10 @@ argument_list|(
 name|open_options_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"(could not write thumbnail file)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5662,7 +5680,10 @@ argument_list|(
 name|open_options_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"(thumbnail file not written)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5719,7 +5740,10 @@ argument_list|(
 name|open_options_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"no preview available"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5983,7 +6007,10 @@ argument_list|(
 name|open_options_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"(could not make preview)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -6822,7 +6849,7 @@ modifier|*
 name|filesel
 parameter_list|)
 block|{
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Toolbox>"
 argument_list|,
@@ -6834,7 +6861,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -6846,7 +6873,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -6858,7 +6885,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -6894,7 +6921,7 @@ argument_list|(
 name|filesel
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Toolbox>"
 argument_list|,
@@ -6906,7 +6933,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -6924,7 +6951,7 @@ name|gdisplay_active
 argument_list|()
 condition|)
 block|{
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -6936,7 +6963,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,

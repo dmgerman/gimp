@@ -1135,10 +1135,7 @@ literal|1
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"shmget failed...disabling shared memory tile transport"
-argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1172,10 +1169,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"shmat failed...disabling shared memory tile transport"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|shm_ID
@@ -3066,10 +3060,7 @@ name|TRUE
 expr_stmt|;
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"\"%s\" executable not found\n"
-argument_list|)
 argument_list|,
 name|plug_in_def
 operator|->
@@ -3719,10 +3710,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unable to open pipe"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4238,10 +4226,7 @@ directive|endif
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unable to run plug-in: %s"
-argument_list|)
 argument_list|,
 name|plug_in
 operator|->
@@ -5662,7 +5647,7 @@ operator|)
 operator|)
 condition|)
 block|{
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -5674,7 +5659,7 @@ argument_list|,
 name|sensitive
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -7191,11 +7176,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
 literal|"does not take the standard plug-in args"
-argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7281,11 +7263,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
 literal|"does not take the standard plug-in args"
-argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7371,11 +7350,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
 literal|"does not take the standard plug-in args"
-argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7487,11 +7463,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
 literal|"does not take the standard plug-in args"
-argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7512,12 +7485,9 @@ else|else
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug-in \"%s\" attempted to install procedure \"%s\" in "
 literal|"an invalid menu location.  Use either \"<Toolbox>\", \"<Image>\", "
 literal|"\"<Load>\", or \"<Save>\"."
-argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7615,12 +7585,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug_in \"%s\" attempted to install procedure \"%s\" "
 literal|"which fails to comply with the array parameter "
 literal|"passing standard.  Argument %d is noncompliant."
-argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -9601,13 +9568,10 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"duplicate plug-in: \"%s\" (skipping)\n"
 argument_list|)
-argument_list|,
+operator|,
 name|filename
-argument_list|)
 expr_stmt|;
 return|return;
 block|}
@@ -10500,10 +10464,7 @@ break|break;
 default|default:
 name|g_error
 argument_list|(
-name|_
-argument_list|(
 literal|"Unknown procedure type."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -10823,10 +10784,7 @@ name|freed_proc_def
 decl_stmt|;
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"removing duplicate PDB procedure \"%s\""
-argument_list|)
 argument_list|,
 name|proc_def
 operator|->
@@ -12302,10 +12260,7 @@ name|PDB_REGION
 case|:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"the \"region\" arg type is not currently supported"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -13393,10 +13348,7 @@ name|PDB_REGION
 case|:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"the \"region\" arg type is not currently supported"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -14057,10 +14009,7 @@ name|PDB_REGION
 case|:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"the \"region\" arg type is not currently supported"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -14439,10 +14388,7 @@ name|PDB_REGION
 case|:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"the \"region\" arg type is not currently supported"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

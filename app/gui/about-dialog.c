@@ -915,10 +915,7 @@ name|font
 operator|=
 name|gdk_font_load
 argument_list|(
-name|_
-argument_list|(
 literal|"-Adobe-Helvetica-Medium-R-Normal--*-140-*-*-*-*-*-*"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_push_style
@@ -986,10 +983,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

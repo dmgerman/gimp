@@ -7719,7 +7719,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive_locale ("<Image>", (menu), (condition) != 0)
+value|menus_set_sensitive_glue ("<Image>", (menu), (condition) != 0)
 DECL|macro|SET_STATE (menu,condition)
 define|#
 directive|define
@@ -7730,7 +7730,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_state_locale ("<Image>", (menu), (condition) != 0)
+value|menus_set_state_glue ("<Image>", (menu), (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
 name|N_
@@ -10036,10 +10036,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"gdisplays_flush() called recursively."
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

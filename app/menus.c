@@ -4057,8 +4057,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|menus_set_sensitive_locale (gchar * prepath,gchar * path,gint sensitive)
-name|menus_set_sensitive_locale
+DECL|function|menus_set_sensitive_glue (gchar * prepath,gchar * path,gint sensitive)
+name|menus_set_sensitive_glue
 parameter_list|(
 name|gchar
 modifier|*
@@ -4198,8 +4198,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|menus_set_state_locale (gchar * prepath,gchar * path,gint state)
-name|menus_set_state_locale
+DECL|function|menus_set_state_glue (gchar * prepath,gchar * path,gint state)
+name|menus_set_state_glue
 parameter_list|(
 name|gchar
 modifier|*

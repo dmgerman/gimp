@@ -277,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2bf17a5c0108
+DECL|struct|__anon288212700108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bf17a5c0208
+DECL|struct|__anon288212700208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bf17a5c0308
+DECL|struct|__anon288212700308
 typedef|typedef
 struct|struct
 block|{
@@ -4071,10 +4071,7 @@ name|closed
 condition|)
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"bezier_select_button_press(): Tried to edit on open bezier curve in edit selection"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* erase the handles */
@@ -5255,10 +5252,7 @@ name|anchor
 condition|)
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"bezier_select_motion(): Encountered orphaned bezier control point"
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -8000,10 +7994,7 @@ name|points
 condition|)
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"bezier_draw_segment(): Bad bezier segment"
-argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -8106,10 +8097,7 @@ break|break;
 default|default:
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"bezier_draw_segment(): Unknown coordinate space: %d"
-argument_list|)
 argument_list|,
 name|space
 argument_list|)
@@ -8913,10 +8901,7 @@ name|closed
 condition|)
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"bezier_convert(): tried to convert an open bezier curve"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* destroy previous mask */
@@ -9280,7 +9265,7 @@ name|list
 operator|->
 name|next
 expr_stmt|;
-comment|/*           if (!list) 	    g_message (_("cannot properly scanline convert bezier curve: %d"), i);           else */
+comment|/*           if (!list) 	    g_message ("cannot properly scanline convert bezier curve: %d", i);           else */
 block|{
 comment|/*  bounds checking  */
 name|x
@@ -11051,10 +11036,7 @@ break|break;
 default|default:
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"test_add_point_on_segment(): Unknown coordinate space: %d"
-argument_list|)
 argument_list|,
 name|space
 argument_list|)
@@ -12150,9 +12132,12 @@ operator|->
 name|closed
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"Curve not closed"
+name|_
+argument_list|(
+literal|"Curve not closed!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -14007,10 +13992,7 @@ name|points
 condition|)
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"bezier_draw_segment_for_distance(): Bad bezier segment"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|geometry

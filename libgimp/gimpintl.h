@@ -13,8 +13,27 @@ name|__GIMPINTL_H__
 end_define
 
 begin_comment
-comment|/* Copied from gnome-i18n.h by Tom Tromey<tromey@creche.cygnus.com> */
+comment|/* Copied from gnome-i18n.h by Tom Tromey<tromey@creche.cygnus.com> *  * Heavily modified by Daniel Egger<Daniel.Egger@t-online.de>       *  * So be sure to hit me instead of him if something is wrong here    */
 end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|LOCALEDIR
+end_ifndef
+
+begin_define
+DECL|macro|LOCALEDIR
+define|#
+directive|define
+name|LOCALEDIR
+value|g_strconcat (gimp_data_directory (), \ 			       G_DIR_SEPARATOR_S, \ 			       "locale", \ 			       NULL)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#
@@ -76,6 +95,18 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_define
+DECL|macro|INIT_LOCALE (domain)
+define|#
+directive|define
+name|INIT_LOCALE
+parameter_list|(
+name|domain
+parameter_list|)
+define|\
+value|gtk_set_locale ();			\ 	setlocale (LC_NUMERIC, "C");		\ 	bindtextdomain (domain, LOCALEDIR);	\ 	textdomain (domain);
+end_define
 
 begin_else
 else|#

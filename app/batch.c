@@ -250,10 +250,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"script-fu not available: batch mode disabled\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -285,10 +282,7 @@ name|NATIVE_WIN32
 comment|/* for now */
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"reading batch commands from stdin\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_input_add
@@ -467,10 +461,7 @@ name|PDB_EXECUTION_ERROR
 case|:
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"batch command: experienced an execution error.\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -479,10 +470,7 @@ name|PDB_CALLING_ERROR
 case|:
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"batch command: experienced a calling error.\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -491,10 +479,7 @@ name|PDB_SUCCESS
 case|:
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"batch command: executed successfully.\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -810,10 +795,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"extension_perl_server not available: unable to start the perl server\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -919,10 +901,7 @@ name|PDB_EXECUTION_ERROR
 case|:
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"perl server: experienced an execution error.\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -931,10 +910,7 @@ name|PDB_CALLING_ERROR
 case|:
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"perl server: experienced a calling error.\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -943,10 +919,7 @@ name|PDB_SUCCESS
 case|:
 name|g_print
 argument_list|(
-name|_
-argument_list|(
 literal|"perl server: executed successfully.\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

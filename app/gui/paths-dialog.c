@@ -322,7 +322,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2b8758ea0108
+DECL|struct|__anon27724a910108
 typedef|typedef
 struct|struct
 block|{
@@ -451,7 +451,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b8758ea0208
+DECL|struct|__anon27724a910208
 typedef|typedef
 struct|struct
 block|{
@@ -480,7 +480,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8758ea0308
+DECL|struct|__anon27724a910308
 typedef|typedef
 struct|struct
 block|{
@@ -499,7 +499,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8758ea0408
+DECL|struct|__anon27724a910408
 typedef|typedef
 struct|struct
 block|{
@@ -1181,7 +1181,7 @@ block|{
 case|case
 name|NEW_PATH_BUTTON
 case|:
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Paths>"
 argument_list|,
@@ -1209,7 +1209,7 @@ break|break;
 case|case
 name|DUP_PATH_BUTTON
 case|:
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Paths>"
 argument_list|,
@@ -1237,7 +1237,7 @@ break|break;
 case|case
 name|PATH_TO_SEL_BUTTON
 case|:
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Paths>"
 argument_list|,
@@ -1265,7 +1265,7 @@ break|break;
 case|case
 name|STROKE_PATH_BUTTON
 case|:
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Paths>"
 argument_list|,
@@ -1293,7 +1293,7 @@ break|break;
 case|case
 name|DEL_PATH_BUTTON
 case|:
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Paths>"
 argument_list|,
@@ -1321,7 +1321,7 @@ break|break;
 case|case
 name|COPY_PATH_BUTTON
 case|:
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Paths>"
 argument_list|,
@@ -1337,7 +1337,7 @@ break|break;
 case|case
 name|PASTE_PATH_BUTTON
 case|:
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Paths>"
 argument_list|,
@@ -1353,10 +1353,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"paths_ops_button_set_sensitive:: invalid button specified"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1449,10 +1446,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"point_ops_button_set_sensitive:: invalid button specified"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5264,10 +5258,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"paths list: internal list error"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7074,10 +7065,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Selection to path (advanced) procedure lookup failed"
-argument_list|)
+literal|"paths_dialog_adavanced_to_path_callback(): selection to path (advanced) procedure lookup failed"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7264,10 +7252,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Selection to path procedure lookup failed"
-argument_list|)
+literal|"paths_dialog_sel_to_path_callback(): selection to path procedure lookup failed"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -9957,10 +9942,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"Invalid single point in path\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
@@ -9978,10 +9960,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"Invalid point type passed\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
@@ -11712,10 +11691,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"wrong number of points\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11824,10 +11800,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"Invalid single point in path\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11842,10 +11815,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"Invalid point type passed\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -12321,10 +12291,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"paths_get_tattoo: invalid path"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -12488,10 +12455,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"paths_delete_path: invalid path"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

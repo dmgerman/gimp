@@ -352,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c1bf250108
+DECL|struct|__anon2c5f8baa0108
 block|{
 DECL|member|offset
 name|double
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c1bf250208
+DECL|struct|__anon2c5f8baa0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -7396,10 +7396,7 @@ break|break;
 default|default:
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"gradient_render_pixel(): Unknown gradient type %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -8061,10 +8058,7 @@ break|break;
 default|default:
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"gradient_fill_region(): Unknown blend mode %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -8261,10 +8255,7 @@ break|break;
 default|default:
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"gradient_fill_region(): Unknown gradient type %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -8313,10 +8304,7 @@ break|break;
 default|default:
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"gradient_fill_region(): Unknown repeat mode %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int

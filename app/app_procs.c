@@ -450,7 +450,7 @@ DECL|macro|NAME
 define|#
 directive|define
 name|NAME
-value|"The GIMP"
+value|_("The GIMP")
 end_define
 
 begin_define
@@ -458,7 +458,7 @@ DECL|macro|BROUGHT
 define|#
 directive|define
 name|BROUGHT
-value|"brought to you by"
+value|_("brought to you by")
 end_define
 
 begin_define
@@ -3036,7 +3036,7 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Toolbox>"
 argument_list|,
@@ -3048,7 +3048,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,
@@ -3144,7 +3144,7 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Toolbox>"
 argument_list|,
@@ -3156,7 +3156,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 argument_list|(
 literal|"<Image>"
 argument_list|,

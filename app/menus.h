@@ -191,7 +191,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|menus_set_sensitive_locale
+name|menus_set_sensitive_glue
 parameter_list|(
 name|gchar
 modifier|*
@@ -223,7 +223,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|menus_set_state_locale
+name|menus_set_state_glue
 parameter_list|(
 name|gchar
 modifier|*

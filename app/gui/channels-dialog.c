@@ -3013,7 +3013,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive_locale ("<Channels>", (menu), (condition) != 0)
+value|menus_set_sensitive_glue ("<Channels>", (menu), (condition) != 0)
 DECL|macro|SET_OPS_SENSITIVE (button,condition)
 define|#
 directive|define
@@ -3398,10 +3398,7 @@ name|AUXILLARY_CHANNEL
 case|:
 name|g_error
 argument_list|(
-name|_
-argument_list|(
 literal|"error in %s at %d: this shouldn't happen."
-argument_list|)
 argument_list|,
 name|__FILE__
 argument_list|,
@@ -3636,10 +3633,7 @@ name|AUXILLARY_CHANNEL
 case|:
 name|g_error
 argument_list|(
-name|_
-argument_list|(
 literal|"error in %s at %d: this shouldn't happen."
-argument_list|)
 argument_list|,
 name|__FILE__
 argument_list|,
@@ -5127,11 +5121,8 @@ else|else
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"channels_dialog_drop_new_channel_callback():\n"
 literal|"could not allocate new channel"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

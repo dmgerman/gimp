@@ -3096,10 +3096,7 @@ name|layer_widgets
 condition|)
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"layers_dialog_update(): layersD->layer_widgets not empty!"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|layersD
@@ -5523,7 +5520,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive_locale ("<Layers>", (menu), (condition) != 0)
+value|menus_set_sensitive_glue ("<Layers>", (menu), (condition) != 0)
 DECL|macro|SET_OPS_SENSITIVE (button,condition)
 define|#
 directive|define
@@ -6770,10 +6767,7 @@ name|i
 return|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Unknown layer mode"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -8723,11 +8717,8 @@ else|else
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"layers_dialog_drop_new_layer_callback():\n"
 literal|"could not allocate new layer"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -15413,11 +15404,8 @@ else|else
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"new_layer_query_ok_callback():\n"
 literal|"could not allocate new layer"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

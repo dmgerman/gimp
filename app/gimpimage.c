@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29a3bd0c0103
+DECL|enum|__anon2bd2986a0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -2760,10 +2760,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gimp_image_apply_image sent illegal parameters"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3321,10 +3318,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gimp_image_apply_image sent illegal parameters"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5453,10 +5447,7 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Unable to project indexed image."
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -11491,10 +11482,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gimp_image_merge_layers: could not allocate merge layer"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11625,10 +11613,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gimp_image_merge_layers: could not allocate merge layer"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11782,10 +11767,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gimp_image_merge_layers attempting to merge incompatible layers\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -12259,10 +12241,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gimp_image_add_layer: attempt to add layer to wrong image"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -12297,10 +12276,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gimp_image_add_layer: trying to add layer to image twice"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -13758,10 +13734,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gimp_image_add_channel: attempt to add channel to wrong image"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -13796,10 +13769,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"gimp_image_add_channel: trying to add channel to image twice"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

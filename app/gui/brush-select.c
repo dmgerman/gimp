@@ -1628,7 +1628,10 @@ name|brush_size
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"(0 X 0)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3342,10 +3345,7 @@ name|PDB_SUCCESS
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"failed to run brush callback function"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args
@@ -3881,7 +3881,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b3be110108
+DECL|struct|__anon2748fdc70108
 typedef|typedef
 struct|struct
 block|{
@@ -6476,7 +6476,10 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"(%d X %d)"
+argument_list|)
 argument_list|,
 name|brush
 operator|->
@@ -6714,7 +6717,10 @@ block|}
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Wilber says: \"I don\'t know how to delete that brush.\""
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

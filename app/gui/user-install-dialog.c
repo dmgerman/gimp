@@ -468,7 +468,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon2ad860f80108
+DECL|struct|__anon2b7a45990108
 specifier|static
 specifier|const
 struct|struct
@@ -499,10 +499,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"Copyright (C) 1995 Spencer Kimball and Peter Mattis\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2290,10 +2287,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Did you notice any error messages\n"
 literal|"in the console window? If not, installation\n"
 literal|"was successful! Otherwise, quit and investigate\n"
 literal|"the possible reason...\n"
+argument_list|)
 argument_list|,
 operator|-
 literal|1

@@ -955,10 +955,7 @@ name|tmp_segs
 condition|)
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"make_seg(): Unable to reallocate segments array for mask boundary."
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1189,10 +1186,7 @@ name|empty_segs_c
 condition|)
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"allocate_empty_segs(): Unable to reallocate empty segments array for mask boundary."
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
