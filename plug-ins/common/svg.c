@@ -72,6 +72,14 @@ value|72.0
 end_define
 
 begin_define
+DECL|macro|SVG_DEFAULT_SIZE
+define|#
+directive|define
+name|SVG_DEFAULT_SIZE
+value|500
+end_define
+
+begin_define
 DECL|macro|SVG_PREVIEW_SIZE
 define|#
 directive|define
@@ -82,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28713d2b0108
+DECL|struct|__anon2b69538e0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -133,7 +141,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28713d2b0208
+DECL|struct|__anon2b69538e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -1219,19 +1227,30 @@ name|vals
 init|=
 name|data
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
+if|if
+condition|(
 operator|*
 name|width
-operator|>
-literal|0
-operator|&&
+operator|<
+literal|1
+operator|||
 operator|*
 name|height
-operator|>
-literal|0
-argument_list|)
+operator|<
+literal|1
+condition|)
+block|{
+operator|*
+name|width
+operator|=
+name|SVG_DEFAULT_SIZE
 expr_stmt|;
+operator|*
+name|height
+operator|=
+name|SVG_DEFAULT_SIZE
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -1655,6 +1674,30 @@ name|vals
 init|=
 name|data
 decl_stmt|;
+if|if
+condition|(
+operator|*
+name|width
+operator|<
+literal|1
+operator|||
+operator|*
+name|height
+operator|<
+literal|1
+condition|)
+block|{
+operator|*
+name|width
+operator|=
+name|SVG_DEFAULT_SIZE
+expr_stmt|;
+operator|*
+name|height
+operator|=
+name|SVG_DEFAULT_SIZE
+expr_stmt|;
+block|}
 name|vals
 operator|->
 name|width
@@ -4006,9 +4049,9 @@ name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Import path elements of the SVG so they can "
-literal|"be used with the GIMP path tool. This only "
-literal|"works properly with an import ratio of 1.0."
+literal|"Import path elements of the SVG so they can be "
+literal|"used with the GIMP path tool. This may not work "
+literal|"properly with import ratios other than 1.0."
 argument_list|)
 argument_list|,
 name|NULL
