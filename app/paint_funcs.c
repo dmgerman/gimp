@@ -89,6 +89,12 @@ directive|include
 file|"libgimp/gimpmath.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpcolorspace.h"
+end_include
+
 begin_define
 DECL|macro|STD_BUF_SIZE
 define|#
@@ -201,7 +207,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd5d4d60103
+DECL|enum|__anon2a222c270103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -3224,7 +3230,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-name|rgb_to_hsv
+name|gimp_rgb_to_hsv
 argument_list|(
 operator|&
 name|r1
@@ -3236,7 +3242,7 @@ operator|&
 name|b1
 argument_list|)
 expr_stmt|;
-name|rgb_to_hsv
+name|gimp_rgb_to_hsv
 argument_list|(
 operator|&
 name|r2
@@ -3279,7 +3285,7 @@ expr_stmt|;
 break|break;
 block|}
 comment|/*  set the destination  */
-name|hsv_to_rgb
+name|gimp_hsv_to_rgb
 argument_list|(
 operator|&
 name|r1
@@ -3471,7 +3477,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-name|rgb_to_hls
+name|gimp_rgb_to_hls
 argument_list|(
 operator|&
 name|r1
@@ -3483,7 +3489,7 @@ operator|&
 name|b1
 argument_list|)
 expr_stmt|;
-name|rgb_to_hls
+name|gimp_rgb_to_hls
 argument_list|(
 operator|&
 name|r2
@@ -3505,7 +3511,7 @@ operator|=
 name|b2
 expr_stmt|;
 comment|/*  set the destination  */
-name|hls_to_rgb
+name|gimp_hls_to_rgb
 argument_list|(
 operator|&
 name|r1

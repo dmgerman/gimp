@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296edbaa0108
+DECL|struct|__anon2b8131600108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296edbaa0208
+DECL|struct|__anon2b8131600208
 block|{
 DECL|member|run
 name|gint
@@ -6610,7 +6610,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-name|rgb_to_hls
+name|gimp_rgb_to_hls
 argument_list|(
 operator|&
 name|r
@@ -6705,7 +6705,7 @@ name|b
 operator|=
 literal|1.0
 expr_stmt|;
-name|hls_to_rgb
+name|gimp_hls_to_rgb
 argument_list|(
 operator|&
 name|r

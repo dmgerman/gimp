@@ -551,7 +551,7 @@ name|s
 decl_stmt|,
 name|v
 decl_stmt|;
-name|rgb_to_hsv4
+name|gimp_rgb_to_hsv4
 argument_list|(
 operator|&
 name|cmap
@@ -633,7 +633,7 @@ name|s
 decl_stmt|,
 name|v
 decl_stmt|;
-name|rgb_to_hsv4
+name|gimp_rgb_to_hsv4
 argument_list|(
 operator|&
 name|cmap
@@ -693,7 +693,7 @@ operator|-
 name|vlo
 operator|)
 expr_stmt|;
-name|hsv_to_rgb4
+name|gimp_hsv_to_rgb4
 argument_list|(
 operator|&
 name|cmap
@@ -979,7 +979,7 @@ name|z
 decl_stmt|,
 name|v
 decl_stmt|;
-name|rgb_to_hsv4
+name|gimp_rgb_to_hsv4
 argument_list|(
 name|s
 argument_list|,
@@ -1216,7 +1216,7 @@ name|z
 decl_stmt|,
 name|v
 decl_stmt|;
-name|rgb_to_hsv4
+name|gimp_rgb_to_hsv4
 argument_list|(
 name|s
 argument_list|,
@@ -1270,7 +1270,7 @@ operator|-
 name|vlo
 operator|)
 expr_stmt|;
-name|hsv_to_rgb4
+name|gimp_hsv_to_rgb4
 argument_list|(
 name|d
 argument_list|,

@@ -57,6 +57,12 @@ directive|include
 file|"libgimp/gimpmath.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpcolorspace.h"
+end_include
+
 begin_define
 DECL|macro|CYAN_RED
 define|#
@@ -503,7 +509,7 @@ operator|->
 name|preserve_luminosity
 condition|)
 block|{
-name|rgb_to_hls
+name|gimp_rgb_to_hls
 argument_list|(
 operator|&
 name|r_n
@@ -517,7 +523,7 @@ argument_list|)
 expr_stmt|;
 name|g_n
 operator|=
-name|rgb_to_l
+name|gimp_rgb_to_l
 argument_list|(
 name|r
 argument_list|,
@@ -526,7 +532,7 @@ argument_list|,
 name|b
 argument_list|)
 expr_stmt|;
-name|hls_to_rgb
+name|gimp_hls_to_rgb
 argument_list|(
 operator|&
 name|r_n

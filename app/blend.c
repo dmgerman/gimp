@@ -358,7 +358,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c235a430108
+DECL|struct|__anon2882c1960108
 block|{
 DECL|member|offset
 name|double
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c235a430208
+DECL|struct|__anon2882c1960208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -7007,7 +7007,7 @@ name|blend_mode
 operator|==
 name|FG_BG_HSV_MODE
 condition|)
-name|hsv_to_rgb_double
+name|gimp_hsv_to_rgb_double
 argument_list|(
 operator|&
 name|color
@@ -7421,7 +7421,7 @@ case|case
 name|FG_BG_HSV_MODE
 case|:
 comment|/* Convert to HSV */
-name|rgb_to_hsv_double
+name|gimp_rgb_to_hsv_double
 argument_list|(
 operator|&
 name|rbd
@@ -7445,7 +7445,7 @@ operator|.
 name|b
 argument_list|)
 expr_stmt|;
-name|rgb_to_hsv_double
+name|gimp_rgb_to_hsv_double
 argument_list|(
 operator|&
 name|rbd

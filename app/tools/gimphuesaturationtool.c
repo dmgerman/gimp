@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -956,7 +962,7 @@ index|[
 name|BLUE_PIX
 index|]
 expr_stmt|;
-name|rgb_to_hls
+name|gimp_rgb_to_hls
 argument_list|(
 operator|&
 name|r
@@ -1057,7 +1063,7 @@ index|[
 name|b
 index|]
 expr_stmt|;
-name|hls_to_rgb
+name|gimp_hls_to_rgb
 argument_list|(
 operator|&
 name|r
@@ -3427,7 +3433,7 @@ index|[
 name|BLUE_PIX
 index|]
 expr_stmt|;
-name|rgb_to_hls
+name|gimp_rgb_to_hls
 argument_list|(
 name|rgb
 argument_list|,
@@ -3488,7 +3494,7 @@ name|BLUE_PIX
 index|]
 index|]
 expr_stmt|;
-name|hls_to_rgb
+name|gimp_hls_to_rgb
 argument_list|(
 name|rgb
 argument_list|,

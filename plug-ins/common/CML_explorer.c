@@ -261,7 +261,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be64520108
+DECL|struct|__anon29f1f66e0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -289,7 +289,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be64520208
+DECL|struct|__anon29f1f66e0208
 block|{
 DECL|member|name
 name|gchar
@@ -1631,7 +1631,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be64520308
+DECL|struct|__anon29f1f66e0308
 block|{
 DECL|member|function
 name|gint
@@ -1704,7 +1704,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be64520408
+DECL|struct|__anon29f1f66e0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2451,7 +2451,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be64520508
+DECL|struct|__anon29f1f66e0508
 block|{
 DECL|member|run
 name|gint
@@ -2499,7 +2499,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be64520608
+DECL|struct|__anon29f1f66e0608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -4331,7 +4331,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
-name|rgb_to_hsv
+name|gimp_rgb_to_hsv
 argument_list|(
 name|rgbi
 argument_list|,
@@ -4667,7 +4667,7 @@ condition|(
 operator|!
 name|dest_is_gray
 condition|)
-name|hsv_to_rgb
+name|gimp_hsv_to_rgb
 argument_list|(
 operator|&
 name|r
@@ -4839,7 +4839,7 @@ index|]
 expr_stmt|;
 else|else
 block|{
-name|rgb_to_hsv
+name|gimp_rgb_to_hsv
 argument_list|(
 name|rgbi
 argument_list|,
@@ -4909,7 +4909,7 @@ index|]
 else|:
 name|v
 expr_stmt|;
-name|hsv_to_rgb
+name|gimp_hsv_to_rgb
 argument_list|(
 operator|&
 name|r
@@ -10948,7 +10948,7 @@ literal|255
 operator|)
 argument_list|)
 expr_stmt|;
-name|hsv_to_rgb
+name|gimp_hsv_to_rgb
 argument_list|(
 name|rgbi
 argument_list|,

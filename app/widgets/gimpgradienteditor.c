@@ -338,7 +338,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2979c3cf0103
+DECL|enum|__anon2b156cdf0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -362,7 +362,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979c3cf0208
+DECL|struct|__anon2b156cdf0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -645,7 +645,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2979c3cf0308
+DECL|struct|__anon2b156cdf0308
 block|{
 DECL|member|r
 DECL|member|g
@@ -3627,7 +3627,7 @@ name|seg
 operator|->
 name|b1
 expr_stmt|;
-name|rgb_to_hsv_double
+name|gimp_rgb_to_hsv_double
 argument_list|(
 operator|&
 name|h0
@@ -3639,7 +3639,7 @@ operator|&
 name|v0
 argument_list|)
 expr_stmt|;
-name|rgb_to_hsv_double
+name|gimp_rgb_to_hsv_double
 argument_list|(
 operator|&
 name|h1
@@ -3821,7 +3821,7 @@ name|b
 operator|=
 name|v0
 expr_stmt|;
-name|hsv_to_rgb_double
+name|gimp_hsv_to_rgb_double
 argument_list|(
 name|r
 argument_list|,
@@ -10944,7 +10944,7 @@ name|v
 operator|=
 name|b
 expr_stmt|;
-name|rgb_to_hsv_double
+name|gimp_rgb_to_hsv_double
 argument_list|(
 operator|&
 name|h

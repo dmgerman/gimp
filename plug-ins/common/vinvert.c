@@ -603,7 +603,7 @@ operator|+
 literal|2
 index|]
 expr_stmt|;
-name|rgb_to_hsv
+name|gimp_rgb_to_hsv
 argument_list|(
 operator|&
 name|v1
@@ -621,7 +621,7 @@ literal|255
 operator|-
 name|v3
 expr_stmt|;
-name|hsv_to_rgb
+name|gimp_hsv_to_rgb
 argument_list|(
 operator|&
 name|v1
