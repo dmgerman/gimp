@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b91186c0103
+DECL|enum|__anon2ac133650103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -1415,6 +1415,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 comment|/* clean up */
 name|g_free
 argument_list|(
@@ -2011,10 +2016,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|struct
-name|stat
-name|st
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dialog
@@ -2035,10 +2036,13 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
-name|gsize
-name|filesize
-init|=
-literal|0
+name|gchar
+modifier|*
+name|memsize
+decl_stmt|;
+name|struct
+name|stat
+name|st
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
@@ -2067,9 +2071,9 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"filters/ccanalyze.html"
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_CLOSE
 argument_list|,
-name|GTK_RESPONSE_OK
+name|GTK_RESPONSE_CLOSE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2102,7 +2106,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2137,6 +2141,16 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|gtk_container_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -2144,7 +2158,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2242,28 +2256,12 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Image dimensions: %dx%d"
+literal|"Image dimensions: %d x %d"
 argument_list|)
 argument_list|,
 name|width
 argument_list|,
 name|height
-argument_list|)
-expr_stmt|;
-name|doLabel
-argument_list|(
-name|table
-argument_list|,
-name|_
-argument_list|(
-literal|"Uncompressed size in bytes: %d"
-argument_list|)
-argument_list|,
-name|width
-operator|*
-name|height
-operator|*
-name|bpp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2278,7 +2276,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"No colors (?)"
+literal|"No colors"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2312,6 +2310,34 @@ argument_list|,
 name|uniques
 argument_list|)
 expr_stmt|;
+name|memsize
+operator|=
+name|gimp_memsize_to_string
+argument_list|(
+name|width
+operator|*
+name|height
+operator|*
+name|bpp
+argument_list|)
+expr_stmt|;
+name|doLabel
+argument_list|(
+name|table
+argument_list|,
+name|_
+argument_list|(
+literal|"Uncompressed size: %s"
+argument_list|)
+argument_list|,
+name|memsize
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|memsize
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|filename
@@ -2332,6 +2358,17 @@ name|imageID
 argument_list|)
 condition|)
 block|{
+name|gchar
+modifier|*
+name|memsize
+init|=
+name|gimp_memsize_to_string
+argument_list|(
+name|st
+operator|.
+name|st_size
+argument_list|)
+decl_stmt|;
 name|doLabel
 argument_list|(
 name|table
@@ -2344,22 +2381,16 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-name|filesize
-operator|=
-name|st
-operator|.
-name|st_size
-expr_stmt|;
 name|doLabel
 argument_list|(
 name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Compressed size in bytes: %u"
+literal|"Compressed size: %s"
 argument_list|)
 argument_list|,
-name|filesize
+name|memsize
 argument_list|)
 expr_stmt|;
 name|doLabel
@@ -2387,8 +2418,15 @@ operator|*
 name|bpp
 argument_list|)
 operator|/
-name|filesize
+name|st
+operator|.
+name|st_size
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|memsize
 argument_list|)
 expr_stmt|;
 block|}
