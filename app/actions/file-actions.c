@@ -1016,10 +1016,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|action
-argument_list|)
 argument_list|,
 literal|"label"
 argument_list|,
@@ -1056,10 +1053,7 @@ else|else
 block|{
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|action
-argument_list|)
 argument_list|,
 literal|"visible"
 argument_list|,
