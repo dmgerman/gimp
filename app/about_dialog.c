@@ -366,6 +366,8 @@ literal|"Adam D. Moss"
 block|,
 literal|"Shuji Narazaki"
 block|,
+literal|"Sven Neumann"
+block|,
 literal|"Stephen Robert Norris"
 block|,
 literal|"Erik Nygren"
@@ -385,6 +387,8 @@ block|,
 literal|"Tracy Scott"
 block|,
 literal|"Manish Singh"
+block|,
+literal|"Mike Sweet"
 block|,
 literal|"Eiichi Takamori"
 block|,

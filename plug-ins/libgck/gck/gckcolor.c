@@ -169,7 +169,7 @@ value|((val) + 0.5)
 end_define
 
 begin_typedef
-DECL|struct|__anon27fd8dc90108
+DECL|struct|__anon2c63a2a00108
 typedef|typedef
 struct|struct
 block|{
@@ -13743,23 +13743,22 @@ name|count
 operator|++
 index|]
 expr_stmt|;
+comment|/* changed to work on 32 bit displays */
 name|r
 operator|=
 name|r
-operator|<<
-literal|24
-expr_stmt|;
-name|g
-operator|=
-name|g
 operator|<<
 literal|16
 expr_stmt|;
+name|g
+operator|=
+name|g
+operator|<<
+literal|8
+expr_stmt|;
 name|b
 operator|=
 name|b
-operator|<<
-literal|8
 expr_stmt|;
 name|pixel
 operator|=
