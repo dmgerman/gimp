@@ -88,13 +88,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-dump.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"base/tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpconfig-dump.h"
 end_include
 
 begin_include
@@ -1848,11 +1854,9 @@ name|mallopt
 argument_list|(
 name|M_MMAP_THRESHOLD
 argument_list|,
-literal|64
+name|TILE_WIDTH
 operator|*
-literal|64
-operator|-
-literal|1
+name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
 endif|#
