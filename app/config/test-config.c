@@ -137,6 +137,10 @@ name|gchar
 modifier|*
 name|result
 decl_stmt|;
+name|GList
+modifier|*
+name|list
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -363,7 +367,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" done.\n"
+literal|" done.\n\n"
 argument_list|)
 expr_stmt|;
 name|g_print
@@ -427,6 +431,66 @@ argument_list|,
 literal|20.0
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|" Creating a diff between the two ..."
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|gimp_config_diff
+argument_list|(
+name|grid
+argument_list|,
+name|grid2
+argument_list|,
+literal|0
+argument_list|)
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|list
+operator|->
+name|next
+control|)
+block|{
+name|GParamSpec
+modifier|*
+name|pspec
+init|=
+name|list
+operator|->
+name|data
+decl_stmt|;
+name|g_print
+argument_list|(
+literal|"%c%s"
+argument_list|,
+operator|(
+name|list
+operator|->
+name|prev
+condition|?
+literal|','
+else|:
+literal|' '
+operator|)
+argument_list|,
+name|pspec
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+block|}
+name|g_print
+argument_list|(
+literal|"\n\n"
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -646,7 +710,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"Finished test of GimpConfig.\n\n"
+literal|"\nFinished test of GimpConfig.\n\n"
 argument_list|)
 expr_stmt|;
 return|return
