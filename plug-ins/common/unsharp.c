@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8d4a7d0108
+DECL|struct|__anon27a045790108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8d4a7d0208
+DECL|struct|__anon27a045790208
 block|{
 DECL|member|run
 name|gboolean
@@ -845,7 +845,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* this function is written as if it is blurring a column at a time,    even though it can operate on rows, too.  There is no difference    in the processing of the lines, at least to the blur_line function.  */
+comment|/* This function is written as if it is blurring a column at a time,  * even though it can operate on rows, too.  There is no difference  * in the processing of the lines, at least to the blur_line function.  */
 end_comment
 
 begin_function
@@ -929,7 +929,7 @@ name|guchar
 modifier|*
 name|src_p1
 decl_stmt|;
-comment|/* this first block is the same as the non-optimized version --    * it is only used for very small pictures, so speed isn't a    * big concern.    */
+comment|/* This first block is the same as the optimized version --    * it is only used for very small pictures, so speed isn't a    * big concern.    */
 if|if
 condition|(
 name|cmatrix_length
@@ -1463,34 +1463,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/* Get the input */
-name|gimp_drawable_mask_bounds
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|,
-operator|&
-name|x1
-argument_list|,
-operator|&
-name|y1
-argument_list|,
-operator|&
-name|x2
-argument_list|,
-operator|&
-name|y2
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|_
-argument_list|(
-literal|"Blurring..."
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* initialize pixel regions */
 name|gimp_pixel_rgn_init
 argument_list|(
@@ -1538,6 +1510,26 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/* Get the input */
+name|gimp_drawable_mask_bounds
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
+argument_list|,
+operator|&
+name|x1
+argument_list|,
+operator|&
+name|y1
+argument_list|,
+operator|&
+name|x2
+argument_list|,
+operator|&
+name|y2
 argument_list|)
 expr_stmt|;
 name|unsharp_region
@@ -1656,9 +1648,17 @@ name|dest
 decl_stmt|;
 name|gint
 name|width
+init|=
+name|x2
+operator|-
+name|x1
 decl_stmt|;
 name|gint
 name|height
+init|=
+name|y2
+operator|-
+name|y1
 decl_stmt|;
 name|gdouble
 modifier|*
@@ -1685,18 +1685,17 @@ name|unsharp_params
 operator|.
 name|threshold
 decl_stmt|;
-comment|/* find height and width of subregion to act on */
-name|width
-operator|=
-name|x2
-operator|-
-name|x1
-expr_stmt|;
-name|height
-operator|=
-name|y2
-operator|-
-name|y1
+if|if
+condition|(
+name|show_progress
+condition|)
+name|gimp_progress_init
+argument_list|(
+name|_
+argument_list|(
+literal|"Blurring..."
+argument_list|)
+argument_list|)
 expr_stmt|;
 comment|/* generate convolution matrix      and make sure it's smaller than each dimension */
 name|cmatrix_length
@@ -2182,26 +2181,23 @@ modifier|*
 name|cmatrix_p
 parameter_list|)
 block|{
-name|gint
-name|matrix_length
-decl_stmt|;
-name|gint
-name|matrix_midpoint
-decl_stmt|;
 name|gdouble
 modifier|*
 name|cmatrix
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|,
-name|j
 decl_stmt|;
 name|gdouble
 name|std_dev
 decl_stmt|;
 name|gdouble
 name|sum
+decl_stmt|;
+name|gint
+name|matrix_length
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|,
+name|j
 decl_stmt|;
 comment|/* we want to generate a matrix that goes out a certain radius    * from the center, so we have to go out ceil(rad-0.5) pixels,    * inlcuding the center pixel.  Of course, that's only in one direction,    * so we have to go the same amount in the other direction, but not count    * the center pixel again.  So we double the previous result and subtract    * one.    * The radius parameter that is passed to this function is used as    * the standard deviation, and the radius of effect is the    * standard deviation * 2.  It's a little confusing.    */
 name|radius
@@ -2247,14 +2243,6 @@ name|matrix_length
 operator|=
 literal|1
 expr_stmt|;
-name|matrix_midpoint
-operator|=
-name|matrix_length
-operator|/
-literal|2
-operator|+
-literal|1
-expr_stmt|;
 operator|*
 name|cmatrix_p
 operator|=
@@ -2290,17 +2278,16 @@ name|i
 operator|++
 control|)
 block|{
-name|double
+name|gdouble
 name|base_x
 init|=
 name|i
 operator|-
-name|floor
-argument_list|(
+operator|(
 name|matrix_length
 operator|/
 literal|2
-argument_list|)
+operator|)
 operator|-
 literal|0.5
 decl_stmt|;
