@@ -6,18 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -272,25 +260,19 @@ end_function_decl
 begin_function
 name|void
 modifier|*
-DECL|function|perspective_tool_transform (tool,gdisp_ptr,state)
+DECL|function|perspective_tool_transform (Tool * tool,gpointer gdisp_ptr,int state)
 name|perspective_tool_transform
 parameter_list|(
-name|tool
-parameter_list|,
-name|gdisp_ptr
-parameter_list|,
-name|state
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|gpointer
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|,
 name|int
 name|state
-decl_stmt|;
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -342,52 +324,40 @@ literal|"Perspective Transform Information"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|info_dialog_add_field
+name|info_dialog_add_label
 argument_list|(
 name|transform_info
 argument_list|,
-literal|"Matrix: "
+literal|"Matrix:"
 argument_list|,
 name|matrix_row_buf
 index|[
 literal|0
 index|]
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-name|info_dialog_add_field
+name|info_dialog_add_label
 argument_list|(
 name|transform_info
 argument_list|,
-literal|"        "
+literal|""
 argument_list|,
 name|matrix_row_buf
 index|[
 literal|1
 index|]
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-name|info_dialog_add_field
+name|info_dialog_add_label
 argument_list|(
 name|transform_info
 argument_list|,
-literal|"        "
+literal|""
 argument_list|,
 name|matrix_row_buf
 index|[
 literal|2
 index|]
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -731,15 +701,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_free_perspective_tool (tool)
+DECL|function|tools_free_perspective_tool (Tool * tool)
 name|tools_free_perspective_tool
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|transform_core_free
 argument_list|(
@@ -752,15 +720,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|perspective_info_update (tool)
+DECL|function|perspective_info_update (Tool * tool)
 name|perspective_info_update
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -857,21 +823,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|perspective_tool_motion (tool,gdisp_ptr)
+DECL|function|perspective_tool_motion (Tool * tool,void * gdisp_ptr)
 name|perspective_tool_motion
 parameter_list|(
-name|tool
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|void
 modifier|*
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -1029,21 +991,17 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|perspective_tool_recalc (tool,gdisp_ptr)
+DECL|function|perspective_tool_recalc (Tool * tool,void * gdisp_ptr)
 name|perspective_tool_recalc
 parameter_list|(
-name|tool
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|void
 modifier|*
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -1230,20 +1188,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|perspective_find_transform (coords,m)
+DECL|function|perspective_find_transform (double * coords,GimpMatrix m)
 name|perspective_find_transform
 parameter_list|(
-name|coords
-parameter_list|,
-name|m
-parameter_list|)
 name|double
 modifier|*
 name|coords
-decl_stmt|;
+parameter_list|,
 name|GimpMatrix
 name|m
-decl_stmt|;
+parameter_list|)
 block|{
 name|double
 name|dx1
@@ -1724,43 +1678,31 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|perspective_tool_perspective (gimage,drawable,gdisp,float_tiles,interpolation,matrix)
+DECL|function|perspective_tool_perspective (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,int interpolation,GimpMatrix matrix)
 name|perspective_tool_perspective
 parameter_list|(
-name|gimage
-parameter_list|,
-name|drawable
-parameter_list|,
-name|gdisp
-parameter_list|,
-name|float_tiles
-parameter_list|,
-name|interpolation
-parameter_list|,
-name|matrix
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|,
 name|TileManager
 modifier|*
 name|float_tiles
-decl_stmt|;
+parameter_list|,
 name|int
 name|interpolation
-decl_stmt|;
+parameter_list|,
 name|GimpMatrix
 name|matrix
-decl_stmt|;
+parameter_list|)
 block|{
 name|void
 modifier|*
@@ -1982,15 +1924,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|perspective_invoker (args)
+DECL|function|perspective_invoker (Argument * args)
 name|perspective_invoker
 parameter_list|(
-name|args
-parameter_list|)
 name|Argument
 modifier|*
 name|args
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|success

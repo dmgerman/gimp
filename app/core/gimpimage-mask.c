@@ -126,7 +126,7 @@ DECL|variable|gimage_mask_feather_radius
 name|double
 name|gimage_mask_feather_radius
 init|=
-literal|5
+literal|5.0
 decl_stmt|;
 end_decl_stmt
 
@@ -178,11 +178,14 @@ name|gimage_mask_stroke_paint_func
 parameter_list|(
 name|PaintCore
 modifier|*
+name|paint_core
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|int
+name|state
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -193,41 +196,31 @@ end_comment
 
 begin_function
 name|int
-DECL|function|gimage_mask_boundary (gimage,segs_in,segs_out,num_segs_in,num_segs_out)
+DECL|function|gimage_mask_boundary (GImage * gimage,BoundSeg ** segs_in,BoundSeg ** segs_out,int * num_segs_in,int * num_segs_out)
 name|gimage_mask_boundary
 parameter_list|(
-name|gimage
-parameter_list|,
-name|segs_in
-parameter_list|,
-name|segs_out
-parameter_list|,
-name|num_segs_in
-parameter_list|,
-name|num_segs_out
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|BoundSeg
 modifier|*
 modifier|*
 name|segs_in
-decl_stmt|;
+parameter_list|,
 name|BoundSeg
 modifier|*
 modifier|*
 name|segs_out
-decl_stmt|;
+parameter_list|,
 name|int
 modifier|*
 name|num_segs_in
-decl_stmt|;
+parameter_list|,
 name|int
 modifier|*
 name|num_segs_out
-decl_stmt|;
+parameter_list|)
 block|{
 name|GimpDrawable
 modifier|*
@@ -348,7 +341,7 @@ name|height
 argument_list|)
 return|;
 block|}
-comment|/*  if a layer is active, we return multiple boundaries based on the extents  */
+comment|/* if a layer is active, we return multiple boundaries based on the extents */
 elseif|else
 if|if
 condition|(
@@ -506,39 +499,29 @@ end_function
 
 begin_function
 name|int
-DECL|function|gimage_mask_bounds (gimage,x1,y1,x2,y2)
+DECL|function|gimage_mask_bounds (GImage * gimage,int * x1,int * y1,int * x2,int * y2)
 name|gimage_mask_bounds
 parameter_list|(
-name|gimage
-parameter_list|,
-name|x1
-parameter_list|,
-name|y1
-parameter_list|,
-name|x2
-parameter_list|,
-name|y2
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|int
 modifier|*
 name|x1
-decl_stmt|,
-decl|*
+parameter_list|,
+name|int
+modifier|*
 name|y1
-decl_stmt|,
+parameter_list|,
+name|int
 modifier|*
 name|x2
-decl_stmt|,
+parameter_list|,
+name|int
 modifier|*
 name|y2
-decl_stmt|;
-end_function
-
-begin_block
+parameter_list|)
 block|{
 return|return
 name|channel_bounds
@@ -558,19 +541,17 @@ name|y2
 argument_list|)
 return|;
 block|}
-end_block
+end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_invalidate (gimage)
+DECL|function|gimage_mask_invalidate (GImage * gimage)
 name|gimage_mask_invalidate
 parameter_list|(
-name|gimage
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
 block|{
 name|Layer
 modifier|*
@@ -649,24 +630,19 @@ end_function
 
 begin_function
 name|int
-DECL|function|gimage_mask_value (gimage,x,y)
+DECL|function|gimage_mask_value (GImage * gimage,int x,int y)
 name|gimage_mask_value
 parameter_list|(
-name|gimage
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|)
 block|{
 return|return
 name|channel_value
@@ -686,15 +662,13 @@ end_function
 
 begin_function
 name|int
-DECL|function|gimage_mask_is_empty (gimage)
+DECL|function|gimage_mask_is_empty (GImage * gimage)
 name|gimage_mask_is_empty
 parameter_list|(
-name|gimage
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
 block|{
 comment|/*  in order to allow stroking of selections, we need to pretend here    *  that the selection mask is empty so that it doesn't mask the paint    *  during the stroke operation.    */
 if|if
@@ -719,25 +693,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_translate (gimage,off_x,off_y)
+DECL|function|gimage_mask_translate (GImage * gimage,int off_x,int off_y)
 name|gimage_mask_translate
 parameter_list|(
-name|gimage
-parameter_list|,
-name|off_x
-parameter_list|,
-name|off_y
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|int
 name|off_x
-decl_stmt|;
+parameter_list|,
 name|int
 name|off_y
-decl_stmt|;
+parameter_list|)
 block|{
 name|channel_translate
 argument_list|(
@@ -757,31 +725,23 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimage_mask_extract (gimage,drawable,cut_gimage,keep_indexed)
+DECL|function|gimage_mask_extract (GImage * gimage,GimpDrawable * drawable,int cut_gimage,int keep_indexed)
 name|gimage_mask_extract
 parameter_list|(
-name|gimage
-parameter_list|,
-name|drawable
-parameter_list|,
-name|cut_gimage
-parameter_list|,
-name|keep_indexed
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|int
 name|cut_gimage
-decl_stmt|;
+parameter_list|,
 name|int
 name|keep_indexed
-decl_stmt|;
+parameter_list|)
 block|{
 name|TileManager
 modifier|*
@@ -880,7 +840,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to cut/copy because the selected\nregion is empty."
+literal|"Unable to cut/copy because the selected\nregion is "
+literal|"empty."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -996,7 +957,7 @@ argument_list|,
 name|bg
 argument_list|)
 expr_stmt|;
-comment|/*  If a cut was specified, and the selection mask is not empty, push an undo  */
+comment|/*  If a cut was specified, and the selection mask is not empty,    *  push an undo    */
 if|if
 condition|(
 name|cut_gimage
@@ -1407,31 +1368,24 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimage_mask_float (gimage,drawable,off_x,off_y)
+DECL|function|gimage_mask_float (GImage * gimage,GimpDrawable * drawable,int off_x,int off_y)
 name|gimage_mask_float
 parameter_list|(
-name|gimage
-parameter_list|,
-name|drawable
-parameter_list|,
-name|off_x
-parameter_list|,
-name|off_y
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|int
 name|off_x
-decl_stmt|,
+parameter_list|,
+comment|/* optional offset */
+name|int
 name|off_y
-decl_stmt|;
-comment|/*  optional offset  */
+parameter_list|)
 block|{
 name|Layer
 modifier|*
@@ -1623,15 +1577,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_clear (gimage)
+DECL|function|gimage_mask_clear (GImage * gimage)
 name|gimage_mask_clear
 parameter_list|(
-name|gimage
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
 block|{
 name|channel_clear
 argument_list|(
@@ -1646,15 +1598,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_undo (gimage)
+DECL|function|gimage_mask_undo (GImage * gimage)
 name|gimage_mask_undo
 parameter_list|(
-name|gimage
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
 block|{
 name|channel_push_undo
 argument_list|(
@@ -1669,15 +1619,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_invert (gimage)
+DECL|function|gimage_mask_invert (GImage * gimage)
 name|gimage_mask_invert
 parameter_list|(
-name|gimage
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
 block|{
 name|channel_invert
 argument_list|(
@@ -1692,15 +1640,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_sharpen (gimage)
+DECL|function|gimage_mask_sharpen (GImage * gimage)
 name|gimage_mask_sharpen
 parameter_list|(
-name|gimage
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
 block|{
 comment|/*  No need to play with the selection visibility    *  because sharpen will not change the outline    */
 name|channel_sharpen
@@ -1716,15 +1662,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_all (gimage)
+DECL|function|gimage_mask_all (GImage * gimage)
 name|gimage_mask_all
 parameter_list|(
-name|gimage
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
 block|{
 name|channel_all
 argument_list|(
@@ -1739,15 +1683,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_none (gimage)
+DECL|function|gimage_mask_none (GImage * gimage)
 name|gimage_mask_none
 parameter_list|(
-name|gimage
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
 block|{
 name|channel_clear
 argument_list|(
@@ -1762,20 +1704,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_feather (gimage,feather_radius)
+DECL|function|gimage_mask_feather (GImage * gimage,double feather_radius)
 name|gimage_mask_feather
 parameter_list|(
-name|gimage
-parameter_list|,
-name|feather_radius
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|double
 name|feather_radius
-decl_stmt|;
+parameter_list|)
 block|{
 name|gimage_mask_feather_radius
 operator|=
@@ -1817,20 +1755,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_border (gimage,border_radius)
+DECL|function|gimage_mask_border (GImage * gimage,int border_radius)
 name|gimage_mask_border
 parameter_list|(
-name|gimage
-parameter_list|,
-name|border_radius
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|int
 name|border_radius
-decl_stmt|;
+parameter_list|)
 block|{
 name|gimage_mask_border_radius
 operator|=
@@ -1852,20 +1786,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_grow (gimage,grow_pixels)
+DECL|function|gimage_mask_grow (GImage * gimage,int grow_pixels)
 name|gimage_mask_grow
 parameter_list|(
-name|gimage
-parameter_list|,
-name|grow_pixels
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|int
 name|grow_pixels
-decl_stmt|;
+parameter_list|)
 block|{
 name|gimage_mask_grow_pixels
 operator|=
@@ -1887,20 +1817,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_shrink (gimage,shrink_pixels)
+DECL|function|gimage_mask_shrink (GImage * gimage,int shrink_pixels)
 name|gimage_mask_shrink
 parameter_list|(
-name|gimage
-parameter_list|,
-name|shrink_pixels
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|int
 name|shrink_pixels
-decl_stmt|;
+parameter_list|)
 block|{
 name|gimage_mask_shrink_pixels
 operator|=
@@ -1922,21 +1848,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_layer_alpha (gimage,layer)
+DECL|function|gimage_mask_layer_alpha (GImage * gimage,Layer * layer)
 name|gimage_mask_layer_alpha
 parameter_list|(
-name|gimage
-parameter_list|,
-name|layer
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|)
 block|{
 comment|/*  extract the layer's alpha channel  */
 if|if
@@ -1968,7 +1890,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The active layer has no alpha channel\nto convert to a selection."
+literal|"The active layer has no alpha channel\nto convert to a "
+literal|"selection."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1979,21 +1902,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_layer_mask (gimage,layer)
+DECL|function|gimage_mask_layer_mask (GImage * gimage,Layer * layer)
 name|gimage_mask_layer_mask
 parameter_list|(
-name|gimage
-parameter_list|,
-name|layer
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|)
 block|{
 comment|/*  extract the layer's alpha channel  */
 if|if
@@ -2032,21 +1951,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_load (gimage,channel)
+DECL|function|gimage_mask_load (GImage * gimage,Channel * channel)
 name|gimage_mask_load
 parameter_list|(
-name|gimage
-parameter_list|,
-name|channel
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|Channel
 modifier|*
 name|channel
-decl_stmt|;
+parameter_list|)
 block|{
 comment|/*  Load the specified channel to the gimage mask  */
 name|channel_load
@@ -2067,15 +1982,13 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|gimage_mask_save (gimage)
+DECL|function|gimage_mask_save (GImage * gimage)
 name|gimage_mask_save
 parameter_list|(
-name|gimage
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
 block|{
 name|Channel
 modifier|*
@@ -2119,21 +2032,17 @@ end_function
 
 begin_function
 name|int
-DECL|function|gimage_mask_stroke (gimage,drawable)
+DECL|function|gimage_mask_stroke (GImage * gimage,GimpDrawable * drawable)
 name|gimage_mask_stroke
 parameter_list|(
-name|gimage
-parameter_list|,
-name|drawable
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|)
 block|{
 name|BoundSeg
 modifier|*
@@ -2485,26 +2394,20 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|gimage_mask_stroke_paint_func (paint_core,drawable,state)
+DECL|function|gimage_mask_stroke_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
 name|gimage_mask_stroke_paint_func
 parameter_list|(
-name|paint_core
-parameter_list|,
-name|drawable
-parameter_list|,
-name|state
-parameter_list|)
 name|PaintCore
 modifier|*
 name|paint_core
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|int
 name|state
-decl_stmt|;
+parameter_list|)
 block|{
 name|GImage
 modifier|*

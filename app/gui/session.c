@@ -954,6 +954,12 @@ operator|->
 name|open
 operator|==
 name|FALSE
+operator|||
+name|info
+operator|->
+name|open_callback
+operator|==
+name|NULL
 condition|)
 return|return;
 call|(

@@ -92,7 +92,7 @@ name|GimpSizeEntryClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4da73b0103
+DECL|enum|__anon2b2ff1540103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -212,6 +212,31 @@ name|spinbutton_usize
 parameter_list|,
 name|GimpSizeEntryUP
 name|update_policy
+parameter_list|)
+function_decl|;
+comment|/* add a field to the sizeentry  * if show_refval if FALSE, then the refval pointers will be ignored  *  * the new field will have the index 0  */
+name|void
+name|gimp_size_entry_add_field
+parameter_list|(
+name|GimpSizeEntry
+modifier|*
+name|gse
+parameter_list|,
+name|GtkAdjustment
+modifier|*
+name|value_adjustment
+parameter_list|,
+name|GtkSpinButton
+modifier|*
+name|value_spinbutton
+parameter_list|,
+name|GtkAdjustment
+modifier|*
+name|refval_adjustment
+parameter_list|,
+name|GtkSpinButton
+modifier|*
+name|refval_spinbutton
 parameter_list|)
 function_decl|;
 comment|/* this one is just a convenience function if you want to add labels  * to the empty cells of the widget  * (take care not to specify cells which already have a widget ;-)  */
