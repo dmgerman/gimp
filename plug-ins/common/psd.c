@@ -131,7 +131,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4213890103
+DECL|enum|__anon28e326dd0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4213890208
+DECL|struct|__anon28e326dd0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -568,7 +568,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b4213890308
+DECL|struct|__anon28e326dd0308
 block|{
 DECL|member|signature
 name|gchar
@@ -10459,7 +10459,6 @@ argument_list|,
 literal|"packbits3"
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 if|if
 condition|(
 name|upremain

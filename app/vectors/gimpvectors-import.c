@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288284c40108
+DECL|struct|__anon2b453e9f0108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +216,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288284c40208
+DECL|struct|__anon2b453e9f0208
 block|{
 DECL|member|id
 name|gchar
@@ -3594,7 +3594,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288284c40308
+DECL|struct|__anon2b453e9f0308
 block|{
 DECL|member|strokes
 name|GList
@@ -4194,7 +4194,6 @@ else|:
 operator|-
 literal|1
 expr_stmt|;
-empty_stmt|;
 name|val
 operator|=
 literal|0
