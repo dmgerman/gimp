@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761107d0103
+DECL|enum|__anon2909aaa30103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -734,6 +734,25 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|(
+name|x2
+operator|-
+name|x1
+operator|<
+literal|1
+operator|)
+operator|||
+operator|(
+name|y2
+operator|-
+name|y1
+operator|<
+literal|1
+operator|)
+condition|)
+return|return;
 comment|/*  If undo tiles don't exist, or change size, (re)allocate  */
 if|if
 condition|(
