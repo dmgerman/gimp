@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7070e90103
+DECL|enum|__anon2b1fab440103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7070e90203
+DECL|enum|__anon2b1fab440203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3475,6 +3475,12 @@ operator|+
 name|hadj
 operator|->
 name|lower
+operator|-
+name|hadj
+operator|->
+name|page_size
+operator|/
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -3486,6 +3492,12 @@ operator|+
 name|vadj
 operator|->
 name|lower
+operator|-
+name|vadj
+operator|->
+name|page_size
+operator|/
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
