@@ -203,19 +203,21 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpLayer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|int
-name|undo_push_layer_position
+name|undo_push_layer_reposition
 parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpLayer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -395,7 +397,7 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 parameter_list|)
 function_decl|;
@@ -547,7 +549,7 @@ comment|/* Argument to undo_event signal emitted by gimages: */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c0a541f0103
+DECL|enum|__anon2a23483a0103
 typedef|typedef
 enum|enum
 block|{

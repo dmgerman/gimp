@@ -10839,7 +10839,7 @@ operator|!=
 name|dest_index
 condition|)
 block|{
-name|gimage_position_layer
+name|gimp_image_position_layer
 argument_list|(
 name|layersD
 operator|->
@@ -10850,6 +10850,8 @@ operator|->
 name|layer
 argument_list|,
 name|dest_index
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush

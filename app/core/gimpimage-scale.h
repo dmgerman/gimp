@@ -211,7 +211,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c41d3a30103
+DECL|enum|__anon2c3c29ac0103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c41d3a30203
+DECL|enum|__anon2c3c29ac0203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c41d3a30303
+DECL|enum|__anon2c3c29ac0303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -277,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c41d3a30403
+DECL|enum|__anon2c3c29ac0403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -1225,6 +1225,8 @@ name|Layer
 modifier|*
 parameter_list|,
 name|gint
+parameter_list|,
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
