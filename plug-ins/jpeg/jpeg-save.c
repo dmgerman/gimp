@@ -229,7 +229,7 @@ DECL|macro|DEFAULT_PREVIEW
 define|#
 directive|define
 name|DEFAULT_PREVIEW
-value|1
+value|0
 end_define
 
 begin_comment
@@ -303,10 +303,20 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|undo_touched
+specifier|static
+name|gboolean
+name|undo_touched
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c3cd80108
+DECL|struct|__anon2b863a0c0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c3cd80208
+DECL|struct|__anon2b863a0c0208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +378,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c3cd80308
+DECL|struct|__anon2b863a0c0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1596,7 +1606,14 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* we start an undo_group and immediately freeze undo saving 	     so that we can avoid sucking up tile cache with our unneeded 	     preview steps. */
+if|if
+condition|(
+name|jsvals
+operator|.
+name|preview
+condition|)
+block|{
+comment|/* we start an undo_group and immediately freeze undo saving                  so that we can avoid sucking up tile cache with our unneeded                  preview steps. */
 name|gimp_undo_push_group_start
 argument_list|(
 name|image_ID
@@ -1607,6 +1624,11 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+name|undo_touched
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 comment|/* prepare for the preview */
 name|image_ID_global
 operator|=
@@ -1626,6 +1648,11 @@ operator|=
 name|save_dialog
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|undo_touched
+condition|)
+block|{
 comment|/* thaw undo saving and end the undo_group. */
 name|gimp_image_undo_thaw
 argument_list|(
@@ -1637,6 +1664,7 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -5544,6 +5572,28 @@ operator|.
 name|preview
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|undo_touched
+condition|)
+block|{
+comment|/* we start an undo_group and immediately freeze undo saving              so that we can avoid sucking up tile cache with our unneeded              preview steps. */
+name|gimp_undo_push_group_start
+argument_list|(
+name|image_ID_global
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_freeze
+argument_list|(
+name|image_ID_global
+argument_list|)
+expr_stmt|;
+name|undo_touched
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 name|tn
 operator|=
 name|gimp_temp_name
@@ -5941,7 +5991,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Preview (in image window)"
+literal|"Preview (in image window, will modify image's undo history!)"
 argument_list|)
 argument_list|)
 expr_stmt|;
