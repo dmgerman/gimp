@@ -189,7 +189,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28aced610103
+DECL|enum|__anon297ec7c70103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1836,6 +1836,13 @@ name|list2
 operator|->
 name|data
 expr_stmt|;
+if|if
+condition|(
+name|proc_def
+operator|->
+name|installed_during_init
+condition|)
+continue|continue;
 name|gimp_config_writer_open
 argument_list|(
 name|writer

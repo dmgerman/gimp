@@ -103,6 +103,10 @@ DECL|member|mtime
 name|time_t
 name|mtime
 decl_stmt|;
+DECL|member|installed_during_init
+name|gboolean
+name|installed_during_init
+decl_stmt|;
 block|}
 struct|;
 end_struct

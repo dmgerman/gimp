@@ -3226,6 +3226,15 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* Remember if this proc was installed while initing a plug-in */
+name|proc_def
+operator|->
+name|installed_during_init
+operator|=
+name|plug_in
+operator|->
+name|init
+expr_stmt|;
 comment|/*  The procedural database procedure  */
 name|proc
 operator|=
