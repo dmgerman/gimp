@@ -6,34 +6,34 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_VECTORS_PREVIEW_H__
+name|__GIMP_VECTORS_IMPORT_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_VECTORS_PREVIEW_H__
+DECL|macro|__GIMP_VECTORS_IMPORT_H__
 define|#
 directive|define
-name|__GIMP_VECTORS_PREVIEW_H__
+name|__GIMP_VECTORS_IMPORT_H__
 end_define
 
-begin_comment
-comment|/*  *  virtual function of GimpVectors -- dont't call directly  */
-end_comment
-
 begin_function_decl
-name|TempBuf
+name|GimpVectors
 modifier|*
-name|gimp_vectors_get_new_preview
+name|gimp_vectors_import
 parameter_list|(
-name|GimpViewable
+name|GimpImage
 modifier|*
-name|viewable
+name|image
 parameter_list|,
-name|gint
-name|width
+specifier|const
+name|gchar
+modifier|*
+name|filename
 parameter_list|,
-name|gint
-name|height
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -44,7 +44,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_VECTORS_PREVIEW_H__ */
+comment|/* __GIMP_VECTORS_IMPORT_H__ */
 end_comment
 
 end_unit
