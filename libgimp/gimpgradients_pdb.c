@@ -25,7 +25,7 @@ modifier|*
 name|num_gradients
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -51,7 +51,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 operator|*
@@ -70,7 +70,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 operator|*
@@ -153,7 +153,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -175,7 +175,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -189,7 +189,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|name
 operator|=
@@ -228,7 +228,7 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -244,11 +244,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|name
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
@@ -271,7 +271,7 @@ name|gint
 name|num_samples
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -296,11 +296,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|num_samples
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -314,7 +314,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|num_color_samples
@@ -386,7 +386,7 @@ modifier|*
 name|positions
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -411,15 +411,15 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|num_samples
 argument_list|,
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 argument_list|,
 name|positions
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -433,7 +433,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|num_color_samples

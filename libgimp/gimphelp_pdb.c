@@ -27,7 +27,7 @@ modifier|*
 name|help_page
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -43,15 +43,15 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|prog_name
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|help_page
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params

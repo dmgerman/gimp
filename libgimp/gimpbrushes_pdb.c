@@ -49,7 +49,7 @@ modifier|*
 name|mask_data
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -65,11 +65,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|brush_name
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|brush_name
@@ -107,7 +107,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|brush_name

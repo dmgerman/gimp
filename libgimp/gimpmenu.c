@@ -527,7 +527,7 @@ argument_list|)
 expr_stmt|;
 name|images
 operator|=
-name|gimp_query_images
+name|gimp_image_list
 argument_list|(
 operator|&
 name|nimages
@@ -849,7 +849,7 @@ literal|1
 expr_stmt|;
 name|images
 operator|=
-name|gimp_query_images
+name|gimp_image_list
 argument_list|(
 operator|&
 name|nimages
@@ -1432,7 +1432,7 @@ literal|1
 expr_stmt|;
 name|images
 operator|=
-name|gimp_query_images
+name|gimp_image_list
 argument_list|(
 operator|&
 name|nimages
@@ -2022,7 +2022,7 @@ literal|1
 expr_stmt|;
 name|images
 operator|=
-name|gimp_query_images
+name|gimp_image_list
 argument_list|(
 operator|&
 name|nimages
@@ -3891,10 +3891,10 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|GimpBrushData
 modifier|*
@@ -4108,7 +4108,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -4158,10 +4158,10 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|GimpPatternData
 modifier|*
@@ -4346,7 +4346,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -4396,10 +4396,10 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|GimpGradientData
 modifier|*
@@ -4599,7 +4599,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -4715,7 +4715,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|result
@@ -4733,7 +4733,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 name|result
 operator|=
@@ -4803,7 +4803,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"str"
 block|,
@@ -4811,7 +4811,7 @@ literal|"String"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
@@ -4819,7 +4819,7 @@ literal|"Opacity"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"spacing"
 block|,
@@ -4827,7 +4827,7 @@ literal|"Spacing"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"paint mode"
 block|,
@@ -4835,7 +4835,7 @@ literal|"Paint mode"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mask width"
 block|,
@@ -4843,14 +4843,14 @@ literal|"Brush width"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mask height"
 literal|"Brush heigth"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mask len"
 block|,
@@ -4858,7 +4858,7 @@ literal|"Length of brush mask data"
 block|}
 block|,
 block|{
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"mask data"
 block|,
@@ -4866,7 +4866,7 @@ literal|"The brush mask data"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dialog status"
 block|,
@@ -4950,7 +4950,7 @@ name|NULL
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_TEMPORARY
+name|GIMP_TEMPORARY
 argument_list|,
 name|nargs
 argument_list|,
@@ -4972,34 +4972,34 @@ argument_list|,
 operator|&
 name|bnreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|pdbname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|dialogname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|brush_name
 argument_list|,
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 argument_list|,
 name|opacity
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|spacing
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|paint_mode
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-comment|/*   if (pdbreturn_vals[0].data.d_status != STATUS_SUCCESS) */
+comment|/*   if (pdbreturn_vals[0].data.d_status != GIMP_PDB_SUCCESS) */
 comment|/*     { */
 comment|/*       printf("ret failed = 0x%x\n",bnreturn_vals); */
 comment|/*     } */
@@ -5088,7 +5088,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"str"
 block|,
@@ -5096,7 +5096,7 @@ literal|"String"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mask width"
 block|,
@@ -5104,7 +5104,7 @@ literal|"Pattern width"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mask height"
 block|,
@@ -5112,7 +5112,7 @@ literal|"Pattern heigth"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mask bpp"
 block|,
@@ -5120,7 +5120,7 @@ literal|"Pattern bytes per pixel"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mask len"
 block|,
@@ -5128,7 +5128,7 @@ literal|"Length of pattern mask data"
 block|}
 block|,
 block|{
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 block|,
 literal|"mask data"
 block|,
@@ -5136,7 +5136,7 @@ literal|"The pattern mask data"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dialog status"
 block|,
@@ -5220,7 +5220,7 @@ name|NULL
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_TEMPORARY
+name|GIMP_TEMPORARY
 argument_list|,
 name|nargs
 argument_list|,
@@ -5242,20 +5242,20 @@ argument_list|,
 operator|&
 name|bnreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|pdbname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|dialogname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|pattern_name
 argument_list|,
 comment|/*name*/
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_setup_callbacks
@@ -5343,7 +5343,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"str"
 block|,
@@ -5351,7 +5351,7 @@ literal|"String"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"grad width"
 block|,
@@ -5359,7 +5359,7 @@ literal|"Gradient width"
 block|}
 block|,
 block|{
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 block|,
 literal|"grad data"
 block|,
@@ -5367,7 +5367,7 @@ literal|"The gradient mask data"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dialog status"
 block|,
@@ -5451,7 +5451,7 @@ name|NULL
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_TEMPORARY
+name|GIMP_TEMPORARY
 argument_list|,
 name|nargs
 argument_list|,
@@ -5473,25 +5473,25 @@ argument_list|,
 operator|&
 name|bnreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|pdbname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|dialogname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|gradient_name
 argument_list|,
 comment|/*name*/
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|sample_sz
 argument_list|,
 comment|/* size of sample to be returned */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_setup_callbacks

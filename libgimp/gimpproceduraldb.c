@@ -299,7 +299,8 @@ block|{
 name|gint
 name|size
 decl_stmt|;
-name|gpointer
+name|guint8
+modifier|*
 name|hack
 decl_stmt|;
 name|_gimp_procedural_db_get_data
