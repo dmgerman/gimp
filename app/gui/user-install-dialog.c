@@ -3226,9 +3226,14 @@ operator|)
 operator|!=
 name|NULL
 condition|)
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%s/user_install"
 argument_list|,
@@ -3236,9 +3241,14 @@ name|gimp_data_dir
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%s/user_install"
 argument_list|,
@@ -3387,9 +3397,14 @@ if|if
 condition|(
 name|gimp_data_dir
 condition|)
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%s/user_install %s %s"
 argument_list|,
@@ -3402,9 +3417,14 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%s/user_install %s %s"
 argument_list|,

@@ -21,6 +21,12 @@ directive|include
 file|"ops_buttons.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 DECL|function|ops_button_box_new (GtkWidget * parent,GtkTooltips * tool_tips,OpsButton * ops_buttons)
 name|GtkWidget
@@ -223,9 +229,12 @@ name|tool_tips
 argument_list|,
 name|button
 argument_list|,
+name|gettext
+argument_list|(
 name|ops_buttons
 operator|->
 name|tooltip
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

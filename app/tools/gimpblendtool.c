@@ -210,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1e1d540103
+DECL|enum|__anon2ba9a2560103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1e1d540203
+DECL|enum|__anon2ba9a2560203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1e1d540303
+DECL|enum|__anon2ba9a2560303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -413,7 +413,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2a1e1d540408
+DECL|struct|__anon2ba9a2560408
 typedef|typedef
 struct|struct
 block|{
@@ -465,7 +465,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1e1d540508
+DECL|struct|__anon2ba9a2560508
 typedef|typedef
 struct|struct
 block|{
@@ -1181,6 +1181,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|blend_option_items
 specifier|static
+specifier|const
 name|MenuItem
 name|blend_option_items
 index|[]
@@ -1300,6 +1301,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|gradient_option_items
 specifier|static
+specifier|const
 name|MenuItem
 name|gradient_option_items
 index|[]
@@ -1544,6 +1546,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|repeat_option_items
 specifier|static
+specifier|const
 name|MenuItem
 name|repeat_option_items
 index|[]

@@ -5639,10 +5639,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"the image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5650,10 +5647,7 @@ name|PDB_INT32
 block|,
 literal|"new_width"
 block|,
-name|N_
-argument_list|(
 literal|"new image width: (0< new_width<= width)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5661,10 +5655,7 @@ name|PDB_INT32
 block|,
 literal|"new_height"
 block|,
-name|N_
-argument_list|(
 literal|"new image height: (0< new_height<= height)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5672,10 +5663,7 @@ name|PDB_INT32
 block|,
 literal|"offx"
 block|,
-name|N_
-argument_list|(
 literal|"x offset: (0<= offx<= (width - new_width))"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5683,10 +5671,7 @@ name|PDB_INT32
 block|,
 literal|"offy"
 block|,
-name|N_
-argument_list|(
 literal|"y offset: (0<= offy<= (height - new_height))"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -5700,15 +5685,9 @@ init|=
 block|{
 literal|"gimp_crop"
 block|,
-name|N_
-argument_list|(
 literal|"Crop the image to the specified extents."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure crops the image so that it's new width and height are equal to the supplied parameters.  Offsets are also provided which describe the position of the previous image's content.  All channels and layers within the image are cropped to the new image extents; this includes the image selection mask.  If any parameters are out of range, an error is returned."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

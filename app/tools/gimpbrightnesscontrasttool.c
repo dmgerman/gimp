@@ -1710,7 +1710,7 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Brightness-Contrast"
 argument_list|)
@@ -3318,10 +3318,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -3329,10 +3326,7 @@ name|PDB_INT32
 block|,
 literal|"brightness"
 block|,
-name|N_
-argument_list|(
 literal|"brightness adjustment: (-127<= brightness<= 127)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -3340,10 +3334,7 @@ name|PDB_INT32
 block|,
 literal|"contrast"
 block|,
-name|N_
-argument_list|(
 literal|"constrast adjustment: (-127<= contrast<= 127)"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -3357,15 +3348,9 @@ init|=
 block|{
 literal|"gimp_brightness_contrast"
 block|,
-name|N_
-argument_list|(
 literal|"Modify brightness/contrast in the specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedures allows the brightness and contrast of the specified drawable to be modified.  Both 'brightness' and 'contrast' parameters are defined between -127 and 127."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

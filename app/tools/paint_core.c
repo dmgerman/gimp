@@ -484,6 +484,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|subsample
 specifier|static
+specifier|const
 name|int
 name|subsample
 index|[
@@ -4274,6 +4275,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
+specifier|const
 name|int
 modifier|*
 name|k
@@ -4283,6 +4285,7 @@ name|index1
 decl_stmt|,
 name|index2
 decl_stmt|;
+specifier|const
 name|int
 modifier|*
 name|kernel

@@ -829,10 +829,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -840,10 +837,7 @@ name|PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
-name|N_
-argument_list|(
 literal|"number of stroke control points (count each coordinate as 2 points)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -851,10 +845,7 @@ name|PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
-name|N_
-argument_list|(
 literal|"array of stroke coordinates: {s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y}"
-argument_list|)
 block|}
 block|,
 block|{
@@ -862,10 +853,7 @@ name|PDB_INT32
 block|,
 literal|"hardness"
 block|,
-name|N_
-argument_list|(
 literal|"SOFT(0) or HARD(1)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -873,10 +861,7 @@ name|PDB_INT32
 block|,
 literal|"method"
 block|,
-name|N_
-argument_list|(
 literal|"CONTINUOUS(0) or INCREMENTAL(1)"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -894,10 +879,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -905,10 +887,7 @@ name|PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
-name|N_
-argument_list|(
 literal|"number of stroke control points (count each coordinate as 2 points)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -916,10 +895,7 @@ name|PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
-name|N_
-argument_list|(
 literal|"array of stroke coordinates: {s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y}"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -933,15 +909,9 @@ init|=
 block|{
 literal|"gimp_eraser"
 block|,
-name|N_
-argument_list|(
 literal|"Erase using the current brush"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool erases using the current brush mask.  If the specified drawable contains an alpha channel, then the erased pixels will become transparent.  Otherwise, the eraser tool replaces the contents of the drawable with the background color.  Like paintbrush, this tool linearly interpolates between the specified stroke coordinates."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -979,15 +949,9 @@ init|=
 block|{
 literal|"gimp_eraser_extended"
 block|,
-name|N_
-argument_list|(
 literal|"Erase using the current brush"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool erases using the current brush mask.  If the specified drawable contains an alpha channel, then the erased pixels will become transparent.  Otherwise, the eraser tool replaces the contents of the drawable with the background color.  Like paintbrush, this tool linearly interpolates between the specified stroke coordinates."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

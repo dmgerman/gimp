@@ -1094,9 +1094,9 @@ name|col_area
 argument_list|,
 name|_
 argument_list|(
-literal|"Foreground& background colors.  The small black "
-literal|"and white squares reset colors.  The small arrows swap colors.  Double "
-literal|"click to change colors."
+literal|"Foreground& background colors.  The black "
+literal|"and white squares reset colors.  The arrows swap colors. Double "
+literal|"click to select a color from a colorrequester."
 argument_list|)
 argument_list|,
 name|NULL
@@ -4344,7 +4344,10 @@ argument_list|(
 name|qbox
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|title
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_wmclass
@@ -4569,7 +4572,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|message
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4625,7 +4631,10 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|initial
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -770,10 +770,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"the image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -781,10 +778,7 @@ name|PDB_FLOAT
 block|,
 literal|"x"
 block|,
-name|N_
-argument_list|(
 literal|"x coordinate of upper-left corner of ellipse bounding box"
-argument_list|)
 block|}
 block|,
 block|{
@@ -792,10 +786,7 @@ name|PDB_FLOAT
 block|,
 literal|"y"
 block|,
-name|N_
-argument_list|(
 literal|"y coordinate of upper-left corner of ellipse bounding box"
-argument_list|)
 block|}
 block|,
 block|{
@@ -803,10 +794,7 @@ name|PDB_FLOAT
 block|,
 literal|"width"
 block|,
-name|N_
-argument_list|(
 literal|"the width of the ellipse: width> 0"
-argument_list|)
 block|}
 block|,
 block|{
@@ -814,10 +802,7 @@ name|PDB_FLOAT
 block|,
 literal|"height"
 block|,
-name|N_
-argument_list|(
 literal|"the height of the ellipse: height> 0"
-argument_list|)
 block|}
 block|,
 block|{
@@ -825,10 +810,7 @@ name|PDB_INT32
 block|,
 literal|"operation"
 block|,
-name|N_
-argument_list|(
 literal|"the selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -836,10 +818,7 @@ name|PDB_INT32
 block|,
 literal|"antialias"
 block|,
-name|N_
-argument_list|(
 literal|"antialiasing On/Off"
-argument_list|)
 block|}
 block|,
 block|{
@@ -847,10 +826,7 @@ name|PDB_INT32
 block|,
 literal|"feather"
 block|,
-name|N_
-argument_list|(
 literal|"feather option for selections"
-argument_list|)
 block|}
 block|,
 block|{
@@ -858,10 +834,7 @@ name|PDB_FLOAT
 block|,
 literal|"feather_radius"
 block|,
-name|N_
-argument_list|(
 literal|"radius for feather operation"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -875,15 +848,9 @@ init|=
 block|{
 literal|"gimp_ellipse_select"
 block|,
-name|N_
-argument_list|(
 literal|"Create an elliptical selection over the specified image"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool creates an elliptical selection over the specified image.  The elliptical region can be either added to, subtracted from, or replace the contents of the previous selection mask.  If antialiasing is turned on, the edges of the elliptical region will contain intermediate values which give the appearance of a sharper, less pixelized edge.  This should be set as TRUE most of the time.  If the feather option is enabled, the resulting selection is blurred before combining.  The blur is a gaussian blur with the specified feather radius."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

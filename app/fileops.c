@@ -583,10 +583,7 @@ name|PDB_INT32
 block|,
 literal|"run_mode"
 block|,
-name|N_
-argument_list|(
 literal|"Interactive, non-interactive."
-argument_list|)
 block|}
 block|,
 block|{
@@ -594,10 +591,7 @@ name|PDB_STRING
 block|,
 literal|"filename"
 block|,
-name|N_
-argument_list|(
 literal|"The name of the file to load."
-argument_list|)
 block|}
 block|,
 block|{
@@ -605,10 +599,7 @@ name|PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
-name|N_
-argument_list|(
 literal|"The name entered."
-argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -627,10 +618,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"Output image."
-argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -645,15 +633,9 @@ init|=
 block|{
 literal|"gimp_file_load"
 block|,
-name|N_
-argument_list|(
 literal|"Loads a file by extension"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure invokes the correct file load handler according to the file's extension and/or prefix.  The name of the file to load is typically a full pathname, and the name entered is what the user actually typed before prepending a directory path.  The reason for this is that if the user types http://www.xcf/~gimp he wants to fetch a URL, and the full pathname will not look like a URL."
-argument_list|)
 block|,
 literal|"Josh MacDonald"
 block|,
@@ -697,10 +679,7 @@ name|PDB_INT32
 block|,
 literal|"run_mode"
 block|,
-name|N_
-argument_list|(
 literal|"Interactive, non-interactive"
-argument_list|)
 block|}
 block|,
 block|{
@@ -708,10 +687,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"Input image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -719,10 +695,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"Drawable to save"
-argument_list|)
 block|}
 block|,
 block|{
@@ -730,10 +703,7 @@ name|PDB_STRING
 block|,
 literal|"filename"
 block|,
-name|N_
-argument_list|(
 literal|"The name of the file to save the image in"
-argument_list|)
 block|}
 block|,
 block|{
@@ -741,10 +711,7 @@ name|PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
-name|N_
-argument_list|(
 literal|"The name of the file to save the image in"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -759,15 +726,9 @@ init|=
 block|{
 literal|"gimp_file_save"
 block|,
-name|N_
-argument_list|(
 literal|"Saves a file by extension"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure invokes the correct file save handler according to the file's extension and/or prefix.  The name of the file to save is typically a full pathname, and the name entered is what the user actually typed before prepending a directory path.  The reason for this is that if the user types http://www.xcf/~gimp he wants to fetch a URL, and the full pathname will not look like a URL."
-argument_list|)
 block|,
 literal|"Josh MacDonald"
 block|,
@@ -811,10 +772,7 @@ name|PDB_STRING
 block|,
 literal|"extension"
 block|,
-name|N_
-argument_list|(
 literal|"The extension the file will have."
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -833,10 +791,7 @@ name|PDB_STRING
 block|,
 literal|"name"
 block|,
-name|N_
-argument_list|(
 literal|"The temp name."
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -851,15 +806,9 @@ init|=
 block|{
 literal|"gimp_temp_name"
 block|,
-name|N_
-argument_list|(
 literal|"Generates a unique filename."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Generates a unique filename using the temp path supplied in the user's gimprc."
-argument_list|)
 block|,
 literal|"Josh MacDonald"
 block|,
@@ -903,10 +852,7 @@ name|PDB_STRING
 block|,
 literal|"procedure_name"
 block|,
-name|N_
-argument_list|(
 literal|"the name of the procedure to be used for loading"
-argument_list|)
 block|}
 block|,
 block|{
@@ -914,10 +860,7 @@ name|PDB_STRING
 block|,
 literal|"extensions"
 block|,
-name|N_
-argument_list|(
 literal|"comma separated list of extensions this handler can load (ie. \"jpeg,jpg\")"
-argument_list|)
 block|}
 block|,
 block|{
@@ -925,10 +868,7 @@ name|PDB_STRING
 block|,
 literal|"prefixes"
 block|,
-name|N_
-argument_list|(
 literal|"comma separated list of prefixes this handler can load (ie. \"http:,ftp:\")"
-argument_list|)
 block|}
 block|,
 block|{
@@ -936,10 +876,7 @@ name|PDB_STRING
 block|,
 literal|"magics"
 block|,
-name|N_
-argument_list|(
 literal|"comma separated list of magic file information this handler can load (ie. \"0,string,GIF\")"
-argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -954,15 +891,9 @@ init|=
 block|{
 literal|"gimp_register_magic_load_handler"
 block|,
-name|N_
-argument_list|(
 literal|"Registers a file load handler procedure"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Registers a procedural database procedure to be called to load files of a \       particular file format using magic file information."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1006,10 +937,7 @@ name|PDB_STRING
 block|,
 literal|"procedure_name"
 block|,
-name|N_
-argument_list|(
 literal|"the name of the procedure to be used for loading"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1017,10 +945,7 @@ name|PDB_STRING
 block|,
 literal|"extensions"
 block|,
-name|N_
-argument_list|(
 literal|"comma separated list of extensions this handler can load (ie. \"jpeg,jpg\")"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1028,10 +953,7 @@ name|PDB_STRING
 block|,
 literal|"prefixes"
 block|,
-name|N_
-argument_list|(
 literal|"comma separated list of prefixes this handler can load (ie. \"http:,ftp:\")"
-argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -1046,15 +968,9 @@ init|=
 block|{
 literal|"gimp_register_load_handler"
 block|,
-name|N_
-argument_list|(
 literal|"Registers a file load handler procedure"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Registers a procedural database procedure to be called to load files of a particular file format."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1098,10 +1014,7 @@ name|PDB_STRING
 block|,
 literal|"procedure_name"
 block|,
-name|N_
-argument_list|(
 literal|"the name of the procedure to be used for saving"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1109,10 +1022,7 @@ name|PDB_STRING
 block|,
 literal|"extensions"
 block|,
-name|N_
-argument_list|(
 literal|"comma separated list of extensions this handler can save (ie. \"jpeg,jpg\")"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1120,10 +1030,7 @@ name|PDB_STRING
 block|,
 literal|"prefixes"
 block|,
-name|N_
-argument_list|(
 literal|"comma separated list of prefixes this handler can save (ie. \"http:,ftp:\")"
-argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -1138,15 +1045,9 @@ init|=
 block|{
 literal|"gimp_register_save_handler"
 block|,
-name|N_
-argument_list|(
 literal|"Registers a file save handler procedure"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Registers a procedural database procedure to be called to save files in a particular file format."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -4784,32 +4685,8 @@ argument_list|)
 expr_stmt|;
 name|overwrite_text
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|_
-argument_list|(
-literal|" exists, overwrite?"
-argument_list|)
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|overwrite_text
-argument_list|,
 name|_
 argument_list|(
 literal|"%s exists, overwrite?"
@@ -7139,9 +7016,12 @@ name|PDB_EXTENSION
 condition|)
 name|menus_set_sensitive
 argument_list|(
+name|gettext
+argument_list|(
 name|file_proc
 operator|->
 name|menu_path
+argument_list|)
 argument_list|,
 operator|(
 name|file_proc

@@ -228,10 +228,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable to cut from"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -245,15 +242,9 @@ init|=
 block|{
 literal|"gimp_edit_cut"
 block|,
-name|N_
-argument_list|(
 literal|"Cut from the specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"If there is a selection in the image, then the area specified by the selection is cut from the specified drawable and placed in an internal GIMP edit buffer.  It can subsequently be retrieved using the 'gimp-edit-paste' command.  If there is no selection, then the specified drawable will be removed and its contents stored in the internal GIMP edit buffer.  The drawable MUST belong to the specified image, or an error is returned."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -415,10 +406,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable to copy from"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -432,15 +420,9 @@ init|=
 block|{
 literal|"gimp_edit_copy"
 block|,
-name|N_
-argument_list|(
 literal|"Copy from the specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"If there is a selection in the image, then the area specified by the selection is copied from the specified drawable and placed in an internal GIMP edit buffer.  It can subsequently be retrieved using the 'gimp-edit-paste' command.  If there is no selection, then the specified drawable's contents will be stored in the internal GIMP edit buffer.  The drawable MUST belong to the specified image, or an error is returned."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -665,10 +647,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable to paste from"
-argument_list|)
 block|}
 block|,
 block|{
@@ -676,10 +655,7 @@ name|PDB_INT32
 block|,
 literal|"paste_into"
 block|,
-name|N_
-argument_list|(
 literal|"clear selection, or paste behind it?"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -697,10 +673,7 @@ name|PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
-name|N_
-argument_list|(
 literal|"the new floating selection"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -714,15 +687,9 @@ init|=
 block|{
 literal|"gimp_edit_paste"
 block|,
-name|N_
-argument_list|(
 literal|"Paste buffer to the specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure pastes a copy of the internal GIMP edit buffer to the specified drawable.  The GIMP edit buffer will be empty unless a call was previously made to either 'gimp-edit-cut' or 'gimp-edit-copy'.  The \"paste_into\" option specifies whether to clear the current image selection, or to paste the buffer \"behind\" the selection.  This allows the selection to act as a mask for the pasted buffer.  Anywhere that the selection mask is non-zero, the pasted buffer will show through.  The pasted buffer will be a new layer in the image which is designated as the image floating selection.  If the image has a floating selection at the time of pasting, the old floating selection will be anchored to it's drawable before the new floating selection is added.  This procedure returns the new floating layer.  The resulting floating selection will already be attached to the specified drawable, and a subsequent call to floating_sel_attach is not needed."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -880,10 +847,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"The drawable to clear from"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -897,15 +861,9 @@ init|=
 block|{
 literal|"gimp_edit_clear"
 block|,
-name|N_
-argument_list|(
 literal|"Clear selected area of drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure clears the specified drawable.  If the drawable has an alpha channel, the cleared pixels will become transparent.  If the drawable does not have an alpha channel, cleared pixels will be set to the background color.  This procedure only affects regions within a selection if there is a selection active."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1063,10 +1021,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable to fill from"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1080,15 +1035,9 @@ init|=
 block|{
 literal|"gimp_edit_fill"
 block|,
-name|N_
-argument_list|(
 literal|"Fill selected area of drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure fills the specified drawable with the background color.  This procedure only affects regions within a selection if there is a selection active."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1246,10 +1195,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable to stroke to"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1263,15 +1209,9 @@ init|=
 block|{
 literal|"gimp_edit_stroke"
 block|,
-name|N_
-argument_list|(
 literal|"Stroke the current selection"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure strokes the current selection, painting along the selection boundary with the active brush and foreground color.  The paint is applied to the specified drawable regardless of the active selection."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

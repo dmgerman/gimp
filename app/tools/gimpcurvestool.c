@@ -7314,10 +7314,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -7325,10 +7322,7 @@ name|PDB_INT32
 block|,
 literal|"channel"
 block|,
-name|N_
-argument_list|(
 literal|"the channel to modify: { VALUE (0), RED (1), GREEN (2), BLUE (3), ALPHA (4), GRAY (0) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -7336,10 +7330,7 @@ name|PDB_INT32
 block|,
 literal|"num_points"
 block|,
-name|N_
-argument_list|(
 literal|"the number of values in the control point array ( 3< num_points<= 32 )"
-argument_list|)
 block|}
 block|,
 block|{
@@ -7347,10 +7338,7 @@ name|PDB_INT8ARRAY
 block|,
 literal|"control_pts"
 block|,
-name|N_
-argument_list|(
 literal|"the spline control points: { cp1.x, cp1.y, cp2.x, cp2.y, ... }"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -7364,15 +7352,9 @@ init|=
 block|{
 literal|"gimp_curves_spline"
 block|,
-name|N_
-argument_list|(
 literal|"Modifies the intensity curve(s) for specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Modifies the intensity mapping for one channel in the specified drawable.  The drawable must be either grayscale or RGB, and the channel can be either an intensity component, or the value.  The 'control_pts' parameter is an array of integers which define a set of control points which describe a Catmull Rom spline which yields the final intensity curve.  Use the 'gimp_curves_explicit' function to explicitly modify intensity levels."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -8028,10 +8010,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8039,10 +8018,7 @@ name|PDB_INT32
 block|,
 literal|"channel"
 block|,
-name|N_
-argument_list|(
 literal|"the channel to modify: { VALUE (0), RED (1), GREEN (2), BLUE (3), GRAY (0) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8050,10 +8026,7 @@ name|PDB_INT32
 block|,
 literal|"num_bytes"
 block|,
-name|N_
-argument_list|(
 literal|"the number of bytes in the new curve (always 256)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8061,10 +8034,7 @@ name|PDB_INT8ARRAY
 block|,
 literal|"curve"
 block|,
-name|N_
-argument_list|(
 literal|"the explicit curve"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -8078,15 +8048,9 @@ init|=
 block|{
 literal|"gimp_curves_explicit"
 block|,
-name|N_
-argument_list|(
 literal|"Modifies the intensity curve(s) for specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Modifies the intensity mapping for one channel in the specified drawable.  The drawable must be either grayscale or RGB, and the channel can be either an intensity component, or the value.  The 'curve' parameter is an array of bytes which explicitly defines how each pixel value in the drawable will be modified.  Use the 'gimp_curves_spline' function to modify intensity levels with Catmull Rom splines."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

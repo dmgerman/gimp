@@ -2672,11 +2672,10 @@ block|{
 name|GdkGCValues
 name|values
 decl_stmt|;
+specifier|const
 name|char
 name|stipple
-index|[
-literal|8
-index|]
+index|[]
 init|=
 block|{
 literal|0xF0

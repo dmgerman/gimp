@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/param.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -572,7 +578,7 @@ decl_stmt|;
 name|char
 name|filename
 index|[
-literal|512
+name|MAXPATHLEN
 index|]
 decl_stmt|;
 name|FILE
@@ -594,9 +600,11 @@ literal|0
 index|]
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|filename
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/sessionrc"
 argument_list|,
@@ -737,7 +745,7 @@ decl_stmt|;
 name|char
 name|filename
 index|[
-literal|512
+name|MAXPATHLEN
 index|]
 decl_stmt|;
 name|gimp_dir
@@ -750,9 +758,11 @@ condition|(
 name|gimp_dir
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|filename
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/sessionrc"
 argument_list|,

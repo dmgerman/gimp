@@ -4439,7 +4439,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29fc01260108
+DECL|struct|__anon27771da20108
 typedef|typedef
 struct|struct
 block|{
@@ -4591,24 +4591,8 @@ argument_list|)
 expr_stmt|;
 name|menu_item_label
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|image_name
-argument_list|)
-operator|+
-literal|15
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|menu_item_label
-argument_list|,
 literal|"%s-%d"
 argument_list|,
 name|image_name

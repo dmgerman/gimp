@@ -302,7 +302,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be629840108
+DECL|struct|__anon29d379bf0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3300,6 +3300,8 @@ name|GSList
 modifier|*
 name|group
 decl_stmt|;
+specifier|static
+specifier|const
 name|char
 modifier|*
 name|transparencies
@@ -3337,6 +3339,8 @@ literal|"Black Only"
 argument_list|)
 block|,   }
 decl_stmt|;
+specifier|static
+specifier|const
 name|char
 modifier|*
 name|checks
@@ -3359,6 +3363,8 @@ literal|"Large Checks"
 argument_list|)
 block|,   }
 decl_stmt|;
+specifier|static
+specifier|const
 name|int
 name|transparency_vals
 index|[]
@@ -3377,6 +3383,8 @@ block|,
 name|BLACK_ONLY
 block|,   }
 decl_stmt|;
+specifier|static
+specifier|const
 name|int
 name|check_vals
 index|[]
@@ -3389,7 +3397,9 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2be629840208
+DECL|struct|__anon29d379bf0208
+specifier|static
+specifier|const
 struct|struct
 block|{
 DECL|member|label
@@ -3438,7 +3448,9 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2be629840308
+DECL|struct|__anon29d379bf0308
+specifier|static
+specifier|const
 struct|struct
 block|{
 DECL|member|label
@@ -3528,7 +3540,9 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2be629840408
+DECL|struct|__anon29d379bf0408
+specifier|static
+specifier|const
 struct|struct
 block|{
 DECL|member|label
@@ -5100,12 +5114,15 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|preview_sizes
 index|[
 name|i
 index|]
 operator|.
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -8114,9 +8131,14 @@ operator|&
 name|yres
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

@@ -349,34 +349,11 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*  allocate the title buffer  */
+comment|/*  create the info dialog  */
 name|title_buf
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|char
-argument_list|)
-operator|*
-operator|(
-name|strlen
-argument_list|(
-name|title
-argument_list|)
-operator|+
-literal|15
-operator|)
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|title_buf
-argument_list|,
 name|_
 argument_list|(
 literal|"%s: Window Info"
@@ -385,7 +362,6 @@ argument_list|,
 name|title
 argument_list|)
 expr_stmt|;
-comment|/*  create the info dialog  */
 name|info_win
 operator|=
 name|info_dialog_new
@@ -773,11 +749,13 @@ operator|->
 name|user_data
 expr_stmt|;
 comment|/*  width and height  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|iwd
 operator|->
 name|dimensions_str
+argument_list|,
+name|MAX_BUF
 argument_list|,
 literal|"%d x %d"
 argument_list|,
@@ -801,11 +779,13 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/*  image resolution  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|iwd
 operator|->
 name|resolution_str
+argument_list|,
+name|MAX_BUF
 argument_list|,
 literal|"%g x %g dpi"
 argument_list|,
@@ -823,11 +803,13 @@ name|yresolution
 argument_list|)
 expr_stmt|;
 comment|/*  user zoom ratio  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|iwd
 operator|->
 name|scale_str
+argument_list|,
+name|MAX_BUF
 argument_list|,
 literal|"%d:%d"
 argument_list|,
@@ -858,11 +840,13 @@ name|type
 operator|==
 name|RGB
 condition|)
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|iwd
 operator|->
 name|color_type_str
+argument_list|,
+name|MAX_BUF
 argument_list|,
 literal|"%s"
 argument_list|,
@@ -879,11 +863,13 @@ name|type
 operator|==
 name|GRAY
 condition|)
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|iwd
 operator|->
 name|color_type_str
+argument_list|,
+name|MAX_BUF
 argument_list|,
 literal|"%s"
 argument_list|,
@@ -900,11 +886,13 @@ name|type
 operator|==
 name|INDEXED
 condition|)
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|iwd
 operator|->
 name|color_type_str
+argument_list|,
+name|MAX_BUF
 argument_list|,
 literal|"%s"
 argument_list|,
@@ -925,11 +913,13 @@ name|type
 operator|==
 name|INDEXED
 condition|)
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|iwd
 operator|->
 name|visual_class_str
+argument_list|,
+name|MAX_BUF
 argument_list|,
 literal|"%s"
 argument_list|,
@@ -948,11 +938,13 @@ name|type
 operator|==
 name|GRAY
 condition|)
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|iwd
 operator|->
 name|visual_class_str
+argument_list|,
+name|MAX_BUF
 argument_list|,
 literal|"%s"
 argument_list|,
@@ -965,11 +957,13 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/*  visual depth  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|iwd
 operator|->
 name|visual_depth_str
+argument_list|,
+name|MAX_BUF
 argument_list|,
 literal|"%d"
 argument_list|,

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/param.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -154,7 +160,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2c60f79c0103
+DECL|enum|__anon2b950e770103
 typedef|typedef
 enum|enum
 block|{
@@ -1110,6 +1116,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|string_to_str
@@ -1125,6 +1132,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|path_to_str
@@ -1140,6 +1148,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|double_to_str
@@ -1155,6 +1164,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|float_to_str
@@ -1170,6 +1180,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|int_to_str
@@ -1185,6 +1196,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|boolean_to_str
@@ -1200,6 +1212,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|position_to_str
@@ -1215,6 +1228,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|mem_size_to_str
@@ -1230,6 +1244,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|image_type_to_str
@@ -1245,6 +1260,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|color_cube_to_str
@@ -1260,6 +1276,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|preview_size_to_str
@@ -1275,6 +1292,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|char
 modifier|*
 name|ruler_units_to_str
@@ -2435,13 +2453,13 @@ block|{
 name|char
 name|libfilename
 index|[
-literal|512
+name|MAXPATHLEN
 index|]
 decl_stmt|;
 name|char
 name|filename
 index|[
-literal|512
+name|MAXPATHLEN
 index|]
 decl_stmt|;
 name|char
@@ -2508,9 +2526,11 @@ operator|)
 operator|!=
 name|NULL
 condition|)
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|libfilename
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/gimprc"
 argument_list|,
@@ -2518,9 +2538,11 @@ name|gimp_data_dir
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|libfilename
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/gimprc"
 argument_list|,
@@ -2562,9 +2584,11 @@ argument_list|(
 name|libfilename
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|filename
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/gimprc"
 argument_list|,
@@ -2642,7 +2666,7 @@ decl_stmt|;
 name|char
 name|rfilename
 index|[
-literal|512
+name|MAXPATHLEN
 index|]
 decl_stmt|;
 if|if
@@ -2670,9 +2694,11 @@ literal|"HOME"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|rfilename
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/%s"
 argument_list|,
@@ -2920,7 +2946,7 @@ decl_stmt|;
 name|char
 name|name
 index|[
-literal|512
+name|MAXPATHLEN
 index|]
 decl_stmt|;
 name|FILE
@@ -2970,9 +2996,11 @@ operator|=
 name|gimp_directory
 argument_list|()
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|name
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/gimprc"
 argument_list|,
@@ -10028,6 +10056,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|string_to_str (gpointer val1p,gpointer val2p)
@@ -10040,34 +10069,9 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|char
-modifier|*
-name|str
-decl_stmt|;
-name|str
-operator|=
-name|g_malloc
+return|return
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-operator|*
-operator|(
-operator|(
-name|char
-operator|*
-operator|*
-operator|)
-name|val1p
-operator|)
-argument_list|)
-operator|+
-literal|3
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|str
-argument_list|,
 literal|"%c%s%c"
 argument_list|,
 literal|'"'
@@ -10084,15 +10088,13 @@ operator|)
 argument_list|,
 literal|'"'
 argument_list|)
-expr_stmt|;
-return|return
-name|str
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|path_to_str (gpointer val1p,gpointer val2p)
@@ -10118,6 +10120,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|double_to_str (gpointer val1p,gpointer val2p)
@@ -10130,21 +10133,9 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|char
-modifier|*
-name|str
-decl_stmt|;
-name|str
-operator|=
-name|g_malloc
+return|return
+name|g_strdup_printf
 argument_list|(
-literal|20
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|str
-argument_list|,
 literal|"%f"
 argument_list|,
 operator|*
@@ -10156,15 +10147,13 @@ operator|)
 name|val1p
 operator|)
 argument_list|)
-expr_stmt|;
-return|return
-name|str
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|float_to_str (gpointer val1p,gpointer val2p)
@@ -10177,21 +10166,9 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|char
-modifier|*
-name|str
-decl_stmt|;
-name|str
-operator|=
-name|g_malloc
+return|return
+name|g_strdup_printf
 argument_list|(
-literal|20
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|str
-argument_list|,
 literal|"%f"
 argument_list|,
 call|(
@@ -10208,15 +10185,13 @@ name|val1p
 operator|)
 argument_list|)
 argument_list|)
-expr_stmt|;
-return|return
-name|str
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|int_to_str (gpointer val1p,gpointer val2p)
@@ -10229,21 +10204,9 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|char
-modifier|*
-name|str
-decl_stmt|;
-name|str
-operator|=
-name|g_malloc
+return|return
+name|g_strdup_printf
 argument_list|(
-literal|20
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|str
-argument_list|,
 literal|"%d"
 argument_list|,
 operator|*
@@ -10255,15 +10218,13 @@ operator|)
 name|val1p
 operator|)
 argument_list|)
-expr_stmt|;
-return|return
-name|str
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|boolean_to_str (gpointer val1p,gpointer val2p)
@@ -10331,6 +10292,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|position_to_str (gpointer val1p,gpointer val2p)
@@ -10343,21 +10305,9 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|char
-modifier|*
-name|str
-decl_stmt|;
-name|str
-operator|=
-name|g_malloc
+return|return
+name|g_strdup_printf
 argument_list|(
-literal|40
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|str
-argument_list|,
 literal|"%d %d"
 argument_list|,
 operator|*
@@ -10378,15 +10328,13 @@ operator|)
 name|val2p
 operator|)
 argument_list|)
-expr_stmt|;
-return|return
-name|str
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|mem_size_to_str (gpointer val1p,gpointer val2p)
@@ -10402,10 +10350,6 @@ block|{
 name|int
 name|size
 decl_stmt|;
-name|char
-modifier|*
-name|str
-decl_stmt|;
 name|size
 operator|=
 operator|*
@@ -10417,13 +10361,6 @@ operator|)
 name|val1p
 operator|)
 expr_stmt|;
-name|str
-operator|=
-name|g_malloc
-argument_list|(
-literal|20
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|size
@@ -10432,17 +10369,16 @@ literal|1048576
 operator|==
 literal|0
 condition|)
-name|sprintf
+return|return
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|,
 literal|"%dM"
 argument_list|,
 name|size
 operator|/
 literal|1048576
 argument_list|)
-expr_stmt|;
+return|;
 elseif|else
 if|if
 condition|(
@@ -10452,35 +10388,31 @@ literal|1024
 operator|==
 literal|0
 condition|)
-name|sprintf
+return|return
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|,
 literal|"%dK"
 argument_list|,
 name|size
 operator|/
 literal|1024
 argument_list|)
-expr_stmt|;
+return|;
 else|else
-name|sprintf
+return|return
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|,
 literal|"%dB"
 argument_list|,
 name|size
 argument_list|)
-expr_stmt|;
-return|return
-name|str
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|image_type_to_str (gpointer val1p,gpointer val2p)
@@ -10531,6 +10463,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|color_cube_to_str (gpointer val1p,gpointer val2p)
@@ -10543,21 +10476,9 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|char
-modifier|*
-name|str
-decl_stmt|;
-name|str
-operator|=
-name|g_malloc
+return|return
+name|g_strdup_printf
 argument_list|(
-literal|40
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|str
-argument_list|,
 literal|"%d %d %d  %d"
 argument_list|,
 name|color_cube_shades
@@ -10580,15 +10501,13 @@ index|[
 literal|3
 index|]
 argument_list|)
-expr_stmt|;
-return|return
-name|str
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|preview_size_to_str (gpointer val1p,gpointer val2p)
@@ -10651,6 +10570,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|char
 modifier|*
 DECL|function|ruler_units_to_str (gpointer val1p,gpointer val2p)
@@ -10849,20 +10769,8 @@ return|;
 block|}
 name|oldfilename
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|5
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|oldfilename
-argument_list|,
 literal|"%s.old"
 argument_list|,
 name|filename

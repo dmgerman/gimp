@@ -631,6 +631,9 @@ name|char
 modifier|*
 name|name
 decl_stmt|;
+name|int
+name|len
+decl_stmt|;
 comment|/*  formulate the new channel name  */
 name|name
 operator|=
@@ -648,20 +651,14 @@ argument_list|,
 literal|'#'
 argument_list|)
 expr_stmt|;
-name|channel_name
+name|len
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
 name|strlen
 argument_list|(
-name|name
+name|_
+argument_list|(
+literal|"copy"
 argument_list|)
-operator|+
-literal|6
 argument_list|)
 expr_stmt|;
 if|if
@@ -672,7 +669,7 @@ argument_list|(
 name|name
 argument_list|)
 operator|>=
-literal|4
+name|len
 operator|&&
 name|strcmp
 argument_list|(
@@ -684,7 +681,7 @@ argument_list|(
 name|name
 argument_list|)
 operator|-
-literal|4
+name|len
 index|]
 argument_list|,
 name|_
@@ -734,21 +731,19 @@ literal|1
 argument_list|)
 operator|)
 condition|)
-comment|/* don't have rudundant "copy"s */
-name|sprintf
-argument_list|(
+comment|/* don't have redundant "copy"s */
 name|channel_name
-argument_list|,
-literal|"%s"
-argument_list|,
+operator|=
+name|g_strdup
+argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
-argument_list|(
 name|channel_name
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"%s copy"

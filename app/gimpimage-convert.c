@@ -1828,7 +1828,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28933f7a0108
+DECL|struct|__anon2766eb6b0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1875,7 +1875,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28933f7a0208
+DECL|struct|__anon2766eb6b0208
 block|{
 DECL|member|ncolors
 name|long
@@ -1894,7 +1894,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28933f7a0308
+DECL|struct|__anon2766eb6b0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -15001,10 +15001,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"the image"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -15018,15 +15015,9 @@ init|=
 block|{
 literal|"gimp_convert_rgb"
 block|,
-name|N_
-argument_list|(
 literal|"Convert specified image to RGB color"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure converts the specified image to RGB color.  This process requires an image of type GRAY or INDEXED.  No image content is lost in this process aside from the colormap for an indexed image."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -15179,10 +15170,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"the image"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -15196,15 +15184,9 @@ init|=
 block|{
 literal|"gimp_convert_grayscale"
 block|,
-name|N_
-argument_list|(
 literal|"Convert specified image to grayscale (256 intensity levels)"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure converts the specified image to grayscale with 8 bits per pixel (256 intensity levels).  This process requires an image of type RGB or INDEXED."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -15357,10 +15339,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"the image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -15368,10 +15347,7 @@ name|PDB_INT32
 block|,
 literal|"dither"
 block|,
-name|N_
-argument_list|(
 literal|"Floyd-Steinberg dithering"
-argument_list|)
 block|}
 block|,
 block|{
@@ -15379,10 +15355,7 @@ name|PDB_INT32
 block|,
 literal|"num_cols"
 block|,
-name|N_
-argument_list|(
 literal|"the number of colors to quantize to"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -15396,15 +15369,9 @@ init|=
 block|{
 literal|"gimp_convert_indexed"
 block|,
-name|N_
-argument_list|(
 literal|"Convert specified image to indexed color"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure converts the specified image to indexed color.  This process requires an image of type GRAY or RGB.  The 'num_cols' arguments specifies how many colors the resulting image should be quantized to (1-256)."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -15615,10 +15582,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"the image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -15626,10 +15590,7 @@ name|PDB_INT32
 block|,
 literal|"dither"
 block|,
-name|N_
-argument_list|(
 literal|"Floyd-Steinberg dithering"
-argument_list|)
 block|}
 block|,
 block|{
@@ -15637,10 +15598,7 @@ name|PDB_INT32
 block|,
 literal|"palette_type"
 block|,
-name|N_
-argument_list|(
 literal|"The type of palette to use, (0 optimal) (1 reuse) (2 WWW) (3 Mono) (4 Custom)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -15648,10 +15606,7 @@ name|PDB_INT32
 block|,
 literal|"num_cols"
 block|,
-name|N_
-argument_list|(
 literal|"the number of colors to quantize to, ignored unless (palette_type == 0)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -15659,10 +15614,7 @@ name|PDB_STRING
 block|,
 literal|"palette"
 block|,
-name|N_
-argument_list|(
 literal|"The name of the custom palette to use, ignored unless (palette_type == 4)"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -15676,15 +15628,9 @@ init|=
 block|{
 literal|"gimp_convert_indexed_palette"
 block|,
-name|N_
-argument_list|(
 literal|"Convert specified image to indexed color"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure converts the specified image to indexed color.  This process requires an image of type GRAY or RGB.  The `palette_type' specifies what kind of palette to use, A type of `0' means to use an optimal palette of `num_cols' generated from the colors in the image.  A type of `1' means to re-use the previous palette.  A type of `2' means to use the WWW-optimized palette.  Type `3' means to use only black and white colors.  A type of `4' means to use a palette from the gimp palettes directories."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -15911,7 +15857,7 @@ name|value
 operator|.
 name|pdb_pointer
 expr_stmt|;
-comment|/*         fprintf(stderr, _("looking for palette `%s'\n"), palette_name); */
+comment|/*         fprintf(stderr, "looking for palette `%s'\n", palette_name); */
 if|if
 condition|(
 operator|!

@@ -548,10 +548,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -565,15 +562,9 @@ init|=
 block|{
 literal|"gimp_desaturate"
 block|,
-name|N_
-argument_list|(
 literal|"Desaturate the contents of the specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure desaturates the contents of the specified drawable.  This procedure only works on drawables of type RGB color."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

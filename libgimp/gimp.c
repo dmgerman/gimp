@@ -4010,9 +4010,11 @@ condition|)
 return|return
 name|NULL
 return|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|filename
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/%s/gtkrc"
 argument_list|,

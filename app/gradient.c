@@ -2405,6 +2405,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|blending_types
 specifier|static
+specifier|const
 name|char
 modifier|*
 name|blending_types
@@ -2446,6 +2447,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|coloring_types
 specifier|static
+specifier|const
 name|char
 modifier|*
 name|coloring_types
@@ -5623,7 +5625,10 @@ operator|->
 name|hint_label
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|str
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_flush
@@ -7165,17 +7170,17 @@ parameter_list|)
 block|{
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"New gradient"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Enter a name for the new gradient"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"untitled"
 argument_list|)
@@ -7604,29 +7609,8 @@ condition|)
 return|return;
 name|name
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-operator|(
-name|strlen
-argument_list|(
-name|curr_gradient
-operator|->
-name|name
-argument_list|)
-operator|+
-literal|6
-operator|)
-operator|*
-sizeof|sizeof
-argument_list|(
-name|char
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name
-argument_list|,
 name|_
 argument_list|(
 literal|"%s copy"
@@ -7639,12 +7623,12 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Copy gradient"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Enter a name for the copied gradient"
 argument_list|)
@@ -8091,29 +8075,8 @@ argument_list|)
 expr_stmt|;
 name|str
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-operator|(
-name|strlen
-argument_list|(
-name|curr_gradient
-operator|->
-name|name
-argument_list|)
-operator|+
-literal|32
-operator|*
-sizeof|sizeof
-argument_list|(
-name|char
-argument_list|)
-operator|)
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|str
-argument_list|,
 name|_
 argument_list|(
 literal|"\"%s\" from the list and from disk?"
@@ -8632,12 +8595,12 @@ condition|)
 return|return;
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Rename gradient"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Enter a new name for the gradient"
 argument_list|)
@@ -9220,9 +9183,14 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|str
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -10022,9 +9990,14 @@ operator|&
 name|v
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|str
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -10136,9 +10109,14 @@ operator|*
 literal|255.0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|str
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -11435,7 +11413,7 @@ name|NULL
 condition|)
 name|ed_set_hint
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Drag: move    Shift+drag: move& compress"
 argument_list|)
@@ -11444,7 +11422,7 @@ expr_stmt|;
 else|else
 name|ed_set_hint
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Click: select    Shift+click: extend selection"
 argument_list|)
@@ -11454,7 +11432,7 @@ block|}
 else|else
 name|ed_set_hint
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Click: select    Shift+click: extend selection"
 argument_list|)
@@ -11466,7 +11444,7 @@ name|GRAD_DRAG_MIDDLE
 case|:
 name|ed_set_hint
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Click: select    Shift+click: extend selection    "
 literal|"Drag: move"
@@ -11496,7 +11474,7 @@ block|}
 else|else
 name|ed_set_hint
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Click: select    Shift+click: extend selection    "
 literal|"Drag: move    Shift+drag: move& compress"
@@ -12222,9 +12200,14 @@ argument_list|,
 name|pos
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|str
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -12273,9 +12256,14 @@ operator|-
 name|EPSILON
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|str
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -12370,9 +12358,14 @@ name|control_last_gx
 operator|+=
 name|delta
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|str
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -18047,9 +18040,14 @@ argument_list|,
 name|a
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|str
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -20859,7 +20857,7 @@ name|cpopup_create_color_dialog
 argument_list|(
 name|_
 argument_list|(
-literal|"Left endpoint color"
+literal|"Left endpoint's color"
 argument_list|)
 argument_list|,
 name|g_editor
@@ -21335,7 +21333,7 @@ name|cpopup_create_color_dialog
 argument_list|(
 name|_
 argument_list|(
-literal|"Right endpoint color"
+literal|"Right endpoint's color"
 argument_list|)
 argument_list|,
 name|g_editor
@@ -28325,25 +28323,8 @@ condition|)
 block|{
 name|path
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|home
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|token
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|path
-argument_list|,
 literal|"%s%s"
 argument_list|,
 name|home
@@ -28358,20 +28339,8 @@ else|else
 block|{
 name|path
 operator|=
-name|g_malloc
+name|g_strdup
 argument_list|(
-name|strlen
-argument_list|(
-name|token
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|strcpy
-argument_list|(
-name|path
-argument_list|,
 name|token
 argument_list|)
 expr_stmt|;
@@ -28379,22 +28348,7 @@ block|}
 comment|/* else */
 name|filename
 operator|=
-name|g_malloc
-argument_list|(
-name|strlen
-argument_list|(
-name|path
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|2
-argument_list|)
-expr_stmt|;
-name|sprintf
+name|g_strdup_printf
 argument_list|(
 name|filename
 argument_list|,

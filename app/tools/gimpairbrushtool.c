@@ -1241,10 +1241,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1252,10 +1249,7 @@ name|PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
-name|N_
-argument_list|(
 literal|"The pressure of the airbrush strokes: 0<= pressure<= 100"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1263,10 +1257,7 @@ name|PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
-name|N_
-argument_list|(
 literal|"number of stroke control points (count each coordinate as 2 points)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1274,10 +1265,7 @@ name|PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
-name|N_
-argument_list|(
 literal|"array of stroke coordinates: {s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y}"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1291,15 +1279,9 @@ init|=
 block|{
 literal|"gimp_airbrush"
 block|,
-name|N_
-argument_list|(
 literal|"Paint in the current brush with varying pressure.  Paint application is time-dependent"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool simulates the use of an airbrush.  Paint pressure represents the relative intensity of the paint application.  High pressure results in a thicker layer of paint while low pressure results in a thinner layer."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

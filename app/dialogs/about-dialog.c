@@ -1410,9 +1410,14 @@ condition|)
 return|return
 name|TRUE
 return|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%s/gimp_logo.ppm"
 argument_list|,

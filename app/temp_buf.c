@@ -1658,14 +1658,6 @@ begin_comment
 comment|/*  NOTES:  *  Disk caching is setup as follows:  *    On a call to temp_buf_swap, the TempBuf parameter is stored  *    in a temporary variable called cached_in_memory.  *    On the next call to temp_buf_swap, if cached_in_memory is non-null,  *    cached_in_memory is moved to disk, and the latest TempBuf parameter  *    is stored in cached_in_memory.  This method keeps the latest TempBuf  *    structure in memory instead of moving it directly to disk as requested.  *    On a call to temp_buf_unswap, if cached_in_memory is non-null, it is  *    compared against the requested TempBuf.  If they are the same, nothing  *    must be moved in from disk since it still resides in memory.  However,  *    if the two pointers are different, the requested TempBuf is retrieved  *    from disk.  In the former case, cached_in_memory is set to NULL;  *    in the latter case, cached_in_memory is left unchanged.  *    If temp_buf_swap_free is called, cached_in_memory must be checked  *    against the temp buf being freed.  If they are the same, then cached_in_memory  *    must be set to NULL;  *  *  In the case where memory usage is set to "stingy":  *    temp bufs are not cached in memory at all, they go right to disk.  */
 end_comment
 
-begin_define
-DECL|macro|MAX_FILENAME
-define|#
-directive|define
-name|MAX_FILENAME
-value|2048
-end_define
-
 begin_comment
 comment|/*  a static counter for generating unique filenames  */
 end_comment
@@ -1677,17 +1669,6 @@ name|int
 name|swap_index
 init|=
 literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|filename_buf
-specifier|static
-name|char
-name|filename_buf
-index|[
-name|MAX_FILENAME
-index|]
 decl_stmt|;
 end_decl_stmt
 
@@ -1724,10 +1705,9 @@ operator|=
 name|getpid
 argument_list|()
 expr_stmt|;
-name|sprintf
+return|return
+name|g_strdup_printf
 argument_list|(
-name|filename_buf
-argument_list|,
 literal|"%s/gimp%d.%d"
 argument_list|,
 name|temp_path
@@ -1739,12 +1719,6 @@ name|pid
 argument_list|,
 name|swap_index
 operator|++
-argument_list|)
-expr_stmt|;
-return|return
-name|g_strdup
-argument_list|(
-name|filename_buf
 argument_list|)
 return|;
 block|}

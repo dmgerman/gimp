@@ -975,9 +975,11 @@ condition|(
 name|gimp_dir
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|filename
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/devicerc"
 argument_list|,
@@ -2737,7 +2739,7 @@ decl_stmt|;
 name|char
 name|filename
 index|[
-literal|512
+name|MAXPATHLEN
 index|]
 decl_stmt|;
 name|FILE
@@ -2762,9 +2764,11 @@ literal|0
 index|]
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|filename
+argument_list|,
+name|MAXPATHLEN
 argument_list|,
 literal|"%s/devicerc"
 argument_list|,

@@ -1590,27 +1590,11 @@ argument_list|)
 expr_stmt|;
 name|warning_buf
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|image_name
-argument_list|)
-operator|+
-literal|50
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|warning_buf
-argument_list|,
 name|_
 argument_list|(
-literal|"Changes were made to %s.  Close anyway?"
+literal|"Changes were made to %s. Close anyway?"
 argument_list|)
 argument_list|,
 name|image_name

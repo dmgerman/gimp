@@ -312,7 +312,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c02c8a20108
+DECL|struct|__anon2a43e6a70108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1295,12 +1295,12 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Border Selection"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Border selection by:"
 argument_list|)
@@ -1356,12 +1356,12 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Feather Selection"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Feather selection by:"
 argument_list|)

@@ -855,7 +855,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2a44b7930103
+DECL|enum|__anon2b88508d0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -9685,7 +9685,7 @@ modifier|*
 name|box
 parameter_list|)
 block|{
-DECL|struct|__anon2a44b7930208
+DECL|struct|__anon2b88508d0208
 specifier|static
 struct|struct
 block|{
@@ -9791,7 +9791,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Mode :"
+literal|"Mode:"
 argument_list|)
 argument_list|)
 expr_stmt|;
