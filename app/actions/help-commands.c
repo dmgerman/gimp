@@ -307,7 +307,7 @@ empty_stmt|;
 end_empty_stmt
 
 begin_typedef
-DECL|struct|__anon2923e3550108
+DECL|struct|__anon29d3cf830108
 typedef|typedef
 struct|struct
 block|{
@@ -351,7 +351,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2923e3550208
+DECL|struct|__anon29d3cf830208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3012,7 +3012,7 @@ block|}
 if|if
 condition|(
 name|marching_speed
-operator|<=
+operator|<
 literal|50
 condition|)
 block|{
@@ -4507,7 +4507,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2923e3550308
+DECL|struct|__anon29d3cf830308
 struct|struct
 block|{
 DECL|member|label
@@ -4576,7 +4576,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2923e3550408
+DECL|struct|__anon29d3cf830408
 struct|struct
 block|{
 DECL|member|label
