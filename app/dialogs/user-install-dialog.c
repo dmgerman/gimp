@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6bcb3e0103
+DECL|enum|__anon27eccd500103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6bcb3e0203
+DECL|enum|__anon27eccd500203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6bcb3e0303
+DECL|enum|__anon27eccd500303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c6bcb3e0408
+DECL|struct|__anon27eccd500408
 block|{
 DECL|member|directory
 name|gboolean
@@ -629,6 +629,22 @@ block|,
 block|{
 name|FALSE
 block|,
+literal|"templaterc"
+block|,
+name|N_
+argument_list|(
+literal|"This file holds a collection of standard media sizes that\n"
+literal|"serve as image templates."
+argument_list|)
+block|,
+name|TREE_ITEM_FROM_SYSCONF_DIR
+block|,
+literal|"templaterc"
+block|}
+block|,
+block|{
+name|FALSE
+block|,
 literal|"unitrc"
 block|,
 name|N_
@@ -641,21 +657,6 @@ literal|"you quit the GIMP."
 argument_list|)
 block|,
 name|TREE_ITEM_FROM_SYSCONF_DIR
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|TRUE
-block|,
-literal|"themes"
-block|,
-name|N_
-argument_list|(
-literal|"This folder is searched for user-installed themes."
-argument_list|)
-block|,
-name|TREE_ITEM_MKDIR_ONLY
 block|,
 name|NULL
 block|}
@@ -800,6 +801,36 @@ literal|"This folder is used to store user created and installed\n"
 literal|"scripts.  The GIMP checks this folder in addition to\n"
 literal|"the systemwide GIMP scripts folder when searching for\n"
 literal|"scripts."
+argument_list|)
+block|,
+name|TREE_ITEM_MKDIR_ONLY
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|TRUE
+block|,
+literal|"templates"
+block|,
+name|N_
+argument_list|(
+literal|"This folder is searched for image templates."
+argument_list|)
+block|,
+name|TREE_ITEM_MKDIR_ONLY
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|TRUE
+block|,
+literal|"themes"
+block|,
+name|N_
+argument_list|(
+literal|"This folder is searched for user-installed themes."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR_ONLY
