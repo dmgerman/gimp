@@ -4348,7 +4348,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0108
+DECL|struct|__anon2946ea2c0108
 block|{
 DECL|member|scale
 name|double
@@ -4376,7 +4376,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0208
+DECL|struct|__anon2946ea2c0208
 block|{
 DECL|member|run
 name|gint
@@ -4403,7 +4403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0308
+DECL|struct|__anon2946ea2c0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4424,7 +4424,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cd9e0e0403
+DECL|enum|__anon2946ea2c0403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -4455,7 +4455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0508
+DECL|struct|__anon2946ea2c0508
 block|{
 DECL|member|dummy
 name|int
@@ -4470,7 +4470,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0608
+DECL|struct|__anon2946ea2c0608
 block|{
 DECL|member|color
 name|GdkColor
@@ -4497,7 +4497,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0708
+DECL|struct|__anon2946ea2c0708
 block|{
 DECL|member|dummy
 name|int
@@ -4512,7 +4512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0808
+DECL|struct|__anon2946ea2c0808
 block|{
 DECL|member|color
 name|GdkColor
@@ -4539,7 +4539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0908
+DECL|struct|__anon2946ea2c0908
 block|{
 DECL|member|font
 name|GdkFont
@@ -4555,7 +4555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0a08
+DECL|struct|__anon2946ea2c0a08
 block|{
 DECL|member|dummy
 name|int
@@ -4570,14 +4570,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0b08
+DECL|struct|__anon2946ea2c0b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon27cd9e0e0c0a
+DECL|union|__anon2946ea2c0c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -4616,7 +4616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0d08
+DECL|struct|__anon2946ea2c0d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -4669,7 +4669,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0e08
+DECL|struct|__anon2946ea2c0e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -4720,7 +4720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd9e0e0f08
+DECL|struct|__anon2946ea2c0f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -13524,10 +13524,7 @@ name|height
 operator|>=
 literal|100
 condition|)
-block|{
-name|name_buf
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
@@ -13535,17 +13532,6 @@ literal|"Transferring image"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|name_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name_buf
-argument_list|)
-expr_stmt|;
-block|}
 name|image_ID
 operator|=
 name|gimp_image_new

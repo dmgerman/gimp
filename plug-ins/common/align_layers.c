@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e61f000103
+DECL|enum|__anon2b4a550c0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e61f000203
+DECL|enum|__anon2b4a550c0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e61f000303
+DECL|enum|__anon2b4a550c0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e61f000403
+DECL|enum|__anon2b4a550c0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e61f000508
+DECL|struct|__anon2b4a550c0508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e61f000608
+DECL|struct|__anon2b4a550c0608
 block|{
 DECL|member|run
 name|gint
@@ -445,15 +445,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Align visible layers"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Align visible layers"
-argument_list|)
 argument_list|,
 literal|"Shuji Narazaki<narazaki@InetQ.or.jp>"
 argument_list|,

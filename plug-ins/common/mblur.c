@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b697e9b0108
+DECL|struct|__anon2c1278830108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b697e9b0208
+DECL|struct|__anon2c1278830208
 block|{
 DECL|member|col
 DECL|member|row
@@ -598,15 +598,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Motion blur of image"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"This plug-in simulates the effect seen when photographing a moving object at a slow shutter speed. Done by adding multiple displaced copies."
-argument_list|)
+literal|"This plug-in simulates the effect seen when photographing a moving object "
+literal|"at a slow shutter speed. Done by adding multiple displaced copies."
 argument_list|,
 literal|"Torsten Martinsen, Federico Mena Quintero and Daniel Skarda"
 argument_list|,

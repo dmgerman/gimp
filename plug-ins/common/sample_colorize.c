@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon29206ed10108
+DECL|struct|__anon2bcc90de0108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29206ed10208
+DECL|struct|__anon2bcc90de0208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29206ed10308
+DECL|struct|__anon2bcc90de0308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29206ed10408
+DECL|struct|__anon2bcc90de0408
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +613,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29206ed10508
+DECL|struct|__anon2bcc90de0508
 typedef|typedef
 struct|struct
 block|{
@@ -1406,10 +1406,7 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Colorize the contents of the specified drawable similar to sample drawable"
-argument_list|)
 argument_list|,
 name|help_string
 argument_list|,

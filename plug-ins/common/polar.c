@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4fca810108
+DECL|struct|__anon28bee4e70108
 block|{
 DECL|member|circle
 name|gdouble
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4fca810208
+DECL|struct|__anon28bee4e70208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4fca810308
+DECL|struct|__anon28bee4e70308
 block|{
 DECL|member|col
 DECL|member|row
@@ -782,15 +782,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Converts and image to and from polar coords"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Remaps and image from rectangular coordinates to polar coordinats or vice versa"
-argument_list|)
+literal|"Remaps and image from rectangular coordinates to polar coordinates "
+literal|"or vice versa"
 argument_list|,
 literal|"Daniel Dunbar and Federico Mena Quintero"
 argument_list|,

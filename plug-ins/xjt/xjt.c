@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* WARNING: XJT code and Fileformat under construction  *  * XJT (JPEG-TAR fileformat) loading and saving file filter for the GIMP  *  -hof (Wolfgang Hofer)  *  * This filter requires UNIX tar and the "jpeglib" Library to run.  * For optional further compression you also should install  *  gzip and bzip2 compression Programs.  *  * IMPORTANT NOTE:  *   This plugin needs GIMP 1.1.16 or newer versions of the GIMP-core to run.  */
+comment|/* WARNING: XJT code and Fileformat under construction  *  * XJT (JPEG-TAR fileformat) loading and saving file filter for the GIMP  *  -hof (Wolfgang Hofer)  *  * This filter requires UNIX tar and the "jpeglib" Library to run.  * For optional further compression you also should install  *  gzip and bzip2 compression Programs.  *  * IMPORTANT NOTE:  *   This plugin needs GIMP 1.1.18 or newer versions of the GIMP-core to run.  */
 end_comment
 
 begin_comment
@@ -12,7 +12,7 @@ comment|/* TODO:  *  - support user units   *  - show continous progress while l
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 1.1.16a; 2000/02/04  hof: load paths continued, load tattos, load/save unit  * version 1.1.15b; 2000/01/28  hof: save/load paths  (load is not activated PDB-bug)  *                                   continued save/load parasites,  *                                   replaced static buffers by dynamic allocated memory (goodbye to sprintf)  * version 1.1.15a; 2000/01/23  hof: NLS_macros, save/load parasites, \" and \n characters in names  *                                   use G_DIR_SEPARATOR (but you still need UNIX tar to run this plugin)  *                                   older gimp releases (prior to 1.1.15) are not supported any more.  * version 1.02.00; 1999/03/16  hof: - save layer/channel Tattoos  *                                   - load/save image resolution added  *                                   - tolerate unknown properties with warnings  * version 1.01.00; 1998/11/22  hof: added load/save of guides  *                                   (you need gimp 1.1 to use this feature)  * version 1.00.00; 1998/10/29  hof: 1.st (pre) release  */
+comment|/* revision history:  * version 1.1.18a; 2000/03/07  hof: tattoo_state  * version 1.1.16a; 2000/02/04  hof: load paths continued, load tattos, load/save unit  * version 1.1.15b; 2000/01/28  hof: save/load paths  (load is not activated PDB-bug)  *                                   continued save/load parasites,  *                                   replaced static buffers by dynamic allocated memory (goodbye to sprintf)  * version 1.1.15a; 2000/01/23  hof: NLS_macros, save/load parasites, \" and \n characters in names  *                                   use G_DIR_SEPARATOR (but you still need UNIX tar to run this plugin)  *                                   older gimp releases (prior to 1.1.15) are not supported any more.  * version 1.02.00; 1999/03/16  hof: - save layer/channel Tattoos  *                                   - load/save image resolution added  *                                   - tolerate unknown properties with warnings  * version 1.01.00; 1998/11/22  hof: added load/save of guides  *                                   (you need gimp 1.1 to use this feature)  * version 1.00.00; 1998/10/29  hof: 1.st (pre) release  */
 end_comment
 
 begin_include
@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d611b10108
+DECL|struct|__anon29188a290108
 block|{
 DECL|member|run
 name|gint
@@ -195,7 +195,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d611b10203
+DECL|enum|__anon29188a290203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -322,6 +322,11 @@ name|PROP_USER_UNIT
 init|=
 literal|24
 block|,
+DECL|enumerator|PROP_TATTOO_STATE
+name|PROP_TATTOO_STATE
+init|=
+literal|85
+block|,
 DECL|enumerator|PROP_PATH_LOCKED
 name|PROP_PATH_LOCKED
 init|=
@@ -390,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d611b10303
+DECL|enum|__anon29188a290303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -450,7 +455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d611b10403
+DECL|enum|__anon29188a290403
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -480,7 +485,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d611b10503
+DECL|enum|__anon29188a290503
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -502,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d611b10603
+DECL|enum|__anon29188a290603
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -522,7 +527,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d611b10703
+DECL|enum|__anon29188a290703
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -557,7 +562,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d611b10803
+DECL|enum|__anon29188a290803
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -647,7 +652,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d611b10908
+DECL|struct|__anon29188a290908
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -683,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d611b10a08
+DECL|struct|__anon29188a290a08
 block|{
 DECL|member|int_val1
 name|gint32
@@ -732,7 +737,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d611b10b08
+DECL|struct|__anon29188a290b08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -769,7 +774,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d611b10c08
+DECL|struct|__anon29188a290c08
 block|{
 DECL|member|path_type
 name|gint32
@@ -819,7 +824,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d611b10d08
+DECL|struct|__anon29188a290d08
 block|{
 DECL|member|active_channel
 name|gint
@@ -893,7 +898,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d611b10e08
+DECL|struct|__anon29188a290e08
 block|{
 DECL|member|active_layer
 name|gint
@@ -978,7 +983,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d611b10f08
+DECL|struct|__anon29188a290f08
 block|{
 DECL|member|position
 name|gint32
@@ -1002,7 +1007,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d611b11008
+DECL|struct|__anon29188a291008
 block|{
 DECL|member|version
 name|gchar
@@ -1048,6 +1053,10 @@ decl_stmt|;
 DECL|member|tattoo
 name|gint32
 name|tattoo
+decl_stmt|;
+DECL|member|tattoo_state
+name|gint32
+name|tattoo_state
 decl_stmt|;
 DECL|member|n_layers
 name|gint
@@ -1098,7 +1107,7 @@ DECL|macro|PROP_TABLE_ENTRIES
 define|#
 directive|define
 name|PROP_TABLE_ENTRIES
-value|34
+value|35
 end_define
 
 begin_decl_stmt
@@ -1409,6 +1418,21 @@ block|{
 name|PROP_TATTOO
 block|,
 literal|"tto"
+block|,
+name|PTYP_INT
+block|,
+operator|-
+literal|1.0
+block|,
+literal|0.0
+block|,
+literal|0.0
+block|}
+block|,
+block|{
+name|PROP_TATTOO_STATE
+block|,
+literal|"tts"
 block|,
 name|PTYP_INT
 block|,
@@ -2053,7 +2077,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
-literal|"2000-Feb-04"
+literal|"2000-Mar-07"
 argument_list|,
 literal|"<Load>/xjt"
 argument_list|,
@@ -2082,7 +2106,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
-literal|"2000-Feb-04"
+literal|"2000-Mar-07"
 argument_list|,
 literal|"<Save>/xjt"
 argument_list|,
@@ -6866,7 +6890,7 @@ name|l_param
 operator|.
 name|string_val
 operator|=
-literal|"1.1.16a"
+literal|"1.1.18a"
 expr_stmt|;
 name|p_write_prop
 argument_list|(
@@ -6994,6 +7018,38 @@ argument_list|,
 name|wr_all_prp
 argument_list|)
 expr_stmt|;
+comment|/* write tattoo_state */
+name|l_param
+operator|.
+name|int_val1
+operator|=
+name|p_gimp_image_get_tattoo_state
+argument_list|(
+name|image_id
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|l_param
+operator|.
+name|int_val1
+operator|>
+literal|0
+condition|)
+block|{
+name|p_write_prop
+argument_list|(
+name|fp
+argument_list|,
+name|PROP_TATTOO_STATE
+argument_list|,
+operator|&
+name|l_param
+argument_list|,
+name|wr_all_prp
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* write guides */
 name|l_guide_id
 operator|=
@@ -9178,6 +9234,20 @@ index|[
 name|p_get_property_index
 argument_list|(
 name|PROP_TATTOO
+argument_list|)
+index|]
+operator|.
+name|default_val1
+expr_stmt|;
+name|l_new_prop
+operator|->
+name|tattoo_state
+operator|=
+name|g_prop_table
+index|[
+name|p_get_property_index
+argument_list|(
+name|PROP_TATTOO_STATE
 argument_list|)
 index|]
 operator|.
@@ -12640,6 +12710,18 @@ operator|.
 name|int_val1
 expr_stmt|;
 break|break;
+case|case
+name|PROP_TATTOO_STATE
+case|:
+name|image_prop
+operator|->
+name|tattoo_state
+operator|=
+name|l_param
+operator|.
+name|int_val1
+expr_stmt|;
+break|break;
 default|default :
 comment|/* fprintf(stderr, "XJT: Warning PRP unexpected token in line:\n%s\n", scan_ptr); */
 comment|/* return -1; */
@@ -15353,6 +15435,26 @@ argument_list|,
 name|l_image_prp_ptr
 operator|->
 name|path_props
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* set tattoo_state */
+if|if
+condition|(
+name|l_image_prp_ptr
+operator|->
+name|tattoo_state
+operator|>
+literal|0
+condition|)
+block|{
+name|p_gimp_image_set_tattoo_state
+argument_list|(
+name|l_image_id
+argument_list|,
+name|l_image_prp_ptr
+operator|->
+name|tattoo_state
 argument_list|)
 expr_stmt|;
 block|}

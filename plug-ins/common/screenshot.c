@@ -142,7 +142,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2b7669810108
+DECL|struct|__anon2c65894e0108
 typedef|typedef
 struct|struct
 block|{
@@ -170,7 +170,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7669810208
+DECL|struct|__anon2c65894e0208
 typedef|typedef
 struct|struct
 block|{
@@ -463,13 +463,8 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Creates a screenshot of a single window or the whole screen"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This extension serves as a simple frontend to the X-window "
 literal|"utility xwd and the xwd-file-plug-in. After specifying some "
 literal|"options, xwd is called, the user selects a window, and the "
@@ -477,7 +472,6 @@ literal|"resulting image is loaded into the gimp. Alternatively the "
 literal|"whole screen can be grabbed. When called non-interactively "
 literal|"it may grab the root window or use the window-id passed as "
 literal|"a parameter."
-argument_list|)
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 1.1.16a; 2000/02/04  hof: path lockedstaus, tattoo set procedures  * version 1.1.15b; 2000/01/28  hof: parasites part2  * version 1.1.15;  2000/01/20  hof: parasites  * version 1.02.00; 1999/02/01  hof: PDB-calls to load/save resolution tattoos and parasites  *                                   (needs GIMP 1.1.1)-- UNDER CONSTRUCTION ---  * version 1.01.00; 1998/11/22  hof: PDB-calls to load/save guides under GIMP 1.1  * version 1.00.00; 1998/10/26  hof: 1.st (pre) release  */
+comment|/* revision history:  * version 1.1.18a; 2000/03/07  hof: tattoo_state  * version 1.1.16a; 2000/02/04  hof: path lockedstaus, tattoo set procedures  * version 1.1.15b; 2000/01/28  hof: parasites part2  * version 1.1.15;  2000/01/20  hof: parasites  * version 1.02.00; 1999/02/01  hof: PDB-calls to load/save resolution tattoos and parasites  *                                   (needs GIMP 1.1.1)-- UNDER CONSTRUCTION ---  * version 1.01.00; 1998/11/22  hof: PDB-calls to load/save guides under GIMP 1.1  * version 1.00.00; 1998/10/26  hof: 1.st (pre) release  */
 end_comment
 
 begin_ifndef
@@ -469,6 +469,29 @@ name|channel_id
 parameter_list|,
 name|gint32
 name|tattoovalue
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|p_gimp_image_set_tattoo_state
+parameter_list|(
+name|gint32
+name|image_id
+parameter_list|,
+name|gint32
+name|tattoo_state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
+name|p_gimp_image_get_tattoo_state
+parameter_list|(
+name|gint32
+name|image_id
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4574290108
+DECL|struct|__anon2b68fce50108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -348,7 +348,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4574290208
+DECL|struct|__anon2b68fce50208
 block|{
 DECL|member|run
 name|gint
@@ -571,15 +571,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Scattering pixel values in HSV space"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Scattering pixel values in HSV space"
-argument_list|)
 argument_list|,
 literal|"Shuji Narazaki (narazaki@InetQ.or.jp)"
 argument_list|,

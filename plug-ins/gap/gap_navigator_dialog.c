@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf23a90103
+DECL|enum|__anon2ae6c5e00103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf23a90203
+DECL|enum|__anon2ae6c5e00203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -1803,10 +1803,7 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUGIN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"GAP video navigator dialog"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,

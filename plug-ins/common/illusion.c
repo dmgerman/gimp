@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287826d60108
+DECL|struct|__anon2b3cb0700108
 block|{
 DECL|member|division
 name|gint32
@@ -365,15 +365,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"produce illusion"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"produce illusion"
-argument_list|)
 argument_list|,
 literal|"Hirotsuna Mizuno<s1041150@u-aizu.ac.jp>"
 argument_list|,

@@ -422,15 +422,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Performs various artistic operations on an image"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Performs various artistic operations on an image"
-argument_list|)
 argument_list|,
 literal|"Vidar Madsen<vidar@prosalg.no>"
 argument_list|,

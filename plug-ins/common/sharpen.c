@@ -699,15 +699,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Sharpen filter, typically used to \'sharpen\' a photographic image."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in selectively performs a convolution filter on an image."
-argument_list|)
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>"
 argument_list|,

@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3f63b80103
+DECL|enum|__anon28af0ee90103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3f63b80203
+DECL|enum|__anon28af0ee90203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -193,7 +193,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a3f63b80308
+DECL|struct|__anon28af0ee90308
 block|{
 DECL|member|params
 name|PluginParams
@@ -213,7 +213,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a3f63b80408
+DECL|struct|__anon28af0ee90408
 block|{
 DECL|member|x0
 name|gint
@@ -579,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a3f63b80508
+DECL|struct|__anon28af0ee90508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -4998,15 +4998,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUGIN_PROCEDURE_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Cuts an image into paper tiles, and slides each paper tile."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in cuts an image into paper tiles and slides each paper tile."
-argument_list|)
 argument_list|,
 literal|"Hirotsuna Mizuno<s1041150@u-aizu.ac.jp>"
 argument_list|,

@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a20dfae0108
+DECL|struct|__anon2b414c630108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -836,7 +836,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a20dfae0208
+DECL|struct|__anon2b414c630208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1061,7 +1061,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a20dfae0308
+DECL|struct|__anon2b414c630308
 block|{
 DECL|member|run
 name|gint
@@ -1209,15 +1209,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Propagate values of the layer"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Propagate values of the layer"
-argument_list|)
 argument_list|,
 literal|"Shuji Narazaki (narazaki@InetQ.or.jp)"
 argument_list|,
@@ -2140,7 +2134,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"value propagating..."
+literal|"Value propagating..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3624,7 +3618,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a20dfae0408
+DECL|struct|__anon2b414c630408
 block|{
 DECL|member|min_modified
 name|short
