@@ -511,7 +511,7 @@ name|n_construct_params
 operator|++
 index|]
 expr_stmt|;
-name|construct_params
+name|construct_param
 operator|->
 name|name
 operator|=
@@ -522,7 +522,7 @@ expr_stmt|;
 name|g_value_init
 argument_list|(
 operator|&
-name|construct_params
+name|construct_param
 operator|->
 name|value
 argument_list|,
@@ -1723,7 +1723,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3e6aaa0108
+DECL|struct|__anon2c37b46b0108
 block|{
 DECL|member|key
 name|gchar
