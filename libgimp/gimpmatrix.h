@@ -130,6 +130,16 @@ name|GimpMatrix
 name|m_inv
 parameter_list|)
 function_decl|;
+name|void
+name|gimp_matrix_duplicate
+parameter_list|(
+name|GimpMatrix
+name|src
+parameter_list|,
+name|GimpMatrix
+name|target
+parameter_list|)
+function_decl|;
 ifdef|#
 directive|ifdef
 name|__cplusplus

@@ -4942,6 +4942,14 @@ operator|==
 name|TRANSFORM_CORRECTIVE
 condition|)
 block|{
+comment|/*  keep the original matrix here, so we dont need to recalculate  	  the inverse later  */
+name|gimp_matrix_duplicate
+argument_list|(
+name|matrix
+argument_list|,
+name|m
+argument_list|)
+expr_stmt|;
 name|gimp_matrix_invert
 argument_list|(
 name|matrix
@@ -4954,6 +4962,8 @@ operator|=
 name|im
 expr_stmt|;
 block|}
+else|else
+block|{
 comment|/*  Find the inverse of the transformation matrix  */
 name|gimp_matrix_invert
 argument_list|(
@@ -4962,6 +4972,7 @@ argument_list|,
 name|m
 argument_list|)
 expr_stmt|;
+block|}
 name|x1
 operator|=
 name|float_tiles
