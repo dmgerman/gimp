@@ -494,7 +494,7 @@ name|a
 operator|.
 name|x
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 operator|(
 name|real
@@ -512,7 +512,7 @@ name|a
 operator|.
 name|y
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 operator|(
 name|real

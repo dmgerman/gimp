@@ -779,7 +779,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c999e5a0108
+DECL|struct|__anon2c8636cb0108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -865,7 +865,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c999e5a0208
+DECL|struct|__anon2c8636cb0208
 block|{
 DECL|member|y
 name|gint32
@@ -3125,9 +3125,6 @@ decl_stmt|;
 name|BenderDialog
 modifier|*
 name|cd
-decl_stmt|;
-name|gint
-name|l_nreturn_vals
 decl_stmt|;
 name|GDrawable
 modifier|*

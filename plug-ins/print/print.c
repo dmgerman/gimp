@@ -6,40 +6,14 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"print.h"
 end_include
-
-begin_comment
-comment|/*  * All Gimp-specific code is in this file.  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_define
-DECL|macro|PLUG_IN_VERSION
-define|#
-directive|define
-name|PLUG_IN_VERSION
-value|"3.0.5 - 13 Jan 2000"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_NAME
-define|#
-directive|define
-name|PLUG_IN_NAME
-value|"Print"
-end_define
 
 begin_include
 include|#
@@ -87,14 +61,20 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpui.h>
+file|<gtk/gtk.h>
 end_include
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
+end_include
 
 begin_include
 include|#
@@ -102,102 +82,21 @@ directive|include
 file|<libgimp/stdplugins-intl.h>
 end_include
 
-begin_else
-else|#
-directive|else
-end_else
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpintl.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<locale.h>
-end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|LOCALEDIR
-end_ifndef
-
 begin_define
-DECL|macro|LOCALEDIR
+DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
-name|LOCALEDIR
-value|g_strconcat (gimp_data_directory (), \ 			       G_DIR_SEPARATOR_S, \ 			       "locale", \ 			       NULL)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LC_MESSAGES
-end_ifdef
-
-begin_define
-DECL|macro|INIT_I18N ()
-define|#
-directive|define
-name|INIT_I18N
-parameter_list|()
-define|\
-value|setlocale(LC_MESSAGES, ""); \   bindtextdomain("gimp-std-plugins", LOCALEDIR); \   textdomain("gimp-std-plugins")
+name|PLUG_IN_VERSION
+value|"3.0.5 - 13 Jan 2000"
 end_define
 
 begin_define
-DECL|macro|INIT_I18N_UI ()
+DECL|macro|PLUG_IN_NAME
 define|#
 directive|define
-name|INIT_I18N_UI
-parameter_list|()
-define|\
-value|gtk_set_locale(); \   setlocale (LC_NUMERIC, "C"); \   INIT_I18N();
+name|PLUG_IN_NAME
+value|"Print"
 end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|INIT_I18N ()
-define|#
-directive|define
-name|INIT_I18N
-parameter_list|()
-define|\
-value|bindtextdomain("gimp-std-plugins", LOCALEDIR); \   textdomain("gimp-std-plugins")
-end_define
-
-begin_define
-DECL|macro|INIT_I18N_UI ()
-define|#
-directive|define
-name|INIT_I18N_UI
-parameter_list|()
-define|\
-value|gtk_set_locale(); \   setlocale (LC_NUMERIC, "C"); \   INIT_I18N();
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/*  * Constants for GUI...  */
@@ -251,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276efa790108
+DECL|struct|__anon290d04670108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1648,7 +1547,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"EPSON Stylus Photo"
+literal|"EPSON Stylus Photo EX"
 argument_list|)
 block|,
 literal|"escp2-photo"
@@ -16895,11 +16794,6 @@ index|[
 literal|129
 index|]
 decl_stmt|,
-name|name
-index|[
-literal|17
-index|]
-decl_stmt|,
 name|defname
 index|[
 literal|17
@@ -17151,6 +17045,12 @@ operator|!=
 name|NULL
 condition|)
 block|{
+name|char
+name|name
+index|[
+literal|17
+index|]
+decl_stmt|;
 while|while
 condition|(
 name|fgets

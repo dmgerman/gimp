@@ -104,7 +104,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<libgimp/stdplugins-intl.h>
 end_include
 
 begin_ifdef
@@ -8403,7 +8403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa23bcd0108
+DECL|struct|__anon298eabd10108
 block|{
 DECL|member|color_string
 name|gchar
@@ -32558,8 +32558,6 @@ name|new_name
 init|=
 name|g_strdup_printf
 argument_list|(
-name|new_name
-argument_list|,
 name|_
 argument_list|(
 literal|"%s copy"

@@ -351,17 +351,6 @@ value|((u)>= 0&& (v)>= 0 || (u)< 0&& (v)< 0)
 end_define
 
 begin_define
-DECL|macro|ROUND (x)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|x
-parameter_list|)
-value|((int) ((int) (x) + .5 * SIGN (x)))
-end_define
-
-begin_define
 DECL|macro|SIGN (x)
 define|#
 directive|define
@@ -370,6 +359,17 @@ parameter_list|(
 name|x
 parameter_list|)
 value|((x)> 0 ? 1 : (x)< 0 ? -1 : 0)
+end_define
+
+begin_define
+DECL|macro|SROUND (x)
+define|#
+directive|define
+name|SROUND
+parameter_list|(
+name|x
+parameter_list|)
+value|((int) ((int) (x) + .5 * SIGN (x)))
 end_define
 
 begin_ifndef

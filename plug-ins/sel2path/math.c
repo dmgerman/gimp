@@ -376,7 +376,7 @@ name|int_coord
 operator|.
 name|x
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|real_coord
 operator|.
@@ -387,7 +387,7 @@ name|int_coord
 operator|.
 name|y
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|real_coord
 operator|.

@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab4d9390108
+DECL|struct|__anon2b8a24090108
 block|{
 DECL|member|seed
 name|gint
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab4d9390208
+DECL|struct|__anon2b8a24090208
 block|{
 DECL|member|run
 name|gint
@@ -909,10 +909,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|table
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|spinbutton
 decl_stmt|;
 name|GtkWidget
 modifier|*

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295bc62b0103
+DECL|enum|__anon2c7178ca0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -1048,9 +1048,6 @@ name|argv
 decl_stmt|;
 name|gint
 name|argc
-decl_stmt|;
-name|gint
-name|i
 decl_stmt|;
 comment|/* Set args */
 name|argc
