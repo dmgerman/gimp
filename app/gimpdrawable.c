@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppreviewcache.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsignal.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7888990103
+DECL|enum|__anon27a289ed0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW

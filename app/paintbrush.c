@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushpipe.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpui.h"
 end_include
 
@@ -2802,12 +2796,15 @@ comment|/* we check to see if this is a pixmap, if so composite the 	 pixmap ima
 elseif|else
 if|if
 condition|(
-name|GIMP_IS_BRUSH_PIXMAP
-argument_list|(
 name|paint_core
 operator|->
 name|brush
-argument_list|)
+operator|&&
+name|paint_core
+operator|->
+name|brush
+operator|->
+name|pixmap
 condition|)
 block|{
 name|paint_core_color_area_with_pixmap

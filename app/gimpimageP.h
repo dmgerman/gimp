@@ -29,7 +29,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"gimpobjectP.h"
+file|"gimpobject.h"
 end_include
 
 begin_include

@@ -60,6 +60,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimageP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
 end_include
 
@@ -120,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc2ce90108
+DECL|struct|__anon2c37a3960108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -141,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc2ce90208
+DECL|struct|__anon2c37a3960208
 block|{
 DECL|member|boole
 name|gboolean

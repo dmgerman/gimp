@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpbrush.h"
+file|"gimplist.h"
 end_include
 
 begin_define
@@ -51,6 +51,56 @@ name|obj
 parameter_list|)
 value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_LIST))
 end_define
+
+begin_define
+DECL|macro|GIMP_BRUSH_LIST_CLASS (klass)
+define|#
+directive|define
+name|GIMP_BRUSH_LIST_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST (klass, gimp_brush_list_get_type(), GimpBrushListClass))
+end_define
+
+begin_struct
+DECL|struct|_GimpBrushList
+struct|struct
+name|_GimpBrushList
+block|{
+DECL|member|gimplist
+name|GimpList
+name|gimplist
+decl_stmt|;
+DECL|member|num_brushes
+name|gint
+name|num_brushes
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_typedef
+DECL|typedef|GimpBrushListClass
+typedef|typedef
+name|struct
+name|_GimpBrushListClass
+name|GimpBrushListClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpBrushListClass
+struct|struct
+name|_GimpBrushListClass
+block|{
+DECL|member|parent_class
+name|GimpListClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_comment
 comment|/*  global variables  */

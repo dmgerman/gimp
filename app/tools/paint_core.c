@@ -864,6 +864,10 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|GimpBrush
+modifier|*
+name|current_brush
+decl_stmt|;
 name|gboolean
 name|draw_line
 decl_stmt|;
@@ -893,6 +897,20 @@ operator|)
 name|tool
 operator|->
 name|private
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gdisp
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|paint_core
+operator|!=
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gdisplay_untransform_coords_f
 argument_list|(
@@ -1587,6 +1605,13 @@ name|pick_state
 operator|=
 name|FALSE
 expr_stmt|;
+comment|/*  store the current brush pointer  */
+name|current_brush
+operator|=
+name|paint_core
+operator|->
+name|brush
+expr_stmt|;
 comment|/*  Paint to the image  */
 if|if
 condition|(
@@ -1802,6 +1827,13 @@ name|drawable
 argument_list|,
 name|POSTTRACE_PAINT
 argument_list|)
+expr_stmt|;
+comment|/*  restore the current brush pointer  */
+name|paint_core
+operator|->
+name|brush
+operator|=
+name|current_brush
 expr_stmt|;
 block|}
 end_function
@@ -4049,6 +4081,10 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
+name|GimpBrush
+modifier|*
+name|current_brush
+decl_stmt|;
 name|GimpVector2
 name|delta
 decl_stmt|;
@@ -4522,6 +4558,13 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
+comment|/*  save the current brush  */
+name|current_brush
+operator|=
+name|paint_core
+operator|->
+name|brush
+expr_stmt|;
 if|if
 condition|(
 name|paint_core
@@ -4567,6 +4610,13 @@ name|drawable
 argument_list|,
 name|MOTION_PAINT
 argument_list|)
+expr_stmt|;
+comment|/*  restore the current brush pointer  */
+name|paint_core
+operator|->
+name|brush
+operator|=
+name|current_brush
 expr_stmt|;
 block|}
 block|}
@@ -9287,7 +9337,7 @@ name|brush_mask
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_BRUSH_PIXMAP
+name|GIMP_IS_BRUSH
 argument_list|(
 name|paint_core
 operator|->
@@ -9295,20 +9345,27 @@ name|brush
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|paint_core
+operator|->
+name|brush
+operator|->
+name|pixmap
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  scale the brushes  */
 name|pixmap_mask
 operator|=
 name|paint_core_scale_pixmap
 argument_list|(
-name|gimp_brush_pixmap_pixmap
-argument_list|(
-name|GIMP_BRUSH_PIXMAP
-argument_list|(
 name|paint_core
 operator|->
 name|brush
-argument_list|)
-argument_list|)
+operator|->
+name|pixmap
 argument_list|,
 name|scale
 argument_list|)

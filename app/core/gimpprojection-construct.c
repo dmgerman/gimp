@@ -30,18 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpobjectP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimageP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -588,7 +576,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b9b34f00103
+DECL|enum|__anon2b204ad70103
 enum|enum
 block|{
 DECL|enumerator|CLEAN

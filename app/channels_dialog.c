@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppreviewcache.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -6878,7 +6884,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278fd5df0108
+DECL|struct|__anon275275bc0108
 block|{
 DECL|member|gimage
 name|GimpImage

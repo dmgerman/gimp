@@ -311,7 +311,7 @@ block|}
 end_function
 
 begin_function
-name|GimpBrushGenerated
+name|GimpBrush
 modifier|*
 DECL|function|gimp_brush_generated_new (gfloat radius,gfloat hardness,gfloat angle,gfloat aspect_ratio)
 name|gimp_brush_generated_new
@@ -398,13 +398,16 @@ name|brush
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_BRUSH
+argument_list|(
 name|brush
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
-name|GimpBrushGenerated
+name|GimpBrush
 modifier|*
 DECL|function|gimp_brush_generated_load (const gchar * file_name)
 name|gimp_brush_generated_load
@@ -702,7 +705,10 @@ name|mask
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_BRUSH
+argument_list|(
 name|brush
+argument_list|)
 return|;
 block|}
 end_function

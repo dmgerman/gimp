@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushpipe.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gradient.h"
 end_include
 
@@ -1391,12 +1385,15 @@ block|}
 elseif|else
 if|if
 condition|(
-name|GIMP_IS_BRUSH_PIXMAP
-argument_list|(
 name|paint_core
 operator|->
 name|brush
-argument_list|)
+operator|&&
+name|paint_core
+operator|->
+name|brush
+operator|->
+name|pixmap
 condition|)
 block|{
 name|mode

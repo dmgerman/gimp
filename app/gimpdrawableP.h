@@ -19,19 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpobjectP.h"
+file|"gimpobject.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppreviewcache.h"
 end_include
 
 begin_struct

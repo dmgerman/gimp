@@ -153,16 +153,12 @@ comment|/*  this is useful for pixmap brushes etc.  */
 end_comment
 
 begin_function_decl
-name|gboolean
-name|pattern_load
-parameter_list|(
 name|GPattern
 modifier|*
-name|pattern
-parameter_list|,
-name|FILE
-modifier|*
-name|fp
+name|pattern_load
+parameter_list|(
+name|gint
+name|fd
 parameter_list|,
 name|gchar
 modifier|*

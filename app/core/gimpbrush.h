@@ -19,25 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpobjectP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_core.h"
+file|"gimpobject.h"
 end_include
 
 begin_include
@@ -102,7 +84,13 @@ name|TempBuf
 modifier|*
 name|mask
 decl_stmt|;
-comment|/*  the actual mask...                         */
+comment|/*  the actual mask                            */
+DECL|member|pixmap
+name|TempBuf
+modifier|*
+name|pixmap
+decl_stmt|;
+comment|/*  optional pixmap data                       */
 block|}
 struct|;
 end_struct
@@ -198,23 +186,8 @@ end_function_decl
 begin_function_decl
 name|GimpBrush
 modifier|*
-name|gimp_brush_new
-parameter_list|(
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
 name|gimp_brush_load
 parameter_list|(
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|,
 name|gchar
 modifier|*
 name|filename
@@ -223,16 +196,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_brush_load_brush
-parameter_list|(
 name|GimpBrush
 modifier|*
-name|brush
-parameter_list|,
-name|FILE
-modifier|*
-name|fp
+name|gimp_brush_load_brush
+parameter_list|(
+name|gint
+name|fd
 parameter_list|,
 name|gchar
 modifier|*
@@ -245,6 +214,18 @@ begin_function_decl
 name|TempBuf
 modifier|*
 name|gimp_brush_get_mask
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|TempBuf
+modifier|*
+name|gimp_brush_get_pixmap
 parameter_list|(
 name|GimpBrush
 modifier|*

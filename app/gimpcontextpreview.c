@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushpipeP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontextpreview.h"
 end_include
 
@@ -693,7 +687,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b6b9c60103
+DECL|enum|__anon2b1c8ad00103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -2046,7 +2040,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28b6b9c60208
+DECL|struct|__anon2b1c8ad00208
 typedef|typedef
 struct|struct
 block|{
@@ -2198,7 +2192,7 @@ name|height
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_REALLY_A_BRUSH_PIPE
+name|GIMP_IS_BRUSH_PIPE
 argument_list|(
 name|brush
 argument_list|)
@@ -2692,7 +2686,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_REALLY_A_BRUSH_PIPE
+name|GIMP_IS_BRUSH_PIPE
 argument_list|(
 name|gcp
 operator|->
@@ -3011,25 +3005,17 @@ name|y
 decl_stmt|;
 name|mask_buf
 operator|=
-name|brush
-operator|->
-name|mask
-expr_stmt|;
-if|if
-condition|(
-name|GIMP_IS_BRUSH_PIXMAP
+name|gimp_brush_get_mask
 argument_list|(
 name|brush
 argument_list|)
-condition|)
+expr_stmt|;
 name|pixmap_buf
 operator|=
-name|GIMP_BRUSH_PIXMAP
+name|gimp_brush_get_pixmap
 argument_list|(
 name|brush
 argument_list|)
-operator|->
-name|pixmap_mask
 expr_stmt|;
 name|brush_width
 operator|=
@@ -3119,10 +3105,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_BRUSH_PIXMAP
-argument_list|(
-name|brush
-argument_list|)
+name|pixmap_buf
 condition|)
 block|{
 comment|/*  TODO: the scale function should scale the pixmap  	      and the mask in one run                            */
@@ -3194,10 +3177,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_BRUSH_PIXMAP
-argument_list|(
-name|brush
-argument_list|)
+name|pixmap_buf
 condition|)
 block|{
 name|guchar
@@ -3564,7 +3544,7 @@ name|y
 operator|++
 control|)
 operator|(
-name|GIMP_IS_REALLY_A_BRUSH_PIPE
+name|GIMP_IS_BRUSH_PIPE
 argument_list|(
 name|brush
 argument_list|)
@@ -3619,10 +3599,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_BRUSH_PIXMAP
-argument_list|(
-name|brush
-argument_list|)
+name|pixmap_buf
 condition|)
 name|temp_buf_free
 argument_list|(
@@ -3636,7 +3613,7 @@ condition|(
 operator|!
 name|is_popup
 operator|&&
-name|GIMP_IS_REALLY_A_BRUSH_PIPE
+name|GIMP_IS_BRUSH_PIPE
 argument_list|(
 name|brush
 argument_list|)
@@ -3844,7 +3821,7 @@ name|gcp
 operator|!=
 name|NULL
 operator|&&
-name|GIMP_IS_REALLY_A_BRUSH_PIPE
+name|GIMP_IS_BRUSH_PIPE
 argument_list|(
 name|gcp
 operator|->

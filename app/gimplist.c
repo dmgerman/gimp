@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplistP.h"
+file|"gimplist.h"
 end_include
 
 begin_comment
@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2769ecad0103
+DECL|enum|__anon28c81b1a0103
 block|{
 DECL|enumerator|ADD
 name|ADD
