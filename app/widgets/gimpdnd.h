@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288e16300103
+DECL|enum|__anon2b786ec60103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -267,7 +267,7 @@ define|#
 directive|define
 name|GIMP_TARGET_IMAGEFILE
 define|\
-value|{ "GIMP_IMAGEFILE", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TOOL }
+value|{ "GIMP_IMAGEFILE", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_IMAGEFILE }
 end_define
 
 begin_define
