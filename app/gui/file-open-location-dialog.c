@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialogs.h"
 end_include
 
 begin_include
@@ -230,6 +242,15 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_factory_add_foreign
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-file-open-location-dialog"
+argument_list|,
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
