@@ -1165,7 +1165,7 @@ decl_stmt|;
 name|gint32
 name|mask_type
 decl_stmt|;
-name|Channel
+name|LayerMask
 modifier|*
 name|mask
 init|=

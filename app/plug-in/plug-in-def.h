@@ -19,7 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -93,22 +99,23 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eed2f50103
+comment|/*< chop=RUN_>*/
+DECL|enum|__anon2b30bfc30103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
 init|=
-literal|0x0
+literal|0
 block|,
 DECL|enumerator|RUN_NONINTERACTIVE
 name|RUN_NONINTERACTIVE
 init|=
-literal|0x1
+literal|1
 block|,
 DECL|enumerator|RUN_WITH_LAST_VALS
 name|RUN_WITH_LAST_VALS
 init|=
-literal|0x2
+literal|2
 DECL|typedef|RunModeType
 block|}
 name|RunModeType

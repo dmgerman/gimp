@@ -657,18 +657,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Argument
-modifier|*
-name|ink_invoker
-parameter_list|(
-name|Argument
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
 name|ink_init
 parameter_list|(
@@ -6446,7 +6434,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon297bcb2a0103
+DECL|enum|__anon2c24c3530103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7856,33 +7844,25 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_set_undo_tiles (drawable,x,y,w,h)
+DECL|function|ink_set_undo_tiles (GimpDrawable * drawable,int x,int y,int w,int h)
 name|ink_set_undo_tiles
 parameter_list|(
-name|drawable
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|w
-parameter_list|,
-name|h
-parameter_list|)
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|int
 name|w
-decl_stmt|,
+parameter_list|,
+name|int
 name|h
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|i
@@ -8021,27 +8001,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_set_canvas_tiles (x,y,w,h)
+DECL|function|ink_set_canvas_tiles (int x,int y,int w,int h)
 name|ink_set_canvas_tiles
 parameter_list|(
+name|int
 name|x
 parameter_list|,
+name|int
 name|y
 parameter_list|,
+name|int
 name|w
 parameter_list|,
+name|int
 name|h
 parameter_list|)
-name|int
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-name|int
-name|w
-decl_stmt|,
-name|h
-decl_stmt|;
 block|{
 name|int
 name|i
@@ -8207,9 +8181,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_ink ()
+DECL|function|tools_new_ink (void)
 name|tools_new_ink
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -8465,113 +8441,6 @@ argument_list|(
 name|ink_tool
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  The ink procedure definition  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|ink_args
-name|ProcArg
-name|ink_args
-index|[]
-init|=
-block|{
-block|{
-name|PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"the image"
-block|}
-block|,
-block|{
-name|PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"the drawable"
-block|}
-block|,
-block|{
-name|PDB_INT32
-block|,
-literal|"num_strokes"
-block|,
-literal|"number of stroke control points (count each coordinate as 2 points)"
-block|}
-block|,
-block|{
-name|PDB_FLOATARRAY
-block|,
-literal|"strokes"
-block|,
-literal|"array of stroke coordinates: {s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y}"
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|ink_proc
-name|ProcRecord
-name|ink_proc
-init|=
-block|{
-literal|"gimp_ink"
-block|,
-literal|"Paint in the current brush without sub-pixel sampling"
-block|,
-literal|"fixme fixme"
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"1995-1996"
-block|,
-name|PDB_INTERNAL
-block|,
-comment|/*  Input arguments  */
-literal|4
-block|,
-name|ink_args
-block|,
-comment|/*  Output arguments  */
-literal|0
-block|,
-name|NULL
-block|,
-comment|/*  Exec method  */
-block|{
-block|{
-name|ink_invoker
-block|}
-block|}
-block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-specifier|static
-name|Argument
-modifier|*
-DECL|function|ink_invoker (args)
-name|ink_invoker
-parameter_list|(
-name|args
-parameter_list|)
-name|Argument
-modifier|*
-name|args
-decl_stmt|;
-block|{
-comment|/* Fix me */
-return|return
-name|NULL
-return|;
 block|}
 end_function
 

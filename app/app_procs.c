@@ -485,19 +485,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Argument
-modifier|*
-name|quit_invoker
-parameter_list|(
-name|Argument
-modifier|*
-name|args
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
 name|make_initialization_status_window
 parameter_list|(
@@ -602,63 +589,6 @@ name|int
 name|we_are_exiting
 init|=
 name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|quit_args
-specifier|static
-name|ProcArg
-name|quit_args
-index|[]
-init|=
-block|{
-block|{
-name|PDB_INT32
-block|,
-literal|"kill"
-block|,
-literal|"Flag specifying whether to kill the gimp process or exit normally"
-block|}
-block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|quit_proc
-specifier|static
-name|ProcRecord
-name|quit_proc
-init|=
-block|{
-literal|"gimp_quit"
-block|,
-literal|"Causes the gimp to exit gracefully"
-block|,
-literal|"The internal procedure which can either be used to make the gimp quit normally, or to have the gimp clean up its resources and exit immediately. The normaly shutdown process allows for querying the user to save any dirty images."
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"1995-1996"
-block|,
-name|PDB_INTERNAL
-block|,
-literal|1
-block|,
-name|quit_args
-block|,
-literal|0
-block|,
-name|NULL
-block|,
-block|{
-block|{
-name|quit_invoker
-block|}
-block|}
-block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -1628,6 +1558,7 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
 end_function
@@ -1895,27 +1826,21 @@ argument_list|)
 expr_stmt|;
 name|logo_area_width
 operator|=
-operator|(
+name|MAX
+argument_list|(
 name|logo_width
-operator|>
+argument_list|,
 name|LOGO_WIDTH_MIN
-operator|)
-condition|?
-name|logo_width
-else|:
-name|LOGO_WIDTH_MIN
+argument_list|)
 expr_stmt|;
 name|logo_area_height
 operator|=
-operator|(
+name|MAX
+argument_list|(
 name|logo_height
-operator|>
+argument_list|,
 name|LOGO_HEIGHT_MIN
-operator|)
-condition|?
-name|logo_height
-else|:
-name|LOGO_HEIGHT_MIN
+argument_list|)
 expr_stmt|;
 name|gtk_drawing_area_size
 argument_list|(
@@ -2147,7 +2072,6 @@ operator|->
 name|label
 argument_list|)
 condition|)
-block|{
 name|gtk_label_set
 argument_list|(
 name|GTK_LABEL
@@ -2158,7 +2082,6 @@ argument_list|,
 name|label1val
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|label2val
@@ -2362,13 +2285,11 @@ name|FALSE
 operator|&&
 name|win_initstatus
 condition|)
-block|{
 name|splash_text_draw
 argument_list|(
 name|logo_area
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* Create the context of all existing images */
 name|image_context
 operator|=
@@ -2388,15 +2309,6 @@ argument_list|()
 expr_stmt|;
 name|internal_procs_init
 argument_list|()
-expr_stmt|;
-name|RESET_BAR
-argument_list|()
-expr_stmt|;
-name|procedural_db_register
-argument_list|(
-operator|&
-name|quit_proc
-argument_list|)
 expr_stmt|;
 name|RESET_BAR
 argument_list|()
@@ -2725,7 +2637,7 @@ block|{
 name|devices_restore
 argument_list|()
 expr_stmt|;
-comment|/* Must be done AFTER get_active_{brush|pattern}  			 * because these functions set the brush/pattern. 			 */
+comment|/* Must be done AFTER get_active_{brush|pattern}  			   * because these functions set the brush/pattern. 			   */
 name|session_restore
 argument_list|()
 expr_stmt|;
@@ -2893,7 +2805,7 @@ if|if
 condition|(
 name|kill_it
 operator|==
-literal|0
+name|FALSE
 operator|&&
 name|gdisplays_dirty
 argument_list|()
@@ -3041,9 +2953,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|really_quit_dialog ()
+DECL|function|really_quit_dialog (void)
 name|really_quit_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -3327,57 +3241,6 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Argument
-modifier|*
-DECL|function|quit_invoker (Argument * args)
-name|quit_invoker
-parameter_list|(
-name|Argument
-modifier|*
-name|args
-parameter_list|)
-block|{
-name|Argument
-modifier|*
-name|return_args
-decl_stmt|;
-name|int
-name|kill_it
-decl_stmt|;
-name|kill_it
-operator|=
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-expr_stmt|;
-name|app_exit
-argument_list|(
-name|kill_it
-argument_list|)
-expr_stmt|;
-name|return_args
-operator|=
-name|procedural_db_return_args
-argument_list|(
-operator|&
-name|quit_proc
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-return|return
-name|return_args
-return|;
 block|}
 end_function
 

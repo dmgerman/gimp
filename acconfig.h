@@ -147,12 +147,6 @@ end_undef
 begin_undef
 undef|#
 directive|undef
-name|HAVE_XSHM_H
-end_undef
-
-begin_undef
-undef|#
-directive|undef
 name|IPC_RMID_DEFERRED_RELEASE
 end_undef
 

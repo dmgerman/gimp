@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -28,19 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"regex.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"regex.h"
 end_include
 
 begin_comment
