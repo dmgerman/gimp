@@ -177,6 +177,9 @@ argument_list|(
 name|tool_options_menu_update
 argument_list|)
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|ui_path
 argument_list|)
 expr_stmt|;
@@ -191,6 +194,9 @@ argument_list|(
 name|tool_options_menu_update_after
 argument_list|)
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|ui_path
 argument_list|)
 expr_stmt|;
