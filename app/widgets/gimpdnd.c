@@ -3160,7 +3160,7 @@ if|if
 condition|(
 name|strstr
 argument_list|(
-name|filename
+name|dnd_crap
 argument_list|,
 literal|"%"
 argument_list|)
@@ -3266,15 +3266,13 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
-name|gchar
-modifier|*
 name|filename
-init|=
+operator|=
 name|file_utils_uri_to_utf8_filename
 argument_list|(
 name|uri
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|g_message
 argument_list|(
 name|_
