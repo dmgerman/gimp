@@ -104,18 +104,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage.h"
 end_include
 
@@ -167,9 +155,11 @@ name|temp_buf_to_color
 parameter_list|(
 name|TempBuf
 modifier|*
+name|src_buf
 parameter_list|,
 name|TempBuf
 modifier|*
+name|dest_buf
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -181,9 +171,11 @@ name|temp_buf_to_gray
 parameter_list|(
 name|TempBuf
 modifier|*
+name|src_buf
 parameter_list|,
 name|TempBuf
 modifier|*
+name|dest_buf
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -249,7 +241,7 @@ name|guchar
 modifier|*
 name|dest
 decl_stmt|;
-name|long
+name|glong
 name|num_bytes
 decl_stmt|;
 name|src
@@ -343,10 +335,10 @@ name|guchar
 modifier|*
 name|dest
 decl_stmt|;
-name|long
+name|glong
 name|num_bytes
 decl_stmt|;
-name|float
+name|gfloat
 name|pix
 decl_stmt|;
 name|src
@@ -444,10 +436,10 @@ modifier|*
 name|col
 parameter_list|)
 block|{
-name|long
+name|glong
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|j
 decl_stmt|;
 name|guchar
@@ -761,7 +753,7 @@ name|TempBuf
 modifier|*
 name|new
 decl_stmt|;
-name|long
+name|glong
 name|length
 decl_stmt|;
 if|if
@@ -784,6 +776,7 @@ condition|(
 operator|!
 name|dest
 condition|)
+block|{
 name|new
 operator|=
 name|temp_buf_new
@@ -807,6 +800,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|new
@@ -932,7 +926,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_resize (TempBuf * buf,gint bytes,gint x,gint y,gint w,gint h)
+DECL|function|temp_buf_resize (TempBuf * buf,gint bytes,gint x,gint y,gint width,gint height)
 name|temp_buf_resize
 parameter_list|(
 name|TempBuf
@@ -949,10 +943,10 @@ name|gint
 name|y
 parameter_list|,
 name|gint
-name|w
+name|width
 parameter_list|,
 name|gint
-name|h
+name|height
 parameter_list|)
 block|{
 name|gint
@@ -961,9 +955,9 @@ decl_stmt|;
 comment|/*  calculate the requested size  */
 name|size
 operator|=
-name|w
+name|width
 operator|*
-name|h
+name|height
 operator|*
 name|bytes
 expr_stmt|;
@@ -973,13 +967,14 @@ condition|(
 operator|!
 name|buf
 condition|)
+block|{
 name|buf
 operator|=
 name|temp_buf_new
 argument_list|(
-name|w
+name|width
 argument_list|,
-name|h
+name|height
 argument_list|,
 name|bytes
 argument_list|,
@@ -990,6 +985,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
@@ -1049,13 +1045,13 @@ name|buf
 operator|->
 name|width
 operator|=
-name|w
+name|width
 expr_stmt|;
 name|buf
 operator|->
 name|height
 operator|=
-name|h
+name|height
 expr_stmt|;
 name|buf
 operator|->
@@ -1073,7 +1069,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_copy_area (TempBuf * src,TempBuf * dest,gint x,gint y,gint w,gint h,gint border)
+DECL|function|temp_buf_copy_area (TempBuf * src,TempBuf * dest,gint x,gint y,gint width,gint height,gint border)
 name|temp_buf_copy_area
 parameter_list|(
 name|TempBuf
@@ -1091,10 +1087,10 @@ name|gint
 name|y
 parameter_list|,
 name|gint
-name|w
+name|width
 parameter_list|,
 name|gint
-name|h
+name|height
 parameter_list|,
 name|gint
 name|border
@@ -1182,7 +1178,7 @@ name|CLAMP
 argument_list|(
 name|x
 operator|+
-name|w
+name|width
 argument_list|,
 literal|0
 argument_list|,
@@ -1197,7 +1193,7 @@ name|CLAMP
 argument_list|(
 name|y
 operator|+
-name|h
+name|height
 argument_list|,
 literal|0
 argument_list|,
@@ -1237,7 +1233,7 @@ name|y1
 operator|-
 name|border
 expr_stmt|;
-name|w
+name|width
 operator|=
 operator|(
 name|x2
@@ -1249,7 +1245,7 @@ name|border
 operator|*
 literal|2
 expr_stmt|;
-name|h
+name|height
 operator|=
 operator|(
 name|y2
@@ -1266,13 +1262,14 @@ condition|(
 operator|!
 name|dest
 condition|)
+block|{
 name|new
 operator|=
 name|temp_buf_new
 argument_list|(
-name|w
+name|width
 argument_list|,
-name|h
+name|height
 argument_list|,
 name|src
 operator|->
@@ -1285,6 +1282,7 @@ argument_list|,
 name|empty
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|new
@@ -1555,6 +1553,10 @@ operator|*
 name|temp_buf
 operator|->
 name|width
+operator|*
+name|temp_buf
+operator|->
+name|bytes
 argument_list|)
 expr_stmt|;
 return|return
@@ -1589,7 +1591,6 @@ init|=
 literal|0
 decl_stmt|;
 return|return
-operator|(
 name|temp_buf_new
 argument_list|(
 name|width
@@ -1605,7 +1606,6 @@ argument_list|,
 operator|&
 name|empty
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
@@ -1651,6 +1651,10 @@ name|swapped
 condition|)
 name|temp_buf_unswap
 argument_list|(
+operator|(
+name|TempBuf
+operator|*
+operator|)
 name|mask_buf
 argument_list|)
 expr_stmt|;
@@ -1658,6 +1662,45 @@ return|return
 name|mask_buf
 operator|->
 name|data
+return|;
+block|}
+end_function
+
+begin_function
+name|guchar
+modifier|*
+DECL|function|mask_buf_data_clear (MaskBuf * mask_buf)
+name|mask_buf_data_clear
+parameter_list|(
+name|MaskBuf
+modifier|*
+name|mask_buf
+parameter_list|)
+block|{
+if|if
+condition|(
+name|mask_buf
+operator|->
+name|swapped
+condition|)
+name|temp_buf_unswap
+argument_list|(
+operator|(
+name|TempBuf
+operator|*
+operator|)
+name|mask_buf
+argument_list|)
+expr_stmt|;
+return|return
+name|temp_buf_data_clear
+argument_list|(
+operator|(
+name|TempBuf
+operator|*
+operator|)
+name|mask_buf
+argument_list|)
 return|;
 block|}
 end_function

@@ -2953,11 +2953,6 @@ name|gimage
 argument_list|)
 condition|)
 return|return;
-name|g_print
-argument_list|(
-literal|"Save a Copy\n"
-argument_list|)
-expr_stmt|;
 name|the_gimage
 operator|=
 name|gdisplay
