@@ -5541,15 +5541,6 @@ name|type
 condition|)
 block|{
 case|case
-operator|-
-literal|1
-case|:
-name|sensitive
-operator|=
-name|FALSE
-expr_stmt|;
-break|break;
-case|case
 name|RGB_GIMAGE
 case|:
 name|sensitive
@@ -5619,6 +5610,12 @@ operator|->
 name|image_types_val
 operator|&
 name|INDEXEDA_IMAGE
+expr_stmt|;
+break|break;
+default|default:
+name|sensitive
+operator|=
+name|FALSE
 expr_stmt|;
 break|break;
 block|}
@@ -9569,9 +9566,9 @@ block|{
 name|g_print
 argument_list|(
 literal|"duplicate plug-in: \"%s\" (skipping)\n"
-argument_list|)
-operator|,
+argument_list|,
 name|filename
+argument_list|)
 expr_stmt|;
 return|return;
 block|}
