@@ -22,6 +22,10 @@ directive|include
 file|"gimppreviewrenderer.h"
 end_include
 
+begin_comment
+comment|/* #define ENABLE_FILE_SYSTEM_ICONS 1 */
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_PREVIEW_RENDERER_IMAGEFILE
 define|#
@@ -103,10 +107,15 @@ DECL|member|parent_instance
 name|GimpPreviewRenderer
 name|parent_instance
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_FILE_SYSTEM_ICONS
 DECL|member|file_system
 name|gpointer
 name|file_system
 decl_stmt|;
+endif|#
+directive|endif
 block|}
 struct|;
 end_struct
