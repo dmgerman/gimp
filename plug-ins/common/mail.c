@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b05da1d0108
+DECL|struct|__anon2bd36d0b0108
 block|{
 DECL|member|receipt
 name|char
@@ -1181,6 +1181,8 @@ argument_list|)
 expr_stmt|;
 name|tmpname
 operator|=
+name|g_strdup
+argument_list|(
 name|params
 index|[
 literal|1
@@ -1189,6 +1191,14 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|)
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|params
+argument_list|,
+name|retvals
+argument_list|)
 expr_stmt|;
 comment|/* construct the "sendmail user@location" line */
 name|strcpy
@@ -1310,6 +1320,11 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1348,6 +1363,11 @@ name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
@@ -1423,6 +1443,11 @@ argument_list|(
 name|mailpipe
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
 name|_exit
 argument_list|(
 literal|127
@@ -1479,6 +1504,11 @@ expr_stmt|;
 name|close
 argument_list|(
 name|tfd
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
@@ -1546,6 +1576,11 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1584,6 +1619,11 @@ name|g_message
 argument_list|(
 literal|"mail: mail didnt work or something on file %s\n"
 argument_list|,
+name|tmpname
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
@@ -1633,6 +1673,11 @@ block|}
 block|}
 comment|/* delete the tmpfile that was generated */
 name|unlink
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|tmpname
 argument_list|)

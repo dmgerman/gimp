@@ -184,7 +184,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2ade9baf0108
+DECL|struct|__anon2bceb9450108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ade9baf0208
+DECL|struct|__anon2bceb9450208
 typedef|typedef
 struct|struct
 block|{
@@ -930,6 +930,8 @@ argument_list|)
 expr_stmt|;
 name|tmpname
 operator|=
+name|g_strdup
+argument_list|(
 name|params
 index|[
 literal|1
@@ -938,6 +940,14 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|)
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|params
+argument_list|,
+name|retvals
+argument_list|)
 expr_stmt|;
 comment|/* construct the xwd arguments */
 name|xwdargv
@@ -1088,6 +1098,11 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 else|else
@@ -1123,6 +1138,11 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 endif|#
@@ -1147,9 +1167,14 @@ name|status
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gimp_message
 argument_list|(
 literal|"screenshot: xwd didn't work\n"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpname
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1200,6 +1225,11 @@ argument_list|)
 expr_stmt|;
 comment|/* get rid of the tmpfile */
 name|unlink
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|tmpname
 argument_list|)
