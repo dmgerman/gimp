@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -80,22 +74,15 @@ directive|include
 file|<glib-object.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
+begin_ifndef
+ifndef|#
+directive|ifndef
 name|G_OS_WIN32
-end_ifdef
+end_ifndef
 
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpwin32-io.h"
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_comment
+comment|/* This code doesn't compile on win32 and the use of                      * the freedesktop standard doesn't make much sense                      * there anyway. If someone wants to contribute a win32                      * specific implementation, that would be appreciated.                      */
+end_comment
 
 begin_include
 include|#
@@ -160,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f2b690108
+DECL|struct|__anon2b6513300108
 block|{
 DECL|member|states
 name|GSList
@@ -186,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278f2b690203
+DECL|enum|__anon2b6513300203
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -1624,6 +1611,18 @@ name|TAG_PRIVATE
 literal|"/>\n"
 argument_list|)
 expr_stmt|;
+name|groups
+operator|=
+name|gimp_recent_item_get_groups
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|groups
+condition|)
+block|{
 comment|/* write the groups */
 name|string
 operator|=
@@ -1634,13 +1633,6 @@ argument_list|,
 literal|"<"
 name|TAG_GROUPS
 literal|">\n"
-argument_list|)
-expr_stmt|;
-name|groups
-operator|=
-name|gimp_recent_item_get_groups
-argument_list|(
-name|item
 argument_list|)
 expr_stmt|;
 if|if
@@ -1728,6 +1720,7 @@ name|TAG_GROUPS
 literal|">\n"
 argument_list|)
 expr_stmt|;
+block|}
 name|string
 operator|=
 name|g_string_append
@@ -2178,7 +2171,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_recent_list_add_uri:  * @uri:       an URI  * @mime_type: a mime-type  *  * This function adds an item to the list of recently used URIs.  * See http://freedesktop.org/Standards/recent-file-spec/.  *  * Returns: %TRUE on success, %FALSE otherwise  */
+comment|/**  * gimp_recent_list_add_uri:  * @uri:       an URI  * @mime_type: a MIME type  *  * This function adds an item to the list of recently used URIs.  * See http://freedesktop.org/Standards/recent-file-spec/.  *  * On the Win32 platform, this call is unimplemented and will always  * fail.  *  * Returns: %TRUE on success, %FALSE otherwise  */
 end_comment
 
 begin_function
@@ -2292,6 +2285,42 @@ name|success
 return|;
 block|}
 end_function
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* G_OS_WIN32  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_recent_list_add_uri (const gchar * uri,const gchar * mime_type)
+name|gimp_recent_list_add_uri
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
+parameter_list|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 
