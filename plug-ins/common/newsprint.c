@@ -535,7 +535,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebcf200108
+DECL|struct|__anon2a1eff540108
 block|{
 DECL|member|name
 specifier|const
@@ -795,7 +795,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebcf200208
+DECL|struct|__anon2a1eff540208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -868,7 +868,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebcf200308
+DECL|struct|__anon2a1eff540308
 block|{
 DECL|member|input_spi
 name|gint
@@ -894,7 +894,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebcf200408
+DECL|struct|__anon2a1eff540408
 block|{
 DECL|member|run
 name|gint
@@ -913,7 +913,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebcf200508
+DECL|struct|__anon2a1eff540508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1020,7 +1020,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebcf200608
+DECL|struct|__anon2a1eff540608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1204,7 +1204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebcf200708
+DECL|struct|__anon2a1eff540708
 block|{
 DECL|member|name
 specifier|const
@@ -1254,7 +1254,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"Grey"
+literal|"_Grey"
 argument_list|)
 block|,
 operator|&
@@ -1305,7 +1305,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"Red"
+literal|"R_ed"
 argument_list|)
 block|,
 operator|&
@@ -1332,7 +1332,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Green"
+literal|"_Green"
 argument_list|)
 block|,
 operator|&
@@ -1359,7 +1359,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Blue"
+literal|"_Blue"
 argument_list|)
 block|,
 operator|&
@@ -1410,7 +1410,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"Cyan"
+literal|"C_yan"
 argument_list|)
 block|,
 operator|&
@@ -1437,7 +1437,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Magenta"
+literal|"Magen_ta"
 argument_list|)
 block|,
 operator|&
@@ -1464,7 +1464,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Yellow"
+literal|"_Yellow"
 argument_list|)
 block|,
 operator|&
@@ -1491,7 +1491,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Black"
+literal|"_Black"
 argument_list|)
 block|,
 operator|&
@@ -4079,7 +4079,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Angle:"
+literal|"_Angle:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -4241,11 +4241,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Spot Function:"
+literal|"_Spot Function:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4823,7 +4823,7 @@ index|]
 operator|->
 name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|gettext
 argument_list|(
@@ -5251,7 +5251,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Input SPI:"
+literal|"_Input SPI:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5320,7 +5320,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Output LPI:"
+literal|"O_utput LPI:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5389,7 +5389,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Cell Size:"
+literal|"C_ell Size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5608,7 +5608,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Black Pullout (%):"
+literal|"B_lack Pullout (%):"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5794,13 +5794,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"RGB"
+literal|"_RGB"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5886,13 +5886,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"CMYK"
+literal|"C_MYK"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5978,13 +5978,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Intensity"
+literal|"I_ntensity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6114,11 +6114,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Lock Channels"
+literal|"_Lock Channels"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6177,11 +6177,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Factory Defaults"
+literal|"_Factory Defaults"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6358,7 +6358,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Oversample:"
+literal|"O_versample:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -7018,7 +7018,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebcf200808
+DECL|struct|__anon2a1eff540808
 block|{
 DECL|member|index
 name|gint

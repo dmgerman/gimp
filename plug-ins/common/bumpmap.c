@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293d8d510103
+DECL|enum|__anon27b6d5c00103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -179,7 +179,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293d8d510203
+DECL|enum|__anon27b6d5c00203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d8d510308
+DECL|struct|__anon27b6d5c00308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d8d510408
+DECL|struct|__anon27b6d5c00408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d8d510508
+DECL|struct|__anon27b6d5c00508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4187,7 +4187,7 @@ name|type
 argument_list|,
 name|_
 argument_list|(
-literal|"Linear Map"
+literal|"_Linear Map"
 argument_list|)
 argument_list|,
 operator|(
@@ -4199,7 +4199,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Spherical Map"
+literal|"_Spherical Map"
 argument_list|)
 argument_list|,
 operator|(
@@ -4211,7 +4211,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Sinuosidal Map"
+literal|"S_inuosidal Map"
 argument_list|)
 argument_list|,
 operator|(
@@ -4283,11 +4283,11 @@ expr_stmt|;
 comment|/* Compensate darkening */
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Compensate for Darkening"
+literal|"Co_mpensate for Darkening"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4348,11 +4348,11 @@ expr_stmt|;
 comment|/* Invert bumpmap */
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Invert Bumpmap"
+literal|"I_nvert Bumpmap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4413,11 +4413,11 @@ expr_stmt|;
 comment|/* Tile bumpmap */
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Tile Bumpmap"
+literal|"_Tile Bumpmap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4626,7 +4626,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Bump Map:"
+literal|"_Bump Map:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4740,7 +4740,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Azimuth:"
+literal|"_Azimuth:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -4808,7 +4808,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Elevation:"
+literal|"_Elevation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -4875,7 +4875,7 @@ name|row
 argument_list|,
 name|_
 argument_list|(
-literal|"Depth:"
+literal|"_Depth:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -4960,7 +4960,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"X Offset:"
+literal|"_X Offset:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5032,7 +5032,7 @@ name|row
 argument_list|,
 name|_
 argument_list|(
-literal|"Y Offset:"
+literal|"_Y Offset:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5114,7 +5114,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Waterlevel:"
+literal|"_Waterlevel:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5182,7 +5182,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Ambient:"
+literal|"A_mbient:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6483,15 +6483,6 @@ name|i
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|bmint
-operator|.
-name|bm_rows
-index|[
-name|i
-index|]
-condition|)
 name|g_free
 argument_list|(
 name|bmint

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdb0840108
+DECL|struct|__anon2b5c25400108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdb0840208
+DECL|struct|__anon2b5c25400208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdb0840308
+DECL|struct|__anon2b5c25400308
 block|{
 DECL|member|run
 name|gint
@@ -1430,11 +1430,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Background Color"
+literal|"_Use Background Color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1520,7 +1520,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile Size:"
+literal|"_Tile Size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1587,7 +1587,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile Saturation:"
+literal|"T_ile Saturation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

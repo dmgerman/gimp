@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2b96380108
+DECL|struct|__anon298976340108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2b96380208
+DECL|struct|__anon298976340208
 block|{
 DECL|member|run
 name|gint
@@ -1149,21 +1149,9 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
-for|for
-control|(
-name|k
-operator|=
-literal|0
-init|;
-name|k
-operator|<
-name|bytes
-condition|;
-name|k
-operator|++
-control|)
 name|destline
-operator|++
+operator|+=
+name|bytes
 expr_stmt|;
 block|}
 name|progress
@@ -1567,7 +1555,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Shift Horizontally"
+literal|"Shift _Horizontally"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -1579,7 +1567,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Shift Vertically"
+literal|"Shift _Vertically"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -1725,7 +1713,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Shift Amount:"
+literal|"Shift _Amount:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

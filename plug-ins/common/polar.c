@@ -165,7 +165,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293ff7cb0108
+DECL|struct|__anon2b95ef750108
 block|{
 DECL|member|circle
 name|gdouble
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293ff7cb0208
+DECL|struct|__anon2b95ef750208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293ff7cb0308
+DECL|struct|__anon2b95ef750308
 block|{
 DECL|member|col
 DECL|member|row
@@ -4715,7 +4715,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Circle Depth in Percent:"
+literal|"Circle _Depth in Percent:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -4782,7 +4782,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Offset Angle:"
+literal|"Offset _Angle:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -4862,11 +4862,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Map Backwards"
+literal|"_Map Backwards"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4938,11 +4938,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Map from Top"
+literal|"Map from _Top"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5015,11 +5015,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"To Polar"
+literal|"To _Polar"
 argument_list|)
 argument_list|)
 expr_stmt|;
