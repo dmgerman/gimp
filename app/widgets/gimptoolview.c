@@ -835,20 +835,6 @@ argument_list|,
 name|viewable
 argument_list|)
 expr_stmt|;
-name|gimp_ui_manager_update
-argument_list|(
-name|GIMP_EDITOR
-argument_list|(
-name|editor
-operator|->
-name|view
-argument_list|)
-operator|->
-name|ui_manager
-argument_list|,
-name|editor
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
