@@ -28,7 +28,7 @@ comment|/*  * Local functions...  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6e0ff30108
+DECL|struct|__anon2af0085b0108
 typedef|typedef
 struct|struct
 block|{
@@ -4693,7 +4693,7 @@ expr_stmt|;
 comment|/*   PUT("out_width ", out_width,xdpi);   PUT("out_height", out_height,ydpi);   */
 name|left
 operator|=
-name|ydpi
+name|xdpi
 operator|*
 name|left
 operator|/

@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b49d10108
+DECL|struct|__anon29a25ed10108
 block|{
 DECL|member|pcl_name
 name|char
@@ -1118,7 +1118,7 @@ comment|/*  * Printer capability data  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b8b49d10208
+DECL|struct|__anon29a25ed10208
 typedef|typedef
 struct|struct
 block|{
@@ -3088,6 +3088,8 @@ block|,
 name|PCL_RES_150_150
 operator||
 name|PCL_RES_300_300
+operator||
+name|PCL_RES_600_600
 block|,
 literal|12
 block|,
