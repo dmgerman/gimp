@@ -1152,6 +1152,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_list_new:  * @children_type: the #GType of objects the list is going to hold  * @policy: the #GimpContainerPolicy for the new list  *  * Creates a new #GimpList object. Since #GimpList is a #GimpContainer  * implementation, it holds GimpObjects. Thus @children_type must be  * GIMP_TYPE_OBJECT or a type derived from it.  *  * Return value: a new #GimpList object  **/
+end_comment
+
 begin_function
 name|GimpContainer
 modifier|*
@@ -1220,6 +1224,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_list_reverse:  * @list: a #GimpList  *  * Reverses the order of elements in a #GimpList.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_list_reverse (GimpList * list)
@@ -1280,6 +1288,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_list_sort:  * @list: a #GimpList  * @compare_func: a #GCompareFunc  *  * Sorts the elements of a #GimpList according to the given @compare_func.  * See g_list_sort() for a detailed description of this function.  **/
+end_comment
 
 begin_function
 name|void
@@ -1351,6 +1363,41 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_list_sort_by_name:  * @list: a #GimpList  *  * Sorts the #GimpObject elements of a #GimpList by their names.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_list_sort_by_name (GimpList * list)
+name|gimp_list_sort_by_name
+parameter_list|(
+name|GimpList
+modifier|*
+name|list
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_LIST
+argument_list|(
+name|list
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_list_sort
+argument_list|(
+name|list
+argument_list|,
+operator|(
+name|GCompareFunc
+operator|)
+name|gimp_object_name_collate
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -176,6 +176,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_list_sort_by_name
+parameter_list|(
+name|GimpList
+modifier|*
+name|list
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_list_uniquefy_name
 parameter_list|(
 name|GimpList

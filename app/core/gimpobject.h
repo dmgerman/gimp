@@ -102,6 +102,12 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
+comment|/*<  private>*/
+DECL|member|normalized
+name|gchar
+modifier|*
+name|normalized
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -224,6 +230,21 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_object_name_collate
+parameter_list|(
+name|GimpObject
+modifier|*
+name|object1
+parameter_list|,
+name|GimpObject
+modifier|*
+name|object2
 parameter_list|)
 function_decl|;
 end_function_decl
