@@ -62,7 +62,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|undo_table
-name|DAllObjs
+name|GList
 modifier|*
 name|undo_table
 index|[

@@ -139,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbb7b3c0108
+DECL|struct|__anon2780901b0108
 block|{
 DECL|member|type
 name|DobjType
@@ -223,26 +223,6 @@ name|gint
 name|style_no
 decl_stmt|;
 comment|/* style index of this specific object */
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_DAllObjs
-struct|struct
-name|_DAllObjs
-block|{
-DECL|member|next
-name|DAllObjs
-modifier|*
-name|next
-decl_stmt|;
-DECL|member|obj
-name|Dobject
-modifier|*
-name|obj
-decl_stmt|;
-comment|/* Object on list */
 block|}
 struct|;
 end_struct
@@ -386,11 +366,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|DAllObjs
+name|GList
 modifier|*
 name|copy_all_objs
 parameter_list|(
-name|DAllObjs
+name|GList
 modifier|*
 name|objs
 parameter_list|)
@@ -401,11 +381,11 @@ begin_function_decl
 name|void
 name|draw_objects
 parameter_list|(
-name|DAllObjs
+name|GList
 modifier|*
 name|objs
 parameter_list|,
-name|gint
+name|gboolean
 name|show_single
 parameter_list|)
 function_decl|;
@@ -463,7 +443,7 @@ begin_function_decl
 name|void
 name|free_all_objs
 parameter_list|(
-name|DAllObjs
+name|GList
 modifier|*
 name|objs
 parameter_list|)
@@ -486,17 +466,6 @@ parameter_list|(
 name|GFigObj
 modifier|*
 name|obj
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint
-name|gfig_obj_counts
-parameter_list|(
-name|DAllObjs
-modifier|*
-name|objs
 parameter_list|)
 function_decl|;
 end_function_decl
