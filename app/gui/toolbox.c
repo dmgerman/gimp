@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"indicator_area.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer.h"
 end_include
 
 begin_include

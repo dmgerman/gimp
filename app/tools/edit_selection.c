@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -90,19 +90,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer.h"
 end_include
 
 begin_include

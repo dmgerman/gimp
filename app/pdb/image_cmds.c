@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -70,13 +64,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayermask.h"
 end_include
 
 begin_include

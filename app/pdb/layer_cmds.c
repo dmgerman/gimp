@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -58,7 +52,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayermask.h"
 end_include
 
 begin_include

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayermask.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"image_new.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer.h"
 end_include
 
 begin_include
@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbfb3d10103
+DECL|enum|__anon2c2e29740103
 block|{
 DECL|enumerator|PASTE
 name|PASTE

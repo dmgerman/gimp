@@ -34,13 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
+file|"drawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"drawable.h"
+file|"gimpchannel.h"
 end_include
 
 begin_include

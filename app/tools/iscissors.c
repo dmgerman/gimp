@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -85,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpchannel.h"
 end_include
 
 begin_include
@@ -207,7 +207,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1865ca0103
+DECL|enum|__anon2c369bfb0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -233,7 +233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1865ca0203
+DECL|enum|__anon2c369bfb0203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING

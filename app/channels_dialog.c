@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"channels_dialog.h"
 end_include
 
@@ -91,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpchannel.h"
 end_include
 
 begin_include
@@ -6935,7 +6935,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efc9b20108
+DECL|struct|__anon2b8641ee0108
 block|{
 DECL|member|gimage
 name|GimpImage

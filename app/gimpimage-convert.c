@@ -110,13 +110,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppalette.h"
+file|"gimplayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimppalette.h"
 end_include
 
 begin_include
@@ -34929,7 +34929,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277b87290108
+DECL|struct|__anon2c771df40108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35006,7 +35006,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277b87290208
+DECL|struct|__anon2c771df40208
 block|{
 DECL|member|ncolors
 name|long
@@ -35025,7 +35025,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277b87290308
+DECL|struct|__anon2c771df40308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38378,7 +38378,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277b87290408
+DECL|struct|__anon2c771df40408
 block|{
 DECL|member|used_count
 name|signed

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
+file|"gimpchannel.h"
 end_include
 
 begin_include
@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewcache.h"
+file|"gimplayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimppreviewcache.h"
 end_include
 
 begin_include

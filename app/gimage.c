@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -66,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpset.h"
+file|"gimplayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimpset.h"
 end_include
 
 begin_include

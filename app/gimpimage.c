@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -96,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayermask.h"
 end_include
 
@@ -115,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer.h"
 end_include
 
 begin_include
@@ -687,7 +681,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de47f20103
+DECL|enum|__anon2c8018190103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN

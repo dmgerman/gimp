@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"lc_dialog.h"
 end_include
 
@@ -156,7 +150,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ea82680103
+DECL|enum|__anon276196b70103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12537,7 +12531,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ea82680208
+DECL|struct|__anon276196b70208
 block|{
 DECL|member|label
 name|gchar
@@ -12766,7 +12760,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ea82680308
+DECL|struct|__anon276196b70308
 block|{
 DECL|member|tree_label
 name|gchar

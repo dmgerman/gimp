@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
+file|"gimpchannel.h"
 end_include
 
 begin_include

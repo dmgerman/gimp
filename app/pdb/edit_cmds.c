@@ -46,13 +46,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"global_edit.h"
+file|"gimplayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"global_edit.h"
 end_include
 
 begin_decl_stmt

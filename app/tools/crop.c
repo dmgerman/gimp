@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -90,7 +84,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayer.h"
 end_include
 
 begin_include
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"info_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer.h"
 end_include
 
 begin_include
@@ -726,7 +726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c37367a0103
+DECL|enum|__anon293673910103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING

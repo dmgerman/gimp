@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"gimplayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimprc.h"
 end_include
 
 begin_include

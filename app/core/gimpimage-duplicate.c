@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"channel_ops.h"
 end_include
 
@@ -90,19 +84,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayer.h"
 end_include
 
 begin_include

@@ -66,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayermask.h"
+file|"gimplayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimplayermask.h"
 end_include
 
 begin_include

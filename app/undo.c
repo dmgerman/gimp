@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"draw_core.h"
 end_include
 
@@ -90,6 +84,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayermask.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer.h"
 end_include
 
 begin_include
@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ce19690103
+DECL|enum|__anon28d31d000103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

@@ -54,7 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
+file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpchannel.h"
 end_include
 
 begin_include
@@ -66,25 +72,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimppreviewcache.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage_mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
 end_include
 
 begin_include
@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290168fb0103
+DECL|enum|__anon2b2093c00103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED

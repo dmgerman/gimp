@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -90,7 +84,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayer.h"
 end_include
 
 begin_include
@@ -109,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"info_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer.h"
 end_include
 
 begin_include
