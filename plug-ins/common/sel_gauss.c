@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a36313d0108
+DECL|struct|__anon287f908c0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a36313d0208
+DECL|struct|__anon287f908c0208
 block|{
 DECL|member|run
 name|gint
@@ -1875,12 +1875,8 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-name|drawable
-operator|->
 name|width
 argument_list|,
-name|drawable
-operator|->
 name|height
 argument_list|,
 name|FALSE
