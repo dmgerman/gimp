@@ -124,7 +124,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon28ee31450103
+DECL|enum|__anon2bc342730103
 typedef|typedef
 enum|enum
 block|{
@@ -7096,6 +7096,16 @@ block|{
 name|is_env
 operator|=
 name|TRUE
+expr_stmt|;
+block|}
+else|else
+block|{
+name|terminate
+argument_list|(
+literal|"gimprc token referenced but not defined: %s"
+argument_list|,
+name|token
+argument_list|)
 expr_stmt|;
 block|}
 block|}
