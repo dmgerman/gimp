@@ -184,6 +184,11 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
+DECL|member|ID
+name|gint
+name|ID
+decl_stmt|;
+comment|/*  unique tool ID                              */
 DECL|member|state
 name|ToolState
 name|state

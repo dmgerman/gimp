@@ -227,7 +227,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad70cf70103
+DECL|enum|__anon29e608f80103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -2618,7 +2618,7 @@ expr_stmt|;
 comment|/*  create and initialize the transform_undo structure  */
 name|tu
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|TransformUndo
 argument_list|,
@@ -2627,9 +2627,24 @@ argument_list|)
 expr_stmt|;
 name|tu
 operator|->
-name|tool
+name|tool_ID
 operator|=
-name|gt_tool
+name|tool
+operator|->
+name|ID
+expr_stmt|;
+name|tu
+operator|->
+name|tool_type
+operator|=
+name|GTK_OBJECT
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|klass
+operator|->
+name|type
 expr_stmt|;
 for|for
 control|(

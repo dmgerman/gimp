@@ -107,8 +107,8 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5db98b0103
-DECL|enum|__anon2b5db98b0203
+DECL|enum|__anon2910c2190103
+DECL|enum|__anon2910c2190203
 block|{
 DECL|enumerator|INITIALIZE
 DECL|enumerator|INITIALIZE
@@ -392,26 +392,16 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: check what global_tool_ID was used for
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* static gint global_tool_ID = 0; */
-end_comment
+begin_decl_stmt
+DECL|variable|global_tool_ID
+DECL|variable|global_tool_ID
+specifier|static
+name|gint
+name|global_tool_ID
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 name|GtkType
@@ -899,6 +889,13 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
+name|tool
+operator|->
+name|ID
+operator|=
+name|global_tool_ID
+operator|++
+expr_stmt|;
 name|tool
 operator|->
 name|state

@@ -400,11 +400,13 @@ DECL|struct|_TransformUndo
 struct|struct
 name|_TransformUndo
 block|{
-comment|/* Is this the right thing to do? */
-DECL|member|tool
-name|GimpTransformTool
-modifier|*
-name|tool
+DECL|member|tool_ID
+name|gint
+name|tool_ID
+decl_stmt|;
+DECL|member|tool_type
+name|GtkType
+name|tool_type
 decl_stmt|;
 DECL|member|trans_info
 name|TranInfo
