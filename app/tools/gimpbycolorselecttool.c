@@ -3151,14 +3151,14 @@ argument_list|,
 name|gimp_radio_button_update
 argument_list|,
 operator|&
-name|by_color_dialog
+name|bcd
 operator|->
 name|operation
 argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|by_color_dialog
+name|bcd
 operator|->
 name|operation
 argument_list|,
