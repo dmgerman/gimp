@@ -6774,7 +6774,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c1e08500108
+DECL|struct|__anon2a09a9020108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8397,7 +8397,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c1e08500208
+DECL|struct|__anon2a09a9020208
 block|{
 DECL|member|label
 specifier|const
@@ -8556,7 +8556,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c1e08500308
+DECL|struct|__anon2a09a9020308
 block|{
 DECL|member|tree_label
 specifier|const
@@ -8712,6 +8712,29 @@ literal|"Select Plug-In Folders"
 argument_list|)
 block|,
 literal|"plug-in-path"
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Scripts"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Script-Fu Folders"
+argument_list|)
+block|,
+literal|"folders-scripts.png"
+block|,
+literal|"dialogs/preferences/folders.html#scripts"
+block|,
+name|N_
+argument_list|(
+literal|"Select Script-Fu Folders"
+argument_list|)
+block|,
+literal|"script-fu-path"
 block|}
 block|,
 block|{
