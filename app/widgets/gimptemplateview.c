@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -950,18 +944,6 @@ argument_list|(
 name|object
 argument_list|,
 name|new_name
-argument_list|)
-expr_stmt|;
-name|gimp_list_uniquefy_name
-argument_list|(
-name|GIMP_LIST
-argument_list|(
-name|container
-argument_list|)
-argument_list|,
-name|object
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

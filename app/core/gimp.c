@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb0b6110103
+DECL|enum|__anon29740cba0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1012,11 +1012,11 @@ name|gimp
 operator|->
 name|images
 operator|=
-name|gimp_list_new
+name|gimp_list_new_weak
 argument_list|(
 name|GIMP_TYPE_IMAGE
 argument_list|,
-name|GIMP_CONTAINER_POLICY_WEAK
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_name
@@ -1075,11 +1075,11 @@ name|gimp
 operator|->
 name|displays
 operator|=
-name|gimp_list_new
+name|gimp_list_new_weak
 argument_list|(
 name|GIMP_TYPE_OBJECT
 argument_list|,
-name|GIMP_CONTAINER_POLICY_WEAK
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_name
@@ -1114,7 +1114,7 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_BUFFER
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_name
@@ -1189,7 +1189,7 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_name
@@ -1227,7 +1227,7 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_TEMPLATE
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp

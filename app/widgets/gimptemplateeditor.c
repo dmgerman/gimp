@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a97c2030103
+DECL|enum|__anon277340a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2522,7 +2522,7 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_TEMPLATE
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|editor

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296aa6cf0103
+DECL|enum|__anon2b7678500103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -108,18 +108,6 @@ parameter_list|(
 name|GimpLayerMask
 modifier|*
 name|layer_mask
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_layer_mask_name_changed
-parameter_list|(
-name|GimpObject
-modifier|*
-name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -301,15 +289,6 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GimpObjectClass
-modifier|*
-name|gimp_object_class
-init|=
-name|GIMP_OBJECT_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|GimpViewableClass
 modifier|*
 name|viewable_class
@@ -437,12 +416,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_object_class
-operator|->
-name|name_changed
-operator|=
-name|gimp_layer_mask_name_changed
-expr_stmt|;
 name|viewable_class
 operator|->
 name|default_stock_id
@@ -514,21 +487,6 @@ name|show_mask
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_layer_mask_name_changed (GimpObject * object)
-name|gimp_layer_mask_name_changed
-parameter_list|(
-name|GimpObject
-modifier|*
-name|object
-parameter_list|)
-block|{
-comment|/*  skip unique name logic by not chaining up  */
 block|}
 end_function
 

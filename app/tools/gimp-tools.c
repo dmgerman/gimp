@@ -716,7 +716,7 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|filename

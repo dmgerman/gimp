@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b37c2b50103
+DECL|enum|__anon29096b980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1196,7 +1196,7 @@ name|tool_info
 operator|->
 name|tool_options_type
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c794b940103
+DECL|enum|__anon290d85b40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -2027,7 +2027,7 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_LAYER
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -2038,7 +2038,7 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_CHANNEL
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -2049,7 +2049,7 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_VECTORS
 argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimage

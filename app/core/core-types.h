@@ -97,7 +97,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289aec670103
+DECL|enum|__anon29f688ec0103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -156,15 +156,6 @@ typedef|typedef
 name|struct
 name|_GimpList
 name|GimpList
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDataList
-typedef|typedef
-name|struct
-name|_GimpDataList
-name|GimpDataList
 typedef|;
 end_typedef
 
