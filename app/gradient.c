@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf57fec0103
+DECL|enum|__anon2945b5980103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bf57fec0203
+DECL|enum|__anon2945b5980203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bf57fec0303
+DECL|enum|__anon2945b5980303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bf57fec0408
+DECL|struct|__anon2945b5980408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2bf57fec0508
+DECL|struct|__anon2945b5980508
 struct|struct
 block|{
 DECL|member|r
@@ -3299,6 +3299,32 @@ name|s1
 decl_stmt|,
 name|v1
 decl_stmt|;
+comment|/* if there is no gradient return a totally transparent black */
+if|if
+condition|(
+name|curr_gradient
+operator|==
+name|NULL
+condition|)
+block|{
+name|r
+operator|=
+literal|0
+expr_stmt|;
+name|g
+operator|=
+literal|0
+expr_stmt|;
+name|b
+operator|=
+literal|0
+expr_stmt|;
+name|a
+operator|=
+literal|0
+expr_stmt|;
+return|return;
+block|}
 if|if
 condition|(
 name|pos
@@ -5053,9 +5079,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -5065,9 +5091,10 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|gvbox
+comment|/* hbox for gradient preview and gradient control; this is only because 	   resizing the preview doesn't work (and is disabled) to keep the  	   preview and controls together in the middle of the frame. */
+name|hbox
 operator|=
-name|gtk_vbox_new
+name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -5081,7 +5108,38 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
+name|hbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
 name|gvbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+comment|/* gtk_container_add(GTK_CONTAINER(frame), gvbox); */
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|gvbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -12452,6 +12510,15 @@ argument_list|,
 operator|&
 name|cheight
 argument_list|)
+expr_stmt|;
+comment|/* as long as we have that ugly workaround in prev_update() don't 	   change the size of the controls either when the window is resized */
+name|cwidth
+operator|=
+name|GRAD_PREVIEW_WIDTH
+expr_stmt|;
+name|cheight
+operator|=
+name|GRAD_PREVIEW_HEIGHT
 expr_stmt|;
 if|if
 condition|(
