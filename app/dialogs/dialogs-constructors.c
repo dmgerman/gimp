@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimperrordialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpfontview.h"
 end_include
 
@@ -556,6 +562,38 @@ block|{
 return|return
 name|about_dialog_create
 argument_list|()
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_error_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_error_get
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|preview_size
+parameter_list|)
+block|{
+return|return
+name|gimp_error_dialog_new
+argument_list|(
+name|_
+argument_list|(
+literal|"GIMP Message"
+argument_list|)
+argument_list|,
+name|GIMP_STOCK_WARNING
+argument_list|)
 return|;
 block|}
 end_function
