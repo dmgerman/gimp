@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d1cd120108
+DECL|struct|__anon28ff85b50108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d1cd120208
+DECL|struct|__anon28ff85b50208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d1cd120308
+DECL|struct|__anon28ff85b50308
 block|{
 DECL|member|ID
 name|gint32
@@ -6194,6 +6194,15 @@ operator|=
 literal|1
 expr_stmt|;
 comment|/* Set TIFF parameters. */
+name|TIFFSetField
+argument_list|(
+name|tif
+argument_list|,
+name|TIFFTAG_SUBFILETYPE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|TIFFSetField
 argument_list|(
 name|tif
