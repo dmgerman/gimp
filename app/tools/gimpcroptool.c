@@ -631,7 +631,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2af61fde0103
+DECL|enum|__anon27eba8860103
 typedef|typedef
 enum|enum
 block|{
@@ -4862,6 +4862,10 @@ condition|(
 name|list
 condition|)
 block|{
+name|GSList
+modifier|*
+name|next
+decl_stmt|;
 name|layer
 operator|=
 operator|(
@@ -4871,6 +4875,13 @@ operator|)
 name|list
 operator|->
 name|data
+expr_stmt|;
+name|next
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
 expr_stmt|;
 name|layer_translate
 argument_list|(
@@ -5040,10 +5051,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
+name|next
 expr_stmt|;
 block|}
 comment|/*  Make sure the projection matches the gimage size  */
