@@ -184,18 +184,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_toolbar.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -376,15 +364,6 @@ specifier|static
 name|StatusBar_t
 modifier|*
 name|_statusbar
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|_toolbar
-specifier|static
-name|ToolBar_t
-modifier|*
-name|_toolbar
 decl_stmt|;
 end_decl_stmt
 
@@ -1939,6 +1918,82 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|gboolean
+DECL|function|arrow_on_button_press (GtkWidget * widget,GdkEventButton * event,gpointer data)
+name|arrow_on_button_press
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+if|if
+condition|(
+name|event
+operator|->
+name|button
+operator|==
+literal|1
+condition|)
+block|{
+if|if
+condition|(
+name|event
+operator|->
+name|type
+operator|==
+name|GDK_2BUTTON_PRESS
+condition|)
+name|edit_shape
+argument_list|(
+operator|(
+name|gint
+operator|)
+name|event
+operator|->
+name|x
+argument_list|,
+operator|(
+name|gint
+operator|)
+name|event
+operator|->
+name|y
+argument_list|)
+expr_stmt|;
+else|else
+name|select_shape
+argument_list|(
+name|widget
+argument_list|,
+name|event
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|do_popup_menu
+argument_list|(
+name|event
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|set_arrow_func (void)
 name|set_arrow_func
@@ -2552,10 +2607,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|edit_selected_shape (void)
-name|edit_selected_shape
+DECL|function|do_edit_selected_shape (void)
+name|do_edit_selected_shape
 parameter_list|(
 name|void
 parameter_list|)
@@ -3161,10 +3215,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|menu_zoom_in (void)
-name|menu_zoom_in
+DECL|function|do_zoom_in (void)
+name|do_zoom_in
 parameter_list|(
 name|void
 parameter_list|)
@@ -3184,10 +3237,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|menu_zoom_out (void)
-name|menu_zoom_out
+DECL|function|do_zoom_out (void)
+name|do_zoom_out
 parameter_list|(
 name|void
 parameter_list|)
@@ -5505,63 +5557,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_preferences_dialog (void)
-name|factory_preferences_dialog
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|do_preferences_dialog
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_undo (void)
-name|factory_undo
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|do_undo
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_redo (void)
-name|factory_redo
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|do_redo
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
 name|void
 DECL|function|do_cut (void)
 name|do_cut
@@ -5678,21 +5673,26 @@ block|}
 end_function
 
 begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_edit (void)
-name|factory_edit
+name|void
+DECL|function|do_move_up (void)
+name|do_move_up
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-return|return
-name|command_new
-argument_list|(
-name|edit_selected_shape
-argument_list|)
-return|;
+comment|/* Fix me!    Command_t *command = object_up_command_new(_current_obj->list, 					      _current_obj);    command_execute(command);   */
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|do_move_down (void)
+name|do_move_down
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+comment|/* Fix me!    Command_t *command = object_down_command_new(_current_obj->list, 						_current_obj);    command_execute(command);   */
 block|}
 end_function
 
@@ -5710,25 +5710,6 @@ return|return
 name|command_new
 argument_list|(
 name|toggle_area_list
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_source_dialog (void)
-name|factory_source_dialog
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|do_source_dialog
 argument_list|)
 return|;
 block|}
@@ -5767,119 +5748,6 @@ return|return
 name|command_new
 argument_list|(
 name|set_preview_gray
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_menu_zoom_in (void)
-name|factory_menu_zoom_in
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|menu_zoom_in
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_menu_zoom_out (void)
-name|factory_menu_zoom_out
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|menu_zoom_out
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_zoom_in (void)
-name|factory_zoom_in
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-operator|(
-name|void
-argument_list|(
-operator|*
-argument_list|)
-argument_list|(
-name|void
-argument_list|)
-operator|)
-name|zoom_in
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_zoom_out (void)
-name|factory_zoom_out
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-operator|(
-name|void
-argument_list|(
-operator|*
-argument_list|)
-argument_list|(
-name|void
-argument_list|)
-operator|)
-name|zoom_out
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_settings_dialog (void)
-name|factory_settings_dialog
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|command_new
-argument_list|(
-name|do_settings_dialog
 argument_list|)
 return|;
 block|}
@@ -6024,7 +5892,7 @@ name|GtkWidget
 modifier|*
 name|main_vbox
 decl_stmt|;
-name|Tools_t
+name|GtkWidget
 modifier|*
 name|tools
 decl_stmt|;
@@ -6183,8 +6051,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 comment|/* Create toolbar */
-name|_toolbar
-operator|=
 name|make_toolbar
 argument_list|(
 name|main_vbox
@@ -6233,8 +6099,6 @@ name|hbox
 argument_list|)
 argument_list|,
 name|tools
-operator|->
-name|container
 argument_list|,
 name|FALSE
 argument_list|,
