@@ -221,12 +221,6 @@ name|NULL
 expr_stmt|;
 name|options
 operator|->
-name|context
-operator|=
-name|NULL
-expr_stmt|;
-name|options
-operator|->
 name|incremental_w
 operator|=
 name|NULL
