@@ -1835,10 +1835,7 @@ name|enum_value
 operator|=
 name|g_enum_get_value_by_nick
 argument_list|(
-name|G_ENUM_CLASS
-argument_list|(
 name|enum_class
-argument_list|)
 argument_list|,
 name|scanner
 operator|->
@@ -1856,10 +1853,7 @@ name|enum_value
 operator|=
 name|g_enum_get_value_by_name
 argument_list|(
-name|G_ENUM_CLASS
-argument_list|(
 name|enum_class
-argument_list|)
 argument_list|,
 name|scanner
 operator|->
