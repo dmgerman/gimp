@@ -3999,6 +3999,8 @@ name|EDIT_MASK_TRANSLATE
 decl_stmt|;
 name|GimpUndoType
 name|undo_type
+init|=
+name|GIMP_UNDO_GROUP_MASK
 decl_stmt|;
 specifier|const
 name|gchar
