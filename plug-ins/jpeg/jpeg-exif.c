@@ -233,8 +233,12 @@ condition|(
 name|load_interactive
 operator|&&
 name|orient
-operator|!=
+operator|>
 literal|1
+operator|&&
+name|orient
+operator|<=
+literal|8
 condition|)
 if|if
 condition|(
@@ -254,10 +258,6 @@ condition|(
 name|orient
 condition|)
 block|{
-case|case
-literal|0
-case|:
-comment|/* invalid, so ignore */
 case|case
 literal|1
 case|:
@@ -355,7 +355,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-comment|/* invalid, ignore */
+comment|/* can't happen */
 break|break;
 block|}
 block|}
