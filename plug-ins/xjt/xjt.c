@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/stat.h>
+file|<sys/types.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
+file|<sys/stat.h>
 end_include
 
 begin_include
@@ -136,7 +136,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aef7e630108
+DECL|struct|__anon27830cf80108
 block|{
 DECL|member|run
 name|gint
@@ -155,7 +155,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aef7e630203
+DECL|enum|__anon27830cf80203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aef7e630303
+DECL|enum|__anon27830cf80303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aef7e630408
+DECL|struct|__anon27830cf80408
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -396,7 +396,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aef7e630508
+DECL|struct|__anon27830cf80508
 block|{
 DECL|member|int_val1
 name|gint32
@@ -436,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aef7e630608
+DECL|struct|__anon27830cf80608
 block|{
 DECL|member|active_channel
 name|gint
@@ -510,7 +510,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aef7e630708
+DECL|struct|__anon27830cf80708
 block|{
 DECL|member|active_layer
 name|gint
@@ -595,7 +595,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aef7e630808
+DECL|struct|__anon27830cf80808
 block|{
 DECL|member|position
 name|gint32
@@ -617,7 +617,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aef7e630908
+DECL|struct|__anon27830cf80908
 typedef|typedef
 struct|struct
 block|{
