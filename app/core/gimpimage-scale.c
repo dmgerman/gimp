@@ -491,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27d3bb320103
+DECL|enum|__anon2b778cfe0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -5248,7 +5248,7 @@ operator|!
 name|list
 condition|)
 block|{
-comment|//      g_warning("g_i_c_l on layerless image.");
+comment|/*      g_warning("g_i_c_l on layerless image."); */
 block|}
 comment|/* Note added by Raph Levien, 27 Jan 1998       This looks it was intended as an optimization, but it seems to      have correctness problems. In particular, if all channels are      turned off, the screen simply does not update the projected      image. It should be black. Turning off this optimization seems to      restore correct behavior. At some future point, it may be      desirable to turn the optimization back on.       */
 if|#
@@ -5778,7 +5778,7 @@ operator|!
 name|list
 condition|)
 block|{
-comment|//      g_warning("g_i_c_c on channelless image.");
+comment|/*      g_warning("g_i_c_c on channelless image."); */
 block|}
 comment|/*  reverse the channel list  */
 while|while
