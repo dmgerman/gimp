@@ -35,7 +35,7 @@ file|"libgimp/gimpunit.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon29c276b70103
+DECL|enum|__anon289568ca0103
 typedef|typedef
 enum|enum
 block|{
@@ -265,7 +265,7 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|gfloat
+name|gdouble
 modifier|*
 name|value_ptr
 parameter_list|,
@@ -309,7 +309,7 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|gfloat
+name|gdouble
 modifier|*
 name|value_ptr
 parameter_list|,
@@ -356,7 +356,7 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|gfloat
+name|gdouble
 modifier|*
 name|value_ptr
 parameter_list|,

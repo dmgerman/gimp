@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1b33dd0108
+DECL|struct|__anon2b0a25e40108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -715,6 +715,10 @@ name|vals
 operator|->
 name|width
 operator|=
+call|(
+name|int
+call|)
+argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -726,11 +730,18 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|)
+operator|+
+literal|0.5
+argument_list|)
 expr_stmt|;
 name|vals
 operator|->
 name|height
 operator|=
+call|(
+name|int
+call|)
+argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -741,6 +752,9 @@ name|size_se
 argument_list|)
 argument_list|,
 literal|1
+argument_list|)
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 comment|/* get the resolution in dpi */
@@ -1982,14 +1996,17 @@ name|label
 decl_stmt|;
 name|vals
 operator|=
-operator|(
-name|NewImageValues
-operator|*
-operator|)
 name|data
 expr_stmt|;
 name|width
 operator|=
+call|(
+name|gdouble
+call|)
+argument_list|(
+name|gint
+argument_list|)
+argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -2001,9 +2018,19 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|)
+operator|+
+literal|0.5
+argument_list|)
 expr_stmt|;
 name|height
 operator|=
+call|(
+name|gdouble
+call|)
+argument_list|(
+name|gint
+argument_list|)
+argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -2014,6 +2041,9 @@ name|size_se
 argument_list|)
 argument_list|,
 literal|1
+argument_list|)
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|size
@@ -2050,13 +2080,6 @@ operator|)
 operator|)
 expr_stmt|;
 comment|/* alpha channel */
-name|text
-operator|=
-name|file_new_print_size
-argument_list|(
-name|size
-argument_list|)
-expr_stmt|;
 name|label
 operator|=
 name|g_strdup_printf
@@ -2067,6 +2090,11 @@ literal|"Image Size: %s"
 argument_list|)
 argument_list|,
 name|text
+operator|=
+name|file_new_print_size
+argument_list|(
+name|size
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_label
@@ -2248,6 +2276,23 @@ argument_list|)
 block|}
 decl_stmt|;
 specifier|static
+name|gint
+name|ntypes
+init|=
+sizeof|sizeof
+argument_list|(
+name|type_names
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|type_names
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+specifier|static
 name|gchar
 modifier|*
 name|fill_type_names
@@ -2274,6 +2319,23 @@ argument_list|(
 literal|"Transparent"
 argument_list|)
 block|}
+decl_stmt|;
+specifier|static
+name|gint
+name|nfill_types
+init|=
+sizeof|sizeof
+argument_list|(
+name|fill_type_names
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|fill_type_names
+index|[
+literal|0
+index|]
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -4315,7 +4377,7 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/* frame for Image Type */
+comment|/*  frame for Image Type  */
 name|frame
 operator|=
 name|gtk_frame_new
@@ -4347,7 +4409,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/* radio buttons and box */
+comment|/*  radio buttons and box  */
 name|radio_box
 operator|=
 name|gtk_vbox_new
@@ -4394,7 +4456,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|2
+name|ntypes
 condition|;
 name|i
 operator|++
@@ -4602,7 +4664,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|4
+name|nfill_types
 condition|;
 name|i
 operator|++

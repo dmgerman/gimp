@@ -3008,7 +3008,7 @@ name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
-literal|0
+name|FALSE
 argument_list|,
 literal|2
 argument_list|)
@@ -3129,7 +3129,7 @@ name|statusarea
 operator|=
 name|gtk_hbox_new
 argument_list|(
-literal|0
+name|FALSE
 argument_list|,
 literal|2
 argument_list|)
@@ -4327,7 +4327,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* create a generic query box without any entry widget  */
+comment|/*  create a generic query box without any entry widget  */
 end_comment
 
 begin_function
@@ -4485,7 +4485,7 @@ argument_list|,
 name|query_box
 argument_list|)
 expr_stmt|;
-comment|/* if we are associated with an object, connect to the provided signal    */
+comment|/*  if we are associated with an object, connect to the provided signal  */
 if|if
 condition|(
 name|object
@@ -5264,6 +5264,20 @@ argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dot_for_dot
+condition|)
+name|gimp_size_entry_set_unit
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+name|UNIT_PIXEL
+argument_list|)
+expr_stmt|;
 name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -5314,20 +5328,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|initial
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|dot_for_dot
-condition|)
-name|gimp_size_entry_set_unit
-argument_list|(
-name|GIMP_SIZE_ENTRY
-argument_list|(
-name|sizeentry
-argument_list|)
-argument_list|,
-name|UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6184,7 +6184,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -6194,7 +6194,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

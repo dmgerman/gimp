@@ -140,7 +140,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|direction_unknown
 specifier|static
-name|int
+name|gint
 name|direction_unknown
 decl_stmt|;
 end_decl_stmt
@@ -148,7 +148,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|xshear_val
 specifier|static
-name|float
+name|gdouble
 name|xshear_val
 decl_stmt|;
 end_decl_stmt
@@ -156,7 +156,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|yshear_val
 specifier|static
-name|float
+name|gdouble
 name|yshear_val
 decl_stmt|;
 end_decl_stmt
