@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e27160103
+DECL|enum|__anon2b0f35c90103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -179,7 +179,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e27160203
+DECL|enum|__anon2b0f35c90203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e27160308
+DECL|struct|__anon2b0f35c90308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e27160408
+DECL|struct|__anon2b0f35c90408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e27160508
+DECL|struct|__anon2b0f35c90508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -2034,13 +2034,26 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|yofs1
-operator|=
-literal|0
-expr_stmt|;
 name|yofs2
 operator|=
+name|CLAMP
+argument_list|(
+name|bmvals
+operator|.
+name|yofs
+operator|+
+name|sel_y1
+argument_list|,
 literal|0
+argument_list|,
+name|bm_height
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|yofs1
+operator|=
+name|yofs2
 expr_stmt|;
 name|yofs3
 operator|=
