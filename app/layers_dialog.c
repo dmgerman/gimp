@@ -7840,7 +7840,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO
+name|LAYER_ADD_UNDO
 argument_list|)
 expr_stmt|;
 name|active_layer
@@ -15336,7 +15336,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO
+name|LAYER_ADD_UNDO
 argument_list|)
 expr_stmt|;
 name|layer
@@ -15390,7 +15390,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*  Endx the group undo  */
+comment|/*  End the group undo  */
 name|undo_push_group_end
 argument_list|(
 name|gimage

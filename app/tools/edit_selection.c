@@ -479,7 +479,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|MISC_UNDO
+name|LAYER_DISPLACE_UNDO
 argument_list|)
 expr_stmt|;
 comment|/*  Move the (x, y) point from screen to image space  */

@@ -175,8 +175,45 @@ directive|include
 file|"gimpparasite.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG
+end_ifdef
+
+begin_define
+DECL|macro|TRC (x)
+define|#
+directive|define
+name|TRC
+parameter_list|(
+name|x
+parameter_list|)
+value|printf x
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|TRC (x)
+define|#
+directive|define
+name|TRC
+parameter_list|(
+name|x
+parameter_list|)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
-DECL|enum|__anon2881b7e30103
+DECL|enum|__anon293e49bf0103
 typedef|typedef
 enum|enum
 block|{
@@ -228,6 +265,8 @@ function_decl|)
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -269,6 +308,11 @@ name|gboolean
 name|dirties_image
 decl_stmt|;
 comment|/* TRUE if undo mutates image */
+DECL|member|group_boundary
+name|gboolean
+name|group_boundary
+decl_stmt|;
+comment|/* TRUE if this is the start/end of a group */
 DECL|member|pop_func
 name|UndoPopFunc
 name|pop_func
@@ -658,6 +702,8 @@ name|undo_free_image
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -670,6 +716,8 @@ name|void
 name|undo_free_mask
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -684,6 +732,8 @@ name|undo_free_layer_displace
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -696,6 +746,8 @@ name|void
 name|undo_free_transform
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -710,6 +762,8 @@ name|undo_free_paint
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -722,6 +776,8 @@ name|void
 name|undo_free_layer
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -736,6 +792,8 @@ name|undo_free_layer_mod
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -748,6 +806,8 @@ name|void
 name|undo_free_layer_mask
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -762,6 +822,8 @@ name|undo_free_channel
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -774,6 +836,8 @@ name|void
 name|undo_free_channel_mod
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -788,6 +852,8 @@ name|undo_free_fs_to_layer
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -800,6 +866,8 @@ name|void
 name|undo_free_fs_rigor
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -814,6 +882,8 @@ name|undo_free_fs_relax
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -826,6 +896,8 @@ name|void
 name|undo_free_gimage_mod
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -840,6 +912,8 @@ name|undo_free_guide
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -852,6 +926,8 @@ name|void
 name|undo_free_parasite
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -866,6 +942,8 @@ name|undo_free_qmask
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -878,6 +956,8 @@ name|void
 name|undo_free_resolution
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -892,6 +972,8 @@ name|undo_free_layer_rename
 parameter_list|(
 name|UndoState
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -904,6 +986,8 @@ name|void
 name|undo_free_cantundo
 parameter_list|(
 name|UndoState
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -945,6 +1029,21 @@ modifier|*
 name|undo_type_to_name
 parameter_list|(
 name|UndoType
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|Undo
+modifier|*
+name|undo_new
+parameter_list|(
+name|UndoType
+parameter_list|,
+name|long
+parameter_list|,
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1138,6 +1237,12 @@ condition|(
 name|undo
 condition|)
 block|{
+if|if
+condition|(
+name|undo
+operator|->
+name|free_func
+condition|)
 call|(
 modifier|*
 name|undo
@@ -1146,6 +1251,10 @@ name|free_func
 call|)
 argument_list|(
 name|state
+argument_list|,
+name|undo
+operator|->
+name|type
 argument_list|,
 name|undo
 operator|->
@@ -1201,6 +1310,10 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|last
+decl_stmt|;
+name|Undo
+modifier|*
+name|object
 decl_stmt|;
 name|int
 name|in_group
@@ -1285,13 +1398,21 @@ expr_stmt|;
 block|}
 else|else
 block|{
-if|if
-condition|(
+name|object
+operator|=
+operator|(
+name|Undo
+operator|*
+operator|)
 name|list
 operator|->
 name|data
-operator|==
-name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|object
+operator|->
+name|group_boundary
 condition|)
 name|in_group
 operator|=
@@ -1306,24 +1427,8 @@ expr_stmt|;
 comment|/*  Make sure last points to only a single item, or the 	   *  tail of an aggregate undo item 	   */
 if|if
 condition|(
-operator|(
-name|list
-operator|->
-name|data
-operator|&&
 operator|!
 name|in_group
-operator|)
-operator|||
-operator|(
-operator|!
-name|list
-operator|->
-name|data
-operator|&&
-operator|!
-name|in_group
-operator|)
 condition|)
 name|last
 operator|=
@@ -1354,6 +1459,64 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* Allocate and initialise a new Undo.  Leaves data and function  * pointers zeroed ready to be filled in by caller. */
+end_comment
+
+begin_function
+specifier|static
+name|Undo
+modifier|*
+DECL|function|undo_new (UndoType type,long size,gboolean dirties_image)
+name|undo_new
+parameter_list|(
+name|UndoType
+name|type
+parameter_list|,
+name|long
+name|size
+parameter_list|,
+name|gboolean
+name|dirties_image
+parameter_list|)
+block|{
+name|Undo
+modifier|*
+name|new
+decl_stmt|;
+name|new
+operator|=
+name|g_new0
+argument_list|(
+name|Undo
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|new
+operator|->
+name|type
+operator|=
+name|type
+expr_stmt|;
+name|new
+operator|->
+name|bytes
+operator|=
+name|size
+expr_stmt|;
+name|new
+operator|->
+name|dirties_image
+operator|=
+name|dirties_image
+expr_stmt|;
+return|return
+name|new
+return|;
+block|}
+end_function
+
 begin_function
 specifier|static
 name|int
@@ -1365,7 +1528,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-comment|/*  If there are 0 levels of undo return FALSE.    */
+comment|/* If there are 0 levels of undo return FALSE.  */
 if|if
 condition|(
 name|levels_of_undo
@@ -1511,23 +1674,14 @@ name|NULL
 return|;
 name|new
 operator|=
-operator|(
-name|Undo
-operator|*
-operator|)
-name|g_malloc
+name|undo_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|Undo
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|new
-operator|->
-name|bytes
-operator|=
+name|type
+argument_list|,
 name|size
+argument_list|,
+name|dirties_image
+argument_list|)
 expr_stmt|;
 name|gimage
 operator|->
@@ -1535,12 +1689,7 @@ name|undo_bytes
 operator|+=
 name|size
 expr_stmt|;
-name|new
-operator|->
-name|dirties_image
-operator|=
-name|dirties_image
-expr_stmt|;
+comment|/*  only increment levels if not in a group  */
 if|if
 condition|(
 operator|!
@@ -1548,28 +1697,10 @@ name|gimage
 operator|->
 name|pushing_undo_group
 condition|)
-comment|/*  only increment levels if not in a group  */
-block|{
-name|new
-operator|->
-name|type
-operator|=
-name|type
-expr_stmt|;
 name|gimage
 operator|->
 name|undo_levels
 operator|++
-expr_stmt|;
-block|}
-else|else
-name|new
-operator|->
-name|type
-operator|=
-name|gimage
-operator|->
-name|pushing_undo_group
 expr_stmt|;
 name|gimage
 operator|->
@@ -1586,6 +1717,18 @@ name|void
 operator|*
 operator|)
 name|new
+argument_list|)
+expr_stmt|;
+name|TRC
+argument_list|(
+operator|(
+literal|"undo_push: %s\n"
+operator|,
+name|undo_type_to_name
+argument_list|(
+name|type
+argument_list|)
+operator|)
 argument_list|)
 expr_stmt|;
 comment|/* lastly, tell people about the newly pushed undo (must come after    * modification of undo_stack).  */
@@ -1689,8 +1832,8 @@ expr_stmt|;
 if|if
 condition|(
 name|object
-operator|==
-name|NULL
+operator|->
+name|group_boundary
 condition|)
 block|{
 name|in_group
@@ -1741,6 +1884,20 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|TRC
+argument_list|(
+operator|(
+literal|"undo_pop: %s\n"
+operator|,
+name|undo_type_to_name
+argument_list|(
+name|object
+operator|->
+name|type
+argument_list|)
+operator|)
+argument_list|)
+expr_stmt|;
 name|status
 operator|=
 call|(
@@ -2147,7 +2304,7 @@ parameter_list|)
 block|{
 name|Undo
 modifier|*
-name|undo
+name|object
 decl_stmt|;
 if|if
 condition|(
@@ -2157,57 +2314,17 @@ condition|)
 return|return
 name|NULL
 return|;
-name|undo
+name|object
 operator|=
 name|stack
 operator|->
 name|data
 expr_stmt|;
-comment|/* is this the start of an undo group? */
-if|if
-condition|(
-operator|!
-name|undo
-condition|)
-block|{
-comment|/* Peek at the next action's type. All actions in an undo 	 * group have the same type, that of the group. */
-name|stack
-operator|=
-name|g_slist_next
-argument_list|(
-name|stack
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|stack
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|undo
-operator|=
-name|stack
-operator|->
-name|data
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|undo
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-comment|/* empty group? */
-block|}
+comment|/* For group boundaries, the type of the boundary marker is the      * type of the whole group (but each individual action in the      * group retains its own type so layer/channel unrefs work      * correctly). */
 return|return
 name|undo_type_to_name
 argument_list|(
-name|undo
+name|object
 operator|->
 name|type
 argument_list|)
@@ -2333,27 +2450,35 @@ literal|0
 decl_stmt|;
 name|Undo
 modifier|*
-name|undo
+name|object
 decl_stmt|;
 while|while
 condition|(
 name|stack
 condition|)
 block|{
-if|if
-condition|(
+name|object
+operator|=
+operator|(
+name|Undo
+operator|*
+operator|)
 name|stack
 operator|->
 name|data
-operator|==
-name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|object
+operator|->
+name|group_boundary
 condition|)
 name|in_group
 operator|=
 operator|!
 name|in_group
 expr_stmt|;
-comment|/* keep track of group length.  0 means not in group, 1 is          * group start,>= 2 are group members */
+comment|/* Keep track of group length.  0 means not in group (or group          * end marker), 1 is group start marker,>= 2 are group          * members. */
 if|if
 condition|(
 name|in_group
@@ -2366,33 +2491,21 @@ name|count
 operator|=
 literal|0
 expr_stmt|;
-comment|/* non-groups + initial group member */
+comment|/* Is this a group end marker or non-grouped action? */
 if|if
 condition|(
-name|stack
-operator|->
-name|data
-operator|&&
-operator|(
 name|count
-operator|<=
-literal|2
-operator|)
+operator|==
+literal|0
 condition|)
 block|{
-name|undo
-operator|=
-name|stack
-operator|->
-name|data
-expr_stmt|;
 if|if
 condition|(
 name|fn
 argument_list|(
 name|undo_type_to_name
 argument_list|(
-name|undo
+name|object
 operator|->
 name|type
 argument_list|)
@@ -2431,6 +2544,16 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+comment|/* shouldn't have group open */
+name|g_return_if_fail
+argument_list|(
+name|gimage
+operator|->
+name|pushing_undo_group
+operator|==
+literal|0
+argument_list|)
+expr_stmt|;
 name|undo_map_over_stack
 argument_list|(
 name|gimage
@@ -2462,6 +2585,16 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+comment|/* shouldn't have group open */
+name|g_return_if_fail
+argument_list|(
+name|gimage
+operator|->
+name|pushing_undo_group
+operator|==
+literal|0
+argument_list|)
+expr_stmt|;
 name|undo_map_over_stack
 argument_list|(
 name|gimage
@@ -2579,6 +2712,10 @@ name|UndoType
 name|type
 parameter_list|)
 block|{
+name|Undo
+modifier|*
+name|boundary_marker
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2603,6 +2740,18 @@ name|gimage
 operator|->
 name|group_count
 operator|++
+expr_stmt|;
+name|TRC
+argument_list|(
+operator|(
+literal|"group_start (%s)\n"
+operator|,
+name|undo_type_to_name
+argument_list|(
+name|type
+argument_list|)
+operator|)
+argument_list|)
 expr_stmt|;
 comment|/*  If we're already in a group...ignore  */
 if|if
@@ -2667,6 +2816,34 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|boundary_marker
+operator|=
+name|undo_new
+argument_list|(
+name|type
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|Undo
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimage
+operator|->
+name|undo_bytes
+operator|+=
+name|boundary_marker
+operator|->
+name|bytes
+expr_stmt|;
+name|boundary_marker
+operator|->
+name|group_boundary
+operator|=
+name|TRUE
+expr_stmt|;
 name|gimage
 operator|->
 name|pushing_undo_group
@@ -2683,7 +2860,7 @@ name|gimage
 operator|->
 name|undo_stack
 argument_list|,
-name|NULL
+name|boundary_marker
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -2707,6 +2884,10 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|Undo
+modifier|*
+name|boundary_marker
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2722,6 +2903,13 @@ operator|->
 name|group_count
 operator|--
 expr_stmt|;
+name|TRC
+argument_list|(
+operator|(
+literal|"group end\n"
+operator|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimage
@@ -2731,11 +2919,27 @@ operator|==
 literal|0
 condition|)
 block|{
+name|boundary_marker
+operator|=
+name|undo_new
+argument_list|(
 name|gimage
 operator|->
 name|pushing_undo_group
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|Undo
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|boundary_marker
+operator|->
+name|group_boundary
 operator|=
-literal|0
+name|TRUE
 expr_stmt|;
 name|gimage
 operator|->
@@ -2747,8 +2951,22 @@ name|gimage
 operator|->
 name|undo_stack
 argument_list|,
-name|NULL
+name|boundary_marker
 argument_list|)
+expr_stmt|;
+name|gimage
+operator|->
+name|undo_bytes
+operator|+=
+name|boundary_marker
+operator|->
+name|bytes
+expr_stmt|;
+name|gimage
+operator|->
+name|pushing_undo_group
+operator|=
+literal|0
 expr_stmt|;
 comment|/* Do it here, since undo_push doesn't emit this event while in the        * middle of a group */
 name|gimp_image_undo_event
@@ -2864,12 +3082,6 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-comment|/*  increment the dirty flag for this drawable  */
-name|drawable_dirty
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|x1
 operator|=
 name|BOUNDS
@@ -3197,12 +3409,6 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-comment|/*  increment the dirty flag for this drawable  */
-name|drawable_dirty
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -3467,34 +3673,6 @@ name|image_undo
 operator|->
 name|tiles
 expr_stmt|;
-switch|switch
-condition|(
-name|state
-condition|)
-block|{
-case|case
-name|UNDO
-case|:
-name|drawable_clean
-argument_list|(
-name|image_undo
-operator|->
-name|drawable
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|REDO
-case|:
-name|drawable_dirty
-argument_list|(
-name|image_undo
-operator|->
-name|drawable
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
 comment|/*  some useful values  */
 name|x
 operator|=
@@ -3806,11 +3984,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_image (UndoState state,void * image_undo_ptr)
+DECL|function|undo_free_image (UndoState state,UndoType type,void * image_undo_ptr)
 name|undo_free_image
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -4440,11 +4621,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_mask (UndoState state,void * mask_ptr)
+DECL|function|undo_free_mask (UndoState state,UndoType type,void * mask_ptr)
 name|undo_free_mask
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -4886,11 +5070,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer_displace (UndoState state,void * info_ptr)
+DECL|function|undo_free_layer_displace (UndoState state,UndoType type,void * info_ptr)
 name|undo_free_layer_displace
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -5191,11 +5378,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_transform (UndoState state,void * tu_ptr)
+DECL|function|undo_free_transform (UndoState state,UndoType type,void * tu_ptr)
 name|undo_free_transform
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -5516,11 +5706,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_paint (UndoState state,void * pu_ptr)
+DECL|function|undo_free_paint (UndoState state,UndoType type,void * pu_ptr)
 name|undo_free_paint
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -5557,12 +5750,15 @@ end_comment
 
 begin_function
 name|int
-DECL|function|undo_push_layer (GImage * gimage,void * lu_ptr)
+DECL|function|undo_push_layer (GImage * gimage,UndoType type,void * lu_ptr)
 name|undo_push_layer
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -5588,15 +5784,17 @@ operator|*
 operator|)
 name|lu_ptr
 expr_stmt|;
-comment|/*  increment the dirty flag for this drawable  */
-name|drawable_dirty
+name|g_return_val_if_fail
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|lu
-operator|->
-name|layer
-argument_list|)
+name|type
+operator|==
+name|LAYER_ADD_UNDO
+operator|||
+name|type
+operator|==
+name|LAYER_REMOVE_UNDO
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|size
@@ -5624,7 +5822,7 @@ name|gimage
 argument_list|,
 name|size
 argument_list|,
-name|LAYER_UNDO
+name|type
 argument_list|,
 name|TRUE
 argument_list|)
@@ -5658,9 +5856,7 @@ block|{
 comment|/*  if this is a remove layer, delete the layer  */
 if|if
 condition|(
-name|lu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|LAYER_REMOVE_UNDO
 condition|)
@@ -5716,40 +5912,6 @@ operator|*
 operator|)
 name|lu_ptr
 expr_stmt|;
-switch|switch
-condition|(
-name|state
-condition|)
-block|{
-case|case
-name|UNDO
-case|:
-name|drawable_clean
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|lu
-operator|->
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|REDO
-case|:
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|lu
-operator|->
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
 comment|/*  remove layer  */
 if|if
 condition|(
@@ -5758,9 +5920,7 @@ name|state
 operator|==
 name|UNDO
 operator|&&
-name|lu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|LAYER_ADD_UNDO
 operator|)
@@ -5770,9 +5930,7 @@ name|state
 operator|==
 name|REDO
 operator|&&
-name|lu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|LAYER_REMOVE_UNDO
 operator|)
@@ -6025,11 +6183,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer (UndoState state,void * lu_ptr)
+DECL|function|undo_free_layer (UndoState state,UndoType type,void * lu_ptr)
 name|undo_free_layer
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -6056,9 +6217,7 @@ name|state
 operator|==
 name|REDO
 operator|&&
-name|lu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|LAYER_ADD_UNDO
 operator|)
@@ -6068,9 +6227,7 @@ name|state
 operator|==
 name|UNDO
 operator|&&
-name|lu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|LAYER_REMOVE_UNDO
 operator|)
@@ -6139,15 +6296,6 @@ name|Layer
 operator|*
 operator|)
 name|layer_ptr
-expr_stmt|;
-comment|/*  increment the dirty flag for this drawable  */
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|tiles
 operator|=
@@ -6383,36 +6531,6 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-switch|switch
-condition|(
-name|state
-condition|)
-block|{
-case|case
-name|UNDO
-case|:
-name|drawable_clean
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|REDO
-case|:
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
 name|tiles
 operator|=
 operator|(
@@ -6713,11 +6831,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer_mod (UndoState state,void * data_ptr)
+DECL|function|undo_free_layer_mod (UndoState state,UndoType type,void * data_ptr)
 name|undo_free_layer_mod
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -6768,12 +6889,15 @@ end_comment
 
 begin_function
 name|int
-DECL|function|undo_push_layer_mask (GImage * gimage,void * lmu_ptr)
+DECL|function|undo_push_layer_mask (GImage * gimage,UndoType type,void * lmu_ptr)
 name|undo_push_layer_mask
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -6799,15 +6923,17 @@ operator|*
 operator|)
 name|lmu_ptr
 expr_stmt|;
-comment|/*  increment the dirty flag for this drawable  */
-name|drawable_dirty
+name|g_return_val_if_fail
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|lmu
-operator|->
-name|layer
-argument_list|)
+name|type
+operator|==
+name|LAYER_MASK_ADD_UNDO
+operator|||
+name|type
+operator|==
+name|LAYER_MASK_REMOVE_UNDO
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|size
@@ -6838,7 +6964,7 @@ name|gimage
 argument_list|,
 name|size
 argument_list|,
-name|LAYER_MASK_UNDO
+name|type
 argument_list|,
 name|TRUE
 argument_list|)
@@ -6871,11 +6997,9 @@ else|else
 block|{
 if|if
 condition|(
-name|lmu
-operator|->
-name|undo_type
+name|type
 operator|==
-name|LAYER_REMOVE_UNDO
+name|LAYER_MASK_REMOVE_UNDO
 condition|)
 name|layer_mask_delete
 argument_list|(
@@ -6929,40 +7053,6 @@ operator|*
 operator|)
 name|lmu_ptr
 expr_stmt|;
-switch|switch
-condition|(
-name|state
-condition|)
-block|{
-case|case
-name|UNDO
-case|:
-name|drawable_clean
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|lmu
-operator|->
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|REDO
-case|:
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|lmu
-operator|->
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
 comment|/*  remove layer mask  */
 if|if
 condition|(
@@ -6971,9 +7061,7 @@ name|state
 operator|==
 name|UNDO
 operator|&&
-name|lmu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|LAYER_ADD_UNDO
 operator|)
@@ -6983,9 +7071,7 @@ name|state
 operator|==
 name|REDO
 operator|&&
-name|lmu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|LAYER_REMOVE_UNDO
 operator|)
@@ -7193,11 +7279,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer_mask (UndoState state,void * lmu_ptr)
+DECL|function|undo_free_layer_mask (UndoState state,UndoType type,void * lmu_ptr)
 name|undo_free_layer_mask
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -7224,9 +7313,7 @@ name|state
 operator|==
 name|REDO
 operator|&&
-name|lmu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|LAYER_ADD_UNDO
 operator|)
@@ -7236,9 +7323,7 @@ name|state
 operator|==
 name|UNDO
 operator|&&
-name|lmu
-operator|->
-name|undo_type
+name|type
 operator|==
 name|LAYER_REMOVE_UNDO
 operator|)
@@ -7263,7 +7348,7 @@ comment|/*********************************/
 end_comment
 
 begin_comment
-comment|/*  New Channel Undo               */
+comment|/*  New Channel Undo             */
 end_comment
 
 begin_function
@@ -7298,17 +7383,6 @@ name|ChannelUndo
 operator|*
 operator|)
 name|cu_ptr
-expr_stmt|;
-comment|/*  increment the dirty flag for this drawable  */
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|cu
-operator|->
-name|channel
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|size
 operator|=
@@ -7426,40 +7500,6 @@ operator|*
 operator|)
 name|cu_ptr
 expr_stmt|;
-switch|switch
-condition|(
-name|state
-condition|)
-block|{
-case|case
-name|UNDO
-case|:
-name|drawable_clean
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|cu
-operator|->
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|REDO
-case|:
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|cu
-operator|->
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
 comment|/*  remove channel  */
 if|if
 condition|(
@@ -7647,11 +7687,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_channel (UndoState state,void * cu_ptr)
+DECL|function|undo_free_channel (UndoState state,UndoType type,void * cu_ptr)
 name|undo_free_channel
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -7761,15 +7804,6 @@ name|Channel
 operator|*
 operator|)
 name|channel_ptr
-expr_stmt|;
-comment|/*  increment the dirty flag for this drawable  */
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|tiles
 operator|=
@@ -7952,36 +7986,6 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-switch|switch
-condition|(
-name|state
-condition|)
-block|{
-case|case
-name|UNDO
-case|:
-name|drawable_clean
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|REDO
-case|:
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
 name|tiles
 operator|=
 operator|(
@@ -8104,11 +8108,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_channel_mod (UndoState state,void * data_ptr)
+DECL|function|undo_free_channel_mod (UndoState state,UndoType type,void * data_ptr)
 name|undo_free_channel_mod
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -8190,17 +8197,6 @@ operator|*
 operator|)
 name|fsu_ptr
 expr_stmt|;
-comment|/*  increment the dirty flag for this drawable  */
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|fsu
-operator|->
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|size
 operator|=
 sizeof|sizeof
@@ -8219,7 +8215,7 @@ name|gimage
 argument_list|,
 name|size
 argument_list|,
-name|CHANNEL_MOD
+name|FS_TO_LAYER_UNDO
 argument_list|,
 name|TRUE
 argument_list|)
@@ -8306,40 +8302,6 @@ operator|*
 operator|)
 name|fsu_ptr
 expr_stmt|;
-switch|switch
-condition|(
-name|state
-condition|)
-block|{
-case|case
-name|UNDO
-case|:
-name|drawable_clean
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|fsu
-operator|->
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|REDO
-case|:
-name|drawable_dirty
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|fsu
-operator|->
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
 switch|switch
 condition|(
 name|state
@@ -8566,11 +8528,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_fs_to_layer (UndoState state,void * fsu_ptr)
+DECL|function|undo_free_fs_to_layer (UndoState state,UndoType type,void * fsu_ptr)
 name|undo_free_fs_to_layer
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -8897,11 +8862,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_fs_rigor (UndoState state,void * layer_ptr)
+DECL|function|undo_free_fs_rigor (UndoState state,UndoType type,void * layer_ptr)
 name|undo_free_fs_rigor
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -9199,11 +9167,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_fs_relax (UndoState state,void * layer_ptr)
+DECL|function|undo_free_fs_relax (UndoState state,UndoType type,void * layer_ptr)
 name|undo_free_fs_relax
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -9529,11 +9500,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_gimage_mod (UndoState state,void * data_ptr)
+DECL|function|undo_free_gimage_mod (UndoState state,UndoType type,void * data_ptr)
 name|undo_free_gimage_mod
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -9579,25 +9553,18 @@ DECL|member|qmask
 name|int
 name|qmask
 decl_stmt|;
-DECL|member|orig
-name|int
-name|orig
-decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_function
 name|int
-DECL|function|undo_push_qmask (GImage * gimage,int qmask)
+DECL|function|undo_push_qmask (GImage * gimage)
 name|undo_push_qmask
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
-parameter_list|,
-name|int
-name|qmask
 parameter_list|)
 block|{
 name|Undo
@@ -9673,15 +9640,9 @@ name|data
 operator|->
 name|qmask
 operator|=
-name|qmask
-expr_stmt|;
-name|data
+name|gimage
 operator|->
-name|orig
-operator|=
-name|data
-operator|->
-name|qmask
+name|qmask_state
 expr_stmt|;
 return|return
 name|TRUE
@@ -9727,23 +9688,9 @@ name|data_ptr
 expr_stmt|;
 name|tmp
 operator|=
-name|data
+name|gimage
 operator|->
-name|qmask
-expr_stmt|;
-name|data
-operator|->
-name|qmask
-operator|=
-name|data
-operator|->
-name|orig
-expr_stmt|;
-name|data
-operator|->
-name|orig
-operator|=
-name|tmp
+name|qmask_state
 expr_stmt|;
 name|gimage
 operator|->
@@ -9752,6 +9699,12 @@ operator|=
 name|data
 operator|->
 name|qmask
+expr_stmt|;
+name|data
+operator|->
+name|qmask
+operator|=
+name|tmp
 expr_stmt|;
 return|return
 name|TRUE
@@ -9762,11 +9715,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_qmask (UndoState state,void * data_ptr)
+DECL|function|undo_free_qmask (UndoState state,UndoType type,void * data_ptr)
 name|undo_free_qmask
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -10049,11 +10005,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_guide (UndoState state,void * data_ptr)
+DECL|function|undo_free_guide (UndoState state,UndoType type,void * data_ptr)
 name|undo_free_guide
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -10369,6 +10328,12 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* really just want to recalc size and repaint */
+name|gdisplays_shrink_wrap
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -10378,11 +10343,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_resolution (UndoState state,void * data_ptr)
+DECL|function|undo_free_resolution (UndoState state,UndoType type,void * data_ptr)
 name|undo_free_resolution
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -10486,7 +10454,7 @@ name|gimage
 argument_list|,
 name|size
 argument_list|,
-name|GIMAGE_MOD
+name|PARASITE_ATTACH_UNDO
 argument_list|,
 name|TRUE
 argument_list|)
@@ -10614,7 +10582,7 @@ name|gimage
 argument_list|,
 name|size
 argument_list|,
-name|GIMAGE_MOD
+name|PARASITE_REMOVE_UNDO
 argument_list|,
 name|TRUE
 argument_list|)
@@ -11155,11 +11123,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_parasite (UndoState state,void * data_ptr)
+DECL|function|undo_free_parasite (UndoState state,UndoType type,void * data_ptr)
 name|undo_free_parasite
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -11217,7 +11188,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2881b7e30208
+DECL|struct|__anon293e49bf0208
 typedef|typedef
 struct|struct
 block|{
@@ -11286,7 +11257,7 @@ name|gimage
 argument_list|,
 name|size
 argument_list|,
-name|LAYER_CHANGE
+name|LAYER_RENAME_UNDO
 argument_list|,
 name|TRUE
 argument_list|)
@@ -11448,11 +11419,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer_rename (UndoState state,void * data_ptr)
+DECL|function|undo_free_layer_rename (UndoState state,UndoType type,void * data_ptr)
 name|undo_free_layer_rename
 parameter_list|(
 name|UndoState
 name|state
+parameter_list|,
+name|UndoType
+name|type
 parameter_list|,
 name|void
 modifier|*
@@ -11632,18 +11606,27 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_cantundo (UndoState state,void * data_ptr)
+DECL|function|undo_free_cantundo (UndoState state,UndoType type,void * data_ptr)
 name|undo_free_cantundo
 parameter_list|(
 name|UndoState
 name|state
 parameter_list|,
+name|UndoType
+name|type
+parameter_list|,
 name|void
 modifier|*
 name|data_ptr
 parameter_list|)
-block|{ }
+block|{
+comment|/* nothing to free */
+block|}
 end_function
+
+begin_comment
+comment|/* A "ok" to the name means I've checked where it's used and    it seems plausible.  -- austin 23/9/99 */
+end_comment
 
 begin_struct
 DECL|struct|undo_name_t
@@ -11712,6 +11695,7 @@ literal|"layer move"
 argument_list|)
 block|}
 block|,
+comment|/* ok */
 block|{
 name|TRANSFORM_UNDO
 block|,
@@ -11731,11 +11715,20 @@ argument_list|)
 block|}
 block|,
 block|{
-name|LAYER_UNDO
+name|LAYER_ADD_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"layer"
+literal|"new layer"
+argument_list|)
+block|}
+block|,
+block|{
+name|LAYER_REMOVE_UNDO
+block|,
+name|N_
+argument_list|(
+literal|"delete layer"
 argument_list|)
 block|}
 block|,
@@ -11749,20 +11742,31 @@ argument_list|)
 block|}
 block|,
 block|{
-name|LAYER_MASK_UNDO
+name|LAYER_MASK_ADD_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"layer mask"
+literal|"add layer mask"
 argument_list|)
 block|}
 block|,
+comment|/* ok */
 block|{
-name|LAYER_CHANGE
+name|LAYER_MASK_REMOVE_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"layer change"
+literal|"delete layer mask"
+argument_list|)
+block|}
+block|,
+comment|/* ok */
+block|{
+name|LAYER_RENAME_UNDO
+block|,
+name|N_
+argument_list|(
+literal|"rename layer"
 argument_list|)
 block|}
 block|,
@@ -11775,6 +11779,7 @@ literal|"layer position"
 argument_list|)
 block|}
 block|,
+comment|/* unused? */
 block|{
 name|CHANNEL_UNDO
 block|,
@@ -11802,6 +11807,7 @@ literal|"FS to layer"
 argument_list|)
 block|}
 block|,
+comment|/* ok */
 block|{
 name|GIMAGE_MOD
 block|,
@@ -11911,6 +11917,7 @@ literal|"apply layer mask"
 argument_list|)
 block|}
 block|,
+comment|/* ok */
 block|{
 name|LAYER_MERGE_UNDO
 block|,
@@ -11975,11 +11982,29 @@ argument_list|)
 block|}
 block|,
 block|{
+name|PARASITE_ATTACH_UNDO
+block|,
+name|N_
+argument_list|(
+literal|"attach parasite"
+argument_list|)
+block|}
+block|,
+block|{
+name|PARASITE_REMOVE_UNDO
+block|,
+name|N_
+argument_list|(
+literal|"remove parasite"
+argument_list|)
+block|}
+block|,
+block|{
 name|RESOLUTION_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"resolution"
+literal|"resolution change"
 argument_list|)
 block|}
 block|,

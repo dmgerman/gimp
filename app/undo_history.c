@@ -32,7 +32,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bf709b30108
+DECL|struct|__anon2bddfafe0108
 typedef|typedef
 struct|struct
 block|{
@@ -296,8 +296,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|undo_history_append_special (GtkCList * clist)
-name|undo_history_append_special
+DECL|function|undo_history_prepend_special (GtkCList * clist)
+name|undo_history_prepend_special
 parameter_list|(
 name|GtkCList
 modifier|*
@@ -334,7 +334,7 @@ index|]
 operator|=
 name|name
 expr_stmt|;
-name|gtk_clist_append
+name|gtk_clist_prepend
 argument_list|(
 name|clist
 argument_list|,
@@ -710,7 +710,7 @@ argument_list|(
 name|clist
 argument_list|)
 expr_stmt|;
-name|undo_history_append_special
+name|undo_history_prepend_special
 argument_list|(
 name|clist
 argument_list|)
@@ -1050,7 +1050,7 @@ operator|*
 operator|)
 name|undoitemname
 expr_stmt|;
-name|gtk_clist_append
+name|gtk_clist_prepend
 argument_list|(
 name|GTK_CLIST
 argument_list|(
@@ -1477,16 +1477,6 @@ argument_list|,
 literal|52
 argument_list|)
 expr_stmt|;
-name|undo_history_append_special
-argument_list|(
-name|GTK_CLIST
-argument_list|(
-name|st
-operator|->
-name|clist
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* work out the initial contents */
 name|undo_map_over_undo_stack
 argument_list|(
@@ -1508,6 +1498,16 @@ argument_list|,
 name|undo_history_init_redo
 argument_list|,
 name|st
+argument_list|)
+expr_stmt|;
+name|undo_history_prepend_special
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|st
+operator|->
+name|clist
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|st

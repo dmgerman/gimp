@@ -87,11 +87,6 @@ name|gint
 name|bytes
 decl_stmt|;
 comment|/* bytes per pixel                */
-DECL|member|dirty
-name|gboolean
-name|dirty
-decl_stmt|;
-comment|/* dirty bit                      */
 DECL|member|ID
 name|gint
 name|ID

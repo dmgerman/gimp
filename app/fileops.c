@@ -2507,14 +2507,14 @@ name|filename
 operator|=
 name|g_basename
 argument_list|(
-name|filename
+name|raw_filename
 argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
 name|file_open_image
 argument_list|(
-name|raw_filename
+name|filename
 argument_list|,
 name|raw_filename
 argument_list|,

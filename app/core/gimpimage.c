@@ -139,6 +139,43 @@ begin_comment
 comment|/* ick ick. */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG
+end_ifdef
+
+begin_define
+DECL|macro|TRC (x)
+define|#
+directive|define
+name|TRC
+parameter_list|(
+name|x
+parameter_list|)
+value|printf x
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|TRC (x)
+define|#
+directive|define
+name|TRC
+parameter_list|(
+name|x
+parameter_list|)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*  Local function declarations  */
 end_comment
@@ -503,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon290a8b7f0103
+DECL|enum|__anon28c9c2a60103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -1523,6 +1560,36 @@ name|gdouble
 name|yresolution
 parameter_list|)
 block|{
+comment|/* nothing to do if setting res to the same as before */
+if|if
+condition|(
+operator|(
+name|ABS
+argument_list|(
+name|gimage
+operator|->
+name|xresolution
+operator|-
+name|xresolution
+argument_list|)
+operator|<
+literal|1e-5
+operator|)
+operator|&&
+operator|(
+name|ABS
+argument_list|(
+name|gimage
+operator|->
+name|yresolution
+operator|-
+name|yresolution
+argument_list|)
+operator|<
+literal|1e-5
+operator|)
+condition|)
+return|return;
 name|undo_push_resolution
 argument_list|(
 name|gimage
@@ -1539,6 +1606,12 @@ operator|->
 name|yresolution
 operator|=
 name|yresolution
+expr_stmt|;
+comment|/* really just want to recalc size and repaint */
+name|gdisplays_shrink_wrap
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -12323,15 +12396,11 @@ name|gimage
 operator|->
 name|active_layer
 expr_stmt|;
-name|lu
-operator|->
-name|undo_type
-operator|=
-literal|0
-expr_stmt|;
 name|undo_push_layer
 argument_list|(
 name|gimage
+argument_list|,
+name|LAYER_ADD_UNDO
 argument_list|,
 name|lu
 argument_list|)
@@ -12595,12 +12664,6 @@ name|prev_layer
 operator|=
 name|layer
 expr_stmt|;
-name|lu
-operator|->
-name|undo_type
-operator|=
-literal|1
-expr_stmt|;
 name|gimage
 operator|->
 name|layers
@@ -12745,6 +12808,8 @@ comment|/*  Push the layer undo--It is important it goes here since layer might 
 name|undo_push_layer
 argument_list|(
 name|gimage
+argument_list|,
+name|LAYER_REMOVE_UNDO
 argument_list|,
 name|lu
 argument_list|)
@@ -12927,12 +12992,6 @@ name|mask
 expr_stmt|;
 name|lmu
 operator|->
-name|undo_type
-operator|=
-literal|0
-expr_stmt|;
-name|lmu
-operator|->
 name|apply_mask
 operator|=
 name|layer
@@ -12958,6 +13017,8 @@ expr_stmt|;
 name|undo_push_layer_mask
 argument_list|(
 name|gimage
+argument_list|,
+name|LAYER_MASK_ADD_UNDO
 argument_list|,
 name|lmu
 argument_list|)
@@ -13042,12 +13103,6 @@ name|mask
 expr_stmt|;
 name|lmu
 operator|->
-name|undo_type
-operator|=
-literal|1
-expr_stmt|;
-name|lmu
-operator|->
 name|mode
 operator|=
 name|mode
@@ -13087,6 +13142,8 @@ comment|/*  Push the undo--Important to do it here, AFTER the call    *   to lay
 name|undo_push_layer_mask
 argument_list|(
 name|gimage
+argument_list|,
+name|LAYER_MASK_REMOVE_UNDO
 argument_list|,
 name|lmu
 argument_list|)
@@ -14436,6 +14493,23 @@ name|DIRTY
 index|]
 argument_list|)
 expr_stmt|;
+name|TRC
+argument_list|(
+operator|(
+literal|"dirty %d -> %d\n"
+operator|,
+name|gimage
+operator|->
+name|dirty
+operator|-
+literal|1
+operator|,
+name|gimage
+operator|->
+name|dirty
+operator|)
+argument_list|)
+expr_stmt|;
 return|return
 name|gimage
 operator|->
@@ -14470,6 +14544,23 @@ name|gimp_image_signals
 index|[
 name|CLEAN
 index|]
+argument_list|)
+expr_stmt|;
+name|TRC
+argument_list|(
+operator|(
+literal|"clean %d -> %d\n"
+operator|,
+name|gimage
+operator|->
+name|dirty
+operator|+
+literal|1
+operator|,
+name|gimage
+operator|->
+name|dirty
+operator|)
 argument_list|)
 expr_stmt|;
 return|return

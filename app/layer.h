@@ -188,27 +188,6 @@ begin_comment
 comment|/*  Special undo types  */
 end_comment
 
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2af82d3a0103
-block|{
-DECL|enumerator|LAYER_ADD_UNDO
-name|LAYER_ADD_UNDO
-init|=
-literal|0
-block|,
-DECL|enumerator|LAYER_REMOVE_UNDO
-name|LAYER_REMOVE_UNDO
-init|=
-literal|1
-DECL|typedef|LayerUndoType
-block|}
-name|LayerUndoType
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_layer_undo
 struct|struct
@@ -231,11 +210,6 @@ modifier|*
 name|prev_layer
 decl_stmt|;
 comment|/*  previous active layer     */
-DECL|member|undo_type
-name|LayerUndoType
-name|undo_type
-decl_stmt|;
-comment|/*  is this a new layer undo  * 				       *  or a remove layer undo?   */
 block|}
 struct|;
 end_struct
@@ -277,12 +251,6 @@ name|gint
 name|mode
 decl_stmt|;
 comment|/*  the application mode      */
-DECL|member|undo_type
-name|LayerUndoType
-name|undo_type
-decl_stmt|;
-comment|/*  is this a new layer mask  */
-comment|/*  or a remove layer mask    */
 block|}
 struct|;
 end_struct

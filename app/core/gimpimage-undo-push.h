@@ -160,6 +160,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
+name|UndoType
+parameter_list|,
 name|void
 modifier|*
 parameter_list|)
@@ -185,6 +187,8 @@ name|undo_push_layer_mask
 parameter_list|(
 name|GImage
 modifier|*
+parameter_list|,
+name|UndoType
 parameter_list|,
 name|void
 modifier|*
@@ -368,8 +372,6 @@ name|undo_push_qmask
 parameter_list|(
 name|GImage
 modifier|*
-parameter_list|,
-name|int
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -543,7 +545,7 @@ comment|/* Argument to undo_event signal emitted by gimages: */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29d8fe080103
+DECL|enum|__anon2bd4e68a0103
 typedef|typedef
 enum|enum
 block|{

@@ -9545,9 +9545,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_expose_full ()
+DECL|function|gdisplays_expose_full (void)
 name|gdisplays_expose_full
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -9593,9 +9595,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_nav_preview_resized ()
+DECL|function|gdisplays_nav_preview_resized (void)
 name|gdisplays_nav_preview_resized
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -9798,9 +9802,11 @@ end_function
 
 begin_function
 name|int
-DECL|function|gdisplays_dirty ()
+DECL|function|gdisplays_dirty (void)
 name|gdisplays_dirty
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|int
 name|dirty
@@ -9857,9 +9863,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_delete ()
+DECL|function|gdisplays_delete (void)
 name|gdisplays_delete
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GSList
 modifier|*

@@ -20,10 +20,14 @@ begin_comment
 comment|/*  Undo types  */
 end_comment
 
+begin_comment
+comment|/* NOTE: If you change this list, please update the textual mapping at  * the bottom of undo.c as well. */
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2926394a0103
+DECL|enum|__anon29e13acf0103
 block|{
 comment|/* Type 0 is special - in the gimpimage structure it means      * there is no undo group currently being added to. */
 DECL|enumerator|IMAGE_UNDO
@@ -46,17 +50,23 @@ block|,
 DECL|enumerator|PAINT_UNDO
 name|PAINT_UNDO
 block|,
-DECL|enumerator|LAYER_UNDO
-name|LAYER_UNDO
+DECL|enumerator|LAYER_ADD_UNDO
+name|LAYER_ADD_UNDO
+block|,
+DECL|enumerator|LAYER_REMOVE_UNDO
+name|LAYER_REMOVE_UNDO
 block|,
 DECL|enumerator|LAYER_MOD
 name|LAYER_MOD
 block|,
-DECL|enumerator|LAYER_MASK_UNDO
-name|LAYER_MASK_UNDO
+DECL|enumerator|LAYER_MASK_ADD_UNDO
+name|LAYER_MASK_ADD_UNDO
 block|,
-DECL|enumerator|LAYER_CHANGE
-name|LAYER_CHANGE
+DECL|enumerator|LAYER_MASK_REMOVE_UNDO
+name|LAYER_MASK_REMOVE_UNDO
+block|,
+DECL|enumerator|LAYER_RENAME_UNDO
+name|LAYER_RENAME_UNDO
 block|,
 DECL|enumerator|LAYER_POSITION
 name|LAYER_POSITION
@@ -133,6 +143,12 @@ DECL|enumerator|QMASK_UNDO
 name|QMASK_UNDO
 block|,
 comment|/*  34 */
+DECL|enumerator|PARASITE_ATTACH_UNDO
+name|PARASITE_ATTACH_UNDO
+block|,
+DECL|enumerator|PARASITE_REMOVE_UNDO
+name|PARASITE_REMOVE_UNDO
+block|,
 DECL|enumerator|RESOLUTION_UNDO
 name|RESOLUTION_UNDO
 block|,
