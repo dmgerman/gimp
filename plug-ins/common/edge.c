@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29afc44c0108
+DECL|struct|__anon28ae90850108
 block|{
 DECL|member|amount
 name|gdouble
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29afc44c0208
+DECL|struct|__anon28ae90850208
 block|{
 DECL|member|run
 name|gint
@@ -1202,9 +1202,9 @@ argument_list|)
 operator|-
 name|PIX
 argument_list|(
-literal|2
-argument_list|,
 literal|0
+argument_list|,
+literal|2
 argument_list|)
 operator|)
 expr_stmt|;
