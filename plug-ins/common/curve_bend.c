@@ -72,14 +72,6 @@ value|"plug_in_curve_bend"
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_PRINT_NAME
-define|#
-directive|define
-name|PLUG_IN_PRINT_NAME
-value|"CurveBend"
-end_define
-
-begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
@@ -779,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287c9c000108
+DECL|struct|__anon2c401c820108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -865,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287c9c000208
+DECL|struct|__anon2c401c820208
 block|{
 DECL|member|y
 name|gint32
@@ -1914,8 +1906,8 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_pdb_procedure_available (char * proc_name)
 name|gint
+DECL|function|p_pdb_procedure_available (char * proc_name)
 name|p_pdb_procedure_available
 parameter_list|(
 name|char
@@ -2036,8 +2028,8 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_gimp_rotate (gint32 image_id,gint32 drawable_id,gint32 interpolation,gdouble angle_deg)
 name|gint
+DECL|function|p_gimp_rotate (gint32 image_id,gint32 drawable_id,gint32 interpolation,gdouble angle_deg)
 name|p_gimp_rotate
 parameter_list|(
 name|gint32
@@ -2341,8 +2333,8 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_gimp_edit_copy (gint32 image_id,gint32 drawable_id)
 name|gint32
+DECL|function|p_gimp_edit_copy (gint32 image_id,gint32 drawable_id)
 name|p_gimp_edit_copy
 parameter_list|(
 name|gint32
@@ -2455,8 +2447,8 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_gimp_edit_paste (gint32 image_id,gint32 drawable_id,gint32 paste_into)
 name|gint32
+DECL|function|p_gimp_edit_paste (gint32 image_id,gint32 drawable_id,gint32 paste_into)
 name|p_gimp_edit_paste
 parameter_list|(
 name|gint32
@@ -2642,8 +2634,6 @@ argument_list|(
 name|image_id
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
 name|gimp_selection_bounds
 argument_list|(
 name|image_id
@@ -2663,12 +2653,14 @@ argument_list|,
 operator|&
 name|l_y2
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|non_empty
 operator|&&
-operator|(
 name|l_sel_channel_id
 operator|>=
 literal|0
-operator|)
 condition|)
 block|{
 comment|/* selection is TRUE, make a layer (floating selection) from the selection  */
@@ -3535,8 +3527,10 @@ condition|)
 block|{
 name|gimp_message
 argument_list|(
-name|PLUG_IN_PRINT_NAME
-literal|" operates on layers only (but was called on channel or mask)"
+name|_
+argument_list|(
+literal|"CurveBend operates on layers only (but was called on channel or mask)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|printf
@@ -5398,9 +5392,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|p_delta_gdouble (double * val,double val_from,double val_to,gint32 total_steps,gdouble current_step)
 specifier|static
 name|void
+DECL|function|p_delta_gdouble (double * val,double val_from,double val_to,gint32 total_steps,gdouble current_step)
 name|p_delta_gdouble
 parameter_list|(
 name|double
@@ -5468,9 +5462,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|p_delta_gint32 (gint32 * val,gint32 val_from,gint32 val_to,gint32 total_steps,gdouble current_step)
 specifier|static
 name|void
+DECL|function|p_delta_gint32 (gint32 * val,gint32 val_from,gint32 val_to,gint32 total_steps,gdouble current_step)
 name|p_delta_gint32
 parameter_list|(
 name|gint32
@@ -15743,6 +15737,11 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|l_new_image_id
+argument_list|)
+expr_stmt|;
 name|l_type
 operator|=
 name|gimp_drawable_type
@@ -15999,9 +15998,9 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_add_layer (gint width,gint height,GDrawable * src_drawable)
 name|GDrawable
 modifier|*
+DECL|function|p_add_layer (gint width,gint height,GDrawable * src_drawable)
 name|p_add_layer
 parameter_list|(
 name|gint
