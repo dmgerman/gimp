@@ -3960,7 +3960,7 @@ name|alignment
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_HELP_TOOLBOX_INDICATOR_AREA
+name|GIMP_HELP_TOOLBOX_IMAGE_AREA
 argument_list|)
 expr_stmt|;
 name|image_area

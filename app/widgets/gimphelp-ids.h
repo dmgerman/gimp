@@ -1737,6 +1737,14 @@ value|"gimp-toolbox-color-area"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOLBOX_IMAGE_AREA
+define|#
+directive|define
+name|GIMP_HELP_TOOLBOX_IMAGE_AREA
+value|"gimp-toolbox-image-area"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOLBOX_INDICATOR_AREA
 define|#
 directive|define
