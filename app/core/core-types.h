@@ -477,9 +477,27 @@ name|GimpParasiteList
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpProjection
+typedef|typedef
+name|struct
+name|_GimpProjection
+name|GimpProjection
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  non-object types  */
 end_comment
+
+begin_typedef
+DECL|typedef|GimpArea
+typedef|typedef
+name|struct
+name|_GimpArea
+name|GimpArea
+typedef|;
+end_typedef
 
 begin_typedef
 DECL|typedef|GimpCoords

@@ -1928,6 +1928,12 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* get rid of preview artifacts left outside the drawable's area */
+name|gimp_transform_tool_expose_preview
+argument_list|(
+name|tr_tool
+argument_list|)
+expr_stmt|;
 comment|/*  Restore the previous transformation info  */
 for|for
 control|(
@@ -2725,9 +2731,11 @@ block|}
 elseif|else
 if|if
 condition|(
-name|gimp_display_coords_in_active_drawable
+name|gimp_image_coords_in_active_drawable
 argument_list|(
 name|gdisp
+operator|->
+name|gimage
 argument_list|,
 name|coords
 argument_list|)

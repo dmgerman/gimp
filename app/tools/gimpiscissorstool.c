@@ -112,7 +112,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-projection.h"
+file|"core/gimpprojection.h"
 end_include
 
 begin_include
@@ -7213,9 +7213,11 @@ name|srctile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|gimp_image_projection
+name|gimp_projection_get_tiles
 argument_list|(
 name|gimage
+operator|->
+name|projection
 argument_list|)
 argument_list|,
 name|x
@@ -7273,9 +7275,11 @@ name|srcPR
 operator|.
 name|bytes
 operator|=
-name|gimp_image_projection_bytes
+name|gimp_projection_get_bytes
 argument_list|(
 name|gimage
+operator|->
+name|projection
 argument_list|)
 expr_stmt|;
 name|srcPR

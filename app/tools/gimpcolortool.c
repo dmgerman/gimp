@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a6c4590103
+DECL|enum|__anon2c37a7d30103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1048,9 +1048,11 @@ name|options
 operator|->
 name|sample_merged
 operator|||
-name|gimp_display_coords_in_active_drawable
+name|gimp_image_coords_in_active_drawable
 argument_list|(
 name|gdisp
+operator|->
+name|gimage
 argument_list|,
 name|coords
 argument_list|)

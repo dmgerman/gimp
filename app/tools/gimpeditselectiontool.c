@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprojection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpselection.h"
 end_include
 
@@ -2912,9 +2918,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_display_flush
+name|gimp_projection_flush
 argument_list|(
 name|gdisp
+operator|->
+name|gimage
+operator|->
+name|projection
 argument_list|)
 expr_stmt|;
 block|}

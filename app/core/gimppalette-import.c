@@ -122,13 +122,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-projection.h"
+file|"gimppalette.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppalette.h"
+file|"gimpprojection.h"
 end_include
 
 begin_include
@@ -1205,16 +1205,20 @@ expr_stmt|;
 comment|/*  Get the image information  */
 name|d_type
 operator|=
-name|gimp_image_projection_type
+name|gimp_projection_get_image_type
 argument_list|(
 name|gimage
+operator|->
+name|projection
 argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
-name|gimp_image_projection_bytes
+name|gimp_projection_get_bytes
 argument_list|(
 name|gimage
+operator|->
+name|projection
 argument_list|)
 expr_stmt|;
 name|has_alpha
@@ -1248,9 +1252,11 @@ argument_list|(
 operator|&
 name|imagePR
 argument_list|,
-name|gimp_image_projection
+name|gimp_projection_get_tiles
 argument_list|(
 name|gimage
+operator|->
+name|projection
 argument_list|)
 argument_list|,
 literal|0

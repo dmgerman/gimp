@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-projection.h"
+file|"core/gimpprojection.h"
 end_include
 
 begin_include
@@ -1968,11 +1968,13 @@ block|}
 comment|/* fill in color information */
 name|color
 operator|=
-name|gimp_image_projection_get_color_at
+name|gimp_projection_get_color_at
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+operator|->
+name|projection
 argument_list|,
 name|tx
 argument_list|,
@@ -2026,11 +2028,13 @@ name|rgb
 decl_stmt|;
 name|sample_type
 operator|=
-name|gimp_image_projection_type
+name|gimp_projection_get_image_type
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+operator|->
+name|projection
 argument_list|)
 expr_stmt|;
 name|gimp_rgba_set_uchar

@@ -716,9 +716,11 @@ name|tool_options
 expr_stmt|;
 if|if
 condition|(
-name|gimp_display_coords_in_active_drawable
+name|gimp_image_coords_in_active_drawable
 argument_list|(
 name|gdisp
+operator|->
+name|gimage
 argument_list|,
 name|coords
 argument_list|)

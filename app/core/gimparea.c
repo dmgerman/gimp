@@ -12,19 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"display-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-area.h"
+file|"gimparea.h"
 end_include
 
 begin_define
@@ -109,8 +109,8 @@ end_comment
 begin_function
 name|GSList
 modifier|*
-DECL|function|gimp_display_area_list_process (GSList * list,GimpArea * area)
-name|gimp_display_area_list_process
+DECL|function|gimp_area_list_process (GSList * list,GimpArea * area)
+name|gimp_area_list_process
 parameter_list|(
 name|GSList
 modifier|*
@@ -384,8 +384,8 @@ end_function
 begin_function
 name|GSList
 modifier|*
-DECL|function|gimp_display_area_list_free (GSList * list)
-name|gimp_display_area_list_free
+DECL|function|gimp_area_list_free (GSList * list)
+name|gimp_area_list_free
 parameter_list|(
 name|GSList
 modifier|*

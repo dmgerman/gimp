@@ -822,11 +822,16 @@ argument_list|,
 name|NULL
 argument_list|)
 operator|+
-name|tile_manager_get_memsize
+name|gimp_object_get_memsize
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|gimage
 operator|->
 name|projection
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|undo_size

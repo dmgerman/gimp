@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprojection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -1571,6 +1577,17 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 decl_stmt|;
+name|gimp_projection_flush_now
+argument_list|(
+name|tool
+operator|->
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|projection
+argument_list|)
+expr_stmt|;
 name|gimp_display_flush_now
 argument_list|(
 name|tool

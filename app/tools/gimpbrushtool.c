@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprojection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -1719,6 +1725,15 @@ name|time
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_projection_flush_now
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|projection
+argument_list|)
+expr_stmt|;
 name|gimp_display_flush_now
 argument_list|(
 name|gdisp
@@ -2056,6 +2071,15 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|time
+argument_list|)
+expr_stmt|;
+name|gimp_projection_flush_now
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|projection
 argument_list|)
 expr_stmt|;
 name|gimp_display_flush_now

@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-projection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo.h"
 end_include
 
@@ -411,7 +405,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a2dac900103
+DECL|enum|__anon29af52280103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1439,7 +1433,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2dac900208
+DECL|struct|__anon29af52280208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1516,7 +1510,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2dac900308
+DECL|struct|__anon29af52280308
 block|{
 DECL|member|ncolors
 name|long
@@ -1687,7 +1681,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2dac900408
+DECL|struct|__anon29af52280408
 block|{
 DECL|member|used_count
 name|signed

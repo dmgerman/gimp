@@ -417,13 +417,11 @@ condition|)
 block|{
 name|SelectOps
 name|button_op
-decl_stmt|;
-name|button_op
-operator|=
+init|=
 name|options
 operator|->
 name|operation
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|press

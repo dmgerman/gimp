@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-projection.h"
+file|"core/gimpprojection.h"
 end_include
 
 begin_include
@@ -786,11 +786,13 @@ operator|!
 operator|(
 name|col
 operator|=
-name|gimp_image_projection_get_color_at
+name|gimp_projection_get_color_at
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+operator|->
+name|projection
 argument_list|,
 name|by_color_sel
 operator|->

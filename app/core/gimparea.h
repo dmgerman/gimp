@@ -6,24 +6,15 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DISPLAY_AREA_H__
+name|__GIMP_AREA_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DISPLAY_AREA_H__
+DECL|macro|__GIMP_AREA_H__
 define|#
 directive|define
-name|__GIMP_DISPLAY_AREA_H__
+name|__GIMP_AREA_H__
 end_define
-
-begin_typedef
-DECL|typedef|GimpArea
-typedef|typedef
-name|struct
-name|_GimpArea
-name|GimpArea
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpArea
@@ -71,7 +62,7 @@ end_function_decl
 begin_function_decl
 name|GSList
 modifier|*
-name|gimp_display_area_list_process
+name|gimp_area_list_process
 parameter_list|(
 name|GSList
 modifier|*
@@ -87,7 +78,7 @@ end_function_decl
 begin_function_decl
 name|GSList
 modifier|*
-name|gimp_display_area_list_free
+name|gimp_area_list_free
 parameter_list|(
 name|GSList
 modifier|*
@@ -102,7 +93,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DISPLAY_AREA_H__  */
+comment|/*  __GIMP_AREA_H__  */
 end_comment
 
 end_unit

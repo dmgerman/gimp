@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-projection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo.h"
 end_include
 
@@ -96,13 +90,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprojection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d6fd40103
+DECL|enum|__anon2c655f080103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1196,9 +1196,11 @@ name|TRUE
 expr_stmt|;
 name|bytes
 operator|=
-name|gimp_image_projection_bytes
+name|gimp_projection_get_bytes
 argument_list|(
 name|gimage
+operator|->
+name|projection
 argument_list|)
 expr_stmt|;
 name|get_color_obj
@@ -1206,6 +1208,8 @@ operator|=
 name|G_OBJECT
 argument_list|(
 name|gimage
+operator|->
+name|projection
 argument_list|)
 expr_stmt|;
 name|get_color_func
@@ -1213,7 +1217,7 @@ operator|=
 operator|(
 name|GetColorFunc
 operator|)
-name|gimp_image_projection_get_color_at
+name|gimp_projection_get_color_at
 expr_stmt|;
 block|}
 switch|switch
@@ -1315,9 +1319,11 @@ argument_list|(
 operator|&
 name|PR
 argument_list|,
-name|gimp_image_projection
+name|gimp_projection_get_tiles
 argument_list|(
 name|gimage
+operator|->
+name|projection
 argument_list|)
 argument_list|,
 name|x1

@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-projection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo.h"
 end_include
 
@@ -168,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprojection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpstrokeoptions.h"
 end_include
 
@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b189b760103
+DECL|enum|__anon2abf56020103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -6956,9 +6956,11 @@ argument_list|)
 expr_stmt|;
 name|projection
 operator|=
-name|gimp_image_projection
+name|gimp_projection_get_tiles
 argument_list|(
 name|gimage
+operator|->
+name|projection
 argument_list|)
 expr_stmt|;
 name|width

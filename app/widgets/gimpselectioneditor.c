@@ -89,7 +89,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-projection.h"
+file|"core/gimpprojection.h"
 end_include
 
 begin_include
@@ -1244,11 +1244,13 @@ name|TRUE
 return|;
 name|col
 operator|=
-name|gimp_image_projection_get_color_at
+name|gimp_projection_get_color_at
 argument_list|(
 name|image_editor
 operator|->
 name|gimage
+operator|->
+name|projection
 argument_list|,
 name|x
 argument_list|,

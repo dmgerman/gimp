@@ -315,29 +315,12 @@ modifier|*
 name|shadow
 decl_stmt|;
 comment|/*  shadow buffer tiles          */
-comment|/*  Projection attributes  */
-DECL|member|construct_flag
-name|gboolean
-name|construct_flag
-decl_stmt|;
-comment|/*  flag for construction        */
-DECL|member|proj_type
-name|GimpImageType
-name|proj_type
-decl_stmt|;
-comment|/*  type of the projection image */
-DECL|member|proj_bytes
-name|gint
-name|proj_bytes
-decl_stmt|;
-comment|/*  bpp in projection image      */
 DECL|member|projection
-name|TileManager
+name|GimpProjection
 modifier|*
 name|projection
 decl_stmt|;
-comment|/*  The projection--layers&     */
-comment|/*  channels                     */
+comment|/*  projection layers& channels */
 DECL|member|guides
 name|GList
 modifier|*
@@ -2533,6 +2516,22 @@ name|x
 parameter_list|,
 name|gint
 name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_image_coords_in_active_drawable
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl

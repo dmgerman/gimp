@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-projection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo.h"
 end_include
 
