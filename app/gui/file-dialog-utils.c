@@ -569,7 +569,7 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|void
 DECL|function|file_dialog_hide (GtkWidget * filesel)
 name|file_dialog_hide
 parameter_list|(
@@ -628,10 +628,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  return TRUE because we are used as "delete_event" handler  */
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 

@@ -77,7 +77,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|void
 name|file_dialog_hide
 parameter_list|(
 name|GtkWidget
