@@ -1166,6 +1166,10 @@ name|private
 operator|->
 name|box
 argument_list|,
+literal|"keep-aspect"
+argument_list|,
+name|FALSE
+argument_list|,
 literal|"width"
 argument_list|,
 name|width
