@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279333820103
+DECL|enum|__anon29ae16f50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1940,7 +1940,7 @@ argument_list|)
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
-name|GDK_SHIFT_MASK
+name|GDK_CONTROL_MASK
 argument_list|)
 argument_list|)
 expr_stmt|;
