@@ -60,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddd0c30103
+DECL|enum|__anon29930e650103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -4217,7 +4217,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_show_unit_menu:  * @gse: a #GimpSizeEntry  * @show: Boolean  *  * Controls whether a unit menu is shown in the size entry.  If  * @show is #TRUE, the menu is shown; otherwise it is hidden.  **/
+comment|/**  * gimp_size_entry_show_unit_menu:  * @gse: a #GimpSizeEntry  * @show: Boolean  *  * Controls whether a unit menu is shown in the size entry.  If  * @show is #TRUE, the menu is shown; otherwise it is hidden.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
