@@ -58,7 +58,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ad51fae0103
+DECL|enum|__anon28da0f7f0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -97,7 +97,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ad51fae0203
+DECL|enum|__anon28da0f7f0203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -107,7 +107,7 @@ literal|0x1
 operator|<<
 literal|0
 block|,
-comment|/* Set for tools that perform    * temporary rendering directly to the    * window. These require sequencing with    * gdisplay_flush() routines.    * See gimpclone.c for example.    */
+comment|/*  Set for tools that perform    *  temporary rendering directly to the    *  window. These require sequencing with    *  gdisplay_flush() routines.    *  See gimpclone.c for example.    */
 DECL|enumerator|CORE_TRACES_ON_WINDOW
 name|CORE_TRACES_ON_WINDOW
 init|=
@@ -257,12 +257,17 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
-comment|/*  current brush	      */
+comment|/*  current brush	                  */
 DECL|member|flags
 name|GimpPaintCoreFlags
 name|flags
 decl_stmt|;
-comment|/*  tool flags, see ToolFlags above       */
+comment|/*  tool flags, see ToolFlags above  */
+DECL|member|use_pressure
+name|gboolean
+name|use_pressure
+decl_stmt|;
+comment|/*  look at coords->pressure         */
 comment|/*  undo blocks variables  */
 DECL|member|undo_tiles
 name|TileManager

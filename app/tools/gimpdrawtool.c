@@ -2397,7 +2397,7 @@ argument_list|(
 name|draw_tool
 argument_list|)
 argument_list|,
-literal|0.0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2407,7 +2407,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 argument_list|,
-literal|0.0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords_f
