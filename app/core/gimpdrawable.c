@@ -82,7 +82,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2a0974180103
+DECL|enum|__anon29ea01e80103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -1857,17 +1857,17 @@ argument_list|(
 name|x
 operator|>=
 literal|0
-operator|||
+operator|&&
 name|x
 operator|<
 name|drawable
 operator|->
 name|width
-operator|||
+operator|&&
 name|y
 operator|>=
 literal|0
-operator|||
+operator|&&
 name|y
 operator|<
 name|drawable

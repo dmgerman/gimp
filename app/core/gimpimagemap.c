@@ -1463,6 +1463,35 @@ operator|*
 operator|)
 name|image_map
 expr_stmt|;
+if|if
+condition|(
+name|x
+operator|>=
+literal|0
+operator|&&
+name|x
+operator|<
+name|gimp_drawable_width
+argument_list|(
+name|_image_map
+operator|->
+name|drawable
+argument_list|)
+operator|&&
+name|y
+operator|>=
+literal|0
+operator|&&
+name|y
+operator|<
+name|gimp_drawable_height
+argument_list|(
+name|_image_map
+operator|->
+name|drawable
+argument_list|)
+condition|)
+block|{
 comment|/* Check if done damage to original image */
 if|if
 condition|(
@@ -1672,6 +1701,14 @@ expr_stmt|;
 return|return
 name|dest
 return|;
+block|}
+else|else
+comment|/* out of bounds error */
+block|{
+return|return
+name|NULL
+return|;
+block|}
 block|}
 end_function
 
