@@ -351,7 +351,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a1ccb770108
+DECL|struct|__anon2b7ae3f90108
 block|{
 DECL|member|old_name
 specifier|const
@@ -440,6 +440,12 @@ block|{
 literal|"gimp_crop"
 block|,
 literal|"gimp_image_crop"
+block|}
+block|,
+block|{
+literal|"gimp_drawable_bytes"
+block|,
+literal|"gimp_drawable_bpp"
 block|}
 block|,
 block|{

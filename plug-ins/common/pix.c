@@ -1754,7 +1754,7 @@ argument_list|)
 expr_stmt|;
 name|depth
 operator|=
-name|gimp_drawable_bytes
+name|gimp_drawable_bpp
 argument_list|(
 name|drawable_ID
 argument_list|)

@@ -131,7 +131,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpImageType
-name|gimp_drawable_type_with_alpha
+name|gimp_drawable_type
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -141,7 +141,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpImageType
-name|gimp_drawable_type
+name|gimp_drawable_type_with_alpha
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -181,7 +181,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_drawable_bytes
+name|gimp_drawable_bpp
 parameter_list|(
 name|gint32
 name|drawable_ID

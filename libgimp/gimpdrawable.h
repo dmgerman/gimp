@@ -24,14 +24,6 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
-begin_define
-DECL|macro|gimp_drawable_bpp
-define|#
-directive|define
-name|gimp_drawable_bpp
-value|gimp_drawable_bytes
-end_define
-
 begin_struct
 DECL|struct|_GimpDrawable
 struct|struct

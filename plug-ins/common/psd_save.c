@@ -4748,7 +4748,7 @@ argument_list|,
 name|nChannelsLayer
 argument_list|)
 expr_stmt|;
-comment|/* Try with gimp_drawable_bytes() */
+comment|/* Try with gimp_drawable_bpp() */
 for|for
 control|(
 name|j
