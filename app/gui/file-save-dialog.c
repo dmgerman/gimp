@@ -1467,6 +1467,12 @@ block|{
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|status
 operator|=
 name|file_save_as
@@ -1482,6 +1488,9 @@ argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|set_uri_and_proc
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1495,15 +1504,40 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
-comment|/* Another error required. --bex */
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
+name|filename
+operator|=
+name|file_utils_uri_to_utf8_filename
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving '%s' failed."
+literal|"Saving '%s' failed:\n\n%s"
 argument_list|)
 argument_list|,
-name|uri
+name|filename
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 block|}

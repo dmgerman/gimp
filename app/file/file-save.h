@@ -26,6 +26,11 @@ name|gimage
 parameter_list|,
 name|GimpRunMode
 name|run_mode
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -57,6 +62,11 @@ name|run_mode
 parameter_list|,
 name|gboolean
 name|set_uri_and_proc
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

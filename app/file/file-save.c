@@ -195,7 +195,7 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (GimpImage * gimage,GimpRunMode run_mode)
+DECL|function|file_save (GimpImage * gimage,GimpRunMode run_mode,GError ** error)
 name|file_save
 parameter_list|(
 name|GimpImage
@@ -204,6 +204,11 @@ name|gimage
 parameter_list|,
 name|GimpRunMode
 name|run_mode
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 specifier|const
@@ -221,6 +226,20 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|GIMP_PDB_CALLING_ERROR
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|GIMP_PDB_CALLING_ERROR
 argument_list|)
@@ -265,6 +284,8 @@ argument_list|,
 name|run_mode
 argument_list|,
 name|FALSE
+argument_list|,
+name|error
 argument_list|)
 return|;
 block|}
@@ -272,7 +293,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save_as (GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean set_uri_and_proc)
+DECL|function|file_save_as (GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean set_uri_and_proc,GError ** error)
 name|file_save_as
 parameter_list|(
 name|GimpImage
@@ -298,6 +319,11 @@ name|run_mode
 parameter_list|,
 name|gboolean
 name|set_uri_and_proc
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|ProcRecord
@@ -350,6 +376,20 @@ argument_list|,
 name|GIMP_PDB_CALLING_ERROR
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|GIMP_PDB_CALLING_ERROR
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_image_active_drawable
@@ -386,21 +426,23 @@ operator|!
 name|file_proc
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Save failed.\n"
-literal|"%s: Unknown file type."
+literal|"Unknown file type"
 argument_list|)
-argument_list|,
-name|uri
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_PDB_CANCEL
+name|GIMP_PDB_CALLING_ERROR
 return|;
-comment|/* inhibits error messages by caller */
 block|}
 name|filename
 operator|=
@@ -440,15 +482,18 @@ name|G_FILE_TEST_IS_REGULAR
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Save failed.\n"
-literal|"%s is not a regular file."
+literal|"Not a regular file"
 argument_list|)
-argument_list|,
-name|uri
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -457,9 +502,8 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_PDB_CANCEL
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
-comment|/* inhibits error messages by caller */
 block|}
 if|if
 condition|(
@@ -473,15 +517,13 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-name|_
-argument_list|(
-literal|"Save failed.\n"
-literal|"%s: %s."
-argument_list|)
+name|error
 argument_list|,
-name|uri
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_ACCES
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -495,9 +537,8 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_PDB_CANCEL
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
-comment|/* inhibits error messages by caller */
 block|}
 block|}
 block|}
@@ -804,6 +845,29 @@ name|saved_uri
 expr_stmt|;
 block|}
 block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|status
+operator|!=
+name|GIMP_PDB_CANCEL
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Plug-In could not save image"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 name|g_free
 argument_list|(
