@@ -2172,11 +2172,16 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
+name|i_max
+decl_stmt|,
 name|j
 decl_stmt|,
 name|cur_progress
 decl_stmt|,
 name|max_progress
+decl_stmt|;
+name|gint
+name|total_bytes_read
 decl_stmt|;
 name|GimpImageBaseType
 name|base_type
@@ -2891,6 +2896,7 @@ name|compression
 operator|==
 literal|0
 condition|)
+comment|/* no compression */
 block|{
 while|while
 condition|(
@@ -3087,6 +3093,7 @@ break|break;
 block|}
 else|else
 block|{
+comment|/* compressed image (either RLE8 or RLE4) */
 while|while
 condition|(
 name|ypos
@@ -3121,6 +3128,7 @@ literal|0
 condition|)
 comment|/* Count + Color - record */
 block|{
+comment|/* encoded mode run -                          buffer[0] == run_length                          buffer[1] == pixel data                     */
 for|for
 control|(
 name|j
@@ -3326,6 +3334,10 @@ index|[
 literal|1
 index|]
 expr_stmt|;
+name|total_bytes_read
+operator|=
+literal|0
+expr_stmt|;
 for|for
 control|(
 name|j
@@ -3345,6 +3357,7 @@ name|bpp
 operator|)
 control|)
 block|{
+comment|/* read the next byte in the record */
 name|ReadOK
 argument_list|(
 name|fd
@@ -3355,6 +3368,32 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|total_bytes_read
+operator|++
+expr_stmt|;
+comment|/* read all pixels from that byte */
+name|i_max
+operator|=
+literal|8
+operator|/
+name|bpp
+expr_stmt|;
+if|if
+condition|(
+name|n
+operator|-
+name|j
+operator|<
+name|i_max
+condition|)
+block|{
+name|i_max
+operator|=
+name|n
+operator|-
+name|j
+expr_stmt|;
+block|}
 name|i
 operator|=
 literal|1
@@ -3364,11 +3403,7 @@ condition|(
 operator|(
 name|i
 operator|<=
-operator|(
-literal|8
-operator|/
-name|bpp
-operator|)
+name|i_max
 operator|)
 operator|&&
 operator|(
@@ -3399,29 +3434,6 @@ name|temp
 operator|=
 operator|(
 name|v
-operator|&
-operator|(
-operator|(
-operator|(
-literal|1
-operator|<<
-name|bpp
-operator|)
-operator|-
-literal|1
-operator|)
-operator|<<
-operator|(
-literal|8
-operator|-
-operator|(
-name|i
-operator|*
-name|bpp
-operator|)
-operator|)
-operator|)
-operator|)
 operator|>>
 operator|(
 literal|8
@@ -3431,6 +3443,17 @@ name|i
 operator|*
 name|bpp
 operator|)
+operator|)
+operator|)
+operator|&
+operator|(
+operator|(
+literal|1
+operator|<<
+name|bpp
+operator|)
+operator|-
+literal|1
 operator|)
 expr_stmt|;
 if|if
@@ -3457,34 +3480,10 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+comment|/* absolute mode runs are padded to 16-bit alignment */
 if|if
 condition|(
-operator|(
-name|n
-operator|%
-literal|2
-operator|)
-operator|&&
-operator|(
-name|bpp
-operator|==
-literal|4
-operator|)
-condition|)
-name|n
-operator|++
-expr_stmt|;
-if|if
-condition|(
-operator|(
-name|n
-operator|/
-operator|(
-literal|8
-operator|/
-name|bpp
-operator|)
-operator|)
+name|total_bytes_read
 operator|%
 literal|2
 condition|)
@@ -3498,7 +3497,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*if odd(x div (8 div bpp )) then blockread(f,z^,1);*/
 block|}
 if|if
 condition|(
