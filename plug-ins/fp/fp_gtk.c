@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon297f6a240108
+DECL|struct|__anon2a3ffc190108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -6123,7 +6123,7 @@ literal|4
 operator|)
 condition|)
 block|{
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

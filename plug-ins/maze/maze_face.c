@@ -97,7 +97,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c0906f70108
+DECL|struct|__anon2c730a740108
 typedef|typedef
 struct|struct
 block|{
@@ -3523,7 +3523,7 @@ modifier|*
 name|msg
 parameter_list|)
 block|{
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

@@ -418,7 +418,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2adfa4e50108
+DECL|struct|__anon2b444a540108
 typedef|typedef
 struct|struct
 block|{
@@ -601,7 +601,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2adfa4e50208
+DECL|struct|__anon2b444a540208
 typedef|typedef
 struct|struct
 block|{
@@ -632,7 +632,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2adfa4e50308
+DECL|struct|__anon2b444a540308
 typedef|typedef
 struct|struct
 block|{
@@ -4711,7 +4711,7 @@ condition|;
 name|j
 operator|++
 control|)
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

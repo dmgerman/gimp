@@ -4222,7 +4222,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Update the gimage label to reflect the displayed gimage name  */
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295924950108
+DECL|struct|__anon29581d100108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -191,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295924950208
+DECL|struct|__anon29581d100208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295924950308
+DECL|struct|__anon29581d100308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295924950408
+DECL|struct|__anon29581d100408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -287,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295924950508
+DECL|struct|__anon29581d100508
 block|{
 DECL|member|name
 name|gchar
@@ -315,7 +315,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29592495060a
+DECL|union|__anon29581d10060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295924950708
+DECL|struct|__anon29581d100708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -462,7 +462,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295924950808
+DECL|struct|__anon29581d100808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -6579,7 +6579,7 @@ break|break;
 case|case
 name|SF_TOGGLE
 case|:
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -8385,7 +8385,7 @@ operator|==
 name|NULL
 condition|)
 return|return;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -8518,7 +8518,7 @@ argument_list|,
 name|family
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -8536,7 +8536,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
