@@ -2281,7 +2281,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|standard_motion_func (Tool * tool,GdkEventMotion * bevent,gpointer gdisp_ptr)
+DECL|function|standard_motion_func (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|standard_motion_func
 parameter_list|(
 name|Tool
@@ -2290,7 +2290,7 @@ name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
-name|bevent
+name|mevent
 parameter_list|,
 name|gpointer
 name|gdisp_ptr
