@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a67c260103
+DECL|enum|__anon2b2d45040103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -77,7 +77,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a67c260208
+DECL|struct|__anon2b2d45040208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -1457,9 +1457,14 @@ name|bpp
 expr_stmt|;
 name|p_update
 operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
 name|height
 operator|/
 literal|20
+argument_list|)
 expr_stmt|;
 name|rowsize
 operator|=
@@ -1732,6 +1737,9 @@ control|)
 block|{
 if|if
 condition|(
+operator|!
+name|preview
+operator|&&
 operator|(
 name|y
 operator|%
@@ -1739,9 +1747,6 @@ name|p_update
 operator|==
 literal|0
 operator|)
-operator|&&
-operator|!
-name|preview
 condition|)
 name|gimp_progress_update
 argument_list|(
