@@ -40,31 +40,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainer.h"
+file|"core/gimpcontainer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdatafactory.h"
+file|"core/gimpdatafactory.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage-convert.h"
+file|"core/gimpimage-convert.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppalette.h"
+file|"core/gimppalette.h"
 end_include
 
 begin_decl_stmt

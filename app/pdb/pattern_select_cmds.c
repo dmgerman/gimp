@@ -46,25 +46,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"core/gimpcontainer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdatafactory.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppattern.h"
+file|"core/gimpdatafactory.h"
 end_include
 
 begin_include

@@ -76,12 +76,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage_mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawable-invert.h"
 end_include
 
@@ -153,7 +147,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a74f780103
+DECL|enum|__anon2797c3350103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

@@ -30,6 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpviewable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcomponentlistitem.h"
 end_include
 
@@ -55,24 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpviewable.h"
 end_include
 
 begin_include

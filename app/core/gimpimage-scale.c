@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage_mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -85,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage-mask.h"
 end_include
 
 begin_include
@@ -743,7 +743,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292dc1420103
+DECL|enum|__anon2796aebb0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED

@@ -16,12 +16,6 @@ directive|define
 name|__GIMAGE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
 begin_function_decl
 name|GimpImage
 modifier|*

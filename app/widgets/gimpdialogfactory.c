@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdialogfactory.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdockable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
 end_include
 
 begin_function_decl

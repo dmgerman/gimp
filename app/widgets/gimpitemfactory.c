@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimptoolinfo.h"
 end_include
 
@@ -133,12 +139,6 @@ begin_include
 include|#
 directive|include
 file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplist.h"
 end_include
 
 begin_include

@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppatternpreview.h"
+file|"core/gimppattern.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppattern.h"
+file|"gimppatternpreview.h"
 end_include
 
 begin_include

@@ -131,7 +131,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"app/gimppattern-header.h"
+file|"app/core/gimppattern-header.h"
 end_include
 
 begin_comment

@@ -141,13 +141,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app/gimpbrush-header.h"
+file|"app/core/gimpbrush-header.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"app/gimppattern-header.h"
+file|"app/core/gimppattern-header.h"
 end_include
 
 begin_include
@@ -163,7 +163,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921fa440108
+DECL|struct|__anon28e60a4b0108
 block|{
 DECL|member|description
 name|gchar

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable-invert.h"
 end_include
 

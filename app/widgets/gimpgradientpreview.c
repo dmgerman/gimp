@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpgradientpreview.h"
+file|"core/gimpgradient.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpgradient.h"
+file|"gimpgradientpreview.h"
 end_include
 
 begin_include

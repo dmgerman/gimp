@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage_mask.h"
+file|"gimpimage-mask.h"
 end_include
 
 begin_include

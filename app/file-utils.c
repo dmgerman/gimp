@@ -134,13 +134,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-utils.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"file-utils.h"
 end_include
 
 begin_include

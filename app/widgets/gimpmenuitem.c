@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpviewable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -39,27 +51,9 @@ directive|include
 file|"gimppreview.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpviewable.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2a47c41c0103
+DECL|enum|__anon2bcefbc70103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE

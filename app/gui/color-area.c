@@ -53,6 +53,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdnd.h"
 end_include
 
@@ -72,12 +78,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
 end_include
 
 begin_ifdef
@@ -110,7 +110,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad393040103
+DECL|enum|__anon292a8d8e0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA

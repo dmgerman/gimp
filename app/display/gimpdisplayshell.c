@@ -30,6 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimppattern.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdnd.h"
 end_include
 
@@ -73,18 +85,6 @@ begin_include
 include|#
 directive|include
 file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppattern.h"
 end_include
 
 begin_include

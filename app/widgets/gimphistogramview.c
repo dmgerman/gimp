@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage_mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphistogram.h"
 end_include
 
@@ -115,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5202f30103
+DECL|enum|__anon2b0c3dc90103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED

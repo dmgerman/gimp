@@ -30,6 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -37,18 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdrawtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage_mask.h"
 end_include
 
 begin_include

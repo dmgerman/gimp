@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/info-dialog.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
 end_include
 
 begin_include

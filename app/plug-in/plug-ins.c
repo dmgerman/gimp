@@ -339,13 +339,19 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
+file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include
@@ -363,7 +369,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpparasite.h"
+file|"core/gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -424,18 +436,6 @@ begin_include
 include|#
 directive|include
 file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
 end_include
 
 begin_include

@@ -16,12 +16,6 @@ directive|define
 name|__TOOL_OPTIONS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpobject.h"
-end_include
-
 begin_comment
 comment|/*  the tool options structures  */
 end_comment
@@ -43,28 +37,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_struct
-DECL|struct|_ToolOptionsClass
-struct|struct
-name|_ToolOptionsClass
-block|{
-DECL|member|parent_class
-name|GimpObjectClass
-name|parent_class
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_typedef
-DECL|typedef|ToolOptionsClass
-typedef|typedef
-name|struct
-name|_ToolOptionsClass
-name|ToolOptionsClass
-typedef|;
-end_typedef
 
 begin_comment
 comment|/*  create a dummy tool options structure  *  (to be used by tools without options)  */

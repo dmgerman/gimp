@@ -30,6 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainermenuimpl.h"
 end_include
 
@@ -43,24 +55,6 @@ begin_include
 include|#
 directive|include
 file|"gimppreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplist.h"
 end_include
 
 begin_function_decl

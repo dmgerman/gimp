@@ -30,7 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainer.h"
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -42,19 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdnd.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplist.h"
 end_include
 
 begin_include

@@ -34,13 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"gdisplay.h"
 end_include
 
 begin_decl_stmt

@@ -36,6 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdnd.h"
 end_include
 
@@ -49,18 +61,6 @@ begin_include
 include|#
 directive|include
 file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplist.h"
 end_include
 
 begin_include

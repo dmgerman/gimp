@@ -48,6 +48,36 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -72,18 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage_mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -102,25 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -274,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27db6bdd0108
+DECL|struct|__anon28a754ee0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -310,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27db6bdd0208
+DECL|struct|__anon28a754ee0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27db6bdd0308
+DECL|struct|__anon28a754ee0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -531,7 +531,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27db6bdd0403
+DECL|enum|__anon28a754ee0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT

@@ -30,19 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
 end_include
 
 begin_include
@@ -65,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295c002c0103
+DECL|enum|__anon2c3875a60103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE

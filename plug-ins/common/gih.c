@@ -135,13 +135,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app/gimpbrush-header.h"
+file|"app/core/gimpbrush-header.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"app/gimppattern-header.h"
+file|"app/core/gimppattern-header.h"
 end_include
 
 begin_include
@@ -173,7 +173,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c08e0c10108
+DECL|struct|__anon2ad2ec410108
 block|{
 DECL|member|spacing
 name|guint
@@ -230,7 +230,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08e0c10208
+DECL|struct|__anon2ad2ec410208
 block|{
 DECL|member|orientation
 name|GimpOrientationType

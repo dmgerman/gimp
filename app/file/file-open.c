@@ -237,25 +237,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawable.h"
 end_include
 
 begin_include

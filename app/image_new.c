@@ -42,6 +42,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/file-new-dialog.h"
 end_include
 
@@ -67,18 +85,6 @@ begin_include
 include|#
 directive|include
 file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplayer.h"
 end_include
 
 begin_include

@@ -48,7 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
+file|"core/gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimplut.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
 end_include
 
 begin_include

@@ -106,6 +106,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -154,25 +166,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawable.h"
 end_include
 
 begin_include

@@ -36,19 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpchannel.h"
+file|"core/gimpchannel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include

@@ -48,6 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -90,19 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
 end_include
 
 begin_include
@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2909662c0103
+DECL|enum|__anon2a3859c20103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12452,7 +12452,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2909662c0208
+DECL|struct|__anon2a3859c20208
 block|{
 DECL|member|label
 name|gchar
@@ -12681,7 +12681,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2909662c0308
+DECL|struct|__anon2a3859c20308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -36,25 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
+file|"core/gimpcontainer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcontainer.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpcontainergridview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -67,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"gimpconstrainedhwrapbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"colormaps.h"
 end_include
 
 begin_function_decl

@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"gimage.h"
 end_include
 
 begin_include

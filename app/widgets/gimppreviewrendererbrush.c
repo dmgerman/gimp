@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrush.h"
+file|"core/gimpbrush.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpbrushpipe.h"
+file|"core/gimpbrushpipe.h"
 end_include
 
 begin_include

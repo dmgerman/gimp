@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -41,12 +47,6 @@ begin_include
 include|#
 directive|include
 file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplayer.h"
 end_include
 
 begin_decl_stmt

@@ -66,6 +66,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdnd.h"
 end_include
 
@@ -114,18 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277278140103
+DECL|enum|__anon28b6e0ae0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -5601,7 +5601,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277278140208
+DECL|struct|__anon28b6e0ae0208
 block|{
 DECL|member|def
 name|GimpImage
