@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -458,14 +452,12 @@ operator|=
 name|gimp_preview_area_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_events
+name|gtk_widget_add_events
 argument_list|(
 name|brush_sel
 operator|->
 name|preview
 argument_list|,
-name|GDK_EXPOSURE_MASK
-operator||
 name|GDK_BUTTON_PRESS_MASK
 operator||
 name|GDK_BUTTON_RELEASE_MASK
