@@ -149,6 +149,11 @@ parameter_list|,
 name|GdkPixbuf
 modifier|*
 name|pixbuf
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|format
 parameter_list|)
 function_decl|;
 end_function_decl

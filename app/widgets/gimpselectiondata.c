@@ -1601,7 +1601,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_selection_data_set_pixbuf (GtkSelectionData * selection,GdkAtom atom,GdkPixbuf * pixbuf)
+DECL|function|gimp_selection_data_set_pixbuf (GtkSelectionData * selection,GdkAtom atom,GdkPixbuf * pixbuf,const gchar * format)
 name|gimp_selection_data_set_pixbuf
 parameter_list|(
 name|GtkSelectionData
@@ -1614,6 +1614,11 @@ parameter_list|,
 name|GdkPixbuf
 modifier|*
 name|pixbuf
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|format
 parameter_list|)
 block|{
 name|gchar
@@ -1651,6 +1656,13 @@ name|pixbuf
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|format
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gdk_pixbuf_save_to_buffer
@@ -1663,7 +1675,7 @@ argument_list|,
 operator|&
 name|buffer_size
 argument_list|,
-literal|"png"
+name|format
 argument_list|,
 operator|&
 name|error
