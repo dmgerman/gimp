@@ -47,16 +47,37 @@ directive|include
 file|"cpu-accel.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
 name|ARCH_X86
-end_ifdef
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|USE_MMX
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|__GNUC__
+argument_list|)
+end_if
+
+begin_define
+DECL|macro|HAVE_ACCEL
+define|#
+directive|define
+name|HAVE_ACCEL
+value|1
+end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c8d4820103
+DECL|enum|__anon2b1c73200103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -103,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c8d4820203
+DECL|enum|__anon2b1c73200203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -367,6 +388,21 @@ literal|0
 condition|)
 return|return
 name|ARCH_X86_VENDOR_AMD
+return|;
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|id
+argument_list|,
+literal|"GenuineIntel"
+argument_list|)
+operator|==
+literal|0
+condition|)
+return|return
+name|ARCH_X86_VENDOR_INTEL
 return|;
 else|#
 directive|else
@@ -944,6 +980,96 @@ return|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|USE_SSE
+end_ifdef
+
+begin_decl_stmt
+DECL|variable|sigill_return
+specifier|static
+name|jmp_buf
+name|sigill_return
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+specifier|static
+name|void
+DECL|function|sigill_handler (gint n)
+name|sigill_handler
+parameter_list|(
+name|gint
+name|n
+parameter_list|)
+block|{
+name|longjmp
+argument_list|(
+name|sigill_return
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|arch_accel_sse_os_support (void)
+name|arch_accel_sse_os_support
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|setjmp
+argument_list|(
+name|sigill_return
+argument_list|)
+condition|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
+else|else
+block|{
+name|signal
+argument_list|(
+name|SIGILL
+argument_list|,
+name|sigill_handler
+argument_list|)
+expr_stmt|;
+asm|__asm__
+specifier|__volatile__
+asm|("xorps %xmm0, %xmm0");
+name|signal
+argument_list|(
+name|SIGILL
+argument_list|,
+name|SIG_DFL
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* USE_SSE */
+end_comment
+
 begin_function
 specifier|static
 name|guint32
@@ -1016,37 +1142,35 @@ argument_list|()
 expr_stmt|;
 break|break;
 block|}
+ifdef|#
+directive|ifdef
+name|USE_SSE
+if|if
+condition|(
+operator|(
+name|caps
+operator|&
+name|CPU_ACCEL_X86_SSE
+operator|)
+operator|&&
+operator|!
+name|arch_accel_sse_os_support
+argument_list|()
+condition|)
+name|caps
+operator|&=
+operator|~
+operator|(
+name|CPU_ACCEL_X86_SSE
+operator||
+name|CPU_ACCEL_X86_SSE2
+operator|)
+expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|caps
 return|;
-block|}
-end_function
-
-begin_decl_stmt
-DECL|variable|sigill_return
-specifier|static
-name|jmp_buf
-name|sigill_return
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-specifier|static
-name|void
-DECL|function|sigill_handler (gint n)
-name|sigill_handler
-parameter_list|(
-name|gint
-name|n
-parameter_list|)
-block|{
-name|longjmp
-argument_list|(
-name|sigill_return
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1056,7 +1180,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* ARCH_X86 */
+comment|/* ARCH_X86&& USE_MMX&& __GNUC__ */
 end_comment
 
 begin_if
@@ -1071,7 +1195,20 @@ name|defined
 argument_list|(
 name|USE_ALTIVEC
 argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|__GNUC__
+argument_list|)
 end_if
+
+begin_define
+DECL|macro|HAVE_ACCEL
+define|#
+directive|define
+name|HAVE_ACCEL
+value|1
+end_define
 
 begin_decl_stmt
 DECL|variable|jmpbuf
@@ -1178,7 +1315,7 @@ literal|1
 expr_stmt|;
 asm|asm
 specifier|volatile
-asm|("mtspr 256, %0\n\t" 		"vand %%v0, %%v0, %%v0" 		: 		: "r" (-1));
+asm|("mtspr 256, %0\n\t"                 "vand %%v0, %%v0, %%v0"                 :                 : "r" (-1));
 name|signal
 argument_list|(
 name|SIGILL
@@ -1198,7 +1335,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* ARCH_PPC */
+comment|/* ARCH_PPC&& USE_ALTIVEC&& __GNUC__ */
 end_comment
 
 begin_function
@@ -1209,24 +1346,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-if|#
-directive|if
-name|defined
-argument_list|(
-name|ARCH_X86
-argument_list|)
-operator|||
-operator|(
-name|defined
-argument_list|(
-name|ARCH_PPC
-argument_list|)
-operator|&&
-name|defined
-argument_list|(
-name|USE_ALTIVEC
-argument_list|)
-operator|)
+ifdef|#
+directive|ifdef
+name|HAVE_ACCEL
 specifier|static
 name|guint32
 name|accel
@@ -1249,65 +1371,12 @@ operator|=
 name|arch_accel
 argument_list|()
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|USE_SSE
-comment|/* test OS support for SSE */
-if|if
-condition|(
-name|accel
-operator|&
-name|CPU_ACCEL_X86_SSE
-condition|)
-block|{
-if|if
-condition|(
-name|setjmp
-argument_list|(
-name|sigill_return
-argument_list|)
-condition|)
-block|{
-name|accel
-operator|&=
-operator|~
-operator|(
-name|CPU_ACCEL_X86_SSE
-operator||
-name|CPU_ACCEL_X86_SSE2
-operator|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|signal
-argument_list|(
-name|SIGILL
-argument_list|,
-name|sigill_handler
-argument_list|)
-expr_stmt|;
-asm|__asm__
-specifier|__volatile__
-asm|("xorps %xmm0, %xmm0");
-name|signal
-argument_list|(
-name|SIGILL
-argument_list|,
-name|SIG_DFL
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-endif|#
-directive|endif
-comment|/* USE_SSE */
 return|return
 name|accel
 return|;
 else|#
 directive|else
-comment|/* !ARCH_X86&& !ARCH_PPC/USE_ALTIVEC */
+comment|/* !HAVE_ACCEL */
 return|return
 literal|0
 return|;
