@@ -295,7 +295,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon275714780103
+DECL|enum|__anon27d733430103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -346,15 +346,17 @@ block|{
 name|GimpColorButton
 modifier|*
 name|gcb
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|gcb
-operator|=
+init|=
 name|GIMP_COLOR_BUTTON
 argument_list|(
 name|object
 argument_list|)
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gcb
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free

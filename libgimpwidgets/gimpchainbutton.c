@@ -147,7 +147,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29528c540103
+DECL|enum|__anon2b64be910103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -198,15 +198,17 @@ block|{
 name|GimpChainButton
 modifier|*
 name|gcb
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|gcb
-operator|=
+init|=
 name|GIMP_CHAIN_BUTTON
 argument_list|(
 name|object
 argument_list|)
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gcb
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
