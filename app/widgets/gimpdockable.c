@@ -866,6 +866,20 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|dockable
+operator|->
+name|menu_button
+argument_list|,
+name|_
+argument_list|(
+literal|"Configure this tab"
+argument_list|)
+argument_list|,
+name|GIMP_HELP_DOCK_TAB_MENU
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|dockable

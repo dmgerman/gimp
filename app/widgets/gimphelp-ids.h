@@ -2889,6 +2889,14 @@ value|"gimp-dock-tab-close"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DOCK_TAB_MENU
+define|#
+directive|define
+name|GIMP_HELP_DOCK_TAB_MENU
+value|"gimp-dock-tab-menu"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DOCK_TAB_DETACH
 define|#
 directive|define
