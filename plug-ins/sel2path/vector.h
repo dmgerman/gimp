@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d59de60108
+DECL|struct|__anon2c50b4080108
 block|{
 DECL|member|dx
 DECL|member|dy
@@ -50,7 +50,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|vector_type
 name|make_vector
 parameter_list|(
@@ -66,7 +65,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real_coordinate_type
 name|vector_to_point
 parameter_list|(
@@ -82,7 +80,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real
 name|magnitude
 parameter_list|(
@@ -94,7 +91,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|vector_type
 name|normalize
 parameter_list|(
@@ -106,7 +102,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|vector_type
 name|Vadd
 parameter_list|(
@@ -121,7 +116,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real
 name|Vdot
 parameter_list|(
@@ -136,7 +130,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|vector_type
 name|Vmult_scalar
 parameter_list|(
@@ -151,7 +144,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real
 name|Vangle
 parameter_list|(
@@ -180,7 +172,6 @@ end_define
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real_coordinate_type
 name|Vadd_point
 parameter_list|(
@@ -203,7 +194,6 @@ end_define
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real_coordinate_type
 name|Vsubtract_point
 parameter_list|(
@@ -230,7 +220,6 @@ end_define
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|coordinate_type
 name|Vadd_int_point
 parameter_list|(
@@ -249,7 +238,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|vector_type
 name|Vabs
 parameter_list|(
@@ -265,7 +253,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|vector_type
 name|Psubtract
 parameter_list|(
@@ -316,7 +303,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|vector_type
 name|IPsubtract
 parameter_list|(
@@ -331,7 +317,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|coordinate_type
 name|IPsubtractP
 parameter_list|(
@@ -346,7 +331,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|coordinate_type
 name|IPadd
 parameter_list|(
@@ -361,7 +345,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|coordinate_type
 name|IPmult_scalar
 parameter_list|(
@@ -376,7 +359,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real_coordinate_type
 name|IPmult_real
 parameter_list|(
@@ -391,7 +373,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|boolean
 name|IPequal
 parameter_list|(

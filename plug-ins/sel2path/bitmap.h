@@ -61,7 +61,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28890b7b0108
+DECL|struct|__anon29e83eb20108
 block|{
 DECL|member|dimensions
 name|dimensions_type
@@ -278,7 +278,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|bounding_box_type
 name|bitmap_to_bb
 parameter_list|(

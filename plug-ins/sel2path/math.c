@@ -68,7 +68,6 @@ comment|/* Numerical errors sometimes make a floating point number just slightly
 end_comment
 
 begin_function
-specifier|const
 name|boolean
 DECL|function|epsilon_equal (real v1,real v2)
 name|epsilon_equal
@@ -103,7 +102,6 @@ comment|/* Return the Euclidean distance between P1 and P2.  */
 end_comment
 
 begin_function
-specifier|const
 name|real
 DECL|function|distance (real_coordinate_type p1,real_coordinate_type p2)
 name|distance
@@ -143,7 +141,6 @@ comment|/* Same thing, for integer points.  */
 end_comment
 
 begin_function
-specifier|const
 name|real
 DECL|function|int_distance (coordinate_type p1,coordinate_type p2)
 name|int_distance
@@ -189,7 +186,6 @@ comment|/* Return the arc cosine of V, in degrees in the range zero to 180.  V  
 end_comment
 
 begin_function
-specifier|const
 name|real
 DECL|function|my_acosd (real v)
 name|my_acosd
@@ -271,7 +267,6 @@ comment|/* The slope of the line defined by COORD1 and COORD2.  */
 end_comment
 
 begin_function
-specifier|const
 name|real
 DECL|function|slope (real_coordinate_type coord1,real_coordinate_type coord2)
 name|slope
@@ -325,7 +320,6 @@ comment|/* Turn an integer point into a real one, and vice versa.  */
 end_comment
 
 begin_function
-specifier|const
 name|real_coordinate_type
 DECL|function|int_to_real_coord (coordinate_type int_coord)
 name|int_to_real_coord
@@ -360,7 +354,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|coordinate_type
 DECL|function|real_to_int_coord (real_coordinate_type real_coord)
 name|real_to_int_coord
@@ -405,7 +398,6 @@ comment|/* See if two points (described by their row and column) are adjacent.  
 end_comment
 
 begin_function
-specifier|const
 name|boolean
 DECL|function|points_adjacent_p (int row1,int col1,int row2,int col2)
 name|points_adjacent_p

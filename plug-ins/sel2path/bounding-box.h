@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c776be60108
+DECL|struct|__anon2bb054d20108
 block|{
 DECL|member|min_row
 DECL|member|max_row
@@ -54,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c776be60208
+DECL|struct|__anon2bb054d20208
 block|{
 DECL|member|min_row
 DECL|member|max_row
@@ -156,7 +156,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|bounding_box_type
 name|dimensions_to_bb
 parameter_list|(
@@ -167,7 +166,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|dimensions_type
 name|bb_to_dimensions
 parameter_list|(

@@ -591,7 +591,6 @@ end_define
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|boolean
 name|epsilon_equal
 parameter_list|(
@@ -610,7 +609,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real
 name|my_acosd
 parameter_list|(
@@ -625,7 +623,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real
 name|distance
 parameter_list|(
@@ -638,7 +635,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real
 name|int_distance
 parameter_list|(
@@ -655,7 +651,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real
 name|slope
 parameter_list|(
@@ -672,7 +667,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|real_coordinate_type
 name|int_to_real_coord
 parameter_list|(
@@ -683,7 +677,6 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|coordinate_type
 name|real_to_int_coord
 parameter_list|(
@@ -698,7 +691,6 @@ end_comment
 
 begin_function_decl
 specifier|extern
-specifier|const
 name|boolean
 name|points_adjacent_p
 parameter_list|(

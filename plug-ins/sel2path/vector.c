@@ -44,7 +44,6 @@ comment|/* Given the point COORD, return the corresponding vector.  */
 end_comment
 
 begin_function
-specifier|const
 name|vector_type
 DECL|function|make_vector (const real_coordinate_type c)
 name|make_vector
@@ -84,7 +83,6 @@ comment|/* And the converse: given a vector, return the corresponding point.  */
 end_comment
 
 begin_function
-specifier|const
 name|real_coordinate_type
 DECL|function|vector_to_point (const vector_type v)
 name|vector_to_point
@@ -120,7 +118,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|real
 DECL|function|magnitude (const vector_type v)
 name|magnitude
@@ -146,7 +143,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|vector_type
 DECL|function|normalize (const vector_type v)
 name|normalize
@@ -201,7 +197,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|vector_type
 DECL|function|Vadd (const vector_type v1,const vector_type v2)
 name|Vadd
@@ -249,7 +244,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|real
 DECL|function|Vdot (const vector_type v1,const vector_type v2)
 name|Vdot
@@ -284,7 +278,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|vector_type
 DECL|function|Vmult_scalar (const vector_type v,const real r)
 name|Vmult_scalar
@@ -332,7 +325,6 @@ comment|/* Given the IN_VECTOR and OUT_VECTOR, return the angle between them in 
 end_comment
 
 begin_function
-specifier|const
 name|real
 DECL|function|Vangle (const vector_type in_vector,const vector_type out_vector)
 name|Vangle
@@ -377,7 +369,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|real_coordinate_type
 DECL|function|Vadd_point (const real_coordinate_type c,const vector_type v)
 name|Vadd_point
@@ -425,7 +416,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|real_coordinate_type
 DECL|function|Vsubtract_point (const real_coordinate_type c,const vector_type v)
 name|Vsubtract_point
@@ -473,7 +463,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|coordinate_type
 DECL|function|Vadd_int_point (const coordinate_type c,const vector_type v)
 name|Vadd_int_point
@@ -533,7 +522,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|vector_type
 DECL|function|Vabs (const vector_type v)
 name|Vabs
@@ -579,7 +567,6 @@ comment|/* Operations on points.  */
 end_comment
 
 begin_function
-specifier|const
 name|vector_type
 DECL|function|Psubtract (const real_coordinate_type c1,const real_coordinate_type c2)
 name|Psubtract
@@ -631,7 +618,6 @@ comment|/* Operations on integer points.  */
 end_comment
 
 begin_function
-specifier|const
 name|vector_type
 DECL|function|IPsubtract (const coordinate_type coord1,const coordinate_type coord2)
 name|IPsubtract
@@ -679,7 +665,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|coordinate_type
 DECL|function|IPsubtractP (const coordinate_type c1,const coordinate_type c2)
 name|IPsubtractP
@@ -727,7 +712,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|coordinate_type
 DECL|function|IPadd (const coordinate_type c1,const coordinate_type c2)
 name|IPadd
@@ -775,7 +759,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|coordinate_type
 DECL|function|IPmult_scalar (const coordinate_type c,const int i)
 name|IPmult_scalar
@@ -819,7 +802,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|real_coordinate_type
 DECL|function|IPmult_real (const coordinate_type c,const real r)
 name|IPmult_real
@@ -863,7 +845,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 name|boolean
 DECL|function|IPequal (const coordinate_type c1,const coordinate_type c2)
 name|IPequal

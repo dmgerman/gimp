@@ -12,7 +12,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * gimp    1.1.23a; 2000/06/04  hof: new button: rotation follow path  * gimp    1.1.20a; 2000/04/25  hof: support for keyframes, anim_preview (suggested by jakub steiner)  * gimp    1.1.17b; 2000/02/23  hof: bugfix: dont flatten the preview, just merge visible layers  *                                   bugfix: for current frame never use diskfile for the preview  *                                           (to avoid inconsitencies, and to speed up a little)  *                                   added "Show Path", pick and drag Controlpoints  * gimp    1.1.17a; 2000/02/20  hof: use gimp_help_set_help_data for tooltips  *                                   added spinbuttons, and more layout cosmetics.  * gimp    1.1.15a; 2000/01/26  hof: removed gimp 1.0.x support  * gimp    1.1.13b; 1999/12/04  hof: some cosmetic gtk fixes  *                                   changed border_width spacing and Buttons in action area  *                                   to same style as used in dialogs of the gimp 1.1.13 main dialogs  * gimp   1.1.8a;   1999/08/31  hof: accept anim framenames without underscore '_'  * gimp   1.1.5a;   1999/05/08  hof: call fileselect in gtk+1.2 style   * version 0.99.00; 1999.03.03  hof: bugfix: update of the preview (did'nt work with gimp1.1.2)  * version 0.98.00; 1998.11.28  hof: Port to GIMP 1.1: replaced buildmenu.h, apply layermask (before rotate)  *                                   mov_imglayer_constrain must check for drawable_id -1  * version 0.97.00; 1998.10.19  hof: Set window title to "Move Path"  * version 0.96.02; 1998.07.30  hof: added clip to frame option and tooltips  * version 0.96.00; 1998.07.09  hof: bugfix (filesel did not reopen after cancel)  * version 0.95.00; 1998.05.12  hof: added rotatation capabilities  * version 0.94.00; 1998.04.25  hof: use only one point as default  *                                   bugfix: initial value for src_paintmode  *                                           fixes the problem reported in p_my_layer_copy (cant get new layer)  * version 0.90.00; 1997.12.14  hof: 1.st (pre) release  */
+comment|/* revision history:  * gimp    1.1.23a; 2000/06/04  hof: new button: rotation follow path  * gimp    1.1.20a; 2000/04/25  hof: support for keyframes, anim_preview (suggested by jakub steiner)  * gimp    1.1.17b; 2000/02/23  hof: bugfix: dont flatten the preview, just merge visible layers  *                                   bugfix: for current frame never use diskfile for the preview  *                                           (to avoid inconsitencies, and to speed up a little)  *                                   added "Show Path", pick and drag Controlpoints  * gimp    1.1.17a; 2000/02/20  hof: use gimp_help_set_help_data for tooltips  *                                   added spinbuttons, and more layout cosmetics.  * gimp    1.1.15a; 2000/01/26  hof: removed gimp 1.0.x support  * gimp    1.1.13b; 1999/12/04  hof: some cosmetic gtk fixes  *                                   changed border_width spacing and Buttons in action area  *                                   to same style as used in dialogs of the gimp 1.1.13 main dialogs  * gimp   1.1.8a;   1999/08/31  hof: accept anim framenames without underscore '_'  * gimp   1.1.5a;   1999/05/08  hof: call fileselect in gtk+1.2 style   * version 0.99.00; 1999.03.03  hof: bugfix: update of the preview (did'nt work with gimp1.1.2)  * version 0.98.00; 1998.11.28  hof: Port to GIMP 1.1: replaced buildmenu.h, apply layermask (before rotate)  *                                   mov_imglayer_constrain must check for drawable_id -1  * version 0.97.00; 1998.10.19  hof: Set window title to "Move Path"  * version 0.96.02; 1998.07.30  hof: added clip to frame option and tooltips  * version 0.96.00; 1998.07.09  hof: bugfix (filesel did not reopen after cancel)  * version 0.95.00; 1998.05.12  hof: added rotatation capabilities  * version 0.94.00; 1998.04.25  hof: use only one point as default  *                                   bugfix: initial value for src_paintmode  *                                           fixes the problem reported in p_my_layer_copy (can't get new layer)  * version 0.90.00; 1997.12.14  hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2890907c0108
+DECL|struct|__anon276075920108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2890907c0208
+DECL|struct|__anon276075920208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890907c0308
+DECL|struct|__anon276075920308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2890907c0408
+DECL|struct|__anon276075920408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2890907c0503
+DECL|enum|__anon276075920503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -2082,7 +2082,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"error cant alloc path_preview structure\n"
+literal|"error can't alloc path_preview structure\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2860,7 +2860,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Show PreviewFrame with Selected       \nSrcLayer at current Controlpoint"
+literal|"Show PreviewFrame with Selected SrcLayer at current Controlpoint"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2927,7 +2927,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Generate Animated Preview\nas multilayer image"
+literal|"Generate Animated Preview as multilayer image"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3304,7 +3304,7 @@ argument_list|,
 comment|/* lower, upper (unconstrained) */
 name|_
 argument_list|(
-literal|"first handled frame"
+literal|"First handled frame"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3400,7 +3400,7 @@ argument_list|,
 comment|/* lower, upper (unconstrained) */
 name|_
 argument_list|(
-literal|"last handled frame"
+literal|"Last handled frame"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3496,7 +3496,7 @@ argument_list|,
 comment|/* lower, upper (unconstrained) */
 name|_
 argument_list|(
-literal|"frame to show when UpdPreview\nbutton is pressed"
+literal|"Frame to show when UpdPreview button is pressed"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3580,7 +3580,7 @@ argument_list|,
 comment|/* lower, upper (unconstrained) */
 name|_
 argument_list|(
-literal|"How to insert SrcLayer into the\nDst. Frame's Layerstack\n0 means on top i.e. in front"
+literal|"How to insert SrcLayer into the Dst. Frame's Layerstack\n0 means on top i.e. in front"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3747,7 +3747,7 @@ name|check_button
 argument_list|,
 name|_
 argument_list|(
-literal|"Clip all copied Src-Layers\nat Frame Boundaries"
+literal|"Clip all copied Src-Layers at Frame Boundaries"
 argument_list|)
 argument_list|,
 name|NULL
@@ -4299,7 +4299,7 @@ name|gap_debug
 condition|)
 name|printf
 argument_list|(
-literal|"mov_apv_callback preview_frame_nr: %d \n"
+literal|"mov_apv_callback preview_frame_nr: %d\n"
 argument_list|,
 operator|(
 name|int
@@ -10004,7 +10004,7 @@ name|option_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"How to fetch the next SrcLayer   \nat the next handled frame"
+literal|"How to fetch the next SrcLayer at the next handled frame"
 argument_list|)
 argument_list|,
 name|NULL
@@ -10167,7 +10167,7 @@ name|option_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"How to place the SrcLayer at   \nControlpoint Coordinates"
+literal|"How to place the SrcLayer at Controlpoint Coordinates"
 argument_list|)
 argument_list|,
 name|NULL
@@ -10888,7 +10888,7 @@ argument_list|,
 comment|/* lower, upper (unconstrained) */
 name|_
 argument_list|(
-literal|"Scale SrcLayer's Height\nin percent"
+literal|"Scale SrcLayer's Height in percent"
 argument_list|)
 argument_list|,
 name|NULL
@@ -10993,7 +10993,7 @@ argument_list|,
 comment|/* lower, upper (unconstrained) */
 name|_
 argument_list|(
-literal|"SrcLayer's Opacity\nin percent"
+literal|"SrcLayer's Opacity in percent"
 argument_list|)
 argument_list|,
 name|NULL
@@ -11731,7 +11731,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Add Controlpoint at end        \n(the last Point is duplicated)"
+literal|"Add Controlpoint at end\n(the last Point is duplicated)"
 argument_list|)
 argument_list|,
 name|NULL
@@ -11788,8 +11788,8 @@ name|check_button
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Path Lines and enable\n"
-literal|"pick/drag with left button\n"
+literal|"Show Path Lines and enable "
+literal|"pick/drag with left button "
 literal|"or move with right button"
 argument_list|)
 argument_list|,
@@ -11900,7 +11900,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Insert Controlpoint          \n(the current Point is duplicated)"
+literal|"Insert Controlpoint\n(the current Point is duplicated)"
 argument_list|)
 argument_list|,
 name|NULL
@@ -12383,7 +12383,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset the current Controlpoint\nto default Values"
+literal|"Reset the current Controlpoint to default Values"
 argument_list|)
 argument_list|,
 name|NULL
@@ -12462,7 +12462,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset all Controlpoints to default Values\n"
+literal|"Reset all Controlpoints to default Values "
 literal|"but dont change the path (X/Y Values)"
 argument_list|)
 argument_list|,
@@ -12563,7 +12563,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Set Rotation for all Controlpoints\n"
+literal|"Set Rotation for all Controlpoints "
 literal|"to follow the shape of the path.\n"
 literal|"(Shift: use Rotation of contolpoint 1 as offset)"
 argument_list|)
@@ -15459,7 +15459,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Cant operate with current Controlpoint\nor Keyframe settings"
+literal|"Can't operate with current Controlpoint\nor Keyframe settings"
 argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
@@ -16487,7 +16487,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-comment|/* apply the layermask       *   some transitions (especially rotate) cant operate proper on       *   layers with masks !       *   (tests with gimp-rotate resulted in trashed images,       *    even if the mask was rotated too)       */
+comment|/* apply the layermask       *   some transitions (especially rotate) can't operate proper on       *   layers with masks !       *   (tests with gimp-rotate resulted in trashed images,       *    even if the mask was rotated too)       */
 name|gimp_image_remove_layer_mask
 argument_list|(
 name|image_id
