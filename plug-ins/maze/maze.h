@@ -8,7 +8,7 @@ DECL|macro|MAZE_TITLE
 define|#
 directive|define
 name|MAZE_TITLE
-value|"Maze"
+value|N_("Maze")
 end_define
 
 begin_define
@@ -70,7 +70,7 @@ file|"glib.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon277288980103
+DECL|enum|__anon276b8d8d0103
 typedef|typedef
 enum|enum
 block|{
@@ -86,7 +86,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon277288980208
+DECL|struct|__anon276b8d8d0208
 typedef|typedef
 struct|struct
 block|{

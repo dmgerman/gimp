@@ -485,7 +485,7 @@ define|#
 directive|define
 name|MONITOR_XRESOLUTION_BLURB
 define|\
-value|"Sets the monitor's horizontal resolution, in dots per inch.  If set to " \ "0, forces the X server to be queried for both horizontal and vertical " \ "resolution information."
+value|N_("Sets the monitor's horizontal resolution, in dots per inch.  If set to " \    "0, forces the X server to be queried for both horizontal and vertical " \    "resolution information.")
 end_define
 
 begin_define
@@ -494,7 +494,7 @@ define|#
 directive|define
 name|MONITOR_YRESOLUTION_BLURB
 define|\
-value|"Sets the monitor's vertical resolution, in dots per inch.  If set to " \ "0, forces the X server to be queried for both horizontal and vertical " \ "resolution information."
+value|N_("Sets the monitor's vertical resolution, in dots per inch.  If set to " \    "0, forces the X server to be queried for both horizontal and vertical " \    "resolution information.")
 end_define
 
 begin_define

@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297aab480103
+DECL|enum|__anon28dc26380103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -171,15 +171,15 @@ block|,
 DECL|enumerator|SPHERICAL
 name|SPHERICAL
 block|,
-DECL|enumerator|SINUOSIDAL
-name|SINUOSIDAL
+DECL|enumerator|SINUSOIDAL
+name|SINUSOIDAL
 block|}
 enum|;
 end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297aab480203
+DECL|enum|__anon28dc26380203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297aab480308
+DECL|struct|__anon28dc26380308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297aab480408
+DECL|struct|__anon28dc26380408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297aab480508
+DECL|struct|__anon28dc26380508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1228,7 +1228,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"Type of map (LINEAR (0), SPHERICAL (1), SINUOSIDAL (2))"
+literal|"Type of map (LINEAR (0), SPHERICAL (1), SINUSOIDAL (2))"
 block|}
 block|}
 decl_stmt|;
@@ -2771,7 +2771,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SINUOSIDAL
+name|SINUSOIDAL
 case|:
 name|n
 operator|=
@@ -4257,10 +4257,10 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"S_inuosidal Map"
+literal|"S_inusoidal Map"
 argument_list|)
 argument_list|,
-name|SINUOSIDAL
+name|SINUSOIDAL
 argument_list|,
 name|NULL
 argument_list|,

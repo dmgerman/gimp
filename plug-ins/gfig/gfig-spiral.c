@@ -184,7 +184,7 @@ name|num_sides_dialog
 argument_list|(
 name|_
 argument_list|(
-literal|"Spiral Number of Points"
+literal|"Spiral Number of Turns"
 argument_list|)
 argument_list|,
 operator|&

@@ -53,6 +53,12 @@ directive|include
 file|"mapobject_shade.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/*************/
 end_comment
@@ -1292,7 +1298,10 @@ name|MAP_PLANE
 case|:
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Map to Plane..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1301,7 +1310,10 @@ name|MAP_SPHERE
 case|:
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Map to Sphere..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1310,7 +1322,10 @@ name|MAP_BOX
 case|:
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Map to Box..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1319,7 +1334,10 @@ name|MAP_CYLINDER
 case|:
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Map to Cylinder..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

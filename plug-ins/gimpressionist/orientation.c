@@ -425,7 +425,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"The angle of the first brush to create"
+literal|"The starting angle of the first brush to create"
 argument_list|)
 argument_list|,
 name|NULL
@@ -493,7 +493,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"The angle of the first brush to create"
+literal|"The angle span of the first brush to create"
 argument_list|)
 argument_list|,
 name|NULL

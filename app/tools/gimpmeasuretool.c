@@ -3422,7 +3422,10 @@ literal|"%.1f %s, %.2f \302\260"
 argument_list|,
 name|pixel_distance
 argument_list|,
+name|_
+argument_list|(
 literal|"pixels"
+argument_list|)
 argument_list|,
 name|pixel_angle
 argument_list|)

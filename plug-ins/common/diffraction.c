@@ -158,7 +158,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad573a50108
+DECL|struct|__anon2a9723950108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad573a50208
+DECL|struct|__anon2a9723950208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1171,7 +1171,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2ad573a50308
+DECL|struct|__anon2a9723950308
 typedef|typedef
 struct|struct
 block|{
@@ -3199,7 +3199,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Po_latization:"
+literal|"Po_larization:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
