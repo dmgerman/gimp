@@ -115,13 +115,13 @@ name|inline_pixbufs
 index|[]
 init|=
 block|{
-name|stock_wilber_16_16
+name|stock_wilber_16
 block|,
-name|stock_wilber_32_32
+name|stock_wilber_32
 block|,
-name|stock_wilber_48_48
+name|stock_wilber_48
 block|,
-name|stock_wilber_64_64
+name|stock_wilber_64
 block|}
 decl_stmt|;
 name|gimp_stock_init
@@ -2814,7 +2814,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1078aa0108
+DECL|struct|__anon29539c520108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3694,7 +3694,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1078aa0208
+DECL|struct|__anon29539c520208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
