@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e2a830108
+DECL|struct|__anon28fbe72d0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1329,7 +1329,7 @@ name|vals
 operator|->
 name|width
 argument_list|)
-operator|/
+operator|*
 operator|(
 name|w
 operator|/
