@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_browse.h"
 end_include
 
@@ -52,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon274f865c0108
+DECL|struct|__anon29fe832f0108
 typedef|typedef
 struct|struct
 block|{
