@@ -142,10 +142,7 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_width
-parameter_list|,
-name|gint
-name|preview_height
+name|preview_size
 parameter_list|,
 name|gint
 name|min_items_x

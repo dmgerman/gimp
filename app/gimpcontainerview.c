@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27588bff0103
+DECL|enum|__anon2c2448970103
 block|{
 DECL|enumerator|INSERT_ITEM
 name|INSERT_ITEM
@@ -584,13 +584,7 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|->
-name|preview_width
-operator|=
-literal|0
-expr_stmt|;
-name|view
-operator|->
-name|preview_height
+name|preview_size
 operator|=
 literal|0
 expr_stmt|;
@@ -1115,7 +1109,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_container_view_set_preview_size (GimpContainerView * view,gint width,gint height)
+DECL|function|gimp_container_view_set_preview_size (GimpContainerView * view,gint preview_size)
 name|gimp_container_view_set_preview_size
 parameter_list|(
 name|GimpContainerView
@@ -1123,10 +1117,7 @@ modifier|*
 name|view
 parameter_list|,
 name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
+name|preview_size
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1146,23 +1137,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|width
+name|preview_size
 operator|>
 literal|0
 operator|&&
-name|width
-operator|<=
-literal|256
-comment|/* FIXME: 64 */
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|height
-operator|>
-literal|0
-operator|&&
-name|height
+name|preview_size
 operator|<=
 literal|256
 comment|/* FIXME: 64 */
@@ -1170,15 +1149,9 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|->
-name|preview_width
+name|preview_size
 operator|=
-name|width
-expr_stmt|;
-name|view
-operator|->
-name|preview_height
-operator|=
-name|height
+name|preview_size
 expr_stmt|;
 name|gtk_signal_emit
 argument_list|(

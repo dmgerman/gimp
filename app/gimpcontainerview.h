@@ -116,13 +116,9 @@ name|GHashTable
 modifier|*
 name|hash_table
 decl_stmt|;
-DECL|member|preview_width
+DECL|member|preview_size
 name|gint
-name|preview_width
-decl_stmt|;
-DECL|member|preview_height
-name|gint
-name|preview_height
+name|preview_size
 decl_stmt|;
 block|}
 struct|;
@@ -270,10 +266,7 @@ modifier|*
 name|view
 parameter_list|,
 name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
+name|preview_size
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -749,7 +749,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e69fa0103
+DECL|enum|__anon2c7c701f0103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -16669,6 +16669,24 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|w
+operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
+name|width
+argument_list|)
+expr_stmt|;
+name|h
+operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
+name|height
 argument_list|)
 expr_stmt|;
 name|x1
