@@ -1439,7 +1439,13 @@ condition|(
 name|no_interface
 operator|==
 name|FALSE
-operator|&&
+condition|)
+block|{
+name|get_standard_colormaps
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
 name|no_splash
 operator|==
 name|FALSE
@@ -1703,6 +1709,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
@@ -2008,9 +2015,6 @@ operator|==
 name|FALSE
 condition|)
 block|{
-name|get_standard_colormaps
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|no_splash_image
