@@ -1786,7 +1786,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2286,7 +2286,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Hue"
+literal|"Hue:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2566,7 +2566,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Lightness"
+literal|"Lightness:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2846,7 +2846,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Saturation"
+literal|"Saturation:"
 argument_list|)
 argument_list|)
 expr_stmt|;

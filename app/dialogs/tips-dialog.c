@@ -762,7 +762,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show tip next time"
+literal|"Show tip next time GIMP starts"
 argument_list|)
 argument_list|)
 expr_stmt|;

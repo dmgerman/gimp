@@ -222,7 +222,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289f97d00103
+DECL|enum|__anon27af0e180103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -781,7 +781,7 @@ DECL|variable|default_width
 name|gint
 name|default_width
 init|=
-literal|983
+literal|256
 decl_stmt|;
 end_decl_stmt
 
@@ -790,13 +790,9 @@ DECL|variable|default_height
 name|gint
 name|default_height
 init|=
-literal|857
+literal|256
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/* temporary default size increase to stress test stuff.  -- austin 7/11/99 */
-end_comment
 
 begin_decl_stmt
 DECL|variable|default_type
@@ -932,7 +928,7 @@ DECL|variable|global_paint_options
 name|gboolean
 name|global_paint_options
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -1000,7 +996,7 @@ DECL|variable|info_window_follows_mouse
 name|gboolean
 name|info_window_follows_mouse
 init|=
-name|FALSE
+name|TRUE
 decl_stmt|;
 end_decl_stmt
 

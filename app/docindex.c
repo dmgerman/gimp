@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ebf8980108
+DECL|struct|__anon2b61de480108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ebf8980208
+DECL|struct|__anon2b61de480208
 block|{
 DECL|member|boole
 name|gboolean
@@ -484,7 +484,7 @@ name|N_
 argument_list|(
 literal|"Open the selected entry\n"
 literal|"<Shift> Raise window if already open\n"
-literal|"<Control> Load Image dialog"
+literal|"<Ctrl> Load Image dialog"
 argument_list|)
 block|,
 name|NULL
