@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b61c9280103
+DECL|enum|__anon2a2e4f520103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -863,6 +863,18 @@ name|vectors
 argument_list|)
 argument_list|,
 name|gimage
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|gimage
+operator|->
+name|width
+argument_list|,
+name|gimage
+operator|->
+name|height
 argument_list|,
 name|name
 argument_list|)

@@ -626,10 +626,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
 name|GimpFlipOptions
 modifier|*
 name|options
