@@ -506,7 +506,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c2cad40103
+DECL|enum|__anon28a81f830103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c2cad40203
+DECL|enum|__anon28a81f830203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40308
+DECL|struct|__anon28a81f830308
 block|{
 DECL|member|name
 name|gchar
@@ -695,7 +695,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40408
+DECL|struct|__anon28a81f830408
 block|{
 DECL|member|fp
 name|FILE
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c2cad40503
+DECL|enum|__anon28a81f830503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -743,7 +743,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40608
+DECL|struct|__anon28a81f830608
 block|{
 DECL|member|init
 name|gint
@@ -765,7 +765,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27c2cad40708
+DECL|struct|__anon28a81f830708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -839,7 +839,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40808
+DECL|struct|__anon28a81f830808
 block|{
 DECL|member|init
 name|gint
@@ -909,7 +909,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40908
+DECL|struct|__anon28a81f830908
 block|{
 DECL|member|x0
 name|gdouble
@@ -936,7 +936,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40a08
+DECL|struct|__anon28a81f830a08
 block|{
 DECL|member|init
 name|gint
@@ -1106,7 +1106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40b08
+DECL|struct|__anon28a81f830b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1133,7 +1133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40c08
+DECL|struct|__anon28a81f830c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1174,7 +1174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40d08
+DECL|struct|__anon28a81f830d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1400,7 +1400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40e08
+DECL|struct|__anon28a81f830e08
 block|{
 DECL|member|tag
 name|gint
@@ -1477,7 +1477,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad40f08
+DECL|struct|__anon28a81f830f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1535,7 +1535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2cad41008
+DECL|struct|__anon28a81f831008
 block|{
 DECL|member|run
 name|gint
@@ -4948,18 +4948,55 @@ operator|==
 name|NULL
 condition|)
 block|{
+name|gchar
+modifier|*
+name|gimprc
+init|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"gimprc"
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|path
+init|=
+name|gimp_strescape
+argument_list|(
+literal|"${gimp_dir}"
+name|G_DIR_SEPARATOR_S
+literal|"gflare"
+name|G_SEARCHPATH_SEPARATOR_S
+literal|"${gimp_data_dir}"
+name|G_DIR_SEPARATOR_S
+literal|"gflare"
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No gflare-path in gimprc:\n\n"
+literal|"No gflare-path in gimprc:\n"
 literal|"You need to add an entry like\n"
-literal|"(gflare-path \"${gimp_dir}/gflare:${gimp_data_dir}/gflare\")\n"
-literal|"to your %s/gimprc file."
+literal|"(gflare-path \"%s\")\n"
+literal|"to your %s file."
 argument_list|)
 argument_list|,
-name|gimp_directory
-argument_list|()
+name|path
+argument_list|,
+name|gimprc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gimprc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
@@ -7666,14 +7703,46 @@ condition|(
 operator|!
 name|message_ok
 condition|)
+block|{
+name|gchar
+modifier|*
+name|gimprc
+init|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"gimprc"
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|gflare_path
+init|=
+name|gimp_strescape
+argument_list|(
+literal|"${gimp_dir}"
+name|G_DIR_SEPARATOR_S
+literal|"gflare"
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|dir
+init|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"gflare"
+argument_list|)
+decl_stmt|;
 name|g_message
 argument_list|(
 name|_
 argument_list|(
 literal|"GFlare `%s' is not saved.\n"
-literal|"If you add a new entry in gimprc, like:\n"
-literal|"(gflare-path \"${gimp_dir}/gflare\")\n"
-literal|"and make a directory %s/gflare,\n"
+literal|"If you add a new entry in %s, like:\n"
+literal|"(gflare-path \"%s\")\n"
+literal|"and make a directory %s,\n"
 literal|"then you can save your own GFlare's into that directory."
 argument_list|)
 argument_list|,
@@ -7681,14 +7750,33 @@ name|gflare
 operator|->
 name|name
 argument_list|,
-name|gimp_directory
-argument_list|()
+name|gimprc
+argument_list|,
+name|gflare_path
+argument_list|,
+name|dir
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gimprc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gflare_path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|dir
 argument_list|)
 expr_stmt|;
 name|message_ok
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 return|return;
 block|}
 name|path
@@ -9287,7 +9375,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon27c2cad41108
+DECL|struct|__anon28a81f831108
 specifier|static
 struct|struct
 block|{
@@ -15866,7 +15954,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon27c2cad41208
+DECL|struct|__anon28a81f831208
 block|{
 DECL|member|label
 name|gchar

@@ -730,7 +730,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_parse:  * @path: A list of directories separated by #G_SEARCHPATH_SEPARATOR.  * @max_paths: The maximum number of directories to return.  * @check: #TRUE if you want the directories to be checked.  * @check_failed: Returns a #GList of path elements for which the  *                check failed.  *  * Returns: A #GList of all directories in @path.  *  */
+comment|/**  * gimp_path_parse:  * @path: A list of directories separated by #G_SEARCHPATH_SEPARATOR.  * @max_paths: The maximum number of directories to return.  * @check: #TRUE if you want the directories to be checked.  * @check_failed: Returns a #GList of path elements for which the  *                check failed. Each list element is guaranteed  *		  to end with a #G_PATH_SEPARATOR.  *  * Returns: A #GList of all directories in @path. Each list element  *	    is guaranteed to end with a #G_PATH_SEPARATOR.  */
 end_comment
 
 begin_function
@@ -1274,9 +1274,12 @@ argument_list|)
 control|)
 block|{
 comment|/*  check if directory exists  */
-name|err
-operator|=
-name|stat
+comment|/* ugly hack to handle paths with an extra G_DIR_SEPARATOR        * attached. The stat() in MSVCRT doesn't like that.        */
+name|gchar
+modifier|*
+name|dir
+init|=
+name|g_strdup
 argument_list|(
 operator|(
 name|gchar
@@ -1285,9 +1288,72 @@ operator|)
 name|list
 operator|->
 name|data
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|p
+init|=
+name|dir
+decl_stmt|;
+name|gint
+name|pl
+decl_stmt|;
+if|if
+condition|(
+name|g_path_is_absolute
+condition|)
+name|p
+operator|=
+name|g_path_skip_root
+argument_list|(
+name|dir
+argument_list|)
+expr_stmt|;
+name|pl
+operator|=
+name|strlen
+argument_list|(
+name|p
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|pl
+operator|>
+literal|0
+operator|&&
+name|p
+index|[
+name|pl
+operator|-
+literal|1
+index|]
+operator|==
+name|G_DIR_SEPARATOR
+condition|)
+name|p
+index|[
+name|pl
+operator|-
+literal|1
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
+name|err
+operator|=
+name|stat
+argument_list|(
+name|dir
 argument_list|,
 operator|&
 name|filestat
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|dir
 argument_list|)
 expr_stmt|;
 comment|/*  this is tricky:        *  if a file is e.g. owned by the current user but not user-writable,        *  the user has no permission to write to the file regardless        *  of his group's or other's write permissions        */

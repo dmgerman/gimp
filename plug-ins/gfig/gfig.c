@@ -1169,7 +1169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0103
+DECL|enum|__anon27552b650103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1221,7 +1221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0203
+DECL|enum|__anon27552b650203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1242,7 +1242,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0303
+DECL|enum|__anon27552b650303
 block|{
 DECL|enumerator|SINGLE_LAYER
 name|SINGLE_LAYER
@@ -1263,7 +1263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0403
+DECL|enum|__anon27552b650403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1287,7 +1287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0503
+DECL|enum|__anon27552b650503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1308,7 +1308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0603
+DECL|enum|__anon27552b650603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1476,7 +1476,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41b99e0708
+DECL|struct|__anon27552b650708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1515,7 +1515,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41b99e0808
+DECL|struct|__anon27552b650808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1564,7 +1564,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41b99e0908
+DECL|struct|__anon27552b650908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1735,7 +1735,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0a03
+DECL|enum|__anon27552b650a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1765,7 +1765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0b03
+DECL|enum|__anon27552b650b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1781,7 +1781,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0c03
+DECL|enum|__anon27552b650c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1806,7 +1806,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41b99e0d03
+DECL|enum|__anon27552b650d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -4425,9 +4425,6 @@ operator|==
 name|NULL
 condition|)
 block|{
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
 name|gchar
 modifier|*
 name|gimprc
@@ -4437,12 +4434,34 @@ argument_list|(
 literal|"gimprc"
 argument_list|)
 decl_stmt|;
+name|gchar
+modifier|*
+name|path
+init|=
+name|gimp_strescape
+argument_list|(
+literal|"${gimp_dir}"
+name|G_DIR_SEPARATOR_S
+literal|"gfig"
+name|G_SEARCHPATH_SEPARATOR_S
+literal|"${gimp_data_dir}"
+name|G_DIR_SEPARATOR_S
+literal|"gfig"
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
 name|g_message
 argument_list|(
-literal|"No gfig-path in gimprc:\n\n"
+name|_
+argument_list|(
+literal|"No gfig-path in gimprc:\n"
 literal|"You need to add an entry like\n"
-literal|"(gfig-path \"${gimp_dir}/gfig:${gimp_data_dir}/gfig\n"
-literal|"to your %s file\n"
+literal|"(gfig-path \"%s\")\n"
+literal|"to your %s file."
+argument_list|)
+argument_list|,
+name|path
 argument_list|,
 name|gimprc
 argument_list|)
@@ -4452,15 +4471,11 @@ argument_list|(
 name|gimprc
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|g_message
+name|g_free
 argument_list|(
-literal|"No gfig-path in gimprc???\n"
+name|path
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gimp_destroy_params
 argument_list|(
 name|return_vals

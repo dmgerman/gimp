@@ -68,12 +68,23 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+end_ifndef
+
 begin_define
 DECL|macro|DEBUG_HELP
 define|#
 directive|define
 name|DEBUG_HELP
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/*  local function prototypes  */

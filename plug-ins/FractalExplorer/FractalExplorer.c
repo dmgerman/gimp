@@ -4937,18 +4937,55 @@ operator|==
 name|NULL
 condition|)
 block|{
+name|gchar
+modifier|*
+name|gimprc
+init|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"gimprc"
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|path
+init|=
+name|gimp_strescape
+argument_list|(
+literal|"${gimp_dir}"
+name|G_DIR_SEPARATOR_S
+literal|"fractalexplorer"
+name|G_SEARCHPATH_SEPARATOR_S
+literal|"${gimp_data_dir}"
+name|G_DIR_SEPARATOR_S
+literal|"fractalexplorer"
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
 name|g_message
 argument_list|(
 name|_
 argument_list|(
 literal|"No fractalexplorer-path in gimprc:\n"
 literal|"You need to add an entry like\n"
-literal|"(fractalexplorer-path \"${gimp_dir}/fractalexplorer:${gimp_data_dir}/fractalexplorer\")\n"
-literal|"to your %s/gimprc file."
+literal|"(fractalexplorer-path \"%s\")\n"
+literal|"to your %s file."
 argument_list|)
 argument_list|,
-name|gimp_directory
-argument_list|()
+name|path
+argument_list|,
+name|gimprc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gimprc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
