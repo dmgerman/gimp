@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  A Bison parser, made from imap_cern.y  by  GNU Bison version 1.25   */
+comment|/*  A Bison parser, made from imap_cern.y     by GNU Bison version 1.28  */
 end_comment
 
 begin_define
@@ -77,7 +77,7 @@ DECL|macro|RECTANGLE
 define|#
 directive|define
 name|RECTANGLE
-value|258
+value|257
 end_define
 
 begin_define
@@ -85,7 +85,7 @@ DECL|macro|POLYGON
 define|#
 directive|define
 name|POLYGON
-value|259
+value|258
 end_define
 
 begin_define
@@ -93,7 +93,7 @@ DECL|macro|CIRCLE
 define|#
 directive|define
 name|CIRCLE
-value|260
+value|259
 end_define
 
 begin_define
@@ -101,7 +101,7 @@ DECL|macro|DEFAULT
 define|#
 directive|define
 name|DEFAULT
-value|261
+value|260
 end_define
 
 begin_define
@@ -109,7 +109,7 @@ DECL|macro|AUTHOR
 define|#
 directive|define
 name|AUTHOR
-value|262
+value|261
 end_define
 
 begin_define
@@ -117,7 +117,7 @@ DECL|macro|DESCRIPTION
 define|#
 directive|define
 name|DESCRIPTION
-value|263
+value|262
 end_define
 
 begin_define
@@ -125,7 +125,7 @@ DECL|macro|BEGIN_COMMENT
 define|#
 directive|define
 name|BEGIN_COMMENT
-value|264
+value|263
 end_define
 
 begin_define
@@ -133,7 +133,7 @@ DECL|macro|FLOAT
 define|#
 directive|define
 name|FLOAT
-value|265
+value|264
 end_define
 
 begin_define
@@ -141,7 +141,7 @@ DECL|macro|COMMENT
 define|#
 directive|define
 name|COMMENT
-value|266
+value|265
 end_define
 
 begin_define
@@ -149,7 +149,7 @@ DECL|macro|LINK
 define|#
 directive|define
 name|LINK
-value|267
+value|266
 end_define
 
 begin_line
@@ -256,7 +256,7 @@ file|"imap_cern.y"
 end_line
 
 begin_typedef
-DECL|union|__anon2796e5fe010a
+DECL|union|__anon2adfef31010a
 typedef|typedef
 union|union
 block|{
@@ -348,7 +348,7 @@ name|YYTRANSLATE
 parameter_list|(
 name|x
 parameter_list|)
-value|((unsigned)(x)<= 267 ? yytranslate[x] : 30)
+value|((unsigned)(x)<= 266 ? yytranslate[x] : 30)
 end_define
 
 begin_decl_stmt
@@ -873,8 +873,6 @@ block|,
 literal|2
 block|,
 literal|1
-block|,
-literal|2
 block|,
 literal|3
 block|,
@@ -1958,28 +1956,65 @@ begin_line
 line|#
 directive|line
 number|3
-file|"bison.simple"
+file|"/usr/share/misc/bison.simple"
 end_line
 
 begin_comment
-comment|/* Skeleton output parser for bison,    Copyright (C) 1984, 1989, 1990 Free Software Foundation, Inc.     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2, or (at your option)    any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/* This file comes from bison-1.28.  */
+end_comment
+
+begin_comment
+comment|/* Skeleton output parser for bison,    Copyright (C) 1984, 1989, 1990 Free Software Foundation, Inc.     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2, or (at your option)    any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 59 Temple Place - Suite 330,    Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
 comment|/* As a special exception, when this file is copied by Bison into a    Bison output file, you may use that output file without restriction.    This special exception was added by the Free Software Foundation    in version 1.24 of Bison.  */
 end_comment
 
+begin_comment
+comment|/* This is the parser code that is written into each bison parser   when the %semantic_parser declaration is not specified in the grammar.   It was written by Richard Stallman by simplifying the hairy parser   used when %semantic_parser is specified.  */
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|alloca
+name|YYSTACK_USE_ALLOCA
 end_ifndef
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|alloca
+end_ifdef
+
+begin_define
+DECL|macro|YYSTACK_USE_ALLOCA
+define|#
+directive|define
+name|YYSTACK_USE_ALLOCA
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* alloca not defined */
+end_comment
 
 begin_ifdef
 ifdef|#
 directive|ifdef
 name|__GNUC__
 end_ifdef
+
+begin_define
+DECL|macro|YYSTACK_USE_ALLOCA
+define|#
+directive|define
+name|YYSTACK_USE_ALLOCA
+end_define
 
 begin_define
 DECL|macro|alloca
@@ -2028,7 +2063,26 @@ name|defined
 argument_list|(
 name|__sgi
 argument_list|)
+operator|||
+operator|(
+name|defined
+argument_list|(
+name|__sun
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|__i386
+argument_list|)
+operator|)
 end_if
+
+begin_define
+DECL|macro|YYSTACK_USE_ALLOCA
+define|#
+directive|define
+name|YYSTACK_USE_ALLOCA
+end_define
 
 begin_include
 include|#
@@ -2045,13 +2099,28 @@ begin_comment
 comment|/* not sparc */
 end_comment
 
+begin_comment
+comment|/* We think this test detects Watcom and Microsoft C.  */
+end_comment
+
+begin_comment
+comment|/* This used to test MSDOS, but that is a bad idea    since that symbol is in the user namespace.  */
+end_comment
+
 begin_if
 if|#
 directive|if
+operator|(
 name|defined
 argument_list|(
-name|MSDOS
+name|_MSDOS
 argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|_MSDOS_
+argument_list|)
+operator|)
 operator|&&
 operator|!
 name|defined
@@ -2060,11 +2129,26 @@ name|__TURBOC__
 argument_list|)
 end_if
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_comment
+comment|/* No need for malloc.h, which pollutes the namespace; 	 instead, just don't use alloca.  */
+end_comment
+
 begin_include
 include|#
 directive|include
 file|<malloc.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_else
 else|#
@@ -2084,11 +2168,13 @@ name|_AIX
 argument_list|)
 end_if
 
-begin_include
-include|#
-directive|include
-file|<malloc.h>
-end_include
+begin_comment
+comment|/* I don't know what this was needed for, but it pollutes the namespace.    So I turned it off.   rms, 2 May 1997.  */
+end_comment
+
+begin_comment
+comment|/* #include<malloc.h>  */
+end_comment
 
 begin_pragma
 pragma|#
@@ -2096,14 +2182,27 @@ directive|pragma
 name|alloca
 end_pragma
 
+begin_define
+DECL|macro|YYSTACK_USE_ALLOCA
+define|#
+directive|define
+name|YYSTACK_USE_ALLOCA
+end_define
+
 begin_else
 else|#
 directive|else
 end_else
 
 begin_comment
-comment|/* not MSDOS, __TURBOC__, or _AIX */
+comment|/* not MSDOS, or __TURBOC__, or _AIX */
 end_comment
+
+begin_if
+if|#
+directive|if
+literal|0
+end_if
 
 begin_ifdef
 ifdef|#
@@ -2111,56 +2210,22 @@ directive|ifdef
 name|__hpux
 end_ifdef
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-name|void
-modifier|*
-name|alloca
-parameter_list|(
-name|unsigned
-name|int
-parameter_list|)
-function_decl|;
-block|}
-end_extern
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_comment
-comment|/* not __cplusplus */
+comment|/* haible@ilog.fr says this works for HPUX 9.05 and up, 		 and on HPUX 10.  Eventually we can turn this on.  */
 end_comment
 
-begin_function_decl
-name|void
-modifier|*
+begin_define
+define|#
+directive|define
+name|YYSTACK_USE_ALLOCA
+end_define
+
+begin_define
+define|#
+directive|define
 name|alloca
-parameter_list|()
-function_decl|;
-end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* not __cplusplus */
-end_comment
+value|__builtin_alloca
+end_define
 
 begin_endif
 endif|#
@@ -2170,6 +2235,11 @@ end_endif
 begin_comment
 comment|/* __hpux */
 end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#
@@ -2195,7 +2265,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* not sparc.  */
+comment|/* not sparc */
 end_comment
 
 begin_endif
@@ -2204,7 +2274,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* not GNU C.  */
+comment|/* not GNU C */
 end_comment
 
 begin_endif
@@ -2213,12 +2283,49 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* alloca not defined.  */
+comment|/* alloca not defined */
 end_comment
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
-comment|/* This is the parser code that is written into each bison parser   when the %semantic_parser declaration is not specified in the grammar.   It was written by Richard Stallman by simplifying the hairy parser   used when %semantic_parser is specified.  */
+comment|/* YYSTACK_USE_ALLOCA not defined */
 end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|YYSTACK_USE_ALLOCA
+end_ifdef
+
+begin_define
+DECL|macro|YYSTACK_ALLOC
+define|#
+directive|define
+name|YYSTACK_ALLOC
+value|alloca
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|YYSTACK_ALLOC
+define|#
+directive|define
+name|YYSTACK_ALLOC
+value|malloc
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* Note: there must be only one dollar sign in this file.    It is replaced by the list of actions, each action    as one case of the switch.  */
@@ -2261,7 +2368,7 @@ DECL|macro|YYACCEPT
 define|#
 directive|define
 name|YYACCEPT
-value|return(0)
+value|goto yyacceptlab
 end_define
 
 begin_define
@@ -2269,7 +2376,7 @@ DECL|macro|YYABORT
 define|#
 directive|define
 name|YYABORT
-value|return(1)
+value|goto yyabortlab
 end_define
 
 begin_define
@@ -2629,32 +2736,12 @@ endif|#
 directive|endif
 end_endif
 
-begin_comment
-comment|/* Prevent warning if -Wstrict-prototypes.  */
-end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_function_decl
-name|int
-name|yyparse
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_escape
 end_escape
+
+begin_comment
+comment|/* Define __yy_memcpy.  Note that the size argument    should be passed with type unsigned int, because that is what the non-GCC    definitions require.  With GCC, __builtin_memcpy takes an arg    of type size_t, but it can handle unsigned int.  */
+end_comment
 
 begin_if
 if|#
@@ -2722,6 +2809,7 @@ name|char
 modifier|*
 name|from
 decl_stmt|;
+name|unsigned
 name|int
 name|count
 decl_stmt|;
@@ -2780,7 +2868,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|__yy_memcpy (char * to,char * from,int count)
+DECL|function|__yy_memcpy (char * to,char * from,unsigned int count)
 name|__yy_memcpy
 parameter_list|(
 name|char
@@ -2791,6 +2879,7 @@ name|char
 modifier|*
 name|from
 parameter_list|,
+name|unsigned
 name|int
 name|count
 parameter_list|)
@@ -2798,16 +2887,16 @@ block|{
 specifier|register
 name|char
 modifier|*
-name|f
+name|t
 init|=
-name|from
+name|to
 decl_stmt|;
 specifier|register
 name|char
 modifier|*
-name|t
+name|f
 init|=
-name|to
+name|from
 decl_stmt|;
 specifier|register
 name|int
@@ -2849,8 +2938,8 @@ end_escape
 begin_line
 line|#
 directive|line
-number|196
-file|"bison.simple"
+number|217
+file|"/usr/share/misc/bison.simple"
 end_line
 
 begin_comment
@@ -2949,6 +3038,56 @@ end_endif
 begin_comment
 comment|/* not YYPARSE_PARAM */
 end_comment
+
+begin_comment
+comment|/* Prevent warning if -Wstrict-prototypes.  */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|YYPARSE_PARAM
+end_ifdef
+
+begin_function_decl
+name|int
+name|yyparse
+parameter_list|(
+name|void
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_function_decl
+name|int
+name|yyparse
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|int
@@ -3053,6 +3192,11 @@ name|int
 name|yystacksize
 init|=
 name|YYINITDEPTH
+decl_stmt|;
+name|int
+name|yyfree_stacks
+init|=
+literal|0
 decl_stmt|;
 ifdef|#
 directive|ifdef
@@ -3312,6 +3456,32 @@ argument_list|(
 literal|"parser stack overflow"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|yyfree_stacks
+condition|)
+block|{
+name|free
+argument_list|(
+name|yyss
+argument_list|)
+expr_stmt|;
+name|free
+argument_list|(
+name|yyvs
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|YYLSP_NEEDED
+name|free
+argument_list|(
+name|yyls
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+block|}
 return|return
 literal|2
 return|;
@@ -3330,13 +3500,22 @@ name|yystacksize
 operator|=
 name|YYMAXDEPTH
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|YYSTACK_USE_ALLOCA
+name|yyfree_stacks
+operator|=
+literal|1
+expr_stmt|;
+endif|#
+directive|endif
 name|yyss
 operator|=
 operator|(
 name|short
 operator|*
 operator|)
-name|alloca
+name|YYSTACK_ALLOC
 argument_list|(
 name|yystacksize
 operator|*
@@ -3363,6 +3542,10 @@ name|yyss1
 argument_list|,
 name|size
 operator|*
+operator|(
+name|unsigned
+name|int
+operator|)
 sizeof|sizeof
 argument_list|(
 operator|*
@@ -3376,7 +3559,7 @@ operator|(
 name|YYSTYPE
 operator|*
 operator|)
-name|alloca
+name|YYSTACK_ALLOC
 argument_list|(
 name|yystacksize
 operator|*
@@ -3403,6 +3586,10 @@ name|yyvs1
 argument_list|,
 name|size
 operator|*
+operator|(
+name|unsigned
+name|int
+operator|)
 sizeof|sizeof
 argument_list|(
 operator|*
@@ -3419,7 +3606,7 @@ operator|(
 name|YYLTYPE
 operator|*
 operator|)
-name|alloca
+name|YYSTACK_ALLOC
 argument_list|(
 name|yystacksize
 operator|*
@@ -3446,6 +3633,10 @@ name|yyls1
 argument_list|,
 name|size
 operator|*
+operator|(
+name|unsigned
+name|int
+operator|)
 sizeof|sizeof
 argument_list|(
 operator|*
@@ -4410,8 +4601,8 @@ block|}
 comment|/* the action file gets copied in in place of this dollarsign */
 line|#
 directive|line
-number|498
-file|"bison.simple"
+number|543
+file|"/usr/share/misc/bison.simple"
 name|yyvsp
 operator|-=
 name|yylen
@@ -5184,6 +5375,70 @@ expr_stmt|;
 goto|goto
 name|yynewstate
 goto|;
+name|yyacceptlab
+label|:
+comment|/* YYACCEPT comes here.  */
+if|if
+condition|(
+name|yyfree_stacks
+condition|)
+block|{
+name|free
+argument_list|(
+name|yyss
+argument_list|)
+expr_stmt|;
+name|free
+argument_list|(
+name|yyvs
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|YYLSP_NEEDED
+name|free
+argument_list|(
+name|yyls
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+block|}
+return|return
+literal|0
+return|;
+name|yyabortlab
+label|:
+comment|/* YYABORT comes here.  */
+if|if
+condition|(
+name|yyfree_stacks
+condition|)
+block|{
+name|free
+argument_list|(
+name|yyss
+argument_list|)
+expr_stmt|;
+name|free
+argument_list|(
+name|yyvs
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|YYLSP_NEEDED
+name|free
+argument_list|(
+name|yyls
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+block|}
+return|return
+literal|1
+return|;
 block|}
 end_function
 

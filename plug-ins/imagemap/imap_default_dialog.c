@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -385,6 +391,14 @@ name|dialog
 argument_list|)
 argument_list|,
 name|title
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_set_icon
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

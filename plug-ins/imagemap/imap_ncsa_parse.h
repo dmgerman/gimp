@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_typedef
-DECL|union|__anon2c6e0fd3010a
+DECL|union|__anon2c505c4a010a
 typedef|typedef
 union|union
 block|{
@@ -30,7 +30,7 @@ DECL|macro|RECTANGLE
 define|#
 directive|define
 name|RECTANGLE
-value|258
+value|257
 end_define
 
 begin_define
@@ -38,7 +38,7 @@ DECL|macro|POLYGON
 define|#
 directive|define
 name|POLYGON
-value|259
+value|258
 end_define
 
 begin_define
@@ -46,7 +46,7 @@ DECL|macro|CIRCLE
 define|#
 directive|define
 name|CIRCLE
-value|260
+value|259
 end_define
 
 begin_define
@@ -54,7 +54,7 @@ DECL|macro|DEFAULT
 define|#
 directive|define
 name|DEFAULT
-value|261
+value|260
 end_define
 
 begin_define
@@ -62,7 +62,7 @@ DECL|macro|AUTHOR
 define|#
 directive|define
 name|AUTHOR
-value|262
+value|261
 end_define
 
 begin_define
@@ -70,7 +70,7 @@ DECL|macro|TITLE
 define|#
 directive|define
 name|TITLE
-value|263
+value|262
 end_define
 
 begin_define
@@ -78,7 +78,7 @@ DECL|macro|DESCRIPTION
 define|#
 directive|define
 name|DESCRIPTION
-value|264
+value|263
 end_define
 
 begin_define
@@ -86,7 +86,7 @@ DECL|macro|BEGIN_COMMENT
 define|#
 directive|define
 name|BEGIN_COMMENT
-value|265
+value|264
 end_define
 
 begin_define
@@ -94,7 +94,7 @@ DECL|macro|FLOAT
 define|#
 directive|define
 name|FLOAT
-value|266
+value|265
 end_define
 
 begin_define
@@ -102,7 +102,7 @@ DECL|macro|LINK
 define|#
 directive|define
 name|LINK
-value|267
+value|266
 end_define
 
 begin_define
@@ -110,7 +110,7 @@ DECL|macro|COMMENT
 define|#
 directive|define
 name|COMMENT
-value|268
+value|267
 end_define
 
 begin_decl_stmt

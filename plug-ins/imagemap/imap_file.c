@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/types.h>
 end_include
 
@@ -18,7 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -31,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"imap_file.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -167,6 +173,14 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Load Imagemap"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_set_icon
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -444,6 +458,14 @@ literal|"Save Imagemap"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_set_icon
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
@@ -501,7 +523,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b1ea9740108
+DECL|struct|__anon2c0c2f2c0108
 typedef|typedef
 struct|struct
 block|{

@@ -5876,6 +5876,15 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_help_connect_help_accel
+argument_list|(
+name|dlg
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"filters/imagemap.html"
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
