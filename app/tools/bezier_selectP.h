@@ -111,7 +111,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon27e0e4280103
+DECL|enum|__anon2c400cf00103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -250,11 +250,6 @@ modifier|*
 name|scanlines
 decl_stmt|;
 comment|/* used in converting a curve        */
-DECL|member|extend
-name|gint
-name|extend
-decl_stmt|;
-comment|/* moved here from the SelectionOptions 			       * structure (whatever it's used for...) */
 block|}
 struct|;
 end_struct
@@ -266,7 +261,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0e4280208
+DECL|struct|__anon2c400cf00208
 block|{
 DECL|member|count
 name|gint

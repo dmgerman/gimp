@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a745400108
+DECL|struct|__anon2bdb5cc80108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a745400208
+DECL|struct|__anon2bdb5cc80208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a745400308
+DECL|struct|__anon2bdb5cc80308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -1886,13 +1886,6 @@ name|scanlines
 operator|=
 name|NULL
 expr_stmt|;
-name|bezier_sel
-operator|->
-name|extend
-operator|=
-literal|0
-expr_stmt|;
-comment|/* ??? */
 block|}
 end_function
 
@@ -3499,22 +3492,6 @@ name|grab_pointer
 operator|=
 name|FALSE
 expr_stmt|;
-if|if
-condition|(
-name|bezier_sel
-operator|->
-name|extend
-condition|)
-block|{
-name|tool
-operator|->
-name|gdisp
-operator|=
-name|gdisp
-expr_stmt|;
-block|}
-else|else
-block|{
 comment|/*  If the tool was being used in another image...reset it  */
 if|if
 condition|(
@@ -3545,7 +3522,6 @@ argument_list|(
 name|bezier_sel
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|gdisplay_untransform_coords
 argument_list|(
@@ -11032,7 +11008,7 @@ name|gint
 name|replace
 parameter_list|)
 block|{
-comment|/*  If we're antialiased, then recompute the    *  mask...    */
+comment|/*  If we're antialiased, then recompute the mask...    */
 if|if
 condition|(
 name|bezier_options
@@ -11052,14 +11028,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*   if (!bezier_sel->extend) */
-comment|/*     { */
-comment|/*       tool->state = INACTIVE; */
-comment|/*       bezier_sel->draw = BEZIER_DRAW_CURVE; */
-comment|/*       draw_core_resume (bezier_sel->core, tool); */
-comment|/*       bezier_sel->draw = 0; */
-comment|/*       draw_core_stop (bezier_sel->core, tool); */
-comment|/*     } */
 if|if
 condition|(
 name|replace
@@ -11227,9 +11195,7 @@ decl_stmt|;
 name|gdouble
 name|ratio
 decl_stmt|;
-comment|/* construct the geometry matrix from the segment */
-comment|/* assumes that a valid segment containing 4 points is passed in */
-comment|/* ALT ignore invalid segments since we might be working on an open curve */
+comment|/* construct the geometry matrix from the segment assumes that a    * valid segment containing 4 points is passed in ALT ignore invalid    * segments since we might be working on an open curve    */
 name|points
 operator|=
 name|pt
@@ -11397,8 +11363,7 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-comment|/* subdivide the curve n times */
-comment|/* n can be adjusted to give a finer or coarser curve */
+comment|/* subdivide the curve n times n can be adjusted to give a finer or    * coarser curve    */
 name|d
 operator|=
 literal|1.0
@@ -11419,7 +11384,7 @@ name|d
 operator|*
 name|d
 expr_stmt|;
-comment|/* construct a temporary matrix for determining the forward diffencing deltas */
+comment|/* construct a temporary matrix for determining the forward    * diffencing deltas    */
 name|tmp2
 index|[
 literal|0
@@ -11856,7 +11821,7 @@ name|newy
 operator|)
 condition|)
 break|break;
-comment|/* to Implement :  		 keep each time the nearest point of the curve from where we've clicked 		 in the case where we haven't click exactely on the curve. 	      */
+comment|/* To Implement: keep each time the nearest point of the 	       * curve from where we've clicked in the case where we 	       * haven't click exactely on the curve. 	       */
 block|}
 block|}
 name|lastx
@@ -12778,17 +12743,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_stack_points_aux (GdkPoint * points,int start,int end,gdouble error,BezierRenderPnts * rpnts)
+DECL|function|bezier_stack_points_aux (GdkPoint * points,gint start,gint end,gdouble error,BezierRenderPnts * rpnts)
 name|bezier_stack_points_aux
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|points
 parameter_list|,
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|end
 parameter_list|,
 name|gdouble
