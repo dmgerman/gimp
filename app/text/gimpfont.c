@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e5e170103
+DECL|enum|__anon27590b250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -763,14 +763,15 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+name|g_return_val_if_fail
+argument_list|(
 name|font_desc
-condition|)
-return|return
+operator|!=
+name|NULL
+argument_list|,
 name|FALSE
-return|;
+argument_list|)
+expr_stmt|;
 name|pango_font_description_set_size
 argument_list|(
 name|font_desc
@@ -1028,14 +1029,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|font_desc
-condition|)
-return|return
-name|NULL
-return|;
 name|pango_font_description_set_size
 argument_list|(
 name|font_desc

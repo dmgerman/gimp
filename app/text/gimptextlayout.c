@@ -483,14 +483,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|font_desc
-condition|)
-return|return
-name|NULL
-return|;
 name|gimp_image_get_resolution
 argument_list|(
 name|image

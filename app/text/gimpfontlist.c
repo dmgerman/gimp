@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpfont-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpfontlist.h"
 end_include
 
@@ -496,7 +502,7 @@ condition|)
 return|return;
 name|name
 operator|=
-name|pango_font_description_to_string
+name|gimp_font_util_pango_font_description_to_string
 argument_list|(
 name|desc
 argument_list|)
