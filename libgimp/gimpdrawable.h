@@ -151,6 +151,16 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
+name|void
+name|gimp_drawable_set_visible
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|,
+name|gboolean
+name|visible
+parameter_list|)
+function_decl|;
 name|GimpTile
 modifier|*
 name|gimp_drawable_get_tile

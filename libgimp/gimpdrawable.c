@@ -513,13 +513,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_set_visible (gint32 drawable_ID,gint visible)
+DECL|function|gimp_drawable_set_visible (gint32 drawable_ID,gboolean visible)
 name|gimp_drawable_set_visible
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|gint
+name|gboolean
 name|visible
 parameter_list|)
 block|{
