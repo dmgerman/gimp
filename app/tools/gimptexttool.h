@@ -101,6 +101,15 @@ DECL|member|parent_instance
 name|GimpTool
 name|parent_instance
 decl_stmt|;
+DECL|member|proxy
+name|GimpText
+modifier|*
+name|proxy
+decl_stmt|;
+DECL|member|idle_id
+name|guint
+name|idle_id
+decl_stmt|;
 DECL|member|x1
 DECL|member|y1
 name|gint
