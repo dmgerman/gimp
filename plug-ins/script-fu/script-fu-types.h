@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd0adff0108
+DECL|struct|__anon27b457300108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -69,7 +69,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd0adff0208
+DECL|struct|__anon27b457300208
 block|{
 DECL|member|file_entry
 name|GtkWidget
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd0adff0308
+DECL|struct|__anon27b457300308
 block|{
 DECL|member|name
 name|gchar
@@ -118,7 +118,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd0adff0408
+DECL|struct|__anon27b457300408
 block|{
 DECL|member|list
 name|GSList
@@ -137,8 +137,28 @@ end_typedef
 
 begin_typedef
 typedef|typedef
+struct|struct
+DECL|struct|__anon27b457300508
+block|{
+DECL|member|type_name
+name|gchar
+modifier|*
+name|type_name
+decl_stmt|;
+DECL|member|history
+name|gint
+name|history
+decl_stmt|;
+DECL|typedef|SFEnum
+block|}
+name|SFEnum
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
 union|union
-DECL|union|__anon2bd0adff050a
+DECL|union|__anon27b45730060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -205,6 +225,10 @@ DECL|member|sfa_option
 name|SFOption
 name|sfa_option
 decl_stmt|;
+DECL|member|sfa_enum
+name|SFEnum
+name|sfa_enum
+decl_stmt|;
 DECL|typedef|SFArgValue
 block|}
 name|SFArgValue
@@ -214,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd0adff0608
+DECL|struct|__anon27b457300708
 block|{
 DECL|member|script_name
 name|gchar
