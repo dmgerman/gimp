@@ -128,7 +128,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acd016a0108
+DECL|struct|__anon2b854e5c0108
 block|{
 DECL|member|root
 name|gboolean
@@ -1175,7 +1175,7 @@ name|image
 argument_list|,
 name|_
 argument_list|(
-literal|"Background"
+literal|"Screen Shot"
 argument_list|)
 argument_list|,
 name|width
@@ -1335,6 +1335,11 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 literal|1.0
@@ -1758,7 +1763,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error obtaining screenshot"
+literal|"Error obtaining Screen Shot"
 argument_list|)
 argument_list|)
 expr_stmt|;
