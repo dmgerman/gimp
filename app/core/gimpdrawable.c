@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297fcacc0103
+DECL|enum|__anon2af291940103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -813,22 +813,12 @@ block|{
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_DRAWABLE
-argument_list|(
-name|object
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|drawable
-operator|=
+init|=
 name|GIMP_DRAWABLE
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|drawable

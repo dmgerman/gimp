@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9605130103
+DECL|enum|__anon295d8b2d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1008,22 +1008,12 @@ block|{
 name|GimpLayer
 modifier|*
 name|layer
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_LAYER
-argument_list|(
-name|object
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|layer
-operator|=
+init|=
 name|GIMP_LAYER
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|layer

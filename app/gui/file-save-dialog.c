@@ -983,6 +983,11 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

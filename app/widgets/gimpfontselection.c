@@ -221,7 +221,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ad98cd0103
+DECL|enum|__anon2baf76700103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -1004,7 +1004,14 @@ argument_list|,
 name|new_desc
 argument_list|)
 condition|)
+block|{
+name|pango_font_description_free
+argument_list|(
+name|new_desc
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 name|pango_font_description_free
 argument_list|(
 name|fontsel

@@ -314,6 +314,11 @@ name|iter
 argument_list|)
 condition|)
 do|;
+name|pango_layout_iter_free
+argument_list|(
+name|iter
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac1e12a0103
+DECL|enum|__anon2aba7fd90103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -664,22 +664,12 @@ block|{
 name|GimpParasiteList
 modifier|*
 name|list
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_PARASITE_LIST
-argument_list|(
-name|object
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
+init|=
 name|GIMP_PARASITE_LIST
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|list

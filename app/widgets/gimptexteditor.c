@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa1b63f0103
+DECL|enum|__anon29fcd4f10103
 block|{
 DECL|enumerator|DIR_CHANGED
 name|DIR_CHANGED
@@ -847,15 +847,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|button
+argument_list|)
+expr_stmt|;
 block|}
 name|g_list_free
 argument_list|(
 name|children
 argument_list|)
 expr_stmt|;
-name|gtk_widget_destroy
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|box
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|scrolled_window
