@@ -3851,6 +3851,15 @@ name|iter
 argument_list|,
 name|tree_view
 operator|->
+name|model_column_name
+argument_list|,
+name|_
+argument_list|(
+literal|"Floating Selection"
+argument_list|)
+argument_list|,
+name|tree_view
+operator|->
 name|model_column_name_attributes
 argument_list|,
 name|layer_view
@@ -3934,6 +3943,18 @@ name|model
 argument_list|)
 argument_list|,
 name|iter
+argument_list|,
+name|tree_view
+operator|->
+name|model_column_name
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
 argument_list|,
 name|tree_view
 operator|->

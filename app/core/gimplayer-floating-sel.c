@@ -349,7 +349,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  invalidate the preview of the obscured drawable.  We do this here    *  because it will not be done until the floating selection is removed,    *  at which point the obscured drawable's preview will not be declared invalid    */
+comment|/*  Invalidate the preview of the obscured drawable.  We do this here    *  because it will not be done until the floating selection is removed,    *  at which point the obscured drawable's preview will not be declared    *  invalid.    */
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE

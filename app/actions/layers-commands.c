@@ -4436,18 +4436,6 @@ operator|->
 name|name_entry
 argument_list|)
 argument_list|,
-operator|(
-operator|(
-name|gimp_layer_is_floating_sel
-argument_list|(
-name|layer
-argument_list|)
-condition|?
-name|_
-argument_list|(
-literal|"Floating Selection"
-argument_list|)
-else|:
 name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
@@ -4455,8 +4443,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-operator|)
-operator|)
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
