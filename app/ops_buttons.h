@@ -44,12 +44,8 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_comment
-comment|/* typedef OpsButtonCallback OpsButtonExtCallbacks; */
-end_comment
-
 begin_typedef
-DECL|enum|__anon2c6353ff0103
+DECL|enum|__anon2bcd873f0103
 typedef|typedef
 enum|enum
 block|{
@@ -64,14 +60,20 @@ name|OPS_BUTTON_MODIFIER_CTRL
 block|,
 DECL|enumerator|OPS_BUTTON_MODIFIER_ALT
 name|OPS_BUTTON_MODIFIER_ALT
-block|, }
+block|,
+DECL|enumerator|OPS_BUTTON_MODIFIER_SHIFT_CTRL
+name|OPS_BUTTON_MODIFIER_SHIFT_CTRL
+block|,
+DECL|enumerator|OPS_BUTTON_MODIFIER_LAST
+name|OPS_BUTTON_MODIFIER_LAST
 DECL|typedef|OpsButtonModifier
+block|}
 name|OpsButtonModifier
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c6353ff0203
+DECL|enum|__anon2bcd873f0203
 typedef|typedef
 enum|enum
 block|{

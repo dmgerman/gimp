@@ -656,6 +656,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|channels_dialog_intersect_channel_with_sel_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  channel widget function prototypes  */
 end_comment
@@ -1014,7 +1027,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Add Channel To Selection"
+literal|"Add To Selection"
 argument_list|)
 block|,
 literal|0
@@ -1033,7 +1046,26 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Sub Channel From Selection"
+literal|"Subtract From Selection"
+argument_list|)
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|channels_dialog_sub_channel_from_sel_callback
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Intersect With Selection"
 argument_list|)
 block|,
 literal|0
@@ -1082,9 +1114,16 @@ init|=
 block|{
 name|channels_dialog_add_channel_to_sel_callback
 block|,
+comment|/* SHIFT */
 name|channels_dialog_sub_channel_from_sel_callback
 block|,
-name|NULL
+comment|/* CTRL  */
+name|channels_dialog_intersect_channel_with_sel_callback
+block|,
+comment|/* MOD1  */
+name|channels_dialog_intersect_channel_with_sel_callback
+block|,
+comment|/* SHIFT + CTRL */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1191,7 +1230,7 @@ name|to_selection_ext_callbacks
 block|,
 name|N_
 argument_list|(
-literal|"Channel To Selection"
+literal|"Channel To Selection \n<Shift> Add<Ctrl> Subtract<Shift><Ctrl> Intersect"
 argument_list|)
 block|,
 name|NULL
@@ -3047,6 +3086,19 @@ argument_list|,
 name|aux_sensitive
 argument_list|)
 expr_stmt|;
+comment|/* intersect channel with selection */
+name|gtk_widget_set_sensitive
+argument_list|(
+name|channels_ops
+index|[
+literal|8
+index|]
+operator|.
+name|widget
+argument_list|,
+name|aux_sensitive
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -4643,6 +4695,106 @@ argument_list|,
 name|active_channel
 argument_list|,
 name|SUB
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+comment|/* off x/y */
+name|gimage_mask_load
+argument_list|(
+name|gimage
+argument_list|,
+name|new_channel
+argument_list|)
+expr_stmt|;
+name|channel_delete
+argument_list|(
+name|new_channel
+argument_list|)
+expr_stmt|;
+name|gdisplays_flush
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|channels_dialog_intersect_channel_with_sel_callback (GtkWidget * w,gpointer client_data)
+name|channels_dialog_intersect_channel_with_sel_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|w
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|GImage
+modifier|*
+name|gimage
+decl_stmt|;
+name|Channel
+modifier|*
+name|active_channel
+decl_stmt|;
+name|Channel
+modifier|*
+name|new_channel
+decl_stmt|;
+comment|/*  if there is a currently selected gimage    */
+if|if
+condition|(
+operator|!
+name|channelsD
+condition|)
+return|return;
+if|if
+condition|(
+operator|!
+operator|(
+name|gimage
+operator|=
+name|channelsD
+operator|->
+name|gimage
+operator|)
+condition|)
+return|return;
+if|if
+condition|(
+operator|(
+name|active_channel
+operator|=
+name|gimage_get_active_channel
+argument_list|(
+name|gimage
+argument_list|)
+operator|)
+condition|)
+block|{
+name|new_channel
+operator|=
+name|channel_copy
+argument_list|(
+name|gimage_get_mask
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|channel_combine_mask
+argument_list|(
+name|new_channel
+argument_list|,
+name|active_channel
+argument_list|,
+name|INTERSECT
 argument_list|,
 literal|0
 argument_list|,

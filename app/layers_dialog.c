@@ -2242,6 +2242,8 @@ block|,
 name|NULL
 block|,
 name|NULL
+block|,
+name|NULL
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2255,6 +2257,8 @@ index|[]
 init|=
 block|{
 name|layers_dialog_lower_layer_to_bottom_callback
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -2297,7 +2301,7 @@ name|raise_layers_ext_callbacks
 block|,
 name|N_
 argument_list|(
-literal|"Raise Layer"
+literal|"Raise Layer    \n<Shift> To Top"
 argument_list|)
 block|,
 name|NULL
@@ -2314,7 +2318,7 @@ name|lower_layers_ext_callbacks
 block|,
 name|N_
 argument_list|(
-literal|"Lower Layer"
+literal|"Lower Layer       \n<Shift> To Bottom"
 argument_list|)
 block|,
 name|NULL
@@ -4708,7 +4712,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27b83f920108
+DECL|struct|__anon29c02d2c0108
 typedef|typedef
 struct|struct
 block|{
