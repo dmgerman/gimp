@@ -1102,6 +1102,20 @@ argument_list|,
 name|GTK_RESIZE_QUEUE
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|evbox
+argument_list|)
+argument_list|,
+operator|-
+literal|2
+argument_list|,
+literal|60
+argument_list|)
+expr_stmt|;
+comment|/* give it some initial                                                        size */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -4819,7 +4833,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29b3a7f90108
+DECL|struct|__anon2b9e5f470108
 typedef|typedef
 struct|struct
 block|{

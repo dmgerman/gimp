@@ -2718,6 +2718,11 @@ expr_stmt|;
 if|if
 condition|(
 name|show_indicators
+operator|&&
+operator|(
+operator|!
+name|no_data
+operator|)
 condition|)
 name|create_indicator_area
 argument_list|(

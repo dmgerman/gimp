@@ -5540,6 +5540,13 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+if|if
+condition|(
+name|no_data
+operator|||
+name|no_interface
+condition|)
+return|return;
 comment|/* Set the tip to be the name of the brush */
 name|gtk_tooltips_set_tip
 argument_list|(
@@ -5840,6 +5847,13 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+if|if
+condition|(
+name|no_interface
+operator|||
+name|no_data
+condition|)
+return|return;
 comment|/* Set the tip to be the name of the brush */
 name|gtk_tooltips_set_tip
 argument_list|(
@@ -6702,28 +6716,7 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
-argument_list|(
-name|deviceD
-operator|->
-name|brushes
-index|[
-name|i
-index|]
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|deviceD
-operator|->
-name|brushes
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
+comment|/*	  gtk_widget_draw (deviceD->brushes[i],NULL);  *	  gtk_widget_show (deviceD->brushes[i]);  */
 name|device_update_pattern
 argument_list|(
 name|device_info
@@ -6733,28 +6726,7 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
-argument_list|(
-name|deviceD
-operator|->
-name|patterns
-index|[
-name|i
-index|]
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|deviceD
-operator|->
-name|patterns
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
+comment|/*	  gtk_widget_draw (deviceD->patterns[i],NULL);  *	  gtk_widget_show (deviceD->patterns[i]);  */
 block|}
 block|}
 if|if
