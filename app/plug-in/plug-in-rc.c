@@ -70,7 +70,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*    *  All deserialize functions return G_TOKEN_LEFT_PAREN on success,  *  or the GTokenType they would have expected but didn't get.  */
+comment|/*  *  All deserialize functions return G_TOKEN_LEFT_PAREN on success,  *  or the GTokenType they would have expected but didn't get.  */
 end_comment
 
 begin_function_decl
@@ -171,7 +171,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b79bc670103
+DECL|enum|__anon2bd39a1b0103
 block|{
 DECL|enumerator|PLUG_IN_DEF
 name|PLUG_IN_DEF

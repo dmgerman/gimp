@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -79,35 +79,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "gui/gui-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/plug-in-menus.h"
 end_include
 
 begin_include
@@ -1066,7 +1037,7 @@ name|gimp
 operator|->
 name|no_interface
 condition|)
-name|plug_in_menus_init
+name|gimp_menus_init
 argument_list|(
 name|gimp
 argument_list|,
@@ -2325,9 +2296,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|plug_in_menus_create_entry
+name|gimp_menus_create_entry
 argument_list|(
-name|NULL
+name|gimp
 argument_list|,
 name|proc_def
 argument_list|,
@@ -2409,8 +2380,10 @@ name|proc_def
 operator|->
 name|menu_path
 condition|)
-name|plug_in_menus_delete_entry
+name|gimp_menus_delete_entry
 argument_list|(
+name|gimp
+argument_list|,
 name|proc_def
 operator|->
 name|menu_path
