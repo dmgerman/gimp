@@ -145,7 +145,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b5ed7880108
+DECL|struct|__anon29bfb2c80108
 typedef|typedef
 struct|struct
 block|{
@@ -175,6 +175,16 @@ modifier|*
 name|GimpColorSelectorID
 typedef|;
 end_typedef
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__COLOR_NOTEBOOK_C__
+end_ifndef
+
+begin_comment
+comment|/* Bypass when compiling the source for 				 * these functions. */
+end_comment
 
 begin_comment
 comment|/* Register a color selector.  Returns an identifier for the color  * selector on success, or NULL if the name is already in use.  Both  * the name and method table are internalised, so may be freed after  * this call. */
@@ -224,6 +234,15 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* !__COLOR_NOTEBOOK_C__ */
+end_comment
 
 begin_endif
 endif|#
