@@ -164,12 +164,6 @@ directive|include
 file|"gfig-stock.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pix-data.h"
-end_include
-
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -557,16 +551,11 @@ argument_list|()
 expr_stmt|;
 name|gfig_context
 operator|=
-operator|(
-name|GFigContext
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|GFigContext
-argument_list|)
+name|GFigContex
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gfig_context
@@ -1974,6 +1963,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* default to RECT_GRID */
 name|g_string_append_printf
 argument_list|(
 name|string
@@ -1981,7 +1971,6 @@ argument_list|,
 literal|"GridType: RECT_GRID\n"
 argument_list|)
 expr_stmt|;
-comment|/* default to RECT_GRID */
 block|}
 name|g_string_append_printf
 argument_list|(
@@ -2150,7 +2139,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|load_bool (gchar * opt_buf,gint * toset)
 name|load_bool
 parameter_list|(
@@ -2196,15 +2185,10 @@ literal|0
 expr_stmt|;
 else|else
 return|return
-operator|(
-operator|-
-literal|1
-operator|)
+name|TRUE
 return|;
 return|return
-operator|(
-literal|0
-operator|)
+name|FALSE
 return|;
 block|}
 end_function

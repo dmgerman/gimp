@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
-comment|/* Distance between two lines */
+comment|/* Distance between two points. */
 end_comment
 
 begin_function
@@ -1254,7 +1254,7 @@ literal|0
 condition|)
 name|offset_angle
 operator|+=
-literal|2
+literal|2.0
 operator|*
 name|G_PI
 expr_stmt|;
@@ -1888,14 +1888,11 @@ expr_stmt|;
 comment|/* Lines */
 name|ang_grid
 operator|=
-literal|2
+literal|2.0
 operator|*
 name|G_PI
 operator|/
-operator|(
-name|gdouble
-operator|)
-literal|360
+literal|360.0
 expr_stmt|;
 if|if
 condition|(
@@ -1920,11 +1917,11 @@ operator|=
 name|minang
 operator|*
 operator|(
-literal|2
+literal|2.0
 operator|*
 name|G_PI
 operator|/
-literal|360
+literal|360.0
 operator|)
 expr_stmt|;
 comment|/* min ang is in degrees - need in rads*/
@@ -2432,7 +2429,7 @@ name|gint
 name|shift_down
 parameter_list|)
 block|{
-comment|/* Under contrl point */
+comment|/* Under control point */
 if|if
 condition|(
 operator|!

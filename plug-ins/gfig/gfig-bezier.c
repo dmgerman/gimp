@@ -1017,7 +1017,6 @@ expr_stmt|;
 name|line_pnts
 index|[
 name|i
-operator|++
 index|]
 index|[
 literal|1
@@ -1028,6 +1027,9 @@ operator|->
 name|pnt
 operator|.
 name|y
+expr_stmt|;
+name|i
+operator|++
 expr_stmt|;
 block|}
 comment|/* Generate an array of doubles which are the control points */
@@ -1198,7 +1200,6 @@ expr_stmt|;
 name|bz_line_pnts
 index|[
 name|i
-operator|++
 index|]
 index|[
 literal|1
@@ -1209,6 +1210,9 @@ operator|->
 name|pnt
 operator|.
 name|y
+expr_stmt|;
+name|i
+operator|++
 expr_stmt|;
 block|}
 name|fp_pnt_start
