@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8263410103
+DECL|enum|__anon2ab4dac60103
 block|{
 DECL|enumerator|GIMP_CONFIG_PATH_FILE
 name|GIMP_CONFIG_PATH_FILE
@@ -127,6 +127,7 @@ parameter_list|,
 name|GimpConfigPathType
 name|type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|default_value

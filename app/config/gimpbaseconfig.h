@@ -132,6 +132,24 @@ struct|;
 end_struct
 
 begin_decl_stmt
+specifier|extern
+specifier|const
+name|gchar
+modifier|*
+name|gimp_base_config_default_swap_path
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+specifier|const
+name|gchar
+modifier|*
+name|gimp_base_config_default_temp_path
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 name|GType
 name|gimp_base_config_get_type
 argument_list|(

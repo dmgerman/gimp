@@ -260,7 +260,7 @@ end_comment
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_config_path (const gchar * name,const gchar * nick,const gchar * blurb,GimpConfigPathType type,gchar * default_value,GParamFlags flags)
+DECL|function|gimp_param_spec_config_path (const gchar * name,const gchar * nick,const gchar * blurb,GimpConfigPathType type,const gchar * default_value,GParamFlags flags)
 name|gimp_param_spec_config_path
 parameter_list|(
 specifier|const
@@ -281,6 +281,7 @@ parameter_list|,
 name|GimpConfigPathType
 name|type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|default_value
@@ -312,7 +313,10 @@ name|pspec
 operator|->
 name|default_value
 operator|=
+name|g_strdup
+argument_list|(
 name|default_value
+argument_list|)
 expr_stmt|;
 name|GIMP_PARAM_SPEC_CONFIG_PATH
 argument_list|(

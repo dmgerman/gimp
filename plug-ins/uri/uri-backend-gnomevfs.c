@@ -715,7 +715,7 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|src_uri
+name|dest_uri
 argument_list|,
 name|gnome_vfs_result_to_string
 argument_list|(
