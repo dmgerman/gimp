@@ -2276,6 +2276,14 @@ name|action_flag
 operator|==
 name|DRAGING
 condition|)
+block|{
+name|gtk_widget_queue_draw
+argument_list|(
+name|circle
+operator|->
+name|preview
+argument_list|)
+expr_stmt|;
 name|rcm_draw_arrows
 argument_list|(
 name|widget
@@ -2293,6 +2301,7 @@ operator|->
 name|angle
 argument_list|)
 expr_stmt|;
+block|}
 name|circle
 operator|->
 name|action_flag
@@ -2527,20 +2536,13 @@ name|DRAGING
 expr_stmt|;
 block|}
 else|else
-name|rcm_draw_arrows
+name|gtk_widget_queue_draw
 argument_list|(
-name|widget
-operator|->
-name|window
-argument_list|,
-name|xor_gc
-argument_list|,
 name|circle
 operator|->
-name|angle
+name|preview
 argument_list|)
 expr_stmt|;
-comment|/* erase! */
 if|if
 condition|(
 name|circle
