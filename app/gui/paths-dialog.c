@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"tools/gimpbezierselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
 end_include
 
 begin_include
@@ -970,7 +970,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive ("<Paths>/" menu, (condition) != 0)
+value|gimp_menu_item_set_sensitive ("<Paths>/" menu, (condition) != 0)
 DECL|macro|SET_OPS_SENSITIVE (button,condition)
 define|#
 directive|define
@@ -1587,8 +1587,10 @@ argument_list|)
 expr_stmt|;
 name|paths_factory
 operator|=
-name|menus_get_paths_factory
-argument_list|()
+name|gtk_item_factory_from_path
+argument_list|(
+literal|"<Paths>"
+argument_list|)
 expr_stmt|;
 name|paths_dialog
 operator|->

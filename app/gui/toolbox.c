@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppreview.h"
 end_include
 
@@ -157,12 +163,6 @@ begin_include
 include|#
 directive|include
 file|"indicator-area.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
 end_include
 
 begin_include
@@ -1473,8 +1473,10 @@ expr_stmt|;
 block|}
 name|toolbox_factory
 operator|=
-name|menus_get_toolbox_factory
-argument_list|()
+name|gtk_item_factory_from_path
+argument_list|(
+literal|"<Toolbox>"
+argument_list|)
 expr_stmt|;
 name|main_vbox
 operator|=

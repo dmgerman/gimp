@@ -433,6 +433,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -446,12 +452,6 @@ begin_include
 include|#
 directive|include
 file|"gui/gradient-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/menus.h"
 end_include
 
 begin_include
@@ -6390,7 +6390,7 @@ name|FALSE
 expr_stmt|;
 break|break;
 block|}
-name|menus_set_sensitive
+name|gimp_menu_item_set_sensitive
 argument_list|(
 name|proc_def
 operator|->
@@ -6415,14 +6415,14 @@ operator|)
 operator|)
 condition|)
 block|{
-name|menus_set_sensitive
+name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Image>/Filters/Repeat Last"
 argument_list|,
 name|sensitive
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Image>/Filters/Re-Show Last"
 argument_list|,
@@ -6438,14 +6438,14 @@ operator|!
 name|last_plug_in
 condition|)
 block|{
-name|menus_set_sensitive
+name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Image>/Filters/Repeat Last"
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Image>/Filters/Re-Show Last"
 argument_list|,
@@ -11745,7 +11745,7 @@ name|description
 operator|=
 name|NULL
 expr_stmt|;
-name|menus_create_item_from_full_path
+name|gimp_menu_item_create
 argument_list|(
 operator|&
 name|entry
@@ -12880,13 +12880,15 @@ name|proc_def
 operator|->
 name|menu_path
 condition|)
-name|menus_destroy
+block|{
+name|gimp_menu_item_destroy
 argument_list|(
 name|proc_def
 operator|->
 name|menu_path
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  Unregister the procedural database entry  */
 name|procedural_db_unregister

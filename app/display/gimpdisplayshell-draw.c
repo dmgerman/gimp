@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -124,6 +130,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -131,12 +143,6 @@ begin_include
 include|#
 directive|include
 file|"gui/info-window.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/menus.h"
 end_include
 
 begin_include
@@ -1664,8 +1670,10 @@ name|shell
 operator|->
 name|ifactory
 operator|=
-name|menus_get_image_factory
-argument_list|()
+name|gtk_item_factory_from_path
+argument_list|(
+literal|"<Image>"
+argument_list|)
 expr_stmt|;
 comment|/*  The accelerator table for images  */
 name|gimp_window_add_accel_group
@@ -4059,6 +4067,12 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
+name|GimpRGB
+name|fg
+decl_stmt|;
+name|GimpRGB
+name|bg
+decl_stmt|;
 name|gboolean
 name|fs
 init|=
@@ -4238,18 +4252,37 @@ name|layers
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_context_get_foreground
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+argument_list|,
+operator|&
+name|fg
+argument_list|)
+expr_stmt|;
+name|gimp_context_get_background
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+argument_list|,
+operator|&
+name|bg
+argument_list|)
+expr_stmt|;
 block|}
-DECL|macro|SET_SENSITIVE (menu,condition)
-define|#
-directive|define
-name|SET_SENSITIVE
-parameter_list|(
-name|menu
-parameter_list|,
-name|condition
-parameter_list|)
-define|\
-value|menus_set_sensitive ("<Image>/" menu, (condition) != 0)
 DECL|macro|SET_ACTIVE (menu,condition)
 define|#
 directive|define
@@ -4260,7 +4293,29 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_active ("<Image>/" menu, (condition) != 0)
+value|gimp_menu_item_set_active ("<Image>/" menu, (condition) != 0)
+DECL|macro|SET_COLOR (menu,color)
+define|#
+directive|define
+name|SET_COLOR
+parameter_list|(
+name|menu
+parameter_list|,
+name|color
+parameter_list|)
+define|\
+value|gimp_menu_item_set_color ("<Image>/" menu, (color), FALSE)
+DECL|macro|SET_SENSITIVE (menu,condition)
+define|#
+directive|define
+name|SET_SENSITIVE
+parameter_list|(
+name|menu
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_menu_item_set_sensitive ("<Image>/" menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
 literal|"File/Save"
@@ -4431,6 +4486,22 @@ argument_list|(
 literal|"Edit/Stroke"
 argument_list|,
 name|lp
+argument_list|)
+expr_stmt|;
+name|SET_COLOR
+argument_list|(
+literal|"Edit/Fill with FG Color"
+argument_list|,
+operator|&
+name|fg
+argument_list|)
+expr_stmt|;
+name|SET_COLOR
+argument_list|(
+literal|"Edit/Fill with BG Color"
+argument_list|,
+operator|&
+name|bg
 argument_list|)
 expr_stmt|;
 block|}
@@ -5068,6 +5139,9 @@ expr_stmt|;
 undef|#
 directive|undef
 name|SET_ACTIVE
+undef|#
+directive|undef
+name|SET_COLOR
 undef|#
 directive|undef
 name|SET_SENSITIVE

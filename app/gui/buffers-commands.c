@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimplistitem.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"buffers-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
 end_include
 
 begin_include
@@ -322,8 +322,10 @@ argument_list|)
 expr_stmt|;
 name|item_factory
 operator|=
-name|menus_get_buffers_factory
-argument_list|()
+name|gtk_item_factory_from_path
+argument_list|(
+literal|"<Buffers>"
+argument_list|)
 expr_stmt|;
 name|gimp_item_factory_popup_with_data
 argument_list|(
@@ -375,7 +377,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive ("<Buffers>/" menu, (condition) != 0)
+value|gimp_menu_item_set_sensitive ("<Buffers>/" menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
 literal|"Paste Buffer"

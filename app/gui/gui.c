@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brush-select.h"
 end_include
 
@@ -1288,14 +1294,14 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-name|menus_set_sensitive
+name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Toolbox>/File/Quit"
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Image>/File/Quit"
 argument_list|,
@@ -1787,14 +1793,14 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|menus_set_sensitive
+name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Toolbox>/File/Quit"
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive
+name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Image>/File/Quit"
 argument_list|,

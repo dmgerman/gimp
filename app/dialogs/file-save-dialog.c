@@ -107,6 +107,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-dialog-utils.h"
 end_include
 
@@ -114,12 +120,6 @@ begin_include
 include|#
 directive|include
 file|"file-save-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
 end_include
 
 begin_include
@@ -508,7 +508,7 @@ name|description
 operator|=
 name|NULL
 expr_stmt|;
-name|menus_create_item_from_full_path
+name|gimp_menu_item_create
 argument_list|(
 operator|&
 name|entry
@@ -1277,8 +1277,10 @@ argument_list|)
 expr_stmt|;
 name|save_menu
 operator|=
-name|menus_get_save_factory
-argument_list|()
+name|gtk_item_factory_from_path
+argument_list|(
+literal|"<Save>"
+argument_list|)
 operator|->
 name|widget
 expr_stmt|;

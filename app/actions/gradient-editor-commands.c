@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gradient-editor-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
 end_include
 
 begin_include
@@ -3557,8 +3557,10 @@ argument_list|)
 expr_stmt|;
 name|item_factory
 operator|=
-name|menus_get_gradient_editor_factory
-argument_list|()
+name|gtk_item_factory_from_path
+argument_list|(
+literal|"<GradientEditor>"
+argument_list|)
 expr_stmt|;
 name|gimp_item_factory_popup_with_data
 argument_list|(
@@ -3818,7 +3820,7 @@ parameter_list|,
 name|active
 parameter_list|)
 define|\
-value|menus_set_active ("<GradientEditor>/" menu, (active))
+value|gimp_menu_item_set_active ("<GradientEditor>/" menu, (active))
 DECL|macro|SET_COLOR (menu,color,set_label)
 define|#
 directive|define
@@ -3831,7 +3833,7 @@ parameter_list|,
 name|set_label
 parameter_list|)
 define|\
-value|menus_set_color ("<GradientEditor>/" menu, (color), (set_label))
+value|gimp_menu_item_set_color ("<GradientEditor>/" menu, (color), (set_label))
 DECL|macro|SET_LABEL (menu,label)
 define|#
 directive|define
@@ -3842,7 +3844,7 @@ parameter_list|,
 name|label
 parameter_list|)
 define|\
-value|menus_set_label ("<GradientEditor>/" menu, (label))
+value|gimp_menu_item_set_label ("<GradientEditor>/" menu, (label))
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
 directive|define
@@ -3853,7 +3855,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_sensitive ("<GradientEditor>/" menu, (condition) != 0)
+value|gimp_menu_item_set_sensitive ("<GradientEditor>/" menu, (condition) != 0)
 DECL|macro|SET_VISIBLE (menu,condition)
 define|#
 directive|define
@@ -3864,7 +3866,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_visible ("<GradientEditor>/" menu, (condition) != 0)
+value|gimp_menu_item_set_visible ("<GradientEditor>/" menu, (condition) != 0)
 name|SET_COLOR
 argument_list|(
 literal|"Left Endpoint's Color..."
