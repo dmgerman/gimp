@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b85bad70103
+DECL|enum|__anon2bf977350103
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b85bad70203
+DECL|enum|__anon2bf977350203
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b85bad70308
+DECL|struct|__anon2bf977350308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -191,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b85bad70408
+DECL|struct|__anon2bf977350408
 block|{
 DECL|member|menu
 name|gchar
@@ -436,14 +436,14 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_plug_in_details"
 argument_list|,
-literal|"Displays plugin details"
+literal|"Displays plug-in details"
 argument_list|,
-literal|"Helps browse the plugin menus system. You can "
-literal|"search for plugin names, sort by name or menu "
+literal|"Allows to browse the plug-in menus system. You can "
+literal|"search for plug-in names, sort by name or menu "
 literal|"location and you can view a tree representation "
-literal|"of the plugin menus. Can also be of help to find "
-literal|"where new plugins have installed themselves in "
-literal|"the menuing system"
+literal|"of the plug-in menus. Can also be of help to find "
+literal|"where new plug-ins have installed themselves in "
+literal|"the menus."
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -453,7 +453,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Plugin Browser"
+literal|"_Plug-In Browser"
 argument_list|)
 argument_list|,
 literal|""
@@ -1457,7 +1457,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d Plugin Interfaces"
+literal|"%d Plug-In Interfaces"
 argument_list|)
 argument_list|,
 name|browser
@@ -2051,7 +2051,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Plugin Browser"
+literal|"Plug-In Browser"
 argument_list|)
 argument_list|,
 literal|"plugindetails"
@@ -2167,7 +2167,7 @@ name|count_label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"0 Plugin Interfaces"
+literal|"0 Plug-In Interfaces"
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

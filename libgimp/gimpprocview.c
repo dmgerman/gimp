@@ -1668,7 +1668,7 @@ argument_list|)
 return|;
 default|default:
 return|return
-literal|"UNKNOWN?"
+literal|"UNKNOWN"
 return|;
 block|}
 block|}
