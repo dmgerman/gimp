@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b888b060103
+DECL|enum|__anon2c0a872c0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b888b060203
+DECL|enum|__anon2c0a872c0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b888b060308
+DECL|struct|__anon2c0a872c0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b888b06040a
+DECL|union|__anon2c0a872c040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b888b060508
+DECL|struct|__anon2c0a872c0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b888b060608
+DECL|struct|__anon2c0a872c0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b888b060708
+DECL|struct|__anon2c0a872c0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b888b060808
+DECL|struct|__anon2c0a872c0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b888b060908
+DECL|struct|__anon2c0a872c0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -558,7 +558,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b888b060a08
+DECL|struct|__anon2c0a872c0a08
 block|{
 DECL|member|run
 name|gint
@@ -7525,13 +7525,14 @@ name|band_height
 operator|=
 operator|(
 name|height
+operator|+
+name|num_bands
+operator|-
+literal|1
+operator|)
 operator|/
 name|num_bands
-operator|)
-operator|+
-literal|1
 expr_stmt|;
-comment|/* For bug #9156 - adding 1 guarantees that band_height*num_bands>height    * band_height automatically got rounded down, resulting in a diff     * of a few pixels. */
 if|if
 condition|(
 name|band_height
