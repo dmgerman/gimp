@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee37e20103
+DECL|enum|__anon2a517e770103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee37e20208
+DECL|struct|__anon2a517e770208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee37e20308
+DECL|struct|__anon2a517e770308
 block|{
 DECL|member|run
 name|gint
@@ -2043,7 +2043,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_double_adjustment_update
+name|gimp_int_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
