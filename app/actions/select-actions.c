@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"vectors-commands.h"
 end_include
 
@@ -380,36 +374,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|select_tool_actions
-specifier|static
-name|GimpStringActionEntry
-name|select_tool_actions
-index|[]
-init|=
-block|{
-block|{
-literal|"select-by-color"
-block|,
-name|GIMP_STOCK_TOOL_BY_COLOR_SELECT
-block|,
-name|N_
-argument_list|(
-literal|"_By Color"
-argument_list|)
-block|,
-literal|"<shift>O"
-block|,
-name|NULL
-block|,
-literal|"gimp-by-color-select-tool"
-block|,
-name|GIMP_HELP_TOOL_BY_COLOR_SELECT
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|void
 DECL|function|select_actions_setup (GimpActionGroup * group)
@@ -429,23 +393,6 @@ argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
 name|select_actions
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_action_group_add_string_actions
-argument_list|(
-name|group
-argument_list|,
-name|select_tool_actions
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|select_tool_actions
-argument_list|)
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|tools_select_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -592,13 +539,6 @@ argument_list|,
 name|lp
 operator|&&
 name|sel
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"select-by-color"
-argument_list|,
-name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

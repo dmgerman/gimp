@@ -278,7 +278,7 @@ argument_list|(
 literal|"_By Color Select"
 argument_list|)
 argument_list|,
-name|NULL
+literal|"<shift>O"
 argument_list|,
 name|NULL
 argument_list|,
