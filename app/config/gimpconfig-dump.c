@@ -406,7 +406,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|gimp_config_serialize_property
 argument_list|(
 name|rc
