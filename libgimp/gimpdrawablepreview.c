@@ -1399,7 +1399,7 @@ name|num_colors
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image
 argument_list|,
@@ -1407,7 +1407,7 @@ operator|&
 name|num_colors
 argument_list|)
 expr_stmt|;
-name|gimp_preview_area_set_cmap
+name|gimp_preview_area_set_colormap
 argument_list|(
 name|GIMP_PREVIEW_AREA
 argument_list|(

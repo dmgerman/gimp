@@ -2955,14 +2955,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_cmap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be \"num_bytes\" /  * 3. If the image is not of base type GIMP_INDEXED, this pointer will  * be NULL.  *  * Returns: The image's colormap.  */
+comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be \"num_bytes\" /  * 3. If the image is not of base type GIMP_INDEXED, this pointer will  * be NULL.  *  * Returns: The image's colormap.  */
 end_comment
 
 begin_function
 name|guint8
 modifier|*
-DECL|function|_gimp_image_get_cmap (gint32 image_ID,gint * num_bytes)
-name|_gimp_image_get_cmap
+DECL|function|_gimp_image_get_colormap (gint32 image_ID,gint * num_bytes)
+name|_gimp_image_get_colormap
 parameter_list|(
 name|gint32
 name|image_ID
@@ -2981,7 +2981,7 @@ name|nreturn_vals
 decl_stmt|;
 name|guint8
 modifier|*
-name|cmap
+name|colormap
 init|=
 name|NULL
 decl_stmt|;
@@ -2989,7 +2989,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_get_cmap"
+literal|"gimp_image_get_colormap"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3032,7 +3032,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|cmap
+name|colormap
 operator|=
 name|g_new
 argument_list|(
@@ -3044,7 +3044,7 @@ argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
-name|cmap
+name|colormap
 argument_list|,
 name|return_vals
 index|[
@@ -3073,19 +3073,19 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|cmap
+name|colormap
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_set_cmap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @cmap: The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the \"num_bytes\" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the \"cmap\" array. The actual number of colors in the  * transmitted colormap is \"num_bytes\" / 3.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the \"num_bytes\" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the \"colormap\" array. The actual number of colors in the  * transmitted colormap is \"num_bytes\" / 3.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_image_set_cmap (gint32 image_ID,gint num_bytes,const guint8 * cmap)
-name|_gimp_image_set_cmap
+DECL|function|_gimp_image_set_colormap (gint32 image_ID,gint num_bytes,const guint8 * colormap)
+name|_gimp_image_set_colormap
 parameter_list|(
 name|gint32
 name|image_ID
@@ -3096,7 +3096,7 @@ parameter_list|,
 specifier|const
 name|guint8
 modifier|*
-name|cmap
+name|colormap
 parameter_list|)
 block|{
 name|GimpParam
@@ -3115,7 +3115,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_set_cmap"
+literal|"gimp_image_set_colormap"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -3130,7 +3130,7 @@ name|num_bytes
 argument_list|,
 name|GIMP_PDB_INT8ARRAY
 argument_list|,
-name|cmap
+name|colormap
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c59c1a30108
+DECL|struct|__anon2af120120108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -3384,7 +3384,7 @@ name|n_colors
 decl_stmt|;
 name|g_free
 argument_list|(
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 operator|*
 name|image_ID

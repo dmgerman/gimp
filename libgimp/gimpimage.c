@@ -16,7 +16,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_image_get_cmap:  * @image_ID: The image.  * @num_colors: Number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
+comment|/**  * gimp_image_get_cmap:  * @image_ID:   The image.  * @num_colors: Number of colors in the colormap array.  *  * This procedure is deprecated! Use gimp_image_get_colormap() instead.  *  * Returns: The image's colormap.  */
 end_comment
 
 begin_function
@@ -24,6 +24,69 @@ name|guchar
 modifier|*
 DECL|function|gimp_image_get_cmap (gint32 image_ID,gint * num_colors)
 name|gimp_image_get_cmap
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint
+modifier|*
+name|num_colors
+parameter_list|)
+block|{
+return|return
+name|gimp_image_get_colormap
+argument_list|(
+name|image_ID
+argument_list|,
+name|num_colors
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_set_cmap:  * @image_ID:   The image.  * @cmap:       The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * This procedure is deprecated! Use gimp_image_set_colormap() instead.  *  * Returns: TRUE on success.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_image_set_cmap (gint32 image_ID,const guchar * cmap,gint num_colors)
+name|gimp_image_set_cmap
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+specifier|const
+name|guchar
+modifier|*
+name|cmap
+parameter_list|,
+name|gint
+name|num_colors
+parameter_list|)
+block|{
+return|return
+name|gimp_image_set_colormap
+argument_list|(
+name|image_ID
+argument_list|,
+name|cmap
+argument_list|,
+name|num_colors
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_get_colormap:  * @image_ID:   The image.  * @num_colors: Number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
+end_comment
+
+begin_function
+name|guchar
+modifier|*
+DECL|function|gimp_image_get_colormap (gint32 image_ID,gint * num_colors)
+name|gimp_image_get_colormap
 parameter_list|(
 name|gint32
 name|image_ID
@@ -42,7 +105,7 @@ name|cmap
 decl_stmt|;
 name|cmap
 operator|=
-name|_gimp_image_get_cmap
+name|_gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -64,13 +127,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_cmap:  * @image_ID: The image.  * @cmap: The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the \"num_colors\" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the \"cmap\" array.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_colormap:  * @image_ID:   The image.  * @colormap:   The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of colors is specified by the \"num_colors\" parameter  * and corresponds to the number of INT8 triples that must be contained  * in the \"cmap\" array.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_cmap (gint32 image_ID,const guchar * cmap,gint num_colors)
-name|gimp_image_set_cmap
+DECL|function|gimp_image_set_colormap (gint32 image_ID,const guchar * colormap,gint num_colors)
+name|gimp_image_set_colormap
 parameter_list|(
 name|gint32
 name|image_ID
@@ -78,14 +141,14 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|cmap
+name|colormap
 parameter_list|,
 name|gint
 name|num_colors
 parameter_list|)
 block|{
 return|return
-name|_gimp_image_set_cmap
+name|_gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -93,7 +156,7 @@ name|num_colors
 operator|*
 literal|3
 argument_list|,
-name|cmap
+name|colormap
 argument_list|)
 return|;
 block|}

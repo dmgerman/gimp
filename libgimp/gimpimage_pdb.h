@@ -502,7 +502,7 @@ end_function_decl
 begin_function_decl
 name|guint8
 modifier|*
-name|_gimp_image_get_cmap
+name|_gimp_image_get_colormap
 parameter_list|(
 name|gint32
 name|image_ID
@@ -516,7 +516,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|_gimp_image_set_cmap
+name|_gimp_image_set_colormap
 parameter_list|(
 name|gint32
 name|image_ID
@@ -527,7 +527,7 @@ parameter_list|,
 specifier|const
 name|guint8
 modifier|*
-name|cmap
+name|colormap
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -144,10 +144,10 @@ name|guchar
 modifier|*
 name|buf
 decl_stmt|;
-DECL|member|cmap
+DECL|member|colormap
 name|guchar
 modifier|*
-name|cmap
+name|colormap
 decl_stmt|;
 block|}
 struct|;
@@ -406,7 +406,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_area_set_cmap
+name|gimp_preview_area_set_colormap
 parameter_list|(
 name|GimpPreviewArea
 modifier|*
@@ -415,7 +415,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|cmap
+name|colormap
 parameter_list|,
 name|gint
 name|num_colors

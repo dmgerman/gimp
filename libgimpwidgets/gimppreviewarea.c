@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278144e60103
+DECL|enum|__anon289faf0a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -487,7 +487,7 @@ name|NULL
 expr_stmt|;
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|=
 name|NULL
 expr_stmt|;
@@ -583,19 +583,19 @@ if|if
 condition|(
 name|area
 operator|->
-name|cmap
+name|colormap
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|area
 operator|->
-name|cmap
+name|colormap
 argument_list|)
 expr_stmt|;
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|=
 name|NULL
 expr_stmt|;
@@ -2191,7 +2191,7 @@ name|g_return_if_fail
 argument_list|(
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 argument_list|)
@@ -2247,11 +2247,11 @@ block|{
 specifier|const
 name|guchar
 modifier|*
-name|cmap
+name|colormap
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -2265,7 +2265,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|cmap
+name|colormap
 index|[
 literal|0
 index|]
@@ -2275,7 +2275,7 @@ index|[
 literal|1
 index|]
 operator|=
-name|cmap
+name|colormap
 index|[
 literal|1
 index|]
@@ -2285,7 +2285,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|cmap
+name|colormap
 index|[
 literal|2
 index|]
@@ -2310,7 +2310,7 @@ name|g_return_if_fail
 argument_list|(
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 argument_list|)
@@ -2371,11 +2371,11 @@ block|{
 specifier|const
 name|guchar
 modifier|*
-name|cmap
+name|colormap
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -2428,7 +2428,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|cmap
+name|colormap
 index|[
 literal|0
 index|]
@@ -2438,7 +2438,7 @@ index|[
 literal|1
 index|]
 operator|=
-name|cmap
+name|colormap
 index|[
 literal|1
 index|]
@@ -2448,7 +2448,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|cmap
+name|colormap
 index|[
 literal|2
 index|]
@@ -2493,7 +2493,7 @@ literal|8
 operator|)
 operator|+
 operator|(
-name|cmap
+name|colormap
 index|[
 literal|0
 index|]
@@ -2519,7 +2519,7 @@ literal|8
 operator|)
 operator|+
 operator|(
-name|cmap
+name|colormap
 index|[
 literal|1
 index|]
@@ -2545,7 +2545,7 @@ literal|8
 operator|)
 operator|+
 operator|(
-name|cmap
+name|colormap
 index|[
 literal|2
 index|]
@@ -4179,7 +4179,7 @@ name|g_return_if_fail
 argument_list|(
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 argument_list|)
@@ -4249,7 +4249,7 @@ name|cmap1
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -4265,7 +4265,7 @@ name|cmap2
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -4394,7 +4394,7 @@ name|g_return_if_fail
 argument_list|(
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 argument_list|)
@@ -4470,7 +4470,7 @@ name|cmap1
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -4486,7 +4486,7 @@ name|cmap2
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -7268,7 +7268,7 @@ name|g_return_if_fail
 argument_list|(
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 argument_list|)
@@ -7348,7 +7348,7 @@ name|cmap1
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -7364,7 +7364,7 @@ name|cmap2
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -7506,7 +7506,7 @@ name|g_return_if_fail
 argument_list|(
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 argument_list|)
@@ -7592,7 +7592,7 @@ name|cmap1
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -7608,7 +7608,7 @@ name|cmap2
 init|=
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|+
 literal|3
 operator|*
@@ -8838,13 +8838,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_set_cmap:  * @area:       a #GimpPreviewArea  * @cmap:       a #guchar buffer that contains the colormap  * @num_colors: the number of colors in the colormap  *  * Sets the colormap for the #GimpPreviewArea widget. You need to  * call this function before you use gimp_preview_area_draw() with  * an image type of %GIMP_INDEXED_IMAGE or %GIMP_INDEXEDA_IMAGE.  *  * Since GIMP 2.2  **/
+comment|/**  * gimp_preview_area_set_colormap:  * @area:       a #GimpPreviewArea  * @colormap:   a #guchar buffer that contains the colormap  * @num_colors: the number of colors in the colormap  *  * Sets the colormap for the #GimpPreviewArea widget. You need to  * call this function before you use gimp_preview_area_draw() with  * an image type of %GIMP_INDEXED_IMAGE or %GIMP_INDEXEDA_IMAGE.  *  * Since GIMP 2.2  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_preview_area_set_cmap (GimpPreviewArea * area,const guchar * cmap,gint num_colors)
-name|gimp_preview_area_set_cmap
+DECL|function|gimp_preview_area_set_colormap (GimpPreviewArea * area,const guchar * colormap,gint num_colors)
+name|gimp_preview_area_set_colormap
 parameter_list|(
 name|GimpPreviewArea
 modifier|*
@@ -8853,7 +8853,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|cmap
+name|colormap
 parameter_list|,
 name|gint
 name|num_colors
@@ -8869,7 +8869,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 operator|||
@@ -8901,11 +8901,11 @@ condition|(
 operator|!
 name|area
 operator|->
-name|cmap
+name|colormap
 condition|)
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|=
 name|g_new0
 argument_list|(
@@ -8920,9 +8920,9 @@ name|memcpy
 argument_list|(
 name|area
 operator|->
-name|cmap
+name|colormap
 argument_list|,
-name|cmap
+name|colormap
 argument_list|,
 literal|3
 operator|*
@@ -8936,12 +8936,12 @@ name|g_free
 argument_list|(
 name|area
 operator|->
-name|cmap
+name|colormap
 argument_list|)
 expr_stmt|;
 name|area
 operator|->
-name|cmap
+name|colormap
 operator|=
 name|NULL
 expr_stmt|;
