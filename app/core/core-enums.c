@@ -74,14 +74,14 @@ literal|"alpha-mask"
 block|}
 block|,
 block|{
-name|GIMP_ADD_ALPHA_MASK_TRANSFER
+name|GIMP_ADD_ALPHA_TRANSFER_MASK
 block|,
 name|N_
 argument_list|(
 literal|"_Transfer Layer's Alpha Channel"
 argument_list|)
 block|,
-literal|"alpha-mask-transfer"
+literal|"alpha-transfer-mask"
 block|}
 block|,
 block|{

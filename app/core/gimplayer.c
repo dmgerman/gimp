@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292968610103
+DECL|enum|__anon2918da400103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -4168,7 +4168,7 @@ case|case
 name|GIMP_ADD_ALPHA_MASK
 case|:
 case|case
-name|GIMP_ADD_ALPHA_MASK_TRANSFER
+name|GIMP_ADD_ALPHA_TRANSFER_MASK
 case|:
 if|if
 condition|(
@@ -4217,7 +4217,7 @@ if|if
 condition|(
 name|add_mask_type
 operator|==
-name|GIMP_ADD_ALPHA_MASK_TRANSFER
+name|GIMP_ADD_ALPHA_TRANSFER_MASK
 condition|)
 block|{
 name|void

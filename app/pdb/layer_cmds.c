@@ -1484,7 +1484,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mask_type"
 block|,
-literal|"The type of mask: { GIMP_ADD_WHITE_MASK (0), GIMP_ADD_BLACK_MASK (1), GIMP_ADD_ALPHA_MASK (2), GIMP_ADD_ALPHA_MASK_TRANSFER (3), GIMP_ADD_SELECTION_MASK (4), GIMP_ADD_COPY_MASK (5) }"
+literal|"The type of mask: { GIMP_ADD_WHITE_MASK (0), GIMP_ADD_BLACK_MASK (1), GIMP_ADD_ALPHA_MASK (2), GIMP_ADD_ALPHA_TRANSFER_MASK (3), GIMP_ADD_SELECTION_MASK (4), GIMP_ADD_COPY_MASK (5) }"
 block|}
 block|}
 decl_stmt|;

@@ -70,7 +70,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"ADD-ALPHA-MASK-TRANSFER"
+literal|"ADD-ALPHA-TRANSFER-MASK"
 argument_list|)
 argument_list|,
 name|flocons
