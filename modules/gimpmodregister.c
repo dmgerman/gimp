@@ -227,7 +227,7 @@ name|color_unreg_func
 operator|)
 name|get_main_func
 argument_list|(
-literal|"gimp_color_selector_unregiste"
+literal|"gimp_color_selector_unregister"
 argument_list|)
 expr_stmt|;
 if|if
