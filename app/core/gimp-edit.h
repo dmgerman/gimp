@@ -76,6 +76,10 @@ name|GimpImage
 modifier|*
 name|gimp_edit_paste_as_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage

@@ -67,20 +67,26 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_misc_procs (void)
+DECL|function|register_misc_procs (Gimp * gimp)
 name|register_misc_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|version_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|quit_proc
 argument_list|)
@@ -92,9 +98,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|version_invoker (Argument * args)
+DECL|function|version_invoker (Gimp * gimp,Argument * args)
 name|version_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -195,9 +205,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|quit_invoker (Argument * args)
+DECL|function|quit_invoker (Gimp * gimp,Argument * args)
 name|quit_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

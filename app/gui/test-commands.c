@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -168,7 +174,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -248,7 +254,13 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|global_brush_factory
+name|view
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|)
@@ -275,7 +287,13 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|global_pattern_factory
+name|view
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 argument_list|)
@@ -302,7 +320,13 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|global_gradient_factory
+name|view
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|)
@@ -329,7 +353,13 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|global_palette_factory
+name|view
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|)
@@ -356,7 +386,9 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|)
 expr_stmt|;
 block|}
@@ -1434,7 +1466,9 @@ name|TRUE
 argument_list|,
 literal|"Image List"
 argument_list|,
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -1464,7 +1498,9 @@ name|FALSE
 argument_list|,
 literal|"Image Grid"
 argument_list|,
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -1494,7 +1530,9 @@ name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 literal|"Brush List"
 argument_list|,
-name|global_brush_factory
+name|the_gimp
+operator|->
+name|brush_factory
 argument_list|,
 name|NULL
 argument_list|,
@@ -1526,7 +1564,9 @@ name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 literal|"Pattern List"
 argument_list|,
-name|global_pattern_factory
+name|the_gimp
+operator|->
+name|pattern_factory
 argument_list|,
 name|NULL
 argument_list|,
@@ -1558,7 +1598,9 @@ name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 literal|"Gradient List"
 argument_list|,
-name|global_gradient_factory
+name|the_gimp
+operator|->
+name|gradient_factory
 argument_list|,
 name|NULL
 argument_list|,
@@ -1590,7 +1632,9 @@ name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 literal|"Palette List"
 argument_list|,
-name|global_palette_factory
+name|the_gimp
+operator|->
+name|palette_factory
 argument_list|,
 name|NULL
 argument_list|,
@@ -1622,7 +1666,9 @@ name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 literal|"Brush Grid"
 argument_list|,
-name|global_brush_factory
+name|the_gimp
+operator|->
+name|brush_factory
 argument_list|,
 name|NULL
 argument_list|,
@@ -1654,7 +1700,9 @@ name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 literal|"Pattern Grid"
 argument_list|,
-name|global_pattern_factory
+name|the_gimp
+operator|->
+name|pattern_factory
 argument_list|,
 name|NULL
 argument_list|,
@@ -1686,7 +1734,9 @@ name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 literal|"Gradient Grid"
 argument_list|,
-name|global_gradient_factory
+name|the_gimp
+operator|->
+name|gradient_factory
 argument_list|,
 name|NULL
 argument_list|,
@@ -1718,7 +1768,9 @@ name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 literal|"Palette Grid"
 argument_list|,
-name|global_palette_factory
+name|the_gimp
+operator|->
+name|palette_factory
 argument_list|,
 name|NULL
 argument_list|,
@@ -1750,7 +1802,9 @@ name|TRUE
 argument_list|,
 literal|"Multi List"
 argument_list|,
-name|global_brush_factory
+name|the_gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|,
@@ -1782,7 +1836,9 @@ name|FALSE
 argument_list|,
 literal|"Multi Grid"
 argument_list|,
-name|global_brush_factory
+name|the_gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|,

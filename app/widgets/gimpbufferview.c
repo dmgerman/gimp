@@ -1010,6 +1010,10 @@ block|{
 name|gimp_edit_paste_as_new
 argument_list|(
 name|gimage
+operator|->
+name|gimp
+argument_list|,
+name|gimage
 argument_list|,
 name|buffer
 operator|->

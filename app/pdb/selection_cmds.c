@@ -219,116 +219,154 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_selection_procs (void)
+DECL|function|register_selection_procs (Gimp * gimp)
 name|register_selection_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_bounds_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_value_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_is_empty_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_translate_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_float_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_clear_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_invert_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_sharpen_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_all_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_none_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_feather_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_border_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_grow_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_shrink_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_layer_alpha_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_load_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_save_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|selection_combine_proc
 argument_list|)
@@ -340,9 +378,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_bounds_invoker (Argument * args)
+DECL|function|selection_bounds_invoker (Gimp * gimp,Argument * args)
 name|selection_bounds_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -614,9 +656,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_value_invoker (Argument * args)
+DECL|function|selection_value_invoker (Gimp * gimp,Argument * args)
 name|selection_value_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -821,9 +867,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_is_empty_invoker (Argument * args)
+DECL|function|selection_is_empty_invoker (Gimp * gimp,Argument * args)
 name|selection_is_empty_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -980,9 +1030,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_translate_invoker (Argument * args)
+DECL|function|selection_translate_invoker (Gimp * gimp,Argument * args)
 name|selection_translate_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1151,9 +1205,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_float_invoker (Argument * args)
+DECL|function|selection_float_invoker (Gimp * gimp,Argument * args)
 name|selection_float_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1399,9 +1457,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_clear_invoker (Argument * args)
+DECL|function|selection_clear_invoker (Gimp * gimp,Argument * args)
 name|selection_clear_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1522,9 +1584,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_invert_invoker (Argument * args)
+DECL|function|selection_invert_invoker (Gimp * gimp,Argument * args)
 name|selection_invert_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1645,9 +1711,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_sharpen_invoker (Argument * args)
+DECL|function|selection_sharpen_invoker (Gimp * gimp,Argument * args)
 name|selection_sharpen_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1768,9 +1838,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_all_invoker (Argument * args)
+DECL|function|selection_all_invoker (Gimp * gimp,Argument * args)
 name|selection_all_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1891,9 +1965,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_none_invoker (Argument * args)
+DECL|function|selection_none_invoker (Gimp * gimp,Argument * args)
 name|selection_none_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2014,9 +2092,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_feather_invoker (Argument * args)
+DECL|function|selection_feather_invoker (Gimp * gimp,Argument * args)
 name|selection_feather_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2173,9 +2255,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_border_invoker (Argument * args)
+DECL|function|selection_border_invoker (Gimp * gimp,Argument * args)
 name|selection_border_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2332,9 +2418,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_grow_invoker (Argument * args)
+DECL|function|selection_grow_invoker (Gimp * gimp,Argument * args)
 name|selection_grow_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2491,9 +2581,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_shrink_invoker (Argument * args)
+DECL|function|selection_shrink_invoker (Gimp * gimp,Argument * args)
 name|selection_shrink_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2652,9 +2746,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_layer_alpha_invoker (Argument * args)
+DECL|function|selection_layer_alpha_invoker (Gimp * gimp,Argument * args)
 name|selection_layer_alpha_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2797,9 +2895,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_load_invoker (Argument * args)
+DECL|function|selection_load_invoker (Gimp * gimp,Argument * args)
 name|selection_load_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2973,9 +3075,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_save_invoker (Argument * args)
+DECL|function|selection_save_invoker (Gimp * gimp,Argument * args)
 name|selection_save_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3158,9 +3264,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|selection_combine_invoker (Argument * args)
+DECL|function|selection_combine_invoker (Gimp * gimp,Argument * args)
 name|selection_combine_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

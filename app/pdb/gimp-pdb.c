@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -69,16 +75,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|procedural_ht
-name|GHashTable
-modifier|*
-name|procedural_ht
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  Local functions  */
 end_comment
@@ -96,30 +92,31 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|procedural_db_init (void)
+DECL|function|procedural_db_init (Gimp * gimp)
 name|procedural_db_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
-name|app_init_update_status
+name|g_return_if_fail
 argument_list|(
-name|_
-argument_list|(
-literal|"Procedural Database"
-argument_list|)
-argument_list|,
+name|gimp
+operator|!=
 name|NULL
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|procedural_ht
-condition|)
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
 name|procedural_ht
 operator|=
 name|g_hash_table_new
@@ -162,19 +159,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|procedural_db_free (void)
+DECL|function|procedural_db_free (Gimp * gimp)
 name|procedural_db_free
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp
+operator|->
 name|procedural_ht
 condition|)
 block|{
 name|g_hash_table_foreach
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 name|procedural_db_free_entry
@@ -184,22 +187,30 @@ argument_list|)
 expr_stmt|;
 name|g_hash_table_destroy
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|)
 expr_stmt|;
-block|}
+name|gimp
+operator|->
 name|procedural_ht
 operator|=
 name|NULL
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
 name|void
-DECL|function|procedural_db_register (ProcRecord * procedure)
+DECL|function|procedural_db_register (Gimp * gimp,ProcRecord * procedure)
 name|procedural_db_register
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|ProcRecord
 modifier|*
 name|procedure
@@ -209,18 +220,12 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|procedural_ht
-condition|)
-name|procedural_db_init
-argument_list|()
-expr_stmt|;
 name|list
 operator|=
 name|g_hash_table_lookup
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 operator|(
@@ -245,6 +250,8 @@ argument_list|)
 expr_stmt|;
 name|g_hash_table_insert
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 operator|(
@@ -265,9 +272,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|procedural_db_unregister (const gchar * name)
+DECL|function|procedural_db_unregister (Gimp * gimp,const gchar * name)
 name|procedural_db_unregister
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -282,6 +293,8 @@ name|list
 operator|=
 name|g_hash_table_lookup
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 operator|(
@@ -312,6 +325,8 @@ name|list
 condition|)
 name|g_hash_table_insert
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 operator|(
@@ -328,6 +343,8 @@ expr_stmt|;
 else|else
 name|g_hash_table_remove
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 operator|(
@@ -343,9 +360,13 @@ end_function
 begin_function
 name|ProcRecord
 modifier|*
-DECL|function|procedural_db_lookup (const gchar * name)
+DECL|function|procedural_db_lookup (Gimp * gimp,const gchar * name)
 name|procedural_db_lookup
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -364,6 +385,8 @@ name|list
 operator|=
 name|g_hash_table_lookup
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 operator|(
@@ -402,9 +425,13 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|procedural_db_execute (const gchar * name,Argument * args)
+DECL|function|procedural_db_execute (Gimp * gimp,const gchar * name,Argument * args)
 name|procedural_db_execute
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -438,6 +465,8 @@ name|list
 operator|=
 name|g_hash_table_lookup
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 operator|(
@@ -655,6 +684,8 @@ operator|.
 name|marshal_func
 call|)
 argument_list|(
+name|gimp
+argument_list|,
 name|args
 argument_list|)
 expr_stmt|;
@@ -840,9 +871,13 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|procedural_db_run_proc (const gchar * name,gint * nreturn_vals,...)
+DECL|function|procedural_db_run_proc (Gimp * gimp,const gchar * name,gint * nreturn_vals,...)
 name|procedural_db_run_proc
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -880,6 +915,8 @@ name|proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 name|name
 argument_list|)
 operator|)
@@ -1257,6 +1294,8 @@ name|return_vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|gimp
+argument_list|,
 name|name
 argument_list|,
 name|params
@@ -1639,7 +1678,7 @@ decl_stmt|;
 name|guint
 name|result
 decl_stmt|;
-name|int
+name|gint
 name|c
 decl_stmt|;
 comment|/*    * I tried a zillion different hash functions and asked many other    * people for advice.  Many people had their own favorite functions,    * all different, but no-one had much idea why they were good ones.    * I chose the one below (multiply by 9 and add new character)    * because of the following reasons:    *    * 1. Multiplying by 10 is perfect for keys that are decimal strings,    *    and multiplying by 9 is just about as good.    * 2. Times-9 is (shift-left-3) plus (old).  This means that each    *    character's bits hang around in the low-order bits of the    *    hash value for ever, plus they spread fairly rapidly up to    *    the high-order bits to fill out the hash value.  This seems    *    works well both for decimal and non-decimal strings.    *    * tclHash.c --    *    *      Implementation of in-memory hash tables for Tcl and Tcl-based    *      applications.    *    * Copyright (c) 1991-1993 The Regents of the University of California.    * Copyright (c) 1994 Sun Microsystems, Inc.    */

@@ -69,26 +69,34 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_message_procs (void)
+DECL|function|register_message_procs (Gimp * gimp)
 name|register_message_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|message_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|message_get_handler_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|message_set_handler_proc
 argument_list|)
@@ -100,9 +108,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|message_invoker (Argument * args)
+DECL|function|message_invoker (Gimp * gimp,Argument * args)
 name|message_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -228,9 +240,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|message_get_handler_invoker (Argument * args)
+DECL|function|message_get_handler_invoker (Gimp * gimp,Argument * args)
 name|message_get_handler_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -328,9 +344,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|message_set_handler_invoker (Argument * args)
+DECL|function|message_set_handler_invoker (Gimp * gimp,Argument * args)
 name|message_set_handler_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

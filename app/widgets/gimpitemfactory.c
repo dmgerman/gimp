@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplist.h"
 end_include
 
@@ -168,12 +174,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"image-commands.h"
 end_include
 
@@ -217,6 +217,18 @@ begin_include
 include|#
 directive|include
 file|"view-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -9622,7 +9634,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_tool_info_list
+name|the_gimp
+operator|->
+name|tool_info_list
 argument_list|)
 operator|->
 name|list

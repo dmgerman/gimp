@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -99,26 +99,34 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_convert_procs (void)
+DECL|function|register_convert_procs (Gimp * gimp)
 name|register_convert_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|convert_rgb_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|convert_grayscale_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|convert_indexed_proc
 argument_list|)
@@ -130,9 +138,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convert_rgb_invoker (Argument * args)
+DECL|function|convert_rgb_invoker (Gimp * gimp,Argument * args)
 name|convert_rgb_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -286,9 +298,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convert_grayscale_invoker (Argument * args)
+DECL|function|convert_grayscale_invoker (Gimp * gimp,Argument * args)
 name|convert_grayscale_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -442,9 +458,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convert_indexed_invoker (Argument * args)
+DECL|function|convert_indexed_invoker (Gimp * gimp,Argument * args)
 name|convert_indexed_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -695,7 +715,9 @@ case|:
 if|if
 condition|(
 operator|!
-name|global_palette_factory
+name|gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 operator|->
@@ -703,7 +725,9 @@ name|num_children
 condition|)
 name|gimp_data_factory_data_init
 argument_list|(
-name|global_palette_factory
+name|gimp
+operator|->
+name|palette_factory
 argument_list|,
 name|FALSE
 argument_list|)
@@ -716,7 +740,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_palette_factory
+name|gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|,

@@ -91,6 +91,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -133,7 +139,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -269,7 +275,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2791f4670103
+DECL|enum|__anon297a95890103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -309,7 +315,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2791f4670203
+DECL|enum|__anon297a95890203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -2409,6 +2415,8 @@ name|context
 operator|=
 name|gimp_context_new
 argument_list|(
+name|the_gimp
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -3803,7 +3811,9 @@ if|if
 condition|(
 name|gimp_container_num_children
 argument_list|(
-name|global_gradient_factory
+name|the_gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|)
@@ -3819,7 +3829,9 @@ name|GIMP_GRADIENT
 argument_list|(
 name|gimp_container_get_child_by_index
 argument_list|(
-name|global_gradient_factory
+name|the_gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|,
@@ -3850,7 +3862,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|global_gradient_factory
+name|the_gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|,
@@ -3899,7 +3913,13 @@ if|if
 condition|(
 name|gimp_container_have
 argument_list|(
-name|global_gradient_factory
+name|gradient_editor
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|,

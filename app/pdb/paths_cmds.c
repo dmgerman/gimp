@@ -173,86 +173,114 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_paths_procs (void)
+DECL|function|register_paths_procs (Gimp * gimp)
 name|register_paths_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_list_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_get_points_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_get_current_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_set_current_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_set_points_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_stroke_current_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_get_point_at_dist_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_get_tattoo_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|get_path_by_tattoo_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_delete_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_get_locked_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_set_locked_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|path_set_tattoo_proc
 argument_list|)
@@ -264,9 +292,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_list_invoker (Argument * args)
+DECL|function|path_list_invoker (Gimp * gimp,Argument * args)
 name|path_list_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -542,9 +574,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_points_invoker (Argument * args)
+DECL|function|path_get_points_invoker (Gimp * gimp,Argument * args)
 name|path_get_points_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1003,9 +1039,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_current_invoker (Argument * args)
+DECL|function|path_get_current_invoker (Gimp * gimp,Argument * args)
 name|path_get_current_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1223,9 +1263,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_current_invoker (Argument * args)
+DECL|function|path_set_current_invoker (Gimp * gimp,Argument * args)
 name|path_set_current_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1387,9 +1431,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_points_invoker (Argument * args)
+DECL|function|path_set_points_invoker (Gimp * gimp,Argument * args)
 name|path_set_points_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1691,9 +1739,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_stroke_current_invoker (Argument * args)
+DECL|function|path_stroke_current_invoker (Gimp * gimp,Argument * args)
 name|path_stroke_current_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1885,9 +1937,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_point_at_dist_invoker (Argument * args)
+DECL|function|path_get_point_at_dist_invoker (Gimp * gimp,Argument * args)
 name|path_get_point_at_dist_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2197,9 +2253,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_tattoo_invoker (Argument * args)
+DECL|function|path_get_tattoo_invoker (Gimp * gimp,Argument * args)
 name|path_get_tattoo_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2495,9 +2555,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_path_by_tattoo_invoker (Argument * args)
+DECL|function|get_path_by_tattoo_invoker (Gimp * gimp,Argument * args)
 name|get_path_by_tattoo_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2735,9 +2799,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_delete_invoker (Argument * args)
+DECL|function|path_delete_invoker (Gimp * gimp,Argument * args)
 name|path_delete_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2899,9 +2967,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_locked_invoker (Argument * args)
+DECL|function|path_get_locked_invoker (Gimp * gimp,Argument * args)
 name|path_get_locked_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3196,9 +3268,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_locked_invoker (Argument * args)
+DECL|function|path_set_locked_invoker (Gimp * gimp,Argument * args)
 name|path_set_locked_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3478,9 +3554,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_tattoo_invoker (Argument * args)
+DECL|function|path_set_tattoo_invoker (Gimp * gimp,Argument * args)
 name|path_set_tattoo_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

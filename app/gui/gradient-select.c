@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -102,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -400,6 +406,8 @@ name|context
 operator|=
 name|gimp_context_new
 argument_list|(
+name|the_gimp
+argument_list|,
 name|title
 argument_list|,
 name|NULL
@@ -431,7 +439,13 @@ name|first_call
 condition|)
 name|gimp_data_factory_data_init
 argument_list|(
-name|global_gradient_factory
+name|gsp
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|gradient_factory
 argument_list|,
 name|FALSE
 argument_list|)
@@ -460,7 +474,13 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_gradient_factory
+name|gsp
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|,
@@ -489,7 +509,9 @@ operator|=
 name|gimp_context_get_gradient
 argument_list|(
 name|gimp_context_get_standard
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -550,7 +572,13 @@ name|gimp_data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
-name|global_gradient_factory
+name|gsp
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|gradient_factory
 argument_list|,
 name|dialogs_edit_gradient_func
 argument_list|,
@@ -792,6 +820,12 @@ name|prec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gsp
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
@@ -912,6 +946,12 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
+name|gsp
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|,
 name|name
 argument_list|,
 operator|&
@@ -1056,6 +1096,12 @@ name|prec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gsp
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|,
 name|name
 argument_list|)
 expr_stmt|;

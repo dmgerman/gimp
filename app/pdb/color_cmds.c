@@ -249,80 +249,106 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_color_procs (void)
+DECL|function|register_color_procs (Gimp * gimp)
 name|register_color_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brightness_contrast_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|levels_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|posterize_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|desaturate_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|equalize_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|invert_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|curves_spline_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|curves_explicit_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|color_balance_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|histogram_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|hue_saturation_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|threshold_proc
 argument_list|)
@@ -334,9 +360,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brightness_contrast_invoker (Argument * args)
+DECL|function|brightness_contrast_invoker (Gimp * gimp,Argument * args)
 name|brightness_contrast_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -716,9 +746,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|levels_invoker (Argument * args)
+DECL|function|levels_invoker (Gimp * gimp,Argument * args)
 name|levels_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1377,9 +1411,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|posterize_invoker (Argument * args)
+DECL|function|posterize_invoker (Gimp * gimp,Argument * args)
 name|posterize_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1715,9 +1753,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|desaturate_invoker (Argument * args)
+DECL|function|desaturate_invoker (Gimp * gimp,Argument * args)
 name|desaturate_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1852,9 +1894,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|equalize_invoker (Argument * args)
+DECL|function|equalize_invoker (Gimp * gimp,Argument * args)
 name|equalize_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2018,9 +2064,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|invert_invoker (Argument * args)
+DECL|function|invert_invoker (Gimp * gimp,Argument * args)
 name|invert_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2156,9 +2206,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|curves_spline_invoker (Argument * args)
+DECL|function|curves_spline_invoker (Gimp * gimp,Argument * args)
 name|curves_spline_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2776,9 +2830,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|curves_explicit_invoker (Argument * args)
+DECL|function|curves_explicit_invoker (Gimp * gimp,Argument * args)
 name|curves_explicit_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3295,9 +3353,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|color_balance_invoker (Argument * args)
+DECL|function|color_balance_invoker (Gimp * gimp,Argument * args)
 name|color_balance_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3851,9 +3913,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|histogram_invoker (Argument * args)
+DECL|function|histogram_invoker (Gimp * gimp,Argument * args)
 name|histogram_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4513,9 +4579,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|hue_saturation_invoker (Argument * args)
+DECL|function|hue_saturation_invoker (Gimp * gimp,Argument * args)
 name|hue_saturation_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5038,9 +5108,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|threshold_invoker (Argument * args)
+DECL|function|threshold_invoker (Gimp * gimp,Argument * args)
 name|threshold_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

@@ -657,6 +657,12 @@ name|context
 operator|=
 name|gimp_context_new
 argument_list|(
+name|factory
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|,
 literal|"Dock Context"
 argument_list|,
 name|NULL

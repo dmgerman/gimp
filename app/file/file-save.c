@@ -672,6 +672,10 @@ name|return_vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|proc
 operator|->
 name|name

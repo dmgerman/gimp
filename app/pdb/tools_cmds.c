@@ -477,188 +477,250 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_tools_procs (void)
+DECL|function|register_tools_procs (Gimp * gimp)
 name|register_tools_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|airbrush_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|airbrush_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|blend_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|bucket_fill_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|by_color_select_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|clone_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|clone_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|color_picker_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|convolve_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|convolve_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|crop_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|dodgeburn_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|dodgeburn_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|ellipse_select_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|eraser_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|eraser_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|flip_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|free_select_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|fuzzy_select_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|paintbrush_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|paintbrush_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|pencil_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|perspective_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|rect_select_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|rotate_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|scale_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|shear_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|smudge_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|smudge_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|transform_2d_proc
 argument_list|)
@@ -670,9 +732,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|airbrush_invoker (Argument * args)
+DECL|function|airbrush_invoker (Gimp * gimp,Argument * args)
 name|airbrush_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -904,9 +970,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|airbrush_default_invoker (Argument * args)
+DECL|function|airbrush_default_invoker (Gimp * gimp,Argument * args)
 name|airbrush_default_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1100,9 +1170,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|blend_invoker (Argument * args)
+DECL|function|blend_invoker (Gimp * gimp,Argument * args)
 name|blend_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1677,9 +1751,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|bucket_fill_invoker (Argument * args)
+DECL|function|bucket_fill_invoker (Gimp * gimp,Argument * args)
 name|bucket_fill_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2046,9 +2124,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|by_color_select_invoker (Argument * args)
+DECL|function|by_color_select_invoker (Gimp * gimp,Argument * args)
 name|by_color_select_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2417,9 +2499,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|clone_invoker (Argument * args)
+DECL|function|clone_invoker (Gimp * gimp,Argument * args)
 name|clone_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2737,9 +2823,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|clone_default_invoker (Argument * args)
+DECL|function|clone_default_invoker (Gimp * gimp,Argument * args)
 name|clone_default_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2933,9 +3023,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|color_picker_invoker (Argument * args)
+DECL|function|color_picker_invoker (Gimp * gimp,Argument * args)
 name|color_picker_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3368,9 +3462,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convolve_invoker (Argument * args)
+DECL|function|convolve_invoker (Gimp * gimp,Argument * args)
 name|convolve_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3640,9 +3738,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convolve_default_invoker (Argument * args)
+DECL|function|convolve_default_invoker (Gimp * gimp,Argument * args)
 name|convolve_default_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3836,9 +3938,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|crop_invoker (Argument * args)
+DECL|function|crop_invoker (Gimp * gimp,Argument * args)
 name|crop_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4144,9 +4250,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|dodgeburn_invoker (Argument * args)
+DECL|function|dodgeburn_invoker (Gimp * gimp,Argument * args)
 name|dodgeburn_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4454,9 +4564,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|dodgeburn_default_invoker (Argument * args)
+DECL|function|dodgeburn_default_invoker (Gimp * gimp,Argument * args)
 name|dodgeburn_default_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4650,9 +4764,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|ellipse_select_invoker (Argument * args)
+DECL|function|ellipse_select_invoker (Gimp * gimp,Argument * args)
 name|ellipse_select_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5019,9 +5137,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|eraser_invoker (Argument * args)
+DECL|function|eraser_invoker (Gimp * gimp,Argument * args)
 name|eraser_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5293,9 +5415,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|eraser_default_invoker (Argument * args)
+DECL|function|eraser_default_invoker (Gimp * gimp,Argument * args)
 name|eraser_default_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5489,9 +5615,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|flip_invoker (Argument * args)
+DECL|function|flip_invoker (Gimp * gimp,Argument * args)
 name|flip_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5824,9 +5954,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|free_select_invoker (Argument * args)
+DECL|function|free_select_invoker (Gimp * gimp,Argument * args)
 name|free_select_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -6140,9 +6274,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fuzzy_select_invoker (Argument * args)
+DECL|function|fuzzy_select_invoker (Gimp * gimp,Argument * args)
 name|fuzzy_select_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -6550,9 +6688,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|paintbrush_invoker (Argument * args)
+DECL|function|paintbrush_invoker (Gimp * gimp,Argument * args)
 name|paintbrush_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -6852,9 +6994,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|paintbrush_default_invoker (Argument * args)
+DECL|function|paintbrush_default_invoker (Gimp * gimp,Argument * args)
 name|paintbrush_default_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -7048,9 +7194,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|pencil_invoker (Argument * args)
+DECL|function|pencil_invoker (Gimp * gimp,Argument * args)
 name|pencil_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -7244,9 +7394,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|perspective_invoker (Argument * args)
+DECL|function|perspective_invoker (Gimp * gimp,Argument * args)
 name|perspective_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -7844,9 +7998,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|rect_select_invoker (Argument * args)
+DECL|function|rect_select_invoker (Gimp * gimp,Argument * args)
 name|rect_select_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -8185,9 +8343,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|rotate_invoker (Argument * args)
+DECL|function|rotate_invoker (Gimp * gimp,Argument * args)
 name|rotate_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -8581,9 +8743,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|scale_invoker (Argument * args)
+DECL|function|scale_invoker (Gimp * gimp,Argument * args)
 name|scale_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -9124,9 +9290,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|shear_invoker (Argument * args)
+DECL|function|shear_invoker (Gimp * gimp,Argument * args)
 name|shear_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -9600,9 +9770,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|smudge_invoker (Argument * args)
+DECL|function|smudge_invoker (Gimp * gimp,Argument * args)
 name|smudge_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -9834,9 +10008,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|smudge_default_invoker (Argument * args)
+DECL|function|smudge_default_invoker (Gimp * gimp,Argument * args)
 name|smudge_default_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -10030,9 +10208,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|transform_2d_invoker (Argument * args)
+DECL|function|transform_2d_invoker (Gimp * gimp,Argument * args)
 name|transform_2d_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

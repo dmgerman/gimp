@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -108,7 +114,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -142,7 +148,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294fea8e0103
+DECL|enum|__anon2b1ef9ff0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -1366,7 +1372,9 @@ condition|)
 block|{
 name|gimp_container_foreach
 argument_list|(
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|,
 name|palette_import_gimlist_indexed_cb
 argument_list|,
@@ -1379,7 +1387,9 @@ else|else
 block|{
 name|gimp_container_foreach
 argument_list|(
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|,
 name|palette_import_gimlist_cb
 argument_list|,
@@ -1947,7 +1957,9 @@ condition|)
 block|{
 name|gimp_container_foreach
 argument_list|(
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|,
 name|palette_import_gimlist_indexed_cb
 argument_list|,
@@ -1960,7 +1972,9 @@ else|else
 block|{
 name|gimp_container_foreach
 argument_list|(
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|,
 name|palette_import_gimlist_cb
 argument_list|,
@@ -2458,7 +2472,9 @@ name|palette
 condition|)
 name|gimp_container_add
 argument_list|(
-name|global_palette_factory
+name|the_gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|,
@@ -3683,7 +3699,9 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|)
 argument_list|,
 literal|"add"
@@ -3700,7 +3718,9 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|)
 argument_list|,
 literal|"remove"

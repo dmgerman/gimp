@@ -105,44 +105,58 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_guides_procs (void)
+DECL|function|register_guides_procs (Gimp * gimp)
 name|register_guides_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_add_hguide_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_add_vguide_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_delete_guide_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_find_next_guide_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_guide_orientation_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_guide_position_proc
 argument_list|)
@@ -154,9 +168,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_hguide_invoker (Argument * args)
+DECL|function|image_add_hguide_invoker (Gimp * gimp,Argument * args)
 name|image_add_hguide_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -398,9 +416,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_vguide_invoker (Argument * args)
+DECL|function|image_add_vguide_invoker (Gimp * gimp,Argument * args)
 name|image_add_vguide_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -642,9 +664,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_delete_guide_invoker (Argument * args)
+DECL|function|image_delete_guide_invoker (Gimp * gimp,Argument * args)
 name|image_delete_guide_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -893,9 +919,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_find_next_guide_invoker (Argument * args)
+DECL|function|image_find_next_guide_invoker (Gimp * gimp,Argument * args)
 name|image_find_next_guide_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1273,9 +1303,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_guide_orientation_invoker (Argument * args)
+DECL|function|image_get_guide_orientation_invoker (Gimp * gimp,Argument * args)
 name|image_get_guide_orientation_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1545,9 +1579,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_guide_position_invoker (Argument * args)
+DECL|function|image_get_guide_position_invoker (Gimp * gimp,Argument * args)
 name|image_get_guide_position_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpedit.h"
 end_include
 
@@ -66,14 +72,6 @@ include|#
 directive|include
 file|"drawable.h"
 end_include
-
-begin_decl_stmt
-specifier|extern
-name|TileManager
-modifier|*
-name|global_buffer
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|edit_cut_proc
@@ -125,44 +123,58 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_edit_procs (void)
+DECL|function|register_edit_procs (Gimp * gimp)
 name|register_edit_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|edit_cut_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|edit_copy_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|edit_paste_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|edit_clear_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|edit_fill_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|edit_stroke_proc
 argument_list|)
@@ -174,9 +186,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_cut_invoker (Argument * args)
+DECL|function|edit_cut_invoker (Gimp * gimp,Argument * args)
 name|edit_cut_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -319,9 +335,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_copy_invoker (Argument * args)
+DECL|function|edit_copy_invoker (Gimp * gimp,Argument * args)
 name|edit_copy_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -464,9 +484,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_paste_invoker (Argument * args)
+DECL|function|edit_paste_invoker (Gimp * gimp,Argument * args)
 name|edit_paste_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -560,6 +584,8 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
+name|gimp
+operator|->
 name|global_buffer
 argument_list|,
 name|paste_into
@@ -697,9 +723,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_clear_invoker (Argument * args)
+DECL|function|edit_clear_invoker (Gimp * gimp,Argument * args)
 name|edit_clear_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -840,9 +870,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_fill_invoker (Argument * args)
+DECL|function|edit_fill_invoker (Gimp * gimp,Argument * args)
 name|edit_fill_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1024,9 +1058,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_stroke_invoker (Argument * args)
+DECL|function|edit_stroke_invoker (Gimp * gimp,Argument * args)
 name|edit_stroke_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

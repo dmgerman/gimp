@@ -111,7 +111,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -2004,7 +2004,7 @@ name|void
 parameter_list|)
 block|{
 comment|/*  Continue initializing  */
-name|gimp_init
+name|app_init
 argument_list|(
 name|gimp_argc
 argument_list|,

@@ -58,13 +58,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -627,368 +627,490 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_image_procs (void)
+DECL|function|register_image_procs (Gimp * gimp)
 name|register_image_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_list_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_new_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_resize_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_scale_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_delete_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_free_shadow_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_layers_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_channels_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_unset_active_channel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_pick_correlate_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_raise_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_lower_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_raise_layer_to_top_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_lower_layer_to_bottom_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_merge_visible_layers_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_merge_down_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_flatten_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_add_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_remove_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_add_layer_mask_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_remove_layer_mask_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_raise_channel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_lower_channel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_add_channel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_remove_channel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_active_drawable_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_base_type_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_cmap_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_set_cmap_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_undo_is_enabled_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_undo_enable_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_undo_disable_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_undo_freeze_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_undo_thaw_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_clean_all_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_floating_selection_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_floating_sel_attached_to_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_thumbnail_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_set_tattoo_state_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_tattoo_state_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_duplicate_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_width_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_height_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_active_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_set_active_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_active_channel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_set_active_channel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_selection_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_component_active_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_set_component_active_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_component_visible_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_set_component_visible_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_filename_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_set_filename_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_resolution_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_set_resolution_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_unit_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_set_unit_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_layer_by_tattoo_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_get_channel_by_tattoo_proc
 argument_list|)
@@ -1043,9 +1165,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_list_invoker (Argument * args)
+DECL|function|image_list_invoker (Gimp * gimp,Argument * args)
 name|image_list_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1077,7 +1203,9 @@ name|i
 decl_stmt|;
 name|gimp_container_foreach
 argument_list|(
-name|image_context
+name|gimp
+operator|->
+name|images
 argument_list|,
 name|gimlist_cb
 argument_list|,
@@ -1249,9 +1377,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_new_invoker (Argument * args)
+DECL|function|image_new_invoker (Gimp * gimp,Argument * args)
 name|image_new_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1359,6 +1491,8 @@ name|gimage
 operator|=
 name|gimage_new
 argument_list|(
+name|gimp
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -1499,9 +1633,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_resize_invoker (Argument * args)
+DECL|function|image_resize_invoker (Gimp * gimp,Argument * args)
 name|image_resize_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1743,9 +1881,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_scale_invoker (Argument * args)
+DECL|function|image_scale_invoker (Gimp * gimp,Argument * args)
 name|image_scale_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1939,9 +2081,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_delete_invoker (Argument * args)
+DECL|function|image_delete_invoker (Gimp * gimp,Argument * args)
 name|image_delete_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2065,9 +2211,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_free_shadow_invoker (Argument * args)
+DECL|function|image_free_shadow_invoker (Gimp * gimp,Argument * args)
 name|image_free_shadow_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2188,9 +2338,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_layers_invoker (Argument * args)
+DECL|function|image_get_layers_invoker (Gimp * gimp,Argument * args)
 name|image_get_layers_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2459,9 +2613,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_channels_invoker (Argument * args)
+DECL|function|image_get_channels_invoker (Gimp * gimp,Argument * args)
 name|image_get_channels_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2730,9 +2888,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_unset_active_channel_invoker (Argument * args)
+DECL|function|image_unset_active_channel_invoker (Gimp * gimp,Argument * args)
 name|image_unset_active_channel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2853,9 +3015,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_pick_correlate_layer_invoker (Argument * args)
+DECL|function|image_pick_correlate_layer_invoker (Gimp * gimp,Argument * args)
 name|image_pick_correlate_layer_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3080,9 +3246,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_layer_invoker (Argument * args)
+DECL|function|image_raise_layer_invoker (Gimp * gimp,Argument * args)
 name|image_raise_layer_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3247,9 +3417,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_layer_invoker (Argument * args)
+DECL|function|image_lower_layer_invoker (Gimp * gimp,Argument * args)
 name|image_lower_layer_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3414,9 +3588,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_layer_to_top_invoker (Argument * args)
+DECL|function|image_raise_layer_to_top_invoker (Gimp * gimp,Argument * args)
 name|image_raise_layer_to_top_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3581,9 +3759,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_layer_to_bottom_invoker (Argument * args)
+DECL|function|image_lower_layer_to_bottom_invoker (Gimp * gimp,Argument * args)
 name|image_lower_layer_to_bottom_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3748,9 +3930,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_merge_visible_layers_invoker (Argument * args)
+DECL|function|image_merge_visible_layers_invoker (Gimp * gimp,Argument * args)
 name|image_merge_visible_layers_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3973,9 +4159,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_merge_down_invoker (Argument * args)
+DECL|function|image_merge_down_invoker (Gimp * gimp,Argument * args)
 name|image_merge_down_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4240,9 +4430,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_flatten_invoker (Argument * args)
+DECL|function|image_flatten_invoker (Gimp * gimp,Argument * args)
 name|image_flatten_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4425,9 +4619,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_layer_invoker (Argument * args)
+DECL|function|image_add_layer_invoker (Gimp * gimp,Argument * args)
 name|image_add_layer_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4682,9 +4880,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_layer_invoker (Argument * args)
+DECL|function|image_remove_layer_invoker (Gimp * gimp,Argument * args)
 name|image_remove_layer_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4847,9 +5049,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_layer_mask_invoker (Argument * args)
+DECL|function|image_add_layer_mask_invoker (Gimp * gimp,Argument * args)
 name|image_add_layer_mask_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5058,9 +5264,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_layer_mask_invoker (Argument * args)
+DECL|function|image_remove_layer_mask_invoker (Gimp * gimp,Argument * args)
 name|image_remove_layer_mask_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5261,9 +5471,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_channel_invoker (Argument * args)
+DECL|function|image_raise_channel_invoker (Gimp * gimp,Argument * args)
 name|image_raise_channel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5428,9 +5642,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_channel_invoker (Argument * args)
+DECL|function|image_lower_channel_invoker (Gimp * gimp,Argument * args)
 name|image_lower_channel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5595,9 +5813,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_channel_invoker (Argument * args)
+DECL|function|image_add_channel_invoker (Gimp * gimp,Argument * args)
 name|image_add_channel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5792,9 +6014,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_channel_invoker (Argument * args)
+DECL|function|image_remove_channel_invoker (Gimp * gimp,Argument * args)
 name|image_remove_channel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -5957,9 +6183,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_active_drawable_invoker (Argument * args)
+DECL|function|image_active_drawable_invoker (Gimp * gimp,Argument * args)
 name|image_active_drawable_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -6142,9 +6372,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_base_type_invoker (Argument * args)
+DECL|function|image_base_type_invoker (Gimp * gimp,Argument * args)
 name|image_base_type_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -6314,9 +6548,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_cmap_invoker (Argument * args)
+DECL|function|image_get_cmap_invoker (Gimp * gimp,Argument * args)
 name|image_get_cmap_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -6537,9 +6775,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_cmap_invoker (Argument * args)
+DECL|function|image_set_cmap_invoker (Gimp * gimp,Argument * args)
 name|image_set_cmap_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -6780,9 +7022,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_is_enabled_invoker (Argument * args)
+DECL|function|image_undo_is_enabled_invoker (Gimp * gimp,Argument * args)
 name|image_undo_is_enabled_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -6952,9 +7198,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_enable_invoker (Argument * args)
+DECL|function|image_undo_enable_invoker (Gimp * gimp,Argument * args)
 name|image_undo_enable_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -7123,9 +7373,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_disable_invoker (Argument * args)
+DECL|function|image_undo_disable_invoker (Gimp * gimp,Argument * args)
 name|image_undo_disable_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -7294,9 +7548,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_freeze_invoker (Argument * args)
+DECL|function|image_undo_freeze_invoker (Gimp * gimp,Argument * args)
 name|image_undo_freeze_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -7465,9 +7723,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_thaw_invoker (Argument * args)
+DECL|function|image_undo_thaw_invoker (Gimp * gimp,Argument * args)
 name|image_undo_thaw_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -7636,9 +7898,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_clean_all_invoker (Argument * args)
+DECL|function|image_clean_all_invoker (Gimp * gimp,Argument * args)
 name|image_clean_all_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -7759,9 +8025,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_floating_selection_invoker (Argument * args)
+DECL|function|image_floating_selection_invoker (Gimp * gimp,Argument * args)
 name|image_floating_selection_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -7943,9 +8213,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_floating_sel_attached_to_invoker (Argument * args)
+DECL|function|image_floating_sel_attached_to_invoker (Gimp * gimp,Argument * args)
 name|image_floating_sel_attached_to_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -8156,9 +8430,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_thumbnail_invoker (Argument * args)
+DECL|function|image_thumbnail_invoker (Gimp * gimp,Argument * args)
 name|image_thumbnail_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -8619,9 +8897,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_tattoo_state_invoker (Argument * args)
+DECL|function|image_set_tattoo_state_invoker (Gimp * gimp,Argument * args)
 name|image_set_tattoo_state_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -8770,9 +9052,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_tattoo_state_invoker (Argument * args)
+DECL|function|image_get_tattoo_state_invoker (Gimp * gimp,Argument * args)
 name|image_get_tattoo_state_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -8944,9 +9230,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_duplicate_invoker (Argument * args)
+DECL|function|image_duplicate_invoker (Gimp * gimp,Argument * args)
 name|image_duplicate_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -9126,9 +9416,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_width_invoker (Argument * args)
+DECL|function|image_width_invoker (Gimp * gimp,Argument * args)
 name|image_width_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -9284,9 +9578,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_height_invoker (Argument * args)
+DECL|function|image_height_invoker (Gimp * gimp,Argument * args)
 name|image_height_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -9442,9 +9740,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_active_layer_invoker (Argument * args)
+DECL|function|image_get_active_layer_invoker (Gimp * gimp,Argument * args)
 name|image_get_active_layer_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -9626,9 +9928,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_active_layer_invoker (Argument * args)
+DECL|function|image_set_active_layer_invoker (Gimp * gimp,Argument * args)
 name|image_set_active_layer_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -9791,9 +10097,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_active_channel_invoker (Argument * args)
+DECL|function|image_get_active_channel_invoker (Gimp * gimp,Argument * args)
 name|image_get_active_channel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -9975,9 +10285,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_active_channel_invoker (Argument * args)
+DECL|function|image_set_active_channel_invoker (Gimp * gimp,Argument * args)
 name|image_set_active_channel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -10140,9 +10454,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_selection_invoker (Argument * args)
+DECL|function|image_get_selection_invoker (Gimp * gimp,Argument * args)
 name|image_get_selection_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -10325,9 +10643,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_component_active_invoker (Argument * args)
+DECL|function|image_get_component_active_invoker (Gimp * gimp,Argument * args)
 name|image_get_component_active_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -10569,9 +10891,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_component_active_invoker (Argument * args)
+DECL|function|image_set_component_active_invoker (Gimp * gimp,Argument * args)
 name|image_set_component_active_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -10805,9 +11131,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_component_visible_invoker (Argument * args)
+DECL|function|image_get_component_visible_invoker (Gimp * gimp,Argument * args)
 name|image_get_component_visible_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -11049,9 +11379,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_component_visible_invoker (Argument * args)
+DECL|function|image_set_component_visible_invoker (Gimp * gimp,Argument * args)
 name|image_set_component_visible_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -11285,9 +11619,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_filename_invoker (Argument * args)
+DECL|function|image_get_filename_invoker (Gimp * gimp,Argument * args)
 name|image_get_filename_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -11447,9 +11785,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_filename_invoker (Argument * args)
+DECL|function|image_set_filename_invoker (Gimp * gimp,Argument * args)
 name|image_set_filename_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -11609,9 +11951,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_resolution_invoker (Argument * args)
+DECL|function|image_get_resolution_invoker (Gimp * gimp,Argument * args)
 name|image_get_resolution_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -11790,9 +12136,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_resolution_invoker (Argument * args)
+DECL|function|image_set_resolution_invoker (Gimp * gimp,Argument * args)
 name|image_set_resolution_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -12014,9 +12364,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_unit_invoker (Argument * args)
+DECL|function|image_get_unit_invoker (Gimp * gimp,Argument * args)
 name|image_get_unit_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -12172,9 +12526,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_unit_invoker (Argument * args)
+DECL|function|image_set_unit_invoker (Gimp * gimp,Argument * args)
 name|image_set_unit_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -12333,9 +12691,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_layer_by_tattoo_invoker (Argument * args)
+DECL|function|image_get_layer_by_tattoo_invoker (Gimp * gimp,Argument * args)
 name|image_get_layer_by_tattoo_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -12554,9 +12916,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_channel_by_tattoo_invoker (Argument * args)
+DECL|function|image_get_channel_by_tattoo_invoker (Gimp * gimp,Argument * args)
 name|image_get_channel_by_tattoo_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

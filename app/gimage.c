@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gui/palette-import-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"context_manager.h"
 end_include
 
 begin_include
@@ -196,9 +196,13 @@ end_function_decl
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimage_new (gint width,gint height,GimpImageBaseType base_type)
+DECL|function|gimage_new (Gimp * gimp,gint width,gint height,GimpImageBaseType base_type)
 name|gimage_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
@@ -215,6 +219,8 @@ name|gimage
 init|=
 name|gimp_image_new
 argument_list|(
+name|gimp
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -343,7 +349,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|image_context
+name|gimp
+operator|->
+name|images
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -441,7 +449,11 @@ if|if
 condition|(
 name|gimp_container_num_children
 argument_list|(
-name|image_context
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|images
 argument_list|)
 operator|==
 literal|1

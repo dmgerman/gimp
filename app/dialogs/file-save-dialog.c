@@ -125,6 +125,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -1611,6 +1617,8 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|the_gimp
+argument_list|,
 literal|"plug_in_the_slimy_egg"
 argument_list|)
 expr_stmt|;

@@ -65,6 +65,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphelp.h"
 end_include
 
@@ -619,6 +625,8 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|the_gimp
+argument_list|,
 literal|"extension_gimp_help_browser_temp"
 argument_list|)
 expr_stmt|;
@@ -639,6 +647,8 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|the_gimp
+argument_list|,
 literal|"extension_gimp_help_browser"
 argument_list|)
 expr_stmt|;
@@ -842,6 +852,8 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
+name|the_gimp
+argument_list|,
 literal|"extension_gimp_help_browser_temp"
 argument_list|,
 operator|&
@@ -988,6 +1000,8 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
+name|the_gimp
+argument_list|,
 literal|"extension_web_browser"
 argument_list|,
 operator|&

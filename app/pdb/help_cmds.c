@@ -65,14 +65,18 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_help_procs (void)
+DECL|function|register_help_procs (Gimp * gimp)
 name|register_help_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|help_proc
 argument_list|)
@@ -84,9 +88,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|help_invoker (Argument * args)
+DECL|function|help_invoker (Gimp * gimp,Argument * args)
 name|help_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

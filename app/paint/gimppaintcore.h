@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools/gimpdrawtool.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_comment
@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2922c2e10103
+DECL|enum|__anon2aef86550103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2922c2e10203
+DECL|enum|__anon2aef86550203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH

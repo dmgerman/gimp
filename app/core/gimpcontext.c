@@ -39,20 +39,10 @@ directive|include
 file|"base/temp-buf.h"
 end_include
 
-begin_comment
-comment|/* FIXME: make a GimpToolFactory out of the tool_manager and put it here */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
+file|"gimp.h"
 end_include
 
 begin_include
@@ -119,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"context_manager.h"
 end_include
 
 begin_include
@@ -1059,7 +1043,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9754830103
+DECL|enum|__anon27cb904f0103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -1105,7 +1089,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9754830203
+DECL|enum|__anon27cb904f0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -2204,6 +2188,12 @@ parameter_list|)
 block|{
 name|context
 operator|->
+name|gimp
+operator|=
+name|NULL
+expr_stmt|;
+name|context
+operator|->
 name|parent
 operator|=
 name|NULL
@@ -3205,9 +3195,13 @@ end_function
 begin_function
 name|GimpContext
 modifier|*
-DECL|function|gimp_context_new (const gchar * name,GimpContext * template)
+DECL|function|gimp_context_new (Gimp * gimp,const gchar * name,GimpContext * template)
 name|gimp_context_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -3222,6 +3216,25 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimp
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 operator|!
@@ -3241,6 +3254,12 @@ name|gtk_type_new
 argument_list|(
 name|GIMP_TYPE_CONTEXT
 argument_list|)
+expr_stmt|;
+name|context
+operator|->
+name|gimp
+operator|=
+name|gimp
 expr_stmt|;
 comment|/*  FIXME: need unique names here  */
 if|if
@@ -3266,7 +3285,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|image_context
+name|gimp
+operator|->
+name|images
 argument_list|)
 argument_list|,
 literal|"remove"
@@ -3288,7 +3309,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_tool_info_list
+name|gimp
+operator|->
+name|tool_info_list
 argument_list|)
 argument_list|,
 literal|"remove"
@@ -3310,7 +3333,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_tool_info_list
+name|gimp
+operator|->
+name|tool_info_list
 argument_list|)
 argument_list|,
 literal|"thaw"
@@ -3332,7 +3357,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_brush_factory
+name|gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|)
@@ -3356,7 +3383,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_brush_factory
+name|gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|)
@@ -3380,7 +3409,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_pattern_factory
+name|gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 argument_list|)
@@ -3404,7 +3435,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_pattern_factory
+name|gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 argument_list|)
@@ -3428,7 +3461,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_gradient_factory
+name|gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|)
@@ -3452,7 +3487,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_gradient_factory
+name|gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|)
@@ -3476,7 +3513,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_palette_factory
+name|gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|)
@@ -3500,7 +3539,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_palette_factory
+name|gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|)
@@ -3524,6 +3565,8 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
+name|gimp
+operator|->
 name|named_buffers
 argument_list|)
 argument_list|,
@@ -3546,6 +3589,8 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
+name|gimp
+operator|->
 name|named_buffers
 argument_list|)
 argument_list|,
@@ -3700,12 +3745,33 @@ end_function
 begin_function
 name|GimpContext
 modifier|*
-DECL|function|gimp_context_get_standard (void)
+DECL|function|gimp_context_get_standard (Gimp * gimp)
 name|gimp_context_get_standard
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|gimp
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -3716,6 +3782,8 @@ name|standard_context
 operator|=
 name|gimp_context_new
 argument_list|(
+name|gimp
+argument_list|,
 literal|"Standard"
 argument_list|,
 name|NULL

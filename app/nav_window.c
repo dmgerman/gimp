@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -108,7 +114,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -194,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2773dec70103
+DECL|enum|__anon2a4362150103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -7081,7 +7087,11 @@ name|gimage
 operator|&&
 name|gimp_container_have
 argument_list|(
-name|image_context
+name|context
+operator|->
+name|gimp
+operator|->
+name|images
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -7211,7 +7221,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|)
 operator|->
 name|list

@@ -100,12 +100,16 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|typedef|info
 typedef|typedef
 name|GimpImage
 modifier|*
 name|GimpXcfLoaderFunc
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+DECL|typedef|info
 name|XcfInfo
 modifier|*
 name|info
@@ -119,6 +123,10 @@ name|Argument
 modifier|*
 name|xcf_load_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -132,6 +140,10 @@ name|Argument
 modifier|*
 name|xcf_save_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -412,15 +424,19 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|xcf_init (void)
+DECL|function|xcf_init (Gimp * gimp)
 name|xcf_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 comment|/* So this is sort of a hack, but its better than it was before.  To do this    * right there would be a file load-save handler type and the whole interface    * would change but there isn't, and currently the plug-in structure contains    * all the load-save info, so it makes sense to use that for the XCF load/save    * handlers, even though they are internal.  The only thing it requires is    * using a PlugInProcDef struct.  -josh    */
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|xcf_plug_in_save_proc
 operator|.
@@ -429,6 +445,8 @@ argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|xcf_plug_in_load_proc
 operator|.
@@ -486,9 +504,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|xcf_load_invoker (Argument * args)
+DECL|function|xcf_load_invoker (Gimp * gimp,Argument * args)
 name|xcf_load_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -740,6 +762,8 @@ index|]
 operator|)
 operator|)
 operator|(
+name|gimp
+operator|,
 operator|&
 name|info
 operator|)
@@ -826,9 +850,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|xcf_save_invoker (Argument * args)
+DECL|function|xcf_save_invoker (Gimp * gimp,Argument * args)
 name|xcf_save_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

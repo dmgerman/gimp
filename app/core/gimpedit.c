@@ -36,13 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -72,13 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
+file|"gimp.h"
 end_include
 
 begin_include
@@ -132,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -356,14 +344,26 @@ block|{
 comment|/*  Free the old global edit buffer  */
 if|if
 condition|(
+name|gimage
+operator|->
+name|gimp
+operator|->
 name|global_buffer
 condition|)
 name|tile_manager_destroy
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+operator|->
 name|global_buffer
 argument_list|)
 expr_stmt|;
 comment|/*  Set the global edit buffer  */
+name|gimage
+operator|->
+name|gimp
+operator|->
 name|global_buffer
 operator|=
 name|cropped_cut
@@ -528,14 +528,26 @@ block|{
 comment|/*  Free the old global edit buffer  */
 if|if
 condition|(
+name|gimage
+operator|->
+name|gimp
+operator|->
 name|global_buffer
 condition|)
 name|tile_manager_destroy
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+operator|->
 name|global_buffer
 argument_list|)
 expr_stmt|;
 comment|/*  Set the global edit buffer  */
+name|gimage
+operator|->
+name|gimp
+operator|->
 name|global_buffer
 operator|=
 name|cropped_copy
@@ -878,9 +890,13 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_edit_paste_as_new (GimpImage * invoke,TileManager * paste)
+DECL|function|gimp_edit_paste_as_new (Gimp * gimp,GimpImage * invoke,TileManager * paste)
 name|gimp_edit_paste_as_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|invoke
@@ -906,19 +922,13 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|global_buffer
-condition|)
-return|return
-name|FALSE
-return|;
 comment|/*  create a new image  (always of type RGB)  */
 name|gimage
 operator|=
 name|gimage_new
 argument_list|(
+name|gimp
+argument_list|,
 name|tile_manager_width
 argument_list|(
 name|paste

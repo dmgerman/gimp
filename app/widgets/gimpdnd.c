@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -132,25 +138,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/file-open-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -190,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c403fff0103
+DECL|enum|__anon2a0ba76b0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE
@@ -4410,7 +4404,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_brush_factory
+name|the_gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|,
@@ -4547,7 +4543,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_pattern_factory
+name|the_gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 argument_list|,
@@ -4684,7 +4682,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_gradient_factory
+name|the_gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|,
@@ -4821,7 +4821,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_palette_factory
+name|the_gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|,
@@ -4938,6 +4940,8 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
+name|the_gimp
+operator|->
 name|named_buffers
 argument_list|,
 name|name
@@ -5177,7 +5181,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_tool_info_list
+name|the_gimp
+operator|->
+name|tool_info_list
 argument_list|,
 name|name
 argument_list|)

@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c768a1c0103
+DECL|enum|__anon29fbfbee0103
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -158,6 +158,12 @@ DECL|member|parent_instance
 name|GimpViewable
 name|parent_instance
 decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+comment|/* The GIMP we image belongs to  */
 DECL|member|ID
 name|gint
 name|ID
@@ -657,6 +663,10 @@ name|GimpImage
 modifier|*
 name|gimp_image_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 name|width
 parameter_list|,

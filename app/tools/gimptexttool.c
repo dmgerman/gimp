@@ -1603,6 +1603,12 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 literal|"plug_in_dynamic_text"
 argument_list|)
 operator|)

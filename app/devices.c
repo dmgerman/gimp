@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"widgets/widgets-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/widgets-types.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -114,19 +114,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -1221,6 +1215,8 @@ name|context
 operator|=
 name|gimp_context_new
 argument_list|(
+name|the_gimp
+argument_list|,
 name|device_info
 operator|->
 name|name
@@ -1585,6 +1581,8 @@ name|context
 operator|=
 name|gimp_context_new
 argument_list|(
+name|the_gimp
+argument_list|,
 name|device_info
 operator|->
 name|name
@@ -1789,7 +1787,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_tool_info_list
+name|the_gimp
+operator|->
+name|tool_info_list
 argument_list|,
 name|tool_name
 argument_list|)
@@ -1886,7 +1886,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_brush_factory
+name|the_gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|,
@@ -1955,7 +1957,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_pattern_factory
+name|the_gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 argument_list|,
@@ -2024,7 +2028,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_gradient_factory
+name|the_gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|,

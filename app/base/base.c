@@ -166,6 +166,9 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
+name|toast_old_temp_files
+argument_list|()
+expr_stmt|;
 comment|/* Add the swap file  */
 if|if
 condition|(
@@ -180,9 +183,6 @@ operator|->
 name|swap_path
 operator|=
 name|g_get_tmp_dir
-argument_list|()
-expr_stmt|;
-name|toast_old_temp_files
 argument_list|()
 expr_stmt|;
 name|path

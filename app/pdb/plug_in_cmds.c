@@ -139,44 +139,58 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_plug_in_procs (void)
+DECL|function|register_plug_in_procs (Gimp * gimp)
 name|register_plug_in_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|progress_init_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|progress_update_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|temp_PDB_name_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|plugins_query_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|plugin_domain_register_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|plugin_help_register_proc
 argument_list|)
@@ -220,9 +234,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_init_invoker (Argument * args)
+DECL|function|progress_init_invoker (Gimp * gimp,Argument * args)
 name|progress_init_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -375,9 +393,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_update_invoker (Argument * args)
+DECL|function|progress_update_invoker (Gimp * gimp,Argument * args)
 name|progress_update_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -501,9 +523,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|temp_PDB_name_invoker (Argument * args)
+DECL|function|temp_PDB_name_invoker (Gimp * gimp,Argument * args)
 name|temp_PDB_name_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -621,9 +647,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugins_query_invoker (Argument * args)
+DECL|function|plugins_query_invoker (Gimp * gimp,Argument * args)
 name|plugins_query_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1365,9 +1395,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_domain_register_invoker (Argument * args)
+DECL|function|plugin_domain_register_invoker (Gimp * gimp,Argument * args)
 name|plugin_domain_register_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1582,9 +1616,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_help_register_invoker (Argument * args)
+DECL|function|plugin_help_register_invoker (Gimp * gimp,Argument * args)
 name|plugin_help_register_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

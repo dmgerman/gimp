@@ -75,26 +75,34 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_display_procs (void)
+DECL|function|register_display_procs (Gimp * gimp)
 name|register_display_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|display_new_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|display_delete_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|displays_flush_proc
 argument_list|)
@@ -106,9 +114,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|display_new_invoker (Argument * args)
+DECL|function|display_new_invoker (Gimp * gimp,Argument * args)
 name|display_new_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -309,9 +321,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|display_delete_invoker (Argument * args)
+DECL|function|display_delete_invoker (Gimp * gimp,Argument * args)
 name|display_delete_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -434,9 +450,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|displays_flush_invoker (Argument * args)
+DECL|function|displays_flush_invoker (Gimp * gimp,Argument * args)
 name|displays_flush_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

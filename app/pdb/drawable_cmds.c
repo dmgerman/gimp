@@ -301,146 +301,194 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_drawable_procs (void)
+DECL|function|register_drawable_procs (Gimp * gimp)
 name|register_drawable_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_merge_shadow_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_fill_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_update_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_mask_bounds_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_image_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_type_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_has_alpha_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_type_with_alpha_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_is_rgb_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_is_gray_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_is_indexed_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_bytes_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_width_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_height_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_offsets_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_is_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_is_layer_mask_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_is_channel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_get_pixel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_set_pixel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_set_image_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_thumbnail_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_offset_proc
 argument_list|)
@@ -452,9 +500,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_merge_shadow_invoker (Argument * args)
+DECL|function|drawable_merge_shadow_invoker (Gimp * gimp,Argument * args)
 name|drawable_merge_shadow_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -603,9 +655,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_fill_invoker (Argument * args)
+DECL|function|drawable_fill_invoker (Gimp * gimp,Argument * args)
 name|drawable_fill_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -767,9 +823,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_update_invoker (Argument * args)
+DECL|function|drawable_update_invoker (Gimp * gimp,Argument * args)
 name|drawable_update_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -986,9 +1046,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_mask_bounds_invoker (Argument * args)
+DECL|function|drawable_mask_bounds_invoker (Gimp * gimp,Argument * args)
 name|drawable_mask_bounds_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1260,9 +1324,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_image_invoker (Argument * args)
+DECL|function|drawable_image_invoker (Gimp * gimp,Argument * args)
 name|drawable_image_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1442,9 +1510,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_type_invoker (Argument * args)
+DECL|function|drawable_type_invoker (Gimp * gimp,Argument * args)
 name|drawable_type_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1601,9 +1673,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_has_alpha_invoker (Argument * args)
+DECL|function|drawable_has_alpha_invoker (Gimp * gimp,Argument * args)
 name|drawable_has_alpha_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1760,9 +1836,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_type_with_alpha_invoker (Argument * args)
+DECL|function|drawable_type_with_alpha_invoker (Gimp * gimp,Argument * args)
 name|drawable_type_with_alpha_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1919,9 +1999,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_rgb_invoker (Argument * args)
+DECL|function|drawable_is_rgb_invoker (Gimp * gimp,Argument * args)
 name|drawable_is_rgb_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2078,9 +2162,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_gray_invoker (Argument * args)
+DECL|function|drawable_is_gray_invoker (Gimp * gimp,Argument * args)
 name|drawable_is_gray_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2237,9 +2325,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_indexed_invoker (Argument * args)
+DECL|function|drawable_is_indexed_invoker (Gimp * gimp,Argument * args)
 name|drawable_is_indexed_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2396,9 +2488,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_bytes_invoker (Argument * args)
+DECL|function|drawable_bytes_invoker (Gimp * gimp,Argument * args)
 name|drawable_bytes_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2555,9 +2651,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_width_invoker (Argument * args)
+DECL|function|drawable_width_invoker (Gimp * gimp,Argument * args)
 name|drawable_width_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2714,9 +2814,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_height_invoker (Argument * args)
+DECL|function|drawable_height_invoker (Gimp * gimp,Argument * args)
 name|drawable_height_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2873,9 +2977,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_offsets_invoker (Argument * args)
+DECL|function|drawable_offsets_invoker (Gimp * gimp,Argument * args)
 name|drawable_offsets_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3071,9 +3179,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_layer_invoker (Argument * args)
+DECL|function|drawable_is_layer_invoker (Gimp * gimp,Argument * args)
 name|drawable_is_layer_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3234,9 +3346,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_layer_mask_invoker (Argument * args)
+DECL|function|drawable_is_layer_mask_invoker (Gimp * gimp,Argument * args)
 name|drawable_is_layer_mask_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3397,9 +3513,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_channel_invoker (Argument * args)
+DECL|function|drawable_is_channel_invoker (Gimp * gimp,Argument * args)
 name|drawable_is_channel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3560,9 +3680,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_pixel_invoker (Argument * args)
+DECL|function|drawable_get_pixel_invoker (Gimp * gimp,Argument * args)
 name|drawable_get_pixel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3935,9 +4059,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_pixel_invoker (Argument * args)
+DECL|function|drawable_set_pixel_invoker (Gimp * gimp,Argument * args)
 name|drawable_set_pixel_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4274,9 +4402,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_image_invoker (Argument * args)
+DECL|function|drawable_set_image_invoker (Gimp * gimp,Argument * args)
 name|drawable_set_image_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4435,9 +4567,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_thumbnail_invoker (Argument * args)
+DECL|function|drawable_thumbnail_invoker (Gimp * gimp,Argument * args)
 name|drawable_thumbnail_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -4901,9 +5037,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_offset_invoker (Argument * args)
+DECL|function|drawable_offset_invoker (Gimp * gimp,Argument * args)
 name|drawable_offset_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

@@ -1210,9 +1210,13 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|xcf_load_image (XcfInfo * info)
+DECL|function|xcf_load_image (Gimp * gimp,XcfInfo * info)
 name|xcf_load_image
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|XcfInfo
 modifier|*
 name|info
@@ -1316,6 +1320,8 @@ name|gimage
 operator|=
 name|gimage_new
 argument_list|(
+name|gimp
+argument_list|,
 name|width
 argument_list|,
 name|height

@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -119,50 +119,66 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_palette_procs (void)
+DECL|function|register_palette_procs (Gimp * gimp)
 name|register_palette_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|palette_get_foreground_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|palette_get_background_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|palette_set_foreground_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|palette_set_background_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|palette_set_default_colors_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|palette_swap_colors_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|palette_refresh_proc
 argument_list|)
@@ -174,9 +190,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_get_foreground_invoker (Argument * args)
+DECL|function|palette_get_foreground_invoker (Gimp * gimp,Argument * args)
 name|palette_get_foreground_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -285,9 +305,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_get_background_invoker (Argument * args)
+DECL|function|palette_get_background_invoker (Gimp * gimp,Argument * args)
 name|palette_get_background_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -396,9 +420,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_set_foreground_invoker (Argument * args)
+DECL|function|palette_set_foreground_invoker (Gimp * gimp,Argument * args)
 name|palette_set_foreground_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -507,9 +535,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_set_background_invoker (Argument * args)
+DECL|function|palette_set_background_invoker (Gimp * gimp,Argument * args)
 name|palette_set_background_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -618,9 +650,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_set_default_colors_invoker (Argument * args)
+DECL|function|palette_set_default_colors_invoker (Gimp * gimp,Argument * args)
 name|palette_set_default_colors_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -685,9 +721,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_swap_colors_invoker (Argument * args)
+DECL|function|palette_swap_colors_invoker (Gimp * gimp,Argument * args)
 name|palette_swap_colors_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -752,9 +792,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_refresh_invoker (Argument * args)
+DECL|function|palette_refresh_invoker (Gimp * gimp,Argument * args)
 name|palette_refresh_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -763,7 +807,9 @@ block|{
 comment|/* FIXME: I've hardcoded success to be TRUE, because brushes_init() is a     *        void function right now.  It'd be nice if it returned a value at     *        some future date, so we could tell if things blew up when reparsing    *        the list (for whatever reason).     *                       - Seth "Yes, this is a kludge" Burgess    *<sjburges@ou.edu>    *   -and shamelessly stolen by Adrian Likins for use here...    */
 name|gimp_data_factory_data_init
 argument_list|(
-name|global_palette_factory
+name|gimp
+operator|->
+name|palette_factory
 argument_list|,
 name|FALSE
 argument_list|)

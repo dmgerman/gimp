@@ -2400,6 +2400,10 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|tool_manager_active_get_PDB_string
 argument_list|()
 argument_list|,
@@ -2439,14 +2443,9 @@ operator|.
 name|value
 operator|.
 name|pdb_int
-operator|==
+operator|!=
 name|GIMP_PDB_SUCCESS
 condition|)
-block|{
-comment|/* Not required */
-comment|/*gdisplays_flush ();*/
-block|}
-else|else
 name|g_message
 argument_list|(
 name|_

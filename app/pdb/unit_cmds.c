@@ -141,80 +141,106 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_unit_procs (void)
+DECL|function|register_unit_procs (Gimp * gimp)
 name|register_unit_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_number_of_units_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_number_of_built_in_units_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_new_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_deletion_flag_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_set_deletion_flag_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_identifier_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_factor_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_digits_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_symbol_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_abbreviation_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_singular_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|unit_get_plural_proc
 argument_list|)
@@ -226,9 +252,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_number_of_units_invoker (Argument * args)
+DECL|function|unit_get_number_of_units_invoker (Gimp * gimp,Argument * args)
 name|unit_get_number_of_units_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -327,9 +357,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_number_of_built_in_units_invoker (Argument * args)
+DECL|function|unit_get_number_of_built_in_units_invoker (Gimp * gimp,Argument * args)
 name|unit_get_number_of_built_in_units_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -428,9 +462,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_new_invoker (Argument * args)
+DECL|function|unit_new_invoker (Gimp * gimp,Argument * args)
 name|unit_new_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -805,9 +843,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_deletion_flag_invoker (Argument * args)
+DECL|function|unit_get_deletion_flag_invoker (Gimp * gimp,Argument * args)
 name|unit_get_deletion_flag_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -965,9 +1007,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_set_deletion_flag_invoker (Argument * args)
+DECL|function|unit_set_deletion_flag_invoker (Gimp * gimp,Argument * args)
 name|unit_set_deletion_flag_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1117,9 +1163,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_identifier_invoker (Argument * args)
+DECL|function|unit_get_identifier_invoker (Gimp * gimp,Argument * args)
 name|unit_get_identifier_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1280,9 +1330,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_factor_invoker (Argument * args)
+DECL|function|unit_get_factor_invoker (Gimp * gimp,Argument * args)
 name|unit_get_factor_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1440,9 +1494,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_digits_invoker (Argument * args)
+DECL|function|unit_get_digits_invoker (Gimp * gimp,Argument * args)
 name|unit_get_digits_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1600,9 +1658,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_symbol_invoker (Argument * args)
+DECL|function|unit_get_symbol_invoker (Gimp * gimp,Argument * args)
 name|unit_get_symbol_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1763,9 +1825,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_abbreviation_invoker (Argument * args)
+DECL|function|unit_get_abbreviation_invoker (Gimp * gimp,Argument * args)
 name|unit_get_abbreviation_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1926,9 +1992,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_singular_invoker (Argument * args)
+DECL|function|unit_get_singular_invoker (Gimp * gimp,Argument * args)
 name|unit_get_singular_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2089,9 +2159,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_plural_invoker (Argument * args)
+DECL|function|unit_get_plural_invoker (Gimp * gimp,Argument * args)
 name|unit_get_plural_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

@@ -58,7 +58,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -175,74 +175,98 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_brushes_procs (void)
+DECL|function|register_brushes_procs (Gimp * gimp)
 name|register_brushes_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_refresh_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_get_brush_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_set_brush_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_get_opacity_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_set_opacity_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_get_spacing_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_set_spacing_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_get_paint_mode_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_set_paint_mode_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_list_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|brushes_get_brush_data_proc
 argument_list|)
@@ -254,9 +278,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_refresh_invoker (Argument * args)
+DECL|function|brushes_refresh_invoker (Gimp * gimp,Argument * args)
 name|brushes_refresh_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -265,7 +293,9 @@ block|{
 comment|/* FIXME: I've hardcoded success to be 1, because brushes_init() is a     *        void function right now.  It'd be nice if it returned a value at     *        some future date, so we could tell if things blew up when reparsing    *        the list (for whatever reason).     *                       - Seth "Yes, this is a kludge" Burgess    *<sjburges@gimp.org>    */
 name|gimp_data_factory_data_init
 argument_list|(
-name|global_brush_factory
+name|gimp
+operator|->
+name|brush_factory
 argument_list|,
 name|FALSE
 argument_list|)
@@ -324,9 +354,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_brush_invoker (Argument * args)
+DECL|function|brushes_get_brush_invoker (Gimp * gimp,Argument * args)
 name|brushes_get_brush_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -527,9 +561,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_brush_invoker (Argument * args)
+DECL|function|brushes_set_brush_invoker (Gimp * gimp,Argument * args)
 name|brushes_set_brush_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -582,7 +620,9 @@ name|object
 operator|=
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_brush_factory
+name|gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|,
@@ -682,9 +722,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_opacity_invoker (Argument * args)
+DECL|function|brushes_get_opacity_invoker (Gimp * gimp,Argument * args)
 name|brushes_get_opacity_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -787,9 +831,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_opacity_invoker (Argument * args)
+DECL|function|brushes_set_opacity_invoker (Gimp * gimp,Argument * args)
 name|brushes_set_opacity_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -914,9 +962,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_spacing_invoker (Argument * args)
+DECL|function|brushes_get_spacing_invoker (Gimp * gimp,Argument * args)
 name|brushes_get_spacing_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1020,9 +1072,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_spacing_invoker (Argument * args)
+DECL|function|brushes_set_spacing_invoker (Gimp * gimp,Argument * args)
 name|brushes_set_spacing_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1148,9 +1204,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_paint_mode_invoker (Argument * args)
+DECL|function|brushes_get_paint_mode_invoker (Gimp * gimp,Argument * args)
 name|brushes_get_paint_mode_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1251,9 +1311,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_paint_mode_invoker (Argument * args)
+DECL|function|brushes_set_paint_mode_invoker (Gimp * gimp,Argument * args)
 name|brushes_set_paint_mode_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1376,9 +1440,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_list_invoker (Argument * args)
+DECL|function|brushes_list_invoker (Gimp * gimp,Argument * args)
 name|brushes_list_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1416,7 +1484,9 @@ argument_list|(
 name|char
 operator|*
 argument_list|,
-name|global_brush_factory
+name|gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 operator|->
@@ -1430,7 +1500,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_brush_factory
+name|gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|)
@@ -1494,7 +1566,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|global_brush_factory
+name|gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 operator|->
@@ -1587,9 +1661,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_brush_data_invoker (Argument * args)
+DECL|function|brushes_get_brush_data_invoker (Gimp * gimp,Argument * args)
 name|brushes_get_brush_data_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1677,7 +1755,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_brush_factory
+name|gimp
+operator|->
+name|brush_factory
 operator|->
 name|container
 argument_list|)

@@ -21,6 +21,10 @@ name|GimpImage
 modifier|*
 name|xcf_load_image
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|XcfInfo
 modifier|*
 name|info

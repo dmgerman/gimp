@@ -124,12 +124,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-dialog-utils.h"
 end_include
 
@@ -137,6 +131,18 @@ begin_include
 include|#
 directive|include
 file|"file-open-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -155,12 +161,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/menus.h"
 end_include
 
 begin_include

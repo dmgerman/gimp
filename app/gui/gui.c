@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -184,7 +190,17 @@ file|"gdisplay.h"
 end_include
 
 begin_comment
-comment|/* for gdisplay_*_override_cursor() */
+comment|/* for gdisplay_*_override_cursor()  */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"gdisplay_ops.h"
+end_include
+
+begin_comment
+comment|/* for gdisplay_xserver_resolution() */
 end_comment
 
 begin_include
@@ -235,6 +251,42 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+comment|/* make sure the monitor resolution is valid */
+if|if
+condition|(
+name|gimprc
+operator|.
+name|monitor_xres
+operator|<
+name|GIMP_MIN_RESOLUTION
+operator|||
+name|gimprc
+operator|.
+name|monitor_yres
+operator|<
+name|GIMP_MIN_RESOLUTION
+condition|)
+block|{
+name|gdisplay_xserver_resolution
+argument_list|(
+operator|&
+name|gimprc
+operator|.
+name|monitor_xres
+argument_list|,
+operator|&
+name|gimprc
+operator|.
+name|monitor_yres
+argument_list|)
+expr_stmt|;
+name|gimprc
+operator|.
+name|using_xserver_resolution
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 name|file_open_menu_init
 argument_list|()
 expr_stmt|;

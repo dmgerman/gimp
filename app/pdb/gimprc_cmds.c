@@ -69,26 +69,34 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_gimprc_procs (void)
+DECL|function|register_gimprc_procs (Gimp * gimp)
 name|register_gimprc_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|gimprc_query_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|gimprc_set_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|get_monitor_resolution_proc
 argument_list|)
@@ -100,9 +108,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gimprc_query_invoker (Argument * args)
+DECL|function|gimprc_query_invoker (Gimp * gimp,Argument * args)
 name|gimprc_query_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -304,9 +316,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gimprc_set_invoker (Argument * args)
+DECL|function|gimprc_set_invoker (Gimp * gimp,Argument * args)
 name|gimprc_set_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -467,9 +483,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_monitor_resolution_invoker (Argument * args)
+DECL|function|get_monitor_resolution_invoker (Gimp * gimp,Argument * args)
 name|get_monitor_resolution_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

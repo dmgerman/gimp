@@ -938,6 +938,10 @@ name|context
 operator|=
 name|gimp_context_new
 argument_list|(
+name|global_tool_context
+operator|->
+name|gimp
+argument_list|,
 name|identifier
 argument_list|,
 name|global_tool_context

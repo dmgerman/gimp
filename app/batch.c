@@ -65,7 +65,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -97,6 +97,10 @@ specifier|static
 name|void
 name|batch_run_cmd
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gchar
 modifier|*
 name|cmd
@@ -126,6 +130,10 @@ specifier|static
 name|void
 name|batch_pserver
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 name|run_mode
 parameter_list|,
@@ -149,10 +157,12 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|batch_init (void)
+DECL|function|batch_init (Gimp * gimp)
 name|batch_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 specifier|extern
@@ -176,6 +186,8 @@ name|eval_proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 literal|"extension_script_fu_eval"
 argument_list|)
 expr_stmt|;
@@ -239,6 +251,8 @@ condition|)
 block|{
 name|batch_pserver
 argument_list|(
+name|gimp
+argument_list|,
 name|run_mode
 argument_list|,
 name|flags
@@ -305,7 +319,7 @@ name|GDK_INPUT_READ
 argument_list|,
 name|batch_read
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 name|read_from_stdin
@@ -327,6 +341,8 @@ else|else
 block|{
 name|batch_run_cmd
 argument_list|(
+name|gimp
+argument_list|,
 name|batch_cmds
 index|[
 name|i
@@ -341,9 +357,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|batch_run_cmd (gchar * cmd)
+DECL|function|batch_run_cmd (Gimp * gimp,gchar * cmd)
 name|batch_run_cmd
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gchar
 modifier|*
 name|cmd
@@ -451,6 +471,8 @@ name|vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|gimp
+argument_list|,
 literal|"extension_script_fu_eval"
 argument_list|,
 name|args
@@ -737,6 +759,12 @@ condition|)
 block|{
 name|batch_run_cmd
 argument_list|(
+operator|(
+name|Gimp
+operator|*
+operator|)
+name|data
+argument_list|,
 name|string
 operator|->
 name|str
@@ -766,9 +794,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|batch_pserver (gint run_mode,gint flags,gint extra)
+DECL|function|batch_pserver (Gimp * gimp,gint run_mode,gint flags,gint extra)
 name|batch_pserver
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 name|run_mode
 parameter_list|,
@@ -798,6 +830,8 @@ name|pserver_proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 literal|"extension_perl_server"
 argument_list|)
 expr_stmt|;
@@ -893,6 +927,8 @@ name|vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|gimp
+argument_list|,
 literal|"extension_perl_server"
 argument_list|,
 name|args

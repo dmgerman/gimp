@@ -228,7 +228,7 @@ name|parent_class
 operator|=
 name|gtk_type_class
 argument_list|(
-name|GTK_TYPE_VBOX
+name|GIMP_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -318,6 +318,7 @@ name|factory
 operator|->
 name|container
 condition|)
+block|{
 name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
@@ -328,6 +329,13 @@ name|container
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|factory
+operator|->
+name|container
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|GTK_OBJECT_CLASS

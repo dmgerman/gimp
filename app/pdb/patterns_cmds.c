@@ -52,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -113,32 +113,42 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_patterns_procs (void)
+DECL|function|register_patterns_procs (Gimp * gimp)
 name|register_patterns_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|patterns_get_pattern_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|patterns_set_pattern_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|patterns_list_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|patterns_get_pattern_data_proc
 argument_list|)
@@ -150,9 +160,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_pattern_invoker (Argument * args)
+DECL|function|patterns_get_pattern_invoker (Gimp * gimp,Argument * args)
 name|patterns_get_pattern_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -332,9 +346,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_set_pattern_invoker (Argument * args)
+DECL|function|patterns_set_pattern_invoker (Gimp * gimp,Argument * args)
 name|patterns_set_pattern_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -397,7 +415,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_pattern_factory
+name|gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 argument_list|)
@@ -528,9 +548,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_list_invoker (Argument * args)
+DECL|function|patterns_list_invoker (Gimp * gimp,Argument * args)
 name|patterns_list_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -568,7 +592,9 @@ argument_list|(
 name|gchar
 operator|*
 argument_list|,
-name|global_pattern_factory
+name|gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 operator|->
@@ -583,7 +609,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_pattern_factory
+name|gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 argument_list|)
@@ -648,7 +676,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|global_pattern_factory
+name|gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 operator|->
@@ -741,9 +771,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_pattern_data_invoker (Argument * args)
+DECL|function|patterns_get_pattern_data_invoker (Gimp * gimp,Argument * args)
 name|patterns_get_pattern_data_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -831,7 +865,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_pattern_factory
+name|gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 argument_list|)

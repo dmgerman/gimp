@@ -1465,6 +1465,12 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 literal|"gimp_bucket_fill"
 argument_list|,
 operator|&

@@ -257,6 +257,10 @@ name|gimage_new
 argument_list|(
 name|gimage
 operator|->
+name|gimp
+argument_list|,
+name|gimage
+operator|->
 name|width
 argument_list|,
 name|gimage

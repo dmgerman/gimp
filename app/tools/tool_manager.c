@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -132,7 +138,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -156,16 +162,6 @@ DECL|variable|active_tool
 name|GimpTool
 modifier|*
 name|active_tool
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|global_tool_info_list
-name|GimpContainer
-modifier|*
-name|global_tool_info_list
 init|=
 name|NULL
 decl_stmt|;
@@ -438,7 +434,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_tool_info_list
+name|the_gimp
+operator|->
+name|tool_info_list
 argument_list|)
 operator|->
 name|list
@@ -728,26 +726,6 @@ end_endif
 
 begin_function
 name|void
-DECL|function|tool_manager_init (void)
-name|tool_manager_init
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|global_tool_info_list
-operator|=
-name|gimp_list_new
-argument_list|(
-name|GIMP_TYPE_TOOL_INFO
-argument_list|,
-name|GIMP_CONTAINER_POLICY_STRONG
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|tool_manager_register_tool (GtkType tool_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar ** icon_data)
 name|tool_manager_register_tool
 parameter_list|(
@@ -830,7 +808,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|global_tool_info_list
+name|the_gimp
+operator|->
+name|tool_info_list
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -918,7 +898,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_tool_info_list
+name|the_gimp
+operator|->
+name|tool_info_list
 argument_list|)
 operator|->
 name|list

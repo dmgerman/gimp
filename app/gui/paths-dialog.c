@@ -5455,6 +5455,12 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|gimage
+operator|=
+name|paths_dialog
+operator|->
+name|gimage
+expr_stmt|;
 comment|/*  find the sel2path PDB record  */
 if|if
 condition|(
@@ -5463,6 +5469,10 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 literal|"plug_in_sel2path_advanced"
 argument_list|)
 operator|)
@@ -5477,12 +5487,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimage
-operator|=
-name|paths_dialog
-operator|->
-name|gimage
-expr_stmt|;
 comment|/*  plug-in arguments as if called by<Image>/Filters/...  */
 name|args
 operator|=
@@ -5626,6 +5630,12 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|gimage
+operator|=
+name|paths_dialog
+operator|->
+name|gimage
+expr_stmt|;
 comment|/*  find the sel2path PDB record  */
 if|if
 condition|(
@@ -5634,6 +5644,10 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 literal|"plug_in_sel2path"
 argument_list|)
 operator|)
@@ -5648,12 +5662,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimage
-operator|=
-name|paths_dialog
-operator|->
-name|gimage
-expr_stmt|;
 comment|/*  plug-in arguments as if called by<Image>/Filters/...  */
 name|args
 operator|=

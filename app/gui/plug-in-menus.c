@@ -7344,6 +7344,8 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|the_gimp
+argument_list|,
 name|proc_run
 operator|->
 name|name
@@ -7358,6 +7360,8 @@ name|return_vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|the_gimp
+argument_list|,
 name|proc_run
 operator|->
 name|name
@@ -8904,6 +8908,8 @@ name|current_plug_in
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|the_gimp
+argument_list|,
 name|proc
 argument_list|)
 expr_stmt|;
@@ -10630,6 +10636,8 @@ name|prog
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|the_gimp
+argument_list|,
 operator|&
 name|proc_def
 operator|->
@@ -10775,6 +10783,8 @@ name|return_vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|the_gimp
+argument_list|,
 literal|"gimp_register_save_handler"
 argument_list|,
 name|args
@@ -10792,6 +10802,8 @@ name|return_vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|the_gimp
+argument_list|,
 literal|"gimp_register_magic_load_handler"
 argument_list|,
 name|args
@@ -12076,6 +12088,8 @@ expr_stmt|;
 comment|/*  Unregister the procedural database entry  */
 name|procedural_db_unregister
 argument_list|(
+name|the_gimp
+argument_list|,
 name|proc_def
 operator|->
 name|db_info

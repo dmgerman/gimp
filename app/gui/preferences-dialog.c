@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -91,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -150,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6ea6170103
+DECL|enum|__anon27c5d2f60103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -4046,7 +4058,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_foreach
 argument_list|(
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|,
 operator|(
 name|GFunc
@@ -4516,24 +4530,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_foreach
 argument_list|(
-name|image_context
+name|the_gimp
+operator|->
+name|images
 argument_list|,
 operator|(
 name|GFunc
 operator|)
 name|gimp_image_invalidate_layer_previews
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_container_foreach
-argument_list|(
-name|image_context
-argument_list|,
-operator|(
-name|GFunc
-operator|)
-name|gimp_viewable_invalidate_preview
 argument_list|,
 name|NULL
 argument_list|)
@@ -13213,7 +13217,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6ea6170208
+DECL|struct|__anon27c5d2f60208
 block|{
 DECL|member|label
 name|gchar
@@ -13442,7 +13446,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6ea6170308
+DECL|struct|__anon27c5d2f60308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -16,20 +16,17 @@ directive|define
 name|__APP_PROCS_H__
 end_define
 
-begin_function_decl
-name|void
-name|gimp_init
-parameter_list|(
-name|gint
-name|gimp_argc
-parameter_list|,
-name|gchar
+begin_comment
+comment|/*  *  this is a temp hack  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|Gimp
 modifier|*
-modifier|*
-name|gimp_argv
-parameter_list|)
-function_decl|;
-end_function_decl
+name|the_gimp
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
@@ -47,6 +44,21 @@ name|label2
 parameter_list|,
 name|gdouble
 name|percentage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|app_init
+parameter_list|(
+name|gint
+name|gimp_argc
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|gimp_argv
 parameter_list|)
 function_decl|;
 end_function_decl

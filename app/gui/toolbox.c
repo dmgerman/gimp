@@ -30,18 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/widgets-types.h"
 end_include
 
@@ -61,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -133,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gtkhwrapbox.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
 end_include
 
 begin_include
@@ -1178,7 +1166,11 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_tool_info_list
+name|context
+operator|->
+name|gimp
+operator|->
+name|tool_info_list
 argument_list|)
 operator|->
 name|list
@@ -2201,6 +2193,8 @@ name|new_gimage
 operator|=
 name|gimage_new
 argument_list|(
+name|the_gimp
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -2523,6 +2517,8 @@ condition|)
 return|return;
 name|gimp_edit_paste_as_new
 argument_list|(
+name|the_gimp
+argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_BUFFER

@@ -263,7 +263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290785fe0108
+DECL|struct|__anon298bef1f0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290785fe0208
+DECL|struct|__anon298bef1f0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290785fe0308
+DECL|struct|__anon298bef1f0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -520,7 +520,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon290785fe0403
+DECL|enum|__anon298bef1f0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -15497,6 +15497,12 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|tool_manager_active_get_PDB_string
 argument_list|()
 argument_list|,

@@ -105,44 +105,58 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_floating_sel_procs (void)
+DECL|function|register_floating_sel_procs (Gimp * gimp)
 name|register_floating_sel_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|floating_sel_remove_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|floating_sel_anchor_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|floating_sel_to_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|floating_sel_attach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|floating_sel_rigor_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|floating_sel_relax_proc
 argument_list|)
@@ -154,9 +168,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_remove_invoker (Argument * args)
+DECL|function|floating_sel_remove_invoker (Gimp * gimp,Argument * args)
 name|floating_sel_remove_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -295,9 +313,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_anchor_invoker (Argument * args)
+DECL|function|floating_sel_anchor_invoker (Gimp * gimp,Argument * args)
 name|floating_sel_anchor_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -436,9 +458,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_to_layer_invoker (Argument * args)
+DECL|function|floating_sel_to_layer_invoker (Gimp * gimp,Argument * args)
 name|floating_sel_to_layer_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -577,9 +603,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_attach_invoker (Argument * args)
+DECL|function|floating_sel_attach_invoker (Gimp * gimp,Argument * args)
 name|floating_sel_attach_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -742,9 +772,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_rigor_invoker (Argument * args)
+DECL|function|floating_sel_rigor_invoker (Gimp * gimp,Argument * args)
 name|floating_sel_rigor_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -911,9 +945,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_relax_invoker (Argument * args)
+DECL|function|floating_sel_relax_invoker (Gimp * gimp,Argument * args)
 name|floating_sel_relax_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

@@ -125,32 +125,42 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_text_tool_procs (void)
+DECL|function|register_text_tool_procs (Gimp * gimp)
 name|register_text_tool_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|text_fontname_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|text_get_extents_fontname_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|text_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|text_get_extents_proc
 argument_list|)
@@ -670,9 +680,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_fontname_invoker (Argument * args)
+DECL|function|text_fontname_invoker (Gimp * gimp,Argument * args)
 name|text_fontname_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1174,9 +1188,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_get_extents_fontname_invoker (Argument * args)
+DECL|function|text_get_extents_fontname_invoker (Gimp * gimp,Argument * args)
 name|text_get_extents_fontname_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1561,9 +1579,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_invoker (Argument * args)
+DECL|function|text_invoker (Gimp * gimp,Argument * args)
 name|text_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1892,6 +1914,8 @@ expr_stmt|;
 return|return
 name|text_fontname_invoker
 argument_list|(
+name|gimp
+argument_list|,
 name|argv
 argument_list|)
 return|;
@@ -2107,9 +2131,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_get_extents_invoker (Argument * args)
+DECL|function|text_get_extents_invoker (Gimp * gimp,Argument * args)
 name|text_get_extents_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2438,6 +2466,8 @@ expr_stmt|;
 return|return
 name|text_get_extents_fontname_invoker
 argument_list|(
+name|gimp
+argument_list|,
 name|argv
 argument_list|)
 return|;

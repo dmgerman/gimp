@@ -72,8 +72,13 @@ modifier|*
 name|ArgMarshal
 function_decl|)
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
+name|args
 parameter_list|)
 function_decl|;
 end_typedef
@@ -346,18 +351,6 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  Variables  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GHashTable
-modifier|*
-name|procedural_ht
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  Functions  */
 end_comment
 
@@ -365,7 +358,9 @@ begin_function_decl
 name|void
 name|procedural_db_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -374,7 +369,9 @@ begin_function_decl
 name|void
 name|procedural_db_free
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -383,6 +380,10 @@ begin_function_decl
 name|void
 name|procedural_db_register
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|ProcRecord
 modifier|*
 name|procedure
@@ -394,6 +395,10 @@ begin_function_decl
 name|void
 name|procedural_db_unregister
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -407,6 +412,10 @@ name|ProcRecord
 modifier|*
 name|procedural_db_lookup
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -420,6 +429,10 @@ name|Argument
 modifier|*
 name|procedural_db_execute
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -437,6 +450,10 @@ name|Argument
 modifier|*
 name|procedural_db_run_proc
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

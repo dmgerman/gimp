@@ -46,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -99,26 +99,34 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_pattern_select_procs (void)
+DECL|function|register_pattern_select_procs (Gimp * gimp)
 name|register_pattern_select_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|patterns_popup_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|patterns_close_popup_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|patterns_set_popup_proc
 argument_list|)
@@ -202,9 +210,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_popup_invoker (Argument * args)
+DECL|function|patterns_popup_invoker (Gimp * gimp,Argument * args)
 name|patterns_popup_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -312,6 +324,8 @@ name|prec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 name|name
 argument_list|)
 operator|)
@@ -451,9 +465,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_close_popup_invoker (Argument * args)
+DECL|function|patterns_close_popup_invoker (Gimp * gimp,Argument * args)
 name|patterns_close_popup_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -513,6 +531,8 @@ name|prec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 name|name
 argument_list|)
 operator|)
@@ -644,9 +664,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_set_popup_invoker (Argument * args)
+DECL|function|patterns_set_popup_invoker (Gimp * gimp,Argument * args)
 name|patterns_set_popup_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -735,6 +759,8 @@ name|prec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 name|name
 argument_list|)
 operator|)
@@ -759,7 +785,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_pattern_factory
+name|gimp
+operator|->
+name|pattern_factory
 operator|->
 name|container
 argument_list|,

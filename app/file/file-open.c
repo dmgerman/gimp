@@ -243,6 +243,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage.h"
 end_include
 
@@ -644,6 +650,8 @@ name|return_vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|the_gimp
+argument_list|,
 name|proc
 operator|->
 name|name

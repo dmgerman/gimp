@@ -191,56 +191,74 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_fileops_procs (void)
+DECL|function|register_fileops_procs (Gimp * gimp)
 name|register_fileops_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|file_load_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|file_save_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|file_load_thumbnail_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|file_save_thumbnail_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|temp_name_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|register_magic_load_handler_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|register_load_handler_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|register_save_handler_proc
 argument_list|)
@@ -252,9 +270,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_load_invoker (Argument * args)
+DECL|function|file_load_invoker (Gimp * gimp,Argument * args)
 name|file_load_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -312,6 +334,8 @@ expr_stmt|;
 return|return
 name|procedural_db_execute
 argument_list|(
+name|gimp
+argument_list|,
 name|proc
 operator|->
 name|name
@@ -418,9 +442,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_save_invoker (Argument * args)
+DECL|function|file_save_invoker (Gimp * gimp,Argument * args)
 name|file_save_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -591,6 +619,8 @@ name|return_vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|gimp
+argument_list|,
 name|proc
 operator|->
 name|name
@@ -702,9 +732,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_load_thumbnail_invoker (Argument * args)
+DECL|function|file_load_thumbnail_invoker (Gimp * gimp,Argument * args)
 name|file_load_thumbnail_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1155,9 +1189,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_save_thumbnail_invoker (Argument * args)
+DECL|function|file_save_thumbnail_invoker (Gimp * gimp,Argument * args)
 name|file_save_thumbnail_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1338,9 +1376,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|temp_name_invoker (Argument * args)
+DECL|function|temp_name_invoker (Gimp * gimp,Argument * args)
 name|temp_name_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1548,9 +1590,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_magic_load_handler_invoker (Argument * args)
+DECL|function|register_magic_load_handler_invoker (Gimp * gimp,Argument * args)
 name|register_magic_load_handler_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1668,6 +1714,8 @@ name|proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
@@ -1911,9 +1959,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_load_handler_invoker (Argument * args)
+DECL|function|register_load_handler_invoker (Gimp * gimp,Argument * args)
 name|register_load_handler_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1974,6 +2026,8 @@ expr_stmt|;
 return|return
 name|register_magic_load_handler_invoker
 argument_list|(
+name|gimp
+argument_list|,
 name|argv
 argument_list|)
 return|;
@@ -2057,9 +2111,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_save_handler_invoker (Argument * args)
+DECL|function|register_save_handler_invoker (Gimp * gimp,Argument * args)
 name|register_save_handler_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2158,6 +2216,8 @@ name|proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 name|name
 argument_list|)
 expr_stmt|;

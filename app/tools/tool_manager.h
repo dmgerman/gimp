@@ -28,14 +28,6 @@ name|active_tool
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|GimpContainer
-modifier|*
-name|global_tool_info_list
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|void
 name|tool_manager_select_tool
@@ -112,15 +104,6 @@ specifier|const
 name|gchar
 modifier|*
 name|tool_manager_active_get_help_data
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tool_manager_init
 parameter_list|(
 name|void
 parameter_list|)

@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -115,38 +115,50 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_gradients_procs (void)
+DECL|function|register_gradients_procs (Gimp * gimp)
 name|register_gradients_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|gradients_get_list_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|gradients_get_active_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|gradients_set_active_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|gradients_sample_uniform_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|gradients_sample_custom_proc
 argument_list|)
@@ -158,9 +170,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_get_list_invoker (Argument * args)
+DECL|function|gradients_get_list_invoker (Gimp * gimp,Argument * args)
 name|gradients_get_list_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -200,7 +216,9 @@ name|num_gradients
 operator|=
 name|gimp_container_num_children
 argument_list|(
-name|global_gradient_factory
+name|gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|)
@@ -224,7 +242,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_gradient_factory
+name|gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|)
@@ -387,9 +407,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_get_active_invoker (Argument * args)
+DECL|function|gradients_get_active_invoker (Gimp * gimp,Argument * args)
 name|gradients_get_active_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -516,9 +540,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_set_active_invoker (Argument * args)
+DECL|function|gradients_set_active_invoker (Gimp * gimp,Argument * args)
 name|gradients_set_active_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -575,7 +603,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_gradient_factory
+name|gimp
+operator|->
+name|gradient_factory
 operator|->
 name|container
 argument_list|,
@@ -677,9 +707,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_sample_uniform_invoker (Argument * args)
+DECL|function|gradients_sample_uniform_invoker (Gimp * gimp,Argument * args)
 name|gradients_sample_uniform_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -974,9 +1008,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_sample_custom_invoker (Argument * args)
+DECL|function|gradients_sample_custom_invoker (Gimp * gimp,Argument * args)
 name|gradients_sample_custom_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

@@ -203,104 +203,138 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_channel_procs (void)
+DECL|function|register_channel_procs (Gimp * gimp)
 name|register_channel_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_new_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_copy_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_delete_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_combine_masks_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_get_name_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_set_name_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_get_visible_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_set_visible_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_get_show_masked_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_set_show_masked_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_get_opacity_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_set_opacity_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_get_color_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_set_color_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_get_tattoo_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|channel_set_tattoo_proc
 argument_list|)
@@ -312,9 +346,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_new_invoker (Argument * args)
+DECL|function|channel_new_invoker (Gimp * gimp,Argument * args)
 name|channel_new_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -680,9 +718,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_copy_invoker (Argument * args)
+DECL|function|channel_copy_invoker (Gimp * gimp,Argument * args)
 name|channel_copy_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -871,9 +913,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_delete_invoker (Argument * args)
+DECL|function|channel_delete_invoker (Gimp * gimp,Argument * args)
 name|channel_delete_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1001,9 +1047,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_combine_masks_invoker (Argument * args)
+DECL|function|channel_combine_masks_invoker (Gimp * gimp,Argument * args)
 name|channel_combine_masks_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1258,9 +1308,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_name_invoker (Argument * args)
+DECL|function|channel_get_name_invoker (Gimp * gimp,Argument * args)
 name|channel_get_name_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1424,9 +1478,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_name_invoker (Argument * args)
+DECL|function|channel_set_name_invoker (Gimp * gimp,Argument * args)
 name|channel_set_name_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1590,9 +1648,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_visible_invoker (Argument * args)
+DECL|function|channel_get_visible_invoker (Gimp * gimp,Argument * args)
 name|channel_get_visible_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1753,9 +1815,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_visible_invoker (Argument * args)
+DECL|function|channel_set_visible_invoker (Gimp * gimp,Argument * args)
 name|channel_set_visible_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1908,9 +1974,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_show_masked_invoker (Argument * args)
+DECL|function|channel_get_show_masked_invoker (Gimp * gimp,Argument * args)
 name|channel_get_show_masked_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2070,9 +2140,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_show_masked_invoker (Argument * args)
+DECL|function|channel_set_show_masked_invoker (Gimp * gimp,Argument * args)
 name|channel_set_show_masked_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2224,9 +2298,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_opacity_invoker (Argument * args)
+DECL|function|channel_get_opacity_invoker (Gimp * gimp,Argument * args)
 name|channel_get_opacity_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2390,9 +2468,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_opacity_invoker (Argument * args)
+DECL|function|channel_set_opacity_invoker (Gimp * gimp,Argument * args)
 name|channel_set_opacity_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2558,9 +2640,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_color_invoker (Argument * args)
+DECL|function|channel_get_color_invoker (Gimp * gimp,Argument * args)
 name|channel_get_color_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2733,9 +2819,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_color_invoker (Argument * args)
+DECL|function|channel_set_color_invoker (Gimp * gimp,Argument * args)
 name|channel_set_color_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2902,9 +2992,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_tattoo_invoker (Argument * args)
+DECL|function|channel_get_tattoo_invoker (Gimp * gimp,Argument * args)
 name|channel_get_tattoo_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3065,9 +3159,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_tattoo_invoker (Argument * args)
+DECL|function|channel_set_tattoo_invoker (Gimp * gimp,Argument * args)
 name|channel_set_tattoo_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

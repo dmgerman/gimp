@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/widgets-types.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -72,31 +72,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainerview.h"
+file|"gimpcontainerview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainerview-utils.h"
+file|"gimpcontainerview-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimplistitem.h"
+file|"gimplistitem.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpmenuitem.h"
+file|"gimpmenuitem.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimppreview.h"
+file|"gimppreview.h"
 end_include
 
 begin_function_decl

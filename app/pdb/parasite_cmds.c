@@ -165,80 +165,106 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_parasite_procs (void)
+DECL|function|register_parasite_procs (Gimp * gimp)
 name|register_parasite_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|parasite_find_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|parasite_attach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|parasite_detach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|parasite_list_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_parasite_find_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_parasite_attach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_parasite_detach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|drawable_parasite_list_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_parasite_find_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_parasite_attach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_parasite_detach_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|image_parasite_list_proc
 argument_list|)
@@ -250,9 +276,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_find_invoker (Argument * args)
+DECL|function|parasite_find_invoker (Gimp * gimp,Argument * args)
 name|parasite_find_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -435,9 +465,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_attach_invoker (Argument * args)
+DECL|function|parasite_attach_invoker (Gimp * gimp,Argument * args)
 name|parasite_attach_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -559,9 +593,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_detach_invoker (Argument * args)
+DECL|function|parasite_detach_invoker (Gimp * gimp,Argument * args)
 name|parasite_detach_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -683,9 +721,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_list_invoker (Argument * args)
+DECL|function|parasite_list_invoker (Gimp * gimp,Argument * args)
 name|parasite_list_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -818,9 +860,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_find_invoker (Argument * args)
+DECL|function|drawable_parasite_find_invoker (Gimp * gimp,Argument * args)
 name|drawable_parasite_find_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1041,9 +1087,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_attach_invoker (Argument * args)
+DECL|function|drawable_parasite_attach_invoker (Gimp * gimp,Argument * args)
 name|drawable_parasite_attach_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1203,9 +1253,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_detach_invoker (Argument * args)
+DECL|function|drawable_parasite_detach_invoker (Gimp * gimp,Argument * args)
 name|drawable_parasite_detach_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1365,9 +1419,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_list_invoker (Argument * args)
+DECL|function|drawable_parasite_list_invoker (Gimp * gimp,Argument * args)
 name|drawable_parasite_list_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1566,9 +1624,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_find_invoker (Argument * args)
+DECL|function|image_parasite_find_invoker (Gimp * gimp,Argument * args)
 name|image_parasite_find_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1789,9 +1851,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_attach_invoker (Argument * args)
+DECL|function|image_parasite_attach_invoker (Gimp * gimp,Argument * args)
 name|image_parasite_attach_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1951,9 +2017,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_detach_invoker (Argument * args)
+DECL|function|image_parasite_detach_invoker (Gimp * gimp,Argument * args)
 name|image_parasite_detach_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2113,9 +2183,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_list_invoker (Argument * args)
+DECL|function|image_parasite_list_invoker (Gimp * gimp,Argument * args)
 name|image_parasite_list_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

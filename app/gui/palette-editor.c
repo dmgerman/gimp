@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -126,7 +132,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -859,7 +865,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_remove_handler
 argument_list|(
-name|global_palette_factory
+name|the_gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|,
@@ -912,7 +920,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_remove_handler
 argument_list|(
-name|global_palette_factory
+name|the_gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|,
@@ -1284,6 +1294,8 @@ name|context
 operator|=
 name|gimp_context_new
 argument_list|(
+name|the_gimp
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -1971,7 +1983,9 @@ name|gimp_data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
-name|global_palette_factory
+name|the_gimp
+operator|->
+name|palette_factory
 argument_list|,
 name|editor
 condition|?
@@ -2123,7 +2137,9 @@ name|invalidate_preview_handler_id
 operator|=
 name|gimp_container_add_handler
 argument_list|(
-name|global_palette_factory
+name|the_gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|,
@@ -5835,7 +5851,9 @@ expr_stmt|;
 block|}
 name|gimp_container_add
 argument_list|(
-name|global_palette_factory
+name|the_gimp
+operator|->
+name|palette_factory
 operator|->
 name|container
 argument_list|,

@@ -21,6 +21,10 @@ name|GimpImage
 modifier|*
 name|gimage_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 name|width
 parameter_list|,

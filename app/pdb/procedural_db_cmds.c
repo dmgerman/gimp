@@ -55,6 +55,12 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -367,56 +373,74 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_procedural_db_procs (void)
+DECL|function|register_procedural_db_procs (Gimp * gimp)
 name|register_procedural_db_procs
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|procedural_db_dump_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|procedural_db_query_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|procedural_db_proc_info_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|procedural_db_proc_arg_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|procedural_db_proc_val_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|procedural_db_get_data_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|procedural_db_get_data_size_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|procedural_db_set_data_proc
 argument_list|)
@@ -1199,9 +1223,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_dump_invoker (Argument * args)
+DECL|function|procedural_db_dump_invoker (Gimp * gimp,Argument * args)
 name|procedural_db_dump_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1262,6 +1290,8 @@ condition|)
 block|{
 name|g_hash_table_foreach
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 name|procedural_db_print_entry
@@ -1354,9 +1384,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_query_invoker (Argument * args)
+DECL|function|procedural_db_query_invoker (Gimp * gimp,Argument * args)
 name|procedural_db_query_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1680,6 +1714,8 @@ literal|0
 expr_stmt|;
 name|g_hash_table_foreach
 argument_list|(
+name|gimp
+operator|->
 name|procedural_ht
 argument_list|,
 name|procedural_db_query_entry
@@ -1936,9 +1972,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_proc_info_invoker (Argument * args)
+DECL|function|procedural_db_proc_info_invoker (Gimp * gimp,Argument * args)
 name|procedural_db_proc_info_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -1999,6 +2039,8 @@ name|proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 name|proc_name
 argument_list|)
 operator|)
@@ -2282,9 +2324,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_proc_arg_invoker (Argument * args)
+DECL|function|procedural_db_proc_arg_invoker (Gimp * gimp,Argument * args)
 name|procedural_db_proc_arg_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2361,6 +2407,8 @@ name|proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 name|proc_name
 argument_list|)
 expr_stmt|;
@@ -2567,9 +2615,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_proc_val_invoker (Argument * args)
+DECL|function|procedural_db_proc_val_invoker (Gimp * gimp,Argument * args)
 name|procedural_db_proc_val_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -2646,6 +2698,8 @@ name|proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|gimp
+argument_list|,
 name|proc_name
 argument_list|)
 expr_stmt|;
@@ -2852,9 +2906,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_get_data_invoker (Argument * args)
+DECL|function|procedural_db_get_data_invoker (Gimp * gimp,Argument * args)
 name|procedural_db_get_data_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3127,9 +3185,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_get_data_size_invoker (Argument * args)
+DECL|function|procedural_db_get_data_size_invoker (Gimp * gimp,Argument * args)
 name|procedural_db_get_data_size_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -3351,9 +3413,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_set_data_invoker (Argument * args)
+DECL|function|procedural_db_set_data_invoker (Gimp * gimp,Argument * args)
 name|procedural_db_set_data_invoker
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|Argument
 modifier|*
 name|args

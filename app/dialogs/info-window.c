@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -117,12 +123,6 @@ begin_include
 include|#
 directive|include
 file|"info-window.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"context_manager.h"
 end_include
 
 begin_include
@@ -2093,7 +2093,11 @@ name|gimage
 operator|&&
 name|gimp_container_have
 argument_list|(
-name|image_context
+name|context
+operator|->
+name|gimp
+operator|->
+name|images
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

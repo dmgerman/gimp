@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293cac1e0103
+DECL|enum|__anon292b79b50103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293cac1e0203
+DECL|enum|__anon292b79b50203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -271,6 +271,11 @@ block|{
 DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
+decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
 decl_stmt|;
 DECL|member|parent
 name|GimpContext
@@ -583,6 +588,10 @@ name|GimpContext
 modifier|*
 name|gimp_context_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -675,7 +684,9 @@ name|GimpContext
 modifier|*
 name|gimp_context_get_standard
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
