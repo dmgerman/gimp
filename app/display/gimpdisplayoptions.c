@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a48ca7d0103
+DECL|enum|__anon2c22951f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -545,7 +545,7 @@ name|PROP_SHOW_SELECTION
 argument_list|,
 literal|"show-selection"
 argument_list|,
-name|NULL
+name|SHOW_SELECTION_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -560,7 +560,7 @@ name|PROP_SHOW_LAYER_BOUNDARY
 argument_list|,
 literal|"show-layer-boundary"
 argument_list|,
-name|NULL
+name|SHOW_LAYER_BOUNDARY_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -575,7 +575,7 @@ name|PROP_SHOW_GUIDES
 argument_list|,
 literal|"show-guides"
 argument_list|,
-name|NULL
+name|SHOW_GUIDES_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -590,7 +590,7 @@ name|PROP_SHOW_GRID
 argument_list|,
 literal|"show-grid"
 argument_list|,
-name|NULL
+name|SHOW_GRID_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -750,7 +750,7 @@ name|PROP_SHOW_SELECTION
 argument_list|,
 literal|"show-selection"
 argument_list|,
-name|NULL
+name|SHOW_SELECTION_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -765,7 +765,7 @@ name|PROP_SHOW_LAYER_BOUNDARY
 argument_list|,
 literal|"show-layer-boundary"
 argument_list|,
-name|NULL
+name|SHOW_LAYER_BOUNDARY_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -780,7 +780,7 @@ name|PROP_SHOW_GUIDES
 argument_list|,
 literal|"show-guides"
 argument_list|,
-name|NULL
+name|SHOW_GUIDES_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -795,7 +795,7 @@ name|PROP_SHOW_GRID
 argument_list|,
 literal|"show-grid"
 argument_list|,
-name|NULL
+name|SHOW_GRID_BLURB
 argument_list|,
 name|FALSE
 argument_list|,

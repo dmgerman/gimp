@@ -582,6 +582,42 @@ value|N_("When enabled, the statusbar is visible by default. This can also be " 
 end_define
 
 begin_define
+DECL|macro|SHOW_SELECTION_BLURB
+define|#
+directive|define
+name|SHOW_SELECTION_BLURB
+define|\
+value|N_("When enabled, the selection is visible by default. This can also be " \    "toggled with the \"View->Show Selection\" command.")
+end_define
+
+begin_define
+DECL|macro|SHOW_LAYER_BOUNDARY_BLURB
+define|#
+directive|define
+name|SHOW_LAYER_BOUNDARY_BLURB
+define|\
+value|N_("When enabled, the layer boundary is visible by default. This can also " \    "be toggled with the \"View->Show Layer Boundary\" command.")
+end_define
+
+begin_define
+DECL|macro|SHOW_GUIDES_BLURB
+define|#
+directive|define
+name|SHOW_GUIDES_BLURB
+define|\
+value|N_("When enabled, the guides are visible by default. This can also be " \    "toggled with the \"View->Show Guides\" command.")
+end_define
+
+begin_define
+DECL|macro|SHOW_GRID_BLURB
+define|#
+directive|define
+name|SHOW_GRID_BLURB
+define|\
+value|N_("When enabled, the grid is visible by default. This can also be toggled " \    "with the \"View->Show Grid\" command.")
+end_define
+
+begin_define
 DECL|macro|SHOW_TIPS_BLURB
 define|#
 directive|define
