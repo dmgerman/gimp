@@ -88,7 +88,7 @@ value|170
 end_define
 
 begin_enum
-DECL|enum|__anon2bf744d90103
+DECL|enum|__anon289cc9c10103
 enum|enum
 block|{
 DECL|enumerator|FAMILY_COLUMN
@@ -101,7 +101,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2bf744d90203
+DECL|enum|__anon289cc9c10203
 enum|enum
 block|{
 DECL|enumerator|FACE_COLUMN
@@ -405,6 +405,20 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
+name|GTK_STOCK_APPLY
+argument_list|,
+name|gimp_font_selection_dialog_apply
+argument_list|,
+name|dialog
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_hide
@@ -421,20 +435,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
-argument_list|,
-name|GTK_STOCK_APPLY
-argument_list|,
-name|gimp_font_selection_dialog_apply
-argument_list|,
-name|dialog
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
