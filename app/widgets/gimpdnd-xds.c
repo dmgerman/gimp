@@ -479,7 +479,7 @@ name|atom
 argument_list|,
 literal|8
 argument_list|,
-literal|"F"
+literal|"E"
 argument_list|,
 literal|1
 argument_list|)
@@ -535,7 +535,7 @@ name|atom
 argument_list|,
 literal|8
 argument_list|,
-literal|"F"
+literal|"E"
 argument_list|,
 literal|1
 argument_list|)
