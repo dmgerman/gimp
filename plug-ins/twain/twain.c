@@ -502,7 +502,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon277d14ec0108
+DECL|struct|__anon2906f6140108
 typedef|typedef
 struct|struct
 block|{
@@ -753,15 +753,12 @@ endif|#
 directive|endif
 comment|/* _DEBUG */
 comment|/*    * Now, call gimp_main... This is what the MAIN() macro    * would usually do.    */
-name|set_gimp_PLUG_IN_INFO_PTR
-argument_list|(
-operator|&
-name|PLUG_IN_INFO
-argument_list|)
-expr_stmt|;
 return|return
 name|gimp_main
 argument_list|(
+operator|&
+name|PLUG_IN_INFO
+argument_list|,
 name|__argc
 argument_list|,
 name|__argv
@@ -801,15 +798,12 @@ endif|#
 directive|endif
 comment|/* _DEBUG */
 comment|/*    * Now, call gimp_main... This is what the MAIN() macro    * would usually do.    */
-name|set_gimp_PLUG_IN_INFO_PTR
-argument_list|(
-operator|&
-name|PLUG_IN_INFO
-argument_list|)
-expr_stmt|;
 return|return
 name|gimp_main
 argument_list|(
+operator|&
+name|PLUG_IN_INFO
+argument_list|,
 name|__argc
 argument_list|,
 name|__argv
@@ -1875,7 +1869,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon277d14ec0208
+DECL|struct|__anon2906f6140208
 typedef|typedef
 struct|struct
 block|{

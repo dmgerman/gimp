@@ -368,7 +368,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2795c87a0108
+DECL|struct|__anon28d3e5100108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2795c87a0208
+DECL|struct|__anon28d3e5100208
 typedef|typedef
 struct|struct
 block|{
@@ -2142,10 +2142,13 @@ name|hInst
 operator|=
 name|hInstance
 expr_stmt|;
-comment|/*    * Now, call win32_gimp_main... This is what the normal WinMain()    * would do.    */
+comment|/*    * Now, call gimp_main... This is what the normal WinMain()    * would do.    */
 return|return
-name|win32_gimp_main
+name|gimp_main
 argument_list|(
+operator|&
+name|PLUG_IN_INFO
+argument_list|,
 name|__argc
 argument_list|,
 name|__argv
