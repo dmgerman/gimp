@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpblendoptions.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7b20a0103
+DECL|enum|__anon27db7e810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +103,7 @@ block|,
 DECL|enumerator|PROP_GRADIENT_REPEAT
 name|PROP_GRADIENT_REPEAT
 block|,
-comment|/*  overrides an GimpPaintOptions property  */
+comment|/*  overrides a GimpPaintOptions property  */
 DECL|enumerator|PROP_SUPERSAMPLE
 name|PROP_SUPERSAMPLE
 block|,
@@ -982,7 +988,7 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/*  frame for supersampling options  */
+comment|/*  supersampling options  */
 name|frame
 operator|=
 name|gimp_frame_new
@@ -1011,7 +1017,35 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/*  table for supersampling options  */
+name|button
+operator|=
+name|gimp_prop_check_button_new
+argument_list|(
+name|config
+argument_list|,
+literal|"supersample"
+argument_list|,
+name|_
+argument_list|(
+literal|"Adaptive supersampling"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_frame_set_label_widget
+argument_list|(
+name|GTK_FRAME
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|button
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|button
+argument_list|)
+expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -1053,63 +1087,34 @@ argument_list|,
 name|table
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-comment|/*  supersampling toggle  */
-name|button
-operator|=
-name|gimp_prop_check_button_new
-argument_list|(
-name|config
-argument_list|,
-literal|"supersample"
-argument_list|,
-name|_
-argument_list|(
-literal|"Adaptive supersampling"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_label_widget
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|table
-argument_list|,
+if|if
+condition|(
 name|GIMP_BLEND_OPTIONS
 argument_list|(
 name|config
 argument_list|)
 operator|->
 name|supersample
+condition|)
+name|gtk_widget_show
+argument_list|(
+name|table
 argument_list|)
 expr_stmt|;
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
+name|g_signal_connect_object
 argument_list|(
 name|button
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_toggle_button_set_visible
 argument_list|)
 argument_list|,
-literal|"set_sensitive"
-argument_list|,
 name|table
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  max depth scale  */
