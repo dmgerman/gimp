@@ -36,14 +36,10 @@ end_include
 
 begin_typedef
 DECL|typedef|GPattern
-DECL|typedef|GPatternP
 typedef|typedef
 name|struct
 name|_GPattern
 name|GPattern
-typedef|,
-modifier|*
-name|GPatternP
 typedef|;
 end_typedef
 

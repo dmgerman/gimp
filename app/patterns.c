@@ -393,6 +393,14 @@ argument_list|(
 literal|"Standard"
 argument_list|)
 expr_stmt|;
+name|standard_pattern
+operator|->
+name|index
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+comment|/*  not part of the pattern list  */
 comment|/*  TODO: fill it with something */
 name|standard_pattern
 operator|->

@@ -577,6 +577,13 @@ literal|1.0
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_brush_set_name
+argument_list|(
+name|standard_brush
+argument_list|,
+literal|"Standard"
+argument_list|)
+expr_stmt|;
 comment|/*  set ref_cout to 2 --> never swap the standard brush  */
 name|gtk_object_ref
 argument_list|(

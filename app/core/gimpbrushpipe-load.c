@@ -1185,7 +1185,8 @@ name|GimpBrushPipe
 modifier|*
 name|pipe
 decl_stmt|;
-name|GPatternP
+name|GPattern
+modifier|*
 name|pattern
 decl_stmt|;
 name|PixPipeParams
@@ -2181,7 +2182,8 @@ name|GimpBrushPipe
 modifier|*
 name|pipe
 decl_stmt|;
-name|GPatternP
+name|GPattern
+modifier|*
 name|pattern
 decl_stmt|;
 name|FILE
@@ -2286,7 +2288,8 @@ expr_stmt|;
 name|pattern
 operator|=
 operator|(
-name|GPatternP
+name|GPattern
+operator|*
 operator|)
 name|g_malloc0
 argument_list|(

@@ -3772,10 +3772,11 @@ name|y
 parameter_list|)
 block|{
 specifier|static
-name|GimpBrushP
+name|GimpBrush
+modifier|*
 name|brush
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 name|paint_core
 operator|->

@@ -843,7 +843,8 @@ name|int
 name|state
 parameter_list|)
 block|{
-name|GimpBrushP
+name|GimpBrush
+modifier|*
 name|brush
 decl_stmt|;
 name|gdouble

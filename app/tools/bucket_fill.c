@@ -1537,7 +1537,8 @@ decl_stmt|,
 modifier|*
 name|d2
 decl_stmt|;
-name|GPatternP
+name|GPattern
+modifier|*
 name|pattern
 decl_stmt|;
 name|TempBuf

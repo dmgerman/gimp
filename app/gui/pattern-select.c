@@ -236,8 +236,9 @@ name|PatternSelect
 modifier|*
 name|psp
 parameter_list|,
-name|gint
-name|index
+name|GPattern
+modifier|*
+name|pattern
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1004,7 +1005,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Active"
+literal|"No Patterns available"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1444,8 +1445,6 @@ argument_list|(
 name|psp
 argument_list|,
 name|active
-operator|->
-name|index
 argument_list|)
 expr_stmt|;
 comment|/*  Add to active pattern dialogs list  */
@@ -1593,7 +1592,8 @@ name|prec
 init|=
 name|NULL
 decl_stmt|;
-name|GPatternP
+name|GPattern
+modifier|*
 name|pattern
 decl_stmt|;
 name|gint
@@ -1975,8 +1975,6 @@ argument_list|(
 name|psp
 argument_list|,
 name|pattern
-operator|->
-name|index
 argument_list|)
 expr_stmt|;
 if|if
@@ -1999,17 +1997,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pattern_select_select (PatternSelect * psp,gint index)
+DECL|function|pattern_select_select (PatternSelect * psp,GPattern * pattern)
 name|pattern_select_select
 parameter_list|(
 name|PatternSelect
 modifier|*
 name|psp
 parameter_list|,
-name|gint
-name|index
+name|GPattern
+modifier|*
+name|pattern
 parameter_list|)
 block|{
+name|gint
+name|index
+decl_stmt|;
 name|gint
 name|row
 decl_stmt|,
@@ -2020,6 +2022,19 @@ name|scroll_offset
 init|=
 literal|0
 decl_stmt|;
+name|index
+operator|=
+name|pattern
+operator|->
+name|index
+expr_stmt|;
+if|if
+condition|(
+name|index
+operator|<
+literal|0
+condition|)
+return|return;
 name|update_active_pattern_field
 argument_list|(
 name|psp
@@ -2166,7 +2181,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278e216f0108
+DECL|struct|__anon28ba1ce90108
 block|{
 DECL|member|psp
 name|PatternSelect
@@ -4873,6 +4888,13 @@ name|active
 operator|->
 name|index
 expr_stmt|;
+if|if
+condition|(
+name|index
+operator|<
+literal|0
+condition|)
+return|return;
 name|row
 operator|=
 name|index

@@ -2274,7 +2274,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Active"
+literal|"No Brushes available"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4284,24 +4284,6 @@ expr_stmt|;
 if|if
 condition|(
 name|index
-operator|>=
-name|gimp_brush_list_length
-argument_list|(
-name|brush_list
-argument_list|)
-condition|)
-name|index
-operator|=
-name|gimp_brush_list_length
-argument_list|(
-name|brush_list
-argument_list|)
-operator|-
-literal|1
-expr_stmt|;
-if|if
-condition|(
-name|index
 operator|<
 literal|0
 condition|)
@@ -5205,7 +5187,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0dd1bc0108
+DECL|struct|__anon2958dbd90108
 block|{
 DECL|member|bsp
 name|BrushSelect

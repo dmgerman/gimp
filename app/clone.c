@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0f82ab0103
+DECL|enum|__anon28b540f80103
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -503,7 +503,8 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|GPatternP
+name|GPattern
+modifier|*
 parameter_list|,
 name|unsigned
 name|char
@@ -2189,7 +2190,8 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|GPatternP
+name|GPattern
+modifier|*
 name|pattern
 decl_stmt|;
 name|gint
@@ -3169,7 +3171,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clone_line_pattern (GImage * dest,GimpDrawable * drawable,GPatternP pattern,unsigned char * d,int x,int y,int bytes,int width)
+DECL|function|clone_line_pattern (GImage * dest,GimpDrawable * drawable,GPattern * pattern,unsigned char * d,int x,int y,int bytes,int width)
 name|clone_line_pattern
 parameter_list|(
 name|GImage
@@ -3180,7 +3182,8 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GPatternP
+name|GPattern
+modifier|*
 name|pattern
 parameter_list|,
 name|unsigned

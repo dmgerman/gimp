@@ -2294,6 +2294,8 @@ block|{
 name|GSList
 modifier|*
 name|list
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|row
@@ -2325,6 +2327,10 @@ operator|&
 name|column
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gradients_list
+condition|)
 name|list
 operator|=
 name|g_slist_nth
@@ -2334,6 +2340,10 @@ argument_list|,
 name|row
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|list
+condition|)
 name|gsp
 operator|->
 name|dnd_gradient
@@ -2345,6 +2355,13 @@ operator|)
 name|list
 operator|->
 name|data
+expr_stmt|;
+else|else
+name|gsp
+operator|->
+name|dnd_gradient
+operator|=
+name|NULL
 expr_stmt|;
 return|return
 name|TRUE
