@@ -317,18 +317,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_help_register:  * @help_path: The rootdir of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure changes the help rootdir for the plug-in which calls  * it. All subsequent calls of gimp_help from this plug-in will be  * interpreted relative to this rootdir. This procedure can only be  * called in the query function of a plug-in and it has to be called  * before any procedure is installed.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_plugin_help_register:  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri: The root URI of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure changes the help rootdir for the plug-in which calls  * it. All subsequent calls of gimp_help from this plug-in will be  * interpreted relative to this rootdir.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_plugin_help_register (const gchar * help_path)
+DECL|function|gimp_plugin_help_register (const gchar * domain_name,const gchar * domain_uri)
 name|gimp_plugin_help_register
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|help_path
+name|domain_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|domain_uri
 parameter_list|)
 block|{
 name|GimpParam
@@ -354,7 +359,11 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|help_path
+name|domain_name
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|domain_uri
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

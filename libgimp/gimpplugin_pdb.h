@@ -78,7 +78,12 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|help_path
+name|domain_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|domain_uri
 parameter_list|)
 function_decl|;
 end_function_decl

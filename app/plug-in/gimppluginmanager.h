@@ -174,14 +174,14 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Retrieve a plug-ins help path */
+comment|/* Retrieve a plug-ins help domain */
 end_comment
 
 begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|plug_ins_help_path
+name|plug_ins_help_domain
 parameter_list|(
 name|Gimp
 modifier|*
@@ -191,6 +191,39 @@ specifier|const
 name|gchar
 modifier|*
 name|prog_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|help_uri
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Retrieve all help domains */
+end_comment
+
+begin_function_decl
+name|gint
+name|plug_ins_help_domains
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+modifier|*
+name|help_domains
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+modifier|*
+name|help_uris
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -111,7 +111,7 @@ name|prog_name
 decl_stmt|;
 name|gchar
 modifier|*
-name|help_page
+name|help_id
 decl_stmt|;
 name|prog_name
 operator|=
@@ -138,7 +138,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|help_page
+name|help_id
 operator|=
 operator|(
 name|gchar
@@ -155,9 +155,20 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|help_page
+name|help_id
 operator|==
 name|NULL
+operator|||
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|help_id
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
@@ -171,14 +182,16 @@ name|gimp_help
 argument_list|(
 name|gimp
 argument_list|,
-name|plug_ins_help_path
+name|plug_ins_help_domain
 argument_list|(
 name|gimp
 argument_list|,
 name|prog_name
+argument_list|,
+name|NULL
 argument_list|)
 argument_list|,
-name|help_page
+name|help_id
 argument_list|)
 expr_stmt|;
 return|return
@@ -212,9 +225,9 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"help_page"
+literal|"help_id"
 block|,
-literal|"The location of the help page"
+literal|"The help page's ID"
 block|}
 block|}
 decl_stmt|;

@@ -34,7 +34,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_page
+name|help_id
 parameter_list|)
 function_decl|;
 end_function_decl

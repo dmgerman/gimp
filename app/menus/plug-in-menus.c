@@ -124,11 +124,11 @@ name|gchar
 modifier|*
 name|locale_domain
 decl_stmt|;
-DECL|member|help_path
+DECL|member|help_domain
 specifier|const
 name|gchar
 modifier|*
-name|help_path
+name|help_domain
 decl_stmt|;
 block|}
 struct|;
@@ -482,7 +482,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|help_path
+name|help_domain
 decl_stmt|;
 name|progname
 operator|=
@@ -504,15 +504,17 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|help_path
+name|help_domain
 operator|=
-name|plug_ins_help_path
+name|plug_ins_help_domain
 argument_list|(
 name|item_factory
 operator|->
 name|gimp
 argument_list|,
 name|progname
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|menu_entry
@@ -538,9 +540,9 @@ name|locale_domain
 expr_stmt|;
 name|menu_entry
 operator|->
-name|help_path
+name|help_domain
 operator|=
-name|help_path
+name|help_domain
 expr_stmt|;
 name|g_tree_insert
 argument_list|(
@@ -582,7 +584,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_menus_create_entry (GimpItemFactory * item_factory,PlugInProcDef * proc_def,const gchar * locale_domain,const gchar * help_path)
+DECL|function|plug_in_menus_create_entry (GimpItemFactory * item_factory,PlugInProcDef * proc_def,const gchar * locale_domain,const gchar * help_domain)
 name|plug_in_menus_create_entry
 parameter_list|(
 name|GimpItemFactory
@@ -601,7 +603,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_path
+name|help_domain
 parameter_list|)
 block|{
 name|GimpItemFactoryEntry
@@ -636,7 +638,7 @@ name|plug_in_proc_def_get_help_id
 argument_list|(
 name|proc_def
 argument_list|,
-name|help_path
+name|help_domain
 argument_list|)
 expr_stmt|;
 name|entry
@@ -1472,7 +1474,7 @@ name|locale_domain
 argument_list|,
 name|menu_entry
 operator|->
-name|help_path
+name|help_domain
 argument_list|)
 expr_stmt|;
 return|return

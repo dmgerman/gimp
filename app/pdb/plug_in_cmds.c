@@ -1693,9 +1693,13 @@ name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
-name|help_path
+name|domain_name
 decl_stmt|;
-name|help_path
+name|gchar
+modifier|*
+name|domain_uri
+decl_stmt|;
+name|domain_name
 operator|=
 operator|(
 name|gchar
@@ -1712,9 +1716,56 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|help_path
+name|domain_name
 operator|==
 name|NULL
+operator|||
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|domain_name
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+name|domain_uri
+operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
+name|args
+index|[
+literal|1
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_pointer
+expr_stmt|;
+if|if
+condition|(
+name|domain_uri
+operator|==
+name|NULL
+operator|||
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|domain_uri
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
@@ -1738,7 +1789,7 @@ operator|->
 name|query
 condition|)
 block|{
-name|plug_in_def_set_help_path
+name|plug_in_def_set_help_domain_name
 argument_list|(
 name|gimp
 operator|->
@@ -1746,7 +1797,18 @@ name|current_plug_in
 operator|->
 name|plug_in_def
 argument_list|,
-name|help_path
+name|domain_name
+argument_list|)
+expr_stmt|;
+name|plug_in_def_set_help_domain_uri
+argument_list|(
+name|gimp
+operator|->
+name|current_plug_in
+operator|->
+name|plug_in_def
+argument_list|,
+name|domain_uri
 argument_list|)
 expr_stmt|;
 block|}
@@ -1774,9 +1836,17 @@ block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"help_path"
+literal|"domain_name"
 block|,
-literal|"The rootdir of the plug-in's help pages"
+literal|"The XML namespace of the plug-in's help pages"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"domain_uri"
+block|,
+literal|"The root URI of the plug-in's help pages"
 block|}
 block|}
 decl_stmt|;
@@ -1793,7 +1863,7 @@ literal|"gimp_plugin_help_register"
 block|,
 literal|"Register a help path for a plug-in."
 block|,
-literal|"This procedure changes the help rootdir for the plug-in which calls it. All subsequent calls of gimp_help from this plug-in will be interpreted relative to this rootdir. This procedure can only be called in the query function of a plug-in and it has to be called before any procedure is installed."
+literal|"This procedure changes the help rootdir for the plug-in which calls it. All subsequent calls of gimp_help from this plug-in will be interpreted relative to this rootdir."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,
@@ -1803,7 +1873,7 @@ literal|"2000"
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|1
+literal|2
 block|,
 name|plugin_help_register_inargs
 block|,

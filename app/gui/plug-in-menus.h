@@ -71,7 +71,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_path
+name|help_domain
 parameter_list|)
 function_decl|;
 end_function_decl

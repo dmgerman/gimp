@@ -408,7 +408,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|plug_in_proc_def_get_help_id (PlugInProcDef * proc_def,const gchar * help_path)
+DECL|function|plug_in_proc_def_get_help_id (PlugInProcDef * proc_def,const gchar * help_domain)
 name|plug_in_proc_def_get_help_id
 parameter_list|(
 name|PlugInProcDef
@@ -418,7 +418,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_path
+name|help_domain
 parameter_list|)
 block|{
 name|gchar
@@ -477,20 +477,20 @@ literal|'-'
 expr_stmt|;
 if|if
 condition|(
-name|help_path
+name|help_domain
 condition|)
 block|{
 name|gchar
 modifier|*
-name|path_and_id
+name|domain_and_id
 decl_stmt|;
-name|path_and_id
+name|domain_and_id
 operator|=
 name|g_strconcat
 argument_list|(
-name|help_path
+name|help_domain
 argument_list|,
-literal|":"
+literal|"?"
 argument_list|,
 name|help_id
 argument_list|,
@@ -503,7 +503,7 @@ name|help_id
 argument_list|)
 expr_stmt|;
 return|return
-name|path_and_id
+name|domain_and_id
 return|;
 block|}
 return|return

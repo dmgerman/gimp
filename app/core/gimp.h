@@ -316,10 +316,10 @@ name|GSList
 modifier|*
 name|plug_in_locale_domains
 decl_stmt|;
-DECL|member|plug_in_help_paths
+DECL|member|plug_in_help_domains
 name|GSList
 modifier|*
-name|plug_in_help_paths
+name|plug_in_help_domains
 decl_stmt|;
 DECL|member|current_plug_in
 name|PlugIn
