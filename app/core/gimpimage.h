@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd330c0103
+DECL|enum|__anon289281c50103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -212,7 +212,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd330c0203
+DECL|enum|__anon289281c50203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -255,7 +255,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd330c0303
+DECL|enum|__anon289281c50303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd330c0403
+DECL|enum|__anon289281c50403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -748,7 +748,6 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-specifier|const
 name|Parasite
 modifier|*
 parameter_list|)
@@ -770,7 +769,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|guint32
+name|Tattoo
 name|gimp_image_get_new_tattoo
 parameter_list|(
 name|GimpImage
@@ -839,7 +838,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|guint32
+name|Tattoo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -852,7 +851,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|guint32
+name|Tattoo
 parameter_list|)
 function_decl|;
 end_function_decl

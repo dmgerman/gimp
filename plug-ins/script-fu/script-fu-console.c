@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c4b420108
+DECL|struct|__anon2b3f9c5d0108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -398,6 +398,17 @@ modifier|*
 name|siod_output
 decl_stmt|;
 end_decl_stmt
+
+begin_define
+DECL|macro|message (string)
+define|#
+directive|define
+name|message
+parameter_list|(
+name|string
+parameter_list|)
+value|printf("(%s): %d ::: %s\n", __PRETTY_FUNCTION__, __LINE__, string)
+end_define
 
 begin_comment
 comment|/*  *  Function definitions  */
@@ -2089,6 +2100,12 @@ block|{
 name|int
 name|count
 decl_stmt|;
+specifier|static
+name|int
+name|hack
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -2109,6 +2126,19 @@ operator|!=
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|hack
+condition|)
+comment|/* this is a stupid hack, but as of 10/27/98 		 * the script-fu-console will hang on my system without it. 		 * the real cause of this needs to be tracked down. 		 * posibly a problem with the text widget, or the 		 * signal handlers not getting fully initialized or... 		 * no reports of hangs on other platforms, could just be a 		 * problem with my system. 		 */
+block|{
+name|hack
+operator|=
+literal|1
+expr_stmt|;
+return|return;
+block|}
 name|read_buffer
 index|[
 name|count

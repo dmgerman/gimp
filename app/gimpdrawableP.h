@@ -31,6 +31,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"parasitelistF.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpmatrix.h"
 end_include
 
@@ -113,7 +119,7 @@ name|has_alpha
 decl_stmt|;
 comment|/* drawable has alpha */
 DECL|member|parasites
-name|GSList
+name|ParasiteList
 modifier|*
 name|parasites
 decl_stmt|;

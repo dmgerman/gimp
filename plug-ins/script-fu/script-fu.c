@@ -4499,9 +4499,10 @@ name|flags
 operator|=
 name|get_c_long
 argument_list|(
-operator|(
+name|car
+argument_list|(
 name|intermediate_val
-operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* parasite->size */
@@ -4564,6 +4565,11 @@ operator|.
 name|string
 operator|.
 name|data
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"e\n"
+argument_list|)
 expr_stmt|;
 block|}
 break|break;

@@ -54,11 +54,11 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
+file|"parasitelist.h"
 end_include
 
 begin_enum
-DECL|enum|__anon29eb41860103
+DECL|enum|__anon27f665620103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -1599,7 +1599,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|parasite_find_in_gslist
+name|parasite_list_find
 argument_list|(
 name|drawable
 operator|->
@@ -1613,30 +1613,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_attach_parasite (GimpDrawable * drawable,const Parasite * parasite)
+DECL|function|gimp_drawable_attach_parasite (GimpDrawable * drawable,Parasite * parasite)
 name|gimp_drawable_attach_parasite
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-specifier|const
 name|Parasite
 modifier|*
 name|parasite
 parameter_list|)
 block|{
-name|drawable
-operator|->
-name|parasites
-operator|=
-name|parasite_add_to_gslist
+name|parasite_list_add
 argument_list|(
-name|parasite
-argument_list|,
 name|drawable
 operator|->
 name|parasites
+argument_list|,
+name|parasite
 argument_list|)
 expr_stmt|;
 block|}
@@ -1657,16 +1652,7 @@ modifier|*
 name|parasite
 parameter_list|)
 block|{
-name|Parasite
-modifier|*
-name|p
-decl_stmt|;
-if|if
-condition|(
-operator|(
-name|p
-operator|=
-name|parasite_find_in_gslist
+name|parasite_list_remove
 argument_list|(
 name|drawable
 operator|->
@@ -1674,31 +1660,12 @@ name|parasites
 argument_list|,
 name|parasite
 argument_list|)
-operator|)
-condition|)
-name|drawable
-operator|->
-name|parasites
-operator|=
-name|g_slist_remove
-argument_list|(
-name|drawable
-operator|->
-name|parasites
-argument_list|,
-name|p
-argument_list|)
-expr_stmt|;
-name|parasite_free
-argument_list|(
-name|p
-argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-name|guint32
+name|Tattoo
 DECL|function|gimp_drawable_get_tattoo (const GimpDrawable * drawable)
 name|gimp_drawable_get_tattoo
 parameter_list|(
@@ -2269,7 +2236,8 @@ name|drawable
 operator|->
 name|parasites
 operator|=
-name|FALSE
+name|parasite_list_new
+argument_list|()
 expr_stmt|;
 name|drawable
 operator|->
@@ -2420,11 +2388,14 @@ name|drawable
 operator|->
 name|parasites
 condition|)
-name|parasite_gslist_destroy
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|drawable
 operator|->
 name|parasites
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

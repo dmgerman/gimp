@@ -51,6 +51,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"parasitelistF.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpmatrix.h"
 end_include
 
@@ -139,7 +145,7 @@ name|ref_count
 decl_stmt|;
 comment|/*  number of references         */
 DECL|member|tattoo_state
-name|guint32
+name|Tattoo
 name|tattoo_state
 decl_stmt|;
 comment|/*  the next unique tattoo to use*/
@@ -227,7 +233,7 @@ name|selection_mask
 decl_stmt|;
 comment|/*  selection mask channel       */
 DECL|member|parasites
-name|GSList
+name|ParasiteList
 modifier|*
 name|parasites
 decl_stmt|;

@@ -16,7 +16,19 @@ directive|define
 name|__GIMPMATRIX_H__
 end_define
 
-begin_typedef
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__cplusplus
+end_ifdef
+
+begin_extern
+extern|extern
+literal|"C"
+block|{
+endif|#
+directive|endif
+comment|/* __cplusplus */
 DECL|typedef|GimpMatrix
 typedef|typedef
 name|double
@@ -28,9 +40,6 @@ index|[
 literal|3
 index|]
 typedef|;
-end_typedef
-
-begin_function_decl
 name|void
 name|gimp_matrix_transform_point
 parameter_list|(
@@ -47,9 +56,6 @@ name|double
 modifier|*
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_matrix_mult
 parameter_list|(
@@ -58,18 +64,12 @@ parameter_list|,
 name|GimpMatrix
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_matrix_identity
 parameter_list|(
 name|GimpMatrix
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_matrix_translate
 parameter_list|(
@@ -80,9 +80,6 @@ parameter_list|,
 name|double
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_matrix_scale
 parameter_list|(
@@ -93,9 +90,6 @@ parameter_list|,
 name|double
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_matrix_rotate
 parameter_list|(
@@ -104,9 +98,6 @@ parameter_list|,
 name|double
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_matrix_xshear
 parameter_list|(
@@ -115,9 +106,6 @@ parameter_list|,
 name|double
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_matrix_yshear
 parameter_list|(
@@ -126,18 +114,12 @@ parameter_list|,
 name|double
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|double
 name|gimp_matrix_determinant
 parameter_list|(
 name|GimpMatrix
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_matrix_invert
 parameter_list|(
@@ -148,7 +130,20 @@ name|GimpMatrix
 name|m_inv
 parameter_list|)
 function_decl|;
-end_function_decl
+ifdef|#
+directive|ifdef
+name|__cplusplus
+block|}
+end_extern
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __cplusplus */
+end_comment
 
 begin_endif
 endif|#

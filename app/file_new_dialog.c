@@ -50,12 +50,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage_cmds.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -96,7 +90,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bf20f1d0108
+DECL|struct|__anon27efd6e80108
 typedef|typedef
 struct|struct
 block|{

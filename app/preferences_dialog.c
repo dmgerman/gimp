@@ -140,12 +140,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage_cmds.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -302,7 +296,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a57fe990108
+DECL|struct|__anon2a2b08530108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3064,7 +3058,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2a57fe990208
+DECL|struct|__anon2a2b08530208
 struct|struct
 block|{
 DECL|member|label
@@ -3113,7 +3107,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2a57fe990308
+DECL|struct|__anon2a2b08530308
 struct|struct
 block|{
 DECL|member|label
@@ -3203,7 +3197,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2a57fe990408
+DECL|struct|__anon2a2b08530408
 struct|struct
 block|{
 DECL|member|label

@@ -737,7 +737,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|guint32
+name|Tattoo
 name|layer_get_tattoo
 parameter_list|(
 specifier|const

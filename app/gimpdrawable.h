@@ -94,7 +94,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290af0c40103
+DECL|enum|__anon2be6d14c0103
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -405,7 +405,6 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-specifier|const
 name|Parasite
 modifier|*
 parameter_list|)
@@ -427,7 +426,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|guint32
+name|Tattoo
 name|gimp_drawable_get_tattoo
 parameter_list|(
 specifier|const

@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpset.h"
 end_include
 
@@ -2275,6 +2281,10 @@ name|xcf_init
 argument_list|()
 expr_stmt|;
 comment|/*  initialize the xcf file format routines */
+name|gimp_init_parasites
+argument_list|()
+expr_stmt|;
+comment|/*  initialize the parasite table */
 name|app_init_update_status
 argument_list|(
 name|_

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"parasitelist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"undo.h"
 end_include
 
@@ -467,7 +473,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2991fdd60103
+DECL|enum|__anon2a2abc800103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -837,7 +843,8 @@ name|gimage
 operator|->
 name|parasites
 operator|=
-name|NULL
+name|parasite_list_new
+argument_list|()
 expr_stmt|;
 name|gimp_matrix_identity
 argument_list|(
@@ -2142,11 +2149,14 @@ name|gimage
 operator|->
 name|parasites
 condition|)
-name|parasite_gslist_destroy
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|gimage
 operator|->
 name|parasites
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4124,7 +4134,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|parasite_find_in_gslist
+name|parasite_list_find
 argument_list|(
 name|gimage
 operator|->
@@ -4138,30 +4148,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_attach_parasite (GimpImage * gimage,const Parasite * parasite)
+DECL|function|gimp_image_attach_parasite (GimpImage * gimage,Parasite * parasite)
 name|gimp_image_attach_parasite
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-specifier|const
 name|Parasite
 modifier|*
 name|parasite
 parameter_list|)
 block|{
-name|gimage
-operator|->
-name|parasites
-operator|=
-name|parasite_add_to_gslist
+name|parasite_list_add
 argument_list|(
-name|parasite
-argument_list|,
 name|gimage
 operator|->
 name|parasites
+argument_list|,
+name|parasite
 argument_list|)
 expr_stmt|;
 block|}
@@ -4182,16 +4187,7 @@ modifier|*
 name|parasite
 parameter_list|)
 block|{
-name|Parasite
-modifier|*
-name|p
-decl_stmt|;
-if|if
-condition|(
-operator|(
-name|p
-operator|=
-name|parasite_find_in_gslist
+name|parasite_list_remove
 argument_list|(
 name|gimage
 operator|->
@@ -4199,31 +4195,12 @@ name|parasites
 argument_list|,
 name|parasite
 argument_list|)
-operator|)
-condition|)
-name|gimage
-operator|->
-name|parasites
-operator|=
-name|g_slist_remove
-argument_list|(
-name|gimage
-operator|->
-name|parasites
-argument_list|,
-name|p
-argument_list|)
-expr_stmt|;
-name|parasite_free
-argument_list|(
-name|p
-argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-name|guint32
+name|Tattoo
 DECL|function|gimp_image_get_new_tattoo (GimpImage * image)
 name|gimp_image_get_new_tattoo
 parameter_list|(
@@ -4232,9 +4209,26 @@ modifier|*
 name|image
 parameter_list|)
 block|{
+name|image
+operator|->
+name|tattoo_state
+operator|++
+expr_stmt|;
+if|if
+condition|(
+name|image
+operator|->
+name|tattoo_state
+operator|<=
+literal|0
+condition|)
+name|g_warning
+argument_list|(
+literal|"Tattoo state has become corrupt (2.1 billion operation limit exceded)"
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
-operator|++
 name|image
 operator|->
 name|tattoo_state
@@ -6699,14 +6693,14 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimp_image_get_layer_by_tattoo (GimpImage * gimage,guint32 tattoo)
+DECL|function|gimp_image_get_layer_by_tattoo (GimpImage * gimage,Tattoo tattoo)
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|guint32
+name|Tattoo
 name|tattoo
 parameter_list|)
 block|{
@@ -6766,14 +6760,14 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|gimp_image_get_channel_by_tattoo (GimpImage * gimage,guint32 tattoo)
+DECL|function|gimp_image_get_channel_by_tattoo (GimpImage * gimage,Tattoo tattoo)
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|guint32
+name|Tattoo
 name|tattoo
 parameter_list|)
 block|{

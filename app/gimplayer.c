@@ -88,13 +88,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"parasitelist.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
+file|"undo.h"
 end_include
 
 begin_include
@@ -120,7 +120,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a1945240103
+DECL|enum|__anon27cc8b0b0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -1659,7 +1659,7 @@ argument_list|)
 operator|->
 name|parasites
 operator|=
-name|parasite_gslist_copy
+name|parasite_list_copy
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5856,7 +5856,7 @@ block|}
 end_function
 
 begin_function
-name|guint32
+name|Tattoo
 DECL|function|layer_get_tattoo (const Layer * layer)
 name|layer_get_tattoo
 parameter_list|(

@@ -22,7 +22,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* Move this someplace else */
+comment|/* Move these someplace else */
 end_comment
 
 begin_typedef
@@ -31,6 +31,14 @@ typedef|typedef
 name|struct
 name|_Guide
 name|Guide
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|Tattoo
+typedef|typedef
+name|guint32
+name|Tattoo
 typedef|;
 end_typedef
 

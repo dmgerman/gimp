@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
+file|"parasitelist.h"
 end_include
 
 begin_include
@@ -900,7 +900,7 @@ argument_list|)
 operator|->
 name|parasites
 operator|=
-name|parasite_gslist_copy
+name|parasite_list_copy
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2193,7 +2193,7 @@ block|}
 end_function
 
 begin_function
-name|guint32
+name|Tattoo
 DECL|function|channel_get_tattoo (const Channel * channel)
 name|channel_get_tattoo
 parameter_list|(
