@@ -31,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b31d8730103
+DECL|enum|__anon2b1443a00103
 block|{
 DECL|enumerator|MESSAGE_BOX
 name|MESSAGE_BOX
@@ -100,6 +100,13 @@ begin_decl_stmt
 specifier|extern
 name|gboolean
 name|restore_session
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|double_speed
 decl_stmt|;
 end_decl_stmt
 
