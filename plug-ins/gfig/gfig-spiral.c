@@ -993,26 +993,6 @@ operator|=
 name|calc_pnt
 expr_stmt|;
 block|}
-comment|/* Reverse line if approp */
-if|if
-condition|(
-name|selvals
-operator|.
-name|reverselines
-condition|)
-name|reverse_pairs_list
-argument_list|(
-operator|&
-name|line_pnts
-index|[
-literal|0
-index|]
-argument_list|,
-name|i
-operator|/
-literal|2
-argument_list|)
-expr_stmt|;
 comment|/* Scale before drawing */
 if|if
 condition|(

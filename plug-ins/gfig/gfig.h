@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278147790108
+DECL|struct|__anon28a5ea7e0108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278147790208
+DECL|struct|__anon28a5ea7e0208
 block|{
 DECL|member|type
 name|SelectionType
@@ -282,7 +282,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278147790308
+DECL|struct|__anon28a5ea7e0308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -477,7 +477,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278147790408
+DECL|struct|__anon28a5ea7e0408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -656,20 +656,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|scale_to_original_xy
-parameter_list|(
-name|gdouble
-modifier|*
-name|list
-parameter_list|,
-name|gint
-name|size
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|reverse_pairs_list
 parameter_list|(
 name|gdouble
 modifier|*

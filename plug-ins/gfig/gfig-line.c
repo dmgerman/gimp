@@ -407,26 +407,6 @@ operator|.
 name|y
 expr_stmt|;
 block|}
-comment|/* Reverse line if approp */
-if|if
-condition|(
-name|selvals
-operator|.
-name|reverselines
-condition|)
-name|reverse_pairs_list
-argument_list|(
-operator|&
-name|line_pnts
-index|[
-literal|0
-index|]
-argument_list|,
-name|i
-operator|/
-literal|2
-argument_list|)
-expr_stmt|;
 comment|/* Scale before drawing */
 if|if
 condition|(
@@ -499,10 +479,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* Create a new line object. starting at the x, y point might add styles  * later.  */
-end_comment
-
 begin_function
 name|void
 DECL|function|d_line_object_class_init (void)
@@ -559,14 +535,6 @@ name|d_update_line
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* You guessed it delete the object !*/
-end_comment
-
-begin_comment
-comment|/* static void d_delete_line (Dobject *obj) {   g_assert (obj != NULL);   * First free the list of points - then the object itself *   d_delete_dobjpoints (obj->points);   g_free (obj); } */
-end_comment
 
 begin_comment
 comment|/* Update end point of line */
@@ -636,7 +604,6 @@ name|preview
 operator|->
 name|window
 argument_list|,
-comment|/*gfig_context->preview->style->bg_gc[GTK_STATE_NORMAL],*/
 name|gfig_gc
 argument_list|,
 name|spnt
@@ -700,7 +667,6 @@ name|preview
 operator|->
 name|window
 argument_list|,
-comment|/*gfig_context->preview->style->bg_gc[GTK_STATE_NORMAL],*/
 name|gfig_gc
 argument_list|,
 name|spnt
@@ -990,7 +956,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*gtk_widget_queue_draw (gfig_context->preview);*/
 block|}
 end_function
 
