@@ -673,6 +673,9 @@ parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

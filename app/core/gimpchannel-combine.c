@@ -6331,12 +6331,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_invert (GimpChannel * mask)
+DECL|function|gimp_channel_invert (GimpChannel * mask,gboolean push_undo)
 name|gimp_channel_invert
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
@@ -6354,7 +6357,10 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  push the current channel onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask

@@ -326,6 +326,8 @@ condition|)
 name|gimp_channel_invert
 argument_list|(
 name|mask
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|undo_push_image_qmask
@@ -396,6 +398,8 @@ condition|)
 name|gimp_channel_invert
 argument_list|(
 name|mask
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_mask_load
@@ -513,6 +517,8 @@ block|{
 name|gimp_channel_invert
 argument_list|(
 name|qmask
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
