@@ -48,25 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainereditor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpcontainerview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpdatafactoryview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"actions.h"
 end_include
 
 begin_include
@@ -126,7 +114,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Edit Pattern"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -148,7 +139,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"New Pattern"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -170,7 +164,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Duplicate pattern"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -192,7 +189,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Delete pattern"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -214,7 +214,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Refresh patterns"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -265,10 +268,6 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|GimpContainerEditor
-modifier|*
-name|editor
-decl_stmt|;
 name|GimpContext
 modifier|*
 name|context
@@ -276,6 +275,8 @@ decl_stmt|;
 name|GimpPattern
 modifier|*
 name|pattern
+init|=
+name|NULL
 decl_stmt|;
 name|GimpData
 modifier|*
@@ -283,22 +284,18 @@ name|data
 init|=
 name|NULL
 decl_stmt|;
-name|editor
+name|context
 operator|=
-name|GIMP_CONTAINER_EDITOR
+name|action_data_get_context
 argument_list|(
 name|user_data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|context
-operator|=
-name|gimp_container_view_get_context
-argument_list|(
-name|editor
-operator|->
-name|view
-argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|pattern
 operator|=
 name|gimp_context_get_pattern
@@ -317,6 +314,7 @@ argument_list|(
 name|pattern
 argument_list|)
 expr_stmt|;
+block|}
 DECL|macro|SET_SENSITIVE (action,condition)
 define|#
 directive|define
@@ -334,12 +332,7 @@ literal|"patterns-edit"
 argument_list|,
 name|pattern
 operator|&&
-name|GIMP_DATA_FACTORY_VIEW
-argument_list|(
-name|editor
-argument_list|)
-operator|->
-name|data_edit_func
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

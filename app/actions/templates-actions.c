@@ -42,19 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainereditor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpcontainerview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"actions.h"
 end_include
 
 begin_include
@@ -114,7 +108,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create a new image from the selected template"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -136,7 +133,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create a new template"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -158,7 +158,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Duplicate the selected template"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -180,7 +183,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Edit the selected template"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -202,7 +208,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Delete the selected template"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -253,10 +262,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpContainerEditor
-modifier|*
-name|editor
-decl_stmt|;
 name|GimpContext
 modifier|*
 name|context
@@ -264,23 +269,20 @@ decl_stmt|;
 name|GimpTemplate
 modifier|*
 name|template
+init|=
+name|NULL
 decl_stmt|;
-name|editor
+name|context
 operator|=
-name|GIMP_CONTAINER_EDITOR
+name|action_data_get_context
 argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|context
-operator|=
-name|gimp_container_view_get_context
-argument_list|(
-name|editor
-operator|->
-name|view
-argument_list|)
-expr_stmt|;
+condition|)
 name|template
 operator|=
 name|gimp_context_get_template

@@ -249,6 +249,8 @@ argument_list|,
 literal|"<Patterns>"
 argument_list|,
 literal|"/patterns-popup"
+argument_list|,
+literal|"patterns"
 argument_list|)
 condition|)
 block|{

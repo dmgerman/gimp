@@ -58,6 +58,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpContext
+modifier|*
+name|action_data_get_context
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImage
 modifier|*
 name|action_data_get_image
@@ -102,6 +113,20 @@ name|data
 parameter_list|)
 define|\
 value|gimp = action_data_get_gimp (data); \   if (! gimp) \     return
+end_define
+
+begin_define
+DECL|macro|return_if_no_context (context,data)
+define|#
+directive|define
+name|return_if_no_context
+parameter_list|(
+name|context
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|context = action_data_get_context (data); \   if (! context) \     return
 end_define
 
 begin_define

@@ -644,6 +644,8 @@ argument_list|,
 literal|"<Brushes>"
 argument_list|,
 literal|"/brushes-popup"
+argument_list|,
+literal|"brushes"
 argument_list|)
 condition|)
 block|{

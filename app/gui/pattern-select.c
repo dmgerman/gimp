@@ -472,6 +472,8 @@ argument_list|,
 literal|"<Patterns>"
 argument_list|,
 literal|"/patterns-popup"
+argument_list|,
+literal|"patterns"
 argument_list|)
 expr_stmt|;
 name|gimp_container_box_set_size_request

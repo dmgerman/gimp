@@ -481,6 +481,8 @@ argument_list|,
 literal|"<Gradients>"
 argument_list|,
 literal|"/gradients-popup"
+argument_list|,
+literal|"gradients"
 argument_list|)
 expr_stmt|;
 name|gimp_container_box_set_size_request

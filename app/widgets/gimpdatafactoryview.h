@@ -222,6 +222,11 @@ specifier|const
 name|gchar
 modifier|*
 name|ui_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|action_group
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -271,6 +276,11 @@ specifier|const
 name|gchar
 modifier|*
 name|ui_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|action_group
 parameter_list|)
 function_decl|;
 end_function_decl

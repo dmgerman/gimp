@@ -488,6 +488,8 @@ argument_list|,
 literal|"<Palettes>"
 argument_list|,
 literal|"/palettes-popup"
+argument_list|,
+literal|"palettes"
 argument_list|)
 expr_stmt|;
 name|gimp_container_box_set_size_request
