@@ -313,6 +313,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpStrokeEditor
+typedef|typedef
+name|struct
+name|_GimpStrokeEditor
+name|GimpStrokeEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTemplateEditor
 typedef|typedef
 name|struct

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpeditor.h"
+file|<gtk/gtkvbox.h>
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpTemplateEditor
 block|{
 DECL|member|parent_instance
-name|GimpEditor
+name|GtkVBox
 name|parent_instance
 decl_stmt|;
 DECL|member|template
@@ -156,7 +156,7 @@ struct|struct
 name|_GimpTemplateEditorClass
 block|{
 DECL|member|parent_class
-name|GimpEditorClass
+name|GtkVBoxClass
 name|parent_class
 decl_stmt|;
 block|}

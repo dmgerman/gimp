@@ -214,7 +214,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpEditorClass
+name|GtkVBoxClass
 modifier|*
 name|parent_class
 init|=
@@ -288,7 +288,7 @@ name|view_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_EDITOR
+name|GTK_TYPE_VBOX
 argument_list|,
 literal|"GimpTemplateEditor"
 argument_list|,
