@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b517b5d0108
+DECL|struct|__anon2a4c517d0108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b517b5d0208
+DECL|struct|__anon2a4c517d0208
 typedef|typedef
 struct|struct
 block|{
@@ -4755,7 +4755,7 @@ name|PyErr_SetString
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"couldn't make return value"
+literal|"could not make return value"
 argument_list|)
 expr_stmt|;
 return|return

@@ -309,7 +309,7 @@ name|closure
 parameter_list|)
 block|{
 return|return
-name|PyInt_FromLong
+name|PyBool_FromLong
 argument_list|(
 name|self
 operator|->
@@ -338,7 +338,7 @@ name|closure
 parameter_list|)
 block|{
 return|return
-name|PyInt_FromLong
+name|PyBool_FromLong
 argument_list|(
 name|self
 operator|->
@@ -3322,7 +3322,7 @@ name|closure
 parameter_list|)
 block|{
 return|return
-name|PyInt_FromLong
+name|PyBool_FromLong
 argument_list|(
 name|self
 operator|->
@@ -3351,7 +3351,7 @@ name|closure
 parameter_list|)
 block|{
 return|return
-name|PyInt_FromLong
+name|PyBool_FromLong
 argument_list|(
 name|self
 operator|->

@@ -240,7 +240,7 @@ name|closure
 parameter_list|)
 block|{
 return|return
-name|PyInt_FromLong
+name|PyBool_FromLong
 argument_list|(
 name|gimp_parasite_is_persistent
 argument_list|(
@@ -270,7 +270,7 @@ name|closure
 parameter_list|)
 block|{
 return|return
-name|PyInt_FromLong
+name|PyBool_FromLong
 argument_list|(
 name|gimp_parasite_is_undoable
 argument_list|(
@@ -650,11 +650,13 @@ operator|->
 name|para
 condition|)
 block|{
-name|PyErr_SetString
+name|PyErr_Format
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"could not create parasite"
+literal|"could not create parasite '%s'"
+argument_list|,
+name|name
 argument_list|)
 expr_stmt|;
 return|return

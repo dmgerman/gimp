@@ -22,6 +22,30 @@ directive|include
 file|<Python.h>
 end_include
 
+begin_if
+if|#
+directive|if
+name|PY_VERSION_HEX
+operator|<
+literal|0x020300F0
+end_if
+
+begin_define
+DECL|macro|PyBool_FromLong (v)
+define|#
+directive|define
+name|PyBool_FromLong
+parameter_list|(
+name|v
+parameter_list|)
+value|PyInt_FromLong((v) ? 1L : 0L);
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -175,7 +199,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2a8eed9f0108
+DECL|struct|__anon2a0788110108
 typedef|typedef
 struct|struct
 block|{
@@ -220,7 +244,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2a8eed9f0208
+DECL|struct|__anon2a0788110208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +289,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2a8eed9f0308
+DECL|struct|__anon2a0788110308
 typedef|typedef
 struct|struct
 block|{
@@ -383,7 +407,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2a8eed9f0408
+DECL|struct|__anon2a0788110408
 typedef|typedef
 struct|struct
 block|{
@@ -440,7 +464,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2a8eed9f0508
+DECL|struct|__anon2a0788110508
 typedef|typedef
 struct|struct
 block|{
@@ -510,7 +534,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2a8eed9f0608
+DECL|struct|__anon2a0788110608
 typedef|typedef
 struct|struct
 block|{
