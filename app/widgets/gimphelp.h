@@ -16,6 +16,19 @@ directive|define
 name|__GIMP_HELP_H__
 end_define
 
+begin_enum
+enum|enum
+DECL|enum|__anon2a1d928c0103
+block|{
+DECL|enumerator|HELP_BROWSER_GIMP
+name|HELP_BROWSER_GIMP
+block|,
+DECL|enumerator|HELP_BROWSER_NETSCAPE
+name|HELP_BROWSER_NETSCAPE
+block|}
+enum|;
+end_enum
+
 begin_typedef
 DECL|typedef|GimpHelpFunc
 typedef|typedef
