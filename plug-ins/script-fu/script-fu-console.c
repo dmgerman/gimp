@@ -101,7 +101,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<plug-ins/dbbrowser/dbbrowser_utils.h>
+file|<plug-ins/dbbrowser/gimpprocbrowser.h>
 end_include
 
 begin_define
@@ -131,7 +131,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9693fd0108
+DECL|struct|__anon2b3f14170108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -1122,11 +1122,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Browse..."
+literal|"_Browse..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1249,7 +1249,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|apply_callback (const gchar * proc_name,const gchar * scheme_proc_name,const gchar * proc_blurb,const gchar * proc_help,const gchar * proc_author,const gchar * proc_copyright,const gchar * proc_date,GimpPDBProcType proc_type,gint nparams,gint nreturn_vals,const GimpParamDef * params,GimpParamDef * return_vals)
+DECL|function|apply_callback (const gchar * proc_name,const gchar * scheme_proc_name,const gchar * proc_blurb,const gchar * proc_help,const gchar * proc_author,const gchar * proc_copyright,const gchar * proc_date,GimpPDBProcType proc_type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals)
 name|apply_callback
 parameter_list|(
 specifier|const
@@ -1291,16 +1291,17 @@ name|GimpPDBProcType
 name|proc_type
 parameter_list|,
 name|gint
-name|nparams
+name|n_params
 parameter_list|,
 name|gint
-name|nreturn_vals
+name|n_return_vals
 parameter_list|,
 specifier|const
 name|GimpParamDef
 modifier|*
 name|params
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|return_vals
@@ -1344,7 +1345,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|nparams
+name|n_params
 condition|;
 name|i
 operator|++
@@ -1429,7 +1430,7 @@ operator|(
 name|GtkObject
 operator|*
 operator|)
-name|gimp_db_browser
+name|gimp_proc_browser_dialog_new
 argument_list|(
 name|apply_callback
 argument_list|)
@@ -1451,14 +1452,12 @@ block|{
 name|GtkAdjustment
 modifier|*
 name|adj
-decl_stmt|;
-name|adj
-operator|=
+init|=
 name|GTK_ADJUSTMENT
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
 name|adj
@@ -1487,25 +1486,17 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GtkTextView
-modifier|*
-name|view
-decl_stmt|;
-name|view
-operator|=
+comment|/*  the text view idle updates so we need to idle scroll too    */
+name|g_idle_add
+argument_list|(
+name|script_fu_console_idle_scroll_end
+argument_list|,
 name|GTK_TEXT_VIEW
 argument_list|(
 name|cint
 operator|.
 name|text_view
 argument_list|)
-expr_stmt|;
-comment|/*  the text view idle updates so we need to idle scroll too    */
-name|g_idle_add
-argument_list|(
-name|script_fu_console_idle_scroll_end
-argument_list|,
-name|view
 operator|->
 name|vadjustment
 argument_list|)

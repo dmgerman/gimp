@@ -50,7 +50,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dbbrowser_utils.h"
+file|"gimpprocbrowser.h"
 end_include
 
 begin_include
@@ -166,7 +166,7 @@ literal|"23th june 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_DB Browser"
+literal|"Procedure _Browser"
 argument_list|)
 argument_list|,
 literal|""
@@ -305,7 +305,7 @@ operator|(
 name|GtkObject
 operator|*
 operator|)
-name|gimp_db_browser
+name|gimp_proc_browser_dialog_new
 argument_list|(
 name|NULL
 argument_list|)
