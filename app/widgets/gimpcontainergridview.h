@@ -125,6 +125,11 @@ DECL|member|visible_rows
 name|gint
 name|visible_rows
 decl_stmt|;
+DECL|member|selected_item
+name|GimpPreview
+modifier|*
+name|selected_item
+decl_stmt|;
 block|}
 struct|;
 end_struct
