@@ -4513,6 +4513,8 @@ comment|/*  Hide or show all dialogs  */
 name|gimp_dialog_factories_toggle
 argument_list|(
 name|dialog_factory
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

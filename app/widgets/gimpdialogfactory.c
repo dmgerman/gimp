@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291e48320103
+DECL|enum|__anon295a0be10103
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -3559,12 +3559,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factories_toggle (GimpDialogFactory * toolbox_factory)
+DECL|function|gimp_dialog_factories_toggle (GimpDialogFactory * toolbox_factory,gboolean ensure_visibility)
 name|gimp_dialog_factories_toggle
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|toolbox_factory
+parameter_list|,
+name|gboolean
+name|ensure_visibility
 parameter_list|)
 block|{
 specifier|static
@@ -3586,6 +3589,15 @@ decl_stmt|;
 if|if
 condition|(
 name|doing_update
+condition|)
+return|return;
+if|if
+condition|(
+name|ensure_visibility
+operator|&&
+name|toggle_state
+operator|!=
+name|GIMP_DIALOG_HIDE_ALL
 condition|)
 return|return;
 name|doing_update
