@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Change Log:  * 1999.11.16 hof: added p_delta_gintdrawable  * 1999.06.21 hof: removed Colorify iterator  * 1999.03.14 hof: added iterators for gimp 1.1.3 prerelease  *                 iterator code reorganized in _iter_ALT.inc Files  * 1998.06.12 hof: added p_delta_drawable (Iterate layers in the layerstack)  *                 this enables to apply an animated bumpmap.  * 1998.01.29 hof: 1st release  */
+comment|/* Change Log:  * version gimp 1.1.17b  2000.02.22  hof: - removed limit PLUGIN_DATA_SIZE  * 1999.11.16 hof: added p_delta_gintdrawable  * 1999.06.21 hof: removed Colorify iterator  * 1999.03.14 hof: added iterators for gimp 1.1.3 prerelease  *                 iterator code reorganized in _iter_ALT.inc Files  * 1998.06.12 hof: added p_delta_drawable (Iterate layers in the layerstack)  *                 this enables to apply an animated bumpmap.  * 1998.01.29 hof: 1st release  */
 end_comment
 
 begin_include
@@ -102,26 +102,22 @@ end_include
 begin_decl_stmt
 DECL|variable|g_plugin_data_from
 specifier|static
-name|char
+name|gchar
+modifier|*
 name|g_plugin_data_from
-index|[
-name|PLUGIN_DATA_SIZE
-operator|+
-literal|1
-index|]
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_plugin_data_to
 specifier|static
-name|char
+name|gchar
+modifier|*
 name|g_plugin_data_to
-index|[
-name|PLUGIN_DATA_SIZE
-operator|+
-literal|1
-index|]
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -132,8 +128,87 @@ name|gap_debug
 decl_stmt|;
 end_decl_stmt
 
+begin_function
+specifier|static
+name|gchar
+modifier|*
+DECL|function|p_alloc_plugin_data (char * key)
+name|p_alloc_plugin_data
+parameter_list|(
+name|char
+modifier|*
+name|key
+parameter_list|)
+block|{
+name|int
+name|l_len
+decl_stmt|;
+name|gchar
+modifier|*
+name|l_plugin_data
+decl_stmt|;
+name|l_len
+operator|=
+name|gimp_get_data_size
+argument_list|(
+name|key
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|l_len
+operator|<
+literal|1
+condition|)
+block|{
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"ERROR: no stored data found for Key %s\n"
+argument_list|,
+name|key
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
+name|l_plugin_data
+operator|=
+name|g_malloc0
+argument_list|(
+name|l_len
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gap_debug
+condition|)
+name|printf
+argument_list|(
+literal|"DEBUG  Key:%s  plugin_data length %d\n"
+argument_list|,
+name|key
+argument_list|,
+operator|(
+name|int
+operator|)
+name|l_len
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|l_plugin_data
+operator|)
+return|;
+block|}
+end_function
+
 begin_typedef
-DECL|struct|__anon29db6a280108
+DECL|struct|__anon2bb4ddec0108
 typedef|typedef
 struct|struct
 block|{
@@ -151,7 +226,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29db6a280208
+DECL|struct|__anon2bb4ddec0208
 typedef|typedef
 struct|struct
 block|{
@@ -243,10 +318,8 @@ if|if
 condition|(
 name|gap_debug
 condition|)
-name|fprintf
+name|printf
 argument_list|(
-name|stderr
-argument_list|,
 literal|"DEBUG: p_delta_long from: %ld to: %ld curr: %ld    delta: %f\n"
 argument_list|,
 name|val_from
@@ -683,10 +756,8 @@ if|if
 condition|(
 name|gap_debug
 condition|)
-name|fprintf
+name|printf
 argument_list|(
-name|stderr
-argument_list|,
 literal|"DEBUG: p_delta_gdouble total: %d  from: %f to: %f curr: %f    delta: %f\n"
 argument_list|,
 operator|(
@@ -778,10 +849,8 @@ if|if
 condition|(
 name|gap_debug
 condition|)
-name|fprintf
+name|printf
 argument_list|(
-name|stderr
-argument_list|,
 literal|"DEBUG: p_delta_gfloat total: %d  from: %f to: %f curr: %f    delta: %f\n"
 argument_list|,
 operator|(
@@ -873,10 +942,8 @@ if|if
 condition|(
 name|gap_debug
 condition|)
-name|fprintf
+name|printf
 argument_list|(
-name|stderr
-argument_list|,
 literal|"DEBUG: p_delta_gdouble total: %d  from: %f to: %f curr: %f    delta: %f\n"
 argument_list|,
 operator|(
@@ -1006,10 +1073,8 @@ if|if
 condition|(
 name|gap_debug
 condition|)
-name|fprintf
+name|printf
 argument_list|(
-name|stderr
-argument_list|,
 literal|"DEBUG: p_delta_color[%d] total: %d  from: %d to: %d curr: %d    delta: %f  current_step: %f\n"
 argument_list|,
 operator|(
@@ -1440,7 +1505,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db6a280308
+DECL|struct|__anon2bb4ddec0308
 block|{
 DECL|member|color
 name|double
@@ -1459,7 +1524,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db6a280408
+DECL|struct|__anon2bb4ddec0408
 block|{
 DECL|member|coord
 name|double
@@ -1476,7 +1541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29db6a280503
+DECL|enum|__anon2bb4ddec0503
 typedef|typedef
 enum|enum
 block|{
@@ -1498,7 +1563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29db6a280603
+DECL|enum|__anon2bb4ddec0603
 typedef|typedef
 enum|enum
 block|{
@@ -1516,7 +1581,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db6a280708
+DECL|struct|__anon2bb4ddec0708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1551,7 +1616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db6a280808
+DECL|struct|__anon2bb4ddec0808
 block|{
 DECL|member|type
 name|t_LightType
@@ -3164,17 +3229,13 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|char
+name|gchar
+modifier|*
 name|l_iter_proc_name
-index|[
-literal|256
-index|]
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|l_blurb_text
-index|[
-literal|300
-index|]
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -3245,19 +3306,19 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
-name|sprintf
-argument_list|(
 name|l_iter_proc_name
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%s_Iterator_ALT"
 argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|l_blurb_text
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"This extension calculates the modified values for one iterationstep for the call of %s"
 argument_list|,
 name|name
@@ -3275,7 +3336,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
-literal|"Dec. 1997"
+literal|"Feb. 2000"
 argument_list|,
 name|NULL
 argument_list|,
@@ -3291,6 +3352,16 @@ argument_list|,
 name|args_iter
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|l_iter_proc_name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|l_blurb_text
 argument_list|)
 expr_stmt|;
 block|}
@@ -3442,6 +3513,11 @@ operator|-
 literal|1
 return|;
 block|}
+name|l_rc
+operator|=
+operator|-
+literal|1
+expr_stmt|;
 name|l_name
 index|[
 name|l_cut
@@ -3450,11 +3526,36 @@ operator|=
 literal|'\0'
 expr_stmt|;
 comment|/* cut off "_Iterator_ALT" from l_name end */
-name|l_rc
+comment|/* allocate from/to plugin_data buffers     * as big as needed for the current plugin named l_name    */
+name|g_plugin_data_from
 operator|=
-operator|-
-literal|1
+name|p_alloc_plugin_data
+argument_list|(
+name|l_name
+argument_list|)
 expr_stmt|;
+name|g_plugin_data_to
+operator|=
+name|p_alloc_plugin_data
+argument_list|(
+name|l_name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|g_plugin_data_from
+operator|!=
+name|NULL
+operator|)
+operator|&&
+operator|(
+name|g_plugin_data_to
+operator|!=
+name|NULL
+operator|)
+condition|)
+block|{
 for|for
 control|(
 name|l_idx
@@ -3490,10 +3591,8 @@ if|if
 condition|(
 name|gap_debug
 condition|)
-name|fprintf
+name|printf
 argument_list|(
-name|stderr
-argument_list|,
 literal|"DEBUG: gap_run_iterators_ALT: FOUND %s\n"
 argument_list|,
 name|l_name
@@ -3521,6 +3620,7 @@ operator|)
 expr_stmt|;
 block|}
 block|}
+block|}
 if|if
 condition|(
 name|l_rc
@@ -3536,6 +3636,25 @@ argument_list|,
 name|name
 argument_list|,
 name|l_name
+argument_list|)
+expr_stmt|;
+comment|/* free from/to plugin_data buffers */
+if|if
+condition|(
+name|g_plugin_data_from
+condition|)
+name|g_free
+argument_list|(
+name|g_plugin_data_from
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_plugin_data_to
+condition|)
+name|g_free
+argument_list|(
+name|g_plugin_data_to
 argument_list|)
 expr_stmt|;
 return|return

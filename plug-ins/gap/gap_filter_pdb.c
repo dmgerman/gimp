@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 0.97.00              hof: - created module (as extract gap_filter_foreach)  */
+comment|/* revision history:  * version gimp 1.1.17b  2000.02.22  hof: - removed limit PLUGIN_DATA_SIZE  *                                        - removed support for old gimp 1.0.x PDB-interface.  * version 0.97.00                   hof: - created module (as extract gap_filter_foreach)  */
 end_comment
 
 begin_include
@@ -145,15 +145,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|g_plugin_data
+DECL|variable|global_plugin_data
 specifier|static
 name|char
-name|g_plugin_data
-index|[
-name|PLUGIN_DATA_SIZE
-operator|+
-literal|1
-index|]
+modifier|*
+name|global_plugin_data
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -720,7 +718,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* ============================================================================  * p_get_data  *    try to get the plugin's data (key is usually the name of the plugin)  *    and check for the length of the retrieved data.  * if all done OK return the length of the retrieved data,  * return -1 in case of errors.  *  * RISK: this procedure may crash if the retrieved data  *       is longer than PLUGIN_DATA_SIZE and gimp_get_data_size  *       is not available  *       (there was no way for a plugin to findout the length  *        in older GIMP releases)  * ============================================================================  */
+comment|/* ============================================================================  * p_get_data  *    try to get the plugin's data (key is usually the name of the plugin)  *    and check for the length of the retrieved data.  * if all done OK return the length of the retrieved data,  * return -1 in case of errors.  * ============================================================================  */
 end_comment
 
 begin_function
@@ -736,9 +734,6 @@ block|{
 name|int
 name|l_len
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PROCEDURAL_DB_GET_DATA_SIZE
 name|l_len
 operator|=
 name|gimp_get_data_size
@@ -746,160 +741,6 @@ argument_list|(
 name|key
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|l_len
-operator|>=
-name|PLUGIN_DATA_SIZE
-condition|)
-block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"ERROR: stored data too big Key %s (%d> %d)\n"
-argument_list|,
-name|key
-argument_list|,
-operator|(
-name|int
-operator|)
-name|l_len
-argument_list|,
-operator|(
-name|int
-operator|)
-name|PLUGIN_DATA_SIZE
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
-name|gimp_get_data
-argument_list|(
-name|key
-argument_list|,
-name|g_plugin_data
-argument_list|)
-expr_stmt|;
-else|#
-directive|else
-block|{
-name|int
-name|l_l1
-decl_stmt|,
-name|l_l2
-decl_stmt|;
-name|memset
-argument_list|(
-name|g_plugin_data
-argument_list|,
-literal|'X'
-argument_list|,
-name|PLUGIN_DATA_SIZE
-argument_list|)
-expr_stmt|;
-name|gimp_get_data
-argument_list|(
-name|key
-argument_list|,
-name|g_plugin_data
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|l_l1
-operator|=
-name|PLUGIN_DATA_SIZE
-operator|-
-literal|1
-init|;
-name|l_l1
-operator|>=
-literal|0
-condition|;
-name|l_l1
-operator|--
-control|)
-block|{
-if|if
-condition|(
-name|g_plugin_data
-index|[
-name|l_l1
-index|]
-operator|!=
-literal|'X'
-condition|)
-break|break;
-block|}
-name|memset
-argument_list|(
-name|g_plugin_data
-argument_list|,
-literal|'\0'
-argument_list|,
-name|PLUGIN_DATA_SIZE
-argument_list|)
-expr_stmt|;
-name|gimp_get_data
-argument_list|(
-name|key
-argument_list|,
-name|g_plugin_data
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|l_l2
-operator|=
-name|PLUGIN_DATA_SIZE
-operator|-
-literal|1
-init|;
-name|l_l2
-operator|>=
-literal|0
-condition|;
-name|l_l2
-operator|--
-control|)
-block|{
-if|if
-condition|(
-name|g_plugin_data
-index|[
-name|l_l2
-index|]
-operator|!=
-literal|'\0'
-condition|)
-break|break;
-block|}
-if|if
-condition|(
-name|l_l1
-operator|>
-name|l_l2
-condition|)
-name|l_len
-operator|=
-name|l_l1
-expr_stmt|;
-else|else
-name|l_len
-operator|=
-name|l_l2
-expr_stmt|;
-name|l_len
-operator|++
-expr_stmt|;
-comment|/* length is index of last valid byte + 1 */
-block|}
-endif|#
-directive|endif
 if|if
 condition|(
 name|l_len
@@ -923,12 +764,37 @@ return|;
 block|}
 if|if
 condition|(
+name|global_plugin_data
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|global_plugin_data
+argument_list|)
+expr_stmt|;
+block|}
+name|global_plugin_data
+operator|=
+name|g_malloc0
+argument_list|(
+name|l_len
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_get_data
+argument_list|(
+name|key
+argument_list|,
+name|global_plugin_data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|gap_debug
 condition|)
-name|fprintf
+name|printf
 argument_list|(
-name|stderr
-argument_list|,
 literal|"DEBUG p_get_data Key:%s  retrieved bytes %d\n"
 argument_list|,
 name|key
@@ -948,7 +814,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* ============================================================================  * p_set_data  *  *    set g_plugin_data  * ============================================================================  */
+comment|/* ============================================================================  * p_set_data  *  *    set global_plugin_data  * ============================================================================  */
 end_comment
 
 begin_function
@@ -964,15 +830,21 @@ name|gint
 name|plugin_data_len
 parameter_list|)
 block|{
+if|if
+condition|(
+name|global_plugin_data
+condition|)
+block|{
 name|gimp_set_data
 argument_list|(
 name|key
 argument_list|,
-name|g_plugin_data
+name|global_plugin_data
 argument_list|,
 name|plugin_data_len
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1352,7 +1224,7 @@ comment|/* end p_procedure_available */
 end_comment
 
 begin_comment
-comment|/* ============================================================================  * p_get_iterator_proc  *   check the PDB for Iterator Procedures (suffix "_Iterator" or "_Iterator_ALT"  * return Pointer to the name of the Iterator Procedure  *        or NULL if not found (or malloc error)  * ============================================================================  */
+comment|/* ============================================================================  * p_get_iterator_proc  *   check the PDB for Iterator Procedures (suffix "_Iterator" or "_Iterator_ALT"  * return Pointer to the name of the Iterator Procedure  *        or NULL if not found  * ============================================================================  */
 end_comment
 
 begin_function
@@ -1373,32 +1245,8 @@ decl_stmt|;
 comment|/* check for matching Iterator PluginProcedures */
 name|l_plugin_iterator
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|plugin_name
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-literal|"_Iterator_ALT"
-argument_list|)
-operator|+
-literal|2
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|l_plugin_iterator
-operator|!=
-name|NULL
-condition|)
-block|{
-name|sprintf
-argument_list|(
-name|l_plugin_iterator
-argument_list|,
 literal|"%s_Iterator"
 argument_list|,
 name|plugin_name
@@ -1417,16 +1265,21 @@ operator|<
 literal|0
 condition|)
 block|{
-name|sprintf
+name|g_free
 argument_list|(
 name|l_plugin_iterator
-argument_list|,
+argument_list|)
+expr_stmt|;
+name|l_plugin_iterator
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%s_Iterator_ALT"
 argument_list|,
 name|plugin_name
 argument_list|)
 expr_stmt|;
-comment|/* check for alternative Iterator   _Iterator_ALT          * for now i made some Iterator Plugins using the ending _ALT,          * If New plugins were added or existing ones were updated          * the Authors should supply original _Iterator Procedures          * to be used instead of my Hacked versions without name conflicts.          */
+comment|/* check for alternative Iterator   _Iterator_ALT       * for now i made some Iterator Plugins using the ending _ALT,       * If New plugins were added or existing ones were updated       * the Authors should supply original _Iterator Procedures       * to be used instead of my Hacked versions without name conflicts.       */
 if|if
 condition|(
 name|p_procedure_available
@@ -1449,7 +1302,6 @@ name|l_plugin_iterator
 operator|=
 name|NULL
 expr_stmt|;
-block|}
 block|}
 block|}
 return|return

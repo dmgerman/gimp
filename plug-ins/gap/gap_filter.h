@@ -27,18 +27,6 @@ file|"libgimp/gimp.h"
 end_include
 
 begin_comment
-comment|/* max buffer size for plugin' stored valus  */
-end_comment
-
-begin_define
-DECL|macro|PLUGIN_DATA_SIZE
-define|#
-directive|define
-name|PLUGIN_DATA_SIZE
-value|8192
-end_define
-
-begin_comment
 comment|/* ------------------------  * gap_filter_foreach.h  * ------------------------  */
 end_comment
 
@@ -102,7 +90,7 @@ comment|/* ------------------------  * gap_dbbrowser.h  * ----------------------
 end_comment
 
 begin_typedef
-DECL|struct|__anon290206780108
+DECL|struct|__anon278b4d070108
 typedef|typedef
 struct|struct
 block|{

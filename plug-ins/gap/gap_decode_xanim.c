@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 1.1.14a;  1999/11/22  hof: fixed gcc warning (too many arguments for format)  * 1.1.13a;  1999/11/22  hof: first release  */
+comment|/* revision history  * 1.1.17b;  2000/02/26  hof: bugfixes  * 1.1.14a;  1999/11/22  hof: fixed gcc warning (too many arguments for format)  * 1.1.13a;  1999/11/22  hof: first release  */
 end_comment
 
 begin_comment
@@ -192,7 +192,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|global_xanim_prog
-name|char
+name|gchar
 name|global_xanim_prog
 index|[
 literal|500
@@ -202,11 +202,11 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|global_errlist
-name|char
+name|gchar
+modifier|*
 name|global_errlist
-index|[
-literal|500
-index|]
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -270,7 +270,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -296,7 +296,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -319,7 +319,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -345,7 +345,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -371,7 +371,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -397,7 +397,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -420,7 +420,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -443,7 +443,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -466,7 +466,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -492,7 +492,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -518,7 +518,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -544,7 +544,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -567,7 +567,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -593,7 +593,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -616,7 +616,7 @@ index|[
 name|l_idx
 index|]
 argument_list|,
-name|WGT_LABEL
+name|WGT_LABEL_LEFT
 argument_list|)
 expr_stmt|;
 name|argv
@@ -773,7 +773,7 @@ DECL|macro|XADIALOG_NUM_ARGS
 define|#
 directive|define
 name|XADIALOG_NUM_ARGS
-value|11
+value|12
 specifier|static
 name|t_arr_arg
 name|argv
@@ -942,6 +942,24 @@ name|int_ret
 operator|=
 literal|0
 expr_stmt|;
+name|argv
+index|[
+literal|1
+index|]
+operator|.
+name|umin
+operator|=
+literal|0
+expr_stmt|;
+name|argv
+index|[
+literal|1
+index|]
+operator|.
+name|entry_width
+operator|=
+literal|80
+expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
 operator|&
@@ -1012,6 +1030,24 @@ operator|.
 name|int_ret
 operator|=
 literal|9999
+expr_stmt|;
+name|argv
+index|[
+literal|2
+index|]
+operator|.
+name|umin
+operator|=
+literal|0
+expr_stmt|;
+name|argv
+index|[
+literal|2
+index|]
+operator|.
+name|entry_width
+operator|=
+literal|80
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
@@ -1318,11 +1354,7 @@ index|]
 operator|.
 name|label_txt
 operator|=
-name|_
-argument_list|(
-literal|"\nWarning: xanim 2.80 has just limited MPEG support\n"
-literal|"most of the frames (type P and B) will be skipped"
-argument_list|)
+literal|""
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
@@ -1412,6 +1444,30 @@ operator|.
 name|int_ret
 operator|=
 literal|1
+expr_stmt|;
+name|p_init_arr_arg
+argument_list|(
+operator|&
+name|argv
+index|[
+literal|11
+index|]
+argument_list|,
+name|WGT_LABEL_LEFT
+argument_list|)
+expr_stmt|;
+name|argv
+index|[
+literal|11
+index|]
+operator|.
+name|label_txt
+operator|=
+name|_
+argument_list|(
+literal|"\nWarning: xanim 2.80 has just limited MPEG support\n"
+literal|"most of the frames (type P and B) will be skipped"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2459,10 +2515,10 @@ operator|<
 literal|0
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"cant find any extracted frames,\n%s\nmaybe xanim has failed or was canclled"
@@ -2550,10 +2606,10 @@ operator|<
 literal|0
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"frames are not extracted, because overwrite of %s was cancelled"
@@ -2584,10 +2640,10 @@ name|l_dst_frame
 argument_list|)
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"failed to overwrite %s (check permissions ?)"
@@ -2654,10 +2710,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"failed to write %s (check permissions ?)"
@@ -2966,19 +3022,17 @@ modifier|*
 name|file
 parameter_list|)
 block|{
-name|int
+name|gint
 name|l_rc
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|l_cmd
-index|[
-literal|300
-index|]
 decl_stmt|;
-name|sprintf
-argument_list|(
 name|l_cmd
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"grep -c '%s' \"%s\">/dev/null"
 argument_list|,
 name|pattern
@@ -2989,6 +3043,11 @@ expr_stmt|;
 name|l_rc
 operator|=
 name|system
+argument_list|(
+name|l_cmd
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|l_cmd
 argument_list|)
@@ -3018,28 +3077,26 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|p_check_xanim ()
 name|p_check_xanim
 parameter_list|()
 block|{
-name|int
+name|gint
 name|l_rc
 decl_stmt|;
-name|int
+name|gint
 name|l_grep_counter1
 decl_stmt|;
-name|int
+name|gint
 name|l_grep_counter2
 decl_stmt|;
-name|int
+name|gint
 name|l_grep_counter3
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|l_cmd
-index|[
-literal|300
-index|]
 decl_stmt|;
 specifier|static
 name|char
@@ -3068,10 +3125,10 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"no write permission for current directory"
 argument_list|)
 expr_stmt|;
@@ -3094,10 +3151,10 @@ name|l_fp
 argument_list|)
 expr_stmt|;
 comment|/* execute xanim with -h option and     * store its output in a file.    */
-name|sprintf
-argument_list|(
 name|l_cmd
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%s -h 2>&1>>%s"
 argument_list|,
 name|global_xanim_prog
@@ -3112,6 +3169,10 @@ argument_list|(
 name|l_cmd
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gap_debug
+condition|)
 name|printf
 argument_list|(
 literal|"DEBUG: executed :%s\n  Retcode: %d\n"
@@ -3122,6 +3183,11 @@ operator|(
 name|int
 operator|)
 name|l_rc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|l_cmd
 argument_list|)
 expr_stmt|;
 if|if
@@ -3143,10 +3209,10 @@ operator|)
 operator|)
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"could not execute %s (check if xanim is installed)"
@@ -3170,10 +3236,10 @@ name|l_xanim_help_output
 argument_list|)
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"%s does not look like xanim"
@@ -3252,10 +3318,10 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"The xanim program on your system \"%s\"\ndoes not support the exporting options Ea, Ee, Eq"
@@ -3277,10 +3343,10 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"The xanim program on your system \"%s\"\ndoes not support exporting of single frames"
@@ -3344,13 +3410,13 @@ name|gint32
 name|run_xanim_asynchron
 parameter_list|)
 block|{
-name|char
+name|gchar
 name|l_cmd
 index|[
-literal|300
+literal|500
 index|]
 decl_stmt|;
-name|char
+name|gchar
 name|l_buf
 index|[
 literal|40
@@ -4120,11 +4186,8 @@ operator|=
 name|FALSE
 expr_stmt|;
 name|global_errlist
-index|[
-literal|0
-index|]
 operator|=
-literal|'\0'
+name|NULL
 expr_stmt|;
 name|p_init_xanim_global_name
 argument_list|()
@@ -4212,10 +4275,10 @@ name|filename
 argument_list|)
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"videofile %s not existent or empty\n"
@@ -4370,10 +4433,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"could not create %s directory\n"
@@ -4444,10 +4507,10 @@ operator|-
 literal|1
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"could not start xanim process\n(program=%s)"
@@ -4522,10 +4585,10 @@ operator|<
 name|first_frame
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|global_errlist
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"cant find any extracted frames,\n"
@@ -4700,11 +4763,8 @@ block|{
 if|if
 condition|(
 name|global_errlist
-index|[
-literal|0
-index|]
 operator|==
-literal|'\0'
+name|NULL
 condition|)
 block|{
 name|p_xanim_info

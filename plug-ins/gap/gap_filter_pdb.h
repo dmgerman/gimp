@@ -26,22 +26,10 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
-begin_comment
-comment|/* max buffer size for plugin' stored valus  */
-end_comment
-
-begin_define
-DECL|macro|PLUGIN_DATA_SIZE
-define|#
-directive|define
-name|PLUGIN_DATA_SIZE
-value|8192
-end_define
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd4a0090103
+DECL|enum|__anon29f797060103
 DECL|enumerator|PTYP_ANY
 block|{
 name|PTYP_ANY
@@ -66,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd4a0090203
+DECL|enum|__anon29f797060203
 DECL|enumerator|PAPP_CONSTANT
 block|{
 name|PAPP_CONSTANT

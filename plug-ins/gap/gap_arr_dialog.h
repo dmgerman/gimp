@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 0.96.03; 1998/08/15  hof: p_arr_gtk_init   * version 0.96.00; 1998/07/09  hof: 1.st release   *                                   (re-implementation of gap_sld_dialog.c)  */
+comment|/* revision history:  * gimp    1.1.17b; 2000/01/26  hof:   * version 0.96.03; 1998/08/15  hof: p_arr_gtk_init   * version 0.96.00; 1998/07/09  hof: 1.st release   *                                   (re-implementation of gap_sld_dialog.c)  */
 end_comment
 
 begin_ifndef
@@ -43,7 +43,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2890e7bb0103
+DECL|enum|__anon2aafa0490103
 block|{
 DECL|enumerator|WGT_LABEL
 name|WGT_LABEL
@@ -77,6 +77,12 @@ name|WGT_ACT_BUTTON
 DECL|enumerator|WGT_FILESEL
 block|,
 name|WGT_FILESEL
+DECL|enumerator|WGT_LABEL_LEFT
+block|,
+name|WGT_LABEL_LEFT
+DECL|enumerator|WGT_LABEL_RIGHT
+block|,
+name|WGT_LABEL_RIGHT
 DECL|typedef|t_gap_widget
 block|}
 name|t_gap_widget
@@ -103,7 +109,7 @@ comment|/*  * - If one of the Args has set 'has_default' to TRUE  *   the action
 end_comment
 
 begin_typedef
-DECL|struct|__anon2890e7bb0208
+DECL|struct|__anon2aafa0490208
 typedef|typedef
 struct|struct
 block|{
@@ -143,12 +149,11 @@ name|has_default
 decl_stmt|;
 comment|/* TRUE: default value available */
 comment|/* flt_ fileds are used for WGT_FLT and WGT_FLT_PAIR */
-DECL|member|flt_format
-name|char
-modifier|*
-name|flt_format
+DECL|member|flt_digits
+name|gint
+name|flt_digits
 decl_stmt|;
-comment|/* NULL or something like "%0.2f" */
+comment|/* digits behind comma */
 DECL|member|flt_min
 name|gdouble
 name|flt_min
@@ -169,17 +174,7 @@ DECL|member|flt_ret
 name|gdouble
 name|flt_ret
 decl_stmt|;
-DECL|member|flt_ret_lim
-name|gdouble
-name|flt_ret_lim
-decl_stmt|;
 comment|/* int_ fileds are used for WGT_INT and WGT_INT_PAIR WGT_TOGGLE */
-DECL|member|int_format
-name|char
-modifier|*
-name|int_format
-decl_stmt|;
-comment|/* NULL or something like "%d" */
 DECL|member|int_min
 name|gint
 name|int_min
@@ -205,6 +200,19 @@ name|gint
 name|int_ret_lim
 decl_stmt|;
 comment|/* for private (arr_dialog.c) use only */
+comment|/* uncontraint lower /upper limit for WGT_FLT_PAIR and WGT_INT_PAIR */
+DECL|member|umin
+name|gfloat
+name|umin
+decl_stmt|;
+DECL|member|umax
+name|gfloat
+name|umax
+decl_stmt|;
+DECL|member|pagestep
+name|gfloat
+name|pagestep
+decl_stmt|;
 comment|/* togg_ field are used for WGT_TOGGLE */
 DECL|member|togg_label
 name|char
@@ -281,7 +289,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2890e7bb0308
+DECL|struct|__anon2aafa0490308
 typedef|typedef
 struct|struct
 block|{
