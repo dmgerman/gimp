@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -766,7 +772,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"layers/dialogs/scale_layer.html"
+name|GIMP_HELP_LAYER_SCALE
 expr_stmt|;
 name|frame
 operator|=
@@ -802,7 +808,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"dialogs/scale_image.html"
+name|GIMP_HELP_IMAGE_SCALE
 expr_stmt|;
 name|frame
 operator|=
@@ -854,7 +860,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"layers/dialogs/layer_boundary_size.html"
+name|GIMP_HELP_LAYER_RESIZE
 expr_stmt|;
 break|break;
 case|case
@@ -880,7 +886,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"dialogs/set_canvas_size.html"
+name|GIMP_HELP_IMAGE_RESIZE
 expr_stmt|;
 break|break;
 block|}

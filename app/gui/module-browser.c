@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -79,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4f291d0103
+DECL|enum|__anon2c356f380103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -446,7 +452,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/module_manager.html"
+name|GIMP_HELP_MODULE_DIALOG
 argument_list|,
 name|GTK_STOCK_REFRESH
 argument_list|,

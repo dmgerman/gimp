@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -96,7 +102,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_BUFFER_PASTE
 block|,
 name|NULL
 block|}
@@ -121,7 +127,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_BUFFER_PASTE_INTO
 block|,
 name|NULL
 block|}
@@ -146,7 +152,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_BUFFER_PASTE_AS_NEW
 block|,
 name|NULL
 block|}
@@ -171,7 +177,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_BUFFER_DELETE
 block|,
 name|NULL
 block|}

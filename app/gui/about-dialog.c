@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdnd.h"
 end_include
 
@@ -882,7 +888,7 @@ name|about_dialog
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/about.html"
+name|GIMP_HELP_ABOUT_DIALOG
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -160,6 +160,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpmenufactory.h"
 end_include
 
@@ -709,7 +715,7 @@ argument_list|)
 argument_list|,
 literal|"open_image"
 argument_list|,
-literal|"open/dialogs/file_open.html"
+name|GIMP_HELP_FILE_OPEN
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -469,7 +475,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/feather_selection.html"
+name|GIMP_HELP_SELECT_FEATHER
 argument_list|,
 name|_
 argument_list|(
@@ -618,7 +624,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/shrink_selection.html"
+name|GIMP_HELP_SELECT_SHRINK
 argument_list|,
 name|_
 argument_list|(
@@ -783,7 +789,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/grow_selection.html"
+name|GIMP_HELP_SELECT_GROW
 argument_list|,
 name|_
 argument_list|(
@@ -891,7 +897,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/border_selection.html"
+name|GIMP_HELP_SELECT_BORDER
 argument_list|,
 name|_
 argument_list|(

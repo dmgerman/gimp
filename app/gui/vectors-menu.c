@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -97,7 +103,7 @@ argument_list|)
 block|,
 literal|"<control>N"
 block|,
-name|vectors_new_vectors_cmd_callback
+name|vectors_new_cmd_callback
 block|,
 literal|0
 block|,
@@ -108,7 +114,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"new_path.html"
+name|GIMP_HELP_PATH_NEW
 block|,
 name|NULL
 block|}
@@ -122,7 +128,7 @@ argument_list|)
 block|,
 literal|"<control>F"
 block|,
-name|vectors_raise_vectors_cmd_callback
+name|vectors_raise_cmd_callback
 block|,
 literal|0
 block|,
@@ -133,7 +139,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"raise_path.html"
+name|GIMP_HELP_PATH_RAISE
 block|,
 name|NULL
 block|}
@@ -147,7 +153,7 @@ argument_list|)
 block|,
 literal|"<control>B"
 block|,
-name|vectors_lower_vectors_cmd_callback
+name|vectors_lower_cmd_callback
 block|,
 literal|0
 block|,
@@ -158,7 +164,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"lower_path.html"
+name|GIMP_HELP_PATH_LOWER
 block|,
 name|NULL
 block|}
@@ -172,7 +178,7 @@ argument_list|)
 block|,
 literal|"<control>U"
 block|,
-name|vectors_duplicate_vectors_cmd_callback
+name|vectors_duplicate_cmd_callback
 block|,
 literal|0
 block|,
@@ -183,7 +189,32 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"duplicate_path.html"
+name|GIMP_HELP_PATH_DUPLICATE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/_Delete Path"
+argument_list|)
+block|,
+literal|"<control>X"
+block|,
+name|vectors_delete_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_DELETE
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_PATH_DELETE
 block|,
 name|NULL
 block|}
@@ -202,7 +233,7 @@ argument_list|)
 block|,
 literal|"<control>S"
 block|,
-name|vectors_vectors_to_sel_cmd_callback
+name|vectors_selection_replace_cmd_callback
 block|,
 literal|0
 block|,
@@ -213,7 +244,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"path_to_selection.html"
+name|GIMP_HELP_PATH_SEL_REPLACE
 block|,
 name|NULL
 block|}
@@ -227,7 +258,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|vectors_add_vectors_to_sel_cmd_callback
+name|vectors_selection_add_cmd_callback
 block|,
 literal|0
 block|,
@@ -238,7 +269,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"path_to_selection.html#add"
+name|GIMP_HELP_PATH_SEL_ADD
 block|,
 name|NULL
 block|}
@@ -252,7 +283,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|vectors_sub_vectors_from_sel_cmd_callback
+name|vectors_selection_sub_cmd_callback
 block|,
 literal|0
 block|,
@@ -263,7 +294,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"path_to_selection.html#subtract"
+name|GIMP_HELP_PATH_SEL_SUB
 block|,
 name|NULL
 block|}
@@ -277,7 +308,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|vectors_intersect_vectors_with_sel_cmd_callback
+name|vectors_selection_intersect_cmd_callback
 block|,
 literal|0
 block|,
@@ -288,7 +319,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"path_to_selection.html#intersect"
+name|GIMP_HELP_PATH_SEL_INTERSECT
 block|,
 name|NULL
 block|}
@@ -302,7 +333,7 @@ argument_list|)
 block|,
 literal|"<control>P"
 block|,
-name|vectors_sel_to_vectors_cmd_callback
+name|vectors_selection_to_vectors_cmd_callback
 block|,
 literal|0
 block|,
@@ -327,7 +358,7 @@ argument_list|)
 block|,
 literal|"<control>T"
 block|,
-name|vectors_stroke_vectors_cmd_callback
+name|vectors_stroke_cmd_callback
 block|,
 literal|0
 block|,
@@ -338,7 +369,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"stroke_path.html"
+name|GIMP_HELP_PATH_STROKE
 block|,
 name|NULL
 block|}
@@ -357,7 +388,7 @@ argument_list|)
 block|,
 literal|"<control>C"
 block|,
-name|vectors_copy_vectors_cmd_callback
+name|vectors_copy_cmd_callback
 block|,
 literal|0
 block|,
@@ -368,7 +399,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"copy_path.html"
+name|GIMP_HELP_PATH_COPY
 block|,
 name|NULL
 block|}
@@ -382,7 +413,7 @@ argument_list|)
 block|,
 literal|"<control>V"
 block|,
-name|vectors_paste_vectors_cmd_callback
+name|vectors_paste_cmd_callback
 block|,
 literal|0
 block|,
@@ -393,7 +424,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"paste_path.html"
+name|GIMP_HELP_PATH_PASTE
 block|,
 name|NULL
 block|}
@@ -407,7 +438,7 @@ argument_list|)
 block|,
 literal|"<control>I"
 block|,
-name|vectors_import_vectors_cmd_callback
+name|vectors_import_cmd_callback
 block|,
 literal|0
 block|,
@@ -418,7 +449,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/import_path.html"
+name|GIMP_HELP_PATH_IMPORT
 block|,
 name|NULL
 block|}
@@ -432,7 +463,7 @@ argument_list|)
 block|,
 literal|"<control>E"
 block|,
-name|vectors_export_vectors_cmd_callback
+name|vectors_export_cmd_callback
 block|,
 literal|0
 block|,
@@ -443,37 +474,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/export_path.html"
-block|,
-name|NULL
-block|}
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/_Delete Path"
-argument_list|)
-block|,
-literal|"<control>X"
-block|,
-name|vectors_delete_vectors_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GTK_STOCK_DELETE
-block|}
-block|,
-name|NULL
-block|,
-literal|"delete_path.html"
+name|GIMP_HELP_PATH_EXPORT
 block|,
 name|NULL
 block|}
@@ -503,7 +504,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"tools/path_tool.html"
+name|GIMP_HELP_TOOL_VECTORS
 block|,
 name|NULL
 block|}
@@ -517,7 +518,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|vectors_edit_vectors_attributes_cmd_callback
+name|vectors_edit_attributes_cmd_callback
 block|,
 literal|0
 block|,
@@ -528,7 +529,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/edit_path_attributes.html"
+name|GIMP_HELP_PATH_EDIT
 block|,
 name|NULL
 block|}
@@ -727,6 +728,13 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Delete Path"
+argument_list|,
+name|vectors
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/Path to Selection"
 argument_list|,
 name|vectors
@@ -764,13 +772,6 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Stroke Path"
-argument_list|,
-name|vectors
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Delete Path"
 argument_list|,
 name|vectors
 argument_list|)

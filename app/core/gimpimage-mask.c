@@ -2094,67 +2094,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_load (GimpImage * gimage,GimpChannel * channel)
-name|gimp_image_mask_load
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpChannel
-modifier|*
-name|channel
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_CHANNEL
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_image_mask_push_undo
-argument_list|(
-name|gimage
-argument_list|,
-name|_
-argument_list|(
-literal|"Selection from Channel"
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  load the specified channel to the gimage mask  */
-name|gimp_channel_load
-argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
-name|channel
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gimp_image_mask_changed
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|gimp_image_mask_translate (GimpImage * gimage,gint off_x,gint off_y,gboolean push_undo)
 name|gimp_image_mask_translate
 parameter_list|(
@@ -2227,16 +2166,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_layer_alpha (GimpImage * gimage,GimpLayer * layer)
-name|gimp_image_mask_layer_alpha
+DECL|function|gimp_image_mask_load (GimpImage * gimage,GimpChannel * channel)
+name|gimp_image_mask_load
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpLayer
+name|GimpChannel
 modifier|*
-name|layer
+name|channel
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2249,42 +2188,31 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_LAYER
+name|GIMP_IS_CHANNEL
 argument_list|(
-name|layer
+name|channel
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_drawable_has_alpha
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-condition|)
-block|{
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Selection from Alpha"
+literal|"Selection from Channel"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  load the mask with the given layer's alpha channel  */
-name|gimp_channel_layer_alpha
+comment|/*  load the specified channel to the gimage mask  */
+name|gimp_channel_load
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|layer
+name|channel
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2294,103 +2222,6 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"The active layer has no alpha channel\n"
-literal|"to convert to a selection."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_image_mask_layer_mask (GimpImage * gimage,GimpLayer * layer)
-name|gimp_image_mask_layer_mask
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_LAYER
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_layer_get_mask
-argument_list|(
-name|layer
-argument_list|)
-condition|)
-block|{
-name|gimp_image_mask_push_undo
-argument_list|(
-name|gimage
-argument_list|,
-name|_
-argument_list|(
-literal|"Selection from Mask"
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  load the mask with the given layer's mask  */
-name|gimp_channel_layer_mask
-argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
-name|layer
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gimp_image_mask_changed
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"The active layer has no mask\n"
-literal|"to convert to a selection."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 block|}
 end_function
 

@@ -119,6 +119,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -764,7 +770,7 @@ argument_list|)
 argument_list|,
 literal|"save_image"
 argument_list|,
-literal|"save/dialogs/file_save.html"
+name|GIMP_HELP_FILE_SAVE
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1119,7 +1125,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"save/file_exists.html"
+name|GIMP_HELP_FILE_SAVE_OVERWRITE
 argument_list|,
 name|GIMP_STOCK_QUESTION
 argument_list|,

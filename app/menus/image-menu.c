@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -325,7 +331,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/dialogs/file_new.html"
+name|GIMP_HELP_FILE_NEW
 block|,
 name|NULL
 block|}
@@ -350,7 +356,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/dialogs/file_open.html"
+name|GIMP_HELP_FILE_OPEN
 block|,
 name|NULL
 block|}
@@ -410,7 +416,7 @@ block|}
 block|,
 literal|"gimp-document-list"
 block|,
-literal|"dialogs/document_index.html"
+name|GIMP_HELP_DOCUMENT_DIALOG
 block|,
 name|NULL
 block|}
@@ -440,7 +446,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/dialogs/file_save.html"
+name|GIMP_HELP_FILE_SAVE
 block|,
 name|NULL
 block|}
@@ -465,7 +471,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/dialogs/file_save.html"
+name|GIMP_HELP_FILE_SAVE_AS
 block|,
 name|NULL
 block|}
@@ -486,7 +492,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/dialogs/file_save.html"
+name|GIMP_HELP_FILE_SAVE_A_COPY
 block|,
 name|NULL
 block|}
@@ -507,7 +513,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/dialogs/file_save.html"
+name|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
 block|,
 name|NULL
 block|}
@@ -532,7 +538,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/revert.html"
+name|GIMP_HELP_FILE_REVERT
 block|,
 name|NULL
 block|}
@@ -562,7 +568,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/close.html"
+name|GIMP_HELP_FILE_CLOSE
 block|,
 name|NULL
 block|}
@@ -587,7 +593,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/quit.html"
+name|GIMP_HELP_FILE_QUIT
 block|,
 name|NULL
 block|}
@@ -626,7 +632,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/undo.html"
+name|GIMP_HELP_EDIT_UNDO
 block|,
 name|NULL
 block|}
@@ -651,7 +657,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/redo.html"
+name|GIMP_HELP_EDIT_REDO
 block|,
 name|NULL
 block|}
@@ -676,7 +682,7 @@ block|}
 block|,
 literal|"gimp-undo-history"
 block|,
-name|NULL
+name|GIMP_HELP_UNDO_DIALOG
 block|,
 name|NULL
 block|}
@@ -706,7 +712,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/cut.html"
+name|GIMP_HELP_EDIT_CUT
 block|,
 name|NULL
 block|}
@@ -731,7 +737,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/copy.html"
+name|GIMP_HELP_EDIT_COPY
 block|,
 name|NULL
 block|}
@@ -756,7 +762,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/paste.html"
+name|GIMP_HELP_EDIT_PASTE
 block|,
 name|NULL
 block|}
@@ -781,7 +787,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/paste_into.html"
+name|GIMP_HELP_EDIT_PASTE_INTO
 block|,
 name|NULL
 block|}
@@ -806,7 +812,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/paste_as_new.html"
+name|GIMP_HELP_EDIT_PASTE_AS_NEW
 block|,
 name|NULL
 block|}
@@ -840,7 +846,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/dialogs/cut_named.html"
+name|GIMP_HELP_BUFFER_CUT
 block|,
 name|NULL
 block|}
@@ -865,7 +871,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/dialogs/copy_named.html"
+name|GIMP_HELP_BUFFER_COPY
 block|,
 name|NULL
 block|}
@@ -890,7 +896,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/dialogs/paste_named.html"
+name|GIMP_HELP_BUFFER_PASTE
 block|,
 name|NULL
 block|}
@@ -920,7 +926,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/clear.html"
+name|GIMP_HELP_EDIT_CLEAR
 block|,
 name|NULL
 block|}
@@ -948,7 +954,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/fill.html"
+name|GIMP_HELP_EDIT_FILL_FG
 block|,
 name|NULL
 block|}
@@ -976,7 +982,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/fill.html"
+name|GIMP_HELP_EDIT_FILL_BG
 block|,
 name|NULL
 block|}
@@ -1004,7 +1010,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/fill.html"
+name|GIMP_HELP_EDIT_FILL_PATTERN
 block|,
 name|NULL
 block|}
@@ -1029,7 +1035,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/stroke.html"
+name|GIMP_HELP_EDIT_STROKE_SELECTION
 block|,
 name|NULL
 block|}
@@ -1043,7 +1049,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|vectors_stroke_vectors_cmd_callback
+name|vectors_stroke_cmd_callback
 block|,
 literal|0
 block|,
@@ -1054,7 +1060,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"edit/stroke.html"
+name|GIMP_HELP_EDIT_STROKE_PATH
 block|,
 name|NULL
 block|}
@@ -1093,7 +1099,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/all.html"
+name|GIMP_HELP_SELECT_ALL
 block|,
 name|NULL
 block|}
@@ -1118,7 +1124,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/none.html"
+name|GIMP_HELP_SELECT_NONE
 block|,
 name|NULL
 block|}
@@ -1143,7 +1149,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/invert.html"
+name|GIMP_HELP_SELECT_INVERT
 block|,
 name|NULL
 block|}
@@ -1164,7 +1170,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/float.html"
+name|GIMP_HELP_SELECT_FLOAT
 block|,
 name|NULL
 block|}
@@ -1189,7 +1195,7 @@ block|}
 block|,
 literal|"gimp-by-color-select-tool"
 block|,
-literal|"tools/by_color_select.html"
+name|GIMP_HELP_TOOL_BY_COLOR_SELECT
 block|,
 name|NULL
 block|}
@@ -1215,7 +1221,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/dialogs/feather_selection.html"
+name|GIMP_HELP_SELECT_FEATHER
 block|,
 name|NULL
 block|}
@@ -1236,7 +1242,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/sharpen.html"
+name|GIMP_HELP_SELECT_SHARPEN
 block|,
 name|NULL
 block|}
@@ -1261,7 +1267,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/dialogs/shrink_selection.html"
+name|GIMP_HELP_SELECT_SHRINK
 block|,
 name|NULL
 block|}
@@ -1286,7 +1292,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/dialogs/grow_selection.html"
+name|GIMP_HELP_SELECT_GROW
 block|,
 name|NULL
 block|}
@@ -1307,7 +1313,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/dialogs/border_selection.html"
+name|GIMP_HELP_SELECT_BORDER
 block|,
 name|NULL
 block|}
@@ -1337,7 +1343,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/quickmask.html"
+name|GIMP_HELP_SELECT_QUICKMASK
 block|,
 name|NULL
 block|}
@@ -1362,7 +1368,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"select/save_to_channel.html"
+name|GIMP_HELP_SELECT_SAVE_TO_CHANNEL
 block|,
 name|NULL
 block|}
@@ -1396,7 +1402,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/new_view.html"
+name|GIMP_HELP_VIEW_NEW
 block|,
 name|NULL
 block|}
@@ -1419,7 +1425,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/dot_for_dot.html"
+name|GIMP_HELP_VIEW_DOT_FOR_DOT
 block|,
 name|NULL
 block|}
@@ -1453,7 +1459,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1478,7 +1484,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1503,7 +1509,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM_TO_FIT
 block|,
 name|NULL
 block|}
@@ -1531,7 +1537,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1554,7 +1560,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1577,7 +1583,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1600,7 +1606,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1623,7 +1629,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1646,7 +1652,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1669,7 +1675,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1692,7 +1698,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1715,7 +1721,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1740,7 +1746,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/zoom.html"
+name|GIMP_HELP_VIEW_ZOOM
 block|,
 name|NULL
 block|}
@@ -1770,7 +1776,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/dialogs/info_window.html"
+name|GIMP_HELP_INFO_DIALOG
 block|,
 name|NULL
 block|}
@@ -1795,7 +1801,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/dialogs/navigation_window.html"
+name|GIMP_HELP_NAVIGATION_DIALOG
 block|,
 name|NULL
 block|}
@@ -1816,7 +1822,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/display_filters/display_filters.html"
+name|GIMP_HELP_DISPLAY_FILTER_DIALOG
 block|,
 name|NULL
 block|}
@@ -1844,7 +1850,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/toggle_selection.html"
+name|GIMP_HELP_VIEW_SHOW_SELECTION
 block|,
 name|NULL
 block|}
@@ -1867,7 +1873,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/toggle_selection.html"
+name|GIMP_HELP_VIEW_SHOW_LAYER_BOUNDARY
 block|,
 name|NULL
 block|}
@@ -1890,7 +1896,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/toggle_guides.html"
+name|GIMP_HELP_VIEW_SHOW_GUIDES
 block|,
 name|NULL
 block|}
@@ -1913,7 +1919,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/snap_to_guides.html"
+name|GIMP_HELP_VIEW_SNAP_TO_GUIDES
 block|,
 name|NULL
 block|}
@@ -1936,7 +1942,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/toggle_grid.html"
+name|GIMP_HELP_VIEW_SHOW_GRID
 block|,
 name|NULL
 block|}
@@ -1959,7 +1965,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/snap_to_grid.html"
+name|GIMP_HELP_VIEW_SNAP_TO_GRID
 block|,
 name|NULL
 block|}
@@ -1987,7 +1993,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/toggle_menubar.html"
+name|GIMP_HELP_VIEW_SHOW_MENUBAR
 block|,
 name|NULL
 block|}
@@ -2010,7 +2016,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/toggle_rulers.html"
+name|GIMP_HELP_VIEW_SHOW_RULERS
 block|,
 name|NULL
 block|}
@@ -2033,7 +2039,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/toggle_rulers.html"
+name|GIMP_HELP_VIEW_SHOW_SCROLLBARS
 block|,
 name|NULL
 block|}
@@ -2056,7 +2062,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/toggle_statusbar.html"
+name|GIMP_HELP_VIEW_SHOW_STATUSBAR
 block|,
 name|NULL
 block|}
@@ -2082,7 +2088,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/shrink_wrap.html"
+name|GIMP_HELP_VIEW_SHRINK_WRAP
 block|,
 name|NULL
 block|}
@@ -2105,7 +2111,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"view/fullscreen.html"
+name|GIMP_HELP_VIEW_FULLSCREEN
 block|,
 name|NULL
 block|}
@@ -2148,7 +2154,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/mode/convert_to_rgb.html"
+name|GIMP_HELP_IMAGE_CONVERT_RGB
 block|,
 name|NULL
 block|}
@@ -2173,7 +2179,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/mode/convert_to_grayscale.html"
+name|GIMP_HELP_IMAGE_CONVERT_GRAYSCALE
 block|,
 name|NULL
 block|}
@@ -2198,7 +2204,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/mode/dialogs/convert_to_indexed.html"
+name|GIMP_HELP_IMAGE_CONVERT_INDEXED
 block|,
 name|NULL
 block|}
@@ -2232,7 +2238,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/dialogs/flip_image.html"
+name|GIMP_HELP_IMAGE_FLIP_HORIZONTAL
 block|,
 name|NULL
 block|}
@@ -2257,7 +2263,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/dialogs/flip_image.html"
+name|GIMP_HELP_IMAGE_FLIP_VERTICAL
 block|,
 name|NULL
 block|}
@@ -2288,7 +2294,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/dialogs/rotate_image.html"
+name|GIMP_HELP_IMAGE_ROTATE_90
 block|,
 name|NULL
 block|}
@@ -2313,7 +2319,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/dialogs/rotate_image.html"
+name|GIMP_HELP_IMAGE_ROTATE_270
 block|,
 name|NULL
 block|}
@@ -2338,7 +2344,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/dialogs/rotate_image.html"
+name|GIMP_HELP_IMAGE_ROTATE_180
 block|,
 name|NULL
 block|}
@@ -2373,7 +2379,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/dialogs/set_canvas_size.html"
+name|GIMP_HELP_IMAGE_RESIZE
 block|,
 name|NULL
 block|}
@@ -2398,7 +2404,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/dialogs/scale_image.html"
+name|GIMP_HELP_IMAGE_SCALE
 block|,
 name|NULL
 block|}
@@ -2423,7 +2429,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/dialogs/crop_image.html"
+name|GIMP_HELP_IMAGE_CROP
 block|,
 name|NULL
 block|}
@@ -2448,7 +2454,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/duplicate.html"
+name|GIMP_HELP_IMAGE_DUPLICATE
 block|,
 name|NULL
 block|}
@@ -2474,7 +2480,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/merge_visible_layers.html"
+name|GIMP_HELP_IMAGE_MERGE_LAYERS
 block|,
 name|NULL
 block|}
@@ -2495,7 +2501,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/flatten_image.html"
+name|GIMP_HELP_IMAGE_FLATTEN
 block|,
 name|NULL
 block|}
@@ -2525,7 +2531,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"image/dialogs/configure_grid.html"
+name|GIMP_HELP_IMAGE_GRID
 block|,
 name|NULL
 block|}
@@ -2559,7 +2565,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/new_layer.html"
+name|GIMP_HELP_LAYER_NEW
 block|,
 name|NULL
 block|}
@@ -2584,7 +2590,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/duplicate_layer.html"
+name|GIMP_HELP_LAYER_DUPLICATE
 block|,
 name|NULL
 block|}
@@ -2609,7 +2615,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/anchor_layer.html"
+name|GIMP_HELP_LAYER_ANCHOR
 block|,
 name|NULL
 block|}
@@ -2634,7 +2640,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/merge_visible_layers.html"
+name|GIMP_HELP_LAYER_MERGE_DOWN
 block|,
 name|NULL
 block|}
@@ -2659,7 +2665,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/delete_layer.html"
+name|GIMP_HELP_LAYER_DELETE
 block|,
 name|NULL
 block|}
@@ -2694,7 +2700,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/stack/stack.html#previous_layer"
+name|GIMP_HELP_LAYER_PREVIOUS
 block|,
 name|NULL
 block|}
@@ -2715,7 +2721,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/stack/stack.html#next_layer"
+name|GIMP_HELP_LAYER_NEXT
 block|,
 name|NULL
 block|}
@@ -2736,7 +2742,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/stack/stack.html#previous_layer"
+name|GIMP_HELP_LAYER_TOP
 block|,
 name|NULL
 block|}
@@ -2757,7 +2763,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/stack/stack.html#next_layer"
+name|GIMP_HELP_LAYER_BOTTOM
 block|,
 name|NULL
 block|}
@@ -2787,7 +2793,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/stack/stack.html#raise_layer"
+name|GIMP_HELP_LAYER_RAISE
 block|,
 name|NULL
 block|}
@@ -2812,7 +2818,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/stack/stack.html#lower_layer"
+name|GIMP_HELP_LAYER_LOWER
 block|,
 name|NULL
 block|}
@@ -2837,7 +2843,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/stack/stack.html#layer_to_top"
+name|GIMP_HELP_LAYER_RAISE_TO_TOP
 block|,
 name|NULL
 block|}
@@ -2862,7 +2868,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/stack/stack.html#layer_to_bottom"
+name|GIMP_HELP_LAYER_LOWER_TO_BOTTOM
 block|,
 name|NULL
 block|}
@@ -2896,7 +2902,7 @@ block|}
 block|,
 literal|"gimp-color-balance-tool"
 block|,
-literal|"tools/color_balance.html"
+name|GIMP_HELP_TOOL_COLOR_BALANCE
 block|,
 name|NULL
 block|}
@@ -2921,7 +2927,7 @@ block|}
 block|,
 literal|"gimp-hue-saturation-tool"
 block|,
-literal|"tools/hue_saturation.html"
+name|GIMP_HELP_TOOL_HUE_SATURATION
 block|,
 name|NULL
 block|}
@@ -2946,7 +2952,7 @@ block|}
 block|,
 literal|"gimp-colorize-tool"
 block|,
-literal|"tools/colorize.html"
+name|GIMP_HELP_TOOL_COLORIZE
 block|,
 name|NULL
 block|}
@@ -2971,7 +2977,7 @@ block|}
 block|,
 literal|"gimp-brightness-contrast-tool"
 block|,
-literal|"tools/brightness-contrast.html"
+name|GIMP_HELP_TOOL_BRIGHTNESS_CONTRAST
 block|,
 name|NULL
 block|}
@@ -2996,7 +3002,7 @@ block|}
 block|,
 literal|"gimp-threshold-tool"
 block|,
-literal|"tools/threshold.html"
+name|GIMP_HELP_TOOL_THRESHOLD
 block|,
 name|NULL
 block|}
@@ -3021,7 +3027,7 @@ block|}
 block|,
 literal|"gimp-levels-tool"
 block|,
-literal|"tools/levels.html"
+name|GIMP_HELP_TOOL_LEVELS
 block|,
 name|NULL
 block|}
@@ -3046,7 +3052,7 @@ block|}
 block|,
 literal|"gimp-curves-tool"
 block|,
-literal|"tools/curves.html"
+name|GIMP_HELP_TOOL_CURVES
 block|,
 name|NULL
 block|}
@@ -3071,7 +3077,7 @@ block|}
 block|,
 literal|"gimp-posterize-tool"
 block|,
-literal|"tools/posterize.html"
+name|GIMP_HELP_TOOL_POSTERIZE
 block|,
 name|NULL
 block|}
@@ -3101,7 +3107,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/colors/desaturate.html"
+name|GIMP_HELP_LAYER_DESATURATE
 block|,
 name|NULL
 block|}
@@ -3126,7 +3132,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/colors/invert.html"
+name|GIMP_HELP_LAYER_INVERT
 block|,
 name|NULL
 block|}
@@ -3156,7 +3162,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/colors/auto/equalize.html"
+name|GIMP_HELP_LAYER_EQUALIZE
 block|,
 name|NULL
 block|}
@@ -3186,7 +3192,7 @@ block|}
 block|,
 literal|"gimp-histogram-tool"
 block|,
-literal|"tools/histogram.html"
+name|GIMP_HELP_TOOL_HISTOGRAM
 block|,
 name|NULL
 block|}
@@ -3209,14 +3215,14 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_add_layer_mask_cmd_callback
+name|layers_mask_add_cmd_callback
 block|,
 literal|0
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/add_layer_mask.html"
+name|GIMP_HELP_LAYER_MASK_ADD
 block|,
 name|NULL
 block|}
@@ -3230,14 +3236,14 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_apply_layer_mask_cmd_callback
+name|layers_mask_apply_cmd_callback
 block|,
 literal|0
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/apply_mask.html"
+name|GIMP_HELP_LAYER_MASK_APPLY
 block|,
 name|NULL
 block|}
@@ -3251,7 +3257,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_delete_layer_mask_cmd_callback
+name|layers_mask_delete_cmd_callback
 block|,
 literal|0
 block|,
@@ -3262,10 +3268,15 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/delete_mask.html"
+name|GIMP_HELP_LAYER_MASK_DELETE
 block|,
 name|NULL
 block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/Layer/Mask/---"
+argument_list|)
 block|,
 block|{
 block|{
@@ -3276,7 +3287,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_mask_select_cmd_callback
+name|layers_mask_selection_replace_cmd_callback
 block|,
 literal|0
 block|,
@@ -3287,7 +3298,82 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/mask_to_selection.html"
+name|GIMP_HELP_LAYER_MASK_SEL_REPLACE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/_Add to Selection"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_mask_selection_add_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_ADD
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_MASK_SEL_ADD
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/_Subtract from Selection"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_mask_selection_sub_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_SUBTRACT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_MASK_SEL_SUB
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/_Intersect with Selection"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_mask_selection_intersect_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_INTERSECT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_MASK_SEL_INTERSECT
 block|,
 name|NULL
 block|}
@@ -3310,17 +3396,22 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_add_alpha_channel_cmd_callback
+name|layers_alpha_add_cmd_callback
 block|,
 literal|0
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/add_alpha_channel.html"
+name|GIMP_HELP_LAYER_ALPHA_ADD
 block|,
 name|NULL
 block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/Layer/Transparency/---"
+argument_list|)
 block|,
 block|{
 block|{
@@ -3331,7 +3422,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_alpha_select_cmd_callback
+name|layers_alpha_selection_replace_cmd_callback
 block|,
 literal|0
 block|,
@@ -3342,7 +3433,82 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/alpha_to_selection.html"
+name|GIMP_HELP_LAYER_ALPHA_SEL_REPLACE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Transparency/A_dd to Selection"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_alpha_selection_add_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_ADD
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_ALPHA_SEL_ADD
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Transparency/_Subtract from Selection"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_alpha_selection_sub_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_SUBTRACT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_ALPHA_SEL_SUB
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Transparency/_Intersect with Selection"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_alpha_selection_intersect_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_INTERSECT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_ALPHA_SEL_INTERSECT
 block|,
 name|NULL
 block|}
@@ -3381,7 +3547,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/flip_layer.html"
+name|GIMP_HELP_LAYER_FLIP_HORIZONTAL
 block|,
 name|NULL
 block|}
@@ -3406,7 +3572,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/flip_layer.html"
+name|GIMP_HELP_LAYER_FLIP_VERTICAL
 block|,
 name|NULL
 block|}
@@ -3436,7 +3602,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/rotate_layer.html"
+name|GIMP_HELP_LAYER_ROTATE_90
 block|,
 name|NULL
 block|}
@@ -3461,7 +3627,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/rotate_layer.html"
+name|GIMP_HELP_LAYER_ROTATE_270
 block|,
 name|NULL
 block|}
@@ -3486,7 +3652,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/rotate_layer.html"
+name|GIMP_HELP_LAYER_ROTATE_180
 block|,
 name|NULL
 block|}
@@ -3511,7 +3677,7 @@ block|}
 block|,
 literal|"gimp-rotate-tool"
 block|,
-literal|"layers/rotate_layer.html"
+name|GIMP_HELP_TOOL_ROTATE
 block|,
 name|NULL
 block|}
@@ -3537,7 +3703,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/offset.html"
+name|GIMP_HELP_LAYER_OFFSET
 block|,
 name|NULL
 block|}
@@ -3567,7 +3733,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/layer_boundary_size.html"
+name|GIMP_HELP_LAYER_RESIZE
 block|,
 name|NULL
 block|}
@@ -3592,7 +3758,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/layer_to_image_size.html"
+name|GIMP_HELP_LAYER_RESIZE_TO_IMAGE
 block|,
 name|NULL
 block|}
@@ -3617,7 +3783,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/scale_layer.html"
+name|GIMP_HELP_LAYER_SCALE
 block|,
 name|NULL
 block|}
@@ -3642,7 +3808,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/scale_layer.html"
+name|GIMP_HELP_LAYER_CROP
 block|,
 name|NULL
 block|}
@@ -3677,7 +3843,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"toolbox/toolbox.html"
+name|GIMP_HELP_TOOLBOX
 block|,
 name|NULL
 block|}
@@ -3702,7 +3868,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"toolbox/toolbox.html#default_colors"
+name|GIMP_HELP_TOOLBOX_DEFAULT_COLORS
 block|,
 name|NULL
 block|}
@@ -3727,7 +3893,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"toolbox/toolbox.html#swap_colors"
+name|GIMP_HELP_TOOLBOX_SWAP_COLORS
 block|,
 name|NULL
 block|}
@@ -3802,7 +3968,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/layers_and_channels.html"
+name|NULL
 block|,
 name|NULL
 block|}
@@ -3869,7 +4035,7 @@ block|}
 block|,
 literal|"gimp-tool-options"
 block|,
-literal|"dialogs/tool_options.html"
+name|GIMP_HELP_TOOL_OPTIONS_DIALOG
 block|,
 name|NULL
 block|}
@@ -3894,7 +4060,7 @@ block|}
 block|,
 literal|"gimp-device-status"
 block|,
-literal|"dialogs/device_status.html"
+name|GIMP_HELP_DEVICE_STATUS_DIALOG
 block|,
 name|NULL
 block|}
@@ -3924,7 +4090,7 @@ block|}
 block|,
 literal|"gimp-layer-list"
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_DIALOG
 block|,
 name|NULL
 block|}
@@ -3949,7 +4115,7 @@ block|}
 block|,
 literal|"gimp-channel-list"
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_DIALOG
 block|,
 name|NULL
 block|}
@@ -3974,7 +4140,7 @@ block|}
 block|,
 literal|"gimp-vectors-list"
 block|,
-name|NULL
+name|GIMP_HELP_PATH_DIALOG
 block|,
 name|NULL
 block|}
@@ -3999,7 +4165,7 @@ block|}
 block|,
 literal|"gimp-indexed-palette"
 block|,
-literal|"file/dialogs/indexed_palette.html"
+name|GIMP_HELP_INDEXED_PALETTE_DIALOG
 block|,
 name|NULL
 block|}
@@ -4024,7 +4190,7 @@ block|}
 block|,
 literal|"gimp-selection-editor"
 block|,
-name|NULL
+name|GIMP_HELP_SELECT_DIALOG
 block|,
 name|NULL
 block|}
@@ -4049,7 +4215,7 @@ block|}
 block|,
 literal|"gimp-navigation-view"
 block|,
-name|NULL
+name|GIMP_HELP_NAVIGATION_DIALOG
 block|,
 name|NULL
 block|}
@@ -4074,7 +4240,7 @@ block|}
 block|,
 literal|"gimp-undo-history"
 block|,
-name|NULL
+name|GIMP_HELP_UNDO_DIALOG
 block|,
 name|NULL
 block|}
@@ -4104,7 +4270,7 @@ block|}
 block|,
 literal|"gimp-color-editor"
 block|,
-name|NULL
+name|GIMP_HELP_COLOR_DIALOG
 block|,
 name|NULL
 block|}
@@ -4129,7 +4295,7 @@ block|}
 block|,
 literal|"gimp-brush-grid"
 block|,
-literal|"dialogs/brush_selection.html"
+name|GIMP_HELP_BRUSH_DIALOG
 block|,
 name|NULL
 block|}
@@ -4154,7 +4320,7 @@ block|}
 block|,
 literal|"gimp-pattern-grid"
 block|,
-literal|"dialogs/pattern_selection.html"
+name|GIMP_HELP_PATTERN_DIALOG
 block|,
 name|NULL
 block|}
@@ -4179,7 +4345,7 @@ block|}
 block|,
 literal|"gimp-gradient-list"
 block|,
-literal|"dialogs/gradient_selection.html"
+name|GIMP_HELP_GRADIENT_DIALOG
 block|,
 name|NULL
 block|}
@@ -4204,7 +4370,7 @@ block|}
 block|,
 literal|"gimp-palette-list"
 block|,
-literal|"dialogs/palette_selection.html"
+name|GIMP_HELP_PALETTE_DIALOG
 block|,
 name|NULL
 block|}
@@ -4229,7 +4395,7 @@ block|}
 block|,
 literal|"gimp-font-list"
 block|,
-literal|"dialogs/font_selection.html"
+name|GIMP_HELP_FONT_DIALOG
 block|,
 name|NULL
 block|}
@@ -4254,7 +4420,7 @@ block|}
 block|,
 literal|"gimp-buffer-list"
 block|,
-name|NULL
+name|GIMP_HELP_BUFFER_DIALOG
 block|,
 name|NULL
 block|}
@@ -4284,7 +4450,7 @@ block|}
 block|,
 literal|"gimp-image-list"
 block|,
-name|NULL
+name|GIMP_HELP_IMAGE_DIALOG
 block|,
 name|NULL
 block|}
@@ -4309,7 +4475,7 @@ block|}
 block|,
 literal|"gimp-document-list"
 block|,
-literal|"dialogs/document_index.html"
+name|GIMP_HELP_DOCUMENT_DIALOG
 block|,
 name|NULL
 block|}
@@ -4334,7 +4500,7 @@ block|}
 block|,
 literal|"gimp-template-list"
 block|,
-literal|"dialogs/templates.html"
+name|GIMP_HELP_TEMPLATE_DIALOG
 block|,
 name|NULL
 block|}
@@ -4359,7 +4525,7 @@ block|}
 block|,
 literal|"gimp-error-console"
 block|,
-literal|"dialogs/error_console.html"
+name|GIMP_HELP_ERROR_DIALOG
 block|,
 name|NULL
 block|}
@@ -4401,7 +4567,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"filters/repeat_last.html"
+name|GIMP_HELP_FILTER_REPEAT
 block|,
 name|NULL
 block|}
@@ -4429,7 +4595,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"filters/reshow_last.html"
+name|GIMP_HELP_FILTER_RESHOW
 block|,
 name|NULL
 block|}
@@ -7274,45 +7440,78 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Mask/Apply Layer Mask"
 argument_list|,
-name|lp
+name|lm
 operator|&&
 operator|!
 name|fs
 operator|&&
 operator|!
 name|aux
-operator|&&
-name|lm
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Mask/Delete Layer Mask"
 argument_list|,
-name|lp
+name|lm
 operator|&&
 operator|!
 name|fs
 operator|&&
 operator|!
 name|aux
-operator|&&
-name|lm
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Mask/Mask to Selection"
 argument_list|,
-name|lp
+name|lm
 operator|&&
 operator|!
 name|fs
 operator|&&
 operator|!
 name|aux
-operator|&&
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Mask/Add to Selection"
+argument_list|,
 name|lm
+operator|&&
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Mask/Subtract from Selection"
+argument_list|,
+name|lm
+operator|&&
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Mask/Intersect with Selection"
+argument_list|,
+name|lm
+operator|&&
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -7337,6 +7536,42 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Transparency/Alpha to Selection"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Transparency/Add to Selection"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Transparency/Subtract from Selection"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Transparency/Intersect with Selection"
 argument_list|,
 name|lp
 operator|&&

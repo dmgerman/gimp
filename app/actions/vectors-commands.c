@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemtreeview.h"
 end_include
 
@@ -207,8 +213,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|vectors_new_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_new_vectors_cmd_callback
+DECL|function|vectors_new_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_new_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -243,8 +249,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_raise_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_raise_vectors_cmd_callback
+DECL|function|vectors_raise_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_raise_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -288,8 +294,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_lower_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_lower_vectors_cmd_callback
+DECL|function|vectors_lower_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_lower_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -333,8 +339,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_duplicate_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_duplicate_vectors_cmd_callback
+DECL|function|vectors_duplicate_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_duplicate_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -405,8 +411,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_delete_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_delete_vectors_cmd_callback
+DECL|function|vectors_delete_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_delete_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -451,8 +457,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|vectors_vectors_to_sel (GtkWidget * widget,gpointer data,GimpChannelOps op)
-name|vectors_vectors_to_sel
+DECL|function|vectors_vectors_to_selection (GtkWidget * widget,gpointer data,GimpChannelOps op)
+name|vectors_vectors_to_selection
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -509,8 +515,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_vectors_to_sel_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_vectors_to_sel_cmd_callback
+DECL|function|vectors_selection_replace_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_selection_replace_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -520,7 +526,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|vectors_vectors_to_sel
+name|vectors_vectors_to_selection
 argument_list|(
 name|widget
 argument_list|,
@@ -534,8 +540,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_add_vectors_to_sel_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_add_vectors_to_sel_cmd_callback
+DECL|function|vectors_selection_add_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_selection_add_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -545,7 +551,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|vectors_vectors_to_sel
+name|vectors_vectors_to_selection
 argument_list|(
 name|widget
 argument_list|,
@@ -559,8 +565,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_sub_vectors_from_sel_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_sub_vectors_from_sel_cmd_callback
+DECL|function|vectors_selection_sub_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_selection_sub_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -570,7 +576,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|vectors_vectors_to_sel
+name|vectors_vectors_to_selection
 argument_list|(
 name|widget
 argument_list|,
@@ -584,8 +590,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_intersect_vectors_with_sel_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_intersect_vectors_with_sel_cmd_callback
+DECL|function|vectors_selection_intersect_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_selection_intersect_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -595,7 +601,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|vectors_vectors_to_sel
+name|vectors_vectors_to_selection
 argument_list|(
 name|widget
 argument_list|,
@@ -609,8 +615,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_sel_to_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_sel_to_vectors_cmd_callback
+DECL|function|vectors_selection_to_vectors_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_selection_to_vectors_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -643,8 +649,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_stroke_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_stroke_vectors_cmd_callback
+DECL|function|vectors_stroke_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_stroke_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -681,8 +687,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_copy_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_copy_vectors_cmd_callback
+DECL|function|vectors_copy_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_copy_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -722,8 +728,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_paste_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_paste_vectors_cmd_callback
+DECL|function|vectors_paste_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_paste_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -757,8 +763,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_import_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_import_vectors_cmd_callback
+DECL|function|vectors_import_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_import_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -792,8 +798,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_export_vectors_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_export_vectors_cmd_callback
+DECL|function|vectors_export_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_export_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -871,8 +877,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_edit_vectors_attributes_cmd_callback (GtkWidget * widget,gpointer data)
-name|vectors_edit_vectors_attributes_cmd_callback
+DECL|function|vectors_edit_attributes_cmd_callback (GtkWidget * widget,gpointer data)
+name|vectors_edit_attributes_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1693,7 +1699,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/vectors/new_vectors.html"
+name|GIMP_HELP_PATH_NEW
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -2252,7 +2258,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/paths/edit_path_attributes.html"
+name|GIMP_HELP_PATH_EDIT
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

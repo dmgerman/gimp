@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -949,7 +955,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/new_template.html"
+name|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
 argument_list|,
 name|_
 argument_list|(
@@ -1127,7 +1133,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"file/revert.html"
+name|GIMP_HELP_FILE_REVERT
 argument_list|,
 name|GIMP_STOCK_QUESTION
 argument_list|,

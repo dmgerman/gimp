@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -120,7 +126,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PALETTE_NEW
 block|,
 name|NULL
 block|}
@@ -145,7 +151,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PALETTE_DUPLICATE
 block|,
 name|NULL
 block|}
@@ -170,7 +176,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PALETTE_EDIT
 block|,
 name|NULL
 block|}
@@ -195,7 +201,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PALETTE_DELETE
 block|,
 name|NULL
 block|}
@@ -225,7 +231,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PALETTE_REFRESH
 block|,
 name|NULL
 block|}
@@ -255,7 +261,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PALETTE_IMPORT
 block|,
 name|NULL
 block|}
@@ -276,7 +282,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PALETTE_MERGE
 block|,
 name|NULL
 block|}

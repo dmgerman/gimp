@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -129,7 +135,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/dialogs/file_new.html"
+name|GIMP_HELP_FILE_NEW
 block|,
 name|NULL
 block|}
@@ -154,7 +160,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/dialogs/file_open.html"
+name|GIMP_HELP_FILE_OPEN
 block|,
 name|NULL
 block|}
@@ -214,7 +220,7 @@ block|}
 block|,
 literal|"gimp-document-list"
 block|,
-literal|"file/dialogs/document_index.html"
+name|GIMP_HELP_DOCUMENT_DIALOG
 block|,
 name|NULL
 block|}
@@ -253,7 +259,7 @@ block|}
 block|,
 literal|"gimp-preferences-dialog"
 block|,
-literal|"file/dialogs/preferences/preferences.html"
+name|GIMP_HELP_PREFERENCES_DIALOG
 block|,
 name|NULL
 block|}
@@ -291,7 +297,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/dialogs/layers_and_channels.html"
+name|NULL
 block|,
 name|NULL
 block|}
@@ -358,7 +364,7 @@ block|}
 block|,
 literal|"gimp-tool-options"
 block|,
-literal|"file/dialogs/tool_options.html"
+name|GIMP_HELP_TOOL_OPTIONS_DIALOG
 block|,
 name|NULL
 block|}
@@ -383,7 +389,7 @@ block|}
 block|,
 literal|"gimp-device-status"
 block|,
-literal|"file/dialogs/device_status.html"
+name|GIMP_HELP_DEVICE_STATUS_DIALOG
 block|,
 name|NULL
 block|}
@@ -488,7 +494,7 @@ block|}
 block|,
 literal|"gimp-indexed-palette"
 block|,
-literal|"file/dialogs/indexed_palette.html"
+name|GIMP_HELP_INDEXED_PALETTE_DIALOG
 block|,
 name|NULL
 block|}
@@ -513,7 +519,7 @@ block|}
 block|,
 literal|"gimp-selection-editor"
 block|,
-name|NULL
+name|GIMP_HELP_SELECT_DIALOG
 block|,
 name|NULL
 block|}
@@ -538,7 +544,7 @@ block|}
 block|,
 literal|"gimp-navigation-view"
 block|,
-name|NULL
+name|GIMP_HELP_NAVIGATION_DIALOG
 block|,
 name|NULL
 block|}
@@ -563,7 +569,7 @@ block|}
 block|,
 literal|"gimp-undo-history"
 block|,
-name|NULL
+name|GIMP_HELP_UNDO_DIALOG
 block|,
 name|NULL
 block|}
@@ -618,7 +624,7 @@ block|}
 block|,
 literal|"gimp-brush-grid"
 block|,
-literal|"file/dialogs/brush_selection.html"
+name|GIMP_HELP_BRUSH_DIALOG
 block|,
 name|NULL
 block|}
@@ -643,7 +649,7 @@ block|}
 block|,
 literal|"gimp-pattern-grid"
 block|,
-literal|"file/dialogs/pattern_selection.html"
+name|GIMP_HELP_PATTERN_DIALOG
 block|,
 name|NULL
 block|}
@@ -668,7 +674,7 @@ block|}
 block|,
 literal|"gimp-gradient-list"
 block|,
-literal|"file/dialogs/gradient_selection.html"
+name|GIMP_HELP_GRADIENT_DIALOG
 block|,
 name|NULL
 block|}
@@ -693,7 +699,7 @@ block|}
 block|,
 literal|"gimp-palette-list"
 block|,
-literal|"file/dialogs/palette_selection.html"
+name|GIMP_HELP_PALETTE_DIALOG
 block|,
 name|NULL
 block|}
@@ -718,7 +724,7 @@ block|}
 block|,
 literal|"gimp-font-list"
 block|,
-literal|"file/dialogs/font_selection.html"
+name|GIMP_HELP_FONT_DIALOG
 block|,
 name|NULL
 block|}
@@ -743,7 +749,7 @@ block|}
 block|,
 literal|"gimp-buffer-list"
 block|,
-name|NULL
+name|GIMP_HELP_BUFFER_DIALOG
 block|,
 name|NULL
 block|}
@@ -773,7 +779,7 @@ block|}
 block|,
 literal|"gimp-image-list"
 block|,
-name|NULL
+name|GIMP_HELP_IMAGE_DIALOG
 block|,
 name|NULL
 block|}
@@ -798,7 +804,7 @@ block|}
 block|,
 literal|"gimp-document-list"
 block|,
-literal|"file/dialogs/document_index.html"
+name|GIMP_HELP_DOCUMENT_DIALOG
 block|,
 name|NULL
 block|}
@@ -823,7 +829,7 @@ block|}
 block|,
 literal|"gimp-template-list"
 block|,
-literal|"file/dialogs/templates.html"
+name|GIMP_HELP_TEMPLATE_DIALOG
 block|,
 name|NULL
 block|}
@@ -848,7 +854,7 @@ block|}
 block|,
 literal|"gimp-error-console"
 block|,
-literal|"file/dialogs/error_console.html"
+name|GIMP_HELP_ERROR_DIALOG
 block|,
 name|NULL
 block|}
@@ -927,7 +933,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"file/quit.html"
+name|GIMP_HELP_FILE_QUIT
 block|,
 name|NULL
 block|}
@@ -957,7 +963,7 @@ block|}
 block|,
 literal|"gimp-module-manager-dialog"
 block|,
-literal|"dialogs/module_manager.html"
+name|GIMP_HELP_MODULE_DIALOG
 block|,
 name|NULL
 block|}
@@ -996,7 +1002,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"help/dialogs/help.html"
+name|GIMP_HELP_HELP
 block|,
 name|NULL
 block|}
@@ -1021,7 +1027,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"help/context_help.html"
+name|GIMP_HELP_HELP_CONTEXT
 block|,
 name|NULL
 block|}
@@ -1046,7 +1052,7 @@ block|}
 block|,
 literal|"gimp-tips-dialog"
 block|,
-literal|"help/dialogs/tip_of_the_day.html"
+name|GIMP_HELP_TIPS_DIALOG
 block|,
 name|NULL
 block|}
@@ -1071,7 +1077,7 @@ block|}
 block|,
 literal|"gimp-about-dialog"
 block|,
-literal|"help/dialogs/about.html"
+name|GIMP_HELP_ABOUT_DIALOG
 block|,
 name|NULL
 block|}

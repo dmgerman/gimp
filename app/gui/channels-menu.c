@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -97,7 +103,7 @@ argument_list|)
 block|,
 literal|"<control>N"
 block|,
-name|channels_new_channel_cmd_callback
+name|channels_new_cmd_callback
 block|,
 literal|0
 block|,
@@ -108,7 +114,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/new_channel.html"
+name|GIMP_HELP_CHANNEL_NEW
 block|,
 name|NULL
 block|}
@@ -122,7 +128,7 @@ argument_list|)
 block|,
 literal|"<control>F"
 block|,
-name|channels_raise_channel_cmd_callback
+name|channels_raise_cmd_callback
 block|,
 literal|0
 block|,
@@ -133,7 +139,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"raise_channel.html"
+name|GIMP_HELP_CHANNEL_RAISE
 block|,
 name|NULL
 block|}
@@ -147,7 +153,7 @@ argument_list|)
 block|,
 literal|"<control>B"
 block|,
-name|channels_lower_channel_cmd_callback
+name|channels_lower_cmd_callback
 block|,
 literal|0
 block|,
@@ -158,7 +164,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"lower_channel.html"
+name|GIMP_HELP_CHANNEL_LOWER
 block|,
 name|NULL
 block|}
@@ -172,7 +178,7 @@ argument_list|)
 block|,
 literal|"<control>C"
 block|,
-name|channels_duplicate_channel_cmd_callback
+name|channels_duplicate_cmd_callback
 block|,
 literal|0
 block|,
@@ -183,7 +189,32 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"duplicate_channel.html"
+name|GIMP_HELP_CHANNEL_DUPLICATE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/_Delete Channel"
+argument_list|)
+block|,
+literal|"<control>X"
+block|,
+name|channels_delete_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_DELETE
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_CHANNEL_DELETE
 block|,
 name|NULL
 block|}
@@ -202,7 +233,7 @@ argument_list|)
 block|,
 literal|"<control>S"
 block|,
-name|channels_channel_to_sel_cmd_callback
+name|channels_selection_replace_cmd_callback
 block|,
 literal|0
 block|,
@@ -213,7 +244,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"channel_to_selection.html"
+name|GIMP_HELP_CHANNEL_SEL_REPLACE
 block|,
 name|NULL
 block|}
@@ -227,7 +258,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|channels_add_channel_to_sel_cmd_callback
+name|channels_selection_add_cmd_callback
 block|,
 literal|0
 block|,
@@ -238,7 +269,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"channel_to_selection.html#add"
+name|GIMP_HELP_CHANNEL_SEL_ADD
 block|,
 name|NULL
 block|}
@@ -252,7 +283,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|channels_sub_channel_from_sel_cmd_callback
+name|channels_selection_sub_cmd_callback
 block|,
 literal|0
 block|,
@@ -263,7 +294,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"channel_to_selection.html#subtract"
+name|GIMP_HELP_CHANNEL_SEL_SUB
 block|,
 name|NULL
 block|}
@@ -277,7 +308,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|channels_intersect_channel_with_sel_cmd_callback
+name|channels_selection_intersect_cmd_callback
 block|,
 literal|0
 block|,
@@ -288,37 +319,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"channel_to_selection.html#intersect"
-block|,
-name|NULL
-block|}
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/_Delete Channel"
-argument_list|)
-block|,
-literal|"<control>X"
-block|,
-name|channels_delete_channel_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GTK_STOCK_DELETE
-block|}
-block|,
-name|NULL
-block|,
-literal|"delete_channel.html"
+name|GIMP_HELP_CHANNEL_SEL_INTERSECT
 block|,
 name|NULL
 block|}
@@ -337,7 +338,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|channels_edit_channel_attributes_cmd_callback
+name|channels_edit_attributes_cmd_callback
 block|,
 literal|0
 block|,
@@ -348,7 +349,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/edit_channel_attributes.html"
+name|GIMP_HELP_CHANNEL_EDIT
 block|,
 name|NULL
 block|}
@@ -610,6 +611,16 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Delete Channel"
+argument_list|,
+operator|!
+name|fs
+operator|&&
+name|channel
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/Channel to Selection"
 argument_list|,
 operator|!
@@ -662,16 +673,6 @@ name|channel
 operator|||
 name|component
 operator|)
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Delete Channel"
-argument_list|,
-operator|!
-name|fs
-operator|&&
-name|channel
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

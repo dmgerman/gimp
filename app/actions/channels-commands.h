@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|channels_new_channel_cmd_callback
+name|channels_new_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_raise_channel_cmd_callback
+name|channels_raise_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_lower_channel_cmd_callback
+name|channels_lower_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -60,7 +60,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_duplicate_channel_cmd_callback
+name|channels_duplicate_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -74,7 +74,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_delete_channel_cmd_callback
+name|channels_delete_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -88,7 +88,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_channel_to_sel_cmd_callback
+name|channels_selection_replace_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -102,7 +102,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_add_channel_to_sel_cmd_callback
+name|channels_selection_add_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -116,7 +116,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_sub_channel_from_sel_cmd_callback
+name|channels_selection_sub_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -130,7 +130,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_intersect_channel_with_sel_cmd_callback
+name|channels_selection_intersect_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -144,7 +144,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_edit_channel_attributes_cmd_callback
+name|channels_edit_attributes_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

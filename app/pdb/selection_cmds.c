@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-mask-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-mask.h"
 end_include
 
@@ -2883,11 +2889,19 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_layer_alpha
+name|gimp_image_mask_select_alpha
 argument_list|(
 name|gimage
 argument_list|,
 name|layer
+argument_list|,
+name|GIMP_CHANNEL_OP_REPLACE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 block|}

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptemplateeditor.h"
 end_include
 
@@ -96,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae8f7040108
+DECL|struct|__anon28dc7ffc0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -343,7 +349,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/file_new.html"
+name|GIMP_HELP_FILE_NEW
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,
@@ -1183,7 +1189,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/file_new.html#confirm_size"
+name|GIMP_HELP_FILE_NEW_CONFIRM
 argument_list|,
 name|GIMP_STOCK_INFO
 argument_list|,

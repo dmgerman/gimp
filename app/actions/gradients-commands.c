@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradients-commands.h"
 end_include
 
@@ -318,7 +324,6 @@ argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
 expr_stmt|;
-comment|/*  Connect the "F1" help key  */
 name|gimp_help_connect
 argument_list|(
 name|GTK_WIDGET
@@ -328,7 +333,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/save_as_povray.html"
+name|GIMP_HELP_GRADIENT_SAVE_AS_POV
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemtreeview.h"
 end_include
 
@@ -193,8 +199,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|channels_new_channel_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_new_channel_cmd_callback
+DECL|function|channels_new_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_new_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -229,8 +235,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_raise_channel_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_raise_channel_cmd_callback
+DECL|function|channels_raise_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_raise_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -274,8 +280,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_lower_channel_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_lower_channel_cmd_callback
+DECL|function|channels_lower_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_lower_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -319,8 +325,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_duplicate_channel_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_duplicate_channel_cmd_callback
+DECL|function|channels_duplicate_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_duplicate_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -446,6 +452,19 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
+comment|/*  copied components are invisible by default so subsequent copies        *  of components don't affect each other        */
+name|gimp_drawable_set_visible
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_channel
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|name
@@ -508,8 +527,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_delete_channel_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_delete_channel_cmd_callback
+DECL|function|channels_delete_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_delete_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -554,8 +573,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channels_channel_to_sel (GtkWidget * widget,gpointer data,GimpChannelOps op)
-name|channels_channel_to_sel
+DECL|function|channels_channel_to_selection (GtkWidget * widget,gpointer data,GimpChannelOps op)
+name|channels_channel_to_selection
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -572,10 +591,6 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GimpChannel
-modifier|*
-name|channel
-decl_stmt|;
 if|if
 condition|(
 name|GIMP_IS_COMPONENT_EDITOR
@@ -584,9 +599,6 @@ name|data
 argument_list|)
 condition|)
 block|{
-name|GimpRGB
-name|color
-decl_stmt|;
 name|GimpChannelType
 name|component
 decl_stmt|;
@@ -595,20 +607,6 @@ argument_list|(
 name|gimage
 argument_list|,
 name|data
-argument_list|)
-expr_stmt|;
-name|gimp_rgba_set
-argument_list|(
-operator|&
-name|color
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|component
@@ -620,23 +618,28 @@ argument_list|)
 operator|->
 name|clicked_component
 expr_stmt|;
-name|channel
-operator|=
-name|gimp_channel_new_from_component
+name|gimp_image_mask_select_component
 argument_list|(
 name|gimage
 argument_list|,
 name|component
 argument_list|,
-literal|"Component Copy"
+name|op
 argument_list|,
-operator|&
-name|color
+name|FALSE
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
+name|GimpChannel
+modifier|*
+name|channel
+decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|gimage
@@ -646,7 +649,6 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_image_mask_select_channel
 argument_list|(
 name|gimage
@@ -666,26 +668,15 @@ name|op
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-literal|0
+literal|0.0
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_flush
 argument_list|(
 name|gimage
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|GIMP_IS_COMPONENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-condition|)
-name|g_object_unref
-argument_list|(
-name|channel
 argument_list|)
 expr_stmt|;
 block|}
@@ -693,8 +684,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_channel_to_sel_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_channel_to_sel_cmd_callback
+DECL|function|channels_selection_replace_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_selection_replace_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -704,7 +695,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|channels_channel_to_sel
+name|channels_channel_to_selection
 argument_list|(
 name|widget
 argument_list|,
@@ -718,8 +709,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_add_channel_to_sel_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_add_channel_to_sel_cmd_callback
+DECL|function|channels_selection_add_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_selection_add_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -729,7 +720,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|channels_channel_to_sel
+name|channels_channel_to_selection
 argument_list|(
 name|widget
 argument_list|,
@@ -743,8 +734,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_sub_channel_from_sel_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_sub_channel_from_sel_cmd_callback
+DECL|function|channels_selection_sub_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_selection_sub_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -754,7 +745,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|channels_channel_to_sel
+name|channels_channel_to_selection
 argument_list|(
 name|widget
 argument_list|,
@@ -768,8 +759,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_intersect_channel_with_sel_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_intersect_channel_with_sel_cmd_callback
+DECL|function|channels_selection_intersect_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_selection_intersect_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -779,7 +770,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|channels_channel_to_sel
+name|channels_channel_to_selection
 argument_list|(
 name|widget
 argument_list|,
@@ -793,8 +784,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_edit_channel_attributes_cmd_callback (GtkWidget * widget,gpointer data)
-name|channels_edit_channel_attributes_cmd_callback
+DECL|function|channels_edit_attributes_cmd_callback (GtkWidget * widget,gpointer data)
+name|channels_edit_attributes_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1343,7 +1334,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/channels/new_channel.html"
+name|GIMP_HELP_CHANNEL_NEW
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -2091,7 +2082,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/channels/edit_channel_attributes.html"
+name|GIMP_HELP_CHANNEL_EDIT
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

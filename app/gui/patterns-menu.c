@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -114,7 +120,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PATTERN_NEW
 block|,
 name|NULL
 block|}
@@ -139,7 +145,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PATTERN_DUPLICATE
 block|,
 name|NULL
 block|}
@@ -164,7 +170,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PATTERN_EDIT
 block|,
 name|NULL
 block|}
@@ -189,7 +195,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PATTERN_DELETE
 block|,
 name|NULL
 block|}
@@ -219,7 +225,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_PATTERN_REFRESH
 block|,
 name|NULL
 block|}

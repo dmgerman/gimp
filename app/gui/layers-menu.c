@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -108,7 +114,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/new_layer.html"
+name|GIMP_HELP_LAYER_NEW
 block|,
 name|NULL
 block|}
@@ -133,7 +139,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"stack/stack.html#raise_layer"
+name|GIMP_HELP_LAYER_RAISE
 block|,
 name|NULL
 block|}
@@ -158,7 +164,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"stack/stack.html#later_to_top"
+name|GIMP_HELP_LAYER_RAISE_TO_TOP
 block|,
 name|NULL
 block|}
@@ -183,7 +189,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"stack/stack.html#lower_layer"
+name|GIMP_HELP_LAYER_LOWER
 block|,
 name|NULL
 block|}
@@ -208,7 +214,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"stack/stack.html#layer_to_bottom"
+name|GIMP_HELP_LAYER_LOWER_TO_BOTTOM
 block|,
 name|NULL
 block|}
@@ -233,7 +239,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"duplicate_layer.html"
+name|GIMP_HELP_LAYER_DUPLICATE
 block|,
 name|NULL
 block|}
@@ -258,7 +264,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"anchor_layer.html"
+name|GIMP_HELP_LAYER_ANCHOR
 block|,
 name|NULL
 block|}
@@ -283,7 +289,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"merge_down.html"
+name|GIMP_HELP_LAYER_MERGE_DOWN
 block|,
 name|NULL
 block|}
@@ -308,7 +314,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"delete_layer.html"
+name|GIMP_HELP_LAYER_DELETE
 block|,
 name|NULL
 block|}
@@ -338,7 +344,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/layer_boundary_size.html"
+name|GIMP_HELP_LAYER_RESIZE
 block|,
 name|NULL
 block|}
@@ -363,7 +369,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"layer_to_image_size.html"
+name|GIMP_HELP_LAYER_RESIZE_TO_IMAGE
 block|,
 name|NULL
 block|}
@@ -388,7 +394,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/scale_layer.html"
+name|GIMP_HELP_LAYER_SCALE
 block|,
 name|NULL
 block|}
@@ -407,14 +413,14 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_add_layer_mask_cmd_callback
+name|layers_mask_add_cmd_callback
 block|,
 literal|0
 block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/add_layer_mask.html"
+name|GIMP_HELP_LAYER_MASK_ADD
 block|,
 name|NULL
 block|}
@@ -428,14 +434,14 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_apply_layer_mask_cmd_callback
+name|layers_mask_apply_cmd_callback
 block|,
 literal|0
 block|}
 block|,
 name|NULL
 block|,
-literal|"apply_mask.html"
+name|GIMP_HELP_LAYER_MASK_APPLY
 block|,
 name|NULL
 block|}
@@ -449,7 +455,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_delete_layer_mask_cmd_callback
+name|layers_mask_delete_cmd_callback
 block|,
 literal|0
 block|,
@@ -460,7 +466,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"delete_mask.html"
+name|GIMP_HELP_LAYER_MASK_DELETE
 block|,
 name|NULL
 block|}
@@ -474,7 +480,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_mask_select_cmd_callback
+name|layers_mask_selection_replace_cmd_callback
 block|,
 literal|0
 block|,
@@ -485,7 +491,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"mask_to_selection.html"
+name|GIMP_HELP_LAYER_MASK_SEL_REPLACE
 block|,
 name|NULL
 block|}
@@ -504,14 +510,14 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_add_alpha_channel_cmd_callback
+name|layers_alpha_add_cmd_callback
 block|,
 literal|0
 block|}
 block|,
 name|NULL
 block|,
-literal|"add_alpha_channel.html"
+name|GIMP_HELP_LAYER_ALPHA_ADD
 block|,
 name|NULL
 block|}
@@ -525,7 +531,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_alpha_select_cmd_callback
+name|layers_alpha_selection_replace_cmd_callback
 block|,
 literal|0
 block|,
@@ -536,7 +542,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"alpha_to_selection.html"
+name|GIMP_HELP_LAYER_ALPHA_SEL_REPLACE
 block|,
 name|NULL
 block|}
@@ -566,7 +572,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"dialogs/edit_layer_attributes.html"
+name|GIMP_HELP_LAYER_EDIT
 block|,
 name|NULL
 block|}
