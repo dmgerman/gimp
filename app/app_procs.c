@@ -240,6 +240,16 @@ name|gboolean
 name|no_interface
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|ENABLE_MP
+name|g_thread_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|no_interface
