@@ -111,9 +111,9 @@ DECL|member|width
 name|gdouble
 name|width
 decl_stmt|;
-DECL|member|width_unit
+DECL|member|unit
 name|GimpUnit
-name|width_unit
+name|unit
 decl_stmt|;
 DECL|member|cap_style
 name|GimpCapStyle
@@ -130,10 +130,6 @@ decl_stmt|;
 DECL|member|antialias
 name|gboolean
 name|antialias
-decl_stmt|;
-DECL|member|dash_unit
-name|GimpUnit
-name|dash_unit
 decl_stmt|;
 DECL|member|dash_offset
 name|gdouble
