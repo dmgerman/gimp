@@ -1122,7 +1122,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No sensible extension, saving as gzip'd xcf"
+literal|"No sensible extension, saving as compressed XCF."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1696,7 +1696,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"No sensible extension, "
-literal|"attempting to load with file magic"
+literal|"attempting to load with file magic."
 argument_list|)
 argument_list|)
 expr_stmt|;

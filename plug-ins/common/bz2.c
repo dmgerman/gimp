@@ -224,6 +224,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|find_extension
@@ -963,6 +964,7 @@ name|FILE
 modifier|*
 name|f
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|ext
@@ -998,14 +1000,14 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open bzip2ed file without a "
-literal|"sensible extension"
+literal|"No sensible extension, saving as compressed XCF."
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-name|GIMP_PDB_CALLING_ERROR
-return|;
+name|ext
+operator|=
+literal|".xcf"
+expr_stmt|;
 block|}
 comment|/* get a temp name with the right extension and save into it. */
 name|tmpname
@@ -1324,6 +1326,7 @@ block|{
 name|gint32
 name|image_ID
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|ext
@@ -1359,19 +1362,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open bzip2ed file without a sensible extension"
+literal|"No sensible extension, "
+literal|"attempting to load with file magic."
 argument_list|)
 argument_list|)
 expr_stmt|;
-operator|*
-name|status
+name|ext
 operator|=
-name|GIMP_PDB_CALLING_ERROR
+literal|".foo"
 expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
 block|}
 comment|/* find a temp name */
 name|tmpname
@@ -1749,6 +1748,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|find_extension (const gchar * filename)
