@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27ecd7350103
+DECL|enum|__anon2949a93e0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27ecd7350203
+DECL|enum|__anon2949a93e0203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -223,7 +223,7 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
-comment|/*  current brush	        */
+comment|/*  current brush	      */
 DECL|member|pick_colors
 name|gboolean
 name|pick_colors

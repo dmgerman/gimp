@@ -182,7 +182,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297d69150103
+DECL|enum|__anon2c4967fa0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -953,6 +953,24 @@ name|tool_cursor
 operator|=
 name|GIMP_BLUR_TOOL_CURSOR
 expr_stmt|;
+name|tool
+operator|->
+name|cursor_modifier
+operator|=
+name|GIMP_CURSOR_MODIFIER_NONE
+expr_stmt|;
+name|tool
+operator|->
+name|toggle_tool_cursor
+operator|=
+name|GIMP_BLUR_TOOL_CURSOR
+expr_stmt|;
+name|tool
+operator|->
+name|toggle_cursor_modifier
+operator|=
+name|GIMP_CURSOR_MODIFIER_MINUS
+expr_stmt|;
 block|}
 end_function
 
@@ -1141,18 +1159,6 @@ default|default:
 break|break;
 block|}
 block|}
-name|tool
-operator|->
-name|toggled
-operator|=
-operator|(
-name|options
-operator|->
-name|type
-operator|==
-name|SHARPEN_CONVOLVE
-operator|)
-expr_stmt|;
 block|}
 end_function
 

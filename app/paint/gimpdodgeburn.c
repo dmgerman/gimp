@@ -730,7 +730,7 @@ name|GIMP_DODGE_TOOL_CURSOR
 expr_stmt|;
 name|tool
 operator|->
-name|toggle_cursor
+name|toggle_tool_cursor
 operator|=
 name|GIMP_BURN_TOOL_CURSOR
 expr_stmt|;
