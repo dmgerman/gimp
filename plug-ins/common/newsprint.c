@@ -540,7 +540,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c1809bf0108
+DECL|struct|__anon2b2eef200108
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +785,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1809bf0208
+DECL|struct|__anon2b2eef200208
 typedef|typedef
 struct|struct
 block|{
@@ -858,7 +858,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1809bf0308
+DECL|struct|__anon2b2eef200308
 typedef|typedef
 struct|struct
 block|{
@@ -884,7 +884,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1809bf0408
+DECL|struct|__anon2b2eef200408
 typedef|typedef
 struct|struct
 block|{
@@ -917,7 +917,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c1809bf0503
+DECL|enum|__anon2b2eef200503
 typedef|typedef
 enum|enum
 block|{
@@ -933,7 +933,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1809bf0608
+DECL|struct|__anon2b2eef200608
 typedef|typedef
 struct|struct
 block|{
@@ -991,7 +991,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1809bf0708
+DECL|struct|__anon2b2eef200708
 typedef|typedef
 struct|struct
 block|{
@@ -1093,7 +1093,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1809bf0808
+DECL|struct|__anon2b2eef200808
 typedef|typedef
 struct|struct
 block|{
@@ -1281,7 +1281,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1809bf0908
+DECL|struct|__anon2b2eef200908
 typedef|typedef
 struct|struct
 block|{
@@ -2195,7 +2195,7 @@ literal|"1998 ("
 name|VERSION
 literal|")"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Newsprint"
+literal|"<Image>/Filters/Distorts/Newsprint..."
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -4944,6 +4944,10 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|hbbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|hbox
 decl_stmt|;
 name|GtkWidget
@@ -5205,6 +5209,83 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Action area  */
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|st
+operator|.
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|st
+operator|.
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|hbbox
+operator|=
+name|gtk_hbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_box_set_spacing
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|hbbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|st
+operator|.
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|hbbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbbox
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
@@ -5242,21 +5323,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|st
-operator|.
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -5311,21 +5385,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|st
-operator|.
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -7363,7 +7430,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1809bf0a08
+DECL|struct|__anon2b2eef200a08
 typedef|typedef
 struct|struct
 block|{

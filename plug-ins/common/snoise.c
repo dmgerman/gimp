@@ -122,7 +122,7 @@ comment|/*---- Typedefs ----*/
 end_comment
 
 begin_typedef
-DECL|struct|__anon28fa505d0108
+DECL|struct|__anon2c47f1120108
 typedef|typedef
 struct|struct
 block|{
@@ -162,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28fa505d0208
+DECL|struct|__anon2c47f1120208
 typedef|typedef
 struct|struct
 block|{
@@ -177,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28fa505d0308
+DECL|struct|__anon2c47f1120308
 typedef|typedef
 struct|struct
 block|{
@@ -642,7 +642,7 @@ literal|"Marcelo de Gomensoro Malheiros"
 argument_list|,
 literal|"Apr 1998, v1.03"
 argument_list|,
-literal|"<Image>/Filters/Render/Clouds/Solid Noise"
+literal|"<Image>/Filters/Render/Clouds/Solid Noise..."
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -2143,6 +2143,10 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|hbbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|button
 decl_stmt|;
 name|GtkWidget
@@ -3178,7 +3182,78 @@ argument_list|(
 name|scale
 argument_list|)
 expr_stmt|;
-comment|/*  Button #1  */
+comment|/*  Action area  */
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|hbbox
+operator|=
+name|gtk_hbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_box_set_spacing
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|hbbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|hbbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbbox
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
@@ -3214,19 +3289,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -3241,7 +3311,6 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/*  Button #2  */
 name|button
 operator|=
 name|gtk_button_new_with_label
@@ -3280,19 +3349,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)

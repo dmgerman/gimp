@@ -462,7 +462,7 @@ literal|"Eric L. Hernes"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Emboss"
+literal|"<Image>/Filters/Distorts/Emboss..."
 argument_list|,
 literal|"RGB"
 argument_list|,

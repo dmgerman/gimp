@@ -159,7 +159,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b27692a0108
+DECL|struct|__anon29b78e060108
 typedef|typedef
 struct|struct
 block|{
@@ -401,7 +401,7 @@ literal|"Hirotsuna Mizuno"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Image>/Filters/Map/Illusion"
+literal|"<Image>/Filters/Map/Illusion..."
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

@@ -32,7 +32,7 @@ DECL|macro|PLUG_IN_CATEGORY
 define|#
 directive|define
 name|PLUG_IN_CATEGORY
-value|"<Image>/Filters/Map/Fractal Trace"
+value|"<Image>/Filters/Map/Fractal Trace..."
 end_define
 
 begin_comment
@@ -212,7 +212,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c7cf1f80108
+DECL|struct|__anon27ba649f0108
 typedef|typedef
 struct|struct
 block|{
@@ -289,7 +289,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c7cf1f80208
+DECL|struct|__anon27ba649f0208
 typedef|typedef
 struct|struct
 block|{
@@ -509,7 +509,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c7cf1f80308
+DECL|struct|__anon27ba649f0308
 typedef|typedef
 struct|struct
 block|{
@@ -552,7 +552,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c7cf1f80408
+DECL|struct|__anon27ba649f0408
 typedef|typedef
 struct|struct
 block|{
@@ -1102,7 +1102,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c7cf1f80508
+DECL|struct|__anon27ba649f0508
 typedef|typedef
 struct|struct
 block|{
@@ -3627,7 +3627,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon2c7cf1f80608
+DECL|struct|__anon27ba649f0608
 typedef|typedef
 struct|struct
 block|{

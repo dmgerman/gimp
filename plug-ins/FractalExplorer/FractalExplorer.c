@@ -473,7 +473,7 @@ literal|"Daniel Cotting (cotting@multimania.com, www.multimania.com/cotting)"
 argument_list|,
 literal|"December, 1998"
 argument_list|,
-literal|"<Image>/Filters/Render/Pattern/Fractal Explorer"
+literal|"<Image>/Filters/Render/Pattern/Fractal Explorer..."
 argument_list|,
 literal|"RGB*"
 argument_list|,

@@ -415,7 +415,7 @@ literal|"Stephen Norris"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Waves"
+literal|"<Image>/Filters/Distorts/Waves..."
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

@@ -579,7 +579,7 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"1998"
 argument_list|,
-literal|"<Image>/Filters/Toys/The Egg"
+literal|"<Image>/Filters/Toys/The Egg..."
 argument_list|,
 comment|/*NULL,*/
 literal|"RGB*, INDEXED*, GRAY*"

@@ -101,7 +101,7 @@ DECL|macro|MENU_POSITION
 define|#
 directive|define
 name|MENU_POSITION
-value|"<Image>/Filters/Noise/Scatter HSV"
+value|"<Image>/Filters/Noise/Scatter HSV..."
 end_define
 
 begin_define
@@ -633,7 +633,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c501e0f0108
+DECL|struct|__anon27d67d120108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -679,7 +679,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c501e0f0208
+DECL|struct|__anon27d67d120208
 block|{
 DECL|member|run
 name|gint

@@ -150,7 +150,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon27b6aace0103
+DECL|enum|__anon289e89ba0103
 typedef|typedef
 enum|enum
 block|{
@@ -416,7 +416,7 @@ literal|"Graeme W. Gill, Eric L. Hernes"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Enhance/NL Filter"
+literal|"<Image>/Filters/Enhance/NL Filter..."
 argument_list|,
 literal|"RGB,GRAY"
 argument_list|,

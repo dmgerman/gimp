@@ -72,7 +72,7 @@ DECL|macro|MENU_POSITION
 define|#
 directive|define
 name|MENU_POSITION
-value|"<Image>/Filters/Distorts/Value Propagate"
+value|"<Image>/Filters/Distorts/Value Propagate..."
 end_define
 
 begin_typedef
@@ -932,7 +932,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6d54350108
+DECL|struct|__anon27b46c4e0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -1076,7 +1076,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6d54350208
+DECL|struct|__anon27b46c4e0208
 block|{
 DECL|member|applicable_image_type
 name|int
@@ -1297,7 +1297,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6d54350308
+DECL|struct|__anon27b46c4e0308
 block|{
 DECL|member|run
 name|gint
@@ -3858,7 +3858,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6d54350408
+DECL|struct|__anon27b46c4e0408
 block|{
 DECL|member|min_modified
 name|short

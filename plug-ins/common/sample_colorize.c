@@ -401,7 +401,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon29002ea00108
+DECL|struct|__anon2a07b9610108
 typedef|typedef
 struct|struct
 block|{
@@ -470,7 +470,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29002ea00208
+DECL|struct|__anon2a07b9610208
 typedef|typedef
 struct|struct
 block|{
@@ -588,7 +588,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29002ea00308
+DECL|struct|__anon2a07b9610308
 typedef|typedef
 struct|struct
 block|{
@@ -617,7 +617,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29002ea00408
+DECL|struct|__anon2a07b9610408
 typedef|typedef
 struct|struct
 block|{
@@ -644,7 +644,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29002ea00508
+DECL|struct|__anon2a07b9610508
 typedef|typedef
 struct|struct
 block|{
@@ -1442,7 +1442,7 @@ literal|"hof@hotbot.com"
 argument_list|,
 literal|"07/1999"
 argument_list|,
-literal|"<Image>/Filters/Colors/Map/Sample Colorize"
+literal|"<Image>/Filters/Colors/Map/Sample Colorize..."
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
