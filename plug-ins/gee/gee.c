@@ -1525,26 +1525,6 @@ expr_stmt|;
 comment|/* cache hint */
 name|gimp_tile_cache_ntiles
 argument_list|(
-name|MAX
-argument_list|(
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
-argument_list|)
-operator|/
-name|MIN
-argument_list|(
-name|gimp_tile_width
-argument_list|()
-argument_list|,
-name|gimp_tile_height
-argument_list|()
-argument_list|)
-operator|+
 literal|1
 argument_list|)
 expr_stmt|;
