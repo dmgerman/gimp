@@ -99,10 +99,51 @@ directive|include
 file|"gimpitemfactory.h"
 end_include
 
+begin_comment
+comment|/* #define DEBUG_FACTORY */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG_FACTORY
+end_ifdef
+
+begin_define
+DECL|macro|DEBUG (...)
+define|#
+directive|define
+name|DEBUG
+parameter_list|(
+modifier|...
+parameter_list|)
+value|g_print(...)
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|DEBUG (...)
+define|#
+directive|define
+name|DEBUG
+parameter_list|(
+modifier|...
+parameter_list|)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29dfdbff0103
+DECL|enum|__anon292f4e700103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -123,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29dfdbff0203
+DECL|enum|__anon292f4e700203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -2347,7 +2388,7 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: adding %s \"%s\"\n"
 argument_list|,
@@ -2436,7 +2477,7 @@ operator|->
 name|identifier
 argument_list|)
 expr_stmt|;
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: corrupt session info: %p (widget %p)\n"
 argument_list|,
@@ -2459,7 +2500,7 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: updating session info %p (widget %p) for %s \"%s\"\n"
 argument_list|,
@@ -2524,7 +2565,7 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: creating session info %p (widget %p) for %s \"%s\"\n"
 argument_list|,
@@ -2582,7 +2623,7 @@ block|}
 else|else
 comment|/*  dialog is a GimpDock  */
 block|{
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: adding dock\n"
 argument_list|,
@@ -2642,7 +2683,7 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: updating session info %p (widget %p) for dock\n"
 argument_list|,
@@ -2689,7 +2730,7 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: creating session info %p (widget %p) for dock\n"
 argument_list|,
@@ -2899,7 +2940,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: removing \"%s\"\n"
 argument_list|,
@@ -2951,7 +2992,7 @@ operator|==
 name|dialog
 condition|)
 block|{
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: clearing session info %p (widget %p) for \"%s\"\n"
 argument_list|,

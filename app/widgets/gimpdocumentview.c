@@ -605,8 +605,8 @@ name|GTK_STOCK_REFRESH
 argument_list|,
 name|_
 argument_list|(
-literal|"Refresh preview\n"
-literal|"<Shift> Recreate preview"
+literal|"Recreate preview\n"
+literal|"<Shift> Reload all previews"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1207,7 +1207,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gimp_imagefile_update
+name|gimp_imagefile_create_thumbnail
 argument_list|(
 name|imagefile
 argument_list|)
@@ -1238,10 +1238,6 @@ name|GimpContainerEditor
 modifier|*
 name|editor
 decl_stmt|;
-name|GimpImagefile
-modifier|*
-name|imagefile
-decl_stmt|;
 name|editor
 operator|=
 name|GIMP_CONTAINER_EDITOR
@@ -1249,22 +1245,14 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
-name|imagefile
-operator|=
-name|gimp_context_get_imagefile
-argument_list|(
-name|editor
-operator|->
-name|view
-operator|->
-name|context
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|imagefile
-operator|&&
-name|gimp_container_have
+name|state
+operator|&
+name|GDK_SHIFT_MASK
+condition|)
+block|{
+name|gimp_container_foreach
 argument_list|(
 name|editor
 operator|->
@@ -1272,22 +1260,12 @@ name|view
 operator|->
 name|container
 argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|imagefile
-argument_list|)
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
-name|state
-operator|&
-name|GDK_SHIFT_MASK
-condition|)
-name|gimp_imagefile_create_thumbnail
-argument_list|(
-name|imagefile
+operator|(
+name|GFunc
+operator|)
+name|gimp_imagefile_update
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

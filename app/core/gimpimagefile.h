@@ -35,7 +35,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b26ab670103
+DECL|enum|__anon27ec89a70103
 block|{
 DECL|enumerator|GIMP_IMAGEFILE_STATE_UNKNOWN
 name|GIMP_IMAGEFILE_STATE_UNKNOWN
@@ -144,8 +144,12 @@ name|gint
 name|height
 decl_stmt|;
 DECL|member|size
-name|gint
+name|gssize
 name|size
+decl_stmt|;
+DECL|member|type
+name|GimpImageType
+name|type
 decl_stmt|;
 DECL|member|image_state
 name|GimpImagefileState
