@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297de79a0103
+DECL|enum|__anon2baca08f0103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -928,6 +928,10 @@ name|ofsx
 decl_stmt|,
 name|ofsy
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|selDrawable
+decl_stmt|;
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -1065,11 +1069,8 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_rgn_init
-argument_list|(
-operator|&
-name|selPR
-argument_list|,
+name|selDrawable
+operator|=
 name|gimp_drawable_get
 argument_list|(
 name|gimp_image_get_selection
@@ -1077,6 +1078,13 @@ argument_list|(
 name|imageID
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_pixel_rgn_init
+argument_list|(
+operator|&
+name|selPR
+argument_list|,
+name|selDrawable
 argument_list|,
 literal|0
 argument_list|,
@@ -1421,6 +1429,11 @@ literal|1.0
 argument_list|)
 expr_stmt|;
 comment|/* clean up */
+name|gimp_drawable_detach
+argument_list|(
+name|selDrawable
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|src_row
