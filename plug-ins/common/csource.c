@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a575f0108
+DECL|struct|__anon2c841f960108
 block|{
 DECL|member|file_name
 name|gchar
@@ -2351,7 +2351,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%u];\n"
+literal|"%u + 1];\n"
 argument_list|,
 name|img_buffer_end
 operator|-
@@ -2363,7 +2363,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%u * %u * %u];\n"
+literal|"%u * %u * %u + 1];\n"
 argument_list|,
 name|drawable
 operator|->
@@ -2831,7 +2831,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%u * %u * %u] =\n"
+literal|"%u * %u * %u + 1] =\n"
 argument_list|,
 name|drawable
 operator|->
