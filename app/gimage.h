@@ -550,6 +550,14 @@ value|gimp_image_lower_channel
 end_define
 
 begin_define
+DECL|macro|gimage_position_channel
+define|#
+directive|define
+name|gimage_position_channel
+value|gimp_image_position_channel
+end_define
+
+begin_define
 DECL|macro|gimage_add_channel
 define|#
 directive|define

@@ -2566,7 +2566,7 @@ name|channel
 init|=
 name|NULL
 decl_stmt|;
-name|LayerMask
+name|Layer
 modifier|*
 name|layer_mask
 init|=
@@ -2607,7 +2607,7 @@ expr_stmt|;
 name|layer_mask
 operator|=
 operator|(
-name|LayerMask
+name|Layer
 operator|*
 operator|)
 name|gtk_object_get_data
@@ -2657,14 +2657,10 @@ name|drawable
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|layer_mask
-argument_list|)
-expr_stmt|;
-name|channel
-operator|=
-name|GIMP_CHANNEL
+name|layer_get_mask
 argument_list|(
 name|layer_mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

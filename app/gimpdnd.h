@@ -16,9 +16,21 @@ directive|define
 name|__GIMP_DND_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf37b70103
+DECL|enum|__anon2b17e59c0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -29,6 +41,9 @@ block|,
 DECL|enumerator|GIMP_DND_TYPE_NETSCAPE_URL
 name|GIMP_DND_TYPE_NETSCAPE_URL
 block|,
+DECL|enumerator|GIMP_DND_TYPE_IMAGE
+name|GIMP_DND_TYPE_IMAGE
+block|,
 DECL|enumerator|GIMP_DND_TYPE_LAYER
 name|GIMP_DND_TYPE_LAYER
 block|,
@@ -37,6 +52,12 @@ name|GIMP_DND_TYPE_CHANNEL
 block|,
 DECL|enumerator|GIMP_DND_TYPE_LAYER_MASK
 name|GIMP_DND_TYPE_LAYER_MASK
+block|,
+DECL|enumerator|GIMP_DND_TYPE_COMPONENT
+name|GIMP_DND_TYPE_COMPONENT
+block|,
+DECL|enumerator|GIMP_DND_TYPE_PATH
+name|GIMP_DND_TYPE_PATH
 block|}
 enum|;
 end_enum
@@ -69,6 +90,15 @@ value|{ "_NETSCAPE_URL", 0, GIMP_DND_TYPE_NETSCAPE_URL }
 end_define
 
 begin_define
+DECL|macro|GIMP_TARGET_IMAGE
+define|#
+directive|define
+name|GIMP_TARGET_IMAGE
+define|\
+value|{ "GIMP_IMAGE", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_IMAGE }
+end_define
+
+begin_define
 DECL|macro|GIMP_TARGET_LAYER
 define|#
 directive|define
@@ -94,6 +124,62 @@ name|GIMP_TARGET_LAYER_MASK
 define|\
 value|{ "GIMP_LAYER_MASK", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_LAYER_MASK }
 end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_COMPONENT
+define|#
+directive|define
+name|GIMP_TARGET_COMPONENT
+define|\
+value|{ "GIMP_COMPONENT", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_COMPONENT }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_PATH
+define|#
+directive|define
+name|GIMP_TARGET_PATH
+define|\
+value|{ "GIMP_PATH", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_PATH }
+end_define
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b17e59c0203
+block|{
+DECL|enumerator|GIMP_DROP_NONE
+name|GIMP_DROP_NONE
+block|,
+DECL|enumerator|GIMP_DROP_ABOVE
+name|GIMP_DROP_ABOVE
+block|,
+DECL|enumerator|GIMP_DROP_BELOW
+name|GIMP_DROP_BELOW
+DECL|typedef|GimpDropType
+block|}
+name|GimpDropType
+typedef|;
+end_typedef
+
+begin_function_decl
+name|void
+name|gimp_dnd_set_drawable_preview_icon
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkDragContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

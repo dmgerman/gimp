@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c4938040103
+DECL|enum|__anon2a47651c0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -7420,6 +7420,25 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|Layer
+modifier|*
+DECL|function|layer_mask_get_layer (LayerMask * mask)
+name|layer_mask_get_layer
+parameter_list|(
+name|LayerMask
+modifier|*
+name|mask
+parameter_list|)
+block|{
+return|return
+name|mask
+operator|->
+name|layer
+return|;
 block|}
 end_function
 

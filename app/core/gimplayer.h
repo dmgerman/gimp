@@ -631,6 +631,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|Layer
+modifier|*
+name|layer_mask_get_layer
+parameter_list|(
+name|LayerMask
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* access functions */
 end_comment
