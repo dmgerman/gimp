@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288f1e540103
+DECL|enum|__anon2a9c71c00103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -828,6 +828,12 @@ operator|->
 name|floating
 operator|=
 name|TRUE
+expr_stmt|;
+name|item
+operator|->
+name|removed
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 end_function
@@ -1715,6 +1721,12 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|item
+operator|->
+name|removed
+operator|=
+name|TRUE
+expr_stmt|;
 name|g_signal_emit
 argument_list|(
 name|item
@@ -1727,6 +1739,35 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_item_is_removed (const GimpItem * item)
+name|gimp_item_is_removed
+parameter_list|(
+specifier|const
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|item
+operator|->
+name|removed
+return|;
 block|}
 end_function
 

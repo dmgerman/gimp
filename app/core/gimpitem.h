@@ -156,6 +156,11 @@ name|gboolean
 name|floating
 decl_stmt|;
 comment|/*  added to an image?       */
+DECL|member|removed
+name|gboolean
+name|removed
+decl_stmt|;
+comment|/*  removed from the image?  */
 block|}
 struct|;
 end_struct
@@ -520,6 +525,18 @@ begin_function_decl
 name|void
 name|gimp_item_removed
 parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_is_removed
+parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item
