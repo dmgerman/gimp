@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2553fb0103
+DECL|enum|__anon2c50eb990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -681,12 +681,12 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -922,7 +922,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1117,7 +1117,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(

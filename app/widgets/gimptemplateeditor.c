@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5351020103
+DECL|enum|__anon28a752ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -679,10 +679,6 @@ name|table2
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|separator
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|label
 decl_stmt|;
 name|GtkObject
@@ -774,13 +770,13 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 comment|/*  Image size frame  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -897,7 +893,7 @@ argument_list|)
 argument_list|,
 literal|2
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
@@ -1046,35 +1042,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|label
-argument_list|)
-expr_stmt|;
-comment|/*  a separator after the pixel section  */
-name|separator
-operator|=
-name|gtk_hseparator_new
-argument_list|()
-expr_stmt|;
-name|gtk_table_attach_defaults
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-name|separator
-argument_list|,
-literal|0
-argument_list|,
-literal|2
-argument_list|,
-literal|2
-argument_list|,
-literal|3
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|separator
 argument_list|)
 expr_stmt|;
 comment|/*  the unit size labels  */
@@ -2627,7 +2594,7 @@ expr_stmt|;
 comment|/* frame for Comment */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
