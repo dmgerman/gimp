@@ -1637,12 +1637,15 @@ operator|&
 literal|0x4000
 condition|)
 block|{
+comment|/* yc+=pc& 0x3FFF; */
+comment|/* BANG! */
 name|yc
 operator|+=
+literal|0x10000
+operator|-
 name|pc
-operator|&
-literal|0x3FFF
 expr_stmt|;
+comment|/* better */
 block|}
 else|else
 block|{

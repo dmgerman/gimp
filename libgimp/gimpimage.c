@@ -1850,8 +1850,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_component_visibile (gint32 image_ID,gint component)
-name|gimp_image_get_component_visibile
+DECL|function|gimp_image_get_component_visible (gint32 image_ID,gint component)
+name|gimp_image_get_component_visible
 parameter_list|(
 name|gint32
 name|image_ID

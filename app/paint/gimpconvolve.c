@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd57f2d0103
+DECL|enum|__anon28fa5eda0103
 block|{
 DECL|enumerator|Blur
 name|Blur
@@ -1154,12 +1154,23 @@ return|return;
 comment|/*  If the image type is indexed, don't convolve  */
 if|if
 condition|(
+operator|(
 name|drawable_type
 argument_list|(
 name|drawable
 argument_list|)
 operator|==
 name|INDEXED_GIMAGE
+operator|)
+operator|||
+operator|(
+name|drawable_type
+argument_list|(
+name|drawable
+argument_list|)
+operator|==
+name|INDEXEDA_GIMAGE
+operator|)
 condition|)
 return|return;
 comment|/*  Get a region which can be used to paint to  */

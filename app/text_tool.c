@@ -10943,11 +10943,18 @@ if|if
 condition|(
 name|newmask
 condition|)
+block|{
 name|warning
 argument_list|(
 literal|"text_render: could not allocate image"
 argument_list|)
 expr_stmt|;
+name|tile_manager_destroy
+argument_list|(
+name|newmask
+argument_list|)
+expr_stmt|;
+block|}
 name|layer
 operator|=
 name|NULL
