@@ -1203,10 +1203,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_image_apply_image
+name|gimp_drawable_apply_region
 argument_list|(
-name|gimage
-argument_list|,
 name|drawable
 argument_list|,
 operator|&
@@ -1239,17 +1237,13 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  free the temporary tiles  */
@@ -1634,10 +1628,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_image_apply_image
+name|gimp_drawable_apply_region
 argument_list|(
-name|gimage
-argument_list|,
 name|drawable
 argument_list|,
 operator|&
@@ -1667,17 +1659,13 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  free the temporary tiles  */

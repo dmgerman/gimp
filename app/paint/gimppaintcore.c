@@ -7515,10 +7515,8 @@ name|canvas_buf
 argument_list|)
 expr_stmt|;
 comment|/*  apply the paint area to the gimage  */
-name|gimp_image_apply_image
+name|gimp_drawable_apply_region
 argument_list|(
-name|gimage
-argument_list|,
 name|drawable
 argument_list|,
 operator|&
@@ -8030,10 +8028,8 @@ name|canvas_buf
 argument_list|)
 expr_stmt|;
 comment|/*  apply the paint area to the gimage  */
-name|gimp_image_replace_image
+name|gimp_drawable_replace_region
 argument_list|(
-name|gimage
-argument_list|,
 name|drawable
 argument_list|,
 operator|&

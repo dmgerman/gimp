@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b888f960103
+DECL|enum|__anon290ee2700103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2044,10 +2044,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_image_apply_image
+name|gimp_drawable_apply_region
 argument_list|(
-name|gimage
-argument_list|,
 name|image_map
 operator|->
 name|drawable

@@ -2218,10 +2218,8 @@ literal|1
 expr_stmt|;
 block|}
 comment|/*  apply the fs with the undo specified by the value 	   *  passed to this function 	   */
-name|gimp_image_apply_image
+name|gimp_drawable_apply_region
 argument_list|(
-name|gimage
-argument_list|,
 name|layer
 operator|->
 name|fs

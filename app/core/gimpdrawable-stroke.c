@@ -1394,16 +1394,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_image_apply_image
+name|gimp_drawable_apply_region
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-argument_list|,
 name|drawable
 argument_list|,
 operator|&
@@ -1416,13 +1408,15 @@ argument_list|(
 literal|"Render Stroke"
 argument_list|)
 argument_list|,
+name|gimp_context_get_opacity
+argument_list|(
 name|context
-operator|->
-name|opacity
+argument_list|)
 argument_list|,
+name|gimp_context_get_paint_mode
+argument_list|(
 name|context
-operator|->
-name|paint_mode
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

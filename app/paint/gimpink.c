@@ -3159,7 +3159,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon296439460103
+DECL|enum|__anon2b27646d0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4269,10 +4269,8 @@ name|canvas_buf
 argument_list|)
 expr_stmt|;
 comment|/*  apply the paint area to the gimage  */
-name|gimp_image_apply_image
+name|gimp_drawable_apply_region
 argument_list|(
-name|gimage
-argument_list|,
 name|drawable
 argument_list|,
 operator|&
