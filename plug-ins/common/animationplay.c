@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a03ee50103
+DECL|enum|__anon274efb130103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -6346,16 +6346,13 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
-operator|(
 name|length
 operator|-
 name|offset
 operator|<=
 literal|2
-operator|)
 operator|||
-operator|(
-name|toupper
+name|g_ascii_toupper
 argument_list|(
 name|str
 index|[
@@ -6364,10 +6361,8 @@ index|]
 argument_list|)
 operator|!=
 literal|'M'
-operator|)
 operator|||
-operator|(
-name|toupper
+name|g_ascii_toupper
 argument_list|(
 name|str
 index|[
@@ -6378,7 +6373,6 @@ index|]
 argument_list|)
 operator|!=
 literal|'S'
-operator|)
 condition|)
 return|return
 literal|0
