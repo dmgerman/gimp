@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-pick-color.h"
 end_include
 
@@ -986,6 +992,22 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gboolean
+name|do_seed_fill
+decl_stmt|;
+name|do_seed_fill
+operator|=
+name|gimp_image_mask_is_empty
+argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_bucket_fill
 argument_list|(
 name|drawable
@@ -997,6 +1019,8 @@ argument_list|,
 name|opacity
 operator|/
 literal|100.0
+argument_list|,
+name|do_seed_fill
 argument_list|,
 name|FALSE
 comment|/* don't fill transparent */

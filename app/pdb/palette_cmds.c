@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -53,24 +47,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdatafactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimppalette.h"
 end_include
 
 begin_include

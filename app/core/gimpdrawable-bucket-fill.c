@@ -221,7 +221,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
@@ -236,6 +236,9 @@ name|paint_mode
 parameter_list|,
 name|gdouble
 name|opacity
+parameter_list|,
+name|gboolean
+name|do_seed_fill
 parameter_list|,
 name|gboolean
 name|fill_transparent
@@ -389,17 +392,11 @@ name|drawable
 argument_list|,
 name|fill_mode
 argument_list|,
-operator|&
-name|color
-argument_list|,
-name|pattern
-argument_list|,
 name|paint_mode
 argument_list|,
 name|opacity
 argument_list|,
-name|TRUE
-comment|/* do seed fill */
+name|do_seed_fill
 argument_list|,
 name|fill_transparent
 argument_list|,
@@ -410,6 +407,11 @@ argument_list|,
 name|x
 argument_list|,
 name|y
+argument_list|,
+operator|&
+name|color
+argument_list|,
+name|pattern
 argument_list|)
 expr_stmt|;
 block|}
@@ -417,7 +419,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill_full (GimpDrawable * drawable,GimpBucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
+DECL|function|gimp_drawable_bucket_fill_full (GimpDrawable * drawable,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y,const GimpRGB * color,GimpPattern * pattern)
 name|gimp_drawable_bucket_fill_full
 parameter_list|(
 name|GimpDrawable
@@ -426,15 +428,6 @@ name|drawable
 parameter_list|,
 name|GimpBucketFillMode
 name|fill_mode
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|,
-name|GimpPattern
-modifier|*
-name|pattern
 parameter_list|,
 name|gint
 name|paint_mode
@@ -459,6 +452,15 @@ name|x
 parameter_list|,
 name|gdouble
 name|y
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
+name|GimpPattern
+modifier|*
+name|pattern
 parameter_list|)
 block|{
 name|GimpImage

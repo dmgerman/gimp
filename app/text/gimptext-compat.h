@@ -52,7 +52,7 @@ parameter_list|,
 name|gint
 name|border
 parameter_list|,
-name|gint
+name|gboolean
 name|antialias
 parameter_list|)
 function_decl|;

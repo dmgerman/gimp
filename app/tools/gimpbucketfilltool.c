@@ -709,6 +709,9 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
+name|TRUE
+argument_list|,
+comment|/* do seed fill */
 name|options
 operator|->
 name|fill_transparent

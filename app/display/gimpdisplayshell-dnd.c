@@ -401,10 +401,6 @@ name|drawable
 argument_list|,
 name|fill_mode
 argument_list|,
-name|color
-argument_list|,
-name|pattern
-argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(
 name|context
@@ -428,6 +424,10 @@ literal|0.0
 argument_list|,
 literal|0.0
 comment|/* fill params */
+argument_list|,
+name|color
+argument_list|,
+name|pattern
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
