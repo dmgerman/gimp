@@ -815,6 +815,10 @@ condition|)
 return|return;
 comment|/* Constant painting --get a copy of the orig drawable (with no    * paint from this stroke yet)    */
 block|{
+name|GimpItem
+modifier|*
+name|item
+decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -824,6 +828,13 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
+name|item
+operator|=
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|x1
 operator|=
 name|CLAMP
@@ -834,9 +845,9 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|drawable
+name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -850,9 +861,9 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|drawable
+name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -870,9 +881,9 @@ name|width
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|drawable
+name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -890,9 +901,9 @@ name|height
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|drawable
+name|item
 argument_list|)
 argument_list|)
 expr_stmt|;

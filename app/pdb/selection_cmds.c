@@ -3042,9 +3042,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
@@ -3054,9 +3054,9 @@ name|gimage
 operator|->
 name|width
 operator|&&
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
@@ -3451,9 +3451,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
@@ -3463,9 +3463,9 @@ name|gimage
 operator|->
 name|width
 operator|&&
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)

@@ -1651,9 +1651,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|fuzzy_sel
 operator|->
@@ -1661,9 +1661,9 @@ name|fuzzy_mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|fuzzy_sel
 operator|->
@@ -1689,9 +1689,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|fuzzy_sel
 operator|->
@@ -1699,9 +1699,9 @@ name|fuzzy_mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|fuzzy_sel
 operator|->

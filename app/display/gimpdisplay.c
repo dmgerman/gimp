@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b96410103
+DECL|enum|__anon2c66fb590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1516,9 +1516,12 @@ literal|0
 operator|||
 name|x
 operator|>
-name|gimp_drawable_width
+name|gimp_item_width
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 condition|)
 return|return
@@ -1543,9 +1546,12 @@ literal|0
 operator|||
 name|y
 operator|>
-name|gimp_drawable_height
+name|gimp_item_height
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 condition|)
 return|return

@@ -138,7 +138,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2933d7980103
+DECL|enum|__anon29c615b30103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1433,9 +1433,12 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_drawable_width
+name|gimp_item_width
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 operator|-
 literal|1
@@ -1454,9 +1457,12 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_drawable_height
+name|gimp_item_height
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 operator|-
 literal|1

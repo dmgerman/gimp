@@ -947,9 +947,9 @@ operator|<
 operator|(
 name|off_x
 operator|+
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -963,9 +963,9 @@ operator|<
 operator|(
 name|off_y
 operator|+
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

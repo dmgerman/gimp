@@ -701,9 +701,12 @@ operator|<
 operator|(
 name|off_x
 operator|+
-name|gimp_drawable_width
+name|gimp_item_width
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 operator|)
 operator|&&
@@ -714,9 +717,12 @@ operator|<
 operator|(
 name|off_y
 operator|+
-name|gimp_drawable_height
+name|gimp_item_height
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 operator|)
 condition|)

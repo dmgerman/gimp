@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ba14580103
+DECL|enum|__anon29b526590103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -752,9 +752,9 @@ operator|=
 name|CLAMP
 argument_list|(
 operator|(
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -775,9 +775,9 @@ operator|=
 name|CLAMP
 argument_list|(
 operator|(
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

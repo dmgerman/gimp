@@ -256,7 +256,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949431a0103
+DECL|enum|__anon289d07270103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4343,9 +4343,9 @@ name|x2
 operator|=
 name|off_x
 operator|+
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -4356,9 +4356,9 @@ name|y2
 operator|=
 name|off_y
 operator|+
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -4396,9 +4396,9 @@ name|MAX
 argument_list|(
 name|off_x
 operator|+
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -4415,9 +4415,9 @@ name|MAX
 argument_list|(
 name|off_y
 operator|+
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

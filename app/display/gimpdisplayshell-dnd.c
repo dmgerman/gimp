@@ -212,9 +212,12 @@ name|gimage
 operator|->
 name|width
 operator|-
-name|gimp_drawable_width
+name|gimp_item_width
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 operator|)
 operator|/
@@ -229,9 +232,12 @@ name|gimage
 operator|->
 name|height
 operator|-
-name|gimp_drawable_height
+name|gimp_item_height
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 operator|)
 operator|/

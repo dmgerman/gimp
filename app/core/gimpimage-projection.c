@@ -1815,9 +1815,9 @@ name|CLAMP
 argument_list|(
 name|off_x
 operator|+
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -1836,9 +1836,9 @@ name|CLAMP
 argument_list|(
 name|off_y
 operator|+
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2503,9 +2503,9 @@ operator|&&
 operator|(
 name|off_x
 operator|+
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2519,9 +2519,9 @@ operator|&&
 operator|(
 name|off_y
 operator|+
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2623,7 +2623,7 @@ block|(gimp_drawable_has_alpha (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* It's !flat.           */
 block|(gimp_drawable_get_visible (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* It's visible.         */
-block|(gimp_drawable_width (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->width)&&       (gimp_drawable_height (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->height)&&
+block|(gimp_item_width  (GIMP_ITEM (gimage->layers->data)) ==        gimage->width)&&       (gimp_item_height (GIMP_ITEM (gimage->layers->data)) ==        gimage->height)&&
 comment|/* Covers all.           */
 block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* Not indexed.          */

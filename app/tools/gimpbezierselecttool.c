@@ -292,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbaf22b0108
+DECL|struct|__anon27baae9c0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbaf22b0208
+DECL|struct|__anon27baae9c0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbaf22b0308
+DECL|struct|__anon27baae9c0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -9662,9 +9662,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|bezier_sel
 operator|->
@@ -9672,9 +9672,9 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|bezier_sel
 operator|->
@@ -9939,9 +9939,9 @@ operator|/
 name|SUPERSAMPLE
 operator|)
 argument_list|,
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|bezier_sel
 operator|->

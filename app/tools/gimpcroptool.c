@@ -206,7 +206,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a06fe5a0103
+DECL|enum|__anon2b546b480103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -1987,9 +1987,9 @@ argument_list|)
 expr_stmt|;
 name|max_x
 operator|=
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -1999,9 +1999,9 @@ name|min_x
 expr_stmt|;
 name|max_y
 operator|=
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2790,9 +2790,9 @@ argument_list|)
 expr_stmt|;
 name|max_x
 operator|=
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2802,9 +2802,9 @@ name|min_x
 expr_stmt|;
 name|max_y
 operator|=
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -5529,9 +5529,9 @@ name|crop
 operator|->
 name|x2
 operator|=
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -5545,9 +5545,9 @@ name|crop
 operator|->
 name|y2
 operator|=
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -5713,9 +5713,9 @@ condition|)
 return|return;
 name|width
 operator|=
-name|gimp_drawable_width
+name|gimp_item_width
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|active_drawable
 argument_list|)
@@ -5723,9 +5723,9 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gimp_drawable_height
+name|gimp_item_height
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|active_drawable
 argument_list|)

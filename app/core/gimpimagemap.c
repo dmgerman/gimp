@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0b5ca70103
+DECL|enum|__anon2a50f73e0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1669,11 +1669,14 @@ literal|0
 operator|&&
 name|x
 operator|<
-name|gimp_drawable_width
+name|gimp_item_width
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|image_map
 operator|->
 name|drawable
+argument_list|)
 argument_list|)
 operator|&&
 name|y
@@ -1682,11 +1685,14 @@ literal|0
 operator|&&
 name|y
 operator|<
-name|gimp_drawable_height
+name|gimp_item_height
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|image_map
 operator|->
 name|drawable
+argument_list|)
 argument_list|)
 condition|)
 block|{
