@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4299640103
+DECL|enum|__anon2c2bfe460103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -168,7 +168,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4299640203
+DECL|enum|__anon2c2bfe460203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -966,7 +966,7 @@ name|selector_class
 operator|->
 name|name
 operator|=
-literal|"_GIMP"
+literal|"GI_MP"
 expr_stmt|;
 name|selector_class
 operator|->
