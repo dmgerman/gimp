@@ -232,9 +232,34 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpThumbState
+name|gimp_thumbnail_peek_image
+parameter_list|(
+name|GimpThumbnail
+modifier|*
+name|thumbnail
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpThumbState
+name|gimp_thumbnail_peek_thumb
+parameter_list|(
+name|GimpThumbnail
+modifier|*
+name|thumbnail
+parameter_list|,
+name|GimpThumbSize
+name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GdkPixbuf
 modifier|*
-name|gimp_thumbnail_get_pixbuf
+name|gimp_thumbnail_load_thumb
 parameter_list|(
 name|GimpThumbnail
 modifier|*
@@ -253,7 +278,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_thumbnail_save_pixbuf
+name|gimp_thumbnail_save_thumb
 parameter_list|(
 name|GimpThumbnail
 modifier|*

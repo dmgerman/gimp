@@ -63,6 +63,12 @@ directive|include
 file|"gimpthumbnail.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/libgimp-intl.h"
+end_include
+
 begin_define
 DECL|macro|TAG_DESCRIPTION
 define|#
@@ -137,7 +143,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbd300d0103
+DECL|enum|__anon2a3494a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -307,7 +313,7 @@ begin_function_decl
 specifier|static
 name|GdkPixbuf
 modifier|*
-name|gimp_thumbnail_read_png_thumb
+name|gimp_thumbnail_read_thumb
 parameter_list|(
 name|GimpThumbnail
 modifier|*
@@ -1398,15 +1404,77 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_thumbnail_update (GimpThumbnail * thumbnail)
-name|gimp_thumbnail_update
+name|GimpThumbState
+DECL|function|gimp_thumbnail_peek_image (GimpThumbnail * thumbnail)
+name|gimp_thumbnail_peek_image
 parameter_list|(
 name|GimpThumbnail
 modifier|*
 name|thumbnail
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_THUMBNAIL
+argument_list|(
+name|thumbnail
+argument_list|)
+argument_list|,
+name|GIMP_THUMB_STATE_UNKNOWN
+argument_list|)
+expr_stmt|;
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|thumbnail
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_thumbnail_update_image
+argument_list|(
+name|thumbnail
+argument_list|)
+expr_stmt|;
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|thumbnail
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|thumbnail
+operator|->
+name|image_state
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpThumbState
+DECL|function|gimp_thumbnail_peek_thumb (GimpThumbnail * thumbnail,GimpThumbSize size)
+name|gimp_thumbnail_peek_thumb
+parameter_list|(
+name|GimpThumbnail
+modifier|*
+name|thumbnail
+parameter_list|,
+name|GimpThumbSize
+name|size
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_THUMBNAIL
+argument_list|(
+name|thumbnail
+argument_list|)
+argument_list|,
+name|GIMP_THUMB_STATE_UNKNOWN
+argument_list|)
+expr_stmt|;
 name|g_object_freeze_notify
 argument_list|(
 name|G_OBJECT
@@ -1433,6 +1501,11 @@ name|thumbnail
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+name|thumbnail
+operator|->
+name|thumb_state
+return|;
 block|}
 end_function
 
@@ -1753,7 +1826,7 @@ name|thumbnail
 operator|->
 name|thumb_filename
 operator|=
-name|gimp_thumb_find_png_thumb
+name|gimp_thumb_find_thumb
 argument_list|(
 name|thumbnail
 operator|->
@@ -2070,8 +2143,8 @@ end_function
 begin_function
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_thumbnail_get_pixbuf (GimpThumbnail * thumbnail,GimpThumbSize size,GError ** error)
-name|gimp_thumbnail_get_pixbuf
+DECL|function|gimp_thumbnail_load_thumb (GimpThumbnail * thumbnail,GimpThumbSize size,GError ** error)
+name|gimp_thumbnail_load_thumb
 parameter_list|(
 name|GimpThumbnail
 modifier|*
@@ -2090,6 +2163,41 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_THUMBNAIL
+argument_list|(
+name|thumbnail
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|thumbnail
+operator|->
+name|image_uri
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2102,7 +2210,7 @@ name|NULL
 return|;
 name|pixbuf
 operator|=
-name|gimp_thumbnail_read_png_thumb
+name|gimp_thumbnail_read_thumb
 argument_list|(
 name|thumbnail
 argument_list|,
@@ -2180,8 +2288,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_thumbnail_save_pixbuf (GimpThumbnail * thumbnail,GdkPixbuf * pixbuf,const gchar * software,GError ** error)
-name|gimp_thumbnail_save_pixbuf
+DECL|function|gimp_thumbnail_save_thumb (GimpThumbnail * thumbnail,GdkPixbuf * pixbuf,const gchar * software,GError ** error)
+name|gimp_thumbnail_save_thumb
 parameter_list|(
 name|GimpThumbnail
 modifier|*
@@ -2290,6 +2398,17 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_thumb_ensure_thumb_dirs
+argument_list|(
+name|error
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|size
 operator|=
 name|MAX
@@ -2316,7 +2435,7 @@ name|TRUE
 return|;
 name|name
 operator|=
-name|gimp_thumb_png_thumb_name
+name|gimp_thumb_name_from_uri
 argument_list|(
 name|thumbnail
 operator|->
@@ -2631,9 +2750,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_thumb_ensure_thumb_dirs
+argument_list|(
+name|error
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
 name|name
 operator|=
-name|gimp_thumb_png_thumb_name
+name|gimp_thumb_name_from_uri
 argument_list|(
 name|thumbnail
 operator|->
@@ -2814,8 +2944,8 @@ begin_function
 specifier|static
 name|GdkPixbuf
 modifier|*
-DECL|function|gimp_thumbnail_read_png_thumb (GimpThumbnail * thumbnail,GimpThumbSize thumb_size,GError ** error)
-name|gimp_thumbnail_read_png_thumb
+DECL|function|gimp_thumbnail_read_thumb (GimpThumbnail * thumbnail,GimpThumbSize thumb_size,GError ** error)
+name|gimp_thumbnail_read_thumb
 parameter_list|(
 name|GimpThumbnail
 modifier|*
@@ -2871,7 +3001,7 @@ name|GIMP_THUMB_STATE_NOT_FOUND
 expr_stmt|;
 name|name
 operator|=
-name|gimp_thumb_find_png_thumb
+name|gimp_thumb_find_thumb
 argument_list|(
 name|thumbnail
 operator|->

@@ -37,7 +37,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_thumb_png_thumb_name
+name|gimp_thumb_name_from_uri
 parameter_list|(
 specifier|const
 name|gchar
@@ -54,7 +54,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_thumb_find_png_thumb
+name|gimp_thumb_find_thumb
 parameter_list|(
 specifier|const
 name|gchar
@@ -84,6 +84,18 @@ parameter_list|,
 name|gint64
 modifier|*
 name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_thumb_ensure_thumb_dirs
+parameter_list|(
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -6,39 +6,56 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_THUMB_H__
+name|__GIMP_THUMB_ERROR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_THUMB_H__
+DECL|macro|__GIMP_THUMB_ERROR_H__
 define|#
 directive|define
-name|__GIMP_THUMB_H__
+name|__GIMP_THUMB_ERROR_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<libgimpthumb/gimpthumb-error.h>
-end_include
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b1d7cd70103
+block|{
+DECL|enumerator|GIMP_THUMB_ERROR_OPEN
+name|GIMP_THUMB_ERROR_OPEN
+block|,
+comment|/*  open failed                            */
+DECL|enumerator|GIMP_THUMB_ERROR_OPEN_ENOENT
+name|GIMP_THUMB_ERROR_OPEN_ENOENT
+block|,
+comment|/*  file does not exist                    */
+DECL|enumerator|GIMP_THUMB_ERROR_MKDIR
+name|GIMP_THUMB_ERROR_MKDIR
+block|,
+comment|/*  mkdir failed                           */
+DECL|typedef|GimpThumbError
+block|}
+name|GimpThumbError
+typedef|;
+end_typedef
 
-begin_include
-include|#
-directive|include
-file|<libgimpthumb/gimpthumb-types.h>
-end_include
+begin_define
+DECL|macro|GIMP_THUMB_ERROR
+define|#
+directive|define
+name|GIMP_THUMB_ERROR
+value|(gimp_thumb_error_quark ())
+end_define
 
-begin_include
-include|#
-directive|include
-file|<libgimpthumb/gimpthumb-utils.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpthumb/gimpthumbnail.h>
-end_include
+begin_decl_stmt
+name|GQuark
+name|gimp_thumb_error_quark
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#
@@ -46,7 +63,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_THUMB_H__ */
+comment|/* __GIMP_THUMB_ERROR_H__ */
 end_comment
 
 end_unit
