@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f1b540103
+DECL|enum|__anon2bf55ff80103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -8991,6 +8991,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* Check that the layer tatoos don't overlap with channel or vector ones */
 for|for
 control|(
 name|list
@@ -9047,16 +9048,12 @@ name|gimage
 argument_list|,
 name|ltattoo
 argument_list|)
-operator|!=
-name|NULL
 condition|)
-block|{
 name|retval
 operator|=
 name|FALSE
 expr_stmt|;
 comment|/* Oopps duplicated tattoo in channel */
-block|}
 if|if
 condition|(
 name|gimp_image_get_vectors_by_tattoo
@@ -9065,18 +9062,14 @@ name|gimage
 argument_list|,
 name|ltattoo
 argument_list|)
-operator|!=
-name|NULL
 condition|)
-block|{
 name|retval
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* Oopps duplicated tattoo in layer */
+comment|/* Oopps duplicated tattoo in vectors */
 block|}
-block|}
-comment|/* Now check that the paths channel tattoos don't overlap */
+comment|/* Now check that the channel and vectors tattoos don't overlap */
 for|for
 control|(
 name|list
@@ -9141,16 +9134,12 @@ name|gimage
 argument_list|,
 name|ctattoo
 argument_list|)
-operator|!=
-name|NULL
 condition|)
-block|{
 name|retval
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* Oopps duplicated tattoo in layer */
-block|}
+comment|/* Oopps duplicated tattoo in vectors */
 block|}
 comment|/* Find the max tatto value in the vectors */
 for|for
@@ -9161,7 +9150,7 @@ name|GIMP_LIST
 argument_list|(
 name|gimage
 operator|->
-name|channels
+name|vectors
 argument_list|)
 operator|->
 name|list
@@ -9212,7 +9201,7 @@ name|retval
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* Must check the state is valid */
+comment|/* Must check if the state is valid */
 if|if
 condition|(
 name|retval

@@ -617,10 +617,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* void          gimp_open_file            (Gimp               *gimp, 					 const gchar        *filename, 					 gboolean            with_display); */
-end_comment
-
 begin_function_decl
 name|GimpContext
 modifier|*

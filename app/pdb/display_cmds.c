@@ -383,11 +383,9 @@ if|if
 condition|(
 name|success
 condition|)
-name|gtk_widget_destroy
+name|gimp_display_delete
 argument_list|(
 name|gdisp
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 return|return

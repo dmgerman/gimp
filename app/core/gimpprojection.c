@@ -557,7 +557,6 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/*    *  Set all GimpDisplay parameters...    */
 name|gdisp
 operator|=
 name|g_object_new
@@ -577,6 +576,7 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+comment|/*  refs the image  */
 name|gimp_display_connect
 argument_list|(
 name|gdisp
@@ -584,6 +584,7 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
+comment|/*  FIXME: this needs to go to GimpDisplayShell  */
 name|gdisp
 operator|->
 name|scale
@@ -761,7 +762,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  free the gimage  */
+comment|/*  unrefs the gimage  */
 name|gimp_display_disconnect
 argument_list|(
 name|gdisp
@@ -829,6 +830,16 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  Traverse the list of displays, returning the one that matches the ID    *  If no display in the list is a match, return NULL.    */
 for|for
 control|(
