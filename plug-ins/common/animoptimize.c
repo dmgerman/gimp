@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cae7080103
+DECL|enum|__anon287b98500103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cae7080203
+DECL|enum|__anon287b98500203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -3666,6 +3666,8 @@ block|}
 block|}
 name|skip_right
 label|:
+comment|/* nop */
+empty_stmt|;
 block|}
 comment|/* xit */
 comment|/* Compare with next pixels from right to left */
@@ -3863,6 +3865,8 @@ block|}
 block|}
 name|skip_left
 label|:
+comment|/* nop */
+empty_stmt|;
 block|}
 comment|/* xit */
 block|}
