@@ -191,6 +191,12 @@ parameter_list|,
 name|GimpImageBaseType
 name|type
 parameter_list|,
+name|gdouble
+name|xres
+parameter_list|,
+name|gdouble
+name|yres
+parameter_list|,
 name|gint32
 modifier|*
 name|layer_ID
@@ -836,7 +842,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c59ea10108
+DECL|struct|__anon2c2550790108
 block|{
 DECL|member|type
 name|gchar
@@ -1457,7 +1463,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c59ea10208
+DECL|struct|__anon2c2550790208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1479,7 +1485,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c59ea10308
+DECL|struct|__anon2c2550790308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -2485,6 +2491,11 @@ name|gchar
 modifier|*
 name|extension
 decl_stmt|;
+name|gdouble
+name|xres
+decl_stmt|,
+name|yres
+decl_stmt|;
 name|fname
 operator|=
 name|gimp_image_get_filename
@@ -2668,6 +2679,17 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_image_get_resolution
+argument_list|(
+name|image_ID
+argument_list|,
+operator|&
+name|xres
+argument_list|,
+operator|&
+name|yres
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|decovals
@@ -2712,6 +2734,10 @@ argument_list|,
 name|height
 argument_list|,
 name|GIMP_GRAY
+argument_list|,
+name|xres
+argument_list|,
+name|yres
 argument_list|,
 name|layer_ID_dst
 operator|+
@@ -2775,6 +2801,10 @@ argument_list|,
 name|height
 argument_list|,
 name|GIMP_GRAY
+argument_list|,
+name|xres
+argument_list|,
+name|yres
 argument_list|,
 name|layer_ID_dst
 operator|+
@@ -3030,7 +3060,7 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|create_new_image (const gchar * filename,const gchar * layername,guint width,guint height,GimpImageBaseType type,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
+DECL|function|create_new_image (const gchar * filename,const gchar * layername,guint width,guint height,GimpImageBaseType type,gdouble xres,gdouble yres,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
 name|create_new_image
 parameter_list|(
 specifier|const
@@ -3051,6 +3081,12 @@ name|height
 parameter_list|,
 name|GimpImageBaseType
 name|type
+parameter_list|,
+name|gdouble
+name|xres
+parameter_list|,
+name|gdouble
+name|yres
 parameter_list|,
 name|gint32
 modifier|*
@@ -3090,6 +3126,15 @@ argument_list|(
 name|image_ID
 argument_list|,
 name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_image_set_resolution
+argument_list|(
+name|image_ID
+argument_list|,
+name|xres
+argument_list|,
+name|yres
 argument_list|)
 expr_stmt|;
 operator|*
