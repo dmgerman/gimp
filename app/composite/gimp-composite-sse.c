@@ -13,24 +13,22 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_MMX
-end_ifdef
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ARCH_X86
-end_ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|USE_SSE
+argument_list|)
+end_if
 
 begin_if
 if|#
 directive|if
-name|__GNUC__
-operator|>=
-literal|3
+name|defined
+argument_list|(
+name|ARCH_X86
+argument_list|)
 end_if
 
 begin_include
@@ -63,11 +61,13 @@ directive|include
 file|"gimp-composite-sse.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_SSE
-end_ifdef
+begin_if
+if|#
+directive|if
+name|__GNUC__
+operator|>=
+literal|3
+end_if
 
 begin_define
 DECL|macro|pminub (src,dst,tmp)
@@ -98,46 +98,6 @@ name|tmp
 parameter_list|)
 value|"pmaxub " "%%" #src ", %%" #dst
 end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|pminub (src,dst,tmp)
-define|#
-directive|define
-name|pminub
-parameter_list|(
-name|src
-parameter_list|,
-name|dst
-parameter_list|,
-name|tmp
-parameter_list|)
-value|"movq %%" #dst ", %%" #tmp ";" "psubusb %%" #src ", %%" #tmp ";" "psubb %%" #tmp ", %%" #dst
-end_define
-
-begin_define
-DECL|macro|pmaxub (a,b,tmp)
-define|#
-directive|define
-name|pmaxub
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|tmp
-parameter_list|)
-value|"movq %%" #a ", %%" #tmp ";" "psubusb %%" #b ", %%" #tmp ";" "paddb %%" #tmp ", %%" #b
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* a = INT_MULT(a,b) */

@@ -1258,8 +1258,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_overlay_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_overlay_rgba8_rgba8_rgba8_mmx
+DECL|function|xxxgimp_composite_overlay_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
+name|xxxgimp_composite_overlay_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1274,7 +1274,9 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("pxor    %%mm0,%%mm0\n"                 "movq    (%0),%%mm7"                 :  : "m" (*rgba8_w128) : "%mm0");
+asm|("pxor    %%mm0,%%mm0\n"                 "movq    (%0),%%mm7"                 :
+comment|/* empty */
+asm|: "m" (*rgba8_w128) : "%mm0");
 for|for
 control|(
 init|;
@@ -1291,9 +1293,38 @@ operator|-=
 literal|2
 control|)
 block|{
-asm|asm ("  movq    (%0), %%mm2; addl  $8, %0\n"          "\tmovq    (%1), %%mm3; addl  $8, %1\n"           "\tcall mmx_op_overlay\n"           "\tmovq    %%mm1, (%2); addl  $8, %2\n"          : "+r" (op.A), "+S" (op.B), "+D" (op.D)          :
-comment|/* empty */
-asm|: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|asm
+specifier|volatile
+asm|("  movq    (%0), %%mm2; addl  $8, %0\n" 																		"\tmovq    (%1), %%mm3; addl  $8, %1\n"
+comment|/* low bytes */
+asm|mmx_low_bytes_to_words(mm3,mm5,mm0) 																		"\tpcmpeqb   %%mm4, %%mm4\n" 																		"\tpsubb     %%mm2, %%mm4\n"
+comment|/* mm4 = 255 - A */
+asm|"\tpunpcklbw %%mm0, %%mm4\n"
+comment|/* mm4 = (low bytes as word) mm4 */
+asm|"\tmovq      (%3), %%mm6\n"
+comment|/* mm6 = words of value 2 */
+asm|"\tpmullw    %%mm5, %%mm6\n"
+comment|/* mm6 = 2 * low bytes of B */
+asm|mmx_int_mult(mm6,mm4,mm7)
+comment|/* mm4 = INT_MULT(mm6, mm4) */
+comment|/* high bytes */
+asm|mmx_high_bytes_to_words(mm3,mm5,mm0) 																		"\tpcmpeqb   %%mm1, %%mm1\n" 																		"\tpsubb     %%mm2, %%mm1\n"
+comment|/* mm1 = 255 - A */
+asm|"\tpunpckhbw %%mm0, %%mm1\n"
+comment|/* mm1 = (high bytes as word) mm1 */
+asm|"\tmovq      (%3), %%mm6\n"
+comment|/* mm6 = words of value 2 */
+asm|"\tpmullw    %%mm5, %%mm6\n"
+comment|/* mm6 = 2 * high bytes of B */
+asm|mmx_int_mult(mm6,mm1,mm7)
+comment|/* mm1 = INT_MULT(mm6, mm1) */
+asm|"\tpackuswb  %%mm1,%%mm4\n"
+comment|/* mm4 = intermediate value */
+asm|mmx_low_bytes_to_words(mm4,mm5,mm0) 																		mmx_low_bytes_to_words(mm2,mm6,mm0) 																		"\tpaddw     %%mm6,%%mm5\n" 																		mmx_int_mult(mm6,mm5,mm7)
+comment|/* mm5 = INT_MULT(mm6, mm5) low bytes */
+asm|mmx_high_bytes_to_words(mm4,mm1,mm0) 																		mmx_high_bytes_to_words(mm2,mm6,mm0) 																		"\tpaddw     %%mm6,%%mm1\n" 																		mmx_int_mult(mm6,mm1,mm7)
+comment|/* mm1 = INT_MULT(mm6, mm1) high bytes */
+asm|"\tpackuswb  %%mm1,%%mm5\n"  																		"\tmovq      (%4), %%mm0\n" 																		"\tmovq      %%mm0, %%mm1\n" 																		"\tpandn     %%mm5, %%mm1\n"  																		"\t" pminub(mm2,mm3,mm4) "\n" 																		"\tpand      %%mm0, %%mm3\n"  																		"\tpor       %%mm3, %%mm1\n"  																		"\tmovq    %%mm1, (%2); addl  $8, %2\n" 																		: "+r" (op.A), "+r" (op.B), "+r" (op.D) 																		: "m" (*rgba8_w2), "m" (*rgba8_alpha_mask) 																		: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 if|if
 condition|(
@@ -1304,9 +1335,38 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd    (%0), %%mm2;\n"                   "\tmovd    (%1), %%mm3;\n"                    "\tcall mmx_op_overlay\n"                    "\tmovd    %%mm1, (%2);\n"                   :
+asm|("  movd    (%0), %%mm2;\n"                   "\tmovd    (%1), %%mm3;\n"
+comment|/* low bytes */
+asm|mmx_low_bytes_to_words(mm3,mm5,mm0) 																		"\tpcmpeqb   %%mm4, %%mm4\n" 																		"\tpsubb     %%mm2, %%mm4\n"
+comment|/* mm4 = 255 - A */
+asm|"\tpunpcklbw %%mm0, %%mm4\n"
+comment|/* mm4 = (low bytes as word) mm4 */
+asm|"\tmovq      (%3), %%mm6\n"
+comment|/* mm6 = words of value 2 */
+asm|"\tpmullw    %%mm5, %%mm6\n"
+comment|/* mm6 = 2 * low bytes of B */
+asm|mmx_int_mult(mm6,mm4,mm7)
+comment|/* mm4 = INT_MULT(mm6, mm4) */
+comment|/* high bytes */
+asm|mmx_high_bytes_to_words(mm3,mm5,mm0) 																		"\tpcmpeqb   %%mm1, %%mm1\n" 																		"\tpsubb     %%mm2, %%mm1\n"
+comment|/* mm1 = 255 - A */
+asm|"\tpunpckhbw %%mm0, %%mm1\n"
+comment|/* mm1 = (high bytes as word) mm1 */
+asm|"\tmovq      (%3), %%mm6\n"
+comment|/* mm6 = words of value 2 */
+asm|"\tpmullw    %%mm5, %%mm6\n"
+comment|/* mm6 = 2 * high bytes of B */
+asm|mmx_int_mult(mm6,mm1,mm7)
+comment|/* mm1 = INT_MULT(mm6, mm1) */
+asm|"\tpackuswb  %%mm1,%%mm4\n"
+comment|/* mm4 = intermediate value */
+asm|mmx_low_bytes_to_words(mm4,mm5,mm0) 																		mmx_low_bytes_to_words(mm2,mm6,mm0) 																		"\tpaddw     %%mm6,%%mm5\n" 																		mmx_int_mult(mm6,mm5,mm7)
+comment|/* mm5 = INT_MULT(mm6, mm5) low bytes */
+asm|mmx_high_bytes_to_words(mm4,mm1,mm0) 																		mmx_high_bytes_to_words(mm2,mm6,mm0) 																		"\tpaddw     %%mm6,%%mm1\n" 																		mmx_int_mult(mm6,mm1,mm7)
+comment|/* mm1 = INT_MULT(mm6, mm1) high bytes */
+asm|"\tpackuswb  %%mm1,%%mm5\n"  																		"\tmovq      (%4), %%mm0\n" 																		"\tmovq      %%mm0, %%mm1\n" 																		"\tpandn     %%mm5, %%mm1\n"  																		"\t" pminub(mm2,mm3,mm4) "\n" 																		"\tpand      %%mm0, %%mm3\n"  																		"\tpor       %%mm3, %%mm1\n"                    "\tmovd    %%mm1, (%2);\n"                   :
 comment|/* empty */
-asm|: "r" (op.A), "r" (op.B), "r" (op.D)                   : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (*rgba8_w2), "m" (*rgba8_alpha_mask)                   : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}

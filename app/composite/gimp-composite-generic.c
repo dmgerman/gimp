@@ -5923,29 +5923,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_normal_rgba8_any_any_generic (GimpCompositeContext * ctx)
-name|gimp_composite_normal_rgba8_any_any_generic
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-name|ctx
-parameter_list|)
-block|{
-name|ctx
-operator|->
-name|D
-operator|=
-name|ctx
-operator|->
-name|B
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_composite_erase_rgba8_any_any_generic (GimpCompositeContext * ctx)
-name|gimp_composite_erase_rgba8_any_any_generic
+DECL|function|gimp_composite_erase_any_any_any_generic (GimpCompositeContext * ctx)
+name|gimp_composite_erase_any_any_any_generic
 parameter_list|(
 name|GimpCompositeContext
 modifier|*

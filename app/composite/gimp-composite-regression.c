@@ -1583,8 +1583,6 @@ operator|.
 name|r
 operator|=
 name|v
-operator|+
-literal|8
 expr_stmt|;
 name|rgba8
 index|[
@@ -1594,8 +1592,6 @@ operator|.
 name|g
 operator|=
 name|v
-operator|+
-literal|8
 expr_stmt|;
 name|rgba8
 index|[
@@ -1605,8 +1601,6 @@ operator|.
 name|b
 operator|=
 name|v
-operator|+
-literal|8
 expr_stmt|;
 name|rgba8
 index|[
@@ -1616,8 +1610,6 @@ operator|.
 name|a
 operator|=
 name|v
-operator|+
-literal|8
 expr_stmt|;
 block|}
 block|}

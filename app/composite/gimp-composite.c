@@ -589,7 +589,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2af3e0260108
+DECL|struct|__anon2ab1431e0108
 struct|struct
 block|{
 DECL|member|announce_function
@@ -1369,7 +1369,7 @@ expr_stmt|;
 block|}
 name|g_printerr
 argument_list|(
-literal|"gimp_composite: use=%s, verbose=%s\n"
+literal|"gimp_composite: use=%s, verbose=%s"
 argument_list|,
 operator|(
 name|gimp_composite_options
@@ -1396,6 +1396,9 @@ else|:
 literal|"no"
 argument_list|)
 expr_stmt|;
+name|gimp_composite_generic_install
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1408,21 +1411,17 @@ name|GIMP_COMPOSITE_OPTION_INITIALISED
 operator|)
 condition|)
 block|{
-name|gimp_composite_generic_install
+name|cpu
+operator|=
+name|cpu_accel
 argument_list|()
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"gimp-composite:"
-argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
 name|ARCH_X86
 if|if
 condition|(
-name|cpu_accel
-argument_list|()
+name|cpu
 operator|&
 name|CPU_ACCEL_X86_MMX
 condition|)
@@ -1436,90 +1435,19 @@ argument_list|)
 decl_stmt|;
 name|g_printerr
 argument_list|(
-literal|" mmx"
+literal|" +mmx"
 argument_list|)
 expr_stmt|;
 name|gimp_composite_mmx_install
 argument_list|()
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_SSE
-operator|||
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_MMXEXT
-condition|)
-block|{
-specifier|extern
-name|void
-name|gimp_composite_sse_install
-argument_list|(
-name|void
-argument_list|)
-decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|" sse"
-argument_list|)
-expr_stmt|;
-name|gimp_composite_sse_install
-argument_list|()
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_SSE2
-condition|)
-block|{
-specifier|extern
-name|void
-name|gimp_composite_sse2_install
-argument_list|(
-name|void
-argument_list|)
-decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|" sse2"
-argument_list|)
-expr_stmt|;
-name|gimp_composite_sse2_install
-argument_list|()
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|cpu_accel
-argument_list|()
-operator|&
-name|CPU_ACCEL_X86_3DNOW
-condition|)
-block|{
-specifier|extern
-name|void
-name|gimp_composite_3dnow_install
-argument_list|(
-name|void
-argument_list|)
-decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|" 3dnow"
-argument_list|)
-expr_stmt|;
-name|gimp_composite_3dnow_install
-argument_list|()
-expr_stmt|;
-block|}
+if|#
+directive|if
+literal|0
+block|if (cpu& CPU_ACCEL_X86_SSE || cpu_accel()& CPU_ACCEL_X86_MMXEXT)         {           extern void gimp_composite_sse_install (void);           g_printerr (" +sse");           gimp_composite_sse_install ();         }        if (cpu& CPU_ACCEL_X86_SSE2)         {           extern void gimp_composite_sse2_install (void);           g_printerr (" +sse2");           gimp_composite_sse2_install ();         }        if (cpu& CPU_ACCEL_X86_3DNOW)         {           extern void gimp_composite_3dnow_install (void);           g_printerr (" +3dnow");           gimp_composite_3dnow_install ();         }
+endif|#
+directive|endif
 endif|#
 directive|endif
 ifdef|#
@@ -1527,8 +1455,7 @@ directive|ifdef
 name|ARCH_PPC
 if|if
 condition|(
-name|cpu_accel
-argument_list|()
+name|cpu
 operator|&
 name|CPU_ACCEL_PPC_ALTIVEC
 condition|)
@@ -1555,11 +1482,6 @@ endif|#
 directive|endif
 endif|#
 directive|endif
-name|g_printerr
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
 name|gimp_composite_options
 operator|.
 name|bits
@@ -1567,6 +1489,11 @@ operator||=
 name|GIMP_COMPOSITE_OPTION_INITIALISED
 expr_stmt|;
 block|}
+name|g_printerr
+argument_list|(
+literal|"\n"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

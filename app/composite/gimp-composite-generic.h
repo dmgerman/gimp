@@ -166,7 +166,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_composite_erase_rgba8_any_any_generic
+name|gimp_composite_erase_any_any_any_generic
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -237,16 +237,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_composite_normal_any_any_any_generic
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_composite_normal_rgba8_any_any_generic
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
