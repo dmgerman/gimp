@@ -73,6 +73,13 @@ range|:
 literal|1
 decl_stmt|;
 comment|/* Are we querying the plug-in? */
+DECL|member|init
+name|guint
+name|init
+range|:
+literal|1
+decl_stmt|;
+comment|/* Are we initialing the plug-in? */
 DECL|member|synchronous
 name|guint
 name|synchronous
