@@ -2076,6 +2076,14 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+comment|/*  skip -1 guides from old XCFs  */
+if|if
+condition|(
+name|position
+operator|<
+literal|0
+condition|)
+continue|continue;
 switch|switch
 condition|(
 name|orientation
