@@ -73,7 +73,7 @@ comment|/* static int  gimp_size_entry_focus_in_callback  (GtkWidget *widget, 		
 end_comment
 
 begin_enum
-DECL|enum|__anon2c66a1f80103
+DECL|enum|__anon28c4cef30103
 enum|enum
 block|{
 DECL|enumerator|VALUE_CHANGED
@@ -3715,6 +3715,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_size_entry_update_unit (GimpSizeEntry * gse,GUnit unit)
 name|gimp_size_entry_update_unit
@@ -3898,6 +3899,18 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/* hack !!! */
+name|gtk_signal_handler_block_by_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gsef
+operator|->
+name|value_adjustment
+argument_list|)
+argument_list|,
+name|gsef
+argument_list|)
+expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
 argument_list|(
 name|gse
@@ -3913,7 +3926,32 @@ operator|->
 name|max_refval
 argument_list|)
 expr_stmt|;
+name|gtk_signal_handler_unblock_by_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gsef
+operator|->
+name|value_adjustment
+argument_list|)
+argument_list|,
+name|gsef
+argument_list|)
+expr_stmt|;
 block|}
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gse
+argument_list|)
+argument_list|,
+name|gimp_size_entry_signals
+index|[
+name|VALUE_CHANGED
+index|]
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
