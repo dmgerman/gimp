@@ -21,7 +21,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimageF.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -347,7 +347,7 @@ parameter_list|(
 name|klass
 parameter_list|)
 define|\
-value|GTK_CHECK_CLASS_CAST (klass, gimp_image_get_type(), GimpImageClass)
+value|GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_IMAGE, GimpImageClass)
 end_define
 
 begin_endif

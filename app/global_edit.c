@@ -1178,7 +1178,8 @@ block|}
 end_function
 
 begin_function
-name|int
+name|GimpLayer
+modifier|*
 DECL|function|edit_paste (GImage * gimage,GimpDrawable * drawable,TileManager * paste,int paste_into)
 name|edit_paste
 parameter_list|(
@@ -1375,23 +1376,18 @@ name|gimage
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_DRAWABLE
-argument_list|(
 name|float_layer
-argument_list|)
-operator|->
-name|ID
 return|;
 block|}
 else|else
 return|return
-literal|0
+name|NULL
 return|;
 block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|edit_clear (GImage * gimage,GimpDrawable * drawable)
 name|edit_clear
 parameter_list|(
@@ -1642,7 +1638,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|edit_fill (GImage * gimage,GimpDrawable * drawable)
 name|edit_fill
 parameter_list|(

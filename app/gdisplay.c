@@ -849,7 +849,7 @@ argument_list|(
 name|title
 argument_list|,
 literal|"%s"
-comment|/*"-%d"*/
+literal|"-%d"
 literal|".%d (%s)"
 argument_list|,
 name|prune_filename

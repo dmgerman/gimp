@@ -25,6 +25,14 @@ file|"gimpobjectF.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_TYPE_OBJECT
+define|#
+directive|define
+name|GIMP_TYPE_OBJECT
+value|gimp_object_get_type()
+end_define
+
+begin_define
 DECL|macro|GIMP_OBJECT (obj)
 define|#
 directive|define
@@ -32,20 +40,7 @@ name|GIMP_OBJECT
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|GTK_CHECK_CAST (obj, gimp_object_get_type (), GimpObject)
-end_define
-
-begin_define
-DECL|macro|GIMP_OBJECT_CLASS (klass)
-define|#
-directive|define
-name|GIMP_OBJECT_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-define|\
-value|GTK_CHECK_CLASS_CAST (klass, gimp_object_get_type(), GimpObjectClass)
+value|GTK_CHECK_CAST (obj, GIMP_TYPE_OBJECT, GimpObject)
 end_define
 
 begin_define
@@ -56,8 +51,7 @@ name|GIMP_IS_OBJECT
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
-value|GTK_CHECK_TYPE (obj, gimp_object_get_type())
+value|GTK_CHECK_TYPE (obj, GIMP_TYPE_OBJECT)
 end_define
 
 begin_function_decl

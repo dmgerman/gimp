@@ -387,7 +387,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpLayer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

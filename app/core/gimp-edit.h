@@ -68,7 +68,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|GimpLayer
+modifier|*
 name|edit_paste
 parameter_list|(
 name|GImage

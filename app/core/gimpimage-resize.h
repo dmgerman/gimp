@@ -55,6 +55,14 @@ file|"tile_manager.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_TYPE_IMAGE
+define|#
+directive|define
+name|GIMP_TYPE_IMAGE
+value|gimp_image_get_type()
+end_define
+
+begin_define
 DECL|macro|GIMP_IMAGE (obj)
 define|#
 directive|define
@@ -62,7 +70,7 @@ name|GIMP_IMAGE
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, gimp_image_get_type (), GimpImage)
+value|GTK_CHECK_CAST (obj, GIMP_TYPE_IMAGE, GimpImage)
 end_define
 
 begin_define
@@ -73,7 +81,7 @@ name|GIMP_IS_GIMAGE
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, gimp_image_get_type())
+value|GTK_CHECK_TYPE (obj, GIMP_TYPE_IMAGE)
 end_define
 
 begin_comment
@@ -83,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7a0f5c0103
+DECL|enum|__anon2b3956de0103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -186,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7a0f5c0203
+DECL|enum|__anon2b3956de0203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -265,7 +273,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7a0f5c0303
+DECL|enum|__anon2b3956de0303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -293,7 +301,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7a0f5c0403
+DECL|enum|__anon2b3956de0403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary

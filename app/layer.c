@@ -86,7 +86,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c1d898a0103
+DECL|enum|__anon2944557c0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -2656,12 +2656,7 @@ argument_list|)
 operator|->
 name|gimage
 argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
 name|layer
-argument_list|)
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 comment|/*  update the affected region  */

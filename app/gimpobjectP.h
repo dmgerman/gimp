@@ -21,7 +21,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpobjectF.h"
+file|"gimpobject.h"
 end_include
 
 begin_struct
@@ -40,7 +40,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a84e00108
+DECL|struct|__anon2796cf520108
 block|{
 DECL|member|parent_class
 name|GtkObjectClass
@@ -52,14 +52,39 @@ name|GimpObjectClass
 typedef|;
 end_typedef
 
-begin_function_decl
-name|guint
-name|gimp_object_get_type
+begin_define
+DECL|macro|GIMP_OBJECT_CLASS (klass)
+define|#
+directive|define
+name|GIMP_OBJECT_CLASS
 parameter_list|(
-name|void
+name|klass
 parameter_list|)
-function_decl|;
-end_function_decl
+define|\
+value|GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_OBJECT, GimpObjectClass)
+end_define
+
+begin_define
+DECL|macro|GIMP_TYPE_INIT (typevar,obtype,classtype,obinit,classinit,parent)
+define|#
+directive|define
+name|GIMP_TYPE_INIT
+parameter_list|(
+name|typevar
+parameter_list|,
+name|obtype
+parameter_list|,
+name|classtype
+parameter_list|,
+name|obinit
+parameter_list|,
+name|classinit
+parameter_list|,
+name|parent
+parameter_list|)
+define|\
+value|if(!typevar){ \ 	GtkTypeInfo _info={#obtype, \ 			   sizeof(obtype), \ 			   sizeof(classtype), \ 			   (GtkClassInitFunc)classinit, \ 			   (GtkObjectInitFunc)obinit, \ 			   NULL, NULL, NULL}; \ 	typevar=gtk_type_unique(parent,&_info); \ }
+end_define
 
 begin_endif
 endif|#

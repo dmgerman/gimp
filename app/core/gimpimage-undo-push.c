@@ -3755,36 +3755,26 @@ end_comment
 
 begin_function
 name|int
-DECL|function|undo_push_layer_displace (GImage * gimage,int layer_ID)
+DECL|function|undo_push_layer_displace (GImage * gimage,GimpLayer * layer)
 name|undo_push_layer_displace
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|layer_ID
+name|GimpLayer
+modifier|*
+name|layer
 parameter_list|)
 block|{
 name|Undo
 modifier|*
 name|new
 decl_stmt|;
-name|Layer
-modifier|*
-name|layer
-decl_stmt|;
 name|int
 modifier|*
 name|info
 decl_stmt|;
-name|layer
-operator|=
-name|layer_get_ID
-argument_list|(
-name|layer_ID
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -3846,7 +3836,13 @@ index|[
 literal|0
 index|]
 operator|=
-name|layer_ID
+name|drawable_ID
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|info
 index|[
