@@ -9749,6 +9749,15 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
+name|draw_core_stop
+argument_list|(
+name|iscissors
+operator|->
+name|core
+argument_list|,
+name|tool
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|iscissors
