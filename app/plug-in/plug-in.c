@@ -656,9 +656,9 @@ specifier|static
 name|void
 name|plug_in_handle_proc_run
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
+name|plug_in
 parameter_list|,
 name|GPProcRun
 modifier|*
@@ -672,9 +672,9 @@ specifier|static
 name|void
 name|plug_in_handle_proc_return
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
+name|plug_in
 parameter_list|,
 name|GPProcReturn
 modifier|*
@@ -688,9 +688,9 @@ specifier|static
 name|void
 name|plug_in_handle_proc_install
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
+name|plug_in
 parameter_list|,
 name|GPProcInstall
 modifier|*
@@ -704,9 +704,9 @@ specifier|static
 name|void
 name|plug_in_handle_proc_uninstall
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
+name|plug_in
 parameter_list|,
 name|GPProcUninstall
 modifier|*
@@ -720,7 +720,9 @@ specifier|static
 name|void
 name|plug_in_handle_has_init
 parameter_list|(
-name|void
+name|PlugIn
+modifier|*
+name|plug_in
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -820,28 +822,6 @@ specifier|static
 name|GSList
 modifier|*
 name|plug_in_stack
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|current_readchannel
-specifier|static
-name|GIOChannel
-modifier|*
-name|current_readchannel
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|current_writechannel
-specifier|static
-name|GIOChannel
-modifier|*
-name|current_writechannel
 init|=
 name|NULL
 decl_stmt|;
@@ -1440,7 +1420,9 @@ condition|(
 operator|!
 name|wire_read_msg
 argument_list|(
-name|current_readchannel
+name|plug_in
+operator|->
+name|my_read
 argument_list|,
 operator|&
 name|msg
@@ -1449,7 +1431,7 @@ condition|)
 block|{
 name|plug_in_close
 argument_list|(
-name|current_plug_in
+name|plug_in
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1459,7 +1441,7 @@ else|else
 block|{
 name|plug_in_handle_message
 argument_list|(
-name|current_plug_in
+name|plug_in
 argument_list|,
 operator|&
 name|msg
@@ -1566,7 +1548,9 @@ condition|(
 operator|!
 name|wire_read_msg
 argument_list|(
-name|current_readchannel
+name|plug_in
+operator|->
+name|my_read
 argument_list|,
 operator|&
 name|msg
@@ -1575,7 +1559,7 @@ condition|)
 block|{
 name|plug_in_close
 argument_list|(
-name|current_plug_in
+name|plug_in
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1585,7 +1569,7 @@ else|else
 block|{
 name|plug_in_handle_message
 argument_list|(
-name|current_plug_in
+name|plug_in
 argument_list|,
 operator|&
 name|msg
@@ -3017,7 +3001,9 @@ argument_list|)
 expr_stmt|;
 name|gp_quit_write
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|)
 expr_stmt|;
 name|plug_in_pop
@@ -3749,7 +3735,9 @@ condition|(
 operator|!
 name|gp_config_write
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|,
 operator|&
 name|config
@@ -3758,7 +3746,9 @@ operator|||
 operator|!
 name|gp_proc_run_write
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|,
 operator|&
 name|proc_run
@@ -3767,7 +3757,9 @@ operator|||
 operator|!
 name|wire_flush
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|)
 condition|)
 block|{
@@ -4065,7 +4057,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|current_readchannel
+name|plug_in
+operator|->
+name|my_read
 operator|==
 name|NULL
 condition|)
@@ -4104,7 +4098,9 @@ condition|(
 operator|!
 name|wire_read_msg
 argument_list|(
-name|current_readchannel
+name|plug_in
+operator|->
+name|my_read
 argument_list|,
 operator|&
 name|msg
@@ -4324,8 +4320,6 @@ case|:
 name|plug_in_handle_proc_run
 argument_list|(
 name|plug_in
-operator|->
-name|gimp
 argument_list|,
 name|msg
 operator|->
@@ -4339,8 +4333,6 @@ case|:
 name|plug_in_handle_proc_return
 argument_list|(
 name|plug_in
-operator|->
-name|gimp
 argument_list|,
 name|msg
 operator|->
@@ -4378,8 +4370,6 @@ case|:
 name|plug_in_handle_proc_return
 argument_list|(
 name|plug_in
-operator|->
-name|gimp
 argument_list|,
 name|msg
 operator|->
@@ -4400,8 +4390,6 @@ case|:
 name|plug_in_handle_proc_install
 argument_list|(
 name|plug_in
-operator|->
-name|gimp
 argument_list|,
 name|msg
 operator|->
@@ -4415,8 +4403,6 @@ case|:
 name|plug_in_handle_proc_uninstall
 argument_list|(
 name|plug_in
-operator|->
-name|gimp
 argument_list|,
 name|msg
 operator|->
@@ -4439,7 +4425,9 @@ case|case
 name|GP_HAS_INIT
 case|:
 name|plug_in_handle_has_init
-argument_list|()
+argument_list|(
+name|plug_in
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -4572,7 +4560,9 @@ condition|(
 operator|!
 name|gp_tile_data_write
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|,
 operator|&
 name|tile_data
@@ -4598,7 +4588,9 @@ condition|(
 operator|!
 name|wire_read_msg
 argument_list|(
-name|current_readchannel
+name|plug_in
+operator|->
+name|my_read
 argument_list|,
 operator|&
 name|msg
@@ -4819,7 +4811,9 @@ condition|(
 operator|!
 name|gp_tile_ack_write
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|)
 condition|)
 block|{
@@ -5052,7 +5046,9 @@ condition|(
 operator|!
 name|gp_tile_data_write
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|,
 operator|&
 name|tile_data
@@ -5085,7 +5081,9 @@ condition|(
 operator|!
 name|wire_read_msg
 argument_list|(
-name|current_readchannel
+name|plug_in
+operator|->
+name|my_read
 argument_list|,
 operator|&
 name|msg
@@ -5146,12 +5144,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_proc_run (Gimp * gimp,GPProcRun * proc_run)
+DECL|function|plug_in_handle_proc_run (PlugIn * plug_in,GPProcRun * proc_run)
 name|plug_in_handle_proc_run
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
+name|plug_in
 parameter_list|,
 name|GPProcRun
 modifier|*
@@ -5196,6 +5194,8 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
+name|plug_in
+operator|->
 name|gimp
 argument_list|,
 name|proc_run
@@ -5212,6 +5212,8 @@ name|return_vals
 operator|=
 name|procedural_db_execute
 argument_list|(
+name|plug_in
+operator|->
 name|gimp
 argument_list|,
 name|proc_run
@@ -5328,7 +5330,9 @@ condition|(
 operator|!
 name|gp_proc_return_write
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|,
 operator|&
 name|proc_return
@@ -5342,7 +5346,7 @@ argument_list|)
 expr_stmt|;
 name|plug_in_close
 argument_list|(
-name|current_plug_in
+name|plug_in
 argument_list|,
 name|TRUE
 argument_list|)
@@ -5410,7 +5414,7 @@ name|blocked
 operator|->
 name|plug_in
 operator|=
-name|current_plug_in
+name|plug_in
 expr_stmt|;
 name|blocked
 operator|->
@@ -5439,12 +5443,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_proc_return (Gimp * gimp,GPProcReturn * proc_return)
+DECL|function|plug_in_handle_proc_return (PlugIn * plug_in,GPProcReturn * proc_return)
 name|plug_in_handle_proc_return
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
+name|plug_in
 parameter_list|,
 name|GPProcReturn
 modifier|*
@@ -5547,7 +5551,11 @@ condition|(
 operator|!
 name|gp_proc_return_write
 argument_list|(
-name|current_writechannel
+name|blocked
+operator|->
+name|plug_in
+operator|->
+name|my_write
 argument_list|,
 name|proc_return
 argument_list|)
@@ -5560,7 +5568,9 @@ argument_list|)
 expr_stmt|;
 name|plug_in_close
 argument_list|(
-name|current_plug_in
+name|blocked
+operator|->
+name|plug_in
 argument_list|,
 name|TRUE
 argument_list|)
@@ -5601,12 +5611,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_proc_install (Gimp * gimp,GPProcInstall * proc_install)
+DECL|function|plug_in_handle_proc_install (PlugIn * plug_in,GPProcInstall * proc_install)
 name|plug_in_handle_proc_install
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
+name|plug_in
 parameter_list|,
 name|GPProcInstall
 modifier|*
@@ -5710,7 +5720,7 @@ literal|"which does not take the standard Plug-In args."
 argument_list|,
 name|g_path_get_basename
 argument_list|(
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -5718,7 +5728,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -5808,7 +5818,7 @@ literal|"which does not take the standard Plug-In args."
 argument_list|,
 name|g_path_get_basename
 argument_list|(
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -5816,7 +5826,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -5906,7 +5916,7 @@ literal|"which does not take the standard Plug-In args."
 argument_list|,
 name|g_path_get_basename
 argument_list|(
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -5914,7 +5924,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -6030,7 +6040,7 @@ literal|"which does not take the standard Plug-In args."
 argument_list|,
 name|g_path_get_basename
 argument_list|(
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -6038,7 +6048,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -6065,7 +6075,7 @@ literal|"\"<Load>\", or \"<Save>\"."
 argument_list|,
 name|g_path_get_basename
 argument_list|(
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -6073,7 +6083,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -6176,7 +6186,7 @@ literal|"passing standard.  Argument %d is noncompliant."
 argument_list|,
 name|g_path_get_basename
 argument_list|(
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -6184,7 +6194,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -6511,7 +6521,7 @@ literal|"attempted to install a procedure with invalid UTF-8 strings.\n"
 argument_list|,
 name|g_path_get_basename
 argument_list|(
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -6519,7 +6529,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-name|current_plug_in
+name|plug_in
 operator|->
 name|args
 index|[
@@ -6549,7 +6559,7 @@ name|GIMP_EXTENSION
 case|:
 name|plug_in_def
 operator|=
-name|current_plug_in
+name|plug_in
 operator|->
 name|user_data
 expr_stmt|;
@@ -6575,7 +6585,7 @@ literal|"none"
 expr_stmt|;
 name|tmp
 operator|=
-name|current_plug_in
+name|plug_in
 operator|->
 name|temp_proc_defs
 expr_stmt|;
@@ -6628,6 +6638,8 @@ name|plug_ins_proc_def_remove
 argument_list|(
 name|proc_def
 argument_list|,
+name|plug_in
+operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -7063,13 +7075,13 @@ if|if
 condition|(
 name|add_proc_def
 condition|)
-name|current_plug_in
+name|plug_in
 operator|->
 name|temp_proc_defs
 operator|=
 name|g_slist_prepend
 argument_list|(
-name|current_plug_in
+name|plug_in
 operator|->
 name|temp_proc_defs
 argument_list|,
@@ -7093,14 +7105,12 @@ name|temporary
 operator|.
 name|plug_in
 operator|=
-operator|(
-name|void
-operator|*
-operator|)
-name|current_plug_in
+name|plug_in
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
+name|plug_in
+operator|->
 name|gimp
 argument_list|,
 name|proc
@@ -7109,6 +7119,8 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|plug_in
+operator|->
 name|gimp
 operator|->
 name|no_interface
@@ -7224,12 +7236,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_proc_uninstall (Gimp * gimp,GPProcUninstall * proc_uninstall)
+DECL|function|plug_in_handle_proc_uninstall (PlugIn * plug_in,GPProcUninstall * proc_uninstall)
 name|plug_in_handle_proc_uninstall
 parameter_list|(
-name|Gimp
+name|PlugIn
 modifier|*
-name|gimp
+name|plug_in
 parameter_list|,
 name|GPProcUninstall
 modifier|*
@@ -7246,7 +7258,7 @@ name|tmp
 decl_stmt|;
 name|tmp
 operator|=
-name|current_plug_in
+name|plug_in
 operator|->
 name|temp_proc_defs
 expr_stmt|;
@@ -7285,13 +7297,13 @@ operator|==
 literal|0
 condition|)
 block|{
-name|current_plug_in
+name|plug_in
 operator|->
 name|temp_proc_defs
 operator|=
 name|g_slist_remove
 argument_list|(
-name|current_plug_in
+name|plug_in
 operator|->
 name|temp_proc_defs
 argument_list|,
@@ -7302,6 +7314,8 @@ name|plug_ins_proc_def_remove
 argument_list|(
 name|proc_def
 argument_list|,
+name|plug_in
+operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -7314,13 +7328,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_handle_has_init (void)
+DECL|function|plug_in_handle_has_init (PlugIn * plug_in)
 name|plug_in_handle_has_init
 parameter_list|(
-name|void
+name|PlugIn
+modifier|*
+name|plug_in
 parameter_list|)
 block|{
-name|current_plug_in
+name|plug_in
 operator|->
 name|user_data
 operator|->
@@ -7619,18 +7635,6 @@ argument_list|,
 name|current_plug_in
 argument_list|)
 expr_stmt|;
-name|current_readchannel
-operator|=
-name|current_plug_in
-operator|->
-name|my_read
-expr_stmt|;
-name|current_writechannel
-operator|=
-name|current_plug_in
-operator|->
-name|my_write
-expr_stmt|;
 name|current_write_buffer_index
 operator|=
 name|current_plug_in
@@ -7703,18 +7707,6 @@ name|plug_in_stack
 operator|->
 name|data
 expr_stmt|;
-name|current_readchannel
-operator|=
-name|current_plug_in
-operator|->
-name|my_read
-expr_stmt|;
-name|current_writechannel
-operator|=
-name|current_plug_in
-operator|->
-name|my_write
-expr_stmt|;
 name|current_write_buffer_index
 operator|=
 name|current_plug_in
@@ -7731,14 +7723,6 @@ block|}
 else|else
 block|{
 name|current_plug_in
-operator|=
-name|NULL
-expr_stmt|;
-name|current_readchannel
-operator|=
-name|NULL
-expr_stmt|;
-name|current_writechannel
 operator|=
 name|NULL
 expr_stmt|;
@@ -7873,7 +7857,9 @@ condition|(
 operator|!
 name|gp_temp_proc_run_write
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|,
 operator|&
 name|proc_run
@@ -7882,7 +7868,9 @@ operator|||
 operator|!
 name|wire_flush
 argument_list|(
-name|current_writechannel
+name|plug_in
+operator|->
+name|my_write
 argument_list|)
 condition|)
 block|{
