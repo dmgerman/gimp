@@ -373,8 +373,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_cancel_callback (GtkWidget * w,gpointer client_data)
-name|transform_cancel_callback
+DECL|function|transform_reset_callback (GtkWidget * w,gpointer client_data)
+name|transform_reset_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -493,9 +493,9 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"Cancel"
+literal|"Reset"
 block|,
-name|transform_cancel_callback
+name|transform_reset_callback
 block|,
 name|NULL
 block|,
@@ -2823,6 +2823,7 @@ name|PERSPECTIVE
 operator|)
 operator|||
 operator|(
+operator|(
 name|transform_core
 operator|->
 name|transform
@@ -2848,6 +2849,7 @@ literal|1
 index|]
 operator|>=
 literal|0.0
+operator|)
 operator|)
 operator|)
 condition|)
@@ -6094,12 +6096,6 @@ comment|/*  Find the bounding coordinates  */
 if|if
 condition|(
 name|active_tool
-operator|&&
-name|active_tool
-operator|->
-name|type
-operator|==
-name|PERSPECTIVE
 operator|&&
 name|transform_tool_clip
 argument_list|()

@@ -745,6 +745,35 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+comment|/*  the main label  */
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+literal|"Ink Options"
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|label
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
 comment|/* size slider */
 name|hbox
 operator|=
@@ -3570,7 +3599,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon298c649e0103
+DECL|enum|__anon2c0a63f50103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

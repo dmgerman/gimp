@@ -586,6 +586,10 @@ argument_list|,
 name|iwd
 operator|->
 name|dimensions_str
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -597,6 +601,10 @@ argument_list|,
 name|iwd
 operator|->
 name|scale_str
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -608,6 +616,10 @@ argument_list|,
 name|iwd
 operator|->
 name|color_type_str
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -619,6 +631,10 @@ argument_list|,
 name|iwd
 operator|->
 name|visual_class_str
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -630,6 +646,10 @@ argument_list|,
 name|iwd
 operator|->
 name|visual_depth_str
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -647,6 +667,10 @@ argument_list|,
 name|iwd
 operator|->
 name|shades_str
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -665,6 +689,10 @@ argument_list|,
 name|iwd
 operator|->
 name|shades_str
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -683,6 +711,10 @@ argument_list|,
 name|iwd
 operator|->
 name|shades_str
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  update the fields  */

@@ -442,13 +442,13 @@ name|options
 operator|->
 name|smoothing
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|options
 operator|->
 name|clip
 operator|=
-literal|1
+name|FALSE
 expr_stmt|;
 name|options
 operator|->
@@ -1141,7 +1141,7 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Clip perspective"
+literal|"Clip result"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1415,7 +1415,7 @@ operator|!
 name|transform_options
 condition|)
 return|return
-literal|1
+name|TRUE
 return|;
 else|else
 return|return
@@ -1438,7 +1438,7 @@ operator|!
 name|transform_options
 condition|)
 return|return
-literal|1
+name|FALSE
 return|;
 else|else
 return|return

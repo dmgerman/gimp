@@ -340,6 +340,10 @@ name|matrix_row_buf
 index|[
 literal|0
 index|]
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -352,6 +356,10 @@ name|matrix_row_buf
 index|[
 literal|1
 index|]
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -364,6 +372,10 @@ name|matrix_row_buf
 index|[
 literal|2
 index|]
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

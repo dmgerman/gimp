@@ -741,6 +741,10 @@ argument_list|,
 literal|"Red"
 argument_list|,
 name|red_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -750,6 +754,10 @@ argument_list|,
 literal|"Green"
 argument_list|,
 name|green_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -759,6 +767,10 @@ argument_list|,
 literal|"Blue"
 argument_list|,
 name|blue_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -768,6 +780,10 @@ argument_list|,
 literal|"Alpha"
 argument_list|,
 name|alpha_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -777,6 +793,10 @@ argument_list|,
 literal|"Hex Triplet"
 argument_list|,
 name|hex_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
@@ -793,6 +813,10 @@ argument_list|,
 literal|"Index"
 argument_list|,
 name|index_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -802,6 +826,10 @@ argument_list|,
 literal|"Alpha"
 argument_list|,
 name|alpha_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -811,6 +839,10 @@ argument_list|,
 literal|"Red"
 argument_list|,
 name|red_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -820,6 +852,10 @@ argument_list|,
 literal|"Green"
 argument_list|,
 name|green_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -829,6 +865,10 @@ argument_list|,
 literal|"Blue"
 argument_list|,
 name|blue_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -838,6 +878,10 @@ argument_list|,
 literal|"Hex Triplet"
 argument_list|,
 name|hex_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
@@ -854,6 +898,10 @@ argument_list|,
 literal|"Intensity"
 argument_list|,
 name|gray_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -863,6 +911,10 @@ argument_list|,
 literal|"Alpha"
 argument_list|,
 name|alpha_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field
@@ -872,6 +924,10 @@ argument_list|,
 literal|"Hex Triplet"
 argument_list|,
 name|hex_buf
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;

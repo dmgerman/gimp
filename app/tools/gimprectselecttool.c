@@ -777,7 +777,7 @@ name|fixed_size_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Fixed size"
+literal|"Fixed size / aspect ratio"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
