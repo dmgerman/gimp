@@ -18,7 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
+file|<fcntl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<string.h>
 end_include
 
 begin_include
@@ -30,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<fcntl.h>
+file|<sys/types.h>
 end_include
 
 begin_include
@@ -66,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28edb2da0108
+DECL|struct|__anon2ae2ea4a0108
 block|{
 DECL|member|name
 name|gchar
@@ -86,7 +92,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28edb2da0203
+DECL|enum|__anon2ae2ea4a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -185,6 +191,10 @@ DECL|member|io
 name|GIOChannel
 modifier|*
 name|io
+decl_stmt|;
+DECL|member|io_id
+name|guint
+name|io_id
 decl_stmt|;
 comment|/* midi status */
 DECL|member|swallow
@@ -678,7 +688,10 @@ name|g_param_spec_string
 argument_list|(
 literal|"device"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Device:"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1303,6 +1316,19 @@ operator|->
 name|io
 condition|)
 block|{
+name|g_source_remove
+argument_list|(
+name|midi
+operator|->
+name|io_id
+argument_list|)
+expr_stmt|;
+name|midi
+operator|->
+name|io_id
+operator|=
+literal|0
+expr_stmt|;
 name|g_io_channel_unref
 argument_list|(
 name|midi
@@ -1341,7 +1367,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|midi
+operator|->
 name|device
+operator|&&
+name|strlen
+argument_list|(
+name|midi
+operator|->
+name|device
+argument_list|)
 condition|)
 block|{
 name|gint
@@ -1385,15 +1420,36 @@ operator|>=
 literal|0
 condition|)
 block|{
+name|gchar
+modifier|*
+name|name
+init|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Reading from %s"
+argument_list|)
+argument_list|,
+name|midi
+operator|->
+name|device
+argument_list|)
+decl_stmt|;
 name|g_object_set
 argument_list|(
 name|midi
 argument_list|,
 literal|"name"
 argument_list|,
-name|device
+name|name
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
 argument_list|)
 expr_stmt|;
 name|midi
@@ -1425,6 +1481,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|midi
+operator|->
+name|io_id
+operator|=
 name|g_io_add_watch
 argument_list|(
 name|midi
@@ -2085,7 +2145,11 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI: note on (%02x vel %02x)\n"
+literal|"MIDI (ch %02d): note on (%02x vel %02x)\n"
+argument_list|,
+name|midi
+operator|->
+name|channel
 argument_list|,
 name|midi
 operator|->
@@ -2130,7 +2194,11 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI: note off (%02x vel %02x)\n"
+literal|"MIDI (ch %02d): note off (%02x vel %02x)\n"
+argument_list|,
+name|midi
+operator|->
+name|channel
 argument_list|,
 name|midi
 operator|->
@@ -2169,7 +2237,11 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI: polyphonic aftertouch (%02x pressure %02x)\n"
+literal|"MIDI (ch %02d): polyphonic aftertouch (%02x pressure %02x)\n"
+argument_list|,
+name|midi
+operator|->
+name|channel
 argument_list|,
 name|midi
 operator|->
@@ -2246,7 +2318,11 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI: controller %d (value %d)\n"
+literal|"MIDI (ch %02d): controller %d (value %d)\n"
+argument_list|,
+name|midi
+operator|->
+name|channel
 argument_list|,
 name|midi
 operator|->
@@ -2313,7 +2389,11 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI: program change (%d)\n"
+literal|"MIDI (ch %02d): program change (%d)\n"
+argument_list|,
+name|midi
+operator|->
+name|channel
 argument_list|,
 name|midi
 operator|->
@@ -2347,7 +2427,11 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI: channel aftertouch (%d)\n"
+literal|"MIDI (ch %02d): channel aftertouch (%d)\n"
+argument_list|,
+name|midi
+operator|->
+name|channel
 argument_list|,
 name|midi
 operator|->
@@ -2428,7 +2512,11 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI: pitch (%d)\n"
+literal|"MIDI (ch %02d): pitch (%d)\n"
+argument_list|,
+name|midi
+operator|->
+name|channel
 argument_list|,
 name|midi
 operator|->
