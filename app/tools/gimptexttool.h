@@ -149,6 +149,11 @@ name|GtkWidget
 modifier|*
 name|editor
 decl_stmt|;
+DECL|member|confirm_dialog
+name|GtkWidget
+modifier|*
+name|confirm_dialog
+decl_stmt|;
 block|}
 struct|;
 end_struct
