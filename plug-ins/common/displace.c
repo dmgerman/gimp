@@ -100,7 +100,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2afc96dd0108
+DECL|struct|__anon2c09cf820108
 typedef|typedef
 struct|struct
 block|{
@@ -139,7 +139,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2afc96dd0208
+DECL|struct|__anon2c09cf820208
 typedef|typedef
 struct|struct
 block|{
@@ -1000,7 +1000,7 @@ argument_list|(
 name|TILE_CACHE_SIZE
 argument_list|)
 expr_stmt|;
-comment|/*  run the pinch effect  */
+comment|/*  run the displace effect  */
 name|displace
 argument_list|(
 name|drawable
@@ -1724,6 +1724,17 @@ operator|.
 name|amount_x
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|dint
+operator|.
+name|amount_x
+argument_list|,
+name|dvals
+operator|.
+name|do_x
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|entry
@@ -1814,6 +1825,17 @@ operator|.
 name|amount_y
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|dint
+operator|.
+name|amount_y
+argument_list|,
+name|dvals
+operator|.
+name|do_y
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|entry
@@ -1884,6 +1906,17 @@ argument_list|,
 name|menu
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|dint
+operator|.
+name|menu_x
+argument_list|,
+name|dvals
+operator|.
+name|do_x
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|option_menu
@@ -1951,6 +1984,17 @@ name|option_menu
 argument_list|)
 argument_list|,
 name|menu
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|dint
+operator|.
+name|menu_y
+argument_list|,
+name|dvals
+operator|.
+name|do_y
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
