@@ -91,6 +91,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpprogressbar.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpdrawablecombobox.h>
 end_include
 

@@ -39,6 +39,15 @@ name|GimpDrawablePreview
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpProgressBar
+typedef|typedef
+name|struct
+name|_GimpProgressBar
+name|GimpProgressBar
+typedef|;
+end_typedef
+
 begin_macro
 name|G_END_DECLS
 end_macro
