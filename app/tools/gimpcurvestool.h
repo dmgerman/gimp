@@ -163,10 +163,10 @@ name|GtkWidget
 modifier|*
 name|graph
 decl_stmt|;
-DECL|member|curve_type_menu
+DECL|member|curve_type
 name|GtkWidget
 modifier|*
-name|curve_type_menu
+name|curve_type
 decl_stmt|;
 DECL|member|cursor_x
 name|gint

@@ -160,6 +160,16 @@ define|#
 directive|define
 name|GIMP_STOCK_PATH_STROKE
 value|"gimp-path-stroke"
+DECL|macro|GIMP_STOCK_CURVE_FREE
+define|#
+directive|define
+name|GIMP_STOCK_CURVE_FREE
+value|"gimp-curve-free"
+DECL|macro|GIMP_STOCK_CURVE_SMOOTH
+define|#
+directive|define
+name|GIMP_STOCK_CURVE_SMOOTH
+value|"gimp-curve-smooth"
 DECL|macro|GIMP_STOCK_COLOR_PICKER_BLACK
 define|#
 directive|define
