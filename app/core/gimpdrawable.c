@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2a56ef830103
+DECL|enum|__anon2c5357000103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -371,6 +371,14 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|)
+condition|)
+return|return;
+if|if
+condition|(
+operator|!
+name|gimage
+operator|->
+name|shadow
 condition|)
 return|return;
 comment|/*  A useful optimization here is to limit the update to the    *  extents of the selection mask, as it cannot extend beyond    *  them.    */

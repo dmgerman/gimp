@@ -629,12 +629,12 @@ end_comment
 begin_function
 specifier|static
 name|gdouble
-DECL|function|img2real (GDisplay * g,gboolean xdir,gdouble a)
+DECL|function|img2real (GDisplay * gdisp,gboolean xdir,gdouble a)
 name|img2real
 parameter_list|(
 name|GDisplay
 modifier|*
-name|g
+name|gdisp
 parameter_list|,
 name|gboolean
 name|xdir
@@ -648,7 +648,7 @@ name|res
 decl_stmt|;
 if|if
 condition|(
-name|g
+name|gdisp
 operator|->
 name|dot_for_dot
 condition|)
@@ -661,12 +661,20 @@ name|xdir
 condition|)
 name|res
 operator|=
-name|monitor_xres
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|xresolution
 expr_stmt|;
 else|else
 name|res
 operator|=
-name|monitor_yres
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|yresolution
 expr_stmt|;
 switch|switch
 condition|(
