@@ -2370,6 +2370,11 @@ operator|->
 name|help_data
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|tooltip
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function

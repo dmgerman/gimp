@@ -101,7 +101,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd518530103
+DECL|enum|__anon2b08741d0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -391,6 +391,8 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+else|else
+break|break;
 block|}
 elseif|else
 if|if

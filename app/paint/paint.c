@@ -436,6 +436,14 @@ name|paint_info
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|paint_info
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
