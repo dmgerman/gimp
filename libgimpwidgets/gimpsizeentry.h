@@ -521,6 +521,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_size_entry_show_unit_menu
+parameter_list|(
+name|GimpSizeEntry
+modifier|*
+name|gse
+parameter_list|,
+name|gboolean
+name|show
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_size_entry_set_pixel_digits
 parameter_list|(
 name|GimpSizeEntry
