@@ -1366,11 +1366,6 @@ argument_list|,
 name|drop_pos
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|svg_data
-argument_list|)
-expr_stmt|;
 name|success
 operator|=
 name|TRUE
