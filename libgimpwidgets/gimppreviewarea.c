@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af09fa50103
+DECL|enum|__anon2ad631110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1365,7 +1365,7 @@ parameter_list|,
 name|col
 parameter_list|)
 define|\
-value|(((((area)->offset_y + (row))& size) ^  \     (((area)->offset_x + (col))& size)) ? light : dark)
+value|(((((area)->offset_y + (row))& size) ^  \     (((area)->offset_x + (col))& size)) ? dark : light)
 name|src
 operator|=
 name|buf
