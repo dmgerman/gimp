@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bfa26f0103
+DECL|enum|__anon276c31810103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bfa26f0208
+DECL|struct|__anon276c31810208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bfa26f0308
+DECL|struct|__anon276c31810308
 block|{
 DECL|member|run
 name|gint
@@ -5381,7 +5381,7 @@ operator|.
 name|vector_angle
 operator|)
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|)
@@ -5406,7 +5406,7 @@ operator|.
 name|vector_angle
 operator|)
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|)
@@ -5653,7 +5653,7 @@ name|dvals
 operator|.
 name|angle
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;

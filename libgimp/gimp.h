@@ -568,6 +568,27 @@ struct|;
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
+ifdef|#
+directive|ifdef
+name|__cplusplus
+extern|extern
+literal|"C"
+block|{
+endif|#
+directive|endif
+name|void
+name|set_gimp_PLUG_IN_INFO_PTR
+parameter_list|(
+name|GimpPlugInInfo
+modifier|*
+parameter_list|)
+function_decl|;
+ifdef|#
+directive|ifdef
+name|__cplusplus
+block|}
+endif|#
+directive|endif
 comment|/* Define WinMain() because plug-ins are built as GUI applications. Also  * define a main() in case some plug-in still is built as a console  * application.  */
 ifdef|#
 directive|ifdef
@@ -590,7 +611,7 @@ directive|define
 name|MAIN
 parameter_list|()
 define|\
-value|static int				\    win32_gimp_main (int argc, char **argv)	\    {					\      extern void set_gimp_PLUG_IN_INFO_PTR(GimpPlugInInfo *);	\      set_gimp_PLUG_IN_INFO_PTR(&PLUG_IN_INFO);	\      return gimp_main (argc, argv);	\    }					\ 					\    struct HINSTANCE__;			\    int _stdcall				\    WinMain (struct HINSTANCE__ *hInstance, \ 	    struct HINSTANCE__ *hPrevInstance,	\ 	    char *lpszCmdLine,		\ 	    int   nCmdShow)		\    {					\      return win32_gimp_main (__argc, __argv);	\    }					\ 					\    int					\    main (int argc, char *argv[])	\    {					\      return win32_gimp_main (argc, argv);	\    }
+value|static int				\    win32_gimp_main (int argc, char **argv)	\    {					\      set_gimp_PLUG_IN_INFO_PTR(&PLUG_IN_INFO);	\      return gimp_main (argc, argv);	\    }					\ 					\    struct HINSTANCE__;			\    int _stdcall				\    WinMain (struct HINSTANCE__ *hInstance, \ 	    struct HINSTANCE__ *hPrevInstance,	\ 	    char *lpszCmdLine,		\ 	    int   nCmdShow)		\    {					\      return win32_gimp_main (__argc, __argv);	\    }					\ 					\    int					\    main (int argc, char *argv[])	\    {					\      return win32_gimp_main (argc, argv);	\    }
 else|#
 directive|else
 ifndef|#

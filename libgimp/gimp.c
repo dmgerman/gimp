@@ -4234,6 +4234,27 @@ name|bytes
 operator|=
 literal|0
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+comment|/* Horrible hack that seems to prevent script-fu from 	       * hanging upon startup on NT4. The real solution would 	       * be to fix (rewrite) the GLib main loop and IO channel code 	       * for Win32. 	       */
+if|if
+condition|(
+operator|(
+name|write_buffer_index
+operator|-
+name|count
+operator|)
+operator|>
+literal|100
+condition|)
+name|Sleep
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|error
 operator|=
 name|g_io_channel_write
