@@ -615,7 +615,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_escape_uline:  * @str: Underline infested string (or %NULL)  *  * This function returns a copy of @str with all underline converted  * to two adjacent underlines. This comes in handy when needing to display  * strings with underlines (like filenames) in a place that would convert  * them to mnemonics.  *  * Return value: A (possibly escaped) copy of @str which should be  * freed using g_free() when it is not needed any longer.  **/
+comment|/**  * gimp_escape_uline:  * @str: Underline infested string (or %NULL)  *  * This function returns a copy of @str with all underline converted  * to two adjacent underlines. This comes in handy when needing to display  * strings with underlines (like filenames) in a place that would convert  * them to mnemonics.  *  * Return value: A (possibly escaped) copy of @str which should be  * freed using g_free() when it is not needed any longer.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
