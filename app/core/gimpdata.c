@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfdccce0103
+DECL|enum|__anon2a410b370103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -180,6 +180,10 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GimpDataClass
+modifier|*
+name|data_class
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -471,12 +475,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_init (GimpData * data)
+DECL|function|gimp_data_init (GimpData * data,GimpDataClass * data_class)
 name|gimp_data_init
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GimpDataClass
+modifier|*
+name|data_class
 parameter_list|)
 block|{
 name|data
@@ -509,14 +517,11 @@ name|internal
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  if we can't save, we are not writable  */
+comment|/*  look at the passed class pointer, not at GIMP_DATA_GET_CLASS(data)    *  here, because the latter is always GimpDataClass itself    */
 if|if
 condition|(
 operator|!
-name|GIMP_DATA_GET_CLASS
-argument_list|(
-name|data
-argument_list|)
+name|data_class
 operator|->
 name|save
 condition|)
