@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -2361,7 +2361,7 @@ name|width
 condition|)
 name|off_x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 argument_list|,
@@ -2381,7 +2381,7 @@ expr_stmt|;
 else|else
 name|off_x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 argument_list|,
@@ -2444,7 +2444,7 @@ name|height
 condition|)
 name|off_y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 argument_list|,
@@ -2464,7 +2464,7 @@ expr_stmt|;
 else|else
 name|off_y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 argument_list|,
