@@ -1377,7 +1377,7 @@ name|GIMP_DATA_ERROR_OPEN
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to open '%s' for reading: %s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
