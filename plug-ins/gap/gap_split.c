@@ -509,7 +509,7 @@ name|l_rc
 operator|=
 name|l_new_image_id
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_sav_name
 argument_list|)

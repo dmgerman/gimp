@@ -3056,7 +3056,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -3225,7 +3225,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|free
+name|g_free
 argument_list|(
 name|l_layli_ptr
 argument_list|)
@@ -4350,7 +4350,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -4671,7 +4671,7 @@ operator|=
 name|RUN_NONINTERACTIVE
 expr_stmt|;
 comment|/* for all further calls */
-name|free
+name|g_free
 argument_list|(
 name|l_sav_name
 argument_list|)
@@ -5058,7 +5058,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -5629,7 +5629,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -6388,7 +6388,7 @@ argument_list|,
 name|l_dest_dither
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_basename_ptr
 argument_list|)

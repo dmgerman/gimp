@@ -1946,7 +1946,7 @@ name|l_plugin_iterator
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|l_plugin_iterator
 argument_list|)

@@ -368,7 +368,7 @@ literal|0
 expr_stmt|;
 name|l_env
 operator|=
-name|getenv
+name|g_getenv
 argument_list|(
 literal|"GAP_DEBUG"
 argument_list|)

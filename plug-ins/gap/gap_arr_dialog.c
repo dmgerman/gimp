@@ -88,7 +88,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a2f6160108
+DECL|struct|__anon2c2937c60108
 typedef|typedef
 struct|struct
 block|{
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2f6160208
+DECL|struct|__anon2c2937c60208
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -134,7 +134,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a2f6160308
+DECL|struct|__anon2c2937c60308
 typedef|typedef
 struct|struct
 block|{
@@ -2219,10 +2219,8 @@ control|)
 block|{
 name|radio_ptr
 operator|=
-name|calloc
+name|g_malloc0
 argument_list|(
-literal|1
-argument_list|,
 sizeof|sizeof
 argument_list|(
 name|t_radio_arg
@@ -2780,10 +2778,8 @@ expr_stmt|;
 block|}
 name|l_menu_ptr
 operator|=
-name|calloc
+name|g_malloc0
 argument_list|(
-literal|1
-argument_list|,
 sizeof|sizeof
 argument_list|(
 name|t_radio_arg

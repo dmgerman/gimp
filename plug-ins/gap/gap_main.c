@@ -2096,7 +2096,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2784fa5d0108
+DECL|struct|__anon2a5274ee0108
 block|{
 DECL|member|lock
 name|long
@@ -2252,7 +2252,7 @@ literal|0
 expr_stmt|;
 name|l_env
 operator|=
-name|getenv
+name|g_getenv
 argument_list|(
 literal|"GAP_DEBUG"
 argument_list|)

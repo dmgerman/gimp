@@ -130,7 +130,7 @@ operator|=
 operator|(
 name|gpointer
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(

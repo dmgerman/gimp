@@ -1026,7 +1026,7 @@ expr_stmt|;
 comment|/* optional dialog between both calls (to see the effect of 1.call) */
 name|l_env
 operator|=
-name|getenv
+name|g_getenv
 argument_list|(
 literal|"GAP_FILTER_PITSTOP"
 argument_list|)
@@ -1269,17 +1269,14 @@ return|;
 block|}
 name|l_layli_ptr
 operator|=
-name|calloc
+name|g_new0
 argument_list|(
+name|t_LayliElem
+argument_list|,
 operator|(
 operator|*
 name|nlayers
 operator|)
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|t_LayliElem
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3038,7 +3035,7 @@ name|l_layli_ptr
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|l_layli_ptr
 argument_list|)
@@ -3429,7 +3426,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -3658,7 +3655,7 @@ name|sel_pattern
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|l_last_frame_filename
 argument_list|)
@@ -3793,7 +3790,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|free
+name|g_free
 argument_list|(
 name|l_layli_ptr
 argument_list|)
@@ -4090,7 +4087,7 @@ name|l_layli_ptr
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|l_layli_ptr
 argument_list|)
@@ -4101,7 +4098,7 @@ name|l_plugin_iterator
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|l_plugin_iterator
 argument_list|)

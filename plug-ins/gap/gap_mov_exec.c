@@ -195,7 +195,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -2002,7 +2002,7 @@ name|l_mov_data
 operator|.
 name|val_ptr
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -2139,7 +2139,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|free
+name|g_free
 argument_list|(
 name|l_mov_data
 operator|.

@@ -529,10 +529,8 @@ operator|(
 name|char
 operator|*
 operator|)
-name|calloc
+name|g_malloc0
 argument_list|(
-literal|1
-argument_list|,
 operator|(
 name|size_t
 operator|)
@@ -589,7 +587,7 @@ argument_list|,
 name|fname
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_buffer
 argument_list|)
@@ -644,7 +642,7 @@ argument_list|,
 name|fname_copy
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_buffer
 argument_list|)
@@ -678,7 +676,7 @@ argument_list|(
 name|l_fp
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_buffer
 argument_list|)
@@ -766,7 +764,7 @@ argument_list|(
 name|l_fname
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_fname
 argument_list|)
@@ -864,7 +862,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|free
+name|g_free
 argument_list|(
 name|l_from_fname
 argument_list|)
@@ -899,12 +897,12 @@ argument_list|,
 name|l_to_fname
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_from_fname
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_to_fname
 argument_list|)
@@ -973,7 +971,7 @@ operator|(
 name|char
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
@@ -1299,10 +1297,8 @@ expr_stmt|;
 block|}
 name|l_ext
 operator|=
-name|calloc
+name|g_malloc0
 argument_list|(
-literal|1
-argument_list|,
 call|(
 name|size_t
 call|)
@@ -1388,7 +1384,7 @@ operator|(
 name|char
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
@@ -1463,7 +1459,7 @@ operator|(
 name|t_anim_info
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -1529,7 +1525,7 @@ name|l_ainfo_ptr
 operator|->
 name|old_filename
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 literal|30
 argument_list|)
@@ -1712,7 +1708,7 @@ index|]
 decl_stmt|;
 name|l_dirname
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
@@ -2162,7 +2158,7 @@ operator|=
 name|l_nr
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|l_dummy
 argument_list|)
@@ -2177,7 +2173,7 @@ name|l_dirp
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|l_dirname
 argument_list|)
@@ -2243,7 +2239,7 @@ name|aptr
 operator|->
 name|basename
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|aptr
 operator|->
@@ -2256,7 +2252,7 @@ name|aptr
 operator|->
 name|extension
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|aptr
 operator|->
@@ -2269,7 +2265,7 @@ name|aptr
 operator|->
 name|new_filename
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|aptr
 operator|->
@@ -2282,14 +2278,14 @@ name|aptr
 operator|->
 name|old_filename
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|aptr
 operator|->
 name|old_filename
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|aptr
 argument_list|)
@@ -2490,10 +2486,8 @@ name|new_name
 expr_stmt|;
 name|l_cmd
 operator|=
-name|calloc
+name|g_malloc
 argument_list|(
-literal|1
-argument_list|,
 operator|(
 name|strlen
 argument_list|(
@@ -2607,7 +2601,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|l_cmd
 argument_list|)
@@ -3204,7 +3198,7 @@ operator|(
 name|char
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
@@ -3310,7 +3304,7 @@ name|l_params
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|l_ext
 argument_list|)
@@ -3322,7 +3316,7 @@ condition|)
 block|{
 name|l_ext
 operator|=
-name|getenv
+name|g_getenv
 argument_list|(
 literal|"GAP_NO_SAVE"
 argument_list|)
@@ -3343,7 +3337,7 @@ argument_list|,
 name|l_tmpname
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_tmpname
 argument_list|)
@@ -3488,7 +3482,7 @@ argument_list|(
 name|l_tmpname
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_tmpname
 argument_list|)
@@ -3596,7 +3590,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|free
+name|g_free
 argument_list|(
 name|l_tmpname
 argument_list|)
@@ -3810,7 +3804,7 @@ name|l_tmpname
 operator|=
 name|lod_name
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_ext
 argument_list|)
@@ -4063,7 +4057,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -4401,7 +4395,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -4588,7 +4582,7 @@ argument_list|,
 name|l_curr_name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_curr_name
 argument_list|)
@@ -4957,12 +4951,12 @@ argument_list|,
 name|l_dup_name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_dup_name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_curr_name
 argument_list|)
@@ -5045,7 +5039,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -5295,7 +5289,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->
@@ -5574,7 +5568,7 @@ argument_list|,
 name|l_curr_name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_curr_name
 argument_list|)
@@ -5840,7 +5834,7 @@ name|new_filename
 operator|!=
 name|NULL
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|ainfo_ptr
 operator|->

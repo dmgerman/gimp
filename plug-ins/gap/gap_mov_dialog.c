@@ -185,7 +185,7 @@ value|GDK_EXPOSURE_MASK | \ 		       GDK_BUTTON_PRESS_MASK | \ 		       GDK_BUTT
 end_define
 
 begin_typedef
-DECL|struct|__anon2b6420af0108
+DECL|struct|__anon2b70f4fb0108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +200,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6420af0208
+DECL|struct|__anon2b70f4fb0208
 typedef|typedef
 struct|struct
 block|{
@@ -227,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6420af0308
+DECL|struct|__anon2b70f4fb0308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -455,7 +455,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6420af0408
+DECL|struct|__anon2b70f4fb0408
 typedef|typedef
 struct|struct
 block|{
@@ -3781,7 +3781,7 @@ argument_list|(
 name|l_filename
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_filename
 argument_list|)

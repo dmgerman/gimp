@@ -1345,7 +1345,7 @@ decl_stmt|;
 comment|/* check for matching Iterator PluginProcedures */
 name|l_plugin_iterator
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
@@ -1412,7 +1412,7 @@ literal|0
 condition|)
 block|{
 comment|/* both iterator names are not available */
-name|free
+name|g_free
 argument_list|(
 name|l_plugin_iterator
 argument_list|)
@@ -1543,7 +1543,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|free
+name|g_free
 argument_list|(
 name|l_plugin_iterator
 argument_list|)
