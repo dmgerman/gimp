@@ -190,7 +190,7 @@ name|nreturn_vals
 decl_stmt|;
 name|gchar
 modifier|*
-name|current_path_name
+name|name
 init|=
 name|NULL
 decl_stmt|;
@@ -223,7 +223,7 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|current_path_name
+name|name
 operator|=
 name|g_strdup
 argument_list|(
@@ -245,18 +245,18 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|current_path_name
+name|name
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_current:  * @image_ID: The ID of the image to list set the paths in.  * @set_current_path_name: The name of the path to set the current path to.  *  * List the paths associated with the passed image.  *  * List the paths associated with the passed image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_current:  * @image_ID: The ID of the image to list set the paths in.  * @name: The name of the path to set the current path to.  *  * List the paths associated with the passed image.  *  * List the paths associated with the passed image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_set_current (gint32 image_ID,const gchar * set_current_path_name)
+DECL|function|gimp_path_set_current (gint32 image_ID,const gchar * name)
 name|gimp_path_set_current
 parameter_list|(
 name|gint32
@@ -265,7 +265,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|set_current_path_name
+name|name
 parameter_list|)
 block|{
 name|GimpParam
@@ -295,7 +295,7 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|set_current_path_name
+name|name
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -327,12 +327,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_delete:  * @image_ID: The ID of the image to list delete the paths from.  * @path_name_to_del: The name of the path to delete.  *  * Delete the named paths associated with the passed image.  *  * Delete the named path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_delete:  * @image_ID: The ID of the image to list delete the paths from.  * @name: The name of the path to delete.  *  * Delete the named paths associated with the passed image.  *  * Delete the named path.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_delete (gint32 image_ID,const gchar * path_name_to_del)
+DECL|function|gimp_path_delete (gint32 image_ID,const gchar * name)
 name|gimp_path_delete
 parameter_list|(
 name|gint32
@@ -341,7 +341,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|path_name_to_del
+name|name
 parameter_list|)
 block|{
 name|GimpParam
@@ -371,7 +371,7 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|path_name_to_del
+name|name
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -403,12 +403,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_points:  * @image_ID: The ID of the image to list the paths from.  * @pathname: the name of the path whose points should be listed.  * @path_closed: Return if the path is closed. (0 = path open, 1 = path closed).  * @num_path_point_details: The number of points returned. Each point is made up of (x, y, pnt_type) of floats.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL). Note all points are returned in pixel resolution.  *  * List the points associated with the named path.  *  * List the points associated with the named path.  *  * Returns: The type of the path. Currently only one type (1 = Bezier) is supported.  */
+comment|/**  * gimp_path_get_points:  * @image_ID: The ID of the image to list the paths from.  * @name: the name of the path whose points should be listed.  * @path_closed: Return if the path is closed. (0 = path open, 1 = path closed).  * @num_path_point_details: The number of points returned. Each point is made up of (x, y, pnt_type) of floats.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0 = BEZIER_MOVE). Note all points are returned in pixel resolution.  *  * List the points associated with the named path.  *  * List the points associated with the named path.  *  * Returns: The type of the path. Currently only one type (1 = Bezier) is supported.  */
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_path_get_points (gint32 image_ID,const gchar * pathname,gint * path_closed,gint * num_path_point_details,gdouble ** points_pairs)
+DECL|function|gimp_path_get_points (gint32 image_ID,const gchar * name,gint * path_closed,gint * num_path_point_details,gdouble ** points_pairs)
 name|gimp_path_get_points
 parameter_list|(
 name|gint32
@@ -417,7 +417,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|pathname
+name|name
 parameter_list|,
 name|gint
 modifier|*
@@ -460,7 +460,7 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|pathname
+name|name
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -568,12 +568,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_points:  * @image_ID: The ID of the image to set the paths in.  * @pathname: The name of the path to create (if it exists then a unique name will be created - query the list of paths if you want to make sure that the name of the path you create is unique. This will be set as the current path.  * @ptype: The type of the path. Currently only one type (1 = Bezier) is supported.  * @num_path_points: The number of points in the path. Each point is made up of (x, y, type) of floats. Currently only the creation of bezier curves is allowed. The type parameter must be set to (1) to indicate a BEZIER type curve. For BEZIERS. Note the that points must be given in the following order... ACCACCAC ... If the path is not closed the last control point is missed off. Points consist of three control points (control/anchor/control) so for a curve that is not closed there must be at least two points passed (2 x,y pairs). If num_path_pnts % 3 = 0 then the path is assumed to be closed and the points are ACCACCACCACC.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL). Note all points are returned in pixel resolution.  *  * Set the points associated with the named path.  *  * Set the points associated with the named path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_points:  * @image_ID: The ID of the image to set the paths in.  * @name: The name of the path to create (if it exists then a unique name will be created - query the list of paths if you want to make sure that the name of the path you create is unique. This will be set as the current path.  * @ptype: The type of the path. Currently only one type (1 = Bezier) is supported.  * @num_path_points: The number of points in the path. Each point is made up of (x, y, type) of floats. Currently only the creation of bezier curves is allowed. The type parameter must be set to (1) to indicate a BEZIER type curve. For BEZIERS. Note the that points must be given in the following order... ACCACCAC ... If the path is not closed the last control point is missed off. Points consist of three control points (control/anchor/control) so for a curve that is not closed there must be at least two points passed (2 x,y pairs). If num_path_pnts % 3 = 0 then the path is assumed to be closed and the points are ACCACCACCACC.  * @points_pairs: The points in the path represented as 3 floats. The first is the x pos, next is the y pos, last is the type of the pnt. The type field is dependant on the path type. For beziers (type 1 paths) the type can either be (1.0 = BEZIER_ANCHOR, 2.0 = BEZIER_CONTROL, 3.0= BEZIER_MOVE). Note all points are returned in pixel resolution.  *  * Set the points associated with the named path.  *  * Set the points associated with the named path.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_set_points (gint32 image_ID,const gchar * pathname,gint ptype,gint num_path_points,const gdouble * points_pairs)
+DECL|function|gimp_path_set_points (gint32 image_ID,const gchar * name,gint ptype,gint num_path_points,const gdouble * points_pairs)
 name|gimp_path_set_points
 parameter_list|(
 name|gint32
@@ -582,7 +582,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|pathname
+name|name
 parameter_list|,
 name|gint
 name|ptype
@@ -623,7 +623,7 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|pathname
+name|name
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -853,12 +853,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_tattoo:  * @image_ID: The image.  * @pathname: the name of the path whose tattoo should be obtained.  *  * Returns the tattoo associated with the name path.  *  * This procedure returns the tattoo associated with the specified  * path. A tattoo is a unique and permanent identifier attached to a  * path that can be used to uniquely identify a path within an image  * even between sessions.  *  * Returns: The tattoo associated with the name path.  */
+comment|/**  * gimp_path_get_tattoo:  * @image_ID: The image.  * @name: the name of the path whose tattoo should be obtained.  *  * Returns the tattoo associated with the name path.  *  * This procedure returns the tattoo associated with the specified  * path. A tattoo is a unique and permanent identifier attached to a  * path that can be used to uniquely identify a path within an image  * even between sessions.  *  * Returns: The tattoo associated with the name path.  */
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_path_get_tattoo (gint32 image_ID,const gchar * pathname)
+DECL|function|gimp_path_get_tattoo (gint32 image_ID,const gchar * name)
 name|gimp_path_get_tattoo
 parameter_list|(
 name|gint32
@@ -867,7 +867,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|pathname
+name|name
 parameter_list|)
 block|{
 name|GimpParam
@@ -897,7 +897,7 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|pathname
+name|name
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -940,12 +940,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_tattoo:  * @image_ID: The image.  * @pathname: the name of the path whose tattoo should be set.  * @tattovalue: The tattoo associated with the name path. Only values returned from 'path_get_tattoo' should be used here.  *  * Sets the tattoo associated with the name path.  *  * This procedure sets the tattoo associated with the specified path. A  * tattoo is a unique and permenant identifier attached to a path that  * can be used to uniquely identify a path within an image even between  * sessions. Note that the value passed to this function must have been  * obtained from a previous call to path_get_tattoo.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_tattoo:  * @image_ID: The image.  * @name: the name of the path whose tattoo should be set.  * @tattovalue: The tattoo associated with the name path. Only values returned from 'path_get_tattoo' should be used here.  *  * Sets the tattoo associated with the name path.  *  * This procedure sets the tattoo associated with the specified path. A  * tattoo is a unique and permenant identifier attached to a path that  * can be used to uniquely identify a path within an image even between  * sessions. Note that the value passed to this function must have been  * obtained from a previous call to path_get_tattoo.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_set_tattoo (gint32 image_ID,const gchar * pathname,gint tattovalue)
+DECL|function|gimp_path_set_tattoo (gint32 image_ID,const gchar * name,gint tattovalue)
 name|gimp_path_set_tattoo
 parameter_list|(
 name|gint32
@@ -954,7 +954,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|pathname
+name|name
 parameter_list|,
 name|gint
 name|tattovalue
@@ -987,7 +987,7 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|pathname
+name|name
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -1048,7 +1048,7 @@ name|nreturn_vals
 decl_stmt|;
 name|gchar
 modifier|*
-name|path_name
+name|name
 init|=
 name|NULL
 decl_stmt|;
@@ -1085,7 +1085,7 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|path_name
+name|name
 operator|=
 name|g_strdup
 argument_list|(
@@ -1107,18 +1107,18 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|path_name
+name|name
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_locked:  * @image_ID: The image.  * @pathname: the name of the path whose locked status should be obtained.  *  * Returns the locked status associated with the name path.  *  * This procedure returns the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: The lock status associated with the name path. 0 returned if the path is not locked. 1 is returned if the path is locked.  */
+comment|/**  * gimp_path_get_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be obtained.  *  * Returns the locked status associated with the name path.  *  * This procedure returns the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: The lock status associated with the name path. 0 returned if the path is not locked. 1 is returned if the path is locked.  */
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_path_get_locked (gint32 image_ID,const gchar * pathname)
+DECL|function|gimp_path_get_locked (gint32 image_ID,const gchar * name)
 name|gimp_path_get_locked
 parameter_list|(
 name|gint32
@@ -1127,7 +1127,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|pathname
+name|name
 parameter_list|)
 block|{
 name|GimpParam
@@ -1157,7 +1157,7 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|pathname
+name|name
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -1200,12 +1200,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_locked:  * @image_ID: The image.  * @pathname: the name of the path whose locked status should be set.  * @lockstatus: The lock status associated with the name path. 0 if the path is not locked. 1 if the path is to be locked.  *  * Set the locked status associated with the name path.  *  * This procedure sets the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be set.  * @lockstatus: The lock status associated with the name path. 0 if the path is not locked. 1 if the path is to be locked.  *  * Set the locked status associated with the name path.  *  * This procedure sets the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_set_locked (gint32 image_ID,const gchar * pathname,gint lockstatus)
+DECL|function|gimp_path_set_locked (gint32 image_ID,const gchar * name,gint lockstatus)
 name|gimp_path_set_locked
 parameter_list|(
 name|gint32
@@ -1214,7 +1214,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|pathname
+name|name
 parameter_list|,
 name|gint
 name|lockstatus
@@ -1247,11 +1247,122 @@ name|image_ID
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|pathname
+name|name
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|lockstatus
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_path_to_selection:  * @image_ID: The image.  * @name: The name of the path which should be made into selection.  * @op: The desired operation with current selection.  * @antialias: Antialias selection.  * @feather: Feather selection.  * @feather_radius_x: Feather radius x.  * @feather_radius_y: Feather radius y.  *  * Transforms the active path into a selection  *  * This procedure renders the desired path into the current selection.  *  * Returns: TRUE on success.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_path_to_selection (gint32 image_ID,const gchar * name,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+name|gimp_path_to_selection
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|GimpChannelOps
+name|op
+parameter_list|,
+name|gboolean
+name|antialias
+parameter_list|,
+name|gboolean
+name|feather
+parameter_list|,
+name|gdouble
+name|feather_radius_x
+parameter_list|,
+name|gdouble
+name|feather_radius_y
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_path_to_selection"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_IMAGE
+argument_list|,
+name|image_ID
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|name
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|op
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|antialias
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|feather
+argument_list|,
+name|GIMP_PDB_FLOAT
+argument_list|,
+name|feather_radius_x
+argument_list|,
+name|GIMP_PDB_FLOAT
+argument_list|,
+name|feather_radius_y
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

@@ -449,7 +449,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* 343 procedures registered total */
+comment|/* 344 procedures registered total */
 end_comment
 
 begin_function
@@ -615,7 +615,7 @@ argument_list|(
 literal|"Drawable procedures"
 argument_list|)
 argument_list|,
-literal|0.143
+literal|0.142
 argument_list|)
 expr_stmt|;
 name|register_drawable_procs
@@ -635,7 +635,7 @@ argument_list|(
 literal|"Edit procedures"
 argument_list|)
 argument_list|,
-literal|0.21
+literal|0.209
 argument_list|)
 expr_stmt|;
 name|register_edit_procs
@@ -675,7 +675,7 @@ argument_list|(
 literal|"Floating selections"
 argument_list|)
 argument_list|,
-literal|0.251
+literal|0.25
 argument_list|)
 expr_stmt|;
 name|register_floating_sel_procs
@@ -695,7 +695,7 @@ argument_list|(
 literal|"Font UI"
 argument_list|)
 argument_list|,
-literal|0.268
+literal|0.267
 argument_list|)
 expr_stmt|;
 name|register_font_select_procs
@@ -715,7 +715,7 @@ argument_list|(
 literal|"Gimprc procedures"
 argument_list|)
 argument_list|,
-literal|0.277
+literal|0.276
 argument_list|)
 expr_stmt|;
 name|register_gimprc_procs
@@ -735,7 +735,7 @@ argument_list|(
 literal|"Gradient UI"
 argument_list|)
 argument_list|,
-literal|0.289
+literal|0.288
 argument_list|)
 expr_stmt|;
 name|register_gradient_select_procs
@@ -775,7 +775,7 @@ argument_list|(
 literal|"Guide procedures"
 argument_list|)
 argument_list|,
-literal|0.318
+literal|0.317
 argument_list|)
 expr_stmt|;
 name|register_guides_procs
@@ -795,7 +795,7 @@ argument_list|(
 literal|"Help procedures"
 argument_list|)
 argument_list|,
-literal|0.335
+literal|0.334
 argument_list|)
 expr_stmt|;
 name|register_help_procs
@@ -815,7 +815,7 @@ argument_list|(
 literal|"Image"
 argument_list|)
 argument_list|,
-literal|0.338
+literal|0.337
 argument_list|)
 expr_stmt|;
 name|register_image_procs
@@ -835,7 +835,7 @@ argument_list|(
 literal|"Layer"
 argument_list|)
 argument_list|,
-literal|0.525
+literal|0.523
 argument_list|)
 expr_stmt|;
 name|register_layer_procs
@@ -855,7 +855,7 @@ argument_list|(
 literal|"Message procedures"
 argument_list|)
 argument_list|,
-literal|0.618
+literal|0.616
 argument_list|)
 expr_stmt|;
 name|register_message_procs
@@ -875,7 +875,7 @@ argument_list|(
 literal|"Miscellaneous"
 argument_list|)
 argument_list|,
-literal|0.627
+literal|0.625
 argument_list|)
 expr_stmt|;
 name|register_misc_procs
@@ -895,7 +895,7 @@ argument_list|(
 literal|"Misc Tool procedures"
 argument_list|)
 argument_list|,
-literal|0.633
+literal|0.631
 argument_list|)
 expr_stmt|;
 name|register_misc_tools_procs
@@ -915,7 +915,7 @@ argument_list|(
 literal|"Paint Tool procedures"
 argument_list|)
 argument_list|,
-literal|0.641
+literal|0.64
 argument_list|)
 expr_stmt|;
 name|register_paint_tools_procs
@@ -935,7 +935,7 @@ argument_list|(
 literal|"Palette"
 argument_list|)
 argument_list|,
-literal|0.685
+literal|0.683
 argument_list|)
 expr_stmt|;
 name|register_palette_procs
@@ -955,7 +955,7 @@ argument_list|(
 literal|"Palette UI"
 argument_list|)
 argument_list|,
-literal|0.703
+literal|0.701
 argument_list|)
 expr_stmt|;
 name|register_palette_select_procs
@@ -975,7 +975,7 @@ argument_list|(
 literal|"Palettes"
 argument_list|)
 argument_list|,
-literal|0.711
+literal|0.709
 argument_list|)
 expr_stmt|;
 name|register_palettes_procs
@@ -995,7 +995,7 @@ argument_list|(
 literal|"Parasite procedures"
 argument_list|)
 argument_list|,
-literal|0.726
+literal|0.724
 argument_list|)
 expr_stmt|;
 name|register_parasite_procs
@@ -1015,7 +1015,7 @@ argument_list|(
 literal|"Paths"
 argument_list|)
 argument_list|,
-literal|0.761
+literal|0.759
 argument_list|)
 expr_stmt|;
 name|register_paths_procs
@@ -1075,7 +1075,7 @@ argument_list|(
 literal|"Plug-in"
 argument_list|)
 argument_list|,
-literal|0.822
+literal|0.823
 argument_list|)
 expr_stmt|;
 name|register_plug_in_procs
@@ -1135,7 +1135,7 @@ argument_list|(
 literal|"Selection Tool procedures"
 argument_list|)
 argument_list|,
-literal|0.915
+literal|0.916
 argument_list|)
 expr_stmt|;
 name|register_selection_tools_procs
