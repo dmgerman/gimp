@@ -35,7 +35,7 @@ file|"libgimp/gimpunit.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon289568ca0103
+DECL|enum|__anon298081790103
 typedef|typedef
 enum|enum
 block|{
@@ -128,6 +128,11 @@ name|GtkWidget
 modifier|*
 name|info_table
 decl_stmt|;
+DECL|member|info_notebook
+name|GtkWidget
+modifier|*
+name|info_notebook
+decl_stmt|;
 DECL|member|field_list
 name|GSList
 modifier|*
@@ -154,6 +159,18 @@ begin_function_decl
 name|InfoDialog
 modifier|*
 name|info_dialog_new
+parameter_list|(
+name|gchar
+modifier|*
+name|title
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|InfoDialog
+modifier|*
+name|info_dialog_notebook_new
 parameter_list|(
 name|gchar
 modifier|*

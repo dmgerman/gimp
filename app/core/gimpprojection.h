@@ -429,6 +429,12 @@ modifier|*
 name|window_info_dialog
 decl_stmt|;
 comment|/*  dialog box for image information        */
+DECL|member|window_nav_dialog
+name|InfoDialog
+modifier|*
+name|window_nav_dialog
+decl_stmt|;
+comment|/*  dialog box for image navigation         */
 DECL|member|color_type
 name|int
 name|color_type

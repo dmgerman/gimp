@@ -1324,6 +1324,19 @@ block|,
 block|{
 name|N_
 argument_list|(
+literal|"/View/Window Nav..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|view_window_nav_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
 literal|"/View/---"
 argument_list|)
 block|,

@@ -140,6 +140,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* generic scroll-by-offset function */
+end_comment
+
+begin_function_decl
+name|gint
+name|scroll_display
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|,
+name|gint
+parameter_list|,
+name|gint
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

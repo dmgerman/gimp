@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"info_window.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -837,6 +843,21 @@ name|cursor_label
 argument_list|)
 argument_list|,
 literal|""
+argument_list|)
+expr_stmt|;
+name|info_window_update_RGB
+argument_list|(
+name|gdisp
+operator|->
+name|window_info_dialog
+argument_list|,
+name|gdisp
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 case|case

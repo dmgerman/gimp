@@ -39,6 +39,12 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"nav_window.h"
+end_include
+
 begin_comment
 comment|/*  This is the delay before dithering begins  *  for example, after an operation such as scrolling  */
 end_comment
@@ -55,25 +61,6 @@ begin_comment
 DECL|macro|DITHER_DELAY
 comment|/*  milliseconds  */
 end_comment
-
-begin_comment
-comment|/*  Locally defined functions  */
-end_comment
-
-begin_function_decl
-specifier|static
-name|int
-name|scroll_display
-parameter_list|(
-name|GDisplay
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  STATIC variables  */
@@ -500,19 +487,18 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|int
-DECL|function|scroll_display (GDisplay * gdisp,int x_offset,int y_offset)
+DECL|function|scroll_display (GDisplay * gdisp,gint x_offset,gint y_offset)
 name|scroll_display
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x_offset
 parameter_list|,
-name|int
+name|gint
 name|y_offset
 parameter_list|)
 block|{
@@ -843,6 +829,19 @@ name|y_offset
 condition|)
 name|gdisplays_flush
 argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|gdisp
+operator|->
+name|window_nav_dialog
+condition|)
+name|nav_window_update_window_marker
+argument_list|(
+name|gdisp
+operator|->
+name|window_nav_dialog
+argument_list|)
 expr_stmt|;
 comment|/* Make sure graphics expose events are processed before scrolling        * again */
 while|while

@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"info_window.h"
+file|"nav_window.h"
 end_include
 
 begin_include
@@ -1295,6 +1295,19 @@ name|vruler
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gdisp
+operator|->
+name|window_nav_dialog
+condition|)
+name|nav_window_update_window_marker
+argument_list|(
+name|gdisp
+operator|->
+name|window_nav_dialog
 argument_list|)
 expr_stmt|;
 block|}

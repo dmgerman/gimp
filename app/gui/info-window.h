@@ -56,6 +56,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|info_window_update_RGB
+parameter_list|(
+name|InfoDialog
+modifier|*
+parameter_list|,
+name|void
+modifier|*
+parameter_list|,
+name|gdouble
+parameter_list|,
+name|gdouble
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
