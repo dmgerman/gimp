@@ -386,10 +386,10 @@ name|gchar
 modifier|*
 name|old_text
 decl_stmt|;
-name|int
+name|gint
 name|num
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -649,19 +649,19 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|info_dialog_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|info_dialog_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|info_dialog_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|info_dialog_popdown
@@ -670,7 +670,7 @@ operator|(
 name|InfoDialog
 operator|*
 operator|)
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 return|return
@@ -683,15 +683,15 @@ begin_function
 specifier|static
 name|InfoDialog
 modifier|*
-DECL|function|info_dialog_new_extended (char * title,gboolean inNotebook)
+DECL|function|info_dialog_new_extended (gchar * title,gboolean in_notebook)
 name|info_dialog_new_extended
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|,
 name|gboolean
-name|inNotebook
+name|in_notebook
 parameter_list|)
 block|{
 name|InfoDialog
@@ -808,9 +808,9 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -821,12 +821,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|info_table
@@ -842,7 +836,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|inNotebook
+name|in_notebook
 condition|)
 block|{
 name|info_notebook
@@ -877,9 +871,9 @@ argument_list|)
 argument_list|,
 name|info_notebook
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -900,9 +894,9 @@ argument_list|)
 argument_list|,
 name|info_table
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -934,7 +928,7 @@ name|info_notebook
 expr_stmt|;
 if|if
 condition|(
-name|inNotebook
+name|in_notebook
 condition|)
 name|gtk_widget_show
 argument_list|(
@@ -970,10 +964,10 @@ end_comment
 begin_function
 name|InfoDialog
 modifier|*
-DECL|function|info_dialog_notebook_new (char * title)
+DECL|function|info_dialog_notebook_new (gchar * title)
 name|info_dialog_notebook_new
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|)
@@ -992,10 +986,10 @@ end_function
 begin_function
 name|InfoDialog
 modifier|*
-DECL|function|info_dialog_new (char * title)
+DECL|function|info_dialog_new (gchar * title)
 name|info_dialog_new
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|)
@@ -1033,17 +1027,23 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Free each item in the field list  */
+for|for
+control|(
 name|list
 operator|=
 name|idialog
 operator|->
 name|field_list
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
-block|{
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 name|g_free
 argument_list|(
 name|list
@@ -1051,14 +1051,6 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  Free the actual field linked list  */
 name|g_slist_free
 argument_list|(
@@ -1185,17 +1177,23 @@ operator|!
 name|idialog
 condition|)
 return|return;
+for|for
+control|(
 name|list
 operator|=
 name|idialog
 operator|->
 name|field_list
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
-block|{
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 name|update_field
 argument_list|(
 operator|(
@@ -1207,14 +1205,6 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1863,7 +1853,7 @@ name|GtkWidget
 modifier|*
 name|sizeentry
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|g_return_val_if_fail

@@ -306,7 +306,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29aa50900103
+DECL|enum|__anon2b445ead0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -10284,7 +10284,7 @@ name|name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"#%2x%2x%2x"
+literal|"#%02x%02x%02x"
 argument_list|,
 name|r
 argument_list|,

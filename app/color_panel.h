@@ -83,6 +83,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|color_panel_set_color
+parameter_list|(
+name|ColorPanel
+modifier|*
+name|color_panel
+parameter_list|,
+name|guchar
+modifier|*
+name|col
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -35,9 +35,9 @@ file|"libgimp/gimpunit.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon298081790103
 typedef|typedef
 enum|enum
+DECL|enum|__anon28a51ef40103
 block|{
 DECL|enumerator|INFO_LABEL
 name|INFO_LABEL
@@ -139,7 +139,7 @@ modifier|*
 name|field_list
 decl_stmt|;
 DECL|member|nfields
-name|int
+name|gint
 name|nfields
 decl_stmt|;
 DECL|member|user_data
