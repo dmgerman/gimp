@@ -73,6 +73,23 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GLIBC__
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<malloc.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -844,6 +861,23 @@ argument_list|)
 name|use_shm
 operator|=
 name|TRUE
+expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|__GLIBC__
+comment|/* Tweak memory allocation so that memory allocated in chunks>= 4k    * (64x64 pixel 1bpp tile) gets returned to the system when free'd ().    */
+name|mallopt
+argument_list|(
+name|M_MMAP_THRESHOLD
+argument_list|,
+literal|64
+operator|*
+literal|64
+operator|-
+literal|1
+argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
