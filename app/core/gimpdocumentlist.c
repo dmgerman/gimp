@@ -364,25 +364,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_string_assign
+name|g_string_printf
 argument_list|(
 name|str
 argument_list|,
-literal|"(document \""
-argument_list|)
-expr_stmt|;
-name|g_string_append
-argument_list|(
-name|str
+literal|"(document \"%s\")\n"
 argument_list|,
 name|escaped
-argument_list|)
-expr_stmt|;
-name|g_string_append
-argument_list|(
-name|str
-argument_list|,
-literal|"\")\n"
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -635,7 +623,7 @@ name|token
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"`documents'"
 argument_list|,
 name|NULL
 argument_list|,

@@ -16,27 +16,9 @@ directive|define
 name|__APP_GIMP_PARASITE_H__
 end_define
 
-begin_function_decl
-name|void
-name|gimp_parasites_init
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_parasites_exit
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* some wrappers to access gimp->parasites, mainly for the PDB */
+end_comment
 
 begin_function_decl
 name|void
