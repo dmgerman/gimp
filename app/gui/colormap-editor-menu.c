@@ -161,6 +161,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|gboolean
+name|indexed
+init|=
+name|FALSE
+decl_stmt|;
 name|gint
 name|num_colors
 init|=
@@ -187,6 +192,15 @@ condition|(
 name|gimage
 condition|)
 block|{
+name|indexed
+operator|=
+name|gimp_image_base_type
+argument_list|(
+name|gimage
+argument_list|)
+operator|==
+name|GIMP_INDEXED
+expr_stmt|;
 name|num_colors
 operator|=
 name|gimage
@@ -210,6 +224,8 @@ argument_list|(
 literal|"/Edit Color..."
 argument_list|,
 name|gimage
+operator|&&
+name|indexed
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -217,6 +233,8 @@ argument_list|(
 literal|"/Add Color"
 argument_list|,
 name|gimage
+operator|&&
+name|indexed
 operator|&&
 name|num_colors
 operator|<
