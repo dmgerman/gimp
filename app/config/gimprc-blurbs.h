@@ -17,10 +17,10 @@ name|__GIMP_RC_BLURBS_H__
 end_define
 
 begin_define
-DECL|macro|ALWAYS_RESTORE_SESSION_BLURB
+DECL|macro|RESTORE_SESSION_BLURB
 define|#
 directive|define
-name|ALWAYS_RESTORE_SESSION_BLURB
+name|RESTORE_SESSION_BLURB
 define|\
 value|"Let GIMP try to restore your last saved session."
 end_define
@@ -31,7 +31,25 @@ define|#
 directive|define
 name|BRUSH_PATH_BLURB
 define|\
-value|"Set the brush search path."
+value|"Sets the brush search path."
+end_define
+
+begin_define
+DECL|macro|CANVAS_PADDING_MODE_BLURB
+define|#
+directive|define
+name|CANVAS_PADDING_MODE_BLURB
+define|\
+value|"Sets the canvas padding mode."
+end_define
+
+begin_define
+DECL|macro|CANVAS_PADDING_COLOR_BLURB
+define|#
+directive|define
+name|CANVAS_PADDING_COLOR_BLURB
+define|\
+value|"Sets the canvas padding color."
 end_define
 
 begin_define
@@ -53,6 +71,15 @@ value|"Ask for confirmation before closing an image without saving."
 end_define
 
 begin_define
+DECL|macro|CURSOR_MODE_BLURB
+define|#
+directive|define
+name|CURSOR_MODE_BLURB
+define|\
+value|"Sets the mode of cursor the GIMP will use."
+end_define
+
+begin_define
 DECL|macro|CURSOR_UPDATING_BLURB
 define|#
 directive|define
@@ -71,6 +98,24 @@ value|"Specify a default brush.  The brush is searched for in the " \ "specified
 end_define
 
 begin_define
+DECL|macro|DEFAULT_COMMENT_BLURB
+define|#
+directive|define
+name|DEFAULT_COMMENT_BLURB
+define|\
+value|"Sets the default comment."
+end_define
+
+begin_define
+DECL|macro|DEFAULT_DOT_FOR_DOT_BLURB
+define|#
+directive|define
+name|DEFAULT_DOT_FOR_DOT_BLURB
+define|\
+value|"When set to yes, this will ensure that each pixel of an image gets " \ "mapped to a pixel on the screen."
+end_define
+
+begin_define
 DECL|macro|DEFAULT_GRADIENT_BLURB
 define|#
 directive|define
@@ -85,7 +130,7 @@ define|#
 directive|define
 name|DEFAULT_IMAGE_WIDTH_BLURB
 define|\
-value|"Set the default image width in the File/New dialog."
+value|"Sets the default image width in the File/New dialog."
 end_define
 
 begin_define
@@ -94,7 +139,7 @@ define|#
 directive|define
 name|DEFAULT_IMAGE_HEIGHT_BLURB
 define|\
-value|"Set the default image height in the File/New dialog."
+value|"Sets the default image height in the File/New dialog."
 end_define
 
 begin_define
@@ -103,7 +148,7 @@ define|#
 directive|define
 name|DEFAULT_IMAGE_TYPE_BLURB
 define|\
-value|"Set the default image type in the File/New dialog."
+value|"Sets the default image type in the File/New dialog."
 end_define
 
 begin_define
@@ -130,7 +175,7 @@ define|#
 directive|define
 name|DEFAULT_RESOLUTION_UNIT_BLURB
 define|\
-value|"Set the units for the display of the default resolution in the " \ "File/New dialog."
+value|"Sets the units for the display of the default resolution in the " \ "File/New dialog."
 end_define
 
 begin_define
@@ -148,7 +193,7 @@ define|#
 directive|define
 name|DEFAULT_UNIT_BLURB
 define|\
-value|"Set the default unit for new images and for the File/New dialog. " \ "This units will be used for coordinate display when not in dot-for-dot " \ "mode."
+value|"Sets the default unit for new images and for the File/New dialog. " \ "This units will be used for coordinate display when not in dot-for-dot " \ "mode."
 end_define
 
 begin_define
@@ -157,7 +202,7 @@ define|#
 directive|define
 name|DEFAULT_XRESOLUTION_BLURB
 define|\
-value|"Set the default horizontal resolution for new images and for the " \ "File/New dialog. This value is always in dpi (dots per inch)."
+value|"Sets the default horizontal resolution for new images and for the " \ "File/New dialog. This value is always in dpi (dots per inch)."
 end_define
 
 begin_define
@@ -166,7 +211,16 @@ define|#
 directive|define
 name|DEFAULT_YRESOLUTION_BLURB
 define|\
-value|"Set the default vertical resolution for new images and for the " \ "File/New dialog. This value is always in dpi (dots per inch)."
+value|"Sets the default vertical resolution for new images and for the " \ "File/New dialog. This value is always in dpi (dots per inch)."
+end_define
+
+begin_define
+DECL|macro|ENVIRON_PATH_BLURB
+define|#
+directive|define
+name|ENVIRON_PATH_BLURB
+define|\
+value|"Sets the environ search path."
 end_define
 
 begin_define
@@ -194,7 +248,7 @@ literal|0
 end_if
 
 begin_endif
-unit|"Set the gamma correction value for the display. 1.0 corresponds to no " \ "gamma correction.  For most displays, gamma correction should be set " \ "to between 2.0 and 2.6. One important thing to keep in mind: Many images " \ "that you might get from outside sources will in all likelihood already " \ "be gamma-corrected.  In these cases, the image will look washed-out if " \ "the gimp has gamma-correction turned on.  If you are going to work with " \ "images of this sort, turn gamma correction off by setting the value to 1.0."
+unit|"Sets the gamma correction value for the display. 1.0 corresponds to no " \ "gamma correction.  For most displays, gamma correction should be set " \ "to between 2.0 and 2.6. One important thing to keep in mind: Many images " \ "that you might get from outside sources will in all likelihood already " \ "be gamma-corrected.  In these cases, the image will look washed-out if " \ "the GIMP has gamma-correction turned on.  If you are going to work with " \ "images of this sort, turn gamma correction off by setting the value to 1.0."
 endif|#
 directive|endif
 end_endif
@@ -232,7 +286,16 @@ define|#
 directive|define
 name|GRADIENT_PATH_BLURB
 define|\
-value|"Set the gradient search path."
+value|"Sets the gradient search path."
+end_define
+
+begin_define
+DECL|macro|HELP_BROWSER_BLURB
+define|#
+directive|define
+name|HELP_BROWSER_BLURB
+define|\
+value|"Sets the browser gimp-help will use."
 end_define
 
 begin_define
@@ -241,7 +304,7 @@ define|#
 directive|define
 name|IMAGE_STATUS_FORMAT_BLURB
 define|\
-value|"Set the text to appear in image window status bars. See image-title-format " \ "for the list of possible % sequences."
+value|"Sets the text to appear in image window status bars. See image-title-format " \ "for the list of possible % sequences."
 end_define
 
 begin_define
@@ -250,7 +313,16 @@ define|#
 directive|define
 name|IMAGE_TITLE_FORMAT_BLURB
 define|\
-value|"Set the text to appear in image window titles.  Certain % character " \ "sequences are recognised and expanded as follows:\n" \ "\n" \ "%%  literal percent sign\n" \ "%f  bare filename, or \"Untitled\"\n" \ "%F  full path to file, or \"Untitled\"\n" \ "%p  PDB image id\n" \ "%i  view instance number\n" \ "%t  image type (RGB, grayscale, indexed)\n" \ "%z  zoom factor as a percentage\n" \ "%s  source scale factor\n" \ "%d  destination scale factor\n" \ "%Dx expands to x if the image is dirty, the empty string otherwise\n" \ "%Cx expands to x if the image is clean, the empty string otherwise\n" \ "%m  memory used by the image\n" \ "%l  the number of layers\n" \ "%L  the name of the active layer/channel\n" \ "%w  image width in pixels\n" \ "%W  image width in real-world units\n" \ "%h  image height in pixels\n" \ "%H  image height in real-world units\n" \ "%u  unit symbol\n" \ "%U  unit abbreviation\n\n"
+value|"Sets the text to appear in image window titles.  Certain % character " \ "sequences are recognised and expanded as follows:\n" \ "\n" \ "%%  literal percent sign\n" \ "%f  bare filename, or \"Untitled\"\n" \ "%F  full path to file, or \"Untitled\"\n" \ "%p  PDB image id\n" \ "%i  view instance number\n" \ "%t  image type (RGB, grayscale, indexed)\n" \ "%z  zoom factor as a percentage\n" \ "%s  source scale factor\n" \ "%d  destination scale factor\n" \ "%Dx expands to x if the image is dirty, the empty string otherwise\n" \ "%Cx expands to x if the image is clean, the empty string otherwise\n" \ "%m  memory used by the image\n" \ "%l  the number of layers\n" \ "%L  the name of the active layer/channel\n" \ "%w  image width in pixels\n" \ "%W  image width in real-world units\n" \ "%h  image height in pixels\n" \ "%H  image height in real-world units\n" \ "%u  unit symbol\n" \ "%U  unit abbreviation\n\n"
+end_define
+
+begin_define
+DECL|macro|INFO_WINDOW_PER_DISPLAY_BLURB
+define|#
+directive|define
+name|INFO_WINDOW_PER_DISPLAY_BLURB
+define|\
+value|"When set to yes, the GIMP will use a different info window per image " \ "view."
 end_define
 
 begin_define
@@ -268,7 +340,7 @@ define|#
 directive|define
 name|INTERPOLATION_TYPE_BLURB
 define|\
-value|"Set the level of interpolation used for scaling and other transformations."
+value|"Sets the level of interpolation used for scaling and other transformations."
 end_define
 
 begin_define
@@ -290,12 +362,48 @@ value|"Speed of marching ants in the selection outline.  This value is in " \ "m
 end_define
 
 begin_define
+DECL|macro|MAX_NEW_IMAGE_SIZE_BLURB
+define|#
+directive|define
+name|MAX_NEW_IMAGE_SIZE_BLURB
+define|\
+value|"Sets the max-new-image-size limit."
+end_define
+
+begin_define
+DECL|macro|MIN_COLORS_BLURB
+define|#
+directive|define
+name|MIN_COLORS_BLURB
+define|\
+value|"Generally only a concern for 8-bit displays, this sets the minimum " \ "number of colors."
+end_define
+
+begin_define
 DECL|macro|MODULE_PATH_BLURB
 define|#
 directive|define
 name|MODULE_PATH_BLURB
 define|\
-value|"Set the module search path."
+value|"Sets the module search path."
+end_define
+
+begin_define
+DECL|macro|MODULE_LOAD_INHIBIT_BLURB
+define|#
+directive|define
+name|MODULE_LOAD_INHIBIT_BLURB
+define|\
+value|"To inhibit loading of a module, add its name here."
+end_define
+
+begin_define
+DECL|macro|MONITOR_RES_FROM_GDK_BLURB
+define|#
+directive|define
+name|MONITOR_RES_FROM_GDK_BLURB
+define|\
+value|"Set to yes if the GIMP should use the monitor resolution from " \ "the windowing system."
 end_define
 
 begin_define
@@ -304,7 +412,7 @@ define|#
 directive|define
 name|MONITOR_XRESOLUTION_BLURB
 define|\
-value|"Set the monitor's horizontal resolution, in dots per inch.  If set to " \ "0, forces the X server to be queried for both horizontal and vertical " \ "resolution information."
+value|"Sets the monitor's horizontal resolution, in dots per inch.  If set to " \ "0, forces the X server to be queried for both horizontal and vertical " \ "resolution information."
 end_define
 
 begin_define
@@ -313,7 +421,16 @@ define|#
 directive|define
 name|MONITOR_YRESOLUTION_BLURB
 define|\
-value|"Set the monitor's vertical resolution, in dots per inch.  If set to " \ "0, forces the X server to be queried for both horizontal and vertical " \ "resolution information."
+value|"Sets the monitor's vertical resolution, in dots per inch.  If set to " \ "0, forces the X server to be queried for both horizontal and vertical " \ "resolution information."
+end_define
+
+begin_define
+DECL|macro|NAVIGATION_PREVIEW_SIZE_BLURB
+define|#
+directive|define
+name|NAVIGATION_PREVIEW_SIZE_BLURB
+define|\
+value|"Sets the navigation preview size."
 end_define
 
 begin_define
@@ -331,7 +448,7 @@ define|#
 directive|define
 name|PALETTE_PATH_BLURB
 define|\
-value|"Set the palette search path."
+value|"Sets the palette search path."
 end_define
 
 begin_define
@@ -340,7 +457,7 @@ define|#
 directive|define
 name|PATTERN_PATH_BLURB
 define|\
-value|"Set the pattern search path."
+value|"Sets the pattern search path."
 end_define
 
 begin_define
@@ -349,7 +466,7 @@ define|#
 directive|define
 name|PERFECT_MOUSE_BLURB
 define|\
-value|"If set to true, the X server is queried for the mouse's current " \ "position on each motion event, rather than relying on the position " \ "hint.  This means painting with large brushes should be more accurate, " \ "but it may be slower.  Perversely, on some X servers turning on this " \ "option results in faster painting."
+value|"When set to yes, the X server is queried for the mouse's current " \ "position on each motion event, rather than relying on the position " \ "hint.  This means painting with large brushes should be more accurate, " \ "but it may be slower.  Perversely, on some X servers turning on this " \ "option results in faster painting."
 end_define
 
 begin_define
@@ -358,7 +475,16 @@ define|#
 directive|define
 name|PLUG_IN_PATH_BLURB
 define|\
-value|"Set the plug-in search path."
+value|"Sets the plug-in search path."
+end_define
+
+begin_define
+DECL|macro|PLUGINRC_PATH_BLURB
+define|#
+directive|define
+name|PLUGINRC_PATH_BLURB
+define|\
+value|"Sets the pluginrc search path."
 end_define
 
 begin_define
@@ -367,7 +493,7 @@ define|#
 directive|define
 name|PREVIEW_SIZE_BLURB
 define|\
-value|"Set the default preview size."
+value|"Sets the default preview size."
 end_define
 
 begin_define
@@ -376,7 +502,7 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_RESIZE_BLURB
 define|\
-value|"When the physical image size changes, this option enables the automatic " \ "resizing of windows."
+value|"When the physical image size changes, setting this option to yes " \ "enables the automatic resizing of windows."
 end_define
 
 begin_define
@@ -385,7 +511,16 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_ZOOM_BLURB
 define|\
-value|"When zooming into and out of images, this option enables the automatic " \ "resizing of windows. " \  #define SAVE_DEVICE_STATUS_BLURB \ "Remember the current tool, pattern, color, and brush across GIMP " \ "sessions."
+value|"When zooming into and out of images, this setting this option to " \ "yes enables the automatic resizing of windows."
+end_define
+
+begin_define
+DECL|macro|SAVE_DEVICE_STATUS_BLURB
+define|#
+directive|define
+name|SAVE_DEVICE_STATUS_BLURB
+define|\
+value|"Remember the current tool, pattern, color, and brush across GIMP " \ "sessions."
 end_define
 
 begin_define
@@ -412,7 +547,7 @@ define|#
 directive|define
 name|SHOW_MENUBAR_BLURB
 define|\
-value|"Set the menubar visibility. This can also be toggled with the "\ "View->Toggle Menubar command."
+value|"Sets the menubar visibility. This can also be toggled with the "\ "View->Toggle Menubar command."
 end_define
 
 begin_define
@@ -421,7 +556,7 @@ define|#
 directive|define
 name|SHOW_RULERS_BLURB
 define|\
-value|"Set the ruler visibility. This can also be toggled with the "\ "View->Toggle Rulers command."
+value|"Sets the ruler visibility. This can also be toggled with the " \ "View->Toggle Rulers command."
 end_define
 
 begin_define
@@ -430,7 +565,7 @@ define|#
 directive|define
 name|SHOW_STATUSBAR_BLURB
 define|\
-value|"Controlling statusbar visibility. This can also be toggled with "\ "the View->Toggle Statusbar command."
+value|"Set to yes to make the statusbar visible. This can also be toggled "\ "with the View->Toggle Statusbar command."
 end_define
 
 begin_define
@@ -439,7 +574,7 @@ define|#
 directive|define
 name|SHOW_TIPS_BLURB
 define|\
-value|"Set to display a handy GIMP tip on startup."
+value|"To display a handy GIMP tip on startup, set to yes."
 end_define
 
 begin_define
@@ -448,7 +583,7 @@ define|#
 directive|define
 name|SHOW_TOOL_TIPS_BLURB
 define|\
-value|"Set to display tooltips."
+value|"To display tooltips, set to yes."
 end_define
 
 begin_define
@@ -457,7 +592,7 @@ define|#
 directive|define
 name|STINGY_MEMORY_USE_BLURB
 define|\
-value|"There is always a tradeoff between memory usage and speed.  In most " \ "cases, the GIMP opts for speed over memory.  However, if memory is a " \ "big issue, set stingy-memory-use."
+value|"There is always a tradeoff between memory usage and speed.  In most " \ "cases, the GIMP opts for speed over memory.  However, if memory is a " \ "big issue, set stingy-memory-use to yes."
 end_define
 
 begin_define
@@ -466,7 +601,16 @@ define|#
 directive|define
 name|SWAP_PATH_BLURB
 define|\
-value|"Set the swap file location. The gimp uses a tile based memory " \ "allocation scheme. The swap file is used to quickly and easily " \ "swap tiles out to disk and back in. Be aware that the swap file " \ "can easily get very large if the gimp is used with large images. " \ "Also, things can get horribly slow if the swap file is created on " \ "a directory that is mounted over NFS.  For these reasons, it may " \ "be desirable to put your swap file in \"/tmp\"."
+value|"Sets the swap file location. The gimp uses a tile based memory " \ "allocation scheme. The swap file is used to quickly and easily " \ "swap tiles out to disk and back in. Be aware that the swap file " \ "can easily get very large if the GIMP is used with large images. " \ "Also, things can get horribly slow if the swap file is created on " \ "a directory that is mounted over NFS.  For these reasons, it may " \ "be desirable to put your swap file in \"/tmp\"."
+end_define
+
+begin_define
+DECL|macro|TEAROFF_MENUS_BLURB
+define|#
+directive|define
+name|TEAROFF_MENUS_BLURB
+define|\
+value|"When set to yes, enables tear off menus."
 end_define
 
 begin_define
@@ -475,7 +619,34 @@ define|#
 directive|define
 name|TEMP_PATH_BLURB
 define|\
-value|"Set the temporary storage directory. Files will appear here " \ "during the course of running the gimp.  Most files will disappear " \ "when the gimp exits, but some files are likely to remain, " \ "such as working palette files, so it is best if this directory " \ "not be one that is shared by other users or is cleared on machine " \ "reboot such as /tmp."
+value|"Sets the temporary storage directory. Files will appear here " \ "during the course of running the GIMP.  Most files will disappear " \ "when the GIMP exits, but some files are likely to remain, " \ "such as working palette files, so it is best if this directory " \ "not be one that is shared by other users or is cleared on machine " \ "reboot such as /tmp."
+end_define
+
+begin_define
+DECL|macro|THEME_BLURB
+define|#
+directive|define
+name|THEME_BLURB
+define|\
+value|"The name of the theme to use."
+end_define
+
+begin_define
+DECL|macro|THEME_PATH_BLURB
+define|#
+directive|define
+name|THEME_PATH_BLURB
+define|\
+value|"Sets the theme search path."
+end_define
+
+begin_define
+DECL|macro|THUMBNAIL_SIZE_BLURB
+define|#
+directive|define
+name|THUMBNAIL_SIZE_BLURB
+define|\
+value|"Sets the thumbnail size."
 end_define
 
 begin_define
@@ -484,7 +655,16 @@ define|#
 directive|define
 name|TILE_CACHE_SIZE_BLURB
 define|\
-value|"The tile cache is used to make sure the gimp doesn't thrash " \ "tiles between memory and disk. Setting this value higher will " \ "cause the gimp to use less swap space, but will also cause " \ "the gimp to use more memory. Conversely, a smaller cache size " \ "causes the gimp to use more swap space and less memory."
+value|"The tile cache is used to make sure the GIMP doesn't thrash " \ "tiles between memory and disk. Setting this value higher will " \ "cause the GIMP to use less swap space, but will also cause " \ "the GIMP to use more memory. Conversely, a smaller cache size " \ "causes the GIMP to use more swap space and less memory."
+end_define
+
+begin_define
+DECL|macro|TOOL_PLUG_IN_PATH_BLURB
+define|#
+directive|define
+name|TOOL_PLUG_IN_PATH_BLURB
+define|\
+value|"Sets the tool-plug-in search path."
 end_define
 
 begin_define
@@ -493,7 +673,7 @@ define|#
 directive|define
 name|TRANSPARENCY_TYPE_BLURB
 define|\
-value|"Set the manner in which transparency is displayed in images."
+value|"Sets the manner in which transparency is displayed in images."
 end_define
 
 begin_define
@@ -506,120 +686,21 @@ value|"Sets the size of the checkerboard used to display transparency."
 end_define
 
 begin_define
+DECL|macro|TRUST_DIRTY_FLAG_BLURB
+define|#
+directive|define
+name|TRUST_DIRTY_FLAG_BLURB
+define|\
+value|"When set to yes, the GIMP will not save if the image is unchanged since " \ "opening it."
+end_define
+
+begin_define
 DECL|macro|UNDO_LEVELS_BLURB
 define|#
 directive|define
 name|UNDO_LEVELS_BLURB
 define|\
-value|"Set the number of operations kept on the undo stack."
-end_define
-
-begin_comment
-comment|/*  FIXME: the following blurbs are missing  */
-end_comment
-
-begin_define
-DECL|macro|TOOL_PLUG_IN_PATH_BLURB
-define|#
-directive|define
-name|TOOL_PLUG_IN_PATH_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|ENVIRON_PATH_BLURB
-define|#
-directive|define
-name|ENVIRON_PATH_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|PLUGINRC_PATH_BLURB
-define|#
-directive|define
-name|PLUGINRC_PATH_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|MONITOR_RES_FROM_GDK_BLURB
-define|#
-directive|define
-name|MONITOR_RES_FROM_GDK_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|THEME_PATH_BLURB
-define|#
-directive|define
-name|THEME_PATH_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|DEFAULT_COMMENT_BLURB
-define|#
-directive|define
-name|DEFAULT_COMMENT_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|DEFAULT_DOT_FOR_DOT_BLURB
-define|#
-directive|define
-name|DEFAULT_DOT_FOR_DOT_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|MODULE_LOAD_INHIBIT_BLURB
-define|#
-directive|define
-name|MODULE_LOAD_INHIBIT_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|INFO_WINDOW_PER_DISPLAY_BLURB
-define|#
-directive|define
-name|INFO_WINDOW_PER_DISPLAY_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|TRUST_DIRTY_FLAG_BLURB
-define|#
-directive|define
-name|TRUST_DIRTY_FLAG_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|RESTORE_SESSION_BLURB
-define|#
-directive|define
-name|RESTORE_SESSION_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|TEAROFF_MENUS_BLURB
-define|#
-directive|define
-name|TEAROFF_MENUS_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|THEME_BLURB
-define|#
-directive|define
-name|THEME_BLURB
-value|NULL
+value|"Sets the number of operations kept on the undo stack."
 end_define
 
 begin_define
@@ -627,71 +708,8 @@ DECL|macro|USE_HELP_BLURB
 define|#
 directive|define
 name|USE_HELP_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|THUMBNAIL_SIZE_BLURB
-define|#
-directive|define
-name|THUMBNAIL_SIZE_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|MIN_COLORS_BLURB
-define|#
-directive|define
-name|MIN_COLORS_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|CURSOR_MODE_BLURB
-define|#
-directive|define
-name|CURSOR_MODE_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|NAVIGATION_PREVIEW_SIZE_BLURB
-define|#
-directive|define
-name|NAVIGATION_PREVIEW_SIZE_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|CANVAS_PADDING_MODE_BLURB
-define|#
-directive|define
-name|CANVAS_PADDING_MODE_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|CANVAS_PADDING_COLOR_BLURB
-define|#
-directive|define
-name|CANVAS_PADDING_COLOR_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|HELP_BROWSER_BLURB
-define|#
-directive|define
-name|HELP_BROWSER_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|MAX_NEW_IMAGE_SIZE_BLURB
-define|#
-directive|define
-name|MAX_NEW_IMAGE_SIZE_BLURB
-value|NULL
+define|\
+value|"When set to no the F1 help binding will be disabled."
 end_define
 
 begin_endif
