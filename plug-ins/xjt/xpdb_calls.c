@@ -1513,10 +1513,10 @@ decl_stmt|;
 if|if
 condition|(
 name|orientation
-operator|==
-literal|0
+operator|!=
+literal|1
 condition|)
-comment|/* in GIMP 1.1 we could use (orientation == ORIENTATION_VERTICAL) */
+comment|/* in GIMP 1.1 we could use (orientation != ORIENTATION_HORIZONTAL) */
 block|{
 name|l_add_guide_proc
 operator|=
@@ -1642,7 +1642,7 @@ name|char
 modifier|*
 name|l_findnext_guide_proc
 init|=
-literal|"gimp_image_findnext_guide"
+literal|"gimp_image_find_next_guide"
 decl_stmt|;
 name|GParam
 modifier|*
@@ -1937,6 +1937,27 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
+if|if
+condition|(
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|!=
+literal|1
+condition|)
+comment|/* in GIMP 1.1 we could use (orientation != ORIENTATION_HORIZONTAL) */
+block|{
+return|return
+operator|(
+literal|0
+operator|)
+return|;
+block|}
 return|return
 operator|(
 name|return_vals

@@ -1088,7 +1088,6 @@ if|if
 condition|(
 name|tmplist
 condition|)
-empty_stmt|;
 name|next_guide
 operator|=
 operator|(
@@ -1102,6 +1101,11 @@ name|data
 operator|)
 operator|->
 name|guide_ID
+expr_stmt|;
+else|else
+name|next_guide
+operator|=
+literal|0
 expr_stmt|;
 break|break;
 block|}
