@@ -60,13 +60,15 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c513f0e0103
+DECL|enum|__anon2a4ce8000103
 block|{
-DECL|enumerator|COLORBLIND_DEFICIENCY_NONE
-name|COLORBLIND_DEFICIENCY_NONE
+DECL|enumerator|COLORBLIND_DEFICIENCY_FIRST
+name|COLORBLIND_DEFICIENCY_FIRST
 block|,
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
+init|=
+name|COLORBLIND_DEFICIENCY_FIRST
 block|,
 DECL|enumerator|COLORBLIND_DEFICIENCY_DEUTERANOPIA
 name|COLORBLIND_DEFICIENCY_DEUTERANOPIA
@@ -1134,15 +1136,6 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|colorblind
-operator|->
-name|deficiency
-operator|==
-name|COLORBLIND_DEFICIENCY_NONE
-condition|)
-return|return;
 comment|/* to improve readability, copy the parameters into local variables */
 name|memcpy
 argument_list|(
@@ -1959,7 +1952,7 @@ if|if
 condition|(
 name|deficiency
 operator|>=
-name|COLORBLIND_DEFICIENCY_NONE
+name|COLORBLIND_DEFICIENCY_FIRST
 operator|&&
 name|deficiency
 operator|<=
@@ -2095,7 +2088,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2119,11 +2112,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Color Deficiency Type:"
+literal|"Color _Deficiency Type:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2168,15 +2161,6 @@ argument_list|,
 name|colorblind
 operator|->
 name|deficiency
-argument_list|,
-name|_
-argument_list|(
-literal|"None (normal vision)"
-argument_list|)
-argument_list|,
-name|COLORBLIND_DEFICIENCY_NONE
-argument_list|,
-name|NULL
 argument_list|,
 name|_
 argument_list|(
@@ -2230,6 +2214,18 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|colorblind
+operator|->
+name|optionmenu
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|colorblind
 operator|->
 name|optionmenu
@@ -2504,10 +2500,6 @@ operator|->
 name|deficiency
 condition|)
 block|{
-case|case
-name|COLORBLIND_DEFICIENCY_NONE
-case|:
-break|break;
 case|case
 name|COLORBLIND_DEFICIENCY_DEUTERANOPIA
 case|:

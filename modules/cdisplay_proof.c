@@ -1452,7 +1452,7 @@ name|entry
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
