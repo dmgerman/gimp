@@ -323,7 +323,7 @@ DECL|macro|PREVIEW_SIZE
 define|#
 directive|define
 name|PREVIEW_SIZE
-value|650
+value|400
 end_define
 
 begin_define
@@ -1169,7 +1169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50103
+DECL|enum|__anon2c67aa6a0103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1221,7 +1221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50203
+DECL|enum|__anon2c67aa6a0203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1242,7 +1242,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50303
+DECL|enum|__anon2c67aa6a0303
 block|{
 DECL|enumerator|SINGLE_LAYER
 name|SINGLE_LAYER
@@ -1263,7 +1263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50403
+DECL|enum|__anon2c67aa6a0403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1287,7 +1287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50503
+DECL|enum|__anon2c67aa6a0503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1308,7 +1308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50603
+DECL|enum|__anon2c67aa6a0603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1476,7 +1476,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f096b50708
+DECL|struct|__anon2c67aa6a0708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1515,7 +1515,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f096b50808
+DECL|struct|__anon2c67aa6a0808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1564,7 +1564,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f096b50908
+DECL|struct|__anon2c67aa6a0908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1735,7 +1735,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50a03
+DECL|enum|__anon2c67aa6a0a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1765,7 +1765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50b03
+DECL|enum|__anon2c67aa6a0b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1781,7 +1781,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50c03
+DECL|enum|__anon2c67aa6a0c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1806,7 +1806,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f096b50d03
+DECL|enum|__anon2c67aa6a0d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -2565,31 +2565,17 @@ comment|/* Dummy widget in brush page */
 end_comment
 
 begin_decl_stmt
-DECL|variable|x_pos_label
+DECL|variable|pos_label
 specifier|static
 name|GtkWidget
 modifier|*
-name|x_pos_label
+name|pos_label
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|x_pos_label
-comment|/* X pos marker */
-end_comment
-
-begin_decl_stmt
-DECL|variable|y_pos_label
-specifier|static
-name|GtkWidget
-modifier|*
-name|y_pos_label
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|y_pos_label
-comment|/* Y pos marker */
+DECL|variable|pos_label
+comment|/* XY pos marker */
 end_comment
 
 begin_decl_stmt
@@ -16531,7 +16517,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Hide Cntr Pnts"
+literal|"Hide Control Points"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16546,7 +16532,7 @@ name|toggle
 argument_list|,
 literal|1
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 literal|4
 argument_list|,
@@ -18002,17 +17988,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|x_pos_label
-argument_list|)
-argument_list|,
-name|enable
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|y_pos_label
+name|pos_label
 argument_list|)
 argument_list|,
 name|enable
@@ -18044,12 +18020,6 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-if|if
-condition|(
-name|x_pos_val
-operator|<
-literal|0
-condition|)
 name|g_snprintf
 argument_list|(
 name|buf
@@ -18059,67 +18029,9 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-literal|" X:%.3d "
+literal|"%d, %d"
 argument_list|,
 name|x_pos_val
-argument_list|)
-expr_stmt|;
-else|else
-name|g_snprintf
-argument_list|(
-name|buf
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buf
-argument_list|)
-argument_list|,
-literal|" X:  %.3d "
-argument_list|,
-name|x_pos_val
-argument_list|)
-expr_stmt|;
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|x_pos_label
-argument_list|)
-argument_list|,
-name|buf
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|y_pos_val
-operator|<
-literal|0
-condition|)
-name|g_snprintf
-argument_list|(
-name|buf
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buf
-argument_list|)
-argument_list|,
-literal|" Y:%.3d "
-argument_list|,
-name|y_pos_val
-argument_list|)
-expr_stmt|;
-else|else
-name|g_snprintf
-argument_list|(
-name|buf
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buf
-argument_list|)
-argument_list|,
-literal|" Y:  %.3d "
 argument_list|,
 name|y_pos_val
 argument_list|)
@@ -18128,7 +18040,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|y_pos_label
+name|pos_label
 argument_list|)
 argument_list|,
 name|buf
@@ -18215,7 +18127,7 @@ comment|/* NOT USED */
 end_comment
 
 begin_comment
-unit|static void gfig_obj_size_update (gint sz) {   static gchar buf[256];      sprintf (buf, "%6d", sz);   gtk_label_set_text (GTK_LABEL (obj_size_label), buf); }    static GtkWidget * gfig_obj_size_label (void) {   GtkWidget *label;   GtkWidget *hbox;   gchar buf[256];    hbox = gtk_hbox_new (FALSE, 0);
+unit|static void gfig_obj_size_update (gint sz) {   static gchar buf[256];      sprintf (buf, "%6d", sz);   gtk_label_set_text (GTK_LABEL (obj_size_label), buf); }    static GtkWidget * gfig_obj_size_label (void) {   GtkWidget *label;   GtkWidget *hbox;   gchar buf[256];    hbox = gtk_hbox_new (TRUE, 6);
 comment|/* Position labels */
 end_comment
 
@@ -18247,10 +18159,6 @@ name|GtkWidget
 modifier|*
 name|hbox
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
 name|gchar
 name|buf
 index|[
@@ -18263,17 +18171,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-literal|1
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -18288,7 +18186,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"XY Pos:"
+literal|"XY Position:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -18313,13 +18211,11 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|vbox
+name|pos_label
 operator|=
-name|gtk_vbox_new
+name|gtk_label_new
 argument_list|(
-name|FALSE
-argument_list|,
-literal|0
+literal|""
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -18329,7 +18225,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|vbox
+name|pos_label
 argument_list|,
 name|FALSE
 argument_list|,
@@ -18340,51 +18236,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
-name|x_pos_label
-operator|=
-name|gtk_label_new
-argument_list|(
-literal|""
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|x_pos_label
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|x_pos_label
-argument_list|)
-expr_stmt|;
-name|y_pos_label
-operator|=
-name|gtk_label_new
-argument_list|(
-literal|""
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|y_pos_label
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|y_pos_label
+name|pos_label
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -18396,7 +18248,9 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-literal|" X:  %.3d "
+literal|"%d, %d"
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -18405,31 +18259,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|x_pos_label
-argument_list|)
-argument_list|,
-name|buf
-argument_list|)
-expr_stmt|;
-name|g_snprintf
-argument_list|(
-name|buf
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buf
-argument_list|)
-argument_list|,
-literal|" Y:  %.3d "
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|y_pos_label
+name|pos_label
 argument_list|)
 argument_list|,
 name|buf
@@ -18469,7 +18299,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Obj Details"
+literal|"Object Details"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -18479,7 +18309,17 @@ name|gtk_hbox_new
 argument_list|(
 name|TRUE
 argument_list|,
-literal|1
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -18507,9 +18347,9 @@ argument_list|)
 argument_list|,
 name|label
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -18597,6 +18437,28 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_col_spacing
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|1
+argument_list|,
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
@@ -18607,14 +18469,16 @@ literal|"Draw Name:"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_label_set_justify
+name|gtk_misc_set_alignment
 argument_list|(
-name|GTK_LABEL
+name|GTK_MISC
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
-name|GTK_JUSTIFY_RIGHT
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -18634,7 +18498,7 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-literal|0
+name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -18658,14 +18522,16 @@ literal|"Filename:"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_label_set_justify
+name|gtk_misc_set_alignment
 argument_list|(
-name|GTK_LABEL
+name|GTK_MISC
 argument_list|(
 name|label
 argument_list|)
 argument_list|,
-name|GTK_JUSTIFY_RIGHT
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -18685,7 +18551,7 @@ literal|1
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -18707,6 +18573,18 @@ name|_
 argument_list|(
 literal|"(none)"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|status_label_dname
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -18750,6 +18628,18 @@ name|_
 argument_list|(
 literal|"(none)"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|status_label_fname
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
