@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd0e19e0103
+DECL|enum|__anon27a873fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -340,6 +340,7 @@ name|close
 operator|=
 name|gimp_dialog_close
 expr_stmt|;
+comment|/**    * GimpDialog::help-func:    *    * Since: GIMP 2.2    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -360,6 +361,7 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpDialog::help-id:    *    * Since: GIMP 2.2    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -1143,7 +1145,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd0e19e0208
+DECL|struct|__anon27a873fd0208
 block|{
 DECL|member|dialog
 name|GtkDialog
