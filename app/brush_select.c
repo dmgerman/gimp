@@ -443,7 +443,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"Multiply"
+literal|"Multiply (Burn)"
 block|,
 literal|0
 block|,
@@ -455,6 +455,25 @@ operator|(
 name|gpointer
 operator|)
 name|MULTIPLY_MODE
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"Divide (Dodge)"
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|paint_mode_menu_callback
+block|,
+operator|(
+name|gpointer
+operator|)
+name|DIVIDE_MODE
 block|,
 name|NULL
 block|,

@@ -299,6 +299,35 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|divide_pixels
+parameter_list|(
+name|unsigned
+name|char
+modifier|*
+parameter_list|,
+name|unsigned
+name|char
+modifier|*
+parameter_list|,
+name|unsigned
+name|char
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|screen_pixels
 parameter_list|(
 name|unsigned
@@ -2415,11 +2444,19 @@ value|14
 end_define
 
 begin_define
+DECL|macro|DIVIDE_MODE
+define|#
+directive|define
+name|DIVIDE_MODE
+value|15
+end_define
+
+begin_define
 DECL|macro|ERASE_MODE
 define|#
 directive|define
 name|ERASE_MODE
-value|15
+value|16
 end_define
 
 begin_define
@@ -2427,7 +2464,7 @@ DECL|macro|REPLACE_MODE
 define|#
 directive|define
 name|REPLACE_MODE
-value|16
+value|17
 end_define
 
 begin_comment

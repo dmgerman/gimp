@@ -190,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac0b8280103
+DECL|enum|__anon28f318340103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -227,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac0b8280203
+DECL|enum|__anon28f318340203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac0b8280303
+DECL|enum|__anon28f318340303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -388,7 +388,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2ac0b8280408
+DECL|struct|__anon28f318340408
 typedef|typedef
 struct|struct
 block|{
@@ -440,7 +440,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac0b8280508
+DECL|struct|__anon28f318340508
 typedef|typedef
 struct|struct
 block|{
@@ -8733,7 +8733,7 @@ name|PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
-literal|"the paint application mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14) }"
+literal|"the paint application mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
 block|}
 block|,
 block|{
