@@ -140,7 +140,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8ac6850108
+DECL|struct|__anon2c1528a90108
 block|{
 DECL|member|resolution
 name|guint
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8ac6850208
+DECL|struct|__anon2c1528a90208
 block|{
 DECL|member|run
 name|gint
@@ -258,7 +258,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8ac6850308
+DECL|struct|__anon2c1528a90308
 block|{
 DECL|member|width
 DECL|member|height
@@ -315,7 +315,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8ac6850408
+DECL|struct|__anon2c1528a90408
 block|{
 DECL|member|run
 name|gint
@@ -836,7 +836,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8ac6850508
+DECL|struct|__anon2c1528a90508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -940,7 +940,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8ac6850608
+DECL|struct|__anon2c1528a90608
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3114,6 +3114,15 @@ break|break;
 ifdef|#
 directive|ifdef
 name|GIMP_HAVE_RESOLUTION_INFO
+if|if
+condition|(
+name|plvals
+operator|.
+name|resolution
+operator|>
+literal|1e-5
+condition|)
+block|{
 name|gimp_image_set_resolution
 argument_list|(
 name|image_ID
@@ -3140,6 +3149,7 @@ argument_list|,
 name|UNIT_INCH
 argument_list|)
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 if|if

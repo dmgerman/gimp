@@ -137,7 +137,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070103
+DECL|enum|__anon2a0d199f0103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +201,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070203
+DECL|enum|__anon2a0d199f0203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +241,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070303
+DECL|enum|__anon2a0d199f0303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +273,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070403
+DECL|enum|__anon2a0d199f0403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +301,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070503
+DECL|enum|__anon2a0d199f0503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +329,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070603
+DECL|enum|__anon2a0d199f0603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +351,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070703
+DECL|enum|__anon2a0d199f0703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +387,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070803
+DECL|enum|__anon2a0d199f0803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +407,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070903
+DECL|enum|__anon2a0d199f0903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +455,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070a03
+DECL|enum|__anon2a0d199f0a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +479,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070b03
+DECL|enum|__anon2a0d199f0b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +540,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1cb5070c03
+DECL|enum|__anon2a0d199f0c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1cb5070d08
+DECL|struct|__anon2a0d199f0d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1cb5070e08
+DECL|struct|__anon2a0d199f0e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +776,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1cb5070f08
+DECL|struct|__anon2a0d199f0f08
 block|{
 DECL|member|run
 name|gint
@@ -924,79 +924,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|GParamDef
-name|save_args
-index|[]
-init|=
-block|{
-block|{
-name|PARAM_INT32
-block|,
-literal|"run_mode"
-block|,
-literal|"Interactive, non-interactive"
-block|}
-block|,
-block|{
-name|PARAM_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Input image"
-block|}
-block|,
-block|{
-name|PARAM_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"Drawable to save"
-block|}
-block|,
-block|{
-name|PARAM_STRING
-block|,
-literal|"filename"
-block|,
-literal|"The name of the file to save the image in"
-block|}
-block|,
-block|{
-name|PARAM_STRING
-block|,
-literal|"raw_filename"
-block|,
-literal|"The name of the file to save the image in"
-block|}
-block|,
-block|{
-name|PARAM_INT32
-block|,
-literal|"compression"
-block|,
-literal|"Specify 0 for no compression, "
-literal|"1 for RLE, and 2 for LZ77"
-block|}
-block|}
-decl_stmt|;
-specifier|static
-name|int
-name|nsave_args
-init|=
-sizeof|sizeof
-argument_list|(
-name|save_args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|save_args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
+comment|/*    static GParamDef save_args[] = */
+comment|/*    { */
+comment|/*      { PARAM_INT32, "run_mode", "Interactive, non-interactive" }, */
+comment|/*      { PARAM_IMAGE, "image", "Input image" }, */
+comment|/*      { PARAM_DRAWABLE, "drawable", "Drawable to save" }, */
+comment|/*      { PARAM_STRING, "filename", "The name of the file to save the image in" }, */
+comment|/*      { PARAM_STRING, "raw_filename", "The name of the file to save the image in" }, */
+comment|/*      { PARAM_INT32, "compression", "Specify 0 for no compression, " */
+comment|/*        "1 for RLE, and 2 for LZ77" } */
+comment|/*    }; */
+comment|/*    static int nsave_args = sizeof (save_args) / sizeof (save_args[0]); */
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -2086,11 +2024,21 @@ operator|!=
 literal|0
 condition|)
 block|{
+name|IFDBG
+argument_list|(
+literal|3
+argument_list|)
 name|g_message
 argument_list|(
-literal|"PSP: Invalid block header at %d"
+literal|"PSP: Invalid block header at %ld"
 argument_list|,
 name|header_start
+argument_list|)
+expr_stmt|;
+else|else
+name|g_message
+argument_list|(
+literal|"PSP: Invalid block header"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2109,7 +2057,7 @@ literal|3
 argument_list|)
 name|g_message
 argument_list|(
-literal|"PSP: %s at %d"
+literal|"PSP: %s at %ld"
 argument_list|,
 name|block_name
 argument_list|(
@@ -3403,6 +3351,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+return|return
+literal|0
+return|;
 block|}
 end_function
 
@@ -3921,10 +3872,6 @@ block|{
 name|gint
 name|i
 decl_stmt|,
-name|n
-decl_stmt|,
-name|x
-decl_stmt|,
 name|y
 decl_stmt|,
 name|width
@@ -3951,9 +3898,6 @@ modifier|*
 name|buf
 decl_stmt|,
 modifier|*
-name|buf2
-decl_stmt|,
-modifier|*
 name|p
 decl_stmt|,
 modifier|*
@@ -3962,6 +3906,13 @@ decl_stmt|,
 modifier|*
 name|endq
 decl_stmt|;
+name|guchar
+modifier|*
+name|buf2
+init|=
+name|NULL
+decl_stmt|;
+comment|/* please the compiler */
 name|guchar
 name|runcount
 decl_stmt|,
@@ -4532,6 +4483,9 @@ expr_stmt|;
 block|}
 break|break;
 block|}
+return|return
+literal|0
+return|;
 block|}
 end_function
 
@@ -4635,6 +4589,8 @@ name|drawable_type
 decl_stmt|;
 name|guint32
 name|layer_ID
+init|=
+literal|0
 decl_stmt|;
 name|GLayerMode
 name|layer_mode
@@ -6864,6 +6820,9 @@ argument_list|(
 name|parasite_text
 argument_list|)
 expr_stmt|;
+return|return
+literal|0
+return|;
 block|}
 end_function
 
@@ -6905,6 +6864,9 @@ block|}
 name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
+return|return
+name|NULL
+return|;
 block|}
 end_function
 
@@ -6946,25 +6908,18 @@ name|block_start
 decl_stmt|;
 name|PSPBlockID
 name|id
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|gint
 name|block_number
-decl_stmt|;
-name|GPixelRgn
-name|pixel_rgn
 decl_stmt|;
 name|gint32
 name|image_ID
 init|=
 operator|-
 literal|1
-decl_stmt|;
-name|gint32
-name|layer_ID
-decl_stmt|;
-name|GDrawable
-modifier|*
-name|drawable
 decl_stmt|;
 if|if
 condition|(
@@ -7195,6 +7150,9 @@ name|g_message
 argument_list|(
 literal|"PSP: size = %d"
 argument_list|,
+operator|(
+name|int
+operator|)
 name|st
 operator|.
 name|st_size
@@ -7357,6 +7315,17 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|(
+name|int
+operator|)
+name|ia
+operator|.
+name|resolution
+operator|>
+literal|1
+condition|)
 name|gimp_image_set_resolution
 argument_list|(
 name|image_ID

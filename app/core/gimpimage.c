@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b2e5e2c0103
+DECL|enum|__anon2b4ba9460103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -1602,6 +1602,18 @@ argument_list|)
 operator|<
 literal|1e-5
 operator|)
+condition|)
+return|return;
+comment|/* don't allow to set the resolution to zero */
+if|if
+condition|(
+name|xresolution
+operator|<
+literal|1e-5
+operator|||
+name|yresolution
+operator|<
+literal|1e-5
 condition|)
 return|return;
 name|undo_push_resolution

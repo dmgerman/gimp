@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bb3a90108
+DECL|struct|__anon2b1be72c0108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bb3a90208
+DECL|struct|__anon2b1be72c0208
 block|{
 DECL|member|run
 name|gint
@@ -72,7 +72,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3bb3a90308
+DECL|struct|__anon2b1be72c0308
 typedef|typedef
 struct|struct
 block|{
@@ -2149,8 +2149,7 @@ case|:
 comment|/* ImageMagick writes files with this silly resunit */
 name|g_message
 argument_list|(
-literal|"TIFF warning: resolution units meaningless, "
-literal|"forcing 72 dpi\n"
+literal|"TIFF warning: resolution units meaningless\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2215,33 +2214,23 @@ operator|=
 name|xres
 expr_stmt|;
 block|}
-comment|/* sanity check, since division by zero later could be embarrassing */
+comment|/* now set the new image's resolution info */
+comment|/* If it is invalid, instead of forcing 72dpi, do not set the resolution  	 at all. Gimp will then use the default set by the user */
 if|if
 condition|(
+name|read_unit
+operator|!=
+name|RESUNIT_NONE
+operator|&&
 name|xres
-operator|<
+operator|>
 literal|1e-5
-operator|||
+operator|&&
 name|yres
-operator|<
+operator|>
 literal|1e-5
 condition|)
 block|{
-name|g_message
-argument_list|(
-literal|"TIFF: image resolution is zero: forcing 72 dpi\n"
-argument_list|)
-expr_stmt|;
-name|xres
-operator|=
-literal|72.0
-expr_stmt|;
-name|yres
-operator|=
-literal|72.0
-expr_stmt|;
-block|}
-comment|/* now set the new image's resolution info */
 name|gimp_image_set_resolution
 argument_list|(
 name|image
@@ -2264,6 +2253,7 @@ argument_list|,
 name|unit
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/* no x res tag => we assume we have no resolution info, so we      * don't care.  Older versions of this plugin used to write files      * with no resolution tags at all. */
 comment|/* TODO: haven't caught the case where yres tag is present, but        not xres.  This is left as an exercise for the reader - they        should feel free to shoot the author of the broken program        that produced the damaged TIFF file in the first place. */
