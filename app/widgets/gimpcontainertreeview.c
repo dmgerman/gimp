@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b614c730103
+DECL|enum|__anon2a07660a0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -3027,6 +3027,31 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this hack as soon as #108956 is fixed.
+endif|#
+directive|endif
+if|if
+condition|(
+name|tree_view
+operator|->
+name|main_column
+operator|->
+name|editable_widget
+condition|)
+name|gtk_cell_editable_remove_widget
+argument_list|(
+name|tree_view
+operator|->
+name|main_column
+operator|->
+name|editable_widget
+argument_list|)
+expr_stmt|;
 comment|/*  don't select item if a toggle was clicked */
 if|if
 condition|(
