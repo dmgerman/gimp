@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287c1a900103
+DECL|enum|__anon27dfaa180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +90,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon287c1a900203
+DECL|enum|__anon27dfaa180203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1391,6 +1391,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
 name|dot_for_dot
 operator|&&
 name|xresolution
