@@ -606,7 +606,7 @@ begin_function_decl
 specifier|extern
 specifier|const
 name|real
-name|acosd
+name|my_acosd
 parameter_list|(
 name|real
 parameter_list|)

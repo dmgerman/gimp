@@ -5507,11 +5507,11 @@ if|if
 condition|(
 name|flip_type
 operator|<
-name|VERTICAL
+name|HORIZONTAL
 operator|||
 name|flip_type
 operator|>
-name|UNKNOWN
+name|VERTICAL
 condition|)
 name|success
 operator|=
@@ -5552,6 +5552,22 @@ argument_list|,
 operator|&
 name|new_layer
 argument_list|)
+expr_stmt|;
+name|flip_type
+operator|=
+name|flip_type
+operator|==
+name|HORIZONTAL
+condition|?
+name|ORIENTATION_HORIZONTAL
+else|:
+name|flip_type
+operator|==
+name|VERTICAL
+condition|?
+name|ORIENTATION_VERTICAL
+else|:
+name|ORIENTATION_UNKNOWN
 expr_stmt|;
 comment|/* flip the buffer */
 switch|switch
@@ -5692,7 +5708,7 @@ name|PDB_INT32
 block|,
 literal|"flip_type"
 block|,
-literal|"Type of flip: HORIZONTAL (0), VERTICAL (1), UNKNOWN (2)"
+literal|"Type of flip: HORIZONTAL (0) or VERTICAL (1)"
 block|}
 block|}
 decl_stmt|;
@@ -9153,11 +9169,11 @@ if|if
 condition|(
 name|shear_type
 operator|<
-name|VERTICAL
+name|HORIZONTAL
 operator|||
 name|shear_type
 operator|>
-name|UNKNOWN
+name|VERTICAL
 condition|)
 name|success
 operator|=
@@ -9251,6 +9267,22 @@ name|cy
 argument_list|)
 expr_stmt|;
 comment|/* Shear matrix */
+name|shear_type
+operator|=
+name|shear_type
+operator|==
+name|HORIZONTAL
+condition|?
+name|ORIENTATION_HORIZONTAL
+else|:
+name|shear_type
+operator|==
+name|VERTICAL
+condition|?
+name|ORIENTATION_VERTICAL
+else|:
+name|ORIENTATION_UNKNOWN
+expr_stmt|;
 if|if
 condition|(
 name|shear_type
@@ -9424,7 +9456,7 @@ name|PDB_INT32
 block|,
 literal|"shear_type"
 block|,
-literal|"Type of shear: HORIZONTAL (0), VERTICAL (1), UNKNOWN (2)"
+literal|"Type of shear: HORIZONTAL (0) or VERTICAL (1)"
 block|}
 block|,
 block|{

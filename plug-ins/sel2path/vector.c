@@ -363,7 +363,7 @@ name|out_vector
 argument_list|)
 decl_stmt|;
 return|return
-name|acosd
+name|my_acosd
 argument_list|(
 name|Vdot
 argument_list|(

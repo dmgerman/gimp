@@ -191,8 +191,8 @@ end_comment
 begin_function
 specifier|const
 name|real
-DECL|function|acosd (real v)
-name|acosd
+DECL|function|my_acosd (real v)
+name|my_acosd
 parameter_list|(
 name|real
 name|v
