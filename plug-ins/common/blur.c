@@ -1508,12 +1508,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|row
 operator|/
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|y2
@@ -1525,10 +1525,7 @@ expr_stmt|;
 block|}
 name|gimp_progress_update
 argument_list|(
-operator|(
-name|double
-operator|)
-literal|100
+literal|1.0
 argument_list|)
 expr_stmt|;
 comment|/*    *  update the blurred region    */
