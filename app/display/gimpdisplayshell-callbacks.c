@@ -2318,9 +2318,18 @@ block|{
 if|#
 directive|if
 literal|0
-block|gdk_input_window_get_pointer (canvas->window, current_device,&tx,&ty, NULL, NULL, NULL, NULL); 	      gimp_tool_modifier_key (active_tool, kevent, gdisp);
+block|gdk_input_window_get_pointer (canvas->window, current_device,&tx,&ty, NULL, NULL, NULL, NULL);
 endif|#
 directive|endif
+name|gimp_tool_modifier_key
+argument_list|(
+name|active_tool
+argument_list|,
+name|kevent
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 name|return_val
 operator|=
 name|TRUE
