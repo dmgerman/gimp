@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -125,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3047840103
+DECL|enum|__anon2ac9fe9e0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED

@@ -18,18 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint-types.h"
 end_include
 
@@ -144,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2ad90e0103
+DECL|enum|__anon291e4e4f0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP

@@ -22,12 +22,6 @@ directive|include
 file|<gmodule.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimptooltypes.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TOOL_MODULE_ABI_VERSION
 define|#

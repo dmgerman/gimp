@@ -45,6 +45,18 @@ directive|include
 file|"display-types.h"
 end_include
 
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -146,16 +158,6 @@ include|#
 directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
-begin_comment
-comment|/* FIXME */
-end_comment
 
 begin_include
 include|#

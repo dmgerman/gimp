@@ -42,13 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptooltypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -4662,7 +4656,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c63cfee0103
+DECL|enum|__anon28b202a70103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpobject.h"
 end_include
 

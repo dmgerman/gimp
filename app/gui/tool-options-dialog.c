@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include

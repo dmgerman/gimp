@@ -33,6 +33,18 @@ directive|include
 file|"widgets-types.h"
 end_include
 
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -43,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
 end_include
 
 begin_include

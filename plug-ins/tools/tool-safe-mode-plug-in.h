@@ -6,24 +6,69 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TOOL_SAVE_MODE_H__
+name|__PLUGIN_HELPER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TOOL_SAVE_MODE_H__
+DECL|macro|__PLUGIN_HELPER_H__
 define|#
 directive|define
-name|__TOOL_SAVE_MODE_H__
+name|__PLUGIN_HELPER_H__
 end_define
 
 begin_function_decl
+specifier|extern
 name|void
-name|tool_safe_mode_init
+name|plugin_module_install_procedure
 parameter_list|(
-specifier|const
 name|gchar
 modifier|*
-name|tool_plug_in_path
+name|name
+parameter_list|,
+name|gchar
+modifier|*
+name|blurb
+parameter_list|,
+name|gchar
+modifier|*
+name|help
+parameter_list|,
+name|gchar
+modifier|*
+name|author
+parameter_list|,
+name|gchar
+modifier|*
+name|copyright
+parameter_list|,
+name|gchar
+modifier|*
+name|date
+parameter_list|,
+name|gchar
+modifier|*
+name|menu_path
+parameter_list|,
+name|gchar
+modifier|*
+name|image_types
+parameter_list|,
+name|gint
+name|nparams
+parameter_list|,
+name|gint
+name|nreturn_vals
+parameter_list|,
+name|GimpParamDef
+modifier|*
+name|params
+parameter_list|,
+name|GimpParamDef
+modifier|*
+name|return_vals
+parameter_list|,
+name|GimpRunProc
+name|run_proc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -34,7 +79,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __TOOL_SAFE_MODE_H__ */
+comment|/* __PLUGIN_HELPER_H__ */
 end_comment
 
 end_unit

@@ -42,24 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools-types.h"
 end_include
 
@@ -304,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b72eb2f0108
+DECL|struct|__anon2bc102340108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -340,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b72eb2f0208
+DECL|struct|__anon2bc102340208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -395,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b72eb2f0308
+DECL|struct|__anon2bc102340308
 block|{
 DECL|member|curve_count
 name|CountCurves

@@ -65,12 +65,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -1053,7 +1047,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2966c5680108
+DECL|struct|__anon29fd8fd60108
 block|{
 DECL|member|search_key
 specifier|const

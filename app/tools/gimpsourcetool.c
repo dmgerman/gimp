@@ -24,13 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptooltypes.h"
+file|"tools-types.h"
 end_include
 
 begin_include
@@ -583,6 +577,15 @@ operator|->
 name|control
 argument_list|,
 name|GIMP_CLONE_TOOL_CURSOR
+argument_list|)
+expr_stmt|;
+name|clone_core
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_CLONE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|clone_core

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -58,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297fe8e50108
+DECL|struct|__anon2b1a98390108
 block|{
 DECL|member|delete_on_exit
 name|gboolean

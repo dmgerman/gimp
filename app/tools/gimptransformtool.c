@@ -39,6 +39,12 @@ directive|include
 file|"tools-types.h"
 end_include
 
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
 begin_include
 include|#
 directive|include

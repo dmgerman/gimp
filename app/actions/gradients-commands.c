@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/widgets-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include

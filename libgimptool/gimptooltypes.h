@@ -49,15 +49,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpToolOptions
-typedef|typedef
-name|struct
-name|_GimpToolOptions
-name|GimpToolOptions
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpToolControl
 typedef|typedef
 name|struct

@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -240,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8157870103
+DECL|enum|__anon293f1b540103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED

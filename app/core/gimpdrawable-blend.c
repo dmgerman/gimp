@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -128,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1cdc760108
+DECL|struct|__anon29e8f1cc0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -185,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1cdc760208
+DECL|struct|__anon29e8f1cc0208
 block|{
 DECL|member|PR
 name|PixelRegion

@@ -71,19 +71,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|"libgimpproxy/gimpproxytypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpui.h>
+file|"libgimptool/gimptooltypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptoolmodule.h"
 end_include
 
 begin_include
@@ -92,70 +98,10 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_comment
-comment|/* EEEEEEEK! */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpToolInfo
-typedef|typedef
-name|struct
-name|_GimpToolInfo
-name|GimpToolInfo
-typedef|;
-end_typedef
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptoolmodule.h"
-end_include
-
-begin_comment
-comment|/* Declare local functions */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|safe_mode_init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_decl_stmt
-DECL|variable|PLUG_IN_INFO
-name|GimpPlugInInfo
-name|PLUG_IN_INFO
-init|=
-block|{
-name|safe_mode_init
-block|,
-comment|/* init_proc */
-name|NULL
-block|,
-comment|/* query_proc  */
-name|NULL
-block|,
-comment|/* quit_proc  */
-name|NULL
-block|,
-comment|/* run_proc   */
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_macro
-DECL|function|MAIN ()
-name|MAIN
-argument_list|()
-end_macro
-
 begin_function
 specifier|static
 name|void
+DECL|function|safe_mode_register_tool ()
 name|safe_mode_register_tool
 parameter_list|()
 block|{ }
@@ -166,53 +112,20 @@ comment|/* much code borrowed from gimp_datafiles_read_directories --  * why isn
 end_comment
 
 begin_function
-specifier|static
 name|void
-DECL|function|safe_mode_init (void)
-name|safe_mode_init
+DECL|function|tool_safe_mode_init (const gchar * tool_plug_in_path)
+name|tool_safe_mode_init
 parameter_list|(
-name|void
-parameter_list|)
-block|{
+specifier|const
 name|gchar
 modifier|*
 name|tool_plug_in_path
-decl_stmt|,
-modifier|*
-name|free_me
-decl_stmt|;
-name|g_type_init
-argument_list|()
-expr_stmt|;
+parameter_list|)
+block|{
 name|g_message
 argument_list|(
 literal|"tool-safe-mode init called"
 argument_list|)
-expr_stmt|;
-name|free_me
-operator|=
-name|tool_plug_in_path
-operator|=
-name|gimp_gimprc_query
-argument_list|(
-literal|"tool-plug-in-path"
-argument_list|)
-expr_stmt|;
-comment|/* FIXME: why does it return the string with quotes around it?    * gflare-path does not    */
-name|tool_plug_in_path
-operator|++
-expr_stmt|;
-name|tool_plug_in_path
-index|[
-name|strlen
-argument_list|(
-name|tool_plug_in_path
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|=
-literal|0
 expr_stmt|;
 if|if
 condition|(
@@ -454,11 +367,6 @@ block|}
 name|gimp_path_free
 argument_list|(
 name|path
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|free_me
 argument_list|)
 expr_stmt|;
 block|}

@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/base-config.h"
 end_include
 
@@ -1143,7 +1137,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26b10d0103
+DECL|enum|__anon28a35f650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1195,7 +1189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26b10d0203
+DECL|enum|__anon28a35f650203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -5753,7 +5747,7 @@ endif|#
 directive|endif
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b26b10d0308
+DECL|struct|__anon28a35f650308
 block|{
 DECL|member|foo
 name|GimpObject

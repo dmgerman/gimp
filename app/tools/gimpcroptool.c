@@ -42,14 +42,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"tools-types.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
 
 begin_include
 include|#
@@ -171,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27db81990103
+DECL|enum|__anon2b2e80f10103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

@@ -37,16 +37,6 @@ directive|include
 file|"core-types.h"
 end_include
 
-begin_comment
-comment|/* must come before gimptooltypes */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptooltypes.h"
-end_include
-
 begin_include
 include|#
 directive|include

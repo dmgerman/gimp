@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -41,6 +35,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -48,12 +48,6 @@ begin_include
 include|#
 directive|include
 file|"core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include

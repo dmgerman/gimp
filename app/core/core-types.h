@@ -65,7 +65,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288d61a80103
+DECL|enum|__anon2c1a963b0103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -85,7 +85,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon288d61a80203
+DECL|enum|__anon2c1a963b0203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -106,7 +106,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon288d61a80303
+DECL|enum|__anon2c1a963b0303
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
@@ -317,6 +317,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPaintInfo
+typedef|typedef
+name|struct
+name|_GimpPaintInfo
+name|GimpPaintInfo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpToolInfo
 typedef|typedef
 name|struct
@@ -329,15 +338,6 @@ begin_comment
 DECL|typedef|GimpToolInfo
 comment|/*< proxy-include>*/
 end_comment
-
-begin_typedef
-DECL|typedef|GimpPaintInfo
-typedef|typedef
-name|struct
-name|_GimpPaintInfo
-name|GimpPaintInfo
-typedef|;
-end_typedef
 
 begin_typedef
 DECL|typedef|GimpImagefile
@@ -615,6 +615,24 @@ name|_PathList
 name|PathList
 typedef|;
 end_typedef
+
+begin_comment
+comment|/*  stuff which is forward declared here so we don't need to cross-include it  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpToolOptions
+typedef|typedef
+name|struct
+name|_GimpToolOptions
+name|GimpToolOptions
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpToolOptions
+comment|/*< proxy-include>*/
+end_comment
 
 begin_comment
 comment|/*  functions  */

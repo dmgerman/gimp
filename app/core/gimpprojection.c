@@ -30,12 +30,20 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
+file|"tools/tools-types.h"
 end_include
 
-begin_comment
-comment|/* FIXME */
-end_comment
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
 
 begin_include
 include|#
@@ -65,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-projection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include

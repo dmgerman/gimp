@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include

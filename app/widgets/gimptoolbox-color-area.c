@@ -60,6 +60,18 @@ directive|include
 file|"widgets-types.h"
 end_include
 
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -89,16 +101,6 @@ include|#
 directive|include
 file|"gimptoolbox-color-area.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
-begin_comment
-comment|/* temp hack */
-end_comment
 
 begin_include
 include|#
@@ -136,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294fb39c0103
+DECL|enum|__anon2b1e0b450103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA

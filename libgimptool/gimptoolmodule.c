@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptooltypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolmodule.h"
 end_include
 
