@@ -64,6 +64,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|palette_dialog_edit_palette
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|palette_set_active_color
 parameter_list|(
 name|gint

@@ -138,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paletteP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"session.h"
 end_include
 
@@ -723,18 +717,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|palette_dialog_edit_palette
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|top_level_edit_palette
 name|PaletteDialog
@@ -1174,14 +1156,25 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palette_create_edit (GimpPalette * palette)
-name|palette_create_edit
+DECL|function|palette_dialog_edit_palette (GimpData * data)
+name|palette_dialog_edit_palette
 parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+block|{
 name|GimpPalette
 modifier|*
 name|palette
-parameter_list|)
-block|{
+decl_stmt|;
+name|palette
+operator|=
+name|GIMP_PALETTE
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|top_level_edit_palette
@@ -6188,36 +6181,6 @@ name|palette_dialog
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|palette_dialog_edit_palette (GimpData * data)
-name|palette_dialog_edit_palette
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|)
-block|{
-name|GimpPalette
-modifier|*
-name|palette
-decl_stmt|;
-name|palette
-operator|=
-name|GIMP_PALETTE
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-name|palette_create_edit
-argument_list|(
-name|palette
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

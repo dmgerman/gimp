@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paletteP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"session.h"
 end_include
 
@@ -754,20 +748,9 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|GimpPalette
-modifier|*
-name|palette
-decl_stmt|;
-name|palette
-operator|=
-name|GIMP_PALETTE
+name|palette_dialog_edit_palette
 argument_list|(
 name|data
-argument_list|)
-expr_stmt|;
-name|palette_create_edit
-argument_list|(
-name|palette
 argument_list|)
 expr_stmt|;
 block|}
