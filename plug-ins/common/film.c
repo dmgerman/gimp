@@ -94,6 +94,14 @@ name|COLOR_BUTTON_HEIGHT
 value|20
 end_define
 
+begin_define
+DECL|macro|FONT_LEN
+define|#
+directive|define
+name|FONT_LEN
+value|256
+end_define
+
 begin_comment
 comment|/* Define how the plug-in works. Values marked (r) are with regard */
 end_comment
@@ -105,7 +113,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a31dd350108
+DECL|struct|__anon2c12f4050108
 block|{
 DECL|member|film_height
 name|gint
@@ -162,11 +170,11 @@ name|GimpRGB
 name|number_color
 decl_stmt|;
 comment|/* color of number */
-DECL|member|number_fontf
+DECL|member|number_font
 name|gchar
-name|number_fontf
+name|number_font
 index|[
-literal|256
+name|FONT_LEN
 index|]
 decl_stmt|;
 comment|/* font family to use for numbering */
@@ -209,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a31dd350208
+DECL|struct|__anon2c12f4050208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -702,7 +710,7 @@ literal|1.0
 block|}
 block|,
 comment|/* Color of number */
-literal|"Courier"
+literal|"Monospace"
 block|,
 comment|/* Font family for numbering */
 block|{
@@ -825,9 +833,9 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"number_fontf"
+literal|"number_font"
 block|,
-literal|"Font family for drawing numbers"
+literal|"Font for drawing numbers"
 block|}
 block|,
 block|{
@@ -1182,20 +1190,11 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|k
-operator|=
-sizeof|sizeof
+name|g_strlcpy
 argument_list|(
 name|filmvals
 operator|.
-name|number_fontf
-argument_list|)
-expr_stmt|;
-name|strncpy
-argument_list|(
-name|filmvals
-operator|.
-name|number_fontf
+name|number_font
 argument_list|,
 name|param
 index|[
@@ -1206,19 +1205,8 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-name|k
+name|FONT_LEN
 argument_list|)
-expr_stmt|;
-name|filmvals
-operator|.
-name|number_fontf
-index|[
-name|k
-operator|-
-literal|1
-index|]
-operator|=
-literal|'\0'
 expr_stmt|;
 name|filmvals
 operator|.
@@ -2529,7 +2517,7 @@ if|if
 condition|(
 name|filmvals
 operator|.
-name|number_fontf
+name|number_font
 index|[
 literal|0
 index|]
@@ -2540,9 +2528,9 @@ name|strcpy
 argument_list|(
 name|filmvals
 operator|.
-name|number_fontf
+name|number_font
 argument_list|,
-literal|"courier"
+literal|"Monospace"
 argument_list|)
 expr_stmt|;
 if|if
@@ -4100,11 +4088,11 @@ name|descent
 decl_stmt|;
 name|gchar
 modifier|*
-name|family
+name|fontname
 init|=
 name|filmvals
 operator|.
-name|number_fontf
+name|number_font
 decl_stmt|;
 name|g_snprintf
 argument_list|(
@@ -4170,6 +4158,9 @@ operator|++
 control|)
 block|{
 comment|/* Try different font sizes if inquire of extent failed */
+name|gboolean
+name|success
+decl_stmt|;
 name|delta
 operator|=
 operator|(
@@ -4195,7 +4186,9 @@ operator|=
 operator|-
 name|delta
 expr_stmt|;
-name|gimp_text_get_extents
+name|success
+operator|=
+name|gimp_text_get_extents_fontname
 argument_list|(
 name|buf
 argument_list|,
@@ -4205,27 +4198,7 @@ name|delta
 argument_list|,
 name|GIMP_PIXELS
 argument_list|,
-literal|"*"
-argument_list|,
-comment|/* foundry */
-name|family
-argument_list|,
-comment|/* family */
-literal|"*"
-argument_list|,
-comment|/* weight */
-literal|"*"
-argument_list|,
-comment|/* slant */
-literal|"*"
-argument_list|,
-comment|/* set_width */
-literal|"*"
-argument_list|,
-comment|/* spacing */
-literal|"*"
-argument_list|,
-literal|"*"
+name|fontname
 argument_list|,
 operator|&
 name|text_width
@@ -4242,9 +4215,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|text_width
+name|success
 condition|)
-comment|/*  FIXME:  use return_value of gimp_text_get_extens  */
 block|{
 name|height
 operator|+=
@@ -4255,7 +4227,7 @@ block|}
 block|}
 name|text_layer_ID
 operator|=
-name|gimp_text
+name|gimp_text_fontname
 argument_list|(
 name|image_ID
 argument_list|,
@@ -4273,35 +4245,13 @@ name|buf
 argument_list|,
 literal|1
 argument_list|,
-comment|/* border */
 name|FALSE
 argument_list|,
-comment|/* antialias */
 name|height
 argument_list|,
 name|GIMP_PIXELS
 argument_list|,
-literal|"*"
-argument_list|,
-comment|/* foundry */
-name|family
-argument_list|,
-comment|/* family */
-literal|"*"
-argument_list|,
-comment|/* weight */
-literal|"*"
-argument_list|,
-comment|/* slant */
-literal|"*"
-argument_list|,
-comment|/* set_width */
-literal|"*"
-argument_list|,
-comment|/* spacing */
-literal|"*"
-argument_list|,
-literal|"*"
+name|fontname
 argument_list|)
 expr_stmt|;
 if|if
@@ -6032,7 +5982,7 @@ name|NULL
 argument_list|,
 name|filmvals
 operator|.
-name|number_fontf
+name|number_font
 argument_list|,
 name|film_font_select_callback
 argument_list|,
@@ -7452,37 +7402,16 @@ operator|*
 operator|)
 name|data
 decl_stmt|;
-name|strncpy
+name|g_strlcpy
 argument_list|(
 name|vals
 operator|->
-name|number_fontf
+name|number_font
 argument_list|,
 name|name
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|vals
-operator|->
-name|number_fontf
+name|FONT_LEN
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|vals
-operator|->
-name|number_fontf
-index|[
-sizeof|sizeof
-argument_list|(
-name|vals
-operator|->
-name|number_fontf
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|=
-literal|'\0'
 expr_stmt|;
 block|}
 end_function
