@@ -589,7 +589,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*       set_arrow_func();       tools_select_arrow();       popup_select_arrow(); */
+comment|/*       set_fuzzy_select_func();       tools_select_fuzzy();       popup_select_fuzzy(); */
 block|}
 block|}
 end_function
@@ -2122,6 +2122,28 @@ operator|&
 name|_menu
 operator|.
 name|cmd_grid_settings
+argument_list|)
+expr_stmt|;
+name|make_separator
+argument_list|(
+name|goodies_menu
+argument_list|)
+expr_stmt|;
+name|make_item_with_label
+argument_list|(
+name|goodies_menu
+argument_list|,
+name|_
+argument_list|(
+literal|"Use GIMP Guides..."
+argument_list|)
+argument_list|,
+name|menu_command
+argument_list|,
+operator|&
+name|_menu
+operator|.
+name|cmd_use_gimp_guides
 argument_list|)
 expr_stmt|;
 name|make_item_with_label

@@ -123,6 +123,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"imap_cmd_gimp_guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cmd_guides.h"
 end_include
 
@@ -6264,6 +6270,27 @@ begin_function
 specifier|static
 name|Command_t
 modifier|*
+DECL|function|factory_use_gimp_guides_dialog (void)
+name|factory_use_gimp_guides_dialog
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|gimp_guides_command_new
+argument_list|(
+name|_shapes
+argument_list|,
+name|_drawable
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|Command_t
+modifier|*
 DECL|function|factory_about_dialog (void)
 name|factory_about_dialog
 parameter_list|(
@@ -6664,6 +6691,13 @@ argument_list|(
 name|menu
 argument_list|,
 name|factory_create_guides_dialog
+argument_list|)
+expr_stmt|;
+name|menu_set_use_gimp_guides_command
+argument_list|(
+name|menu
+argument_list|,
+name|factory_use_gimp_guides_dialog
 argument_list|)
 expr_stmt|;
 name|menu_set_about_command

@@ -9,29 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -116,7 +93,7 @@ name|dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Copyright(c) 1999 by Maurits Rijk"
+literal|"Copyright(c) 1999-2002 by Maurits Rijk"
 argument_list|)
 argument_list|)
 expr_stmt|;
