@@ -51,6 +51,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+DECL|variable|tile_count
+name|int
+name|tile_count
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|void
 DECL|function|tile_init (Tile * tile,int bpp)
@@ -168,6 +177,9 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+name|tile_count
+operator|++
+expr_stmt|;
 endif|#
 directive|endif
 block|}
@@ -525,6 +537,9 @@ name|g_free
 argument_list|(
 name|tile
 argument_list|)
+expr_stmt|;
+name|tile_count
+operator|--
 expr_stmt|;
 block|}
 end_function
