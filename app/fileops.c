@@ -2487,11 +2487,14 @@ expr_stmt|;
 block|}
 switch|switch
 condition|(
-name|gimage_base_type_with_alpha
+name|drawable_type
+argument_list|(
+name|gimage_active_drawable
 argument_list|(
 name|gdisplay
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -2502,7 +2505,7 @@ name|file_update_menus
 argument_list|(
 name|save_procs
 argument_list|,
-name|RGB_IMAGE_OK
+name|PLUG_IN_RGB_IMAGE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2513,7 +2516,7 @@ name|file_update_menus
 argument_list|(
 name|save_procs
 argument_list|,
-name|RGBA_IMAGE_OK
+name|PLUG_IN_RGBA_IMAGE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2524,7 +2527,7 @@ name|file_update_menus
 argument_list|(
 name|save_procs
 argument_list|,
-name|GRAY_IMAGE_OK
+name|PLUG_IN_GRAY_IMAGE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2535,7 +2538,7 @@ name|file_update_menus
 argument_list|(
 name|save_procs
 argument_list|,
-name|GRAYA_IMAGE_OK
+name|PLUG_IN_GRAYA_IMAGE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2546,7 +2549,7 @@ name|file_update_menus
 argument_list|(
 name|save_procs
 argument_list|,
-name|INDEXED_IMAGE_OK
+name|PLUG_IN_INDEXED_IMAGE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2557,7 +2560,7 @@ name|file_update_menus
 argument_list|(
 name|save_procs
 argument_list|,
-name|INDEXEDA_IMAGE_OK
+name|PLUG_IN_INDEXEDA_IMAGE
 argument_list|)
 expr_stmt|;
 break|break;

@@ -55,57 +55,57 @@ value|512
 end_define
 
 begin_define
-DECL|macro|RGB_IMAGE_OK
+DECL|macro|PLUG_IN_RGB_IMAGE
 define|#
 directive|define
-name|RGB_IMAGE_OK
+name|PLUG_IN_RGB_IMAGE
 value|0x01
 end_define
 
 begin_define
-DECL|macro|GRAY_IMAGE_OK
+DECL|macro|PLUG_IN_GRAY_IMAGE
 define|#
 directive|define
-name|GRAY_IMAGE_OK
+name|PLUG_IN_GRAY_IMAGE
 value|0x02
 end_define
 
 begin_define
-DECL|macro|INDEXED_IMAGE_OK
+DECL|macro|PLUG_IN_INDEXED_IMAGE
 define|#
 directive|define
-name|INDEXED_IMAGE_OK
+name|PLUG_IN_INDEXED_IMAGE
 value|0x04
 end_define
 
 begin_define
-DECL|macro|RGBA_IMAGE_OK
+DECL|macro|PLUG_IN_RGBA_IMAGE
 define|#
 directive|define
-name|RGBA_IMAGE_OK
+name|PLUG_IN_RGBA_IMAGE
 value|0x08
 end_define
 
 begin_define
-DECL|macro|GRAYA_IMAGE_OK
+DECL|macro|PLUG_IN_GRAYA_IMAGE
 define|#
 directive|define
-name|GRAYA_IMAGE_OK
+name|PLUG_IN_GRAYA_IMAGE
 value|0x10
 end_define
 
 begin_define
-DECL|macro|INDEXEDA_IMAGE_OK
+DECL|macro|PLUG_IN_INDEXEDA_IMAGE
 define|#
 directive|define
-name|INDEXEDA_IMAGE_OK
+name|PLUG_IN_INDEXEDA_IMAGE
 value|0x20
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0acbd20103
+DECL|enum|__anon2c934d2f0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
