@@ -1947,6 +1947,17 @@ name|icon_needs_update
 operator|=
 literal|1
 expr_stmt|;
+name|gdisp
+operator|->
+name|icon_idle_id
+operator|=
+name|gtk_idle_add
+argument_list|(
+name|gdisplay_update_icon_invoker
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 comment|/*  create the GtkPixmaps  */
 name|pixmap
 operator|=

@@ -2854,13 +2854,6 @@ name|gdisp
 operator|=
 name|data
 expr_stmt|;
-comment|/* this does not belong here, It should be placed in an idle-loop! */
-name|gdisplay_update_icon
-argument_list|(
-name|gdisp
-argument_list|)
-expr_stmt|;
-comment|/* gdisplay_update_icon   should be placed in an idle-loop!!!!  */
 name|gtk_menu_popup
 argument_list|(
 name|GTK_MENU

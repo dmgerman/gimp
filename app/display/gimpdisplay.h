@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27830a7e0103
+DECL|enum|__anon2c01aea60103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -475,6 +475,11 @@ name|guint
 name|icon_needs_update
 decl_stmt|;
 comment|/*  Do we need to render a new icon?        */
+DECL|member|icon_idle_id
+name|gint
+name|icon_idle_id
+decl_stmt|;
+comment|/*  The ID of the idle-function             */
 DECL|member|gimage
 name|GimpImage
 modifier|*
@@ -979,6 +984,15 @@ name|gdisplay_update_icon
 parameter_list|(
 name|GDisplay
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gdisplay_update_icon_invoker
+parameter_list|(
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
