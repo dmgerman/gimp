@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                    - Main entry - just call gimp_main()...  *   query()                   - Respond to a plug-in query...  *   run()                     - Run the filter...  *   sharpen()                 - Sharpen an image using a median filter.  *   sharpen_dialog()          - Popup a dialog window for the filter box size...  *   preview_init()            - Initialize the preview window...  *   preview_scroll_callback() - Update the preview when a scrollbar is moved.  *   preview_update()          - Update the preview window.  *   preview_exit()            - Free all memory used by the preview window...  *   dialog_iscale_update()    - Update the value field using the scale.  *   dialog_ok_callback()      - Start the filter...  *   gray_filter()             - Sharpen grayscale pixels.  *   graya_filter()            - Sharpen grayscale+alpha pixels.  *   rgb_filter()              - Sharpen RGB pixels.  *   rgba_filter()             - Sharpen RGBA pixels.  *  * Revision History:  *  *   See ChangeLog  */
+comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -1987,10 +1987,6 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gchar
-modifier|*
-name|title
-decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"sharpen"
@@ -1998,25 +1994,16 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|title
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Sharpen - %s"
-argument_list|)
-argument_list|,
-name|PLUG_IN_VERSION
-argument_list|)
-expr_stmt|;
 name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
-name|title
+name|_
+argument_list|(
+literal|"Sharpen"
+argument_list|)
 argument_list|,
-literal|"sharpen"
+literal|"Sharpen"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -2059,11 +2046,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|title
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

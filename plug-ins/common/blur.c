@@ -97,14 +97,6 @@ value|"plug_in_blur"
 end_define
 
 begin_define
-DECL|macro|BLUR_VERSION
-define|#
-directive|define
-name|BLUR_VERSION
-value|"Blur 2.0"
-end_define
-
-begin_define
 DECL|macro|SEED_DEFAULT
 define|#
 directive|define
@@ -135,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87703f0108
+DECL|struct|__anon2779c5310108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -177,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87703f0208
+DECL|struct|__anon2779c5310208
 block|{
 DECL|member|run
 name|gboolean
@@ -2288,7 +2280,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
-name|BLUR_VERSION
+name|_
+argument_list|(
+literal|"Blur"
+argument_list|)
 argument_list|,
 literal|"blur"
 argument_list|,
