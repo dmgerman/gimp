@@ -31,7 +31,7 @@ comment|/* Will be used to hopefully store in XCF format...  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab3096b0108
+DECL|struct|__anon278b86a50108
 typedef|typedef
 struct|struct
 block|{
@@ -58,7 +58,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab3096b0208
+DECL|struct|__anon278b86a50208
 typedef|typedef
 struct|struct
 block|{
@@ -106,7 +106,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab3096b0308
+DECL|struct|__anon278b86a50308
 typedef|typedef
 struct|struct
 block|{
@@ -149,7 +149,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ab3096b0403
+DECL|enum|__anon278b86a50403
 typedef|typedef
 enum|enum
 block|{
@@ -353,6 +353,19 @@ parameter_list|,
 name|GimpMatrix
 parameter_list|,
 name|gboolean
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|paths_delete_path
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|gchar
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

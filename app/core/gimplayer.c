@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon27cb1ea60103
+DECL|enum|__anon2a9f6adb0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -3341,6 +3341,15 @@ name|TYPE_HAS_ALPHA
 argument_list|(
 name|type
 argument_list|)
+expr_stmt|;
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|preview_valid
+operator|=
+name|FALSE
 expr_stmt|;
 name|gtk_signal_emit_by_name
 argument_list|(
