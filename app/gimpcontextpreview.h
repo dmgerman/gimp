@@ -86,7 +86,7 @@ name|GimpContextPreviewClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon274d3b4a0103
+DECL|enum|__anon28e284de0103
 block|{
 DECL|enumerator|GCP_BRUSH
 name|GCP_BRUSH
@@ -134,6 +134,16 @@ name|gint
 name|height
 decl_stmt|;
 comment|/*  preview_height                      */
+DECL|member|popup_width
+name|gint
+name|popup_width
+decl_stmt|;
+comment|/*  popup preview width                 */
+DECL|member|popup_height
+name|gint
+name|popup_height
+decl_stmt|;
+comment|/*  popup preview_height                */
 DECL|member|show_popup
 name|gboolean
 name|show_popup
