@@ -1956,7 +1956,7 @@ name|strcmp
 argument_list|(
 name|key
 argument_list|,
-literal|"general_paint_edges"
+literal|"generalpaintedges"
 argument_list|)
 condition|)
 name|pcvals
@@ -1976,7 +1976,7 @@ name|strcmp
 argument_list|(
 name|key
 argument_list|,
-literal|"general_tileable"
+literal|"generaltileable"
 argument_list|)
 condition|)
 name|pcvals
@@ -1996,7 +1996,7 @@ name|strcmp
 argument_list|(
 name|key
 argument_list|,
-literal|"general_drop_shadow"
+literal|"generaldropshadow"
 argument_list|)
 condition|)
 name|pcvals
@@ -2038,7 +2038,7 @@ name|strcmp
 argument_list|(
 name|key
 argument_list|,
-literal|"general_shadow_depth"
+literal|"generalshadowdepth"
 argument_list|)
 condition|)
 name|pcvals
@@ -2058,7 +2058,7 @@ name|strcmp
 argument_list|(
 name|key
 argument_list|,
-literal|"general_shadow_blur"
+literal|"generalshadowblur"
 argument_list|)
 condition|)
 name|pcvals
@@ -2144,7 +2144,7 @@ name|strcmp
 argument_list|(
 name|key
 argument_list|,
-literal|"paper_invert"
+literal|"paperinvert"
 argument_list|)
 condition|)
 name|pcvals
@@ -2164,7 +2164,7 @@ name|strcmp
 argument_list|(
 name|key
 argument_list|,
-literal|"paper_overlay"
+literal|"paperoverlay"
 argument_list|)
 condition|)
 name|pcvals
@@ -2410,7 +2410,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|orientvoronoi
+name|orient_voronoi
 operator|=
 name|atoi
 argument_list|(
@@ -3976,7 +3976,7 @@ name|fprintf
 argument_list|(
 name|f
 argument_list|,
-literal|"general_paint_edges=%d\n"
+literal|"generalpaintedges=%d\n"
 argument_list|,
 name|pcvals
 operator|.
@@ -3987,7 +3987,7 @@ name|fprintf
 argument_list|(
 name|f
 argument_list|,
-literal|"general_tileable=%d\n"
+literal|"generaltileable=%d\n"
 argument_list|,
 name|pcvals
 operator|.
@@ -3998,7 +3998,7 @@ name|fprintf
 argument_list|(
 name|f
 argument_list|,
-literal|"general_drop_shadow=%d\n"
+literal|"generaldropshadow=%d\n"
 argument_list|,
 name|pcvals
 operator|.
@@ -4029,7 +4029,7 @@ name|fprintf
 argument_list|(
 name|f
 argument_list|,
-literal|"general_shadow_depth=%d\n"
+literal|"generalshadowdepth=%d\n"
 argument_list|,
 name|pcvals
 operator|.
@@ -4040,7 +4040,7 @@ name|fprintf
 argument_list|(
 name|f
 argument_list|,
-literal|"general_shadow_blur=%d\n"
+literal|"generalshadowblur=%d\n"
 argument_list|,
 name|pcvals
 operator|.
@@ -4111,7 +4111,7 @@ name|fprintf
 argument_list|(
 name|f
 argument_list|,
-literal|"paper_invert=%d\n"
+literal|"paperinvert=%d\n"
 argument_list|,
 name|pcvals
 operator|.
@@ -4122,7 +4122,7 @@ name|fprintf
 argument_list|(
 name|f
 argument_list|,
-literal|"paper_overlay=%d\n"
+literal|"paperoverlay=%d\n"
 argument_list|,
 name|pcvals
 operator|.
@@ -4471,7 +4471,7 @@ literal|"orientvoronoi=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|orientvoronoi
+name|orient_voronoi
 argument_list|)
 expr_stmt|;
 name|fprintf

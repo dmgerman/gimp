@@ -4237,7 +4237,7 @@ name|get_pixel_value
 argument_list|(
 literal|90
 operator|-
-name|getdir
+name|get_direction
 argument_list|(
 name|x
 operator|/

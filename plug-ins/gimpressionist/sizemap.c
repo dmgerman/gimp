@@ -630,7 +630,7 @@ name|val
 decl_stmt|;
 specifier|static
 name|gdouble
-name|lastval
+name|last_val
 init|=
 literal|0.0
 decl_stmt|;
@@ -706,7 +706,7 @@ operator|||
 operator|(
 name|val
 operator|!=
-name|lastval
+name|last_val
 operator|)
 condition|)
 block|{

@@ -85,29 +85,29 @@ value|4
 end_define
 
 begin_decl_stmt
-DECL|variable|omwindow
+DECL|variable|orient_map_window
 specifier|static
 name|GtkWidget
 modifier|*
-name|omwindow
+name|orient_map_window
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|vectorprev
+DECL|variable|vector_preview
 specifier|static
 name|GtkWidget
 modifier|*
-name|vectorprev
+name|vector_preview
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|ompreviewprev
+DECL|variable|orient_map_preview_prev
 specifier|static
 name|GtkWidget
 modifier|*
-name|ompreviewprev
+name|orient_map_preview_prev
 decl_stmt|;
 end_decl_stmt
 
@@ -148,33 +148,33 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|vectprevbrightadjust
+DECL|variable|vector_preview_brightness_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|vectprevbrightadjust
+name|vector_preview_brightness_adjust
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|angadjust
+DECL|variable|angle_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|angadjust
+name|angle_adjust
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|stradjust
+DECL|variable|strength_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|stradjust
+name|strength_adjust
 init|=
 name|NULL
 decl_stmt|;
@@ -192,22 +192,22 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|angoffadjust
+DECL|variable|angle_offset_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|angoffadjust
+name|angle_offset_adjust
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|vectypes
+DECL|variable|vector_types
 specifier|static
 name|GtkWidget
 modifier|*
-name|vectypes
+name|vector_types
 index|[
 name|NUMVECTYPES
 index|]
@@ -215,11 +215,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|orientvoronoi
+DECL|variable|orient_voronoi
 specifier|static
 name|GtkWidget
 modifier|*
-name|orientvoronoi
+name|orient_voronoi
 init|=
 name|NULL
 decl_stmt|;
@@ -253,10 +253,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|numvect
+DECL|variable|num_vectors
 specifier|static
 name|gint
-name|numvect
+name|num_vectors
 init|=
 literal|0
 decl_stmt|;
@@ -271,9 +271,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|getdir (double x,double y,int from)
+DECL|function|get_direction (double x,double y,int from)
 name|double
-name|getdir
+name|get_direction
 parameter_list|(
 name|double
 name|x
@@ -328,7 +328,7 @@ condition|)
 block|{
 name|n
 operator|=
-name|numvect
+name|num_vectors
 expr_stmt|;
 name|vec
 operator|=
@@ -338,7 +338,7 @@ name|angoff
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
-name|angoffadjust
+name|angle_offset_adjust
 argument_list|)
 operator|->
 name|value
@@ -356,7 +356,7 @@ name|voronoi
 operator|=
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|orientvoronoi
+name|orient_voronoi
 argument_list|)
 operator|->
 name|active
@@ -392,7 +392,7 @@ name|voronoi
 operator|=
 name|pcvals
 operator|.
-name|orientvoronoi
+name|orient_voronoi
 expr_stmt|;
 block|}
 if|if
@@ -885,10 +885,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|updateompreviewprev (void)
+DECL|function|update_orient_map_preview_prev (void)
 specifier|static
 name|void
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 parameter_list|(
 name|void
 parameter_list|)
@@ -1017,7 +1017,7 @@ name|dir
 init|=
 name|gimp_deg_to_rad
 argument_list|(
-name|getdir
+name|get_direction
 argument_list|(
 name|x
 operator|/
@@ -1115,7 +1115,7 @@ name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|ompreviewprev
+name|orient_map_preview_prev
 argument_list|)
 argument_list|,
 operator|(
@@ -1141,7 +1141,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
-name|ompreviewprev
+name|orient_map_preview_prev
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -1149,7 +1149,7 @@ argument_list|(
 name|prev_button
 argument_list|,
 operator|(
-name|numvect
+name|num_vectors
 operator|>
 literal|1
 operator|)
@@ -1160,7 +1160,7 @@ argument_list|(
 name|next_button
 argument_list|,
 operator|(
-name|numvect
+name|num_vectors
 operator|>
 literal|1
 operator|)
@@ -1171,7 +1171,7 @@ argument_list|(
 name|add_button
 argument_list|,
 operator|(
-name|numvect
+name|num_vectors
 operator|<
 name|MAXORIENTVECT
 operator|)
@@ -1182,7 +1182,7 @@ argument_list|(
 name|kill_button
 argument_list|,
 operator|(
-name|numvect
+name|num_vectors
 operator|>
 literal|1
 operator|)
@@ -1202,10 +1202,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|updatevectorprev (void)
+DECL|function|update_vector_prev (void)
 specifier|static
 name|void
-name|updatevectorprev
+name|update_vector_prev
 parameter_list|(
 name|void
 parameter_list|)
@@ -1259,7 +1259,7 @@ name|val
 decl_stmt|;
 specifier|static
 name|double
-name|lastval
+name|last_val
 init|=
 literal|0.0
 decl_stmt|;
@@ -1307,7 +1307,7 @@ block|}
 decl_stmt|;
 if|if
 condition|(
-name|vectprevbrightadjust
+name|vector_preview_brightness_adjust
 condition|)
 name|val
 operator|=
@@ -1315,7 +1315,7 @@ literal|1.0
 operator|-
 name|GTK_ADJUSTMENT
 argument_list|(
-name|vectprevbrightadjust
+name|vector_preview_brightness_adjust
 argument_list|)
 operator|->
 name|value
@@ -1335,7 +1335,7 @@ operator|||
 operator|(
 name|val
 operator|!=
-name|lastval
+name|last_val
 operator|)
 condition|)
 block|{
@@ -1409,7 +1409,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|numvect
+name|num_vectors
 condition|;
 name|i
 operator|++
@@ -1583,7 +1583,7 @@ name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|vectorprev
+name|vector_preview
 argument_list|)
 argument_list|,
 operator|(
@@ -1609,7 +1609,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
-name|vectorprev
+name|vector_preview
 argument_list|)
 expr_stmt|;
 block|}
@@ -1626,10 +1626,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|updatesliders (void)
+DECL|function|update_slides (void)
 specifier|static
 name|void
-name|updatesliders
+name|update_slides
 parameter_list|(
 name|void
 parameter_list|)
@@ -1645,7 +1645,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|angadjust
+name|angle_adjust
 argument_list|)
 argument_list|,
 name|vector
@@ -1660,7 +1660,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|stradjust
+name|strength_adjust
 argument_list|)
 argument_list|,
 name|vector
@@ -1684,7 +1684,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|vectypes
+name|vector_types
 index|[
 name|type
 index|]
@@ -1701,10 +1701,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|prevclick (GtkWidget * w,gpointer data)
+DECL|function|prev_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
-name|prevclick
+name|prev_click_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1725,24 +1725,24 @@ literal|0
 condition|)
 name|selectedvector
 operator|=
-name|numvect
+name|num_vectors
 operator|-
 literal|1
 expr_stmt|;
-name|updatesliders
+name|update_slides
 argument_list|()
 expr_stmt|;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|nextclick (GtkWidget * w,gpointer data)
+DECL|function|next_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
-name|nextclick
+name|next_click_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1759,16 +1759,16 @@ if|if
 condition|(
 name|selectedvector
 operator|==
-name|numvect
+name|num_vectors
 condition|)
 name|selectedvector
 operator|=
 literal|0
 expr_stmt|;
-name|updatesliders
+name|update_slides
 argument_list|()
 expr_stmt|;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
 block|}
@@ -1789,7 +1789,7 @@ parameter_list|)
 block|{
 name|vector
 index|[
-name|numvect
+name|num_vectors
 index|]
 operator|.
 name|x
@@ -1798,7 +1798,7 @@ name|x
 expr_stmt|;
 name|vector
 index|[
-name|numvect
+name|num_vectors
 index|]
 operator|.
 name|y
@@ -1807,7 +1807,7 @@ name|y
 expr_stmt|;
 name|vector
 index|[
-name|numvect
+name|num_vectors
 index|]
 operator|.
 name|dir
@@ -1816,7 +1816,7 @@ literal|0.0
 expr_stmt|;
 name|vector
 index|[
-name|numvect
+name|num_vectors
 index|]
 operator|.
 name|dx
@@ -1831,7 +1831,7 @@ argument_list|)
 expr_stmt|;
 name|vector
 index|[
-name|numvect
+name|num_vectors
 index|]
 operator|.
 name|dy
@@ -1846,7 +1846,7 @@ argument_list|)
 expr_stmt|;
 name|vector
 index|[
-name|numvect
+name|num_vectors
 index|]
 operator|.
 name|str
@@ -1855,7 +1855,7 @@ literal|1.0
 expr_stmt|;
 name|vector
 index|[
-name|numvect
+name|num_vectors
 index|]
 operator|.
 name|type
@@ -1864,19 +1864,19 @@ literal|0
 expr_stmt|;
 name|selectedvector
 operator|=
-name|numvect
+name|num_vectors
 expr_stmt|;
-name|numvect
+name|num_vectors
 operator|++
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|addclick (GtkWidget * w,gpointer data)
+DECL|function|add_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
-name|addclick
+name|add_click_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1893,23 +1893,23 @@ argument_list|,
 literal|0.5
 argument_list|)
 expr_stmt|;
-name|updatesliders
+name|update_slides
 argument_list|()
 expr_stmt|;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|deleteclick (GtkWidget * w,gpointer data)
+DECL|function|delete_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
-name|deleteclick
+name|delete_click_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1930,7 +1930,7 @@ name|selectedvector
 init|;
 name|i
 operator|<
-name|numvect
+name|num_vectors
 operator|-
 literal|1
 condition|;
@@ -1951,36 +1951,36 @@ literal|1
 index|]
 expr_stmt|;
 block|}
-name|numvect
+name|num_vectors
 operator|--
 expr_stmt|;
 if|if
 condition|(
 name|selectedvector
 operator|>=
-name|numvect
+name|num_vectors
 condition|)
 name|selectedvector
 operator|=
 literal|0
 expr_stmt|;
-name|updatesliders
+name|update_slides
 argument_list|()
 expr_stmt|;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|mapclick (GtkWidget * w,GdkEventButton * event)
+DECL|function|map_click_callback (GtkWidget * w,GdkEventButton * event)
 specifier|static
 name|void
-name|mapclick
+name|map_click_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2045,7 +2045,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|numvect
+name|num_vectors
 operator|+
 literal|1
 operator|==
@@ -2073,7 +2073,7 @@ operator|)
 name|OMHEIGHT
 argument_list|)
 expr_stmt|;
-name|updatesliders
+name|update_slides
 argument_list|()
 expr_stmt|;
 block|}
@@ -2157,24 +2157,24 @@ argument_list|(
 name|d
 argument_list|)
 expr_stmt|;
-name|updatesliders
+name|update_slides
 argument_list|()
 expr_stmt|;
 block|}
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|angadjmove (GtkWidget * w,gpointer data)
+DECL|function|angle_adjust_move_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
-name|angadjmove
+name|angle_adjust_move_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2198,7 +2198,7 @@ name|dir
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
-name|angadjust
+name|angle_adjust
 argument_list|)
 operator|->
 name|value
@@ -2243,20 +2243,20 @@ name|dir
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|stradjmove (GtkWidget * w,gpointer data)
+DECL|function|strength_adjust_move_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
-name|stradjmove
+name|strength_adjust_move_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2280,25 +2280,25 @@ name|str
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
-name|stradjust
+name|strength_adjust
 argument_list|)
 operator|->
 name|value
 expr_stmt|;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|strexpadjmove (GtkWidget * w,gpointer data)
+DECL|function|strength_exponent_adjust_move_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
-name|strexpadjmove
+name|strength_exponent_adjust_move_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2313,20 +2313,20 @@ condition|(
 name|adjignore
 condition|)
 return|return;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|angoffadjmove (GtkWidget * w,gpointer data)
+DECL|function|angle_offset_adjust_move_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
-name|angoffadjmove
+name|angle_offset_adjust_move_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2341,20 +2341,20 @@ condition|(
 name|adjignore
 condition|)
 return|return;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|vectypeclick (GtkWidget * w,gpointer data)
+DECL|function|vector_type_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
-name|vectypeclick
+name|vector_type_click_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2385,10 +2385,10 @@ name|type
 operator|=
 name|vector_type
 expr_stmt|;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}
@@ -2397,8 +2397,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|omresponse (GtkWidget * widget,gint response_id,gpointer data)
-name|omresponse
+DECL|function|orient_map_response (GtkWidget * widget,gint response_id,gpointer data)
+name|orient_map_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2434,7 +2434,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|numvect
+name|num_vectors
 condition|;
 name|i
 operator|++
@@ -2455,7 +2455,7 @@ name|pcvals
 operator|.
 name|numorientvector
 operator|=
-name|numvect
+name|num_vectors
 expr_stmt|;
 name|pcvals
 operator|.
@@ -2474,18 +2474,18 @@ name|orientangoff
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
-name|angoffadjust
+name|angle_offset_adjust
 argument_list|)
 operator|->
 name|value
 expr_stmt|;
 name|pcvals
 operator|.
-name|orientvoronoi
+name|orient_voronoi
 operator|=
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|orientvoronoi
+name|orient_voronoi
 argument_list|)
 operator|->
 name|active
@@ -2508,10 +2508,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|initvectors (void)
+DECL|function|init_vectors (void)
 specifier|static
 name|void
-name|initvectors
+name|init_vectors
 parameter_list|(
 name|void
 parameter_list|)
@@ -2526,7 +2526,7 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|numvect
+name|num_vectors
 operator|=
 name|pcvals
 operator|.
@@ -2540,7 +2540,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|numvect
+name|num_vectors
 condition|;
 name|i
 operator|++
@@ -2563,7 +2563,7 @@ block|}
 else|else
 block|{
 comment|/* Shouldn't happen */
-name|numvect
+name|num_vectors
 operator|=
 literal|0
 expr_stmt|;
@@ -2579,11 +2579,11 @@ if|if
 condition|(
 name|selectedvector
 operator|>=
-name|numvect
+name|num_vectors
 condition|)
 name|selectedvector
 operator|=
-name|numvect
+name|num_vectors
 operator|-
 literal|1
 expr_stmt|;
@@ -2601,10 +2601,10 @@ block|{
 if|if
 condition|(
 operator|!
-name|omwindow
+name|orient_map_window
 condition|)
 return|return;
-name|initvectors
+name|init_vectors
 argument_list|()
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -2623,7 +2623,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|angoffadjust
+name|angle_offset_adjust
 argument_list|)
 argument_list|,
 name|pcvals
@@ -2635,18 +2635,18 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|orientvoronoi
+name|orient_voronoi
 argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|orientvoronoi
+name|orient_voronoi
 argument_list|)
 expr_stmt|;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}
@@ -2688,28 +2688,28 @@ decl_stmt|,
 modifier|*
 name|vbox
 decl_stmt|;
-name|initvectors
+name|init_vectors
 argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|omwindow
+name|orient_map_window
 condition|)
 block|{
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|omwindow
+name|orient_map_window
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|omwindow
+name|orient_map_window
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -2745,21 +2745,21 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|omwindow
+name|orient_map_window
 argument_list|,
 literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|omresponse
+name|orient_map_response
 argument_list|)
 argument_list|,
-name|omwindow
+name|orient_map_window
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|omwindow
+name|orient_map_window
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -2769,7 +2769,7 @@ name|gtk_widget_destroyed
 argument_list|)
 argument_list|,
 operator|&
-name|omwindow
+name|orient_map_window
 argument_list|)
 expr_stmt|;
 name|table1
@@ -2799,7 +2799,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|omwindow
+name|orient_map_window
 argument_list|)
 operator|->
 name|vbox
@@ -2926,7 +2926,7 @@ argument_list|)
 expr_stmt|;
 name|tmpw
 operator|=
-name|vectorprev
+name|vector_preview
 operator|=
 name|gtk_preview_new
 argument_list|(
@@ -2975,7 +2975,7 @@ literal|"button_press_event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|mapclick
+name|map_click_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -2986,7 +2986,7 @@ argument_list|(
 name|ebox
 argument_list|)
 expr_stmt|;
-name|vectprevbrightadjust
+name|vector_preview_brightness_adjust
 operator|=
 name|gtk_adjustment_new
 argument_list|(
@@ -3009,7 +3009,7 @@ name|gtk_vscale_new
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|vectprevbrightadjust
+name|vector_preview_brightness_adjust
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3046,13 +3046,13 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|vectprevbrightadjust
+name|vector_preview_brightness_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|updatevectorprev
+name|update_vector_prev
 argument_list|)
 argument_list|,
 name|NULL
@@ -3125,7 +3125,7 @@ argument_list|)
 expr_stmt|;
 name|tmpw
 operator|=
-name|ompreviewprev
+name|orient_map_preview_prev
 operator|=
 name|gtk_preview_new
 argument_list|(
@@ -3241,7 +3241,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|prevclick
+name|prev_click_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3297,7 +3297,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|nextclick
+name|next_click_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3356,7 +3356,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|addclick
+name|add_click_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3415,7 +3415,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|deleteclick
+name|delete_click_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3512,7 +3512,7 @@ argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|vectypeclick
+name|vector_type_click_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -3528,7 +3528,7 @@ argument_list|,
 literal|0
 argument_list|,
 operator|&
-name|vectypes
+name|vector_types
 index|[
 literal|0
 index|]
@@ -3541,7 +3541,7 @@ argument_list|,
 literal|1
 argument_list|,
 operator|&
-name|vectypes
+name|vector_types
 index|[
 literal|1
 index|]
@@ -3554,7 +3554,7 @@ argument_list|,
 literal|2
 argument_list|,
 operator|&
-name|vectypes
+name|vector_types
 index|[
 literal|2
 index|]
@@ -3567,7 +3567,7 @@ argument_list|,
 literal|3
 argument_list|,
 operator|&
-name|vectypes
+name|vector_types
 index|[
 literal|3
 index|]
@@ -3590,7 +3590,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|orientvoronoi
+name|orient_voronoi
 operator|=
 name|tmpw
 operator|=
@@ -3626,7 +3626,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|orientvoronoi
+name|orient_voronoi
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3637,7 +3637,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|angoffadjmove
+name|angle_offset_adjust_move_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3691,7 +3691,7 @@ argument_list|(
 name|table2
 argument_list|)
 expr_stmt|;
-name|angadjust
+name|angle_adjust
 operator|=
 name|gimp_scale_entry_new
 argument_list|(
@@ -3741,19 +3741,19 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|angadjust
+name|angle_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|angadjmove
+name|angle_adjust_move_callback
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|angoffadjust
+name|angle_offset_adjust
 operator|=
 name|gimp_scale_entry_new
 argument_list|(
@@ -3803,19 +3803,19 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|angoffadjust
+name|angle_offset_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|angoffadjmove
+name|angle_offset_adjust_move_callback
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|stradjust
+name|strength_adjust
 operator|=
 name|gimp_scale_entry_new
 argument_list|(
@@ -3865,13 +3865,13 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|stradjust
+name|strength_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|stradjmove
+name|strength_adjust_move_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3933,7 +3933,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|strexpadjmove
+name|strength_exponent_adjust_move_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3941,13 +3941,13 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|omwindow
+name|orient_map_window
 argument_list|)
 expr_stmt|;
-name|updatevectorprev
+name|update_vector_prev
 argument_list|()
 expr_stmt|;
-name|updateompreviewprev
+name|update_orient_map_preview_prev
 argument_list|()
 expr_stmt|;
 block|}

@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a5f03b0108
+DECL|struct|__anon2b762c730108
 block|{
 DECL|member|orientnum
 name|int
@@ -293,9 +293,9 @@ DECL|member|paper_overlay
 name|int
 name|paper_overlay
 decl_stmt|;
-DECL|member|orientvoronoi
+DECL|member|orient_voronoi
 name|int
-name|orientvoronoi
+name|orient_voronoi
 decl_stmt|;
 DECL|member|colorbrushes
 name|int
@@ -714,7 +714,7 @@ end_function_decl
 
 begin_function_decl
 name|double
-name|getdir
+name|get_direction
 parameter_list|(
 name|double
 name|x
