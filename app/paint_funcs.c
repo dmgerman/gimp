@@ -137,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295784850103
+DECL|enum|__anon2bbeac990103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -10589,7 +10589,7 @@ name|ystepper
 argument_list|,
 literal|0
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)

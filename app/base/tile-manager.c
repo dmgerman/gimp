@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile_cache.h"
 end_include
 
@@ -2501,6 +2507,7 @@ decl_stmt|;
 name|int
 name|tile_num
 decl_stmt|;
+comment|/*  printf("#");fflush(stdout); */
 if|if
 condition|(
 operator|(
@@ -2517,7 +2524,14 @@ operator|->
 name|nlevels
 operator|)
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"tile_manager_map_tile: level out of range."
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 name|tile_level
 operator|=
 operator|&
@@ -2558,7 +2572,14 @@ operator|->
 name|height
 operator|)
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"tile_manager_map_tile: tile co-ord out of range."
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 name|tile_row
 operator|=
 name|ypixel
@@ -2650,6 +2671,7 @@ name|j
 decl_stmt|,
 name|k
 decl_stmt|;
+comment|/*  printf("@");fflush(stdout);*/
 if|if
 condition|(
 operator|(
@@ -2666,7 +2688,14 @@ operator|->
 name|nlevels
 operator|)
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"tile_manager_map: level out of range."
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 name|tile_level
 operator|=
 operator|&
@@ -2701,7 +2730,14 @@ operator|>=
 name|ntiles
 operator|)
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"tile_manager_map: tile out of range."
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 if|if
 condition|(
 operator|!
@@ -2710,6 +2746,7 @@ operator|->
 name|tiles
 condition|)
 block|{
+comment|/*      g_warning ("tile_manager_map: empty tile level - init'ing.");*/
 name|tile_level
 operator|->
 name|tiles
@@ -2807,6 +2844,7 @@ name|k
 operator|++
 control|)
 block|{
+comment|/*	      printf(",");fflush(stdout);*/
 name|tiles
 index|[
 name|k
@@ -2883,6 +2921,7 @@ name|bottom_tile
 expr_stmt|;
 block|}
 block|}
+comment|/*      g_warning ("tile_manager_map: empty tile level - done.");*/
 block|}
 name|tile_ptr
 operator|=
@@ -2894,6 +2933,7 @@ index|[
 name|tile_num
 index|]
 expr_stmt|;
+comment|/*  printf(")");fflush(stdout);*/
 name|TILE_MUTEX_LOCK
 argument_list|(
 operator|*
@@ -2910,11 +2950,13 @@ argument_list|,
 name|tile_num
 argument_list|)
 expr_stmt|;
+comment|/*  printf(">");fflush(stdout);*/
 name|TILE_MUTEX_LOCK
 argument_list|(
 name|srctile
 argument_list|)
 expr_stmt|;
+comment|/*  printf(" [src:%p tm:%p tn:%d] ", srctile, tm, tile_num); fflush(stdout);*/
 name|tile_attach
 argument_list|(
 name|srctile
@@ -2934,6 +2976,7 @@ argument_list|(
 name|srctile
 argument_list|)
 expr_stmt|;
+comment|/*  printf("}");fflush(stdout);*/
 block|}
 end_function
 

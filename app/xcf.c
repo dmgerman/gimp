@@ -166,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8298a0103
+DECL|enum|__anon2c54fede0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8298a0203
+DECL|enum|__anon2c54fede0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -9024,6 +9024,10 @@ argument_list|(
 literal|"xcf: zlib compression unimplemented"
 argument_list|)
 expr_stmt|;
+name|fail
+operator|=
+name|TRUE
+expr_stmt|;
 break|break;
 case|case
 name|COMPRESS_FRACTAL
@@ -9032,6 +9036,10 @@ name|g_error
 argument_list|(
 literal|"xcf: fractal compression unimplemented"
 argument_list|)
+expr_stmt|;
+name|fail
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 block|}
@@ -9113,6 +9121,11 @@ argument_list|,
 name|previous
 argument_list|)
 expr_stmt|;
+name|putchar
+argument_list|(
+literal|'M'
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -9121,6 +9134,15 @@ argument_list|(
 name|tile
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|previous
+operator|=
+name|tile
+expr_stmt|;
+name|putchar
+argument_list|(
+literal|'.'
 argument_list|)
 expr_stmt|;
 block|}
@@ -9132,10 +9154,13 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
 name|previous
 operator|=
 name|tile
 expr_stmt|;
+block|}
 comment|/* restore the saved position so we'll be ready to        *  read the next offset.        */
 name|xcf_seek_pos
 argument_list|(
@@ -9162,6 +9187,11 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|offset
