@@ -982,10 +982,7 @@ expr_stmt|;
 if|if
 condition|(
 name|view
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|view
 operator|->
 name|preview_size
@@ -1003,7 +1000,6 @@ operator|->
 name|preview_border_width
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
@@ -1090,10 +1086,7 @@ expr_stmt|;
 if|if
 condition|(
 name|dockable
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|dockable
 operator|->
 name|tab_style
@@ -1137,7 +1130,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
 end_function
 
 begin_function
@@ -1174,7 +1166,6 @@ operator|->
 name|dock
 argument_list|)
 condition|)
-block|{
 name|gimp_image_dock_set_show_image_menu
 argument_list|(
 name|GIMP_IMAGE_DOCK
@@ -1192,7 +1183,6 @@ operator|->
 name|active
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1230,7 +1220,6 @@ operator|->
 name|dock
 argument_list|)
 condition|)
-block|{
 name|gimp_image_dock_set_auto_follow_active
 argument_list|(
 name|GIMP_IMAGE_DOCK
@@ -1248,7 +1237,6 @@ operator|->
 name|active
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
