@@ -547,6 +547,29 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDocked
+typedef|typedef
+name|struct
+name|_GimpDocked
+name|GimpDocked
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpDocked
+comment|/* dummy typedef */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpDockedIface
+typedef|typedef
+name|struct
+name|_GimpDockedIface
+name|GimpDockedIface
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerPopup
 typedef|typedef
 name|struct

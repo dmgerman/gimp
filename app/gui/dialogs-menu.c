@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdocked.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -1441,18 +1447,34 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Tab Style/Current Status"
 argument_list|,
+name|GIMP_DOCKED_GET_INTERFACE
+argument_list|(
+name|GTK_BIN
+argument_list|(
 name|dockable
+argument_list|)
 operator|->
-name|get_preview_func
+name|child
+argument_list|)
+operator|->
+name|get_preview
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Tab Style/Status& Text"
 argument_list|,
+name|GIMP_DOCKED_GET_INTERFACE
+argument_list|(
+name|GTK_BIN
+argument_list|(
 name|dockable
+argument_list|)
 operator|->
-name|get_preview_func
+name|child
+argument_list|)
+operator|->
+name|get_preview
 argument_list|)
 expr_stmt|;
 name|SET_VISIBLE
