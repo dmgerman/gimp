@@ -3520,7 +3520,7 @@ literal|1
 condition|)
 block|{
 comment|/* 	* Read new format printrc lines... 	*/
-name|char
+name|gchar
 modifier|*
 name|keyword
 decl_stmt|,
@@ -3540,7 +3540,7 @@ name|keyword
 operator|=
 name|line
 init|;
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 operator|*
 name|keyword
@@ -3555,7 +3555,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|isalpha
+name|g_ascii_isalpha
 argument_list|(
 operator|*
 name|keyword
@@ -3568,7 +3568,7 @@ name|end
 operator|=
 name|keyword
 init|;
-name|isalnum
+name|g_ascii_isalnum
 argument_list|(
 operator|*
 name|end
@@ -3591,7 +3591,7 @@ name|end
 expr_stmt|;
 while|while
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 operator|*
 name|value
@@ -3621,7 +3621,7 @@ literal|'\0'
 expr_stmt|;
 while|while
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 operator|*
 name|value
