@@ -13,7 +13,7 @@ name|_P_P_PORTABILITY_H_
 end_define
 
 begin_comment
-comment|/* Perl/Pollution/Portability Version 1.0005 */
+comment|/* Perl/Pollution/Portability Version 1.0007 */
 end_comment
 
 begin_comment
@@ -21,11 +21,11 @@ comment|/* Copyright (C) 1999, Kenneth Albanowski. This code may be used and    
 end_comment
 
 begin_comment
-comment|/* For the latest version of this code, please contact the author at<kjahds@kjahds.com>, or check with the Perl maintainers. */
+comment|/* For the latest version of this code, please retreive the Devel::PPPort    module from CPAN, contact the author at<kjahds@kjahds.com>, or check    with the Perl maintainers. */
 end_comment
 
 begin_comment
-comment|/* If you needed to customize this file for your project, please mention    your changes. */
+comment|/* If you needed to customize this file for your project, please mention    your changes, and visible alter the version number. */
 end_comment
 
 begin_comment
@@ -37,12 +37,24 @@ comment|/* If you use one of a few functions that were not present in earlier   
 end_comment
 
 begin_comment
-comment|/* To verify whether ppport.h is needed for your module, and whether any    special defines should be used, ppport.h can be run through Perl to check    your source code. Simply say:        	perl -x ppport.h *.c *.h *.xs [etc]        The result will be a list of patches suggesting changes that should at    least be acceptable, if not necessarily the most efficient solution, or a    fix for all possible problems. It won't catch where dTHR is needed, and    doesn't attempt to account for global macro or function definitions,    nested includes, typemaps, etc.        In order to test for the need of dTHR, please try your module under a    recent version of Perl that has threading compiled-in.   */
+comment|/* To verify whether ppport.h is needed for your module, and whether any    special defines should be used, ppport.h can be run through Perl to check    your source code. Simply say:        	perl -x ppport.h *.c *.h *.xs foo/any.c [etc]        The result will be a list of patches suggesting changes that should at    least be acceptable, if not necessarily the most efficient solution, or a    fix for all possible problems. It won't catch where dTHR is needed, and    doesn't attempt to account for global macro or function definitions,    nested includes, typemaps, etc.        In order to test for the need of dTHR, please try your module under a    recent version of Perl that has threading compiled-in.   */
 end_comment
 
 begin_comment
-comment|/* #!/usr/bin/perl @ARGV = ("*.xs") if !@ARGV; %badmacros = %funcs = %macros = (); $replace = 0; foreach (<DATA>) { 	$funcs{$1} = 1 if /Provide:\s+(\S+)/; 	$macros{$1} = 1 if /^#\s*define\s+([a-zA-Z0-9_]+)/; 	$replace = $1 if /Replace:\s+(\d+)/; 	$badmacros{$2}=$1 if $replace and /^#\s*define\s+([a-zA-Z0-9_]+).*?\s+([a-zA-Z0-9_]+)/; } foreach $filename (map(glob($_),@ARGV)) { 	unless (open(IN, "<$filename")) { 		warn "Unable to read from $file: $!\n"; 		next; 	} 	print "Scanning $filename...\n"; 	$c = ""; while (<IN>) { $c .= $_; } close(IN); 	$need_include = 0; %add_func = (); $changes = 0; 	$has_include = ($c =~ /#.*include.*ppport/m);  	foreach $func (keys %funcs) { 		if ($c =~ /#.*define.*\bNEED_$func(_GLOBAL)?\b/m) { 			if ($c !~ /\b$func\b/m) { 				print "If $func isn't needed, you don't need to request it.\n" if 				$changes += ($c =~ s/^.*#.*define.*\bNEED_$func\b.*\n//m); 			} else { 				print "Uses $func\n"; 				$need_include = 1; 			} 		} else { 			if ($c =~ /\b$func\b/m) { 				$add_func{$func} =1 ; 				print "Uses $func\n"; 				$need_include = 1; 			} 		} 	}  	if (not $need_include) { 		foreach $macro (keys %macros) { 			if ($c =~ /\b$macro\b/m) { 				print "Uses $macro\n"; 				$need_include = 1; 			} 		} 	}  	foreach $badmacro (keys %badmacros) { 		if ($c =~ /\b$badmacro\b/m) { 			$changes += ($c =~ s/\b$badmacro\b/$badmacros{$badmacro}/gm); 			print "Uses $badmacros{$badmacro} (instead of $badmacro)\n"; 			$need_include = 1; 		} 	} 	 	if (scalar(keys %add_func) or $need_include != $has_include) { 		if (!$has_include) { 			$inc = join('',map("#define NEED_$_\n", sort keys %add_func)). 			       "#include \"ppport.h\"\n"; 			$c = "$inc$c" unless $c =~ s/#.*include.*XSUB.*\n/$&$inc/m; 		} elsif (keys %add_func) { 			$inc = join('',map("#define NEED_$_\n", sort keys %add_func)); 			$c = "$inc$c" unless $c =~ s/^.*#.*include.*ppport.*$/$inc$&/m; 		} 		if (!$need_include) { 			print "Doesn't seem to need ppport.h.\n"; 			$c =~ s/^.*#.*include.*ppport.*\n//m; 		} 		$changes++; 	} 	 	if ($changes) { 		open(OUT,">/tmp/ppport.h.$$"); 		print OUT $c; 		close(OUT); 		open(DIFF, "diff -u $filename /tmp/ppport.h.$$|"); 		while (<DIFF>) { s!/tmp/ppport\.h\.$$!$filename.patched!; print STDOUT; } 		close(DIFF); 		unlink("/tmp/ppport.h.$$"); 	} else { 		print "Looks OK\n"; 	} } __DATA__ */
+comment|/* #!/usr/bin/perl @ARGV = ("*.xs") if !@ARGV; %badmacros = %funcs = %macros = (); $replace = 0; foreach (<DATA>) { 	$funcs{$1} = 1 if /Provide:\s+(\S+)/; 	$macros{$1} = 1 if /^#\s*define\s+([a-zA-Z0-9_]+)/; 	$replace = $1 if /Replace:\s+(\d+)/; 	$badmacros{$2}=$1 if $replace and /^#\s*define\s+([a-zA-Z0-9_]+).*?\s+([a-zA-Z0-9_]+)/; 	$badmacros{$1}=$2 if /Replace (\S+) with (\S+)/; } foreach $filename (map(glob($_),@ARGV)) { 	unless (open(IN, "<$filename")) { 		warn "Unable to read from $file: $!\n"; 		next; 	} 	print "Scanning $filename...\n"; 	$c = ""; while (<IN>) { $c .= $_; } close(IN); 	$need_include = 0; %add_func = (); $changes = 0; 	$has_include = ($c =~ /#.*include.*ppport/m);  	foreach $func (keys %funcs) { 		if ($c =~ /#.*define.*\bNEED_$func(_GLOBAL)?\b/m) { 			if ($c !~ /\b$func\b/m) { 				print "If $func isn't needed, you don't need to request it.\n" if 				$changes += ($c =~ s/^.*#.*define.*\bNEED_$func\b.*\n//m); 			} else { 				print "Uses $func\n"; 				$need_include = 1; 			} 		} else { 			if ($c =~ /\b$func\b/m) { 				$add_func{$func} =1 ; 				print "Uses $func\n"; 				$need_include = 1; 			} 		} 	}  	if (not $need_include) { 		foreach $macro (keys %macros) { 			if ($c =~ /\b$macro\b/m) { 				print "Uses $macro\n"; 				$need_include = 1; 			} 		} 	}  	foreach $badmacro (keys %badmacros) { 		if ($c =~ /\b$badmacro\b/m) { 			$changes += ($c =~ s/\b$badmacro\b/$badmacros{$badmacro}/gm); 			print "Uses $badmacros{$badmacro} (instead of $badmacro)\n"; 			$need_include = 1; 		} 	} 	 	if (scalar(keys %add_func) or $need_include != $has_include) { 		if (!$has_include) { 			$inc = join('',map("#define NEED_$_\n", sort keys %add_func)). 			       "#include \"ppport.h\"\n"; 			$c = "$inc$c" unless $c =~ s/#.*include.*XSUB.*\n/$&$inc/m; 		} elsif (keys %add_func) { 			$inc = join('',map("#define NEED_$_\n", sort keys %add_func)); 			$c = "$inc$c" unless $c =~ s/^.*#.*include.*ppport.*$/$inc$&/m; 		} 		if (!$need_include) { 			print "Doesn't seem to need ppport.h.\n"; 			$c =~ s/^.*#.*include.*ppport.*\n//m; 		} 		$changes++; 	} 	 	if ($changes) { 		open(OUT,">/tmp/ppport.h.$$"); 		print OUT $c; 		close(OUT); 		open(DIFF, "diff -u $filename /tmp/ppport.h.$$|"); 		while (<DIFF>) { s!/tmp/ppport\.h\.$$!$filename.patched!; print STDOUT; } 		close(DIFF); 		unlink("/tmp/ppport.h.$$"); 	} else { 		print "Looks OK\n"; 	} } __DATA__ */
 end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|PERL_REVISION
+end_ifndef
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__PATCHLEVEL_H_INCLUDED__
+end_ifndef
 
 begin_include
 include|#
@@ -50,23 +62,48 @@ directive|include
 file|"patchlevel.h"
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|PERL_PATCHLEVEL
+name|PERL_REVISION
 end_ifndef
+
+begin_define
+DECL|macro|PERL_REVISION
+define|#
+directive|define
+name|PERL_REVISION
+value|(5)
+end_define
 
 begin_comment
 comment|/* Replace: 1 */
 end_comment
 
 begin_define
-DECL|macro|PERL_PATCHLEVEL
+DECL|macro|PERL_VERSION
 define|#
 directive|define
-name|PERL_PATCHLEVEL
+name|PERL_VERSION
 value|PATCHLEVEL
 end_define
+
+begin_define
+DECL|macro|PERL_SUBVERSION
+define|#
+directive|define
+name|PERL_SUBVERSION
+value|SUBVERSION
+end_define
+
+begin_comment
+comment|/* Replace PERL_PATCHLEVEL with PERL_VERSION */
+end_comment
 
 begin_comment
 comment|/* Replace: 0 */
@@ -77,24 +114,18 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|PERL_SUBVERSION
-end_ifndef
-
-begin_define
-DECL|macro|PERL_SUBVERSION
-define|#
-directive|define
-name|PERL_SUBVERSION
-value|SUBVERSION
-end_define
-
 begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_define
+DECL|macro|PERL_BCDVERSION
+define|#
+directive|define
+name|PERL_BCDVERSION
+value|((PERL_REVISION * 0x1000000L) + (PERL_VERSION * 0x1000L) + PERL_SUBVERSION)
+end_define
 
 begin_ifndef
 ifndef|#
@@ -119,14 +150,14 @@ begin_if
 if|#
 directive|if
 operator|(
-name|PERL_PATCHLEVEL
+name|PERL_VERSION
 operator|<
 literal|4
 operator|)
 operator|||
 operator|(
 operator|(
-name|PERL_PATCHLEVEL
+name|PERL_VERSION
 operator|==
 literal|4
 operator|)
@@ -134,7 +165,7 @@ operator|&&
 operator|(
 name|PERL_SUBVERSION
 operator|<=
-literal|4
+literal|5
 operator|)
 operator|)
 end_if
@@ -223,14 +254,6 @@ name|PL_Sv
 value|Sv
 end_define
 
-begin_define
-DECL|macro|PL_perl_destruct_level
-define|#
-directive|define
-name|PL_perl_destruct_level
-value|perl_destruct_level
-end_define
-
 begin_comment
 comment|/* Replace: 0 */
 end_comment
@@ -240,15 +263,11 @@ endif|#
 directive|endif
 end_endif
 
-begin_if
-if|#
-directive|if
-operator|(
-name|PERL_PATCHLEVEL
-operator|<
-literal|5
-operator|)
-end_if
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|dTHR
+end_ifndef
 
 begin_ifdef
 ifdef|#
@@ -512,14 +531,14 @@ begin_if
 if|#
 directive|if
 operator|(
-name|PERL_PATCHLEVEL
+name|PERL_VERSION
 operator|<
 literal|4
 operator|)
 operator|||
 operator|(
 operator|(
-name|PERL_PATCHLEVEL
+name|PERL_VERSION
 operator|==
 literal|4
 operator|)
@@ -664,14 +683,14 @@ argument_list|(
 if|#
 directive|if
 operator|(
-name|PERL_PATCHLEVEL
+name|PERL_VERSION
 operator|<
 literal|3
 operator|)
 operator|||
 operator|(
 operator|(
-name|PERL_PATCHLEVEL
+name|PERL_VERSION
 operator|==
 literal|3
 operator|)
@@ -691,7 +710,7 @@ directive|else
 if|#
 directive|if
 operator|(
-name|PERL_PATCHLEVEL
+name|PERL_VERSION
 operator|==
 literal|3
 operator|)
