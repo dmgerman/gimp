@@ -12,11 +12,11 @@ end_include
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_parasite_find (const char * name)
+DECL|function|gimp_parasite_find (const gchar * name)
 name|gimp_parasite_find
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -25,7 +25,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|Parasite
@@ -111,7 +111,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -142,23 +142,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_attach_new_parasite (const char * name,int flags,int size,const void * data)
+DECL|function|gimp_attach_new_parasite (const gchar * name,gint flags,gint size,const gpointer data)
 name|gimp_attach_new_parasite
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|flags
 parameter_list|,
-name|int
+name|gint
 name|size
 parameter_list|,
 specifier|const
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -166,7 +165,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|Parasite
@@ -217,11 +216,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_parasite_detach (const char * name)
+DECL|function|gimp_parasite_detach (const gchar * name)
 name|gimp_parasite_detach
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -230,7 +229,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals

@@ -1352,7 +1352,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  --display<display>      Use the designated X display.\n\n"
+literal|"  --display<display>      Use the designated X display.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;

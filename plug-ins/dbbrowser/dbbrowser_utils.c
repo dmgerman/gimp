@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275d578d0108
+DECL|struct|__anon2c83797f0108
 block|{
 DECL|member|label
 name|gchar
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275d578d0208
+DECL|struct|__anon2c83797f0208
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -451,15 +451,13 @@ name|dbbrowser
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|button
+name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbox
-decl_stmt|,
-modifier|*
 name|searchhbox
-decl_stmt|,
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;

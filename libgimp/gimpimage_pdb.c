@@ -31,7 +31,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -115,7 +115,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -199,7 +199,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -248,7 +248,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -332,7 +332,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|GOrientation
@@ -415,7 +415,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -502,7 +502,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -587,7 +587,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -666,7 +666,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -708,10 +708,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -784,10 +784,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -860,10 +860,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -936,7 +936,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -1018,7 +1018,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1057,7 +1057,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_add_layer (gint32 image_ID,gint32 layer_ID,int position)
+DECL|function|gimp_image_add_layer (gint32 image_ID,gint32 layer_ID,gint position)
 name|gimp_image_add_layer
 parameter_list|(
 name|gint32
@@ -1066,7 +1066,7 @@ parameter_list|,
 name|gint32
 name|layer_ID
 parameter_list|,
-name|int
+name|gint
 name|position
 parameter_list|)
 block|{
@@ -1074,7 +1074,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1180,7 +1180,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1222,7 +1222,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1264,7 +1264,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1306,7 +1306,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1348,7 +1348,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1390,7 +1390,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1432,7 +1432,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1474,7 +1474,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -1603,7 +1603,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1652,7 +1652,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -1739,7 +1739,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -1827,7 +1827,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1876,7 +1876,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1925,7 +1925,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1974,7 +1974,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -2026,7 +2026,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -2088,7 +2088,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -2146,7 +2146,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -2223,7 +2223,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -2305,7 +2305,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -2419,7 +2419,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|guchar
@@ -2520,7 +2520,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_image_get_component_active (gint32 image_ID,gint component)
 name|gimp_image_get_component_active
 parameter_list|(
@@ -2535,10 +2535,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -2599,7 +2599,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_image_get_component_visible (gint32 image_ID,gint component)
 name|gimp_image_get_component_visible
 parameter_list|(
@@ -2614,10 +2614,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -2678,7 +2678,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|gimp_image_get_filename (gint32 image_ID)
 name|gimp_image_get_filename
@@ -2776,7 +2776,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -2885,7 +2885,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -2965,7 +2965,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 if|if
@@ -3042,7 +3042,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3095,7 +3095,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3136,7 +3136,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_component_active (gint32 image_ID,gint component,gint active)
+DECL|function|gimp_image_set_component_active (gint32 image_ID,gint component,gboolean active)
 name|gimp_image_set_component_active
 parameter_list|(
 name|gint32
@@ -3145,7 +3145,7 @@ parameter_list|,
 name|gint
 name|component
 parameter_list|,
-name|gint
+name|gboolean
 name|active
 parameter_list|)
 block|{
@@ -3153,7 +3153,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3192,7 +3192,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_component_visible (gint32 image_ID,gint component,gint visible)
+DECL|function|gimp_image_set_component_visible (gint32 image_ID,gint component,gboolean visible)
 name|gimp_image_set_component_visible
 parameter_list|(
 name|gint32
@@ -3201,7 +3201,7 @@ parameter_list|,
 name|gint
 name|component
 parameter_list|,
-name|gint
+name|gboolean
 name|visible
 parameter_list|)
 block|{
@@ -3209,7 +3209,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3248,13 +3248,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_filename (gint32 image_ID,char * name)
+DECL|function|gimp_image_set_filename (gint32 image_ID,gchar * name)
 name|gimp_image_set_filename
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -3263,7 +3263,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3299,14 +3299,14 @@ end_function
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_image_parasite_find (gint32 image_ID,const char * name)
+DECL|function|gimp_image_parasite_find (gint32 image_ID,const gchar * name)
 name|gimp_image_parasite_find
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -3315,7 +3315,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|Parasite
@@ -3408,7 +3408,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3443,26 +3443,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_attach_new_parasite (gint32 image_ID,const char * name,int flags,int size,const void * data)
+DECL|function|gimp_image_attach_new_parasite (gint32 image_ID,const gchar * name,gint flags,gint size,const gpointer data)
 name|gimp_image_attach_new_parasite
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|flags
 parameter_list|,
-name|int
+name|gint
 name|size
 parameter_list|,
 specifier|const
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -3470,7 +3469,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|Parasite
@@ -3525,14 +3524,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_parasite_detach (gint32 image_ID,const char * name)
+DECL|function|gimp_image_parasite_detach (gint32 image_ID,const gchar * name)
 name|gimp_image_parasite_detach
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -3541,7 +3540,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3595,7 +3594,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|double
@@ -3712,7 +3711,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3762,7 +3761,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|GimpUnit
@@ -3842,7 +3841,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3891,7 +3890,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -3976,7 +3975,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -4071,7 +4070,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|guchar
@@ -4222,7 +4221,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -4264,7 +4263,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -4325,7 +4324,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals

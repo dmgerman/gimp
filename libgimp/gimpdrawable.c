@@ -220,10 +220,10 @@ name|GTile
 modifier|*
 name|tiles
 decl_stmt|;
-name|int
+name|gint
 name|ntiles
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -435,7 +435,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -496,7 +496,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -542,7 +542,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -607,7 +607,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|gimp_drawable_name (gint32 drawable_ID)
 name|gimp_drawable_name
@@ -651,7 +651,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|guint
@@ -727,7 +727,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|guint
@@ -803,7 +803,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|guint
@@ -879,10 +879,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -944,7 +944,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_drawable_visible (gint32 drawable_ID)
 name|gimp_drawable_visible
 parameter_list|(
@@ -975,7 +975,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_drawable_is_channel (gint32 drawable_ID)
 name|gimp_drawable_is_channel
 parameter_list|(
@@ -987,10 +987,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1051,7 +1051,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_drawable_is_rgb (gint32 drawable_ID)
 name|gimp_drawable_is_rgb
 parameter_list|(
@@ -1063,10 +1063,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1127,7 +1127,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_drawable_is_gray (gint32 drawable_ID)
 name|gimp_drawable_is_gray
 parameter_list|(
@@ -1139,10 +1139,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1203,7 +1203,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_drawable_has_alpha (gint32 drawable_ID)
 name|gimp_drawable_has_alpha
 parameter_list|(
@@ -1215,10 +1215,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1279,7 +1279,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_drawable_is_indexed (gint32 drawable_ID)
 name|gimp_drawable_is_indexed
 parameter_list|(
@@ -1291,10 +1291,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1355,7 +1355,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_drawable_is_layer (gint32 drawable_ID)
 name|gimp_drawable_is_layer
 parameter_list|(
@@ -1367,10 +1367,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1431,7 +1431,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_drawable_is_layer_mask (gint32 drawable_ID)
 name|gimp_drawable_is_layer_mask
 parameter_list|(
@@ -1443,10 +1443,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1507,7 +1507,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_drawable_mask_bounds (gint32 drawable_ID,gint * x1,gint * y1,gint * x2,gint * y2)
 name|gimp_drawable_mask_bounds
 parameter_list|(
@@ -1535,10 +1535,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1669,7 +1669,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1753,7 +1753,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1788,13 +1788,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_set_name (gint32 drawable_ID,char * name)
+DECL|function|gimp_drawable_set_name (gint32 drawable_ID,gchar * name)
 name|gimp_drawable_set_name
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -1891,13 +1891,13 @@ decl_stmt|;
 name|guint
 name|bottom_tile
 decl_stmt|;
-name|int
+name|gint
 name|ntiles
 decl_stmt|;
-name|int
+name|gint
 name|tile_num
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -2252,14 +2252,14 @@ end_function
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_drawable_parasite_find (gint32 drawable_ID,const char * name)
+DECL|function|gimp_drawable_parasite_find (gint32 drawable_ID,const gchar * name)
 name|gimp_drawable_parasite_find
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -2268,7 +2268,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|Parasite
@@ -2361,7 +2361,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -2396,26 +2396,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_attach_new_parasite (gint32 drawable,const char * name,int flags,int size,const void * data)
+DECL|function|gimp_drawable_attach_new_parasite (gint32 drawable,const gchar * name,gint flags,gint size,const gpointer data)
 name|gimp_drawable_attach_new_parasite
 parameter_list|(
 name|gint32
 name|drawable
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|flags
 parameter_list|,
-name|int
+name|gint
 name|size
 parameter_list|,
 specifier|const
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -2423,7 +2422,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|Parasite
@@ -2478,14 +2477,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_parasite_detach (gint32 drawable_ID,const char * name)
+DECL|function|gimp_drawable_parasite_detach (gint32 drawable_ID,const gchar * name)
 name|gimp_drawable_parasite_detach
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -2494,7 +2493,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -2553,7 +2552,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|guchar

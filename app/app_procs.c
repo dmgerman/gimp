@@ -2974,9 +2974,11 @@ name|save_sessionrc
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* gtk_exit (0); */
-name|gtk_main_quit
-argument_list|()
+comment|/*  There used to be gtk_main_quit() here, but there's a chance     *  that gtk_main() was never called before we reach this point. --Sven      */
+name|gtk_exit
+argument_list|(
+literal|0
+argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -11,13 +11,13 @@ end_include
 
 begin_function
 name|gint32
-DECL|function|gimp_channel_new (gint32 image_ID,char * name,guint width,guint height,gdouble opacity,guchar * color)
+DECL|function|gimp_channel_new (gint32 image_ID,gchar * name,guint width,guint height,gdouble opacity,guchar * color)
 name|gimp_channel_new
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -39,7 +39,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -136,7 +136,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -210,7 +210,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -334,7 +334,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -421,7 +421,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|gimp_channel_get_name (gint32 channel_ID)
 name|gimp_channel_get_name
@@ -434,10 +434,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -514,7 +514,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gdouble
@@ -578,7 +578,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_channel_get_visible (gint32 channel_ID)
 name|gimp_channel_get_visible
 parameter_list|(
@@ -590,10 +590,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gboolean
 name|visible
 decl_stmt|;
 name|return_vals
@@ -614,8 +614,7 @@ argument_list|)
 expr_stmt|;
 name|visible
 operator|=
-operator|-
-literal|1
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -676,7 +675,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|guchar
@@ -738,13 +737,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_set_name (gint32 channel_ID,char * name)
+DECL|function|gimp_channel_set_name (gint32 channel_ID,gchar * name)
 name|gimp_channel_set_name
 parameter_list|(
 name|gint32
 name|channel_ID
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -753,7 +752,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -802,7 +801,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -837,13 +836,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_set_visible (gint32 channel_ID,gint visible)
+DECL|function|gimp_channel_set_visible (gint32 channel_ID,gboolean visible)
 name|gimp_channel_set_visible
 parameter_list|(
 name|gint32
 name|channel_ID
 parameter_list|,
-name|gint
+name|gboolean
 name|visible
 parameter_list|)
 block|{
@@ -851,7 +850,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -897,10 +896,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|show_masked
 decl_stmt|;
 name|return_vals
@@ -977,7 +976,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1023,10 +1022,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|tattoo
 decl_stmt|;
 name|return_vals

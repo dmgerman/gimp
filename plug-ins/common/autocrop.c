@@ -180,33 +180,6 @@ name|bytes
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|sx1
-DECL|variable|sy1
-DECL|variable|sx2
-DECL|variable|sy2
-specifier|static
-name|gint
-name|sx1
-decl_stmt|,
-name|sy1
-decl_stmt|,
-name|sx2
-decl_stmt|,
-name|sy2
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_flag
-specifier|static
-name|gint
-name|run_flag
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
 begin_macro
 DECL|function|MAIN ()
 name|MAIN

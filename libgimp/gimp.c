@@ -279,7 +279,7 @@ name|WireMessage
 modifier|*
 name|msg
 parameter_list|,
-name|int
+name|gint
 name|type
 parameter_list|)
 function_decl|;
@@ -296,7 +296,7 @@ specifier|static
 name|RETSIGTYPE
 name|gimp_signal
 parameter_list|(
-name|int
+name|gint
 name|signum
 parameter_list|)
 function_decl|;
@@ -389,7 +389,7 @@ specifier|static
 name|void
 name|gimp_message_func
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -440,7 +440,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|_shm_ID
-name|int
+name|gint
 name|_shm_ID
 init|=
 operator|-
@@ -523,7 +523,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|_install_cmap
 specifier|static
-name|gint
+name|gboolean
 name|_install_cmap
 decl_stmt|;
 end_decl_stmt
@@ -531,7 +531,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|_use_xshm
 specifier|static
-name|gint
+name|gboolean
 name|_use_xshm
 decl_stmt|;
 end_decl_stmt
@@ -561,7 +561,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|progname
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|progname
 init|=
@@ -1442,7 +1442,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|guint32
@@ -1523,10 +1523,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|length
 decl_stmt|;
 name|gchar
@@ -1623,7 +1623,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1669,7 +1669,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1727,7 +1727,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1759,10 +1759,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_message_func (char * str)
+DECL|function|gimp_message_func (gchar * str)
 name|gimp_message_func
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -1777,42 +1777,42 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_query_database (char * name_regexp,char * blurb_regexp,char * help_regexp,char * author_regexp,char * copyright_regexp,char * date_regexp,char * proc_type_regexp,int * nprocs,char *** proc_names)
+DECL|function|gimp_query_database (gchar * name_regexp,gchar * blurb_regexp,gchar * help_regexp,gchar * author_regexp,gchar * copyright_regexp,gchar * date_regexp,gchar * proc_type_regexp,gint * nprocs,gchar *** proc_names)
 name|gimp_query_database
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name_regexp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|blurb_regexp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|help_regexp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|author_regexp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|copyright_regexp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|date_regexp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|proc_type_regexp
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nprocs
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 modifier|*
@@ -1823,10 +1823,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|return_vals
@@ -1966,48 +1966,48 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_query_procedure (char * proc_name,char ** proc_blurb,char ** proc_help,char ** proc_author,char ** proc_copyright,char ** proc_date,int * proc_type,int * nparams,int * nreturn_vals,GParamDef ** params,GParamDef ** return_vals)
+name|gboolean
+DECL|function|gimp_query_procedure (gchar * proc_name,gchar ** proc_blurb,gchar ** proc_help,gchar ** proc_author,gchar ** proc_copyright,gchar ** proc_date,gint * proc_type,gint * nparams,gint * nreturn_vals,GParamDef ** params,GParamDef ** return_vals)
 name|gimp_query_procedure
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|proc_name
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|proc_blurb
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|proc_help
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|proc_author
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|proc_copyright
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|proc_date
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|proc_type
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nparams
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -2026,13 +2026,13 @@ name|GParam
 modifier|*
 name|ret_vals
 decl_stmt|;
-name|int
+name|gint
 name|nret_vals
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gboolean
 name|success
 init|=
 name|TRUE
@@ -2219,7 +2219,7 @@ name|GParam
 modifier|*
 name|rvals
 decl_stmt|;
-name|int
+name|gint
 name|nrvals
 decl_stmt|;
 name|rvals
@@ -2528,10 +2528,10 @@ end_function
 begin_function
 name|gint32
 modifier|*
-DECL|function|gimp_query_images (int * nimages)
+DECL|function|gimp_query_images (gint * nimages)
 name|gimp_query_images
 parameter_list|(
-name|int
+name|gint
 modifier|*
 name|nimages
 parameter_list|)
@@ -2540,7 +2540,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -2634,48 +2634,48 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_install_procedure (char * name,char * blurb,char * help,char * author,char * copyright,char * date,char * menu_path,char * image_types,int type,int nparams,int nreturn_vals,GParamDef * params,GParamDef * return_vals)
+DECL|function|gimp_install_procedure (gchar * name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * menu_path,gchar * image_types,gint type,gint nparams,gint nreturn_vals,GParamDef * params,GParamDef * return_vals)
 name|gimp_install_procedure
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|blurb
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|help
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|author
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|copyright
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|date
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|menu_path
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|image_types
 parameter_list|,
-name|int
+name|gint
 name|type
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
-name|int
+name|gint
 name|nreturn_vals
 parameter_list|,
 name|GParamDef
@@ -2795,48 +2795,48 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_install_temp_proc (char * name,char * blurb,char * help,char * author,char * copyright,char * date,char * menu_path,char * image_types,int type,int nparams,int nreturn_vals,GParamDef * params,GParamDef * return_vals,GRunProc run_proc)
+DECL|function|gimp_install_temp_proc (gchar * name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * menu_path,gchar * image_types,gint type,gint nparams,gint nreturn_vals,GParamDef * params,GParamDef * return_vals,GRunProc run_proc)
 name|gimp_install_temp_proc
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|blurb
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|help
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|author
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|copyright
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|date
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|menu_path
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|image_types
 parameter_list|,
-name|int
+name|gint
 name|type
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
-name|int
+name|gint
 name|nreturn_vals
 parameter_list|,
 name|GParamDef
@@ -2901,10 +2901,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_uninstall_temp_proc (char * name)
+DECL|function|gimp_uninstall_temp_proc (gchar * name)
 name|gimp_uninstall_temp_proc
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -2978,22 +2978,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_register_magic_load_handler (char * name,char * extensions,char * prefixes,char * magics)
+DECL|function|gimp_register_magic_load_handler (gchar * name,gchar * extensions,gchar * prefixes,gchar * magics)
 name|gimp_register_magic_load_handler
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|extensions
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|prefixes
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|magics
 parameter_list|)
@@ -3002,7 +3002,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3045,18 +3045,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_register_load_handler (char * name,char * extensions,char * prefixes)
+DECL|function|gimp_register_load_handler (gchar * name,gchar * extensions,gchar * prefixes)
 name|gimp_register_load_handler
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|extensions
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|prefixes
 parameter_list|)
@@ -3065,7 +3065,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3104,18 +3104,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_register_save_handler (char * name,char * extensions,char * prefixes)
+DECL|function|gimp_register_save_handler (gchar * name,gchar * extensions,gchar * prefixes)
 name|gimp_register_save_handler
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|extensions
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|prefixes
 parameter_list|)
@@ -3124,7 +3124,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -3164,14 +3164,14 @@ end_function
 begin_function
 name|GParam
 modifier|*
-DECL|function|gimp_run_procedure (char * name,int * nreturn_vals,...)
+DECL|function|gimp_run_procedure (gchar * name,gint * nreturn_vals,...)
 name|gimp_run_procedure
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -3202,7 +3202,7 @@ name|guchar
 modifier|*
 name|color
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|proc_run
@@ -4299,20 +4299,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_read_expect_msg (WireMessage * msg,int type)
+DECL|function|gimp_read_expect_msg (WireMessage * msg,gint type)
 name|gimp_read_expect_msg
 parameter_list|(
 name|WireMessage
 modifier|*
 name|msg
 parameter_list|,
-name|int
+name|gint
 name|type
 parameter_list|)
 block|{
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 if|if
@@ -4344,6 +4344,12 @@ operator|->
 name|type
 operator|==
 name|GP_TEMP_PROC_RUN
+operator|||
+name|msg
+operator|->
+name|type
+operator|==
+name|GP_QUIT
 condition|)
 block|{
 name|gimp_process_message
@@ -4373,18 +4379,18 @@ end_function
 begin_function
 name|GParam
 modifier|*
-DECL|function|gimp_run_procedure2 (char * name,int * nreturn_vals,int nparams,GParam * params)
+DECL|function|gimp_run_procedure2 (gchar * name,gint * nreturn_vals,gint nparams,GParam * params)
 name|gimp_run_procedure2
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
@@ -4524,14 +4530,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_destroy_params (GParam * params,int nparams)
+DECL|function|gimp_destroy_params (GParam * params,gint nparams)
 name|gimp_destroy_params
 parameter_list|(
 name|GParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|)
 block|{
@@ -4543,7 +4549,7 @@ name|GPParam
 operator|*
 name|params
 argument_list|,
-name|int
+name|gint
 name|nparams
 argument_list|)
 decl_stmt|;
@@ -4563,14 +4569,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_destroy_paramdefs (GParamDef * paramdefs,int nparams)
+DECL|function|gimp_destroy_paramdefs (GParamDef * paramdefs,gint nparams)
 name|gimp_destroy_paramdefs
 parameter_list|(
 name|GParamDef
 modifier|*
 name|paramdefs
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|)
 block|{
@@ -4611,9 +4617,11 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_gamma ()
+DECL|function|gimp_gamma (void)
 name|gimp_gamma
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|_gamma_val
@@ -4622,10 +4630,12 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_install_cmap ()
+name|gboolean
+DECL|function|gimp_install_cmap (void)
 name|gimp_install_cmap
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|_install_cmap
@@ -4634,10 +4644,12 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_use_xshm ()
+name|gboolean
+DECL|function|gimp_use_xshm (void)
 name|gimp_use_xshm
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|_use_xshm
@@ -4648,9 +4660,11 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|gimp_color_cube ()
+DECL|function|gimp_color_cube (void)
 name|gimp_color_cube
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|_color_cube
@@ -4763,9 +4777,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_single_message ()
+DECL|function|gimp_single_message (void)
 name|gimp_single_message
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|WireMessage
 name|msg
@@ -4815,7 +4831,7 @@ name|G_OS_WIN32
 name|fd_set
 name|readfds
 decl_stmt|;
-name|int
+name|gint
 name|select_val
 decl_stmt|;
 name|struct
@@ -5084,18 +5100,18 @@ end_ifndef
 begin_function
 specifier|static
 name|RETSIGTYPE
-DECL|function|gimp_signal (int signum)
+DECL|function|gimp_signal (gint signum)
 name|gimp_signal
 parameter_list|(
-name|int
+name|gint
 name|signum
 parameter_list|)
 block|{
 specifier|static
-name|int
+name|gboolean
 name|caught_fatal_sig
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 if|if
 condition|(
@@ -5111,7 +5127,7 @@ argument_list|)
 expr_stmt|;
 name|caught_fatal_sig
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|fprintf
 argument_list|(
@@ -5395,16 +5411,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_loop ()
+DECL|function|gimp_loop (void)
 name|gimp_loop
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|WireMessage
 name|msg
 decl_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 if|if
@@ -5697,13 +5715,13 @@ argument_list|(
 name|G_WITH_CYGWIN
 argument_list|)
 comment|/*        * Use Win32 shared memory mechanisms for        * transfering tile data        */
-name|char
+name|gchar
 name|fileMapName
 index|[
 literal|128
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|tileByteSize
 init|=
 name|_gimp_tile_width
@@ -5849,7 +5867,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 if|if
@@ -5946,7 +5964,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|GRunProc
@@ -6026,7 +6044,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -6077,7 +6095,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
