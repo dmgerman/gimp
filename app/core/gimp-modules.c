@@ -101,7 +101,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmodules.h"
+file|"gimp-modules.h"
 end_include
 
 begin_include

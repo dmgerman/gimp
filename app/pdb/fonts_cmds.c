@@ -58,7 +58,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text/gimpfonts.h"
+file|"text/gimp-fonts.h"
 end_include
 
 begin_decl_stmt

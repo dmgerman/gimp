@@ -82,13 +82,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text/gimpfontlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"text/gimpfonts.h"
+file|"text/gimp-fonts.h"
 end_include
 
 begin_include
@@ -118,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-modules.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-parasites.h"
 end_include
 
@@ -125,6 +125,12 @@ begin_include
 include|#
 directive|include
 file|"gimp-templates.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-units.h"
 end_include
 
 begin_include
@@ -208,12 +214,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmodules.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppalette.h"
 end_include
 
@@ -244,18 +244,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpunits.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2940806b0103
+DECL|enum|__anon2947ae590103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -958,24 +952,7 @@ name|gimp
 operator|->
 name|fonts
 operator|=
-name|gimp_font_list_new
-argument_list|(
-literal|72.0
-argument_list|,
-literal|72.0
-argument_list|)
-expr_stmt|;
-name|gimp_object_set_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|gimp
-operator|->
-name|fonts
-argument_list|)
-argument_list|,
-literal|"fonts"
-argument_list|)
+name|NULL
 expr_stmt|;
 name|gimp
 operator|->
@@ -2913,6 +2890,11 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_fonts_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|brush_factory
@@ -3406,7 +3388,7 @@ argument_list|,
 literal|0.70
 argument_list|)
 expr_stmt|;
-name|gimp_fonts_init
+name|gimp_fonts_load
 argument_list|(
 name|gimp
 argument_list|)

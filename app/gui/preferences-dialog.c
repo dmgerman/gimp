@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text/gimpfonts.h"
+file|"text/gimp-fonts.h"
 end_include
 
 begin_include
@@ -7029,7 +7029,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2946eea40108
+DECL|struct|__anon2a1a19370108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8789,7 +8789,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2946eea40208
+DECL|struct|__anon2a1a19370208
 block|{
 DECL|member|label
 specifier|const
@@ -8948,7 +8948,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2946eea40308
+DECL|struct|__anon2a1a19370308
 block|{
 DECL|member|tree_label
 specifier|const

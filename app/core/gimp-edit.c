@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-edit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbuffer.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpedit.h"
 end_include
 
 begin_include

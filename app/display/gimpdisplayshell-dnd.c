@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-edit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbuffer.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpdrawable-bucket-fill.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpedit.h"
 end_include
 
 begin_include

@@ -100,7 +100,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpunits.h"
+file|"core/gimp-units.h"
 end_include
 
 begin_include

@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpunit.h"
+file|"gimp-units.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpunits.h"
+file|"gimpunit.h"
 end_include
 
 begin_include
@@ -64,7 +64,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*    *  All deserialize functions return G_TOKEN_LEFT_PAREN on success,  *  or the GTokenType they would have expected but didn't get.  */
+comment|/*  *  All deserialize functions return G_TOKEN_LEFT_PAREN on success,  *  or the GTokenType they would have expected but didn't get.  */
 end_comment
 
 begin_function_decl
@@ -198,7 +198,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b60656f0103
+DECL|enum|__anon2bf678bb0103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO

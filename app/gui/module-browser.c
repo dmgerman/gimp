@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpmodules.h"
+file|"core/gimp-modules.h"
 end_include
 
 begin_include
@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c356f380103
+DECL|enum|__anon2b4525190103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
