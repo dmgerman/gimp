@@ -3027,7 +3027,7 @@ define|\
 value|gtk_widget_set_sensitive (channels_ops_buttons[(button)].widget, \                                  (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/New Channel"
 argument_list|)
@@ -3046,7 +3046,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Raise Channel"
 argument_list|)
@@ -3069,7 +3069,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Lower Channel"
 argument_list|)
@@ -3092,7 +3092,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Duplicate Channel"
 argument_list|)
@@ -3115,7 +3115,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Channel to Selection"
 argument_list|)
@@ -3132,7 +3132,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Add to Selection"
 argument_list|)
@@ -3142,7 +3142,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Subtract From Selection"
 argument_list|)
@@ -3152,7 +3152,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Intersect With Selection"
 argument_list|)
@@ -3162,7 +3162,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Delete Channel"
 argument_list|)

@@ -107,7 +107,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon2bcbaf0d0108
+DECL|struct|__anon288af72c0108
 block|{
 DECL|member|name
 name|char
@@ -597,7 +597,7 @@ end_decl_stmt
 begin_struct
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon2bcbaf0d0208
+DECL|struct|__anon288af72c0208
 block|{
 DECL|member|output_to
 name|char
@@ -2004,7 +2004,7 @@ literal|"Copyright 1997-1998 by Michael Sweet"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/File/Print"
 argument_list|)

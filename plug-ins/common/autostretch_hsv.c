@@ -265,7 +265,7 @@ literal|"Scott Goehring and Federico Mena Quintero"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Image/Colors/Auto-Stretch HSV"
 argument_list|)

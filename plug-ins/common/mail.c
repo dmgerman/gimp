@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d7f0e10108
+DECL|struct|__anon27a52ba60108
 block|{
 DECL|member|receipt
 name|char
@@ -701,7 +701,7 @@ literal|"Adrian Likins, Reagan Blundell, Daniel Risacher, Spencer Kimball and Pe
 argument_list|,
 literal|"1995-1997"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/File/Mail image"
 argument_list|)

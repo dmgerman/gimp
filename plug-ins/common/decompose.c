@@ -743,7 +743,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2abd5f060108
+DECL|struct|__anon28d5a85a0108
 typedef|typedef
 struct|struct
 block|{
@@ -1214,7 +1214,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2abd5f060208
+DECL|struct|__anon28d5a85a0208
 typedef|typedef
 struct|struct
 block|{
@@ -1232,7 +1232,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2abd5f060308
+DECL|struct|__anon28d5a85a0308
 typedef|typedef
 struct|struct
 block|{
@@ -1461,7 +1461,7 @@ literal|"Peter Kirchgessner (peter@kirchgessner.net)"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Image/Channel Ops/Decompose"
 argument_list|)

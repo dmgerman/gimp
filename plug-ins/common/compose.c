@@ -477,7 +477,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2962ba080108
+DECL|struct|__anon2785660a0108
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +753,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2962ba080208
+DECL|struct|__anon2785660a0208
 typedef|typedef
 struct|struct
 block|{
@@ -784,7 +784,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2962ba080308
+DECL|struct|__anon2785660a0308
 typedef|typedef
 struct|struct
 block|{
@@ -1185,7 +1185,7 @@ literal|"Peter Kirchgessner (peter@kirchgessner.net)"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Image/Channel Ops/Compose"
 argument_list|)
