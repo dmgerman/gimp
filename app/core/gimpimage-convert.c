@@ -34893,7 +34893,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbb68e0108
+DECL|struct|__anon27b869600108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34970,7 +34970,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbb68e0208
+DECL|struct|__anon27b869600208
 block|{
 DECL|member|ncolors
 name|long
@@ -34989,7 +34989,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbb68e0308
+DECL|struct|__anon27b869600308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38214,7 +38214,7 @@ name|palette_select_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Select Custum Palette"
+literal|"Select Custom Palette"
 argument_list|)
 argument_list|,
 name|theCustomPalette
@@ -38522,7 +38522,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbb68e0408
+DECL|struct|__anon27b869600408
 block|{
 DECL|member|used_count
 name|signed
