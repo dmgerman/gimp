@@ -1772,11 +1772,6 @@ argument_list|(
 name|last_tool
 argument_list|)
 expr_stmt|;
-name|tools_select
-argument_list|(
-name|BEZIER_SELECT
-argument_list|)
-expr_stmt|;
 block|}
 return|return;
 block|}

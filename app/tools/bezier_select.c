@@ -69,6 +69,12 @@ directive|include
 file|"rect_select.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"interface.h"
+end_include
+
 begin_define
 DECL|macro|BEZIER_START
 define|#
@@ -964,9 +970,17 @@ operator|)
 name|gdisp_ptr
 expr_stmt|;
 comment|/*  select the bezier tool  */
-name|tools_select
+name|gtk_widget_activate
 argument_list|(
+name|tool_widgets
+index|[
+name|tool_info
+index|[
 name|BEZIER_SELECT
+index|]
+operator|.
+name|toolbar_position
+index|]
 argument_list|)
 expr_stmt|;
 name|tool
