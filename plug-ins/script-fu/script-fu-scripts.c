@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fc3110108
+DECL|struct|__anon2b99bc7e0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fc3110208
+DECL|struct|__anon2b99bc7e0208
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fc3110308
+DECL|struct|__anon2b99bc7e0308
 block|{
 DECL|member|name
 name|gchar
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fc3110408
+DECL|struct|__anon2b99bc7e0408
 block|{
 DECL|member|list
 name|GSList
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2a9fc311050a
+DECL|union|__anon2b99bc7e050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fc3110608
+DECL|struct|__anon2b99bc7e0608
 block|{
 DECL|member|script_name
 name|gchar
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fc3110708
+DECL|struct|__anon2b99bc7e0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3660,7 +3660,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-comment|/* No, I don't know why, but this is         * necessary on NT 4.0.        */
+comment|/* No, I don't know why, but this is        * necessary on NT 4.0.        */
 name|Sleep
 argument_list|(
 literal|0
@@ -3678,7 +3678,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   *  The following function is a GTraverseFunction.  Please   *  note that it frees the script->args structure.  --Sven   */
+comment|/*  *  The following function is a GTraverseFunction.  Please  *  note that it frees the script->args structure.  --Sven  */
 end_comment
 
 begin_function
@@ -3797,7 +3797,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   *  The following function is a GTraverseFunction.  */
+comment|/*  *  The following function is a GTraverseFunction.  */
 end_comment
 
 begin_function
@@ -6604,36 +6604,6 @@ operator|.
 name|digits
 argument_list|)
 expr_stmt|;
-name|gtk_spin_button_set_wrap
-argument_list|(
-name|GTK_SPIN_BUTTON
-argument_list|(
-name|sf_interface
-operator|->
-name|args_widgets
-index|[
-name|i
-index|]
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|gtk_spin_button_set_numeric
-argument_list|(
-name|GTK_SPIN_BUTTON
-argument_list|(
-name|sf_interface
-operator|->
-name|args_widgets
-index|[
-name|i
-index|]
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 break|break;
 default|default:
 comment|/* this shouldn't happen */
@@ -7424,7 +7394,7 @@ name|sf_interface
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*      *  We do not call gtk_main_quit() earlier to reduce the possibility    *  that script_fu_script_proc() is called from gimp_extension_process()    *  while we are not finished with the current script. This sucks!    */
+comment|/*    *  We do not call gtk_main_quit() earlier to reduce the possibility    *  that script_fu_script_proc() is called from gimp_extension_process()    *  while we are not finished with the current script. This sucks!    */
 name|gtk_main_quit
 argument_list|()
 expr_stmt|;
