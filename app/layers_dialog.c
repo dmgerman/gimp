@@ -5108,10 +5108,6 @@ name|layersD
 operator|->
 name|ratio
 operator|=
-name|MIN
-argument_list|(
-literal|1.0
-argument_list|,
 operator|(
 name|gdouble
 operator|)
@@ -5123,17 +5119,12 @@ operator|)
 name|gimage
 operator|->
 name|width
-argument_list|)
 expr_stmt|;
 else|else
 name|layersD
 operator|->
 name|ratio
 operator|=
-name|MIN
-argument_list|(
-literal|1.0
-argument_list|,
 operator|(
 name|gdouble
 operator|)
@@ -5145,7 +5136,6 @@ operator|)
 name|gimage
 operator|->
 name|height
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -10913,7 +10903,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2801d5de0108
+DECL|struct|__anon28f4e9e20108
 block|{
 DECL|member|gimage
 name|GimpImage
