@@ -169,7 +169,7 @@ value|5
 end_define
 
 begin_comment
-comment|/*  forward function declarations  */
+comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
@@ -301,24 +301,8 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  variables local to this file  */
+comment|/*  private variables  */
 end_comment
-
-begin_decl_stmt
-DECL|variable|xshear_val
-specifier|static
-name|gdouble
-name|xshear_val
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|yshear_val
-specifier|static
-name|gdouble
-name|yshear_val
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|parent_class
@@ -332,7 +316,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Public functions */
+comment|/*  public functions  */
 end_comment
 
 begin_function
@@ -608,6 +592,15 @@ modifier|*
 name|tr_tool
 parameter_list|)
 block|{
+name|GimpShearTool
+modifier|*
+name|shear
+init|=
+name|GIMP_SHEAR_TOOL
+argument_list|(
+name|tr_tool
+argument_list|)
+decl_stmt|;
 name|info_dialog_add_spinbutton
 argument_list|(
 name|tr_tool
@@ -620,6 +613,8 @@ literal|"Shear magnitude X:"
 argument_list|)
 argument_list|,
 operator|&
+name|shear
+operator|->
 name|xshear_val
 argument_list|,
 operator|-
@@ -657,6 +652,8 @@ literal|"Shear magnitude Y:"
 argument_list|)
 argument_list|,
 operator|&
+name|shear
+operator|->
 name|yshear_val
 argument_list|,
 operator|-
@@ -1054,6 +1051,35 @@ name|tr_tool
 operator|->
 name|trans_info
 index|[
+name|XSHEAR
+index|]
+operator|==
+literal|0.0
+operator|&&
+name|tr_tool
+operator|->
+name|trans_info
+index|[
+name|YSHEAR
+index|]
+operator|==
+literal|0.0
+condition|)
+name|tr_tool
+operator|->
+name|trans_info
+index|[
+name|HORZ_OR_VERT
+index|]
+operator|=
+name|GIMP_ORIENTATION_UNKNOWN
+expr_stmt|;
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|trans_info
+index|[
 name|HORZ_OR_VERT
 index|]
 operator|==
@@ -1137,6 +1163,17 @@ modifier|*
 name|tr_tool
 parameter_list|)
 block|{
+name|GimpShearTool
+modifier|*
+name|shear
+init|=
+name|GIMP_SHEAR_TOOL
+argument_list|(
+name|tr_tool
+argument_list|)
+decl_stmt|;
+name|shear
+operator|->
 name|xshear_val
 operator|=
 name|tr_tool
@@ -1146,6 +1183,8 @@ index|[
 name|XSHEAR
 index|]
 expr_stmt|;
+name|shear
+operator|->
 name|yshear_val
 operator|=
 name|tr_tool
@@ -1218,6 +1257,26 @@ argument_list|(
 name|tr_tool
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|trans_info
+index|[
+name|HORZ_OR_VERT
+index|]
+operator|==
+name|GIMP_ORIENTATION_UNKNOWN
+condition|)
+name|tr_tool
+operator|->
+name|trans_info
+index|[
+name|HORZ_OR_VERT
+index|]
+operator|=
+name|GIMP_ORIENTATION_HORIZONTAL
 expr_stmt|;
 name|tr_tool
 operator|->
@@ -1303,6 +1362,26 @@ argument_list|(
 name|tr_tool
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|trans_info
+index|[
+name|HORZ_OR_VERT
+index|]
+operator|==
+name|GIMP_ORIENTATION_UNKNOWN
+condition|)
+name|tr_tool
+operator|->
+name|trans_info
+index|[
+name|HORZ_OR_VERT
+index|]
+operator|=
+name|GIMP_ORIENTATION_VERTICAL
 expr_stmt|;
 name|tr_tool
 operator|->

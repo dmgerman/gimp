@@ -112,6 +112,14 @@ DECL|member|parent_instance
 name|GimpTransformTool
 name|parent_instance
 decl_stmt|;
+DECL|member|xshear_val
+name|gdouble
+name|xshear_val
+decl_stmt|;
+DECL|member|yshear_val
+name|gdouble
+name|yshear_val
+decl_stmt|;
 block|}
 struct|;
 end_struct
