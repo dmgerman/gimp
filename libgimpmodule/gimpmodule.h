@@ -1,133 +1,207 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpmoduleinfo.h  * (C) 1999 Austin Donnelly<austin@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpmodule.h  * (C) 1999 Austin Donnelly<austin@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_MODULE_INFO_H__
+name|__GIMP_MODULE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_MODULE_INFO_H__
+DECL|macro|__GIMP_MODULE_H__
 define|#
 directive|define
-name|__GIMP_MODULE_INFO_H__
+name|__GIMP_MODULE_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmodule.h"
+file|<gmodule.h>
 end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpmodule/gimpmoduletypes.h>
+end_include
+
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b89f4ef0103
+DECL|enum|__anon2c72ded60103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
 block|,
-comment|/* missing module_load function or other error    */
+comment|/* missing gimp_module_register function                                   * or other error                                   */
 DECL|enumerator|GIMP_MODULE_STATE_LOADED_OK
 name|GIMP_MODULE_STATE_LOADED_OK
 block|,
-comment|/* happy and running (normal state of affairs)    */
+comment|/* an instance of a type implemented by                                   * this module is allocated                                   */
 DECL|enumerator|GIMP_MODULE_STATE_LOAD_FAILED
 name|GIMP_MODULE_STATE_LOAD_FAILED
 block|,
-comment|/* module_load returned GIMP_MODULE_UNLOAD        */
-DECL|enumerator|GIMP_MODULE_STATE_UNLOAD_REQUESTED
-name|GIMP_MODULE_STATE_UNLOAD_REQUESTED
-block|,
-comment|/* sent unload request, waiting for callback      */
+comment|/* gimp_module_register returned FALSE                                   */
 DECL|enumerator|GIMP_MODULE_STATE_UNLOADED_OK
 name|GIMP_MODULE_STATE_UNLOADED_OK
-comment|/* callback arrived, module not in memory anymore */
+comment|/* there are no instances allocated of                                   * types implemented by this module                                   */
 DECL|typedef|GimpModuleState
 block|}
 name|GimpModuleState
 typedef|;
 end_typedef
 
+begin_struct
+DECL|struct|_GimpModuleInfo
+struct|struct
+name|_GimpModuleInfo
+block|{
+DECL|member|purpose
+name|gchar
+modifier|*
+name|purpose
+decl_stmt|;
+DECL|member|author
+name|gchar
+modifier|*
+name|author
+decl_stmt|;
+DECL|member|version
+name|gchar
+modifier|*
+name|version
+decl_stmt|;
+DECL|member|copyright
+name|gchar
+modifier|*
+name|copyright
+decl_stmt|;
+DECL|member|date
+name|gchar
+modifier|*
+name|date
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_typedef
+DECL|typedef|GimpModuleQueryFunc
+typedef|typedef
+specifier|const
+name|GimpModuleInfo
+modifier|*
+function_decl|(
+modifier|*
+name|GimpModuleQueryFunc
+function_decl|)
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpModuleRegisterFunc
+typedef|typedef
+name|gboolean
+function_decl|(
+modifier|*
+name|GimpModuleRegisterFunc
+function_decl|)
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_define
-DECL|macro|GIMP_TYPE_MODULE_INFO
+DECL|macro|GIMP_TYPE_MODULE
 define|#
 directive|define
-name|GIMP_TYPE_MODULE_INFO
-value|(gimp_module_info_get_type ())
+name|GIMP_TYPE_MODULE
+value|(gimp_module_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_MODULE_INFO (obj)
+DECL|macro|GIMP_MODULE (obj)
 define|#
 directive|define
-name|GIMP_MODULE_INFO
+name|GIMP_MODULE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MODULE_INFO, GimpModuleInfoObj))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MODULE, GimpModule))
 end_define
 
 begin_define
-DECL|macro|GIMP_MODULE_INFO_CLASS (klass)
+DECL|macro|GIMP_MODULE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_MODULE_INFO_CLASS
+name|GIMP_MODULE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MODULE_INFO, GimpModuleInfoObjClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MODULE, GimpModuleClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_MODULE_INFO (obj)
+DECL|macro|GIMP_IS_MODULE (obj)
 define|#
 directive|define
-name|GIMP_IS_MODULE_INFO
+name|GIMP_IS_MODULE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MODULE_INFO))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MODULE))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_MODULE_INFO_CLASS (klass)
+DECL|macro|GIMP_IS_MODULE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_MODULE_INFO_CLASS
+name|GIMP_IS_MODULE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MODULE_INFO))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MODULE))
 end_define
 
 begin_define
-DECL|macro|GIMP_MODULE_INFO_GET_CLASS (obj)
+DECL|macro|GIMP_MODULE_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_MODULE_INFO_GET_CLASS
+name|GIMP_MODULE_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MODULE_INFO, GimpModuleInfoObjClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MODULE, GimpModuleClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpModuleInfoObjClass
+DECL|typedef|GimpModuleClass
 typedef|typedef
 name|struct
-name|_GimpModuleInfoObjClass
-name|GimpModuleInfoObjClass
+name|_GimpModuleClass
+name|GimpModuleClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpModuleInfoObj
+DECL|struct|_GimpModule
 struct|struct
-name|_GimpModuleInfoObj
+name|_GimpModule
 block|{
 DECL|member|parent_instance
 name|GTypeModule
@@ -168,6 +242,7 @@ decl_stmt|;
 comment|/* handle on the module                      */
 DECL|member|info
 name|GimpModuleInfo
+modifier|*
 name|info
 decl_stmt|;
 comment|/* returned values from module_query         */
@@ -177,39 +252,21 @@ modifier|*
 name|last_module_error
 decl_stmt|;
 DECL|member|query_module
-specifier|const
-name|GimpModuleInfo
-modifier|*
-function_decl|(
-modifier|*
+name|GimpModuleQueryFunc
 name|query_module
-function_decl|)
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
+decl_stmt|;
 DECL|member|register_module
-name|gboolean
-function_decl|(
-modifier|*
+name|GimpModuleRegisterFunc
 name|register_module
-function_decl|)
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
+decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpModuleInfoObjClass
+DECL|struct|_GimpModuleClass
 struct|struct
-name|_GimpModuleInfoObjClass
+name|_GimpModuleClass
 block|{
 DECL|member|parent_class
 name|GTypeModuleClass
@@ -222,9 +279,9 @@ modifier|*
 name|modified
 function_decl|)
 parameter_list|(
-name|GimpModuleInfoObj
+name|GimpModule
 modifier|*
-name|module_info
+name|module
 parameter_list|)
 function_decl|;
 block|}
@@ -233,7 +290,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_module_info_get_type
+name|gimp_module_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -242,9 +299,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpModuleInfoObj
+name|GimpModule
 modifier|*
-name|gimp_module_info_new
+name|gimp_module_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -264,9 +321,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_module_info_modified
+name|gimp_module_modified
 parameter_list|(
-name|GimpModuleInfoObj
+name|GimpModule
 modifier|*
 name|module
 parameter_list|)
@@ -275,9 +332,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_module_info_set_load_inhibit
+name|gimp_module_set_load_inhibit
 parameter_list|(
-name|GimpModuleInfoObj
+name|GimpModule
 modifier|*
 name|module
 parameter_list|,
@@ -288,6 +345,71 @@ name|inhibit_list
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  GimpModuleInfo functions  */
+end_comment
+
+begin_function_decl
+name|GimpModuleInfo
+modifier|*
+name|gimp_module_info_new
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|purpose
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|author
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|version
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|copyright
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|date
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpModuleInfo
+modifier|*
+name|gimp_module_info_copy
+parameter_list|(
+specifier|const
+name|GimpModuleInfo
+modifier|*
+name|info
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_module_info_free
+parameter_list|(
+name|GimpModuleInfo
+modifier|*
+name|info
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

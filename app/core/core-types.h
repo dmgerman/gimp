@@ -29,6 +29,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmodule/gimpmoduletypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/base-types.h"
 end_include
 
@@ -65,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b05852a0103
+DECL|enum|__anon27cdd3230103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -85,7 +91,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b05852a0203
+DECL|enum|__anon27cdd3230203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -104,7 +110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b05852a0303
+DECL|enum|__anon27cdd3230303
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS
@@ -122,7 +128,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b05852a0403
+DECL|enum|__anon27cdd3230403
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
@@ -248,15 +254,6 @@ typedef|typedef
 name|struct
 name|_GimpParasiteList
 name|GimpParasiteList
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpModuleInfoObj
-typedef|typedef
-name|struct
-name|_GimpModuleInfoObj
-name|GimpModuleInfoObj
 typedef|;
 end_typedef
 
