@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2addba550103
+DECL|enum|__anon27d649610103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2306,6 +2306,10 @@ operator|->
 name|item_factory
 argument_list|,
 name|dockbook
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|,
 operator|(
 name|GtkDestroyNotify

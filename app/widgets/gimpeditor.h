@@ -113,6 +113,10 @@ name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
+DECL|member|item_factory_data
+name|gpointer
+name|item_factory_data
+decl_stmt|;
 DECL|member|button_box
 name|GtkWidget
 modifier|*

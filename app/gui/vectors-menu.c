@@ -567,16 +567,18 @@ decl_stmt|;
 name|GimpVectors
 modifier|*
 name|vectors
+init|=
+name|NULL
 decl_stmt|;
 name|gboolean
 name|mask_empty
+init|=
+name|TRUE
 decl_stmt|;
 name|gboolean
 name|global_buf
-decl_stmt|;
-name|GList
-modifier|*
-name|list
+init|=
+name|FALSE
 decl_stmt|;
 name|GList
 modifier|*
@@ -599,6 +601,15 @@ argument_list|)
 operator|->
 name|gimage
 expr_stmt|;
+if|if
+condition|(
+name|gimage
+condition|)
+block|{
+name|GList
+modifier|*
+name|list
+decl_stmt|;
 name|vectors
 operator|=
 name|gimp_image_get_active_vectors
@@ -670,6 +681,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+block|}
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
 directive|define
@@ -685,7 +697,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/New Path..."
 argument_list|,
-name|TRUE
+name|gimage
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -781,7 +793,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Import Path..."
 argument_list|,
-name|TRUE
+name|gimage
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

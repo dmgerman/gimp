@@ -60,13 +60,8 @@ name|gint
 modifier|*
 name|y
 parameter_list|,
-name|guint
-modifier|*
-name|button
-parameter_list|,
-name|guint32
-modifier|*
-name|activate_time
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

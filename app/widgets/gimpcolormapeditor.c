@@ -199,7 +199,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4120320103
+DECL|enum|__anon2987b6e10103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -3786,7 +3786,16 @@ argument_list|)
 operator|->
 name|item_factory
 argument_list|,
+name|GIMP_EDITOR
+argument_list|(
 name|editor
+argument_list|)
+operator|->
+name|item_factory_data
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

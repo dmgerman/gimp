@@ -1956,7 +1956,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|palette_editor_eventbox_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpPaletteEditor * editor)
 name|palette_editor_eventbox_button_press
 parameter_list|(
@@ -1981,20 +1981,34 @@ name|button
 operator|==
 literal|3
 condition|)
-name|gimp_item_factory_popup_with_data
-argument_list|(
+block|{
+name|GimpEditor
+modifier|*
+name|gimp_editor
+init|=
 name|GIMP_EDITOR
 argument_list|(
 name|editor
 argument_list|)
+decl_stmt|;
+name|gimp_item_factory_popup_with_data
+argument_list|(
+name|gimp_editor
 operator|->
 name|item_factory
 argument_list|,
-name|editor
+name|gimp_editor
+operator|->
+name|item_factory_data
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|TRUE
 return|;
@@ -2003,7 +2017,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|palette_editor_color_area_button_press (GtkWidget * widget,GdkEventButton * bevent,GimpPaletteEditor * editor)
 name|palette_editor_color_area_button_press
 parameter_list|(

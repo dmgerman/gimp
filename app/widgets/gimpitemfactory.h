@@ -332,7 +332,13 @@ modifier|*
 name|factory
 parameter_list|,
 name|gpointer
-name|data
+name|popup_data
+parameter_list|,
+name|GimpMenuPositionFunc
+name|position_func
+parameter_list|,
+name|gpointer
+name|position_data
 parameter_list|,
 name|GtkDestroyNotify
 name|popdown_func
