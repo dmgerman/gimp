@@ -8247,13 +8247,6 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"Layers/Rotate"
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gdisp
@@ -8382,6 +8375,33 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
+name|SET_SENSITIVE
+argument_list|(
+literal|"Layers/Rotate"
+argument_list|,
+name|gdisp
+operator|&&
+operator|!
+name|aux
+operator|&&
+operator|!
+name|lm
+operator|&
+name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"Layers/Layer to Imagesize"
+argument_list|,
+name|gdisp
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|lp
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"Layers/Anchor Layer"
