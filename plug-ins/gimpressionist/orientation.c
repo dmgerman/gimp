@@ -36,11 +36,11 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|orientradio
+DECL|variable|orient_radio
 specifier|static
 name|GtkWidget
 modifier|*
-name|orientradio
+name|orient_radio
 index|[
 name|NUMORIENTRADIO
 index|]
@@ -48,33 +48,33 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|orientnumadjust
+DECL|variable|orient_num_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|orientnumadjust
+name|orient_num_adjust
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|orientfirstadjust
+DECL|variable|orient_first_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|orientfirstadjust
+name|orient_first_adjust
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|orientlastadjust
+DECL|variable|orient_last_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|orientlastadjust
+name|orient_last_adjust
 init|=
 name|NULL
 decl_stmt|;
@@ -119,7 +119,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|orientradio
+name|orient_radio
 index|[
 name|pcvals
 operator|.
@@ -134,7 +134,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|orientnumadjust
+name|orient_num_adjust
 argument_list|)
 argument_list|,
 name|pcvals
@@ -146,7 +146,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|orientfirstadjust
+name|orient_first_adjust
 argument_list|)
 argument_list|,
 name|pcvals
@@ -158,7 +158,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|orientlastadjust
+name|orient_last_adjust
 argument_list|)
 argument_list|,
 name|pcvals
@@ -182,7 +182,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|orientradio
+name|orient_radio
 index|[
 literal|7
 index|]
@@ -239,7 +239,7 @@ name|help_string
 argument_list|,
 name|radio_group
 argument_list|,
-name|orientradio
+name|orient_radio
 argument_list|)
 expr_stmt|;
 return|return;
@@ -371,7 +371,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-name|orientnumadjust
+name|orient_num_adjust
 operator|=
 name|gimp_scale_entry_new
 argument_list|(
@@ -424,7 +424,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|orientnumadjust
+name|orient_num_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -439,7 +439,7 @@ operator|.
 name|orientnum
 argument_list|)
 expr_stmt|;
-name|orientfirstadjust
+name|orient_first_adjust
 operator|=
 name|gimp_scale_entry_new
 argument_list|(
@@ -492,7 +492,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|orientfirstadjust
+name|orient_first_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -507,7 +507,7 @@ operator|.
 name|orientfirst
 argument_list|)
 expr_stmt|;
-name|orientlastadjust
+name|orient_last_adjust
 operator|=
 name|gimp_scale_entry_new
 argument_list|(
@@ -560,7 +560,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|orientlastadjust
+name|orient_last_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
