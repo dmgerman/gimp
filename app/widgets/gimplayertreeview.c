@@ -919,7 +919,7 @@ name|new_desc
 operator|=
 name|_
 argument_list|(
-literal|"New Layer"
+literal|"New Layer\n%s  New Layer Dialog"
 argument_list|)
 expr_stmt|;
 name|item_view_class

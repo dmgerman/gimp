@@ -468,7 +468,7 @@ name|new_desc
 operator|=
 name|_
 argument_list|(
-literal|"New Path"
+literal|"New Path\n%s New Path Dialog"
 argument_list|)
 expr_stmt|;
 name|item_view_class

@@ -423,7 +423,7 @@ name|new_desc
 operator|=
 name|_
 argument_list|(
-literal|"New Channel"
+literal|"New Channel\n%s New Channel Dialog"
 argument_list|)
 expr_stmt|;
 name|item_view_class

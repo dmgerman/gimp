@@ -1130,17 +1130,13 @@ name|height
 argument_list|,
 name|_
 argument_list|(
-literal|"Empty Channel Copy"
+literal|"Empty Channel"
 argument_list|)
 argument_list|,
 operator|&
 name|color
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|template
-condition|)
 name|gimp_drawable_fill_by_type
 argument_list|(
 name|GIMP_DRAWABLE
@@ -1166,6 +1162,11 @@ name|new_channel
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end

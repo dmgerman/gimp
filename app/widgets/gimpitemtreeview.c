@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2d404f0103
+DECL|enum|__anon28dc19440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -171,7 +171,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2d404f0203
+DECL|enum|__anon28dc19440203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1440,22 +1440,12 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
-literal|"%s\n"
-literal|"%s  %s Dialog"
-argument_list|)
-argument_list|,
 name|view_class
 operator|->
 name|new_desc
 argument_list|,
 name|gimp_get_mod_name_shift
 argument_list|()
-argument_list|,
-name|view_class
-operator|->
-name|new_desc
 argument_list|)
 expr_stmt|;
 name|view

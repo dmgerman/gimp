@@ -1573,7 +1573,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Empty Vectors Copy"
+literal|"Empty Path"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1585,6 +1585,11 @@ name|new_vectors
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_display_flush
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 return|return;

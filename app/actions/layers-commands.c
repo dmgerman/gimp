@@ -2652,7 +2652,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Empty Layer Copy"
+literal|"Empty Layer"
 argument_list|)
 argument_list|,
 name|opacity
@@ -2705,6 +2705,11 @@ name|new_layer
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
