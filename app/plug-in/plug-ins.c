@@ -2587,7 +2587,7 @@ name|gimp
 operator|->
 name|plug_in_proc_defs
 operator|=
-name|g_slist_append
+name|g_slist_prepend
 argument_list|(
 name|gimp
 operator|->
@@ -3798,7 +3798,7 @@ expr_stmt|;
 operator|*
 name|plug_in_defs
 operator|=
-name|g_slist_append
+name|g_slist_prepend
 argument_list|(
 operator|*
 name|plug_in_defs
