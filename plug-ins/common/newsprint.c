@@ -384,7 +384,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e74230108
+DECL|struct|__anon2c071a0c0108
 block|{
 DECL|member|name
 specifier|const
@@ -644,7 +644,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e74230208
+DECL|struct|__anon2c071a0c0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -717,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e74230308
+DECL|struct|__anon2c071a0c0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -747,7 +747,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e74230408
+DECL|struct|__anon2c071a0c0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -854,7 +854,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e74230508
+DECL|struct|__anon2c071a0c0508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1025,7 +1025,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e74230608
+DECL|struct|__anon2c071a0c0608
 block|{
 DECL|member|name
 specifier|const
@@ -3078,7 +3078,7 @@ name|in_progress
 init|=
 name|FALSE
 decl_stmt|;
-comment|/* we shouldn't need recursion protection, but if lock_channels is    * set, and gtk_option_menu_set_history ever generates an    * "activated" signal, then we'll get back here.  So we've defensive. */
+comment|/* We shouldn't need recursion protection, but if lock_channels is    * set, and gimp_int_combo_box_set_active ever generates a "changed"    * signal, then we'll get back here.    */
 if|if
 condition|(
 name|in_progress
@@ -6596,7 +6596,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e74230708
+DECL|struct|__anon2c071a0c0708
 block|{
 DECL|member|index
 name|gint
