@@ -2214,7 +2214,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|int
 DECL|function|app_exit_finish_done (void)
 name|app_exit_finish_done
 parameter_list|(

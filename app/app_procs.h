@@ -61,7 +61,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|int
 name|app_exit_finish_done
 parameter_list|(
 name|void
