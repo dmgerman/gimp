@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon291021320103
+DECL|enum|__anon2b3d8e180103
 typedef|typedef
 enum|enum
 block|{
@@ -671,7 +671,7 @@ DECL|variable|preview_size
 name|int
 name|preview_size
 init|=
-literal|64
+literal|32
 decl_stmt|;
 end_decl_stmt
 
@@ -6614,6 +6614,22 @@ name|strcmp
 argument_list|(
 name|token_sym
 argument_list|,
+literal|"tiny"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|preview_size
+operator|=
+literal|24
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|token_sym
+argument_list|,
 literal|"small"
 argument_list|)
 operator|==
@@ -6637,7 +6653,7 @@ literal|0
 condition|)
 name|preview_size
 operator|=
-literal|64
+literal|48
 expr_stmt|;
 elseif|else
 if|if
@@ -6647,6 +6663,22 @@ argument_list|(
 name|token_sym
 argument_list|,
 literal|"large"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|preview_size
+operator|=
+literal|64
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|token_sym
+argument_list|,
+literal|"huge"
 argument_list|)
 operator|==
 literal|0
