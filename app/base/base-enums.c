@@ -689,7 +689,10 @@ block|{
 block|{
 name|GIMP_NORMAL_MODE
 block|,
-literal|"GIMP_NORMAL_MODE"
+name|N_
+argument_list|(
+literal|"Normal"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -697,7 +700,10 @@ block|,
 block|{
 name|GIMP_DISSOLVE_MODE
 block|,
-literal|"GIMP_DISSOLVE_MODE"
+name|N_
+argument_list|(
+literal|"Dissolve"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -705,7 +711,10 @@ block|,
 block|{
 name|GIMP_BEHIND_MODE
 block|,
-literal|"GIMP_BEHIND_MODE"
+name|N_
+argument_list|(
+literal|"Behind"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -713,7 +722,10 @@ block|,
 block|{
 name|GIMP_MULTIPLY_MODE
 block|,
-literal|"GIMP_MULTIPLY_MODE"
+name|N_
+argument_list|(
+literal|"Multiply"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -721,7 +733,10 @@ block|,
 block|{
 name|GIMP_SCREEN_MODE
 block|,
-literal|"GIMP_SCREEN_MODE"
+name|N_
+argument_list|(
+literal|"Screen"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -729,7 +744,10 @@ block|,
 block|{
 name|GIMP_OVERLAY_MODE
 block|,
-literal|"GIMP_OVERLAY_MODE"
+name|N_
+argument_list|(
+literal|"Overlay"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -737,7 +755,10 @@ block|,
 block|{
 name|GIMP_DIFFERENCE_MODE
 block|,
-literal|"GIMP_DIFFERENCE_MODE"
+name|N_
+argument_list|(
+literal|"Difference"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -745,7 +766,10 @@ block|,
 block|{
 name|GIMP_ADDITION_MODE
 block|,
-literal|"GIMP_ADDITION_MODE"
+name|N_
+argument_list|(
+literal|"Addition"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -753,7 +777,10 @@ block|,
 block|{
 name|GIMP_SUBTRACT_MODE
 block|,
-literal|"GIMP_SUBTRACT_MODE"
+name|N_
+argument_list|(
+literal|"Subtract"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -761,7 +788,10 @@ block|,
 block|{
 name|GIMP_DARKEN_ONLY_MODE
 block|,
-literal|"GIMP_DARKEN_ONLY_MODE"
+name|N_
+argument_list|(
+literal|"Darken only"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -769,7 +799,10 @@ block|,
 block|{
 name|GIMP_LIGHTEN_ONLY_MODE
 block|,
-literal|"GIMP_LIGHTEN_ONLY_MODE"
+name|N_
+argument_list|(
+literal|"Lighten only"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -777,7 +810,10 @@ block|,
 block|{
 name|GIMP_HUE_MODE
 block|,
-literal|"GIMP_HUE_MODE"
+name|N_
+argument_list|(
+literal|"Hue"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -785,7 +821,10 @@ block|,
 block|{
 name|GIMP_SATURATION_MODE
 block|,
-literal|"GIMP_SATURATION_MODE"
+name|N_
+argument_list|(
+literal|"Saturation"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -793,7 +832,10 @@ block|,
 block|{
 name|GIMP_COLOR_MODE
 block|,
-literal|"GIMP_COLOR_MODE"
+name|N_
+argument_list|(
+literal|"Color"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -801,7 +843,10 @@ block|,
 block|{
 name|GIMP_VALUE_MODE
 block|,
-literal|"GIMP_VALUE_MODE"
+name|N_
+argument_list|(
+literal|"Value"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -809,7 +854,10 @@ block|,
 block|{
 name|GIMP_DIVIDE_MODE
 block|,
-literal|"GIMP_DIVIDE_MODE"
+name|N_
+argument_list|(
+literal|"Divide"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -817,7 +865,10 @@ block|,
 block|{
 name|GIMP_DODGE_MODE
 block|,
-literal|"GIMP_DODGE_MODE"
+name|N_
+argument_list|(
+literal|"Dodge"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -825,7 +876,10 @@ block|,
 block|{
 name|GIMP_BURN_MODE
 block|,
-literal|"GIMP_BURN_MODE"
+name|N_
+argument_list|(
+literal|"Burn"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -833,7 +887,10 @@ block|,
 block|{
 name|GIMP_HARDLIGHT_MODE
 block|,
-literal|"GIMP_HARDLIGHT_MODE"
+name|N_
+argument_list|(
+literal|"Hard light"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -841,7 +898,10 @@ block|,
 block|{
 name|GIMP_SOFTLIGHT_MODE
 block|,
-literal|"GIMP_SOFTLIGHT_MODE"
+name|N_
+argument_list|(
+literal|"Soft light"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -849,7 +909,10 @@ block|,
 block|{
 name|GIMP_GRAIN_EXTRACT_MODE
 block|,
-literal|"GIMP_GRAIN_EXTRACT_MODE"
+name|N_
+argument_list|(
+literal|"Grain extract"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -857,7 +920,10 @@ block|,
 block|{
 name|GIMP_GRAIN_MERGE_MODE
 block|,
-literal|"GIMP_GRAIN_MERGE_MODE"
+name|N_
+argument_list|(
+literal|"Grain merge"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -865,7 +931,10 @@ block|,
 block|{
 name|GIMP_COLOR_ERASE_MODE
 block|,
-literal|"GIMP_COLOR_ERASE_MODE"
+name|N_
+argument_list|(
+literal|"Color erase"
+argument_list|)
 block|,
 name|NULL
 block|}

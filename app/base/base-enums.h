@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29c0411c0103
+DECL|enum|__anon28b6550e0103
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -105,7 +105,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c0411c0203
+DECL|enum|__anon28b6550e0203
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -169,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c0411c0303
+DECL|enum|__anon28b6550e0303
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -209,77 +209,100 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c0411c0403
+DECL|enum|__anon28b6550e0403
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
 block|,
+comment|/*< desc="Normal">*/
 DECL|enumerator|GIMP_DISSOLVE_MODE
 name|GIMP_DISSOLVE_MODE
 block|,
+comment|/*< desc="Dissolve">*/
 DECL|enumerator|GIMP_BEHIND_MODE
 name|GIMP_BEHIND_MODE
 block|,
+comment|/*< desc="Behind">*/
 DECL|enumerator|GIMP_MULTIPLY_MODE
 name|GIMP_MULTIPLY_MODE
 block|,
+comment|/*< desc="Multiply">*/
 DECL|enumerator|GIMP_SCREEN_MODE
 name|GIMP_SCREEN_MODE
 block|,
+comment|/*< desc="Screen">*/
 DECL|enumerator|GIMP_OVERLAY_MODE
 name|GIMP_OVERLAY_MODE
 block|,
+comment|/*< desc="Overlay">*/
 DECL|enumerator|GIMP_DIFFERENCE_MODE
 name|GIMP_DIFFERENCE_MODE
 block|,
+comment|/*< desc="Difference">*/
 DECL|enumerator|GIMP_ADDITION_MODE
 name|GIMP_ADDITION_MODE
 block|,
+comment|/*< desc="Addition">*/
 DECL|enumerator|GIMP_SUBTRACT_MODE
 name|GIMP_SUBTRACT_MODE
 block|,
+comment|/*< desc="Subtract">*/
 DECL|enumerator|GIMP_DARKEN_ONLY_MODE
 name|GIMP_DARKEN_ONLY_MODE
 block|,
+comment|/*< desc="Darken only">*/
 DECL|enumerator|GIMP_LIGHTEN_ONLY_MODE
 name|GIMP_LIGHTEN_ONLY_MODE
 block|,
+comment|/*< desc="Lighten only">*/
 DECL|enumerator|GIMP_HUE_MODE
 name|GIMP_HUE_MODE
 block|,
+comment|/*< desc="Hue">*/
 DECL|enumerator|GIMP_SATURATION_MODE
 name|GIMP_SATURATION_MODE
 block|,
+comment|/*< desc="Saturation">*/
 DECL|enumerator|GIMP_COLOR_MODE
 name|GIMP_COLOR_MODE
 block|,
+comment|/*< desc="Color">*/
 DECL|enumerator|GIMP_VALUE_MODE
 name|GIMP_VALUE_MODE
 block|,
+comment|/*< desc="Value">*/
 DECL|enumerator|GIMP_DIVIDE_MODE
 name|GIMP_DIVIDE_MODE
 block|,
+comment|/*< desc="Divide">*/
 DECL|enumerator|GIMP_DODGE_MODE
 name|GIMP_DODGE_MODE
 block|,
+comment|/*< desc="Dodge">*/
 DECL|enumerator|GIMP_BURN_MODE
 name|GIMP_BURN_MODE
 block|,
+comment|/*< desc="Burn">*/
 DECL|enumerator|GIMP_HARDLIGHT_MODE
 name|GIMP_HARDLIGHT_MODE
 block|,
+comment|/*< desc="Hard light">*/
 DECL|enumerator|GIMP_SOFTLIGHT_MODE
 name|GIMP_SOFTLIGHT_MODE
 block|,
+comment|/*< desc="Soft light">*/
 DECL|enumerator|GIMP_GRAIN_EXTRACT_MODE
 name|GIMP_GRAIN_EXTRACT_MODE
 block|,
+comment|/*< desc="Grain extract">*/
 DECL|enumerator|GIMP_GRAIN_MERGE_MODE
 name|GIMP_GRAIN_MERGE_MODE
 block|,
+comment|/*< desc="Grain merge">*/
 DECL|enumerator|GIMP_COLOR_ERASE_MODE
 name|GIMP_COLOR_ERASE_MODE
 block|,
+comment|/*< desc="Color erase">*/
 DECL|enumerator|GIMP_ERASE_MODE
 name|GIMP_ERASE_MODE
 block|,
@@ -318,7 +341,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c0411c0503
+DECL|enum|__anon28b6550e0503
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -345,7 +368,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29c0411c0603
+DECL|enum|__anon28b6550e0603
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -368,7 +391,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29c0411c0703
+DECL|enum|__anon28b6550e0703
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
