@@ -193,6 +193,16 @@ end_function_decl
 begin_function_decl
 name|GimpPalette
 modifier|*
+name|gimp_palette_get_standard
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpPalette
+modifier|*
 name|gimp_palette_load
 parameter_list|(
 specifier|const

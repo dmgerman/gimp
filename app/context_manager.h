@@ -29,38 +29,38 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  *  the global data lists  */
+comment|/*  *  the global data factories which contain the global data lists  */
 end_comment
 
 begin_decl_stmt
 specifier|extern
-name|GimpContainer
+name|GimpDataFactory
 modifier|*
-name|global_brush_list
+name|global_brush_factory
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GimpContainer
+name|GimpDataFactory
 modifier|*
-name|global_pattern_list
+name|global_pattern_factory
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GimpContainer
+name|GimpDataFactory
 modifier|*
-name|global_gradient_list
+name|global_gradient_factory
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GimpContainer
+name|GimpDataFactory
 modifier|*
-name|global_palette_list
+name|global_palette_factory
 decl_stmt|;
 end_decl_stmt
 

@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplist.h"
 end_include
 
@@ -391,7 +397,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|)
 operator|->
 name|list
@@ -560,7 +568,9 @@ argument_list|(
 name|gchar
 operator|*
 argument_list|,
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 operator|->
 name|num_children
 argument_list|)
@@ -573,7 +583,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|)
 operator|->
 name|list
@@ -636,7 +648,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 operator|->
 name|num_children
 expr_stmt|;
@@ -817,7 +831,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|)
 operator|->
 name|list

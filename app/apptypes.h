@@ -87,6 +87,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDataFactory
+typedef|typedef
+name|struct
+name|_GimpDataFactory
+name|GimpDataFactory
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContext
 typedef|typedef
 name|struct

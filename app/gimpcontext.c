@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"context_manager.h"
 end_include
 
@@ -61,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdatafactory.h"
 end_include
 
 begin_include
@@ -97,24 +97,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradients.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palettes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
 end_include
 
 begin_include
@@ -902,7 +884,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa2094b0103
+DECL|enum|__anon2758f2230103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -945,7 +927,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa2094b0203
+DECL|enum|__anon2758f2230203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -2892,7 +2874,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 argument_list|)
 argument_list|,
 literal|"remove"
@@ -2914,7 +2898,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 argument_list|)
 argument_list|,
 literal|"thaw"
@@ -2936,7 +2922,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|)
 argument_list|,
 literal|"remove"
@@ -2958,7 +2946,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|)
 argument_list|,
 literal|"thaw"
@@ -2980,7 +2970,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|)
 argument_list|,
 literal|"remove"
@@ -3002,7 +2994,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|)
 argument_list|,
 literal|"thaw"
@@ -3024,7 +3018,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|)
 argument_list|,
 literal|"remove"
@@ -3046,7 +3042,9 @@ name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|)
 argument_list|,
 literal|"thaw"
@@ -6232,7 +6230,7 @@ name|gimp_context_real_set_brush
 argument_list|(
 name|context
 argument_list|,
-name|brushes_get_standard_brush
+name|gimp_brush_get_standard
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -6338,7 +6336,7 @@ name|standard_brush
 condition|)
 name|standard_brush
 operator|=
-name|brushes_get_standard_brush
+name|gimp_brush_get_standard
 argument_list|()
 expr_stmt|;
 if|if
@@ -6892,7 +6890,7 @@ name|gimp_context_real_set_pattern
 argument_list|(
 name|context
 argument_list|,
-name|patterns_get_standard_pattern
+name|gimp_pattern_get_standard
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -6998,7 +6996,7 @@ name|standard_pattern
 condition|)
 name|standard_pattern
 operator|=
-name|patterns_get_standard_pattern
+name|gimp_pattern_get_standard
 argument_list|()
 expr_stmt|;
 if|if
@@ -7535,7 +7533,7 @@ name|gimp_context_real_set_gradient
 argument_list|(
 name|context
 argument_list|,
-name|gradients_get_standard_gradient
+name|gimp_gradient_get_standard
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -7641,7 +7639,7 @@ name|standard_gradient
 condition|)
 name|standard_gradient
 operator|=
-name|gradients_get_standard_gradient
+name|gimp_gradient_get_standard
 argument_list|()
 expr_stmt|;
 if|if
@@ -8116,7 +8114,7 @@ name|gimp_context_real_set_palette
 argument_list|(
 name|context
 argument_list|,
-name|palettes_get_standard_palette
+name|gimp_palette_get_standard
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -8222,7 +8220,7 @@ name|standard_palette
 condition|)
 name|standard_palette
 operator|=
-name|palettes_get_standard_palette
+name|gimp_palette_get_standard
 argument_list|()
 expr_stmt|;
 if|if

@@ -370,7 +370,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdatacontainerview.h"
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdatafactoryview.h"
 end_include
 
 begin_include
@@ -4920,7 +4926,9 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 name|gimp_gtk_drag_dest_set_by_type
@@ -5003,7 +5011,9 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 name|gimp_gtk_drag_dest_set_by_type
@@ -5086,7 +5096,9 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 name|gimp_gtk_drag_dest_set_by_type
@@ -5169,7 +5181,9 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 name|gimp_gtk_drag_dest_set_by_type
@@ -5491,8 +5505,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|data_container_view_new (GimpViewType view_type,gchar * title,GimpContainer * container,GimpContext * context,gint preview_size)
-name|data_container_view_new
+DECL|function|data_factory_view_new (GimpViewType view_type,gchar * title,GimpDataFactory * factory,GimpContext * context,gint preview_size)
+name|data_factory_view_new
 parameter_list|(
 name|GimpViewType
 name|view_type
@@ -5501,9 +5515,9 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|GimpContainer
+name|GimpDataFactory
 modifier|*
-name|container
+name|factory
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -5578,11 +5592,11 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|=
-name|gimp_data_container_view_new
+name|gimp_data_factory_view_new
 argument_list|(
 name|view_type
 argument_list|,
-name|container
+name|factory
 argument_list|,
 name|context
 argument_list|,
@@ -5680,7 +5694,7 @@ argument_list|(
 name|container_view_scale_callback
 argument_list|)
 argument_list|,
-name|GIMP_DATA_CONTAINER_VIEW
+name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
 name|view
 argument_list|)
@@ -6390,13 +6404,13 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|data_container_view_new
+name|data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 literal|"Brush List"
 argument_list|,
-name|global_brush_list
+name|global_brush_factory
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6420,13 +6434,13 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|data_container_view_new
+name|data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 literal|"Pattern List"
 argument_list|,
-name|global_pattern_list
+name|global_pattern_factory
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6450,13 +6464,13 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|data_container_view_new
+name|data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 literal|"Gradient List"
 argument_list|,
-name|global_gradient_list
+name|global_gradient_factory
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6480,13 +6494,13 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|data_container_view_new
+name|data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 literal|"Palette List"
 argument_list|,
-name|global_palette_list
+name|global_palette_factory
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6510,13 +6524,13 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|data_container_view_new
+name|data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 literal|"Brush Grid"
 argument_list|,
-name|global_brush_list
+name|global_brush_factory
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6540,13 +6554,13 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|data_container_view_new
+name|data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 literal|"Pattern Grid"
 argument_list|,
-name|global_pattern_list
+name|global_pattern_factory
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6570,13 +6584,13 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|data_container_view_new
+name|data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 literal|"Gradient Grid"
 argument_list|,
-name|global_gradient_list
+name|global_gradient_factory
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6600,13 +6614,13 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|data_container_view_new
+name|data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
 literal|"Palette Grid"
 argument_list|,
-name|global_palette_list
+name|global_palette_factory
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6636,7 +6650,9 @@ name|TRUE
 argument_list|,
 literal|"Multi List"
 argument_list|,
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6666,7 +6682,9 @@ name|FALSE
 argument_list|,
 literal|"Multi Grid"
 argument_list|,
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 argument_list|,
 name|gimp_context_get_user
 argument_list|()

@@ -104,6 +104,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -34941,7 +34947,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cfe7c30108
+DECL|struct|__anon29113eb20108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35018,7 +35024,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cfe7c30208
+DECL|struct|__anon29113eb20208
 block|{
 DECL|member|ncolors
 name|long
@@ -35037,7 +35043,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cfe7c30308
+DECL|struct|__anon29113eb20308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -37563,7 +37569,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|)
 operator|->
 name|list
@@ -37703,7 +37711,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|)
 operator|->
 name|list
@@ -38384,7 +38394,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cfe7c30408
+DECL|struct|__anon29113eb20408
 block|{
 DECL|member|used_count
 name|signed

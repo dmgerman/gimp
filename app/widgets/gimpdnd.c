@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"fileops.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdatafactory.h"
 end_include
 
 begin_include
@@ -120,24 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradients.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palettes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"temp_buf.h"
 end_include
 
@@ -172,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c60f35e0103
+DECL|enum|__anon291fa0720103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -3000,7 +2982,7 @@ literal|0
 condition|)
 name|brush
 operator|=
-name|brushes_get_standard_brush
+name|gimp_brush_get_standard
 argument_list|()
 expr_stmt|;
 else|else
@@ -3012,7 +2994,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 argument_list|,
 name|name
 argument_list|)
@@ -3378,7 +3362,7 @@ literal|0
 condition|)
 name|pattern
 operator|=
-name|patterns_get_standard_pattern
+name|gimp_pattern_get_standard
 argument_list|()
 expr_stmt|;
 else|else
@@ -3390,7 +3374,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|,
 name|name
 argument_list|)
@@ -3768,7 +3754,7 @@ literal|0
 condition|)
 name|gradient
 operator|=
-name|gradients_get_standard_gradient
+name|gimp_gradient_get_standard
 argument_list|()
 expr_stmt|;
 else|else
@@ -3780,7 +3766,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|name
 argument_list|)
@@ -4146,7 +4134,7 @@ literal|0
 condition|)
 name|palette
 operator|=
-name|palettes_get_standard_palette
+name|gimp_palette_get_standard
 argument_list|()
 expr_stmt|;
 else|else
@@ -4158,7 +4146,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|name
 argument_list|)

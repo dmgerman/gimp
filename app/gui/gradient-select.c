@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -525,7 +531,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|initial_gradient
 argument_list|)
@@ -611,7 +619,9 @@ name|view
 operator|=
 name|gimp_container_list_view_new
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|gsp
 operator|->

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -496,9 +502,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpBrush
+name|GimpViewable
 modifier|*
-name|brush
+name|viewable
 parameter_list|,
 name|gpointer
 name|data
@@ -515,9 +521,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpPattern
+name|GimpViewable
 modifier|*
-name|pattern
+name|viewable
 parameter_list|,
 name|gpointer
 name|data
@@ -534,9 +540,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpGradient
+name|GimpViewable
 modifier|*
-name|gradient
+name|viewable
 parameter_list|,
 name|gpointer
 name|data
@@ -1926,10 +1932,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|GIMP_CONTAINER
-argument_list|(
-name|global_brush_list
-argument_list|)
+name|global_brush_factory
+operator|->
+name|container
 argument_list|,
 name|brush_name
 argument_list|)
@@ -1996,10 +2001,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|GIMP_CONTAINER
-argument_list|(
-name|global_pattern_list
-argument_list|)
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|,
 name|pattern_name
 argument_list|)
@@ -2066,7 +2070,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|gradient_name
 argument_list|)
@@ -5455,16 +5461,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|device_status_drop_brush (GtkWidget * widget,GimpBrush * brush,gpointer data)
+DECL|function|device_status_drop_brush (GtkWidget * widget,GimpViewable * viewable,gpointer data)
 name|device_status_drop_brush
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpBrush
+name|GimpViewable
 modifier|*
-name|brush
+name|viewable
 parameter_list|,
 name|gpointer
 name|data
@@ -5499,7 +5505,10 @@ name|device_info
 operator|->
 name|context
 argument_list|,
-name|brush
+name|GIMP_BRUSH
+argument_list|(
+name|viewable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5509,16 +5518,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|device_status_drop_pattern (GtkWidget * widget,GimpPattern * pattern,gpointer data)
+DECL|function|device_status_drop_pattern (GtkWidget * widget,GimpViewable * viewable,gpointer data)
 name|device_status_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpPattern
+name|GimpViewable
 modifier|*
-name|pattern
+name|viewable
 parameter_list|,
 name|gpointer
 name|data
@@ -5553,7 +5562,10 @@ name|device_info
 operator|->
 name|context
 argument_list|,
-name|pattern
+name|GIMP_PATTERN
+argument_list|(
+name|viewable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5563,16 +5575,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|device_status_drop_gradient (GtkWidget * widget,GimpGradient * gradient,gpointer data)
+DECL|function|device_status_drop_gradient (GtkWidget * widget,GimpViewable * viewable,gpointer data)
 name|device_status_drop_gradient
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpGradient
+name|GimpViewable
 modifier|*
-name|gradient
+name|viewable
 parameter_list|,
 name|gpointer
 name|data
@@ -5607,7 +5619,10 @@ name|device_info
 operator|->
 name|context
 argument_list|,
-name|gradient
+name|GIMP_GRADIENT
+argument_list|(
+name|viewable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

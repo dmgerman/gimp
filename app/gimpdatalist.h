@@ -167,11 +167,6 @@ specifier|const
 name|gchar
 modifier|*
 name|data_path
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|extension
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplist.h"
 end_include
 
@@ -759,7 +765,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|,
 name|pattern_name
 argument_list|)

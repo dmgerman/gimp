@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpgradient.h"
 end_include
 
@@ -156,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9a6ba40103
+DECL|enum|__anon296bc4e80103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -2379,7 +2385,9 @@ expr_stmt|;
 block|}
 name|gimp_container_add
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -3185,7 +3193,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -3712,7 +3722,9 @@ expr_stmt|;
 block|}
 name|gimp_container_add
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

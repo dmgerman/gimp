@@ -956,7 +956,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_data_list_save_and_clear (GimpDataList * data_list,const gchar * data_path,const gchar * extension)
+DECL|function|gimp_data_list_save_and_clear (GimpDataList * data_list,const gchar * data_path)
 name|gimp_data_list_save_and_clear
 parameter_list|(
 name|GimpDataList
@@ -967,11 +967,6 @@ specifier|const
 name|gchar
 modifier|*
 name|data_path
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|extension
 parameter_list|)
 block|{
 name|GimpList
@@ -1047,8 +1042,6 @@ name|data
 argument_list|)
 operator|->
 name|name
-argument_list|,
-name|extension
 argument_list|,
 name|data_path
 argument_list|)

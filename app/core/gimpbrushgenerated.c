@@ -174,6 +174,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|gchar
+modifier|*
+name|gimp_brush_generated_get_extension
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
@@ -319,6 +332,12 @@ operator|->
 name|dirty
 operator|=
 name|gimp_brush_generated_dirty
+expr_stmt|;
+name|data_class
+operator|->
+name|get_extension
+operator|=
+name|gimp_brush_generated_get_extension
 expr_stmt|;
 block|}
 end_function
@@ -581,6 +600,24 @@ argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gchar
+modifier|*
+DECL|function|gimp_brush_generated_get_extension (GimpData * data)
+name|gimp_brush_generated_get_extension
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+block|{
+return|return
+name|GIMP_BRUSH_GENERATED_FILE_EXTENSION
 return|;
 block|}
 end_function

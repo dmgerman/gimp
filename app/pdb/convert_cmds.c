@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -697,7 +703,11 @@ case|:
 if|if
 condition|(
 operator|!
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
+operator|->
+name|num_children
 condition|)
 name|palettes_init
 argument_list|(
@@ -712,7 +722,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|palette_name
 argument_list|)

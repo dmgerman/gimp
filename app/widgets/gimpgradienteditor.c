@@ -133,6 +133,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -299,7 +305,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab44e7c0103
+DECL|enum|__anon2aafec830103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -339,7 +345,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab44e7c0203
+DECL|enum|__anon2aafec830203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -363,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab44e7c0308
+DECL|struct|__anon2aafec830308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2616,7 +2622,9 @@ name|view
 operator|=
 name|gimp_container_list_view_new
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|g_editor
 operator|->
@@ -4038,7 +4046,9 @@ if|if
 condition|(
 name|gimp_container_num_children
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|)
 condition|)
 block|{
@@ -4052,7 +4062,9 @@ name|GIMP_GRADIENT
 argument_list|(
 name|gimp_container_get_child_by_index
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 literal|0
 argument_list|)
@@ -4078,7 +4090,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -4121,7 +4135,9 @@ if|if
 condition|(
 name|gimp_container_have
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -5093,7 +5109,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -5382,7 +5400,9 @@ name|head
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -5606,7 +5626,9 @@ operator|!
 operator|(
 name|gimp_container_num_children
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|)
 operator|&&
 name|gradient
@@ -5738,7 +5760,9 @@ condition|(
 operator|!
 name|gimp_container_have
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -5766,7 +5790,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_remove
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -6362,7 +6388,9 @@ condition|(
 operator|!
 name|gimp_container_num_children
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|)
 condition|)
 block|{
@@ -6390,7 +6418,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

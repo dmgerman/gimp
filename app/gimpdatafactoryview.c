@@ -42,7 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdatacontainerview.h"
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdatafactoryview.h"
 end_include
 
 begin_include
@@ -114,9 +120,9 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_data_container_view_class_init
+name|gimp_data_factory_view_class_init
 parameter_list|(
-name|GimpDataContainerViewClass
+name|GimpDataFactoryViewClass
 modifier|*
 name|klass
 parameter_list|)
@@ -126,9 +132,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_data_container_view_init
+name|gimp_data_factory_view_init
 parameter_list|(
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -138,7 +144,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_data_container_view_destroy
+name|gimp_data_factory_view_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
@@ -150,13 +156,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_data_container_view_new_clicked
+name|gimp_data_factory_view_new_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -166,13 +172,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_data_container_view_duplicate_clicked
+name|gimp_data_factory_view_duplicate_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -182,13 +188,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_data_container_view_edit_clicked
+name|gimp_data_factory_view_edit_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -198,13 +204,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_data_container_view_delete_clicked
+name|gimp_data_factory_view_delete_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -214,13 +220,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_data_container_view_refresh_clicked
+name|gimp_data_factory_view_refresh_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -240,8 +246,8 @@ end_decl_stmt
 
 begin_function
 name|GtkType
-DECL|function|gimp_data_container_view_get_type (void)
-name|gimp_data_container_view_get_type
+DECL|function|gimp_data_factory_view_get_type (void)
+name|gimp_data_factory_view_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -262,27 +268,27 @@ name|GtkTypeInfo
 name|view_info
 init|=
 block|{
-literal|"GimpDataContainerView"
+literal|"GimpDataFactoryView"
 block|,
 sizeof|sizeof
 argument_list|(
-name|GimpDataContainerView
+name|GimpDataFactoryView
 argument_list|)
 block|,
 sizeof|sizeof
 argument_list|(
-name|GimpDataContainerViewClass
+name|GimpDataFactoryViewClass
 argument_list|)
 block|,
 operator|(
 name|GtkClassInitFunc
 operator|)
-name|gimp_data_container_view_class_init
+name|gimp_data_factory_view_class_init
 block|,
 operator|(
 name|GtkObjectInitFunc
 operator|)
-name|gimp_data_container_view_init
+name|gimp_data_factory_view_init
 block|,
 comment|/* reserved_1 */
 name|NULL
@@ -316,10 +322,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_container_view_class_init (GimpDataContainerViewClass * klass)
-name|gimp_data_container_view_class_init
+DECL|function|gimp_data_factory_view_class_init (GimpDataFactoryViewClass * klass)
+name|gimp_data_factory_view_class_init
 parameter_list|(
-name|GimpDataContainerViewClass
+name|GimpDataFactoryViewClass
 modifier|*
 name|klass
 parameter_list|)
@@ -347,7 +353,7 @@ name|object_class
 operator|->
 name|destroy
 operator|=
-name|gimp_data_container_view_destroy
+name|gimp_data_factory_view_destroy
 expr_stmt|;
 block|}
 end_function
@@ -355,10 +361,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_container_view_init (GimpDataContainerView * view)
-name|gimp_data_container_view_init
+DECL|function|gimp_data_factory_view_init (GimpDataFactoryView * view)
+name|gimp_data_factory_view_init
 parameter_list|(
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -481,7 +487,7 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_data_container_view_new_clicked
+name|gimp_data_factory_view_new_clicked
 argument_list|)
 argument_list|,
 name|view
@@ -573,7 +579,7 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_data_container_view_duplicate_clicked
+name|gimp_data_factory_view_duplicate_clicked
 argument_list|)
 argument_list|,
 name|view
@@ -665,7 +671,7 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_data_container_view_edit_clicked
+name|gimp_data_factory_view_edit_clicked
 argument_list|)
 argument_list|,
 name|view
@@ -757,7 +763,7 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_data_container_view_delete_clicked
+name|gimp_data_factory_view_delete_clicked
 argument_list|)
 argument_list|,
 name|view
@@ -849,7 +855,7 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_data_container_view_refresh_clicked
+name|gimp_data_factory_view_refresh_clicked
 argument_list|)
 argument_list|,
 name|view
@@ -885,21 +891,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_container_view_destroy (GtkObject * object)
-name|gimp_data_container_view_destroy
+DECL|function|gimp_data_factory_view_destroy (GtkObject * object)
+name|gimp_data_factory_view_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 decl_stmt|;
 name|view
 operator|=
-name|GIMP_DATA_CONTAINER_VIEW
+name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
 name|object
 argument_list|)
@@ -929,15 +935,15 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_data_container_view_new (GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y)
-name|gimp_data_container_view_new
+DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y)
+name|gimp_data_factory_view_new
 parameter_list|(
 name|GimpViewType
 name|view_type
 parameter_list|,
-name|GimpContainer
+name|GimpDataFactory
 modifier|*
-name|container
+name|factory
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -953,13 +959,13 @@ name|gint
 name|min_items_y
 parameter_list|)
 block|{
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
-name|data_view
+name|factory_view
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|container
+name|factory
 operator|!=
 name|NULL
 argument_list|,
@@ -968,22 +974,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONTAINER
+name|GIMP_IS_DATA_FACTORY
 argument_list|(
-name|container
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-operator|!
-name|context
-operator|||
-name|GIMP_IS_CONTEXT
-argument_list|(
-name|context
+name|factory
 argument_list|)
 argument_list|,
 name|NULL
@@ -1028,12 +1021,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|data_view
+name|factory_view
 operator|=
 name|gtk_type_new
 argument_list|(
-name|GIMP_TYPE_DATA_CONTAINER_VIEW
+name|GIMP_TYPE_DATA_FACTORY_VIEW
 argument_list|)
+expr_stmt|;
+name|factory_view
+operator|->
+name|factory
+operator|=
+name|factory
 expr_stmt|;
 switch|switch
 condition|(
@@ -1043,7 +1042,7 @@ block|{
 case|case
 name|GIMP_VIEW_TYPE_GRID
 case|:
-name|data_view
+name|factory_view
 operator|->
 name|view
 operator|=
@@ -1051,6 +1050,8 @@ name|GIMP_CONTAINER_VIEW
 argument_list|(
 name|gimp_container_grid_view_new
 argument_list|(
+name|factory
+operator|->
 name|container
 argument_list|,
 name|context
@@ -1067,7 +1068,7 @@ break|break;
 case|case
 name|GIMP_VIEW_TYPE_LIST
 case|:
-name|data_view
+name|factory_view
 operator|->
 name|view
 operator|=
@@ -1075,6 +1076,8 @@ name|GIMP_CONTAINER_VIEW
 argument_list|(
 name|gimp_container_list_view_new
 argument_list|(
+name|factory
+operator|->
 name|container
 argument_list|,
 name|context
@@ -1100,7 +1103,7 @@ name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|data_view
+name|factory_view
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1112,12 +1115,12 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|data_view
+name|factory_view
 argument_list|)
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
-name|data_view
+name|factory_view
 operator|->
 name|view
 argument_list|)
@@ -1127,7 +1130,7 @@ name|gtk_widget_show
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|data_view
+name|factory_view
 operator|->
 name|view
 argument_list|)
@@ -1136,7 +1139,7 @@ expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(
-name|data_view
+name|factory_view
 argument_list|)
 return|;
 block|}
@@ -1145,14 +1148,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_container_view_new_clicked (GtkWidget * widget,GimpDataContainerView * view)
-name|gimp_data_container_view_new_clicked
+DECL|function|gimp_data_factory_view_new_clicked (GtkWidget * widget,GimpDataFactoryView * view)
+name|gimp_data_factory_view_new_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -1173,7 +1176,7 @@ name|context
 argument_list|,
 name|view
 operator|->
-name|view
+name|factory
 operator|->
 name|container
 operator|->
@@ -1188,14 +1191,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_container_view_duplicate_clicked (GtkWidget * widget,GimpDataContainerView * view)
-name|gimp_data_container_view_duplicate_clicked
+DECL|function|gimp_data_factory_view_duplicate_clicked (GtkWidget * widget,GimpDataFactoryView * view)
+name|gimp_data_factory_view_duplicate_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -1216,7 +1219,7 @@ name|context
 argument_list|,
 name|view
 operator|->
-name|view
+name|factory
 operator|->
 name|container
 operator|->
@@ -1231,14 +1234,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_container_view_edit_clicked (GtkWidget * widget,GimpDataContainerView * view)
-name|gimp_data_container_view_edit_clicked
+DECL|function|gimp_data_factory_view_edit_clicked (GtkWidget * widget,GimpDataFactoryView * view)
+name|gimp_data_factory_view_edit_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -1259,7 +1262,7 @@ name|context
 argument_list|,
 name|view
 operator|->
-name|view
+name|factory
 operator|->
 name|container
 operator|->
@@ -1274,14 +1277,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_container_view_delete_clicked (GtkWidget * widget,GimpDataContainerView * view)
-name|gimp_data_container_view_delete_clicked
+DECL|function|gimp_data_factory_view_delete_clicked (GtkWidget * widget,GimpDataFactoryView * view)
+name|gimp_data_factory_view_delete_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)
@@ -1302,7 +1305,7 @@ name|context
 argument_list|,
 name|view
 operator|->
-name|view
+name|factory
 operator|->
 name|container
 operator|->
@@ -1317,14 +1320,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_container_view_refresh_clicked (GtkWidget * widget,GimpDataContainerView * view)
-name|gimp_data_container_view_refresh_clicked
+DECL|function|gimp_data_factory_view_refresh_clicked (GtkWidget * widget,GimpDataFactoryView * view)
+name|gimp_data_factory_view_refresh_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDataContainerView
+name|GimpDataFactoryView
 modifier|*
 name|view
 parameter_list|)

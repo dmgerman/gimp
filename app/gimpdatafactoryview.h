@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DATA_CONTAINER_VIEW_H__
+name|__GIMP_DATA_FACTORY_VIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DATA_CONTAINER_VIEW_H__
+DECL|macro|__GIMP_DATA_FACTORY_VIEW_H__
 define|#
 directive|define
-name|__GIMP_DATA_CONTAINER_VIEW_H__
+name|__GIMP_DATA_FACTORY_VIEW_H__
 end_define
 
 begin_include
@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4736850103
+DECL|enum|__anon28811c750103
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_GRID
 name|GIMP_VIEW_TYPE_GRID
@@ -39,83 +39,88 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_DATA_CONTAINER_VIEW
+DECL|macro|GIMP_TYPE_DATA_FACTORY_VIEW
 define|#
 directive|define
-name|GIMP_TYPE_DATA_CONTAINER_VIEW
-value|(gimp_data_container_view_get_type ())
+name|GIMP_TYPE_DATA_FACTORY_VIEW
+value|(gimp_data_factory_view_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_DATA_CONTAINER_VIEW (obj)
+DECL|macro|GIMP_DATA_FACTORY_VIEW (obj)
 define|#
 directive|define
-name|GIMP_DATA_CONTAINER_VIEW
+name|GIMP_DATA_FACTORY_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_DATA_CONTAINER_VIEW, GimpDataContainerView))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_DATA_FACTORY_VIEW, GimpDataFactoryView))
 end_define
 
 begin_define
-DECL|macro|GIMP_DATA_CONTAINER_VIEW_CLASS (klass)
+DECL|macro|GIMP_DATA_FACTORY_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_DATA_CONTAINER_VIEW_CLASS
+name|GIMP_DATA_FACTORY_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DATA_CONTAINER_VIEW, GimpDataContainerViewClass))
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DATA_FACTORY_VIEW, GimpDataFactoryViewClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DATA_CONTAINER_VIEW (obj)
+DECL|macro|GIMP_IS_DATA_FACTORY_VIEW (obj)
 define|#
 directive|define
-name|GIMP_IS_DATA_CONTAINER_VIEW
+name|GIMP_IS_DATA_FACTORY_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_DATA_CONTAINER_VIEW))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_DATA_FACTORY_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DATA_CONTAINER_VIEW_CLASS (klass)
+DECL|macro|GIMP_IS_DATA_FACTORY_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_DATA_CONTAINER_VIEW_CLASS
+name|GIMP_IS_DATA_FACTORY_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DATA_CONTAINER_VIEW))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DATA_FACTORY_VIEW))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDataContainerView
+DECL|typedef|GimpDataFactoryView
 typedef|typedef
 name|struct
-name|_GimpDataContainerView
-name|GimpDataContainerView
+name|_GimpDataFactoryView
+name|GimpDataFactoryView
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDataContainerViewClass
+DECL|typedef|GimpDataFactoryViewClass
 typedef|typedef
 name|struct
-name|_GimpDataContainerViewClass
-name|GimpDataContainerViewClass
+name|_GimpDataFactoryViewClass
+name|GimpDataFactoryViewClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpDataContainerView
+DECL|struct|_GimpDataFactoryView
 struct|struct
-name|_GimpDataContainerView
+name|_GimpDataFactoryView
 block|{
 DECL|member|parent_instance
 name|GtkVBox
 name|parent_instance
+decl_stmt|;
+DECL|member|factory
+name|GimpDataFactory
+modifier|*
+name|factory
 decl_stmt|;
 DECL|member|view
 name|GimpContainerView
@@ -157,9 +162,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpDataContainerViewClass
+DECL|struct|_GimpDataFactoryViewClass
 struct|struct
-name|_GimpDataContainerViewClass
+name|_GimpDataFactoryViewClass
 block|{
 DECL|member|parent_class
 name|GtkVBoxClass
@@ -171,7 +176,7 @@ end_struct
 
 begin_function_decl
 name|GtkType
-name|gimp_data_container_view_get_type
+name|gimp_data_factory_view_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -181,14 +186,14 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_data_container_view_new
+name|gimp_data_factory_view_new
 parameter_list|(
 name|GimpViewType
 name|view_type
 parameter_list|,
-name|GimpContainer
+name|GimpDataFactory
 modifier|*
-name|container
+name|factory
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -212,7 +217,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DATA_CONTAINER_VIEW_H__  */
+comment|/*  __GIMP_DATA_FACTORY_VIEW_H__  */
 end_comment
 
 end_unit

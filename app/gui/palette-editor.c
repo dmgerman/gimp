@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdatalist.h"
 end_include
 
@@ -687,7 +693,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|)
 operator|->
 name|list
@@ -922,7 +930,9 @@ name|pos
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -998,7 +1008,9 @@ name|pos
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -1108,7 +1120,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_index
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 literal|0
 argument_list|)
@@ -1146,7 +1160,9 @@ name|pos
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -5168,7 +5184,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -5325,7 +5343,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_remove
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -5639,7 +5659,9 @@ expr_stmt|;
 block|}
 name|gimp_container_add
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

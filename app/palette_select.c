@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppalette.h"
 end_include
 
@@ -534,7 +540,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|initial_palette
 argument_list|)
@@ -547,7 +555,9 @@ name|select_pos
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -723,7 +733,9 @@ name|pos
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -829,7 +841,9 @@ name|pos
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
-name|global_palette_list
+name|global_palette_factory
+operator|->
+name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

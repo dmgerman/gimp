@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplist.h"
 end_include
 
@@ -568,7 +574,9 @@ name|object
 operator|=
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 argument_list|,
 name|name
 argument_list|)
@@ -1400,7 +1408,9 @@ argument_list|(
 name|char
 operator|*
 argument_list|,
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 operator|->
 name|num_children
 argument_list|)
@@ -1412,7 +1422,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 argument_list|)
 operator|->
 name|list
@@ -1474,7 +1486,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 operator|->
 name|num_children
 expr_stmt|;
@@ -1655,7 +1669,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_brush_list
+name|global_brush_factory
+operator|->
+name|container
 argument_list|)
 operator|->
 name|list

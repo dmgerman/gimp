@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpgradient.h"
 end_include
 
@@ -194,7 +200,9 @@ name|num_gradients
 operator|=
 name|gimp_container_num_children
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 name|gradients
@@ -216,7 +224,9 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|)
 operator|->
 name|list
@@ -565,7 +575,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_gradient_list
+name|global_gradient_factory
+operator|->
+name|container
 argument_list|,
 name|name
 argument_list|)

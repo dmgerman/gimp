@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -586,7 +592,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|,
 name|initial_pattern
 argument_list|)
@@ -814,7 +822,9 @@ name|view
 operator|=
 name|gimp_container_grid_view_new
 argument_list|(
-name|global_pattern_list
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|,
 name|psp
 operator|->
@@ -893,10 +903,9 @@ name|name_changed_handler_id
 operator|=
 name|gimp_container_add_handler
 argument_list|(
-name|GIMP_CONTAINER
-argument_list|(
-name|global_pattern_list
-argument_list|)
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|,
 literal|"name_changed"
 argument_list|,
@@ -1024,10 +1033,9 @@ expr_stmt|;
 block|}
 name|gimp_container_remove_handler
 argument_list|(
-name|GIMP_CONTAINER
-argument_list|(
-name|global_pattern_list
-argument_list|)
+name|global_pattern_factory
+operator|->
+name|container
 argument_list|,
 name|psp
 operator|->
