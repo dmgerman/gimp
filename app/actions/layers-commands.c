@@ -3710,14 +3710,10 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
-name|data
-condition|?
 name|GIMP_DISPLAY
 argument_list|(
 name|data
 argument_list|)
-else|:
-name|NULL
 decl_stmt|;
 if|if
 condition|(

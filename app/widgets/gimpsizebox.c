@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27deba970103
+DECL|enum|__anon2c656a640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1995,7 +1995,7 @@ name|value
 argument_list|,
 name|box
 operator|->
-name|unit
+name|resolution_unit
 argument_list|)
 expr_stmt|;
 break|break;
