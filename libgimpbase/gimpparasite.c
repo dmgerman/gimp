@@ -188,7 +188,7 @@ end_endif
 begin_function
 name|GimpParasite
 modifier|*
-DECL|function|gimp_parasite_new (const gchar * name,guint32 flags,guint32 size,const gpointer data)
+DECL|function|gimp_parasite_new (const gchar * name,guint32 flags,guint32 size,gconstpointer data)
 name|gimp_parasite_new
 parameter_list|(
 specifier|const
@@ -202,8 +202,7 @@ parameter_list|,
 name|guint32
 name|size
 parameter_list|,
-specifier|const
-name|gpointer
+name|gconstpointer
 name|data
 parameter_list|)
 block|{

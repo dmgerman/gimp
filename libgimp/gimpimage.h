@@ -55,6 +55,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -106,8 +107,7 @@ parameter_list|,
 name|gint
 name|size
 parameter_list|,
-specifier|const
-name|gpointer
+name|gconstpointer
 name|data
 parameter_list|)
 function_decl|;

@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0cf79c0103
+DECL|enum|__anon2b28df140103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1792,7 +1792,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_install_procedure (const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * menu_path,const gchar * image_types,GimpPDBProcType type,gint n_params,gint n_return_vals,GimpParamDef * params,GimpParamDef * return_vals)
+DECL|function|gimp_install_procedure (const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * menu_path,const gchar * image_types,GimpPDBProcType type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals)
 name|gimp_install_procedure
 parameter_list|(
 specifier|const
@@ -1844,10 +1844,12 @@ parameter_list|,
 name|gint
 name|n_return_vals
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|params
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|return_vals
@@ -2059,7 +2061,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_install_temp_proc (const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * menu_path,const gchar * image_types,GimpPDBProcType type,gint n_params,gint n_return_vals,GimpParamDef * params,GimpParamDef * return_vals,GimpRunProc run_proc)
+DECL|function|gimp_install_temp_proc (const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * menu_path,const gchar * image_types,GimpPDBProcType type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals,GimpRunProc run_proc)
 name|gimp_install_temp_proc
 parameter_list|(
 specifier|const
@@ -2111,10 +2113,12 @@ parameter_list|,
 name|gint
 name|n_return_vals
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|params
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|return_vals
@@ -3373,7 +3377,7 @@ end_comment
 begin_function
 name|GimpParam
 modifier|*
-DECL|function|gimp_run_procedure2 (const gchar * name,gint * n_return_vals,gint n_params,GimpParam * params)
+DECL|function|gimp_run_procedure2 (const gchar * name,gint * n_return_vals,gint n_params,const GimpParam * params)
 name|gimp_run_procedure2
 parameter_list|(
 specifier|const
@@ -3388,6 +3392,7 @@ parameter_list|,
 name|gint
 name|n_params
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params
@@ -4082,7 +4087,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_attach_new_parasite (const gchar * name,gint flags,gint size,const gpointer data)
+DECL|function|gimp_attach_new_parasite (const gchar * name,gint flags,gint size,gconstpointer data)
 name|gimp_attach_new_parasite
 parameter_list|(
 specifier|const
@@ -4096,8 +4101,7 @@ parameter_list|,
 name|gint
 name|size
 parameter_list|,
-specifier|const
-name|gpointer
+name|gconstpointer
 name|data
 parameter_list|)
 block|{

@@ -30,6 +30,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -43,6 +44,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

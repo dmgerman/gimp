@@ -21,12 +21,13 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_channel_new (gint32 image_ID,gchar * name,guint width,guint height,gdouble opacity,GimpRGB * color)
+DECL|function|gimp_channel_new (gint32 image_ID,const gchar * name,guint width,guint height,gdouble opacity,const GimpRGB * color)
 name|gimp_channel_new
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -40,6 +41,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

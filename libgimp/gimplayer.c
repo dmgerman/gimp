@@ -21,12 +21,13 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new (gint32 image_ID,gchar * name,gint width,gint height,GimpImageType type,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new (gint32 image_ID,const gchar * name,gint width,gint height,GimpImageType type,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

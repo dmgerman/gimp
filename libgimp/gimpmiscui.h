@@ -35,9 +35,9 @@ comment|/* Preview stuff. WARNING: don't use this in new code!!!!!!!  * It's jus
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1e0a4e0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c29d0570108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -122,6 +122,7 @@ modifier|*
 name|GimpFixeMePreviewFunc
 function_decl|)
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -254,6 +255,7 @@ parameter_list|,
 name|gint
 name|width
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -309,6 +311,7 @@ name|GList
 modifier|*
 name|gimp_plug_in_parse_path
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|path_name

@@ -698,7 +698,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_fetcher_put_pixel (GimpPixelFetcher * pf,gint x,gint y,guchar * pixel)
+DECL|function|gimp_pixel_fetcher_put_pixel (GimpPixelFetcher * pf,gint x,gint y,const guchar * pixel)
 name|gimp_pixel_fetcher_put_pixel
 parameter_list|(
 name|GimpPixelFetcher
@@ -711,6 +711,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|pixel

@@ -134,8 +134,7 @@ parameter_list|,
 name|guint32
 name|size
 parameter_list|,
-specifier|const
-name|gpointer
+name|gconstpointer
 name|data
 parameter_list|)
 function_decl|;

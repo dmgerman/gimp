@@ -69,12 +69,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_cmap (gint32 image_ID,guchar * cmap,gint num_colors)
+DECL|function|gimp_image_set_cmap (gint32 image_ID,const guchar * cmap,gint num_colors)
 name|gimp_image_set_cmap
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -180,7 +181,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_attach_new_parasite (gint32 image_ID,const gchar * name,gint flags,gint size,const gpointer data)
+DECL|function|gimp_image_attach_new_parasite (gint32 image_ID,const gchar * name,gint flags,gint size,gconstpointer data)
 name|gimp_image_attach_new_parasite
 parameter_list|(
 name|gint32
@@ -197,8 +198,7 @@ parameter_list|,
 name|gint
 name|size
 parameter_list|,
-specifier|const
-name|gpointer
+name|gconstpointer
 name|data
 parameter_list|)
 block|{

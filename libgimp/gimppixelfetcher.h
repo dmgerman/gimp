@@ -20,7 +20,7 @@ begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|enum
-DECL|enum|__anon27ee2ab00103
+DECL|enum|__anon2773d54c0103
 type|{
 DECL|enumerator|PIXEL_WRAP
 name|PIXEL_WRAP
@@ -139,6 +139,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|pixel

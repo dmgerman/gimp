@@ -22,6 +22,7 @@ comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_procedural_db_proc_info
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|procedure
@@ -80,6 +81,7 @@ begin_function_decl
 name|gboolean
 name|gimp_procedural_db_get_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -94,6 +96,7 @@ begin_function_decl
 name|gboolean
 name|gimp_procedural_db_set_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|identifier

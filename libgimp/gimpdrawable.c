@@ -461,12 +461,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_set_name (gint32 drawable_ID,gchar * name)
+DECL|function|gimp_drawable_set_name (gint32 drawable_ID,const gchar * name)
 name|gimp_drawable_set_name
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1005,7 +1006,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_attach_new_parasite (gint32 drawable_ID,const gchar * name,gint flags,gint size,const gpointer data)
+DECL|function|gimp_drawable_attach_new_parasite (gint32 drawable_ID,const gchar * name,gint flags,gint size,gconstpointer data)
 name|gimp_drawable_attach_new_parasite
 parameter_list|(
 name|gint32
@@ -1022,8 +1023,7 @@ parameter_list|,
 name|gint
 name|size
 parameter_list|,
-specifier|const
-name|gpointer
+name|gconstpointer
 name|data
 parameter_list|)
 block|{

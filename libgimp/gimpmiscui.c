@@ -332,13 +332,6 @@ block|{
 name|GimpFixMePreview
 modifier|*
 name|preview
-init|=
-name|g_new0
-argument_list|(
-name|GimpFixMePreview
-argument_list|,
-literal|1
-argument_list|)
 decl_stmt|;
 name|guchar
 modifier|*
@@ -349,6 +342,15 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
+name|preview
+operator|=
+name|g_new0
+argument_list|(
+name|GimpFixMePreview
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|drawable_type
@@ -569,7 +571,7 @@ name|guchar
 modifier|*
 name|dest
 decl_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|x
 operator|>=
@@ -580,7 +582,7 @@ operator|<
 name|PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|y
 operator|>=
@@ -687,11 +689,12 @@ modifier|*
 name|pixel
 parameter_list|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|src
 decl_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|x
 operator|>=
@@ -702,7 +705,7 @@ operator|<
 name|PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|y
 operator|>=
@@ -791,7 +794,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fixme_preview_do_row (GimpFixMePreview * preview,gint row,gint width,guchar * src)
+DECL|function|gimp_fixme_preview_do_row (GimpFixMePreview * preview,gint row,gint width,const guchar * src)
 name|gimp_fixme_preview_do_row
 parameter_list|(
 name|GimpFixMePreview
@@ -804,6 +807,7 @@ parameter_list|,
 name|gint
 name|width
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -863,13 +867,14 @@ name|x
 operator|++
 control|)
 block|{
-if|if
+switch|switch
 condition|(
 name|bpp
-operator|==
-literal|4
 condition|)
 block|{
+case|case
+literal|4
+case|:
 name|r
 operator|=
 operator|(
@@ -942,15 +947,10 @@ operator|)
 operator|/
 literal|255.0
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|bpp
-operator|==
+break|break;
+case|case
 literal|3
-condition|)
-block|{
+case|:
 name|r
 operator|=
 operator|(
@@ -1009,9 +1009,8 @@ name|a
 operator|=
 literal|1.0
 expr_stmt|;
-block|}
-else|else
-block|{
+break|break;
+default|default:
 if|if
 condition|(
 name|preview
@@ -1155,6 +1154,7 @@ name|a
 operator|=
 literal|1.0
 expr_stmt|;
+break|break;
 block|}
 if|if
 condition|(
@@ -1316,10 +1316,6 @@ operator|->
 name|widget
 argument_list|)
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
 name|preview
 operator|->
 name|odd
@@ -1343,10 +1339,6 @@ operator|->
 name|widget
 argument_list|)
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
 name|preview
 operator|->
 name|even
@@ -1378,14 +1370,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|guchar
+modifier|*
+name|buffer
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
 name|y
-decl_stmt|;
-name|guchar
-modifier|*
-name|buffer
 decl_stmt|;
 name|gint
 name|bpp
@@ -1423,6 +1415,7 @@ name|y
 operator|++
 control|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -1521,6 +1514,11 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 block|{
+specifier|const
+name|guchar
+modifier|*
+name|src
+decl_stmt|;
 name|gint
 name|bpp
 decl_stmt|;
@@ -1536,10 +1534,6 @@ name|gint
 name|height
 init|=
 name|PREVIEW_SIZE
-decl_stmt|;
-name|guchar
-modifier|*
-name|src
 decl_stmt|;
 name|preview
 operator|->
@@ -1812,6 +1806,7 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -2612,9 +2607,10 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_plug_in_parse_path (gchar * path_name,const gchar * dir_name)
+DECL|function|gimp_plug_in_parse_path (const gchar * path_name,const gchar * dir_name)
 name|gimp_plug_in_parse_path
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|path_name

@@ -31,9 +31,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_proc_info (gchar * procedure,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values,GimpParamDef ** args,GimpParamDef ** return_vals)
+DECL|function|gimp_procedural_db_proc_info (const gchar * procedure,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values,GimpParamDef ** args,GimpParamDef ** return_vals)
 name|gimp_procedural_db_proc_info
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|procedure
@@ -309,9 +310,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_get_data (gchar * identifier,gpointer data)
+DECL|function|gimp_procedural_db_get_data (const gchar * identifier,gpointer data)
 name|gimp_procedural_db_get_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -383,9 +385,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_set_data (gchar * identifier,gpointer data,guint32 bytes)
+DECL|function|gimp_procedural_db_set_data (const gchar * identifier,gpointer data,guint32 bytes)
 name|gimp_procedural_db_set_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|identifier

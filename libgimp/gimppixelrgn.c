@@ -1623,13 +1623,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_set_pixel (GimpPixelRgn * pr,guchar * buf,gint x,gint y)
+DECL|function|gimp_pixel_rgn_set_pixel (GimpPixelRgn * pr,const guchar * buf,gint x,gint y)
 name|gimp_pixel_rgn_set_pixel
 parameter_list|(
 name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buf
@@ -1787,13 +1788,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_set_row (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint width)
+DECL|function|gimp_pixel_rgn_set_row (GimpPixelRgn * pr,const guchar * buf,gint x,gint y,gint width)
 name|gimp_pixel_rgn_set_row
 parameter_list|(
 name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buf
@@ -2080,13 +2082,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_set_col (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint height)
+DECL|function|gimp_pixel_rgn_set_col (GimpPixelRgn * pr,const guchar * buf,gint x,gint y,gint height)
 name|gimp_pixel_rgn_set_col
 parameter_list|(
 name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buf
@@ -2326,13 +2329,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_set_rect (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint width,gint height)
+DECL|function|gimp_pixel_rgn_set_rect (GimpPixelRgn * pr,const guchar * buf,gint x,gint y,gint width,gint height)
 name|gimp_pixel_rgn_set_rect
 parameter_list|(
 name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buf
@@ -3044,10 +3048,6 @@ name|gpointer
 name|pri_ptr
 parameter_list|)
 block|{
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
 name|GimpPixelRgnHolder
 modifier|*
 name|prh
@@ -3055,6 +3055,10 @@ decl_stmt|;
 name|GimpPixelRgnIterator
 modifier|*
 name|pri
+decl_stmt|;
+name|GSList
+modifier|*
+name|list
 decl_stmt|;
 name|pri
 operator|=
@@ -3128,7 +3132,7 @@ operator|->
 name|process_count
 operator|++
 expr_stmt|;
-comment|/*  Unref the last referenced tile if the underlying region is a tile manager  */
+comment|/*  Unref the last referenced tile if the underlying region            *  is a tile manager            */
 if|if
 condition|(
 name|prh
@@ -3269,7 +3273,7 @@ decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
-comment|/* Find the minimum width to the next vertical tile (in the case of a tile manager)    * or to the end of the pixel region (in the case of no tile manager)    */
+comment|/* Find the minimum width to the next vertical tile (in the case of    * a tile manager) or to the end of the pixel region (in the case of    * no tile manager)    */
 name|list
 operator|=
 name|pri
@@ -3443,7 +3447,7 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-comment|/* Find the minimum height to the next vertical tile (in the case of a tile manager)    * or to the end of the pixel region (in the case of no tile manager)    */
+comment|/* Find the minimum height to the next vertical tile (in the case of    * a tile manager) or to the end of the pixel region (in the case of    * no tile manager)    */
 name|list
 operator|=
 name|pri
@@ -3886,6 +3890,7 @@ name|pr
 operator|->
 name|data
 operator|=
+operator|(
 name|tile
 operator|->
 name|data
@@ -3905,6 +3910,7 @@ operator|->
 name|pr
 operator|->
 name|bpp
+operator|)
 expr_stmt|;
 block|}
 else|else

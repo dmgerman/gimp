@@ -250,6 +250,7 @@ name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buf
@@ -271,6 +272,7 @@ name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buf
@@ -295,6 +297,7 @@ name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buf
@@ -319,6 +322,7 @@ name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buf

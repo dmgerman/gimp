@@ -163,6 +163,7 @@ parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -266,8 +267,7 @@ parameter_list|,
 name|gint
 name|size
 parameter_list|,
-specifier|const
-name|gpointer
+name|gconstpointer
 name|data
 parameter_list|)
 function_decl|;
