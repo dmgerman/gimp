@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e1a9a0103
+DECL|enum|__anon28a05d410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1113,7 +1113,7 @@ literal|"autohint"
 argument_list|,
 name|_
 argument_list|(
-literal|"Force use of auto-hinter"
+literal|"Force Auto-Hinter"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d1ddd30103
+DECL|enum|__anon27a4392f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -497,7 +497,8 @@ argument_list|,
 name|N_
 argument_list|(
 literal|"Hinting alters the font outline to "
-literal|"produce a crisp bitmap at small sizes"
+literal|"produce a crisp bitmap at small "
+literal|"sizes"
 argument_list|)
 argument_list|,
 name|TRUE
@@ -513,7 +514,12 @@ name|PROP_AUTOHINT
 argument_list|,
 literal|"autohint"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"If available, hints from the font are "
+literal|"used but you may prefer to always use "
+literal|"the automatic hinter"
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
