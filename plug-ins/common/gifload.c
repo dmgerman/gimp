@@ -758,7 +758,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27ea62d90108
+DECL|struct|__anon29ff90860108
 block|{
 DECL|member|Width
 name|unsigned
@@ -808,7 +808,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27ea62d90208
+DECL|struct|__anon29ff90860208
 block|{
 DECL|member|transparent
 name|int
@@ -2680,7 +2680,7 @@ name|FALSE
 expr_stmt|;
 name|last_byte
 operator|=
-literal|0
+literal|2
 expr_stmt|;
 return|return
 literal|0
@@ -2726,6 +2726,15 @@ operator|-
 literal|1
 return|;
 block|}
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|" %d "
+argument_list|,
+name|last_byte
+argument_list|)
+expr_stmt|;
 name|buf
 index|[
 literal|0
