@@ -319,7 +319,7 @@ literal|0
 case|:
 name|fill_type
 operator|=
-name|BACKGROUND_FILL
+name|FOREGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
@@ -327,7 +327,7 @@ literal|1
 case|:
 name|fill_type
 operator|=
-name|WHITE_FILL
+name|BACKGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
@@ -335,11 +335,19 @@ literal|2
 case|:
 name|fill_type
 operator|=
-name|TRANSPARENT_FILL
+name|WHITE_FILL
 expr_stmt|;
 break|break;
 case|case
 literal|3
+case|:
+name|fill_type
+operator|=
+name|TRANSPARENT_FILL
+expr_stmt|;
+break|break;
+case|case
+literal|4
 case|:
 name|fill_type
 operator|=
@@ -416,7 +424,7 @@ literal|"gimp_drawable_fill"
 block|,
 literal|"Fill the drawable with the specified fill mode."
 block|,
-literal|"This procedure fills the drawable with the fill mode.  If the fill mode is background, the current background color is used.  If the fill type is white, then white is used.  Transparent fill only affects layers with an alpha channel, in which case the alpha channel is set to transparent.  If the drawable has no alpha channel, it is filled to white.  No fill leaves the drawable's contents undefined.  This procedure is unlike the bucket fill tool because it fills regardless of a selection"
+literal|"This procedure fills the drawable with the fill mode.  If the fill mode is foreground the current foreground color is used.  If the fill mode is background, the current background color is used.  If the fill type is white, then white is used.  Transparent fill only affects layers with an alpha channel, in which case the alpha channel is set to transparent.  If the drawable has no alpha channel, it is filled to white.  No fill leaves the drawable's contents undefined.  This procedure is unlike the bucket fill tool because it fills regardless of a selection"
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
