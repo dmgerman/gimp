@@ -58,7 +58,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon29f386580103
+DECL|enum|__anon2ad0412b0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -666,27 +666,6 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|int
-name|bn_size
-decl_stmt|;
-name|unsigned
-name|char
-name|buf
-index|[
-name|sz_BrushHeader
-index|]
-decl_stmt|;
-name|BrushHeader
-name|header
-decl_stmt|;
-name|unsigned
-name|int
-modifier|*
-name|hp
-decl_stmt|;
-name|int
-name|i
-decl_stmt|;
 name|brush
 operator|->
 name|filename
@@ -719,6 +698,75 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|gimp_brush_load_brush
+argument_list|(
+name|brush
+argument_list|,
+name|fp
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+comment|/*  Clean up  */
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
+comment|/*  Swap the brush to disk (if we're being stingy with memory) */
+if|if
+condition|(
+name|stingy_memory_use
+condition|)
+name|temp_buf_swap
+argument_list|(
+name|brush
+operator|->
+name|mask
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|int
+DECL|function|gimp_brush_load_brush (GimpBrush * brush,FILE * fp,char * filename)
+name|gimp_brush_load_brush
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|,
+name|FILE
+modifier|*
+name|fp
+parameter_list|,
+name|char
+modifier|*
+name|filename
+parameter_list|)
+block|{
+name|int
+name|bn_size
+decl_stmt|;
+name|unsigned
+name|char
+name|buf
+index|[
+name|sz_BrushHeader
+index|]
+decl_stmt|;
+name|BrushHeader
+name|header
+decl_stmt|;
+name|unsigned
+name|int
+modifier|*
+name|hp
+decl_stmt|;
+name|int
+name|i
+decl_stmt|;
 comment|/*  Read in the header size  */
 if|if
 condition|(
@@ -748,7 +796,9 @@ argument_list|(
 name|brush
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+literal|0
+return|;
 block|}
 comment|/*  rearrange the bytes in each unsigned int  */
 name|hp
@@ -841,7 +891,6 @@ operator|!=
 name|GBRUSH_MAGIC
 condition|)
 block|{
-comment|/*  One thing that can save this error is if the brush is version 1  */
 if|if
 condition|(
 name|header
@@ -861,7 +910,9 @@ argument_list|(
 name|brush
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+literal|0
+return|;
 block|}
 block|}
 if|if
@@ -970,7 +1021,9 @@ argument_list|(
 name|brush
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+literal|0
+return|;
 block|}
 block|}
 else|else
@@ -1143,30 +1196,13 @@ argument_list|(
 name|brush
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+literal|0
+return|;
 block|}
-comment|/*  Clean up  */
-name|fclose
-argument_list|(
-name|fp
-argument_list|)
-expr_stmt|;
-comment|/*  Swap the brush to disk (if we're being stingy with memory) */
-if|if
-condition|(
-name|stingy_memory_use
-condition|)
-name|temp_buf_swap
-argument_list|(
-name|brush
-operator|->
-name|mask
-argument_list|)
-expr_stmt|;
-comment|/* Check if the current brush is the default one */
-comment|/* lets see if it works with out this for now */
-comment|/*  if (strcmp(default_brush, g_basename(filename)) == 0) { 	  active_brush = brush; 	  have_default_brush = 1;   }*/
-comment|/* if */
+return|return
+literal|1
+return|;
 block|}
 end_function
 

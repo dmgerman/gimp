@@ -100,7 +100,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushhose.h"
+file|"gimpbrushpipe.h"
 end_include
 
 begin_include
@@ -823,13 +823,13 @@ operator|==
 literal|0
 condition|)
 block|{
-name|GimpBrushHose
+name|GimpBrushPipe
 modifier|*
 name|brush
 decl_stmt|;
 name|brush
 operator|=
-name|gimp_brush_hose_load
+name|gimp_brush_pipe_load
 argument_list|(
 name|filename
 argument_list|)
@@ -853,7 +853,7 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Warning: failed to load brush \"%s\""
+literal|"Warning: failed to load pipe \"%s\""
 argument_list|,
 name|filename
 argument_list|)

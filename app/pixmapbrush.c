@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushhose.h"
+file|"gimpbrushpipe.h"
 end_include
 
 begin_include
@@ -159,48 +159,17 @@ begin_comment
 comment|/* static Argument *   pixmapbrush_extended_gradient_invoker     (Argument *); */
 end_comment
 
-begin_function_decl
-specifier|static
-name|void
-name|paint_line_pixmap_mask
-parameter_list|(
-name|GImage
-modifier|*
-name|dest
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|GimpBrushPixmap
-modifier|*
-name|brush
-parameter_list|,
-name|unsigned
-name|char
-modifier|*
-name|d
-parameter_list|,
-name|int
-name|x
-parameter_list|,
-name|int
-name|offset_x
-parameter_list|,
-name|int
-name|y
-parameter_list|,
-name|int
-name|offset_y
-parameter_list|,
-name|int
-name|bytes
-parameter_list|,
-name|int
-name|width
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static void paint_line_pixmap_mask (GImage        *dest, 				    GimpDrawable  *drawable, 				    GimpBrushPixmap  *brush, 				    unsigned char *d, 				    int            x, 				    int            offset_x, 				    int            y, 				    int            offset_y, 				    int            bytes, 				    int            width);
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/*  defines  */
@@ -759,6 +728,11 @@ name|index
 init|=
 literal|0
 decl_stmt|;
+name|gboolean
+name|RANDOM
+init|=
+literal|1
+decl_stmt|;
 comment|/* We always need a destination image */
 if|if
 condition|(
@@ -777,7 +751,7 @@ if|if
 condition|(
 operator|!
 operator|(
-name|GIMP_IS_BRUSH_HOSE
+name|GIMP_IS_BRUSH_PIPE
 argument_list|(
 name|paint_core
 operator|->
@@ -797,13 +771,54 @@ operator|->
 name|brush
 expr_stmt|;
 comment|/* Set paint_core->brush, restore below before returning.        * I wonder if this is wise?        */
+if|if
+condition|(
+name|RANDOM
+condition|)
+block|{
+comment|/* eeek, what a ugly line */
 name|paint_core
 operator|->
 name|brush
 operator|=
 name|gimp_brush_list_get_brush_by_index
 argument_list|(
-name|GIMP_BRUSH_HOSE
+name|GIMP_BRUSH_PIPE
+argument_list|(
+name|paint_core
+operator|->
+name|brush
+argument_list|)
+operator|->
+name|brush_list
+argument_list|,
+operator|(
+name|rand
+argument_list|()
+operator|%
+name|gimp_brush_list_length
+argument_list|(
+name|GIMP_BRUSH_PIPE
+argument_list|(
+name|paint_core
+operator|->
+name|brush
+argument_list|)
+operator|->
+name|brush_list
+argument_list|)
+operator|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|paint_core
+operator|->
+name|brush
+operator|=
+name|gimp_brush_list_get_brush_by_index
+argument_list|(
+name|GIMP_BRUSH_PIPE
 argument_list|(
 name|paint_core
 operator|->
@@ -822,7 +837,7 @@ name|index
 operator|==
 name|gimp_brush_list_length
 argument_list|(
-name|GIMP_BRUSH_HOSE
+name|GIMP_BRUSH_PIPE
 argument_list|(
 name|saved_brush
 argument_list|)
@@ -1123,26 +1138,7 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
-comment|/* to handle the case of the left side of the image */
-if|if
-condition|(
-name|area
-operator|->
-name|x
-operator|==
-literal|0
-condition|)
-name|offset_x
-operator|=
-name|destPR
-operator|.
-name|w
-expr_stmt|;
-else|else
-name|offset_x
-operator|=
-literal|0
-expr_stmt|;
+comment|/* maybe its not so bizare. area is always 2 wider and      2 taller than the brush image. No idea why */
 if|if
 condition|(
 name|area
@@ -1162,11 +1158,41 @@ operator|-
 name|destPR
 operator|.
 name|h
+operator|+
+literal|1
 expr_stmt|;
 else|else
 name|offset_y
 operator|=
+operator|-
+literal|1
+expr_stmt|;
+if|if
+condition|(
+name|area
+operator|->
+name|x
+operator|==
 literal|0
+condition|)
+block|{
+name|offset_x
+operator|=
+name|destPR
+operator|.
+name|w
+operator|-
+literal|1
+expr_stmt|;
+name|offset_y
+operator|++
+expr_stmt|;
+comment|/* uh, i havent a clue. but it works */
+block|}
+else|else
+name|offset_x
+operator|=
+literal|1
 expr_stmt|;
 for|for
 control|(
@@ -1205,8 +1231,6 @@ name|y
 operator|++
 control|)
 block|{
-comment|/* 	  printf(" brush->width: %i offset_x: %i", brush->pixmap_mask->width, offset_x); */
-comment|/* 	  printf(" area->y: %i destPR.h: %i area->x: %i destPR.w: %i ",area->y, destPR.h, area->x, destPR.w);  */
 name|paint_line_pixmap_mask
 argument_list|(
 name|dest
@@ -1248,7 +1272,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paint_line_pixmap_mask (GImage * dest,GimpDrawable * drawable,GimpBrushPixmap * brush,unsigned char * d,int x,int offset_x,int y,int offset_y,int bytes,int width)
 name|paint_line_pixmap_mask
@@ -1305,6 +1328,9 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
+name|int
+name|temp
+decl_stmt|;
 comment|/* point to the approriate scanline */
 comment|/* use "pat" here because i'm c&p from pattern clone */
 name|pat
@@ -1336,7 +1362,6 @@ operator|->
 name|bytes
 operator|)
 expr_stmt|;
-comment|/*   dest = d +  (y * brush->pixmap_mask->width * brush->pixmap_mask->bytes); */
 name|color
 operator|=
 name|RGB
@@ -1367,17 +1392,9 @@ operator|=
 name|pat
 operator|+
 operator|(
-operator|(
 name|i
 operator|-
 name|offset_x
-operator|)
-operator|%
-name|brush
-operator|->
-name|pixmap_mask
-operator|->
-name|width
 operator|)
 operator|*
 name|brush
@@ -1386,7 +1403,15 @@ name|pixmap_mask
 operator|->
 name|bytes
 expr_stmt|;
-comment|/* printf("d->r: %i d->g: %i d->b: %i d->a: %i\n",(int)d[0], (int)d[1], (int)d[2], (int)d[3]); */
+comment|/* pretty sure this is wrong. I think we get artifacts because of it */
+name|d
+index|[
+name|alpha
+index|]
+operator|=
+literal|255
+expr_stmt|;
+comment|/* printf("i: %i d->r: %i d->g: %i d->b: %i d->a: %i\n",i,(int)d[0], (int)d[1], (int)d[2], (int)d[3]); */
 name|gimage_transform_color
 argument_list|(
 name|dest
@@ -1399,13 +1424,6 @@ name|d
 argument_list|,
 name|color
 argument_list|)
-expr_stmt|;
-name|d
-index|[
-name|alpha
-index|]
-operator|=
-literal|255
 expr_stmt|;
 name|d
 operator|+=

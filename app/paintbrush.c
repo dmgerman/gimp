@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushhose.h"
+file|"gimpbrushpipe.h"
 end_include
 
 begin_include

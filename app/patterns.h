@@ -25,6 +25,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"temp_buf.h"
 end_include
 
@@ -154,6 +160,28 @@ name|void
 name|pattern_select_dialog_free
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* this is useful for pixmap brushes etc */
+end_comment
+
+begin_function_decl
+name|int
+name|load_pattern_pattern
+parameter_list|(
+name|GPatternP
+name|pattern
+parameter_list|,
+name|FILE
+modifier|*
+name|fp
+parameter_list|,
+name|gchar
+modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
