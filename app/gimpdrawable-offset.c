@@ -95,26 +95,10 @@ name|ENTRY_WIDTH
 value|60
 end_define
 
-begin_define
-DECL|macro|OFFSET_BACKGROUND
-define|#
-directive|define
-name|OFFSET_BACKGROUND
-value|0
-end_define
-
-begin_define
-DECL|macro|OFFSET_TRANSPARENT
-define|#
-directive|define
-name|OFFSET_TRANSPARENT
-value|1
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c045baf0108
+DECL|struct|__anon2a9b8ee30108
 block|{
 DECL|member|dlg
 name|GtkWidget

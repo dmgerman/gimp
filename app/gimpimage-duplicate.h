@@ -28,6 +28,22 @@ directive|include
 file|"gimpimageF.h"
 end_include
 
+begin_typedef
+DECL|enum|__anon27caf2f50103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|OFFSET_BACKGROUND
+name|OFFSET_BACKGROUND
+block|,
+DECL|enumerator|OFFSET_TRANSPARENT
+name|OFFSET_TRANSPARENT
+DECL|typedef|ChannelOffsetType
+block|}
+name|ChannelOffsetType
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  channel_ops functions  */
 end_comment

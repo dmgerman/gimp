@@ -29,7 +29,23 @@ file|"procedural_db.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon28dc05dd0108
+DECL|enum|__anon2c03e5e20103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|PIXELS
+name|PIXELS
+block|,
+DECL|enumerator|POINTS
+name|POINTS
+DECL|typedef|SizeType
+block|}
+name|SizeType
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|struct|__anon2c03e5e20208
 typedef|typedef
 struct|struct
 block|{

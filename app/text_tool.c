@@ -166,22 +166,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|PIXELS
-define|#
-directive|define
-name|PIXELS
-value|0
-end_define
-
-begin_define
-DECL|macro|POINTS
-define|#
-directive|define
-name|POINTS
-value|1
-end_define
-
-begin_define
 DECL|macro|FOUNDRY
 define|#
 directive|define

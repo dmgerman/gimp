@@ -39,7 +39,7 @@ comment|/* adam's extra palette stuff */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296734120103
+DECL|enum|__anon2b274fdc0103
 typedef|typedef
 enum|enum
 block|{
@@ -62,6 +62,14 @@ block|}
 name|ConvertPaletteType
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|MAXNUMCOLORS
+define|#
+directive|define
+name|MAXNUMCOLORS
+value|256
+end_define
 
 begin_comment
 comment|/*  convert functions  */
@@ -97,35 +105,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
+begin_function_decl
+name|void
+name|convert_image
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_decl_stmt
 specifier|extern
-name|ProcRecord
-name|convert_rgb_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|convert_grayscale_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|convert_indexed_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|convert_indexed_palette_proc
+name|PaletteEntriesP
+name|theCustomPalette
 decl_stmt|;
 end_decl_stmt
 

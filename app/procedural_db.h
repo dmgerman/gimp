@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimageF.h"
 end_include
 
@@ -29,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3764ae0103
+DECL|enum|__anon2b65bf3f0103
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -112,7 +118,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3764ae0203
+DECL|enum|__anon2b65bf3f0203
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -138,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3764ae0303
+DECL|enum|__anon2b65bf3f0303
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL
