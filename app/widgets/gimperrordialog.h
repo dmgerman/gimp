@@ -121,6 +121,10 @@ name|gchar
 modifier|*
 name|last_message
 decl_stmt|;
+DECL|member|num_messages
+name|gint
+name|num_messages
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -167,7 +171,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|void
 name|gimp_error_dialog_add
 parameter_list|(
 name|GimpErrorDialog
