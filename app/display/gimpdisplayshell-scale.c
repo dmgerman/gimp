@@ -1811,7 +1811,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c892dd60108
+DECL|struct|__anon28dd06960108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -2103,10 +2103,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
+operator|(
 name|shell
 operator|->
 name|other_scale
+operator|&
+literal|0xFFFF
+operator|)
+operator|==
+literal|0
 condition|)
 name|shell
 operator|->
