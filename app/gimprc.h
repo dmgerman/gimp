@@ -28,6 +28,12 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpunit.h"
+end_include
+
 begin_comment
 comment|/*  global gimprc variables  */
 end_comment
@@ -258,8 +264,8 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
-name|ruler_units
+name|GUnit
+name|default_units
 decl_stmt|;
 end_decl_stmt
 
@@ -309,15 +315,22 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
-name|default_resolution
+name|GUnit
+name|default_resolution_units
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
-name|default_resolution_units
+name|float
+name|default_xresolution
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|float
+name|default_yresolution
 decl_stmt|;
 end_decl_stmt
 

@@ -102,7 +102,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon28d552d80108
+DECL|struct|__anon2b72d56c0108
 typedef|typedef
 struct|struct
 block|{
@@ -355,54 +355,6 @@ name|gboolean
 name|last_new_image
 init|=
 name|TRUE
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* these are temps that should be set in gimprc eventually */
-end_comment
-
-begin_comment
-comment|/*  FIXME */
-end_comment
-
-begin_decl_stmt
-DECL|variable|default_xresolution
-specifier|static
-name|float
-name|default_xresolution
-init|=
-literal|72
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|default_yresolution
-specifier|static
-name|float
-name|default_yresolution
-init|=
-literal|72
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|default_unit
-specifier|static
-name|GUnit
-name|default_unit
-init|=
-name|UNIT_INCH
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|default_res_unit
-specifier|static
-name|GUnit
-name|default_res_unit
-init|=
-name|UNIT_INCH
 decl_stmt|;
 end_decl_stmt
 
@@ -1158,6 +1110,29 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+else|else
+block|{
+if|if
+condition|(
+name|new_xres
+operator|!=
+name|xres
+condition|)
+name|xres
+operator|=
+name|new_xres
+expr_stmt|;
+if|if
+condition|(
+name|new_yres
+operator|!=
+name|yres
+condition|)
+name|yres
+operator|=
+name|new_yres
+expr_stmt|;
+block|}
 block|}
 name|gimp_size_entry_set_resolution
 argument_list|(
@@ -1255,12 +1230,6 @@ name|GSList
 modifier|*
 name|group
 decl_stmt|;
-comment|/* this value is from gimprc.h */
-name|default_res_unit
-operator|=
-name|UNIT_INCH
-expr_stmt|;
-comment|/* ruler_units; */
 if|if
 condition|(
 operator|!
@@ -1283,20 +1252,19 @@ name|last_xresolution
 operator|=
 name|default_xresolution
 expr_stmt|;
-comment|/* this isnt set in gimprc yet */
+comment|/* these values are taken */
 name|last_yresolution
 operator|=
 name|default_yresolution
 expr_stmt|;
-comment|/* this isnt set in gimprc yet */
+comment|/* from gimprc            */
 name|last_unit
 operator|=
-name|default_unit
+name|default_units
 expr_stmt|;
-comment|/* not in gimprc either, inches for now */
 name|last_res_unit
 operator|=
-name|default_res_unit
+name|default_resolution_units
 expr_stmt|;
 name|new_dialog_run
 operator|=
