@@ -459,17 +459,17 @@ init|=
 block|{
 literal|"gimp_flip"
 block|,
-literal|"Flip the specified drawable about its center either vertically or horizontally."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_flip_simple' instead."
 block|,
-literal|"This tool flips the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipd by the specified amount. The return value is the ID of the flipped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and flipped drawable. The flip type parameter indicates whether the flip will be applied horizontally or vertically."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_flip_simple' instead."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
-name|NULL
+literal|"gimp_drawable_transform_flip_simple"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1035,18 +1035,17 @@ init|=
 block|{
 literal|"gimp_perspective"
 block|,
-literal|"Perform a possibly non-affine transformation on the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_perspective_defaults' instead."
 block|,
-literal|"This tool performs a possibly non-affine transformation on the specified drawable by allowing the corners of the original bounding box to be arbitrarily remapped to any values. The specified drawable is remapped if no selection exists. However, if a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then remapped as specified. The interpolation parameter can be set to TRUE to indicate that either linear or cubic interpolation should be used to smooth the resulting remapped drawable. The return value is the ID of the remapped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and remapped drawable. The 4 coordinates specify the new locations of each corner of the original bounding box. By specifying these values, any affine transformation (rotation, scaling, translation) can be affected. Additionally,"
-literal|"these values can be specified such that the resulting transformed drawable will appear to have been projected via a perspective transform."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_perspective_defaults' instead."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
-name|NULL
+literal|"gimp_drawable_transform_perspective_defaults"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1414,17 +1413,17 @@ init|=
 block|{
 literal|"gimp_rotate"
 block|,
-literal|"Rotate the specified drawable about its center through the specified angle."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_rotate_defaults' instead."
 block|,
-literal|"This tool rotates the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then rotated by the specified amount. The interpolation parameter can be set to TRUE to indicate that either linear or cubic interpolation should be used to smooth the resulting rotated drawable. The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and rotated drawable."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_rotate_defaults' instead."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
-name|NULL
+literal|"gimp_drawable_transform_rotate_defaults"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1914,17 +1913,17 @@ init|=
 block|{
 literal|"gimp_scale"
 block|,
-literal|"Scale the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_scale_defaults' instead."
 block|,
-literal|"This tool scales the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then scaled by the specified amount. The interpolation parameter can be set to TRUE to indicate that either linear or cubic interpolation should be used to smooth the resulting scaled drawable. The return value is the ID of the scaled drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and scaled drawable."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_scale_defaults' instead."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
-name|NULL
+literal|"gimp_drawable_transform_scale_defaults"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2330,17 +2329,17 @@ init|=
 block|{
 literal|"gimp_shear"
 block|,
-literal|"Shear the specified drawable about its center by the specified magnitude."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_shear_defaults' instead."
 block|,
-literal|"This tool shears the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then sheard by the specified amount. The interpolation parameter can be set to TRUE to indicate that either linear or cubic interpolation should be used to smooth the resulting sheared drawable. The return value is the ID of the sheard drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and sheard drawable. The shear type parameter indicates whether the shear will be applied horizontally or vertically. The magnitude can be either positive or negative and indicates the extent (in pixels) to shear by."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_shear_defaults' instead."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
-name|NULL
+literal|"gimp_drawable_transform_shear_defaults"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2870,17 +2869,17 @@ init|=
 block|{
 literal|"gimp_transform_2d"
 block|,
-literal|"Transform the specified drawable in 2d."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_2d_defaults' instead."
 block|,
-literal|"This tool transforms the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then transformed. The interpolation parameter can be set to TRUE to indicate that either linear or cubic interpolation should be used to smooth the resulting drawable. The transformation is done by scaling the image by the x and y scale factors about the point (source_x, source_y), then rotating around the same point, then translating that point to the new position (dest_x, dest_y). The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and transformed drawable."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_2d_defaults' instead."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
-name|NULL
+literal|"gimp_drawable_transform_2d_defaults"
 block|,
 name|GIMP_INTERNAL
 block|,
