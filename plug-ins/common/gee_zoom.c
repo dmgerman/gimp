@@ -719,15 +719,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|build_dialog (GimpImageBaseType basetype,gchar * imagename)
+DECL|function|build_dialog (void)
 name|build_dialog
 parameter_list|(
-name|GimpImageBaseType
-name|basetype
-parameter_list|,
-name|gchar
-modifier|*
-name|imagename
+name|void
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1385,17 +1380,7 @@ name|init_preview_misc
 argument_list|()
 expr_stmt|;
 name|build_dialog
-argument_list|(
-name|gimp_image_base_type
-argument_list|(
-name|image_id
-argument_list|)
-argument_list|,
-name|gimp_image_get_filename
-argument_list|(
-name|image_id
-argument_list|)
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|init_lut
 argument_list|()

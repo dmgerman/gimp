@@ -2383,7 +2383,6 @@ operator|==
 name|NULL
 condition|)
 block|{
-comment|/* note: gimp versions> 1.2  have default filenames for new created images       * and we'll probably never step into this place anymore       */
 name|l_ainfo_ptr
 operator|->
 name|old_filename

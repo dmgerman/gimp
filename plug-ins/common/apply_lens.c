@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed79cf0108
+DECL|struct|__anon2914a8eb0108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -199,7 +199,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed79cf0208
+DECL|struct|__anon2914a8eb0208
 block|{
 DECL|member|run
 name|gint
@@ -1732,12 +1732,6 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|GSList
-modifier|*
-name|group
-init|=
-name|NULL
-decl_stmt|;
 name|GimpImageType
 name|drawtype
 decl_stmt|;
@@ -1910,23 +1904,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic_from_widget
 argument_list|(
-name|group
+name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep Original Surroundings"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|gtk_radio_button_get_group
-argument_list|(
-name|GTK_RADIO_BUTTON
-argument_list|(
-name|toggle
+literal|"_Keep Original Surroundings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1985,9 +1969,12 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic_from_widget
 argument_list|(
-name|group
+name|GTK_RADIO_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
 argument_list|,
 name|drawtype
 operator|==
@@ -1999,22 +1986,12 @@ name|GIMP_INDEXED_IMAGE
 condition|?
 name|_
 argument_list|(
-literal|"Set Surroundings to Index 0"
+literal|"_Set Surroundings to Index 0"
 argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"Set Surroundings to Background Color"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|gtk_radio_button_get_group
-argument_list|(
-name|GTK_RADIO_BUTTON
-argument_list|(
-name|toggle
+literal|"_Set Surroundings to Background Color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2094,23 +2071,16 @@ condition|)
 block|{
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
-argument_list|(
-name|group
-argument_list|,
-name|_
-argument_list|(
-literal|"Make Surroundings Transparent"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|gtk_radio_button_get_group
+name|gtk_radio_button_new_with_mnemonic_from_widget
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
 name|toggle
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"_Make Surroundings Transparent"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2221,11 +2191,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Lens Refraction Index:"
+literal|"_Lens Refraction Index:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2294,6 +2264,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;

@@ -87,7 +87,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8d0280108
+DECL|struct|__anon2b616a9c0108
 block|{
 DECL|member|xblock
 name|gint
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8d0280208
+DECL|struct|__anon2b616a9c0208
 block|{
 DECL|member|run
 name|gint
@@ -1257,7 +1257,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile Width:"
+literal|"Tile _Width:"
 argument_list|)
 argument_list|,
 literal|150
@@ -1342,7 +1342,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile Height:"
+literal|"Tile _Height:"
 argument_list|)
 argument_list|,
 literal|150

@@ -336,10 +336,10 @@ comment|/* image ID */
 end_comment
 
 begin_decl_stmt
-DECL|variable|image_filename
+DECL|variable|image_name
 name|gchar
 modifier|*
-name|image_filename
+name|image_name
 decl_stmt|;
 end_decl_stmt
 
@@ -1199,32 +1199,12 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|image_filename
+name|image_name
 operator|=
-name|gimp_image_get_filename
+name|gimp_image_get_name
 argument_list|(
 name|image_ID
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|strchr
-argument_list|(
-name|image_filename
-argument_list|,
-literal|'/'
-argument_list|)
-condition|)
-name|image_filename
-operator|=
-name|strrchr
-argument_list|(
-name|image_filename
-argument_list|,
-literal|'/'
-argument_list|)
-operator|+
-literal|1
 expr_stmt|;
 comment|/*  eventually export the image */
 switch|switch

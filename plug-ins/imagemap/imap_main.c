@@ -817,7 +817,7 @@ argument_list|)
 expr_stmt|;
 name|_image_name
 operator|=
-name|gimp_image_get_filename
+name|gimp_image_get_name
 argument_list|(
 name|param
 index|[

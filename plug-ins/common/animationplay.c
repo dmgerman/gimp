@@ -203,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e56b2d0103
+DECL|enum|__anon28c474290103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -2092,13 +2092,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|build_dialog (GimpImageBaseType basetype,char * imagename)
+DECL|function|build_dialog (GimpImageBaseType basetype,gchar * imagename)
 name|build_dialog
 parameter_list|(
 name|GimpImageBaseType
 name|basetype
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|imagename
 parameter_list|)
@@ -3405,7 +3405,7 @@ argument_list|(
 name|image_id
 argument_list|)
 argument_list|,
-name|gimp_image_get_filename
+name|gimp_image_get_name
 argument_list|(
 name|image_id
 argument_list|)

@@ -2332,7 +2332,7 @@ argument_list|(
 literal|"%s -- Print v%s"
 argument_list|)
 argument_list|,
-name|image_filename
+name|image_name
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|)

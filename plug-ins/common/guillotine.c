@@ -550,6 +550,21 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|filename
+condition|)
+name|filename
+operator|=
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"Untitled"
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Do the actual dup'ing and cropping... this isn't a too naive a 	 way to do this since we got copy-on-write tiles, either. */
 for|for
 control|(

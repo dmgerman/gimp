@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298e3a290108
+DECL|struct|__anon2babd2820108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -1400,7 +1400,7 @@ name|docInfo
 operator|.
 name|lpszDocName
 operator|=
-name|gimp_image_get_filename
+name|gimp_image_get_name
 argument_list|(
 name|param
 index|[

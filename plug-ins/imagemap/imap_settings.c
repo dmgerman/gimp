@@ -1005,16 +1005,7 @@ operator|->
 name|filename
 argument_list|)
 argument_list|,
-operator|(
 name|filename
-operator|)
-condition|?
-name|filename
-else|:
-name|_
-argument_list|(
-literal|"<Untitled>"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|browse_widget_set_filename
