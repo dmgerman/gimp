@@ -589,11 +589,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2af61bdb0108
 struct|struct
+DECL|struct|__anon29a5a83f0108
 block|{
 DECL|member|announce_function
-name|char
+name|gchar
 name|announce_function
 decl_stmt|;
 DECL|variable|gimp_composite_debug
@@ -616,7 +616,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|gimp_composite_function_name
-name|char
+name|gchar
 modifier|*
 name|gimp_composite_function_name
 index|[
@@ -894,7 +894,8 @@ block|}
 end_function
 
 begin_function
-name|char
+specifier|const
+name|gchar
 modifier|*
 DECL|function|gimp_composite_mode_astext (GimpCompositeOperation op)
 name|gimp_composite_mode_astext
@@ -1176,7 +1177,8 @@ block|}
 end_function
 
 begin_function
-name|char
+specifier|const
+name|gchar
 modifier|*
 DECL|function|gimp_composite_pixelformat_astext (GimpPixelFormat f)
 name|gimp_composite_pixelformat_astext
@@ -1338,9 +1340,6 @@ name|gchar
 modifier|*
 name|p
 decl_stmt|;
-name|guint32
-name|cpu
-decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -1411,11 +1410,12 @@ name|GIMP_COMPOSITE_OPTION_INITIALISED
 operator|)
 condition|)
 block|{
+name|guint32
 name|cpu
-operator|=
+init|=
 name|cpu_accel
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 ifdef|#
 directive|ifdef
 name|ARCH_X86
@@ -1451,8 +1451,7 @@ name|cpu
 operator|&
 name|CPU_ACCEL_X86_SSE
 operator|||
-name|cpu_accel
-argument_list|()
+name|cpu
 operator|&
 name|CPU_ACCEL_X86_MMXEXT
 condition|)
