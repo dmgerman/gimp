@@ -306,10 +306,10 @@ modifier|*
 name|text
 parameter_list|,
 name|gint
-name|scale_usize
+name|scale_width
 parameter_list|,
 name|gint
-name|spinbutton_usize
+name|spinbutton_width
 parameter_list|,
 name|gfloat
 name|value
@@ -423,7 +423,7 @@ name|gboolean
 name|menu_show_percent
 parameter_list|,
 name|gint
-name|spinbutton_usize
+name|spinbutton_width
 parameter_list|,
 name|GimpSizeEntryUpdatePolicy
 name|update_policy

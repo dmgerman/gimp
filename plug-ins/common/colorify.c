@@ -192,7 +192,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af915080108
+DECL|struct|__anon29a557950108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -207,7 +207,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af915080208
+DECL|struct|__anon29a557950208
 block|{
 DECL|member|run
 name|gboolean
@@ -1616,7 +1616,7 @@ argument_list|,
 name|GDK_BUTTON2_MASK
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

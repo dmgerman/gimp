@@ -113,10 +113,10 @@ name|GtkWidget
 modifier|*
 name|selection
 decl_stmt|;
-DECL|member|clist
+DECL|member|tv
 name|GtkWidget
 modifier|*
-name|clist
+name|tv
 decl_stmt|;
 block|}
 struct|;

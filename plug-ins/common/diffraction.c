@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd6f6b0108
+DECL|struct|__anon27b7533b0108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd6f6b0208
+DECL|struct|__anon27b7533b0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -2340,7 +2340,7 @@ operator|=
 name|gtk_progress_bar_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|dint
 operator|.

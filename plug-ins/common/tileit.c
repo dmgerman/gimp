@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1ccf880108
+DECL|struct|__anon2c0c1e560108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -563,7 +563,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1ccf880203
+DECL|enum|__anon2c0c1e560203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1ccf880308
+DECL|struct|__anon2c0c1e560308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -652,7 +652,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1ccf880408
+DECL|struct|__anon2c0c1e560408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -2447,7 +2447,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -2629,7 +2629,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,

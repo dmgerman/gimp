@@ -22238,7 +22238,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29146d4c0108
+DECL|struct|__anon291070ef0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22341,7 +22341,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29146d4c0208
+DECL|struct|__anon291070ef0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -27037,7 +27037,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,

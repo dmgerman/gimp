@@ -60,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a331f0103
+DECL|enum|__anon288cb1960103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -693,13 +693,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_new:  * @number_of_fields:  The number of input fields.  * @unit:              The initial unit.  * @unit_format:       A printf-like unit-format string (see #GimpUnitMenu).  * @menu_show_pixels:  #TRUE if the unit menu shold contain an item for  *                     GIMP_UNIT_PIXEL (ignored if the @update_policy is not  *                     GIMP_SIZE_ENTRY_UPDATE_NONE).  * @menu_show_percent: #TRUE if the unit menu shold contain an item for  *                     GIMP_UNIT_PERCENT.  * @show_refval:       #TRUE if you want an extra "refenence value"  *                     spinbutton per input field.  * @spinbutton_usize:  The minimal horizontal size of the #GtkSpinButton's.  * @update_policy:     How the automatic pixel<-> real-world-unit calculations  *                     should be performed.  *  * Creates a new #GimpSizeEntry widget.  *  * To have all automatic calculations performed correctly, set up the  * widget in the following order:  *  * 1. gimp_size_entry_new()  *  * 2. (for each additional input field) gimp_size_entry_add_field()  *  * 3. gimp_size_entry_set_unit()  *  * For each input field:  *  * 4. gimp_size_entry_set_resolution()  *  * 5. gimp_size_entry_set_refval_boundaries()  *    (or gimp_size_entry_set_value_boundaries())  *  * 6. gimp_size_entry_set_size()  *  * 7. gimp_size_entry_set_refval() (or gimp_size_entry_set_value())  *  * The #GimpSizeEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitMenu to allow the caller to add labels or a #GimpChainButton.  *  * Returns: A Pointer to the new #GimpSizeEntry widget.  **/
+comment|/**  * gimp_size_entry_new:  * @number_of_fields:  The number of input fields.  * @unit:              The initial unit.  * @unit_format:       A printf-like unit-format string (see #GimpUnitMenu).  * @menu_show_pixels:  #TRUE if the unit menu shold contain an item for  *                     GIMP_UNIT_PIXEL (ignored if the @update_policy is not  *                     GIMP_SIZE_ENTRY_UPDATE_NONE).  * @menu_show_percent: #TRUE if the unit menu shold contain an item for  *                     GIMP_UNIT_PERCENT.  * @show_refval:       #TRUE if you want an extra "refenence value"  *                     spinbutton per input field.  * @spinbutton_width:  The minimal horizontal size of the #GtkSpinButton's.  * @update_policy:     How the automatic pixel<-> real-world-unit calculations  *                     should be performed.  *  * Creates a new #GimpSizeEntry widget.  *  * To have all automatic calculations performed correctly, set up the  * widget in the following order:  *  * 1. gimp_size_entry_new()  *  * 2. (for each additional input field) gimp_size_entry_add_field()  *  * 3. gimp_size_entry_set_unit()  *  * For each input field:  *  * 4. gimp_size_entry_set_resolution()  *  * 5. gimp_size_entry_set_refval_boundaries()  *    (or gimp_size_entry_set_value_boundaries())  *  * 6. gimp_size_entry_set_size()  *  * 7. gimp_size_entry_set_refval() (or gimp_size_entry_set_value())  *  * The #GimpSizeEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitMenu to allow the caller to add labels or a #GimpChainButton.  *  * Returns: A Pointer to the new #GimpSizeEntry widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_size_entry_new (gint number_of_fields,GimpUnit unit,const gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,gint spinbutton_usize,GimpSizeEntryUpdatePolicy update_policy)
+DECL|function|gimp_size_entry_new (gint number_of_fields,GimpUnit unit,const gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,gint spinbutton_width,GimpSizeEntryUpdatePolicy update_policy)
 name|gimp_size_entry_new
 parameter_list|(
 name|gint
@@ -723,7 +723,7 @@ name|gboolean
 name|show_refval
 parameter_list|,
 name|gint
-name|spinbutton_usize
+name|spinbutton_width
 parameter_list|,
 name|GimpSizeEntryUpdatePolicy
 name|update_policy
@@ -1053,15 +1053,16 @@ name|unit
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|gsef
 operator|->
 name|value_spinbutton
 argument_list|,
-name|spinbutton_usize
+name|spinbutton_width
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
@@ -1174,15 +1175,16 @@ operator|->
 name|refval_digits
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|gsef
 operator|->
 name|refval_spinbutton
 argument_list|,
-name|spinbutton_usize
+name|spinbutton_width
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults

@@ -1495,7 +1495,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -1563,13 +1563,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scale_entry_new:  * @table:               The #GtkTable the widgets will be attached to.  * @column:              The column to start with.  * @row:                 The row to attach the widgets.  * @text:                The text for the #GtkLabel which will appear  *                       left of the #GtkHScale.  * @scale_usize:         The minimum horizontal size of the #GtkHScale.  * @spinbutton_usize:    The minimum horizontal size of the #GtkSpinButton.  * @value:               The initial value.  * @lower:               The lower boundary.  * @upper:               The upper boundary.  * @step_increment:      The step increment.  * @page_increment:      The page increment.  * @digits:              The number of decimal digits.  * @constrain:           #TRUE if the range of possible values of the  *                       #GtkSpinButton should be the same as of the #GtkHScale.  * @unconstrained_lower: The spinbutton's lower boundary  *                       if @constrain == #FALSE.  * @unconstrained_upper: The spinbutton's upper boundary  *                       if @constrain == #FALSE.  * @tooltip:             A tooltip message for the scale and the spinbutton.  * @help_data:           The widgets' help_data (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GtkHScale and a #GtkSpinButton and  * attaches them to a 3-column #GtkTable.  *  * Note that if you pass a @tooltip or @help_data to this function you'll  * have to initialize GIMP's help system with gimp_help_init() before using it.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  **/
+comment|/**  * gimp_scale_entry_new:  * @table:               The #GtkTable the widgets will be attached to.  * @column:              The column to start with.  * @row:                 The row to attach the widgets.  * @text:                The text for the #GtkLabel which will appear  *                       left of the #GtkHScale.  * @scale_width:         The minimum horizontal size of the #GtkHScale.  * @spinbutton_width:    The minimum horizontal size of the #GtkSpinButton.  * @value:               The initial value.  * @lower:               The lower boundary.  * @upper:               The upper boundary.  * @step_increment:      The step increment.  * @page_increment:      The page increment.  * @digits:              The number of decimal digits.  * @constrain:           #TRUE if the range of possible values of the  *                       #GtkSpinButton should be the same as of the #GtkHScale.  * @unconstrained_lower: The spinbutton's lower boundary  *                       if @constrain == #FALSE.  * @unconstrained_upper: The spinbutton's upper boundary  *                       if @constrain == #FALSE.  * @tooltip:             A tooltip message for the scale and the spinbutton.  * @help_data:           The widgets' help_data (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GtkHScale and a #GtkSpinButton and  * attaches them to a 3-column #GtkTable.  *  * Note that if you pass a @tooltip or @help_data to this function you'll  * have to initialize GIMP's help system with gimp_help_init() before using it.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  **/
 end_comment
 
 begin_function
 name|GtkObject
 modifier|*
-DECL|function|gimp_scale_entry_new (GtkTable * table,gint column,gint row,const gchar * text,gint scale_usize,gint spinbutton_usize,gfloat value,gfloat lower,gfloat upper,gfloat step_increment,gfloat page_increment,guint digits,gboolean constrain,gfloat unconstrained_lower,gfloat unconstrained_upper,const gchar * tooltip,const gchar * help_data)
+DECL|function|gimp_scale_entry_new (GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gfloat value,gfloat lower,gfloat upper,gfloat step_increment,gfloat page_increment,guint digits,gboolean constrain,gfloat unconstrained_lower,gfloat unconstrained_upper,const gchar * tooltip,const gchar * help_data)
 name|gimp_scale_entry_new
 parameter_list|(
 name|GtkTable
@@ -1588,10 +1588,10 @@ modifier|*
 name|text
 parameter_list|,
 name|gint
-name|scale_usize
+name|scale_width
 parameter_list|,
 name|gint
-name|spinbutton_usize
+name|spinbutton_width
 parameter_list|,
 name|gfloat
 name|value
@@ -1840,15 +1840,15 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|spinbutton_usize
+name|spinbutton_width
 operator|>
 literal|0
 condition|)
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
-name|spinbutton_usize
+name|spinbutton_width
 argument_list|,
 operator|-
 literal|1
@@ -1866,15 +1866,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|scale_usize
+name|scale_width
 operator|>
 literal|0
 condition|)
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|scale
 argument_list|,
-name|scale_usize
+name|scale_width
 argument_list|,
 operator|-
 literal|1
@@ -2419,7 +2419,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be64d450108
+DECL|struct|__anon2800d08d0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2757,13 +2757,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_coordinates_new:  * @unit:                   The initial unit of the #GimpUnitMenu.  * @unit_format:            The unit format string as passed to  *                          gimp_size_entry_new().  * @menu_show_pixels:       #TRUE if the #GimpUnitMenu should contain an item for  *                          GIMP_UNIT_PIXEL.  * @menu_show_percent:      #TRUE if the #GimpUnitMenu should contain an item for  *                          GIMP_UNIT_PERCENT.  * @spinbutton_usize:       The horizontal usize of the #GimpSizeEntry's  *                           #GtkSpinButton's.  * @update_policy:          The update policy for the #GimpSizeEntry.  * @chainbutton_active:     #TRUE if the attached #GimpChainButton should be  *                          active.  * @chain_constrains_ratio: #TRUE if the chainbutton should constrain the  *                          fields' aspect ratio. If #FALSE, the values will  *                          be constrained.  * @xlabel:                 The label for the X coordinate.  * @x:                      The initial value of the X coordinate.  * @xres:                   The horizontal resolution in DPI.  * @lower_boundary_x:       The lower boundary of the X coordinate.  * @upper_boundary_x:       The upper boundary of the X coordinate.  * @xsize_0:                The X value which will be treated as 0%.  * @xsize_100:              The X value which will be treated as 100%.  * @ylabel:                 The label for the Y coordinate.  * @y:                      The initial value of the Y coordinate.  * @yres:                   The vertical resolution in DPI.  * @lower_boundary_y:       The lower boundary of the Y coordinate.  * @upper_boundary_y:       The upper boundary of the Y coordinate.  * @ysize_0:                The Y value which will be treated as 0%.  * @ysize_100:              The Y value which will be treated as 100%.  *  * Returns: A #GimpSizeEntry with two fields for x/y coordinates/sizes with  *          a #GimpChainButton attached to constrain either the two fields'  *          values or the ratio between them.  **/
+comment|/**  * gimp_coordinates_new:  * @unit:                   The initial unit of the #GimpUnitMenu.  * @unit_format:            The unit format string as passed to  *                          gimp_size_entry_new().  * @menu_show_pixels:       #TRUE if the #GimpUnitMenu should contain an item for  *                          GIMP_UNIT_PIXEL.  * @menu_show_percent:      #TRUE if the #GimpUnitMenu should contain an item for  *                          GIMP_UNIT_PERCENT.  * @spinbutton_width:       The horizontal size of the #GimpSizeEntry's  *                           #GtkSpinButton's.  * @update_policy:          The update policy for the #GimpSizeEntry.  * @chainbutton_active:     #TRUE if the attached #GimpChainButton should be  *                          active.  * @chain_constrains_ratio: #TRUE if the chainbutton should constrain the  *                          fields' aspect ratio. If #FALSE, the values will  *                          be constrained.  * @xlabel:                 The label for the X coordinate.  * @x:                      The initial value of the X coordinate.  * @xres:                   The horizontal resolution in DPI.  * @lower_boundary_x:       The lower boundary of the X coordinate.  * @upper_boundary_x:       The upper boundary of the X coordinate.  * @xsize_0:                The X value which will be treated as 0%.  * @xsize_100:              The X value which will be treated as 100%.  * @ylabel:                 The label for the Y coordinate.  * @y:                      The initial value of the Y coordinate.  * @yres:                   The vertical resolution in DPI.  * @lower_boundary_y:       The lower boundary of the Y coordinate.  * @upper_boundary_y:       The upper boundary of the Y coordinate.  * @ysize_0:                The Y value which will be treated as 0%.  * @ysize_100:              The Y value which will be treated as 100%.  *  * Returns: A #GimpSizeEntry with two fields for x/y coordinates/sizes with  *          a #GimpChainButton attached to constrain either the two fields'  *          values or the ratio between them.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_coordinates_new (GimpUnit unit,const gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gint spinbutton_usize,GimpSizeEntryUpdatePolicy update_policy,gboolean chainbutton_active,gboolean chain_constrains_ratio,const gchar * xlabel,gdouble x,gdouble xres,gdouble lower_boundary_x,gdouble upper_boundary_x,gdouble xsize_0,gdouble xsize_100,const gchar * ylabel,gdouble y,gdouble yres,gdouble lower_boundary_y,gdouble upper_boundary_y,gdouble ysize_0,gdouble ysize_100)
+DECL|function|gimp_coordinates_new (GimpUnit unit,const gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gint spinbutton_width,GimpSizeEntryUpdatePolicy update_policy,gboolean chainbutton_active,gboolean chain_constrains_ratio,const gchar * xlabel,gdouble x,gdouble xres,gdouble lower_boundary_x,gdouble upper_boundary_x,gdouble xsize_0,gdouble xsize_100,const gchar * ylabel,gdouble y,gdouble yres,gdouble lower_boundary_y,gdouble upper_boundary_y,gdouble ysize_0,gdouble ysize_100)
 name|gimp_coordinates_new
 parameter_list|(
 name|GimpUnit
@@ -2781,7 +2781,7 @@ name|gboolean
 name|menu_show_percent
 parameter_list|,
 name|gint
-name|spinbutton_usize
+name|spinbutton_width
 parameter_list|,
 name|GimpSizeEntryUpdatePolicy
 name|update_policy
@@ -2903,7 +2903,7 @@ name|menu_show_percent
 argument_list|,
 name|FALSE
 argument_list|,
-name|spinbutton_usize
+name|spinbutton_width
 argument_list|,
 name|update_policy
 argument_list|)
@@ -3299,7 +3299,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be64d450208
+DECL|struct|__anon2800d08d0208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment

@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4455c40108
+DECL|struct|__anon296d39740108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4455c40208
+DECL|struct|__anon296d39740208
 block|{
 DECL|member|y
 name|gint32
@@ -6664,7 +6664,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,

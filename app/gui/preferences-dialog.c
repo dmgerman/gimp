@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba9d4070103
+DECL|enum|__anon2b02392f0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -6257,6 +6257,12 @@ argument_list|(
 operator|&
 name|val
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_value_unset
+argument_list|(
+operator|&
+name|val
 argument_list|)
 expr_stmt|;
 block|}
@@ -13735,7 +13741,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ba9d4070208
+DECL|struct|__anon2b02392f0208
 block|{
 DECL|member|label
 name|gchar
@@ -13964,7 +13970,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ba9d4070308
+DECL|struct|__anon2b02392f0308
 block|{
 DECL|member|tree_label
 name|gchar

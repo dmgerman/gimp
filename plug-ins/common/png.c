@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279e97be0108
+DECL|struct|__anon277f48270108
 block|{
 DECL|member|interlaced
 name|gint
@@ -4763,13 +4763,14 @@ name|scale_data
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|scale
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_value_pos

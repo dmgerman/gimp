@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6296f10108
+DECL|struct|__anon2a073e140108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6296f10208
+DECL|struct|__anon2a073e140208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6296f10308
+DECL|struct|__anon2a073e140308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6296f10408
+DECL|struct|__anon2a073e140408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6296f10508
+DECL|struct|__anon2a073e140508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6296f10608
+DECL|struct|__anon2a073e140608
 block|{
 DECL|member|eol
 name|long
@@ -13842,13 +13842,14 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|pages_entry
 argument_list|,
 literal|80
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_text

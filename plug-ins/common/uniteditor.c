@@ -443,7 +443,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6339100103
+DECL|enum|__anon2898e9dc0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -826,7 +826,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -910,7 +910,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -2844,7 +2844,7 @@ expr_stmt|;
 name|clist_init
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|clist
 argument_list|,

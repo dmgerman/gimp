@@ -180,7 +180,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b38c1750103
+DECL|enum|__anon28db4fe50103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -2684,7 +2684,7 @@ operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|drawing_area
 argument_list|,
@@ -2841,7 +2841,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*	  gtk_widget_set_usize (GTK_WIDGET (progress), 150, 15);*/
+comment|/* gtk_widget_set_size_request (GTK_WIDGET (progress), 150, 15); */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -2918,7 +2918,7 @@ name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
 block|{
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|shape_drawing_area
 argument_list|,
@@ -2963,7 +2963,7 @@ name|gtk_fixed_new
 argument_list|()
 expr_stmt|;
 block|{
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|shape_fixed
 argument_list|,

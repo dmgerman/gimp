@@ -209,7 +209,7 @@ name|gboolean
 name|show_refval
 parameter_list|,
 name|gint
-name|spinbutton_usize
+name|spinbutton_width
 parameter_list|,
 name|GimpSizeEntryUpdatePolicy
 name|update_policy

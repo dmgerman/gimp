@@ -173,7 +173,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon277366030108
+DECL|struct|__anon2b3f83e90108
 block|{
 DECL|member|spacing
 name|guint
@@ -230,7 +230,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277366030208
+DECL|struct|__anon2b3f83e90208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -4011,13 +4011,14 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|entry
 argument_list|,
 literal|200
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_text

@@ -452,7 +452,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b56a6c0108
+DECL|struct|__anon28884cd60108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -558,7 +558,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b56a6c0208
+DECL|struct|__anon28884cd60208
 block|{
 DECL|member|menu
 name|gchar
@@ -703,7 +703,7 @@ argument_list|,
 name|GTK_POLICY_ALWAYS
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|pdesc
 operator|->
@@ -1993,7 +1993,7 @@ argument_list|,
 name|GTK_WRAP_WORD
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|text_view
 argument_list|,
@@ -4742,7 +4742,7 @@ argument_list|,
 name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|plugindesc
 operator|->
@@ -4896,7 +4896,7 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|plugindesc
 operator|->
