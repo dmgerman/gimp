@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e3b680108
+DECL|struct|__anon2c58e6be0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e3b680208
+DECL|struct|__anon2c58e6be0208
 block|{
 DECL|member|val
 name|gint
@@ -269,6 +269,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -276,6 +277,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -297,6 +299,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -309,6 +312,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -344,7 +348,8 @@ specifier|static
 name|gint32
 name|create_new_image
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -378,7 +383,8 @@ specifier|static
 name|gint32
 name|load_sun_d1
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|FILE
@@ -399,7 +405,8 @@ specifier|static
 name|gint32
 name|load_sun_d8
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|FILE
@@ -420,7 +427,8 @@ specifier|static
 name|gint32
 name|load_sun_d24
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|FILE
@@ -441,7 +449,8 @@ specifier|static
 name|gint32
 name|load_sun_d32
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|FILE
@@ -833,10 +842,10 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e3b680308
+DECL|struct|__anon2c58e6be0308
 block|{
 DECL|member|rle
-name|gint
+name|gboolean
 name|rle
 decl_stmt|;
 comment|/*  rle or standard */
@@ -849,10 +858,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e3b680408
+DECL|struct|__anon2c58e6be0408
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 comment|/*  run  */
@@ -1110,9 +1119,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1120,6 +1130,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1542,9 +1553,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename)
+DECL|function|load_image (const gchar * filename)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2029,9 +2041,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -4129,9 +4142,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|create_new_image (gchar * filename,guint width,guint height,GimpImageBaseType type,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
+DECL|function|create_new_image (const gchar * filename,guint width,guint height,GimpImageBaseType type,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
 name|create_new_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -4310,9 +4324,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_sun_d1 (gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
+DECL|function|load_sun_d1 (const gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 name|load_sun_d1
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -4888,9 +4903,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_sun_d8 (gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
+DECL|function|load_sun_d8 (const gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 name|load_sun_d8
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -5355,9 +5371,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_sun_d24 (gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
+DECL|function|load_sun_d24 (const gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 name|load_sun_d24
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -5784,9 +5801,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_sun_d32 (gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
+DECL|function|load_sun_d32 (const gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 name|load_sun_d32
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

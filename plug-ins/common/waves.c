@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c91fb30103
+DECL|enum|__anon27d66c9b0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c91fb30208
+DECL|struct|__anon27d66c9b0208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -144,6 +144,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -151,6 +152,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -418,9 +420,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparam,GimpParam * param,gint * nretvals,GimpParam ** retvals)
+DECL|function|run (const gchar * name,gint nparam,const GimpParam * param,gint * nretvals,GimpParam ** retvals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -428,6 +431,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

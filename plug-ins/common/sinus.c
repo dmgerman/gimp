@@ -22250,7 +22250,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fddd210108
+DECL|struct|__anon2c5bf06d0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22353,7 +22353,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fddd210208
+DECL|struct|__anon2c5bf06d0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -22435,7 +22435,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fddd210308
+DECL|struct|__anon2c5bf06d0308
 block|{
 DECL|member|width
 name|gint
@@ -22507,7 +22507,7 @@ end_define
 begin_decl_stmt
 DECL|variable|do_preview
 specifier|static
-name|gint
+name|gboolean
 name|do_preview
 init|=
 name|TRUE
@@ -22563,6 +22563,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -22570,6 +22571,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -22994,9 +22996,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -23004,6 +23007,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2754f4290108
+DECL|struct|__anon29119c2d0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -169,7 +169,7 @@ modifier|*
 name|pv_cache
 decl_stmt|;
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|TileItInterface
@@ -239,6 +239,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -246,6 +247,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -261,10 +263,6 @@ name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* static void      check  (GimpDrawable * drawable); */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -550,7 +548,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2754f4290203
+DECL|enum|__anon29119c2d0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -569,7 +567,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2754f4290308
+DECL|struct|__anon29119c2d0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -639,7 +637,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2754f4290408
+DECL|struct|__anon29119c2d0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -887,9 +885,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -897,6 +896,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

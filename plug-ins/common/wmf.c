@@ -2951,10 +2951,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0108
+DECL|struct|__anon2af73b830108
 block|{
 DECL|member|scale
-name|double
+name|gdouble
 name|scale
 decl_stmt|;
 DECL|typedef|WMFLoadVals
@@ -2979,10 +2979,10 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0208
+DECL|struct|__anon2af73b830208
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|WMFLoadInterface
@@ -3006,7 +3006,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0308
+DECL|struct|__anon2af73b830308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3027,7 +3027,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3b557e0403
+DECL|enum|__anon2af73b830403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -3058,7 +3058,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0508
+DECL|struct|__anon2af73b830508
 block|{
 DECL|member|dummy
 name|int
@@ -3073,7 +3073,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0608
+DECL|struct|__anon2af73b830608
 block|{
 DECL|member|color
 name|GdkColor
@@ -3100,7 +3100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0708
+DECL|struct|__anon2af73b830708
 block|{
 DECL|member|dummy
 name|int
@@ -3115,7 +3115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0808
+DECL|struct|__anon2af73b830808
 block|{
 DECL|member|color
 name|GdkColor
@@ -3142,7 +3142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0908
+DECL|struct|__anon2af73b830908
 block|{
 DECL|member|font
 name|GdkFont
@@ -3158,7 +3158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0a08
+DECL|struct|__anon2af73b830a08
 block|{
 DECL|member|dummy
 name|int
@@ -3173,14 +3173,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0b08
+DECL|struct|__anon2af73b830b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2a3b557e0c0a
+DECL|union|__anon2af73b830c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -3219,7 +3219,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0d08
+DECL|struct|__anon2af73b830d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -3272,7 +3272,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0e08
+DECL|struct|__anon2af73b830e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -3323,7 +3323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b557e0f08
+DECL|struct|__anon2af73b830f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -3364,6 +3364,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -3371,6 +3372,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -3392,6 +3394,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -4177,9 +4180,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -4187,6 +4191,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -5265,10 +5270,11 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (const gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|)

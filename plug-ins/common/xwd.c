@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b577b0108
+DECL|struct|__anon2b79ad390108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b577b0208
+DECL|struct|__anon2b79ad390208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -312,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b577b0308
+DECL|struct|__anon2b79ad390308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b577b0408
+DECL|struct|__anon2b79ad390408
 block|{
 DECL|member|npixel
 name|gint
@@ -413,6 +413,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -420,6 +421,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -441,6 +443,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -453,6 +456,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -471,7 +475,8 @@ specifier|static
 name|gint32
 name|create_new_image
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -572,7 +577,8 @@ specifier|static
 name|gint32
 name|load_xwd_f2_d1_b1
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|FILE
@@ -592,7 +598,8 @@ specifier|static
 name|gint32
 name|load_xwd_f2_d8_b8
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|FILE
@@ -612,7 +619,8 @@ specifier|static
 name|gint32
 name|load_xwd_f2_d16_b16
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|FILE
@@ -632,7 +640,8 @@ specifier|static
 name|gint32
 name|load_xwd_f2_d24_b32
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|FILE
@@ -652,7 +661,8 @@ specifier|static
 name|gint32
 name|load_xwd_f1_d24_b1
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|FILE
@@ -1076,9 +1086,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1086,6 +1097,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1439,9 +1451,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename)
+DECL|function|load_image (const gchar * filename)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2064,10 +2077,11 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -5310,10 +5324,11 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|create_new_image (char * filename,guint width,guint height,GimpImageBaseType type,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
+DECL|function|create_new_image (const gchar * filename,guint width,guint height,GimpImageBaseType type,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
 name|create_new_image
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -5488,10 +5503,11 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_xwd_f2_d1_b1 (char * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
+DECL|function|load_xwd_f2_d1_b1 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|load_xwd_f2_d1_b1
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -6272,10 +6288,11 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_xwd_f2_d8_b8 (char * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
+DECL|function|load_xwd_f2_d8_b8 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|load_xwd_f2_d8_b8
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -6764,10 +6781,11 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_xwd_f2_d16_b16 (char * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
+DECL|function|load_xwd_f2_d16_b16 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|load_xwd_f2_d16_b16
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -7693,10 +7711,11 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_xwd_f2_d24_b32 (char * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
+DECL|function|load_xwd_f2_d24_b32 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|load_xwd_f2_d24_b32
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -8872,10 +8891,11 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_xwd_f1_d24_b1 (char * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
+DECL|function|load_xwd_f1_d24_b1 (const gchar * filename,FILE * ifp,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|load_xwd_f1_d24_b1
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,

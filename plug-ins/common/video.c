@@ -60925,7 +60925,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27deb8fc0108
+DECL|struct|__anon29da1b240108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -60948,10 +60948,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27deb8fc0208
+DECL|struct|__anon29da1b240208
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|VideoInterface
@@ -60974,7 +60974,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|in_main_loop
 specifier|static
-name|gint
+name|gboolean
 name|in_main_loop
 init|=
 name|FALSE
@@ -61029,6 +61029,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -61036,6 +61037,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -61297,9 +61299,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -61307,6 +61310,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
