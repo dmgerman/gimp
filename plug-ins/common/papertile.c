@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289158420103
+DECL|enum|__anon2ad27a8b0103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289158420203
+DECL|enum|__anon2ad27a8b0203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -193,7 +193,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289158420308
+DECL|struct|__anon2ad27a8b0308
 block|{
 DECL|member|params
 name|PluginParams
@@ -213,7 +213,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon289158420408
+DECL|struct|__anon2ad27a8b0408
 block|{
 DECL|member|x0
 name|gint
@@ -579,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289158420508
+DECL|struct|__anon2ad27a8b0508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -4845,15 +4845,10 @@ begin_comment
 comment|/*============================================================================*/
 end_comment
 
-begin_macro
-DECL|function|MAIN ()
-name|MAIN
-argument_list|()
-end_macro
-
 begin_function
 specifier|static
 name|void
+DECL|function|plugin_query (void)
 name|plugin_query
 parameter_list|(
 name|void
@@ -5597,6 +5592,11 @@ name|plugin_run
 block|}
 decl_stmt|;
 end_decl_stmt
+
+begin_macro
+name|MAIN
+argument_list|()
+end_macro
 
 end_unit
 

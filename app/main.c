@@ -1886,16 +1886,6 @@ if|if
 condition|(
 name|caught_fatal_sig
 condition|)
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-name|raise
-argument_list|(
-name|sig_num
-argument_list|)
-expr_stmt|;
-else|#
-directive|else
 name|kill
 argument_list|(
 name|getpid
@@ -1904,8 +1894,6 @@ argument_list|,
 name|sig_num
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|caught_fatal_sig
 operator|=
 literal|1
@@ -2107,15 +2095,23 @@ endif|#
 directive|endif
 end_endif
 
+begin_comment
+comment|/* SIGCHLD */
+end_comment
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
+begin_comment
+comment|/* !G_OS_WIN32 */
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5579b90108
+DECL|struct|__anon2b6132120108
 block|{
 DECL|member|test_gint32
 name|gint32
