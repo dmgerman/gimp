@@ -309,7 +309,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b1ced480108
+DECL|struct|__anon2b2d023e0108
 typedef|typedef
 struct|struct
 block|{
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1ced480208
+DECL|struct|__anon2b2d023e0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4509,7 +4509,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2b1ced480308
+DECL|struct|__anon2b2d023e0308
 struct|struct
 block|{
 DECL|member|label
@@ -4578,7 +4578,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2b1ced480408
+DECL|struct|__anon2b2d023e0408
 struct|struct
 block|{
 DECL|member|label
@@ -8589,9 +8589,14 @@ name|initial
 argument_list|,
 name|gimage_mask_feather_callback
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|gdisp
 operator|->
 name|gimage
+operator|->
+name|ID
 argument_list|)
 expr_stmt|;
 block|}
@@ -11802,14 +11807,22 @@ decl_stmt|;
 name|double
 name|feather_radius
 decl_stmt|;
+if|if
+condition|(
+operator|!
+operator|(
 name|gimage
 operator|=
+name|gimage_get_ID
+argument_list|(
 operator|(
-name|GImage
-operator|*
+name|int
 operator|)
 name|client_data
-expr_stmt|;
+argument_list|)
+operator|)
+condition|)
+return|return;
 name|feather_radius
 operator|=
 name|atof
