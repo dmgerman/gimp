@@ -3409,7 +3409,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|paperinvert
+name|paper_invert
 condition|)
 name|ppm_apply_gamma
 argument_list|(
@@ -6917,7 +6917,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|paperinvert
+name|paper_invert
 condition|)
 name|ppm_apply_gamma
 argument_list|(
@@ -7010,7 +7010,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|paperoverlay
+name|paper_overlay
 condition|)
 name|h
 operator|=

@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c42daed0108
+DECL|struct|__anon298734c40108
 block|{
 DECL|member|orientnum
 name|int
@@ -224,9 +224,9 @@ DECL|member|paperscale
 name|double
 name|paperscale
 decl_stmt|;
-DECL|member|paperinvert
+DECL|member|paper_invert
 name|int
-name|paperinvert
+name|paper_invert
 decl_stmt|;
 DECL|member|run
 name|int
@@ -289,9 +289,9 @@ DECL|member|generaltileable
 name|int
 name|generaltileable
 decl_stmt|;
-DECL|member|paperoverlay
+DECL|member|paper_overlay
 name|int
-name|paperoverlay
+name|paper_overlay
 decl_stmt|;
 DECL|member|orientvoronoi
 name|int
