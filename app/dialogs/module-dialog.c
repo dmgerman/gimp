@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8bca20103
+DECL|enum|__anon287f751a0103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -437,7 +437,7 @@ argument_list|(
 literal|"Module Manager"
 argument_list|)
 argument_list|,
-literal|"module_db_dialog"
+literal|"gimp-modules"
 argument_list|,
 name|GTK_STOCK_EXECUTE
 argument_list|,

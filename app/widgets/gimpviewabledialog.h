@@ -171,7 +171,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|wmclass_name
+name|role
 parameter_list|,
 specifier|const
 name|gchar

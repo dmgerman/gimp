@@ -167,7 +167,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41886f0103
+DECL|enum|__anon2b2733630103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a41886f0203
+DECL|enum|__anon2b2733630203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41886f0308
+DECL|struct|__anon2b2733630308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -225,7 +225,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2a41886f040a
+DECL|union|__anon2b273363040a
 block|{
 DECL|member|d
 name|gdouble
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41886f0508
+DECL|struct|__anon2b2733630508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41886f0608
+DECL|struct|__anon2b2733630608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41886f0708
+DECL|struct|__anon2b2733630708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -355,7 +355,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41886f0808
+DECL|struct|__anon2b2733630808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41886f0908
+DECL|struct|__anon2b2733630908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -624,7 +624,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a41886f0a08
+DECL|struct|__anon2b2733630a08
 block|{
 DECL|member|run
 name|gboolean
@@ -13746,16 +13746,14 @@ argument_list|,
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
-literal|"message"
-argument_list|,
-literal|"Gimp"
+literal|"ifscompose-message"
 argument_list|)
 expr_stmt|;
 name|gtk_dialog_run

@@ -2439,7 +2439,7 @@ argument_list|(
 literal|"New Layer"
 argument_list|)
 argument_list|,
-literal|"new_layer_options"
+literal|"gimp-layer-new"
 argument_list|,
 name|GIMP_STOCK_LAYER
 argument_list|,
@@ -3409,7 +3409,7 @@ argument_list|(
 literal|"Layer Attributes"
 argument_list|)
 argument_list|,
-literal|"edit_layer_attributes"
+literal|"gimp-layer-edit"
 argument_list|,
 name|GIMP_STOCK_EDIT
 argument_list|,
@@ -3900,7 +3900,7 @@ argument_list|(
 literal|"Add Layer Mask"
 argument_list|)
 argument_list|,
-literal|"add_mask_options"
+literal|"gimp-layer-add-mask"
 argument_list|,
 name|GTK_STOCK_ADD
 argument_list|,

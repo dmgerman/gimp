@@ -1232,7 +1232,7 @@ argument_list|(
 literal|"New Channel"
 argument_list|)
 argument_list|,
-literal|"new_channel_options"
+literal|"gimp-channel-new"
 argument_list|,
 name|GIMP_STOCK_CHANNEL
 argument_list|,
@@ -1974,7 +1974,7 @@ argument_list|(
 literal|"Channel Attributes"
 argument_list|)
 argument_list|,
-literal|"edit_channel_attributes"
+literal|"gimp-channel-edit"
 argument_list|,
 name|GIMP_STOCK_EDIT
 argument_list|,

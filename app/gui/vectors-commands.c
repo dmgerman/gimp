@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-merge.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -1600,7 +1606,7 @@ argument_list|(
 literal|"New Path"
 argument_list|)
 argument_list|,
-literal|"new_path_options"
+literal|"gimp-vectors-new"
 argument_list|,
 name|GIMP_STOCK_TOOL_PATH
 argument_list|,
@@ -2153,7 +2159,7 @@ argument_list|(
 literal|"Path Attributes"
 argument_list|)
 argument_list|,
-literal|"edit_path_attributes"
+literal|"gimp-vectors-edit"
 argument_list|,
 name|GIMP_STOCK_EDIT
 argument_list|,
@@ -2648,7 +2654,7 @@ argument_list|,
 name|filesel
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -2656,8 +2662,6 @@ name|filesel
 argument_list|)
 argument_list|,
 literal|"gimp-vectors-import"
-argument_list|,
-literal|"Gimp"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -2911,7 +2915,7 @@ argument_list|,
 name|filesel
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -2919,8 +2923,6 @@ name|filesel
 argument_list|)
 argument_list|,
 literal|"gimp-vectors-export"
-argument_list|,
-literal|"Gimp"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position

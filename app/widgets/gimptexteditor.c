@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ceb9a0103
+DECL|enum|__anon2c2faa2c0103
 block|{
 DECL|enumerator|DIR_CHANGED
 name|DIR_CHANGED
@@ -599,7 +599,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|"text_editor"
+literal|"gimp-text-editor"
 argument_list|)
 expr_stmt|;
 name|gimp_help_connect
@@ -1226,7 +1226,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -1234,8 +1234,6 @@ name|filesel
 argument_list|)
 argument_list|,
 literal|"gimp-text-load-file"
-argument_list|,
-literal|"Gimp"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position

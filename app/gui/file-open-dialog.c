@@ -713,7 +713,7 @@ argument_list|(
 literal|"Open Image"
 argument_list|)
 argument_list|,
-literal|"open_image"
+literal|"gimp-file-open"
 argument_list|,
 name|GIMP_HELP_FILE_OPEN
 argument_list|,

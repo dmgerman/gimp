@@ -431,7 +431,7 @@ argument_list|(
 literal|"New Template"
 argument_list|)
 argument_list|,
-literal|"new_template"
+literal|"gimp-template-new"
 argument_list|,
 name|GIMP_STOCK_TEMPLATE
 argument_list|,
@@ -766,7 +766,7 @@ argument_list|(
 literal|"Edit Template"
 argument_list|)
 argument_list|,
-literal|"edit_template"
+literal|"gimp-template-edit"
 argument_list|,
 name|GIMP_STOCK_EDIT
 argument_list|,

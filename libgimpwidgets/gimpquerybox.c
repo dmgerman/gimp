@@ -414,7 +414,7 @@ name|gimp_dialog_new
 argument_list|(
 name|title
 argument_list|,
-literal|"query_box"
+literal|"gimp-query-box"
 argument_list|,
 name|NULL
 argument_list|,

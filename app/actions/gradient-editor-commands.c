@@ -1918,7 +1918,7 @@ argument_list|)
 argument_list|,
 name|title
 argument_list|,
-literal|"gradient_segment_replicate"
+literal|"gimp-gradient-segment-replicate"
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
@@ -2388,7 +2388,7 @@ argument_list|)
 argument_list|,
 name|title
 argument_list|,
-literal|"gradient_segment_split_uniformly"
+literal|"gimp-gradient-segment_split-uniformly"
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,

@@ -367,7 +367,7 @@ argument_list|(
 name|GTK_WINDOW_POPUP
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -376,9 +376,7 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-literal|"layer_select"
-argument_list|,
-literal|"Gimp"
+literal|"gimp-layer-select"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title

@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299295bb0103
+DECL|enum|__anon28cb07f00103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -239,7 +239,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|wmclass_name
+name|role
 parameter_list|,
 specifier|const
 name|gchar
@@ -559,7 +559,7 @@ name|NULL
 argument_list|,
 name|title
 argument_list|,
-literal|"color_selection"
+literal|"gimp-color-selection"
 argument_list|,
 name|NULL
 argument_list|,
@@ -642,7 +642,7 @@ name|viewable
 argument_list|,
 name|title
 argument_list|,
-literal|"color_selection"
+literal|"gimp-color-selection"
 argument_list|,
 name|stock_id
 argument_list|,

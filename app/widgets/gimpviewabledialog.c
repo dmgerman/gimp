@@ -638,7 +638,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_dialog_new (GimpViewable * viewable,const gchar * title,const gchar * wmclass_name,const gchar * stock_id,const gchar * desc,GimpHelpFunc help_func,const gchar * help_id,...)
+DECL|function|gimp_viewable_dialog_new (GimpViewable * viewable,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GimpHelpFunc help_func,const gchar * help_id,...)
 name|gimp_viewable_dialog_new
 parameter_list|(
 name|GimpViewable
@@ -653,7 +653,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|wmclass_name
+name|role
 parameter_list|,
 specifier|const
 name|gchar
@@ -715,7 +715,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|wmclass_name
+name|role
 operator|!=
 name|NULL
 argument_list|,
@@ -735,16 +735,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|wmclass_name
-argument_list|,
-literal|"Gimp"
+name|role
 argument_list|)
 expr_stmt|;
 if|if

@@ -522,7 +522,7 @@ argument_list|(
 literal|"Qmask Attributes"
 argument_list|)
 argument_list|,
-literal|"edit_qmask_attributes"
+literal|"gimp-qmask-edit"
 argument_list|,
 name|GIMP_STOCK_QMASK_ON
 argument_list|,

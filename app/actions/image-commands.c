@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af43ad60108
+DECL|struct|__anon29ad7dec0108
 block|{
 DECL|member|resize
 name|Resize
@@ -1399,7 +1399,7 @@ argument_list|(
 literal|"Merge Layers"
 argument_list|)
 argument_list|,
-literal|"layers_merge_options"
+literal|"gimp-image-merge-layers"
 argument_list|,
 name|GIMP_STOCK_MERGE_DOWN
 argument_list|,

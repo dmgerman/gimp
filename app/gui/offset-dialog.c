@@ -350,7 +350,7 @@ argument_list|(
 literal|"Offset"
 argument_list|)
 argument_list|,
-literal|"offset"
+literal|"gimp-drawable-offset"
 argument_list|,
 name|GIMP_STOCK_TOOL_MOVE
 argument_list|,

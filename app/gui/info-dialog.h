@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e0682d0103
+DECL|enum|__anon286dfca10103
 block|{
 DECL|enumerator|INFO_LABEL
 name|INFO_LABEL
@@ -143,7 +143,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|wmclass_name
+name|role
 parameter_list|,
 specifier|const
 name|gchar
@@ -181,7 +181,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|wmclass_name
+name|role
 parameter_list|,
 specifier|const
 name|gchar

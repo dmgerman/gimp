@@ -1125,7 +1125,7 @@ argument_list|(
 literal|"Info Window"
 argument_list|)
 argument_list|,
-literal|"info_window"
+literal|"gimp-info-window"
 argument_list|,
 name|GIMP_STOCK_INFO
 argument_list|,

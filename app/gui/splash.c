@@ -164,16 +164,14 @@ literal|"GIMP Startup"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|win_initstatus
 argument_list|)
 argument_list|,
-literal|"gimp_startup"
-argument_list|,
-literal|"Gimp"
+literal|"gimp-startup"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -682,7 +680,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|/*  Reenable startup notification after the splash has been shown    *  so that the next window that is mapped sends the notification.      */
+comment|/*  Reenable startup notification after the splash has been shown    *  so that the next window that is mapped sends the notification.    */
 name|gtk_window_set_auto_startup_notification
 argument_list|(
 name|TRUE

@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3e5b650103
+DECL|enum|__anon28d666820103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -589,16 +589,14 @@ name|context
 operator|=
 name|NULL
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|dock
 argument_list|)
 argument_list|,
-literal|"dock"
-argument_list|,
-literal|"Gimp"
+literal|"gimp-dock"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_type_hint

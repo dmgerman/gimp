@@ -237,7 +237,7 @@ argument_list|(
 literal|"Configure Grid"
 argument_list|)
 argument_list|,
-literal|"configure_grid"
+literal|"gimp-grid-configure"
 argument_list|,
 name|GIMP_STOCK_GRID
 argument_list|,

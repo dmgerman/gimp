@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757e9d40108
+DECL|struct|__anon2add5cf50108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -525,7 +525,7 @@ argument_list|(
 literal|"Indexed Color Conversion"
 argument_list|)
 argument_list|,
-literal|"indexed_color_conversion"
+literal|"gimp-image-convert-indexed"
 argument_list|,
 name|GIMP_STOCK_CONVERT_INDEXED
 argument_list|,

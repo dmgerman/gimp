@@ -768,7 +768,7 @@ argument_list|(
 literal|"Save Image"
 argument_list|)
 argument_list|,
-literal|"save_image"
+literal|"gimp-file-save"
 argument_list|,
 name|GIMP_HELP_FILE_SAVE
 argument_list|,

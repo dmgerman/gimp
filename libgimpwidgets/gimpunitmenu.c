@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2771abe70103
+DECL|enum|__anon2975c1b70103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2771abe70203
+DECL|enum|__anon2975c1b70203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -2205,7 +2205,7 @@ argument_list|(
 literal|"Unit Selection"
 argument_list|)
 argument_list|,
-literal|"unit_selection"
+literal|"gimp-unit-selection"
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

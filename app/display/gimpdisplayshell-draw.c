@@ -316,7 +316,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5c8250103
+DECL|enum|__anon2be8434f0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1170,16 +1170,14 @@ name|button_press_before_focus
 operator|=
 name|FALSE
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|shell
 argument_list|)
 argument_list|,
-literal|"image_window"
-argument_list|,
-literal|"Gimp"
+literal|"gimp-image-window"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_resizable

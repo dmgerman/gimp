@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960d4e10103
+DECL|enum|__anon29c658130103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -629,7 +629,7 @@ argument_list|(
 literal|"Import Palette"
 argument_list|)
 argument_list|,
-literal|"import_palette"
+literal|"gimp-palette-import"
 argument_list|,
 name|GTK_STOCK_CONVERT
 argument_list|,

@@ -302,7 +302,7 @@ argument_list|(
 literal|"Stroke Options"
 argument_list|)
 argument_list|,
-literal|"stroke_options"
+literal|"gimp-stroke-options"
 argument_list|,
 name|stock_id
 argument_list|,

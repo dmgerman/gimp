@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c755bf40103
+DECL|enum|__anon291b2a050103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -800,6 +800,49 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|_wm_name
+specifier|static
+name|gchar
+modifier|*
+name|_wm_name
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_wm_class
+specifier|static
+name|gchar
+modifier|*
+name|_wm_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_display_name
+specifier|static
+name|gchar
+modifier|*
+name|_display_name
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_monitor_number
+specifier|static
+name|gint
+name|_monitor_number
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|progname
 specifier|static
 specifier|const
@@ -932,7 +975,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_main:  * @info: the PLUG_IN_INFO structure  * @argc: the number of arguments  * @argv: the arguments  *   * The main procedure that must be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  *   * Return value:   **/
+comment|/**  * gimp_main:  * @info: the PLUG_IN_INFO structure  * @argc: the number of arguments  * @argv: the arguments  *  * The main procedure that must be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -1764,7 +1807,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_quit:  *   * Forcefully causes the gimp library to exit and close down its  * connection to main gimp application. This function never returns.  **/
+comment|/**  * gimp_quit:  *  * Forcefully causes the gimp library to exit and close down its  * connection to main gimp application. This function never returns.  **/
 end_comment
 
 begin_function
@@ -1787,7 +1830,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_install_procedure:  * @name:          the procedure's name.  * @blurb:         a short text describing what the procedure does.  * @help:          the help text for the procedure (usually considerably  *                 longer than @blurb).  * @author:        the procedure's author(s).  * @copyright:     the procedure's copyright.  * @date:          the date the procedure was added.  * @menu_path:     the procedure's menu path, or #NULL if the procedure has  *                 no menu entry.  * @image_types:   the drawable types the procedure can handle.  * @type:          the type of the procedure.  * @n_params:      the number of parameters the procedure takes.  * @n_return_vals: the number of return values the procedure returns.  * @params:        the procedure's parameters.  * @return_vals:   the procedure's return values.  *   * Installs a new procedure with the PDB (procedural database).  *  * Call this function from within your Plug-In's query() function for  * each procedure your Plug-In implements.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * The @blurb, @help, @author, @copyright and @date parameters are  * optional but then you shouldn't write procedures without proper  * documentation, should you.  *  * @menu_path can be #NULL, or a string in the form  * "&lt;Domain&gt;/Path/To/My/Menu"  * (e.g. "&lt;Image&gt;/Filters/Render/Useless") if you want your  * procedure to be available via a menu.  Allowed prefixes are  *&lt;Toolbox&gt;,&lt;Image&gt;,&lt;Load&gt; and&lt;Save&gt;  *  * @type must be one of #GIMP_PLUGIN or #GIMP_EXTENSION. Note that  * temporary procedures must be installed using  * gimp_install_temp_proc().  *  * NOTE: Unlike the GIMP 1.2 API, #GIMP_EXTENSION no longer means  * that the procedure's menu prefix is&lt;Toolbox&gt;, but that  * it will install temporary procedures. Therefore, the GIMP core  * will wait until the #GIMP_EXTENSION procedure has called  * gimp_extension_ack(), which means that the procedure has done  * its initialization, installed its temporary procedures and is  * ready to run.  *  *<emphasis>Not calling gimp_extension_ack() from a #GIMP_EXTENSION  * procedure will cause th GIMP core to lock up.</emphasis>  *  * Additionally, a #GIMP_EXTENSION procedure with no parameters  * (@n_params == 0 and @params == #NULL) is an "automatic" extension  * that will be automatically started on each GIMP startup.  **/
+comment|/**  * gimp_install_procedure:  * @name:          the procedure's name.  * @blurb:         a short text describing what the procedure does.  * @help:          the help text for the procedure (usually considerably  *                 longer than @blurb).  * @author:        the procedure's author(s).  * @copyright:     the procedure's copyright.  * @date:          the date the procedure was added.  * @menu_path:     the procedure's menu path, or #NULL if the procedure has  *                 no menu entry.  * @image_types:   the drawable types the procedure can handle.  * @type:          the type of the procedure.  * @n_params:      the number of parameters the procedure takes.  * @n_return_vals: the number of return values the procedure returns.  * @params:        the procedure's parameters.  * @return_vals:   the procedure's return values.  *  * Installs a new procedure with the PDB (procedural database).  *  * Call this function from within your Plug-In's query() function for  * each procedure your Plug-In implements.  *  * The @name parameter is mandatory and should be unique, or it will  * overwrite an already existing procedure (overwrite procedures only  * if you know what you're doing).  *  * The @blurb, @help, @author, @copyright and @date parameters are  * optional but then you shouldn't write procedures without proper  * documentation, should you.  *  * @menu_path can be #NULL, or a string in the form  * "&lt;Domain&gt;/Path/To/My/Menu"  * (e.g. "&lt;Image&gt;/Filters/Render/Useless") if you want your  * procedure to be available via a menu.  Allowed prefixes are  *&lt;Toolbox&gt;,&lt;Image&gt;,&lt;Load&gt; and&lt;Save&gt;  *  * @type must be one of #GIMP_PLUGIN or #GIMP_EXTENSION. Note that  * temporary procedures must be installed using  * gimp_install_temp_proc().  *  * NOTE: Unlike the GIMP 1.2 API, #GIMP_EXTENSION no longer means  * that the procedure's menu prefix is&lt;Toolbox&gt;, but that  * it will install temporary procedures. Therefore, the GIMP core  * will wait until the #GIMP_EXTENSION procedure has called  * gimp_extension_ack(), which means that the procedure has done  * its initialization, installed its temporary procedures and is  * ready to run.  *  *<emphasis>Not calling gimp_extension_ack() from a #GIMP_EXTENSION  * procedure will cause th GIMP core to lock up.</emphasis>  *  * Additionally, a #GIMP_EXTENSION procedure with no parameters  * (@n_params == 0 and @params == #NULL) is an "automatic" extension  * that will be automatically started on each GIMP startup.  **/
 end_comment
 
 begin_function
@@ -2056,7 +2099,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_install_temp_proc:  * @name:          the procedure's name.  * @blurb:         a short text describing what the procedure does.  * @help:          the help text for the procedure (usually considerably  *                 longer than @blurb).  * @author:        the procedure's author(s).  * @copyright:     the procedure's copyright.  * @date:          the date the procedure was added.  * @menu_path:     the procedure's menu path, or #NULL if the procedure has  *                 no menu entry.  * @image_types:   the drawable types the procedure can handle.  * @type:          the type of the procedure.  * @n_params:      the number of parameters the procedure takes.  * @n_return_vals: the number of return values the procedure returns.  * @params:        the procedure's parameters.  * @return_vals:   the procedure's return values.  * @run_proc:      the function to call for executing the procedure.  *   * Installs a new temporary procedure with the PDB (procedural database).  *  * A temporary procedure is a procedure which is only available while  * one of your Plug-In's "real" procedures is running.  *  * See gimp_install_procedure() for most details.  *  * @type<emphasis>must</emphasis> be #GIMP_TEMPORARY or the function  * will fail.  *  * @run_proc is the function which will be called to execute the  * procedure.  *  * NOTE: Normally, Plug-In communication is triggered by the Plug-In  * and the GIMP core only responds to the Plug-In's requests. You must  * explicitely enable receiving of temporary procedure run requests  * using either gimp_extension_enable() or  * gimp_extension_process(). See this functions' documentation for  * details.  **/
+comment|/**  * gimp_install_temp_proc:  * @name:          the procedure's name.  * @blurb:         a short text describing what the procedure does.  * @help:          the help text for the procedure (usually considerably  *                 longer than @blurb).  * @author:        the procedure's author(s).  * @copyright:     the procedure's copyright.  * @date:          the date the procedure was added.  * @menu_path:     the procedure's menu path, or #NULL if the procedure has  *                 no menu entry.  * @image_types:   the drawable types the procedure can handle.  * @type:          the type of the procedure.  * @n_params:      the number of parameters the procedure takes.  * @n_return_vals: the number of return values the procedure returns.  * @params:        the procedure's parameters.  * @return_vals:   the procedure's return values.  * @run_proc:      the function to call for executing the procedure.  *  * Installs a new temporary procedure with the PDB (procedural database).  *  * A temporary procedure is a procedure which is only available while  * one of your Plug-In's "real" procedures is running.  *  * See gimp_install_procedure() for most details.  *  * @type<emphasis>must</emphasis> be #GIMP_TEMPORARY or the function  * will fail.  *  * @run_proc is the function which will be called to execute the  * procedure.  *  * NOTE: Normally, Plug-In communication is triggered by the Plug-In  * and the GIMP core only responds to the Plug-In's requests. You must  * explicitely enable receiving of temporary procedure run requests  * using either gimp_extension_enable() or  * gimp_extension_process(). See this functions' documentation for  * details.  **/
 end_comment
 
 begin_function
@@ -2243,7 +2286,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_uninstall_temp_proc:  * @name: the procedure's name  *   * Uninstalls a temporary procedure which has previously been  * installed using gimp_install_temp_proc().  **/
+comment|/**  * gimp_uninstall_temp_proc:  * @name: the procedure's name  *  * Uninstalls a temporary procedure which has previously been  * installed using gimp_install_temp_proc().  **/
 end_comment
 
 begin_function
@@ -2338,7 +2381,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_run_procedure:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @Varargs:       list of procedure parameters    *  * This function calls a GIMP procedure and returns its return values.  *  * The procedure's parameters are given by a va_list in the format  * (type, value, type, value) and must be terminated by #GIMP_PDB_END.  *  * This function converts the va_list of parameters into an array  * and passes them to gimp_run_procedure2().  *  * Return value: the procedure's return values.  **/
+comment|/**  * gimp_run_procedure:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @Varargs:       list of procedure parameters  *  * This function calls a GIMP procedure and returns its return values.  *  * The procedure's parameters are given by a va_list in the format  * (type, value, type, value) and must be terminated by #GIMP_PDB_END.  *  * This function converts the va_list of parameters into an array  * and passes them to gimp_run_procedure2().  *  * Return value: the procedure's return values.  **/
 end_comment
 
 begin_function
@@ -3371,7 +3414,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_run_procedure2:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *   * This function calls a GIMP procedure and returns its return values.  *  * Return value: the procedure's return values.  **/
+comment|/**  * gimp_run_procedure2:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *  * This function calls a GIMP procedure and returns its return values.  *  * Return value: the procedure's return values.  **/
 end_comment
 
 begin_function
@@ -3553,7 +3596,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_destroy_params:  * @params:   the #GimpParam array to destroy  * @n_params: the number of elements in the array  *   * Destroys a #GimpParam array as returned by gimp_run_procedure()  **/
+comment|/**  * gimp_destroy_params:  * @params:   the #GimpParam array to destroy  * @n_params: the number of elements in the array  *  * Destroys a #GimpParam array as returned by gimp_run_procedure()  **/
 end_comment
 
 begin_function
@@ -3596,7 +3639,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_destroy_paramdefs:  * @paramdefs: the #GimpParamDef array to destroy  * @n_params:  the number of elements in the array  *   * Destroys a #GimpParamDef array as returned by gimp_query_procedure()  **/
+comment|/**  * gimp_destroy_paramdefs:  * @paramdefs: the #GimpParamDef array to destroy  * @n_params:  the number of elements in the array  *  * Destroys a #GimpParamDef array as returned by gimp_query_procedure()  **/
 end_comment
 
 begin_function
@@ -3648,7 +3691,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tile_width:  *   * Returns the tile_width the GIMP is using. This is a constant value  * given at Plug-In config time.  *   * Return value: the tile_width  **/
+comment|/**  * gimp_tile_width:  *  * Returns the tile_width the GIMP is using. This is a constant value  * given at Plug-In config time.  *  * Return value: the tile_width  **/
 end_comment
 
 begin_function
@@ -3666,7 +3709,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tile_height:  *   * Returns the tile_height the GIMP is using. This is a constant value  * given at Plug-In config time.  *   * Return value: the tile_height  **/
+comment|/**  * gimp_tile_height:  *  * Returns the tile_height the GIMP is using. This is a constant value  * given at Plug-In config time.  *  * Return value: the tile_height  **/
 end_comment
 
 begin_function
@@ -3684,7 +3727,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_shm_ID:  *   * Returns the shared memory ID used for passing tile data between the GIMP  * core and the Plug-In. This is a constant value  * given at Plug-In config time.  *   * Return value: the shared memory ID  **/
+comment|/**  * gimp_shm_ID:  *  * Returns the shared memory ID used for passing tile data between the GIMP  * core and the Plug-In. This is a constant value  * given at Plug-In config time.  *  * Return value: the shared memory ID  **/
 end_comment
 
 begin_function
@@ -3702,7 +3745,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_shm_addr:  *   * Returns the address of the shared memory segment used for passing  * tile data between the GIMP core and the Plug-In. This is a constant  * value given at Plug-In config time.  *   * Return value: the shared memory address  **/
+comment|/**  * gimp_shm_addr:  *  * Returns the address of the shared memory segment used for passing  * tile data between the GIMP core and the Plug-In. This is a constant  * value given at Plug-In config time.  *  * Return value: the shared memory address  **/
 end_comment
 
 begin_function
@@ -3721,7 +3764,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gamma:  *   * Returns the global gamma value the GIMP and all its Plug-Ins should  * use. This is a constant value given at Plug-In config time.  *  * NOTE: this feature is unimplemented.  *   * Return value: the gamma value  **/
+comment|/**  * gimp_gamma:  *  * Returns the global gamma value the GIMP and all its Plug-Ins should  * use. This is a constant value given at Plug-In config time.  *  * NOTE: this feature is unimplemented.  *  * Return value: the gamma value  **/
 end_comment
 
 begin_function
@@ -3739,7 +3782,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_install_cmap:  *   * Returns whether or not the Plug-In should allocate an own colormap  * when running on an 8 bit display. This is a constant value given at  * Plug-In config time.  *   * See also: gimp_min_colors()  *   * Return value: the install_cmap boolean  **/
+comment|/**  * gimp_install_cmap:  *  * Returns whether or not the Plug-In should allocate an own colormap  * when running on an 8 bit display. This is a constant value given at  * Plug-In config time.  *  * See also: gimp_min_colors()  *  * Return value: the install_cmap boolean  **/
 end_comment
 
 begin_function
@@ -3757,7 +3800,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_min_colors:  *   * Returns the minimum number of colors to use when allocating an own  * colormap on 8 bit displays. This is a constant value given at  * Plug-In config time.  *  * See also: gimp_install_cmap()  *   * Return value: the minimum number of colors to allocate  **/
+comment|/**  * gimp_min_colors:  *  * Returns the minimum number of colors to use when allocating an own  * colormap on 8 bit displays. This is a constant value given at  * Plug-In config time.  *  * See also: gimp_install_cmap()  *  * Return value: the minimum number of colors to allocate  **/
 end_comment
 
 begin_function
@@ -3775,7 +3818,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_show_tool_tips:  *   * Returns whether or not the Plug-In should show tooltips. This is a  * constant value given at Plug-In config time.  *   * Return value: the show_tool_tips boolean  **/
+comment|/**  * gimp_show_tool_tips:  *  * Returns whether or not the Plug-In should show tooltips. This is a  * constant value given at Plug-In config time.  *  * Return value: the show_tool_tips boolean  **/
 end_comment
 
 begin_function
@@ -3793,7 +3836,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_default_display:  *   * Returns the default display ID. This corresponds to the display the  * running procedure's menu entry was invoked from. This is a  * constant value given at Plug-In config time.  *   * Return value: the default display ID  **/
+comment|/**  * gimp_default_display:  *  * Returns the default display ID. This corresponds to the display the  * running procedure's menu entry was invoked from. This is a  * constant value given at Plug-In config time.  *  * Return value: the default display ID  **/
 end_comment
 
 begin_function
@@ -3811,7 +3854,100 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_progname:  *   * Returns the Plug-In's executable name.  *   * Return value: the executable name  **/
+comment|/**  * gimp_wm_name:  *  * Returns the window manager name to be used for plug-in windows.  * This is a constant value given at Plug-In config time.  *  * Return value: the window manager name  **/
+end_comment
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_wm_name (void)
+name|gimp_wm_name
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
+name|_wm_name
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_wm_class:  *  * Returns the window manager class to be used for plug-in windows.  * This is a constant value given at Plug-In config time.  *  * Return value: the window manager class  **/
+end_comment
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_wm_class (void)
+name|gimp_wm_class
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
+name|_wm_class
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_display_name:  *  * Returns the display to be used for plug-in windows.  * This is a constant value given at Plug-In config time.  *  * Return value: the display name  **/
+end_comment
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_display_name (void)
+name|gimp_display_name
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
+name|_display_name
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_monitor_number:  *  * Returns the monitor number to be used for plug-in windows.  * This is a constant value given at Plug-In config time.  *  * Return value: the monitor number  **/
+end_comment
+
+begin_function
+name|gint
+DECL|function|gimp_monitor_number (void)
+name|gimp_monitor_number
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_monitor_number
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_get_progname:  *  * Returns the Plug-In's executable name.  *  * Return value: the executable name  **/
 end_comment
 
 begin_function
@@ -3831,7 +3967,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_extension_ack:  *   * Notify the main GIMP application that the extension has been properly  * initialized and is ready to run.  *  * This function<emphasis>must</emphasis> be called from every  * procedure that was registered as #GIMP_EXTENSION.  *  * Subsequently, extensions can process temporary procedure run  * requests using either gimp_extension_enable() or  * gimp_extension_process().  *  * See also: gimp_install_procedure(), gimp_install_temp_proc()  **/
+comment|/**  * gimp_extension_ack:  *  * Notify the main GIMP application that the extension has been properly  * initialized and is ready to run.  *  * This function<emphasis>must</emphasis> be called from every  * procedure that was registered as #GIMP_EXTENSION.  *  * Subsequently, extensions can process temporary procedure run  * requests using either gimp_extension_enable() or  * gimp_extension_process().  *  * See also: gimp_install_procedure(), gimp_install_temp_proc()  **/
 end_comment
 
 begin_function
@@ -3859,7 +3995,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_extension_enable:  *   * Enables asnychronous processing of messages from the main GIMP  * application.  *  * Normally, a plug-in is not called by the GIMP except for the call  * to the procedure it implements. All subsequent communication is  * triggered by the plug-in and all messages sent from the GIMP to the  * plug-in are just answers to requests the plug-in made.  *  * If the plug-in however registered temporary procedures using  * gimp_install_temp_proc(), it needs to be able to receive requests  * to execute them. Usually this will be done by running  * gimp_extension_process() in an endless loop.  *  * If the plug-in cannot use gimp_extension_process(), i.e. if it has  * a GUI and is hanging around in a #GMainLoop, it must call  * gimp_extension_enable().  *  * Note that the plug-in does not need to be a #GIMP_EXTENSION to  * register temporary procedures.  *  * See also: gimp_install_procedure(), gimp_install_temp_proc()  **/
+comment|/**  * gimp_extension_enable:  *  * Enables asnychronous processing of messages from the main GIMP  * application.  *  * Normally, a plug-in is not called by the GIMP except for the call  * to the procedure it implements. All subsequent communication is  * triggered by the plug-in and all messages sent from the GIMP to the  * plug-in are just answers to requests the plug-in made.  *  * If the plug-in however registered temporary procedures using  * gimp_install_temp_proc(), it needs to be able to receive requests  * to execute them. Usually this will be done by running  * gimp_extension_process() in an endless loop.  *  * If the plug-in cannot use gimp_extension_process(), i.e. if it has  * a GUI and is hanging around in a #GMainLoop, it must call  * gimp_extension_enable().  *  * Note that the plug-in does not need to be a #GIMP_EXTENSION to  * register temporary procedures.  *  * See also: gimp_install_procedure(), gimp_install_temp_proc()  **/
 end_comment
 
 begin_function
@@ -5012,6 +5148,39 @@ operator|=
 name|config
 operator|->
 name|gdisp_ID
+expr_stmt|;
+name|_wm_name
+operator|=
+name|g_strdup
+argument_list|(
+name|config
+operator|->
+name|wm_name
+argument_list|)
+expr_stmt|;
+name|_wm_class
+operator|=
+name|g_strdup
+argument_list|(
+name|config
+operator|->
+name|wm_class
+argument_list|)
+expr_stmt|;
+name|_display_name
+operator|=
+name|g_strdup
+argument_list|(
+name|config
+operator|->
+name|display_name
+argument_list|)
+expr_stmt|;
+name|_monitor_number
+operator|=
+name|config
+operator|->
+name|monitor_number
 expr_stmt|;
 if|if
 condition|(

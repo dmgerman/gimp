@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43f3ea0108
+DECL|struct|__anon29eb3e370108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -346,7 +346,7 @@ argument_list|(
 literal|"New Image"
 argument_list|)
 argument_list|,
-literal|"new_image"
+literal|"gimp-image-new"
 argument_list|,
 name|GIMP_STOCK_IMAGE
 argument_list|,

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa3ded0103
+DECL|enum|__anon293d45580103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -109,7 +109,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa3ded0208
+DECL|struct|__anon293d45580208
 block|{
 DECL|member|title
 specifier|const
@@ -587,18 +587,6 @@ argument_list|(
 name|GTK_WINDOW_TOPLEVEL
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_wmclass
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|window
-argument_list|)
-argument_list|,
-literal|"helpbrowser"
-argument_list|,
-literal|"Gimp"
-argument_list|)
-expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
@@ -610,6 +598,16 @@ name|_
 argument_list|(
 literal|"GIMP Help Browser"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_role
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+literal|"helpbrowser"
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

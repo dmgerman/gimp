@@ -753,7 +753,7 @@ block|{
 specifier|const
 name|gchar
 modifier|*
-name|wmclass
+name|role
 init|=
 name|NULL
 decl_stmt|;
@@ -806,9 +806,9 @@ block|{
 case|case
 name|ResizeLayer
 case|:
-name|wmclass
+name|role
 operator|=
-literal|"scale_layer"
+literal|"gimp-layer-scale"
 expr_stmt|;
 name|window_title
 operator|=
@@ -842,9 +842,9 @@ break|break;
 case|case
 name|ResizeImage
 case|:
-name|wmclass
+name|role
 operator|=
-literal|"scale_image"
+literal|"gimp-image-scale"
 expr_stmt|;
 name|window_title
 operator|=
@@ -894,9 +894,9 @@ block|{
 case|case
 name|ResizeLayer
 case|:
-name|wmclass
+name|role
 operator|=
-literal|"resize_layer"
+literal|"gimp-layer-resize"
 expr_stmt|;
 name|window_title
 operator|=
@@ -920,9 +920,9 @@ break|break;
 case|case
 name|ResizeImage
 case|:
-name|wmclass
+name|role
 operator|=
-literal|"resize_image"
+literal|"gimp-image-resize"
 expr_stmt|;
 name|window_title
 operator|=
@@ -966,7 +966,7 @@ name|viewable
 argument_list|,
 name|window_title
 argument_list|,
-name|wmclass
+name|role
 argument_list|,
 name|stock_id
 argument_list|,

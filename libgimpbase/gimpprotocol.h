@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -24,9 +24,9 @@ DECL|macro|GP_VERSION
 define|#
 directive|define
 name|GP_VERSION
-value|0x000E
+value|0x000F
 name|enum
-DECL|enum|__anon294b78e30103
+DECL|enum|__anon27dfbe190103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -200,6 +200,25 @@ DECL|member|gdisp_ID
 name|gint32
 name|gdisp_ID
 decl_stmt|;
+DECL|member|wm_name
+name|gchar
+modifier|*
+name|wm_name
+decl_stmt|;
+DECL|member|wm_class
+name|gchar
+modifier|*
+name|wm_class
+decl_stmt|;
+DECL|member|display_name
+name|gchar
+modifier|*
+name|display_name
+decl_stmt|;
+DECL|member|monitor_number
+name|gint32
+name|monitor_number
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -277,7 +296,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon294b78e3020a
+DECL|union|__anon27dfbe19020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -331,7 +350,7 @@ name|GimpRGB
 name|d_color
 decl_stmt|;
 struct|struct
-DECL|struct|__anon294b78e30308
+DECL|struct|__anon27dfbe190308
 block|{
 DECL|member|x
 name|gint32
@@ -386,7 +405,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon294b78e30408
+DECL|struct|__anon27dfbe190408
 block|{
 DECL|member|name
 name|gchar

@@ -78,7 +78,7 @@ end_include
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|file_dialog_new (Gimp * gimp,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * title,const gchar * wmclass_name,const gchar * help_id,GCallback ok_callback)
+DECL|function|file_dialog_new (Gimp * gimp,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * title,const gchar * role,const gchar * help_id,GCallback ok_callback)
 name|file_dialog_new
 parameter_list|(
 name|Gimp
@@ -111,7 +111,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|wmclass_name
+name|role
 parameter_list|,
 specifier|const
 name|gchar
@@ -189,7 +189,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|wmclass_name
+name|role
 operator|!=
 name|NULL
 argument_list|,
@@ -250,16 +250,14 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_wmclass
+name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|filesel
 argument_list|)
 argument_list|,
-name|wmclass_name
-argument_list|,
-literal|"Gimp"
+name|role
 argument_list|)
 expr_stmt|;
 name|gimp_help_connect
