@@ -351,9 +351,6 @@ name|g_list_next
 argument_list|(
 name|list
 argument_list|)
-operator|,
-name|count
-operator|++
 control|)
 block|{
 name|layer
@@ -407,14 +404,13 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Make sure if the layer has a layer mask, it's name isn't screwed up  */
+comment|/*  Make sure that if the layer has a layer mask,           it's name isn't screwed up  */
 if|if
 condition|(
 name|new_layer
 operator|->
 name|mask
 condition|)
-block|{
 name|gimp_object_set_name
 argument_list|(
 name|GIMP_OBJECT
@@ -435,7 +431,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|gimp_image_get_active_layer
@@ -491,6 +486,7 @@ argument_list|,
 name|new_layer
 argument_list|,
 name|count
+operator|++
 argument_list|)
 expr_stmt|;
 block|}
@@ -520,9 +516,6 @@ name|g_list_next
 argument_list|(
 name|list
 argument_list|)
-operator|,
-name|count
-operator|++
 control|)
 block|{
 name|channel
@@ -615,6 +608,7 @@ argument_list|,
 name|new_channel
 argument_list|,
 name|count
+operator|++
 argument_list|)
 expr_stmt|;
 block|}
