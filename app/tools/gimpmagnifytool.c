@@ -1025,6 +1025,8 @@ name|height
 decl_stmt|;
 name|gdouble
 name|scale
+init|=
+literal|1.0
 decl_stmt|;
 name|width
 operator|=
