@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2930a10d0108
+DECL|struct|__anon27723f340108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2930a10d0208
+DECL|struct|__anon27723f340208
 block|{
 DECL|member|run
 name|gboolean
@@ -5459,6 +5459,28 @@ operator|&
 name|colors
 argument_list|)
 expr_stmt|;
+comment|/*    * Make sure there is something in the colormap.    */
+if|if
+condition|(
+name|colors
+operator|==
+literal|0
+condition|)
+block|{
+name|before
+operator|=
+name|g_new0
+argument_list|(
+name|guchar
+argument_list|,
+literal|3
+argument_list|)
+expr_stmt|;
+name|colors
+operator|=
+literal|1
+expr_stmt|;
+block|}
 name|cols
 operator|=
 name|drawable
