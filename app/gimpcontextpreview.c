@@ -701,12 +701,32 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|context_preview_drag_type
+specifier|static
+name|gchar
+modifier|*
+name|context_preview_drag_type
+index|[
+literal|3
+index|]
+init|=
+block|{
+literal|"gimp_brush"
+block|,
+literal|"gimp_pattern"
+block|,
+literal|"gimp_gradient"
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  signals  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c5b4df60103
+DECL|enum|__anon278060860103
 enum|enum
 block|{
 DECL|enumerator|CLICKED
@@ -1542,6 +1562,23 @@ name|GDK_ACTION_COPY
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gcp
+argument_list|)
+argument_list|,
+name|context_preview_drag_type
+index|[
+name|gcp
+operator|->
+name|type
+index|]
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gcp

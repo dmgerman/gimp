@@ -634,6 +634,8 @@ block|,
 name|GIMP_TARGET_LAYER_MASK
 block|,
 name|GIMP_TARGET_COLOR
+block|,
+name|GIMP_TARGET_PATTERN
 block|}
 decl_stmt|;
 end_decl_stmt
