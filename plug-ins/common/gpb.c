@@ -115,7 +115,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28d07dc60108
+DECL|struct|__anon2af2c3560108
 block|{
 comment|/* Use by both gpb and gih: */
 DECL|member|spacing
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d07dc60208
+DECL|struct|__anon2af2c3560208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -1939,12 +1939,12 @@ name|gihparms
 operator|.
 name|cellheight
 argument_list|,
+literal|2
+argument_list|,
 name|gimp_image_height
 argument_list|(
 name|image_ID
 argument_list|)
-argument_list|,
-literal|1
 argument_list|,
 literal|1
 argument_list|,
