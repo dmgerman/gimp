@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-projection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-flip.h"
 end_include
 
@@ -559,12 +553,6 @@ default|default:
 break|break;
 block|}
 block|}
-comment|/*  Make sure the projection matches the gimage size  */
-name|gimp_image_projection_allocate
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  Rigor the floating selection  */
 if|if
 condition|(
