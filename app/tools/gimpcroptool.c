@@ -179,12 +179,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -206,7 +200,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f824710103
+DECL|enum|__anon27d7783c0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4568,9 +4562,13 @@ argument_list|(
 literal|"Crop& Resize Information"
 argument_list|)
 argument_list|,
-name|tool_manager_help_func
+name|gimp_standard_help_func
 argument_list|,
-name|NULL
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|help_data
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_create_action_area

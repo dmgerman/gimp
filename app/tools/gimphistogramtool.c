@@ -1457,9 +1457,11 @@ argument_list|(
 literal|"View Image Histogram"
 argument_list|)
 argument_list|,
-name|tool_manager_help_func
+name|gimp_standard_help_func
 argument_list|,
-name|NULL
+name|tool_info
+operator|->
+name|help_data
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

@@ -173,12 +173,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -7939,9 +7933,16 @@ name|l_tool
 operator|->
 name|file_dialog
 argument_list|,
-name|tool_manager_help_func
+name|gimp_standard_help_func
 argument_list|,
-name|NULL
+name|GIMP_TOOL
+argument_list|(
+name|l_tool
+argument_list|)
+operator|->
+name|tool_info
+operator|->
+name|help_data
 argument_list|)
 expr_stmt|;
 block|}

@@ -149,12 +149,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -381,6 +375,10 @@ name|InfoDialog
 modifier|*
 name|gimp_color_picker_tool_info_create
 parameter_list|(
+name|GimpToolInfo
+modifier|*
+name|tool_info
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1042,6 +1040,10 @@ name|gimp_color_picker_tool_info
 operator|=
 name|gimp_color_picker_tool_info_create
 argument_list|(
+name|tool
+operator|->
+name|tool_info
+argument_list|,
 name|tool
 operator|->
 name|drawable
@@ -1890,9 +1892,13 @@ begin_function
 specifier|static
 name|InfoDialog
 modifier|*
-DECL|function|gimp_color_picker_tool_info_create (GimpDrawable * drawable)
+DECL|function|gimp_color_picker_tool_info_create (GimpToolInfo * tool_info,GimpDrawable * drawable)
 name|gimp_color_picker_tool_info_create
 parameter_list|(
+name|GimpToolInfo
+modifier|*
+name|tool_info
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1933,9 +1939,11 @@ argument_list|(
 literal|"Color Picker Information"
 argument_list|)
 argument_list|,
-name|tool_manager_help_func
+name|gimp_standard_help_func
 argument_list|,
-name|NULL
+name|tool_info
+operator|->
+name|help_data
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_create_action_area

@@ -155,12 +155,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1479,9 +1473,13 @@ argument_list|(
 literal|"Measure Distances and Angles"
 argument_list|)
 argument_list|,
-name|tool_manager_help_func
+name|gimp_standard_help_func
 argument_list|,
-name|NULL
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|help_data
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_label
