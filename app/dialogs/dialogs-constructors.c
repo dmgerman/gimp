@@ -1374,7 +1374,7 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 name|factory
 operator|->
