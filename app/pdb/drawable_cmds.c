@@ -7261,7 +7261,7 @@ literal|"gimp_drawable_set_pixel"
 block|,
 literal|"Sets the value of the pixel at the specified coordinates."
 block|,
-literal|"This procedure sets the pixel value at the specified coordinates. The 'num_channels' argument must always be equal to the bytes-per-pixel value for the spec ified drawable. Note that this function is not undoable, you should use it only on drawables you just created yourself."
+literal|"This procedure sets the pixel value at the specified coordinates. The 'num_channels' argument must always be equal to the bytes-per-pixel value for the specified drawable. Note that this function is not undoable, you should use it only on drawables you just created yourself."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

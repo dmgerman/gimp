@@ -3566,10 +3566,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
-name|lockstatus
+name|gboolean
+name|locked
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -3657,7 +3657,7 @@ if|if
 condition|(
 name|vectors
 condition|)
-name|lockstatus
+name|locked
 operator|=
 name|gimp_item_get_linked
 argument_list|(
@@ -3696,7 +3696,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|lockstatus
+name|locked
 expr_stmt|;
 return|return
 name|return_args
@@ -3742,9 +3742,9 @@ block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"lockstatus"
+literal|"locked"
 block|,
-literal|"The lock status associated with the name path. 0 is returned if the path is not locked. 1 is returned if the path is locked."
+literal|"TRUE if the path is locked, FALSE otherwise"
 block|}
 block|}
 decl_stmt|;
@@ -3827,10 +3827,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|gint32
-name|lockstatus
+name|gboolean
+name|locked
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 name|GimpVectors
 modifier|*
@@ -3900,7 +3900,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|lockstatus
+name|locked
 operator|=
 name|args
 index|[
@@ -3910,6 +3910,10 @@ operator|.
 name|value
 operator|.
 name|pdb_int
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -3936,7 +3940,7 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
-name|lockstatus
+name|locked
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3986,9 +3990,9 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"lockstatus"
+literal|"locked"
 block|,
-literal|"The lock status associated with the name path. 0 if the path is not locked. 1 if the path is to be locked"
+literal|"Whether the path is locked"
 block|}
 block|}
 decl_stmt|;
@@ -4880,7 +4884,7 @@ literal|"gimp_path_import_string"
 block|,
 literal|"Import paths from an SVG string."
 block|,
-literal|"This procedure works like gimp_path_import() but takes a string rather than a filename. This allows you to write scripts that generate SVG and feed it to GIMP."
+literal|"This procedure works like gimp_path_import() but takes a string rather than reading the SVG from a file. This allows you to write scripts that generate SVG and feed it to GIMP."
 block|,
 literal|"Sven Neumann"
 block|,

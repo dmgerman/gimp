@@ -1113,11 +1113,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_locked:  * @image_ID: The image.  * @name: The name of the path whose locked status should be obtained.  *  * Returns the locked status associated with the named path.  *  * This procedure returns the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: The lock status associated with the name path. 0 is returned if the path is not locked. 1 is returned if the path is locked.  */
+comment|/**  * gimp_path_get_locked:  * @image_ID: The image.  * @name: The name of the path whose locked status should be obtained.  *  * Returns the locked status associated with the named path.  *  * This procedure returns the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: TRUE if the path is locked, FALSE otherwise.  */
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_path_get_locked (gint32 image_ID,const gchar * name)
 name|gimp_path_get_locked
 parameter_list|(
@@ -1137,10 +1137,10 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
-name|lockstatus
+name|gboolean
+name|locked
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1175,7 +1175,7 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|lockstatus
+name|locked
 operator|=
 name|return_vals
 index|[
@@ -1194,18 +1194,18 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|lockstatus
+name|locked
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_set_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be set.  * @lockstatus: The lock status associated with the name path. 0 if the path is not locked. 1 if the path is to be locked.  *  * Set the locked status associated with the named path.  *  * This procedure sets the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_set_locked:  * @image_ID: The image.  * @name: the name of the path whose locked status should be set.  * @locked: Whether the path is locked.  *  * Set the locked status associated with the named path.  *  * This procedure sets the lock status associated with the specified  * path. A path can be \"locked\" which means that the transformation  * tool operations will also apply to the path.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_set_locked (gint32 image_ID,const gchar * name,gint lockstatus)
+DECL|function|gimp_path_set_locked (gint32 image_ID,const gchar * name,gboolean locked)
 name|gimp_path_set_locked
 parameter_list|(
 name|gint32
@@ -1216,8 +1216,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gint
-name|lockstatus
+name|gboolean
+name|locked
 parameter_list|)
 block|{
 name|GimpParam
@@ -1251,7 +1251,7 @@ name|name
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|lockstatus
+name|locked
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -1484,7 +1484,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_import_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_path_import() but takes a string  * rather than a filename. This allows you to write scripts that  * generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_path_import_string:  * @image_ID: The image.  * @string: A string that must be a complete and valid SVG document.  * @length: Number of bytes in string or -1 if the string is NULL terminated.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  *  * Import paths from an SVG string.  *  * This procedure works like gimp_path_import() but takes a string  * rather than reading the SVG from a file. This allows you to write  * scripts that generate SVG and feed it to GIMP.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

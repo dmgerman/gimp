@@ -212,7 +212,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|gimp_path_get_locked
 parameter_list|(
 name|gint32
@@ -238,8 +238,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gint
-name|lockstatus
+name|gboolean
+name|locked
 parameter_list|)
 function_decl|;
 end_function_decl
