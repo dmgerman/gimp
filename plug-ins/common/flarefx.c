@@ -160,7 +160,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7784b0108
+DECL|struct|__anon293242320108
 block|{
 DECL|member|posx
 name|gint
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7784b0208
+DECL|struct|__anon293242320208
 block|{
 DECL|member|run
 name|gint
@@ -250,7 +250,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7784b0308
+DECL|struct|__anon293242320308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1001,6 +1001,7 @@ argument_list|,
 comment|/* Copyright */
 literal|"May 2000"
 argument_list|,
+comment|/* don't translate '<Image>' entry,  			   * it is keyword for the gtk toolkit */
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Light Effects/FlareFX..."

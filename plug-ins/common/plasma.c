@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883677d0108
+DECL|struct|__anon28fac52f0108
 block|{
 DECL|member|seed
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883677d0208
+DECL|struct|__anon28fac52f0208
 block|{
 DECL|member|run
 name|gint
@@ -571,6 +571,7 @@ literal|"Stephen Norris"
 argument_list|,
 literal|"May 2000"
 argument_list|,
+comment|/* don't translate '<Image>', it's a special 			   * keyword of the gtk toolkit */
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Render/Clouds/Plasma..."

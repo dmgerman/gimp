@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74c2fe0108
+DECL|struct|__anon2a8c50420108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74c2fe0208
+DECL|struct|__anon2a8c50420208
 block|{
 DECL|member|run
 name|gint
@@ -694,6 +694,7 @@ literal|"John Beale"
 argument_list|,
 literal|"Version 1.26, December 1998"
 argument_list|,
+comment|/* don't translate '<Image>', it's a special 			   * keyword for the gtk toolkit */
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Light Effects/Sparkle..."
