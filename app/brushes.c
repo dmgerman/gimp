@@ -1801,7 +1801,7 @@ name|TRUE
 expr_stmt|;
 name|brushes_init
 argument_list|(
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
