@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a550c0103
+DECL|enum|__anon2b4489ca0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a550c0203
+DECL|enum|__anon2b4489ca0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a550c0303
+DECL|enum|__anon2b4489ca0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a550c0403
+DECL|enum|__anon2b4489ca0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4a550c0508
+DECL|struct|__anon2b4489ca0508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4a550c0608
+DECL|struct|__anon2b4489ca0608
 block|{
 DECL|member|run
 name|gint
@@ -730,7 +730,7 @@ decl_stmt|;
 name|gint
 name|visible_layer_num
 init|=
-literal|1
+literal|0
 decl_stmt|;
 name|gint
 modifier|*
@@ -740,7 +740,8 @@ name|NULL
 decl_stmt|;
 name|gint
 name|index
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|vindex
 decl_stmt|;
 name|gint
@@ -793,6 +794,11 @@ name|base_y
 init|=
 literal|0
 decl_stmt|;
+name|gint
+name|bg_index
+init|=
+literal|0
+decl_stmt|;
 name|layers
 operator|=
 name|gimp_image_get_layers
@@ -802,6 +808,12 @@ argument_list|,
 operator|&
 name|layer_num
 argument_list|)
+expr_stmt|;
+name|bg_index
+operator|=
+name|layer_num
+operator|-
+literal|1
 expr_stmt|;
 for|for
 control|(
@@ -816,6 +828,7 @@ condition|;
 name|index
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|gimp_layer_get_visible
@@ -829,6 +842,7 @@ condition|)
 name|visible_layer_num
 operator|++
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|VALS
@@ -839,6 +853,16 @@ block|{
 name|layer_num
 operator|--
 expr_stmt|;
+if|if
+condition|(
+name|gimp_layer_get_visible
+argument_list|(
+name|layers
+index|[
+name|bg_index
+index|]
+argument_list|)
+condition|)
 name|visible_layer_num
 operator|--
 expr_stmt|;
@@ -850,10 +874,10 @@ operator|<
 name|visible_layer_num
 condition|)
 block|{
-name|gint
-name|unintialzied
+name|gboolean
+name|uninitialized
 init|=
-literal|1
+name|TRUE
 decl_stmt|;
 name|gint
 name|min_x
@@ -889,6 +913,7 @@ condition|;
 name|index
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|gimp_layer_get_visible
@@ -938,14 +963,14 @@ name|offset_y
 expr_stmt|;
 if|if
 condition|(
-name|unintialzied
+name|uninitialized
 condition|)
 block|{
 name|base_x
 operator|=
 name|min_x
 operator|=
-name|max_y
+name|max_x
 operator|=
 name|orig_x
 expr_stmt|;
@@ -957,9 +982,9 @@ name|max_y
 operator|=
 name|orig_y
 expr_stmt|;
-name|unintialzied
+name|uninitialized
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 else|else
@@ -1006,6 +1031,7 @@ name|orig_y
 expr_stmt|;
 block|}
 block|}
+block|}
 if|if
 condition|(
 name|VALS
@@ -1017,7 +1043,7 @@ name|gimp_drawable_offsets
 argument_list|(
 name|layers
 index|[
-name|layer_num
+name|bg_index
 index|]
 argument_list|,
 operator|&
@@ -1031,7 +1057,7 @@ name|align_layers_get_align_offsets
 argument_list|(
 name|layers
 index|[
-name|layer_num
+name|bg_index
 index|]
 argument_list|,
 operator|&
@@ -1053,24 +1079,20 @@ name|base_x
 operator|=
 name|min_x
 operator|=
-name|max_y
-operator|=
 name|orig_x
 expr_stmt|;
 name|base_y
 operator|=
 name|min_y
 operator|=
-name|max_y
-operator|=
 name|orig_y
 expr_stmt|;
 block|}
 if|if
 condition|(
-literal|1
-operator|<
 name|visible_layer_num
+operator|>
+literal|1
 condition|)
 block|{
 name|step_x
@@ -1267,6 +1289,8 @@ operator|(
 name|visible_layer_num
 operator|-
 name|vindex
+operator|-
+literal|1
 operator|)
 operator|*
 name|step_x
@@ -1362,6 +1386,8 @@ operator|(
 name|visible_layer_num
 operator|-
 name|vindex
+operator|-
+literal|1
 operator|)
 operator|*
 name|step_y
