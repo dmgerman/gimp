@@ -1030,7 +1030,7 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|plug_in_make_menu
+name|plug_in_menus_create
 argument_list|(
 name|factory
 argument_list|,

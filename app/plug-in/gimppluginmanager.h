@@ -42,17 +42,16 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Get the "image_types" the plug-in works on. */
+comment|/* Register an internal plug-in.  This is for file load-save  * handlers, which are organized around the plug-in data structure.  * This could all be done a little better, but oh well.  -josh  */
 end_comment
 
 begin_function_decl
-name|gchar
-modifier|*
-name|plug_ins_image_types
+name|void
+name|plug_ins_add_internal
 parameter_list|(
-name|gchar
+name|PlugInProcDef
 modifier|*
-name|name
+name|proc_def
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -91,7 +90,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|plug_ins_def_add
+name|plug_ins_def_add_from_rc
 parameter_list|(
 name|PlugInDef
 modifier|*
@@ -100,17 +99,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* Add/Remove temporary procedures. */
+end_comment
+
 begin_function_decl
 name|void
-name|plug_ins_proc_def_add
+name|plug_ins_temp_proc_def_add
 parameter_list|(
-name|PlugInProcDef
-modifier|*
-name|proc_def
-parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|PlugInProcDef
+modifier|*
+name|proc_def
 parameter_list|,
 specifier|const
 name|gchar
@@ -127,31 +130,15 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|plug_ins_proc_def_remove
+name|plug_ins_temp_proc_def_remove
 parameter_list|(
-name|PlugInProcDef
-modifier|*
-name|proc_def
-parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Retrieve a plug-ins menu path */
-end_comment
-
-begin_function_decl
-name|gchar
+parameter_list|,
+name|PlugInProcDef
 modifier|*
-name|plug_ins_menu_path
-parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|proc_def
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -166,6 +153,10 @@ name|gchar
 modifier|*
 name|plug_ins_locale_domain
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -190,25 +181,14 @@ name|gchar
 modifier|*
 name|plug_ins_help_path
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|prog_name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Register an internal plug-in.  This is for file load-save  * handlers, which are organized around the plug-in data structure.  * This could all be done a little better, but oh well.  -josh  */
-end_comment
-
-begin_function_decl
-name|void
-name|plug_ins_add_internal
-parameter_list|(
-name|PlugInProcDef
-modifier|*
-name|proc_def
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -20,6 +20,10 @@ begin_function_decl
 name|void
 name|plug_in_menus_init
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GSList
 modifier|*
 name|plug_in_defs
@@ -34,7 +38,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|plug_in_make_menu
+name|plug_in_menus_create
 parameter_list|(
 name|GimpItemFactory
 modifier|*
@@ -49,7 +53,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|plug_in_make_menu_entry
+name|plug_in_menus_create_entry
 parameter_list|(
 name|GimpItemFactory
 modifier|*
@@ -74,7 +78,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|plug_in_delete_menu_entry
+name|plug_in_menus_delete_entry
 parameter_list|(
 specifier|const
 name|gchar

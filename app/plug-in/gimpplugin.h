@@ -152,12 +152,12 @@ modifier|*
 name|progress
 decl_stmt|;
 comment|/*  Progress dialog                         */
-DECL|member|user_data
+DECL|member|plug_in_def
 name|PlugInDef
 modifier|*
-name|user_data
+name|plug_in_def
 decl_stmt|;
-comment|/*  DON'T USE!!                             */
+comment|/*  Valid only during query() and init()    */
 block|}
 struct|;
 end_struct

@@ -165,9 +165,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_menus_init (GSList * plug_in_defs,const gchar * std_plugins_domain)
+DECL|function|plug_in_menus_init (Gimp * gimp,GSList * plug_in_defs,const gchar * std_plugins_domain)
 name|plug_in_menus_init
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GSList
 modifier|*
 name|plug_in_defs
@@ -278,6 +282,8 @@ name|locale_domain
 operator|=
 name|plug_ins_locale_domain
 argument_list|(
+name|gimp
+argument_list|,
 name|plug_in_def
 operator|->
 name|prog
@@ -363,8 +369,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_make_menu (GimpItemFactory * item_factory,GSList * proc_defs)
-name|plug_in_make_menu
+DECL|function|plug_in_menus_create (GimpItemFactory * item_factory,GSList * proc_defs)
+name|plug_in_menus_create
 parameter_list|(
 name|GimpItemFactory
 modifier|*
@@ -389,10 +395,6 @@ name|menu_entries
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|item_factory
-operator|==
-name|NULL
-operator|||
 name|GIMP_IS_ITEM_FACTORY
 argument_list|(
 name|item_factory
@@ -476,17 +478,47 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
+name|progname
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
 name|locale_domain
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|help_path
+decl_stmt|;
+name|progname
+operator|=
+name|plug_in_proc_def_get_progname
+argument_list|(
+name|proc_def
+argument_list|)
+expr_stmt|;
 name|locale_domain
 operator|=
 name|plug_ins_locale_domain
 argument_list|(
-name|proc_def
+name|item_factory
 operator|->
-name|prog
+name|gimp
+argument_list|,
+name|progname
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|help_path
+operator|=
+name|plug_ins_help_path
+argument_list|(
+name|item_factory
+operator|->
+name|gimp
+argument_list|,
+name|progname
 argument_list|)
 expr_stmt|;
 name|menu_entry
@@ -514,12 +546,7 @@ name|menu_entry
 operator|->
 name|help_path
 operator|=
-name|plug_ins_help_path
-argument_list|(
-name|proc_def
-operator|->
-name|prog
-argument_list|)
+name|help_path
 expr_stmt|;
 name|g_tree_insert
 argument_list|(
@@ -561,8 +588,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_make_menu_entry (GimpItemFactory * item_factory,PlugInProcDef * proc_def,const gchar * domain,const gchar * help_path)
-name|plug_in_make_menu_entry
+DECL|function|plug_in_menus_create_entry (GimpItemFactory * item_factory,PlugInProcDef * proc_def,const gchar * locale_domain,const gchar * help_path)
+name|plug_in_menus_create_entry
 parameter_list|(
 name|GimpItemFactory
 modifier|*
@@ -575,7 +602,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|domain
+name|locale_domain
 parameter_list|,
 specifier|const
 name|gchar
@@ -799,7 +826,7 @@ argument_list|,
 operator|&
 name|entry
 argument_list|,
-name|domain
+name|locale_domain
 argument_list|,
 operator|&
 name|proc_def
@@ -855,7 +882,7 @@ argument_list|,
 operator|&
 name|entry
 argument_list|,
-name|domain
+name|locale_domain
 argument_list|,
 operator|&
 name|proc_def
@@ -886,8 +913,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_delete_menu_entry (const gchar * menu_path)
-name|plug_in_delete_menu_entry
+DECL|function|plug_in_menus_delete_entry (const gchar * menu_path)
+name|plug_in_menus_delete_entry
 parameter_list|(
 specifier|const
 name|gchar
@@ -1411,7 +1438,7 @@ modifier|*
 name|item_factory
 parameter_list|)
 block|{
-name|plug_in_make_menu_entry
+name|plug_in_menus_create_entry
 argument_list|(
 name|item_factory
 argument_list|,

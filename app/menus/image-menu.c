@@ -244,7 +244,7 @@ init|=
 block|{
 block|{
 block|{
-literal|"/tearoff1"
+literal|"/tearoff"
 block|,
 name|NULL
 block|,
@@ -3455,7 +3455,7 @@ argument_list|)
 block|,
 name|MENU_SEPARATOR
 argument_list|(
-literal|"/Filters/---INSERT"
+literal|"/Filters/web-separator"
 argument_list|)
 block|,
 name|MENU_BRANCH
@@ -3530,7 +3530,7 @@ argument_list|(
 name|factory
 argument_list|)
 argument_list|,
-literal|"/tearoff1"
+literal|"/tearoff"
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3955,7 +3955,7 @@ name|factory
 argument_list|)
 expr_stmt|;
 block|}
-name|plug_in_make_menu
+name|plug_in_menus_create
 argument_list|(
 name|factory
 argument_list|,
@@ -4553,7 +4553,7 @@ argument_list|(
 name|factory
 argument_list|)
 argument_list|,
-literal|"/Filters/---INSERT"
+literal|"/Filters/web-separator"
 argument_list|)
 expr_stmt|;
 if|if

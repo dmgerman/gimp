@@ -1506,7 +1506,7 @@ name|plug_in_def_set_locale_domain_name
 argument_list|(
 name|current_plug_in
 operator|->
-name|user_data
+name|plug_in_def
 argument_list|,
 name|domain_name
 argument_list|)
@@ -1515,7 +1515,7 @@ name|plug_in_def_set_locale_domain_path
 argument_list|(
 name|current_plug_in
 operator|->
-name|user_data
+name|plug_in_def
 argument_list|,
 name|domain_path
 argument_list|)
@@ -1667,7 +1667,7 @@ name|plug_in_def_set_help_path
 argument_list|(
 name|current_plug_in
 operator|->
-name|user_data
+name|plug_in_def
 argument_list|,
 name|help_path
 argument_list|)

@@ -108,6 +108,27 @@ struct|;
 end_struct
 
 begin_function_decl
+name|PlugInProcDef
+modifier|*
+name|plug_in_proc_def_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|plug_in_proc_def_free
+parameter_list|(
+name|PlugInProcDef
+modifier|*
+name|proc_def
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|ProcRecord
 modifier|*
 name|plug_in_proc_def_get_proc
@@ -120,15 +141,14 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|plug_in_proc_def_destroy
+specifier|const
+name|gchar
+modifier|*
+name|plug_in_proc_def_get_progname
 parameter_list|(
 name|PlugInProcDef
 modifier|*
 name|proc_def
-parameter_list|,
-name|gboolean
-name|data_only
 parameter_list|)
 function_decl|;
 end_function_decl
