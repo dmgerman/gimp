@@ -4026,7 +4026,7 @@ name|GTK_OBJECT
 argument_list|(
 name|elements
 operator|->
-name|red
+name|blue
 argument_list|)
 argument_list|,
 literal|"value_changed"
@@ -5302,9 +5302,7 @@ name|ysize
 operator|*
 name|ysize
 operator|<
-name|wvals
-operator|.
-name|ncolors
+literal|8192
 condition|;
 name|ysize
 operator|++
@@ -5325,9 +5323,7 @@ name|xsize
 operator|*
 name|ysize
 operator|<
-name|wvals
-operator|.
-name|ncolors
+literal|8192
 condition|)
 name|xsize
 operator|++
