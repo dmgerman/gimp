@@ -921,6 +921,19 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|layers_dialog_merge_down_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|layers_dialog_flatten_image_callback
 parameter_list|(
 name|GtkWidget
@@ -1583,6 +1596,22 @@ block|,
 name|GDK_CONTROL_MASK
 block|,
 name|layers_dialog_merge_layers_callback
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"Merge Down"
+block|,
+literal|'M'
+block|,
+name|GDK_CONTROL_MASK
+block|,
+name|layers_dialog_merge_down_callback
 block|,
 name|NULL
 block|,
@@ -4315,7 +4344,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27599f540108
+DECL|struct|__anon277ab67b0108
 typedef|typedef
 struct|struct
 block|{
@@ -7035,7 +7064,7 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-comment|/* flatten image */
+comment|/* merge visible layers */
 name|gtk_widget_set_sensitive
 argument_list|(
 name|layers_ops
@@ -7054,12 +7083,31 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-comment|/* alpha select */
+comment|/* flatten image */
 name|gtk_widget_set_sensitive
 argument_list|(
 name|layers_ops
 index|[
 literal|12
+index|]
+operator|.
+name|widget
+argument_list|,
+name|fs
+operator|&&
+name|ac
+operator|&&
+name|gimage
+operator|&&
+name|lp
+argument_list|)
+expr_stmt|;
+comment|/* alpha select */
+name|gtk_widget_set_sensitive
+argument_list|(
+name|layers_ops
+index|[
+literal|13
 index|]
 operator|.
 name|widget
@@ -7080,7 +7128,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|layers_ops
 index|[
-literal|13
+literal|14
 index|]
 operator|.
 name|widget
@@ -7101,7 +7149,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|layers_ops
 index|[
-literal|14
+literal|15
 index|]
 operator|.
 name|widget
@@ -9085,6 +9133,60 @@ name|gimage
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|layers_dialog_merge_down_callback (GtkWidget * w,gpointer client_data)
+name|layers_dialog_merge_down_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|w
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|GImage
+modifier|*
+name|gimage
+decl_stmt|;
+comment|/* if there is a currently selected gimage    */
+if|if
+condition|(
+operator|!
+name|layersD
+condition|)
+return|return;
+if|if
+condition|(
+operator|!
+operator|(
+name|gimage
+operator|=
+name|layersD
+operator|->
+name|gimage
+operator|)
+condition|)
+return|return;
+name|gimp_image_merge_down
+argument_list|(
+name|gimage
+argument_list|,
+name|gimage
+operator|->
+name|active_layer
+argument_list|,
+name|ExpandAsNecessary
+argument_list|)
+expr_stmt|;
+name|gdisplays_flush
+argument_list|()
 expr_stmt|;
 block|}
 end_function

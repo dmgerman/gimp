@@ -189,6 +189,13 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|ProcRecord
+name|gimage_merge_down_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
 name|gimage_flatten_proc
 decl_stmt|;
 end_decl_stmt
