@@ -139,7 +139,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c01a270108
+DECL|struct|__anon27b3db6e0108
 block|{
 DECL|member|name
 specifier|const
@@ -1727,7 +1727,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_parse_hex:  * @rgb: a #GimpRGB struct used to return the parsed color  * @hex: a string describing a color in hexadecimal notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing a color in RGB value in  * hexadecimal notation (optionally prefixed with a '#'.  *  * This funcion does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @hex was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_hex:  * @rgb: a #GimpRGB struct used to return the parsed color  * @hex: a string describing a color in hexadecimal notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing a color in RGB value in  * hexadecimal notation (optionally prefixed with a '#').  *  * This funcion does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @hex was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
