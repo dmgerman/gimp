@@ -114,7 +114,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon279783240103
+DECL|enum|__anon27b7b88c0103
 typedef|typedef
 enum|enum
 block|{
@@ -162,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon279783240203
+DECL|enum|__anon27b7b88c0203
 typedef|typedef
 enum|enum
 block|{
@@ -1250,6 +1250,18 @@ argument_list|(
 name|GTK_PREVIEW_COLOR
 argument_list|)
 expr_stmt|;
+name|gtk_preview_set_dither
+argument_list|(
+name|GTK_PREVIEW
+argument_list|(
+name|csp
+operator|->
+name|xy_color
+argument_list|)
+argument_list|,
+name|GDK_RGB_DITHER_MAX
+argument_list|)
+expr_stmt|;
 name|gtk_preview_size
 argument_list|(
 name|GTK_PREVIEW
@@ -1375,6 +1387,18 @@ operator|=
 name|gtk_preview_new
 argument_list|(
 name|GTK_PREVIEW_COLOR
+argument_list|)
+expr_stmt|;
+name|gtk_preview_set_dither
+argument_list|(
+name|GTK_PREVIEW
+argument_list|(
+name|csp
+operator|->
+name|z_color
+argument_list|)
+argument_list|,
+name|GDK_RGB_DITHER_MAX
 argument_list|)
 expr_stmt|;
 name|gtk_preview_size
