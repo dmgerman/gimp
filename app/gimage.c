@@ -585,6 +585,11 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+name|gdisplays_resize_cursor_label
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gdisplays_update_full
 argument_list|(
 name|gimage

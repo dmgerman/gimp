@@ -909,6 +909,16 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gdisplays_resize_cursor_label
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gdisplays_update_area
 parameter_list|(
 name|GimpImage

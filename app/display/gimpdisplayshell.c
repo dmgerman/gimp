@@ -3835,6 +3835,14 @@ operator|->
 name|cursor_label
 argument_list|)
 expr_stmt|;
+comment|/* we need to realize the cursor_label widget here, so the size gets      computed correctly */
+name|gtk_widget_realize
+argument_list|(
+name|gdisp
+operator|->
+name|cursor_label
+argument_list|)
+expr_stmt|;
 name|gdisplay_resize_cursor_label
 argument_list|(
 name|gdisp
