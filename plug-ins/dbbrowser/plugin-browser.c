@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bafcc2b0108
+DECL|struct|__anon2b20e9070108
 block|{
 DECL|member|list_view
 name|GtkTreeView
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bafcc2b0208
+DECL|struct|__anon2b20e9070208
 block|{
 DECL|member|menu
 name|gchar
@@ -177,7 +177,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bafcc2b0303
+DECL|enum|__anon2b20e9070303
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -202,7 +202,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bafcc2b0403
+DECL|enum|__anon2b20e9070403
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -3264,6 +3264,14 @@ condition|(
 name|tx
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|format
+init|=
+literal|"%c"
+decl_stmt|;
+comment|/* gcc workaround to avoid warning */
 name|gchar
 modifier|*
 name|utf8
@@ -3287,7 +3295,7 @@ argument_list|(
 name|xtimestr
 argument_list|)
 argument_list|,
-literal|"%c"
+name|format
 argument_list|,
 name|x
 argument_list|)
