@@ -131,6 +131,8 @@ name|core
 argument_list|,
 name|drawable
 argument_list|,
+name|paint_options
+argument_list|,
 operator|&
 name|strokes
 index|[
@@ -388,6 +390,8 @@ argument_list|(
 name|core
 argument_list|,
 name|drawable
+argument_list|,
+name|paint_options
 argument_list|,
 operator|&
 name|coords

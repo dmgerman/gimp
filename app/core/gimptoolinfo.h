@@ -149,7 +149,6 @@ modifier|*
 name|help_data
 decl_stmt|;
 DECL|member|stock_id
-specifier|const
 name|gchar
 modifier|*
 name|stock_id
@@ -158,6 +157,11 @@ DECL|member|stock_pixbuf
 name|GdkPixbuf
 modifier|*
 name|stock_pixbuf
+decl_stmt|;
+comment|/*  temp_hack, will be a GType once tool_options are GimpContext derived  */
+DECL|member|options_new_func
+name|GimpToolOptionsNewFunc
+name|options_new_func
 decl_stmt|;
 DECL|member|context
 name|GimpContext

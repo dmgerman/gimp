@@ -98,23 +98,6 @@ comment|/*  functions  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpToolOptionsNewFunc
-typedef|typedef
-name|GimpToolOptions
-modifier|*
-function_decl|(
-modifier|*
-name|GimpToolOptionsNewFunc
-function_decl|)
-parameter_list|(
-name|GimpToolInfo
-modifier|*
-name|tool_info
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpToolOptionsResetFunc
 typedef|typedef
 name|void

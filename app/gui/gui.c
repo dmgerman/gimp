@@ -689,17 +689,6 @@ name|gdk_rgb_get_colormap
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|render_setup
-argument_list|(
-name|gimprc
-operator|.
-name|transparency_type
-argument_list|,
-name|gimprc
-operator|.
-name|transparency_size
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -878,7 +867,17 @@ expr_stmt|;
 name|color_display_init
 argument_list|()
 expr_stmt|;
-comment|/* temporatily moved to gui_themes_init() until the previews have their    * own render buffers    *    * render_setup (gimprc.transparency_type, gimprc.transparency_size);    */
+name|render_setup
+argument_list|(
+name|gimprc
+operator|.
+name|transparency_type
+argument_list|,
+name|gimprc
+operator|.
+name|transparency_size
+argument_list|)
+expr_stmt|;
 name|dialogs_init
 argument_list|(
 name|gimp

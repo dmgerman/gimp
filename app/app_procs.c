@@ -437,6 +437,11 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
+name|tool_manager_restore
+argument_list|(
+name|the_gimp
+argument_list|)
+expr_stmt|;
 block|}
 comment|/*  Initialize the plug-in structures    */
 name|plug_ins_init

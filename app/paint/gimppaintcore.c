@@ -90,13 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpbrushpipe.h"
+file|"core/gimpbrush.h"
 end_include
 
 begin_include
@@ -145,6 +139,12 @@ begin_include
 include|#
 directive|include
 file|"gimppaintcore-kernels.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppaintoptions.h"
 end_include
 
 begin_include
@@ -1399,7 +1399,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_start (GimpPaintCore * core,GimpDrawable * drawable,GimpCoords * coords)
+DECL|function|gimp_paint_core_start (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords)
 name|gimp_paint_core_start
 parameter_list|(
 name|GimpPaintCore
@@ -1410,15 +1410,15 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
 parameter_list|)
 block|{
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
@@ -1439,6 +1439,15 @@ name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|paint_options
+operator|!=
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1472,15 +1481,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|context
-operator|=
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
 name|core
 operator|->
 name|cur_coords
@@ -1501,6 +1501,8 @@ name|grr_brush
 operator|!=
 name|gimp_context_get_brush
 argument_list|(
+name|paint_options
+operator|->
 name|context
 argument_list|)
 condition|)
@@ -1536,6 +1538,8 @@ name|grr_brush
 operator|=
 name|gimp_context_get_brush
 argument_list|(
+name|paint_options
+operator|->
 name|context
 argument_list|)
 expr_stmt|;

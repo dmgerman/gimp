@@ -512,14 +512,11 @@ operator|->
 name|stock_id
 condition|)
 block|{
-name|g_object_unref
-argument_list|(
-name|G_OBJECT
+name|g_free
 argument_list|(
 name|tool_info
 operator|->
 name|stock_id
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_info
@@ -1040,7 +1037,6 @@ if|if
 condition|(
 name|tool_context
 condition|)
-block|{
 name|tool_info
 operator|->
 name|context
@@ -1054,7 +1050,6 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-block|}
 name|tool_info
 operator|->
 name|gimp
@@ -1193,7 +1188,6 @@ name|gimp
 operator|->
 name|standard_tool_info
 condition|)
-block|{
 name|g_object_unref
 argument_list|(
 name|G_OBJECT
@@ -1204,7 +1198,6 @@ name|standard_tool_info
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp
 operator|->
 name|standard_tool_info
@@ -1217,7 +1210,6 @@ name|gimp
 operator|->
 name|standard_tool_info
 condition|)
-block|{
 name|g_object_ref
 argument_list|(
 name|G_OBJECT
@@ -1228,7 +1220,6 @@ name|standard_tool_info
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

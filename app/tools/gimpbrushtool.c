@@ -988,6 +988,8 @@ name|core
 argument_list|,
 name|drawable
 argument_list|,
+name|paint_options
+argument_list|,
 operator|&
 name|curr_coords
 argument_list|)
