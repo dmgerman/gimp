@@ -395,6 +395,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_unit_get_abbreviation (GimpUnit unit)
@@ -456,6 +457,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_unit_get_singular (GimpUnit unit)
@@ -517,6 +519,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_unit_get_plural (GimpUnit unit)
@@ -808,6 +811,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_unit_get_symbol (GimpUnit unit)

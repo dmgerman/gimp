@@ -59,23 +59,6 @@ directive|include
 file|<sys/types.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_DIRENT_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<dirent.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -1467,8 +1450,8 @@ name|char
 modifier|*
 name|fpath
 decl_stmt|;
-name|struct
-name|dirent
+specifier|const
+name|gchar
 modifier|*
 name|de
 decl_stmt|;
@@ -1485,7 +1468,7 @@ decl_stmt|,
 modifier|*
 name|tmpw
 decl_stmt|;
-name|DIR
+name|GDir
 modifier|*
 name|dir
 decl_stmt|;
@@ -1540,7 +1523,7 @@ block|}
 block|}
 name|dir
 operator|=
-name|opendir
+name|g_dir_open
 argument_list|(
 name|subdir
 argument_list|)
@@ -1563,7 +1546,9 @@ operator|!
 operator|(
 name|de
 operator|=
-name|readdir
+name|g_dir_read
+operator|-
+name|name
 argument_list|(
 name|dir
 argument_list|)
@@ -1581,8 +1566,6 @@ argument_list|,
 name|subdir
 argument_list|,
 name|de
-operator|->
-name|d_name
 argument_list|)
 expr_stmt|;
 name|stat
@@ -1618,8 +1601,6 @@ argument_list|,
 name|g_strdup
 argument_list|(
 name|de
-operator|->
-name|d_name
 argument_list|)
 argument_list|,
 operator|(
@@ -1629,7 +1610,7 @@ name|g_ascii_strcasecmp
 argument_list|)
 expr_stmt|;
 block|}
-name|closedir
+name|g_dir_close
 argument_list|(
 name|dir
 argument_list|)

@@ -66,23 +66,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_DIRENT_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<dirent.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -1133,7 +1116,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330103
+DECL|enum|__anon2c7f43870103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1185,7 +1168,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330203
+DECL|enum|__anon2c7f43870203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1206,7 +1189,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330303
+DECL|enum|__anon2c7f43870303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1227,7 +1210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330403
+DECL|enum|__anon2c7f43870403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1254,7 +1237,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330503
+DECL|enum|__anon2c7f43870503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1275,7 +1258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330603
+DECL|enum|__anon2c7f43870603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1443,7 +1426,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9cb7330708
+DECL|struct|__anon2c7f43870708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1482,7 +1465,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9cb7330808
+DECL|struct|__anon2c7f43870808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1531,7 +1514,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9cb7330908
+DECL|struct|__anon2c7f43870908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1709,7 +1692,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330a03
+DECL|enum|__anon2c7f43870a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1739,7 +1722,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330b03
+DECL|enum|__anon2c7f43870b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1755,7 +1738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330c03
+DECL|enum|__anon2c7f43870c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1780,7 +1763,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9cb7330d03
+DECL|enum|__anon2c7f43870d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -5011,12 +4994,12 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|DIR
+name|GDir
 modifier|*
 name|dir
 decl_stmt|;
-name|struct
-name|dirent
+specifier|const
+name|gchar
 modifier|*
 name|dir_ent
 decl_stmt|;
@@ -5061,9 +5044,13 @@ expr_stmt|;
 comment|/* Open directory */
 name|dir
 operator|=
-name|opendir
+name|g_dir_open
 argument_list|(
 name|path
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -5085,7 +5072,7 @@ condition|(
 operator|(
 name|dir_ent
 operator|=
-name|readdir
+name|g_dir_read_name
 argument_list|(
 name|dir
 argument_list|)
@@ -5099,8 +5086,6 @@ argument_list|(
 name|path
 argument_list|,
 name|dir_ent
-operator|->
-name|d_name
 argument_list|,
 name|NULL
 argument_list|)
@@ -5136,8 +5121,6 @@ argument_list|(
 name|filename
 argument_list|,
 name|dir_ent
-operator|->
-name|d_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -5174,7 +5157,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-name|closedir
+name|g_close_close
 argument_list|(
 name|dir
 argument_list|)

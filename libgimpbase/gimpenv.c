@@ -69,6 +69,18 @@ directive|define
 name|STRICT
 end_define
 
+begin_define
+DECL|macro|WIN32_LEAN_AND_MEAN
+define|#
+directive|define
+name|WIN32_LEAN_AND_MEAN
+end_define
+
+begin_comment
+DECL|macro|WIN32_LEAN_AND_MEAN
+comment|/* without it DATADIR in objidl.h will collide */
+end_comment
+
 begin_include
 include|#
 directive|include

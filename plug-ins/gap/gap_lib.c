@@ -107,23 +107,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_DIRENT_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<dirent.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* GIMP includes */
 end_comment
@@ -2550,14 +2533,14 @@ modifier|*
 name|l_dummy
 decl_stmt|;
 comment|/* int            l_cmp_len;   */
-name|DIR
+name|GDir
 modifier|*
 name|l_dirp
 decl_stmt|;
-name|struct
-name|dirent
+specifier|const
+name|gchar
 modifier|*
-name|l_dp
+name|l_entry
 decl_stmt|;
 name|long
 name|l_nr
@@ -2753,9 +2736,13 @@ argument_list|)
 expr_stmt|;
 name|l_dirp
 operator|=
-name|opendir
+name|g_dir_open
 argument_list|(
 name|l_dirname_ptr
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2777,9 +2764,9 @@ block|{
 while|while
 condition|(
 operator|(
-name|l_dp
+name|l_entry
 operator|=
-name|readdir
+name|g_dir_read_name
 argument_list|(
 name|l_dirp
 argument_list|)
@@ -2788,20 +2775,16 @@ operator|!=
 name|NULL
 condition|)
 block|{
-comment|/* if(gap_debug) fprintf(stderr, "DEBUG p_dir_ainfo: l_dp->d_name:%s\n", l_dp->d_name); */
+comment|/* if(gap_debug) fprintf(stderr, "DEBUG p_dir_ainfo: l_entry:%s\n", l_entry); */
 comment|/* findout extension of the directory entry name */
 name|l_exptr
 operator|=
 operator|&
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 index|[
 name|strlen
 argument_list|(
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 argument_list|)
 index|]
 expr_stmt|;
@@ -2809,9 +2792,7 @@ while|while
 condition|(
 name|l_exptr
 operator|!=
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 condition|)
 block|{
 if|if
@@ -2884,9 +2865,7 @@ argument_list|)
 argument_list|,
 literal|"%s"
 argument_list|,
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2906,9 +2885,7 @@ literal|"%c%s"
 argument_list|,
 name|G_DIR_SEPARATOR
 argument_list|,
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2929,9 +2906,7 @@ name|l_dirname_ptr
 argument_list|,
 name|G_DIR_SEPARATOR
 argument_list|,
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2952,9 +2927,7 @@ name|l_dummy
 operator|=
 name|p_alloc_basename
 argument_list|(
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 argument_list|,
 operator|&
 name|l_nr
@@ -2984,9 +2957,7 @@ operator|&&
 operator|(
 name|strlen
 argument_list|(
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 argument_list|)
 operator|>
 name|strlen
@@ -3016,9 +2987,7 @@ name|stderr
 argument_list|,
 literal|"DEBUG p_dir_ainfo:  %s NR=%ld\n"
 argument_list|,
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 argument_list|,
 name|l_nr
 argument_list|)
@@ -3053,7 +3022,7 @@ block|}
 block|}
 block|}
 block|}
-name|closedir
+name|g_dir_close
 argument_list|(
 name|l_dirp
 argument_list|)
@@ -9677,14 +9646,14 @@ decl_stmt|;
 name|gint32
 name|l_framecount
 decl_stmt|;
-name|DIR
+name|GDir
 modifier|*
 name|l_dirp
 decl_stmt|;
-name|struct
-name|dirent
+specifier|const
+name|char
 modifier|*
-name|l_dp
+name|l_entry
 decl_stmt|;
 name|l_dir
 operator|=
@@ -9693,9 +9662,13 @@ argument_list|()
 expr_stmt|;
 name|l_dirp
 operator|=
-name|opendir
+name|g_dir_open
 argument_list|(
 name|l_dir
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|l_framecount
@@ -9738,9 +9711,9 @@ expr_stmt|;
 while|while
 condition|(
 operator|(
-name|l_dp
+name|l_entry
 operator|=
-name|readdir
+name|g_dir_read_name
 argument_list|(
 name|l_dirp
 argument_list|)
@@ -9755,9 +9728,7 @@ name|strncmp
 argument_list|(
 name|l_basename
 argument_list|,
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 argument_list|,
 name|l_len
 argument_list|)
@@ -9775,9 +9746,7 @@ name|l_dir
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
-name|l_dp
-operator|->
-name|d_name
+name|l_entry
 argument_list|)
 expr_stmt|;
 if|if
@@ -9843,7 +9812,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|closedir
+name|g_dir_close
 argument_list|(
 name|l_dirp
 argument_list|)

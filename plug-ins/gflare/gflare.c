@@ -93,23 +93,6 @@ end_endif
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_DIRENT_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<dirent.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
 name|__GNUC__
 end_ifdef
 
@@ -500,7 +483,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5ce4ce0103
+DECL|enum|__anon2b2d7e080103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -527,7 +510,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5ce4ce0203
+DECL|enum|__anon2b2d7e080203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -548,7 +531,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0308
+DECL|struct|__anon2b2d7e080308
 block|{
 DECL|member|name
 name|gchar
@@ -689,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0408
+DECL|struct|__anon2b2d7e080408
 block|{
 DECL|member|fp
 name|FILE
@@ -709,7 +692,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5ce4ce0503
+DECL|enum|__anon2b2d7e080503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -737,7 +720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0608
+DECL|struct|__anon2b2d7e080608
 block|{
 DECL|member|init
 name|gint
@@ -759,7 +742,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b5ce4ce0708
+DECL|struct|__anon2b2d7e080708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -833,7 +816,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0808
+DECL|struct|__anon2b2d7e080808
 block|{
 DECL|member|init
 name|gint
@@ -903,7 +886,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0908
+DECL|struct|__anon2b2d7e080908
 block|{
 DECL|member|x0
 name|gdouble
@@ -930,7 +913,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0a08
+DECL|struct|__anon2b2d7e080a08
 block|{
 DECL|member|init
 name|gint
@@ -1100,7 +1083,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0b08
+DECL|struct|__anon2b2d7e080b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1127,7 +1110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0c08
+DECL|struct|__anon2b2d7e080c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1168,7 +1151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0d08
+DECL|struct|__anon2b2d7e080d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1394,7 +1377,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0e08
+DECL|struct|__anon2b2d7e080e08
 block|{
 DECL|member|tag
 name|gint
@@ -1471,7 +1454,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce0f08
+DECL|struct|__anon2b2d7e080f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1529,7 +1512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ce4ce1008
+DECL|struct|__anon2b2d7e081008
 block|{
 DECL|member|run
 name|gint
@@ -8761,12 +8744,12 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|DIR
+name|GDir
 modifier|*
 name|dir
 decl_stmt|;
-name|struct
-name|dirent
+specifier|const
+name|gchar
 modifier|*
 name|dir_ent
 decl_stmt|;
@@ -8813,9 +8796,13 @@ expr_stmt|;
 comment|/* Open directory */
 name|dir
 operator|=
-name|opendir
+name|g_dir_open
 argument_list|(
 name|path
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -8840,7 +8827,7 @@ condition|(
 operator|(
 name|dir_ent
 operator|=
-name|readdir
+name|g_dir_read_name
 argument_list|(
 name|dir
 argument_list|)
@@ -8854,8 +8841,6 @@ argument_list|(
 name|path
 argument_list|,
 name|dir_ent
-operator|->
-name|d_name
 argument_list|,
 name|NULL
 argument_list|)
@@ -8891,8 +8876,6 @@ argument_list|(
 name|filename
 argument_list|,
 name|dir_ent
-operator|->
-name|d_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -8912,7 +8895,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* while */
-name|closedir
+name|g_dir_close
 argument_list|(
 name|dir
 argument_list|)
@@ -9545,7 +9528,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2b5ce4ce1108
+DECL|struct|__anon2b2d7e081108
 specifier|static
 struct|struct
 block|{
@@ -15985,7 +15968,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2b5ce4ce1208
+DECL|struct|__anon2b2d7e081208
 block|{
 DECL|member|label
 name|gchar

@@ -27,11 +27,22 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -44,6 +55,23 @@ include|#
 directive|include
 file|<glib-object.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -242,7 +270,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8f1e20103
+DECL|enum|__anon2c4c2dda0103
 block|{
 DECL|enumerator|PLUG_IN_DEF
 name|PLUG_IN_DEF

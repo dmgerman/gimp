@@ -49,6 +49,30 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_define
+DECL|macro|WIN32_LEAN_AND_MEAN
+define|#
+directive|define
+name|WIN32_LEAN_AND_MEAN
+end_define
+
+begin_include
+include|#
+directive|include
+file|<windows.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -154,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f608950108
+DECL|struct|__anon29bfedae0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -198,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f608950208
+DECL|struct|__anon29bfedae0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -224,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f608950308
+DECL|struct|__anon29bfedae0308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -245,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f608950408
+DECL|struct|__anon29bfedae0408
 block|{
 DECL|member|name
 name|gchar
@@ -273,7 +297,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f608950508
+DECL|struct|__anon29bfedae0508
 block|{
 DECL|member|list
 name|GSList
@@ -293,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29f60895060a
+DECL|union|__anon29bfedae060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -363,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f608950708
+DECL|struct|__anon29bfedae0708
 block|{
 DECL|member|script_name
 name|gchar
@@ -449,7 +473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f608950808
+DECL|struct|__anon29bfedae0808
 block|{
 DECL|member|args_widgets
 name|GtkWidget

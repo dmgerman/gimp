@@ -58,23 +58,6 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_DIRENT_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<dirent.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
 name|HAVE_UNISTD_H
 end_ifdef
 
@@ -5424,12 +5407,12 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|DIR
+name|GDir
 modifier|*
 name|dir
 decl_stmt|;
-name|struct
-name|dirent
+specifier|const
+name|gchar
 modifier|*
 name|dir_ent
 decl_stmt|;
@@ -5474,9 +5457,13 @@ expr_stmt|;
 comment|/* Open directory */
 name|dir
 operator|=
-name|opendir
+name|g_dir_open
 argument_list|(
 name|path
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -5500,7 +5487,7 @@ condition|(
 operator|(
 name|dir_ent
 operator|=
-name|readdir
+name|g_dir_read_name
 argument_list|(
 name|dir
 argument_list|)
@@ -5514,8 +5501,6 @@ argument_list|(
 name|path
 argument_list|,
 name|dir_ent
-operator|->
-name|d_name
 argument_list|,
 name|NULL
 argument_list|)
@@ -5551,8 +5536,6 @@ argument_list|(
 name|filename
 argument_list|,
 name|dir_ent
-operator|->
-name|d_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -5589,7 +5572,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-name|closedir
+name|g_dir_close
 argument_list|(
 name|dir
 argument_list|)

@@ -27,11 +27,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -50,6 +61,23 @@ include|#
 directive|include
 file|<glib-object.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -643,6 +671,9 @@ name|O_WRONLY
 operator||
 name|O_CREAT
 argument_list|,
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|S_IRUSR
 operator||
 name|S_IWUSR
@@ -652,12 +683,33 @@ operator||
 name|S_IROTH
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|_S_IREAD
+operator||
+name|_S_IWRITE
+block|)
+function|;
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_else
 else|else
 name|fd
 operator|=
 literal|1
 expr_stmt|;
+end_else
+
+begin_comment
 comment|/* stdout */
+end_comment
+
+begin_if
 if|if
 condition|(
 name|fd
@@ -685,11 +737,17 @@ return|return
 name|FALSE
 return|;
 block|}
+end_if
+
+begin_expr_stmt
 name|gimp_rc_write_header
 argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|gimp_rc_serialize_changed_properties
 argument_list|(
 name|new_rc
@@ -699,6 +757,9 @@ argument_list|,
 name|fd
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|gimp_config_serialize_unknown_tokens
 argument_list|(
 name|G_OBJECT
@@ -709,6 +770,9 @@ argument_list|,
 name|fd
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_if
 if|if
 condition|(
 name|filename
@@ -718,14 +782,16 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
+end_if
+
+begin_return
 return|return
 name|TRUE
 return|;
-block|}
-end_function
+end_return
 
 begin_function
-specifier|static
+unit|}  static
 name|void
 DECL|function|gimp_rc_serialize_changed_properties (GimpRc * new_rc,GimpRc * old_rc,gint fd)
 name|gimp_rc_serialize_changed_properties

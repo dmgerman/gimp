@@ -27,11 +27,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -50,6 +61,23 @@ include|#
 directive|include
 file|<glib-object.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -337,6 +365,9 @@ name|O_WRONLY
 operator||
 name|O_CREAT
 argument_list|,
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|S_IRUSR
 operator||
 name|S_IWUSR
@@ -346,6 +377,21 @@ operator||
 name|S_IROTH
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|_S_IREAD
+operator||
+name|_S_IWRITE
+block|)
+function|;
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_if
 if|if
 condition|(
 name|fd
@@ -373,6 +419,9 @@ return|return
 name|FALSE
 return|;
 block|}
+end_if
+
+begin_expr_stmt
 name|gimp_config_iface
 operator|->
 name|serialize
@@ -382,31 +431,34 @@ argument_list|,
 name|fd
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|close
 argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_return
 return|return
 name|TRUE
 return|;
-block|}
-end_function
+end_return
 
-begin_function
-name|gboolean
+begin_macro
+unit|}  gboolean
 DECL|function|gimp_config_deserialize (GObject * object,const gchar * filename)
 name|gimp_config_deserialize
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
+argument_list|(
+argument|GObject      *object
+argument_list|,
+argument|const gchar  *filename
+argument_list|)
+end_macro
+
+begin_block
 block|{
 name|GimpConfigInterface
 modifier|*
@@ -559,7 +611,7 @@ return|return
 name|success
 return|;
 block|}
-end_function
+end_block
 
 begin_comment
 comment|/*   * Code to store and lookup unknown tokens (string key/value pairs).  */
@@ -576,7 +628,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6bb5e0108
+DECL|struct|__anon2754adbb0108
 block|{
 DECL|member|key
 name|gchar
