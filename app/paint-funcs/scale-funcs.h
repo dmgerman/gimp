@@ -37,7 +37,7 @@ DECL|macro|LANCZOS_WIDTH
 define|#
 directive|define
 name|LANCZOS_WIDTH
-value|(2)
+value|(4)
 end_define
 
 begin_define
