@@ -1191,6 +1191,17 @@ literal|"};\n"
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+name|g_warning
+argument_list|(
+literal|"unhandled drawable type (%d)"
+argument_list|,
+name|drawable_type
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 comment|/* switch (drawable_type) */
 name|fclose
