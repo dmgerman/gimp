@@ -2065,6 +2065,17 @@ literal|"group-image-resize"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_IMAGE_FLIP
+block|,
+name|N_
+argument_list|(
+literal|"Flip Image"
+argument_list|)
+block|,
+literal|"group-image-flip"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_IMAGE_CONVERT
 block|,
 name|N_

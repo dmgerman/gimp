@@ -526,6 +526,16 @@ define|#
 directive|define
 name|GIMP_STOCK_SCALE
 value|"gimp-scale"
+DECL|macro|GIMP_STOCK_FLIP_HORIZONTAL
+define|#
+directive|define
+name|GIMP_STOCK_FLIP_HORIZONTAL
+value|"gimp-flip-horizontal"
+DECL|macro|GIMP_STOCK_FLIP_VERTICAL
+define|#
+directive|define
+name|GIMP_STOCK_FLIP_VERTICAL
+value|"gimp-flip-vertical"
 DECL|macro|GIMP_STOCK_IMAGE
 define|#
 directive|define
