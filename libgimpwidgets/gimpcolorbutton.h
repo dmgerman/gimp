@@ -148,6 +148,7 @@ DECL|member|parent_class
 name|GimpButtonClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
 DECL|member|color_changed
 name|void
 function_decl|(
@@ -160,17 +161,20 @@ modifier|*
 name|button
 parameter_list|)
 function_decl|;
-comment|/* Padding for future expansion */
-DECL|member|_gimp_reserved1
-name|void
+comment|/*  virtual functions  */
+DECL|member|get_action_type
+name|GType
 function_decl|(
 modifier|*
-name|_gimp_reserved1
+name|get_action_type
 function_decl|)
 parameter_list|(
-name|void
+name|GimpColorButton
+modifier|*
+name|button
 parameter_list|)
 function_decl|;
+comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved2
 name|void
 function_decl|(
