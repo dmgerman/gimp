@@ -1088,7 +1088,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Warning: Failed to save data:\n%s"
+literal|"Warning: Failed to save data:\n\n%s"
 argument_list|)
 argument_list|,
 name|error
@@ -1936,7 +1936,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Warning: Failed to save data:\n%s"
+literal|"Warning: Failed to save data:\n\n%s"
 argument_list|)
 argument_list|,
 name|error
@@ -2332,7 +2332,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Warning: Failed to load data:\n%s"
+literal|"Warning: Failed to load data:\n\n%s"
 argument_list|)
 argument_list|,
 name|error
