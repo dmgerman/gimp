@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2040140108
+DECL|struct|__anon293539230108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2040140208
+DECL|struct|__anon293539230208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -2197,6 +2197,8 @@ decl_stmt|;
 name|gint
 modifier|*
 name|curve
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 modifier|*
