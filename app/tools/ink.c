@@ -4451,13 +4451,12 @@ name|tscale
 operator|*
 name|cos
 argument_list|(
+name|gimp_deg_to_rad
+argument_list|(
 name|ink_options
 operator|->
 name|tilt_angle
-operator|*
-name|G_PI
-operator|/
-literal|180
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tscale_s
@@ -4466,13 +4465,12 @@ name|tscale
 operator|*
 name|sin
 argument_list|(
+name|gimp_deg_to_rad
+argument_list|(
 name|ink_options
 operator|->
 name|tilt_angle
-operator|*
-name|G_PI
-operator|/
-literal|180
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|x
@@ -6446,7 +6444,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon295318710103
+DECL|enum|__anon2b54700a0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

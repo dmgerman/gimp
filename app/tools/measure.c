@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acecfad0103
+DECL|enum|__anon28f541f00103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -604,10 +604,8 @@ name|dx
 condition|)
 name|angle
 operator|=
-literal|180.0
-operator|/
-name|G_PI
-operator|*
+name|gimp_rad_to_deg
+argument_list|(
 name|atan
 argument_list|(
 operator|(
@@ -631,6 +629,7 @@ argument_list|)
 operator|/
 name|xres
 operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 elseif|else
