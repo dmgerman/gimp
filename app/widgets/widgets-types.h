@@ -589,6 +589,15 @@ comment|/*  misc dialogs  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpColorDialog
+typedef|typedef
+name|struct
+name|_GimpColorDialog
+name|GimpColorDialog
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpErrorDialog
 typedef|typedef
 name|struct

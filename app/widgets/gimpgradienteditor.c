@@ -8,7 +8,7 @@ comment|/* Special thanks to:  *  * Luis Albarran (luis4@mindspring.com) - Nice 
 end_comment
 
 begin_comment
-comment|/* TODO:  *  * - Fix memory leaks: grad_free_gradient_editor() and any others  * which I may have missed.  *  * - Add all of Marcelo's neat suggestions:  *   - Hue rotate, saturation, brightness, contrast.  *  * - Better handling of bogus gradient files and inconsistent  *   segments.  Do not loop indefinitely in seg_get_segment_at() if  *   there is a missing segment between two others.  */
+comment|/* TODO:  *  * - Add all of Marcelo's neat suggestions:  *   - Hue rotate, saturation, brightness, contrast.  *  * - Better handling of bogus gradient files and inconsistent  *   segments.  Do not loop indefinitely in seg_get_segment_at() if  *   there is a missing segment between two others.  */
 end_comment
 
 begin_include
@@ -129,12 +129,6 @@ begin_include
 include|#
 directive|include
 file|"gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialogs/color-dialog.h"
 end_include
 
 begin_include
@@ -2132,7 +2126,7 @@ operator|->
 name|color_dialog
 condition|)
 block|{
-name|color_dialog_free
+name|gtk_widget_destroy
 argument_list|(
 name|gradient_editor
 operator|->

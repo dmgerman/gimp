@@ -22,16 +22,6 @@ directive|include
 file|"gimpdataeditor.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"dialogs/dialogs-types.h"
-end_include
-
-begin_comment
-comment|/* FIXME */
-end_comment
-
 begin_define
 DECL|macro|GIMP_TYPE_PALETTE_EDITOR
 define|#
@@ -164,7 +154,7 @@ modifier|*
 name|zoom_all_button
 decl_stmt|;
 DECL|member|color_dialog
-name|ColorDialog
+name|GtkWidget
 modifier|*
 name|color_dialog
 decl_stmt|;

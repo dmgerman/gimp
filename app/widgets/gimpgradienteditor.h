@@ -22,16 +22,6 @@ directive|include
 file|"gimpdataeditor.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"dialogs/dialogs-types.h"
-end_include
-
-begin_comment
-comment|/* FIXME */
-end_comment
-
 begin_define
 DECL|macro|GRAD_NUM_COLORS
 define|#
@@ -43,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c75752b0103
+DECL|enum|__anon2b83407e0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -197,7 +187,7 @@ name|instant_update
 decl_stmt|;
 comment|/*  Color dialog  */
 DECL|member|color_dialog
-name|ColorDialog
+name|GtkWidget
 modifier|*
 name|color_dialog
 decl_stmt|;

@@ -22,16 +22,6 @@ directive|include
 file|"gimpimageeditor.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
-begin_comment
-comment|/* temp hack */
-end_comment
-
 begin_define
 DECL|macro|GIMP_TYPE_COLORMAP_EDITOR
 define|#
@@ -164,7 +154,7 @@ modifier|*
 name|color_entry
 decl_stmt|;
 DECL|member|color_dialog
-name|ColorDialog
+name|GtkWidget
 modifier|*
 name|color_dialog
 decl_stmt|;
