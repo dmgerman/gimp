@@ -1036,11 +1036,6 @@ name|preserve
 operator|)
 condition|)
 block|{
-name|g_print
-argument_list|(
-literal|"disp_callbacks: call tools_initialize()\n"
-argument_list|)
-expr_stmt|;
 name|tools_initialize
 argument_list|(
 name|active_tool
