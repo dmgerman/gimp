@@ -2625,6 +2625,16 @@ name|GTK_STATE_NORMAL
 index|]
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|show_tool_tips
+condition|)
+name|gtk_tooltips_disable
+argument_list|(
+name|tool_tips
+argument_list|)
+expr_stmt|;
 comment|/*  Build the menu bar with menus  */
 name|menus_get_toolbox_menubar
 argument_list|(

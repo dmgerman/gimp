@@ -1960,7 +1960,7 @@ control|)
 if|if
 condition|(
 name|frame
-operator|>=
+operator|==
 name|dissolve_map
 index|[
 name|k

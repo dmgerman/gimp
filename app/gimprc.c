@@ -112,7 +112,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2baf611c0103
+DECL|enum|__anon2ae210cc0103
 typedef|typedef
 enum|enum
 block|{
@@ -660,6 +660,15 @@ name|last_tip
 init|=
 operator|-
 literal|1
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|show_tool_tips
+name|int
+name|show_tool_tips
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -1761,6 +1770,17 @@ block|,
 name|TT_XMENUPATH
 block|,
 name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"show-tool-tips"
+block|,
+name|TT_BOOLEAN
+block|,
+operator|&
+name|show_tool_tips
 block|,
 name|NULL
 block|}
