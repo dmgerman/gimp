@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -263,9 +257,9 @@ name|GtkWidget
 modifier|*
 name|frame2
 decl_stmt|;
-DECL|member|showing_extended
+DECL|member|show_cursor
 name|gboolean
-name|showing_extended
+name|show_cursor
 decl_stmt|;
 block|}
 struct|;
@@ -370,17 +364,13 @@ name|InfoWinData
 modifier|*
 name|iwd
 init|=
-operator|(
-name|InfoWinData
-operator|*
-operator|)
 name|info_win
 operator|->
 name|user_data
 decl_stmt|;
 name|iwd
 operator|->
-name|showing_extended
+name|show_cursor
 operator|=
 operator|(
 name|page_num
@@ -392,14 +382,14 @@ block|}
 end_function
 
 begin_comment
-comment|/*  displays information:  *    cursor pos  *    cursor pos in real units  *    color under cursor  *  Can't we find a better place for this than in the image window? (Ralf)  */
+comment|/*  displays information:  *    cursor pos  *    cursor pos in real units  *    color under cursor  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|info_window_create_extended (InfoDialog * info_win,Gimp * gimp)
-name|info_window_create_extended
+DECL|function|info_window_create_cursor (InfoDialog * info_win,Gimp * gimp)
+name|info_window_create_cursor
 parameter_list|(
 name|InfoDialog
 modifier|*
@@ -414,10 +404,6 @@ name|InfoWinData
 modifier|*
 name|iwd
 init|=
-operator|(
-name|InfoWinData
-operator|*
-operator|)
 name|info_win
 operator|->
 name|user_data
@@ -472,7 +458,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Extended"
+literal|"Cursor"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -617,7 +603,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -635,10 +621,10 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"X:"
+literal|"X"
 argument_list|)
 argument_list|,
-literal|0.0
+literal|0.5
 argument_list|,
 literal|0.5
 argument_list|,
@@ -681,7 +667,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -699,10 +685,10 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"Y"
 argument_list|)
 argument_list|,
-literal|0.0
+literal|0.5
 argument_list|,
 literal|0.5
 argument_list|,
@@ -822,7 +808,7 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -840,10 +826,10 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"X:"
+literal|"X"
 argument_list|)
 argument_list|,
-literal|0.0
+literal|0.5
 argument_list|,
 literal|0.5
 argument_list|,
@@ -886,7 +872,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -904,10 +890,10 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"Y"
 argument_list|)
 argument_list|,
-literal|0.0
+literal|0.5
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1084,10 +1070,6 @@ name|InfoWinData
 modifier|*
 name|iwd
 init|=
-operator|(
-name|InfoWinData
-operator|*
-operator|)
 name|info_win
 operator|->
 name|user_data
@@ -1557,7 +1539,7 @@ name|visual_depth_str
 argument_list|)
 expr_stmt|;
 comment|/*  Add extra tabs  */
-name|info_window_create_extended
+name|info_window_create_cursor
 argument_list|(
 name|info_win
 argument_list|,
@@ -1643,10 +1625,6 @@ name|iwd
 decl_stmt|;
 name|iwd
 operator|=
-operator|(
-name|InfoWinData
-operator|*
-operator|)
 name|info_window_auto
 operator|->
 name|user_data
@@ -1802,13 +1780,13 @@ block|}
 end_function
 
 begin_comment
-comment|/* Updates all extended information. */
+comment|/* Updates all cursor information. */
 end_comment
 
 begin_function
 name|void
-DECL|function|info_window_update_extended (GimpDisplay * gdisp,gdouble tx,gdouble ty)
-name|info_window_update_extended
+DECL|function|info_window_update_cursor (GimpDisplay * gdisp,gdouble tx,gdouble ty)
+name|info_window_update_cursor
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -1865,10 +1843,6 @@ condition|)
 return|return;
 name|iwd
 operator|=
-operator|(
-name|InfoWinData
-operator|*
-operator|)
 name|info_win
 operator|->
 name|user_data
@@ -1939,7 +1913,7 @@ operator|||
 operator|!
 name|iwd
 operator|->
-name|showing_extended
+name|show_cursor
 condition|)
 return|return;
 comment|/* fill in position information */
@@ -2051,41 +2025,14 @@ name|unit
 decl_stmt|;
 name|gdouble
 name|unit_factor
-init|=
-name|_gimp_unit_get_factor
-argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
-name|unit
-argument_list|)
 decl_stmt|;
 name|gint
 name|unit_digits
-init|=
-name|_gimp_unit_get_digits
-argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
-name|unit
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|unit_str
-init|=
-name|_gimp_unit_get_abbreviation
-argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
-name|unit
-argument_list|)
 decl_stmt|;
 name|gchar
 name|format_buf
@@ -2099,6 +2046,51 @@ index|[
 literal|32
 index|]
 decl_stmt|;
+if|if
+condition|(
+name|unit
+operator|==
+name|GIMP_UNIT_PIXEL
+condition|)
+name|unit
+operator|=
+name|image
+operator|->
+name|unit
+expr_stmt|;
+name|unit_factor
+operator|=
+name|_gimp_unit_get_factor
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|unit
+argument_list|)
+expr_stmt|;
+name|unit_digits
+operator|=
+name|_gimp_unit_get_digits
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|unit
+argument_list|)
+expr_stmt|;
+name|unit_str
+operator|=
+name|_gimp_unit_get_abbreviation
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|unit
+argument_list|)
+expr_stmt|;
 name|g_snprintf
 argument_list|(
 name|buf
@@ -2440,10 +2432,6 @@ condition|)
 return|return;
 name|iwd
 operator|=
-operator|(
-name|InfoWinData
-operator|*
-operator|)
 name|info_win
 operator|->
 name|user_data
@@ -2502,12 +2490,6 @@ decl_stmt|;
 name|gint
 name|unit_digits
 decl_stmt|;
-name|GimpUnit
-name|res_unit
-decl_stmt|;
-name|gdouble
-name|res_unit_factor
-decl_stmt|;
 name|gchar
 name|format_buf
 index|[
@@ -2545,10 +2527,6 @@ condition|)
 return|return;
 name|iwd
 operator|=
-operator|(
-name|InfoWinData
-operator|*
-operator|)
 name|info_win
 operator|->
 name|user_data
@@ -2584,6 +2562,30 @@ name|gdisp
 operator|->
 name|gimage
 expr_stmt|;
+comment|/*  pixel size  */
+name|g_snprintf
+argument_list|(
+name|iwd
+operator|->
+name|dimensions_str
+argument_list|,
+name|MAX_BUF
+argument_list|,
+name|_
+argument_list|(
+literal|"%d x %d pixels"
+argument_list|)
+argument_list|,
+name|image
+operator|->
+name|width
+argument_list|,
+name|image
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+comment|/*  print size  */
 name|unit
 operator|=
 name|GIMP_DISPLAY_SHELL
@@ -2592,6 +2594,18 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
+operator|->
+name|unit
+expr_stmt|;
+if|if
+condition|(
+name|unit
+operator|==
+name|GIMP_UNIT_PIXEL
+condition|)
+name|unit
+operator|=
+name|image
 operator|->
 name|unit
 expr_stmt|;
@@ -2615,29 +2629,6 @@ operator|->
 name|gimp
 argument_list|,
 name|unit
-argument_list|)
-expr_stmt|;
-comment|/*  width and height  */
-name|g_snprintf
-argument_list|(
-name|iwd
-operator|->
-name|dimensions_str
-argument_list|,
-name|MAX_BUF
-argument_list|,
-name|_
-argument_list|(
-literal|"%d x %d pixels"
-argument_list|)
-argument_list|,
-name|image
-operator|->
-name|width
-argument_list|,
-name|image
-operator|->
-name|height
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -2700,20 +2691,14 @@ operator|->
 name|yresolution
 argument_list|)
 expr_stmt|;
-comment|/*  image resolution  */
-name|res_unit
+comment|/*  resolution  */
+name|unit
 operator|=
 name|image
 operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|default_image
-operator|->
-name|resolution_unit
+name|unit
 expr_stmt|;
-name|res_unit_factor
+name|unit_factor
 operator|=
 name|_gimp_unit_get_factor
 argument_list|(
@@ -2721,7 +2706,7 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|res_unit
+name|unit
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -2744,7 +2729,7 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-name|res_unit
+name|unit
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2765,15 +2750,15 @@ name|image
 operator|->
 name|xresolution
 operator|/
-name|res_unit_factor
+name|unit_factor
 argument_list|,
 name|image
 operator|->
 name|yresolution
 operator|/
-name|res_unit_factor
+name|unit_factor
 argument_list|,
-name|res_unit
+name|unit
 operator|==
 name|GIMP_UNIT_INCH
 condition|?

@@ -529,7 +529,7 @@ operator|->
 name|height
 condition|)
 block|{
-name|info_window_update_extended
+name|info_window_update_cursor
 argument_list|(
 name|shell
 operator|->
@@ -545,7 +545,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|info_window_update_extended
+name|info_window_update_cursor
 argument_list|(
 name|shell
 operator|->
@@ -588,7 +588,7 @@ name|statusbar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|info_window_update_extended
+name|info_window_update_cursor
 argument_list|(
 name|shell
 operator|->
