@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2003 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -373,10 +373,6 @@ argument_list|(
 name|command
 argument_list|)
 expr_stmt|;
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 block|}
 block|}
 end_function
@@ -454,10 +450,6 @@ argument_list|(
 name|command
 argument_list|)
 expr_stmt|;
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 block|}
 name|data
 operator|->
@@ -512,7 +504,7 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|button_press_cb (GtkWidget * widget,GdkEventButton * event,Selection_t * data)
 name|button_press_cb
 parameter_list|(
@@ -616,12 +608,15 @@ name|TRUE
 expr_stmt|;
 block|}
 block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|button_release_cb (GtkWidget * widget,GdkEventButton * event,gpointer data)
 name|button_release_cb
 parameter_list|(
@@ -649,6 +644,9 @@ name|doubleclick
 operator|=
 name|FALSE
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
@@ -2214,16 +2212,16 @@ argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|list
 argument_list|)
 argument_list|,
 literal|"drag_data_received"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|handle_drop
 argument_list|)
@@ -2232,16 +2230,16 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Callbacks we are interested in */
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|list
 argument_list|)
 argument_list|,
 literal|"click_column"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|toggle_order
 argument_list|)
@@ -2249,16 +2247,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|list
 argument_list|)
 argument_list|,
 literal|"select_row"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|select_row_cb
 argument_list|)
@@ -2266,16 +2264,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|list
 argument_list|)
 argument_list|,
 literal|"unselect_row"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|unselect_row_cb
 argument_list|)
@@ -2283,16 +2281,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|list
 argument_list|)
 argument_list|,
 literal|"row_move"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|row_move_cb
 argument_list|)
@@ -2301,16 +2299,16 @@ name|data
 argument_list|)
 expr_stmt|;
 comment|/* For handling doubleclick */
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|list
 argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|button_press_cb
 argument_list|)
@@ -2318,16 +2316,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|list
 argument_list|)
 argument_list|,
 literal|"button_release_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|button_release_cb
 argument_list|)
