@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294654780108
+DECL|struct|__anon29bab3ea0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294654780208
+DECL|struct|__anon29bab3ea0208
 block|{
 DECL|member|run
 name|gint
@@ -3565,6 +3565,9 @@ index|]
 operator|=
 operator|(
 name|gdouble
+operator|)
+operator|(
+name|gint
 operator|)
 name|pixel
 index|[
