@@ -272,9 +272,27 @@ operator|-=
 literal|4
 control|)
 block|{
-asm|asm ("  movdqu  (%0), %%xmm2; addl $16, %0\n" 											"\tmovdqu  (%1), %%xmm3; addl $16, %1\n" 											"\tmovdqu  %%xmm2, %%xmm4\n" 											"\tpaddusb %%xmm3, %%xmm4\n"  											"\tmovdqu  %%xmm0, %%xmm1\n" 											"\tpandn   %%xmm4, %%xmm1\n" 											"\t" pminub(xmm3, xmm2, xmm4) "\n" 											"\tpand    %%xmm0, %%xmm2\n" 											"\tpor     %%xmm2, %%xmm1\n" 											"\tmovdqu  %%xmm1, (%2); addl $16, %2\n" 											: "+r" (op.A), "+r" (op.B), "+r" (op.D) 											:
+asm|asm ("  movdqu  %0, %%xmm2\n" 											"\tmovdqu  %1, %%xmm3\n" 											"\tmovdqu  %%xmm2, %%xmm4\n" 											"\tpaddusb %%xmm3, %%xmm4\n"  											"\tmovdqu  %%xmm0, %%xmm1\n" 											"\tpandn   %%xmm4, %%xmm1\n" 											"\t" pminub(xmm3, xmm2, xmm4) "\n" 											"\tpand    %%xmm0, %%xmm2\n" 											"\tpor     %%xmm2, %%xmm1\n" 											"\tmovdqu  %%xmm1, %2\n" 											:
 comment|/* empty */
-asm|: "0", "1", "2", "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7");
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D) 											: "0", "1", "2", "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7");
+name|op
+operator|.
+name|A
+operator|+=
+literal|16
+expr_stmt|;
+name|op
+operator|.
+name|B
+operator|+=
+literal|16
+expr_stmt|;
+name|op
+operator|.
+name|D
+operator|+=
+literal|16
+expr_stmt|;
 block|}
 if|if
 condition|(
