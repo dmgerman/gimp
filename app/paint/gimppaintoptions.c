@@ -157,7 +157,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b5d3cf0103
+DECL|enum|__anon2a16c49e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -553,7 +553,7 @@ literal|"fade-length"
 argument_list|,
 name|NULL
 argument_list|,
-literal|1e-5
+literal|0.0
 argument_list|,
 literal|32767.0
 argument_list|,
@@ -604,7 +604,7 @@ literal|"gradient-length"
 argument_list|,
 name|NULL
 argument_list|,
-literal|1e-5
+literal|0.0
 argument_list|,
 literal|32767.0
 argument_list|,

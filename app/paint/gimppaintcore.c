@@ -3621,6 +3621,12 @@ block|{
 name|gdouble
 name|pos
 decl_stmt|;
+if|if
+condition|(
+name|gradient_length
+operator|>
+literal|0.0
+condition|)
 name|pos
 operator|=
 operator|(
@@ -3631,6 +3637,11 @@ operator|->
 name|pixel_dist
 operator|/
 name|gradient_length
+expr_stmt|;
+else|else
+name|pos
+operator|=
+literal|1.0
 expr_stmt|;
 comment|/*  for the once modes, set pos close to 1.0 after the first chunk  */
 if|if
