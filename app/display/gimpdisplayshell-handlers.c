@@ -1655,6 +1655,13 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+if|if
+condition|(
+name|shell
+operator|->
+name|dot_for_dot
+condition|)
+block|{
 name|gimp_display_shell_scale_setup
 argument_list|(
 name|shell
@@ -1665,6 +1672,17 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_display_shell_size_changed_handler
+argument_list|(
+name|gimage
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
