@@ -519,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291ddb360108
+DECL|struct|__anon2a9fbc520108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1013,7 +1013,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291ddb360208
+DECL|struct|__anon2a9fbc520208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1044,7 +1044,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291ddb360308
+DECL|struct|__anon2a9fbc520308
 block|{
 DECL|member|width
 DECL|member|height
@@ -2897,6 +2897,11 @@ name|gchar
 operator|*
 operator|)
 name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|image_ID
 argument_list|)
 expr_stmt|;
 operator|*

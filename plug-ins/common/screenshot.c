@@ -142,7 +142,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8ca9a50108
+DECL|struct|__anon289b2e960108
 block|{
 DECL|member|root
 name|gboolean
@@ -1167,6 +1167,11 @@ argument_list|,
 name|height
 argument_list|,
 name|GIMP_RGB
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 name|layer

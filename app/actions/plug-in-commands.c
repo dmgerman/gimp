@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -85,6 +91,12 @@ begin_include
 include|#
 directive|include
 file|"plug-in-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in-menus.h"
 end_include
 
 begin_define
@@ -144,10 +156,12 @@ name|i
 decl_stmt|;
 name|gint
 name|argc
-init|=
-literal|0
 decl_stmt|;
-comment|/* calm down a gcc warning.  */
+name|GimpImageType
+name|drawable_type
+init|=
+name|GIMP_RGB_IMAGE
+decl_stmt|;
 name|item_factory
 operator|=
 name|gtk_item_factory_from_widget
@@ -352,6 +366,13 @@ condition|(
 name|drawable
 condition|)
 block|{
+name|drawable_type
+operator|=
+name|gimp_drawable_type
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|args
 index|[
 literal|2
@@ -465,6 +486,16 @@ operator|->
 name|last_plug_in
 operator|=
 name|proc_rec
+expr_stmt|;
+name|plug_in_menus_update
+argument_list|(
+name|GIMP_ITEM_FACTORY
+argument_list|(
+name|item_factory
+argument_list|)
+argument_list|,
+name|drawable_type
+argument_list|)
 expr_stmt|;
 block|}
 name|g_free

@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279e6e800108
+DECL|struct|__anon2c1dfb6c0108
 block|{
 DECL|member|new_width
 name|gint
@@ -939,6 +939,11 @@ operator|.
 name|new_height
 argument_list|,
 name|image_type
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_enable
+argument_list|(
+name|new_image_id
 argument_list|)
 expr_stmt|;
 operator|*

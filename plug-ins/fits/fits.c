@@ -85,7 +85,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b0a4b0108
+DECL|struct|__anon2bf4c5260108
 block|{
 DECL|member|replace
 name|gint
@@ -1855,6 +1855,11 @@ argument_list|(
 name|image_ID
 argument_list|,
 name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|image_ID
 argument_list|)
 expr_stmt|;
 operator|*

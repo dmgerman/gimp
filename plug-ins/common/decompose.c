@@ -833,7 +833,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757e0b50108
+DECL|struct|__anon28cb80720108
 block|{
 DECL|member|type
 name|gchar
@@ -1454,7 +1454,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757e0b50208
+DECL|struct|__anon28cb80720208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1476,7 +1476,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757e0b50308
+DECL|struct|__anon28cb80720308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -3075,6 +3075,11 @@ argument_list|,
 name|height
 argument_list|,
 name|type
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|image_ID
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
