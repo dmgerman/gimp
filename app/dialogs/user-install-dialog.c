@@ -197,7 +197,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c28e9620103
+DECL|enum|__anon2991b8980103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c28e9620203
+DECL|enum|__anon2991b8980203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -434,7 +434,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c28e9620303
+DECL|enum|__anon2991b8980303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -456,7 +456,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c28e9620408
+DECL|struct|__anon2991b8980408
 block|{
 DECL|member|directory
 name|gboolean
@@ -5054,6 +5054,32 @@ argument_list|,
 literal|"gimpswap."
 argument_list|,
 literal|9
+argument_list|)
+operator|!=
+literal|0
+operator|)
+operator|&&
+operator|(
+name|strncmp
+argument_list|(
+name|basename
+argument_list|,
+literal|"pluginrc"
+argument_list|,
+literal|8
+argument_list|)
+operator|!=
+literal|0
+operator|)
+operator|&&
+operator|(
+name|strncmp
+argument_list|(
+name|basename
+argument_list|,
+literal|"themerc"
+argument_list|,
+literal|7
 argument_list|)
 operator|!=
 literal|0
