@@ -7460,7 +7460,39 @@ name|menus_set_sensitive
 argument_list|(
 name|_
 argument_list|(
-literal|"<Image>/Layers/Raise Layer"
+literal|"<Image>/Layers/Stack/Previous Layer"
+argument_list|)
+argument_list|,
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|lp
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive
+argument_list|(
+name|_
+argument_list|(
+literal|"<Image>/Layers/Stack/Next Layer"
+argument_list|)
+argument_list|,
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|lp
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive
+argument_list|(
+name|_
+argument_list|(
+literal|"<Image>/Layers/Stack/Raise Layer"
 argument_list|)
 argument_list|,
 operator|!
@@ -7478,7 +7510,43 @@ name|menus_set_sensitive
 argument_list|(
 name|_
 argument_list|(
-literal|"<Image>/Layers/Lower Layer"
+literal|"<Image>/Layers/Stack/Lower Layer"
+argument_list|)
+argument_list|,
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|lp
+operator|&&
+name|alpha
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive
+argument_list|(
+name|_
+argument_list|(
+literal|"<Image>/Layers/Stack/Raise to Top"
+argument_list|)
+argument_list|,
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|lp
+operator|&&
+name|alpha
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive
+argument_list|(
+name|_
+argument_list|(
+literal|"<Image>/Layers/Stack/Lower to Bottom"
 argument_list|)
 argument_list|,
 operator|!

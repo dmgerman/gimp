@@ -1494,7 +1494,33 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Raise Layer"
+literal|"/Layers/Stack/Previous Layer"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_previous_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/Layers/Stack/Next Layer"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_next_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/Layers/Stack/Raise Layer"
 argument_list|)
 block|,
 literal|"<control>F"
@@ -1507,7 +1533,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Lower Layer"
+literal|"/Layers/Stack/Lower Layer"
 argument_list|)
 block|,
 literal|"<control>B"
@@ -1515,6 +1541,47 @@ block|,
 name|layers_lower_cmd_callback
 block|,
 literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/Layers/Stack/Raise to Top"
+argument_list|)
+block|,
+literal|"<control>T"
+block|,
+name|layers_raise_to_top_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/Layers/Stack/Lower to Bottom"
+argument_list|)
+block|,
+literal|"<control>U"
+block|,
+name|layers_lower_to_bottom_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/Layers/---"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
 block|}
 block|,
 block|{
