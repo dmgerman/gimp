@@ -2857,19 +2857,14 @@ operator|=
 name|gfig_save_as_string
 argument_list|()
 expr_stmt|;
-comment|/* temporarily make the parasite non-persistent until the    * format has stabilized.    */
-if|#
-directive|if
-literal|0
-block|parasite = gimp_parasite_new ("gfig", GIMP_PARASITE_PERSISTENT | GIMP_PARASITE_UNDOABLE,                                 datasize, data);
-endif|#
-directive|endif
 name|parasite
 operator|=
 name|gimp_parasite_new
 argument_list|(
 literal|"gfig"
 argument_list|,
+name|GIMP_PARASITE_PERSISTENT
+operator||
 name|GIMP_PARASITE_UNDOABLE
 argument_list|,
 name|string
@@ -3009,13 +3004,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"GFig parasite found.\n"
-argument_list|)
-expr_stmt|;
 name|fwrite
 argument_list|(
 name|gimp_parasite_data
