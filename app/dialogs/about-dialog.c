@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca87eb0108
+DECL|struct|__anon2a4129340108
 block|{
 DECL|member|about_dialog
 name|GtkWidget
@@ -1386,6 +1386,10 @@ name|gtk_window_move
 argument_list|(
 name|window
 argument_list|,
+name|rect
+operator|.
+name|x
+operator|+
 operator|(
 name|rect
 operator|.
@@ -1400,6 +1404,10 @@ operator|)
 operator|/
 literal|2
 argument_list|,
+name|rect
+operator|.
+name|y
+operator|+
 operator|(
 name|rect
 operator|.
