@@ -5827,26 +5827,23 @@ expr_stmt|;
 break|break;
 block|}
 comment|/* Handle Adaptive selections */
-comment|/* TODO : Nest the ifs here. */
 if|if
 condition|(
-operator|(
 name|runningvals
 operator|.
 name|orienttype
 operator|==
 name|ORIENTATION_ADAPTIVE
-operator|)
-operator|&&
-operator|(
+condition|)
+block|{
+if|if
+condition|(
 name|runningvals
 operator|.
 name|sizetype
 operator|==
 name|SIZE_TYPE_ADAPTIVE
-operator|)
 condition|)
-block|{
 name|n
 operator|=
 name|choose_best_brush
@@ -5878,16 +5875,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|runningvals
-operator|.
-name|orienttype
-operator|==
-name|ORIENTATION_ADAPTIVE
-condition|)
+else|else
 block|{
 name|int
 name|st
@@ -5934,7 +5922,9 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
+block|}
+else|else
+block|{
 if|if
 condition|(
 name|runningvals
@@ -5943,7 +5933,6 @@ name|sizetype
 operator|==
 name|SIZE_TYPE_ADAPTIVE
 condition|)
-block|{
 name|n
 operator|=
 name|choose_best_brush
@@ -5977,9 +5966,7 @@ operator|.
 name|orientnum
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|n
 operator|=
 name|sn
