@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon29122fbd0103
+DECL|enum|__anon2c64df010103
 typedef|typedef
 enum|enum
 block|{
@@ -268,7 +268,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29122fbd0208
+DECL|struct|__anon2c64df010208
 typedef|typedef
 struct|struct
 block|{
@@ -385,7 +385,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon29122fbd0308
+DECL|struct|__anon2c64df010308
 typedef|typedef
 struct|struct
 block|{
@@ -1627,7 +1627,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29122fbd0408
+DECL|struct|__anon2c64df010408
 typedef|typedef
 struct|struct
 block|{
@@ -1642,7 +1642,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon29122fbd0503
+DECL|enum|__anon2c64df010503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -2012,7 +2012,7 @@ operator|&&
 operator|!
 name|defined
 argument_list|(
-name|G_HAVE_CYGWIN
+name|G_WITH_CYGWIN
 argument_list|)
 operator|&&
 operator|!
@@ -4475,7 +4475,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29122fbd0608
+DECL|struct|__anon2c64df010608
 typedef|typedef
 struct|struct
 block|{

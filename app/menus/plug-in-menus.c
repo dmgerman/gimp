@@ -141,7 +141,7 @@ argument_list|)
 operator|||
 name|defined
 argument_list|(
-name|G_HAVE_CYGWIN
+name|G_WITH_CYGWIN
 argument_list|)
 end_if
 
@@ -190,7 +190,7 @@ end_endif
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|G_HAVE_CYGWIN
+name|G_WITH_CYGWIN
 end_ifdef
 
 begin_define
@@ -1085,7 +1085,7 @@ argument_list|)
 operator|||
 name|defined
 argument_list|(
-name|G_HAVE_CYGWIN
+name|G_WITH_CYGWIN
 argument_list|)
 end_if
 
@@ -1231,7 +1231,7 @@ argument_list|)
 operator|||
 name|defined
 argument_list|(
-name|G_HAVE_CYGWIN
+name|G_WITH_CYGWIN
 argument_list|)
 comment|/* Use Win32 shared memory mechanisms for    * transfering tile data.    */
 name|int
@@ -2004,7 +2004,7 @@ argument_list|)
 operator|||
 name|defined
 argument_list|(
-name|G_HAVE_CYGWIN
+name|G_WITH_CYGWIN
 argument_list|)
 name|CloseHandle
 argument_list|(
@@ -3753,7 +3753,7 @@ if|#
 directive|if
 name|defined
 argument_list|(
-name|G_HAVE_CYGWIN
+name|G_WITH_CYGWIN
 argument_list|)
 operator|||
 name|defined
@@ -4128,7 +4128,7 @@ argument_list|)
 operator|||
 name|defined
 argument_list|(
-name|G_HAVE_CYGWIN
+name|G_WITH_CYGWIN
 argument_list|)
 operator|||
 name|defined
