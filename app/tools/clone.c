@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293ff50e0103
+DECL|enum|__anon27cc67130103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -1470,6 +1470,8 @@ decl_stmt|;
 name|GImage
 modifier|*
 name|src_gimage
+init|=
+name|NULL
 decl_stmt|;
 name|unsigned
 name|char
@@ -1507,6 +1509,9 @@ name|y2
 decl_stmt|;
 name|int
 name|has_alpha
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|PixelRegion
 name|srcPR
@@ -1524,13 +1529,22 @@ name|pattern
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*  Make sure we still have a source!  */
+comment|/*  Make sure we still have a source if we are doing image cloning */
+if|if
+condition|(
+name|type
+operator|==
+name|ImageClone
+condition|)
+block|{
 if|if
 condition|(
 operator|!
 name|src_drawable
-operator|||
-operator|(
+condition|)
+return|return;
+if|if
+condition|(
 operator|!
 operator|(
 name|src_gimage
@@ -1540,12 +1554,20 @@ argument_list|(
 name|src_drawable
 argument_list|)
 operator|)
-operator|&&
-name|type
-operator|==
-name|ImageClone
-operator|)
-operator|||
+condition|)
+return|return;
+comment|/*  Determine whether the source image has an alpha channel  */
+name|has_alpha
+operator|=
+name|drawable_has_alpha
+argument_list|(
+name|src_drawable
+argument_list|)
+expr_stmt|;
+block|}
+comment|/*  We always need a destination image */
+if|if
+condition|(
 operator|!
 operator|(
 name|gimage
@@ -1573,14 +1595,6 @@ argument_list|)
 operator|)
 condition|)
 return|return;
-comment|/*  Determine whether the source image has an alpha channel  */
-name|has_alpha
-operator|=
-name|drawable_has_alpha
-argument_list|(
-name|src_drawable
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|type
