@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -14,18 +18,6 @@ end_include
 begin_comment
 comment|/* memcpy, strcpy, strlen */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"siod.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"siod-wrapper.h"
-end_include
 
 begin_include
 include|#
@@ -63,6 +55,18 @@ directive|include
 file|"script-fu-server.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"siod.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"siod-wrapper.h"
+end_include
+
 begin_comment
 comment|/* global variables declared by the scheme interpreter */
 end_comment
@@ -84,7 +88,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 name|siod_err_msg
 index|[]
 decl_stmt|;
@@ -192,10 +196,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|siod_set_verbose_level (int verbose_level)
+DECL|function|siod_set_verbose_level (gint verbose_level)
 name|siod_set_verbose_level
 parameter_list|(
-name|int
+name|gint
 name|verbose_level
 parameter_list|)
 block|{
@@ -221,12 +225,12 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|siod_interpret_string (const char * expr)
+name|gint
+DECL|function|siod_interpret_string (const gchar * expr)
 name|siod_interpret_string
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|expr
 parameter_list|)
@@ -268,7 +272,7 @@ end_function
 
 begin_function
 specifier|const
-name|char
+name|gchar
 modifier|*
 DECL|function|siod_get_success_msg (void)
 name|siod_get_success_msg
@@ -276,10 +280,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|char
-modifier|*
-name|response
-decl_stmt|;
 if|if
 condition|(
 name|TYPEP
@@ -289,25 +289,15 @@ argument_list|,
 name|tc_string
 argument_list|)
 condition|)
-name|response
-operator|=
+return|return
 name|get_c_string
 argument_list|(
 name|repl_return_val
 argument_list|)
-expr_stmt|;
+return|;
 else|else
-name|response
-operator|=
-literal|"Success"
-expr_stmt|;
 return|return
-operator|(
-specifier|const
-name|char
-operator|*
-operator|)
-name|response
+literal|"Success"
 return|;
 block|}
 end_function
@@ -416,7 +406,7 @@ specifier|static
 name|void
 name|convert_string
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -428,12 +418,11 @@ specifier|static
 name|gint
 name|sputs_fcn
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|st
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|dest
 parameter_list|)
 function_decl|;
@@ -447,7 +436,7 @@ parameter_list|(
 name|LISP
 name|exp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|dest
 parameter_list|)

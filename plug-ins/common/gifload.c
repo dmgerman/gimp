@@ -136,6 +136,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -143,6 +144,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -164,6 +166,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -377,9 +380,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -387,6 +391,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -711,7 +716,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c5c1c240108
+DECL|struct|__anon2b1a3f770108
 block|{
 DECL|member|Width
 name|unsigned
@@ -761,7 +766,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c5c1c240208
+DECL|struct|__anon2b1a3f770208
 block|{
 DECL|member|transparent
 name|int
@@ -919,7 +924,8 @@ parameter_list|(
 name|FILE
 modifier|*
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|,
 name|int
@@ -950,9 +956,10 @@ end_function_decl
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename)
+DECL|function|load_image (const gchar * filename)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -3413,36 +3420,37 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|ReadImage (FILE * fd,char * filename,int len,int height,CMap cmap,int ncols,int format,int interlace,int number,guint leftpos,guint toppos,guint screenwidth,guint screenheight)
+DECL|function|ReadImage (FILE * fd,const gchar * filename,gint len,gint height,CMap cmap,gint ncols,gint format,gint interlace,gint number,guint leftpos,guint toppos,guint screenwidth,guint screenheight)
 name|ReadImage
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|int
+name|gint
 name|len
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|CMap
 name|cmap
 parameter_list|,
-name|int
+name|gint
 name|ncols
 parameter_list|,
-name|int
+name|gint
 name|format
 parameter_list|,
-name|int
+name|gint
 name|interlace
 parameter_list|,
-name|int
+name|gint
 name|number
 parameter_list|,
 name|guint

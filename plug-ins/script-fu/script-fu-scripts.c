@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297860460108
+DECL|struct|__anon28a3e7e30108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297860460208
+DECL|struct|__anon28a3e7e30208
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297860460308
+DECL|struct|__anon28a3e7e30308
 block|{
 DECL|member|name
 name|gchar
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297860460408
+DECL|struct|__anon28a3e7e30408
 block|{
 DECL|member|list
 name|GSList
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29786046050a
+DECL|union|__anon28a3e7e3050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297860460608
+DECL|struct|__anon28a3e7e30608
 block|{
 DECL|member|script_name
 name|gchar
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297860460708
+DECL|struct|__anon28a3e7e30708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -572,6 +572,7 @@ name|SFScript
 modifier|*
 name|script_fu_find_script
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|script_name
@@ -620,6 +621,7 @@ specifier|static
 name|void
 name|script_fu_error_msg
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|command
@@ -4770,7 +4772,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|script_fu_lookup_script (gpointer * foo,SFScript * script,gchar ** name)
+DECL|function|script_fu_lookup_script (gpointer * foo,SFScript * script,gconstpointer * name)
 name|script_fu_lookup_script
 parameter_list|(
 name|gpointer
@@ -4781,8 +4783,7 @@ name|SFScript
 modifier|*
 name|script
 parameter_list|,
-name|gchar
-modifier|*
+name|gconstpointer
 modifier|*
 name|name
 parameter_list|)
@@ -4806,10 +4807,6 @@ comment|/* store the script in the name pointer and stop the traversal */
 operator|*
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|script
 expr_stmt|;
 return|return
@@ -4827,22 +4824,20 @@ begin_function
 specifier|static
 name|SFScript
 modifier|*
-DECL|function|script_fu_find_script (gchar * pdb_name)
+DECL|function|script_fu_find_script (const gchar * pdb_name)
 name|script_fu_find_script
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|pdb_name
 parameter_list|)
 block|{
-name|gchar
-modifier|*
+name|gconstpointer
 name|script
-decl_stmt|;
-name|script
-operator|=
+init|=
 name|pdb_name
-expr_stmt|;
+decl_stmt|;
 name|g_tree_foreach
 argument_list|(
 name|script_list
@@ -10093,9 +10088,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_error_msg (gchar * command)
+DECL|function|script_fu_error_msg (const gchar * command)
 name|script_fu_error_msg
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|command

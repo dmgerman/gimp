@@ -90,6 +90,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -97,6 +98,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -118,6 +120,7 @@ specifier|static
 name|guchar
 name|best_cmap_match
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -125,6 +128,7 @@ parameter_list|,
 name|gint
 name|ncolors
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -261,7 +265,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40158f0108
+DECL|struct|__anon27b33edb0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -585,9 +589,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint n_params,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint n_params,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -595,6 +600,7 @@ parameter_list|,
 name|gint
 name|n_params
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1080,9 +1086,10 @@ end_define
 begin_function
 specifier|static
 name|guchar
-DECL|function|best_cmap_match (guchar * cmap,gint ncolors,GimpRGB * color)
+DECL|function|best_cmap_match (const guchar * cmap,gint ncolors,const GimpRGB * color)
 name|best_cmap_match
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -1090,6 +1097,7 @@ parameter_list|,
 name|gint
 name|ncolors
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288fcc9b0108
+DECL|struct|__anon2b326da70108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288fcc9b0208
+DECL|struct|__anon2b326da70208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288fcc9b0308
+DECL|struct|__anon2b326da70308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -104,7 +104,7 @@ modifier|*
 name|size
 decl_stmt|;
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|BlurInterface
@@ -132,6 +132,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -139,6 +140,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -557,9 +559,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -567,6 +570,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

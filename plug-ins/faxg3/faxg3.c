@@ -153,6 +153,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -160,6 +161,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -181,27 +183,37 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint32
 name|emitgimp
 parameter_list|(
 name|gint
+name|hcol
 parameter_list|,
 name|gint
+name|row
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
+name|bitmap
 parameter_list|,
 name|gint
+name|bperrow
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -339,9 +351,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -349,6 +362,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -703,9 +717,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename)
+DECL|function|load_image (const gchar * filename)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -741,7 +756,10 @@ decl_stmt|;
 name|int
 name|cons_eol
 decl_stmt|;
-name|int
+name|gint32
+name|image_id
+decl_stmt|;
+name|gint
 name|bperrow
 init|=
 name|MAX_COLS
@@ -749,28 +767,28 @@ operator|/
 literal|8
 decl_stmt|;
 comment|/* bytes per bit row */
-name|char
+name|gchar
 modifier|*
 name|bitmap
 decl_stmt|;
 comment|/* MAX_ROWS by (bperrow) bytes */
-name|char
+name|gchar
 modifier|*
 name|bp
 decl_stmt|;
 comment|/* bitmap pointer */
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|int
+name|gint
 name|row
 decl_stmt|;
-name|int
+name|gint
 name|max_rows
 decl_stmt|;
 comment|/* max. rows allocated */
-name|int
+name|gint
 name|col
 decl_stmt|,
 name|hcol
@@ -1006,61 +1024,15 @@ literal|0
 expr_stmt|;
 name|bitmap
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|malloc
+name|g_new0
 argument_list|(
+name|gchar
+argument_list|,
 operator|(
 name|max_rows
 operator|=
 name|MAX_ROWS
 operator|)
-operator|*
-name|MAX_COLS
-operator|/
-literal|8
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|bitmap
-operator|==
-name|NULL
-condition|)
-block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"cannot allocate %d bytes for bitmap"
-argument_list|,
-name|max_rows
-operator|*
-name|MAX_COLS
-operator|/
-literal|8
-argument_list|)
-expr_stmt|;
-name|close
-argument_list|(
-name|fd
-argument_list|)
-expr_stmt|;
-name|exit
-argument_list|(
-literal|9
-argument_list|)
-expr_stmt|;
-block|}
-name|memset
-argument_list|(
-name|bitmap
-argument_list|,
-literal|0
-argument_list|,
-name|max_rows
 operator|*
 name|MAX_COLS
 operator|/
@@ -1987,7 +1959,8 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-return|return
+name|image_id
+operator|=
 name|emitgimp
 argument_list|(
 name|hcol
@@ -2000,6 +1973,14 @@ name|bperrow
 argument_list|,
 name|filename
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|bitmap
+argument_list|)
+expr_stmt|;
+return|return
+name|image_id
 return|;
 block|}
 end_function
@@ -2009,24 +1990,27 @@ comment|/* hcol is the number of columns, row the number of rows  * bperrow is t
 end_comment
 
 begin_function
-DECL|function|emitgimp (int hcol,int row,char * bitmap,int bperrow,char * filename)
+specifier|static
 name|gint32
+DECL|function|emitgimp (gint hcol,gint row,const gchar * bitmap,gint bperrow,const gchar * filename)
 name|emitgimp
 parameter_list|(
-name|int
+name|gint
 name|hcol
 parameter_list|,
-name|int
+name|gint
 name|row
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|bitmap
 parameter_list|,
-name|int
+name|gint
 name|bperrow
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -2051,7 +2035,7 @@ decl_stmt|;
 name|guchar
 name|tmp
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y

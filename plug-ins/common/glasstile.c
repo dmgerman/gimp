@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29004ab80108
+DECL|struct|__anon2acccbf40108
 block|{
 DECL|member|xblock
 name|gint
@@ -75,10 +75,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29004ab80208
+DECL|struct|__anon2acccbf40208
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|GlassInterface
@@ -106,6 +106,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -113,6 +114,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -344,9 +346,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -354,6 +357,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

@@ -169,7 +169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69ff9d0108
+DECL|struct|__anon2b5682630108
 block|{
 DECL|member|description
 name|gchar
@@ -230,6 +230,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -237,6 +238,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -258,6 +260,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -270,6 +273,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -561,9 +565,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -571,6 +576,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1012,9 +1018,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename)
+DECL|function|load_image (const gchar * filename)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -1898,10 +1905,6 @@ argument_list|(
 operator|&
 name|pixel_rgn
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
 name|brush_buf
 argument_list|,
 literal|0
@@ -1957,9 +1960,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

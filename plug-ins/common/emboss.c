@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9630120103
+DECL|enum|__anon2a3f77bd0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9630120208
+DECL|struct|__anon2a3f77bd0208
 block|{
 DECL|member|img
 name|gint32
@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9630120308
+DECL|struct|__anon2a3f77bd0308
 block|{
 DECL|member|width
 name|gint
@@ -270,6 +270,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -277,6 +278,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -538,9 +540,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparam,GimpParam * param,gint * nretvals,GimpParam ** retvals)
+DECL|function|run (const gchar * name,gint nparam,const GimpParam * param,gint * nretvals,GimpParam ** retvals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -548,6 +551,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

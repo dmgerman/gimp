@@ -107,6 +107,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -114,6 +115,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -214,7 +216,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2c154b9e0103
+DECL|enum|__anon2c2bb48f0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -234,7 +236,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c154b9e0208
+DECL|struct|__anon2c2bb48f0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -430,7 +432,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c154b9e0308
+DECL|struct|__anon2c2bb48f0308
 block|{
 DECL|member|x1
 name|gint
@@ -473,7 +475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c154b9e0408
+DECL|struct|__anon2c2bb48f0408
 block|{
 DECL|member|width
 name|gint
@@ -520,9 +522,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint argc,GimpParam * args,gint * retc,GimpParam ** rets)
+DECL|function|run (const gchar * name,gint argc,const GimpParam * args,gint * retc,GimpParam ** rets)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -530,6 +533,7 @@ parameter_list|,
 name|gint
 name|argc
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|args
@@ -1026,7 +1030,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c154b9e0508
+DECL|struct|__anon2c2bb48f0508
 block|{
 DECL|member|r
 name|guchar
@@ -2910,7 +2914,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c154b9e0608
+DECL|struct|__anon2c2bb48f0608
 block|{
 DECL|member|preview
 name|GtkWidget

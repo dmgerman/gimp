@@ -694,7 +694,7 @@ modifier|*
 name|bval_curr
 decl_stmt|;
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 block|}
@@ -794,7 +794,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289c5e830108
+DECL|struct|__anon2923eff20108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289c5e830208
+DECL|struct|__anon2923eff20208
 block|{
 DECL|member|y
 name|gint32
@@ -918,6 +918,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -925,6 +926,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1918,11 +1920,13 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|gint
-DECL|function|p_pdb_procedure_available (char * proc_name)
+DECL|function|p_pdb_procedure_available (const gchar * proc_name)
 name|p_pdb_procedure_available
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|proc_name
 parameter_list|)
@@ -3038,34 +3042,31 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
 parameter_list|,
-comment|/* name of plugin */
 name|gint
 name|nparams
 parameter_list|,
-comment|/* number of in-paramters */
+specifier|const
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-comment|/* in-parameters */
 name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-comment|/* number of out-parameters */
 name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
-comment|/* out-parameters */
 block|{
 specifier|const
 name|gchar

@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f39480103
+DECL|enum|__anon28e2aec60103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293f39480208
+DECL|struct|__anon28e2aec60208
 block|{
 DECL|member|interlace
 name|gint
@@ -167,10 +167,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293f39480308
+DECL|struct|__anon28e2aec60308
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|GIFSaveInterface
@@ -198,6 +198,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -205,6 +206,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -226,6 +228,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -583,9 +586,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -593,6 +597,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1067,16 +1072,8 @@ typedef|;
 end_typedef
 
 begin_decl_stmt
-DECL|variable|verbose
-name|gint
-name|verbose
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|globalcomment
+specifier|static
 name|gchar
 modifier|*
 name|globalcomment
@@ -2355,9 +2352,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID)
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
