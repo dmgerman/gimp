@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2784414f0103
+DECL|enum|__anon2a0f087f0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -93,7 +93,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2784414f0208
+DECL|struct|__anon2a0f087f0208
 block|{
 DECL|member|title
 specifier|const
@@ -426,10 +426,7 @@ literal|"unit-editor-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
-argument_list|(
-literal|"New"
-argument_list|)
+name|NULL
 block|,
 name|NULL
 block|,
@@ -449,10 +446,7 @@ literal|"unit-editor-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
-argument_list|(
-literal|"Duplicate"
-argument_list|)
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1821,6 +1815,13 @@ operator|=
 name|gtk_action_group_new
 argument_list|(
 literal|"unit-editor"
+argument_list|)
+expr_stmt|;
+name|gtk_action_group_set_translation_domain
+argument_list|(
+name|group
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_action_group_add_actions
