@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkkeysyms.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -80,13 +74,13 @@ DECL|macro|COLOR_AREA_EVENT_MASK
 define|#
 directive|define
 name|COLOR_AREA_EVENT_MASK
-value|(GDK_EXPOSURE_MASK       | \                                GDK_BUTTON_PRESS_MASK   | \                                GDK_BUTTON_RELEASE_MASK | \ 			       GDK_BUTTON_MOTION_MASK  | \                                GDK_ENTER_NOTIFY_MASK)
+value|(GDK_EXPOSURE_MASK       | \                                GDK_BUTTON_PRESS_MASK   | \                                GDK_BUTTON_RELEASE_MASK | \                                GDK_BUTTON_MOTION_MASK  | \                                GDK_ENTER_NOTIFY_MASK)
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299bd6150103
+DECL|enum|__anon27f7d9a80103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -137,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299bd6150203
+DECL|enum|__anon27f7d9a80203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
