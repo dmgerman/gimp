@@ -2908,6 +2908,15 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|force
+condition|)
+name|gimp_thumbs_delete_for_uri
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
 name|gimp_object_set_name
 argument_list|(
 name|GIMP_OBJECT

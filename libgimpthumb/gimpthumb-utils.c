@@ -946,7 +946,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_name_from_uri:  * @uri: an escaped URI in UTF-8 encoding  * @size: a #GimpThumbSize  *  * Creates the name of the thumbnail file of the specified @size that  * belongs to an image file located at the given @uri.  *  * Return value: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri points to the global  *               thumbnail repository.  **/
+comment|/**  * gimp_thumb_name_from_uri:  * @uri: an escaped URI  * @size: a #GimpThumbSize  *  * Creates the name of the thumbnail file of the specified @size that  * belongs to an image file located at the given @uri.  *  * Return value: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri points to the user's  *               thumbnail repository.  **/
 end_comment
 
 begin_function
@@ -1019,7 +1019,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_name_from_uri_local:  * @uri: an escaped URI in UTF-8 encoding  * @size: a #GimpThumbSize  *  * Creates the name of a local thumbnail file of the specified @size  * that belongs to an image file located at the given @uri. Local  * thumbnails have been introduced with version 0.7 of the spec.  *  * Return value: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri is a remote file or  *               points to the global thumbnail repository.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumb_name_from_uri_local:  * @uri: an escaped URI  * @size: a #GimpThumbSize  *  * Creates the name of a local thumbnail file of the specified @size  * that belongs to an image file located at the given @uri. Local  * thumbnails have been introduced with version 0.7 of the spec.  *  * Return value: a newly allocated filename in the encoding of the  *               filesystem or %NULL if @uri is a remote file or  *               points to the user's thumbnail repository.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1184,7 +1184,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_find_thumb:  * @uri: an escaped URI in UTF-8 encoding  * @size: pointer to a #GimpThumbSize  *  * This function attempts to locate a thumbnail for the given  * @url. First it tries the size that is stored at @size. If no  * thumbnail of that size is found, it will look for a larger  * thumbnail, then falling back to a smaller size.  *  * If the global thumbnail repository doesn't provide a thumbnail but  * a local thumbnail repository exists for the folder the image is  * located in, the same search is done among the local thumbnails.  *  * If a thumbnail is found, it's size is written to the variable  * pointer to by @size and the file location is returned.  *  * Return value: a newly allocated string in the encoding of the  *               filesystem or %NULL if no thumbnail for @uri was found  **/
+comment|/**  * gimp_thumb_find_thumb:  * @uri: an escaped URI  * @size: pointer to a #GimpThumbSize  *  * This function attempts to locate a thumbnail for the given  * @url. First it tries the size that is stored at @size. If no  * thumbnail of that size is found, it will look for a larger  * thumbnail, then falling back to a smaller size.  *  * If the user's thumbnail repository doesn't provide a thumbnail but  * a local thumbnail repository exists for the folder the image is  * located in, the same search is done among the local thumbnails.  *  * If a thumbnail is found, it's size is written to the variable  * pointer to by @size and the file location is returned.  *  * Return value: a newly allocated string in the encoding of the  *               filesystem or %NULL if no thumbnail for @uri was found  **/
 end_comment
 
 begin_function
@@ -1498,6 +1498,162 @@ expr_stmt|;
 return|return
 name|GIMP_THUMB_FILE_TYPE_NONE
 return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_thumbs_delete_for_uri:  * @uri: an escaped URI  *  * Deletes all thumbnails for the image file specified by @uri from the  * user's thumbnail repository.  *  * Since: GIMP 2.2  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_thumbs_delete_for_uri (const gchar * uri)
+name|gimp_thumbs_delete_for_uri
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_thumb_initialized
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|uri
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|thumb_num_sizes
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|gchar
+modifier|*
+name|filename
+init|=
+name|gimp_thumb_name_from_uri
+argument_list|(
+name|uri
+argument_list|,
+name|thumb_sizes
+index|[
+name|i
+index|]
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|filename
+condition|)
+block|{
+name|unlink
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_thumbs_delete_for_uri_local:  * @uri: an escaped URI  *  * Deletes all thumbnails for the image file specified by @uri from  * the local thumbnail repository.  *  * Since: GIMP 2.2  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_thumbs_delete_for_uri_local (const gchar * uri)
+name|gimp_thumbs_delete_for_uri_local
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_thumb_initialized
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|uri
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|thumb_num_sizes
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|gchar
+modifier|*
+name|filename
+init|=
+name|gimp_thumb_name_from_uri_local
+argument_list|(
+name|uri
+argument_list|,
+name|thumb_sizes
+index|[
+name|i
+index|]
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|filename
+condition|)
+block|{
+name|unlink
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 end_function
 

@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c15a8160103
+DECL|enum|__anon2aae0e8b0103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c15a8160208
+DECL|struct|__anon2aae0e8b0208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -1813,10 +1813,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|top_table
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|align
 decl_stmt|;
 name|GtkWidget
 modifier|*
