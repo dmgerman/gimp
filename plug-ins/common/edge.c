@@ -99,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a24e6d0103
+DECL|enum|__anon27c46bd40103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a24e6d0208
+DECL|struct|__anon27c46bd40208
 block|{
 DECL|member|amount
 name|gdouble
@@ -4058,7 +4058,7 @@ name|X
 parameter_list|,
 name|Y
 parameter_list|)
-value|src[bytes * ( CLAMP((X),0,width) + width * CLAMP((Y),0,height) )+chan]
+value|src[bytes * (CLAMP((X), 0, width-1) + \                               width * CLAMP((Y), 0, height-1)) + chan]
 name|kernel
 index|[
 literal|0
