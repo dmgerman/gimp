@@ -574,6 +574,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|src_viewable
+operator|||
+operator|!
 name|gimp_drawable_has_alpha
 argument_list|(
 name|GIMP_DRAWABLE
@@ -581,6 +584,9 @@ argument_list|(
 name|src_viewable
 argument_list|)
 argument_list|)
+operator|||
+operator|!
+name|layer
 operator|||
 operator|!
 name|gimp_drawable_has_alpha
@@ -872,6 +878,17 @@ literal|1
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+name|GIMP_PREVIEW
+argument_list|(
+name|layer_item
+operator|->
+name|mask_preview
+argument_list|)
+operator|->
+name|clickable
+operator|=
+name|TRUE
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(

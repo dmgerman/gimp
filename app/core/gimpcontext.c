@@ -949,7 +949,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e317b70103
+DECL|enum|__anon2b9e6be50103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -992,7 +992,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e317b70203
+DECL|enum|__anon2b9e6be50203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -4161,12 +4161,15 @@ control|)
 block|{
 if|if
 condition|(
+name|gtk_type_is_a
+argument_list|(
+name|type
+argument_list|,
 name|gimp_context_arg_types
 index|[
 name|i
 index|]
-operator|==
-name|type
+argument_list|)
 condition|)
 return|return
 name|i

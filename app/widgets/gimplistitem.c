@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a484aab0103
+DECL|enum|__anon2912fe090103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -625,8 +625,20 @@ name|GIMP_DROP_NONE
 condition|)
 block|{
 name|gint
+name|x
+decl_stmt|,
 name|y
 decl_stmt|;
+name|x
+operator|=
+name|list_item
+operator|->
+name|name_label
+operator|->
+name|allocation
+operator|.
+name|x
+expr_stmt|;
 name|y
 operator|=
 operator|(
@@ -678,7 +690,7 @@ name|style
 operator|->
 name|black_gc
 argument_list|,
-literal|2
+name|x
 argument_list|,
 name|y
 argument_list|,
@@ -1308,6 +1320,8 @@ operator|->
 name|type
 argument_list|,
 name|GDK_ACTION_MOVE
+operator||
+name|GDK_ACTION_COPY
 argument_list|)
 expr_stmt|;
 block|}
@@ -1517,6 +1531,13 @@ argument_list|)
 operator|->
 name|viewable
 expr_stmt|;
+if|if
+condition|(
+name|my_src_viewable
+operator|&&
+name|my_dest_viewable
+condition|)
+block|{
 name|my_src_index
 operator|=
 name|gimp_container_get_child_index
@@ -1648,6 +1669,7 @@ name|my_drop_type
 operator|=
 name|GIMP_DROP_NONE
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
