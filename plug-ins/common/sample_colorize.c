@@ -57,38 +57,17 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
-begin_comment
-comment|/* internationalisation (nls-macros) is available since gimp 1.1.x */
-end_comment
-
-begin_if
-if|#
-directive|if
-operator|(
-operator|(
-name|GIMP_MAJOR_VERSION
-operator|>
-literal|0
-operator|)
-operator|&&
-operator|(
-name|GIMP_MINOR_VERSION
-operator|>
-literal|0
-operator|)
-operator|)
-end_if
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpintl.h>
+file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_ifndef
 ifndef|#
@@ -401,7 +380,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2a07b9610108
+DECL|struct|__anon276029e00108
 typedef|typedef
 struct|struct
 block|{
@@ -470,7 +449,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a07b9610208
+DECL|struct|__anon276029e00208
 typedef|typedef
 struct|struct
 block|{
@@ -588,7 +567,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a07b9610308
+DECL|struct|__anon276029e00308
 typedef|typedef
 struct|struct
 block|{
@@ -617,7 +596,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a07b9610408
+DECL|struct|__anon276029e00408
 typedef|typedef
 struct|struct
 block|{
@@ -644,7 +623,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a07b9610508
+DECL|struct|__anon276029e00508
 typedef|typedef
 struct|struct
 block|{
@@ -1428,11 +1407,17 @@ literal|" Works on both Grayscale and RGB image with/without alpha channel."
 literal|" (the image with the dst_drawable is converted to RGB if necessary)"
 literal|" The sample_drawable should be of type RGB or RGBA"
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Colorize the contents of the specified drawable similar to sample drawable"
+argument_list|)
 argument_list|,
 name|help_string
 argument_list|,
@@ -1442,7 +1427,10 @@ literal|"hof@hotbot.com"
 argument_list|,
 literal|"07/1999"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Colors/Map/Sample Colorize..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1701,6 +1689,9 @@ operator|==
 name|RUN_INTERACTIVE
 condition|)
 block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|p_smp_dialog
 argument_list|()
 expr_stmt|;
@@ -1730,6 +1721,9 @@ operator|==
 name|RUN_NONINTERACTIVE
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|nparams

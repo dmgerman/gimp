@@ -77,6 +77,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<floatingpoint.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"megawidget.h"
 end_include
 
@@ -438,7 +450,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2884330b0108
+DECL|struct|__anon2c3aa4b80108
 struct|struct
 block|{
 DECL|member|randomize
@@ -557,13 +569,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_flame"
 argument_list|,
+name|_
+argument_list|(
 literal|"cosmic recursive fractal flames"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"use Smooth Palette to make colormaps"
+argument_list|)
 argument_list|,
 literal|"Scott Draves"
 argument_list|,
@@ -571,7 +592,10 @@ literal|"Scott Draves"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Render/Nature/Flame..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -814,6 +838,11 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
+name|fpsetmask
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -857,6 +886,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_flame"
@@ -947,7 +979,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Drawing Flame..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -1420,7 +1455,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"only works with three or four channels, not %d.\n"
+argument_list|)
 argument_list|,
 name|bytes
 argument_list|)
@@ -2125,7 +2163,10 @@ name|file_dlg
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load/Store Flame"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2959,7 +3000,10 @@ argument_list|(
 name|edit_dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit Flame"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3020,7 +3064,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|"Ok"
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3082,7 +3129,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3144,7 +3194,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Directions"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3366,7 +3419,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Controls"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3475,7 +3531,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Speed"
+argument_list|)
 argument_list|,
 literal|0.05
 argument_list|,
@@ -3533,7 +3592,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Randomize"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3585,7 +3647,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2884330b0208
+DECL|struct|__anon2c3aa4b80208
 specifier|static
 struct|struct
 block|{
@@ -3604,55 +3666,82 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Same"
+argument_list|)
 block|,
 name|variation_same
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Random"
+argument_list|)
 block|,
 name|variation_random
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Linear"
+argument_list|)
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Sinusoidal"
+argument_list|)
 block|,
 literal|1
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Spherical"
+argument_list|)
 block|,
 literal|2
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Swirl"
+argument_list|)
 block|,
 literal|3
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Horseshoe"
+argument_list|)
 block|,
 literal|4
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Polar"
+argument_list|)
 block|,
 literal|5
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Bent"
+argument_list|)
 block|,
 literal|6
 block|}
@@ -3716,7 +3805,10 @@ name|w
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Variation:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3800,12 +3892,15 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|menu_items
 index|[
 name|i
 index|]
 operator|.
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3947,7 +4042,10 @@ argument_list|(
 name|file_dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Load Flame"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|load_store
@@ -4004,7 +4102,10 @@ argument_list|(
 name|file_dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Store Flame"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|load_store
@@ -4688,7 +4789,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Flame"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -4794,7 +4898,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4851,7 +4958,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4906,7 +5016,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Rendering"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -5050,7 +5163,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Brightness"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -5087,7 +5203,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Contrast"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -5124,7 +5243,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Gamma"
+argument_list|)
 argument_list|,
 literal|1
 argument_list|,
@@ -5161,7 +5283,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Sample Density"
+argument_list|)
 argument_list|,
 literal|0.1
 argument_list|,
@@ -5198,7 +5323,10 @@ name|mw_iscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Spatial Oversample"
+argument_list|)
 argument_list|,
 literal|1
 argument_list|,
@@ -5235,7 +5363,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Spatial Filter Radius"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -5329,7 +5460,10 @@ name|w
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Colormap:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5405,7 +5539,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|menuitem = gtk_menu_item_new_with_label("Black");     gtk_signal_connect(GTK_OBJECT (menuitem), "activate", 		       (GtkSignalFunc) gradient_cb, 		       (gpointer) black_drawable);     gtk_menu_prepend(GTK_MENU (menu), menuitem);     if (black_drawable == save_drawable)       gtk_menu_set_active(GTK_MENU(menu), 0);     gtk_widget_show(menuitem);
+block|menuitem = gtk_menu_item_new_with_label( _("Black"));     gtk_signal_connect(GTK_OBJECT (menuitem), "activate", 		       (GtkSignalFunc) gradient_cb, 		       (gpointer) black_drawable);     gtk_menu_prepend(GTK_MENU (menu), menuitem);     if (black_drawable == save_drawable)       gtk_menu_set_active(GTK_MENU(menu), 0);     gtk_widget_show(menuitem);
 endif|#
 directive|endif
 block|{
@@ -5555,7 +5689,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Custom Gradient"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5672,7 +5809,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Camera"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -5785,7 +5925,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom"
+argument_list|)
 argument_list|,
 operator|-
 literal|4
@@ -5823,7 +5966,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"X"
+argument_list|)
 argument_list|,
 operator|-
 literal|2
@@ -5864,7 +6010,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Y"
+argument_list|)
 argument_list|,
 operator|-
 literal|2
@@ -6010,7 +6159,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -6109,7 +6261,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Shape Edit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -6164,7 +6319,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Load"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -6219,7 +6377,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Store"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

@@ -104,6 +104,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -279,7 +285,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon274211f20103
+DECL|enum|__anon2c1469260103
 enum|enum
 block|{
 DECL|enumerator|TRIANGLE
@@ -304,7 +310,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon274211f20203
+DECL|enum|__anon2c1469260203
 enum|enum
 block|{
 DECL|enumerator|SOLID
@@ -353,7 +359,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon274211f20303
+DECL|enum|__anon2c1469260303
 enum|enum
 block|{
 DECL|enumerator|PERSPECTIVE
@@ -369,7 +375,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon274211f20403
+DECL|enum|__anon2c1469260403
 enum|enum
 block|{
 DECL|enumerator|FOG
@@ -415,7 +421,7 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon274211f20508
+DECL|struct|__anon2c1469260508
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20608
+DECL|struct|__anon2c1469260608
 typedef|typedef
 struct|struct
 block|{
@@ -463,7 +469,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20708
+DECL|struct|__anon2c1469260708
 typedef|typedef
 struct|struct
 block|{
@@ -492,7 +498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20808
+DECL|struct|__anon2c1469260808
 typedef|typedef
 struct|struct
 block|{
@@ -588,7 +594,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20908
+DECL|struct|__anon2c1469260908
 typedef|typedef
 struct|struct
 block|{
@@ -615,7 +621,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20a08
+DECL|struct|__anon2c1469260a08
 typedef|typedef
 struct|struct
 block|{
@@ -657,7 +663,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20b08
+DECL|struct|__anon2c1469260b08
 typedef|typedef
 struct|struct
 block|{
@@ -682,7 +688,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20c08
+DECL|struct|__anon2c1469260c08
 typedef|typedef
 struct|struct
 block|{
@@ -708,7 +714,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20d08
+DECL|struct|__anon2c1469260d08
 typedef|typedef
 struct|struct
 block|{
@@ -731,7 +737,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20e08
+DECL|struct|__anon2c1469260e08
 typedef|typedef
 struct|struct
 block|{
@@ -756,7 +762,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f20f08
+DECL|struct|__anon2c1469260f08
 typedef|typedef
 struct|struct
 block|{
@@ -779,7 +785,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f21008
+DECL|struct|__anon2c1469261008
 typedef|typedef
 struct|struct
 block|{
@@ -802,7 +808,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274211f21108
+DECL|struct|__anon2c1469261108
 typedef|typedef
 struct|struct
 block|{
@@ -828,7 +834,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon274211f2120a
+DECL|union|__anon2c146926120a
 typedef|typedef
 union|union
 block|{
@@ -1056,7 +1062,10 @@ block|{
 block|{
 literal|0
 block|,
+name|N_
+argument_list|(
 literal|"Solid"
+argument_list|)
 block|,
 name|SOLID
 block|}
@@ -1064,7 +1073,10 @@ block|,
 block|{
 literal|1
 block|,
+name|N_
+argument_list|(
 literal|"Checker"
+argument_list|)
 block|,
 name|CHECKER
 block|}
@@ -1072,7 +1084,10 @@ block|,
 block|{
 literal|2
 block|,
+name|N_
+argument_list|(
 literal|"Marble"
+argument_list|)
 block|,
 name|MARBLE
 block|}
@@ -1080,7 +1095,10 @@ block|,
 block|{
 literal|3
 block|,
+name|N_
+argument_list|(
 literal|"Lizard"
+argument_list|)
 block|,
 name|LIZARD
 block|}
@@ -1088,7 +1106,10 @@ block|,
 block|{
 literal|4
 block|,
+name|N_
+argument_list|(
 literal|"Phong"
+argument_list|)
 block|,
 name|PHONG
 block|}
@@ -1096,7 +1117,10 @@ block|,
 block|{
 literal|5
 block|,
+name|N_
+argument_list|(
 literal|"Noise"
+argument_list|)
 block|,
 name|PERLIN
 block|}
@@ -1104,7 +1128,10 @@ block|,
 block|{
 literal|6
 block|,
+name|N_
+argument_list|(
 literal|"Wood"
+argument_list|)
 block|,
 name|WOOD
 block|}
@@ -1112,7 +1139,10 @@ block|,
 block|{
 literal|7
 block|,
+name|N_
+argument_list|(
 literal|"Spiral"
+argument_list|)
 block|,
 name|SPIRAL
 block|}
@@ -1120,7 +1150,10 @@ block|,
 block|{
 literal|8
 block|,
+name|N_
+argument_list|(
 literal|"Spots"
+argument_list|)
 block|,
 name|SPOTS
 block|}
@@ -1137,7 +1170,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon274211f21308
+DECL|struct|__anon2c1469261308
 struct|struct
 block|{
 DECL|member|solid
@@ -10889,7 +10922,10 @@ name|strcpy
 argument_list|(
 name|tmps
 argument_list|,
+name|_
+argument_list|(
 literal|"Texture"
+argument_list|)
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -10905,7 +10941,10 @@ name|strcpy
 argument_list|(
 name|tmps
 argument_list|,
+name|_
+argument_list|(
 literal|"Bumpmap"
+argument_list|)
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -10921,7 +10960,10 @@ name|strcpy
 argument_list|(
 name|tmps
 argument_list|,
+name|_
+argument_list|(
 literal|"Light"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -10929,7 +10971,10 @@ name|strcpy
 argument_list|(
 name|tmps
 argument_list|,
+name|_
+argument_list|(
 literal|"(unknown!?)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -10984,9 +11029,12 @@ name|strcat
 argument_list|(
 name|tmps
 argument_list|,
+name|gettext
+argument_list|(
 name|l
 operator|->
 name|s
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -12803,9 +12851,15 @@ name|titles
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Open file"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Save file"
+argument_list|)
 block|}
 decl_stmt|;
 name|void
@@ -12835,10 +12889,13 @@ index|]
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|gettext
+argument_list|(
 name|titles
 index|[
 name|action
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -13907,9 +13964,12 @@ name|item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|t
 operator|->
 name|s
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -14578,7 +14638,10 @@ name|window
 operator|=
 name|gtk_color_selection_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color Selection Dialog"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_color_selection_set_opacity
@@ -14787,7 +14850,10 @@ name|window
 operator|=
 name|gtk_color_selection_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color Selection Dialog"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_color_selection_set_opacity
@@ -15218,7 +15284,10 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"SphereDesigner"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -15297,7 +15366,10 @@ name|frame2
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -15415,7 +15487,10 @@ name|updatebutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Update"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -15492,7 +15567,10 @@ name|frame3
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Textures"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -15709,7 +15787,10 @@ name|addbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Add"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -15766,7 +15847,10 @@ name|dupbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Dup"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -15823,7 +15907,10 @@ name|delbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Del"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -15942,7 +16029,10 @@ name|loadbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Load"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -15999,7 +16089,10 @@ name|savebutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -16118,7 +16211,10 @@ name|okbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -16175,7 +16271,10 @@ name|cancelbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -16232,7 +16331,10 @@ name|resetbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -16289,7 +16391,10 @@ name|frame4
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Texture Properties"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -16397,7 +16502,10 @@ name|label2
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Type:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -16467,7 +16575,10 @@ name|label3
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Texture:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -16537,7 +16648,10 @@ name|label4
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Colors:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -16859,7 +16973,10 @@ name|label5
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Scale:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -17044,7 +17161,10 @@ name|label5
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Turbulence:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -17229,7 +17349,10 @@ name|label6
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Scale X:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -17413,9 +17536,12 @@ expr_stmt|;
 name|label6
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Scale Y:"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
 argument_list|(
@@ -17598,9 +17724,12 @@ expr_stmt|;
 name|label6
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Scale Z:"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
 argument_list|(
@@ -17784,7 +17913,10 @@ name|label6
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Rotate X:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -17968,9 +18100,12 @@ expr_stmt|;
 name|label6
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Rotate Y:"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
 argument_list|(
@@ -18153,9 +18288,12 @@ expr_stmt|;
 name|label6
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Rotate Z:"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
 argument_list|(
@@ -18339,7 +18477,10 @@ name|label6
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Pos X:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -18525,7 +18666,10 @@ name|label6
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Pos Y:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -18711,7 +18855,10 @@ name|label6
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Pos Z:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -18956,7 +19103,10 @@ name|item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Texture"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -18995,7 +19145,10 @@ name|item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Bump"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -19038,7 +19191,10 @@ name|item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Light"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -19165,7 +19321,10 @@ name|label7
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Amount:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -19352,7 +19511,10 @@ name|label8
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Exp:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -19539,7 +19701,10 @@ name|label1
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"by Vidar Madsen\nSeptember 1999"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -20292,7 +20457,10 @@ name|y1
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Rendering..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -20719,13 +20887,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_spheredesigner"
 argument_list|,
+name|_
+argument_list|(
 literal|"Renders textures spheres"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin can be used to create textured and/or bumpmapped spheres, and uses a small lightweight raytracer to perform the task with good quality"
+argument_list|)
 argument_list|,
 literal|"Vidar Madsen"
 argument_list|,
@@ -20733,7 +20910,10 @@ literal|"Vidar Madsen"
 argument_list|,
 literal|"1999"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Render/SphereDesigner..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -20971,6 +21151,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|s
 operator|.
 name|com
@@ -21007,6 +21190,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|s
 operator|.
 name|com

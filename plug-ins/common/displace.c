@@ -72,6 +72,12 @@ directive|include
 file|"libgimp/gimpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Some useful macros */
 end_comment
@@ -117,7 +123,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon29a1cf430108
+DECL|struct|__anon2b8df1590108
 typedef|typedef
 struct|struct
 block|{
@@ -156,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a1cf430208
+DECL|struct|__anon2b8df1590208
 typedef|typedef
 struct|struct
 block|{
@@ -697,13 +703,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_displace"
 argument_list|,
+name|_
+argument_list|(
 literal|"Displace the contents of the specified drawable"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Displaces the contents of the specified drawable by the amounts specified by 'amount_x' and 'amount_y' multiplied by the intensity of corresponding pixels in the 'displace_map' drawables.  Both 'displace_map' drawables must be of type GRAY_IMAGE for this operation to succeed."
+argument_list|)
 argument_list|,
 literal|"Stephen Robert Norris& (ported to 1.0 by) Spencer Kimball"
 argument_list|,
@@ -711,7 +726,10 @@ literal|"Stephen Robert Norris"
 argument_list|,
 literal|"1996"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Map/Displace..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -840,6 +858,9 @@ case|case
 name|RUN_INTERACTIVE
 case|:
 comment|/*  Possibly retrieve data  */
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_displace"
@@ -862,6 +883,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -1008,7 +1032,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Displacing..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  set the tile cache size  */
@@ -1237,7 +1264,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Displace"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1343,7 +1373,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1400,7 +1433,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1456,7 +1492,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Displace Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1584,7 +1623,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"X Displacement: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1654,7 +1696,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Y Displacement: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2134,8 +2179,11 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"On Edges: "
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -2164,8 +2212,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Wrap"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -2232,8 +2283,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Smear"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -2300,7 +2354,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Black"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
