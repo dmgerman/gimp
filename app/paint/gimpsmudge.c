@@ -1482,7 +1482,7 @@ argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
-comment|/*  Smudge uses the buffer Accum.    *  For each successive painthit Accum is built like this    *    Accum =  rate*Accum  + (1-rate)*I.    *  where I is the pixels under the current painthit.     *  Then the paint area (canvas_buf) is built as     *    (Accum,1) (if no alpha),    */
+comment|/*  Smudge uses the buffer Accum.    *  For each successive painthit Accum is built like this    *    Accum =  rate*Accum  + (1-rate)*I.    *  where I is the pixels under the current painthit.    *  Then the paint area (canvas_buf) is built as    *    (Accum,1) (if no alpha),    */
 name|blend_region
 argument_list|(
 operator|&
@@ -1653,15 +1653,10 @@ argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-operator|(
-name|pressure_options
-operator|->
-name|pressure
-condition|?
-name|GIMP_BRUSH_PRESSURE
-else|:
-name|GIMP_BRUSH_SOFT
-operator|)
+name|gimp_paint_options_get_brush_mode
+argument_list|(
+name|paint_options
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,

@@ -1146,7 +1146,7 @@ argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
-comment|/* Now add an alpha to the dodgeburned region       and put this in area = canvas_buf */
+comment|/* Now add an alpha to the dodgeburned region      and put this in area = canvas_buf */
 if|if
 condition|(
 operator|!
@@ -1215,15 +1215,10 @@ argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
-operator|(
-name|pressure_options
-operator|->
-name|pressure
-condition|?
-name|GIMP_BRUSH_PRESSURE
-else|:
-name|GIMP_BRUSH_SOFT
-operator|)
+name|gimp_paint_options_get_brush_mode
+argument_list|(
+name|paint_options
+argument_list|)
 argument_list|,
 name|scale
 argument_list|,

@@ -132,13 +132,13 @@ value|-64
 end_define
 
 begin_comment
-comment|/* Different clip relationships between a blur-blob and edges:   * see convolve_motion  */
+comment|/* Different clip relationships between a blur-blob and edges:  * see convolve_motion  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c615b30103
+DECL|enum|__anon2b7507610103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1979,15 +1979,10 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-operator|(
-name|pressure_options
-operator|->
-name|pressure
-condition|?
-name|GIMP_BRUSH_PRESSURE
-else|:
-name|GIMP_BRUSH_SOFT
-operator|)
+name|gimp_paint_options_get_brush_mode
+argument_list|(
+name|paint_options
+argument_list|)
 argument_list|,
 name|scale
 argument_list|,

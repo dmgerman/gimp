@@ -912,12 +912,6 @@ index|]
 operator|=
 name|OPAQUE_OPACITY
 expr_stmt|;
-comment|/* always use incremental mode with gradients */
-comment|/* make the gui cool later */
-name|paint_appl_mode
-operator|=
-name|GIMP_PAINT_INCREMENTAL
-expr_stmt|;
 name|color_pixels
 argument_list|(
 name|temp_buf_data
@@ -940,6 +934,10 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+name|paint_appl_mode
+operator|=
+name|GIMP_PAINT_INCREMENTAL
+expr_stmt|;
 block|}
 comment|/* we check to see if this is a pixmap, if so composite the        * pixmap image into the area instead of the color        */
 elseif|else
@@ -956,6 +954,7 @@ operator|->
 name|pixmap
 condition|)
 block|{
+comment|/* if it's a pixmap, do pixmap stuff */
 name|gimp_paint_core_color_area_with_pixmap
 argument_list|(
 name|paint_core
@@ -968,7 +967,10 @@ name|area
 argument_list|,
 name|scale
 argument_list|,
-name|GIMP_BRUSH_SOFT
+name|gimp_paint_options_get_brush_mode
+argument_list|(
+name|paint_options
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|paint_appl_mode
@@ -1071,15 +1073,10 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-operator|(
-name|pressure_options
-operator|->
-name|pressure
-condition|?
-name|GIMP_BRUSH_PRESSURE
-else|:
-name|GIMP_BRUSH_SOFT
-operator|)
+name|gimp_paint_options_get_brush_mode
+argument_list|(
+name|paint_options
+argument_list|)
 argument_list|,
 name|scale
 argument_list|,

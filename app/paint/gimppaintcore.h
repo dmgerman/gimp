@@ -30,6 +30,14 @@ name|PAINT_CORE_SUBSAMPLE
 value|4
 end_define
 
+begin_define
+DECL|macro|PAINT_CORE_SOLID_SUBSAMPLE
+define|#
+directive|define
+name|PAINT_CORE_SOLID_SUBSAMPLE
+value|2
+end_define
+
 begin_comment
 comment|/* the different states that the painting function can be called with  */
 end_comment
@@ -38,7 +46,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c74346d0103
+DECL|enum|__anon2bf4356a0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -77,7 +85,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c74346d0203
+DECL|enum|__anon2bf4356a0203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -281,15 +289,26 @@ name|MaskBuf
 modifier|*
 name|pressure_brush
 decl_stmt|;
-DECL|member|solid_brush
+DECL|member|solid_brushes
 name|MaskBuf
 modifier|*
-name|solid_brush
+name|solid_brushes
+index|[
+name|PAINT_CORE_SOLID_SUBSAMPLE
+index|]
+index|[
+name|PAINT_CORE_SOLID_SUBSAMPLE
+index|]
 decl_stmt|;
+empty_stmt|;
 DECL|member|last_solid_brush
 name|MaskBuf
 modifier|*
 name|last_solid_brush
+decl_stmt|;
+DECL|member|solid_cache_invalid
+name|gboolean
+name|solid_cache_invalid
 decl_stmt|;
 DECL|member|scale_brush
 name|MaskBuf

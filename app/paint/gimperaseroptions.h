@@ -112,10 +112,6 @@ DECL|member|paint_options
 name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
-DECL|member|hard
-name|gboolean
-name|hard
-decl_stmt|;
 DECL|member|anti_erase
 name|gboolean
 name|anti_erase

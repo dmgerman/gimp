@@ -574,10 +574,6 @@ name|ALPHA_PIX
 index|]
 argument_list|)
 expr_stmt|;
-name|paint_appl_mode
-operator|=
-name|GIMP_PAINT_INCREMENTAL
-expr_stmt|;
 name|color_pixels
 argument_list|(
 name|temp_buf_data
@@ -600,6 +596,10 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+name|paint_appl_mode
+operator|=
+name|GIMP_PAINT_INCREMENTAL
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -615,7 +615,7 @@ operator|->
 name|pixmap
 condition|)
 block|{
-comment|/* if its a pixmap, do pixmap stuff */
+comment|/* if it's a pixmap, do pixmap stuff */
 name|gimp_paint_core_color_area_with_pixmap
 argument_list|(
 name|paint_core

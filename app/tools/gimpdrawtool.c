@@ -3162,7 +3162,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y)
+DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y)
 name|gimp_draw_tool_draw_boundary
 parameter_list|(
 name|GimpDrawTool
@@ -3176,10 +3176,10 @@ parameter_list|,
 name|gint
 name|n_bound_segs
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_x
 parameter_list|,
-name|gint
+name|gdouble
 name|offset_y
 parameter_list|)
 block|{
@@ -3195,11 +3195,11 @@ name|gint
 name|n_gdk_segs
 decl_stmt|;
 name|gint
-name|xclamp
+name|xmax
 decl_stmt|,
-name|yclamp
+name|ymax
 decl_stmt|;
-name|gint
+name|gdouble
 name|x
 decl_stmt|,
 name|y
@@ -3250,7 +3250,7 @@ name|n_gdk_segs
 operator|=
 literal|0
 expr_stmt|;
-name|xclamp
+name|xmax
 operator|=
 name|shell
 operator|->
@@ -3258,7 +3258,7 @@ name|disp_width
 operator|+
 literal|1
 expr_stmt|;
-name|yclamp
+name|ymax
 operator|=
 name|shell
 operator|->
@@ -3280,7 +3280,7 @@ name|i
 operator|++
 control|)
 block|{
-name|gimp_display_shell_transform_xy
+name|gimp_display_shell_transform_xy_f
 argument_list|(
 name|shell
 argument_list|,
@@ -3318,6 +3318,8 @@ index|]
 operator|.
 name|x1
 operator|=
+name|floor
+argument_list|(
 name|CLAMP
 argument_list|(
 name|x
@@ -3325,7 +3327,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|xclamp
+name|xmax
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_segs
@@ -3335,6 +3338,8 @@ index|]
 operator|.
 name|y1
 operator|=
+name|floor
+argument_list|(
 name|CLAMP
 argument_list|(
 name|y
@@ -3342,10 +3347,11 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|yclamp
+name|ymax
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy
+name|gimp_display_shell_transform_xy_f
 argument_list|(
 name|shell
 argument_list|,
@@ -3383,6 +3389,8 @@ index|]
 operator|.
 name|x2
 operator|=
+name|floor
+argument_list|(
 name|CLAMP
 argument_list|(
 name|x
@@ -3390,7 +3398,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|xclamp
+name|xmax
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_segs
@@ -3400,6 +3409,8 @@ index|]
 operator|.
 name|y2
 operator|=
+name|floor
+argument_list|(
 name|CLAMP
 argument_list|(
 name|y
@@ -3407,7 +3418,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|yclamp
+name|ymax
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
