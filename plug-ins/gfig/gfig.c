@@ -4959,7 +4959,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Translate SPACE to "\\040", etc.   Tkane from gflare plugin  */
+comment|/*   Translate SPACE to "\\040", etc.   Taken from gflare plugin  */
 end_comment
 
 begin_function
@@ -6155,7 +6155,7 @@ name|sprintf
 argument_list|(
 name|err
 argument_list|,
-literal|"File '%s' Not a gfig file"
+literal|"File '%s' is not a gfig file"
 argument_list|,
 name|gfig
 operator|->
@@ -8246,7 +8246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65c8270108
+DECL|struct|__anon299d932b0108
 block|{
 DECL|member|color_string
 name|gchar
@@ -11488,7 +11488,7 @@ name|gfig_tooltips
 argument_list|,
 name|toggle
 argument_list|,
-literal|"Close curve on compeletion"
+literal|"Close curve on completion"
 argument_list|,
 name|NULL
 argument_list|)
@@ -14753,7 +14753,7 @@ operator|)
 condition|?
 literal|"SINGLE_LAYER"
 else|:
-literal|"MULIT_LAYER"
+literal|"MULTI_LAYER"
 argument_list|)
 expr_stmt|;
 endif|#
@@ -16545,7 +16545,7 @@ name|gfig_tooltips
 argument_list|,
 name|toggle
 argument_list|,
-literal|"Approx. circles& ellipses using lines. Alows the use of brush fading with these types of objects."
+literal|"Approx. circles& ellipses using lines. Allows the use of brush fading with these types of objects."
 argument_list|,
 name|NULL
 argument_list|)
@@ -25948,7 +25948,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Unsaved Gifg objects continue with exiting?"
+literal|"Unsaved Gfig objects - continue with exiting?"
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
@@ -40551,7 +40551,7 @@ block|}
 block|}
 name|g_warning
 argument_list|(
-literal|"[%d] No enought points for circle"
+literal|"[%d] Not enough points for circle"
 argument_list|,
 name|line_no
 argument_list|)
@@ -42223,7 +42223,7 @@ block|}
 block|}
 name|g_warning
 argument_list|(
-literal|"[%d] No enought points for ellipse"
+literal|"[%d] Not enough points for ellipse"
 argument_list|,
 name|line_no
 argument_list|)
@@ -47983,7 +47983,7 @@ directive|ifdef
 name|DEBUG
 name|printf
 argument_list|(
-literal|"Infiite grad....\n"
+literal|"Infinite grad....\n"
 argument_list|)
 expr_stmt|;
 endif|#
@@ -49192,7 +49192,7 @@ block|}
 block|}
 name|g_warning
 argument_list|(
-literal|"[%d] No enought points for arc"
+literal|"[%d] Not enough points for arc"
 argument_list|,
 name|line_no
 argument_list|)

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.7  1998/04/13 05:43:38  yosh  *   Have fun recompiling gimp everyone. It's the great FSF address change!  *  *   -Yosh  *  *   Revision 1.6  1998/04/11 05:07:49  yosh  *   * app/app_procs.c: fixed up idle handler for file open (look like testgtk  *   idle demo)  *  *   * app/colomaps.c: fixup for visual test and use of gdk_color_alloc for some  *   fixed colors (from Owen Taylor)  *  *   * app/errors.h  *   * app/errors.c  *   * app/main.c  *   * libgimp/gimp.c: redid the signal handlers so we only get a debug prompt on  *   SIGSEGV, SIGBUS, and SIGFPE.  *  *   * applied gimp-jbuhler-980408-0 and gimp-joke-980409-0 (warning fixups)  *  *   * applied gimp-monnaux-980409-0 for configurable plugin path for multiarch  *   setups  *  *   -Yosh  *  *   Revision 1.5  1998/04/07 03:41:18  yosh  *   configure.in: fix for $srcdir != $builddir for data. Tightened check for  *   random() and add -lucb on systems that need it. Fix for xdelta.h check. Find  *   xemacs as well as emacs. Properly define settings for print plugin.  *  *   app/Makefile.am: ditch -DNDEBUG, since nothing uses it  *  *   flame: properly handle random() and friends  *  *   pnm: workaround for systems with old sprintfs  *  *   print, sgi: fold back in portability fixes  *  *   threshold_alpha: properly get params in non-interactive mode  *  *   bmp: updated and merged in  *  *   -Yosh  *  *   Revision 1.4  1998/04/01 22:14:50  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.8  1998/04/24 02:18:44  yosh  *   * Added sharpen to stable dist  *  *   * updated sgi and despeckle plugins  *  *   * plug-ins/xd/xd.c: works with xdelta 0.18. The use of xdelta versions prior  *   to this is not-supported.  *  *   * plug-in/gfig/gfig.c: spelling corrections :)  *  *   * app/fileops.c: applied gimp-gord-980420-0, fixes stale save procs in the  *   file dialog  *  *   * app/text_tool.c: applied gimp-egger-980420-0, text tool optimization  *  *   -Yosh  *  *   Revision 1.4  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -52,7 +52,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.0.4 - 14 November 1997"
+value|"1.1 - 23 April 1998"
 end_define
 
 begin_comment
@@ -419,7 +419,7 @@ literal|"This plug-in loads SGI image files."
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>"
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>"
+literal|"Copyright 1997-1998 by Michael Sweet"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
@@ -448,7 +448,7 @@ literal|"This plug-in saves SGI image files."
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>"
 argument_list|,
-literal|"Michael Sweet<mike@easysw.com>"
+literal|"Copyright 1997-1998 by Michael Sweet"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
@@ -471,7 +471,7 @@ name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_sgi_load"
 argument_list|,
-literal|"rgb,bw,sgi"
+literal|"rgb,bw,sgi,icon"
 argument_list|,
 literal|""
 argument_list|,
@@ -482,7 +482,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_sgi_save"
 argument_list|,
-literal|"rgb,bw,sgi"
+literal|"rgb,bw,sgi,icon"
 argument_list|,
 literal|""
 argument_list|)
@@ -929,6 +929,7 @@ modifier|*
 name|pptr
 decl_stmt|;
 comment|/* Current pixel */
+name|unsigned
 name|short
 modifier|*
 modifier|*
@@ -1252,12 +1253,9 @@ name|rows
 operator|=
 name|g_new
 argument_list|(
-name|short
-operator|*
+argument|unsigned short *
 argument_list|,
-name|sgip
-operator|->
-name|zsize
+argument|sgip->zsize
 argument_list|)
 expr_stmt|;
 name|rows
@@ -1267,15 +1265,9 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|short
+argument|unsigned short
 argument_list|,
-name|sgip
-operator|->
-name|xsize
-operator|*
-name|sgip
-operator|->
-name|zsize
+argument|sgip->xsize * sgip->zsize
 argument_list|)
 expr_stmt|;
 for|for
@@ -1498,7 +1490,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*       * 16-bit (signed) pixels...       */
+comment|/*       * 16-bit (unsigned) pixels...       */
 for|for
 control|(
 name|x
@@ -1542,10 +1534,6 @@ control|)
 operator|*
 name|pptr
 operator|=
-call|(
-name|unsigned
-call|)
-argument_list|(
 name|rows
 index|[
 name|i
@@ -1553,9 +1541,6 @@ index|]
 index|[
 name|x
 index|]
-operator|+
-literal|32768
-argument_list|)
 operator|>>
 literal|8
 expr_stmt|;
@@ -1666,6 +1651,12 @@ comment|/* Current X coordinate */
 name|y
 decl_stmt|,
 comment|/* Current Y coordinate */
+name|image_type
+decl_stmt|,
+comment|/* Type of image */
+name|layer_type
+decl_stmt|,
+comment|/* Type of drawable/layer */
 name|tile_height
 decl_stmt|,
 comment|/* Height of tile in GIMP */
@@ -1703,6 +1694,7 @@ modifier|*
 name|pptr
 decl_stmt|;
 comment|/* Current pixel */
+name|unsigned
 name|short
 modifier|*
 modifier|*
@@ -1934,12 +1926,9 @@ name|rows
 operator|=
 name|g_new
 argument_list|(
-name|short
-operator|*
+argument|unsigned short *
 argument_list|,
-name|sgip
-operator|->
-name|zsize
+argument|sgip->zsize
 argument_list|)
 expr_stmt|;
 name|rows
@@ -1949,15 +1938,9 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|short
+argument|unsigned short
 argument_list|,
-name|sgip
-operator|->
-name|xsize
-operator|*
-name|sgip
-operator|->
-name|zsize
+argument|sgip->xsize * sgip->zsize
 argument_list|)
 expr_stmt|;
 for|for
@@ -2367,7 +2350,7 @@ literal|"No Compression"
 block|,
 literal|"RLE Compression"
 block|,
-literal|"Advanced RLE\n(Not supported by SGI)"
+literal|"Aggressive RLE\n(Not supported by SGI)"
 block|}
 decl_stmt|;
 comment|/*   * Fake the command-line args and open a window...   */
@@ -2437,7 +2420,20 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
-literal|"SGI Options"
+literal|"SGI - "
+name|PLUG_IN_VERSION
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_wmclass
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+literal|"sgi"
+argument_list|,
+literal|"Gimp"
 argument_list|)
 expr_stmt|;
 name|gtk_window_position

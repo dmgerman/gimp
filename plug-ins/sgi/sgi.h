@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   SGI image file format library definitions.  *  *   Copyright 1997 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Revision History:  *  *   $Log$  *   Revision 1.6  1998/04/13 05:43:39  yosh  *   Have fun recompiling gimp everyone. It's the great FSF address change!  *  *   -Yosh  *  *   Revision 1.5  1998/04/07 03:41:19  yosh  *   configure.in: fix for $srcdir != $builddir for data. Tightened check for  *   random() and add -lucb on systems that need it. Fix for xdelta.h check. Find  *   xemacs as well as emacs. Properly define settings for print plugin.  *  *   app/Makefile.am: ditch -DNDEBUG, since nothing uses it  *  *   flame: properly handle random() and friends  *  *   pnm: workaround for systems with old sprintfs  *  *   print, sgi: fold back in portability fixes  *  *   threshold_alpha: properly get params in non-interactive mode  *  *   bmp: updated and merged in  *  *   -Yosh  *  *   Revision 1.4  1998/04/01 22:14:51  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.2  1997/06/18  00:55:28  mike  *   Updated to hold length table when writing.  *   Updated to hold current length when doing ARLE.  *  *   Revision 1.1  1997/06/15  03:37:19  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   SGI image file format library definitions.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Revision History:  *  *   $Log$  *   Revision 1.7  1998/04/24 02:18:45  yosh  *   * Added sharpen to stable dist  *  *   * updated sgi and despeckle plugins  *  *   * plug-ins/xd/xd.c: works with xdelta 0.18. The use of xdelta versions prior  *   to this is not-supported.  *  *   * plug-in/gfig/gfig.c: spelling corrections :)  *  *   * app/fileops.c: applied gimp-gord-980420-0, fixes stale save procs in the  *   file dialog  *  *   * app/text_tool.c: applied gimp-egger-980420-0, text tool optimization  *  *   -Yosh  *  *   Revision 1.4  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.3  1998/02/05  17:10:58  mike  *   Added sgiOpenFile() function for opening an existing file pointer.  *  *   Revision 1.2  1997/06/18  00:55:28  mike  *   Updated to hold length table when writing.  *   Updated to hold current length when doing ARLE.  *  *   Revision 1.1  1997/06/15  03:37:19  mike  *   Initial revision  */
 end_comment
 
 begin_ifndef
@@ -92,7 +92,7 @@ comment|/* Agressive run-length encoding */
 comment|/*  * Image structure...  */
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de54ea0108
+DECL|struct|__anon28d4b5510108
 block|{
 DECL|member|file
 name|FILE
@@ -149,6 +149,7 @@ name|length
 decl_stmt|;
 comment|/* Length table for compression */
 DECL|member|arle_row
+name|unsigned
 name|short
 modifier|*
 name|arle_row
@@ -185,6 +186,7 @@ name|sgi_t
 modifier|*
 name|sgip
 parameter_list|,
+name|unsigned
 name|short
 modifier|*
 name|row
@@ -225,6 +227,34 @@ name|zsize
 parameter_list|)
 function_decl|;
 specifier|extern
+name|sgi_t
+modifier|*
+name|sgiOpenFile
+parameter_list|(
+name|FILE
+modifier|*
+name|file
+parameter_list|,
+name|int
+name|mode
+parameter_list|,
+name|int
+name|comp
+parameter_list|,
+name|int
+name|bpp
+parameter_list|,
+name|int
+name|xsize
+parameter_list|,
+name|int
+name|ysize
+parameter_list|,
+name|int
+name|zsize
+parameter_list|)
+function_decl|;
+specifier|extern
 name|int
 name|sgiPutRow
 parameter_list|(
@@ -232,6 +262,7 @@ name|sgi_t
 modifier|*
 name|sgip
 parameter_list|,
+name|unsigned
 name|short
 modifier|*
 name|row
