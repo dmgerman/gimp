@@ -220,6 +220,7 @@ name|MAX_BUF
 index|]
 decl_stmt|;
 DECL|member|unit_str
+specifier|const
 name|gchar
 modifier|*
 name|unit_str
