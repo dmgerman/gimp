@@ -411,6 +411,12 @@ decl_stmt|;
 name|guint
 name|rowstride
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|drawable
+condition|)
+return|return;
 name|rowstride
 operator|=
 name|preview
