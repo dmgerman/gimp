@@ -252,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04c3270103
+DECL|enum|__anon2767c5730103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -6560,9 +6560,9 @@ expr_stmt|;
 return|return;
 block|}
 comment|/*  get the layer offsets  */
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|drawable
+name|item
 argument_list|,
 operator|&
 name|offset_x
@@ -7158,9 +7158,9 @@ expr_stmt|;
 return|return;
 block|}
 comment|/*  get the layer offsets  */
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|drawable
+name|item
 argument_list|,
 operator|&
 name|offset_x
@@ -10589,9 +10589,9 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -11320,9 +11320,9 @@ argument_list|,
 name|new_index
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

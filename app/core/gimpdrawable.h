@@ -508,26 +508,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_drawable_offsets
-parameter_list|(
-specifier|const
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-modifier|*
-name|offset_x
-parameter_list|,
-name|gint
-modifier|*
-name|offset_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|guchar
 modifier|*
 name|gimp_drawable_cmap

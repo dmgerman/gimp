@@ -363,7 +363,9 @@ if|if
 condition|(
 name|use_offsets
 condition|)
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -372,6 +374,7 @@ operator|->
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|,
 operator|&
@@ -537,7 +540,9 @@ if|if
 condition|(
 name|use_offsets
 condition|)
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -546,6 +551,7 @@ operator|->
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|,
 operator|&
@@ -727,7 +733,9 @@ if|if
 condition|(
 name|use_offsets
 condition|)
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -736,6 +744,7 @@ operator|->
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|,
 operator|&
@@ -888,7 +897,9 @@ if|if
 condition|(
 name|use_offsets
 condition|)
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -897,6 +908,7 @@ operator|->
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|,
 operator|&

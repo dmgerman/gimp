@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adf793a0103
+DECL|enum|__anon28a4aab20103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -5018,9 +5018,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

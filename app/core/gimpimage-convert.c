@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28d61fea0103
+DECL|enum|__anon29119b470103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d61fea0208
+DECL|struct|__anon29119b470208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d61fea0308
+DECL|struct|__anon29119b470308
 block|{
 DECL|member|ncolors
 name|long
@@ -1682,7 +1682,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d61fea0408
+DECL|struct|__anon29119b470408
 block|{
 DECL|member|used_count
 name|signed
@@ -4903,9 +4903,9 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -11076,9 +11076,9 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -11478,9 +11478,9 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -11974,9 +11974,9 @@ name|quantobj
 operator|->
 name|index_used_count
 decl_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -12439,9 +12439,9 @@ name|quantobj
 operator|->
 name|index_used_count
 decl_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -13060,9 +13060,9 @@ name|offsetx
 decl_stmt|,
 name|offsety
 decl_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -13900,9 +13900,9 @@ name|quantobj
 operator|->
 name|index_used_count
 decl_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -15086,9 +15086,9 @@ name|global_bmin
 init|=
 name|G_MAXINT
 decl_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

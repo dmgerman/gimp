@@ -256,7 +256,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289d07270103
+DECL|enum|__anon2c0abefb0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4290,9 +4290,9 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

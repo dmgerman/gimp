@@ -6686,9 +6686,12 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/*  Update the gimage--it is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|offx
@@ -7196,9 +7199,12 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/*  Update the gimage--it is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|offx

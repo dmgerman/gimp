@@ -354,9 +354,9 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -989,9 +989,12 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|off_x
@@ -2635,9 +2638,12 @@ operator|->
 name|pdb_string
 expr_stmt|;
 comment|/*  find the drawable offsets  */
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|offx

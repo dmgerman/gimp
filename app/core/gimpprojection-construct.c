@@ -1769,9 +1769,9 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2388,10 +2388,6 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
 name|gint
 name|coverage
 init|=
@@ -2440,27 +2436,28 @@ name|list
 argument_list|)
 control|)
 block|{
+name|GimpItem
+modifier|*
+name|item
+decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|layer
+name|item
 operator|=
 operator|(
-name|GimpLayer
+name|GimpItem
 operator|*
 operator|)
 name|list
 operator|->
 name|data
 expr_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|item
 argument_list|,
 operator|&
 name|off_x
@@ -2475,7 +2472,7 @@ name|gimp_drawable_get_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|layer
+name|item
 argument_list|)
 argument_list|)
 operator|&&
@@ -2484,7 +2481,7 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|layer
+name|item
 argument_list|)
 argument_list|)
 operator|&&
@@ -2505,10 +2502,7 @@ name|off_x
 operator|+
 name|gimp_item_width
 argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
+name|item
 argument_list|)
 operator|>=
 name|x
@@ -2521,10 +2515,7 @@ name|off_y
 operator|+
 name|gimp_item_height
 argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
+name|item
 argument_list|)
 operator|>=
 name|y
@@ -2615,7 +2606,7 @@ directive|if
 literal|0
 block|gint xoff;   gint yoff;
 comment|/*  set the construct flag, used to determine if anything    *  has been written to the gimage raw image yet.    */
-block|gimage->construct_flag = FALSE;    if (gimage->layers)     {       gimp_drawable_offsets (GIMP_DRAWABLE ((GimpLayer*) gimage->layers->data),&xoff,&yoff);     }    if ((gimage->layers)&&
+block|gimage->construct_flag = FALSE;    if (gimage->layers)     {       gimp_item_offsets (GIMP_ITEM (gimage->layers->data),&xoff,&yoff);     }    if ((gimage->layers)&&
 comment|/* There's a layer.      */
 block|(! g_slist_next (gimage->layers))&&
 comment|/* It's the only layer.  */
@@ -2629,7 +2620,7 @@ block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* Not indexed.          */
 block|(((GimpLayer *)(gimage->layers->data))->opacity == GIMP_OPACITY_OPAQUE)
 comment|/* Opaque                */
-block|)     {       gint xoff;       gint yoff;              gimp_drawable_offsets (GIMP_DRAWABLE (gimage->layers->data),&xoff,&yoff);        if ((xoff==0)&& (yoff==0))
+block|)     {       gint xoff;       gint yoff;        gimp_item_offsets (GIMP_ITEM (gimage->layers->data),&xoff,&yoff);        if ((xoff==0)&& (yoff==0))
 comment|/* Starts at 0,0         */
 block|{ 	  PixelRegion srcPR, destPR; 	  gpointer    pr; 	 	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE (gimage->layers->data)), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = TRUE; 	  gimp_image_construct_channels (gimage, x, y, w, h);  	  return; 	}     }
 else|#

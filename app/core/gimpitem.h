@@ -383,6 +383,26 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_item_offsets
+parameter_list|(
+specifier|const
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|gint
+modifier|*
+name|offset_x
+parameter_list|,
+name|gint
+modifier|*
+name|offset_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_item_scale
 parameter_list|(
 name|GimpItem

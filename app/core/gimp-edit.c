@@ -666,9 +666,12 @@ condition|(
 name|drawable
 condition|)
 block|{
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|cx

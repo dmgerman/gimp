@@ -292,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27baae9c0108
+DECL|struct|__anon2b9527600108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27baae9c0208
+DECL|struct|__anon2b9527600208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27baae9c0308
+DECL|struct|__anon2b9527600308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -13977,9 +13977,12 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_offsets
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|offset_x
