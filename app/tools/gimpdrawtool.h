@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c9399ac0103
+DECL|enum|__anon2c3b8c8e0103
 block|{
 DECL|enumerator|GIMP_DRAW_TOOL_STATE_INVISIBLE
 name|GIMP_DRAW_TOOL_STATE_INVISIBLE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c9399ac0203
+DECL|enum|__anon2c3b8c8e0203
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -144,23 +144,34 @@ DECL|member|parent_instance
 name|GimpTool
 name|parent_instance
 decl_stmt|;
-DECL|member|gc
-name|GdkGC
+DECL|member|gdisp
+name|GimpDisplay
 modifier|*
-name|gc
+name|gdisp
 decl_stmt|;
-comment|/*  Graphics context for draw functions    */
+comment|/*  The display we are drawing to (may be                                     *  a different one than tool->gdisp)                                     */
 DECL|member|win
 name|GdkWindow
 modifier|*
 name|win
 decl_stmt|;
 comment|/*  Window to draw draw operation to       */
+DECL|member|gc
+name|GdkGC
+modifier|*
+name|gc
+decl_stmt|;
+comment|/*  Graphics context for draw functions    */
 DECL|member|draw_state
 name|GimpDrawToolState
 name|draw_state
 decl_stmt|;
 comment|/*  Current state in the draw process      */
+DECL|member|paused_count
+name|gint
+name|paused_count
+decl_stmt|;
+comment|/*  count to keep track of multiple pauses */
 DECL|member|line_width
 name|gint
 name|line_width
@@ -181,11 +192,6 @@ name|gint
 name|join_style
 decl_stmt|;
 comment|/**/
-DECL|member|paused_count
-name|gint
-name|paused_count
-decl_stmt|;
-comment|/*  count to keep track of multiple pauses */
 block|}
 struct|;
 end_struct

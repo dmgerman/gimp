@@ -236,6 +236,11 @@ modifier|*
 name|render_gc
 decl_stmt|;
 comment|/*  GC for rendering the image         */
+DECL|member|title_dirty
+name|gboolean
+name|title_dirty
+decl_stmt|;
+comment|/*  checked by _flush()                */
 DECL|member|icon_size
 name|gint
 name|icon_size
@@ -643,30 +648,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_real_install_tool_cursor
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|GdkCursorType
-name|cursor_type
-parameter_list|,
-name|GimpToolCursorType
-name|tool_cursor
-parameter_list|,
-name|GimpCursorModifier
-name|modifier
-parameter_list|,
-name|gboolean
-name|always_install
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_install_tool_cursor
+name|gimp_display_shell_set_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -686,18 +668,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_remove_tool_cursor
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_install_override_cursor
+name|gimp_display_shell_set_override_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -711,7 +682,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_remove_override_cursor
+name|gimp_display_shell_unset_override_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293f6fe70103
+DECL|enum|__anon2798634d0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -11021,6 +11021,8 @@ block|,
 literal|"%f-%p.%i (%t) %d:%s"
 block|,
 literal|"%f-%p.%i (%t) %s:%d"
+block|,
+literal|"%f-%p.%i (%t) %m"
 block|}
 decl_stmt|;
 specifier|const
@@ -11053,6 +11055,11 @@ block|,
 name|N_
 argument_list|(
 literal|"Show reversed zoom ratio"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Show memory usage"
 argument_list|)
 block|}
 decl_stmt|;
@@ -13840,7 +13847,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon293f6fe70208
+DECL|struct|__anon2798634d0208
 block|{
 DECL|member|label
 name|gchar
@@ -14058,7 +14065,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon293f6fe70308
+DECL|struct|__anon2798634d0308
 block|{
 DECL|member|tree_label
 name|gchar

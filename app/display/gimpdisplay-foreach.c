@@ -658,7 +658,7 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_install_override_cursor
+name|gimp_display_shell_set_override_cursor
 argument_list|(
 name|shell
 argument_list|,
@@ -715,7 +715,7 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_remove_override_cursor
+name|gimp_display_shell_unset_override_cursor
 argument_list|(
 name|shell
 argument_list|)

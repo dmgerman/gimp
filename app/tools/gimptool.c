@@ -1401,7 +1401,7 @@ name|gdisp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_install_tool_cursor
+name|gimp_display_shell_set_cursor
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(

@@ -568,10 +568,11 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_update_title
-argument_list|(
 name|shell
-argument_list|)
+operator|->
+name|title_dirty
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function

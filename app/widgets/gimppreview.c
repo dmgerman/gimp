@@ -215,7 +215,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29801fb70103
+DECL|enum|__anon295a93b10103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1519,6 +1519,32 @@ return|;
 block|}
 end_function
 
+begin_define
+DECL|macro|DEBUG_MEMSIZE
+define|#
+directive|define
+name|DEBUG_MEMSIZE
+value|1
+end_define
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG_MEMSIZE
+end_ifdef
+
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|gimp_debug_memsize
+decl_stmt|;
+end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 specifier|static
 name|gint
@@ -1545,11 +1571,6 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-DECL|macro|DEBUG_MEMSIZE
-define|#
-directive|define
-name|DEBUG_MEMSIZE
-value|1
 ifdef|#
 directive|ifdef
 name|DEBUG_MEMSIZE
@@ -1568,6 +1589,10 @@ operator|==
 literal|2
 condition|)
 block|{
+name|gimp_debug_memsize
+operator|=
+name|TRUE
+expr_stmt|;
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1577,6 +1602,10 @@ operator|->
 name|viewable
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_debug_memsize
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 endif|#

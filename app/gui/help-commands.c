@@ -137,6 +137,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+specifier|extern
+name|gboolean
+name|gimp_debug_memsize
+decl_stmt|;
+name|gimp_debug_memsize
+operator|=
+name|TRUE
+expr_stmt|;
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -144,6 +152,10 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_debug_memsize
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 end_function

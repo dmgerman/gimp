@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e4df10103
+DECL|enum|__anon2c48a2610103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -57,7 +57,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e4df10203
+DECL|enum|__anon2c48a2610203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -884,6 +884,34 @@ expr_stmt|;
 block|}
 end_function
 
+begin_define
+DECL|macro|DEBUG_MEMSIZE
+define|#
+directive|define
+name|DEBUG_MEMSIZE
+value|1
+end_define
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG_MEMSIZE
+end_ifdef
+
+begin_decl_stmt
+DECL|variable|gimp_debug_memsize
+name|gboolean
+name|gimp_debug_memsize
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 name|gsize
 DECL|function|gimp_object_get_memsize (GimpObject * object)
@@ -904,14 +932,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-DECL|macro|DEBUG_MEMSIZE
-define|#
-directive|define
-name|DEBUG_MEMSIZE
-value|1
 ifdef|#
 directive|ifdef
 name|DEBUG_MEMSIZE
+if|if
+condition|(
+name|gimp_debug_memsize
+condition|)
 block|{
 specifier|static
 name|gint
@@ -1050,6 +1077,9 @@ name|g_list_foreach
 argument_list|(
 name|aggregation_tree
 argument_list|,
+operator|(
+name|GFunc
+operator|)
 name|g_print
 argument_list|,
 name|NULL
@@ -1059,6 +1089,9 @@ name|g_list_foreach
 argument_list|(
 name|aggregation_tree
 argument_list|,
+operator|(
+name|GFunc
+operator|)
 name|g_free
 argument_list|,
 name|NULL
