@@ -30,7 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"sanity.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
 end_include
 
 begin_function_decl
@@ -269,19 +281,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|result
 condition|)
-block|{
-name|g_free
-argument_list|(
-name|result
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
-else|else
 block|{
 name|gchar
 modifier|*
@@ -289,10 +291,13 @@ name|msg
 init|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"The configured filename encoding cannot be converted to UTF-8: "
 literal|"%s\n\n"
 literal|"Please check the value of the environment variable "
 literal|"G_FILENAME_ENCODING."
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -308,6 +313,73 @@ return|return
 name|msg
 return|;
 block|}
+name|g_free
+argument_list|(
+name|result
+argument_list|)
+expr_stmt|;
+name|result
+operator|=
+name|g_filename_to_utf8
+argument_list|(
+name|gimp_directory
+argument_list|()
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|result
+condition|)
+block|{
+name|gchar
+modifier|*
+name|msg
+init|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"The name of the directory holding the GIMP user configuration "
+literal|"cannot be converted to UTF-8: "
+literal|"%s\n\n"
+literal|"Most probably your filesystem stores files in an encoding "
+literal|"different from UTF-8 and you didn't tell GLib about this. "
+literal|"Please set the environment variable G_FILENAME_ENCODING."
+argument_list|)
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+decl_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+return|return
+name|msg
+return|;
+block|}
+name|g_free
+argument_list|(
+name|result
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
 block|}
 end_function
 
