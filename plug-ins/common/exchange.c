@@ -26,6 +26,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -33,6 +39,12 @@ begin_include
 include|#
 directive|include
 file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -66,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277ea7430108
+DECL|struct|__anon2bffd3de0108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -527,13 +539,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_exchange"
 argument_list|,
+name|_
+argument_list|(
 literal|"Color Exchange"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Exchange one color with another, optionally setting a threshold to convert from one shade to another"
+argument_list|)
 argument_list|,
 literal|"robert@experimental.net"
 argument_list|,
@@ -541,7 +562,10 @@ literal|"robert@experimental.net"
 argument_list|,
 literal|"June 17th, 1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Colors/Map/Color Exchange..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -689,6 +713,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/* retrieve stored arguments (if any) */
 name|gimp_get_data
 argument_list|(
@@ -790,6 +817,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_exchange"
@@ -821,6 +851,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -979,7 +1012,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Color Exchange..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -1277,7 +1313,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Color Exchange"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1383,7 +1422,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1440,7 +1482,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1641,7 +1686,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1743,9 +1791,15 @@ name|gtk_frame_new
 argument_list|(
 name|framenumber
 condition|?
+name|_
+argument_list|(
 literal|"To color"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"From color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1829,7 +1883,10 @@ argument_list|)
 expr_stmt|;
 name|doLabelAndScale
 argument_list|(
+name|_
+argument_list|(
 literal|"Red"
+argument_list|)
 argument_list|,
 name|table
 argument_list|,
@@ -1853,7 +1910,10 @@ name|framenumber
 condition|)
 name|doLabelAndScale
 argument_list|(
+name|_
+argument_list|(
 literal|"Red threshold"
+argument_list|)
 argument_list|,
 name|table
 argument_list|,
@@ -1865,7 +1925,10 @@ argument_list|)
 expr_stmt|;
 name|doLabelAndScale
 argument_list|(
+name|_
+argument_list|(
 literal|"Green"
+argument_list|)
 argument_list|,
 name|table
 argument_list|,
@@ -1889,7 +1952,10 @@ name|framenumber
 condition|)
 name|doLabelAndScale
 argument_list|(
+name|_
+argument_list|(
 literal|"Green threshold"
+argument_list|)
 argument_list|,
 name|table
 argument_list|,
@@ -1901,7 +1967,10 @@ argument_list|)
 expr_stmt|;
 name|doLabelAndScale
 argument_list|(
+name|_
+argument_list|(
 literal|"Blue"
+argument_list|)
 argument_list|,
 name|table
 argument_list|,
@@ -1925,7 +1994,10 @@ name|framenumber
 condition|)
 name|doLabelAndScale
 argument_list|(
+name|_
+argument_list|(
 literal|"Blue threshold"
+argument_list|)
 argument_list|,
 name|table
 argument_list|,
@@ -1949,7 +2021,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Lock thresholds"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

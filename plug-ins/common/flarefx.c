@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -35,6 +41,12 @@ begin_include
 include|#
 directive|include
 file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -140,7 +152,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29255dad0108
+DECL|struct|__anon27ed00140108
 typedef|typedef
 struct|struct
 block|{
@@ -159,7 +171,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29255dad0208
+DECL|struct|__anon27ed00140208
 typedef|typedef
 struct|struct
 block|{
@@ -232,7 +244,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29255dad0308
+DECL|struct|__anon27ed00140308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -923,13 +935,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_flarefx"
 argument_list|,
+name|_
+argument_list|(
 literal|"Add lens flare effetcs"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"More here later"
+argument_list|)
 argument_list|,
 literal|"Karl-Johan Andersson"
 argument_list|,
@@ -939,7 +960,10 @@ argument_list|,
 comment|/* Copyright */
 literal|"1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Light Effects/FlareFX..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -1067,6 +1091,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -1097,6 +1124,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -1152,6 +1182,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -1192,7 +1225,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Render flare..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -1429,7 +1465,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"FlareFX"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1535,7 +1574,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1592,7 +1634,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5066,7 +5111,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Center of FlareFX"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5161,7 +5209,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"X: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5297,7 +5348,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Y: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

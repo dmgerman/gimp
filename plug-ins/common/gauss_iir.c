@@ -39,6 +39,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|ENTRY_WIDTH
 define|#
@@ -50,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c64c82d0108
+DECL|struct|__anon2c61a2210108
 block|{
 DECL|member|radius
 name|gdouble
@@ -73,7 +79,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c64c82d0208
+DECL|struct|__anon2c61a2210208
 block|{
 DECL|member|run
 name|gint
@@ -438,13 +444,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gauss_iir"
 argument_list|,
+name|_
+argument_list|(
 literal|"Applies a gaussian blur to the specified drawable."
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  Horizontal and vertical blurring can be independently invoked by specifying only one to run.  The IIR gaussian blurring works best for large radius values and for images which are not computer-generated.  Values for radius less than 1.0 are invalid as they will generate spurious results."
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -452,7 +467,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Blur/Gaussian Blur (IIR)..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -570,6 +588,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -679,10 +700,16 @@ name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -712,7 +739,10 @@ condition|)
 block|{
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gauss_iir: you must specify either horizontal or vertical (or both)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|status
@@ -762,7 +792,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"IIR Gaussian Blur"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  set the tile cache size so that the gaussian blur works well  */
@@ -873,7 +906,10 @@ else|else
 block|{
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gauss_iir: cannot operate on indexed color images"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|status
@@ -1009,7 +1045,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"IIR Gaussian Blur"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1115,7 +1154,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1172,7 +1214,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1228,7 +1273,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1305,7 +1353,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Blur Horizontally"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1365,7 +1416,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Blur Vertically"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1450,7 +1504,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blur Radius: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

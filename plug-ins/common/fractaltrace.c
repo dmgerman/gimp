@@ -12,27 +12,11 @@ value|"plug_in_fractal_trace"
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_TITLE
-define|#
-directive|define
-name|PLUG_IN_TITLE
-value|"Fractal Trace"
-end_define
-
-begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"v0.4 test version (Dec. 25 1997)"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_CATEGORY
-define|#
-directive|define
-name|PLUG_IN_CATEGORY
-value|"<Image>/Filters/Map/Fractal Trace..."
 end_define
 
 begin_comment
@@ -54,19 +38,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<math.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_ifndef
@@ -212,7 +208,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon27ba649f0108
+DECL|struct|__anon2af00d680108
 typedef|typedef
 struct|struct
 block|{
@@ -289,7 +285,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27ba649f0208
+DECL|struct|__anon2af00d680208
 typedef|typedef
 struct|struct
 block|{
@@ -472,13 +468,22 @@ name|nrets
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"transform image with the Mandelbrot Fractal"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"transform image with the Mandelbrot Fractal"
+argument_list|)
 argument_list|,
 literal|"Hirotsuna Mizuno<s1041150@u-aizu.ac.jp>"
 argument_list|,
@@ -486,7 +491,10 @@ literal|"Copyright (C) 1997 Hirotsuna Mizuno"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|PLUG_IN_CATEGORY
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Map/Fractal Trace..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -509,7 +517,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon27ba649f0308
+DECL|struct|__anon2af00d680308
 typedef|typedef
 struct|struct
 block|{
@@ -552,7 +560,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27ba649f0408
+DECL|struct|__anon2af00d680408
 typedef|typedef
 struct|struct
 block|{
@@ -837,6 +845,9 @@ block|{
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -849,6 +860,9 @@ break|break;
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -980,6 +994,9 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -1102,7 +1119,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27ba649f0508
+DECL|struct|__anon2af00d680508
 typedef|typedef
 struct|struct
 block|{
@@ -2519,7 +2536,10 @@ name|py
 decl_stmt|;
 name|gimp_progress_init
 argument_list|(
-name|PLUG_IN_TITLE
+name|_
+argument_list|(
+literal|"Fractal Trace"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale_x
@@ -3444,7 +3464,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_entry_gint32_new
 argument_list|(
+name|_
+argument_list|(
 literal|"DEPTH"
+argument_list|)
 argument_list|,
 operator|&
 name|parameters
@@ -3627,7 +3650,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon27ba649f0608
+DECL|struct|__anon2af00d680608
 typedef|typedef
 struct|struct
 block|{
@@ -4667,7 +4690,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-name|PLUG_IN_TITLE
+name|_
+argument_list|(
+literal|"Fractal Trace"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_init
@@ -4746,7 +4772,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4811,7 +4840,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4864,7 +4896,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Help"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5149,7 +5184,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Outside Type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -5227,7 +5265,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Wrap"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5315,7 +5356,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Transparent"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5419,7 +5463,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Black"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5507,7 +5554,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"White"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
