@@ -379,10 +379,22 @@ operator|->
 name|data
 expr_stmt|;
 else|else
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"PDB calling error %s not found"
+argument_list|)
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
 name|procedure
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 return|return
 name|procedure
 return|;
