@@ -75,7 +75,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|guint
+name|GtkType
 DECL|function|message_window_get_type (void)
 name|message_window_get_type
 parameter_list|(
@@ -83,7 +83,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|mw_type
 init|=
 literal|0

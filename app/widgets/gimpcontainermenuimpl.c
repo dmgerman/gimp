@@ -246,7 +246,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|menu_impl_type
 init|=
 literal|0

@@ -239,7 +239,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|view_type
 init|=
 literal|0

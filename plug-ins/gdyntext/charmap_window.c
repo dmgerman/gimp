@@ -90,14 +90,14 @@ end_decl_stmt
 
 begin_function
 DECL|function|charmap_window_get_type (void)
-name|guint
+name|GtkType
 name|charmap_window_get_type
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|cmw_type
 init|=
 literal|0

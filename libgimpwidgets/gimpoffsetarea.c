@@ -37,7 +37,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4550390103
+DECL|enum|__anon28e3930f0103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -353,7 +353,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|offset_area_type
 init|=
 literal|0

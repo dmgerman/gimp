@@ -193,7 +193,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon28b99e0e0103
+DECL|enum|__anon2c65e9e30103
 enum|enum
 block|{
 DECL|enumerator|FONT_CHANGED
@@ -222,14 +222,14 @@ end_decl_stmt
 
 begin_function
 DECL|function|font_selection_get_type (void)
-name|guint
+name|GtkType
 name|font_selection_get_type
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|fs_type
 init|=
 literal|0

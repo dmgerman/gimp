@@ -295,7 +295,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ce4d3e0103
+DECL|enum|__anon27b24c1e0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -720,7 +720,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|gcb_type
 init|=
 literal|0

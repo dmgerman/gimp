@@ -72,7 +72,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon290131e70103
+DECL|enum|__anon2bf5fb870103
 enum|enum
 block|{
 DECL|enumerator|CHAR_SELECTED
@@ -101,14 +101,14 @@ end_decl_stmt
 
 begin_function
 DECL|function|charmap_get_type (void)
-name|guint
+name|GtkType
 name|charmap_get_type
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|cm_type
 init|=
 literal|0
