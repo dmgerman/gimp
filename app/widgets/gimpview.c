@@ -195,7 +195,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c842e7c0103
+DECL|enum|__anon27bc96f30103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -3869,6 +3869,9 @@ decl_stmt|;
 name|gboolean
 name|has_alpha
 decl_stmt|;
+name|gboolean
+name|render_composite
+decl_stmt|;
 name|gint
 name|image_bytes
 decl_stmt|;
@@ -4025,6 +4028,10 @@ name|buf
 operator|=
 name|render_check_buf
 expr_stmt|;
+name|render_composite
+operator|=
+name|TRUE
+expr_stmt|;
 name|alpha
 operator|=
 operator|(
@@ -4060,6 +4067,10 @@ block|{
 name|buf
 operator|=
 name|render_empty_buf
+expr_stmt|;
+name|render_composite
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 name|x1
@@ -4416,12 +4427,7 @@ if|if
 condition|(
 name|has_alpha
 operator|&&
-operator|(
-name|channel
-operator|==
-operator|-
-literal|1
-operator|)
+name|render_composite
 condition|)
 block|{
 name|a
@@ -4663,12 +4669,7 @@ if|if
 condition|(
 name|has_alpha
 operator|&&
-operator|(
-name|channel
-operator|==
-operator|-
-literal|1
-operator|)
+name|render_composite
 condition|)
 block|{
 name|a

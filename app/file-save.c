@@ -721,7 +721,15 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/* these calls must come before the call to gimage_set_filename */
+name|gimp_documents_add
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
 name|document_index_add
 argument_list|(
 name|filename
@@ -791,7 +799,6 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/* note: 'filename' may have been free'd by above call! */
 block|}
 block|}
 name|g_free

@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GimpViewable
 name|parent_instance
 decl_stmt|;
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 DECL|member|width
 name|gint
 name|width

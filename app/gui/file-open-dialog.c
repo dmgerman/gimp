@@ -130,6 +130,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdocuments.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -771,6 +777,13 @@ name|absolute
 operator|=
 name|file_open_absolute_filename
 argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_documents_add
+argument_list|(
+name|the_gimp
+argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;

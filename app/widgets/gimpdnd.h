@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75150e0103
+DECL|enum|__anon2b67a6040103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -67,6 +67,9 @@ name|GIMP_DND_TYPE_BUFFER
 block|,
 DECL|enumerator|GIMP_DND_TYPE_TOOL
 name|GIMP_DND_TYPE_TOOL
+block|,
+DECL|enumerator|GIMP_DND_TYPE_IMAGEFILE
+name|GIMP_DND_TYPE_IMAGEFILE
 block|,
 DECL|enumerator|GIMP_DND_TYPE_DIALOG
 name|GIMP_DND_TYPE_DIALOG
@@ -216,6 +219,15 @@ directive|define
 name|GIMP_TARGET_TOOL
 define|\
 value|{ "GIMP_TOOL", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TOOL }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_IMAGEFILE
+define|#
+directive|define
+name|GIMP_TARGET_IMAGEFILE
+define|\
+value|{ "GIMP_IMAGEFILE", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TOOL }
 end_define
 
 begin_define

@@ -5253,6 +5253,27 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/Add Tab/Document History..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_add_tab_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+literal|"gimp:document-history"
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/Add Tab/Error Console..."
 argument_list|)
 block|,
