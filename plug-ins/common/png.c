@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b883a830108
+DECL|struct|__anon299304110108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b883a830208
+DECL|struct|__anon299304110208
 block|{
 DECL|member|run
 name|gboolean
@@ -652,7 +652,7 @@ literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Save>/PNG"
+name|NULL
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"
 argument_list|,
@@ -685,7 +685,7 @@ literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Save>/PNG"
+name|NULL
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"
 argument_list|,
