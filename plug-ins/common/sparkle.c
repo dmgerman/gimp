@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Sparkle --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel;  * It has been optimized a little, bugfixed and modified by Martin Weber  * for additional functionality.  Also bugfixed by Seth Burgess (9/17/03)   * to take rowstrides into account when selections are present (bug #50911).  * Attempted reformatting.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact Michael at mjhammel@csn.net  * You can contact Martin at martweb@gmx.net  * You can contact Seth at sjburges@gimp.org  */
+comment|/* Sparkle --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel;  *  * It has been optimized a little, bugfixed and modified by Martin Weber  * for additional functionality.  Also bugfixed by Seth Burgess (9/17/03)  * to take rowstrides into account when selections are present (bug #50911).  * Attempted reformatting.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact Michael at mjhammel@csn.net  * You can contact Martin at martweb@gmx.net  * You can contact Seth at sjburges@gimp.org  */
 end_comment
 
 begin_comment
@@ -68,7 +68,7 @@ DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
 name|ENTRY_WIDTH
-value|5
+value|7
 end_define
 
 begin_define
@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298e18c40108
+DECL|struct|__anon2bbf56260108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -166,15 +166,15 @@ name|gdouble
 name|random_saturation
 decl_stmt|;
 DECL|member|preserve_luminosity
-name|gint
+name|gboolean
 name|preserve_luminosity
 decl_stmt|;
-DECL|member|invers
-name|gint
-name|invers
+DECL|member|inverse
+name|gboolean
+name|inverse
 decl_stmt|;
 DECL|member|border
-name|gint
+name|gboolean
 name|border
 decl_stmt|;
 DECL|member|colortype
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298e18c40208
+DECL|struct|__anon2bbf56260208
 block|{
 DECL|member|run
 name|gboolean
@@ -276,14 +276,15 @@ specifier|static
 name|gint
 name|compute_luminosity
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixel
 parameter_list|,
-name|gint
+name|gboolean
 name|gray
 parameter_list|,
-name|gint
+name|gboolean
 name|has_alpha
 parameter_list|)
 function_decl|;
@@ -331,9 +332,6 @@ parameter_list|,
 name|GimpPixelRgn
 modifier|*
 name|dest_rgn
-parameter_list|,
-name|gint
-name|gray
 parameter_list|,
 name|gint
 name|x1
@@ -470,39 +468,39 @@ block|,
 comment|/* luminosity threshold */
 literal|0.5
 block|,
-comment|/* flare intensity */
+comment|/* flare intensity      */
 literal|20.0
 block|,
-comment|/* spike length */
+comment|/* spike length         */
 literal|4.0
 block|,
-comment|/* spike points */
+comment|/* spike points         */
 literal|15.0
 block|,
-comment|/* spike angle */
+comment|/* spike angle          */
 literal|1.0
 block|,
-comment|/* spike density */
+comment|/* spike density        */
 literal|0.0
 block|,
-comment|/* opacity */
+comment|/* opacity              */
 literal|0.0
 block|,
-comment|/* random hue */
+comment|/* random hue           */
 literal|0.0
 block|,
-comment|/* random saturation */
+comment|/* random saturation    */
 name|FALSE
 block|,
-comment|/* preserve_luminosity */
+comment|/* preserve_luminosity  */
 name|FALSE
 block|,
-comment|/* invers */
+comment|/* inverse              */
 name|FALSE
 block|,
-comment|/* border */
+comment|/* border               */
 name|NATURAL
-comment|/* colortype */
+comment|/* colortype            */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -515,7 +513,7 @@ name|sint
 init|=
 block|{
 name|FALSE
-comment|/* run */
+comment|/* run                  */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -655,9 +653,9 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"invers"
+literal|"inverse"
 block|,
-literal|"Invers (TRUE/FALSE)"
+literal|"Inverse (TRUE/FALSE)"
 block|}
 block|,
 block|{
@@ -1001,7 +999,7 @@ name|FALSE
 expr_stmt|;
 name|svals
 operator|.
-name|invers
+name|inverse
 operator|=
 operator|(
 name|param
@@ -1308,22 +1306,7 @@ condition|(
 name|svals
 operator|.
 name|border
-operator|==
-name|FALSE
 condition|)
-comment|/*  compute the luminosity which exceeds the luminosity threshold  */
-name|threshold
-operator|=
-name|compute_lum_threshold
-argument_list|(
-name|drawable
-argument_list|,
-name|svals
-operator|.
-name|lum_threshold
-argument_list|)
-expr_stmt|;
-else|else
 block|{
 name|gimp_drawable_mask_bounds
 argument_list|(
@@ -1361,6 +1344,21 @@ expr_stmt|;
 name|threshold
 operator|=
 literal|255
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/*  compute the luminosity which exceeds the luminosity threshold  */
+name|threshold
+operator|=
+name|compute_lum_threshold
+argument_list|(
+name|drawable
+argument_list|,
+name|svals
+operator|.
+name|lum_threshold
+argument_list|)
 expr_stmt|;
 block|}
 name|sparkle
@@ -2422,7 +2420,7 @@ argument_list|)
 argument_list|,
 name|svals
 operator|.
-name|invers
+name|inverse
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2456,7 +2454,7 @@ argument_list|,
 operator|&
 name|svals
 operator|.
-name|invers
+name|inverse
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -2714,17 +2712,18 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|compute_luminosity (guchar * pixel,gint gray,gint has_alpha)
+DECL|function|compute_luminosity (const guchar * pixel,gboolean gray,gboolean has_alpha)
 name|compute_luminosity
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixel
 parameter_list|,
-name|gint
+name|gboolean
 name|gray
 parameter_list|,
-name|gint
+name|gboolean
 name|has_alpha
 parameter_list|)
 block|{
@@ -2739,13 +2738,13 @@ if|if
 condition|(
 name|svals
 operator|.
-name|invers
-operator|==
-name|FALSE
+name|inverse
 condition|)
 block|{
 name|pixel0
 operator|=
+literal|255
+operator|-
 name|pixel
 index|[
 literal|0
@@ -2753,6 +2752,8 @@ index|]
 expr_stmt|;
 name|pixel1
 operator|=
+literal|255
+operator|-
 name|pixel
 index|[
 literal|1
@@ -2760,6 +2761,8 @@ index|]
 expr_stmt|;
 name|pixel2
 operator|=
+literal|255
+operator|-
 name|pixel
 index|[
 literal|2
@@ -2770,8 +2773,6 @@ else|else
 block|{
 name|pixel0
 operator|=
-literal|255
-operator|-
 name|pixel
 index|[
 literal|0
@@ -2779,8 +2780,6 @@ index|]
 expr_stmt|;
 name|pixel1
 operator|=
-literal|255
-operator|-
 name|pixel
 index|[
 literal|1
@@ -2788,8 +2787,6 @@ index|]
 expr_stmt|;
 name|pixel2
 operator|=
-literal|255
-operator|-
 name|pixel
 index|[
 literal|2
@@ -2918,10 +2915,6 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|guchar
-modifier|*
-name|data
-decl_stmt|;
 name|gint
 name|values
 index|[
@@ -2933,10 +2926,10 @@ name|total
 decl_stmt|,
 name|sum
 decl_stmt|;
-name|gint
+name|gboolean
 name|gray
 decl_stmt|;
-name|gint
+name|gboolean
 name|has_alpha
 decl_stmt|;
 name|gint
@@ -3055,12 +3048,20 @@ name|pr
 argument_list|)
 control|)
 block|{
-name|int
+specifier|const
+name|guchar
+modifier|*
+name|src
+decl_stmt|,
+modifier|*
+name|s
+decl_stmt|;
+name|gint
 name|sx
 decl_stmt|,
 name|sy
 decl_stmt|;
-name|data
+name|src
 operator|=
 name|src_rgn
 operator|.
@@ -3082,6 +3083,10 @@ name|sy
 operator|++
 control|)
 block|{
+name|s
+operator|=
+name|src
+expr_stmt|;
 for|for
 control|(
 name|sx
@@ -3102,7 +3107,7 @@ name|values
 index|[
 name|compute_luminosity
 argument_list|(
-name|data
+name|s
 argument_list|,
 name|gray
 argument_list|,
@@ -3111,28 +3116,18 @@ argument_list|)
 index|]
 operator|++
 expr_stmt|;
-name|data
+name|s
 operator|+=
 name|src_rgn
 operator|.
 name|bpp
 expr_stmt|;
 block|}
-name|data
+name|src
 operator|+=
 name|src_rgn
 operator|.
 name|rowstride
-operator|-
-operator|(
-name|src_rgn
-operator|.
-name|w
-operator|*
-name|src_rgn
-operator|.
-name|bpp
-operator|)
 expr_stmt|;
 block|}
 block|}
@@ -3224,13 +3219,6 @@ name|src_rgn
 decl_stmt|,
 name|dest_rgn
 decl_stmt|;
-name|guchar
-modifier|*
-name|src
-decl_stmt|,
-modifier|*
-name|dest
-decl_stmt|;
 name|gdouble
 name|nfrac
 decl_stmt|,
@@ -3263,20 +3251,16 @@ name|y
 decl_stmt|,
 name|b
 decl_stmt|;
-name|gint
+name|gboolean
 name|gray
+decl_stmt|,
+name|has_alpha
 decl_stmt|;
 name|gint
-name|has_alpha
-decl_stmt|,
 name|alpha
 decl_stmt|;
 name|gpointer
 name|pr
-decl_stmt|;
-name|guchar
-modifier|*
-name|tmp1
 decl_stmt|;
 name|gint
 name|tile_width
@@ -3448,10 +3432,20 @@ name|pr
 argument_list|)
 control|)
 block|{
-name|int
-name|sx
+specifier|const
+name|guchar
+modifier|*
+name|src
 decl_stmt|,
-name|sy
+modifier|*
+name|s
+decl_stmt|;
+name|guchar
+modifier|*
+name|dest
+decl_stmt|,
+modifier|*
+name|d
 decl_stmt|;
 name|src
 operator|=
@@ -3467,33 +3461,41 @@ name|data
 expr_stmt|;
 for|for
 control|(
-name|sy
+name|y
 operator|=
 literal|0
 init|;
-name|sy
+name|y
 operator|<
 name|src_rgn
 operator|.
 name|h
 condition|;
-name|sy
+name|y
 operator|++
 control|)
 block|{
+name|s
+operator|=
+name|src
+expr_stmt|;
+name|d
+operator|=
+name|dest
+expr_stmt|;
 for|for
 control|(
-name|sx
+name|x
 operator|=
 literal|0
 init|;
-name|sx
+name|x
 operator|<
 name|src_rgn
 operator|.
 name|w
 condition|;
-name|sx
+name|x
 operator|++
 control|)
 block|{
@@ -3501,7 +3503,7 @@ if|if
 condition|(
 name|has_alpha
 operator|&&
-name|src
+name|s
 index|[
 name|alpha
 index|]
@@ -3516,16 +3518,7 @@ argument_list|,
 literal|0
 argument_list|,
 name|alpha
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|dest
-operator|+=
-name|alpha
 expr_stmt|;
 block|}
 else|else
@@ -3535,10 +3528,6 @@ control|(
 name|b
 operator|=
 literal|0
-operator|,
-name|tmp1
-operator|=
-name|src
 init|;
 name|b
 operator|<
@@ -3547,33 +3536,40 @@ condition|;
 name|b
 operator|++
 control|)
-block|{
-operator|*
-name|dest
-operator|++
+name|d
+index|[
+name|b
+index|]
 operator|=
-operator|*
-name|tmp1
-operator|++
+name|s
+index|[
+name|b
+index|]
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
 name|has_alpha
 condition|)
-operator|*
-name|dest
-operator|++
+name|d
+index|[
+name|alpha
+index|]
 operator|=
 name|src
 index|[
 name|alpha
 index|]
 expr_stmt|;
-name|src
+name|s
 operator|+=
 name|src_rgn
+operator|.
+name|bpp
+expr_stmt|;
+name|d
+operator|+=
+name|dest_rgn
 operator|.
 name|bpp
 expr_stmt|;
@@ -3583,32 +3579,12 @@ operator|+=
 name|src_rgn
 operator|.
 name|rowstride
-operator|-
-operator|(
-name|src_rgn
-operator|.
-name|bpp
-operator|*
-name|src_rgn
-operator|.
-name|w
-operator|)
 expr_stmt|;
 name|dest
 operator|+=
 name|dest_rgn
 operator|.
 name|rowstride
-operator|-
-operator|(
-name|dest_rgn
-operator|.
-name|bpp
-operator|*
-name|dest_rgn
-operator|.
-name|w
-operator|)
 expr_stmt|;
 block|}
 block|}
@@ -3696,6 +3672,14 @@ name|pr
 argument_list|)
 control|)
 block|{
+specifier|const
+name|guchar
+modifier|*
+name|src
+decl_stmt|,
+modifier|*
+name|s
+decl_stmt|;
 name|src
 operator|=
 name|src_rgn
@@ -3718,6 +3702,10 @@ name|y
 operator|++
 control|)
 block|{
+name|s
+operator|=
+name|src
+expr_stmt|;
 for|for
 control|(
 name|x
@@ -3783,28 +3771,34 @@ name|height
 operator|-
 literal|1
 condition|)
+block|{
 name|lum
 operator|=
 literal|255
 expr_stmt|;
+block|}
 else|else
+block|{
 name|lum
 operator|=
 literal|0
 expr_stmt|;
 block|}
+block|}
 else|else
+block|{
 name|lum
 operator|=
 name|compute_luminosity
 argument_list|(
-name|src
+name|s
 argument_list|,
 name|gray
 argument_list|,
 name|has_alpha
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|lum
@@ -3840,6 +3834,7 @@ expr_stmt|;
 name|length
 operator|=
 operator|(
+operator|(
 name|gdouble
 operator|)
 name|svals
@@ -3855,6 +3850,7 @@ name|nfrac
 argument_list|,
 literal|0.8
 argument_list|)
+operator|)
 expr_stmt|;
 name|inten
 operator|=
@@ -3863,7 +3859,6 @@ operator|.
 name|flare_inten
 operator|*
 name|nfrac
-comment|/* pow (nfrac, 1.0) */
 expr_stmt|;
 comment|/* fspike im x,y intens rlength angle */
 if|if
@@ -3928,8 +3923,6 @@ argument_list|,
 operator|&
 name|dest_rgn
 argument_list|,
-name|gray
-argument_list|,
 name|x1
 argument_list|,
 name|y1
@@ -3971,8 +3964,6 @@ name|src_rgn
 argument_list|,
 operator|&
 name|dest_rgn
-argument_list|,
-name|gray
 argument_list|,
 name|x1
 argument_list|,
@@ -4051,7 +4042,7 @@ name|max_progress
 argument_list|)
 expr_stmt|;
 block|}
-name|src
+name|s
 operator|+=
 name|src_rgn
 operator|.
@@ -4063,16 +4054,6 @@ operator|+=
 name|src_rgn
 operator|.
 name|rowstride
-operator|-
-operator|(
-name|src_rgn
-operator|.
-name|w
-operator|*
-name|src_rgn
-operator|.
-name|bpp
-operator|)
 expr_stmt|;
 block|}
 block|}
@@ -4414,12 +4395,12 @@ if|if
 condition|(
 name|svals
 operator|.
-name|invers
-operator|==
-name|FALSE
+name|inverse
 condition|)
 name|new
 operator|=
+literal|255
+operator|-
 name|pixel
 index|[
 name|b
@@ -4428,8 +4409,6 @@ expr_stmt|;
 else|else
 name|new
 operator|=
-literal|255
-operator|-
 name|pixel
 index|[
 name|b
@@ -4440,8 +4419,6 @@ condition|(
 name|svals
 operator|.
 name|preserve_luminosity
-operator|==
-name|TRUE
 condition|)
 block|{
 if|if
@@ -4453,6 +4430,7 @@ index|[
 name|b
 index|]
 condition|)
+block|{
 name|new
 operator|*=
 operator|(
@@ -4469,6 +4447,7 @@ name|opacity
 operator|)
 operator|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|new
@@ -4533,9 +4512,7 @@ if|if
 condition|(
 name|svals
 operator|.
-name|invers
-operator|!=
-name|FALSE
+name|inverse
 condition|)
 name|pixel
 index|[
@@ -4565,7 +4542,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fspike (GimpPixelRgn * src_rgn,GimpPixelRgn * dest_rgn,gint gray,gint x1,gint y1,gint x2,gint y2,gint xr,gint yr,gint tile_width,gint tile_height,gdouble inten,gdouble length,gdouble angle,GRand * gr)
+DECL|function|fspike (GimpPixelRgn * src_rgn,GimpPixelRgn * dest_rgn,gint x1,gint y1,gint x2,gint y2,gint xr,gint yr,gint tile_width,gint tile_height,gdouble inten,gdouble length,gdouble angle,GRand * gr)
 name|fspike
 parameter_list|(
 name|GimpPixelRgn
@@ -4575,9 +4552,6 @@ parameter_list|,
 name|GimpPixelRgn
 modifier|*
 name|dest_rgn
-parameter_list|,
-name|gint
-name|gray
 parameter_list|,
 name|gint
 name|x1
@@ -4856,7 +4830,7 @@ if|if
 condition|(
 name|svals
 operator|.
-name|invers
+name|inverse
 condition|)
 block|{
 name|color
@@ -4961,9 +4935,9 @@ argument_list|(
 name|gr
 argument_list|,
 operator|-
-literal|.5
+literal|0.5
 argument_list|,
-literal|.5
+literal|0.5
 argument_list|)
 operator|*
 literal|255
@@ -5001,9 +4975,9 @@ argument_list|(
 name|gr
 argument_list|,
 operator|-
-literal|.5
+literal|0.5
 argument_list|,
-literal|.5
+literal|0.5
 argument_list|)
 operator|)
 operator|*
