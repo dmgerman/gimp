@@ -287,9 +287,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_clipboard_paste"
 argument_list|,
-literal|"paste image from clipboard"
+literal|"Get image from clipboard"
 argument_list|,
-literal|"Paste image from clipboard, creates a new image."
+literal|"Get an image from the Windows clipboard, creating a new image"
 argument_list|,
 literal|"Hans Breuer"
 argument_list|,
@@ -297,7 +297,7 @@ literal|"Hans Breuer"
 argument_list|,
 literal|"1999"
 argument_list|,
-literal|"<Toolbox>/Xtns/Paste from Clipboard"
+literal|"<Toolbox>/File/Acquire/From Clipboard"
 argument_list|,
 literal|""
 argument_list|,

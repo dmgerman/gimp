@@ -3967,7 +3967,7 @@ index|[
 literal|3
 index|]
 argument_list|,
-literal|"%d:%ud:%d"
+literal|"%d:%u:%d"
 argument_list|,
 name|g_io_channel_win32_get_fd
 argument_list|(
