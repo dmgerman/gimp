@@ -430,7 +430,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|RESPONSE_SAVE
+name|GTK_RESPONSE_CANCEL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
