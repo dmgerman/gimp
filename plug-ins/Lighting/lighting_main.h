@@ -33,7 +33,7 @@ DECL|macro|NUM_LIGHTS
 define|#
 directive|define
 name|NUM_LIGHTS
-value|3
+value|6
 end_define
 
 begin_comment
@@ -47,7 +47,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279386050103
+DECL|enum|__anon2c069b1b0103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -68,7 +68,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon279386050203
+DECL|enum|__anon2c069b1b0203
 block|{
 DECL|enumerator|LINEAR_MAP
 name|LINEAR_MAP
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279386050303
+DECL|enum|__anon2c069b1b0303
 block|{
 DECL|enumerator|IMAGE_BUMP
 name|IMAGE_BUMP
@@ -101,7 +101,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279386050408
+DECL|struct|__anon2c069b1b0408
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279386050508
+DECL|struct|__anon2c069b1b0508
 block|{
 DECL|member|type
 name|LightType
@@ -162,6 +162,10 @@ DECL|member|intensity
 name|gdouble
 name|intensity
 decl_stmt|;
+DECL|member|active
+name|gboolean
+name|active
+decl_stmt|;
 DECL|typedef|LightSettings
 block|}
 name|LightSettings
@@ -171,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279386050608
+DECL|struct|__anon2c069b1b0608
 block|{
 DECL|member|drawable_id
 name|gint32
@@ -221,7 +225,6 @@ name|bumpmax
 decl_stmt|,
 name|bumpmin
 decl_stmt|;
-comment|/*  gdouble wave_cx,wave_cy;   gdouble wave_lx,wave_ly;   gdouble wave_amp,wave_ph; */
 DECL|member|max_depth
 name|gint
 name|max_depth
@@ -230,9 +233,7 @@ DECL|member|bumpmaptype
 name|gint
 name|bumpmaptype
 decl_stmt|;
-comment|/*  gint    bumptype; */
 comment|/* Flags */
-comment|/* ===== */
 DECL|member|antialiasing
 name|gint
 name|antialiasing
@@ -274,7 +275,18 @@ name|gboolean
 name|interactive_preview
 decl_stmt|;
 comment|/* Misc */
-comment|/* ==== */
+DECL|member|update_enabled
+name|gboolean
+name|update_enabled
+decl_stmt|;
+DECL|member|light_selected
+name|gint
+name|light_selected
+decl_stmt|;
+DECL|member|light_isolated
+name|gboolean
+name|light_isolated
+decl_stmt|;
 DECL|member|preview_zoom_factor
 name|gdouble
 name|preview_zoom_factor
