@@ -8,7 +8,7 @@ comment|/* JPEG loading and saving file filter for the GIMP  *  -Peter Mattis  *
 end_comment
 
 begin_comment
-comment|/* 11-JAN-99 - Added support for JPEG comments and Progressive saves.  *  -pete whiting<pwhiting@sprint.net>  *  * Comments of size up to 32k can be stored in the header of jpeg  * files.  (They are not compressed.)  The JPEG specs and libraries  * support the storing of multiple comments.  The behavior of this  * code is to merge all comments in a loading image into a single  * comment (putting \n between each) and attach that string as a  * parasite - gimp-comment - to the image.  When saving, the image is  * checked to see if it has the gimp-comment parasite - if so, that is  * used as the default comment in the save dialog.  Further, the other  * jpeg parameters (quaility, smoothing, compression and progressive)  * are attached to the image as a parasite.  This allows the  * parameters to remain consistent between saves.  I was not able to  * figure out how to determine the quaility, smoothing or compression  * values of an image as it is being loaded, but the code is there to  * support it if anyone knows how.  Progressive mode is a method of  * saving the image such that as a browser (or other app supporting  * progressive loads - gimp doesn't) loads the image it first gets a  * low res version displayed and then the image is progressively  * enhanced until you get the final version.  It doesn't add any size  * to the image (actually it often results in smaller file size) - the  * only draw backs are that progressive jpegs are not supported by some  * older viewers/browsers, and some might find it annoying.  */
+comment|/* 11-JAN-99 - Added support for JPEG comments and Progressive saves.  *  -pete whiting<pwhiting@sprint.net>  *  * Comments of size up to 32k can be stored in the header of jpeg  * files.  (They are not compressed.)  The JPEG specs and libraries  * support the storing of multiple comments.  The behavior of this  * code is to merge all comments in a loading image into a single  * comment (putting \n between each) and attach that string as a  * parasite - gimp-comment - to the image.  When saving, the image is  * checked to see if it has the gimp-comment parasite - if so, that is  * used as the default comment in the save dialog.  Further, the other  * jpeg parameters (quaility, smoothing, compression and progressive)  * are attached to the image as a parasite.  This allows the  * parameters to remain consistent between saves.  I was not able to  * figure out how to determine the quality, smoothing or compression  * values of an image as it is being loaded, but the code is there to  * support it if anyone knows how.  Progressive mode is a method of  * saving the image such that as a browser (or other app supporting  * progressive loads - gimp doesn't) loads the image it first gets a  * low res version displayed and then the image is progressively  * enhanced until you get the final version.  It doesn't add any size  * to the image (actually it often results in smaller file size) - the  * only draw backs are that progressive jpegs are not supported by some  * older viewers/browsers, and some might find it annoying.  */
 end_comment
 
 begin_comment
@@ -306,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad58aad0108
+DECL|struct|__anon28fac6590108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad58aad0208
+DECL|struct|__anon28fac6590208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad58aad0308
+DECL|struct|__anon28fac6590308
 block|{
 DECL|member|cinfo
 name|struct
@@ -2801,7 +2801,7 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|string
+name|comment
 init|=
 name|local_image_comments
 operator|->
@@ -2818,6 +2818,18 @@ name|local_image_comments
 operator|=
 name|NULL
 expr_stmt|;
+if|if
+condition|(
+name|g_utf8_validate
+argument_list|(
+name|comment
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
 name|comment_parasite
 operator|=
 name|gimp_parasite_new
@@ -2828,20 +2840,18 @@ name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
-name|string
+name|comment
 argument_list|)
 operator|+
 literal|1
 argument_list|,
-name|string
+name|comment
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|comment_parasite
-operator|=
-name|NULL
+name|g_free
+argument_list|(
+name|comment
+argument_list|)
 expr_stmt|;
 block|}
 comment|/* Do not attach the "jpeg-save-options" parasite to the image        * because this conflics with the global defaults.  See bug #75398:        * http://bugzilla.gnome.org/show_bug.cgi?id=75398 */
@@ -3791,6 +3801,10 @@ name|gimp_parasite_free
 argument_list|(
 name|comment_parasite
 argument_list|)
+expr_stmt|;
+name|comment_parasite
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 block|}
