@@ -301,7 +301,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon2adf5f760108
+DECL|struct|__anon27b1dc250108
 typedef|typedef
 struct|struct
 block|{
@@ -370,7 +370,7 @@ specifier|static
 name|gfloat
 name|pressure_adjust
 init|=
-literal|100.0
+literal|1.0
 decl_stmt|;
 end_decl_stmt
 
@@ -1400,8 +1400,6 @@ operator|(
 name|gdouble
 operator|)
 name|pressure_adjust
-operator|/
-literal|100.0
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -2340,6 +2338,8 @@ operator|=
 name|adj
 operator|->
 name|value
+operator|/
+literal|100
 expr_stmt|;
 block|}
 end_function
