@@ -74,30 +74,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"fsdither.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -116,6 +92,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-convert-fsdither.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplist.h"
 end_include
 
@@ -129,6 +111,24 @@ begin_include
 include|#
 directive|include
 file|"gimppalette.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"floating_sel.h"
 end_include
 
 begin_include
@@ -35088,7 +35088,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8fcdcc0108
+DECL|struct|__anon297c06290108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35165,7 +35165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8fcdcc0208
+DECL|struct|__anon297c06290208
 block|{
 DECL|member|ncolors
 name|long
@@ -35356,7 +35356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8fcdcc0308
+DECL|struct|__anon297c06290308
 block|{
 DECL|member|used_count
 name|signed

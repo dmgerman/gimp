@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__FSDITHER_H__
+name|__GIMP_IMAGE_CONVERT_FSDITHER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__FSDITHER_H__
+DECL|macro|__GIMP_IMAGE_CONVERT_FSDITHER_H__
 define|#
 directive|define
-name|__FSDITHER_H__
+name|__GIMP_IMAGE_CONVERT_FSDITHER_H__
 end_define
 
 begin_comment
@@ -12365,7 +12365,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __FSDITHER_H__ */
+comment|/* __GIMP_IMAGE_CONVERT_FSDITHER_H__ */
 end_comment
 
 end_unit
