@@ -332,7 +332,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c029e920103
+DECL|enum|__anon2754a4400103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c029e920208
+DECL|struct|__anon2754a4400208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -639,7 +639,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2c029e920308
+DECL|struct|__anon2754a4400308
 block|{
 DECL|member|r
 DECL|member|g
@@ -8845,7 +8845,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/gradient_editor/delete_gradient.html"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|str
 argument_list|,

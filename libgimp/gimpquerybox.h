@@ -153,7 +153,7 @@ function_decl|;
 end_typedef
 
 begin_comment
-comment|/*  some simple query dialogs  *  if object != NULL then the query boxes will connect their cancel callback  *  to the provided signal of this object  *  *  it's the caller's job to show the returned widgets  */
+comment|/*  some simple query dialogs  */
 end_comment
 
 begin_function_decl

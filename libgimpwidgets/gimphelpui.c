@@ -281,7 +281,10 @@ argument_list|)
 condition|)
 name|gimp_dialog_set_icon
 argument_list|(
+name|GTK_WINDOW
+argument_list|(
 name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  set up the help signals and tips query widget  */

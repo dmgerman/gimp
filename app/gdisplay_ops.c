@@ -1319,7 +1319,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/really_close.html"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|warning_buf
 argument_list|,
