@@ -10864,7 +10864,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cf627f0108
+DECL|struct|__anon2a2b94350108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -17667,6 +17667,17 @@ operator|)
 operator|)
 condition|)
 block|{
+name|gtk_widget_set_sensitive
+argument_list|(
+name|options
+operator|->
+name|resize
+operator|->
+name|resize_shell
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -17757,6 +17768,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|g_message
 argument_list|(
 name|_
@@ -17766,6 +17778,7 @@ literal|"Both must be positive."
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -17998,6 +18011,17 @@ operator|)
 operator|)
 condition|)
 block|{
+name|gtk_widget_set_sensitive
+argument_list|(
+name|options
+operator|->
+name|resize
+operator|->
+name|resize_shell
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -18098,6 +18122,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|g_message
 argument_list|(
 name|_
@@ -18107,6 +18132,7 @@ literal|"Both must be positive."
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

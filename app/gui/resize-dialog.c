@@ -7504,6 +7504,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gtk_widget_set_sensitive
 argument_list|(
 name|image_scale
@@ -7515,6 +7516,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -7643,17 +7645,6 @@ operator|==
 name|FALSE
 condition|)
 block|{
-name|gtk_widget_set_sensitive
-argument_list|(
-name|image_scale
-operator|->
-name|resize
-operator|->
-name|resize_shell
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|dialog
 operator|=
 name|gimp_query_boolean_box
