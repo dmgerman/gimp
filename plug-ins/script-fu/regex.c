@@ -144,73 +144,11 @@ endif|#
 directive|endif
 end_endif
 
-begin_comment
-comment|/* This is for other GNU distributions with internationalized messages.  */
-end_comment
-
-begin_if
-if|#
-directive|if
-name|HAVE_LIBINTL_H
-operator|||
-name|defined
-argument_list|(
-name|_LIBC
-argument_list|)
-end_if
-
 begin_include
 include|#
 directive|include
-file|<libintl.h>
+file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|gettext (msgid)
-define|#
-directive|define
-name|gettext
-parameter_list|(
-name|msgid
-parameter_list|)
-value|(msgid)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|gettext_noop
-end_ifndef
-
-begin_comment
-comment|/* This define is so xgettext can find the internationalizable    strings.  */
-end_comment
-
-begin_define
-DECL|macro|gettext_noop (String)
-define|#
-directive|define
-name|gettext_noop
-parameter_list|(
-name|String
-parameter_list|)
-value|String
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* The `emacs' switch turns on certain matching commands    that make sense only in Emacs. */
@@ -1682,7 +1620,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a1fb20103
+DECL|enum|__anon2bcc0d260103
 block|{
 DECL|enumerator|no_op
 name|no_op
@@ -3779,103 +3717,103 @@ name|re_error_msgid
 index|[]
 init|=
 block|{
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Success"
 argument_list|)
 block|,
 comment|/* REG_NOERROR */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"No match"
 argument_list|)
 block|,
 comment|/* REG_NOMATCH */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Invalid regular expression"
 argument_list|)
 block|,
 comment|/* REG_BADPAT */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Invalid collation character"
 argument_list|)
 block|,
 comment|/* REG_ECOLLATE */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Invalid character class name"
 argument_list|)
 block|,
 comment|/* REG_ECTYPE */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Trailing backslash"
 argument_list|)
 block|,
 comment|/* REG_EESCAPE */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Invalid back reference"
 argument_list|)
 block|,
 comment|/* REG_ESUBREG */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Unmatched [ or [^"
 argument_list|)
 block|,
 comment|/* REG_EBRACK */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Unmatched ( or \\("
 argument_list|)
 block|,
 comment|/* REG_EPAREN */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Unmatched \\{"
 argument_list|)
 block|,
 comment|/* REG_EBRACE */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Invalid content of \\{\\}"
 argument_list|)
 block|,
 comment|/* REG_BADBR */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Invalid range end"
 argument_list|)
 block|,
 comment|/* REG_ERANGE */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Memory exhausted"
 argument_list|)
 block|,
 comment|/* REG_ESPACE */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Invalid preceding regular expression"
 argument_list|)
 block|,
 comment|/* REG_BADRPT */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Premature end of regular expression"
 argument_list|)
 block|,
 comment|/* REG_EEND */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Regular expression too big"
 argument_list|)
 block|,
 comment|/* REG_ESIZE */
-name|gettext_noop
+name|N_
 argument_list|(
 literal|"Unmatched ) or \\)"
 argument_list|)
@@ -4079,7 +4017,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a1fb20208
+DECL|struct|__anon2bcc0d260208
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4186,7 +4124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a1fb20308
+DECL|struct|__anon2bcc0d260308
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4649,14 +4587,14 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2a1a1fb2040a
+DECL|union|__anon2bcc0d26040a
 block|{
 DECL|member|word
 name|fail_stack_elt_t
 name|word
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a1a1fb20508
+DECL|struct|__anon2bcc0d260508
 block|{
 comment|/* This field is one if this group can match the empty string,          zero if not.  If not yet determined,  `MATCH_NULL_UNSET_VALUE'.  */
 DECL|macro|MATCH_NULL_UNSET_VALUE
@@ -5401,7 +5339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a1fb20608
+DECL|struct|__anon2bcc0d260608
 block|{
 DECL|member|begalt_offset
 name|pattern_offset_t
@@ -5432,7 +5370,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a1fb20708
+DECL|struct|__anon2bcc0d260708
 block|{
 DECL|member|stack
 name|compile_stack_elt_t
@@ -18070,7 +18008,10 @@ condition|)
 return|return
 name|gettext
 argument_list|(
+name|_
+argument_list|(
 literal|"No previous regular expression"
+argument_list|)
 argument_list|)
 return|;
 return|return
