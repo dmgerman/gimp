@@ -409,6 +409,8 @@ condition|)
 name|scaledest
 operator|++
 expr_stmt|;
+else|else
+return|return;
 break|break;
 case|case
 name|ZOOMOUT
@@ -432,6 +434,8 @@ condition|)
 name|scalesrc
 operator|++
 expr_stmt|;
+else|else
+return|return;
 break|break;
 default|default :
 name|scalesrc
