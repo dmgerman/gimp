@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3bf100108
+DECL|struct|__anon28a655380108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3bf100208
+DECL|struct|__anon28a655380208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3bf100308
+DECL|struct|__anon28a655380308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -253,7 +253,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3bf100408
+DECL|struct|__anon28a655380408
 block|{
 DECL|member|name
 name|gchar
@@ -281,7 +281,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3bf100508
+DECL|struct|__anon28a655380508
 block|{
 DECL|member|list
 name|GSList
@@ -301,7 +301,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29d3bf10060a
+DECL|union|__anon28a65538060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3bf100708
+DECL|struct|__anon28a655380708
 block|{
 DECL|member|script_name
 name|gchar
@@ -457,7 +457,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3bf100808
+DECL|struct|__anon28a655380808
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1014,9 +1014,6 @@ name|script_list
 argument_list|)
 expr_stmt|;
 block|}
-ifdef|#
-directive|ifdef
-name|ENABLE_NLS
 name|script_list
 operator|=
 name|g_tree_new
@@ -1027,20 +1024,6 @@ operator|)
 name|strcoll
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|script_list
-operator|=
-name|g_tree_new
-argument_list|(
-operator|(
-name|GCompareFunc
-operator|)
-name|strcmp
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|path_str
 operator|=
 name|gimp_gimprc_query
