@@ -34,55 +34,55 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"../pixmaps/mouse1"
+file|"../cursors/mouse1"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"../pixmaps/mouse1msk"
+file|"../cursors/mouse1msk"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"../pixmaps/mouse1_p"
+file|"../cursors/mouse1_p"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"../pixmaps/mouse1_pmsk"
+file|"../cursors/mouse1_pmsk"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"../pixmaps/mouse1_m"
+file|"../cursors/mouse1_m"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"../pixmaps/mouse1_mmsk"
+file|"../cursors/mouse1_mmsk"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"../pixmaps/bigcirc"
+file|"../cursors/bigcirc"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"../pixmaps/bigcircmsk"
+file|"../cursors/bigcircmsk"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297a4e3e0108
+DECL|struct|__anon29fa34f80108
 block|{
 DECL|member|bits
 name|unsigned
