@@ -274,11 +274,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"gimp_dockable_destroy()\n"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|dockable

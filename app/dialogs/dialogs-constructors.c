@@ -397,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fa117c0108
+DECL|struct|__anon28acb52d0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3452,11 +3452,6 @@ name|dockable
 argument_list|)
 argument_list|,
 literal|"gimp-dialogs-view"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"dialogs_set_editor_context_func()\n"
 argument_list|)
 expr_stmt|;
 if|if

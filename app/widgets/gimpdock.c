@@ -550,11 +550,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"gimp_dock_destroy()\n"
-argument_list|)
-expr_stmt|;
 while|while
 condition|(
 name|dock
@@ -1095,29 +1090,6 @@ block|}
 end_function
 
 begin_function
-name|gboolean
-DECL|function|gimp_dock_idle_destroy (gpointer data)
-name|gimp_dock_idle_destroy
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-end_function
-
-begin_function
 name|void
 DECL|function|gimp_dock_remove_book (GimpDock * dock,GimpDockbook * dockbook)
 name|gimp_dock_remove_book
@@ -1310,11 +1282,12 @@ operator|==
 literal|1
 condition|)
 block|{
-name|g_idle_add
+name|gtk_widget_destroy
 argument_list|(
-name|gimp_dock_idle_destroy
-argument_list|,
+name|GTK_WIDGET
+argument_list|(
 name|dock
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
