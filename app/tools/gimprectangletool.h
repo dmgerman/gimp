@@ -114,7 +114,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5be2d10103
+DECL|enum|__anon2add5fd40103
 block|{
 DECL|enumerator|RECT_CREATING
 name|RECT_CREATING
@@ -160,6 +160,16 @@ block|{
 DECL|member|parent_instance
 name|GimpSelectionTool
 name|parent_instance
+decl_stmt|;
+DECL|member|controls
+name|GtkWidget
+modifier|*
+name|controls
+decl_stmt|;
+DECL|member|dimensions_entry
+name|GtkWidget
+modifier|*
+name|dimensions_entry
 decl_stmt|;
 DECL|member|startx
 name|gint
