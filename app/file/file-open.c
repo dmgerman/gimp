@@ -829,7 +829,12 @@ name|imagefile
 operator|=
 name|gimp_documents_add
 argument_list|(
+name|GIMP_DOCUMENTS
+argument_list|(
 name|gimp
+operator|->
+name|documents
+argument_list|)
 argument_list|,
 name|uri
 argument_list|)
