@@ -754,6 +754,9 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+name|GimpPDBStatusType
+name|dummy
+decl_stmt|;
 name|file_open_with_display
 argument_list|(
 name|editor
@@ -771,6 +774,11 @@ argument_list|(
 name|imagefile
 argument_list|)
 argument_list|)
+argument_list|,
+operator|&
+name|dummy
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1034,6 +1042,9 @@ operator|.
 name|found
 condition|)
 block|{
+name|GimpPDBStatusType
+name|dummy
+decl_stmt|;
 name|file_open_with_display
 argument_list|(
 name|editor
@@ -1047,6 +1058,11 @@ argument_list|,
 name|closure
 operator|.
 name|name
+argument_list|,
+operator|&
+name|dummy
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

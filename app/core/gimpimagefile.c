@@ -237,7 +237,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aafea140103
+DECL|enum|__anon2c2385290103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -251,7 +251,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aafea140208
+DECL|struct|__anon2c2385290208
 block|{
 DECL|member|dirname
 specifier|const
@@ -1410,12 +1410,12 @@ name|uri
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 operator|&
 name|dummy
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1516,21 +1516,6 @@ argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|imagefile
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"%s\n%s\n\n"
-argument_list|,
-name|uri
-argument_list|,
-name|gimp_object_get_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|gimage
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
