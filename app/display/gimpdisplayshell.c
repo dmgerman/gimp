@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c93e10103
+DECL|enum|__anon2aa0189e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c93e10203
+DECL|enum|__anon2aa0189e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4187,6 +4187,18 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|shell
+argument_list|,
+name|display_shell_signals
+index|[
+name|RECONNECT
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_scale_setup
 argument_list|(
 name|shell
@@ -4200,18 +4212,6 @@ expr_stmt|;
 name|gimp_display_shell_scaled
 argument_list|(
 name|shell
-argument_list|)
-expr_stmt|;
-name|g_signal_emit
-argument_list|(
-name|shell
-argument_list|,
-name|display_shell_signals
-index|[
-name|RECONNECT
-index|]
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
