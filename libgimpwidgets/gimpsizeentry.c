@@ -60,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28efc9ea0103
+DECL|enum|__anon2c1992d60103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -1724,11 +1724,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_attach_label:  * @gse:       The sizeentry you want to add a label to.  * @text:      The text of the label.  * @row:       The row where the label will be attached.  * @column:    The column where the label will be attached.  * @alignment: The horizontal alignment of the label.  *  * Attaches a #GtkLabel to the #GimpSizeEntry (which is a #GtkTable).  **/
+comment|/**  * gimp_size_entry_attach_label:  * @gse:       The sizeentry you want to add a label to.  * @text:      The text of the label.  * @row:       The row where the label will be attached.  * @column:    The column where the label will be attached.  * @alignment: The horizontal alignment of the label.  *  * Attaches a #GtkLabel to the #GimpSizeEntry (which is a #GtkTable).  *  * Returns: A pointer to the new #GtkLabel widget.  **/
 end_comment
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|gimp_size_entry_attach_label (GimpSizeEntry * gse,const gchar * text,gint row,gint column,gfloat alignment)
 name|gimp_size_entry_attach_label
 parameter_list|(
@@ -1755,18 +1756,22 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_SIZE_ENTRY
 argument_list|(
 name|gse
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|text
 operator|!=
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1905,6 +1910,9 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+return|return
+name|label
+return|;
 block|}
 end_function
 

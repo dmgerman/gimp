@@ -7,22 +7,11 @@ begin_comment
 comment|/*  * Algorithm fixes, V2.0 compatibility by David Hodson  hodsond@ozemail.com.au  */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"config.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -34,18 +23,6 @@ begin_include
 include|#
 directive|include
 file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -81,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29856b8f0108
+DECL|struct|__anon2a1698660108
 block|{
 DECL|member|img
 name|gint32
@@ -112,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29856b8f0203
+DECL|enum|__anon2a1698660203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -131,7 +108,7 @@ end_typedef
 begin_decl_stmt
 DECL|variable|do_preview
 specifier|static
-name|gint
+name|gboolean
 name|do_preview
 init|=
 name|TRUE
@@ -144,6 +121,8 @@ specifier|static
 name|GimpOldPreview
 modifier|*
 name|preview
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -1407,11 +1386,7 @@ name|dlg
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|main_vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|frame
+name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1424,6 +1399,10 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|preview
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|frame
 decl_stmt|;
 name|GtkObject
 modifier|*
@@ -1469,23 +1448,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|main_vbox
+name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|main_vbox
+name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1500,7 +1479,7 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-name|main_vbox
+name|vbox
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1511,7 +1490,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|main_vbox
+name|vbox
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -1520,14 +1499,14 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|main_vbox
+name|vbox
 argument_list|)
 argument_list|,
 name|hbox
@@ -1646,37 +1625,6 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Parameter Settings"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|main_vbox
-argument_list|)
-argument_list|,
-name|frame
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -1695,7 +1643,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -1705,27 +1653,23 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
+name|vbox
 argument_list|)
 argument_list|,
 name|table
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2144,28 +2088,19 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|pframe
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|frame
+name|vbox
 operator|=
-name|gtk_frame_new
+name|gtk_vbox_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Preview"
-argument_list|)
+name|FALSE
+argument_list|,
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2175,7 +2110,7 @@ argument_list|(
 name|parent
 argument_list|)
 argument_list|,
-name|frame
+name|vbox
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2186,58 +2121,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|frame
+name|vbox
 argument_list|)
 expr_stmt|;
-name|vbox
+name|preview
 operator|=
-name|gtk_vbox_new
+name|gimp_old_preview_new
 argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|vbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
-name|pframe
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|pframe
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_IN
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2247,7 +2138,9 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|pframe
+name|preview
+operator|->
+name|frame
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2258,35 +2151,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pframe
-argument_list|)
-expr_stmt|;
-name|preview
-operator|=
-name|gimp_old_preview_new
-argument_list|(
-name|drawable
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|pframe
-argument_list|)
-argument_list|,
 name|preview
 operator|->
-name|widget
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|preview
-operator|->
-name|widget
+name|frame
 argument_list|)
 expr_stmt|;
 name|button
@@ -2442,6 +2309,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint
 name|atfilt0
 parameter_list|(
@@ -2453,6 +2321,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint
 name|atfilt1
 parameter_list|(
@@ -2464,6 +2333,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint
 name|atfilt2
 parameter_list|(
@@ -2475,6 +2345,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint
 name|atfilt3
 parameter_list|(
@@ -2486,6 +2357,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint
 name|atfilt4
 parameter_list|(
@@ -2497,6 +2369,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint
 name|atfilt5
 parameter_list|(
@@ -4040,6 +3913,7 @@ comment|/* Mean filter */
 end_comment
 
 begin_function
+specifier|static
 name|gint
 DECL|function|atfilt0 (gint32 * p)
 name|atfilt0
@@ -4297,6 +4171,7 @@ comment|/* Mean of 5 - 7 middle values */
 end_comment
 
 begin_function
+specifier|static
 name|gint
 DECL|function|atfilt1 (gint32 * p)
 name|atfilt1
@@ -4629,6 +4504,7 @@ comment|/* Mean of 3 - 5 middle values */
 end_comment
 
 begin_function
+specifier|static
 name|gint
 DECL|function|atfilt2 (gint32 * p)
 name|atfilt2
@@ -4977,6 +4853,7 @@ comment|/*  * Mean of 1 - 3 middle values.  * If only 1 value, then this is a me
 end_comment
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|atfilt3 (gint32 * p)
 name|atfilt3
@@ -5337,6 +5214,7 @@ comment|/* Edge enhancement */
 end_comment
 
 begin_function
+specifier|static
 name|gint
 DECL|function|atfilt4 (gint * p)
 name|atfilt4

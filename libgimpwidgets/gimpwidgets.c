@@ -141,7 +141,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|group
@@ -476,7 +476,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|group
@@ -789,7 +789,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|group
@@ -2668,7 +2668,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286f1c770108
+DECL|struct|__anon28c2cfd60108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

@@ -310,7 +310,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|gimp_size_entry_attach_label
 parameter_list|(
 name|GimpSizeEntry
