@@ -2100,7 +2100,7 @@ argument_list|)
 argument_list|,
 literal|"new_layer_options"
 argument_list|,
-name|GTK_STOCK_NEW
+name|GIMP_STOCK_LAYER
 argument_list|,
 name|_
 argument_list|(

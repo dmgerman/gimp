@@ -1459,7 +1459,7 @@ argument_list|)
 argument_list|,
 literal|"new_path_options"
 argument_list|,
-name|GTK_STOCK_NEW
+name|GIMP_STOCK_TOOL_PATH
 argument_list|,
 name|_
 argument_list|(
