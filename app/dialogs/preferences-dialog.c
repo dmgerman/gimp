@@ -5005,10 +5005,6 @@ name|button2
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|fileselection
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|patheditor
 decl_stmt|;
 name|GtkWidget
@@ -7010,9 +7006,9 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fileselection
+name|button
 operator|=
-name|gimp_prop_file_entry_new
+name|gimp_prop_file_chooser_button_new
 argument_list|(
 name|object
 argument_list|,
@@ -7023,14 +7019,12 @@ argument_list|(
 literal|"Select web browser"
 argument_list|)
 argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
+name|GTK_FILE_CHOOSER_ACTION_OPEN
 argument_list|)
 expr_stmt|;
 name|prefs_widget_add_aligned
 argument_list|(
-name|fileselection
+name|button
 argument_list|,
 name|_
 argument_list|(
@@ -8278,7 +8272,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2acc6cd10108
+DECL|struct|__anon2c8bec920108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9435,7 +9429,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2acc6cd10208
+DECL|struct|__anon2c8bec920208
 block|{
 DECL|member|label
 specifier|const
@@ -9625,9 +9619,9 @@ name|i
 operator|++
 control|)
 block|{
-name|fileselection
+name|button
 operator|=
-name|gimp_prop_file_entry_new
+name|gimp_prop_file_chooser_button_new
 argument_list|(
 name|color_config
 argument_list|,
@@ -9648,9 +9642,7 @@ operator|.
 name|fs_label
 argument_list|)
 argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_FILE_CHOOSER_ACTION_OPEN
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -9680,7 +9672,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|fileselection
+name|button
 argument_list|,
 literal|1
 argument_list|,
@@ -10363,7 +10355,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2acc6cd10308
+DECL|struct|__anon2c8bec920308
 block|{
 DECL|member|label
 specifier|const
@@ -10451,7 +10443,11 @@ name|i
 operator|++
 control|)
 block|{
-name|fileselection
+name|GtkWidget
+modifier|*
+name|entry
+decl_stmt|;
+name|entry
 operator|=
 name|gimp_prop_file_entry_new
 argument_list|(
@@ -10504,7 +10500,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|fileselection
+name|entry
 argument_list|,
 literal|1
 argument_list|,
@@ -10520,7 +10516,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2acc6cd10408
+DECL|struct|__anon2c8bec920408
 block|{
 DECL|member|tree_label
 specifier|const
