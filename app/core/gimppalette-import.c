@@ -148,7 +148,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|n_colors
 operator|>
-literal|0
+literal|1
 argument_list|,
 name|NULL
 argument_list|)
@@ -173,13 +173,13 @@ operator|-
 literal|1
 operator|)
 expr_stmt|;
-name|cur_x
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|loop
+operator|=
+literal|0
+operator|,
+name|cur_x
 operator|=
 literal|0
 init|;
@@ -189,6 +189,10 @@ name|n_colors
 condition|;
 name|loop
 operator|++
+operator|,
+name|cur_x
+operator|+=
+name|dx
 control|)
 block|{
 name|gimp_gradient_get_color_at
@@ -200,10 +204,6 @@ argument_list|,
 operator|&
 name|color
 argument_list|)
-expr_stmt|;
-name|cur_x
-operator|+=
-name|dx
 expr_stmt|;
 name|gimp_palette_add_entry
 argument_list|(
@@ -1121,7 +1121,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|n_colors
 operator|>
-literal|0
+literal|1
 argument_list|,
 name|NULL
 argument_list|)
