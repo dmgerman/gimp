@@ -55,6 +55,13 @@ modifier|*
 name|value
 parameter_list|)
 function_decl|;
+name|gchar
+modifier|*
+name|gimp_get_default_comment
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
 name|gboolean
 name|gimp_get_monitor_resolution
 parameter_list|(

@@ -150,7 +150,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4c89150103
+DECL|enum|__anon276d4c7b0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -167,7 +167,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4c89150208
+DECL|struct|__anon276d4c7b0208
 block|{
 DECL|member|interlace
 name|gint
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4c89150308
+DECL|struct|__anon276d4c7b0308
 block|{
 DECL|member|run
 name|gint
@@ -3033,6 +3033,8 @@ condition|(
 name|gsvals
 operator|.
 name|save_comment
+operator|&&
+name|globalcomment
 condition|)
 block|{
 name|GIFEncodeCommentExt
@@ -3875,6 +3877,10 @@ name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|align
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|disposal_option_menu
 decl_stmt|;
 name|GtkWidget
@@ -4165,6 +4171,40 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|align
+operator|=
+name|gtk_alignment_new
+argument_list|(
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|align
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|align
+argument_list|)
+expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
@@ -4175,20 +4215,14 @@ literal|"GIF Comment:"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
-name|hbox
+name|align
 argument_list|)
 argument_list|,
 name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4390,10 +4424,10 @@ else|else
 block|{
 endif|#
 directive|endif
-comment|/*	globalcomment = g_malloc(1+strlen(_("Made with GIMP"))); 		strcpy(globalcomment, _("Made with GIMP")); */
 name|globalcomment
 operator|=
-name|NULL
+name|gimp_get_default_comment
+argument_list|()
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -8052,7 +8086,7 @@ operator|&
 name|end_iter
 argument_list|)
 expr_stmt|;
-comment|/*  this calls us recursivaly, but in the else branch      */
+comment|/*  this calls us recursivaly, but in the else branch        */
 name|gtk_text_buffer_delete
 argument_list|(
 name|buffer
@@ -8067,12 +8101,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-if|if
-condition|(
-name|globalcomment
-operator|!=
-name|NULL
-condition|)
 name|g_free
 argument_list|(
 name|globalcomment

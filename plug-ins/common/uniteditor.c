@@ -443,7 +443,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27680d410103
+DECL|enum|__anon2b6339100103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -2826,7 +2826,7 @@ name|blue
 operator|=
 literal|50000
 expr_stmt|;
-name|gdk_color_alloc
+name|gdk_colormap_alloc_color
 argument_list|(
 name|gtk_widget_get_colormap
 argument_list|(
@@ -2835,6 +2835,10 @@ argument_list|)
 argument_list|,
 operator|&
 name|color
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|clist_init

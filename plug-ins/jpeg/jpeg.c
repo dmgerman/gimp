@@ -232,14 +232,6 @@ name|DEFAULT_PREVIEW
 value|1
 end_define
 
-begin_define
-DECL|macro|DEFAULT_COMMENT
-define|#
-directive|define
-name|DEFAULT_COMMENT
-value|"Created with The GIMP"
-end_define
-
 begin_comment
 comment|/* sg - these should not be global... */
 end_comment
@@ -314,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fde9030108
+DECL|struct|__anon2a28c8de0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -361,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fde9030208
+DECL|struct|__anon2a28c8de0208
 block|{
 DECL|member|run
 name|gint
@@ -376,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fde9030308
+DECL|struct|__anon2a28c8de0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1412,10 +1404,8 @@ name|image_comment
 condition|)
 name|image_comment
 operator|=
-name|g_strdup
-argument_list|(
-name|DEFAULT_COMMENT
-argument_list|)
+name|gimp_get_default_comment
+argument_list|()
 expr_stmt|;
 name|jsvals
 operator|.

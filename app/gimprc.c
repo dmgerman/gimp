@@ -300,7 +300,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28bf28930103
+DECL|enum|__anon275686030103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -2675,7 +2675,7 @@ name|interpolation_type
 expr_stmt|;
 name|base_funcs
 index|[
-literal|4
+literal|5
 index|]
 operator|.
 name|val1p

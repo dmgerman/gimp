@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b89e5530108
+DECL|struct|__anon29f6ec0d0108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b89e5530208
+DECL|struct|__anon29f6ec0d0208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b89e5530308
+DECL|struct|__anon29f6ec0d0308
 block|{
 DECL|member|ID
 name|gint32
@@ -469,14 +469,6 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_define
-DECL|macro|DEFAULT_COMMENT
-define|#
-directive|define
-name|DEFAULT_COMMENT
-value|"Created with The GIMP"
-end_define
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -998,7 +990,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/* Do this right this time, if POSSIBLE query for parasites, otherwise 	 or if there isn't one, choose the DEFAULT_COMMENT */
+comment|/* Do this right this time, if POSSIBLE query for parasites, otherwise 	 or if there isn't one, choose the default comment from the gimprc. */
 comment|/*  eventually export the image */
 switch|switch
 condition|(
@@ -1102,10 +1094,8 @@ name|image_comment
 condition|)
 name|image_comment
 operator|=
-name|g_strdup
-argument_list|(
-name|DEFAULT_COMMENT
-argument_list|)
+name|gimp_get_default_comment
+argument_list|()
 expr_stmt|;
 switch|switch
 condition|(
@@ -6813,8 +6803,6 @@ name|image_comment
 operator|&&
 operator|*
 name|image_comment
-operator|!=
-literal|'\000'
 condition|)
 block|{
 name|GimpParasite

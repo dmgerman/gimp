@@ -51,18 +51,10 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_define
-DECL|macro|DEFAULT_COMMENT
-define|#
-directive|define
-name|DEFAULT_COMMENT
-value|"Created with The GIMP"
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294ab7a10108
+DECL|struct|__anon290c70cf0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -617,10 +609,8 @@ name|config
 operator|.
 name|comment
 operator|=
-name|g_strdup
-argument_list|(
-name|DEFAULT_COMMENT
-argument_list|)
+name|gimp_get_default_comment
+argument_list|()
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
