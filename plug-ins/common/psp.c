@@ -137,7 +137,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920103
+DECL|enum|__anon295335d30103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +201,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920203
+DECL|enum|__anon295335d30203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +241,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920303
+DECL|enum|__anon295335d30303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +273,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920403
+DECL|enum|__anon295335d30403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +301,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920503
+DECL|enum|__anon295335d30503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +329,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920603
+DECL|enum|__anon295335d30603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +351,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920703
+DECL|enum|__anon295335d30703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +387,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920803
+DECL|enum|__anon295335d30803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +407,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920903
+DECL|enum|__anon295335d30903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +455,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920a03
+DECL|enum|__anon295335d30a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +479,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920b03
+DECL|enum|__anon295335d30b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +540,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon279917920c03
+DECL|enum|__anon295335d30c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279917920d08
+DECL|struct|__anon295335d30d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279917920e08
+DECL|struct|__anon295335d30e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +776,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279917920f08
+DECL|struct|__anon295335d30f08
 block|{
 DECL|member|run
 name|gint
@@ -1059,16 +1059,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_main_quit
 argument_list|)
@@ -1098,22 +1098,22 @@ name|psvals
 operator|.
 name|compression
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|psvals
 operator|.
 name|compression
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|PSP_COMP_NONE
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1122,10 +1122,10 @@ argument_list|(
 literal|"RLE"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|PSP_COMP_RLE
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1134,10 +1134,10 @@ argument_list|(
 literal|"LZ77"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|PSP_COMP_LZ77
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bade30108
+DECL|struct|__anon2c511e900108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bade30208
+DECL|struct|__anon2c511e900208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bade30308
+DECL|struct|__anon2c511e900308
 block|{
 DECL|member|x
 DECL|member|y
@@ -1039,16 +1039,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_main_quit
 argument_list|)
