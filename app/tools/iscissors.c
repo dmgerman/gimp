@@ -9739,10 +9739,6 @@ name|void
 modifier|*
 name|pr
 decl_stmt|;
-name|FILE
-modifier|*
-name|dump
-decl_stmt|;
 name|drawable
 operator|=
 name|gimage_active_drawable
@@ -13388,6 +13384,8 @@ name|GSList
 modifier|*
 modifier|*
 name|CR_scanlines
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -14071,6 +14069,13 @@ index|[
 name|i
 index|]
 argument_list|)
+expr_stmt|;
+name|CR_scanlines
+index|[
+name|i
+index|]
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 if|if
