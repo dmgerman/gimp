@@ -5240,12 +5240,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|initialize
+DECL|variable|menus_initialized
 specifier|static
 name|gboolean
-name|initialize
+name|menus_initialized
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -5267,7 +5267,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -5315,7 +5316,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -5363,7 +5365,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -5411,7 +5414,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -5459,7 +5463,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -5507,7 +5512,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -5555,7 +5561,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -5612,7 +5619,8 @@ name|path
 decl_stmt|;
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -7181,7 +7189,8 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -7262,7 +7271,8 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -7343,7 +7353,8 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|initialize
+operator|!
+name|menus_initialized
 condition|)
 name|menus_init
 argument_list|()
@@ -7393,8 +7404,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|initialize
+name|menus_initialized
 condition|)
 block|{
 name|gtk_object_unref
@@ -8849,13 +8859,12 @@ name|i
 decl_stmt|;
 if|if
 condition|(
-operator|!
-name|initialize
+name|menus_initialized
 condition|)
 return|return;
-name|initialize
+name|menus_initialized
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 name|toolbox_factory
 operator|=
