@@ -247,6 +247,18 @@ name|CURSOR_STR_LENGTH
 value|256
 end_define
 
+begin_comment
+comment|/* maximal length of the format string for the cursor-coordinates */
+end_comment
+
+begin_define
+DECL|macro|CURSOR_FORMAT_LENGTH
+define|#
+directive|define
+name|CURSOR_FORMAT_LENGTH
+value|16
+end_define
+
 begin_typedef
 DECL|struct|_IdleRenderStruct
 typedef|typedef
@@ -376,6 +388,14 @@ modifier|*
 name|cursor_label
 decl_stmt|;
 comment|/*  widget for cursor position              */
+DECL|member|cursor_format_str
+name|char
+name|cursor_format_str
+index|[
+name|CURSOR_FORMAT_LENGTH
+index|]
+decl_stmt|;
+comment|/* we need a variable format 						  * string because different 						  * units have different number 						  * of decimals               */
 DECL|member|cancelbutton
 name|GtkWidget
 modifier|*

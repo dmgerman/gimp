@@ -632,6 +632,10 @@ begin_comment
 comment|/* scale image coord to realworld units (cm, inches, pixels) */
 end_comment
 
+begin_comment
+comment|/* 27/Feb/1999 I tried inlining this, but the result was slightly  * slower (poorer cache locality, probably) -- austin */
+end_comment
+
 begin_function
 specifier|static
 name|gdouble
@@ -682,47 +686,20 @@ name|gimage
 operator|->
 name|yresolution
 expr_stmt|;
-switch|switch
-condition|(
-name|ruler_units
-condition|)
-block|{
-case|case
-name|GTK_PIXELS
-case|:
-return|return
-name|a
-return|;
-case|case
-name|GTK_INCHES
-case|:
-return|return
-name|a
-operator|/
-name|res
-return|;
-case|case
-name|GTK_CENTIMETERS
-case|:
 return|return
 name|a
 operator|*
-literal|2.54
+name|gimp_unit_get_factor
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|unit
+argument_list|)
 operator|/
 name|res
 return|;
-default|default:
-name|g_warning
-argument_list|(
-literal|"unknown ruler_units %d, can't happen"
-argument_list|,
-name|ruler_units
-argument_list|)
-expr_stmt|;
-return|return
-name|a
-return|;
-block|}
 block|}
 end_function
 
