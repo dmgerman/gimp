@@ -665,6 +665,14 @@ value|"gimp-image-resize-to-layers"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_PRINT_SIZE
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_PRINT_SIZE
+value|"gimp-image-print-size"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_SCALE
 define|#
 directive|define
