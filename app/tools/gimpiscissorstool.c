@@ -253,7 +253,7 @@ comment|/*  The possible states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon291c491c0103
+DECL|enum|__anon2a3eaf0e0103
 typedef|typedef
 enum|enum
 block|{
@@ -279,7 +279,7 @@ comment|/*  The possible drawing states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon291c491c0203
+DECL|enum|__anon2a3eaf0e0203
 typedef|typedef
 enum|enum
 block|{
@@ -1819,7 +1819,7 @@ name|y
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  If the tool was being used in another image...reset it  */
@@ -3156,7 +3156,7 @@ name|y
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch

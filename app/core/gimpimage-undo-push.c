@@ -217,7 +217,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon2b4e62fa0103
+DECL|enum|__anon29fa1b000103
 typedef|typedef
 enum|enum
 block|{
@@ -2442,7 +2442,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|!=
-literal|0
+name|UNDO_NULL
 condition|)
 return|return
 name|NULL
@@ -11425,7 +11425,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4e62fa0208
+DECL|struct|__anon29fa1b000208
 typedef|typedef
 struct|struct
 block|{
@@ -11655,7 +11655,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4e62fa0308
+DECL|struct|__anon29fa1b000308
 typedef|typedef
 struct|struct
 block|{
