@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 DECL|typedef|GimpDndDropDataFunc
 typedef|typedef
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|GimpDndDropDataFunc
@@ -412,7 +412,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_file_data
 parameter_list|(
 name|GtkWidget
@@ -467,7 +467,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_color_data
 parameter_list|(
 name|GtkWidget
@@ -522,7 +522,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_svg_data
 parameter_list|(
 name|GtkWidget
@@ -577,7 +577,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_image_data
 parameter_list|(
 name|GtkWidget
@@ -632,7 +632,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_item_data
 parameter_list|(
 name|GtkWidget
@@ -687,7 +687,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_brush_data
 parameter_list|(
 name|GtkWidget
@@ -715,7 +715,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_pattern_data
 parameter_list|(
 name|GtkWidget
@@ -743,7 +743,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_gradient_data
 parameter_list|(
 name|GtkWidget
@@ -771,7 +771,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_palette_data
 parameter_list|(
 name|GtkWidget
@@ -799,7 +799,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_font_data
 parameter_list|(
 name|GtkWidget
@@ -827,7 +827,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_buffer_data
 parameter_list|(
 name|GtkWidget
@@ -855,7 +855,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_imagefile_data
 parameter_list|(
 name|GtkWidget
@@ -883,7 +883,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_template_data
 parameter_list|(
 name|GtkWidget
@@ -911,7 +911,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_dnd_set_tool_data
 parameter_list|(
 name|GtkWidget
@@ -1921,16 +1921,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GCallback
-name|set_data_func
-init|=
-name|NULL
-decl_stmt|;
-name|gpointer
-name|set_data_data
-init|=
-name|NULL
-decl_stmt|;
 name|GimpDndType
 name|data_type
 decl_stmt|;
@@ -1939,10 +1929,23 @@ condition|(
 name|selection_data
 operator|->
 name|length
-operator|<
+operator|<=
 literal|0
 condition|)
+block|{
+name|gtk_drag_finish
+argument_list|(
+name|context
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|time
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 for|for
 control|(
 name|data_type
@@ -1978,6 +1981,16 @@ operator|==
 name|info
 condition|)
 block|{
+name|GCallback
+name|set_data_func
+init|=
+name|NULL
+decl_stmt|;
+name|gpointer
+name|set_data_data
+init|=
+name|NULL
+decl_stmt|;
 name|g_print
 argument_list|(
 literal|"gimp_dnd_data_drop_handle(%s)\n"
@@ -2031,10 +2044,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|set_data_func
-condition|)
-return|return;
+operator|&&
 name|dnd_data
 operator|->
 name|set_data_func
@@ -2056,6 +2067,31 @@ argument_list|,
 name|selection_data
 operator|->
 name|length
+argument_list|)
+condition|)
+block|{
+name|gtk_drag_finish
+argument_list|(
+name|context
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|time
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+name|gtk_drag_finish
+argument_list|(
+name|context
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2914,7 +2950,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_file_data (GtkWidget * widget,GCallback set_file_func,gpointer set_file_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_file_data
 parameter_list|(
@@ -2961,7 +2997,9 @@ argument_list|(
 literal|"Received invalid file data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|buffer
 operator|=
@@ -3098,9 +3136,12 @@ block|}
 block|}
 if|if
 condition|(
+operator|!
 name|files
 condition|)
-block|{
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -3133,7 +3174,9 @@ argument_list|(
 name|files
 argument_list|)
 expr_stmt|;
-block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -4221,7 +4264,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_color_data (GtkWidget * widget,GCallback set_color_func,gpointer set_color_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_color_data
 parameter_list|(
@@ -4273,7 +4316,9 @@ argument_list|(
 literal|"Received invalid color data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|color_vals
 operator|=
@@ -4353,6 +4398,9 @@ operator|,
 name|set_color_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -4543,7 +4591,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_svg_data (GtkWidget * widget,GCallback set_svg_func,gpointer set_svg_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_svg_data
 parameter_list|(
@@ -4580,7 +4628,9 @@ argument_list|(
 literal|"Received invalid SVG data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 operator|(
 operator|*
@@ -4599,6 +4649,9 @@ operator|,
 name|set_svg_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -5729,7 +5782,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_image_data (GtkWidget * widget,GCallback set_image_func,gpointer set_image_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_image_data
 parameter_list|(
@@ -5785,7 +5838,9 @@ argument_list|(
 literal|"Received invalid image ID data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|id
 operator|=
@@ -5807,7 +5862,9 @@ condition|(
 operator|!
 name|ID
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -5819,8 +5876,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gimage
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -5839,6 +5900,9 @@ operator|,
 name|set_image_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -5954,7 +6018,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_item_data (GtkWidget * widget,GCallback set_item_func,gpointer set_item_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_item_data
 parameter_list|(
@@ -6010,7 +6074,9 @@ argument_list|(
 literal|"Received invalid item ID data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|id
 operator|=
@@ -6032,7 +6098,9 @@ condition|(
 operator|!
 name|ID
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|item
 operator|=
 name|gimp_item_get_by_ID
@@ -6044,8 +6112,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|item
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -6064,6 +6136,9 @@ operator|,
 name|set_item_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -6200,7 +6275,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_brush_data (GtkWidget * widget,GCallback set_brush_func,gpointer set_brush_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_brush_data
 parameter_list|(
@@ -6253,7 +6328,9 @@ argument_list|(
 literal|"Received invalid brush data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|name
 operator|=
@@ -6309,8 +6386,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|brush
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -6329,6 +6410,9 @@ operator|,
 name|set_brush_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -6346,7 +6430,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_pattern_data (GtkWidget * widget,GCallback set_pattern_func,gpointer set_pattern_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_pattern_data
 parameter_list|(
@@ -6399,7 +6483,9 @@ argument_list|(
 literal|"Received invalid pattern data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|name
 operator|=
@@ -6448,8 +6534,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|pattern
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -6468,6 +6558,9 @@ operator|,
 name|set_pattern_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -6485,7 +6578,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_gradient_data (GtkWidget * widget,GCallback set_gradient_func,gpointer set_gradient_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_gradient_data
 parameter_list|(
@@ -6538,7 +6631,9 @@ argument_list|(
 literal|"Received invalid gradient data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|name
 operator|=
@@ -6587,8 +6682,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gradient
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -6607,6 +6706,9 @@ operator|,
 name|set_gradient_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -6624,7 +6726,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_palette_data (GtkWidget * widget,GCallback set_palette_func,gpointer set_palette_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_palette_data
 parameter_list|(
@@ -6677,7 +6779,9 @@ argument_list|(
 literal|"Received invalid palette data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|name
 operator|=
@@ -6726,8 +6830,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|palette
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -6746,6 +6854,9 @@ operator|,
 name|set_palette_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -6763,7 +6874,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_font_data (GtkWidget * widget,GCallback set_font_func,gpointer set_font_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_font_data
 parameter_list|(
@@ -6816,7 +6927,9 @@ argument_list|(
 literal|"Received invalid font data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|name
 operator|=
@@ -6860,8 +6973,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|font
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -6880,6 +6997,9 @@ operator|,
 name|set_font_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -6897,7 +7017,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_buffer_data (GtkWidget * widget,GCallback set_buffer_func,gpointer set_buffer_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_buffer_data
 parameter_list|(
@@ -6950,7 +7070,9 @@ argument_list|(
 literal|"Received invalid buffer data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|name
 operator|=
@@ -6977,8 +7099,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|buffer
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -6997,6 +7123,9 @@ operator|,
 name|set_buffer_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -7014,7 +7143,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_imagefile_data (GtkWidget * widget,GCallback set_imagefile_func,gpointer set_imagefile_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_imagefile_data
 parameter_list|(
@@ -7067,7 +7196,9 @@ argument_list|(
 literal|"Received invalid imagefile data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|name
 operator|=
@@ -7094,8 +7225,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|imagefile
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -7114,6 +7249,9 @@ operator|,
 name|set_imagefile_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -7131,7 +7269,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_template_data (GtkWidget * widget,GCallback set_template_func,gpointer set_template_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_template_data
 parameter_list|(
@@ -7184,7 +7322,9 @@ argument_list|(
 literal|"Received invalid template data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|name
 operator|=
@@ -7211,8 +7351,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|template
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -7231,6 +7375,9 @@ operator|,
 name|set_template_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -7248,7 +7395,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_dnd_set_tool_data (GtkWidget * widget,GCallback set_tool_func,gpointer set_tool_data,guchar * vals,gint format,gint length)
 name|gimp_dnd_set_tool_data
 parameter_list|(
@@ -7301,7 +7448,9 @@ argument_list|(
 literal|"Received invalid tool data!"
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|name
 operator|=
@@ -7347,8 +7496,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|tool_info
 condition|)
+return|return
+name|FALSE
+return|;
 operator|(
 operator|*
 operator|(
@@ -7367,6 +7520,9 @@ operator|,
 name|set_tool_data
 operator|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
