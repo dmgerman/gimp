@@ -150,6 +150,11 @@ name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
+DECL|member|translation_trash
+name|GList
+modifier|*
+name|translation_trash
+decl_stmt|;
 block|}
 struct|;
 end_struct

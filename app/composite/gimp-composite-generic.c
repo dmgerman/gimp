@@ -6188,12 +6188,12 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|guint
-name|i
-decl_stmt|;
 name|GRand
 modifier|*
 name|gr
+decl_stmt|;
+name|guint
+name|i
 decl_stmt|;
 DECL|macro|RANDOM_SEED
 define|#
@@ -6227,6 +6227,11 @@ name|i
 index|]
 operator|=
 name|g_rand_int
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
+name|g_rand_free
 argument_list|(
 name|gr
 argument_list|)
