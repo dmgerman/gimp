@@ -115,7 +115,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2938ac8c0108
+DECL|struct|__anon2a2b1e110108
 block|{
 comment|/* Use by both gpb and gih: */
 DECL|member|spacing
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2938ac8c0208
+DECL|struct|__anon2a2b1e110208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -5321,7 +5321,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/* We must have at least one dimension */
 if|if
 condition|(
 name|nparams
