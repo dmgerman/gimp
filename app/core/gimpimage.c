@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2784038d0103
+DECL|enum|__anon29e971330103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -5085,14 +5085,20 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-return|return
-name|gimp_drawable_cmap
+name|g_return_val_if_fail
 argument_list|(
-name|gimp_image_active_drawable
+name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
+expr_stmt|;
+return|return
+name|gimage
+operator|->
+name|cmap
 return|;
 block|}
 end_function
