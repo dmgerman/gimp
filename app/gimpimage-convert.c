@@ -1786,7 +1786,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29622ae20108
+DECL|struct|__anon288be9700108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1833,7 +1833,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29622ae20208
+DECL|struct|__anon288be9700208
 block|{
 DECL|member|ncolors
 name|long
@@ -1852,7 +1852,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29622ae20308
+DECL|struct|__anon288be9700308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3050,6 +3050,19 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
+name|menu
+operator|=
+name|build_palette_menu
+argument_list|(
+operator|&
+name|default_palette
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|menu
+condition|)
+block|{
 comment|/* 'custom' palette from dialog */
 name|hbox
 operator|=
@@ -3155,14 +3168,6 @@ operator|=
 name|gtk_option_menu_new
 argument_list|()
 expr_stmt|;
-name|menu
-operator|=
-name|build_palette_menu
-argument_list|(
-operator|&
-name|default_palette
-argument_list|)
-expr_stmt|;
 name|gtk_option_menu_set_menu
 argument_list|(
 name|GTK_OPTION_MENU
@@ -3209,6 +3214,7 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  'mono palette'  */
 name|hbox
@@ -3577,15 +3583,6 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-name|menu
-operator|=
-name|gtk_menu_new
-argument_list|()
-expr_stmt|;
-name|list
-operator|=
-name|palette_entries_list
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -3597,6 +3594,23 @@ name|palette_init_palettes
 argument_list|()
 expr_stmt|;
 block|}
+name|list
+operator|=
+name|palette_entries_list
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|list
+condition|)
+return|return
+name|NULL
+return|;
+name|menu
+operator|=
+name|gtk_menu_new
+argument_list|()
+expr_stmt|;
 for|for
 control|(
 name|i
