@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c78076c0103
+DECL|enum|__anon2777cdb70103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -3564,11 +3564,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|crop_info_update
-argument_list|(
-name|crop
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3803,6 +3798,17 @@ name|SRW
 undef|#
 directive|undef
 name|SRH
+if|if
+condition|(
+name|crop
+operator|->
+name|crop_info
+condition|)
+name|crop_info_update
+argument_list|(
+name|crop
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -5049,15 +5055,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-name|GIMP_TOOL
-argument_list|(
-name|crop
-argument_list|)
-operator|->
-name|gdisp
-operator|=
-name|NULL
-expr_stmt|;
 if|if
 condition|(
 name|crop
@@ -5070,6 +5067,18 @@ name|crop
 operator|->
 name|crop_info
 argument_list|)
+expr_stmt|;
+name|tool
+operator|->
+name|gdisp
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function
