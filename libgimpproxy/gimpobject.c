@@ -43,7 +43,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288bf3560103
+DECL|enum|__anon29382db60103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -59,7 +59,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288bf3560203
+DECL|enum|__anon29382db60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1031,11 +1031,12 @@ index|]
 operator|=
 literal|'\0'
 expr_stmt|;
+comment|/* FIXME: are we going to ever have> 4 GB objects?? */
 name|object_size
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s%s \"%s\": %lu\n"
+literal|"%s%s \"%s\": %u\n"
 argument_list|,
 name|indent_buf
 argument_list|,
@@ -1051,6 +1052,9 @@ name|object
 operator|->
 name|name
 argument_list|,
+operator|(
+name|guint
+operator|)
 name|memsize
 argument_list|)
 expr_stmt|;
