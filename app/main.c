@@ -318,7 +318,7 @@ decl_stmt|,
 modifier|*
 name|display_env
 decl_stmt|;
-name|atexit
+name|ATEXIT
 argument_list|(
 name|g_mem_profile
 argument_list|)
