@@ -122,12 +122,24 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_message_func (gchar * str)
+DECL|function|gimp_message_func (const gchar * log_domain,GLogLevelFlags log_level,const gchar * message,gpointer data)
 name|gimp_message_func
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
-name|str
+name|log_domain
+parameter_list|,
+name|GLogLevelFlags
+name|log_level
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 if|if
@@ -147,7 +159,11 @@ name|MESSAGE_BOX
 case|:
 name|gimp_message_box
 argument_list|(
-name|str
+operator|(
+name|gchar
+operator|*
+operator|)
+name|message
 argument_list|,
 name|NULL
 argument_list|,
@@ -160,7 +176,11 @@ name|ERROR_CONSOLE
 case|:
 name|error_console_add
 argument_list|(
-name|str
+operator|(
+name|gchar
+operator|*
+operator|)
+name|message
 argument_list|)
 expr_stmt|;
 break|break;
@@ -171,7 +191,11 @@ literal|"%s: %s\n"
 argument_list|,
 name|prog_name
 argument_list|,
-name|str
+operator|(
+name|gchar
+operator|*
+operator|)
+name|message
 argument_list|)
 expr_stmt|;
 break|break;
@@ -185,7 +209,11 @@ literal|"%s: %s\n"
 argument_list|,
 name|prog_name
 argument_list|,
-name|str
+operator|(
+name|gchar
+operator|*
+operator|)
+name|message
 argument_list|)
 expr_stmt|;
 block|}

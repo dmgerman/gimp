@@ -1559,14 +1559,18 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-name|g_set_message_handler
+name|g_log_set_handler
 argument_list|(
-operator|(
-name|GPrintFunc
-operator|)
+literal|"Gimp"
+argument_list|,
+name|G_LOG_LEVEL_MESSAGE
+argument_list|,
 name|gimp_message_func
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* g_set_message_handler ((GPrintFunc) gimp_message_func); */
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
