@@ -70,7 +70,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.3.3 - 30 June 2000"
+value|"1.3.4 - 03 September 2002"
 end_define
 
 begin_define
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b19ab060108
+DECL|struct|__anon29229bca0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1062,6 +1062,21 @@ argument_list|,
 operator|&
 name|pngvals
 argument_list|)
+expr_stmt|;
+comment|/* 	   * If the image has no transparency, then there is usually 	   * no need to save a bKGD chunk.  For more information, see: 	   * http://bugzilla.gnome.org/show_bug.cgi?id=92395 	   */
+if|if
+condition|(
+operator|!
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable_ID
+argument_list|)
+condition|)
+name|pngvals
+operator|.
+name|bkgd
+operator|=
+name|FALSE
 expr_stmt|;
 comment|/*            * Then acquire information with a dialog...            */
 if|if
