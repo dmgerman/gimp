@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-text.h"
 end_include
 
 begin_include
@@ -109,6 +109,12 @@ begin_include
 include|#
 directive|include
 file|"text/gimptext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"text/gimptextlayer.h"
 end_include
 
 begin_include
@@ -1229,6 +1235,9 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|GimpRGB
+name|color
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -1331,6 +1340,19 @@ operator|!
 name|str
 condition|)
 return|return;
+name|gimp_context_get_foreground
+argument_list|(
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+argument_list|,
+operator|&
+name|color
+argument_list|)
+expr_stmt|;
 name|text
 operator|=
 name|GIMP_TEXT
@@ -1365,6 +1387,11 @@ name|options
 operator|->
 name|unit
 argument_list|,
+literal|"color"
+argument_list|,
+operator|&
+name|color
+argument_list|,
 literal|"letter-spacing"
 argument_list|,
 name|options
@@ -1388,7 +1415,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|gimp_image_text_render
+name|gimp_text_layer_new
 argument_list|(
 name|gimage
 argument_list|,

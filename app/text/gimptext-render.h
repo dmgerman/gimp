@@ -6,39 +6,55 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TEXT_TYPES_H__
+name|__GIMP_TEXT_RENDER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TEXT_TYPES_H__
+DECL|macro|__GIMP_TEXT_RENDER_H__
 define|#
 directive|define
-name|__TEXT_TYPES_H__
+name|__GIMP_TEXT_RENDER_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"core/core-types.h"
-end_include
+begin_function_decl
+name|TileManager
+modifier|*
+name|gimp_text_render_layout
+parameter_list|(
+name|PangoLayout
+modifier|*
+name|layout
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_typedef
-DECL|typedef|GimpText
-typedef|typedef
-name|struct
-name|_GimpText
+begin_function_decl
+name|GimpLayer
+modifier|*
+name|gimp_image_text_render
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
 name|GimpText
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpTextLayer
-typedef|typedef
-name|struct
-name|_GimpTextLayer
-name|GimpTextLayer
-typedef|;
-end_typedef
+modifier|*
+name|text
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
@@ -46,7 +62,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __TEXT_TYPES_H__ */
+comment|/* __GIMP_TEXT_RENDER_H__ */
 end_comment
 
 end_unit

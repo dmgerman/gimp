@@ -64,12 +64,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-text.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -77,6 +71,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"text/gimptext-compat.h"
 end_include
 
 begin_include

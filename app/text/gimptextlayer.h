@@ -6,151 +6,138 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_TEXT_H__
+name|__GIMP_TEXT_LAYER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_TEXT_H__
+DECL|macro|__GIMP_TEXT_LAYER_H__
 define|#
 directive|define
-name|__GIMP_TEXT_H__
+name|__GIMP_TEXT_LAYER_H__
+end_define
+
+begin_include
+include|#
+directive|include
+file|"core/gimplayer.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_TEXT_LAYER
+define|#
+directive|define
+name|GIMP_TYPE_TEXT_LAYER
+value|(gimp_text_layer_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_TEXT
+DECL|macro|GIMP_TEXT_LAYER (obj)
 define|#
 directive|define
-name|GIMP_TYPE_TEXT
-value|(gimp_text_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_TEXT (obj)
-define|#
-directive|define
-name|GIMP_TEXT
+name|GIMP_TEXT_LAYER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TEXT, GimpText))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TEXT_LAYER, GimpTextLayer))
 end_define
 
 begin_define
-DECL|macro|GIMP_TEXT_CLASS (klass)
+DECL|macro|GIMP_TEXT_LAYER_CLASS (klass)
 define|#
 directive|define
-name|GIMP_TEXT_CLASS
+name|GIMP_TEXT_LAYER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TEXT, GimpTextClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TEXT_LAYER, GimpTextLayerClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_TEXT (obj)
+DECL|macro|GIMP_IS_TEXT_LAYER (obj)
 define|#
 directive|define
-name|GIMP_IS_TEXT
+name|GIMP_IS_TEXT_LAYER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TEXT))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TEXT_LAYER))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_TEXT_CLASS (klass)
+DECL|macro|GIMP_IS_TEXT_LAYER_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_TEXT_CLASS
+name|GIMP_IS_TEXT_LAYER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TEXT))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TEXT_LAYER))
 end_define
 
 begin_define
-DECL|macro|GIMP_TEXT_GET_CLASS (obj)
+DECL|macro|GIMP_TEXT_LAYER_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_TEXT_GET_CLASS
+name|GIMP_TEXT_LAYER_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TEXT, GimpTextClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TEXT_LAYER, GimpTextLayerClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpTextClass
+DECL|typedef|GimpTextLayerClass
 typedef|typedef
 name|struct
-name|_GimpTextClass
-name|GimpTextClass
+name|_GimpTextLayerClass
+name|GimpTextLayerClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpText
+DECL|struct|_GimpTextLayer
 struct|struct
-name|_GimpText
+name|_GimpTextLayer
 block|{
-DECL|member|parent_instance
-name|GObject
-name|parent_instance
+DECL|member|layer
+name|GimpLayer
+name|layer
 decl_stmt|;
 DECL|member|text
-name|gchar
+name|GimpText
 modifier|*
 name|text
 decl_stmt|;
-DECL|member|font
-name|gchar
+DECL|member|context
+name|PangoContext
 modifier|*
-name|font
+name|context
 decl_stmt|;
-DECL|member|size
-name|gdouble
-name|size
-decl_stmt|;
-DECL|member|border
-name|gdouble
-name|border
-decl_stmt|;
-DECL|member|unit
-name|GimpUnit
-name|unit
-decl_stmt|;
-DECL|member|color
-name|GimpRGB
-name|color
-decl_stmt|;
-DECL|member|letter_spacing
-name|gdouble
-name|letter_spacing
-decl_stmt|;
-DECL|member|line_spacing
-name|gdouble
-name|line_spacing
-decl_stmt|;
+comment|/* should move to GimpImage ? */
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpTextClass
+DECL|struct|_GimpTextLayerClass
 struct|struct
-name|_GimpTextClass
+name|_GimpTextLayerClass
 block|{
 DECL|member|parent_class
-name|GObjectClass
+name|GimpLayerClass
 name|parent_class
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/*  function declarations  */
+end_comment
+
 begin_decl_stmt
 name|GType
-name|gimp_text_get_type
+name|gimp_text_layer_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -158,13 +145,29 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|GimpLayer
+modifier|*
+name|gimp_text_layer_new
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpText
+modifier|*
+name|text
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_TEXT_H__ */
+comment|/* __GIMP_TEXT_LAYER_H__ */
 end_comment
 
 end_unit
