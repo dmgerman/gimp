@@ -98,6 +98,15 @@ index|[
 literal|30
 index|]
 decl_stmt|;
+name|Tcl_PkgProvide
+argument_list|(
+name|interp
+argument_list|,
+literal|"GtclConstant"
+argument_list|,
+literal|"1.0"
+argument_list|)
+expr_stmt|;
 comment|/* the auto-generated ones from<gimpenums.h> */
 include|#
 directive|include
