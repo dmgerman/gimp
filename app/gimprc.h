@@ -351,6 +351,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+name|char
+modifier|*
+name|default_comment
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
 name|int
 name|default_dot_for_dot
 decl_stmt|;
