@@ -663,7 +663,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon294ad13f0103
+DECL|enum|__anon28be539c0103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -15792,26 +15792,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|memset
-argument_list|(
-name|temp_buf_data
+name|temp_buf_data_clear
 argument_list|(
 name|comp
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|comp
-operator|->
-name|width
-operator|*
-name|comp
-operator|->
-name|height
-operator|*
-name|comp
-operator|->
-name|bytes
 argument_list|)
 expr_stmt|;
 name|floating_sel

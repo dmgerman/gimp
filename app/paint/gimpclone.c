@@ -190,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c747840103
+DECL|enum|__anon2a2a75860103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -2116,26 +2116,9 @@ case|case
 name|IMAGE_CLONE
 case|:
 comment|/*  Set the paint area to transparent  */
-name|memset
-argument_list|(
-name|temp_buf_data
+name|temp_buf_data_clear
 argument_list|(
 name|area
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|area
-operator|->
-name|width
-operator|*
-name|area
-operator|->
-name|height
-operator|*
-name|area
-operator|->
-name|bytes
 argument_list|)
 expr_stmt|;
 comment|/*  If the source gimage is different from the destination,        *  then we should copy straight from the destination image        *  to the canvas.        *  Otherwise, we need a call to get_orig_image to make sure        *  we get a copy of the unblemished (offset) image        */
