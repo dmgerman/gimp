@@ -7,22 +7,11 @@ begin_comment
 comment|/****************************************************************************  * Blur:  *  * blur version 2.1 (10 June 2004 WES)  * history  *     2.1 - 10 June 2004 WES  *         removed dialog along with randomization and repeat options  *     2.0 -  1 May 1998 MEO  *         based on randomize 1.7  *  * Please send any patches or suggestions to the author: meo@rru.com .  *  * Blur applies a 3x3 blurring convolution kernel to the specified drawable.  *  * For each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  For  * blurring, an average is determined from the current and adjacent  * pixels. *(Except for the random factor, the blur code came  * straight from the original S&P blur plug-in.)*  *  * This works only with RGB and grayscale images.  *  ****************************************************************************/
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"config.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -34,12 +23,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -249,7 +232,8 @@ name|gchar
 modifier|*
 name|help
 init|=
-literal|"This plug-in blurs the specified drawable, using a 3x3 blur.  Indexed images are not supported."
+literal|"This plug-in blurs the specified drawable, using a 3x3 blur. "
+literal|"Indexed images are not supported."
 decl_stmt|;
 specifier|const
 name|gchar
@@ -263,7 +247,8 @@ name|gchar
 modifier|*
 name|copyrights
 init|=
-literal|"Miles O'Neal, Spencer Kimball, Peter Mattis, Torsten Martinsen, Brian Degenhardt, Federico Mena Quintero, Stephen Norris, Daniel Cotting"
+literal|"Miles O'Neal, Spencer Kimball, Peter Mattis, Torsten Martinsen, "
+literal|"Brian Degenhardt, Federico Mena Quintero, Stephen Norris, Daniel Cotting"
 decl_stmt|;
 specifier|const
 name|gchar
@@ -320,10 +305,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*********************************  *  *  run() - main routine  *  *  This handles the main interaction with the GIMP itself,  *  and invokes the routine that actually does the work.  *  ********************************/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -365,7 +346,6 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-comment|/* assume the best! */
 specifier|static
 name|GimpParam
 name|values
@@ -375,32 +355,6 @@ index|]
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
-expr_stmt|;
-comment|/*    *  Get the specified drawable, do standard initialization.    */
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|drawable
-operator|=
-name|gimp_drawable_get
-argument_list|(
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_drawable
-argument_list|)
 expr_stmt|;
 name|values
 index|[
@@ -432,6 +386,60 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_blur"
+argument_list|)
+operator|!=
+literal|0
+operator|||
+name|nparams
+operator|<
+literal|3
+condition|)
+block|{
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+return|return;
+block|}
+name|run_mode
+operator|=
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|drawable
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|param
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_drawable
+argument_list|)
+expr_stmt|;
 comment|/*    *  Make sure the drawable type is appropriate.    */
 if|if
 condition|(
@@ -450,67 +458,6 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-switch|switch
-condition|(
-name|run_mode
-condition|)
-block|{
-comment|/*            *  If we're running interactively, pop up the dialog box.            */
-case|case
-name|GIMP_RUN_INTERACTIVE
-case|:
-comment|/* don't need to do anything */
-break|break;
-comment|/*            *  If we're not interactive (probably scripting), we            *  get the parameters from the param[] array, since            *  we don't use the dialog box.  Make sure all            *  parameters have legitimate values.            */
-case|case
-name|GIMP_RUN_NONINTERACTIVE
-case|:
-if|if
-condition|(
-operator|!
-operator|(
-operator|(
-name|strcmp
-argument_list|(
-name|name
-argument_list|,
-literal|"plug_in_blur"
-argument_list|)
-operator|==
-literal|0
-operator|)
-operator|&&
-operator|(
-name|nparams
-operator|==
-literal|3
-operator|)
-operator|)
-condition|)
-block|{
-name|status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
-block|}
-break|break;
-comment|/*            *  If we're running with the last set of values, get those values.            */
-case|case
-name|GIMP_RUN_WITH_LAST_VALS
-case|:
-break|break;
-comment|/*            *  Hopefully we never get here!            */
-default|default:
-break|break;
-block|}
-if|if
-condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-block|{
-comment|/*            *  JUST DO IT!            */
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -540,7 +487,6 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-comment|/*            *  If we ran interactively (even repeating) update the display.            */
 if|if
 condition|(
 name|run_mode
@@ -553,16 +499,13 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-block|}
 else|else
 block|{
-comment|/*        *  If we got the wrong drawable type, we need to complain.        */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-comment|/*    *  DONE!    *  Set the status where the GIMP can see it, and let go    *  of the drawable.    */
 name|values
 index|[
 literal|0
@@ -611,7 +554,7 @@ name|gint
 name|w
 parameter_list|)
 block|{
-name|int
+name|gint
 name|b
 decl_stmt|;
 name|y
