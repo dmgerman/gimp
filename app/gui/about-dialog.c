@@ -48,13 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -387,6 +393,9 @@ literal|"Tuomas Kuosmanen"
 block|,
 literal|"Peter Kirchgessner"
 block|,
+literal|"Karin Kylander"
+literal|"Olof S Kylander"
+block|,
 literal|"Nick Lamb"
 block|,
 literal|"Karl LaRocca"
@@ -397,15 +406,21 @@ literal|"Laramie Leavitt"
 block|,
 literal|"Elliot Lee"
 block|,
+literal|"Marc Lehmann"
+block|,
 literal|"Raph Levien"
 block|,
 literal|"Adrian Likins"
+block|,
+literal|"Tor Lillqvist"
 block|,
 literal|"Ingo Luetkebohle"
 block|,
 literal|"Josh MacDonald"
 block|,
 literal|"Ed Mackey"
+block|,
+literal|"Vidar Madsen"
 block|,
 literal|"Marcelo Malheiros"
 block|,
@@ -427,9 +442,13 @@ literal|"Stephen Robert Norris"
 block|,
 literal|"Erik Nygren"
 block|,
+literal|"Tomas Ogren"
+block|,
 literal|"Miles O'Neal"
 block|,
 literal|"Jay Painter"
+block|,
+literal|"Asbjorn Pettersen"
 block|,
 literal|"Mike Phillips"
 block|,
@@ -517,8 +536,6 @@ DECL|variable|cur_scroll_index
 specifier|static
 name|gint
 name|cur_scroll_index
-init|=
-literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -1303,8 +1320,6 @@ control|)
 block|{
 name|int
 name|j
-decl_stmt|,
-name|k
 decl_stmt|;
 name|j
 operator|=
@@ -1313,18 +1328,11 @@ argument_list|()
 operator|%
 name|nscroll_texts
 expr_stmt|;
-name|k
-operator|=
-name|rand
-argument_list|()
-operator|%
-name|nscroll_texts
-expr_stmt|;
 if|if
 condition|(
-name|j
+name|i
 operator|!=
-name|k
+name|j
 condition|)
 block|{
 name|int
@@ -1344,18 +1352,25 @@ index|]
 operator|=
 name|shuffle_array
 index|[
-name|k
+name|i
 index|]
 expr_stmt|;
 name|shuffle_array
 index|[
-name|k
+name|i
 index|]
 operator|=
 name|t
 expr_stmt|;
 block|}
 block|}
+name|cur_scroll_text
+operator|=
+name|rand
+argument_list|()
+operator|%
+name|nscroll_texts
+expr_stmt|;
 block|}
 else|else
 block|{
