@@ -462,7 +462,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9fd9220108
+DECL|struct|__anon289601980108
 block|{
 DECL|member|gridspacing
 name|void
@@ -5192,6 +5192,18 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|selopt
+operator|.
+name|antia
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
