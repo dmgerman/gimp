@@ -130,7 +130,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0675600103
+DECL|enum|__anon28ec1add0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0675600203
+DECL|enum|__anon28ec1add0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -164,7 +164,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0675600308
+DECL|struct|__anon28ec1add0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0675600408
+DECL|struct|__anon28ec1add0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0675600508
+DECL|struct|__anon28ec1add0508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -6650,6 +6650,9 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
+name|gint32
+name|drawable_id
+decl_stmt|;
 name|gimp_int_combo_box_get_active
 argument_list|(
 name|GIMP_INT_COMBO_BOX
@@ -6658,14 +6661,27 @@ name|widget
 argument_list|)
 argument_list|,
 operator|&
+name|drawable_id
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|bmvals
 operator|.
 name|bumpmap_id
-argument_list|)
+operator|!=
+name|drawable_id
+condition|)
+block|{
+name|bmvals
+operator|.
+name|bumpmap_id
+operator|=
+name|drawable_id
 expr_stmt|;
 name|dialog_new_bumpmap
 argument_list|(
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_preview_invalidate
@@ -6673,6 +6689,7 @@ argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
