@@ -128,11 +128,6 @@ name|shadow
 decl_stmt|;
 comment|/*  shadow buffer tiles          */
 comment|/*  Projection attributes  */
-DECL|member|flat
-name|int
-name|flat
-decl_stmt|;
-comment|/*  Is the gimp_image flat?          */
 DECL|member|construct_flag
 name|int
 name|construct_flag

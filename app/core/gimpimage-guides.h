@@ -91,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8c054c0103
+DECL|enum|__anon2c0843b90103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8c054c0203
+DECL|enum|__anon2c0843b90203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -237,7 +237,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8c054c0303
+DECL|enum|__anon2c0843b90303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8c054c0403
+DECL|enum|__anon2c0843b90403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -1127,39 +1127,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_image_inflate
-parameter_list|(
-name|GimpImage
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_image_deflate
-parameter_list|(
-name|GimpImage
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  Access functions  */
 end_comment
-
-begin_function_decl
-name|int
-name|gimp_image_is_flat
-parameter_list|(
-name|GimpImage
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|int

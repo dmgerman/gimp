@@ -747,7 +747,7 @@ block|{
 case|case
 name|INIT_PAINT
 case|:
-comment|//      timer_state = OFF;
+comment|/* timer_state = OFF; */
 if|if
 condition|(
 name|timer_state
