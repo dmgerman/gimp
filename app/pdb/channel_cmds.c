@@ -2997,6 +2997,8 @@ name|channel
 argument_list|,
 operator|&
 name|rgb_color
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

@@ -1315,7 +1315,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_set_color (GimpChannel * channel,const GimpRGB * color)
+DECL|function|gimp_channel_set_color (GimpChannel * channel,const GimpRGB * color,gboolean push_undo)
 name|gimp_channel_set_color
 parameter_list|(
 name|GimpChannel
@@ -1326,6 +1326,9 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1358,6 +1361,42 @@ operator|>
 literal|0.0001
 condition|)
 block|{
+if|if
+condition|(
+name|push_undo
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+name|gimage
+operator|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimage
+condition|)
+name|gimp_image_undo_push_channel_color
+argument_list|(
+name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Set Channel Color"
+argument_list|)
+argument_list|,
+name|channel
+argument_list|)
+expr_stmt|;
+block|}
 name|channel
 operator|->
 name|color

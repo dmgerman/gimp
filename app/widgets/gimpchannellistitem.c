@@ -268,6 +268,8 @@ argument_list|(
 name|channel
 argument_list|,
 name|color
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

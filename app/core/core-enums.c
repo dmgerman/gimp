@@ -2527,6 +2527,17 @@ literal|"channel-reposition"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_CHANNEL_COLOR
+block|,
+name|N_
+argument_list|(
+literal|"Channel Color"
+argument_list|)
+block|,
+literal|"channel-color"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_VECTORS_ADD
 block|,
 name|N_
