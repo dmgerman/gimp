@@ -2749,6 +2749,9 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
+name|devices_save_current_info
+argument_list|()
+expr_stmt|;
 name|filename
 operator|=
 name|gimp_personal_rc_file

@@ -94,7 +94,6 @@ end_ifndef
 
 begin_define
 DECL|macro|USER_INSTALL
-DECL|macro|USER_INSTALL
 define|#
 directive|define
 name|USER_INSTALL
@@ -108,7 +107,6 @@ end_else
 
 begin_define
 DECL|macro|STRICT
-DECL|macro|STRICT
 define|#
 directive|define
 name|STRICT
@@ -121,7 +119,6 @@ file|<windows.h>
 end_include
 
 begin_define
-DECL|macro|USER_INSTALL
 DECL|macro|USER_INSTALL
 define|#
 directive|define
@@ -221,7 +218,6 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|help_widget
-DECL|variable|help_widget
 specifier|static
 name|GtkWidget
 modifier|*
@@ -230,7 +226,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|install_widget
 DECL|variable|install_widget
 specifier|static
 name|GtkWidget
@@ -241,7 +236,6 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|install_verify (InstallCallback install_callback)
 DECL|function|install_verify (InstallCallback install_callback)
 name|install_verify
 parameter_list|(
@@ -357,7 +351,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|install_help (InstallCallback callback)
 DECL|function|install_help (InstallCallback callback)
 name|install_help
 parameter_list|(
@@ -2907,7 +2900,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|help_install_callback (GtkWidget * w,gpointer client_data)
-DECL|function|help_install_callback (GtkWidget * w,gpointer client_data)
 name|help_install_callback
 parameter_list|(
 name|GtkWidget
@@ -2944,7 +2936,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|help_ignore_callback (GtkWidget * w,gpointer client_data)
 DECL|function|help_ignore_callback (GtkWidget * w,gpointer client_data)
 name|help_ignore_callback
 parameter_list|(
@@ -2984,7 +2975,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|help_quit_callback (GtkWidget * w,gpointer client_data)
-DECL|function|help_quit_callback (GtkWidget * w,gpointer client_data)
 name|help_quit_callback
 parameter_list|(
 name|GtkWidget
@@ -3018,7 +3008,6 @@ begin_function
 specifier|static
 name|char
 modifier|*
-DECL|function|quote_spaces (char * string)
 DECL|function|quote_spaces (char * string)
 name|quote_spaces
 parameter_list|(
@@ -3164,7 +3153,6 @@ end_endif
 begin_function
 specifier|static
 name|void
-DECL|function|install_run (InstallCallback callback)
 DECL|function|install_run (InstallCallback callback)
 name|install_run
 parameter_list|(
@@ -3910,10 +3898,10 @@ name|executable
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 endif|#
 directive|endif
 comment|/* !NATIVE_WIN32 */
+block|}
 if|if
 condition|(
 name|executable
@@ -3968,6 +3956,7 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|install_continue_callback (GtkWidget * w,gpointer client_data)
 name|install_continue_callback
 parameter_list|(
 name|GtkWidget
@@ -4013,6 +4002,7 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|install_quit_callback (GtkWidget * w,gpointer client_data)
 name|install_quit_callback
 parameter_list|(
 name|GtkWidget
