@@ -373,6 +373,22 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/*  the action_area buttons  */
+name|label
+operator|=
+name|va_arg
+argument_list|(
+name|args
+argument_list|,
+name|gchar
+operator|*
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|label
+condition|)
+block|{
 name|hbbox
 operator|=
 name|gtk_hbutton_box_new
@@ -412,17 +428,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|hbbox
-argument_list|)
-expr_stmt|;
-comment|/*  the action_area buttons  */
-name|label
-operator|=
-name|va_arg
-argument_list|(
-name|args
-argument_list|,
-name|gchar
-operator|*
 argument_list|)
 expr_stmt|;
 while|while
@@ -625,6 +630,7 @@ name|gchar
 operator|*
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  catch the WM delete event if not already done  */
 if|if

@@ -310,7 +310,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2a9cb6130108
+DECL|struct|__anon2c2c39530108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a9cb6130208
+DECL|struct|__anon2c2c39530208
 typedef|typedef
 struct|struct
 block|{
@@ -468,7 +468,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a9cb6130308
+DECL|struct|__anon2c2c39530308
 typedef|typedef
 struct|struct
 block|{
@@ -487,7 +487,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a9cb6130408
+DECL|struct|__anon2c2c39530408
 typedef|typedef
 struct|struct
 block|{
@@ -1602,6 +1602,27 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_scrolled_window_set_policy
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|scrolled_win
+argument_list|)
+argument_list|,
+name|GTK_POLICY_AUTOMATIC
+argument_list|,
+name|GTK_POLICY_ALWAYS
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|scrolled_win
+argument_list|,
+name|PATHS_LIST_WIDTH
+argument_list|,
+name|PATHS_LIST_HEIGHT
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1615,19 +1636,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_scrolled_window_set_policy
-argument_list|(
-name|GTK_SCROLLED_WINDOW
-argument_list|(
-name|scrolled_win
-argument_list|)
-argument_list|,
-name|GTK_POLICY_AUTOMATIC
-argument_list|,
-name|GTK_POLICY_ALWAYS
+literal|2
 argument_list|)
 expr_stmt|;
 name|paths_dialog
