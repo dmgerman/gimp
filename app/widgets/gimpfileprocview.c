@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dc4e290103
+DECL|enum|__anon2b1cfac70103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dc4e290203
+DECL|enum|__anon2b1cfac70203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -890,6 +890,7 @@ if|if
 condition|(
 name|label
 condition|)
+operator|*
 name|label
 operator|=
 name|NULL
