@@ -48,6 +48,7 @@ begin_function_decl
 name|gboolean
 name|gimp_palette_set_foreground
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|foreground
@@ -59,6 +60,7 @@ begin_function_decl
 name|gboolean
 name|gimp_palette_set_background
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|background

@@ -27,6 +27,7 @@ name|gchar
 modifier|*
 name|gimp_gimprc_query
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token
@@ -38,10 +39,12 @@ begin_function_decl
 name|gboolean
 name|gimp_gimprc_set
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value

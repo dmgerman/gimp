@@ -25,7 +25,7 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_text_fontname (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gchar * text,gint border,gboolean antialias,gdouble size,GimpSizeType size_type,gchar * fontname)
+DECL|function|gimp_text_fontname (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,const gchar * text,gint border,gboolean antialias,gdouble size,GimpSizeType size_type,const gchar * fontname)
 name|gimp_text_fontname
 parameter_list|(
 name|gint32
@@ -40,6 +40,7 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -56,6 +57,7 @@ parameter_list|,
 name|GimpSizeType
 name|size_type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|fontname
@@ -169,9 +171,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_text_get_extents_fontname (gchar * text,gdouble size,GimpSizeType size_type,gchar * fontname,gint * width,gint * height,gint * ascent,gint * descent)
+DECL|function|gimp_text_get_extents_fontname (const gchar * text,gdouble size,GimpSizeType size_type,const gchar * fontname,gint * width,gint * height,gint * ascent,gint * descent)
 name|gimp_text_get_extents_fontname
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -182,6 +185,7 @@ parameter_list|,
 name|GimpSizeType
 name|size_type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|fontname
@@ -349,7 +353,7 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_text (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gchar * text,gint border,gboolean antialias,gdouble size,GimpSizeType size_type,gchar * foundry,gchar * family,gchar * weight,gchar * slant,gchar * set_width,gchar * spacing,gchar * registry,gchar * encoding)
+DECL|function|gimp_text (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,const gchar * text,gint border,gboolean antialias,gdouble size,GimpSizeType size_type,const gchar * foundry,const gchar * family,const gchar * weight,const gchar * slant,const gchar * set_width,const gchar * spacing,const gchar * registry,const gchar * encoding)
 name|gimp_text
 parameter_list|(
 name|gint32
@@ -364,6 +368,7 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -380,34 +385,42 @@ parameter_list|,
 name|GimpSizeType
 name|size_type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|foundry
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|family
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|weight
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|slant
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|set_width
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|spacing
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|registry
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|encoding
@@ -549,9 +562,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_text_get_extents (gchar * text,gdouble size,GimpSizeType size_type,gchar * foundry,gchar * family,gchar * weight,gchar * slant,gchar * set_width,gchar * spacing,gchar * registry,gchar * encoding,gint * width,gint * height,gint * ascent,gint * descent)
+DECL|function|gimp_text_get_extents (const gchar * text,gdouble size,GimpSizeType size_type,const gchar * foundry,const gchar * family,const gchar * weight,const gchar * slant,const gchar * set_width,const gchar * spacing,const gchar * registry,const gchar * encoding,gint * width,gint * height,gint * ascent,gint * descent)
 name|gimp_text_get_extents
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -562,34 +576,42 @@ parameter_list|,
 name|GimpSizeType
 name|size_type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|foundry
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|family
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|weight
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|slant
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|set_width
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|spacing
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|registry
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|encoding

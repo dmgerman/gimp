@@ -497,7 +497,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_curves_spline (gint32 drawable_ID,GimpChannelLutType channel,gint num_points,guint8 * control_pts)
+DECL|function|gimp_curves_spline (gint32 drawable_ID,GimpChannelLutType channel,gint num_points,const guint8 * control_pts)
 name|gimp_curves_spline
 parameter_list|(
 name|gint32
@@ -509,6 +509,7 @@ parameter_list|,
 name|gint
 name|num_points
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|control_pts
@@ -586,7 +587,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_curves_explicit (gint32 drawable_ID,GimpChannelLutType channel,gint num_bytes,guint8 * curve)
+DECL|function|gimp_curves_explicit (gint32 drawable_ID,GimpChannelLutType channel,gint num_bytes,const guint8 * curve)
 name|gimp_curves_explicit
 parameter_list|(
 name|gint32
@@ -598,6 +599,7 @@ parameter_list|,
 name|gint
 name|num_bytes
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|curve

@@ -25,7 +25,7 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|_gimp_layer_new (gint32 image_ID,gint width,gint height,GimpImageType type,gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|_gimp_layer_new (gint32 image_ID,gint width,gint height,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|_gimp_layer_new
 parameter_list|(
 name|gint32
@@ -40,6 +40,7 @@ parameter_list|,
 name|GimpImageType
 name|type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1124,12 +1125,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_set_name (gint32 layer_ID,gchar * name)
+DECL|function|gimp_layer_set_name (gint32 layer_ID,const gchar * name)
 name|gimp_layer_set_name
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

@@ -256,12 +256,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_set_current (gint32 image_ID,gchar * set_current_path_name)
+DECL|function|gimp_path_set_current (gint32 image_ID,const gchar * set_current_path_name)
 name|gimp_path_set_current
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|set_current_path_name
@@ -331,12 +332,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_delete (gint32 image_ID,gchar * path_name_to_del)
+DECL|function|gimp_path_delete (gint32 image_ID,const gchar * path_name_to_del)
 name|gimp_path_delete
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|path_name_to_del
@@ -406,12 +408,13 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_path_get_points (gint32 image_ID,gchar * pathname,gint * path_closed,gint * num_path_point_details,gdouble ** points_pairs)
+DECL|function|gimp_path_get_points (gint32 image_ID,const gchar * pathname,gint * path_closed,gint * num_path_point_details,gdouble ** points_pairs)
 name|gimp_path_get_points
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -570,12 +573,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_set_points (gint32 image_ID,gchar * pathname,gint ptype,gint num_path_points,gdouble * points_pairs)
+DECL|function|gimp_path_set_points (gint32 image_ID,const gchar * pathname,gint ptype,gint num_path_points,const gdouble * points_pairs)
 name|gimp_path_set_points
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -586,6 +590,7 @@ parameter_list|,
 name|gint
 name|num_path_points
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|points_pairs
@@ -853,12 +858,13 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_path_get_tattoo (gint32 image_ID,gchar * pathname)
+DECL|function|gimp_path_get_tattoo (gint32 image_ID,const gchar * pathname)
 name|gimp_path_get_tattoo
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -939,12 +945,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_set_tattoo (gint32 image_ID,gchar * pathname,gint tattovalue)
+DECL|function|gimp_path_set_tattoo (gint32 image_ID,const gchar * pathname,gint tattovalue)
 name|gimp_path_set_tattoo
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -1111,12 +1118,13 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_path_get_locked (gint32 image_ID,gchar * pathname)
+DECL|function|gimp_path_get_locked (gint32 image_ID,const gchar * pathname)
 name|gimp_path_get_locked
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -1197,12 +1205,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_set_locked (gint32 image_ID,gchar * pathname,gint lockstatus)
+DECL|function|gimp_path_set_locked (gint32 image_ID,const gchar * pathname,gint lockstatus)
 name|gimp_path_set_locked
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname

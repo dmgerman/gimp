@@ -25,7 +25,7 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|_gimp_channel_new (gint32 image_ID,gint width,gint height,gchar * name,gdouble opacity,GimpRGB * color)
+DECL|function|_gimp_channel_new (gint32 image_ID,gint width,gint height,const gchar * name,gdouble opacity,const GimpRGB * color)
 name|_gimp_channel_new
 parameter_list|(
 name|gint32
@@ -37,6 +37,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -44,6 +45,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -465,12 +467,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_channel_set_name (gint32 channel_ID,gchar * name)
+DECL|function|gimp_channel_set_name (gint32 channel_ID,const gchar * name)
 name|gimp_channel_set_name
 parameter_list|(
 name|gint32
 name|channel_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1083,12 +1086,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_channel_set_color (gint32 channel_ID,GimpRGB * color)
+DECL|function|gimp_channel_set_color (gint32 channel_ID,const GimpRGB * color)
 name|gimp_channel_set_color
 parameter_list|(
 name|gint32
 name|channel_ID
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

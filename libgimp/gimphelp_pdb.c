@@ -25,13 +25,15 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_help (gchar * prog_name,gchar * help_page)
+DECL|function|gimp_help (const gchar * prog_name,const gchar * help_page)
 name|gimp_help
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|prog_name
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_page

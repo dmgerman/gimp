@@ -58,6 +58,7 @@ begin_function_decl
 name|gboolean
 name|gimp_gradients_set_gradient
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -84,6 +85,7 @@ parameter_list|(
 name|gint
 name|num_samples
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|positions
@@ -96,6 +98,7 @@ name|gchar
 modifier|*
 name|gimp_gradients_get_gradient_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

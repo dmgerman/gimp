@@ -25,17 +25,20 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_gradients_popup (gchar * gradient_callback,gchar * popup_title,gchar * initial_gradient,gint sample_size)
+DECL|function|gimp_gradients_popup (const gchar * gradient_callback,const gchar * popup_title,const gchar * initial_gradient,gint sample_size)
 name|gimp_gradients_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|gradient_callback
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|popup_title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|initial_gradient
@@ -116,9 +119,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_gradients_close_popup (gchar * gradient_callback)
+DECL|function|gimp_gradients_close_popup (const gchar * gradient_callback)
 name|gimp_gradients_close_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|gradient_callback
@@ -184,13 +188,15 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_gradients_set_popup (gchar * gradient_callback,gchar * gradient_name)
+DECL|function|gimp_gradients_set_popup (const gchar * gradient_callback,const gchar * gradient_name)
 name|gimp_gradients_set_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|gradient_callback
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|gradient_name

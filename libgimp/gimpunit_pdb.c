@@ -171,9 +171,10 @@ end_comment
 
 begin_function
 name|GimpUnit
-DECL|function|_gimp_unit_new (gchar * identifier,gdouble factor,gint digits,gchar * symbol,gchar * abbreviation,gchar * singular,gchar * plural)
+DECL|function|_gimp_unit_new (const gchar * identifier,gdouble factor,gint digits,const gchar * symbol,const gchar * abbreviation,const gchar * singular,const gchar * plural)
 name|_gimp_unit_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -184,18 +185,22 @@ parameter_list|,
 name|gint
 name|digits
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|symbol
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|abbreviation
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|singular
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|plural

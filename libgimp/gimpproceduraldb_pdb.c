@@ -31,9 +31,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_dump (gchar * filename)
+DECL|function|gimp_procedural_db_dump (const gchar * filename)
 name|gimp_procedural_db_dump
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -99,33 +100,40 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_query (gchar * name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * proc_type,gint * num_matches,gchar *** procedure_names)
+DECL|function|gimp_procedural_db_query (const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_matches,gchar *** procedure_names)
 name|gimp_procedural_db_query
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|blurb
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|author
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|copyright
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|date
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|proc_type
@@ -305,9 +313,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_procedural_db_proc_info (gchar * procedure,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
+DECL|function|_gimp_procedural_db_proc_info (const gchar * procedure,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
 name|_gimp_procedural_db_proc_info
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|procedure
@@ -567,9 +576,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_proc_arg (gchar * procedure,gint arg_num,GimpPDBArgType * arg_type,gchar ** arg_name,gchar ** arg_desc)
+DECL|function|gimp_procedural_db_proc_arg (const gchar * procedure,gint arg_num,GimpPDBArgType * arg_type,gchar ** arg_name,gchar ** arg_desc)
 name|gimp_procedural_db_proc_arg
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|procedure
@@ -719,9 +729,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_procedural_db_proc_val (gchar * procedure,gint val_num,GimpPDBArgType * val_type,gchar ** val_name,gchar ** val_desc)
+DECL|function|gimp_procedural_db_proc_val (const gchar * procedure,gint val_num,GimpPDBArgType * val_type,gchar ** val_name,gchar ** val_desc)
 name|gimp_procedural_db_proc_val
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|procedure
@@ -871,9 +882,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_procedural_db_get_data (gchar * identifier,gint * bytes,guint8 ** data)
+DECL|function|_gimp_procedural_db_get_data (const gchar * identifier,gint * bytes,guint8 ** data)
 name|_gimp_procedural_db_get_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -1010,9 +1022,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_procedural_db_get_data_size (gchar * identifier)
+DECL|function|gimp_procedural_db_get_data_size (const gchar * identifier)
 name|gimp_procedural_db_get_data_size
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -1089,9 +1102,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_procedural_db_set_data (gchar * identifier,gint bytes,guint8 * data)
+DECL|function|_gimp_procedural_db_set_data (const gchar * identifier,gint bytes,const guint8 * data)
 name|_gimp_procedural_db_set_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -1099,6 +1113,7 @@ parameter_list|,
 name|gint
 name|bytes
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|data

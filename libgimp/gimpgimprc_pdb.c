@@ -26,9 +26,10 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_gimprc_query (gchar * token)
+DECL|function|gimp_gimprc_query (const gchar * token)
 name|gimp_gimprc_query
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token
@@ -109,13 +110,15 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_gimprc_set (gchar * token,gchar * value)
+DECL|function|gimp_gimprc_set (const gchar * token,const gchar * value)
 name|gimp_gimprc_set
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value

@@ -26,9 +26,10 @@ end_comment
 begin_function
 name|GimpParasite
 modifier|*
-DECL|function|gimp_parasite_find (gchar * name)
+DECL|function|gimp_parasite_find (const gchar * name)
 name|gimp_parasite_find
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -178,9 +179,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_parasite_detach (gchar * name)
+DECL|function|gimp_parasite_detach (const gchar * name)
 name|gimp_parasite_detach
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -397,12 +399,13 @@ end_comment
 begin_function
 name|GimpParasite
 modifier|*
-DECL|function|gimp_drawable_parasite_find (gint32 drawable_ID,gchar * name)
+DECL|function|gimp_drawable_parasite_find (gint32 drawable_ID,const gchar * name)
 name|gimp_drawable_parasite_find
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -563,12 +566,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_parasite_detach (gint32 drawable_ID,gchar * name)
+DECL|function|gimp_drawable_parasite_detach (gint32 drawable_ID,const gchar * name)
 name|gimp_drawable_parasite_detach
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -796,12 +800,13 @@ end_comment
 begin_function
 name|GimpParasite
 modifier|*
-DECL|function|gimp_image_parasite_find (gint32 image_ID,gchar * name)
+DECL|function|gimp_image_parasite_find (gint32 image_ID,const gchar * name)
 name|gimp_image_parasite_find
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -962,12 +967,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_parasite_detach (gint32 image_ID,gchar * name)
+DECL|function|gimp_image_parasite_detach (gint32 image_ID,const gchar * name)
 name|gimp_image_parasite_detach
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

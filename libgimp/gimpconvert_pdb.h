@@ -64,6 +64,7 @@ parameter_list|,
 name|gboolean
 name|remove_unused
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|palette

@@ -2583,7 +2583,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_image_set_cmap (gint32 image_ID,gint num_bytes,guint8 * cmap)
+DECL|function|_gimp_image_set_cmap (gint32 image_ID,gint num_bytes,const guint8 * cmap)
 name|_gimp_image_set_cmap
 parameter_list|(
 name|gint32
@@ -2592,6 +2592,7 @@ parameter_list|,
 name|gint
 name|num_bytes
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|cmap
@@ -4760,12 +4761,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_set_filename (gint32 image_ID,gchar * filename)
+DECL|function|gimp_image_set_filename (gint32 image_ID,const gchar * filename)
 name|gimp_image_set_filename
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename

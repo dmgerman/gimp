@@ -35,6 +35,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -52,6 +53,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -81,6 +83,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -98,6 +101,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -121,6 +125,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -138,6 +143,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -164,6 +170,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -181,6 +188,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -198,6 +206,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -221,6 +230,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -241,6 +251,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -264,6 +275,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -281,6 +293,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -301,6 +314,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -318,6 +332,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes

@@ -26,6 +26,7 @@ comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_progress_init
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|message
@@ -57,10 +58,12 @@ begin_function_decl
 name|gboolean
 name|gimp_plugin_domain_register
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|domain_name
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|domain_path
@@ -72,6 +75,7 @@ begin_function_decl
 name|gboolean
 name|gimp_plugin_help_register
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_path

@@ -56,6 +56,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|set_current_path_name
@@ -70,6 +71,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|path_name_to_del
@@ -84,6 +86,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -111,6 +114,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -121,6 +125,7 @@ parameter_list|,
 name|gint
 name|num_path_points
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|points_pairs
@@ -166,6 +171,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -180,6 +186,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -211,6 +218,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname
@@ -225,6 +233,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pathname

@@ -68,6 +68,7 @@ begin_function_decl
 name|gboolean
 name|gimp_brushes_set_brush
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -137,6 +138,7 @@ name|gchar
 modifier|*
 name|gimp_brushes_get_brush_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

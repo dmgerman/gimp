@@ -26,10 +26,12 @@ comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_help
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|prog_name
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_page

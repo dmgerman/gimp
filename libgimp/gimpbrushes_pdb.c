@@ -354,9 +354,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_brushes_set_brush (gchar * name)
+DECL|function|gimp_brushes_set_brush (const gchar * name)
 name|gimp_brushes_set_brush
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -843,9 +844,10 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_brushes_get_brush_data (gchar * name,gdouble * opacity,gint * spacing,GimpLayerModeEffects * paint_mode,gint * width,gint * height,gint * length,guint8 ** mask_data)
+DECL|function|gimp_brushes_get_brush_data (const gchar * name,gdouble * opacity,gint * spacing,GimpLayerModeEffects * paint_mode,gint * width,gint * height,gint * length,guint8 ** mask_data)
 name|gimp_brushes_get_brush_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

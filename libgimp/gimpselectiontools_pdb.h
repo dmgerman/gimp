@@ -29,6 +29,7 @@ parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -98,6 +99,7 @@ parameter_list|,
 name|gint
 name|num_segs
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|segs

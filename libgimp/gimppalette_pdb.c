@@ -185,9 +185,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_set_foreground (GimpRGB * foreground)
+DECL|function|gimp_palette_set_foreground (const GimpRGB * foreground)
 name|gimp_palette_set_foreground
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|foreground
@@ -253,9 +254,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_set_background (GimpRGB * background)
+DECL|function|gimp_palette_set_background (const GimpRGB * background)
 name|gimp_palette_set_background
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|background

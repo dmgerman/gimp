@@ -451,6 +451,7 @@ parameter_list|,
 name|gint
 name|num_bytes
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|cmap
@@ -770,6 +771,7 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename

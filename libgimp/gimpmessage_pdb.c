@@ -25,9 +25,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_message (gchar * message)
+DECL|function|gimp_message (const gchar * message)
 name|gimp_message
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|message

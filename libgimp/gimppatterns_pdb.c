@@ -338,9 +338,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_patterns_set_pattern (gchar * name)
+DECL|function|gimp_patterns_set_pattern (const gchar * name)
 name|gimp_patterns_set_pattern
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -407,9 +408,10 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_patterns_get_pattern_data (gchar * name,gint * width,gint * height,gint * mask_bpp,gint * length,guint8 ** mask_data)
+DECL|function|gimp_patterns_get_pattern_data (const gchar * name,gint * width,gint * height,gint * mask_bpp,gint * length,guint8 ** mask_data)
 name|gimp_patterns_get_pattern_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

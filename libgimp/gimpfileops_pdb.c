@@ -25,16 +25,18 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_file_load (GimpRunMode run_mode,gchar * filename,gchar * raw_filename)
+DECL|function|gimp_file_load (GimpRunMode run_mode,const gchar * filename,const gchar * raw_filename)
 name|gimp_file_load
 parameter_list|(
 name|GimpRunMode
 name|run_mode
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename
@@ -120,7 +122,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_file_save (GimpRunMode run_mode,gint32 image_ID,gint32 drawable_ID,gchar * filename,gchar * raw_filename)
+DECL|function|gimp_file_save (GimpRunMode run_mode,gint32 image_ID,gint32 drawable_ID,const gchar * filename,const gchar * raw_filename)
 name|gimp_file_save
 parameter_list|(
 name|GimpRunMode
@@ -132,10 +134,12 @@ parameter_list|,
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename
@@ -218,9 +222,10 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_temp_name (gchar * extension)
+DECL|function|gimp_temp_name (const gchar * extension)
 name|gimp_temp_name
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|extension
@@ -301,21 +306,25 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_register_magic_load_handler (gchar * procedure_name,gchar * extensions,gchar * prefixes,gchar * magics)
+DECL|function|gimp_register_magic_load_handler (const gchar * procedure_name,const gchar * extensions,const gchar * prefixes,const gchar * magics)
 name|gimp_register_magic_load_handler
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|procedure_name
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|extensions
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|prefixes
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|magics
@@ -393,17 +402,20 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_register_load_handler (gchar * procedure_name,gchar * extensions,gchar * prefixes)
+DECL|function|gimp_register_load_handler (const gchar * procedure_name,const gchar * extensions,const gchar * prefixes)
 name|gimp_register_load_handler
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|procedure_name
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|extensions
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|prefixes
@@ -477,17 +489,20 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_register_save_handler (gchar * procedure_name,gchar * extensions,gchar * prefixes)
+DECL|function|gimp_register_save_handler (const gchar * procedure_name,const gchar * extensions,const gchar * prefixes)
 name|gimp_register_save_handler
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|procedure_name
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|extensions
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|prefixes

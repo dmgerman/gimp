@@ -25,17 +25,20 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palettes_popup (gchar * palette_callback,gchar * popup_title,gchar * initial_palette)
+DECL|function|gimp_palettes_popup (const gchar * palette_callback,const gchar * popup_title,const gchar * initial_palette)
 name|gimp_palettes_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|palette_callback
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|popup_title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|initial_palette
@@ -109,9 +112,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palettes_close_popup (gchar * palette_callback)
+DECL|function|gimp_palettes_close_popup (const gchar * palette_callback)
 name|gimp_palettes_close_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|palette_callback
@@ -177,13 +181,15 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palettes_set_popup (gchar * palette_callback,gchar * palette_name)
+DECL|function|gimp_palettes_set_popup (const gchar * palette_callback,const gchar * palette_name)
 name|gimp_palettes_set_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|palette_callback
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|palette_name

@@ -25,12 +25,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_by_color_select (gint32 drawable_ID,GimpRGB * color,gint threshold,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius,gboolean sample_merged)
+DECL|function|gimp_by_color_select (gint32 drawable_ID,const GimpRGB * color,gint threshold,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius,gboolean sample_merged)
 name|gimp_by_color_select
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -265,7 +266,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_free_select (gint32 image_ID,gint num_segs,gdouble * segs,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius)
+DECL|function|gimp_free_select (gint32 image_ID,gint num_segs,const gdouble * segs,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius)
 name|gimp_free_select
 parameter_list|(
 name|gint32
@@ -274,6 +275,7 @@ parameter_list|,
 name|gint
 name|num_segs
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|segs

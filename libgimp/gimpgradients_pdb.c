@@ -306,9 +306,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_gradients_set_gradient (gchar * name)
+DECL|function|gimp_gradients_set_gradient (const gchar * name)
 name|gimp_gradients_set_gradient
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -490,12 +491,13 @@ end_comment
 begin_function
 name|gdouble
 modifier|*
-DECL|function|gimp_gradients_sample_custom (gint num_samples,gdouble * positions)
+DECL|function|gimp_gradients_sample_custom (gint num_samples,const gdouble * positions)
 name|gimp_gradients_sample_custom
 parameter_list|(
 name|gint
 name|num_samples
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|positions
@@ -613,9 +615,10 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_gradients_get_gradient_data (gchar * name,gint sample_size,gint * width,gdouble ** grad_data)
+DECL|function|gimp_gradients_get_gradient_data (const gchar * name,gint sample_size,gint * width,gdouble ** grad_data)
 name|gimp_gradients_get_gradient_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

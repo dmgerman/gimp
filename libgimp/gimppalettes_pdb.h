@@ -60,6 +60,7 @@ begin_function_decl
 name|gboolean
 name|gimp_palettes_set_palette
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -72,6 +73,7 @@ name|gchar
 modifier|*
 name|gimp_palettes_get_palette_entry
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

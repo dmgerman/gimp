@@ -316,9 +316,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palettes_set_palette (gchar * name)
+DECL|function|gimp_palettes_set_palette (const gchar * name)
 name|gimp_palettes_set_palette
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -385,9 +386,10 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_palettes_get_palette_entry (gchar * name,gint entry_num,gint * num_colors,GimpRGB * color)
+DECL|function|gimp_palettes_get_palette_entry (const gchar * name,gint entry_num,gint * num_colors,GimpRGB * color)
 name|gimp_palettes_get_palette_entry
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

@@ -25,17 +25,20 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_fonts_popup (gchar * font_callback,gchar * popup_title,gchar * initial_font)
+DECL|function|gimp_fonts_popup (const gchar * font_callback,const gchar * popup_title,const gchar * initial_font)
 name|gimp_fonts_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|font_callback
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|popup_title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|initial_font
@@ -109,9 +112,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_fonts_close_popup (gchar * font_callback)
+DECL|function|gimp_fonts_close_popup (const gchar * font_callback)
 name|gimp_fonts_close_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|font_callback
@@ -177,13 +181,15 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_fonts_set_popup (gchar * font_callback,gchar * font_name)
+DECL|function|gimp_fonts_set_popup (const gchar * font_callback,const gchar * font_name)
 name|gimp_fonts_set_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|font_callback
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|font_name

@@ -25,17 +25,20 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_patterns_popup (gchar * pattern_callback,gchar * popup_title,gchar * initial_pattern)
+DECL|function|gimp_patterns_popup (const gchar * pattern_callback,const gchar * popup_title,const gchar * initial_pattern)
 name|gimp_patterns_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|pattern_callback
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|popup_title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|initial_pattern
@@ -109,9 +112,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_patterns_close_popup (gchar * pattern_callback)
+DECL|function|gimp_patterns_close_popup (const gchar * pattern_callback)
 name|gimp_patterns_close_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|pattern_callback
@@ -177,13 +181,15 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_patterns_set_popup (gchar * pattern_callback,gchar * pattern_name)
+DECL|function|gimp_patterns_set_popup (const gchar * pattern_callback,const gchar * pattern_name)
 name|gimp_patterns_set_popup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|pattern_callback
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pattern_name

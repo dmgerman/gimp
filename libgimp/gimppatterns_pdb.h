@@ -64,6 +64,7 @@ begin_function_decl
 name|gboolean
 name|gimp_patterns_set_pattern
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -76,6 +77,7 @@ name|gchar
 modifier|*
 name|gimp_patterns_get_pattern_data
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

@@ -159,7 +159,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_convert_indexed (gint32 image_ID,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,gint num_cols,gboolean alpha_dither,gboolean remove_unused,gchar * palette)
+DECL|function|gimp_convert_indexed (gint32 image_ID,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,gint num_cols,gboolean alpha_dither,gboolean remove_unused,const gchar * palette)
 name|gimp_convert_indexed
 parameter_list|(
 name|gint32
@@ -180,6 +180,7 @@ parameter_list|,
 name|gboolean
 name|remove_unused
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|palette

@@ -26,6 +26,7 @@ comment|/* For information look into the C source or the html documentation */
 name|gboolean
 name|gimp_message
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|message

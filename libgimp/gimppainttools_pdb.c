@@ -25,7 +25,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_airbrush (gint32 drawable_ID,gdouble pressure,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_airbrush (gint32 drawable_ID,gdouble pressure,gint num_strokes,const gdouble * strokes)
 name|gimp_airbrush
 parameter_list|(
 name|gint32
@@ -37,6 +37,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -114,7 +115,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_airbrush_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_airbrush_default (gint32 drawable_ID,gint num_strokes,const gdouble * strokes)
 name|gimp_airbrush_default
 parameter_list|(
 name|gint32
@@ -123,6 +124,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -196,7 +198,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_clone (gint32 drawable_ID,gint32 src_drawable_ID,GimpCloneType clone_type,gdouble src_x,gdouble src_y,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_clone (gint32 drawable_ID,gint32 src_drawable_ID,GimpCloneType clone_type,gdouble src_x,gdouble src_y,gint num_strokes,const gdouble * strokes)
 name|gimp_clone
 parameter_list|(
 name|gint32
@@ -217,6 +219,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -306,7 +309,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_clone_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_clone_default (gint32 drawable_ID,gint num_strokes,const gdouble * strokes)
 name|gimp_clone_default
 parameter_list|(
 name|gint32
@@ -315,6 +318,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -388,7 +392,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_convolve (gint32 drawable_ID,gdouble pressure,GimpConvolveType convolve_type,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_convolve (gint32 drawable_ID,gdouble pressure,GimpConvolveType convolve_type,gint num_strokes,const gdouble * strokes)
 name|gimp_convolve
 parameter_list|(
 name|gint32
@@ -403,6 +407,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -484,7 +489,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_convolve_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_convolve_default (gint32 drawable_ID,gint num_strokes,const gdouble * strokes)
 name|gimp_convolve_default
 parameter_list|(
 name|gint32
@@ -493,6 +498,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -566,7 +572,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_dodgeburn (gint32 drawable_ID,gdouble exposure,GimpDodgeBurnType dodgeburn_type,GimpTransferMode dodgeburn_mode,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_dodgeburn (gint32 drawable_ID,gdouble exposure,GimpDodgeBurnType dodgeburn_type,GimpTransferMode dodgeburn_mode,gint num_strokes,const gdouble * strokes)
 name|gimp_dodgeburn
 parameter_list|(
 name|gint32
@@ -584,6 +590,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -669,7 +676,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_dodgeburn_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_dodgeburn_default (gint32 drawable_ID,gint num_strokes,const gdouble * strokes)
 name|gimp_dodgeburn_default
 parameter_list|(
 name|gint32
@@ -678,6 +685,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -751,7 +759,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_eraser (gint32 drawable_ID,gint num_strokes,gdouble * strokes,GimpBrushApplicationMode hardness,GimpPaintApplicationMode method)
+DECL|function|gimp_eraser (gint32 drawable_ID,gint num_strokes,const gdouble * strokes,GimpBrushApplicationMode hardness,GimpPaintApplicationMode method)
 name|gimp_eraser
 parameter_list|(
 name|gint32
@@ -760,6 +768,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -847,7 +856,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_eraser_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_eraser_default (gint32 drawable_ID,gint num_strokes,const gdouble * strokes)
 name|gimp_eraser_default
 parameter_list|(
 name|gint32
@@ -856,6 +865,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -929,7 +939,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_paintbrush (gint32 drawable_ID,gdouble fade_out,gint num_strokes,gdouble * strokes,GimpPaintApplicationMode method,gdouble gradient_length)
+DECL|function|gimp_paintbrush (gint32 drawable_ID,gdouble fade_out,gint num_strokes,const gdouble * strokes,GimpPaintApplicationMode method,gdouble gradient_length)
 name|gimp_paintbrush
 parameter_list|(
 name|gint32
@@ -941,6 +951,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -1032,7 +1043,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_paintbrush_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_paintbrush_default (gint32 drawable_ID,gint num_strokes,const gdouble * strokes)
 name|gimp_paintbrush_default
 parameter_list|(
 name|gint32
@@ -1041,6 +1052,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -1114,7 +1126,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_pencil (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_pencil (gint32 drawable_ID,gint num_strokes,const gdouble * strokes)
 name|gimp_pencil
 parameter_list|(
 name|gint32
@@ -1123,6 +1135,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -1196,7 +1209,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_smudge (gint32 drawable_ID,gdouble pressure,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_smudge (gint32 drawable_ID,gdouble pressure,gint num_strokes,const gdouble * strokes)
 name|gimp_smudge
 parameter_list|(
 name|gint32
@@ -1208,6 +1221,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes
@@ -1285,7 +1299,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_smudge_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_smudge_default (gint32 drawable_ID,gint num_strokes,const gdouble * strokes)
 name|gimp_smudge_default
 parameter_list|(
 name|gint32
@@ -1294,6 +1308,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|strokes

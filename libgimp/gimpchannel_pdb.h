@@ -35,6 +35,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -42,6 +43,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -109,6 +111,7 @@ parameter_list|(
 name|gint32
 name|channel_ID
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -206,6 +209,7 @@ parameter_list|(
 name|gint32
 name|channel_ID
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

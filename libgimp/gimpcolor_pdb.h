@@ -125,6 +125,7 @@ parameter_list|,
 name|gint
 name|num_points
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|control_pts
@@ -145,6 +146,7 @@ parameter_list|,
 name|gint
 name|num_bytes
 parameter_list|,
+specifier|const
 name|guint8
 modifier|*
 name|curve

@@ -25,9 +25,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_progress_init (gchar * message)
+DECL|function|gimp_progress_init (const gchar * message)
 name|gimp_progress_init
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|message
@@ -243,13 +244,15 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_plugin_domain_register (gchar * domain_name,gchar * domain_path)
+DECL|function|gimp_plugin_domain_register (const gchar * domain_name,const gchar * domain_path)
 name|gimp_plugin_domain_register
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|domain_name
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|domain_path
@@ -319,9 +322,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_plugin_help_register (gchar * help_path)
+DECL|function|gimp_plugin_help_register (const gchar * help_path)
 name|gimp_plugin_help_register
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|help_path
