@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c5344c0103
+DECL|enum|__anon29495ba10103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -355,7 +355,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_container_grid_view_vieport_resized
+name|gimp_container_grid_view_viewport_resized
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -375,7 +375,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_container_grid_view_vieport_realize
+name|gimp_container_grid_view_viewport_realize
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -942,7 +942,7 @@ literal|"size_allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_container_grid_view_vieport_resized
+name|gimp_container_grid_view_viewport_resized
 argument_list|)
 argument_list|,
 name|grid_view
@@ -980,7 +980,7 @@ literal|"realize"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_container_grid_view_vieport_realize
+name|gimp_container_grid_view_viewport_realize
 argument_list|)
 argument_list|,
 name|grid_view
@@ -1851,6 +1851,16 @@ name|renderer
 argument_list|,
 operator|&
 name|white_color
+argument_list|)
+expr_stmt|;
+name|gimp_preview_renderer_remove_idle
+argument_list|(
+name|GIMP_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|renderer
 argument_list|)
 expr_stmt|;
 name|gtk_wrap_box_pack
@@ -2735,8 +2745,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_grid_view_vieport_resized (GtkWidget * widget,GtkAllocation * allocation,GimpContainerGridView * grid_view)
-name|gimp_container_grid_view_vieport_resized
+DECL|function|gimp_container_grid_view_viewport_resized (GtkWidget * widget,GtkAllocation * allocation,GimpContainerGridView * grid_view)
+name|gimp_container_grid_view_viewport_resized
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2959,8 +2969,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_grid_view_vieport_realize (GtkWidget * widget,GimpContainerGridView * grid_view)
-name|gimp_container_grid_view_vieport_realize
+DECL|function|gimp_container_grid_view_viewport_realize (GtkWidget * widget,GimpContainerGridView * grid_view)
+name|gimp_container_grid_view_viewport_realize
 parameter_list|(
 name|GtkWidget
 modifier|*
